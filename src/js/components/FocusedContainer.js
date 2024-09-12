@@ -1,7 +1,6 @@
 import React, { useContext, useEffect, useRef, useState } from 'react';
 import { makeNodeFocusable, makeNodeUnfocusable } from '../utils';
 import { RootsContext } from '../contexts/RootsContext';
-/* eslint-disable consistent-return */
 
 export const FocusedContainer = ({
   hidden = false,
@@ -14,6 +13,7 @@ export const FocusedContainer = ({
   const ref = useRef(null);
   const roots = useContext(RootsContext);
   const [nextRoots, setNextRoots] = useState(roots);
+
   useEffect(() => {
     if (ref.current) {
       setNextRoots([...roots, ref.current]);
@@ -44,73 +44,41 @@ export const FocusedContainer = ({
     };
   }, [bodyOverflowStyle, hidden, trapFocus, restrictScroll]);
 
+  const trapFocusHandler = (event) => {
+    const container = ref.current;
+    if (!container) return;
+
+    // Find all focusable elements within the container
+    const focusableElements = container.querySelectorAll(
+      `button, [href], input, select, textarea,
+       [tabindex]:not([tabindex="-1"])`,
+    );
+
+    if (focusableElements.length === 0) return;
+
+    const firstElement = focusableElements[0];
+    const lastElement = focusableElements[focusableElements.length - 1];
+
+    if (event.shiftKey && document.activeElement === firstElement) {
+      event.preventDefault();
+      if (lastElement) lastElement.focus();
+    } else if (!event.shiftKey && document.activeElement === lastElement) {
+      event.preventDefault();
+      if (firstElement) firstElement.focus();
+    }
+  };
+
   useEffect(() => {
     const timer = setTimeout(() => {
       if (!hidden && trapFocus && nextRoots && nextRoots.length > 0) {
         // Make all nodes unfocusable except the last one in the list
         roots.forEach(makeNodeUnfocusable);
-
-        // Access the last parent <div> in nextRoots
-        const lastParentDiv = nextRoots[nextRoots.length - 1];
-
-        if (lastParentDiv) {
-          // Find a specific child <div> inside the last parent <div>
-          const childDiv = lastParentDiv.querySelector('div');
-
-          if (childDiv) {
-            // Find all focusable elements within the child <div>
-            const focusableElements = childDiv.querySelectorAll(
-              `button, [href], input, select,
-               textarea, [tabindex]:not([tabindex="-1"])`,
-            );
-
-            // Get the first and last focusable elements
-            const firstElement = focusableElements[0];
-            const lastElement = focusableElements[focusableElements.length - 1];
-
-            // tab key press handler
-            const handleTabKeyPress = (event) => {
-              if (event.key === 'Tab') {
-                if (event.shiftKey && document.activeElement === firstElement) {
-                  event.preventDefault();
-                  if (lastElement) {
-                    lastElement.focus();
-                  }
-                } else if (
-                  !event.shiftKey &&
-                  document.activeElement === lastElement
-                ) {
-                  event.preventDefault();
-                  if (firstElement) {
-                    firstElement.focus();
-                  }
-                }
-              }
-            };
-
-            // Attach the event listener for tab key press
-            document.addEventListener('keydown', handleTabKeyPress);
-
-            // Automatically focus on the first focusable element
-            // should we do this or take out?
-            // if (firstElement) {
-            //   firstElement.focus();
-            //   console.log(
-            //     'Automatically focused on the first element:',
-            //     firstElement,
-            //   );
-            // }
-
-            // Cleanup function to remove the event listener
-            return () => {
-              document.removeEventListener('keydown', handleTabKeyPress);
-            };
-          }
-        }
+        document.addEventListener('keydown', trapFocusHandler, true);
       }
     }, 0);
 
     return () => {
+      document.removeEventListener('keydown', trapFocusHandler, true);
       // Restore focusability when component is unmounted or updated
       clearTimeout(timer);
       if (roots && roots.length > 0) {
