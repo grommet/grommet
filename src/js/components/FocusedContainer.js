@@ -1,4 +1,10 @@
-import React, { useContext, useEffect, useRef, useState } from 'react';
+import React, {
+  useCallback,
+  useContext,
+  useEffect,
+  useRef,
+  useState,
+} from 'react';
 import { makeNodeFocusable, makeNodeUnfocusable } from '../utils';
 import { RootsContext } from '../contexts/RootsContext';
 
@@ -44,7 +50,7 @@ export const FocusedContainer = ({
     };
   }, [bodyOverflowStyle, hidden, trapFocus, restrictScroll]);
 
-  const trapFocusHandler = (event) => {
+  const trapFocusHandler = useCallback((event) => {
     const container = ref.current;
     if (!container) return;
 
@@ -66,7 +72,7 @@ export const FocusedContainer = ({
       event.preventDefault();
       if (firstElement) firstElement.focus();
     }
-  };
+  }, []);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -85,7 +91,7 @@ export const FocusedContainer = ({
         makeNodeFocusable(roots[roots.length - 1]);
       }
     };
-  }, [hidden, nextRoots, trapFocus, roots]);
+  }, [hidden, nextRoots, trapFocus, roots, trapFocusHandler]);
 
   return (
     <RootsContext.Provider value={nextRoots}>
