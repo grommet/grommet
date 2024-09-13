@@ -80,7 +80,7 @@ export const FocusedContainer = ({
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      if (!hidden && trapFocus) {
+      if (!hidden && trapFocus && roots && roots[0]) {
         // Make all nodes unfocusable except the last one in the list
         roots.forEach(makeNodeUnfocusable);
         document.addEventListener('focus', trapFocusHandler, true);
@@ -93,7 +93,7 @@ export const FocusedContainer = ({
       document.removeEventListener('focus', trapFocusHandler, true);
       // console.log('Focus event listener removed');
       // Restore focusability when component is unmounted or updated
-      if (roots && roots.length > 0) {
+      if (roots && roots[0]) {
         makeNodeFocusable(roots[roots.length - 1]);
       }
     };
