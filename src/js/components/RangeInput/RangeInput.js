@@ -34,7 +34,7 @@ const RangeInput = forwardRef(
     },
     ref,
   ) => {
-    const theme = useThemeValue();
+    const { theme, passThemeFlag } = useThemeValue();
     const formContext = useContext(FormContext);
     const [focus, setFocus] = useState(focusProp);
 
@@ -108,6 +108,7 @@ const RangeInput = forwardRef(
         focus={focus}
         focusIndicator={focusIndicator}
         value={value || value === 0 ? value : ''}
+        {...passThemeFlag}
         {...rest}
         color={color}
         onFocus={(event) => {

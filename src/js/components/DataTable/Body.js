@@ -187,7 +187,7 @@ const Body = forwardRef(
     },
     ref,
   ) => {
-    const theme = useThemeValue();
+    const { theme, passThemeFlag } = useThemeValue();
     const [active, setActive] = React.useState();
     const [lastActive, setLastActive] = React.useState();
 
@@ -257,6 +257,7 @@ const Body = forwardRef(
             setLastActive(active);
             setActive(undefined);
           }}
+          {...passThemeFlag}
           {...rest}
         >
           <InfiniteScroll

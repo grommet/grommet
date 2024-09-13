@@ -5,9 +5,11 @@ import { ParagraphPropTypes } from './propTypes';
 import { useSkeleton } from '../Skeleton';
 import { ParagraphSkeleton } from './ParagraphSkeleton';
 import { TextContext } from '../Text/TextContext';
+import { useThemeValue } from '../../utils/useThemeValue';
 
 const Paragraph = forwardRef(
   ({ children, color, fill, size, ...rest }, ref) => {
+    const { passThemeFlag } = useThemeValue();
     const skeleton = useSkeleton();
     const textContextValue = useMemo(() => ({ size }), [size]);
 
@@ -24,6 +26,7 @@ const Paragraph = forwardRef(
         colorProp={color}
         fillProp={fill}
         size={size}
+        {...passThemeFlag}
         {...rest}
       >
         {children !== undefined ? (

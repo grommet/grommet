@@ -32,7 +32,7 @@ const Meter = forwardRef(
     },
     ref,
   ) => {
-    const theme = useThemeValue();
+    const { theme } = useThemeValue();
 
     // normalize values to an array of objects
     const values = useMemo(() => {

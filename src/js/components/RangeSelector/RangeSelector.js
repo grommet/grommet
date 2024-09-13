@@ -71,7 +71,7 @@ const RangeSelector = forwardRef(
     },
     ref,
   ) => {
-    const theme = useThemeValue();
+    const { theme } = useThemeValue();
     const { format } = useContext(MessageContext);
     const formContext = useContext(FormContext);
     const [changing, setChanging] = useState();

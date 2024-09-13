@@ -30,11 +30,13 @@ const RadioButton = forwardRef(
     },
     ref,
   ) => {
-    const theme = useThemeValue();
+    const { theme, passThemeFlag } = useThemeValue();
     const [hover, setHover] = useState();
     const normalizedLabel =
       typeof label === 'string' ? (
-        <StyledRadioButtonLabel>{label}</StyledRadioButtonLabel>
+        <StyledRadioButtonLabel {...passThemeFlag}>
+          {label}
+        </StyledRadioButtonLabel>
       ) : (
         label
       );
@@ -71,12 +73,14 @@ const RadioButton = forwardRef(
         focusIndicator={focusIndicator}
         onMouseEnter={() => setHover(true)}
         onMouseLeave={() => setHover(false)}
+        {...passThemeFlag}
       >
         <StyledRadioButton
           flex={false}
           margin={
             label ? { right: theme.radioButton.gap || 'small' } : undefined
           }
+          {...passThemeFlag}
         >
           <StyledRadioButtonInput
             aria-label={a11yTitle}
@@ -106,6 +110,7 @@ const RadioButton = forwardRef(
               }}
               backgroundColor={backgroundColor}
               round={theme.radioButton.check.radius}
+              {...passThemeFlag}
             >
               {checked &&
                 (Icon ? (
@@ -114,6 +119,7 @@ const RadioButton = forwardRef(
                   <StyledRadioButtonIcon
                     viewBox="0 0 24 24"
                     preserveAspectRatio="xMidYMid meet"
+                    {...passThemeFlag}
                   >
                     <circle cx={12} cy={12} r={6} />
                   </StyledRadioButtonIcon>
