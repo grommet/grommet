@@ -668,7 +668,7 @@ describe('Data', () => {
             properties={{
               selectMultiple: {
                 label: 'SelectMultiple Name',
-                options: range(9).map((_, i) => ({
+                options: range(9).map((i) => ({
                   value: `selectmultiple${i}`,
                   label: `SelectMultiple Name ${i}`,
                 })),
