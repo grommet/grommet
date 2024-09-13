@@ -1,4 +1,5 @@
 import React, { forwardRef, useEffect, useState } from 'react';
+import { useThemeValue } from '../../utils/useThemeValue';
 
 import { Box } from '../Box';
 
@@ -11,6 +12,7 @@ import {
 const Digit = ({ number, run, size }) => {
   const [previous, setPrevious] = useState(number);
   const [changing, setChanging] = useState();
+  const { passThemeFlag } = useThemeValue();
 
   useEffect(() => {
     if (number !== previous) {
@@ -27,7 +29,7 @@ const Digit = ({ number, run, size }) => {
   if (changing) {
     const direction = run === 'backward' ? 'down' : 'up';
     return (
-      <StyledDigitalDigit size={size}>
+      <StyledDigitalDigit {...passThemeFlag} size={size}>
         <StyledDigitalPrevious direction={direction}>
           {Math.floor(previous)}
         </StyledDigitalPrevious>
@@ -38,11 +40,14 @@ const Digit = ({ number, run, size }) => {
     );
   }
   return (
-    <StyledDigitalDigit size={size}>{Math.floor(number)}</StyledDigitalDigit>
+    <StyledDigitalDigit size={size} {...passThemeFlag}>
+      {Math.floor(number)}
+    </StyledDigitalDigit>
   );
 };
 
 const Element = ({ number, run, sep, size }) => {
+  const { passThemeFlag } = useThemeValue();
   const tens = Math.floor(number / 10);
   const ones = number % 10;
   const result = [
@@ -51,7 +56,7 @@ const Element = ({ number, run, sep, size }) => {
   ];
   if (sep) {
     result.unshift(
-      <StyledDigitalDigit key="sep" size={size}>
+      <StyledDigitalDigit key="sep" size={size} {...passThemeFlag}>
         :
       </StyledDigitalDigit>,
     );

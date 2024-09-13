@@ -1,38 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Video Configure Menu Button 1`] = `
-.c6 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #f8f8f8;
-  stroke: #f8f8f8;
-}
-
-.c6 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c6 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c6 *[stroke*='#'],
-.c6 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c6 *[fill-rule],
-.c6 *[FILL-RULE],
-.c6 *[fill*='#'],
-.c6 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
-}
-
 .c4 {
   display: flex;
   box-sizing: border-box;
@@ -88,6 +56,38 @@ exports[`Video Configure Menu Button 1`] = `
   flex-direction: row;
   justify-content: flex-start;
   padding: 12px;
+}
+
+.c6 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #f8f8f8;
+  stroke: #f8f8f8;
+}
+
+.c6 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c6 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c6 *[stroke*='#'],
+.c6 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c6 *[fill-rule],
+.c6 *[FILL-RULE],
+.c6 *[fill*='#'],
+.c6 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
 }
 
 .c9 {
@@ -482,38 +482,6 @@ exports[`Video Configure Menu Button 1`] = `
 `;
 
 exports[`Video End event handler 1`] = `
-.c6 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #f8f8f8;
-  stroke: #f8f8f8;
-}
-
-.c6 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c6 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c6 *[stroke*='#'],
-.c6 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c6 *[fill-rule],
-.c6 *[FILL-RULE],
-.c6 *[fill*='#'],
-.c6 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
-}
-
 .c4 {
   display: flex;
   box-sizing: border-box;
@@ -569,6 +537,38 @@ exports[`Video End event handler 1`] = `
   flex-direction: row;
   justify-content: flex-start;
   padding: 12px;
+}
+
+.c6 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #f8f8f8;
+  stroke: #f8f8f8;
+}
+
+.c6 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c6 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c6 *[stroke*='#'],
+.c6 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c6 *[fill-rule],
+.c6 *[FILL-RULE],
+.c6 *[fill*='#'],
+.c6 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
 }
 
 .c9 {
@@ -951,38 +951,6 @@ exports[`Video End event handler 1`] = `
 `;
 
 exports[`Video Play and Pause event handlers 1`] = `
-.c6 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #f8f8f8;
-  stroke: #f8f8f8;
-}
-
-.c6 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c6 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c6 *[stroke*='#'],
-.c6 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c6 *[fill-rule],
-.c6 *[FILL-RULE],
-.c6 *[fill*='#'],
-.c6 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
-}
-
 .c4 {
   display: flex;
   box-sizing: border-box;
@@ -1038,6 +1006,38 @@ exports[`Video Play and Pause event handlers 1`] = `
   flex-direction: row;
   justify-content: flex-start;
   padding: 12px;
+}
+
+.c6 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #f8f8f8;
+  stroke: #f8f8f8;
+}
+
+.c6 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c6 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c6 *[stroke*='#'],
+.c6 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c6 *[fill-rule],
+.c6 *[FILL-RULE],
+.c6 *[fill*='#'],
+.c6 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
 }
 
 .c9 {
@@ -1421,14 +1421,14 @@ exports[`Video Play and Pause event handlers 1`] = `
 
 exports[`Video Play and Pause event handlers 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 jOTXqz"
+  class="StyledGrommet-sc-19lkkz7-0 drDzQW"
 >
   <div
-    class="StyledVideo__StyledVideoContainer-sc-w4v8h9-1 jyaBGg"
+    class="StyledVideo__StyledVideoContainer-sc-w4v8h9-1 kworUp"
     tabindex="-1"
   >
     <video
-      class="StyledVideo-sc-w4v8h9-0 eFilgT"
+      class="StyledVideo-sc-w4v8h9-0 fIVpNy"
     >
       <source
         src="small.mp4"
@@ -1437,13 +1437,13 @@ exports[`Video Play and Pause event handlers 2`] = `
       <track />
     </video>
     <div
-      class="StyledVideo__StyledVideoControls-sc-w4v8h9-2 dZcOFw"
+      class="StyledVideo__StyledVideoControls-sc-w4v8h9-2 emYslh"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 kIXzQD"
+        class="StyledBox-sc-13pk1d4-0 glShUm"
       >
         <button
-          class="StyledButton-sc-323bzc-0 dIMIQU"
+          class="StyledButton-sc-323bzc-0 jiafRl"
           type="button"
         >
           .c0 {
@@ -1500,20 +1500,20 @@ exports[`Video Play and Pause event handlers 2`] = `
           </svg>
         </button>
         <div
-          class="StyledBox-sc-13pk1d4-0 fdpmnO"
+          class="StyledBox-sc-13pk1d4-0 kMnDMf"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 dVHrAe"
+            class="StyledBox-sc-13pk1d4-0 gBdwrj"
           >
             <div
-              class="StyledStack-sc-ajspsk-0 zhPti"
+              class="StyledStack-sc-ajspsk-0 gdCQIn"
             >
               <div
-                class="StyledStack__StyledStackLayer-sc-ajspsk-1 hSRSmj"
+                class="StyledStack__StyledStackLayer-sc-ajspsk-1 dYkYJC"
               >
                 <svg
                   aria-label="video progress"
-                  class="StyledMeter-sc-nsxarx-0 fKZMFB"
+                  class="StyledMeter-sc-nsxarx-0 Mlwag"
                   height="12"
                   preserveAspectRatio="none"
                   viewBox="0 0 288 12"
@@ -1529,11 +1529,11 @@ exports[`Video Play and Pause event handlers 2`] = `
                 </svg>
               </div>
               <div
-                class="StyledStack__StyledStackLayer-sc-ajspsk-1 jySOgU"
+                class="StyledStack__StyledStackLayer-sc-ajspsk-1 iUJyDd"
               >
                 <div
                   aria-label="scrubber"
-                  class="StyledVideo__StyledVideoScrubber-sc-w4v8h9-3 IaLVb"
+                  class="StyledVideo__StyledVideoScrubber-sc-w4v8h9-3 iUdnjy"
                   role="button"
                   tabindex="0"
                 />
@@ -1541,10 +1541,10 @@ exports[`Video Play and Pause event handlers 2`] = `
             </div>
           </div>
           <div
-            class="StyledBox-sc-13pk1d4-0 cppXrG"
+            class="StyledBox-sc-13pk1d4-0 hrUMFz"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 fwJgDB"
+              class="StyledText-sc-1sadyjn-0 bscUMM"
             >
               NaN:NaN
             </span>
@@ -1554,18 +1554,18 @@ exports[`Video Play and Pause event handlers 2`] = `
           aria-expanded="false"
           aria-haspopup="menu"
           aria-label="open menu"
-          class="StyledButton-sc-323bzc-0 heurIO"
+          class="StyledButton-sc-323bzc-0 cWIZhL"
           type="button"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 eJSEDw"
+            class="StyledBox-sc-13pk1d4-0 fVBXvN"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 dAFYwl"
+              class="StyledText-sc-1sadyjn-0 fjinKI"
             />
             <svg
               aria-label="Actions"
-              class="StyledIcon-sc-ofa7kd-0 bhsCTv"
+              class="StyledIcon-sc-ofa7kd-0 oZdTK"
               viewBox="0 0 24 24"
             >
               <path
@@ -1584,38 +1584,6 @@ exports[`Video Play and Pause event handlers 2`] = `
 `;
 
 exports[`Video autoPlay renders 1`] = `
-.c6 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #f8f8f8;
-  stroke: #f8f8f8;
-}
-
-.c6 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c6 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c6 *[stroke*='#'],
-.c6 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c6 *[fill-rule],
-.c6 *[FILL-RULE],
-.c6 *[fill*='#'],
-.c6 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
-}
-
 .c4 {
   display: flex;
   box-sizing: border-box;
@@ -1671,6 +1639,38 @@ exports[`Video autoPlay renders 1`] = `
   flex-direction: row;
   justify-content: flex-start;
   padding: 12px;
+}
+
+.c6 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #f8f8f8;
+  stroke: #f8f8f8;
+}
+
+.c6 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c6 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c6 *[stroke*='#'],
+.c6 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c6 *[fill-rule],
+.c6 *[FILL-RULE],
+.c6 *[fill*='#'],
+.c6 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
 }
 
 .c9 {
@@ -2054,38 +2054,6 @@ exports[`Video autoPlay renders 1`] = `
 `;
 
 exports[`Video controls below renders 1`] = `
-.c6 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #666666;
-  stroke: #666666;
-}
-
-.c6 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c6 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c6 *[stroke*='#'],
-.c6 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c6 *[fill-rule],
-.c6 *[FILL-RULE],
-.c6 *[fill*='#'],
-.c6 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
-}
-
 .c4 {
   display: flex;
   box-sizing: border-box;
@@ -2139,6 +2107,38 @@ exports[`Video controls below renders 1`] = `
   flex-direction: row;
   justify-content: flex-start;
   padding: 12px;
+}
+
+.c6 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #666666;
+  stroke: #666666;
+}
+
+.c6 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c6 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c6 *[stroke*='#'],
+.c6 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c6 *[fill-rule],
+.c6 *[FILL-RULE],
+.c6 *[fill*='#'],
+.c6 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
 }
 
 .c9 {
@@ -2517,38 +2517,6 @@ exports[`Video controls below renders 1`] = `
 `;
 
 exports[`Video controls over renders 1`] = `
-.c6 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #f8f8f8;
-  stroke: #f8f8f8;
-}
-
-.c6 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c6 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c6 *[stroke*='#'],
-.c6 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c6 *[fill-rule],
-.c6 *[FILL-RULE],
-.c6 *[fill*='#'],
-.c6 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
-}
-
 .c4 {
   display: flex;
   box-sizing: border-box;
@@ -2604,6 +2572,38 @@ exports[`Video controls over renders 1`] = `
   flex-direction: row;
   justify-content: flex-start;
   padding: 12px;
+}
+
+.c6 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #f8f8f8;
+  stroke: #f8f8f8;
+}
+
+.c6 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c6 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c6 *[stroke*='#'],
+.c6 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c6 *[fill-rule],
+.c6 *[FILL-RULE],
+.c6 *[fill*='#'],
+.c6 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
 }
 
 .c9 {
@@ -2986,38 +2986,6 @@ exports[`Video controls over renders 1`] = `
 `;
 
 exports[`Video duration event handler 1`] = `
-.c6 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #f8f8f8;
-  stroke: #f8f8f8;
-}
-
-.c6 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c6 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c6 *[stroke*='#'],
-.c6 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c6 *[fill-rule],
-.c6 *[FILL-RULE],
-.c6 *[fill*='#'],
-.c6 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
-}
-
 .c4 {
   display: flex;
   box-sizing: border-box;
@@ -3073,6 +3041,38 @@ exports[`Video duration event handler 1`] = `
   flex-direction: row;
   justify-content: flex-start;
   padding: 12px;
+}
+
+.c6 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #f8f8f8;
+  stroke: #f8f8f8;
+}
+
+.c6 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c6 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c6 *[stroke*='#'],
+.c6 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c6 *[fill-rule],
+.c6 *[FILL-RULE],
+.c6 *[fill*='#'],
+.c6 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
 }
 
 .c9 {
@@ -3455,38 +3455,6 @@ exports[`Video duration event handler 1`] = `
 `;
 
 exports[`Video fit  cover renders 1`] = `
-.c6 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #f8f8f8;
-  stroke: #f8f8f8;
-}
-
-.c6 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c6 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c6 *[stroke*='#'],
-.c6 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c6 *[fill-rule],
-.c6 *[FILL-RULE],
-.c6 *[fill*='#'],
-.c6 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
-}
-
 .c4 {
   display: flex;
   box-sizing: border-box;
@@ -3542,6 +3510,38 @@ exports[`Video fit  cover renders 1`] = `
   flex-direction: row;
   justify-content: flex-start;
   padding: 12px;
+}
+
+.c6 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #f8f8f8;
+  stroke: #f8f8f8;
+}
+
+.c6 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c6 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c6 *[stroke*='#'],
+.c6 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c6 *[fill-rule],
+.c6 *[FILL-RULE],
+.c6 *[fill*='#'],
+.c6 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
 }
 
 .c9 {
@@ -3927,38 +3927,6 @@ exports[`Video fit  cover renders 1`] = `
 `;
 
 exports[`Video fit contain renders 1`] = `
-.c6 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #f8f8f8;
-  stroke: #f8f8f8;
-}
-
-.c6 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c6 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c6 *[stroke*='#'],
-.c6 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c6 *[fill-rule],
-.c6 *[FILL-RULE],
-.c6 *[fill*='#'],
-.c6 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
-}
-
 .c4 {
   display: flex;
   box-sizing: border-box;
@@ -4014,6 +3982,38 @@ exports[`Video fit contain renders 1`] = `
   flex-direction: row;
   justify-content: flex-start;
   padding: 12px;
+}
+
+.c6 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #f8f8f8;
+  stroke: #f8f8f8;
+}
+
+.c6 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c6 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c6 *[stroke*='#'],
+.c6 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c6 *[fill-rule],
+.c6 *[FILL-RULE],
+.c6 *[fill*='#'],
+.c6 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
 }
 
 .c9 {
@@ -4399,38 +4399,6 @@ exports[`Video fit contain renders 1`] = `
 `;
 
 exports[`Video loop renders 1`] = `
-.c6 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #f8f8f8;
-  stroke: #f8f8f8;
-}
-
-.c6 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c6 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c6 *[stroke*='#'],
-.c6 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c6 *[fill-rule],
-.c6 *[FILL-RULE],
-.c6 *[fill*='#'],
-.c6 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
-}
-
 .c4 {
   display: flex;
   box-sizing: border-box;
@@ -4486,6 +4454,38 @@ exports[`Video loop renders 1`] = `
   flex-direction: row;
   justify-content: flex-start;
   padding: 12px;
+}
+
+.c6 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #f8f8f8;
+  stroke: #f8f8f8;
+}
+
+.c6 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c6 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c6 *[stroke*='#'],
+.c6 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c6 *[fill-rule],
+.c6 *[FILL-RULE],
+.c6 *[fill*='#'],
+.c6 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
 }
 
 .c9 {
@@ -4869,38 +4869,6 @@ exports[`Video loop renders 1`] = `
 `;
 
 exports[`Video mouse events handlers of controls 1`] = `
-.c6 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #f8f8f8;
-  stroke: #f8f8f8;
-}
-
-.c6 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c6 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c6 *[stroke*='#'],
-.c6 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c6 *[fill-rule],
-.c6 *[FILL-RULE],
-.c6 *[fill*='#'],
-.c6 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
-}
-
 .c4 {
   display: flex;
   box-sizing: border-box;
@@ -4956,6 +4924,38 @@ exports[`Video mouse events handlers of controls 1`] = `
   flex-direction: row;
   justify-content: flex-start;
   padding: 12px;
+}
+
+.c6 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #f8f8f8;
+  stroke: #f8f8f8;
+}
+
+.c6 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c6 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c6 *[stroke*='#'],
+.c6 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c6 *[fill-rule],
+.c6 *[FILL-RULE],
+.c6 *[fill*='#'],
+.c6 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
 }
 
 .c9 {
@@ -5339,14 +5339,14 @@ exports[`Video mouse events handlers of controls 1`] = `
 
 exports[`Video mouse events handlers of controls 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 jOTXqz"
+  class="StyledGrommet-sc-19lkkz7-0 drDzQW"
 >
   <div
-    class="StyledVideo__StyledVideoContainer-sc-w4v8h9-1 jyaBGg"
+    class="StyledVideo__StyledVideoContainer-sc-w4v8h9-1 kworUp"
     tabindex="-1"
   >
     <video
-      class="StyledVideo-sc-w4v8h9-0 eFilgT"
+      class="StyledVideo-sc-w4v8h9-0 fIVpNy"
     >
       <source
         src="small.mp4"
@@ -5355,18 +5355,18 @@ exports[`Video mouse events handlers of controls 2`] = `
       <track />
     </video>
     <div
-      class="StyledVideo__StyledVideoControls-sc-w4v8h9-2 laZUEA"
+      class="StyledVideo__StyledVideoControls-sc-w4v8h9-2 goBvJh"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 kIXzQD"
+        class="StyledBox-sc-13pk1d4-0 glShUm"
       >
         <button
-          class="StyledButton-sc-323bzc-0 dIMIQU"
+          class="StyledButton-sc-323bzc-0 jiafRl"
           type="button"
         >
           <svg
             aria-label="play"
-            class="StyledIcon-sc-ofa7kd-0 bhsCTv"
+            class="StyledIcon-sc-ofa7kd-0 oZdTK"
             viewBox="0 0 24 24"
           >
             <path
@@ -5378,20 +5378,20 @@ exports[`Video mouse events handlers of controls 2`] = `
           </svg>
         </button>
         <div
-          class="StyledBox-sc-13pk1d4-0 fdpmnO"
+          class="StyledBox-sc-13pk1d4-0 kMnDMf"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 dVHrAe"
+            class="StyledBox-sc-13pk1d4-0 gBdwrj"
           >
             <div
-              class="StyledStack-sc-ajspsk-0 zhPti"
+              class="StyledStack-sc-ajspsk-0 gdCQIn"
             >
               <div
-                class="StyledStack__StyledStackLayer-sc-ajspsk-1 hSRSmj"
+                class="StyledStack__StyledStackLayer-sc-ajspsk-1 dYkYJC"
               >
                 <svg
                   aria-label="video progress"
-                  class="StyledMeter-sc-nsxarx-0 fKZMFB"
+                  class="StyledMeter-sc-nsxarx-0 Mlwag"
                   height="12"
                   preserveAspectRatio="none"
                   viewBox="0 0 288 12"
@@ -5407,11 +5407,11 @@ exports[`Video mouse events handlers of controls 2`] = `
                 </svg>
               </div>
               <div
-                class="StyledStack__StyledStackLayer-sc-ajspsk-1 jySOgU"
+                class="StyledStack__StyledStackLayer-sc-ajspsk-1 iUJyDd"
               >
                 <div
                   aria-label="scrubber"
-                  class="StyledVideo__StyledVideoScrubber-sc-w4v8h9-3 IaLVb"
+                  class="StyledVideo__StyledVideoScrubber-sc-w4v8h9-3 iUdnjy"
                   role="button"
                   tabindex="0"
                 />
@@ -5419,10 +5419,10 @@ exports[`Video mouse events handlers of controls 2`] = `
             </div>
           </div>
           <div
-            class="StyledBox-sc-13pk1d4-0 cppXrG"
+            class="StyledBox-sc-13pk1d4-0 hrUMFz"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 fwJgDB"
+              class="StyledText-sc-1sadyjn-0 bscUMM"
             >
               NaN:NaN
             </span>
@@ -5432,18 +5432,18 @@ exports[`Video mouse events handlers of controls 2`] = `
           aria-expanded="false"
           aria-haspopup="menu"
           aria-label="open menu"
-          class="StyledButton-sc-323bzc-0 heurIO"
+          class="StyledButton-sc-323bzc-0 cWIZhL"
           type="button"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 eJSEDw"
+            class="StyledBox-sc-13pk1d4-0 fVBXvN"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 dAFYwl"
+              class="StyledText-sc-1sadyjn-0 fjinKI"
             />
             <svg
               aria-label="Actions"
-              class="StyledIcon-sc-ofa7kd-0 bhsCTv"
+              class="StyledIcon-sc-ofa7kd-0 oZdTK"
               viewBox="0 0 24 24"
             >
               <path
@@ -5463,14 +5463,14 @@ exports[`Video mouse events handlers of controls 2`] = `
 
 exports[`Video mouse events handlers of controls 3`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 jOTXqz"
+  class="StyledGrommet-sc-19lkkz7-0 drDzQW"
 >
   <div
-    class="StyledVideo__StyledVideoContainer-sc-w4v8h9-1 jyaBGg"
+    class="StyledVideo__StyledVideoContainer-sc-w4v8h9-1 kworUp"
     tabindex="-1"
   >
     <video
-      class="StyledVideo-sc-w4v8h9-0 eFilgT"
+      class="StyledVideo-sc-w4v8h9-0 fIVpNy"
     >
       <source
         src="small.mp4"
@@ -5479,18 +5479,18 @@ exports[`Video mouse events handlers of controls 3`] = `
       <track />
     </video>
     <div
-      class="StyledVideo__StyledVideoControls-sc-w4v8h9-2 laZUEA"
+      class="StyledVideo__StyledVideoControls-sc-w4v8h9-2 goBvJh"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 kIXzQD"
+        class="StyledBox-sc-13pk1d4-0 glShUm"
       >
         <button
-          class="StyledButton-sc-323bzc-0 dIMIQU"
+          class="StyledButton-sc-323bzc-0 jiafRl"
           type="button"
         >
           <svg
             aria-label="play"
-            class="StyledIcon-sc-ofa7kd-0 bhsCTv"
+            class="StyledIcon-sc-ofa7kd-0 oZdTK"
             viewBox="0 0 24 24"
           >
             <path
@@ -5502,20 +5502,20 @@ exports[`Video mouse events handlers of controls 3`] = `
           </svg>
         </button>
         <div
-          class="StyledBox-sc-13pk1d4-0 fdpmnO"
+          class="StyledBox-sc-13pk1d4-0 kMnDMf"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 dVHrAe"
+            class="StyledBox-sc-13pk1d4-0 gBdwrj"
           >
             <div
-              class="StyledStack-sc-ajspsk-0 zhPti"
+              class="StyledStack-sc-ajspsk-0 gdCQIn"
             >
               <div
-                class="StyledStack__StyledStackLayer-sc-ajspsk-1 hSRSmj"
+                class="StyledStack__StyledStackLayer-sc-ajspsk-1 dYkYJC"
               >
                 <svg
                   aria-label="video progress"
-                  class="StyledMeter-sc-nsxarx-0 fKZMFB"
+                  class="StyledMeter-sc-nsxarx-0 Mlwag"
                   height="12"
                   preserveAspectRatio="none"
                   viewBox="0 0 288 12"
@@ -5531,11 +5531,11 @@ exports[`Video mouse events handlers of controls 3`] = `
                 </svg>
               </div>
               <div
-                class="StyledStack__StyledStackLayer-sc-ajspsk-1 jySOgU"
+                class="StyledStack__StyledStackLayer-sc-ajspsk-1 iUJyDd"
               >
                 <div
                   aria-label="scrubber"
-                  class="StyledVideo__StyledVideoScrubber-sc-w4v8h9-3 IaLVb"
+                  class="StyledVideo__StyledVideoScrubber-sc-w4v8h9-3 iUdnjy"
                   role="button"
                   tabindex="0"
                 />
@@ -5543,10 +5543,10 @@ exports[`Video mouse events handlers of controls 3`] = `
             </div>
           </div>
           <div
-            class="StyledBox-sc-13pk1d4-0 cppXrG"
+            class="StyledBox-sc-13pk1d4-0 hrUMFz"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 fwJgDB"
+              class="StyledText-sc-1sadyjn-0 bscUMM"
             >
               NaN:NaN
             </span>
@@ -5556,18 +5556,18 @@ exports[`Video mouse events handlers of controls 3`] = `
           aria-expanded="false"
           aria-haspopup="menu"
           aria-label="open menu"
-          class="StyledButton-sc-323bzc-0 heurIO"
+          class="StyledButton-sc-323bzc-0 cWIZhL"
           type="button"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 eJSEDw"
+            class="StyledBox-sc-13pk1d4-0 fVBXvN"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 dAFYwl"
+              class="StyledText-sc-1sadyjn-0 fjinKI"
             />
             <svg
               aria-label="Actions"
-              class="StyledIcon-sc-ofa7kd-0 bhsCTv"
+              class="StyledIcon-sc-ofa7kd-0 oZdTK"
               viewBox="0 0 24 24"
             >
               <path
@@ -5586,38 +5586,6 @@ exports[`Video mouse events handlers of controls 3`] = `
 `;
 
 exports[`Video mute renders 1`] = `
-.c6 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #f8f8f8;
-  stroke: #f8f8f8;
-}
-
-.c6 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c6 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c6 *[stroke*='#'],
-.c6 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c6 *[fill-rule],
-.c6 *[FILL-RULE],
-.c6 *[fill*='#'],
-.c6 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
-}
-
 .c4 {
   display: flex;
   box-sizing: border-box;
@@ -5673,6 +5641,38 @@ exports[`Video mute renders 1`] = `
   flex-direction: row;
   justify-content: flex-start;
   padding: 12px;
+}
+
+.c6 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #f8f8f8;
+  stroke: #f8f8f8;
+}
+
+.c6 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c6 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c6 *[stroke*='#'],
+.c6 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c6 *[fill-rule],
+.c6 *[FILL-RULE],
+.c6 *[fill*='#'],
+.c6 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
 }
 
 .c9 {
@@ -6055,38 +6055,6 @@ exports[`Video mute renders 1`] = `
 `;
 
 exports[`Video renders 1`] = `
-.c6 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #f8f8f8;
-  stroke: #f8f8f8;
-}
-
-.c6 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c6 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c6 *[stroke*='#'],
-.c6 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c6 *[fill-rule],
-.c6 *[FILL-RULE],
-.c6 *[fill*='#'],
-.c6 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
-}
-
 .c4 {
   display: flex;
   box-sizing: border-box;
@@ -6142,6 +6110,38 @@ exports[`Video renders 1`] = `
   flex-direction: row;
   justify-content: flex-start;
   padding: 12px;
+}
+
+.c6 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #f8f8f8;
+  stroke: #f8f8f8;
+}
+
+.c6 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c6 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c6 *[stroke*='#'],
+.c6 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c6 *[fill-rule],
+.c6 *[FILL-RULE],
+.c6 *[fill*='#'],
+.c6 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
 }
 
 .c9 {
@@ -6524,38 +6524,6 @@ exports[`Video renders 1`] = `
 `;
 
 exports[`Video renders with theme 1`] = `
-.c6 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #f8f8f8;
-  stroke: #f8f8f8;
-}
-
-.c6 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c6 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c6 *[stroke*='#'],
-.c6 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c6 *[fill-rule],
-.c6 *[FILL-RULE],
-.c6 *[fill*='#'],
-.c6 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
-}
-
 .c4 {
   display: flex;
   box-sizing: border-box;
@@ -6611,6 +6579,38 @@ exports[`Video renders with theme 1`] = `
   flex-direction: row;
   justify-content: flex-start;
   padding: 12px;
+}
+
+.c6 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #f8f8f8;
+  stroke: #f8f8f8;
+}
+
+.c6 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c6 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c6 *[stroke*='#'],
+.c6 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c6 *[fill-rule],
+.c6 *[FILL-RULE],
+.c6 *[fill*='#'],
+.c6 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
 }
 
 .c9 {
@@ -6993,38 +6993,6 @@ exports[`Video renders with theme 1`] = `
 `;
 
 exports[`Video scrubber 1`] = `
-.c6 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #f8f8f8;
-  stroke: #f8f8f8;
-}
-
-.c6 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c6 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c6 *[stroke*='#'],
-.c6 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c6 *[fill-rule],
-.c6 *[FILL-RULE],
-.c6 *[fill*='#'],
-.c6 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
-}
-
 .c4 {
   display: flex;
   box-sizing: border-box;
@@ -7080,6 +7048,38 @@ exports[`Video scrubber 1`] = `
   flex-direction: row;
   justify-content: flex-start;
   padding: 12px;
+}
+
+.c6 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #f8f8f8;
+  stroke: #f8f8f8;
+}
+
+.c6 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c6 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c6 *[stroke*='#'],
+.c6 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c6 *[fill-rule],
+.c6 *[FILL-RULE],
+.c6 *[fill*='#'],
+.c6 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
 }
 
 .c9 {
@@ -7463,14 +7463,14 @@ exports[`Video scrubber 1`] = `
 
 exports[`Video scrubber 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 jOTXqz"
+  class="StyledGrommet-sc-19lkkz7-0 drDzQW"
 >
   <div
-    class="StyledVideo__StyledVideoContainer-sc-w4v8h9-1 jyaBGg"
+    class="StyledVideo__StyledVideoContainer-sc-w4v8h9-1 kworUp"
     tabindex="-1"
   >
     <video
-      class="StyledVideo-sc-w4v8h9-0 eFilgT"
+      class="StyledVideo-sc-w4v8h9-0 fIVpNy"
     >
       <source
         src="small.mp4"
@@ -7479,18 +7479,18 @@ exports[`Video scrubber 2`] = `
       <track />
     </video>
     <div
-      class="StyledVideo__StyledVideoControls-sc-w4v8h9-2 laZUEA"
+      class="StyledVideo__StyledVideoControls-sc-w4v8h9-2 goBvJh"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 kIXzQD"
+        class="StyledBox-sc-13pk1d4-0 glShUm"
       >
         <button
-          class="StyledButton-sc-323bzc-0 dIMIQU"
+          class="StyledButton-sc-323bzc-0 jiafRl"
           type="button"
         >
           <svg
             aria-label="play"
-            class="StyledIcon-sc-ofa7kd-0 bhsCTv"
+            class="StyledIcon-sc-ofa7kd-0 oZdTK"
             viewBox="0 0 24 24"
           >
             <path
@@ -7502,20 +7502,20 @@ exports[`Video scrubber 2`] = `
           </svg>
         </button>
         <div
-          class="StyledBox-sc-13pk1d4-0 fdpmnO"
+          class="StyledBox-sc-13pk1d4-0 kMnDMf"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 dVHrAe"
+            class="StyledBox-sc-13pk1d4-0 gBdwrj"
           >
             <div
-              class="StyledStack-sc-ajspsk-0 zhPti"
+              class="StyledStack-sc-ajspsk-0 gdCQIn"
             >
               <div
-                class="StyledStack__StyledStackLayer-sc-ajspsk-1 hSRSmj"
+                class="StyledStack__StyledStackLayer-sc-ajspsk-1 dYkYJC"
               >
                 <svg
                   aria-label="video progress"
-                  class="StyledMeter-sc-nsxarx-0 fKZMFB"
+                  class="StyledMeter-sc-nsxarx-0 Mlwag"
                   height="12"
                   preserveAspectRatio="none"
                   viewBox="0 0 288 12"
@@ -7531,11 +7531,11 @@ exports[`Video scrubber 2`] = `
                 </svg>
               </div>
               <div
-                class="StyledStack__StyledStackLayer-sc-ajspsk-1 jySOgU"
+                class="StyledStack__StyledStackLayer-sc-ajspsk-1 iUJyDd"
               >
                 <div
                   aria-label="scrubber"
-                  class="StyledVideo__StyledVideoScrubber-sc-w4v8h9-3 IaLVb"
+                  class="StyledVideo__StyledVideoScrubber-sc-w4v8h9-3 iUdnjy"
                   role="button"
                   tabindex="0"
                 />
@@ -7543,10 +7543,10 @@ exports[`Video scrubber 2`] = `
             </div>
           </div>
           <div
-            class="StyledBox-sc-13pk1d4-0 cppXrG"
+            class="StyledBox-sc-13pk1d4-0 hrUMFz"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 fwJgDB"
+              class="StyledText-sc-1sadyjn-0 bscUMM"
             >
               NaN:NaN
             </span>
@@ -7556,18 +7556,18 @@ exports[`Video scrubber 2`] = `
           aria-expanded="false"
           aria-haspopup="menu"
           aria-label="open menu"
-          class="StyledButton-sc-323bzc-0 heurIO"
+          class="StyledButton-sc-323bzc-0 cWIZhL"
           type="button"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 eJSEDw"
+            class="StyledBox-sc-13pk1d4-0 fVBXvN"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 dAFYwl"
+              class="StyledText-sc-1sadyjn-0 fjinKI"
             />
             <svg
               aria-label="Actions"
-              class="StyledIcon-sc-ofa7kd-0 bhsCTv"
+              class="StyledIcon-sc-ofa7kd-0 oZdTK"
               viewBox="0 0 24 24"
             >
               <path
@@ -7586,38 +7586,6 @@ exports[`Video scrubber 2`] = `
 `;
 
 exports[`Video should render outside grommet wrapper 1`] = `
-.c5 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #f8f8f8;
-  stroke: #f8f8f8;
-}
-
-.c5 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c5 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c5 *[stroke*='#'],
-.c5 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c5 *[fill-rule],
-.c5 *[FILL-RULE],
-.c5 *[fill*='#'],
-.c5 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
-}
-
 .c3 {
   display: flex;
   box-sizing: border-box;
@@ -7673,6 +7641,38 @@ exports[`Video should render outside grommet wrapper 1`] = `
   flex-direction: row;
   justify-content: flex-start;
   padding: 12px;
+}
+
+.c5 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #f8f8f8;
+  stroke: #f8f8f8;
+}
+
+.c5 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c5 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c5 *[stroke*='#'],
+.c5 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c5 *[fill-rule],
+.c5 *[FILL-RULE],
+.c5 *[fill*='#'],
+.c5 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
 }
 
 .c8 {
@@ -8035,38 +8035,6 @@ exports[`Video should render outside grommet wrapper 1`] = `
 `;
 
 exports[`Video timeUpdate event handler 1`] = `
-.c6 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #f8f8f8;
-  stroke: #f8f8f8;
-}
-
-.c6 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c6 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c6 *[stroke*='#'],
-.c6 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c6 *[fill-rule],
-.c6 *[FILL-RULE],
-.c6 *[fill*='#'],
-.c6 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
-}
-
 .c4 {
   display: flex;
   box-sizing: border-box;
@@ -8122,6 +8090,38 @@ exports[`Video timeUpdate event handler 1`] = `
   flex-direction: row;
   justify-content: flex-start;
   padding: 12px;
+}
+
+.c6 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #f8f8f8;
+  stroke: #f8f8f8;
+}
+
+.c6 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c6 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c6 *[stroke*='#'],
+.c6 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c6 *[fill-rule],
+.c6 *[FILL-RULE],
+.c6 *[fill*='#'],
+.c6 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
 }
 
 .c9 {

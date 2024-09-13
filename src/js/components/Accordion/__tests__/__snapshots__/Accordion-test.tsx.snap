@@ -2,39 +2,7 @@
 
 exports[`Accordion AccordionPanel 1`] = `
 <DocumentFragment>
-  .c8 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
-}
-
-.c8 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c8 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c8 *[stroke*='#'],
-.c8 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c8 *[fill-rule],
-.c8 *[FILL-RULE],
-.c8 *[fill*='#'],
-.c8 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
-}
-
-.c1 {
+  .c1 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -95,6 +63,38 @@ exports[`Accordion AccordionPanel 1`] = `
   min-width: 0;
   min-height: 0;
   flex-direction: column;
+}
+
+.c8 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #7D4CDB;
+  stroke: #7D4CDB;
+}
+
+.c8 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c8 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c8 *[stroke*='#'],
+.c8 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c8 *[fill-rule],
+.c8 *[FILL-RULE],
+.c8 *[fill*='#'],
+.c8 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
 }
 
 .c3 {
@@ -218,6 +218,7 @@ exports[`Accordion AccordionPanel 1`] = `
         <button
           aria-expanded="false"
           class="c3"
+          id=":r1:"
           type="button"
         >
           <div
@@ -251,6 +252,7 @@ exports[`Accordion AccordionPanel 1`] = `
           </div>
         </button>
         <div
+          aria-labelledby=":r1:"
           class="c9"
           role="region"
         >
@@ -266,6 +268,7 @@ exports[`Accordion AccordionPanel 1`] = `
         <button
           aria-expanded="false"
           class="c3"
+          id=":r2:"
           type="button"
         >
           <div
@@ -299,6 +302,7 @@ exports[`Accordion AccordionPanel 1`] = `
           </div>
         </button>
         <div
+          aria-labelledby=":r2:"
           class="c9"
           role="region"
         >
@@ -315,39 +319,7 @@ exports[`Accordion AccordionPanel 1`] = `
 
 exports[`Accordion accordion border 1`] = `
 <DocumentFragment>
-  .c8 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
-}
-
-.c8 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c8 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c8 *[stroke*='#'],
-.c8 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c8 *[fill-rule],
-.c8 *[FILL-RULE],
-.c8 *[fill*='#'],
-.c8 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
-}
-
-.c1 {
+  .c1 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -401,6 +373,38 @@ exports[`Accordion accordion border 1`] = `
   min-width: fit-content;
   padding-left: 12px;
   padding-right: 12px;
+}
+
+.c8 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #7D4CDB;
+  stroke: #7D4CDB;
+}
+
+.c8 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c8 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c8 *[stroke*='#'],
+.c8 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c8 *[fill-rule],
+.c8 *[FILL-RULE],
+.c8 *[fill*='#'],
+.c8 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
 }
 
 .c3 {
@@ -531,6 +535,7 @@ exports[`Accordion accordion border 1`] = `
         <button
           aria-expanded="false"
           class="c3"
+          id=":re:"
           type="button"
         >
           <div
@@ -564,6 +569,7 @@ exports[`Accordion accordion border 1`] = `
           </div>
         </button>
         <div
+          aria-labelledby=":re:"
           class="c1"
           role="region"
         >
@@ -580,39 +586,7 @@ exports[`Accordion accordion border 1`] = `
 
 exports[`Accordion backward compatibility of hover.color = undefined 1`] = `
 <DocumentFragment>
-  .c8 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
-}
-
-.c8 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c8 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c8 *[stroke*='#'],
-.c8 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c8 *[fill-rule],
-.c8 *[FILL-RULE],
-.c8 *[fill*='#'],
-.c8 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
-}
-
-.c1 {
+  .c1 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -673,6 +647,38 @@ exports[`Accordion backward compatibility of hover.color = undefined 1`] = `
   min-width: 0;
   min-height: 0;
   flex-direction: column;
+}
+
+.c8 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #7D4CDB;
+  stroke: #7D4CDB;
+}
+
+.c8 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c8 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c8 *[stroke*='#'],
+.c8 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c8 *[fill-rule],
+.c8 *[FILL-RULE],
+.c8 *[fill*='#'],
+.c8 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
 }
 
 .c3 {
@@ -796,6 +802,7 @@ exports[`Accordion backward compatibility of hover.color = undefined 1`] = `
         <button
           aria-expanded="false"
           class="c3"
+          id=":ri:"
           style="z-index: 1;"
           type="button"
         >
@@ -830,6 +837,7 @@ exports[`Accordion backward compatibility of hover.color = undefined 1`] = `
           </div>
         </button>
         <div
+          aria-labelledby=":ri:"
           class="c9"
           role="region"
         >
@@ -846,39 +854,7 @@ exports[`Accordion backward compatibility of hover.color = undefined 1`] = `
 
 exports[`Accordion blur styles 1`] = `
 <DocumentFragment>
-  .c8 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
-}
-
-.c8 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c8 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c8 *[stroke*='#'],
-.c8 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c8 *[fill-rule],
-.c8 *[FILL-RULE],
-.c8 *[fill*='#'],
-.c8 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
-}
-
-.c1 {
+  .c1 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -939,6 +915,38 @@ exports[`Accordion blur styles 1`] = `
   min-width: 0;
   min-height: 0;
   flex-direction: column;
+}
+
+.c8 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #7D4CDB;
+  stroke: #7D4CDB;
+}
+
+.c8 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c8 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c8 *[stroke*='#'],
+.c8 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c8 *[fill-rule],
+.c8 *[FILL-RULE],
+.c8 *[fill*='#'],
+.c8 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
 }
 
 .c3 {
@@ -1067,6 +1075,7 @@ exports[`Accordion blur styles 1`] = `
         <button
           aria-expanded="false"
           class="c3"
+          id=":ro:"
           style="z-index: 1;"
           type="button"
         >
@@ -1101,6 +1110,7 @@ exports[`Accordion blur styles 1`] = `
           </div>
         </button>
         <div
+          aria-labelledby=":ro:"
           class="c9"
           role="region"
         >
@@ -1117,39 +1127,7 @@ exports[`Accordion blur styles 1`] = `
 
 exports[`Accordion change active index 1`] = `
 <DocumentFragment>
-  .c8 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
-}
-
-.c8 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c8 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c8 *[stroke*='#'],
-.c8 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c8 *[fill-rule],
-.c8 *[FILL-RULE],
-.c8 *[fill*='#'],
-.c8 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
-}
-
-.c1 {
+  .c1 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -1210,6 +1188,38 @@ exports[`Accordion change active index 1`] = `
   min-width: 0;
   min-height: 0;
   flex-direction: column;
+}
+
+.c8 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #7D4CDB;
+  stroke: #7D4CDB;
+}
+
+.c8 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c8 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c8 *[stroke*='#'],
+.c8 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c8 *[fill-rule],
+.c8 *[FILL-RULE],
+.c8 *[fill*='#'],
+.c8 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
 }
 
 .c3 {
@@ -1327,6 +1337,7 @@ exports[`Accordion change active index 1`] = `
         <button
           aria-expanded="false"
           class="c3"
+          id=":rf:"
           type="button"
         >
           <div
@@ -1360,6 +1371,7 @@ exports[`Accordion change active index 1`] = `
           </div>
         </button>
         <div
+          aria-labelledby=":rf:"
           class="c9"
           role="region"
         />
@@ -1370,6 +1382,7 @@ exports[`Accordion change active index 1`] = `
         <button
           aria-expanded="true"
           class="c3"
+          id=":rg:"
           type="button"
         >
           <div
@@ -1403,6 +1416,7 @@ exports[`Accordion change active index 1`] = `
           </div>
         </button>
         <div
+          aria-labelledby=":rg:"
           class="c9"
           role="region"
         >
@@ -1416,39 +1430,7 @@ exports[`Accordion change active index 1`] = `
 
 exports[`Accordion change active index 2`] = `
 <DocumentFragment>
-  .c8 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
-}
-
-.c8 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c8 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c8 *[stroke*='#'],
-.c8 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c8 *[fill-rule],
-.c8 *[FILL-RULE],
-.c8 *[fill*='#'],
-.c8 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
-}
-
-.c1 {
+  .c1 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -1509,6 +1491,38 @@ exports[`Accordion change active index 2`] = `
   min-width: 0;
   min-height: 0;
   flex-direction: column;
+}
+
+.c8 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #7D4CDB;
+  stroke: #7D4CDB;
+}
+
+.c8 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c8 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c8 *[stroke*='#'],
+.c8 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c8 *[fill-rule],
+.c8 *[FILL-RULE],
+.c8 *[fill*='#'],
+.c8 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
 }
 
 .c10 {
@@ -1700,6 +1714,7 @@ exports[`Accordion change active index 2`] = `
         <button
           aria-expanded="false"
           class="c3"
+          id=":rf:"
           style="z-index: 1;"
           type="button"
         >
@@ -1734,6 +1749,7 @@ exports[`Accordion change active index 2`] = `
           </div>
         </button>
         <div
+          aria-labelledby=":rf:"
           class="c9"
           role="region"
         />
@@ -1744,6 +1760,7 @@ exports[`Accordion change active index 2`] = `
         <button
           aria-expanded="true"
           class="c10"
+          id=":rg:"
           type="button"
         >
           <div
@@ -1777,6 +1794,7 @@ exports[`Accordion change active index 2`] = `
           </div>
         </button>
         <div
+          aria-labelledby=":rg:"
           class="c9"
           role="region"
         >
@@ -1790,39 +1808,7 @@ exports[`Accordion change active index 2`] = `
 
 exports[`Accordion change to second Panel 1`] = `
 <DocumentFragment>
-  .c8 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
-}
-
-.c8 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c8 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c8 *[stroke*='#'],
-.c8 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c8 *[fill-rule],
-.c8 *[FILL-RULE],
-.c8 *[fill*='#'],
-.c8 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
-}
-
-.c1 {
+  .c1 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -1883,6 +1869,38 @@ exports[`Accordion change to second Panel 1`] = `
   min-width: 0;
   min-height: 0;
   flex-direction: column;
+}
+
+.c8 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #7D4CDB;
+  stroke: #7D4CDB;
+}
+
+.c8 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c8 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c8 *[stroke*='#'],
+.c8 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c8 *[fill-rule],
+.c8 *[FILL-RULE],
+.c8 *[fill*='#'],
+.c8 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
 }
 
 .c3 {
@@ -2006,6 +2024,7 @@ exports[`Accordion change to second Panel 1`] = `
         <button
           aria-expanded="false"
           class="c3"
+          id=":r7:"
           type="button"
         >
           <div
@@ -2039,6 +2058,7 @@ exports[`Accordion change to second Panel 1`] = `
           </div>
         </button>
         <div
+          aria-labelledby=":r7:"
           class="c9"
           role="region"
         >
@@ -2054,6 +2074,7 @@ exports[`Accordion change to second Panel 1`] = `
         <button
           aria-expanded="false"
           class="c3"
+          id=":r8:"
           type="button"
         >
           <div
@@ -2087,6 +2108,7 @@ exports[`Accordion change to second Panel 1`] = `
           </div>
         </button>
         <div
+          aria-labelledby=":r8:"
           class="c9"
           role="region"
         >
@@ -2103,39 +2125,7 @@ exports[`Accordion change to second Panel 1`] = `
 
 exports[`Accordion change to second Panel 2`] = `
 <DocumentFragment>
-  .c8 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
-}
-
-.c8 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c8 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c8 *[stroke*='#'],
-.c8 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c8 *[fill-rule],
-.c8 *[FILL-RULE],
-.c8 *[fill*='#'],
-.c8 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
-}
-
-.c1 {
+  .c1 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -2196,6 +2186,38 @@ exports[`Accordion change to second Panel 2`] = `
   min-width: 0;
   min-height: 0;
   flex-direction: column;
+}
+
+.c8 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #7D4CDB;
+  stroke: #7D4CDB;
+}
+
+.c8 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c8 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c8 *[stroke*='#'],
+.c8 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c8 *[fill-rule],
+.c8 *[FILL-RULE],
+.c8 *[fill*='#'],
+.c8 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
 }
 
 .c3 {
@@ -2399,6 +2421,7 @@ exports[`Accordion change to second Panel 2`] = `
         <button
           aria-expanded="false"
           class="c3"
+          id=":r7:"
           type="button"
         >
           <div
@@ -2432,6 +2455,7 @@ exports[`Accordion change to second Panel 2`] = `
           </div>
         </button>
         <div
+          aria-labelledby=":r7:"
           class="c9"
           role="region"
         >
@@ -2447,6 +2471,7 @@ exports[`Accordion change to second Panel 2`] = `
         <button
           aria-expanded="true"
           class="c11"
+          id=":r8:"
           style="z-index: 1;"
           type="button"
         >
@@ -2481,6 +2506,7 @@ exports[`Accordion change to second Panel 2`] = `
           </div>
         </button>
         <div
+          aria-labelledby=":r8:"
           class="c9"
           role="region"
           style=""
@@ -2502,39 +2528,7 @@ exports[`Accordion change to second Panel 2`] = `
 
 exports[`Accordion change to second Panel without onActive 1`] = `
 <DocumentFragment>
-  .c8 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
-}
-
-.c8 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c8 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c8 *[stroke*='#'],
-.c8 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c8 *[fill-rule],
-.c8 *[FILL-RULE],
-.c8 *[fill*='#'],
-.c8 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
-}
-
-.c1 {
+  .c1 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -2595,6 +2589,38 @@ exports[`Accordion change to second Panel without onActive 1`] = `
   min-width: 0;
   min-height: 0;
   flex-direction: column;
+}
+
+.c8 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #7D4CDB;
+  stroke: #7D4CDB;
+}
+
+.c8 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c8 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c8 *[stroke*='#'],
+.c8 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c8 *[fill-rule],
+.c8 *[FILL-RULE],
+.c8 *[fill*='#'],
+.c8 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
 }
 
 .c3 {
@@ -2712,6 +2738,7 @@ exports[`Accordion change to second Panel without onActive 1`] = `
         <button
           aria-expanded="false"
           class="c3"
+          id=":r9:"
           type="button"
         >
           <div
@@ -2745,6 +2772,7 @@ exports[`Accordion change to second Panel without onActive 1`] = `
           </div>
         </button>
         <div
+          aria-labelledby=":r9:"
           class="c9"
           role="region"
         />
@@ -2755,6 +2783,7 @@ exports[`Accordion change to second Panel without onActive 1`] = `
         <button
           aria-expanded="false"
           class="c3"
+          id=":ra:"
           type="button"
         >
           <div
@@ -2788,6 +2817,7 @@ exports[`Accordion change to second Panel without onActive 1`] = `
           </div>
         </button>
         <div
+          aria-labelledby=":ra:"
           class="c9"
           role="region"
         />
@@ -2799,39 +2829,7 @@ exports[`Accordion change to second Panel without onActive 1`] = `
 
 exports[`Accordion change to second Panel without onActive 2`] = `
 <DocumentFragment>
-  .c8 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
-}
-
-.c8 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c8 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c8 *[stroke*='#'],
-.c8 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c8 *[fill-rule],
-.c8 *[FILL-RULE],
-.c8 *[fill*='#'],
-.c8 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
-}
-
-.c1 {
+  .c1 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -2892,6 +2890,38 @@ exports[`Accordion change to second Panel without onActive 2`] = `
   min-width: 0;
   min-height: 0;
   flex-direction: column;
+}
+
+.c8 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #7D4CDB;
+  stroke: #7D4CDB;
+}
+
+.c8 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c8 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c8 *[stroke*='#'],
+.c8 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c8 *[fill-rule],
+.c8 *[FILL-RULE],
+.c8 *[fill*='#'],
+.c8 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
 }
 
 .c3 {
@@ -3083,6 +3113,7 @@ exports[`Accordion change to second Panel without onActive 2`] = `
         <button
           aria-expanded="false"
           class="c3"
+          id=":r9:"
           type="button"
         >
           <div
@@ -3116,6 +3147,7 @@ exports[`Accordion change to second Panel without onActive 2`] = `
           </div>
         </button>
         <div
+          aria-labelledby=":r9:"
           class="c9"
           role="region"
         />
@@ -3126,6 +3158,7 @@ exports[`Accordion change to second Panel without onActive 2`] = `
         <button
           aria-expanded="true"
           class="c10"
+          id=":ra:"
           style="z-index: 1;"
           type="button"
         >
@@ -3160,6 +3193,7 @@ exports[`Accordion change to second Panel without onActive 2`] = `
           </div>
         </button>
         <div
+          aria-labelledby=":ra:"
           class="c9"
           role="region"
         >
@@ -3287,6 +3321,7 @@ exports[`Accordion complex header 1`] = `
         <button
           aria-expanded="false"
           class="c3"
+          id=":r5:"
           type="button"
         >
           <div>
@@ -3294,6 +3329,7 @@ exports[`Accordion complex header 1`] = `
           </div>
         </button>
         <div
+          aria-labelledby=":r5:"
           class="c4"
           role="region"
         />
@@ -3304,6 +3340,7 @@ exports[`Accordion complex header 1`] = `
         <button
           aria-expanded="true"
           class="c3"
+          id=":r6:"
           type="button"
         >
           <div>
@@ -3311,6 +3348,7 @@ exports[`Accordion complex header 1`] = `
           </div>
         </button>
         <div
+          aria-labelledby=":r6:"
           class="c4"
           role="region"
         >
@@ -3324,39 +3362,7 @@ exports[`Accordion complex header 1`] = `
 
 exports[`Accordion complex title 1`] = `
 <DocumentFragment>
-  .c7 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #6FFFB0;
-  stroke: #6FFFB0;
-}
-
-.c7 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c7 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c7 *[stroke*='#'],
-.c7 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c7 *[fill-rule],
-.c7 *[FILL-RULE],
-.c7 *[fill*='#'],
-.c7 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
-}
-
-.c1 {
+  .c1 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -3417,6 +3423,38 @@ exports[`Accordion complex title 1`] = `
   min-width: 0;
   min-height: 0;
   flex-direction: column;
+}
+
+.c7 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #6FFFB0;
+  stroke: #6FFFB0;
+}
+
+.c7 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c7 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c7 *[stroke*='#'],
+.c7 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c7 *[fill-rule],
+.c7 *[FILL-RULE],
+.c7 *[fill*='#'],
+.c7 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
 }
 
 .c4 {
@@ -3520,6 +3558,7 @@ exports[`Accordion complex title 1`] = `
           <button
             aria-expanded="false"
             class="c4"
+            id=":r3:"
             type="button"
           >
             <div
@@ -3547,6 +3586,7 @@ exports[`Accordion complex title 1`] = `
             </div>
           </button>
           <div
+            aria-labelledby=":r3:"
             class="c8"
             role="region"
           >
@@ -3562,6 +3602,7 @@ exports[`Accordion complex title 1`] = `
           <button
             aria-expanded="false"
             class="c4"
+            id=":r4:"
             type="button"
           >
             <div
@@ -3589,6 +3630,7 @@ exports[`Accordion complex title 1`] = `
             </div>
           </button>
           <div
+            aria-labelledby=":r4:"
             class="c8"
             role="region"
           >
@@ -3606,39 +3648,7 @@ exports[`Accordion complex title 1`] = `
 
 exports[`Accordion custom accordion 1`] = `
 <DocumentFragment>
-  .c8 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
-}
-
-.c8 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c8 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c8 *[stroke*='#'],
-.c8 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c8 *[fill-rule],
-.c8 *[FILL-RULE],
-.c8 *[fill*='#'],
-.c8 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
-}
-
-.c1 {
+  .c1 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -3699,6 +3709,38 @@ exports[`Accordion custom accordion 1`] = `
   min-width: 0;
   min-height: 0;
   flex-direction: column;
+}
+
+.c8 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #7D4CDB;
+  stroke: #7D4CDB;
+}
+
+.c8 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c8 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c8 *[stroke*='#'],
+.c8 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c8 *[fill-rule],
+.c8 *[FILL-RULE],
+.c8 *[fill*='#'],
+.c8 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
 }
 
 .c3 {
@@ -3827,6 +3869,7 @@ exports[`Accordion custom accordion 1`] = `
         <button
           aria-expanded="false"
           class="c3"
+          id=":rd:"
           type="button"
         >
           <div
@@ -3860,6 +3903,7 @@ exports[`Accordion custom accordion 1`] = `
           </div>
         </button>
         <div
+          aria-labelledby=":rd:"
           class="c9"
           role="region"
         >
@@ -3876,39 +3920,7 @@ exports[`Accordion custom accordion 1`] = `
 
 exports[`Accordion custom accordion 2`] = `
 <DocumentFragment>
-  .c8 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
-}
-
-.c8 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c8 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c8 *[stroke*='#'],
-.c8 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c8 *[fill-rule],
-.c8 *[FILL-RULE],
-.c8 *[fill*='#'],
-.c8 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
-}
-
-.c1 {
+  .c1 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -3969,6 +3981,38 @@ exports[`Accordion custom accordion 2`] = `
   min-width: 0;
   min-height: 0;
   flex-direction: column;
+}
+
+.c8 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #7D4CDB;
+  stroke: #7D4CDB;
+}
+
+.c8 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c8 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c8 *[stroke*='#'],
+.c8 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c8 *[fill-rule],
+.c8 *[FILL-RULE],
+.c8 *[fill*='#'],
+.c8 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
 }
 
 .c3 {
@@ -4102,6 +4146,7 @@ exports[`Accordion custom accordion 2`] = `
         <button
           aria-expanded="false"
           class="c3"
+          id=":rd:"
           type="button"
         >
           <div
@@ -4135,6 +4180,7 @@ exports[`Accordion custom accordion 2`] = `
           </div>
         </button>
         <div
+          aria-labelledby=":rd:"
           class="c9"
           role="region"
         >
@@ -4151,39 +4197,7 @@ exports[`Accordion custom accordion 2`] = `
 
 exports[`Accordion focus and hover styles 1`] = `
 <DocumentFragment>
-  .c8 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
-}
-
-.c8 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c8 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c8 *[stroke*='#'],
-.c8 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c8 *[fill-rule],
-.c8 *[FILL-RULE],
-.c8 *[fill*='#'],
-.c8 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
-}
-
-.c1 {
+  .c1 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -4244,6 +4258,38 @@ exports[`Accordion focus and hover styles 1`] = `
   min-width: 0;
   min-height: 0;
   flex-direction: column;
+}
+
+.c8 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #7D4CDB;
+  stroke: #7D4CDB;
+}
+
+.c8 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c8 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c8 *[stroke*='#'],
+.c8 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c8 *[fill-rule],
+.c8 *[FILL-RULE],
+.c8 *[fill*='#'],
+.c8 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
 }
 
 .c3 {
@@ -4372,6 +4418,7 @@ exports[`Accordion focus and hover styles 1`] = `
         <button
           aria-expanded="true"
           class="c3"
+          id=":rh:"
           style="z-index: 1;"
           type="button"
         >
@@ -4406,6 +4453,7 @@ exports[`Accordion focus and hover styles 1`] = `
           </div>
         </button>
         <div
+          aria-labelledby=":rh:"
           class="c9"
           role="region"
           style=""
@@ -4427,39 +4475,7 @@ exports[`Accordion focus and hover styles 1`] = `
 
 exports[`Accordion multiple panels 1`] = `
 <DocumentFragment>
-  .c8 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
-}
-
-.c8 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c8 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c8 *[stroke*='#'],
-.c8 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c8 *[fill-rule],
-.c8 *[FILL-RULE],
-.c8 *[fill*='#'],
-.c8 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
-}
-
-.c1 {
+  .c1 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -4520,6 +4536,38 @@ exports[`Accordion multiple panels 1`] = `
   min-width: 0;
   min-height: 0;
   flex-direction: column;
+}
+
+.c8 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #7D4CDB;
+  stroke: #7D4CDB;
+}
+
+.c8 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c8 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c8 *[stroke*='#'],
+.c8 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c8 *[fill-rule],
+.c8 *[FILL-RULE],
+.c8 *[fill*='#'],
+.c8 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
 }
 
 .c3 {
@@ -4637,6 +4685,7 @@ exports[`Accordion multiple panels 1`] = `
         <button
           aria-expanded="false"
           class="c3"
+          id=":rb:"
           type="button"
         >
           <div
@@ -4670,6 +4719,7 @@ exports[`Accordion multiple panels 1`] = `
           </div>
         </button>
         <div
+          aria-labelledby=":rb:"
           class="c9"
           role="region"
         />
@@ -4680,6 +4730,7 @@ exports[`Accordion multiple panels 1`] = `
         <button
           aria-expanded="false"
           class="c3"
+          id=":rc:"
           type="button"
         >
           <div
@@ -4713,6 +4764,7 @@ exports[`Accordion multiple panels 1`] = `
           </div>
         </button>
         <div
+          aria-labelledby=":rc:"
           class="c9"
           role="region"
         />
@@ -4724,39 +4776,7 @@ exports[`Accordion multiple panels 1`] = `
 
 exports[`Accordion multiple panels 2`] = `
 <DocumentFragment>
-  .c8 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
-}
-
-.c8 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c8 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c8 *[stroke*='#'],
-.c8 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c8 *[fill-rule],
-.c8 *[FILL-RULE],
-.c8 *[fill*='#'],
-.c8 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
-}
-
-.c1 {
+  .c1 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -4817,6 +4837,38 @@ exports[`Accordion multiple panels 2`] = `
   min-width: 0;
   min-height: 0;
   flex-direction: column;
+}
+
+.c8 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #7D4CDB;
+  stroke: #7D4CDB;
+}
+
+.c8 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c8 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c8 *[stroke*='#'],
+.c8 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c8 *[fill-rule],
+.c8 *[FILL-RULE],
+.c8 *[fill*='#'],
+.c8 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
 }
 
 .c3 {
@@ -5008,6 +5060,7 @@ exports[`Accordion multiple panels 2`] = `
         <button
           aria-expanded="false"
           class="c3"
+          id=":rb:"
           type="button"
         >
           <div
@@ -5041,6 +5094,7 @@ exports[`Accordion multiple panels 2`] = `
           </div>
         </button>
         <div
+          aria-labelledby=":rb:"
           class="c9"
           role="region"
         />
@@ -5051,6 +5105,7 @@ exports[`Accordion multiple panels 2`] = `
         <button
           aria-expanded="true"
           class="c10"
+          id=":rc:"
           style="z-index: 1;"
           type="button"
         >
@@ -5085,6 +5140,7 @@ exports[`Accordion multiple panels 2`] = `
           </div>
         </button>
         <div
+          aria-labelledby=":rc:"
           class="c9"
           role="region"
         >
@@ -5098,39 +5154,7 @@ exports[`Accordion multiple panels 2`] = `
 
 exports[`Accordion multiple panels 3`] = `
 <DocumentFragment>
-  .c8 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
-}
-
-.c8 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c8 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c8 *[stroke*='#'],
-.c8 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c8 *[fill-rule],
-.c8 *[FILL-RULE],
-.c8 *[fill*='#'],
-.c8 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
-}
-
-.c1 {
+  .c1 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -5191,6 +5215,38 @@ exports[`Accordion multiple panels 3`] = `
   min-width: 0;
   min-height: 0;
   flex-direction: column;
+}
+
+.c8 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #7D4CDB;
+  stroke: #7D4CDB;
+}
+
+.c8 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c8 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c8 *[stroke*='#'],
+.c8 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c8 *[fill-rule],
+.c8 *[FILL-RULE],
+.c8 *[fill*='#'],
+.c8 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
 }
 
 .c10 {
@@ -5382,6 +5438,7 @@ exports[`Accordion multiple panels 3`] = `
         <button
           aria-expanded="true"
           class="c3"
+          id=":rb:"
           style="z-index: 1;"
           type="button"
         >
@@ -5416,6 +5473,7 @@ exports[`Accordion multiple panels 3`] = `
           </div>
         </button>
         <div
+          aria-labelledby=":rb:"
           class="c9"
           role="region"
         >
@@ -5428,6 +5486,7 @@ exports[`Accordion multiple panels 3`] = `
         <button
           aria-expanded="true"
           class="c10"
+          id=":rc:"
           style=""
           type="button"
         >
@@ -5462,6 +5521,7 @@ exports[`Accordion multiple panels 3`] = `
           </div>
         </button>
         <div
+          aria-labelledby=":rc:"
           class="c9"
           role="region"
         >
@@ -5475,39 +5535,7 @@ exports[`Accordion multiple panels 3`] = `
 
 exports[`Accordion multiple panels 4`] = `
 <DocumentFragment>
-  .c8 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
-}
-
-.c8 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c8 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c8 *[stroke*='#'],
-.c8 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c8 *[fill-rule],
-.c8 *[FILL-RULE],
-.c8 *[fill*='#'],
-.c8 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
-}
-
-.c1 {
+  .c1 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -5568,6 +5596,38 @@ exports[`Accordion multiple panels 4`] = `
   min-width: 0;
   min-height: 0;
   flex-direction: column;
+}
+
+.c8 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #7D4CDB;
+  stroke: #7D4CDB;
+}
+
+.c8 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c8 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c8 *[stroke*='#'],
+.c8 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c8 *[fill-rule],
+.c8 *[FILL-RULE],
+.c8 *[fill*='#'],
+.c8 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
 }
 
 .c3 {
@@ -5759,6 +5819,7 @@ exports[`Accordion multiple panels 4`] = `
         <button
           aria-expanded="true"
           class="c3"
+          id=":rb:"
           style=""
           type="button"
         >
@@ -5793,6 +5854,7 @@ exports[`Accordion multiple panels 4`] = `
           </div>
         </button>
         <div
+          aria-labelledby=":rb:"
           class="c9"
           role="region"
         >
@@ -5805,6 +5867,7 @@ exports[`Accordion multiple panels 4`] = `
         <button
           aria-expanded="false"
           class="c10"
+          id=":rc:"
           style="z-index: 1;"
           type="button"
         >
@@ -5839,6 +5902,7 @@ exports[`Accordion multiple panels 4`] = `
           </div>
         </button>
         <div
+          aria-labelledby=":rc:"
           class="c9"
           role="region"
         />
@@ -5850,39 +5914,7 @@ exports[`Accordion multiple panels 4`] = `
 
 exports[`Accordion multiple panels 5`] = `
 <DocumentFragment>
-  .c8 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
-}
-
-.c8 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c8 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c8 *[stroke*='#'],
-.c8 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c8 *[fill-rule],
-.c8 *[FILL-RULE],
-.c8 *[fill*='#'],
-.c8 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
-}
-
-.c1 {
+  .c1 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -5943,6 +5975,38 @@ exports[`Accordion multiple panels 5`] = `
   min-width: 0;
   min-height: 0;
   flex-direction: column;
+}
+
+.c8 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #7D4CDB;
+  stroke: #7D4CDB;
+}
+
+.c8 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c8 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c8 *[stroke*='#'],
+.c8 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c8 *[fill-rule],
+.c8 *[FILL-RULE],
+.c8 *[fill*='#'],
+.c8 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
 }
 
 .c10 {
@@ -6134,6 +6198,7 @@ exports[`Accordion multiple panels 5`] = `
         <button
           aria-expanded="false"
           class="c3"
+          id=":rb:"
           style="z-index: 1;"
           type="button"
         >
@@ -6168,6 +6233,7 @@ exports[`Accordion multiple panels 5`] = `
           </div>
         </button>
         <div
+          aria-labelledby=":rb:"
           class="c9"
           role="region"
         />
@@ -6178,6 +6244,7 @@ exports[`Accordion multiple panels 5`] = `
         <button
           aria-expanded="false"
           class="c10"
+          id=":rc:"
           style=""
           type="button"
         >
@@ -6212,6 +6279,7 @@ exports[`Accordion multiple panels 5`] = `
           </div>
         </button>
         <div
+          aria-labelledby=":rc:"
           class="c9"
           role="region"
         />
@@ -6271,39 +6339,7 @@ exports[`Accordion render accordion no grommet wrapper 1`] = `
 
 exports[`Accordion should apply level prop to headings 1`] = `
 <DocumentFragment>
-  .c8 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
-}
-
-.c8 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c8 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c8 *[stroke*='#'],
-.c8 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c8 *[fill-rule],
-.c8 *[FILL-RULE],
-.c8 *[fill*='#'],
-.c8 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
-}
-
-.c1 {
+  .c1 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -6364,6 +6400,38 @@ exports[`Accordion should apply level prop to headings 1`] = `
   min-width: 0;
   min-height: 0;
   flex-direction: column;
+}
+
+.c8 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #7D4CDB;
+  stroke: #7D4CDB;
+}
+
+.c8 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c8 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c8 *[stroke*='#'],
+.c8 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c8 *[fill-rule],
+.c8 *[FILL-RULE],
+.c8 *[fill*='#'],
+.c8 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
 }
 
 .c3 {
@@ -6487,6 +6555,7 @@ exports[`Accordion should apply level prop to headings 1`] = `
         <button
           aria-expanded="false"
           class="c3"
+          id=":rp:"
           type="button"
         >
           <div
@@ -6520,6 +6589,7 @@ exports[`Accordion should apply level prop to headings 1`] = `
           </div>
         </button>
         <div
+          aria-labelledby=":rp:"
           class="c9"
           role="region"
         >
@@ -6535,6 +6605,7 @@ exports[`Accordion should apply level prop to headings 1`] = `
         <button
           aria-expanded="false"
           class="c3"
+          id=":rq:"
           type="button"
         >
           <div
@@ -6568,6 +6639,7 @@ exports[`Accordion should apply level prop to headings 1`] = `
           </div>
         </button>
         <div
+          aria-labelledby=":rq:"
           class="c9"
           role="region"
         >
@@ -6584,39 +6656,7 @@ exports[`Accordion should apply level prop to headings 1`] = `
 
 exports[`Accordion should have no accessibility violations 1`] = `
 <DocumentFragment>
-  .c6 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
-}
-
-.c6 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c6 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c6 *[stroke*='#'],
-.c6 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c6 *[fill-rule],
-.c6 *[FILL-RULE],
-.c6 *[fill*='#'],
-.c6 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
-}
-
-.c1 {
+  .c1 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -6666,6 +6706,38 @@ exports[`Accordion should have no accessibility violations 1`] = `
   min-width: 0;
   min-height: 0;
   flex-direction: column;
+}
+
+.c6 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #7D4CDB;
+  stroke: #7D4CDB;
+}
+
+.c6 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c6 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c6 *[stroke*='#'],
+.c6 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c6 *[fill-rule],
+.c6 *[FILL-RULE],
+.c6 *[fill*='#'],
+.c6 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
 }
 
 .c3 {
@@ -6766,6 +6838,7 @@ exports[`Accordion should have no accessibility violations 1`] = `
         <button
           aria-expanded="false"
           class="c3"
+          id=":r0:"
           type="button"
         >
           <div
@@ -6790,6 +6863,7 @@ exports[`Accordion should have no accessibility violations 1`] = `
           </div>
         </button>
         <div
+          aria-labelledby=":r0:"
           class="c7"
           role="region"
         >
@@ -6806,39 +6880,7 @@ exports[`Accordion should have no accessibility violations 1`] = `
 
 exports[`Accordion theme hover of hover.heading.color 1`] = `
 <DocumentFragment>
-  .c8 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
-}
-
-.c8 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c8 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c8 *[stroke*='#'],
-.c8 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c8 *[fill-rule],
-.c8 *[FILL-RULE],
-.c8 *[fill*='#'],
-.c8 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
-}
-
-.c1 {
+  .c1 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -6899,6 +6941,38 @@ exports[`Accordion theme hover of hover.heading.color 1`] = `
   min-width: 0;
   min-height: 0;
   flex-direction: column;
+}
+
+.c8 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #7D4CDB;
+  stroke: #7D4CDB;
+}
+
+.c8 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c8 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c8 *[stroke*='#'],
+.c8 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c8 *[fill-rule],
+.c8 *[FILL-RULE],
+.c8 *[fill*='#'],
+.c8 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
 }
 
 .c3 {
@@ -7027,6 +7101,7 @@ exports[`Accordion theme hover of hover.heading.color 1`] = `
         <button
           aria-expanded="false"
           class="c3"
+          id=":rj:"
           style="z-index: 1;"
           type="button"
         >
@@ -7061,6 +7136,7 @@ exports[`Accordion theme hover of hover.heading.color 1`] = `
           </div>
         </button>
         <div
+          aria-labelledby=":rj:"
           class="c9"
           role="region"
         >
@@ -7077,39 +7153,7 @@ exports[`Accordion theme hover of hover.heading.color 1`] = `
 
 exports[`Accordion wrapped panel 1`] = `
 <DocumentFragment>
-  .c8 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
-}
-
-.c8 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c8 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c8 *[stroke*='#'],
-.c8 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c8 *[fill-rule],
-.c8 *[FILL-RULE],
-.c8 *[fill*='#'],
-.c8 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
-}
-
-.c1 {
+  .c1 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -7170,6 +7214,38 @@ exports[`Accordion wrapped panel 1`] = `
   min-width: 0;
   min-height: 0;
   flex-direction: column;
+}
+
+.c8 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #7D4CDB;
+  stroke: #7D4CDB;
+}
+
+.c8 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c8 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c8 *[stroke*='#'],
+.c8 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c8 *[fill-rule],
+.c8 *[FILL-RULE],
+.c8 *[fill*='#'],
+.c8 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
 }
 
 .c3 {
@@ -7287,6 +7363,7 @@ exports[`Accordion wrapped panel 1`] = `
         <button
           aria-expanded="false"
           class="c3"
+          id=":rm:"
           type="button"
         >
           <div
@@ -7320,6 +7397,7 @@ exports[`Accordion wrapped panel 1`] = `
           </div>
         </button>
         <div
+          aria-labelledby=":rm:"
           class="c9"
           role="region"
         />
@@ -7330,6 +7408,7 @@ exports[`Accordion wrapped panel 1`] = `
         <button
           aria-expanded="false"
           class="c3"
+          id=":rn:"
           type="button"
         >
           <div
@@ -7363,6 +7442,7 @@ exports[`Accordion wrapped panel 1`] = `
           </div>
         </button>
         <div
+          aria-labelledby=":rn:"
           class="c9"
           role="region"
         />
@@ -7374,39 +7454,7 @@ exports[`Accordion wrapped panel 1`] = `
 
 exports[`Accordion wrapped panel 2`] = `
 <DocumentFragment>
-  .c8 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
-}
-
-.c8 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c8 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c8 *[stroke*='#'],
-.c8 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c8 *[fill-rule],
-.c8 *[FILL-RULE],
-.c8 *[fill*='#'],
-.c8 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
-}
-
-.c1 {
+  .c1 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -7467,6 +7515,38 @@ exports[`Accordion wrapped panel 2`] = `
   min-width: 0;
   min-height: 0;
   flex-direction: column;
+}
+
+.c8 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #7D4CDB;
+  stroke: #7D4CDB;
+}
+
+.c8 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c8 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c8 *[stroke*='#'],
+.c8 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c8 *[fill-rule],
+.c8 *[FILL-RULE],
+.c8 *[fill*='#'],
+.c8 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
 }
 
 .c10 {
@@ -7658,6 +7738,7 @@ exports[`Accordion wrapped panel 2`] = `
         <button
           aria-expanded="true"
           class="c3"
+          id=":rm:"
           style="z-index: 1;"
           type="button"
         >
@@ -7692,6 +7773,7 @@ exports[`Accordion wrapped panel 2`] = `
           </div>
         </button>
         <div
+          aria-labelledby=":rm:"
           class="c9"
           role="region"
         >
@@ -7704,6 +7786,7 @@ exports[`Accordion wrapped panel 2`] = `
         <button
           aria-expanded="false"
           class="c10"
+          id=":rn:"
           type="button"
         >
           <div
@@ -7737,6 +7820,7 @@ exports[`Accordion wrapped panel 2`] = `
           </div>
         </button>
         <div
+          aria-labelledby=":rn:"
           class="c9"
           role="region"
         />

@@ -11,7 +11,6 @@ import {
   getHoverIndicatorStyle,
   normalizeColor,
 } from '../../utils';
-import { withTheme } from '../../default-props';
 import { styledComponentsConfig } from '../../utils/styles';
 
 const radiusStyle = (props) => {
@@ -185,9 +184,7 @@ const disabledButtonStyle = (props) => css`
 `;
 
 // Deprecate props.theme.button.disabled.opacity in V3
-const StyledButton = styled.button
-  .withConfig(styledComponentsConfig)
-  .attrs(withTheme)`
+const StyledButton = styled.button.withConfig(styledComponentsConfig)`
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;

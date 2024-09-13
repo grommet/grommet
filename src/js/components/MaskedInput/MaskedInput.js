@@ -23,7 +23,6 @@ import {
 } from './StyledMaskedInput';
 import { MaskedInputPropTypes } from './propTypes';
 import { useThemeValue } from '../../utils/useThemeValue';
-import { withTheme } from '../../default-props';
 
 const parseValue = (mask, value) => {
   // break the value up into mask parts
@@ -146,7 +145,7 @@ const defaultMask = [
   },
 ];
 
-const ContainerBox = styled(Box).attrs(withTheme)`
+const ContainerBox = styled(Box)`
   ${(props) =>
     props.dropHeight
       ? sizeStyle('max-height', props.dropHeight, props.theme)
@@ -180,7 +179,7 @@ const MaskedInput = forwardRef(
     },
     ref,
   ) => {
-    const theme = useThemeValue();
+    const { theme, passThemeFlag } = useThemeValue();
     const formContext = useContext(FormContext);
 
     const [value, setValue] = formContext.useFormInput({
@@ -371,7 +370,7 @@ const MaskedInput = forwardRef(
     const maskedInputIcon = useSizedIcon(icon, rest.size, theme);
 
     return (
-      <StyledMaskedInputContainer plain={plain}>
+      <StyledMaskedInputContainer plain={plain} {...passThemeFlag}>
         {maskedInputIcon && (
           <StyledIcon reverse={reverse} theme={theme}>
             {maskedInputIcon}
@@ -438,6 +437,7 @@ const MaskedInput = forwardRef(
                 ref={dropRef}
                 overflow="auto"
                 dropHeight={dropHeight}
+                {...passThemeFlag}
               >
                 {mask[activeMaskIndex].options.map((option, index) => {
                   // Determine whether the label is done as a child or

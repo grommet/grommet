@@ -18,7 +18,7 @@ const Bar = forwardRef((props, ref) => {
     reverse,
     ...rest
   } = props;
-  const theme = useThemeValue();
+  const { theme, passThemeFlag } = useThemeValue();
   const length =
     size === 'full' ? 288 : parseMetricToNum(theme.global.size[size] || size);
   const thickness = parseMetricToNum(
@@ -106,6 +106,7 @@ const Bar = forwardRef((props, ref) => {
       width={width}
       height={direction === 'horizontal' ? thickness : length}
       round={round ? { size: thicknessProp } : undefined}
+      {...passThemeFlag}
       {...rest}
       reverse={reverse}
     >

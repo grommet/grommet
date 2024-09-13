@@ -25,7 +25,7 @@ const CheckBoxGroup = forwardRef(
     ref,
   ) => {
     const formContext = useContext(FormContext);
-    const theme = useThemeValue();
+    const { theme, passThemeFlag } = useThemeValue();
 
     // In case option is a string, normalize it to be an object
     const options = optionsProp.map((option) =>
@@ -76,6 +76,7 @@ const CheckBoxGroup = forwardRef(
             ? theme.checkBoxGroup.container.gap
             : 'small') // consistent with RadioButtonGroup default
         }
+        {...passThemeFlag}
         {...rest}
       >
         {options.map((option, index) => {

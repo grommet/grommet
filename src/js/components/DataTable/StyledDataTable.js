@@ -16,10 +16,9 @@ import { TableBody } from '../TableBody';
 import { TableCell } from '../TableCell';
 import { TableHeader } from '../TableHeader';
 import { TableFooter } from '../TableFooter';
-import { withTheme } from '../../default-props';
 
 // border-collapse: separate is needed so pinned header/footer borders work
-const StyledDataTable = styled(Table).attrs(withTheme)`
+const StyledDataTable = styled(Table)`
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
@@ -32,7 +31,7 @@ const StyledDataTable = styled(Table).attrs(withTheme)`
 `;
 
 // when paginated, this wraps the data table and pagination component
-const StyledContainer = styled(Box).attrs(withTheme)`
+const StyledContainer = styled(Box)`
   ${(props) =>
     props.theme.dataTable &&
     props.theme.dataTable.container &&
@@ -80,7 +79,7 @@ const StyledDataTableRow = styled(TableRow)`
 `;
 
 // focus styling other than outline doesn't work on <tbody />
-const StyledDataTableBody = styled(TableBody).attrs(withTheme)`
+const StyledDataTableBody = styled(TableBody)`
   ${(props) =>
     props.size &&
     `
@@ -128,7 +127,7 @@ const StyledDataTableFooter = styled(TableFooter)`
   `}
 `;
 
-const StyledDataTableCell = styled(TableCell).attrs(withTheme)`
+const StyledDataTableCell = styled(TableCell)`
   ${(props) =>
     props.context === 'header' &&
     props.theme.dataTable &&
