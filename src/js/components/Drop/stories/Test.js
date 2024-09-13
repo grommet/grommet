@@ -5,17 +5,17 @@ const TestDrop = () => {
   const [showDrop, setShowDrop] = useState(false);
   const ref = useRef();
 
-  const handleClosePopover = () => {
-    setShowDrop(false);
-  };
-
   return (
     // Uncomment <Grommet> lines when using outside of storybook
     // <Grommet theme={...}>
     <>
       <Button ref={ref} label="button" onClick={() => setShowDrop(true)} />
       {showDrop && (
-        <Drop target={ref.current} onEsc={handleClosePopover}>
+        <Drop
+          target={ref.current}
+          onClickOutside={() => setShowDrop(false)}
+          onEsc={() => setShowDrop(false)}
+        >
           <Box gap="medium" pad="large">
             Drop Contents
             <Button label="testing button" />

@@ -65,33 +65,39 @@ export const FocusedContainer = ({
     const firstElement = focusableElements[0];
     const lastElement = focusableElements[focusableElements.length - 1];
 
-    if (event.shiftKey && document.activeElement === firstElement) {
-      event.preventDefault();
-      if (lastElement) lastElement.focus();
-    } else if (!event.shiftKey && document.activeElement === lastElement) {
-      event.preventDefault();
-      if (firstElement) firstElement.focus();
+    if (container.contains(event.target)) {
+      // console.log('only coming here', event.target);
+      container.lastFocus = event.target;
+    } else {
+      // console.log('not coming here');
+      firstElement.focus();
+      if (container.lastFocus === document.activeElement) {
+        lastElement.focus();
+      }
+      container.lastFocus = document.activeElement;
     }
   }, []);
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      if (!hidden && trapFocus && nextRoots && nextRoots.length > 0) {
+      if (!hidden && trapFocus) {
         // Make all nodes unfocusable except the last one in the list
         roots.forEach(makeNodeUnfocusable);
-        document.addEventListener('keydown', trapFocusHandler, true);
+        document.addEventListener('focus', trapFocusHandler, true);
+        // console.log('Focus event listener added');
       }
     }, 0);
 
     return () => {
-      document.removeEventListener('keydown', trapFocusHandler, true);
-      // Restore focusability when component is unmounted or updated
       clearTimeout(timer);
+      document.removeEventListener('focus', trapFocusHandler, true);
+      // console.log('Focus event listener removed');
+      // Restore focusability when component is unmounted or updated
       if (roots && roots.length > 0) {
         makeNodeFocusable(roots[roots.length - 1]);
       }
     };
-  }, [hidden, nextRoots, trapFocus, roots, trapFocusHandler]);
+  }, [hidden, roots, trapFocus, trapFocusHandler]);
 
   return (
     <RootsContext.Provider value={nextRoots}>
