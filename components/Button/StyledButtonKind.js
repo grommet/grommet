@@ -77,9 +77,15 @@ var getPath = function getPath(theme, path) {
   }
   return obj;
 };
-var adjustPadStyle = function adjustPadStyle(pad, width) {
-  var offset = (0, _utils.parseMetricToNum)(width);
-  return (0, _styledComponents.css)(["padding:", "px ", "px;"], Math.max((0, _utils.parseMetricToNum)(pad.vertical) - offset, 0), Math.max((0, _utils.parseMetricToNum)(pad.horizontal) - offset, 0));
+var adjustPadStyle = function adjustPadStyle(pad, width, theme) {
+  var _theme$button;
+  var intelligentPad = theme == null || (_theme$button = theme.button) == null ? void 0 : _theme$button.intelligentPad;
+  if (intelligentPad === true) {
+    var offset = (0, _utils.parseMetricToNum)(width);
+    return (0, _styledComponents.css)(["padding:", "px ", "px;"], Math.max((0, _utils.parseMetricToNum)(pad.vertical) - offset, 0), Math.max((0, _utils.parseMetricToNum)(pad.horizontal) - offset, 0));
+  }
+  // If intelligentPad is false return padding without adjustment
+  return (0, _styledComponents.css)(["padding:", " ", ";"], pad.vertical, pad.horizontal);
 };
 
 // build up CSS from basic to specific based on the supplied sub-object paths
@@ -108,7 +114,7 @@ var kindStyle = function kindStyle(_ref2) {
         // Adjust padding from the button.size or just top button.padding
         // to deal with the kind's border width. But don't override any
         // padding in the kind itself for backward compatibility
-        styles.push(adjustPadStyle(pad, obj.border.width));
+        styles.push(adjustPadStyle(pad, obj.border.width, theme));
       }
     }
   });
@@ -122,7 +128,7 @@ var kindStyle = function kindStyle(_ref2) {
         // Adjust padding from the button.size or just top button.padding
         // to deal with the kind's border width. But don't override any
         // padding in the kind itself for backward compatibility
-        styles.push(adjustPadStyle(pad, obj.border.width));
+        styles.push(adjustPadStyle(pad, obj.border.width, theme));
       }
     }
   }
@@ -135,7 +141,7 @@ var kindStyle = function kindStyle(_ref2) {
         // Adjust padding from the button.size or just top button.padding
         // to deal with the hover's border width. But don't override any
         // padding in the hover or hover.kind itself for backward compatibility
-        adjPadStyles = adjustPadStyle(pad, obj.border.width);
+        adjPadStyles = adjustPadStyle(pad, obj.border.width, theme);
       }
       if (partStyles.length > 0 && !busy && !success) {
         styles.push((0, _styledComponents.css)(["&:hover{", " ", "}"], partStyles, adjPadStyles));
