@@ -10,7 +10,6 @@ import {
   kindPartStyles,
   parseMetricToNum,
 } from '../../utils';
-import { withTheme } from '../../default-props';
 
 const radiusStyle = (props) => {
   const size = props.sizeProp;
@@ -113,11 +112,18 @@ const getPath = (theme, path) => {
   return obj;
 };
 
-const adjustPadStyle = (pad, width) => {
-  const offset = parseMetricToNum(width);
+const adjustPadStyle = (pad, width, theme) => {
+  const intelligentPad = theme?.button?.intelligentPad;
+  if (intelligentPad === true) {
+    const offset = parseMetricToNum(width);
+    return css`
+      padding: ${Math.max(parseMetricToNum(pad.vertical) - offset, 0)}px
+        ${Math.max(parseMetricToNum(pad.horizontal) - offset, 0)}px;
+    `;
+  }
+  // If intelligentPad is false return padding without adjustment
   return css`
-    padding: ${Math.max(parseMetricToNum(pad.vertical) - offset, 0)}px
-      ${Math.max(parseMetricToNum(pad.horizontal) - offset, 0)}px;
+    padding: ${pad.vertical} ${pad.horizontal};
   `;
 };
 
@@ -149,7 +155,7 @@ const kindStyle = ({
         // Adjust padding from the button.size or just top button.padding
         // to deal with the kind's border width. But don't override any
         // padding in the kind itself for backward compatibility
-        styles.push(adjustPadStyle(pad, obj.border.width));
+        styles.push(adjustPadStyle(pad, obj.border.width, theme));
       }
     }
   });
@@ -163,7 +169,7 @@ const kindStyle = ({
         // Adjust padding from the button.size or just top button.padding
         // to deal with the kind's border width. But don't override any
         // padding in the kind itself for backward compatibility
-        styles.push(adjustPadStyle(pad, obj.border.width));
+        styles.push(adjustPadStyle(pad, obj.border.width, theme));
       }
     }
   }
@@ -178,7 +184,7 @@ const kindStyle = ({
         // Adjust padding from the button.size or just top button.padding
         // to deal with the hover's border width. But don't override any
         // padding in the hover or hover.kind itself for backward compatibility
-        adjPadStyles = adjustPadStyle(pad, obj.border.width);
+        adjPadStyles = adjustPadStyle(pad, obj.border.width, theme);
       }
       if (partStyles.length > 0 && !busy && !success) {
         styles.push(
@@ -250,7 +256,7 @@ const plainStyle = (props) => css`
   ${props.hasIcon && !props.hasLabel && `line-height: 0;`}
 `;
 
-const StyledButtonKind = styled.button.attrs(withTheme).withConfig({
+const StyledButtonKind = styled.button.withConfig({
   shouldForwardProp: (prop) => isPropValid(prop) && !['kind'].includes(prop),
 })`
   display: inline-block;

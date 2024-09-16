@@ -1,4 +1,4 @@
-import React, { forwardRef, useContext, useMemo, useState } from 'react';
+import React, { forwardRef, useContext, useMemo, useState, useId } from 'react';
 
 import { normalizeColor, parseMetricToNum } from '../../utils';
 import { Box } from '../Box';
@@ -25,7 +25,8 @@ const AccordionPanel = forwardRef(
     },
     ref,
   ) => {
-    const theme = useThemeValue();
+    const uniqueId = useId();
+    const { theme } = useThemeValue();
     const { active, animate, level, onPanelChange } =
       useContext(AccordionContext);
     const [hover, setHover] = useState(undefined);
@@ -89,6 +90,7 @@ const AccordionPanel = forwardRef(
         margin={abutMargin}
       >
         <Button
+          id={uniqueId}
           aria-expanded={active}
           plain={theme.button.default ? true : undefined}
           onClick={onPanelChange}
@@ -148,7 +150,7 @@ const AccordionPanel = forwardRef(
             </Box>
           )}
         </Button>
-        <Box role="region" border={contentBorder}>
+        <Box role="region" border={contentBorder} aria-labelledby={uniqueId}>
           {animate ? (
             <Collapsible open={active}>{children}</Collapsible>
           ) : (

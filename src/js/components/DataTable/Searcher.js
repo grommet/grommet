@@ -11,7 +11,7 @@ import { normalizeColor } from '../../utils';
 import { useThemeValue } from '../../utils/useThemeValue';
 
 const Searcher = ({ filtering, filters, onFilter, onFiltering, property }) => {
-  const theme = useThemeValue();
+  const { theme } = useThemeValue();
   const inputRef = useRef();
   const needsFocus = filtering === property;
 
@@ -29,7 +29,7 @@ const Searcher = ({ filtering, filters, onFilter, onFiltering, property }) => {
           a11yTitle={`Search by ${property}`}
           ref={inputRef}
           value={filters[property]}
-          onChange={event => onFilter(property, event.target.value)}
+          onChange={(event) => onFilter(property, event.target.value)}
           onBlur={() => onFiltering(undefined)}
         />
       </Box>

@@ -1,9 +1,4 @@
-import React, {
-  useCallback,
-  useEffect,
-  useRef,
-  useState,
-} from 'react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
 
 import { Box } from '../Box';
@@ -17,7 +12,7 @@ const InteractionBox = styled(Box)`
   }
 
   // when mouse down, we want to continue to display styling
-  ${props => props.active && '> * { opacity: 1; }'}
+  ${(props) => props.active && '> * { opacity: 1; }'}
 
   &:hover {
     > * {
@@ -27,13 +22,13 @@ const InteractionBox = styled(Box)`
 `;
 
 const Resizer = ({ onResize, property }) => {
-  const theme = useThemeValue();
+  const { theme } = useThemeValue();
   const [active, setActive] = useState(false);
   const [start, setStart] = useState();
   const [width, setWidth] = useState();
   const ref = useRef();
 
-  const onMouseDown = useCallback(event => {
+  const onMouseDown = useCallback((event) => {
     if (ref.current) {
       let element = ref.current;
       // find TH parent
@@ -46,7 +41,7 @@ const Resizer = ({ onResize, property }) => {
   }, []);
 
   const onMouseMove = useCallback(
-    event => {
+    (event) => {
       // We determined 12 empirically as being wide enough to hit but
       // not too wide to cause false hits.
       const nextWidth = Math.max(12, width + (event.clientX - start));

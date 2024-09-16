@@ -1,10 +1,4 @@
-import React, {
-  forwardRef,
-  useEffect,
-  useMemo,
-  useRef,
-  useState,
-} from 'react';
+import React, { forwardRef, useEffect, useMemo, useRef, useState } from 'react';
 import styled from 'styled-components';
 
 import { useLayoutEffect } from '../../utils/use-isomorphic-layout-effect';
@@ -27,7 +21,7 @@ const AnimatedBox = styled(Box)`
 
 const Collapsible = forwardRef(
   ({ children, direction, open: openArg }, ref) => {
-    const theme = useThemeValue();
+    const { theme } = useThemeValue();
     const [open, setOpen] = useState(openArg);
     const [animate, setAnimate] = useState(false);
     const [speed, setSpeed] = useState(theme.collapsible.minSpeed);

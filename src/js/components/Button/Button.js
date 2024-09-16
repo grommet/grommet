@@ -216,7 +216,7 @@ const Button = forwardRef(
     },
     ref,
   ) => {
-    const theme = useThemeValue();
+    const { theme, passThemeFlag } = useThemeValue();
     const [focus, setFocus] = useState();
     const [hover, setHover] = useState(false);
     const announce = useContext(AnnounceContext);
@@ -521,6 +521,7 @@ const Button = forwardRef(
           sizeProp={size}
           success={success}
           type={!href ? type : undefined}
+          {...passThemeFlag}
         >
           {contents}
         </StyledButtonKind>
@@ -567,6 +568,7 @@ const Button = forwardRef(
           sizeProp={size}
           success={success}
           type={!href ? type : undefined}
+          {...passThemeFlag}
         >
           {contents}
         </StyledButton>
