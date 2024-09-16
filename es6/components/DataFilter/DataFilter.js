@@ -193,6 +193,11 @@ export var DataFilter = function DataFilter(_ref) {
           onSearch: options.length >= minSelectSearchOptions ? setSearchText : undefined,
           onClose: function onClose() {
             return setSearchText('');
+          },
+          labelKey: "label",
+          valueKey: {
+            key: 'value',
+            reduce: true
           }
         });
       }
