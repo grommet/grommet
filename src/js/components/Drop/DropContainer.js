@@ -15,8 +15,8 @@ import { StyledDrop } from './StyledDrop';
 import { OptionsContext } from '../../contexts/OptionsContext';
 import { useThemeValue } from '../../utils/useThemeValue';
 
-// Check if the element.tagName is an input, select or textarea
-export const isFocusableElements = (element) => {
+// Check if an element is focusable
+const isFocusableElements = (element) => {
   const tagName = element.tagName.toLowerCase();
   return (
     tagName === 'input' ||
@@ -373,18 +373,15 @@ const DropContainer = forwardRef(
     useEffect(() => {
       if (restrictFocus === true) {
         dropRef.current.focus();
-      }
-      if (
-        restrictFocus === 'firstElement' &&
-        getFirstFocusableDescendantElement(dropRef.current) !== undefined
-      ) {
-        getFirstFocusableDescendantElement(dropRef.current).focus();
-      }
-      if (
-        restrictFocus === 'firstElement' &&
-        getFirstFocusableDescendantElement(dropRef.current) === undefined
-      ) {
-        dropRef.current.focus();
+      } else if (restrictFocus === 'firstElement') {
+        const firstFocusableElement = getFirstFocusableDescendantElement(
+          dropRef.current,
+        );
+        if (firstFocusableElement !== undefined) {
+          firstFocusableElement.focus();
+        } else {
+          dropRef.current.focus();
+        }
       }
     }, [dropRef, restrictFocus]);
 
