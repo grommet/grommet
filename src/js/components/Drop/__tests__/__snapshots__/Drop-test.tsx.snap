@@ -1293,7 +1293,7 @@ exports[`Drop resize 2`] = `
 `;
 
 exports[`Drop restrict focus 1`] = `
-.c1 {
+.c0 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -1304,7 +1304,7 @@ exports[`Drop restrict focus 1`] = `
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.20);
 }
 
-.c2 {
+.c1 {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -1324,49 +1324,22 @@ exports[`Drop restrict focus 1`] = `
   animation-delay: 0.01s;
 }
 
-.c0 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .c2 {
+  .c1 {
     display: flex;
     align-items: stretch;
   }
 }
 
-<body>
-  <div>
-    <div
-      class="c0"
-    >
-      <input
-        aria-label="test"
-      />
-    </div>
-  </div>
-  <div>
-    <div
-      aria-hidden="false"
-    >
-      <div
-        class="c1 c2"
-        data-g-portal-id="0"
-        id="drop-node"
-        style="left: 0px; width: 0.1px; top: 0px; max-height: 1000px;"
-        tabindex="-1"
-      >
-        this is a test
-      </div>
-    </div>
-  </div>
-</body>
+<div
+  class="c0 c1"
+  data-g-portal-id="0"
+  id="drop-node"
+  style="left: 0px; width: 0.1px; top: 0px; max-height: 1000px;"
+  tabindex="-1"
+>
+  this is a test
+</div>
 `;
 
 exports[`Drop restrict focus 2`] = `
@@ -1419,7 +1392,13 @@ exports[`Drop restrict focus 3`] = `
 }"
 `;
 
-exports[`Drop restrict focus 4`] = `<body />`;
+exports[`Drop restrict focus 4`] = `
+@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
+
+}
+
+<body />
+`;
 
 exports[`Drop round 1`] = `
 .c0 {
