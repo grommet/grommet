@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import 'jest-styled-components';
 import 'jest-axe/extend-expect';
 import 'regenerator-runtime/runtime';
+import '@testing-library/jest-dom';
 
 import { axe } from 'jest-axe';
 import {
@@ -28,6 +29,43 @@ const customTheme = {
       margin: 'xsmall',
     },
   },
+};
+
+const TestFocus = ({
+  theme,
+  containerTarget,
+  message = 'this is a test',
+  ...rest
+}: TestInputProps) => {
+  const [showDrop, setShowDrop] = useState<boolean>(false);
+
+  const inputRef = useRef<HTMLInputElement | null>(null);
+
+  useEffect(() => {
+    setShowDrop(true);
+  }, []);
+
+  let drop;
+
+  if (showDrop) {
+    drop = (
+      <Drop
+        id="drop-node"
+        restrictFocus="firstElement"
+        target={inputRef.current || undefined}
+        {...rest}
+      >
+        <button aria-label="first-focus">first-focus</button>
+        {message}
+      </Drop>
+    );
+  }
+  return (
+    <Grommet theme={theme} containerTarget={containerTarget}>
+      <input ref={inputRef} aria-label="test" />
+      {drop}
+    </Grommet>
+  );
 };
 
 interface TestInputProps extends DropExtendedProps {
@@ -230,17 +268,18 @@ describe('Drop', () => {
     expect(document.activeElement).toMatchSnapshot();
   });
 
-  // test('restrict focus === firstElement', async () => {
-  //   render(<TestInput restrictFocus="firstElement" />);
-  //   await waitFor(() => {
-  //     // Check if the button is present in the document
-  //     const button = screen.getByText('This is a test button');
-  //     expect(button).toBeInTheDocument();
-  //     setTimeout(() => {
-  //       expect(document.activeElement).toBe(button);
-  //     }, 300);
-  //   });
-  // });
+  test('restrict focus === firstElement', async () => {
+    render(<TestFocus />);
+
+    // Wait for the button with text 'first-focus'
+    const button = await screen.findByText('first-focus');
+    expect(button).toBeInTheDocument();
+
+    // Check that the button is the currently focused element
+    await waitFor(() => {
+      expect(document.activeElement).toBe(button);
+    });
+  });
 
   test('default elevation renders', () => {
     render(<TestInput />);
