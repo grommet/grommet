@@ -3,7 +3,7 @@ import { Box, Button, Drop } from 'grommet';
 
 const alignRight = { left: 'right' };
 
-const RestrictFocus = () => {
+export const RestrictFocus = () => {
   const [showDrop, setShowDrop] = useState(false);
   const targetRef = useRef();
 
@@ -32,14 +32,6 @@ const RestrictFocus = () => {
     </Box>
     // </Grommet>
   );
-};
-
-export const RestrictFocusFirstElement = () => <RestrictFocus />;
-RestrictFocus.parameters = {
-  chromatic: { disable: true },
-};
-RestrictFocus.args = {
-  full: true,
 };
 
 export default {
