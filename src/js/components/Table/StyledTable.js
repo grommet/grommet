@@ -7,7 +7,6 @@ import {
   genericStyles,
   styledComponentsConfig,
 } from '../../utils';
-import { withTheme } from '../../default-props';
 
 const SIZE_MAP = {
   '1/2': '50%',
@@ -40,9 +39,7 @@ const sizeStyle = css`
   overflow: hidden;
 `;
 
-const StyledTableCell = styled.td
-  .withConfig(styledComponentsConfig)
-  .attrs(withTheme)`
+const StyledTableCell = styled.td.withConfig(styledComponentsConfig)`
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -67,9 +64,9 @@ const StyledTableCell = styled.td
   ${(props) => props.tableContextTheme && props.tableContextTheme.extend}
 `;
 
-const StyledTableDataCaption = styled.caption
-  .withConfig(styledComponentsConfig)
-  .attrs(withTheme)`
+const StyledTableDataCaption = styled.caption.withConfig(
+  styledComponentsConfig,
+)`
   margin-bottom: ${(props) => props.theme.global.edgeSize.xxsmall};
 `;
 
@@ -81,9 +78,7 @@ const StyledTableHeader = styled.thead.withConfig(styledComponentsConfig)``;
 
 const StyledTableFooter = styled.tfoot.withConfig(styledComponentsConfig)``;
 
-const StyledTable = styled.table
-  .withConfig(styledComponentsConfig)
-  .attrs(withTheme)`
+const StyledTable = styled.table.withConfig(styledComponentsConfig)`
   border-spacing: 0;
   border-collapse: collapse;
   width: inherit;

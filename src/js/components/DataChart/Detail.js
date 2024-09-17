@@ -29,7 +29,7 @@ const Detail = ({
   renderValue,
   thickness,
 }) => {
-  const theme = useThemeValue();
+  const { theme } = useThemeValue();
   const [detailIndex, setDetailIndex] = useState();
   const activeIndex = useRef();
   const detailRefs = useMemo(() => [], []);

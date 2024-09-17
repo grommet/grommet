@@ -106,7 +106,7 @@ const DropContainer = forwardRef(
     ref,
   ) => {
     const containerTarget = useContext(ContainerTargetContext);
-    const theme = useThemeValue();
+    const { theme, passThemeFlag } = useThemeValue();
     // dropOptions was created to preserve backwards compatibility
     const { drop: dropOptions } = useContext(OptionsContext);
     const portalContext = useContext(PortalContext);
@@ -403,6 +403,7 @@ const DropContainer = forwardRef(
         alignProp={align}
         overflow={overflow}
         data-g-portal-id={portalId}
+        {...passThemeFlag}
         {...rest}
       >
         {children}

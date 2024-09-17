@@ -6,15 +6,14 @@ import { useLayoutEffect } from '../../utils/use-isomorphic-layout-effect';
 import { Box } from '../Box';
 import { Stack } from '../Stack';
 import { Text } from '../Text';
-import { withTheme } from '../../default-props';
 import { useThemeValue } from '../../utils/useThemeValue';
 
-const StyledBadgeContainer = styled(Box).attrs(withTheme)`
+const StyledBadgeContainer = styled(Box)`
   ${(props) => props.theme.button.badge.container.extend}
 `;
 
 export const Badge = ({ children, content }) => {
-  const theme = useThemeValue();
+  const { theme, passThemeFlag } = useThemeValue();
   const containerRef = useRef();
   const contentRef = useRef();
   const stackRef = useRef();
@@ -146,6 +145,7 @@ export const Badge = ({ children, content }) => {
             ? theme.button.badge.container.pad
             : undefined
         }
+        {...passThemeFlag}
       >
         {badge}
       </StyledBadgeContainer>

@@ -5,7 +5,6 @@ import {
   normalizeColor,
   styledComponentsConfig,
 } from '../../utils';
-import { withTheme } from '../../default-props';
 import { Box } from '../Box';
 
 const disabledStyle = `
@@ -13,16 +12,16 @@ const disabledStyle = `
   cursor: default;
 `;
 
-const StyledRadioButtonContainer = styled.label
-  .withConfig(styledComponentsConfig)
-  .attrs(withTheme)`
+const StyledRadioButtonContainer = styled.label.withConfig(
+  styledComponentsConfig,
+)`
   display: flex;
   flex-direction: row;
   align-items: center;
   user-select: none;
   width: fit-content;
   ${(props) => props.disabled && disabledStyle} ${(props) =>
-  !props.disabled && 'cursor: pointer;'}
+    !props.disabled && 'cursor: pointer;'}
 
   &:hover input:not([disabled]) + div,
   &:hover input:not([disabled]) + span {
@@ -73,9 +72,7 @@ const StyledRadioButtonInput = styled.input.withConfig(styledComponentsConfig)`
   ${(props) => !props.disabled && 'cursor: pointer;'};
 `;
 
-const StyledRadioButtonLabel = styled.span
-  .withConfig(styledComponentsConfig)
-  .attrs(withTheme)`
+const StyledRadioButtonLabel = styled.span.withConfig(styledComponentsConfig)`
   ${(props) =>
     props.theme.radioButton.font.weight &&
     css`
@@ -83,9 +80,7 @@ const StyledRadioButtonLabel = styled.span
     `}
 `;
 
-const StyledRadioButtonIcon = styled.svg
-  .withConfig(styledComponentsConfig)
-  .attrs(withTheme)`
+const StyledRadioButtonIcon = styled.svg.withConfig(styledComponentsConfig)`
   box-sizing: border-box;
   width: ${(props) =>
     props.theme.radioButton.icon.size || props.theme.radioButton.size};
@@ -99,13 +94,13 @@ const StyledRadioButtonIcon = styled.svg
   ${(props) => props.theme.radioButton.icon.extend};
 `;
 
-const StyledRadioButtonBox = styled(Box).attrs(withTheme)`
+const StyledRadioButtonBox = styled(Box)`
   background-color: ${(props) => props.backgroundColor};
   ${(props) => props.focus && focusStyle()};
   ${(props) => props.theme.radioButton.check.extend};
 `;
 
-const StyledRadioButton = styled(Box).attrs(withTheme)`
+const StyledRadioButton = styled(Box)`
   ${(props) => props.theme.radioButton && props.theme.radioButton.extend};
 `;
 

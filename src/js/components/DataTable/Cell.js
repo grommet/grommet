@@ -29,7 +29,7 @@ const Cell = memo(
     verticalAlign,
     ...rest
   }) => {
-    const theme = useThemeValue();
+    const { theme, passThemeFlag } = useThemeValue();
     const value = datumValue(datum, property);
     const context = useContext(TableContext);
     const renderContexts =
@@ -72,6 +72,7 @@ const Cell = memo(
         pad={pad}
         pin={pin}
         plain={plain ? 'noPad' : undefined}
+        {...passThemeFlag}
         {...rest}
       >
         {content}

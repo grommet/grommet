@@ -5,7 +5,7 @@ import { Grid } from '../../Grid';
 import { useThemeValue } from '../../../utils/useThemeValue';
 
 export const BackgroundThemed = () => {
-  const theme = useThemeValue();
+  const { theme } = useThemeValue();
   const { backgrounds } = theme.global;
 
   return (

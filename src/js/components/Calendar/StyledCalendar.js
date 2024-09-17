@@ -7,7 +7,6 @@ import {
   parseMetricToNum,
   styledComponentsConfig,
 } from '../../utils';
-import { withTheme } from '../../default-props';
 
 const sizeStyle = (props) => {
   const data = props.theme.calendar[props.sizeProp];
@@ -23,9 +22,7 @@ const sizeStyle = (props) => {
   `;
 };
 
-const StyledCalendar = styled.div
-  .withConfig(styledComponentsConfig)
-  .attrs(withTheme)`
+const StyledCalendar = styled.div.withConfig(styledComponentsConfig)`
   ${genericStyles}
   ${(props) => sizeStyle(props)}
   ${(props) => props.theme.calendar && props.theme.calendar.extend}
@@ -40,9 +37,7 @@ const weeksContainerSizeStyle = (props) => {
 
   `;
 };
-const StyledWeeksContainer = styled.div
-  .withConfig(styledComponentsConfig)
-  .attrs(withTheme)`
+const StyledWeeksContainer = styled.div.withConfig(styledComponentsConfig)`
   overflow: hidden;
   ${(props) => weeksContainerSizeStyle(props)}
   ${(props) => props.focus && !props.plain && focusStyle()};
@@ -77,9 +72,7 @@ const weeksSizeStyle = () => css`
   flex-direction: column;
   height: 100%;
 `;
-const StyledWeeks = styled.div
-  .withConfig(styledComponentsConfig)
-  .attrs(withTheme)`
+const StyledWeeks = styled.div.withConfig(styledComponentsConfig)`
   position: relative;
   ${(props) => props.fillContainer && weeksSizeStyle()}
   ${(props) => props.slide && slideStyle(props)};
@@ -107,9 +100,7 @@ const daySizeStyle = (props) => {
   `;
 };
 
-const StyledDay = styled.div
-  .withConfig(styledComponentsConfig)
-  .attrs(withTheme)`
+const StyledDay = styled.div.withConfig(styledComponentsConfig)`
   display: flex;
   justify-content: center;
   align-items: center;

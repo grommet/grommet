@@ -2033,10 +2033,10 @@ exports[`Button kind disabled with hoverIndicator should not hover 1`] = `
 
 exports[`Button kind disabled with hoverIndicator should not hover 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 jOTXqz"
+  class="StyledGrommet-sc-19lkkz7-0 drDzQW"
 >
   <button
-    class="StyledButtonKind-sc-1vhfpnt-0 duBoUM"
+    class="StyledButtonKind-sc-1vhfpnt-0 dsjgcx"
     disabled=""
     type="button"
   >
@@ -2702,10 +2702,10 @@ exports[`Button kind hover secondary with color and background 1`] = `
 
 exports[`Button kind hover secondary with color and background 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 jOTXqz"
+  class="StyledGrommet-sc-19lkkz7-0 drDzQW"
 >
   <button
-    class="StyledButtonKind-sc-1vhfpnt-0 imsXvb"
+    class="StyledButtonKind-sc-1vhfpnt-0 deYFHq"
     type="button"
   >
     Button
@@ -2804,10 +2804,10 @@ exports[`Button kind hoverIndicator with color and background 1`] = `
 
 exports[`Button kind hoverIndicator with color and background 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 jOTXqz"
+  class="StyledGrommet-sc-19lkkz7-0 drDzQW"
 >
   <button
-    class="StyledButtonKind-sc-1vhfpnt-0 gqeDIg"
+    class="StyledButtonKind-sc-1vhfpnt-0 jkYXsh"
     type="button"
   >
     Button
@@ -4137,18 +4137,18 @@ exports[`Button kind mouseOver and mouseOut events 1`] = `
 
 exports[`Button kind mouseOver and mouseOut events 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 jOTXqz"
+  class="StyledGrommet-sc-19lkkz7-0 drDzQW"
 >
   <button
-    class="StyledButtonKind-sc-1vhfpnt-0 xuRpr"
+    class="StyledButtonKind-sc-1vhfpnt-0 cJfHda"
     type="button"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 dQLTKA"
+      class="StyledBox-sc-13pk1d4-0 aWBwt"
     >
       <svg
         aria-label="Add"
-        class="StyledIcon-sc-ofa7kd-0 bhsCTv"
+        class="StyledIcon-sc-ofa7kd-0 oZdTK"
         viewBox="0 0 24 24"
       >
         <path
@@ -4159,7 +4159,7 @@ exports[`Button kind mouseOver and mouseOut events 2`] = `
         />
       </svg>
       <div
-        class="StyledBox__StyledBoxGap-sc-13pk1d4-1 hStIGU"
+        class="StyledBox__StyledBoxGap-sc-13pk1d4-1 bdcgyp"
       />
       label
     </div>
@@ -4355,6 +4355,186 @@ exports[`Button kind opacity on default button 1`] = `
   font-size: 18px;
   line-height: 24px;
   opacity: 0.4;
+  text-align: center;
+  transition-property: color,background-color,border-color,box-shadow;
+  transition-duration: 0.1s;
+  transition-timing-function: ease-in-out;
+}
+
+.c1:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus >circle,
+.c1:focus >ellipse,
+.c1:focus >line,
+.c1:focus >path,
+.c1:focus >polygon,
+.c1:focus >polyline,
+.c1:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c1:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible) >circle,
+.c1:focus:not(:focus-visible) >ellipse,
+.c1:focus:not(:focus-visible) >line,
+.c1:focus:not(:focus-visible) >path,
+.c1:focus:not(:focus-visible) >polygon,
+.c1:focus:not(:focus-visible) >polyline,
+.c1:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+<div
+  class="c0"
+>
+  <button
+    class="c1"
+    type="button"
+  >
+    Test
+  </button>
+</div>
+`;
+
+exports[`Button kind padding is applied correctly when intelligentPad is false 1`] = `
+.c1 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: none;
+  border-radius: 18px;
+  padding: 10px 10px;
+  font-size: 18px;
+  line-height: 24px;
+  color: #000000;
+  border-style: solid;
+  border-width: 2px;
+  border-color: #7D4CDB;
+  font-weight: 600;
+  padding: 10px 10px;
+  text-align: center;
+  transition-property: color,background-color,border-color,box-shadow;
+  transition-duration: 0.1s;
+  transition-timing-function: ease-in-out;
+}
+
+.c1:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus >circle,
+.c1:focus >ellipse,
+.c1:focus >line,
+.c1:focus >path,
+.c1:focus >polygon,
+.c1:focus >polyline,
+.c1:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c1:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible) >circle,
+.c1:focus:not(:focus-visible) >ellipse,
+.c1:focus:not(:focus-visible) >line,
+.c1:focus:not(:focus-visible) >path,
+.c1:focus:not(:focus-visible) >polygon,
+.c1:focus:not(:focus-visible) >polyline,
+.c1:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+<div
+  class="c0"
+>
+  <button
+    class="c1"
+    type="button"
+  >
+    Test
+  </button>
+</div>
+`;
+
+exports[`Button kind padding is applied correctly when intelligentPad is true 1`] = `
+.c1 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: none;
+  border-radius: 18px;
+  padding: 10px 10px;
+  font-size: 18px;
+  line-height: 24px;
+  color: #000000;
+  border-style: solid;
+  border-width: 2px;
+  border-color: #7D4CDB;
+  font-weight: 600;
+  padding: 8px 8px;
   text-align: center;
   transition-property: color,background-color,border-color,box-shadow;
   transition-duration: 0.1s;

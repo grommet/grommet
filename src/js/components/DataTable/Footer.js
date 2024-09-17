@@ -5,6 +5,7 @@ import { TableCell } from '../TableCell';
 
 import { Cell } from './Cell';
 import { StyledDataTableCell, StyledDataTableFooter } from './StyledDataTable';
+import { useThemeValue } from '../../utils/useThemeValue';
 
 const Footer = forwardRef(
   (
@@ -25,6 +26,7 @@ const Footer = forwardRef(
     ref,
   ) => {
     const pin = pinProp ? ['bottom'] : [];
+    const { passThemeFlag } = useThemeValue();
 
     return (
       <StyledDataTableFooter ref={ref} fillProp={fill} pin={pinProp} {...rest}>
@@ -45,6 +47,7 @@ const Footer = forwardRef(
               context="footer"
               pin={pin}
               verticalAlign={verticalAlign}
+              {...passThemeFlag}
             />
           )}
           {columns.map((column) => {

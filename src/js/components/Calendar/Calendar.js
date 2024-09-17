@@ -208,22 +208,26 @@ const CalendarDay = ({
   isSelected,
   otherMonth,
   buttonProps = {},
-}) => (
-  <StyledDayContainer role="gridcell" sizeProp={size} fillContainer={fill}>
-    <CalendarDayButton fill={fill} {...buttonProps}>
-      <StyledDay
-        disabledProp={buttonProps.disabled}
-        inRange={isInRange}
-        otherMonth={otherMonth}
-        isSelected={isSelected}
-        sizeProp={size}
-        fillContainer={fill}
-      >
-        {children}
-      </StyledDay>
-    </CalendarDayButton>
-  </StyledDayContainer>
-);
+}) => {
+  const { passThemeFlag } = useThemeValue();
+  return (
+    <StyledDayContainer role="gridcell" sizeProp={size} fillContainer={fill}>
+      <CalendarDayButton fill={fill} {...buttonProps}>
+        <StyledDay
+          disabledProp={buttonProps.disabled}
+          inRange={isInRange}
+          otherMonth={otherMonth}
+          isSelected={isSelected}
+          sizeProp={size}
+          fillContainer={fill}
+          {...passThemeFlag}
+        >
+          {children}
+        </StyledDay>
+      </CalendarDayButton>
+    </StyledDayContainer>
+  );
+};
 
 const CalendarCustomDay = ({ children, fill, size, buttonProps }) => {
   if (!buttonProps) {
@@ -271,7 +275,7 @@ const Calendar = forwardRef(
     },
     ref,
   ) => {
-    const theme = useThemeValue();
+    const { theme, passThemeFlag } = useThemeValue();
     const announce = useContext(AnnounceContext);
     const { format } = useContext(MessageContext);
 
@@ -836,7 +840,13 @@ const Calendar = forwardRef(
     );
 
     return (
-      <StyledCalendar ref={ref} sizeProp={size} fillContainer={fill} {...rest}>
+      <StyledCalendar
+        ref={ref}
+        sizeProp={size}
+        fillContainer={fill}
+        {...passThemeFlag}
+        {...rest}
+      >
         <Box fill={fill}>
           {header
             ? header({
@@ -930,8 +940,14 @@ const Calendar = forwardRef(
                 setFocus(false);
                 setActive(undefined);
               }}
+              {...passThemeFlag}
             >
-              <StyledWeeks slide={slide} sizeProp={size} fillContainer={fill}>
+              <StyledWeeks
+                slide={slide}
+                sizeProp={size}
+                fillContainer={fill}
+                {...passThemeFlag}
+              >
                 {weeks}
               </StyledWeeks>
             </StyledWeeksContainer>

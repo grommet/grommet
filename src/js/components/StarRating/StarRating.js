@@ -7,7 +7,7 @@ import { useThemeValue } from '../../utils/useThemeValue';
 
 const StarRating = ({ name, defaultValue, value: valueProp, ...rest }) => {
   const formContext = useContext(FormContext);
-  const theme = useThemeValue();
+  const { theme } = useThemeValue();
   const [value, setValue] = formContext.useFormInput({
     name,
     value: valueProp,

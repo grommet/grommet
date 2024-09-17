@@ -300,6 +300,77 @@ describe('Button kind', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
+  // Custom theme with intelligentPad set to true
+  const themeWithIntelligentPadTrue = {
+    button: {
+      size: {
+        medium: {
+          pad: {
+            horizontal: '10px',
+            vertical: '10px',
+          },
+        },
+      },
+      default: {},
+      secondary: {
+        border: {
+          color: 'brand',
+          width: '2px',
+        },
+        color: 'text-strong',
+        font: {
+          weight: 600,
+        },
+      },
+    },
+  };
+
+  test('padding is applied correctly when intelligentPad is true', () => {
+    const { container } = render(
+      <Grommet theme={themeWithIntelligentPadTrue}>
+        <Button secondary label="Test" />
+      </Grommet>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  // Custom theme with intelligentPad set to false
+  const themeWithIntelligentPadFalse = {
+    button: {
+      size: {
+        medium: {
+          pad: {
+            horizontal: '10px',
+            vertical: '10px',
+          },
+        },
+      },
+      intelligentPad: false,
+      default: {},
+      secondary: {
+        border: {
+          color: 'brand',
+          width: '2px',
+        },
+        color: 'text-strong',
+        font: {
+          weight: 600,
+        },
+      },
+    },
+  };
+
+  test('padding is applied correctly when intelligentPad is false', () => {
+    const { container } = render(
+      <Grommet theme={themeWithIntelligentPadFalse}>
+        <Button secondary label="Test" />
+      </Grommet>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
   test('no padding on default button', () => {
     const { container } = render(
       <Grommet
