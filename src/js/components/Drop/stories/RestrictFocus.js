@@ -26,6 +26,7 @@ export const RestrictFocus = () => {
           <Box gap="small" pad="large">
             <Button label="first element" />
             <Button label="second element" />
+            <Button label="third element" />
           </Box>
         </Drop>
       )}
