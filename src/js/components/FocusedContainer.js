@@ -67,10 +67,11 @@ export const FocusedContainer = ({
     const lastElement = focusableElements[focusableElements.length - 1];
 
     if (container.contains(event.target)) {
-      // need a check for if the focus is on the first element
-      // go back to the last element
+      container.lastFocus = event.target;
+    } else if (container.lastFocus === firstElement) {
+      lastElement.focus();
+      event.preventDefault();
     } else {
-      // Focus is outside the container, redirect to the first element
       firstElement.focus();
       event.preventDefault();
     }
@@ -79,6 +80,7 @@ export const FocusedContainer = ({
   useEffect(() => {
     const timer = setTimeout(() => {
       if (!hidden && trapFocus && roots && roots[0]) {
+        document.addEventListener('focus', trapFocusHandler, true);
         // Create and insert focusable nodes
         const preDiv = document.createElement('div');
         const postDiv = document.createElement('div');
@@ -97,16 +99,15 @@ export const FocusedContainer = ({
 
         // Make all nodes unfocusable except the last one in the list
         roots.forEach(makeNodeUnfocusable);
-        document.addEventListener('focus', trapFocusHandler, true);
       }
     }, 0);
 
     return () => {
+      document.removeEventListener('focus', trapFocusHandler, true);
       clearTimeout(timer);
       if (preNodeRef.current) preNodeRef.current.remove();
       if (postNodeRef.current) postNodeRef.current.remove();
 
-      document.removeEventListener('focus', trapFocusHandler, true);
       if (roots && roots[0]) {
         makeNodeFocusable(roots[roots.length - 1]);
       }
