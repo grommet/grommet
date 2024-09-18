@@ -191,7 +191,7 @@ export type BorderType =
       side?: BoxSideType;
       size?: BoxSizeType;
       style?: BoxStyleType;
-      borderImage?: string;
+      image?: string;
     }
   | {
       color?: ColorType;
@@ -200,7 +200,7 @@ export type BorderType =
       side?: BoxSideType;
       size?: BoxSizeType;
       style?: BoxStyleType;
-      borderImage?: string;
+      image?: string;
     }[];
 export type ColorType = string | { dark?: string; light?: string } | undefined;
 export type DirectionType =

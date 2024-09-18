@@ -247,36 +247,33 @@ describe('Box', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
-  test('borderImage', () => {
+  test('test if image', () => {
     const { container } = render(
       <Grommet>
-        <Box border={{ borderImage: 'linear-gradient(#f6b73c, #4d9f0c) 30' }} />
-        <Box
-          border={{ borderImage: 'linear-gradient(to right, red, blue) 50' }}
-        />
-        <Box border={{ borderImage: 'beige' }} />
+        <Box border={{ image: 'linear-gradient(#f6b73c, #4d9f0c) 30' }} />
+        <Box border={{ image: 'linear-gradient(to right, red, blue) 50' }} />
         <Box
           border={{
             size: 'medium',
-            borderImage: 'linear-gradient(#f6b73c, #4d9f0c) 30',
+            image: 'linear-gradient(#f6b73c, #4d9f0c) 30',
           }}
         />
         <Box
           border={{
             size: 'small',
-            borderImage: 'linear-gradient(to bottom, green, yellow) 20',
+            image: 'linear-gradient(to bottom, green, yellow) 20',
           }}
         />
         <Box
           border={{
             side: 'top',
-            borderImage: 'linear-gradient(45deg, blue, green) 40',
+            image: 'linear-gradient(45deg, blue, green) 40',
           }}
         />
         <Box
           border={{
             side: 'left',
-            borderImage: 'linear-gradient(135deg, black, white) 50',
+            image: 'linear-gradient(135deg, black, white) 50',
           }}
         />
       </Grommet>,

@@ -42,8 +42,8 @@ export const responsiveBorderStyle = (data, theme) => {
     styles.push(`border: ${value};`);
   }
 
-  if (data.borderImage) {
-    styles.push(`border-image: ${data.borderImage};`);
+  if (data.image) {
+    styles.push(`border-image: ${data.image};`);
   }
   return styles.join('\n');
 };
@@ -108,8 +108,8 @@ export const borderStyle = (borderData, responsive, theme) => {
         styles.push(breakpointStyle(breakpoint, responsiveStyle));
       }
     }
-    if (data.borderImage) {
-      styles.push(`border-image: ${data.borderImage};`);
+    if (data.image) {
+      styles.push(`border-image: ${data.image};`);
     }
     borderStyles.push(styles);
   });

@@ -100,7 +100,7 @@ export const BorderBox = () => (
         size: 'small',
         style: 'solid',
         color: 'transparent',
-        borderImage: 'linear-gradient(#f6b73c, #4d9f0c) 10',
+        image: 'linear-gradient(#f6b73c, #4d9f0c) 10',
       }}
     >
       border-image
