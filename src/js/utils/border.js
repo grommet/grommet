@@ -43,7 +43,17 @@ export const responsiveBorderStyle = (data, theme) => {
   }
 
   if (data.image) {
-    styles.push(`border-image: ${data.image};`);
+    if (typeof data.image === 'object') {
+      const { slice, source } = data.image;
+      if (source) {
+        styles.push(`border-image-source: ${source};`);
+      }
+      if (slice) {
+        styles.push(`border-image-slice: ${slice};`);
+      }
+    } else {
+      styles.push(`border-image: ${data.image};`);
+    }
   }
   return styles.join('\n');
 };
@@ -109,7 +119,17 @@ export const borderStyle = (borderData, responsive, theme) => {
       }
     }
     if (data.image) {
-      styles.push(`border-image: ${data.image};`);
+      if (typeof data.image === 'object') {
+        const { slice, source } = data.image;
+        if (source) {
+          styles.push(`border-image-source: ${source};`);
+        }
+        if (slice) {
+          styles.push(`border-image-slice: ${slice};`);
+        }
+      } else {
+        styles.push(`border-image: ${data.image};`);
+      }
     }
     borderStyles.push(styles);
   });

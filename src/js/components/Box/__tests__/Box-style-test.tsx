@@ -276,6 +276,16 @@ describe('Box', () => {
             image: 'linear-gradient(135deg, black, white) 50',
           }}
         />
+        <Box
+          border={{
+            image: {
+              source: 'linear-gradient(#f6b73c, #4d9f0c)',
+              slice: 30,
+            },
+          }}
+        >
+          hi
+        </Box>
       </Grommet>,
     );
 
