@@ -94,6 +94,17 @@ export const BorderBox = () => (
       <Text>Multiple Border</Text>
       <Text>With Between</Text>
     </Box>
+    <Box
+      pad="small"
+      border={{
+        size: 'small',
+        style: 'solid',
+        color: 'transparent',
+        borderImage: 'linear-gradient(#f6b73c, #4d9f0c) 10',
+      }}
+    >
+      border-image
+    </Box>
   </Box>
   // </Grommet>
 );

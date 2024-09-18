@@ -7,6 +7,9 @@ export const responsiveBorderStyle = (data, theme) => {
   const borderSize = data.size || 'xsmall';
   const style = data.style || 'solid';
   const side = typeof data === 'string' ? data : data.side || 'all';
+
+  let styles = [];
+
   const breakpoint =
     theme.box.responsiveBreakpoint &&
     theme.global.breakpoints[theme.box.responsiveBreakpoint];
@@ -21,22 +24,28 @@ export const responsiveBorderStyle = (data, theme) => {
     side === 'bottom' ||
     side === 'left' ||
     side === 'right'
-  )
-    return `border-${side}: ${value};`;
-  if (side === 'end' || side === 'start')
-    return `border-inline-${side}: ${value};`;
-  if (side === 'vertical')
-    return `
+  ) {
+    styles.push(`border-${side}: ${value};`);
+  } else if (side === 'end' || side === 'start') {
+    styles.push(`border-inline-${side}: ${value};`);
+  } else if (side === 'vertical') {
+    styles.push(`
       border-left: ${value};
       border-right: ${value};
-    `;
-  if (side === 'horizontal')
-    return `
+    `);
+  } else if (side === 'horizontal') {
+    styles.push(`
       border-top: ${value};
       border-bottom: ${value};
-    `;
-  if (side === 'between') return undefined; // no-op
-  return `border: ${value};`;
+    `);
+  } else if (side !== 'between') {
+    styles.push(`border: ${value};`);
+  }
+
+  if (data.borderImage) {
+    styles.push(`border-image: ${data.borderImage};`);
+  }
+  return styles.join('\n');
 };
 
 export const borderStyle = (borderData, responsive, theme) => {
@@ -98,6 +107,9 @@ export const borderStyle = (borderData, responsive, theme) => {
       if (responsiveStyle) {
         styles.push(breakpointStyle(breakpoint, responsiveStyle));
       }
+    }
+    if (data.borderImage) {
+      styles.push(`border-image: ${data.borderImage};`);
     }
     borderStyles.push(styles);
   });

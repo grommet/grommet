@@ -77,7 +77,13 @@ export type BoxSideType =
   | 'vertical'
   | 'all'
   | 'between';
-export type BoxSizeType = 'xsmall' | 'small' | 'medium' | 'large' | 'xlarge' | string;
+export type BoxSizeType =
+  | 'xsmall'
+  | 'small'
+  | 'medium'
+  | 'large'
+  | 'xlarge'
+  | string;
 export type BoxStyleType =
   | 'solid'
   | 'dashed'
@@ -185,6 +191,7 @@ export type BorderType =
       side?: BoxSideType;
       size?: BoxSizeType;
       style?: BoxStyleType;
+      borderImage?: string;
     }
   | {
       color?: ColorType;
@@ -193,6 +200,7 @@ export type BorderType =
       side?: BoxSideType;
       size?: BoxSizeType;
       style?: BoxStyleType;
+      borderImage?: string;
     }[];
 export type ColorType = string | { dark?: string; light?: string } | undefined;
 export type DirectionType =
