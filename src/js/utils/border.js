@@ -8,7 +8,7 @@ export const responsiveBorderStyle = (data, theme) => {
   const style = data.style || 'solid';
   const side = typeof data === 'string' ? data : data.side || 'all';
 
-  let styles = [];
+  const styles = [];
 
   const breakpoint =
     theme.box.responsiveBreakpoint &&
