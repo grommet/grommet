@@ -369,7 +369,7 @@ const DropContainer = forwardRef(
 
     // if restrictFocus is true place focus on the drop container
     // if restrictFocus is firstElement put focus on first
-    // interactive element if none fall back to drop container
+    // interactive element in the drop container
     useEffect(() => {
       if (restrictFocus === true) {
         dropRef.current.focus();
@@ -377,11 +377,7 @@ const DropContainer = forwardRef(
         const firstFocusableElement = getFirstFocusableDescendantElement(
           dropRef.current,
         );
-        if (firstFocusableElement !== undefined) {
-          firstFocusableElement.focus();
-        } else {
-          dropRef.current.focus();
-        }
+        firstFocusableElement.focus();
       }
     }, [dropRef, restrictFocus]);
 
