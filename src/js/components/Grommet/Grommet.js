@@ -150,10 +150,16 @@ const Grommet = forwardRef((props, ref) => {
     if (grommetRef.current) setRoots([grommetRef.current]);
   }, [grommetRef]);
 
+  const rootsContextValue = useMemo(() => ({ roots, setRoots }), [roots]);
+
+  // TO DO this global roots approach causes extra re-renders at
+  // this level which isn't ideal given it's global
+  console.log(roots);
+
   return (
     <ThemeContext.Provider value={theme}>
       <ResponsiveContext.Provider value={responsive}>
-        <RootsContext.Provider value={roots}>
+        <RootsContext.Provider value={rootsContextValue}>
           <ContainerTargetContext.Provider value={containerTarget}>
             <OptionsContext.Provider value={options}>
               <MessageContext.Provider value={messages}>
