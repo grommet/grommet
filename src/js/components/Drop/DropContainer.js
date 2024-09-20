@@ -349,10 +349,10 @@ const DropContainer = forwardRef(
     // the focus on the drop container.
     useEffect(() => {
       if (restrictFocus) {
-        const dropElement = dropRef.current;
-        if (dropElement) {
-          if (!dropElement.contains(document.activeElement)) {
-            dropElement.focus();
+        const dropContainer = dropRef.current;
+        if (dropContainer) {
+          if (!dropContainer.contains(document.activeElement)) {
+            dropContainer.focus();
           }
         }
       }
