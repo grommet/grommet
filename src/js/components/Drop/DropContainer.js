@@ -356,7 +356,7 @@ const DropContainer = forwardRef(
           }
         }
       }
-    }, [restrictFocus, dropRef]);
+    }, [dropRef, restrictFocus]);
 
     let content = (
       <StyledDrop
