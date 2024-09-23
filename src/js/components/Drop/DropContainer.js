@@ -343,10 +343,6 @@ const DropContainer = forwardRef(
       dropOptions,
     ]);
 
-    // this is fighting with the focus event that's called
-    // by focused container in the case of nested drops
-    // because this focus event is called before the previous
-    // container has removed its event listener
     useEffect(() => {
       if (restrictFocus) {
         dropRef.current.focus();
