@@ -60,29 +60,26 @@ export const FocusedContainer = ({
       document.removeEventListener('focus', handleTrapFocus, true);
     };
 
-    const timer = setTimeout(() => {
-      // add container to the global roots
-      if (container) roots.push(container);
+    // add container to the global roots
+    if (container) roots.push(container);
 
-      // Create and insert focusable nodes to help track when focus
-      // has left this container but without letting focus be noticeably placed
-      // on anything outside the container
-      const preDiv = document.createElement('div');
-      const postDiv = document.createElement('div');
+    // Create and insert focusable nodes to help track when focus
+    // has left this container but without letting focus be noticeably placed
+    // on anything outside the container
+    const preDiv = document.createElement('div');
+    const postDiv = document.createElement('div');
 
-      preNodeRef.current = container.parentNode.insertBefore(preDiv, container);
-      postNodeRef.current = container.parentNode.insertBefore(
-        postDiv,
-        container.nextSibling,
-      );
-      preNodeRef.current.tabIndex = 0;
-      postNodeRef.current.tabIndex = 0;
+    preNodeRef.current = container.parentNode.insertBefore(preDiv, container);
+    postNodeRef.current = container.parentNode.insertBefore(
+      postDiv,
+      container.nextSibling,
+    );
+    preNodeRef.current.tabIndex = 0;
+    postNodeRef.current.tabIndex = 0;
 
-      addListeners();
-    }, 0);
+    addListeners();
 
     return () => {
-      clearTimeout(timer);
       // remove from global roots array
       if (roots.indexOf(container)) roots.splice(roots.indexOf(container), 1);
 
