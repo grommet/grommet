@@ -33,8 +33,6 @@ export const FocusedContainer = ({
         const firstElement = focusableElements[0];
         const lastElement = focusableElements[focusableElements.length - 1];
 
-        console.log(roots); // in the drop in layer situation, this hasn't yet
-        // been updated
         // only perform focus if this is the most recently opened drop
         if (roots[roots.length - 1] === container) {
           if (container.contains(e.target)) container.lastFocus = e.target;
