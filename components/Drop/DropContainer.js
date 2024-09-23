@@ -270,9 +270,19 @@ var DropContainer = exports.DropContainer = /*#__PURE__*/(0, _react.forwardRef)(
       window.removeEventListener('resize', onResize);
     };
   }, [align, containerTarget, onAlign, dropTarget, portalContext, portalId, responsive, restrictFocus, stretch, theme.drop, dropRef, dropOptions]);
+
+  // Once drop is open the focus will be put on the drop container
+  // if restrictFocus is true. If the caller put focus
+  // on an element already, we honor that. Otherwise, we put
+  // the focus on the drop container.
   (0, _react.useEffect)(function () {
     if (restrictFocus) {
-      dropRef.current.focus();
+      var dropContainer = dropRef.current;
+      if (dropContainer) {
+        if (!dropContainer.contains(document.activeElement)) {
+          dropContainer.focus();
+        }
+      }
     }
   }, [dropRef, restrictFocus]);
   var content = /*#__PURE__*/_react["default"].createElement(_StyledDrop.StyledDrop, _extends({
