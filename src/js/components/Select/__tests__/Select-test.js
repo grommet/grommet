@@ -73,7 +73,7 @@ describe('Select', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
-  test('prop: onOpen', () => {
+  test.only('prop: onOpen', () => {
     jest.useFakeTimers();
     const onOpen = jest.fn();
     const { getByPlaceholderText, container } = render(

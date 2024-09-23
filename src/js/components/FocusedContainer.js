@@ -15,110 +15,83 @@ export const FocusedContainer = ({
   const preNodeRef = useRef(null);
   const postNodeRef = useRef(null);
 
-  const { roots, setRoots } = useContext(RootsContext);
-  const [active, setActive] = useState(true);
-
-  // only the most recent container in roots should be active and listening
-  // for focus events. when active is false, event listeners will be removed
-  useEffect(() => {
-    if (ref.current && roots[roots.length - 1] === ref.current) {
-      setActive(true);
-    } else setActive(false);
-  }, [roots]);
-
+  const { roots: rootsContextValue } = useContext(RootsContext);
   useEffect(() => {
     const container = ref.current;
-    if (container) {
-      // avoid infinite loop by only adding it if it's not already there
-      const nextRoots = !roots.includes(container)
-        ? [...roots, container]
-        : roots;
-      setRoots(nextRoots);
-    }
-    // on unmount, remove this container from roots
-    return () => {
-      const nextRoots = [...roots.filter((root) => root !== container)];
-      setRoots(nextRoots);
-      // ensure ability to focus is restored to what will now be the
-      // top-most container
-      makeNodeFocusable(nextRoots[nextRoots.length - 1]);
-    };
-  }, [roots, setRoots]);
+    const roots = rootsContextValue.current;
 
-  useEffect(() => {
     const handleTrapFocus = (e) => {
-      const container = ref.current;
-      if (!container) return;
+      if (!hidden && trapFocus && container) {
+        const focusableElements = container.querySelectorAll(
+          `button:not([tabindex="-1"], [href]:not([tabindex="-1"], 
+     input:not([tabindex="-1"], select:not([tabindex="-1"], 
+     textarea:not([tabindex="-1"], [tabindex]:not([tabindex="-1"])`,
+        );
 
-      const focusableElements = container.querySelectorAll(
-        `button, [href], input, select, textarea,
-         [tabindex]:not([tabindex="-1"])`,
-      );
+        if (focusableElements.length === 0) return;
 
-      if (focusableElements.length === 0) return;
+        const firstElement = focusableElements[0];
+        const lastElement = focusableElements[focusableElements.length - 1];
 
-      const firstElement = focusableElements[0];
-      const lastElement = focusableElements[focusableElements.length - 1];
-
-      if (container.contains(e.target)) {
-        container.lastFocus = e.target;
-      } else if (container.lastFocus === firstElement) {
-        lastElement.focus();
-        e.preventDefault();
-      } else {
-        // In the case where the focus hasn't already been placed on or within
-        // the container, this will ensure the next "tab" places focus on the
-        // first focusable element
-        firstElement.focus();
-        e.preventDefault();
+        console.log(roots); // in the drop in layer situation, this hasn't yet
+        // been updated
+        // only perform focus if this is the most recently opened drop
+        if (roots[roots.length - 1] === container) {
+          if (container.contains(e.target)) container.lastFocus = e.target;
+          else if (container.lastFocus === firstElement) {
+            lastElement.focus();
+            e.preventDefault();
+          } else {
+            // In the case where the focus hasn't already been placed on
+            // or within the container, this will ensure the next "tab"
+            // places focus on the first focusable element
+            firstElement.focus();
+            e.preventDefault();
+          }
+        }
       }
     };
 
     const addListeners = () => {
-      document.addEventListener('focus', handleTrapFocus, {
-        capture: true,
-        passive: false,
-      });
+      document.addEventListener('focus', handleTrapFocus, true);
     };
 
     const removeListeners = () => {
-      document.removeEventListener('focus', handleTrapFocus, {
-        capture: true,
-        passive: false,
-      });
+      document.removeEventListener('focus', handleTrapFocus, true);
     };
 
-    // Create and insert focusable nodes to help track when focus
-    // has left this container but without letting focus be noticeably placed
-    // on anything outside the container
-    const preDiv = document.createElement('div');
-    const postDiv = document.createElement('div');
+    const timer = setTimeout(() => {
+      // add container to the global roots
+      if (container) roots.push(container);
 
-    preNodeRef.current = ref.current.parentNode.insertBefore(
-      preDiv,
-      ref.current,
-    );
-    postNodeRef.current = ref.current.parentNode.insertBefore(
-      postDiv,
-      ref.current.nextSibling,
-    );
-    preNodeRef.current.tabIndex = 0;
-    postNodeRef.current.tabIndex = 0;
+      // Create and insert focusable nodes to help track when focus
+      // has left this container but without letting focus be noticeably placed
+      // on anything outside the container
+      const preDiv = document.createElement('div');
+      const postDiv = document.createElement('div');
 
-    if (!active) {
-      console.log(`remove event listener`);
-      removeListeners();
-    } else {
+      preNodeRef.current = container.parentNode.insertBefore(preDiv, container);
+      postNodeRef.current = container.parentNode.insertBefore(
+        postDiv,
+        container.nextSibling,
+      );
+      preNodeRef.current.tabIndex = 0;
+      postNodeRef.current.tabIndex = 0;
+
       addListeners();
-      console.log(`add event listener`);
-    }
+    }, 0);
 
     return () => {
+      clearTimeout(timer);
+      // remove from global roots array
+      if (roots.indexOf(container)) roots.splice(roots.indexOf(container), 1);
+
       removeListeners();
+      if (roots?.[roots.length - 1]) makeNodeFocusable(roots[roots.length - 1]);
       preNodeRef.current.remove();
       postNodeRef.current.remove();
     };
-  }, [active, roots]);
+  }, [hidden, rootsContextValue, trapFocus]);
 
   useEffect(() => {
     if (
@@ -144,8 +117,9 @@ export const FocusedContainer = ({
   }, [bodyOverflowStyle, hidden, trapFocus, restrictScroll]);
 
   useEffect(() => {
+    const roots = rootsContextValue.current;
     const timer = setTimeout(() => {
-      if (!hidden && trapFocus && roots && roots[0]) {
+      if (!hidden && trapFocus && roots?.[0]) {
         // make every root before this one unfocusable
         roots.forEach((root, index) => {
           if (index < roots.length - 1) makeNodeUnfocusable(root);
@@ -154,7 +128,7 @@ export const FocusedContainer = ({
     }, 0);
 
     return () => clearTimeout(timer);
-  }, [hidden, roots, trapFocus]);
+  }, [hidden, rootsContextValue, trapFocus]);
 
   return (
     <div ref={ref} aria-hidden={hidden} {...rest}>
