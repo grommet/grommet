@@ -1,5 +1,14 @@
-import React, { Fragment, useCallback, useMemo, useRef, useState } from 'react';
+import React, {
+  Fragment,
+  useCallback,
+  useContext,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from 'react';
 import styled from 'styled-components';
+import { AnnounceContext } from '../../contexts';
 import { Box } from '../Box';
 import { Drop } from '../Drop';
 import { Grid } from '../Grid';
@@ -29,6 +38,7 @@ const Detail = ({
   renderValue,
   thickness,
 }) => {
+  const announce = useContext(AnnounceContext);
   const { theme } = useThemeValue();
   const [detailIndex, setDetailIndex] = useState();
   const activeIndex = useRef();
@@ -77,6 +87,38 @@ const Detail = ({
 
     return res;
   }, [data.length, detailIndex, horizontalProp]);
+
+  useEffect(() => {
+    if (detailIndex !== undefined) {
+      const content = series
+        .filter(
+          ({ property }) =>
+            ((!activeProperty || activeProperty === property) &&
+              data?.[detailIndex]?.[property] !== undefined) ||
+            (axis && axis.x && axis.x.property === property),
+        )
+        .map((serie) => {
+          const axisValue = horizontalProp
+            ? data[detailIndex][serie.property]
+            : detailIndex;
+          return `${serie.label || serie.property} ${renderValue(
+            serie,
+            axisValue,
+          )}`;
+        })
+        .join(' ');
+      announce(content);
+    }
+  }, [
+    activeProperty,
+    announce,
+    axis,
+    data,
+    detailIndex,
+    horizontalProp,
+    renderValue,
+    series,
+  ]);
 
   return (
     <>
