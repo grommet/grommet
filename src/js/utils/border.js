@@ -51,8 +51,6 @@ export const responsiveBorderStyle = (data, theme) => {
       if (slice) {
         styles.push(`border-image-slice: ${slice};`);
       }
-    } else {
-      styles.push(`border-image: ${data.image};`);
     }
   }
   return styles.join('\n');
@@ -127,8 +125,6 @@ export const borderStyle = (borderData, responsive, theme) => {
         if (slice) {
           styles.push(`border-image-slice: ${slice};`);
         }
-      } else {
-        styles.push(`border-image: ${data.image};`);
       }
     }
     borderStyles.push(styles);
