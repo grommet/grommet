@@ -250,30 +250,45 @@ describe('Box', () => {
   test('test if image', () => {
     const { container } = render(
       <Grommet>
-        <Box border={{ image: 'linear-gradient(#f6b73c, #4d9f0c) 30' }} />
-        <Box border={{ image: 'linear-gradient(to right, red, blue) 50' }} />
+        <Box
+          border={{ image: { source: 'linear-gradient(#f6b73c, #4d9f0c)' } }}
+        />
+        <Box
+          border={{ image: { source: 'linear-gradient(to right, red, blue)' } }}
+        />
         <Box
           border={{
             size: 'medium',
-            image: 'linear-gradient(#f6b73c, #4d9f0c) 30',
+            image: {
+              source: 'linear-gradient(#f6b73c, #4d9f0c)',
+              slice: 30,
+            },
           }}
         />
         <Box
           border={{
             size: 'small',
-            image: 'linear-gradient(to bottom, green, yellow) 20',
+            image: {
+              source: 'linear-gradient(to bottom, green, yellow)',
+              slice: 20,
+            },
           }}
         />
         <Box
           border={{
             side: 'top',
-            image: 'linear-gradient(45deg, blue, green) 40',
+            image: {
+              source: 'linear-gradient(45deg, blue, green)',
+            },
           }}
         />
         <Box
           border={{
             side: 'left',
-            image: 'linear-gradient(135deg, black, white) 50',
+            image: {
+              source: 'linear-gradient(135deg, black, white)',
+              slice: 50,
+            },
           }}
         />
         <Box

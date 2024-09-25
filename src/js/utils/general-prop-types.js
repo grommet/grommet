@@ -257,7 +257,7 @@ export const BORDER_SHAPE = PropTypes.shape({
       light: PropTypes.string,
     }),
   ]),
-  image: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
+  image: PropTypes.oneOfType([PropTypes.object]),
   side: PropTypes.oneOf([
     'top',
     'left',
