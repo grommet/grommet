@@ -209,59 +209,55 @@ const DropContainer = forwardRef(
             less room in the other direction leave the Drop in its current
             position. */
           if (
-            /* The bottom of the drop is aligned to the top of the target 
-            and the top of the drop is either at the top edge of the viewport
-            or beyond it. If there is room to display the drop below the target
-            change the drop's position so that the top of the drop is aligned 
-            to the bottom of the target. */
             responsive &&
+            // drop is above target
             align.bottom === 'top' &&
+            // drop is overflowing above window
             targetRect.top - containerRect.height <= 0 &&
+            // there is room to display the drop below the target
             targetRect.bottom + containerRect.height < windowHeight
           ) {
+            // top of drop is aligned to bottom of target
             top = targetRect.bottom;
             maxHeight = top;
           } else if (
-            /* The top of the drop is aligned to the top of the target, the 
-            bottom of the drop is either at the bottom edge of the viewport
-            or beyond it, and the height of the drop is larger than the target. 
-            If there is room to display the drop above the target, change the 
-            drop's position so that the bottom of the drop is aligned to the 
-            bottom of the target. */
             responsive &&
+            // top of drop is aligned to top of target
             align.top === 'top' &&
+            // drop is overflowing below window
             targetRect.top + containerRect.height >= windowHeight &&
+            // height of the drop is larger than the target.
             targetRect.top + containerRect.height > targetRect.bottom &&
+            // there is room to display the drop above the target
             targetRect.bottom - containerRect.height > 0
           ) {
+            // bottom of drop is aligned to bottom of target
             bottom = targetRect.bottom;
             maxHeight = top;
           } else if (
-            /* The top of the drop is aligned to the bottom of the target 
-            and the bottom of the drop is either at the bottom edge of the 
-            viewport or beyond it. If there is room to display the drop 
-            above the target change the drop's position so that the bottom 
-            of the drop is aligned to the top of the target. */
             responsive &&
+            // top of drop is aligned to bottom of target
             align.top === 'bottom' &&
+            // drop is overflowing below window
             targetRect.bottom + containerRect.height >= windowHeight &&
+            // there is room to display the drop above the target
             targetRect.top - containerRect.height > 0
           ) {
+            // bottom of drop is aligned to top of target
             bottom = targetRect.top;
             maxHeight = bottom;
           } else if (
-            /* The bottom of the drop is aligned to the bottom of the target, 
-            the top of the drop is either at the top edge of the viewport
-            or beyond it, and the height of the drop is larger than the target. 
-            If there is room to display the drop below the target change the 
-            drop's position so that the top of the drop is aligned  to the top 
-            of the target. */
             responsive &&
+            // bottom of drop is aligned to bottom of target
             align.bottom === 'bottom' &&
+            // drop is overflowing above window
             targetRect.bottom - containerRect.height <= 0 &&
+            // height of the drop is larger than the target.
             targetRect.bottom - containerRect.height > targetRect.top &&
+            // there is room to display the drop below the target
             targetRect.top + containerRect.height > 0
           ) {
+            // top of drop is aligned to top of target
             top = targetRect.top;
             maxHeight = bottom;
           } else if (align.top === 'top') {
