@@ -1,18 +1,9 @@
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 import PropTypes from 'prop-types';
-import { alignPropType, genericProps, heightPropType, padPropType, widthPropType } from '../../utils/general-prop-types';
+import { alignPropType, genericProps, heightPropType, padPropType, widthPropType, BORDER_SHAPE } from '../../utils/general-prop-types';
 var fixedSizes = ['xsmall', 'small', 'medium', 'large', 'xlarge'];
 var sizes = ['xsmall', 'small', 'medium', 'large', 'xlarge', 'full', '1/2', '1/3', '2/3', '1/4', '2/4', '3/4', 'flex', 'auto'];
 var edgeSizes = ['xxsmall', 'xsmall', 'small', 'medium', 'large', 'xlarge', 'none'];
-var BORDER_SHAPE = PropTypes.shape({
-  color: PropTypes.oneOfType([PropTypes.string, PropTypes.shape({
-    dark: PropTypes.string,
-    light: PropTypes.string
-  })]),
-  side: PropTypes.oneOf(['top', 'left', 'bottom', 'right', 'start', 'end', 'horizontal', 'vertical', 'all', 'between']),
-  size: PropTypes.oneOfType([PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge']), PropTypes.string]),
-  style: PropTypes.oneOf(['solid', 'dashed', 'dotted', 'double', 'groove', 'ridge', 'inset', 'outset', 'hidden'])
-});
 var PropType = {};
 if (process.env.NODE_ENV !== 'production') {
   PropType = _extends({}, genericProps, {

@@ -1,16 +1,7 @@
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 import PropTypes from 'prop-types';
-import { animationPropType, backgroundDoc, elevationPropType, genericProps, heightPropType, hoverIndicatorPropType, padPropType, roundPropType, skeletonPropType, widthPropType } from '../../utils/general-prop-types';
+import { animationPropType, backgroundDoc, elevationPropType, genericProps, heightPropType, hoverIndicatorPropType, padPropType, roundPropType, skeletonPropType, widthPropType, BORDER_SHAPE } from '../../utils/general-prop-types';
 var OVERFLOW_VALUES = ['auto', 'hidden', 'scroll', 'visible'];
-var BORDER_SHAPE = PropTypes.shape({
-  color: PropTypes.oneOfType([PropTypes.string, PropTypes.shape({
-    dark: PropTypes.string,
-    light: PropTypes.string
-  })]),
-  side: PropTypes.oneOf(['top', 'left', 'bottom', 'right', 'start', 'end', 'horizontal', 'vertical', 'all', 'between']),
-  size: PropTypes.oneOfType([PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge']), PropTypes.string]),
-  style: PropTypes.oneOf(['solid', 'dashed', 'dotted', 'double', 'groove', 'ridge', 'inset', 'outset', 'hidden'])
-});
 
 // if you update values here, make sure to update in Drop/doc too.
 var overflowPropType = PropTypes.oneOfType([PropTypes.oneOf(OVERFLOW_VALUES), PropTypes.shape({

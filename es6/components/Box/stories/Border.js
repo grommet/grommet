@@ -107,7 +107,18 @@ export var BorderBox = function BorderBox() {
       }, {
         side: 'left'
       }]
-    }, /*#__PURE__*/React.createElement(Text, null, "Multiple Border"), /*#__PURE__*/React.createElement(Text, null, "With Between")))
+    }, /*#__PURE__*/React.createElement(Text, null, "Multiple Border"), /*#__PURE__*/React.createElement(Text, null, "With Between")), /*#__PURE__*/React.createElement(Box, {
+      pad: "small",
+      border: {
+        size: 'small',
+        style: 'solid',
+        color: 'transparent',
+        image: {
+          source: 'linear-gradient(#f6b73c, #4d9f0c)',
+          slice: 10
+        }
+      }
+    }, "border-image"))
     // </Grommet>
   );
 };

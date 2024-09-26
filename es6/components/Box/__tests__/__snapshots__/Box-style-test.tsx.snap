@@ -1773,3 +1773,177 @@ exports[`Box round with responive equal to false 1`] = `
   </div>
 </DocumentFragment>
 `;
+
+exports[`Box test if image 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  border: solid 1px rgba(0, 0, 0, 0.33);
+  border-image-source: linear-gradient(#f6b73c, #4d9f0c);
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+}
+
+.c2 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  border: solid 1px rgba(0, 0, 0, 0.33);
+  border-image-source: linear-gradient(to right, red, blue);
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+}
+
+.c3 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  border: solid 4px rgba(0, 0, 0, 0.33);
+  border-image-source: linear-gradient(#f6b73c, #4d9f0c);
+  border-image-slice: 30;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+}
+
+.c4 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  border: solid 2px rgba(0, 0, 0, 0.33);
+  border-image-source: linear-gradient(to bottom, green, yellow);
+  border-image-slice: 20;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+}
+
+.c5 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  border-top: solid 1px rgba(0, 0, 0, 0.33);
+  border-image-source: linear-gradient(45deg, blue, green);
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+}
+
+.c6 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  border-left: solid 1px rgba(0, 0, 0, 0.33);
+  border-image-source: linear-gradient(135deg, black, white);
+  border-image-slice: 50;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+}
+
+.c7 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  border: solid 1px rgba(0, 0, 0, 0.33);
+  border-image-source: linear-gradient(#f6b73c, #4d9f0c);
+  border-image-slice: 30;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+}
+
+@media only screen and (max-width: 768px) {
+  .c1 {
+    border: solid 1px rgba(0, 0, 0, 0.33);
+    border-image-source: linear-gradient(#f6b73c, #4d9f0c);
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    border: solid 1px rgba(0, 0, 0, 0.33);
+    border-image-source: linear-gradient(to right, red, blue);
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c3 {
+    border: solid 4px rgba(0, 0, 0, 0.33);
+    border-image-source: linear-gradient(#f6b73c, #4d9f0c);
+    border-image-slice: 30;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c4 {
+    border: solid 2px rgba(0, 0, 0, 0.33);
+    border-image-source: linear-gradient(to bottom, green, yellow);
+    border-image-slice: 20;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c5 {
+    border-top: solid 1px rgba(0, 0, 0, 0.33);
+    border-image-source: linear-gradient(45deg, blue, green);
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c6 {
+    border-left: solid 1px rgba(0, 0, 0, 0.33);
+    border-image-source: linear-gradient(135deg, black, white);
+    border-image-slice: 50;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c7 {
+    border: solid 1px rgba(0, 0, 0, 0.33);
+    border-image-source: linear-gradient(#f6b73c, #4d9f0c);
+    border-image-slice: 30;
+  }
+}
+
+<div
+  class="c0"
+>
+  <div
+    class="c1"
+  />
+  <div
+    class="c2"
+  />
+  <div
+    class="c3"
+  />
+  <div
+    class="c4"
+  />
+  <div
+    class="c5"
+  />
+  <div
+    class="c6"
+  />
+  <div
+    class="c7"
+  >
+    hi
+  </div>
+</div>
+`;

@@ -90,3 +90,16 @@ export var widthPropType = PropTypes.oneOfType([dimSizeType, PropTypes.string, P
   max: PropTypes.oneOfType([dimSizeType, PropTypes.string])
 })]);
 export var OVERFLOW_VALUES = ['auto', 'hidden', 'scroll', 'visible'];
+export var BORDER_SHAPE = PropTypes.shape({
+  color: PropTypes.oneOfType([PropTypes.string, PropTypes.shape({
+    dark: PropTypes.string,
+    light: PropTypes.string
+  })]),
+  image: PropTypes.shape({
+    source: PropTypes.string,
+    slice: PropTypes.number
+  }),
+  side: PropTypes.oneOf(['top', 'left', 'bottom', 'right', 'start', 'end', 'horizontal', 'vertical', 'all', 'between']),
+  size: PropTypes.oneOfType([PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge']), PropTypes.string]),
+  style: PropTypes.oneOf(['solid', 'dashed', 'dotted', 'double', 'groove', 'ridge', 'inset', 'outset', 'hidden'])
+});

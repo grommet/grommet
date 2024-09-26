@@ -112,7 +112,18 @@ var BorderBox = exports.BorderBox = function BorderBox() {
       }, {
         side: 'left'
       }]
-    }, /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, "Multiple Border"), /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, "With Between")))
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, "Multiple Border"), /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, "With Between")), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
+      pad: "small",
+      border: {
+        size: 'small',
+        style: 'solid',
+        color: 'transparent',
+        image: {
+          source: 'linear-gradient(#f6b73c, #4d9f0c)',
+          slice: 10
+        }
+      }
+    }, "border-image"))
     // </Grommet>
   );
 };

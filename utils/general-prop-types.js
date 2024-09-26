@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.widthPropType = exports.skeletonPropType = exports.skeletonColorsPropType = exports.roundPropType = exports.pointPropType = exports.patternPropType = exports.padPropType = exports.marginProp = exports.hoverIndicatorPropType = exports.heightPropType = exports.genericProps = exports.elevationPropType = exports.colorPropType = exports.backgroundPropType = exports.backgroundDoc = exports.animationPropType = exports.alignPropType = exports.a11yTitlePropType = exports.OVERFLOW_VALUES = exports.MARGIN_SIZES = void 0;
+exports.widthPropType = exports.skeletonPropType = exports.skeletonColorsPropType = exports.roundPropType = exports.pointPropType = exports.patternPropType = exports.padPropType = exports.marginProp = exports.hoverIndicatorPropType = exports.heightPropType = exports.genericProps = exports.elevationPropType = exports.colorPropType = exports.backgroundPropType = exports.backgroundDoc = exports.animationPropType = exports.alignPropType = exports.a11yTitlePropType = exports.OVERFLOW_VALUES = exports.MARGIN_SIZES = exports.BORDER_SHAPE = void 0;
 var _propTypes = _interopRequireDefault(require("prop-types"));
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
 var a11yTitlePropType = exports.a11yTitlePropType = _propTypes["default"].string;
@@ -95,3 +95,16 @@ var widthPropType = exports.widthPropType = _propTypes["default"].oneOfType([dim
   max: _propTypes["default"].oneOfType([dimSizeType, _propTypes["default"].string])
 })]);
 var OVERFLOW_VALUES = exports.OVERFLOW_VALUES = ['auto', 'hidden', 'scroll', 'visible'];
+var BORDER_SHAPE = exports.BORDER_SHAPE = _propTypes["default"].shape({
+  color: _propTypes["default"].oneOfType([_propTypes["default"].string, _propTypes["default"].shape({
+    dark: _propTypes["default"].string,
+    light: _propTypes["default"].string
+  })]),
+  image: _propTypes["default"].shape({
+    source: _propTypes["default"].string,
+    slice: _propTypes["default"].number
+  }),
+  side: _propTypes["default"].oneOf(['top', 'left', 'bottom', 'right', 'start', 'end', 'horizontal', 'vertical', 'all', 'between']),
+  size: _propTypes["default"].oneOfType([_propTypes["default"].oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge']), _propTypes["default"].string]),
+  style: _propTypes["default"].oneOf(['solid', 'dashed', 'dotted', 'double', 'groove', 'ridge', 'inset', 'outset', 'hidden'])
+});
