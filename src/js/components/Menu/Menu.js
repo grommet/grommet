@@ -439,7 +439,9 @@ const Menu = forwardRef((props, ref) => {
               background={dropBackground || theme.menu.background}
               {...passThemeFlag}
             >
-              {alignControlMirror === 'top' && align.top === 'top'
+              {alignControlMirror === 'top' &&
+              align.bottom !== 'top' &&
+              align.top !== 'bottom'
                 ? controlMirror
                 : undefined}
               <Box overflow="auto" role="menu" a11yTitle={a11y}>
@@ -452,8 +454,9 @@ const Menu = forwardRef((props, ref) => {
               {!initialAlignTop &&
               // don't show controlMirror if caller is using
               // align.bottom === 'top'
-              ((alignControlMirror === 'bottom' && !align.bottom === 'top') ||
-                align.bottom === 'bottom')
+              alignControlMirror === 'bottom' &&
+              align.bottom !== 'top' &&
+              align.top !== 'bottom'
                 ? controlMirror
                 : undefined}
             </ContainerBox>
