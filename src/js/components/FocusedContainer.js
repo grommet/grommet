@@ -43,16 +43,10 @@ export const FocusedContainer = ({
 
         if (container.contains(e.target)) container.lastFocus = e.target;
         // if focus event is moving to bookend divs, loop focus to trap it.
-        else if (
-          container.lastFocus === firstElement &&
-          (e.target === postNodeRef.current || e.target === preNodeRef.current)
-        ) {
+        else if (container.lastFocus === firstElement) {
           lastElement.focus();
           e.preventDefault();
-        } else if (
-          e.target === postNodeRef.current ||
-          e.target === preNodeRef.current
-        ) {
+        } else {
           // In the case where the focus hasn't already been placed on
           // or within the container, this will ensure the next "tab"
           // places focus on the first focusable element
