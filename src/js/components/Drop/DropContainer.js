@@ -377,9 +377,18 @@ const DropContainer = forwardRef(
       dropOptions,
     ]);
 
+    // Once drop is open the focus will be put on the drop container
+    // if restrictFocus is true. If the caller put focus
+    // on an element already, we honor that. Otherwise, we put
+    // the focus on the drop container.
     useEffect(() => {
       if (restrictFocus) {
-        dropRef.current.focus();
+        const dropContainer = dropRef.current;
+        if (dropContainer) {
+          if (!dropContainer.contains(document.activeElement)) {
+            dropContainer.focus();
+          }
+        }
       }
     }, [dropRef, restrictFocus]);
 
