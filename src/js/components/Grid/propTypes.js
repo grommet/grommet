@@ -5,6 +5,7 @@ import {
   heightPropType,
   padPropType,
   widthPropType,
+  BORDER_SHAPE,
 } from '../../utils/general-prop-types';
 
 const fixedSizes = ['xsmall', 'small', 'medium', 'large', 'xlarge'];
@@ -33,43 +34,6 @@ const edgeSizes = [
   'xlarge',
   'none',
 ];
-
-const BORDER_SHAPE = PropTypes.shape({
-  color: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.shape({
-      dark: PropTypes.string,
-      light: PropTypes.string,
-    }),
-  ]),
-  side: PropTypes.oneOf([
-    'top',
-    'left',
-    'bottom',
-    'right',
-    'start',
-    'end',
-    'horizontal',
-    'vertical',
-    'all',
-    'between',
-  ]),
-  size: PropTypes.oneOfType([
-    PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge']),
-    PropTypes.string,
-  ]),
-  style: PropTypes.oneOf([
-    'solid',
-    'dashed',
-    'dotted',
-    'double',
-    'groove',
-    'ridge',
-    'inset',
-    'outset',
-    'hidden',
-  ]),
-});
 
 let PropType = {};
 if (process.env.NODE_ENV !== 'production') {
