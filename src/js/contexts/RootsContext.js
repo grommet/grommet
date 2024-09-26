@@ -16,6 +16,6 @@ export const useRoots = () => {
 
   return {
     contextValue: existingRoots || defaultValue,
-    withinGrommet: existingRoots?.roots !== undefined,
+    hasRoots: existingRoots?.roots !== undefined,
   };
 };

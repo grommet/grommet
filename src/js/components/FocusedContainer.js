@@ -15,7 +15,7 @@ export const FocusedContainer = ({
   const preNodeRef = useRef(null);
   const postNodeRef = useRef(null);
 
-  const { contextValue, withinGrommet } = useRoots();
+  const { contextValue, hasRoots } = useRoots();
   const { roots: contextRoots } = contextValue;
 
   useEffect(() => {
@@ -23,7 +23,13 @@ export const FocusedContainer = ({
     const roots = contextRoots.current;
 
     const handleTrapFocus = (e) => {
-      if (!hidden && trapFocus && container) {
+      if (
+        !hidden &&
+        trapFocus &&
+        container &&
+        // only perform focus if this is the most recently opened drop
+        roots[roots.length - 1] === container
+      ) {
         const focusableElements = container.querySelectorAll(
           `button:not([tabindex="-1"]), [href]:not([tabindex="-1"]), 
      input:not([tabindex="-1"]), select:not([tabindex="-1"]), 
@@ -35,27 +41,23 @@ export const FocusedContainer = ({
         const firstElement = focusableElements[0];
         const lastElement = focusableElements[focusableElements.length - 1];
 
-        // only perform focus if this is the most recently opened drop
-        if (roots[roots.length - 1] === container) {
-          if (container.contains(e.target)) container.lastFocus = e.target;
-          // if focus event is moving to bookend divs, loop focus to trap it.
-          else if (
-            container.lastFocus === firstElement &&
-            (e.target === postNodeRef.current ||
-              e.target === preNodeRef.current)
-          ) {
-            lastElement.focus();
-            e.preventDefault();
-          } else if (
-            e.target === postNodeRef.current ||
-            e.target === preNodeRef.current
-          ) {
-            // In the case where the focus hasn't already been placed on
-            // or within the container, this will ensure the next "tab"
-            // places focus on the first focusable element
-            firstElement.focus();
-            e.preventDefault();
-          }
+        if (container.contains(e.target)) container.lastFocus = e.target;
+        // if focus event is moving to bookend divs, loop focus to trap it.
+        else if (
+          container.lastFocus === firstElement &&
+          (e.target === postNodeRef.current || e.target === preNodeRef.current)
+        ) {
+          lastElement.focus();
+          e.preventDefault();
+        } else if (
+          e.target === postNodeRef.current ||
+          e.target === preNodeRef.current
+        ) {
+          // In the case where the focus hasn't already been placed on
+          // or within the container, this will ensure the next "tab"
+          // places focus on the first focusable element
+          firstElement.focus();
+          e.preventDefault();
         }
       }
     };
@@ -142,7 +144,7 @@ export const FocusedContainer = ({
     </div>
   );
 
-  if (withinGrommet) return focusedContainer;
+  if (hasRoots) return focusedContainer;
   return (
     // for cases outside of Grommet React tree, manage trapFocus when
     // Drop/Layer opens another Drop/Layer
