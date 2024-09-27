@@ -172,10 +172,14 @@ const SelectMultiple = forwardRef(
     // the option indexes present in the value
     const optionIndexesInValue = useMemo(() => {
       const result = [];
-      allOptions.forEach((option, index) => {
-        if (normalizedValue?.some?.((v) => v === applyKey(option, valueKey))) {
-          result.push(index);
-        }
+      if (!Array.isArray(normalizedValue)) {
+        return result;
+      }
+      normalizedValue.forEach((v) => {
+        const index = allOptions
+          .map((option) => applyKey(option, valueKey))
+          .indexOf(v);
+        if (index !== -1) result.push(index);
       });
       return result;
     }, [allOptions, valueKey, normalizedValue]);
