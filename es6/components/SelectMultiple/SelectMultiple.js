@@ -159,12 +159,14 @@ var SelectMultiple = /*#__PURE__*/forwardRef(function (_ref, ref) {
   // the option indexes present in the value
   var optionIndexesInValue = useMemo(function () {
     var result = [];
-    allOptions.forEach(function (option, index) {
-      if (normalizedValue != null && normalizedValue.some != null && normalizedValue.some(function (v) {
-        return v === applyKey(option, valueKey);
-      })) {
-        result.push(index);
-      }
+    if (!Array.isArray(normalizedValue)) {
+      return result;
+    }
+    normalizedValue.forEach(function (v) {
+      var index = allOptions.map(function (option) {
+        return applyKey(option, valueKey);
+      }).indexOf(v);
+      if (index !== -1) result.push(index);
     });
     return result;
   }, [allOptions, valueKey, normalizedValue]);

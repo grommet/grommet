@@ -166,12 +166,14 @@ var SelectMultiple = exports.SelectMultiple = /*#__PURE__*/(0, _react.forwardRef
   // the option indexes present in the value
   var optionIndexesInValue = (0, _react.useMemo)(function () {
     var result = [];
-    allOptions.forEach(function (option, index) {
-      if (normalizedValue != null && normalizedValue.some != null && normalizedValue.some(function (v) {
-        return v === (0, _utils2.applyKey)(option, valueKey);
-      })) {
-        result.push(index);
-      }
+    if (!Array.isArray(normalizedValue)) {
+      return result;
+    }
+    normalizedValue.forEach(function (v) {
+      var index = allOptions.map(function (option) {
+        return (0, _utils2.applyKey)(option, valueKey);
+      }).indexOf(v);
+      if (index !== -1) result.push(index);
     });
     return result;
   }, [allOptions, valueKey, normalizedValue]);

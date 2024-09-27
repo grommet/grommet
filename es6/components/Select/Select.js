@@ -126,23 +126,30 @@ var Select = /*#__PURE__*/forwardRef(function (_ref, ref) {
   // the option indexes present in the value
   var optionIndexesInValue = useMemo(function () {
     var result = [];
-    allOptions.forEach(function (option, index) {
-      if (selected !== undefined) {
-        if (Array.isArray(selected)) {
-          if (selected.indexOf(index) !== -1) result.push(index);
-        } else if (index === selected) {
-          result.push(index);
-        }
-      } else if (Array.isArray(normalizedValue)) {
-        if (normalizedValue.some(function (v) {
-          return v === applyKey(option, valueKey);
-        })) {
-          result.push(index);
-        }
-      } else if (normalizedValue === applyKey(option, valueKey)) {
+    if (selected !== undefined) {
+      if (Array.isArray(selected)) {
+        var validSelections = selected.filter(function (i) {
+          return i in allOptions;
+        });
+        result.push.apply(result, validSelections);
+      } else if (selected in allOptions) {
+        result.push(selected);
+      }
+    } else if (Array.isArray(normalizedValue)) {
+      normalizedValue.forEach(function (v) {
+        var index = allOptions.map(function (option) {
+          return applyKey(option, valueKey);
+        }).indexOf(v);
+        if (index !== -1) result.push(index);
+      });
+    } else {
+      var index = allOptions.map(function (option) {
+        return applyKey(option, valueKey);
+      }).indexOf(normalizedValue);
+      if (index !== -1) {
         result.push(index);
       }
-    });
+    }
     return result;
   }, [allOptions, selected, valueKey, normalizedValue]);
   var _useState3 = useState(propOpen),
