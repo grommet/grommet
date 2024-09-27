@@ -83,16 +83,18 @@ const SimpleDrop = () => {
               <Button
                 ref={restrictFocusButtonRef}
                 label="A regular button with restrict focus"
-                onClick={() => setShowDropInModal(true)}
+                onClick={() => setShowRestrictFocusDrop(true)}
               />
               {showRestrictFocusDrop && (
                 <Drop
                   target={restrictFocusButtonRef.current}
-                  align={align}
+                  align={
+                    console.log('hello', restrictFocusButtonRef.current) || {
+                      top: 'bottom',
+                    }
+                  }
                   onClickOutside={() => setShowRestrictFocusDrop(false)}
                   onEsc={() => setShowRestrictFocusDrop(false)}
-                  // TO DO onEsc isn't restoring
-                  // focus to the button as I'd expect
                   restrictFocus
                 >
                   <InteractiveContent />
