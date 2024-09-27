@@ -1,70 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`DataTableColumns pinned 1`] = `
-.c11 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #666666;
-  stroke: #666666;
-}
-
-.c11 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c11 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c11 *[stroke*='#'],
-.c11 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c11 *[fill-rule],
-.c11 *[FILL-RULE],
-.c11 *[fill*='#'],
-.c11 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
-}
-
-.c18 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #555555;
-  stroke: #555555;
-}
-
-.c18 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c18 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c18 *[stroke*='#'],
-.c18 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c18 *[fill-rule],
-.c18 *[FILL-RULE],
-.c18 *[fill*='#'],
-.c18 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
-}
-
 .c1 {
   display: flex;
   box-sizing: border-box;
@@ -153,6 +89,70 @@ exports[`DataTableColumns pinned 1`] = `
   flex: 0 0 auto;
   align-self: stretch;
   width: 24px;
+}
+
+.c11 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #666666;
+  stroke: #666666;
+}
+
+.c11 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c11 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c11 *[stroke*='#'],
+.c11 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c11 *[fill-rule],
+.c11 *[FILL-RULE],
+.c11 *[fill*='#'],
+.c11 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c18 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #555555;
+  stroke: #555555;
+}
+
+.c18 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c18 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c18 *[stroke*='#'],
+.c18 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c18 *[fill-rule],
+.c18 *[FILL-RULE],
+.c18 *[fill*='#'],
+.c18 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
 }
 
 .c5 {
@@ -607,7 +607,37 @@ exports[`DataTableColumns pinned 1`] = `
 
 exports[`DataTableColumns remove column 1`] = `
 <DocumentFragment>
-  .c4 {
+  .c1 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  flex: 0 0 auto;
+}
+
+.c8 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  flex: 1 0 auto;
+  justify-content: center;
+}
+
+.c12 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+}
+
+.c4 {
   display: inline-block;
   flex: 0 0 auto;
   width: 24px;
@@ -637,36 +667,6 @@ exports[`DataTableColumns remove column 1`] = `
 .c4 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
-}
-
-.c1 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  flex-direction: column;
-  flex: 0 0 auto;
-}
-
-.c8 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  flex-direction: column;
-  flex: 1 0 auto;
-  justify-content: center;
-}
-
-.c12 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  flex-direction: column;
 }
 
 .c9 {
@@ -968,38 +968,6 @@ exports[`DataTableColumns remove column 1`] = `
 `;
 
 exports[`DataTableColumns remove column 2`] = `
-.c4 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #666666;
-  stroke: #666666;
-}
-
-.c4 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c4 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c4 *[stroke*='#'],
-.c4 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c4 *[fill-rule],
-.c4 *[FILL-RULE],
-.c4 *[fill*='#'],
-.c4 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
-}
-
 .c7 {
   display: flex;
   box-sizing: border-box;
@@ -1057,6 +1025,38 @@ exports[`DataTableColumns remove column 2`] = `
   flex: 0 0 auto;
   align-self: stretch;
   height: 12px;
+}
+
+.c4 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #666666;
+  stroke: #666666;
+}
+
+.c4 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c4 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c4 *[stroke*='#'],
+.c4 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c4 *[fill-rule],
+.c4 *[FILL-RULE],
+.c4 *[fill*='#'],
+.c4 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
 }
 
 .c13 {
@@ -1400,39 +1400,7 @@ exports[`DataTableColumns remove column 2`] = `
 
 exports[`DataTableColumns renders 1`] = `
 <DocumentFragment>
-  .c6 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #666666;
-  stroke: #666666;
-}
-
-.c6 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c6 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c6 *[stroke*='#'],
-.c6 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c6 *[fill-rule],
-.c6 *[FILL-RULE],
-.c6 *[fill*='#'],
-.c6 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
-}
-
-.c1 {
+  .c1 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -1494,6 +1462,38 @@ exports[`DataTableColumns renders 1`] = `
   min-width: 0;
   min-height: 0;
   flex-direction: column;
+}
+
+.c6 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #666666;
+  stroke: #666666;
+}
+
+.c6 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c6 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c6 *[stroke*='#'],
+.c6 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c6 *[fill-rule],
+.c6 *[FILL-RULE],
+.c6 *[fill*='#'],
+.c6 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
 }
 
 .c13 {
@@ -1863,38 +1863,6 @@ exports[`DataTableColumns renders 1`] = `
 `;
 
 exports[`DataTableColumns renders 2`] = `
-.c4 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #666666;
-  stroke: #666666;
-}
-
-.c4 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c4 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c4 *[stroke*='#'],
-.c4 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c4 *[fill-rule],
-.c4 *[FILL-RULE],
-.c4 *[fill*='#'],
-.c4 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
-}
-
 .c7 {
   display: flex;
   box-sizing: border-box;
@@ -1952,6 +1920,38 @@ exports[`DataTableColumns renders 2`] = `
   flex: 0 0 auto;
   align-self: stretch;
   height: 12px;
+}
+
+.c4 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #666666;
+  stroke: #666666;
+}
+
+.c4 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c4 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c4 *[stroke*='#'],
+.c4 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c4 *[fill-rule],
+.c4 *[FILL-RULE],
+.c4 *[fill*='#'],
+.c4 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
 }
 
 .c13 {
@@ -2267,45 +2267,13 @@ exports[`DataTableColumns renders 2`] = `
 exports[`DataTableColumns renders 3`] = `
 <div
   aria-label="Order columns Tab Contents"
-  class="StyledTabs__StyledTabPanel-sc-a4fwxl-1 jFhXPK"
+  class="StyledTabs__StyledTabPanel-sc-a4fwxl-1 eNNVNT"
   role="tabpanel"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 gXSWzN"
+    class="StyledBox-sc-13pk1d4-0 cvqeEI"
   >
-    .c8 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #666666;
-  stroke: #666666;
-}
-
-.c8 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c8 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c8 *[stroke*='#'],
-.c8 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c8 *[fill-rule],
-.c8 *[FILL-RULE],
-.c8 *[fill*='#'],
-.c8 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
-}
-
-.c1 {
+    .c1 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -2357,6 +2325,38 @@ exports[`DataTableColumns renders 3`] = `
   flex: 0 0 auto;
   align-self: stretch;
   width: 24px;
+}
+
+.c8 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #666666;
+  stroke: #666666;
+}
+
+.c8 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c8 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c8 *[stroke*='#'],
+.c8 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c8 *[fill-rule],
+.c8 *[FILL-RULE],
+.c8 *[fill*='#'],
+.c8 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
 }
 
 .c3 {
@@ -2711,6 +2711,36 @@ exports[`DataTableColumns renders 3`] = `
 `;
 
 exports[`DataTableColumns search 1`] = `
+.c1 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  flex: 0 0 auto;
+}
+
+.c8 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  flex: 1 0 auto;
+  justify-content: center;
+}
+
+.c12 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+}
+
 .c4 {
   display: inline-block;
   flex: 0 0 auto;
@@ -2741,36 +2771,6 @@ exports[`DataTableColumns search 1`] = `
 .c4 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
-}
-
-.c1 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  flex-direction: column;
-  flex: 0 0 auto;
-}
-
-.c8 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  flex-direction: column;
-  flex: 1 0 auto;
-  justify-content: center;
-}
-
-.c12 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  flex-direction: column;
 }
 
 .c9 {
@@ -3043,38 +3043,6 @@ exports[`DataTableColumns search 1`] = `
 `;
 
 exports[`DataTableColumns search 2`] = `
-.c4 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #666666;
-  stroke: #666666;
-}
-
-.c4 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c4 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c4 *[stroke*='#'],
-.c4 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c4 *[fill-rule],
-.c4 *[FILL-RULE],
-.c4 *[fill*='#'],
-.c4 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
-}
-
 .c7 {
   display: flex;
   box-sizing: border-box;
@@ -3132,6 +3100,38 @@ exports[`DataTableColumns search 2`] = `
   flex: 0 0 auto;
   align-self: stretch;
   height: 12px;
+}
+
+.c4 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #666666;
+  stroke: #666666;
+}
+
+.c4 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c4 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c4 *[stroke*='#'],
+.c4 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c4 *[fill-rule],
+.c4 *[FILL-RULE],
+.c4 *[fill*='#'],
+.c4 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
 }
 
 .c13 {
@@ -3443,7 +3443,7 @@ exports[`DataTableColumns search 2`] = `
 exports[`DataTableColumns search 3`] = `
 <button
   aria-label="Open column selector"
-  class="StyledButton-sc-323bzc-0 iDVCLY"
+  class="StyledButton-sc-323bzc-0 cVWsTZ"
   data-g-tabindex="none"
   id="test-data--columns-control"
   tabindex="-1"
@@ -3451,7 +3451,7 @@ exports[`DataTableColumns search 3`] = `
 >
   <svg
     aria-label="Splits"
-    class="StyledIcon-sc-ofa7kd-0 esOrIb"
+    class="StyledIcon-sc-ofa7kd-0 hGRmVS"
     viewBox="0 0 24 24"
   >
     <path
@@ -3466,123 +3466,123 @@ exports[`DataTableColumns search 3`] = `
 
 exports[`DataTableColumns search 4`] = `
 "@media only screen and (max-width: 768px) {
-  .bFeUws {
+  .fgEJkt {
     margin-top: 12px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .fcjsel {
+  .cvsywc {
     padding: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .gpVifW {
+  .cixPTH {
     margin-left: 6px;
     margin-right: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .gpVifW {
+  .cixPTH {
     margin-top: 2px;
     margin-bottom: 2px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .gpVifW {
+  .cixPTH {
     border-bottom: solid 2px #000000;
   }
 }
 @media only screen and (max-width: 768px) {
-  .gpVifW {
+  .cixPTH {
     padding-bottom: 3px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .iwNifW {
+  .bTetqL {
     margin-left: 6px;
     margin-right: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .iwNifW {
+  .bTetqL {
     margin-top: 2px;
     margin-bottom: 2px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .iwNifW {
+  .bTetqL {
     border-bottom: solid 2px #7d4cdb;
   }
 }
 @media only screen and (max-width: 768px) {
-  .iwNifW {
+  .bTetqL {
     padding-bottom: 3px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .iwPbnW {
+  .gMxdbH {
     padding-top: 6px;
     padding-bottom: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .fopqLt {
+  .hvphdk {
     margin-right: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .guQEhy {
+  .kAISfb {
     border: solid 2px #7d4cdb;
   }
 }
 @media only screen and (max-width: 768px) {
-  .gXSWzN {
+  .cvqeEI {
     padding-top: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .iNqKsk {
+  .jpJyVN {
     border-top: solid 1px rgba(0, 0, 0, 0.33);
     border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   }
 }
 @media only screen and (max-width: 768px) {
-  .iNqKsk {
+  .jpJyVN {
     padding: 0px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .iLCmmO {
+  .gKhKHf {
     border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   }
 }
 @media only screen and (max-width: 768px) {
-  .iLCmmO {
+  .gKhKHf {
     padding: 0px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .gqexlS {
+  .beYdor {
     height: 3px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .bYsEfK {
+  .hFTcmz {
     height: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .cXfpJS {
+  .dfakgH {
     width: 12px;
   }
 }
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-  .gyEUvq {
+  .fSvtXX {
     display: flex;
     align-items: stretch;
   }
 }
-.iDVCLY {
+.cVWsTZ {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -3600,38 +3600,38 @@ exports[`DataTableColumns search 4`] = `
   line-height: 0;
   padding: 12px;
 }
-.iDVCLY:focus {
+.cVWsTZ:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6fffb0;
 }
-.iDVCLY:focus > circle,
-.iDVCLY:focus > ellipse,
-.iDVCLY:focus > line,
-.iDVCLY:focus > path,
-.iDVCLY:focus > polygon,
-.iDVCLY:focus > polyline,
-.iDVCLY:focus > rect {
+.cVWsTZ:focus > circle,
+.cVWsTZ:focus > ellipse,
+.cVWsTZ:focus > line,
+.cVWsTZ:focus > path,
+.cVWsTZ:focus > polygon,
+.cVWsTZ:focus > polyline,
+.cVWsTZ:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6fffb0;
 }
-.iDVCLY:focus ::-moz-focus-inner {
+.cVWsTZ:focus ::-moz-focus-inner {
   border: 0;
 }
-.iDVCLY:focus:not(:focus-visible) {
+.cVWsTZ:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
-.iDVCLY:focus:not(:focus-visible) > circle,
-.iDVCLY:focus:not(:focus-visible) > ellipse,
-.iDVCLY:focus:not(:focus-visible) > line,
-.iDVCLY:focus:not(:focus-visible) > path,
-.iDVCLY:focus:not(:focus-visible) > polygon,
-.iDVCLY:focus:not(:focus-visible) > polyline,
-.iDVCLY:focus:not(:focus-visible) > rect {
+.cVWsTZ:focus:not(:focus-visible) > circle,
+.cVWsTZ:focus:not(:focus-visible) > ellipse,
+.cVWsTZ:focus:not(:focus-visible) > line,
+.cVWsTZ:focus:not(:focus-visible) > path,
+.cVWsTZ:focus:not(:focus-visible) > polygon,
+.cVWsTZ:focus:not(:focus-visible) > polyline,
+.cVWsTZ:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
-.iDVCLY:focus:not(:focus-visible) ::-moz-focus-inner {
+.cVWsTZ:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }"
 `;

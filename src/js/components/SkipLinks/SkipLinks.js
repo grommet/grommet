@@ -14,7 +14,7 @@ import { SkipLinksPropTypes } from './propTypes';
 import { useThemeValue } from '../../utils/useThemeValue';
 
 const SkipLinks = ({ children, id, messages }) => {
-  const theme = useThemeValue();
+  const { theme } = useThemeValue();
   const [showLayer, setShowLayer] = useState(false);
   const { format } = useContext(MessageContext);
   const layerRef = useRef(null);

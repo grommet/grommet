@@ -30,7 +30,7 @@ const BasicSpinner = ({ ref, size, ...rest }) => (
  */
 const Spinner = forwardRef(
   ({ children, color: colorProp, size, message, ...rest }, ref) => {
-    const theme = useThemeValue();
+    const { theme } = useThemeValue();
     const announce = useContext(AnnounceContext);
 
     useEffect(() => {

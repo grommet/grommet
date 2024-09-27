@@ -50,7 +50,7 @@ export const DataFilters = ({
     view,
   } = useContext(DataContext);
   const { format } = useContext(MessageContext);
-  const theme = useThemeValue();
+  const { theme } = useThemeValue();
   const [showContent, setShowContent] = useState();
   // touched is a map of property to its value based on if user interacts
   // with a filter or a view applies of set of filters

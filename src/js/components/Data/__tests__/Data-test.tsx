@@ -1,4 +1,5 @@
 import React from 'react';
+import range from 'lodash/range';
 import '@testing-library/jest-dom';
 import { act, fireEvent, render, screen } from '@testing-library/react';
 import 'jest-styled-components';
@@ -655,5 +656,80 @@ describe('Data', () => {
         page: 1,
       }),
     );
+  });
+
+  test('should render property label and return property value to view when options are object', () => {
+    const onView = jest.fn();
+    const App = () => {
+      return (
+        <Grommet>
+          <Data
+            data={[]}
+            properties={{
+              selectMultiple: {
+                label: 'SelectMultiple Name',
+                options: range(9).map((i) => ({
+                  value: `selectmultiple${i}`,
+                  label: `SelectMultiple Name ${i}`,
+                })),
+              },
+              selectMultipleSimple: {
+                label: 'SelectMultiple Simple Name',
+                options: range(9).map((i) => `selectmultiple-simple${i}`),
+              },
+              checkBoxGroup: {
+                label: 'CheckBoxGroup Name',
+                options: range(4).map((i) => ({
+                  value: `checkboxgroup${i}`,
+                  label: `CheckBoxGroup Name ${i}`,
+                })),
+              },
+            }}
+            view={{
+              properties: {
+                selectMultiple: ['selectmultiple5'],
+                checkBoxGroup: ['checkboxgroup2'],
+                selectMultipleSimple: ['selectmultiple-simple2'],
+              },
+            }}
+            onView={onView}
+          >
+            <DataFilters />
+          </Data>
+        </Grommet>
+      );
+    };
+    const { asFragment, getByRole, getByText, getByLabelText } = render(
+      <App />,
+    );
+
+    expect(
+      getByRole('option', {
+        name: 'SelectMultiple Name 5 selected',
+      }),
+    ).toBeTruthy();
+    expect(
+      getByRole('option', {
+        name: 'selectmultiple-simple2 selected',
+      }),
+    ).toBeTruthy();
+    expect(getByText('CheckBoxGroup Name 2')).toBeTruthy();
+
+    fireEvent.click(getByLabelText('SelectMultiple Name'));
+    fireEvent.click(
+      getByRole('option', {
+        name: 'SelectMultiple Name 0 not selected',
+      }),
+    );
+
+    fireEvent.click(getByRole('button', { name: 'Apply filters' }));
+    expect(onView).toHaveBeenCalledWith({
+      properties: {
+        checkBoxGroup: ['checkboxgroup2'],
+        selectMultiple: ['selectmultiple5', 'selectmultiple0'],
+        selectMultipleSimple: ['selectmultiple-simple2'],
+      },
+    });
+    expect(asFragment()).toMatchSnapshot();
   });
 });

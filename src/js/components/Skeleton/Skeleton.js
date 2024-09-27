@@ -9,7 +9,7 @@ const Skeleton = forwardRef(
     { as, colors: colorsProp, width: widthProp, height: heightProp, ...rest },
     ref,
   ) => {
-    const theme = useThemeValue();
+    const { theme, passThemeFlag } = useThemeValue();
 
     const skeleton = useSkeleton();
     const depth = skeleton?.depth || 0;
@@ -25,6 +25,7 @@ const Skeleton = forwardRef(
         background={background}
         widthProp={widthProp}
         heightProp={heightProp}
+        {...passThemeFlag}
         {...rest}
       />
     );

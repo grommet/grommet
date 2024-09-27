@@ -35,7 +35,7 @@ const Tabs = forwardRef(
     },
     ref,
   ) => {
-    const theme = useThemeValue();
+    const { theme, passThemeFlag } = useThemeValue();
     const { format } = useContext(MessageContext);
     const { activeIndex: propsActiveIndex, onActive } = rest;
     const [activeIndex, setActiveIndex] = useState(rest.activeIndex || 0);
@@ -324,6 +324,7 @@ const Tabs = forwardRef(
         ref={ref}
         flex={flex}
         responsive={responsive}
+        {...passThemeFlag}
         {...rest}
         background={theme.tabs.background}
       >
@@ -364,6 +365,7 @@ const Tabs = forwardRef(
             gap={theme.tabs.gap}
             pad={overflow ? '2px' : undefined}
             margin={overflow ? '-2px' : undefined}
+            {...passThemeFlag}
           >
             {tabs}
           </StyledTabsHeader>
@@ -392,6 +394,7 @@ const Tabs = forwardRef(
           flex={flex}
           aria-label={tabContentTitle}
           role="tabpanel"
+          {...passThemeFlag}
         >
           {activeContent}
         </StyledTabPanel>

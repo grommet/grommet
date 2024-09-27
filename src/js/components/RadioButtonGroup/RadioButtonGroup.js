@@ -24,7 +24,7 @@ const RadioButtonGroup = forwardRef(
     ref,
   ) => {
     const formContext = useContext(FormContext);
-    const theme = useThemeValue();
+    const { theme } = useThemeValue();
 
     // normalize options to always use an object
     const options = optionsProp.map((o) =>

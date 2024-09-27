@@ -10,7 +10,7 @@ import { useThemeValue } from '../../utils/useThemeValue';
 
 const Tag = forwardRef(
   ({ name, value, size, onRemove, onClick, ...rest }, ref) => {
-    const theme = useThemeValue();
+    const { theme, passThemeFlag } = useThemeValue();
     const RemoveIcon = theme.tag.icons?.remove || FormClose;
 
     const containerProps = {
@@ -64,6 +64,7 @@ const Tag = forwardRef(
             icon={<RemoveIcon {...theme.tag.size?.[size]?.icon} />}
             round={theme.tag.size?.[size]?.round || theme.tag.round}
             {...theme.tag.remove}
+            {...passThemeFlag}
           />
         )}
       </Box>
@@ -75,6 +76,7 @@ const Tag = forwardRef(
         hoverIndicator
         focusIndicator
         {...containerProps}
+        {...passThemeFlag}
       >
         {contents}
       </StyledTagButton>

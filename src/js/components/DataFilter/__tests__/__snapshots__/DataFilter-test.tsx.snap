@@ -2776,39 +2776,7 @@ exports[`DataFilter renders 1`] = `
 
 exports[`DataFilter select multiple options 1`] = `
 <DocumentFragment>
-  .c6 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #666666;
-  stroke: #666666;
-}
-
-.c6 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c6 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c6 *[stroke*='#'],
-.c6 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c6 *[fill-rule],
-.c6 *[FILL-RULE],
-.c6 *[fill*='#'],
-.c6 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
-}
-
-.c1 {
+  .c1 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -2852,6 +2820,38 @@ exports[`DataFilter select multiple options 1`] = `
   min-height: 0;
   flex-direction: column;
   flex: 0 0 auto;
+}
+
+.c6 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #666666;
+  stroke: #666666;
+}
+
+.c6 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c6 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c6 *[stroke*='#'],
+.c6 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c6 *[fill-rule],
+.c6 *[FILL-RULE],
+.c6 *[fill*='#'],
+.c6 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
 }
 
 .c4 {
@@ -3180,7 +3180,27 @@ exports[`DataFilter select multiple options 1`] = `
 
 exports[`DataFilter select multiple options search 1`] = `
 <DocumentFragment>
-  .c4 {
+  .c1 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  flex: 0 0 auto;
+}
+
+.c2 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: row;
+  flex: 0 0 auto;
+}
+
+.c4 {
   display: inline-block;
   flex: 0 0 auto;
   width: 24px;
@@ -3210,26 +3230,6 @@ exports[`DataFilter select multiple options search 1`] = `
 .c4 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
-}
-
-.c1 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  flex-direction: column;
-  flex: 0 0 auto;
-}
-
-.c2 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  flex-direction: row;
-  flex: 0 0 auto;
 }
 
 .c3 {
@@ -3338,39 +3338,7 @@ exports[`DataFilter select multiple options search 1`] = `
 
 exports[`DataFilter should allow filtering on multiple sub-properties from same parent property 1`] = `
 <DocumentFragment>
-  .c6 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #666666;
-  stroke: #666666;
-}
-
-.c6 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c6 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c6 *[stroke*='#'],
-.c6 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c6 *[fill-rule],
-.c6 *[FILL-RULE],
-.c6 *[fill*='#'],
-.c6 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
-}
-
-.c1 {
+  .c1 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -3414,6 +3382,38 @@ exports[`DataFilter should allow filtering on multiple sub-properties from same 
   min-height: 0;
   flex-direction: column;
   flex: 0 0 auto;
+}
+
+.c6 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #666666;
+  stroke: #666666;
+}
+
+.c6 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c6 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c6 *[stroke*='#'],
+.c6 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c6 *[fill-rule],
+.c6 *[FILL-RULE],
+.c6 *[fill*='#'],
+.c6 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
 }
 
 .c4 {

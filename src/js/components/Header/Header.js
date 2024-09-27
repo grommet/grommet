@@ -4,7 +4,7 @@ import { Box } from '../Box';
 import { useThemeValue } from '../../utils/useThemeValue';
 
 const Header = React.forwardRef(({ sticky, ...rest }, ref) => {
-  const theme = useThemeValue();
+  const { theme } = useThemeValue();
   const headerRef = useForwardedRef(ref);
   useEffect(() => {
     let scrollTop = 0;

@@ -42,7 +42,7 @@ const Chart = React.forwardRef(
     ref,
   ) => {
     const containerRef = useForwardedRef(ref);
-    const theme = useThemeValue();
+    const { theme, passThemeFlag } = useThemeValue();
 
     const values = useMemo(() => normalizeValues(valuesProp), [valuesProp]);
 
@@ -708,6 +708,7 @@ const Chart = React.forwardRef(
         width={size === 'full' ? '100%' : size.width}
         height={size === 'full' ? '100%' : size.height}
         typeProp={type} // prevent adding to DOM
+        {...passThemeFlag}
         {...rest}
       >
         {defs.length && <defs>{defs}</defs>}

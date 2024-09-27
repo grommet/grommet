@@ -27,7 +27,6 @@ import { datumValue } from './buildState';
 import { kindPartStyles } from '../../utils/styles';
 import { normalizeColor } from '../../utils/colors';
 import { useThemeValue } from '../../utils/useThemeValue';
-import { withTheme } from '../../default-props';
 
 // separate theme values into groupings depending on what
 // part of header cell they should style
@@ -106,7 +105,7 @@ const buttonStyle = ({ pad, theme, verticalAlign }) => {
   return styles;
 };
 
-const StyledHeaderCellButton = styled(Button).attrs(withTheme)`
+const StyledHeaderCellButton = styled(Button)`
   ${(props) => buttonStyle(props)}
 `;
 
@@ -148,7 +147,7 @@ const Header = forwardRef(
     },
     ref,
   ) => {
-    const theme = useThemeValue();
+    const { theme, passThemeFlag } = useThemeValue();
     const [layoutProps, textProps] = separateThemeProps(theme);
     const { total: contextTotal } = useContext(DataContext);
 
@@ -255,6 +254,7 @@ const Header = forwardRef(
               pin={selectPin}
               pinnedOffset={pinnedOffset?._grommetDataTableSelect}
               verticalAlign={verticalAlign}
+              {...passThemeFlag}
             >
               {onSelect && allowSelectAll && (
                 <CheckBox
@@ -359,6 +359,7 @@ const Header = forwardRef(
                     pad={cellProps.pad}
                     sortable
                     verticalAlign={verticalAlign || columnVerticalAlign}
+                    {...passThemeFlag}
                   >
                     <Box
                       direction="row"
@@ -452,6 +453,7 @@ const Header = forwardRef(
                       ? { width: widths[property] }
                       : undefined
                   }
+                  {...passThemeFlag}
                 >
                   {content}
                 </StyledDataTableCell>

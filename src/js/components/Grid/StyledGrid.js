@@ -9,7 +9,6 @@ import {
   widthStyle,
   styledComponentsConfig,
 } from '../../utils';
-import { withTheme } from '../../default-props';
 
 const fillStyle = (fill) => {
   if (!fill) {
@@ -213,12 +212,7 @@ const areasStyle = (props) => {
     .join(' ')};`;
 };
 
-const StyledGrid = styled.div
-  .withConfig(styledComponentsConfig)
-  .attrs((props) => ({
-    ...withTheme(props),
-    'aria-label': props.a11yTitleProp,
-  }))`
+const StyledGrid = styled.div.withConfig(styledComponentsConfig)`
   display: grid;
   box-sizing: border-box;
 

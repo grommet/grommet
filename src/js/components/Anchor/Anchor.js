@@ -38,7 +38,7 @@ const Anchor = forwardRef(
     },
     ref,
   ) => {
-    const theme = useThemeValue();
+    const { theme, passThemeFlag } = useThemeValue();
     const [focus, setFocus] = useState();
     const { size } = useContext(TextContext);
     const sendAnalytics = useAnalytics();
@@ -105,6 +105,7 @@ const Anchor = forwardRef(
           if (onBlur) onBlur(event);
         }}
         size={sizeProp || size}
+        {...passThemeFlag}
       >
         {first && second ? (
           <Box

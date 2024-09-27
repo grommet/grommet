@@ -49,7 +49,7 @@ const Content = () => (
 );
 
 export const Group = () => {
-  const theme = useThemeValue();
+  const { theme } = useThemeValue();
   return (
     <>
       <Grommet theme={theme}>

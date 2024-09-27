@@ -2,9 +2,8 @@ import styled, { css } from 'styled-components';
 
 import { Box } from '../Box';
 import { genericStyles, styledComponentsConfig } from '../../utils';
-import { withTheme } from '../../default-props';
 
-const StyledTabsHeader = styled(Box).attrs(withTheme)`
+const StyledTabsHeader = styled(Box)`
   ${(props) => props.theme.tabs.header.extend};
 `;
 
@@ -20,15 +19,13 @@ const flexStyle = css`
     `${FLEX_MAP[props.flex]}${props.flex !== true ? ' auto' : ''}`};
 `;
 
-const StyledTabPanel = styled.div
-  .withConfig(styledComponentsConfig)
-  .attrs(withTheme)`
+const StyledTabPanel = styled.div.withConfig(styledComponentsConfig)`
   min-height: 0;
   ${(props) => props.flex && flexStyle} ${(props) =>
-  props.theme.tabs.panel.extend};
+    props.theme.tabs.panel.extend};
 `;
 
-const StyledTabs = styled(Box).attrs(withTheme)`
+const StyledTabs = styled(Box)`
   ${genericStyles} ${(props) => props.theme.tabs.extend};
 `;
 

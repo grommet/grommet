@@ -113,7 +113,6 @@ describe('Box', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
-  // the test is being skipped until we change styled box to use attrs
   test('alignSelf', () => {
     const { container } = render(
       <Grommet>

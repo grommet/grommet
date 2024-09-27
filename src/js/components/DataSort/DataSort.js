@@ -84,7 +84,7 @@ export const DataSort = ({ drop, options, ...rest }) => {
   const { id: dataId, messages } = useContext(DataContext);
   const { inDataForm } = useContext(DataFormContext);
   const { format } = useContext(MessageContext);
-  const theme = useThemeValue();
+  const { theme } = useThemeValue();
   const [showContent, setShowContent] = useState();
 
   let content = <Content options={options} />;

@@ -18,7 +18,7 @@ const Avatar = ({
   width, // for warning check and discarding the value
   ...rest
 }) => {
-  const theme = useThemeValue();
+  const { theme, passThemeFlag } = useThemeValue();
   const avatarSize = theme.avatar.size[size] || size;
   const avatarTextSize = theme.avatar.text.size[size] || 'large';
 
@@ -52,7 +52,11 @@ const Avatar = ({
   let content;
   if (typeof children === 'string') {
     content = (
-      <StyledAvatarText alignSelf="center" size={avatarTextSize}>
+      <StyledAvatarText
+        alignSelf="center"
+        size={avatarTextSize}
+        {...passThemeFlag}
+      >
         {children}
       </StyledAvatarText>
     );
@@ -66,6 +70,7 @@ const Avatar = ({
         role={typeof src === 'string' ? 'figure' : undefined}
         a11yTitle={a11yTitle || ariaLabel}
         {...avatarProps}
+        {...passThemeFlag}
         {...rest}
       >
         {content}

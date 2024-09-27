@@ -1,38 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`DataFilters renders 1`] = `
-.c6 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #666666;
-  stroke: #666666;
-}
-
-.c6 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c6 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c6 *[stroke*='#'],
-.c6 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c6 *[fill-rule],
-.c6 *[FILL-RULE],
-.c6 *[fill*='#'],
-.c6 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
-}
-
 .c1 {
   display: flex;
   box-sizing: border-box;
@@ -152,6 +120,38 @@ exports[`DataFilters renders 1`] = `
   flex: 0 0 auto;
   align-self: stretch;
   height: 12px;
+}
+
+.c6 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #666666;
+  stroke: #666666;
+}
+
+.c6 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c6 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c6 *[stroke*='#'],
+.c6 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c6 *[fill-rule],
+.c6 *[FILL-RULE],
+.c6 *[fill*='#'],
+.c6 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
 }
 
 .c12 {
@@ -542,38 +542,6 @@ exports[`DataFilters renders 1`] = `
 `;
 
 exports[`DataFilters renders outside grommet wrapper 1`] = `
-.c5 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #666666;
-  stroke: #666666;
-}
-
-.c5 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c5 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c5 *[stroke*='#'],
-.c5 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c5 *[fill-rule],
-.c5 *[FILL-RULE],
-.c5 *[fill*='#'],
-.c5 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
-}
-
 .c0 {
   display: flex;
   box-sizing: border-box;
@@ -691,6 +659,38 @@ exports[`DataFilters renders outside grommet wrapper 1`] = `
   flex: 0 0 auto;
   align-self: stretch;
   height: 12px;
+}
+
+.c5 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #666666;
+  stroke: #666666;
+}
+
+.c5 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c5 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c5 *[stroke*='#'],
+.c5 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c5 *[fill-rule],
+.c5 *[FILL-RULE],
+.c5 *[fill*='#'],
+.c5 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
 }
 
 .c11 {

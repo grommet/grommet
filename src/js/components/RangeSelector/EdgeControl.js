@@ -26,7 +26,7 @@ const EdgeControl = forwardRef(
     { color, direction, edge, onDecrease, onIncrease, thickness, ...rest },
     ref,
   ) => {
-    const theme = useThemeValue();
+    const { theme } = useThemeValue();
     const [focus, setFocus] = useState(false);
     const { cursor, fill } = DIRECTION_PROPS[direction];
     const size = parseMetricToNum(theme.global.spacing) / 2;

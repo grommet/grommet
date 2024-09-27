@@ -3,7 +3,7 @@ import { Skeleton } from '../Skeleton';
 import { useThemeValue } from '../../utils/useThemeValue';
 
 const HeadingSkeleton = forwardRef(({ as, level = 1, size }, ref) => {
-  const theme = useThemeValue();
+  const { theme } = useThemeValue();
 
   const levelStyle = theme.heading.level[level];
   const data = levelStyle?.[size || 'medium'];

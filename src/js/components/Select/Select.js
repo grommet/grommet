@@ -82,7 +82,7 @@ const Select = forwardRef(
     },
     ref,
   ) => {
-    const theme = useThemeValue();
+    const { theme } = useThemeValue();
     const inputRef = useRef();
     const formContext = useContext(FormContext);
     const { format } = useContext(MessageContext);

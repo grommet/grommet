@@ -24,7 +24,7 @@ const Drop = forwardRef(
     },
     ref,
   ) => {
-    const theme = useThemeValue();
+    const { theme } = useThemeValue();
     const [originalFocusedElement, setOriginalFocusedElement] = useState();
     useEffect(() => setOriginalFocusedElement(document.activeElement), []);
     const [dropContainer, setDropContainer] = useState();

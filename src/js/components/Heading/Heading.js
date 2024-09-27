@@ -6,6 +6,7 @@ import { HeadingPropTypes } from './propTypes';
 import { useForwardedRef } from '../../utils';
 import { useSkeleton } from '../Skeleton';
 import { HeadingSkeleton } from './HeadingSkeleton';
+import { useThemeValue } from '../../utils/useThemeValue';
 
 const Heading = forwardRef(
   (
@@ -22,6 +23,7 @@ const Heading = forwardRef(
 
     ref, // munged to avoid styled-components putting it in the DOM
   ) => {
+    const { passThemeFlag } = useThemeValue();
     const headingRef = useForwardedRef(ref);
     const [overflowWrap, setOverflowWrap] = useState(
       overflowWrapProp || 'break-word',
@@ -69,6 +71,7 @@ const Heading = forwardRef(
         overflowWrap={overflowWrap}
         responsive={responsive}
         weight={weight}
+        {...passThemeFlag}
         {...rest}
         ref={headingRef}
       >

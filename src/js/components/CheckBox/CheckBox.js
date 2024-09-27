@@ -55,7 +55,7 @@ const CheckBox = forwardRef(
     },
     ref,
   ) => {
-    const theme = useThemeValue();
+    const { theme, passThemeFlag } = useThemeValue();
     const formContext = useContext(FormContext);
 
     const [checked, setChecked] = formContext.useFormInput({
@@ -114,8 +114,8 @@ const CheckBox = forwardRef(
     }
 
     const visual = toggle ? (
-      <StyledCheckBoxToggle {...themeableProps}>
-        <StyledCheckBoxKnob {...themeableProps} />
+      <StyledCheckBoxToggle {...passThemeFlag} {...themeableProps}>
+        <StyledCheckBoxKnob {...passThemeFlag} {...themeableProps} />
       </StyledCheckBoxToggle>
     ) : (
       <StyledCheckBoxBox
@@ -128,6 +128,7 @@ const CheckBox = forwardRef(
           color: borderColor,
         }}
         round={theme.checkBox.check.radius}
+        {...passThemeFlag}
         {...themeableProps}
       >
         {!indeterminate &&
@@ -171,6 +172,7 @@ const CheckBox = forwardRef(
       >
         <StyledCheckBoxInput
           aria-label={ariaLabel || a11yTitle}
+          {...passThemeFlag}
           {...rest}
           ref={ref}
           type="checkbox"
@@ -218,6 +220,7 @@ const CheckBox = forwardRef(
         onMouseOver={(event) => onMouseOver?.(event)}
         onMouseLeave={(event) => onMouseLeave?.(event)}
         onMouseOut={(event) => onMouseOut?.(event)}
+        {...passThemeFlag}
         {...themeableProps}
       >
         {first}

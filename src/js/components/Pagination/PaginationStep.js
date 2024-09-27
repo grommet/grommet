@@ -13,7 +13,7 @@ export const PaginationStep = ({
   ...rest
 }) => {
   const { format: formatMessage } = useContext(MessageContext);
-  const theme = useThemeValue();
+  const { theme } = useThemeValue();
   return (
     <Box direction="row" align="center" gap="xsmall" {...rest}>
       <Text>{formatMessage({ id: 'pagination.stepLabel', messages })}</Text>

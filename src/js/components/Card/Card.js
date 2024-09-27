@@ -4,7 +4,7 @@ import { Box } from '../Box';
 import { useThemeValue } from '../../utils/useThemeValue';
 
 const Card = forwardRef(({ ...rest }, ref) => {
-  const theme = useThemeValue();
+  const { theme } = useThemeValue();
 
   return (
     <Box

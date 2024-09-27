@@ -1142,14 +1142,14 @@ exports[`MaskedInput event target props are available option via mouse 3`] = `""
 exports[`MaskedInput event target props are available option via mouse 4`] = `
 <div
   aria-hidden="true"
-  class="StyledGrommet-sc-19lkkz7-0 jOTXqz"
+  class="StyledGrommet-sc-19lkkz7-0 drDzQW"
 >
   <div
-    class="StyledMaskedInput__StyledMaskedInputContainer-sc-99vkfa-1 jRNrzb"
+    class="StyledMaskedInput__StyledMaskedInputContainer-sc-99vkfa-1 ihTIdi"
   >
     <input
       autocomplete="off"
-      class="StyledMaskedInput-sc-99vkfa-0 hBkdwY"
+      class="StyledMaskedInput-sc-99vkfa-0 gOcpal"
       data-g-tabindex="none"
       data-testid="test-input"
       id="item"
@@ -2205,14 +2205,14 @@ exports[`MaskedInput next and previous without options 1`] = `
 
 exports[`MaskedInput next and previous without options 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 jOTXqz"
+  class="StyledGrommet-sc-19lkkz7-0 drDzQW"
 >
   <div
-    class="StyledMaskedInput__StyledMaskedInputContainer-sc-99vkfa-1 jRNrzb"
+    class="StyledMaskedInput__StyledMaskedInputContainer-sc-99vkfa-1 ihTIdi"
   >
     <input
       autocomplete="off"
-      class="StyledMaskedInput-sc-99vkfa-0 hJNewJ"
+      class="StyledMaskedInput-sc-99vkfa-0 irDvrw"
       data-testid="test-input"
       id="item"
       name="item"
@@ -2622,14 +2622,14 @@ exports[`MaskedInput option via mouse 3`] = `""`;
 exports[`MaskedInput option via mouse 4`] = `
 <div
   aria-hidden="true"
-  class="StyledGrommet-sc-19lkkz7-0 jOTXqz"
+  class="StyledGrommet-sc-19lkkz7-0 drDzQW"
 >
   <div
-    class="StyledMaskedInput__StyledMaskedInputContainer-sc-99vkfa-1 jRNrzb"
+    class="StyledMaskedInput__StyledMaskedInputContainer-sc-99vkfa-1 ihTIdi"
   >
     <input
       autocomplete="off"
-      class="StyledMaskedInput-sc-99vkfa-0 hBkdwY"
+      class="StyledMaskedInput-sc-99vkfa-0 gOcpal"
       data-g-tabindex="none"
       data-testid="test-input"
       id="item"

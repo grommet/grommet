@@ -2,39 +2,7 @@
 
 exports[`DataClearFilters clear filters should not clear search, sort, or step 1`] = `
 <DocumentFragment>
-  .c7 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #666666;
-  stroke: #666666;
-}
-
-.c7 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c7 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c7 *[stroke*='#'],
-.c7 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c7 *[fill-rule],
-.c7 *[FILL-RULE],
-.c7 *[fill*='#'],
-.c7 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
-}
-
-.c1 {
+  .c1 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -89,6 +57,38 @@ exports[`DataClearFilters clear filters should not clear search, sort, or step 1
   flex-wrap: wrap;
   column-gap: 12px;
   row-gap: 12px;
+}
+
+.c7 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #666666;
+  stroke: #666666;
+}
+
+.c7 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c7 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c7 *[stroke*='#'],
+.c7 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c7 *[fill-rule],
+.c7 *[FILL-RULE],
+.c7 *[fill*='#'],
+.c7 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
 }
 
 .c11 {
@@ -650,39 +650,7 @@ exports[`DataClearFilters renders 1`] = `
 
 exports[`DataClearFilters renders custom message 1`] = `
 <DocumentFragment>
-  .c7 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #666666;
-  stroke: #666666;
-}
-
-.c7 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c7 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c7 *[stroke*='#'],
-.c7 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c7 *[fill-rule],
-.c7 *[FILL-RULE],
-.c7 *[fill*='#'],
-.c7 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
-}
-
-.c1 {
+  .c1 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -737,6 +705,38 @@ exports[`DataClearFilters renders custom message 1`] = `
   flex-wrap: wrap;
   column-gap: 12px;
   row-gap: 12px;
+}
+
+.c7 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #666666;
+  stroke: #666666;
+}
+
+.c7 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c7 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c7 *[stroke*='#'],
+.c7 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c7 *[fill-rule],
+.c7 *[FILL-RULE],
+.c7 *[fill*='#'],
+.c7 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
 }
 
 .c11 {

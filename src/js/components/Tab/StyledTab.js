@@ -2,7 +2,6 @@ import styled, { css } from 'styled-components';
 
 import { Box } from '../Box';
 import { genericStyles, normalizeColor } from '../../utils';
-import { withTheme } from '../../default-props';
 
 const tabHoverStyle = css`
   &:hover {
@@ -26,7 +25,7 @@ const tabHoverStyle = css`
   }
 `;
 
-const StyledTab = styled(Box).attrs(withTheme)`
+const StyledTab = styled(Box)`
   white-space: nowrap;
   ${genericStyles}
   ${(props) =>

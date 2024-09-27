@@ -227,6 +227,8 @@ export const DataFilter = ({
                 : undefined
             }
             onClose={() => setSearchText('')}
+            labelKey="label"
+            valueKey={{ key: 'value', reduce: true }}
           />
         );
       }

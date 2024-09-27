@@ -11,7 +11,7 @@ import { normalizeColor } from '../../utils';
 import { useThemeValue } from '../../utils/useThemeValue';
 
 const Searcher = ({ filtering, filters, onFilter, onFiltering, property }) => {
-  const theme = useThemeValue();
+  const { theme } = useThemeValue();
   const inputRef = useRef();
   const needsFocus = filtering === property;
 

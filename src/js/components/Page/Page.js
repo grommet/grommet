@@ -7,7 +7,7 @@ import { useThemeValue } from '../../utils/useThemeValue';
 
 const Page = ({ kind = 'wide', ...rest }) => {
   const size = useContext(ResponsiveContext);
-  const theme = useThemeValue();
+  const { theme } = useThemeValue();
 
   const contentValue = useMemo(
     () => ({

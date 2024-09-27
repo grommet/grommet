@@ -67,7 +67,7 @@ const SelectMultipleContainer = forwardRef(
     },
     ref,
   ) => {
-    const theme = useThemeValue();
+    const { theme } = useThemeValue();
     const [activeIndex, setActiveIndex] = useState(-1);
     const [keyboardNavigation, setKeyboardNavigation] = useState(usingKeyboard);
     const { format } = useContext(MessageContext);

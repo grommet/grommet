@@ -28,14 +28,11 @@ import {
 import { useAnalytics } from '../../contexts/AnalyticsContext';
 
 import { ListPropTypes } from './propTypes';
-import { withTheme } from '../../default-props';
 import { useThemeValue } from '../../utils/useThemeValue';
 
 const emptyData = [];
 
-const StyledList = styled.ul
-  .withConfig(styledComponentsConfig)
-  .attrs(withTheme)`
+const StyledList = styled.ul.withConfig(styledComponentsConfig)`
   list-style: none;
   ${(props) => !props.margin && 'margin: 0;'}
   padding: 0;
@@ -55,7 +52,7 @@ const StyledList = styled.ul
   }
 `;
 
-const StyledItem = styled(Box).attrs(withTheme)`
+const StyledItem = styled(Box)`
   ${(props) => props.onClick && !props.isDisabled && `cursor: pointer;`}
   ${(props) => props.draggable && !props.isDisabled && `cursor: move;`}
   // during the interim state when a user is holding down a click,
@@ -85,7 +82,7 @@ const StyledItem = styled(Box).attrs(withTheme)`
 `;
 
 // when paginated, this wraps the data table and pagination component
-const StyledContainer = styled(Box).attrs(withTheme)`
+const StyledContainer = styled(Box)`
   ${(props) =>
     props.theme.list &&
     props.theme.list.container &&
@@ -161,7 +158,7 @@ const List = React.forwardRef(
     ref,
   ) => {
     const listRef = useForwardedRef(ref);
-    const theme = useThemeValue();
+    const { theme, passThemeFlag } = useThemeValue();
     const { data: contextData } = useContext(DataContext);
     const data = dataProp || contextData || emptyData;
 
@@ -226,7 +223,12 @@ const List = React.forwardRef(
     });
 
     const Container = paginate ? StyledContainer : Fragment;
-    const containterProps = paginate ? { ...theme.list.container } : undefined;
+    const containterProps = paginate
+      ? {
+          ...theme.list.container,
+          ...passThemeFlag,
+        }
+      : undefined;
     const draggingRef = useRef();
 
     const sendAnalytics = useAnalytics();
@@ -349,6 +351,7 @@ const List = React.forwardRef(
               updateActive(undefined);
             }}
             {...ariaProps}
+            {...passThemeFlag}
             {...rest}
           >
             <InfiniteScroll
@@ -730,6 +733,7 @@ const List = React.forwardRef(
                     {...clickProps}
                     {...orderProps}
                     {...itemAriaProps}
+                    {...passThemeFlag}
                   >
                     {showIndex && onOrder && (
                       <Text color={pinnedColor}>{index + 1}</Text>

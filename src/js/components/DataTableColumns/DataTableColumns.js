@@ -168,7 +168,7 @@ export const DataTableColumns = ({ drop, options, ...rest }) => {
   const { id: dataId, messages } = useContext(DataContext);
   const { inDataForm } = useContext(DataFormContext);
   const { format } = useContext(MessageContext);
-  const theme = useThemeValue();
+  const { theme } = useThemeValue();
   const [showContent, setShowContent] = useState();
 
   const tip = format({

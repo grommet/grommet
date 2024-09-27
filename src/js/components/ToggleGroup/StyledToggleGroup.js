@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 import { Button } from '../Button';
 import { roundStyle, edgeStyle, parseMetricToNum } from '../../utils';
-import { withTheme } from '../../default-props';
 
 const adjustPad = (value, theme) => {
   // resolve t-shirt size if it exists
@@ -17,7 +16,7 @@ const adjustPad = (value, theme) => {
   return { vertical, horizontal };
 };
 
-export const StyledButton = styled(Button).attrs(withTheme)`
+export const StyledButton = styled(Button)`
   border-radius: 0;
   border: none;
   ${(props) => roundStyle(props.round, false, props.theme)};

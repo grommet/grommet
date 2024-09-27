@@ -14,7 +14,7 @@ import { useThemeValue } from '../../utils/useThemeValue';
 
 const Tip = forwardRef(
   ({ children, content, defaultVisible = false, dropProps, plain }, tipRef) => {
-    const theme = useThemeValue();
+    const { theme } = useThemeValue();
     const [over, setOver] = useState(false);
     const [tooltipOver, setTooltipOver] = useState(false);
     const usingKeyboard = useKeyboard();

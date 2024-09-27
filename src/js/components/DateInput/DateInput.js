@@ -33,9 +33,8 @@ import { DateInputPropTypes } from './propTypes';
 import { getOutputFormat } from '../Calendar/Calendar';
 import { CopyButton } from '../TextInput/CopyButton';
 import { useThemeValue } from '../../utils/useThemeValue';
-import { withTheme } from '../../default-props';
 
-const StyledDateInputContainer = styled(Box).attrs(withTheme)`
+const StyledDateInputContainer = styled(Box)`
   ${(props) => props.readOnlyProp && readOnlyStyle(props.theme)}};
 `;
 
@@ -79,7 +78,7 @@ const DateInput = forwardRef(
     },
     refArg,
   ) => {
-    const theme = useThemeValue();
+    const { theme, passThemeFlag } = useThemeValue();
     const announce = useContext(AnnounceContext);
     const { format: formatMessage } = useContext(MessageContext);
     const iconSize =
@@ -315,6 +314,7 @@ Use the icon prop instead.`,
             // readOnly prop shouldn't get passed to the dom here
             readOnlyProp={readOnly}
             fill
+            {...passThemeFlag}
           >
             {reverse && (!readOnly || readOnlyCopy) && DateInputButton}
             <MaskedInput

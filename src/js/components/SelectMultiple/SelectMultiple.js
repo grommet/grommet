@@ -36,9 +36,8 @@ import { DefaultSelectTextInput } from '../Select/DefaultSelectTextInput';
 import { MessageContext } from '../../contexts/MessageContext';
 import { SelectMultiplePropTypes } from './propTypes';
 import { useThemeValue } from '../../utils/useThemeValue';
-import { withTheme } from '../../default-props';
 
-const StyledSelectBox = styled(Box).attrs(withTheme)`
+const StyledSelectBox = styled(Box)`
   ${(props) => !props.plainSelect && controlBorderStyle};
   ${(props) => props.theme.select?.control?.extend};
   ${(props) => props.open && props.theme.select.control?.open};
@@ -95,7 +94,7 @@ const SelectMultiple = forwardRef(
     },
     ref,
   ) => {
-    const theme = useThemeValue();
+    const { theme, passThemeFlag } = useThemeValue();
     const inputRef = useRef();
     const formContext = useContext(FormContext);
     const { format } = useContext(MessageContext);
@@ -458,6 +457,7 @@ const SelectMultiple = forwardRef(
             flex={false}
             plainSelect={plain}
             width={width}
+            {...passThemeFlag}
           >
             <Box width="100%">
               <DropButton

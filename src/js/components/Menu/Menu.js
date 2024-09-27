@@ -19,9 +19,8 @@ import { normalizeColor } from '../../utils';
 import { MessageContext } from '../../contexts/MessageContext';
 import { MenuPropTypes } from './propTypes';
 import { useThemeValue } from '../../utils/useThemeValue';
-import { withTheme } from '../../default-props';
 
-const ContainerBox = styled(Box).attrs(withTheme)`
+const ContainerBox = styled(Box)`
   max-height: inherit;
 
   /* IE11 hack to get drop contents to not overflow */
@@ -81,7 +80,7 @@ const Menu = forwardRef((props, ref) => {
     size,
     ...rest
   } = props;
-  const theme = useThemeValue();
+  const { theme, passThemeFlag } = useThemeValue();
   const { format } = useContext(MessageContext);
   const iconColor = normalizeColor(theme.menu.icons.color || 'control', theme);
   // need to destructure the align otherwise it will get passed through
@@ -438,8 +437,11 @@ const Menu = forwardRef((props, ref) => {
               ref={dropContainerRef}
               tabIndex={-1}
               background={dropBackground || theme.menu.background}
+              {...passThemeFlag}
             >
-              {alignControlMirror === 'top' && align.top === 'top'
+              {alignControlMirror === 'top' &&
+              align.bottom !== 'top' &&
+              align.top !== 'bottom'
                 ? controlMirror
                 : undefined}
               <Box overflow="auto" role="menu" a11yTitle={a11y}>
@@ -452,8 +454,9 @@ const Menu = forwardRef((props, ref) => {
               {!initialAlignTop &&
               // don't show controlMirror if caller is using
               // align.bottom === 'top'
-              ((alignControlMirror === 'bottom' && !align.bottom === 'top') ||
-                align.bottom === 'bottom')
+              alignControlMirror === 'bottom' &&
+              align.bottom !== 'top' &&
+              align.top !== 'bottom'
                 ? controlMirror
                 : undefined}
             </ContainerBox>

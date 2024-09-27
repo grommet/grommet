@@ -2,7 +2,56 @@
 
 exports[`Carousel basic 1`] = `
 <DocumentFragment>
-  .c6 {
+  .c1 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+}
+
+.c3 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  height: 100%;
+}
+
+.c9 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  width: 100%;
+}
+
+.c11 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.c12 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.c6 {
   display: inline-block;
   flex: 0 0 auto;
   width: 24px;
@@ -64,55 +113,6 @@ exports[`Carousel basic 1`] = `
 .c14 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
-}
-
-.c1 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  flex-direction: column;
-}
-
-.c3 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  flex-direction: column;
-  height: 100%;
-}
-
-.c9 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  flex-direction: column;
-  width: 100%;
-}
-
-.c11 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  flex-direction: column;
-  justify-content: flex-end;
-}
-
-.c12 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  flex-direction: row;
-  justify-content: center;
 }
 
 .c5 {
@@ -484,7 +484,56 @@ exports[`Carousel basic 1`] = `
 
 exports[`Carousel basic without grommet wrapper 1`] = `
 <DocumentFragment>
-  .c5 {
+  .c0 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+}
+
+.c2 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  height: 100%;
+}
+
+.c8 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  width: 100%;
+}
+
+.c10 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.c11 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.c5 {
   display: inline-block;
   flex: 0 0 auto;
   width: 24px;
@@ -546,55 +595,6 @@ exports[`Carousel basic without grommet wrapper 1`] = `
 .c13 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
-}
-
-.c0 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  flex-direction: column;
-}
-
-.c2 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  flex-direction: column;
-  height: 100%;
-}
-
-.c8 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  flex-direction: column;
-  width: 100%;
-}
-
-.c10 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  flex-direction: column;
-  justify-content: flex-end;
-}
-
-.c11 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  flex-direction: row;
-  justify-content: center;
 }
 
 .c4 {
@@ -952,7 +952,26 @@ exports[`Carousel basic without grommet wrapper 1`] = `
 
 exports[`Carousel controlled component 1`] = `
 <DocumentFragment>
-  .c6 {
+  .c1 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+}
+
+.c3 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  height: 100%;
+}
+
+.c6 {
   display: inline-block;
   flex: 0 0 auto;
   width: 24px;
@@ -982,25 +1001,6 @@ exports[`Carousel controlled component 1`] = `
 .c6 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
-}
-
-.c1 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  flex-direction: column;
-}
-
-.c3 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  flex-direction: column;
-  height: 100%;
 }
 
 .c5 {

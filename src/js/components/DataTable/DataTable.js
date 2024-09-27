@@ -88,7 +88,7 @@ const DataTable = ({
   verticalAlign,
   ...rest
 }) => {
-  const theme = useThemeValue();
+  const { theme, passThemeFlag } = useThemeValue();
   const {
     view,
     data: contextData,
@@ -388,7 +388,11 @@ const DataTable = ({
 
   const Container = paginate ? StyledContainer : Fragment;
   const containterProps = paginate
-    ? { ...theme.dataTable.container, fill }
+    ? {
+        ...theme.dataTable.container,
+        fill,
+        ...passThemeFlag,
+      }
     : undefined;
 
   // DataTable should overflow if paginating but pagination component
@@ -519,6 +523,7 @@ const DataTable = ({
         <StyledDataTable
           fillProp={!paginate ? fill : undefined}
           {...paginatedDataTableProps}
+          {...passThemeFlag}
           {...rest}
         >
           <Header

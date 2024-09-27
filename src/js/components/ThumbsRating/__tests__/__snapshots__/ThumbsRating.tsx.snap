@@ -1,6 +1,31 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ThumbsRating StarRating is present 1`] = `
+.c1 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: row;
+}
+
+.c3 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  flex: 0 0 auto;
+}
+
+.c6 {
+  flex: 0 0 auto;
+  align-self: stretch;
+  width: 12px;
+}
+
 .c5 {
   display: inline-block;
   flex: 0 0 auto;
@@ -31,31 +56,6 @@ exports[`ThumbsRating StarRating is present 1`] = `
 .c5 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
-}
-
-.c1 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  flex-direction: row;
-}
-
-.c3 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  flex-direction: column;
-  flex: 0 0 auto;
-}
-
-.c6 {
-  flex: 0 0 auto;
-  align-self: stretch;
-  width: 12px;
 }
 
 .c0 {
@@ -173,6 +173,31 @@ exports[`ThumbsRating StarRating is present 1`] = `
 `;
 
 exports[`ThumbsRating StarRating renders outside grommet wrapper 1`] = `
+.c0 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: row;
+}
+
+.c2 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  flex: 0 0 auto;
+}
+
+.c5 {
+  flex: 0 0 auto;
+  align-self: stretch;
+  width: 12px;
+}
+
 .c4 {
   display: inline-block;
   flex: 0 0 auto;
@@ -203,31 +228,6 @@ exports[`ThumbsRating StarRating renders outside grommet wrapper 1`] = `
 .c4 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
-}
-
-.c0 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  flex-direction: row;
-}
-
-.c2 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  flex-direction: column;
-  flex: 0 0 auto;
-}
-
-.c5 {
-  flex: 0 0 auto;
-  align-self: stretch;
-  width: 12px;
 }
 
 .c1 {
@@ -328,6 +328,31 @@ exports[`ThumbsRating StarRating renders outside grommet wrapper 1`] = `
 `;
 
 exports[`ThumbsRating StarRating should have no accessibility violations 1`] = `
+.c1 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: row;
+}
+
+.c3 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  flex: 0 0 auto;
+}
+
+.c6 {
+  flex: 0 0 auto;
+  align-self: stretch;
+  width: 12px;
+}
+
 .c5 {
   display: inline-block;
   flex: 0 0 auto;
@@ -358,31 +383,6 @@ exports[`ThumbsRating StarRating should have no accessibility violations 1`] = `
 .c5 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
-}
-
-.c1 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  flex-direction: row;
-}
-
-.c3 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  flex-direction: column;
-  flex: 0 0 auto;
-}
-
-.c6 {
-  flex: 0 0 auto;
-  align-self: stretch;
-  width: 12px;
 }
 
 .c0 {
@@ -499,38 +499,6 @@ exports[`ThumbsRating StarRating should have no accessibility violations 1`] = `
 `;
 
 exports[`ThumbsRating value for thumbs 1`] = `
-.c8 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #666666;
-  stroke: #666666;
-}
-
-.c8 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c8 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c8 *[stroke*='#'],
-.c8 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c8 *[fill-rule],
-.c8 *[FILL-RULE],
-.c8 *[fill*='#'],
-.c8 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
-}
-
 .c1 {
   display: flex;
   box-sizing: border-box;
@@ -574,6 +542,38 @@ exports[`ThumbsRating value for thumbs 1`] = `
   flex: 0 0 auto;
   align-self: stretch;
   width: 12px;
+}
+
+.c8 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #666666;
+  stroke: #666666;
+}
+
+.c8 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c8 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c8 *[stroke*='#'],
+.c8 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c8 *[fill-rule],
+.c8 *[FILL-RULE],
+.c8 *[fill*='#'],
+.c8 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
 }
 
 .c2 {
