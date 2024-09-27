@@ -185,10 +185,10 @@ describe('SelectMultiple', () => {
     await user.click(screen.getByRole('button', { name: /Open Drop/i }));
     // click all the options
     await user.click(screen.getByRole('option', { name: /Apple/i }));
-    await user.click(screen.getByRole('option', { name: /Banana/i }));
     await user.click(screen.getByRole('option', { name: /Orange/i }));
+    await user.click(screen.getByRole('option', { name: /Banana/i }));
 
-    expect(onChange).toHaveBeenCalledWith(['Apple', 'Banana', 'Orange']);
+    expect(onChange).toHaveBeenCalledWith(['Apple', 'Orange', 'Banana']);
   });
 
   test('showSelectionInline', async () => {
