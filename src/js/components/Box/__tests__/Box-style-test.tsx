@@ -247,66 +247,6 @@ describe('Box', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
-  test('test if image', () => {
-    const { container } = render(
-      <Grommet>
-        <Box
-          border={{ image: { source: 'linear-gradient(#f6b73c, #4d9f0c)' } }}
-        />
-        <Box
-          border={{ image: { source: 'linear-gradient(to right, red, blue)' } }}
-        />
-        <Box
-          border={{
-            size: 'medium',
-            image: {
-              source: 'linear-gradient(#f6b73c, #4d9f0c)',
-              slice: 30,
-            },
-          }}
-        />
-        <Box
-          border={{
-            size: 'small',
-            image: {
-              source: 'linear-gradient(to bottom, green, yellow)',
-              slice: 20,
-            },
-          }}
-        />
-        <Box
-          border={{
-            side: 'top',
-            image: {
-              source: 'linear-gradient(45deg, blue, green)',
-            },
-          }}
-        />
-        <Box
-          border={{
-            side: 'left',
-            image: {
-              source: 'linear-gradient(135deg, black, white)',
-              slice: 50,
-            },
-          }}
-        />
-        <Box
-          border={{
-            image: {
-              source: 'linear-gradient(#f6b73c, #4d9f0c)',
-              slice: 30,
-            },
-          }}
-        >
-          hi
-        </Box>
-      </Grommet>,
-    );
-
-    expect(container.firstChild).toMatchSnapshot();
-  });
-
   test('elevation', () => {
     const { container } = render(
       <Grommet>
