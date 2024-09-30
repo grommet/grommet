@@ -10,10 +10,46 @@ import {
   roundPropType,
   skeletonPropType,
   widthPropType,
-  BORDER_SHAPE,
 } from '../../utils/general-prop-types';
 
 const OVERFLOW_VALUES = ['auto', 'hidden', 'scroll', 'visible'];
+
+const BORDER_SHAPE = PropTypes.shape({
+  color: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.shape({
+      dark: PropTypes.string,
+      light: PropTypes.string,
+    }),
+  ]),
+  side: PropTypes.oneOf([
+    'top',
+    'left',
+    'bottom',
+    'right',
+    'start',
+    'end',
+    'horizontal',
+    'vertical',
+    'all',
+    'between',
+  ]),
+  size: PropTypes.oneOfType([
+    PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge']),
+    PropTypes.string,
+  ]),
+  style: PropTypes.oneOf([
+    'solid',
+    'dashed',
+    'dotted',
+    'double',
+    'groove',
+    'ridge',
+    'inset',
+    'outset',
+    'hidden',
+  ]),
+});
 
 // if you update values here, make sure to update in Drop/doc too.
 const overflowPropType = PropTypes.oneOfType([

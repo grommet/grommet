@@ -7,9 +7,6 @@ export const responsiveBorderStyle = (data, theme) => {
   const borderSize = data.size || 'xsmall';
   const style = data.style || 'solid';
   const side = typeof data === 'string' ? data : data.side || 'all';
-
-  const styles = [];
-
   const breakpoint =
     theme.box.responsiveBreakpoint &&
     theme.global.breakpoints[theme.box.responsiveBreakpoint];
@@ -24,36 +21,22 @@ export const responsiveBorderStyle = (data, theme) => {
     side === 'bottom' ||
     side === 'left' ||
     side === 'right'
-  ) {
-    styles.push(`border-${side}: ${value};`);
-  } else if (side === 'end' || side === 'start') {
-    styles.push(`border-inline-${side}: ${value};`);
-  } else if (side === 'vertical') {
-    styles.push(`
+  )
+    return `border-${side}: ${value};`;
+  if (side === 'end' || side === 'start')
+    return `border-inline-${side}: ${value};`;
+  if (side === 'vertical')
+    return `
       border-left: ${value};
       border-right: ${value};
-    `);
-  } else if (side === 'horizontal') {
-    styles.push(`
+    `;
+  if (side === 'horizontal')
+    return `
       border-top: ${value};
       border-bottom: ${value};
-    `);
-  } else if (side !== 'between') {
-    styles.push(`border: ${value};`);
-  }
-
-  if (data.image) {
-    if (typeof data.image === 'object') {
-      const { slice, source } = data.image;
-      if (source) {
-        styles.push(`border-image-source: ${source};`);
-      }
-      if (slice) {
-        styles.push(`border-image-slice: ${slice};`);
-      }
-    }
-  }
-  return styles.join('\n');
+    `;
+  if (side === 'between') return undefined; // no-op
+  return `border: ${value};`;
 };
 
 export const borderStyle = (borderData, responsive, theme) => {
@@ -114,17 +97,6 @@ export const borderStyle = (borderData, responsive, theme) => {
       );
       if (responsiveStyle) {
         styles.push(breakpointStyle(breakpoint, responsiveStyle));
-      }
-    }
-    if (data.image) {
-      if (typeof data.image === 'object') {
-        const { slice, source } = data.image;
-        if (source) {
-          styles.push(`border-image-source: ${source};`);
-        }
-        if (slice) {
-          styles.push(`border-image-slice: ${slice};`);
-        }
       }
     }
     borderStyles.push(styles);
