@@ -88,11 +88,7 @@ const SimpleDrop = () => {
               {showRestrictFocusDrop && (
                 <Drop
                   target={restrictFocusButtonRef.current}
-                  align={
-                    console.log('hello', restrictFocusButtonRef.current) || {
-                      top: 'bottom',
-                    }
-                  }
+                  align={{ top: 'bottom' }}
                   onClickOutside={() => setShowRestrictFocusDrop(false)}
                   onEsc={() => setShowRestrictFocusDrop(false)}
                   restrictFocus

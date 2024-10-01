@@ -3,6 +3,24 @@ import React, { useEffect, useRef, useState } from 'react';
 import { makeNodeFocusable, makeNodeUnfocusable } from '../utils';
 import { RootsContext, useRoots } from '../contexts/RootsContext';
 
+const isFocusable = (element) => {
+  if (element.tabIndex < 0 || element.disabled) {
+    return false;
+  }
+  switch (element.nodeName) {
+    case 'A':
+      return !!element.href && element.rel !== 'ignore';
+    case 'INPUT':
+      return element.type !== 'hidden';
+    case 'BUTTON':
+    case 'SELECT':
+    case 'TEXTAREA':
+      return true;
+    default:
+      return false;
+  }
+};
+
 export const FocusedContainer = ({
   hidden = false,
   restrictScroll = false,
@@ -17,41 +35,65 @@ export const FocusedContainer = ({
 
   const { contextValue, hasRoots } = useRoots();
   const { roots: contextRoots } = contextValue;
+  // When attemptFocus moves focus around to find the focusable element,
+  // set this to true so handleTrapFocus doesn't focus the element.
+  const ignoreUtilFocusRef = useRef(false);
 
   useEffect(() => {
     const container = ref.current;
     const roots = contextRoots.current;
 
+    const attemptFocus = (element) => {
+      // Check if the element is focusable; if not, return false
+      if (!isFocusable(element)) {
+        return false;
+      }
+      ignoreUtilFocusRef.current = true;
+      try {
+        element.focus();
+      } catch (e) {
+        // continue regardless of error
+      }
+      ignoreUtilFocusRef.current = false;
+      // Return true if the element is currently the active element or has focus
+      return document.activeElement === element;
+    };
+
+    const focusFirstDescendant = (element) => {
+      // Iterate through all child nodes of the provided element
+      for (let i = 0; i < element.childNodes.length; i += 1) {
+        const child = element.childNodes[i];
+        if (attemptFocus(child) || focusFirstDescendant(child)) return true;
+      }
+      // If no focusable child or descendant was found, return false
+      return false;
+    };
+
+    const focusLastDescendant = (element) => {
+      for (let i = element.childNodes.length - 1; i >= 0; i -= 1) {
+        const child = element.childNodes[i];
+        if (attemptFocus(child) || focusLastDescendant(child)) return true;
+      }
+      return false;
+    };
+
     const handleTrapFocus = (e) => {
       if (
         !hidden &&
         trapFocus &&
+        ignoreUtilFocusRef.current === false &&
         container &&
         // only perform focus if this is the most recently opened drop
         roots[roots.length - 1] === container
       ) {
-        const focusableElements = container.querySelectorAll(
-          `button:not([tabindex="-1"]), [href]:not([tabindex="-1"]), 
-     input:not([tabindex="-1"]), select:not([tabindex="-1"]), 
-     textarea:not([tabindex="-1"]), [tabindex]:not([tabindex="-1"])`,
-        );
-
-        if (focusableElements.length === 0) return;
-
-        const firstElement = focusableElements[0];
-        const lastElement = focusableElements[focusableElements.length - 1];
-
-        if (container.contains(e.target)) container.lastFocus = e.target;
-        // if focus event is moving to bookend divs, loop focus to trap it.
-        else if (container.lastFocus === firstElement) {
-          lastElement.focus();
-          e.preventDefault();
+        if (container.contains(e.target)) {
+          container.lastFocus = e.target;
         } else {
-          // In the case where the focus hasn't already been placed on
-          // or within the container, this will ensure the next "tab"
-          // places focus on the first focusable element
-          firstElement.focus();
-          e.preventDefault();
+          focusFirstDescendant(container);
+          if (container.lastFocus === document.activeElement) {
+            focusLastDescendant(container);
+          }
+          container.lastFocus = document.activeElement;
         }
       }
     };
@@ -87,7 +129,7 @@ export const FocusedContainer = ({
 
     return () => {
       // remove from global roots array
-      if (roots.indexOf(container)) roots.splice(roots.indexOf(container), 1);
+      if (roots.includes(container)) roots.splice(roots.indexOf(container), 1);
       removeListeners();
       if (roots?.[roots.length - 1]) makeNodeFocusable(roots[roots.length - 1]);
       preNodeRef?.current?.remove();
