@@ -690,5 +690,40 @@ describe('Select Controlled', () => {
     ]);
   });
 
+  test('Value should be of same order as the order of selection', () => {
+    const onChange = jest.fn();
+    const Test = () => {
+      const [value, setValue] = React.useState();
+      return (
+        <Select
+          id="test-select"
+          placeholder="test select"
+          value={value}
+          options={['one', 'two', 'three', 'four', 'five']}
+          onChange={({ value: nextValue }) => {
+            setValue(nextValue);
+            onChange(nextValue);
+          }}
+          multiple
+        />
+      );
+    };
+    const { getByPlaceholderText, getByText } = render(
+      <Grommet>
+        <Test />
+      </Grommet>,
+    );
+    const select = getByPlaceholderText('test select');
+    fireEvent.click(select);
+    fireEvent.click(getByText('five'));
+    expect(onChange).toHaveBeenCalledWith(['five']);
+    fireEvent.click(select);
+    fireEvent.click(getByText('one'));
+    expect(onChange).toHaveBeenCalledWith(['five', 'one']);
+    fireEvent.click(select);
+    fireEvent.click(getByText('three'));
+    expect(onChange).toHaveBeenCalledWith(['five', 'one', 'three']);
+  });
+
   window.scrollTo.mockRestore();
 });
