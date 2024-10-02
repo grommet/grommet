@@ -38,6 +38,7 @@ export const FocusedContainer = ({
   // When attemptFocus moves focus around to find the focusable element,
   // set this to true so handleTrapFocus doesn't focus the element.
   const ignoreUtilFocusRef = useRef(false);
+  const lastFocusRef = useRef(null);
 
   useEffect(() => {
     const container = ref.current;
@@ -87,13 +88,13 @@ export const FocusedContainer = ({
         roots[roots.length - 1] === container
       ) {
         if (container.contains(e.target)) {
-          container.lastFocus = e.target;
+          lastFocusRef.current = e.target;
         } else {
           focusFirstDescendant(container);
-          if (container.lastFocus === document.activeElement) {
+          if (lastFocusRef.current === document.activeElement) {
             focusLastDescendant(container);
           }
-          container.lastFocus = document.activeElement;
+          lastFocusRef.current = document.activeElement;
         }
       }
     };
