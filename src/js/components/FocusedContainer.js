@@ -98,14 +98,6 @@ export const FocusedContainer = ({
       }
     };
 
-    const addListeners = () => {
-      document.addEventListener('focus', handleTrapFocus, true);
-    };
-
-    const removeListeners = () => {
-      document.removeEventListener('focus', handleTrapFocus, true);
-    };
-
     // add container to the global roots
     if (container) roots.push(container);
 
@@ -125,12 +117,12 @@ export const FocusedContainer = ({
       postNodeRef.current.tabIndex = 0;
     }
 
-    addListeners();
+    document.addEventListener('focus', handleTrapFocus, true);
 
     return () => {
       // remove from global roots array
       if (roots.includes(container)) roots.splice(roots.indexOf(container), 1);
-      removeListeners();
+      document.removeEventListener('focus', handleTrapFocus, true);
       if (roots?.[roots.length - 1]) makeNodeFocusable(roots[roots.length - 1]);
       preNodeRef?.current?.remove();
       postNodeRef?.current?.remove();
@@ -163,9 +155,9 @@ export const FocusedContainer = ({
   useEffect(() => {
     const roots = contextRoots.current;
     const timer = setTimeout(() => {
-      if (!hidden && trapFocus && roots?.[0]) {
+      if (!hidden && trapFocus) {
         // make every root before this one unfocusable
-        roots.forEach((root, index) => {
+        roots?.forEach((root, index) => {
           if (index < roots.length - 1) makeNodeUnfocusable(root);
         });
       }
