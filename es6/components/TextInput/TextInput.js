@@ -276,6 +276,9 @@ var TextInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
       target: dropTarget || inputRef.current,
       onClickOutside: clickOutside,
       onEsc: closeDrop
+      // TextInput manages its own keyboard behavior via keyboardProps
+      ,
+      trapFocus: false
     }, dropProps), /*#__PURE__*/React.createElement(ContainerBox, _extends({
       id: id ? "listbox__" + id : undefined,
       role: "listbox",
