@@ -2697,6 +2697,9 @@ exports[`inline 1`] = `
     click
   </span>
   <div
+    tabindex="0"
+  />
+  <div
     aria-hidden="false"
   >
     <div
@@ -2709,5 +2712,8 @@ exports[`inline 1`] = `
       this is a test
     </div>
   </div>
+  <div
+    tabindex="0"
+  />
 </button>
 `;

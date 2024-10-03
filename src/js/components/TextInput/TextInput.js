@@ -350,6 +350,8 @@ const TextInput = forwardRef(
           target={dropTarget || inputRef.current}
           onClickOutside={clickOutside}
           onEsc={closeDrop}
+          // TextInput manages its own keyboard behavior via keyboardProps
+          trapFocus={false}
           {...dropProps}
         >
           <ContainerBox
