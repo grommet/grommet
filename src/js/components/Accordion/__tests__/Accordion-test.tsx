@@ -19,6 +19,10 @@ const customTheme = {
 };
 
 describe('Accordion', () => {
+  beforeEach(() => {
+    Date.now = jest.fn(() => 12345678);
+  });
+
   test('should have no accessibility violations', async () => {
     const { container, asFragment } = render(
       <Grommet>
