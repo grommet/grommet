@@ -32,6 +32,9 @@ const RadioButton = forwardRef(
   ) => {
     const { theme, passThemeFlag } = useThemeValue();
     const [hover, setHover] = useState();
+    const [isFocused, setIsFocused] = useState(false);
+    const inputRef = React.useRef(null);
+
     const normalizedLabel =
       typeof label === 'string' ? (
         <StyledRadioButtonLabel {...passThemeFlag}>
@@ -59,21 +62,35 @@ const RadioButton = forwardRef(
       }
     }
 
+    const handleKeyDown = (event) => {
+      if (!disabled && (event.key === 'Enter' || event.key === ' ')) {
+        event.preventDefault();
+        inputRef.current.click();
+      }
+    };
+
     return (
       <StyledRadioButtonContainer
         {...removeUndefined({ htmlFor: id, disabled })}
         onClick={(event) => {
-          // prevents clicking on the label trigging the event twice
-          // https://stackoverflow.com/questions/24501497/why-the-onclick-element-will-trigger-twice-for-label-element
           if (event.target.type !== 'radio') {
             event.stopPropagation();
           }
         }}
-        focus={focus}
         focusIndicator={focusIndicator}
         onMouseEnter={() => setHover(true)}
         onMouseLeave={() => setHover(false)}
         {...passThemeFlag}
+        onFocus={() => {
+          setIsFocused(true);
+          if (inputRef.current) {
+            inputRef.current.focus();
+          }
+        }}
+        onBlur={() => setIsFocused(false)}
+        onKeyDown={handleKeyDown}  
+        tabIndex={disabled ? -1 : 0}
+        focus={focus || isFocused}
       >
         <StyledRadioButton
           flex={false}
@@ -85,8 +102,16 @@ const RadioButton = forwardRef(
           <StyledRadioButtonInput
             aria-label={a11yTitle}
             {...rest}
-            ref={ref}
+            ref={(node) => {
+              inputRef.current = node;
+              if (typeof ref === 'function') {
+                ref(node);
+              } else if (ref && 'current' in ref) {
+                ref.current = node;
+              }
+            }}
             type="radio"
+            tabIndex={disabled ? -1 : 0}
             {...removeUndefined({
               id,
               name,
