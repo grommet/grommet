@@ -13,8 +13,8 @@ import { useThemeValue } from '../../utils/useThemeValue';
 // Ideally we should use `useId` from react but this is only available
 // in React 18 and we want to keep compatibility with React 17 and 16.
 function getUID() {
-  const timestamp = Date.now().toString(36);
-  return `grommet-accordion-button-${timestamp}-${Math.random()}`;
+  const timestamp = Date.now() + Math.random();
+  return `grommet-accordion-button-${timestamp}`;
 }
 
 const AccordionPanel = forwardRef(
