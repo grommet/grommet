@@ -136,21 +136,28 @@ const Select = forwardRef(
     // the option indexes present in the value
     const optionIndexesInValue = useMemo(() => {
       const result = [];
-      allOptions.forEach((option, index) => {
-        if (selected !== undefined) {
-          if (Array.isArray(selected)) {
-            if (selected.indexOf(index) !== -1) result.push(index);
-          } else if (index === selected) {
-            result.push(index);
-          }
-        } else if (Array.isArray(normalizedValue)) {
-          if (normalizedValue.some((v) => v === applyKey(option, valueKey))) {
-            result.push(index);
-          }
-        } else if (normalizedValue === applyKey(option, valueKey)) {
+      if (selected !== undefined) {
+        if (Array.isArray(selected)) {
+          const validSelections = selected.filter((i) => i in allOptions);
+          result.push(...validSelections);
+        } else if (selected in allOptions) {
+          result.push(selected);
+        }
+      } else if (Array.isArray(normalizedValue)) {
+        normalizedValue.forEach((v) => {
+          const index = allOptions
+            .map((option) => applyKey(option, valueKey))
+            .indexOf(v);
+          if (index !== -1) result.push(index);
+        });
+      } else {
+        const index = allOptions
+          .map((option) => applyKey(option, valueKey))
+          .indexOf(normalizedValue);
+        if (index !== -1) {
           result.push(index);
         }
-      });
+      }
       return result;
     }, [allOptions, selected, valueKey, normalizedValue]);
 
