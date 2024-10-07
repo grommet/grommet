@@ -1,4 +1,4 @@
-import React, { forwardRef, useContext, useMemo, useState, useId } from 'react';
+import React, { forwardRef, useContext, useMemo, useState } from 'react';
 
 import { normalizeColor, parseMetricToNum } from '../../utils';
 import { Box } from '../Box';
@@ -10,11 +10,19 @@ import { AccordionContext } from '../Accordion/AccordionContext';
 import { AccordionPanelPropTypes } from './propTypes';
 import { useThemeValue } from '../../utils/useThemeValue';
 
+// Ideally we should use `useId` from react but this is only available
+// in React 18 and we want to keep compatibility with React 17 and 16.
+function getUID() {
+  const timestamp = Date.now().toString(36);
+  return `grommet-accordion-button-${timestamp}-${Math.random()}`;
+}
+
 const AccordionPanel = forwardRef(
   (
     {
       children,
       header,
+      id,
       label,
       onClick,
       onMouseOut,
@@ -25,7 +33,7 @@ const AccordionPanel = forwardRef(
     },
     ref,
   ) => {
-    const uniqueId = useId();
+    const panelButtonId = id ? `grommet_accordion_button_${id}` : getUID();
     const { theme } = useThemeValue();
     const { active, animate, level, onPanelChange } =
       useContext(AccordionContext);
@@ -90,7 +98,7 @@ const AccordionPanel = forwardRef(
         margin={abutMargin}
       >
         <Button
-          id={uniqueId}
+          id={panelButtonId}
           aria-expanded={active}
           plain={theme.button.default ? true : undefined}
           onClick={onPanelChange}
@@ -116,7 +124,13 @@ const AccordionPanel = forwardRef(
           style={focus ? { zIndex: 1 } : undefined}
         >
           {header || (
-            <Box align="center" direction="row" justify="between" {...rest}>
+            <Box
+              align="center"
+              direction="row"
+              justify="between"
+              id={id}
+              {...rest}
+            >
               {typeof label === 'string' ? (
                 <Box pad={{ horizontal: 'xsmall' }}>
                   <Heading
@@ -150,7 +164,11 @@ const AccordionPanel = forwardRef(
             </Box>
           )}
         </Button>
-        <Box role="region" border={contentBorder} aria-labelledby={uniqueId}>
+        <Box
+          role="region"
+          border={contentBorder}
+          aria-labelledby={panelButtonId}
+        >
           {animate ? (
             <Collapsible open={active}>{children}</Collapsible>
           ) : (

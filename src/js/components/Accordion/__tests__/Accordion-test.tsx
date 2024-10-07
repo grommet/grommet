@@ -19,6 +19,16 @@ const customTheme = {
 };
 
 describe('Accordion', () => {
+  beforeEach(() => {
+    jest.spyOn(Date, 'now').mockImplementation(() => 12345678);
+    jest.spyOn(global.Math, 'random').mockReturnValue(0.123456789);
+  });
+
+  afterEach(() => {
+    jest.spyOn(Date, 'now').mockRestore();
+    jest.spyOn(global.Math, 'random').mockRestore();
+  });
+
   test('should have no accessibility violations', async () => {
     const { container, asFragment } = render(
       <Grommet>
