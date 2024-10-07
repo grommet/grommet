@@ -9942,6 +9942,7 @@ __metadata:
     react-dom: "npm:^18.3.1"
     react-is: "npm:^18.3.1"
     react-shadow: "npm:^20.5.0"
+    react-use-id-hook: "npm:1.0.1"
     regenerator-runtime: "npm:^0.14.1"
     simple-git: "npm:^3.26.0"
     storybook: "npm:7.0.20"
@@ -14614,6 +14615,15 @@ __metadata:
   peerDependencies:
     react: ">= 0.14.0"
   checksum: 10c0/2bf57a1ea151f688efc7eba355677577c9bb55f05f9df7ef86627aae42f63f505486cddf3f4a628aecc51ec75e89beb9533201570d03201c4bf7d69d61d2545d
+  languageName: node
+  linkType: hard
+
+"react-use-id-hook@npm:1.0.1":
+  version: 1.0.1
+  resolution: "react-use-id-hook@npm:1.0.1"
+  peerDependencies:
+    react: ">=16"
+  checksum: 10c0/e95c3a8ce9465e37e42b2c689b22440580aaa57d28a52762465c04c7f163c4effec5967fa0d09cf3982a0f3206596a48eb35b3a1278343634b7bbc63b3b0f2ac
   languageName: node
   linkType: hard
 

@@ -1,4 +1,5 @@
 import React, { Children, forwardRef, useCallback, useState } from 'react';
+import { IdProvider } from 'react-use-id-hook';
 import { AccordionPropTypes } from './propTypes';
 import { Box } from '../Box';
 
@@ -66,19 +67,21 @@ const Accordion = forwardRef(
     );
 
     return (
-      <Box ref={ref} {...rest}>
-        {Children.toArray(children)
-          .filter((child) => child)
-          .map((child, index) => (
-            <AccordionContext.Provider
-              // eslint-disable-next-line react/no-array-index-key
-              key={index}
-              value={getAccordionContext(index)}
-            >
-              {child}
-            </AccordionContext.Provider>
-          ))}
-      </Box>
+      <IdProvider>
+        <Box ref={ref} {...rest}>
+          {Children.toArray(children)
+            .filter((child) => child)
+            .map((child, index) => (
+              <AccordionContext.Provider
+                // eslint-disable-next-line react/no-array-index-key
+                key={index}
+                value={getAccordionContext(index)}
+              >
+                {child}
+              </AccordionContext.Provider>
+            ))}
+        </Box>
+      </IdProvider>
     );
   },
 );

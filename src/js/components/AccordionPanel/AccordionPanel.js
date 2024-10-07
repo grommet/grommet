@@ -1,4 +1,6 @@
-import React, { forwardRef, useContext, useMemo, useState, useId } from 'react';
+import React, { forwardRef, useContext, useMemo, useState } from 'react';
+
+import { useId } from 'react-use-id-hook';
 
 import { normalizeColor, parseMetricToNum } from '../../utils';
 import { Box } from '../Box';
