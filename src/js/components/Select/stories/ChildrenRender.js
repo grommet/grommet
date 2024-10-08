@@ -20,10 +20,7 @@ export const Children = () => {
   const [selected, setSelected] = useState([]);
 
   const onRemoveSeason = (season) => {
-    const seasonIndex = allSeasons.indexOf(season);
-    setSelected(
-      selected.filter((selectedSeason) => selectedSeason !== seasonIndex),
-    );
+    setSelected(selected.filter((selectedSeason) => selectedSeason !== season));
   };
 
   const renderSeason = (season) => (
@@ -67,10 +64,10 @@ export const Children = () => {
       <Select
         closeOnChange={false}
         multiple
-        value={
+        valueLabel={
           <Box wrap direction="row" width="small">
             {selected && selected.length ? (
-              selected.map((index) => renderSeason(allSeasons[index]))
+              selected.map((value) => renderSeason(value))
             ) : (
               <Box
                 pad={{ vertical: 'xsmall', horizontal: 'small' }}
@@ -82,10 +79,10 @@ export const Children = () => {
           </Box>
         }
         options={allSeasons}
-        selected={selected}
+        value={selected}
         disabled={[2, 6]}
-        onChange={({ selected: nextSelected }) => {
-          setSelected([...nextSelected].sort());
+        onChange={({ value: nextSelected }) => {
+          setSelected(nextSelected);
         }}
       >
         {renderOption}
