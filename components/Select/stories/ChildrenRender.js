@@ -13,9 +13,8 @@ var Children = exports.Children = function Children() {
     selected = _useState[0],
     setSelected = _useState[1];
   var onRemoveSeason = function onRemoveSeason(season) {
-    var seasonIndex = allSeasons.indexOf(season);
     setSelected(selected.filter(function (selectedSeason) {
-      return selectedSeason !== seasonIndex;
+      return selectedSeason !== season;
     }));
   };
   var renderSeason = function renderSeason(season) {
@@ -73,12 +72,12 @@ var Children = exports.Children = function Children() {
     }, /*#__PURE__*/_react["default"].createElement(_grommet.Select, {
       closeOnChange: false,
       multiple: true,
-      value: /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
+      valueLabel: /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
         wrap: true,
         direction: "row",
         width: "small"
-      }, selected && selected.length ? selected.map(function (index) {
-        return renderSeason(allSeasons[index]);
+      }, selected && selected.length ? selected.map(function (value) {
+        return renderSeason(value);
       }) : /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
         pad: {
           vertical: 'xsmall',
@@ -87,11 +86,11 @@ var Children = exports.Children = function Children() {
         margin: "xsmall"
       }, "Select Season")),
       options: allSeasons,
-      selected: selected,
+      value: selected,
       disabled: [2, 6],
       onChange: function onChange(_ref) {
-        var nextSelected = _ref.selected;
-        setSelected([].concat(nextSelected).sort());
+        var nextSelected = _ref.value;
+        setSelected(nextSelected);
       }
     }, renderOption))
     // </Grommet>

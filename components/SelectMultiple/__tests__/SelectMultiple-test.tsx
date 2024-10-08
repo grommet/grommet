@@ -159,6 +159,38 @@ describe('SelectMultiple', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
+  test('Value should be of same order as the order of selection', async () => {
+    // Mock scrollIntoView since JSDOM doesn't do layout.
+    // https://github.com/jsdom/jsdom/issues/1695#issuecomment-449931788
+    window.HTMLElement.prototype.scrollIntoView = jest.fn();
+    const user = userEvent.setup();
+    const onChange = jest.fn();
+    const Test = () => {
+      const [valueMultiple, setValueMultiple] = useState([]);
+      return (
+        <Grommet>
+          <SelectMultiple
+            options={defaultOptions}
+            value={valueMultiple}
+            onChange={({ value }) => {
+              setValueMultiple(value);
+              onChange(value);
+            }}
+          />
+        </Grommet>
+      );
+    };
+    render(<Test />);
+    // open SelectMultiple
+    await user.click(screen.getByRole('button', { name: /Open Drop/i }));
+    // click all the options
+    await user.click(screen.getByRole('option', { name: /Apple/i }));
+    await user.click(screen.getByRole('option', { name: /Orange/i }));
+    await user.click(screen.getByRole('option', { name: /Banana/i }));
+
+    expect(onChange).toHaveBeenCalledWith(['Apple', 'Orange', 'Banana']);
+  });
+
   test('showSelectionInline', async () => {
     // Mock scrollIntoView since JSDOM doesn't do layout.
     // https://github.com/jsdom/jsdom/issues/1695#issuecomment-449931788
