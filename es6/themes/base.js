@@ -467,7 +467,6 @@ export var generate = function generate(baseSpacing, scale) {
       // extend: undefined,
     },
     button: {
-      intelligentPad: true,
       badge: {
         // align: undefined,,
         container: {

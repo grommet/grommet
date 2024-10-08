@@ -390,14 +390,14 @@ var Menu = /*#__PURE__*/forwardRef(function (props, ref) {
       ref: dropContainerRef,
       tabIndex: -1,
       background: dropBackground || theme.menu.background
-    }, passThemeFlag), alignControlMirror === 'top' && align.bottom !== 'top' && align.top !== 'bottom' ? controlMirror : undefined, /*#__PURE__*/React.createElement(Box, {
+    }, passThemeFlag), alignControlMirror === 'top' && align.top === 'top' ? controlMirror : undefined, /*#__PURE__*/React.createElement(Box, {
       overflow: "auto",
       role: "menu",
       a11yTitle: a11y
-    }, menuContent), !initialAlignTop &&
+    }, menuContent), !initialAlignTop && (
     // don't show controlMirror if caller is using
     // align.bottom === 'top'
-    alignControlMirror === 'bottom' && align.bottom !== 'top' && align.top !== 'bottom' ? controlMirror : undefined))
+    alignControlMirror === 'bottom' && !align.bottom === 'top' || align.bottom === 'bottom') ? controlMirror : undefined))
   }), content));
 });
 Menu.displayName = 'Menu';

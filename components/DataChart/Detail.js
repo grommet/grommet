@@ -4,7 +4,6 @@ exports.__esModule = true;
 exports.Detail = void 0;
 var _react = _interopRequireWildcard(require("react"));
 var _styledComponents = _interopRequireDefault(require("styled-components"));
-var _contexts = require("../../contexts");
 var _Box = require("../Box");
 var _Drop = require("../Drop");
 var _Grid = require("../Grid");
@@ -31,7 +30,6 @@ var Detail = exports.Detail = function Detail(_ref) {
     seriesStyles = _ref.seriesStyles,
     renderValue = _ref.renderValue,
     thickness = _ref.thickness;
-  var announce = (0, _react.useContext)(_contexts.AnnounceContext);
   var _useThemeValue = (0, _useThemeValue2.useThemeValue)(),
     theme = _useThemeValue.theme;
   var _useState = (0, _react.useState)(),
@@ -80,19 +78,6 @@ var Detail = exports.Detail = function Detail(_ref) {
     };
     return res;
   }, [data.length, detailIndex, horizontalProp]);
-  (0, _react.useEffect)(function () {
-    if (detailIndex !== undefined) {
-      var content = series.filter(function (_ref2) {
-        var _data$detailIndex;
-        var property = _ref2.property;
-        return (!activeProperty || activeProperty === property) && (data == null || (_data$detailIndex = data[detailIndex]) == null ? void 0 : _data$detailIndex[property]) !== undefined || axis && axis.x && axis.x.property === property;
-      }).map(function (serie) {
-        var axisValue = horizontalProp ? data[detailIndex][serie.property] : detailIndex;
-        return (serie.label || serie.property) + " " + renderValue(serie, axisValue);
-      }).join(' ');
-      announce(content);
-    }
-  }, [activeProperty, announce, axis, data, detailIndex, horizontalProp, renderValue, series]);
   return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_Keyboard.Keyboard, {
     onLeft: function onLeft() {
       if (detailIndex === undefined) setDetailIndex(data.length - 1);else if (detailIndex > 0) setDetailIndex(detailIndex - 1);
@@ -169,10 +154,10 @@ var Detail = exports.Detail = function Detail(_ref) {
     columns: ['auto', 'auto', 'auto'],
     gap: "xsmall",
     align: "center"
-  }, series.filter(function (_ref3) {
-    var _data$detailIndex2;
-    var property = _ref3.property;
-    return (!activeProperty || activeProperty === property) && (data == null || (_data$detailIndex2 = data[detailIndex]) == null ? void 0 : _data$detailIndex2[property]) !== undefined || axis && axis.x && axis.x.property === property;
+  }, series.filter(function (_ref2) {
+    var _data$detailIndex;
+    var property = _ref2.property;
+    return (!activeProperty || activeProperty === property) && (data == null || (_data$detailIndex = data[detailIndex]) == null ? void 0 : _data$detailIndex[property]) !== undefined || axis && axis.x && axis.x.property === property;
   }).map(function (serie) {
     var propertyStyle = seriesStyles[serie.property];
     var axisValue = horizontalProp ? data[detailIndex][serie.property] : detailIndex;

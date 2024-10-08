@@ -2997,26 +2997,26 @@ exports[`DataTable click 1`] = `
 
 exports[`DataTable click 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 drDzQW"
+  class="StyledGrommet-sc-19lkkz7-0 jOTXqz"
 >
   <table
-    class="StyledTable-sc-1m3u5g-6 bUmVhQ StyledDataTable-sc-xrlyjm-0 lfRkCP"
+    class="StyledTable-sc-1m3u5g-6 jgA-DYp StyledDataTable-sc-xrlyjm-0 ddpdve"
   >
     <thead
       class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
     >
       <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 hJqNiB"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 fwvniA"
       >
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 iWTOtn StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 ksxSsW"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 cIHjPK StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kOcftT"
           scope="col"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 iWtlBN"
+            class="StyledBox-sc-13pk1d4-0 bMEJHU"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 fjinKI"
+              class="StyledText-sc-1sadyjn-0 dAFYwl"
             >
               A
             </span>
@@ -3025,21 +3025,21 @@ exports[`DataTable click 2`] = `
       </tr>
     </thead>
     <tbody
-      class="StyledTable__StyledTableBody-sc-1m3u5g-3 StyledDataTable__StyledDataTableBody-sc-xrlyjm-3 jcOPZD"
+      class="StyledTable__StyledTableBody-sc-1m3u5g-3 StyledDataTable__StyledDataTableBody-sc-xrlyjm-3 ewbFvu"
       tabindex="0"
     >
       <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 vuzUZ"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 knlzWQ"
       >
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 ksjtzt StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 ksxSsW"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 kDHDOM StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kOcftT"
           scope="row"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 bhFQAJ"
+            class="StyledBox-sc-13pk1d4-0 kUqiAI"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 fTPnpC"
+              class="StyledText-sc-1sadyjn-0 ZnZrv"
             >
               alpha
             </span>
@@ -3047,17 +3047,17 @@ exports[`DataTable click 2`] = `
         </th>
       </tr>
       <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 vuzUZ"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 knlzWQ"
       >
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 ksjtzt StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 ksxSsW"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 kDHDOM StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kOcftT"
           scope="row"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 bhFQAJ"
+            class="StyledBox-sc-13pk1d4-0 kUqiAI"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 fTPnpC"
+              class="StyledText-sc-1sadyjn-0 ZnZrv"
             >
               beta
             </span>
@@ -3636,41 +3636,41 @@ exports[`DataTable custom theme 1`] = `
 
 exports[`DataTable custom theme 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 drDzQW"
+  class="StyledGrommet-sc-19lkkz7-0 jOTXqz"
 >
   <table
-    class="StyledTable-sc-1m3u5g-6 bUmVhQ StyledDataTable-sc-xrlyjm-0 lfRkCP"
+    class="StyledTable-sc-1m3u5g-6 jgA-DYp StyledDataTable-sc-xrlyjm-0 ddpdve"
   >
     <thead
       class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
     >
       <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 hJqNiB"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 fwvniA"
       >
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 wApwP StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 ksxSsW"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 gNWexe StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kOcftT"
           scope="col"
         />
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 jXsypA StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 ksxSsW"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 wTYGN StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kOcftT"
           scope="col"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 fvXZZn"
+            class="StyledBox-sc-13pk1d4-0 hhmkuO"
             style="position: relative;"
           >
             <div
-              class="StyledBox-sc-13pk1d4-0 ehNaJD"
+              class="StyledBox-sc-13pk1d4-0 iVSSLu"
             >
               <button
-                class="StyledButton-sc-323bzc-0 bxsiaR Header__StyledHeaderCellButton-sc-1baku5q-0 dIGFkz"
+                class="StyledButton-sc-323bzc-0 fvLkvg Header__StyledHeaderCellButton-sc-1baku5q-0 gxxRHm"
                 type="button"
               >
                 <div
-                  class="StyledBox-sc-13pk1d4-0 knAqIZ"
+                  class="StyledBox-sc-13pk1d4-0 driArM"
                 >
                   <span
-                    class="StyledText-sc-1sadyjn-0 fTPnpC"
+                    class="StyledText-sc-1sadyjn-0 ZnZrv"
                   >
                     A
                   </span>
@@ -3678,23 +3678,23 @@ exports[`DataTable custom theme 2`] = `
               </button>
             </div>
             <div
-              class="StyledStack-sc-ajspsk-0 gdCQIn"
+              class="StyledStack-sc-ajspsk-0 zhPti"
             >
               <div
-                class="StyledStack__StyledStackLayer-sc-ajspsk-1 dYkYJC"
+                class="StyledStack__StyledStackLayer-sc-ajspsk-1 hSRSmj"
               >
                 <div
-                  class="StyledBox-sc-13pk1d4-0 iyhGeh"
+                  class="StyledBox-sc-13pk1d4-0 izGHkE"
                 />
               </div>
               <div
-                class="StyledStack__StyledStackLayer-sc-ajspsk-1 glZweN"
+                class="StyledStack__StyledStackLayer-sc-ajspsk-1 ewKhHs"
               >
                 <div
-                  class="StyledBox-sc-13pk1d4-0 dXPKvn Resizer__InteractionBox-sc-8l808w-0 iboIxD"
+                  class="StyledBox-sc-13pk1d4-0 cybPky Resizer__InteractionBox-sc-8l808w-0 btYsAG"
                 >
                   <div
-                    class="StyledBox-sc-13pk1d4-0 fvmFvg"
+                    class="StyledBox-sc-13pk1d4-0 chHkxV"
                   />
                 </div>
               </div>
@@ -3704,40 +3704,40 @@ exports[`DataTable custom theme 2`] = `
       </tr>
     </thead>
     <tbody
-      class="StyledTable__StyledTableBody-sc-1m3u5g-3 StyledDataTable__StyledDataTableBody-sc-xrlyjm-3 jcOPZD"
+      class="StyledTable__StyledTableBody-sc-1m3u5g-3 StyledDataTable__StyledDataTableBody-sc-xrlyjm-3 ewbFvu"
     >
       <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 hJqNiB"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 fwvniA"
       >
         <td
           aria-disabled="true"
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 ezmXGV StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 ksxSsW"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 iYREEM StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kOcftT"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 cUaAvh"
+            class="StyledBox-sc-13pk1d4-0 liLWZo"
             style="height: 0px;"
           >
             <label
-              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 jjugbv"
+              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 kMeFKO"
               disabled=""
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 fbiMVB StyledCheckBox-sc-1dbk5ju-6 hKWwLV"
+                class="StyledBox-sc-13pk1d4-0 fMMCFA StyledCheckBox-sc-1dbk5ju-6 ZcJbU"
                 disabled=""
               >
                 <input
                   aria-label="unselect alpha"
                   checked=""
-                  class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 fFyNGc"
+                  class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 cgDofV"
                   disabled=""
                   type="checkbox"
                 />
                 <div
-                  class="StyledBox-sc-13pk1d4-0 kAISfb StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 cOXigx"
+                  class="StyledBox-sc-13pk1d4-0 guQEhy StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 ghbxuU"
                   disabled=""
                 >
                   <svg
-                    class="StyledCheckBox__StyledCheckBoxIcon-sc-1dbk5ju-0 gvyHrm"
+                    class="StyledCheckBox__StyledCheckBoxIcon-sc-1dbk5ju-0 hdWjUj"
                     disabled=""
                     preserveAspectRatio="xMidYMid meet"
                     viewBox="0 0 24 24"
@@ -3757,14 +3757,14 @@ exports[`DataTable custom theme 2`] = `
           </div>
         </td>
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 ksjtzt StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 ksxSsW"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 kDHDOM StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kOcftT"
           scope="row"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 bhFQAJ"
+            class="StyledBox-sc-13pk1d4-0 kUqiAI"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 fTPnpC"
+              class="StyledText-sc-1sadyjn-0 ZnZrv"
             >
               alpha
             </span>
@@ -3772,32 +3772,32 @@ exports[`DataTable custom theme 2`] = `
         </th>
       </tr>
       <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 hJqNiB"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 fwvniA"
       >
         <td
           aria-disabled="true"
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 ezmXGV StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 ksxSsW"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 iYREEM StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kOcftT"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 cUaAvh"
+            class="StyledBox-sc-13pk1d4-0 liLWZo"
             style="height: 0px;"
           >
             <label
-              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 jjugbv"
+              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 kMeFKO"
               disabled=""
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 fbiMVB StyledCheckBox-sc-1dbk5ju-6 hKWwLV"
+                class="StyledBox-sc-13pk1d4-0 fMMCFA StyledCheckBox-sc-1dbk5ju-6 ZcJbU"
                 disabled=""
               >
                 <input
                   aria-label="select beta"
-                  class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 fFyNGc"
+                  class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 cgDofV"
                   disabled=""
                   type="checkbox"
                 />
                 <div
-                  class="StyledBox-sc-13pk1d4-0 laRgif StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 cOXigx"
+                  class="StyledBox-sc-13pk1d4-0 iyQiK StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 ghbxuU"
                   disabled=""
                 />
               </div>
@@ -3805,14 +3805,14 @@ exports[`DataTable custom theme 2`] = `
           </div>
         </td>
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 ksjtzt StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 ksxSsW"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 kDHDOM StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kOcftT"
           scope="row"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 bhFQAJ"
+            class="StyledBox-sc-13pk1d4-0 kUqiAI"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 fTPnpC"
+              class="StyledText-sc-1sadyjn-0 ZnZrv"
             >
               beta
             </span>
@@ -3991,26 +3991,26 @@ exports[`DataTable disabled click 1`] = `
 
 exports[`DataTable disabled click 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 drDzQW"
+  class="StyledGrommet-sc-19lkkz7-0 jOTXqz"
 >
   <table
-    class="StyledTable-sc-1m3u5g-6 bUmVhQ StyledDataTable-sc-xrlyjm-0 lfRkCP"
+    class="StyledTable-sc-1m3u5g-6 jgA-DYp StyledDataTable-sc-xrlyjm-0 ddpdve"
   >
     <thead
       class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
     >
       <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 hJqNiB"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 fwvniA"
       >
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 iWTOtn StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 ksxSsW"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 cIHjPK StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kOcftT"
           scope="col"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 iWtlBN"
+            class="StyledBox-sc-13pk1d4-0 bMEJHU"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 fjinKI"
+              class="StyledText-sc-1sadyjn-0 dAFYwl"
             >
               A
             </span>
@@ -4019,22 +4019,22 @@ exports[`DataTable disabled click 2`] = `
       </tr>
     </thead>
     <tbody
-      class="StyledTable__StyledTableBody-sc-1m3u5g-3 StyledDataTable__StyledDataTableBody-sc-xrlyjm-3 jcOPZD"
+      class="StyledTable__StyledTableBody-sc-1m3u5g-3 StyledDataTable__StyledDataTableBody-sc-xrlyjm-3 ewbFvu"
       tabindex="0"
     >
       <tr
         aria-disabled="true"
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 vuzUZ"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 knlzWQ"
       >
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 ksjtzt StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 ksxSsW"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 kDHDOM StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kOcftT"
           scope="row"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 bhFQAJ"
+            class="StyledBox-sc-13pk1d4-0 kUqiAI"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 fTPnpC"
+              class="StyledText-sc-1sadyjn-0 ZnZrv"
             >
               alpha
             </span>
@@ -4042,17 +4042,17 @@ exports[`DataTable disabled click 2`] = `
         </th>
       </tr>
       <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 vuzUZ"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 knlzWQ"
       >
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 ksjtzt StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 ksxSsW"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 kDHDOM StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kOcftT"
           scope="row"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 bhFQAJ"
+            class="StyledBox-sc-13pk1d4-0 kUqiAI"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 fTPnpC"
+              class="StyledText-sc-1sadyjn-0 ZnZrv"
             >
               beta
             </span>
@@ -6297,35 +6297,35 @@ exports[`DataTable groupBy 1`] = `
 
 exports[`DataTable groupBy 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 drDzQW"
+  class="StyledGrommet-sc-19lkkz7-0 jOTXqz"
 >
   <table
-    class="StyledTable-sc-1m3u5g-6 bUmVhQ StyledDataTable-sc-xrlyjm-0 lfRkCP"
+    class="StyledTable-sc-1m3u5g-6 jgA-DYp StyledDataTable-sc-xrlyjm-0 ddpdve"
   >
     <thead
       class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
     >
       <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 hJqNiB"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 fwvniA"
       >
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 cHPCoi"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 hmhxRv"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 eAhAWA"
+            class="StyledBox-sc-13pk1d4-0 jeOZvh"
             style="height: 0px;"
           >
             <button
               aria-label="expand"
-              class="StyledButton-sc-323bzc-0 gBXXMw"
+              class="StyledButton-sc-323bzc-0 bSlcSp"
               type="button"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 gFlNkC"
+                class="StyledBox-sc-13pk1d4-0 iNNCWv"
               >
                 <svg
                   aria-label="FormDown"
-                  class="StyledIcon-sc-ofa7kd-0 kinLlS"
+                  class="StyledIcon-sc-ofa7kd-0 cvZxDL"
                   viewBox="0 0 24 24"
                 >
                   <path
@@ -6340,28 +6340,28 @@ exports[`DataTable groupBy 2`] = `
           </div>
         </td>
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 iWTOtn StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 ksxSsW"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 cIHjPK StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kOcftT"
           scope="col"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 iWtlBN"
+            class="StyledBox-sc-13pk1d4-0 bMEJHU"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 fjinKI"
+              class="StyledText-sc-1sadyjn-0 dAFYwl"
             >
               A
             </span>
           </div>
         </th>
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 iWTOtn StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 ksxSsW"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 cIHjPK StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kOcftT"
           scope="col"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 iWtlBN"
+            class="StyledBox-sc-13pk1d4-0 bMEJHU"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 fjinKI"
+              class="StyledText-sc-1sadyjn-0 dAFYwl"
             >
               B
             </span>
@@ -6370,29 +6370,29 @@ exports[`DataTable groupBy 2`] = `
       </tr>
     </thead>
     <tbody
-      class="StyledTable__StyledTableBody-sc-1m3u5g-3 StyledDataTable__StyledDataTableBody-sc-xrlyjm-3 jcOPZD"
+      class="StyledTable__StyledTableBody-sc-1m3u5g-3 StyledDataTable__StyledDataTableBody-sc-xrlyjm-3 ewbFvu"
     >
       <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 hJqNiB"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 fwvniA"
       >
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 dQVrIM"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 pCzcN"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 eAhAWA"
+            class="StyledBox-sc-13pk1d4-0 jeOZvh"
             style="height: 0px;"
           >
             <button
               aria-label="expand"
-              class="StyledButton-sc-323bzc-0 gBXXMw"
+              class="StyledButton-sc-323bzc-0 bSlcSp"
               type="button"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 gFlNkC"
+                class="StyledBox-sc-13pk1d4-0 iNNCWv"
               >
                 <svg
                   aria-label="FormDown"
-                  class="StyledIcon-sc-ofa7kd-0 kinLlS"
+                  class="StyledIcon-sc-ofa7kd-0 cvZxDL"
                   viewBox="0 0 24 24"
                 >
                   <path
@@ -6407,48 +6407,48 @@ exports[`DataTable groupBy 2`] = `
           </div>
         </td>
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 ksjtzt StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 ksxSsW"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 kDHDOM StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kOcftT"
           scope="row"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 bhFQAJ"
+            class="StyledBox-sc-13pk1d4-0 kUqiAI"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 fjinKI"
+              class="StyledText-sc-1sadyjn-0 dAFYwl"
             >
               one
             </span>
           </div>
         </th>
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 ksjtzt StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 ksxSsW"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 kDHDOM StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kOcftT"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 bhFQAJ"
+            class="StyledBox-sc-13pk1d4-0 kUqiAI"
           />
         </td>
       </tr>
       <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 hJqNiB"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 fwvniA"
       >
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 dQVrIM"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 pCzcN"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 eAhAWA"
+            class="StyledBox-sc-13pk1d4-0 jeOZvh"
             style="height: 0px;"
           >
             <button
               aria-label="expand"
-              class="StyledButton-sc-323bzc-0 gBXXMw"
+              class="StyledButton-sc-323bzc-0 bSlcSp"
               type="button"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 gFlNkC"
+                class="StyledBox-sc-13pk1d4-0 iNNCWv"
               >
                 <svg
                   aria-label="FormDown"
-                  class="StyledIcon-sc-ofa7kd-0 kinLlS"
+                  class="StyledIcon-sc-ofa7kd-0 cvZxDL"
                   viewBox="0 0 24 24"
                 >
                   <path
@@ -6463,24 +6463,24 @@ exports[`DataTable groupBy 2`] = `
           </div>
         </td>
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 ksjtzt StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 ksxSsW"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 kDHDOM StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kOcftT"
           scope="row"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 bhFQAJ"
+            class="StyledBox-sc-13pk1d4-0 kUqiAI"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 fjinKI"
+              class="StyledText-sc-1sadyjn-0 dAFYwl"
             >
               two
             </span>
           </div>
         </th>
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 ksjtzt StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 ksxSsW"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 kDHDOM StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kOcftT"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 bhFQAJ"
+            class="StyledBox-sc-13pk1d4-0 kUqiAI"
           />
         </td>
       </tr>
@@ -7521,35 +7521,35 @@ exports[`DataTable groupBy property 1`] = `
 
 exports[`DataTable groupBy property 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 drDzQW"
+  class="StyledGrommet-sc-19lkkz7-0 jOTXqz"
 >
   <table
-    class="StyledTable-sc-1m3u5g-6 bUmVhQ StyledDataTable-sc-xrlyjm-0 lfRkCP"
+    class="StyledTable-sc-1m3u5g-6 jgA-DYp StyledDataTable-sc-xrlyjm-0 ddpdve"
   >
     <thead
       class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
     >
       <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 hJqNiB"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 fwvniA"
       >
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 cHPCoi"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 hmhxRv"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 eAhAWA"
+            class="StyledBox-sc-13pk1d4-0 jeOZvh"
             style="height: 0px;"
           >
             <button
               aria-label="expand"
-              class="StyledButton-sc-323bzc-0 gBXXMw"
+              class="StyledButton-sc-323bzc-0 bSlcSp"
               type="button"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 gFlNkC"
+                class="StyledBox-sc-13pk1d4-0 iNNCWv"
               >
                 <svg
                   aria-label="FormDown"
-                  class="StyledIcon-sc-ofa7kd-0 kinLlS"
+                  class="StyledIcon-sc-ofa7kd-0 cvZxDL"
                   viewBox="0 0 24 24"
                 >
                   <path
@@ -7564,28 +7564,28 @@ exports[`DataTable groupBy property 2`] = `
           </div>
         </td>
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 iWTOtn StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 ksxSsW"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 cIHjPK StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kOcftT"
           scope="col"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 iWtlBN"
+            class="StyledBox-sc-13pk1d4-0 bMEJHU"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 fjinKI"
+              class="StyledText-sc-1sadyjn-0 dAFYwl"
             >
               A
             </span>
           </div>
         </th>
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 iWTOtn StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 ksxSsW"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 cIHjPK StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kOcftT"
           scope="col"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 iWtlBN"
+            class="StyledBox-sc-13pk1d4-0 bMEJHU"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 fjinKI"
+              class="StyledText-sc-1sadyjn-0 dAFYwl"
             >
               B
             </span>
@@ -7594,29 +7594,29 @@ exports[`DataTable groupBy property 2`] = `
       </tr>
     </thead>
     <tbody
-      class="StyledTable__StyledTableBody-sc-1m3u5g-3 StyledDataTable__StyledDataTableBody-sc-xrlyjm-3 jcOPZD"
+      class="StyledTable__StyledTableBody-sc-1m3u5g-3 StyledDataTable__StyledDataTableBody-sc-xrlyjm-3 ewbFvu"
     >
       <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 hJqNiB"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 fwvniA"
       >
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 dQVrIM"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 pCzcN"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 eAhAWA"
+            class="StyledBox-sc-13pk1d4-0 jeOZvh"
             style="height: 0px;"
           >
             <button
               aria-label="expand"
-              class="StyledButton-sc-323bzc-0 gBXXMw"
+              class="StyledButton-sc-323bzc-0 bSlcSp"
               type="button"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 gFlNkC"
+                class="StyledBox-sc-13pk1d4-0 iNNCWv"
               >
                 <svg
                   aria-label="FormDown"
-                  class="StyledIcon-sc-ofa7kd-0 kinLlS"
+                  class="StyledIcon-sc-ofa7kd-0 cvZxDL"
                   viewBox="0 0 24 24"
                 >
                   <path
@@ -7631,48 +7631,48 @@ exports[`DataTable groupBy property 2`] = `
           </div>
         </td>
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 ksjtzt StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 ksxSsW"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 kDHDOM StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kOcftT"
           scope="row"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 bhFQAJ"
+            class="StyledBox-sc-13pk1d4-0 kUqiAI"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 fjinKI"
+              class="StyledText-sc-1sadyjn-0 dAFYwl"
             >
               one
             </span>
           </div>
         </th>
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 ksjtzt StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 ksxSsW"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 kDHDOM StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kOcftT"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 bhFQAJ"
+            class="StyledBox-sc-13pk1d4-0 kUqiAI"
           />
         </td>
       </tr>
       <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 hJqNiB"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 fwvniA"
       >
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 dQVrIM"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 pCzcN"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 eAhAWA"
+            class="StyledBox-sc-13pk1d4-0 jeOZvh"
             style="height: 0px;"
           >
             <button
               aria-label="expand"
-              class="StyledButton-sc-323bzc-0 gBXXMw"
+              class="StyledButton-sc-323bzc-0 bSlcSp"
               type="button"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 gFlNkC"
+                class="StyledBox-sc-13pk1d4-0 iNNCWv"
               >
                 <svg
                   aria-label="FormDown"
-                  class="StyledIcon-sc-ofa7kd-0 kinLlS"
+                  class="StyledIcon-sc-ofa7kd-0 cvZxDL"
                   viewBox="0 0 24 24"
                 >
                   <path
@@ -7687,24 +7687,24 @@ exports[`DataTable groupBy property 2`] = `
           </div>
         </td>
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 ksjtzt StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 ksxSsW"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 kDHDOM StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kOcftT"
           scope="row"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 bhFQAJ"
+            class="StyledBox-sc-13pk1d4-0 kUqiAI"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 fjinKI"
+              class="StyledText-sc-1sadyjn-0 dAFYwl"
             >
               two
             </span>
           </div>
         </th>
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 ksjtzt StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 ksxSsW"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 kDHDOM StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kOcftT"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 bhFQAJ"
+            class="StyledBox-sc-13pk1d4-0 kUqiAI"
           />
         </td>
       </tr>
@@ -7981,7 +7981,7 @@ exports[`DataTable groupBy toggle 1`] = `
 
 exports[`DataTable groupBy toggle 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 drDzQW"
+  class="StyledGrommet-sc-19lkkz7-0 jOTXqz"
 >
   <button
     type="button"
@@ -7989,13 +7989,13 @@ exports[`DataTable groupBy toggle 2`] = `
     toggle
   </button>
   <table
-    class="StyledTable-sc-1m3u5g-6 bUmVhQ StyledDataTable-sc-xrlyjm-0 lfRkCP"
+    class="StyledTable-sc-1m3u5g-6 jgA-DYp StyledDataTable-sc-xrlyjm-0 ddpdve"
   >
     <thead
       class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
     >
       <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 hJqNiB"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 fwvniA"
       >
         .c4 {
   display: inline-block;
@@ -8180,28 +8180,28 @@ exports[`DataTable groupBy toggle 2`] = `
           </div>
         </td>
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 iWTOtn StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 ksxSsW"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 cIHjPK StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kOcftT"
           scope="col"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 iWtlBN"
+            class="StyledBox-sc-13pk1d4-0 bMEJHU"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 fjinKI"
+              class="StyledText-sc-1sadyjn-0 dAFYwl"
             >
               A
             </span>
           </div>
         </th>
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 iWTOtn StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 ksxSsW"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 cIHjPK StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kOcftT"
           scope="col"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 iWtlBN"
+            class="StyledBox-sc-13pk1d4-0 bMEJHU"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 fjinKI"
+              class="StyledText-sc-1sadyjn-0 dAFYwl"
             >
               B
             </span>
@@ -8515,7 +8515,7 @@ exports[`DataTable groupBy toggle 2`] = `
 
 exports[`DataTable groupBy toggle 3`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 drDzQW"
+  class="StyledGrommet-sc-19lkkz7-0 jOTXqz"
 >
   <button
     type="button"
@@ -8523,37 +8523,37 @@ exports[`DataTable groupBy toggle 3`] = `
     toggle
   </button>
   <table
-    class="StyledTable-sc-1m3u5g-6 bUmVhQ StyledDataTable-sc-xrlyjm-0 lfRkCP"
+    class="StyledTable-sc-1m3u5g-6 jgA-DYp StyledDataTable-sc-xrlyjm-0 ddpdve"
   >
     <thead
       class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
     >
       <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 hJqNiB"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 fwvniA"
       >
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 iWTOtn StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 ksxSsW"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 cIHjPK StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kOcftT"
           scope="col"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 iWtlBN"
+            class="StyledBox-sc-13pk1d4-0 bMEJHU"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 fjinKI"
+              class="StyledText-sc-1sadyjn-0 dAFYwl"
             >
               A
             </span>
           </div>
         </th>
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 iWTOtn StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 ksxSsW"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 cIHjPK StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kOcftT"
           scope="col"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 iWtlBN"
+            class="StyledBox-sc-13pk1d4-0 bMEJHU"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 fjinKI"
+              class="StyledText-sc-1sadyjn-0 dAFYwl"
             >
               B
             </span>
@@ -11538,35 +11538,35 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 1`
 
 exports[`DataTable onSelect + groupBy should select/deselect all when grouped 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 drDzQW"
+  class="StyledGrommet-sc-19lkkz7-0 jOTXqz"
 >
   <table
-    class="StyledTable-sc-1m3u5g-6 bUmVhQ StyledDataTable-sc-xrlyjm-0 lfRkCP"
+    class="StyledTable-sc-1m3u5g-6 jgA-DYp StyledDataTable-sc-xrlyjm-0 ddpdve"
   >
     <thead
       class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
     >
       <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 hJqNiB"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 fwvniA"
       >
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 cHPCoi"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 hmhxRv"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 eAhAWA"
+            class="StyledBox-sc-13pk1d4-0 jeOZvh"
             style="height: 0px;"
           >
             <button
               aria-label="expand"
-              class="StyledButton-sc-323bzc-0 gBXXMw"
+              class="StyledButton-sc-323bzc-0 bSlcSp"
               type="button"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 gFlNkC"
+                class="StyledBox-sc-13pk1d4-0 iNNCWv"
               >
                 <svg
                   aria-label="FormDown"
-                  class="StyledIcon-sc-ofa7kd-0 kinLlS"
+                  class="StyledIcon-sc-ofa7kd-0 cvZxDL"
                   viewBox="0 0 24 24"
                 >
                   <path
@@ -11581,26 +11581,26 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 2`
           </div>
         </td>
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 bwuEXn StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 ksxSsW"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 iJoerS StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kOcftT"
           scope="col"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 cUaAvh"
+            class="StyledBox-sc-13pk1d4-0 liLWZo"
             style="height: 0px;"
           >
             <label
-              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 gEmxVe"
+              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 cYieGb"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 fbiMVB StyledCheckBox-sc-1dbk5ju-6 hKWwLV"
+                class="StyledBox-sc-13pk1d4-0 fMMCFA StyledCheckBox-sc-1dbk5ju-6 ZcJbU"
               >
                 <input
                   aria-label="unselect all"
-                  class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 hLBAbU"
+                  class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 ceXnWt"
                   type="checkbox"
                 />
                 <div
-                  class="StyledBox-sc-13pk1d4-0 kAISfb StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 cOXigx"
+                  class="StyledBox-sc-13pk1d4-0 guQEhy StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 ghbxuU"
                 >
                   .c0 {
   box-sizing: border-box;
@@ -11642,28 +11642,28 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 2`
           </div>
         </th>
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 iWTOtn StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 ksxSsW"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 cIHjPK StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kOcftT"
           scope="col"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 iWtlBN"
+            class="StyledBox-sc-13pk1d4-0 bMEJHU"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 fjinKI"
+              class="StyledText-sc-1sadyjn-0 dAFYwl"
             >
               A
             </span>
           </div>
         </th>
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 iWTOtn StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 ksxSsW"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 cIHjPK StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kOcftT"
           scope="col"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 iWtlBN"
+            class="StyledBox-sc-13pk1d4-0 bMEJHU"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 fjinKI"
+              class="StyledText-sc-1sadyjn-0 dAFYwl"
             >
               B
             </span>
@@ -11672,29 +11672,29 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 2`
       </tr>
     </thead>
     <tbody
-      class="StyledTable__StyledTableBody-sc-1m3u5g-3 StyledDataTable__StyledDataTableBody-sc-xrlyjm-3 jcOPZD"
+      class="StyledTable__StyledTableBody-sc-1m3u5g-3 StyledDataTable__StyledDataTableBody-sc-xrlyjm-3 ewbFvu"
     >
       <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 hJqNiB"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 fwvniA"
       >
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 dQVrIM"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 pCzcN"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 eAhAWA"
+            class="StyledBox-sc-13pk1d4-0 jeOZvh"
             style="height: 0px;"
           >
             <button
               aria-label="expand"
-              class="StyledButton-sc-323bzc-0 gBXXMw"
+              class="StyledButton-sc-323bzc-0 bSlcSp"
               type="button"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 gFlNkC"
+                class="StyledBox-sc-13pk1d4-0 iNNCWv"
               >
                 <svg
                   aria-label="FormDown"
-                  class="StyledIcon-sc-ofa7kd-0 kinLlS"
+                  class="StyledIcon-sc-ofa7kd-0 cvZxDL"
                   viewBox="0 0 24 24"
                 >
                   <path
@@ -11709,25 +11709,25 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 2`
           </div>
         </td>
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 ezmXGV"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 iYREEM"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 cUaAvh"
+            class="StyledBox-sc-13pk1d4-0 liLWZo"
             style="height: 0px;"
           >
             <label
-              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 gEmxVe"
+              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 cYieGb"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 fbiMVB StyledCheckBox-sc-1dbk5ju-6 hKWwLV"
+                class="StyledBox-sc-13pk1d4-0 fMMCFA StyledCheckBox-sc-1dbk5ju-6 ZcJbU"
               >
                 <input
                   aria-label="unselect one"
-                  class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 hLBAbU"
+                  class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 ceXnWt"
                   type="checkbox"
                 />
                 <div
-                  class="StyledBox-sc-13pk1d4-0 kAISfb StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 cOXigx"
+                  class="StyledBox-sc-13pk1d4-0 guQEhy StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 ghbxuU"
                 >
                   .c0 {
   box-sizing: border-box;
@@ -11769,48 +11769,48 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 2`
           </div>
         </td>
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 ksjtzt StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 ksxSsW"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 kDHDOM StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kOcftT"
           scope="row"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 bhFQAJ"
+            class="StyledBox-sc-13pk1d4-0 kUqiAI"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 fjinKI"
+              class="StyledText-sc-1sadyjn-0 dAFYwl"
             >
               one
             </span>
           </div>
         </th>
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 ksjtzt StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 ksxSsW"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 kDHDOM StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kOcftT"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 bhFQAJ"
+            class="StyledBox-sc-13pk1d4-0 kUqiAI"
           />
         </td>
       </tr>
       <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 hJqNiB"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 fwvniA"
       >
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 dQVrIM"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 pCzcN"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 eAhAWA"
+            class="StyledBox-sc-13pk1d4-0 jeOZvh"
             style="height: 0px;"
           >
             <button
               aria-label="expand"
-              class="StyledButton-sc-323bzc-0 gBXXMw"
+              class="StyledButton-sc-323bzc-0 bSlcSp"
               type="button"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 gFlNkC"
+                class="StyledBox-sc-13pk1d4-0 iNNCWv"
               >
                 <svg
                   aria-label="FormDown"
-                  class="StyledIcon-sc-ofa7kd-0 kinLlS"
+                  class="StyledIcon-sc-ofa7kd-0 cvZxDL"
                   viewBox="0 0 24 24"
                 >
                   <path
@@ -11825,25 +11825,25 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 2`
           </div>
         </td>
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 ezmXGV"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 iYREEM"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 cUaAvh"
+            class="StyledBox-sc-13pk1d4-0 liLWZo"
             style="height: 0px;"
           >
             <label
-              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 gEmxVe"
+              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 cYieGb"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 fbiMVB StyledCheckBox-sc-1dbk5ju-6 hKWwLV"
+                class="StyledBox-sc-13pk1d4-0 fMMCFA StyledCheckBox-sc-1dbk5ju-6 ZcJbU"
               >
                 <input
                   aria-label="unselect two"
-                  class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 hLBAbU"
+                  class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 ceXnWt"
                   type="checkbox"
                 />
                 <div
-                  class="StyledBox-sc-13pk1d4-0 kAISfb StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 cOXigx"
+                  class="StyledBox-sc-13pk1d4-0 guQEhy StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 ghbxuU"
                 >
                   .c0 {
   box-sizing: border-box;
@@ -11885,24 +11885,24 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 2`
           </div>
         </td>
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 ksjtzt StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 ksxSsW"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 kDHDOM StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kOcftT"
           scope="row"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 bhFQAJ"
+            class="StyledBox-sc-13pk1d4-0 kUqiAI"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 fjinKI"
+              class="StyledText-sc-1sadyjn-0 dAFYwl"
             >
               two
             </span>
           </div>
         </th>
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 ksjtzt StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 ksxSsW"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 kDHDOM StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kOcftT"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 bhFQAJ"
+            class="StyledBox-sc-13pk1d4-0 kUqiAI"
           />
         </td>
       </tr>
@@ -11913,35 +11913,35 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 2`
 
 exports[`DataTable onSelect + groupBy should select/deselect all when grouped 3`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 drDzQW"
+  class="StyledGrommet-sc-19lkkz7-0 jOTXqz"
 >
   <table
-    class="StyledTable-sc-1m3u5g-6 bUmVhQ StyledDataTable-sc-xrlyjm-0 lfRkCP"
+    class="StyledTable-sc-1m3u5g-6 jgA-DYp StyledDataTable-sc-xrlyjm-0 ddpdve"
   >
     <thead
       class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
     >
       <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 hJqNiB"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 fwvniA"
       >
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 cHPCoi"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 hmhxRv"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 eAhAWA"
+            class="StyledBox-sc-13pk1d4-0 jeOZvh"
             style="height: 0px;"
           >
             <button
               aria-label="expand"
-              class="StyledButton-sc-323bzc-0 gBXXMw"
+              class="StyledButton-sc-323bzc-0 bSlcSp"
               type="button"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 gFlNkC"
+                class="StyledBox-sc-13pk1d4-0 iNNCWv"
               >
                 <svg
                   aria-label="FormDown"
-                  class="StyledIcon-sc-ofa7kd-0 kinLlS"
+                  class="StyledIcon-sc-ofa7kd-0 cvZxDL"
                   viewBox="0 0 24 24"
                 >
                   <path
@@ -11956,54 +11956,54 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 3`
           </div>
         </td>
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 bwuEXn StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 ksxSsW"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 iJoerS StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kOcftT"
           scope="col"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 cUaAvh"
+            class="StyledBox-sc-13pk1d4-0 liLWZo"
             style="height: 0px;"
           >
             <label
-              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 gEmxVe"
+              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 cYieGb"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 fbiMVB StyledCheckBox-sc-1dbk5ju-6 hKWwLV"
+                class="StyledBox-sc-13pk1d4-0 fMMCFA StyledCheckBox-sc-1dbk5ju-6 ZcJbU"
               >
                 <input
                   aria-label="select all"
-                  class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 hLBAbU"
+                  class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 ceXnWt"
                   type="checkbox"
                 />
                 <div
-                  class="StyledBox-sc-13pk1d4-0 laRgif StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 cOXigx"
+                  class="StyledBox-sc-13pk1d4-0 iyQiK StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 ghbxuU"
                 />
               </div>
             </label>
           </div>
         </th>
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 iWTOtn StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 ksxSsW"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 cIHjPK StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kOcftT"
           scope="col"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 iWtlBN"
+            class="StyledBox-sc-13pk1d4-0 bMEJHU"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 fjinKI"
+              class="StyledText-sc-1sadyjn-0 dAFYwl"
             >
               A
             </span>
           </div>
         </th>
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 iWTOtn StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 ksxSsW"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 cIHjPK StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kOcftT"
           scope="col"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 iWtlBN"
+            class="StyledBox-sc-13pk1d4-0 bMEJHU"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 fjinKI"
+              class="StyledText-sc-1sadyjn-0 dAFYwl"
             >
               B
             </span>
@@ -12012,29 +12012,29 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 3`
       </tr>
     </thead>
     <tbody
-      class="StyledTable__StyledTableBody-sc-1m3u5g-3 StyledDataTable__StyledDataTableBody-sc-xrlyjm-3 jcOPZD"
+      class="StyledTable__StyledTableBody-sc-1m3u5g-3 StyledDataTable__StyledDataTableBody-sc-xrlyjm-3 ewbFvu"
     >
       <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 hJqNiB"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 fwvniA"
       >
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 dQVrIM"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 pCzcN"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 eAhAWA"
+            class="StyledBox-sc-13pk1d4-0 jeOZvh"
             style="height: 0px;"
           >
             <button
               aria-label="expand"
-              class="StyledButton-sc-323bzc-0 gBXXMw"
+              class="StyledButton-sc-323bzc-0 bSlcSp"
               type="button"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 gFlNkC"
+                class="StyledBox-sc-13pk1d4-0 iNNCWv"
               >
                 <svg
                   aria-label="FormDown"
-                  class="StyledIcon-sc-ofa7kd-0 kinLlS"
+                  class="StyledIcon-sc-ofa7kd-0 cvZxDL"
                   viewBox="0 0 24 24"
                 >
                   <path
@@ -12049,73 +12049,73 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 3`
           </div>
         </td>
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 ezmXGV"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 iYREEM"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 cUaAvh"
+            class="StyledBox-sc-13pk1d4-0 liLWZo"
             style="height: 0px;"
           >
             <label
-              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 gEmxVe"
+              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 cYieGb"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 fbiMVB StyledCheckBox-sc-1dbk5ju-6 hKWwLV"
+                class="StyledBox-sc-13pk1d4-0 fMMCFA StyledCheckBox-sc-1dbk5ju-6 ZcJbU"
               >
                 <input
                   aria-label="select one"
-                  class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 hLBAbU"
+                  class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 ceXnWt"
                   type="checkbox"
                 />
                 <div
-                  class="StyledBox-sc-13pk1d4-0 laRgif StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 cOXigx"
+                  class="StyledBox-sc-13pk1d4-0 iyQiK StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 ghbxuU"
                 />
               </div>
             </label>
           </div>
         </td>
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 ksjtzt StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 ksxSsW"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 kDHDOM StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kOcftT"
           scope="row"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 bhFQAJ"
+            class="StyledBox-sc-13pk1d4-0 kUqiAI"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 fjinKI"
+              class="StyledText-sc-1sadyjn-0 dAFYwl"
             >
               one
             </span>
           </div>
         </th>
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 ksjtzt StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 ksxSsW"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 kDHDOM StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kOcftT"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 bhFQAJ"
+            class="StyledBox-sc-13pk1d4-0 kUqiAI"
           />
         </td>
       </tr>
       <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 hJqNiB"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 fwvniA"
       >
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 dQVrIM"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 pCzcN"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 eAhAWA"
+            class="StyledBox-sc-13pk1d4-0 jeOZvh"
             style="height: 0px;"
           >
             <button
               aria-label="expand"
-              class="StyledButton-sc-323bzc-0 gBXXMw"
+              class="StyledButton-sc-323bzc-0 bSlcSp"
               type="button"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 gFlNkC"
+                class="StyledBox-sc-13pk1d4-0 iNNCWv"
               >
                 <svg
                   aria-label="FormDown"
-                  class="StyledIcon-sc-ofa7kd-0 kinLlS"
+                  class="StyledIcon-sc-ofa7kd-0 cvZxDL"
                   viewBox="0 0 24 24"
                 >
                   <path
@@ -12130,49 +12130,49 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 3`
           </div>
         </td>
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 ezmXGV"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 iYREEM"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 cUaAvh"
+            class="StyledBox-sc-13pk1d4-0 liLWZo"
             style="height: 0px;"
           >
             <label
-              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 gEmxVe"
+              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 cYieGb"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 fbiMVB StyledCheckBox-sc-1dbk5ju-6 hKWwLV"
+                class="StyledBox-sc-13pk1d4-0 fMMCFA StyledCheckBox-sc-1dbk5ju-6 ZcJbU"
               >
                 <input
                   aria-label="select two"
-                  class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 hLBAbU"
+                  class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 ceXnWt"
                   type="checkbox"
                 />
                 <div
-                  class="StyledBox-sc-13pk1d4-0 laRgif StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 cOXigx"
+                  class="StyledBox-sc-13pk1d4-0 iyQiK StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 ghbxuU"
                 />
               </div>
             </label>
           </div>
         </td>
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 ksjtzt StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 ksxSsW"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 kDHDOM StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kOcftT"
           scope="row"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 bhFQAJ"
+            class="StyledBox-sc-13pk1d4-0 kUqiAI"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 fjinKI"
+              class="StyledText-sc-1sadyjn-0 dAFYwl"
             >
               two
             </span>
           </div>
         </th>
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 ksjtzt StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 ksxSsW"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 kDHDOM StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kOcftT"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 bhFQAJ"
+            class="StyledBox-sc-13pk1d4-0 kUqiAI"
           />
         </td>
       </tr>
@@ -12669,38 +12669,38 @@ exports[`DataTable onSelect select/unselect all 1`] = `
 
 exports[`DataTable onSelect select/unselect all 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 drDzQW"
+  class="StyledGrommet-sc-19lkkz7-0 jOTXqz"
 >
   <table
-    class="StyledTable-sc-1m3u5g-6 bUmVhQ StyledDataTable-sc-xrlyjm-0 lfRkCP"
+    class="StyledTable-sc-1m3u5g-6 jgA-DYp StyledDataTable-sc-xrlyjm-0 ddpdve"
   >
     <thead
       class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
     >
       <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 hJqNiB"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 fwvniA"
       >
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 bwuEXn StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 ksxSsW"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 iJoerS StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kOcftT"
           scope="col"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 cUaAvh"
+            class="StyledBox-sc-13pk1d4-0 liLWZo"
             style="height: 0px;"
           >
             <label
-              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 gEmxVe"
+              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 cYieGb"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 fbiMVB StyledCheckBox-sc-1dbk5ju-6 hKWwLV"
+                class="StyledBox-sc-13pk1d4-0 fMMCFA StyledCheckBox-sc-1dbk5ju-6 ZcJbU"
               >
                 <input
                   aria-label="unselect all"
-                  class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 hLBAbU"
+                  class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 ceXnWt"
                   type="checkbox"
                 />
                 <div
-                  class="StyledBox-sc-13pk1d4-0 kAISfb StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 cOXigx"
+                  class="StyledBox-sc-13pk1d4-0 guQEhy StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 ghbxuU"
                 >
                   .c0 {
   box-sizing: border-box;
@@ -12734,28 +12734,28 @@ exports[`DataTable onSelect select/unselect all 2`] = `
           </div>
         </th>
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 iWTOtn StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 ksxSsW"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 cIHjPK StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kOcftT"
           scope="col"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 iWtlBN"
+            class="StyledBox-sc-13pk1d4-0 bMEJHU"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 fjinKI"
+              class="StyledText-sc-1sadyjn-0 dAFYwl"
             >
               A
             </span>
           </div>
         </th>
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 iWTOtn StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 ksxSsW"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 cIHjPK StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kOcftT"
           scope="col"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 iWtlBN"
+            class="StyledBox-sc-13pk1d4-0 bMEJHU"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 fjinKI"
+              class="StyledText-sc-1sadyjn-0 dAFYwl"
             >
               B
             </span>
@@ -12764,31 +12764,31 @@ exports[`DataTable onSelect select/unselect all 2`] = `
       </tr>
     </thead>
     <tbody
-      class="StyledTable__StyledTableBody-sc-1m3u5g-3 StyledDataTable__StyledDataTableBody-sc-xrlyjm-3 jcOPZD"
+      class="StyledTable__StyledTableBody-sc-1m3u5g-3 StyledDataTable__StyledDataTableBody-sc-xrlyjm-3 ewbFvu"
     >
       <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 hJqNiB"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 fwvniA"
       >
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 ezmXGV StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 ksxSsW"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 iYREEM StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kOcftT"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 cUaAvh"
+            class="StyledBox-sc-13pk1d4-0 liLWZo"
             style="height: 0px;"
           >
             <label
-              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 gEmxVe"
+              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 cYieGb"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 fbiMVB StyledCheckBox-sc-1dbk5ju-6 hKWwLV"
+                class="StyledBox-sc-13pk1d4-0 fMMCFA StyledCheckBox-sc-1dbk5ju-6 ZcJbU"
               >
                 <input
                   aria-label="unselect 1.1"
-                  class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 hLBAbU"
+                  class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 ceXnWt"
                   type="checkbox"
                 />
                 <div
-                  class="StyledBox-sc-13pk1d4-0 kAISfb StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 cOXigx"
+                  class="StyledBox-sc-13pk1d4-0 guQEhy StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 ghbxuU"
                 >
                   .c0 {
   box-sizing: border-box;
@@ -12822,27 +12822,27 @@ exports[`DataTable onSelect select/unselect all 2`] = `
           </div>
         </td>
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 ksjtzt StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 ksxSsW"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 kDHDOM StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kOcftT"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 bhFQAJ"
+            class="StyledBox-sc-13pk1d4-0 kUqiAI"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 fjinKI"
+              class="StyledText-sc-1sadyjn-0 dAFYwl"
             >
               one
             </span>
           </div>
         </td>
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 ksjtzt StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 ksxSsW"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 kDHDOM StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kOcftT"
           scope="row"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 bhFQAJ"
+            class="StyledBox-sc-13pk1d4-0 kUqiAI"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 fTPnpC"
+              class="StyledText-sc-1sadyjn-0 ZnZrv"
             >
               1.1
             </span>
@@ -12850,28 +12850,28 @@ exports[`DataTable onSelect select/unselect all 2`] = `
         </th>
       </tr>
       <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 hJqNiB"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 fwvniA"
       >
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 ezmXGV StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 ksxSsW"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 iYREEM StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kOcftT"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 cUaAvh"
+            class="StyledBox-sc-13pk1d4-0 liLWZo"
             style="height: 0px;"
           >
             <label
-              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 gEmxVe"
+              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 cYieGb"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 fbiMVB StyledCheckBox-sc-1dbk5ju-6 hKWwLV"
+                class="StyledBox-sc-13pk1d4-0 fMMCFA StyledCheckBox-sc-1dbk5ju-6 ZcJbU"
               >
                 <input
                   aria-label="unselect 1.2"
-                  class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 hLBAbU"
+                  class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 ceXnWt"
                   type="checkbox"
                 />
                 <div
-                  class="StyledBox-sc-13pk1d4-0 kAISfb StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 cOXigx"
+                  class="StyledBox-sc-13pk1d4-0 guQEhy StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 ghbxuU"
                 >
                   .c0 {
   box-sizing: border-box;
@@ -12905,27 +12905,27 @@ exports[`DataTable onSelect select/unselect all 2`] = `
           </div>
         </td>
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 ksjtzt StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 ksxSsW"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 kDHDOM StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kOcftT"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 bhFQAJ"
+            class="StyledBox-sc-13pk1d4-0 kUqiAI"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 fjinKI"
+              class="StyledText-sc-1sadyjn-0 dAFYwl"
             >
               one
             </span>
           </div>
         </td>
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 ksjtzt StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 ksxSsW"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 kDHDOM StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kOcftT"
           scope="row"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 bhFQAJ"
+            class="StyledBox-sc-13pk1d4-0 kUqiAI"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 fTPnpC"
+              class="StyledText-sc-1sadyjn-0 ZnZrv"
             >
               1.2
             </span>
@@ -12933,28 +12933,28 @@ exports[`DataTable onSelect select/unselect all 2`] = `
         </th>
       </tr>
       <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 hJqNiB"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 fwvniA"
       >
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 ezmXGV StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 ksxSsW"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 iYREEM StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kOcftT"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 cUaAvh"
+            class="StyledBox-sc-13pk1d4-0 liLWZo"
             style="height: 0px;"
           >
             <label
-              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 gEmxVe"
+              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 cYieGb"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 fbiMVB StyledCheckBox-sc-1dbk5ju-6 hKWwLV"
+                class="StyledBox-sc-13pk1d4-0 fMMCFA StyledCheckBox-sc-1dbk5ju-6 ZcJbU"
               >
                 <input
                   aria-label="unselect 2.1"
-                  class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 hLBAbU"
+                  class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 ceXnWt"
                   type="checkbox"
                 />
                 <div
-                  class="StyledBox-sc-13pk1d4-0 kAISfb StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 cOXigx"
+                  class="StyledBox-sc-13pk1d4-0 guQEhy StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 ghbxuU"
                 >
                   .c0 {
   box-sizing: border-box;
@@ -12988,27 +12988,27 @@ exports[`DataTable onSelect select/unselect all 2`] = `
           </div>
         </td>
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 ksjtzt StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 ksxSsW"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 kDHDOM StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kOcftT"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 bhFQAJ"
+            class="StyledBox-sc-13pk1d4-0 kUqiAI"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 fjinKI"
+              class="StyledText-sc-1sadyjn-0 dAFYwl"
             >
               two
             </span>
           </div>
         </td>
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 ksjtzt StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 ksxSsW"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 kDHDOM StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kOcftT"
           scope="row"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 bhFQAJ"
+            class="StyledBox-sc-13pk1d4-0 kUqiAI"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 fTPnpC"
+              class="StyledText-sc-1sadyjn-0 ZnZrv"
             >
               2.1
             </span>
@@ -13016,28 +13016,28 @@ exports[`DataTable onSelect select/unselect all 2`] = `
         </th>
       </tr>
       <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 hJqNiB"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 fwvniA"
       >
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 ezmXGV StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 ksxSsW"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 iYREEM StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kOcftT"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 cUaAvh"
+            class="StyledBox-sc-13pk1d4-0 liLWZo"
             style="height: 0px;"
           >
             <label
-              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 gEmxVe"
+              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 cYieGb"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 fbiMVB StyledCheckBox-sc-1dbk5ju-6 hKWwLV"
+                class="StyledBox-sc-13pk1d4-0 fMMCFA StyledCheckBox-sc-1dbk5ju-6 ZcJbU"
               >
                 <input
                   aria-label="unselect 2.2"
-                  class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 hLBAbU"
+                  class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 ceXnWt"
                   type="checkbox"
                 />
                 <div
-                  class="StyledBox-sc-13pk1d4-0 kAISfb StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 cOXigx"
+                  class="StyledBox-sc-13pk1d4-0 guQEhy StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 ghbxuU"
                 >
                   .c0 {
   box-sizing: border-box;
@@ -13071,27 +13071,27 @@ exports[`DataTable onSelect select/unselect all 2`] = `
           </div>
         </td>
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 ksjtzt StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 ksxSsW"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 kDHDOM StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kOcftT"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 bhFQAJ"
+            class="StyledBox-sc-13pk1d4-0 kUqiAI"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 fjinKI"
+              class="StyledText-sc-1sadyjn-0 dAFYwl"
             >
               two
             </span>
           </div>
         </td>
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 ksjtzt StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 ksxSsW"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 kDHDOM StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kOcftT"
           scope="row"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 bhFQAJ"
+            class="StyledBox-sc-13pk1d4-0 kUqiAI"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 fTPnpC"
+              class="StyledText-sc-1sadyjn-0 ZnZrv"
             >
               2.2
             </span>
@@ -13105,66 +13105,66 @@ exports[`DataTable onSelect select/unselect all 2`] = `
 
 exports[`DataTable onSelect select/unselect all 3`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 drDzQW"
+  class="StyledGrommet-sc-19lkkz7-0 jOTXqz"
 >
   <table
-    class="StyledTable-sc-1m3u5g-6 bUmVhQ StyledDataTable-sc-xrlyjm-0 lfRkCP"
+    class="StyledTable-sc-1m3u5g-6 jgA-DYp StyledDataTable-sc-xrlyjm-0 ddpdve"
   >
     <thead
       class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
     >
       <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 hJqNiB"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 fwvniA"
       >
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 bwuEXn StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 ksxSsW"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 iJoerS StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kOcftT"
           scope="col"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 cUaAvh"
+            class="StyledBox-sc-13pk1d4-0 liLWZo"
             style="height: 0px;"
           >
             <label
-              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 gEmxVe"
+              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 cYieGb"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 fbiMVB StyledCheckBox-sc-1dbk5ju-6 hKWwLV"
+                class="StyledBox-sc-13pk1d4-0 fMMCFA StyledCheckBox-sc-1dbk5ju-6 ZcJbU"
               >
                 <input
                   aria-label="select all"
-                  class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 hLBAbU"
+                  class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 ceXnWt"
                   type="checkbox"
                 />
                 <div
-                  class="StyledBox-sc-13pk1d4-0 laRgif StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 cOXigx"
+                  class="StyledBox-sc-13pk1d4-0 iyQiK StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 ghbxuU"
                 />
               </div>
             </label>
           </div>
         </th>
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 iWTOtn StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 ksxSsW"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 cIHjPK StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kOcftT"
           scope="col"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 iWtlBN"
+            class="StyledBox-sc-13pk1d4-0 bMEJHU"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 fjinKI"
+              class="StyledText-sc-1sadyjn-0 dAFYwl"
             >
               A
             </span>
           </div>
         </th>
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 iWTOtn StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 ksxSsW"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 cIHjPK StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kOcftT"
           scope="col"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 iWtlBN"
+            class="StyledBox-sc-13pk1d4-0 bMEJHU"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 fjinKI"
+              class="StyledText-sc-1sadyjn-0 dAFYwl"
             >
               B
             </span>
@@ -13173,58 +13173,58 @@ exports[`DataTable onSelect select/unselect all 3`] = `
       </tr>
     </thead>
     <tbody
-      class="StyledTable__StyledTableBody-sc-1m3u5g-3 StyledDataTable__StyledDataTableBody-sc-xrlyjm-3 jcOPZD"
+      class="StyledTable__StyledTableBody-sc-1m3u5g-3 StyledDataTable__StyledDataTableBody-sc-xrlyjm-3 ewbFvu"
     >
       <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 hJqNiB"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 fwvniA"
       >
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 ezmXGV StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 ksxSsW"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 iYREEM StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kOcftT"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 cUaAvh"
+            class="StyledBox-sc-13pk1d4-0 liLWZo"
             style="height: 0px;"
           >
             <label
-              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 gEmxVe"
+              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 cYieGb"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 fbiMVB StyledCheckBox-sc-1dbk5ju-6 hKWwLV"
+                class="StyledBox-sc-13pk1d4-0 fMMCFA StyledCheckBox-sc-1dbk5ju-6 ZcJbU"
               >
                 <input
                   aria-label="select 1.1"
-                  class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 hLBAbU"
+                  class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 ceXnWt"
                   type="checkbox"
                 />
                 <div
-                  class="StyledBox-sc-13pk1d4-0 laRgif StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 cOXigx"
+                  class="StyledBox-sc-13pk1d4-0 iyQiK StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 ghbxuU"
                 />
               </div>
             </label>
           </div>
         </td>
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 ksjtzt StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 ksxSsW"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 kDHDOM StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kOcftT"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 bhFQAJ"
+            class="StyledBox-sc-13pk1d4-0 kUqiAI"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 fjinKI"
+              class="StyledText-sc-1sadyjn-0 dAFYwl"
             >
               one
             </span>
           </div>
         </td>
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 ksjtzt StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 ksxSsW"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 kDHDOM StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kOcftT"
           scope="row"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 bhFQAJ"
+            class="StyledBox-sc-13pk1d4-0 kUqiAI"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 fTPnpC"
+              class="StyledText-sc-1sadyjn-0 ZnZrv"
             >
               1.1
             </span>
@@ -13232,55 +13232,55 @@ exports[`DataTable onSelect select/unselect all 3`] = `
         </th>
       </tr>
       <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 hJqNiB"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 fwvniA"
       >
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 ezmXGV StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 ksxSsW"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 iYREEM StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kOcftT"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 cUaAvh"
+            class="StyledBox-sc-13pk1d4-0 liLWZo"
             style="height: 0px;"
           >
             <label
-              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 gEmxVe"
+              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 cYieGb"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 fbiMVB StyledCheckBox-sc-1dbk5ju-6 hKWwLV"
+                class="StyledBox-sc-13pk1d4-0 fMMCFA StyledCheckBox-sc-1dbk5ju-6 ZcJbU"
               >
                 <input
                   aria-label="select 1.2"
-                  class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 hLBAbU"
+                  class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 ceXnWt"
                   type="checkbox"
                 />
                 <div
-                  class="StyledBox-sc-13pk1d4-0 laRgif StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 cOXigx"
+                  class="StyledBox-sc-13pk1d4-0 iyQiK StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 ghbxuU"
                 />
               </div>
             </label>
           </div>
         </td>
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 ksjtzt StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 ksxSsW"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 kDHDOM StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kOcftT"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 bhFQAJ"
+            class="StyledBox-sc-13pk1d4-0 kUqiAI"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 fjinKI"
+              class="StyledText-sc-1sadyjn-0 dAFYwl"
             >
               one
             </span>
           </div>
         </td>
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 ksjtzt StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 ksxSsW"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 kDHDOM StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kOcftT"
           scope="row"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 bhFQAJ"
+            class="StyledBox-sc-13pk1d4-0 kUqiAI"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 fTPnpC"
+              class="StyledText-sc-1sadyjn-0 ZnZrv"
             >
               1.2
             </span>
@@ -13288,55 +13288,55 @@ exports[`DataTable onSelect select/unselect all 3`] = `
         </th>
       </tr>
       <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 hJqNiB"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 fwvniA"
       >
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 ezmXGV StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 ksxSsW"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 iYREEM StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kOcftT"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 cUaAvh"
+            class="StyledBox-sc-13pk1d4-0 liLWZo"
             style="height: 0px;"
           >
             <label
-              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 gEmxVe"
+              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 cYieGb"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 fbiMVB StyledCheckBox-sc-1dbk5ju-6 hKWwLV"
+                class="StyledBox-sc-13pk1d4-0 fMMCFA StyledCheckBox-sc-1dbk5ju-6 ZcJbU"
               >
                 <input
                   aria-label="select 2.1"
-                  class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 hLBAbU"
+                  class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 ceXnWt"
                   type="checkbox"
                 />
                 <div
-                  class="StyledBox-sc-13pk1d4-0 laRgif StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 cOXigx"
+                  class="StyledBox-sc-13pk1d4-0 iyQiK StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 ghbxuU"
                 />
               </div>
             </label>
           </div>
         </td>
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 ksjtzt StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 ksxSsW"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 kDHDOM StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kOcftT"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 bhFQAJ"
+            class="StyledBox-sc-13pk1d4-0 kUqiAI"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 fjinKI"
+              class="StyledText-sc-1sadyjn-0 dAFYwl"
             >
               two
             </span>
           </div>
         </td>
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 ksjtzt StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 ksxSsW"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 kDHDOM StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kOcftT"
           scope="row"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 bhFQAJ"
+            class="StyledBox-sc-13pk1d4-0 kUqiAI"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 fTPnpC"
+              class="StyledText-sc-1sadyjn-0 ZnZrv"
             >
               2.1
             </span>
@@ -13344,55 +13344,55 @@ exports[`DataTable onSelect select/unselect all 3`] = `
         </th>
       </tr>
       <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 hJqNiB"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 fwvniA"
       >
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 ezmXGV StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 ksxSsW"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 iYREEM StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kOcftT"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 cUaAvh"
+            class="StyledBox-sc-13pk1d4-0 liLWZo"
             style="height: 0px;"
           >
             <label
-              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 gEmxVe"
+              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 cYieGb"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 fbiMVB StyledCheckBox-sc-1dbk5ju-6 hKWwLV"
+                class="StyledBox-sc-13pk1d4-0 fMMCFA StyledCheckBox-sc-1dbk5ju-6 ZcJbU"
               >
                 <input
                   aria-label="select 2.2"
-                  class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 hLBAbU"
+                  class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 ceXnWt"
                   type="checkbox"
                 />
                 <div
-                  class="StyledBox-sc-13pk1d4-0 laRgif StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 cOXigx"
+                  class="StyledBox-sc-13pk1d4-0 iyQiK StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 ghbxuU"
                 />
               </div>
             </label>
           </div>
         </td>
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 ksjtzt StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 ksxSsW"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 kDHDOM StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kOcftT"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 bhFQAJ"
+            class="StyledBox-sc-13pk1d4-0 kUqiAI"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 fjinKI"
+              class="StyledText-sc-1sadyjn-0 dAFYwl"
             >
               two
             </span>
           </div>
         </td>
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 ksjtzt StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 ksxSsW"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 kDHDOM StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kOcftT"
           scope="row"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 bhFQAJ"
+            class="StyledBox-sc-13pk1d4-0 kUqiAI"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 fTPnpC"
+              class="StyledText-sc-1sadyjn-0 ZnZrv"
             >
               2.2
             </span>
@@ -13723,33 +13723,33 @@ exports[`DataTable onSort 1`] = `
 
 exports[`DataTable onSort 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 drDzQW"
+  class="StyledGrommet-sc-19lkkz7-0 jOTXqz"
 >
   <table
-    class="StyledTable-sc-1m3u5g-6 bUmVhQ StyledDataTable-sc-xrlyjm-0 lfRkCP"
+    class="StyledTable-sc-1m3u5g-6 jgA-DYp StyledDataTable-sc-xrlyjm-0 ddpdve"
   >
     <thead
       class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
     >
       <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 hJqNiB"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 fwvniA"
       >
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 enEXsn StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 ksxSsW"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 knVOxy StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kOcftT"
           scope="col"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 iWtlBN"
+            class="StyledBox-sc-13pk1d4-0 bMEJHU"
           >
             <button
-              class="StyledButton-sc-323bzc-0 bxsiaR Header__StyledHeaderCellButton-sc-1baku5q-0 bAXaJ"
+              class="StyledButton-sc-323bzc-0 fvLkvg Header__StyledHeaderCellButton-sc-1baku5q-0 bePTGc"
               type="button"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 knAqIZ"
+                class="StyledBox-sc-13pk1d4-0 driArM"
               >
                 <span
-                  class="StyledText-sc-1sadyjn-0 fjinKI"
+                  class="StyledText-sc-1sadyjn-0 dAFYwl"
                 >
                   A
                 </span>
@@ -13821,21 +13821,21 @@ exports[`DataTable onSort 2`] = `
           </div>
         </th>
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 enEXsn StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 ksxSsW"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 knVOxy StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kOcftT"
           scope="col"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 iWtlBN"
+            class="StyledBox-sc-13pk1d4-0 bMEJHU"
           >
             <button
-              class="StyledButton-sc-323bzc-0 bxsiaR Header__StyledHeaderCellButton-sc-1baku5q-0 bAXaJ"
+              class="StyledButton-sc-323bzc-0 fvLkvg Header__StyledHeaderCellButton-sc-1baku5q-0 bePTGc"
               type="button"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 knAqIZ"
+                class="StyledBox-sc-13pk1d4-0 driArM"
               >
                 <span
-                  class="StyledText-sc-1sadyjn-0 fjinKI"
+                  class="StyledText-sc-1sadyjn-0 dAFYwl"
                 >
                   B
                 </span>
@@ -13846,33 +13846,33 @@ exports[`DataTable onSort 2`] = `
       </tr>
     </thead>
     <tbody
-      class="StyledTable__StyledTableBody-sc-1m3u5g-3 StyledDataTable__StyledDataTableBody-sc-xrlyjm-3 jcOPZD"
+      class="StyledTable__StyledTableBody-sc-1m3u5g-3 StyledDataTable__StyledDataTableBody-sc-xrlyjm-3 ewbFvu"
     >
       <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 hJqNiB"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 fwvniA"
       >
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 ksjtzt StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 ksxSsW"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 kDHDOM StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kOcftT"
           scope="row"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 bhFQAJ"
+            class="StyledBox-sc-13pk1d4-0 kUqiAI"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 fTPnpC"
+              class="StyledText-sc-1sadyjn-0 ZnZrv"
             >
               one
             </span>
           </div>
         </th>
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 ksjtzt StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 ksxSsW"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 kDHDOM StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kOcftT"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 bhFQAJ"
+            class="StyledBox-sc-13pk1d4-0 kUqiAI"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 fjinKI"
+              class="StyledText-sc-1sadyjn-0 dAFYwl"
             >
               1
             </span>
@@ -13880,30 +13880,30 @@ exports[`DataTable onSort 2`] = `
         </td>
       </tr>
       <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 hJqNiB"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 fwvniA"
       >
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 ksjtzt StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 ksxSsW"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 kDHDOM StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kOcftT"
           scope="row"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 bhFQAJ"
+            class="StyledBox-sc-13pk1d4-0 kUqiAI"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 fTPnpC"
+              class="StyledText-sc-1sadyjn-0 ZnZrv"
             >
               two
             </span>
           </div>
         </th>
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 ksjtzt StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 ksxSsW"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 kDHDOM StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kOcftT"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 bhFQAJ"
+            class="StyledBox-sc-13pk1d4-0 kUqiAI"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 fjinKI"
+              class="StyledText-sc-1sadyjn-0 dAFYwl"
             >
               2
             </span>
@@ -13911,30 +13911,30 @@ exports[`DataTable onSort 2`] = `
         </td>
       </tr>
       <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 hJqNiB"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 fwvniA"
       >
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 ksjtzt StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 ksxSsW"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 kDHDOM StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kOcftT"
           scope="row"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 bhFQAJ"
+            class="StyledBox-sc-13pk1d4-0 kUqiAI"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 fTPnpC"
+              class="StyledText-sc-1sadyjn-0 ZnZrv"
             >
               zero
             </span>
           </div>
         </th>
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 ksjtzt StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 ksxSsW"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 kDHDOM StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kOcftT"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 bhFQAJ"
+            class="StyledBox-sc-13pk1d4-0 kUqiAI"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 fjinKI"
+              class="StyledText-sc-1sadyjn-0 dAFYwl"
             >
               0
             </span>
@@ -14324,38 +14324,38 @@ exports[`DataTable onSort external 1`] = `
 
 exports[`DataTable onSort external 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 drDzQW"
+  class="StyledGrommet-sc-19lkkz7-0 jOTXqz"
 >
   <table
-    class="StyledTable-sc-1m3u5g-6 bUmVhQ StyledDataTable-sc-xrlyjm-0 lfRkCP"
+    class="StyledTable-sc-1m3u5g-6 jgA-DYp StyledDataTable-sc-xrlyjm-0 ddpdve"
   >
     <thead
       class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
     >
       <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 hJqNiB"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 fwvniA"
       >
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 enEXsn StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 ksxSsW"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 knVOxy StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kOcftT"
           scope="col"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 iWtlBN"
+            class="StyledBox-sc-13pk1d4-0 bMEJHU"
           >
             <button
-              class="StyledButton-sc-323bzc-0 bxsiaR Header__StyledHeaderCellButton-sc-1baku5q-0 bAXaJ"
+              class="StyledButton-sc-323bzc-0 fvLkvg Header__StyledHeaderCellButton-sc-1baku5q-0 bePTGc"
               type="button"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 knAqIZ"
+                class="StyledBox-sc-13pk1d4-0 driArM"
               >
                 <span
-                  class="StyledText-sc-1sadyjn-0 fjinKI"
+                  class="StyledText-sc-1sadyjn-0 dAFYwl"
                 >
                   A
                 </span>
                 <div
-                  class="StyledBox__StyledBoxGap-sc-13pk1d4-1 guEUH"
+                  class="StyledBox__StyledBoxGap-sc-13pk1d4-1 QVzai"
                 />
                 .c0 {
   display: inline-block;
@@ -14410,21 +14410,21 @@ exports[`DataTable onSort external 2`] = `
           </div>
         </th>
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 enEXsn StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 ksxSsW"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 knVOxy StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kOcftT"
           scope="col"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 iWtlBN"
+            class="StyledBox-sc-13pk1d4-0 bMEJHU"
           >
             <button
-              class="StyledButton-sc-323bzc-0 bxsiaR Header__StyledHeaderCellButton-sc-1baku5q-0 bAXaJ"
+              class="StyledButton-sc-323bzc-0 fvLkvg Header__StyledHeaderCellButton-sc-1baku5q-0 bePTGc"
               type="button"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 knAqIZ"
+                class="StyledBox-sc-13pk1d4-0 driArM"
               >
                 <span
-                  class="StyledText-sc-1sadyjn-0 fjinKI"
+                  class="StyledText-sc-1sadyjn-0 dAFYwl"
                 >
                   B
                 </span>
@@ -14435,33 +14435,33 @@ exports[`DataTable onSort external 2`] = `
       </tr>
     </thead>
     <tbody
-      class="StyledTable__StyledTableBody-sc-1m3u5g-3 StyledDataTable__StyledDataTableBody-sc-xrlyjm-3 jcOPZD"
+      class="StyledTable__StyledTableBody-sc-1m3u5g-3 StyledDataTable__StyledDataTableBody-sc-xrlyjm-3 ewbFvu"
     >
       <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 hJqNiB"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 fwvniA"
       >
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 ksjtzt StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 ksxSsW"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 kDHDOM StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kOcftT"
           scope="row"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 bhFQAJ"
+            class="StyledBox-sc-13pk1d4-0 kUqiAI"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 fTPnpC"
+              class="StyledText-sc-1sadyjn-0 ZnZrv"
             >
               zero
             </span>
           </div>
         </th>
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 ksjtzt StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 ksxSsW"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 kDHDOM StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kOcftT"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 bhFQAJ"
+            class="StyledBox-sc-13pk1d4-0 kUqiAI"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 fjinKI"
+              class="StyledText-sc-1sadyjn-0 dAFYwl"
             >
               0
             </span>
@@ -14469,30 +14469,30 @@ exports[`DataTable onSort external 2`] = `
         </td>
       </tr>
       <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 hJqNiB"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 fwvniA"
       >
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 ksjtzt StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 ksxSsW"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 kDHDOM StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kOcftT"
           scope="row"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 bhFQAJ"
+            class="StyledBox-sc-13pk1d4-0 kUqiAI"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 fTPnpC"
+              class="StyledText-sc-1sadyjn-0 ZnZrv"
             >
               one
             </span>
           </div>
         </th>
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 ksjtzt StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 ksxSsW"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 kDHDOM StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kOcftT"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 bhFQAJ"
+            class="StyledBox-sc-13pk1d4-0 kUqiAI"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 fjinKI"
+              class="StyledText-sc-1sadyjn-0 dAFYwl"
             >
               1
             </span>
@@ -14500,30 +14500,30 @@ exports[`DataTable onSort external 2`] = `
         </td>
       </tr>
       <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 hJqNiB"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 fwvniA"
       >
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 ksjtzt StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 ksxSsW"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 kDHDOM StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kOcftT"
           scope="row"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 bhFQAJ"
+            class="StyledBox-sc-13pk1d4-0 kUqiAI"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 fTPnpC"
+              class="StyledText-sc-1sadyjn-0 ZnZrv"
             >
               two
             </span>
           </div>
         </th>
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 ksjtzt StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 ksxSsW"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 kDHDOM StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kOcftT"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 bhFQAJ"
+            class="StyledBox-sc-13pk1d4-0 kUqiAI"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 fjinKI"
+              class="StyledText-sc-1sadyjn-0 dAFYwl"
             >
               2
             </span>
@@ -21588,35 +21588,35 @@ exports[`DataTable search 1`] = `
 
 exports[`DataTable search 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 drDzQW"
+  class="StyledGrommet-sc-19lkkz7-0 jOTXqz"
 >
   <table
-    class="StyledTable-sc-1m3u5g-6 bUmVhQ StyledDataTable-sc-xrlyjm-0 lfRkCP"
+    class="StyledTable-sc-1m3u5g-6 jgA-DYp StyledDataTable-sc-xrlyjm-0 ddpdve"
   >
     <thead
       class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
     >
       <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 hJqNiB"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 fwvniA"
       >
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 iWTOtn StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 ksxSsW"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 cIHjPK StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kOcftT"
           scope="col"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 fvXZZn"
+            class="StyledBox-sc-13pk1d4-0 hhmkuO"
           >
             <div
-              class="StyledBox-sc-13pk1d4-0 ehNaJD"
+              class="StyledBox-sc-13pk1d4-0 iVSSLu"
             >
               <span
-                class="StyledText-sc-1sadyjn-0 fjinKI"
+                class="StyledText-sc-1sadyjn-0 dAFYwl"
               >
                 A
               </span>
             </div>
             <div
-              class="StyledBox__StyledBoxGap-sc-13pk1d4-1 bgDHuj"
+              class="StyledBox__StyledBoxGap-sc-13pk1d4-1 lkJfu"
             />
             .c0 {
   display: flex;
@@ -21729,20 +21729,20 @@ exports[`DataTable search 2`] = `
       </tr>
     </thead>
     <tbody
-      class="StyledTable__StyledTableBody-sc-1m3u5g-3 StyledDataTable__StyledDataTableBody-sc-xrlyjm-3 jcOPZD"
+      class="StyledTable__StyledTableBody-sc-1m3u5g-3 StyledDataTable__StyledDataTableBody-sc-xrlyjm-3 ewbFvu"
     >
       <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 hJqNiB"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 fwvniA"
       >
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 ksjtzt StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 ksxSsW"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 kDHDOM StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kOcftT"
           scope="row"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 bhFQAJ"
+            class="StyledBox-sc-13pk1d4-0 kUqiAI"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 fTPnpC"
+              class="StyledText-sc-1sadyjn-0 ZnZrv"
             >
               []
             </span>
@@ -22142,38 +22142,38 @@ exports[`DataTable select 1`] = `
 
 exports[`DataTable select 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 drDzQW"
+  class="StyledGrommet-sc-19lkkz7-0 jOTXqz"
 >
   <table
-    class="StyledTable-sc-1m3u5g-6 bUmVhQ StyledDataTable-sc-xrlyjm-0 lfRkCP"
+    class="StyledTable-sc-1m3u5g-6 jgA-DYp StyledDataTable-sc-xrlyjm-0 ddpdve"
   >
     <thead
       class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
     >
       <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 hJqNiB"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 fwvniA"
       >
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 bwuEXn StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 ksxSsW"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 iJoerS StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kOcftT"
           scope="col"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 cUaAvh"
+            class="StyledBox-sc-13pk1d4-0 liLWZo"
             style="height: 0px;"
           >
             <label
-              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 gEmxVe"
+              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 cYieGb"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 fbiMVB StyledCheckBox-sc-1dbk5ju-6 hKWwLV"
+                class="StyledBox-sc-13pk1d4-0 fMMCFA StyledCheckBox-sc-1dbk5ju-6 ZcJbU"
               >
                 <input
                   aria-label="unselect all"
-                  class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 hLBAbU"
+                  class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 ceXnWt"
                   type="checkbox"
                 />
                 <div
-                  class="StyledBox-sc-13pk1d4-0 kAISfb StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 cOXigx"
+                  class="StyledBox-sc-13pk1d4-0 guQEhy StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 ghbxuU"
                 >
                   .c0 {
   box-sizing: border-box;
@@ -22207,14 +22207,14 @@ exports[`DataTable select 2`] = `
           </div>
         </th>
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 iWTOtn StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 ksxSsW"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 cIHjPK StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kOcftT"
           scope="col"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 iWtlBN"
+            class="StyledBox-sc-13pk1d4-0 bMEJHU"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 fjinKI"
+              class="StyledText-sc-1sadyjn-0 dAFYwl"
             >
               A
             </span>
@@ -22223,35 +22223,35 @@ exports[`DataTable select 2`] = `
       </tr>
     </thead>
     <tbody
-      class="StyledTable__StyledTableBody-sc-1m3u5g-3 StyledDataTable__StyledDataTableBody-sc-xrlyjm-3 jcOPZD"
+      class="StyledTable__StyledTableBody-sc-1m3u5g-3 StyledDataTable__StyledDataTableBody-sc-xrlyjm-3 ewbFvu"
     >
       <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 hJqNiB"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 fwvniA"
       >
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 ezmXGV StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 ksxSsW"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 iYREEM StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kOcftT"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 cUaAvh"
+            class="StyledBox-sc-13pk1d4-0 liLWZo"
             style="height: 0px;"
           >
             <label
-              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 gEmxVe"
+              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 cYieGb"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 fbiMVB StyledCheckBox-sc-1dbk5ju-6 hKWwLV"
+                class="StyledBox-sc-13pk1d4-0 fMMCFA StyledCheckBox-sc-1dbk5ju-6 ZcJbU"
               >
                 <input
                   aria-label="unselect alpha"
                   checked=""
-                  class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 hLBAbU"
+                  class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 ceXnWt"
                   type="checkbox"
                 />
                 <div
-                  class="StyledBox-sc-13pk1d4-0 kAISfb StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 cOXigx"
+                  class="StyledBox-sc-13pk1d4-0 guQEhy StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 ghbxuU"
                 >
                   <svg
-                    class="StyledCheckBox__StyledCheckBoxIcon-sc-1dbk5ju-0 gvyHrm"
+                    class="StyledCheckBox__StyledCheckBoxIcon-sc-1dbk5ju-0 hdWjUj"
                     preserveAspectRatio="xMidYMid meet"
                     viewBox="0 0 24 24"
                   >
@@ -22266,14 +22266,14 @@ exports[`DataTable select 2`] = `
           </div>
         </td>
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 ksjtzt StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 ksxSsW"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 kDHDOM StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kOcftT"
           scope="row"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 bhFQAJ"
+            class="StyledBox-sc-13pk1d4-0 kUqiAI"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 fTPnpC"
+              class="StyledText-sc-1sadyjn-0 ZnZrv"
             >
               alpha
             </span>
@@ -22281,28 +22281,28 @@ exports[`DataTable select 2`] = `
         </th>
       </tr>
       <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 hJqNiB"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 fwvniA"
       >
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 ezmXGV StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 ksxSsW"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 iYREEM StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kOcftT"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 cUaAvh"
+            class="StyledBox-sc-13pk1d4-0 liLWZo"
             style="height: 0px;"
           >
             <label
-              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 gEmxVe"
+              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 cYieGb"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 fbiMVB StyledCheckBox-sc-1dbk5ju-6 hKWwLV"
+                class="StyledBox-sc-13pk1d4-0 fMMCFA StyledCheckBox-sc-1dbk5ju-6 ZcJbU"
               >
                 <input
                   aria-label="unselect beta"
-                  class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 hLBAbU"
+                  class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 ceXnWt"
                   type="checkbox"
                 />
                 <div
-                  class="StyledBox-sc-13pk1d4-0 kAISfb StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 cOXigx"
+                  class="StyledBox-sc-13pk1d4-0 guQEhy StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 ghbxuU"
                 >
                   .c0 {
   box-sizing: border-box;
@@ -22336,14 +22336,14 @@ exports[`DataTable select 2`] = `
           </div>
         </td>
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 ksjtzt StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 ksxSsW"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 kDHDOM StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kOcftT"
           scope="row"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 bhFQAJ"
+            class="StyledBox-sc-13pk1d4-0 kUqiAI"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 fTPnpC"
+              class="StyledText-sc-1sadyjn-0 ZnZrv"
             >
               beta
             </span>
@@ -22710,30 +22710,30 @@ exports[`DataTable select with allowSelectAll={false} 1`] = `
 
 exports[`DataTable select with allowSelectAll={false} 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 drDzQW"
+  class="StyledGrommet-sc-19lkkz7-0 jOTXqz"
 >
   <table
-    class="StyledTable-sc-1m3u5g-6 bUmVhQ StyledDataTable-sc-xrlyjm-0 lfRkCP"
+    class="StyledTable-sc-1m3u5g-6 jgA-DYp StyledDataTable-sc-xrlyjm-0 ddpdve"
   >
     <thead
       class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
     >
       <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 hJqNiB"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 fwvniA"
       >
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 bwuEXn StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 ksxSsW"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 iJoerS StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kOcftT"
           scope="col"
         />
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 iWTOtn StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 ksxSsW"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 cIHjPK StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kOcftT"
           scope="col"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 iWtlBN"
+            class="StyledBox-sc-13pk1d4-0 bMEJHU"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 fjinKI"
+              class="StyledText-sc-1sadyjn-0 dAFYwl"
             >
               A
             </span>
@@ -22742,35 +22742,35 @@ exports[`DataTable select with allowSelectAll={false} 2`] = `
       </tr>
     </thead>
     <tbody
-      class="StyledTable__StyledTableBody-sc-1m3u5g-3 StyledDataTable__StyledDataTableBody-sc-xrlyjm-3 jcOPZD"
+      class="StyledTable__StyledTableBody-sc-1m3u5g-3 StyledDataTable__StyledDataTableBody-sc-xrlyjm-3 ewbFvu"
     >
       <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 hJqNiB"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 fwvniA"
       >
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 ezmXGV StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 ksxSsW"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 iYREEM StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kOcftT"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 cUaAvh"
+            class="StyledBox-sc-13pk1d4-0 liLWZo"
             style="height: 0px;"
           >
             <label
-              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 gEmxVe"
+              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 cYieGb"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 fbiMVB StyledCheckBox-sc-1dbk5ju-6 hKWwLV"
+                class="StyledBox-sc-13pk1d4-0 fMMCFA StyledCheckBox-sc-1dbk5ju-6 ZcJbU"
               >
                 <input
                   aria-label="unselect alpha"
                   checked=""
-                  class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 hLBAbU"
+                  class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 ceXnWt"
                   type="checkbox"
                 />
                 <div
-                  class="StyledBox-sc-13pk1d4-0 kAISfb StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 cOXigx"
+                  class="StyledBox-sc-13pk1d4-0 guQEhy StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 ghbxuU"
                 >
                   <svg
-                    class="StyledCheckBox__StyledCheckBoxIcon-sc-1dbk5ju-0 gvyHrm"
+                    class="StyledCheckBox__StyledCheckBoxIcon-sc-1dbk5ju-0 hdWjUj"
                     preserveAspectRatio="xMidYMid meet"
                     viewBox="0 0 24 24"
                   >
@@ -22785,14 +22785,14 @@ exports[`DataTable select with allowSelectAll={false} 2`] = `
           </div>
         </td>
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 ksjtzt StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 ksxSsW"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 kDHDOM StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kOcftT"
           scope="row"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 bhFQAJ"
+            class="StyledBox-sc-13pk1d4-0 kUqiAI"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 fTPnpC"
+              class="StyledText-sc-1sadyjn-0 ZnZrv"
             >
               alpha
             </span>
@@ -22800,28 +22800,28 @@ exports[`DataTable select with allowSelectAll={false} 2`] = `
         </th>
       </tr>
       <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 hJqNiB"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 fwvniA"
       >
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 ezmXGV StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 ksxSsW"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 iYREEM StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kOcftT"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 cUaAvh"
+            class="StyledBox-sc-13pk1d4-0 liLWZo"
             style="height: 0px;"
           >
             <label
-              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 gEmxVe"
+              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 cYieGb"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 fbiMVB StyledCheckBox-sc-1dbk5ju-6 hKWwLV"
+                class="StyledBox-sc-13pk1d4-0 fMMCFA StyledCheckBox-sc-1dbk5ju-6 ZcJbU"
               >
                 <input
                   aria-label="unselect beta"
-                  class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 hLBAbU"
+                  class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 ceXnWt"
                   type="checkbox"
                 />
                 <div
-                  class="StyledBox-sc-13pk1d4-0 kAISfb StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 cOXigx"
+                  class="StyledBox-sc-13pk1d4-0 guQEhy StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 ghbxuU"
                 >
                   .c0 {
   box-sizing: border-box;
@@ -22855,14 +22855,14 @@ exports[`DataTable select with allowSelectAll={false} 2`] = `
           </div>
         </td>
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 ksjtzt StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 ksxSsW"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 kDHDOM StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kOcftT"
           scope="row"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 bhFQAJ"
+            class="StyledBox-sc-13pk1d4-0 kUqiAI"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 fTPnpC"
+              class="StyledText-sc-1sadyjn-0 ZnZrv"
             >
               beta
             </span>
@@ -34337,46 +34337,46 @@ exports[`DataTable should render new data when page changes 1`] = `
 
 exports[`DataTable should render new data when page changes 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 drDzQW"
+  class="StyledGrommet-sc-19lkkz7-0 jOTXqz"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 bhFQAJ StyledDataTable__StyledContainer-sc-xrlyjm-1 cwVNQE"
+    class="StyledBox-sc-13pk1d4-0 kUqiAI StyledDataTable__StyledContainer-sc-xrlyjm-1 llSBtR"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 kAxUOx"
+      class="StyledBox-sc-13pk1d4-0 gzqaFk"
     >
       <table
-        class="StyledTable-sc-1m3u5g-6 bUmVhQ StyledDataTable-sc-xrlyjm-0 lfRkCP"
+        class="StyledTable-sc-1m3u5g-6 jgA-DYp StyledDataTable-sc-xrlyjm-0 ddpdve"
       >
         <thead
           class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
         >
           <tr
-            class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 hJqNiB"
+            class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 fwvniA"
           >
             <th
-              class="StyledTable__StyledTableCell-sc-1m3u5g-0 iWTOtn StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 ksxSsW"
+              class="StyledTable__StyledTableCell-sc-1m3u5g-0 cIHjPK StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kOcftT"
               scope="col"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 iWtlBN"
+                class="StyledBox-sc-13pk1d4-0 bMEJHU"
               >
                 <span
-                  class="StyledText-sc-1sadyjn-0 fjinKI"
+                  class="StyledText-sc-1sadyjn-0 dAFYwl"
                 >
                   A
                 </span>
               </div>
             </th>
             <th
-              class="StyledTable__StyledTableCell-sc-1m3u5g-0 iWTOtn StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 ksxSsW"
+              class="StyledTable__StyledTableCell-sc-1m3u5g-0 cIHjPK StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kOcftT"
               scope="col"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 iWtlBN"
+                class="StyledBox-sc-13pk1d4-0 bMEJHU"
               >
                 <span
-                  class="StyledText-sc-1sadyjn-0 fjinKI"
+                  class="StyledText-sc-1sadyjn-0 dAFYwl"
                 >
                   B
                 </span>
@@ -34385,7 +34385,7 @@ exports[`DataTable should render new data when page changes 2`] = `
           </tr>
         </thead>
         <tbody
-          class="StyledTable__StyledTableBody-sc-1m3u5g-3 StyledDataTable__StyledDataTableBody-sc-xrlyjm-3 jcOPZD"
+          class="StyledTable__StyledTableBody-sc-1m3u5g-3 StyledDataTable__StyledDataTableBody-sc-xrlyjm-3 ewbFvu"
         >
           .c1 {
   display: flex;
@@ -37946,29 +37946,29 @@ exports[`DataTable should render new data when page changes 2`] = `
       </table>
     </div>
     <div
-      class="StyledBox__StyledBoxGap-sc-13pk1d4-1 beYdor"
+      class="StyledBox__StyledBoxGap-sc-13pk1d4-1 gqexlS"
     />
     <div
-      class="StyledBox-sc-13pk1d4-0 ffwcAY Pagination__StyledPaginationContainer-sc-rnlw6m-0"
+      class="StyledBox-sc-13pk1d4-0 IzczN Pagination__StyledPaginationContainer-sc-rnlw6m-0"
     >
       <nav
         aria-label="Pagination Navigation"
-        class="StyledBox-sc-13pk1d4-0 euJJjo"
+        class="StyledBox-sc-13pk1d4-0 boQSCd"
       >
         <ul
-          class="StyledBox-sc-13pk1d4-0 kOcABF"
+          class="StyledBox-sc-13pk1d4-0 gMxoNo"
         >
           <li
-            class="StyledPageControl__StyledContainer-sc-1vlfaez-1 bjXWCk"
+            class="StyledPageControl__StyledContainer-sc-1vlfaez-1 TrVEt"
           >
             <button
               aria-label="Go to previous page"
-              class="StyledButtonKind-sc-1vhfpnt-0 eSmHiu StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 jrdXPY"
+              class="StyledButtonKind-sc-1vhfpnt-0 kREiNz StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 bmWDux"
               type="button"
             >
               <svg
                 aria-label="Previous"
-                class="StyledIcon-sc-ofa7kd-0 itWvUq"
+                class="StyledIcon-sc-ofa7kd-0 gkturf"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -37981,50 +37981,50 @@ exports[`DataTable should render new data when page changes 2`] = `
             </button>
           </li>
           <div
-            class="StyledBox__StyledBoxGap-sc-13pk1d4-1 fsEMPj"
+            class="StyledBox__StyledBoxGap-sc-13pk1d4-1 cZTPkK"
           />
           <li
-            class="StyledPageControl__StyledContainer-sc-1vlfaez-1 bjXWCk"
+            class="StyledPageControl__StyledContainer-sc-1vlfaez-1 TrVEt"
           >
             <button
               aria-label="Go to page 1"
-              class="StyledButtonKind-sc-1vhfpnt-0 hsdMMS StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 jrdXPY"
+              class="StyledButtonKind-sc-1vhfpnt-0 dvifRz StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 bmWDux"
               type="button"
             >
               1
             </button>
           </li>
           <div
-            class="StyledBox__StyledBoxGap-sc-13pk1d4-1 fsEMPj"
+            class="StyledBox__StyledBoxGap-sc-13pk1d4-1 cZTPkK"
           />
           <li
-            class="StyledPageControl__StyledContainer-sc-1vlfaez-1 bjXWCk"
+            class="StyledPageControl__StyledContainer-sc-1vlfaez-1 TrVEt"
           >
             <button
               aria-current="page"
               aria-label="Go to page 2"
-              class="StyledButtonKind-sc-1vhfpnt-0 eYeISA StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 jrdXPY"
+              class="StyledButtonKind-sc-1vhfpnt-0 fEywJp StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 bmWDux"
               type="button"
             >
               2
             </button>
           </li>
           <div
-            class="StyledBox__StyledBoxGap-sc-13pk1d4-1 fsEMPj"
+            class="StyledBox__StyledBoxGap-sc-13pk1d4-1 cZTPkK"
           />
           <li
-            class="StyledPageControl__StyledContainer-sc-1vlfaez-1 bjXWCk"
+            class="StyledPageControl__StyledContainer-sc-1vlfaez-1 TrVEt"
           >
             <button
               aria-disabled="true"
               aria-label="Go to next page"
-              class="StyledButtonKind-sc-1vhfpnt-0 dlsfPy StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 jrdXPY"
+              class="StyledButtonKind-sc-1vhfpnt-0 cAPKJb StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 bmWDux"
               disabled=""
               type="button"
             >
               <svg
                 aria-label="Next"
-                class="StyledIcon-sc-ofa7kd-0 hGRmVS"
+                class="StyledIcon-sc-ofa7kd-0 esOrIb"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -45238,33 +45238,33 @@ exports[`DataTable sort null data 1`] = `
 
 exports[`DataTable sort null data 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 drDzQW"
+  class="StyledGrommet-sc-19lkkz7-0 jOTXqz"
 >
   <table
-    class="StyledTable-sc-1m3u5g-6 bUmVhQ StyledDataTable-sc-xrlyjm-0 lfRkCP"
+    class="StyledTable-sc-1m3u5g-6 jgA-DYp StyledDataTable-sc-xrlyjm-0 ddpdve"
   >
     <thead
       class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
     >
       <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 hJqNiB"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 fwvniA"
       >
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 enEXsn StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 ksxSsW"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 knVOxy StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kOcftT"
           scope="col"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 iWtlBN"
+            class="StyledBox-sc-13pk1d4-0 bMEJHU"
           >
             <button
-              class="StyledButton-sc-323bzc-0 bxsiaR Header__StyledHeaderCellButton-sc-1baku5q-0 bAXaJ"
+              class="StyledButton-sc-323bzc-0 fvLkvg Header__StyledHeaderCellButton-sc-1baku5q-0 bePTGc"
               type="button"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 knAqIZ"
+                class="StyledBox-sc-13pk1d4-0 driArM"
               >
                 <span
-                  class="StyledText-sc-1sadyjn-0 fjinKI"
+                  class="StyledText-sc-1sadyjn-0 dAFYwl"
                 >
                   A
                 </span>
@@ -45336,21 +45336,21 @@ exports[`DataTable sort null data 2`] = `
           </div>
         </th>
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 enEXsn StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 ksxSsW"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 knVOxy StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kOcftT"
           scope="col"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 iWtlBN"
+            class="StyledBox-sc-13pk1d4-0 bMEJHU"
           >
             <button
-              class="StyledButton-sc-323bzc-0 bxsiaR Header__StyledHeaderCellButton-sc-1baku5q-0 bAXaJ"
+              class="StyledButton-sc-323bzc-0 fvLkvg Header__StyledHeaderCellButton-sc-1baku5q-0 bePTGc"
               type="button"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 knAqIZ"
+                class="StyledBox-sc-13pk1d4-0 driArM"
               >
                 <span
-                  class="StyledText-sc-1sadyjn-0 fjinKI"
+                  class="StyledText-sc-1sadyjn-0 dAFYwl"
                 >
                   B
                 </span>
@@ -45359,21 +45359,21 @@ exports[`DataTable sort null data 2`] = `
           </div>
         </th>
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 enEXsn StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 ksxSsW"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 knVOxy StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kOcftT"
           scope="col"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 iWtlBN"
+            class="StyledBox-sc-13pk1d4-0 bMEJHU"
           >
             <button
-              class="StyledButton-sc-323bzc-0 bxsiaR Header__StyledHeaderCellButton-sc-1baku5q-0 bAXaJ"
+              class="StyledButton-sc-323bzc-0 fvLkvg Header__StyledHeaderCellButton-sc-1baku5q-0 bePTGc"
               type="button"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 knAqIZ"
+                class="StyledBox-sc-13pk1d4-0 driArM"
               >
                 <span
-                  class="StyledText-sc-1sadyjn-0 fjinKI"
+                  class="StyledText-sc-1sadyjn-0 dAFYwl"
                 >
                   C
                 </span>
@@ -45382,21 +45382,21 @@ exports[`DataTable sort null data 2`] = `
           </div>
         </th>
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 enEXsn StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 ksxSsW"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 knVOxy StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kOcftT"
           scope="col"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 iWtlBN"
+            class="StyledBox-sc-13pk1d4-0 bMEJHU"
           >
             <button
-              class="StyledButton-sc-323bzc-0 bxsiaR Header__StyledHeaderCellButton-sc-1baku5q-0 bAXaJ"
+              class="StyledButton-sc-323bzc-0 fvLkvg Header__StyledHeaderCellButton-sc-1baku5q-0 bePTGc"
               type="button"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 knAqIZ"
+                class="StyledBox-sc-13pk1d4-0 driArM"
               >
                 <span
-                  class="StyledText-sc-1sadyjn-0 fjinKI"
+                  class="StyledText-sc-1sadyjn-0 dAFYwl"
                 >
                   D
                 </span>
@@ -45407,53 +45407,53 @@ exports[`DataTable sort null data 2`] = `
       </tr>
     </thead>
     <tbody
-      class="StyledTable__StyledTableBody-sc-1m3u5g-3 StyledDataTable__StyledDataTableBody-sc-xrlyjm-3 jcOPZD"
+      class="StyledTable__StyledTableBody-sc-1m3u5g-3 StyledDataTable__StyledDataTableBody-sc-xrlyjm-3 ewbFvu"
     >
       <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 hJqNiB"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 fwvniA"
       >
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 ksjtzt StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 ksxSsW"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 kDHDOM StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kOcftT"
           scope="row"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 bhFQAJ"
+            class="StyledBox-sc-13pk1d4-0 kUqiAI"
           />
         </th>
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 ksjtzt StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 ksxSsW"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 kDHDOM StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kOcftT"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 bhFQAJ"
+            class="StyledBox-sc-13pk1d4-0 kUqiAI"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 fjinKI"
+              class="StyledText-sc-1sadyjn-0 dAFYwl"
             >
               0
             </span>
           </div>
         </td>
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 ksjtzt StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 ksxSsW"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 kDHDOM StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kOcftT"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 bhFQAJ"
+            class="StyledBox-sc-13pk1d4-0 kUqiAI"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 fjinKI"
+              class="StyledText-sc-1sadyjn-0 dAFYwl"
             >
               first
             </span>
           </div>
         </td>
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 ksjtzt StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 ksxSsW"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 kDHDOM StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kOcftT"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 bhFQAJ"
+            class="StyledBox-sc-13pk1d4-0 kUqiAI"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 fjinKI"
+              class="StyledText-sc-1sadyjn-0 dAFYwl"
             >
               y
             </span>
@@ -45536,98 +45536,98 @@ exports[`DataTable sort null data 2`] = `
         </td>
       </tr>
       <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 hJqNiB"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 fwvniA"
       >
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 ksjtzt StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 ksxSsW"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 kDHDOM StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kOcftT"
           scope="row"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 bhFQAJ"
+            class="StyledBox-sc-13pk1d4-0 kUqiAI"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 fTPnpC"
+              class="StyledText-sc-1sadyjn-0 ZnZrv"
             >
               one
             </span>
           </div>
         </th>
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 ksjtzt StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 ksxSsW"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 kDHDOM StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kOcftT"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 bhFQAJ"
+            class="StyledBox-sc-13pk1d4-0 kUqiAI"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 fjinKI"
+              class="StyledText-sc-1sadyjn-0 dAFYwl"
             >
               1
             </span>
           </div>
         </td>
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 ksjtzt StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 ksxSsW"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 kDHDOM StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kOcftT"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 bhFQAJ"
+            class="StyledBox-sc-13pk1d4-0 kUqiAI"
           />
         </td>
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 ksjtzt StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 ksxSsW"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 kDHDOM StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kOcftT"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 bhFQAJ"
+            class="StyledBox-sc-13pk1d4-0 kUqiAI"
           />
         </td>
       </tr>
       <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 hJqNiB"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 fwvniA"
       >
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 ksjtzt StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 ksxSsW"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 kDHDOM StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kOcftT"
           scope="row"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 bhFQAJ"
+            class="StyledBox-sc-13pk1d4-0 kUqiAI"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 fTPnpC"
+              class="StyledText-sc-1sadyjn-0 ZnZrv"
             >
               two
             </span>
           </div>
         </th>
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 ksjtzt StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 ksxSsW"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 kDHDOM StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kOcftT"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 bhFQAJ"
+            class="StyledBox-sc-13pk1d4-0 kUqiAI"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 fjinKI"
+              class="StyledText-sc-1sadyjn-0 dAFYwl"
             >
               2
             </span>
           </div>
         </td>
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 ksjtzt StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 ksxSsW"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 kDHDOM StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kOcftT"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 bhFQAJ"
+            class="StyledBox-sc-13pk1d4-0 kUqiAI"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 fjinKI"
+              class="StyledText-sc-1sadyjn-0 dAFYwl"
             >
               second
             </span>
           </div>
         </td>
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 ksjtzt StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 ksxSsW"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 kDHDOM StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kOcftT"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 bhFQAJ"
+            class="StyledBox-sc-13pk1d4-0 kUqiAI"
           />
         </td>
       </tr>
@@ -45638,33 +45638,33 @@ exports[`DataTable sort null data 2`] = `
 
 exports[`DataTable sort null data 3`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 drDzQW"
+  class="StyledGrommet-sc-19lkkz7-0 jOTXqz"
 >
   <table
-    class="StyledTable-sc-1m3u5g-6 bUmVhQ StyledDataTable-sc-xrlyjm-0 lfRkCP"
+    class="StyledTable-sc-1m3u5g-6 jgA-DYp StyledDataTable-sc-xrlyjm-0 ddpdve"
   >
     <thead
       class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
     >
       <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 hJqNiB"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 fwvniA"
       >
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 enEXsn StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 ksxSsW"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 knVOxy StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kOcftT"
           scope="col"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 iWtlBN"
+            class="StyledBox-sc-13pk1d4-0 bMEJHU"
           >
             <button
-              class="StyledButton-sc-323bzc-0 bxsiaR Header__StyledHeaderCellButton-sc-1baku5q-0 bAXaJ"
+              class="StyledButton-sc-323bzc-0 fvLkvg Header__StyledHeaderCellButton-sc-1baku5q-0 bePTGc"
               type="button"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 knAqIZ"
+                class="StyledBox-sc-13pk1d4-0 driArM"
               >
                 <span
-                  class="StyledText-sc-1sadyjn-0 fjinKI"
+                  class="StyledText-sc-1sadyjn-0 dAFYwl"
                 >
                   A
                 </span>
@@ -45673,21 +45673,21 @@ exports[`DataTable sort null data 3`] = `
           </div>
         </th>
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 enEXsn StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 ksxSsW"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 knVOxy StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kOcftT"
           scope="col"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 iWtlBN"
+            class="StyledBox-sc-13pk1d4-0 bMEJHU"
           >
             <button
-              class="StyledButton-sc-323bzc-0 bxsiaR Header__StyledHeaderCellButton-sc-1baku5q-0 bAXaJ"
+              class="StyledButton-sc-323bzc-0 fvLkvg Header__StyledHeaderCellButton-sc-1baku5q-0 bePTGc"
               type="button"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 knAqIZ"
+                class="StyledBox-sc-13pk1d4-0 driArM"
               >
                 <span
-                  class="StyledText-sc-1sadyjn-0 fjinKI"
+                  class="StyledText-sc-1sadyjn-0 dAFYwl"
                 >
                   B
                 </span>
@@ -45696,21 +45696,21 @@ exports[`DataTable sort null data 3`] = `
           </div>
         </th>
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 enEXsn StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 ksxSsW"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 knVOxy StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kOcftT"
           scope="col"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 iWtlBN"
+            class="StyledBox-sc-13pk1d4-0 bMEJHU"
           >
             <button
-              class="StyledButton-sc-323bzc-0 bxsiaR Header__StyledHeaderCellButton-sc-1baku5q-0 bAXaJ"
+              class="StyledButton-sc-323bzc-0 fvLkvg Header__StyledHeaderCellButton-sc-1baku5q-0 bePTGc"
               type="button"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 knAqIZ"
+                class="StyledBox-sc-13pk1d4-0 driArM"
               >
                 <span
-                  class="StyledText-sc-1sadyjn-0 fjinKI"
+                  class="StyledText-sc-1sadyjn-0 dAFYwl"
                 >
                   C
                 </span>
@@ -45782,21 +45782,21 @@ exports[`DataTable sort null data 3`] = `
           </div>
         </th>
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 enEXsn StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 ksxSsW"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 knVOxy StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kOcftT"
           scope="col"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 iWtlBN"
+            class="StyledBox-sc-13pk1d4-0 bMEJHU"
           >
             <button
-              class="StyledButton-sc-323bzc-0 bxsiaR Header__StyledHeaderCellButton-sc-1baku5q-0 bAXaJ"
+              class="StyledButton-sc-323bzc-0 fvLkvg Header__StyledHeaderCellButton-sc-1baku5q-0 bePTGc"
               type="button"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 knAqIZ"
+                class="StyledBox-sc-13pk1d4-0 driArM"
               >
                 <span
-                  class="StyledText-sc-1sadyjn-0 fjinKI"
+                  class="StyledText-sc-1sadyjn-0 dAFYwl"
                 >
                   D
                 </span>
@@ -45807,92 +45807,92 @@ exports[`DataTable sort null data 3`] = `
       </tr>
     </thead>
     <tbody
-      class="StyledTable__StyledTableBody-sc-1m3u5g-3 StyledDataTable__StyledDataTableBody-sc-xrlyjm-3 jcOPZD"
+      class="StyledTable__StyledTableBody-sc-1m3u5g-3 StyledDataTable__StyledDataTableBody-sc-xrlyjm-3 ewbFvu"
     >
       <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 hJqNiB"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 fwvniA"
       >
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 ksjtzt StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 ksxSsW"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 kDHDOM StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kOcftT"
           scope="row"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 bhFQAJ"
+            class="StyledBox-sc-13pk1d4-0 kUqiAI"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 fTPnpC"
+              class="StyledText-sc-1sadyjn-0 ZnZrv"
             >
               one
             </span>
           </div>
         </th>
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 ksjtzt StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 ksxSsW"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 kDHDOM StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kOcftT"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 bhFQAJ"
+            class="StyledBox-sc-13pk1d4-0 kUqiAI"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 fjinKI"
+              class="StyledText-sc-1sadyjn-0 dAFYwl"
             >
               1
             </span>
           </div>
         </td>
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 ksjtzt StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 ksxSsW"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 kDHDOM StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kOcftT"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 bhFQAJ"
+            class="StyledBox-sc-13pk1d4-0 kUqiAI"
           />
         </td>
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 ksjtzt StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 ksxSsW"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 kDHDOM StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kOcftT"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 bhFQAJ"
+            class="StyledBox-sc-13pk1d4-0 kUqiAI"
           />
         </td>
       </tr>
       <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 hJqNiB"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 fwvniA"
       >
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 ksjtzt StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 ksxSsW"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 kDHDOM StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kOcftT"
           scope="row"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 bhFQAJ"
+            class="StyledBox-sc-13pk1d4-0 kUqiAI"
           />
         </th>
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 ksjtzt StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 ksxSsW"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 kDHDOM StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kOcftT"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 bhFQAJ"
+            class="StyledBox-sc-13pk1d4-0 kUqiAI"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 fjinKI"
+              class="StyledText-sc-1sadyjn-0 dAFYwl"
             >
               3
             </span>
           </div>
         </td>
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 ksjtzt StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 ksxSsW"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 kDHDOM StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kOcftT"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 bhFQAJ"
+            class="StyledBox-sc-13pk1d4-0 kUqiAI"
           />
         </td>
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 ksjtzt StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 ksxSsW"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 kDHDOM StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kOcftT"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 bhFQAJ"
+            class="StyledBox-sc-13pk1d4-0 kUqiAI"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 fjinKI"
+              class="StyledText-sc-1sadyjn-0 dAFYwl"
             >
               z
             </span>
@@ -45981,53 +45981,53 @@ exports[`DataTable sort null data 3`] = `
         </td>
       </tr>
       <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 hJqNiB"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 fwvniA"
       >
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 ksjtzt StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 ksxSsW"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 kDHDOM StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kOcftT"
           scope="row"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 bhFQAJ"
+            class="StyledBox-sc-13pk1d4-0 kUqiAI"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 fTPnpC"
+              class="StyledText-sc-1sadyjn-0 ZnZrv"
             >
               two
             </span>
           </div>
         </th>
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 ksjtzt StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 ksxSsW"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 kDHDOM StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kOcftT"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 bhFQAJ"
+            class="StyledBox-sc-13pk1d4-0 kUqiAI"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 fjinKI"
+              class="StyledText-sc-1sadyjn-0 dAFYwl"
             >
               2
             </span>
           </div>
         </td>
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 ksjtzt StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 ksxSsW"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 kDHDOM StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kOcftT"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 bhFQAJ"
+            class="StyledBox-sc-13pk1d4-0 kUqiAI"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 fjinKI"
+              class="StyledText-sc-1sadyjn-0 dAFYwl"
             >
               second
             </span>
           </div>
         </td>
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 ksjtzt StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 ksxSsW"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 kDHDOM StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kOcftT"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 bhFQAJ"
+            class="StyledBox-sc-13pk1d4-0 kUqiAI"
           />
         </td>
       </tr>
@@ -46038,33 +46038,33 @@ exports[`DataTable sort null data 3`] = `
 
 exports[`DataTable sort null data 4`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 drDzQW"
+  class="StyledGrommet-sc-19lkkz7-0 jOTXqz"
 >
   <table
-    class="StyledTable-sc-1m3u5g-6 bUmVhQ StyledDataTable-sc-xrlyjm-0 lfRkCP"
+    class="StyledTable-sc-1m3u5g-6 jgA-DYp StyledDataTable-sc-xrlyjm-0 ddpdve"
   >
     <thead
       class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
     >
       <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 hJqNiB"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 fwvniA"
       >
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 enEXsn StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 ksxSsW"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 knVOxy StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kOcftT"
           scope="col"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 iWtlBN"
+            class="StyledBox-sc-13pk1d4-0 bMEJHU"
           >
             <button
-              class="StyledButton-sc-323bzc-0 bxsiaR Header__StyledHeaderCellButton-sc-1baku5q-0 bAXaJ"
+              class="StyledButton-sc-323bzc-0 fvLkvg Header__StyledHeaderCellButton-sc-1baku5q-0 bePTGc"
               type="button"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 knAqIZ"
+                class="StyledBox-sc-13pk1d4-0 driArM"
               >
                 <span
-                  class="StyledText-sc-1sadyjn-0 fjinKI"
+                  class="StyledText-sc-1sadyjn-0 dAFYwl"
                 >
                   A
                 </span>
@@ -46073,21 +46073,21 @@ exports[`DataTable sort null data 4`] = `
           </div>
         </th>
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 enEXsn StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 ksxSsW"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 knVOxy StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kOcftT"
           scope="col"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 iWtlBN"
+            class="StyledBox-sc-13pk1d4-0 bMEJHU"
           >
             <button
-              class="StyledButton-sc-323bzc-0 bxsiaR Header__StyledHeaderCellButton-sc-1baku5q-0 bAXaJ"
+              class="StyledButton-sc-323bzc-0 fvLkvg Header__StyledHeaderCellButton-sc-1baku5q-0 bePTGc"
               type="button"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 knAqIZ"
+                class="StyledBox-sc-13pk1d4-0 driArM"
               >
                 <span
-                  class="StyledText-sc-1sadyjn-0 fjinKI"
+                  class="StyledText-sc-1sadyjn-0 dAFYwl"
                 >
                   B
                 </span>
@@ -46096,21 +46096,21 @@ exports[`DataTable sort null data 4`] = `
           </div>
         </th>
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 enEXsn StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 ksxSsW"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 knVOxy StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kOcftT"
           scope="col"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 iWtlBN"
+            class="StyledBox-sc-13pk1d4-0 bMEJHU"
           >
             <button
-              class="StyledButton-sc-323bzc-0 bxsiaR Header__StyledHeaderCellButton-sc-1baku5q-0 bAXaJ"
+              class="StyledButton-sc-323bzc-0 fvLkvg Header__StyledHeaderCellButton-sc-1baku5q-0 bePTGc"
               type="button"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 knAqIZ"
+                class="StyledBox-sc-13pk1d4-0 driArM"
               >
                 <span
-                  class="StyledText-sc-1sadyjn-0 fjinKI"
+                  class="StyledText-sc-1sadyjn-0 dAFYwl"
                 >
                   C
                 </span>
@@ -46119,21 +46119,21 @@ exports[`DataTable sort null data 4`] = `
           </div>
         </th>
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 enEXsn StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 ksxSsW"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 knVOxy StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kOcftT"
           scope="col"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 iWtlBN"
+            class="StyledBox-sc-13pk1d4-0 bMEJHU"
           >
             <button
-              class="StyledButton-sc-323bzc-0 bxsiaR Header__StyledHeaderCellButton-sc-1baku5q-0 bAXaJ"
+              class="StyledButton-sc-323bzc-0 fvLkvg Header__StyledHeaderCellButton-sc-1baku5q-0 bePTGc"
               type="button"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 knAqIZ"
+                class="StyledBox-sc-13pk1d4-0 driArM"
               >
                 <span
-                  class="StyledText-sc-1sadyjn-0 fjinKI"
+                  class="StyledText-sc-1sadyjn-0 dAFYwl"
                 >
                   D
                 </span>
@@ -46207,149 +46207,149 @@ exports[`DataTable sort null data 4`] = `
       </tr>
     </thead>
     <tbody
-      class="StyledTable__StyledTableBody-sc-1m3u5g-3 StyledDataTable__StyledDataTableBody-sc-xrlyjm-3 jcOPZD"
+      class="StyledTable__StyledTableBody-sc-1m3u5g-3 StyledDataTable__StyledDataTableBody-sc-xrlyjm-3 ewbFvu"
     >
       <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 hJqNiB"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 fwvniA"
       >
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 ksjtzt StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 ksxSsW"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 kDHDOM StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kOcftT"
           scope="row"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 bhFQAJ"
+            class="StyledBox-sc-13pk1d4-0 kUqiAI"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 fTPnpC"
+              class="StyledText-sc-1sadyjn-0 ZnZrv"
             >
               one
             </span>
           </div>
         </th>
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 ksjtzt StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 ksxSsW"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 kDHDOM StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kOcftT"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 bhFQAJ"
+            class="StyledBox-sc-13pk1d4-0 kUqiAI"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 fjinKI"
+              class="StyledText-sc-1sadyjn-0 dAFYwl"
             >
               1
             </span>
           </div>
         </td>
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 ksjtzt StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 ksxSsW"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 kDHDOM StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kOcftT"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 bhFQAJ"
+            class="StyledBox-sc-13pk1d4-0 kUqiAI"
           />
         </td>
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 ksjtzt StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 ksxSsW"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 kDHDOM StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kOcftT"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 bhFQAJ"
+            class="StyledBox-sc-13pk1d4-0 kUqiAI"
           />
         </td>
       </tr>
       <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 hJqNiB"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 fwvniA"
       >
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 ksjtzt StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 ksxSsW"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 kDHDOM StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kOcftT"
           scope="row"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 bhFQAJ"
+            class="StyledBox-sc-13pk1d4-0 kUqiAI"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 fTPnpC"
+              class="StyledText-sc-1sadyjn-0 ZnZrv"
             >
               two
             </span>
           </div>
         </th>
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 ksjtzt StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 ksxSsW"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 kDHDOM StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kOcftT"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 bhFQAJ"
+            class="StyledBox-sc-13pk1d4-0 kUqiAI"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 fjinKI"
+              class="StyledText-sc-1sadyjn-0 dAFYwl"
             >
               2
             </span>
           </div>
         </td>
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 ksjtzt StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 ksxSsW"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 kDHDOM StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kOcftT"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 bhFQAJ"
+            class="StyledBox-sc-13pk1d4-0 kUqiAI"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 fjinKI"
+              class="StyledText-sc-1sadyjn-0 dAFYwl"
             >
               second
             </span>
           </div>
         </td>
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 ksjtzt StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 ksxSsW"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 kDHDOM StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kOcftT"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 bhFQAJ"
+            class="StyledBox-sc-13pk1d4-0 kUqiAI"
           />
         </td>
       </tr>
       <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 hJqNiB"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 fwvniA"
       >
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 ksjtzt StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 ksxSsW"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 kDHDOM StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kOcftT"
           scope="row"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 bhFQAJ"
+            class="StyledBox-sc-13pk1d4-0 kUqiAI"
           />
         </th>
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 ksjtzt StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 ksxSsW"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 kDHDOM StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kOcftT"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 bhFQAJ"
+            class="StyledBox-sc-13pk1d4-0 kUqiAI"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 fjinKI"
+              class="StyledText-sc-1sadyjn-0 dAFYwl"
             >
               0
             </span>
           </div>
         </td>
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 ksjtzt StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 ksxSsW"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 kDHDOM StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kOcftT"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 bhFQAJ"
+            class="StyledBox-sc-13pk1d4-0 kUqiAI"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 fjinKI"
+              class="StyledText-sc-1sadyjn-0 dAFYwl"
             >
               first
             </span>
           </div>
         </td>
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 ksjtzt StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 ksxSsW"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 kDHDOM StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kOcftT"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 bhFQAJ"
+            class="StyledBox-sc-13pk1d4-0 kUqiAI"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 fjinKI"
+              class="StyledText-sc-1sadyjn-0 dAFYwl"
             >
               y
             </span>
@@ -46755,33 +46755,33 @@ exports[`DataTable sortable 1`] = `
 
 exports[`DataTable sortable 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 drDzQW"
+  class="StyledGrommet-sc-19lkkz7-0 jOTXqz"
 >
   <table
-    class="StyledTable-sc-1m3u5g-6 bUmVhQ StyledDataTable-sc-xrlyjm-0 lfRkCP"
+    class="StyledTable-sc-1m3u5g-6 jgA-DYp StyledDataTable-sc-xrlyjm-0 ddpdve"
   >
     <thead
       class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
     >
       <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 hJqNiB"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 fwvniA"
       >
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 enEXsn StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 ksxSsW"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 knVOxy StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kOcftT"
           scope="col"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 iWtlBN"
+            class="StyledBox-sc-13pk1d4-0 bMEJHU"
           >
             <button
-              class="StyledButton-sc-323bzc-0 bxsiaR Header__StyledHeaderCellButton-sc-1baku5q-0 bAXaJ"
+              class="StyledButton-sc-323bzc-0 fvLkvg Header__StyledHeaderCellButton-sc-1baku5q-0 bePTGc"
               type="button"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 knAqIZ"
+                class="StyledBox-sc-13pk1d4-0 driArM"
               >
                 <span
-                  class="StyledText-sc-1sadyjn-0 fjinKI"
+                  class="StyledText-sc-1sadyjn-0 dAFYwl"
                 >
                   A
                 </span>
@@ -46853,21 +46853,21 @@ exports[`DataTable sortable 2`] = `
           </div>
         </th>
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 enEXsn StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 ksxSsW"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 knVOxy StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kOcftT"
           scope="col"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 iWtlBN"
+            class="StyledBox-sc-13pk1d4-0 bMEJHU"
           >
             <button
-              class="StyledButton-sc-323bzc-0 bxsiaR Header__StyledHeaderCellButton-sc-1baku5q-0 bAXaJ"
+              class="StyledButton-sc-323bzc-0 fvLkvg Header__StyledHeaderCellButton-sc-1baku5q-0 bePTGc"
               type="button"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 knAqIZ"
+                class="StyledBox-sc-13pk1d4-0 driArM"
               >
                 <span
-                  class="StyledText-sc-1sadyjn-0 fjinKI"
+                  class="StyledText-sc-1sadyjn-0 dAFYwl"
                 >
                   B
                 </span>
@@ -46878,33 +46878,33 @@ exports[`DataTable sortable 2`] = `
       </tr>
     </thead>
     <tbody
-      class="StyledTable__StyledTableBody-sc-1m3u5g-3 StyledDataTable__StyledDataTableBody-sc-xrlyjm-3 jcOPZD"
+      class="StyledTable__StyledTableBody-sc-1m3u5g-3 StyledDataTable__StyledDataTableBody-sc-xrlyjm-3 ewbFvu"
     >
       <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 hJqNiB"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 fwvniA"
       >
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 ksjtzt StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 ksxSsW"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 kDHDOM StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kOcftT"
           scope="row"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 bhFQAJ"
+            class="StyledBox-sc-13pk1d4-0 kUqiAI"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 fTPnpC"
+              class="StyledText-sc-1sadyjn-0 ZnZrv"
             >
               one
             </span>
           </div>
         </th>
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 ksjtzt StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 ksxSsW"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 kDHDOM StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kOcftT"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 bhFQAJ"
+            class="StyledBox-sc-13pk1d4-0 kUqiAI"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 fjinKI"
+              class="StyledText-sc-1sadyjn-0 dAFYwl"
             >
               1
             </span>
@@ -46912,30 +46912,30 @@ exports[`DataTable sortable 2`] = `
         </td>
       </tr>
       <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 hJqNiB"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 fwvniA"
       >
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 ksjtzt StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 ksxSsW"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 kDHDOM StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kOcftT"
           scope="row"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 bhFQAJ"
+            class="StyledBox-sc-13pk1d4-0 kUqiAI"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 fTPnpC"
+              class="StyledText-sc-1sadyjn-0 ZnZrv"
             >
               two
             </span>
           </div>
         </th>
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 ksjtzt StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 ksxSsW"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 kDHDOM StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kOcftT"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 bhFQAJ"
+            class="StyledBox-sc-13pk1d4-0 kUqiAI"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 fjinKI"
+              class="StyledText-sc-1sadyjn-0 dAFYwl"
             >
               2
             </span>
@@ -46943,30 +46943,30 @@ exports[`DataTable sortable 2`] = `
         </td>
       </tr>
       <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 hJqNiB"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 fwvniA"
       >
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 ksjtzt StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 ksxSsW"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 kDHDOM StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kOcftT"
           scope="row"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 bhFQAJ"
+            class="StyledBox-sc-13pk1d4-0 kUqiAI"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 fTPnpC"
+              class="StyledText-sc-1sadyjn-0 ZnZrv"
             >
               zero
             </span>
           </div>
         </th>
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 ksjtzt StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 ksxSsW"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 kDHDOM StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kOcftT"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 bhFQAJ"
+            class="StyledBox-sc-13pk1d4-0 kUqiAI"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 fjinKI"
+              class="StyledText-sc-1sadyjn-0 dAFYwl"
             >
               0
             </span>

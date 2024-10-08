@@ -7,8 +7,9 @@ export var Children = function Children() {
     selected = _useState[0],
     setSelected = _useState[1];
   var onRemoveSeason = function onRemoveSeason(season) {
+    var seasonIndex = allSeasons.indexOf(season);
     setSelected(selected.filter(function (selectedSeason) {
-      return selectedSeason !== season;
+      return selectedSeason !== seasonIndex;
     }));
   };
   var renderSeason = function renderSeason(season) {
@@ -66,12 +67,12 @@ export var Children = function Children() {
     }, /*#__PURE__*/React.createElement(Select, {
       closeOnChange: false,
       multiple: true,
-      valueLabel: /*#__PURE__*/React.createElement(Box, {
+      value: /*#__PURE__*/React.createElement(Box, {
         wrap: true,
         direction: "row",
         width: "small"
-      }, selected && selected.length ? selected.map(function (value) {
-        return renderSeason(value);
+      }, selected && selected.length ? selected.map(function (index) {
+        return renderSeason(allSeasons[index]);
       }) : /*#__PURE__*/React.createElement(Box, {
         pad: {
           vertical: 'xsmall',
@@ -80,11 +81,11 @@ export var Children = function Children() {
         margin: "xsmall"
       }, "Select Season")),
       options: allSeasons,
-      value: selected,
+      selected: selected,
       disabled: [2, 6],
       onChange: function onChange(_ref) {
-        var nextSelected = _ref.value;
-        setSelected(nextSelected);
+        var nextSelected = _ref.selected;
+        setSelected([].concat(nextSelected).sort());
       }
     }, renderOption))
     // </Grommet>

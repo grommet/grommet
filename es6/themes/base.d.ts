@@ -164,7 +164,6 @@ interface ButtonKindType {
 }
 
 interface ButtonType {
-  intelligentPad?: boolean;
   badge?: {
     align?: 'container';
     container?: {

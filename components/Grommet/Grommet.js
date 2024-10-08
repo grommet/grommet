@@ -60,6 +60,9 @@ var Grommet = exports.Grommet = /*#__PURE__*/(0, _react.forwardRef)(function (pr
   var _useState = (0, _react.useState)(),
     stateResponsive = _useState[0],
     setResponsive = _useState[1];
+  var _useState2 = (0, _react.useState)([]),
+    roots = _useState2[0],
+    setRoots = _useState2[1];
   var theme = (0, _react.useMemo)(function () {
     var nextTheme = (0, _utils.deepMerge)(_themes.base, themeProp || {});
 
@@ -110,24 +113,15 @@ var Grommet = exports.Grommet = /*#__PURE__*/(0, _react.forwardRef)(function (pr
   }, [theme]);
   var responsive = stateResponsive || deviceResponsive(userAgent, theme) || theme.global.deviceBreakpoints.tablet;
   var grommetRef = (0, _utils.useForwardedRef)(ref);
-
-  // track open FocusedContainers in a global array to manage
-  // focus event listeners for trapFocus
-  var roots = (0, _react.useRef)([]);
   (0, _react.useEffect)(function () {
-    if (grommetRef.current) roots.current.push(grommetRef.current);
+    if (grommetRef.current) setRoots([grommetRef.current]);
   }, [grommetRef]);
-  var rootsContextValue = (0, _react.useMemo)(function () {
-    return {
-      roots: roots
-    };
-  }, []);
   return /*#__PURE__*/_react["default"].createElement(_contexts.ThemeContext.Provider, {
     value: theme
   }, /*#__PURE__*/_react["default"].createElement(_contexts.ResponsiveContext.Provider, {
     value: responsive
   }, /*#__PURE__*/_react["default"].createElement(_RootsContext.RootsContext.Provider, {
-    value: rootsContextValue
+    value: roots
   }, /*#__PURE__*/_react["default"].createElement(_contexts.ContainerTargetContext.Provider, {
     value: containerTarget
   }, /*#__PURE__*/_react["default"].createElement(_OptionsContext.OptionsContext.Provider, {

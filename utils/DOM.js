@@ -157,8 +157,7 @@ var makeNodeUnfocusable = exports.makeNodeUnfocusable = function makeNodeUnfocus
     Array.prototype.filter.call(elements || [], function (element) {
       return element.getAttribute(TABINDEX) !== null;
     }).forEach(function (element) {
-      // if TABINDEX_STATE already exists, it's holding the original value
-      if (!element.getAttribute(TABINDEX_STATE)) element.setAttribute(TABINDEX_STATE, element.getAttribute(TABINDEX));
+      element.setAttribute(TABINDEX_STATE, element.getAttribute(TABINDEX));
       element.setAttribute(TABINDEX, -1);
     });
     // then, if any element is inherently focusable and not handled above,

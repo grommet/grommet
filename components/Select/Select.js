@@ -132,30 +132,23 @@ var Select = exports.Select = /*#__PURE__*/(0, _react.forwardRef)(function (_ref
   // the option indexes present in the value
   var optionIndexesInValue = (0, _react.useMemo)(function () {
     var result = [];
-    if (selected !== undefined) {
-      if (Array.isArray(selected)) {
-        var validSelections = selected.filter(function (i) {
-          return i in allOptions;
-        });
-        result.push.apply(result, validSelections);
-      } else if (selected in allOptions) {
-        result.push(selected);
-      }
-    } else if (Array.isArray(normalizedValue)) {
-      normalizedValue.forEach(function (v) {
-        var index = allOptions.map(function (option) {
-          return (0, _utils2.applyKey)(option, valueKey);
-        }).indexOf(v);
-        if (index !== -1) result.push(index);
-      });
-    } else {
-      var index = allOptions.map(function (option) {
-        return (0, _utils2.applyKey)(option, valueKey);
-      }).indexOf(normalizedValue);
-      if (index !== -1) {
+    allOptions.forEach(function (option, index) {
+      if (selected !== undefined) {
+        if (Array.isArray(selected)) {
+          if (selected.indexOf(index) !== -1) result.push(index);
+        } else if (index === selected) {
+          result.push(index);
+        }
+      } else if (Array.isArray(normalizedValue)) {
+        if (normalizedValue.some(function (v) {
+          return v === (0, _utils2.applyKey)(option, valueKey);
+        })) {
+          result.push(index);
+        }
+      } else if (normalizedValue === (0, _utils2.applyKey)(option, valueKey)) {
         result.push(index);
       }
-    }
+    });
     return result;
   }, [allOptions, selected, valueKey, normalizedValue]);
   var _useState3 = (0, _react.useState)(propOpen),

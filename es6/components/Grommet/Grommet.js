@@ -1,7 +1,7 @@
 var _excluded = ["children", "full", "containerTarget", "theme", "options", "messages", "onAnalytics"];
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (e.includes(n)) continue; t[n] = r[n]; } return t; }
-import React, { forwardRef, useEffect, useMemo, useRef, useState } from 'react';
+import React, { forwardRef, useEffect, useMemo, useState } from 'react';
 import { createGlobalStyle } from 'styled-components';
 import { ContainerTargetContext, ResponsiveContext, ThemeContext } from '../../contexts';
 import { deepMerge, backgroundIsDark, getBreakpoint, getDeviceBreakpoint, normalizeColor, useForwardedRef } from '../../utils';
@@ -53,6 +53,9 @@ var Grommet = /*#__PURE__*/forwardRef(function (props, ref) {
   var _useState = useState(),
     stateResponsive = _useState[0],
     setResponsive = _useState[1];
+  var _useState2 = useState([]),
+    roots = _useState2[0],
+    setRoots = _useState2[1];
   var theme = useMemo(function () {
     var nextTheme = deepMerge(baseTheme, themeProp || {});
 
@@ -103,24 +106,15 @@ var Grommet = /*#__PURE__*/forwardRef(function (props, ref) {
   }, [theme]);
   var responsive = stateResponsive || deviceResponsive(userAgent, theme) || theme.global.deviceBreakpoints.tablet;
   var grommetRef = useForwardedRef(ref);
-
-  // track open FocusedContainers in a global array to manage
-  // focus event listeners for trapFocus
-  var roots = useRef([]);
   useEffect(function () {
-    if (grommetRef.current) roots.current.push(grommetRef.current);
+    if (grommetRef.current) setRoots([grommetRef.current]);
   }, [grommetRef]);
-  var rootsContextValue = useMemo(function () {
-    return {
-      roots: roots
-    };
-  }, []);
   return /*#__PURE__*/React.createElement(ThemeContext.Provider, {
     value: theme
   }, /*#__PURE__*/React.createElement(ResponsiveContext.Provider, {
     value: responsive
   }, /*#__PURE__*/React.createElement(RootsContext.Provider, {
-    value: rootsContextValue
+    value: roots
   }, /*#__PURE__*/React.createElement(ContainerTargetContext.Provider, {
     value: containerTarget
   }, /*#__PURE__*/React.createElement(OptionsContext.Provider, {

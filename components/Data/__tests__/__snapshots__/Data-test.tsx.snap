@@ -504,30 +504,30 @@ exports[`Data controlled search 1`] = `
 
 exports[`Data controlled search 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 drDzQW"
+  class="StyledGrommet-sc-19lkkz7-0 jOTXqz"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 euJJjo"
+    class="StyledBox-sc-13pk1d4-0 boQSCd"
     id="data"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 bXQUPy"
+      class="StyledBox-sc-13pk1d4-0 gQIJlH"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 eJJFaP"
+        class="StyledBox-sc-13pk1d4-0 fiChhC"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 bhFQAJ"
+          class="StyledBox-sc-13pk1d4-0 kUqiAI"
         >
           <div
-            class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 fayRfZ"
+            class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 lapBso"
           >
             <div
-              class="StyledTextInput__StyledIcon-sc-1x30a0s-3 kyOiAV"
+              class="StyledTextInput__StyledIcon-sc-1x30a0s-3 eIYCTs"
             >
               <svg
                 aria-label="Search"
-                class="StyledIcon-sc-ofa7kd-0 hGRmVS"
+                class="StyledIcon-sc-ofa7kd-0 esOrIb"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -541,7 +541,7 @@ exports[`Data controlled search 2`] = `
             <input
               aria-label="Search"
               autocomplete="off"
-              class="StyledTextInput-sc-1x30a0s-0 YUgUq"
+              class="StyledTextInput-sc-1x30a0s-0 keJEgr"
               id="data--search"
               name="_search"
               type="search"
@@ -550,17 +550,17 @@ exports[`Data controlled search 2`] = `
           </div>
         </div>
         <div
-          class="StyledBox-sc-13pk1d4-0 jIXwRs"
+          class="StyledBox-sc-13pk1d4-0 dblcJZ"
         >
           <button
             aria-label="Open filters"
-            class="StyledButton-sc-323bzc-0 cVWsTZ"
+            class="StyledButton-sc-323bzc-0 iDVCLY"
             id="data--filters-control"
             type="button"
           >
             <svg
               aria-label="Filter"
-              class="StyledIcon-sc-ofa7kd-0 hGRmVS"
+              class="StyledIcon-sc-ofa7kd-0 esOrIb"
               viewBox="0 0 24 24"
             >
               <path
@@ -575,44 +575,44 @@ exports[`Data controlled search 2`] = `
       </div>
     </div>
     <span
-      class="StyledText-sc-1sadyjn-0 cfKSmT"
+      class="StyledText-sc-1sadyjn-0 ffwMJa"
     >
       4 results of undefined items
     </span>
     <table
-      class="StyledTable-sc-1m3u5g-6 bUmVhQ StyledDataTable-sc-xrlyjm-0 lfRkCP"
+      class="StyledTable-sc-1m3u5g-6 jgA-DYp StyledDataTable-sc-xrlyjm-0 ddpdve"
     >
       <thead
         class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
       >
         <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 hJqNiB"
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 fwvniA"
         >
           <th
-            class="StyledTable__StyledTableCell-sc-1m3u5g-0 iWTOtn StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 ksxSsW"
+            class="StyledTable__StyledTableCell-sc-1m3u5g-0 cIHjPK StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kOcftT"
             scope="col"
           >
             <div
-              class="StyledBox-sc-13pk1d4-0 iWtlBN"
+              class="StyledBox-sc-13pk1d4-0 bMEJHU"
             />
           </th>
         </tr>
       </thead>
       <tbody
-        class="StyledTable__StyledTableBody-sc-1m3u5g-3 StyledDataTable__StyledDataTableBody-sc-xrlyjm-3 jcOPZD"
+        class="StyledTable__StyledTableBody-sc-1m3u5g-3 StyledDataTable__StyledDataTableBody-sc-xrlyjm-3 ewbFvu"
       >
         <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 hJqNiB"
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 fwvniA"
         >
           <th
-            class="StyledTable__StyledTableCell-sc-1m3u5g-0 ksjtzt StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 ksxSsW"
+            class="StyledTable__StyledTableCell-sc-1m3u5g-0 kDHDOM StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kOcftT"
             scope="row"
           >
             <div
-              class="StyledBox-sc-13pk1d4-0 bhFQAJ"
+              class="StyledBox-sc-13pk1d4-0 kUqiAI"
             >
               <span
-                class="StyledText-sc-1sadyjn-0 fTPnpC"
+                class="StyledText-sc-1sadyjn-0 ZnZrv"
               >
                 aa
               </span>
@@ -620,17 +620,17 @@ exports[`Data controlled search 2`] = `
           </th>
         </tr>
         <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 hJqNiB"
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 fwvniA"
         >
           <th
-            class="StyledTable__StyledTableCell-sc-1m3u5g-0 ksjtzt StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 ksxSsW"
+            class="StyledTable__StyledTableCell-sc-1m3u5g-0 kDHDOM StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kOcftT"
             scope="row"
           >
             <div
-              class="StyledBox-sc-13pk1d4-0 bhFQAJ"
+              class="StyledBox-sc-13pk1d4-0 kUqiAI"
             >
               <span
-                class="StyledText-sc-1sadyjn-0 fTPnpC"
+                class="StyledText-sc-1sadyjn-0 ZnZrv"
               >
                 bb
               </span>
@@ -638,17 +638,17 @@ exports[`Data controlled search 2`] = `
           </th>
         </tr>
         <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 hJqNiB"
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 fwvniA"
         >
           <th
-            class="StyledTable__StyledTableCell-sc-1m3u5g-0 ksjtzt StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 ksxSsW"
+            class="StyledTable__StyledTableCell-sc-1m3u5g-0 kDHDOM StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kOcftT"
             scope="row"
           >
             <div
-              class="StyledBox-sc-13pk1d4-0 bhFQAJ"
+              class="StyledBox-sc-13pk1d4-0 kUqiAI"
             >
               <span
-                class="StyledText-sc-1sadyjn-0 fTPnpC"
+                class="StyledText-sc-1sadyjn-0 ZnZrv"
               >
                 cc
               </span>
@@ -656,17 +656,17 @@ exports[`Data controlled search 2`] = `
           </th>
         </tr>
         <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 hJqNiB"
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 fwvniA"
         >
           <th
-            class="StyledTable__StyledTableCell-sc-1m3u5g-0 ksjtzt StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 ksxSsW"
+            class="StyledTable__StyledTableCell-sc-1m3u5g-0 kDHDOM StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kOcftT"
             scope="row"
           >
             <div
-              class="StyledBox-sc-13pk1d4-0 bhFQAJ"
+              class="StyledBox-sc-13pk1d4-0 kUqiAI"
             >
               <span
-                class="StyledText-sc-1sadyjn-0 fTPnpC"
+                class="StyledText-sc-1sadyjn-0 ZnZrv"
               >
                 dd
               </span>
@@ -3545,969 +3545,6 @@ exports[`Data renders outside grommet wrapper 1`] = `
 />
 `;
 
-exports[`Data should render property label and return property value to view when options are object 1`] = `
-<DocumentFragment>
-  .c16 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
-}
-
-.c16 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c16 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c16 *[stroke*='#'],
-.c16 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c16 *[fill-rule],
-.c16 *[FILL-RULE],
-.c16 *[fill*='#'],
-.c16 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
-}
-
-.c0 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
-.c1 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  flex-direction: column;
-  flex: 0 0 auto;
-}
-
-.c3 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  flex-direction: column;
-  height: 100%;
-}
-
-.c4 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  flex-direction: column;
-  flex: 1 1;
-  overflow: auto;
-}
-
-.c5 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  margin-bottom: 12px;
-  min-width: 0;
-  min-height: 0;
-  flex-direction: column;
-}
-
-.c7 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
-  min-width: 0;
-  min-height: 0;
-  flex-direction: column;
-}
-
-.c8 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  align-content: flex-start;
-  min-width: 0;
-  min-height: 0;
-  flex-direction: row;
-  flex: 0 0 auto;
-}
-
-.c9 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  flex-direction: column;
-  width: 100%;
-}
-
-.c11 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  flex-direction: row;
-}
-
-.c15 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  align-self: center;
-  margin-left: 12px;
-  margin-right: 12px;
-  min-width: 0;
-  min-height: 0;
-  flex-direction: column;
-  min-width: auto;
-}
-
-.c21 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  margin-right: 12px;
-  align-items: center;
-  min-width: 0;
-  min-height: 0;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.c24 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  align-items: center;
-  border: solid 2px #7D4CDB;
-  min-width: 0;
-  min-height: 0;
-  flex-direction: column;
-  height: 24px;
-  width: 24px;
-  justify-content: center;
-  border-radius: 4px;
-}
-
-.c26 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  align-self: center;
-  align-items: flex-start;
-  min-width: 0;
-  min-height: 0;
-  flex-direction: column;
-}
-
-.c27 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
-  min-width: 0;
-  min-height: 0;
-  flex-direction: column;
-  padding: 12px;
-}
-
-.c28 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  flex-direction: column;
-}
-
-.c30 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  align-items: center;
-  border: solid 2px rgba(0, 0, 0, 0.15);
-  min-width: 0;
-  min-height: 0;
-  flex-direction: column;
-  height: 24px;
-  width: 24px;
-  justify-content: center;
-  border-radius: 4px;
-}
-
-.c32 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  margin-top: 24px;
-  align-items: center;
-  min-width: 0;
-  min-height: 0;
-  flex-direction: row;
-  flex: 0 0 auto;
-  justify-content: space-between;
-}
-
-.c31 {
-  flex: 0 0 auto;
-  align-self: stretch;
-  height: 12px;
-}
-
-.c6 {
-  margin-left: 12px;
-  margin-right: 12px;
-  margin-top: 6px;
-  margin-bottom: 6px;
-  font-size: 18px;
-  line-height: 24px;
-}
-
-.c10 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  font: inherit;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  align-self: flex-start;
-  color: inherit;
-  outline: none;
-  border: none;
-  padding: 0;
-  text-align: inherit;
-  width: 100%;
-}
-
-.c10:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c10:focus:not(:focus-visible) >circle,
-.c10:focus:not(:focus-visible) >ellipse,
-.c10:focus:not(:focus-visible) >line,
-.c10:focus:not(:focus-visible) >path,
-.c10:focus:not(:focus-visible) >polygon,
-.c10:focus:not(:focus-visible) >polyline,
-.c10:focus:not(:focus-visible) >rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c10:focus:not(:focus-visible) ::-moz-focus-inner {
-  border: 0;
-}
-
-.c18 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  font: inherit;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  color: inherit;
-  outline: none;
-  border: none;
-  padding: 0;
-  text-align: inherit;
-  width: 100%;
-}
-
-.c18:hover {
-  background-color: rgba(221, 221, 221, 0.4);
-  color: #000000;
-}
-
-.c18:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c18:focus >circle,
-.c18:focus >ellipse,
-.c18:focus >line,
-.c18:focus >path,
-.c18:focus >polygon,
-.c18:focus >polyline,
-.c18:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c18:focus ::-moz-focus-inner {
-  border: 0;
-}
-
-.c18:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c18:focus:not(:focus-visible) >circle,
-.c18:focus:not(:focus-visible) >ellipse,
-.c18:focus:not(:focus-visible) >line,
-.c18:focus:not(:focus-visible) >path,
-.c18:focus:not(:focus-visible) >polygon,
-.c18:focus:not(:focus-visible) >polyline,
-.c18:focus:not(:focus-visible) >rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c18:focus:not(:focus-visible) ::-moz-focus-inner {
-  border: 0;
-}
-
-.c33 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  font: inherit;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  border: 2px solid #7D4CDB;
-  border-radius: 18px;
-  color: #444444;
-  padding: 4px 22px;
-  font-size: 18px;
-  line-height: 24px;
-  background-color: #7D4CDB;
-  color: #f8f8f8;
-  border-radius: 18px;
-  transition-property: color,background-color,border-color,box-shadow;
-  transition-duration: 0.1s;
-  transition-timing-function: ease-in-out;
-}
-
-.c33:hover {
-  box-shadow: 0px 0px 0px 2px #7D4CDB;
-}
-
-.c33:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c33:focus >circle,
-.c33:focus >ellipse,
-.c33:focus >line,
-.c33:focus >path,
-.c33:focus >polygon,
-.c33:focus >polyline,
-.c33:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c33:focus ::-moz-focus-inner {
-  border: 0;
-}
-
-.c33:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c33:focus:not(:focus-visible) >circle,
-.c33:focus:not(:focus-visible) >ellipse,
-.c33:focus:not(:focus-visible) >line,
-.c33:focus:not(:focus-visible) >path,
-.c33:focus:not(:focus-visible) >polygon,
-.c33:focus:not(:focus-visible) >polyline,
-.c33:focus:not(:focus-visible) >rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c33:focus:not(:focus-visible) ::-moz-focus-inner {
-  border: 0;
-}
-
-.c2 {
-  max-width: 100%;
-}
-
-.c25 {
-  box-sizing: border-box;
-  stroke-width: 4px;
-  stroke: #7D4CDB;
-  width: 24px;
-  height: 24px;
-}
-
-.c20 {
-  display: flex;
-  flex-direction: row;
-  user-select: none;
-  -webkit-user-select: none;
-  width: fit-content;
-  padding: 6px;
-  cursor: pointer;
-}
-
-.c20:hover input:not([disabled])+div,
-.c20:hover input:not([disabled])+span {
-  border-color: #000000;
-}
-
-.c29 {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  user-select: none;
-  -webkit-user-select: none;
-  width: fit-content;
-  cursor: pointer;
-}
-
-.c29:hover input:not([disabled])+div,
-.c29:hover input:not([disabled])+span {
-  border-color: #000000;
-}
-
-.c23 {
-  opacity: 0;
-  -moz-appearance: none;
-  width: 0;
-  height: 0;
-  margin: 0;
-  cursor: pointer;
-}
-
-.c23:checked+span>span {
-  left: calc( 48px - 24px );
-  background: #7D4CDB;
-}
-
-.c22 {
-  flex-shrink: 0;
-}
-
-.c13 {
-  box-sizing: border-box;
-  font-size: inherit;
-  font-family: inherit;
-  border: none;
-  -webkit-appearance: none;
-  background: transparent;
-  color: inherit;
-  width: 100%;
-  padding: 11px;
-  font-weight: 600;
-  margin: 0;
-  border: 1px solid rgba(0, 0, 0, 0.33);
-  border-radius: 4px;
-  border: none;
-  outline: none;
-  border: none;
-  width: 100%;
-}
-
-.c13::-webkit-input-placeholder {
-  color: #AAAAAA;
-}
-
-.c13::-moz-placeholder {
-  color: #AAAAAA;
-}
-
-.c13:-ms-input-placeholder {
-  color: #AAAAAA;
-}
-
-.c13 ::-webkit-search-decoration {
-  -webkit-appearance: none;
-}
-
-.c13::-moz-focus-inner {
-  border: none;
-  outline: none;
-}
-
-.c13:-moz-placeholder,
-.c13::-moz-placeholder {
-  opacity: 1;
-}
-
-.c12 {
-  position: relative;
-  width: 100%;
-}
-
-.c17 {
-  display: none;
-}
-
-.c19 {
-  display: block;
-  width: 100%;
-}
-
-.c14 {
-  cursor: pointer;
-}
-
-@media only screen and (max-width: 768px) {
-  .c5 {
-    margin-bottom: 6px;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .c7 {
-    border-bottom: solid 1px rgba(0, 0, 0, 0.33);
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .c15 {
-    margin-left: 6px;
-    margin-right: 6px;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .c21 {
-    margin-right: 6px;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .c24 {
-    border: solid 2px #7D4CDB;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .c27 {
-    border-bottom: solid 1px rgba(0, 0, 0, 0.33);
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .c27 {
-    padding: 6px;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .c30 {
-    border: solid 2px rgba(0, 0, 0, 0.15);
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .c32 {
-    margin-top: 12px;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-
-}
-
-@media only screen and (max-width: 768px) {
-
-}
-
-@media only screen and (max-width: 768px) {
-  .c31 {
-    height: 6px;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-
-}
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-
-}
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-
-}
-
-<div
-    class="c0"
-  >
-    <div
-      class="c1"
-      id="data"
-    >
-      <form
-        class="c2"
-      >
-        <div
-          class="c3"
-        >
-          <div
-            class="c4"
-          >
-            <div
-              class="c1"
-            >
-              <div
-                class="c5 "
-              >
-                <label
-                  class="c6"
-                  for="data-selectMultiple"
-                >
-                  SelectMultiple Name
-                </label>
-                <div
-                  class="c7 FormField__FormFieldContentBox-sc-m9hood-1"
-                >
-                  <div
-                    class="c8 "
-                  >
-                    <div
-                      class="c9"
-                    >
-                      <button
-                        aria-expanded="true"
-                        aria-haspopup="listbox"
-                        aria-label="Open drop. 2 selected"
-                        class="c10"
-                        id="data-selectMultiple"
-                        type="button"
-                      >
-                        <div
-                          class="c11"
-                        >
-                          <div
-                            class="c12"
-                          >
-                            <input
-                              autocomplete="off"
-                              class="c13 c14"
-                              id="data-selectMultiple__input"
-                              name="selectMultiple"
-                              placeholder="2 selected of 9"
-                              readonly=""
-                              tabindex="-1"
-                              type="text"
-                              value=""
-                            />
-                          </div>
-                          <div
-                            class="c15"
-                          >
-                            <svg
-                              aria-label="FormDown"
-                              class="c16"
-                              viewBox="0 0 24 24"
-                            >
-                              <path
-                                d="m18 9-6 6-6-6"
-                                fill="none"
-                                stroke="#000"
-                                stroke-width="2"
-                              />
-                            </svg>
-                          </div>
-                        </div>
-                        <input
-                          class="c17"
-                          id="data-selectMultiple__input"
-                          name="selectMultiple"
-                          readonly=""
-                          type="text"
-                        />
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div
-                class="c5 "
-              >
-                <label
-                  class="c6"
-                  for="data-selectMultipleSimple"
-                >
-                  SelectMultiple Simple Name
-                </label>
-                <div
-                  class="c7 FormField__FormFieldContentBox-sc-m9hood-1"
-                >
-                  <div
-                    class="c8 "
-                  >
-                    <div
-                      class="c9"
-                    >
-                      <button
-                        aria-expanded="false"
-                        aria-haspopup="listbox"
-                        aria-label="Open drop. 1 selected"
-                        class="c10"
-                        id="data-selectMultipleSimple"
-                        type="button"
-                      >
-                        <div
-                          class="c11"
-                        >
-                          <div
-                            class="c12"
-                          >
-                            <input
-                              autocomplete="off"
-                              class="c13 c14"
-                              id="data-selectMultipleSimple__input"
-                              name="selectMultipleSimple"
-                              placeholder="1 selected of 9"
-                              readonly=""
-                              tabindex="-1"
-                              type="text"
-                              value=""
-                            />
-                          </div>
-                          <div
-                            class="c15"
-                          >
-                            <svg
-                              aria-label="FormDown"
-                              class="c16"
-                              viewBox="0 0 24 24"
-                            >
-                              <path
-                                d="m18 9-6 6-6-6"
-                                fill="none"
-                                stroke="#000"
-                                stroke-width="2"
-                              />
-                            </svg>
-                          </div>
-                        </div>
-                        <input
-                          class="c17"
-                          id="data-selectMultipleSimple__input"
-                          name="selectMultipleSimple"
-                          readonly=""
-                          type="text"
-                        />
-                      </button>
-                      <div
-                        aria-label="Selected options"
-                        aria-multiselectable="true"
-                        class="c9"
-                        role="listbox"
-                      >
-                        <button
-                          aria-label="selectmultiple-simple2 selected"
-                          aria-posinset="1"
-                          aria-selected="true"
-                          aria-setsize="1"
-                          class="c18 c19"
-                          id="selected-selectmultiple-simple2"
-                          role="option"
-                          tabindex="0"
-                          type="button"
-                        >
-                          <label
-                            class="c20"
-                          >
-                            <div
-                              class="c21 c22"
-                            >
-                              <input
-                                checked=""
-                                class="c23"
-                                tabindex="-1"
-                                type="checkbox"
-                              />
-                              <div
-                                class="c24 "
-                              >
-                                <svg
-                                  class="c25"
-                                  preserveAspectRatio="xMidYMid meet"
-                                  viewBox="0 0 24 24"
-                                >
-                                  <path
-                                    d="M6,11.3 L10.3,16 L18,6.2"
-                                    fill="none"
-                                  />
-                                </svg>
-                              </div>
-                            </div>
-                            <div
-                              class="c26"
-                            >
-                              selectmultiple-simple2
-                            </div>
-                          </label>
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div
-                class="c5 "
-              >
-                <label
-                  class="c6"
-                  for="data-checkBoxGroup"
-                >
-                  CheckBoxGroup Name
-                </label>
-                <div
-                  class="c27 FormField__FormFieldContentBox-sc-m9hood-1"
-                >
-                  <div
-                    class="c28 StyledCheckBoxGroup-sc-2nhc5d-0"
-                    id="data-checkBoxGroup"
-                    role="group"
-                  >
-                    <label
-                      class="c29"
-                    >
-                      <div
-                        class="c21 c22"
-                      >
-                        <input
-                          class="c23"
-                          type="checkbox"
-                        />
-                        <div
-                          class="c30 "
-                        />
-                      </div>
-                      <span>
-                        CheckBoxGroup Name 0
-                      </span>
-                    </label>
-                    <div
-                      class="c31"
-                    />
-                    <label
-                      class="c29"
-                    >
-                      <div
-                        class="c21 c22"
-                      >
-                        <input
-                          class="c23"
-                          type="checkbox"
-                        />
-                        <div
-                          class="c30 "
-                        />
-                      </div>
-                      <span>
-                        CheckBoxGroup Name 1
-                      </span>
-                    </label>
-                    <div
-                      class="c31"
-                    />
-                    <label
-                      class="c29"
-                    >
-                      <div
-                        class="c21 c22"
-                      >
-                        <input
-                          checked=""
-                          class="c23"
-                          type="checkbox"
-                        />
-                        <div
-                          class="c24 "
-                        >
-                          <svg
-                            class="c25"
-                            preserveAspectRatio="xMidYMid meet"
-                            viewBox="0 0 24 24"
-                          >
-                            <path
-                              d="M6,11.3 L10.3,16 L18,6.2"
-                              fill="none"
-                            />
-                          </svg>
-                        </div>
-                      </div>
-                      <span>
-                        CheckBoxGroup Name 2
-                      </span>
-                    </label>
-                    <div
-                      class="c31"
-                    />
-                    <label
-                      class="c29"
-                    >
-                      <div
-                        class="c21 c22"
-                      >
-                        <input
-                          class="c23"
-                          type="checkbox"
-                        />
-                        <div
-                          class="c30 "
-                        />
-                      </div>
-                      <span>
-                        CheckBoxGroup Name 3
-                      </span>
-                    </label>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <footer
-            class="c32"
-          >
-            <button
-              class="c33"
-              type="submit"
-            >
-              Apply filters
-            </button>
-          </footer>
-        </div>
-      </form>
-    </div>
-  </div>
-</DocumentFragment>
-`;
-
 exports[`Data toolbar 1`] = `
 .c7 {
   display: inline-block;
@@ -6368,30 +5405,30 @@ exports[`Data uncontrolled search 1`] = `
 
 exports[`Data uncontrolled search 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 drDzQW"
+  class="StyledGrommet-sc-19lkkz7-0 jOTXqz"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 euJJjo"
+    class="StyledBox-sc-13pk1d4-0 boQSCd"
     id="data"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 bXQUPy"
+      class="StyledBox-sc-13pk1d4-0 gQIJlH"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 eJJFaP"
+        class="StyledBox-sc-13pk1d4-0 fiChhC"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 bhFQAJ"
+          class="StyledBox-sc-13pk1d4-0 kUqiAI"
         >
           <div
-            class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 fayRfZ"
+            class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 lapBso"
           >
             <div
-              class="StyledTextInput__StyledIcon-sc-1x30a0s-3 kyOiAV"
+              class="StyledTextInput__StyledIcon-sc-1x30a0s-3 eIYCTs"
             >
               <svg
                 aria-label="Search"
-                class="StyledIcon-sc-ofa7kd-0 hGRmVS"
+                class="StyledIcon-sc-ofa7kd-0 esOrIb"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -6405,7 +5442,7 @@ exports[`Data uncontrolled search 2`] = `
             <input
               aria-label="Search"
               autocomplete="off"
-              class="StyledTextInput-sc-1x30a0s-0 YUgUq"
+              class="StyledTextInput-sc-1x30a0s-0 keJEgr"
               id="data--search"
               name="_search"
               type="search"
@@ -6414,17 +5451,17 @@ exports[`Data uncontrolled search 2`] = `
           </div>
         </div>
         <div
-          class="StyledBox-sc-13pk1d4-0 jIXwRs"
+          class="StyledBox-sc-13pk1d4-0 dblcJZ"
         >
           <button
             aria-label="Open filters"
-            class="StyledButton-sc-323bzc-0 cVWsTZ"
+            class="StyledButton-sc-323bzc-0 iDVCLY"
             id="data--filters-control"
             type="button"
           >
             <svg
               aria-label="Filter"
-              class="StyledIcon-sc-ofa7kd-0 hGRmVS"
+              class="StyledIcon-sc-ofa7kd-0 esOrIb"
               viewBox="0 0 24 24"
             >
               <path
@@ -6439,44 +5476,44 @@ exports[`Data uncontrolled search 2`] = `
       </div>
     </div>
     <span
-      class="StyledText-sc-1sadyjn-0 cfKSmT"
+      class="StyledText-sc-1sadyjn-0 ffwMJa"
     >
       1 result of 4 items
     </span>
     <table
-      class="StyledTable-sc-1m3u5g-6 bUmVhQ StyledDataTable-sc-xrlyjm-0 lfRkCP"
+      class="StyledTable-sc-1m3u5g-6 jgA-DYp StyledDataTable-sc-xrlyjm-0 ddpdve"
     >
       <thead
         class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
       >
         <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 hJqNiB"
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 fwvniA"
         >
           <th
-            class="StyledTable__StyledTableCell-sc-1m3u5g-0 iWTOtn StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 ksxSsW"
+            class="StyledTable__StyledTableCell-sc-1m3u5g-0 cIHjPK StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kOcftT"
             scope="col"
           >
             <div
-              class="StyledBox-sc-13pk1d4-0 iWtlBN"
+              class="StyledBox-sc-13pk1d4-0 bMEJHU"
             />
           </th>
         </tr>
       </thead>
       <tbody
-        class="StyledTable__StyledTableBody-sc-1m3u5g-3 StyledDataTable__StyledDataTableBody-sc-xrlyjm-3 jcOPZD"
+        class="StyledTable__StyledTableBody-sc-1m3u5g-3 StyledDataTable__StyledDataTableBody-sc-xrlyjm-3 ewbFvu"
       >
         <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 hJqNiB"
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 fwvniA"
         >
           <th
-            class="StyledTable__StyledTableCell-sc-1m3u5g-0 ksjtzt StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 ksxSsW"
+            class="StyledTable__StyledTableCell-sc-1m3u5g-0 kDHDOM StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kOcftT"
             scope="row"
           >
             <div
-              class="StyledBox-sc-13pk1d4-0 bhFQAJ"
+              class="StyledBox-sc-13pk1d4-0 kUqiAI"
             >
               <span
-                class="StyledText-sc-1sadyjn-0 fTPnpC"
+                class="StyledText-sc-1sadyjn-0 ZnZrv"
               >
                 aa
               </span>
@@ -7443,30 +6480,30 @@ exports[`Data uncontrolled, when paginated, search should return to page 1 1`] =
 
 exports[`Data uncontrolled, when paginated, search should return to page 1 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 drDzQW"
+  class="StyledGrommet-sc-19lkkz7-0 jOTXqz"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 euJJjo"
+    class="StyledBox-sc-13pk1d4-0 boQSCd"
     id="data"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 bXQUPy"
+      class="StyledBox-sc-13pk1d4-0 gQIJlH"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 eJJFaP"
+        class="StyledBox-sc-13pk1d4-0 fiChhC"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 bhFQAJ"
+          class="StyledBox-sc-13pk1d4-0 kUqiAI"
         >
           <div
-            class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 fayRfZ"
+            class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 lapBso"
           >
             <div
-              class="StyledTextInput__StyledIcon-sc-1x30a0s-3 kyOiAV"
+              class="StyledTextInput__StyledIcon-sc-1x30a0s-3 eIYCTs"
             >
               <svg
                 aria-label="Search"
-                class="StyledIcon-sc-ofa7kd-0 hGRmVS"
+                class="StyledIcon-sc-ofa7kd-0 esOrIb"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -7480,7 +6517,7 @@ exports[`Data uncontrolled, when paginated, search should return to page 1 2`] =
             <input
               aria-label="Search"
               autocomplete="off"
-              class="StyledTextInput-sc-1x30a0s-0 YUgUq"
+              class="StyledTextInput-sc-1x30a0s-0 keJEgr"
               id="data--search"
               name="_search"
               type="search"
@@ -7489,17 +6526,17 @@ exports[`Data uncontrolled, when paginated, search should return to page 1 2`] =
           </div>
         </div>
         <div
-          class="StyledBox-sc-13pk1d4-0 jIXwRs"
+          class="StyledBox-sc-13pk1d4-0 dblcJZ"
         >
           <button
             aria-label="Open filters"
-            class="StyledButton-sc-323bzc-0 cVWsTZ"
+            class="StyledButton-sc-323bzc-0 iDVCLY"
             id="data--filters-control"
             type="button"
           >
             <svg
               aria-label="Filter"
-              class="StyledIcon-sc-ofa7kd-0 hGRmVS"
+              class="StyledIcon-sc-ofa7kd-0 esOrIb"
               viewBox="0 0 24 24"
             >
               <path
@@ -7514,28 +6551,28 @@ exports[`Data uncontrolled, when paginated, search should return to page 1 2`] =
       </div>
     </div>
     <span
-      class="StyledText-sc-1sadyjn-0 cfKSmT"
+      class="StyledText-sc-1sadyjn-0 ffwMJa"
     >
       1 result of 4 items
     </span>
     <table
-      class="StyledTable-sc-1m3u5g-6 bUmVhQ StyledDataTable-sc-xrlyjm-0 lfRkCP"
+      class="StyledTable-sc-1m3u5g-6 jgA-DYp StyledDataTable-sc-xrlyjm-0 ddpdve"
     >
       <thead
         class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
       >
         <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 hJqNiB"
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 fwvniA"
         >
           <th
-            class="StyledTable__StyledTableCell-sc-1m3u5g-0 btFZqx StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 ksxSsW"
+            class="StyledTable__StyledTableCell-sc-1m3u5g-0 cYjDzc StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kOcftT"
             scope="col"
           >
             <div
-              class="StyledBox-sc-13pk1d4-0 iWtlBN"
+              class="StyledBox-sc-13pk1d4-0 bMEJHU"
             >
               <span
-                class="StyledText-sc-1sadyjn-0 fjinKI"
+                class="StyledText-sc-1sadyjn-0 dAFYwl"
               >
                 Name
               </span>
@@ -7544,7 +6581,7 @@ exports[`Data uncontrolled, when paginated, search should return to page 1 2`] =
         </tr>
       </thead>
       <tbody
-        class="StyledTable__StyledTableBody-sc-1m3u5g-3 StyledDataTable__StyledDataTableBody-sc-xrlyjm-3 jcOPZD"
+        class="StyledTable__StyledTableBody-sc-1m3u5g-3 StyledDataTable__StyledDataTableBody-sc-xrlyjm-3 ewbFvu"
       >
         .c1 {
   display: flex;
@@ -7625,28 +6662,28 @@ exports[`Data uncontrolled, when paginated, search should return to page 1 2`] =
       </tbody>
     </table>
     <div
-      class="StyledBox-sc-13pk1d4-0 euJJjo Pagination__StyledPaginationContainer-sc-rnlw6m-0"
+      class="StyledBox-sc-13pk1d4-0 boQSCd Pagination__StyledPaginationContainer-sc-rnlw6m-0"
     >
       <nav
         aria-label="Pagination Navigation"
-        class="StyledBox-sc-13pk1d4-0 euJJjo"
+        class="StyledBox-sc-13pk1d4-0 boQSCd"
       >
         <ul
-          class="StyledBox-sc-13pk1d4-0 kOcABF"
+          class="StyledBox-sc-13pk1d4-0 gMxoNo"
         >
           <li
-            class="StyledPageControl__StyledContainer-sc-1vlfaez-1 bjXWCk"
+            class="StyledPageControl__StyledContainer-sc-1vlfaez-1 TrVEt"
           >
             <button
               aria-disabled="true"
               aria-label="Go to previous page"
-              class="StyledButtonKind-sc-1vhfpnt-0 dlsfPy StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 jrdXPY"
+              class="StyledButtonKind-sc-1vhfpnt-0 cAPKJb StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 bmWDux"
               disabled=""
               type="button"
             >
               <svg
                 aria-label="Previous"
-                class="StyledIcon-sc-ofa7kd-0 hGRmVS"
+                class="StyledIcon-sc-ofa7kd-0 esOrIb"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -7659,30 +6696,30 @@ exports[`Data uncontrolled, when paginated, search should return to page 1 2`] =
             </button>
           </li>
           <div
-            class="StyledBox__StyledBoxGap-sc-13pk1d4-1 fsEMPj"
+            class="StyledBox__StyledBoxGap-sc-13pk1d4-1 cZTPkK"
           />
           <li
-            class="StyledPageControl__StyledContainer-sc-1vlfaez-1 bjXWCk"
+            class="StyledPageControl__StyledContainer-sc-1vlfaez-1 TrVEt"
           >
             <button
               aria-current="page"
               aria-label="Go to page 1"
-              class="StyledButtonKind-sc-1vhfpnt-0 eYeISA StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 jrdXPY"
+              class="StyledButtonKind-sc-1vhfpnt-0 fEywJp StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 bmWDux"
               type="button"
             >
               1
             </button>
           </li>
           <div
-            class="StyledBox__StyledBoxGap-sc-13pk1d4-1 fsEMPj"
+            class="StyledBox__StyledBoxGap-sc-13pk1d4-1 cZTPkK"
           />
           <li
-            class="StyledPageControl__StyledContainer-sc-1vlfaez-1 bjXWCk"
+            class="StyledPageControl__StyledContainer-sc-1vlfaez-1 TrVEt"
           >
             <button
               aria-disabled="true"
               aria-label="Go to next page"
-              class="StyledButtonKind-sc-1vhfpnt-0 dlsfPy StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 jrdXPY"
+              class="StyledButtonKind-sc-1vhfpnt-0 cAPKJb StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 bmWDux"
               disabled=""
               type="button"
             >
@@ -7769,30 +6806,30 @@ exports[`Data uncontrolled, when paginated, search should return to page 1 2`] =
 
 exports[`Data uncontrolled, when paginated, search should return to page 1 3`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 drDzQW"
+  class="StyledGrommet-sc-19lkkz7-0 jOTXqz"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 euJJjo"
+    class="StyledBox-sc-13pk1d4-0 boQSCd"
     id="data"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 bXQUPy"
+      class="StyledBox-sc-13pk1d4-0 gQIJlH"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 eJJFaP"
+        class="StyledBox-sc-13pk1d4-0 fiChhC"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 bhFQAJ"
+          class="StyledBox-sc-13pk1d4-0 kUqiAI"
         >
           <div
-            class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 fayRfZ"
+            class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 lapBso"
           >
             <div
-              class="StyledTextInput__StyledIcon-sc-1x30a0s-3 kyOiAV"
+              class="StyledTextInput__StyledIcon-sc-1x30a0s-3 eIYCTs"
             >
               <svg
                 aria-label="Search"
-                class="StyledIcon-sc-ofa7kd-0 hGRmVS"
+                class="StyledIcon-sc-ofa7kd-0 esOrIb"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -7806,7 +6843,7 @@ exports[`Data uncontrolled, when paginated, search should return to page 1 3`] =
             <input
               aria-label="Search"
               autocomplete="off"
-              class="StyledTextInput-sc-1x30a0s-0 YUgUq"
+              class="StyledTextInput-sc-1x30a0s-0 keJEgr"
               id="data--search"
               name="_search"
               type="search"
@@ -7815,17 +6852,17 @@ exports[`Data uncontrolled, when paginated, search should return to page 1 3`] =
           </div>
         </div>
         <div
-          class="StyledBox-sc-13pk1d4-0 jIXwRs"
+          class="StyledBox-sc-13pk1d4-0 dblcJZ"
         >
           <button
             aria-label="Open filters"
-            class="StyledButton-sc-323bzc-0 cVWsTZ"
+            class="StyledButton-sc-323bzc-0 iDVCLY"
             id="data--filters-control"
             type="button"
           >
             <svg
               aria-label="Filter"
-              class="StyledIcon-sc-ofa7kd-0 hGRmVS"
+              class="StyledIcon-sc-ofa7kd-0 esOrIb"
               viewBox="0 0 24 24"
             >
               <path
@@ -7840,28 +6877,28 @@ exports[`Data uncontrolled, when paginated, search should return to page 1 3`] =
       </div>
     </div>
     <span
-      class="StyledText-sc-1sadyjn-0 cfKSmT"
+      class="StyledText-sc-1sadyjn-0 ffwMJa"
     >
       4 items
     </span>
     <table
-      class="StyledTable-sc-1m3u5g-6 bUmVhQ StyledDataTable-sc-xrlyjm-0 lfRkCP"
+      class="StyledTable-sc-1m3u5g-6 jgA-DYp StyledDataTable-sc-xrlyjm-0 ddpdve"
     >
       <thead
         class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
       >
         <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 hJqNiB"
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 fwvniA"
         >
           <th
-            class="StyledTable__StyledTableCell-sc-1m3u5g-0 btFZqx StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 ksxSsW"
+            class="StyledTable__StyledTableCell-sc-1m3u5g-0 cYjDzc StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kOcftT"
             scope="col"
           >
             <div
-              class="StyledBox-sc-13pk1d4-0 iWtlBN"
+              class="StyledBox-sc-13pk1d4-0 bMEJHU"
             >
               <span
-                class="StyledText-sc-1sadyjn-0 fjinKI"
+                class="StyledText-sc-1sadyjn-0 dAFYwl"
               >
                 Name
               </span>
@@ -7870,20 +6907,20 @@ exports[`Data uncontrolled, when paginated, search should return to page 1 3`] =
         </tr>
       </thead>
       <tbody
-        class="StyledTable__StyledTableBody-sc-1m3u5g-3 StyledDataTable__StyledDataTableBody-sc-xrlyjm-3 jcOPZD"
+        class="StyledTable__StyledTableBody-sc-1m3u5g-3 StyledDataTable__StyledDataTableBody-sc-xrlyjm-3 ewbFvu"
       >
         <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 hJqNiB"
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 fwvniA"
         >
           <th
-            class="StyledTable__StyledTableCell-sc-1m3u5g-0 hKgshT StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 ksxSsW"
+            class="StyledTable__StyledTableCell-sc-1m3u5g-0 crKcSO StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kOcftT"
             scope="row"
           >
             <div
-              class="StyledBox-sc-13pk1d4-0 bhFQAJ"
+              class="StyledBox-sc-13pk1d4-0 kUqiAI"
             >
               <span
-                class="StyledText-sc-1sadyjn-0 fTPnpC"
+                class="StyledText-sc-1sadyjn-0 ZnZrv"
               >
                 aa
               </span>
@@ -7969,28 +7006,28 @@ exports[`Data uncontrolled, when paginated, search should return to page 1 3`] =
       </tbody>
     </table>
     <div
-      class="StyledBox-sc-13pk1d4-0 euJJjo Pagination__StyledPaginationContainer-sc-rnlw6m-0"
+      class="StyledBox-sc-13pk1d4-0 boQSCd Pagination__StyledPaginationContainer-sc-rnlw6m-0"
     >
       <nav
         aria-label="Pagination Navigation"
-        class="StyledBox-sc-13pk1d4-0 euJJjo"
+        class="StyledBox-sc-13pk1d4-0 boQSCd"
       >
         <ul
-          class="StyledBox-sc-13pk1d4-0 kOcABF"
+          class="StyledBox-sc-13pk1d4-0 gMxoNo"
         >
           <li
-            class="StyledPageControl__StyledContainer-sc-1vlfaez-1 bjXWCk"
+            class="StyledPageControl__StyledContainer-sc-1vlfaez-1 TrVEt"
           >
             <button
               aria-disabled="true"
               aria-label="Go to previous page"
-              class="StyledButtonKind-sc-1vhfpnt-0 dlsfPy StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 jrdXPY"
+              class="StyledButtonKind-sc-1vhfpnt-0 cAPKJb StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 bmWDux"
               disabled=""
               type="button"
             >
               <svg
                 aria-label="Previous"
-                class="StyledIcon-sc-ofa7kd-0 hGRmVS"
+                class="StyledIcon-sc-ofa7kd-0 esOrIb"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -8003,29 +7040,29 @@ exports[`Data uncontrolled, when paginated, search should return to page 1 3`] =
             </button>
           </li>
           <div
-            class="StyledBox__StyledBoxGap-sc-13pk1d4-1 fsEMPj"
+            class="StyledBox__StyledBoxGap-sc-13pk1d4-1 cZTPkK"
           />
           <li
-            class="StyledPageControl__StyledContainer-sc-1vlfaez-1 bjXWCk"
+            class="StyledPageControl__StyledContainer-sc-1vlfaez-1 TrVEt"
           >
             <button
               aria-current="page"
               aria-label="Go to page 1"
-              class="StyledButtonKind-sc-1vhfpnt-0 eYeISA StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 jrdXPY"
+              class="StyledButtonKind-sc-1vhfpnt-0 fEywJp StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 bmWDux"
               type="button"
             >
               1
             </button>
           </li>
           <div
-            class="StyledBox__StyledBoxGap-sc-13pk1d4-1 fsEMPj"
+            class="StyledBox__StyledBoxGap-sc-13pk1d4-1 cZTPkK"
           />
           <li
-            class="StyledPageControl__StyledContainer-sc-1vlfaez-1 bjXWCk"
+            class="StyledPageControl__StyledContainer-sc-1vlfaez-1 TrVEt"
           >
             <button
               aria-label="Go to page 2"
-              class="StyledButtonKind-sc-1vhfpnt-0 hsdMMS StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 jrdXPY"
+              class="StyledButtonKind-sc-1vhfpnt-0 dvifRz StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 bmWDux"
               type="button"
             >
               2

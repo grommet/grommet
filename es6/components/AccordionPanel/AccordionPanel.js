@@ -1,7 +1,7 @@
-var _excluded = ["children", "header", "label", "onClick", "onMouseOut", "onMouseOver", "onFocus", "onBlur"];
+var _excluded = ["children", "header", "id", "label", "onClick", "onMouseOut", "onMouseOver", "onFocus", "onBlur"];
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (e.includes(n)) continue; t[n] = r[n]; } return t; }
-import React, { forwardRef, useContext, useMemo, useState, useId } from 'react';
+import React, { forwardRef, useContext, useMemo, useState } from 'react';
 import { normalizeColor, parseMetricToNum } from '../../utils';
 import { Box } from '../Box';
 import { Button } from '../Button';
@@ -10,9 +10,17 @@ import { Heading } from '../Heading';
 import { AccordionContext } from '../Accordion/AccordionContext';
 import { AccordionPanelPropTypes } from './propTypes';
 import { useThemeValue } from '../../utils/useThemeValue';
+
+// Ideally we should use `useId` from react but this is only available
+// in React 18 and we want to keep compatibility with React 17 and 16.
+function getUID() {
+  var timestamp = Date.now() + Math.random();
+  return "grommet-accordion-button-" + timestamp;
+}
 var AccordionPanel = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var children = _ref.children,
     header = _ref.header,
+    id = _ref.id,
     label = _ref.label,
     onClick = _ref.onClick,
     _onMouseOut = _ref.onMouseOut,
@@ -20,7 +28,7 @@ var AccordionPanel = /*#__PURE__*/forwardRef(function (_ref, ref) {
     _onFocus = _ref.onFocus,
     _onBlur = _ref.onBlur,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
-  var uniqueId = useId();
+  var panelButtonId = id ? "grommet_accordion_button_" + id : getUID();
   var _useThemeValue = useThemeValue(),
     theme = _useThemeValue.theme;
   var _useContext = useContext(AccordionContext),
@@ -72,7 +80,7 @@ var AccordionPanel = /*#__PURE__*/forwardRef(function (_ref, ref) {
     border: panelBorder,
     margin: abutMargin
   }, /*#__PURE__*/React.createElement(Button, {
-    id: uniqueId,
+    id: panelButtonId,
     "aria-expanded": active,
     plain: theme.button["default"] ? true : undefined,
     onClick: onPanelChange,
@@ -101,7 +109,8 @@ var AccordionPanel = /*#__PURE__*/forwardRef(function (_ref, ref) {
   }, header || /*#__PURE__*/React.createElement(Box, _extends({
     align: "center",
     direction: "row",
-    justify: "between"
+    justify: "between",
+    id: id
   }, rest), typeof label === 'string' ? /*#__PURE__*/React.createElement(Box, {
     pad: {
       horizontal: 'xsmall'
@@ -122,7 +131,7 @@ var AccordionPanel = /*#__PURE__*/forwardRef(function (_ref, ref) {
   })))), /*#__PURE__*/React.createElement(Box, {
     role: "region",
     border: contentBorder,
-    "aria-labelledby": uniqueId
+    "aria-labelledby": panelButtonId
   }, animate ? /*#__PURE__*/React.createElement(Collapsible, {
     open: active
   }, children) : active && children));

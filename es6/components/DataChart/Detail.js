@@ -1,7 +1,6 @@
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
-import React, { Fragment, useCallback, useContext, useEffect, useMemo, useRef, useState } from 'react';
+import React, { Fragment, useCallback, useMemo, useRef, useState } from 'react';
 import styled from 'styled-components';
-import { AnnounceContext } from '../../contexts';
 import { Box } from '../Box';
 import { Drop } from '../Drop';
 import { Grid } from '../Grid';
@@ -24,7 +23,6 @@ var Detail = function Detail(_ref) {
     seriesStyles = _ref.seriesStyles,
     renderValue = _ref.renderValue,
     thickness = _ref.thickness;
-  var announce = useContext(AnnounceContext);
   var _useThemeValue = useThemeValue(),
     theme = _useThemeValue.theme;
   var _useState = useState(),
@@ -73,19 +71,6 @@ var Detail = function Detail(_ref) {
     };
     return res;
   }, [data.length, detailIndex, horizontalProp]);
-  useEffect(function () {
-    if (detailIndex !== undefined) {
-      var content = series.filter(function (_ref2) {
-        var _data$detailIndex;
-        var property = _ref2.property;
-        return (!activeProperty || activeProperty === property) && (data == null || (_data$detailIndex = data[detailIndex]) == null ? void 0 : _data$detailIndex[property]) !== undefined || axis && axis.x && axis.x.property === property;
-      }).map(function (serie) {
-        var axisValue = horizontalProp ? data[detailIndex][serie.property] : detailIndex;
-        return (serie.label || serie.property) + " " + renderValue(serie, axisValue);
-      }).join(' ');
-      announce(content);
-    }
-  }, [activeProperty, announce, axis, data, detailIndex, horizontalProp, renderValue, series]);
   return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(Keyboard, {
     onLeft: function onLeft() {
       if (detailIndex === undefined) setDetailIndex(data.length - 1);else if (detailIndex > 0) setDetailIndex(detailIndex - 1);
@@ -162,10 +147,10 @@ var Detail = function Detail(_ref) {
     columns: ['auto', 'auto', 'auto'],
     gap: "xsmall",
     align: "center"
-  }, series.filter(function (_ref3) {
-    var _data$detailIndex2;
-    var property = _ref3.property;
-    return (!activeProperty || activeProperty === property) && (data == null || (_data$detailIndex2 = data[detailIndex]) == null ? void 0 : _data$detailIndex2[property]) !== undefined || axis && axis.x && axis.x.property === property;
+  }, series.filter(function (_ref2) {
+    var _data$detailIndex;
+    var property = _ref2.property;
+    return (!activeProperty || activeProperty === property) && (data == null || (_data$detailIndex = data[detailIndex]) == null ? void 0 : _data$detailIndex[property]) !== undefined || axis && axis.x && axis.x.property === property;
   }).map(function (serie) {
     var propertyStyle = seriesStyles[serie.property];
     var axisValue = horizontalProp ? data[detailIndex][serie.property] : detailIndex;
