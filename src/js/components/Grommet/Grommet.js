@@ -1,4 +1,4 @@
-import React, { forwardRef, useEffect, useMemo, useState } from 'react';
+import React, { forwardRef, useEffect, useMemo, useRef, useState } from 'react';
 import { createGlobalStyle } from 'styled-components';
 
 import {
@@ -64,7 +64,6 @@ const Grommet = forwardRef((props, ref) => {
   } = props;
   const { background, dir, themeMode, userAgent } = props;
   const [stateResponsive, setResponsive] = useState();
-  const [roots, setRoots] = useState([]);
 
   const theme = useMemo(() => {
     const nextTheme = deepMerge(baseTheme, themeProp || {});
@@ -146,14 +145,18 @@ const Grommet = forwardRef((props, ref) => {
 
   const grommetRef = useForwardedRef(ref);
 
+  // track open FocusedContainers in a global array to manage
+  // focus event listeners for trapFocus
+  const roots = useRef([]);
   useEffect(() => {
-    if (grommetRef.current) setRoots([grommetRef.current]);
+    if (grommetRef.current) roots.current.push(grommetRef.current);
   }, [grommetRef]);
+  const rootsContextValue = useMemo(() => ({ roots }), []);
 
   return (
     <ThemeContext.Provider value={theme}>
       <ResponsiveContext.Provider value={responsive}>
-        <RootsContext.Provider value={roots}>
+        <RootsContext.Provider value={rootsContextValue}>
           <ContainerTargetContext.Provider value={containerTarget}>
             <OptionsContext.Provider value={options}>
               <MessageContext.Provider value={messages}>
