@@ -20,7 +20,7 @@ const customTheme = {
 
 describe('Accordion', () => {
   beforeEach(() => {
-    // Mocked values so we get consistent snapshots. I just chose
+    // Mocked values so we get consistent snapshots. I chose
     // consecutive numbers for the mocked values.
     jest.spyOn(Date, 'now').mockImplementation(() => 12345678);
     jest.spyOn(global.Math, 'random').mockReturnValue(0.123456789);
