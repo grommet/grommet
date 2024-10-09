@@ -4,10 +4,10 @@ import { makeNodeFocusable, makeNodeUnfocusable } from '../utils';
 import { RootsContext, useRoots } from '../contexts/RootsContext';
 
 const isFocusable = (element) => {
-  if (element.tabIndex < 0 || element.disabled) {
+  if (element?.tabIndex < 0 || element?.disabled) {
     return false;
   }
-  switch (element.nodeName) {
+  switch (element?.nodeName) {
     case 'A':
       return !!element.href && element.rel !== 'ignore';
     case 'INPUT':
