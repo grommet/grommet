@@ -108,6 +108,7 @@ exports[`StarRating StarRating has default value 1`] = `
       <label
         class="c2"
         for="1"
+        tabindex="0"
       >
         <div
           class="c3 "
@@ -139,6 +140,7 @@ exports[`StarRating StarRating has default value 1`] = `
       <label
         class="c2"
         for="2"
+        tabindex="0"
       >
         <div
           class="c3 "
@@ -147,7 +149,7 @@ exports[`StarRating StarRating has default value 1`] = `
             class="c4"
             id="2"
             name="test"
-            tabindex="-1"
+            tabindex="0"
             type="radio"
             value="2"
           />
@@ -170,6 +172,7 @@ exports[`StarRating StarRating has default value 1`] = `
       <label
         class="c2"
         for="3"
+        tabindex="0"
       >
         <div
           class="c3 "
@@ -178,7 +181,7 @@ exports[`StarRating StarRating has default value 1`] = `
             class="c4"
             id="3"
             name="test"
-            tabindex="-1"
+            tabindex="0"
             type="radio"
             value="3"
           />
@@ -201,6 +204,7 @@ exports[`StarRating StarRating has default value 1`] = `
       <label
         class="c2"
         for="4"
+        tabindex="0"
       >
         <div
           class="c3 "
@@ -209,7 +213,7 @@ exports[`StarRating StarRating has default value 1`] = `
             class="c4"
             id="4"
             name="test"
-            tabindex="-1"
+            tabindex="0"
             type="radio"
             value="4"
           />
@@ -233,6 +237,7 @@ exports[`StarRating StarRating has default value 1`] = `
       <label
         class="c2"
         for="5"
+        tabindex="0"
       >
         <div
           class="c3 "
@@ -241,7 +246,7 @@ exports[`StarRating StarRating has default value 1`] = `
             class="c4"
             id="5"
             name="test"
-            tabindex="-1"
+            tabindex="0"
             type="radio"
             value="5"
           />
@@ -373,6 +378,7 @@ exports[`StarRating StarRating is present 1`] = `
       <label
         class="c2"
         for="1"
+        tabindex="0"
       >
         <div
           class="c3 "
@@ -405,6 +411,7 @@ exports[`StarRating StarRating is present 1`] = `
       <label
         class="c2"
         for="2"
+        tabindex="0"
       >
         <div
           class="c3 "
@@ -413,7 +420,7 @@ exports[`StarRating StarRating is present 1`] = `
             class="c4"
             id="2"
             name="test"
-            tabindex="-1"
+            tabindex="0"
             type="radio"
             value="2"
           />
@@ -437,6 +444,7 @@ exports[`StarRating StarRating is present 1`] = `
       <label
         class="c2"
         for="3"
+        tabindex="0"
       >
         <div
           class="c3 "
@@ -445,7 +453,7 @@ exports[`StarRating StarRating is present 1`] = `
             class="c4"
             id="3"
             name="test"
-            tabindex="-1"
+            tabindex="0"
             type="radio"
             value="3"
           />
@@ -469,6 +477,7 @@ exports[`StarRating StarRating is present 1`] = `
       <label
         class="c2"
         for="4"
+        tabindex="0"
       >
         <div
           class="c3 "
@@ -477,7 +486,7 @@ exports[`StarRating StarRating is present 1`] = `
             class="c4"
             id="4"
             name="test"
-            tabindex="-1"
+            tabindex="0"
             type="radio"
             value="4"
           />
@@ -501,6 +510,7 @@ exports[`StarRating StarRating is present 1`] = `
       <label
         class="c2"
         for="5"
+        tabindex="0"
       >
         <div
           class="c3 "
@@ -509,7 +519,7 @@ exports[`StarRating StarRating is present 1`] = `
             class="c4"
             id="5"
             name="test"
-            tabindex="-1"
+            tabindex="0"
             type="radio"
             value="5"
           />
@@ -640,6 +650,7 @@ exports[`StarRating StarRating should have no accessibility violations 1`] = `
       <label
         class="c2"
         for="1"
+        tabindex="0"
       >
         <div
           class="c3 "
@@ -672,6 +683,7 @@ exports[`StarRating StarRating should have no accessibility violations 1`] = `
       <label
         class="c2"
         for="2"
+        tabindex="0"
       >
         <div
           class="c3 "
@@ -680,7 +692,7 @@ exports[`StarRating StarRating should have no accessibility violations 1`] = `
             class="c4"
             id="2"
             name="test"
-            tabindex="-1"
+            tabindex="0"
             type="radio"
             value="2"
           />
@@ -704,6 +716,7 @@ exports[`StarRating StarRating should have no accessibility violations 1`] = `
       <label
         class="c2"
         for="3"
+        tabindex="0"
       >
         <div
           class="c3 "
@@ -712,7 +725,7 @@ exports[`StarRating StarRating should have no accessibility violations 1`] = `
             class="c4"
             id="3"
             name="test"
-            tabindex="-1"
+            tabindex="0"
             type="radio"
             value="3"
           />
@@ -736,6 +749,7 @@ exports[`StarRating StarRating should have no accessibility violations 1`] = `
       <label
         class="c2"
         for="4"
+        tabindex="0"
       >
         <div
           class="c3 "
@@ -744,7 +758,7 @@ exports[`StarRating StarRating should have no accessibility violations 1`] = `
             class="c4"
             id="4"
             name="test"
-            tabindex="-1"
+            tabindex="0"
             type="radio"
             value="4"
           />
@@ -768,6 +782,7 @@ exports[`StarRating StarRating should have no accessibility violations 1`] = `
       <label
         class="c2"
         for="5"
+        tabindex="0"
       >
         <div
           class="c3 "
@@ -776,7 +791,7 @@ exports[`StarRating StarRating should have no accessibility violations 1`] = `
             class="c4"
             id="5"
             name="test"
-            tabindex="-1"
+            tabindex="0"
             type="radio"
             value="5"
           />
@@ -894,6 +909,7 @@ exports[`StarRating renders without grommet wrapper 1`] = `
   <label
     class="c1"
     for="1"
+    tabindex="0"
   >
     <div
       class="c2 "
@@ -926,6 +942,7 @@ exports[`StarRating renders without grommet wrapper 1`] = `
   <label
     class="c1"
     for="2"
+    tabindex="0"
   >
     <div
       class="c2 "
@@ -934,7 +951,7 @@ exports[`StarRating renders without grommet wrapper 1`] = `
         class="c3"
         id="2"
         name="test"
-        tabindex="-1"
+        tabindex="0"
         type="radio"
         value="2"
       />
@@ -958,6 +975,7 @@ exports[`StarRating renders without grommet wrapper 1`] = `
   <label
     class="c1"
     for="3"
+    tabindex="0"
   >
     <div
       class="c2 "
@@ -966,7 +984,7 @@ exports[`StarRating renders without grommet wrapper 1`] = `
         class="c3"
         id="3"
         name="test"
-        tabindex="-1"
+        tabindex="0"
         type="radio"
         value="3"
       />
@@ -990,6 +1008,7 @@ exports[`StarRating renders without grommet wrapper 1`] = `
   <label
     class="c1"
     for="4"
+    tabindex="0"
   >
     <div
       class="c2 "
@@ -998,7 +1017,7 @@ exports[`StarRating renders without grommet wrapper 1`] = `
         class="c3"
         id="4"
         name="test"
-        tabindex="-1"
+        tabindex="0"
         type="radio"
         value="4"
       />
@@ -1022,6 +1041,7 @@ exports[`StarRating renders without grommet wrapper 1`] = `
   <label
     class="c1"
     for="5"
+    tabindex="0"
   >
     <div
       class="c2 "
@@ -1030,7 +1050,7 @@ exports[`StarRating renders without grommet wrapper 1`] = `
         class="c3"
         id="5"
         name="test"
-        tabindex="-1"
+        tabindex="0"
         type="radio"
         value="5"
       />
@@ -1276,6 +1296,7 @@ exports[`StarRating value for rating 1`] = `
           <label
             class="c5"
             for="1"
+            tabindex="0"
           >
             <div
               class="c6 "
@@ -1308,6 +1329,7 @@ exports[`StarRating value for rating 1`] = `
           <label
             class="c5"
             for="2"
+            tabindex="0"
           >
             <div
               class="c6 "
@@ -1316,7 +1338,7 @@ exports[`StarRating value for rating 1`] = `
                 class="c7"
                 id="2"
                 name="test"
-                tabindex="-1"
+                tabindex="0"
                 type="radio"
                 value="2"
               />
@@ -1340,6 +1362,7 @@ exports[`StarRating value for rating 1`] = `
           <label
             class="c5"
             for="3"
+            tabindex="0"
           >
             <div
               class="c6 "
@@ -1348,7 +1371,7 @@ exports[`StarRating value for rating 1`] = `
                 class="c7"
                 id="3"
                 name="test"
-                tabindex="-1"
+                tabindex="0"
                 type="radio"
                 value="3"
               />
@@ -1372,6 +1395,7 @@ exports[`StarRating value for rating 1`] = `
           <label
             class="c5"
             for="4"
+            tabindex="0"
           >
             <div
               class="c6 "
@@ -1380,7 +1404,7 @@ exports[`StarRating value for rating 1`] = `
                 class="c7"
                 id="4"
                 name="test"
-                tabindex="-1"
+                tabindex="0"
                 type="radio"
                 value="4"
               />
@@ -1404,6 +1428,7 @@ exports[`StarRating value for rating 1`] = `
           <label
             class="c5"
             for="5"
+            tabindex="0"
           >
             <div
               class="c6 "
@@ -1412,7 +1437,7 @@ exports[`StarRating value for rating 1`] = `
                 class="c7"
                 id="5"
                 name="test"
-                tabindex="-1"
+                tabindex="0"
                 type="radio"
                 value="5"
               />

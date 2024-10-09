@@ -109,6 +109,7 @@ exports[`ThumbsRating StarRating is present 1`] = `
       <label
         class="c2"
         for="like"
+        tabindex="0"
       >
         <div
           class="c3 "
@@ -141,6 +142,7 @@ exports[`ThumbsRating StarRating is present 1`] = `
       <label
         class="c2"
         for="dislike"
+        tabindex="0"
       >
         <div
           class="c3 "
@@ -149,7 +151,7 @@ exports[`ThumbsRating StarRating is present 1`] = `
             class="c4"
             id="dislike"
             name="test"
-            tabindex="-1"
+            tabindex="0"
             type="radio"
             value="dislike"
           />
@@ -266,6 +268,7 @@ exports[`ThumbsRating StarRating renders outside grommet wrapper 1`] = `
   <label
     class="c1"
     for="like"
+    tabindex="0"
   >
     <div
       class="c2 "
@@ -298,6 +301,7 @@ exports[`ThumbsRating StarRating renders outside grommet wrapper 1`] = `
   <label
     class="c1"
     for="dislike"
+    tabindex="0"
   >
     <div
       class="c2 "
@@ -306,7 +310,7 @@ exports[`ThumbsRating StarRating renders outside grommet wrapper 1`] = `
         class="c3"
         id="dislike"
         name="test"
-        tabindex="-1"
+        tabindex="0"
         type="radio"
         value="dislike"
       />
@@ -435,6 +439,7 @@ exports[`ThumbsRating StarRating should have no accessibility violations 1`] = `
       <label
         class="c2"
         for="like"
+        tabindex="0"
       >
         <div
           class="c3 "
@@ -467,6 +472,7 @@ exports[`ThumbsRating StarRating should have no accessibility violations 1`] = `
       <label
         class="c2"
         for="dislike"
+        tabindex="0"
       >
         <div
           class="c3 "
@@ -475,7 +481,7 @@ exports[`ThumbsRating StarRating should have no accessibility violations 1`] = `
             class="c4"
             id="dislike"
             name="test"
-            tabindex="-1"
+            tabindex="0"
             type="radio"
             value="dislike"
           />
@@ -723,6 +729,7 @@ exports[`ThumbsRating value for thumbs 1`] = `
           <label
             class="c5"
             for="like"
+            tabindex="0"
           >
             <div
               class="c6 "
@@ -755,6 +762,7 @@ exports[`ThumbsRating value for thumbs 1`] = `
           <label
             class="c5"
             for="dislike"
+            tabindex="0"
           >
             <div
               class="c6 "
@@ -763,7 +771,7 @@ exports[`ThumbsRating value for thumbs 1`] = `
                 class="c7"
                 id="dislike"
                 name="test"
-                tabindex="-1"
+                tabindex="0"
                 type="radio"
                 value="dislike"
               />
