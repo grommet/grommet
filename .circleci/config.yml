@@ -189,7 +189,7 @@ workflows:
           filters:
             branches:
               only:
-                - react-compatibility
+                - master
       - publish:
           context:
             - grommet
