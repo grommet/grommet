@@ -78,6 +78,7 @@ exports[`Markdown renders 1`] = `
   padding: 0;
   font-weight: inherit;
   text-align: inherit;
+  height: max-content;
   text-align: start;
   border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   padding-left: 12px;
@@ -86,11 +87,12 @@ exports[`Markdown renders 1`] = `
   padding-bottom: 6px;
 }
 
-.c10 {
+.c11 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
   text-align: inherit;
+  height: max-content;
   text-align: start;
   padding-left: 12px;
   padding-right: 12px;
@@ -98,10 +100,15 @@ exports[`Markdown renders 1`] = `
   padding-bottom: 6px;
 }
 
+.c10 {
+  height: 100%;
+}
+
 .c7 {
   border-spacing: 0;
   border-collapse: collapse;
   width: inherit;
+  height: 100%;
 }
 
 @media only screen and (max-width: 768px) {
@@ -235,27 +242,27 @@ exports[`Markdown renders 1`] = `
         </tr>
       </thead>
       <tbody
-        class="StyledTable__StyledTableBody-sc-1m3u5g-3"
+        class="c10"
       >
         <tr
           class="StyledTable__StyledTableRow-sc-1m3u5g-2"
         >
           <td
-            class="c10"
+            class="c11"
           >
             <em>
               Still
             </em>
           </td>
           <td
-            class="c10"
+            class="c11"
           >
             <code>
               renders
             </code>
           </td>
           <td
-            class="c10"
+            class="c11"
           >
             <strong>
               nicely
@@ -266,17 +273,17 @@ exports[`Markdown renders 1`] = `
           class="StyledTable__StyledTableRow-sc-1m3u5g-2"
         >
           <td
-            class="c10"
+            class="c11"
           >
             1
           </td>
           <td
-            class="c10"
+            class="c11"
           >
             2
           </td>
           <td
-            class="c10"
+            class="c11"
           >
             3
           </td>
@@ -355,6 +362,7 @@ exports[`Markdown renders without grommet wrapper 1`] = `
   padding: 0;
   font-weight: inherit;
   text-align: inherit;
+  height: max-content;
   text-align: start;
   border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   padding-left: 12px;
@@ -363,11 +371,12 @@ exports[`Markdown renders without grommet wrapper 1`] = `
   padding-bottom: 6px;
 }
 
-.c9 {
+.c10 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
   text-align: inherit;
+  height: max-content;
   text-align: start;
   padding-left: 12px;
   padding-right: 12px;
@@ -375,10 +384,15 @@ exports[`Markdown renders without grommet wrapper 1`] = `
   padding-bottom: 6px;
 }
 
+.c9 {
+  height: 100%;
+}
+
 .c6 {
   border-spacing: 0;
   border-collapse: collapse;
   width: inherit;
+  height: 100%;
 }
 
 @media only screen and (max-width: 768px) {
@@ -509,27 +523,27 @@ exports[`Markdown renders without grommet wrapper 1`] = `
       </tr>
     </thead>
     <tbody
-      class="StyledTable__StyledTableBody-sc-1m3u5g-3"
+      class="c9"
     >
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2"
       >
         <td
-          class="c9"
+          class="c10"
         >
           <em>
             Still
           </em>
         </td>
         <td
-          class="c9"
+          class="c10"
         >
           <code>
             renders
           </code>
         </td>
         <td
-          class="c9"
+          class="c10"
         >
           <strong>
             nicely
@@ -540,17 +554,17 @@ exports[`Markdown renders without grommet wrapper 1`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2"
       >
         <td
-          class="c9"
+          class="c10"
         >
           1
         </td>
         <td
-          class="c9"
+          class="c10"
         >
           2
         </td>
         <td
-          class="c9"
+          class="c10"
         >
           3
         </td>
@@ -644,6 +658,7 @@ exports[`wrapper 1`] = `
   padding: 0;
   font-weight: inherit;
   text-align: inherit;
+  height: max-content;
   text-align: start;
   border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   padding-left: 12px;
@@ -652,11 +667,12 @@ exports[`wrapper 1`] = `
   padding-bottom: 6px;
 }
 
-.c11 {
+.c12 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
   text-align: inherit;
+  height: max-content;
   text-align: start;
   padding-left: 12px;
   padding-right: 12px;
@@ -664,10 +680,15 @@ exports[`wrapper 1`] = `
   padding-bottom: 6px;
 }
 
+.c11 {
+  height: 100%;
+}
+
 .c9 {
   border-spacing: 0;
   border-collapse: collapse;
   width: inherit;
+  height: 100%;
 }
 
 @media only screen and (max-width: 768px) {
@@ -834,27 +855,27 @@ exports[`wrapper 1`] = `
           </tr>
         </thead>
         <tbody
-          class="StyledTable__StyledTableBody-sc-1m3u5g-3"
+          class="c11"
         >
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2"
           >
             <td
-              class="c11"
+              class="c12"
             >
               <em>
                 Still
               </em>
             </td>
             <td
-              class="c11"
+              class="c12"
             >
               <code>
                 renders
               </code>
             </td>
             <td
-              class="c11"
+              class="c12"
             >
               <strong>
                 nicely
@@ -865,17 +886,17 @@ exports[`wrapper 1`] = `
             class="StyledTable__StyledTableRow-sc-1m3u5g-2"
           >
             <td
-              class="c11"
+              class="c12"
             >
               1
             </td>
             <td
-              class="c11"
+              class="c12"
             >
               2
             </td>
             <td
-              class="c11"
+              class="c12"
             >
               3
             </td>
