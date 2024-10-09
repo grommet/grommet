@@ -96,6 +96,7 @@ exports[`RadioButtonGroup adding additional props 1`] = `
     <label
       class="c2"
       for="ONE"
+      tabindex="0"
     >
       <div
         class="c3 "
@@ -119,6 +120,7 @@ exports[`RadioButtonGroup adding additional props 1`] = `
     <label
       class="c2"
       for="TWO"
+      tabindex="0"
     >
       <div
         class="c3 "
@@ -127,7 +129,7 @@ exports[`RadioButtonGroup adding additional props 1`] = `
           class="c4"
           id="TWO"
           name="test"
-          tabindex="-1"
+          tabindex="0"
           type="radio"
           value="2"
         />
@@ -186,7 +188,7 @@ exports[`RadioButtonGroup boolean options 1`] = `
   border-radius: 100%;
 }
 
-.c8 {
+.c9 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -201,7 +203,7 @@ exports[`RadioButtonGroup boolean options 1`] = `
   border-radius: 100%;
 }
 
-.c7 {
+.c8 {
   flex: 0 0 auto;
   align-self: stretch;
   height: 12px;
@@ -230,11 +232,31 @@ exports[`RadioButtonGroup boolean options 1`] = `
   cursor: pointer;
 }
 
-.c6 {
+.c7 {
   box-sizing: border-box;
   width: 24px;
   height: 24px;
   fill: #7D4CDB;
+}
+
+.c6 {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c6 >circle,
+.c6 >ellipse,
+.c6 >line,
+.c6 >path,
+.c6 >polygon,
+.c6 >polyline,
+.c6 >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c6 ::-moz-focus-inner {
+  border: 0;
 }
 
 @media only screen and (max-width: 768px) {
@@ -250,13 +272,13 @@ exports[`RadioButtonGroup boolean options 1`] = `
 }
 
 @media only screen and (max-width: 768px) {
-  .c8 {
+  .c9 {
     border: solid 2px rgba(0, 0, 0, 0.15);
   }
 }
 
 @media only screen and (max-width: 768px) {
-  .c7 {
+  .c8 {
     height: 6px;
   }
 }
@@ -271,6 +293,7 @@ exports[`RadioButtonGroup boolean options 1`] = `
     <label
       class="c2"
       for="true"
+      tabindex="0"
     >
       <div
         class="c3 "
@@ -285,10 +308,10 @@ exports[`RadioButtonGroup boolean options 1`] = `
           value="true"
         />
         <div
-          class="c5 "
+          class="c5 c6"
         >
           <svg
-            class="c6"
+            class="c7"
             preserveAspectRatio="xMidYMid meet"
             viewBox="0 0 24 24"
           >
@@ -307,11 +330,12 @@ exports[`RadioButtonGroup boolean options 1`] = `
       </span>
     </label>
     <div
-      class="c7"
+      class="c8"
     />
     <label
       class="c2"
       for="false"
+      tabindex="0"
     >
       <div
         class="c3 "
@@ -320,12 +344,12 @@ exports[`RadioButtonGroup boolean options 1`] = `
           class="c4"
           id="false"
           name="test"
-          tabindex="-1"
+          tabindex="0"
           type="radio"
           value="false"
         />
         <div
-          class="c8 "
+          class="c9 "
         />
       </div>
       <span
@@ -431,6 +455,7 @@ exports[`RadioButtonGroup children 1`] = `
     <label
       class="c2"
       for="one"
+      tabindex="0"
     >
       <div
         class="c3 "
@@ -455,6 +480,7 @@ exports[`RadioButtonGroup children 1`] = `
     <label
       class="c2"
       for="two"
+      tabindex="0"
     >
       <div
         class="c3 "
@@ -463,7 +489,7 @@ exports[`RadioButtonGroup children 1`] = `
           class="c4"
           id="two"
           name="test"
-          tabindex="-1"
+          tabindex="0"
           type="radio"
           value="two"
         />
@@ -522,7 +548,7 @@ exports[`RadioButtonGroup defaultValue 1`] = `
   border-radius: 100%;
 }
 
-.c8 {
+.c9 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -537,7 +563,7 @@ exports[`RadioButtonGroup defaultValue 1`] = `
   border-radius: 100%;
 }
 
-.c7 {
+.c8 {
   flex: 0 0 auto;
   align-self: stretch;
   height: 12px;
@@ -566,11 +592,31 @@ exports[`RadioButtonGroup defaultValue 1`] = `
   cursor: pointer;
 }
 
-.c6 {
+.c7 {
   box-sizing: border-box;
   width: 24px;
   height: 24px;
   fill: #7D4CDB;
+}
+
+.c6 {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c6 >circle,
+.c6 >ellipse,
+.c6 >line,
+.c6 >path,
+.c6 >polygon,
+.c6 >polyline,
+.c6 >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c6 ::-moz-focus-inner {
+  border: 0;
 }
 
 @media only screen and (max-width: 768px) {
@@ -586,13 +632,13 @@ exports[`RadioButtonGroup defaultValue 1`] = `
 }
 
 @media only screen and (max-width: 768px) {
-  .c8 {
+  .c9 {
     border: solid 2px rgba(0, 0, 0, 0.15);
   }
 }
 
 @media only screen and (max-width: 768px) {
-  .c7 {
+  .c8 {
     height: 6px;
   }
 }
@@ -608,6 +654,7 @@ exports[`RadioButtonGroup defaultValue 1`] = `
       <label
         class="c2"
         for="one"
+        tabindex="0"
       >
         <div
           class="c3 "
@@ -622,10 +669,10 @@ exports[`RadioButtonGroup defaultValue 1`] = `
             value="one"
           />
           <div
-            class="c5 "
+            class="c5 c6"
           >
             <svg
-              class="c6"
+              class="c7"
               preserveAspectRatio="xMidYMid meet"
               viewBox="0 0 24 24"
             >
@@ -644,11 +691,12 @@ exports[`RadioButtonGroup defaultValue 1`] = `
         </span>
       </label>
       <div
-        class="c7"
+        class="c8"
       />
       <label
         class="c2"
         for="two"
+        tabindex="0"
       >
         <div
           class="c3 "
@@ -657,12 +705,12 @@ exports[`RadioButtonGroup defaultValue 1`] = `
             class="c4"
             id="two"
             name="test"
-            tabindex="-1"
+            tabindex="0"
             type="radio"
             value="two"
           />
           <div
-            class="c8 "
+            class="c9 "
           />
         </div>
         <span
@@ -722,7 +770,7 @@ exports[`RadioButtonGroup number options 1`] = `
   border-radius: 100%;
 }
 
-.c8 {
+.c9 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -737,7 +785,7 @@ exports[`RadioButtonGroup number options 1`] = `
   border-radius: 100%;
 }
 
-.c7 {
+.c8 {
   flex: 0 0 auto;
   align-self: stretch;
   height: 12px;
@@ -766,11 +814,31 @@ exports[`RadioButtonGroup number options 1`] = `
   cursor: pointer;
 }
 
-.c6 {
+.c7 {
   box-sizing: border-box;
   width: 24px;
   height: 24px;
   fill: #7D4CDB;
+}
+
+.c6 {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c6 >circle,
+.c6 >ellipse,
+.c6 >line,
+.c6 >path,
+.c6 >polygon,
+.c6 >polyline,
+.c6 >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c6 ::-moz-focus-inner {
+  border: 0;
 }
 
 @media only screen and (max-width: 768px) {
@@ -786,13 +854,13 @@ exports[`RadioButtonGroup number options 1`] = `
 }
 
 @media only screen and (max-width: 768px) {
-  .c8 {
+  .c9 {
     border: solid 2px rgba(0, 0, 0, 0.15);
   }
 }
 
 @media only screen and (max-width: 768px) {
-  .c7 {
+  .c8 {
     height: 6px;
   }
 }
@@ -807,6 +875,7 @@ exports[`RadioButtonGroup number options 1`] = `
     <label
       class="c2"
       for="1"
+      tabindex="0"
     >
       <div
         class="c3 "
@@ -821,10 +890,10 @@ exports[`RadioButtonGroup number options 1`] = `
           value="1"
         />
         <div
-          class="c5 "
+          class="c5 c6"
         >
           <svg
-            class="c6"
+            class="c7"
             preserveAspectRatio="xMidYMid meet"
             viewBox="0 0 24 24"
           >
@@ -843,11 +912,12 @@ exports[`RadioButtonGroup number options 1`] = `
       </span>
     </label>
     <div
-      class="c7"
+      class="c8"
     />
     <label
       class="c2"
       for="2"
+      tabindex="0"
     >
       <div
         class="c3 "
@@ -856,12 +926,12 @@ exports[`RadioButtonGroup number options 1`] = `
           class="c4"
           id="2"
           name="test"
-          tabindex="-1"
+          tabindex="0"
           type="radio"
           value="2"
         />
         <div
-          class="c8 "
+          class="c9 "
         />
       </div>
       <span
@@ -977,6 +1047,7 @@ exports[`RadioButtonGroup object options 1`] = `
     <label
       class="c2"
       for="onE"
+      tabindex="0"
     >
       <div
         class="c3 "
@@ -1005,6 +1076,7 @@ exports[`RadioButtonGroup object options 1`] = `
     <label
       class="c2"
       for="twO"
+      tabindex="0"
     >
       <div
         class="c3 "
@@ -1013,7 +1085,7 @@ exports[`RadioButtonGroup object options 1`] = `
           class="c4"
           id="twO"
           name="test"
-          tabindex="-1"
+          tabindex="0"
           type="radio"
           value="two"
         />
@@ -1150,6 +1222,7 @@ exports[`RadioButtonGroup object options disabled 1`] = `
     <label
       class="c2"
       disabled=""
+      tabindex="-1"
     >
       <div
         class="c3 "
@@ -1158,7 +1231,7 @@ exports[`RadioButtonGroup object options disabled 1`] = `
           class="c4"
           disabled=""
           name="test"
-          tabindex="0"
+          tabindex="-1"
           type="radio"
           value="one"
         />
@@ -1172,6 +1245,7 @@ exports[`RadioButtonGroup object options disabled 1`] = `
     />
     <label
       class="c7"
+      tabindex="0"
     >
       <div
         class="c3 "
@@ -1179,7 +1253,7 @@ exports[`RadioButtonGroup object options disabled 1`] = `
         <input
           class="c8"
           name="test"
-          tabindex="-1"
+          tabindex="0"
           type="radio"
           value="two"
         />
@@ -1281,11 +1355,31 @@ exports[`RadioButtonGroup object options just value 1`] = `
   cursor: pointer;
 }
 
-.c8 {
+.c9 {
   box-sizing: border-box;
   width: 24px;
   height: 24px;
   fill: #7D4CDB;
+}
+
+.c8 {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c8 >circle,
+.c8 >ellipse,
+.c8 >line,
+.c8 >path,
+.c8 >polygon,
+.c8 >polyline,
+.c8 >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c8 ::-moz-focus-inner {
+  border: 0;
 }
 
 @media only screen and (max-width: 768px) {
@@ -1315,6 +1409,7 @@ exports[`RadioButtonGroup object options just value 1`] = `
   >
     <label
       class="c2"
+      tabindex="0"
     >
       <div
         class="c3 "
@@ -1322,7 +1417,7 @@ exports[`RadioButtonGroup object options just value 1`] = `
         <input
           class="c4"
           name="test"
-          tabindex="-1"
+          tabindex="0"
           type="radio"
           value="one"
         />
@@ -1336,6 +1431,7 @@ exports[`RadioButtonGroup object options just value 1`] = `
     />
     <label
       class="c2"
+      tabindex="0"
     >
       <div
         class="c3 "
@@ -1349,10 +1445,10 @@ exports[`RadioButtonGroup object options just value 1`] = `
           value="two"
         />
         <div
-          class="c7 "
+          class="c7 c8"
         >
           <svg
-            class="c8"
+            class="c9"
             preserveAspectRatio="xMidYMid meet"
             viewBox="0 0 24 24"
           >
@@ -1405,7 +1501,7 @@ exports[`RadioButtonGroup renders outside grommet wrapper 1`] = `
   border-radius: 100%;
 }
 
-.c7 {
+.c8 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -1420,7 +1516,7 @@ exports[`RadioButtonGroup renders outside grommet wrapper 1`] = `
   border-radius: 100%;
 }
 
-.c6 {
+.c7 {
   flex: 0 0 auto;
   align-self: stretch;
   height: 12px;
@@ -1449,11 +1545,31 @@ exports[`RadioButtonGroup renders outside grommet wrapper 1`] = `
   cursor: pointer;
 }
 
-.c5 {
+.c6 {
   box-sizing: border-box;
   width: 24px;
   height: 24px;
   fill: #7D4CDB;
+}
+
+.c5 {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5 >circle,
+.c5 >ellipse,
+.c5 >line,
+.c5 >path,
+.c5 >polygon,
+.c5 >polyline,
+.c5 >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5 ::-moz-focus-inner {
+  border: 0;
 }
 
 @media only screen and (max-width: 768px) {
@@ -1469,13 +1585,13 @@ exports[`RadioButtonGroup renders outside grommet wrapper 1`] = `
 }
 
 @media only screen and (max-width: 768px) {
-  .c7 {
+  .c8 {
     border: solid 2px rgba(0, 0, 0, 0.15);
   }
 }
 
 @media only screen and (max-width: 768px) {
-  .c6 {
+  .c7 {
     height: 6px;
   }
 }
@@ -1487,6 +1603,7 @@ exports[`RadioButtonGroup renders outside grommet wrapper 1`] = `
   <label
     class="c1"
     for="one"
+    tabindex="0"
   >
     <div
       class="c2 "
@@ -1501,10 +1618,10 @@ exports[`RadioButtonGroup renders outside grommet wrapper 1`] = `
         value="one"
       />
       <div
-        class="c4 "
+        class="c4 c5"
       >
         <svg
-          class="c5"
+          class="c6"
           preserveAspectRatio="xMidYMid meet"
           viewBox="0 0 24 24"
         >
@@ -1523,11 +1640,12 @@ exports[`RadioButtonGroup renders outside grommet wrapper 1`] = `
     </span>
   </label>
   <div
-    class="c6"
+    class="c7"
   />
   <label
     class="c1"
     for="two"
+    tabindex="0"
   >
     <div
       class="c2 "
@@ -1536,12 +1654,12 @@ exports[`RadioButtonGroup renders outside grommet wrapper 1`] = `
         class="c3"
         id="two"
         name="test"
-        tabindex="-1"
+        tabindex="0"
         type="radio"
         value="two"
       />
       <div
-        class="c7 "
+        class="c8 "
       />
     </div>
     <span
@@ -1645,6 +1763,7 @@ exports[`RadioButtonGroup should have no accessibility violations 1`] = `
       <label
         class="c2"
         for="option1"
+        tabindex="0"
       >
         <div
           class="c3 "
@@ -1718,7 +1837,7 @@ exports[`RadioButtonGroup string options 1`] = `
   border-radius: 100%;
 }
 
-.c8 {
+.c9 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -1733,7 +1852,7 @@ exports[`RadioButtonGroup string options 1`] = `
   border-radius: 100%;
 }
 
-.c7 {
+.c8 {
   flex: 0 0 auto;
   align-self: stretch;
   height: 12px;
@@ -1762,11 +1881,31 @@ exports[`RadioButtonGroup string options 1`] = `
   cursor: pointer;
 }
 
-.c6 {
+.c7 {
   box-sizing: border-box;
   width: 24px;
   height: 24px;
   fill: #7D4CDB;
+}
+
+.c6 {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c6 >circle,
+.c6 >ellipse,
+.c6 >line,
+.c6 >path,
+.c6 >polygon,
+.c6 >polyline,
+.c6 >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c6 ::-moz-focus-inner {
+  border: 0;
 }
 
 @media only screen and (max-width: 768px) {
@@ -1782,13 +1921,13 @@ exports[`RadioButtonGroup string options 1`] = `
 }
 
 @media only screen and (max-width: 768px) {
-  .c8 {
+  .c9 {
     border: solid 2px rgba(0, 0, 0, 0.15);
   }
 }
 
 @media only screen and (max-width: 768px) {
-  .c7 {
+  .c8 {
     height: 6px;
   }
 }
@@ -1803,6 +1942,7 @@ exports[`RadioButtonGroup string options 1`] = `
     <label
       class="c2"
       for="one"
+      tabindex="0"
     >
       <div
         class="c3 "
@@ -1817,10 +1957,10 @@ exports[`RadioButtonGroup string options 1`] = `
           value="one"
         />
         <div
-          class="c5 "
+          class="c5 c6"
         >
           <svg
-            class="c6"
+            class="c7"
             preserveAspectRatio="xMidYMid meet"
             viewBox="0 0 24 24"
           >
@@ -1839,11 +1979,12 @@ exports[`RadioButtonGroup string options 1`] = `
       </span>
     </label>
     <div
-      class="c7"
+      class="c8"
     />
     <label
       class="c2"
       for="two"
+      tabindex="0"
     >
       <div
         class="c3 "
@@ -1852,12 +1993,12 @@ exports[`RadioButtonGroup string options 1`] = `
           class="c4"
           id="two"
           name="test"
-          tabindex="-1"
+          tabindex="0"
           type="radio"
           value="two"
         />
         <div
-          class="c8 "
+          class="c9 "
         />
       </div>
       <span

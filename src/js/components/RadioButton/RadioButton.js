@@ -88,7 +88,7 @@ const RadioButton = forwardRef(
           }
         }}
         onBlur={() => setIsFocused(false)}
-        onKeyDown={handleKeyDown}  
+        onKeyDown={handleKeyDown}
         tabIndex={disabled ? -1 : 0}
         focus={focus || isFocused}
       >
@@ -104,10 +104,12 @@ const RadioButton = forwardRef(
             {...rest}
             ref={(node) => {
               inputRef.current = node;
-              if (typeof ref === 'function') {
-                ref(node);
-              } else if (ref && 'current' in ref) {
-                ref.current = node;
+
+              const currentRef = ref;
+              if (typeof currentRef === 'function') {
+                currentRef(node);
+              } else if (currentRef && 'current' in currentRef) {
+                currentRef.current = node;
               }
             }}
             type="radio"
