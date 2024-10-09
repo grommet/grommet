@@ -138,8 +138,8 @@ export const FocusedContainer = ({
     if (container) roots.push(container);
 
     // Create and insert focusable nodes to help track when focus
-    // has left this container but without letting focus be noticeably placed
-    // on anything outside the container
+    // has left this container but without letting focus be noticeably
+    // placed on anything outside the container
     if (!hidden && trapFocus) {
       const preDiv = document.createElement('div');
       const postDiv = document.createElement('div');
