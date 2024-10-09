@@ -1,12 +1,13 @@
-import { useCallback } from 'react';
+import React, { useCallback } from 'react';
 import { normalizeColor } from '../../utils';
 
 export const applyKey = (option, key) => {
+  if (React.isValidElement(option)) return option;
   if (option === undefined || option === null) return undefined;
   if (typeof key === 'object') return applyKey(option, key.key);
   if (typeof key === 'function') return key(option);
   if (key !== undefined && typeof option === 'object') return option[key];
-  if (typeof option === 'object' && Object.keys(option))
+  if (typeof option === 'object' && Object.keys(option).length > 0)
     return option[Object.keys(option)[0]];
   return option;
 };
