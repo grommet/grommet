@@ -11,21 +11,14 @@ var _Heading = require("../Heading");
 var _AccordionContext = require("../Accordion/AccordionContext");
 var _propTypes = require("./propTypes");
 var _useThemeValue2 = require("../../utils/useThemeValue");
-var _excluded = ["children", "header", "id", "label", "onClick", "onMouseOut", "onMouseOver", "onFocus", "onBlur"];
+var _excluded = ["children", "header", "label", "onClick", "onMouseOut", "onMouseOver", "onFocus", "onBlur"];
 function _getRequireWildcardCache(e) { if ("function" != typeof WeakMap) return null; var r = new WeakMap(), t = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(e) { return e ? t : r; })(e); }
 function _interopRequireWildcard(e, r) { if (!r && e && e.__esModule) return e; if (null === e || "object" != typeof e && "function" != typeof e) return { "default": e }; var t = _getRequireWildcardCache(r); if (t && t.has(e)) return t.get(e); var n = { __proto__: null }, a = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var u in e) if ("default" !== u && {}.hasOwnProperty.call(e, u)) { var i = a ? Object.getOwnPropertyDescriptor(e, u) : null; i && (i.get || i.set) ? Object.defineProperty(n, u, i) : n[u] = e[u]; } return n["default"] = e, t && t.set(e, n), n; }
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (e.includes(n)) continue; t[n] = r[n]; } return t; }
-// Ideally we should use `useId` from react but this is only available
-// in React 18 and we want to keep compatibility with React 17 and 16.
-function getUID() {
-  var timestamp = Date.now() + Math.random();
-  return "grommet-accordion-button-" + timestamp;
-}
 var AccordionPanel = exports.AccordionPanel = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
   var children = _ref.children,
     header = _ref.header,
-    id = _ref.id,
     label = _ref.label,
     onClick = _ref.onClick,
     _onMouseOut = _ref.onMouseOut,
@@ -33,7 +26,7 @@ var AccordionPanel = exports.AccordionPanel = /*#__PURE__*/(0, _react.forwardRef
     _onFocus = _ref.onFocus,
     _onBlur = _ref.onBlur,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
-  var panelButtonId = id ? "grommet_accordion_button_" + id : getUID();
+  var uniqueId = (0, _react.useId)();
   var _useThemeValue = (0, _useThemeValue2.useThemeValue)(),
     theme = _useThemeValue.theme;
   var _useContext = (0, _react.useContext)(_AccordionContext.AccordionContext),
@@ -85,7 +78,7 @@ var AccordionPanel = exports.AccordionPanel = /*#__PURE__*/(0, _react.forwardRef
     border: panelBorder,
     margin: abutMargin
   }, /*#__PURE__*/_react["default"].createElement(_Button.Button, {
-    id: panelButtonId,
+    id: uniqueId,
     "aria-expanded": active,
     plain: theme.button["default"] ? true : undefined,
     onClick: onPanelChange,
@@ -114,8 +107,7 @@ var AccordionPanel = exports.AccordionPanel = /*#__PURE__*/(0, _react.forwardRef
   }, header || /*#__PURE__*/_react["default"].createElement(_Box.Box, _extends({
     align: "center",
     direction: "row",
-    justify: "between",
-    id: id
+    justify: "between"
   }, rest), typeof label === 'string' ? /*#__PURE__*/_react["default"].createElement(_Box.Box, {
     pad: {
       horizontal: 'xsmall'
@@ -136,7 +128,7 @@ var AccordionPanel = exports.AccordionPanel = /*#__PURE__*/(0, _react.forwardRef
   })))), /*#__PURE__*/_react["default"].createElement(_Box.Box, {
     role: "region",
     border: contentBorder,
-    "aria-labelledby": panelButtonId
+    "aria-labelledby": uniqueId
   }, animate ? /*#__PURE__*/_react["default"].createElement(_Collapsible.Collapsible, {
     open: active
   }, children) : active && children));
