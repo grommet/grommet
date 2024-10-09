@@ -79,9 +79,22 @@ export const decorators = [
     }
 
     return (
-      <Grommet theme={THEMES[state]} full={full} dir={dir} options={options}>
-        <Story state={THEMES[state]} />
-      </Grommet>
+      <>
+        <Grommet theme={THEMES[state]} full={full} dir={dir} options={options}>
+          <Story state={THEMES[state]} />
+        </Grommet>
+        <div>
+          <a href="#" aria-label="testing anchor">
+            Testing Anchor 1
+          </a>
+          <a href="#" aria-label="testing anchor">
+            Testing Anchor 2
+          </a>
+          <a href="#" aria-label="testing anchor">
+            Testing Anchor 3
+          </a>
+        </div>
+      </>
     );
   },
 ];
