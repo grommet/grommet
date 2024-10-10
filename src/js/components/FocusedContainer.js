@@ -16,6 +16,8 @@ const isFocusable = (element) => {
     case 'SELECT':
     case 'TEXTAREA':
       return true;
+    case 'DIV':
+      return element.tabIndex >= 0;
     default:
       return false;
   }
@@ -90,6 +92,7 @@ export const FocusedContainer = ({
         const child = element.childNodes[index];
         if (isFocusable(child)) return child;
         const tabbable = findFirstTabbable(child);
+        console.log('first tabbable', tabbable);
         if (tabbable) return tabbable;
       }
       return false;
@@ -100,6 +103,7 @@ export const FocusedContainer = ({
         const child = element.childNodes[index];
         if (isFocusable(child)) return child;
         const tabbable = findLastTabbable(child);
+        console.log('last tabbable', tabbable);
         if (tabbable) return tabbable;
       }
       return false;
@@ -112,6 +116,8 @@ export const FocusedContainer = ({
     const checkTabKey = (e) => {
       const firstTabbable = findFirstTabbable(container);
       const lastTabbable = findLastTabbable(container);
+      // Check if the first and last tabbable elements are the same
+      const tabbableElementsEqual = firstTabbable === lastTabbable;
       if (
         !hidden &&
         trapFocus &&
@@ -123,7 +129,8 @@ export const FocusedContainer = ({
           // focus should loop backward to last element
           (tabBackward(e) && document.activeElement === firstTabbable) ||
           // focus should loop forward to first element
-          (tabForward(e) && document.activeElement === lastTabbable))
+          (tabForward(e) && document.activeElement === lastTabbable) ||
+          tabbableElementsEqual)
       ) {
         e.preventDefault();
         if (tabForward(e) && firstTabbable) {
