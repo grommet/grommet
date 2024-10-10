@@ -4,10 +4,10 @@ import { makeNodeFocusable, makeNodeUnfocusable } from '../utils';
 import { RootsContext, useRoots } from '../contexts/RootsContext';
 
 const isFocusable = (element) => {
-  if (element.tabIndex < 0 || element.disabled) {
+  if (element?.tabIndex < 0 || element?.disabled) {
     return false;
   }
-  switch (element.nodeName) {
+  switch (element?.nodeName) {
     case 'A':
       return !!element.href && element.rel !== 'ignore';
     case 'INPUT':
@@ -16,10 +16,18 @@ const isFocusable = (element) => {
     case 'SELECT':
     case 'TEXTAREA':
       return true;
+    case 'DIV':
+      return element.tabIndex >= 0;
     default:
       return false;
   }
 };
+
+const isTabEvent = (e) => e?.key === 'Tab' || e?.keyCode === 9;
+
+const tabForward = (e) => isTabEvent(e) && !e.shiftKey;
+
+const tabBackward = (e) => isTabEvent(e) && e.shiftKey;
 
 export const FocusedContainer = ({
   hidden = false,
@@ -60,24 +68,6 @@ export const FocusedContainer = ({
       return document.activeElement === element;
     };
 
-    const focusFirstDescendant = (element) => {
-      // Iterate through all child nodes of the provided element
-      for (let i = 0; i < element.childNodes.length; i += 1) {
-        const child = element.childNodes[i];
-        if (attemptFocus(child) || focusFirstDescendant(child)) return true;
-      }
-      // If no focusable child or descendant was found, return false
-      return false;
-    };
-
-    const focusLastDescendant = (element) => {
-      for (let i = element.childNodes.length - 1; i >= 0; i -= 1) {
-        const child = element.childNodes[i];
-        if (attemptFocus(child) || focusLastDescendant(child)) return true;
-      }
-      return false;
-    };
-
     const handleTrapFocus = (e) => {
       if (
         !hidden &&
@@ -90,11 +80,63 @@ export const FocusedContainer = ({
         if (container.contains(e.target)) {
           lastFocusRef.current = e.target;
         } else {
-          focusFirstDescendant(container);
-          if (lastFocusRef.current === document.activeElement) {
-            focusLastDescendant(container);
-          }
+          // focus was stolen from the container, put focus back where it was
+          attemptFocus(lastFocusRef.current);
           lastFocusRef.current = document.activeElement;
+        }
+      }
+    };
+
+    const findFirstTabbable = (element) => {
+      for (let index = 0; index < element.childNodes.length; index += 1) {
+        const child = element.childNodes[index];
+        if (isFocusable(child)) return child;
+        const tabbable = findFirstTabbable(child);
+        console.log('first tabbable', tabbable);
+        if (tabbable) return tabbable;
+      }
+      return false;
+    };
+
+    const findLastTabbable = (element) => {
+      for (let index = element.childNodes.length - 1; index >= 0; index -= 1) {
+        const child = element.childNodes[index];
+        if (isFocusable(child)) return child;
+        const tabbable = findLastTabbable(child);
+        console.log('last tabbable', tabbable);
+        if (tabbable) return tabbable;
+      }
+      return false;
+    };
+
+    // tab natively moves focus, so we need to prevent default to keep the
+    // browser from moving focus.
+    // need to capture at keydown because if we wait for focus event, page could
+    // have already scrolled.
+    const checkTabKey = (e) => {
+      const firstTabbable = findFirstTabbable(container);
+      const lastTabbable = findLastTabbable(container);
+      // Check if the first and last tabbable elements are the same
+      const tabbableElementsEqual = firstTabbable === lastTabbable;
+      if (
+        !hidden &&
+        trapFocus &&
+        container &&
+        // only perform focus if this is the most recently opened drop
+        roots[roots.length - 1] === container &&
+        (tabForward(e) || tabBackward(e)) &&
+        (!container.contains(document.activeElement) ||
+          // focus should loop backward to last element
+          (tabBackward(e) && document.activeElement === firstTabbable) ||
+          // focus should loop forward to first element
+          (tabForward(e) && document.activeElement === lastTabbable) ||
+          tabbableElementsEqual)
+      ) {
+        e.preventDefault();
+        if (tabForward(e) && firstTabbable) {
+          firstTabbable.focus();
+        } else if (tabBackward(e) && lastTabbable) {
+          lastTabbable.focus();
         }
       }
     };
@@ -103,8 +145,8 @@ export const FocusedContainer = ({
     if (container) roots.push(container);
 
     // Create and insert focusable nodes to help track when focus
-    // has left this container but without letting focus be noticeably placed
-    // on anything outside the container
+    // has left this container but without letting focus be noticeably
+    // placed on anything outside the container
     if (!hidden && trapFocus) {
       const preDiv = document.createElement('div');
       const postDiv = document.createElement('div');
@@ -118,11 +160,19 @@ export const FocusedContainer = ({
       postNodeRef.current.tabIndex = 0;
     }
 
+    document.addEventListener('keydown', checkTabKey, {
+      capture: true,
+      passive: false,
+    });
     document.addEventListener('focus', handleTrapFocus, true);
 
     return () => {
       // remove from global roots array
       if (roots.includes(container)) roots.splice(roots.indexOf(container), 1);
+      document.removeEventListener('keydown', checkTabKey, {
+        capture: true,
+        passive: false,
+      });
       document.removeEventListener('focus', handleTrapFocus, true);
       if (roots?.[roots.length - 1]) makeNodeFocusable(roots[roots.length - 1]);
       preNodeRef?.current?.remove();

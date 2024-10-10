@@ -431,6 +431,8 @@ const MaskedInput = forwardRef(
               target={inputRef.current}
               onClickOutside={onHideDrop}
               onEsc={onHideDrop}
+              // MaskedInput manages its own keyboard behavior via Keyboard
+              trapFocus={false}
               {...dropProps}
             >
               <ContainerBox
