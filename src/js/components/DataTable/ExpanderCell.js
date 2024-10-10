@@ -59,7 +59,7 @@ const ExpanderCell = ({ background, border, context, ...rest }) => (
     plain="noPad"
     verticalAlign={context === 'groupEnd' ? 'bottom' : 'top'}
   >
-    <ExpanderControl context={context} {...rest} />
+    <ExpanderControl tabIndex={0} context={context} {...rest} />
   </TableCell>
 );
 
