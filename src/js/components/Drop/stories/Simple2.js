@@ -1,9 +1,8 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useRef, useState } from 'react';
 
 import {
   Box,
   DropButton,
-  Grommet,
   Button,
   Anchor,
   Form,
@@ -60,12 +59,8 @@ const align = { top: 'bottom', left: 'left' };
 const SimpleDrop = () => {
   const [showDrop, setShowDrop] = useState(false);
   const [showLayer, setShowLayer] = useState(false);
-  const [showDropInModal, setShowDropInModal] = useState(false);
-  const [showRestrictFocusDrop, setShowRestrictFocusDrop] = useState(false);
   const layerRef = useRef();
   const buttonRef = useRef();
-  const layerButtonRef = useRef();
-  const restrictFocusButtonRef = useRef();
 
   const onClose = () => setShowLayer(false);
 
