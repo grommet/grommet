@@ -901,6 +901,7 @@ const Calendar = forwardRef(
                 changeReference(addDays(active, -7));
               }
             }}
+            
             onDown={(event) => {
               event.preventDefault();
               event.stopPropagation(); // so the page doesn't scroll
