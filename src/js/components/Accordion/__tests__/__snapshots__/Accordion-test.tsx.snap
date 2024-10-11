@@ -218,7 +218,7 @@ exports[`Accordion AccordionPanel 1`] = `
         <button
           aria-expanded="false"
           class="c3"
-          id=":r1:"
+          id="grommet-accordion-button-12345678.12345679"
           type="button"
         >
           <div
@@ -252,7 +252,7 @@ exports[`Accordion AccordionPanel 1`] = `
           </div>
         </button>
         <div
-          aria-labelledby=":r1:"
+          aria-labelledby="grommet-accordion-button-12345678.12345679"
           class="c9"
           role="region"
         >
@@ -268,7 +268,7 @@ exports[`Accordion AccordionPanel 1`] = `
         <button
           aria-expanded="false"
           class="c3"
-          id=":r2:"
+          id="grommet-accordion-button-12345678.12345679"
           type="button"
         >
           <div
@@ -302,7 +302,7 @@ exports[`Accordion AccordionPanel 1`] = `
           </div>
         </button>
         <div
-          aria-labelledby=":r2:"
+          aria-labelledby="grommet-accordion-button-12345678.12345679"
           class="c9"
           role="region"
         >
@@ -535,7 +535,7 @@ exports[`Accordion accordion border 1`] = `
         <button
           aria-expanded="false"
           class="c3"
-          id=":re:"
+          id="grommet-accordion-button-12345678.12345679"
           type="button"
         >
           <div
@@ -569,7 +569,7 @@ exports[`Accordion accordion border 1`] = `
           </div>
         </button>
         <div
-          aria-labelledby=":re:"
+          aria-labelledby="grommet-accordion-button-12345678.12345679"
           class="c1"
           role="region"
         >
@@ -802,7 +802,7 @@ exports[`Accordion backward compatibility of hover.color = undefined 1`] = `
         <button
           aria-expanded="false"
           class="c3"
-          id=":ri:"
+          id="grommet-accordion-button-12345678.12345679"
           style="z-index: 1;"
           type="button"
         >
@@ -837,7 +837,7 @@ exports[`Accordion backward compatibility of hover.color = undefined 1`] = `
           </div>
         </button>
         <div
-          aria-labelledby=":ri:"
+          aria-labelledby="grommet-accordion-button-12345678.12345679"
           class="c9"
           role="region"
         >
@@ -1075,7 +1075,7 @@ exports[`Accordion blur styles 1`] = `
         <button
           aria-expanded="false"
           class="c3"
-          id=":ro:"
+          id="grommet-accordion-button-12345678.12345679"
           style="z-index: 1;"
           type="button"
         >
@@ -1110,7 +1110,7 @@ exports[`Accordion blur styles 1`] = `
           </div>
         </button>
         <div
-          aria-labelledby=":ro:"
+          aria-labelledby="grommet-accordion-button-12345678.12345679"
           class="c9"
           role="region"
         >
@@ -1337,7 +1337,7 @@ exports[`Accordion change active index 1`] = `
         <button
           aria-expanded="false"
           class="c3"
-          id=":rf:"
+          id="grommet-accordion-button-12345678.12345679"
           type="button"
         >
           <div
@@ -1371,7 +1371,7 @@ exports[`Accordion change active index 1`] = `
           </div>
         </button>
         <div
-          aria-labelledby=":rf:"
+          aria-labelledby="grommet-accordion-button-12345678.12345679"
           class="c9"
           role="region"
         />
@@ -1382,7 +1382,7 @@ exports[`Accordion change active index 1`] = `
         <button
           aria-expanded="true"
           class="c3"
-          id=":rg:"
+          id="grommet-accordion-button-12345678.12345679"
           type="button"
         >
           <div
@@ -1416,7 +1416,7 @@ exports[`Accordion change active index 1`] = `
           </div>
         </button>
         <div
-          aria-labelledby=":rg:"
+          aria-labelledby="grommet-accordion-button-12345678.12345679"
           class="c9"
           role="region"
         >
@@ -1714,7 +1714,7 @@ exports[`Accordion change active index 2`] = `
         <button
           aria-expanded="false"
           class="c3"
-          id=":rf:"
+          id="grommet-accordion-button-12345678.12345679"
           style="z-index: 1;"
           type="button"
         >
@@ -1749,7 +1749,7 @@ exports[`Accordion change active index 2`] = `
           </div>
         </button>
         <div
-          aria-labelledby=":rf:"
+          aria-labelledby="grommet-accordion-button-12345678.12345679"
           class="c9"
           role="region"
         />
@@ -1760,7 +1760,7 @@ exports[`Accordion change active index 2`] = `
         <button
           aria-expanded="true"
           class="c10"
-          id=":rg:"
+          id="grommet-accordion-button-12345678.12345679"
           type="button"
         >
           <div
@@ -1794,7 +1794,7 @@ exports[`Accordion change active index 2`] = `
           </div>
         </button>
         <div
-          aria-labelledby=":rg:"
+          aria-labelledby="grommet-accordion-button-12345678.12345679"
           class="c9"
           role="region"
         >
@@ -2024,7 +2024,7 @@ exports[`Accordion change to second Panel 1`] = `
         <button
           aria-expanded="false"
           class="c3"
-          id=":r7:"
+          id="grommet-accordion-button-12345678.12345679"
           type="button"
         >
           <div
@@ -2058,7 +2058,7 @@ exports[`Accordion change to second Panel 1`] = `
           </div>
         </button>
         <div
-          aria-labelledby=":r7:"
+          aria-labelledby="grommet-accordion-button-12345678.12345679"
           class="c9"
           role="region"
         >
@@ -2074,7 +2074,7 @@ exports[`Accordion change to second Panel 1`] = `
         <button
           aria-expanded="false"
           class="c3"
-          id=":r8:"
+          id="grommet-accordion-button-12345678.12345679"
           type="button"
         >
           <div
@@ -2108,7 +2108,7 @@ exports[`Accordion change to second Panel 1`] = `
           </div>
         </button>
         <div
-          aria-labelledby=":r8:"
+          aria-labelledby="grommet-accordion-button-12345678.12345679"
           class="c9"
           role="region"
         >
@@ -2421,7 +2421,7 @@ exports[`Accordion change to second Panel 2`] = `
         <button
           aria-expanded="false"
           class="c3"
-          id=":r7:"
+          id="grommet-accordion-button-12345678.12345679"
           type="button"
         >
           <div
@@ -2455,7 +2455,7 @@ exports[`Accordion change to second Panel 2`] = `
           </div>
         </button>
         <div
-          aria-labelledby=":r7:"
+          aria-labelledby="grommet-accordion-button-12345678.12345679"
           class="c9"
           role="region"
         >
@@ -2471,7 +2471,7 @@ exports[`Accordion change to second Panel 2`] = `
         <button
           aria-expanded="true"
           class="c11"
-          id=":r8:"
+          id="grommet-accordion-button-12345678.12345679"
           style="z-index: 1;"
           type="button"
         >
@@ -2506,7 +2506,7 @@ exports[`Accordion change to second Panel 2`] = `
           </div>
         </button>
         <div
-          aria-labelledby=":r8:"
+          aria-labelledby="grommet-accordion-button-12345678.12345679"
           class="c9"
           role="region"
           style=""
@@ -2738,7 +2738,7 @@ exports[`Accordion change to second Panel without onActive 1`] = `
         <button
           aria-expanded="false"
           class="c3"
-          id=":r9:"
+          id="grommet-accordion-button-12345678.12345679"
           type="button"
         >
           <div
@@ -2772,7 +2772,7 @@ exports[`Accordion change to second Panel without onActive 1`] = `
           </div>
         </button>
         <div
-          aria-labelledby=":r9:"
+          aria-labelledby="grommet-accordion-button-12345678.12345679"
           class="c9"
           role="region"
         />
@@ -2783,7 +2783,7 @@ exports[`Accordion change to second Panel without onActive 1`] = `
         <button
           aria-expanded="false"
           class="c3"
-          id=":ra:"
+          id="grommet-accordion-button-12345678.12345679"
           type="button"
         >
           <div
@@ -2817,7 +2817,7 @@ exports[`Accordion change to second Panel without onActive 1`] = `
           </div>
         </button>
         <div
-          aria-labelledby=":ra:"
+          aria-labelledby="grommet-accordion-button-12345678.12345679"
           class="c9"
           role="region"
         />
@@ -3113,7 +3113,7 @@ exports[`Accordion change to second Panel without onActive 2`] = `
         <button
           aria-expanded="false"
           class="c3"
-          id=":r9:"
+          id="grommet-accordion-button-12345678.12345679"
           type="button"
         >
           <div
@@ -3147,7 +3147,7 @@ exports[`Accordion change to second Panel without onActive 2`] = `
           </div>
         </button>
         <div
-          aria-labelledby=":r9:"
+          aria-labelledby="grommet-accordion-button-12345678.12345679"
           class="c9"
           role="region"
         />
@@ -3158,7 +3158,7 @@ exports[`Accordion change to second Panel without onActive 2`] = `
         <button
           aria-expanded="true"
           class="c10"
-          id=":ra:"
+          id="grommet-accordion-button-12345678.12345679"
           style="z-index: 1;"
           type="button"
         >
@@ -3193,7 +3193,7 @@ exports[`Accordion change to second Panel without onActive 2`] = `
           </div>
         </button>
         <div
-          aria-labelledby=":ra:"
+          aria-labelledby="grommet-accordion-button-12345678.12345679"
           class="c9"
           role="region"
         >
@@ -3321,7 +3321,7 @@ exports[`Accordion complex header 1`] = `
         <button
           aria-expanded="false"
           class="c3"
-          id=":r5:"
+          id="grommet-accordion-button-12345678.12345679"
           type="button"
         >
           <div>
@@ -3329,7 +3329,7 @@ exports[`Accordion complex header 1`] = `
           </div>
         </button>
         <div
-          aria-labelledby=":r5:"
+          aria-labelledby="grommet-accordion-button-12345678.12345679"
           class="c4"
           role="region"
         />
@@ -3340,7 +3340,7 @@ exports[`Accordion complex header 1`] = `
         <button
           aria-expanded="true"
           class="c3"
-          id=":r6:"
+          id="grommet-accordion-button-12345678.12345679"
           type="button"
         >
           <div>
@@ -3348,7 +3348,7 @@ exports[`Accordion complex header 1`] = `
           </div>
         </button>
         <div
-          aria-labelledby=":r6:"
+          aria-labelledby="grommet-accordion-button-12345678.12345679"
           class="c4"
           role="region"
         >
@@ -3558,7 +3558,7 @@ exports[`Accordion complex title 1`] = `
           <button
             aria-expanded="false"
             class="c4"
-            id=":r3:"
+            id="grommet-accordion-button-12345678.12345679"
             type="button"
           >
             <div
@@ -3586,7 +3586,7 @@ exports[`Accordion complex title 1`] = `
             </div>
           </button>
           <div
-            aria-labelledby=":r3:"
+            aria-labelledby="grommet-accordion-button-12345678.12345679"
             class="c8"
             role="region"
           >
@@ -3602,7 +3602,7 @@ exports[`Accordion complex title 1`] = `
           <button
             aria-expanded="false"
             class="c4"
-            id=":r4:"
+            id="grommet-accordion-button-12345678.12345679"
             type="button"
           >
             <div
@@ -3630,7 +3630,7 @@ exports[`Accordion complex title 1`] = `
             </div>
           </button>
           <div
-            aria-labelledby=":r4:"
+            aria-labelledby="grommet-accordion-button-12345678.12345679"
             class="c8"
             role="region"
           >
@@ -3869,7 +3869,7 @@ exports[`Accordion custom accordion 1`] = `
         <button
           aria-expanded="false"
           class="c3"
-          id=":rd:"
+          id="grommet-accordion-button-12345678.12345679"
           type="button"
         >
           <div
@@ -3903,7 +3903,7 @@ exports[`Accordion custom accordion 1`] = `
           </div>
         </button>
         <div
-          aria-labelledby=":rd:"
+          aria-labelledby="grommet-accordion-button-12345678.12345679"
           class="c9"
           role="region"
         >
@@ -4146,7 +4146,7 @@ exports[`Accordion custom accordion 2`] = `
         <button
           aria-expanded="false"
           class="c3"
-          id=":rd:"
+          id="grommet-accordion-button-12345678.12345679"
           type="button"
         >
           <div
@@ -4180,7 +4180,7 @@ exports[`Accordion custom accordion 2`] = `
           </div>
         </button>
         <div
-          aria-labelledby=":rd:"
+          aria-labelledby="grommet-accordion-button-12345678.12345679"
           class="c9"
           role="region"
         >
@@ -4418,7 +4418,7 @@ exports[`Accordion focus and hover styles 1`] = `
         <button
           aria-expanded="true"
           class="c3"
-          id=":rh:"
+          id="grommet-accordion-button-12345678.12345679"
           style="z-index: 1;"
           type="button"
         >
@@ -4453,7 +4453,7 @@ exports[`Accordion focus and hover styles 1`] = `
           </div>
         </button>
         <div
-          aria-labelledby=":rh:"
+          aria-labelledby="grommet-accordion-button-12345678.12345679"
           class="c9"
           role="region"
           style=""
@@ -4685,7 +4685,7 @@ exports[`Accordion multiple panels 1`] = `
         <button
           aria-expanded="false"
           class="c3"
-          id=":rb:"
+          id="grommet-accordion-button-12345678.12345679"
           type="button"
         >
           <div
@@ -4719,7 +4719,7 @@ exports[`Accordion multiple panels 1`] = `
           </div>
         </button>
         <div
-          aria-labelledby=":rb:"
+          aria-labelledby="grommet-accordion-button-12345678.12345679"
           class="c9"
           role="region"
         />
@@ -4730,7 +4730,7 @@ exports[`Accordion multiple panels 1`] = `
         <button
           aria-expanded="false"
           class="c3"
-          id=":rc:"
+          id="grommet-accordion-button-12345678.12345679"
           type="button"
         >
           <div
@@ -4764,7 +4764,7 @@ exports[`Accordion multiple panels 1`] = `
           </div>
         </button>
         <div
-          aria-labelledby=":rc:"
+          aria-labelledby="grommet-accordion-button-12345678.12345679"
           class="c9"
           role="region"
         />
@@ -5060,7 +5060,7 @@ exports[`Accordion multiple panels 2`] = `
         <button
           aria-expanded="false"
           class="c3"
-          id=":rb:"
+          id="grommet-accordion-button-12345678.12345679"
           type="button"
         >
           <div
@@ -5094,7 +5094,7 @@ exports[`Accordion multiple panels 2`] = `
           </div>
         </button>
         <div
-          aria-labelledby=":rb:"
+          aria-labelledby="grommet-accordion-button-12345678.12345679"
           class="c9"
           role="region"
         />
@@ -5105,7 +5105,7 @@ exports[`Accordion multiple panels 2`] = `
         <button
           aria-expanded="true"
           class="c10"
-          id=":rc:"
+          id="grommet-accordion-button-12345678.12345679"
           style="z-index: 1;"
           type="button"
         >
@@ -5140,7 +5140,7 @@ exports[`Accordion multiple panels 2`] = `
           </div>
         </button>
         <div
-          aria-labelledby=":rc:"
+          aria-labelledby="grommet-accordion-button-12345678.12345679"
           class="c9"
           role="region"
         >
@@ -5438,7 +5438,7 @@ exports[`Accordion multiple panels 3`] = `
         <button
           aria-expanded="true"
           class="c3"
-          id=":rb:"
+          id="grommet-accordion-button-12345678.12345679"
           style="z-index: 1;"
           type="button"
         >
@@ -5473,7 +5473,7 @@ exports[`Accordion multiple panels 3`] = `
           </div>
         </button>
         <div
-          aria-labelledby=":rb:"
+          aria-labelledby="grommet-accordion-button-12345678.12345679"
           class="c9"
           role="region"
         >
@@ -5486,7 +5486,7 @@ exports[`Accordion multiple panels 3`] = `
         <button
           aria-expanded="true"
           class="c10"
-          id=":rc:"
+          id="grommet-accordion-button-12345678.12345679"
           style=""
           type="button"
         >
@@ -5521,7 +5521,7 @@ exports[`Accordion multiple panels 3`] = `
           </div>
         </button>
         <div
-          aria-labelledby=":rc:"
+          aria-labelledby="grommet-accordion-button-12345678.12345679"
           class="c9"
           role="region"
         >
@@ -5819,7 +5819,7 @@ exports[`Accordion multiple panels 4`] = `
         <button
           aria-expanded="true"
           class="c3"
-          id=":rb:"
+          id="grommet-accordion-button-12345678.12345679"
           style=""
           type="button"
         >
@@ -5854,7 +5854,7 @@ exports[`Accordion multiple panels 4`] = `
           </div>
         </button>
         <div
-          aria-labelledby=":rb:"
+          aria-labelledby="grommet-accordion-button-12345678.12345679"
           class="c9"
           role="region"
         >
@@ -5867,7 +5867,7 @@ exports[`Accordion multiple panels 4`] = `
         <button
           aria-expanded="false"
           class="c10"
-          id=":rc:"
+          id="grommet-accordion-button-12345678.12345679"
           style="z-index: 1;"
           type="button"
         >
@@ -5902,7 +5902,7 @@ exports[`Accordion multiple panels 4`] = `
           </div>
         </button>
         <div
-          aria-labelledby=":rc:"
+          aria-labelledby="grommet-accordion-button-12345678.12345679"
           class="c9"
           role="region"
         />
@@ -6198,7 +6198,7 @@ exports[`Accordion multiple panels 5`] = `
         <button
           aria-expanded="false"
           class="c3"
-          id=":rb:"
+          id="grommet-accordion-button-12345678.12345679"
           style="z-index: 1;"
           type="button"
         >
@@ -6233,7 +6233,7 @@ exports[`Accordion multiple panels 5`] = `
           </div>
         </button>
         <div
-          aria-labelledby=":rb:"
+          aria-labelledby="grommet-accordion-button-12345678.12345679"
           class="c9"
           role="region"
         />
@@ -6244,7 +6244,7 @@ exports[`Accordion multiple panels 5`] = `
         <button
           aria-expanded="false"
           class="c10"
-          id=":rc:"
+          id="grommet-accordion-button-12345678.12345679"
           style=""
           type="button"
         >
@@ -6279,7 +6279,7 @@ exports[`Accordion multiple panels 5`] = `
           </div>
         </button>
         <div
-          aria-labelledby=":rc:"
+          aria-labelledby="grommet-accordion-button-12345678.12345679"
           class="c9"
           role="region"
         />
@@ -6555,7 +6555,7 @@ exports[`Accordion should apply level prop to headings 1`] = `
         <button
           aria-expanded="false"
           class="c3"
-          id=":rp:"
+          id="grommet-accordion-button-12345678.12345679"
           type="button"
         >
           <div
@@ -6589,7 +6589,7 @@ exports[`Accordion should apply level prop to headings 1`] = `
           </div>
         </button>
         <div
-          aria-labelledby=":rp:"
+          aria-labelledby="grommet-accordion-button-12345678.12345679"
           class="c9"
           role="region"
         >
@@ -6605,7 +6605,7 @@ exports[`Accordion should apply level prop to headings 1`] = `
         <button
           aria-expanded="false"
           class="c3"
-          id=":rq:"
+          id="grommet-accordion-button-12345678.12345679"
           type="button"
         >
           <div
@@ -6639,7 +6639,7 @@ exports[`Accordion should apply level prop to headings 1`] = `
           </div>
         </button>
         <div
-          aria-labelledby=":rq:"
+          aria-labelledby="grommet-accordion-button-12345678.12345679"
           class="c9"
           role="region"
         >
@@ -6838,7 +6838,7 @@ exports[`Accordion should have no accessibility violations 1`] = `
         <button
           aria-expanded="false"
           class="c3"
-          id=":r0:"
+          id="grommet-accordion-button-12345678.12345679"
           type="button"
         >
           <div
@@ -6863,7 +6863,7 @@ exports[`Accordion should have no accessibility violations 1`] = `
           </div>
         </button>
         <div
-          aria-labelledby=":r0:"
+          aria-labelledby="grommet-accordion-button-12345678.12345679"
           class="c7"
           role="region"
         >
@@ -7101,7 +7101,7 @@ exports[`Accordion theme hover of hover.heading.color 1`] = `
         <button
           aria-expanded="false"
           class="c3"
-          id=":rj:"
+          id="grommet-accordion-button-12345678.12345679"
           style="z-index: 1;"
           type="button"
         >
@@ -7136,7 +7136,7 @@ exports[`Accordion theme hover of hover.heading.color 1`] = `
           </div>
         </button>
         <div
-          aria-labelledby=":rj:"
+          aria-labelledby="grommet-accordion-button-12345678.12345679"
           class="c9"
           role="region"
         >
@@ -7363,7 +7363,7 @@ exports[`Accordion wrapped panel 1`] = `
         <button
           aria-expanded="false"
           class="c3"
-          id=":rm:"
+          id="grommet-accordion-button-12345678.12345679"
           type="button"
         >
           <div
@@ -7397,7 +7397,7 @@ exports[`Accordion wrapped panel 1`] = `
           </div>
         </button>
         <div
-          aria-labelledby=":rm:"
+          aria-labelledby="grommet-accordion-button-12345678.12345679"
           class="c9"
           role="region"
         />
@@ -7408,7 +7408,7 @@ exports[`Accordion wrapped panel 1`] = `
         <button
           aria-expanded="false"
           class="c3"
-          id=":rn:"
+          id="grommet-accordion-button-12345678.12345679"
           type="button"
         >
           <div
@@ -7442,7 +7442,7 @@ exports[`Accordion wrapped panel 1`] = `
           </div>
         </button>
         <div
-          aria-labelledby=":rn:"
+          aria-labelledby="grommet-accordion-button-12345678.12345679"
           class="c9"
           role="region"
         />
@@ -7738,7 +7738,7 @@ exports[`Accordion wrapped panel 2`] = `
         <button
           aria-expanded="true"
           class="c3"
-          id=":rm:"
+          id="grommet-accordion-button-12345678.12345679"
           style="z-index: 1;"
           type="button"
         >
@@ -7773,7 +7773,7 @@ exports[`Accordion wrapped panel 2`] = `
           </div>
         </button>
         <div
-          aria-labelledby=":rm:"
+          aria-labelledby="grommet-accordion-button-12345678.12345679"
           class="c9"
           role="region"
         >
@@ -7786,7 +7786,7 @@ exports[`Accordion wrapped panel 2`] = `
         <button
           aria-expanded="false"
           class="c10"
-          id=":rn:"
+          id="grommet-accordion-button-12345678.12345679"
           type="button"
         >
           <div
@@ -7820,7 +7820,7 @@ exports[`Accordion wrapped panel 2`] = `
           </div>
         </button>
         <div
-          aria-labelledby=":rn:"
+          aria-labelledby="grommet-accordion-button-12345678.12345679"
           class="c9"
           role="region"
         />
