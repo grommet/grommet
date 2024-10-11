@@ -891,7 +891,6 @@ const Calendar = forwardRef(
             onEnter={() => (active !== undefined ? onClick(active) : undefined)}
             onSpace={(event) => {
               event.preventDefault();
-              event.stopPropagation();
               active !== undefined ? onClick(active) : undefined;
             }}
             onUp={(event) => {
