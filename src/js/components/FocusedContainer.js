@@ -111,16 +111,22 @@ export const FocusedContainer = ({
       const preDiv = document.createElement('div');
       const postDiv = document.createElement('div');
 
-      preDiv.style.position = 'absolute';
-      preDiv.style.height = '1px';
-      preDiv.style.top = '0';
-      preDiv.style.left = '0';
-      preDiv.style.right = '0';
-      postDiv.style.position = 'absolute';
-      postDiv.style.height = '1px';
-      postDiv.style.left = '0';
-      postDiv.style.right = '0';
-      postDiv.style.bottom = '0';
+      const commonStyles = {
+        position: 'absolute',
+        height: '1px',
+        left: '0',
+        right: '0',
+      };
+
+      Object.assign(preDiv.style, {
+        ...commonStyles,
+        top: '0',
+      });
+
+      Object.assign(postDiv.style, {
+        ...commonStyles,
+        bottom: '0',
+      });
 
       preNodeRef.current = container.parentNode.insertBefore(preDiv, container);
       postNodeRef.current = container.parentNode.insertBefore(
