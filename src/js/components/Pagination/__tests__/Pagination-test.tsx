@@ -456,13 +456,15 @@ describe('Pagination', () => {
     window.scrollTo = jest.fn();
     const user = userEvent.setup();
     const App = () => {
-      const [step, setStep] = useState(10);
+      const [step, setStep] = useState<number>(10);
       return (
         <Grommet>
           <Select
             a11yTitle="Controlled select"
             options={[10, 25, 50, 100]}
-            onChange={({ option }) => setStep(option)}
+            onChange={({ option }) => {
+              if (typeof option === 'number') setStep(option);
+            }}
           />
           <Pagination numberItems={NUM_ITEMS} step={step} stepOptions />
         </Grommet>
@@ -530,8 +532,7 @@ describe('Pagination', () => {
           options={[10, 20, 50, 100]}
           value={itemPerPage} // Set value of Select to itemPerPage
           onChange={({ option }) => {
-            // Update itemPerPage state when Select value changes
-            setItemPerPage(option);
+            if (typeof option === 'number') setItemPerPage(option);
           }}
         />
         <Pagination step={itemPerPage} numberItems={NUM_ITEMS} summary />

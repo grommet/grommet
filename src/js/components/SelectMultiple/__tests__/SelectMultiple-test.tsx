@@ -37,8 +37,8 @@ const defaultOptions = [
 ];
 
 const TestManyOptions = () => {
-  const [options, setOptions] = useState(defaultOptions);
-  const [valueMultiple, setValueMultiple] = useState([]);
+  const [options, setOptions] = useState<string[]>(defaultOptions);
+  const [valueMultiple, setValueMultiple] = useState<string[]>([]);
   return (
     <Grommet>
       <SelectMultiple
@@ -52,7 +52,7 @@ const TestManyOptions = () => {
         }}
         onClose={() => setOptions(defaultOptions)}
         onChange={({ value }) => {
-          setValueMultiple(value);
+          setValueMultiple(value as string[]); // Defaults to an empty array if value is undefined
         }}
       />
     </Grommet>
@@ -60,7 +60,11 @@ const TestManyOptions = () => {
 };
 
 const TestObj = () => {
-  const [value, setValue] = useState([
+  type OptionType = {
+    value: string;
+    label: string;
+  };
+  const [value, setValue] = useState<OptionType[]>([
     { value: 'one', label: 'a' },
     { value: 'two', label: 'b' },
     { value: 'tree', label: 'c' },
@@ -77,7 +81,7 @@ const TestObj = () => {
         ]}
         labelKey="label"
         value={value}
-        onChange={({ selected }) => setValue(selected)}
+        onChange={({ selected }) => setValue(selected as OptionType[])}
       />
     </Grommet>
   );
@@ -166,14 +170,14 @@ describe('SelectMultiple', () => {
     const user = userEvent.setup();
     const onChange = jest.fn();
     const Test = () => {
-      const [valueMultiple, setValueMultiple] = useState([]);
+      const [valueMultiple, setValueMultiple] = useState<string[]>([]);
       return (
         <Grommet>
           <SelectMultiple
             options={defaultOptions}
             value={valueMultiple}
             onChange={({ value }) => {
-              setValueMultiple(value);
+              setValueMultiple(value as string[]);
               onChange(value);
             }}
           />
@@ -448,7 +452,7 @@ describe('SelectMultiple', () => {
     ];
     const Test = () => {
       const [options, setOptions] = useState(defaultOptions);
-      const [valueMultiple, setValueMultiple] = useState([]);
+      const [valueMultiple, setValueMultiple] = useState<string[]>([]);
       return (
         <Grommet>
           <SelectMultiple
@@ -457,7 +461,7 @@ describe('SelectMultiple', () => {
             placeholder="Select"
             onClose={() => setOptions(defaultOptions)}
             onChange={({ value }) => {
-              setValueMultiple(value);
+              setValueMultiple(value as string[]);
             }}
             messages={{
               clearAll: 'Clear ALL',

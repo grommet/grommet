@@ -8,6 +8,15 @@ import {
   PlaceHolderType,
 } from '../../utils';
 
+type OptionType = string | number | { label: string; value: string | number };
+
+// Define the event type for the onChange function
+interface SelectOnChangeEvent {
+  option?: number; // Option selected from the dropdown
+  value?: OptionType | OptionType[]; // Value(s) selected
+  selected?: OptionType[]; // Items selected in multi-select
+}
+
 export interface BasicSelectProps {
   a11yTitle?: A11yTitleType;
   alignSelf?: AlignSelfType;
@@ -32,7 +41,7 @@ export interface BasicSelectProps {
   margin?: MarginType;
   messages?: { multiple?: string };
   name?: string;
-  onChange?: (...args: any[]) => void;
+  onChange?: (event: SelectOnChangeEvent) => void;
   onClose?: (...args: any[]) => any;
   onMore?: (...args: any[]) => any;
   onOpen?: (...args: any[]) => any;
