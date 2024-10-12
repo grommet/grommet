@@ -891,7 +891,9 @@ const Calendar = forwardRef(
             onEnter={() => (active !== undefined ? onClick(active) : undefined)}
             onSpace={(event) => {
               event.preventDefault();
-              active !== undefined ? onClick(active) : undefined;
+              if (active !== undefined) {
+                onClick(active);
+              }
             }}
             onUp={(event) => {
               event.preventDefault();
@@ -901,7 +903,6 @@ const Calendar = forwardRef(
                 changeReference(addDays(active, -7));
               }
             }}
-            
             onDown={(event) => {
               event.preventDefault();
               event.stopPropagation(); // so the page doesn't scroll
