@@ -77,6 +77,7 @@ exports[`RadioButton background-color check themed 1`] = `
       <input
         class="c3"
         name="test"
+        tabindex="0"
         type="radio"
       />
       <div
@@ -168,6 +169,7 @@ exports[`RadioButton background-color themed 1`] = `
       <input
         class="c3"
         name="test"
+        tabindex="0"
         type="radio"
       />
       <div
@@ -255,6 +257,7 @@ exports[`RadioButton background-color themed symbolic 1`] = `
       <input
         class="c3"
         name="test"
+        tabindex="0"
         type="radio"
       />
       <div
@@ -342,6 +345,7 @@ exports[`RadioButton basic 1`] = `
       <input
         class="c3"
         name="test"
+        tabindex="0"
         type="radio"
         value="1"
       />
@@ -361,6 +365,7 @@ exports[`RadioButton basic 1`] = `
         class="c3"
         id="test id"
         name="test"
+        tabindex="0"
         type="radio"
         value="2"
       />
@@ -436,6 +441,7 @@ exports[`RadioButton basic renders outside grommet wrapper 1`] = `
     <input
       class="c2"
       name="test"
+      tabindex="0"
       type="radio"
       value="1"
     />
@@ -531,6 +537,7 @@ exports[`RadioButton checked 1`] = `
         checked=""
         class="c3"
         name="test"
+        tabindex="0"
         type="radio"
         value="1"
       />
@@ -646,6 +653,7 @@ exports[`RadioButton children 1`] = `
       <input
         class="c3"
         name="test"
+        tabindex="0"
         type="radio"
         value="1"
       />
@@ -664,6 +672,7 @@ exports[`RadioButton children 1`] = `
         checked=""
         class="c3"
         name="test"
+        tabindex="0"
         type="radio"
         value="2"
       />
@@ -782,6 +791,7 @@ exports[`RadioButton disabled 1`] = `
         class="c3"
         disabled=""
         name="test"
+        tabindex="0"
         type="radio"
         value="1"
       />
@@ -802,6 +812,7 @@ exports[`RadioButton disabled 1`] = `
         class="c3"
         disabled=""
         name="test"
+        tabindex="0"
         type="radio"
         value="2"
       />
@@ -909,6 +920,7 @@ exports[`RadioButton label 1`] = `
       <input
         class="c3"
         name="test"
+        tabindex="0"
         type="radio"
         value="1"
       />
@@ -931,6 +943,7 @@ exports[`RadioButton label 1`] = `
       <input
         class="c3"
         name="test"
+        tabindex="0"
         type="radio"
         value="2"
       />
@@ -1033,6 +1046,7 @@ exports[`RadioButton label themed 1`] = `
       <input
         class="c3"
         name="test"
+        tabindex="0"
         type="radio"
       />
       <div
@@ -1126,6 +1140,7 @@ exports[`RadioButton renders custom circle icon 1`] = `
         checked=""
         class="c3"
         name="test"
+        tabindex="0"
         type="radio"
       />
       <div
@@ -1220,6 +1235,7 @@ exports[`RadioButton should apply a11yTitle or aria-label 1`] = `
         aria-label="test"
         class="c3"
         name="test"
+        tabindex="0"
         type="radio"
       />
       <div
@@ -1237,6 +1253,7 @@ exports[`RadioButton should apply a11yTitle or aria-label 1`] = `
         aria-label="test-2"
         class="c3"
         name="test"
+        tabindex="0"
         type="radio"
       />
       <div
@@ -1325,6 +1342,7 @@ exports[`RadioButton should have no accessibility violations 1`] = `
         aria-label="test"
         class="c3"
         name="test"
+        tabindex="0"
         type="radio"
       />
       <div

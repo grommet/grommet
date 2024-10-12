@@ -149,7 +149,7 @@ exports[`ThumbsRating StarRating is present 1`] = `
             class="c4"
             id="dislike"
             name="test"
-            tabindex="-1"
+            tabindex="0"
             type="radio"
             value="dislike"
           />
@@ -306,7 +306,7 @@ exports[`ThumbsRating StarRating renders outside grommet wrapper 1`] = `
         class="c3"
         id="dislike"
         name="test"
-        tabindex="-1"
+        tabindex="0"
         type="radio"
         value="dislike"
       />
@@ -475,7 +475,7 @@ exports[`ThumbsRating StarRating should have no accessibility violations 1`] = `
             class="c4"
             id="dislike"
             name="test"
-            tabindex="-1"
+            tabindex="0"
             type="radio"
             value="dislike"
           />
@@ -763,7 +763,7 @@ exports[`ThumbsRating value for thumbs 1`] = `
                 class="c7"
                 id="dislike"
                 name="test"
-                tabindex="-1"
+                tabindex="0"
                 type="radio"
                 value="dislike"
               />

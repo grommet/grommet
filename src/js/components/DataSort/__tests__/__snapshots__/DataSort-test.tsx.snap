@@ -790,7 +790,7 @@ exports[`DataSort renders 1`] = `
                       <input
                         class="c20"
                         name="_sort.direction"
-                        tabindex="-1"
+                        tabindex="0"
                         type="radio"
                         value="desc"
                       />
@@ -1283,7 +1283,7 @@ exports[`DataSort sort when data array is empty 1`] = `
                 <input
                   class="c18"
                   name="_sort.direction"
-                  tabindex="-1"
+                  tabindex="0"
                   type="radio"
                   value="desc"
                 />
