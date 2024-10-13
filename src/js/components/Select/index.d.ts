@@ -42,9 +42,9 @@ export interface BasicSelectProps {
   messages?: { multiple?: string };
   name?: string;
   onChange?: (event: SelectOnChangeEvent) => void;
-  onClose?: (...args: any[]) => any;
+  onClose?: React.MouseEventHandler<HTMLButtonElement>;
   onMore?: (...args: any[]) => any;
-  onOpen?: (...args: any[]) => any;
+  onOpen?: React.MouseEventHandler<HTMLButtonElement>;
   onSearch?: (search: string) => void;
   options: (string | boolean | number | JSX.Element | object)[];
   open?: boolean;
