@@ -380,6 +380,9 @@ var MaskedInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
     target: inputRef.current,
     onClickOutside: onHideDrop,
     onEsc: onHideDrop
+    // MaskedInput manages its own keyboard behavior via Keyboard
+    ,
+    trapFocus: false
   }, dropProps), /*#__PURE__*/React.createElement(ContainerBox, _extends({
     ref: dropRef,
     overflow: "auto",

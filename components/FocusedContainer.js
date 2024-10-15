@@ -11,10 +11,10 @@ function _interopRequireWildcard(e, r) { if (!r && e && e.__esModule) return e; 
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (e.includes(n)) continue; t[n] = r[n]; } return t; }
 var isFocusable = function isFocusable(element) {
-  if (element.tabIndex < 0 || element.disabled) {
+  if ((element == null ? void 0 : element.tabIndex) < 0 || element != null && element.disabled) {
     return false;
   }
-  switch (element.nodeName) {
+  switch (element == null ? void 0 : element.nodeName) {
     case 'A':
       return !!element.href && element.rel !== 'ignore';
     case 'INPUT':
@@ -23,6 +23,8 @@ var isFocusable = function isFocusable(element) {
     case 'SELECT':
     case 'TEXTAREA':
       return true;
+    case 'DIV':
+      return element.tabIndex >= 0;
     default:
       return false;
   }
@@ -103,11 +105,23 @@ var FocusedContainer = exports.FocusedContainer = function FocusedContainer(_ref
     if (container) roots.push(container);
 
     // Create and insert focusable nodes to help track when focus
-    // has left this container but without letting focus be noticeably placed
-    // on anything outside the container
+    // has left this container but without letting focus be noticeably
+    // placed on anything outside the container
     if (!hidden && trapFocus) {
       var preDiv = document.createElement('div');
       var postDiv = document.createElement('div');
+      var commonStyles = {
+        position: 'absolute',
+        height: '1px',
+        left: '0',
+        right: '0'
+      };
+      Object.assign(preDiv.style, _extends({}, commonStyles, {
+        top: '0'
+      }));
+      Object.assign(postDiv.style, _extends({}, commonStyles, {
+        bottom: '0'
+      }));
       preNodeRef.current = container.parentNode.insertBefore(preDiv, container);
       postNodeRef.current = container.parentNode.insertBefore(postDiv, container.nextSibling);
       preNodeRef.current.tabIndex = 0;
