@@ -90,7 +90,10 @@ jobs:
       - attach_workspace:
           at: ~/grommet-ci
       - run: sudo apt-get update
-      - browser-tools/install-chrome
+      - browser-tools/install-chrome:
+          replace-existing: true
+          chrome-version: 129.0.6668.100
+          # temporary solution, v130 is causing websocket connection issue
       - browser-tools/install-chromedriver
       - run:
           name: Start project
