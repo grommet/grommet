@@ -8,11 +8,14 @@ import {
   PlaceHolderType,
 } from '../../utils';
 
-type OptionType = string | number | { label: string; value: string | number };
+export type OptionType =
+  | string
+  | number
+  | { label: string; value: string | number };
 
 // Define the event type for the onChange function
 interface SelectOnChangeEvent {
-  option?: number; // Option selected from the dropdown
+  option?: OptionType | OptionType[]; // Option selected from the dropdown
   value?: OptionType | OptionType[]; // Value(s) selected
   selected?: OptionType[]; // Items selected in multi-select
 }

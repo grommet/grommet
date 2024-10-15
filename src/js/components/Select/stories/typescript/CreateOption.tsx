@@ -1,19 +1,20 @@
 import React, { useState } from 'react';
 import { Box, Select } from 'grommet';
-
+import { OptionType } from '../../index';
 // the prefix name of the Create option entry
 const prefix = 'Create';
 
-const defaultOptions = [];
+const defaultOptions: OptionType[] = [];
 for (let i = 1; i <= 5; i += 1) {
   defaultOptions.push(`option ${i}`);
 }
 
 const updateCreateOption = (text: string) => {
   const len = defaultOptions.length;
-  if (defaultOptions[len - 1].includes(prefix)) {
-    // remove Create option before adding an updated one
-    defaultOptions.pop();
+  if (typeof defaultOptions[len - 1] === 'string') {
+    if ((defaultOptions[len - 1] as string).includes(prefix)) {
+      defaultOptions.pop();
+    }
   }
   defaultOptions.push(`${prefix} '${text}'`);
 };
@@ -31,8 +32,10 @@ const getRegExp = (text) => {
 };
 
 export const CreateOption = () => {
-  const [options, setOptions] = useState(defaultOptions);
-  const [value, setValue] = useState('');
+  const [options, setOptions] = useState<OptionType[]>(defaultOptions);
+  const [value, setValue] = useState<OptionType | OptionType[] | undefined>(
+    undefined,
+  );
   const [searchValue, setSearchValue] = useState('');
 
   return (
@@ -46,7 +49,7 @@ export const CreateOption = () => {
         value={value}
         options={options}
         onChange={({ option }) => {
-          if (option.includes(prefix)) {
+          if (typeof option === 'string' && option.includes(prefix)) {
             defaultOptions.pop(); // remove Create option
             defaultOptions.push(searchValue);
             setValue(searchValue);
@@ -58,7 +61,7 @@ export const CreateOption = () => {
         onSearch={(text: string) => {
           updateCreateOption(text);
           const exp = getRegExp(text);
-          setOptions(defaultOptions.filter((o) => exp.test(o)));
+          setOptions(defaultOptions.filter((o) => exp.test(String(o))));
           setSearchValue(text);
         }}
       />
