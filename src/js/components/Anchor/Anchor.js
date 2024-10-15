@@ -66,16 +66,25 @@ const Anchor = forwardRef(
     }, [children, icon, label]);
 
     let coloredIcon = icon;
-    if (icon && !icon.props.color) {
-      coloredIcon = cloneElement(icon, {
-        color: normalizeColor(
-          color ||
-            theme.anchor?.icon?.color ||
-            theme.anchor?.size?.[sizeProp || size]?.color ||
-            theme.anchor.color,
-          theme,
-        ),
-      });
+    if (icon) {
+      if (!icon.props.color) {
+        coloredIcon = cloneElement(icon, {
+          color: normalizeColor(
+            color ||
+              theme.anchor?.icon?.color ||
+              theme.anchor?.size?.[sizeProp || size]?.color ||
+              theme.anchor.color,
+            theme,
+          ),
+        });
+
+        if (!icon.props.size) {
+          const scaledSize = sizeProp || size || 'medium'; // fallback size
+          coloredIcon = cloneElement(coloredIcon, {
+            size: theme.anchor?.size?.[scaledSize]?.iconSize || scaledSize,
+          });
+        }
+      }
     }
 
     const anchorIcon = useSizedIcon(coloredIcon, sizeProp || size, theme);
