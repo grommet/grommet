@@ -149,7 +149,7 @@ const TestButton = ({
   );
 };
 
-const TestRestrictFocus = () => {
+const TestTrapFocus = () => {
   const [showDrop, setShowDrop] = useState<boolean>(false);
 
   const inputRef = useRef<HTMLInputElement | null>(null);
@@ -162,10 +162,13 @@ const TestRestrictFocus = () => {
 
   if (showDrop) {
     drop = (
-      <Drop id="drop-node" restrictFocus target={inputRef.current || undefined}>
-        <button autoFocus aria-label="first-focus">
-          first-focus
-        </button>
+      <Drop
+        id="drop-node"
+        trapFocus
+        restrictFocus
+        target={inputRef.current || undefined}
+      >
+        <button aria-label="first-focus">first-focus</button>
         <button aria-label="second-focus">second-focus</button>
       </Drop>
     );
@@ -312,20 +315,20 @@ describe('Drop', () => {
     });
   });
 
-  test('focus does not leave the dialog when restrictFocus is true', async () => {
+  test('focus does not leave the dialog when trapFocus is true', async () => {
     userEvent.setup();
     window.scrollTo = jest.fn();
-    render(<TestRestrictFocus />);
+    render(<TestTrapFocus />);
 
     // Wait for the button with text 'first-focus'
     const firstButton = await screen.findByText('first-focus');
     const secondButton = await screen.findByText('second-focus');
     expect(firstButton).toBeInTheDocument();
 
+    await userEvent.tab();
+
     // Check that the button is the currently focused element
-    await waitFor(() => {
-      expect(document.activeElement).toBe(firstButton);
-    });
+    expect(document.activeElement).toBe(firstButton);
 
     // Simulate tab
     await userEvent.tab();
