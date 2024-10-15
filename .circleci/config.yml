@@ -1,10 +1,10 @@
 version: 2.1
 orbs:
-  browser-tools: circleci/browser-tools@1.4.4
+  browser-tools: circleci/browser-tools@1.4.8
 defaults: &defaults
   working_directory: ~/grommet-ci
   docker:
-    - image: cimg/node:20.16.0-browsers
+    - image: cimg/node:20.18.0-browsers
 jobs:
   checkout:
     <<: *defaults
@@ -90,7 +90,10 @@ jobs:
       - attach_workspace:
           at: ~/grommet-ci
       - run: sudo apt-get update
-      - browser-tools/install-chrome
+      - browser-tools/install-chrome:
+          replace-existing: true
+          chrome-version: 129.0.6668.100
+          # temporary solution, v130 is causing websocket connection issue
       - browser-tools/install-chromedriver
       - run:
           name: Start project
