@@ -1,10 +1,10 @@
 version: 2.1
 orbs:
-  browser-tools: circleci/browser-tools@1.4.4
+  browser-tools: circleci/browser-tools@1.4.8
 defaults: &defaults
   working_directory: ~/grommet-ci
   docker:
-    - image: cimg/node:20.16.0-browsers
+    - image: cimg/node:20.18.0-browsers
 jobs:
   checkout:
     <<: *defaults
