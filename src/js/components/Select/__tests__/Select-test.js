@@ -5,10 +5,8 @@ import 'jest-axe/extend-expect';
 import 'jest-styled-components';
 import 'regenerator-runtime/runtime';
 import '@testing-library/jest-dom';
-
 import { CaretDown, CaretUp, FormDown } from 'grommet-icons';
 import { createPortal, expectPortal } from '../../../utils/portal';
-
 import { Box, Grommet, FormField } from '../..';
 import { Select } from '..';
 
@@ -1728,6 +1726,41 @@ describe('Select', () => {
     const styles = window.getComputedStyle(select);
 
     expect(styles.boxShadow).not.toBe('none');
+  });
+
+  test('Select component handles JSX options correctly', () => {
+    const onChange = jest.fn();
+
+    // Render Select with JSX elements as options
+    const { getByPlaceholderText, getByText, container } = render(
+      <Grommet>
+        <Select
+          id="test-select"
+          placeholder="test select"
+          options={[
+            <Box key="1">Option One</Box>,
+            <Box key="2">Option Two</Box>,
+          ]}
+          onChange={onChange}
+        />
+      </Grommet>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+
+    fireEvent.click(getByPlaceholderText('test select'));
+
+    expect(getByText('Option One')).toBeInTheDocument();
+    expect(getByText('Option Two')).toBeInTheDocument();
+
+    fireEvent.click(getByText('Option One'));
+
+    expect(onChange).toHaveBeenCalledWith(
+      expect.objectContaining({
+        value: expect.anything(),
+      }),
+    );
+    expect(onChange.mock.calls[0][0].value.type).toBe(Box);
   });
 
   window.scrollTo.mockRestore();
