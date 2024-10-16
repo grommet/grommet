@@ -1709,6 +1709,25 @@ describe('Select', () => {
     expect(getAllByRole('option')[0]).toHaveFocus();
   });
 
+  test('focusIndicator is true by default when plain is false', () => {
+    const { container } = render(
+      <Grommet>
+        <Select
+          id="test-select"
+          placeholder="test select"
+          options={['one', 'two']}
+          plain={false}
+          focusIndicator={false}
+        />
+      </Grommet>,
+    );
+
+    const select = container.querySelector('button');
+    const styles = window.getComputedStyle(select);
+
+    expect(styles.boxShadow).not.toBe('none');
+  });
+
   test('Select component handles JSX options correctly', () => {
     const onChange = jest.fn();
 
