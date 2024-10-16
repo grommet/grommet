@@ -80,9 +80,17 @@ const Anchor = forwardRef(
 
         if (!icon.props.size) {
           const scaledSize = sizeProp || size || 'medium'; // fallback size
-          coloredIcon = cloneElement(coloredIcon, {
-            size: theme.anchor?.size?.[scaledSize]?.iconSize || scaledSize,
-          });
+
+          let iconSize;
+          if (sizeProp === 'xsmall') {
+            iconSize = 'small';
+          } else if (sizeProp === 'xxlarge') {
+            iconSize = 'xlarge';
+          } else {
+            iconSize = theme.anchor?.size?.[scaledSize]?.iconSize || scaledSize;
+          }
+
+          coloredIcon = cloneElement(coloredIcon, { size: iconSize });
         }
       }
     }
