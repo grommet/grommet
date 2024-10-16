@@ -2,14 +2,17 @@
 
 exports.__esModule = true;
 exports.useDisabled = exports.getSelectIcon = exports.getOptionValue = exports.getOptionLabel = exports.getOptionIndex = exports.getNormalizedValue = exports.getIconColor = exports.getDisplayLabelKey = exports.changeEvent = exports.arrayIncludes = exports.applyKey = void 0;
-var _react = require("react");
+var _react = _interopRequireWildcard(require("react"));
 var _utils = require("../../utils");
+function _getRequireWildcardCache(e) { if ("function" != typeof WeakMap) return null; var r = new WeakMap(), t = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(e) { return e ? t : r; })(e); }
+function _interopRequireWildcard(e, r) { if (!r && e && e.__esModule) return e; if (null === e || "object" != typeof e && "function" != typeof e) return { "default": e }; var t = _getRequireWildcardCache(r); if (t && t.has(e)) return t.get(e); var n = { __proto__: null }, a = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var u in e) if ("default" !== u && {}.hasOwnProperty.call(e, u)) { var i = a ? Object.getOwnPropertyDescriptor(e, u) : null; i && (i.get || i.set) ? Object.defineProperty(n, u, i) : n[u] = e[u]; } return n["default"] = e, t && t.set(e, n), n; }
 var _applyKey = exports.applyKey = function applyKey(option, key) {
+  if (/*#__PURE__*/_react["default"].isValidElement(option)) return option;
   if (option === undefined || option === null) return undefined;
   if (typeof key === 'object') return _applyKey(option, key.key);
   if (typeof key === 'function') return key(option);
   if (key !== undefined && typeof option === 'object') return option[key];
-  if (typeof option === 'object' && Object.keys(option)) return option[Object.keys(option)[0]];
+  if (typeof option === 'object' && Object.keys(option).length > 0) return option[Object.keys(option)[0]];
   return option;
 };
 var getOptionLabel = exports.getOptionLabel = function getOptionLabel(index, options, labelKey) {
