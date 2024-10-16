@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { ChangeEvent, useState } from 'react';
 import userEvent from '@testing-library/user-event';
 
 import 'jest-styled-components';
@@ -6,7 +6,7 @@ import 'jest-styled-components';
 import { act, render, fireEvent, screen } from '@testing-library/react';
 import { Grommet } from '../../Grommet';
 import { Form } from '..';
-import { FormField } from '../../FormField';
+import { FormField, FormFieldProps } from '../../FormField';
 import { Button } from '../../Button';
 import { TextInput } from '../../TextInput';
 import { CheckBox } from '../../CheckBox';
@@ -21,7 +21,7 @@ describe('Form controlled', () => {
     const Test = () => {
       const [value, setValue] = React.useState({ test: '' });
       const onChange = React.useCallback(
-        (nextValue) => setValue(nextValue),
+        (nextValue: { test: string }) => setValue(nextValue),
         [],
       );
       return (
@@ -82,7 +82,7 @@ describe('Form controlled', () => {
     const Test = () => {
       const [value, setValue] = React.useState({ test: '' });
       const onChange = React.useCallback(
-        (nextValue) => setValue(nextValue),
+        (nextValue: { test: string }) => setValue(nextValue),
         [],
       );
       return (
@@ -114,7 +114,7 @@ describe('Form controlled', () => {
   test('controlled onValidate custom error', () => {
     const onValidate = jest.fn();
     const errorMessage = 'One uppercase letter';
-    const testRules = {
+    const testRules: FormFieldProps['validate'] = {
       regexp: /(?=.*?[A-Z])/,
       message: errorMessage,
       status: 'error',
@@ -123,7 +123,7 @@ describe('Form controlled', () => {
     const Test = () => {
       const [value, setValue] = React.useState({ test: '' });
       const onChange = React.useCallback(
-        (nextValue) => setValue(nextValue),
+        (nextValue: { test: string }) => setValue(nextValue),
         [],
       );
       return (
@@ -155,7 +155,7 @@ describe('Form controlled', () => {
   test('controlled onValidate custom info', () => {
     const onValidate = jest.fn();
     const infoMessage = 'One uppercase letter';
-    const testRules = {
+    const testRules: FormFieldProps['validate'] = {
       regexp: /(?=.*?[A-Z])/,
       message: infoMessage,
       status: 'info',
@@ -164,7 +164,7 @@ describe('Form controlled', () => {
     const Test = () => {
       const [value, setValue] = React.useState({ test: '' });
       const onChange = React.useCallback(
-        (nextValue) => setValue(nextValue),
+        (nextValue: { test: string }) => setValue(nextValue),
         [],
       );
       return (
@@ -199,7 +199,7 @@ describe('Form controlled', () => {
       const [value, setValue] = React.useState({ test: '' });
       React.useEffect(() => setValue({ test: 'test' }), []);
       const onChange = React.useCallback(
-        (nextValue) => setValue(nextValue),
+        (nextValue: { test: string }) => setValue(nextValue),
         [],
       );
       return (
@@ -236,7 +236,7 @@ describe('Form controlled', () => {
     const Test = () => {
       const [value, setValue] = React.useState('');
       const onChange = React.useCallback(
-        (event) => setValue(event.target.value),
+        (event: ChangeEvent<HTMLInputElement>) => setValue(event.target.value),
         [],
       );
       return (
@@ -279,7 +279,7 @@ describe('Form controlled', () => {
       const [value, setValue] = React.useState('');
       React.useEffect(() => setValue('test'), []);
       const onChange = React.useCallback(
-        (event) => setValue(event.target.value),
+        (event: ChangeEvent<HTMLInputElement>) => setValue(event.target.value),
         [],
       );
       return (
@@ -349,7 +349,7 @@ describe('Form controlled', () => {
     const Test = () => {
       const [value, setValue] = React.useState({ test: '' });
       const onChange = React.useCallback(
-        (nextValue) => setValue(nextValue),
+        (nextValue: { test: string }) => setValue(nextValue),
         [],
       );
       return (
@@ -383,7 +383,7 @@ describe('Form controlled', () => {
     const Test = () => {
       const [value, setValue] = React.useState({ test: '' });
       const onChange = React.useCallback(
-        (nextValue) => setValue(nextValue),
+        (nextValue: { test: string }) => setValue(nextValue),
         [],
       );
       return (
@@ -409,7 +409,9 @@ describe('Form controlled', () => {
     fireEvent.change(getByPlaceholderText('test input'), {
       target: { value: 'Input has changed' },
     });
-    expect(getByPlaceholderText('test input').value).toBe('Input has changed');
+    expect((getByPlaceholderText('test input') as HTMLInputElement).value).toBe(
+      'Input has changed',
+    );
     fireEvent.click(getByText('Reset'));
     expect(onReset).toBeCalledTimes(1);
     expect(queryByText('Input has changed')).toBeNull();
@@ -454,7 +456,11 @@ describe('Form controlled', () => {
     const onSubmit = jest.fn();
 
     const Test = () => {
-      const [value, setValue] = React.useState({ name: '', toggle: false });
+      const [value, setValue] = React.useState<{
+        name: string;
+        toggle: Boolean;
+        mood?: string;
+      }>({ name: '', toggle: false });
       return (
         <Form
           validate="blur"
@@ -559,11 +565,13 @@ describe('Form controlled', () => {
           { number: '', ext: '' },
         ],
       });
-      const onChange = (nextValue) => setValue(nextValue);
+      const onChange = (nextValue: {
+        phones: { number: string; ext: string }[];
+      }) => setValue(nextValue);
       return (
         <Form value={value} onChange={onChange} onSubmit={onSubmit}>
           {value.phones.length &&
-            value.phones.map((phone, idx) => (
+            value.phones.map((_, idx) => (
               <Box
                 // eslint-disable-next-line react/no-array-index-key
                 key={idx}
@@ -631,11 +639,14 @@ describe('Form controlled', () => {
           { number: '', ext: '' },
         ],
       });
-      const onChange = (nextValue) => setValue(nextValue);
+      const onChange = (nextValue: {
+        test: string;
+        phones: { number: string; ext: string }[];
+      }) => setValue(nextValue);
       return (
         <Form value={value} onChange={onChange} onValidate={onValidate}>
           {value.phones.length &&
-            value.phones.map((phone, idx) => (
+            value.phones.map((_, idx) => (
               <Box
                 // eslint-disable-next-line react/no-array-index-key
                 key={idx}
@@ -684,7 +695,7 @@ describe('Form controlled', () => {
   test('controlled Array of Form Fields onValidate custom error', () => {
     const onValidate = jest.fn();
     const errorMessage = 'Only Numbers';
-    const testRules = {
+    const testRules: FormFieldProps['validate'] = {
       regexp: /^[0-9]*$/,
       message: errorMessage,
       status: 'error',
@@ -698,11 +709,14 @@ describe('Form controlled', () => {
           { number: '', ext: '' },
         ],
       });
-      const onChange = (nextValue) => setValue(nextValue);
+      const onChange = (nextValue: {
+        test: string;
+        phones: { number: string; ext: string }[];
+      }) => setValue(nextValue);
       return (
         <Form value={value} onChange={onChange} onValidate={onValidate}>
           {value.phones.length &&
-            value.phones.map((phone, idx) => (
+            value.phones.map((_, idx) => (
               <Box
                 // eslint-disable-next-line react/no-array-index-key
                 key={idx}
@@ -756,7 +770,7 @@ describe('Form controlled', () => {
         firstName: 'J',
         middleName: '1',
         lastName: '',
-        title: 1,
+        title: '1',
       });
 
       return (
@@ -849,7 +863,7 @@ describe('Form controlled', () => {
       const [firstName, setFirstName] = useState('J');
       const [middleName, setMiddleName] = useState('1');
       const [lastName, setLastName] = useState('');
-      const [title, setTitle] = useState(1);
+      const [title, setTitle] = useState('1');
 
       return (
         <Form validate="change">
@@ -1046,7 +1060,7 @@ describe('Form controlled', () => {
       const [firstName, setFirstName] = useState('a');
       const [middleName, setMiddleName] = useState('1');
       const [lastName, setLastName] = useState('');
-      const [title, setTitle] = useState(1);
+      const [title, setTitle] = useState('1');
 
       return (
         <Form onSubmit={onSubmit}>
@@ -1221,9 +1235,13 @@ describe('Form controlled', () => {
       </Grommet>,
     );
 
-    const blur = container.querySelector('input[name="blur"]');
-    const change = container.querySelector('input[name="change"]');
-    const submit = container.querySelector('input[name="submit"]');
+    const blur = container.querySelector('input[name="blur"]') as HTMLElement;
+    const change = container.querySelector(
+      'input[name="change"]',
+    ) as HTMLElement;
+    const submit = container.querySelector(
+      'input[name="submit"]',
+    ) as HTMLElement;
 
     expect(screen.queryAllByText('invalid')).toHaveLength(0);
     expect(screen.queryAllByText('required')).toHaveLength(0);
@@ -1264,7 +1282,7 @@ describe('Form controlled', () => {
     expect(screen.queryAllByText('invalid')).toHaveLength(3);
   });
 
-  test(`ensure onSubmit of form in Layer does not submit 
+  test(`ensure onSubmit of form in Layer does not submit
   outer form`, () => {
     const onSubmit = jest.fn();
     const onSubmitLayerForm = jest.fn();
