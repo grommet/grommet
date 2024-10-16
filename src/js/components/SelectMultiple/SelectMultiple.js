@@ -542,6 +542,7 @@ const SelectMultiple = forwardRef(
               dropTarget={dropTarget}
               alignSelf={alignSelf}
               tabIndex="0"
+              aria-labelledby={id ? `${id}__label` : undefined}
             >
               <Box
                 align="center"

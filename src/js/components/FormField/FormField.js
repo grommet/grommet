@@ -555,7 +555,21 @@ const FormField = forwardRef(
         {(label && component !== CheckBox) || help ? (
           <>
             {label && component !== CheckBox && (
-              <Text as="label" htmlFor={htmlFor} {...labelStyle}>
+              <Text
+                as="label"
+                id={
+                  htmlFor &&
+                  Children.toArray(contents).some(
+                    (child) =>
+                      child.type.displayName === 'Select' ||
+                      child.type.displayName === 'SelectMultiple',
+                  )
+                    ? `${htmlFor}__label`
+                    : undefined
+                }
+                htmlFor={htmlFor}
+                {...labelStyle}
+              >
                 {label}
                 {showRequiredIndicator ? requiredIndicator : undefined}
               </Text>

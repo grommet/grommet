@@ -294,6 +294,7 @@ const Select = forwardRef(
                 })
               : ''
           }`}
+          aria-labelledby={id ? `${id}__label` : undefined}
           aria-expanded={Boolean(open)}
           aria-haspopup="listbox"
           id={id}
