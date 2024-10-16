@@ -558,6 +558,10 @@ const FormField = forwardRef(
               <Text
                 as="label"
                 id={
+                  // Determine the id based on the presence
+                  // of `htmlFor` and whether any child
+                  // components are of type 'Select'
+                  // or 'SelectMultiple'.
                   htmlFor &&
                   Children.toArray(contents).some(
                     (child) =>
