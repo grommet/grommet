@@ -5604,6 +5604,7 @@ exports[`DataTable groupBy 0 value 1`] = `
             >
               <div
                 class="c6"
+                tabindex="0"
               >
                 <svg
                   aria-label="FormDown"
@@ -5685,6 +5686,7 @@ exports[`DataTable groupBy 0 value 1`] = `
             >
               <div
                 class="c6"
+                tabindex="0"
               >
                 <svg
                   aria-label="FormDown"
@@ -5743,6 +5745,7 @@ exports[`DataTable groupBy 0 value 1`] = `
           >
             <div
               class="c6"
+              tabindex="0"
             >
               <svg
                 aria-hidden="true"
@@ -5804,6 +5807,7 @@ exports[`DataTable groupBy 0 value 1`] = `
           >
             <div
               class="c6"
+              tabindex="0"
             >
               <svg
                 aria-hidden="true"
@@ -6128,6 +6132,7 @@ exports[`DataTable groupBy 1`] = `
             >
               <div
                 class="c6"
+                tabindex="0"
               >
                 <svg
                   aria-label="FormDown"
@@ -6195,6 +6200,7 @@ exports[`DataTable groupBy 1`] = `
             >
               <div
                 class="c6"
+                tabindex="0"
               >
                 <svg
                   aria-label="FormDown"
@@ -6251,6 +6257,7 @@ exports[`DataTable groupBy 1`] = `
             >
               <div
                 class="c6"
+                tabindex="0"
               >
                 <svg
                   aria-label="FormDown"
@@ -6322,6 +6329,7 @@ exports[`DataTable groupBy 2`] = `
             >
               <div
                 class="StyledBox-sc-13pk1d4-0 gFlNkC"
+                tabindex="0"
               >
                 <svg
                   aria-label="FormDown"
@@ -6389,6 +6397,7 @@ exports[`DataTable groupBy 2`] = `
             >
               <div
                 class="StyledBox-sc-13pk1d4-0 gFlNkC"
+                tabindex="0"
               >
                 <svg
                   aria-label="FormDown"
@@ -6445,6 +6454,7 @@ exports[`DataTable groupBy 2`] = `
             >
               <div
                 class="StyledBox-sc-13pk1d4-0 gFlNkC"
+                tabindex="0"
               >
                 <svg
                   aria-label="FormDown"
@@ -6813,6 +6823,7 @@ exports[`DataTable groupBy expand 1`] = `
             >
               <div
                 class="c6"
+                tabindex="0"
               >
                 <svg
                   aria-label="FormDown"
@@ -6880,6 +6891,7 @@ exports[`DataTable groupBy expand 1`] = `
             >
               <div
                 class="c6"
+                tabindex="0"
               >
                 <svg
                   aria-label="FormUp"
@@ -6931,6 +6943,7 @@ exports[`DataTable groupBy expand 1`] = `
           >
             <div
               class="c6"
+              tabindex="0"
             >
               <svg
                 aria-hidden="true"
@@ -6979,6 +6992,7 @@ exports[`DataTable groupBy expand 1`] = `
           >
             <div
               class="c6"
+              tabindex="0"
             >
               <svg
                 aria-hidden="true"
@@ -7032,6 +7046,7 @@ exports[`DataTable groupBy expand 1`] = `
             >
               <div
                 class="c6"
+                tabindex="0"
               >
                 <svg
                   aria-label="FormDown"
@@ -7352,6 +7367,7 @@ exports[`DataTable groupBy property 1`] = `
             >
               <div
                 class="c6"
+                tabindex="0"
               >
                 <svg
                   aria-label="FormDown"
@@ -7419,6 +7435,7 @@ exports[`DataTable groupBy property 1`] = `
             >
               <div
                 class="c6"
+                tabindex="0"
               >
                 <svg
                   aria-label="FormDown"
@@ -7475,6 +7492,7 @@ exports[`DataTable groupBy property 1`] = `
             >
               <div
                 class="c6"
+                tabindex="0"
               >
                 <svg
                   aria-label="FormDown"
@@ -7546,6 +7564,7 @@ exports[`DataTable groupBy property 2`] = `
             >
               <div
                 class="StyledBox-sc-13pk1d4-0 gFlNkC"
+                tabindex="0"
               >
                 <svg
                   aria-label="FormDown"
@@ -7613,6 +7632,7 @@ exports[`DataTable groupBy property 2`] = `
             >
               <div
                 class="StyledBox-sc-13pk1d4-0 gFlNkC"
+                tabindex="0"
               >
                 <svg
                   aria-label="FormDown"
@@ -7669,6 +7689,7 @@ exports[`DataTable groupBy property 2`] = `
             >
               <div
                 class="StyledBox-sc-13pk1d4-0 gFlNkC"
+                tabindex="0"
               >
                 <svg
                   aria-label="FormDown"
@@ -8162,6 +8183,7 @@ exports[`DataTable groupBy toggle 2`] = `
             >
               <div
                 class="c3"
+                tabindex="0"
               >
                 <svg
                   aria-label="FormDown"
@@ -8413,6 +8435,7 @@ exports[`DataTable groupBy toggle 2`] = `
             >
               <div
                 class="c4"
+                tabindex="0"
               >
                 <svg
                   aria-label="FormDown"
@@ -8469,6 +8492,7 @@ exports[`DataTable groupBy toggle 2`] = `
             >
               <div
                 class="c4"
+                tabindex="0"
               >
                 <svg
                   aria-label="FormDown"
@@ -9194,6 +9218,7 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
             >
               <div
                 class="c6"
+                tabindex="0"
               >
                 <svg
                   aria-label="FormDown"
@@ -9298,6 +9323,7 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
             >
               <div
                 class="c6"
+                tabindex="0"
               >
                 <svg
                   aria-label="FormUp"
@@ -9385,6 +9411,7 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
           >
             <div
               class="c6"
+              tabindex="0"
             >
               <svg
                 aria-hidden="true"
@@ -9459,6 +9486,7 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
           >
             <div
               class="c6"
+              tabindex="0"
             >
               <svg
                 aria-hidden="true"
@@ -9549,6 +9577,7 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
             >
               <div
                 class="c6"
+                tabindex="0"
               >
                 <svg
                   aria-label="FormDown"
@@ -9996,6 +10025,7 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
             >
               <div
                 class="c6"
+                tabindex="0"
               >
                 <svg
                   aria-label="FormDown"
@@ -10100,6 +10130,7 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
             >
               <div
                 class="c6"
+                tabindex="0"
               >
                 <svg
                   aria-label="FormDown"
@@ -10192,6 +10223,7 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
             >
               <div
                 class="c6"
+                tabindex="0"
               >
                 <svg
                   aria-label="FormDown"
@@ -10659,6 +10691,7 @@ exports[`DataTable onSelect + groupBy should select all items within a group 1`]
             >
               <div
                 class="c6"
+                tabindex="0"
               >
                 <svg
                   aria-label="FormDown"
@@ -10763,6 +10796,7 @@ exports[`DataTable onSelect + groupBy should select all items within a group 1`]
             >
               <div
                 class="c6"
+                tabindex="0"
               >
                 <svg
                   aria-label="FormDown"
@@ -10855,6 +10889,7 @@ exports[`DataTable onSelect + groupBy should select all items within a group 1`]
             >
               <div
                 class="c6"
+                tabindex="0"
               >
                 <svg
                   aria-label="FormDown"
@@ -11293,6 +11328,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 1`
             >
               <div
                 class="c6"
+                tabindex="0"
               >
                 <svg
                   aria-label="FormDown"
@@ -11386,6 +11422,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 1`
             >
               <div
                 class="c6"
+                tabindex="0"
               >
                 <svg
                   aria-label="FormDown"
@@ -11467,6 +11504,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 1`
             >
               <div
                 class="c6"
+                tabindex="0"
               >
                 <svg
                   aria-label="FormDown"
@@ -11563,6 +11601,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 2`
             >
               <div
                 class="StyledBox-sc-13pk1d4-0 gFlNkC"
+                tabindex="0"
               >
                 <svg
                   aria-label="FormDown"
@@ -11691,6 +11730,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 2`
             >
               <div
                 class="StyledBox-sc-13pk1d4-0 gFlNkC"
+                tabindex="0"
               >
                 <svg
                   aria-label="FormDown"
@@ -11807,6 +11847,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 2`
             >
               <div
                 class="StyledBox-sc-13pk1d4-0 gFlNkC"
+                tabindex="0"
               >
                 <svg
                   aria-label="FormDown"
@@ -11938,6 +11979,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 3`
             >
               <div
                 class="StyledBox-sc-13pk1d4-0 gFlNkC"
+                tabindex="0"
               >
                 <svg
                   aria-label="FormDown"
@@ -12031,6 +12073,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 3`
             >
               <div
                 class="StyledBox-sc-13pk1d4-0 gFlNkC"
+                tabindex="0"
               >
                 <svg
                   aria-label="FormDown"
@@ -12112,6 +12155,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 3`
             >
               <div
                 class="StyledBox-sc-13pk1d4-0 gFlNkC"
+                tabindex="0"
               >
                 <svg
                   aria-label="FormDown"
@@ -14911,6 +14955,7 @@ exports[`DataTable onUpdate groupBy.onSelect 1`] = `
             >
               <div
                 class="c5"
+                tabindex="0"
               >
                 <svg
                   aria-label="FormDown"
@@ -15029,6 +15074,7 @@ exports[`DataTable onUpdate groupBy.onSelect 1`] = `
             >
               <div
                 class="c5"
+                tabindex="0"
               >
                 <svg
                   aria-label="FormDown"
@@ -15128,6 +15174,7 @@ exports[`DataTable onUpdate groupBy.onSelect 1`] = `
             >
               <div
                 class="c5"
+                tabindex="0"
               >
                 <svg
                   aria-label="FormDown"
@@ -15216,6 +15263,7 @@ exports[`DataTable onUpdate groupBy.onSelect 1`] = `
             >
               <div
                 class="c5"
+                tabindex="0"
               >
                 <svg
                   aria-label="FormDown"
@@ -15304,6 +15352,7 @@ exports[`DataTable onUpdate groupBy.onSelect 1`] = `
             >
               <div
                 class="c5"
+                tabindex="0"
               >
                 <svg
                   aria-label="FormDown"
@@ -19705,6 +19754,7 @@ exports[`DataTable rowDetails 1`] = `
             >
               <div
                 class="c11"
+                tabindex="0"
               >
                 <svg
                   aria-label="FormDown"
@@ -19767,6 +19817,7 @@ exports[`DataTable rowDetails 1`] = `
             >
               <div
                 class="c11"
+                tabindex="0"
               >
                 <svg
                   aria-label="FormUp"
@@ -19843,6 +19894,7 @@ exports[`DataTable rowDetails 1`] = `
             >
               <div
                 class="c11"
+                tabindex="0"
               >
                 <svg
                   aria-label="FormDown"
@@ -19905,6 +19957,7 @@ exports[`DataTable rowDetails 1`] = `
             >
               <div
                 class="c11"
+                tabindex="0"
               >
                 <svg
                   aria-label="FormDown"
@@ -20270,6 +20323,7 @@ exports[`DataTable rowDetails condtional 1`] = `
             >
               <div
                 class="c11"
+                tabindex="0"
               >
                 <svg
                   aria-label="FormDown"
@@ -20332,6 +20386,7 @@ exports[`DataTable rowDetails condtional 1`] = `
             >
               <div
                 class="c11"
+                tabindex="0"
               >
                 <svg
                   aria-label="FormUp"
@@ -20411,6 +20466,7 @@ exports[`DataTable rowDetails condtional 1`] = `
             >
               <div
                 class="c11"
+                tabindex="0"
               >
                 <svg
                   aria-label="FormDown"
@@ -20473,6 +20529,7 @@ exports[`DataTable rowDetails condtional 1`] = `
             >
               <div
                 class="c11"
+                tabindex="0"
               >
                 <svg
                   aria-label="FormDown"
@@ -21103,6 +21160,7 @@ exports[`DataTable rowProps on group header rows 1`] = `
             >
               <div
                 class="c6"
+                tabindex="0"
               >
                 <svg
                   aria-label="FormDown"
@@ -21170,6 +21228,7 @@ exports[`DataTable rowProps on group header rows 1`] = `
             >
               <div
                 class="c6"
+                tabindex="0"
               >
                 <svg
                   aria-label="FormDown"
@@ -21221,6 +21280,7 @@ exports[`DataTable rowProps on group header rows 1`] = `
           >
             <div
               class="c6"
+              tabindex="0"
             >
               <svg
                 aria-hidden="true"
@@ -23165,6 +23225,7 @@ exports[`DataTable should apply custom theme for groupHeader 1`] = `
               >
                 <div
                   class="c6"
+                  tabindex="0"
                 >
                   <svg
                     aria-label="FormDown"
@@ -23232,6 +23293,7 @@ exports[`DataTable should apply custom theme for groupHeader 1`] = `
               >
                 <div
                   class="c13"
+                  tabindex="0"
                 >
                   <svg
                     aria-label="FormDown"
@@ -23288,6 +23350,7 @@ exports[`DataTable should apply custom theme for groupHeader 1`] = `
               >
                 <div
                   class="c13"
+                  tabindex="0"
                 >
                   <svg
                     aria-label="FormDown"
