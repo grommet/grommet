@@ -11,7 +11,10 @@ import {
 export type OptionType =
   | string
   | number
-  | { label: string; value: string | number };
+  | boolean
+  | JSX.Element
+  | { label: string; value: string | number }
+  | object;
 
 // Define the event type for the onChange function
 interface SelectOnChangeEvent {
@@ -68,7 +71,13 @@ export interface SelectProps extends BasicSelectProps {
   defaultValue?: string | number | object | (string | number | object)[];
   multiple?: boolean;
   selected?: number | number[];
-  value?: string | JSX.Element | number | object | (string | number | object)[];
+  value?:
+    | boolean
+    | string
+    | JSX.Element
+    | number
+    | object
+    | (string | number | object)[];
 }
 
 // Try without Omit<> to see where we define our own attributes for overrides

@@ -8,7 +8,7 @@ import 'jest-styled-components';
 import '@testing-library/jest-dom';
 import { createPortal, expectPortal } from '../../../utils/portal';
 
-import { Grommet } from '../..';
+import { Grommet, OptionType } from '../..';
 import { Box } from '../../Box';
 import { Text } from '../../Text';
 import { SelectMultiple } from '..';
@@ -37,8 +37,8 @@ const defaultOptions = [
 ];
 
 const TestManyOptions = () => {
-  const [options, setOptions] = useState<string[]>(defaultOptions);
-  const [valueMultiple, setValueMultiple] = useState<string[]>([]);
+  const [options, setOptions] = useState(defaultOptions);
+  const [valueMultiple, setValueMultiple] = useState<OptionType>([]);
   return (
     <Grommet>
       <SelectMultiple
@@ -52,7 +52,7 @@ const TestManyOptions = () => {
         }}
         onClose={() => setOptions(defaultOptions)}
         onChange={({ value }) => {
-          setValueMultiple(value as string[]); // Defaults to an empty array if value is undefined
+          setValueMultiple(value as OptionType); // Defaults to an empty array if value is undefined
         }}
       />
     </Grommet>
