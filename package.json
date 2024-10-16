@@ -55,7 +55,6 @@
   },
   "dependencies": {
     "@emotion/is-prop-valid": "^1.2.1",
-    "grommet": "^2.40.2",
     "grommet-icons": "^4.12.1",
     "hoist-non-react-statics": "^3.2.0",
     "markdown-to-jsx": "7.4.4",

@@ -9448,7 +9448,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"grommet@npm:^2.40.2, grommet@workspace:.":
+"grommet@workspace:.":
   version: 0.0.0-use.local
   resolution: "grommet@workspace:."
   dependencies:
@@ -9509,7 +9509,6 @@ __metadata:
     eslint-plugin-react-hooks: "npm:^4.6.2"
     eslint-plugin-testing-library: "npm:^6.2.2"
     fs-extra: "npm:^11.2.0"
-    grommet: "npm:^2.40.2"
     grommet-icons: "npm:^4.12.1"
     grommet-theme-hpe: "npm:^5.6.0"
     hoist-non-react-statics: "npm:^3.2.0"
