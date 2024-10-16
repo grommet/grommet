@@ -81,7 +81,7 @@ var CheckBoxGroup = exports.CheckBoxGroup = /*#__PURE__*/(0, _react.forwardRef)(
     var checked = value.indexOf(valueOption) >= 0;
     var disabled = disabledProp || option.disabled;
     var key = label + "-" + valueOption;
-    if (option.checked) console.warn( // eslint-disable-next-line max-len
+    if (option.checked) console.warn(// eslint-disable-next-line max-len
     "'checked' prop of an individual CheckBox shouldn't be used in a CheckBoxGroup component. Use the CheckBoxGroup 'value' prop instead.");
     // value shouldn't propagate the input field and the onChange option
     var omit = option.value,

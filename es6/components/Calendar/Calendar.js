@@ -571,7 +571,7 @@ var Calendar = /*#__PURE__*/forwardRef(function (_ref3, ref) {
     var day = new Date(displayBounds[0]);
     var days = [];
     while (days.length < 7) {
-      days.push( /*#__PURE__*/React.createElement(StyledDayContainer, {
+      days.push(/*#__PURE__*/React.createElement(StyledDayContainer, {
         role: "gridcell",
         key: days.length,
         sizeProp: size,
@@ -597,7 +597,7 @@ var Calendar = /*#__PURE__*/forwardRef(function (_ref3, ref) {
   var _loop = function _loop() {
     if (day.getDay() === firstDayOfWeek) {
       if (days) {
-        weeks.push( /*#__PURE__*/React.createElement(StyledWeek, {
+        weeks.push(/*#__PURE__*/React.createElement(StyledWeek, {
           role: "row",
           key: day.getTime(),
           fillContainer: fill
@@ -607,7 +607,7 @@ var Calendar = /*#__PURE__*/forwardRef(function (_ref3, ref) {
     }
     var otherMonth = day.getMonth() !== reference.getMonth();
     if (!showAdjacentDays && otherMonth) {
-      days.push( /*#__PURE__*/React.createElement(StyledDayContainer, {
+      days.push(/*#__PURE__*/React.createElement(StyledDayContainer, {
         key: day.getTime(),
         sizeProp: size,
         fillContainer: fill
@@ -629,7 +629,7 @@ var Calendar = /*#__PURE__*/forwardRef(function (_ref3, ref) {
     we know that all days in the array are from the next month. */
     days.length < day.getDate()) {
       blankWeek = true;
-      days.push( /*#__PURE__*/React.createElement(StyledDayContainer, {
+      days.push(/*#__PURE__*/React.createElement(StyledDayContainer, {
         key: day.getTime(),
         sizeProp: size,
         fillContainer: fill
@@ -653,7 +653,7 @@ var Calendar = /*#__PURE__*/forwardRef(function (_ref3, ref) {
         firstDayInMonth = dateObject;
       }
       if (!children) {
-        days.push( /*#__PURE__*/React.createElement(CalendarDay, {
+        days.push(/*#__PURE__*/React.createElement(CalendarDay, {
           key: day.getTime(),
           buttonProps: {
             a11yTitle: day.toDateString(),
@@ -676,7 +676,7 @@ var Calendar = /*#__PURE__*/forwardRef(function (_ref3, ref) {
           fill: fill
         }, day.getDate()));
       } else {
-        days.push( /*#__PURE__*/React.createElement(CalendarCustomDay, {
+        days.push(/*#__PURE__*/React.createElement(CalendarCustomDay, {
           key: day.getTime(),
           buttonProps: onSelect ? {
             a11yTitle: day.toDateString(),
@@ -707,7 +707,7 @@ var Calendar = /*#__PURE__*/forwardRef(function (_ref3, ref) {
   while (day.getTime() < displayBounds[1].getTime()) {
     _loop();
   }
-  weeks.push( /*#__PURE__*/React.createElement(StyledWeek
+  weeks.push(/*#__PURE__*/React.createElement(StyledWeek
   // if a week contains only blank days, for screen reader accessibility
   // we don't want to set role="row"
   , {

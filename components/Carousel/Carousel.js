@@ -162,7 +162,7 @@ var Carousel = exports.Carousel = function Carousel(_ref) {
   var iconColor = (0, _utils.normalizeColor)(theme.carousel.icons.color || 'control', theme);
   var selectors = [];
   var wrappedChildren = _react.Children.map(children, function (child, index) {
-    selectors.push( /*#__PURE__*/_react["default"].createElement(_Button.Button, {
+    selectors.push(/*#__PURE__*/_react["default"].createElement(_Button.Button, {
       a11yTitle: format({
         id: 'carousel.jump',
         values: {

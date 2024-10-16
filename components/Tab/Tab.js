@@ -95,7 +95,7 @@ var Tab = exports.Tab = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref)
     }
   };
   if (active && disabled) {
-    console.warn( // eslint-disable-next-line max-len
+    console.warn(// eslint-disable-next-line max-len
     "Warning: Tab props 'active' and 'disabled' have both been set to TRUE on the same Tab resulting in an interesting Tab state. Is this your intent?");
   }
   if (!plain) {

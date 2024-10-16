@@ -74,7 +74,7 @@ var Layer = exports.Layer = /*#__PURE__*/(0, _react.forwardRef)(function (props,
       }
     };
   }, [animate, animation, containerTarget, layerContainer, originalFocusedElement]);
-  return layerContainer ? /*#__PURE__*/(0, _reactDom.createPortal)( /*#__PURE__*/_react["default"].createElement(_LayerContainer.LayerContainer, _extends({
+  return layerContainer ? /*#__PURE__*/(0, _reactDom.createPortal)(/*#__PURE__*/_react["default"].createElement(_LayerContainer.LayerContainer, _extends({
     ref: ref
   }, props)), layerContainer) : null;
 });

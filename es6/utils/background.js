@@ -53,7 +53,7 @@ var rotateBackground = function rotateBackground(background, theme) {
     var regex = /\d{1,}deg\b,/gm; // Contains rotation specified in degrees. Only targets 'deg' string with a trailing comma. Do not match 'deg' string for hsl, etc..
     result = backgroundImage.lastIndexOf('deg,') >= 0 ? backgroundImage.replace(regex, background.rotate + "deg,") : backgroundImage.replace('linear-gradient(', "linear-gradient(" + background.rotate + "deg, ");
   } else {
-    console.warn( // eslint-disable-next-line max-len
+    console.warn(// eslint-disable-next-line max-len
     "'background.rotate' property only supports 'background.image' containing a linear-gradient string.");
   }
   return result;

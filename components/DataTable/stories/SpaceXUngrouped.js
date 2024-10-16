@@ -70,7 +70,7 @@ var SpaceXUngrouped = exports.SpaceXUngrouped = function SpaceXUngrouped() {
     setLimit = _useState3[1];
   (0, _react.useEffect)(function () {
     var fetchData = /*#__PURE__*/function () {
-      var _ref2 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee() {
+      var _ref2 = _asyncToGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee() {
         var _sort;
         var query;
         return _regeneratorRuntime().wrap(function _callee$(_context) {

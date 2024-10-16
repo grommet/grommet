@@ -321,7 +321,7 @@ var WorldMap = /*#__PURE__*/forwardRef(function (_ref5, ref) {
       }, active);
     }
     if (content && targets[index]) {
-      placesContent.push( /*#__PURE__*/React.createElement(Drop, _extends({
+      placesContent.push(/*#__PURE__*/React.createElement(Drop, _extends({
         key: key || name
       }, dropProps, {
         target: targets[index]

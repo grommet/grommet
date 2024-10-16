@@ -229,7 +229,7 @@ var Select = exports.Select = /*#__PURE__*/(0, _react.forwardRef)(function (_ref
   var selectValue = (0, _react.useMemo)(function () {
     if (valueLabel instanceof Function) {
       if (value || value === 0 || value === false) return valueLabel(value);
-    } else if (valueLabel) return valueLabel;else if ( /*#__PURE__*/_react["default"].isValidElement(value)) return value; // deprecated
+    } else if (valueLabel) return valueLabel;else if (/*#__PURE__*/_react["default"].isValidElement(value)) return value; // deprecated
     return undefined;
   }, [value, valueLabel]);
   var displayLabelKey = (0, _react.useMemo)(function () {

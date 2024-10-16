@@ -116,7 +116,7 @@ var Box = exports.Box = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref)
         if (firstIndex === undefined) {
           firstIndex = index;
         } else {
-          contents.push( /*#__PURE__*/_react["default"].createElement(_StyledBox.StyledBoxGap
+          contents.push(/*#__PURE__*/_react["default"].createElement(_StyledBox.StyledBoxGap
           // eslint-disable-next-line react/no-array-index-key
           , _extends({
             key: "gap-" + index,

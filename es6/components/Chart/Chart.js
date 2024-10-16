@@ -475,7 +475,7 @@ var Chart = /*#__PURE__*/React.forwardRef(function (_ref, ref) {
     }).join('-');
     var gradientId = uniqueGradientId + "-" + id + "-gradient";
     var maskId = uniqueGradientId + "-" + id + "-mask";
-    defs.push( /*#__PURE__*/React.createElement("linearGradient", {
+    defs.push(/*#__PURE__*/React.createElement("linearGradient", {
       key: "gradientId",
       id: gradientId,
       x1: 0,
@@ -493,7 +493,7 @@ var Chart = /*#__PURE__*/React.forwardRef(function (_ref, ref) {
         stopColor: normalizeColor(gradientColor, theme)
       });
     })));
-    defs.push( /*#__PURE__*/React.createElement("mask", {
+    defs.push(/*#__PURE__*/React.createElement("mask", {
       key: "mask",
       id: maskId
     }, drawing));
@@ -552,7 +552,7 @@ var Chart = /*#__PURE__*/React.forwardRef(function (_ref, ref) {
         strokeWidth: strokeWidth
       });
     }
-    defs.push( /*#__PURE__*/React.createElement("pattern", {
+    defs.push(/*#__PURE__*/React.createElement("pattern", {
       key: patternId,
       id: patternId,
       width: _double,

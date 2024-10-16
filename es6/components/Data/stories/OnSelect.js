@@ -29,7 +29,7 @@ var buildQuery = function buildQuery(view) {
   return query;
 };
 var fetchLaunches = /*#__PURE__*/function () {
-  var _ref = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee(view) {
+  var _ref = _asyncToGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee(view) {
     var _view$sort, _view$sort2, _sort;
     var query, sort, body;
     return _regeneratorRuntime().wrap(function _callee$(_context) {
@@ -72,7 +72,7 @@ var fetchLaunches = /*#__PURE__*/function () {
   };
 }();
 var fetchRockets = /*#__PURE__*/function () {
-  var _ref2 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee2() {
+  var _ref2 = _asyncToGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee2() {
     var body;
     return _regeneratorRuntime().wrap(function _callee2$(_context2) {
       while (1) switch (_context2.prev = _context2.next) {

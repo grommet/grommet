@@ -576,7 +576,7 @@ var Calendar = exports.Calendar = /*#__PURE__*/(0, _react.forwardRef)(function (
     var day = new Date(displayBounds[0]);
     var days = [];
     while (days.length < 7) {
-      days.push( /*#__PURE__*/_react["default"].createElement(_StyledCalendar.StyledDayContainer, {
+      days.push(/*#__PURE__*/_react["default"].createElement(_StyledCalendar.StyledDayContainer, {
         role: "gridcell",
         key: days.length,
         sizeProp: size,
@@ -602,7 +602,7 @@ var Calendar = exports.Calendar = /*#__PURE__*/(0, _react.forwardRef)(function (
   var _loop = function _loop() {
     if (day.getDay() === firstDayOfWeek) {
       if (days) {
-        weeks.push( /*#__PURE__*/_react["default"].createElement(_StyledCalendar.StyledWeek, {
+        weeks.push(/*#__PURE__*/_react["default"].createElement(_StyledCalendar.StyledWeek, {
           role: "row",
           key: day.getTime(),
           fillContainer: fill
@@ -612,7 +612,7 @@ var Calendar = exports.Calendar = /*#__PURE__*/(0, _react.forwardRef)(function (
     }
     var otherMonth = day.getMonth() !== reference.getMonth();
     if (!showAdjacentDays && otherMonth) {
-      days.push( /*#__PURE__*/_react["default"].createElement(_StyledCalendar.StyledDayContainer, {
+      days.push(/*#__PURE__*/_react["default"].createElement(_StyledCalendar.StyledDayContainer, {
         key: day.getTime(),
         sizeProp: size,
         fillContainer: fill
@@ -634,7 +634,7 @@ var Calendar = exports.Calendar = /*#__PURE__*/(0, _react.forwardRef)(function (
     we know that all days in the array are from the next month. */
     days.length < day.getDate()) {
       blankWeek = true;
-      days.push( /*#__PURE__*/_react["default"].createElement(_StyledCalendar.StyledDayContainer, {
+      days.push(/*#__PURE__*/_react["default"].createElement(_StyledCalendar.StyledDayContainer, {
         key: day.getTime(),
         sizeProp: size,
         fillContainer: fill
@@ -658,7 +658,7 @@ var Calendar = exports.Calendar = /*#__PURE__*/(0, _react.forwardRef)(function (
         firstDayInMonth = dateObject;
       }
       if (!children) {
-        days.push( /*#__PURE__*/_react["default"].createElement(CalendarDay, {
+        days.push(/*#__PURE__*/_react["default"].createElement(CalendarDay, {
           key: day.getTime(),
           buttonProps: {
             a11yTitle: day.toDateString(),
@@ -681,7 +681,7 @@ var Calendar = exports.Calendar = /*#__PURE__*/(0, _react.forwardRef)(function (
           fill: fill
         }, day.getDate()));
       } else {
-        days.push( /*#__PURE__*/_react["default"].createElement(CalendarCustomDay, {
+        days.push(/*#__PURE__*/_react["default"].createElement(CalendarCustomDay, {
           key: day.getTime(),
           buttonProps: onSelect ? {
             a11yTitle: day.toDateString(),
@@ -712,7 +712,7 @@ var Calendar = exports.Calendar = /*#__PURE__*/(0, _react.forwardRef)(function (
   while (day.getTime() < displayBounds[1].getTime()) {
     _loop();
   }
-  weeks.push( /*#__PURE__*/_react["default"].createElement(_StyledCalendar.StyledWeek
+  weeks.push(/*#__PURE__*/_react["default"].createElement(_StyledCalendar.StyledWeek
   // if a week contains only blank days, for screen reader accessibility
   // we don't want to set role="row"
   , {

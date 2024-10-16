@@ -65,7 +65,7 @@ var Element = function Element(_ref2) {
     number: ones
   })];
   if (sep) {
-    result.unshift( /*#__PURE__*/React.createElement(StyledDigitalDigit, _extends({
+    result.unshift(/*#__PURE__*/React.createElement(StyledDigitalDigit, _extends({
       key: "sep",
       size: size
     }, passThemeFlag), ":"));

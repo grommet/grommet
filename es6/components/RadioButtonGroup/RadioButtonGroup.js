@@ -122,7 +122,7 @@ var RadioButtonGroup = /*#__PURE__*/forwardRef(function (_ref, ref) {
     // on the first radiobutton
     value === '' && index === 0;
     if (optionRest.checked) {
-      console.warn( // eslint-disable-next-line max-len
+      console.warn(// eslint-disable-next-line max-len
       "'checked' prop of an individual RadioButton shouldn't be used in a RadioButtonGroup component. Use the RadioButtonGroup 'value' prop instead.");
     }
     return /*#__PURE__*/React.createElement(RadioButton, _extends({

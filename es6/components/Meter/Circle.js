@@ -69,7 +69,7 @@ var Circle = /*#__PURE__*/forwardRef(function (props, ref) {
     var stroke = strokeProps(someHighlight && !highlight ? background : colorName, theme);
     if (round) {
       var d1 = arcCommands(centerX, centerY, radius, startAngle, endAngle);
-      paths.unshift( /*#__PURE__*/React.createElement("path", _extends({
+      paths.unshift(/*#__PURE__*/React.createElement("path", _extends({
         key: key,
         d: d1,
         fill: "none"
@@ -98,7 +98,7 @@ var Circle = /*#__PURE__*/forwardRef(function (props, ref) {
       pathCaps.unshift(pathCap);
     } else {
       var d = arcCommands(centerX, centerY, radius, startAngle, endAngle);
-      paths.push( /*#__PURE__*/React.createElement("path", _extends({
+      paths.push(/*#__PURE__*/React.createElement("path", _extends({
         key: key,
         d: d,
         fill: "none"

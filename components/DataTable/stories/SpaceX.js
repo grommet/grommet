@@ -120,7 +120,7 @@ var SpaceX = exports.SpaceX = function SpaceX() {
   }, [groups]);
   (0, _react.useEffect)(function () {
     var fetchData = /*#__PURE__*/function () {
-      var _ref5 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee() {
+      var _ref5 = _asyncToGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee() {
         var query;
         return _regeneratorRuntime().wrap(function _callee$(_context) {
           while (1) switch (_context.prev = _context.next) {
@@ -157,7 +157,7 @@ var SpaceX = exports.SpaceX = function SpaceX() {
   }, []);
   (0, _react.useEffect)(function () {
     var fetchData = /*#__PURE__*/function () {
-      var _ref6 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee2() {
+      var _ref6 = _asyncToGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee2() {
         var _sort;
         var query;
         return _regeneratorRuntime().wrap(function _callee2$(_context2) {

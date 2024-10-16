@@ -140,7 +140,7 @@ var DataFilter = exports.DataFilter = function DataFilter(_ref) {
       var _properties$property4;
       var step =
       // from `range` on DataFilter
-      (rangeProp == null ? void 0 : rangeProp.step) || ( // from range in Data `properties`
+      (rangeProp == null ? void 0 : rangeProp.step) || (// from range in Data `properties`
       properties == null || (_properties$property4 = properties[property]) == null || (_properties$property4 = _properties$property4.range) == null ? void 0 : _properties$property4.step);
       if (!step) {
         // avoid floating point issues where 4.4 - 2 returns 2.4000000000000004

@@ -223,7 +223,7 @@ var Select = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var selectValue = useMemo(function () {
     if (valueLabel instanceof Function) {
       if (value || value === 0 || value === false) return valueLabel(value);
-    } else if (valueLabel) return valueLabel;else if ( /*#__PURE__*/React.isValidElement(value)) return value; // deprecated
+    } else if (valueLabel) return valueLabel;else if (/*#__PURE__*/React.isValidElement(value)) return value; // deprecated
     return undefined;
   }, [value, valueLabel]);
   var displayLabelKey = useMemo(function () {

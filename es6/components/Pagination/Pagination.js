@@ -82,7 +82,7 @@ var Pagination = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var numberMiddlePages;
   if (numberMiddlePagesProp < 1) {
     numberMiddlePages = 1;
-    console.warn( // eslint-disable-next-line max-len
+    console.warn(// eslint-disable-next-line max-len
     "Property \"numberMiddlePages\" should not be < 1. One middle page button will be shown. Set \"numberMiddlePages\" >= 1 to remove this warning.");
   } else numberMiddlePages = numberMiddlePagesProp;
   var startingMiddlePages;
