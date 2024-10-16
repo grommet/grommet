@@ -174,6 +174,18 @@ const List = React.forwardRef(
     // List items are likely selectable), active will be the
     // index of the item which is currently active.
     const [active, setActive] = useState();
+    const activeItemRef = useRef(null);
+
+    const setActiveItemRef = (element) => {
+      if (element) {
+        element.scrollIntoView({
+          behaviour: 'smooth',
+          block: 'nearest',
+        });
+      }
+      activeItemRef.current = element;
+    };
+
     const [lastActive, setLastActive] = useState();
     const updateActive = (nextActive) => {
       setActive(nextActive);
@@ -726,6 +738,7 @@ const List = React.forwardRef(
                     background={adjustedBackground}
                     border={adjustedBorder}
                     isDisabled={isDisabled}
+                    ref={index === active ? setActiveItemRef : undefined}
                     flex={false}
                     pad={pad || theme.list.item.pad}
                     {...defaultItemProps}
