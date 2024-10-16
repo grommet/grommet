@@ -277,7 +277,7 @@ var Select = exports.Select = /*#__PURE__*/(0, _react.forwardRef)(function (_ref
     dropTarget: dropTarget,
     open: open,
     alignSelf: alignSelf,
-    focusIndicator: focusIndicator,
+    focusIndicator: plain ? focusIndicator : true,
     onFocus: onFocus,
     onBlur: onBlur,
     gridArea: gridArea,

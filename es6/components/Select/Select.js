@@ -271,7 +271,7 @@ var Select = /*#__PURE__*/forwardRef(function (_ref, ref) {
     dropTarget: dropTarget,
     open: open,
     alignSelf: alignSelf,
-    focusIndicator: focusIndicator,
+    focusIndicator: plain ? focusIndicator : true,
     onFocus: onFocus,
     onBlur: onBlur,
     gridArea: gridArea,
