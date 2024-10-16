@@ -10,7 +10,7 @@ import { axe } from 'jest-axe';
 
 import { Grommet } from '../../Grommet';
 import { Form } from '..';
-import { FormField } from '../../FormField';
+import { FormField, FormFieldProps } from '../../FormField';
 import { Button } from '../../Button';
 import { Text } from '../../Text';
 import { TextInput } from '../../TextInput';
@@ -47,13 +47,13 @@ describe('Form accessibility', () => {
     );
     const results = await axe(container, {
       rules: {
-        /* This rule is flagged because Select is built using a 
-        TextInput within a DropButton. According to Dequeue and 
-        WCAG 4.1.2 "interactive controls must not have focusable 
+        /* This rule is flagged because Select is built using a
+        TextInput within a DropButton. According to Dequeue and
+        WCAG 4.1.2 "interactive controls must not have focusable
         descendants". Jest-axe is assuming that the input is focusable
-        and since the input is a descendant of the button the rule is 
-        flagged. However, the TextInput is built so that it is read 
-        only and cannot receive focus. Select is accessible 
+        and since the input is a descendant of the button the rule is
+        flagged. However, the TextInput is built so that it is read
+        only and cannot receive focus. Select is accessible
         according to the WCAG specification, but jest-axe is flagging
         it so we are disabling this rule. */
         'nested-interactive': { enabled: false },
@@ -219,7 +219,7 @@ describe('Form uncontrolled', () => {
   test('uncontrolled onValidate custom error', () => {
     const onValidate = jest.fn();
     const errorMessage = 'One uppercase letter';
-    const testRules = {
+    const testRules: FormFieldProps['validate'] = {
       regexp: /(?=.*?[A-Z])/,
       message: errorMessage,
       status: 'error',
@@ -249,7 +249,7 @@ describe('Form uncontrolled', () => {
   test('uncontrolled onValidate custom info', () => {
     const onValidate = jest.fn();
     const infoMessage = 'One uppercase letter';
-    const testRules = {
+    const testRules: FormFieldProps['validate'] = {
       regexp: /(?=.*?[A-Z])/,
       message: infoMessage,
       status: 'info',
@@ -514,7 +514,8 @@ describe('Form uncontrolled', () => {
   test('validate on change', async () => {
     jest.useFakeTimers();
     const onChange = jest.fn();
-    window.scrollTo = jest.fn();
+    const scrollTo = jest.fn();
+    window.scrollTo = scrollTo;
 
     const { getByPlaceholderText, queryAllByText } = render(
       <Grommet>
@@ -597,8 +598,10 @@ describe('Form uncontrolled', () => {
     act(() => jest.advanceTimersByTime(1000)); // allow validations to run
     // change value of select
     fireEvent.click(getByPlaceholderText('test input'));
-    fireEvent.click(document.activeElement.querySelector('button'));
-    window.scrollTo.mockRestore();
+    fireEvent.click(
+      document.activeElement?.querySelector('button') as HTMLElement,
+    );
+    scrollTo.mockRestore();
     act(() => jest.advanceTimersByTime(1000)); // allow validations to run
 
     expect(queryAllByText('required')).toHaveLength(1);
@@ -728,7 +731,8 @@ describe('Form uncontrolled', () => {
 
   test('validate on blur with Select', async () => {
     jest.useFakeTimers();
-    window.scrollTo = jest.fn();
+    const scrollTo = jest.fn();
+    window.scrollTo = scrollTo;
     render(
       <Grommet>
         <Form validate="blur">
@@ -760,7 +764,7 @@ describe('Form uncontrolled', () => {
     act(() => jest.advanceTimersByTime(200)); // allow validations to run
     expect(screen.queryAllByText('required')).toHaveLength(1);
 
-    window.scrollTo.mockRestore();
+    scrollTo.mockRestore();
   });
 
   test('form validity', async () => {
@@ -927,7 +931,9 @@ describe('Form uncontrolled', () => {
     fireEvent.change(getByPlaceholderText('test input'), {
       target: { value: 'v' },
     });
-    expect(getByPlaceholderText('test input').value).toBe('v');
+    expect((getByPlaceholderText('test input') as HTMLInputElement).value).toBe(
+      'v',
+    );
     fireEvent.click(getByText('Submit'));
     expect(onSubmit).toBeCalledTimes(1);
   });
@@ -950,7 +956,9 @@ describe('Form uncontrolled', () => {
     fireEvent.change(getByPlaceholderText('test input'), {
       target: { value: 'Input has changed' },
     });
-    expect(getByPlaceholderText('test input').value).toBe('Input has changed');
+    expect((getByPlaceholderText('test input') as HTMLInputElement).value).toBe(
+      'Input has changed',
+    );
     expect(onChange).toBeCalledTimes(1);
     fireEvent.click(getByText('Reset'));
     expect(queryByText('Input has changed')).toBeNull();
@@ -971,7 +979,9 @@ describe('Form uncontrolled', () => {
     fireEvent.change(getByPlaceholderText('test input'), {
       target: { value: 'v' },
     });
-    expect(getByPlaceholderText('test input').value).toBe('v');
+    expect((getByPlaceholderText('test input') as HTMLInputElement).value).toBe(
+      'v',
+    );
     fireEvent.click(getByText('Submit'));
     expect(onSubmit).not.toBeCalledWith(
       expect.objectContaining({
@@ -1005,14 +1015,24 @@ describe('Form uncontrolled', () => {
     fireEvent.change(getByPlaceholderText('test input'), {
       target: { value: '1' },
     });
-    expect(getByPlaceholderText('test input').value).toBe('1');
+    expect((getByPlaceholderText('test input') as HTMLInputElement).value).toBe(
+      '1',
+    );
     fireEvent.click(getByText('Submit'));
     expect(onSubmit).toBeCalledTimes(1);
     expect(getAllByText('invalid')).toMatchSnapshot();
   });
 
   test('custom component', () => {
-    const CustomTextInput = ({ name, value, onChange }) => (
+    const CustomTextInput = ({
+      name,
+      value,
+      onChange,
+    }: {
+      name: string;
+      onChange: () => {};
+      value?: string;
+    }) => (
       <div>
         <input
           type="text"
@@ -1037,7 +1057,9 @@ describe('Form uncontrolled', () => {
     fireEvent.change(getByPlaceholderText('Username'), {
       target: { value: 'v' },
     });
-    expect(getByPlaceholderText('Username').value).toBe('v');
+    expect((getByPlaceholderText('Username') as HTMLInputElement).value).toBe(
+      'v',
+    );
     expect(onChange).toBeCalledTimes(1);
   });
 
@@ -1052,7 +1074,7 @@ describe('Form uncontrolled', () => {
    * 3) array of 1) and/or 2) above
    */
   test('should validate when supplied an object', () => {
-    const regexValidation = {
+    const regexValidation: FormFieldProps['validate'] = {
       regexp: /(?=.*?[#?!@$ %^&*-])/,
       message: 'At least one special character or space',
       status: 'error',
@@ -1097,7 +1119,7 @@ describe('Form uncontrolled', () => {
   });
 
   test('should validate when supplied a function', () => {
-    const functionValidation = (combination) =>
+    const functionValidation = (combination: any) =>
       combination === '12345'
         ? {
             message:
@@ -1154,7 +1176,7 @@ describe('Form uncontrolled', () => {
         message: 'At least five characters',
         status: 'error',
       },
-      (combination) =>
+      (combination: any) =>
         combination === '12345'
           ? {
               message:
@@ -1244,7 +1266,8 @@ describe('Form uncontrolled', () => {
 
   test('form with select', () => {
     const onChange = jest.fn();
-    window.scrollTo = jest.fn();
+    const scrollTo = jest.fn();
+    window.scrollTo = scrollTo;
     const { getByPlaceholderText } = render(
       <Grommet>
         <Form>
@@ -1263,12 +1286,16 @@ describe('Form uncontrolled', () => {
     );
 
     fireEvent.click(getByPlaceholderText('test input'));
-    fireEvent.click(document.activeElement.querySelector('button'));
-    expect(getByPlaceholderText('test input').value).toEqual('small');
+    fireEvent.click(
+      document.activeElement?.querySelector('button') as HTMLElement,
+    );
+    expect(
+      (getByPlaceholderText('test input') as HTMLInputElement).value,
+    ).toEqual('small');
     expect(onChange).toBeCalledWith(
       expect.objectContaining({ value: 'small' }),
     );
-    window.scrollTo.mockRestore();
+    scrollTo.mockRestore();
   });
 
   test('uncontrolled onChange with touched', () => {
@@ -1353,7 +1380,8 @@ describe('Form uncontrolled', () => {
 
   test('form with select without name prop', () => {
     const onChange = jest.fn();
-    window.scrollTo = jest.fn();
+    const scrollTo = jest.fn();
+    window.scrollTo = scrollTo;
     const { getByPlaceholderText } = render(
       <Grommet>
         <Form>
@@ -1371,12 +1399,16 @@ describe('Form uncontrolled', () => {
     );
 
     fireEvent.click(getByPlaceholderText('test input'));
-    fireEvent.click(document.activeElement.querySelector('button'));
-    expect(getByPlaceholderText('test input').value).toEqual('small');
+    fireEvent.click(
+      document.activeElement?.querySelector('button') as HTMLElement,
+    );
+    expect(
+      (getByPlaceholderText('test input') as HTMLInputElement).value,
+    ).toEqual('small');
     expect(onChange).toBeCalledWith(
       expect.objectContaining({ value: 'small' }),
     );
-    window.scrollTo.mockRestore();
+    scrollTo.mockRestore();
   });
 
   test(`dynamicly removed fields using blur validation
@@ -1540,7 +1572,7 @@ describe('Form uncontrolled', () => {
     );
   });
 
-  test(`dynamicly removed fields should be removed from form value`, () => {
+  test(`dynamically removed fields should be removed from form value`, () => {
     jest.useFakeTimers();
     const onValidate = jest.fn();
     const onSubmit = jest.fn();

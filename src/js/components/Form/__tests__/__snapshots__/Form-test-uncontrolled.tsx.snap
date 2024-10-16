@@ -809,7 +809,7 @@ exports[`Form accessibility TextInput in Form should have
 </div>
 `;
 
-exports[`Form uncontrolled dynamicly removed fields should be removed from form value 1`] = `
+exports[`Form uncontrolled dynamically removed fields should be removed from form value 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -1123,7 +1123,7 @@ exports[`Form uncontrolled dynamicly removed fields should be removed from form 
 </div>
 `;
 
-exports[`Form uncontrolled dynamicly removed fields should be removed from form value 2`] = `
+exports[`Form uncontrolled dynamically removed fields should be removed from form value 2`] = `
 <div
   class="StyledGrommet-sc-19lkkz7-0 drDzQW"
 >

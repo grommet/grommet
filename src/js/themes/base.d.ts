@@ -886,6 +886,13 @@ export interface ThemeType {
     margin?: MarginType;
     round?: RoundType;
     extend?: ExtendType;
+    survey?: {
+      label?: {
+        margin?: MarginType;
+        size?: string;
+        color?: ColorType;
+      };
+    };
   };
   grommet?: {
     extend?: ExtendType;
