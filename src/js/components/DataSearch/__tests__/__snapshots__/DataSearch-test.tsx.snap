@@ -643,6 +643,7 @@ exports[`DataSearch renders 1`] = `
               <label
                 class="c6"
                 for="data--search"
+                id="data--search__label"
               >
                 Search
               </label>

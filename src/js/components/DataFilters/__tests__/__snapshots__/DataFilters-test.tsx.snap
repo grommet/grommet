@@ -328,6 +328,7 @@ exports[`DataFilters clear 1`] = `
               <label
                 class="c6"
                 for="data-name"
+                id="data-name__label"
               >
                 name
               </label>
@@ -1726,6 +1727,7 @@ exports[`DataFilters layer 2`] = `
                 <label
                   class="c15"
                   for="test-data-name"
+                  id="test-data-name__label"
                 >
                   name
                 </label>
@@ -2135,6 +2137,7 @@ exports[`DataFilters properties array 1`] = `
               <label
                 class="c6"
                 for="data-name"
+                id="data-name__label"
               >
                 name
               </label>
@@ -2505,6 +2508,7 @@ exports[`DataFilters properties object 1`] = `
               <label
                 class="c6"
                 for="data-name"
+                id="data-name__label"
               >
                 name
               </label>
@@ -2875,6 +2879,7 @@ exports[`DataFilters renders 1`] = `
               <label
                 class="c6"
                 for="data-name"
+                id="data-name__label"
               >
                 name
               </label>
@@ -3328,6 +3333,7 @@ exports[`DataFilters should display all filter options regardless of result set 
                 <label
                   class="c6"
                   for="data-name"
+                  id="data-name__label"
                 >
                   name
                 </label>
@@ -3387,6 +3393,7 @@ exports[`DataFilters should display all filter options regardless of result set 
                 <label
                   class="c6"
                   for="data-color"
+                  id="data-color__label"
                 >
                   color
                 </label>
@@ -4220,6 +4227,7 @@ exports[`DataFilters sub objects 1`] = `
               <label
                 class="c6"
                 for="data-location.city"
+                id="data-location.city__label"
               >
                 City
               </label>
@@ -4291,6 +4299,7 @@ exports[`DataFilters sub objects 1`] = `
               <label
                 class="c6"
                 for="data-location.lat"
+                id="data-location.lat__label"
               >
                 Latitude
               </label>

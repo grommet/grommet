@@ -1850,6 +1850,7 @@ exports[`Form controlled controlled FormField deprecated 1`] = `
       <label
         class="c2"
         for="test"
+        id="test__label"
       >
         test
       </label>
@@ -1890,6 +1891,7 @@ exports[`Form controlled controlled FormField deprecated 2`] = `
       <label
         class="StyledText-sc-1sadyjn-0 bEFXqT"
         for="test"
+        id="test__label"
       >
         test
       </label>
@@ -1930,6 +1932,7 @@ exports[`Form controlled controlled FormField deprecated 3`] = `
       <label
         class="StyledText-sc-1sadyjn-0 bEFXqT"
         for="test"
+        id="test__label"
       >
         test
       </label>

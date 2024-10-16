@@ -557,20 +557,9 @@ const FormField = forwardRef(
             {label && component !== CheckBox && (
               <Text
                 as="label"
-                id={
-                  // Determine the id based on the presence
-                  // of `htmlFor` and whether any child
-                  // components are of type 'Select'
-                  // or 'SelectMultiple'.
-                  htmlFor &&
-                  Children.toArray(contents).some(
-                    (child) =>
-                      child.type.displayName === 'Select' ||
-                      child.type.displayName === 'SelectMultiple',
-                  )
-                    ? `${htmlFor}__label`
-                    : undefined
-                }
+                // Determine the id based on the presence
+                // of `htmlFor`
+                id={htmlFor ? `${htmlFor}__label` : undefined}
                 htmlFor={htmlFor}
                 {...labelStyle}
               >
