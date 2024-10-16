@@ -269,6 +269,7 @@ const SelectContainer = forwardRef(
           ) {
             setActiveIndex(nextActiveIndex);
             setFocusWithoutScroll(clearButton);
+            setFocusWithoutScroll(searchInput);
           } else if (searchInput && searchInput.focus) {
             setActiveIndex(nextActiveIndex);
             setFocusWithoutScroll(searchInput);
