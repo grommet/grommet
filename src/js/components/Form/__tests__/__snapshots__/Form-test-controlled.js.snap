@@ -3892,7 +3892,7 @@ exports[`Form controlled custom theme 1`] = `
                 class="c7"
                 id="dislike"
                 name="test"
-                tabindex="-1"
+                tabindex="0"
                 type="radio"
                 value="dislike"
               />

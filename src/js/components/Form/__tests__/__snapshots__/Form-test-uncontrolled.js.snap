@@ -2835,7 +2835,7 @@ exports[`Form uncontrolled reset clears select, checkbox, radiobuttongroup 1`] =
                 class="c22"
                 id="test-radiobuttongroup-one"
                 name="test-radiobuttongroup"
-                tabindex="-1"
+                tabindex="0"
                 type="radio"
                 value="one"
               />
@@ -2903,7 +2903,7 @@ exports[`Form uncontrolled reset clears select, checkbox, radiobuttongroup 1`] =
                 class="c22"
                 id="test-radiobuttongroup-three"
                 name="test-radiobuttongroup"
-                tabindex="-1"
+                tabindex="0"
                 type="radio"
                 value="three"
               />
@@ -3089,7 +3089,7 @@ exports[`Form uncontrolled reset clears select, checkbox, radiobuttongroup 2`] =
                 class="StyledRadioButton__StyledRadioButtonInput-sc-g1f6ld-1 jTLejj"
                 id="test-radiobuttongroup-two"
                 name="test-radiobuttongroup"
-                tabindex="-1"
+                tabindex="0"
                 type="radio"
                 value="two"
               />
@@ -3117,7 +3117,7 @@ exports[`Form uncontrolled reset clears select, checkbox, radiobuttongroup 2`] =
                 class="StyledRadioButton__StyledRadioButtonInput-sc-g1f6ld-1 jTLejj"
                 id="test-radiobuttongroup-three"
                 name="test-radiobuttongroup"
-                tabindex="-1"
+                tabindex="0"
                 type="radio"
                 value="three"
               />
