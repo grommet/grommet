@@ -44,6 +44,9 @@ const StyledTableCell = styled.td.withConfig(styledComponentsConfig)`
   padding: 0;
   font-weight: inherit;
   text-align: inherit;
+  // Needed to enable plain cells content to fill the entire height
+  // of the cell (see issue #7177)
+  height: max-content;
 
   ${(props) => props.size && sizeStyle}
   ${(props) => props.verticalAlign && `vertical-align: ${props.verticalAlign};`}
@@ -72,7 +75,11 @@ const StyledTableDataCaption = styled.caption.withConfig(
 
 const StyledTableRow = styled.tr.withConfig(styledComponentsConfig)``;
 
-const StyledTableBody = styled.tbody.withConfig(styledComponentsConfig)``;
+const StyledTableBody = styled.tbody.withConfig(styledComponentsConfig)`
+  // Needed to enable plain cells content to fill the entire height
+  // of the cell (see issue #7177)
+  height: 100%;
+`;
 
 const StyledTableHeader = styled.thead.withConfig(styledComponentsConfig)``;
 
