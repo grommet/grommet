@@ -117,7 +117,7 @@ const Select = forwardRef(
     // defined in FormField Component
     const { inFormField, labelId } = formFieldProps;
 
-    // ariaLabelledBy determines if this component if this component
+    // ariaLabelledBy determines if this component
     // is wrapped by FormField component and does not have a
     // ariaLabel and a11yTitle properties.
     const ariaLabelledBy =
@@ -317,7 +317,7 @@ const Select = forwardRef(
           dropTarget={dropTarget}
           open={open}
           alignSelf={alignSelf}
-          focusIndicator={focusIndicator}
+          focusIndicator={plain ? focusIndicator : true}
           onFocus={onFocus}
           onBlur={onBlur}
           gridArea={gridArea}
