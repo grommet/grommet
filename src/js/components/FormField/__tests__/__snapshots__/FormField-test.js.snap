@@ -2148,7 +2148,6 @@ exports[`FormField max and threshold validation 1`] = `
       <label
         class="c2"
         for="issue-description"
-        id="issue-description__label"
       >
         label
       </label>

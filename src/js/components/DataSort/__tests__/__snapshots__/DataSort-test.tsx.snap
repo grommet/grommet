@@ -746,7 +746,6 @@ exports[`DataSort renders 1`] = `
               <label
                 class="c6"
                 for="data--sort-direction"
-                id="data--sort-direction__label"
               >
                 Sort direction
               </label>
@@ -1242,7 +1241,6 @@ exports[`DataSort sort when data array is empty 1`] = `
         <label
           class="c4"
           for="test-data--sort-direction"
-          id="test-data--sort-direction__label"
         >
           Sort direction
         </label>

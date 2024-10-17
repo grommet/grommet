@@ -4384,7 +4384,6 @@ exports[`Data should render property label and return property value to view whe
                 <label
                   class="c6"
                   for="data-checkBoxGroup"
-                  id="data-checkBoxGroup__label"
                 >
                   CheckBoxGroup Name
                 </label>

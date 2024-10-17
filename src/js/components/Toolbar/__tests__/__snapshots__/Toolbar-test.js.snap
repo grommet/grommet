@@ -469,7 +469,6 @@ exports[`DataFilters renders 1`] = `
                 <label
                   class="c12"
                   for="data-name"
-                  id="data-name__label"
                 >
                   name
                 </label>
@@ -992,7 +991,6 @@ exports[`DataFilters renders outside grommet wrapper 1`] = `
               <label
                 class="c11"
                 for="data-name"
-                id="data-name__label"
               >
                 name
               </label>
