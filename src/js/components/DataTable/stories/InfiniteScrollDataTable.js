@@ -1,5 +1,4 @@
 import React from 'react';
-
 import { Box, DataTable, Heading, Meter, Text } from 'grommet';
 
 const amountFormatter = new Intl.NumberFormat('en-US', {
