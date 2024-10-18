@@ -31,7 +31,9 @@ const RadioButton = forwardRef(
     ref,
   ) => {
     const { theme, passThemeFlag } = useThemeValue();
-    const [hover, setHover] = useState();
+    const [hover, setHover] = useState(false);
+    const [isFocused, setIsFocused] = useState(false); // State to track focus
+
     const normalizedLabel =
       typeof label === 'string' ? (
         <StyledRadioButtonLabel {...passThemeFlag}>
@@ -87,6 +89,9 @@ const RadioButton = forwardRef(
             {...rest}
             ref={ref}
             type="radio"
+            tabIndex="0" // Ensuring the input is focusable
+            onFocus={() => setIsFocused(true)} // Track when input is focused
+            onBlur={() => setIsFocused(false)} // Track when input loses focus
             {...removeUndefined({
               id,
               name,
@@ -96,10 +101,10 @@ const RadioButton = forwardRef(
             })}
           />
           {children ? (
-            children({ checked, focus: focus && focusIndicator, hover })
+            children({ checked, focus: isFocused && focusIndicator, hover })
           ) : (
             <StyledRadioButtonBox
-              focus={focus && focusIndicator}
+              focus={isFocused}
               align="center"
               justify="center"
               width={theme.radioButton.size}
