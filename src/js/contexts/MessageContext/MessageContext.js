@@ -1,5 +1,6 @@
 import React from 'react';
 
+import { formatValueForA11y } from '../../components/Select/utils';
 import defaultMessages from '../../languages/default.json';
 
 // options:
@@ -39,13 +40,13 @@ export const format = (options, messages) => {
     messageObj ||
     options.defaultMessage;
 
-  const { values } = options;
+  const { labelKey, values } = options;
 
   let newMessage = message;
   const tokens = message?.match(/\{(.+?)\}/g);
   tokens?.forEach((token) => {
     const names = token.substr(1, token.length - 2);
-    const value = values[names];
+    const value = formatValueForA11y(values[names], labelKey);
     newMessage = newMessage.replace(token, value);
   });
 
