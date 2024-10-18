@@ -5,7 +5,7 @@ export interface SelectMultipleProps extends BasicSelectProps {
   defaultValue?: (string | number | object)[];
   help?: string | React.ReactNode;
   limit?: number;
-  value?: (string | number | object)[];
+  value?: string | number | boolean | JSX.Element | object;
   showSelectedInline?: boolean;
   sortSelectedOnClose?: boolean;
   messages?: {
