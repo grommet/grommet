@@ -244,7 +244,7 @@ const Body = forwardRef(
                 if (typeof onClickRow === 'function') {
                   event.persist();
                   const adjustedEvent = event;
-                  adjustedEvent.datum = data[active];
+                  adjustedEvent.datum = data?.[active];
                   onClickRow(adjustedEvent);
                 } else if (onClickRow === 'select') {
                   selectRow();
