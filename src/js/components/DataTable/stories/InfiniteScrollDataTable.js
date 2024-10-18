@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Box, DataTable, Heading, Meter, Text } from 'grommet';
 
 const amountFormatter = new Intl.NumberFormat('en-US', {
@@ -6,35 +6,6 @@ const amountFormatter = new Intl.NumberFormat('en-US', {
   currency: 'NIS',
   minimumFractionDigits: 2,
 });
-
-const ChangesizePlainColumn = ({ key, percent }) => {
-  const [showExpanded, setShowExpanded] = useState(true);
-  if (!showExpanded)
-    return (
-      <Box
-        alignSelf="center"
-        focus={false}
-        onClick={() => setShowExpanded(true)}
-      >
-        {percent}%
-      </Box>
-    );
-  return (
-    <Box
-      pad={{ vertical: 'xsmall' }}
-      focus={false}
-      alignSelf="center"
-      onClick={() => setShowExpanded(false)}
-    >
-      <Meter
-        values={[{ value: percent, color: `graph-${(key % 4) + 1}` }]}
-        thickness="small"
-        size="xxsmall"
-        type="circle"
-      />
-    </Box>
-  );
-};
 
 const columns = [
   {
@@ -63,18 +34,21 @@ const columns = [
   {
     property: 'percent',
     header: 'Percent Complete',
-    plain: true,
-    render: ChangesizePlainColumn,
+    render: ({ key, percent }) => (
+      <Box pad={{ vertical: 'xsmall' }} alignSelf="center">
+        <Meter
+          values={[{ value: percent, color: `graph-${(key % 4) + 1}` }]}
+          thickness="small"
+          size="xxsmall"
+          type="circle"
+        />
+      </Box>
+    ),
   },
   {
     property: 'paid',
     header: 'Paid',
-    render: (datum) => (
-      <Box fill="vertical" direction="column" justify="center">
-        {amountFormatter.format(datum.paid / 100)}
-      </Box>
-    ),
-    plain: true,
+    render: (datum) => amountFormatter.format(datum.paid / 100),
     align: 'end',
     aggregate: 'sum',
     footer: { aggregate: true },
