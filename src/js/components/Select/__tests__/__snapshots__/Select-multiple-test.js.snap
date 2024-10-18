@@ -2795,7 +2795,7 @@ exports[`Select Controlled multiple onChange without labelKey 8`] = `
     <button
       aria-expanded="true"
       aria-haspopup="listbox"
-      aria-label="test select; Selected: [object Object],[object Object]"
+      aria-label="test select; Selected: 1, 2"
       class="c1 c2"
       id="test-select"
       type="button"
@@ -3678,7 +3678,7 @@ exports[`Select Controlled multiple onChange without valueKey 8`] = `
     <button
       aria-expanded="true"
       aria-haspopup="listbox"
-      aria-label="test select; Selected: [object Object],[object Object]"
+      aria-label="test select; Selected: Value1, Value2"
       class="c1 c2"
       id="test-select"
       type="button"
@@ -4559,7 +4559,7 @@ exports[`Select Controlled multiple onChange without valueKey or labelKey 8`] = 
     <button
       aria-expanded="true"
       aria-haspopup="listbox"
-      aria-label="test select; Selected: [object Object],[object Object]"
+      aria-label="test select; Selected: 1, 2"
       class="c1 c2"
       id="test-select"
       type="button"
@@ -4813,7 +4813,7 @@ exports[`Select Controlled multiple values 1`] = `
   <button
     aria-expanded="false"
     aria-haspopup="listbox"
-    aria-label="test select; Selected: one,two"
+    aria-label="test select; Selected: one, two"
     class="c1 c2"
     id="test-select"
     type="button"
@@ -4868,7 +4868,7 @@ exports[`Select Controlled multiple values 2`] = `
   <button
     aria-expanded="true"
     aria-haspopup="listbox"
-    aria-label="test select; Selected: one,two"
+    aria-label="test select; Selected: one, two"
     class="StyledButton-sc-323bzc-0 cWIZhL StyledSelect__StyledSelectDropButton-sc-znp66n-5 fVOJSO"
     id="test-select"
     type="button"

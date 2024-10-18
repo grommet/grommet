@@ -289,6 +289,7 @@ const Select = forwardRef(
             value
               ? format({
                   id: 'select.selected',
+                  labelKey,
                   messages,
                   values: { currentSelectedValue: value },
                 })
