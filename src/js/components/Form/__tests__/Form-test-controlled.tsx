@@ -770,7 +770,7 @@ describe('Form controlled', () => {
         firstName: 'J',
         middleName: '1',
         lastName: '',
-        title: '1',
+        title: 1,
       });
 
       return (
@@ -833,7 +833,8 @@ describe('Form controlled', () => {
             validate={[
               { regexp: /^[a-z]/i },
               (title) => {
-                if (title && title.length === 1) return 'must be >1 character';
+                if (typeof title === 'string' && title.length === 1)
+                  return 'must be >1 character';
                 return undefined;
               },
             ]}
@@ -863,7 +864,7 @@ describe('Form controlled', () => {
       const [firstName, setFirstName] = useState('J');
       const [middleName, setMiddleName] = useState('1');
       const [lastName, setLastName] = useState('');
-      const [title, setTitle] = useState('1');
+      const [title, setTitle] = useState<number | string>(1);
 
       return (
         <Form validate="change">
@@ -942,7 +943,8 @@ describe('Form controlled', () => {
             validate={[
               { regexp: /^[a-z]/i },
               () => {
-                if (title && title.length === 1) return 'must be >1 character';
+                if (typeof title === 'string' && title.length === 1)
+                  return 'must be >1 character';
                 return undefined;
               },
             ]}
@@ -1060,7 +1062,7 @@ describe('Form controlled', () => {
       const [firstName, setFirstName] = useState('a');
       const [middleName, setMiddleName] = useState('1');
       const [lastName, setLastName] = useState('');
-      const [title, setTitle] = useState('1');
+      const [title, setTitle] = useState<number | string>(1);
 
       return (
         <Form onSubmit={onSubmit}>
@@ -1142,7 +1144,8 @@ describe('Form controlled', () => {
             validate={[
               { regexp: /^[a-z]/i },
               () => {
-                if (title && title.length === 1) return 'must be >1 character';
+                if (typeof title === 'string' && title.length === 1)
+                  return 'must be >1 character';
                 return undefined;
               },
             ]}

@@ -1119,7 +1119,7 @@ describe('Form uncontrolled', () => {
   });
 
   test('should validate when supplied a function', () => {
-    const functionValidation = (combination: any) =>
+    const functionValidation = (combination: string) =>
       combination === '12345'
         ? {
             message:
@@ -1176,7 +1176,7 @@ describe('Form uncontrolled', () => {
         message: 'At least five characters',
         status: 'error',
       },
-      (combination: any) =>
+      (combination: string) =>
         combination === '12345'
           ? {
               message:
