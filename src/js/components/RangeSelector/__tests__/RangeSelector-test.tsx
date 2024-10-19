@@ -146,8 +146,8 @@ describe('RangeSelector', () => {
   });
 
   test('step renders correct values', () => {
-    let values;
-    const setValues = (newValues) => {
+    let values: number[] = [];
+    const setValues = (newValues: number[]) => {
       values = newValues;
     };
     const onChange = jest.fn((nextValues) => setValues(nextValues));
@@ -207,23 +207,27 @@ describe('RangeSelector', () => {
     );
     expect(container.firstChild).toMatchSnapshot();
 
-    fireEvent.click(container.firstChild.firstChild, {
-      clientX: 0,
-      clientY: 0,
-    });
-    expect(onChange).toBeCalled();
+    const rangeContainer = container.firstChild?.firstChild;
 
-    const lowerControl = getByLabelText('Lower Bounds');
-    fireEvent.mouseDown(lowerControl);
-    fireEvent.mouseMove(document, { clientX: 0, clientY: 0 });
-    fireEvent.mouseUp(document);
-    expect(onChange).toBeCalled();
+    if (rangeContainer) {
+      fireEvent.click(rangeContainer, {
+        clientX: 0,
+        clientY: 0,
+      });
+      expect(onChange).toBeCalled();
 
-    const upperControl = getByLabelText('Upper Bounds');
-    fireEvent.mouseDown(upperControl);
-    fireEvent.mouseMove(document, { clientX: 0, clientY: 0 });
-    fireEvent.mouseUp(document);
-    expect(onChange).toBeCalled();
+      const lowerControl = getByLabelText('Lower Bounds');
+      fireEvent.mouseDown(lowerControl);
+      fireEvent.mouseMove(document, { clientX: 0, clientY: 0 });
+      fireEvent.mouseUp(document);
+      expect(onChange).toBeCalled();
+
+      const upperControl = getByLabelText('Upper Bounds');
+      fireEvent.mouseDown(upperControl);
+      fireEvent.mouseMove(document, { clientX: 0, clientY: 0 });
+      fireEvent.mouseUp(document);
+      expect(onChange).toBeCalled();
+    }
   });
 
   test('handle touch gestures', () => {
@@ -233,31 +237,33 @@ describe('RangeSelector', () => {
         <RangeSelector values={[10, 20]} onChange={onChange} />
       </Grommet>,
     );
-    const rangeContainer = container.firstChild.firstChild;
+    const rangeContainer = container.firstChild?.firstChild;
 
-    const lowerControl = getByLabelText('Lower Bounds');
-    fireEvent.touchStart(lowerControl);
-    fireEvent.touchMove(rangeContainer, {
-      changedTouches: [
-        {
-          clientX: 0,
-          clientY: 0,
-        },
-      ],
-    });
-    expect(onChange).toBeCalled();
+    if (rangeContainer) {
+      const lowerControl = getByLabelText('Lower Bounds');
+      fireEvent.touchStart(lowerControl);
+      fireEvent.touchMove(rangeContainer, {
+        changedTouches: [
+          {
+            clientX: 0,
+            clientY: 0,
+          },
+        ],
+      });
+      expect(onChange).toBeCalled();
 
-    const upperControl = getByLabelText('Upper Bounds');
-    fireEvent.touchStart(upperControl);
-    fireEvent.touchMove(rangeContainer, {
-      changedTouches: [
-        {
-          clientX: 0,
-          clientY: 0,
-        },
-      ],
-    });
-    expect(onChange).toBeCalled();
-    expect(container.firstChild).toMatchSnapshot();
+      const upperControl = getByLabelText('Upper Bounds');
+      fireEvent.touchStart(upperControl);
+      fireEvent.touchMove(rangeContainer, {
+        changedTouches: [
+          {
+            clientX: 0,
+            clientY: 0,
+          },
+        ],
+      });
+      expect(onChange).toBeCalled();
+      expect(container.firstChild).toMatchSnapshot();
+    }
   });
 });
