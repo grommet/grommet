@@ -4,10 +4,10 @@ import { makeNodeFocusable, makeNodeUnfocusable } from '../utils';
 import { RootsContext, useRoots } from '../contexts/RootsContext';
 
 const isFocusable = (element) => {
-  if (element.tabIndex < 0 || element.disabled) {
+  if (element?.tabIndex < 0 || element?.disabled) {
     return false;
   }
-  switch (element.nodeName) {
+  switch (element?.nodeName) {
     case 'A':
       return !!element.href && element.rel !== 'ignore';
     case 'INPUT':
@@ -16,6 +16,8 @@ const isFocusable = (element) => {
     case 'SELECT':
     case 'TEXTAREA':
       return true;
+    case 'DIV':
+      return element.tabIndex >= 0;
     default:
       return false;
   }
@@ -103,11 +105,28 @@ export const FocusedContainer = ({
     if (container) roots.push(container);
 
     // Create and insert focusable nodes to help track when focus
-    // has left this container but without letting focus be noticeably placed
-    // on anything outside the container
+    // has left this container but without letting focus be noticeably
+    // placed on anything outside the container
     if (!hidden && trapFocus) {
       const preDiv = document.createElement('div');
       const postDiv = document.createElement('div');
+
+      const commonStyles = {
+        position: 'absolute',
+        height: '1px',
+        left: '0',
+        right: '0',
+      };
+
+      Object.assign(preDiv.style, {
+        ...commonStyles,
+        top: '0',
+      });
+
+      Object.assign(postDiv.style, {
+        ...commonStyles,
+        bottom: '0',
+      });
 
       preNodeRef.current = container.parentNode.insertBefore(preDiv, container);
       postNodeRef.current = container.parentNode.insertBefore(
