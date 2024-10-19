@@ -10,7 +10,8 @@ import userEvent from '@testing-library/user-event';
 import { Home } from 'grommet-icons';
 import { createPortal, expectPortal } from '../../../utils/portal';
 
-import { Grommet, Notification, Button, Text } from '../..';
+import { ThemeType } from '../../../themes';
+import { Grommet, Notification, Button, Text, LayerPositionType } from '../..';
 
 const TestNotification = ({ ...rest }) => (
   <Notification title="title" message="message" {...rest} />
@@ -63,30 +64,28 @@ describe('Notification', () => {
     expect(onClose).toBeCalled();
   });
 
-  [
+  const validPositions: LayerPositionType[] = [
     'top',
     'bottom',
     'left',
     'right',
-    'start',
-    'end',
     'center',
     'top-left',
     'top-right',
     'bottom-left',
     'bottom-right',
-  ].forEach((positions) =>
-    test(`position ${positions}`, () => {
+  ];
+
+  validPositions.forEach((position) =>
+    test(`position ${position}`, () => {
       render(
         <Grommet>
           <Notification
             id="position-test"
-            toast={{ position: positions }}
+            toast={{ position }}
             title="title"
-            message="message"
-          >
-            This is a layer
-          </Notification>
+            message="This is a layer"
+          />
         </Grommet>,
       );
       expectPortal('position-test').toMatchSnapshot();
@@ -218,16 +217,14 @@ describe('Notification', () => {
   });
 
   test('custom theme', () => {
-    const theme = {
+    const theme: ThemeType = {
       notification: {
         direction: 'row',
-        truncation: true,
         container: {
           pad: 'medium',
         },
         toast: {
           direction: 'column',
-          truncation: false,
         },
         critical: {
           background: 'red',
