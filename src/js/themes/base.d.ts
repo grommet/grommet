@@ -726,6 +726,9 @@ export interface ThemeType {
   dataTable?: {
     body?: {
       extend?: ExtendType;
+      selected?: {
+        background?: BackgroundType;
+      };
     };
     container?: BoxProps;
     header?: {
