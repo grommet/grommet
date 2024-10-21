@@ -9,7 +9,7 @@ import { StyledRemoveButton, StyledTagButton } from './StyledTag';
 import { useThemeValue } from '../../utils/useThemeValue';
 
 const Tag = forwardRef(
-  ({ name, value, size, onRemove, onClick, ...rest }, ref) => {
+  ({ name, value, size = 'medium', onRemove, onClick, ...rest }, ref) => {
     const { theme, passThemeFlag } = useThemeValue();
     const RemoveIcon = theme.tag.icons?.remove || FormClose;
 
@@ -47,6 +47,14 @@ const Tag = forwardRef(
       console.warn('Tag cannot combine "onClick" and "onRemove".');
     }
 
+    const removeProps = !theme.tag.remove.kind
+      ? {
+          plain: true,
+          hoverIndicator: true,
+          focusIndicator: true,
+        }
+      : {};
+
     return onRemove || !onClick ? (
       <Box
         flex={false}
@@ -58,12 +66,11 @@ const Tag = forwardRef(
         {onRemove && (
           <StyledRemoveButton
             onClick={onRemove}
-            plain
-            hoverIndicator
-            focusIndicator
+            {...removeProps}
             icon={<RemoveIcon {...theme.tag.size?.[size]?.icon} />}
             round={theme.tag.size?.[size]?.round || theme.tag.round}
             {...theme.tag.remove}
+            {...theme.tag.size?.[size]?.remove}
             {...passThemeFlag}
           />
         )}
