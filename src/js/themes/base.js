@@ -1948,6 +1948,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           horizontal: '11px',
           vertical: '11px',
         },
+        // border: {
+        //   radius: undefined,
+        // }
       },
       container: {
         round: 'xsmall',

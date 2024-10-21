@@ -1734,11 +1734,16 @@ export interface ThemeType {
       iconOnly?: {
         pad?: PadType;
       };
+      border?: {
+        radius?: string;
+      };
     };
     container?: BoxProps;
-    divider?: {
-      color?: ColorType;
-    };
+    divider?:
+      | {
+          color?: ColorType;
+        }
+      | boolean;
   };
   video?: {
     captions?: {
