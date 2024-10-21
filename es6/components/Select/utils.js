@@ -1,7 +1,7 @@
-import React, { useCallback } from 'react';
+import { useCallback, isValidElement } from 'react';
 import { normalizeColor } from '../../utils';
 var _applyKey = function applyKey(option, key) {
-  if (/*#__PURE__*/React.isValidElement(option)) return option;
+  if (/*#__PURE__*/isValidElement(option)) return option;
   if (option === undefined || option === null) return undefined;
   if (typeof key === 'object') return _applyKey(option, key.key);
   if (typeof key === 'function') return key(option);
@@ -95,3 +95,14 @@ export var getDisplayLabelKey = function getDisplayLabelKey(labelKey, allOptions
 export var getIconColor = function getIconColor(theme) {
   return normalizeColor(theme.select.icons.color || 'control', theme);
 };
+var _formatValueForA11y = function formatValueForA11y(value, labelKey) {
+  if (typeof value === 'string') return value;
+  if (/*#__PURE__*/isValidElement(value)) return value.toString();
+  if (Array.isArray(value)) {
+    return value.map(function (item) {
+      return _formatValueForA11y(item, labelKey);
+    }).join(', ');
+  }
+  return _applyKey(value, labelKey);
+};
+export { _formatValueForA11y as formatValueForA11y };

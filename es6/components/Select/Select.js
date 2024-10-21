@@ -8,7 +8,7 @@ import { Keyboard } from '../Keyboard';
 import { FormContext } from '../Form/FormContext';
 import { SelectContainer } from './SelectContainer';
 import { HiddenInput, StyledSelectDropButton } from './StyledSelect';
-import { applyKey, getNormalizedValue, changeEvent, getSelectIcon, getDisplayLabelKey, getIconColor } from './utils';
+import { applyKey, getNormalizedValue, changeEvent, getSelectIcon, getDisplayLabelKey, getIconColor, formatValueForA11y } from './utils';
 import { DefaultSelectTextInput } from './DefaultSelectTextInput';
 import { MessageContext } from '../../contexts/MessageContext';
 import { SelectPropTypes } from './propTypes';
@@ -260,7 +260,7 @@ var Select = /*#__PURE__*/forwardRef(function (_ref, ref) {
       id: 'select.selected',
       messages: messages,
       values: {
-        currentSelectedValue: value
+        currentSelectedValue: formatValueForA11y(value, labelKey)
       }
     }) : ''),
     "aria-expanded": Boolean(open),

@@ -1,13 +1,11 @@
 "use strict";
 
 exports.__esModule = true;
-exports.useDisabled = exports.getSelectIcon = exports.getOptionValue = exports.getOptionLabel = exports.getOptionIndex = exports.getNormalizedValue = exports.getIconColor = exports.getDisplayLabelKey = exports.changeEvent = exports.arrayIncludes = exports.applyKey = void 0;
-var _react = _interopRequireWildcard(require("react"));
+exports.useDisabled = exports.getSelectIcon = exports.getOptionValue = exports.getOptionLabel = exports.getOptionIndex = exports.getNormalizedValue = exports.getIconColor = exports.getDisplayLabelKey = exports.formatValueForA11y = exports.changeEvent = exports.arrayIncludes = exports.applyKey = void 0;
+var _react = require("react");
 var _utils = require("../../utils");
-function _getRequireWildcardCache(e) { if ("function" != typeof WeakMap) return null; var r = new WeakMap(), t = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(e) { return e ? t : r; })(e); }
-function _interopRequireWildcard(e, r) { if (!r && e && e.__esModule) return e; if (null === e || "object" != typeof e && "function" != typeof e) return { "default": e }; var t = _getRequireWildcardCache(r); if (t && t.has(e)) return t.get(e); var n = { __proto__: null }, a = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var u in e) if ("default" !== u && {}.hasOwnProperty.call(e, u)) { var i = a ? Object.getOwnPropertyDescriptor(e, u) : null; i && (i.get || i.set) ? Object.defineProperty(n, u, i) : n[u] = e[u]; } return n["default"] = e, t && t.set(e, n), n; }
 var _applyKey = exports.applyKey = function applyKey(option, key) {
-  if (/*#__PURE__*/_react["default"].isValidElement(option)) return option;
+  if (/*#__PURE__*/(0, _react.isValidElement)(option)) return option;
   if (option === undefined || option === null) return undefined;
   if (typeof key === 'object') return _applyKey(option, key.key);
   if (typeof key === 'function') return key(option);
@@ -99,4 +97,14 @@ var getDisplayLabelKey = exports.getDisplayLabelKey = function getDisplayLabelKe
 };
 var getIconColor = exports.getIconColor = function getIconColor(theme) {
   return (0, _utils.normalizeColor)(theme.select.icons.color || 'control', theme);
+};
+var _formatValueForA11y = exports.formatValueForA11y = function formatValueForA11y(value, labelKey) {
+  if (typeof value === 'string') return value;
+  if (/*#__PURE__*/(0, _react.isValidElement)(value)) return value.toString();
+  if (Array.isArray(value)) {
+    return value.map(function (item) {
+      return _formatValueForA11y(item, labelKey);
+    }).join(', ');
+  }
+  return _applyKey(value, labelKey);
 };

@@ -266,7 +266,7 @@ var Select = exports.Select = /*#__PURE__*/(0, _react.forwardRef)(function (_ref
       id: 'select.selected',
       messages: messages,
       values: {
-        currentSelectedValue: value
+        currentSelectedValue: (0, _utils2.formatValueForA11y)(value, labelKey)
       }
     }) : ''),
     "aria-expanded": Boolean(open),
