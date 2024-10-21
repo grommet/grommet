@@ -8264,7 +8264,7 @@ exports[`Select onChange with valueKey string 4`] = `
     <button
       aria-expanded="false"
       aria-haspopup="listbox"
-      aria-label="test select; Selected: [object Object]"
+      aria-label="test select; Selected: Value1"
       class="c1 c2"
       id="test-select"
       type="button"
@@ -9416,7 +9416,7 @@ exports[`Select onChange without labelKey 4`] = `
     <button
       aria-expanded="false"
       aria-haspopup="listbox"
-      aria-label="test select; Selected: [object Object]"
+      aria-label="test select; Selected: 1"
       class="c1 c2"
       id="test-select"
       type="button"
@@ -10152,7 +10152,7 @@ exports[`Select onChange without labelKey or valueKey 4`] = `
     <button
       aria-expanded="false"
       aria-haspopup="listbox"
-      aria-label="test select; Selected: [object Object]"
+      aria-label="test select; Selected: 1"
       class="c1 c2"
       id="test-select"
       type="button"
@@ -10888,7 +10888,7 @@ exports[`Select onChange without valueKey 4`] = `
     <button
       aria-expanded="false"
       aria-haspopup="listbox"
-      aria-label="test select; Selected: [object Object]"
+      aria-label="test select; Selected: Value1"
       class="c1 c2"
       id="test-select"
       type="button"
