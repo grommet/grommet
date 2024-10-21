@@ -3853,7 +3853,7 @@ exports[`List events should apply pagination styling 1`] = `
   stroke: none;
 }
 
-.c18 {
+.c17 {
   display: inline-block;
   flex: 0 0 auto;
   width: 24px;
@@ -3862,25 +3862,25 @@ exports[`List events should apply pagination styling 1`] = `
   stroke: #000000;
 }
 
-.c18 g {
+.c17 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c18 *:not([stroke])[fill='none'] {
+.c17 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c18 *[stroke*='#'],
-.c18 *[STROKE*='#'] {
+.c17 *[stroke*='#'],
+.c17 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
-.c18 *[fill-rule],
-.c18 *[FILL-RULE],
-.c18 *[fill*='#'],
-.c18 *[FILL*='#'] {
+.c17 *[fill-rule],
+.c17 *[FILL-RULE],
+.c17 *[fill*='#'],
+.c17 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -3967,18 +3967,13 @@ exports[`List events should apply pagination styling 1`] = `
   min-height: 0;
   flex-direction: row;
   padding: 0px;
+  column-gap: 3px;
 }
 
 .c6 {
   flex: 0 0 auto;
   align-self: stretch;
   height: 6px;
-}
-
-.c14 {
-  flex: 0 0 auto;
-  align-self: stretch;
-  width: 3px;
 }
 
 .c11 {
@@ -4054,7 +4049,7 @@ exports[`List events should apply pagination styling 1`] = `
   border: 0;
 }
 
-.c15 {
+.c14 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -4073,6 +4068,76 @@ exports[`List events should apply pagination styling 1`] = `
   line-height: 24px;
   background-color: rgba(51, 51, 51, 0.06274509803921569);
   color: #444444;
+  text-align: center;
+  transition-property: color,background-color,border-color,box-shadow;
+  transition-duration: 0.1s;
+  transition-timing-function: ease-in-out;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  flex: 1 0 auto;
+}
+
+.c14:hover {
+  background-color: rgba(51, 51, 51, 0.06274509803921569);
+}
+
+.c14:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c14:focus >circle,
+.c14:focus >ellipse,
+.c14:focus >line,
+.c14:focus >path,
+.c14:focus >polygon,
+.c14:focus >polyline,
+.c14:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c14:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c14:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c14:focus:not(:focus-visible) >circle,
+.c14:focus:not(:focus-visible) >ellipse,
+.c14:focus:not(:focus-visible) >line,
+.c14:focus:not(:focus-visible) >path,
+.c14:focus:not(:focus-visible) >polygon,
+.c14:focus:not(:focus-visible) >polyline,
+.c14:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c14:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
+}
+
+.c15 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: none;
+  border-radius: 4px;
+  padding: 4px 4px;
+  font-size: 18px;
+  line-height: 24px;
+  color: #000000;
   text-align: center;
   transition-property: color,background-color,border-color,box-shadow;
   transition-duration: 0.1s;
@@ -4141,7 +4206,7 @@ exports[`List events should apply pagination styling 1`] = `
   border-radius: 4px;
   padding: 4px 4px;
   font-size: 18px;
-  line-height: 24px;
+  line-height: 0;
   color: #000000;
   text-align: center;
   transition-property: color,background-color,border-color,box-shadow;
@@ -4151,6 +4216,12 @@ exports[`List events should apply pagination styling 1`] = `
   height: 100%;
   max-width: none;
   flex: 1 0 auto;
+}
+
+.c16 >svg {
+  display: flex;
+  align-self: center;
+  vertical-align: middle;
 }
 
 .c16:hover {
@@ -4194,82 +4265,6 @@ exports[`List events should apply pagination styling 1`] = `
 }
 
 .c16:focus:not(:focus-visible) ::-moz-focus-inner {
-  border: 0;
-}
-
-.c17 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  font: inherit;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  border: none;
-  border-radius: 4px;
-  padding: 4px 4px;
-  font-size: 18px;
-  line-height: 0;
-  color: #000000;
-  text-align: center;
-  transition-property: color,background-color,border-color,box-shadow;
-  transition-duration: 0.1s;
-  transition-timing-function: ease-in-out;
-  width: 100%;
-  height: 100%;
-  max-width: none;
-  flex: 1 0 auto;
-}
-
-.c17 >svg {
-  display: flex;
-  align-self: center;
-  vertical-align: middle;
-}
-
-.c17:hover {
-  background-color: rgba(51, 51, 51, 0.06274509803921569);
-}
-
-.c17:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c17:focus >circle,
-.c17:focus >ellipse,
-.c17:focus >line,
-.c17:focus >path,
-.c17:focus >polygon,
-.c17:focus >polyline,
-.c17:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c17:focus ::-moz-focus-inner {
-  border: 0;
-}
-
-.c17:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c17:focus:not(:focus-visible) >circle,
-.c17:focus:not(:focus-visible) >ellipse,
-.c17:focus:not(:focus-visible) >line,
-.c17:focus:not(:focus-visible) >path,
-.c17:focus:not(:focus-visible) >polygon,
-.c17:focus:not(:focus-visible) >polyline,
-.c17:focus:not(:focus-visible) >rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c17:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 
@@ -4361,14 +4356,14 @@ exports[`List events should apply pagination styling 1`] = `
 }
 
 @media only screen and (max-width: 768px) {
-  .c6 {
-    height: 3px;
+  .c9 {
+    column-gap: 2px;
   }
 }
 
 @media only screen and (max-width: 768px) {
-  .c14 {
-    width: 2px;
+  .c6 {
+    height: 3px;
   }
 }
 
@@ -4670,49 +4665,40 @@ exports[`List events should apply pagination styling 1`] = `
               </svg>
             </button>
           </li>
-          <div
-            class="c14"
-          />
           <li
             class="c10"
           >
             <button
               aria-current="page"
               aria-label="Go to page 1"
-              class="c15 c12"
+              class="c14 c12"
               type="button"
             >
               1
             </button>
           </li>
-          <div
-            class="c14"
-          />
           <li
             class="c10"
           >
             <button
               aria-label="Go to page 2"
-              class="c16 c12"
+              class="c15 c12"
               type="button"
             >
               2
             </button>
           </li>
-          <div
-            class="c14"
-          />
           <li
             class="c10"
           >
             <button
               aria-label="Go to next page"
-              class="c17 c12"
+              class="c16 c12"
               type="button"
             >
               <svg
                 aria-label="Next"
-                class="c18"
+                class="c17"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -4896,7 +4882,7 @@ exports[`List events should paginate 1`] = `
   stroke: none;
 }
 
-.c18 {
+.c17 {
   display: inline-block;
   flex: 0 0 auto;
   width: 24px;
@@ -4905,25 +4891,25 @@ exports[`List events should paginate 1`] = `
   stroke: #000000;
 }
 
-.c18 g {
+.c17 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c18 *:not([stroke])[fill='none'] {
+.c17 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c18 *[stroke*='#'],
-.c18 *[STROKE*='#'] {
+.c17 *[stroke*='#'],
+.c17 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
-.c18 *[fill-rule],
-.c18 *[FILL-RULE],
-.c18 *[fill*='#'],
-.c18 *[FILL*='#'] {
+.c17 *[fill-rule],
+.c17 *[FILL-RULE],
+.c17 *[fill*='#'],
+.c17 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -5009,18 +4995,13 @@ exports[`List events should paginate 1`] = `
   min-height: 0;
   flex-direction: row;
   padding: 0px;
+  column-gap: 3px;
 }
 
 .c6 {
   flex: 0 0 auto;
   align-self: stretch;
   height: 6px;
-}
-
-.c14 {
-  flex: 0 0 auto;
-  align-self: stretch;
-  width: 3px;
 }
 
 .c11 {
@@ -5096,7 +5077,7 @@ exports[`List events should paginate 1`] = `
   border: 0;
 }
 
-.c15 {
+.c14 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -5115,6 +5096,76 @@ exports[`List events should paginate 1`] = `
   line-height: 24px;
   background-color: rgba(51, 51, 51, 0.06274509803921569);
   color: #444444;
+  text-align: center;
+  transition-property: color,background-color,border-color,box-shadow;
+  transition-duration: 0.1s;
+  transition-timing-function: ease-in-out;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  flex: 1 0 auto;
+}
+
+.c14:hover {
+  background-color: rgba(51, 51, 51, 0.06274509803921569);
+}
+
+.c14:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c14:focus >circle,
+.c14:focus >ellipse,
+.c14:focus >line,
+.c14:focus >path,
+.c14:focus >polygon,
+.c14:focus >polyline,
+.c14:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c14:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c14:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c14:focus:not(:focus-visible) >circle,
+.c14:focus:not(:focus-visible) >ellipse,
+.c14:focus:not(:focus-visible) >line,
+.c14:focus:not(:focus-visible) >path,
+.c14:focus:not(:focus-visible) >polygon,
+.c14:focus:not(:focus-visible) >polyline,
+.c14:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c14:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
+}
+
+.c15 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: none;
+  border-radius: 4px;
+  padding: 4px 4px;
+  font-size: 18px;
+  line-height: 24px;
+  color: #000000;
   text-align: center;
   transition-property: color,background-color,border-color,box-shadow;
   transition-duration: 0.1s;
@@ -5183,7 +5234,7 @@ exports[`List events should paginate 1`] = `
   border-radius: 4px;
   padding: 4px 4px;
   font-size: 18px;
-  line-height: 24px;
+  line-height: 0;
   color: #000000;
   text-align: center;
   transition-property: color,background-color,border-color,box-shadow;
@@ -5193,6 +5244,12 @@ exports[`List events should paginate 1`] = `
   height: 100%;
   max-width: none;
   flex: 1 0 auto;
+}
+
+.c16 >svg {
+  display: flex;
+  align-self: center;
+  vertical-align: middle;
 }
 
 .c16:hover {
@@ -5236,82 +5293,6 @@ exports[`List events should paginate 1`] = `
 }
 
 .c16:focus:not(:focus-visible) ::-moz-focus-inner {
-  border: 0;
-}
-
-.c17 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  font: inherit;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  border: none;
-  border-radius: 4px;
-  padding: 4px 4px;
-  font-size: 18px;
-  line-height: 0;
-  color: #000000;
-  text-align: center;
-  transition-property: color,background-color,border-color,box-shadow;
-  transition-duration: 0.1s;
-  transition-timing-function: ease-in-out;
-  width: 100%;
-  height: 100%;
-  max-width: none;
-  flex: 1 0 auto;
-}
-
-.c17 >svg {
-  display: flex;
-  align-self: center;
-  vertical-align: middle;
-}
-
-.c17:hover {
-  background-color: rgba(51, 51, 51, 0.06274509803921569);
-}
-
-.c17:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c17:focus >circle,
-.c17:focus >ellipse,
-.c17:focus >line,
-.c17:focus >path,
-.c17:focus >polygon,
-.c17:focus >polyline,
-.c17:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c17:focus ::-moz-focus-inner {
-  border: 0;
-}
-
-.c17:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c17:focus:not(:focus-visible) >circle,
-.c17:focus:not(:focus-visible) >ellipse,
-.c17:focus:not(:focus-visible) >line,
-.c17:focus:not(:focus-visible) >path,
-.c17:focus:not(:focus-visible) >polygon,
-.c17:focus:not(:focus-visible) >polyline,
-.c17:focus:not(:focus-visible) >rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c17:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 
@@ -5397,14 +5378,14 @@ exports[`List events should paginate 1`] = `
 }
 
 @media only screen and (max-width: 768px) {
-  .c6 {
-    height: 3px;
+  .c9 {
+    column-gap: 2px;
   }
 }
 
 @media only screen and (max-width: 768px) {
-  .c14 {
-    width: 2px;
+  .c6 {
+    height: 3px;
   }
 }
 
@@ -5706,49 +5687,40 @@ exports[`List events should paginate 1`] = `
               </svg>
             </button>
           </li>
-          <div
-            class="c14"
-          />
           <li
             class="c10"
           >
             <button
               aria-current="page"
               aria-label="Go to page 1"
-              class="c15 c12"
+              class="c14 c12"
               type="button"
             >
               1
             </button>
           </li>
-          <div
-            class="c14"
-          />
           <li
             class="c10"
           >
             <button
               aria-label="Go to page 2"
-              class="c16 c12"
+              class="c15 c12"
               type="button"
             >
               2
             </button>
           </li>
-          <div
-            class="c14"
-          />
           <li
             class="c10"
           >
             <button
               aria-label="Go to next page"
-              class="c17 c12"
+              class="c16 c12"
               type="button"
             >
               <svg
                 aria-label="Next"
-                class="c18"
+                class="c17"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -5800,7 +5772,7 @@ exports[`List events should render correct num items per page (step) 1`] = `
   stroke: none;
 }
 
-.c18 {
+.c17 {
   display: inline-block;
   flex: 0 0 auto;
   width: 24px;
@@ -5809,25 +5781,25 @@ exports[`List events should render correct num items per page (step) 1`] = `
   stroke: #000000;
 }
 
-.c18 g {
+.c17 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c18 *:not([stroke])[fill='none'] {
+.c17 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c18 *[stroke*='#'],
-.c18 *[STROKE*='#'] {
+.c17 *[stroke*='#'],
+.c17 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
-.c18 *[fill-rule],
-.c18 *[FILL-RULE],
-.c18 *[fill*='#'],
-.c18 *[FILL*='#'] {
+.c17 *[fill-rule],
+.c17 *[FILL-RULE],
+.c17 *[fill*='#'],
+.c17 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -5913,18 +5885,13 @@ exports[`List events should render correct num items per page (step) 1`] = `
   min-height: 0;
   flex-direction: row;
   padding: 0px;
+  column-gap: 3px;
 }
 
 .c6 {
   flex: 0 0 auto;
   align-self: stretch;
   height: 6px;
-}
-
-.c14 {
-  flex: 0 0 auto;
-  align-self: stretch;
-  width: 3px;
 }
 
 .c11 {
@@ -6000,7 +5967,7 @@ exports[`List events should render correct num items per page (step) 1`] = `
   border: 0;
 }
 
-.c15 {
+.c14 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -6019,6 +5986,76 @@ exports[`List events should render correct num items per page (step) 1`] = `
   line-height: 24px;
   background-color: rgba(51, 51, 51, 0.06274509803921569);
   color: #444444;
+  text-align: center;
+  transition-property: color,background-color,border-color,box-shadow;
+  transition-duration: 0.1s;
+  transition-timing-function: ease-in-out;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  flex: 1 0 auto;
+}
+
+.c14:hover {
+  background-color: rgba(51, 51, 51, 0.06274509803921569);
+}
+
+.c14:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c14:focus >circle,
+.c14:focus >ellipse,
+.c14:focus >line,
+.c14:focus >path,
+.c14:focus >polygon,
+.c14:focus >polyline,
+.c14:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c14:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c14:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c14:focus:not(:focus-visible) >circle,
+.c14:focus:not(:focus-visible) >ellipse,
+.c14:focus:not(:focus-visible) >line,
+.c14:focus:not(:focus-visible) >path,
+.c14:focus:not(:focus-visible) >polygon,
+.c14:focus:not(:focus-visible) >polyline,
+.c14:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c14:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
+}
+
+.c15 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: none;
+  border-radius: 4px;
+  padding: 4px 4px;
+  font-size: 18px;
+  line-height: 24px;
+  color: #000000;
   text-align: center;
   transition-property: color,background-color,border-color,box-shadow;
   transition-duration: 0.1s;
@@ -6087,7 +6124,7 @@ exports[`List events should render correct num items per page (step) 1`] = `
   border-radius: 4px;
   padding: 4px 4px;
   font-size: 18px;
-  line-height: 24px;
+  line-height: 0;
   color: #000000;
   text-align: center;
   transition-property: color,background-color,border-color,box-shadow;
@@ -6097,6 +6134,12 @@ exports[`List events should render correct num items per page (step) 1`] = `
   height: 100%;
   max-width: none;
   flex: 1 0 auto;
+}
+
+.c16 >svg {
+  display: flex;
+  align-self: center;
+  vertical-align: middle;
 }
 
 .c16:hover {
@@ -6140,82 +6183,6 @@ exports[`List events should render correct num items per page (step) 1`] = `
 }
 
 .c16:focus:not(:focus-visible) ::-moz-focus-inner {
-  border: 0;
-}
-
-.c17 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  font: inherit;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  border: none;
-  border-radius: 4px;
-  padding: 4px 4px;
-  font-size: 18px;
-  line-height: 0;
-  color: #000000;
-  text-align: center;
-  transition-property: color,background-color,border-color,box-shadow;
-  transition-duration: 0.1s;
-  transition-timing-function: ease-in-out;
-  width: 100%;
-  height: 100%;
-  max-width: none;
-  flex: 1 0 auto;
-}
-
-.c17 >svg {
-  display: flex;
-  align-self: center;
-  vertical-align: middle;
-}
-
-.c17:hover {
-  background-color: rgba(51, 51, 51, 0.06274509803921569);
-}
-
-.c17:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c17:focus >circle,
-.c17:focus >ellipse,
-.c17:focus >line,
-.c17:focus >path,
-.c17:focus >polygon,
-.c17:focus >polyline,
-.c17:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c17:focus ::-moz-focus-inner {
-  border: 0;
-}
-
-.c17:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c17:focus:not(:focus-visible) >circle,
-.c17:focus:not(:focus-visible) >ellipse,
-.c17:focus:not(:focus-visible) >line,
-.c17:focus:not(:focus-visible) >path,
-.c17:focus:not(:focus-visible) >polygon,
-.c17:focus:not(:focus-visible) >polyline,
-.c17:focus:not(:focus-visible) >rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c17:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 
@@ -6301,14 +6268,14 @@ exports[`List events should render correct num items per page (step) 1`] = `
 }
 
 @media only screen and (max-width: 768px) {
-  .c6 {
-    height: 3px;
+  .c9 {
+    column-gap: 2px;
   }
 }
 
 @media only screen and (max-width: 768px) {
-  .c14 {
-    width: 2px;
+  .c6 {
+    height: 3px;
   }
 }
 
@@ -6430,119 +6397,95 @@ exports[`List events should render correct num items per page (step) 1`] = `
               </svg>
             </button>
           </li>
-          <div
-            class="c14"
-          />
           <li
             class="c10"
           >
             <button
               aria-current="page"
               aria-label="Go to page 1"
-              class="c15 c12"
+              class="c14 c12"
               type="button"
             >
               1
             </button>
           </li>
-          <div
-            class="c14"
-          />
           <li
             class="c10"
           >
             <button
               aria-label="Go to page 2"
-              class="c16 c12"
+              class="c15 c12"
               type="button"
             >
               2
             </button>
           </li>
-          <div
-            class="c14"
-          />
           <li
             class="c10"
           >
             <button
               aria-label="Go to page 3"
-              class="c16 c12"
+              class="c15 c12"
               type="button"
             >
               3
             </button>
           </li>
-          <div
-            class="c14"
-          />
           <li
             class="c10"
           >
             <button
               aria-label="Go to page 4"
-              class="c16 c12"
+              class="c15 c12"
               type="button"
             >
               4
             </button>
           </li>
-          <div
-            class="c14"
-          />
           <li
             class="c10"
           >
             <button
               aria-label="Go to page 5"
-              class="c16 c12"
+              class="c15 c12"
               type="button"
             >
               5
             </button>
           </li>
-          <div
-            class="c14"
-          />
           <li
             class="c10"
           >
             <button
               aria-label="Go to page 6"
-              class="c16 c12"
+              class="c15 c12"
               type="button"
             >
               6
             </button>
           </li>
-          <div
-            class="c14"
-          />
           <li
             class="c10"
           >
             <button
               aria-label="Go to page 7"
-              class="c16 c12"
+              class="c15 c12"
               type="button"
             >
               7
             </button>
           </li>
-          <div
-            class="c14"
-          />
           <li
             class="c10"
           >
             <button
               aria-label="Go to next page"
-              class="c17 c12"
+              class="c16 c12"
               type="button"
             >
               <svg
                 aria-label="Next"
-                class="c18"
+                class="c17"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -6594,7 +6537,7 @@ exports[`List events should render new data when page changes 1`] = `
   stroke: none;
 }
 
-.c18 {
+.c17 {
   display: inline-block;
   flex: 0 0 auto;
   width: 24px;
@@ -6603,25 +6546,25 @@ exports[`List events should render new data when page changes 1`] = `
   stroke: #000000;
 }
 
-.c18 g {
+.c17 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c18 *:not([stroke])[fill='none'] {
+.c17 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c18 *[stroke*='#'],
-.c18 *[STROKE*='#'] {
+.c17 *[stroke*='#'],
+.c17 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
-.c18 *[fill-rule],
-.c18 *[FILL-RULE],
-.c18 *[fill*='#'],
-.c18 *[FILL*='#'] {
+.c17 *[fill-rule],
+.c17 *[FILL-RULE],
+.c17 *[fill*='#'],
+.c17 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -6707,18 +6650,13 @@ exports[`List events should render new data when page changes 1`] = `
   min-height: 0;
   flex-direction: row;
   padding: 0px;
+  column-gap: 3px;
 }
 
 .c6 {
   flex: 0 0 auto;
   align-self: stretch;
   height: 6px;
-}
-
-.c14 {
-  flex: 0 0 auto;
-  align-self: stretch;
-  width: 3px;
 }
 
 .c11 {
@@ -6794,7 +6732,7 @@ exports[`List events should render new data when page changes 1`] = `
   border: 0;
 }
 
-.c15 {
+.c14 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -6813,6 +6751,76 @@ exports[`List events should render new data when page changes 1`] = `
   line-height: 24px;
   background-color: rgba(51, 51, 51, 0.06274509803921569);
   color: #444444;
+  text-align: center;
+  transition-property: color,background-color,border-color,box-shadow;
+  transition-duration: 0.1s;
+  transition-timing-function: ease-in-out;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  flex: 1 0 auto;
+}
+
+.c14:hover {
+  background-color: rgba(51, 51, 51, 0.06274509803921569);
+}
+
+.c14:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c14:focus >circle,
+.c14:focus >ellipse,
+.c14:focus >line,
+.c14:focus >path,
+.c14:focus >polygon,
+.c14:focus >polyline,
+.c14:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c14:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c14:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c14:focus:not(:focus-visible) >circle,
+.c14:focus:not(:focus-visible) >ellipse,
+.c14:focus:not(:focus-visible) >line,
+.c14:focus:not(:focus-visible) >path,
+.c14:focus:not(:focus-visible) >polygon,
+.c14:focus:not(:focus-visible) >polyline,
+.c14:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c14:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
+}
+
+.c15 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: none;
+  border-radius: 4px;
+  padding: 4px 4px;
+  font-size: 18px;
+  line-height: 24px;
+  color: #000000;
   text-align: center;
   transition-property: color,background-color,border-color,box-shadow;
   transition-duration: 0.1s;
@@ -6881,7 +6889,7 @@ exports[`List events should render new data when page changes 1`] = `
   border-radius: 4px;
   padding: 4px 4px;
   font-size: 18px;
-  line-height: 24px;
+  line-height: 0;
   color: #000000;
   text-align: center;
   transition-property: color,background-color,border-color,box-shadow;
@@ -6891,6 +6899,12 @@ exports[`List events should render new data when page changes 1`] = `
   height: 100%;
   max-width: none;
   flex: 1 0 auto;
+}
+
+.c16 >svg {
+  display: flex;
+  align-self: center;
+  vertical-align: middle;
 }
 
 .c16:hover {
@@ -6934,82 +6948,6 @@ exports[`List events should render new data when page changes 1`] = `
 }
 
 .c16:focus:not(:focus-visible) ::-moz-focus-inner {
-  border: 0;
-}
-
-.c17 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  font: inherit;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  border: none;
-  border-radius: 4px;
-  padding: 4px 4px;
-  font-size: 18px;
-  line-height: 0;
-  color: #000000;
-  text-align: center;
-  transition-property: color,background-color,border-color,box-shadow;
-  transition-duration: 0.1s;
-  transition-timing-function: ease-in-out;
-  width: 100%;
-  height: 100%;
-  max-width: none;
-  flex: 1 0 auto;
-}
-
-.c17 >svg {
-  display: flex;
-  align-self: center;
-  vertical-align: middle;
-}
-
-.c17:hover {
-  background-color: rgba(51, 51, 51, 0.06274509803921569);
-}
-
-.c17:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c17:focus >circle,
-.c17:focus >ellipse,
-.c17:focus >line,
-.c17:focus >path,
-.c17:focus >polygon,
-.c17:focus >polyline,
-.c17:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c17:focus ::-moz-focus-inner {
-  border: 0;
-}
-
-.c17:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c17:focus:not(:focus-visible) >circle,
-.c17:focus:not(:focus-visible) >ellipse,
-.c17:focus:not(:focus-visible) >line,
-.c17:focus:not(:focus-visible) >path,
-.c17:focus:not(:focus-visible) >polygon,
-.c17:focus:not(:focus-visible) >polyline,
-.c17:focus:not(:focus-visible) >rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c17:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 
@@ -7095,14 +7033,14 @@ exports[`List events should render new data when page changes 1`] = `
 }
 
 @media only screen and (max-width: 768px) {
-  .c6 {
-    height: 3px;
+  .c9 {
+    column-gap: 2px;
   }
 }
 
 @media only screen and (max-width: 768px) {
-  .c14 {
-    width: 2px;
+  .c6 {
+    height: 3px;
   }
 }
 
@@ -7404,49 +7342,40 @@ exports[`List events should render new data when page changes 1`] = `
               </svg>
             </button>
           </li>
-          <div
-            class="c14"
-          />
           <li
             class="c10"
           >
             <button
               aria-current="page"
               aria-label="Go to page 1"
-              class="c15 c12"
+              class="c14 c12"
               type="button"
             >
               1
             </button>
           </li>
-          <div
-            class="c14"
-          />
           <li
             class="c10"
           >
             <button
               aria-label="Go to page 2"
-              class="c16 c12"
+              class="c15 c12"
               type="button"
             >
               2
             </button>
           </li>
-          <div
-            class="c14"
-          />
           <li
             class="c10"
           >
             <button
               aria-label="Go to next page"
-              class="c17 c12"
+              class="c16 c12"
               type="button"
             >
               <svg
                 aria-label="Next"
-                class="c18"
+                class="c17"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -10730,7 +10659,7 @@ exports[`List events should render new data when page changes 2`] = `
         class="StyledBox-sc-13pk1d4-0 euJJjo"
       >
         <ul
-          class="StyledBox-sc-13pk1d4-0 kOcABF"
+          class="StyledBox-sc-13pk1d4-0 gkMlIT"
         >
           <li
             class="StyledPageControl__StyledContainer-sc-1vlfaez-1 bjXWCk"
@@ -10754,9 +10683,6 @@ exports[`List events should render new data when page changes 2`] = `
               </svg>
             </button>
           </li>
-          <div
-            class="StyledBox__StyledBoxGap-sc-13pk1d4-1 fsEMPj"
-          />
           <li
             class="StyledPageControl__StyledContainer-sc-1vlfaez-1 bjXWCk"
           >
@@ -10768,9 +10694,6 @@ exports[`List events should render new data when page changes 2`] = `
               1
             </button>
           </li>
-          <div
-            class="StyledBox__StyledBoxGap-sc-13pk1d4-1 fsEMPj"
-          />
           <li
             class="StyledPageControl__StyledContainer-sc-1vlfaez-1 bjXWCk"
           >
@@ -10783,9 +10706,6 @@ exports[`List events should render new data when page changes 2`] = `
               2
             </button>
           </li>
-          <div
-            class="StyledBox__StyledBoxGap-sc-13pk1d4-1 fsEMPj"
-          />
           <li
             class="StyledPageControl__StyledContainer-sc-1vlfaez-1 bjXWCk"
           >
@@ -10850,7 +10770,7 @@ exports[`List events should show correct item index when "show" is a number 1`] 
   stroke: none;
 }
 
-.c18 {
+.c17 {
   display: inline-block;
   flex: 0 0 auto;
   width: 24px;
@@ -10859,25 +10779,25 @@ exports[`List events should show correct item index when "show" is a number 1`] 
   stroke: #000000;
 }
 
-.c18 g {
+.c17 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c18 *:not([stroke])[fill='none'] {
+.c17 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c18 *[stroke*='#'],
-.c18 *[STROKE*='#'] {
+.c17 *[stroke*='#'],
+.c17 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
-.c18 *[fill-rule],
-.c18 *[FILL-RULE],
-.c18 *[fill*='#'],
-.c18 *[FILL*='#'] {
+.c17 *[fill-rule],
+.c17 *[FILL-RULE],
+.c17 *[fill*='#'],
+.c17 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -10963,18 +10883,13 @@ exports[`List events should show correct item index when "show" is a number 1`] 
   min-height: 0;
   flex-direction: row;
   padding: 0px;
+  column-gap: 3px;
 }
 
 .c6 {
   flex: 0 0 auto;
   align-self: stretch;
   height: 6px;
-}
-
-.c14 {
-  flex: 0 0 auto;
-  align-self: stretch;
-  width: 3px;
 }
 
 .c11 {
@@ -11050,7 +10965,7 @@ exports[`List events should show correct item index when "show" is a number 1`] 
   border: 0;
 }
 
-.c15 {
+.c14 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -11069,6 +10984,76 @@ exports[`List events should show correct item index when "show" is a number 1`] 
   line-height: 24px;
   background-color: rgba(51, 51, 51, 0.06274509803921569);
   color: #444444;
+  text-align: center;
+  transition-property: color,background-color,border-color,box-shadow;
+  transition-duration: 0.1s;
+  transition-timing-function: ease-in-out;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  flex: 1 0 auto;
+}
+
+.c14:hover {
+  background-color: rgba(51, 51, 51, 0.06274509803921569);
+}
+
+.c14:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c14:focus >circle,
+.c14:focus >ellipse,
+.c14:focus >line,
+.c14:focus >path,
+.c14:focus >polygon,
+.c14:focus >polyline,
+.c14:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c14:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c14:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c14:focus:not(:focus-visible) >circle,
+.c14:focus:not(:focus-visible) >ellipse,
+.c14:focus:not(:focus-visible) >line,
+.c14:focus:not(:focus-visible) >path,
+.c14:focus:not(:focus-visible) >polygon,
+.c14:focus:not(:focus-visible) >polyline,
+.c14:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c14:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
+}
+
+.c15 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: none;
+  border-radius: 4px;
+  padding: 4px 4px;
+  font-size: 18px;
+  line-height: 24px;
+  color: #000000;
   text-align: center;
   transition-property: color,background-color,border-color,box-shadow;
   transition-duration: 0.1s;
@@ -11137,7 +11122,7 @@ exports[`List events should show correct item index when "show" is a number 1`] 
   border-radius: 4px;
   padding: 4px 4px;
   font-size: 18px;
-  line-height: 24px;
+  line-height: 0;
   color: #000000;
   text-align: center;
   transition-property: color,background-color,border-color,box-shadow;
@@ -11147,6 +11132,12 @@ exports[`List events should show correct item index when "show" is a number 1`] 
   height: 100%;
   max-width: none;
   flex: 1 0 auto;
+}
+
+.c16 >svg {
+  display: flex;
+  align-self: center;
+  vertical-align: middle;
 }
 
 .c16:hover {
@@ -11190,82 +11181,6 @@ exports[`List events should show correct item index when "show" is a number 1`] 
 }
 
 .c16:focus:not(:focus-visible) ::-moz-focus-inner {
-  border: 0;
-}
-
-.c17 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  font: inherit;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  border: none;
-  border-radius: 4px;
-  padding: 4px 4px;
-  font-size: 18px;
-  line-height: 0;
-  color: #000000;
-  text-align: center;
-  transition-property: color,background-color,border-color,box-shadow;
-  transition-duration: 0.1s;
-  transition-timing-function: ease-in-out;
-  width: 100%;
-  height: 100%;
-  max-width: none;
-  flex: 1 0 auto;
-}
-
-.c17 >svg {
-  display: flex;
-  align-self: center;
-  vertical-align: middle;
-}
-
-.c17:hover {
-  background-color: rgba(51, 51, 51, 0.06274509803921569);
-}
-
-.c17:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c17:focus >circle,
-.c17:focus >ellipse,
-.c17:focus >line,
-.c17:focus >path,
-.c17:focus >polygon,
-.c17:focus >polyline,
-.c17:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c17:focus ::-moz-focus-inner {
-  border: 0;
-}
-
-.c17:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c17:focus:not(:focus-visible) >circle,
-.c17:focus:not(:focus-visible) >ellipse,
-.c17:focus:not(:focus-visible) >line,
-.c17:focus:not(:focus-visible) >path,
-.c17:focus:not(:focus-visible) >polygon,
-.c17:focus:not(:focus-visible) >polyline,
-.c17:focus:not(:focus-visible) >rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c17:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 
@@ -11351,14 +11266,14 @@ exports[`List events should show correct item index when "show" is a number 1`] 
 }
 
 @media only screen and (max-width: 768px) {
-  .c6 {
-    height: 3px;
+  .c9 {
+    column-gap: 2px;
   }
 }
 
 @media only screen and (max-width: 768px) {
-  .c14 {
-    width: 2px;
+  .c6 {
+    height: 3px;
   }
 }
 
@@ -11660,49 +11575,40 @@ exports[`List events should show correct item index when "show" is a number 1`] 
               </svg>
             </button>
           </li>
-          <div
-            class="c14"
-          />
           <li
             class="c10"
           >
             <button
               aria-current="page"
               aria-label="Go to page 1"
-              class="c15 c12"
+              class="c14 c12"
               type="button"
             >
               1
             </button>
           </li>
-          <div
-            class="c14"
-          />
           <li
             class="c10"
           >
             <button
               aria-label="Go to page 2"
-              class="c16 c12"
+              class="c15 c12"
               type="button"
             >
               2
             </button>
           </li>
-          <div
-            class="c14"
-          />
           <li
             class="c10"
           >
             <button
               aria-label="Go to next page"
-              class="c17 c12"
+              class="c16 c12"
               type="button"
             >
               <svg
                 aria-label="Next"
-                class="c18"
+                class="c17"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -11754,7 +11660,7 @@ exports[`List events should show correct page when "show" is { page: # } 1`] = `
   stroke: none;
 }
 
-.c18 {
+.c17 {
   display: inline-block;
   flex: 0 0 auto;
   width: 24px;
@@ -11763,25 +11669,25 @@ exports[`List events should show correct page when "show" is { page: # } 1`] = `
   stroke: #666666;
 }
 
-.c18 g {
+.c17 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c18 *:not([stroke])[fill='none'] {
+.c17 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c18 *[stroke*='#'],
-.c18 *[STROKE*='#'] {
+.c17 *[stroke*='#'],
+.c17 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
-.c18 *[fill-rule],
-.c18 *[FILL-RULE],
-.c18 *[fill*='#'],
-.c18 *[FILL*='#'] {
+.c17 *[fill-rule],
+.c17 *[FILL-RULE],
+.c17 *[fill*='#'],
+.c17 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -11867,18 +11773,13 @@ exports[`List events should show correct page when "show" is { page: # } 1`] = `
   min-height: 0;
   flex-direction: row;
   padding: 0px;
+  column-gap: 3px;
 }
 
 .c6 {
   flex: 0 0 auto;
   align-self: stretch;
   height: 6px;
-}
-
-.c14 {
-  flex: 0 0 auto;
-  align-self: stretch;
-  width: 3px;
 }
 
 .c11 {
@@ -11957,7 +11858,7 @@ exports[`List events should show correct page when "show" is { page: # } 1`] = `
   border: 0;
 }
 
-.c15 {
+.c14 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -11973,6 +11874,79 @@ exports[`List events should show correct page when "show" is { page: # } 1`] = `
   font-size: 18px;
   line-height: 24px;
   color: #000000;
+  text-align: center;
+  transition-property: color,background-color,border-color,box-shadow;
+  transition-duration: 0.1s;
+  transition-timing-function: ease-in-out;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  flex: 1 0 auto;
+}
+
+.c14:hover {
+  background-color: rgba(51, 51, 51, 0.06274509803921569);
+}
+
+.c14:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c14:focus >circle,
+.c14:focus >ellipse,
+.c14:focus >line,
+.c14:focus >path,
+.c14:focus >polygon,
+.c14:focus >polyline,
+.c14:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c14:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c14:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c14:focus:not(:focus-visible) >circle,
+.c14:focus:not(:focus-visible) >ellipse,
+.c14:focus:not(:focus-visible) >line,
+.c14:focus:not(:focus-visible) >path,
+.c14:focus:not(:focus-visible) >polygon,
+.c14:focus:not(:focus-visible) >polyline,
+.c14:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c14:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
+}
+
+.c15 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  background-color: rgba(221, 221, 221, 0.4);
+  color: #000000;
+  border: none;
+  border-radius: 4px;
+  padding: 4px 4px;
+  font-size: 18px;
+  line-height: 24px;
+  background-color: rgba(51, 51, 51, 0.06274509803921569);
+  color: #444444;
   text-align: center;
   transition-property: color,background-color,border-color,box-shadow;
   transition-duration: 0.1s;
@@ -12037,16 +12011,14 @@ exports[`List events should show correct page when "show" is { page: # } 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  background-color: rgba(221, 221, 221, 0.4);
-  color: #000000;
   border: none;
   border-radius: 4px;
   padding: 4px 4px;
   font-size: 18px;
-  line-height: 24px;
-  background-color: rgba(51, 51, 51, 0.06274509803921569);
-  color: #444444;
+  line-height: 0;
   text-align: center;
+  opacity: 0.3;
+  cursor: default;
   transition-property: color,background-color,border-color,box-shadow;
   transition-duration: 0.1s;
   transition-timing-function: ease-in-out;
@@ -12056,8 +12028,10 @@ exports[`List events should show correct page when "show" is { page: # } 1`] = `
   flex: 1 0 auto;
 }
 
-.c16:hover {
-  background-color: rgba(51, 51, 51, 0.06274509803921569);
+.c16 >svg {
+  display: flex;
+  align-self: center;
+  vertical-align: middle;
 }
 
 .c16:focus {
@@ -12097,79 +12071,6 @@ exports[`List events should show correct page when "show" is { page: # } 1`] = `
 }
 
 .c16:focus:not(:focus-visible) ::-moz-focus-inner {
-  border: 0;
-}
-
-.c17 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  font: inherit;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  border: none;
-  border-radius: 4px;
-  padding: 4px 4px;
-  font-size: 18px;
-  line-height: 0;
-  text-align: center;
-  opacity: 0.3;
-  cursor: default;
-  transition-property: color,background-color,border-color,box-shadow;
-  transition-duration: 0.1s;
-  transition-timing-function: ease-in-out;
-  width: 100%;
-  height: 100%;
-  max-width: none;
-  flex: 1 0 auto;
-}
-
-.c17 >svg {
-  display: flex;
-  align-self: center;
-  vertical-align: middle;
-}
-
-.c17:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c17:focus >circle,
-.c17:focus >ellipse,
-.c17:focus >line,
-.c17:focus >path,
-.c17:focus >polygon,
-.c17:focus >polyline,
-.c17:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c17:focus ::-moz-focus-inner {
-  border: 0;
-}
-
-.c17:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c17:focus:not(:focus-visible) >circle,
-.c17:focus:not(:focus-visible) >ellipse,
-.c17:focus:not(:focus-visible) >line,
-.c17:focus:not(:focus-visible) >path,
-.c17:focus:not(:focus-visible) >polygon,
-.c17:focus:not(:focus-visible) >polyline,
-.c17:focus:not(:focus-visible) >rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c17:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 
@@ -12255,14 +12156,14 @@ exports[`List events should show correct page when "show" is { page: # } 1`] = `
 }
 
 @media only screen and (max-width: 768px) {
-  .c6 {
-    height: 3px;
+  .c9 {
+    column-gap: 2px;
   }
 }
 
 @media only screen and (max-width: 768px) {
-  .c14 {
-    width: 2px;
+  .c6 {
+    height: 3px;
   }
 }
 
@@ -12537,51 +12438,42 @@ exports[`List events should show correct page when "show" is { page: # } 1`] = `
               </svg>
             </button>
           </li>
-          <div
-            class="c14"
-          />
           <li
             class="c10"
           >
             <button
               aria-label="Go to page 1"
-              class="c15 c12"
+              class="c14 c12"
               type="button"
             >
               1
             </button>
           </li>
-          <div
-            class="c14"
-          />
           <li
             class="c10"
           >
             <button
               aria-current="page"
               aria-label="Go to page 2"
-              class="c16 c12"
+              class="c15 c12"
               type="button"
             >
               2
             </button>
           </li>
-          <div
-            class="c14"
-          />
           <li
             class="c10"
           >
             <button
               aria-disabled="true"
               aria-label="Go to next page"
-              class="c17 c12"
+              class="c16 c12"
               disabled=""
               type="button"
             >
               <svg
                 aria-label="Next"
-                class="c18"
+                class="c17"
                 viewBox="0 0 24 24"
               >
                 <path

@@ -181,7 +181,9 @@ var Pagination = /*#__PURE__*/forwardRef(function (_ref, ref) {
     ref: ref
   }, /*#__PURE__*/React.createElement(Box, _extends({
     as: "ul"
-  }, theme.pagination.controls), controls.map(function (control, index) {
+  }, theme.pagination.controls, {
+    cssGap: true
+  }), controls.map(function (control, index) {
     return (
       /*#__PURE__*/
       /* Using index as key (as opposed to a unique id) seems to

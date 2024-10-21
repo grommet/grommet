@@ -23366,7 +23366,7 @@ exports[`DataTable should apply pagination styling 1`] = `
   stroke: none;
 }
 
-.c23 {
+.c22 {
   display: inline-block;
   flex: 0 0 auto;
   width: 24px;
@@ -23375,25 +23375,25 @@ exports[`DataTable should apply pagination styling 1`] = `
   stroke: #000000;
 }
 
-.c23 g {
+.c22 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c23 *:not([stroke])[fill='none'] {
+.c22 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c23 *[stroke*='#'],
-.c23 *[STROKE*='#'] {
+.c22 *[stroke*='#'],
+.c22 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
-.c23 *[fill-rule],
-.c23 *[FILL-RULE],
-.c23 *[fill*='#'],
-.c23 *[FILL*='#'] {
+.c22 *[fill-rule],
+.c22 *[FILL-RULE],
+.c22 *[fill*='#'],
+.c22 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -23471,18 +23471,13 @@ exports[`DataTable should apply pagination styling 1`] = `
   min-height: 0;
   flex-direction: row;
   padding: 0px;
+  column-gap: 3px;
 }
 
 .c11 {
   flex: 0 0 auto;
   align-self: stretch;
   height: 6px;
-}
-
-.c19 {
-  flex: 0 0 auto;
-  align-self: stretch;
-  width: 3px;
 }
 
 .c7 {
@@ -23569,7 +23564,7 @@ exports[`DataTable should apply pagination styling 1`] = `
   border: 0;
 }
 
-.c20 {
+.c19 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -23588,6 +23583,76 @@ exports[`DataTable should apply pagination styling 1`] = `
   line-height: 24px;
   background-color: rgba(51, 51, 51, 0.06274509803921569);
   color: #444444;
+  text-align: center;
+  transition-property: color,background-color,border-color,box-shadow;
+  transition-duration: 0.1s;
+  transition-timing-function: ease-in-out;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  flex: 1 0 auto;
+}
+
+.c19:hover {
+  background-color: rgba(51, 51, 51, 0.06274509803921569);
+}
+
+.c19:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c19:focus >circle,
+.c19:focus >ellipse,
+.c19:focus >line,
+.c19:focus >path,
+.c19:focus >polygon,
+.c19:focus >polyline,
+.c19:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c19:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c19:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c19:focus:not(:focus-visible) >circle,
+.c19:focus:not(:focus-visible) >ellipse,
+.c19:focus:not(:focus-visible) >line,
+.c19:focus:not(:focus-visible) >path,
+.c19:focus:not(:focus-visible) >polygon,
+.c19:focus:not(:focus-visible) >polyline,
+.c19:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c19:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
+}
+
+.c20 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: none;
+  border-radius: 4px;
+  padding: 4px 4px;
+  font-size: 18px;
+  line-height: 24px;
+  color: #000000;
   text-align: center;
   transition-property: color,background-color,border-color,box-shadow;
   transition-duration: 0.1s;
@@ -23656,7 +23721,7 @@ exports[`DataTable should apply pagination styling 1`] = `
   border-radius: 4px;
   padding: 4px 4px;
   font-size: 18px;
-  line-height: 24px;
+  line-height: 0;
   color: #000000;
   text-align: center;
   transition-property: color,background-color,border-color,box-shadow;
@@ -23666,6 +23731,12 @@ exports[`DataTable should apply pagination styling 1`] = `
   height: 100%;
   max-width: none;
   flex: 1 0 auto;
+}
+
+.c21 >svg {
+  display: flex;
+  align-self: center;
+  vertical-align: middle;
 }
 
 .c21:hover {
@@ -23709,82 +23780,6 @@ exports[`DataTable should apply pagination styling 1`] = `
 }
 
 .c21:focus:not(:focus-visible) ::-moz-focus-inner {
-  border: 0;
-}
-
-.c22 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  font: inherit;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  border: none;
-  border-radius: 4px;
-  padding: 4px 4px;
-  font-size: 18px;
-  line-height: 0;
-  color: #000000;
-  text-align: center;
-  transition-property: color,background-color,border-color,box-shadow;
-  transition-duration: 0.1s;
-  transition-timing-function: ease-in-out;
-  width: 100%;
-  height: 100%;
-  max-width: none;
-  flex: 1 0 auto;
-}
-
-.c22 >svg {
-  display: flex;
-  align-self: center;
-  vertical-align: middle;
-}
-
-.c22:hover {
-  background-color: rgba(51, 51, 51, 0.06274509803921569);
-}
-
-.c22:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c22:focus >circle,
-.c22:focus >ellipse,
-.c22:focus >line,
-.c22:focus >path,
-.c22:focus >polygon,
-.c22:focus >polyline,
-.c22:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c22:focus ::-moz-focus-inner {
-  border: 0;
-}
-
-.c22:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c22:focus:not(:focus-visible) >circle,
-.c22:focus:not(:focus-visible) >ellipse,
-.c22:focus:not(:focus-visible) >line,
-.c22:focus:not(:focus-visible) >path,
-.c22:focus:not(:focus-visible) >polygon,
-.c22:focus:not(:focus-visible) >polyline,
-.c22:focus:not(:focus-visible) >rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c22:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 
@@ -23870,14 +23865,14 @@ exports[`DataTable should apply pagination styling 1`] = `
 }
 
 @media only screen and (max-width: 768px) {
-  .c11 {
-    height: 3px;
+  .c14 {
+    column-gap: 2px;
   }
 }
 
 @media only screen and (max-width: 768px) {
-  .c19 {
-    width: 2px;
+  .c11 {
+    height: 3px;
   }
 }
 
@@ -25522,49 +25517,40 @@ exports[`DataTable should apply pagination styling 1`] = `
               </svg>
             </button>
           </li>
-          <div
-            class="c19"
-          />
           <li
             class="c15"
           >
             <button
               aria-current="page"
               aria-label="Go to page 1"
-              class="c20 c17"
+              class="c19 c17"
               type="button"
             >
               1
             </button>
           </li>
-          <div
-            class="c19"
-          />
           <li
             class="c15"
           >
             <button
               aria-label="Go to page 2"
-              class="c21 c17"
+              class="c20 c17"
               type="button"
             >
               2
             </button>
           </li>
-          <div
-            class="c19"
-          />
           <li
             class="c15"
           >
             <button
               aria-label="Go to next page"
-              class="c22 c17"
+              class="c21 c17"
               type="button"
             >
               <svg
                 aria-label="Next"
-                class="c23"
+                class="c22"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -26438,7 +26424,7 @@ exports[`DataTable should paginate 1`] = `
   stroke: none;
 }
 
-.c23 {
+.c22 {
   display: inline-block;
   flex: 0 0 auto;
   width: 24px;
@@ -26447,25 +26433,25 @@ exports[`DataTable should paginate 1`] = `
   stroke: #000000;
 }
 
-.c23 g {
+.c22 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c23 *:not([stroke])[fill='none'] {
+.c22 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c23 *[stroke*='#'],
-.c23 *[STROKE*='#'] {
+.c22 *[stroke*='#'],
+.c22 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
-.c23 *[fill-rule],
-.c23 *[FILL-RULE],
-.c23 *[fill*='#'],
-.c23 *[FILL*='#'] {
+.c22 *[fill-rule],
+.c22 *[FILL-RULE],
+.c22 *[fill*='#'],
+.c22 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -26541,18 +26527,13 @@ exports[`DataTable should paginate 1`] = `
   min-height: 0;
   flex-direction: row;
   padding: 0px;
+  column-gap: 3px;
 }
 
 .c11 {
   flex: 0 0 auto;
   align-self: stretch;
   height: 6px;
-}
-
-.c19 {
-  flex: 0 0 auto;
-  align-self: stretch;
-  width: 3px;
 }
 
 .c7 {
@@ -26639,7 +26620,7 @@ exports[`DataTable should paginate 1`] = `
   border: 0;
 }
 
-.c20 {
+.c19 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -26658,6 +26639,76 @@ exports[`DataTable should paginate 1`] = `
   line-height: 24px;
   background-color: rgba(51, 51, 51, 0.06274509803921569);
   color: #444444;
+  text-align: center;
+  transition-property: color,background-color,border-color,box-shadow;
+  transition-duration: 0.1s;
+  transition-timing-function: ease-in-out;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  flex: 1 0 auto;
+}
+
+.c19:hover {
+  background-color: rgba(51, 51, 51, 0.06274509803921569);
+}
+
+.c19:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c19:focus >circle,
+.c19:focus >ellipse,
+.c19:focus >line,
+.c19:focus >path,
+.c19:focus >polygon,
+.c19:focus >polyline,
+.c19:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c19:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c19:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c19:focus:not(:focus-visible) >circle,
+.c19:focus:not(:focus-visible) >ellipse,
+.c19:focus:not(:focus-visible) >line,
+.c19:focus:not(:focus-visible) >path,
+.c19:focus:not(:focus-visible) >polygon,
+.c19:focus:not(:focus-visible) >polyline,
+.c19:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c19:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
+}
+
+.c20 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: none;
+  border-radius: 4px;
+  padding: 4px 4px;
+  font-size: 18px;
+  line-height: 24px;
+  color: #000000;
   text-align: center;
   transition-property: color,background-color,border-color,box-shadow;
   transition-duration: 0.1s;
@@ -26726,7 +26777,7 @@ exports[`DataTable should paginate 1`] = `
   border-radius: 4px;
   padding: 4px 4px;
   font-size: 18px;
-  line-height: 24px;
+  line-height: 0;
   color: #000000;
   text-align: center;
   transition-property: color,background-color,border-color,box-shadow;
@@ -26736,6 +26787,12 @@ exports[`DataTable should paginate 1`] = `
   height: 100%;
   max-width: none;
   flex: 1 0 auto;
+}
+
+.c21 >svg {
+  display: flex;
+  align-self: center;
+  vertical-align: middle;
 }
 
 .c21:hover {
@@ -26779,82 +26836,6 @@ exports[`DataTable should paginate 1`] = `
 }
 
 .c21:focus:not(:focus-visible) ::-moz-focus-inner {
-  border: 0;
-}
-
-.c22 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  font: inherit;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  border: none;
-  border-radius: 4px;
-  padding: 4px 4px;
-  font-size: 18px;
-  line-height: 0;
-  color: #000000;
-  text-align: center;
-  transition-property: color,background-color,border-color,box-shadow;
-  transition-duration: 0.1s;
-  transition-timing-function: ease-in-out;
-  width: 100%;
-  height: 100%;
-  max-width: none;
-  flex: 1 0 auto;
-}
-
-.c22 >svg {
-  display: flex;
-  align-self: center;
-  vertical-align: middle;
-}
-
-.c22:hover {
-  background-color: rgba(51, 51, 51, 0.06274509803921569);
-}
-
-.c22:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c22:focus >circle,
-.c22:focus >ellipse,
-.c22:focus >line,
-.c22:focus >path,
-.c22:focus >polygon,
-.c22:focus >polyline,
-.c22:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c22:focus ::-moz-focus-inner {
-  border: 0;
-}
-
-.c22:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c22:focus:not(:focus-visible) >circle,
-.c22:focus:not(:focus-visible) >ellipse,
-.c22:focus:not(:focus-visible) >line,
-.c22:focus:not(:focus-visible) >path,
-.c22:focus:not(:focus-visible) >polygon,
-.c22:focus:not(:focus-visible) >polyline,
-.c22:focus:not(:focus-visible) >rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c22:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 
@@ -26934,14 +26915,14 @@ exports[`DataTable should paginate 1`] = `
 }
 
 @media only screen and (max-width: 768px) {
-  .c11 {
-    height: 3px;
+  .c14 {
+    column-gap: 2px;
   }
 }
 
 @media only screen and (max-width: 768px) {
-  .c19 {
-    width: 2px;
+  .c11 {
+    height: 3px;
   }
 }
 
@@ -28586,49 +28567,40 @@ exports[`DataTable should paginate 1`] = `
               </svg>
             </button>
           </li>
-          <div
-            class="c19"
-          />
           <li
             class="c15"
           >
             <button
               aria-current="page"
               aria-label="Go to page 1"
-              class="c20 c17"
+              class="c19 c17"
               type="button"
             >
               1
             </button>
           </li>
-          <div
-            class="c19"
-          />
           <li
             class="c15"
           >
             <button
               aria-label="Go to page 2"
-              class="c21 c17"
+              class="c20 c17"
               type="button"
             >
               2
             </button>
           </li>
-          <div
-            class="c19"
-          />
           <li
             class="c15"
           >
             <button
               aria-label="Go to next page"
-              class="c22 c17"
+              class="c21 c17"
               type="button"
             >
               <svg
                 aria-label="Next"
-                class="c23"
+                class="c22"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -28680,7 +28652,7 @@ exports[`DataTable should pin and paginate 1`] = `
   stroke: none;
 }
 
-.c24 {
+.c23 {
   display: inline-block;
   flex: 0 0 auto;
   width: 24px;
@@ -28689,25 +28661,25 @@ exports[`DataTable should pin and paginate 1`] = `
   stroke: #000000;
 }
 
-.c24 g {
+.c23 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c24 *:not([stroke])[fill='none'] {
+.c23 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c24 *[stroke*='#'],
-.c24 *[STROKE*='#'] {
+.c23 *[stroke*='#'],
+.c23 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
-.c24 *[fill-rule],
-.c24 *[FILL-RULE],
-.c24 *[fill*='#'],
-.c24 *[FILL*='#'] {
+.c23 *[fill-rule],
+.c23 *[FILL-RULE],
+.c23 *[fill*='#'],
+.c23 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -28783,18 +28755,13 @@ exports[`DataTable should pin and paginate 1`] = `
   min-height: 0;
   flex-direction: row;
   padding: 0px;
+  column-gap: 3px;
 }
 
 .c12 {
   flex: 0 0 auto;
   align-self: stretch;
   height: 6px;
-}
-
-.c20 {
-  flex: 0 0 auto;
-  align-self: stretch;
-  width: 3px;
 }
 
 .c8 {
@@ -28881,7 +28848,7 @@ exports[`DataTable should pin and paginate 1`] = `
   border: 0;
 }
 
-.c21 {
+.c20 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -28900,6 +28867,76 @@ exports[`DataTable should pin and paginate 1`] = `
   line-height: 24px;
   background-color: rgba(51, 51, 51, 0.06274509803921569);
   color: #444444;
+  text-align: center;
+  transition-property: color,background-color,border-color,box-shadow;
+  transition-duration: 0.1s;
+  transition-timing-function: ease-in-out;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  flex: 1 0 auto;
+}
+
+.c20:hover {
+  background-color: rgba(51, 51, 51, 0.06274509803921569);
+}
+
+.c20:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c20:focus >circle,
+.c20:focus >ellipse,
+.c20:focus >line,
+.c20:focus >path,
+.c20:focus >polygon,
+.c20:focus >polyline,
+.c20:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c20:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c20:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c20:focus:not(:focus-visible) >circle,
+.c20:focus:not(:focus-visible) >ellipse,
+.c20:focus:not(:focus-visible) >line,
+.c20:focus:not(:focus-visible) >path,
+.c20:focus:not(:focus-visible) >polygon,
+.c20:focus:not(:focus-visible) >polyline,
+.c20:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c20:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
+}
+
+.c21 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: none;
+  border-radius: 4px;
+  padding: 4px 4px;
+  font-size: 18px;
+  line-height: 24px;
+  color: #000000;
   text-align: center;
   transition-property: color,background-color,border-color,box-shadow;
   transition-duration: 0.1s;
@@ -28968,7 +29005,7 @@ exports[`DataTable should pin and paginate 1`] = `
   border-radius: 4px;
   padding: 4px 4px;
   font-size: 18px;
-  line-height: 24px;
+  line-height: 0;
   color: #000000;
   text-align: center;
   transition-property: color,background-color,border-color,box-shadow;
@@ -28978,6 +29015,12 @@ exports[`DataTable should pin and paginate 1`] = `
   height: 100%;
   max-width: none;
   flex: 1 0 auto;
+}
+
+.c22 >svg {
+  display: flex;
+  align-self: center;
+  vertical-align: middle;
 }
 
 .c22:hover {
@@ -29021,82 +29064,6 @@ exports[`DataTable should pin and paginate 1`] = `
 }
 
 .c22:focus:not(:focus-visible) ::-moz-focus-inner {
-  border: 0;
-}
-
-.c23 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  font: inherit;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  border: none;
-  border-radius: 4px;
-  padding: 4px 4px;
-  font-size: 18px;
-  line-height: 0;
-  color: #000000;
-  text-align: center;
-  transition-property: color,background-color,border-color,box-shadow;
-  transition-duration: 0.1s;
-  transition-timing-function: ease-in-out;
-  width: 100%;
-  height: 100%;
-  max-width: none;
-  flex: 1 0 auto;
-}
-
-.c23 >svg {
-  display: flex;
-  align-self: center;
-  vertical-align: middle;
-}
-
-.c23:hover {
-  background-color: rgba(51, 51, 51, 0.06274509803921569);
-}
-
-.c23:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c23:focus >circle,
-.c23:focus >ellipse,
-.c23:focus >line,
-.c23:focus >path,
-.c23:focus >polygon,
-.c23:focus >polyline,
-.c23:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c23:focus ::-moz-focus-inner {
-  border: 0;
-}
-
-.c23:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c23:focus:not(:focus-visible) >circle,
-.c23:focus:not(:focus-visible) >ellipse,
-.c23:focus:not(:focus-visible) >line,
-.c23:focus:not(:focus-visible) >path,
-.c23:focus:not(:focus-visible) >polygon,
-.c23:focus:not(:focus-visible) >polyline,
-.c23:focus:not(:focus-visible) >rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c23:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 
@@ -29184,14 +29151,14 @@ exports[`DataTable should pin and paginate 1`] = `
 }
 
 @media only screen and (max-width: 768px) {
-  .c12 {
-    height: 3px;
+  .c15 {
+    column-gap: 2px;
   }
 }
 
 @media only screen and (max-width: 768px) {
-  .c20 {
-    width: 2px;
+  .c12 {
+    height: 3px;
   }
 }
 
@@ -30836,49 +30803,40 @@ exports[`DataTable should pin and paginate 1`] = `
               </svg>
             </button>
           </li>
-          <div
-            class="c20"
-          />
           <li
             class="c16"
           >
             <button
               aria-current="page"
               aria-label="Go to page 1"
-              class="c21 c18"
+              class="c20 c18"
               type="button"
             >
               1
             </button>
           </li>
-          <div
-            class="c20"
-          />
           <li
             class="c16"
           >
             <button
               aria-label="Go to page 2"
-              class="c22 c18"
+              class="c21 c18"
               type="button"
             >
               2
             </button>
           </li>
-          <div
-            class="c20"
-          />
           <li
             class="c16"
           >
             <button
               aria-label="Go to next page"
-              class="c23 c18"
+              class="c22 c18"
               type="button"
             >
               <svg
                 aria-label="Next"
-                class="c24"
+                class="c23"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -30930,7 +30888,7 @@ exports[`DataTable should render correct num items per page (step) 1`] = `
   stroke: none;
 }
 
-.c23 {
+.c22 {
   display: inline-block;
   flex: 0 0 auto;
   width: 24px;
@@ -30939,25 +30897,25 @@ exports[`DataTable should render correct num items per page (step) 1`] = `
   stroke: #000000;
 }
 
-.c23 g {
+.c22 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c23 *:not([stroke])[fill='none'] {
+.c22 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c23 *[stroke*='#'],
-.c23 *[STROKE*='#'] {
+.c22 *[stroke*='#'],
+.c22 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
-.c23 *[fill-rule],
-.c23 *[FILL-RULE],
-.c23 *[fill*='#'],
-.c23 *[FILL*='#'] {
+.c22 *[fill-rule],
+.c22 *[FILL-RULE],
+.c22 *[fill*='#'],
+.c22 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -31033,18 +30991,13 @@ exports[`DataTable should render correct num items per page (step) 1`] = `
   min-height: 0;
   flex-direction: row;
   padding: 0px;
+  column-gap: 3px;
 }
 
 .c11 {
   flex: 0 0 auto;
   align-self: stretch;
   height: 6px;
-}
-
-.c19 {
-  flex: 0 0 auto;
-  align-self: stretch;
-  width: 3px;
 }
 
 .c7 {
@@ -31131,7 +31084,7 @@ exports[`DataTable should render correct num items per page (step) 1`] = `
   border: 0;
 }
 
-.c20 {
+.c19 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -31150,6 +31103,76 @@ exports[`DataTable should render correct num items per page (step) 1`] = `
   line-height: 24px;
   background-color: rgba(51, 51, 51, 0.06274509803921569);
   color: #444444;
+  text-align: center;
+  transition-property: color,background-color,border-color,box-shadow;
+  transition-duration: 0.1s;
+  transition-timing-function: ease-in-out;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  flex: 1 0 auto;
+}
+
+.c19:hover {
+  background-color: rgba(51, 51, 51, 0.06274509803921569);
+}
+
+.c19:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c19:focus >circle,
+.c19:focus >ellipse,
+.c19:focus >line,
+.c19:focus >path,
+.c19:focus >polygon,
+.c19:focus >polyline,
+.c19:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c19:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c19:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c19:focus:not(:focus-visible) >circle,
+.c19:focus:not(:focus-visible) >ellipse,
+.c19:focus:not(:focus-visible) >line,
+.c19:focus:not(:focus-visible) >path,
+.c19:focus:not(:focus-visible) >polygon,
+.c19:focus:not(:focus-visible) >polyline,
+.c19:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c19:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
+}
+
+.c20 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: none;
+  border-radius: 4px;
+  padding: 4px 4px;
+  font-size: 18px;
+  line-height: 24px;
+  color: #000000;
   text-align: center;
   transition-property: color,background-color,border-color,box-shadow;
   transition-duration: 0.1s;
@@ -31218,7 +31241,7 @@ exports[`DataTable should render correct num items per page (step) 1`] = `
   border-radius: 4px;
   padding: 4px 4px;
   font-size: 18px;
-  line-height: 24px;
+  line-height: 0;
   color: #000000;
   text-align: center;
   transition-property: color,background-color,border-color,box-shadow;
@@ -31228,6 +31251,12 @@ exports[`DataTable should render correct num items per page (step) 1`] = `
   height: 100%;
   max-width: none;
   flex: 1 0 auto;
+}
+
+.c21 >svg {
+  display: flex;
+  align-self: center;
+  vertical-align: middle;
 }
 
 .c21:hover {
@@ -31271,82 +31300,6 @@ exports[`DataTable should render correct num items per page (step) 1`] = `
 }
 
 .c21:focus:not(:focus-visible) ::-moz-focus-inner {
-  border: 0;
-}
-
-.c22 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  font: inherit;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  border: none;
-  border-radius: 4px;
-  padding: 4px 4px;
-  font-size: 18px;
-  line-height: 0;
-  color: #000000;
-  text-align: center;
-  transition-property: color,background-color,border-color,box-shadow;
-  transition-duration: 0.1s;
-  transition-timing-function: ease-in-out;
-  width: 100%;
-  height: 100%;
-  max-width: none;
-  flex: 1 0 auto;
-}
-
-.c22 >svg {
-  display: flex;
-  align-self: center;
-  vertical-align: middle;
-}
-
-.c22:hover {
-  background-color: rgba(51, 51, 51, 0.06274509803921569);
-}
-
-.c22:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c22:focus >circle,
-.c22:focus >ellipse,
-.c22:focus >line,
-.c22:focus >path,
-.c22:focus >polygon,
-.c22:focus >polyline,
-.c22:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c22:focus ::-moz-focus-inner {
-  border: 0;
-}
-
-.c22:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c22:focus:not(:focus-visible) >circle,
-.c22:focus:not(:focus-visible) >ellipse,
-.c22:focus:not(:focus-visible) >line,
-.c22:focus:not(:focus-visible) >path,
-.c22:focus:not(:focus-visible) >polygon,
-.c22:focus:not(:focus-visible) >polyline,
-.c22:focus:not(:focus-visible) >rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c22:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 
@@ -31426,14 +31379,14 @@ exports[`DataTable should render correct num items per page (step) 1`] = `
 }
 
 @media only screen and (max-width: 768px) {
-  .c11 {
-    height: 3px;
+  .c14 {
+    column-gap: 2px;
   }
 }
 
 @media only screen and (max-width: 768px) {
-  .c19 {
-    width: 2px;
+  .c11 {
+    height: 3px;
   }
 }
 
@@ -31962,119 +31915,95 @@ exports[`DataTable should render correct num items per page (step) 1`] = `
               </svg>
             </button>
           </li>
-          <div
-            class="c19"
-          />
           <li
             class="c15"
           >
             <button
               aria-current="page"
               aria-label="Go to page 1"
-              class="c20 c17"
+              class="c19 c17"
               type="button"
             >
               1
             </button>
           </li>
-          <div
-            class="c19"
-          />
           <li
             class="c15"
           >
             <button
               aria-label="Go to page 2"
-              class="c21 c17"
+              class="c20 c17"
               type="button"
             >
               2
             </button>
           </li>
-          <div
-            class="c19"
-          />
           <li
             class="c15"
           >
             <button
               aria-label="Go to page 3"
-              class="c21 c17"
+              class="c20 c17"
               type="button"
             >
               3
             </button>
           </li>
-          <div
-            class="c19"
-          />
           <li
             class="c15"
           >
             <button
               aria-label="Go to page 4"
-              class="c21 c17"
+              class="c20 c17"
               type="button"
             >
               4
             </button>
           </li>
-          <div
-            class="c19"
-          />
           <li
             class="c15"
           >
             <button
               aria-label="Go to page 5"
-              class="c21 c17"
+              class="c20 c17"
               type="button"
             >
               5
             </button>
           </li>
-          <div
-            class="c19"
-          />
           <li
             class="c15"
           >
             <button
               aria-label="Go to page 6"
-              class="c21 c17"
+              class="c20 c17"
               type="button"
             >
               6
             </button>
           </li>
-          <div
-            class="c19"
-          />
           <li
             class="c15"
           >
             <button
               aria-label="Go to page 7"
-              class="c21 c17"
+              class="c20 c17"
               type="button"
             >
               7
             </button>
           </li>
-          <div
-            class="c19"
-          />
           <li
             class="c15"
           >
             <button
               aria-label="Go to next page"
-              class="c22 c17"
+              class="c21 c17"
               type="button"
             >
               <svg
                 aria-label="Next"
-                class="c23"
+                class="c22"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -32126,7 +32055,7 @@ exports[`DataTable should render new data when page changes 1`] = `
   stroke: none;
 }
 
-.c23 {
+.c22 {
   display: inline-block;
   flex: 0 0 auto;
   width: 24px;
@@ -32135,25 +32064,25 @@ exports[`DataTable should render new data when page changes 1`] = `
   stroke: #000000;
 }
 
-.c23 g {
+.c22 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c23 *:not([stroke])[fill='none'] {
+.c22 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c23 *[stroke*='#'],
-.c23 *[STROKE*='#'] {
+.c22 *[stroke*='#'],
+.c22 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
-.c23 *[fill-rule],
-.c23 *[FILL-RULE],
-.c23 *[fill*='#'],
-.c23 *[FILL*='#'] {
+.c22 *[fill-rule],
+.c22 *[FILL-RULE],
+.c22 *[fill*='#'],
+.c22 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -32229,18 +32158,13 @@ exports[`DataTable should render new data when page changes 1`] = `
   min-height: 0;
   flex-direction: row;
   padding: 0px;
+  column-gap: 3px;
 }
 
 .c11 {
   flex: 0 0 auto;
   align-self: stretch;
   height: 6px;
-}
-
-.c19 {
-  flex: 0 0 auto;
-  align-self: stretch;
-  width: 3px;
 }
 
 .c7 {
@@ -32327,7 +32251,7 @@ exports[`DataTable should render new data when page changes 1`] = `
   border: 0;
 }
 
-.c20 {
+.c19 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -32346,6 +32270,76 @@ exports[`DataTable should render new data when page changes 1`] = `
   line-height: 24px;
   background-color: rgba(51, 51, 51, 0.06274509803921569);
   color: #444444;
+  text-align: center;
+  transition-property: color,background-color,border-color,box-shadow;
+  transition-duration: 0.1s;
+  transition-timing-function: ease-in-out;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  flex: 1 0 auto;
+}
+
+.c19:hover {
+  background-color: rgba(51, 51, 51, 0.06274509803921569);
+}
+
+.c19:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c19:focus >circle,
+.c19:focus >ellipse,
+.c19:focus >line,
+.c19:focus >path,
+.c19:focus >polygon,
+.c19:focus >polyline,
+.c19:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c19:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c19:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c19:focus:not(:focus-visible) >circle,
+.c19:focus:not(:focus-visible) >ellipse,
+.c19:focus:not(:focus-visible) >line,
+.c19:focus:not(:focus-visible) >path,
+.c19:focus:not(:focus-visible) >polygon,
+.c19:focus:not(:focus-visible) >polyline,
+.c19:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c19:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
+}
+
+.c20 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: none;
+  border-radius: 4px;
+  padding: 4px 4px;
+  font-size: 18px;
+  line-height: 24px;
+  color: #000000;
   text-align: center;
   transition-property: color,background-color,border-color,box-shadow;
   transition-duration: 0.1s;
@@ -32414,7 +32408,7 @@ exports[`DataTable should render new data when page changes 1`] = `
   border-radius: 4px;
   padding: 4px 4px;
   font-size: 18px;
-  line-height: 24px;
+  line-height: 0;
   color: #000000;
   text-align: center;
   transition-property: color,background-color,border-color,box-shadow;
@@ -32424,6 +32418,12 @@ exports[`DataTable should render new data when page changes 1`] = `
   height: 100%;
   max-width: none;
   flex: 1 0 auto;
+}
+
+.c21 >svg {
+  display: flex;
+  align-self: center;
+  vertical-align: middle;
 }
 
 .c21:hover {
@@ -32467,82 +32467,6 @@ exports[`DataTable should render new data when page changes 1`] = `
 }
 
 .c21:focus:not(:focus-visible) ::-moz-focus-inner {
-  border: 0;
-}
-
-.c22 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  font: inherit;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  border: none;
-  border-radius: 4px;
-  padding: 4px 4px;
-  font-size: 18px;
-  line-height: 0;
-  color: #000000;
-  text-align: center;
-  transition-property: color,background-color,border-color,box-shadow;
-  transition-duration: 0.1s;
-  transition-timing-function: ease-in-out;
-  width: 100%;
-  height: 100%;
-  max-width: none;
-  flex: 1 0 auto;
-}
-
-.c22 >svg {
-  display: flex;
-  align-self: center;
-  vertical-align: middle;
-}
-
-.c22:hover {
-  background-color: rgba(51, 51, 51, 0.06274509803921569);
-}
-
-.c22:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c22:focus >circle,
-.c22:focus >ellipse,
-.c22:focus >line,
-.c22:focus >path,
-.c22:focus >polygon,
-.c22:focus >polyline,
-.c22:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c22:focus ::-moz-focus-inner {
-  border: 0;
-}
-
-.c22:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c22:focus:not(:focus-visible) >circle,
-.c22:focus:not(:focus-visible) >ellipse,
-.c22:focus:not(:focus-visible) >line,
-.c22:focus:not(:focus-visible) >path,
-.c22:focus:not(:focus-visible) >polygon,
-.c22:focus:not(:focus-visible) >polyline,
-.c22:focus:not(:focus-visible) >rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c22:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 
@@ -32622,14 +32546,14 @@ exports[`DataTable should render new data when page changes 1`] = `
 }
 
 @media only screen and (max-width: 768px) {
-  .c11 {
-    height: 3px;
+  .c14 {
+    column-gap: 2px;
   }
 }
 
 @media only screen and (max-width: 768px) {
-  .c19 {
-    width: 2px;
+  .c11 {
+    height: 3px;
   }
 }
 
@@ -34274,49 +34198,40 @@ exports[`DataTable should render new data when page changes 1`] = `
               </svg>
             </button>
           </li>
-          <div
-            class="c19"
-          />
           <li
             class="c15"
           >
             <button
               aria-current="page"
               aria-label="Go to page 1"
-              class="c20 c17"
+              class="c19 c17"
               type="button"
             >
               1
             </button>
           </li>
-          <div
-            class="c19"
-          />
           <li
             class="c15"
           >
             <button
               aria-label="Go to page 2"
-              class="c21 c17"
+              class="c20 c17"
               type="button"
             >
               2
             </button>
           </li>
-          <div
-            class="c19"
-          />
           <li
             class="c15"
           >
             <button
               aria-label="Go to next page"
-              class="c22 c17"
+              class="c21 c17"
               type="button"
             >
               <svg
                 aria-label="Next"
-                class="c23"
+                class="c22"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -37956,7 +37871,7 @@ exports[`DataTable should render new data when page changes 2`] = `
         class="StyledBox-sc-13pk1d4-0 euJJjo"
       >
         <ul
-          class="StyledBox-sc-13pk1d4-0 kOcABF"
+          class="StyledBox-sc-13pk1d4-0 gkMlIT"
         >
           <li
             class="StyledPageControl__StyledContainer-sc-1vlfaez-1 bjXWCk"
@@ -37980,9 +37895,6 @@ exports[`DataTable should render new data when page changes 2`] = `
               </svg>
             </button>
           </li>
-          <div
-            class="StyledBox__StyledBoxGap-sc-13pk1d4-1 fsEMPj"
-          />
           <li
             class="StyledPageControl__StyledContainer-sc-1vlfaez-1 bjXWCk"
           >
@@ -37994,9 +37906,6 @@ exports[`DataTable should render new data when page changes 2`] = `
               1
             </button>
           </li>
-          <div
-            class="StyledBox__StyledBoxGap-sc-13pk1d4-1 fsEMPj"
-          />
           <li
             class="StyledPageControl__StyledContainer-sc-1vlfaez-1 bjXWCk"
           >
@@ -38009,9 +37918,6 @@ exports[`DataTable should render new data when page changes 2`] = `
               2
             </button>
           </li>
-          <div
-            class="StyledBox__StyledBoxGap-sc-13pk1d4-1 fsEMPj"
-          />
           <li
             class="StyledPageControl__StyledContainer-sc-1vlfaez-1 bjXWCk"
           >
@@ -38076,7 +37982,7 @@ exports[`DataTable should show correct item index when "show" is a number 1`] = 
   stroke: none;
 }
 
-.c23 {
+.c22 {
   display: inline-block;
   flex: 0 0 auto;
   width: 24px;
@@ -38085,25 +37991,25 @@ exports[`DataTable should show correct item index when "show" is a number 1`] = 
   stroke: #000000;
 }
 
-.c23 g {
+.c22 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c23 *:not([stroke])[fill='none'] {
+.c22 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c23 *[stroke*='#'],
-.c23 *[STROKE*='#'] {
+.c22 *[stroke*='#'],
+.c22 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
-.c23 *[fill-rule],
-.c23 *[FILL-RULE],
-.c23 *[fill*='#'],
-.c23 *[FILL*='#'] {
+.c22 *[fill-rule],
+.c22 *[FILL-RULE],
+.c22 *[fill*='#'],
+.c22 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -38179,18 +38085,13 @@ exports[`DataTable should show correct item index when "show" is a number 1`] = 
   min-height: 0;
   flex-direction: row;
   padding: 0px;
+  column-gap: 3px;
 }
 
 .c11 {
   flex: 0 0 auto;
   align-self: stretch;
   height: 6px;
-}
-
-.c19 {
-  flex: 0 0 auto;
-  align-self: stretch;
-  width: 3px;
 }
 
 .c7 {
@@ -38277,7 +38178,7 @@ exports[`DataTable should show correct item index when "show" is a number 1`] = 
   border: 0;
 }
 
-.c20 {
+.c19 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -38296,6 +38197,76 @@ exports[`DataTable should show correct item index when "show" is a number 1`] = 
   line-height: 24px;
   background-color: rgba(51, 51, 51, 0.06274509803921569);
   color: #444444;
+  text-align: center;
+  transition-property: color,background-color,border-color,box-shadow;
+  transition-duration: 0.1s;
+  transition-timing-function: ease-in-out;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  flex: 1 0 auto;
+}
+
+.c19:hover {
+  background-color: rgba(51, 51, 51, 0.06274509803921569);
+}
+
+.c19:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c19:focus >circle,
+.c19:focus >ellipse,
+.c19:focus >line,
+.c19:focus >path,
+.c19:focus >polygon,
+.c19:focus >polyline,
+.c19:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c19:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c19:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c19:focus:not(:focus-visible) >circle,
+.c19:focus:not(:focus-visible) >ellipse,
+.c19:focus:not(:focus-visible) >line,
+.c19:focus:not(:focus-visible) >path,
+.c19:focus:not(:focus-visible) >polygon,
+.c19:focus:not(:focus-visible) >polyline,
+.c19:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c19:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
+}
+
+.c20 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: none;
+  border-radius: 4px;
+  padding: 4px 4px;
+  font-size: 18px;
+  line-height: 24px;
+  color: #000000;
   text-align: center;
   transition-property: color,background-color,border-color,box-shadow;
   transition-duration: 0.1s;
@@ -38364,7 +38335,7 @@ exports[`DataTable should show correct item index when "show" is a number 1`] = 
   border-radius: 4px;
   padding: 4px 4px;
   font-size: 18px;
-  line-height: 24px;
+  line-height: 0;
   color: #000000;
   text-align: center;
   transition-property: color,background-color,border-color,box-shadow;
@@ -38374,6 +38345,12 @@ exports[`DataTable should show correct item index when "show" is a number 1`] = 
   height: 100%;
   max-width: none;
   flex: 1 0 auto;
+}
+
+.c21 >svg {
+  display: flex;
+  align-self: center;
+  vertical-align: middle;
 }
 
 .c21:hover {
@@ -38417,82 +38394,6 @@ exports[`DataTable should show correct item index when "show" is a number 1`] = 
 }
 
 .c21:focus:not(:focus-visible) ::-moz-focus-inner {
-  border: 0;
-}
-
-.c22 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  font: inherit;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  border: none;
-  border-radius: 4px;
-  padding: 4px 4px;
-  font-size: 18px;
-  line-height: 0;
-  color: #000000;
-  text-align: center;
-  transition-property: color,background-color,border-color,box-shadow;
-  transition-duration: 0.1s;
-  transition-timing-function: ease-in-out;
-  width: 100%;
-  height: 100%;
-  max-width: none;
-  flex: 1 0 auto;
-}
-
-.c22 >svg {
-  display: flex;
-  align-self: center;
-  vertical-align: middle;
-}
-
-.c22:hover {
-  background-color: rgba(51, 51, 51, 0.06274509803921569);
-}
-
-.c22:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c22:focus >circle,
-.c22:focus >ellipse,
-.c22:focus >line,
-.c22:focus >path,
-.c22:focus >polygon,
-.c22:focus >polyline,
-.c22:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c22:focus ::-moz-focus-inner {
-  border: 0;
-}
-
-.c22:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c22:focus:not(:focus-visible) >circle,
-.c22:focus:not(:focus-visible) >ellipse,
-.c22:focus:not(:focus-visible) >line,
-.c22:focus:not(:focus-visible) >path,
-.c22:focus:not(:focus-visible) >polygon,
-.c22:focus:not(:focus-visible) >polyline,
-.c22:focus:not(:focus-visible) >rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c22:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 
@@ -38572,14 +38473,14 @@ exports[`DataTable should show correct item index when "show" is a number 1`] = 
 }
 
 @media only screen and (max-width: 768px) {
-  .c11 {
-    height: 3px;
+  .c14 {
+    column-gap: 2px;
   }
 }
 
 @media only screen and (max-width: 768px) {
-  .c19 {
-    width: 2px;
+  .c11 {
+    height: 3px;
   }
 }
 
@@ -40224,49 +40125,40 @@ exports[`DataTable should show correct item index when "show" is a number 1`] = 
               </svg>
             </button>
           </li>
-          <div
-            class="c19"
-          />
           <li
             class="c15"
           >
             <button
               aria-current="page"
               aria-label="Go to page 1"
-              class="c20 c17"
+              class="c19 c17"
               type="button"
             >
               1
             </button>
           </li>
-          <div
-            class="c19"
-          />
           <li
             class="c15"
           >
             <button
               aria-label="Go to page 2"
-              class="c21 c17"
+              class="c20 c17"
               type="button"
             >
               2
             </button>
           </li>
-          <div
-            class="c19"
-          />
           <li
             class="c15"
           >
             <button
               aria-label="Go to next page"
-              class="c22 c17"
+              class="c21 c17"
               type="button"
             >
               <svg
                 aria-label="Next"
-                class="c23"
+                class="c22"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -40318,7 +40210,7 @@ exports[`DataTable should show correct page when "show" is { page: # } 1`] = `
   stroke: none;
 }
 
-.c23 {
+.c22 {
   display: inline-block;
   flex: 0 0 auto;
   width: 24px;
@@ -40327,25 +40219,25 @@ exports[`DataTable should show correct page when "show" is { page: # } 1`] = `
   stroke: #666666;
 }
 
-.c23 g {
+.c22 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c23 *:not([stroke])[fill='none'] {
+.c22 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c23 *[stroke*='#'],
-.c23 *[STROKE*='#'] {
+.c22 *[stroke*='#'],
+.c22 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
-.c23 *[fill-rule],
-.c23 *[FILL-RULE],
-.c23 *[fill*='#'],
-.c23 *[FILL*='#'] {
+.c22 *[fill-rule],
+.c22 *[FILL-RULE],
+.c22 *[fill*='#'],
+.c22 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -40421,18 +40313,13 @@ exports[`DataTable should show correct page when "show" is { page: # } 1`] = `
   min-height: 0;
   flex-direction: row;
   padding: 0px;
+  column-gap: 3px;
 }
 
 .c11 {
   flex: 0 0 auto;
   align-self: stretch;
   height: 6px;
-}
-
-.c19 {
-  flex: 0 0 auto;
-  align-self: stretch;
-  width: 3px;
 }
 
 .c7 {
@@ -40522,7 +40409,7 @@ exports[`DataTable should show correct page when "show" is { page: # } 1`] = `
   border: 0;
 }
 
-.c20 {
+.c19 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -40538,6 +40425,79 @@ exports[`DataTable should show correct page when "show" is { page: # } 1`] = `
   font-size: 18px;
   line-height: 24px;
   color: #000000;
+  text-align: center;
+  transition-property: color,background-color,border-color,box-shadow;
+  transition-duration: 0.1s;
+  transition-timing-function: ease-in-out;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  flex: 1 0 auto;
+}
+
+.c19:hover {
+  background-color: rgba(51, 51, 51, 0.06274509803921569);
+}
+
+.c19:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c19:focus >circle,
+.c19:focus >ellipse,
+.c19:focus >line,
+.c19:focus >path,
+.c19:focus >polygon,
+.c19:focus >polyline,
+.c19:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c19:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c19:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c19:focus:not(:focus-visible) >circle,
+.c19:focus:not(:focus-visible) >ellipse,
+.c19:focus:not(:focus-visible) >line,
+.c19:focus:not(:focus-visible) >path,
+.c19:focus:not(:focus-visible) >polygon,
+.c19:focus:not(:focus-visible) >polyline,
+.c19:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c19:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
+}
+
+.c20 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  background-color: rgba(221, 221, 221, 0.4);
+  color: #000000;
+  border: none;
+  border-radius: 4px;
+  padding: 4px 4px;
+  font-size: 18px;
+  line-height: 24px;
+  background-color: rgba(51, 51, 51, 0.06274509803921569);
+  color: #444444;
   text-align: center;
   transition-property: color,background-color,border-color,box-shadow;
   transition-duration: 0.1s;
@@ -40602,16 +40562,14 @@ exports[`DataTable should show correct page when "show" is { page: # } 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  background-color: rgba(221, 221, 221, 0.4);
-  color: #000000;
   border: none;
   border-radius: 4px;
   padding: 4px 4px;
   font-size: 18px;
-  line-height: 24px;
-  background-color: rgba(51, 51, 51, 0.06274509803921569);
-  color: #444444;
+  line-height: 0;
   text-align: center;
+  opacity: 0.3;
+  cursor: default;
   transition-property: color,background-color,border-color,box-shadow;
   transition-duration: 0.1s;
   transition-timing-function: ease-in-out;
@@ -40621,8 +40579,10 @@ exports[`DataTable should show correct page when "show" is { page: # } 1`] = `
   flex: 1 0 auto;
 }
 
-.c21:hover {
-  background-color: rgba(51, 51, 51, 0.06274509803921569);
+.c21 >svg {
+  display: flex;
+  align-self: center;
+  vertical-align: middle;
 }
 
 .c21:focus {
@@ -40662,79 +40622,6 @@ exports[`DataTable should show correct page when "show" is { page: # } 1`] = `
 }
 
 .c21:focus:not(:focus-visible) ::-moz-focus-inner {
-  border: 0;
-}
-
-.c22 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  font: inherit;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  border: none;
-  border-radius: 4px;
-  padding: 4px 4px;
-  font-size: 18px;
-  line-height: 0;
-  text-align: center;
-  opacity: 0.3;
-  cursor: default;
-  transition-property: color,background-color,border-color,box-shadow;
-  transition-duration: 0.1s;
-  transition-timing-function: ease-in-out;
-  width: 100%;
-  height: 100%;
-  max-width: none;
-  flex: 1 0 auto;
-}
-
-.c22 >svg {
-  display: flex;
-  align-self: center;
-  vertical-align: middle;
-}
-
-.c22:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c22:focus >circle,
-.c22:focus >ellipse,
-.c22:focus >line,
-.c22:focus >path,
-.c22:focus >polygon,
-.c22:focus >polyline,
-.c22:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c22:focus ::-moz-focus-inner {
-  border: 0;
-}
-
-.c22:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c22:focus:not(:focus-visible) >circle,
-.c22:focus:not(:focus-visible) >ellipse,
-.c22:focus:not(:focus-visible) >line,
-.c22:focus:not(:focus-visible) >path,
-.c22:focus:not(:focus-visible) >polygon,
-.c22:focus:not(:focus-visible) >polyline,
-.c22:focus:not(:focus-visible) >rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c22:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 
@@ -40814,14 +40701,14 @@ exports[`DataTable should show correct page when "show" is { page: # } 1`] = `
 }
 
 @media only screen and (max-width: 768px) {
-  .c11 {
-    height: 3px;
+  .c14 {
+    column-gap: 2px;
   }
 }
 
 @media only screen and (max-width: 768px) {
-  .c19 {
-    width: 2px;
+  .c11 {
+    height: 3px;
   }
 }
 
@@ -42309,51 +42196,42 @@ exports[`DataTable should show correct page when "show" is { page: # } 1`] = `
               </svg>
             </button>
           </li>
-          <div
-            class="c19"
-          />
           <li
             class="c15"
           >
             <button
               aria-label="Go to page 1"
-              class="c20 c17"
+              class="c19 c17"
               type="button"
             >
               1
             </button>
           </li>
-          <div
-            class="c19"
-          />
           <li
             class="c15"
           >
             <button
               aria-current="page"
               aria-label="Go to page 2"
-              class="c21 c17"
+              class="c20 c17"
               type="button"
             >
               2
             </button>
           </li>
-          <div
-            class="c19"
-          />
           <li
             class="c15"
           >
             <button
               aria-disabled="true"
               aria-label="Go to next page"
-              class="c22 c17"
+              class="c21 c17"
               disabled=""
               type="button"
             >
               <svg
                 aria-label="Next"
-                class="c23"
+                class="c22"
                 viewBox="0 0 24 24"
               >
                 <path
