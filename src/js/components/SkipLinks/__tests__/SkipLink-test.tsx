@@ -27,13 +27,13 @@ describe('SkipLink', () => {
     expect(container.firstChild).toMatchSnapshot();
 
     act(() => {
-      document.getElementById('skip-links').querySelector('a').focus();
+      document.getElementById('skip-links')?.querySelector('a')?.focus();
     });
     expect(container.firstChild).toMatchSnapshot();
 
-    fireEvent.click(document.activeElement);
+    fireEvent.click(document.activeElement as Element);
     act(() => {
-      document.getElementById('skip-links').querySelector('a').blur();
+      document.getElementById('skip-links')?.querySelector('a')?.blur();
     });
 
     act(() => {
@@ -61,11 +61,11 @@ describe('SkipLink', () => {
     );
     expect(container.firstChild).toMatchSnapshot();
 
-    document.getElementById('skip-links').querySelector('a').focus();
+    document.getElementById('skip-links')?.querySelector('a')?.focus();
     expect(container.firstChild).toMatchSnapshot();
 
-    fireEvent.click(document.activeElement);
-    document.getElementById('skip-links').querySelector('a').blur();
+    fireEvent.click(document.activeElement as Element);
+    document.getElementById('skip-links')?.querySelector('a')?.blur();
 
     act(() => {
       jest.runAllTimers();
