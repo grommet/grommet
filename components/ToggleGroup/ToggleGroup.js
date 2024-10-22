@@ -119,6 +119,7 @@ var ToggleGroup = exports.ToggleGroup = function ToggleGroup(_ref2) {
     responsive: false,
     role: multiple ? 'group' : 'radiogroup'
   }, rest), options == null ? void 0 : options.map(function (option, index) {
+    var _theme$toggleGroup$bu;
     var label;
     var icon;
     var optionValue;
@@ -134,15 +135,17 @@ var ToggleGroup = exports.ToggleGroup = function ToggleGroup(_ref2) {
     }
     var active = Array.isArray(value) ? !!value.includes(optionValue) : value === optionValue;
     var round = 0;
-    // round corners of first and last buttons to match container
-    if (typeof theme.toggleGroup.container.round === 'string' && (index === 0 || index === options.length - 1)) {
+    if ((_theme$toggleGroup$bu = theme.toggleGroup.button.border) != null && _theme$toggleGroup$bu.radius) {
+      round = theme.toggleGroup.button.border.radius;
+    } else if (typeof theme.toggleGroup.container.round === 'string' && (index === 0 || index === options.length - 1)) {
+      // round corners of first and last buttons to match container
       round = {
         corner: index === 0 ? 'left' : 'right',
         size: theme.toggleGroup.container.round
       };
     }
     return /*#__PURE__*/_react["default"].createElement(_Box.Box, {
-      border: index < options.length - 1 ? {
+      border: index < options.length - 1 && theme.toggleGroup.divider ? {
         side: 'right',
         color: theme.toggleGroup.divider.color
       } : undefined,

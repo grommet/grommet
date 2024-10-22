@@ -1735,15 +1735,20 @@ export interface ThemeType {
   };
   toggleGroup?: {
     button?: {
-      pad?: PadType;
+      border?: {
+        radius?: string;
+      };
       iconOnly?: {
         pad?: PadType;
       };
+      pad?: PadType;
     };
     container?: BoxProps;
-    divider?: {
-      color?: ColorType;
-    };
+    divider?:
+      | {
+          color?: ColorType;
+        }
+      | boolean;
   };
   video?: {
     captions?: {

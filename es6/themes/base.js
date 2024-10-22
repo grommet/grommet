@@ -2118,6 +2118,9 @@ export var generate = function generate(baseSpacing, scale) {
     },
     toggleGroup: {
       button: {
+        // border: {
+        //   radius: undefined,
+        // }
         // iconOnly: {
         //   pad: undefined,
         // },
