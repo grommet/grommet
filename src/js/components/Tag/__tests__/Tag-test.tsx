@@ -132,17 +132,27 @@ describe('Tag', () => {
       tag: {
         remove: {
           kind: 'default',
-          size: 'small',
         },
         size: {
+          medium: {
+            remove: {
+              size: 'small',
+              margin: 'small',
+            },
+          },
           large: {
             remove: {
               size: 'medium',
+              margin: {
+                vertical: '12px',
+                horizontal: '18px',
+              },
             },
           },
           xlarge: {
             remove: {
               size: 'large',
+              margin: '10px',
             },
           },
         },

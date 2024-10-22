@@ -601,7 +601,7 @@ exports[`Tag renders custom remove button kind and size 1`] = `
   padding-bottom: 6px;
 }
 
-.c8 {
+.c9 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -615,7 +615,7 @@ exports[`Tag renders custom remove button kind and size 1`] = `
   padding-bottom: 6px;
 }
 
-.c13 {
+.c14 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -661,7 +661,7 @@ exports[`Tag renders custom remove button kind and size 1`] = `
   stroke: none;
 }
 
-.c12 {
+.c13 {
   display: inline-block;
   flex: 0 0 auto;
   width: 30px;
@@ -670,30 +670,30 @@ exports[`Tag renders custom remove button kind and size 1`] = `
   stroke: #444444;
 }
 
-.c12 g {
+.c13 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c12 *:not([stroke])[fill='none'] {
+.c13 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c12 *[stroke*='#'],
-.c12 *[STROKE*='#'] {
+.c13 *[stroke*='#'],
+.c13 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
-.c12 *[fill-rule],
-.c12 *[FILL-RULE],
-.c12 *[fill*='#'],
-.c12 *[FILL*='#'] {
+.c13 *[fill-rule],
+.c13 *[FILL-RULE],
+.c13 *[fill*='#'],
+.c13 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
 
-.c17 {
+.c18 {
   display: inline-block;
   flex: 0 0 auto;
   width: 36px;
@@ -702,25 +702,25 @@ exports[`Tag renders custom remove button kind and size 1`] = `
   stroke: #444444;
 }
 
-.c17 g {
+.c18 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c17 *:not([stroke])[fill='none'] {
+.c18 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c17 *[stroke*='#'],
-.c17 *[STROKE*='#'] {
+.c18 *[stroke*='#'],
+.c18 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
-.c17 *[fill-rule],
-.c17 *[FILL-RULE],
-.c17 *[fill*='#'],
-.c17 *[FILL*='#'] {
+.c18 *[fill-rule],
+.c18 *[FILL-RULE],
+.c18 *[fill*='#'],
+.c18 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -736,23 +736,23 @@ exports[`Tag renders custom remove button kind and size 1`] = `
   font-weight: 600;
 }
 
-.c9 {
+.c10 {
   font-size: 22px;
   line-height: 28px;
 }
 
-.c10 {
+.c11 {
   font-size: 22px;
   line-height: 28px;
   font-weight: 600;
 }
 
-.c14 {
+.c15 {
   font-size: 26px;
   line-height: 32px;
 }
 
-.c15 {
+.c16 {
   font-size: 26px;
   line-height: 32px;
   font-weight: 600;
@@ -771,8 +771,8 @@ exports[`Tag renders custom remove button kind and size 1`] = `
   margin-right: 6px;
   border: none;
   border-radius: 18px;
-  padding: 4px 20px;
-  font-size: 14px;
+  padding: 4px 22px;
+  font-size: 18px;
   line-height: 0;
   background: blue;
   text-align: center;
@@ -827,7 +827,7 @@ exports[`Tag renders custom remove button kind and size 1`] = `
   border: 0;
 }
 
-.c11 {
+.c8 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -837,7 +837,79 @@ exports[`Tag renders custom remove button kind and size 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  margin-right: 6px;
+  margin: 12px;
+  border: none;
+  border-radius: 18px;
+  padding: 4px 20px;
+  font-size: 14px;
+  line-height: 0;
+  background: blue;
+  text-align: center;
+  transition-property: color,background-color,border-color,box-shadow;
+  transition-duration: 0.1s;
+  transition-timing-function: ease-in-out;
+}
+
+.c8 >svg {
+  display: flex;
+  align-self: center;
+  vertical-align: middle;
+}
+
+.c8:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c8:focus >circle,
+.c8:focus >ellipse,
+.c8:focus >line,
+.c8:focus >path,
+.c8:focus >polygon,
+.c8:focus >polyline,
+.c8:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c8:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c8:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c8:focus:not(:focus-visible) >circle,
+.c8:focus:not(:focus-visible) >ellipse,
+.c8:focus:not(:focus-visible) >line,
+.c8:focus:not(:focus-visible) >path,
+.c8:focus:not(:focus-visible) >polygon,
+.c8:focus:not(:focus-visible) >polyline,
+.c8:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c8:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
+}
+
+.c12 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  margin-left: 18px;
+  margin-right: 18px;
+  margin-top: 12px;
+  margin-bottom: 12px;
   border: none;
   border-radius: 18px;
   padding: 4px 22px;
@@ -850,53 +922,53 @@ exports[`Tag renders custom remove button kind and size 1`] = `
   transition-timing-function: ease-in-out;
 }
 
-.c11 >svg {
+.c12 >svg {
   display: flex;
   align-self: center;
   vertical-align: middle;
 }
 
-.c11:focus {
+.c12:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c11:focus >circle,
-.c11:focus >ellipse,
-.c11:focus >line,
-.c11:focus >path,
-.c11:focus >polygon,
-.c11:focus >polyline,
-.c11:focus >rect {
+.c12:focus >circle,
+.c12:focus >ellipse,
+.c12:focus >line,
+.c12:focus >path,
+.c12:focus >polygon,
+.c12:focus >polyline,
+.c12:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c11:focus ::-moz-focus-inner {
+.c12:focus ::-moz-focus-inner {
   border: 0;
 }
 
-.c11:focus:not(:focus-visible) {
+.c12:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c11:focus:not(:focus-visible) >circle,
-.c11:focus:not(:focus-visible) >ellipse,
-.c11:focus:not(:focus-visible) >line,
-.c11:focus:not(:focus-visible) >path,
-.c11:focus:not(:focus-visible) >polygon,
-.c11:focus:not(:focus-visible) >polyline,
-.c11:focus:not(:focus-visible) >rect {
+.c12:focus:not(:focus-visible) >circle,
+.c12:focus:not(:focus-visible) >ellipse,
+.c12:focus:not(:focus-visible) >line,
+.c12:focus:not(:focus-visible) >path,
+.c12:focus:not(:focus-visible) >polygon,
+.c12:focus:not(:focus-visible) >polyline,
+.c12:focus:not(:focus-visible) >rect {
   outline: none;
   box-shadow: none;
 }
 
-.c11:focus:not(:focus-visible) ::-moz-focus-inner {
+.c12:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 
-.c16 {
+.c17 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -906,7 +978,7 @@ exports[`Tag renders custom remove button kind and size 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  margin-right: 6px;
+  margin: 10px;
   border: none;
   border-radius: 24px;
   padding: 8px 32px;
@@ -919,49 +991,49 @@ exports[`Tag renders custom remove button kind and size 1`] = `
   transition-timing-function: ease-in-out;
 }
 
-.c16 >svg {
+.c17 >svg {
   display: flex;
   align-self: center;
   vertical-align: middle;
 }
 
-.c16:focus {
+.c17:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c16:focus >circle,
-.c16:focus >ellipse,
-.c16:focus >line,
-.c16:focus >path,
-.c16:focus >polygon,
-.c16:focus >polyline,
-.c16:focus >rect {
+.c17:focus >circle,
+.c17:focus >ellipse,
+.c17:focus >line,
+.c17:focus >path,
+.c17:focus >polygon,
+.c17:focus >polyline,
+.c17:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c16:focus ::-moz-focus-inner {
+.c17:focus ::-moz-focus-inner {
   border: 0;
 }
 
-.c16:focus:not(:focus-visible) {
+.c17:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c16:focus:not(:focus-visible) >circle,
-.c16:focus:not(:focus-visible) >ellipse,
-.c16:focus:not(:focus-visible) >line,
-.c16:focus:not(:focus-visible) >path,
-.c16:focus:not(:focus-visible) >polygon,
-.c16:focus:not(:focus-visible) >polyline,
-.c16:focus:not(:focus-visible) >rect {
+.c17:focus:not(:focus-visible) >circle,
+.c17:focus:not(:focus-visible) >ellipse,
+.c17:focus:not(:focus-visible) >line,
+.c17:focus:not(:focus-visible) >path,
+.c17:focus:not(:focus-visible) >polygon,
+.c17:focus:not(:focus-visible) >polyline,
+.c17:focus:not(:focus-visible) >rect {
   outline: none;
   box-shadow: none;
 }
 
-.c16:focus:not(:focus-visible) ::-moz-focus-inner {
+.c17:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 
@@ -1006,28 +1078,28 @@ exports[`Tag renders custom remove button kind and size 1`] = `
 }
 
 @media only screen and (max-width: 768px) {
-  .c8 {
+  .c9 {
     padding-left: 16px;
     padding-right: 16px;
   }
 }
 
 @media only screen and (max-width: 768px) {
-  .c8 {
+  .c9 {
     padding-top: 3px;
     padding-bottom: 3px;
   }
 }
 
 @media only screen and (max-width: 768px) {
-  .c13 {
+  .c14 {
     padding-left: 18px;
     padding-right: 18px;
   }
 }
 
 @media only screen and (max-width: 768px) {
-  .c13 {
+  .c14 {
     padding-top: 3px;
     padding-bottom: 3px;
   }
@@ -1093,7 +1165,7 @@ exports[`Tag renders custom remove button kind and size 1`] = `
         </span>
       </div>
       <button
-        class="c5 c6"
+        class="c8 c6"
         type="button"
       >
         <svg
@@ -1114,25 +1186,25 @@ exports[`Tag renders custom remove button kind and size 1`] = `
       class="c1"
     >
       <div
-        class="c8"
+        class="c9"
       >
         <span
-          class="c9"
+          class="c10"
         >
           <span
-            class="c10"
+            class="c11"
           >
             Value
           </span>
         </span>
       </div>
       <button
-        class="c11 c6"
+        class="c12 c6"
         type="button"
       >
         <svg
           aria-label="FormClose"
-          class="c12"
+          class="c13"
           viewBox="0 0 24 24"
         >
           <path
@@ -1148,25 +1220,25 @@ exports[`Tag renders custom remove button kind and size 1`] = `
       class="c1"
     >
       <div
-        class="c13"
+        class="c14"
       >
         <span
-          class="c14"
+          class="c15"
         >
           <span
-            class="c15"
+            class="c16"
           >
             Value
           </span>
         </span>
       </div>
       <button
-        class="c16 c6"
+        class="c17 c6"
         type="button"
       >
         <svg
           aria-label="FormClose"
-          class="c17"
+          class="c18"
           viewBox="0 0 24 24"
         >
           <path

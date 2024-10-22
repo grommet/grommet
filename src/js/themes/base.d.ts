@@ -1609,7 +1609,7 @@ export interface ThemeType {
     round?: RoundType;
     name?: TextProps;
     pad?: PadType;
-    remove?: ButtonType | { kind?: string; size?: string; margin?: MarginType };
+    remove?: ButtonType | { kind?: string };
     separator?: string;
     size?: {
       xsmall?: {
@@ -1617,35 +1617,35 @@ export interface ThemeType {
         icon?: {
           size?: string;
         };
-        remove?: { kind?: string; size?: string; margin?: MarginType };
+        remove?: { size?: string; margin?: MarginType };
       };
       small?: {
         pad?: PadType;
         icon?: {
           size?: string;
         };
-        remove?: { kind?: string; size?: string; margin?: MarginType };
+        remove?: { size?: string; margin?: MarginType };
       };
       medium?: {
         pad?: PadType;
         icon?: {
           size?: string;
         };
-        remove?: { kind?: string; size?: string; margin?: MarginType };
+        remove?: { size?: string; margin?: MarginType };
       };
       large?: {
         pad?: PadType;
         icon?: {
           size?: string;
         };
-        remove?: { kind?: string; size?: string; margin?: MarginType };
+        remove?: { size?: string; margin?: MarginType };
       };
       xlarge?: {
         pad?: PadType;
         icon?: {
           size?: string;
         };
-        remove?: { kind?: string; size?: string; margin?: MarginType };
+        remove?: { size?: string; margin?: MarginType };
       };
     };
     value?: TextProps;
