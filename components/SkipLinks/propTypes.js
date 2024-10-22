@@ -7,6 +7,7 @@ function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default":
 var PropType = {};
 if (process.env.NODE_ENV !== 'production') {
   PropType = {
+    id: _propTypes["default"].string,
     children: _propTypes["default"].node.isRequired,
     messages: _propTypes["default"].shape({
       skipTo: _propTypes["default"].string
