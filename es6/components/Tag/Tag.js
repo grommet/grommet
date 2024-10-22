@@ -9,7 +9,7 @@ import { Text } from '../Text';
 import { StyledRemoveButton, StyledTagButton } from './StyledTag';
 import { useThemeValue } from '../../utils/useThemeValue';
 var Tag = /*#__PURE__*/forwardRef(function (_ref, ref) {
-  var _theme$tag$icons, _theme$tag$size, _theme$tag$size2, _theme$tag$size3, _theme$tag$size4;
+  var _theme$tag$icons, _theme$tag$size, _theme$tag$size2, _theme$tag$size3, _theme$tag$size4, _theme$tag$size5;
   var name = _ref.name,
     value = _ref.value,
     size = _ref.size,
@@ -44,6 +44,11 @@ var Tag = /*#__PURE__*/forwardRef(function (_ref, ref) {
   if (onClick && onRemove) {
     console.warn('Tag cannot combine "onClick" and "onRemove".');
   }
+  var removeProps = !theme.tag.remove.kind ? {
+    plain: true,
+    hoverIndicator: true,
+    focusIndicator: true
+  } : {};
   return onRemove || !onClick ? /*#__PURE__*/React.createElement(Box, _extends({
     flex: false,
     direction: "row",
@@ -51,13 +56,11 @@ var Tag = /*#__PURE__*/forwardRef(function (_ref, ref) {
       min: 'min-content'
     }
   }, containerProps), contents, onRemove && /*#__PURE__*/React.createElement(StyledRemoveButton, _extends({
-    onClick: onRemove,
-    plain: true,
-    hoverIndicator: true,
-    focusIndicator: true,
+    onClick: onRemove
+  }, removeProps, {
     icon: /*#__PURE__*/React.createElement(RemoveIcon, (_theme$tag$size3 = theme.tag.size) == null || (_theme$tag$size3 = _theme$tag$size3[size]) == null ? void 0 : _theme$tag$size3.icon),
     round: ((_theme$tag$size4 = theme.tag.size) == null || (_theme$tag$size4 = _theme$tag$size4[size]) == null ? void 0 : _theme$tag$size4.round) || theme.tag.round
-  }, theme.tag.remove, passThemeFlag))) : /*#__PURE__*/React.createElement(StyledTagButton, _extends({
+  }, theme.tag.remove, (_theme$tag$size5 = theme.tag.size) == null || (_theme$tag$size5 = _theme$tag$size5[size]) == null ? void 0 : _theme$tag$size5.remove, passThemeFlag))) : /*#__PURE__*/React.createElement(StyledTagButton, _extends({
     flex: false,
     plain: true,
     onClick: onClick,

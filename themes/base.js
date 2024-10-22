@@ -1994,6 +1994,7 @@ var generate = exports.generate = function generate(baseSpacing, scale) {
         margin: {
           right: 'xsmall'
         }
+        // kind: undefined,
       },
       separator: ' : ',
       size: {
@@ -2005,6 +2006,10 @@ var generate = exports.generate = function generate(baseSpacing, scale) {
           icon: {
             size: baseSpacing * 0.75 + "px"
           }
+          // remove: {
+          //   margin: undefined,
+          //   size: undefined,
+          // },
         },
         small: {
           pad: {
@@ -2014,6 +2019,10 @@ var generate = exports.generate = function generate(baseSpacing, scale) {
           icon: {
             size: baseSpacing * 0.75 + "px"
           }
+          // remove: {
+          //   margin: undefined,
+          //   size: undefined,
+          // },
         },
         large: {
           pad: {
@@ -2023,6 +2032,10 @@ var generate = exports.generate = function generate(baseSpacing, scale) {
           icon: {
             size: baseSpacing * 1.25 + "px"
           }
+          // remove: {
+          //   margin: undefined,
+          //   size: undefined,
+          // },
         },
         xlarge: {
           pad: {
@@ -2032,6 +2045,10 @@ var generate = exports.generate = function generate(baseSpacing, scale) {
           icon: {
             size: baseSpacing * 1.5 + "px"
           }
+          // remove: {
+          //   margin: undefined,
+          //   size: undefined,
+          // },
         }
       },
       value: {
