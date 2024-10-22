@@ -1814,12 +1814,7 @@ exports[`Data pagination 1`] = `
   min-height: 0;
   flex-direction: row;
   padding: 0px;
-}
-
-.c15 {
-  flex: 0 0 auto;
-  align-self: stretch;
-  width: 3px;
+  column-gap: 3px;
 }
 
 .c9 {
@@ -1904,7 +1899,7 @@ exports[`Data pagination 1`] = `
   border: 0;
 }
 
-.c16 {
+.c15 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -1930,47 +1925,47 @@ exports[`Data pagination 1`] = `
   flex: 1 0 auto;
 }
 
-.c16:hover {
+.c15:hover {
   background-color: rgba(51, 51, 51, 0.06274509803921569);
 }
 
-.c16:focus {
+.c15:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c16:focus >circle,
-.c16:focus >ellipse,
-.c16:focus >line,
-.c16:focus >path,
-.c16:focus >polygon,
-.c16:focus >polyline,
-.c16:focus >rect {
+.c15:focus >circle,
+.c15:focus >ellipse,
+.c15:focus >line,
+.c15:focus >path,
+.c15:focus >polygon,
+.c15:focus >polyline,
+.c15:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c16:focus ::-moz-focus-inner {
+.c15:focus ::-moz-focus-inner {
   border: 0;
 }
 
-.c16:focus:not(:focus-visible) {
+.c15:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c16:focus:not(:focus-visible) >circle,
-.c16:focus:not(:focus-visible) >ellipse,
-.c16:focus:not(:focus-visible) >line,
-.c16:focus:not(:focus-visible) >path,
-.c16:focus:not(:focus-visible) >polygon,
-.c16:focus:not(:focus-visible) >polyline,
-.c16:focus:not(:focus-visible) >rect {
+.c15:focus:not(:focus-visible) >circle,
+.c15:focus:not(:focus-visible) >ellipse,
+.c15:focus:not(:focus-visible) >line,
+.c15:focus:not(:focus-visible) >path,
+.c15:focus:not(:focus-visible) >polygon,
+.c15:focus:not(:focus-visible) >polyline,
+.c15:focus:not(:focus-visible) >rect {
   outline: none;
   box-shadow: none;
 }
 
-.c16:focus:not(:focus-visible) ::-moz-focus-inner {
+.c15:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 
@@ -2050,8 +2045,8 @@ exports[`Data pagination 1`] = `
 }
 
 @media only screen and (max-width: 768px) {
-  .c15 {
-    width: 2px;
+  .c10 {
+    column-gap: 2px;
   }
 }
 
@@ -2154,23 +2149,17 @@ exports[`Data pagination 1`] = `
               </svg>
             </button>
           </li>
-          <div
-            class="c15"
-          />
           <li
             class="c11"
           >
             <button
               aria-label="Go to page 1"
-              class="c16 c13"
+              class="c15 c13"
               type="button"
             >
               1
             </button>
           </li>
-          <div
-            class="c15"
-          />
           <li
             class="c11"
           >
@@ -2283,12 +2272,7 @@ exports[`Data pagination step 1`] = `
   min-height: 0;
   flex-direction: row;
   padding: 0px;
-}
-
-.c15 {
-  flex: 0 0 auto;
-  align-self: stretch;
-  width: 3px;
+  column-gap: 3px;
 }
 
 .c9 {
@@ -2373,7 +2357,7 @@ exports[`Data pagination step 1`] = `
   border: 0;
 }
 
-.c16 {
+.c15 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -2399,47 +2383,47 @@ exports[`Data pagination step 1`] = `
   flex: 1 0 auto;
 }
 
-.c16:hover {
+.c15:hover {
   background-color: rgba(51, 51, 51, 0.06274509803921569);
 }
 
-.c16:focus {
+.c15:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c16:focus >circle,
-.c16:focus >ellipse,
-.c16:focus >line,
-.c16:focus >path,
-.c16:focus >polygon,
-.c16:focus >polyline,
-.c16:focus >rect {
+.c15:focus >circle,
+.c15:focus >ellipse,
+.c15:focus >line,
+.c15:focus >path,
+.c15:focus >polygon,
+.c15:focus >polyline,
+.c15:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c16:focus ::-moz-focus-inner {
+.c15:focus ::-moz-focus-inner {
   border: 0;
 }
 
-.c16:focus:not(:focus-visible) {
+.c15:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c16:focus:not(:focus-visible) >circle,
-.c16:focus:not(:focus-visible) >ellipse,
-.c16:focus:not(:focus-visible) >line,
-.c16:focus:not(:focus-visible) >path,
-.c16:focus:not(:focus-visible) >polygon,
-.c16:focus:not(:focus-visible) >polyline,
-.c16:focus:not(:focus-visible) >rect {
+.c15:focus:not(:focus-visible) >circle,
+.c15:focus:not(:focus-visible) >ellipse,
+.c15:focus:not(:focus-visible) >line,
+.c15:focus:not(:focus-visible) >path,
+.c15:focus:not(:focus-visible) >polygon,
+.c15:focus:not(:focus-visible) >polyline,
+.c15:focus:not(:focus-visible) >rect {
   outline: none;
   box-shadow: none;
 }
 
-.c16:focus:not(:focus-visible) ::-moz-focus-inner {
+.c15:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 
@@ -2519,8 +2503,8 @@ exports[`Data pagination step 1`] = `
 }
 
 @media only screen and (max-width: 768px) {
-  .c15 {
-    width: 2px;
+  .c10 {
+    column-gap: 2px;
   }
 }
 
@@ -2623,23 +2607,17 @@ exports[`Data pagination step 1`] = `
               </svg>
             </button>
           </li>
-          <div
-            class="c15"
-          />
           <li
             class="c11"
           >
             <button
               aria-label="Go to page 1"
-              class="c16 c13"
+              class="c15 c13"
               type="button"
             >
               1
             </button>
           </li>
-          <div
-            class="c15"
-          />
           <li
             class="c11"
           >
@@ -6614,6 +6592,7 @@ exports[`Data uncontrolled, when paginated, search should return to page 1 1`] =
   min-height: 0;
   flex-direction: row;
   padding: 0px;
+  column-gap: 3px;
 }
 
 .c2 {
@@ -6642,12 +6621,6 @@ exports[`Data uncontrolled, when paginated, search should return to page 1 1`] =
   flex-wrap: wrap;
   column-gap: 12px;
   row-gap: 12px;
-}
-
-.c25 {
-  flex: 0 0 auto;
-  align-self: stretch;
-  width: 3px;
 }
 
 .c11 {
@@ -6727,7 +6700,7 @@ exports[`Data uncontrolled, when paginated, search should return to page 1 1`] =
   border: 0;
 }
 
-.c28 {
+.c27 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -6754,83 +6727,10 @@ exports[`Data uncontrolled, when paginated, search should return to page 1 1`] =
   flex: 1 0 auto;
 }
 
-.c28 >svg {
+.c27 >svg {
   display: flex;
   align-self: center;
   vertical-align: middle;
-}
-
-.c28:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c28:focus >circle,
-.c28:focus >ellipse,
-.c28:focus >line,
-.c28:focus >path,
-.c28:focus >polygon,
-.c28:focus >polyline,
-.c28:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c28:focus ::-moz-focus-inner {
-  border: 0;
-}
-
-.c28:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c28:focus:not(:focus-visible) >circle,
-.c28:focus:not(:focus-visible) >ellipse,
-.c28:focus:not(:focus-visible) >line,
-.c28:focus:not(:focus-visible) >path,
-.c28:focus:not(:focus-visible) >polygon,
-.c28:focus:not(:focus-visible) >polyline,
-.c28:focus:not(:focus-visible) >rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c28:focus:not(:focus-visible) ::-moz-focus-inner {
-  border: 0;
-}
-
-.c27 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  font: inherit;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  background-color: rgba(221, 221, 221, 0.4);
-  color: #000000;
-  border: none;
-  border-radius: 4px;
-  padding: 4px 4px;
-  font-size: 18px;
-  line-height: 24px;
-  background-color: rgba(51, 51, 51, 0.06274509803921569);
-  color: #444444;
-  text-align: center;
-  transition-property: color,background-color,border-color,box-shadow;
-  transition-duration: 0.1s;
-  transition-timing-function: ease-in-out;
-  width: 100%;
-  height: 100%;
-  max-width: none;
-  flex: 1 0 auto;
-}
-
-.c27:hover {
-  background-color: rgba(51, 51, 51, 0.06274509803921569);
 }
 
 .c27:focus {
@@ -6883,12 +6783,15 @@ exports[`Data uncontrolled, when paginated, search should return to page 1 1`] =
   background: transparent;
   overflow: visible;
   text-transform: none;
+  background-color: rgba(221, 221, 221, 0.4);
+  color: #000000;
   border: none;
   border-radius: 4px;
   padding: 4px 4px;
   font-size: 18px;
   line-height: 24px;
-  color: #000000;
+  background-color: rgba(51, 51, 51, 0.06274509803921569);
+  color: #444444;
   text-align: center;
   transition-property: color,background-color,border-color,box-shadow;
   transition-duration: 0.1s;
@@ -6940,6 +6843,76 @@ exports[`Data uncontrolled, when paginated, search should return to page 1 1`] =
 }
 
 .c26:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
+}
+
+.c25 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: none;
+  border-radius: 4px;
+  padding: 4px 4px;
+  font-size: 18px;
+  line-height: 24px;
+  color: #000000;
+  text-align: center;
+  transition-property: color,background-color,border-color,box-shadow;
+  transition-duration: 0.1s;
+  transition-timing-function: ease-in-out;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  flex: 1 0 auto;
+}
+
+.c25:hover {
+  background-color: rgba(51, 51, 51, 0.06274509803921569);
+}
+
+.c25:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c25:focus >circle,
+.c25:focus >ellipse,
+.c25:focus >line,
+.c25:focus >path,
+.c25:focus >polygon,
+.c25:focus >polyline,
+.c25:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c25:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c25:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c25:focus:not(:focus-visible) >circle,
+.c25:focus:not(:focus-visible) >ellipse,
+.c25:focus:not(:focus-visible) >line,
+.c25:focus:not(:focus-visible) >path,
+.c25:focus:not(:focus-visible) >polygon,
+.c25:focus:not(:focus-visible) >polyline,
+.c25:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c25:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 
@@ -7187,6 +7160,12 @@ exports[`Data uncontrolled, when paginated, search should return to page 1 1`] =
 }
 
 @media only screen and (max-width: 768px) {
+  .c20 {
+    column-gap: 2px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
   .c2 {
     column-gap: 12px;
   }
@@ -7195,12 +7174,6 @@ exports[`Data uncontrolled, when paginated, search should return to page 1 1`] =
 @media only screen and (max-width: 768px) {
   .c3 {
     column-gap: 6px;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .c25 {
-    width: 2px;
   }
 }
 
@@ -7378,45 +7351,36 @@ exports[`Data uncontrolled, when paginated, search should return to page 1 1`] =
               </svg>
             </button>
           </li>
-          <div
-            class="c25"
-          />
           <li
             class="c21"
           >
             <button
               aria-label="Go to page 1"
-              class="c26 c23"
+              class="c25 c23"
               type="button"
             >
               1
             </button>
           </li>
-          <div
-            class="c25"
-          />
           <li
             class="c21"
           >
             <button
               aria-current="page"
               aria-label="Go to page 2"
-              class="c27 c23"
+              class="c26 c23"
               type="button"
             >
               2
             </button>
           </li>
-          <div
-            class="c25"
-          />
           <li
             class="c21"
           >
             <button
               aria-disabled="true"
               aria-label="Go to next page"
-              class="c28 c23"
+              class="c27 c23"
               disabled=""
               type="button"
             >
@@ -7632,7 +7596,7 @@ exports[`Data uncontrolled, when paginated, search should return to page 1 2`] =
         class="StyledBox-sc-13pk1d4-0 euJJjo"
       >
         <ul
-          class="StyledBox-sc-13pk1d4-0 kOcABF"
+          class="StyledBox-sc-13pk1d4-0 gkMlIT"
         >
           <li
             class="StyledPageControl__StyledContainer-sc-1vlfaez-1 bjXWCk"
@@ -7658,9 +7622,6 @@ exports[`Data uncontrolled, when paginated, search should return to page 1 2`] =
               </svg>
             </button>
           </li>
-          <div
-            class="StyledBox__StyledBoxGap-sc-13pk1d4-1 fsEMPj"
-          />
           <li
             class="StyledPageControl__StyledContainer-sc-1vlfaez-1 bjXWCk"
           >
@@ -7673,9 +7634,6 @@ exports[`Data uncontrolled, when paginated, search should return to page 1 2`] =
               1
             </button>
           </li>
-          <div
-            class="StyledBox__StyledBoxGap-sc-13pk1d4-1 fsEMPj"
-          />
           <li
             class="StyledPageControl__StyledContainer-sc-1vlfaez-1 bjXWCk"
           >
@@ -7976,7 +7934,7 @@ exports[`Data uncontrolled, when paginated, search should return to page 1 3`] =
         class="StyledBox-sc-13pk1d4-0 euJJjo"
       >
         <ul
-          class="StyledBox-sc-13pk1d4-0 kOcABF"
+          class="StyledBox-sc-13pk1d4-0 gkMlIT"
         >
           <li
             class="StyledPageControl__StyledContainer-sc-1vlfaez-1 bjXWCk"
@@ -8002,9 +7960,6 @@ exports[`Data uncontrolled, when paginated, search should return to page 1 3`] =
               </svg>
             </button>
           </li>
-          <div
-            class="StyledBox__StyledBoxGap-sc-13pk1d4-1 fsEMPj"
-          />
           <li
             class="StyledPageControl__StyledContainer-sc-1vlfaez-1 bjXWCk"
           >
@@ -8017,9 +7972,6 @@ exports[`Data uncontrolled, when paginated, search should return to page 1 3`] =
               1
             </button>
           </li>
-          <div
-            class="StyledBox__StyledBoxGap-sc-13pk1d4-1 fsEMPj"
-          />
           <li
             class="StyledPageControl__StyledContainer-sc-1vlfaez-1 bjXWCk"
           >
@@ -8031,45 +7983,6 @@ exports[`Data uncontrolled, when paginated, search should return to page 1 3`] =
               2
             </button>
           </li>
-          .c0 {
-  flex: 0 0 auto;
-  align-self: stretch;
-  width: 3px;
-}
-
-@media only screen and (max-width: 768px) {
-
-}
-
-@media only screen and (max-width: 768px) {
-
-}
-
-@media only screen and (max-width: 768px) {
-
-}
-
-@media only screen and (max-width: 768px) {
-
-}
-
-@media only screen and (max-width: 768px) {
-
-}
-
-@media only screen and (max-width: 768px) {
-
-}
-
-@media only screen and (max-width: 768px) {
-  .c0 {
-    width: 2px;
-  }
-}
-
-<div
-            class="c0"
-          />
           .c3 {
   display: inline-block;
   flex: 0 0 auto;
