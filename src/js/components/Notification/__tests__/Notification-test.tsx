@@ -69,6 +69,8 @@ describe('Notification', () => {
     'bottom',
     'left',
     'right',
+    'start',
+    'end',
     'center',
     'top-left',
     'top-right',
@@ -84,7 +86,7 @@ describe('Notification', () => {
             id="position-test"
             toast={{ position }}
             title="title"
-            message="This is a layer"
+            message="message"
           />
         </Grommet>,
       );

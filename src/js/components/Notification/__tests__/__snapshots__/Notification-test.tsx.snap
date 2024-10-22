@@ -835,7 +835,7 @@ exports[`Notification position bottom 1`] = `
             <span
               class="c10"
             >
-              This is a layer
+              message
             </span>
           </p>
         </div>
@@ -1106,7 +1106,7 @@ exports[`Notification position bottom-left 1`] = `
             <span
               class="c10"
             >
-              This is a layer
+              message
             </span>
           </p>
         </div>
@@ -1377,7 +1377,7 @@ exports[`Notification position bottom-right 1`] = `
             <span
               class="c10"
             >
-              This is a layer
+              message
             </span>
           </p>
         </div>
@@ -1648,7 +1648,7 @@ exports[`Notification position center 1`] = `
             <span
               class="c10"
             >
-              This is a layer
+              message
             </span>
           </p>
         </div>
@@ -1659,6 +1659,277 @@ exports[`Notification position center 1`] = `
 `;
 
 exports[`Notification position center 2`] = `
+"@media only screen and (max-width: 768px) {
+  .kBcinS {
+    border-radius: 3px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .bTLqNv {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .bTLqNv {
+    padding-top: 3px;
+    padding-bottom: 3px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .fDGlGt {
+    padding-right: 6px;
+  }
+}"
+`;
+
+exports[`Notification position end 1`] = `
+.c6 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #CCCCCC;
+  stroke: #CCCCCC;
+}
+
+.c6 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c6 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c6 *[stroke*='#'],
+.c6 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c6 *[fill-rule],
+.c6 *[FILL-RULE],
+.c6 *[fill*='#'],
+.c6 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c3 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  background-color: #FFFFFF;
+  color: #444444;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: row;
+  width: 384px;
+  border-radius: 6px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.20);
+}
+
+.c4 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: row;
+  flex: 1 1;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.c5 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  flex: 0 0 auto;
+  padding-right: 12px;
+}
+
+.c7 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+}
+
+.c8 {
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: bold;
+}
+
+.c10 {
+  margin-right: 6px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  background: transparent;
+  position: relative;
+  z-index: 20;
+  pointer-events: none;
+  outline: none;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+}
+
+.c1 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: flex;
+  flex-direction: column;
+  min-height: 48px;
+  outline: none;
+  pointer-events: all;
+  z-index: 20;
+  position: fixed;
+  max-height: calc(100% - 24px - 24px);
+  max-width: calc(100% - 24px - 24px);
+  border-radius: 0;
+  inset-inline-end: 24px;
+  top: 50%;
+  transform: translate(0,-50%);
+  animation: drjPPC 0.2s ease-in-out forwards;
+}
+
+.c2 {
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  position: absolute;
+}
+
+.c2:focus {
+  outline: none;
+}
+
+.c9 {
+  margin: 0px;
+  font-size: 18px;
+  line-height: 24px;
+  max-width: 432px;
+}
+
+@media only screen and (max-width: 768px) {
+  .c3 {
+    border-radius: 3px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c4 {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c4 {
+    padding-top: 3px;
+    padding-bottom: 3px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c5 {
+    padding-right: 6px;
+  }
+}
+
+<div
+  class="c0"
+  id="position-test"
+  tabindex="-1"
+>
+  <div
+    class="c1"
+    data-g-portal-id="0"
+    id="position-test"
+    role="log"
+  >
+    <a
+      aria-hidden="true"
+      class="c2"
+      tabindex="-1"
+    />
+    <div
+      class="c3"
+    >
+      <div
+        class="c4"
+      >
+        <div
+          class="c5"
+        >
+          <svg
+            aria-label="Status is unknown"
+            class="c6"
+            viewBox="0 0 12 12"
+          >
+            <rect
+              fill-rule="evenodd"
+              height="10"
+              rx="1"
+              stroke="#000"
+              width="10"
+              x="1"
+              y="1"
+            />
+          </svg>
+        </div>
+        <div
+          class="c7"
+        >
+          <span
+            class="c8"
+          >
+            title
+          </span>
+          <p
+            class="c9"
+          >
+            <span
+              class="c10"
+            >
+              message
+            </span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Notification position end 2`] = `
 "@media only screen and (max-width: 768px) {
   .kBcinS {
     border-radius: 3px;
@@ -1919,7 +2190,7 @@ exports[`Notification position left 1`] = `
             <span
               class="c10"
             >
-              This is a layer
+              message
             </span>
           </p>
         </div>
@@ -2190,7 +2461,7 @@ exports[`Notification position right 1`] = `
             <span
               class="c10"
             >
-              This is a layer
+              message
             </span>
           </p>
         </div>
@@ -2201,6 +2472,277 @@ exports[`Notification position right 1`] = `
 `;
 
 exports[`Notification position right 2`] = `
+"@media only screen and (max-width: 768px) {
+  .kBcinS {
+    border-radius: 3px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .bTLqNv {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .bTLqNv {
+    padding-top: 3px;
+    padding-bottom: 3px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .fDGlGt {
+    padding-right: 6px;
+  }
+}"
+`;
+
+exports[`Notification position start 1`] = `
+.c6 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #CCCCCC;
+  stroke: #CCCCCC;
+}
+
+.c6 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c6 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c6 *[stroke*='#'],
+.c6 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c6 *[fill-rule],
+.c6 *[FILL-RULE],
+.c6 *[fill*='#'],
+.c6 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c3 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  background-color: #FFFFFF;
+  color: #444444;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: row;
+  width: 384px;
+  border-radius: 6px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.20);
+}
+
+.c4 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: row;
+  flex: 1 1;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.c5 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  flex: 0 0 auto;
+  padding-right: 12px;
+}
+
+.c7 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+}
+
+.c8 {
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: bold;
+}
+
+.c10 {
+  margin-right: 6px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  background: transparent;
+  position: relative;
+  z-index: 20;
+  pointer-events: none;
+  outline: none;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+}
+
+.c1 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: flex;
+  flex-direction: column;
+  min-height: 48px;
+  outline: none;
+  pointer-events: all;
+  z-index: 20;
+  position: fixed;
+  max-height: calc(100% - 24px - 24px);
+  max-width: calc(100% - 24px - 24px);
+  border-radius: 0;
+  inset-inline-start: 24px;
+  top: 50%;
+  transform: translate(0,-50%);
+  animation: kPYden 0.2s ease-in-out forwards;
+}
+
+.c2 {
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  position: absolute;
+}
+
+.c2:focus {
+  outline: none;
+}
+
+.c9 {
+  margin: 0px;
+  font-size: 18px;
+  line-height: 24px;
+  max-width: 432px;
+}
+
+@media only screen and (max-width: 768px) {
+  .c3 {
+    border-radius: 3px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c4 {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c4 {
+    padding-top: 3px;
+    padding-bottom: 3px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c5 {
+    padding-right: 6px;
+  }
+}
+
+<div
+  class="c0"
+  id="position-test"
+  tabindex="-1"
+>
+  <div
+    class="c1"
+    data-g-portal-id="0"
+    id="position-test"
+    role="log"
+  >
+    <a
+      aria-hidden="true"
+      class="c2"
+      tabindex="-1"
+    />
+    <div
+      class="c3"
+    >
+      <div
+        class="c4"
+      >
+        <div
+          class="c5"
+        >
+          <svg
+            aria-label="Status is unknown"
+            class="c6"
+            viewBox="0 0 12 12"
+          >
+            <rect
+              fill-rule="evenodd"
+              height="10"
+              rx="1"
+              stroke="#000"
+              width="10"
+              x="1"
+              y="1"
+            />
+          </svg>
+        </div>
+        <div
+          class="c7"
+        >
+          <span
+            class="c8"
+          >
+            title
+          </span>
+          <p
+            class="c9"
+          >
+            <span
+              class="c10"
+            >
+              message
+            </span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Notification position start 2`] = `
 "@media only screen and (max-width: 768px) {
   .kBcinS {
     border-radius: 3px;
@@ -2461,7 +3003,7 @@ exports[`Notification position top 1`] = `
             <span
               class="c10"
             >
-              This is a layer
+              message
             </span>
           </p>
         </div>
@@ -2732,7 +3274,7 @@ exports[`Notification position top-left 1`] = `
             <span
               class="c10"
             >
-              This is a layer
+              message
             </span>
           </p>
         </div>
@@ -3003,7 +3545,7 @@ exports[`Notification position top-right 1`] = `
             <span
               class="c10"
             >
-              This is a layer
+              message
             </span>
           </p>
         </div>
