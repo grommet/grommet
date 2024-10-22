@@ -31,6 +31,7 @@ if (process.env.NODE_ENV !== 'production') {
     background: _generalPropTypes.backgroundDoc,
     basis: _propTypes["default"].oneOfType([_propTypes["default"].oneOf(['xxsmall', 'xsmall', 'small', 'medium', 'large', 'xlarge', 'xxlarge', 'full', '1/2', '1/3', '2/3', '1/4', '2/4', '3/4', 'auto']), _propTypes["default"].string]),
     border: _propTypes["default"].oneOfType([_propTypes["default"].bool, _propTypes["default"].oneOf(['top', 'left', 'bottom', 'right', 'start', 'end', 'horizontal', 'vertical', 'all', 'between']), BORDER_SHAPE, _propTypes["default"].arrayOf(BORDER_SHAPE)]),
+    cssGap: _propTypes["default"].bool,
     direction: _propTypes["default"].oneOf(['row', 'column', 'row-responsive', 'row-reverse', 'column-reverse']),
     elevation: _generalPropTypes.elevationPropType,
     flex: _propTypes["default"].oneOfType([_propTypes["default"].oneOf(['grow', 'shrink']), _propTypes["default"].bool, _propTypes["default"].shape({
