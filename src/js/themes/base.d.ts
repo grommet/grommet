@@ -1730,13 +1730,13 @@ export interface ThemeType {
   };
   toggleGroup?: {
     button?: {
-      pad?: PadType;
-      iconOnly?: {
-        pad?: PadType;
-      };
       border?: {
         radius?: string;
       };
+      iconOnly?: {
+        pad?: PadType;
+      };
+      pad?: PadType;
     };
     container?: BoxProps;
     divider?:
