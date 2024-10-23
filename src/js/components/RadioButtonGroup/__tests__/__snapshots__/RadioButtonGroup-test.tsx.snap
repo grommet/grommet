@@ -127,7 +127,7 @@ exports[`RadioButtonGroup adding additional props 1`] = `
           class="c4"
           id="TWO"
           name="test"
-          tabindex="-1"
+          tabindex="0"
           type="radio"
           value="2"
         />
@@ -320,7 +320,7 @@ exports[`RadioButtonGroup boolean options 1`] = `
           class="c4"
           id="false"
           name="test"
-          tabindex="-1"
+          tabindex="0"
           type="radio"
           value="false"
         />
@@ -463,7 +463,7 @@ exports[`RadioButtonGroup children 1`] = `
           class="c4"
           id="two"
           name="test"
-          tabindex="-1"
+          tabindex="0"
           type="radio"
           value="two"
         />
@@ -657,7 +657,7 @@ exports[`RadioButtonGroup defaultValue 1`] = `
             class="c4"
             id="two"
             name="test"
-            tabindex="-1"
+            tabindex="0"
             type="radio"
             value="two"
           />
@@ -856,7 +856,7 @@ exports[`RadioButtonGroup number options 1`] = `
           class="c4"
           id="2"
           name="test"
-          tabindex="-1"
+          tabindex="0"
           type="radio"
           value="2"
         />
@@ -1013,7 +1013,7 @@ exports[`RadioButtonGroup object options 1`] = `
           class="c4"
           id="twO"
           name="test"
-          tabindex="-1"
+          tabindex="0"
           type="radio"
           value="two"
         />
@@ -1179,7 +1179,7 @@ exports[`RadioButtonGroup object options disabled 1`] = `
         <input
           class="c8"
           name="test"
-          tabindex="-1"
+          tabindex="0"
           type="radio"
           value="two"
         />
@@ -1322,7 +1322,7 @@ exports[`RadioButtonGroup object options just value 1`] = `
         <input
           class="c4"
           name="test"
-          tabindex="-1"
+          tabindex="0"
           type="radio"
           value="one"
         />
@@ -1536,7 +1536,7 @@ exports[`RadioButtonGroup renders outside grommet wrapper 1`] = `
         class="c3"
         id="two"
         name="test"
-        tabindex="-1"
+        tabindex="0"
         type="radio"
         value="two"
       />
@@ -1852,7 +1852,7 @@ exports[`RadioButtonGroup string options 1`] = `
           class="c4"
           id="two"
           name="test"
-          tabindex="-1"
+          tabindex="0"
           type="radio"
           value="two"
         />
