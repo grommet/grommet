@@ -579,7 +579,7 @@ exports[`Select Clear option renders - bottom 1`] = `
         class="c14"
       >
         <span
-          class="c15"
+          class="c15 "
         >
           Clear selection
         </span>
@@ -1315,7 +1315,7 @@ exports[`Select Clear option renders- top 1`] = `
         class="c6"
       >
         <span
-          class="c7"
+          class="c7 "
         >
           Clear selection
         </span>
@@ -4143,7 +4143,7 @@ exports[`Select default value clear 1`] = `
         class="c6"
       >
         <span
-          class="c7"
+          class="c7 "
         >
           Clear selection
         </span>
