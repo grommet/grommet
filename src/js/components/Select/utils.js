@@ -1,12 +1,13 @@
-import { useCallback } from 'react';
+import { useCallback, isValidElement } from 'react';
 import { normalizeColor } from '../../utils';
 
 export const applyKey = (option, key) => {
+  if (isValidElement(option)) return option;
   if (option === undefined || option === null) return undefined;
   if (typeof key === 'object') return applyKey(option, key.key);
   if (typeof key === 'function') return key(option);
   if (key !== undefined && typeof option === 'object') return option[key];
-  if (typeof option === 'object' && Object.keys(option))
+  if (typeof option === 'object' && Object.keys(option).length > 0)
     return option[Object.keys(option)[0]];
   return option;
 };
@@ -123,3 +124,12 @@ export const getDisplayLabelKey = (
 
 export const getIconColor = (theme) =>
   normalizeColor(theme.select.icons.color || 'control', theme);
+
+export const formatValueForA11y = (value, labelKey) => {
+  if (typeof value === 'string') return value;
+  if (isValidElement(value)) return value.toString();
+  if (Array.isArray(value)) {
+    return value.map((item) => formatValueForA11y(item, labelKey)).join(', ');
+  }
+  return applyKey(value, labelKey);
+};

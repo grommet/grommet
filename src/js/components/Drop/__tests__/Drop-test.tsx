@@ -18,6 +18,7 @@ import { expectPortal } from '../../../utils/portal';
 import { Grommet } from '../../Grommet';
 import { Drop, DropExtendedProps } from '..';
 import { ThemeType } from '../../../themes';
+import userEvent from '@testing-library/user-event';
 
 const customTheme = {
   global: {
@@ -144,6 +145,38 @@ const TestButton = ({
         <span>click</span>
         {drop}
       </button>
+    </Grommet>
+  );
+};
+
+const TestTrapFocus = () => {
+  const [showDrop, setShowDrop] = useState<boolean>(false);
+
+  const inputRef = useRef<HTMLInputElement | null>(null);
+
+  useEffect(() => {
+    setShowDrop(true);
+  }, []);
+
+  let drop;
+
+  if (showDrop) {
+    drop = (
+      <Drop
+        id="drop-node"
+        trapFocus
+        restrictFocus
+        target={inputRef.current || undefined}
+      >
+        <button aria-label="first-focus">first-focus</button>
+        <button aria-label="second-focus">second-focus</button>
+      </Drop>
+    );
+  }
+  return (
+    <Grommet>
+      <input ref={inputRef} aria-label="test" />
+      {drop}
     </Grommet>
   );
 };
@@ -280,6 +313,40 @@ describe('Drop', () => {
     await waitFor(() => {
       expect(document.activeElement).toBe(button);
     });
+  });
+
+  test('focus does not leave the dialog when trapFocus is true', async () => {
+    userEvent.setup();
+    window.scrollTo = jest.fn();
+    render(<TestTrapFocus />);
+
+    // Wait for the button with text 'first-focus'
+    const firstButton = await screen.findByText('first-focus');
+    const secondButton = await screen.findByText('second-focus');
+    expect(firstButton).toBeInTheDocument();
+
+    await userEvent.tab();
+
+    // Check that the button is the currently focused element
+    expect(document.activeElement).toBe(firstButton);
+
+    // Simulate tab
+    await userEvent.tab();
+
+    // Expect the focus to go to the second button
+    expect(document.activeElement).toBe(secondButton);
+
+    // Simulate tab
+    await userEvent.tab();
+
+    // Expect the focus to go back to the first button
+    expect(document.activeElement).toBe(firstButton);
+    
+     // Simulate backwards tab with Shift key
+    await userEvent.tab({ shift: true });
+    // Expect the focus to be on the second button again
+    expect(document.activeElement).toBe(secondButton);
+    
   });
 
   test('default elevation renders', () => {

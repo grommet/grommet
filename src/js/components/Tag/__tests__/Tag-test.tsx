@@ -121,4 +121,52 @@ describe('Tag', () => {
     expect(container).toMatchSnapshot();
     expect(screen.getByLabelText('FormClose')).toBeDefined();
   });
+
+  test('renders custom remove button kind and size', () => {
+    const customTheme = {
+      button: {
+        default: {
+          background: 'blue',
+        },
+      },
+      tag: {
+        remove: {
+          kind: 'default',
+        },
+        size: {
+          medium: {
+            remove: {
+              size: 'small',
+              margin: 'small',
+            },
+          },
+          large: {
+            remove: {
+              size: 'medium',
+              margin: {
+                vertical: '12px',
+                horizontal: '18px',
+              },
+            },
+          },
+          xlarge: {
+            remove: {
+              size: 'large',
+              margin: '10px',
+            },
+          },
+        },
+      },
+    };
+
+    const { asFragment } = render(
+      <Grommet theme={customTheme}>
+        <Tag value="Value" onRemove={jest.fn()} />
+        <Tag value="Value" size="medium" onRemove={jest.fn()} />
+        <Tag value="Value" size="large" onRemove={jest.fn()} />
+        <Tag value="Value" size="xlarge" onRemove={jest.fn()} />
+      </Grommet>,
+    );
+    expect(asFragment()).toMatchSnapshot();
+  });
 });

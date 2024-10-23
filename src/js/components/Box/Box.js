@@ -25,7 +25,7 @@ const Box = forwardRef(
       background: backgroundProp,
       border,
       children,
-      cssGap, // internal for now
+      cssGap,
       direction = 'column',
       elevation, // munged to avoid styled-components putting it in the DOM
       fill, // munged to avoid styled-components putting it in the DOM
