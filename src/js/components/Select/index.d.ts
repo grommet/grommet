@@ -7,14 +7,14 @@ import {
   MarginType,
   PlaceHolderType,
 } from '../../utils';
-
+type disabledKeyType = string | undefined | object | boolean | Function;
 export interface BasicSelectProps {
   a11yTitle?: A11yTitleType;
   alignSelf?: AlignSelfType;
   gridArea?: GridAreaType;
   children?: (...args: any[]) => any;
   disabled?: boolean | (number | string | object)[];
-  disabledKey?: string | ((...args: any[]) => any);
+  disabledKey?: disabledKeyType;
   dropAlign?: {
     top?: 'top' | 'bottom';
     bottom?: 'top' | 'bottom';
