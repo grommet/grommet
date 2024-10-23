@@ -51,12 +51,19 @@ const ClearButton = forwardRef(
         ref={ref}
         onClick={onClear}
         focusIndicator={false}
+        plain
         {...passThemeFlag}
         {...rest}
       >
-        <Box {...theme.select.clear.container} align={align}>
-          <Text {...theme.select.clear.text}>{buttonLabel}</Text>
-        </Box>
+        {({ hover }) => (
+          <Box
+            {...theme.select.clear.container}
+            {...(hover ? theme.select.clear?.container?.hover : {})}
+            align={align}
+          >
+            <Text {...theme.select.clear.text}>{buttonLabel}</Text>
+          </Box>
+        )}
       </StyledButton>
     );
   },
