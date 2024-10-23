@@ -8,6 +8,21 @@ import {
   PlaceHolderType,
 } from '../../utils';
 
+export type OptionType =
+  | string
+  | number
+  | boolean
+  | JSX.Element
+  | { label: string; value: string | number }
+  | object;
+
+// Define the event type for the onChange function
+interface SelectOnChangeEvent {
+  option?: OptionType | OptionType[]; // Option selected from the dropdown
+  value?: OptionType | OptionType[]; // Value(s) selected
+  selected?: OptionType[]; // Items selected in multi-select
+}
+
 export interface BasicSelectProps {
   a11yTitle?: A11yTitleType;
   alignSelf?: AlignSelfType;
@@ -32,10 +47,10 @@ export interface BasicSelectProps {
   margin?: MarginType;
   messages?: { multiple?: string };
   name?: string;
-  onChange?: (...args: any[]) => void;
-  onClose?: (...args: any[]) => any;
+  onChange?: (event: SelectOnChangeEvent) => void;
+  onClose?: React.MouseEventHandler<HTMLButtonElement>;
   onMore?: (...args: any[]) => any;
-  onOpen?: (...args: any[]) => any;
+  onOpen?: React.MouseEventHandler<HTMLButtonElement>;
   onSearch?: (search: string) => void;
   options: (string | boolean | number | JSX.Element | object)[];
   open?: boolean;
@@ -56,7 +71,13 @@ export interface SelectProps extends BasicSelectProps {
   defaultValue?: string | number | object | (string | number | object)[];
   multiple?: boolean;
   selected?: number | number[];
-  value?: string | JSX.Element | number | object | (string | number | object)[];
+  value?:
+    | boolean
+    | string
+    | JSX.Element
+    | number
+    | object
+    | (string | number | object)[];
 }
 
 // Try without Omit<> to see where we define our own attributes for overrides
