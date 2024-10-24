@@ -55,15 +55,19 @@ const ClearButton = forwardRef(
         {...passThemeFlag}
         {...rest}
       >
-        {({ hover }) => (
-          <Box
-            {...theme.select.clear.container}
-            {...(hover ? theme.select.clear?.container?.hover : {})}
-            align={align}
-          >
-            <Text {...theme.select.clear.text}>{buttonLabel}</Text>
-          </Box>
-        )}
+        {({ hover }) => {
+          const boxProps = { ...theme.select.clear.container };
+          delete boxProps.hover; // avoid passing hover object to Box
+          return (
+            <Box
+              {...boxProps}
+              {...(hover ? theme.select.clear?.container?.hover : {})}
+              align={align}
+            >
+              <Text {...theme.select.clear.text}>{buttonLabel}</Text>
+            </Box>
+          );
+        }}
       </StyledButton>
     );
   },
