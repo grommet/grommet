@@ -1690,6 +1690,10 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         text: {
           color: 'text-weak',
         }, // any text props
+        // hover: {
+        //   background: undefined,
+        //   text: {}, // any text props
+        // },
       },
       container: {
         // extend: undefined,
