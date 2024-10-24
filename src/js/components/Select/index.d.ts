@@ -7,7 +7,7 @@ import {
   MarginType,
   PlaceHolderType,
 } from '../../utils';
-type disabledKeyType = string | undefined | object | boolean | Function;
+type disabledKeyType = string | undefined | object | Function;
 export interface BasicSelectProps {
   a11yTitle?: A11yTitleType;
   alignSelf?: AlignSelfType;
