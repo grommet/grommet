@@ -12,7 +12,8 @@ var Tag = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var _theme$tag$icons, _theme$tag$size, _theme$tag$size2, _theme$tag$size3, _theme$tag$size4, _theme$tag$size5;
   var name = _ref.name,
     value = _ref.value,
-    size = _ref.size,
+    _ref$size = _ref.size,
+    size = _ref$size === void 0 ? 'medium' : _ref$size,
     onRemove = _ref.onRemove,
     onClick = _ref.onClick,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
