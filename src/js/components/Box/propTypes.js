@@ -121,6 +121,7 @@ if (process.env.NODE_ENV !== 'production') {
       BORDER_SHAPE,
       PropTypes.arrayOf(BORDER_SHAPE),
     ]),
+    cssGap: PropTypes.bool,
     direction: PropTypes.oneOf([
       'row',
       'column',
