@@ -177,7 +177,10 @@ export const GroupedBody = forwardRef(
             return (
               <StyledDataTableRow ref={rowRef} key={key} size={size}>
                 <ExpanderCell
-                  background={cellProps.background}
+                  background={
+                    (isSelected && cellProps.selected.background) ||
+                    cellProps.background
+                  }
                   border={cellProps.border}
                   context={context}
                   pad={cellProps.pad}
@@ -189,7 +192,10 @@ export const GroupedBody = forwardRef(
                 />
                 {(selected || onSelect) && (
                   <TableCell
-                    background={cellProps.background}
+                    background={
+                      (isSelected && cellProps.selected.background) ||
+                      cellProps.background
+                    }
                     border={cellProps.pinned.border || cellProps.border}
                     plain="noPad"
                     size="auto"
@@ -219,7 +225,10 @@ export const GroupedBody = forwardRef(
                   return (
                     <Cell
                       key={column.property}
-                      background={cellProps.background}
+                      background={
+                        (isSelected && cellProps.selected.background) ||
+                        cellProps.background
+                      }
                       border={cellProps.border}
                       context={context}
                       column={column}

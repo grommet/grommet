@@ -1231,6 +1231,102 @@ describe('DataTable', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
+  test('should apply theme for selected row', () => {
+    const theme = {
+      dataTable: {
+        body: {
+          selected: {
+            background: 'red',
+          },
+        },
+      },
+    };
+    const { asFragment } = render(
+      <Grommet theme={theme}>
+        <DataTable
+          columns={[
+            { property: 'a', header: 'A' },
+            { property: 'b', header: 'B' },
+          ]}
+          data={[
+            { a: 'one', b: 1 },
+            { a: 'two', b: 2 },
+          ]}
+          select={['two']}
+        />
+      </Grommet>,
+    );
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  test('should apply theme for selected row group', () => {
+    const theme = {
+      dataTable: {
+        body: {
+          selected: {
+            background: 'red',
+          },
+        },
+      },
+    };
+    const { asFragment } = render(
+      <Grommet theme={theme}>
+        <DataTable
+          columns={[
+            { property: 'a', header: 'A' },
+            { property: 'b', header: 'B' },
+          ]}
+          data={[
+            { a: 'one', b: 1.1 },
+            { a: 'one', b: 1.2 },
+            { a: 'two', b: 2.1 },
+            { a: 'two', b: 2.2 },
+            { a: 'three', b: 3.1 },
+            { a: 'three', b: 3.2 },
+          ]}
+          groupBy={{
+            property: 'a',
+            expand: ['one', 'two'],
+          }}
+          primaryKey={'b'}
+          select={[1.1, 1.2]}
+        />
+      </Grommet>,
+    );
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  test('should apply theme for selected row detail parent only', () => {
+    const theme = {
+      dataTable: {
+        body: {
+          selected: {
+            background: 'red',
+          },
+        },
+      },
+    };
+    const { asFragment, getAllByLabelText } = render(
+      <Grommet theme={theme}>
+        <DataTable
+          columns={[
+            { property: 'a', header: 'A' },
+            { property: 'b', header: 'B' },
+          ]}
+          data={[
+            { a: 'one', b: 1 },
+            { a: 'two', b: 2 },
+          ]}
+          rowDetails={(row) => <div>{row.a}</div>}
+          select={['two']}
+        />
+      </Grommet>,
+    );
+    // No means to expand row details declaratively
+    fireEvent.click(getAllByLabelText('expand')[1]);
+    expect(asFragment()).toMatchSnapshot();
+  });
+
   test('units', () => {
     const { container } = render(
       <Grommet>
