@@ -1709,6 +1709,128 @@ describe('Select', () => {
     expect(getAllByRole('option')[0]).toHaveFocus();
   });
 
+  test('allows keyboard navigation with search and top clear', () => {
+    jest.useFakeTimers();
+    const onSearch = jest.fn();
+    const downKeyOn = (element) =>
+      fireEvent.keyDown(element, {
+        key: 'Down',
+        keyCode: 40,
+        which: 40,
+      });
+    const upKeyOn = (element) =>
+      fireEvent.keyDown(element, {
+        key: 'Up',
+        keyCode: 38,
+        which: 38,
+      });
+
+    const { getAllByRole, getByLabelText, getByPlaceholderText } = render(
+      <Grommet>
+        <Select
+          clear={{ position: 'top' }}
+          id="test-select"
+          options={['one', 'two']}
+          onSearch={onSearch}
+          searchPlaceholder="test search"
+          placeholder="test select"
+          // Preselect option to make clear immediately available
+          value="one"
+        />
+      </Grommet>,
+    );
+
+    downKeyOn(getByPlaceholderText('test select'));
+    // Wait for auto-focus behaviour
+    act(() => jest.advanceTimersByTime(100));
+
+    const search = getByPlaceholderText('test search');
+    const selectDrop = document.getElementById('test-select__select-drop');
+    const clear = getByLabelText(/Clear selection/);
+
+    expect(search).toHaveFocus();
+    downKeyOn(selectDrop);
+    expect(clear).toHaveFocus();
+    downKeyOn(selectDrop);
+    expect(getAllByRole('option')[0]).toHaveFocus();
+    downKeyOn(selectDrop);
+    expect(getAllByRole('option')[1]).toHaveFocus();
+    downKeyOn(selectDrop);
+    // Focus should stay on the last selectable option
+    expect(getAllByRole('option')[1]).toHaveFocus();
+
+    upKeyOn(selectDrop);
+    expect(getAllByRole('option')[0]).toHaveFocus();
+    upKeyOn(selectDrop);
+    expect(clear).toHaveFocus();
+    upKeyOn(selectDrop);
+    expect(search).toHaveFocus();
+    upKeyOn(selectDrop);
+    // Focus should stay on the search input
+    expect(search).toHaveFocus();
+  });
+
+  test('allows keyboard navigation with search and bottom clear', () => {
+    jest.useFakeTimers();
+    const onSearch = jest.fn();
+    const downKeyOn = (element) =>
+      fireEvent.keyDown(element, {
+        key: 'Down',
+        keyCode: 40,
+        which: 40,
+      });
+    const upKeyOn = (element) =>
+      fireEvent.keyDown(element, {
+        key: 'Up',
+        keyCode: 38,
+        which: 38,
+      });
+
+    const { getAllByRole, getByLabelText, getByPlaceholderText } = render(
+      <Grommet>
+        <Select
+          clear={{ position: 'bottom' }}
+          id="test-select"
+          options={['one', 'two']}
+          onSearch={onSearch}
+          searchPlaceholder="test search"
+          placeholder="test select"
+          // Preselect option to make clear immediately available
+          value="one"
+        />
+      </Grommet>,
+    );
+
+    downKeyOn(getByPlaceholderText('test select'));
+    // Wait for auto-focus behaviour
+    act(() => jest.advanceTimersByTime(100));
+
+    const search = getByPlaceholderText('test search');
+    const selectDrop = document.getElementById('test-select__select-drop');
+    const clear = getByLabelText(/Clear selection/);
+
+    expect(search).toHaveFocus();
+    downKeyOn(selectDrop);
+    expect(getAllByRole('option')[0]).toHaveFocus();
+    downKeyOn(selectDrop);
+    expect(getAllByRole('option')[1]).toHaveFocus();
+    downKeyOn(selectDrop);
+    expect(clear).toHaveFocus();
+    downKeyOn(selectDrop);
+    // Focus should stay on clear
+    expect(clear).toHaveFocus();
+
+    upKeyOn(selectDrop);
+    expect(getAllByRole('option')[1]).toHaveFocus();
+    upKeyOn(selectDrop);
+    expect(getAllByRole('option')[0]).toHaveFocus();
+    upKeyOn(selectDrop);
+    expect(search).toHaveFocus();
+    upKeyOn(selectDrop);
+    // Focus should stay on the search input
+    expect(search).toHaveFocus();
+  });
+
   test('focusIndicator is true by default when plain is false', () => {
     const { container } = render(
       <Grommet>
