@@ -94,12 +94,26 @@ export const betweenDates = (date, dates) => {
   return result;
 };
 
+export const getRangePosition = (date, dates) => {
+  let rangePosition;
+  if (dates) {
+    const [from, to] = Array.isArray(dates)
+      ? dates.map((d) => (d ? new Date(d) : undefined))
+      : [dates, undefined];
+
+    if (from && sameDay(date, from)) rangePosition = 'start';
+    else if (to && sameDay(date, to)) rangePosition = 'end';
+  }
+  return rangePosition;
+};
+
 // withinDates takes an array of string dates or 2 element arrays and
 // checks whether the supplied date matches any string or is between
 // any dates in arrays.
 // returns 2 if exact match, 1 if between, undefined otherwise
 export const withinDates = (date, dates) => {
   let result;
+  let rangePosition;
   if (dates) {
     if (Array.isArray(dates)) {
       dates.some((d) => {
@@ -109,6 +123,7 @@ export const withinDates = (date, dates) => {
           }
         } else {
           result = betweenDates(date, d);
+          rangePosition = getRangePosition(date, d);
         }
         return result;
       });
@@ -116,7 +131,7 @@ export const withinDates = (date, dates) => {
       result = 2;
     }
   }
-  return result;
+  return [result, rangePosition];
 };
 
 export const handleOffset = (date) => {
