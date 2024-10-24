@@ -1863,24 +1863,41 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
       remove: {
         margin: { right: 'xsmall' },
+        // kind: undefined,
       },
       separator: ' : ',
       size: {
         xsmall: {
           pad: { horizontal: `${baseSpacing / 3}px`, vertical: 'xxsmall' },
           icon: { size: `${baseSpacing * 0.75}px` },
+          // remove: {
+          //   margin: undefined,
+          //   size: undefined,
+          // },
         },
         small: {
           pad: { horizontal: `${baseSpacing * 0.4}px`, vertical: 'xxsmall' },
           icon: { size: `${baseSpacing * 0.75}px` },
+          // remove: {
+          //   margin: undefined,
+          //   size: undefined,
+          // },
         },
         large: {
           pad: { horizontal: `${(baseSpacing / 3) * 2}px`, vertical: `xsmall` },
           icon: { size: `${baseSpacing * 1.25}px` },
+          // remove: {
+          //   margin: undefined,
+          //   size: undefined,
+          // },
         },
         xlarge: {
           pad: { horizontal: `${baseSpacing * 0.75}px`, vertical: 'xsmall' },
           icon: { size: `${baseSpacing * 1.5}px` },
+          // remove: {
+          //   margin: undefined,
+          //   size: undefined,
+          // },
         },
       },
       value: {
@@ -1941,6 +1958,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
     },
     toggleGroup: {
       button: {
+        // border: {
+        //   radius: undefined,
+        // }
         // iconOnly: {
         //   pad: undefined,
         // },

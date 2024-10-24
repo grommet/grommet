@@ -29,7 +29,7 @@ Markdown | Less | Pretty
 1 | 2 | 3
 `;
 
-const Wrapper = (props) => <Box gap="small" {...props} />;
+const Wrapper = (props: any) => <Box gap="small" {...props} />;
 
 test('Markdown renders', () => {
   const { container } = render(

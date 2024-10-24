@@ -135,11 +135,13 @@ const ToggleGroup = ({
             ? !!value.includes(optionValue)
             : value === optionValue;
           let round = 0;
-          // round corners of first and last buttons to match container
-          if (
+          if (theme.toggleGroup.button.border?.radius) {
+            round = theme.toggleGroup.button.border.radius;
+          } else if (
             typeof theme.toggleGroup.container.round === 'string' &&
             (index === 0 || index === options.length - 1)
           ) {
+            // round corners of first and last buttons to match container
             round = {
               corner: index === 0 ? 'left' : 'right',
               size: theme.toggleGroup.container.round,
@@ -149,7 +151,7 @@ const ToggleGroup = ({
           return (
             <Box
               border={
-                index < options.length - 1
+                index < options.length - 1 && theme.toggleGroup.divider
                   ? {
                       side: 'right',
                       color: theme.toggleGroup.divider.color,

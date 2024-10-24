@@ -213,7 +213,7 @@ const Pagination = forwardRef(
         a11yTitle={ariaLabel || a11yTitle || 'Pagination Navigation'}
         ref={ref}
       >
-        <Box as="ul" {...theme.pagination.controls}>
+        <Box as="ul" {...theme.pagination.controls} cssGap>
           {controls.map((control, index) => (
             /* Using index as key (as opposed to a unique id) seems to
              * help React prioritize rendering the updated controls as
