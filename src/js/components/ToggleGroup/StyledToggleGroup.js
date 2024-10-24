@@ -30,9 +30,10 @@ export const StyledButton = styled(Button)`
 
     // adjust pad for "kind" themes to align with how "kind" themes
     // manages this calculation
-    const pad = props.theme?.button?.default
-      ? adjustPad(themePad, props.theme)
-      : themePad;
+    const pad =
+      props.theme?.button?.default && props.theme?.button?.intelligentPad
+        ? adjustPad(themePad, props.theme)
+        : themePad;
     return edgeStyle('padding', pad, false, undefined, props.theme);
   }}
   // remove hover style from StyledButton/StyledButtonKind theme
