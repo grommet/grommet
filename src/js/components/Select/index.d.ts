@@ -34,7 +34,7 @@ export interface BasicSelectProps {
   name?: string;
   onChange?: (...args: any[]) => void;
   onClose?: (...args: any[]) => any;
-  onMore?: () => void | boolean;
+  onMore?: () => void;
   onOpen?: (...args: any[]) => any;
   onSearch?: (search: string) => void;
   options: (string | boolean | number | JSX.Element | object)[];
