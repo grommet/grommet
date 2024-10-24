@@ -549,10 +549,47 @@ export interface ThemeType {
   button?: ButtonType;
   calendar?: {
     day?: {
+      hover?: {
+        background?: BackgroundType;
+        color?: ColorType;
+      };
+      selected?: {
+        background?: BackgroundType;
+        color?: ColorType;
+        font?: {
+          weight?: string | number;
+        };
+        hover?: {
+          background?: BackgroundType;
+          color?: ColorType;
+        };
+      };
+      inRange?: {
+        color?: ColorType;
+        hover?: {
+          background?: BackgroundType;
+          color?: ColorType;
+        };
+      };
       extend?: ExtendType;
+    };
+    range?: {
+      background?: BackgroundType;
     };
     extend?: ExtendType;
     small?: {
+      day?: {
+        round?: RoundType;
+      };
+      range?: {
+        round?: RoundType;
+        start?: {
+          round?: RoundType;
+        };
+        end?: {
+          round?: RoundType;
+        };
+      };
       title?: TextProps;
       fontSize?: string;
       lineHeight?: number;
@@ -560,6 +597,18 @@ export interface ThemeType {
       slideDuration?: string;
     };
     medium?: {
+      day?: {
+        round?: RoundType;
+      };
+      range?: {
+        round?: RoundType;
+        start?: {
+          round?: RoundType;
+        };
+        end?: {
+          round?: RoundType;
+        };
+      };
       title?: TextProps;
       fontSize?: string;
       lineHeight?: number;
@@ -567,6 +616,18 @@ export interface ThemeType {
       slideDuration?: string;
     };
     large?: {
+      day?: {
+        round?: RoundType;
+      };
+      range?: {
+        round?: RoundType;
+        start?: {
+          round?: RoundType;
+        };
+        end?: {
+          round?: RoundType;
+        };
+      };
       title?: TextProps;
       fontSize?: string;
       lineHeight?: number;

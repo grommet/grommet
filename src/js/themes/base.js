@@ -603,6 +603,33 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
     },
     calendar: {
+      // day: {
+      //   // hover: {
+      //   //   background: undefined,
+      //   //   color: undefined,
+      //   // },
+      //   // selected: {
+      //   //   background: undefined,
+      //   //   color: undefined,
+      //   //   font: {
+      //   //     weight: undefined,
+      //   //   },
+      //   //   hover: {
+      //   //     background: undefined,
+      //   //     color: undefined,
+      //   //   },
+      //   // },
+      //   // inRange: {
+      //   //   hover: {
+      //   //     background: undefined,
+      //   //     color: undefined,
+      //   //   },
+      //   // },
+      //   // extend: undefined,
+      // },
+      // range: {
+      //   background: undefined,
+      // },
       // daySize must align with global.size
       small: {
         // title: {},
@@ -617,6 +644,18 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         lineHeight: 1.45,
         daySize: `${(baseSpacing * 16) / 7}px`,
         slideDuration: '0.5s',
+        // day: {
+        //   round: undefined,
+        // },
+        // range: {
+        //   round: undefined,
+        //   start: {
+        //     round: undefined,
+        //   },
+        //   end: {
+        //     round: undefined,
+        //   },
+        // },
       },
       large: {
         // title: {},
@@ -1686,6 +1725,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         container: {
           pad: 'small',
           background: 'background-contrast',
+          // hover: {
+          //   // any box props
+          // },
         }, // any box props
         text: {
           color: 'text-weak',

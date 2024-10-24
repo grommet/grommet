@@ -412,7 +412,7 @@ const Button = forwardRef(
         </Box>
       );
     } else if (typeof children === 'function') {
-      contents = children({ disabled, hover, focus });
+      contents = children({ active, disabled, hover, focus });
     } else {
       contents = first || second || children;
     }
