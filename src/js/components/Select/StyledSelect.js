@@ -1,15 +1,17 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 import { Box } from '../Box';
 import { Button } from '../Button';
 import { DropButton } from '../DropButton';
 import { TextInput } from '../TextInput';
+import { Text } from '../Text';
 import {
   getHoverIndicatorStyle,
   selectedStyle,
   controlBorderStyle,
   sizeStyle,
   styledComponentsConfig,
+  normalizeColor,
 } from '../../utils';
 
 export const StyledContainer = styled(Box)`
@@ -74,4 +76,28 @@ export const StyledSelectDropButton = styled(DropButton)`
   ${(props) => !props.plainSelect && controlBorderStyle};
   ${(props) => props.theme.select?.control?.extend};
   ${(props) => props.open && props.theme.select?.control?.open};
+`;
+
+// ensure ClearButton receives visual indication of keyboard
+export const StyledClearButton = styled(Button)`
+  &:focus {
+    ${(props) => getHoverIndicatorStyle('background', props.theme)}
+  }
+  &:hover {
+    ${(props) =>
+      props.theme.select.clear?.hover?.background &&
+      css`
+        background: ${normalizeColor(
+          props.theme.select.clear.hover.background,
+          props.theme,
+        )};
+      `}
+  }
+`;
+
+export const StyledClearButtonText = styled(Text)`
+  &:hover {
+    ${({ theme }) =>
+      theme.select.clear?.hover?.text && theme.select.clear.hover.text}
+  }
 `;

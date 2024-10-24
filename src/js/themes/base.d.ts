@@ -1451,6 +1451,10 @@ export interface ThemeType {
     clear?: {
       container?: BoxProps;
       text?: TextProps;
+      hover?: {
+        background?: BackgroundType;
+        text?: TextProps;
+      };
     };
     container?: {
       extend?: ExtendType;

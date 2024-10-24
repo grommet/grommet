@@ -6,15 +6,9 @@ import React, {
   useState,
 } from 'react';
 
-import styled from 'styled-components';
-import {
-  setFocusWithoutScroll,
-  getHoverIndicatorStyle,
-  containsFocus,
-} from '../../utils';
+import { setFocusWithoutScroll, containsFocus } from '../../utils';
 
 import { Box } from '../Box';
-import { Button } from '../Button';
 import { InfiniteScroll } from '../InfiniteScroll';
 import { Keyboard } from '../Keyboard';
 import { Text } from '../Text';
@@ -27,40 +21,8 @@ import {
 } from './StyledSelect';
 import { applyKey, useDisabled, getOptionLabel, getOptionValue } from './utils';
 import { EmptySearchOption } from './EmptySearchOption';
+import { ClearButton } from './ClearButton';
 import { useThemeValue } from '../../utils/useThemeValue';
-
-// ensure ClearButton receives visual indication of keyboard
-const StyledButton = styled(Button)`
-  &:focus {
-    ${(props) => getHoverIndicatorStyle('background', props.theme)}
-  }
-`;
-
-const ClearButton = forwardRef(
-  ({ clear, onClear, name, theme, ...rest }, ref) => {
-    const { label, position } = clear;
-    const align = position !== 'bottom' ? 'start' : 'center';
-    const buttonLabel = label || `Clear ${name || 'selection'}`;
-    const { passThemeFlag } = useThemeValue();
-    return (
-      <StyledButton
-        a11yTitle={`${buttonLabel}. Or, press ${
-          position === 'bottom' ? 'shift tab' : 'down arrow'
-        } to move to select options`}
-        fill="horizontal"
-        ref={ref}
-        onClick={onClear}
-        focusIndicator={false}
-        {...passThemeFlag}
-        {...rest}
-      >
-        <Box {...theme.select.clear.container} align={align}>
-          <Text {...theme.select.clear.text}>{buttonLabel}</Text>
-        </Box>
-      </StyledButton>
-    );
-  },
-);
 
 const SelectContainer = forwardRef(
   (
