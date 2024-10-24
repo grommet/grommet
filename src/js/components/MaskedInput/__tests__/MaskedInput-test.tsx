@@ -3,7 +3,7 @@ import 'core-js/stable';
 import 'regenerator-runtime/runtime';
 import 'jest-styled-components';
 import { fireEvent, render, waitFor } from '@testing-library/react';
-import { getByText, screen } from '@testing-library/dom';
+import { screen } from '@testing-library/dom';
 import { axe } from 'jest-axe';
 import 'jest-axe/extend-expect';
 import userEvent from '@testing-library/user-event';
@@ -174,7 +174,7 @@ describe('MaskedInput', () => {
     expect(container.firstChild).toMatchSnapshot();
     fireEvent.focus(getByTestId('test-input'));
 
-    const option = await waitFor(() => getByText(document, 'aa'));
+    const option = await waitFor(() => screen.getByText('aa'));
 
     expectPortal('masked-input-drop__item').toMatchSnapshot();
 
@@ -360,11 +360,11 @@ describe('MaskedInput', () => {
 
     fireEvent.focus(getByTestId('test-input'));
 
-    await waitFor(() => screen.getByText('aa'));
+    const option = await waitFor(() => screen.getByText('aa'));
 
     expectPortal('masked-input-drop__item').toMatchSnapshot();
 
-    fireEvent.click(getByText(document, 'aa'));
+    fireEvent.click(option);
     expect(container.firstChild).toMatchSnapshot();
     expect(onChangeMock).toHaveBeenCalled();
     expect(onChangeMock).toHaveReturnedWith(
@@ -472,9 +472,11 @@ describe('MaskedInput', () => {
 
     await waitFor(() => screen.getByText('aa'));
 
-    const optionButton = getByText(document, 'bb').closest('button');
-    fireEvent.mouseOver(optionButton);
-    expect(optionButton).toMatchSnapshot();
+    const optionButton = screen.getByText('bb').closest('button');
+    if (optionButton) {
+      fireEvent.mouseOver(optionButton);
+      expect(optionButton).toMatchSnapshot();
+    }
   });
 
   test('with no mask', async () => {
