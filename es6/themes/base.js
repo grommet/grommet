@@ -864,6 +864,7 @@ export var generate = function generate(baseSpacing, scale) {
     dataTable: {
       // body: {
       //   extend: undefined,
+      //   selected: undefined,
       // },
       pinned: {
         // body: {

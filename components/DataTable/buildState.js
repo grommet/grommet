@@ -2,6 +2,7 @@
 
 exports.__esModule = true;
 exports.set = exports.normalizeRowProp = exports.normalizeRowCellProps = exports.normalizePrimaryProperty = exports.normalizeCellProps = exports.normalizeBackgroundColor = exports.initializeFilters = exports.filterAndSortData = exports.datumValue = exports.buildGroups = exports.buildGroupState = exports.buildFooterValues = void 0;
+function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 // This file contains helper functions for DataTable, to keep the component
 // files simpler.
 
@@ -265,6 +266,7 @@ var cellPropertyNames = ['background', 'border', 'pad'];
 // For example, background={{ header: { background } }}
 // will become cellProps.header.background
 var normalizeCellProps = exports.normalizeCellProps = function normalizeCellProps(props, theme) {
+  var _theme$dataTable3;
   var result = {};
   tableContextNames.forEach(function (context) {
     result[context] = {
@@ -300,11 +302,13 @@ var normalizeCellProps = exports.normalizeCellProps = function normalizeCellProp
       }
     });
   });
+  result.body.selected = _extends({}, theme == null || (_theme$dataTable3 = theme.dataTable) == null || (_theme$dataTable3 = _theme$dataTable3.body) == null ? void 0 : _theme$dataTable3.selected);
   return result;
 };
 var normalizeRowCellProps = exports.normalizeRowCellProps = function normalizeRowCellProps(rowProps, cellProps, primaryKey, index) {
   var result = {
-    pinned: {}
+    pinned: {},
+    selected: cellProps.selected
   };
   ['background', 'border', 'pad'].forEach(function (propName) {
     var _rowProps$primaryKey;

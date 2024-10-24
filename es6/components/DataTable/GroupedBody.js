@@ -133,7 +133,7 @@ export var GroupedBody = /*#__PURE__*/forwardRef(function (_ref, ref) {
       key: key,
       size: size
     }, /*#__PURE__*/React.createElement(ExpanderCell, {
-      background: cellProps.background,
+      background: isSelected && cellProps.selected.background || cellProps.background,
       border: cellProps.border,
       context: context,
       pad: cellProps.pad,
@@ -141,7 +141,7 @@ export var GroupedBody = /*#__PURE__*/forwardRef(function (_ref, ref) {
       expanded: expanded,
       verticalAlign: verticalAlign
     }), (selected || onSelect) && /*#__PURE__*/React.createElement(TableCell, {
-      background: cellProps.background,
+      background: isSelected && cellProps.selected.background || cellProps.background,
       border: cellProps.pinned.border || cellProps.border,
       plain: "noPad",
       size: "auto",
@@ -163,7 +163,7 @@ export var GroupedBody = /*#__PURE__*/forwardRef(function (_ref, ref) {
       }
       return /*#__PURE__*/React.createElement(Cell, {
         key: column.property,
-        background: cellProps.background,
+        background: isSelected && cellProps.selected.background || cellProps.background,
         border: cellProps.border,
         context: context,
         column: column,

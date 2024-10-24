@@ -67,7 +67,7 @@ var Row = /*#__PURE__*/memo(function (_ref) {
       return setActive(undefined);
     } : undefined
   }, (selected || onSelect) && /*#__PURE__*/React.createElement(Cell, {
-    background: (pinnedOffset == null ? void 0 : pinnedOffset._grommetDataTableSelect) && cellProps.pinned.background || cellProps.background,
+    background: isSelected && cellProps.selected.background || (pinnedOffset == null ? void 0 : pinnedOffset._grommetDataTableSelect) && cellProps.pinned.background || cellProps.background,
     border: cellProps.pinned.border || cellProps.border,
     pinnedOffset: pinnedOffset == null ? void 0 : pinnedOffset._grommetDataTableSelect,
     "aria-disabled": isDisabled || !onSelect || undefined,
@@ -94,6 +94,7 @@ var Row = /*#__PURE__*/memo(function (_ref) {
     },
     verticalAlign: verticalAlign
   }), rowDetails && /*#__PURE__*/React.createElement(ExpanderCell, {
+    background: isSelected && cellProps.selected.background,
     context: isRowExpanded ? 'groupHeader' : 'body',
     expanded: isRowExpanded,
     onToggle: function onToggle() {
@@ -110,11 +111,12 @@ var Row = /*#__PURE__*/memo(function (_ref) {
   }), columns.map(function (column) {
     return /*#__PURE__*/React.createElement(Cell, {
       key: column.property,
-      background: column.pin && cellProps.pinned.background || cellProps.background,
+      background: isSelected && cellProps.selected.background || column.pin && cellProps.pinned.background || cellProps.background,
       border: column.pin && cellProps.pinned.border || cellProps.border,
       context: "body",
       column: column,
       datum: datum,
+      isSelected: isSelected,
       pad: column.pin && cellProps.pinned.pad || cellProps.pad,
       pinnedOffset: pinnedOffset && pinnedOffset[column.property],
       primaryProperty: primaryProperty,
