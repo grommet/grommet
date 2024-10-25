@@ -76,6 +76,7 @@ const Row = memo(
         {(selected || onSelect) && (
           <Cell
             background={
+              (isSelected && cellProps.selected.background) ||
               (pinnedOffset?._grommetDataTableSelect &&
                 cellProps.pinned.background) ||
               cellProps.background
@@ -113,6 +114,7 @@ const Row = memo(
 
         {rowDetails && (
           <ExpanderCell
+            background={isSelected && cellProps.selected.background}
             context={isRowExpanded ? 'groupHeader' : 'body'}
             expanded={isRowExpanded}
             onToggle={() => {
@@ -130,6 +132,7 @@ const Row = memo(
           <Cell
             key={column.property}
             background={
+              (isSelected && cellProps.selected.background) ||
               (column.pin && cellProps.pinned.background) ||
               cellProps.background
             }
@@ -137,6 +140,7 @@ const Row = memo(
             context="body"
             column={column}
             datum={datum}
+            isSelected={isSelected}
             pad={(column.pin && cellProps.pinned.pad) || cellProps.pad}
             pinnedOffset={pinnedOffset && pinnedOffset[column.property]}
             primaryProperty={primaryProperty}
