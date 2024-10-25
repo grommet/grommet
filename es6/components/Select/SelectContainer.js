@@ -39,41 +39,48 @@ var ClearButton = /*#__PURE__*/forwardRef(function (_ref, ref) {
     fill: "horizontal",
     ref: ref,
     onClick: onClear,
-    focusIndicator: false
-  }, passThemeFlag, rest), /*#__PURE__*/React.createElement(Box, _extends({}, theme.select.clear.container, {
-    align: align
-  }), /*#__PURE__*/React.createElement(Text, theme.select.clear.text, buttonLabel)));
+    focusIndicator: false,
+    plain: true
+  }, passThemeFlag, rest), function (_ref2) {
+    var _theme$select$clear;
+    var hover = _ref2.hover;
+    var boxProps = _extends({}, theme.select.clear.container);
+    delete boxProps.hover; // avoid passing hover object to Box
+    return /*#__PURE__*/React.createElement(Box, _extends({}, boxProps, hover ? (_theme$select$clear = theme.select.clear) == null || (_theme$select$clear = _theme$select$clear.container) == null ? void 0 : _theme$select$clear.hover : {}, {
+      align: align
+    }), /*#__PURE__*/React.createElement(Text, theme.select.clear.text, buttonLabel));
+  });
 });
-var SelectContainer = /*#__PURE__*/forwardRef(function (_ref2, ref) {
-  var clear = _ref2.clear,
-    _ref2$children = _ref2.children,
-    children = _ref2$children === void 0 ? null : _ref2$children,
-    disabled = _ref2.disabled,
-    disabledKey = _ref2.disabledKey,
-    dropHeight = _ref2.dropHeight,
-    _ref2$emptySearchMess = _ref2.emptySearchMessage,
-    emptySearchMessage = _ref2$emptySearchMess === void 0 ? 'No matches found' : _ref2$emptySearchMess,
-    id = _ref2.id,
-    labelKey = _ref2.labelKey,
-    multiple = _ref2.multiple,
-    name = _ref2.name,
-    onChange = _ref2.onChange,
-    onKeyDown = _ref2.onKeyDown,
-    onMore = _ref2.onMore,
-    onSearch = _ref2.onSearch,
-    optionIndexesInValue = _ref2.optionIndexesInValue,
-    options = _ref2.options,
-    allOptions = _ref2.allOptions,
-    searchPlaceholder = _ref2.searchPlaceholder,
-    search = _ref2.search,
-    setSearch = _ref2.setSearch,
-    selected = _ref2.selected,
-    usingKeyboard = _ref2.usingKeyboard,
-    _ref2$value = _ref2.value,
-    value = _ref2$value === void 0 ? '' : _ref2$value,
-    valueKey = _ref2.valueKey,
-    _ref2$replace = _ref2.replace,
-    replace = _ref2$replace === void 0 ? true : _ref2$replace;
+var SelectContainer = /*#__PURE__*/forwardRef(function (_ref3, ref) {
+  var clear = _ref3.clear,
+    _ref3$children = _ref3.children,
+    children = _ref3$children === void 0 ? null : _ref3$children,
+    disabled = _ref3.disabled,
+    disabledKey = _ref3.disabledKey,
+    dropHeight = _ref3.dropHeight,
+    _ref3$emptySearchMess = _ref3.emptySearchMessage,
+    emptySearchMessage = _ref3$emptySearchMess === void 0 ? 'No matches found' : _ref3$emptySearchMess,
+    id = _ref3.id,
+    labelKey = _ref3.labelKey,
+    multiple = _ref3.multiple,
+    name = _ref3.name,
+    onChange = _ref3.onChange,
+    onKeyDown = _ref3.onKeyDown,
+    onMore = _ref3.onMore,
+    onSearch = _ref3.onSearch,
+    optionIndexesInValue = _ref3.optionIndexesInValue,
+    options = _ref3.options,
+    allOptions = _ref3.allOptions,
+    searchPlaceholder = _ref3.searchPlaceholder,
+    search = _ref3.search,
+    setSearch = _ref3.setSearch,
+    selected = _ref3.selected,
+    usingKeyboard = _ref3.usingKeyboard,
+    _ref3$value = _ref3.value,
+    value = _ref3$value === void 0 ? '' : _ref3$value,
+    valueKey = _ref3.valueKey,
+    _ref3$replace = _ref3.replace,
+    replace = _ref3$replace === void 0 ? true : _ref3$replace;
   var _useThemeValue2 = useThemeValue(),
     theme = _useThemeValue2.theme,
     passThemeFlag = _useThemeValue2.passThemeFlag;

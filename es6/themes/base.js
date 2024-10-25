@@ -1798,6 +1798,9 @@ export var generate = function generate(baseSpacing, scale) {
         container: {
           pad: 'small',
           background: 'background-contrast'
+          // hover: {
+          //   // any box props
+          // },
         },
         // any box props
         text: {

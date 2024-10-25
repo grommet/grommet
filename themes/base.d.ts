@@ -1459,7 +1459,7 @@ export interface ThemeType {
   select?: {
     background?: BackgroundType;
     clear?: {
-      container?: BoxProps;
+      container?: BoxProps & { hover?: BoxProps };
       text?: TextProps;
     };
     container?: {
