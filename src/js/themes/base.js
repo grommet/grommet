@@ -807,6 +807,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
     dataTable: {
       // body: {
       //   extend: undefined,
+      //   selected: undefined,
       // },
       pinned: {
         // body: {
@@ -1686,6 +1687,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         container: {
           pad: 'small',
           background: 'background-contrast',
+          // hover: {
+          //   // any box props
+          // },
         }, // any box props
         text: {
           color: 'text-weak',

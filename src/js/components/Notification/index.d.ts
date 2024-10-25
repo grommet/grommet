@@ -4,6 +4,7 @@ import { AnchorType } from '..';
 export type StatusType = 'critical' | 'warning' | 'normal' | 'info' | 'unknown';
 
 export interface NotificationProps {
+  id?: string;
   actions?: AnchorType[];
   global?: boolean;
   title?: string;

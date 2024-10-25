@@ -1763,6 +1763,58 @@ describe('Select', () => {
     expect(onChange.mock.calls[0][0].value.type).toBe(Box);
   });
 
+  test('renders custom clear selection styling', () => {
+    jest.useFakeTimers();
+    const customTheme = {
+      select: {
+        clear: {
+          container: {
+            pad: {
+              vertical: '6px',
+              horizontal: '12px',
+            },
+            background: undefined,
+            hover: {
+              background: 'blue',
+            },
+          }, // any box props
+          text: {
+            color: 'text-strong',
+            weight: 600,
+          }, // any text props
+        },
+      },
+    };
+
+    const { asFragment, getByRole, getByPlaceholderText } = render(
+      <Grommet theme={customTheme}>
+        <Select
+          data-testid="test-select-style-open"
+          id="test-clear-selection"
+          options={['morning', 'afternoon', 'evening']}
+          placeholder="Select time"
+          value="afternoon"
+          clear
+        />
+      </Grommet>,
+    );
+
+    expect(asFragment()).toMatchSnapshot();
+
+    fireEvent.click(getByPlaceholderText('Select time'));
+    act(() => {
+      jest.advanceTimersByTime(100);
+    });
+
+    const clearButton = getByRole('button', { name: /Clear selection/ });
+    expect(clearButton).toBeInTheDocument();
+    fireEvent.mouseOver(clearButton);
+    act(() => {
+      jest.advanceTimersByTime(200);
+    });
+    expectPortal('test-clear-selection__drop').toMatchSnapshot();
+  });
+
   window.scrollTo.mockRestore();
   window.HTMLElement.prototype.scrollIntoView.mockRestore();
 });

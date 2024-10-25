@@ -14,6 +14,8 @@ export type LayerPositionType =
   | 'hidden'
   | 'left'
   | 'right'
+  | 'start'
+  | 'end'
   | 'top'
   | 'top-left'
   | 'top-right';
