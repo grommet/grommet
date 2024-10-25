@@ -302,6 +302,7 @@ export const normalizeCellProps = (props, theme) => {
       }
     });
   });
+  result.body.selected = { ...theme?.dataTable?.body?.selected };
   return result;
 };
 
@@ -311,7 +312,7 @@ export const normalizeRowCellProps = (
   primaryKey,
   index,
 ) => {
-  const result = { pinned: {} };
+  const result = { pinned: {}, selected: cellProps.selected };
   ['background', 'border', 'pad'].forEach((propName) => {
     const row = primaryKey && rowProps && rowProps?.[primaryKey]?.[propName];
     const cell = cellProps[propName];
