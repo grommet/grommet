@@ -5568,6 +5568,7 @@ exports[`Calendar dates 1`] = `
   width: 54.857142857142854px;
   height: 54.857142857142854px;
   background-color: rgba(125, 76, 219, 0.1);
+  font-weight: bold;
 }
 
 .c0 {
@@ -6685,6 +6686,7 @@ exports[`Calendar daysOfWeek 1`] = `
   width: 54.857142857142854px;
   height: 54.857142857142854px;
   background-color: rgba(125, 76, 219, 0.1);
+  font-weight: bold;
 }
 
 .c0 {
@@ -18421,6 +18423,7 @@ exports[`Calendar select dates 1`] = `
   width: 54.857142857142854px;
   height: 54.857142857142854px;
   background-color: rgba(125, 76, 219, 0.1);
+  font-weight: bold;
 }
 
 .c0 {
@@ -19555,7 +19558,7 @@ exports[`Calendar select dates 2`] = `
                 type="button"
               >
                 <div
-                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 bQElur"
+                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ivHHhp"
                 >
                   9
                 </div>
@@ -20397,6 +20400,7 @@ exports[`Calendar should render day and range rounding and states 1`] = `
   width: 54.857142857142854px;
   height: 54.857142857142854px;
   color: #00C8FF;
+  font-weight: bold;
   border-radius: 100%;
 }
 

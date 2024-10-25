@@ -566,6 +566,9 @@ export interface ThemeType {
       };
       inRange?: {
         color?: ColorType;
+        font?: {
+          weight?: string | number;
+        };
         hover?: {
           background?: BackgroundType;
           color?: ColorType;

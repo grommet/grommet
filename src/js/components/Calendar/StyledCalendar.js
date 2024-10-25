@@ -178,13 +178,13 @@ const dayHoverStyle = (props) => {
 };
 
 const dayFontStyle = (props) => {
-  let style = '';
+  let fontWeight;
   if (props.isSelected) {
-    style += `font-weight: ${
-      props.theme.calendar.day?.selected?.font?.weight || 'bold'
-    };`;
+    fontWeight = props.theme.calendar.day?.selected?.font?.weight;
+  } else if (props.inRange) {
+    fontWeight = props.theme.calendar.day?.inRange?.font?.weight;
   }
-  return style;
+  return fontWeight && `font-weight: ${fontWeight};`;
 };
 
 const StyledDay = styled.div.withConfig(styledComponentsConfig)`

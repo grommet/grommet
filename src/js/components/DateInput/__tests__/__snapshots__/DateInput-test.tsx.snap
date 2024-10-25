@@ -11738,6 +11738,7 @@ exports[`DateInput range format inline 1`] = `
   width: 54.857142857142854px;
   height: 54.857142857142854px;
   background-color: rgba(125, 76, 219, 0.1);
+  font-weight: bold;
 }
 
 .c4 {
@@ -12973,6 +12974,7 @@ exports[`DateInput range inline 1`] = `
   width: 54.857142857142854px;
   height: 54.857142857142854px;
   background-color: rgba(125, 76, 219, 0.1);
+  font-weight: bold;
 }
 
 @media only screen and (max-width: 768px) {
@@ -21635,6 +21637,7 @@ exports[`DateInput select format inline range 1`] = `
   width: 54.857142857142854px;
   height: 54.857142857142854px;
   background-color: rgba(125, 76, 219, 0.1);
+  font-weight: bold;
 }
 
 .c4 {
@@ -23803,6 +23806,7 @@ exports[`DateInput select format inline range without timezone 1`] = `
   width: 54.857142857142854px;
   height: 54.857142857142854px;
   background-color: rgba(125, 76, 219, 0.1);
+  font-weight: bold;
 }
 
 .c4 {
@@ -35190,6 +35194,7 @@ exports[`DateInput type format inline range 1`] = `
   width: 54.857142857142854px;
   height: 54.857142857142854px;
   background-color: rgba(125, 76, 219, 0.1);
+  font-weight: bold;
 }
 
 .c4 {
@@ -36699,7 +36704,7 @@ exports[`DateInput type format inline range 2`] = `
                   type="button"
                 >
                   <div
-                    class="StyledCalendar__StyledDay-sc-1y4xhmp-5 bQElur"
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ivHHhp"
                   >
                     22
                   </div>
@@ -37357,6 +37362,7 @@ exports[`DateInput type format inline range partial 1`] = `
   width: 54.857142857142854px;
   height: 54.857142857142854px;
   background-color: rgba(125, 76, 219, 0.1);
+  font-weight: bold;
 }
 
 .c4 {
@@ -40385,6 +40391,7 @@ exports[`DateInput type format inline range partial without timezone 1`] = `
   width: 54.857142857142854px;
   height: 54.857142857142854px;
   background-color: rgba(125, 76, 219, 0.1);
+  font-weight: bold;
 }
 
 .c4 {
@@ -44294,6 +44301,7 @@ exports[`DateInput type format inline range without timezone 1`] = `
   width: 54.857142857142854px;
   height: 54.857142857142854px;
   background-color: rgba(125, 76, 219, 0.1);
+  font-weight: bold;
 }
 
 .c4 {
@@ -45603,6 +45611,7 @@ exports[`DateInput type format inline range without timezone 2`] = `
   width: 54.857142857142854px;
   height: 54.857142857142854px;
   background-color: rgba(125, 76, 219, 0.1);
+  font-weight: bold;
 }
 
 .c4 {
