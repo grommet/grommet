@@ -241,6 +241,8 @@ const Body = forwardRef(
         onSpace={
           clickableRow
             ? (event) => {
+                event.preventDefault();
+
                 if (typeof onClickRow === 'function') {
                   event.persist();
                   const adjustedEvent = event;
