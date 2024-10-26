@@ -4,6 +4,7 @@ import { AnchorPropTypes } from '../Anchor/propTypes';
 let PropType = {};
 if (process.env.NODE_ENV !== 'production') {
   PropType = {
+    id: PropTypes.string,
     actions: PropTypes.arrayOf(PropTypes.shape(AnchorPropTypes)),
     global: PropTypes.bool,
     title: PropTypes.string,

@@ -61,6 +61,7 @@ exports[`Components loads 1`] = `
       "background": [Function],
       "basis": [Function],
       "border": [Function],
+      "cssGap": [Function],
       "direction": [Function],
       "elevation": [Function],
       "fill": [Function],

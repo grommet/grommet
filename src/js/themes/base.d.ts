@@ -726,6 +726,9 @@ export interface ThemeType {
   dataTable?: {
     body?: {
       extend?: ExtendType;
+      selected?: {
+        background?: BackgroundType;
+      };
     };
     container?: BoxProps;
     header?: {
@@ -886,6 +889,13 @@ export interface ThemeType {
     margin?: MarginType;
     round?: RoundType;
     extend?: ExtendType;
+    survey?: {
+      label?: {
+        margin?: MarginType;
+        size?: string;
+        color?: ColorType;
+      };
+    };
   };
   grommet?: {
     extend?: ExtendType;
@@ -1449,7 +1459,7 @@ export interface ThemeType {
   select?: {
     background?: BackgroundType;
     clear?: {
-      container?: BoxProps;
+      container?: BoxProps & { hover?: BoxProps };
       text?: TextProps;
     };
     container?: {
@@ -1609,7 +1619,7 @@ export interface ThemeType {
     round?: RoundType;
     name?: TextProps;
     pad?: PadType;
-    remove?: ButtonType;
+    remove?: ButtonType | { kind?: string };
     separator?: string;
     size?: {
       xsmall?: {
@@ -1617,30 +1627,35 @@ export interface ThemeType {
         icon?: {
           size?: string;
         };
+        remove?: { size?: string; margin?: MarginType };
       };
       small?: {
         pad?: PadType;
         icon?: {
           size?: string;
         };
+        remove?: { size?: string; margin?: MarginType };
       };
       medium?: {
         pad?: PadType;
         icon?: {
           size?: string;
         };
+        remove?: { size?: string; margin?: MarginType };
       };
       large?: {
         pad?: PadType;
         icon?: {
           size?: string;
         };
+        remove?: { size?: string; margin?: MarginType };
       };
       xlarge?: {
         pad?: PadType;
         icon?: {
           size?: string;
         };
+        remove?: { size?: string; margin?: MarginType };
       };
     };
     value?: TextProps;
@@ -1730,15 +1745,20 @@ export interface ThemeType {
   };
   toggleGroup?: {
     button?: {
-      pad?: PadType;
+      border?: {
+        radius?: string;
+      };
       iconOnly?: {
         pad?: PadType;
       };
+      pad?: PadType;
     };
     container?: BoxProps;
-    divider?: {
-      color?: ColorType;
-    };
+    divider?:
+      | {
+          color?: ColorType;
+        }
+      | boolean;
   };
   video?: {
     captions?: {

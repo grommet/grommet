@@ -1141,7 +1141,6 @@ exports[`MaskedInput event target props are available option via mouse 3`] = `""
 
 exports[`MaskedInput event target props are available option via mouse 4`] = `
 <div
-  aria-hidden="true"
   class="StyledGrommet-sc-19lkkz7-0 drDzQW"
 >
   <div
@@ -1150,12 +1149,10 @@ exports[`MaskedInput event target props are available option via mouse 4`] = `
     <input
       autocomplete="off"
       class="StyledMaskedInput-sc-99vkfa-0 gOcpal"
-      data-g-tabindex="none"
       data-testid="test-input"
       id="item"
       name="item"
       placeholder="!"
-      tabindex="-1"
       value="aa!"
     />
   </div>
@@ -2621,7 +2618,6 @@ exports[`MaskedInput option via mouse 3`] = `""`;
 
 exports[`MaskedInput option via mouse 4`] = `
 <div
-  aria-hidden="true"
   class="StyledGrommet-sc-19lkkz7-0 drDzQW"
 >
   <div
@@ -2630,12 +2626,10 @@ exports[`MaskedInput option via mouse 4`] = `
     <input
       autocomplete="off"
       class="StyledMaskedInput-sc-99vkfa-0 gOcpal"
-      data-g-tabindex="none"
       data-testid="test-input"
       id="item"
       name="item"
       placeholder="!"
-      tabindex="-1"
       value="aa!"
     />
   </div>

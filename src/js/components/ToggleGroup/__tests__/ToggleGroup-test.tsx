@@ -558,4 +558,38 @@ describe('ToggleGroup', () => {
     );
     expect(asFragment()).toMatchSnapshot();
   });
+
+  test('should allow divider to be set to false', () => {
+    const { asFragment } = render(
+      <Grommet
+        theme={{
+          toggleGroup: {
+            divider: false,
+          },
+        }}
+      >
+        <ToggleGroup options={['one', 'two']} />
+      </Grommet>,
+    );
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  test('should allow rounding on individual buttons', () => {
+    const { asFragment } = render(
+      <Grommet
+        theme={{
+          toggleGroup: {
+            button: {
+              border: {
+                radius: '2em',
+              },
+            },
+          },
+        }}
+      >
+        <ToggleGroup options={['one', 'two']} />
+      </Grommet>,
+    );
+    expect(asFragment()).toMatchSnapshot();
+  });
 });
