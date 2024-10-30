@@ -256,3 +256,141 @@ describe('TextArea', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 });
+
+describe('TextArea resize keyboard controls', () => {
+  beforeEach(() => {
+    // Mock getBoundingClientRect as it is used in the TextArea component and doesn't exist in the test environment
+    Element.prototype.getBoundingClientRect = jest.fn(() => ({
+      width: 100,
+      height: 100,
+      top: 0,
+      left: 0,
+      bottom: 0,
+      right: 0,
+      x: 0,
+      y: 0,
+      toJSON: () => {},
+    }));
+  });
+
+  test('should resize horizontally with arrow keys when resize="horizontal"', () => {
+    const ref = React.createRef<HTMLTextAreaElement>();
+
+    const { getByRole } = render(
+      <Grommet>
+        <TextArea ref={ref} resize="horizontal" value="" />
+      </Grommet>,
+    );
+
+    const textarea = getByRole('textbox');
+    const initialWidth = textarea.getBoundingClientRect().width;
+
+    fireEvent.keyDown(textarea, { code: 'ArrowUp' });
+    expect(textarea.style.width).toBe(`${initialWidth + 10}px`);
+    expect(textarea.style.height).toBe('');
+
+    fireEvent.keyDown(textarea, { code: 'ArrowDown' });
+    expect(textarea.style.width).toBe(`${initialWidth - 10}px`);
+    expect(textarea.style.height).toBe('');
+  });
+
+  test('should resize vertically with arrow keys when resize="vertical"', () => {
+    const ref = React.createRef<HTMLTextAreaElement>();
+    const { getByRole } = render(
+      <Grommet>
+        <TextArea ref={ref} resize="vertical" value="" />
+      </Grommet>,
+    );
+
+    const textarea = getByRole('textbox');
+    const initialHeight = textarea.getBoundingClientRect().height;
+
+    fireEvent.keyDown(textarea, { code: 'ArrowUp' });
+    expect(textarea.style.height).toBe(`${initialHeight + 10}px`);
+    expect(textarea.style.width).toBe('');
+
+    fireEvent.keyDown(textarea, { code: 'ArrowDown' });
+    expect(textarea.style.height).toBe(`${initialHeight - 10}px`);
+    expect(textarea.style.width).toBe('');
+  });
+
+  test('should resize both dimensions with arrow keys when resize=true', () => {
+    const ref = React.createRef<HTMLTextAreaElement>();
+
+    const { getByRole } = render(
+      <Grommet>
+        <TextArea ref={ref} resize={true} value="" />
+      </Grommet>,
+    );
+
+    const textarea = getByRole('textbox');
+    const initialHeight = textarea.getBoundingClientRect().height;
+    const initialWidth = textarea.getBoundingClientRect().width;
+
+    fireEvent.keyDown(textarea, { code: 'ArrowUp' });
+    expect(textarea.style.width).toBe(`${initialWidth + 10}px`);
+    expect(textarea.style.height).toBe(`${initialHeight + 10}px`);
+
+    fireEvent.keyDown(textarea, { code: 'ArrowDown' });
+    expect(textarea.style.width).toBe(`${initialWidth - 10}px`);
+    expect(textarea.style.height).toBe(`${initialHeight - 10}px`);
+  });
+
+  test('should not resize when resize=false', () => {
+    const ref = React.createRef<HTMLTextAreaElement>();
+
+    const { getByRole } = render(
+      <Grommet>
+        <TextArea ref={ref} resize={false} value="" />
+      </Grommet>,
+    );
+
+    const textarea = getByRole('textbox');
+
+    fireEvent.keyDown(textarea, { code: 'ArrowUp' });
+    expect(textarea.style.width).toBe('');
+    expect(textarea.style.height).toBe('');
+
+    fireEvent.keyDown(textarea, { code: 'ArrowDown' });
+    expect(textarea.style.width).toBe('');
+    expect(textarea.style.height).toBe('');
+  });
+
+  test('should not resize when textarea has value', () => {
+    const ref = React.createRef<HTMLTextAreaElement>();
+
+    const { getByRole } = render(
+      <Grommet>
+        <TextArea ref={ref} resize={true} value="test value" />
+      </Grommet>,
+    );
+
+    const textarea = getByRole('textbox');
+
+    fireEvent.keyDown(textarea, { code: 'ArrowUp' });
+    expect(textarea.style.width).toBe('');
+    expect(textarea.style.height).toBe('');
+
+    fireEvent.keyDown(textarea, { code: 'ArrowDown' });
+    expect(textarea.style.width).toBe('');
+    expect(textarea.style.height).toBe('');
+  });
+
+  test('should not resize when ref is not provided in textarea', () => {
+    const { getByRole } = render(
+      <Grommet>
+        <TextArea resize={true} />
+      </Grommet>,
+    );
+
+    const textarea = getByRole('textbox');
+
+    fireEvent.keyDown(textarea, { code: 'ArrowUp' });
+    expect(textarea.style.width).toBe('');
+    expect(textarea.style.height).toBe('');
+
+    fireEvent.keyDown(textarea, { code: 'ArrowDown' });
+    expect(textarea.style.width).toBe('');
+    expect(textarea.style.height).toBe('');
+  });
+});
