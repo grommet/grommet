@@ -190,13 +190,17 @@ var Body = /*#__PURE__*/forwardRef(function (_ref2, ref) {
     } : undefined
     // The WCAG recommendation for checkboxes is to select them with "Space"
     ,
-    onSpace: function onSpace() {
-      if (clickableRow) {
-        if (onClickRow === 'select') {
-          selectRow();
-        }
+    onSpace: clickableRow ? function (event) {
+      event.preventDefault();
+      if (typeof onClickRow === 'function') {
+        event.persist();
+        var adjustedEvent = event;
+        adjustedEvent.datum = data == null ? void 0 : data[active];
+        onClickRow(adjustedEvent);
+      } else if (onClickRow === 'select') {
+        selectRow();
       }
-    },
+    } : undefined,
     onUp: onClickRow && active ? function () {
       return setActive(active - 1);
     } : undefined,
