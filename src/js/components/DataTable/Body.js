@@ -238,13 +238,22 @@ const Body = forwardRef(
             : undefined
         }
         // The WCAG recommendation for checkboxes is to select them with "Space"
-        onSpace={() => {
-          if (clickableRow) {
-            if (onClickRow === 'select') {
-              selectRow();
-            }
-          }
-        }}
+        onSpace={
+          clickableRow
+            ? (event) => {
+                event.preventDefault();
+
+                if (typeof onClickRow === 'function') {
+                  event.persist();
+                  const adjustedEvent = event;
+                  adjustedEvent.datum = data?.[active];
+                  onClickRow(adjustedEvent);
+                } else if (onClickRow === 'select') {
+                  selectRow();
+                }
+              }
+            : undefined
+        }
         onUp={onClickRow && active ? () => setActive(active - 1) : undefined}
         onDown={
           onClickRow && data.length && active < data.length - 1
