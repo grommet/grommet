@@ -39,7 +39,33 @@ const TextArea = forwardRef(
           event.stopPropagation();
           event.nativeEvent.stopImmediatePropagation();
         }}
-        onKeyDown={onKeyDown}
+        onKeyDown={(event) => {
+          if (onKeyDown) {
+            onKeyDown(event);
+          }
+          if (ref?.current && !!ref.current.value === false) {
+            if (rest.resize === true || rest.resize === 'horizontal') {
+              const currentWidth = ref.current.getBoundingClientRect().width;
+              if (event.code === 'ArrowDown') {
+                // eslint-disable-next-line no-param-reassign
+                ref.current.style.width = `${currentWidth - 10}px`;
+              } else if (event.code === 'ArrowUp') {
+                // eslint-disable-next-line no-param-reassign
+                ref.current.style.width = `${currentWidth + 10}px`;
+              }
+            }
+            if (rest.resize === true || rest.resize === 'vertical') {
+              const currentHeight = ref.current.getBoundingClientRect().height;
+              if (event.code === 'ArrowDown') {
+                // eslint-disable-next-line no-param-reassign
+                ref.current.style.height = `${currentHeight - 10}px`;
+              } else if (event.code === 'ArrowUp') {
+                // eslint-disable-next-line no-param-reassign
+                ref.current.style.height = `${currentHeight + 10}px`;
+              }
+            }
+          }
+        }}
       >
         <StyledTextArea
           aria-label={a11yTitle}
