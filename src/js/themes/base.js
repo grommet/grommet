@@ -636,18 +636,6 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       // },
       // daySize must align with global.size
       small: {
-        // title: {},
-        fontSize: `${baseFontSize - fontScale}px`,
-        lineHeight: 1.375,
-        daySize: `${(baseSpacing * 8) / 7}px`,
-        slideDuration: '0.2s',
-      },
-      medium: {
-        // title: {},
-        fontSize: `${baseFontSize}px`,
-        lineHeight: 1.45,
-        daySize: `${(baseSpacing * 16) / 7}px`,
-        slideDuration: '0.5s',
         // day: {
         //   round: undefined,
         // },
@@ -660,8 +648,44 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         //     round: undefined,
         //   },
         // },
+        // title: {},
+        fontSize: `${baseFontSize - fontScale}px`,
+        lineHeight: 1.375,
+        daySize: `${(baseSpacing * 8) / 7}px`,
+        slideDuration: '0.2s',
+      },
+      medium: {
+        // day: {
+        //   round: undefined,
+        // },
+        // range: {
+        //   round: undefined,
+        //   start: {
+        //     round: undefined,
+        //   },
+        //   end: {
+        //     round: undefined,
+        //   },
+        // },
+        // title: {},
+        fontSize: `${baseFontSize}px`,
+        lineHeight: 1.45,
+        daySize: `${(baseSpacing * 16) / 7}px`,
+        slideDuration: '0.5s',
       },
       large: {
+        // day: {
+        //   round: undefined,
+        // },
+        // range: {
+        //   round: undefined,
+        //   start: {
+        //     round: undefined,
+        //   },
+        //   end: {
+        //     round: undefined,
+        //   },
+        // },
         // title: {},
         fontSize: `${baseFontSize + 3 * fontScale}px`,
         lineHeight: 1.11,

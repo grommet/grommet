@@ -76,20 +76,23 @@ const weeksSizeStyle = () => css`
   height: 100%;
 `;
 
+// fallback to medium if no size-specific styles
 const rangeRoundStyle = (props) => {
   let themeObj;
   if (props.isSelected) {
-    if (
-      props.rangePosition === 'start' &&
-      props.theme.calendar?.[props.sizeProp]?.range?.start?.round
-    ) {
-      themeObj = props.theme.calendar[props.sizeProp].range.start.round;
-    } else if (
-      props.rangePosition === 'end' &&
-      props.theme.calendar?.[props.sizeProp]?.range?.end?.round
-    )
-      themeObj = props.theme.calendar[props.sizeProp].range.end.round;
-  } else themeObj = props.theme.calendar?.[props.sizeProp]?.range?.round;
+    const rangeStart =
+      props.theme.calendar?.[props.sizeProp]?.range?.start?.round ||
+      props.theme.calendar?.medium?.range?.start?.round;
+    const rangeEnd =
+      props.theme.calendar?.[props.sizeProp]?.range?.end?.round ||
+      props.theme.calendar?.medium?.range?.end?.round;
+    if (props.rangePosition === 'start' && rangeStart) {
+      themeObj = rangeStart;
+    } else if (props.rangePosition === 'end' && rangeEnd) themeObj = rangeEnd;
+  } else
+    themeObj =
+      props.theme.calendar?.[props.sizeProp]?.range?.round ||
+      props.theme.calendar?.medium?.range?.round;
   return (
     themeObj && [
       roundStyle(themeObj, props.responsive, props.theme),
@@ -143,6 +146,7 @@ const dayStyle = (props) => {
     // if they have, background will be applied to StyledDayContainer
     backgroundObj =
       !props.theme.calendar?.[props.sizeProp]?.range?.round &&
+      !props.theme.calendar?.medium.range?.round &&
       (props.theme.calendar.day?.inRange?.background || {
         color: 'control',
         opacity: 'weak',
@@ -195,13 +199,13 @@ const StyledDay = styled.div.withConfig(styledComponentsConfig)`
   ${(props) => dayStyle(props)}
   ${(props) => props.otherMonth && 'opacity: 0.5;'}
   ${(props) => dayFontStyle(props)}
-   ${(props) =>
-    props.theme.calendar?.[props.sizeProp]?.day?.round &&
-    roundStyle(
-      props.theme.calendar?.[props.sizeProp]?.day?.round,
-      props.responsive,
-      props.theme,
-    )}
+   ${(props) => {
+    // fallback to medium if no size-specific styles
+    const round =
+      props.theme.calendar?.[props.sizeProp]?.day?.round ||
+      props.theme.calendar?.medium?.day?.round;
+    return round && roundStyle(round, props.responsive, props.theme);
+  }}
   ${(props) => props.active && activeStyle}
   ${(props) => props.hover && dayHoverStyle(props)}
   ${(props) =>
