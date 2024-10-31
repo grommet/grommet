@@ -150,6 +150,7 @@ interface ButtonKindType {
     | boolean;
   color?: ColorType;
   direction?: DirectionType;
+  elevation?: ElevationType;
   font?: {
     size?: string;
     weight?: number | string;
@@ -188,6 +189,7 @@ interface ButtonType {
     radius?: string;
   };
   color?: ColorType;
+  elevation?: ElevationType;
   extend?: ExtendType;
   minWidth?: string;
   maxWidth?: string;
@@ -381,6 +383,7 @@ export interface ThemeType {
         medium?: string;
         large?: string;
         xlarge?: string;
+        [x: string]: string;
       };
       dark?: {
         none?: string;
@@ -389,6 +392,7 @@ export interface ThemeType {
         medium?: string;
         large?: string;
         xlarge?: string;
+        [x: string]: string;
       };
     };
     focus?: {

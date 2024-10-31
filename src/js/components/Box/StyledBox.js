@@ -7,6 +7,7 @@ import {
   borderStyle,
   breakpointStyle,
   edgeStyle,
+  elevationStyle,
   fillStyle,
   focusStyle,
   genericStyles,
@@ -74,13 +75,6 @@ const directionStyle = (direction, theme) => {
   }
   return styles;
 };
-
-const elevationStyle = (elevation) => css`
-  box-shadow: ${(props) =>
-    props.theme.global.elevation[props.theme.dark ? 'dark' : 'light'][
-      elevation
-    ]};
-`;
 
 const FLEX_MAP = {
   [true]: '1 1',

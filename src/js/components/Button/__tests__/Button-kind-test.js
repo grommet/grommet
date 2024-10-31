@@ -911,4 +911,49 @@ describe('Button kind', () => {
 
     expect(asFragment()).toMatchSnapshot();
   });
+
+  test('should render elevation', () => {
+    const DEFAULT_ELEVATION = 'inset 3px 0 red';
+    const PRIMARY_ELEVATION = 'inset 5px 0 blue';
+
+    const theme = {
+      global: {
+        elevation: {
+          light: {
+            'test-elevation': DEFAULT_ELEVATION,
+            'test-elevation-primary': PRIMARY_ELEVATION,
+          },
+          dark: {
+            'test-elevation': DEFAULT_ELEVATION,
+            'test-elevation-primary': PRIMARY_ELEVATION,
+          },
+        },
+      },
+      button: {
+        default: {
+          elevation: 'test-elevation',
+        },
+        primary: {
+          elevation: 'test-elevation-primary',
+        },
+        hover: {
+          elevation: 'large',
+          primary: {
+            elevation: 'medium',
+          },
+        },
+      },
+    };
+
+    const { asFragment } = render(
+      <Grommet theme={theme}>
+        <Button label="Default" />
+        <Button label="Primary" primary />
+        {/* should not render elevation on plain button */}
+        <Button>Plain</Button>
+      </Grommet>,
+    );
+
+    expect(asFragment()).toMatchSnapshot();
+  });
 });
