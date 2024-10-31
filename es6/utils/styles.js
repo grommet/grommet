@@ -287,6 +287,11 @@ export var sizeStyle = function sizeStyle(name, value, theme) {
   return css(["", ":", ";"], name, theme.global.size[value] || value);
 };
 export var plainInputStyle = css(["outline:none;border:none;"]);
+export var elevationStyle = function elevationStyle(elevation) {
+  return css(["box-shadow:", ";"], function (props) {
+    return props.theme.global.elevation[props.theme.dark ? 'dark' : 'light'][elevation];
+  });
+};
 
 // CSS for this sub-object in the theme
 export var kindPartStyles = function kindPartStyles(obj, theme, colorValue) {
@@ -317,6 +322,9 @@ export var kindPartStyles = function kindPartStyles(obj, theme, colorValue) {
   if (obj.opacity) {
     var opacity = obj.opacity === true ? theme.global.opacity.medium : theme.global.opacity[obj.opacity] || obj.opacity;
     styles.push("opacity: " + opacity + ";");
+  }
+  if (obj.elevation) {
+    styles.push(elevationStyle(obj.elevation));
   }
   if (obj.extend) styles.push(obj.extend);
   return styles;

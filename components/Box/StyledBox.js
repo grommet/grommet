@@ -38,11 +38,6 @@ var directionStyle = function directionStyle(direction, theme) {
   }
   return styles;
 };
-var elevationStyle = function elevationStyle(elevation) {
-  return (0, _styledComponents.css)(["box-shadow:", ";"], function (props) {
-    return props.theme.global.elevation[props.theme.dark ? 'dark' : 'light'][elevation];
-  });
-};
 var FLEX_MAP = (_FLEX_MAP = {}, _FLEX_MAP[true] = '1 1', _FLEX_MAP[false] = '0 0', _FLEX_MAP.grow = '1 0', _FLEX_MAP.shrink = '0 1', _FLEX_MAP);
 var flexGrowShrinkProp = function flexGrowShrinkProp(flex) {
   if (typeof flex === 'boolean' || typeof flex === 'string') {
@@ -205,7 +200,7 @@ var StyledBox = exports.StyledBox = _styledComponents["default"].div.withConfig(
 }, function (props) {
   return props.overflowProp && (0, _utils.overflowStyle)(props.overflowProp);
 }, function (props) {
-  return props.elevationProp && elevationStyle(props.elevationProp);
+  return props.elevationProp && (0, _utils.elevationStyle)(props.elevationProp);
 }, function (props) {
   return props.gap && gapStyle(props.directionProp, props.gap, props.responsive, props.wrapProp, props.theme);
 }, function (props) {

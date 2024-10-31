@@ -1,7 +1,7 @@
 var _FLEX_MAP;
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 import styled, { css } from 'styled-components';
-import { alignContentStyle, alignStyle, backgroundStyle, borderStyle, breakpointStyle, edgeStyle, fillStyle, focusStyle, genericStyles, getBreakpointStyle, getHoverIndicatorStyle, heightStyle, overflowStyle, parseMetricToNum, responsiveBorderStyle, widthStyle } from '../../utils';
+import { alignContentStyle, alignStyle, backgroundStyle, borderStyle, breakpointStyle, edgeStyle, elevationStyle, fillStyle, focusStyle, genericStyles, getBreakpointStyle, getHoverIndicatorStyle, heightStyle, overflowStyle, parseMetricToNum, responsiveBorderStyle, widthStyle } from '../../utils';
 import { roundStyle, styledComponentsConfig } from '../../utils/styles';
 import { animationBounds, animationObjectStyle } from '../../utils/animation';
 var BASIS_MAP = {
@@ -31,11 +31,6 @@ var directionStyle = function directionStyle(direction, theme) {
     }
   }
   return styles;
-};
-var elevationStyle = function elevationStyle(elevation) {
-  return css(["box-shadow:", ";"], function (props) {
-    return props.theme.global.elevation[props.theme.dark ? 'dark' : 'light'][elevation];
-  });
 };
 var FLEX_MAP = (_FLEX_MAP = {}, _FLEX_MAP[true] = '1 1', _FLEX_MAP[false] = '0 0', _FLEX_MAP.grow = '1 0', _FLEX_MAP.shrink = '0 1', _FLEX_MAP);
 var flexGrowShrinkProp = function flexGrowShrinkProp(flex) {

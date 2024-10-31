@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.widthStyle = exports.unfocusStyle = exports.textAlignStyle = exports.styledComponentsConfig = exports.sizeStyle = exports.roundStyle = exports.plainInputStyle = exports.overflowStyle = exports.kindPartStyles = exports.inputStyle = exports.inputPadForIcon = exports.heightStyle = exports.getInputPadBySide = exports.genericStyles = exports.focusStyle = exports.fillStyle = exports.edgeStyle = exports.disabledStyle = exports.controlBorderStyle = exports.baseStyle = exports.alignStyle = exports.alignContentStyle = void 0;
+exports.widthStyle = exports.unfocusStyle = exports.textAlignStyle = exports.styledComponentsConfig = exports.sizeStyle = exports.roundStyle = exports.plainInputStyle = exports.overflowStyle = exports.kindPartStyles = exports.inputStyle = exports.inputPadForIcon = exports.heightStyle = exports.getInputPadBySide = exports.genericStyles = exports.focusStyle = exports.fillStyle = exports.elevationStyle = exports.edgeStyle = exports.disabledStyle = exports.controlBorderStyle = exports.baseStyle = exports.alignStyle = exports.alignContentStyle = void 0;
 var _styledComponents = require("styled-components");
 var _isPropValid = _interopRequireDefault(require("@emotion/is-prop-valid"));
 var _background = require("./background");
@@ -291,6 +291,11 @@ var sizeStyle = exports.sizeStyle = function sizeStyle(name, value, theme) {
   return (0, _styledComponents.css)(["", ":", ";"], name, theme.global.size[value] || value);
 };
 var plainInputStyle = exports.plainInputStyle = (0, _styledComponents.css)(["outline:none;border:none;"]);
+var elevationStyle = exports.elevationStyle = function elevationStyle(elevation) {
+  return (0, _styledComponents.css)(["box-shadow:", ";"], function (props) {
+    return props.theme.global.elevation[props.theme.dark ? 'dark' : 'light'][elevation];
+  });
+};
 
 // CSS for this sub-object in the theme
 var kindPartStyles = exports.kindPartStyles = function kindPartStyles(obj, theme, colorValue) {
@@ -321,6 +326,9 @@ var kindPartStyles = exports.kindPartStyles = function kindPartStyles(obj, theme
   if (obj.opacity) {
     var opacity = obj.opacity === true ? theme.global.opacity.medium : theme.global.opacity[obj.opacity] || obj.opacity;
     styles.push("opacity: " + opacity + ";");
+  }
+  if (obj.elevation) {
+    styles.push(elevationStyle(obj.elevation));
   }
   if (obj.extend) styles.push(obj.extend);
   return styles;

@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 import { activeStyle, backgroundStyle, disabledStyle, edgeStyle, focusStyle, unfocusStyle, genericStyles, getHoverIndicatorStyle, normalizeColor } from '../../utils';
-import { styledComponentsConfig } from '../../utils/styles';
+import { elevationStyle, styledComponentsConfig } from '../../utils/styles';
 var radiusStyle = function radiusStyle(props) {
   // border.radius shouldn't impact an only-icon rendering.
   var isIconOnly = props.hasIcon && !props.hasLabel;
@@ -23,10 +23,11 @@ var padStyle = function padStyle(props) {
   return css(["", " ", ""], props.theme.button.padding.vertical, props.theme.button.padding.horizontal);
 };
 var basicStyle = function basicStyle(props) {
-  return css(["border:", " solid ", ";border-radius:", ";color:", ";padding:", ";", ""], props.theme.button.border.width, normalizeColor(props.colorValue || props.theme.button.border.color || 'control', props.theme), radiusStyle(props), normalizeColor(props.theme.button.color || 'text', props.theme), padStyle(props), fontStyle(props));
+  return css(["border:", " solid ", ";border-radius:", ";", " color:", ";padding:", ";", ""], props.theme.button.border.width, normalizeColor(props.colorValue || props.theme.button.border.color || 'control', props.theme), radiusStyle(props), props.theme.button.elevation && elevationStyle(props.theme.button.elevation), normalizeColor(props.theme.button.color || 'text', props.theme), padStyle(props), fontStyle(props));
 };
 var primaryStyle = function primaryStyle(props) {
-  return css(["", " border-radius:", ";", ""], backgroundStyle(normalizeColor(props.colorValue || props.theme.button.primary && props.theme.button.primary.color || 'control', props.theme), props.theme, props.theme.button.color), radiusStyle(props), props.theme.button.primary && props.theme.button.primary.extend);
+  var _props$theme$button$p, _props$theme$button$p2;
+  return css(["", " border-radius:", ";", " ", ""], backgroundStyle(normalizeColor(props.colorValue || props.theme.button.primary && props.theme.button.primary.color || 'control', props.theme), props.theme, props.theme.button.color), radiusStyle(props), ((_props$theme$button$p = props.theme.button.primary) == null ? void 0 : _props$theme$button$p.elevation) && elevationStyle((_props$theme$button$p2 = props.theme.button.primary) == null ? void 0 : _props$theme$button$p2.elevation), props.theme.button.primary && props.theme.button.primary.extend);
 };
 function getHoverColor(props) {
   if (props.colorValue) {

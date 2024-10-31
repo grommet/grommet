@@ -29,10 +29,11 @@ var padStyle = function padStyle(props) {
   return (0, _styledComponents.css)(["", " ", ""], props.theme.button.padding.vertical, props.theme.button.padding.horizontal);
 };
 var basicStyle = function basicStyle(props) {
-  return (0, _styledComponents.css)(["border:", " solid ", ";border-radius:", ";color:", ";padding:", ";", ""], props.theme.button.border.width, (0, _utils.normalizeColor)(props.colorValue || props.theme.button.border.color || 'control', props.theme), radiusStyle(props), (0, _utils.normalizeColor)(props.theme.button.color || 'text', props.theme), padStyle(props), fontStyle(props));
+  return (0, _styledComponents.css)(["border:", " solid ", ";border-radius:", ";", " color:", ";padding:", ";", ""], props.theme.button.border.width, (0, _utils.normalizeColor)(props.colorValue || props.theme.button.border.color || 'control', props.theme), radiusStyle(props), props.theme.button.elevation && (0, _styles.elevationStyle)(props.theme.button.elevation), (0, _utils.normalizeColor)(props.theme.button.color || 'text', props.theme), padStyle(props), fontStyle(props));
 };
 var primaryStyle = function primaryStyle(props) {
-  return (0, _styledComponents.css)(["", " border-radius:", ";", ""], (0, _utils.backgroundStyle)((0, _utils.normalizeColor)(props.colorValue || props.theme.button.primary && props.theme.button.primary.color || 'control', props.theme), props.theme, props.theme.button.color), radiusStyle(props), props.theme.button.primary && props.theme.button.primary.extend);
+  var _props$theme$button$p, _props$theme$button$p2;
+  return (0, _styledComponents.css)(["", " border-radius:", ";", " ", ""], (0, _utils.backgroundStyle)((0, _utils.normalizeColor)(props.colorValue || props.theme.button.primary && props.theme.button.primary.color || 'control', props.theme), props.theme, props.theme.button.color), radiusStyle(props), ((_props$theme$button$p = props.theme.button.primary) == null ? void 0 : _props$theme$button$p.elevation) && (0, _styles.elevationStyle)((_props$theme$button$p2 = props.theme.button.primary) == null ? void 0 : _props$theme$button$p2.elevation), props.theme.button.primary && props.theme.button.primary.extend);
 };
 function getHoverColor(props) {
   if (props.colorValue) {
