@@ -5,7 +5,7 @@ let currentId = 0;
 const getId = () => {
   // eslint-disable-next-line no-plusplus
   const id = currentId++;
-  return `:${id.toString(32)}:`;
+  return `:r${id.toString(32)}:`;
 };
 
 const useIdGrommet = () => {
