@@ -22,7 +22,6 @@ import { Menu } from '../../Menu';
 const options = [
   {
     icon: <List a11yTitle="List view" />,
-    label: 'List',
     value: 'list',
   },
   {
