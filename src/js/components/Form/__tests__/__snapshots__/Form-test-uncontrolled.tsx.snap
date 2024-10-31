@@ -1174,7 +1174,7 @@ exports[`Form uncontrolled dynamically removed fields should be removed from for
       </div>
     </div>
     <button
-      class="StyledButton-sc-323bzc-0 VObaP"
+      class="StyledButton-sc-323bzc-0 hocFoX"
       type="submit"
     >
       Submit
@@ -1716,7 +1716,7 @@ exports[`Form uncontrolled dynamicly removed fields using blur validation
       </div>
     </div>
     <button
-      class="StyledButton-sc-323bzc-0 VObaP"
+      class="StyledButton-sc-323bzc-0 hocFoX"
       type="submit"
     >
       Submit
@@ -1777,7 +1777,7 @@ exports[`Form uncontrolled dynamicly removed fields using blur validation
       </div>
     </div>
     <button
-      class="StyledButton-sc-323bzc-0 VObaP"
+      class="StyledButton-sc-323bzc-0 hocFoX"
       type="submit"
     >
       Submit
@@ -3135,7 +3135,7 @@ exports[`Form uncontrolled reset clears select, checkbox, radiobuttongroup 2`] =
       </div>
     </div>
     <button
-      class="StyledButton-sc-323bzc-0 VObaP"
+      class="StyledButton-sc-323bzc-0 hocFoX"
       type="reset"
     >
       Reset
@@ -3360,7 +3360,7 @@ exports[`Form uncontrolled uncontrolled 2`] = `
       </div>
     </div>
     <button
-      class="StyledButton-sc-323bzc-0 VObaP"
+      class="StyledButton-sc-323bzc-0 hocFoX"
       type="submit"
     >
       Submit
@@ -3393,7 +3393,7 @@ exports[`Form uncontrolled uncontrolled 3`] = `
       </div>
     </div>
     <button
-      class="StyledButton-sc-323bzc-0 VObaP"
+      class="StyledButton-sc-323bzc-0 hocFoX"
       type="submit"
     >
       Submit
@@ -3645,7 +3645,7 @@ exports[`Form uncontrolled uncontrolled onValidate 2`] = `
       </span>
     </div>
     <button
-      class="StyledButton-sc-323bzc-0 VObaP"
+      class="StyledButton-sc-323bzc-0 hocFoX"
       type="submit"
     >
       Submit
@@ -3897,7 +3897,7 @@ exports[`Form uncontrolled uncontrolled onValidate custom error 2`] = `
       </span>
     </div>
     <button
-      class="StyledButton-sc-323bzc-0 VObaP"
+      class="StyledButton-sc-323bzc-0 hocFoX"
       type="submit"
     >
       Submit
@@ -4145,7 +4145,7 @@ exports[`Form uncontrolled uncontrolled onValidate custom info 2`] = `
       </span>
     </div>
     <button
-      class="StyledButton-sc-323bzc-0 VObaP"
+      class="StyledButton-sc-323bzc-0 hocFoX"
       type="submit"
     >
       Submit
