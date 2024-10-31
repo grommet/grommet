@@ -182,6 +182,7 @@ interface ButtonType {
     };
   };
   gap?: GapType;
+  background?: BackgroundType;
   border?: {
     color?: ColorType;
     width?: string;
@@ -1745,6 +1746,7 @@ export interface ThemeType {
   };
   toggleGroup?: {
     button?: {
+      kind?: string | ButtonType;
       border?: {
         radius?: string;
       };

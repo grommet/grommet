@@ -1,8 +1,39 @@
 import React, { useEffect, useState } from 'react';
 
-import { Box, DataTable, Data, Grid, Pagination, Text, Tip } from 'grommet';
+import {
+  Box,
+  DataTable,
+  Data,
+  Grid,
+  Pagination,
+  Text,
+  Tip,
+  DataSummary,
+  DataSearch,
+  DataFilters,
+  DataTableColumns,
+  Toolbar,
+  ToggleGroup,
+} from 'grommet';
 
-import { StatusCritical } from 'grommet-icons';
+import { StatusCritical, List, Table, MapLocation } from 'grommet-icons';
+import { Menu } from '../../Menu';
+
+const options = [
+  {
+    icon: <List a11yTitle="List view" />,
+    label: 'List',
+    value: 'list',
+  },
+  {
+    icon: <Table a11yTitle="Map view" />,
+    value: 'table',
+  },
+  {
+    icon: <MapLocation a11yTitle="Map view" />,
+    value: 'map',
+  },
+];
 
 const buildQuery = (view) => {
   const query = {};
@@ -162,8 +193,8 @@ export const SpaceX = () => {
     <Grid
       flex={false}
       pad="large"
-      columns={[['small', 'large']]}
-      justifyContent="center"
+      // columns={[['small', 'large']]}
+      // justifyContent="center"
     >
       <Data
         properties={{
@@ -176,8 +207,25 @@ export const SpaceX = () => {
         defaultView={defaultView}
         view={view}
         onView={setView}
-        toolbar
       >
+        <Toolbar gap="medium">
+          <Toolbar>
+            <DataSearch />
+            <DataFilters drop />
+          </Toolbar>
+          <Toolbar>
+            <ToggleGroup
+              a11yTitle="Choose view"
+              options={options}
+              defaultValue="list"
+            />
+            <DataTableColumns options={[]} drop />
+          </Toolbar>
+          <Toolbar flex justify="end">
+            <Menu label="Actions" kind="toolbar" />
+          </Toolbar>
+        </Toolbar>
+        <DataSummary />
         <DataTable columns={columns} sortable />
         {result.filteredTotal > view.step && (
           <Pagination summary border="top" pad={{ vertical: 'xsmall' }} />

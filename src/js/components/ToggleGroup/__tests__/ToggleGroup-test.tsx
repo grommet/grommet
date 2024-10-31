@@ -592,4 +592,68 @@ describe('ToggleGroup', () => {
     );
     expect(asFragment()).toMatchSnapshot();
   });
+
+  test('should allow toggleGroup.button.kind as string', () => {
+    const { asFragment } = render(
+      <Grommet
+        theme={{
+          button: {
+            default: {},
+            secondary: {
+              background: 'blue',
+              border: {
+                width: '2px',
+                color: 'red',
+              },
+            },
+            size: {
+              medium: {
+                border: {
+                  radius: '6px',
+                },
+              },
+            },
+          },
+          toggleGroup: {
+            button: {
+              kind: 'secondary',
+            },
+          },
+        }}
+      >
+        <ToggleGroup options={['one', 'two']} />
+      </Grommet>,
+    );
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  test('should allow toggleGroup.button.kind as object', () => {
+    const { asFragment } = render(
+      <Grommet
+        theme={{
+          toggleGroup: {
+            button: {
+              kind: {
+                background: 'blue',
+                border: {
+                  color: 'red',
+                  width: '5px',
+                },
+                size: {
+                  medium: {
+                    border: {
+                      radius: '24px',
+                    },
+                  },
+                },
+              },
+            },
+          },
+        }}
+      >
+        <ToggleGroup options={['one', 'two']} />
+      </Grommet>,
+    );
+    expect(asFragment()).toMatchSnapshot();
+  });
 });
