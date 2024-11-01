@@ -15,3 +15,4 @@ export * from './readOnly';
 export * from './refs';
 export * from './responsive';
 export * from './use-keyboard';
+export * from './useId';

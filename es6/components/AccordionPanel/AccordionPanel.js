@@ -2,7 +2,7 @@ var _excluded = ["children", "header", "id", "label", "onClick", "onMouseOut", "
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (e.includes(n)) continue; t[n] = r[n]; } return t; }
 import React, { forwardRef, useContext, useMemo, useState } from 'react';
-import { normalizeColor, parseMetricToNum } from '../../utils';
+import { normalizeColor, parseMetricToNum, useId } from '../../utils';
 import { Box } from '../Box';
 import { Button } from '../Button';
 import { Collapsible } from '../Collapsible';
@@ -10,13 +10,6 @@ import { Heading } from '../Heading';
 import { AccordionContext } from '../Accordion/AccordionContext';
 import { AccordionPanelPropTypes } from './propTypes';
 import { useThemeValue } from '../../utils/useThemeValue';
-
-// Ideally we should use `useId` from react but this is only available
-// in React 18 and we want to keep compatibility with React 17 and 16.
-function getUID() {
-  var timestamp = Date.now() + Math.random();
-  return "grommet-accordion-button-" + timestamp;
-}
 var AccordionPanel = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var children = _ref.children,
     header = _ref.header,
@@ -28,7 +21,7 @@ var AccordionPanel = /*#__PURE__*/forwardRef(function (_ref, ref) {
     _onFocus = _ref.onFocus,
     _onBlur = _ref.onBlur,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
-  var panelButtonId = id ? "grommet_accordion_button_" + id : getUID();
+  var panelButtonId = useId();
   var _useThemeValue = useThemeValue(),
     theme = _useThemeValue.theme;
   var _useContext = useContext(AccordionContext),
