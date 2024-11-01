@@ -7,6 +7,7 @@ import React, {
   useRef,
   useState,
 } from 'react';
+import styled from 'styled-components';
 import { AnnounceContext } from '../../contexts/AnnounceContext';
 import { MessageContext } from '../../contexts/MessageContext';
 
@@ -42,6 +43,7 @@ import {
 } from './utils';
 import { setHoursWithOffset } from '../../utils/dates';
 import { useThemeValue } from '../../utils/useThemeValue';
+import { useKeyboard } from '../../utils';
 
 const headingPadMap = {
   small: 'xsmall',
@@ -198,7 +200,12 @@ export const getOutputFormat = (dates) => {
 
 const millisecondsPerYear = 31557600000;
 
-const CalendarDayButton = (props) => <Button tabIndex={-1} plain {...props} />;
+// when caller opts in to day hover styling, apply all state styles
+// on CalendarDay instead of active state on CalendarDayButton
+const CalendarDayButton = styled(Button)`
+  ${(props) =>
+    props.theme.calendar?.day?.hover?.background && 'background: inherit;'}
+`;
 
 const CalendarDay = ({
   children,
@@ -207,23 +214,39 @@ const CalendarDay = ({
   isInRange,
   isSelected,
   otherMonth,
+  rangePosition,
   buttonProps = {},
 }) => {
   const { passThemeFlag } = useThemeValue();
+  const usingKeyboard = useKeyboard();
+
   return (
-    <StyledDayContainer role="gridcell" sizeProp={size} fillContainer={fill}>
-      <CalendarDayButton fill={fill} {...buttonProps}>
-        <StyledDay
-          disabledProp={buttonProps.disabled}
-          inRange={isInRange}
-          otherMonth={otherMonth}
-          isSelected={isSelected}
-          sizeProp={size}
-          fillContainer={fill}
-          {...passThemeFlag}
-        >
-          {children}
-        </StyledDay>
+    <StyledDayContainer
+      role="gridcell"
+      inRange={isInRange}
+      isSelected={isSelected}
+      rangePosition={rangePosition}
+      sizeProp={size}
+      fillContainer={fill}
+    >
+      <CalendarDayButton fill={fill} tabIndex={-1} plain {...buttonProps}>
+        {({ active, hover }) => (
+          <StyledDay
+            // only apply active styling when using keyboard
+            // otherwise apply hover styling
+            active={usingKeyboard ? active : undefined}
+            disabledProp={buttonProps.disabled}
+            hover={hover}
+            inRange={isInRange}
+            isSelected={isSelected}
+            otherMonth={otherMonth}
+            sizeProp={size}
+            fillContainer={fill}
+            {...passThemeFlag}
+          >
+            {children}
+          </StyledDay>
+        )}
       </CalendarDayButton>
     </StyledDayContainer>
   );
@@ -754,18 +777,23 @@ const Calendar = forwardRef(
         // this.dayRefs[dateObject] = React.createRef();
         let selected = false;
         let inRange = false;
+        let rangePosition;
 
-        const selectedState = withinDates(
+        const [selectedState] = withinDates(
           day,
           range ? normalizeRange(value, activeDate) : value,
         );
         if (selectedState === 2) {
           selected = true;
+          [, rangePosition] = withinDates(
+            day,
+            range ? normalizeRange(value, activeDate) : value,
+          );
         } else if (selectedState === 1) {
           inRange = true;
         }
         const dayDisabled =
-          withinDates(day, normalizeInput(disabled)) ||
+          withinDates(day, normalizeInput(disabled))[0] ||
           (bounds && !betweenDates(day, normalizeInput(bounds)));
         if (
           !firstDayInMonth &&
@@ -790,6 +818,7 @@ const Calendar = forwardRef(
               isInRange={inRange}
               isSelected={selected}
               otherMonth={day.getMonth() !== reference.getMonth()}
+              rangePosition={rangePosition}
               size={size}
               fill={fill}
             >
