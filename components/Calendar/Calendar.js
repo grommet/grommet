@@ -3,6 +3,7 @@
 exports.__esModule = true;
 exports.getOutputFormat = exports.Calendar = void 0;
 var _react = _interopRequireWildcard(require("react"));
+var _styledComponents = _interopRequireDefault(require("styled-components"));
 var _AnnounceContext = require("../../contexts/AnnounceContext");
 var _MessageContext = require("../../contexts/MessageContext");
 var _Box = require("../Box");
@@ -16,7 +17,9 @@ var _StyledCalendar = require("./StyledCalendar");
 var _utils = require("./utils");
 var _dates = require("../../utils/dates");
 var _useThemeValue3 = require("../../utils/useThemeValue");
+var _utils2 = require("../../utils");
 var _excluded = ["activeDate", "animate", "bounds", "children", "date", "dates", "daysOfWeek", "disabled", "initialFocus", "fill", "firstDayOfWeek", "header", "locale", "messages", "onReference", "onSelect", "range", "reference", "showAdjacentDays", "size", "timestamp"];
+function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
 function _getRequireWildcardCache(e) { if ("function" != typeof WeakMap) return null; var r = new WeakMap(), t = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(e) { return e ? t : r; })(e); }
 function _interopRequireWildcard(e, r) { if (!r && e && e.__esModule) return e; if (null === e || "object" != typeof e && "function" != typeof e) return { "default": e }; var t = _getRequireWildcardCache(r); if (t && t.has(e)) return t.get(e); var n = { __proto__: null }, a = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var u in e) if ("default" !== u && {}.hasOwnProperty.call(e, u)) { var i = a ? Object.getOwnPropertyDescriptor(e, u) : null; i && (i.get || i.set) ? Object.defineProperty(n, u, i) : n[u] = e[u]; } return n["default"] = e, t && t.set(e, n), n; }
 function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (e.includes(n)) continue; t[n] = r[n]; } return t; }
@@ -154,12 +157,16 @@ var _getOutputFormat = exports.getOutputFormat = function getOutputFormat(dates)
   return 'date timezone';
 };
 var millisecondsPerYear = 31557600000;
-var CalendarDayButton = function CalendarDayButton(props) {
-  return /*#__PURE__*/_react["default"].createElement(_Button.Button, _extends({
-    tabIndex: -1,
-    plain: true
-  }, props));
-};
+
+// when caller opts in to day hover styling, apply all state styles
+// on CalendarDay instead of active state on CalendarDayButton
+var CalendarDayButton = (0, _styledComponents["default"])(_Button.Button).withConfig({
+  displayName: "Calendar__CalendarDayButton",
+  componentId: "sc-1chaf9i-0"
+})(["", ""], function (props) {
+  var _props$theme$calendar;
+  return ((_props$theme$calendar = props.theme.calendar) == null || (_props$theme$calendar = _props$theme$calendar.day) == null || (_props$theme$calendar = _props$theme$calendar.hover) == null ? void 0 : _props$theme$calendar.background) && 'background: inherit;';
+});
 var CalendarDay = function CalendarDay(_ref) {
   var children = _ref.children,
     fill = _ref.fill,
@@ -167,30 +174,46 @@ var CalendarDay = function CalendarDay(_ref) {
     isInRange = _ref.isInRange,
     isSelected = _ref.isSelected,
     otherMonth = _ref.otherMonth,
+    rangePosition = _ref.rangePosition,
     _ref$buttonProps = _ref.buttonProps,
     buttonProps = _ref$buttonProps === void 0 ? {} : _ref$buttonProps;
   var _useThemeValue = (0, _useThemeValue3.useThemeValue)(),
     passThemeFlag = _useThemeValue.passThemeFlag;
+  var usingKeyboard = (0, _utils2.useKeyboard)();
   return /*#__PURE__*/_react["default"].createElement(_StyledCalendar.StyledDayContainer, {
     role: "gridcell",
+    inRange: isInRange,
+    isSelected: isSelected,
+    rangePosition: rangePosition,
     sizeProp: size,
     fillContainer: fill
   }, /*#__PURE__*/_react["default"].createElement(CalendarDayButton, _extends({
-    fill: fill
-  }, buttonProps), /*#__PURE__*/_react["default"].createElement(_StyledCalendar.StyledDay, _extends({
-    disabledProp: buttonProps.disabled,
-    inRange: isInRange,
-    otherMonth: otherMonth,
-    isSelected: isSelected,
-    sizeProp: size,
-    fillContainer: fill
-  }, passThemeFlag), children)));
+    fill: fill,
+    tabIndex: -1,
+    plain: true
+  }, buttonProps), function (_ref2) {
+    var active = _ref2.active,
+      hover = _ref2.hover;
+    return /*#__PURE__*/_react["default"].createElement(_StyledCalendar.StyledDay
+    // only apply active styling when using keyboard
+    // otherwise apply hover styling
+    , _extends({
+      active: usingKeyboard ? active : undefined,
+      disabledProp: buttonProps.disabled,
+      hover: hover,
+      inRange: isInRange,
+      isSelected: isSelected,
+      otherMonth: otherMonth,
+      sizeProp: size,
+      fillContainer: fill
+    }, passThemeFlag), children);
+  }));
 };
-var CalendarCustomDay = function CalendarCustomDay(_ref2) {
-  var children = _ref2.children,
-    fill = _ref2.fill,
-    size = _ref2.size,
-    buttonProps = _ref2.buttonProps;
+var CalendarCustomDay = function CalendarCustomDay(_ref3) {
+  var children = _ref3.children,
+    fill = _ref3.fill,
+    size = _ref3.size,
+    buttonProps = _ref3.buttonProps;
   if (!buttonProps) {
     return /*#__PURE__*/_react["default"].createElement(_StyledCalendar.StyledDayContainer, {
       role: "gridcell",
@@ -206,34 +229,34 @@ var CalendarCustomDay = function CalendarCustomDay(_ref2) {
     fill: fill
   }, buttonProps), children));
 };
-var Calendar = exports.Calendar = /*#__PURE__*/(0, _react.forwardRef)(function (_ref3, ref) {
-  var activeDateProp = _ref3.activeDate,
-    _ref3$animate = _ref3.animate,
-    animate = _ref3$animate === void 0 ? true : _ref3$animate,
-    boundsProp = _ref3.bounds,
-    children = _ref3.children,
-    dateProp = _ref3.date,
-    datesProp = _ref3.dates,
-    daysOfWeek = _ref3.daysOfWeek,
-    disabled = _ref3.disabled,
-    initialFocus = _ref3.initialFocus,
-    fill = _ref3.fill,
-    _ref3$firstDayOfWeek = _ref3.firstDayOfWeek,
-    firstDayOfWeek = _ref3$firstDayOfWeek === void 0 ? 0 : _ref3$firstDayOfWeek,
-    header = _ref3.header,
-    _ref3$locale = _ref3.locale,
-    locale = _ref3$locale === void 0 ? 'en-US' : _ref3$locale,
-    messages = _ref3.messages,
-    onReference = _ref3.onReference,
-    onSelect = _ref3.onSelect,
-    range = _ref3.range,
-    referenceProp = _ref3.reference,
-    _ref3$showAdjacentDay = _ref3.showAdjacentDays,
-    showAdjacentDays = _ref3$showAdjacentDay === void 0 ? true : _ref3$showAdjacentDay,
-    _ref3$size = _ref3.size,
-    size = _ref3$size === void 0 ? 'medium' : _ref3$size,
-    timestampProp = _ref3.timestamp,
-    rest = _objectWithoutPropertiesLoose(_ref3, _excluded);
+var Calendar = exports.Calendar = /*#__PURE__*/(0, _react.forwardRef)(function (_ref4, ref) {
+  var activeDateProp = _ref4.activeDate,
+    _ref4$animate = _ref4.animate,
+    animate = _ref4$animate === void 0 ? true : _ref4$animate,
+    boundsProp = _ref4.bounds,
+    children = _ref4.children,
+    dateProp = _ref4.date,
+    datesProp = _ref4.dates,
+    daysOfWeek = _ref4.daysOfWeek,
+    disabled = _ref4.disabled,
+    initialFocus = _ref4.initialFocus,
+    fill = _ref4.fill,
+    _ref4$firstDayOfWeek = _ref4.firstDayOfWeek,
+    firstDayOfWeek = _ref4$firstDayOfWeek === void 0 ? 0 : _ref4$firstDayOfWeek,
+    header = _ref4.header,
+    _ref4$locale = _ref4.locale,
+    locale = _ref4$locale === void 0 ? 'en-US' : _ref4$locale,
+    messages = _ref4.messages,
+    onReference = _ref4.onReference,
+    onSelect = _ref4.onSelect,
+    range = _ref4.range,
+    referenceProp = _ref4.reference,
+    _ref4$showAdjacentDay = _ref4.showAdjacentDays,
+    showAdjacentDays = _ref4$showAdjacentDay === void 0 ? true : _ref4$showAdjacentDay,
+    _ref4$size = _ref4.size,
+    size = _ref4$size === void 0 ? 'medium' : _ref4$size,
+    timestampProp = _ref4.timestamp,
+    rest = _objectWithoutPropertiesLoose(_ref4, _excluded);
   var _useThemeValue2 = (0, _useThemeValue3.useThemeValue)(),
     theme = _useThemeValue2.theme,
     passThemeFlag = _useThemeValue2.passThemeFlag;
@@ -647,13 +670,17 @@ var Calendar = exports.Calendar = /*#__PURE__*/(0, _react.forwardRef)(function (
       // this.dayRefs[dateObject] = React.createRef();
       var selected = false;
       var inRange = false;
-      var selectedState = (0, _utils.withinDates)(day, range ? normalizeRange(value, activeDate) : value);
+      var rangePosition;
+      var _withinDates = (0, _utils.withinDates)(day, range ? normalizeRange(value, activeDate) : value),
+        selectedState = _withinDates[0];
       if (selectedState === 2) {
         selected = true;
+        var _withinDates2 = (0, _utils.withinDates)(day, range ? normalizeRange(value, activeDate) : value);
+        rangePosition = _withinDates2[1];
       } else if (selectedState === 1) {
         inRange = true;
       }
-      var dayDisabled = (0, _utils.withinDates)(day, _normalizeInput(disabled)) || bounds && !(0, _utils.betweenDates)(day, _normalizeInput(bounds));
+      var dayDisabled = (0, _utils.withinDates)(day, _normalizeInput(disabled))[0] || bounds && !(0, _utils.betweenDates)(day, _normalizeInput(bounds));
       if (!firstDayInMonth && !dayDisabled && day.getMonth() === reference.getMonth()) {
         firstDayInMonth = dateObject;
       }
@@ -677,6 +704,7 @@ var Calendar = exports.Calendar = /*#__PURE__*/(0, _react.forwardRef)(function (
           isInRange: inRange,
           isSelected: selected,
           otherMonth: day.getMonth() !== reference.getMonth(),
+          rangePosition: rangePosition,
           size: size,
           fill: fill
         }, day.getDate()));

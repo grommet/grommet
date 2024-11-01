@@ -2,6 +2,7 @@ var _excluded = ["activeDate", "animate", "bounds", "children", "date", "dates",
 function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (e.includes(n)) continue; t[n] = r[n]; } return t; }
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 import React, { forwardRef, useCallback, useContext, useEffect, useMemo, useRef, useState } from 'react';
+import styled from 'styled-components';
 import { AnnounceContext } from '../../contexts/AnnounceContext';
 import { MessageContext } from '../../contexts/MessageContext';
 import { Box } from '../Box';
@@ -15,6 +16,7 @@ import { StyledCalendar, StyledDay, StyledDayContainer, StyledWeek, StyledWeeks,
 import { addDays, addMonths, betweenDates, daysApart, endOfMonth, handleOffset, sameDayOrAfter, sameDayOrBefore, startOfMonth, subtractDays, subtractMonths, withinDates } from './utils';
 import { setHoursWithOffset } from '../../utils/dates';
 import { useThemeValue } from '../../utils/useThemeValue';
+import { useKeyboard } from '../../utils';
 var headingPadMap = {
   small: 'xsmall',
   medium: 'small',
@@ -149,12 +151,16 @@ var _getOutputFormat = function getOutputFormat(dates) {
 };
 export { _getOutputFormat as getOutputFormat };
 var millisecondsPerYear = 31557600000;
-var CalendarDayButton = function CalendarDayButton(props) {
-  return /*#__PURE__*/React.createElement(Button, _extends({
-    tabIndex: -1,
-    plain: true
-  }, props));
-};
+
+// when caller opts in to day hover styling, apply all state styles
+// on CalendarDay instead of active state on CalendarDayButton
+var CalendarDayButton = styled(Button).withConfig({
+  displayName: "Calendar__CalendarDayButton",
+  componentId: "sc-1chaf9i-0"
+})(["", ""], function (props) {
+  var _props$theme$calendar;
+  return ((_props$theme$calendar = props.theme.calendar) == null || (_props$theme$calendar = _props$theme$calendar.day) == null || (_props$theme$calendar = _props$theme$calendar.hover) == null ? void 0 : _props$theme$calendar.background) && 'background: inherit;';
+});
 var CalendarDay = function CalendarDay(_ref) {
   var children = _ref.children,
     fill = _ref.fill,
@@ -162,30 +168,46 @@ var CalendarDay = function CalendarDay(_ref) {
     isInRange = _ref.isInRange,
     isSelected = _ref.isSelected,
     otherMonth = _ref.otherMonth,
+    rangePosition = _ref.rangePosition,
     _ref$buttonProps = _ref.buttonProps,
     buttonProps = _ref$buttonProps === void 0 ? {} : _ref$buttonProps;
   var _useThemeValue = useThemeValue(),
     passThemeFlag = _useThemeValue.passThemeFlag;
+  var usingKeyboard = useKeyboard();
   return /*#__PURE__*/React.createElement(StyledDayContainer, {
     role: "gridcell",
+    inRange: isInRange,
+    isSelected: isSelected,
+    rangePosition: rangePosition,
     sizeProp: size,
     fillContainer: fill
   }, /*#__PURE__*/React.createElement(CalendarDayButton, _extends({
-    fill: fill
-  }, buttonProps), /*#__PURE__*/React.createElement(StyledDay, _extends({
-    disabledProp: buttonProps.disabled,
-    inRange: isInRange,
-    otherMonth: otherMonth,
-    isSelected: isSelected,
-    sizeProp: size,
-    fillContainer: fill
-  }, passThemeFlag), children)));
+    fill: fill,
+    tabIndex: -1,
+    plain: true
+  }, buttonProps), function (_ref2) {
+    var active = _ref2.active,
+      hover = _ref2.hover;
+    return /*#__PURE__*/React.createElement(StyledDay
+    // only apply active styling when using keyboard
+    // otherwise apply hover styling
+    , _extends({
+      active: usingKeyboard ? active : undefined,
+      disabledProp: buttonProps.disabled,
+      hover: hover,
+      inRange: isInRange,
+      isSelected: isSelected,
+      otherMonth: otherMonth,
+      sizeProp: size,
+      fillContainer: fill
+    }, passThemeFlag), children);
+  }));
 };
-var CalendarCustomDay = function CalendarCustomDay(_ref2) {
-  var children = _ref2.children,
-    fill = _ref2.fill,
-    size = _ref2.size,
-    buttonProps = _ref2.buttonProps;
+var CalendarCustomDay = function CalendarCustomDay(_ref3) {
+  var children = _ref3.children,
+    fill = _ref3.fill,
+    size = _ref3.size,
+    buttonProps = _ref3.buttonProps;
   if (!buttonProps) {
     return /*#__PURE__*/React.createElement(StyledDayContainer, {
       role: "gridcell",
@@ -201,34 +223,34 @@ var CalendarCustomDay = function CalendarCustomDay(_ref2) {
     fill: fill
   }, buttonProps), children));
 };
-var Calendar = /*#__PURE__*/forwardRef(function (_ref3, ref) {
-  var activeDateProp = _ref3.activeDate,
-    _ref3$animate = _ref3.animate,
-    animate = _ref3$animate === void 0 ? true : _ref3$animate,
-    boundsProp = _ref3.bounds,
-    children = _ref3.children,
-    dateProp = _ref3.date,
-    datesProp = _ref3.dates,
-    daysOfWeek = _ref3.daysOfWeek,
-    disabled = _ref3.disabled,
-    initialFocus = _ref3.initialFocus,
-    fill = _ref3.fill,
-    _ref3$firstDayOfWeek = _ref3.firstDayOfWeek,
-    firstDayOfWeek = _ref3$firstDayOfWeek === void 0 ? 0 : _ref3$firstDayOfWeek,
-    header = _ref3.header,
-    _ref3$locale = _ref3.locale,
-    locale = _ref3$locale === void 0 ? 'en-US' : _ref3$locale,
-    messages = _ref3.messages,
-    onReference = _ref3.onReference,
-    onSelect = _ref3.onSelect,
-    range = _ref3.range,
-    referenceProp = _ref3.reference,
-    _ref3$showAdjacentDay = _ref3.showAdjacentDays,
-    showAdjacentDays = _ref3$showAdjacentDay === void 0 ? true : _ref3$showAdjacentDay,
-    _ref3$size = _ref3.size,
-    size = _ref3$size === void 0 ? 'medium' : _ref3$size,
-    timestampProp = _ref3.timestamp,
-    rest = _objectWithoutPropertiesLoose(_ref3, _excluded);
+var Calendar = /*#__PURE__*/forwardRef(function (_ref4, ref) {
+  var activeDateProp = _ref4.activeDate,
+    _ref4$animate = _ref4.animate,
+    animate = _ref4$animate === void 0 ? true : _ref4$animate,
+    boundsProp = _ref4.bounds,
+    children = _ref4.children,
+    dateProp = _ref4.date,
+    datesProp = _ref4.dates,
+    daysOfWeek = _ref4.daysOfWeek,
+    disabled = _ref4.disabled,
+    initialFocus = _ref4.initialFocus,
+    fill = _ref4.fill,
+    _ref4$firstDayOfWeek = _ref4.firstDayOfWeek,
+    firstDayOfWeek = _ref4$firstDayOfWeek === void 0 ? 0 : _ref4$firstDayOfWeek,
+    header = _ref4.header,
+    _ref4$locale = _ref4.locale,
+    locale = _ref4$locale === void 0 ? 'en-US' : _ref4$locale,
+    messages = _ref4.messages,
+    onReference = _ref4.onReference,
+    onSelect = _ref4.onSelect,
+    range = _ref4.range,
+    referenceProp = _ref4.reference,
+    _ref4$showAdjacentDay = _ref4.showAdjacentDays,
+    showAdjacentDays = _ref4$showAdjacentDay === void 0 ? true : _ref4$showAdjacentDay,
+    _ref4$size = _ref4.size,
+    size = _ref4$size === void 0 ? 'medium' : _ref4$size,
+    timestampProp = _ref4.timestamp,
+    rest = _objectWithoutPropertiesLoose(_ref4, _excluded);
   var _useThemeValue2 = useThemeValue(),
     theme = _useThemeValue2.theme,
     passThemeFlag = _useThemeValue2.passThemeFlag;
@@ -642,13 +664,17 @@ var Calendar = /*#__PURE__*/forwardRef(function (_ref3, ref) {
       // this.dayRefs[dateObject] = React.createRef();
       var selected = false;
       var inRange = false;
-      var selectedState = withinDates(day, range ? normalizeRange(value, activeDate) : value);
+      var rangePosition;
+      var _withinDates = withinDates(day, range ? normalizeRange(value, activeDate) : value),
+        selectedState = _withinDates[0];
       if (selectedState === 2) {
         selected = true;
+        var _withinDates2 = withinDates(day, range ? normalizeRange(value, activeDate) : value);
+        rangePosition = _withinDates2[1];
       } else if (selectedState === 1) {
         inRange = true;
       }
-      var dayDisabled = withinDates(day, _normalizeInput(disabled)) || bounds && !betweenDates(day, _normalizeInput(bounds));
+      var dayDisabled = withinDates(day, _normalizeInput(disabled))[0] || bounds && !betweenDates(day, _normalizeInput(bounds));
       if (!firstDayInMonth && !dayDisabled && day.getMonth() === reference.getMonth()) {
         firstDayInMonth = dateObject;
       }
@@ -672,6 +698,7 @@ var Calendar = /*#__PURE__*/forwardRef(function (_ref3, ref) {
           isInRange: inRange,
           isSelected: selected,
           otherMonth: day.getMonth() !== reference.getMonth(),
+          rangePosition: rangePosition,
           size: size,
           fill: fill
         }, day.getDate()));

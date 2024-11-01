@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.withinDates = exports.subtractMonths = exports.subtractDays = exports.startOfMonth = exports.sameDayOrBefore = exports.sameDayOrAfter = exports.sameDay = exports.handleOffset = exports.endOfMonth = exports.daysApart = exports.betweenDates = exports.addMonths = exports.addDays = void 0;
+exports.withinDates = exports.subtractMonths = exports.subtractDays = exports.startOfMonth = exports.sameDayOrBefore = exports.sameDayOrAfter = exports.sameDay = exports.handleOffset = exports.getRangePosition = exports.endOfMonth = exports.daysApart = exports.betweenDates = exports.addMonths = exports.addDays = void 0;
 // Utility functions for the Calendar.
 // Just what's needed to avoid having to include a dependency like momentjs.
 
@@ -82,6 +82,18 @@ var betweenDates = exports.betweenDates = function betweenDates(date, dates) {
   }
   return result;
 };
+var getRangePosition = exports.getRangePosition = function getRangePosition(date, dates) {
+  var rangePosition;
+  if (dates) {
+    var _ref2 = Array.isArray(dates) ? dates.map(function (d) {
+        return d ? new Date(d) : undefined;
+      }) : [dates, undefined],
+      from = _ref2[0],
+      to = _ref2[1];
+    if (from && sameDay(date, from)) rangePosition = 'start';else if (to && sameDay(date, to)) rangePosition = 'end';
+  }
+  return rangePosition;
+};
 
 // withinDates takes an array of string dates or 2 element arrays and
 // checks whether the supplied date matches any string or is between
@@ -89,6 +101,7 @@ var betweenDates = exports.betweenDates = function betweenDates(date, dates) {
 // returns 2 if exact match, 1 if between, undefined otherwise
 var withinDates = exports.withinDates = function withinDates(date, dates) {
   var result;
+  var rangePosition;
   if (dates) {
     if (Array.isArray(dates)) {
       dates.some(function (d) {
@@ -98,6 +111,7 @@ var withinDates = exports.withinDates = function withinDates(date, dates) {
           }
         } else {
           result = betweenDates(date, d);
+          rangePosition = getRangePosition(date, d);
         }
         return result;
       });
@@ -105,7 +119,7 @@ var withinDates = exports.withinDates = function withinDates(date, dates) {
       result = 2;
     }
   }
-  return result;
+  return [result, rangePosition];
 };
 var handleOffset = exports.handleOffset = function handleOffset(date) {
   var normalizedDate = new Date(date);
