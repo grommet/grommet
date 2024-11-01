@@ -43,25 +43,26 @@ const TextArea = forwardRef(
           if (onKeyDown) {
             onKeyDown(event);
           }
-          if (ref?.current && !!ref.current.value === false) {
+          const textArea = document.activeElement;
+          if (textArea && !!textArea.value === false) {
             if (rest.resize === true || rest.resize === 'horizontal') {
-              const currentWidth = ref.current.getBoundingClientRect().width;
+              const currentWidth = textArea.getBoundingClientRect().width;
               if (event.code === 'ArrowDown') {
                 // eslint-disable-next-line no-param-reassign
-                ref.current.style.width = `${currentWidth - 10}px`;
+                textArea.style.width = `${currentWidth - 10}px`;
               } else if (event.code === 'ArrowUp') {
                 // eslint-disable-next-line no-param-reassign
-                ref.current.style.width = `${currentWidth + 10}px`;
+                textArea.style.width = `${currentWidth + 10}px`;
               }
             }
             if (rest.resize === true || rest.resize === 'vertical') {
-              const currentHeight = ref.current.getBoundingClientRect().height;
+              const currentHeight = textArea.getBoundingClientRect().height;
               if (event.code === 'ArrowDown') {
                 // eslint-disable-next-line no-param-reassign
-                ref.current.style.height = `${currentHeight - 10}px`;
+                textArea.style.height = `${currentHeight - 10}px`;
               } else if (event.code === 'ArrowUp') {
                 // eslint-disable-next-line no-param-reassign
-                ref.current.style.height = `${currentHeight + 10}px`;
+                textArea.style.height = `${currentHeight + 10}px`;
               }
             }
           }

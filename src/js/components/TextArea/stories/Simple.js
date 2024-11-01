@@ -1,10 +1,9 @@
-import React, { useState, useRef } from 'react';
+import React, { useState } from 'react';
 
 import { Box, TextArea } from 'grommet';
 
 const Resize = (props) => {
   const [value, setValue] = useState('');
-  const ref = useRef(null);
 
   const onChange = (event) => setValue(event.target.value);
 
@@ -15,7 +14,6 @@ const Resize = (props) => {
       <TextArea
         aria-label="text area"
         value={value}
-        ref={ref}
         onChange={onChange}
         {...props}
       />
