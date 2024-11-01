@@ -2024,4 +2024,55 @@ describe('DataTable', () => {
       '': 'all',
     });
   });
+
+  test('row click using space key press', () => {
+    const onClickRow = jest.fn();
+    const { container, getByText } = render(
+      <Grommet>
+        <DataTable
+          columns={[{ property: 'name', header: 'Name' }]}
+          data={[{ name: 'alpha' }]}
+          onClickRow={onClickRow}
+        />
+      </Grommet>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+
+    fireEvent.mouseEnter(getByText('alpha'));
+    fireEvent.keyDown(getByText('alpha'), {
+      code: 'Space',
+      keyCode: 32,
+    });
+
+    expect(onClickRow).toHaveBeenCalledWith(
+      expect.objectContaining({ datum: { name: 'alpha' } }),
+    );
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('disable row click using space key press', () => {
+    const onClickRow = jest.fn();
+    const { container, getByText } = render(
+      <Grommet>
+        <DataTable
+          columns={[{ property: 'name', header: 'Name' }]}
+          data={[{ name: 'alpha' }]}
+          disabled={['alpha']}
+          onClickRow={onClickRow}
+        />
+      </Grommet>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+
+    fireEvent.mouseEnter(getByText('alpha'));
+    fireEvent.keyDown(getByText('alpha'), {
+      code: 'Space',
+      keyCode: 32,
+    });
+
+    expect(onClickRow).not.toHaveBeenCalled();
+    expect(container.firstChild).toMatchSnapshot();
+  });
 });
