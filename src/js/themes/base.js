@@ -496,12 +496,14 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         width: `${borderWidth}px`,
         radius: `${baseSpacing * 0.75}px`,
       },
-      // color: { dark: undefined, light: undefined }
+      // color: { dark: undefined, light: undefined },
+      // elevation: undefined,
       // default: {
       //   background: undefined,
       //   border: undefined,
       //   color: undefined,
       //   direction: undefined,
+      //   elevation: undefined,
       //   font: {
       //     size: undefined,
       //     weight: undefined,
@@ -523,6 +525,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       //   border: undefined,
       //   color: undefined,
       //   direction: undefined,
+      //   elevation: undefined,
       //   icon: undefined,
       //   padding: {
       //     vertical: undefined,
@@ -540,6 +543,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       //   border: undefined,
       //   color: undefined,
       //   direction: undefined,
+      //   elevation: undefined,
       //   icon: undefined,
       //   padding: {
       //     vertical: undefined,
@@ -553,6 +557,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       //   border: undefined,
       //   color: undefined,
       //   direction: undefined,
+      //   elevation: undefined,
       //   icon: undefined,
       //   padding: {
       //     vertical: undefined,
