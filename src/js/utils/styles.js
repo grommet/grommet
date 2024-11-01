@@ -581,6 +581,13 @@ export const plainInputStyle = css`
   border: none;
 `;
 
+export const elevationStyle = (elevation) => css`
+  box-shadow: ${(props) =>
+    props.theme.global.elevation[props.theme.dark ? 'dark' : 'light'][
+      elevation
+    ]};
+`;
+
 // CSS for this sub-object in the theme
 export const kindPartStyles = (obj, theme, colorValue) => {
   const styles = [];
@@ -648,6 +655,9 @@ export const kindPartStyles = (obj, theme, colorValue) => {
         ? theme.global.opacity.medium
         : theme.global.opacity[obj.opacity] || obj.opacity;
     styles.push(`opacity: ${opacity};`);
+  }
+  if (obj.elevation) {
+    styles.push(elevationStyle(obj.elevation));
   }
   if (obj.extend) styles.push(obj.extend);
   return styles;

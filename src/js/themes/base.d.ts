@@ -150,6 +150,7 @@ interface ButtonKindType {
     | boolean;
   color?: ColorType;
   direction?: DirectionType;
+  elevation?: ElevationType;
   font?: {
     size?: string;
     weight?: number | string;
@@ -188,6 +189,7 @@ interface ButtonType {
     radius?: string;
   };
   color?: ColorType;
+  elevation?: ElevationType;
   extend?: ExtendType;
   minWidth?: string;
   maxWidth?: string;
@@ -381,6 +383,7 @@ export interface ThemeType {
         medium?: string;
         large?: string;
         xlarge?: string;
+        [x: string]: string;
       };
       dark?: {
         none?: string;
@@ -389,6 +392,7 @@ export interface ThemeType {
         medium?: string;
         large?: string;
         xlarge?: string;
+        [x: string]: string;
       };
     };
     focus?: {
@@ -549,10 +553,50 @@ export interface ThemeType {
   button?: ButtonType;
   calendar?: {
     day?: {
+      hover?: {
+        background?: BackgroundType;
+        color?: ColorType;
+      };
+      selected?: {
+        background?: BackgroundType;
+        color?: ColorType;
+        font?: {
+          weight?: string | number;
+        };
+        hover?: {
+          background?: BackgroundType;
+          color?: ColorType;
+        };
+      };
+      inRange?: {
+        color?: ColorType;
+        font?: {
+          weight?: string | number;
+        };
+        hover?: {
+          background?: BackgroundType;
+          color?: ColorType;
+        };
+      };
       extend?: ExtendType;
+    };
+    range?: {
+      background?: BackgroundType;
     };
     extend?: ExtendType;
     small?: {
+      day?: {
+        round?: RoundType;
+      };
+      range?: {
+        round?: RoundType;
+        start?: {
+          round?: RoundType;
+        };
+        end?: {
+          round?: RoundType;
+        };
+      };
       title?: TextProps;
       fontSize?: string;
       lineHeight?: number;
@@ -560,6 +604,18 @@ export interface ThemeType {
       slideDuration?: string;
     };
     medium?: {
+      day?: {
+        round?: RoundType;
+      };
+      range?: {
+        round?: RoundType;
+        start?: {
+          round?: RoundType;
+        };
+        end?: {
+          round?: RoundType;
+        };
+      };
       title?: TextProps;
       fontSize?: string;
       lineHeight?: number;
@@ -567,6 +623,18 @@ export interface ThemeType {
       slideDuration?: string;
     };
     large?: {
+      day?: {
+        round?: RoundType;
+      };
+      range?: {
+        round?: RoundType;
+        start?: {
+          round?: RoundType;
+        };
+        end?: {
+          round?: RoundType;
+        };
+      };
       title?: TextProps;
       fontSize?: string;
       lineHeight?: number;
@@ -726,6 +794,9 @@ export interface ThemeType {
   dataTable?: {
     body?: {
       extend?: ExtendType;
+      selected?: {
+        background?: BackgroundType;
+      };
     };
     container?: BoxProps;
     header?: {
@@ -886,6 +957,13 @@ export interface ThemeType {
     margin?: MarginType;
     round?: RoundType;
     extend?: ExtendType;
+    survey?: {
+      label?: {
+        margin?: MarginType;
+        size?: string;
+        color?: ColorType;
+      };
+    };
   };
   grommet?: {
     extend?: ExtendType;
@@ -1449,7 +1527,7 @@ export interface ThemeType {
   select?: {
     background?: BackgroundType;
     clear?: {
-      container?: BoxProps;
+      container?: BoxProps & { hover?: BoxProps };
       text?: TextProps;
     };
     container?: {
@@ -1609,7 +1687,7 @@ export interface ThemeType {
     round?: RoundType;
     name?: TextProps;
     pad?: PadType;
-    remove?: ButtonType;
+    remove?: ButtonType | { kind?: string };
     separator?: string;
     size?: {
       xsmall?: {
@@ -1617,30 +1695,35 @@ export interface ThemeType {
         icon?: {
           size?: string;
         };
+        remove?: { size?: string; margin?: MarginType };
       };
       small?: {
         pad?: PadType;
         icon?: {
           size?: string;
         };
+        remove?: { size?: string; margin?: MarginType };
       };
       medium?: {
         pad?: PadType;
         icon?: {
           size?: string;
         };
+        remove?: { size?: string; margin?: MarginType };
       };
       large?: {
         pad?: PadType;
         icon?: {
           size?: string;
         };
+        remove?: { size?: string; margin?: MarginType };
       };
       xlarge?: {
         pad?: PadType;
         icon?: {
           size?: string;
         };
+        remove?: { size?: string; margin?: MarginType };
       };
     };
     value?: TextProps;
@@ -1730,15 +1813,20 @@ export interface ThemeType {
   };
   toggleGroup?: {
     button?: {
-      pad?: PadType;
+      border?: {
+        radius?: string;
+      };
       iconOnly?: {
         pad?: PadType;
       };
+      pad?: PadType;
     };
     container?: BoxProps;
-    divider?: {
-      color?: ColorType;
-    };
+    divider?:
+      | {
+          color?: ColorType;
+        }
+      | boolean;
   };
   video?: {
     captions?: {

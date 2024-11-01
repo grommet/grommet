@@ -33,6 +33,7 @@ export interface BoxProps {
   background?: BackgroundType;
   basis?: BasisType;
   border?: BorderType;
+  cssGap?: boolean;
   direction?: DirectionType;
   elevation?: ElevationType;
   flex?: 'grow' | 'shrink' | boolean | { grow?: number; shrink?: number };

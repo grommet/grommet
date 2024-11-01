@@ -5,10 +5,8 @@ import 'jest-axe/extend-expect';
 import 'jest-styled-components';
 import 'regenerator-runtime/runtime';
 import '@testing-library/jest-dom';
-
 import { CaretDown, CaretUp, FormDown } from 'grommet-icons';
 import { createPortal, expectPortal } from '../../../utils/portal';
-
 import { Box, Grommet, FormField } from '../..';
 import { Select } from '..';
 
@@ -1709,6 +1707,112 @@ describe('Select', () => {
     });
     expect(getAllByRole('searchbox')[0]).not.toHaveFocus();
     expect(getAllByRole('option')[0]).toHaveFocus();
+  });
+
+  test('focusIndicator is true by default when plain is false', () => {
+    const { container } = render(
+      <Grommet>
+        <Select
+          id="test-select"
+          placeholder="test select"
+          options={['one', 'two']}
+          plain={false}
+          focusIndicator={false}
+        />
+      </Grommet>,
+    );
+
+    const select = container.querySelector('button');
+    const styles = window.getComputedStyle(select);
+
+    expect(styles.boxShadow).not.toBe('none');
+  });
+
+  test('Select component handles JSX options correctly', () => {
+    const onChange = jest.fn();
+
+    // Render Select with JSX elements as options
+    const { getByPlaceholderText, getByText, container } = render(
+      <Grommet>
+        <Select
+          id="test-select"
+          placeholder="test select"
+          options={[
+            <Box key="1">Option One</Box>,
+            <Box key="2">Option Two</Box>,
+          ]}
+          onChange={onChange}
+        />
+      </Grommet>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+
+    fireEvent.click(getByPlaceholderText('test select'));
+
+    expect(getByText('Option One')).toBeInTheDocument();
+    expect(getByText('Option Two')).toBeInTheDocument();
+
+    fireEvent.click(getByText('Option One'));
+
+    expect(onChange).toHaveBeenCalledWith(
+      expect.objectContaining({
+        value: expect.anything(),
+      }),
+    );
+    expect(onChange.mock.calls[0][0].value.type).toBe(Box);
+  });
+
+  test('renders custom clear selection styling', () => {
+    jest.useFakeTimers();
+    const customTheme = {
+      select: {
+        clear: {
+          container: {
+            pad: {
+              vertical: '6px',
+              horizontal: '12px',
+            },
+            background: undefined,
+            hover: {
+              background: 'blue',
+            },
+          }, // any box props
+          text: {
+            color: 'text-strong',
+            weight: 600,
+          }, // any text props
+        },
+      },
+    };
+
+    const { asFragment, getByRole, getByPlaceholderText } = render(
+      <Grommet theme={customTheme}>
+        <Select
+          data-testid="test-select-style-open"
+          id="test-clear-selection"
+          options={['morning', 'afternoon', 'evening']}
+          placeholder="Select time"
+          value="afternoon"
+          clear
+        />
+      </Grommet>,
+    );
+
+    expect(asFragment()).toMatchSnapshot();
+
+    fireEvent.click(getByPlaceholderText('Select time'));
+    act(() => {
+      jest.advanceTimersByTime(100);
+    });
+
+    const clearButton = getByRole('button', { name: /Clear selection/ });
+    expect(clearButton).toBeInTheDocument();
+    fireEvent.mouseOver(clearButton);
+    act(() => {
+      jest.advanceTimersByTime(200);
+    });
+    expectPortal('test-clear-selection__drop').toMatchSnapshot();
   });
 
   window.scrollTo.mockRestore();

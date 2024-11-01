@@ -2697,6 +2697,7 @@ exports[`inline 1`] = `
     click
   </span>
   <div
+    style="position: absolute; height: 1px; left: 0px; right: 0px; top: 0px;"
     tabindex="0"
   />
   <div
@@ -2713,6 +2714,7 @@ exports[`inline 1`] = `
     </div>
   </div>
   <div
+    style="position: absolute; height: 1px; left: 0px; right: 0px; bottom: 0px;"
     tabindex="0"
   />
 </button>
