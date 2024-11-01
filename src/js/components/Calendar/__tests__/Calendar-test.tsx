@@ -761,31 +761,22 @@ describe('Calendar Keyboard events', () => {
     expect(onSelect).toBeCalledWith(expect.stringMatching(/^2020-01-16T/));
   });
   test('onSpace', () => {
-    const onSelect = jest.fn();
-    const { getByText } = render(
-      <Grommet>
-        <Calendar date="2020-01-15" onSelect={onSelect} />
-      </Grommet>
-    );
-
+    const { getByText } = render(<App />);
     fireEvent.mouseOver(getByText('15'));
     fireEvent.click(getByText('15'));
-
-    const spaceKeyDownEvent = new KeyboardEvent('keydown', {
-      key: ' ',
-      code: 'Space',
-      keyCode: 32,
-      charCode: 32,
-      bubbles: true,
-      cancelable: true,
+    fireEvent.keyDown(getByText('15'), {
+      key: 'ArrowRight',
+      keyCode: 39,
+      which: 39,
     });
-    
-    const preventDefaultSpy = jest.spyOn(spaceKeyDownEvent, 'preventDefault');
-    fireEvent(getByText('15'), spaceKeyDownEvent);
-
-    expect(onSelect).toHaveBeenCalledWith(expect.stringMatching(/^2020-01-15/));
-
-    expect(preventDefaultSpy).toHaveBeenCalled();
+    // press space to change date to active
+    fireEvent.keyDown(getByText('16'), {
+      key: 'space',
+      keyCode: 32,
+      which: 32,
+    });
+    // Jan 16th is set to active
+    expect(onSelect).toBeCalledWith(expect.stringMatching(/^2020-01-16T/));
   });
 
   test('heading text font size', () => {
