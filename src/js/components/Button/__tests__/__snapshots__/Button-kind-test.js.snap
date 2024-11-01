@@ -1659,7 +1659,7 @@ exports[`Button kind button with transparent background 1`] = `
   font-size: 18px;
   line-height: 24px;
   background-color: #0000000A;
-  color: #333333;
+  color: #2E2E2E;
   text-align: center;
   transition-property: color,background-color,border-color,box-shadow;
   transition-duration: 0.1s;
@@ -1726,10 +1726,10 @@ exports[`Button kind button with transparent background 1`] = `
   font-size: 18px;
   line-height: 24px;
   background-color: #0000000A;
-  color: #333333;
+  color: #2E2E2E;
   background-color: rgba(0, 0, 0, 0.0392156862745098);
-  color: #333333;
-  color: #333333;
+  color: #2E2E2E;
+  color: #2E2E2E;
   text-align: center;
   transition-property: color,background-color,border-color,box-shadow;
   transition-duration: 0.1s;
