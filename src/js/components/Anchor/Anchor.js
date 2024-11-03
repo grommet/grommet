@@ -77,21 +77,19 @@ const Anchor = forwardRef(
             theme,
           ),
         });
+      }
+      if (!icon.props.size) {
+        const scaledSize = sizeProp || size || 'medium'; // fallback size
 
-        if (!icon.props.size) {
-          const scaledSize = sizeProp || size || 'medium'; // fallback size
-
-          let iconSize;
-          if (sizeProp === 'xsmall') {
-            iconSize = 'small';
-          } else if (sizeProp === 'xxlarge') {
-            iconSize = 'xlarge';
-          } else {
-            iconSize = theme.anchor?.size?.[scaledSize]?.iconSize || scaledSize;
-          }
-
-          coloredIcon = cloneElement(coloredIcon, { size: iconSize });
+        let iconSize;
+        if (sizeProp === 'xsmall') {
+          iconSize = 'small';
+        } else if (sizeProp === 'xxlarge') {
+          iconSize = 'xlarge';
+        } else {
+          iconSize = theme.anchor?.size?.[scaledSize]?.iconSize || scaledSize;
         }
+        coloredIcon = cloneElement(coloredIcon, { size: iconSize });
       }
     }
 
