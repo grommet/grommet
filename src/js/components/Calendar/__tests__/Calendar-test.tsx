@@ -651,6 +651,95 @@ describe('Calendar', () => {
       ),
     );
   });
+
+  test('should render day and range rounding and states', () => {
+    const { asFragment } = render(
+      <Grommet
+        theme={{
+          global: {
+            colors: {
+              blue: '#00C8FF',
+              purple: '#F740FF',
+            },
+            active: {
+              background: 'skyblue',
+            },
+          },
+          calendar: {
+            day: {
+              hover: {
+                background: 'blue',
+                color: 'red',
+              },
+              selected: {
+                background: 'purple',
+                color: '#000000',
+                font: {
+                  weight: 500,
+                },
+                hover: {
+                  background: '#006750',
+                  color: '#FFFFFF',
+                },
+              },
+              inRange: {
+                color: 'blue',
+                hover: {
+                  background: 'rgb(174, 246, 223)',
+                  color: 'text-strong',
+                },
+              },
+            },
+            range: {
+              background: '#CBFAEB',
+            },
+            medium: {
+              day: {
+                round: 'full',
+              },
+              range: {
+                round: 'none',
+                start: {
+                  round: {
+                    corner: 'left',
+                    size: 'full',
+                  },
+                },
+                end: {
+                  round: {
+                    corner: 'right',
+                    size: 'full',
+                  },
+                },
+              },
+            },
+          },
+        }}
+      >
+        <Calendar date={DATES} animate={false} />
+      </Grommet>,
+    );
+    expect(asFragment()).toMatchSnapshot();
+
+    let style: CSSStyleDeclaration;
+    const selectedDay = screen.getByText('10');
+    fireEvent.mouseOver(selectedDay);
+    style = window.getComputedStyle(selectedDay);
+    expect(style.background).toEqual('rgb(0, 103, 80)'); // rgb equivalent of selected.hover.background
+    expect(style.color).toEqual('rgb(255, 255, 255)');
+
+    const inRangeDay = screen.getByText('9');
+    fireEvent.mouseOver(inRangeDay);
+    style = window.getComputedStyle(inRangeDay);
+    expect(style.background).toEqual('rgb(174, 246, 223)');
+    expect(style.color).toEqual('rgb(0, 0, 0)'); // rgb equivalent of text-strong
+
+    const day = screen.getByText('16');
+    fireEvent.mouseOver(day);
+    style = window.getComputedStyle(day);
+    expect(style.background).toEqual('rgb(0, 200, 255)'); // rgb equivalent of theme blue
+    expect(style.color).toEqual('red');
+  });
 });
 
 describe('Calendar Keyboard events', () => {

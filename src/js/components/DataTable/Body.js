@@ -76,6 +76,7 @@ const Row = memo(
         {(selected || onSelect) && (
           <Cell
             background={
+              (isSelected && cellProps.selected.background) ||
               (pinnedOffset?._grommetDataTableSelect &&
                 cellProps.pinned.background) ||
               cellProps.background
@@ -113,6 +114,7 @@ const Row = memo(
 
         {rowDetails && (
           <ExpanderCell
+            background={isSelected && cellProps.selected.background}
             context={isRowExpanded ? 'groupHeader' : 'body'}
             expanded={isRowExpanded}
             onToggle={() => {
@@ -130,6 +132,7 @@ const Row = memo(
           <Cell
             key={column.property}
             background={
+              (isSelected && cellProps.selected.background) ||
               (column.pin && cellProps.pinned.background) ||
               cellProps.background
             }
@@ -137,6 +140,7 @@ const Row = memo(
             context="body"
             column={column}
             datum={datum}
+            isSelected={isSelected}
             pad={(column.pin && cellProps.pinned.pad) || cellProps.pad}
             pinnedOffset={pinnedOffset && pinnedOffset[column.property]}
             primaryProperty={primaryProperty}
@@ -234,13 +238,22 @@ const Body = forwardRef(
             : undefined
         }
         // The WCAG recommendation for checkboxes is to select them with "Space"
-        onSpace={() => {
-          if (clickableRow) {
-            if (onClickRow === 'select') {
-              selectRow();
-            }
-          }
-        }}
+        onSpace={
+          clickableRow
+            ? (event) => {
+                event.preventDefault();
+
+                if (typeof onClickRow === 'function') {
+                  event.persist();
+                  const adjustedEvent = event;
+                  adjustedEvent.datum = data?.[active];
+                  onClickRow(adjustedEvent);
+                } else if (onClickRow === 'select') {
+                  selectRow();
+                }
+              }
+            : undefined
+        }
         onUp={onClickRow && active ? () => setActive(active - 1) : undefined}
         onDown={
           onClickRow && data.length && active < data.length - 1

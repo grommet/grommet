@@ -24,6 +24,7 @@ import {
   getSelectIcon,
   getDisplayLabelKey,
   getIconColor,
+  formatValueForA11y,
 } from './utils';
 import { DefaultSelectTextInput } from './DefaultSelectTextInput';
 import { MessageContext } from '../../contexts/MessageContext';
@@ -290,7 +291,9 @@ const Select = forwardRef(
               ? format({
                   id: 'select.selected',
                   messages,
-                  values: { currentSelectedValue: value },
+                  values: {
+                    currentSelectedValue: formatValueForA11y(value, labelKey),
+                  },
                 })
               : ''
           }`}
@@ -302,7 +305,7 @@ const Select = forwardRef(
           dropTarget={dropTarget}
           open={open}
           alignSelf={alignSelf}
-          focusIndicator={focusIndicator}
+          focusIndicator={plain ? focusIndicator : true}
           onFocus={onFocus}
           onBlur={onBlur}
           gridArea={gridArea}
