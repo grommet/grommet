@@ -849,6 +849,24 @@ describe('Calendar Keyboard events', () => {
     // Jan 16th is set to active
     expect(onSelect).toBeCalledWith(expect.stringMatching(/^2020-01-16T/));
   });
+  test('onSpace', () => {
+    const { getByText } = render(<App />);
+    fireEvent.mouseOver(getByText('15'));
+    fireEvent.click(getByText('15'));
+    fireEvent.keyDown(getByText('15'), {
+      key: 'ArrowRight',
+      keyCode: 39,
+      which: 39,
+    });
+    // press space to change date to active
+    fireEvent.keyDown(getByText('16'), {
+      key: 'space',
+      keyCode: 32,
+      which: 32,
+    });
+    // Jan 16th is set to active
+    expect(onSelect).toBeCalledWith(expect.stringMatching(/^2020-01-16T/));
+  });
 
   test('heading text font size', () => {
     const { asFragment } = render(

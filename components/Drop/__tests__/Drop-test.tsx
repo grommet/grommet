@@ -341,12 +341,11 @@ describe('Drop', () => {
 
     // Expect the focus to go back to the first button
     expect(document.activeElement).toBe(firstButton);
-    
-     // Simulate backwards tab with Shift key
+
+    // Simulate backwards tab with Shift key
     await userEvent.tab({ shift: true });
     // Expect the focus to be on the second button again
     expect(document.activeElement).toBe(secondButton);
-    
   });
 
   test('default elevation renders', () => {

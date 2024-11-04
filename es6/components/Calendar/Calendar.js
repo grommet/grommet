@@ -783,6 +783,12 @@ var Calendar = /*#__PURE__*/forwardRef(function (_ref4, ref) {
     onEnter: function onEnter() {
       return active !== undefined ? _onClick(active) : undefined;
     },
+    onSpace: function onSpace(event) {
+      event.preventDefault();
+      if (active !== undefined) {
+        _onClick(active);
+      }
+    },
     onUp: function onUp(event) {
       event.preventDefault();
       event.stopPropagation(); // so the page doesn't scroll

@@ -789,6 +789,12 @@ var Calendar = exports.Calendar = /*#__PURE__*/(0, _react.forwardRef)(function (
     onEnter: function onEnter() {
       return active !== undefined ? _onClick(active) : undefined;
     },
+    onSpace: function onSpace(event) {
+      event.preventDefault();
+      if (active !== undefined) {
+        _onClick(active);
+      }
+    },
     onUp: function onUp(event) {
       event.preventDefault();
       event.stopPropagation(); // so the page doesn't scroll
