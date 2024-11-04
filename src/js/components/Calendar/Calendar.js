@@ -918,6 +918,12 @@ const Calendar = forwardRef(
           {daysOfWeek && renderDaysOfWeek()}
           <Keyboard
             onEnter={() => (active !== undefined ? onClick(active) : undefined)}
+            onSpace={(event) => {
+              event.preventDefault();
+              if (active !== undefined) {
+                onClick(active);
+              }
+            }}
             onUp={(event) => {
               event.preventDefault();
               event.stopPropagation(); // so the page doesn't scroll
