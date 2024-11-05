@@ -258,22 +258,28 @@ var List = /*#__PURE__*/React.forwardRef(function (_ref, ref) {
   return /*#__PURE__*/React.createElement(Container, containterProps, /*#__PURE__*/React.createElement(Keyboard, {
     onEnter: onSelectOption,
     onSpace: function onSpace(event) {
-      event.preventDefault();
+      if (onClickItem || onOrder) {
+        event.preventDefault();
+      }
       onSelectOption(event);
     },
     onUp: function onUp(event) {
-      event.preventDefault();
-      if ((onClickItem || onOrder) && active) {
-        var min = onOrder ? 1 : 0;
-        updateActive(Math.max(active - 1, min));
+      if (onClickItem || onOrder) {
+        event.preventDefault();
+        if (active) {
+          var min = onOrder ? 1 : 0;
+          updateActive(Math.max(active - 1, min));
+        }
       }
     },
     onDown: function onDown(event) {
-      event.preventDefault();
-      if ((onClickItem || onOrder) && orderableData && orderableData.length) {
-        var min = onOrder ? 1 : 0;
-        var max = onOrder ? orderableData.length * 2 - 2 : data.length - 1;
-        updateActive(active >= min ? Math.min(active + 1, max) : min);
+      if (onClickItem || onOrder) {
+        event.preventDefault();
+        if (orderableData && orderableData.length) {
+          var min = onOrder ? 1 : 0;
+          var max = onOrder ? orderableData.length * 2 - 2 : data.length - 1;
+          updateActive(active >= min ? Math.min(active + 1, max) : min);
+        }
       }
     },
     onKeyDown: onKeyDown
