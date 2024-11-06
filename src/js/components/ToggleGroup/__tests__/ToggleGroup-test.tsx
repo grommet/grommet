@@ -626,34 +626,4 @@ describe('ToggleGroup', () => {
     );
     expect(asFragment()).toMatchSnapshot();
   });
-
-  test('should allow toggleGroup.button.kind as object', () => {
-    const { asFragment } = render(
-      <Grommet
-        theme={{
-          toggleGroup: {
-            button: {
-              kind: {
-                background: 'blue',
-                border: {
-                  color: 'red',
-                  width: '5px',
-                },
-                size: {
-                  medium: {
-                    border: {
-                      radius: '24px',
-                    },
-                  },
-                },
-              },
-            },
-          },
-        }}
-      >
-        <ToggleGroup options={['one', 'two']} />
-      </Grommet>,
-    );
-    expect(asFragment()).toMatchSnapshot();
-  });
 });

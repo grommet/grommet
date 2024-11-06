@@ -1814,7 +1814,7 @@ export interface ThemeType {
   };
   toggleGroup?: {
     button?: {
-      kind?: string | ButtonType;
+      kind?: string;
       border?: {
         radius?: string;
       };

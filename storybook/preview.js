@@ -4,136 +4,10 @@ import { StyleSheetManager } from 'styled-components';
 import { hpe } from 'grommet-theme-hpe';
 import isChromatic from 'chromatic/isChromatic';
 import { Grommet, grommet, hacktoberfest2022, Box, Text } from '../src/js';
-import { deepMerge } from '../src/js/utils';
 
 const CUSTOM_THEMED = 'Custom Themed';
-
-const buttonObjTheme = deepMerge(hpe, {
-  global: {
-    colors: {
-      'background-selected-weak': {
-        light: '#CBFAEB',
-        dark: '#093A2F',
-      },
-      'border-selected': {
-        light: '#02734F',
-        dark: '#02734F',
-      },
-      'text-primary': {
-        light: '#02734F',
-        dark: '#02734F',
-      },
-    },
-  },
-  toggleGroup: {
-    button: {
-      kind: {
-        border: {
-          width: '1px',
-          color: 'transparent',
-          radius: 'small',
-        },
-        color: 'text',
-        font: {
-          weight: 600,
-        },
-        active: {
-          background: {
-            color: 'background-selected-weak',
-          },
-          border: {
-            color: 'border-selected',
-            width: '1px',
-          },
-          color: 'text-primary',
-          font: {
-            weight: 600,
-          },
-        },
-        hover: {
-          background: {
-            color: 'background-contrast',
-          },
-          // border: {
-          //   width: '1px',
-          //   color: 'transparent',
-          // },
-          color: undefined,
-        },
-        size: {
-          medium: {
-            border: {
-              radius: `6px`,
-            },
-            pad: {
-              vertical: `6px`,
-              horizontal: `12px`,
-            },
-            iconOnly: {
-              pad: {
-                vertical: '9px',
-                horizontal: '9px',
-              },
-            },
-          },
-        },
-      },
-    },
-    container: {
-      border: false,
-    },
-    divider: false,
-  },
-});
-
-const buttonKindTheme = deepMerge(hpe, {
-  global: {
-    colors: {
-      'background-selected-weak': {
-        light: '#CBFAEB',
-        dark: '#093A2F',
-      },
-      'border-selected': {
-        light: '#02734F',
-        dark: '#02734F',
-      },
-      'text-primary': {
-        light: '#02734F',
-        dark: '#02734F',
-      },
-    },
-  },
-  button: {
-    toolbar: {
-      border: {
-        color: 'transparent',
-      },
-    },
-    active: {
-      toolbar: {
-        background: 'background-selected-weak',
-        border: {
-          color: 'border-selected',
-        },
-        color: 'text-primary',
-      },
-    },
-  },
-  toggleGroup: {
-    button: {
-      kind: 'toolbar',
-    },
-    container: {
-      border: false,
-    },
-    divider: false,
-  },
-});
-
 const THEMES = {
   hpe,
-  buttonObj: buttonObjTheme,
-  buttonKind: buttonKindTheme,
   grommet,
   hacktoberfest2022,
   base: {},
@@ -249,8 +123,6 @@ export const globalTypes = {
         { title: 'base', value: 'base' },
         { title: 'grommet', value: 'grommet' },
         { title: 'hpe', value: 'hpe' },
-        { title: 'hpe-buttonObj', value: 'buttonObj' },
-        { title: 'hpe-buttonKind', value: 'buttonKind' },
         { title: 'hacktoberfest2022', value: 'hacktoberfest2022' },
       ],
     },
