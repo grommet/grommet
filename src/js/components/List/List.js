@@ -305,28 +305,30 @@ const List = React.forwardRef(
         <Keyboard
           onEnter={onSelectOption}
           onSpace={(event) => {
-            event.preventDefault();
+            if (onClickItem || onOrder) {
+              event.preventDefault();
+            }
             onSelectOption(event);
           }}
           onUp={(event) => {
-            event.preventDefault();
-            if ((onClickItem || onOrder) && active) {
-              const min = onOrder ? 1 : 0;
-              updateActive(Math.max(active - 1, min));
+            if (onClickItem || onOrder) {
+              event.preventDefault();
+              if (active) {
+                const min = onOrder ? 1 : 0;
+                updateActive(Math.max(active - 1, min));
+              }
             }
           }}
           onDown={(event) => {
-            event.preventDefault();
-            if (
-              (onClickItem || onOrder) &&
-              orderableData &&
-              orderableData.length
-            ) {
-              const min = onOrder ? 1 : 0;
-              const max = onOrder
-                ? orderableData.length * 2 - 2
-                : data.length - 1;
-              updateActive(active >= min ? Math.min(active + 1, max) : min);
+            if (onClickItem || onOrder) {
+              event.preventDefault();
+              if (orderableData && orderableData.length) {
+                const min = onOrder ? 1 : 0;
+                const max = onOrder
+                  ? orderableData.length * 2 - 2
+                  : data.length - 1;
+                updateActive(active >= min ? Math.min(active + 1, max) : min);
+              }
             }
           }}
           onKeyDown={onKeyDown}
