@@ -496,12 +496,14 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         width: `${borderWidth}px`,
         radius: `${baseSpacing * 0.75}px`,
       },
-      // color: { dark: undefined, light: undefined }
+      // color: { dark: undefined, light: undefined },
+      // elevation: undefined,
       // default: {
       //   background: undefined,
       //   border: undefined,
       //   color: undefined,
       //   direction: undefined,
+      //   elevation: undefined,
       //   font: {
       //     size: undefined,
       //     weight: undefined,
@@ -523,6 +525,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       //   border: undefined,
       //   color: undefined,
       //   direction: undefined,
+      //   elevation: undefined,
       //   icon: undefined,
       //   padding: {
       //     vertical: undefined,
@@ -540,6 +543,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       //   border: undefined,
       //   color: undefined,
       //   direction: undefined,
+      //   elevation: undefined,
       //   icon: undefined,
       //   padding: {
       //     vertical: undefined,
@@ -553,6 +557,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       //   border: undefined,
       //   color: undefined,
       //   direction: undefined,
+      //   elevation: undefined,
       //   icon: undefined,
       //   padding: {
       //     vertical: undefined,
@@ -603,8 +608,51 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
     },
     calendar: {
+      day: {
+        // hover: {
+        //   background: undefined,
+        //   color: undefined,
+        // },
+        selected: {
+          // background: undefined,
+          // color: undefined,
+          font: {
+            weight: 'bold',
+          },
+          // hover: {
+          //   background: undefined,
+          //   color: undefined,
+          // },
+        },
+        inRange: {
+          // color: undefined,
+          font: {
+            weight: 'bold',
+          },
+          // hover: {
+          //   background: undefined,
+          //   color: undefined,
+          // },
+        },
+        // extend: undefined,
+      },
+      // range: {
+      //   background: undefined,
+      // },
       // daySize must align with global.size
       small: {
+        // day: {
+        //   round: undefined,
+        // },
+        // range: {
+        //   round: undefined,
+        //   start: {
+        //     round: undefined,
+        //   },
+        //   end: {
+        //     round: undefined,
+        //   },
+        // },
         // title: {},
         fontSize: `${baseFontSize - fontScale}px`,
         lineHeight: 1.375,
@@ -612,6 +660,18 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         slideDuration: '0.2s',
       },
       medium: {
+        // day: {
+        //   round: undefined,
+        // },
+        // range: {
+        //   round: undefined,
+        //   start: {
+        //     round: undefined,
+        //   },
+        //   end: {
+        //     round: undefined,
+        //   },
+        // },
         // title: {},
         fontSize: `${baseFontSize}px`,
         lineHeight: 1.45,
@@ -619,6 +679,18 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         slideDuration: '0.5s',
       },
       large: {
+        // day: {
+        //   round: undefined,
+        // },
+        // range: {
+        //   round: undefined,
+        //   start: {
+        //     round: undefined,
+        //   },
+        //   end: {
+        //     round: undefined,
+        //   },
+        // },
         // title: {},
         fontSize: `${baseFontSize + 3 * fontScale}px`,
         lineHeight: 1.11,
