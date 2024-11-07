@@ -472,6 +472,7 @@ var generate = exports.generate = function generate(baseSpacing, scale) {
     },
     button: {
       intelligentPad: true,
+      // background: undefined,
       badge: {
         // align: undefined,,
         container: {
@@ -2270,6 +2271,7 @@ var generate = exports.generate = function generate(baseSpacing, scale) {
         // iconOnly: {
         //   pad: undefined,
         // },
+        // kind: undefined,
         pad: {
           horizontal: '11px',
           vertical: '11px'

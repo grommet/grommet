@@ -18,8 +18,10 @@ var adjustPad = function adjustPad(value, theme) {
 export var StyledButton = styled(Button).withConfig({
   displayName: "StyledToggleGroup__StyledButton",
   componentId: "sc-13k5sx8-0"
-})(["border-radius:0;border:none;", ";", " &:hover{border:none;box-shadow:none;}"], function (props) {
-  return roundStyle(props.round, false, props.theme);
+})(["", " ", ";", " &:hover{", "}"], function (props) {
+  return !props.kind && "border: none;";
+}, function (props) {
+  return !props.kind && ['border-radius: 0;', props.round && roundStyle(props.round, false, props.theme)];
 }, function (props) {
   var _props$theme, _props$theme2, _props$theme3, _props$theme4, _props$theme5;
   var themePad = props.icon && !props.label && (_props$theme = props.theme) != null && (_props$theme = _props$theme.toggleGroup) != null && (_props$theme = _props$theme.button) != null && (_props$theme = _props$theme.iconOnly) != null && _props$theme.pad ? (_props$theme2 = props.theme) == null || (_props$theme2 = _props$theme2.toggleGroup) == null || (_props$theme2 = _props$theme2.button) == null || (_props$theme2 = _props$theme2.iconOnly) == null ? void 0 : _props$theme2.pad : (_props$theme3 = props.theme) == null || (_props$theme3 = _props$theme3.toggleGroup.button) == null ? void 0 : _props$theme3.pad;
@@ -27,5 +29,10 @@ export var StyledButton = styled(Button).withConfig({
   // adjust pad for "kind" themes to align with how "kind" themes
   // manages this calculation
   var pad = (_props$theme4 = props.theme) != null && (_props$theme4 = _props$theme4.button) != null && _props$theme4["default"] && (_props$theme5 = props.theme) != null && (_props$theme5 = _props$theme5.button) != null && _props$theme5.intelligentPad ? adjustPad(themePad, props.theme) : themePad;
-  return edgeStyle('padding', pad, false, undefined, props.theme);
+  return !props.kind && edgeStyle('padding', pad, false, undefined, props.theme);
+}, function (props) {
+  return (
+    // remove hover style from StyledButton/StyledButtonKind theme
+    !props.kind && "border: none;\n    box-shadow: none;"
+  );
 });

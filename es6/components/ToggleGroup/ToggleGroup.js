@@ -1,7 +1,7 @@
 var _excluded = ["defaultValue", "multiple", "options", "onToggle", "value"];
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (e.includes(n)) continue; t[n] = r[n]; } return t; }
-import React, { useCallback, useState, useRef } from 'react';
+import React, { useCallback, useState, useRef, useMemo } from 'react';
 import { Box } from '../Box';
 import { Keyboard } from '../Keyboard';
 import { ToggleGroupPropTypes } from './propTypes';
@@ -93,6 +93,11 @@ var ToggleGroup = function ToggleGroup(_ref2) {
     adjustedEvent.value = nextValue;
     setValue(adjustedEvent);
   };
+
+  // if caller defines a button "kind", respect that kind style
+  var kind = useMemo(function () {
+    return theme.toggleGroup.button.kind;
+  }, [theme.toggleGroup.button]);
   return /*#__PURE__*/React.createElement(Keyboard, {
     onUp: onPrevious,
     onDown: onNext,
@@ -113,7 +118,6 @@ var ToggleGroup = function ToggleGroup(_ref2) {
     responsive: false,
     role: multiple ? 'group' : 'radiogroup'
   }, rest), options == null ? void 0 : options.map(function (option, index) {
-    var _theme$toggleGroup$bu;
     var label;
     var icon;
     var optionValue;
@@ -128,15 +132,18 @@ var ToggleGroup = function ToggleGroup(_ref2) {
       optionValue = option;
     }
     var active = Array.isArray(value) ? !!value.includes(optionValue) : value === optionValue;
-    var round = 0;
-    if ((_theme$toggleGroup$bu = theme.toggleGroup.button.border) != null && _theme$toggleGroup$bu.radius) {
-      round = theme.toggleGroup.button.border.radius;
-    } else if (typeof theme.toggleGroup.container.round === 'string' && (index === 0 || index === options.length - 1)) {
-      // round corners of first and last buttons to match container
-      round = {
-        corner: index === 0 ? 'left' : 'right',
-        size: theme.toggleGroup.container.round
-      };
+    var round;
+    if (!kind) {
+      var _theme$toggleGroup$bu;
+      if ((_theme$toggleGroup$bu = theme.toggleGroup.button.border) != null && _theme$toggleGroup$bu.radius) {
+        round = theme.toggleGroup.button.border.radius;
+      } else if (typeof theme.toggleGroup.container.round === 'string' && (index === 0 || index === options.length - 1)) {
+        // round corners of first and last buttons to match container
+        round = {
+          corner: index === 0 ? 'left' : 'right',
+          size: theme.toggleGroup.container.round
+        };
+      } else round = 0;
     }
     return /*#__PURE__*/React.createElement(Box, {
       border: index < options.length - 1 && theme.toggleGroup.divider ? {
@@ -149,6 +156,7 @@ var ToggleGroup = function ToggleGroup(_ref2) {
       "aria-pressed": multiple && active,
       "aria-checked": !multiple && active,
       icon: icon,
+      kind: kind,
       label: label,
       tip: tip,
       onClick: function onClick(event) {
