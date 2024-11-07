@@ -1438,9 +1438,21 @@ export var generate = function generate(baseSpacing, scale) {
           opacity: 'weak'
         },
         color: 'status-critical',
+        // message: {
+        //   color: undefined,
+        // },
+        // title: {
+        //   color: undefined,
+        // },
         // global: {},
         toast: {
           background: 'background-front'
+          // message: {
+          //   color: undefined,
+          // },
+          // title: {
+          //   color: undefined,
+          // },
         }
       },
       warning: {
@@ -1450,9 +1462,21 @@ export var generate = function generate(baseSpacing, scale) {
           opacity: 'weak'
         },
         color: 'status-warning',
+        // message: {
+        //   color: undefined,
+        // },
+        // title: {
+        //   color: undefined,
+        // },
         // global: {},
         toast: {
           background: 'background-front'
+          // message: {
+          //   color: undefined,
+          // },
+          // title: {
+          //   color: undefined,
+          // },
         }
       },
       normal: {
@@ -1462,18 +1486,42 @@ export var generate = function generate(baseSpacing, scale) {
           opacity: 'weak'
         },
         color: 'status-ok',
+        // message: {
+        //   color: undefined,
+        // },
+        // title: {
+        //   color: undefined,
+        // },
         // global: {},
         toast: {
           background: 'background-front'
+          // message: {
+          //   color: undefined,
+          // },
+          // title: {
+          //   color: undefined,
+          // },
         }
       },
       info: {
         icon: CircleInformation,
         background: 'background-contrast',
         color: 'text-strong',
+        // message: {
+        //   color: undefined,
+        // },
+        // title: {
+        //   color: undefined,
+        // },
         // global: {},
         toast: {
           background: 'background-front'
+          // message: {
+          //   color: undefined,
+          // },
+          // title: {
+          //   color: undefined,
+          // },
         }
       },
       unknown: {
@@ -1483,9 +1531,21 @@ export var generate = function generate(baseSpacing, scale) {
           opacity: 'weak'
         },
         color: 'status-unknown',
+        // message: {
+        //   color: undefined,
+        // },
+        // title: {
+        //   color: undefined,
+        // },
         // global: {},
         toast: {
           background: 'background-front'
+          // message: {
+          //   color: undefined,
+          // },
+          // title: {
+          //   color: undefined,
+          // },
         }
       },
       // deprecate "undefined" in v3
@@ -1494,6 +1554,12 @@ export var generate = function generate(baseSpacing, scale) {
         icon: StatusUnknownSmall,
         // background: undefined,
         color: 'status-unknown'
+        // message: {
+        //   color: undefined,
+        // },
+        // title: {
+        //   color: undefined,
+        // },
         // global: {},
         // toast: {},
       }

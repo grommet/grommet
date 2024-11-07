@@ -1442,9 +1442,21 @@ var generate = exports.generate = function generate(baseSpacing, scale) {
           opacity: 'weak'
         },
         color: 'status-critical',
+        // message: {
+        //   color: undefined,
+        // },
+        // title: {
+        //   color: undefined,
+        // },
         // global: {},
         toast: {
           background: 'background-front'
+          // message: {
+          //   color: undefined,
+          // },
+          // title: {
+          //   color: undefined,
+          // },
         }
       },
       warning: {
@@ -1454,9 +1466,21 @@ var generate = exports.generate = function generate(baseSpacing, scale) {
           opacity: 'weak'
         },
         color: 'status-warning',
+        // message: {
+        //   color: undefined,
+        // },
+        // title: {
+        //   color: undefined,
+        // },
         // global: {},
         toast: {
           background: 'background-front'
+          // message: {
+          //   color: undefined,
+          // },
+          // title: {
+          //   color: undefined,
+          // },
         }
       },
       normal: {
@@ -1466,18 +1490,42 @@ var generate = exports.generate = function generate(baseSpacing, scale) {
           opacity: 'weak'
         },
         color: 'status-ok',
+        // message: {
+        //   color: undefined,
+        // },
+        // title: {
+        //   color: undefined,
+        // },
         // global: {},
         toast: {
           background: 'background-front'
+          // message: {
+          //   color: undefined,
+          // },
+          // title: {
+          //   color: undefined,
+          // },
         }
       },
       info: {
         icon: _CircleInformation.CircleInformation,
         background: 'background-contrast',
         color: 'text-strong',
+        // message: {
+        //   color: undefined,
+        // },
+        // title: {
+        //   color: undefined,
+        // },
         // global: {},
         toast: {
           background: 'background-front'
+          // message: {
+          //   color: undefined,
+          // },
+          // title: {
+          //   color: undefined,
+          // },
         }
       },
       unknown: {
@@ -1487,9 +1535,21 @@ var generate = exports.generate = function generate(baseSpacing, scale) {
           opacity: 'weak'
         },
         color: 'status-unknown',
+        // message: {
+        //   color: undefined,
+        // },
+        // title: {
+        //   color: undefined,
+        // },
         // global: {},
         toast: {
           background: 'background-front'
+          // message: {
+          //   color: undefined,
+          // },
+          // title: {
+          //   color: undefined,
+          // },
         }
       },
       // deprecate "undefined" in v3
@@ -1498,6 +1558,12 @@ var generate = exports.generate = function generate(baseSpacing, scale) {
         icon: _StatusUnknownSmall.StatusUnknownSmall,
         // background: undefined,
         color: 'status-unknown'
+        // message: {
+        //   color: undefined,
+        // },
+        // title: {
+        //   color: undefined,
+        // },
         // global: {},
         // toast: {},
       }

@@ -1240,66 +1240,174 @@ export interface ThemeType {
       icon?: React.ReactNode | Icon;
       background?: BackgroundType;
       color?: ColorType;
+      message?: {
+        color?: ColorType;
+      };
+      title?: {
+        color?: ColorType;
+      };
       global?: {
         background?: BackgroundType;
+        message?: {
+          color?: ColorType;
+        };
+        title?: {
+          color?: ColorType;
+        };
       };
       toast?: {
         background?: BackgroundType;
+        message?: {
+          color?: ColorType;
+        };
+        title?: {
+          color?: ColorType;
+        };
       };
     };
     warning?: {
       icon?: React.ReactNode | Icon;
       background?: BackgroundType;
       color?: ColorType;
+      message?: {
+        color?: ColorType;
+      };
+      title?: {
+        color?: ColorType;
+      };
       global?: {
         background?: BackgroundType;
+        message?: {
+          color?: ColorType;
+        };
+        title?: {
+          color?: ColorType;
+        };
       };
       toast?: {
         background?: BackgroundType;
+        message?: {
+          color?: ColorType;
+        };
+        title?: {
+          color?: ColorType;
+        };
       };
     };
     normal?: {
       icon?: React.ReactNode | Icon;
       background?: BackgroundType;
       color?: ColorType;
+      message?: {
+        color?: ColorType;
+      };
+      title?: {
+        color?: ColorType;
+      };
       global?: {
         background?: BackgroundType;
+        message?: {
+          color?: ColorType;
+        };
+        title?: {
+          color?: ColorType;
+        };
       };
       toast?: {
         background?: BackgroundType;
+        message?: {
+          color?: ColorType;
+        };
+        title?: {
+          color?: ColorType;
+        };
       };
     };
     info?: {
       icon?: React.ReactNode | Icon;
       background?: BackgroundType;
       color?: ColorType;
+      message?: {
+        color?: ColorType;
+      };
+      title?: {
+        color?: ColorType;
+      };
       global?: {
         background?: BackgroundType;
+        message?: {
+          color?: ColorType;
+        };
+        title?: {
+          color?: ColorType;
+        };
       };
       toast?: {
         background?: BackgroundType;
+        message?: {
+          color?: ColorType;
+        };
+        title?: {
+          color?: ColorType;
+        };
       };
     };
     unknown?: {
       icon?: React.ReactNode | Icon;
       background?: BackgroundType;
       color?: ColorType;
+      message?: {
+        color?: ColorType;
+      };
+      title?: {
+        color?: ColorType;
+      };
       global?: {
         background?: BackgroundType;
+        message?: {
+          color?: ColorType;
+        };
+        title?: {
+          color?: ColorType;
+        };
       };
       toast?: {
         background?: BackgroundType;
+        message?: {
+          color?: ColorType;
+        };
+        title?: {
+          color?: ColorType;
+        };
       };
     };
     undefined?: {
       icon?: React.ReactNode | Icon;
       background?: BackgroundType;
       color?: ColorType;
+      message?: {
+        color?: ColorType;
+      };
+      title?: {
+        color?: ColorType;
+      };
       global?: {
         background?: BackgroundType;
+        message?: {
+          color?: ColorType;
+        };
+        title?: {
+          color?: ColorType;
+        };
       };
       toast?: {
         background?: BackgroundType;
+        message?: {
+          color?: ColorType;
+        };
+        title?: {
+          color?: ColorType;
+        };
       };
     };
   };
