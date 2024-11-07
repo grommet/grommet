@@ -46,6 +46,16 @@ const adaptThemeStyle = (value, theme) => {
   return [textStyle, closeButtonStyle];
 };
 
+const getTextColor = (part, status, kind, theme) => {
+  let color;
+  if (theme.notification?.[status]?.[kind]?.[part]?.color)
+    color = theme.notification?.[status]?.[kind]?.[part]?.color;
+  else if (theme.notification?.[status]?.[part]?.color)
+    color = theme.notification?.[status]?.[part]?.color;
+  else color = theme.notification?.[part]?.color;
+  return color;
+};
+
 const NotificationAnchor = styled(Anchor)`
   white-space: nowrap;
 `;
@@ -141,6 +151,9 @@ const Notification = ({
   let actions;
   let message = messageProp;
 
+  const messageColor = getTextColor('message', status, kind, theme);
+  const titleColor = getTextColor('title', status, kind, theme);
+
   if (actionsProp)
     actions = actionsProp.map((action) => (
       <Fragment key={action.label}>
@@ -159,7 +172,7 @@ const Notification = ({
   if (message || actions)
     message =
       typeof message === 'string' ? (
-        <Message {...theme.notification.message}>
+        <Message {...theme.notification.message} color={messageColor}>
           <Text margin={{ right: 'xsmall' }}>{message}</Text>
           {/* include actions with message so it wraps with message */}
           {actions}
@@ -191,7 +204,11 @@ const Notification = ({
         </Box>
         <Box {...theme.notification.textContainer}>
           <TextWrapper>
-            {title && <Text {...theme.notification.title}>{title}</Text>}
+            {title && (
+              <Text {...theme.notification.title} color={titleColor}>
+                {title}
+              </Text>
+            )}
             {message && title && direction === 'row' && <>&nbsp;</>}
             {message}
           </TextWrapper>

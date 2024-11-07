@@ -17,9 +17,12 @@ const adjustPad = (value, theme) => {
 };
 
 export const StyledButton = styled(Button)`
-  border-radius: 0;
-  border: none;
-  ${(props) => roundStyle(props.round, false, props.theme)};
+  ${(props) => !props.kind && `border: none;`}
+  ${(props) =>
+    !props.kind && [
+      'border-radius: 0;',
+      props.round && roundStyle(props.round, false, props.theme),
+    ]};
   ${(props) => {
     const themePad =
       props.icon &&
@@ -34,11 +37,15 @@ export const StyledButton = styled(Button)`
       props.theme?.button?.default && props.theme?.button?.intelligentPad
         ? adjustPad(themePad, props.theme)
         : themePad;
-    return edgeStyle('padding', pad, false, undefined, props.theme);
+    return (
+      !props.kind && edgeStyle('padding', pad, false, undefined, props.theme)
+    );
   }}
-  // remove hover style from StyledButton/StyledButtonKind theme
   &:hover {
-    border: none;
-    box-shadow: none;
+    ${(props) =>
+      // remove hover style from StyledButton/StyledButtonKind theme
+      !props.kind &&
+      `border: none;
+    box-shadow: none;`}
   }
 `;

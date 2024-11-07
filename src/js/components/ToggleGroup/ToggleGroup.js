@@ -1,4 +1,4 @@
-import React, { useCallback, useState, useRef } from 'react';
+import React, { useCallback, useState, useRef, useMemo } from 'react';
 import { Box } from '../Box';
 import { Keyboard } from '../Keyboard';
 import { ToggleGroupPropTypes } from './propTypes';
@@ -94,6 +94,12 @@ const ToggleGroup = ({
     setValue(adjustedEvent);
   };
 
+  // if caller defines a button "kind", respect that kind style
+  const kind = useMemo(
+    () => theme.toggleGroup.button.kind,
+    [theme.toggleGroup.button],
+  );
+
   return (
     <Keyboard
       onUp={onPrevious}
@@ -134,18 +140,20 @@ const ToggleGroup = ({
           const active = Array.isArray(value)
             ? !!value.includes(optionValue)
             : value === optionValue;
-          let round = 0;
-          if (theme.toggleGroup.button.border?.radius) {
-            round = theme.toggleGroup.button.border.radius;
-          } else if (
-            typeof theme.toggleGroup.container.round === 'string' &&
-            (index === 0 || index === options.length - 1)
-          ) {
-            // round corners of first and last buttons to match container
-            round = {
-              corner: index === 0 ? 'left' : 'right',
-              size: theme.toggleGroup.container.round,
-            };
+          let round;
+          if (!kind) {
+            if (theme.toggleGroup.button.border?.radius) {
+              round = theme.toggleGroup.button.border.radius;
+            } else if (
+              typeof theme.toggleGroup.container.round === 'string' &&
+              (index === 0 || index === options.length - 1)
+            ) {
+              // round corners of first and last buttons to match container
+              round = {
+                corner: index === 0 ? 'left' : 'right',
+                size: theme.toggleGroup.container.round,
+              };
+            } else round = 0;
           }
 
           return (
@@ -165,6 +173,7 @@ const ToggleGroup = ({
                 aria-pressed={multiple && active}
                 aria-checked={!multiple && active}
                 icon={icon}
+                kind={kind}
                 label={label}
                 tip={tip}
                 onClick={(event) => handleToggle(event, optionValue)}

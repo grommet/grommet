@@ -339,4 +339,64 @@ describe('Notification', () => {
     );
     expect(asFragment()).toMatchSnapshot();
   });
+
+  test('should render status and kind specific message and title colors', () => {
+    const theme: ThemeType = {
+      notification: {
+        title: {
+          color: 'blue',
+        },
+        message: {
+          color: 'red',
+        },
+        normal: {
+          message: {
+            color: 'blue',
+          },
+          title: {
+            color: 'red',
+          },
+          global: {
+            title: {
+              color: 'green',
+            },
+            message: {
+              color: 'purple',
+            },
+          },
+          toast: {
+            title: {
+              color: 'skyblue',
+            },
+            message: {
+              color: 'green',
+            },
+          },
+        },
+      },
+    };
+
+    const { asFragment } = render(
+      <Grommet theme={theme}>
+        <Notification
+          status="normal"
+          title="Status Title"
+          message="This is an example of message text"
+        />
+        <Notification
+          status="normal"
+          title="Status Title"
+          message="This is an example of message text"
+          global
+        />
+        <Notification
+          status="normal"
+          title="Status Title"
+          message="This is an example of message text"
+          toast
+        />
+      </Grommet>,
+    );
+    expect(asFragment()).toMatchSnapshot();
+  });
 });
