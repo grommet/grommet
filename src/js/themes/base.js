@@ -436,6 +436,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
     },
     button: {
       intelligentPad: true,
+      // background: undefined,
       badge: {
         // align: undefined,,
         container: {
@@ -2106,6 +2107,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         // iconOnly: {
         //   pad: undefined,
         // },
+        // kind: undefined,
         pad: {
           horizontal: '11px',
           vertical: '11px',
