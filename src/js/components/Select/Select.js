@@ -363,6 +363,7 @@ const Select = forwardRef(
                     type="text"
                     name={name}
                     id={id ? `${id}__input` : undefined}
+                    inert="" // revisit for React 19
                     value={inputValue}
                     ref={inputRef}
                     readOnly
@@ -378,6 +379,7 @@ const Select = forwardRef(
                   }
                   disabled={disabled}
                   id={id}
+                  inert="" // revisit for React 19
                   name={name}
                   ref={inputRef}
                   placeholder={placeholder}
