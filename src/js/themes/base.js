@@ -436,6 +436,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
     },
     button: {
       intelligentPad: true,
+      // background: undefined,
       badge: {
         // align: undefined,,
         container: {
@@ -1346,9 +1347,21 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           opacity: 'weak',
         },
         color: 'status-critical',
+        // message: {
+        //   color: undefined,
+        // },
+        // title: {
+        //   color: undefined,
+        // },
         // global: {},
         toast: {
           background: 'background-front',
+          // message: {
+          //   color: undefined,
+          // },
+          // title: {
+          //   color: undefined,
+          // },
         },
       },
       warning: {
@@ -1358,9 +1371,21 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           opacity: 'weak',
         },
         color: 'status-warning',
+        // message: {
+        //   color: undefined,
+        // },
+        // title: {
+        //   color: undefined,
+        // },
         // global: {},
         toast: {
           background: 'background-front',
+          // message: {
+          //   color: undefined,
+          // },
+          // title: {
+          //   color: undefined,
+          // },
         },
       },
       normal: {
@@ -1370,18 +1395,42 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           opacity: 'weak',
         },
         color: 'status-ok',
+        // message: {
+        //   color: undefined,
+        // },
+        // title: {
+        //   color: undefined,
+        // },
         // global: {},
         toast: {
           background: 'background-front',
+          // message: {
+          //   color: undefined,
+          // },
+          // title: {
+          //   color: undefined,
+          // },
         },
       },
       info: {
         icon: CircleInformation,
         background: 'background-contrast',
         color: 'text-strong',
+        // message: {
+        //   color: undefined,
+        // },
+        // title: {
+        //   color: undefined,
+        // },
         // global: {},
         toast: {
           background: 'background-front',
+          // message: {
+          //   color: undefined,
+          // },
+          // title: {
+          //   color: undefined,
+          // },
         },
       },
       unknown: {
@@ -1391,9 +1440,21 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           opacity: 'weak',
         },
         color: 'status-unknown',
+        // message: {
+        //   color: undefined,
+        // },
+        // title: {
+        //   color: undefined,
+        // },
         // global: {},
         toast: {
           background: 'background-front',
+          // message: {
+          //   color: undefined,
+          // },
+          // title: {
+          //   color: undefined,
+          // },
         },
       },
       // deprecate "undefined" in v3
@@ -1402,6 +1463,12 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         icon: StatusUnknownSmall,
         // background: undefined,
         color: 'status-unknown',
+        // message: {
+        //   color: undefined,
+        // },
+        // title: {
+        //   color: undefined,
+        // },
         // global: {},
         // toast: {},
       },
@@ -2040,6 +2107,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         // iconOnly: {
         //   pad: undefined,
         // },
+        // kind: undefined,
         pad: {
           horizontal: '11px',
           vertical: '11px',
