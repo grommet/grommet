@@ -159,8 +159,8 @@ var ToggleGroup = exports.ToggleGroup = function ToggleGroup(_ref2) {
       key: optionValue || index
     }, /*#__PURE__*/_react["default"].createElement(_StyledToggleGroup.StyledButton, _extends({
       active: active,
-      "aria-pressed": multiple && active,
-      "aria-checked": !multiple && active,
+      "aria-pressed": multiple ? active : undefined,
+      "aria-checked": !multiple ? active : undefined,
       icon: icon,
       kind: kind,
       label: label,
