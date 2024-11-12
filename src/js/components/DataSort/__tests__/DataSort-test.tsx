@@ -95,7 +95,7 @@ describe('DataSort', () => {
       loc: { label: 'Location' },
     };
 
-    /* const { container } = */ render(
+    render(
       <Grommet>
         <Data data={items} properties={properties}>
           <DataFilters>
