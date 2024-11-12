@@ -2206,6 +2206,7 @@ exports[`Layer invokes onEsc when modal={false} 1`] = `
               autocomplete="off"
               class="c8 c9"
               data-testid="test-select"
+              inert=""
               readonly=""
               tabindex="-1"
               type="text"

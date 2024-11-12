@@ -244,6 +244,7 @@ exports[`DataTableGroupBy renders 1`] = `
                 autocomplete="off"
                 class="c8 c9"
                 id="data--groupby__input"
+                inert=""
                 name="_groupBy"
                 placeholder="Group by"
                 readonly=""
