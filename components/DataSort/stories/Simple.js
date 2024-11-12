@@ -6,6 +6,14 @@ var _react = _interopRequireDefault(require("react"));
 var _grommet = require("grommet");
 var _data = require("../../DataTable/stories/data");
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
+var properties = {};
+_data.columns.forEach(function (_ref) {
+  var property = _ref.property,
+    header = _ref.header;
+  properties[property] = {
+    label: typeof header === 'string' ? header : property
+  };
+});
 var Simple = exports.Simple = function Simple() {
   return (
     /*#__PURE__*/
@@ -17,7 +25,8 @@ var Simple = exports.Simple = function Simple() {
       pad: "large",
       gap: "medium"
     }, /*#__PURE__*/_react["default"].createElement(_grommet.Data, {
-      data: _data.DATA
+      data: _data.DATA,
+      properties: properties
     }, /*#__PURE__*/_react["default"].createElement(_grommet.DataSort, null), /*#__PURE__*/_react["default"].createElement(_grommet.DataTable, {
       columns: _data.columns
     })))

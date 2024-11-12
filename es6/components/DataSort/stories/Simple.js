@@ -1,6 +1,14 @@
 import React from 'react';
 import { Box, Data, DataSort, DataTable } from 'grommet';
 import { columns, DATA } from '../../DataTable/stories/data';
+var properties = {};
+columns.forEach(function (_ref) {
+  var property = _ref.property,
+    header = _ref.header;
+  properties[property] = {
+    label: typeof header === 'string' ? header : property
+  };
+});
 export var Simple = function Simple() {
   return (
     /*#__PURE__*/
@@ -12,7 +20,8 @@ export var Simple = function Simple() {
       pad: "large",
       gap: "medium"
     }, /*#__PURE__*/React.createElement(Data, {
-      data: DATA
+      data: DATA,
+      properties: properties
     }, /*#__PURE__*/React.createElement(DataSort, null), /*#__PURE__*/React.createElement(DataTable, {
       columns: columns
     })))

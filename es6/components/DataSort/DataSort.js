@@ -1,6 +1,6 @@
 var _excluded = ["drop", "options"];
-function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (e.includes(n)) continue; t[n] = r[n]; } return t; }
+function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 import React, { useContext, useMemo, useState } from 'react';
 import { Descend } from 'grommet-icons/icons/Descend';
 import { DataContext } from '../../contexts/DataContext';
@@ -29,11 +29,44 @@ var Content = function Content(_ref) {
     properties = _useContext.properties;
   var _useContext2 = useContext(MessageContext),
     format = _useContext2.format;
-  var options = useMemo(function () {
-    return optionsArg || properties && Object.keys(properties).sort().filter(function (property) {
-      var _properties$property;
-      return !((properties == null || (_properties$property = properties[property]) == null ? void 0 : _properties$property.sort) === false);
-    }) || data.length > 0 && Object.keys(data[0]).sort() || data;
+  var selectProps = useMemo(function () {
+    var props = {};
+    if (optionsArg) {
+      props = {
+        options: optionsArg
+      };
+    }
+    if (properties && Array.isArray(properties)) {
+      props = {
+        options: properties
+      };
+    } else if (properties && typeof properties === 'object') {
+      props = {
+        options: Object.entries(properties).filter(function (_ref2) {
+          var sort = _ref2[1].sort;
+          return !(sort === false);
+        }).map(function (_ref3) {
+          var key = _ref3[0],
+            label = _ref3[1].label;
+          return {
+            key: key,
+            label: label || key
+          };
+        }).sort(function (a, b) {
+          return a.label.localeCompare(b.label);
+        }),
+        valueKey: {
+          key: 'key',
+          reduce: true
+        },
+        labelKey: 'label'
+      };
+    } else {
+      props = {
+        options: data.length > 0 && Object.keys(data[0]).sort() || data
+      };
+    }
+    return props;
   }, [data, optionsArg, properties]);
   var directionOptions = [{
     label: format({
@@ -57,11 +90,10 @@ var Content = function Content(_ref) {
       id: 'dataSort.by',
       messages: messages == null ? void 0 : messages.dataSort
     })
-  }, /*#__PURE__*/React.createElement(Select, {
+  }, /*#__PURE__*/React.createElement(Select, _extends({
     id: sortPropertyId,
-    name: "_sort.property",
-    options: options
-  })), /*#__PURE__*/React.createElement(FormField, {
+    name: "_sort.property"
+  }, selectProps))), /*#__PURE__*/React.createElement(FormField, {
     key: "dir",
     htmlFor: sortDirectionId,
     label: format({
@@ -74,11 +106,11 @@ var Content = function Content(_ref) {
     options: directionOptions
   }))];
 };
-export var DataSort = function DataSort(_ref2) {
+export var DataSort = function DataSort(_ref4) {
   var _theme$data$button;
-  var drop = _ref2.drop,
-    options = _ref2.options,
-    rest = _objectWithoutPropertiesLoose(_ref2, _excluded);
+  var drop = _ref4.drop,
+    options = _ref4.options,
+    rest = _objectWithoutPropertiesLoose(_ref4, _excluded);
   var _useContext3 = useContext(DataContext),
     dataId = _useContext3.id,
     messages = _useContext3.messages;
