@@ -4321,6 +4321,7 @@ exports[`Data should render property label and return property value to view whe
                         >
                           <label
                             class="c20"
+                            style="pointer-events: none;"
                           >
                             <div
                               class="c21 c22"
@@ -4328,6 +4329,7 @@ exports[`Data should render property label and return property value to view whe
                               <input
                                 checked=""
                                 class="c23"
+                                inert=""
                                 tabindex="-1"
                                 type="checkbox"
                               />

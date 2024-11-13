@@ -32,6 +32,7 @@ const CheckBox = forwardRef(
       'aria-label': ariaLabel,
       checked: checkedProp,
       children,
+      containerProps, // internal only for now, used by SelectMultiple
       defaultChecked = false,
       disabled,
       fill,
@@ -222,6 +223,7 @@ const CheckBox = forwardRef(
         onMouseOut={(event) => onMouseOut?.(event)}
         {...passThemeFlag}
         {...themeableProps}
+        {...containerProps}
       >
         {first}
         {second}

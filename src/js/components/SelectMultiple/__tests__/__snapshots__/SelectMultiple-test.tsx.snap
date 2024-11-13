@@ -3514,6 +3514,7 @@ exports[`SelectMultiple showSelectionInline 1`] = `
         >
           <label
             class="c14"
+            style="pointer-events: none;"
           >
             <div
               class="c15 c16"
@@ -3521,6 +3522,7 @@ exports[`SelectMultiple showSelectionInline 1`] = `
               <input
                 checked=""
                 class="c17"
+                inert=""
                 tabindex="-1"
                 type="checkbox"
               />
@@ -3559,6 +3561,7 @@ exports[`SelectMultiple showSelectionInline 1`] = `
         >
           <label
             class="c14"
+            style="pointer-events: none;"
           >
             <div
               class="c15 c16"
@@ -3566,6 +3569,7 @@ exports[`SelectMultiple showSelectionInline 1`] = `
               <input
                 checked=""
                 class="c17"
+                inert=""
                 tabindex="-1"
                 type="checkbox"
               />
@@ -3604,6 +3608,7 @@ exports[`SelectMultiple showSelectionInline 1`] = `
         >
           <label
             class="c14"
+            style="pointer-events: none;"
           >
             <div
               class="c15 c16"
@@ -3611,6 +3616,7 @@ exports[`SelectMultiple showSelectionInline 1`] = `
               <input
                 checked=""
                 class="c17"
+                inert=""
                 tabindex="-1"
                 type="checkbox"
               />
@@ -4670,6 +4676,7 @@ exports[`SelectMultiple showSelectionInline with disabled options 1`] = `
           <label
             class="c14"
             disabled=""
+            style="pointer-events: none;"
           >
             <div
               class="c15 c16"
@@ -4679,6 +4686,7 @@ exports[`SelectMultiple showSelectionInline with disabled options 1`] = `
                 checked=""
                 class="c17"
                 disabled=""
+                inert=""
                 tabindex="-1"
                 type="checkbox"
               />
@@ -5167,6 +5175,7 @@ exports[`SelectMultiple valueKey and labelKey 1`] = `
         >
           <label
             class="c14"
+            style="pointer-events: none;"
           >
             <div
               class="c15 c16"
@@ -5174,6 +5183,7 @@ exports[`SelectMultiple valueKey and labelKey 1`] = `
               <input
                 checked=""
                 class="c17"
+                inert=""
                 tabindex="-1"
                 type="checkbox"
               />
