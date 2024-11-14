@@ -1,4 +1,4 @@
-var _excluded = ["a11yTitle", "aria-label", "checked", "children", "defaultChecked", "disabled", "fill", "focus", "focusIndicator", "id", "label", "name", "onBlur", "onChange", "onFocus", "onMouseEnter", "onMouseLeave", "onMouseOut", "onMouseOver", "pad", "reverse", "toggle", "indeterminate"];
+var _excluded = ["a11yTitle", "aria-label", "checked", "children", "containerProps", "defaultChecked", "disabled", "fill", "focus", "focusIndicator", "id", "label", "name", "onBlur", "onChange", "onFocus", "onMouseEnter", "onMouseLeave", "onMouseOut", "onMouseOver", "pad", "reverse", "toggle", "indeterminate"];
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (e.includes(n)) continue; t[n] = r[n]; } return t; }
 import React, { forwardRef, useContext, useEffect, useState } from 'react';
@@ -21,6 +21,7 @@ var CheckBox = /*#__PURE__*/forwardRef(function (_ref, ref) {
     ariaLabel = _ref['aria-label'],
     checkedProp = _ref.checked,
     children = _ref.children,
+    containerProps = _ref.containerProps,
     _ref$defaultChecked = _ref.defaultChecked,
     defaultChecked = _ref$defaultChecked === void 0 ? false : _ref$defaultChecked,
     disabled = _ref.disabled,
@@ -187,7 +188,7 @@ var CheckBox = /*#__PURE__*/forwardRef(function (_ref, ref) {
     onMouseOut: function onMouseOut(event) {
       return _onMouseOut == null ? void 0 : _onMouseOut(event);
     }
-  }, passThemeFlag, themeableProps), first, second);
+  }, passThemeFlag, themeableProps, containerProps), first, second);
 });
 CheckBox.displayName = 'CheckBox';
 CheckBox.propTypes = CheckBoxPropTypes;

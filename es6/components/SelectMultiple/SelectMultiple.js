@@ -402,6 +402,8 @@ var SelectMultiple = /*#__PURE__*/forwardRef(function (_ref, ref) {
     defaultCursor: disabled === true || undefined,
     focusIndicator: false,
     id: id ? id + "__input" : undefined,
+    inert: "" // revisit for React 19
+    ,
     name: name,
     width: "100%"
   }, rest, {
@@ -426,6 +428,8 @@ var SelectMultiple = /*#__PURE__*/forwardRef(function (_ref, ref) {
     type: "text",
     name: name,
     id: id ? id + "__input" : undefined,
+    inert: "" // revisit for React 19
+    ,
     value: inputValue,
     ref: inputRef,
     readOnly: true
@@ -435,6 +439,8 @@ var SelectMultiple = /*#__PURE__*/forwardRef(function (_ref, ref) {
     a11yTitle: ariaLabel || a11yTitle,
     disabled: disabled,
     id: id,
+    inert: "" // revisit for React 19
+    ,
     name: name,
     ref: inputRef,
     placeholder: placeholder || 'Select',
@@ -461,6 +467,8 @@ var SelectMultiple = /*#__PURE__*/forwardRef(function (_ref, ref) {
     type: "text",
     name: name,
     id: id ? id + "__input" : undefined,
+    inert: "" // revisit for React 19
+    ,
     value: inputValue,
     ref: inputRef,
     readOnly: true
@@ -468,6 +476,8 @@ var SelectMultiple = /*#__PURE__*/forwardRef(function (_ref, ref) {
     a11yTitle: ariaLabel || a11yTitle,
     disabled: disabled,
     id: id,
+    inert: "" // revisit for React 19
+    ,
     name: name,
     ref: inputRef,
     placeholder: placeholder,

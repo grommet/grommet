@@ -235,6 +235,7 @@ exports[`SelectMultiple children 1`] = `
             <input
               autocomplete="off"
               class="c7 c8"
+              inert=""
               readonly=""
               tabindex="-1"
               type="text"
@@ -499,6 +500,7 @@ exports[`SelectMultiple defaultValue 1`] = `
             <input
               autocomplete="off"
               class="c7 c8"
+              inert=""
               readonly=""
               tabindex="-1"
               type="text"
@@ -767,6 +769,7 @@ exports[`SelectMultiple disabled 1`] = `
             <input
               autocomplete="off"
               class="c7 c8"
+              inert=""
               readonly=""
               tabindex="-1"
               type="text"
@@ -1059,6 +1062,7 @@ exports[`SelectMultiple keyboard interactions 1`] = `
             <input
               autocomplete="off"
               class="c7 c8"
+              inert=""
               readonly=""
               tabindex="-1"
               type="text"
@@ -1324,6 +1328,7 @@ exports[`SelectMultiple null value 1`] = `
               <input
                 autocomplete="off"
                 class="c7 c8"
+                inert=""
                 readonly=""
                 tabindex="-1"
                 type="text"
@@ -1589,6 +1594,7 @@ exports[`SelectMultiple placeholder 1`] = `
             <input
               autocomplete="off"
               class="c7 c8"
+              inert=""
               placeholder="placeholder text"
               readonly=""
               tabindex="-1"
@@ -1841,6 +1847,7 @@ exports[`SelectMultiple renders selectMultiple outside grommet wrapper 1`] = `
           <input
             autocomplete="off"
             class="c6 c7"
+            inert=""
             readonly=""
             tabindex="-1"
             type="text"
@@ -2136,6 +2143,7 @@ exports[`SelectMultiple should display custom messages 1`] = `
                 autocomplete="off"
                 class="c7 c8"
                 data-g-tabindex="-1"
+                inert=""
                 placeholder="Select"
                 readonly=""
                 tabindex="-1"
@@ -2434,6 +2442,7 @@ exports[`SelectMultiple should display custom messages 2`] = `
                 autocomplete="off"
                 class="c7 c8"
                 data-g-tabindex="-1"
+                inert=""
                 placeholder="Select"
                 readonly=""
                 tabindex="-1"
@@ -2732,6 +2741,7 @@ exports[`SelectMultiple should display custom messages 3`] = `
                 autocomplete="off"
                 class="c7 c8"
                 data-g-tabindex="-1"
+                inert=""
                 placeholder="Select"
                 readonly=""
                 tabindex="-1"
@@ -2999,6 +3009,7 @@ exports[`SelectMultiple should not have accessibility violations 1`] = `
               aria-label="test"
               autocomplete="off"
               class="c7 c8"
+              inert=""
               readonly=""
               tabindex="-1"
               type="text"
@@ -3452,6 +3463,7 @@ exports[`SelectMultiple showSelectionInline 1`] = `
             <input
               autocomplete="off"
               class="c7 c8"
+              inert=""
               placeholder="3 selected of 3"
               readonly=""
               tabindex="-1"
@@ -3478,6 +3490,7 @@ exports[`SelectMultiple showSelectionInline 1`] = `
         </div>
         <input
           class="c11"
+          inert=""
           readonly=""
           type="text"
         />
@@ -3501,6 +3514,7 @@ exports[`SelectMultiple showSelectionInline 1`] = `
         >
           <label
             class="c14"
+            style="pointer-events: none;"
           >
             <div
               class="c15 c16"
@@ -3508,6 +3522,7 @@ exports[`SelectMultiple showSelectionInline 1`] = `
               <input
                 checked=""
                 class="c17"
+                inert=""
                 tabindex="-1"
                 type="checkbox"
               />
@@ -3546,6 +3561,7 @@ exports[`SelectMultiple showSelectionInline 1`] = `
         >
           <label
             class="c14"
+            style="pointer-events: none;"
           >
             <div
               class="c15 c16"
@@ -3553,6 +3569,7 @@ exports[`SelectMultiple showSelectionInline 1`] = `
               <input
                 checked=""
                 class="c17"
+                inert=""
                 tabindex="-1"
                 type="checkbox"
               />
@@ -3591,6 +3608,7 @@ exports[`SelectMultiple showSelectionInline 1`] = `
         >
           <label
             class="c14"
+            style="pointer-events: none;"
           >
             <div
               class="c15 c16"
@@ -3598,6 +3616,7 @@ exports[`SelectMultiple showSelectionInline 1`] = `
               <input
                 checked=""
                 class="c17"
+                inert=""
                 tabindex="-1"
                 type="checkbox"
               />
@@ -3974,6 +3993,7 @@ exports[`SelectMultiple showSelectionInline with children 1`] = `
             <input
               autocomplete="off"
               class="c7 c8"
+              inert=""
               placeholder="3 selected of 3"
               readonly=""
               tabindex="-1"
@@ -4000,6 +4020,7 @@ exports[`SelectMultiple showSelectionInline with children 1`] = `
         </div>
         <input
           class="c11"
+          inert=""
           readonly=""
           type="text"
         />
@@ -4175,6 +4196,7 @@ exports[`SelectMultiple showSelectionInline with children 2`] = `
             <input
               autocomplete="off"
               class="c1 c2"
+              inert=""
               placeholder="Select"
               readonly=""
               tabindex="-1"
@@ -4601,6 +4623,7 @@ exports[`SelectMultiple showSelectionInline with disabled options 1`] = `
             <input
               autocomplete="off"
               class="c7 c8"
+              inert=""
               placeholder="1 selected of 3"
               readonly=""
               tabindex="-1"
@@ -4627,6 +4650,7 @@ exports[`SelectMultiple showSelectionInline with disabled options 1`] = `
         </div>
         <input
           class="c11"
+          inert=""
           readonly=""
           type="text"
         />
@@ -4652,6 +4676,7 @@ exports[`SelectMultiple showSelectionInline with disabled options 1`] = `
           <label
             class="c14"
             disabled=""
+            style="pointer-events: none;"
           >
             <div
               class="c15 c16"
@@ -4661,6 +4686,7 @@ exports[`SelectMultiple showSelectionInline with disabled options 1`] = `
                 checked=""
                 class="c17"
                 disabled=""
+                inert=""
                 tabindex="-1"
                 type="checkbox"
               />
@@ -5098,6 +5124,7 @@ exports[`SelectMultiple valueKey and labelKey 1`] = `
             <input
               autocomplete="off"
               class="c7 c8"
+              inert=""
               placeholder="1 selected of 2"
               readonly=""
               tabindex="-1"
@@ -5124,6 +5151,7 @@ exports[`SelectMultiple valueKey and labelKey 1`] = `
         </div>
         <input
           class="c11"
+          inert=""
           readonly=""
           type="text"
         />
@@ -5147,6 +5175,7 @@ exports[`SelectMultiple valueKey and labelKey 1`] = `
         >
           <label
             class="c14"
+            style="pointer-events: none;"
           >
             <div
               class="c15 c16"
@@ -5154,6 +5183,7 @@ exports[`SelectMultiple valueKey and labelKey 1`] = `
               <input
                 checked=""
                 class="c17"
+                inert=""
                 tabindex="-1"
                 type="checkbox"
               />
@@ -5425,6 +5455,7 @@ exports[`SelectMultiple with portal disabled option 1`] = `
           autocomplete="off"
           class="c5 c6"
           id="test-select__drop__input"
+          inert=""
           readonly=""
           tabindex="-1"
           type="text"
@@ -5743,6 +5774,7 @@ exports[`SelectMultiple with portal empty options 1`] = `
           autocomplete="off"
           class="c5 c6"
           id="test-select__drop__input"
+          inert=""
           readonly=""
           tabindex="-1"
           type="text"
@@ -6073,6 +6105,7 @@ exports[`SelectMultiple with portal limit 1`] = `
           autocomplete="off"
           class="c5 c6"
           id="test-select__drop__input"
+          inert=""
           readonly=""
           tabindex="-1"
           type="text"
@@ -6403,6 +6436,7 @@ exports[`SelectMultiple with portal select all and clear 1`] = `
           autocomplete="off"
           class="c5 c6"
           id="test-select__drop__input"
+          inert=""
           readonly=""
           tabindex="-1"
           type="text"
@@ -6516,6 +6550,7 @@ exports[`SelectMultiple with portal select all and clear 3`] = `
           autocomplete="off"
           class="StyledTextInput-sc-1x30a0s-0 hbKDLO StyledSelect__SelectTextInput-sc-znp66n-4 xDoY"
           id="test-select__drop__input"
+          inert=""
           readonly=""
           tabindex="-1"
           type="text"

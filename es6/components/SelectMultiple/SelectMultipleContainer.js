@@ -364,7 +364,20 @@ var SelectMultipleContainer = /*#__PURE__*/forwardRef(function (_ref, ref) {
         pad: "xsmall",
         tabIndex: "-1",
         checked: optionSelected,
-        disabled: optionDisabled
+        disabled: optionDisabled,
+        inert: "" // revisit for React 19
+        ,
+        containerProps: {
+          // in Firefox when we have inert set, the checkbox
+          // click event gets swallowed by the checkbox.
+          // We need the click event to go the the button
+          // around the checkbox so we use pointerEvents =
+          // none. For code clarity we decided an inline
+          // style made sense here.
+          style: {
+            pointerEvents: 'none'
+          }
+        }
       });
     }
     if (!children && search) {
@@ -386,7 +399,20 @@ var SelectMultipleContainer = /*#__PURE__*/forwardRef(function (_ref, ref) {
           pad: "xsmall",
           tabIndex: "-1",
           checked: optionSelected,
-          disabled: optionDisabled
+          disabled: optionDisabled,
+          inert: "" // revisit for React 19
+          ,
+          containerProps: {
+            // in Firefox when we have inert set, the checkbox
+            // click event gets swallowed by the checkbox.
+            // We need the click event to go the the button
+            // around the checkbox so we use pointerEvents =
+            // none. For code clarity we decided an inline
+            // style made sense here.
+            style: {
+              pointerEvents: 'none'
+            }
+          }
         });
       }
     }
