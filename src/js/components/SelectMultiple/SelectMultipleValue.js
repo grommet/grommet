@@ -167,7 +167,7 @@ const SelectMultipleValue = ({
                 pad="xsmall"
                 tabIndex="-1"
                 checked={optionSelected}
-                inert=""
+                inert="" // revisit for React 19
                 containerProps={{
                   // in Firefox when we have inert set, the checkbox
                   // click event gets swallowed by the checkbox.
