@@ -234,7 +234,7 @@ const List = React.forwardRef(
     const sendAnalytics = useAnalytics();
 
     const ariaProps = {
-      role: onClickItem || onOrder ? 'listbox' : 'list',
+      role: onClickItem ? 'listbox' : 'list',
     };
 
     if (active >= 0) {
