@@ -215,7 +215,7 @@ var List = exports.List = /*#__PURE__*/_react["default"].forwardRef(function (_r
   var draggingRef = (0, _react.useRef)();
   var sendAnalytics = (0, _AnalyticsContext.useAnalytics)();
   var ariaProps = {
-    role: onClickItem || onOrder ? 'listbox' : 'list'
+    role: onClickItem ? 'listbox' : 'list'
   };
   if (active >= 0) {
     var activeId;

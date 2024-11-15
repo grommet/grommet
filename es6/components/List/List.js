@@ -208,7 +208,7 @@ var List = /*#__PURE__*/React.forwardRef(function (_ref, ref) {
   var draggingRef = useRef();
   var sendAnalytics = useAnalytics();
   var ariaProps = {
-    role: onClickItem || onOrder ? 'listbox' : 'list'
+    role: onClickItem ? 'listbox' : 'list'
   };
   if (active >= 0) {
     var activeId;

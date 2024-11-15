@@ -417,7 +417,7 @@ exports[`DataTableColumns pinned 1`] = `
       aria-labelledby="test-data--order-columns-tab"
       class="c2"
       id="test-data--order-columns"
-      role="listbox"
+      role="list"
       tabindex="0"
     >
       <li
@@ -2570,7 +2570,7 @@ exports[`DataTableColumns renders 3`] = `
       aria-labelledby="test-data--order-columns-tab"
       class="c0"
       id="test-data--order-columns"
-      role="listbox"
+      role="list"
       tabindex="0"
     >
       <li

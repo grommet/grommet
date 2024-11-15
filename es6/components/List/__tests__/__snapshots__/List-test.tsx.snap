@@ -1362,7 +1362,7 @@ exports[`List disabled Disabled items should be allowed to be re-ordered 1`] = `
   >
     <ul
       class="c1"
-      role="listbox"
+      role="list"
       tabindex="0"
     >
       <li
@@ -2023,7 +2023,7 @@ exports[`List disabled Disabled items should be allowed to be re-ordered 2`] = `
     <ul
       aria-activedescendant="BoiseMoveUp"
       class="c1"
-      role="listbox"
+      role="list"
       tabindex="0"
     >
       <li
@@ -12816,7 +12816,7 @@ exports[`List itemKey function 1`] = `
   >
     <ul
       class="c1"
-      role="listbox"
+      role="list"
       tabindex="0"
     >
       <li
@@ -13753,7 +13753,7 @@ exports[`List onOrder Keyboard move down 1`] = `
 >
   <ul
     class="c1"
-    role="listbox"
+    role="list"
     tabindex="0"
   >
     <li
@@ -13907,7 +13907,7 @@ exports[`List onOrder Keyboard move down 2`] = `
   <ul
     aria-activedescendant="alphaMoveDown"
     class="List__StyledList-sc-130gdqg-0 cYeNGw"
-    role="listbox"
+    role="list"
     tabindex="0"
   >
     <li
@@ -14061,7 +14061,7 @@ exports[`List onOrder Keyboard move down 3`] = `
   <ul
     aria-activedescendant="alphaMoveUp"
     class="List__StyledList-sc-130gdqg-0 cYeNGw"
-    role="listbox"
+    role="list"
     tabindex="0"
   >
     <li
@@ -14477,7 +14477,7 @@ exports[`List onOrder Keyboard move up 1`] = `
 >
   <ul
     class="c1"
-    role="listbox"
+    role="list"
     tabindex="0"
   >
     <li
@@ -14631,7 +14631,7 @@ exports[`List onOrder Keyboard move up 2`] = `
   <ul
     aria-activedescendant="betaMoveUp"
     class="List__StyledList-sc-130gdqg-0 cYeNGw"
-    role="listbox"
+    role="list"
     tabindex="0"
   >
     <li
@@ -14785,7 +14785,7 @@ exports[`List onOrder Keyboard move up 3`] = `
   <ul
     aria-activedescendant="betaMoveDown"
     class="List__StyledList-sc-130gdqg-0 cYeNGw"
-    role="listbox"
+    role="list"
     tabindex="0"
   >
     <li
@@ -15201,7 +15201,7 @@ exports[`List onOrder Mouse move down 1`] = `
 >
   <ul
     class="c1"
-    role="listbox"
+    role="list"
     tabindex="0"
   >
     <li
@@ -15354,7 +15354,7 @@ exports[`List onOrder Mouse move down 2`] = `
 >
   <ul
     class="List__StyledList-sc-130gdqg-0 cYeNGw"
-    role="listbox"
+    role="list"
     tabindex="0"
   >
     <li
@@ -15848,7 +15848,7 @@ exports[`List onOrder with action Render 1`] = `
   >
     <ul
       class="c1"
-      role="listbox"
+      role="list"
       tabindex="0"
     >
       <li
@@ -16286,7 +16286,7 @@ exports[`List onOrder with no-index Keyboard move down 1`] = `
 >
   <ul
     class="c1"
-    role="listbox"
+    role="list"
     tabindex="0"
   >
     <li
@@ -16424,7 +16424,7 @@ exports[`List onOrder with no-index Keyboard move down 2`] = `
   <ul
     aria-activedescendant="alphaMoveDown"
     class="List__StyledList-sc-130gdqg-0 cYeNGw"
-    role="listbox"
+    role="list"
     tabindex="0"
   >
     <li
@@ -16562,7 +16562,7 @@ exports[`List onOrder with no-index Keyboard move down 3`] = `
   <ul
     aria-activedescendant="alphaMoveUp"
     class="List__StyledList-sc-130gdqg-0 cYeNGw"
-    role="listbox"
+    role="list"
     tabindex="0"
   >
     <li
@@ -16957,7 +16957,7 @@ exports[`List onOrder with no-index Keyboard move up 1`] = `
 >
   <ul
     class="c1"
-    role="listbox"
+    role="list"
     tabindex="0"
   >
     <li
@@ -17095,7 +17095,7 @@ exports[`List onOrder with no-index Keyboard move up 2`] = `
   <ul
     aria-activedescendant="betaMoveUp"
     class="List__StyledList-sc-130gdqg-0 cYeNGw"
-    role="listbox"
+    role="list"
     tabindex="0"
   >
     <li
@@ -17233,7 +17233,7 @@ exports[`List onOrder with no-index Keyboard move up 3`] = `
   <ul
     aria-activedescendant="betaMoveDown"
     class="List__StyledList-sc-130gdqg-0 cYeNGw"
-    role="listbox"
+    role="list"
     tabindex="0"
   >
     <li
@@ -17628,7 +17628,7 @@ exports[`List onOrder with no-index Mouse move down 1`] = `
 >
   <ul
     class="c1"
-    role="listbox"
+    role="list"
     tabindex="0"
   >
     <li
@@ -17765,7 +17765,7 @@ exports[`List onOrder with no-index Mouse move down 2`] = `
 >
   <ul
     class="List__StyledList-sc-130gdqg-0 cYeNGw"
-    role="listbox"
+    role="list"
     tabindex="0"
   >
     <li
@@ -18408,7 +18408,7 @@ exports[`List pinned Pinned items should not be allowed to be re-ordered 1`] = `
   >
     <ul
       class="c1"
-      role="listbox"
+      role="list"
       tabindex="0"
     >
       <li
@@ -19095,7 +19095,7 @@ exports[`List pinned Pinned items should not be allowed to be re-ordered 2`] = `
     <ul
       aria-activedescendant="Los GatosMoveUp"
       class="c1"
-      role="listbox"
+      role="list"
       tabindex="0"
     >
       <li
@@ -20649,7 +20649,7 @@ exports[`List pinned should apply pinned object styling to items when data are o
   >
     <ul
       class="c1"
-      role="listbox"
+      role="list"
       tabindex="0"
     >
       <li
@@ -21295,7 +21295,7 @@ exports[`List pinned should apply pinned object styling to items when data are s
   >
     <ul
       class="c1"
-      role="listbox"
+      role="list"
       tabindex="0"
     >
       <li
