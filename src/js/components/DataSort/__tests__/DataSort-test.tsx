@@ -84,4 +84,32 @@ describe('DataSort', () => {
 
     expect(tooltip).toBeTruthy();
   });
+
+  test('properties', async () => {
+    const items = [
+      { name: 'a', loc: 'Home' },
+      { name: 'b', loc: 'School' },
+    ];
+    const properties = {
+      name: { label: 'My Name' },
+      loc: { label: 'Location' },
+    };
+
+    render(
+      <Grommet>
+        <Data data={items} properties={properties}>
+          <DataFilters>
+            <DataSort />
+          </DataFilters>
+        </Data>
+      </Grommet>,
+    );
+
+    const propButton = screen.getByRole('button', { name: 'Open Drop' });
+    fireEvent.click(propButton);
+    const drop = await waitFor(() => screen.getByRole('listbox'));
+
+    expect(drop).toBeTruthy();
+    expect(drop).toMatchSnapshot();
+  });
 });

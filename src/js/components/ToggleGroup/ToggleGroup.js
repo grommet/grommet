@@ -170,8 +170,8 @@ const ToggleGroup = ({
             >
               <StyledButton
                 active={active}
-                aria-pressed={multiple && active}
-                aria-checked={!multiple && active}
+                aria-pressed={multiple ? active : undefined}
+                aria-checked={!multiple ? active : undefined}
                 icon={icon}
                 kind={kind}
                 label={label}
