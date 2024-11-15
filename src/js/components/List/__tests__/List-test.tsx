@@ -1047,7 +1047,7 @@ describe('List pinned', () => {
 
     expect(asFragment()).toMatchSnapshot();
 
-    const list = screen.getByRole('listbox');
+    const list = screen.getByRole('list');
     const listItems = within(list).getAllByRole('listitem');
     const middleItem = screen.getByRole('button', {
       name: '3 San Francisco move up',

@@ -290,6 +290,12 @@ const TextInput = forwardRef(
       return () => clearTimeout(timer);
     }, [activeSuggestionIndex, showDrop]);
 
+    useEffect(() => {
+      if (readOnly && inputRef?.current && inputRef.current.scrollLeft > 0) {
+        inputRef.current.scrollLeft = 0;
+      }
+    }, [readOnly, inputRef, inputRef?.current?.scrollLeft]);
+
     const setValueFromSuggestion = (event, suggestion) => {
       // if we stole the focus in the drop, perhaps by interacting with
       // a suggestion button or the scrollbar, give it back
