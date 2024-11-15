@@ -49,7 +49,7 @@ var defaultDropAlign = {
   left: 'left'
 };
 var TextInput = exports.TextInput = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
-  var _inputRef$current;
+  var _inputRef$current, _inputRef$current2;
   var a11yTitle = _ref.a11yTitle,
     defaultSuggestion = _ref.defaultSuggestion,
     defaultValue = _ref.defaultValue,
@@ -238,6 +238,11 @@ var TextInput = exports.TextInput = /*#__PURE__*/(0, _react.forwardRef)(function
       return clearTimeout(timer);
     };
   }, [activeSuggestionIndex, showDrop]);
+  (0, _react.useEffect)(function () {
+    if (readOnly && inputRef != null && inputRef.current && inputRef.current.scrollLeft > 0) {
+      inputRef.current.scrollLeft = 0;
+    }
+  }, [readOnly, inputRef, inputRef == null || (_inputRef$current = inputRef.current) == null ? void 0 : _inputRef$current.scrollLeft]);
   var setValueFromSuggestion = function setValueFromSuggestion(event, suggestion) {
     // if we stole the focus in the drop, perhaps by interacting with
     // a suggestion button or the scrollbar, give it back
@@ -266,7 +271,7 @@ var TextInput = exports.TextInput = /*#__PURE__*/(0, _react.forwardRef)(function
   }, [activeSuggestionIndex]);
 
   // account for input value in both controlled and uncontrolled scenarios
-  var hasValue = value || ((_inputRef$current = inputRef.current) == null ? void 0 : _inputRef$current.value);
+  var hasValue = value || ((_inputRef$current2 = inputRef.current) == null ? void 0 : _inputRef$current2.value);
   var showStyledPlaceholder = (0, _react.useMemo)(function () {
     return placeholder && typeof placeholder !== 'string' && !hasValue;
   }, [hasValue, placeholder]);
