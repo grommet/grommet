@@ -2806,6 +2806,7 @@ exports[`FormField should render asterisk when requiredIndicator === true 1`] = 
     >
       <label
         class="c2"
+        style="display: flex;"
       >
         label
         <span
@@ -2980,6 +2981,7 @@ exports[`FormField should render custom indicator when requiredIndicator is
     >
       <label
         class="c2"
+        style="display: flex;"
       >
         label
         <svg

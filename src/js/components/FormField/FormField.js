@@ -506,6 +506,10 @@ const FormField = forwardRef(
     if (typeof required === 'object' && required.indicator === false)
       showRequiredIndicator = false;
 
+    if (showRequiredIndicator) {
+      labelStyle.style = { display: 'flex' };
+    }
+
     return (
       <FormFieldBox
         ref={formFieldRef}
