@@ -14,10 +14,12 @@ var NumberEdgePages = exports.NumberEdgePages = function NumberEdgePages() {
       pad: "small",
       gap: "medium"
     }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, null, /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, "numberEdgePages = 2 (number of pages on start/end)"), /*#__PURE__*/_react["default"].createElement(_grommet.Pagination, {
+      "aria-label": "Pagination with 2 pages at the start and end",
       numberItems: 237,
       page: 10,
       numberEdgePages: 2
     })), /*#__PURE__*/_react["default"].createElement(_grommet.Box, null, /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, "numberEdgePages = 0"), /*#__PURE__*/_react["default"].createElement(_grommet.Pagination, {
+      "aria-label": "Pagination with no pages at the start and end",
       numberItems: 237,
       page: 10,
       numberEdgePages: 0

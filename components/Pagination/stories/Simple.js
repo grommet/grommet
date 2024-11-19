@@ -15,13 +15,15 @@ var Simple = exports.Simple = function Simple() {
       pad: "small",
       gap: "medium"
     }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, null, /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, "Default"), /*#__PURE__*/_react["default"].createElement(_grommet.Pagination, {
+      "aria-label": "Pagination with default settings",
       numberItems: 237
     })), /*#__PURE__*/_react["default"].createElement(_grommet.Box, null, /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, "Box Props"), /*#__PURE__*/_react["default"].createElement(_grommet.Pagination, {
       numberItems: 1237,
       page: 24,
       background: "brand",
       pad: "medium",
-      margin: "small"
+      margin: "small",
+      "aria-label": "Pagination with custom background and spacing"
     })))
     // </Grommet>
   );

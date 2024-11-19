@@ -17,17 +17,20 @@ var Steps = exports.Steps = function Steps() {
     }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
       fill: "horizontal"
     }, /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, "Pagination with stepOptions"), /*#__PURE__*/_react["default"].createElement(_grommet.Pagination, {
+      "aria-label": "Pagination with step options to change items per page",
       numberItems: 237,
       stepOptions: true
     })), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
       fill: "horizontal"
     }, /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, "Pagination with stepOptions and summary"), /*#__PURE__*/_react["default"].createElement(_grommet.Pagination, {
+      "aria-label": "Pagination with step options and summary of items per page",
       numberItems: 237,
       stepOptions: true,
       summary: true
     })), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
       fill: "horizontal"
     }, /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, "Pagination with custom step sizes"), /*#__PURE__*/_react["default"].createElement(_grommet.Pagination, {
+      "aria-label": "Pagination with custom step sizes and summary",
       numberItems: 237,
       stepOptions: [10, 20, 30, 1000],
       summary: true

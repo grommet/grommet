@@ -10,13 +10,15 @@ export var Simple = function Simple() {
       pad: "small",
       gap: "medium"
     }, /*#__PURE__*/React.createElement(Box, null, /*#__PURE__*/React.createElement(Text, null, "Default"), /*#__PURE__*/React.createElement(Pagination, {
+      "aria-label": "Pagination with default settings",
       numberItems: 237
     })), /*#__PURE__*/React.createElement(Box, null, /*#__PURE__*/React.createElement(Text, null, "Box Props"), /*#__PURE__*/React.createElement(Pagination, {
       numberItems: 1237,
       page: 24,
       background: "brand",
       pad: "medium",
-      margin: "small"
+      margin: "small",
+      "aria-label": "Pagination with custom background and spacing"
     })))
     // </Grommet>
   );

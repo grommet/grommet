@@ -15,12 +15,15 @@ var Size = exports.Size = function Size() {
       pad: "small",
       gap: "medium"
     }, /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, "Small"), /*#__PURE__*/_react["default"].createElement(_grommet.Pagination, {
+      "aria-label": "Pagination with small size",
       numberItems: 237,
       size: "small"
     }), /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, "Medium (Default)"), /*#__PURE__*/_react["default"].createElement(_grommet.Pagination, {
+      "aria-label": "Pagination with medium size",
       numberItems: 237,
       size: "medium"
     }), /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, "Large"), /*#__PURE__*/_react["default"].createElement(_grommet.Pagination, {
+      "aria-label": "Pagination with large size",
       numberItems: 237,
       size: "large"
     }))

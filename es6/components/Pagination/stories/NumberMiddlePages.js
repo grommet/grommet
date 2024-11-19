@@ -9,10 +9,12 @@ export var NumberMiddlePages = function NumberMiddlePages() {
       pad: "small",
       gap: "medium"
     }, /*#__PURE__*/React.createElement(Box, null, /*#__PURE__*/React.createElement(Text, null, "numberMiddlePages = 4 (number of pages in the middle)"), /*#__PURE__*/React.createElement(Pagination, {
+      "aria-label": "Pagination with 4 pages in the middle",
       numberItems: 237,
       page: 10,
       numberMiddlePages: 4
     })), /*#__PURE__*/React.createElement(Box, null, /*#__PURE__*/React.createElement(Text, null, "numberMiddlePages = 5 (number of pages in the middle)"), /*#__PURE__*/React.createElement(Pagination, {
+      "aria-label": "Pagination with 5 pages in the middle",
       numberItems: 237,
       page: 10,
       numberMiddlePages: 5
