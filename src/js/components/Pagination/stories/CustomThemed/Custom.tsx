@@ -52,7 +52,10 @@ export const Custom = () => (
         <Text margin={{ bottom: 'small' }}>
           Custom Theme via theme.pagination.button
         </Text>
-        <Pagination numberItems={237} />
+        <Pagination
+          aria-label="Pagination with custom button theme"
+          numberItems={237}
+        />
       </Box>
       <Box
         align="start"
@@ -62,7 +65,10 @@ export const Custom = () => (
         <Text margin={{ bottom: 'small' }}>
           Custom Theme via theme.pagination.button
         </Text>
-        <Pagination numberItems={237} />
+        <Pagination
+          aria-label="Pagination with custom button theme and black background"
+          numberItems={237}
+        />
       </Box>
     </Box>
   </Grommet>

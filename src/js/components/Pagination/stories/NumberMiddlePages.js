@@ -8,11 +8,21 @@ export const NumberMiddlePages = () => (
   <Box pad="small" gap="medium">
     <Box>
       <Text>numberMiddlePages = 4 (number of pages in the middle)</Text>
-      <Pagination numberItems={237} page={10} numberMiddlePages={4} />
+      <Pagination
+        aria-label="Pagination with 4 pages in the middle"
+        numberItems={237}
+        page={10}
+        numberMiddlePages={4}
+      />
     </Box>
     <Box>
       <Text>numberMiddlePages = 5 (number of pages in the middle)</Text>
-      <Pagination numberItems={237} page={10} numberMiddlePages={5} />
+      <Pagination
+        aria-label="Pagination with 5 pages in the middle"
+        numberItems={237}
+        page={10}
+        numberMiddlePages={5}
+      />
     </Box>
   </Box>
   // </Grommet>
