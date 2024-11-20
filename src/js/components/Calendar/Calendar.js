@@ -915,7 +915,7 @@ const Calendar = forwardRef(
                 nextInBound: betweenDates(nextMonth, bounds),
               })
             : renderCalendarHeader(previousMonth, nextMonth)}
-          <Box role="grid">
+          <Box fill role="grid">
             {daysOfWeek && renderDaysOfWeek()}
             <Keyboard
               onEnter={() =>
