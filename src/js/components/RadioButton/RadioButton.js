@@ -1,6 +1,6 @@
 import React, { forwardRef, useState } from 'react';
 
-import { normalizeColor, removeUndefined } from '../../utils';
+import { normalizeColor, removeUndefined, useKeyboard } from '../../utils';
 
 import {
   StyledRadioButton,
@@ -20,8 +20,8 @@ const RadioButton = forwardRef(
       checked,
       children,
       disabled,
-      focus,
-      focusIndicator,
+      focus: focusProp,
+      focusIndicator = true,
       id,
       label,
       name,
@@ -32,6 +32,8 @@ const RadioButton = forwardRef(
   ) => {
     const { theme, passThemeFlag } = useThemeValue();
     const [hover, setHover] = useState();
+    const [focus, setFocus] = useState(focusProp);
+    const usingKeyboard = useKeyboard();
     const normalizedLabel =
       typeof label === 'string' ? (
         <StyledRadioButtonLabel {...passThemeFlag}>
@@ -71,6 +73,12 @@ const RadioButton = forwardRef(
         }}
         focus={focus}
         focusIndicator={focusIndicator}
+        onFocus={() => {
+          setFocus(true);
+        }}
+        onBlur={() => {
+          setFocus(false);
+        }}
         onMouseEnter={() => setHover(true)}
         onMouseLeave={() => setHover(false)}
         {...passThemeFlag}
@@ -99,7 +107,7 @@ const RadioButton = forwardRef(
             children({ checked, focus: focus && focusIndicator, hover })
           ) : (
             <StyledRadioButtonBox
-              focus={focus && focusIndicator}
+              focus={focus && focusIndicator && usingKeyboard}
               align="center"
               justify="center"
               width={theme.radioButton.size}
