@@ -1,9 +1,10 @@
-import React, { forwardRef, useMemo } from 'react';
+import React, { forwardRef, useContext, useMemo } from 'react';
 
 import { Bar } from './Bar';
 import { Circle } from './Circle';
 import { MeterPropTypes } from './propTypes';
 import { useThemeValue } from '../../utils/useThemeValue';
+import { MessageContext } from '../../contexts/MessageContext';
 
 const deriveMax = (values) => {
   let max = 100;
@@ -19,9 +20,11 @@ const deriveMax = (values) => {
 const Meter = forwardRef(
   (
     {
+      ariaLabel,
       background = { color: 'light-2', opacity: 'medium' },
       color,
       direction = 'horizontal',
+      messages,
       size = 'medium',
       thickness = 'medium',
       type = 'bar',
@@ -33,6 +36,7 @@ const Meter = forwardRef(
     ref,
   ) => {
     const { theme } = useThemeValue();
+    const { format } = useContext(MessageContext);
 
     // normalize values to an array of objects
     const values = useMemo(() => {
@@ -46,12 +50,41 @@ const Meter = forwardRef(
       (theme.dir === 'rtl' || reverseProp) &&
       !(theme.dir === 'rtl' && reverseProp);
 
+    let meterType;
+
+    switch (type) {
+      case 'bar':
+        meterType = 'meter.bar';
+        break;
+      case 'semicircle':
+        meterType = 'meter.semicircle';
+        break;
+      case 'pie':
+        meterType = 'meter.pie';
+        break;
+      default:
+        meterType = 'meter.circle';
+        break;
+    }
+
+    const meterAriaLabel =
+      ariaLabel ||
+      format({
+        id: meterType,
+        messages: messages?.meter,
+        values: {
+          percentage: value,
+          type,
+        },
+      });
+
     const memoizedMax = useMemo(() => deriveMax(values), [values]);
     let content;
     if (type === 'bar') {
       content = (
         <Bar
           ref={ref}
+          aria-label={meterAriaLabel}
           max={memoizedMax}
           values={values}
           size={size}
@@ -65,6 +98,7 @@ const Meter = forwardRef(
     } else if (type === 'circle' || type === 'pie' || type === 'semicircle') {
       content = (
         <Circle
+          aria-label={meterAriaLabel}
           ref={ref}
           max={memoizedMax}
           values={values}

@@ -104,6 +104,12 @@
     "openMenu": "Open Menu",
     "closeMenu": "Close Menu"
   },
+  "meter": {
+    "bar": "{type} meter with {percentage}% filled",
+    "semicircle": "{type} meter showing {percentage}%",
+    "circle": "{type} chart with {percentage}%",
+    "pie": "{type} chart showing {percentage}%"
+  },
   "pagination": {
     "stepLabel": "Items per page",
     "summary": "Showing {start}-{end} of {total}",

@@ -462,6 +462,7 @@ exports[`NameValuePair should render value when provided as child of type JSX El
         class="c5"
       >
         <svg
+          aria-label="bar meter with 80% filled"
           class="c6"
           height="24"
           preserveAspectRatio="none"

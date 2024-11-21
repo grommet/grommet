@@ -120,6 +120,12 @@ export interface GrommetProps {
         openMenu?: string;
         closeMenu?: string;
       };
+      meter?: {
+        bar?: string;
+        circle?: string;
+        pie?: string;
+        semicircle?: string;
+      };
       rangeSelector?: {
         lower?: string;
         upper?: string;
