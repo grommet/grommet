@@ -18,8 +18,9 @@ var RadioButton = exports.RadioButton = /*#__PURE__*/(0, _react.forwardRef)(func
     checked = _ref.checked,
     children = _ref.children,
     disabled = _ref.disabled,
-    focus = _ref.focus,
-    focusIndicator = _ref.focusIndicator,
+    focusProp = _ref.focus,
+    _ref$focusIndicator = _ref.focusIndicator,
+    focusIndicator = _ref$focusIndicator === void 0 ? true : _ref$focusIndicator,
     id = _ref.id,
     label = _ref.label,
     name = _ref.name,
@@ -31,6 +32,10 @@ var RadioButton = exports.RadioButton = /*#__PURE__*/(0, _react.forwardRef)(func
   var _useState = (0, _react.useState)(),
     hover = _useState[0],
     setHover = _useState[1];
+  var _useState2 = (0, _react.useState)(focusProp),
+    focus = _useState2[0],
+    setFocus = _useState2[1];
+  var usingKeyboard = (0, _utils.useKeyboard)();
   var normalizedLabel = typeof label === 'string' ? /*#__PURE__*/_react["default"].createElement(_StyledRadioButton.StyledRadioButtonLabel, passThemeFlag, label) : label;
   var Icon = theme.radioButton.icons.circle;
   var borderColor = (0, _utils.normalizeColor)(theme.radioButton.border.color, theme);
@@ -55,6 +60,12 @@ var RadioButton = exports.RadioButton = /*#__PURE__*/(0, _react.forwardRef)(func
     },
     focus: focus,
     focusIndicator: focusIndicator,
+    onFocus: function onFocus() {
+      return setFocus(true);
+    },
+    onBlur: function onBlur() {
+      return setFocus(false);
+    },
     onMouseEnter: function onMouseEnter() {
       return setHover(true);
     },
@@ -82,7 +93,7 @@ var RadioButton = exports.RadioButton = /*#__PURE__*/(0, _react.forwardRef)(func
     focus: focus && focusIndicator,
     hover: hover
   }) : /*#__PURE__*/_react["default"].createElement(_StyledRadioButton.StyledRadioButtonBox, _extends({
-    focus: focus && focusIndicator,
+    focus: focus && focusIndicator && usingKeyboard,
     align: "center",
     justify: "center",
     width: theme.radioButton.size,

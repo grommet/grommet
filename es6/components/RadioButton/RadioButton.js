@@ -2,7 +2,7 @@ var _excluded = ["a11yTitle", "checked", "children", "disabled", "focus", "focus
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (e.includes(n)) continue; t[n] = r[n]; } return t; }
 import React, { forwardRef, useState } from 'react';
-import { normalizeColor, removeUndefined } from '../../utils';
+import { normalizeColor, removeUndefined, useKeyboard } from '../../utils';
 import { StyledRadioButton, StyledRadioButtonContainer, StyledRadioButtonIcon, StyledRadioButtonInput, StyledRadioButtonLabel, StyledRadioButtonBox } from './StyledRadioButton';
 import { RadioButtonPropTypes } from './propTypes';
 import { useThemeValue } from '../../utils/useThemeValue';
@@ -12,8 +12,9 @@ var RadioButton = /*#__PURE__*/forwardRef(function (_ref, ref) {
     checked = _ref.checked,
     children = _ref.children,
     disabled = _ref.disabled,
-    focus = _ref.focus,
-    focusIndicator = _ref.focusIndicator,
+    focusProp = _ref.focus,
+    _ref$focusIndicator = _ref.focusIndicator,
+    focusIndicator = _ref$focusIndicator === void 0 ? true : _ref$focusIndicator,
     id = _ref.id,
     label = _ref.label,
     name = _ref.name,
@@ -25,6 +26,10 @@ var RadioButton = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var _useState = useState(),
     hover = _useState[0],
     setHover = _useState[1];
+  var _useState2 = useState(focusProp),
+    focus = _useState2[0],
+    setFocus = _useState2[1];
+  var usingKeyboard = useKeyboard();
   var normalizedLabel = typeof label === 'string' ? /*#__PURE__*/React.createElement(StyledRadioButtonLabel, passThemeFlag, label) : label;
   var Icon = theme.radioButton.icons.circle;
   var borderColor = normalizeColor(theme.radioButton.border.color, theme);
@@ -49,6 +54,12 @@ var RadioButton = /*#__PURE__*/forwardRef(function (_ref, ref) {
     },
     focus: focus,
     focusIndicator: focusIndicator,
+    onFocus: function onFocus() {
+      return setFocus(true);
+    },
+    onBlur: function onBlur() {
+      return setFocus(false);
+    },
     onMouseEnter: function onMouseEnter() {
       return setHover(true);
     },
@@ -76,7 +87,7 @@ var RadioButton = /*#__PURE__*/forwardRef(function (_ref, ref) {
     focus: focus && focusIndicator,
     hover: hover
   }) : /*#__PURE__*/React.createElement(StyledRadioButtonBox, _extends({
-    focus: focus && focusIndicator,
+    focus: focus && focusIndicator && usingKeyboard,
     align: "center",
     justify: "center",
     width: theme.radioButton.size,
