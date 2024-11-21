@@ -73,12 +73,8 @@ const RadioButton = forwardRef(
         }}
         focus={focus}
         focusIndicator={focusIndicator}
-        onFocus={() => {
-          setFocus(true);
-        }}
-        onBlur={() => {
-          setFocus(false);
-        }}
+        onFocus={() => setFocus(true)}
+        onBlur={() => setFocus(false)}
         onMouseEnter={() => setHover(true)}
         onMouseLeave={() => setHover(false)}
         {...passThemeFlag}
