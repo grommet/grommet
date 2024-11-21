@@ -73,7 +73,8 @@ const Meter = forwardRef(
         id: meterType,
         messages: messages?.meter,
         values: {
-          percentage: value,
+          percentage:
+            value !== undefined ? value : values.map((item) => item.value),
           type,
         },
       });

@@ -24,7 +24,7 @@ exports[`Meter background 1`] = `
   class="c0"
 >
   <svg
-    aria-label="bar meter with undefined% filled"
+    aria-label="bar meter with 20% filled"
     class="c1"
     height="24"
     preserveAspectRatio="none"
@@ -47,7 +47,7 @@ exports[`Meter background 1`] = `
     />
   </svg>
   <svg
-    aria-label="bar meter with undefined% filled"
+    aria-label="bar meter with 20% filled"
     class="c1"
     height="24"
     preserveAspectRatio="none"
@@ -71,7 +71,7 @@ exports[`Meter background 1`] = `
     />
   </svg>
   <svg
-    aria-label="circle chart with undefined%"
+    aria-label="circle chart with 20%"
     class="c1"
     height="384"
     viewBox="0 0 384 384"
@@ -95,7 +95,7 @@ exports[`Meter background 1`] = `
     />
   </svg>
   <svg
-    aria-label="circle chart with undefined%"
+    aria-label="circle chart with 20%"
     class="c1"
     height="384"
     viewBox="0 0 384 384"
@@ -120,7 +120,7 @@ exports[`Meter background 1`] = `
     />
   </svg>
   <svg
-    aria-label="bar meter with undefined% filled"
+    aria-label="bar meter with 20% filled"
     class="c1"
     height="24"
     preserveAspectRatio="none"
@@ -170,7 +170,7 @@ exports[`Meter basic 1`] = `
   class="c0"
 >
   <svg
-    aria-label="bar meter with undefined% filled"
+    aria-label="bar meter with 20% filled"
     class="c1"
     height="24"
     preserveAspectRatio="none"
@@ -207,7 +207,7 @@ exports[`Meter basic renders outside grommet wrapper 1`] = `
 }
 
 <svg
-  aria-label="bar meter with undefined% filled"
+  aria-label="bar meter with 20% filled"
   class="c0"
   height="24"
   preserveAspectRatio="none"
@@ -256,7 +256,7 @@ exports[`Meter boundary values 1`] = `
   class="c0"
 >
   <svg
-    aria-label="circle chart with undefined%"
+    aria-label="circle chart with 2.26,8.04%"
     class="c1"
     height="384"
     viewBox="0 0 384 384"
@@ -314,7 +314,7 @@ exports[`Meter default 1`] = `
   class="c0"
 >
   <svg
-    aria-label="bar meter with undefined% filled"
+    aria-label="bar meter with % filled"
     class="c1"
     height="24"
     preserveAspectRatio="none"
@@ -357,7 +357,7 @@ exports[`Meter large circle values 1`] = `
   class="c0"
 >
   <svg
-    aria-label="circle chart with undefined%"
+    aria-label="circle chart with 904426,692866,642068,512772,5032870%"
     class="c1"
     height="192"
     viewBox="0 0 192 192"
@@ -436,7 +436,7 @@ exports[`Meter many values 1`] = `
   class="c0"
 >
   <svg
-    aria-label="bar meter with undefined% filled"
+    aria-label="bar meter with 5,5,5,5,5,5,5,5% filled"
     class="c1"
     height="24"
     preserveAspectRatio="none"
@@ -536,7 +536,7 @@ exports[`Meter reverse 1`] = `
   class="c0"
 >
   <svg
-    aria-label="bar meter with undefined% filled"
+    aria-label="bar meter with 20% filled"
     class="c1"
     height="24"
     preserveAspectRatio="none"
@@ -587,7 +587,7 @@ exports[`Meter reverse circle 1`] = `
   class="c0"
 >
   <svg
-    aria-label="circle chart with undefined%"
+    aria-label="circle chart with 20%"
     class="c1"
     height="384"
     viewBox="0 0 384 384"
@@ -647,7 +647,7 @@ exports[`Meter round 1`] = `
   class="c0"
 >
   <svg
-    aria-label="bar meter with undefined% filled"
+    aria-label="bar meter with 20% filled"
     class="c1"
     height="24"
     preserveAspectRatio="none"
@@ -671,7 +671,7 @@ exports[`Meter round 1`] = `
     />
   </svg>
   <svg
-    aria-label="circle chart with undefined%"
+    aria-label="circle chart with 20%"
     class="c2"
     height="384"
     viewBox="0 0 384 384"
@@ -703,7 +703,7 @@ exports[`Meter round 1`] = `
     />
   </svg>
   <svg
-    aria-label="semicircle meter showing undefined%"
+    aria-label="semicircle meter showing 20%"
     class="c2"
     height="192"
     viewBox="0 0 384 192"
@@ -761,7 +761,7 @@ exports[`Meter rtl theme 1`] = `
   dir="rtl"
 >
   <svg
-    aria-label="bar meter with undefined% filled"
+    aria-label="bar meter with 20% filled"
     class="c1"
     height="24"
     preserveAspectRatio="none"
@@ -861,7 +861,7 @@ exports[`Meter size 1`] = `
   class="c0"
 >
   <svg
-    aria-label="bar meter with undefined% filled"
+    aria-label="bar meter with 20% filled"
     class="c1"
     height="24"
     preserveAspectRatio="none"
@@ -885,7 +885,7 @@ exports[`Meter size 1`] = `
     />
   </svg>
   <svg
-    aria-label="bar meter with undefined% filled"
+    aria-label="bar meter with 20% filled"
     class="c1"
     height="24"
     preserveAspectRatio="none"
@@ -909,7 +909,7 @@ exports[`Meter size 1`] = `
     />
   </svg>
   <svg
-    aria-label="bar meter with undefined% filled"
+    aria-label="bar meter with 20% filled"
     class="c1"
     height="24"
     preserveAspectRatio="none"
@@ -933,7 +933,7 @@ exports[`Meter size 1`] = `
     />
   </svg>
   <svg
-    aria-label="bar meter with undefined% filled"
+    aria-label="bar meter with 20% filled"
     class="c1"
     height="24"
     preserveAspectRatio="none"
@@ -957,7 +957,7 @@ exports[`Meter size 1`] = `
     />
   </svg>
   <svg
-    aria-label="bar meter with undefined% filled"
+    aria-label="bar meter with 20% filled"
     class="c1"
     height="24"
     preserveAspectRatio="none"
@@ -981,7 +981,7 @@ exports[`Meter size 1`] = `
     />
   </svg>
   <svg
-    aria-label="bar meter with undefined% filled"
+    aria-label="bar meter with 20% filled"
     class="c1"
     height="24"
     preserveAspectRatio="none"
@@ -1005,7 +1005,7 @@ exports[`Meter size 1`] = `
     />
   </svg>
   <svg
-    aria-label="bar meter with undefined% filled"
+    aria-label="bar meter with 20% filled"
     class="c1"
     height="24"
     preserveAspectRatio="none"
@@ -1029,7 +1029,7 @@ exports[`Meter size 1`] = `
     />
   </svg>
   <svg
-    aria-label="circle chart with undefined%"
+    aria-label="circle chart with 20%"
     class="c1"
     height="96"
     viewBox="0 0 96 96"
@@ -1054,7 +1054,7 @@ exports[`Meter size 1`] = `
     />
   </svg>
   <svg
-    aria-label="circle chart with undefined%"
+    aria-label="circle chart with 20%"
     class="c1"
     height="192"
     viewBox="0 0 192 192"
@@ -1079,7 +1079,7 @@ exports[`Meter size 1`] = `
     />
   </svg>
   <svg
-    aria-label="circle chart with undefined%"
+    aria-label="circle chart with 20%"
     class="c1"
     height="384"
     viewBox="0 0 384 384"
@@ -1104,7 +1104,7 @@ exports[`Meter size 1`] = `
     />
   </svg>
   <svg
-    aria-label="circle chart with undefined%"
+    aria-label="circle chart with 20%"
     class="c1"
     height="768"
     viewBox="0 0 768 768"
@@ -1129,7 +1129,7 @@ exports[`Meter size 1`] = `
     />
   </svg>
   <svg
-    aria-label="circle chart with undefined%"
+    aria-label="circle chart with 20%"
     class="c1"
     height="1152"
     viewBox="0 0 1152 1152"
@@ -1154,7 +1154,7 @@ exports[`Meter size 1`] = `
     />
   </svg>
   <svg
-    aria-label="circle chart with undefined%"
+    aria-label="circle chart with 20%"
     class="c1"
     height="55"
     viewBox="0 0 55 55"
@@ -1179,7 +1179,7 @@ exports[`Meter size 1`] = `
     />
   </svg>
   <svg
-    aria-label="circle chart with undefined%"
+    aria-label="circle chart with 20%"
     class="c1"
     height="100%"
     viewBox="0 0 288 288"
@@ -1204,7 +1204,7 @@ exports[`Meter size 1`] = `
     />
   </svg>
   <svg
-    aria-label="pie chart showing undefined%"
+    aria-label="pie chart showing 20%"
     class="c1"
     height="96"
     viewBox="0 0 96 96"
@@ -1229,7 +1229,7 @@ exports[`Meter size 1`] = `
     />
   </svg>
   <svg
-    aria-label="pie chart showing undefined%"
+    aria-label="pie chart showing 20%"
     class="c1"
     height="192"
     viewBox="0 0 192 192"
@@ -1254,7 +1254,7 @@ exports[`Meter size 1`] = `
     />
   </svg>
   <svg
-    aria-label="pie chart showing undefined%"
+    aria-label="pie chart showing 20%"
     class="c1"
     height="384"
     viewBox="0 0 384 384"
@@ -1279,7 +1279,7 @@ exports[`Meter size 1`] = `
     />
   </svg>
   <svg
-    aria-label="pie chart showing undefined%"
+    aria-label="pie chart showing 20%"
     class="c1"
     height="768"
     viewBox="0 0 768 768"
@@ -1304,7 +1304,7 @@ exports[`Meter size 1`] = `
     />
   </svg>
   <svg
-    aria-label="pie chart showing undefined%"
+    aria-label="pie chart showing 20%"
     class="c1"
     height="1152"
     viewBox="0 0 1152 1152"
@@ -1329,7 +1329,7 @@ exports[`Meter size 1`] = `
     />
   </svg>
   <svg
-    aria-label="pie chart showing undefined%"
+    aria-label="pie chart showing 20%"
     class="c1"
     height="55"
     viewBox="0 0 55 55"
@@ -1354,7 +1354,7 @@ exports[`Meter size 1`] = `
     />
   </svg>
   <svg
-    aria-label="pie chart showing undefined%"
+    aria-label="pie chart showing 20%"
     class="c1"
     height="100%"
     viewBox="0 0 288 288"
@@ -1379,7 +1379,7 @@ exports[`Meter size 1`] = `
     />
   </svg>
   <svg
-    aria-label="semicircle meter showing undefined%"
+    aria-label="semicircle meter showing 20%"
     class="c1"
     height="48"
     viewBox="0 0 96 48"
@@ -1402,7 +1402,7 @@ exports[`Meter size 1`] = `
     />
   </svg>
   <svg
-    aria-label="semicircle meter showing undefined%"
+    aria-label="semicircle meter showing 20%"
     class="c1"
     height="96"
     viewBox="0 0 192 96"
@@ -1425,7 +1425,7 @@ exports[`Meter size 1`] = `
     />
   </svg>
   <svg
-    aria-label="semicircle meter showing undefined%"
+    aria-label="semicircle meter showing 20%"
     class="c1"
     height="192"
     viewBox="0 0 384 192"
@@ -1448,7 +1448,7 @@ exports[`Meter size 1`] = `
     />
   </svg>
   <svg
-    aria-label="semicircle meter showing undefined%"
+    aria-label="semicircle meter showing 20%"
     class="c1"
     height="384"
     viewBox="0 0 768 384"
@@ -1471,7 +1471,7 @@ exports[`Meter size 1`] = `
     />
   </svg>
   <svg
-    aria-label="semicircle meter showing undefined%"
+    aria-label="semicircle meter showing 20%"
     class="c1"
     height="576"
     viewBox="0 0 1152 576"
@@ -1494,7 +1494,7 @@ exports[`Meter size 1`] = `
     />
   </svg>
   <svg
-    aria-label="semicircle meter showing undefined%"
+    aria-label="semicircle meter showing 20%"
     class="c1"
     height="27.5"
     viewBox="0 0 55 27.5"
@@ -1517,7 +1517,7 @@ exports[`Meter size 1`] = `
     />
   </svg>
   <svg
-    aria-label="semicircle meter showing undefined%"
+    aria-label="semicircle meter showing 20%"
     class="c1"
     height="100%"
     viewBox="0 0 288 144"
@@ -1566,7 +1566,7 @@ exports[`Meter thickness 1`] = `
   class="c0"
 >
   <svg
-    aria-label="bar meter with undefined% filled"
+    aria-label="bar meter with 20% filled"
     class="c1"
     height="6"
     preserveAspectRatio="none"
@@ -1590,7 +1590,7 @@ exports[`Meter thickness 1`] = `
     />
   </svg>
   <svg
-    aria-label="bar meter with undefined% filled"
+    aria-label="bar meter with 20% filled"
     class="c1"
     height="12"
     preserveAspectRatio="none"
@@ -1614,7 +1614,7 @@ exports[`Meter thickness 1`] = `
     />
   </svg>
   <svg
-    aria-label="bar meter with undefined% filled"
+    aria-label="bar meter with 20% filled"
     class="c1"
     height="24"
     preserveAspectRatio="none"
@@ -1638,7 +1638,7 @@ exports[`Meter thickness 1`] = `
     />
   </svg>
   <svg
-    aria-label="bar meter with undefined% filled"
+    aria-label="bar meter with 20% filled"
     class="c1"
     height="48"
     preserveAspectRatio="none"
@@ -1662,7 +1662,7 @@ exports[`Meter thickness 1`] = `
     />
   </svg>
   <svg
-    aria-label="bar meter with undefined% filled"
+    aria-label="bar meter with 20% filled"
     class="c1"
     height="96"
     preserveAspectRatio="none"
@@ -1686,7 +1686,7 @@ exports[`Meter thickness 1`] = `
     />
   </svg>
   <svg
-    aria-label="bar meter with undefined% filled"
+    aria-label="bar meter with 20% filled"
     class="c1"
     height="55"
     preserveAspectRatio="none"
@@ -1710,7 +1710,7 @@ exports[`Meter thickness 1`] = `
     />
   </svg>
   <svg
-    aria-label="circle chart with undefined%"
+    aria-label="circle chart with 20%"
     class="c1"
     height="384"
     viewBox="0 0 384 384"
@@ -1735,7 +1735,7 @@ exports[`Meter thickness 1`] = `
     />
   </svg>
   <svg
-    aria-label="circle chart with undefined%"
+    aria-label="circle chart with 20%"
     class="c1"
     height="384"
     viewBox="0 0 384 384"
@@ -1760,7 +1760,7 @@ exports[`Meter thickness 1`] = `
     />
   </svg>
   <svg
-    aria-label="circle chart with undefined%"
+    aria-label="circle chart with 20%"
     class="c1"
     height="384"
     viewBox="0 0 384 384"
@@ -1785,7 +1785,7 @@ exports[`Meter thickness 1`] = `
     />
   </svg>
   <svg
-    aria-label="circle chart with undefined%"
+    aria-label="circle chart with 20%"
     class="c1"
     height="384"
     viewBox="0 0 384 384"
@@ -1810,7 +1810,7 @@ exports[`Meter thickness 1`] = `
     />
   </svg>
   <svg
-    aria-label="circle chart with undefined%"
+    aria-label="circle chart with 20%"
     class="c1"
     height="384"
     viewBox="0 0 384 384"
@@ -1835,7 +1835,7 @@ exports[`Meter thickness 1`] = `
     />
   </svg>
   <svg
-    aria-label="circle chart with undefined%"
+    aria-label="circle chart with 20%"
     class="c1"
     height="384"
     viewBox="0 0 384 384"
@@ -1886,7 +1886,7 @@ exports[`Meter type 1`] = `
   class="c0"
 >
   <svg
-    aria-label="bar meter with undefined% filled"
+    aria-label="bar meter with 20% filled"
     class="c1"
     height="24"
     preserveAspectRatio="none"
@@ -1910,7 +1910,7 @@ exports[`Meter type 1`] = `
     />
   </svg>
   <svg
-    aria-label="circle chart with undefined%"
+    aria-label="circle chart with 20%"
     class="c1"
     height="384"
     viewBox="0 0 384 384"
@@ -1935,7 +1935,7 @@ exports[`Meter type 1`] = `
     />
   </svg>
   <svg
-    aria-label="pie chart showing undefined%"
+    aria-label="pie chart showing 20%"
     class="c1"
     height="384"
     viewBox="0 0 384 384"
@@ -1960,7 +1960,7 @@ exports[`Meter type 1`] = `
     />
   </svg>
   <svg
-    aria-label="semicircle meter showing undefined%"
+    aria-label="semicircle meter showing 20%"
     class="c1"
     height="192"
     viewBox="0 0 384 192"
@@ -2009,7 +2009,7 @@ exports[`Meter vertical 1`] = `
   class="c0"
 >
   <svg
-    aria-label="bar meter with undefined% filled"
+    aria-label="bar meter with 20% filled"
     class="c1"
     height="384"
     preserveAspectRatio="none"
