@@ -250,17 +250,18 @@ describe('Meter', () => {
   });
 
   test('custom message', () => {
+    const value = 30;
     const { container } = render(
       <Grommet
         messages={{
           messages: {
             meter: {
-              bar: 'Bar progress with the {value}.',
+              bar: `bar value is ${value}.`,
             },
           },
         }}
       >
-        <Meter value={30} />
+        <Meter value={value} />
       </Grommet>,
     );
     expect(container.firstChild).toMatchSnapshot();
