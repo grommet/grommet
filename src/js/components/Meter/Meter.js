@@ -50,36 +50,25 @@ const Meter = forwardRef(
       (theme.dir === 'rtl' || reverseProp) &&
       !(theme.dir === 'rtl' && reverseProp);
 
-    let meterType;
-
-    switch (type) {
-      case 'bar':
-        meterType = 'meter.bar';
-        break;
-      case 'semicircle':
-        meterType = 'meter.semicircle';
-        break;
-      case 'pie':
-        meterType = 'meter.pie';
-        break;
-      default:
-        meterType = 'meter.circle';
-        break;
-    }
+    const memoizedMax = useMemo(() => deriveMax(values), [values]);
 
     const meterAriaLabel =
       ariaLabel ||
       format({
-        id: meterType,
+        id: `meter.${type ?? 'default'}`,
         messages: messages?.meter,
         values: {
           percentage:
-            value !== undefined ? value : values.map((item) => item.value),
+            value !== undefined
+              ? value
+              : (values?.length
+                  ? values.map((item) => item.value ?? 0)
+                  : [0])[0],
           type,
+          max: memoizedMax || 100,
         },
       });
 
-    const memoizedMax = useMemo(() => deriveMax(values), [values]);
     let content;
     if (type === 'bar') {
       content = (

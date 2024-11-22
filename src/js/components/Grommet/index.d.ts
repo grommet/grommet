@@ -177,7 +177,7 @@ export interface GrommetProps {
         volumeUp?: string;
       };
     };
-    format: (...args: any[]) => void;
+    format?: (...args: any[]) => void;
   };
   onAnalytics?: (data: any) => void;
   plain?: boolean;

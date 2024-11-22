@@ -105,10 +105,10 @@
     "closeMenu": "Close Menu"
   },
   "meter": {
-    "bar": "{type} meter with {percentage}% filled",
-    "semicircle": "{type} meter showing {percentage}%",
-    "circle": "{type} chart with {percentage}%",
-    "pie": "{type} chart showing {percentage}%"
+    "bar": "{type} meter with value {percentage}% filled out of {max}",
+    "semicircle": "{type} meter with value {percentage}% out of {max}",
+    "circle": "{type} meter with value {percentage}% out of {max}",
+    "pie": "{type} meter with value {percentage}% out of {max}"
   },
   "pagination": {
     "stepLabel": "Items per page",

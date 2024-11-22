@@ -248,4 +248,21 @@ describe('Meter', () => {
 
     expect(container.firstChild).toMatchSnapshot();
   });
+
+  test('custom message', () => {
+    const { container } = render(
+      <Grommet
+        messages={{
+          messages: {
+            meter: {
+              bar: 'Bar progress with the {value}.',
+            },
+          },
+        }}
+      >
+        <Meter value={30} />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+  });
 });
