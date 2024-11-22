@@ -214,7 +214,7 @@ describe('DataTableColumns', () => {
 
     screen.getByRole('button', { name: '2 Name move up' });
 
-    const list = screen.getByRole('listbox');
+    const list = screen.getByRole('list');
     const listItems = within(list).getAllByRole('listitem');
 
     const dragElement = listItems[2];

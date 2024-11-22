@@ -8,15 +8,29 @@ export const Steps = () => (
   <Box align="start" pad="small" gap="xlarge">
     <Box fill="horizontal">
       <Text>Pagination with stepOptions</Text>
-      <Pagination numberItems={237} stepOptions />
+      <Pagination
+        aria-label="Pagination with step options to change items per page"
+        numberItems={237}
+        stepOptions
+      />
     </Box>
     <Box fill="horizontal">
       <Text>Pagination with stepOptions and summary</Text>
-      <Pagination numberItems={237} stepOptions summary />
+      <Pagination
+        aria-label="Pagination with step options and summary of items per page"
+        numberItems={237}
+        stepOptions
+        summary
+      />
     </Box>
     <Box fill="horizontal">
       <Text>Pagination with custom step sizes</Text>
-      <Pagination numberItems={237} stepOptions={[10, 20, 30, 1000]} summary />
+      <Pagination
+        aria-label="Pagination with custom step sizes and summary"
+        numberItems={237}
+        stepOptions={[10, 20, 30, 1000]}
+        summary
+      />
     </Box>
   </Box>
   // </Grommet>
