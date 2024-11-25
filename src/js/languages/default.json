@@ -105,7 +105,7 @@
     "closeMenu": "Close Menu"
   },
   "meter": {
-    "bar": "{type} meter with value {meterValue} filled out of {max}",
+    "bar": "{type} meter with value {meterValue} out of {max}",
     "semicircle": "{type} meter with value {meterValue} out of {max}",
     "circle": "{type} meter with value {meterValue} out of {max}",
     "pie": "{type} meter with value {meterValue} out of {max}"
