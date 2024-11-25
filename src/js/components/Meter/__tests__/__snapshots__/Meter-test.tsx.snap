@@ -314,7 +314,7 @@ exports[`Meter custom message 1`] = `
   class="c0"
 >
   <svg
-    aria-label="bar meter with value 30 filled out of 100"
+    aria-label="bar value is 30% out of 100."
     class="c1"
     height="24"
     preserveAspectRatio="none"

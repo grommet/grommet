@@ -17,10 +17,8 @@ export interface MeterProps {
   margin?: MarginType;
   max?: number;
   messages?: {
-    bar?: string;
-    circle?: string;
-    semicircle?: string;
-    pie?: string;
+    singular?: string;
+    plural?: string;
   };
   reverse?: boolean;
   round?: boolean;

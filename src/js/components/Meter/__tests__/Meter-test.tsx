@@ -256,7 +256,7 @@ describe('Meter', () => {
         messages={{
           messages: {
             meter: {
-              bar: `bar value is ${value}.`,
+              singular: `bar value is ${value}% out of 100.`,
             },
           },
         }}

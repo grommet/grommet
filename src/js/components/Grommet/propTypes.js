@@ -119,6 +119,10 @@ if (process.env.NODE_ENV !== 'production') {
           openMenu: PropTypes.string,
           closeMenu: PropTypes.string,
         }),
+        meter: PropTypes.shape({
+          singular: PropTypes.string,
+          plural: PropTypes.string,
+        }),
         rangeSelector: PropTypes.shape({
           lower: PropTypes.string,
           upper: PropTypes.string,

@@ -121,10 +121,8 @@ export interface GrommetProps {
         closeMenu?: string;
       };
       meter?: {
-        bar?: string;
-        circle?: string;
-        pie?: string;
-        semicircle?: string;
+        singular?: string;
+        plural?: string;
       };
       rangeSelector?: {
         lower?: string;
