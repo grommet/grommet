@@ -60,7 +60,8 @@ const Meter = forwardRef(
         id: `meter.${messageId}`,
         messages: messages?.meter,
         values: {
-          meterValue: value || values.map((item) => item.value ?? 0).join(', '),
+          meterValue:
+            value || values.map((item) => item.value ?? 0).join(', ') || 0,
           type,
           max: max || memoizedMax || 100,
         },
