@@ -105,10 +105,8 @@
     "closeMenu": "Close Menu"
   },
   "meter": {
-    "bar": "{type} meter with value {meterValue} filled out of {max}",
-    "semicircle": "{type} meter with value {meterValue} out of {max}",
-    "circle": "{type} meter with value {meterValue} out of {max}",
-    "pie": "{type} meter with value {meterValue} out of {max}"
+    "singular": "{type} meter with value {meterValue} filled out of {max}",
+    "plural": "{type} meter with values {meterValue} filled out of {max}"
   },
   "pagination": {
     "stepLabel": "Items per page",

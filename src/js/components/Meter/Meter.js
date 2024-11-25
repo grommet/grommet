@@ -24,6 +24,7 @@ const Meter = forwardRef(
       background = { color: 'light-2', opacity: 'medium' },
       color,
       direction = 'horizontal',
+      max,
       messages,
       size = 'medium',
       thickness = 'medium',
@@ -51,21 +52,17 @@ const Meter = forwardRef(
       !(theme.dir === 'rtl' && reverseProp);
 
     const memoizedMax = useMemo(() => deriveMax(values), [values]);
+    const messageId = values && values.length === 1 ? 'singular' : 'plural';
 
     const meterAriaLabel =
       ariaLabel ||
       format({
-        id: `meter.${type ?? 'default'}`,
+        id: `meter.${messageId}`,
         messages: messages?.meter,
         values: {
-          meterValue:
-            value !== undefined
-              ? value
-              : (values?.length
-                  ? values.map((item) => item.value ?? 0)
-                  : [0])[0],
+          meterValue: value || values.map((item) => item.value ?? 0).join(', '),
           type,
-          max: memoizedMax || 100,
+          max: max || memoizedMax || 100,
         },
       });
 
@@ -75,7 +72,7 @@ const Meter = forwardRef(
         <Bar
           ref={ref}
           aria-label={meterAriaLabel}
-          max={memoizedMax}
+          max={max || memoizedMax}
           values={values}
           size={size}
           thickness={thickness}
@@ -90,7 +87,7 @@ const Meter = forwardRef(
         <Circle
           aria-label={meterAriaLabel}
           ref={ref}
-          max={memoizedMax}
+          max={max || memoizedMax}
           values={values}
           size={size}
           thickness={thickness}
