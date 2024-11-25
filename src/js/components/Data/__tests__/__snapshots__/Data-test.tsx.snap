@@ -4192,6 +4192,7 @@ exports[`Data should render property label and return property value to view whe
                               autocomplete="off"
                               class="c13 c14"
                               id="data-selectMultiple__input"
+                              inert=""
                               name="selectMultiple"
                               placeholder="2 selected of 9"
                               readonly=""
@@ -4220,6 +4221,7 @@ exports[`Data should render property label and return property value to view whe
                         <input
                           class="c17"
                           id="data-selectMultiple__input"
+                          inert=""
                           name="selectMultiple"
                           readonly=""
                           type="text"
@@ -4265,6 +4267,7 @@ exports[`Data should render property label and return property value to view whe
                               autocomplete="off"
                               class="c13 c14"
                               id="data-selectMultipleSimple__input"
+                              inert=""
                               name="selectMultipleSimple"
                               placeholder="1 selected of 9"
                               readonly=""
@@ -4293,6 +4296,7 @@ exports[`Data should render property label and return property value to view whe
                         <input
                           class="c17"
                           id="data-selectMultipleSimple__input"
+                          inert=""
                           name="selectMultipleSimple"
                           readonly=""
                           type="text"
@@ -4317,6 +4321,7 @@ exports[`Data should render property label and return property value to view whe
                         >
                           <label
                             class="c20"
+                            style="pointer-events: none;"
                           >
                             <div
                               class="c21 c22"
@@ -4324,6 +4329,7 @@ exports[`Data should render property label and return property value to view whe
                               <input
                                 checked=""
                                 class="c23"
+                                inert=""
                                 tabindex="-1"
                                 type="checkbox"
                               />

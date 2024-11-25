@@ -38,6 +38,7 @@ const grommetInputNames = [
   'TextArea',
   'DateInput',
   'FileInput',
+  'RadioButton',
   'RadioButtonGroup',
   'RangeInput',
   'RangeSelector',
@@ -47,6 +48,7 @@ const grommetInputNames = [
 const grommetInputPadNames = [
   'CheckBox',
   'CheckBoxGroup',
+  'RadioButton',
   'RadioButtonGroup',
   'RangeInput',
   'RangeSelector',

@@ -366,7 +366,6 @@ exports[`ToggleGroup Should call onToggle in uncontrolled scenarios with multipl
         class="c2"
       >
         <button
-          aria-checked="false"
           aria-pressed="false"
           class="c3 c4"
           tabindex="0"
@@ -379,7 +378,6 @@ exports[`ToggleGroup Should call onToggle in uncontrolled scenarios with multipl
         class="c2"
       >
         <button
-          aria-checked="false"
           aria-pressed="false"
           class="c3 c5"
           tabindex="-1"
@@ -392,7 +390,6 @@ exports[`ToggleGroup Should call onToggle in uncontrolled scenarios with multipl
         class="c6"
       >
         <button
-          aria-checked="false"
           aria-pressed="false"
           class="c3 c7"
           tabindex="-1"
@@ -965,7 +962,6 @@ exports[`ToggleGroup Should put tab focus on active button when value with multi
         class="c2"
       >
         <button
-          aria-checked="false"
           aria-pressed="false"
           class="c3 c4"
           tabindex="-1"
@@ -978,7 +974,6 @@ exports[`ToggleGroup Should put tab focus on active button when value with multi
         class="c2"
       >
         <button
-          aria-checked="false"
           aria-pressed="true"
           class="c5 c6"
           tabindex="0"
@@ -991,7 +986,6 @@ exports[`ToggleGroup Should put tab focus on active button when value with multi
         class="c7"
       >
         <button
-          aria-checked="false"
           aria-pressed="true"
           class="c8 c9"
           tabindex="-1"
@@ -1493,7 +1487,6 @@ exports[`ToggleGroup Should put tab focus on first button when no value with mul
         class="c2"
       >
         <button
-          aria-checked="false"
           aria-pressed="false"
           class="c3 c4"
           tabindex="0"
@@ -1506,7 +1499,6 @@ exports[`ToggleGroup Should put tab focus on first button when no value with mul
         class="c2"
       >
         <button
-          aria-checked="false"
           aria-pressed="false"
           class="c5 c6"
           tabindex="-1"
@@ -1519,7 +1511,6 @@ exports[`ToggleGroup Should put tab focus on first button when no value with mul
         class="c7"
       >
         <button
-          aria-checked="false"
           aria-pressed="false"
           class="c5 c8"
           tabindex="-1"
@@ -1685,7 +1676,6 @@ exports[`ToggleGroup Should render when options is array of objects with multipl
         class="c2"
       >
         <button
-          aria-checked="false"
           aria-pressed="false"
           class="c3 c4"
           tabindex="0"
@@ -1698,7 +1688,6 @@ exports[`ToggleGroup Should render when options is array of objects with multipl
         class="c5"
       >
         <button
-          aria-checked="false"
           aria-pressed="false"
           class="c3 c6"
           tabindex="-1"
@@ -3545,7 +3534,6 @@ exports[`ToggleGroup string options with multiple prop 1`] = `
         class="c2"
       >
         <button
-          aria-checked="false"
           aria-pressed="false"
           class="c3 c4"
           tabindex="0"
@@ -3558,7 +3546,6 @@ exports[`ToggleGroup string options with multiple prop 1`] = `
         class="c5"
       >
         <button
-          aria-checked="false"
           aria-pressed="false"
           class="c3 c6"
           tabindex="-1"

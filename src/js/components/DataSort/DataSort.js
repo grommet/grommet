@@ -20,17 +20,33 @@ const Content = ({ options: optionsArg }) => {
   const { data, id: dataId, messages, properties } = useContext(DataContext);
   const { format } = useContext(MessageContext);
 
-  const options = useMemo(
-    () =>
-      optionsArg ||
-      (properties &&
-        Object.keys(properties)
-          .sort()
-          .filter((property) => !(properties?.[property]?.sort === false))) ||
-      (data.length > 0 && Object.keys(data[0]).sort()) ||
-      data,
-    [data, optionsArg, properties],
-  );
+  const selectProps = useMemo(() => {
+    let props = {};
+
+    if (optionsArg) {
+      props = { options: optionsArg };
+    }
+    if (properties && Array.isArray(properties)) {
+      props = { options: properties };
+    } else if (properties && typeof properties === 'object') {
+      props = {
+        options: Object.entries(properties)
+          .filter(([, { sort }]) => !(sort === false))
+          .map(([key, { label }]) => ({ key, label: label || key }))
+          .sort((a, b) => a.label.localeCompare(b.label)),
+        valueKey: {
+          key: 'key',
+          reduce: true,
+        },
+        labelKey: 'label',
+      };
+    } else {
+      props = {
+        options: (data.length > 0 && Object.keys(data[0]).sort()) || data,
+      };
+    }
+    return props;
+  }, [data, optionsArg, properties]);
 
   const directionOptions = [
     {
@@ -61,7 +77,7 @@ const Content = ({ options: optionsArg }) => {
         messages: messages?.dataSort,
       })}
     >
-      <Select id={sortPropertyId} name="_sort.property" options={options} />
+      <Select id={sortPropertyId} name="_sort.property" {...selectProps} />
     </FormField>,
     <FormField
       key="dir"
