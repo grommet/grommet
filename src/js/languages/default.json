@@ -105,10 +105,10 @@
     "closeMenu": "Close Menu"
   },
   "meter": {
-    "bar": "{type} meter with value {percentage}% filled out of {max}",
-    "semicircle": "{type} meter with value {percentage}% out of {max}",
-    "circle": "{type} meter with value {percentage}% out of {max}",
-    "pie": "{type} meter with value {percentage}% out of {max}"
+    "bar": "{type} meter with value {meterValue} filled out of {max}",
+    "semicircle": "{type} meter with value {meterValue} out of {max}",
+    "circle": "{type} meter with value {meterValue} out of {max}",
+    "pie": "{type} meter with value {meterValue} out of {max}"
   },
   "pagination": {
     "stepLabel": "Items per page",

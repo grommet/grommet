@@ -58,7 +58,7 @@ const Meter = forwardRef(
         id: `meter.${type ?? 'default'}`,
         messages: messages?.meter,
         values: {
-          percentage:
+          meterValue:
             value !== undefined
               ? value
               : (values?.length
