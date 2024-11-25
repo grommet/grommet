@@ -105,8 +105,8 @@
     "closeMenu": "Close Menu"
   },
   "meter": {
-    "singular": "{type} meter with value {meterValue} filled out of {max}",
-    "plural": "{type} meter with values {meterValue} filled out of {max}"
+    "singular": "{type} meter with value {meterValue} out of {max}",
+    "plural": "{type} meter with values {meterValue} out of {max}"
   },
   "pagination": {
     "stepLabel": "Items per page",
