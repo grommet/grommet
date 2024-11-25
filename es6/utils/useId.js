@@ -1,4 +1,5 @@
-import { useId as useIdReact, useState } from 'react';
+var _React$useId;
+import React, { useState } from 'react';
 var currentId = 0;
 var getId = function getId() {
   // eslint-disable-next-line no-plusplus
@@ -12,5 +13,5 @@ var useIdGrommet = function useIdGrommet() {
 };
 
 // Polyfill React 18's useId for compatibility with React 16 and 17
-var useId = useIdReact != null ? useIdReact : useIdGrommet;
+var useId = (_React$useId = React.useId) != null ? _React$useId : useIdGrommet;
 export { useId };
