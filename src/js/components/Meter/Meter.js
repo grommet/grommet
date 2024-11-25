@@ -20,7 +20,7 @@ const deriveMax = (values) => {
 const Meter = forwardRef(
   (
     {
-      ariaLabel,
+      'aria-label': ariaLabel,
       background = { color: 'light-2', opacity: 'medium' },
       color,
       direction = 'horizontal',
