@@ -785,7 +785,10 @@ var Calendar = exports.Calendar = /*#__PURE__*/(0, _react.forwardRef)(function (
     },
     previousInBound: (0, _utils.betweenDates)(previousMonth, bounds),
     nextInBound: (0, _utils.betweenDates)(nextMonth, bounds)
-  }) : renderCalendarHeader(previousMonth, nextMonth), daysOfWeek && renderDaysOfWeek(), /*#__PURE__*/_react["default"].createElement(_Keyboard.Keyboard, {
+  }) : renderCalendarHeader(previousMonth, nextMonth), /*#__PURE__*/_react["default"].createElement(_Box.Box, {
+    fill: true,
+    role: "grid"
+  }, daysOfWeek && renderDaysOfWeek(), /*#__PURE__*/_react["default"].createElement(_Keyboard.Keyboard, {
     onEnter: function onEnter() {
       return active !== undefined ? _onClick(active) : undefined;
     },
@@ -825,7 +828,7 @@ var Calendar = exports.Calendar = /*#__PURE__*/(0, _react.forwardRef)(function (
     }
   }, /*#__PURE__*/_react["default"].createElement(_StyledCalendar.StyledWeeksContainer, _extends({
     tabIndex: 0,
-    role: "grid",
+    role: "rowgroup",
     "aria-label": reference.toLocaleDateString(locale, {
       month: 'long',
       year: 'numeric'
@@ -849,7 +852,7 @@ var Calendar = exports.Calendar = /*#__PURE__*/(0, _react.forwardRef)(function (
     slide: slide,
     sizeProp: size,
     fillContainer: fill
-  }, passThemeFlag), weeks)))));
+  }, passThemeFlag), weeks))))));
 });
 Calendar.displayName = 'Calendar';
 Calendar.propTypes = _propTypes.CalendarPropTypes;

@@ -779,7 +779,10 @@ var Calendar = /*#__PURE__*/forwardRef(function (_ref4, ref) {
     },
     previousInBound: betweenDates(previousMonth, bounds),
     nextInBound: betweenDates(nextMonth, bounds)
-  }) : renderCalendarHeader(previousMonth, nextMonth), daysOfWeek && renderDaysOfWeek(), /*#__PURE__*/React.createElement(Keyboard, {
+  }) : renderCalendarHeader(previousMonth, nextMonth), /*#__PURE__*/React.createElement(Box, {
+    fill: true,
+    role: "grid"
+  }, daysOfWeek && renderDaysOfWeek(), /*#__PURE__*/React.createElement(Keyboard, {
     onEnter: function onEnter() {
       return active !== undefined ? _onClick(active) : undefined;
     },
@@ -819,7 +822,7 @@ var Calendar = /*#__PURE__*/forwardRef(function (_ref4, ref) {
     }
   }, /*#__PURE__*/React.createElement(StyledWeeksContainer, _extends({
     tabIndex: 0,
-    role: "grid",
+    role: "rowgroup",
     "aria-label": reference.toLocaleDateString(locale, {
       month: 'long',
       year: 'numeric'
@@ -843,7 +846,7 @@ var Calendar = /*#__PURE__*/forwardRef(function (_ref4, ref) {
     slide: slide,
     sizeProp: size,
     fillContainer: fill
-  }, passThemeFlag), weeks)))));
+  }, passThemeFlag), weeks))))));
 });
 Calendar.displayName = 'Calendar';
 Calendar.propTypes = CalendarPropTypes;
