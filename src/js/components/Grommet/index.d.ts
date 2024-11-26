@@ -121,8 +121,22 @@ export interface GrommetProps {
         closeMenu?: string;
       };
       meter?: {
-        singular?: string;
-        plural?: string;
+        bar?: {
+          singular?: string;
+          plural?: string;
+        };
+        circle?: {
+          singular?: string;
+          plural?: string;
+        };
+        pie?: {
+          singular?: string;
+          plural?: string;
+        };
+        semicircle?: {
+          singular?: string;
+          plural?: string;
+        };
       };
       rangeSelector?: {
         lower?: string;

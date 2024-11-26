@@ -120,8 +120,22 @@ if (process.env.NODE_ENV !== 'production') {
           closeMenu: PropTypes.string,
         }),
         meter: PropTypes.shape({
-          singular: PropTypes.string,
-          plural: PropTypes.string,
+          bar: PropTypes.shape({
+            singular: PropTypes.string,
+            plural: PropTypes.string,
+          }),
+          circle: PropTypes.shape({
+            singular: PropTypes.string,
+            plural: PropTypes.string,
+          }),
+          pie: PropTypes.shape({
+            singular: PropTypes.string,
+            plural: PropTypes.string,
+          }),
+          semicirlce: PropTypes.shape({
+            singular: PropTypes.string,
+            plural: PropTypes.string,
+          }),
         }),
         rangeSelector: PropTypes.shape({
           lower: PropTypes.string,

@@ -105,8 +105,22 @@
     "closeMenu": "Close Menu"
   },
   "meter": {
-    "singular": "{type} meter with value {meterValue} out of {max}",
-    "plural": "{type} meter with values {meterValue} out of {max}"
+    "bar": {
+      "singular": "Bar meter with value {meterValue} out of {max}",
+      "plural": "Bar meter with values {meterValue} out of {max}"
+    },
+    "circle": {
+      "singular": "Circle meter with value {meterValue} out of {max}",
+      "plural": "Circle meter with values {meterValue} out of {max}"
+    },
+    "pie": {
+      "singular": "Pie meter with value {meterValue} out of {max}",
+      "plural": "Pie meter with values {meterValue} out of {max}"
+    },
+    "semicircle": {
+      "singular": "Semicircle meter with value {meterValue} out of {max}",
+      "plural": "Semicircle meter with values {meterValue} out of {max}"
+    }
   },
   "pagination": {
     "stepLabel": "Items per page",

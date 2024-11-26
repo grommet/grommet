@@ -256,7 +256,9 @@ describe('Meter', () => {
         messages={{
           messages: {
             meter: {
-              singular: `circle meter value is ${value}% out of 100.`,
+              circle: {
+                singular: `circle meter value is ${value}% out of 100.`,
+              },
             },
           },
         }}
@@ -273,9 +275,11 @@ describe('Meter', () => {
         messages={{
           messages: {
             meter: {
-              plural: `bar has multiple values ${meterValues
-                .map((item) => item.value)
-                .join(' and ')}% out of a max of 100.`,
+              bar: {
+                plural: `bar has multiple values ${meterValues
+                  .map((item) => item.value)
+                  .join(' and ')}% out of a max of 100.`,
+              },
             },
           },
         }}
@@ -289,7 +293,9 @@ describe('Meter', () => {
     const { container } = render(
       <Meter
         messages={{
-          singular: `pie chart 15% out of 100.`,
+          pie: {
+            singular: `pie chart 15% out of 100.`,
+          },
         }}
         type="pie"
         value={15}
@@ -302,9 +308,11 @@ describe('Meter', () => {
     const { container } = render(
       <Meter
         messages={{
-          plural: `bar has multiple values ${meterValues
-            .map((item) => item.value)
-            .join(' & ')}% out of a max of 100.`,
+          bar: {
+            plural: `bar has multiple values ${meterValues
+              .map((item) => item.value)
+              .join(' & ')}% out of a max of 100.`,
+          },
         }}
         value={15}
       />,

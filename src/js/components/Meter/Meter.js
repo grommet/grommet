@@ -53,11 +53,13 @@ const Meter = forwardRef(
 
     const messageId = values?.length === 1 ? 'singular' : 'plural';
 
+    const meterType = type || 'bar';
+
     const meterAriaLabel =
       ariaLabel ||
       format({
-        id: `meter.${messageId}`,
-        messages: messages?.meter,
+        id: `meter.${meterType}.${messageId}`,
+        messages: messages?.meter?.[meterType],
         values: {
           meterValue:
             value || values.map((item) => item.value ?? 0).join(', ') || 0,
