@@ -6,17 +6,6 @@ import { MeterPropTypes } from './propTypes';
 import { useThemeValue } from '../../utils/useThemeValue';
 import { MessageContext } from '../../contexts/MessageContext';
 
-const deriveMax = (values) => {
-  let max = 100;
-  if (values && values.length > 1) {
-    max = 0;
-    values.forEach((v) => {
-      max += v.value;
-    });
-  }
-  return max;
-};
-
 const Meter = forwardRef(
   (
     {
@@ -24,7 +13,7 @@ const Meter = forwardRef(
       background = { color: 'light-2', opacity: 'medium' },
       color,
       direction = 'horizontal',
-      max,
+      max: maxProp,
       messages,
       size = 'medium',
       thickness = 'medium',
@@ -51,7 +40,17 @@ const Meter = forwardRef(
       (theme.dir === 'rtl' || reverseProp) &&
       !(theme.dir === 'rtl' && reverseProp);
 
-    const memoizedMax = useMemo(() => deriveMax(values), [values]);
+    const max = useMemo(() => {
+      let maxValue = 100;
+      if (values?.length > 1) {
+        maxValue = values.reduce(
+          (total, currentValue) => total + currentValue.value,
+          0,
+        );
+      }
+      return maxProp || maxValue || 100;
+    }, [maxProp, values]);
+
     const messageId = values?.length === 1 ? 'singular' : 'plural';
 
     const meterAriaLabel =
@@ -63,7 +62,7 @@ const Meter = forwardRef(
           meterValue:
             value || values.map((item) => item.value ?? 0).join(', ') || 0,
           type,
-          max: max || memoizedMax || 100,
+          max: max,
         },
       });
 
@@ -73,7 +72,7 @@ const Meter = forwardRef(
         <Bar
           ref={ref}
           aria-label={meterAriaLabel}
-          max={max || memoizedMax}
+          max={max}
           values={values}
           size={size}
           thickness={thickness}
@@ -88,7 +87,7 @@ const Meter = forwardRef(
         <Circle
           aria-label={meterAriaLabel}
           ref={ref}
-          max={max || memoizedMax}
+          max={max}
           values={values}
           size={size}
           thickness={thickness}
