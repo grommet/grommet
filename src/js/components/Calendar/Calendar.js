@@ -915,78 +915,82 @@ const Calendar = forwardRef(
                 nextInBound: betweenDates(nextMonth, bounds),
               })
             : renderCalendarHeader(previousMonth, nextMonth)}
-          {daysOfWeek && renderDaysOfWeek()}
-          <Keyboard
-            onEnter={() => (active !== undefined ? onClick(active) : undefined)}
-            onSpace={(event) => {
-              event.preventDefault();
-              if (active !== undefined) {
-                onClick(active);
+          <Box fill role="grid">
+            {daysOfWeek && renderDaysOfWeek()}
+            <Keyboard
+              onEnter={() =>
+                active !== undefined ? onClick(active) : undefined
               }
-            }}
-            onUp={(event) => {
-              event.preventDefault();
-              event.stopPropagation(); // so the page doesn't scroll
-              setActive(addDays(active, -7));
-              if (!betweenDates(addDays(active, -7), displayBounds)) {
-                changeReference(addDays(active, -7));
-              }
-            }}
-            onDown={(event) => {
-              event.preventDefault();
-              event.stopPropagation(); // so the page doesn't scroll
-              setActive(addDays(active, 7));
-              if (!betweenDates(addDays(active, 7), displayBounds)) {
-                changeReference(active);
-              }
-            }}
-            onLeft={() => {
-              setActive(addDays(active, -1));
-              if (!betweenDates(addDays(active, -1), displayBounds)) {
-                changeReference(active);
-              }
-            }}
-            onRight={() => {
-              setActive(addDays(active, 1));
-              if (!betweenDates(addDays(active, 2), displayBounds)) {
-                changeReference(active);
-              }
-            }}
-          >
-            <StyledWeeksContainer
-              tabIndex={0}
-              role="grid"
-              aria-label={`${reference.toLocaleDateString(locale, {
-                month: 'long',
-                year: 'numeric',
-              })}; ${currentlySelectedString(value, locale)}`}
-              ref={daysRef}
-              sizeProp={size}
-              fillContainer={fill}
-              focus={focus}
-              onFocus={() => {
-                setFocus(true);
-                // caller focused onto Calendar via keyboard
-                if (!mouseDown) {
-                  setActive(new Date(firstDayInMonth));
+              onSpace={(event) => {
+                event.preventDefault();
+                if (active !== undefined) {
+                  onClick(active);
                 }
               }}
-              onBlur={() => {
-                setFocus(false);
-                setActive(undefined);
+              onUp={(event) => {
+                event.preventDefault();
+                event.stopPropagation(); // so the page doesn't scroll
+                setActive(addDays(active, -7));
+                if (!betweenDates(addDays(active, -7), displayBounds)) {
+                  changeReference(addDays(active, -7));
+                }
               }}
-              {...passThemeFlag}
+              onDown={(event) => {
+                event.preventDefault();
+                event.stopPropagation(); // so the page doesn't scroll
+                setActive(addDays(active, 7));
+                if (!betweenDates(addDays(active, 7), displayBounds)) {
+                  changeReference(active);
+                }
+              }}
+              onLeft={() => {
+                setActive(addDays(active, -1));
+                if (!betweenDates(addDays(active, -1), displayBounds)) {
+                  changeReference(active);
+                }
+              }}
+              onRight={() => {
+                setActive(addDays(active, 1));
+                if (!betweenDates(addDays(active, 2), displayBounds)) {
+                  changeReference(active);
+                }
+              }}
             >
-              <StyledWeeks
-                slide={slide}
+              <StyledWeeksContainer
+                tabIndex={0}
+                role="rowgroup"
+                aria-label={`${reference.toLocaleDateString(locale, {
+                  month: 'long',
+                  year: 'numeric',
+                })}; ${currentlySelectedString(value, locale)}`}
+                ref={daysRef}
                 sizeProp={size}
                 fillContainer={fill}
+                focus={focus}
+                onFocus={() => {
+                  setFocus(true);
+                  // caller focused onto Calendar via keyboard
+                  if (!mouseDown) {
+                    setActive(new Date(firstDayInMonth));
+                  }
+                }}
+                onBlur={() => {
+                  setFocus(false);
+                  setActive(undefined);
+                }}
                 {...passThemeFlag}
               >
-                {weeks}
-              </StyledWeeks>
-            </StyledWeeksContainer>
-          </Keyboard>
+                <StyledWeeks
+                  slide={slide}
+                  sizeProp={size}
+                  fillContainer={fill}
+                  {...passThemeFlag}
+                >
+                  {weeks}
+                </StyledWeeks>
+              </StyledWeeksContainer>
+            </Keyboard>
+          </Box>
         </Box>
       </StyledCalendar>
     );
