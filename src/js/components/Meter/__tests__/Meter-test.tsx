@@ -249,7 +249,7 @@ describe('Meter', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
-  test('custom message', () => {
+  test('custom message singular', () => {
     const value = 30;
     const { container } = render(
       <Grommet
@@ -263,6 +263,34 @@ describe('Meter', () => {
       >
         <Meter value={value} />
       </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+  });
+  test('custom message plural', () => {
+    const meterValues = [{ value: 15 }, { value: 12 }];
+    const { container } = render(
+      <Grommet
+        messages={{
+          messages: {
+            meter: {
+              plural: `bar has multiple values ${meterValues}% out of 100.`,
+            },
+          },
+        }}
+      >
+        <Meter values={meterValues} />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+  });
+  test('custom message on meter', () => {
+    const { container } = render(
+      <Meter
+        messages={{
+          singular: `Meter bar with value of 15% out of 100.`,
+        }}
+        value={15}
+      />,
     );
     expect(container.firstChild).toMatchSnapshot();
   });

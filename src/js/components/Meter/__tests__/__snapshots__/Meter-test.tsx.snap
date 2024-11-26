@@ -290,7 +290,107 @@ exports[`Meter boundary values 1`] = `
 </div>
 `;
 
-exports[`Meter custom message 1`] = `
+exports[`Meter custom message on meter 1`] = `
+.c0 {
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.c0 path {
+  transition: stroke 0.3s,stroke-width 0.3s;
+}
+
+<svg
+  aria-label="bar meter with values 15, 12 out of 27"
+  class="c0"
+  height="24"
+  preserveAspectRatio="none"
+  viewBox="0 0 384 24"
+  width="384"
+>
+  <path
+    d="M 0,12 L 384,12"
+    fill="none"
+    stroke="#F2F2F2"
+    stroke-linecap="square"
+    stroke-opacity="0.4"
+    stroke-width="24"
+  />
+  <path
+    d="M 213.33333333333334,12 L 384,12"
+    fill="none"
+    stroke="#6FFFB0"
+    stroke-linecap="butt"
+    stroke-width="24"
+  />
+  <path
+    d="M 0,12 L 213.33333333333334,12"
+    fill="none"
+    stroke="#00873D"
+    stroke-linecap="butt"
+    stroke-width="24"
+  />
+</svg>
+`;
+
+exports[`Meter custom message plural 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.c1 path {
+  transition: stroke 0.3s,stroke-width 0.3s;
+}
+
+<div
+  class="c0"
+>
+  <svg
+    aria-label="bar has multiple values [object Object],[object Object]% out of 100."
+    class="c1"
+    height="24"
+    preserveAspectRatio="none"
+    viewBox="0 0 384 24"
+    width="384"
+  >
+    <path
+      d="M 0,12 L 384,12"
+      fill="none"
+      stroke="#F2F2F2"
+      stroke-linecap="square"
+      stroke-opacity="0.4"
+      stroke-width="24"
+    />
+    <path
+      d="M 213.33333333333334,12 L 384,12"
+      fill="none"
+      stroke="#6FFFB0"
+      stroke-linecap="butt"
+      stroke-width="24"
+    />
+    <path
+      d="M 0,12 L 213.33333333333334,12"
+      fill="none"
+      stroke="#00873D"
+      stroke-linecap="butt"
+      stroke-width="24"
+    />
+  </svg>
+</div>
+`;
+
+exports[`Meter custom message singular 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -338,6 +438,42 @@ exports[`Meter custom message 1`] = `
     />
   </svg>
 </div>
+`;
+
+exports[`Meter custom singular message on meter 1`] = `
+.c0 {
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.c0 path {
+  transition: stroke 0.3s,stroke-width 0.3s;
+}
+
+<svg
+  aria-label="bar meter with value 15 out of 100"
+  class="c0"
+  height="24"
+  preserveAspectRatio="none"
+  viewBox="0 0 384 24"
+  width="384"
+>
+  <path
+    d="M 0,12 L 384,12"
+    fill="none"
+    stroke="#F2F2F2"
+    stroke-linecap="square"
+    stroke-opacity="0.4"
+    stroke-width="24"
+  />
+  <path
+    d="M 0,12 L 57.6,12"
+    fill="none"
+    stroke="#6FFFB0"
+    stroke-linecap="butt"
+    stroke-width="24"
+  />
+</svg>
 `;
 
 exports[`Meter default 1`] = `
