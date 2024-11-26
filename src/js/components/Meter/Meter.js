@@ -52,7 +52,7 @@ const Meter = forwardRef(
       !(theme.dir === 'rtl' && reverseProp);
 
     const memoizedMax = useMemo(() => deriveMax(values), [values]);
-    const messageId = values && values.length === 1 ? 'singular' : 'plural';
+    const messageId = values?.length === 1 ? 'singular' : 'plural';
 
     const meterAriaLabel =
       ariaLabel ||
