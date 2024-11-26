@@ -62,7 +62,7 @@ const Meter = forwardRef(
           meterValue:
             value || values.map((item) => item.value ?? 0).join(', ') || 0,
           type,
-          max: max,
+          max,
         },
       });
 
