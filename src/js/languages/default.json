@@ -84,7 +84,6 @@
   },
   "formField": {
     "maxCharacters": {
-      "total": "You can enter up to {number} characters in this field",
       "remaining": {
         "singular": "{number} character left",
         "plural": "{number} characters left"

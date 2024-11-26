@@ -29,7 +29,6 @@ import { FormContext } from '../Form/FormContext';
 import { FormFieldPropTypes } from './propTypes';
 import { useThemeValue } from '../../utils/useThemeValue';
 import { AnnounceContext } from '../../contexts/AnnounceContext';
-import { MessageContext } from '../../contexts/MessageContext';
 
 const grommetInputNames = [
   'CheckBox',
@@ -217,24 +216,12 @@ const FormField = forwardRef(
 
     const portalContext = useContext(PortalContext);
     const announce = useContext(AnnounceContext);
-    const { format } = useContext(MessageContext);
 
     useEffect(() => {
       if (error && validate?.max) {
         announce(error, 'polite', 5000);
       }
     }, [error, announce, validate?.max]);
-
-    useEffect(() => {
-      if (focus && validate?.max) {
-        announce(
-          format({
-            id: 'formField.maxCharacters.total',
-            values: { number: validate?.max },
-          }),
-        );
-      }
-    }, [focus, announce, format, validate?.max]);
 
     const readOnlyField = useMemo(() => {
       let readOnly = false;

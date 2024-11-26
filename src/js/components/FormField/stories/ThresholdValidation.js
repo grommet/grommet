@@ -27,6 +27,7 @@ export const ThresholdValidation = () => (
         htmlFor="issue-description-with-default-threshold"
       >
         <TextInput
+          aria-label="text input with limit of 10 characters"
           id="issue-description-with-default-threshold"
           name="issue-description-with-default-threshold"
           placeholder="placeholder"
