@@ -290,7 +290,7 @@ exports[`Meter boundary values 1`] = `
 </div>
 `;
 
-exports[`Meter custom message on meter 1`] = `
+exports[`Meter custom message on meter plural 1`] = `
 .c0 {
   max-width: 100%;
   overflow: hidden;
@@ -326,6 +326,43 @@ exports[`Meter custom message on meter 1`] = `
 </svg>
 `;
 
+exports[`Meter custom message on meter singular 1`] = `
+.c0 {
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.c0 path {
+  transition: stroke 0.3s,stroke-width 0.3s;
+}
+
+<svg
+  aria-label="pie meter with value 15 out of 100"
+  class="c0"
+  height="384"
+  viewBox="0 0 384 384"
+  width="384"
+>
+  <circle
+    cx="192"
+    cy="192"
+    fill="none"
+    r="96"
+    stroke="#F2F2F2"
+    stroke-linecap="square"
+    stroke-opacity="0.4"
+    stroke-width="192"
+  />
+  <path
+    d="M 269.6656314600 135.5726157799 A 96.0000000000 96.0000000000 0 0 0 192.0000000000 96.0000000000"
+    fill="none"
+    stroke="#6FFFB0"
+    stroke-linecap="butt"
+    stroke-width="192"
+  />
+</svg>
+`;
+
 exports[`Meter custom message plural 1`] = `
 .c0 {
   font-size: 18px;
@@ -350,7 +387,7 @@ exports[`Meter custom message plural 1`] = `
   class="c0"
 >
   <svg
-    aria-label="bar has multiple values [object Object],[object Object]% out of 100."
+    aria-label="bar has multiple values 8.9 and 12.4% out of a max of 100."
     class="c1"
     height="24"
     preserveAspectRatio="none"
@@ -366,14 +403,14 @@ exports[`Meter custom message plural 1`] = `
       stroke-width="24"
     />
     <path
-      d="M 213.33333333333334,12 L 384,12"
+      d="M 160.45070422535213,12 L 384,12"
       fill="none"
       stroke="#6FFFB0"
       stroke-linecap="butt"
       stroke-width="24"
     />
     <path
-      d="M 0,12 L 213.33333333333334,12"
+      d="M 0,12 L 160.45070422535213,12"
       fill="none"
       stroke="#00873D"
       stroke-linecap="butt"
@@ -407,23 +444,24 @@ exports[`Meter custom message singular 1`] = `
   class="c0"
 >
   <svg
-    aria-label="bar value is 30% out of 100."
+    aria-label="circle meter value is 30% out of 100."
     class="c1"
-    height="24"
-    preserveAspectRatio="none"
-    viewBox="0 0 384 24"
+    height="384"
+    viewBox="0 0 384 384"
     width="384"
   >
-    <path
-      d="M 0,12 L 384,12"
+    <circle
+      cx="192"
+      cy="192"
       fill="none"
+      r="180"
       stroke="#F2F2F2"
       stroke-linecap="square"
       stroke-opacity="0.4"
       stroke-width="24"
     />
     <path
-      d="M 0,12 L 115.2,12"
+      d="M 363.1901729331 247.6230589875 A 180.0000000000 180.0000000000 0 0 0 192.0000000000 12.0000000000"
       fill="none"
       stroke="#6FFFB0"
       stroke-linecap="butt"
