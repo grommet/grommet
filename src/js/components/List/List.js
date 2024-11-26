@@ -315,7 +315,20 @@ const List = React.forwardRef(
               event.preventDefault();
               if (active) {
                 const min = onOrder ? 1 : 0;
-                updateActive(Math.max(active - 1, min));
+                const activeElementIndex = Math.max(active - 1, min);
+                updateActive(activeElementIndex);
+
+                // Ensure the active item is in view
+                // setTimeout for activeElement to be updated
+                setTimeout(() => {
+                  // eslint-disable max-len
+                  listRef.current?.children[activeElementIndex]?.scrollIntoView(
+                    {
+                      behavior: 'smooth',
+                      block: 'nearest',
+                    },
+                  );
+                }, 0);
               }
             }
           }}
@@ -327,7 +340,21 @@ const List = React.forwardRef(
                 const max = onOrder
                   ? orderableData.length * 2 - 2
                   : data.length - 1;
-                updateActive(active >= min ? Math.min(active + 1, max) : min);
+                const activeElementIndex =
+                  active >= min ? Math.min(active + 1, max) : min;
+                updateActive(activeElementIndex);
+
+                // Ensure the active item is in view
+                // setTimeout for activeElement to be updated
+                setTimeout(() => {
+                  //  eslint-disable max-len
+                  listRef.current?.children[activeElementIndex]?.scrollIntoView(
+                    {
+                      behavior: 'smooth',
+                      block: 'nearest',
+                    },
+                  );
+                }, 0);
               }
             }
           }}
