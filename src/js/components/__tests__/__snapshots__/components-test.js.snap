@@ -675,6 +675,7 @@ exports[`Components loads 1`] = `
       "gridArea": [Function],
       "margin": [Function],
       "max": [Function],
+      "messages": [Function],
       "reverse": [Function],
       "round": [Function],
       "size": [Function],
