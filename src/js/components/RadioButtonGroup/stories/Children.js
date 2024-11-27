@@ -2,9 +2,16 @@ import React, { useState } from 'react';
 
 import { Box, RadioButtonGroup } from 'grommet';
 import { Ascend, Descend } from 'grommet-icons';
+import styled from 'styled-components';
+import { focusStyle, useKeyboard } from 'grommet/utils';
+
+const StyledRadioChild = styled(Box)`
+  ${(props) => props.focus && props.keyboard && focusStyle()}
+`;
 
 export const Children = () => {
   const [value, setValue] = useState();
+  const usingKeyboard = useKeyboard();
 
   return (
     <Box align="center" pad="large">
@@ -24,9 +31,14 @@ export const Children = () => {
           else if (focus) background = 'light-4';
           else background = 'light-2';
           return (
-            <Box background={background} pad="xsmall">
+            <StyledRadioChild
+              focus={focus}
+              keyboard={usingKeyboard}
+              background={background}
+              pad="xsmall"
+            >
               <Icon />
-            </Box>
+            </StyledRadioChild>
           );
         }}
       </RadioButtonGroup>

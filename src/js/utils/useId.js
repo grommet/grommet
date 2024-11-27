@@ -1,4 +1,4 @@
-import { useId as useIdReact, useState } from 'react';
+import React, { useState } from 'react';
 
 let currentId = 0;
 
@@ -14,6 +14,6 @@ const useIdGrommet = () => {
 };
 
 // Polyfill React 18's useId for compatibility with React 16 and 17
-const useId = useIdReact ?? useIdGrommet;
+const useId = React.useId ?? useIdGrommet;
 
 export { useId };
