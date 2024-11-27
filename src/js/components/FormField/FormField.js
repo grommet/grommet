@@ -3,6 +3,7 @@ import React, {
   cloneElement,
   forwardRef,
   useContext,
+  useEffect,
   useMemo,
   useState,
 } from 'react';
@@ -27,6 +28,7 @@ import { TextInput } from '../TextInput';
 import { FormContext } from '../Form/FormContext';
 import { FormFieldPropTypes } from './propTypes';
 import { useThemeValue } from '../../utils/useThemeValue';
+import { AnnounceContext } from '../../contexts/AnnounceContext';
 
 const grommetInputNames = [
   'CheckBox',
@@ -213,6 +215,13 @@ const FormField = forwardRef(
     const debounce = useDebounce();
 
     const portalContext = useContext(PortalContext);
+    const announce = useContext(AnnounceContext);
+
+    useEffect(() => {
+      if (error && validate?.max) {
+        announce(error, 'polite', 5000);
+      }
+    }, [error, announce, validate?.max]);
 
     const readOnlyField = useMemo(() => {
       let readOnly = false;

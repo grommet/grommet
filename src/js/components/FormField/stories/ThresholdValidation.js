@@ -14,6 +14,8 @@ export const ThresholdValidation = () => (
         htmlFor="issue-description"
       >
         <TextInput
+          // eslint-disable-next-line max-len
+          aria-label="text input with limit of 10 characters and threshold of 0.25"
           id="issue-description"
           name="issue-description"
           placeholder="placeholder"
@@ -27,6 +29,7 @@ export const ThresholdValidation = () => (
         htmlFor="issue-description-with-default-threshold"
       >
         <TextInput
+          aria-label="text input with limit of 10 characters"
           id="issue-description-with-default-threshold"
           name="issue-description-with-default-threshold"
           placeholder="placeholder"
