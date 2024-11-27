@@ -3,7 +3,7 @@ var _excluded = ["error", "info", "message", "type"],
   _excluded3 = ["children", "className", "component", "contentProps", "disabled", "error", "help", "htmlFor", "info", "label", "margin", "name", "onBlur", "onChange", "onFocus", "pad", "required", "style", "validate", "validateOn"];
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (e.includes(n)) continue; t[n] = r[n]; } return t; }
-import React, { Children, cloneElement, forwardRef, useContext, useMemo, useState } from 'react';
+import React, { Children, cloneElement, forwardRef, useContext, useEffect, useMemo, useState } from 'react';
 import styled from 'styled-components';
 import { containsFocus, shouldKeepFocus, withinDropPortal, PortalContext } from '../../utils';
 import { useDebounce } from '../../utils/use-debounce';
@@ -19,6 +19,7 @@ import { TextInput } from '../TextInput';
 import { FormContext } from '../Form/FormContext';
 import { FormFieldPropTypes } from './propTypes';
 import { useThemeValue } from '../../utils/useThemeValue';
+import { AnnounceContext } from '../../contexts/AnnounceContext';
 var grommetInputNames = ['CheckBox', 'CheckBoxGroup', 'TextInput', 'Select', 'MaskedInput', 'SelectMultiple', 'TextArea', 'DateInput', 'FileInput', 'RadioButton', 'RadioButtonGroup', 'RangeInput', 'RangeSelector', 'StarRating', 'ThumbsRating'];
 var grommetInputPadNames = ['CheckBox', 'CheckBoxGroup', 'RadioButton', 'RadioButtonGroup', 'RangeInput', 'RangeSelector'];
 var isGrommetInput = function isGrommetInput(comp) {
@@ -170,6 +171,12 @@ var FormField = /*#__PURE__*/forwardRef(function (_ref3, ref) {
   var themeBorder = formFieldTheme.border;
   var debounce = useDebounce();
   var portalContext = useContext(PortalContext);
+  var announce = useContext(AnnounceContext);
+  useEffect(function () {
+    if (error && validate != null && validate.max) {
+      announce(error, 'polite', 5000);
+    }
+  }, [error, announce, validate == null ? void 0 : validate.max]);
   var readOnlyField = useMemo(function () {
     var readOnly = false;
     if (children) {

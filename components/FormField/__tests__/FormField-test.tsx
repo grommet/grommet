@@ -564,7 +564,7 @@ describe('FormField', () => {
     });
 
     await waitFor(() => {
-      expect(screen.getByText('1 character over limit')).toBeTruthy();
+      expect(screen.getAllByText('1 character over limit')).toBeTruthy();
     });
   });
 

@@ -18,6 +18,7 @@ var _TextInput = require("../TextInput");
 var _FormContext = require("../Form/FormContext");
 var _propTypes = require("./propTypes");
 var _useThemeValue3 = require("../../utils/useThemeValue");
+var _AnnounceContext = require("../../contexts/AnnounceContext");
 var _excluded = ["error", "info", "message", "type"],
   _excluded2 = ["component", "disabled", "invalid", "name", "onChange"],
   _excluded3 = ["children", "className", "component", "contentProps", "disabled", "error", "help", "htmlFor", "info", "label", "margin", "name", "onBlur", "onChange", "onFocus", "pad", "required", "style", "validate", "validateOn"];
@@ -177,6 +178,12 @@ var FormField = exports.FormField = /*#__PURE__*/(0, _react.forwardRef)(function
   var themeBorder = formFieldTheme.border;
   var debounce = (0, _useDebounce.useDebounce)();
   var portalContext = (0, _react.useContext)(_utils.PortalContext);
+  var announce = (0, _react.useContext)(_AnnounceContext.AnnounceContext);
+  (0, _react.useEffect)(function () {
+    if (error && validate != null && validate.max) {
+      announce(error, 'polite', 5000);
+    }
+  }, [error, announce, validate == null ? void 0 : validate.max]);
   var readOnlyField = (0, _react.useMemo)(function () {
     var readOnly = false;
     if (children) {

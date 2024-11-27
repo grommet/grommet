@@ -18,7 +18,10 @@ export var ThresholdValidation = function ThresholdValidation() {
       },
       name: "issue-description",
       htmlFor: "issue-description"
-    }, /*#__PURE__*/React.createElement(TextInput, {
+    }, /*#__PURE__*/React.createElement(TextInput
+    // eslint-disable-next-line max-len
+    , {
+      "aria-label": "text input with limit of 10 characters and threshold of 0.25",
       id: "issue-description",
       name: "issue-description",
       placeholder: "placeholder"
@@ -30,6 +33,7 @@ export var ThresholdValidation = function ThresholdValidation() {
       name: "issue-description-with-default-threshold",
       htmlFor: "issue-description-with-default-threshold"
     }, /*#__PURE__*/React.createElement(TextInput, {
+      "aria-label": "text input with limit of 10 characters",
       id: "issue-description-with-default-threshold",
       name: "issue-description-with-default-threshold",
       placeholder: "placeholder"

@@ -23,7 +23,10 @@ var ThresholdValidation = exports.ThresholdValidation = function ThresholdValida
       },
       name: "issue-description",
       htmlFor: "issue-description"
-    }, /*#__PURE__*/_react["default"].createElement(_grommet.TextInput, {
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.TextInput
+    // eslint-disable-next-line max-len
+    , {
+      "aria-label": "text input with limit of 10 characters and threshold of 0.25",
       id: "issue-description",
       name: "issue-description",
       placeholder: "placeholder"
@@ -35,6 +38,7 @@ var ThresholdValidation = exports.ThresholdValidation = function ThresholdValida
       name: "issue-description-with-default-threshold",
       htmlFor: "issue-description-with-default-threshold"
     }, /*#__PURE__*/_react["default"].createElement(_grommet.TextInput, {
+      "aria-label": "text input with limit of 10 characters",
       id: "issue-description-with-default-threshold",
       name: "issue-description-with-default-threshold",
       placeholder: "placeholder"
