@@ -248,4 +248,75 @@ describe('Meter', () => {
 
     expect(container.firstChild).toMatchSnapshot();
   });
+
+  test('custom message singular', () => {
+    const value = 30;
+    const { container } = render(
+      <Grommet
+        messages={{
+          messages: {
+            meter: {
+              circle: {
+                singular: `circle meter value is ${value}% out of 100.`,
+              },
+            },
+          },
+        }}
+      >
+        <Meter type="circle" value={value} />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+  });
+  test('custom message plural', () => {
+    const meterValues = [{ value: 8.9 }, { value: 12.4 }];
+    const { container } = render(
+      <Grommet
+        messages={{
+          messages: {
+            meter: {
+              bar: {
+                plural: `bar has multiple values ${meterValues
+                  .map((item) => item.value)
+                  .join(' and ')}% out of a max of 100.`,
+              },
+            },
+          },
+        }}
+      >
+        <Meter values={meterValues} />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+  });
+  test('custom message on meter singular', () => {
+    const { container } = render(
+      <Meter
+        messages={{
+          pie: {
+            singular: `pie chart 15% out of 100.`,
+          },
+        }}
+        type="pie"
+        value={15}
+      />,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+  });
+  test('custom message on meter plural', () => {
+    const meterValues = [{ value: 8.9 }, { value: 12.4 }];
+    const { container } = render(
+      <Meter
+        messages={{
+          bar: {
+            plural: `bar has multiple values ${meterValues
+              .map((item) => item.value)
+              .join(' & ')}% out of a max of 100.`,
+          },
+        }}
+        value={15}
+      />,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+  });
 });
