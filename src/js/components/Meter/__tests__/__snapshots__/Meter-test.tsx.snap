@@ -24,6 +24,7 @@ exports[`Meter background 1`] = `
   class="c0"
 >
   <svg
+    aria-label="Bar meter with value 20 out of 100"
     class="c1"
     height="24"
     preserveAspectRatio="none"
@@ -46,6 +47,7 @@ exports[`Meter background 1`] = `
     />
   </svg>
   <svg
+    aria-label="Bar meter with value 20 out of 100"
     class="c1"
     height="24"
     preserveAspectRatio="none"
@@ -69,6 +71,7 @@ exports[`Meter background 1`] = `
     />
   </svg>
   <svg
+    aria-label="Circle meter with value 20 out of 100"
     class="c1"
     height="384"
     viewBox="0 0 384 384"
@@ -92,6 +95,7 @@ exports[`Meter background 1`] = `
     />
   </svg>
   <svg
+    aria-label="Circle meter with value 20 out of 100"
     class="c1"
     height="384"
     viewBox="0 0 384 384"
@@ -116,6 +120,7 @@ exports[`Meter background 1`] = `
     />
   </svg>
   <svg
+    aria-label="Bar meter with value 20 out of 100"
     class="c1"
     height="24"
     preserveAspectRatio="none"
@@ -165,6 +170,7 @@ exports[`Meter basic 1`] = `
   class="c0"
 >
   <svg
+    aria-label="Bar meter with value 20 out of 100"
     class="c1"
     height="24"
     preserveAspectRatio="none"
@@ -201,6 +207,7 @@ exports[`Meter basic renders outside grommet wrapper 1`] = `
 }
 
 <svg
+  aria-label="Bar meter with value 20 out of 100"
   class="c0"
   height="24"
   preserveAspectRatio="none"
@@ -249,6 +256,7 @@ exports[`Meter boundary values 1`] = `
   class="c0"
 >
   <svg
+    aria-label="Circle meter with values 2.26, 8.04 out of 10.3"
     class="c1"
     height="384"
     viewBox="0 0 384 384"
@@ -282,6 +290,187 @@ exports[`Meter boundary values 1`] = `
 </div>
 `;
 
+exports[`Meter custom message on meter plural 1`] = `
+.c0 {
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.c0 path {
+  transition: stroke 0.3s,stroke-width 0.3s;
+}
+
+<svg
+  aria-label="Bar meter with value 15 out of 100"
+  class="c0"
+  height="24"
+  preserveAspectRatio="none"
+  viewBox="0 0 384 24"
+  width="384"
+>
+  <path
+    d="M 0,12 L 384,12"
+    fill="none"
+    stroke="#F2F2F2"
+    stroke-linecap="square"
+    stroke-opacity="0.4"
+    stroke-width="24"
+  />
+  <path
+    d="M 0,12 L 57.6,12"
+    fill="none"
+    stroke="#6FFFB0"
+    stroke-linecap="butt"
+    stroke-width="24"
+  />
+</svg>
+`;
+
+exports[`Meter custom message on meter singular 1`] = `
+.c0 {
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.c0 path {
+  transition: stroke 0.3s,stroke-width 0.3s;
+}
+
+<svg
+  aria-label="Pie meter with value 15 out of 100"
+  class="c0"
+  height="384"
+  viewBox="0 0 384 384"
+  width="384"
+>
+  <circle
+    cx="192"
+    cy="192"
+    fill="none"
+    r="96"
+    stroke="#F2F2F2"
+    stroke-linecap="square"
+    stroke-opacity="0.4"
+    stroke-width="192"
+  />
+  <path
+    d="M 269.6656314600 135.5726157799 A 96.0000000000 96.0000000000 0 0 0 192.0000000000 96.0000000000"
+    fill="none"
+    stroke="#6FFFB0"
+    stroke-linecap="butt"
+    stroke-width="192"
+  />
+</svg>
+`;
+
+exports[`Meter custom message plural 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.c1 path {
+  transition: stroke 0.3s,stroke-width 0.3s;
+}
+
+<div
+  class="c0"
+>
+  <svg
+    aria-label="bar has multiple values 8.9 and 12.4% out of a max of 100."
+    class="c1"
+    height="24"
+    preserveAspectRatio="none"
+    viewBox="0 0 384 24"
+    width="384"
+  >
+    <path
+      d="M 0,12 L 384,12"
+      fill="none"
+      stroke="#F2F2F2"
+      stroke-linecap="square"
+      stroke-opacity="0.4"
+      stroke-width="24"
+    />
+    <path
+      d="M 160.45070422535213,12 L 384,12"
+      fill="none"
+      stroke="#6FFFB0"
+      stroke-linecap="butt"
+      stroke-width="24"
+    />
+    <path
+      d="M 0,12 L 160.45070422535213,12"
+      fill="none"
+      stroke="#00873D"
+      stroke-linecap="butt"
+      stroke-width="24"
+    />
+  </svg>
+</div>
+`;
+
+exports[`Meter custom message singular 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.c1 path {
+  transition: stroke 0.3s,stroke-width 0.3s;
+}
+
+<div
+  class="c0"
+>
+  <svg
+    aria-label="circle meter value is 30% out of 100."
+    class="c1"
+    height="384"
+    viewBox="0 0 384 384"
+    width="384"
+  >
+    <circle
+      cx="192"
+      cy="192"
+      fill="none"
+      r="180"
+      stroke="#F2F2F2"
+      stroke-linecap="square"
+      stroke-opacity="0.4"
+      stroke-width="24"
+    />
+    <path
+      d="M 363.1901729331 247.6230589875 A 180.0000000000 180.0000000000 0 0 0 192.0000000000 12.0000000000"
+      fill="none"
+      stroke="#6FFFB0"
+      stroke-linecap="butt"
+      stroke-width="24"
+    />
+  </svg>
+</div>
+`;
+
 exports[`Meter default 1`] = `
 .c0 {
   font-size: 18px;
@@ -306,6 +495,7 @@ exports[`Meter default 1`] = `
   class="c0"
 >
   <svg
+    aria-label="Bar meter with values 0 out of 100"
     class="c1"
     height="24"
     preserveAspectRatio="none"
@@ -348,6 +538,7 @@ exports[`Meter large circle values 1`] = `
   class="c0"
 >
   <svg
+    aria-label="Circle meter with values 904426, 692866, 642068, 512772, 5032870 out of 7785002"
     class="c1"
     height="192"
     viewBox="0 0 192 192"
@@ -426,6 +617,7 @@ exports[`Meter many values 1`] = `
   class="c0"
 >
   <svg
+    aria-label="Bar meter with values 5, 5, 5, 5, 5, 5, 5, 5 out of 40"
     class="c1"
     height="24"
     preserveAspectRatio="none"
@@ -525,6 +717,7 @@ exports[`Meter reverse 1`] = `
   class="c0"
 >
   <svg
+    aria-label="Bar meter with value 20 out of 100"
     class="c1"
     height="24"
     preserveAspectRatio="none"
@@ -575,6 +768,7 @@ exports[`Meter reverse circle 1`] = `
   class="c0"
 >
   <svg
+    aria-label="Circle meter with value 20 out of 100"
     class="c1"
     height="384"
     viewBox="0 0 384 384"
@@ -634,6 +828,7 @@ exports[`Meter round 1`] = `
   class="c0"
 >
   <svg
+    aria-label="Bar meter with value 20 out of 100"
     class="c1"
     height="24"
     preserveAspectRatio="none"
@@ -657,6 +852,7 @@ exports[`Meter round 1`] = `
     />
   </svg>
   <svg
+    aria-label="Circle meter with value 20 out of 100"
     class="c2"
     height="384"
     viewBox="0 0 384 384"
@@ -688,6 +884,7 @@ exports[`Meter round 1`] = `
     />
   </svg>
   <svg
+    aria-label="Semicircle meter with value 20 out of 100"
     class="c2"
     height="192"
     viewBox="0 0 384 192"
@@ -745,6 +942,7 @@ exports[`Meter rtl theme 1`] = `
   dir="rtl"
 >
   <svg
+    aria-label="Bar meter with value 20 out of 100"
     class="c1"
     height="24"
     preserveAspectRatio="none"
@@ -794,6 +992,7 @@ exports[`Meter single 1`] = `
   class="c0"
 >
   <svg
+    aria-label="Bar meter with value 25 out of 100"
     class="c1"
     height="24"
     preserveAspectRatio="none"
@@ -843,6 +1042,7 @@ exports[`Meter size 1`] = `
   class="c0"
 >
   <svg
+    aria-label="Bar meter with value 20 out of 100"
     class="c1"
     height="24"
     preserveAspectRatio="none"
@@ -866,6 +1066,7 @@ exports[`Meter size 1`] = `
     />
   </svg>
   <svg
+    aria-label="Bar meter with value 20 out of 100"
     class="c1"
     height="24"
     preserveAspectRatio="none"
@@ -889,6 +1090,7 @@ exports[`Meter size 1`] = `
     />
   </svg>
   <svg
+    aria-label="Bar meter with value 20 out of 100"
     class="c1"
     height="24"
     preserveAspectRatio="none"
@@ -912,6 +1114,7 @@ exports[`Meter size 1`] = `
     />
   </svg>
   <svg
+    aria-label="Bar meter with value 20 out of 100"
     class="c1"
     height="24"
     preserveAspectRatio="none"
@@ -935,6 +1138,7 @@ exports[`Meter size 1`] = `
     />
   </svg>
   <svg
+    aria-label="Bar meter with value 20 out of 100"
     class="c1"
     height="24"
     preserveAspectRatio="none"
@@ -958,6 +1162,7 @@ exports[`Meter size 1`] = `
     />
   </svg>
   <svg
+    aria-label="Bar meter with value 20 out of 100"
     class="c1"
     height="24"
     preserveAspectRatio="none"
@@ -981,6 +1186,7 @@ exports[`Meter size 1`] = `
     />
   </svg>
   <svg
+    aria-label="Bar meter with value 20 out of 100"
     class="c1"
     height="24"
     preserveAspectRatio="none"
@@ -1004,6 +1210,7 @@ exports[`Meter size 1`] = `
     />
   </svg>
   <svg
+    aria-label="Circle meter with value 20 out of 100"
     class="c1"
     height="96"
     viewBox="0 0 96 96"
@@ -1028,6 +1235,7 @@ exports[`Meter size 1`] = `
     />
   </svg>
   <svg
+    aria-label="Circle meter with value 20 out of 100"
     class="c1"
     height="192"
     viewBox="0 0 192 192"
@@ -1052,6 +1260,7 @@ exports[`Meter size 1`] = `
     />
   </svg>
   <svg
+    aria-label="Circle meter with value 20 out of 100"
     class="c1"
     height="384"
     viewBox="0 0 384 384"
@@ -1076,6 +1285,7 @@ exports[`Meter size 1`] = `
     />
   </svg>
   <svg
+    aria-label="Circle meter with value 20 out of 100"
     class="c1"
     height="768"
     viewBox="0 0 768 768"
@@ -1100,6 +1310,7 @@ exports[`Meter size 1`] = `
     />
   </svg>
   <svg
+    aria-label="Circle meter with value 20 out of 100"
     class="c1"
     height="1152"
     viewBox="0 0 1152 1152"
@@ -1124,6 +1335,7 @@ exports[`Meter size 1`] = `
     />
   </svg>
   <svg
+    aria-label="Circle meter with value 20 out of 100"
     class="c1"
     height="55"
     viewBox="0 0 55 55"
@@ -1148,6 +1360,7 @@ exports[`Meter size 1`] = `
     />
   </svg>
   <svg
+    aria-label="Circle meter with value 20 out of 100"
     class="c1"
     height="100%"
     viewBox="0 0 288 288"
@@ -1172,6 +1385,7 @@ exports[`Meter size 1`] = `
     />
   </svg>
   <svg
+    aria-label="Pie meter with value 20 out of 100"
     class="c1"
     height="96"
     viewBox="0 0 96 96"
@@ -1196,6 +1410,7 @@ exports[`Meter size 1`] = `
     />
   </svg>
   <svg
+    aria-label="Pie meter with value 20 out of 100"
     class="c1"
     height="192"
     viewBox="0 0 192 192"
@@ -1220,6 +1435,7 @@ exports[`Meter size 1`] = `
     />
   </svg>
   <svg
+    aria-label="Pie meter with value 20 out of 100"
     class="c1"
     height="384"
     viewBox="0 0 384 384"
@@ -1244,6 +1460,7 @@ exports[`Meter size 1`] = `
     />
   </svg>
   <svg
+    aria-label="Pie meter with value 20 out of 100"
     class="c1"
     height="768"
     viewBox="0 0 768 768"
@@ -1268,6 +1485,7 @@ exports[`Meter size 1`] = `
     />
   </svg>
   <svg
+    aria-label="Pie meter with value 20 out of 100"
     class="c1"
     height="1152"
     viewBox="0 0 1152 1152"
@@ -1292,6 +1510,7 @@ exports[`Meter size 1`] = `
     />
   </svg>
   <svg
+    aria-label="Pie meter with value 20 out of 100"
     class="c1"
     height="55"
     viewBox="0 0 55 55"
@@ -1316,6 +1535,7 @@ exports[`Meter size 1`] = `
     />
   </svg>
   <svg
+    aria-label="Pie meter with value 20 out of 100"
     class="c1"
     height="100%"
     viewBox="0 0 288 288"
@@ -1340,6 +1560,7 @@ exports[`Meter size 1`] = `
     />
   </svg>
   <svg
+    aria-label="Semicircle meter with value 20 out of 100"
     class="c1"
     height="48"
     viewBox="0 0 96 48"
@@ -1362,6 +1583,7 @@ exports[`Meter size 1`] = `
     />
   </svg>
   <svg
+    aria-label="Semicircle meter with value 20 out of 100"
     class="c1"
     height="96"
     viewBox="0 0 192 96"
@@ -1384,6 +1606,7 @@ exports[`Meter size 1`] = `
     />
   </svg>
   <svg
+    aria-label="Semicircle meter with value 20 out of 100"
     class="c1"
     height="192"
     viewBox="0 0 384 192"
@@ -1406,6 +1629,7 @@ exports[`Meter size 1`] = `
     />
   </svg>
   <svg
+    aria-label="Semicircle meter with value 20 out of 100"
     class="c1"
     height="384"
     viewBox="0 0 768 384"
@@ -1428,6 +1652,7 @@ exports[`Meter size 1`] = `
     />
   </svg>
   <svg
+    aria-label="Semicircle meter with value 20 out of 100"
     class="c1"
     height="576"
     viewBox="0 0 1152 576"
@@ -1450,6 +1675,7 @@ exports[`Meter size 1`] = `
     />
   </svg>
   <svg
+    aria-label="Semicircle meter with value 20 out of 100"
     class="c1"
     height="27.5"
     viewBox="0 0 55 27.5"
@@ -1472,6 +1698,7 @@ exports[`Meter size 1`] = `
     />
   </svg>
   <svg
+    aria-label="Semicircle meter with value 20 out of 100"
     class="c1"
     height="100%"
     viewBox="0 0 288 144"
@@ -1520,6 +1747,7 @@ exports[`Meter thickness 1`] = `
   class="c0"
 >
   <svg
+    aria-label="Bar meter with value 20 out of 100"
     class="c1"
     height="6"
     preserveAspectRatio="none"
@@ -1543,6 +1771,7 @@ exports[`Meter thickness 1`] = `
     />
   </svg>
   <svg
+    aria-label="Bar meter with value 20 out of 100"
     class="c1"
     height="12"
     preserveAspectRatio="none"
@@ -1566,6 +1795,7 @@ exports[`Meter thickness 1`] = `
     />
   </svg>
   <svg
+    aria-label="Bar meter with value 20 out of 100"
     class="c1"
     height="24"
     preserveAspectRatio="none"
@@ -1589,6 +1819,7 @@ exports[`Meter thickness 1`] = `
     />
   </svg>
   <svg
+    aria-label="Bar meter with value 20 out of 100"
     class="c1"
     height="48"
     preserveAspectRatio="none"
@@ -1612,6 +1843,7 @@ exports[`Meter thickness 1`] = `
     />
   </svg>
   <svg
+    aria-label="Bar meter with value 20 out of 100"
     class="c1"
     height="96"
     preserveAspectRatio="none"
@@ -1635,6 +1867,7 @@ exports[`Meter thickness 1`] = `
     />
   </svg>
   <svg
+    aria-label="Bar meter with value 20 out of 100"
     class="c1"
     height="55"
     preserveAspectRatio="none"
@@ -1658,6 +1891,7 @@ exports[`Meter thickness 1`] = `
     />
   </svg>
   <svg
+    aria-label="Circle meter with value 20 out of 100"
     class="c1"
     height="384"
     viewBox="0 0 384 384"
@@ -1682,6 +1916,7 @@ exports[`Meter thickness 1`] = `
     />
   </svg>
   <svg
+    aria-label="Circle meter with value 20 out of 100"
     class="c1"
     height="384"
     viewBox="0 0 384 384"
@@ -1706,6 +1941,7 @@ exports[`Meter thickness 1`] = `
     />
   </svg>
   <svg
+    aria-label="Circle meter with value 20 out of 100"
     class="c1"
     height="384"
     viewBox="0 0 384 384"
@@ -1730,6 +1966,7 @@ exports[`Meter thickness 1`] = `
     />
   </svg>
   <svg
+    aria-label="Circle meter with value 20 out of 100"
     class="c1"
     height="384"
     viewBox="0 0 384 384"
@@ -1754,6 +1991,7 @@ exports[`Meter thickness 1`] = `
     />
   </svg>
   <svg
+    aria-label="Circle meter with value 20 out of 100"
     class="c1"
     height="384"
     viewBox="0 0 384 384"
@@ -1778,6 +2016,7 @@ exports[`Meter thickness 1`] = `
     />
   </svg>
   <svg
+    aria-label="Circle meter with value 20 out of 100"
     class="c1"
     height="384"
     viewBox="0 0 384 384"
@@ -1828,6 +2067,7 @@ exports[`Meter type 1`] = `
   class="c0"
 >
   <svg
+    aria-label="Bar meter with value 20 out of 100"
     class="c1"
     height="24"
     preserveAspectRatio="none"
@@ -1851,6 +2091,7 @@ exports[`Meter type 1`] = `
     />
   </svg>
   <svg
+    aria-label="Circle meter with value 20 out of 100"
     class="c1"
     height="384"
     viewBox="0 0 384 384"
@@ -1875,6 +2116,7 @@ exports[`Meter type 1`] = `
     />
   </svg>
   <svg
+    aria-label="Pie meter with value 20 out of 100"
     class="c1"
     height="384"
     viewBox="0 0 384 384"
@@ -1899,6 +2141,7 @@ exports[`Meter type 1`] = `
     />
   </svg>
   <svg
+    aria-label="Semicircle meter with value 20 out of 100"
     class="c1"
     height="192"
     viewBox="0 0 384 192"
@@ -1947,6 +2190,7 @@ exports[`Meter vertical 1`] = `
   class="c0"
 >
   <svg
+    aria-label="Bar meter with value 20 out of 100"
     class="c1"
     height="384"
     preserveAspectRatio="none"
