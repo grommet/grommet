@@ -10,6 +10,24 @@ if (process.env.NODE_ENV !== 'production') {
     })]),
     color: PropTypes.string,
     max: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+    messages: PropTypes.shape({
+      bar: PropTypes.shape({
+        singular: PropTypes.string,
+        plural: PropTypes.string
+      }),
+      circle: PropTypes.shape({
+        singular: PropTypes.string,
+        plural: PropTypes.string
+      }),
+      pie: PropTypes.shape({
+        singular: PropTypes.string,
+        plural: PropTypes.string
+      }),
+      semicirlce: PropTypes.shape({
+        singular: PropTypes.string,
+        plural: PropTypes.string
+      })
+    }),
     reverse: PropTypes.bool,
     round: PropTypes.bool,
     size: PropTypes.oneOfType([PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge', 'full']), PropTypes.string]),

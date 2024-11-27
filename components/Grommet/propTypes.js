@@ -127,6 +127,24 @@ if (process.env.NODE_ENV !== 'production') {
           openMenu: _propTypes["default"].string,
           closeMenu: _propTypes["default"].string
         }),
+        meter: _propTypes["default"].shape({
+          bar: _propTypes["default"].shape({
+            singular: _propTypes["default"].string,
+            plural: _propTypes["default"].string
+          }),
+          circle: _propTypes["default"].shape({
+            singular: _propTypes["default"].string,
+            plural: _propTypes["default"].string
+          }),
+          pie: _propTypes["default"].shape({
+            singular: _propTypes["default"].string,
+            plural: _propTypes["default"].string
+          }),
+          semicirlce: _propTypes["default"].shape({
+            singular: _propTypes["default"].string,
+            plural: _propTypes["default"].string
+          })
+        }),
         rangeSelector: _propTypes["default"].shape({
           lower: _propTypes["default"].string,
           upper: _propTypes["default"].string

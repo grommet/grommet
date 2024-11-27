@@ -120,6 +120,24 @@ export interface GrommetProps {
         openMenu?: string;
         closeMenu?: string;
       };
+      meter?: {
+        bar?: {
+          singular?: string;
+          plural?: string;
+        };
+        circle?: {
+          singular?: string;
+          plural?: string;
+        };
+        pie?: {
+          singular?: string;
+          plural?: string;
+        };
+        semicircle?: {
+          singular?: string;
+          plural?: string;
+        };
+      };
       rangeSelector?: {
         lower?: string;
         upper?: string;
@@ -171,7 +189,7 @@ export interface GrommetProps {
         volumeUp?: string;
       };
     };
-    format: (...args: any[]) => void;
+    format?: (...args: any[]) => void;
   };
   onAnalytics?: (data: any) => void;
   plain?: boolean;

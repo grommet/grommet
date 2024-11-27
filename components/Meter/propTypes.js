@@ -15,6 +15,24 @@ if (process.env.NODE_ENV !== 'production') {
     })]),
     color: _propTypes["default"].string,
     max: _propTypes["default"].oneOfType([_propTypes["default"].number, _propTypes["default"].string]),
+    messages: _propTypes["default"].shape({
+      bar: _propTypes["default"].shape({
+        singular: _propTypes["default"].string,
+        plural: _propTypes["default"].string
+      }),
+      circle: _propTypes["default"].shape({
+        singular: _propTypes["default"].string,
+        plural: _propTypes["default"].string
+      }),
+      pie: _propTypes["default"].shape({
+        singular: _propTypes["default"].string,
+        plural: _propTypes["default"].string
+      }),
+      semicirlce: _propTypes["default"].shape({
+        singular: _propTypes["default"].string,
+        plural: _propTypes["default"].string
+      })
+    }),
     reverse: _propTypes["default"].bool,
     round: _propTypes["default"].bool,
     size: _propTypes["default"].oneOfType([_propTypes["default"].oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge', 'full']), _propTypes["default"].string]),
