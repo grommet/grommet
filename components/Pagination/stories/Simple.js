@@ -20,7 +20,7 @@ var Simple = exports.Simple = function Simple() {
     })), /*#__PURE__*/_react["default"].createElement(_grommet.Box, null, /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, "Box Props"), /*#__PURE__*/_react["default"].createElement(_grommet.Pagination, {
       numberItems: 1237,
       page: 24,
-      background: "brand",
+      background: "dark-1",
       pad: "medium",
       margin: "small",
       "aria-label": "Pagination with custom background and spacing"

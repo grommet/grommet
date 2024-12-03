@@ -17,7 +17,7 @@ var Properties = exports.Properties = function Properties() {
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
     // <Grommet theme={...}>
-    _react["default"].createElement(_grommet.Box, {
+    _react["default"].createElement(_grommet.Main, null, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
       pad: "large"
     }, /*#__PURE__*/_react["default"].createElement(_grommet.Data, {
       data: _data.DATA,
@@ -50,13 +50,14 @@ var Properties = exports.Properties = function Properties() {
       size: "medium"
     }, function (item) {
       return /*#__PURE__*/_react["default"].createElement(_grommet.Card, {
+        as: "li",
         key: item.name,
         pad: "small"
       }, /*#__PURE__*/_react["default"].createElement(_grommet.CardBody, null, /*#__PURE__*/_react["default"].createElement(_grommet.Heading, {
         level: 2,
         margin: "none"
       }, item.name), /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, amountFormatter.format(item.paid / 100))), /*#__PURE__*/_react["default"].createElement(_grommet.CardFooter, null, item.location || '--'));
-    })))
+    }))))
     // </Grommet>
   );
 };

@@ -61,9 +61,7 @@ var BackgroundBox = exports.BackgroundBox = function BackgroundBox() {
         dark: true
       },
       pad: "medium"
-    }, /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
-      color: "brand"
-    }, "force dark background")), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, "force dark background")), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
       background: "dark-1",
       pad: "medium"
     }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
@@ -77,15 +75,13 @@ var BackgroundBox = exports.BackgroundBox = function BackgroundBox() {
     }, "force light background"))), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
       background: {
         color: {
-          dark: 'darkgrey',
+          dark: 'dark-2',
           light: 'lightgrey'
         },
         dark: true
       },
       pad: "medium"
-    }, /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
-      color: "brand"
-    }, "force dark background with color as object")), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, "force dark background with color as object")), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
       background: "dark-1",
       pad: "medium"
     }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
@@ -97,9 +93,7 @@ var BackgroundBox = exports.BackgroundBox = function BackgroundBox() {
         dark: false
       },
       pad: "medium"
-    }, /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
-      color: "brand"
-    }, "force light background with color as object"))))
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, "force light background with color as object"))))
     // </Grommet>
   );
 };

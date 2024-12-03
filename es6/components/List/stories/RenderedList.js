@@ -25,7 +25,7 @@ export var RenderedList = function RenderedList() {
       return /*#__PURE__*/React.createElement(Text, {
         key: item.location,
         size: "small",
-        color: "dark-4"
+        color: "dark-2"
       }, item.location);
     },
     itemKey: function itemKey(item) {

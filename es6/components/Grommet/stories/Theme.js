@@ -4,7 +4,7 @@ import { Add } from "grommet-icons/es6/icons/Add";
 var customTheme = {
   global: {
     colors: {
-      custom: '#cc6633'
+      custom: '#a35200'
     }
   }
 };

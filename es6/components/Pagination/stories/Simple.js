@@ -15,7 +15,7 @@ export var Simple = function Simple() {
     })), /*#__PURE__*/React.createElement(Box, null, /*#__PURE__*/React.createElement(Text, null, "Box Props"), /*#__PURE__*/React.createElement(Pagination, {
       numberItems: 1237,
       page: 24,
-      background: "brand",
+      background: "dark-1",
       pad: "medium",
       margin: "small",
       "aria-label": "Pagination with custom background and spacing"

@@ -10,7 +10,7 @@ var Simple = exports.Simple = function Simple() {
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
     // <Grommet theme={...}>
-    _react["default"].createElement(_grommet.Box, {
+    _react["default"].createElement(_grommet.Main, null, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
       pad: "large",
       gap: "medium",
       width: "medium"
@@ -29,7 +29,7 @@ var Simple = exports.Simple = function Simple() {
       pad: "small",
       gap: "medium",
       background: "light-1"
-    }, /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, "text - random component"), /*#__PURE__*/_react["default"].createElement(_grommet.Box, null, "box - random component")))
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, "text - random component"), /*#__PURE__*/_react["default"].createElement(_grommet.Box, null, "box - random component"))))
     // </Grommet>
   );
 };

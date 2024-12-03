@@ -56,9 +56,7 @@ export var BackgroundBox = function BackgroundBox() {
         dark: true
       },
       pad: "medium"
-    }, /*#__PURE__*/React.createElement(Text, {
-      color: "brand"
-    }, "force dark background")), /*#__PURE__*/React.createElement(Box, {
+    }, /*#__PURE__*/React.createElement(Text, null, "force dark background")), /*#__PURE__*/React.createElement(Box, {
       background: "dark-1",
       pad: "medium"
     }, /*#__PURE__*/React.createElement(Box, {
@@ -72,15 +70,13 @@ export var BackgroundBox = function BackgroundBox() {
     }, "force light background"))), /*#__PURE__*/React.createElement(Box, {
       background: {
         color: {
-          dark: 'darkgrey',
+          dark: 'dark-2',
           light: 'lightgrey'
         },
         dark: true
       },
       pad: "medium"
-    }, /*#__PURE__*/React.createElement(Text, {
-      color: "brand"
-    }, "force dark background with color as object")), /*#__PURE__*/React.createElement(Box, {
+    }, /*#__PURE__*/React.createElement(Text, null, "force dark background with color as object")), /*#__PURE__*/React.createElement(Box, {
       background: "dark-1",
       pad: "medium"
     }, /*#__PURE__*/React.createElement(Box, {
@@ -92,9 +88,7 @@ export var BackgroundBox = function BackgroundBox() {
         dark: false
       },
       pad: "medium"
-    }, /*#__PURE__*/React.createElement(Text, {
-      color: "brand"
-    }, "force light background with color as object"))))
+    }, /*#__PURE__*/React.createElement(Text, null, "force light background with color as object"))))
     // </Grommet>
   );
 };

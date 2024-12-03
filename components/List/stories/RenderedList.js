@@ -30,7 +30,7 @@ var RenderedList = exports.RenderedList = function RenderedList() {
       return /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
         key: item.location,
         size: "small",
-        color: "dark-4"
+        color: "dark-2"
       }, item.location);
     },
     itemKey: function itemKey(item) {

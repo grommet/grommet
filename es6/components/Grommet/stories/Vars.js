@@ -6,11 +6,11 @@ export var Vars = function Vars() {
     cssVars: true
   }, /*#__PURE__*/React.createElement(Box, {
     pad: "medium",
-    background: "var(--accent-2)",
+    background: "var(--light-6)",
     gap: "medium"
   }, /*#__PURE__*/React.createElement(Box, null, "Checkout Grommet variables, you can find them in the StyledGrommet DOM."), /*#__PURE__*/React.createElement(Box, {
     "with": true
-  }, "For example, the background color in this Box is using var(--accent-2)")));
+  }, "For example, the background color in this Box is using var(--light-6)")));
 };
 export default {
   title: 'Utilities/Grommet/Vars'

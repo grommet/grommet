@@ -9,7 +9,7 @@ function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default":
 var customTheme = {
   global: {
     colors: {
-      custom: '#cc6633'
+      custom: '#a35200'
     }
   }
 };

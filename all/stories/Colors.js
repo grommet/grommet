@@ -23,13 +23,13 @@ var customTheme = {
       blue: '#00C8FF',
       green: '#17EBA0',
       teal: '#82FFF2',
-      purple: '#F740FF',
-      red: '#FC6161',
+      purple: '#694b75',
+      red: '#914049',
       orange: '#FFBC44',
-      yellow: '#FFEB59',
+      yellow: '#faf6d4',
       // you can also point to existing grommet colors
       brightGreen: 'accent-1',
-      deepGreen: 'neutral-2',
+      dark: 'dark-1',
       // Changing default text color,
       // all colors could be either a string or a dark and light object
       text: {
@@ -47,8 +47,8 @@ var Colors = exports.Colors = function Colors() {
     gap: "medium",
     pad: "small"
   }, /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, "Custom color purple"), /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
-    color: "deepGreen"
-  }, "Inline custom color of deepGreen"), /*#__PURE__*/_react["default"].createElement(_grommet.Paragraph, {
+    color: "dark"
+  }, "Inline custom dark color"), /*#__PURE__*/_react["default"].createElement(_grommet.Paragraph, {
     color: "red"
   }, "Wrapping your application with the Grommet component that is pointing to your customTheme object as shown on the example, will allow you full access to your custom colors across your application. You can override any Grommet color that is mentioned in the docs in a similar fashion."), /*#__PURE__*/_react["default"].createElement(_grommet.Anchor, {
     href: "https://github.com/grommet/grommet/wiki/Color-Properties"

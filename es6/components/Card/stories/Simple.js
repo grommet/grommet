@@ -1,11 +1,11 @@
 import React from 'react';
-import { Box, Card, CardBody, CardFooter, CardHeader, Text } from 'grommet';
+import { Box, Card, CardBody, CardFooter, CardHeader, Main, Text } from 'grommet';
 export var Simple = function Simple() {
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
     // <Grommet theme={...}>
-    React.createElement(Box, {
+    React.createElement(Main, null, /*#__PURE__*/React.createElement(Box, {
       pad: "large",
       gap: "medium",
       width: "medium"
@@ -24,7 +24,7 @@ export var Simple = function Simple() {
       pad: "small",
       gap: "medium",
       background: "light-1"
-    }, /*#__PURE__*/React.createElement(Text, null, "text - random component"), /*#__PURE__*/React.createElement(Box, null, "box - random component")))
+    }, /*#__PURE__*/React.createElement(Text, null, "text - random component"), /*#__PURE__*/React.createElement(Box, null, "box - random component"))))
     // </Grommet>
   );
 };
