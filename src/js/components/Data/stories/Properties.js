@@ -11,6 +11,7 @@ import {
   DataSort,
   DataSearch,
   DataFilters,
+  Main,
   Text,
   Toolbar,
 } from 'grommet';
@@ -27,52 +28,54 @@ const amountFormatter = new Intl.NumberFormat('en-US', {
 export const Properties = () => (
   // Uncomment <Grommet> lines when using outside of storybook
   // <Grommet theme={...}>
-  <Box pad="large">
-    <Data
-      data={DATA}
-      properties={{
-        location: {
-          label: 'Location',
-          sort: false,
-          options: ['Fort Collins', 'Palo Alto', 'Boise', 'San Francisco'],
-        },
-        name: {
-          filter: false,
-        },
-        paid: {
-          search: false,
-          label: 'Paid',
-        },
-        percent: {
-          search: false,
-          label: 'Percent',
-        },
-        date: {
-          label: 'Date',
-        },
-      }}
-    >
-      <Toolbar>
-        <DataSearch />
-        <DataSort drop />
-        <DataFilters layer />
-      </Toolbar>
-      <DataSummary />
-      <Cards size="medium">
-        {(item) => (
-          <Card key={item.name} pad="small">
-            <CardBody>
-              <Heading level={2} margin="none">
-                {item.name}
-              </Heading>
-              <Text>{amountFormatter.format(item.paid / 100)}</Text>
-            </CardBody>
-            <CardFooter>{item.location || '--'}</CardFooter>
-          </Card>
-        )}
-      </Cards>
-    </Data>
-  </Box>
+  <Main>
+    <Box pad="large">
+      <Data
+        data={DATA}
+        properties={{
+          location: {
+            label: 'Location',
+            sort: false,
+            options: ['Fort Collins', 'Palo Alto', 'Boise', 'San Francisco'],
+          },
+          name: {
+            filter: false,
+          },
+          paid: {
+            search: false,
+            label: 'Paid',
+          },
+          percent: {
+            search: false,
+            label: 'Percent',
+          },
+          date: {
+            label: 'Date',
+          },
+        }}
+      >
+        <Toolbar>
+          <DataSearch />
+          <DataSort drop />
+          <DataFilters layer />
+        </Toolbar>
+        <DataSummary />
+        <Cards size="medium">
+          {(item) => (
+            <Card as="li" key={item.name} pad="small">
+              <CardBody>
+                <Heading level={2} margin="none">
+                  {item.name}
+                </Heading>
+                <Text>{amountFormatter.format(item.paid / 100)}</Text>
+              </CardBody>
+              <CardFooter>{item.location || '--'}</CardFooter>
+            </Card>
+          )}
+        </Cards>
+      </Data>
+    </Box>
+  </Main>
   // </Grommet>
 );
 
