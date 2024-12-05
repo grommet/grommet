@@ -102,6 +102,25 @@ describe('Calendar', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
+  test('prop header size', () => {
+    const {} = render(
+      <Grommet>
+        <Calendar size="small" level={3} date={DATE} />
+        <Calendar size="medium" level={2} date={DATE} />
+        <Calendar size="large" level={1} date={DATE} />
+      </Grommet>,
+    );
+
+    // Check for each calendar heading level
+    const smallCalendarHeading = screen.getByRole('heading', { level: 3 });
+    const mediumCalendarHeading = screen.getByRole('heading', { level: 2 });
+    const largeCalendarHeading = screen.getByRole('heading', { level: 1 });
+
+    expect(smallCalendarHeading).toBeInTheDocument();
+    expect(mediumCalendarHeading).toBeInTheDocument();
+    expect(largeCalendarHeading).toBeInTheDocument();
+  });
+
   test('fill', () => {
     const { container } = render(
       <Grommet>

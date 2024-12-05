@@ -285,6 +285,7 @@ const Calendar = forwardRef(
       fill,
       firstDayOfWeek = 0,
       header,
+      level,
       locale = 'en-US',
       messages,
       onReference,
@@ -619,24 +620,27 @@ const Calendar = forwardRef(
         year: 'numeric',
       });
 
+      // theme.calendar.heading.level should be removed in v3 of grommet
+      // theme.calendar[size].title should be used instead
+      let headingLevel;
+      if (level !== undefined) {
+        headingLevel = level;
+      } else if (size === 'small') {
+        headingLevel =
+          (theme.calendar.heading && theme.calendar.heading.level) || 4;
+      } else {
+        headingLevel =
+          ((theme.calendar.heading && theme.calendar.heading.level) || 4) - 1;
+      }
+
       return (
         <Box direction="row" justify="between" align="center">
           <Header flex pad={{ horizontal: headingPadMap[size] || 'small' }}>
             {theme.calendar[size]?.title ? (
               <Text {...theme.calendar[size].title}>{monthAndYear}</Text>
             ) : (
-              // theme.calendar.heading.level should be removed in v3 of grommet
-              // theme.calendar[size].title should be used instead
               <Heading
-                level={
-                  size === 'small'
-                    ? (theme.calendar.heading &&
-                        theme.calendar.heading.level) ||
-                      4
-                    : ((theme.calendar.heading &&
-                        theme.calendar.heading.level) ||
-                        4) - 1
-                }
+                level={headingLevel}
                 size={size}
                 margin="none"
                 overflowWrap="normal"
