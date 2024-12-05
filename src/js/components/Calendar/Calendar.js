@@ -620,8 +620,9 @@ const Calendar = forwardRef(
         year: 'numeric',
       });
 
+      // theme.calendar.heading.level should be removed in v3 of grommet
+      // theme.calendar[size].title should be used instead
       let headingLevel;
-
       if (level !== undefined) {
         headingLevel = level;
       } else if (size === 'small') {
@@ -638,9 +639,6 @@ const Calendar = forwardRef(
             {theme.calendar[size]?.title ? (
               <Text {...theme.calendar[size].title}>{monthAndYear}</Text>
             ) : (
-              // theme.calendar.heading.level should be removed in v3 of grommet
-              // theme.calendar[size].title should be used instead
-
               <Heading
                 level={headingLevel}
                 size={size}

@@ -28,5 +28,5 @@ export const HeaderLevel = () => {
 };
 
 export default {
-  title: 'Visualizations/Calendar/HeaderLevel',
+  title: 'Visualizations/Calendar/Heading Level',
 };
