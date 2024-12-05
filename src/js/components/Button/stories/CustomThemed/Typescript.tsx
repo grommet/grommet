@@ -29,7 +29,7 @@ const customTheme: ThemeType = {
       horizontal: '24px',
     },
     primary: {
-      color: '#2196f3',
+      color: '#0743a3',
     },
     extend: (props) => {
       let extraStyles = '';

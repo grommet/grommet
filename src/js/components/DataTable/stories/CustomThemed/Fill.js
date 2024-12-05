@@ -37,6 +37,7 @@ export const Fill = () => (
   <Grommet theme={myTheme} full>
     <Box fill="vertical">
       <DataTable
+        tabIndex={0}
         columns={pinnedColumns}
         data={data}
         step={10}

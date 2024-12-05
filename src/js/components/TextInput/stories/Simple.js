@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Box, TextInput, Form, FormField } from 'grommet';
+import { Box, TextInput } from 'grommet';
 
 export const Simple = () => {
   const [value, setValue] = React.useState('');
@@ -14,16 +14,6 @@ export const Simple = () => {
       <Box width="medium">
         <TextInput value={value} onChange={onChange} aria-label="Input Text" />
       </Box>
-      <Form>
-        <FormField
-          label="label"
-          // contentProps={{
-          //   border: false,
-          // }}
-        >
-          <TextInput />
-        </FormField>
-      </Form>
     </Box>
     // </Grommet>
   );

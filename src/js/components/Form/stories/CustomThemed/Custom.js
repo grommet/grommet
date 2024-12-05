@@ -28,7 +28,7 @@ const customTheme = {
   },
   formField: {
     label: {
-      color: 'dark-3',
+      color: 'dark-2',
       size: 'small',
       margin: 'xsmall',
       weight: 600,
@@ -64,8 +64,8 @@ export const Custom = () => (
           onReset={(event) => console.log(event)}
           onSubmit={({ value }) => console.log('Submit', value)}
         >
-          <FormField label="Name" name="name" required>
-            <TextInput name="name" />
+          <FormField htmlFor="name" label="Name" name="name" required>
+            <TextInput id="name" name="name" />
           </FormField>
           <FormField label="Email" name="email" required>
             <MaskedInput
@@ -88,11 +88,16 @@ export const Custom = () => (
           <FormField label="Size" name="size">
             <Select name="size" options={['small', 'medium', 'large']} />
           </FormField>
-          <FormField label="Comments" name="comments" disabled>
-            <TextArea name="comments" disabled />
+          <FormField
+            htmlFor="comments"
+            label="Comments"
+            name="comments"
+            disabled
+          >
+            <TextArea id="comments" name="comments" disabled />
           </FormField>
-          <FormField label="Age" name="age">
-            <RangeInput name="age" min={15} max={75} />
+          <FormField htmlFor="age" label="Age" name="age">
+            <RangeInput id="age" name="age" min={15} max={75} />
           </FormField>
           <Box direction="row" justify="between" margin={{ top: 'medium' }}>
             <Button label="Cancel" />

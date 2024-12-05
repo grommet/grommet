@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-import { Box, Button, Card, Grid, Image, Text } from 'grommet';
+import { Box, Button, Card, Grid, Text } from 'grommet';
 import { FormAdd } from 'grommet-icons';
 
 const labels = [];
@@ -18,9 +18,7 @@ const Item = ({ title, ...rest }) => (
           background="brand"
           round="small"
           flex={false}
-        >
-          <Image />
-        </Box>
+        />
         <Box>
           <Text
             size="large"

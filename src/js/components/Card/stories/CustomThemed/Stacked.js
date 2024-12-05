@@ -9,6 +9,7 @@ import {
   CardHeader,
   Grid,
   Grommet,
+  Main,
   Text,
   Image,
   Stack,
@@ -58,44 +59,46 @@ export const Stacked = () => {
 
   return (
     <Grommet theme={theme}>
-      <Box pad="large">
-        <Grid
-          gap="large"
-          rows="medium"
-          columns={{ count: 'fit', size: ['small', 'medium'] }}
-        >
-          {data.map((item) => (
-            <Card width="medium" key={item.location}>
-              {/* Stacked CardBody and CardHeader on top of each other
+      <Main>
+        <Box pad="large">
+          <Grid
+            gap="large"
+            rows="medium"
+            columns={{ count: 'fit', size: ['small', 'medium'] }}
+          >
+            {data.map((item) => (
+              <Card width="medium" key={item.location}>
+                {/* Stacked CardBody and CardHeader on top of each other
               in that order */}
-              <Stack anchor="bottom-left">
-                <CardBody height="medium">
-                  <Image
-                    fit="cover"
-                    src={item.image}
-                    a11yTitle="scuba diving"
-                  />
-                </CardBody>
-                <CardHeader
-                  pad={{ horizontal: 'small', vertical: 'small' }}
-                  // https://gist.github.com/lopspower/03fb1cc0ac9f32ef38f4#all-hex-value-from-100-to-0-alpha
-                  background="#000000A0"
-                  width="medium"
-                  justify="start"
-                >
-                  <Avatar src={avatarSrc} a11yTitle="avatar" />
-                  <Box>
-                    <Heading level="3" margin="none">
-                      {item.location}
-                    </Heading>
-                    <Text size="small">{item.state}</Text>
-                  </Box>
-                </CardHeader>
-              </Stack>
-            </Card>
-          ))}
-        </Grid>
-      </Box>
+                <Stack anchor="bottom-left">
+                  <CardBody height="medium">
+                    <Image
+                      fit="cover"
+                      src={item.image}
+                      a11yTitle="scuba diving"
+                    />
+                  </CardBody>
+                  <CardHeader
+                    pad={{ horizontal: 'small', vertical: 'small' }}
+                    // https://gist.github.com/lopspower/03fb1cc0ac9f32ef38f4#all-hex-value-from-100-to-0-alpha
+                    background="#000000A0"
+                    width="medium"
+                    justify="start"
+                  >
+                    <Avatar src={avatarSrc} a11yTitle="avatar" />
+                    <Box>
+                      <Heading level="3" margin="none">
+                        {item.location}
+                      </Heading>
+                      <Text size="small">{item.state}</Text>
+                    </Box>
+                  </CardHeader>
+                </Stack>
+              </Card>
+            ))}
+          </Grid>
+        </Box>
+      </Main>
     </Grommet>
   );
 };
