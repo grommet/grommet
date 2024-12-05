@@ -1,7 +1,7 @@
 /* eslint-disable no-underscore-dangle */
-import React, { forwardRef, memo } from 'react';
+import React, { forwardRef, memo, useEffect } from 'react';
 
-import { useKeyboard } from '../../utils';
+import { useKeyboard, useForwardedRef } from '../../utils';
 import { CheckBox } from '../CheckBox';
 import { InfiniteScroll } from '../InfiniteScroll';
 import { TableRow } from '../TableRow';
@@ -194,6 +194,8 @@ const Body = forwardRef(
     const { theme, passThemeFlag } = useThemeValue();
     const [active, setActive] = React.useState();
     const [lastActive, setLastActive] = React.useState();
+    const [scroll, setScroll] = React.useState();
+    const containerRef = useForwardedRef(ref);
 
     // Determine if using a keyboard to cover focus behavior
     const usingKeyboard = useKeyboard();
@@ -218,6 +220,15 @@ const Body = forwardRef(
       (!disabled ||
         (activePrimaryValue !== undefined &&
           !disabled.includes(activePrimaryValue)));
+
+    useEffect(() => {
+      if (containerRef && containerRef.current) {
+        const element = containerRef.current;
+        if (element.scrollHeight > element.offsetHeight) {
+          setScroll(true);
+        }
+      }
+    }, [containerRef]);
 
     return (
       <Keyboard
@@ -262,9 +273,9 @@ const Body = forwardRef(
         }
       >
         <StyledDataTableBody
-          ref={ref}
+          ref={containerRef}
           size={size}
-          tabIndex={onClickRow ? 0 : undefined}
+          tabIndex={onClickRow || scroll ? 0 : undefined}
           onFocus={() => setActive(onFocusActive)}
           onBlur={() => {
             setLastActive(active);

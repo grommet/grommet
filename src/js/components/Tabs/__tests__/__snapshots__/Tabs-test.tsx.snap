@@ -221,10 +221,10 @@ exports[`Tabs Custom Tab component 1`] = `
   >
     <div
       class="c2"
-      role="tablist"
     >
       <div
         class="c3 "
+        role="tablist"
       >
         <button
           aria-expanded="true"
@@ -494,10 +494,10 @@ exports[`Tabs Tab 1`] = `
   >
     <div
       class="c2"
-      role="tablist"
     >
       <div
         class="c3 "
+        role="tablist"
       >
         <button
           aria-expanded="true"
@@ -771,10 +771,10 @@ exports[`Tabs alignControls 1`] = `
   >
     <div
       class="c2"
-      role="tablist"
     >
       <div
         class="c3 "
+        role="tablist"
       >
         <button
           aria-expanded="true"
@@ -1044,10 +1044,10 @@ exports[`Tabs change to second tab 1`] = `
   >
     <div
       class="c2"
-      role="tablist"
     >
       <div
         class="c3 "
+        role="tablist"
       >
         <button
           aria-expanded="true"
@@ -1105,10 +1105,10 @@ exports[`Tabs change to second tab 2`] = `
   >
     <div
       class="StyledBox-sc-13pk1d4-0 euJJjo"
-      role="tablist"
     >
       <div
         class="StyledBox-sc-13pk1d4-0 fGCpDP StyledTabs__StyledTabsHeader-sc-a4fwxl-0 jGwWVD"
+        role="tablist"
       >
         <button
           aria-expanded="false"
@@ -1366,10 +1366,10 @@ exports[`Tabs complex title 1`] = `
   >
     <div
       class="c2"
-      role="tablist"
     >
       <div
         class="c3 "
+        role="tablist"
       >
         <button
           aria-expanded="true"
@@ -1582,10 +1582,10 @@ exports[`Tabs no Tab 1`] = `
   >
     <div
       class="c2"
-      role="tablist"
     >
       <div
         class="c3 "
+        role="tablist"
       >
         <button
           aria-expanded="true"
@@ -1970,10 +1970,10 @@ exports[`Tabs onClick 1`] = `
   >
     <div
       class="c2"
-      role="tablist"
     >
       <div
         class="c3 "
+        role="tablist"
       >
         <button
           aria-expanded="true"
@@ -2230,10 +2230,10 @@ exports[`Tabs renders outside grommet wrapper 1`] = `
 >
   <div
     class="c1"
-    role="tablist"
   >
     <div
       class="c2 "
+      role="tablist"
     >
       <button
         aria-expanded="true"
@@ -2502,10 +2502,10 @@ exports[`Tabs set on hover 1`] = `
   >
     <div
       class="c2"
-      role="tablist"
     >
       <div
         class="c3 "
+        role="tablist"
       >
         <button
           aria-expanded="true"
@@ -2563,10 +2563,10 @@ exports[`Tabs set on hover 2`] = `
   >
     <div
       class="StyledBox-sc-13pk1d4-0 euJJjo"
-      role="tablist"
     >
       <div
         class="StyledBox-sc-13pk1d4-0 fGCpDP StyledTabs__StyledTabsHeader-sc-a4fwxl-0 jGwWVD"
+        role="tablist"
       >
         <button
           aria-expanded="true"
@@ -2624,10 +2624,10 @@ exports[`Tabs set on hover 3`] = `
   >
     <div
       class="StyledBox-sc-13pk1d4-0 euJJjo"
-      role="tablist"
     >
       <div
         class="StyledBox-sc-13pk1d4-0 fGCpDP StyledTabs__StyledTabsHeader-sc-a4fwxl-0 jGwWVD"
+        role="tablist"
       >
         <button
           aria-expanded="true"
@@ -2685,10 +2685,10 @@ exports[`Tabs set on hover 4`] = `
   >
     <div
       class="StyledBox-sc-13pk1d4-0 euJJjo"
-      role="tablist"
     >
       <div
         class="StyledBox-sc-13pk1d4-0 fGCpDP StyledTabs__StyledTabsHeader-sc-a4fwxl-0 jGwWVD"
+        role="tablist"
       >
         <button
           aria-expanded="true"
@@ -2746,10 +2746,10 @@ exports[`Tabs set on hover 5`] = `
   >
     <div
       class="StyledBox-sc-13pk1d4-0 euJJjo"
-      role="tablist"
     >
       <div
         class="StyledBox-sc-13pk1d4-0 fGCpDP StyledTabs__StyledTabsHeader-sc-a4fwxl-0 jGwWVD"
+        role="tablist"
       >
         <button
           aria-expanded="true"
@@ -2984,10 +2984,10 @@ exports[`Tabs should allow to extend tab styles 1`] = `
   >
     <div
       class="c2"
-      role="tablist"
     >
       <div
         class="c3 "
+        role="tablist"
       >
         <button
           aria-expanded="true"
@@ -3321,10 +3321,10 @@ exports[`Tabs should apply custom theme disabled style 1`] = `
   >
     <div
       class="c2"
-      role="tablist"
     >
       <div
         class="c3 "
+        role="tablist"
       >
         <button
           aria-expanded="true"
@@ -3665,10 +3665,10 @@ exports[`Tabs should apply custom theme disabled style when theme.button.default
   >
     <div
       class="c2"
-      role="tablist"
     >
       <div
         class="c3 "
+        role="tablist"
       >
         <button
           aria-expanded="true"
@@ -3942,10 +3942,10 @@ exports[`Tabs should apply theme alignSelf to tab controls 1`] = `
     >
       <div
         class="c2"
-        role="tablist"
       >
         <div
           class="c3 "
+          role="tablist"
         >
           <button
             aria-expanded="true"
@@ -4164,10 +4164,10 @@ exports[`Tabs should have no accessibility violations 1`] = `
     >
       <div
         class="c2"
-        role="tablist"
       >
         <div
           class="c3 "
+          role="tablist"
         >
           <button
             aria-expanded="true"
@@ -4308,10 +4308,10 @@ exports[`Tabs should have no default styles with plain prop 1`] = `
   >
     <div
       class="c2"
-      role="tablist"
     >
       <div
         class="c3 "
+        role="tablist"
       >
         <button
           aria-expanded="true"
@@ -4625,10 +4625,10 @@ exports[`Tabs should style as disabled 1`] = `
   >
     <div
       class="c2"
-      role="tablist"
     >
       <div
         class="c3 "
+        role="tablist"
       >
         <button
           aria-expanded="true"
@@ -4908,10 +4908,10 @@ exports[`Tabs styled component should change tab color when active 1`] = `
   >
     <div
       class="c2"
-      role="tablist"
     >
       <div
         class="c3 "
+        role="tablist"
       >
         <button
           aria-expanded="false"
@@ -5212,10 +5212,10 @@ exports[`Tabs with icon + reverse 1`] = `
   >
     <div
       class="c2"
-      role="tablist"
     >
       <div
         class="c3 "
+        role="tablist"
       >
         <button
           aria-expanded="true"

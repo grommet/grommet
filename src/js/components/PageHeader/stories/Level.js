@@ -1,4 +1,4 @@
-import { Button, Page, PageContent, PageHeader } from 'grommet';
+import { Button, Main, Page, PageContent, PageHeader } from 'grommet';
 import React from 'react';
 
 export const Level = () => (
@@ -12,21 +12,23 @@ export const Level = () => (
         actions={<Button label="View Details" />}
         level={1} // Use different levels for different headers
       />
-      <PageHeader
-        title="Main Section"
-        subtitle="This is the main section of your application where 
+      <Main>
+        <PageHeader
+          title="Main Section"
+          subtitle="This is the main section of your application where 
         you can display more detailed information about 
         a specific topic or category."
-        actions={<Button label="View Details" />}
-        level={2}
-      />
-      <PageHeader
-        title="Subsection"
-        subtitle="Subsections provide further organization within a page.They 
+          actions={<Button label="View Details" />}
+          level={2}
+        />
+        <PageHeader
+          title="Subsection"
+          subtitle="Subsections provide further organization within a page.They 
         can be used to group related content together."
-        actions={<Button label="View Details" />}
-        level={3}
-      />
+          actions={<Button label="View Details" />}
+          level={3}
+        />
+      </Main>
     </PageContent>
   </Page>
 );
