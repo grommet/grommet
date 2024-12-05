@@ -102,6 +102,18 @@ describe('Calendar', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
+  test('prop header size', () => {
+    const { container } = render(
+      <Grommet>
+        <Calendar size="small" level={3} date={DATE} />
+        <Calendar size="medium" level={2} date={DATE} />
+        <Calendar size="large" level={1} date={DATE} />
+      </Grommet>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
   test('fill', () => {
     const { container } = render(
       <Grommet>
