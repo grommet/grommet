@@ -20,7 +20,12 @@ export const AggregateValidation = () => {
           onSubmit={({ value: nextValue }) => console.log(nextValue)}
         >
           <FormField label="Name" name="name" required>
-            <TextInput aria-label="name" name="name" type="name" />
+            <TextInput
+              aria-required
+              aria-label="name"
+              name="name"
+              type="name"
+            />
           </FormField>
 
           <FormField label="Email" name="email" required>

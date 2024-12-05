@@ -50,10 +50,11 @@ export const FieldWithChildren = () => (
         }
       >
         <FormField label="Name" htmlFor="name" name="name" required>
-          <TextInput id="name" name="name" />
+          <TextInput aria-required id="name" name="name" />
         </FormField>
         <FormField label="Email" htmlFor="email" name="email" required>
           <MaskedInput
+            aria-required
             id="email"
             name="email"
             mask={[

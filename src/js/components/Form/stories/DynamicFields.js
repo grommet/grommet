@@ -16,7 +16,7 @@ export const DynamicFields = () => {
           onSubmit={({ value }) => console.log('Submit', value)}
         >
           <FormField label="Name" name="name" required>
-            <TextInput name="name" aria-label="name" />
+            <TextInput aria-required name="name" aria-label="name" />
           </FormField>
           <FormField name="haveAlias">
             <CheckBox
@@ -28,7 +28,7 @@ export const DynamicFields = () => {
           </FormField>
           {haveAlias && (
             <FormField label="Alias" name="alias" required>
-              <TextInput name="alias" />
+              <TextInput aria-required name="alias" />
             </FormField>
           )}
           <Box direction="row" justify="between" margin={{ top: 'medium' }}>

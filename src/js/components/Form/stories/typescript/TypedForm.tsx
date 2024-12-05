@@ -10,6 +10,7 @@ import {
   RangeInput,
   Select,
   TextArea,
+  TextInput,
 } from 'grommet';
 import { useState } from 'react';
 
@@ -55,7 +56,14 @@ export const TypedForm = () => {
             name="name"
             required
             validate={{ regexp: /^[a-z]/i }}
-          />
+          >
+            <TextInput
+              aria-required
+              aria-label="name"
+              name="name"
+              type="name"
+            />
+          </FormField>
           <FormField
             label="Email"
             htmlFor="email"
@@ -63,7 +71,14 @@ export const TypedForm = () => {
             name="email"
             type="email"
             required
-          />
+          >
+            <TextInput
+              aria-required
+              aria-label="email"
+              name="email"
+              type="email"
+            />
+          </FormField>
           <FormField
             label="Employee ID"
             htmlFor="employeeId"
@@ -71,7 +86,14 @@ export const TypedForm = () => {
             name="employeeId"
             required
             validate={{ regexp: /^[0-9]{4,6}$/, message: '4-6 digits' }}
-          />
+          >
+            <TextInput
+              aria-required
+              aria-label="employeeId"
+              name="employeeId"
+              type="employeeId"
+            />
+          </FormField>
           <FormField
             name="subscribe"
             component={CheckBox}
@@ -90,27 +112,29 @@ export const TypedForm = () => {
             id="size"
             aria-label="size"
             name="size"
-            component={Select}
-            onChange={(event) => console.log(event)}
-            options={['small', 'medium', 'large', 'xlarge']}
-          />
+          >
+            <Select
+              onChange={(event) => console.log(event)}
+              options={['small', 'medium', 'large', 'xlarge']}
+            />
+          </FormField>
           <FormField
             label="Comments"
             htmlFor="comments"
             id="comments"
             name="comments"
-            component={TextArea}
-          />
-          <FormField
-            label="Age"
-            htmlFor="age"
-            id="age"
-            name="age"
-            component={RangeInput}
-            pad
-            min={15}
-            max={75}
-          />
+          >
+            <TextArea />
+          </FormField>
+          <FormField label="Age" htmlFor="age" id="age" name="age" pad>
+            <RangeInput
+              aria-label="age"
+              name="age"
+              type="age"
+              min={15}
+              max={75}
+            />
+          </FormField>
           <Box direction="row" justify="between" margin={{ top: 'medium' }}>
             <Button label="Cancel" />
             <Button type="reset" label="Reset" />

@@ -51,6 +51,7 @@ export const Controlled = () => {
             <MaskedInput
               id="email"
               name="email"
+              aria-required
               mask={[
                 { regexp: /^[\w\-_.]+$/, placeholder: 'example' },
                 { fixed: '@' },

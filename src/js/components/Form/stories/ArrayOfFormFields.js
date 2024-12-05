@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import { Box, Form, Button, FormField } from 'grommet';
+import { Box, Form, Button, FormField, TextInput } from 'grommet';
 import { Add, Trash } from 'grommet-icons';
 
 export const ArrayOfFormFields = () => {
@@ -55,7 +55,9 @@ export const ArrayOfFormFields = () => {
               return undefined;
             },
           ]}
-        />
+        >
+          <TextInput aria-label="phone number" name="phone number" type="tel" />
+        </FormField>
         <FormField
           label="Extension"
           aria-label="extension"
@@ -109,7 +111,9 @@ export const ArrayOfFormFields = () => {
           pad
           required
           validate={[{ regexp: /^[a-zA-Z ]*$/ }]}
-        />
+        >
+          <TextInput aria-required aria-label="name" name="name" />
+        </FormField>
         {PhoneNumberGroup}
         <Button
           icon={<Add />}

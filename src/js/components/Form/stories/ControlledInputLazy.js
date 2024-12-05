@@ -63,6 +63,7 @@ export const ControlledInputLazy = () => {
           </FormField>
           <FormField label="Email" htmlFor="email" name="email" required>
             <MaskedInput
+              aria-required
               id="email"
               name="email"
               mask={[

@@ -31,6 +31,7 @@ export const Uncontrolled = () => (
         </FormField>
         <FormField label="Email" htmlFor="email" name="email" required>
           <MaskedInput
+            aria-required
             id="email"
             name="email"
             mask={[
@@ -63,7 +64,7 @@ export const Uncontrolled = () => (
           <RangeInput id="age" name="age" min={15} max={75} />
         </FormField>
         <FormField required label="Image" htmlFor="image" name="image">
-          <FileInput id="image" name="image" />
+          <FileInput aria-required id="image" name="image" />
         </FormField>
         <Box direction="row" justify="between" margin={{ top: 'medium' }}>
           <Button label="Cancel" />

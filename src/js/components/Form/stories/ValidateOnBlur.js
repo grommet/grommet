@@ -37,12 +37,17 @@ export const ValidateOnBlur = () => (
               return undefined;
             },
           ]}
-        />
-
-        <FormField label="Email" name="email" required>
-          <TextInput name="email" aria-label="email" type="email" />
+        >
+          <TextInput aria-required name="name" />
         </FormField>
-
+        <FormField label="Email" name="email" required>
+          <TextInput
+            aria-required
+            name="email"
+            aria-label="email"
+            type="email"
+          />
+        </FormField>
         <FormField
           label="Size"
           name="select-size"
@@ -57,11 +62,11 @@ export const ValidateOnBlur = () => (
         >
           <Select
             name="select-size"
+            aria-required
             id="select-size"
             options={['small', 'medium', 'large']}
           />
         </FormField>
-
         <Box direction="row" justify="between" margin={{ top: 'medium' }}>
           <Button label="Cancel" />
           <Button type="reset" label="Reset" />

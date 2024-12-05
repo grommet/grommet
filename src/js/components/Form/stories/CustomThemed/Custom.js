@@ -65,11 +65,12 @@ export const Custom = () => (
           onSubmit={({ value }) => console.log('Submit', value)}
         >
           <FormField label="Name" name="name" required>
-            <TextInput name="name" />
+            <TextInput aria-required name="name" />
           </FormField>
           <FormField label="Email" name="email" required>
             <MaskedInput
               name="email"
+              aria-required
               mask={[
                 { regexp: /^[\w\-_.]+$/, placeholder: 'example' },
                 { fixed: '@' },
