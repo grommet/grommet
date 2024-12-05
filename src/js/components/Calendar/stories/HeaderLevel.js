@@ -27,6 +27,8 @@ export const HeaderLevel = () => {
   );
 };
 
+HeaderLevel.storyName = 'Heading level';
+
 export default {
-  title: 'Visualizations/Calendar/Heading Level',
+  title: 'Visualizations/Calendar/Heading level',
 };
