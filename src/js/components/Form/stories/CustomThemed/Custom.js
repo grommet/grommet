@@ -64,12 +64,13 @@ export const Custom = () => (
           onReset={(event) => console.log(event)}
           onSubmit={({ value }) => console.log('Submit', value)}
         >
-          <FormField label="Name" name="name" required>
-            <TextInput aria-required name="name" />
+          <FormField htmlFor="name" label="Name" name="name" required>
+            <TextInput id="name" aria-required name="name" />
           </FormField>
           <FormField label="Email" name="email" required>
             <MaskedInput
               name="email"
+              id="email"
               aria-required
               mask={[
                 { regexp: /^[\w\-_.]+$/, placeholder: 'example' },

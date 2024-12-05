@@ -17,6 +17,7 @@ export const TriggerValidationUsingFormField = () => (
           label="Blur"
           name="blur"
           aria-label="blur"
+          htmlFor="blur"
           required
           validate={[
             { regexp: /^[a-z]/i },
@@ -39,13 +40,14 @@ export const TriggerValidationUsingFormField = () => (
           ]}
           validateOn="blur"
         >
-          <TextInput aria-required name="blur" />
+          <TextInput id="blur" aria-required name="blur" />
         </FormField>
         <FormField
           label="Submit"
           name="submit"
           aria-label="submit"
           required
+          htmlFor="submit"
           validate={[
             { regexp: /^[a-z]/i },
             (name) => {
@@ -67,12 +69,13 @@ export const TriggerValidationUsingFormField = () => (
           ]}
           validateOn="submit"
         >
-          <TextInput aria-required name="submit" />
+          <TextInput id="sumbit" aria-required name="submit" />
         </FormField>
         <FormField
           label="Change"
           name="change"
           aria-label="change"
+          htmlFor="change"
           required
           validate={[
             { regexp: /^[a-z]/i },
@@ -95,7 +98,7 @@ export const TriggerValidationUsingFormField = () => (
           ]}
           validateOn="change"
         >
-          <TextInput aria-required name="change" />
+          <TextInput id="change" aria-required name="change" />
         </FormField>
         <Box direction="row" justify="between" margin={{ top: 'medium' }}>
           <Button label="Cancel" />

@@ -46,6 +46,7 @@ export const ArrayOfFormFields = () => {
         <FormField
           label="Phone Number"
           aria-label="phone number"
+          htmlFor="phone number"
           name={`phones[${index}].number`}
           required
           validate={[
@@ -56,11 +57,17 @@ export const ArrayOfFormFields = () => {
             },
           ]}
         >
-          <TextInput aria-label="phone number" name="phone number" type="tel" />
+          <TextInput
+            aria-required
+            id="phone number"
+            name="phone number"
+            type="tel"
+          />
         </FormField>
         <FormField
           label="Extension"
           aria-label="extension"
+          htmlFor="extension"
           name={`phones[${index}].ext`}
           validate={[
             { regexp: /^[0-9]*$/ },
@@ -69,7 +76,9 @@ export const ArrayOfFormFields = () => {
               return undefined;
             },
           ]}
-        />
+        >
+          <TextInput id="extension" name="extension" type="tel" />
+        </FormField>
         <Box>
           <Button
             icon={<Trash />}
@@ -110,9 +119,10 @@ export const ArrayOfFormFields = () => {
           name="name"
           pad
           required
+          htmlFor="name"
           validate={[{ regexp: /^[a-zA-Z ]*$/ }]}
         >
-          <TextInput aria-required aria-label="name" name="name" />
+          <TextInput aria-required id="name" name="name" />
         </FormField>
         {PhoneNumberGroup}
         <Button
