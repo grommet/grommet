@@ -66,17 +66,19 @@ export const ControlledInput = () => {
               onChange={(event) => setEmail(event.target.value)}
             />
           </FormField>
-          <FormField name="subscribe">
+          <FormField htmlFor="subscribe" name="subscribe">
             <CheckBox
               name="subscribe"
+              id="subscribe"
               label="Subscribe?"
               checked={subscribe}
               onChange={(event) => setSubscribe(event.target.checked)}
             />
           </FormField>
-          <FormField name="ampm">
+          <FormField htmlFor="ampm" name="ampm">
             <RadioButtonGroup
               name="ampm"
+              id="ampm"
               options={['morning', 'evening']}
               value={ampm}
               onChange={(event) => setAmpm(event.target.value)}

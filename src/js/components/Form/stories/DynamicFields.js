@@ -21,6 +21,7 @@ export const DynamicFields = () => {
           <FormField htmlFor="havingAlias" name="haveAlias">
             <CheckBox
               name="haveAlias"
+              id="havingAlias"
               label="alias?"
               checked={haveAlias}
               onChange={() => setHaveAlias(!haveAlias)}

@@ -74,14 +74,19 @@ export const FieldWithChildren = () => (
         >
           <TextInput name="password" id="password" type="password" />
         </FormField>
-        <FormField name="subscription">
+        <FormField htmlFor="subscription" name="subscription">
           <CheckBoxGroup
             name="subscription"
+            id="subscription"
             options={['subscribe', 'receive email notifications']}
           />
         </FormField>
-        <FormField name="ampm">
-          <RadioButtonGroup name="ampm" options={['morning', 'evening']} />
+        <FormField htmlFor="ampm" name="ampm">
+          <RadioButtonGroup
+            id="ampm"
+            name="ampm"
+            options={['morning', 'evening']}
+          />
         </FormField>
         <FormField label="Size" htmlFor="size" name="size">
           <Select

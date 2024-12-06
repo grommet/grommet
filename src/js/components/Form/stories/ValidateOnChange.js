@@ -70,7 +70,6 @@ export const ValidateOnChange = () => {
               htmlFor="select-size"
               aria-required
               id="select-size"
-              aria-label="select-size"
               options={['small', 'medium', 'large']}
             />
           </FormField>

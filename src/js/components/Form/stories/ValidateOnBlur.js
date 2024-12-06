@@ -17,6 +17,7 @@ export const ValidateOnBlur = () => (
           label="Name"
           aria-label="name"
           name="name"
+          htmlFor="name"
           required
           validate={[
             { regexp: /^[a-z]/i },
@@ -38,15 +39,10 @@ export const ValidateOnBlur = () => (
             },
           ]}
         >
-          <TextInput aria-required name="name" />
+          <TextInput id="name" aria-required name="name" />
         </FormField>
-        <FormField label="Email" name="email" required>
-          <TextInput
-            aria-required
-            name="email"
-            aria-label="email"
-            type="email"
-          />
+        <FormField htmlFor="email" label="Email" name="email" required>
+          <TextInput aria-required name="email" id="email" type="email" />
         </FormField>
         <FormField
           label="Size"
