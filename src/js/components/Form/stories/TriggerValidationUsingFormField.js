@@ -69,7 +69,7 @@ export const TriggerValidationUsingFormField = () => (
           ]}
           validateOn="submit"
         >
-          <TextInput id="sumbit" aria-required name="submit" />
+          <TextInput id="submit" aria-required name="submit" />
         </FormField>
         <FormField
           label="Change"
