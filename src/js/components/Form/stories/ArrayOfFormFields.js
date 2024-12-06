@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import { Box, Form, Button, FormField } from 'grommet';
+import { Box, Form, Button, FormField, TextInput } from 'grommet';
 import { Add, Trash } from 'grommet-icons';
 
 export const ArrayOfFormFields = () => {
@@ -46,6 +46,7 @@ export const ArrayOfFormFields = () => {
         <FormField
           label="Phone Number"
           aria-label="phone number"
+          htmlFor="phone number"
           name={`phones[${index}].number`}
           required
           validate={[
@@ -55,10 +56,18 @@ export const ArrayOfFormFields = () => {
               return undefined;
             },
           ]}
-        />
+        >
+          <TextInput
+            aria-required
+            id="phone number"
+            name="phone number"
+            type="tel"
+          />
+        </FormField>
         <FormField
           label="Extension"
           aria-label="extension"
+          htmlFor="extension"
           name={`phones[${index}].ext`}
           validate={[
             { regexp: /^[0-9]*$/ },
@@ -67,7 +76,9 @@ export const ArrayOfFormFields = () => {
               return undefined;
             },
           ]}
-        />
+        >
+          <TextInput id="extension" name="extension" type="tel" />
+        </FormField>
         <Box>
           <Button
             icon={<Trash />}
@@ -108,8 +119,11 @@ export const ArrayOfFormFields = () => {
           name="name"
           pad
           required
+          htmlFor="name"
           validate={[{ regexp: /^[a-zA-Z ]*$/ }]}
-        />
+        >
+          <TextInput aria-required id="name" name="name" />
+        </FormField>
         {PhoneNumberGroup}
         <Button
           icon={<Add />}

@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { StatusGood } from 'grommet-icons';
-import { Box, Button, Form, FormField, Heading } from 'grommet';
+import { Box, Button, Form, FormField, Heading, TextInput } from 'grommet';
 
 export const TriggerValidationUsingFormField = () => (
   <Box fill align="center" justify="center">
@@ -17,6 +17,7 @@ export const TriggerValidationUsingFormField = () => (
           label="Blur"
           name="blur"
           aria-label="blur"
+          htmlFor="blur"
           required
           validate={[
             { regexp: /^[a-z]/i },
@@ -38,13 +39,15 @@ export const TriggerValidationUsingFormField = () => (
             },
           ]}
           validateOn="blur"
-        />
-
+        >
+          <TextInput id="blur" aria-required name="blur" />
+        </FormField>
         <FormField
           label="Submit"
           name="submit"
           aria-label="submit"
           required
+          htmlFor="submit"
           validate={[
             { regexp: /^[a-z]/i },
             (name) => {
@@ -65,12 +68,14 @@ export const TriggerValidationUsingFormField = () => (
             },
           ]}
           validateOn="submit"
-        />
-
+        >
+          <TextInput id="submit" aria-required name="submit" />
+        </FormField>
         <FormField
           label="Change"
           name="change"
           aria-label="change"
+          htmlFor="change"
           required
           validate={[
             { regexp: /^[a-z]/i },
@@ -92,8 +97,9 @@ export const TriggerValidationUsingFormField = () => (
             },
           ]}
           validateOn="change"
-        />
-
+        >
+          <TextInput id="change" aria-required name="change" />
+        </FormField>
         <Box direction="row" justify="between" margin={{ top: 'medium' }}>
           <Button label="Cancel" />
           <Button type="reset" label="Reset" />

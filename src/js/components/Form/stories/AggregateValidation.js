@@ -19,12 +19,12 @@ export const AggregateValidation = () => {
           onChange={(nextValue) => setValue(nextValue)}
           onSubmit={({ value: nextValue }) => console.log(nextValue)}
         >
-          <FormField label="Name" name="name" required>
-            <TextInput aria-label="name" name="name" type="name" />
+          <FormField htmlFor="name" label="Name" name="name" required>
+            <TextInput aria-required id="name" name="name" type="name" />
           </FormField>
 
-          <FormField label="Email" name="email" required>
-            <TextInput aria-label="email" name="email" type="email" />
+          <FormField htmlFor="email" label="Email" name="email" required>
+            <TextInput id="email" name="email" type="email" />
           </FormField>
 
           {message && (

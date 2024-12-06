@@ -30,7 +30,7 @@ export const RequiredLabel = () => (
           label="First Name"
           required
         >
-          <TextInput id="firstName" name="firstName" />
+          <TextInput aria-required id="firstName" name="firstName" />
         </FormField>
         <FormField
           name="lastName"
@@ -38,10 +38,10 @@ export const RequiredLabel = () => (
           label="Last Name"
           required
         >
-          <TextInput id="lastName" name="lastName" />
+          <TextInput aria-required id="lastName" name="lastName" />
         </FormField>
         <FormField name="email" htmlFor="email" label="Email" required>
-          <TextInput id="email" name="email" type="email" />
+          <TextInput aria-required id="email" name="email" type="email" />
         </FormField>
         <Button type="submit" label="Submit" primary />
         <Text margin={{ left: 'small' }} size="small" color="status-critical">

@@ -51,6 +51,7 @@ export const Controlled = () => {
             <MaskedInput
               id="email"
               name="email"
+              aria-required
               mask={[
                 { regexp: /^[\w\-_.]+$/, placeholder: 'example' },
                 { fixed: '@' },
@@ -60,11 +61,15 @@ export const Controlled = () => {
               ]}
             />
           </FormField>
-          <FormField name="subscribe">
-            <CheckBox name="subscribe" label="Subscribe?" />
+          <FormField htmlFor="subscribe" name="subscribe">
+            <CheckBox id="subscribe" name="subscribe" label="Subscribe?" />
           </FormField>
-          <FormField name="ampm">
-            <RadioButtonGroup name="ampm" options={['morning', 'evening']} />
+          <FormField htmlFor="ampm" name="ampm">
+            <RadioButtonGroup
+              id="ampm"
+              name="ampm"
+              options={['morning', 'evening']}
+            />
           </FormField>
           <FormField label="Size" htmlFor="size" name="size">
             <Select
