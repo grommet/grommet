@@ -83,7 +83,15 @@ export const Controlled = () => {
             <TextArea id="comments" name="comments" />
           </FormField>
           <FormField label="Age" htmlFor="age" name="age" pad>
-            <RangeInput id="age" name="age" min={15} max={75} />
+            <RangeInput
+              aria-valuemin={15}
+              aria-valuemax={75}
+              aria-valuenow={30}
+              id="age"
+              name="age"
+              min={15}
+              max={75}
+            />
           </FormField>
           <Box direction="row" justify="between" margin={{ top: 'medium' }}>
             <Button label="Cancel" />

@@ -15,7 +15,6 @@ export const ValidateOnBlur = () => (
       >
         <FormField
           label="Name"
-          aria-label="name"
           name="name"
           htmlFor="name"
           required
@@ -39,7 +38,7 @@ export const ValidateOnBlur = () => (
             },
           ]}
         >
-          <TextInput id="name" aria-required name="name" />
+          <TextInput aria-label="name" id="name" aria-required name="name" />
         </FormField>
         <FormField htmlFor="email" label="Email" name="email" required>
           <TextInput aria-required name="email" id="email" type="email" />

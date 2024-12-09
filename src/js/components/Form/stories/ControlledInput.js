@@ -109,6 +109,9 @@ export const ControlledInput = () => {
               min={15}
               max={75}
               value={age}
+              aria-valuemin={15}
+              aria-valuemax={75}
+              aria-valuenow={30}
               onChange={(event) => setAge(event.target.value)}
             />
           </FormField>

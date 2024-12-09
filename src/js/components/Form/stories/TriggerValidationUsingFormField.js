@@ -16,7 +16,6 @@ export const TriggerValidationUsingFormField = () => (
         <FormField
           label="Blur"
           name="blur"
-          aria-label="blur"
           htmlFor="blur"
           required
           validate={[
@@ -40,12 +39,11 @@ export const TriggerValidationUsingFormField = () => (
           ]}
           validateOn="blur"
         >
-          <TextInput id="blur" aria-required name="blur" />
+          <TextInput aria-label="blur" id="blur" aria-required name="blur" />
         </FormField>
         <FormField
           label="Submit"
           name="submit"
-          aria-label="submit"
           required
           htmlFor="submit"
           validate={[
@@ -69,12 +67,16 @@ export const TriggerValidationUsingFormField = () => (
           ]}
           validateOn="submit"
         >
-          <TextInput id="submit" aria-required name="submit" />
+          <TextInput
+            aria-label="submit"
+            id="submit"
+            aria-required
+            name="submit"
+          />
         </FormField>
         <FormField
           label="Change"
           name="change"
-          aria-label="change"
           htmlFor="change"
           required
           validate={[
@@ -98,7 +100,12 @@ export const TriggerValidationUsingFormField = () => (
           ]}
           validateOn="change"
         >
-          <TextInput id="change" aria-required name="change" />
+          <TextInput
+            aria-label="change"
+            id="change"
+            aria-required
+            name="change"
+          />
         </FormField>
         <Box direction="row" justify="between" margin={{ top: 'medium' }}>
           <Button label="Cancel" />

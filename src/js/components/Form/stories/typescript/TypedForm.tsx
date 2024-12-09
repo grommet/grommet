@@ -91,10 +91,11 @@ export const TypedForm = () => {
               options={['morning', 'evening']}
             />
           </FormField>
-          <FormField label="Size" htmlFor="size" aria-label="size" name="size">
+          <FormField label="Size" htmlFor="size" name="size">
             <Select
               id="size"
               name="size"
+              aria-label="size"
               onChange={(event) => console.log(event)}
               options={['small', 'medium', 'large', 'xlarge']}
             />
