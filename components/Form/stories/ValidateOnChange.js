@@ -36,7 +36,6 @@ var ValidateOnChange = exports.ValidateOnChange = function ValidateOnChange() {
     }, /*#__PURE__*/_react["default"].createElement(_grommet.FormField, {
       label: "First Name",
       htmlFor: "firstName",
-      id: "firstName",
       name: "firstName",
       required: true,
       validate: [{
@@ -45,10 +44,13 @@ var ValidateOnChange = exports.ValidateOnChange = function ValidateOnChange() {
         if (firstName && firstName.length === 1) return 'must be >1 character';
         return undefined;
       }]
-    }), /*#__PURE__*/_react["default"].createElement(_grommet.FormField, {
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.TextInput, {
+      "aria-required": true,
+      id: "firstName",
+      name: "firstName"
+    })), /*#__PURE__*/_react["default"].createElement(_grommet.FormField, {
       label: "Last Name",
       htmlFor: "lastName",
-      id: "lastName",
       name: "lastName",
       required: true,
       validate: [{
@@ -57,7 +59,11 @@ var ValidateOnChange = exports.ValidateOnChange = function ValidateOnChange() {
         if (lastName && lastName.length === 1) return 'must be >1 character';
         return undefined;
       }]
-    }), /*#__PURE__*/_react["default"].createElement(_grommet.FormField, {
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.TextInput, {
+      "aria-required": true,
+      id: "lastName",
+      name: "lastName"
+    })), /*#__PURE__*/_react["default"].createElement(_grommet.FormField, {
       label: "Size",
       name: "select-size",
       htmlFor: "select-size",
@@ -74,8 +80,8 @@ var ValidateOnChange = exports.ValidateOnChange = function ValidateOnChange() {
     }, /*#__PURE__*/_react["default"].createElement(_grommet.Select, {
       name: "select-size",
       htmlFor: "select-size",
+      "aria-required": true,
       id: "select-size",
-      "aria-label": "select-size",
       options: ['small', 'medium', 'large']
     })), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
       direction: "row",

@@ -47,6 +47,7 @@ export var FieldWithChildren = function FieldWithChildren() {
       name: "name",
       required: true
     }, /*#__PURE__*/React.createElement(TextInput, {
+      "aria-required": true,
       id: "name",
       name: "name"
     })), /*#__PURE__*/React.createElement(FormField, {
@@ -55,6 +56,7 @@ export var FieldWithChildren = function FieldWithChildren() {
       name: "email",
       required: true
     }, /*#__PURE__*/React.createElement(MaskedInput, {
+      "aria-required": true,
       id: "email",
       name: "email",
       mask: [{
@@ -81,13 +83,17 @@ export var FieldWithChildren = function FieldWithChildren() {
       id: "password",
       type: "password"
     })), /*#__PURE__*/React.createElement(FormField, {
+      htmlFor: "subscription",
       name: "subscription"
     }, /*#__PURE__*/React.createElement(CheckBoxGroup, {
       name: "subscription",
+      id: "subscription",
       options: ['subscribe', 'receive email notifications']
     })), /*#__PURE__*/React.createElement(FormField, {
+      htmlFor: "ampm",
       name: "ampm"
     }, /*#__PURE__*/React.createElement(RadioButtonGroup, {
+      id: "ampm",
       name: "ampm",
       options: ['morning', 'evening']
     })), /*#__PURE__*/React.createElement(FormField, {
@@ -96,7 +102,6 @@ export var FieldWithChildren = function FieldWithChildren() {
       name: "size"
     }, /*#__PURE__*/React.createElement(Select, {
       id: "size",
-      "aria-label": "size",
       name: "size",
       multiple: true,
       options: ['small', 'medium', 'large']

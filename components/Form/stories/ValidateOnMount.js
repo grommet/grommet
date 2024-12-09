@@ -4,6 +4,7 @@ exports.__esModule = true;
 exports["default"] = exports.ValidateOnMount = void 0;
 var _react = _interopRequireWildcard(require("react"));
 var _grommet = require("grommet");
+var _TextInput = require("../../TextInput");
 function _getRequireWildcardCache(e) { if ("function" != typeof WeakMap) return null; var r = new WeakMap(), t = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(e) { return e ? t : r; })(e); }
 function _interopRequireWildcard(e, r) { if (!r && e && e.__esModule) return e; if (null === e || "object" != typeof e && "function" != typeof e) return { "default": e }; var t = _getRequireWildcardCache(r); if (t && t.has(e)) return t.get(e); var n = { __proto__: null }, a = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var u in e) if ("default" !== u && {}.hasOwnProperty.call(e, u)) { var i = a ? Object.getOwnPropertyDescriptor(e, u) : null; i && (i.get || i.set) ? Object.defineProperty(n, u, i) : n[u] = e[u]; } return n["default"] = e, t && t.set(e, n), n; }
 var ValidateOnMount = exports.ValidateOnMount = function ValidateOnMount() {
@@ -45,7 +46,6 @@ var ValidateOnMount = exports.ValidateOnMount = function ValidateOnMount() {
     }, /*#__PURE__*/_react["default"].createElement(_grommet.FormField, {
       label: "First Name",
       htmlFor: "firstName",
-      id: "firstName",
       name: "firstName",
       required: true,
       validate: [{
@@ -54,10 +54,13 @@ var ValidateOnMount = exports.ValidateOnMount = function ValidateOnMount() {
         if (firstName && firstName.length === 1) return 'must be >1 character';
         return undefined;
       }]
-    }), /*#__PURE__*/_react["default"].createElement(_grommet.FormField, {
+    }, /*#__PURE__*/_react["default"].createElement(_TextInput.TextInput, {
+      "aria-required": true,
+      id: "firstName",
+      name: "firstName"
+    })), /*#__PURE__*/_react["default"].createElement(_grommet.FormField, {
       label: "Last Name",
       htmlFor: "lastName",
-      id: "lastName",
       name: "lastName",
       required: true,
       validate: [{
@@ -66,7 +69,11 @@ var ValidateOnMount = exports.ValidateOnMount = function ValidateOnMount() {
         if (lastName && lastName.length === 1) return 'must be >1 character';
         return undefined;
       }]
-    }), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
+    }, /*#__PURE__*/_react["default"].createElement(_TextInput.TextInput, {
+      "aria-required": true,
+      id: "lastName",
+      name: "lastName"
+    })), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
       direction: "row",
       justify: "between",
       margin: {

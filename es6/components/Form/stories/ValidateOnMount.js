@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Box, Button, Form, FormField } from 'grommet';
+import { TextInput } from '../../TextInput';
 export var ValidateOnMount = function ValidateOnMount() {
   var defaultValue = {
     firstName: 'J',
@@ -39,7 +40,6 @@ export var ValidateOnMount = function ValidateOnMount() {
     }, /*#__PURE__*/React.createElement(FormField, {
       label: "First Name",
       htmlFor: "firstName",
-      id: "firstName",
       name: "firstName",
       required: true,
       validate: [{
@@ -48,10 +48,13 @@ export var ValidateOnMount = function ValidateOnMount() {
         if (firstName && firstName.length === 1) return 'must be >1 character';
         return undefined;
       }]
-    }), /*#__PURE__*/React.createElement(FormField, {
+    }, /*#__PURE__*/React.createElement(TextInput, {
+      "aria-required": true,
+      id: "firstName",
+      name: "firstName"
+    })), /*#__PURE__*/React.createElement(FormField, {
       label: "Last Name",
       htmlFor: "lastName",
-      id: "lastName",
       name: "lastName",
       required: true,
       validate: [{
@@ -60,7 +63,11 @@ export var ValidateOnMount = function ValidateOnMount() {
         if (lastName && lastName.length === 1) return 'must be >1 character';
         return undefined;
       }]
-    }), /*#__PURE__*/React.createElement(Box, {
+    }, /*#__PURE__*/React.createElement(TextInput, {
+      "aria-required": true,
+      id: "lastName",
+      name: "lastName"
+    })), /*#__PURE__*/React.createElement(Box, {
       direction: "row",
       justify: "between",
       margin: {

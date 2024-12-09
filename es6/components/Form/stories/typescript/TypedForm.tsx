@@ -10,6 +10,7 @@ import {
   RangeInput,
   Select,
   TextArea,
+  TextInput,
 } from 'grommet';
 import { useState } from 'react';
 
@@ -51,66 +52,59 @@ export const TypedForm = () => {
           <FormField
             label="Name"
             htmlFor="name"
-            id="name"
             name="name"
             required
             validate={{ regexp: /^[a-z]/i }}
-          />
+          >
+            <TextInput aria-required name="name" id="name" type="name" />
+          </FormField>
           <FormField
             label="Email"
             htmlFor="email"
-            id="email"
             name="email"
             type="email"
             required
-          />
+          >
+            <TextInput aria-required name="email" type="email" id="email" />
+          </FormField>
           <FormField
             label="Employee ID"
             htmlFor="employeeId"
-            id="employeeId"
             name="employeeId"
             required
             validate={{ regexp: /^[0-9]{4,6}$/, message: '4-6 digits' }}
-          />
-          <FormField
-            name="subscribe"
-            component={CheckBox}
-            pad
-            label="Subscribe?"
-          />
-          <FormField
-            name="ampm"
-            component={RadioButtonGroup}
-            pad
-            options={['morning', 'evening']}
-          />
-          <FormField
-            label="Size"
-            htmlFor="size"
-            id="size"
-            aria-label="size"
-            name="size"
-            component={Select}
-            onChange={(event) => console.log(event)}
-            options={['small', 'medium', 'large', 'xlarge']}
-          />
-          <FormField
-            label="Comments"
-            htmlFor="comments"
-            id="comments"
-            name="comments"
-            component={TextArea}
-          />
-          <FormField
-            label="Age"
-            htmlFor="age"
-            id="age"
-            name="age"
-            component={RangeInput}
-            pad
-            min={15}
-            max={75}
-          />
+          >
+            <TextInput
+              aria-required
+              id="employeeId"
+              name="employeeId"
+              type="employeeId"
+            />
+          </FormField>
+          <FormField name="subscribe" pad>
+            <CheckBox label="Subscribe?" name="subscribe" id="subscribe" />
+          </FormField>
+          <FormField name="ampm" pad options={['morning', 'evening']}>
+            <RadioButtonGroup
+              name="ampm"
+              id="ampm"
+              options={['morning', 'evening']}
+            />
+          </FormField>
+          <FormField label="Size" htmlFor="size" name="size">
+            <Select
+              id="size"
+              name="size"
+              onChange={(event) => console.log(event)}
+              options={['small', 'medium', 'large', 'xlarge']}
+            />
+          </FormField>
+          <FormField label="Comments" htmlFor="comments" name="comments">
+            <TextArea name="comments" id="comments" />
+          </FormField>
+          <FormField label="Age" htmlFor="age" name="age" pad>
+            <RangeInput name="age" id="age" type="age" min={15} max={75} />
+          </FormField>
           <Box direction="row" justify="between" margin={{ top: 'medium' }}>
             <Button label="Cancel" />
             <Button type="reset" label="Reset" />

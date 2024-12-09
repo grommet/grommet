@@ -33,26 +33,33 @@ var DynamicFields = exports.DynamicFields = function DynamicFields() {
         return console.log('Submit', value);
       }
     }, /*#__PURE__*/_react["default"].createElement(_grommet.FormField, {
+      htmlFor: "name",
       label: "Name",
       name: "name",
       required: true
     }, /*#__PURE__*/_react["default"].createElement(_grommet.TextInput, {
-      name: "name",
-      "aria-label": "name"
+      "aria-required": true,
+      id: "name",
+      name: "name"
     })), /*#__PURE__*/_react["default"].createElement(_grommet.FormField, {
+      htmlFor: "havingAlias",
       name: "haveAlias"
     }, /*#__PURE__*/_react["default"].createElement(_grommet.CheckBox, {
       name: "haveAlias",
+      id: "havingAlias",
       label: "alias?",
       checked: haveAlias,
       onChange: function onChange() {
         return setHaveAlias(!haveAlias);
       }
     })), haveAlias && /*#__PURE__*/_react["default"].createElement(_grommet.FormField, {
+      htmlFor: "alias",
       label: "Alias",
       name: "alias",
       required: true
     }, /*#__PURE__*/_react["default"].createElement(_grommet.TextInput, {
+      id: "alias",
+      "aria-required": true,
       name: "alias"
     })), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
       direction: "row",

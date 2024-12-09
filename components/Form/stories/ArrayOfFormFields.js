@@ -57,7 +57,7 @@ var ArrayOfFormFields = exports.ArrayOfFormFields = function ArrayOfFormFields()
         align: "center"
       }, /*#__PURE__*/_react["default"].createElement(_grommet.FormField, {
         label: "Phone Number",
-        "aria-label": "phone number",
+        htmlFor: "phone number",
         name: "phones[" + index + "].number",
         required: true,
         validate: [{
@@ -66,9 +66,14 @@ var ArrayOfFormFields = exports.ArrayOfFormFields = function ArrayOfFormFields()
           if (number && number.length > 10) return 'Only 10 numbers';
           return undefined;
         }]
-      }), /*#__PURE__*/_react["default"].createElement(_grommet.FormField, {
+      }, /*#__PURE__*/_react["default"].createElement(_grommet.TextInput, {
+        "aria-required": true,
+        id: "phone number",
+        name: "phone number",
+        type: "tel"
+      })), /*#__PURE__*/_react["default"].createElement(_grommet.FormField, {
         label: "Extension",
-        "aria-label": "extension",
+        htmlFor: "extension",
         name: "phones[" + index + "].ext",
         validate: [{
           regexp: /^[0-9]*$/
@@ -76,7 +81,11 @@ var ArrayOfFormFields = exports.ArrayOfFormFields = function ArrayOfFormFields()
           if (ext && ext.length > 3) return 'Only 3 numbers';
           return undefined;
         }]
-      }), /*#__PURE__*/_react["default"].createElement(_grommet.Box, null, /*#__PURE__*/_react["default"].createElement(_grommet.Button, {
+      }, /*#__PURE__*/_react["default"].createElement(_grommet.TextInput, {
+        id: "extension",
+        name: "extension",
+        type: "tel"
+      })), /*#__PURE__*/_react["default"].createElement(_grommet.Box, null, /*#__PURE__*/_react["default"].createElement(_grommet.Button, {
         icon: /*#__PURE__*/_react["default"].createElement(_grommetIcons.Trash, null),
         label: "Remove",
         plain: true,
@@ -115,14 +124,18 @@ var ArrayOfFormFields = exports.ArrayOfFormFields = function ArrayOfFormFields()
       }
     }, /*#__PURE__*/_react["default"].createElement(_grommet.FormField, {
       label: "Name",
-      "aria-label": "name",
       name: "name",
       pad: true,
       required: true,
+      htmlFor: "name",
       validate: [{
         regexp: /^[a-zA-Z ]*$/
       }]
-    }), PhoneNumberGroup, /*#__PURE__*/_react["default"].createElement(_grommet.Button, {
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.TextInput, {
+      "aria-required": true,
+      id: "name",
+      name: "name"
+    })), PhoneNumberGroup, /*#__PURE__*/_react["default"].createElement(_grommet.Button, {
       icon: /*#__PURE__*/_react["default"].createElement(_grommetIcons.Add, null),
       label: "Add Number",
       plain: true,

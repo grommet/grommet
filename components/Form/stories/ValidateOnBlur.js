@@ -28,8 +28,8 @@ var ValidateOnBlur = exports.ValidateOnBlur = function ValidateOnBlur() {
       }
     }, /*#__PURE__*/_react["default"].createElement(_grommet.FormField, {
       label: "Name",
-      "aria-label": "name",
       name: "name",
+      htmlFor: "name",
       required: true,
       validate: [{
         regexp: /^[a-z]/i
@@ -45,13 +45,19 @@ var ValidateOnBlur = exports.ValidateOnBlur = function ValidateOnBlur() {
         };
         return undefined;
       }]
-    }), /*#__PURE__*/_react["default"].createElement(_grommet.FormField, {
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.TextInput, {
+      id: "name",
+      "aria-required": true,
+      name: "name"
+    })), /*#__PURE__*/_react["default"].createElement(_grommet.FormField, {
+      htmlFor: "email",
       label: "Email",
       name: "email",
       required: true
     }, /*#__PURE__*/_react["default"].createElement(_grommet.TextInput, {
+      "aria-required": true,
       name: "email",
-      "aria-label": "email",
+      id: "email",
       type: "email"
     })), /*#__PURE__*/_react["default"].createElement(_grommet.FormField, {
       label: "Size",
@@ -69,6 +75,7 @@ var ValidateOnBlur = exports.ValidateOnBlur = function ValidateOnBlur() {
       }
     }, /*#__PURE__*/_react["default"].createElement(_grommet.Select, {
       name: "select-size",
+      "aria-required": true,
       id: "select-size",
       options: ['small', 'medium', 'large']
     })), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {

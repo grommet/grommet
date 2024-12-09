@@ -65,6 +65,7 @@ export var ControlledInput = function ControlledInput() {
       name: "email",
       required: true
     }, /*#__PURE__*/React.createElement(MaskedInput, {
+      "aria-required": true,
       id: "email",
       name: "email",
       mask: [{
@@ -86,18 +87,22 @@ export var ControlledInput = function ControlledInput() {
         return setEmail(event.target.value);
       }
     })), /*#__PURE__*/React.createElement(FormField, {
+      htmlFor: "subscribe",
       name: "subscribe"
     }, /*#__PURE__*/React.createElement(CheckBox, {
       name: "subscribe",
+      id: "subscribe",
       label: "Subscribe?",
       checked: subscribe,
       onChange: function onChange(event) {
         return setSubscribe(event.target.checked);
       }
     })), /*#__PURE__*/React.createElement(FormField, {
+      htmlFor: "ampm",
       name: "ampm"
     }, /*#__PURE__*/React.createElement(RadioButtonGroup, {
       name: "ampm",
+      id: "ampm",
       options: ['morning', 'evening'],
       value: ampm,
       onChange: function onChange(event) {
@@ -109,7 +114,6 @@ export var ControlledInput = function ControlledInput() {
       name: "size"
     }, /*#__PURE__*/React.createElement(Select, {
       id: "size",
-      "aria-label": "size",
       name: "size",
       options: ['small', 'medium', 'large'],
       value: size,
@@ -138,6 +142,9 @@ export var ControlledInput = function ControlledInput() {
       min: 15,
       max: 75,
       value: age,
+      "aria-valuemin": 15,
+      "aria-valuemax": 75,
+      "aria-valuenow": 30,
       onChange: function onChange(event) {
         return setAge(event.target.value);
       }

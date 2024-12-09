@@ -33,6 +33,7 @@ export var Uncontrolled = function Uncontrolled() {
       name: "email",
       required: true
     }, /*#__PURE__*/React.createElement(MaskedInput, {
+      "aria-required": true,
       id: "email",
       name: "email",
       mask: [{
@@ -50,13 +51,17 @@ export var Uncontrolled = function Uncontrolled() {
         placeholder: 'com'
       }]
     })), /*#__PURE__*/React.createElement(FormField, {
+      htmlFor: "subscribe",
       name: "subscribe"
     }, /*#__PURE__*/React.createElement(CheckBox, {
+      id: "subscribe",
       name: "subscribe",
       label: "Subscribe?"
     })), /*#__PURE__*/React.createElement(FormField, {
+      htmlFor: "ampm",
       name: "ampm"
     }, /*#__PURE__*/React.createElement(RadioButtonGroup, {
+      id: "ampm",
       name: "ampm",
       options: ['morning', 'evening']
     })), /*#__PURE__*/React.createElement(FormField, {
@@ -65,7 +70,6 @@ export var Uncontrolled = function Uncontrolled() {
       name: "size"
     }, /*#__PURE__*/React.createElement(Select, {
       id: "size",
-      "aria-label": "size",
       name: "size",
       options: ['small', 'medium', 'large']
     })), /*#__PURE__*/React.createElement(FormField, {
@@ -91,6 +95,7 @@ export var Uncontrolled = function Uncontrolled() {
       htmlFor: "image",
       name: "image"
     }, /*#__PURE__*/React.createElement(FileInput, {
+      "aria-required": true,
       id: "image",
       name: "image"
     })), /*#__PURE__*/React.createElement(Box, {

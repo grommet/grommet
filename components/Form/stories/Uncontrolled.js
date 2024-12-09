@@ -38,6 +38,7 @@ var Uncontrolled = exports.Uncontrolled = function Uncontrolled() {
       name: "email",
       required: true
     }, /*#__PURE__*/_react["default"].createElement(_grommet.MaskedInput, {
+      "aria-required": true,
       id: "email",
       name: "email",
       mask: [{
@@ -55,13 +56,17 @@ var Uncontrolled = exports.Uncontrolled = function Uncontrolled() {
         placeholder: 'com'
       }]
     })), /*#__PURE__*/_react["default"].createElement(_grommet.FormField, {
+      htmlFor: "subscribe",
       name: "subscribe"
     }, /*#__PURE__*/_react["default"].createElement(_grommet.CheckBox, {
+      id: "subscribe",
       name: "subscribe",
       label: "Subscribe?"
     })), /*#__PURE__*/_react["default"].createElement(_grommet.FormField, {
+      htmlFor: "ampm",
       name: "ampm"
     }, /*#__PURE__*/_react["default"].createElement(_grommet.RadioButtonGroup, {
+      id: "ampm",
       name: "ampm",
       options: ['morning', 'evening']
     })), /*#__PURE__*/_react["default"].createElement(_grommet.FormField, {
@@ -70,7 +75,6 @@ var Uncontrolled = exports.Uncontrolled = function Uncontrolled() {
       name: "size"
     }, /*#__PURE__*/_react["default"].createElement(_grommet.Select, {
       id: "size",
-      "aria-label": "size",
       name: "size",
       options: ['small', 'medium', 'large']
     })), /*#__PURE__*/_react["default"].createElement(_grommet.FormField, {
@@ -96,6 +100,7 @@ var Uncontrolled = exports.Uncontrolled = function Uncontrolled() {
       htmlFor: "image",
       name: "image"
     }, /*#__PURE__*/_react["default"].createElement(_grommet.FileInput, {
+      "aria-required": true,
       id: "image",
       name: "image"
     })), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {

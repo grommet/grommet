@@ -52,6 +52,7 @@ var FieldWithChildren = exports.FieldWithChildren = function FieldWithChildren()
       name: "name",
       required: true
     }, /*#__PURE__*/_react["default"].createElement(_grommet.TextInput, {
+      "aria-required": true,
       id: "name",
       name: "name"
     })), /*#__PURE__*/_react["default"].createElement(_grommet.FormField, {
@@ -60,6 +61,7 @@ var FieldWithChildren = exports.FieldWithChildren = function FieldWithChildren()
       name: "email",
       required: true
     }, /*#__PURE__*/_react["default"].createElement(_grommet.MaskedInput, {
+      "aria-required": true,
       id: "email",
       name: "email",
       mask: [{
@@ -86,13 +88,17 @@ var FieldWithChildren = exports.FieldWithChildren = function FieldWithChildren()
       id: "password",
       type: "password"
     })), /*#__PURE__*/_react["default"].createElement(_grommet.FormField, {
+      htmlFor: "subscription",
       name: "subscription"
     }, /*#__PURE__*/_react["default"].createElement(_grommet.CheckBoxGroup, {
       name: "subscription",
+      id: "subscription",
       options: ['subscribe', 'receive email notifications']
     })), /*#__PURE__*/_react["default"].createElement(_grommet.FormField, {
+      htmlFor: "ampm",
       name: "ampm"
     }, /*#__PURE__*/_react["default"].createElement(_grommet.RadioButtonGroup, {
+      id: "ampm",
       name: "ampm",
       options: ['morning', 'evening']
     })), /*#__PURE__*/_react["default"].createElement(_grommet.FormField, {
@@ -101,7 +107,6 @@ var FieldWithChildren = exports.FieldWithChildren = function FieldWithChildren()
       name: "size"
     }, /*#__PURE__*/_react["default"].createElement(_grommet.Select, {
       id: "size",
-      "aria-label": "size",
       name: "size",
       multiple: true,
       options: ['small', 'medium', 'large']

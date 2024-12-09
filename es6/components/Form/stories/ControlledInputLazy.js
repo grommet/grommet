@@ -74,6 +74,7 @@ export var ControlledInputLazy = function ControlledInputLazy() {
       name: "email",
       required: true
     }, /*#__PURE__*/React.createElement(MaskedInput, {
+      "aria-required": true,
       id: "email",
       name: "email",
       mask: [{
@@ -95,18 +96,22 @@ export var ControlledInputLazy = function ControlledInputLazy() {
         return setEmail(event.target.value);
       }
     })), /*#__PURE__*/React.createElement(FormField, {
+      htmlFor: "subscribe",
       name: "subscribe"
     }, /*#__PURE__*/React.createElement(CheckBox, {
       name: "subscribe",
+      id: "subscribe",
       label: "Subscribe?",
       checked: subscribe,
       onChange: function onChange(event) {
         return setSubscribe(event.target.checked);
       }
     })), /*#__PURE__*/React.createElement(FormField, {
+      htmlFor: "ampm",
       name: "ampm"
     }, /*#__PURE__*/React.createElement(RadioButtonGroup, {
       name: "ampm",
+      id: "ampm",
       options: ['morning', 'evening'],
       value: ampm,
       onChange: function onChange(event) {
@@ -118,7 +123,6 @@ export var ControlledInputLazy = function ControlledInputLazy() {
       name: "size"
     }, /*#__PURE__*/React.createElement(Select, {
       id: "size",
-      "aria-label": "size",
       name: "size",
       options: ['small', 'medium', 'large'],
       value: size,

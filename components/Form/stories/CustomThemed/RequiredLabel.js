@@ -26,6 +26,7 @@ var RequiredLabel = exports.RequiredLabel = function RequiredLabel() {
     label: "First Name",
     required: true
   }, /*#__PURE__*/_react["default"].createElement(_grommet.TextInput, {
+    "aria-required": true,
     id: "firstName",
     name: "firstName"
   })), /*#__PURE__*/_react["default"].createElement(_grommet.FormField, {
@@ -34,6 +35,7 @@ var RequiredLabel = exports.RequiredLabel = function RequiredLabel() {
     label: "Last Name",
     required: true
   }, /*#__PURE__*/_react["default"].createElement(_grommet.TextInput, {
+    "aria-required": true,
     id: "lastName",
     name: "lastName"
   })), /*#__PURE__*/_react["default"].createElement(_grommet.FormField, {
@@ -42,6 +44,7 @@ var RequiredLabel = exports.RequiredLabel = function RequiredLabel() {
     label: "Email",
     required: true
   }, /*#__PURE__*/_react["default"].createElement(_grommet.TextInput, {
+    "aria-required": true,
     id: "email",
     name: "email",
     type: "email"

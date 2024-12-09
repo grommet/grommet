@@ -64,17 +64,23 @@ var Custom = exports.Custom = function Custom() {
       return console.log('Submit', value);
     }
   }, /*#__PURE__*/_react["default"].createElement(_grommet.FormField, {
+    htmlFor: "name",
     label: "Name",
     name: "name",
     required: true
   }, /*#__PURE__*/_react["default"].createElement(_grommet.TextInput, {
+    id: "name",
+    "aria-required": true,
     name: "name"
   })), /*#__PURE__*/_react["default"].createElement(_grommet.FormField, {
+    htmlFor: "email",
     label: "Email",
     name: "email",
     required: true
   }, /*#__PURE__*/_react["default"].createElement(_grommet.MaskedInput, {
     name: "email",
+    id: "email",
+    "aria-required": true,
     mask: [{
       regexp: /^[\w\-_.]+$/,
       placeholder: 'example'
@@ -90,32 +96,42 @@ var Custom = exports.Custom = function Custom() {
       placeholder: 'com'
     }]
   })), /*#__PURE__*/_react["default"].createElement(_grommet.FormField, {
+    htmlFor: "subscribe",
     name: "subscribe"
   }, /*#__PURE__*/_react["default"].createElement(_grommet.CheckBox, {
+    id: "subscribe",
     name: "subscribe",
     label: "Subscribe?"
   })), /*#__PURE__*/_react["default"].createElement(_grommet.FormField, {
+    htmlFor: "ampm",
     name: "ampm"
   }, /*#__PURE__*/_react["default"].createElement(_grommet.RadioButtonGroup, {
+    id: "ampm",
     name: "ampm",
     options: ['morning', 'evening']
   })), /*#__PURE__*/_react["default"].createElement(_grommet.FormField, {
+    htmlFor: "size",
     label: "Size",
     name: "size"
   }, /*#__PURE__*/_react["default"].createElement(_grommet.Select, {
+    id: "size",
     name: "size",
     options: ['small', 'medium', 'large']
   })), /*#__PURE__*/_react["default"].createElement(_grommet.FormField, {
+    htmlFor: "comments",
     label: "Comments",
     name: "comments",
     disabled: true
   }, /*#__PURE__*/_react["default"].createElement(_grommet.TextArea, {
+    id: "comments",
     name: "comments",
     disabled: true
   })), /*#__PURE__*/_react["default"].createElement(_grommet.FormField, {
+    htmlFor: "age",
     label: "Age",
     name: "age"
   }, /*#__PURE__*/_react["default"].createElement(_grommet.RangeInput, {
+    id: "age",
     name: "age",
     min: 15,
     max: 75

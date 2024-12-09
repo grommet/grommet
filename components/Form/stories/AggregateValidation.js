@@ -34,19 +34,22 @@ var AggregateValidation = exports.AggregateValidation = function AggregateValida
         return console.log(nextValue);
       }
     }, /*#__PURE__*/_react["default"].createElement(_grommet.FormField, {
+      htmlFor: "name",
       label: "Name",
       name: "name",
       required: true
     }, /*#__PURE__*/_react["default"].createElement(_grommet.TextInput, {
-      "aria-label": "name",
+      "aria-required": true,
+      id: "name",
       name: "name",
       type: "name"
     })), /*#__PURE__*/_react["default"].createElement(_grommet.FormField, {
+      htmlFor: "email",
       label: "Email",
       name: "email",
       required: true
     }, /*#__PURE__*/_react["default"].createElement(_grommet.TextInput, {
-      "aria-label": "email",
+      id: "email",
       name: "email",
       type: "email"
     })), message && /*#__PURE__*/_react["default"].createElement(_grommet.Box, {

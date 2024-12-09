@@ -53,6 +53,7 @@ export var Controlled = function Controlled() {
     }, /*#__PURE__*/React.createElement(MaskedInput, {
       id: "email",
       name: "email",
+      "aria-required": true,
       mask: [{
         regexp: /^[\w\-_.]+$/,
         placeholder: 'example'
@@ -68,13 +69,17 @@ export var Controlled = function Controlled() {
         placeholder: 'com'
       }]
     })), /*#__PURE__*/React.createElement(FormField, {
+      htmlFor: "subscribe",
       name: "subscribe"
     }, /*#__PURE__*/React.createElement(CheckBox, {
+      id: "subscribe",
       name: "subscribe",
       label: "Subscribe?"
     })), /*#__PURE__*/React.createElement(FormField, {
+      htmlFor: "ampm",
       name: "ampm"
     }, /*#__PURE__*/React.createElement(RadioButtonGroup, {
+      id: "ampm",
       name: "ampm",
       options: ['morning', 'evening']
     })), /*#__PURE__*/React.createElement(FormField, {
@@ -83,7 +88,6 @@ export var Controlled = function Controlled() {
       name: "size"
     }, /*#__PURE__*/React.createElement(Select, {
       id: "size",
-      "aria-label": "size",
       name: "size",
       options: ['small', 'medium', 'large']
     })), /*#__PURE__*/React.createElement(FormField, {
@@ -99,6 +103,9 @@ export var Controlled = function Controlled() {
       name: "age",
       pad: true
     }, /*#__PURE__*/React.createElement(RangeInput, {
+      "aria-valuemin": 15,
+      "aria-valuemax": 75,
+      "aria-valuenow": 30,
       id: "age",
       name: "age",
       min: 15,

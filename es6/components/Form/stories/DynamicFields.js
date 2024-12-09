@@ -27,26 +27,33 @@ export var DynamicFields = function DynamicFields() {
         return console.log('Submit', value);
       }
     }, /*#__PURE__*/React.createElement(FormField, {
+      htmlFor: "name",
       label: "Name",
       name: "name",
       required: true
     }, /*#__PURE__*/React.createElement(TextInput, {
-      name: "name",
-      "aria-label": "name"
+      "aria-required": true,
+      id: "name",
+      name: "name"
     })), /*#__PURE__*/React.createElement(FormField, {
+      htmlFor: "havingAlias",
       name: "haveAlias"
     }, /*#__PURE__*/React.createElement(CheckBox, {
       name: "haveAlias",
+      id: "havingAlias",
       label: "alias?",
       checked: haveAlias,
       onChange: function onChange() {
         return setHaveAlias(!haveAlias);
       }
     })), haveAlias && /*#__PURE__*/React.createElement(FormField, {
+      htmlFor: "alias",
       label: "Alias",
       name: "alias",
       required: true
     }, /*#__PURE__*/React.createElement(TextInput, {
+      id: "alias",
+      "aria-required": true,
       name: "alias"
     })), /*#__PURE__*/React.createElement(Box, {
       direction: "row",

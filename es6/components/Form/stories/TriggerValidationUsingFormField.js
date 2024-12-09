@@ -1,6 +1,6 @@
 import React from 'react';
 import { StatusGood } from "grommet-icons/es6/icons/StatusGood";
-import { Box, Button, Form, FormField, Heading } from 'grommet';
+import { Box, Button, Form, FormField, Heading, TextInput } from 'grommet';
 export var TriggerValidationUsingFormField = function TriggerValidationUsingFormField() {
   return /*#__PURE__*/React.createElement(Box, {
     fill: true,
@@ -22,7 +22,7 @@ export var TriggerValidationUsingFormField = function TriggerValidationUsingForm
   }, /*#__PURE__*/React.createElement(FormField, {
     label: "Blur",
     name: "blur",
-    "aria-label": "blur",
+    htmlFor: "blur",
     required: true,
     validate: [{
       regexp: /^[a-z]/i
@@ -39,11 +39,15 @@ export var TriggerValidationUsingFormField = function TriggerValidationUsingForm
       return undefined;
     }],
     validateOn: "blur"
-  }), /*#__PURE__*/React.createElement(FormField, {
+  }, /*#__PURE__*/React.createElement(TextInput, {
+    id: "blur",
+    "aria-required": true,
+    name: "blur"
+  })), /*#__PURE__*/React.createElement(FormField, {
     label: "Submit",
     name: "submit",
-    "aria-label": "submit",
     required: true,
+    htmlFor: "submit",
     validate: [{
       regexp: /^[a-z]/i
     }, function (name) {
@@ -59,10 +63,14 @@ export var TriggerValidationUsingFormField = function TriggerValidationUsingForm
       return undefined;
     }],
     validateOn: "submit"
-  }), /*#__PURE__*/React.createElement(FormField, {
+  }, /*#__PURE__*/React.createElement(TextInput, {
+    id: "submit",
+    "aria-required": true,
+    name: "submit"
+  })), /*#__PURE__*/React.createElement(FormField, {
     label: "Change",
     name: "change",
-    "aria-label": "change",
+    htmlFor: "change",
     required: true,
     validate: [{
       regexp: /^[a-z]/i
@@ -79,7 +87,11 @@ export var TriggerValidationUsingFormField = function TriggerValidationUsingForm
       return undefined;
     }],
     validateOn: "change"
-  }), /*#__PURE__*/React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(TextInput, {
+    id: "change",
+    "aria-required": true,
+    name: "change"
+  })), /*#__PURE__*/React.createElement(Box, {
     direction: "row",
     justify: "between",
     margin: {

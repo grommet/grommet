@@ -1,6 +1,6 @@
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 import React, { useState } from 'react';
-import { Box, Form, Button, FormField } from 'grommet';
+import { Box, Form, Button, FormField, TextInput } from 'grommet';
 import { Add } from "grommet-icons/es6/icons/Add";
 import { Trash } from "grommet-icons/es6/icons/Trash";
 export var ArrayOfFormFields = function ArrayOfFormFields() {
@@ -52,7 +52,7 @@ export var ArrayOfFormFields = function ArrayOfFormFields() {
         align: "center"
       }, /*#__PURE__*/React.createElement(FormField, {
         label: "Phone Number",
-        "aria-label": "phone number",
+        htmlFor: "phone number",
         name: "phones[" + index + "].number",
         required: true,
         validate: [{
@@ -61,9 +61,14 @@ export var ArrayOfFormFields = function ArrayOfFormFields() {
           if (number && number.length > 10) return 'Only 10 numbers';
           return undefined;
         }]
-      }), /*#__PURE__*/React.createElement(FormField, {
+      }, /*#__PURE__*/React.createElement(TextInput, {
+        "aria-required": true,
+        id: "phone number",
+        name: "phone number",
+        type: "tel"
+      })), /*#__PURE__*/React.createElement(FormField, {
         label: "Extension",
-        "aria-label": "extension",
+        htmlFor: "extension",
         name: "phones[" + index + "].ext",
         validate: [{
           regexp: /^[0-9]*$/
@@ -71,7 +76,11 @@ export var ArrayOfFormFields = function ArrayOfFormFields() {
           if (ext && ext.length > 3) return 'Only 3 numbers';
           return undefined;
         }]
-      }), /*#__PURE__*/React.createElement(Box, null, /*#__PURE__*/React.createElement(Button, {
+      }, /*#__PURE__*/React.createElement(TextInput, {
+        id: "extension",
+        name: "extension",
+        type: "tel"
+      })), /*#__PURE__*/React.createElement(Box, null, /*#__PURE__*/React.createElement(Button, {
         icon: /*#__PURE__*/React.createElement(Trash, null),
         label: "Remove",
         plain: true,
@@ -110,14 +119,18 @@ export var ArrayOfFormFields = function ArrayOfFormFields() {
       }
     }, /*#__PURE__*/React.createElement(FormField, {
       label: "Name",
-      "aria-label": "name",
       name: "name",
       pad: true,
       required: true,
+      htmlFor: "name",
       validate: [{
         regexp: /^[a-zA-Z ]*$/
       }]
-    }), PhoneNumberGroup, /*#__PURE__*/React.createElement(Button, {
+    }, /*#__PURE__*/React.createElement(TextInput, {
+      "aria-required": true,
+      id: "name",
+      name: "name"
+    })), PhoneNumberGroup, /*#__PURE__*/React.createElement(Button, {
       icon: /*#__PURE__*/React.createElement(Add, null),
       label: "Add Number",
       plain: true,

@@ -71,6 +71,7 @@ var ControlledInput = exports.ControlledInput = function ControlledInput() {
       name: "email",
       required: true
     }, /*#__PURE__*/_react["default"].createElement(_grommet.MaskedInput, {
+      "aria-required": true,
       id: "email",
       name: "email",
       mask: [{
@@ -92,18 +93,22 @@ var ControlledInput = exports.ControlledInput = function ControlledInput() {
         return setEmail(event.target.value);
       }
     })), /*#__PURE__*/_react["default"].createElement(_grommet.FormField, {
+      htmlFor: "subscribe",
       name: "subscribe"
     }, /*#__PURE__*/_react["default"].createElement(_grommet.CheckBox, {
       name: "subscribe",
+      id: "subscribe",
       label: "Subscribe?",
       checked: subscribe,
       onChange: function onChange(event) {
         return setSubscribe(event.target.checked);
       }
     })), /*#__PURE__*/_react["default"].createElement(_grommet.FormField, {
+      htmlFor: "ampm",
       name: "ampm"
     }, /*#__PURE__*/_react["default"].createElement(_grommet.RadioButtonGroup, {
       name: "ampm",
+      id: "ampm",
       options: ['morning', 'evening'],
       value: ampm,
       onChange: function onChange(event) {
@@ -115,7 +120,6 @@ var ControlledInput = exports.ControlledInput = function ControlledInput() {
       name: "size"
     }, /*#__PURE__*/_react["default"].createElement(_grommet.Select, {
       id: "size",
-      "aria-label": "size",
       name: "size",
       options: ['small', 'medium', 'large'],
       value: size,
@@ -144,6 +148,9 @@ var ControlledInput = exports.ControlledInput = function ControlledInput() {
       min: 15,
       max: 75,
       value: age,
+      "aria-valuemin": 15,
+      "aria-valuemax": 75,
+      "aria-valuenow": 30,
       onChange: function onChange(event) {
         return setAge(event.target.value);
       }

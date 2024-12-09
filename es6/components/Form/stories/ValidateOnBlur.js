@@ -23,8 +23,8 @@ export var ValidateOnBlur = function ValidateOnBlur() {
       }
     }, /*#__PURE__*/React.createElement(FormField, {
       label: "Name",
-      "aria-label": "name",
       name: "name",
+      htmlFor: "name",
       required: true,
       validate: [{
         regexp: /^[a-z]/i
@@ -40,13 +40,19 @@ export var ValidateOnBlur = function ValidateOnBlur() {
         };
         return undefined;
       }]
-    }), /*#__PURE__*/React.createElement(FormField, {
+    }, /*#__PURE__*/React.createElement(TextInput, {
+      id: "name",
+      "aria-required": true,
+      name: "name"
+    })), /*#__PURE__*/React.createElement(FormField, {
+      htmlFor: "email",
       label: "Email",
       name: "email",
       required: true
     }, /*#__PURE__*/React.createElement(TextInput, {
+      "aria-required": true,
       name: "email",
-      "aria-label": "email",
+      id: "email",
       type: "email"
     })), /*#__PURE__*/React.createElement(FormField, {
       label: "Size",
@@ -64,6 +70,7 @@ export var ValidateOnBlur = function ValidateOnBlur() {
       }
     }, /*#__PURE__*/React.createElement(Select, {
       name: "select-size",
+      "aria-required": true,
       id: "select-size",
       options: ['small', 'medium', 'large']
     })), /*#__PURE__*/React.createElement(Box, {

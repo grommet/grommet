@@ -27,7 +27,7 @@ var TriggerValidationUsingFormField = exports.TriggerValidationUsingFormField = 
   }, /*#__PURE__*/_react["default"].createElement(_grommet.FormField, {
     label: "Blur",
     name: "blur",
-    "aria-label": "blur",
+    htmlFor: "blur",
     required: true,
     validate: [{
       regexp: /^[a-z]/i
@@ -44,11 +44,15 @@ var TriggerValidationUsingFormField = exports.TriggerValidationUsingFormField = 
       return undefined;
     }],
     validateOn: "blur"
-  }), /*#__PURE__*/_react["default"].createElement(_grommet.FormField, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.TextInput, {
+    id: "blur",
+    "aria-required": true,
+    name: "blur"
+  })), /*#__PURE__*/_react["default"].createElement(_grommet.FormField, {
     label: "Submit",
     name: "submit",
-    "aria-label": "submit",
     required: true,
+    htmlFor: "submit",
     validate: [{
       regexp: /^[a-z]/i
     }, function (name) {
@@ -64,10 +68,14 @@ var TriggerValidationUsingFormField = exports.TriggerValidationUsingFormField = 
       return undefined;
     }],
     validateOn: "submit"
-  }), /*#__PURE__*/_react["default"].createElement(_grommet.FormField, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.TextInput, {
+    id: "submit",
+    "aria-required": true,
+    name: "submit"
+  })), /*#__PURE__*/_react["default"].createElement(_grommet.FormField, {
     label: "Change",
     name: "change",
-    "aria-label": "change",
+    htmlFor: "change",
     required: true,
     validate: [{
       regexp: /^[a-z]/i
@@ -84,7 +92,11 @@ var TriggerValidationUsingFormField = exports.TriggerValidationUsingFormField = 
       return undefined;
     }],
     validateOn: "change"
-  }), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.TextInput, {
+    id: "change",
+    "aria-required": true,
+    name: "change"
+  })), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     direction: "row",
     justify: "between",
     margin: {

@@ -30,19 +30,22 @@ export var AggregateValidation = function AggregateValidation() {
         return console.log(nextValue);
       }
     }, /*#__PURE__*/React.createElement(FormField, {
+      htmlFor: "name",
       label: "Name",
       name: "name",
       required: true
     }, /*#__PURE__*/React.createElement(TextInput, {
-      "aria-label": "name",
+      "aria-required": true,
+      id: "name",
       name: "name",
       type: "name"
     })), /*#__PURE__*/React.createElement(FormField, {
+      htmlFor: "email",
       label: "Email",
       name: "email",
       required: true
     }, /*#__PURE__*/React.createElement(TextInput, {
-      "aria-label": "email",
+      id: "email",
       name: "email",
       type: "email"
     })), message && /*#__PURE__*/React.createElement(Box, {
