@@ -223,7 +223,7 @@ const Body = forwardRef(
 
     // Determine if the DataTable body is scrollable
     useEffect(() => {
-      if (containerRef && containerRef.current) {
+      if (containerRef.current) {
         const element = containerRef.current;
         if (element.scrollHeight > element.offsetHeight) {
           setScroll(true);
