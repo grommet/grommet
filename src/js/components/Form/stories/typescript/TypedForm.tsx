@@ -95,7 +95,6 @@ export const TypedForm = () => {
             <Select
               id="size"
               name="size"
-              aria-label="size"
               onChange={(event) => console.log(event)}
               options={['small', 'medium', 'large', 'xlarge']}
             />

@@ -39,7 +39,7 @@ export const TriggerValidationUsingFormField = () => (
           ]}
           validateOn="blur"
         >
-          <TextInput aria-label="blur" id="blur" aria-required name="blur" />
+          <TextInput id="blur" aria-required name="blur" />
         </FormField>
         <FormField
           label="Submit"
@@ -67,12 +67,7 @@ export const TriggerValidationUsingFormField = () => (
           ]}
           validateOn="submit"
         >
-          <TextInput
-            aria-label="submit"
-            id="submit"
-            aria-required
-            name="submit"
-          />
+          <TextInput id="submit" aria-required name="submit" />
         </FormField>
         <FormField
           label="Change"
@@ -100,12 +95,7 @@ export const TriggerValidationUsingFormField = () => (
           ]}
           validateOn="change"
         >
-          <TextInput
-            aria-label="change"
-            id="change"
-            aria-required
-            name="change"
-          />
+          <TextInput id="change" aria-required name="change" />
         </FormField>
         <Box direction="row" justify="between" margin={{ top: 'medium' }}>
           <Button label="Cancel" />

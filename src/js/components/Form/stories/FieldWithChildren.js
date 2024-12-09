@@ -91,7 +91,6 @@ export const FieldWithChildren = () => (
         <FormField label="Size" htmlFor="size" name="size">
           <Select
             id="size"
-            aria-label="size"
             name="size"
             multiple
             options={['small', 'medium', 'large']}

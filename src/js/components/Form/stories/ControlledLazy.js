@@ -86,7 +86,6 @@ export const ControlledLazy = () => {
           <FormField label="Size" htmlFor="size" name="size">
             <Select
               id="size"
-              aria-label="size"
               name="size"
               options={['small', 'medium', 'large']}
             />
