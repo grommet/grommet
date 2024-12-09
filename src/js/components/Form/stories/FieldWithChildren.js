@@ -50,10 +50,11 @@ export const FieldWithChildren = () => (
         }
       >
         <FormField label="Name" htmlFor="name" name="name" required>
-          <TextInput id="name" name="name" />
+          <TextInput aria-required id="name" name="name" />
         </FormField>
         <FormField label="Email" htmlFor="email" name="email" required>
           <MaskedInput
+            aria-required
             id="email"
             name="email"
             mask={[
@@ -73,19 +74,23 @@ export const FieldWithChildren = () => (
         >
           <TextInput name="password" id="password" type="password" />
         </FormField>
-        <FormField name="subscription">
+        <FormField htmlFor="subscription" name="subscription">
           <CheckBoxGroup
             name="subscription"
+            id="subscription"
             options={['subscribe', 'receive email notifications']}
           />
         </FormField>
-        <FormField name="ampm">
-          <RadioButtonGroup name="ampm" options={['morning', 'evening']} />
+        <FormField htmlFor="ampm" name="ampm">
+          <RadioButtonGroup
+            id="ampm"
+            name="ampm"
+            options={['morning', 'evening']}
+          />
         </FormField>
         <FormField label="Size" htmlFor="size" name="size">
           <Select
             id="size"
-            aria-label="size"
             name="size"
             multiple
             options={['small', 'medium', 'large']}
