@@ -52,6 +52,7 @@ export const ControlledInput = () => {
           </FormField>
           <FormField label="Email" htmlFor="email" name="email" required>
             <MaskedInput
+              aria-required
               id="email"
               name="email"
               mask={[
@@ -65,17 +66,19 @@ export const ControlledInput = () => {
               onChange={(event) => setEmail(event.target.value)}
             />
           </FormField>
-          <FormField name="subscribe">
+          <FormField htmlFor="subscribe" name="subscribe">
             <CheckBox
               name="subscribe"
+              id="subscribe"
               label="Subscribe?"
               checked={subscribe}
               onChange={(event) => setSubscribe(event.target.checked)}
             />
           </FormField>
-          <FormField name="ampm">
+          <FormField htmlFor="ampm" name="ampm">
             <RadioButtonGroup
               name="ampm"
+              id="ampm"
               options={['morning', 'evening']}
               value={ampm}
               onChange={(event) => setAmpm(event.target.value)}
@@ -84,7 +87,6 @@ export const ControlledInput = () => {
           <FormField label="Size" htmlFor="size" name="size">
             <Select
               id="size"
-              aria-label="size"
               name="size"
               options={['small', 'medium', 'large']}
               value={size}
@@ -106,6 +108,9 @@ export const ControlledInput = () => {
               min={15}
               max={75}
               value={age}
+              aria-valuemin={15}
+              aria-valuemax={75}
+              aria-valuenow={30}
               onChange={(event) => setAge(event.target.value)}
             />
           </FormField>

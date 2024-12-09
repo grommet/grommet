@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 
 import { Box, Button, Form, FormField } from 'grommet';
+import { TextInput } from '../../TextInput';
 
 export const ValidateOnMount = () => {
   const defaultValue = {
@@ -32,7 +33,6 @@ export const ValidateOnMount = () => {
           <FormField
             label="First Name"
             htmlFor="firstName"
-            id="firstName"
             name="firstName"
             required
             validate={[
@@ -43,12 +43,12 @@ export const ValidateOnMount = () => {
                 return undefined;
               },
             ]}
-          />
-
+          >
+            <TextInput aria-required id="firstName" name="firstName" />
+          </FormField>
           <FormField
             label="Last Name"
             htmlFor="lastName"
-            id="lastName"
             name="lastName"
             required
             validate={[
@@ -59,8 +59,9 @@ export const ValidateOnMount = () => {
                 return undefined;
               },
             ]}
-          />
-
+          >
+            <TextInput aria-required id="lastName" name="lastName" />
+          </FormField>
           <Box direction="row" justify="between" margin={{ top: 'medium' }}>
             <Button label="Cancel" />
             <Button type="reset" label="Reset" />
