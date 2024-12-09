@@ -20,13 +20,13 @@ const customTheme = {
       blue: '#00C8FF',
       green: '#17EBA0',
       teal: '#82FFF2',
-      purple: '#F740FF',
-      red: '#FC6161',
+      purple: '#694b75',
+      red: '#914049',
       orange: '#FFBC44',
-      yellow: '#FFEB59',
+      yellow: '#faf6d4',
       // you can also point to existing grommet colors
       brightGreen: 'accent-1',
-      deepGreen: 'neutral-2',
+      dark: 'dark-1',
       // Changing default text color,
       // all colors could be either a string or a dark and light object
       text: {
@@ -41,7 +41,7 @@ export const Colors = () => (
   <Grommet theme={customTheme}>
     <Box background="yellow" gap="medium" pad="small">
       <Text>Custom color purple</Text>
-      <Text color="deepGreen">Inline custom color of deepGreen</Text>
+      <Text color="dark">Inline custom dark color</Text>
       <Paragraph color="red">
         Wrapping your application with the Grommet component that is pointing to
         your customTheme object as shown on the example, will allow you full

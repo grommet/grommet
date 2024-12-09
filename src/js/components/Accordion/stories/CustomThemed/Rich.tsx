@@ -50,7 +50,7 @@ const RichPanel = ({ children, icon, label }) => {
       pad={{ horizontal: 'small' }}
     >
       {icon}
-      <Heading level={4} color={hovering ? 'dark-1' : 'dark-3'}>
+      <Heading level={4} color={hovering ? 'dark-1' : 'dark-2'}>
         {label}
       </Heading>
     </Box>

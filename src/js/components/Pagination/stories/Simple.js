@@ -18,7 +18,7 @@ export const Simple = () => (
       <Pagination
         numberItems={1237}
         page={24}
-        background="brand"
+        background="dark-1"
         pad="medium"
         margin="small"
         aria-label="Pagination with custom background and spacing"
