@@ -25,7 +25,7 @@ const SidebarNav = () => {
   return (
     <Grommet full theme={theme}>
       <Box fill direction="row">
-        <Nav background="neutral-1">
+        <Nav background="dark-2">
           {[
             { label: 'Dashboard', icon: <Dashboard />, justify: 'center' },
             { label: 'Devices', icon: <Device />, justify: 'end' },

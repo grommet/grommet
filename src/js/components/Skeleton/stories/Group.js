@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Box, Button, Card, Grommet, Image, Text } from 'grommet';
+import { Box, Button, Card, Grommet, Text } from 'grommet';
 import { FormAdd } from 'grommet-icons';
 import { useThemeValue } from '../../../utils/useThemeValue';
 
@@ -16,9 +16,12 @@ const Item = ({ ...rest }) => (
   >
     <Box direction="row" gap="large" justify="between" align="center">
       <Box direction="row" gap="medium">
-        <Box width="xsmall" height="xsmall" background="orange!" round="small">
-          <Image />
-        </Box>
+        <Box
+          width="xsmall"
+          height="xsmall"
+          background="orange!"
+          round="small"
+        />
         <Box>
           <Text
             size="large"
