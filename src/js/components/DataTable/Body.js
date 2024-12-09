@@ -221,6 +221,7 @@ const Body = forwardRef(
         (activePrimaryValue !== undefined &&
           !disabled.includes(activePrimaryValue)));
 
+    // Determine if the DataTable body is scrollable
     useEffect(() => {
       if (containerRef && containerRef.current) {
         const element = containerRef.current;
