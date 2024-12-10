@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Calendar, Text } from 'grommet';
+import { Box, Calendar, Main, Text } from 'grommet';
 
 // DSTCalendar has dates specifically chosen to identify issues with
 // crossing the daylight savings time boundary (from California).
@@ -8,7 +8,7 @@ export var DSTCalendar = function DSTCalendar() {
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
     // <Grommet theme={...}>
-    React.createElement(Box, {
+    React.createElement(Main, {
       align: "center",
       pad: "large",
       direction: "row",

@@ -38,7 +38,7 @@ var customTheme = (0, _utils.deepMerge)(_themes.grommet, {
       background: 'dark-1',
       color: 'accent-1'
     },
-    background: 'dark-3',
+    background: 'dark-2',
     border: undefined,
     color: 'white',
     hover: {
@@ -55,10 +55,10 @@ var customTheme = (0, _utils.deepMerge)(_themes.grommet, {
     }
   },
   tabs: {
-    background: 'dark-3',
+    background: 'dark-1',
     gap: 'medium',
     header: {
-      background: 'dark-2',
+      background: 'dark-3',
       extend: function extend(_ref3) {
         var theme = _ref3.theme;
         return (0, _styledComponents.css)(["padding:10px;box-shadow:0px 3px 8px rgba(0,0,0,0.5);"]);

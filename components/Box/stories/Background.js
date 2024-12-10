@@ -57,7 +57,7 @@ var BackgroundBox = exports.BackgroundBox = function BackgroundBox() {
       pad: "small"
     }, "low opacity on light background")), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
       background: {
-        color: 'background',
+        color: 'background-front',
         dark: true
       },
       pad: "medium"

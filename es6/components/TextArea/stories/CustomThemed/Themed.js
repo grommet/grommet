@@ -26,6 +26,7 @@ export var Themed = function Themed() {
       size: 'medium'
     }
   }, /*#__PURE__*/React.createElement(TextArea, {
+    "aria-label": "custom theme text area",
     value: value,
     onChange: onChange,
     fill: true

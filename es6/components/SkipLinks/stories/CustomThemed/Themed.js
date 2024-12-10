@@ -41,7 +41,7 @@ export var Themed = function Themed() {
   })), /*#__PURE__*/React.createElement(Box, {
     gap: "large"
   }, /*#__PURE__*/React.createElement(Box, {
-    background: "light-4",
+    background: "light-2",
     pad: "small",
     fill: "horizontal"
   }, /*#__PURE__*/React.createElement(Header, {

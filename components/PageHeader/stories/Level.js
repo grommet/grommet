@@ -13,7 +13,7 @@ var Level = exports.Level = function Level() {
       label: "View Details"
     }),
     level: 1 // Use different levels for different headers
-  }), /*#__PURE__*/_react["default"].createElement(_grommet.PageHeader, {
+  }), /*#__PURE__*/_react["default"].createElement(_grommet.Main, null, /*#__PURE__*/_react["default"].createElement(_grommet.PageHeader, {
     title: "Main Section",
     subtitle: "This is the main section of your application where  you can display more detailed information about  a specific topic or category.",
     actions: /*#__PURE__*/_react["default"].createElement(_grommet.Button, {
@@ -27,7 +27,7 @@ var Level = exports.Level = function Level() {
       label: "View Details"
     }),
     level: 3
-  })));
+  }))));
 };
 var _default = exports["default"] = {
   title: 'Layout/PageHeader/Level'

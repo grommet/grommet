@@ -40,7 +40,7 @@ var SidebarNav = function SidebarNav() {
     fill: true,
     direction: "row"
   }, /*#__PURE__*/_react["default"].createElement(_grommet.Nav, {
-    background: "neutral-1"
+    background: "dark-2"
   }, [{
     label: 'Dashboard',
     icon: /*#__PURE__*/_react["default"].createElement(_grommetIcons.Dashboard, null),

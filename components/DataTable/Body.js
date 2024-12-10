@@ -166,6 +166,10 @@ var Body = exports.Body = /*#__PURE__*/(0, _react.forwardRef)(function (_ref2, r
   var _React$useState2 = _react["default"].useState(),
     lastActive = _React$useState2[0],
     setLastActive = _React$useState2[1];
+  var _React$useState3 = _react["default"].useState(),
+    scroll = _React$useState3[0],
+    setScroll = _React$useState3[1];
+  var containerRef = (0, _utils.useForwardedRef)(ref);
 
   // Determine if using a keyboard to cover focus behavior
   var usingKeyboard = (0, _utils.useKeyboard)();
@@ -181,6 +185,16 @@ var Body = exports.Body = /*#__PURE__*/(0, _react.forwardRef)(function (_ref2, r
     }
   };
   var clickableRow = onClickRow && active >= 0 && (!disabled || activePrimaryValue !== undefined && !disabled.includes(activePrimaryValue));
+
+  // Determine if the DataTable body is scrollable
+  (0, _react.useEffect)(function () {
+    if (containerRef.current) {
+      var element = containerRef.current;
+      if (element.scrollHeight > element.offsetHeight) {
+        setScroll(true);
+      }
+    }
+  }, [containerRef]);
   return /*#__PURE__*/_react["default"].createElement(_Keyboard.Keyboard, {
     onEnter: clickableRow ? function (event) {
       if (clickableRow) {
@@ -214,9 +228,9 @@ var Body = exports.Body = /*#__PURE__*/(0, _react.forwardRef)(function (_ref2, r
       return setActive((active != null ? active : -1) + 1);
     } : undefined
   }, /*#__PURE__*/_react["default"].createElement(_StyledDataTable.StyledDataTableBody, _extends({
-    ref: ref,
+    ref: containerRef,
     size: size,
-    tabIndex: onClickRow ? 0 : undefined,
+    tabIndex: onClickRow || scroll ? 0 : undefined,
     onFocus: function onFocus() {
       return setActive(onFocusActive);
     },

@@ -2,7 +2,7 @@ var _excluded = ["title"];
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (e.includes(n)) continue; t[n] = r[n]; } return t; }
 import React from 'react';
-import { Box, Button, Card, Grommet, Image, Text } from 'grommet';
+import { Box, Button, Card, Grommet, Text } from 'grommet';
 import { useThemeValue } from '../../../utils/useThemeValue';
 var Item = function Item(_ref) {
   var title = _ref.title,
@@ -34,7 +34,7 @@ var Item = function Item(_ref) {
     height: "xsmall",
     background: "orange!",
     round: "small"
-  }, /*#__PURE__*/React.createElement(Image, null)), /*#__PURE__*/React.createElement(Box, null, /*#__PURE__*/React.createElement(Text, {
+  }), /*#__PURE__*/React.createElement(Box, null, /*#__PURE__*/React.createElement(Text, {
     size: "large",
     color: "text-strong",
     weight: "bold",

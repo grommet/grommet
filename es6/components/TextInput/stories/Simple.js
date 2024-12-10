@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, TextInput, Form, FormField } from 'grommet';
+import { Box, TextInput } from 'grommet';
 export var Simple = function Simple() {
   var _React$useState = React.useState(''),
     value = _React$useState[0],
@@ -22,12 +22,7 @@ export var Simple = function Simple() {
       value: value,
       onChange: onChange,
       "aria-label": "Input Text"
-    })), /*#__PURE__*/React.createElement(Form, null, /*#__PURE__*/React.createElement(FormField, {
-      label: "label"
-      // contentProps={{
-      //   border: false,
-      // }}
-    }, /*#__PURE__*/React.createElement(TextInput, null))))
+    })))
     // </Grommet>
   );
 };

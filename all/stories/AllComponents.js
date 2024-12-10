@@ -144,6 +144,7 @@ var Components = function Components() {
   }), /*#__PURE__*/_react["default"].createElement(_grommet.TextArea, {
     placeholder: "TextArea"
   }), /*#__PURE__*/_react["default"].createElement(_grommet.RangeInput, {
+    "aria-label": "Range input with value of 24",
     value: 24,
     onChange: function onChange() {}
   }), /*#__PURE__*/_react["default"].createElement(_grommet.Stack, null, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
@@ -177,7 +178,8 @@ var Components = function Components() {
     key: "time",
     gap: "medium"
   }, /*#__PURE__*/_react["default"].createElement(_grommet.Calendar, {
-    size: "small"
+    size: "small",
+    level: 2
   }), /*#__PURE__*/_react["default"].createElement(_grommet.Clock, {
     type: "digital",
     className: "chromatic-ignore"
@@ -274,7 +276,10 @@ var Components = function Components() {
     sortable: true
   })), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     key: "accordion"
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Accordion, null, /*#__PURE__*/_react["default"].createElement(_grommet.AccordionPanel, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Accordion, {
+    level: 2,
+    size: "small"
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.AccordionPanel, {
     label: "Accordion Panel 1"
   }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     pad: "small"

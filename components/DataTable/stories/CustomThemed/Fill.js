@@ -45,6 +45,7 @@ var Fill = exports.Fill = function Fill() {
   }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     fill: "vertical"
   }, /*#__PURE__*/_react["default"].createElement(_grommet.DataTable, {
+    tabIndex: 0,
     columns: pinnedColumns,
     data: _data.data,
     step: 10,

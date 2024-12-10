@@ -13,6 +13,7 @@ var HeadingExample = function HeadingExample() {
   }, "Heading"), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     skeleton: true
   }, /*#__PURE__*/_react["default"].createElement(_grommet.Heading, {
+    "aria-label": "loading heading",
     level: 2
   }, "Heading")));
 };

@@ -5,6 +5,7 @@ exports["default"] = exports.ShowAdjacent = void 0;
 var _react = _interopRequireWildcard(require("react"));
 var _grommet = require("grommet");
 var _Box = require("../../Box");
+var _Main = require("../../Main");
 function _getRequireWildcardCache(e) { if ("function" != typeof WeakMap) return null; var r = new WeakMap(), t = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(e) { return e ? t : r; })(e); }
 function _interopRequireWildcard(e, r) { if (!r && e && e.__esModule) return e; if (null === e || "object" != typeof e && "function" != typeof e) return { "default": e }; var t = _getRequireWildcardCache(r); if (t && t.has(e)) return t.get(e); var n = { __proto__: null }, a = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var u in e) if ("default" !== u && {}.hasOwnProperty.call(e, u)) { var i = a ? Object.getOwnPropertyDescriptor(e, u) : null; i && (i.get || i.set) ? Object.defineProperty(n, u, i) : n[u] = e[u]; } return n["default"] = e, t && t.set(e, n), n; }
 function _objectDestructuringEmpty(t) { if (null == t) throw new TypeError("Cannot destructure " + t); }
@@ -29,7 +30,7 @@ var ShowAdjacent = exports.ShowAdjacent = function ShowAdjacent() {
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
     // <Grommet theme={...}>
-    _react["default"].createElement(_grommet.Grid, {
+    _react["default"].createElement(_Main.Main, null, /*#__PURE__*/_react["default"].createElement(_grommet.Grid, {
       columns: {
         count: 'fit',
         size: ['small', 'auto']
@@ -58,7 +59,7 @@ var ShowAdjacent = exports.ShowAdjacent = function ShowAdjacent() {
       size: "small",
       bounds: ['2018-09-08', '2020-12-13'],
       showAdjacentDays: "trim"
-    })))
+    }))))
     // </Grommet>
   );
 };

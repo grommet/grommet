@@ -12,7 +12,7 @@ var DSTCalendar = exports.DSTCalendar = function DSTCalendar() {
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
     // <Grommet theme={...}>
-    _react["default"].createElement(_grommet.Box, {
+    _react["default"].createElement(_grommet.Main, {
       align: "center",
       pad: "large",
       direction: "row",

@@ -138,6 +138,7 @@ var Components = function Components() {
   }), /*#__PURE__*/React.createElement(TextArea, {
     placeholder: "TextArea"
   }), /*#__PURE__*/React.createElement(RangeInput, {
+    "aria-label": "Range input with value of 24",
     value: 24,
     onChange: function onChange() {}
   }), /*#__PURE__*/React.createElement(Stack, null, /*#__PURE__*/React.createElement(Box, {
@@ -171,7 +172,8 @@ var Components = function Components() {
     key: "time",
     gap: "medium"
   }, /*#__PURE__*/React.createElement(Calendar, {
-    size: "small"
+    size: "small",
+    level: 2
   }), /*#__PURE__*/React.createElement(Clock, {
     type: "digital",
     className: "chromatic-ignore"
@@ -268,7 +270,10 @@ var Components = function Components() {
     sortable: true
   })), /*#__PURE__*/React.createElement(Box, {
     key: "accordion"
-  }, /*#__PURE__*/React.createElement(Accordion, null, /*#__PURE__*/React.createElement(AccordionPanel, {
+  }, /*#__PURE__*/React.createElement(Accordion, {
+    level: 2,
+    size: "small"
+  }, /*#__PURE__*/React.createElement(AccordionPanel, {
     label: "Accordion Panel 1"
   }, /*#__PURE__*/React.createElement(Box, {
     pad: "small"

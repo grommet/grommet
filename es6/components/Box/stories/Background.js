@@ -52,7 +52,7 @@ export var BackgroundBox = function BackgroundBox() {
       pad: "small"
     }, "low opacity on light background")), /*#__PURE__*/React.createElement(Box, {
       background: {
-        color: 'background',
+        color: 'background-front',
         dark: true
       },
       pad: "medium"

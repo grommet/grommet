@@ -47,7 +47,7 @@ var Themed = exports.Themed = function Themed() {
   })), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     gap: "large"
   }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
-    background: "light-4",
+    background: "light-2",
     pad: "small",
     fill: "horizontal"
   }, /*#__PURE__*/_react["default"].createElement(_grommet.Header, {

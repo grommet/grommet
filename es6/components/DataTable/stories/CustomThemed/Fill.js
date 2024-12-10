@@ -42,6 +42,7 @@ export var Fill = function Fill() {
   }, /*#__PURE__*/React.createElement(Box, {
     fill: "vertical"
   }, /*#__PURE__*/React.createElement(DataTable, {
+    tabIndex: 0,
     columns: pinnedColumns,
     data: data,
     step: 10,

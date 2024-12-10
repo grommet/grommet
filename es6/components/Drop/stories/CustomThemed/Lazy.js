@@ -55,7 +55,7 @@ var LazyDrop = function LazyDrop() {
       horizontal: 'small'
     }
   }, /*#__PURE__*/React.createElement(Box, {
-    background: "dark-3",
+    background: "dark-2",
     pad: "medium",
     align: "center",
     ref: topLeftTargetRef
@@ -70,7 +70,7 @@ var LazyDrop = function LazyDrop() {
       vertical: pad
     }
   }, "align top to bottom")), /*#__PURE__*/React.createElement(Box, {
-    background: "dark-3",
+    background: "dark-2",
     pad: "medium",
     align: "center",
     ref: topRightTargetRef
@@ -88,7 +88,7 @@ var LazyDrop = function LazyDrop() {
     direction: "row",
     justify: "between"
   }, /*#__PURE__*/React.createElement(Box, {
-    background: "dark-3",
+    background: "dark-2",
     pad: "medium",
     ref: bottomLeftTargetRef
   }, "Target"), bottomLeftTargetRef.current && /*#__PURE__*/React.createElement(Drop, {
@@ -102,7 +102,7 @@ var LazyDrop = function LazyDrop() {
       vertical: pad
     }
   }, "align bottom to top")), /*#__PURE__*/React.createElement(Box, {
-    background: "dark-3",
+    background: "dark-2",
     pad: "medium",
     ref: bottomRightTargetRef
   }, "Target"), bottomRightTargetRef.current && /*#__PURE__*/React.createElement(Drop, {

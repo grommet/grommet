@@ -18,7 +18,7 @@ var customTheme = {
   },
   formField: {
     label: {
-      color: 'dark-3',
+      color: 'dark-2',
       size: 'small',
       margin: 'xsmall',
       weight: 600

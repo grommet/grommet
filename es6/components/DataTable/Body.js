@@ -2,8 +2,8 @@ var _excluded = ["cellProps", "columns", "data", "disabled", "onMore", "replace"
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (e.includes(n)) continue; t[n] = r[n]; } return t; }
 /* eslint-disable no-underscore-dangle */
-import React, { forwardRef, memo } from 'react';
-import { useKeyboard } from '../../utils';
+import React, { forwardRef, memo, useEffect } from 'react';
+import { useKeyboard, useForwardedRef } from '../../utils';
 import { CheckBox } from '../CheckBox';
 import { InfiniteScroll } from '../InfiniteScroll';
 import { TableRow } from '../TableRow';
@@ -160,6 +160,10 @@ var Body = /*#__PURE__*/forwardRef(function (_ref2, ref) {
   var _React$useState2 = React.useState(),
     lastActive = _React$useState2[0],
     setLastActive = _React$useState2[1];
+  var _React$useState3 = React.useState(),
+    scroll = _React$useState3[0],
+    setScroll = _React$useState3[1];
+  var containerRef = useForwardedRef(ref);
 
   // Determine if using a keyboard to cover focus behavior
   var usingKeyboard = useKeyboard();
@@ -175,6 +179,16 @@ var Body = /*#__PURE__*/forwardRef(function (_ref2, ref) {
     }
   };
   var clickableRow = onClickRow && active >= 0 && (!disabled || activePrimaryValue !== undefined && !disabled.includes(activePrimaryValue));
+
+  // Determine if the DataTable body is scrollable
+  useEffect(function () {
+    if (containerRef.current) {
+      var element = containerRef.current;
+      if (element.scrollHeight > element.offsetHeight) {
+        setScroll(true);
+      }
+    }
+  }, [containerRef]);
   return /*#__PURE__*/React.createElement(Keyboard, {
     onEnter: clickableRow ? function (event) {
       if (clickableRow) {
@@ -208,9 +222,9 @@ var Body = /*#__PURE__*/forwardRef(function (_ref2, ref) {
       return setActive((active != null ? active : -1) + 1);
     } : undefined
   }, /*#__PURE__*/React.createElement(StyledDataTableBody, _extends({
-    ref: ref,
+    ref: containerRef,
     size: size,
-    tabIndex: onClickRow ? 0 : undefined,
+    tabIndex: onClickRow || scroll ? 0 : undefined,
     onFocus: function onFocus() {
       return setActive(onFocusActive);
     },

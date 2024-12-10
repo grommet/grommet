@@ -36,7 +36,7 @@ var SidebarNav = function SidebarNav() {
     fill: true,
     direction: "row"
   }, /*#__PURE__*/React.createElement(Nav, {
-    background: "neutral-1"
+    background: "dark-2"
   }, [{
     label: 'Dashboard',
     icon: /*#__PURE__*/React.createElement(Dashboard, null),

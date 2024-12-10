@@ -1,5 +1,6 @@
 import React from 'react';
 import { Anchor, Button, PageHeader, Page, PageContent } from 'grommet';
+import { Main } from '../../Main';
 export var Size = function Size() {
   return (
     /*#__PURE__*/
@@ -15,7 +16,7 @@ export var Size = function Size() {
         label: "Parent Page"
       }),
       size: "small"
-    }), /*#__PURE__*/React.createElement(PageHeader, {
+    }), /*#__PURE__*/React.createElement(Main, null, /*#__PURE__*/React.createElement(PageHeader, {
       title: "Medium PageHeader (default)",
       subtitle: "Grommet helps you build responsive and accessible \n          mobile-first projects for the web with an easy to use component \n          library.",
       actions: /*#__PURE__*/React.createElement(Button, {
@@ -34,7 +35,7 @@ export var Size = function Size() {
         label: "Parent Page"
       }),
       size: "large"
-    })))
+    }))))
     // </Grommet>
   );
 };

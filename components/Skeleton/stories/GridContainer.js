@@ -40,7 +40,7 @@ var Item = function Item(_ref) {
     background: "brand",
     round: "small",
     flex: false
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Image, null)), /*#__PURE__*/_react["default"].createElement(_grommet.Box, null, /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
+  }), /*#__PURE__*/_react["default"].createElement(_grommet.Box, null, /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
     size: "large",
     color: "text-strong",
     weight: "bold",

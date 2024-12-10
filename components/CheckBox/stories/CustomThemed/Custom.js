@@ -44,7 +44,7 @@ var customCheckBoxTheme = {
       checked: _grommetIcons.FormCheckmark
     },
     size: '18px',
-    extend: "\n      color: #9C9C9C;\n    "
+    extend: "\n      color: #6b6c6e;\n    "
   }
 };
 var Custom = exports.Custom = function Custom(props) {

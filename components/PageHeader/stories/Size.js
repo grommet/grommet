@@ -4,6 +4,7 @@ exports.__esModule = true;
 exports["default"] = exports.Size = void 0;
 var _react = _interopRequireDefault(require("react"));
 var _grommet = require("grommet");
+var _Main = require("../../Main");
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
 var Size = exports.Size = function Size() {
   return (
@@ -20,7 +21,7 @@ var Size = exports.Size = function Size() {
         label: "Parent Page"
       }),
       size: "small"
-    }), /*#__PURE__*/_react["default"].createElement(_grommet.PageHeader, {
+    }), /*#__PURE__*/_react["default"].createElement(_Main.Main, null, /*#__PURE__*/_react["default"].createElement(_grommet.PageHeader, {
       title: "Medium PageHeader (default)",
       subtitle: "Grommet helps you build responsive and accessible \n          mobile-first projects for the web with an easy to use component \n          library.",
       actions: /*#__PURE__*/_react["default"].createElement(_grommet.Button, {
@@ -39,7 +40,7 @@ var Size = exports.Size = function Size() {
         label: "Parent Page"
       }),
       size: "large"
-    })))
+    }))))
     // </Grommet>
   );
 };

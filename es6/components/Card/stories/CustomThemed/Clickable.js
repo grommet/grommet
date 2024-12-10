@@ -5,7 +5,7 @@ import React from 'react';
 import { Bluetooth as Memory } from "grommet-icons/es6/icons/Bluetooth";
 import { Storage } from "grommet-icons/es6/icons/Storage";
 import { Trigger } from "grommet-icons/es6/icons/Trigger";
-import { Box, Card, CardBody, CardFooter, Chart, Grid, Grommet, Text } from 'grommet';
+import { Box, Card, CardBody, CardFooter, Chart, Grid, Grommet, Text, Main } from 'grommet';
 var theme = {
   themeMode: 'dark',
   global: {
@@ -127,7 +127,7 @@ export var Clickable = function Clickable() {
   return /*#__PURE__*/React.createElement(Grommet, {
     theme: theme,
     full: true
-  }, /*#__PURE__*/React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Main, null, /*#__PURE__*/React.createElement(Box, {
     pad: "large",
     height: "100%"
   }, /*#__PURE__*/React.createElement(Grid, {
@@ -159,7 +159,7 @@ export var Clickable = function Clickable() {
     }, /*#__PURE__*/React.createElement(Text, {
       size: "xsmall"
     }, value.message)));
-  }))));
+  })))));
 };
 Clickable.parameters = {
   chromatic: {

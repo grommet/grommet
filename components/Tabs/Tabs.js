@@ -277,7 +277,6 @@ var Tabs = exports.Tabs = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, re
     background: theme.tabs.background
   }), /*#__PURE__*/_react["default"].createElement(_Box.Box, _extends({
     alignSelf: alignControls || ((_theme$tabs$header = theme.tabs.header) == null ? void 0 : _theme$tabs$header.alignSelf),
-    role: "tablist",
     flex: false,
     direction: overflow ? 'row' : 'column'
   }, tabsHeaderStyles), overflow && /*#__PURE__*/_react["default"].createElement(_Button.Button, {
@@ -297,6 +296,7 @@ var Tabs = exports.Tabs = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, re
   }, /*#__PURE__*/_react["default"].createElement(_Previous.Previous, {
     color: disableLeftArrow ? theme.button.disabled.color : theme.global.colors.text
   }))), /*#__PURE__*/_react["default"].createElement(_StyledTabs.StyledTabsHeader, _extends({
+    role: "tablist",
     ref: headerRef,
     direction: "row",
     justify: overflow ? 'start' : justify,

@@ -8,7 +8,7 @@ import { ShieldSecurity } from "grommet-icons/es6/icons/ShieldSecurity";
 import { Tasks } from "grommet-icons/es6/icons/Tasks";
 import { User } from "grommet-icons/es6/icons/User";
 import { Wifi } from "grommet-icons/es6/icons/Wifi";
-import { Box, Card, CardBody, CardFooter, Grid, Grommet, Text } from 'grommet';
+import { Box, Card, CardBody, CardFooter, Grid, Grommet, Main, Text } from 'grommet';
 var data = [{
   color: 'blue',
   icon: /*#__PURE__*/React.createElement(Wifi, {
@@ -67,8 +67,8 @@ var theme = {
       blue: '#00C8FF',
       green: '#17EBA0',
       teal: '#82FFF2',
-      purple: '#F740FF',
-      red: '#FC6161',
+      purple: '#e8c3f7',
+      red: '#f5afab',
       orange: '#FFBC44',
       yellow: '#FFEB59'
     }
@@ -103,7 +103,7 @@ export var Themed = function Themed() {
   return /*#__PURE__*/React.createElement(Grommet, {
     theme: theme,
     full: true
-  }, /*#__PURE__*/React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Main, null, /*#__PURE__*/React.createElement(Box, {
     pad: "large"
   }, /*#__PURE__*/React.createElement(Grid, {
     gap: "medium",
@@ -132,7 +132,7 @@ export var Themed = function Themed() {
     }, /*#__PURE__*/React.createElement(Text, {
       size: "xsmall"
     }, value.message)));
-  }))));
+  })))));
 };
 export default {
   title: 'Layout/Card/Custom Themed/Themed'

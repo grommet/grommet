@@ -1,4 +1,4 @@
-import { Button, Page, PageContent, PageHeader } from 'grommet';
+import { Button, Main, Page, PageContent, PageHeader } from 'grommet';
 import React from 'react';
 export var Level = function Level() {
   return /*#__PURE__*/React.createElement(Page, null, /*#__PURE__*/React.createElement(PageContent, null, /*#__PURE__*/React.createElement(PageHeader, {
@@ -8,7 +8,7 @@ export var Level = function Level() {
       label: "View Details"
     }),
     level: 1 // Use different levels for different headers
-  }), /*#__PURE__*/React.createElement(PageHeader, {
+  }), /*#__PURE__*/React.createElement(Main, null, /*#__PURE__*/React.createElement(PageHeader, {
     title: "Main Section",
     subtitle: "This is the main section of your application where  you can display more detailed information about  a specific topic or category.",
     actions: /*#__PURE__*/React.createElement(Button, {
@@ -22,7 +22,7 @@ export var Level = function Level() {
       label: "View Details"
     }),
     level: 3
-  })));
+  }))));
 };
 export default {
   title: 'Layout/PageHeader/Level'

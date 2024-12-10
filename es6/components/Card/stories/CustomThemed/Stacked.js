@@ -1,5 +1,5 @@
 import React from 'react';
-import { Avatar, Box, Card, Heading, CardBody, CardHeader, Grid, Grommet, Text, Image, Stack } from 'grommet';
+import { Avatar, Box, Card, Heading, CardBody, CardHeader, Grid, Grommet, Main, Text, Image, Stack } from 'grommet';
 var theme = {
   global: {
     font: {
@@ -37,7 +37,7 @@ export var Stacked = function Stacked() {
   var avatarSrc = '//s.gravatar.com/avatar/b7fb138d53ba0f573212ccce38a7c43b?s=80';
   return /*#__PURE__*/React.createElement(Grommet, {
     theme: theme
-  }, /*#__PURE__*/React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Main, null, /*#__PURE__*/React.createElement(Box, {
     pad: "large"
   }, /*#__PURE__*/React.createElement(Grid, {
     gap: "large",
@@ -77,7 +77,7 @@ export var Stacked = function Stacked() {
     }, item.location), /*#__PURE__*/React.createElement(Text, {
       size: "small"
     }, item.state)))));
-  }))));
+  })))));
 };
 export default {
   title: 'Layout/Card/Custom Themed/Stacked'

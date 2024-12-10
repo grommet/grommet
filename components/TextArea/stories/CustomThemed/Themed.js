@@ -32,6 +32,7 @@ var Themed = exports.Themed = function Themed() {
       size: 'medium'
     }
   }, /*#__PURE__*/_react["default"].createElement(_grommet.TextArea, {
+    "aria-label": "custom theme text area",
     value: value,
     onChange: onChange,
     fill: true

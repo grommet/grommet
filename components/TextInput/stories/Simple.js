@@ -27,12 +27,7 @@ var Simple = exports.Simple = function Simple() {
       value: value,
       onChange: onChange,
       "aria-label": "Input Text"
-    })), /*#__PURE__*/_react["default"].createElement(_grommet.Form, null, /*#__PURE__*/_react["default"].createElement(_grommet.FormField, {
-      label: "label"
-      // contentProps={{
-      //   border: false,
-      // }}
-    }, /*#__PURE__*/_react["default"].createElement(_grommet.TextInput, null))))
+    })))
     // </Grommet>
   );
 };

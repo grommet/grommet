@@ -3,6 +3,7 @@ function _extends() { return _extends = Object.assign ? Object.assign.bind() : f
 import React, { useState } from 'react';
 import { Calendar, Grid, Text } from 'grommet';
 import { Box } from '../../Box';
+import { Main } from '../../Main';
 var Container = function Container(_ref) {
   var rest = _extends({}, (_objectDestructuringEmpty(_ref), _ref));
   return /*#__PURE__*/React.createElement(Box, _extends({
@@ -23,7 +24,7 @@ export var ShowAdjacent = function ShowAdjacent() {
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
     // <Grommet theme={...}>
-    React.createElement(Grid, {
+    React.createElement(Main, null, /*#__PURE__*/React.createElement(Grid, {
       columns: {
         count: 'fit',
         size: ['small', 'auto']
@@ -52,7 +53,7 @@ export var ShowAdjacent = function ShowAdjacent() {
       size: "small",
       bounds: ['2018-09-08', '2020-12-13'],
       showAdjacentDays: "trim"
-    })))
+    }))))
     // </Grommet>
   );
 };

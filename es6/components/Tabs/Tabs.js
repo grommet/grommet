@@ -271,7 +271,6 @@ var Tabs = /*#__PURE__*/forwardRef(function (_ref, ref) {
     background: theme.tabs.background
   }), /*#__PURE__*/React.createElement(Box, _extends({
     alignSelf: alignControls || ((_theme$tabs$header = theme.tabs.header) == null ? void 0 : _theme$tabs$header.alignSelf),
-    role: "tablist",
     flex: false,
     direction: overflow ? 'row' : 'column'
   }, tabsHeaderStyles), overflow && /*#__PURE__*/React.createElement(Button, {
@@ -291,6 +290,7 @@ var Tabs = /*#__PURE__*/forwardRef(function (_ref, ref) {
   }, /*#__PURE__*/React.createElement(Previous, {
     color: disableLeftArrow ? theme.button.disabled.color : theme.global.colors.text
   }))), /*#__PURE__*/React.createElement(StyledTabsHeader, _extends({
+    role: "tablist",
     ref: headerRef,
     direction: "row",
     justify: overflow ? 'start' : justify,

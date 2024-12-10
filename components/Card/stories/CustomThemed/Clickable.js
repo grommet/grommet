@@ -130,7 +130,7 @@ var Clickable = exports.Clickable = function Clickable() {
   return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: theme,
     full: true
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Main, null, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     pad: "large",
     height: "100%"
   }, /*#__PURE__*/_react["default"].createElement(_grommet.Grid, {
@@ -162,7 +162,7 @@ var Clickable = exports.Clickable = function Clickable() {
     }, /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
       size: "xsmall"
     }, value.message)));
-  }))));
+  })))));
 };
 Clickable.parameters = {
   chromatic: {

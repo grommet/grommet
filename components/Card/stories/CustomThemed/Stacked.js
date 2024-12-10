@@ -42,7 +42,7 @@ var Stacked = exports.Stacked = function Stacked() {
   var avatarSrc = '//s.gravatar.com/avatar/b7fb138d53ba0f573212ccce38a7c43b?s=80';
   return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: theme
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Main, null, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     pad: "large"
   }, /*#__PURE__*/_react["default"].createElement(_grommet.Grid, {
     gap: "large",
@@ -82,7 +82,7 @@ var Stacked = exports.Stacked = function Stacked() {
     }, item.location), /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
       size: "small"
     }, item.state)))));
-  }))));
+  })))));
 };
 var _default = exports["default"] = {
   title: 'Layout/Card/Custom Themed/Stacked'

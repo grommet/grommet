@@ -23,7 +23,7 @@ var data = [{
   state: 'California'
 }];
 var Children = exports.Children = function Children() {
-  return /*#__PURE__*/_react["default"].createElement(_grommet.Grid, {
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Main, null, /*#__PURE__*/_react["default"].createElement(_grommet.Grid, {
     pad: "large",
     columns: [['medium', 'large']],
     justifyContent: "center"
@@ -40,7 +40,7 @@ var Children = exports.Children = function Children() {
       size: "small",
       margin: "none"
     }, datum.city)), /*#__PURE__*/_react["default"].createElement(_grommet.CardFooter, null, datum.state));
-  }));
+  })));
 };
 var _default = exports["default"] = {
   title: 'Visualizations/Cards/Children'

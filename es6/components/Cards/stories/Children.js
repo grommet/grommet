@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, CardBody, CardFooter, Grid, Heading } from 'grommet';
+import { Card, CardBody, CardFooter, Grid, Heading, Main } from 'grommet';
 import { Cards } from '../Cards';
 var data = [{
   city: 'Boise',
@@ -18,7 +18,7 @@ var data = [{
   state: 'California'
 }];
 export var Children = function Children() {
-  return /*#__PURE__*/React.createElement(Grid, {
+  return /*#__PURE__*/React.createElement(Main, null, /*#__PURE__*/React.createElement(Grid, {
     pad: "large",
     columns: [['medium', 'large']],
     justifyContent: "center"
@@ -35,7 +35,7 @@ export var Children = function Children() {
       size: "small",
       margin: "none"
     }, datum.city)), /*#__PURE__*/React.createElement(CardFooter, null, datum.state));
-  }));
+  })));
 };
 export default {
   title: 'Visualizations/Cards/Children'

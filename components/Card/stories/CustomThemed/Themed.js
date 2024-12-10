@@ -67,8 +67,8 @@ var theme = {
       blue: '#00C8FF',
       green: '#17EBA0',
       teal: '#82FFF2',
-      purple: '#F740FF',
-      red: '#FC6161',
+      purple: '#e8c3f7',
+      red: '#f5afab',
       orange: '#FFBC44',
       yellow: '#FFEB59'
     }
@@ -103,7 +103,7 @@ var Themed = exports.Themed = function Themed() {
   return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: theme,
     full: true
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Main, null, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     pad: "large"
   }, /*#__PURE__*/_react["default"].createElement(_grommet.Grid, {
     gap: "medium",
@@ -132,7 +132,7 @@ var Themed = exports.Themed = function Themed() {
     }, /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
       size: "xsmall"
     }, value.message)));
-  }))));
+  })))));
 };
 var _default = exports["default"] = {
   title: 'Layout/Card/Custom Themed/Themed'
