@@ -18,7 +18,7 @@ var _utils = require("./utils");
 var _dates = require("../../utils/dates");
 var _useThemeValue3 = require("../../utils/useThemeValue");
 var _utils2 = require("../../utils");
-var _excluded = ["activeDate", "animate", "bounds", "children", "date", "dates", "daysOfWeek", "disabled", "initialFocus", "fill", "firstDayOfWeek", "header", "locale", "messages", "onReference", "onSelect", "range", "reference", "showAdjacentDays", "size", "timestamp"];
+var _excluded = ["activeDate", "animate", "bounds", "children", "date", "dates", "daysOfWeek", "disabled", "initialFocus", "fill", "firstDayOfWeek", "header", "level", "locale", "messages", "onReference", "onSelect", "range", "reference", "showAdjacentDays", "size", "timestamp"];
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
 function _getRequireWildcardCache(e) { if ("function" != typeof WeakMap) return null; var r = new WeakMap(), t = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(e) { return e ? t : r; })(e); }
 function _interopRequireWildcard(e, r) { if (!r && e && e.__esModule) return e; if (null === e || "object" != typeof e && "function" != typeof e) return { "default": e }; var t = _getRequireWildcardCache(r); if (t && t.has(e)) return t.get(e); var n = { __proto__: null }, a = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var u in e) if ("default" !== u && {}.hasOwnProperty.call(e, u)) { var i = a ? Object.getOwnPropertyDescriptor(e, u) : null; i && (i.get || i.set) ? Object.defineProperty(n, u, i) : n[u] = e[u]; } return n["default"] = e, t && t.set(e, n), n; }
@@ -244,6 +244,7 @@ var Calendar = exports.Calendar = /*#__PURE__*/(0, _react.forwardRef)(function (
     _ref4$firstDayOfWeek = _ref4.firstDayOfWeek,
     firstDayOfWeek = _ref4$firstDayOfWeek === void 0 ? 0 : _ref4$firstDayOfWeek,
     header = _ref4.header,
+    level = _ref4.level,
     _ref4$locale = _ref4.locale,
     locale = _ref4$locale === void 0 ? 'en-US' : _ref4$locale,
     messages = _ref4.messages,
@@ -535,6 +536,17 @@ var Calendar = exports.Calendar = /*#__PURE__*/(0, _react.forwardRef)(function (
       month: 'long',
       year: 'numeric'
     });
+
+    // theme.calendar.heading.level should be removed in v3 of grommet
+    // theme.calendar[size].title should be used instead
+    var headingLevel;
+    if (level !== undefined) {
+      headingLevel = level;
+    } else if (size === 'small') {
+      headingLevel = theme.calendar.heading && theme.calendar.heading.level || 4;
+    } else {
+      headingLevel = (theme.calendar.heading && theme.calendar.heading.level || 4) - 1;
+    }
     return /*#__PURE__*/_react["default"].createElement(_Box.Box, {
       direction: "row",
       justify: "between",
@@ -544,12 +556,8 @@ var Calendar = exports.Calendar = /*#__PURE__*/(0, _react.forwardRef)(function (
       pad: {
         horizontal: headingPadMap[size] || 'small'
       }
-    }, (_theme$calendar$size = theme.calendar[size]) != null && _theme$calendar$size.title ? /*#__PURE__*/_react["default"].createElement(_Text.Text, theme.calendar[size].title, monthAndYear) :
-    /*#__PURE__*/
-    // theme.calendar.heading.level should be removed in v3 of grommet
-    // theme.calendar[size].title should be used instead
-    _react["default"].createElement(_Heading.Heading, {
-      level: size === 'small' ? theme.calendar.heading && theme.calendar.heading.level || 4 : (theme.calendar.heading && theme.calendar.heading.level || 4) - 1,
+    }, (_theme$calendar$size = theme.calendar[size]) != null && _theme$calendar$size.title ? /*#__PURE__*/_react["default"].createElement(_Text.Text, theme.calendar[size].title, monthAndYear) : /*#__PURE__*/_react["default"].createElement(_Heading.Heading, {
+      level: headingLevel,
       size: size,
       margin: "none",
       overflowWrap: "normal"

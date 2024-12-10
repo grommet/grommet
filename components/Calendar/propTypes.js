@@ -20,6 +20,7 @@ if (process.env.NODE_ENV !== 'production') {
     fill: _propTypes["default"].bool,
     firstDayOfWeek: _propTypes["default"].oneOf([0, 1]),
     header: _propTypes["default"].func,
+    level: _propTypes["default"].oneOf([1, 2, 3, 4, 5, 6, '1', '2', '3', '4', '5', '6']),
     locale: _propTypes["default"].string,
     messages: _propTypes["default"].shape({
       previous: _propTypes["default"].string,

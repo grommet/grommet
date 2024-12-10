@@ -1,4 +1,4 @@
-var _excluded = ["activeDate", "animate", "bounds", "children", "date", "dates", "daysOfWeek", "disabled", "initialFocus", "fill", "firstDayOfWeek", "header", "locale", "messages", "onReference", "onSelect", "range", "reference", "showAdjacentDays", "size", "timestamp"];
+var _excluded = ["activeDate", "animate", "bounds", "children", "date", "dates", "daysOfWeek", "disabled", "initialFocus", "fill", "firstDayOfWeek", "header", "level", "locale", "messages", "onReference", "onSelect", "range", "reference", "showAdjacentDays", "size", "timestamp"];
 function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (e.includes(n)) continue; t[n] = r[n]; } return t; }
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 import React, { forwardRef, useCallback, useContext, useEffect, useMemo, useRef, useState } from 'react';
@@ -238,6 +238,7 @@ var Calendar = /*#__PURE__*/forwardRef(function (_ref4, ref) {
     _ref4$firstDayOfWeek = _ref4.firstDayOfWeek,
     firstDayOfWeek = _ref4$firstDayOfWeek === void 0 ? 0 : _ref4$firstDayOfWeek,
     header = _ref4.header,
+    level = _ref4.level,
     _ref4$locale = _ref4.locale,
     locale = _ref4$locale === void 0 ? 'en-US' : _ref4$locale,
     messages = _ref4.messages,
@@ -529,6 +530,17 @@ var Calendar = /*#__PURE__*/forwardRef(function (_ref4, ref) {
       month: 'long',
       year: 'numeric'
     });
+
+    // theme.calendar.heading.level should be removed in v3 of grommet
+    // theme.calendar[size].title should be used instead
+    var headingLevel;
+    if (level !== undefined) {
+      headingLevel = level;
+    } else if (size === 'small') {
+      headingLevel = theme.calendar.heading && theme.calendar.heading.level || 4;
+    } else {
+      headingLevel = (theme.calendar.heading && theme.calendar.heading.level || 4) - 1;
+    }
     return /*#__PURE__*/React.createElement(Box, {
       direction: "row",
       justify: "between",
@@ -538,12 +550,8 @@ var Calendar = /*#__PURE__*/forwardRef(function (_ref4, ref) {
       pad: {
         horizontal: headingPadMap[size] || 'small'
       }
-    }, (_theme$calendar$size = theme.calendar[size]) != null && _theme$calendar$size.title ? /*#__PURE__*/React.createElement(Text, theme.calendar[size].title, monthAndYear) :
-    /*#__PURE__*/
-    // theme.calendar.heading.level should be removed in v3 of grommet
-    // theme.calendar[size].title should be used instead
-    React.createElement(Heading, {
-      level: size === 'small' ? theme.calendar.heading && theme.calendar.heading.level || 4 : (theme.calendar.heading && theme.calendar.heading.level || 4) - 1,
+    }, (_theme$calendar$size = theme.calendar[size]) != null && _theme$calendar$size.title ? /*#__PURE__*/React.createElement(Text, theme.calendar[size].title, monthAndYear) : /*#__PURE__*/React.createElement(Heading, {
+      level: headingLevel,
       size: size,
       margin: "none",
       overflowWrap: "normal"
