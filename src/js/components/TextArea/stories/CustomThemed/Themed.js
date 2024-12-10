@@ -25,7 +25,12 @@ export const Themed = () => {
         height="medium"
         border={{ color: 'brand', size: 'medium' }}
       >
-        <TextArea value={value} onChange={onChange} fill />
+        <TextArea
+          aria-label="custom theme text area"
+          value={value}
+          onChange={onChange}
+          fill
+        />
       </Box>
     </Grommet>
   );

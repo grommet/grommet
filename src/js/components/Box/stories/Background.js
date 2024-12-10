@@ -49,7 +49,7 @@ export const BackgroundBox = () => (
         low opacity on light background
       </Box>
     </Box>
-    <Box background={{ color: 'background', dark: true }} pad="medium">
+    <Box background={{ color: 'background-front', dark: true }} pad="medium">
       <Text>force dark background</Text>
     </Box>
     <Box background="dark-1" pad="medium">

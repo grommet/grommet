@@ -330,7 +330,6 @@ const Tabs = forwardRef(
       >
         <Box
           alignSelf={alignControls || theme.tabs.header?.alignSelf}
-          role="tablist"
           flex={false}
           direction={overflow ? 'row' : 'column'}
           {...tabsHeaderStyles}
@@ -355,6 +354,7 @@ const Tabs = forwardRef(
             </Button>
           )}
           <StyledTabsHeader
+            role="tablist"
             ref={headerRef}
             direction="row"
             justify={overflow ? 'start' : justify}
