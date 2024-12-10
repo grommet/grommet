@@ -6,7 +6,7 @@ import { Add } from 'grommet-icons';
 const customTheme = {
   global: {
     colors: {
-      custom: '#cc6633',
+      custom: '#a35200',
     },
   },
 };
