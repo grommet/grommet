@@ -39,6 +39,7 @@ export interface CalendarProps {
   fill?: boolean;
   firstDayOfWeek?: 0 | 1;
   header?: (args: CalendarHeaderProps) => React.ReactNode;
+  level?: '1' | '2' | '3' | '4' | '5' | '6' | 1 | 2 | 3 | 4 | 5 | 6;
   locale?: string;
   messages?: {
     previous?: string;

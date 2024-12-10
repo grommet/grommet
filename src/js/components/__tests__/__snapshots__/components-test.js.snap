@@ -139,6 +139,7 @@ exports[`Components loads 1`] = `
       "firstDayOfWeek": [Function],
       "gridArea": [Function],
       "header": [Function],
+      "level": [Function],
       "locale": [Function],
       "margin": [Function],
       "messages": [Function],
