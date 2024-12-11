@@ -792,8 +792,8 @@ exports[`Notification position bottom 1`] = `
     role="log"
   >
     <a
-      aria-hidden="true"
       class="c2"
+      inert=""
       tabindex="-1"
     />
     <div
@@ -1063,8 +1063,8 @@ exports[`Notification position bottom-left 1`] = `
     role="log"
   >
     <a
-      aria-hidden="true"
       class="c2"
+      inert=""
       tabindex="-1"
     />
     <div
@@ -1334,8 +1334,8 @@ exports[`Notification position bottom-right 1`] = `
     role="log"
   >
     <a
-      aria-hidden="true"
       class="c2"
+      inert=""
       tabindex="-1"
     />
     <div
@@ -1605,8 +1605,8 @@ exports[`Notification position center 1`] = `
     role="log"
   >
     <a
-      aria-hidden="true"
       class="c2"
+      inert=""
       tabindex="-1"
     />
     <div
@@ -1876,8 +1876,8 @@ exports[`Notification position end 1`] = `
     role="log"
   >
     <a
-      aria-hidden="true"
       class="c2"
+      inert=""
       tabindex="-1"
     />
     <div
@@ -2147,8 +2147,8 @@ exports[`Notification position left 1`] = `
     role="log"
   >
     <a
-      aria-hidden="true"
       class="c2"
+      inert=""
       tabindex="-1"
     />
     <div
@@ -2418,8 +2418,8 @@ exports[`Notification position right 1`] = `
     role="log"
   >
     <a
-      aria-hidden="true"
       class="c2"
+      inert=""
       tabindex="-1"
     />
     <div
@@ -2689,8 +2689,8 @@ exports[`Notification position start 1`] = `
     role="log"
   >
     <a
-      aria-hidden="true"
       class="c2"
+      inert=""
       tabindex="-1"
     />
     <div
@@ -2960,8 +2960,8 @@ exports[`Notification position top 1`] = `
     role="log"
   >
     <a
-      aria-hidden="true"
       class="c2"
+      inert=""
       tabindex="-1"
     />
     <div
@@ -3231,8 +3231,8 @@ exports[`Notification position top-left 1`] = `
     role="log"
   >
     <a
-      aria-hidden="true"
       class="c2"
+      inert=""
       tabindex="-1"
     />
     <div
@@ -3502,8 +3502,8 @@ exports[`Notification position top-right 1`] = `
     role="log"
   >
     <a
-      aria-hidden="true"
       class="c2"
+      inert=""
       tabindex="-1"
     />
     <div

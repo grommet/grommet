@@ -103,8 +103,8 @@ exports[`Layer animation fadeIn 1`] = `
     id="animation-test"
   >
     <a
-      aria-hidden="true"
       class="c3"
+      inert=""
       tabindex="-1"
     />
     This is a layer
@@ -259,8 +259,8 @@ exports[`Layer animation false 1`] = `
     id="animation-test"
   >
     <a
-      aria-hidden="true"
       class="c3"
+      inert=""
       tabindex="-1"
     />
     This is a layer
@@ -416,8 +416,8 @@ exports[`Layer animation slide 1`] = `
     id="animation-test"
   >
     <a
-      aria-hidden="true"
       class="c3"
+      inert=""
       tabindex="-1"
     />
     This is a layer
@@ -573,8 +573,8 @@ exports[`Layer animation true 1`] = `
     id="animation-test"
   >
     <a
-      aria-hidden="true"
       class="c3"
+      inert=""
       tabindex="-1"
     />
     This is a layer
@@ -730,8 +730,8 @@ exports[`Layer custom margin 1`] = `
     id="margin-test"
   >
     <a
-      aria-hidden="true"
       class="c3"
+      inert=""
       tabindex="-1"
     />
     This is a layer
@@ -888,8 +888,8 @@ exports[`Layer custom theme 1`] = `
     id="custom-theme-test"
   >
     <a
-      aria-hidden="true"
       class="c3"
+      inert=""
       tabindex="-1"
     />
     This is a layer
@@ -1031,8 +1031,8 @@ exports[`Layer dark context 1`] = `
     id="non-modal-test"
   >
     <a
-      aria-hidden="true"
       class="c2"
+      inert=""
       tabindex="-1"
     />
     This is a non-modal layer
@@ -1141,8 +1141,8 @@ exports[`Layer focus on layer 1`] = `
   data-testid="focus-layer-test"
 >
   <a
-    aria-hidden="true"
     class="c1"
+    inert=""
     tabindex="-1"
   />
   <input />
@@ -1238,8 +1238,8 @@ exports[`Layer hidden 1`] = `
     id="hidden-test"
   >
     <a
-      aria-hidden="true"
       class="c3"
+      inert=""
       tabindex="-1"
     />
     This is a layer
@@ -1288,8 +1288,8 @@ exports[`Layer hidden 3`] = `
     id="hidden-test"
   >
     <a
-      aria-hidden="true"
       class="LayerContainer__HiddenAnchor-sc-1srj14c-0 kwDYmk"
+      inert=""
       tabindex="-1"
     />
     This is a layer
@@ -1430,8 +1430,8 @@ exports[`Layer invoke onClickOutside when modal={false} 1`] = `
     id="layer-node"
   >
     <a
-      aria-hidden="true"
       class="c2"
+      inert=""
       tabindex="-1"
     />
     <div>
@@ -1569,8 +1569,8 @@ exports[`Layer invoke onClickOutside when modal={false} and layer has target 1`]
     id="target-test"
   >
     <a
-      aria-hidden="true"
       class="c2"
+      inert=""
       tabindex="-1"
     />
     this is a test layer
@@ -1706,8 +1706,8 @@ exports[`Layer invoke onClickOutside when modal={true} 1`] = `
     id="layer-node"
   >
     <a
-      aria-hidden="true"
       class="c3"
+      inert=""
       tabindex="-1"
     />
     <div>
@@ -1859,8 +1859,8 @@ exports[`Layer invoke onClickOutside when modal={true} and layer has target 1`] 
     id="target-test"
   >
     <a
-      aria-hidden="true"
       class="c3"
+      inert=""
       tabindex="-1"
     />
     this is a test layer
@@ -2182,8 +2182,8 @@ exports[`Layer invokes onEsc when modal={false} 1`] = `
     id="esc-test"
   >
     <a
-      aria-hidden="true"
       class="c2"
+      inert=""
       tabindex="-1"
     />
     <button
@@ -2442,8 +2442,8 @@ exports[`Layer margin large 1`] = `
     id="margin-test"
   >
     <a
-      aria-hidden="true"
       class="c3"
+      inert=""
       tabindex="-1"
     />
     This is a layer
@@ -2599,8 +2599,8 @@ exports[`Layer margin medium 1`] = `
     id="margin-test"
   >
     <a
-      aria-hidden="true"
       class="c3"
+      inert=""
       tabindex="-1"
     />
     This is a layer
@@ -2756,8 +2756,8 @@ exports[`Layer margin none 1`] = `
     id="margin-test"
   >
     <a
-      aria-hidden="true"
       class="c3"
+      inert=""
       tabindex="-1"
     />
     This is a layer
@@ -2913,8 +2913,8 @@ exports[`Layer margin small 1`] = `
     id="margin-test"
   >
     <a
-      aria-hidden="true"
       class="c3"
+      inert=""
       tabindex="-1"
     />
     This is a layer
@@ -3070,8 +3070,8 @@ exports[`Layer margin xsmall 1`] = `
     id="margin-test"
   >
     <a
-      aria-hidden="true"
       class="c3"
+      inert=""
       tabindex="-1"
     />
     This is a layer
@@ -3213,8 +3213,8 @@ exports[`Layer non-modal 1`] = `
     id="non-modal-test"
   >
     <a
-      aria-hidden="true"
       class="c2"
+      inert=""
       tabindex="-1"
     />
     This is a non-modal layer
@@ -3323,8 +3323,8 @@ exports[`Layer not steal focus from an autofocus focusable element 1`] = `
   data-testid="focus-layer-input-test"
 >
   <a
-    aria-hidden="true"
     class="c1"
+    inert=""
     tabindex="-1"
   />
   <input
@@ -3437,8 +3437,8 @@ exports[`Layer plain 1`] = `
     id="plain-test"
   >
     <a
-      aria-hidden="true"
       class="c3"
+      inert=""
       tabindex="-1"
     />
     This is a plain layer
@@ -3594,8 +3594,8 @@ exports[`Layer position: bottom - full: false 1`] = `
     id="position-full-test"
   >
     <a
-      aria-hidden="true"
       class="c3"
+      inert=""
       tabindex="-1"
     />
     This is a layer
@@ -3752,8 +3752,8 @@ exports[`Layer position: bottom - full: horizontal 1`] = `
     id="position-full-test"
   >
     <a
-      aria-hidden="true"
       class="c3"
+      inert=""
       tabindex="-1"
     />
     This is a layer
@@ -3911,8 +3911,8 @@ exports[`Layer position: bottom - full: true 1`] = `
     id="position-full-test"
   >
     <a
-      aria-hidden="true"
       class="c3"
+      inert=""
       tabindex="-1"
     />
     This is a layer
@@ -4069,8 +4069,8 @@ exports[`Layer position: bottom - full: vertical 1`] = `
     id="position-full-test"
   >
     <a
-      aria-hidden="true"
       class="c3"
+      inert=""
       tabindex="-1"
     />
     This is a layer
@@ -4226,8 +4226,8 @@ exports[`Layer position: bottom-left - full: false 1`] = `
     id="position-full-test"
   >
     <a
-      aria-hidden="true"
       class="c3"
+      inert=""
       tabindex="-1"
     />
     This is a layer
@@ -4384,8 +4384,8 @@ exports[`Layer position: bottom-left - full: horizontal 1`] = `
     id="position-full-test"
   >
     <a
-      aria-hidden="true"
       class="c3"
+      inert=""
       tabindex="-1"
     />
     This is a layer
@@ -4543,8 +4543,8 @@ exports[`Layer position: bottom-left - full: true 1`] = `
     id="position-full-test"
   >
     <a
-      aria-hidden="true"
       class="c3"
+      inert=""
       tabindex="-1"
     />
     This is a layer
@@ -4701,8 +4701,8 @@ exports[`Layer position: bottom-left - full: vertical 1`] = `
     id="position-full-test"
   >
     <a
-      aria-hidden="true"
       class="c3"
+      inert=""
       tabindex="-1"
     />
     This is a layer
@@ -4858,8 +4858,8 @@ exports[`Layer position: bottom-right - full: false 1`] = `
     id="position-full-test"
   >
     <a
-      aria-hidden="true"
       class="c3"
+      inert=""
       tabindex="-1"
     />
     This is a layer
@@ -5016,8 +5016,8 @@ exports[`Layer position: bottom-right - full: horizontal 1`] = `
     id="position-full-test"
   >
     <a
-      aria-hidden="true"
       class="c3"
+      inert=""
       tabindex="-1"
     />
     This is a layer
@@ -5175,8 +5175,8 @@ exports[`Layer position: bottom-right - full: true 1`] = `
     id="position-full-test"
   >
     <a
-      aria-hidden="true"
       class="c3"
+      inert=""
       tabindex="-1"
     />
     This is a layer
@@ -5333,8 +5333,8 @@ exports[`Layer position: bottom-right - full: vertical 1`] = `
     id="position-full-test"
   >
     <a
-      aria-hidden="true"
       class="c3"
+      inert=""
       tabindex="-1"
     />
     This is a layer
@@ -5490,8 +5490,8 @@ exports[`Layer position: center - full: false 1`] = `
     id="position-full-test"
   >
     <a
-      aria-hidden="true"
       class="c3"
+      inert=""
       tabindex="-1"
     />
     This is a layer
@@ -5648,8 +5648,8 @@ exports[`Layer position: center - full: horizontal 1`] = `
     id="position-full-test"
   >
     <a
-      aria-hidden="true"
       class="c3"
+      inert=""
       tabindex="-1"
     />
     This is a layer
@@ -5806,8 +5806,8 @@ exports[`Layer position: center - full: true 1`] = `
     id="position-full-test"
   >
     <a
-      aria-hidden="true"
       class="c3"
+      inert=""
       tabindex="-1"
     />
     This is a layer
@@ -5964,8 +5964,8 @@ exports[`Layer position: center - full: vertical 1`] = `
     id="position-full-test"
   >
     <a
-      aria-hidden="true"
       class="c3"
+      inert=""
       tabindex="-1"
     />
     This is a layer
@@ -6121,8 +6121,8 @@ exports[`Layer position: end - full: false 1`] = `
     id="position-full-test"
   >
     <a
-      aria-hidden="true"
       class="c3"
+      inert=""
       tabindex="-1"
     />
     This is a layer
@@ -6279,8 +6279,8 @@ exports[`Layer position: end - full: horizontal 1`] = `
     id="position-full-test"
   >
     <a
-      aria-hidden="true"
       class="c3"
+      inert=""
       tabindex="-1"
     />
     This is a layer
@@ -6438,8 +6438,8 @@ exports[`Layer position: end - full: true 1`] = `
     id="position-full-test"
   >
     <a
-      aria-hidden="true"
       class="c3"
+      inert=""
       tabindex="-1"
     />
     This is a layer
@@ -6596,8 +6596,8 @@ exports[`Layer position: end - full: vertical 1`] = `
     id="position-full-test"
   >
     <a
-      aria-hidden="true"
       class="c3"
+      inert=""
       tabindex="-1"
     />
     This is a layer
@@ -6753,8 +6753,8 @@ exports[`Layer position: left - full: false 1`] = `
     id="position-full-test"
   >
     <a
-      aria-hidden="true"
       class="c3"
+      inert=""
       tabindex="-1"
     />
     This is a layer
@@ -6911,8 +6911,8 @@ exports[`Layer position: left - full: horizontal 1`] = `
     id="position-full-test"
   >
     <a
-      aria-hidden="true"
       class="c3"
+      inert=""
       tabindex="-1"
     />
     This is a layer
@@ -7070,8 +7070,8 @@ exports[`Layer position: left - full: true 1`] = `
     id="position-full-test"
   >
     <a
-      aria-hidden="true"
       class="c3"
+      inert=""
       tabindex="-1"
     />
     This is a layer
@@ -7228,8 +7228,8 @@ exports[`Layer position: left - full: vertical 1`] = `
     id="position-full-test"
   >
     <a
-      aria-hidden="true"
       class="c3"
+      inert=""
       tabindex="-1"
     />
     This is a layer
@@ -7385,8 +7385,8 @@ exports[`Layer position: right - full: false 1`] = `
     id="position-full-test"
   >
     <a
-      aria-hidden="true"
       class="c3"
+      inert=""
       tabindex="-1"
     />
     This is a layer
@@ -7543,8 +7543,8 @@ exports[`Layer position: right - full: horizontal 1`] = `
     id="position-full-test"
   >
     <a
-      aria-hidden="true"
       class="c3"
+      inert=""
       tabindex="-1"
     />
     This is a layer
@@ -7702,8 +7702,8 @@ exports[`Layer position: right - full: true 1`] = `
     id="position-full-test"
   >
     <a
-      aria-hidden="true"
       class="c3"
+      inert=""
       tabindex="-1"
     />
     This is a layer
@@ -7860,8 +7860,8 @@ exports[`Layer position: right - full: vertical 1`] = `
     id="position-full-test"
   >
     <a
-      aria-hidden="true"
       class="c3"
+      inert=""
       tabindex="-1"
     />
     This is a layer
@@ -8017,8 +8017,8 @@ exports[`Layer position: start - full: false 1`] = `
     id="position-full-test"
   >
     <a
-      aria-hidden="true"
       class="c3"
+      inert=""
       tabindex="-1"
     />
     This is a layer
@@ -8175,8 +8175,8 @@ exports[`Layer position: start - full: horizontal 1`] = `
     id="position-full-test"
   >
     <a
-      aria-hidden="true"
       class="c3"
+      inert=""
       tabindex="-1"
     />
     This is a layer
@@ -8334,8 +8334,8 @@ exports[`Layer position: start - full: true 1`] = `
     id="position-full-test"
   >
     <a
-      aria-hidden="true"
       class="c3"
+      inert=""
       tabindex="-1"
     />
     This is a layer
@@ -8492,8 +8492,8 @@ exports[`Layer position: start - full: vertical 1`] = `
     id="position-full-test"
   >
     <a
-      aria-hidden="true"
       class="c3"
+      inert=""
       tabindex="-1"
     />
     This is a layer
@@ -8649,8 +8649,8 @@ exports[`Layer position: top - full: false 1`] = `
     id="position-full-test"
   >
     <a
-      aria-hidden="true"
       class="c3"
+      inert=""
       tabindex="-1"
     />
     This is a layer
@@ -8807,8 +8807,8 @@ exports[`Layer position: top - full: horizontal 1`] = `
     id="position-full-test"
   >
     <a
-      aria-hidden="true"
       class="c3"
+      inert=""
       tabindex="-1"
     />
     This is a layer
@@ -8966,8 +8966,8 @@ exports[`Layer position: top - full: true 1`] = `
     id="position-full-test"
   >
     <a
-      aria-hidden="true"
       class="c3"
+      inert=""
       tabindex="-1"
     />
     This is a layer
@@ -9124,8 +9124,8 @@ exports[`Layer position: top - full: vertical 1`] = `
     id="position-full-test"
   >
     <a
-      aria-hidden="true"
       class="c3"
+      inert=""
       tabindex="-1"
     />
     This is a layer
@@ -9281,8 +9281,8 @@ exports[`Layer position: top-left - full: false 1`] = `
     id="position-full-test"
   >
     <a
-      aria-hidden="true"
       class="c3"
+      inert=""
       tabindex="-1"
     />
     This is a layer
@@ -9439,8 +9439,8 @@ exports[`Layer position: top-left - full: horizontal 1`] = `
     id="position-full-test"
   >
     <a
-      aria-hidden="true"
       class="c3"
+      inert=""
       tabindex="-1"
     />
     This is a layer
@@ -9598,8 +9598,8 @@ exports[`Layer position: top-left - full: true 1`] = `
     id="position-full-test"
   >
     <a
-      aria-hidden="true"
       class="c3"
+      inert=""
       tabindex="-1"
     />
     This is a layer
@@ -9756,8 +9756,8 @@ exports[`Layer position: top-left - full: vertical 1`] = `
     id="position-full-test"
   >
     <a
-      aria-hidden="true"
       class="c3"
+      inert=""
       tabindex="-1"
     />
     This is a layer
@@ -9913,8 +9913,8 @@ exports[`Layer position: top-right - full: false 1`] = `
     id="position-full-test"
   >
     <a
-      aria-hidden="true"
       class="c3"
+      inert=""
       tabindex="-1"
     />
     This is a layer
@@ -10071,8 +10071,8 @@ exports[`Layer position: top-right - full: horizontal 1`] = `
     id="position-full-test"
   >
     <a
-      aria-hidden="true"
       class="c3"
+      inert=""
       tabindex="-1"
     />
     This is a layer
@@ -10230,8 +10230,8 @@ exports[`Layer position: top-right - full: true 1`] = `
     id="position-full-test"
   >
     <a
-      aria-hidden="true"
       class="c3"
+      inert=""
       tabindex="-1"
     />
     This is a layer
@@ -10388,8 +10388,8 @@ exports[`Layer position: top-right - full: vertical 1`] = `
     id="position-full-test"
   >
     <a
-      aria-hidden="true"
       class="c3"
+      inert=""
       tabindex="-1"
     />
     This is a layer
@@ -10545,8 +10545,8 @@ exports[`Layer renders outside grommet wrapper 1`] = `
     id="grommet-test"
   >
     <a
-      aria-hidden="true"
       class="c3"
+      inert=""
       tabindex="-1"
     />
     This is layer
@@ -10702,8 +10702,8 @@ exports[`Layer should apply background 1`] = `
     id="margin-test"
   >
     <a
-      aria-hidden="true"
       class="c3"
+      inert=""
       tabindex="-1"
     />
     This is a layer
@@ -10858,8 +10858,8 @@ exports[`Layer should only place id on StyledLayer when singleId === true 1`] = 
     id="singleId-test__container"
   >
     <a
-      aria-hidden="true"
       class="c3"
+      inert=""
       tabindex="-1"
     />
     This is a layer
@@ -11016,8 +11016,8 @@ exports[`Layer should render correct border radius for position: bottom -
     id="border-radius-test"
   >
     <a
-      aria-hidden="true"
       class="c3"
+      inert=""
       tabindex="-1"
     />
     This is a layer
@@ -11176,8 +11176,8 @@ exports[`Layer should render correct border radius for position: bottom -
     id="border-radius-test"
   >
     <a
-      aria-hidden="true"
       class="c3"
+      inert=""
       tabindex="-1"
     />
     This is a layer
@@ -11337,8 +11337,8 @@ exports[`Layer should render correct border radius for position: bottom -
     id="border-radius-test"
   >
     <a
-      aria-hidden="true"
       class="c3"
+      inert=""
       tabindex="-1"
     />
     This is a layer
@@ -11497,8 +11497,8 @@ exports[`Layer should render correct border radius for position: bottom -
     id="border-radius-test"
   >
     <a
-      aria-hidden="true"
       class="c3"
+      inert=""
       tabindex="-1"
     />
     This is a layer
@@ -11656,8 +11656,8 @@ exports[`Layer should render correct border radius for position: bottom-left -
     id="border-radius-test"
   >
     <a
-      aria-hidden="true"
       class="c3"
+      inert=""
       tabindex="-1"
     />
     This is a layer
@@ -11816,8 +11816,8 @@ exports[`Layer should render correct border radius for position: bottom-left -
     id="border-radius-test"
   >
     <a
-      aria-hidden="true"
       class="c3"
+      inert=""
       tabindex="-1"
     />
     This is a layer
@@ -11977,8 +11977,8 @@ exports[`Layer should render correct border radius for position: bottom-left -
     id="border-radius-test"
   >
     <a
-      aria-hidden="true"
       class="c3"
+      inert=""
       tabindex="-1"
     />
     This is a layer
@@ -12137,8 +12137,8 @@ exports[`Layer should render correct border radius for position: bottom-left -
     id="border-radius-test"
   >
     <a
-      aria-hidden="true"
       class="c3"
+      inert=""
       tabindex="-1"
     />
     This is a layer
@@ -12296,8 +12296,8 @@ exports[`Layer should render correct border radius for position: bottom-right -
     id="border-radius-test"
   >
     <a
-      aria-hidden="true"
       class="c3"
+      inert=""
       tabindex="-1"
     />
     This is a layer
@@ -12456,8 +12456,8 @@ exports[`Layer should render correct border radius for position: bottom-right -
     id="border-radius-test"
   >
     <a
-      aria-hidden="true"
       class="c3"
+      inert=""
       tabindex="-1"
     />
     This is a layer
@@ -12617,8 +12617,8 @@ exports[`Layer should render correct border radius for position: bottom-right -
     id="border-radius-test"
   >
     <a
-      aria-hidden="true"
       class="c3"
+      inert=""
       tabindex="-1"
     />
     This is a layer
@@ -12777,8 +12777,8 @@ exports[`Layer should render correct border radius for position: bottom-right -
     id="border-radius-test"
   >
     <a
-      aria-hidden="true"
       class="c3"
+      inert=""
       tabindex="-1"
     />
     This is a layer
@@ -12936,8 +12936,8 @@ exports[`Layer should render correct border radius for position: center -
     id="border-radius-test"
   >
     <a
-      aria-hidden="true"
       class="c3"
+      inert=""
       tabindex="-1"
     />
     This is a layer
@@ -13096,8 +13096,8 @@ exports[`Layer should render correct border radius for position: center -
     id="border-radius-test"
   >
     <a
-      aria-hidden="true"
       class="c3"
+      inert=""
       tabindex="-1"
     />
     This is a layer
@@ -13256,8 +13256,8 @@ exports[`Layer should render correct border radius for position: center -
     id="border-radius-test"
   >
     <a
-      aria-hidden="true"
       class="c3"
+      inert=""
       tabindex="-1"
     />
     This is a layer
@@ -13416,8 +13416,8 @@ exports[`Layer should render correct border radius for position: center -
     id="border-radius-test"
   >
     <a
-      aria-hidden="true"
       class="c3"
+      inert=""
       tabindex="-1"
     />
     This is a layer
@@ -13576,8 +13576,8 @@ exports[`Layer should render correct border radius for position: end -
     id="border-radius-test"
   >
     <a
-      aria-hidden="true"
       class="c3"
+      inert=""
       tabindex="-1"
     />
     This is a layer
@@ -13736,8 +13736,8 @@ exports[`Layer should render correct border radius for position: end -
     id="border-radius-test"
   >
     <a
-      aria-hidden="true"
       class="c3"
+      inert=""
       tabindex="-1"
     />
     This is a layer
@@ -13897,8 +13897,8 @@ exports[`Layer should render correct border radius for position: end -
     id="border-radius-test"
   >
     <a
-      aria-hidden="true"
       class="c3"
+      inert=""
       tabindex="-1"
     />
     This is a layer
@@ -14057,8 +14057,8 @@ exports[`Layer should render correct border radius for position: end -
     id="border-radius-test"
   >
     <a
-      aria-hidden="true"
       class="c3"
+      inert=""
       tabindex="-1"
     />
     This is a layer
@@ -14216,8 +14216,8 @@ exports[`Layer should render correct border radius for position: left -
     id="border-radius-test"
   >
     <a
-      aria-hidden="true"
       class="c3"
+      inert=""
       tabindex="-1"
     />
     This is a layer
@@ -14376,8 +14376,8 @@ exports[`Layer should render correct border radius for position: left -
     id="border-radius-test"
   >
     <a
-      aria-hidden="true"
       class="c3"
+      inert=""
       tabindex="-1"
     />
     This is a layer
@@ -14537,8 +14537,8 @@ exports[`Layer should render correct border radius for position: left -
     id="border-radius-test"
   >
     <a
-      aria-hidden="true"
       class="c3"
+      inert=""
       tabindex="-1"
     />
     This is a layer
@@ -14697,8 +14697,8 @@ exports[`Layer should render correct border radius for position: left -
     id="border-radius-test"
   >
     <a
-      aria-hidden="true"
       class="c3"
+      inert=""
       tabindex="-1"
     />
     This is a layer
@@ -14856,8 +14856,8 @@ exports[`Layer should render correct border radius for position: right -
     id="border-radius-test"
   >
     <a
-      aria-hidden="true"
       class="c3"
+      inert=""
       tabindex="-1"
     />
     This is a layer
@@ -15016,8 +15016,8 @@ exports[`Layer should render correct border radius for position: right -
     id="border-radius-test"
   >
     <a
-      aria-hidden="true"
       class="c3"
+      inert=""
       tabindex="-1"
     />
     This is a layer
@@ -15177,8 +15177,8 @@ exports[`Layer should render correct border radius for position: right -
     id="border-radius-test"
   >
     <a
-      aria-hidden="true"
       class="c3"
+      inert=""
       tabindex="-1"
     />
     This is a layer
@@ -15337,8 +15337,8 @@ exports[`Layer should render correct border radius for position: right -
     id="border-radius-test"
   >
     <a
-      aria-hidden="true"
       class="c3"
+      inert=""
       tabindex="-1"
     />
     This is a layer
@@ -15497,8 +15497,8 @@ exports[`Layer should render correct border radius for position: start -
     id="border-radius-test"
   >
     <a
-      aria-hidden="true"
       class="c3"
+      inert=""
       tabindex="-1"
     />
     This is a layer
@@ -15657,8 +15657,8 @@ exports[`Layer should render correct border radius for position: start -
     id="border-radius-test"
   >
     <a
-      aria-hidden="true"
       class="c3"
+      inert=""
       tabindex="-1"
     />
     This is a layer
@@ -15818,8 +15818,8 @@ exports[`Layer should render correct border radius for position: start -
     id="border-radius-test"
   >
     <a
-      aria-hidden="true"
       class="c3"
+      inert=""
       tabindex="-1"
     />
     This is a layer
@@ -15978,8 +15978,8 @@ exports[`Layer should render correct border radius for position: start -
     id="border-radius-test"
   >
     <a
-      aria-hidden="true"
       class="c3"
+      inert=""
       tabindex="-1"
     />
     This is a layer
@@ -16137,8 +16137,8 @@ exports[`Layer should render correct border radius for position: top -
     id="border-radius-test"
   >
     <a
-      aria-hidden="true"
       class="c3"
+      inert=""
       tabindex="-1"
     />
     This is a layer
@@ -16297,8 +16297,8 @@ exports[`Layer should render correct border radius for position: top -
     id="border-radius-test"
   >
     <a
-      aria-hidden="true"
       class="c3"
+      inert=""
       tabindex="-1"
     />
     This is a layer
@@ -16458,8 +16458,8 @@ exports[`Layer should render correct border radius for position: top -
     id="border-radius-test"
   >
     <a
-      aria-hidden="true"
       class="c3"
+      inert=""
       tabindex="-1"
     />
     This is a layer
@@ -16618,8 +16618,8 @@ exports[`Layer should render correct border radius for position: top -
     id="border-radius-test"
   >
     <a
-      aria-hidden="true"
       class="c3"
+      inert=""
       tabindex="-1"
     />
     This is a layer
@@ -16777,8 +16777,8 @@ exports[`Layer should render correct border radius for position: top-left -
     id="border-radius-test"
   >
     <a
-      aria-hidden="true"
       class="c3"
+      inert=""
       tabindex="-1"
     />
     This is a layer
@@ -16937,8 +16937,8 @@ exports[`Layer should render correct border radius for position: top-left -
     id="border-radius-test"
   >
     <a
-      aria-hidden="true"
       class="c3"
+      inert=""
       tabindex="-1"
     />
     This is a layer
@@ -17098,8 +17098,8 @@ exports[`Layer should render correct border radius for position: top-left -
     id="border-radius-test"
   >
     <a
-      aria-hidden="true"
       class="c3"
+      inert=""
       tabindex="-1"
     />
     This is a layer
@@ -17258,8 +17258,8 @@ exports[`Layer should render correct border radius for position: top-left -
     id="border-radius-test"
   >
     <a
-      aria-hidden="true"
       class="c3"
+      inert=""
       tabindex="-1"
     />
     This is a layer
@@ -17417,8 +17417,8 @@ exports[`Layer should render correct border radius for position: top-right -
     id="border-radius-test"
   >
     <a
-      aria-hidden="true"
       class="c3"
+      inert=""
       tabindex="-1"
     />
     This is a layer
@@ -17577,8 +17577,8 @@ exports[`Layer should render correct border radius for position: top-right -
     id="border-radius-test"
   >
     <a
-      aria-hidden="true"
       class="c3"
+      inert=""
       tabindex="-1"
     />
     This is a layer
@@ -17738,8 +17738,8 @@ exports[`Layer should render correct border radius for position: top-right -
     id="border-radius-test"
   >
     <a
-      aria-hidden="true"
       class="c3"
+      inert=""
       tabindex="-1"
     />
     This is a layer
@@ -17898,8 +17898,8 @@ exports[`Layer should render correct border radius for position: top-right -
     id="border-radius-test"
   >
     <a
-      aria-hidden="true"
       class="c3"
+      inert=""
       tabindex="-1"
     />
     This is a layer
@@ -18048,8 +18048,8 @@ exports[`Layer target 1`] = `
     id="target-test"
   >
     <a
-      aria-hidden="true"
       class="c3"
+      inert=""
       tabindex="-1"
     />
     this is a test layer
@@ -18164,8 +18164,8 @@ exports[`Layer target not modal 1`] = `
     id="target-test"
   >
     <a
-      aria-hidden="true"
       class="c2"
+      inert=""
       tabindex="-1"
     />
     this is a test layer
