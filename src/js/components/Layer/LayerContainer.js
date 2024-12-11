@@ -231,7 +231,7 @@ const LayerContainer = forwardRef(
       >
         {/* eslint-disable max-len */}
         {/* eslint-disable jsx-a11y/anchor-is-valid, jsx-a11y/anchor-has-content */}
-        <HiddenAnchor ref={anchorRef} tabIndex="-1" aria-hidden="true" />
+        <HiddenAnchor ref={anchorRef} tabIndex="-1" inert="" />
         {/* eslint-enable jsx-a11y/anchor-is-valid, jsx-a11y/anchor-has-content */}
         {/* eslint-enable max-len */}
         {children}

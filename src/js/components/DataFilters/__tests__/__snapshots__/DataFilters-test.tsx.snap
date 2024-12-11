@@ -1671,8 +1671,8 @@ exports[`DataFilters layer 2`] = `
     id="test-data--filters-layer"
   >
     <a
-      aria-hidden="true"
       class="c3"
+      inert=""
       tabindex="-1"
     />
     <div
