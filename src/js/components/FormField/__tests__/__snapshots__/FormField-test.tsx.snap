@@ -1741,7 +1741,7 @@ exports[`FormField help 1`] = `
   margin-inline-start: 12px;
   font-size: 18px;
   line-height: 24px;
-  color: #777777;
+  color: #555555;
 }
 
 .c0 {

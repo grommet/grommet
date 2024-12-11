@@ -111,8 +111,8 @@ export const Themed = () => (
             }}
           >
             <TextInput
-              id="example1-id"
-              name="example1"
+              id="example2-id"
+              name="example2"
               placeholder="Placeholder input prompt"
               disabled
             />

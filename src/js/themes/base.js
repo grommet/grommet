@@ -1045,7 +1045,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
       // extend: undefined,
       help: {
-        color: 'dark-3',
+        color: 'dark-2',
         margin: {
           start: 'small',
         },
