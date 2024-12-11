@@ -60,7 +60,7 @@ export const FieldSpacingOptions = () => (
             Default Spacing
           </Heading>
           <FormField
-            htmlFor="example1-id"
+            htmlFor="textinput1-id"
             name="example1"
             label="Field Label"
             help="Some helpful descriptive text"
@@ -68,19 +68,19 @@ export const FieldSpacingOptions = () => (
             info="Additional contextual information"
           >
             <TextInput
-              id="example1-id"
+              id="textinput1-id"
               name="example1"
               placeholder="Placeholder input prompt"
             />
           </FormField>
           <FormField
-            htmlFor="example2-id"
+            htmlFor="radiobutton2-id"
             name="example2"
             label="Field Label for Grouped Input"
             help="Choose your favorite"
           >
             <RadioButtonGroup
-              id="example2-id"
+              id="radiobutton2-id"
               name="example2"
               options={['Eenie', 'Meenie', 'Miney', 'Moe']}
             />
@@ -98,7 +98,7 @@ export const FieldSpacingOptions = () => (
             }}
           >
             <FormField
-              htmlFor="example3-id"
+              htmlFor="textinput3-id"
               name="example3"
               label="Field Label"
               help="Some helpful descriptive text"
@@ -106,19 +106,19 @@ export const FieldSpacingOptions = () => (
               info="Additional contextual information"
             >
               <TextInput
-                id="example3-id"
+                id="textinput3-id"
                 name="example3"
                 placeholder="Placeholder input prompt"
               />
             </FormField>
             <FormField
-              htmlFor="example4-id"
+              htmlFor="radiobutton4-id"
               name="example4"
               label="Field Label for Grouped Input"
               help="Choose your favorite"
             >
               <RadioButtonGroup
-                id="example4-id"
+                id="radiobutton4-id"
                 name="example4"
                 options={['Eenie', 'Meenie', 'Miney', 'Moe']}
               />
@@ -140,7 +140,7 @@ export const FieldSpacingOptions = () => (
             }}
           >
             <FormField
-              htmlFor="example5-id"
+              htmlFor="textinput5-id"
               name="example5"
               label="Field Label"
               help="Some helpful descriptive text"
@@ -148,19 +148,19 @@ export const FieldSpacingOptions = () => (
               info="Additional contextual information"
             >
               <TextInput
-                id="example5-id"
+                id="textinput5-id"
                 name="example5"
                 placeholder="Placeholder input prompt"
               />
             </FormField>
             <FormField
-              htmlFor="example6-id"
+              htmlFor="radiobutton6-id"
               name="example6"
               label="Field Label for Grouped Input"
               help="Choose your favorite"
             >
               <RadioButtonGroup
-                id="example6-id"
+                id="radiobutton6-id"
                 name="example6"
                 options={['Eenie', 'Meenie', 'Miney', 'Moe']}
               />
@@ -182,7 +182,7 @@ export const FieldSpacingOptions = () => (
             }}
           >
             <FormField
-              htmlFor="example7-id"
+              htmlFor="textinput7-id"
               name="example7"
               label="Field Label"
               help="Some helpful descriptive text"
@@ -190,19 +190,19 @@ export const FieldSpacingOptions = () => (
               info="Additional contextual information"
             >
               <TextInput
-                id="example7-id"
+                id="textinput7-id"
                 name="example7"
                 placeholder="Placeholder input prompt"
               />
             </FormField>
             <FormField
-              htmlFor="example8-id"
+              htmlFor="radiobutton8-id"
               name="example8"
               label="Field Label for Grouped Input"
               help="Choose your favorite"
             >
               <RadioButtonGroup
-                id="example8-id"
+                id="radiobutton8-id"
                 name="example8"
                 options={['Eenie', 'Meenie', 'Miney', 'Moe']}
               />
@@ -224,7 +224,7 @@ export const FieldSpacingOptions = () => (
             }}
           >
             <FormField
-              htmlFor="example9-id"
+              htmlFor="textinput9-id"
               name="example9"
               label="Field Label"
               help="Some helpful descriptive text"
@@ -233,19 +233,19 @@ export const FieldSpacingOptions = () => (
               pad
             >
               <TextInput
-                id="example9-id"
+                id="textinput9-id"
                 name="example9"
                 placeholder="Placeholder input prompt"
               />
             </FormField>
             <FormField
-              htmlFor="example10-id"
+              htmlFor="radiobutton10-id"
               name="example10"
               label="Field Label for Grouped Input"
               help="Choose your favorite"
             >
               <RadioButtonGroup
-                id="example10-id"
+                id="radiobutton10-id"
                 name="example10"
                 options={['Eenie', 'Meenie', 'Miney', 'Moe']}
               />
