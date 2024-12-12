@@ -52,17 +52,6 @@ exports[`Layer animation fadeIn 1`] = `
   animation: RcxFP 0.2s ease-in-out forwards;
 }
 
-.c3 {
-  width: 0;
-  height: 0;
-  overflow: hidden;
-  position: absolute;
-}
-
-.c3:focus {
-  outline: none;
-}
-
 @media only screen and (max-width: 768px) {
   .c0 {
     position: fixed;
@@ -102,11 +91,6 @@ exports[`Layer animation fadeIn 1`] = `
     data-g-portal-id="0"
     id="animation-test"
   >
-    <a
-      class="c3"
-      inert=""
-      tabindex="-1"
-    />
     This is a layer
   </div>
 </div>
@@ -208,17 +192,6 @@ exports[`Layer animation false 1`] = `
   transform: translate(-50%,-50%);
 }
 
-.c3 {
-  width: 0;
-  height: 0;
-  overflow: hidden;
-  position: absolute;
-}
-
-.c3:focus {
-  outline: none;
-}
-
 @media only screen and (max-width: 768px) {
   .c0 {
     position: fixed;
@@ -258,11 +231,6 @@ exports[`Layer animation false 1`] = `
     data-g-portal-id="0"
     id="animation-test"
   >
-    <a
-      class="c3"
-      inert=""
-      tabindex="-1"
-    />
     This is a layer
   </div>
 </div>
@@ -365,17 +333,6 @@ exports[`Layer animation slide 1`] = `
   animation: hWAzxx 0.2s ease-in-out forwards;
 }
 
-.c3 {
-  width: 0;
-  height: 0;
-  overflow: hidden;
-  position: absolute;
-}
-
-.c3:focus {
-  outline: none;
-}
-
 @media only screen and (max-width: 768px) {
   .c0 {
     position: fixed;
@@ -415,11 +372,6 @@ exports[`Layer animation slide 1`] = `
     data-g-portal-id="0"
     id="animation-test"
   >
-    <a
-      class="c3"
-      inert=""
-      tabindex="-1"
-    />
     This is a layer
   </div>
 </div>
@@ -522,17 +474,6 @@ exports[`Layer animation true 1`] = `
   animation: hWAzxx 0.2s ease-in-out forwards;
 }
 
-.c3 {
-  width: 0;
-  height: 0;
-  overflow: hidden;
-  position: absolute;
-}
-
-.c3:focus {
-  outline: none;
-}
-
 @media only screen and (max-width: 768px) {
   .c0 {
     position: fixed;
@@ -572,11 +513,6 @@ exports[`Layer animation true 1`] = `
     data-g-portal-id="0"
     id="animation-test"
   >
-    <a
-      class="c3"
-      inert=""
-      tabindex="-1"
-    />
     This is a layer
   </div>
 </div>
@@ -679,17 +615,6 @@ exports[`Layer custom margin 1`] = `
   animation: hWAzxx 0.2s ease-in-out forwards;
 }
 
-.c3 {
-  width: 0;
-  height: 0;
-  overflow: hidden;
-  position: absolute;
-}
-
-.c3:focus {
-  outline: none;
-}
-
 @media only screen and (max-width: 768px) {
   .c0 {
     position: fixed;
@@ -729,11 +654,6 @@ exports[`Layer custom margin 1`] = `
     data-g-portal-id="0"
     id="margin-test"
   >
-    <a
-      class="c3"
-      inert=""
-      tabindex="-1"
-    />
     This is a layer
   </div>
 </div>
@@ -837,17 +757,6 @@ exports[`Layer custom theme 1`] = `
   transform: translate(-50%,-50%);
 }
 
-.c3 {
-  width: 0;
-  height: 0;
-  overflow: hidden;
-  position: absolute;
-}
-
-.c3:focus {
-  outline: none;
-}
-
 @media only screen and (max-width: 768px) {
   .c0 {
     position: fixed;
@@ -887,11 +796,6 @@ exports[`Layer custom theme 1`] = `
     data-g-portal-id="0"
     id="custom-theme-test"
   >
-    <a
-      class="c3"
-      inert=""
-      tabindex="-1"
-    />
     This is a layer
   </div>
 </div>
@@ -989,17 +893,6 @@ exports[`Layer dark context 1`] = `
   animation: hWAzxx 0.2s ease-in-out forwards;
 }
 
-.c2 {
-  width: 0;
-  height: 0;
-  overflow: hidden;
-  position: absolute;
-}
-
-.c2:focus {
-  outline: none;
-}
-
 @media only screen and (max-width: 768px) {
   .c0 {
     position: fixed;
@@ -1030,11 +923,6 @@ exports[`Layer dark context 1`] = `
     data-g-portal-id="0"
     id="non-modal-test"
   >
-    <a
-      class="c2"
-      inert=""
-      tabindex="-1"
-    />
     This is a non-modal layer
   </div>
 </div>
@@ -1105,17 +993,6 @@ exports[`Layer focus on layer 1`] = `
   animation: hWAzxx 0.2s ease-in-out forwards;
 }
 
-.c1 {
-  width: 0;
-  height: 0;
-  overflow: hidden;
-  position: absolute;
-}
-
-.c1:focus {
-  outline: none;
-}
-
 @media only screen and (max-width: 768px) {
 
 }
@@ -1140,11 +1017,6 @@ exports[`Layer focus on layer 1`] = `
   data-g-portal-id="0"
   data-testid="focus-layer-test"
 >
-  <a
-    class="c1"
-    inert=""
-    tabindex="-1"
-  />
   <input />
 </div>
 `;
@@ -1196,17 +1068,6 @@ exports[`Layer hidden 1`] = `
   border-radius: 4px;
 }
 
-.c3 {
-  width: 0;
-  height: 0;
-  overflow: hidden;
-  position: absolute;
-}
-
-.c3:focus {
-  outline: none;
-}
-
 @media only screen and (max-width: 768px) {
   .c1 {
     position: relative;
@@ -1237,11 +1098,6 @@ exports[`Layer hidden 1`] = `
     data-g-portal-id="0"
     id="hidden-test"
   >
-    <a
-      class="c3"
-      inert=""
-      tabindex="-1"
-    />
     This is a layer
   </div>
 </div>
@@ -1287,11 +1143,6 @@ exports[`Layer hidden 3`] = `
     data-g-portal-id="0"
     id="hidden-test"
   >
-    <a
-      class="LayerContainer__HiddenAnchor-sc-1srj14c-0 kwDYmk"
-      inert=""
-      tabindex="-1"
-    />
     This is a layer
   </div>
 </div>
@@ -1388,17 +1239,6 @@ exports[`Layer invoke onClickOutside when modal={false} 1`] = `
   transform: translate(-50%,-50%);
 }
 
-.c2 {
-  width: 0;
-  height: 0;
-  overflow: hidden;
-  position: absolute;
-}
-
-.c2:focus {
-  outline: none;
-}
-
 @media only screen and (max-width: 768px) {
   .c0 {
     position: fixed;
@@ -1429,11 +1269,6 @@ exports[`Layer invoke onClickOutside when modal={false} 1`] = `
     data-g-portal-id="0"
     id="layer-node"
   >
-    <a
-      class="c2"
-      inert=""
-      tabindex="-1"
-    />
     <div>
       This is a layer
       <input
@@ -1535,17 +1370,6 @@ exports[`Layer invoke onClickOutside when modal={false} and layer has target 1`]
   transform: translate(-50%,-50%);
 }
 
-.c2 {
-  width: 0;
-  height: 0;
-  overflow: hidden;
-  position: absolute;
-}
-
-.c2:focus {
-  outline: none;
-}
-
 @media only screen and (max-width: 768px) {
   .c1 {
     position: relative;
@@ -1568,11 +1392,6 @@ exports[`Layer invoke onClickOutside when modal={false} and layer has target 1`]
     data-g-portal-id="0"
     id="target-test"
   >
-    <a
-      class="c2"
-      inert=""
-      tabindex="-1"
-    />
     this is a test layer
   </div>
 </div>
@@ -1655,17 +1474,6 @@ exports[`Layer invoke onClickOutside when modal={true} 1`] = `
   transform: translate(-50%,-50%);
 }
 
-.c3 {
-  width: 0;
-  height: 0;
-  overflow: hidden;
-  position: absolute;
-}
-
-.c3:focus {
-  outline: none;
-}
-
 @media only screen and (max-width: 768px) {
   .c0 {
     position: fixed;
@@ -1705,11 +1513,6 @@ exports[`Layer invoke onClickOutside when modal={true} 1`] = `
     data-g-portal-id="0"
     id="layer-node"
   >
-    <a
-      class="c3"
-      inert=""
-      tabindex="-1"
-    />
     <div>
       This is a layer
       <input
@@ -1816,17 +1619,6 @@ exports[`Layer invoke onClickOutside when modal={true} and layer has target 1`] 
   transform: translate(-50%,-50%);
 }
 
-.c3 {
-  width: 0;
-  height: 0;
-  overflow: hidden;
-  position: absolute;
-}
-
-.c3:focus {
-  outline: none;
-}
-
 @media only screen and (max-width: 768px) {
   .c1 {
     position: relative;
@@ -1858,11 +1650,6 @@ exports[`Layer invoke onClickOutside when modal={true} and layer has target 1`] 
     data-g-portal-id="0"
     id="target-test"
   >
-    <a
-      class="c3"
-      inert=""
-      tabindex="-1"
-    />
     this is a test layer
   </div>
 </div>
@@ -1895,7 +1682,7 @@ exports[`Layer invoke onClickOutside when modal={true} and layer has target 2`] 
 `;
 
 exports[`Layer invokes onEsc when modal={false} 1`] = `
-.c5 {
+.c4 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -1906,7 +1693,7 @@ exports[`Layer invokes onEsc when modal={false} 1`] = `
   justify-content: space-between;
 }
 
-.c6 {
+.c5 {
   display: flex;
   box-sizing: border-box;
   min-width: 0;
@@ -1916,7 +1703,7 @@ exports[`Layer invokes onEsc when modal={false} 1`] = `
   flex-basis: auto;
 }
 
-.c10 {
+.c9 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -1928,7 +1715,7 @@ exports[`Layer invokes onEsc when modal={false} 1`] = `
   flex: 0 0 auto;
 }
 
-.c11 {
+.c10 {
   display: inline-block;
   flex: 0 0 auto;
   width: 24px;
@@ -1937,30 +1724,30 @@ exports[`Layer invokes onEsc when modal={false} 1`] = `
   stroke: #7D4CDB;
 }
 
-.c11 g {
+.c10 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c11 *:not([stroke])[fill='none'] {
+.c10 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c11 *[stroke*='#'],
-.c11 *[STROKE*='#'] {
+.c10 *[stroke*='#'],
+.c10 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
-.c11 *[fill-rule],
-.c11 *[FILL-RULE],
-.c11 *[fill*='#'],
-.c11 *[FILL*='#'] {
+.c10 *[fill-rule],
+.c10 *[FILL-RULE],
+.c10 *[fill*='#'],
+.c10 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
 
-.c3 {
+.c2 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -1977,47 +1764,47 @@ exports[`Layer invokes onEsc when modal={false} 1`] = `
   text-align: inherit;
 }
 
-.c3:focus {
+.c2:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus >circle,
-.c3:focus >ellipse,
-.c3:focus >line,
-.c3:focus >path,
-.c3:focus >polygon,
-.c3:focus >polyline,
-.c3:focus >rect {
+.c2:focus >circle,
+.c2:focus >ellipse,
+.c2:focus >line,
+.c2:focus >path,
+.c2:focus >polygon,
+.c2:focus >polyline,
+.c2:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus ::-moz-focus-inner {
+.c2:focus ::-moz-focus-inner {
   border: 0;
 }
 
-.c3:focus:not(:focus-visible) {
+.c2:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c3:focus:not(:focus-visible) >circle,
-.c3:focus:not(:focus-visible) >ellipse,
-.c3:focus:not(:focus-visible) >line,
-.c3:focus:not(:focus-visible) >path,
-.c3:focus:not(:focus-visible) >polygon,
-.c3:focus:not(:focus-visible) >polyline,
-.c3:focus:not(:focus-visible) >rect {
+.c2:focus:not(:focus-visible) >circle,
+.c2:focus:not(:focus-visible) >ellipse,
+.c2:focus:not(:focus-visible) >line,
+.c2:focus:not(:focus-visible) >path,
+.c2:focus:not(:focus-visible) >polygon,
+.c2:focus:not(:focus-visible) >polyline,
+.c2:focus:not(:focus-visible) >rect {
   outline: none;
   box-shadow: none;
 }
 
-.c3:focus:not(:focus-visible) ::-moz-focus-inner {
+.c2:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 
-.c8 {
+.c7 {
   box-sizing: border-box;
   font-size: inherit;
   font-family: inherit;
@@ -2036,42 +1823,42 @@ exports[`Layer invokes onEsc when modal={false} 1`] = `
   border: none;
 }
 
-.c8::-webkit-input-placeholder {
+.c7::-webkit-input-placeholder {
   color: #AAAAAA;
 }
 
-.c8::-moz-placeholder {
+.c7::-moz-placeholder {
   color: #AAAAAA;
 }
 
-.c8:-ms-input-placeholder {
+.c7:-ms-input-placeholder {
   color: #AAAAAA;
 }
 
-.c8 ::-webkit-search-decoration {
+.c7 ::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
-.c8::-moz-focus-inner {
+.c7::-moz-focus-inner {
   border: none;
   outline: none;
 }
 
-.c8:-moz-placeholder,
-.c8::-moz-placeholder {
+.c7:-moz-placeholder,
+.c7::-moz-placeholder {
   opacity: 1;
 }
 
-.c7 {
+.c6 {
   position: relative;
   width: 100%;
 }
 
-.c9 {
+.c8 {
   cursor: pointer;
 }
 
-.c4 {
+.c3 {
   border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
 }
@@ -2121,19 +1908,8 @@ exports[`Layer invokes onEsc when modal={false} 1`] = `
   transform: translate(-50%,-50%);
 }
 
-.c2 {
-  width: 0;
-  height: 0;
-  overflow: hidden;
-  position: absolute;
-}
-
-.c2:focus {
-  outline: none;
-}
-
 @media only screen and (max-width: 768px) {
-  .c10 {
+  .c9 {
     margin-left: 6px;
     margin-right: 6px;
   }
@@ -2181,30 +1957,25 @@ exports[`Layer invokes onEsc when modal={false} 1`] = `
     data-g-portal-id="0"
     id="esc-test"
   >
-    <a
-      class="c2"
-      inert=""
-      tabindex="-1"
-    />
     <button
       aria-expanded="false"
       aria-haspopup="listbox"
       aria-label="Open Drop"
-      class="c3 c4"
+      class="c2 c3"
       type="button"
     >
       <div
-        class="c5"
+        class="c4"
       >
         <div
-          class="c6"
+          class="c5"
         >
           <div
-            class="c7"
+            class="c6"
           >
             <input
               autocomplete="off"
-              class="c8 c9"
+              class="c7 c8"
               data-testid="test-select"
               inert=""
               readonly=""
@@ -2215,12 +1986,12 @@ exports[`Layer invokes onEsc when modal={false} 1`] = `
           </div>
         </div>
         <div
-          class="c10"
+          class="c9"
           style="min-width: auto;"
         >
           <svg
             aria-label="FormDown"
-            class="c11"
+            class="c10"
             viewBox="0 0 24 24"
           >
             <path
@@ -2391,17 +2162,6 @@ exports[`Layer margin large 1`] = `
   animation: hWAzxx 0.2s ease-in-out forwards;
 }
 
-.c3 {
-  width: 0;
-  height: 0;
-  overflow: hidden;
-  position: absolute;
-}
-
-.c3:focus {
-  outline: none;
-}
-
 @media only screen and (max-width: 768px) {
   .c0 {
     position: fixed;
@@ -2441,11 +2201,6 @@ exports[`Layer margin large 1`] = `
     data-g-portal-id="0"
     id="margin-test"
   >
-    <a
-      class="c3"
-      inert=""
-      tabindex="-1"
-    />
     This is a layer
   </div>
 </div>
@@ -2548,17 +2303,6 @@ exports[`Layer margin medium 1`] = `
   animation: hWAzxx 0.2s ease-in-out forwards;
 }
 
-.c3 {
-  width: 0;
-  height: 0;
-  overflow: hidden;
-  position: absolute;
-}
-
-.c3:focus {
-  outline: none;
-}
-
 @media only screen and (max-width: 768px) {
   .c0 {
     position: fixed;
@@ -2598,11 +2342,6 @@ exports[`Layer margin medium 1`] = `
     data-g-portal-id="0"
     id="margin-test"
   >
-    <a
-      class="c3"
-      inert=""
-      tabindex="-1"
-    />
     This is a layer
   </div>
 </div>
@@ -2705,17 +2444,6 @@ exports[`Layer margin none 1`] = `
   animation: hWAzxx 0.2s ease-in-out forwards;
 }
 
-.c3 {
-  width: 0;
-  height: 0;
-  overflow: hidden;
-  position: absolute;
-}
-
-.c3:focus {
-  outline: none;
-}
-
 @media only screen and (max-width: 768px) {
   .c0 {
     position: fixed;
@@ -2755,11 +2483,6 @@ exports[`Layer margin none 1`] = `
     data-g-portal-id="0"
     id="margin-test"
   >
-    <a
-      class="c3"
-      inert=""
-      tabindex="-1"
-    />
     This is a layer
   </div>
 </div>
@@ -2862,17 +2585,6 @@ exports[`Layer margin small 1`] = `
   animation: hWAzxx 0.2s ease-in-out forwards;
 }
 
-.c3 {
-  width: 0;
-  height: 0;
-  overflow: hidden;
-  position: absolute;
-}
-
-.c3:focus {
-  outline: none;
-}
-
 @media only screen and (max-width: 768px) {
   .c0 {
     position: fixed;
@@ -2912,11 +2624,6 @@ exports[`Layer margin small 1`] = `
     data-g-portal-id="0"
     id="margin-test"
   >
-    <a
-      class="c3"
-      inert=""
-      tabindex="-1"
-    />
     This is a layer
   </div>
 </div>
@@ -3019,17 +2726,6 @@ exports[`Layer margin xsmall 1`] = `
   animation: hWAzxx 0.2s ease-in-out forwards;
 }
 
-.c3 {
-  width: 0;
-  height: 0;
-  overflow: hidden;
-  position: absolute;
-}
-
-.c3:focus {
-  outline: none;
-}
-
 @media only screen and (max-width: 768px) {
   .c0 {
     position: fixed;
@@ -3069,11 +2765,6 @@ exports[`Layer margin xsmall 1`] = `
     data-g-portal-id="0"
     id="margin-test"
   >
-    <a
-      class="c3"
-      inert=""
-      tabindex="-1"
-    />
     This is a layer
   </div>
 </div>
@@ -3171,17 +2862,6 @@ exports[`Layer non-modal 1`] = `
   animation: hWAzxx 0.2s ease-in-out forwards;
 }
 
-.c2 {
-  width: 0;
-  height: 0;
-  overflow: hidden;
-  position: absolute;
-}
-
-.c2:focus {
-  outline: none;
-}
-
 @media only screen and (max-width: 768px) {
   .c0 {
     position: fixed;
@@ -3212,11 +2892,6 @@ exports[`Layer non-modal 1`] = `
     data-g-portal-id="0"
     id="non-modal-test"
   >
-    <a
-      class="c2"
-      inert=""
-      tabindex="-1"
-    />
     This is a non-modal layer
   </div>
 </div>
@@ -3287,17 +2962,6 @@ exports[`Layer not steal focus from an autofocus focusable element 1`] = `
   animation: hWAzxx 0.2s ease-in-out forwards;
 }
 
-.c1 {
-  width: 0;
-  height: 0;
-  overflow: hidden;
-  position: absolute;
-}
-
-.c1:focus {
-  outline: none;
-}
-
 @media only screen and (max-width: 768px) {
 
 }
@@ -3322,11 +2986,6 @@ exports[`Layer not steal focus from an autofocus focusable element 1`] = `
   data-g-portal-id="0"
   data-testid="focus-layer-input-test"
 >
-  <a
-    class="c1"
-    inert=""
-    tabindex="-1"
-  />
   <input
     data-testid="focus-input"
   />
@@ -3386,17 +3045,6 @@ exports[`Layer plain 1`] = `
   animation: hWAzxx 0.2s ease-in-out forwards;
 }
 
-.c3 {
-  width: 0;
-  height: 0;
-  overflow: hidden;
-  position: absolute;
-}
-
-.c3:focus {
-  outline: none;
-}
-
 @media only screen and (max-width: 768px) {
   .c0 {
     position: fixed;
@@ -3436,11 +3084,6 @@ exports[`Layer plain 1`] = `
     data-g-portal-id="0"
     id="plain-test"
   >
-    <a
-      class="c3"
-      inert=""
-      tabindex="-1"
-    />
     This is a plain layer
   </div>
 </div>
@@ -3543,17 +3186,6 @@ exports[`Layer position: bottom - full: false 1`] = `
   animation: fdqiZe 0.2s ease-in-out forwards;
 }
 
-.c3 {
-  width: 0;
-  height: 0;
-  overflow: hidden;
-  position: absolute;
-}
-
-.c3:focus {
-  outline: none;
-}
-
 @media only screen and (max-width: 768px) {
   .c0 {
     position: fixed;
@@ -3593,11 +3225,6 @@ exports[`Layer position: bottom - full: false 1`] = `
     data-g-portal-id="0"
     id="position-full-test"
   >
-    <a
-      class="c3"
-      inert=""
-      tabindex="-1"
-    />
     This is a layer
   </div>
 </div>
@@ -3701,17 +3328,6 @@ exports[`Layer position: bottom - full: horizontal 1`] = `
   animation: cQwfQi 0.2s ease-in-out forwards;
 }
 
-.c3 {
-  width: 0;
-  height: 0;
-  overflow: hidden;
-  position: absolute;
-}
-
-.c3:focus {
-  outline: none;
-}
-
 @media only screen and (max-width: 768px) {
   .c0 {
     position: fixed;
@@ -3751,11 +3367,6 @@ exports[`Layer position: bottom - full: horizontal 1`] = `
     data-g-portal-id="0"
     id="position-full-test"
   >
-    <a
-      class="c3"
-      inert=""
-      tabindex="-1"
-    />
     This is a layer
   </div>
 </div>
@@ -3860,17 +3471,6 @@ exports[`Layer position: bottom - full: true 1`] = `
   animation: cQwfQi 0.2s ease-in-out forwards;
 }
 
-.c3 {
-  width: 0;
-  height: 0;
-  overflow: hidden;
-  position: absolute;
-}
-
-.c3:focus {
-  outline: none;
-}
-
 @media only screen and (max-width: 768px) {
   .c0 {
     position: fixed;
@@ -3910,11 +3510,6 @@ exports[`Layer position: bottom - full: true 1`] = `
     data-g-portal-id="0"
     id="position-full-test"
   >
-    <a
-      class="c3"
-      inert=""
-      tabindex="-1"
-    />
     This is a layer
   </div>
 </div>
@@ -4018,17 +3613,6 @@ exports[`Layer position: bottom - full: vertical 1`] = `
   animation: fdqiZe 0.2s ease-in-out forwards;
 }
 
-.c3 {
-  width: 0;
-  height: 0;
-  overflow: hidden;
-  position: absolute;
-}
-
-.c3:focus {
-  outline: none;
-}
-
 @media only screen and (max-width: 768px) {
   .c0 {
     position: fixed;
@@ -4068,11 +3652,6 @@ exports[`Layer position: bottom - full: vertical 1`] = `
     data-g-portal-id="0"
     id="position-full-test"
   >
-    <a
-      class="c3"
-      inert=""
-      tabindex="-1"
-    />
     This is a layer
   </div>
 </div>
@@ -4175,17 +3754,6 @@ exports[`Layer position: bottom-left - full: false 1`] = `
   animation: cQwfQi 0.2s ease-in-out forwards;
 }
 
-.c3 {
-  width: 0;
-  height: 0;
-  overflow: hidden;
-  position: absolute;
-}
-
-.c3:focus {
-  outline: none;
-}
-
 @media only screen and (max-width: 768px) {
   .c0 {
     position: fixed;
@@ -4225,11 +3793,6 @@ exports[`Layer position: bottom-left - full: false 1`] = `
     data-g-portal-id="0"
     id="position-full-test"
   >
-    <a
-      class="c3"
-      inert=""
-      tabindex="-1"
-    />
     This is a layer
   </div>
 </div>
@@ -4333,17 +3896,6 @@ exports[`Layer position: bottom-left - full: horizontal 1`] = `
   animation: cQwfQi 0.2s ease-in-out forwards;
 }
 
-.c3 {
-  width: 0;
-  height: 0;
-  overflow: hidden;
-  position: absolute;
-}
-
-.c3:focus {
-  outline: none;
-}
-
 @media only screen and (max-width: 768px) {
   .c0 {
     position: fixed;
@@ -4383,11 +3935,6 @@ exports[`Layer position: bottom-left - full: horizontal 1`] = `
     data-g-portal-id="0"
     id="position-full-test"
   >
-    <a
-      class="c3"
-      inert=""
-      tabindex="-1"
-    />
     This is a layer
   </div>
 </div>
@@ -4492,17 +4039,6 @@ exports[`Layer position: bottom-left - full: true 1`] = `
   animation: cQwfQi 0.2s ease-in-out forwards;
 }
 
-.c3 {
-  width: 0;
-  height: 0;
-  overflow: hidden;
-  position: absolute;
-}
-
-.c3:focus {
-  outline: none;
-}
-
 @media only screen and (max-width: 768px) {
   .c0 {
     position: fixed;
@@ -4542,11 +4078,6 @@ exports[`Layer position: bottom-left - full: true 1`] = `
     data-g-portal-id="0"
     id="position-full-test"
   >
-    <a
-      class="c3"
-      inert=""
-      tabindex="-1"
-    />
     This is a layer
   </div>
 </div>
@@ -4650,17 +4181,6 @@ exports[`Layer position: bottom-left - full: vertical 1`] = `
   animation: cQwfQi 0.2s ease-in-out forwards;
 }
 
-.c3 {
-  width: 0;
-  height: 0;
-  overflow: hidden;
-  position: absolute;
-}
-
-.c3:focus {
-  outline: none;
-}
-
 @media only screen and (max-width: 768px) {
   .c0 {
     position: fixed;
@@ -4700,11 +4220,6 @@ exports[`Layer position: bottom-left - full: vertical 1`] = `
     data-g-portal-id="0"
     id="position-full-test"
   >
-    <a
-      class="c3"
-      inert=""
-      tabindex="-1"
-    />
     This is a layer
   </div>
 </div>
@@ -4807,17 +4322,6 @@ exports[`Layer position: bottom-right - full: false 1`] = `
   animation: cQwfQi 0.2s ease-in-out forwards;
 }
 
-.c3 {
-  width: 0;
-  height: 0;
-  overflow: hidden;
-  position: absolute;
-}
-
-.c3:focus {
-  outline: none;
-}
-
 @media only screen and (max-width: 768px) {
   .c0 {
     position: fixed;
@@ -4857,11 +4361,6 @@ exports[`Layer position: bottom-right - full: false 1`] = `
     data-g-portal-id="0"
     id="position-full-test"
   >
-    <a
-      class="c3"
-      inert=""
-      tabindex="-1"
-    />
     This is a layer
   </div>
 </div>
@@ -4965,17 +4464,6 @@ exports[`Layer position: bottom-right - full: horizontal 1`] = `
   animation: cQwfQi 0.2s ease-in-out forwards;
 }
 
-.c3 {
-  width: 0;
-  height: 0;
-  overflow: hidden;
-  position: absolute;
-}
-
-.c3:focus {
-  outline: none;
-}
-
 @media only screen and (max-width: 768px) {
   .c0 {
     position: fixed;
@@ -5015,11 +4503,6 @@ exports[`Layer position: bottom-right - full: horizontal 1`] = `
     data-g-portal-id="0"
     id="position-full-test"
   >
-    <a
-      class="c3"
-      inert=""
-      tabindex="-1"
-    />
     This is a layer
   </div>
 </div>
@@ -5124,17 +4607,6 @@ exports[`Layer position: bottom-right - full: true 1`] = `
   animation: cQwfQi 0.2s ease-in-out forwards;
 }
 
-.c3 {
-  width: 0;
-  height: 0;
-  overflow: hidden;
-  position: absolute;
-}
-
-.c3:focus {
-  outline: none;
-}
-
 @media only screen and (max-width: 768px) {
   .c0 {
     position: fixed;
@@ -5174,11 +4646,6 @@ exports[`Layer position: bottom-right - full: true 1`] = `
     data-g-portal-id="0"
     id="position-full-test"
   >
-    <a
-      class="c3"
-      inert=""
-      tabindex="-1"
-    />
     This is a layer
   </div>
 </div>
@@ -5282,17 +4749,6 @@ exports[`Layer position: bottom-right - full: vertical 1`] = `
   animation: cQwfQi 0.2s ease-in-out forwards;
 }
 
-.c3 {
-  width: 0;
-  height: 0;
-  overflow: hidden;
-  position: absolute;
-}
-
-.c3:focus {
-  outline: none;
-}
-
 @media only screen and (max-width: 768px) {
   .c0 {
     position: fixed;
@@ -5332,11 +4788,6 @@ exports[`Layer position: bottom-right - full: vertical 1`] = `
     data-g-portal-id="0"
     id="position-full-test"
   >
-    <a
-      class="c3"
-      inert=""
-      tabindex="-1"
-    />
     This is a layer
   </div>
 </div>
@@ -5439,17 +4890,6 @@ exports[`Layer position: center - full: false 1`] = `
   animation: hWAzxx 0.2s ease-in-out forwards;
 }
 
-.c3 {
-  width: 0;
-  height: 0;
-  overflow: hidden;
-  position: absolute;
-}
-
-.c3:focus {
-  outline: none;
-}
-
 @media only screen and (max-width: 768px) {
   .c0 {
     position: fixed;
@@ -5489,11 +4929,6 @@ exports[`Layer position: center - full: false 1`] = `
     data-g-portal-id="0"
     id="position-full-test"
   >
-    <a
-      class="c3"
-      inert=""
-      tabindex="-1"
-    />
     This is a layer
   </div>
 </div>
@@ -5597,17 +5032,6 @@ exports[`Layer position: center - full: horizontal 1`] = `
   animation: fEUQAU 0.2s ease-in-out forwards;
 }
 
-.c3 {
-  width: 0;
-  height: 0;
-  overflow: hidden;
-  position: absolute;
-}
-
-.c3:focus {
-  outline: none;
-}
-
 @media only screen and (max-width: 768px) {
   .c0 {
     position: fixed;
@@ -5647,11 +5071,6 @@ exports[`Layer position: center - full: horizontal 1`] = `
     data-g-portal-id="0"
     id="position-full-test"
   >
-    <a
-      class="c3"
-      inert=""
-      tabindex="-1"
-    />
     This is a layer
   </div>
 </div>
@@ -5755,17 +5174,6 @@ exports[`Layer position: center - full: true 1`] = `
   animation: gVgDGd 0.2s ease-in-out forwards;
 }
 
-.c3 {
-  width: 0;
-  height: 0;
-  overflow: hidden;
-  position: absolute;
-}
-
-.c3:focus {
-  outline: none;
-}
-
 @media only screen and (max-width: 768px) {
   .c0 {
     position: fixed;
@@ -5805,11 +5213,6 @@ exports[`Layer position: center - full: true 1`] = `
     data-g-portal-id="0"
     id="position-full-test"
   >
-    <a
-      class="c3"
-      inert=""
-      tabindex="-1"
-    />
     This is a layer
   </div>
 </div>
@@ -5913,17 +5316,6 @@ exports[`Layer position: center - full: vertical 1`] = `
   animation: bgBtCZ 0.2s ease-in-out forwards;
 }
 
-.c3 {
-  width: 0;
-  height: 0;
-  overflow: hidden;
-  position: absolute;
-}
-
-.c3:focus {
-  outline: none;
-}
-
 @media only screen and (max-width: 768px) {
   .c0 {
     position: fixed;
@@ -5963,11 +5355,6 @@ exports[`Layer position: center - full: vertical 1`] = `
     data-g-portal-id="0"
     id="position-full-test"
   >
-    <a
-      class="c3"
-      inert=""
-      tabindex="-1"
-    />
     This is a layer
   </div>
 </div>
@@ -6070,17 +5457,6 @@ exports[`Layer position: end - full: false 1`] = `
   animation: drjPPC 0.2s ease-in-out forwards;
 }
 
-.c3 {
-  width: 0;
-  height: 0;
-  overflow: hidden;
-  position: absolute;
-}
-
-.c3:focus {
-  outline: none;
-}
-
 @media only screen and (max-width: 768px) {
   .c0 {
     position: fixed;
@@ -6120,11 +5496,6 @@ exports[`Layer position: end - full: false 1`] = `
     data-g-portal-id="0"
     id="position-full-test"
   >
-    <a
-      class="c3"
-      inert=""
-      tabindex="-1"
-    />
     This is a layer
   </div>
 </div>
@@ -6228,17 +5599,6 @@ exports[`Layer position: end - full: horizontal 1`] = `
   animation: drjPPC 0.2s ease-in-out forwards;
 }
 
-.c3 {
-  width: 0;
-  height: 0;
-  overflow: hidden;
-  position: absolute;
-}
-
-.c3:focus {
-  outline: none;
-}
-
 @media only screen and (max-width: 768px) {
   .c0 {
     position: fixed;
@@ -6278,11 +5638,6 @@ exports[`Layer position: end - full: horizontal 1`] = `
     data-g-portal-id="0"
     id="position-full-test"
   >
-    <a
-      class="c3"
-      inert=""
-      tabindex="-1"
-    />
     This is a layer
   </div>
 </div>
@@ -6387,17 +5742,6 @@ exports[`Layer position: end - full: true 1`] = `
   animation: bKtuJK 0.2s ease-in-out forwards;
 }
 
-.c3 {
-  width: 0;
-  height: 0;
-  overflow: hidden;
-  position: absolute;
-}
-
-.c3:focus {
-  outline: none;
-}
-
 @media only screen and (max-width: 768px) {
   .c0 {
     position: fixed;
@@ -6437,11 +5781,6 @@ exports[`Layer position: end - full: true 1`] = `
     data-g-portal-id="0"
     id="position-full-test"
   >
-    <a
-      class="c3"
-      inert=""
-      tabindex="-1"
-    />
     This is a layer
   </div>
 </div>
@@ -6545,17 +5884,6 @@ exports[`Layer position: end - full: vertical 1`] = `
   animation: bKtuJK 0.2s ease-in-out forwards;
 }
 
-.c3 {
-  width: 0;
-  height: 0;
-  overflow: hidden;
-  position: absolute;
-}
-
-.c3:focus {
-  outline: none;
-}
-
 @media only screen and (max-width: 768px) {
   .c0 {
     position: fixed;
@@ -6595,11 +5923,6 @@ exports[`Layer position: end - full: vertical 1`] = `
     data-g-portal-id="0"
     id="position-full-test"
   >
-    <a
-      class="c3"
-      inert=""
-      tabindex="-1"
-    />
     This is a layer
   </div>
 </div>
@@ -6702,17 +6025,6 @@ exports[`Layer position: left - full: false 1`] = `
   animation: kPYden 0.2s ease-in-out forwards;
 }
 
-.c3 {
-  width: 0;
-  height: 0;
-  overflow: hidden;
-  position: absolute;
-}
-
-.c3:focus {
-  outline: none;
-}
-
 @media only screen and (max-width: 768px) {
   .c0 {
     position: fixed;
@@ -6752,11 +6064,6 @@ exports[`Layer position: left - full: false 1`] = `
     data-g-portal-id="0"
     id="position-full-test"
   >
-    <a
-      class="c3"
-      inert=""
-      tabindex="-1"
-    />
     This is a layer
   </div>
 </div>
@@ -6860,17 +6167,6 @@ exports[`Layer position: left - full: horizontal 1`] = `
   animation: kPYden 0.2s ease-in-out forwards;
 }
 
-.c3 {
-  width: 0;
-  height: 0;
-  overflow: hidden;
-  position: absolute;
-}
-
-.c3:focus {
-  outline: none;
-}
-
 @media only screen and (max-width: 768px) {
   .c0 {
     position: fixed;
@@ -6910,11 +6206,6 @@ exports[`Layer position: left - full: horizontal 1`] = `
     data-g-portal-id="0"
     id="position-full-test"
   >
-    <a
-      class="c3"
-      inert=""
-      tabindex="-1"
-    />
     This is a layer
   </div>
 </div>
@@ -7019,17 +6310,6 @@ exports[`Layer position: left - full: true 1`] = `
   animation: kDpYdX 0.2s ease-in-out forwards;
 }
 
-.c3 {
-  width: 0;
-  height: 0;
-  overflow: hidden;
-  position: absolute;
-}
-
-.c3:focus {
-  outline: none;
-}
-
 @media only screen and (max-width: 768px) {
   .c0 {
     position: fixed;
@@ -7069,11 +6349,6 @@ exports[`Layer position: left - full: true 1`] = `
     data-g-portal-id="0"
     id="position-full-test"
   >
-    <a
-      class="c3"
-      inert=""
-      tabindex="-1"
-    />
     This is a layer
   </div>
 </div>
@@ -7177,17 +6452,6 @@ exports[`Layer position: left - full: vertical 1`] = `
   animation: kDpYdX 0.2s ease-in-out forwards;
 }
 
-.c3 {
-  width: 0;
-  height: 0;
-  overflow: hidden;
-  position: absolute;
-}
-
-.c3:focus {
-  outline: none;
-}
-
 @media only screen and (max-width: 768px) {
   .c0 {
     position: fixed;
@@ -7227,11 +6491,6 @@ exports[`Layer position: left - full: vertical 1`] = `
     data-g-portal-id="0"
     id="position-full-test"
   >
-    <a
-      class="c3"
-      inert=""
-      tabindex="-1"
-    />
     This is a layer
   </div>
 </div>
@@ -7334,17 +6593,6 @@ exports[`Layer position: right - full: false 1`] = `
   animation: drjPPC 0.2s ease-in-out forwards;
 }
 
-.c3 {
-  width: 0;
-  height: 0;
-  overflow: hidden;
-  position: absolute;
-}
-
-.c3:focus {
-  outline: none;
-}
-
 @media only screen and (max-width: 768px) {
   .c0 {
     position: fixed;
@@ -7384,11 +6632,6 @@ exports[`Layer position: right - full: false 1`] = `
     data-g-portal-id="0"
     id="position-full-test"
   >
-    <a
-      class="c3"
-      inert=""
-      tabindex="-1"
-    />
     This is a layer
   </div>
 </div>
@@ -7492,17 +6735,6 @@ exports[`Layer position: right - full: horizontal 1`] = `
   animation: drjPPC 0.2s ease-in-out forwards;
 }
 
-.c3 {
-  width: 0;
-  height: 0;
-  overflow: hidden;
-  position: absolute;
-}
-
-.c3:focus {
-  outline: none;
-}
-
 @media only screen and (max-width: 768px) {
   .c0 {
     position: fixed;
@@ -7542,11 +6774,6 @@ exports[`Layer position: right - full: horizontal 1`] = `
     data-g-portal-id="0"
     id="position-full-test"
   >
-    <a
-      class="c3"
-      inert=""
-      tabindex="-1"
-    />
     This is a layer
   </div>
 </div>
@@ -7651,17 +6878,6 @@ exports[`Layer position: right - full: true 1`] = `
   animation: bKtuJK 0.2s ease-in-out forwards;
 }
 
-.c3 {
-  width: 0;
-  height: 0;
-  overflow: hidden;
-  position: absolute;
-}
-
-.c3:focus {
-  outline: none;
-}
-
 @media only screen and (max-width: 768px) {
   .c0 {
     position: fixed;
@@ -7701,11 +6917,6 @@ exports[`Layer position: right - full: true 1`] = `
     data-g-portal-id="0"
     id="position-full-test"
   >
-    <a
-      class="c3"
-      inert=""
-      tabindex="-1"
-    />
     This is a layer
   </div>
 </div>
@@ -7809,17 +7020,6 @@ exports[`Layer position: right - full: vertical 1`] = `
   animation: bKtuJK 0.2s ease-in-out forwards;
 }
 
-.c3 {
-  width: 0;
-  height: 0;
-  overflow: hidden;
-  position: absolute;
-}
-
-.c3:focus {
-  outline: none;
-}
-
 @media only screen and (max-width: 768px) {
   .c0 {
     position: fixed;
@@ -7859,11 +7059,6 @@ exports[`Layer position: right - full: vertical 1`] = `
     data-g-portal-id="0"
     id="position-full-test"
   >
-    <a
-      class="c3"
-      inert=""
-      tabindex="-1"
-    />
     This is a layer
   </div>
 </div>
@@ -7966,17 +7161,6 @@ exports[`Layer position: start - full: false 1`] = `
   animation: kPYden 0.2s ease-in-out forwards;
 }
 
-.c3 {
-  width: 0;
-  height: 0;
-  overflow: hidden;
-  position: absolute;
-}
-
-.c3:focus {
-  outline: none;
-}
-
 @media only screen and (max-width: 768px) {
   .c0 {
     position: fixed;
@@ -8016,11 +7200,6 @@ exports[`Layer position: start - full: false 1`] = `
     data-g-portal-id="0"
     id="position-full-test"
   >
-    <a
-      class="c3"
-      inert=""
-      tabindex="-1"
-    />
     This is a layer
   </div>
 </div>
@@ -8124,17 +7303,6 @@ exports[`Layer position: start - full: horizontal 1`] = `
   animation: kPYden 0.2s ease-in-out forwards;
 }
 
-.c3 {
-  width: 0;
-  height: 0;
-  overflow: hidden;
-  position: absolute;
-}
-
-.c3:focus {
-  outline: none;
-}
-
 @media only screen and (max-width: 768px) {
   .c0 {
     position: fixed;
@@ -8174,11 +7342,6 @@ exports[`Layer position: start - full: horizontal 1`] = `
     data-g-portal-id="0"
     id="position-full-test"
   >
-    <a
-      class="c3"
-      inert=""
-      tabindex="-1"
-    />
     This is a layer
   </div>
 </div>
@@ -8283,17 +7446,6 @@ exports[`Layer position: start - full: true 1`] = `
   animation: kDpYdX 0.2s ease-in-out forwards;
 }
 
-.c3 {
-  width: 0;
-  height: 0;
-  overflow: hidden;
-  position: absolute;
-}
-
-.c3:focus {
-  outline: none;
-}
-
 @media only screen and (max-width: 768px) {
   .c0 {
     position: fixed;
@@ -8333,11 +7485,6 @@ exports[`Layer position: start - full: true 1`] = `
     data-g-portal-id="0"
     id="position-full-test"
   >
-    <a
-      class="c3"
-      inert=""
-      tabindex="-1"
-    />
     This is a layer
   </div>
 </div>
@@ -8441,17 +7588,6 @@ exports[`Layer position: start - full: vertical 1`] = `
   animation: kDpYdX 0.2s ease-in-out forwards;
 }
 
-.c3 {
-  width: 0;
-  height: 0;
-  overflow: hidden;
-  position: absolute;
-}
-
-.c3:focus {
-  outline: none;
-}
-
 @media only screen and (max-width: 768px) {
   .c0 {
     position: fixed;
@@ -8491,11 +7627,6 @@ exports[`Layer position: start - full: vertical 1`] = `
     data-g-portal-id="0"
     id="position-full-test"
   >
-    <a
-      class="c3"
-      inert=""
-      tabindex="-1"
-    />
     This is a layer
   </div>
 </div>
@@ -8598,17 +7729,6 @@ exports[`Layer position: top - full: false 1`] = `
   animation: hnDkLj 0.2s ease-in-out forwards;
 }
 
-.c3 {
-  width: 0;
-  height: 0;
-  overflow: hidden;
-  position: absolute;
-}
-
-.c3:focus {
-  outline: none;
-}
-
 @media only screen and (max-width: 768px) {
   .c0 {
     position: fixed;
@@ -8648,11 +7768,6 @@ exports[`Layer position: top - full: false 1`] = `
     data-g-portal-id="0"
     id="position-full-test"
   >
-    <a
-      class="c3"
-      inert=""
-      tabindex="-1"
-    />
     This is a layer
   </div>
 </div>
@@ -8756,17 +7871,6 @@ exports[`Layer position: top - full: horizontal 1`] = `
   animation: ffftsv 0.2s ease-in-out forwards;
 }
 
-.c3 {
-  width: 0;
-  height: 0;
-  overflow: hidden;
-  position: absolute;
-}
-
-.c3:focus {
-  outline: none;
-}
-
 @media only screen and (max-width: 768px) {
   .c0 {
     position: fixed;
@@ -8806,11 +7910,6 @@ exports[`Layer position: top - full: horizontal 1`] = `
     data-g-portal-id="0"
     id="position-full-test"
   >
-    <a
-      class="c3"
-      inert=""
-      tabindex="-1"
-    />
     This is a layer
   </div>
 </div>
@@ -8915,17 +8014,6 @@ exports[`Layer position: top - full: true 1`] = `
   animation: ffftsv 0.2s ease-in-out forwards;
 }
 
-.c3 {
-  width: 0;
-  height: 0;
-  overflow: hidden;
-  position: absolute;
-}
-
-.c3:focus {
-  outline: none;
-}
-
 @media only screen and (max-width: 768px) {
   .c0 {
     position: fixed;
@@ -8965,11 +8053,6 @@ exports[`Layer position: top - full: true 1`] = `
     data-g-portal-id="0"
     id="position-full-test"
   >
-    <a
-      class="c3"
-      inert=""
-      tabindex="-1"
-    />
     This is a layer
   </div>
 </div>
@@ -9073,17 +8156,6 @@ exports[`Layer position: top - full: vertical 1`] = `
   animation: hnDkLj 0.2s ease-in-out forwards;
 }
 
-.c3 {
-  width: 0;
-  height: 0;
-  overflow: hidden;
-  position: absolute;
-}
-
-.c3:focus {
-  outline: none;
-}
-
 @media only screen and (max-width: 768px) {
   .c0 {
     position: fixed;
@@ -9123,11 +8195,6 @@ exports[`Layer position: top - full: vertical 1`] = `
     data-g-portal-id="0"
     id="position-full-test"
   >
-    <a
-      class="c3"
-      inert=""
-      tabindex="-1"
-    />
     This is a layer
   </div>
 </div>
@@ -9230,17 +8297,6 @@ exports[`Layer position: top-left - full: false 1`] = `
   animation: ffftsv 0.2s ease-in-out forwards;
 }
 
-.c3 {
-  width: 0;
-  height: 0;
-  overflow: hidden;
-  position: absolute;
-}
-
-.c3:focus {
-  outline: none;
-}
-
 @media only screen and (max-width: 768px) {
   .c0 {
     position: fixed;
@@ -9280,11 +8336,6 @@ exports[`Layer position: top-left - full: false 1`] = `
     data-g-portal-id="0"
     id="position-full-test"
   >
-    <a
-      class="c3"
-      inert=""
-      tabindex="-1"
-    />
     This is a layer
   </div>
 </div>
@@ -9388,17 +8439,6 @@ exports[`Layer position: top-left - full: horizontal 1`] = `
   animation: ffftsv 0.2s ease-in-out forwards;
 }
 
-.c3 {
-  width: 0;
-  height: 0;
-  overflow: hidden;
-  position: absolute;
-}
-
-.c3:focus {
-  outline: none;
-}
-
 @media only screen and (max-width: 768px) {
   .c0 {
     position: fixed;
@@ -9438,11 +8478,6 @@ exports[`Layer position: top-left - full: horizontal 1`] = `
     data-g-portal-id="0"
     id="position-full-test"
   >
-    <a
-      class="c3"
-      inert=""
-      tabindex="-1"
-    />
     This is a layer
   </div>
 </div>
@@ -9547,17 +8582,6 @@ exports[`Layer position: top-left - full: true 1`] = `
   animation: ffftsv 0.2s ease-in-out forwards;
 }
 
-.c3 {
-  width: 0;
-  height: 0;
-  overflow: hidden;
-  position: absolute;
-}
-
-.c3:focus {
-  outline: none;
-}
-
 @media only screen and (max-width: 768px) {
   .c0 {
     position: fixed;
@@ -9597,11 +8621,6 @@ exports[`Layer position: top-left - full: true 1`] = `
     data-g-portal-id="0"
     id="position-full-test"
   >
-    <a
-      class="c3"
-      inert=""
-      tabindex="-1"
-    />
     This is a layer
   </div>
 </div>
@@ -9705,17 +8724,6 @@ exports[`Layer position: top-left - full: vertical 1`] = `
   animation: ffftsv 0.2s ease-in-out forwards;
 }
 
-.c3 {
-  width: 0;
-  height: 0;
-  overflow: hidden;
-  position: absolute;
-}
-
-.c3:focus {
-  outline: none;
-}
-
 @media only screen and (max-width: 768px) {
   .c0 {
     position: fixed;
@@ -9755,11 +8763,6 @@ exports[`Layer position: top-left - full: vertical 1`] = `
     data-g-portal-id="0"
     id="position-full-test"
   >
-    <a
-      class="c3"
-      inert=""
-      tabindex="-1"
-    />
     This is a layer
   </div>
 </div>
@@ -9862,17 +8865,6 @@ exports[`Layer position: top-right - full: false 1`] = `
   animation: ffftsv 0.2s ease-in-out forwards;
 }
 
-.c3 {
-  width: 0;
-  height: 0;
-  overflow: hidden;
-  position: absolute;
-}
-
-.c3:focus {
-  outline: none;
-}
-
 @media only screen and (max-width: 768px) {
   .c0 {
     position: fixed;
@@ -9912,11 +8904,6 @@ exports[`Layer position: top-right - full: false 1`] = `
     data-g-portal-id="0"
     id="position-full-test"
   >
-    <a
-      class="c3"
-      inert=""
-      tabindex="-1"
-    />
     This is a layer
   </div>
 </div>
@@ -10020,17 +9007,6 @@ exports[`Layer position: top-right - full: horizontal 1`] = `
   animation: ffftsv 0.2s ease-in-out forwards;
 }
 
-.c3 {
-  width: 0;
-  height: 0;
-  overflow: hidden;
-  position: absolute;
-}
-
-.c3:focus {
-  outline: none;
-}
-
 @media only screen and (max-width: 768px) {
   .c0 {
     position: fixed;
@@ -10070,11 +9046,6 @@ exports[`Layer position: top-right - full: horizontal 1`] = `
     data-g-portal-id="0"
     id="position-full-test"
   >
-    <a
-      class="c3"
-      inert=""
-      tabindex="-1"
-    />
     This is a layer
   </div>
 </div>
@@ -10179,17 +9150,6 @@ exports[`Layer position: top-right - full: true 1`] = `
   animation: ffftsv 0.2s ease-in-out forwards;
 }
 
-.c3 {
-  width: 0;
-  height: 0;
-  overflow: hidden;
-  position: absolute;
-}
-
-.c3:focus {
-  outline: none;
-}
-
 @media only screen and (max-width: 768px) {
   .c0 {
     position: fixed;
@@ -10229,11 +9189,6 @@ exports[`Layer position: top-right - full: true 1`] = `
     data-g-portal-id="0"
     id="position-full-test"
   >
-    <a
-      class="c3"
-      inert=""
-      tabindex="-1"
-    />
     This is a layer
   </div>
 </div>
@@ -10337,17 +9292,6 @@ exports[`Layer position: top-right - full: vertical 1`] = `
   animation: ffftsv 0.2s ease-in-out forwards;
 }
 
-.c3 {
-  width: 0;
-  height: 0;
-  overflow: hidden;
-  position: absolute;
-}
-
-.c3:focus {
-  outline: none;
-}
-
 @media only screen and (max-width: 768px) {
   .c0 {
     position: fixed;
@@ -10387,11 +9331,6 @@ exports[`Layer position: top-right - full: vertical 1`] = `
     data-g-portal-id="0"
     id="position-full-test"
   >
-    <a
-      class="c3"
-      inert=""
-      tabindex="-1"
-    />
     This is a layer
   </div>
 </div>
@@ -10494,17 +9433,6 @@ exports[`Layer renders outside grommet wrapper 1`] = `
   animation: hWAzxx 0.2s ease-in-out forwards;
 }
 
-.c3 {
-  width: 0;
-  height: 0;
-  overflow: hidden;
-  position: absolute;
-}
-
-.c3:focus {
-  outline: none;
-}
-
 @media only screen and (max-width: 768px) {
   .c0 {
     position: fixed;
@@ -10544,11 +9472,6 @@ exports[`Layer renders outside grommet wrapper 1`] = `
     data-g-portal-id="0"
     id="grommet-test"
   >
-    <a
-      class="c3"
-      inert=""
-      tabindex="-1"
-    />
     This is layer
   </div>
 </div>
@@ -10651,17 +9574,6 @@ exports[`Layer should apply background 1`] = `
   animation: hWAzxx 0.2s ease-in-out forwards;
 }
 
-.c3 {
-  width: 0;
-  height: 0;
-  overflow: hidden;
-  position: absolute;
-}
-
-.c3:focus {
-  outline: none;
-}
-
 @media only screen and (max-width: 768px) {
   .c0 {
     position: fixed;
@@ -10701,11 +9613,6 @@ exports[`Layer should apply background 1`] = `
     data-g-portal-id="0"
     id="margin-test"
   >
-    <a
-      class="c3"
-      inert=""
-      tabindex="-1"
-    />
     This is a layer
   </div>
 </div>
@@ -10807,17 +9714,6 @@ exports[`Layer should only place id on StyledLayer when singleId === true 1`] = 
   transform: translate(-50%,-50%);
 }
 
-.c3 {
-  width: 0;
-  height: 0;
-  overflow: hidden;
-  position: absolute;
-}
-
-.c3:focus {
-  outline: none;
-}
-
 @media only screen and (max-width: 768px) {
   .c0 {
     position: fixed;
@@ -10857,11 +9753,6 @@ exports[`Layer should only place id on StyledLayer when singleId === true 1`] = 
     data-g-portal-id="0"
     id="singleId-test__container"
   >
-    <a
-      class="c3"
-      inert=""
-      tabindex="-1"
-    />
     This is a layer
   </div>
 </div>
@@ -10965,17 +9856,6 @@ exports[`Layer should render correct border radius for position: bottom -
   animation: fdqiZe 0.2s ease-in-out forwards;
 }
 
-.c3 {
-  width: 0;
-  height: 0;
-  overflow: hidden;
-  position: absolute;
-}
-
-.c3:focus {
-  outline: none;
-}
-
 @media only screen and (max-width: 768px) {
   .c0 {
     position: fixed;
@@ -11015,11 +9895,6 @@ exports[`Layer should render correct border radius for position: bottom -
     data-g-portal-id="0"
     id="border-radius-test"
   >
-    <a
-      class="c3"
-      inert=""
-      tabindex="-1"
-    />
     This is a layer
   </div>
 </div>
@@ -11125,17 +10000,6 @@ exports[`Layer should render correct border radius for position: bottom -
   animation: cQwfQi 0.2s ease-in-out forwards;
 }
 
-.c3 {
-  width: 0;
-  height: 0;
-  overflow: hidden;
-  position: absolute;
-}
-
-.c3:focus {
-  outline: none;
-}
-
 @media only screen and (max-width: 768px) {
   .c0 {
     position: fixed;
@@ -11175,11 +10039,6 @@ exports[`Layer should render correct border radius for position: bottom -
     data-g-portal-id="0"
     id="border-radius-test"
   >
-    <a
-      class="c3"
-      inert=""
-      tabindex="-1"
-    />
     This is a layer
   </div>
 </div>
@@ -11286,17 +10145,6 @@ exports[`Layer should render correct border radius for position: bottom -
   animation: cQwfQi 0.2s ease-in-out forwards;
 }
 
-.c3 {
-  width: 0;
-  height: 0;
-  overflow: hidden;
-  position: absolute;
-}
-
-.c3:focus {
-  outline: none;
-}
-
 @media only screen and (max-width: 768px) {
   .c0 {
     position: fixed;
@@ -11336,11 +10184,6 @@ exports[`Layer should render correct border radius for position: bottom -
     data-g-portal-id="0"
     id="border-radius-test"
   >
-    <a
-      class="c3"
-      inert=""
-      tabindex="-1"
-    />
     This is a layer
   </div>
 </div>
@@ -11446,17 +10289,6 @@ exports[`Layer should render correct border radius for position: bottom -
   animation: fdqiZe 0.2s ease-in-out forwards;
 }
 
-.c3 {
-  width: 0;
-  height: 0;
-  overflow: hidden;
-  position: absolute;
-}
-
-.c3:focus {
-  outline: none;
-}
-
 @media only screen and (max-width: 768px) {
   .c0 {
     position: fixed;
@@ -11496,11 +10328,6 @@ exports[`Layer should render correct border radius for position: bottom -
     data-g-portal-id="0"
     id="border-radius-test"
   >
-    <a
-      class="c3"
-      inert=""
-      tabindex="-1"
-    />
     This is a layer
   </div>
 </div>
@@ -11605,17 +10432,6 @@ exports[`Layer should render correct border radius for position: bottom-left -
   animation: cQwfQi 0.2s ease-in-out forwards;
 }
 
-.c3 {
-  width: 0;
-  height: 0;
-  overflow: hidden;
-  position: absolute;
-}
-
-.c3:focus {
-  outline: none;
-}
-
 @media only screen and (max-width: 768px) {
   .c0 {
     position: fixed;
@@ -11655,11 +10471,6 @@ exports[`Layer should render correct border radius for position: bottom-left -
     data-g-portal-id="0"
     id="border-radius-test"
   >
-    <a
-      class="c3"
-      inert=""
-      tabindex="-1"
-    />
     This is a layer
   </div>
 </div>
@@ -11765,17 +10576,6 @@ exports[`Layer should render correct border radius for position: bottom-left -
   animation: cQwfQi 0.2s ease-in-out forwards;
 }
 
-.c3 {
-  width: 0;
-  height: 0;
-  overflow: hidden;
-  position: absolute;
-}
-
-.c3:focus {
-  outline: none;
-}
-
 @media only screen and (max-width: 768px) {
   .c0 {
     position: fixed;
@@ -11815,11 +10615,6 @@ exports[`Layer should render correct border radius for position: bottom-left -
     data-g-portal-id="0"
     id="border-radius-test"
   >
-    <a
-      class="c3"
-      inert=""
-      tabindex="-1"
-    />
     This is a layer
   </div>
 </div>
@@ -11926,17 +10721,6 @@ exports[`Layer should render correct border radius for position: bottom-left -
   animation: cQwfQi 0.2s ease-in-out forwards;
 }
 
-.c3 {
-  width: 0;
-  height: 0;
-  overflow: hidden;
-  position: absolute;
-}
-
-.c3:focus {
-  outline: none;
-}
-
 @media only screen and (max-width: 768px) {
   .c0 {
     position: fixed;
@@ -11976,11 +10760,6 @@ exports[`Layer should render correct border radius for position: bottom-left -
     data-g-portal-id="0"
     id="border-radius-test"
   >
-    <a
-      class="c3"
-      inert=""
-      tabindex="-1"
-    />
     This is a layer
   </div>
 </div>
@@ -12086,17 +10865,6 @@ exports[`Layer should render correct border radius for position: bottom-left -
   animation: cQwfQi 0.2s ease-in-out forwards;
 }
 
-.c3 {
-  width: 0;
-  height: 0;
-  overflow: hidden;
-  position: absolute;
-}
-
-.c3:focus {
-  outline: none;
-}
-
 @media only screen and (max-width: 768px) {
   .c0 {
     position: fixed;
@@ -12136,11 +10904,6 @@ exports[`Layer should render correct border radius for position: bottom-left -
     data-g-portal-id="0"
     id="border-radius-test"
   >
-    <a
-      class="c3"
-      inert=""
-      tabindex="-1"
-    />
     This is a layer
   </div>
 </div>
@@ -12245,17 +11008,6 @@ exports[`Layer should render correct border radius for position: bottom-right -
   animation: cQwfQi 0.2s ease-in-out forwards;
 }
 
-.c3 {
-  width: 0;
-  height: 0;
-  overflow: hidden;
-  position: absolute;
-}
-
-.c3:focus {
-  outline: none;
-}
-
 @media only screen and (max-width: 768px) {
   .c0 {
     position: fixed;
@@ -12295,11 +11047,6 @@ exports[`Layer should render correct border radius for position: bottom-right -
     data-g-portal-id="0"
     id="border-radius-test"
   >
-    <a
-      class="c3"
-      inert=""
-      tabindex="-1"
-    />
     This is a layer
   </div>
 </div>
@@ -12405,17 +11152,6 @@ exports[`Layer should render correct border radius for position: bottom-right -
   animation: cQwfQi 0.2s ease-in-out forwards;
 }
 
-.c3 {
-  width: 0;
-  height: 0;
-  overflow: hidden;
-  position: absolute;
-}
-
-.c3:focus {
-  outline: none;
-}
-
 @media only screen and (max-width: 768px) {
   .c0 {
     position: fixed;
@@ -12455,11 +11191,6 @@ exports[`Layer should render correct border radius for position: bottom-right -
     data-g-portal-id="0"
     id="border-radius-test"
   >
-    <a
-      class="c3"
-      inert=""
-      tabindex="-1"
-    />
     This is a layer
   </div>
 </div>
@@ -12566,17 +11297,6 @@ exports[`Layer should render correct border radius for position: bottom-right -
   animation: cQwfQi 0.2s ease-in-out forwards;
 }
 
-.c3 {
-  width: 0;
-  height: 0;
-  overflow: hidden;
-  position: absolute;
-}
-
-.c3:focus {
-  outline: none;
-}
-
 @media only screen and (max-width: 768px) {
   .c0 {
     position: fixed;
@@ -12616,11 +11336,6 @@ exports[`Layer should render correct border radius for position: bottom-right -
     data-g-portal-id="0"
     id="border-radius-test"
   >
-    <a
-      class="c3"
-      inert=""
-      tabindex="-1"
-    />
     This is a layer
   </div>
 </div>
@@ -12726,17 +11441,6 @@ exports[`Layer should render correct border radius for position: bottom-right -
   animation: cQwfQi 0.2s ease-in-out forwards;
 }
 
-.c3 {
-  width: 0;
-  height: 0;
-  overflow: hidden;
-  position: absolute;
-}
-
-.c3:focus {
-  outline: none;
-}
-
 @media only screen and (max-width: 768px) {
   .c0 {
     position: fixed;
@@ -12776,11 +11480,6 @@ exports[`Layer should render correct border radius for position: bottom-right -
     data-g-portal-id="0"
     id="border-radius-test"
   >
-    <a
-      class="c3"
-      inert=""
-      tabindex="-1"
-    />
     This is a layer
   </div>
 </div>
@@ -12885,17 +11584,6 @@ exports[`Layer should render correct border radius for position: center -
   animation: hWAzxx 0.2s ease-in-out forwards;
 }
 
-.c3 {
-  width: 0;
-  height: 0;
-  overflow: hidden;
-  position: absolute;
-}
-
-.c3:focus {
-  outline: none;
-}
-
 @media only screen and (max-width: 768px) {
   .c0 {
     position: fixed;
@@ -12935,11 +11623,6 @@ exports[`Layer should render correct border radius for position: center -
     data-g-portal-id="0"
     id="border-radius-test"
   >
-    <a
-      class="c3"
-      inert=""
-      tabindex="-1"
-    />
     This is a layer
   </div>
 </div>
@@ -13045,17 +11728,6 @@ exports[`Layer should render correct border radius for position: center -
   animation: fEUQAU 0.2s ease-in-out forwards;
 }
 
-.c3 {
-  width: 0;
-  height: 0;
-  overflow: hidden;
-  position: absolute;
-}
-
-.c3:focus {
-  outline: none;
-}
-
 @media only screen and (max-width: 768px) {
   .c0 {
     position: fixed;
@@ -13095,11 +11767,6 @@ exports[`Layer should render correct border radius for position: center -
     data-g-portal-id="0"
     id="border-radius-test"
   >
-    <a
-      class="c3"
-      inert=""
-      tabindex="-1"
-    />
     This is a layer
   </div>
 </div>
@@ -13205,17 +11872,6 @@ exports[`Layer should render correct border radius for position: center -
   animation: gVgDGd 0.2s ease-in-out forwards;
 }
 
-.c3 {
-  width: 0;
-  height: 0;
-  overflow: hidden;
-  position: absolute;
-}
-
-.c3:focus {
-  outline: none;
-}
-
 @media only screen and (max-width: 768px) {
   .c0 {
     position: fixed;
@@ -13255,11 +11911,6 @@ exports[`Layer should render correct border radius for position: center -
     data-g-portal-id="0"
     id="border-radius-test"
   >
-    <a
-      class="c3"
-      inert=""
-      tabindex="-1"
-    />
     This is a layer
   </div>
 </div>
@@ -13365,17 +12016,6 @@ exports[`Layer should render correct border radius for position: center -
   animation: bgBtCZ 0.2s ease-in-out forwards;
 }
 
-.c3 {
-  width: 0;
-  height: 0;
-  overflow: hidden;
-  position: absolute;
-}
-
-.c3:focus {
-  outline: none;
-}
-
 @media only screen and (max-width: 768px) {
   .c0 {
     position: fixed;
@@ -13415,11 +12055,6 @@ exports[`Layer should render correct border radius for position: center -
     data-g-portal-id="0"
     id="border-radius-test"
   >
-    <a
-      class="c3"
-      inert=""
-      tabindex="-1"
-    />
     This is a layer
   </div>
 </div>
@@ -13525,17 +12160,6 @@ exports[`Layer should render correct border radius for position: end -
   animation: drjPPC 0.2s ease-in-out forwards;
 }
 
-.c3 {
-  width: 0;
-  height: 0;
-  overflow: hidden;
-  position: absolute;
-}
-
-.c3:focus {
-  outline: none;
-}
-
 @media only screen and (max-width: 768px) {
   .c0 {
     position: fixed;
@@ -13575,11 +12199,6 @@ exports[`Layer should render correct border radius for position: end -
     data-g-portal-id="0"
     id="border-radius-test"
   >
-    <a
-      class="c3"
-      inert=""
-      tabindex="-1"
-    />
     This is a layer
   </div>
 </div>
@@ -13685,17 +12304,6 @@ exports[`Layer should render correct border radius for position: end -
   animation: drjPPC 0.2s ease-in-out forwards;
 }
 
-.c3 {
-  width: 0;
-  height: 0;
-  overflow: hidden;
-  position: absolute;
-}
-
-.c3:focus {
-  outline: none;
-}
-
 @media only screen and (max-width: 768px) {
   .c0 {
     position: fixed;
@@ -13735,11 +12343,6 @@ exports[`Layer should render correct border radius for position: end -
     data-g-portal-id="0"
     id="border-radius-test"
   >
-    <a
-      class="c3"
-      inert=""
-      tabindex="-1"
-    />
     This is a layer
   </div>
 </div>
@@ -13846,17 +12449,6 @@ exports[`Layer should render correct border radius for position: end -
   animation: bKtuJK 0.2s ease-in-out forwards;
 }
 
-.c3 {
-  width: 0;
-  height: 0;
-  overflow: hidden;
-  position: absolute;
-}
-
-.c3:focus {
-  outline: none;
-}
-
 @media only screen and (max-width: 768px) {
   .c0 {
     position: fixed;
@@ -13896,11 +12488,6 @@ exports[`Layer should render correct border radius for position: end -
     data-g-portal-id="0"
     id="border-radius-test"
   >
-    <a
-      class="c3"
-      inert=""
-      tabindex="-1"
-    />
     This is a layer
   </div>
 </div>
@@ -14006,17 +12593,6 @@ exports[`Layer should render correct border radius for position: end -
   animation: bKtuJK 0.2s ease-in-out forwards;
 }
 
-.c3 {
-  width: 0;
-  height: 0;
-  overflow: hidden;
-  position: absolute;
-}
-
-.c3:focus {
-  outline: none;
-}
-
 @media only screen and (max-width: 768px) {
   .c0 {
     position: fixed;
@@ -14056,11 +12632,6 @@ exports[`Layer should render correct border radius for position: end -
     data-g-portal-id="0"
     id="border-radius-test"
   >
-    <a
-      class="c3"
-      inert=""
-      tabindex="-1"
-    />
     This is a layer
   </div>
 </div>
@@ -14165,17 +12736,6 @@ exports[`Layer should render correct border radius for position: left -
   animation: kPYden 0.2s ease-in-out forwards;
 }
 
-.c3 {
-  width: 0;
-  height: 0;
-  overflow: hidden;
-  position: absolute;
-}
-
-.c3:focus {
-  outline: none;
-}
-
 @media only screen and (max-width: 768px) {
   .c0 {
     position: fixed;
@@ -14215,11 +12775,6 @@ exports[`Layer should render correct border radius for position: left -
     data-g-portal-id="0"
     id="border-radius-test"
   >
-    <a
-      class="c3"
-      inert=""
-      tabindex="-1"
-    />
     This is a layer
   </div>
 </div>
@@ -14325,17 +12880,6 @@ exports[`Layer should render correct border radius for position: left -
   animation: kPYden 0.2s ease-in-out forwards;
 }
 
-.c3 {
-  width: 0;
-  height: 0;
-  overflow: hidden;
-  position: absolute;
-}
-
-.c3:focus {
-  outline: none;
-}
-
 @media only screen and (max-width: 768px) {
   .c0 {
     position: fixed;
@@ -14375,11 +12919,6 @@ exports[`Layer should render correct border radius for position: left -
     data-g-portal-id="0"
     id="border-radius-test"
   >
-    <a
-      class="c3"
-      inert=""
-      tabindex="-1"
-    />
     This is a layer
   </div>
 </div>
@@ -14486,17 +13025,6 @@ exports[`Layer should render correct border radius for position: left -
   animation: kDpYdX 0.2s ease-in-out forwards;
 }
 
-.c3 {
-  width: 0;
-  height: 0;
-  overflow: hidden;
-  position: absolute;
-}
-
-.c3:focus {
-  outline: none;
-}
-
 @media only screen and (max-width: 768px) {
   .c0 {
     position: fixed;
@@ -14536,11 +13064,6 @@ exports[`Layer should render correct border radius for position: left -
     data-g-portal-id="0"
     id="border-radius-test"
   >
-    <a
-      class="c3"
-      inert=""
-      tabindex="-1"
-    />
     This is a layer
   </div>
 </div>
@@ -14646,17 +13169,6 @@ exports[`Layer should render correct border radius for position: left -
   animation: kDpYdX 0.2s ease-in-out forwards;
 }
 
-.c3 {
-  width: 0;
-  height: 0;
-  overflow: hidden;
-  position: absolute;
-}
-
-.c3:focus {
-  outline: none;
-}
-
 @media only screen and (max-width: 768px) {
   .c0 {
     position: fixed;
@@ -14696,11 +13208,6 @@ exports[`Layer should render correct border radius for position: left -
     data-g-portal-id="0"
     id="border-radius-test"
   >
-    <a
-      class="c3"
-      inert=""
-      tabindex="-1"
-    />
     This is a layer
   </div>
 </div>
@@ -14805,17 +13312,6 @@ exports[`Layer should render correct border radius for position: right -
   animation: drjPPC 0.2s ease-in-out forwards;
 }
 
-.c3 {
-  width: 0;
-  height: 0;
-  overflow: hidden;
-  position: absolute;
-}
-
-.c3:focus {
-  outline: none;
-}
-
 @media only screen and (max-width: 768px) {
   .c0 {
     position: fixed;
@@ -14855,11 +13351,6 @@ exports[`Layer should render correct border radius for position: right -
     data-g-portal-id="0"
     id="border-radius-test"
   >
-    <a
-      class="c3"
-      inert=""
-      tabindex="-1"
-    />
     This is a layer
   </div>
 </div>
@@ -14965,17 +13456,6 @@ exports[`Layer should render correct border radius for position: right -
   animation: drjPPC 0.2s ease-in-out forwards;
 }
 
-.c3 {
-  width: 0;
-  height: 0;
-  overflow: hidden;
-  position: absolute;
-}
-
-.c3:focus {
-  outline: none;
-}
-
 @media only screen and (max-width: 768px) {
   .c0 {
     position: fixed;
@@ -15015,11 +13495,6 @@ exports[`Layer should render correct border radius for position: right -
     data-g-portal-id="0"
     id="border-radius-test"
   >
-    <a
-      class="c3"
-      inert=""
-      tabindex="-1"
-    />
     This is a layer
   </div>
 </div>
@@ -15126,17 +13601,6 @@ exports[`Layer should render correct border radius for position: right -
   animation: bKtuJK 0.2s ease-in-out forwards;
 }
 
-.c3 {
-  width: 0;
-  height: 0;
-  overflow: hidden;
-  position: absolute;
-}
-
-.c3:focus {
-  outline: none;
-}
-
 @media only screen and (max-width: 768px) {
   .c0 {
     position: fixed;
@@ -15176,11 +13640,6 @@ exports[`Layer should render correct border radius for position: right -
     data-g-portal-id="0"
     id="border-radius-test"
   >
-    <a
-      class="c3"
-      inert=""
-      tabindex="-1"
-    />
     This is a layer
   </div>
 </div>
@@ -15286,17 +13745,6 @@ exports[`Layer should render correct border radius for position: right -
   animation: bKtuJK 0.2s ease-in-out forwards;
 }
 
-.c3 {
-  width: 0;
-  height: 0;
-  overflow: hidden;
-  position: absolute;
-}
-
-.c3:focus {
-  outline: none;
-}
-
 @media only screen and (max-width: 768px) {
   .c0 {
     position: fixed;
@@ -15336,11 +13784,6 @@ exports[`Layer should render correct border radius for position: right -
     data-g-portal-id="0"
     id="border-radius-test"
   >
-    <a
-      class="c3"
-      inert=""
-      tabindex="-1"
-    />
     This is a layer
   </div>
 </div>
@@ -15446,17 +13889,6 @@ exports[`Layer should render correct border radius for position: start -
   animation: kPYden 0.2s ease-in-out forwards;
 }
 
-.c3 {
-  width: 0;
-  height: 0;
-  overflow: hidden;
-  position: absolute;
-}
-
-.c3:focus {
-  outline: none;
-}
-
 @media only screen and (max-width: 768px) {
   .c0 {
     position: fixed;
@@ -15496,11 +13928,6 @@ exports[`Layer should render correct border radius for position: start -
     data-g-portal-id="0"
     id="border-radius-test"
   >
-    <a
-      class="c3"
-      inert=""
-      tabindex="-1"
-    />
     This is a layer
   </div>
 </div>
@@ -15606,17 +14033,6 @@ exports[`Layer should render correct border radius for position: start -
   animation: kPYden 0.2s ease-in-out forwards;
 }
 
-.c3 {
-  width: 0;
-  height: 0;
-  overflow: hidden;
-  position: absolute;
-}
-
-.c3:focus {
-  outline: none;
-}
-
 @media only screen and (max-width: 768px) {
   .c0 {
     position: fixed;
@@ -15656,11 +14072,6 @@ exports[`Layer should render correct border radius for position: start -
     data-g-portal-id="0"
     id="border-radius-test"
   >
-    <a
-      class="c3"
-      inert=""
-      tabindex="-1"
-    />
     This is a layer
   </div>
 </div>
@@ -15767,17 +14178,6 @@ exports[`Layer should render correct border radius for position: start -
   animation: kDpYdX 0.2s ease-in-out forwards;
 }
 
-.c3 {
-  width: 0;
-  height: 0;
-  overflow: hidden;
-  position: absolute;
-}
-
-.c3:focus {
-  outline: none;
-}
-
 @media only screen and (max-width: 768px) {
   .c0 {
     position: fixed;
@@ -15817,11 +14217,6 @@ exports[`Layer should render correct border radius for position: start -
     data-g-portal-id="0"
     id="border-radius-test"
   >
-    <a
-      class="c3"
-      inert=""
-      tabindex="-1"
-    />
     This is a layer
   </div>
 </div>
@@ -15927,17 +14322,6 @@ exports[`Layer should render correct border radius for position: start -
   animation: kDpYdX 0.2s ease-in-out forwards;
 }
 
-.c3 {
-  width: 0;
-  height: 0;
-  overflow: hidden;
-  position: absolute;
-}
-
-.c3:focus {
-  outline: none;
-}
-
 @media only screen and (max-width: 768px) {
   .c0 {
     position: fixed;
@@ -15977,11 +14361,6 @@ exports[`Layer should render correct border radius for position: start -
     data-g-portal-id="0"
     id="border-radius-test"
   >
-    <a
-      class="c3"
-      inert=""
-      tabindex="-1"
-    />
     This is a layer
   </div>
 </div>
@@ -16086,17 +14465,6 @@ exports[`Layer should render correct border radius for position: top -
   animation: hnDkLj 0.2s ease-in-out forwards;
 }
 
-.c3 {
-  width: 0;
-  height: 0;
-  overflow: hidden;
-  position: absolute;
-}
-
-.c3:focus {
-  outline: none;
-}
-
 @media only screen and (max-width: 768px) {
   .c0 {
     position: fixed;
@@ -16136,11 +14504,6 @@ exports[`Layer should render correct border radius for position: top -
     data-g-portal-id="0"
     id="border-radius-test"
   >
-    <a
-      class="c3"
-      inert=""
-      tabindex="-1"
-    />
     This is a layer
   </div>
 </div>
@@ -16246,17 +14609,6 @@ exports[`Layer should render correct border radius for position: top -
   animation: ffftsv 0.2s ease-in-out forwards;
 }
 
-.c3 {
-  width: 0;
-  height: 0;
-  overflow: hidden;
-  position: absolute;
-}
-
-.c3:focus {
-  outline: none;
-}
-
 @media only screen and (max-width: 768px) {
   .c0 {
     position: fixed;
@@ -16296,11 +14648,6 @@ exports[`Layer should render correct border radius for position: top -
     data-g-portal-id="0"
     id="border-radius-test"
   >
-    <a
-      class="c3"
-      inert=""
-      tabindex="-1"
-    />
     This is a layer
   </div>
 </div>
@@ -16407,17 +14754,6 @@ exports[`Layer should render correct border radius for position: top -
   animation: ffftsv 0.2s ease-in-out forwards;
 }
 
-.c3 {
-  width: 0;
-  height: 0;
-  overflow: hidden;
-  position: absolute;
-}
-
-.c3:focus {
-  outline: none;
-}
-
 @media only screen and (max-width: 768px) {
   .c0 {
     position: fixed;
@@ -16457,11 +14793,6 @@ exports[`Layer should render correct border radius for position: top -
     data-g-portal-id="0"
     id="border-radius-test"
   >
-    <a
-      class="c3"
-      inert=""
-      tabindex="-1"
-    />
     This is a layer
   </div>
 </div>
@@ -16567,17 +14898,6 @@ exports[`Layer should render correct border radius for position: top -
   animation: hnDkLj 0.2s ease-in-out forwards;
 }
 
-.c3 {
-  width: 0;
-  height: 0;
-  overflow: hidden;
-  position: absolute;
-}
-
-.c3:focus {
-  outline: none;
-}
-
 @media only screen and (max-width: 768px) {
   .c0 {
     position: fixed;
@@ -16617,11 +14937,6 @@ exports[`Layer should render correct border radius for position: top -
     data-g-portal-id="0"
     id="border-radius-test"
   >
-    <a
-      class="c3"
-      inert=""
-      tabindex="-1"
-    />
     This is a layer
   </div>
 </div>
@@ -16726,17 +15041,6 @@ exports[`Layer should render correct border radius for position: top-left -
   animation: ffftsv 0.2s ease-in-out forwards;
 }
 
-.c3 {
-  width: 0;
-  height: 0;
-  overflow: hidden;
-  position: absolute;
-}
-
-.c3:focus {
-  outline: none;
-}
-
 @media only screen and (max-width: 768px) {
   .c0 {
     position: fixed;
@@ -16776,11 +15080,6 @@ exports[`Layer should render correct border radius for position: top-left -
     data-g-portal-id="0"
     id="border-radius-test"
   >
-    <a
-      class="c3"
-      inert=""
-      tabindex="-1"
-    />
     This is a layer
   </div>
 </div>
@@ -16886,17 +15185,6 @@ exports[`Layer should render correct border radius for position: top-left -
   animation: ffftsv 0.2s ease-in-out forwards;
 }
 
-.c3 {
-  width: 0;
-  height: 0;
-  overflow: hidden;
-  position: absolute;
-}
-
-.c3:focus {
-  outline: none;
-}
-
 @media only screen and (max-width: 768px) {
   .c0 {
     position: fixed;
@@ -16936,11 +15224,6 @@ exports[`Layer should render correct border radius for position: top-left -
     data-g-portal-id="0"
     id="border-radius-test"
   >
-    <a
-      class="c3"
-      inert=""
-      tabindex="-1"
-    />
     This is a layer
   </div>
 </div>
@@ -17047,17 +15330,6 @@ exports[`Layer should render correct border radius for position: top-left -
   animation: ffftsv 0.2s ease-in-out forwards;
 }
 
-.c3 {
-  width: 0;
-  height: 0;
-  overflow: hidden;
-  position: absolute;
-}
-
-.c3:focus {
-  outline: none;
-}
-
 @media only screen and (max-width: 768px) {
   .c0 {
     position: fixed;
@@ -17097,11 +15369,6 @@ exports[`Layer should render correct border radius for position: top-left -
     data-g-portal-id="0"
     id="border-radius-test"
   >
-    <a
-      class="c3"
-      inert=""
-      tabindex="-1"
-    />
     This is a layer
   </div>
 </div>
@@ -17207,17 +15474,6 @@ exports[`Layer should render correct border radius for position: top-left -
   animation: ffftsv 0.2s ease-in-out forwards;
 }
 
-.c3 {
-  width: 0;
-  height: 0;
-  overflow: hidden;
-  position: absolute;
-}
-
-.c3:focus {
-  outline: none;
-}
-
 @media only screen and (max-width: 768px) {
   .c0 {
     position: fixed;
@@ -17257,11 +15513,6 @@ exports[`Layer should render correct border radius for position: top-left -
     data-g-portal-id="0"
     id="border-radius-test"
   >
-    <a
-      class="c3"
-      inert=""
-      tabindex="-1"
-    />
     This is a layer
   </div>
 </div>
@@ -17366,17 +15617,6 @@ exports[`Layer should render correct border radius for position: top-right -
   animation: ffftsv 0.2s ease-in-out forwards;
 }
 
-.c3 {
-  width: 0;
-  height: 0;
-  overflow: hidden;
-  position: absolute;
-}
-
-.c3:focus {
-  outline: none;
-}
-
 @media only screen and (max-width: 768px) {
   .c0 {
     position: fixed;
@@ -17416,11 +15656,6 @@ exports[`Layer should render correct border radius for position: top-right -
     data-g-portal-id="0"
     id="border-radius-test"
   >
-    <a
-      class="c3"
-      inert=""
-      tabindex="-1"
-    />
     This is a layer
   </div>
 </div>
@@ -17526,17 +15761,6 @@ exports[`Layer should render correct border radius for position: top-right -
   animation: ffftsv 0.2s ease-in-out forwards;
 }
 
-.c3 {
-  width: 0;
-  height: 0;
-  overflow: hidden;
-  position: absolute;
-}
-
-.c3:focus {
-  outline: none;
-}
-
 @media only screen and (max-width: 768px) {
   .c0 {
     position: fixed;
@@ -17576,11 +15800,6 @@ exports[`Layer should render correct border radius for position: top-right -
     data-g-portal-id="0"
     id="border-radius-test"
   >
-    <a
-      class="c3"
-      inert=""
-      tabindex="-1"
-    />
     This is a layer
   </div>
 </div>
@@ -17687,17 +15906,6 @@ exports[`Layer should render correct border radius for position: top-right -
   animation: ffftsv 0.2s ease-in-out forwards;
 }
 
-.c3 {
-  width: 0;
-  height: 0;
-  overflow: hidden;
-  position: absolute;
-}
-
-.c3:focus {
-  outline: none;
-}
-
 @media only screen and (max-width: 768px) {
   .c0 {
     position: fixed;
@@ -17737,11 +15945,6 @@ exports[`Layer should render correct border radius for position: top-right -
     data-g-portal-id="0"
     id="border-radius-test"
   >
-    <a
-      class="c3"
-      inert=""
-      tabindex="-1"
-    />
     This is a layer
   </div>
 </div>
@@ -17847,17 +16050,6 @@ exports[`Layer should render correct border radius for position: top-right -
   animation: ffftsv 0.2s ease-in-out forwards;
 }
 
-.c3 {
-  width: 0;
-  height: 0;
-  overflow: hidden;
-  position: absolute;
-}
-
-.c3:focus {
-  outline: none;
-}
-
 @media only screen and (max-width: 768px) {
   .c0 {
     position: fixed;
@@ -17897,11 +16089,6 @@ exports[`Layer should render correct border radius for position: top-right -
     data-g-portal-id="0"
     id="border-radius-test"
   >
-    <a
-      class="c3"
-      inert=""
-      tabindex="-1"
-    />
     This is a layer
   </div>
 </div>
@@ -18005,17 +16192,6 @@ exports[`Layer target 1`] = `
   animation: hWAzxx 0.2s ease-in-out forwards;
 }
 
-.c3 {
-  width: 0;
-  height: 0;
-  overflow: hidden;
-  position: absolute;
-}
-
-.c3:focus {
-  outline: none;
-}
-
 @media only screen and (max-width: 768px) {
   .c1 {
     position: relative;
@@ -18047,11 +16223,6 @@ exports[`Layer target 1`] = `
     data-g-portal-id="0"
     id="target-test"
   >
-    <a
-      class="c3"
-      inert=""
-      tabindex="-1"
-    />
     this is a test layer
   </div>
 </div>
@@ -18130,17 +16301,6 @@ exports[`Layer target not modal 1`] = `
   animation: hWAzxx 0.2s ease-in-out forwards;
 }
 
-.c2 {
-  width: 0;
-  height: 0;
-  overflow: hidden;
-  position: absolute;
-}
-
-.c2:focus {
-  outline: none;
-}
-
 @media only screen and (max-width: 768px) {
   .c1 {
     position: relative;
@@ -18163,11 +16323,6 @@ exports[`Layer target not modal 1`] = `
     data-g-portal-id="0"
     id="target-test"
   >
-    <a
-      class="c2"
-      inert=""
-      tabindex="-1"
-    />
     this is a test layer
   </div>
 </div>

@@ -5,7 +5,7 @@ import React, {
   useMemo,
   useRef,
 } from 'react';
-import styled, { ThemeContext } from 'styled-components';
+import { ThemeContext } from 'styled-components';
 
 import { FocusedContainer } from '../FocusedContainer';
 import { Keyboard } from '../Keyboard';
@@ -18,21 +18,10 @@ import {
   backgroundIsDark,
   findVisibleParent,
   PortalContext,
-  styledComponentsConfig,
 } from '../../utils';
 
 import { StyledLayer, StyledContainer, StyledOverlay } from './StyledLayer';
 import { useThemeValue } from '../../utils/useThemeValue';
-
-const HiddenAnchor = styled.a.withConfig(styledComponentsConfig)`
-  width: 0;
-  height: 0;
-  overflow: hidden;
-  position: absolute;
-  &:focus {
-    outline: none;
-  }
-`;
 
 const LayerContainer = forwardRef(
   (
@@ -59,7 +48,6 @@ const LayerContainer = forwardRef(
     // layerOptions was created to preserve backwards compatibility but
     // should not be supported in v3
     const { layer: layerOptions } = useContext(OptionsContext);
-    const anchorRef = useRef();
     const containerRef = useRef();
     const layerRef = useRef();
     const portalContext = useContext(PortalContext);
@@ -99,7 +87,8 @@ const LayerContainer = forwardRef(
         // Once layer is open we make sure it has focus so that you
         // can start tabbing inside the layer. If the caller put focus
         // on an element already, we honor that. Otherwise, we put
-        // the focus in the hidden anchor.
+        // the focus within the layer. Look at FocusedContainer.js for
+        // more details.
         let element = document.activeElement;
         while (element) {
           if (element === containerRef.current) {
@@ -107,9 +96,6 @@ const LayerContainer = forwardRef(
             break;
           }
           element = element.parentElement;
-        }
-        if (modal && !element && anchorRef.current) {
-          anchorRef.current.focus();
         }
       }
     }, [modal, position, ref]);
@@ -229,11 +215,6 @@ const LayerContainer = forwardRef(
         // or outside of the layer
         data-g-portal-id={portalId}
       >
-        {/* eslint-disable max-len */}
-        {/* eslint-disable jsx-a11y/anchor-is-valid, jsx-a11y/anchor-has-content */}
-        <HiddenAnchor ref={anchorRef} tabIndex="-1" inert="" />
-        {/* eslint-enable jsx-a11y/anchor-is-valid, jsx-a11y/anchor-has-content */}
-        {/* eslint-enable max-len */}
         {children}
       </StyledContainer>
     );
