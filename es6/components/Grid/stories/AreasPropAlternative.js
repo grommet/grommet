@@ -10,8 +10,11 @@ export var GridAreasAlternative = function GridAreasAlternative() {
       columns: ['1/4', '3/4'],
       areas: [['header', 'header'], ['sidebar', 'main'], ['footer', 'footer']],
       gap: "small"
+      // needed for keyboard accessibility of scroll region
+      ,
+      tabIndex: 0
     }, /*#__PURE__*/React.createElement(Box, {
-      background: "brand",
+      background: "dark-1",
       gridArea: "header"
     }, "Header"), /*#__PURE__*/React.createElement(Box, {
       background: "light-5",

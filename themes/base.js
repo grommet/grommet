@@ -1118,7 +1118,7 @@ var generate = exports.generate = function generate(baseSpacing, scale) {
       },
       // extend: undefined,
       help: {
-        color: 'dark-3',
+        color: 'dark-2',
         margin: {
           start: 'small'
         }

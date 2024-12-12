@@ -5,6 +5,7 @@ exports["default"] = exports.Kind = void 0;
 var _react = _interopRequireDefault(require("react"));
 var _grommetIcons = require("grommet-icons");
 var _grommet = require("grommet");
+var _useThemeValue2 = require("../../../utils/useThemeValue");
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 var darks = [false, true];
@@ -27,12 +28,6 @@ var states = [{}, {
 }, {
   disabled: true
 }, {
-  color: 'teal'
-}, {
-  color: '#9999ff'
-}, {
-  color: '#333399'
-}, {
   hoverIndicator: 'teal'
 }];
 var contents = [{
@@ -46,11 +41,11 @@ var contents = [{
   plain: true,
   children: /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     pad: "xsmall"
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
-    color: "orange"
-  }, "label"))
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, "label"))
 }];
 var Kind = exports.Kind = function Kind() {
+  var _useThemeValue = (0, _useThemeValue2.useThemeValue)(),
+    theme = _useThemeValue.theme;
   return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     pad: "large",
     gap: "large"
@@ -72,13 +67,14 @@ var Kind = exports.Kind = function Kind() {
           direction: "row",
           align: "center"
         }, darks.map(function (dark) {
+          var backgroundFallback = dark ? 'black' : 'white';
           return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
             key: dark,
             direction: dark ? 'row-reverse' : 'row',
             align: "center",
             gap: "small",
             background: {
-              color: 'background',
+              color: theme.global.colors.background ? 'background' : backgroundFallback,
               dark: dark
             },
             pad: "small"

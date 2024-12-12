@@ -64,23 +64,23 @@ var FieldSpacingOptions = exports.FieldSpacingOptions = function FieldSpacingOpt
     level: 2,
     size: "xsmall"
   }, "Default Spacing"), /*#__PURE__*/_react["default"].createElement(_grommet.FormField, {
-    htmlFor: "example1-id",
+    htmlFor: "textinput1-id",
     name: "example1",
     label: "Field Label",
     help: "Some helpful descriptive text",
     error: "Message to show on error",
     info: "Additional contextual information"
   }, /*#__PURE__*/_react["default"].createElement(_grommet.TextInput, {
-    id: "example1-id",
+    id: "textinput1-id",
     name: "example1",
     placeholder: "Placeholder input prompt"
   })), /*#__PURE__*/_react["default"].createElement(_grommet.FormField, {
-    htmlFor: "example2-id",
+    htmlFor: "radiobutton2-id",
     name: "example2",
     label: "Field Label for Grouped Input",
     help: "Choose your favorite"
   }, /*#__PURE__*/_react["default"].createElement(_grommet.RadioButtonGroup, {
-    id: "example2-id",
+    id: "radiobutton2-id",
     name: "example2",
     options: ['Eenie', 'Meenie', 'Miney', 'Moe']
   })))), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
@@ -95,24 +95,24 @@ var FieldSpacingOptions = exports.FieldSpacingOptions = function FieldSpacingOpt
       formField: adjustedLabelMargins
     }
   }, /*#__PURE__*/_react["default"].createElement(_grommet.FormField, {
-    htmlFor: "example1-id",
-    name: "example1",
+    htmlFor: "textinput3-id",
+    name: "example3",
     label: "Field Label",
     help: "Some helpful descriptive text",
     error: "Message to show on error",
     info: "Additional contextual information"
   }, /*#__PURE__*/_react["default"].createElement(_grommet.TextInput, {
-    id: "example1-id",
-    name: "example1",
+    id: "textinput3-id",
+    name: "example3",
     placeholder: "Placeholder input prompt"
   })), /*#__PURE__*/_react["default"].createElement(_grommet.FormField, {
-    htmlFor: "example1-id",
-    name: "example1",
+    htmlFor: "radiobutton4-id",
+    name: "example4",
     label: "Field Label for Grouped Input",
     help: "Choose your favorite"
   }, /*#__PURE__*/_react["default"].createElement(_grommet.RadioButtonGroup, {
-    id: "example1-id",
-    name: "example1",
+    id: "radiobutton4-id",
+    name: "example4",
     options: ['Eenie', 'Meenie', 'Miney', 'Moe']
   }))))), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     pad: {
@@ -130,24 +130,24 @@ var FieldSpacingOptions = exports.FieldSpacingOptions = function FieldSpacingOpt
       }, adjustedLabelMargins)
     }
   }, /*#__PURE__*/_react["default"].createElement(_grommet.FormField, {
-    htmlFor: "example11-id",
-    name: "example11",
+    htmlFor: "textinput5-id",
+    name: "example5",
     label: "Field Label",
     help: "Some helpful descriptive text",
     error: "Message to show on error",
     info: "Additional contextual information"
   }, /*#__PURE__*/_react["default"].createElement(_grommet.TextInput, {
-    id: "example11-id",
-    name: "example11",
+    id: "textinput5-id",
+    name: "example5",
     placeholder: "Placeholder input prompt"
   })), /*#__PURE__*/_react["default"].createElement(_grommet.FormField, {
-    htmlFor: "example21-id",
-    name: "example21",
+    htmlFor: "radiobutton6-id",
+    name: "example6",
     label: "Field Label for Grouped Input",
     help: "Choose your favorite"
   }, /*#__PURE__*/_react["default"].createElement(_grommet.RadioButtonGroup, {
-    id: "example21-id",
-    name: "example21",
+    id: "radiobutton6-id",
+    name: "example6",
     options: ['Eenie', 'Meenie', 'Miney', 'Moe']
   }))))), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     pad: {
@@ -168,24 +168,24 @@ var FieldSpacingOptions = exports.FieldSpacingOptions = function FieldSpacingOpt
       }, adjustedLabelMargins)
     }
   }, /*#__PURE__*/_react["default"].createElement(_grommet.FormField, {
-    htmlFor: "example12-id",
-    name: "example12",
+    htmlFor: "textinput7-id",
+    name: "example7",
     label: "Field Label",
     help: "Some helpful descriptive text",
     error: "Message to show on error",
     info: "Additional contextual information"
   }, /*#__PURE__*/_react["default"].createElement(_grommet.TextInput, {
-    id: "example12-id",
-    name: "example12",
+    id: "textinput7-id",
+    name: "example7",
     placeholder: "Placeholder input prompt"
   })), /*#__PURE__*/_react["default"].createElement(_grommet.FormField, {
-    htmlFor: "example22-id",
-    name: "example22",
+    htmlFor: "radiobutton8-id",
+    name: "example8",
     label: "Field Label for Grouped Input",
     help: "Choose your favorite"
   }, /*#__PURE__*/_react["default"].createElement(_grommet.RadioButtonGroup, {
-    id: "example22-id",
-    name: "example22",
+    id: "radiobutton8-id",
+    name: "example8",
     options: ['Eenie', 'Meenie', 'Miney', 'Moe']
   }))))), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     pad: {
@@ -203,25 +203,25 @@ var FieldSpacingOptions = exports.FieldSpacingOptions = function FieldSpacingOpt
       }, adjustedLabelMargins)
     }
   }, /*#__PURE__*/_react["default"].createElement(_grommet.FormField, {
-    htmlFor: "example13-id",
-    name: "example13",
+    htmlFor: "textinput9-id",
+    name: "example9",
     label: "Field Label",
     help: "Some helpful descriptive text",
     error: "Message to show on error",
     info: "Additional contextual information",
     pad: true
   }, /*#__PURE__*/_react["default"].createElement(_grommet.TextInput, {
-    id: "example13-id",
-    name: "example13",
+    id: "textinput9-id",
+    name: "example9",
     placeholder: "Placeholder input prompt"
   })), /*#__PURE__*/_react["default"].createElement(_grommet.FormField, {
-    htmlFor: "example23-id",
-    name: "example23",
+    htmlFor: "radiobutton10-id",
+    name: "example10",
     label: "Field Label for Grouped Input",
     help: "Choose your favorite"
   }, /*#__PURE__*/_react["default"].createElement(_grommet.RadioButtonGroup, {
-    id: "example23-id",
-    name: "example23",
+    id: "radiobutton10-id",
+    name: "example10",
     options: ['Eenie', 'Meenie', 'Miney', 'Moe']
   })))))));
 };

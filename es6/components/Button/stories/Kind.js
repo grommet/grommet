@@ -2,6 +2,7 @@ function _extends() { return _extends = Object.assign ? Object.assign.bind() : f
 import React from 'react';
 import { User } from "grommet-icons/es6/icons/User";
 import { Box, Button, Heading, Text } from 'grommet';
+import { useThemeValue } from '../../../utils/useThemeValue';
 var darks = [false, true];
 var kinds = [{
   name: 'default',
@@ -22,12 +23,6 @@ var states = [{}, {
 }, {
   disabled: true
 }, {
-  color: 'teal'
-}, {
-  color: '#9999ff'
-}, {
-  color: '#333399'
-}, {
   hoverIndicator: 'teal'
 }];
 var contents = [{
@@ -41,11 +36,11 @@ var contents = [{
   plain: true,
   children: /*#__PURE__*/React.createElement(Box, {
     pad: "xsmall"
-  }, /*#__PURE__*/React.createElement(Text, {
-    color: "orange"
-  }, "label"))
+  }, /*#__PURE__*/React.createElement(Text, null, "label"))
 }];
 export var Kind = function Kind() {
+  var _useThemeValue = useThemeValue(),
+    theme = _useThemeValue.theme;
   return /*#__PURE__*/React.createElement(Box, {
     pad: "large",
     gap: "large"
@@ -67,13 +62,14 @@ export var Kind = function Kind() {
           direction: "row",
           align: "center"
         }, darks.map(function (dark) {
+          var backgroundFallback = dark ? 'black' : 'white';
           return /*#__PURE__*/React.createElement(Box, {
             key: dark,
             direction: dark ? 'row-reverse' : 'row',
             align: "center",
             gap: "small",
             background: {
-              color: 'background',
+              color: theme.global.colors.background ? 'background' : backgroundFallback,
               dark: dark
             },
             pad: "small"

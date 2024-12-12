@@ -15,8 +15,11 @@ var GridAreasAlternative = exports.GridAreasAlternative = function GridAreasAlte
       columns: ['1/4', '3/4'],
       areas: [['header', 'header'], ['sidebar', 'main'], ['footer', 'footer']],
       gap: "small"
+      // needed for keyboard accessibility of scroll region
+      ,
+      tabIndex: 0
     }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
-      background: "brand",
+      background: "dark-1",
       gridArea: "header"
     }, "Header"), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
       background: "light-5",
