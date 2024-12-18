@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Box, Button, Card, Grommet, Image, Text } from 'grommet';
+import { Box, Button, Card, Grommet, Text } from 'grommet';
 import { useThemeValue } from '../../../utils/useThemeValue';
 
 const Item = ({ title, ...rest }) => (
@@ -23,9 +23,12 @@ const Item = ({ title, ...rest }) => (
     </Text>
     <Box direction="row" gap="large" justify="between" align="center">
       <Box direction="row" gap="medium">
-        <Box width="xsmall" height="xsmall" background="orange!" round="small">
-          <Image />
-        </Box>
+        <Box
+          width="xsmall"
+          height="xsmall"
+          background="orange!"
+          round="small"
+        />
         <Box>
           <Text
             size="large"

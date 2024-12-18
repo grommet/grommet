@@ -32,7 +32,7 @@ const customTheme = deepMerge(grommet, {
       background: 'dark-1',
       color: 'accent-1',
     },
-    background: 'dark-3',
+    background: 'dark-2',
     border: undefined,
     color: 'white',
     hover: {
@@ -51,10 +51,10 @@ const customTheme = deepMerge(grommet, {
     `,
   },
   tabs: {
-    background: 'dark-3',
+    background: 'dark-1',
     gap: 'medium',
     header: {
-      background: 'dark-2',
+      background: 'dark-3',
       extend: ({ theme }) => css`
         padding: 10px;
         /* or 'padding: ${theme.global.edgeSize.small}' */

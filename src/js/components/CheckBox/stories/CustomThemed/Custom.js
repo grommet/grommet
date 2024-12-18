@@ -39,7 +39,7 @@ const customCheckBoxTheme = {
     },
     size: '18px',
     extend: `
-      color: #9C9C9C;
+      color: #6b6c6e;
     `,
   },
 };

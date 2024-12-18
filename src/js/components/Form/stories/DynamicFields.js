@@ -15,20 +15,21 @@ export const DynamicFields = () => {
           onValidate={(event) => console.log('Validate', event)}
           onSubmit={({ value }) => console.log('Submit', value)}
         >
-          <FormField label="Name" name="name" required>
-            <TextInput name="name" aria-label="name" />
+          <FormField htmlFor="name" label="Name" name="name" required>
+            <TextInput aria-required id="name" name="name" />
           </FormField>
-          <FormField name="haveAlias">
+          <FormField htmlFor="havingAlias" name="haveAlias">
             <CheckBox
               name="haveAlias"
+              id="havingAlias"
               label="alias?"
               checked={haveAlias}
               onChange={() => setHaveAlias(!haveAlias)}
             />
           </FormField>
           {haveAlias && (
-            <FormField label="Alias" name="alias" required>
-              <TextInput name="alias" />
+            <FormField htmlFor="alias" label="Alias" name="alias" required>
+              <TextInput id="alias" aria-required name="alias" />
             </FormField>
           )}
           <Box direction="row" justify="between" margin={{ top: 'medium' }}>

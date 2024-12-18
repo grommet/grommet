@@ -8,7 +8,16 @@ import {
   User,
   Wifi,
 } from 'grommet-icons';
-import { Box, Card, CardBody, CardFooter, Grid, Grommet, Text } from 'grommet';
+import {
+  Box,
+  Card,
+  CardBody,
+  CardFooter,
+  Grid,
+  Grommet,
+  Main,
+  Text,
+} from 'grommet';
 
 const data = [
   {
@@ -66,8 +75,8 @@ const theme = {
       blue: '#00C8FF',
       green: '#17EBA0',
       teal: '#82FFF2',
-      purple: '#F740FF',
-      red: '#FC6161',
+      purple: '#e8c3f7',
+      red: '#f5afab',
       orange: '#FFBC44',
       yellow: '#FFEB59',
     },
@@ -94,29 +103,35 @@ const Identifier = ({ children, title, subTitle, size, ...rest }) => (
 
 export const Themed = () => (
   <Grommet theme={theme} full>
-    <Box pad="large">
-      {/* Responsive Grid */}
-      <Grid gap="medium" rows="small" columns={{ count: 'fit', size: 'small' }}>
-        {data.map((value) => (
-          <Card background={value.color} key={value.message}>
-            <CardBody pad="small">
-              <Identifier
-                pad="small"
-                title={value.title}
-                subTitle={value.subTitle}
-                size="small"
-                align="start"
-              >
-                {value.icon}
-              </Identifier>
-            </CardBody>
-            <CardFooter pad={{ horizontal: 'medium', vertical: 'small' }}>
-              <Text size="xsmall">{value.message}</Text>
-            </CardFooter>
-          </Card>
-        ))}
-      </Grid>
-    </Box>
+    <Main>
+      <Box pad="large">
+        {/* Responsive Grid */}
+        <Grid
+          gap="medium"
+          rows="small"
+          columns={{ count: 'fit', size: 'small' }}
+        >
+          {data.map((value) => (
+            <Card background={value.color} key={value.message}>
+              <CardBody pad="small">
+                <Identifier
+                  pad="small"
+                  title={value.title}
+                  subTitle={value.subTitle}
+                  size="small"
+                  align="start"
+                >
+                  {value.icon}
+                </Identifier>
+              </CardBody>
+              <CardFooter pad={{ horizontal: 'medium', vertical: 'small' }}>
+                <Text size="xsmall">{value.message}</Text>
+              </CardFooter>
+            </Card>
+          ))}
+        </Grid>
+      </Box>
+    </Main>
   </Grommet>
 );
 

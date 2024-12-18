@@ -140,7 +140,11 @@ const Components = () => {
         onChange={(event) => setMaskedInput(event.target.value)}
       />
       <TextArea placeholder="TextArea" />
-      <RangeInput value={24} onChange={() => {}} />
+      <RangeInput
+        aria-label="Range input with value of 24"
+        value={24}
+        onChange={() => {}}
+      />
       <Stack>
         <Box direction="row" justify="between">
           {[0, 1, 2, 3].map((value) => (
@@ -165,7 +169,7 @@ const Components = () => {
       </FormField>
     </Box>,
     <Box key="time" gap="medium">
-      <Calendar size="small" />
+      <Calendar size="small" level={2} />
       <Clock type="digital" className="chromatic-ignore" />
       <Clock className="chromatic-ignore" />
     </Box>,
@@ -232,7 +236,7 @@ const Components = () => {
       />
     </Box>,
     <Box key="accordion">
-      <Accordion>
+      <Accordion level={2} size="small">
         <AccordionPanel label="Accordion Panel 1">
           <Box pad="small">
             <Text>Accordion panel 1 content</Text>

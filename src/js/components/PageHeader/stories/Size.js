@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { Anchor, Button, PageHeader, Page, PageContent } from 'grommet';
+import { Main } from '../../Main';
 
 export const Size = () => (
   // Uncomment <Grommet> lines when using outside of storybook
@@ -16,23 +17,25 @@ export const Size = () => (
         parent={<Anchor label="Parent Page" />}
         size="small"
       />
-      <PageHeader
-        title="Medium PageHeader (default)"
-        subtitle={`Grommet helps you build responsive and accessible 
+      <Main>
+        <PageHeader
+          title="Medium PageHeader (default)"
+          subtitle={`Grommet helps you build responsive and accessible 
           mobile-first projects for the web with an easy to use component 
           library.`}
-        actions={<Button label="Page-level action" />}
-        parent={<Anchor label="Parent Page" />}
-      />
-      <PageHeader
-        title="Large PageHeader"
-        subtitle={`Grommet helps you build responsive and accessible 
+          actions={<Button label="Page-level action" />}
+          parent={<Anchor label="Parent Page" />}
+        />
+        <PageHeader
+          title="Large PageHeader"
+          subtitle={`Grommet helps you build responsive and accessible 
           mobile-first projects for the web with an easy to use component 
           library.`}
-        actions={<Button label="Page-level action" />}
-        parent={<Anchor label="Parent Page" />}
-        size="large"
-      />
+          actions={<Button label="Page-level action" />}
+          parent={<Anchor label="Parent Page" />}
+          size="large"
+        />
+      </Main>
     </PageContent>
   </Page>
   // </Grommet>

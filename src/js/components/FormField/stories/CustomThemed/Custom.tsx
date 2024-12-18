@@ -17,7 +17,7 @@ const customTheme: ThemeType = {
   },
   formField: {
     label: {
-      color: 'dark-3',
+      color: 'dark-2',
       size: 'xsmall',
       margin: { vertical: '0', bottom: 'small', horizontal: '0' },
       weight: 600,

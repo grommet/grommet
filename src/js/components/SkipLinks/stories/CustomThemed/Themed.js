@@ -102,7 +102,7 @@ export const Themed = () => (
       <SkipLink id="footer" label="Footer" />
     </SkipLinks>
     <Box gap="large">
-      <Box background="light-4" pad="small" fill="horizontal">
+      <Box background="light-2" pad="small" fill="horizontal">
         <Header pad={{ horizontal: 'large' }}>
           <Avatar src={avatarSrc} />
           <Nav direction="row">
