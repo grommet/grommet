@@ -2,20 +2,16 @@ var _excluded = ["background", "children", "full", "id", "margin", "modal", "onC
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (e.includes(n)) continue; t[n] = r[n]; } return t; }
 import React, { forwardRef, useContext, useEffect, useMemo, useRef } from 'react';
-import styled, { ThemeContext } from 'styled-components';
+import { ThemeContext } from 'styled-components';
 import { FocusedContainer } from '../FocusedContainer';
 import { Keyboard } from '../Keyboard';
 import { ResponsiveContext } from '../../contexts/ResponsiveContext';
 import { OptionsContext } from '../../contexts/OptionsContext';
 import { ContainerTargetContext } from '../../contexts/ContainerTargetContext';
 import { useAnalytics } from '../../contexts/AnalyticsContext';
-import { backgroundIsDark, findVisibleParent, PortalContext, styledComponentsConfig } from '../../utils';
+import { backgroundIsDark, findVisibleParent, PortalContext } from '../../utils';
 import { StyledLayer, StyledContainer, StyledOverlay } from './StyledLayer';
 import { useThemeValue } from '../../utils/useThemeValue';
-var HiddenAnchor = styled.a.withConfig(styledComponentsConfig).withConfig({
-  displayName: "LayerContainer__HiddenAnchor",
-  componentId: "sc-1srj14c-0"
-})(["width:0;height:0;overflow:hidden;position:absolute;&:focus{outline:none;}"]);
 var LayerContainer = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var background = _ref.background,
     children = _ref.children,
@@ -44,7 +40,6 @@ var LayerContainer = /*#__PURE__*/forwardRef(function (_ref, ref) {
   // should not be supported in v3
   var _useContext = useContext(OptionsContext),
     layerOptions = _useContext.layer;
-  var anchorRef = useRef();
   var containerRef = useRef();
   var layerRef = useRef();
   var portalContext = useContext(PortalContext);
@@ -82,7 +77,8 @@ var LayerContainer = /*#__PURE__*/forwardRef(function (_ref, ref) {
       // Once layer is open we make sure it has focus so that you
       // can start tabbing inside the layer. If the caller put focus
       // on an element already, we honor that. Otherwise, we put
-      // the focus in the hidden anchor.
+      // the focus within the layer. Look at FocusedContainer.js for
+      // more details.
       var element = document.activeElement;
       while (element) {
         if (element === containerRef.current) {
@@ -90,9 +86,6 @@ var LayerContainer = /*#__PURE__*/forwardRef(function (_ref, ref) {
           break;
         }
         element = element.parentElement;
-      }
-      if (modal && !element && anchorRef.current) {
-        anchorRef.current.focus();
       }
     }
   }, [modal, position, ref]);
@@ -193,10 +186,6 @@ var LayerContainer = /*#__PURE__*/forwardRef(function (_ref, ref) {
     // or outside of the layer
     ,
     "data-g-portal-id": portalId
-  }), /*#__PURE__*/React.createElement(HiddenAnchor, {
-    ref: anchorRef,
-    tabIndex: "-1",
-    "aria-hidden": "true"
   }), children);
   content = /*#__PURE__*/React.createElement(StyledLayer, _extends({
     ref: layerRef,
