@@ -2,7 +2,6 @@ import React, {
   Fragment,
   useCallback,
   useContext,
-  useEffect,
   useMemo,
   useRef,
   useState,
@@ -113,12 +112,6 @@ const Detail = ({
     },
     [activeProperty, axis, data, horizontalProp, renderValue, series],
   );
-
-  useEffect(() => {
-    if (detailIndex !== undefined) {
-      announce(getContent(detailIndex), 'assertive');
-    }
-  }, [announce, detailIndex, getContent]);
 
   return (
     <>
