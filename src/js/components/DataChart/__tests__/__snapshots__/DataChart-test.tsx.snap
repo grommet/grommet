@@ -4772,7 +4772,11 @@ exports[`DataChart detail 1`] = `
         class="c9"
       >
         <div
+          aria-label="
+            Data chart: Use the left and right arrow keys to navigate the data.
+          "
           class="c10 c11"
+          role="region"
           tabindex="0"
         >
           <div
@@ -5326,7 +5330,11 @@ exports[`DataChart detail pad + thickness 1`] = `
         class="c9"
       >
         <div
+          aria-label="
+            Data chart: Use the left and right arrow keys to navigate the data.
+          "
           class="c10 c11"
+          role="region"
           tabindex="0"
         >
           <div
@@ -5422,7 +5430,11 @@ exports[`DataChart detail pad + thickness 1`] = `
         class="c9"
       >
         <div
+          aria-label="
+            Data chart: Use the left and right arrow keys to navigate the data.
+          "
           class="c18 c11"
+          role="region"
           tabindex="0"
         >
           <div
@@ -5518,7 +5530,11 @@ exports[`DataChart detail pad + thickness 1`] = `
         class="c9"
       >
         <div
+          aria-label="
+            Data chart: Use the left and right arrow keys to navigate the data.
+          "
           class="c20 c11"
+          role="region"
           tabindex="0"
         >
           <div
@@ -5614,7 +5630,11 @@ exports[`DataChart detail pad + thickness 1`] = `
         class="c9"
       >
         <div
+          aria-label="
+            Data chart: Use the left and right arrow keys to navigate the data.
+          "
           class="c21 c11"
+          role="region"
           tabindex="0"
         >
           <div
@@ -5710,7 +5730,11 @@ exports[`DataChart detail pad + thickness 1`] = `
         class="c9"
       >
         <div
+          aria-label="
+            Data chart: Use the left and right arrow keys to navigate the data.
+          "
           class="c24 c11"
+          role="region"
           tabindex="0"
         >
           <div

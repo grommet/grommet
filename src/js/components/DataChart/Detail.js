@@ -88,55 +88,70 @@ const Detail = ({
     return res;
   }, [data.length, detailIndex, horizontalProp]);
 
+  const getContent = useCallback(
+    (index) => {
+      if (index !== undefined) {
+        return series
+          .filter(
+            ({ property }) =>
+              ((!activeProperty || activeProperty === property) &&
+                data?.[index]?.[property] !== undefined) ||
+              (axis && axis.x && axis.x.property === property),
+          )
+          .map((serie) => {
+            const axisValue = horizontalProp
+              ? data[index][serie.property]
+              : index;
+            return `${serie.label || serie.property} ${renderValue(
+              serie,
+              axisValue,
+            )}`;
+          })
+          .join(' ');
+      }
+      return undefined;
+    },
+    [activeProperty, axis, data, horizontalProp, renderValue, series],
+  );
+
   useEffect(() => {
     if (detailIndex !== undefined) {
-      const content = series
-        .filter(
-          ({ property }) =>
-            ((!activeProperty || activeProperty === property) &&
-              data?.[detailIndex]?.[property] !== undefined) ||
-            (axis && axis.x && axis.x.property === property),
-        )
-        .map((serie) => {
-          const axisValue = horizontalProp
-            ? data[detailIndex][serie.property]
-            : detailIndex;
-          return `${serie.label || serie.property} ${renderValue(
-            serie,
-            axisValue,
-          )}`;
-        })
-        .join(' ');
-      announce(content);
+      announce(getContent(detailIndex), 'assertive');
     }
-  }, [
-    activeProperty,
-    announce,
-    axis,
-    data,
-    detailIndex,
-    horizontalProp,
-    renderValue,
-    series,
-  ]);
+  }, [announce, detailIndex, getContent]);
 
   return (
     <>
       <Keyboard
-        onLeft={() => {
-          if (detailIndex === undefined) setDetailIndex(data.length - 1);
-          else if (detailIndex > 0) setDetailIndex(detailIndex - 1);
+        onLeft={(event) => {
+          event.preventDefault();
+          if (detailIndex === undefined) {
+            setDetailIndex(data.length - 1);
+            announce(getContent(data.length - 1), 'assertive');
+          } else if (detailIndex > 0) {
+            setDetailIndex(detailIndex - 1);
+            announce(getContent(detailIndex - 1), 'assertive');
+          }
         }}
-        onRight={() => {
-          if (detailIndex === undefined) setDetailIndex(0);
-          else if (detailIndex < data.length - 1)
+        onRight={(event) => {
+          event.preventDefault();
+          if (detailIndex === undefined) {
+            setDetailIndex(0);
+            announce(getContent(0), 'assertive');
+          } else if (detailIndex < data.length - 1) {
             setDetailIndex(detailIndex + 1);
+            announce(getContent(detailIndex + 1), 'assertive');
+          }
         }}
       >
         <DetailControl
           key="band"
-          tabIndex={0}
           fill
+          role="region"
+          tabIndex={0}
+          aria-label={`
+            Data chart: Use the left and right arrow keys to navigate the data.
+          `}
           justify="between"
           responsive={false}
           {...(horizontalProp
