@@ -180,6 +180,7 @@ const Detail = ({
                 onMouseOver={(event) => {
                   activeIndex.current = event.currentTarget;
                   setDetailIndex(i);
+                  announce(getContent(i), 'assertive');
                 }}
                 onMouseLeave={onMouseLeave}
                 onFocus={() => {}}
