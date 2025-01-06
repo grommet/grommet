@@ -104,7 +104,7 @@ const Detail = ({
             return `${serie.label || serie.property} ${renderValue(
               serie,
               axisValue,
-            )}`;
+            )}.`;
           })
           .join(' ');
       }
