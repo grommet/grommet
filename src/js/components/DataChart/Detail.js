@@ -140,11 +140,9 @@ const Detail = ({
         <DetailControl
           key="band"
           fill
-          role="region"
+          role="list"
           tabIndex={0}
-          aria-label={`
-            Data chart: Use the left and right arrow keys to navigate the data.
-          `}
+          aria-label="Data chart"
           justify="between"
           responsive={false}
           {...(horizontalProp
@@ -155,7 +153,11 @@ const Detail = ({
                 direction: 'row',
                 pad,
               })}
-          onFocus={() => {}}
+          onFocus={() => {
+            announce(
+              'Use the left and right arrows to navigate the data chart.',
+            );
+          }}
           onBlur={() => setDetailIndex(undefined)}
         >
           {data.map((_, i) => {
@@ -167,6 +169,8 @@ const Detail = ({
               <Box
                 // eslint-disable-next-line react/no-array-index-key
                 key={i}
+                role="listitem"
+                aria-label={getContent(i)}
                 responsive={false}
                 {...(horizontalProp
                   ? {
