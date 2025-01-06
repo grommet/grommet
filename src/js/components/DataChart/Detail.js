@@ -214,6 +214,7 @@ const Detail = ({
           align={dropAlign}
           plain
           onMouseLeave={onMouseLeave}
+          trapFocus={false}
         >
           <Box pad="small" background={{ color: 'background-back' }}>
             <Grid
