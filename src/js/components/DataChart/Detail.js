@@ -7,7 +7,8 @@ import React, {
   useState,
 } from 'react';
 import styled from 'styled-components';
-import { AnnounceContext } from '../../contexts';
+import { AnnounceContext } from '../../contexts/AnnounceContext';
+import { MessageContext } from '../../contexts/MessageContext';
 import { Box } from '../Box';
 import { Drop } from '../Drop';
 import { Grid } from '../Grid';
@@ -38,6 +39,7 @@ const Detail = ({
   thickness,
 }) => {
   const announce = useContext(AnnounceContext);
+  const { format } = useContext(MessageContext);
   const { theme } = useThemeValue();
   const [detailIndex, setDetailIndex] = useState();
   const activeIndex = useRef();
@@ -142,7 +144,7 @@ const Detail = ({
           fill
           role="list"
           tabIndex={0}
-          aria-label="Data chart"
+          aria-label={format({ id: 'dataChart.detailTitle' })}
           justify="between"
           responsive={false}
           {...(horizontalProp
@@ -154,9 +156,7 @@ const Detail = ({
                 pad,
               })}
           onFocus={() => {
-            announce(
-              'Use the left and right arrows to navigate the data chart.',
-            );
+            announce(format({ id: 'dataChart.detailFocus' }));
           }}
           onBlur={() => setDetailIndex(undefined)}
         >
