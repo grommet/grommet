@@ -170,7 +170,6 @@ const Detail = ({
                 // eslint-disable-next-line react/no-array-index-key
                 key={i}
                 role="listitem"
-                aria-label={getContent(i)}
                 responsive={false}
                 {...(horizontalProp
                   ? {
@@ -191,6 +190,8 @@ const Detail = ({
                 onBlur={() => {}}
               >
                 <Box
+                  role="img"
+                  aria-label={getContent(i)}
                   // for horizontal, ref will be placed on child box so
                   // drop is restricted to drop dimensions as opposed
                   // to filling the chart width

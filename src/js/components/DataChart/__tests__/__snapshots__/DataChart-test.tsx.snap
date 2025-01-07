@@ -4778,21 +4778,23 @@ exports[`DataChart detail 1`] = `
           tabindex="0"
         >
           <div
-            aria-label="a 1."
             class="c12"
             role="listitem"
           >
             <div
+              aria-label="a 1."
               class="c13"
+              role="img"
             />
           </div>
           <div
-            aria-label="a 2."
             class="c12"
             role="listitem"
           >
             <div
+              aria-label="a 2."
               class="c13"
+              role="img"
             />
           </div>
         </div>
@@ -5338,21 +5340,23 @@ exports[`DataChart detail pad + thickness 1`] = `
           tabindex="0"
         >
           <div
-            aria-label="a 1."
             class="c12"
             role="listitem"
           >
             <div
+              aria-label="a 1."
               class="c13"
+              role="img"
             />
           </div>
           <div
-            aria-label="a 2."
             class="c12"
             role="listitem"
           >
             <div
+              aria-label="a 2."
               class="c13"
+              role="img"
             />
           </div>
         </div>
@@ -5440,21 +5444,23 @@ exports[`DataChart detail pad + thickness 1`] = `
           tabindex="0"
         >
           <div
-            aria-label="a 1."
             class="c12"
             role="listitem"
           >
             <div
+              aria-label="a 1."
               class="c13"
+              role="img"
             />
           </div>
           <div
-            aria-label="a 2."
             class="c12"
             role="listitem"
           >
             <div
+              aria-label="a 2."
               class="c13"
+              role="img"
             />
           </div>
         </div>
@@ -5542,21 +5548,23 @@ exports[`DataChart detail pad + thickness 1`] = `
           tabindex="0"
         >
           <div
-            aria-label="a 1."
             class="c12"
             role="listitem"
           >
             <div
+              aria-label="a 1."
               class="c13"
+              role="img"
             />
           </div>
           <div
-            aria-label="a 2."
             class="c12"
             role="listitem"
           >
             <div
+              aria-label="a 2."
               class="c13"
+              role="img"
             />
           </div>
         </div>
@@ -5644,21 +5652,23 @@ exports[`DataChart detail pad + thickness 1`] = `
           tabindex="0"
         >
           <div
-            aria-label="a 1."
             class="c12"
             role="listitem"
           >
             <div
+              aria-label="a 1."
               class="c13"
+              role="img"
             />
           </div>
           <div
-            aria-label="a 2."
             class="c12"
             role="listitem"
           >
             <div
+              aria-label="a 2."
               class="c13"
+              role="img"
             />
           </div>
         </div>
@@ -5746,21 +5756,23 @@ exports[`DataChart detail pad + thickness 1`] = `
           tabindex="0"
         >
           <div
-            aria-label="a 1."
             class="c25"
             role="listitem"
           >
             <div
+              aria-label="a 1."
               class="c13"
+              role="img"
             />
           </div>
           <div
-            aria-label="a 2."
             class="c25"
             role="listitem"
           >
             <div
+              aria-label="a 2."
               class="c13"
+              role="img"
             />
           </div>
         </div>
