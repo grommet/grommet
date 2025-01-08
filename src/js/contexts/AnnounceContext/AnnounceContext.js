@@ -8,18 +8,11 @@ const createAnnouncer = () => {
   announcer.style.right = '100%';
   announcer.style.position = 'fixed';
   announcer.style['z-index'] = '-1';
-  announcer.setAttribute('aria-live', 'off');
 
   document.body.insertBefore(announcer, document.body.firstChild);
 
   return announcer;
 };
-/*
-Prime the live region so that it's registered with the browser
-when we first call the announce function.
-See https://tetralogical.com/blog/2024/05/01/why-are-my-live-regions-not-working/
-*/
-createAnnouncer();
 
 export const AnnounceContext = React.createContext(
   (message, mode = 'polite', timeout = 500) => {
