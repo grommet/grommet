@@ -2515,7 +2515,7 @@ exports[`Accordion change to second Panel 2`] = `
             aria-hidden="false"
             class="c1 c13"
             open=""
-            style="max-height: 0;"
+            style="max-height: 0px; max-height: 0px;"
           >
             Panel body 2
           </div>
