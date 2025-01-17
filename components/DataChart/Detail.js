@@ -4,7 +4,8 @@ exports.__esModule = true;
 exports.Detail = void 0;
 var _react = _interopRequireWildcard(require("react"));
 var _styledComponents = _interopRequireDefault(require("styled-components"));
-var _contexts = require("../../contexts");
+var _AnnounceContext = require("../../contexts/AnnounceContext");
+var _MessageContext = require("../../contexts/MessageContext");
 var _Box = require("../Box");
 var _Drop = require("../Drop");
 var _Grid = require("../Grid");
@@ -31,7 +32,9 @@ var Detail = exports.Detail = function Detail(_ref) {
     seriesStyles = _ref.seriesStyles,
     renderValue = _ref.renderValue,
     thickness = _ref.thickness;
-  var announce = (0, _react.useContext)(_contexts.AnnounceContext);
+  var announce = (0, _react.useContext)(_AnnounceContext.AnnounceContext);
+  var _useContext = (0, _react.useContext)(_MessageContext.MessageContext),
+    format = _useContext.format;
   var _useThemeValue = (0, _useThemeValue2.useThemeValue)(),
     theme = _useThemeValue.theme;
   var _useState = (0, _react.useState)(),
@@ -80,30 +83,48 @@ var Detail = exports.Detail = function Detail(_ref) {
     };
     return res;
   }, [data.length, detailIndex, horizontalProp]);
-  (0, _react.useEffect)(function () {
-    if (detailIndex !== undefined) {
-      var content = series.filter(function (_ref2) {
-        var _data$detailIndex;
+  var getContent = (0, _react.useCallback)(function (index) {
+    if (index !== undefined) {
+      return series.filter(function (_ref2) {
+        var _data$index;
         var property = _ref2.property;
-        return (!activeProperty || activeProperty === property) && (data == null || (_data$detailIndex = data[detailIndex]) == null ? void 0 : _data$detailIndex[property]) !== undefined || axis && axis.x && axis.x.property === property;
+        return (!activeProperty || activeProperty === property) && (data == null || (_data$index = data[index]) == null ? void 0 : _data$index[property]) !== undefined || axis && axis.x && axis.x.property === property;
       }).map(function (serie) {
-        var axisValue = horizontalProp ? data[detailIndex][serie.property] : detailIndex;
-        return (serie.label || serie.property) + " " + renderValue(serie, axisValue);
+        var axisValue = horizontalProp ? data[index][serie.property] : index;
+        return (serie.label || serie.property) + " " + renderValue(serie, axisValue) + ".";
       }).join(' ');
-      announce(content);
     }
-  }, [activeProperty, announce, axis, data, detailIndex, horizontalProp, renderValue, series]);
+    return undefined;
+  }, [activeProperty, axis, data, horizontalProp, renderValue, series]);
   return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_Keyboard.Keyboard, {
-    onLeft: function onLeft() {
-      if (detailIndex === undefined) setDetailIndex(data.length - 1);else if (detailIndex > 0) setDetailIndex(detailIndex - 1);
+    onLeft: function onLeft(event) {
+      event.preventDefault();
+      if (detailIndex === undefined) {
+        setDetailIndex(data.length - 1);
+        announce(getContent(data.length - 1), 'assertive');
+      } else if (detailIndex > 0) {
+        setDetailIndex(detailIndex - 1);
+        announce(getContent(detailIndex - 1), 'assertive');
+      }
     },
-    onRight: function onRight() {
-      if (detailIndex === undefined) setDetailIndex(0);else if (detailIndex < data.length - 1) setDetailIndex(detailIndex + 1);
+    onRight: function onRight(event) {
+      event.preventDefault();
+      if (detailIndex === undefined) {
+        setDetailIndex(0);
+        announce(getContent(0), 'assertive');
+      } else if (detailIndex < data.length - 1) {
+        setDetailIndex(detailIndex + 1);
+        announce(getContent(detailIndex + 1), 'assertive');
+      }
     }
   }, /*#__PURE__*/_react["default"].createElement(DetailControl, _extends({
     key: "band",
-    tabIndex: 0,
     fill: true,
+    role: "list",
+    tabIndex: 0,
+    "aria-label": format({
+      id: 'dataChart.detailTitle'
+    }),
     justify: "between",
     responsive: false
   }, horizontalProp ? {
@@ -112,7 +133,11 @@ var Detail = exports.Detail = function Detail(_ref) {
     direction: 'row',
     pad: pad
   }, {
-    onFocus: function onFocus() {},
+    onFocus: function onFocus() {
+      announce(format({
+        id: 'dataChart.detailFocus'
+      }));
+    },
     onBlur: function onBlur() {
       return setDetailIndex(undefined);
     }
@@ -124,6 +149,7 @@ var Detail = exports.Detail = function Detail(_ref) {
     // eslint-disable-next-line react/no-array-index-key
     , _extends({
       key: i,
+      role: "listitem",
       responsive: false
     }, horizontalProp ? {
       justify: 'center',
@@ -135,15 +161,18 @@ var Detail = exports.Detail = function Detail(_ref) {
       onMouseOver: function onMouseOver(event) {
         activeIndex.current = event.currentTarget;
         setDetailIndex(i);
+        announce(getContent(i), 'assertive');
       },
       onMouseLeave: onMouseLeave,
       onFocus: function onFocus() {},
       onBlur: function onBlur() {}
-    }), /*#__PURE__*/_react["default"].createElement(_Box.Box
-    // for horizontal, ref will be placed on child box so
-    // drop is restricted to drop dimensions as opposed
-    // to filling the chart width
-    , _extends({}, horizontalProp ? {
+    }), /*#__PURE__*/_react["default"].createElement(_Box.Box, _extends({
+      role: "img",
+      "aria-label": getContent(i)
+      // for horizontal, ref will be placed on child box so
+      // drop is restricted to drop dimensions as opposed
+      // to filling the chart width
+    }, horizontalProp ? {
       fill: 'horizontal'
     } : {
       ref: ref,
@@ -159,7 +188,8 @@ var Detail = exports.Detail = function Detail(_ref) {
     target: detailRefs[detailIndex],
     align: dropAlign,
     plain: true,
-    onMouseLeave: onMouseLeave
+    onMouseLeave: onMouseLeave,
+    trapFocus: false
   }, /*#__PURE__*/_react["default"].createElement(_Box.Box, {
     pad: "small",
     background: {
@@ -170,9 +200,9 @@ var Detail = exports.Detail = function Detail(_ref) {
     gap: "xsmall",
     align: "center"
   }, series.filter(function (_ref3) {
-    var _data$detailIndex2;
+    var _data$detailIndex;
     var property = _ref3.property;
-    return (!activeProperty || activeProperty === property) && (data == null || (_data$detailIndex2 = data[detailIndex]) == null ? void 0 : _data$detailIndex2[property]) !== undefined || axis && axis.x && axis.x.property === property;
+    return (!activeProperty || activeProperty === property) && (data == null || (_data$detailIndex = data[detailIndex]) == null ? void 0 : _data$detailIndex[property]) !== undefined || axis && axis.x && axis.x.property === property;
   }).map(function (serie) {
     var propertyStyle = seriesStyles[serie.property];
     var axisValue = horizontalProp ? data[detailIndex][serie.property] : detailIndex;

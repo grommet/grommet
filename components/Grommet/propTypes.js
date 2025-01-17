@@ -48,6 +48,10 @@ if (process.env.NODE_ENV !== 'production') {
           enterCalendar: _propTypes["default"].string,
           exitCalendar: _propTypes["default"].string
         }),
+        dataChart: _propTypes["default"].shape({
+          detailTitle: _propTypes["default"].string,
+          detailFocus: _propTypes["default"].string
+        }),
         dataFilters: _propTypes["default"].shape({
           clear: _propTypes["default"].string,
           heading: _propTypes["default"].string,

@@ -57,6 +57,7 @@ var Legend = function Legend(_ref) {
       content = /*#__PURE__*/React.createElement(Button, {
         key: property,
         active: isActive,
+        "aria-pressed": isActive ? 'true' : 'false',
         onClick: function onClick() {
           return setActiveProperty(isActive ? undefined : property);
         },

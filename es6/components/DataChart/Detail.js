@@ -1,7 +1,8 @@
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
-import React, { Fragment, useCallback, useContext, useEffect, useMemo, useRef, useState } from 'react';
+import React, { Fragment, useCallback, useContext, useMemo, useRef, useState } from 'react';
 import styled from 'styled-components';
-import { AnnounceContext } from '../../contexts';
+import { AnnounceContext } from '../../contexts/AnnounceContext';
+import { MessageContext } from '../../contexts/MessageContext';
 import { Box } from '../Box';
 import { Drop } from '../Drop';
 import { Grid } from '../Grid';
@@ -25,6 +26,8 @@ var Detail = function Detail(_ref) {
     renderValue = _ref.renderValue,
     thickness = _ref.thickness;
   var announce = useContext(AnnounceContext);
+  var _useContext = useContext(MessageContext),
+    format = _useContext.format;
   var _useThemeValue = useThemeValue(),
     theme = _useThemeValue.theme;
   var _useState = useState(),
@@ -73,30 +76,48 @@ var Detail = function Detail(_ref) {
     };
     return res;
   }, [data.length, detailIndex, horizontalProp]);
-  useEffect(function () {
-    if (detailIndex !== undefined) {
-      var content = series.filter(function (_ref2) {
-        var _data$detailIndex;
+  var getContent = useCallback(function (index) {
+    if (index !== undefined) {
+      return series.filter(function (_ref2) {
+        var _data$index;
         var property = _ref2.property;
-        return (!activeProperty || activeProperty === property) && (data == null || (_data$detailIndex = data[detailIndex]) == null ? void 0 : _data$detailIndex[property]) !== undefined || axis && axis.x && axis.x.property === property;
+        return (!activeProperty || activeProperty === property) && (data == null || (_data$index = data[index]) == null ? void 0 : _data$index[property]) !== undefined || axis && axis.x && axis.x.property === property;
       }).map(function (serie) {
-        var axisValue = horizontalProp ? data[detailIndex][serie.property] : detailIndex;
-        return (serie.label || serie.property) + " " + renderValue(serie, axisValue);
+        var axisValue = horizontalProp ? data[index][serie.property] : index;
+        return (serie.label || serie.property) + " " + renderValue(serie, axisValue) + ".";
       }).join(' ');
-      announce(content);
     }
-  }, [activeProperty, announce, axis, data, detailIndex, horizontalProp, renderValue, series]);
+    return undefined;
+  }, [activeProperty, axis, data, horizontalProp, renderValue, series]);
   return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(Keyboard, {
-    onLeft: function onLeft() {
-      if (detailIndex === undefined) setDetailIndex(data.length - 1);else if (detailIndex > 0) setDetailIndex(detailIndex - 1);
+    onLeft: function onLeft(event) {
+      event.preventDefault();
+      if (detailIndex === undefined) {
+        setDetailIndex(data.length - 1);
+        announce(getContent(data.length - 1), 'assertive');
+      } else if (detailIndex > 0) {
+        setDetailIndex(detailIndex - 1);
+        announce(getContent(detailIndex - 1), 'assertive');
+      }
     },
-    onRight: function onRight() {
-      if (detailIndex === undefined) setDetailIndex(0);else if (detailIndex < data.length - 1) setDetailIndex(detailIndex + 1);
+    onRight: function onRight(event) {
+      event.preventDefault();
+      if (detailIndex === undefined) {
+        setDetailIndex(0);
+        announce(getContent(0), 'assertive');
+      } else if (detailIndex < data.length - 1) {
+        setDetailIndex(detailIndex + 1);
+        announce(getContent(detailIndex + 1), 'assertive');
+      }
     }
   }, /*#__PURE__*/React.createElement(DetailControl, _extends({
     key: "band",
-    tabIndex: 0,
     fill: true,
+    role: "list",
+    tabIndex: 0,
+    "aria-label": format({
+      id: 'dataChart.detailTitle'
+    }),
     justify: "between",
     responsive: false
   }, horizontalProp ? {
@@ -105,7 +126,11 @@ var Detail = function Detail(_ref) {
     direction: 'row',
     pad: pad
   }, {
-    onFocus: function onFocus() {},
+    onFocus: function onFocus() {
+      announce(format({
+        id: 'dataChart.detailFocus'
+      }));
+    },
     onBlur: function onBlur() {
       return setDetailIndex(undefined);
     }
@@ -117,6 +142,7 @@ var Detail = function Detail(_ref) {
     // eslint-disable-next-line react/no-array-index-key
     , _extends({
       key: i,
+      role: "listitem",
       responsive: false
     }, horizontalProp ? {
       justify: 'center',
@@ -128,15 +154,18 @@ var Detail = function Detail(_ref) {
       onMouseOver: function onMouseOver(event) {
         activeIndex.current = event.currentTarget;
         setDetailIndex(i);
+        announce(getContent(i), 'assertive');
       },
       onMouseLeave: onMouseLeave,
       onFocus: function onFocus() {},
       onBlur: function onBlur() {}
-    }), /*#__PURE__*/React.createElement(Box
-    // for horizontal, ref will be placed on child box so
-    // drop is restricted to drop dimensions as opposed
-    // to filling the chart width
-    , _extends({}, horizontalProp ? {
+    }), /*#__PURE__*/React.createElement(Box, _extends({
+      role: "img",
+      "aria-label": getContent(i)
+      // for horizontal, ref will be placed on child box so
+      // drop is restricted to drop dimensions as opposed
+      // to filling the chart width
+    }, horizontalProp ? {
       fill: 'horizontal'
     } : {
       ref: ref,
@@ -152,7 +181,8 @@ var Detail = function Detail(_ref) {
     target: detailRefs[detailIndex],
     align: dropAlign,
     plain: true,
-    onMouseLeave: onMouseLeave
+    onMouseLeave: onMouseLeave,
+    trapFocus: false
   }, /*#__PURE__*/React.createElement(Box, {
     pad: "small",
     background: {
@@ -163,9 +193,9 @@ var Detail = function Detail(_ref) {
     gap: "xsmall",
     align: "center"
   }, series.filter(function (_ref3) {
-    var _data$detailIndex2;
+    var _data$detailIndex;
     var property = _ref3.property;
-    return (!activeProperty || activeProperty === property) && (data == null || (_data$detailIndex2 = data[detailIndex]) == null ? void 0 : _data$detailIndex2[property]) !== undefined || axis && axis.x && axis.x.property === property;
+    return (!activeProperty || activeProperty === property) && (data == null || (_data$detailIndex = data[detailIndex]) == null ? void 0 : _data$detailIndex[property]) !== undefined || axis && axis.x && axis.x.property === property;
   }).map(function (serie) {
     var propertyStyle = seriesStyles[serie.property];
     var axisValue = horizontalProp ? data[detailIndex][serie.property] : detailIndex;

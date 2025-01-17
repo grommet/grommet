@@ -63,6 +63,7 @@ var Legend = exports.Legend = function Legend(_ref) {
       content = /*#__PURE__*/_react["default"].createElement(_Button.Button, {
         key: property,
         active: isActive,
+        "aria-pressed": isActive ? 'true' : 'false',
         onClick: function onClick() {
           return setActiveProperty(isActive ? undefined : property);
         },
