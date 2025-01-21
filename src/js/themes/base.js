@@ -610,6 +610,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
     },
     calendar: {
       day: {
+        // adjacent: {
+        //   color: undefined,
+        // },
         // hover: {
         //   background: undefined,
         //   color: undefined,

@@ -195,9 +195,15 @@ const StyledDay = styled.div.withConfig(styledComponentsConfig)`
   display: flex;
   justify-content: center;
   align-items: center;
+  color: ${(props) =>
+    normalizeColor(
+      props.otherMonth
+        ? props.theme.calendar?.day?.adjacent?.color || 'text-xweak'
+        : 'text-strong',
+      props.theme,
+    )};
   ${(props) => daySizeStyle(props)}
   ${(props) => dayStyle(props)}
-  ${(props) => props.otherMonth && 'opacity: 0.5;'}
   ${(props) => dayFontStyle(props)}
    ${(props) => {
     // fallback to medium if no size-specific styles
