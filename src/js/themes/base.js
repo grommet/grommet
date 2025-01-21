@@ -31,9 +31,9 @@ const neutralColors = ['#00873D', '#3D138D', '#00739D', '#A2423D'];
 const statusColors = {
   critical: '#EB0000',
   error: '#B30000',
-  warning: '#FFAA15',
+  warning: '#C27B00',
   ok: '#009E67',
-  unknown: '#CCCCCC',
+  unknown: '#919191',
   disabled: '#CCCCCC',
 };
 const darkColors = [

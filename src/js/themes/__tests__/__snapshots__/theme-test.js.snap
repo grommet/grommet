@@ -1094,7 +1094,18 @@ exports[`Grommet default theme 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background-color: #FFAA15;
+  background-color: #919191;
+  color: #444444;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+}
+
+.c21 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  background-color: #C27B00;
   color: #444444;
   min-width: 0;
   min-height: 0;
@@ -1327,7 +1338,7 @@ exports[`Grommet default theme 1`] = `
     </span>
   </div>
   <div
-    class="c18"
+    class="c20"
   >
     <span
       class="c2"
@@ -1336,7 +1347,7 @@ exports[`Grommet default theme 1`] = `
     </span>
   </div>
   <div
-    class="c20"
+    class="c21"
   >
     <span
       class="c2"

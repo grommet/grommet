@@ -191,8 +191,8 @@ exports[`Notification global 1`] = `
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
-  fill: #CCCCCC;
-  stroke: #CCCCCC;
+  fill: #919191;
+  stroke: #919191;
 }
 
 .c4 g {
@@ -222,7 +222,7 @@ exports[`Notification global 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background-color: rgba(204, 204, 204, 0.1);
+  background-color: rgba(145, 145, 145, 0.1);
   min-width: 0;
   min-height: 0;
   flex-direction: row;
@@ -386,8 +386,8 @@ exports[`Notification multi actions 1`] = `
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
-  fill: #CCCCCC;
-  stroke: #CCCCCC;
+  fill: #919191;
+  stroke: #919191;
 }
 
 .c4 g {
@@ -417,7 +417,7 @@ exports[`Notification multi actions 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background-color: rgba(204, 204, 204, 0.1);
+  background-color: rgba(145, 145, 145, 0.1);
   min-width: 0;
   min-height: 0;
   flex-direction: row;
@@ -605,8 +605,8 @@ exports[`Notification position bottom 1`] = `
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
-  fill: #CCCCCC;
-  stroke: #CCCCCC;
+  fill: #919191;
+  stroke: #919191;
 }
 
 .c5 g {
@@ -831,7 +831,7 @@ exports[`Notification position bottom 1`] = `
 
 exports[`Notification position bottom 2`] = `
 "@media only screen and (max-width: 768px) {
-  .kBcinS {
+  .fPdQ {
     border-radius: 3px;
   }
 }
@@ -860,8 +860,8 @@ exports[`Notification position bottom-left 1`] = `
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
-  fill: #CCCCCC;
-  stroke: #CCCCCC;
+  fill: #919191;
+  stroke: #919191;
 }
 
 .c5 g {
@@ -1086,7 +1086,7 @@ exports[`Notification position bottom-left 1`] = `
 
 exports[`Notification position bottom-left 2`] = `
 "@media only screen and (max-width: 768px) {
-  .kBcinS {
+  .fPdQ {
     border-radius: 3px;
   }
 }
@@ -1115,8 +1115,8 @@ exports[`Notification position bottom-right 1`] = `
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
-  fill: #CCCCCC;
-  stroke: #CCCCCC;
+  fill: #919191;
+  stroke: #919191;
 }
 
 .c5 g {
@@ -1341,7 +1341,7 @@ exports[`Notification position bottom-right 1`] = `
 
 exports[`Notification position bottom-right 2`] = `
 "@media only screen and (max-width: 768px) {
-  .kBcinS {
+  .fPdQ {
     border-radius: 3px;
   }
 }
@@ -1370,8 +1370,8 @@ exports[`Notification position center 1`] = `
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
-  fill: #CCCCCC;
-  stroke: #CCCCCC;
+  fill: #919191;
+  stroke: #919191;
 }
 
 .c5 g {
@@ -1596,7 +1596,7 @@ exports[`Notification position center 1`] = `
 
 exports[`Notification position center 2`] = `
 "@media only screen and (max-width: 768px) {
-  .kBcinS {
+  .fPdQ {
     border-radius: 3px;
   }
 }
@@ -1625,8 +1625,8 @@ exports[`Notification position end 1`] = `
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
-  fill: #CCCCCC;
-  stroke: #CCCCCC;
+  fill: #919191;
+  stroke: #919191;
 }
 
 .c5 g {
@@ -1851,7 +1851,7 @@ exports[`Notification position end 1`] = `
 
 exports[`Notification position end 2`] = `
 "@media only screen and (max-width: 768px) {
-  .kBcinS {
+  .fPdQ {
     border-radius: 3px;
   }
 }
@@ -1880,8 +1880,8 @@ exports[`Notification position left 1`] = `
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
-  fill: #CCCCCC;
-  stroke: #CCCCCC;
+  fill: #919191;
+  stroke: #919191;
 }
 
 .c5 g {
@@ -2106,7 +2106,7 @@ exports[`Notification position left 1`] = `
 
 exports[`Notification position left 2`] = `
 "@media only screen and (max-width: 768px) {
-  .kBcinS {
+  .fPdQ {
     border-radius: 3px;
   }
 }
@@ -2135,8 +2135,8 @@ exports[`Notification position right 1`] = `
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
-  fill: #CCCCCC;
-  stroke: #CCCCCC;
+  fill: #919191;
+  stroke: #919191;
 }
 
 .c5 g {
@@ -2361,7 +2361,7 @@ exports[`Notification position right 1`] = `
 
 exports[`Notification position right 2`] = `
 "@media only screen and (max-width: 768px) {
-  .kBcinS {
+  .fPdQ {
     border-radius: 3px;
   }
 }
@@ -2390,8 +2390,8 @@ exports[`Notification position start 1`] = `
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
-  fill: #CCCCCC;
-  stroke: #CCCCCC;
+  fill: #919191;
+  stroke: #919191;
 }
 
 .c5 g {
@@ -2616,7 +2616,7 @@ exports[`Notification position start 1`] = `
 
 exports[`Notification position start 2`] = `
 "@media only screen and (max-width: 768px) {
-  .kBcinS {
+  .fPdQ {
     border-radius: 3px;
   }
 }
@@ -2645,8 +2645,8 @@ exports[`Notification position top 1`] = `
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
-  fill: #CCCCCC;
-  stroke: #CCCCCC;
+  fill: #919191;
+  stroke: #919191;
 }
 
 .c5 g {
@@ -2871,7 +2871,7 @@ exports[`Notification position top 1`] = `
 
 exports[`Notification position top 2`] = `
 "@media only screen and (max-width: 768px) {
-  .kBcinS {
+  .fPdQ {
     border-radius: 3px;
   }
 }
@@ -2900,8 +2900,8 @@ exports[`Notification position top-left 1`] = `
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
-  fill: #CCCCCC;
-  stroke: #CCCCCC;
+  fill: #919191;
+  stroke: #919191;
 }
 
 .c5 g {
@@ -3126,7 +3126,7 @@ exports[`Notification position top-left 1`] = `
 
 exports[`Notification position top-left 2`] = `
 "@media only screen and (max-width: 768px) {
-  .kBcinS {
+  .fPdQ {
     border-radius: 3px;
   }
 }
@@ -3155,8 +3155,8 @@ exports[`Notification position top-right 1`] = `
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
-  fill: #CCCCCC;
-  stroke: #CCCCCC;
+  fill: #919191;
+  stroke: #919191;
 }
 
 .c5 g {
@@ -3381,7 +3381,7 @@ exports[`Notification position top-right 1`] = `
 
 exports[`Notification position top-right 2`] = `
 "@media only screen and (max-width: 768px) {
-  .kBcinS {
+  .fPdQ {
     border-radius: 3px;
   }
 }
@@ -3411,8 +3411,8 @@ exports[`Notification should have no accessibility violations 1`] = `
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
-  fill: #CCCCCC;
-  stroke: #CCCCCC;
+  fill: #919191;
+  stroke: #919191;
 }
 
 .c4 g {
@@ -3442,7 +3442,7 @@ exports[`Notification should have no accessibility violations 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background-color: rgba(204, 204, 204, 0.1);
+  background-color: rgba(145, 145, 145, 0.1);
   min-width: 0;
   min-height: 0;
   flex-direction: row;
@@ -3640,7 +3640,7 @@ exports[`Notification should render custom icon 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background-color: rgba(204, 204, 204, 0.1);
+  background-color: rgba(145, 145, 145, 0.1);
   min-width: 0;
   min-height: 0;
   flex-direction: row;
@@ -3791,8 +3791,8 @@ exports[`Notification should render custom template inside notification 1`] = `
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
-  fill: #CCCCCC;
-  stroke: #CCCCCC;
+  fill: #919191;
+  stroke: #919191;
 }
 
 .c4 g {
@@ -3822,7 +3822,7 @@ exports[`Notification should render custom template inside notification 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background-color: rgba(204, 204, 204, 0.1);
+  background-color: rgba(145, 145, 145, 0.1);
   min-width: 0;
   min-height: 0;
   flex-direction: row;
@@ -3966,8 +3966,8 @@ exports[`Notification should render outside grommet wrapper 1`] = `
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
-  fill: #CCCCCC;
-  stroke: #CCCCCC;
+  fill: #919191;
+  stroke: #919191;
 }
 
 .c3 g {
@@ -3997,7 +3997,7 @@ exports[`Notification should render outside grommet wrapper 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background-color: rgba(204, 204, 204, 0.1);
+  background-color: rgba(145, 145, 145, 0.1);
   min-width: 0;
   min-height: 0;
   flex-direction: row;
@@ -4471,7 +4471,7 @@ exports[`Notification should render the default icon if no icon is passed 1`] = 
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background-color: rgba(204, 204, 204, 0.1);
+  background-color: rgba(145, 145, 145, 0.1);
   min-width: 0;
   min-height: 0;
   flex-direction: row;
@@ -4656,8 +4656,8 @@ exports[`Notification status 1`] = `
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
-  fill: #FFAA15;
-  stroke: #FFAA15;
+  fill: #C27B00;
+  stroke: #C27B00;
 }
 
 .c11 g {
@@ -4764,7 +4764,7 @@ exports[`Notification status 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background-color: rgba(255, 170, 21, 0.1);
+  background-color: rgba(194, 123, 0, 0.1);
   min-width: 0;
   min-height: 0;
   flex-direction: row;
