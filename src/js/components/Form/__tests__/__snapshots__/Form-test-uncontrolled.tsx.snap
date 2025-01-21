@@ -1832,7 +1832,7 @@ exports[`Form uncontrolled errors 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-bottom: solid 1px #FF4040;
+  border-bottom: solid 1px #EB0000;
   min-width: 0;
   min-height: 0;
   flex-direction: column;
@@ -1845,7 +1845,7 @@ exports[`Form uncontrolled errors 1`] = `
   margin-bottom: 6px;
   font-size: 18px;
   line-height: 24px;
-  color: #FF4040;
+  color: #EB0000;
 }
 
 .c4 {
@@ -1905,7 +1905,7 @@ exports[`Form uncontrolled errors 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c2 {
-    border-bottom: solid 1px #FF4040;
+    border-bottom: solid 1px #EB0000;
   }
 }
 
@@ -2080,7 +2080,7 @@ exports[`Form uncontrolled regexp validation 1`] = `
   margin-bottom: 6px;
   font-size: 18px;
   line-height: 24px;
-  color: #FF4040;
+  color: #EB0000;
 }
 
 @media only screen and (max-width: 768px) {
@@ -2111,7 +2111,7 @@ exports[`Form uncontrolled regexp validation with status 1`] = `
   margin-bottom: 6px;
   font-size: 18px;
   line-height: 24px;
-  color: #FF4040;
+  color: #EB0000;
 }
 
 @media only screen and (max-width: 768px) {
@@ -2161,7 +2161,7 @@ exports[`Form uncontrolled required validation 1`] = `
   margin-bottom: 6px;
   font-size: 18px;
   line-height: 24px;
-  color: #FF4040;
+  color: #EB0000;
 }
 
 @media only screen and (max-width: 768px) {
@@ -3606,7 +3606,7 @@ exports[`Form uncontrolled uncontrolled onValidate 2`] = `
       class="StyledBox-sc-13pk1d4-0 jhVljw FormField__FormFieldBox-sc-m9hood-0 hvnrHE"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 diHhzW FormField__FormFieldContentBox-sc-m9hood-1"
+        class="StyledBox-sc-13pk1d4-0 ekFCqu FormField__FormFieldContentBox-sc-m9hood-1"
       >
         <div
           class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 fayRfZ"
@@ -3626,7 +3626,7 @@ exports[`Form uncontrolled uncontrolled onValidate 2`] = `
   margin-bottom: 6px;
   font-size: 18px;
   line-height: 24px;
-  color: #FF4040;
+  color: #EB0000;
 }
 
 @media only screen and (max-width: 768px) {
@@ -3858,7 +3858,7 @@ exports[`Form uncontrolled uncontrolled onValidate custom error 2`] = `
       class="StyledBox-sc-13pk1d4-0 jhVljw FormField__FormFieldBox-sc-m9hood-0 hvnrHE"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 diHhzW FormField__FormFieldContentBox-sc-m9hood-1"
+        class="StyledBox-sc-13pk1d4-0 ekFCqu FormField__FormFieldContentBox-sc-m9hood-1"
       >
         <div
           class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 fayRfZ"
@@ -3878,7 +3878,7 @@ exports[`Form uncontrolled uncontrolled onValidate custom error 2`] = `
   margin-bottom: 6px;
   font-size: 18px;
   line-height: 24px;
-  color: #FF4040;
+  color: #EB0000;
 }
 
 @media only screen and (max-width: 768px) {
@@ -4375,7 +4375,7 @@ exports[`Form uncontrolled validate 1`] = `
   margin-bottom: 6px;
   font-size: 18px;
   line-height: 24px;
-  color: #FF4040;
+  color: #EB0000;
 }
 
 @media only screen and (max-width: 768px) {
@@ -4438,7 +4438,7 @@ exports[`Form uncontrolled validate 3`] = `
   margin-bottom: 6px;
   font-size: 18px;
   line-height: 24px;
-  color: #FF4040;
+  color: #EB0000;
 }
 
 @media only screen and (max-width: 768px) {

@@ -3037,7 +3037,7 @@ exports[`Chart value style 1`] = `
       stroke-linejoin="miter"
     >
       <g
-        fill="#00C781"
+        fill="#009E67"
         opacity="0.8"
         stroke="none"
       >
@@ -3084,7 +3084,7 @@ exports[`Chart value style 1`] = `
       <g
         fill="none"
         opacity="0.8"
-        stroke="#00C781"
+        stroke="#009E67"
         stroke-width="12"
       >
         <title>

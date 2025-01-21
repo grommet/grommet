@@ -157,8 +157,8 @@ exports[`Button kind badge should apply background 1`] = `
   box-sizing: border-box;
   max-width: 100%;
   align-items: center;
-  background-color: #00C781;
-  color: #444444;
+  background-color: #009E67;
+  color: #f8f8f8;
   min-width: 0;
   min-height: 0;
   flex-direction: column;
@@ -185,7 +185,7 @@ exports[`Button kind badge should apply background 1`] = `
 .c6 {
   font-size: 14px;
   line-height: 20px;
-  color: #000000;
+  color: #FFFFFF;
   font-weight: normal;
 }
 

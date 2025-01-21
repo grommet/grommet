@@ -7,8 +7,8 @@ exports[`Notification custom theme 1`] = `
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
-  fill: #FF4040;
-  stroke: #FF4040;
+  fill: #EB0000;
+  stroke: #EB0000;
 }
 
 .c4 g {
@@ -4138,8 +4138,8 @@ exports[`Notification should render status and kind specific message and title c
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
-  fill: #00C781;
-  stroke: #00C781;
+  fill: #009E67;
+  stroke: #009E67;
 }
 
 .c4 g {
@@ -4169,7 +4169,7 @@ exports[`Notification should render status and kind specific message and title c
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background-color: rgba(0, 199, 129, 0.1);
+  background-color: rgba(0, 158, 103, 0.1);
   min-width: 0;
   min-height: 0;
   flex-direction: row;
@@ -4214,7 +4214,7 @@ exports[`Notification should render status and kind specific message and title c
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background-color: rgba(0, 199, 129, 0.1);
+  background-color: rgba(0, 158, 103, 0.1);
   min-width: 0;
   min-height: 0;
   flex-direction: row;
@@ -4624,8 +4624,8 @@ exports[`Notification status 1`] = `
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
-  fill: #00C781;
-  stroke: #00C781;
+  fill: #009E67;
+  stroke: #009E67;
 }
 
 .c4 g {
@@ -4688,8 +4688,8 @@ exports[`Notification status 1`] = `
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
-  fill: #FF4040;
-  stroke: #FF4040;
+  fill: #EB0000;
+  stroke: #EB0000;
 }
 
 .c13 g {
@@ -4719,7 +4719,7 @@ exports[`Notification status 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background-color: rgba(0, 199, 129, 0.1);
+  background-color: rgba(0, 158, 103, 0.1);
   min-width: 0;
   min-height: 0;
   flex-direction: row;
@@ -4775,7 +4775,7 @@ exports[`Notification status 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background-color: rgba(255, 64, 64, 0.1);
+  background-color: rgba(235, 0, 0, 0.1);
   min-width: 0;
   min-height: 0;
   flex-direction: row;
