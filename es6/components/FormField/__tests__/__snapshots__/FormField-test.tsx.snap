@@ -670,7 +670,7 @@ exports[`FormField custom error and info icon and container 1`] = `
   margin-bottom: 6px;
   font-size: 18px;
   line-height: 24px;
-  color: #FF4040;
+  color: #EB0000;
 }
 
 .c11 {
@@ -1660,7 +1660,7 @@ exports[`FormField error 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-bottom: solid 1px #FF4040;
+  border-bottom: solid 1px #EB0000;
   min-width: 0;
   min-height: 0;
   flex-direction: column;
@@ -1673,7 +1673,7 @@ exports[`FormField error 1`] = `
   margin-bottom: 6px;
   font-size: 18px;
   line-height: 24px;
-  color: #FF4040;
+  color: #EB0000;
 }
 
 .c0 {
@@ -1694,7 +1694,7 @@ exports[`FormField error 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c2 {
-    border-bottom: solid 1px #FF4040;
+    border-bottom: solid 1px #EB0000;
   }
 }
 

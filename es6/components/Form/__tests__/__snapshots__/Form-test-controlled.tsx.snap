@@ -1135,7 +1135,7 @@ exports[`Form controlled controlled Array of Form Fields onValidate 2`] = `
         class="StyledBox-sc-13pk1d4-0 jhVljw FormField__FormFieldBox-sc-m9hood-0 hvnrHE"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 diHhzW FormField__FormFieldContentBox-sc-m9hood-1"
+          class="StyledBox-sc-13pk1d4-0 ekFCqu FormField__FormFieldContentBox-sc-m9hood-1"
         >
           <div
             class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 fayRfZ"
@@ -1156,7 +1156,7 @@ exports[`Form controlled controlled Array of Form Fields onValidate 2`] = `
   margin-bottom: 6px;
   font-size: 18px;
   line-height: 24px;
-  color: #FF4040;
+  color: #EB0000;
 }
 
 @media only screen and (max-width: 768px) {
@@ -1204,7 +1204,7 @@ exports[`Form controlled controlled Array of Form Fields onValidate 2`] = `
         class="StyledBox-sc-13pk1d4-0 jhVljw FormField__FormFieldBox-sc-m9hood-0 hvnrHE"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 diHhzW FormField__FormFieldContentBox-sc-m9hood-1"
+          class="StyledBox-sc-13pk1d4-0 ekFCqu FormField__FormFieldContentBox-sc-m9hood-1"
         >
           <div
             class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 fayRfZ"
@@ -1225,7 +1225,7 @@ exports[`Form controlled controlled Array of Form Fields onValidate 2`] = `
   margin-bottom: 6px;
   font-size: 18px;
   line-height: 24px;
-  color: #FF4040;
+  color: #EB0000;
 }
 
 @media only screen and (max-width: 768px) {
@@ -1599,7 +1599,7 @@ exports[`Form controlled controlled Array of Form Fields onValidate custom error
         class="StyledBox-sc-13pk1d4-0 jhVljw FormField__FormFieldBox-sc-m9hood-0 hvnrHE"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 diHhzW FormField__FormFieldContentBox-sc-m9hood-1"
+          class="StyledBox-sc-13pk1d4-0 ekFCqu FormField__FormFieldContentBox-sc-m9hood-1"
         >
           <div
             class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 fayRfZ"
@@ -1620,7 +1620,7 @@ exports[`Form controlled controlled Array of Form Fields onValidate custom error
   margin-bottom: 6px;
   font-size: 18px;
   line-height: 24px;
-  color: #FF4040;
+  color: #EB0000;
 }
 
 @media only screen and (max-width: 768px) {
@@ -3137,7 +3137,7 @@ exports[`Form controlled controlled onValidate 2`] = `
       class="StyledBox-sc-13pk1d4-0 jhVljw FormField__FormFieldBox-sc-m9hood-0 hvnrHE"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 diHhzW FormField__FormFieldContentBox-sc-m9hood-1"
+        class="StyledBox-sc-13pk1d4-0 ekFCqu FormField__FormFieldContentBox-sc-m9hood-1"
       >
         <div
           class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 fayRfZ"
@@ -3158,7 +3158,7 @@ exports[`Form controlled controlled onValidate 2`] = `
   margin-bottom: 6px;
   font-size: 18px;
   line-height: 24px;
-  color: #FF4040;
+  color: #EB0000;
 }
 
 @media only screen and (max-width: 768px) {
@@ -3391,7 +3391,7 @@ exports[`Form controlled controlled onValidate custom error 2`] = `
       class="StyledBox-sc-13pk1d4-0 jhVljw FormField__FormFieldBox-sc-m9hood-0 hvnrHE"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 diHhzW FormField__FormFieldContentBox-sc-m9hood-1"
+        class="StyledBox-sc-13pk1d4-0 ekFCqu FormField__FormFieldContentBox-sc-m9hood-1"
       >
         <div
           class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 fayRfZ"
@@ -3412,7 +3412,7 @@ exports[`Form controlled controlled onValidate custom error 2`] = `
   margin-bottom: 6px;
   font-size: 18px;
   line-height: 24px;
-  color: #FF4040;
+  color: #EB0000;
 }
 
 @media only screen and (max-width: 768px) {
