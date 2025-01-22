@@ -607,7 +607,6 @@ var Calendar = /*#__PURE__*/forwardRef(function (_ref4, ref) {
         sizeProp: size,
         fillContainer: fill
       }, /*#__PURE__*/React.createElement(StyledDay, {
-        otherMonth: true,
         sizeProp: size,
         fillContainer: fill
       }, day.toLocaleDateString(locale, {

@@ -613,7 +613,6 @@ var Calendar = exports.Calendar = /*#__PURE__*/(0, _react.forwardRef)(function (
         sizeProp: size,
         fillContainer: fill
       }, /*#__PURE__*/_react["default"].createElement(_StyledCalendar.StyledDay, {
-        otherMonth: true,
         sizeProp: size,
         fillContainer: fill
       }, day.toLocaleDateString(locale, {

@@ -651,6 +651,9 @@ var generate = exports.generate = function generate(baseSpacing, scale) {
     },
     calendar: {
       day: {
+        // adjacent: {
+        //   color: undefined,
+        // },
         // hover: {
         //   background: undefined,
         //   color: undefined,

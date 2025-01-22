@@ -157,18 +157,19 @@ var dayFontStyle = function dayFontStyle(props) {
 var StyledDay = exports.StyledDay = _styledComponents["default"].div.withConfig(_utils.styledComponentsConfig).withConfig({
   displayName: "StyledCalendar__StyledDay",
   componentId: "sc-1y4xhmp-5"
-})(["display:flex;justify-content:center;align-items:center;", " ", " ", " ", " ", " ", " ", " ", " ", ""], function (props) {
+})(["display:flex;justify-content:center;align-items:center;color:", ";", " ", " ", " ", " ", " ", " ", " ", ""], function (props) {
+  var _props$theme$calendar24;
+  return (0, _utils.normalizeColor)(props.otherMonth ? ((_props$theme$calendar24 = props.theme.calendar) == null || (_props$theme$calendar24 = _props$theme$calendar24.day) == null || (_props$theme$calendar24 = _props$theme$calendar24.adjacent) == null ? void 0 : _props$theme$calendar24.color) || 'text-xweak' : 'text-strong', props.theme);
+}, function (props) {
   return daySizeStyle(props);
 }, function (props) {
   return dayStyle(props);
 }, function (props) {
-  return props.otherMonth && 'opacity: 0.5;';
-}, function (props) {
   return dayFontStyle(props);
 }, function (props) {
-  var _props$theme$calendar24, _props$theme$calendar25;
+  var _props$theme$calendar25, _props$theme$calendar26;
   // fallback to medium if no size-specific styles
-  var round = ((_props$theme$calendar24 = props.theme.calendar) == null || (_props$theme$calendar24 = _props$theme$calendar24[props.sizeProp]) == null || (_props$theme$calendar24 = _props$theme$calendar24.day) == null ? void 0 : _props$theme$calendar24.round) || ((_props$theme$calendar25 = props.theme.calendar) == null || (_props$theme$calendar25 = _props$theme$calendar25.medium) == null || (_props$theme$calendar25 = _props$theme$calendar25.day) == null ? void 0 : _props$theme$calendar25.round);
+  var round = ((_props$theme$calendar25 = props.theme.calendar) == null || (_props$theme$calendar25 = _props$theme$calendar25[props.sizeProp]) == null || (_props$theme$calendar25 = _props$theme$calendar25.day) == null ? void 0 : _props$theme$calendar25.round) || ((_props$theme$calendar26 = props.theme.calendar) == null || (_props$theme$calendar26 = _props$theme$calendar26.medium) == null || (_props$theme$calendar26 = _props$theme$calendar26.day) == null ? void 0 : _props$theme$calendar26.round);
   return round && (0, _utils.roundStyle)(round, props.responsive, props.theme);
 }, function (props) {
   return props.active && _background.activeStyle;
