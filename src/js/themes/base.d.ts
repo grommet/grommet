@@ -554,6 +554,9 @@ export interface ThemeType {
   button?: ButtonType;
   calendar?: {
     day?: {
+      adjacent?: {
+        color?: ColorType;
+      };
       hover?: {
         background?: BackgroundType;
         color?: ColorType;

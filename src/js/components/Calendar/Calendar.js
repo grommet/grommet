@@ -708,7 +708,7 @@ const Calendar = forwardRef(
             sizeProp={size}
             fillContainer={fill}
           >
-            <StyledDay otherMonth sizeProp={size} fillContainer={fill}>
+            <StyledDay sizeProp={size} fillContainer={fill}>
               {day.toLocaleDateString(locale, { weekday: 'narrow' })}
             </StyledDay>
           </StyledDayContainer>,
