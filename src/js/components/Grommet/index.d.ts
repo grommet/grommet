@@ -41,6 +41,10 @@ export interface GrommetProps {
         enterCalendar?: string;
         exitCalendar?: string;
       };
+      dataChart?: {
+        detailTitle?: string;
+        detailFocus?: string;
+      };
       dataFilters?: {
         clear?: string;
         heading?: string;
