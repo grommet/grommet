@@ -29,11 +29,11 @@ const brandColor = '#7D4CDB';
 const accentColors = ['#6FFFB0', '#FD6FFF', '#81FCED', '#FFCA58'];
 const neutralColors = ['#00873D', '#3D138D', '#00739D', '#A2423D'];
 const statusColors = {
-  critical: '#FF4040',
+  critical: '#EB0000',
   error: '#B30000',
-  warning: '#FFAA15',
-  ok: '#00C781',
-  unknown: '#CCCCCC',
+  warning: '#C27B00',
+  ok: '#009E67',
+  unknown: '#919191',
   disabled: '#CCCCCC',
 };
 const darkColors = [
@@ -610,6 +610,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
     },
     calendar: {
       day: {
+        // adjacent: {
+        //   color: undefined,
+        // },
         // hover: {
         //   background: undefined,
         //   color: undefined,

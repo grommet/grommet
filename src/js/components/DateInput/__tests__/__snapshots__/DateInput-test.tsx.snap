@@ -646,15 +646,16 @@ exports[`DateInput controlled format inline 1`] = `
   display: flex;
   justify-content: center;
   align-items: center;
+  color: #666666;
   width: 54.857142857142854px;
   height: 54.857142857142854px;
-  opacity: 0.5;
 }
 
 .c20 {
   display: flex;
   justify-content: center;
   align-items: center;
+  color: #000000;
   width: 54.857142857142854px;
   height: 54.857142857142854px;
 }
@@ -663,6 +664,7 @@ exports[`DateInput controlled format inline 1`] = `
   display: flex;
   justify-content: center;
   align-items: center;
+  color: #000000;
   width: 54.857142857142854px;
   height: 54.857142857142854px;
   background-color: #7D4CDB;
@@ -1769,7 +1771,7 @@ exports[`DateInput controlled format inline 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 kcUlBy"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ixRlcq"
                     >
                       28
                     </div>
@@ -1786,7 +1788,7 @@ exports[`DateInput controlled format inline 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 kcUlBy"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ixRlcq"
                     >
                       29
                     </div>
@@ -1803,7 +1805,7 @@ exports[`DateInput controlled format inline 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 kcUlBy"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ixRlcq"
                     >
                       30
                     </div>
@@ -1820,7 +1822,7 @@ exports[`DateInput controlled format inline 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 bMbtdg"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 gxmbJb"
                     >
                       1
                     </div>
@@ -1837,7 +1839,7 @@ exports[`DateInput controlled format inline 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       2
                     </div>
@@ -1854,7 +1856,7 @@ exports[`DateInput controlled format inline 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       3
                     </div>
@@ -1871,7 +1873,7 @@ exports[`DateInput controlled format inline 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       4
                     </div>
@@ -1893,7 +1895,7 @@ exports[`DateInput controlled format inline 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       5
                     </div>
@@ -1910,7 +1912,7 @@ exports[`DateInput controlled format inline 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       6
                     </div>
@@ -1927,7 +1929,7 @@ exports[`DateInput controlled format inline 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       7
                     </div>
@@ -1944,7 +1946,7 @@ exports[`DateInput controlled format inline 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       8
                     </div>
@@ -1961,7 +1963,7 @@ exports[`DateInput controlled format inline 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       9
                     </div>
@@ -1978,7 +1980,7 @@ exports[`DateInput controlled format inline 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       10
                     </div>
@@ -1995,7 +1997,7 @@ exports[`DateInput controlled format inline 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       11
                     </div>
@@ -2017,7 +2019,7 @@ exports[`DateInput controlled format inline 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       12
                     </div>
@@ -2034,7 +2036,7 @@ exports[`DateInput controlled format inline 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       13
                     </div>
@@ -2051,7 +2053,7 @@ exports[`DateInput controlled format inline 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       14
                     </div>
@@ -2068,7 +2070,7 @@ exports[`DateInput controlled format inline 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       15
                     </div>
@@ -2085,7 +2087,7 @@ exports[`DateInput controlled format inline 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       16
                     </div>
@@ -2102,7 +2104,7 @@ exports[`DateInput controlled format inline 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       17
                     </div>
@@ -2119,7 +2121,7 @@ exports[`DateInput controlled format inline 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       18
                     </div>
@@ -2141,7 +2143,7 @@ exports[`DateInput controlled format inline 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       19
                     </div>
@@ -2158,7 +2160,7 @@ exports[`DateInput controlled format inline 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       20
                     </div>
@@ -2175,7 +2177,7 @@ exports[`DateInput controlled format inline 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       21
                     </div>
@@ -2192,7 +2194,7 @@ exports[`DateInput controlled format inline 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       22
                     </div>
@@ -2209,7 +2211,7 @@ exports[`DateInput controlled format inline 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       23
                     </div>
@@ -2226,7 +2228,7 @@ exports[`DateInput controlled format inline 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       24
                     </div>
@@ -2243,7 +2245,7 @@ exports[`DateInput controlled format inline 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       25
                     </div>
@@ -2265,7 +2267,7 @@ exports[`DateInput controlled format inline 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       26
                     </div>
@@ -2282,7 +2284,7 @@ exports[`DateInput controlled format inline 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       27
                     </div>
@@ -2299,7 +2301,7 @@ exports[`DateInput controlled format inline 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       28
                     </div>
@@ -2316,7 +2318,7 @@ exports[`DateInput controlled format inline 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       29
                     </div>
@@ -2333,7 +2335,7 @@ exports[`DateInput controlled format inline 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       30
                     </div>
@@ -2350,7 +2352,7 @@ exports[`DateInput controlled format inline 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       31
                     </div>
@@ -2367,7 +2369,7 @@ exports[`DateInput controlled format inline 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 kcUlBy"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ixRlcq"
                     >
                       1
                     </div>
@@ -2389,7 +2391,7 @@ exports[`DateInput controlled format inline 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 kcUlBy"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ixRlcq"
                     >
                       2
                     </div>
@@ -2406,7 +2408,7 @@ exports[`DateInput controlled format inline 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 kcUlBy"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ixRlcq"
                     >
                       3
                     </div>
@@ -2423,7 +2425,7 @@ exports[`DateInput controlled format inline 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 kcUlBy"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ixRlcq"
                     >
                       4
                     </div>
@@ -2440,7 +2442,7 @@ exports[`DateInput controlled format inline 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 kcUlBy"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ixRlcq"
                     >
                       5
                     </div>
@@ -2457,7 +2459,7 @@ exports[`DateInput controlled format inline 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 kcUlBy"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ixRlcq"
                     >
                       6
                     </div>
@@ -2474,7 +2476,7 @@ exports[`DateInput controlled format inline 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 kcUlBy"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ixRlcq"
                     >
                       7
                     </div>
@@ -2491,7 +2493,7 @@ exports[`DateInput controlled format inline 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 kcUlBy"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ixRlcq"
                     >
                       8
                     </div>
@@ -2903,15 +2905,16 @@ exports[`DateInput controlled format inline without timezone 1`] = `
   display: flex;
   justify-content: center;
   align-items: center;
+  color: #666666;
   width: 54.857142857142854px;
   height: 54.857142857142854px;
-  opacity: 0.5;
 }
 
 .c20 {
   display: flex;
   justify-content: center;
   align-items: center;
+  color: #000000;
   width: 54.857142857142854px;
   height: 54.857142857142854px;
 }
@@ -2920,6 +2923,7 @@ exports[`DateInput controlled format inline without timezone 1`] = `
   display: flex;
   justify-content: center;
   align-items: center;
+  color: #000000;
   width: 54.857142857142854px;
   height: 54.857142857142854px;
   background-color: #7D4CDB;
@@ -4290,15 +4294,16 @@ exports[`DateInput controlled format inline without timezone 2`] = `
   display: flex;
   justify-content: center;
   align-items: center;
+  color: #666666;
   width: 54.857142857142854px;
   height: 54.857142857142854px;
-  opacity: 0.5;
 }
 
 .c21 {
   display: flex;
   justify-content: center;
   align-items: center;
+  color: #000000;
   width: 54.857142857142854px;
   height: 54.857142857142854px;
 }
@@ -4307,6 +4312,7 @@ exports[`DateInput controlled format inline without timezone 2`] = `
   display: flex;
   justify-content: center;
   align-items: center;
+  color: #000000;
   width: 54.857142857142854px;
   height: 54.857142857142854px;
   background-color: #7D4CDB;
@@ -6914,15 +6920,16 @@ exports[`DateInput format inline 1`] = `
   display: flex;
   justify-content: center;
   align-items: center;
+  color: #666666;
   width: 54.857142857142854px;
   height: 54.857142857142854px;
-  opacity: 0.5;
 }
 
 .c20 {
   display: flex;
   justify-content: center;
   align-items: center;
+  color: #000000;
   width: 54.857142857142854px;
   height: 54.857142857142854px;
 }
@@ -6931,6 +6938,7 @@ exports[`DateInput format inline 1`] = `
   display: flex;
   justify-content: center;
   align-items: center;
+  color: #000000;
   width: 54.857142857142854px;
   height: 54.857142857142854px;
   background-color: #7D4CDB;
@@ -8803,15 +8811,16 @@ exports[`DateInput inline 1`] = `
   display: flex;
   justify-content: center;
   align-items: center;
+  color: #666666;
   width: 54.857142857142854px;
   height: 54.857142857142854px;
-  opacity: 0.5;
 }
 
 .c16 {
   display: flex;
   justify-content: center;
   align-items: center;
+  color: #000000;
   width: 54.857142857142854px;
   height: 54.857142857142854px;
 }
@@ -8820,6 +8829,7 @@ exports[`DateInput inline 1`] = `
   display: flex;
   justify-content: center;
   align-items: center;
+  color: #000000;
   width: 54.857142857142854px;
   height: 54.857142857142854px;
   background-color: #7D4CDB;
@@ -11803,15 +11813,16 @@ exports[`DateInput range format inline 1`] = `
   display: flex;
   justify-content: center;
   align-items: center;
+  color: #666666;
   width: 54.857142857142854px;
   height: 54.857142857142854px;
-  opacity: 0.5;
 }
 
 .c20 {
   display: flex;
   justify-content: center;
   align-items: center;
+  color: #000000;
   width: 54.857142857142854px;
   height: 54.857142857142854px;
 }
@@ -11820,6 +11831,7 @@ exports[`DateInput range format inline 1`] = `
   display: flex;
   justify-content: center;
   align-items: center;
+  color: #000000;
   width: 54.857142857142854px;
   height: 54.857142857142854px;
   background-color: #7D4CDB;
@@ -11831,6 +11843,7 @@ exports[`DateInput range format inline 1`] = `
   display: flex;
   justify-content: center;
   align-items: center;
+  color: #000000;
   width: 54.857142857142854px;
   height: 54.857142857142854px;
   background-color: rgba(125, 76, 219, 0.1);
@@ -13055,15 +13068,16 @@ exports[`DateInput range inline 1`] = `
   display: flex;
   justify-content: center;
   align-items: center;
+  color: #666666;
   width: 54.857142857142854px;
   height: 54.857142857142854px;
-  opacity: 0.5;
 }
 
 .c16 {
   display: flex;
   justify-content: center;
   align-items: center;
+  color: #000000;
   width: 54.857142857142854px;
   height: 54.857142857142854px;
 }
@@ -13072,6 +13086,7 @@ exports[`DateInput range inline 1`] = `
   display: flex;
   justify-content: center;
   align-items: center;
+  color: #000000;
   width: 54.857142857142854px;
   height: 54.857142857142854px;
   background-color: #7D4CDB;
@@ -13083,6 +13098,7 @@ exports[`DateInput range inline 1`] = `
   display: flex;
   justify-content: center;
   align-items: center;
+  color: #000000;
   width: 54.857142857142854px;
   height: 54.857142857142854px;
   background-color: rgba(125, 76, 219, 0.1);
@@ -15670,15 +15686,16 @@ exports[`DateInput select format 3`] = `
   display: flex;
   justify-content: center;
   align-items: center;
+  color: #666666;
   width: 54.857142857142854px;
   height: 54.857142857142854px;
-  opacity: 0.5;
 }
 
 .c18 {
   display: flex;
   justify-content: center;
   align-items: center;
+  color: #000000;
   width: 54.857142857142854px;
   height: 54.857142857142854px;
 }
@@ -15687,6 +15704,7 @@ exports[`DateInput select format 3`] = `
   display: flex;
   justify-content: center;
   align-items: center;
+  color: #000000;
   width: 54.857142857142854px;
   height: 54.857142857142854px;
   background-color: #7D4CDB;
@@ -16916,15 +16934,16 @@ exports[`DateInput select format inline 1`] = `
   display: flex;
   justify-content: center;
   align-items: center;
+  color: #666666;
   width: 54.857142857142854px;
   height: 54.857142857142854px;
-  opacity: 0.5;
 }
 
 .c20 {
   display: flex;
   justify-content: center;
   align-items: center;
+  color: #000000;
   width: 54.857142857142854px;
   height: 54.857142857142854px;
 }
@@ -16933,6 +16952,7 @@ exports[`DateInput select format inline 1`] = `
   display: flex;
   justify-content: center;
   align-items: center;
+  color: #000000;
   width: 54.857142857142854px;
   height: 54.857142857142854px;
   background-color: #7D4CDB;
@@ -18033,7 +18053,7 @@ exports[`DateInput select format inline 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 kcUlBy"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ixRlcq"
                     >
                       28
                     </div>
@@ -18050,7 +18070,7 @@ exports[`DateInput select format inline 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 kcUlBy"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ixRlcq"
                     >
                       29
                     </div>
@@ -18067,7 +18087,7 @@ exports[`DateInput select format inline 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 kcUlBy"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ixRlcq"
                     >
                       30
                     </div>
@@ -18084,7 +18104,7 @@ exports[`DateInput select format inline 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       1
                     </div>
@@ -18101,7 +18121,7 @@ exports[`DateInput select format inline 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       2
                     </div>
@@ -18118,7 +18138,7 @@ exports[`DateInput select format inline 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       3
                     </div>
@@ -18135,7 +18155,7 @@ exports[`DateInput select format inline 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       4
                     </div>
@@ -18157,7 +18177,7 @@ exports[`DateInput select format inline 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       5
                     </div>
@@ -18174,7 +18194,7 @@ exports[`DateInput select format inline 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       6
                     </div>
@@ -18191,7 +18211,7 @@ exports[`DateInput select format inline 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       7
                     </div>
@@ -18208,7 +18228,7 @@ exports[`DateInput select format inline 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       8
                     </div>
@@ -18225,7 +18245,7 @@ exports[`DateInput select format inline 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       9
                     </div>
@@ -18242,7 +18262,7 @@ exports[`DateInput select format inline 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       10
                     </div>
@@ -18259,7 +18279,7 @@ exports[`DateInput select format inline 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       11
                     </div>
@@ -18281,7 +18301,7 @@ exports[`DateInput select format inline 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       12
                     </div>
@@ -18298,7 +18318,7 @@ exports[`DateInput select format inline 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       13
                     </div>
@@ -18315,7 +18335,7 @@ exports[`DateInput select format inline 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       14
                     </div>
@@ -18332,7 +18352,7 @@ exports[`DateInput select format inline 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       15
                     </div>
@@ -18349,7 +18369,7 @@ exports[`DateInput select format inline 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       16
                     </div>
@@ -18366,7 +18386,7 @@ exports[`DateInput select format inline 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       17
                     </div>
@@ -18383,7 +18403,7 @@ exports[`DateInput select format inline 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       18
                     </div>
@@ -18405,7 +18425,7 @@ exports[`DateInput select format inline 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       19
                     </div>
@@ -18422,7 +18442,7 @@ exports[`DateInput select format inline 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 bMbtdg"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 gxmbJb"
                     >
                       20
                     </div>
@@ -18439,7 +18459,7 @@ exports[`DateInput select format inline 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       21
                     </div>
@@ -18456,7 +18476,7 @@ exports[`DateInput select format inline 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       22
                     </div>
@@ -18473,7 +18493,7 @@ exports[`DateInput select format inline 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       23
                     </div>
@@ -18490,7 +18510,7 @@ exports[`DateInput select format inline 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       24
                     </div>
@@ -18507,7 +18527,7 @@ exports[`DateInput select format inline 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       25
                     </div>
@@ -18529,7 +18549,7 @@ exports[`DateInput select format inline 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       26
                     </div>
@@ -18546,7 +18566,7 @@ exports[`DateInput select format inline 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       27
                     </div>
@@ -18563,7 +18583,7 @@ exports[`DateInput select format inline 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       28
                     </div>
@@ -18580,7 +18600,7 @@ exports[`DateInput select format inline 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       29
                     </div>
@@ -18597,7 +18617,7 @@ exports[`DateInput select format inline 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       30
                     </div>
@@ -18614,7 +18634,7 @@ exports[`DateInput select format inline 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       31
                     </div>
@@ -18631,7 +18651,7 @@ exports[`DateInput select format inline 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 kcUlBy"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ixRlcq"
                     >
                       1
                     </div>
@@ -18653,7 +18673,7 @@ exports[`DateInput select format inline 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 kcUlBy"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ixRlcq"
                     >
                       2
                     </div>
@@ -18670,7 +18690,7 @@ exports[`DateInput select format inline 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 kcUlBy"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ixRlcq"
                     >
                       3
                     </div>
@@ -18687,7 +18707,7 @@ exports[`DateInput select format inline 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 kcUlBy"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ixRlcq"
                     >
                       4
                     </div>
@@ -18704,7 +18724,7 @@ exports[`DateInput select format inline 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 kcUlBy"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ixRlcq"
                     >
                       5
                     </div>
@@ -18721,7 +18741,7 @@ exports[`DateInput select format inline 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 kcUlBy"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ixRlcq"
                     >
                       6
                     </div>
@@ -18738,7 +18758,7 @@ exports[`DateInput select format inline 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 kcUlBy"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ixRlcq"
                     >
                       7
                     </div>
@@ -18755,7 +18775,7 @@ exports[`DateInput select format inline 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 kcUlBy"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ixRlcq"
                     >
                       8
                     </div>
@@ -19096,15 +19116,16 @@ exports[`DateInput select format inline 3`] = `
   display: flex;
   justify-content: center;
   align-items: center;
+  color: #666666;
   width: 54.857142857142854px;
   height: 54.857142857142854px;
-  opacity: 0.5;
 }
 
 .c20 {
   display: flex;
   justify-content: center;
   align-items: center;
+  color: #000000;
   width: 54.857142857142854px;
   height: 54.857142857142854px;
 }
@@ -19113,6 +19134,7 @@ exports[`DateInput select format inline 3`] = `
   display: flex;
   justify-content: center;
   align-items: center;
+  color: #000000;
   width: 54.857142857142854px;
   height: 54.857142857142854px;
   background-color: #7D4CDB;
@@ -20488,15 +20510,16 @@ exports[`DateInput select format inline 4`] = `
   display: flex;
   justify-content: center;
   align-items: center;
+  color: #666666;
   width: 54.857142857142854px;
   height: 54.857142857142854px;
-  opacity: 0.5;
 }
 
 .c20 {
   display: flex;
   justify-content: center;
   align-items: center;
+  color: #000000;
   width: 54.857142857142854px;
   height: 54.857142857142854px;
 }
@@ -20505,6 +20528,7 @@ exports[`DateInput select format inline 4`] = `
   display: flex;
   justify-content: center;
   align-items: center;
+  color: #000000;
   width: 54.857142857142854px;
   height: 54.857142857142854px;
   background-color: #7D4CDB;
@@ -21803,15 +21827,16 @@ exports[`DateInput select format inline range 1`] = `
   display: flex;
   justify-content: center;
   align-items: center;
+  color: #666666;
   width: 54.857142857142854px;
   height: 54.857142857142854px;
-  opacity: 0.5;
 }
 
 .c20 {
   display: flex;
   justify-content: center;
   align-items: center;
+  color: #000000;
   width: 54.857142857142854px;
   height: 54.857142857142854px;
 }
@@ -21820,6 +21845,7 @@ exports[`DateInput select format inline range 1`] = `
   display: flex;
   justify-content: center;
   align-items: center;
+  color: #000000;
   width: 54.857142857142854px;
   height: 54.857142857142854px;
   background-color: #7D4CDB;
@@ -21831,6 +21857,7 @@ exports[`DateInput select format inline range 1`] = `
   display: flex;
   justify-content: center;
   align-items: center;
+  color: #000000;
   width: 54.857142857142854px;
   height: 54.857142857142854px;
   background-color: rgba(125, 76, 219, 0.1);
@@ -22930,7 +22957,7 @@ exports[`DateInput select format inline range 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 kcUlBy"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ixRlcq"
                     >
                       28
                     </div>
@@ -22947,7 +22974,7 @@ exports[`DateInput select format inline range 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 kcUlBy"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ixRlcq"
                     >
                       29
                     </div>
@@ -22964,7 +22991,7 @@ exports[`DateInput select format inline range 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 kcUlBy"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ixRlcq"
                     >
                       30
                     </div>
@@ -22981,7 +23008,7 @@ exports[`DateInput select format inline range 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       1
                     </div>
@@ -22998,7 +23025,7 @@ exports[`DateInput select format inline range 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       2
                     </div>
@@ -23015,7 +23042,7 @@ exports[`DateInput select format inline range 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       3
                     </div>
@@ -23032,7 +23059,7 @@ exports[`DateInput select format inline range 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       4
                     </div>
@@ -23054,7 +23081,7 @@ exports[`DateInput select format inline range 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       5
                     </div>
@@ -23071,7 +23098,7 @@ exports[`DateInput select format inline range 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       6
                     </div>
@@ -23088,7 +23115,7 @@ exports[`DateInput select format inline range 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       7
                     </div>
@@ -23105,7 +23132,7 @@ exports[`DateInput select format inline range 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       8
                     </div>
@@ -23122,7 +23149,7 @@ exports[`DateInput select format inline range 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       9
                     </div>
@@ -23139,7 +23166,7 @@ exports[`DateInput select format inline range 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 bMbtdg"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 gxmbJb"
                     >
                       10
                     </div>
@@ -23156,7 +23183,7 @@ exports[`DateInput select format inline range 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       11
                     </div>
@@ -23178,7 +23205,7 @@ exports[`DateInput select format inline range 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       12
                     </div>
@@ -23195,7 +23222,7 @@ exports[`DateInput select format inline range 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       13
                     </div>
@@ -23212,7 +23239,7 @@ exports[`DateInput select format inline range 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       14
                     </div>
@@ -23229,7 +23256,7 @@ exports[`DateInput select format inline range 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       15
                     </div>
@@ -23246,7 +23273,7 @@ exports[`DateInput select format inline range 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       16
                     </div>
@@ -23263,7 +23290,7 @@ exports[`DateInput select format inline range 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       17
                     </div>
@@ -23280,7 +23307,7 @@ exports[`DateInput select format inline range 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       18
                     </div>
@@ -23302,7 +23329,7 @@ exports[`DateInput select format inline range 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       19
                     </div>
@@ -23319,7 +23346,7 @@ exports[`DateInput select format inline range 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       20
                     </div>
@@ -23336,7 +23363,7 @@ exports[`DateInput select format inline range 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       21
                     </div>
@@ -23353,7 +23380,7 @@ exports[`DateInput select format inline range 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       22
                     </div>
@@ -23370,7 +23397,7 @@ exports[`DateInput select format inline range 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       23
                     </div>
@@ -23387,7 +23414,7 @@ exports[`DateInput select format inline range 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       24
                     </div>
@@ -23404,7 +23431,7 @@ exports[`DateInput select format inline range 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       25
                     </div>
@@ -23426,7 +23453,7 @@ exports[`DateInput select format inline range 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       26
                     </div>
@@ -23443,7 +23470,7 @@ exports[`DateInput select format inline range 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       27
                     </div>
@@ -23460,7 +23487,7 @@ exports[`DateInput select format inline range 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       28
                     </div>
@@ -23477,7 +23504,7 @@ exports[`DateInput select format inline range 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       29
                     </div>
@@ -23494,7 +23521,7 @@ exports[`DateInput select format inline range 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       30
                     </div>
@@ -23511,7 +23538,7 @@ exports[`DateInput select format inline range 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       31
                     </div>
@@ -23528,7 +23555,7 @@ exports[`DateInput select format inline range 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 kcUlBy"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ixRlcq"
                     >
                       1
                     </div>
@@ -23550,7 +23577,7 @@ exports[`DateInput select format inline range 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 kcUlBy"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ixRlcq"
                     >
                       2
                     </div>
@@ -23567,7 +23594,7 @@ exports[`DateInput select format inline range 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 kcUlBy"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ixRlcq"
                     >
                       3
                     </div>
@@ -23584,7 +23611,7 @@ exports[`DateInput select format inline range 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 kcUlBy"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ixRlcq"
                     >
                       4
                     </div>
@@ -23601,7 +23628,7 @@ exports[`DateInput select format inline range 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 kcUlBy"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ixRlcq"
                     >
                       5
                     </div>
@@ -23618,7 +23645,7 @@ exports[`DateInput select format inline range 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 kcUlBy"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ixRlcq"
                     >
                       6
                     </div>
@@ -23635,7 +23662,7 @@ exports[`DateInput select format inline range 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 kcUlBy"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ixRlcq"
                     >
                       7
                     </div>
@@ -23652,7 +23679,7 @@ exports[`DateInput select format inline range 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 kcUlBy"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ixRlcq"
                     >
                       8
                     </div>
@@ -23993,15 +24020,16 @@ exports[`DateInput select format inline range without timezone 1`] = `
   display: flex;
   justify-content: center;
   align-items: center;
+  color: #666666;
   width: 54.857142857142854px;
   height: 54.857142857142854px;
-  opacity: 0.5;
 }
 
 .c20 {
   display: flex;
   justify-content: center;
   align-items: center;
+  color: #000000;
   width: 54.857142857142854px;
   height: 54.857142857142854px;
 }
@@ -24010,6 +24038,7 @@ exports[`DateInput select format inline range without timezone 1`] = `
   display: flex;
   justify-content: center;
   align-items: center;
+  color: #000000;
   width: 54.857142857142854px;
   height: 54.857142857142854px;
   background-color: #7D4CDB;
@@ -24021,6 +24050,7 @@ exports[`DateInput select format inline range without timezone 1`] = `
   display: flex;
   justify-content: center;
   align-items: center;
+  color: #000000;
   width: 54.857142857142854px;
   height: 54.857142857142854px;
   background-color: rgba(125, 76, 219, 0.1);
@@ -25395,15 +25425,16 @@ exports[`DateInput select format inline range without timezone 2`] = `
   display: flex;
   justify-content: center;
   align-items: center;
+  color: #666666;
   width: 54.857142857142854px;
   height: 54.857142857142854px;
-  opacity: 0.5;
 }
 
 .c20 {
   display: flex;
   justify-content: center;
   align-items: center;
+  color: #000000;
   width: 54.857142857142854px;
   height: 54.857142857142854px;
 }
@@ -25412,6 +25443,7 @@ exports[`DateInput select format inline range without timezone 2`] = `
   display: flex;
   justify-content: center;
   align-items: center;
+  color: #000000;
   width: 54.857142857142854px;
   height: 54.857142857142854px;
   background-color: #7D4CDB;
@@ -27209,15 +27241,16 @@ exports[`DateInput select format no timezone 3`] = `
   display: flex;
   justify-content: center;
   align-items: center;
+  color: #666666;
   width: 54.857142857142854px;
   height: 54.857142857142854px;
-  opacity: 0.5;
 }
 
 .c18 {
   display: flex;
   justify-content: center;
   align-items: center;
+  color: #000000;
   width: 54.857142857142854px;
   height: 54.857142857142854px;
 }
@@ -27226,6 +27259,7 @@ exports[`DateInput select format no timezone 3`] = `
   display: flex;
   justify-content: center;
   align-items: center;
+  color: #000000;
   width: 54.857142857142854px;
   height: 54.857142857142854px;
   background-color: #7D4CDB;
@@ -28383,15 +28417,16 @@ exports[`DateInput select inline 1`] = `
   display: flex;
   justify-content: center;
   align-items: center;
+  color: #666666;
   width: 54.857142857142854px;
   height: 54.857142857142854px;
-  opacity: 0.5;
 }
 
 .c16 {
   display: flex;
   justify-content: center;
   align-items: center;
+  color: #000000;
   width: 54.857142857142854px;
   height: 54.857142857142854px;
 }
@@ -28400,6 +28435,7 @@ exports[`DateInput select inline 1`] = `
   display: flex;
   justify-content: center;
   align-items: center;
+  color: #000000;
   width: 54.857142857142854px;
   height: 54.857142857142854px;
   background-color: #7D4CDB;
@@ -29508,15 +29544,16 @@ exports[`DateInput select inline without timezone 1`] = `
   display: flex;
   justify-content: center;
   align-items: center;
+  color: #666666;
   width: 54.857142857142854px;
   height: 54.857142857142854px;
-  opacity: 0.5;
 }
 
 .c16 {
   display: flex;
   justify-content: center;
   align-items: center;
+  color: #000000;
   width: 54.857142857142854px;
   height: 54.857142857142854px;
 }
@@ -29525,6 +29562,7 @@ exports[`DateInput select inline without timezone 1`] = `
   display: flex;
   justify-content: center;
   align-items: center;
+  color: #000000;
   width: 54.857142857142854px;
   height: 54.857142857142854px;
   background-color: #7D4CDB;
@@ -30705,15 +30743,16 @@ exports[`DateInput type format inline 1`] = `
   display: flex;
   justify-content: center;
   align-items: center;
+  color: #666666;
   width: 54.857142857142854px;
   height: 54.857142857142854px;
-  opacity: 0.5;
 }
 
 .c20 {
   display: flex;
   justify-content: center;
   align-items: center;
+  color: #000000;
   width: 54.857142857142854px;
   height: 54.857142857142854px;
 }
@@ -30722,6 +30761,7 @@ exports[`DateInput type format inline 1`] = `
   display: flex;
   justify-content: center;
   align-items: center;
+  color: #000000;
   width: 54.857142857142854px;
   height: 54.857142857142854px;
   background-color: #7D4CDB;
@@ -31822,7 +31862,7 @@ exports[`DateInput type format inline 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 kcUlBy"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ixRlcq"
                     >
                       28
                     </div>
@@ -31839,7 +31879,7 @@ exports[`DateInput type format inline 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 kcUlBy"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ixRlcq"
                     >
                       29
                     </div>
@@ -31856,7 +31896,7 @@ exports[`DateInput type format inline 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 kcUlBy"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ixRlcq"
                     >
                       30
                     </div>
@@ -31873,7 +31913,7 @@ exports[`DateInput type format inline 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       1
                     </div>
@@ -31890,7 +31930,7 @@ exports[`DateInput type format inline 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       2
                     </div>
@@ -31907,7 +31947,7 @@ exports[`DateInput type format inline 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       3
                     </div>
@@ -31924,7 +31964,7 @@ exports[`DateInput type format inline 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       4
                     </div>
@@ -31946,7 +31986,7 @@ exports[`DateInput type format inline 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       5
                     </div>
@@ -31963,7 +32003,7 @@ exports[`DateInput type format inline 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       6
                     </div>
@@ -31980,7 +32020,7 @@ exports[`DateInput type format inline 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       7
                     </div>
@@ -31997,7 +32037,7 @@ exports[`DateInput type format inline 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       8
                     </div>
@@ -32014,7 +32054,7 @@ exports[`DateInput type format inline 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       9
                     </div>
@@ -32031,7 +32071,7 @@ exports[`DateInput type format inline 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       10
                     </div>
@@ -32048,7 +32088,7 @@ exports[`DateInput type format inline 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       11
                     </div>
@@ -32070,7 +32110,7 @@ exports[`DateInput type format inline 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       12
                     </div>
@@ -32087,7 +32127,7 @@ exports[`DateInput type format inline 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       13
                     </div>
@@ -32104,7 +32144,7 @@ exports[`DateInput type format inline 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       14
                     </div>
@@ -32121,7 +32161,7 @@ exports[`DateInput type format inline 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       15
                     </div>
@@ -32138,7 +32178,7 @@ exports[`DateInput type format inline 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       16
                     </div>
@@ -32155,7 +32195,7 @@ exports[`DateInput type format inline 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       17
                     </div>
@@ -32172,7 +32212,7 @@ exports[`DateInput type format inline 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       18
                     </div>
@@ -32194,7 +32234,7 @@ exports[`DateInput type format inline 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       19
                     </div>
@@ -32211,7 +32251,7 @@ exports[`DateInput type format inline 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       20
                     </div>
@@ -32228,7 +32268,7 @@ exports[`DateInput type format inline 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 bMbtdg"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 gxmbJb"
                     >
                       21
                     </div>
@@ -32245,7 +32285,7 @@ exports[`DateInput type format inline 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       22
                     </div>
@@ -32262,7 +32302,7 @@ exports[`DateInput type format inline 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       23
                     </div>
@@ -32279,7 +32319,7 @@ exports[`DateInput type format inline 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       24
                     </div>
@@ -32296,7 +32336,7 @@ exports[`DateInput type format inline 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       25
                     </div>
@@ -32318,7 +32358,7 @@ exports[`DateInput type format inline 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       26
                     </div>
@@ -32335,7 +32375,7 @@ exports[`DateInput type format inline 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       27
                     </div>
@@ -32352,7 +32392,7 @@ exports[`DateInput type format inline 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       28
                     </div>
@@ -32369,7 +32409,7 @@ exports[`DateInput type format inline 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       29
                     </div>
@@ -32386,7 +32426,7 @@ exports[`DateInput type format inline 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       30
                     </div>
@@ -32403,7 +32443,7 @@ exports[`DateInput type format inline 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       31
                     </div>
@@ -32420,7 +32460,7 @@ exports[`DateInput type format inline 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 kcUlBy"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ixRlcq"
                     >
                       1
                     </div>
@@ -32442,7 +32482,7 @@ exports[`DateInput type format inline 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 kcUlBy"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ixRlcq"
                     >
                       2
                     </div>
@@ -32459,7 +32499,7 @@ exports[`DateInput type format inline 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 kcUlBy"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ixRlcq"
                     >
                       3
                     </div>
@@ -32476,7 +32516,7 @@ exports[`DateInput type format inline 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 kcUlBy"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ixRlcq"
                     >
                       4
                     </div>
@@ -32493,7 +32533,7 @@ exports[`DateInput type format inline 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 kcUlBy"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ixRlcq"
                     >
                       5
                     </div>
@@ -32510,7 +32550,7 @@ exports[`DateInput type format inline 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 kcUlBy"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ixRlcq"
                     >
                       6
                     </div>
@@ -32527,7 +32567,7 @@ exports[`DateInput type format inline 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 kcUlBy"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ixRlcq"
                     >
                       7
                     </div>
@@ -32544,7 +32584,7 @@ exports[`DateInput type format inline 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 kcUlBy"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ixRlcq"
                     >
                       8
                     </div>
@@ -32884,15 +32924,16 @@ exports[`DateInput type format inline partial 1`] = `
   display: flex;
   justify-content: center;
   align-items: center;
+  color: #666666;
   width: 54.857142857142854px;
   height: 54.857142857142854px;
-  opacity: 0.5;
 }
 
 .c20 {
   display: flex;
   justify-content: center;
   align-items: center;
+  color: #000000;
   width: 54.857142857142854px;
   height: 54.857142857142854px;
 }
@@ -32901,6 +32942,7 @@ exports[`DateInput type format inline partial 1`] = `
   display: flex;
   justify-content: center;
   align-items: center;
+  color: #000000;
   width: 54.857142857142854px;
   height: 54.857142857142854px;
   background-color: #7D4CDB;
@@ -34199,15 +34241,16 @@ exports[`DateInput type format inline partial without timezone 1`] = `
   display: flex;
   justify-content: center;
   align-items: center;
+  color: #666666;
   width: 54.857142857142854px;
   height: 54.857142857142854px;
-  opacity: 0.5;
 }
 
 .c20 {
   display: flex;
   justify-content: center;
   align-items: center;
+  color: #000000;
   width: 54.857142857142854px;
   height: 54.857142857142854px;
 }
@@ -34216,6 +34259,7 @@ exports[`DateInput type format inline partial without timezone 1`] = `
   display: flex;
   justify-content: center;
   align-items: center;
+  color: #000000;
   width: 54.857142857142854px;
   height: 54.857142857142854px;
   background-color: #7D4CDB;
@@ -35514,15 +35558,16 @@ exports[`DateInput type format inline range 1`] = `
   display: flex;
   justify-content: center;
   align-items: center;
+  color: #666666;
   width: 54.857142857142854px;
   height: 54.857142857142854px;
-  opacity: 0.5;
 }
 
 .c20 {
   display: flex;
   justify-content: center;
   align-items: center;
+  color: #000000;
   width: 54.857142857142854px;
   height: 54.857142857142854px;
 }
@@ -35531,6 +35576,7 @@ exports[`DateInput type format inline range 1`] = `
   display: flex;
   justify-content: center;
   align-items: center;
+  color: #000000;
   width: 54.857142857142854px;
   height: 54.857142857142854px;
   background-color: #7D4CDB;
@@ -35542,6 +35588,7 @@ exports[`DateInput type format inline range 1`] = `
   display: flex;
   justify-content: center;
   align-items: center;
+  color: #000000;
   width: 54.857142857142854px;
   height: 54.857142857142854px;
   background-color: rgba(125, 76, 219, 0.1);
@@ -36641,7 +36688,7 @@ exports[`DateInput type format inline range 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 kcUlBy"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ixRlcq"
                     >
                       28
                     </div>
@@ -36658,7 +36705,7 @@ exports[`DateInput type format inline range 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 kcUlBy"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ixRlcq"
                     >
                       29
                     </div>
@@ -36675,7 +36722,7 @@ exports[`DateInput type format inline range 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 kcUlBy"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ixRlcq"
                     >
                       30
                     </div>
@@ -36692,7 +36739,7 @@ exports[`DateInput type format inline range 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       1
                     </div>
@@ -36709,7 +36756,7 @@ exports[`DateInput type format inline range 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       2
                     </div>
@@ -36726,7 +36773,7 @@ exports[`DateInput type format inline range 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       3
                     </div>
@@ -36743,7 +36790,7 @@ exports[`DateInput type format inline range 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       4
                     </div>
@@ -36765,7 +36812,7 @@ exports[`DateInput type format inline range 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       5
                     </div>
@@ -36782,7 +36829,7 @@ exports[`DateInput type format inline range 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       6
                     </div>
@@ -36799,7 +36846,7 @@ exports[`DateInput type format inline range 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       7
                     </div>
@@ -36816,7 +36863,7 @@ exports[`DateInput type format inline range 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       8
                     </div>
@@ -36833,7 +36880,7 @@ exports[`DateInput type format inline range 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       9
                     </div>
@@ -36850,7 +36897,7 @@ exports[`DateInput type format inline range 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       10
                     </div>
@@ -36867,7 +36914,7 @@ exports[`DateInput type format inline range 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       11
                     </div>
@@ -36889,7 +36936,7 @@ exports[`DateInput type format inline range 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       12
                     </div>
@@ -36906,7 +36953,7 @@ exports[`DateInput type format inline range 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       13
                     </div>
@@ -36923,7 +36970,7 @@ exports[`DateInput type format inline range 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       14
                     </div>
@@ -36940,7 +36987,7 @@ exports[`DateInput type format inline range 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       15
                     </div>
@@ -36957,7 +37004,7 @@ exports[`DateInput type format inline range 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       16
                     </div>
@@ -36974,7 +37021,7 @@ exports[`DateInput type format inline range 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       17
                     </div>
@@ -36991,7 +37038,7 @@ exports[`DateInput type format inline range 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       18
                     </div>
@@ -37013,7 +37060,7 @@ exports[`DateInput type format inline range 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       19
                     </div>
@@ -37030,7 +37077,7 @@ exports[`DateInput type format inline range 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       20
                     </div>
@@ -37047,7 +37094,7 @@ exports[`DateInput type format inline range 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 bMbtdg"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 gxmbJb"
                     >
                       21
                     </div>
@@ -37064,7 +37111,7 @@ exports[`DateInput type format inline range 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ivHHhp"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 jfMCK"
                     >
                       22
                     </div>
@@ -37081,7 +37128,7 @@ exports[`DateInput type format inline range 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 bMbtdg"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 gxmbJb"
                     >
                       23
                     </div>
@@ -37098,7 +37145,7 @@ exports[`DateInput type format inline range 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       24
                     </div>
@@ -37115,7 +37162,7 @@ exports[`DateInput type format inline range 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       25
                     </div>
@@ -37137,7 +37184,7 @@ exports[`DateInput type format inline range 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       26
                     </div>
@@ -37154,7 +37201,7 @@ exports[`DateInput type format inline range 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       27
                     </div>
@@ -37171,7 +37218,7 @@ exports[`DateInput type format inline range 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       28
                     </div>
@@ -37188,7 +37235,7 @@ exports[`DateInput type format inline range 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       29
                     </div>
@@ -37205,7 +37252,7 @@ exports[`DateInput type format inline range 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       30
                     </div>
@@ -37222,7 +37269,7 @@ exports[`DateInput type format inline range 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       31
                     </div>
@@ -37239,7 +37286,7 @@ exports[`DateInput type format inline range 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 kcUlBy"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ixRlcq"
                     >
                       1
                     </div>
@@ -37261,7 +37308,7 @@ exports[`DateInput type format inline range 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 kcUlBy"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ixRlcq"
                     >
                       2
                     </div>
@@ -37278,7 +37325,7 @@ exports[`DateInput type format inline range 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 kcUlBy"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ixRlcq"
                     >
                       3
                     </div>
@@ -37295,7 +37342,7 @@ exports[`DateInput type format inline range 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 kcUlBy"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ixRlcq"
                     >
                       4
                     </div>
@@ -37312,7 +37359,7 @@ exports[`DateInput type format inline range 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 kcUlBy"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ixRlcq"
                     >
                       5
                     </div>
@@ -37329,7 +37376,7 @@ exports[`DateInput type format inline range 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 kcUlBy"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ixRlcq"
                     >
                       6
                     </div>
@@ -37346,7 +37393,7 @@ exports[`DateInput type format inline range 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 kcUlBy"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ixRlcq"
                     >
                       7
                     </div>
@@ -37363,7 +37410,7 @@ exports[`DateInput type format inline range 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 kcUlBy"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ixRlcq"
                     >
                       8
                     </div>
@@ -37703,15 +37750,16 @@ exports[`DateInput type format inline range partial 1`] = `
   display: flex;
   justify-content: center;
   align-items: center;
+  color: #666666;
   width: 54.857142857142854px;
   height: 54.857142857142854px;
-  opacity: 0.5;
 }
 
 .c20 {
   display: flex;
   justify-content: center;
   align-items: center;
+  color: #000000;
   width: 54.857142857142854px;
   height: 54.857142857142854px;
 }
@@ -37720,6 +37768,7 @@ exports[`DateInput type format inline range partial 1`] = `
   display: flex;
   justify-content: center;
   align-items: center;
+  color: #000000;
   width: 54.857142857142854px;
   height: 54.857142857142854px;
   background-color: #7D4CDB;
@@ -37731,6 +37780,7 @@ exports[`DateInput type format inline range partial 1`] = `
   display: flex;
   justify-content: center;
   align-items: center;
+  color: #000000;
   width: 54.857142857142854px;
   height: 54.857142857142854px;
   background-color: rgba(125, 76, 219, 0.1);
@@ -38830,7 +38880,7 @@ exports[`DateInput type format inline range partial 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 kcUlBy"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ixRlcq"
                     >
                       28
                     </div>
@@ -38847,7 +38897,7 @@ exports[`DateInput type format inline range partial 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 kcUlBy"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ixRlcq"
                     >
                       29
                     </div>
@@ -38864,7 +38914,7 @@ exports[`DateInput type format inline range partial 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 kcUlBy"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ixRlcq"
                     >
                       30
                     </div>
@@ -38881,7 +38931,7 @@ exports[`DateInput type format inline range partial 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       1
                     </div>
@@ -38898,7 +38948,7 @@ exports[`DateInput type format inline range partial 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       2
                     </div>
@@ -38915,7 +38965,7 @@ exports[`DateInput type format inline range partial 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       3
                     </div>
@@ -38932,7 +38982,7 @@ exports[`DateInput type format inline range partial 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       4
                     </div>
@@ -38954,7 +39004,7 @@ exports[`DateInput type format inline range partial 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       5
                     </div>
@@ -38971,7 +39021,7 @@ exports[`DateInput type format inline range partial 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       6
                     </div>
@@ -38988,7 +39038,7 @@ exports[`DateInput type format inline range partial 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       7
                     </div>
@@ -39005,7 +39055,7 @@ exports[`DateInput type format inline range partial 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       8
                     </div>
@@ -39022,7 +39072,7 @@ exports[`DateInput type format inline range partial 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       9
                     </div>
@@ -39039,7 +39089,7 @@ exports[`DateInput type format inline range partial 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       10
                     </div>
@@ -39056,7 +39106,7 @@ exports[`DateInput type format inline range partial 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       11
                     </div>
@@ -39078,7 +39128,7 @@ exports[`DateInput type format inline range partial 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       12
                     </div>
@@ -39095,7 +39145,7 @@ exports[`DateInput type format inline range partial 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       13
                     </div>
@@ -39112,7 +39162,7 @@ exports[`DateInput type format inline range partial 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       14
                     </div>
@@ -39129,7 +39179,7 @@ exports[`DateInput type format inline range partial 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       15
                     </div>
@@ -39146,7 +39196,7 @@ exports[`DateInput type format inline range partial 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       16
                     </div>
@@ -39163,7 +39213,7 @@ exports[`DateInput type format inline range partial 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       17
                     </div>
@@ -39180,7 +39230,7 @@ exports[`DateInput type format inline range partial 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       18
                     </div>
@@ -39202,7 +39252,7 @@ exports[`DateInput type format inline range partial 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       19
                     </div>
@@ -39219,7 +39269,7 @@ exports[`DateInput type format inline range partial 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       20
                     </div>
@@ -39236,7 +39286,7 @@ exports[`DateInput type format inline range partial 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 bMbtdg"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 gxmbJb"
                     >
                       21
                     </div>
@@ -39253,7 +39303,7 @@ exports[`DateInput type format inline range partial 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       22
                     </div>
@@ -39270,7 +39320,7 @@ exports[`DateInput type format inline range partial 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       23
                     </div>
@@ -39287,7 +39337,7 @@ exports[`DateInput type format inline range partial 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       24
                     </div>
@@ -39304,7 +39354,7 @@ exports[`DateInput type format inline range partial 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       25
                     </div>
@@ -39326,7 +39376,7 @@ exports[`DateInput type format inline range partial 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       26
                     </div>
@@ -39343,7 +39393,7 @@ exports[`DateInput type format inline range partial 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       27
                     </div>
@@ -39360,7 +39410,7 @@ exports[`DateInput type format inline range partial 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       28
                     </div>
@@ -39377,7 +39427,7 @@ exports[`DateInput type format inline range partial 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       29
                     </div>
@@ -39394,7 +39444,7 @@ exports[`DateInput type format inline range partial 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       30
                     </div>
@@ -39411,7 +39461,7 @@ exports[`DateInput type format inline range partial 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       31
                     </div>
@@ -39428,7 +39478,7 @@ exports[`DateInput type format inline range partial 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 kcUlBy"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ixRlcq"
                     >
                       1
                     </div>
@@ -39450,7 +39500,7 @@ exports[`DateInput type format inline range partial 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 kcUlBy"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ixRlcq"
                     >
                       2
                     </div>
@@ -39467,7 +39517,7 @@ exports[`DateInput type format inline range partial 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 kcUlBy"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ixRlcq"
                     >
                       3
                     </div>
@@ -39484,7 +39534,7 @@ exports[`DateInput type format inline range partial 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 kcUlBy"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ixRlcq"
                     >
                       4
                     </div>
@@ -39501,7 +39551,7 @@ exports[`DateInput type format inline range partial 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 kcUlBy"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ixRlcq"
                     >
                       5
                     </div>
@@ -39518,7 +39568,7 @@ exports[`DateInput type format inline range partial 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 kcUlBy"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ixRlcq"
                     >
                       6
                     </div>
@@ -39535,7 +39585,7 @@ exports[`DateInput type format inline range partial 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 kcUlBy"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ixRlcq"
                     >
                       7
                     </div>
@@ -39552,7 +39602,7 @@ exports[`DateInput type format inline range partial 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 kcUlBy"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ixRlcq"
                     >
                       8
                     </div>
@@ -39695,7 +39745,7 @@ exports[`DateInput type format inline range partial 3`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 kcUlBy"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ixRlcq"
                     >
                       28
                     </div>
@@ -39712,7 +39762,7 @@ exports[`DateInput type format inline range partial 3`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 kcUlBy"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ixRlcq"
                     >
                       29
                     </div>
@@ -39729,7 +39779,7 @@ exports[`DateInput type format inline range partial 3`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 kcUlBy"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ixRlcq"
                     >
                       30
                     </div>
@@ -39746,7 +39796,7 @@ exports[`DateInput type format inline range partial 3`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       1
                     </div>
@@ -39763,7 +39813,7 @@ exports[`DateInput type format inline range partial 3`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       2
                     </div>
@@ -39780,7 +39830,7 @@ exports[`DateInput type format inline range partial 3`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       3
                     </div>
@@ -39797,7 +39847,7 @@ exports[`DateInput type format inline range partial 3`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       4
                     </div>
@@ -39819,7 +39869,7 @@ exports[`DateInput type format inline range partial 3`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       5
                     </div>
@@ -39836,7 +39886,7 @@ exports[`DateInput type format inline range partial 3`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       6
                     </div>
@@ -39853,7 +39903,7 @@ exports[`DateInput type format inline range partial 3`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       7
                     </div>
@@ -39870,7 +39920,7 @@ exports[`DateInput type format inline range partial 3`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       8
                     </div>
@@ -39887,7 +39937,7 @@ exports[`DateInput type format inline range partial 3`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       9
                     </div>
@@ -39904,7 +39954,7 @@ exports[`DateInput type format inline range partial 3`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       10
                     </div>
@@ -39921,7 +39971,7 @@ exports[`DateInput type format inline range partial 3`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       11
                     </div>
@@ -39943,7 +39993,7 @@ exports[`DateInput type format inline range partial 3`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       12
                     </div>
@@ -39960,7 +40010,7 @@ exports[`DateInput type format inline range partial 3`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       13
                     </div>
@@ -39977,7 +40027,7 @@ exports[`DateInput type format inline range partial 3`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       14
                     </div>
@@ -39994,7 +40044,7 @@ exports[`DateInput type format inline range partial 3`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       15
                     </div>
@@ -40011,7 +40061,7 @@ exports[`DateInput type format inline range partial 3`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       16
                     </div>
@@ -40028,7 +40078,7 @@ exports[`DateInput type format inline range partial 3`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       17
                     </div>
@@ -40045,7 +40095,7 @@ exports[`DateInput type format inline range partial 3`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       18
                     </div>
@@ -40067,7 +40117,7 @@ exports[`DateInput type format inline range partial 3`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       19
                     </div>
@@ -40084,7 +40134,7 @@ exports[`DateInput type format inline range partial 3`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       20
                     </div>
@@ -40101,7 +40151,7 @@ exports[`DateInput type format inline range partial 3`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 bMbtdg"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 gxmbJb"
                     >
                       21
                     </div>
@@ -40118,7 +40168,7 @@ exports[`DateInput type format inline range partial 3`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       22
                     </div>
@@ -40135,7 +40185,7 @@ exports[`DateInput type format inline range partial 3`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       23
                     </div>
@@ -40152,7 +40202,7 @@ exports[`DateInput type format inline range partial 3`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       24
                     </div>
@@ -40169,7 +40219,7 @@ exports[`DateInput type format inline range partial 3`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       25
                     </div>
@@ -40191,7 +40241,7 @@ exports[`DateInput type format inline range partial 3`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       26
                     </div>
@@ -40208,7 +40258,7 @@ exports[`DateInput type format inline range partial 3`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       27
                     </div>
@@ -40225,7 +40275,7 @@ exports[`DateInput type format inline range partial 3`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       28
                     </div>
@@ -40242,7 +40292,7 @@ exports[`DateInput type format inline range partial 3`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       29
                     </div>
@@ -40259,7 +40309,7 @@ exports[`DateInput type format inline range partial 3`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       30
                     </div>
@@ -40276,7 +40326,7 @@ exports[`DateInput type format inline range partial 3`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       31
                     </div>
@@ -40293,7 +40343,7 @@ exports[`DateInput type format inline range partial 3`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 kcUlBy"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ixRlcq"
                     >
                       1
                     </div>
@@ -40315,7 +40365,7 @@ exports[`DateInput type format inline range partial 3`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 kcUlBy"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ixRlcq"
                     >
                       2
                     </div>
@@ -40332,7 +40382,7 @@ exports[`DateInput type format inline range partial 3`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 kcUlBy"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ixRlcq"
                     >
                       3
                     </div>
@@ -40349,7 +40399,7 @@ exports[`DateInput type format inline range partial 3`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 kcUlBy"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ixRlcq"
                     >
                       4
                     </div>
@@ -40366,7 +40416,7 @@ exports[`DateInput type format inline range partial 3`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 kcUlBy"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ixRlcq"
                     >
                       5
                     </div>
@@ -40383,7 +40433,7 @@ exports[`DateInput type format inline range partial 3`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 kcUlBy"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ixRlcq"
                     >
                       6
                     </div>
@@ -40400,7 +40450,7 @@ exports[`DateInput type format inline range partial 3`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 kcUlBy"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ixRlcq"
                     >
                       7
                     </div>
@@ -40417,7 +40467,7 @@ exports[`DateInput type format inline range partial 3`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 kcUlBy"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ixRlcq"
                     >
                       8
                     </div>
@@ -40758,15 +40808,16 @@ exports[`DateInput type format inline range partial without timezone 1`] = `
   display: flex;
   justify-content: center;
   align-items: center;
+  color: #666666;
   width: 54.857142857142854px;
   height: 54.857142857142854px;
-  opacity: 0.5;
 }
 
 .c20 {
   display: flex;
   justify-content: center;
   align-items: center;
+  color: #000000;
   width: 54.857142857142854px;
   height: 54.857142857142854px;
 }
@@ -40775,6 +40826,7 @@ exports[`DateInput type format inline range partial without timezone 1`] = `
   display: flex;
   justify-content: center;
   align-items: center;
+  color: #000000;
   width: 54.857142857142854px;
   height: 54.857142857142854px;
   background-color: #7D4CDB;
@@ -40786,6 +40838,7 @@ exports[`DateInput type format inline range partial without timezone 1`] = `
   display: flex;
   justify-content: center;
   align-items: center;
+  color: #000000;
   width: 54.857142857142854px;
   height: 54.857142857142854px;
   background-color: rgba(125, 76, 219, 0.1);
@@ -42084,15 +42137,16 @@ exports[`DateInput type format inline range partial without timezone 2`] = `
   display: flex;
   justify-content: center;
   align-items: center;
+  color: #666666;
   width: 54.857142857142854px;
   height: 54.857142857142854px;
-  opacity: 0.5;
 }
 
 .c20 {
   display: flex;
   justify-content: center;
   align-items: center;
+  color: #000000;
   width: 54.857142857142854px;
   height: 54.857142857142854px;
 }
@@ -42101,6 +42155,7 @@ exports[`DateInput type format inline range partial without timezone 2`] = `
   display: flex;
   justify-content: center;
   align-items: center;
+  color: #000000;
   width: 54.857142857142854px;
   height: 54.857142857142854px;
   background-color: #7D4CDB;
@@ -43400,15 +43455,16 @@ exports[`DateInput type format inline range partial without timezone 3`] = `
   display: flex;
   justify-content: center;
   align-items: center;
+  color: #666666;
   width: 54.857142857142854px;
   height: 54.857142857142854px;
-  opacity: 0.5;
 }
 
 .c20 {
   display: flex;
   justify-content: center;
   align-items: center;
+  color: #000000;
   width: 54.857142857142854px;
   height: 54.857142857142854px;
 }
@@ -43417,6 +43473,7 @@ exports[`DateInput type format inline range partial without timezone 3`] = `
   display: flex;
   justify-content: center;
   align-items: center;
+  color: #000000;
   width: 54.857142857142854px;
   height: 54.857142857142854px;
   background-color: #7D4CDB;
@@ -44716,15 +44773,16 @@ exports[`DateInput type format inline range without timezone 1`] = `
   display: flex;
   justify-content: center;
   align-items: center;
+  color: #666666;
   width: 54.857142857142854px;
   height: 54.857142857142854px;
-  opacity: 0.5;
 }
 
 .c20 {
   display: flex;
   justify-content: center;
   align-items: center;
+  color: #000000;
   width: 54.857142857142854px;
   height: 54.857142857142854px;
 }
@@ -44733,6 +44791,7 @@ exports[`DateInput type format inline range without timezone 1`] = `
   display: flex;
   justify-content: center;
   align-items: center;
+  color: #000000;
   width: 54.857142857142854px;
   height: 54.857142857142854px;
   background-color: #7D4CDB;
@@ -44744,6 +44803,7 @@ exports[`DateInput type format inline range without timezone 1`] = `
   display: flex;
   justify-content: center;
   align-items: center;
+  color: #000000;
   width: 54.857142857142854px;
   height: 54.857142857142854px;
   background-color: rgba(125, 76, 219, 0.1);
@@ -46042,15 +46102,16 @@ exports[`DateInput type format inline range without timezone 2`] = `
   display: flex;
   justify-content: center;
   align-items: center;
+  color: #666666;
   width: 54.857142857142854px;
   height: 54.857142857142854px;
-  opacity: 0.5;
 }
 
 .c20 {
   display: flex;
   justify-content: center;
   align-items: center;
+  color: #000000;
   width: 54.857142857142854px;
   height: 54.857142857142854px;
 }
@@ -46059,6 +46120,7 @@ exports[`DateInput type format inline range without timezone 2`] = `
   display: flex;
   justify-content: center;
   align-items: center;
+  color: #000000;
   width: 54.857142857142854px;
   height: 54.857142857142854px;
   background-color: #7D4CDB;
@@ -46070,6 +46132,7 @@ exports[`DateInput type format inline range without timezone 2`] = `
   display: flex;
   justify-content: center;
   align-items: center;
+  color: #000000;
   width: 54.857142857142854px;
   height: 54.857142857142854px;
   background-color: rgba(125, 76, 219, 0.1);
@@ -47367,15 +47430,16 @@ exports[`DateInput type format inline short 1`] = `
   display: flex;
   justify-content: center;
   align-items: center;
+  color: #666666;
   width: 54.857142857142854px;
   height: 54.857142857142854px;
-  opacity: 0.5;
 }
 
 .c20 {
   display: flex;
   justify-content: center;
   align-items: center;
+  color: #000000;
   width: 54.857142857142854px;
   height: 54.857142857142854px;
 }
@@ -47384,6 +47448,7 @@ exports[`DateInput type format inline short 1`] = `
   display: flex;
   justify-content: center;
   align-items: center;
+  color: #000000;
   width: 54.857142857142854px;
   height: 54.857142857142854px;
   background-color: #7D4CDB;
@@ -48484,7 +48549,7 @@ exports[`DateInput type format inline short 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 kcUlBy"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ixRlcq"
                     >
                       28
                     </div>
@@ -48501,7 +48566,7 @@ exports[`DateInput type format inline short 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 kcUlBy"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ixRlcq"
                     >
                       29
                     </div>
@@ -48518,7 +48583,7 @@ exports[`DateInput type format inline short 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 kcUlBy"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ixRlcq"
                     >
                       30
                     </div>
@@ -48535,7 +48600,7 @@ exports[`DateInput type format inline short 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       1
                     </div>
@@ -48552,7 +48617,7 @@ exports[`DateInput type format inline short 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       2
                     </div>
@@ -48569,7 +48634,7 @@ exports[`DateInput type format inline short 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       3
                     </div>
@@ -48586,7 +48651,7 @@ exports[`DateInput type format inline short 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       4
                     </div>
@@ -48608,7 +48673,7 @@ exports[`DateInput type format inline short 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       5
                     </div>
@@ -48625,7 +48690,7 @@ exports[`DateInput type format inline short 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       6
                     </div>
@@ -48642,7 +48707,7 @@ exports[`DateInput type format inline short 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       7
                     </div>
@@ -48659,7 +48724,7 @@ exports[`DateInput type format inline short 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       8
                     </div>
@@ -48676,7 +48741,7 @@ exports[`DateInput type format inline short 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       9
                     </div>
@@ -48693,7 +48758,7 @@ exports[`DateInput type format inline short 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       10
                     </div>
@@ -48710,7 +48775,7 @@ exports[`DateInput type format inline short 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       11
                     </div>
@@ -48732,7 +48797,7 @@ exports[`DateInput type format inline short 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       12
                     </div>
@@ -48749,7 +48814,7 @@ exports[`DateInput type format inline short 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       13
                     </div>
@@ -48766,7 +48831,7 @@ exports[`DateInput type format inline short 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       14
                     </div>
@@ -48783,7 +48848,7 @@ exports[`DateInput type format inline short 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       15
                     </div>
@@ -48800,7 +48865,7 @@ exports[`DateInput type format inline short 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       16
                     </div>
@@ -48817,7 +48882,7 @@ exports[`DateInput type format inline short 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       17
                     </div>
@@ -48834,7 +48899,7 @@ exports[`DateInput type format inline short 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       18
                     </div>
@@ -48856,7 +48921,7 @@ exports[`DateInput type format inline short 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       19
                     </div>
@@ -48873,7 +48938,7 @@ exports[`DateInput type format inline short 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       20
                     </div>
@@ -48890,7 +48955,7 @@ exports[`DateInput type format inline short 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 bMbtdg"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 gxmbJb"
                     >
                       21
                     </div>
@@ -48907,7 +48972,7 @@ exports[`DateInput type format inline short 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       22
                     </div>
@@ -48924,7 +48989,7 @@ exports[`DateInput type format inline short 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       23
                     </div>
@@ -48941,7 +49006,7 @@ exports[`DateInput type format inline short 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       24
                     </div>
@@ -48958,7 +49023,7 @@ exports[`DateInput type format inline short 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       25
                     </div>
@@ -48980,7 +49045,7 @@ exports[`DateInput type format inline short 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       26
                     </div>
@@ -48997,7 +49062,7 @@ exports[`DateInput type format inline short 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       27
                     </div>
@@ -49014,7 +49079,7 @@ exports[`DateInput type format inline short 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       28
                     </div>
@@ -49031,7 +49096,7 @@ exports[`DateInput type format inline short 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       29
                     </div>
@@ -49048,7 +49113,7 @@ exports[`DateInput type format inline short 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       30
                     </div>
@@ -49065,7 +49130,7 @@ exports[`DateInput type format inline short 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 txXbt"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ibHvmO"
                     >
                       31
                     </div>
@@ -49082,7 +49147,7 @@ exports[`DateInput type format inline short 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 kcUlBy"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ixRlcq"
                     >
                       1
                     </div>
@@ -49104,7 +49169,7 @@ exports[`DateInput type format inline short 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 kcUlBy"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ixRlcq"
                     >
                       2
                     </div>
@@ -49121,7 +49186,7 @@ exports[`DateInput type format inline short 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 kcUlBy"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ixRlcq"
                     >
                       3
                     </div>
@@ -49138,7 +49203,7 @@ exports[`DateInput type format inline short 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 kcUlBy"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ixRlcq"
                     >
                       4
                     </div>
@@ -49155,7 +49220,7 @@ exports[`DateInput type format inline short 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 kcUlBy"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ixRlcq"
                     >
                       5
                     </div>
@@ -49172,7 +49237,7 @@ exports[`DateInput type format inline short 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 kcUlBy"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ixRlcq"
                     >
                       6
                     </div>
@@ -49189,7 +49254,7 @@ exports[`DateInput type format inline short 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 kcUlBy"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ixRlcq"
                     >
                       7
                     </div>
@@ -49206,7 +49271,7 @@ exports[`DateInput type format inline short 2`] = `
                     type="button"
                   >
                     <div
-                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 kcUlBy"
+                      class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ixRlcq"
                     >
                       8
                     </div>
@@ -49547,15 +49612,16 @@ exports[`DateInput type format inline short without timezone 1`] = `
   display: flex;
   justify-content: center;
   align-items: center;
+  color: #666666;
   width: 54.857142857142854px;
   height: 54.857142857142854px;
-  opacity: 0.5;
 }
 
 .c20 {
   display: flex;
   justify-content: center;
   align-items: center;
+  color: #000000;
   width: 54.857142857142854px;
   height: 54.857142857142854px;
 }
@@ -49564,6 +49630,7 @@ exports[`DateInput type format inline short without timezone 1`] = `
   display: flex;
   justify-content: center;
   align-items: center;
+  color: #000000;
   width: 54.857142857142854px;
   height: 54.857142857142854px;
   background-color: #7D4CDB;
@@ -50863,15 +50930,16 @@ exports[`DateInput type format inline short without timezone 2`] = `
   display: flex;
   justify-content: center;
   align-items: center;
+  color: #666666;
   width: 54.857142857142854px;
   height: 54.857142857142854px;
-  opacity: 0.5;
 }
 
 .c20 {
   display: flex;
   justify-content: center;
   align-items: center;
+  color: #000000;
   width: 54.857142857142854px;
   height: 54.857142857142854px;
 }
@@ -50880,6 +50948,7 @@ exports[`DateInput type format inline short without timezone 2`] = `
   display: flex;
   justify-content: center;
   align-items: center;
+  color: #000000;
   width: 54.857142857142854px;
   height: 54.857142857142854px;
   background-color: #7D4CDB;
@@ -52179,15 +52248,16 @@ exports[`DateInput type format inline without timezone 1`] = `
   display: flex;
   justify-content: center;
   align-items: center;
+  color: #666666;
   width: 54.857142857142854px;
   height: 54.857142857142854px;
-  opacity: 0.5;
 }
 
 .c20 {
   display: flex;
   justify-content: center;
   align-items: center;
+  color: #000000;
   width: 54.857142857142854px;
   height: 54.857142857142854px;
 }
@@ -52196,6 +52266,7 @@ exports[`DateInput type format inline without timezone 1`] = `
   display: flex;
   justify-content: center;
   align-items: center;
+  color: #000000;
   width: 54.857142857142854px;
   height: 54.857142857142854px;
   background-color: #7D4CDB;
@@ -53495,15 +53566,16 @@ exports[`DateInput type format inline without timezone 2`] = `
   display: flex;
   justify-content: center;
   align-items: center;
+  color: #666666;
   width: 54.857142857142854px;
   height: 54.857142857142854px;
-  opacity: 0.5;
 }
 
 .c20 {
   display: flex;
   justify-content: center;
   align-items: center;
+  color: #000000;
   width: 54.857142857142854px;
   height: 54.857142857142854px;
 }
@@ -53512,6 +53584,7 @@ exports[`DateInput type format inline without timezone 2`] = `
   display: flex;
   justify-content: center;
   align-items: center;
+  color: #000000;
   width: 54.857142857142854px;
   height: 54.857142857142854px;
   background-color: #7D4CDB;

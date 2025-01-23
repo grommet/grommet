@@ -40,6 +40,10 @@ if (process.env.NODE_ENV !== 'production') {
           enterCalendar: PropTypes.string,
           exitCalendar: PropTypes.string,
         }),
+        dataChart: PropTypes.shape({
+          detailTitle: PropTypes.string,
+          detailFocus: PropTypes.string,
+        }),
         dataFilters: PropTypes.shape({
           clear: PropTypes.string,
           heading: PropTypes.string,
