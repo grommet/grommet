@@ -17,7 +17,6 @@ var Item = function Item(_ref) {
     pad: "medium",
     gap: "large",
     round: "medium",
-    background: "status-warning",
     flex: "grow"
   }, rest), /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
     color: "text-strong",

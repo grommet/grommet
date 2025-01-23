@@ -12,7 +12,6 @@ var Item = function Item(_ref) {
     pad: "medium",
     gap: "large",
     round: "medium",
-    background: "status-warning",
     flex: "grow"
   }, rest), /*#__PURE__*/React.createElement(Text, {
     color: "text-strong",
