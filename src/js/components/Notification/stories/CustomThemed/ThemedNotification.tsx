@@ -41,11 +41,12 @@ const customTheme: ThemeType = deepMerge(grommet, {
       },
     },
     close: {
-      color: '#e0ffcc',
+      color: '#000000',
     },
     unknown: {
       icon: CircleQuestion,
       background: '#87a200',
+      color: '#000000',
     },
   },
 });
