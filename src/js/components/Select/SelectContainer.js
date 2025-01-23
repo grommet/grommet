@@ -334,13 +334,6 @@ const SelectContainer = forwardRef(
       [keyboardNavigation],
     );
 
-    const onResetActiveOption = useCallback(
-      () => () => {
-        if (!keyboardNavigation) setActiveIndex(-1);
-      },
-      [keyboardNavigation],
-    );
-
     const onSelectOption = useCallback(
       (event) => {
         if (
@@ -491,7 +484,7 @@ const SelectContainer = forwardRef(
                         !optionDisabled ? onActiveOption(index) : undefined
                       }
                       onMouseOut={
-                        !optionDisabled ? onResetActiveOption(index) : undefined
+                        !optionDisabled ? onActiveOption(-1) : undefined
                       }
                       onClick={
                         !optionDisabled ? selectOption(index) : undefined
