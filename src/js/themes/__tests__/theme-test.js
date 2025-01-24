@@ -1,5 +1,5 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import { fireEvent, render } from '@testing-library/react';
 import 'jest-styled-components';
 
 import { hpe } from 'grommet-theme-hpe';
@@ -87,6 +87,19 @@ const customTheme = {
           font-weight: normal;
         }
       `,
+    },
+    focus: {
+      border: {
+        color: 'blue',
+      },
+      outline: { color: 'purple', size: '2px', offset: '2px' },
+      shadow: {
+        color: 'red',
+        size: '2px',
+        blur: '0px',
+        inset: true,
+      },
+      allowAll: true,
     },
     colors: {
       custom: '#cc6633',
