@@ -9,7 +9,6 @@ const Item = ({ title, ...rest }) => (
     pad="medium"
     gap="large"
     round="medium"
-    background="status-warning"
     flex="grow"
     {...rest}
   >
