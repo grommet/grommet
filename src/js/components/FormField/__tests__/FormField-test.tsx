@@ -186,6 +186,29 @@ describe('FormField', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
+  test('info and help label colors', () => {
+    const { container } = render(
+      <Grommet
+        theme={{
+          formField: {
+            disabled: { label: { color: 'teal' } },
+            help: { color: 'blue' },
+            info: { color: 'green' },
+          },
+        }}
+      >
+        <FormField
+          label="Label"
+          disabled
+          help="Text to help the user know what is possible"
+          info="Additional contextual information"
+        />
+      </Grommet>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
   test('custom formfield', () => {
     const { container } = render(
       <Grommet>

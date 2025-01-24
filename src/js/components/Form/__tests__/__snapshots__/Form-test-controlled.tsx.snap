@@ -3666,7 +3666,6 @@ exports[`Form controlled controlled onValidate custom info 2`] = `
   margin-bottom: 6px;
   font-size: 18px;
   line-height: 24px;
-  color: #666666;
 }
 
 @media only screen and (max-width: 768px) {
