@@ -373,6 +373,7 @@ var SelectContainer = /*#__PURE__*/forwardRef(function (_ref3, ref) {
         return setActiveIndex(index);
       },
       onMouseOver: !optionDisabled ? onActiveOption(index) : undefined,
+      onMouseOut: !optionDisabled ? onActiveOption(-1) : undefined,
       onClick: !optionDisabled ? selectOption(index) : undefined,
       textComponent: textComponent
     }, passThemeFlag), child);

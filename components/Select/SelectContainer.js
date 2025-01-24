@@ -379,6 +379,7 @@ var SelectContainer = exports.SelectContainer = /*#__PURE__*/(0, _react.forwardR
         return setActiveIndex(index);
       },
       onMouseOver: !optionDisabled ? onActiveOption(index) : undefined,
+      onMouseOut: !optionDisabled ? onActiveOption(-1) : undefined,
       onClick: !optionDisabled ? selectOption(index) : undefined,
       textComponent: textComponent
     }, passThemeFlag), child);
