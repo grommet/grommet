@@ -45,7 +45,6 @@ import {
 import { HeadingProps } from '../components/Heading';
 import { ParagraphProps } from '../components/Paragraph';
 import { SkeletonProps } from '../components/Skeleton/index';
-import { info } from 'console';
 
 export declare const base: DeepReadonly<ThemeType>;
 export declare const generate: (
