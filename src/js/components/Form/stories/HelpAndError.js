@@ -12,7 +12,6 @@ export const HelpAndError = () => (
         htmlFor="text-input"
         help="Text to help the user know what is possible"
         error="Text to call attention to an issue with this field"
-        info="Additional contextual information"
       >
         <TextInput
           id="text-input"
