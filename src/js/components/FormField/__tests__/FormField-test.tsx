@@ -288,7 +288,13 @@ describe('FormField', () => {
         }}
       >
         <Form>
-          <FormField disabled label="label" />
+          <FormField htmlFor="text-input" disabled label="label">
+            <TextInput
+              id="text-input"
+              placeholder="placeholder"
+              value="Value"
+            />
+          </FormField>
         </Form>
       </Grommet>,
     );

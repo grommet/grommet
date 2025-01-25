@@ -1502,8 +1502,6 @@ exports[`FormField disabled with custom label 1`] = `
   border-radius: 4px;
   outline: none;
   border: none;
-  opacity: 0.3;
-  cursor: default;
 }
 
 .c5::-webkit-input-placeholder {
@@ -1568,6 +1566,7 @@ exports[`FormField disabled with custom label 1`] = `
     >
       <label
         class="c2"
+        for="text-input"
       >
         label
       </label>
@@ -1580,7 +1579,9 @@ exports[`FormField disabled with custom label 1`] = `
           <input
             autocomplete="off"
             class="c5"
-            disabled=""
+            id="text-input"
+            placeholder="placeholder"
+            value="Value"
           />
         </div>
       </div>
