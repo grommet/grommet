@@ -673,6 +673,16 @@ exports[`FormField custom error and info icon and container 1`] = `
   color: #EB0000;
 }
 
+.c11 {
+  margin-left: 12px;
+  margin-right: 12px;
+  margin-top: 6px;
+  margin-bottom: 6px;
+  font-size: 18px;
+  line-height: 24px;
+  color: #666666;
+}
+
 .c5 {
   box-sizing: border-box;
   font-size: inherit;
@@ -815,7 +825,7 @@ exports[`FormField custom error and info icon and container 1`] = `
           </svg>
         </div>
         <span
-          class="c2"
+          class="c11"
         >
           Here is a little added info on FormField.
         </span>
@@ -1731,6 +1741,7 @@ exports[`FormField help 1`] = `
   margin-inline-start: 12px;
   font-size: 18px;
   line-height: 24px;
+  color: #555555;
 }
 
 .c0 {
@@ -1857,6 +1868,7 @@ exports[`FormField info 1`] = `
   margin-bottom: 6px;
   font-size: 18px;
   line-height: 24px;
+  color: #666666;
 }
 
 .c0 {

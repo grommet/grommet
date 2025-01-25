@@ -1978,6 +1978,7 @@ exports[`Form uncontrolled infos 1`] = `
   margin-bottom: 6px;
   font-size: 18px;
   line-height: 24px;
+  color: #666666;
 }
 
 .c4 {
@@ -2133,6 +2134,7 @@ exports[`Form uncontrolled regexp validation with status 1`] = `
   margin-bottom: 6px;
   font-size: 18px;
   line-height: 24px;
+  color: #666666;
 }
 
 @media only screen and (max-width: 768px) {
@@ -4128,6 +4130,7 @@ exports[`Form uncontrolled uncontrolled onValidate custom info 2`] = `
   margin-bottom: 6px;
   font-size: 18px;
   line-height: 24px;
+  color: #666666;
 }
 
 @media only screen and (max-width: 768px) {
@@ -4473,6 +4476,7 @@ exports[`Form uncontrolled validate 4`] = `
   margin-bottom: 6px;
   font-size: 18px;
   line-height: 24px;
+  color: #666666;
 }
 
 @media only screen and (max-width: 768px) {

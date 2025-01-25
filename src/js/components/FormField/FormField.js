@@ -395,12 +395,12 @@ const FormField = forwardRef(
 
     const themeHelpProps = {
       ...formFieldTheme.help,
-      color: disabled && formFieldTheme?.disabled?.help?.color,
+      ...(disabled && { color: formFieldTheme?.disabled?.help?.color }),
     };
 
     const themeInfoProps = {
       ...formFieldTheme.info,
-      color: disabled && formFieldTheme?.disabled?.info?.color,
+      ...(disabled && { color: formFieldTheme?.disabled?.info?.color }),
     };
 
     let abut;
