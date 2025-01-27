@@ -172,7 +172,15 @@ const Notification = ({
   if (message || actions)
     message =
       typeof message === 'string' ? (
-        <Message {...theme.notification.message} color={messageColor}>
+        <Message
+          {...theme.notification.message}
+          color={messageColor}
+          fill={
+            Message === Paragraph
+              ? theme.notification.message?.fill || false
+              : undefined
+          }
+        >
           <Text margin={{ right: 'xsmall' }}>{message}</Text>
           {/* include actions with message so it wraps with message */}
           {actions}

@@ -1339,6 +1339,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       message: {
         // any text props
         margin: 'none',
+        // fill: undefined,
       },
       close: {
         icon: FormClose,
