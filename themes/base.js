@@ -1100,6 +1100,12 @@ var generate = exports.generate = function generate(baseSpacing, scale) {
         // label: {
         //   color: undefined,
         // },
+        // help: {
+        //   color: undefined,
+        // },
+        // info: {
+        //   color: undefined,
+        // },
       },
       // focus: {
       //   background: {

@@ -122,7 +122,7 @@ var Input = function Input(_ref2) {
   }, rest, extraProps));
 };
 var FormField = /*#__PURE__*/forwardRef(function (_ref3, ref) {
-  var _theme$global$input;
+  var _theme$global$input, _formFieldTheme$disab, _formFieldTheme$disab2;
   var children = _ref3.children,
     className = _ref3.className,
     component = _ref3.component,
@@ -274,6 +274,12 @@ var FormField = /*#__PURE__*/forwardRef(function (_ref3, ref) {
   if (disabled) {
     labelStyle.color = formFieldTheme.disabled && formFieldTheme.disabled.label ? formFieldTheme.disabled.label.color : labelStyle.color;
   }
+  var themeHelpProps = _extends({}, formFieldTheme.help, disabled && {
+    color: formFieldTheme == null || (_formFieldTheme$disab = formFieldTheme.disabled) == null || (_formFieldTheme$disab = _formFieldTheme$disab.help) == null ? void 0 : _formFieldTheme$disab.color
+  });
+  var themeInfoProps = _extends({}, formFieldTheme.info, disabled && {
+    color: formFieldTheme == null || (_formFieldTheme$disab2 = formFieldTheme.disabled) == null || (_formFieldTheme$disab2 = _formFieldTheme$disab2.info) == null ? void 0 : _formFieldTheme$disab2.color
+  });
   var abut;
   var abutMargin;
   var outerStyle = style;
@@ -386,13 +392,13 @@ var FormField = /*#__PURE__*/forwardRef(function (_ref3, ref) {
     htmlFor: htmlFor
   }, labelStyle), label, showRequiredIndicator ? requiredIndicator : undefined), /*#__PURE__*/React.createElement(Message, _extends({
     message: help
-  }, formFieldTheme.help))) : undefined, contents, /*#__PURE__*/React.createElement(Message, _extends({
+  }, themeHelpProps))) : undefined, contents, /*#__PURE__*/React.createElement(Message, _extends({
     type: "error",
     message: error
   }, formFieldTheme.error)), /*#__PURE__*/React.createElement(Message, _extends({
     type: "info",
     message: info
-  }, formFieldTheme.info)));
+  }, themeInfoProps)));
 });
 FormField.displayName = 'FormField';
 FormField.propTypes = FormFieldPropTypes;
