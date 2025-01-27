@@ -48,4 +48,5 @@ export const StyledButton = styled(Button)`
       `border: none;
     box-shadow: none;`}
   }
+  ${(props) => props.theme.toggleGroup?.container?.extend};
 `;
