@@ -1,5 +1,5 @@
 var _excluded = ["search"];
-function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (e.includes(n)) continue; t[n] = r[n]; } return t; }
+function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (-1 !== e.indexOf(n)) continue; t[n] = r[n]; } return t; }
 import React, { useContext } from 'react';
 import { Box, DataFilters, DataFilter, DataSearch, DataSummary, DataTable, DataTableGroupBy, Grid, Heading, ResponsiveContext, Toolbar } from 'grommet';
 import { Data } from '../Data';
