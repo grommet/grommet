@@ -406,7 +406,7 @@ exports[`Data controlled search 1`] = `
       class="c12 c13"
     >
       <thead
-        class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
+        class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-5"
       >
         <tr
           class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
@@ -583,13 +583,13 @@ exports[`Data controlled search 2`] = `
       class="StyledTable-sc-1m3u5g-6 bUmVhQ StyledDataTable-sc-xrlyjm-0 lfRkCP"
     >
       <thead
-        class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
+        class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-5"
       >
         <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 hJqNiB"
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRowHeader-sc-xrlyjm-3 irDlon"
         >
           <th
-            class="StyledTable__StyledTableCell-sc-1m3u5g-0 iWTOtn StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 ksxSsW"
+            class="StyledTable__StyledTableCell-sc-1m3u5g-0 iWTOtn StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 dlSDLf"
             scope="col"
           >
             <div
@@ -599,13 +599,13 @@ exports[`Data controlled search 2`] = `
         </tr>
       </thead>
       <tbody
-        class="StyledTable__StyledTableBody-sc-1m3u5g-3 StyledDataTable__StyledDataTableBody-sc-xrlyjm-3 jcOPZD"
+        class="StyledTable__StyledTableBody-sc-1m3u5g-3 StyledDataTable__StyledDataTableBody-sc-xrlyjm-4 kcTeao"
       >
         <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 hJqNiB"
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 dXmEBQ"
         >
           <th
-            class="StyledTable__StyledTableCell-sc-1m3u5g-0 ksjtzt StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 ksxSsW"
+            class="StyledTable__StyledTableCell-sc-1m3u5g-0 ksjtzt StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 dlSDLf"
             scope="row"
           >
             <div
@@ -620,10 +620,10 @@ exports[`Data controlled search 2`] = `
           </th>
         </tr>
         <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 hJqNiB"
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 dXmEBQ"
         >
           <th
-            class="StyledTable__StyledTableCell-sc-1m3u5g-0 ksjtzt StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 ksxSsW"
+            class="StyledTable__StyledTableCell-sc-1m3u5g-0 ksjtzt StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 dlSDLf"
             scope="row"
           >
             <div
@@ -638,10 +638,10 @@ exports[`Data controlled search 2`] = `
           </th>
         </tr>
         <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 hJqNiB"
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 dXmEBQ"
         >
           <th
-            class="StyledTable__StyledTableCell-sc-1m3u5g-0 ksjtzt StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 ksxSsW"
+            class="StyledTable__StyledTableCell-sc-1m3u5g-0 ksjtzt StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 dlSDLf"
             scope="row"
           >
             <div
@@ -656,10 +656,10 @@ exports[`Data controlled search 2`] = `
           </th>
         </tr>
         <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 hJqNiB"
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 dXmEBQ"
         >
           <th
-            class="StyledTable__StyledTableCell-sc-1m3u5g-0 ksjtzt StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 ksxSsW"
+            class="StyledTable__StyledTableCell-sc-1m3u5g-0 ksjtzt StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 dlSDLf"
             scope="row"
           >
             <div
@@ -1090,7 +1090,7 @@ exports[`Data messages 1`] = `
       class="c12 c13"
     >
       <thead
-        class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
+        class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-5"
       >
         <tr
           class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
@@ -1479,7 +1479,7 @@ exports[`Data onView 1`] = `
       class="c7 c8"
     >
       <thead
-        class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
+        class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-5"
       >
         <tr
           class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
@@ -2061,7 +2061,7 @@ exports[`Data pagination 1`] = `
       class="c2 c3"
     >
       <thead
-        class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
+        class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-5"
       >
         <tr
           class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
@@ -2519,7 +2519,7 @@ exports[`Data pagination step 1`] = `
       class="c2 c3"
     >
       <thead
-        class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
+        class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-5"
       >
         <tr
           class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
@@ -3059,7 +3059,7 @@ exports[`Data properties when property is an array 1`] = `
         class="c12 c13"
       >
         <thead
-          class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
+          class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-5"
         >
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
@@ -4903,7 +4903,7 @@ exports[`Data toolbar 1`] = `
       class="c12 c13"
     >
       <thead
-        class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
+        class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-5"
       >
         <tr
           class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
@@ -5342,7 +5342,7 @@ exports[`Data toolbar filters 1`] = `
       class="c8 c9"
     >
       <thead
-        class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
+        class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-5"
       >
         <tr
           class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
@@ -5752,7 +5752,7 @@ exports[`Data toolbar search 1`] = `
       class="c10 c11"
     >
       <thead
-        class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
+        class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-5"
       >
         <tr
           class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
@@ -6254,7 +6254,7 @@ exports[`Data uncontrolled search 1`] = `
       class="c12 c13"
     >
       <thead
-        class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
+        class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-5"
       >
         <tr
           class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
@@ -6431,13 +6431,13 @@ exports[`Data uncontrolled search 2`] = `
       class="StyledTable-sc-1m3u5g-6 bUmVhQ StyledDataTable-sc-xrlyjm-0 lfRkCP"
     >
       <thead
-        class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
+        class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-5"
       >
         <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 hJqNiB"
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRowHeader-sc-xrlyjm-3 irDlon"
         >
           <th
-            class="StyledTable__StyledTableCell-sc-1m3u5g-0 iWTOtn StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 ksxSsW"
+            class="StyledTable__StyledTableCell-sc-1m3u5g-0 iWTOtn StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 dlSDLf"
             scope="col"
           >
             <div
@@ -6447,13 +6447,13 @@ exports[`Data uncontrolled search 2`] = `
         </tr>
       </thead>
       <tbody
-        class="StyledTable__StyledTableBody-sc-1m3u5g-3 StyledDataTable__StyledDataTableBody-sc-xrlyjm-3 jcOPZD"
+        class="StyledTable__StyledTableBody-sc-1m3u5g-3 StyledDataTable__StyledDataTableBody-sc-xrlyjm-4 kcTeao"
       >
         <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 hJqNiB"
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 dXmEBQ"
         >
           <th
-            class="StyledTable__StyledTableCell-sc-1m3u5g-0 ksjtzt StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 ksxSsW"
+            class="StyledTable__StyledTableCell-sc-1m3u5g-0 ksjtzt StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 dlSDLf"
             scope="row"
           >
             <div
@@ -7263,7 +7263,7 @@ exports[`Data uncontrolled, when paginated, search should return to page 1 1`] =
       class="c12 c13"
     >
       <thead
-        class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
+        class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-5"
       >
         <tr
           class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
@@ -7492,13 +7492,13 @@ exports[`Data uncontrolled, when paginated, search should return to page 1 2`] =
       class="StyledTable-sc-1m3u5g-6 bUmVhQ StyledDataTable-sc-xrlyjm-0 lfRkCP"
     >
       <thead
-        class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
+        class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-5"
       >
         <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 hJqNiB"
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRowHeader-sc-xrlyjm-3 irDlon"
         >
           <th
-            class="StyledTable__StyledTableCell-sc-1m3u5g-0 btFZqx StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 ksxSsW"
+            class="StyledTable__StyledTableCell-sc-1m3u5g-0 btFZqx StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 dlSDLf"
             scope="col"
           >
             <div
@@ -7514,7 +7514,7 @@ exports[`Data uncontrolled, when paginated, search should return to page 1 2`] =
         </tr>
       </thead>
       <tbody
-        class="StyledTable__StyledTableBody-sc-1m3u5g-3 StyledDataTable__StyledDataTableBody-sc-xrlyjm-3 jcOPZD"
+        class="StyledTable__StyledTableBody-sc-1m3u5g-3 StyledDataTable__StyledDataTableBody-sc-xrlyjm-4 kcTeao"
       >
         .c1 {
   display: flex;
@@ -7812,13 +7812,13 @@ exports[`Data uncontrolled, when paginated, search should return to page 1 3`] =
       class="StyledTable-sc-1m3u5g-6 bUmVhQ StyledDataTable-sc-xrlyjm-0 lfRkCP"
     >
       <thead
-        class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
+        class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-5"
       >
         <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 hJqNiB"
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRowHeader-sc-xrlyjm-3 irDlon"
         >
           <th
-            class="StyledTable__StyledTableCell-sc-1m3u5g-0 btFZqx StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 ksxSsW"
+            class="StyledTable__StyledTableCell-sc-1m3u5g-0 btFZqx StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 dlSDLf"
             scope="col"
           >
             <div
@@ -7834,13 +7834,13 @@ exports[`Data uncontrolled, when paginated, search should return to page 1 3`] =
         </tr>
       </thead>
       <tbody
-        class="StyledTable__StyledTableBody-sc-1m3u5g-3 StyledDataTable__StyledDataTableBody-sc-xrlyjm-3 jcOPZD"
+        class="StyledTable__StyledTableBody-sc-1m3u5g-3 StyledDataTable__StyledDataTableBody-sc-xrlyjm-4 kcTeao"
       >
         <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 hJqNiB"
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 dXmEBQ"
         >
           <th
-            class="StyledTable__StyledTableCell-sc-1m3u5g-0 hKgshT StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 ksxSsW"
+            class="StyledTable__StyledTableCell-sc-1m3u5g-0 hKgshT StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 dlSDLf"
             scope="row"
           >
             <div
@@ -8280,7 +8280,7 @@ exports[`Data view 1`] = `
       class="c2 c3"
     >
       <thead
-        class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
+        class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-5"
       >
         <tr
           class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
@@ -8830,7 +8830,7 @@ exports[`Data view all 1`] = `
       class="c12 c13"
     >
       <thead
-        class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
+        class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-5"
       >
         <tr
           class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
@@ -9277,7 +9277,7 @@ exports[`Data view columns 1`] = `
       class="c12 c13"
     >
       <thead
-        class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
+        class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-5"
       >
         <tr
           class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
@@ -9771,7 +9771,7 @@ exports[`Data view property option 1`] = `
       class="c12 c13"
     >
       <thead
-        class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
+        class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-5"
       >
         <tr
           class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
@@ -10402,7 +10402,7 @@ exports[`Data view property range 1`] = `
       class="c19 c20"
     >
       <thead
-        class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
+        class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-5"
       >
         <tr
           class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
@@ -10897,7 +10897,7 @@ exports[`Data view search 1`] = `
       class="c12 c13"
     >
       <thead
-        class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
+        class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-5"
       >
         <tr
           class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
@@ -11370,7 +11370,7 @@ exports[`Data view sort 1`] = `
       class="c12 c13"
     >
       <thead
-        class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
+        class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-5"
       >
         <tr
           class="StyledTable__StyledTableRow-sc-1m3u5g-2 "

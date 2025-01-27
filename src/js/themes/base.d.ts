@@ -798,6 +798,9 @@ export interface ThemeType {
   dataTable?: {
     body?: {
       extend?: ExtendType;
+      row?: {
+        extend?: ExtendType;
+      };
       selected?: {
         background?: BackgroundType;
       };

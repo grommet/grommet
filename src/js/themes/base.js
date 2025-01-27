@@ -883,6 +883,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
     dataTable: {
       // body: {
       //   extend: undefined,
+      //   row: {
+      //     extend: undefined,
+      //   }
       //   selected: undefined,
       // },
       pinned: {
