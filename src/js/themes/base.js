@@ -1033,6 +1033,12 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         // label: {
         //   color: undefined,
         // },
+        // help: {
+        //   color: undefined,
+        // },
+        // info: {
+        //   color: undefined,
+        // },
       },
       // focus: {
       //   background: {

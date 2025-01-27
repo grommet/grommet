@@ -931,6 +931,12 @@ export interface ThemeType {
       label?: {
         color?: ColorType;
       };
+      help?: {
+        color?: ColorType;
+      };
+      info?: {
+        color?: ColorType;
+      };
     };
     focus?: {
       background?: BackgroundType;
