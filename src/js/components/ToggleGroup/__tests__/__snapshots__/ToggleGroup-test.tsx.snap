@@ -1701,7 +1701,7 @@ exports[`ToggleGroup Should render when options is array of objects with multipl
 </DocumentFragment>
 `;
 
-exports[`ToggleGroup custom theme 1`] = `
+exports[`ToggleGroup custom theme with hover green 1`] = `
 <DocumentFragment>
   .c0 {
   font-size: 18px;
@@ -1816,11 +1816,16 @@ exports[`ToggleGroup custom theme 1`] = `
   border-top-left-radius: 3px;
   border-bottom-left-radius: 3px;
   padding: 11px;
+  border: 1px solid red;
 }
 
 .c4:hover {
   border: none;
   box-shadow: none;
+}
+
+.c4:hover {
+  background-color: green;
 }
 
 .c6 {
@@ -1829,11 +1834,205 @@ exports[`ToggleGroup custom theme 1`] = `
   border-top-right-radius: 3px;
   border-bottom-right-radius: 3px;
   padding: 11px;
+  border: 1px solid red;
 }
 
 .c6:hover {
   border: none;
   box-shadow: none;
+}
+
+.c6:hover {
+  background-color: green;
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    border-right: solid 1px #7D4CDB;
+  }
+}
+
+<div
+    class="c0"
+  >
+    <div
+      class="c1"
+      role="radiogroup"
+    >
+      <div
+        class="c2"
+      >
+        <button
+          aria-checked="false"
+          class="c3 c4"
+          role="radio"
+          tabindex="0"
+          type="button"
+        >
+          one
+        </button>
+      </div>
+      <div
+        class="c5"
+      >
+        <button
+          aria-checked="false"
+          class="c3 c6"
+          role="radio"
+          tabindex="-1"
+          type="button"
+        >
+          two
+        </button>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`ToggleGroup custom theme with hover green 2`] = `
+<DocumentFragment>
+  .c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-self: flex-start;
+  border: solid 1px rgba(0, 0, 0, 0.33);
+  min-width: 0;
+  min-height: 0;
+  flex-direction: row;
+  flex: 0 0 auto;
+  border-radius: 3px;
+}
+
+.c2 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  border-right: solid 1px #7D4CDB;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+}
+
+.c5 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+}
+
+.c3 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: 2px solid #7D4CDB;
+  border-radius: 18px;
+  color: #444444;
+  padding: 4px 22px;
+  font-size: 18px;
+  line-height: 24px;
+  transition-property: color,background-color,border-color,box-shadow;
+  transition-duration: 0.1s;
+  transition-timing-function: ease-in-out;
+}
+
+.c3:hover {
+  box-shadow: 0px 0px 0px 2px #7D4CDB;
+}
+
+.c3:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c3:focus >circle,
+.c3:focus >ellipse,
+.c3:focus >line,
+.c3:focus >path,
+.c3:focus >polygon,
+.c3:focus >polyline,
+.c3:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c3:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c3:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c3:focus:not(:focus-visible) >circle,
+.c3:focus:not(:focus-visible) >ellipse,
+.c3:focus:not(:focus-visible) >line,
+.c3:focus:not(:focus-visible) >path,
+.c3:focus:not(:focus-visible) >polygon,
+.c3:focus:not(:focus-visible) >polyline,
+.c3:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c3:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
+}
+
+.c4 {
+  border: none;
+  border-radius: 0;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+  padding: 11px;
+  border: 1px solid red;
+}
+
+.c4:hover {
+  border: none;
+  box-shadow: none;
+}
+
+.c4:hover {
+  background-color: green;
+}
+
+.c6 {
+  border: none;
+  border-radius: 0;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+  padding: 11px;
+  border: 1px solid red;
+}
+
+.c6:hover {
+  border: none;
+  box-shadow: none;
+}
+
+.c6:hover {
+  background-color: green;
 }
 
 @media only screen and (max-width: 768px) {

@@ -1934,10 +1934,7 @@ export interface ThemeType {
       };
       pad?: PadType;
     };
-    container?: {
-      BoxProps;
-      extend?: ExtendType;
-    };
+    container?: BoxProps | { extend?: ExtendType };
     divider?:
       | {
           color?: ColorType;
