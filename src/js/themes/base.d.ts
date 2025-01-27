@@ -412,6 +412,7 @@ export interface ThemeType {
             size?: string;
             blur?: string;
           };
+      allowAll?: boolean;
     };
     font?: {
       face?: string;
