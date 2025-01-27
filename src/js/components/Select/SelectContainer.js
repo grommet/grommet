@@ -483,6 +483,9 @@ const SelectContainer = forwardRef(
                       onMouseOver={
                         !optionDisabled ? onActiveOption(index) : undefined
                       }
+                      onMouseOut={
+                        !optionDisabled ? onActiveOption(-1) : undefined
+                      }
                       onClick={
                         !optionDisabled ? selectOption(index) : undefined
                       }
