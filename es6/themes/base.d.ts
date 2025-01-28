@@ -403,13 +403,16 @@ export interface ThemeType {
       outline?: {
         color?: ColorType;
         size?: string;
+        offset?: string;
       };
       shadow?:
         | string
         | {
             color?: ColorType;
             size?: string;
+            blur?: string;
           };
+      twoColor?: boolean;
     };
     font?: {
       face?: string;

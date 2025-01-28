@@ -296,7 +296,8 @@ var generate = exports.generate = function generate(baseSpacing, scale) {
         shadow: {
           color: 'focus',
           size: '2px'
-        }
+        },
+        twoColor: undefined
       },
       font: _extends({}, fontSizing(0)),
       hover: {

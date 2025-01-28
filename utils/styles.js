@@ -100,6 +100,7 @@ var focusStyles = function focusStyles(props, _temp) {
     forceOutline = _ref.forceOutline,
     justBorder = _ref.justBorder;
   var focus = props.theme.global.focus;
+  var compoundFocusStyle = '';
   if (!focus || forceOutline && !focus.outline) {
     var color = (0, _colors.normalizeColor)('focus', props.theme);
     if (color) return "outline: 2px solid " + color + ";";
@@ -109,9 +110,15 @@ var focusStyles = function focusStyles(props, _temp) {
     if (typeof focus.outline === 'object') {
       var _color = (0, _colors.normalizeColor)(focus.outline.color || 'focus', props.theme);
       var size = focus.outline.size || '2px';
-      return "\n        outline-offset: 0px;\n        outline: " + size + " solid " + _color + ";\n      ";
+      var offset = focus.outline.offset || '0px';
+      var outlineStyle = "\n        outline-offset: " + offset + ";\n        outline: " + size + " solid " + _color + ";\n      ";
+      compoundFocusStyle += outlineStyle;
+      if (!focus.twoColor) return outlineStyle;
+    } else {
+      var _outlineStyle = "outline: " + focus.outline + ";";
+      compoundFocusStyle += _outlineStyle;
+      if (!focus.twoColor) return _outlineStyle;
     }
-    return "outline: " + focus.outline + ";";
   }
   if (focus.shadow && (!focus.border || !justBorder)) {
     if (typeof focus.shadow === 'object') {
@@ -120,14 +127,24 @@ var focusStyles = function focusStyles(props, _temp) {
       // This is for backwards compatibility in v2.
       focus.border && focus.border.color || focus.shadow.color || 'focus', props.theme);
       var _size = focus.shadow.size || '2px'; // backwards compatible default
-      return "\n        outline: none;\n        box-shadow: 0 0 " + _size + " " + _size + " " + _color2 + ";\n      ";
+      var blur = focus.shadow.blur || _size; // backwards compatible default
+      var inset = focus.shadow.inset ? 'inset ' : '';
+      var shadowStyle = "box-shadow: 0 0 " + blur + " " + _size + " " + _color2 + (inset ? " " + inset : '') + ";";
+      compoundFocusStyle += shadowStyle;
+      if (!focus.twoColor) return "\n        outline: none;\n      " + shadowStyle;
+    } else {
+      var _shadowStyle = "box-shadow: " + focus.shadow + ";";
+      compoundFocusStyle += _shadowStyle;
+      if (!focus.twoColor) return "outline: none; " + _shadowStyle;
     }
-    return "\n      outline: none;\n      box-shadow: " + focus.shadow + ";\n    ";
   }
   if (focus.border) {
     var _color3 = (0, _colors.normalizeColor)(focus.border.color || 'focus', props.theme);
-    return "\n      outline: none;\n      border-color: " + _color3 + ";\n    ";
+    var borderStyle = "border-color: " + _color3 + ";";
+    compoundFocusStyle += borderStyle;
+    if (!focus.twoColor) return "outline: none; " + borderStyle;
   }
+  if (focus.twoColor && compoundFocusStyle.length) return compoundFocusStyle;
   return ''; // defensive
 };
 var unfocusStyles = function unfocusStyles(props, _temp2) {

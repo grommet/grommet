@@ -145,7 +145,7 @@ exports[`DataSort drop 1`] = `
 exports[`DataSort drop 2`] = `
 <button
   aria-label="Open sort"
-  class="StyledButton-sc-323bzc-0 kZiUKa"
+  class="StyledButton-sc-323bzc-0 jVYNwi"
   data-g-tabindex="none"
   id="test-data--sort-control"
   tabindex="-1"
