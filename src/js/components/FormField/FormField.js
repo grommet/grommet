@@ -261,13 +261,36 @@ const FormField = forwardRef(
           ) {
             wantContentPad = true;
           }
-          if (
+
+          const isInputComponent =
             child &&
             child.type &&
-            grommetInputNames.indexOf(child.type.displayName) !== -1 &&
+            grommetInputNames.indexOf(child.type.displayName) !== -1;
+          // inputs that would have their own focus indicator
+          // if theme.formField.focusIndicator is false
+          const wantInputFocusIndicator =
+            isInputComponent &&
+            (child.type.displayName === 'CheckBox' ||
+              child.type.displayName === 'CheckBoxGroup' ||
+              child.type.displayName === 'RadioButtonGroup' ||
+              child.type.displayName === 'RangeInput' ||
+              child.type.displayName === 'RangeSelector' ||
+              child.type.displayName === 'StarRating' ||
+              child.type.displayName === 'ThumbsRating');
+
+          if (
+            isInputComponent &&
             child.props.plain === undefined &&
             child.props.focusIndicator === undefined
           ) {
+            // Apply the modified focusIndicator
+            if (wantInputFocusIndicator) {
+              const modifiedFocusIndicator =
+                theme.formField.focusIndicator === false ? true : false;
+              return cloneElement(child, {
+                focusIndicator: modifiedFocusIndicator,
+              });
+            }
             return cloneElement(child, {
               plain: true,
               focusIndicator: false,
@@ -526,6 +549,19 @@ const FormField = forwardRef(
         {...outerProps}
         style={outerStyle}
         onFocus={(event) => {
+          const targetType = event.target.type || event.target.tagName;
+          // Check if the target is one of the input
+          // components that have their own focus indicator
+          const shouldSkipFocus = [
+            'checkbox', // For CheckBox (native checkbox)
+            'radio', // For RadioButton
+            'range', // For RangeInput
+          ].includes(targetType.toLowerCase());
+
+          // skip focus
+          if (shouldSkipFocus && theme.formField.focusIndicator === false) {
+            return;
+          }
           const root = formFieldRef.current?.getRootNode();
           if (root) {
             setFocus(
