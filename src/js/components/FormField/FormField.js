@@ -553,7 +553,7 @@ const FormField = forwardRef(
           // Check if the target is one of the input
           // components that have their own focus indicator
           const shouldSkipFocus = [
-            'checkbox', // For CheckBox (native checkbox)
+            'checkbox', // For CheckBox
             'radio', // For RadioButton
             'range', // For RangeInput
           ].includes(targetType.toLowerCase());
