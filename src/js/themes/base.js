@@ -397,6 +397,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       //     color: undefined,
       //     fontWeight: undefined,
       //     textDecoration: undefined,
+      //     gap: undefined,
       //   },
       // },
       // extend: undefined,

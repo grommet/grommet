@@ -580,6 +580,7 @@ exports[`Anchor matches icon size to size prop when theme.icon.matchSize is true
   display: inline-flex;
   font-size: 12px;
   line-height: 18px;
+  gap: small;
   color: #7D4CDB;
   font-weight: 600;
   text-decoration: none;
@@ -595,6 +596,7 @@ exports[`Anchor matches icon size to size prop when theme.icon.matchSize is true
   display: inline-flex;
   font-size: 14px;
   line-height: 20px;
+  gap: small;
   color: #7D4CDB;
   font-weight: 600;
   text-decoration: none;
@@ -625,6 +627,7 @@ exports[`Anchor matches icon size to size prop when theme.icon.matchSize is true
   display: inline-flex;
   font-size: 22px;
   line-height: 28px;
+  gap: small;
   color: #7D4CDB;
   font-weight: 600;
   text-decoration: none;
@@ -640,6 +643,7 @@ exports[`Anchor matches icon size to size prop when theme.icon.matchSize is true
   display: inline-flex;
   font-size: 26px;
   line-height: 32px;
+  gap: small;
   color: #7D4CDB;
   font-weight: 600;
   text-decoration: none;
@@ -984,11 +988,18 @@ exports[`Anchor renders size specific theming 1`] = `
   width: 12px;
 }
 
+.c21 {
+  flex: 0 0 auto;
+  align-self: stretch;
+  width: 48px;
+}
+
 .c2 {
   box-sizing: border-box;
   display: inline-flex;
   font-size: 12px;
   line-height: 18px;
+  gap: small;
   color: #000000;
   font-weight: 700;
   text-decoration: underline;
@@ -1004,9 +1015,10 @@ exports[`Anchor renders size specific theming 1`] = `
   display: inline-flex;
   font-size: 14px;
   line-height: 20px;
-  color: #000000;
-  font-weight: 700;
-  text-decoration: underline;
+  gap: xsmall;
+  color: #7D4CDB;
+  font-weight: 500;
+  text-decoration: none;
   cursor: pointer;
 }
 
@@ -1019,9 +1031,10 @@ exports[`Anchor renders size specific theming 1`] = `
   display: inline-flex;
   font-size: 18px;
   line-height: 24px;
-  color: #000000;
-  font-weight: 700;
-  text-decoration: underline;
+  gap: small;
+  color: #7D4CDB;
+  font-weight: 500;
+  text-decoration: none;
   cursor: pointer;
 }
 
@@ -1034,6 +1047,7 @@ exports[`Anchor renders size specific theming 1`] = `
   display: inline-flex;
   font-size: 22px;
   line-height: 28px;
+  gap: large;
   color: #7D4CDB;
   font-weight: 500;
   text-decoration: none;
@@ -1049,6 +1063,7 @@ exports[`Anchor renders size specific theming 1`] = `
   display: inline-flex;
   font-size: 26px;
   line-height: 32px;
+  gap: small;
   color: #7D4CDB;
   font-weight: 500;
   text-decoration: none;
@@ -1064,6 +1079,7 @@ exports[`Anchor renders size specific theming 1`] = `
   display: inline-flex;
   font-size: 34px;
   line-height: 40px;
+  gap: small;
   color: #7D4CDB;
   font-weight: 500;
   text-decoration: none;
@@ -1322,7 +1338,7 @@ exports[`Anchor renders size specific theming 1`] = `
           />
         </svg>
         <span
-          class="c19"
+          class="c21"
         />
         Large anchor with icon should receive color on icon
       </span>
@@ -1863,6 +1879,7 @@ exports[`Anchor size renders 1`] = `
   display: inline-flex;
   font-size: 12px;
   line-height: 18px;
+  gap: small;
   color: #7D4CDB;
   font-weight: 600;
   text-decoration: none;
@@ -1878,6 +1895,7 @@ exports[`Anchor size renders 1`] = `
   display: inline-flex;
   font-size: 14px;
   line-height: 20px;
+  gap: small;
   color: #7D4CDB;
   font-weight: 600;
   text-decoration: none;
@@ -1893,6 +1911,7 @@ exports[`Anchor size renders 1`] = `
   display: inline-flex;
   font-size: 18px;
   line-height: 24px;
+  gap: small;
   color: #7D4CDB;
   font-weight: 600;
   text-decoration: none;
@@ -1908,6 +1927,7 @@ exports[`Anchor size renders 1`] = `
   display: inline-flex;
   font-size: 22px;
   line-height: 28px;
+  gap: small;
   color: #7D4CDB;
   font-weight: 600;
   text-decoration: none;
@@ -1923,6 +1943,7 @@ exports[`Anchor size renders 1`] = `
   display: inline-flex;
   font-size: 26px;
   line-height: 32px;
+  gap: small;
   color: #7D4CDB;
   font-weight: 600;
   text-decoration: none;
@@ -1938,6 +1959,7 @@ exports[`Anchor size renders 1`] = `
   display: inline-flex;
   font-size: 34px;
   line-height: 40px;
+  gap: small;
   color: #7D4CDB;
   font-weight: 600;
   text-decoration: none;
@@ -1953,6 +1975,7 @@ exports[`Anchor size renders 1`] = `
   display: inline-flex;
   font-size: 10px;
   line-height: normal;
+  gap: small;
   color: #7D4CDB;
   font-weight: 600;
   text-decoration: none;

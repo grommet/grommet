@@ -236,10 +236,23 @@ describe('Anchor', () => {
         textDecoration: 'underline',
         fontWeight: 700,
         size: {
+          small: {
+            color: 'brand',
+            textDecoration: 'none',
+            fontWeight: 500,
+            gap: 'xsmall',
+          },
+          medium: {
+            color: 'brand',
+            textDecoration: 'none',
+            fontWeight: 500,
+            gap: 'small',
+          },
           large: {
             color: 'brand',
             textDecoration: 'none',
             fontWeight: 500,
+            gap: 'large',
           },
           xlarge: {
             color: 'brand',

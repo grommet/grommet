@@ -17,9 +17,12 @@ const sizeStyle = (props) => {
   if (props.size) {
     const size = props.size || 'medium';
     const data = props.theme.text[size];
+    const gap =
+      props.theme.anchor?.size?.[size]?.gap || props.theme.anchor?.gap;
     return css`
       font-size: ${data ? data.size : size};
       line-height: ${data ? data.height : 'normal'};
+      gap: ${gap};
     `;
   }
   return css`
