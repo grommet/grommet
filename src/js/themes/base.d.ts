@@ -1940,7 +1940,7 @@ export interface ThemeType {
       };
       pad?: PadType;
     };
-    container?: BoxProps;
+    container?: BoxProps & { extend?: ExtendType };
     divider?:
       | {
           color?: ColorType;

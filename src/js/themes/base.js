@@ -2125,6 +2125,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       container: {
         round: 'xsmall',
         border: true,
+        // extend: undefined,
       },
       divider: {
         color: 'border',

@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { Button } from '../Button';
+import { Box } from '../Box';
 import { roundStyle, edgeStyle, parseMetricToNum } from '../../utils';
 
 const adjustPad = (value, theme) => {
@@ -48,4 +49,8 @@ export const StyledButton = styled(Button)`
       `border: none;
     box-shadow: none;`}
   }
+`;
+
+export const StyledBox = styled(Box)`
+  ${(props) => props.theme.toggleGroup?.container?.extend};
 `;
