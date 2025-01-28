@@ -201,7 +201,7 @@ var Header = exports.Header = /*#__PURE__*/(0, _react.forwardRef)(function (_ref
   return /*#__PURE__*/_react["default"].createElement(_StyledDataTable.StyledDataTableHeader, _extends({
     ref: ref,
     fillProp: fill
-  }, rest), /*#__PURE__*/_react["default"].createElement(_StyledDataTable.StyledDataTableRow, null, groups && /*#__PURE__*/_react["default"].createElement(_ExpanderCell.ExpanderCell, {
+  }, rest), /*#__PURE__*/_react["default"].createElement(_StyledDataTable.StyledDataTableRowHeader, null, groups && /*#__PURE__*/_react["default"].createElement(_ExpanderCell.ExpanderCell, {
     background: cellProps.background,
     border: cellProps.border,
     context: "header",

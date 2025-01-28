@@ -24,6 +24,11 @@ var customTheme = {
     }
   },
   dataTable: {
+    body: {
+      row: {
+        extend: "&:last-child td {\n          border: none;\n          }\n          &:last-child th {\n          border: none;\n          }"
+      }
+    },
     header: {
       color: 'text-strong',
       extend: function extend(_ref) {
@@ -51,6 +56,9 @@ export var Custom = function Custom() {
     align: "center",
     pad: "large"
   }, /*#__PURE__*/React.createElement(DataTable, {
+    border: {
+      body: 'bottom'
+    },
     columns: columns,
     data: DATA,
     step: 10,

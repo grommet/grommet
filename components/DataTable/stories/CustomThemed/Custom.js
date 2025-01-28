@@ -31,6 +31,11 @@ var customTheme = {
     }
   },
   dataTable: {
+    body: {
+      row: {
+        extend: "&:last-child td {\n          border: none;\n          }\n          &:last-child th {\n          border: none;\n          }"
+      }
+    },
     header: {
       color: 'text-strong',
       extend: function extend(_ref) {
@@ -58,6 +63,9 @@ var Custom = exports.Custom = function Custom() {
     align: "center",
     pad: "large"
   }, /*#__PURE__*/_react["default"].createElement(_grommet.DataTable, {
+    border: {
+      body: 'bottom'
+    },
     columns: _data.columns,
     data: _data.DATA,
     step: 10,

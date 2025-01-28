@@ -14,7 +14,7 @@ import { Text } from '../Text';
 import { Resizer } from './Resizer';
 import { Searcher } from './Searcher';
 import { ExpanderCell } from './ExpanderCell';
-import { StyledDataTableCell, StyledDataTableHeader, StyledDataTableRow } from './StyledDataTable';
+import { StyledDataTableCell, StyledDataTableHeader, StyledDataTableRowHeader } from './StyledDataTable';
 import { datumValue } from './buildState';
 import { kindPartStyles } from '../../utils/styles';
 import { normalizeColor } from '../../utils/colors';
@@ -196,7 +196,7 @@ var Header = /*#__PURE__*/forwardRef(function (_ref2, ref) {
   return /*#__PURE__*/React.createElement(StyledDataTableHeader, _extends({
     ref: ref,
     fillProp: fill
-  }, rest), /*#__PURE__*/React.createElement(StyledDataTableRow, null, groups && /*#__PURE__*/React.createElement(ExpanderCell, {
+  }, rest), /*#__PURE__*/React.createElement(StyledDataTableRowHeader, null, groups && /*#__PURE__*/React.createElement(ExpanderCell, {
     background: cellProps.background,
     border: cellProps.border,
     context: "header",
