@@ -4102,7 +4102,7 @@ exports[`SelectMultiple showSelectionInline with children 2`] = `
         aria-expanded="false"
         aria-haspopup="listbox"
         aria-label="Open drop. 0 selected"
-        class="StyledButton-sc-323bzc-0 jmjZlP"
+        class="StyledButton-sc-323bzc-0 eSlHCv"
         type="button"
       >
         <div
@@ -5490,7 +5490,7 @@ exports[`SelectMultiple with portal disabled option 2`] = `
     margin-right: 6px;
   }
 }
-.dXNPNQ {
+.hlFlOw {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -5506,38 +5506,38 @@ exports[`SelectMultiple with portal disabled option 2`] = `
   padding: 0;
   text-align: inherit;
 }
-.dXNPNQ:focus {
+.hlFlOw:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6fffb0;
 }
-.dXNPNQ:focus > circle,
-.dXNPNQ:focus > ellipse,
-.dXNPNQ:focus > line,
-.dXNPNQ:focus > path,
-.dXNPNQ:focus > polygon,
-.dXNPNQ:focus > polyline,
-.dXNPNQ:focus > rect {
+.hlFlOw:focus > circle,
+.hlFlOw:focus > ellipse,
+.hlFlOw:focus > line,
+.hlFlOw:focus > path,
+.hlFlOw:focus > polygon,
+.hlFlOw:focus > polyline,
+.hlFlOw:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6fffb0;
 }
-.dXNPNQ:focus ::-moz-focus-inner {
+.hlFlOw:focus ::-moz-focus-inner {
   border: 0;
 }
-.dXNPNQ:focus:not(:focus-visible) {
+.hlFlOw:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
-.dXNPNQ:focus:not(:focus-visible) > circle,
-.dXNPNQ:focus:not(:focus-visible) > ellipse,
-.dXNPNQ:focus:not(:focus-visible) > line,
-.dXNPNQ:focus:not(:focus-visible) > path,
-.dXNPNQ:focus:not(:focus-visible) > polygon,
-.dXNPNQ:focus:not(:focus-visible) > polyline,
-.dXNPNQ:focus:not(:focus-visible) > rect {
+.hlFlOw:focus:not(:focus-visible) > circle,
+.hlFlOw:focus:not(:focus-visible) > ellipse,
+.hlFlOw:focus:not(:focus-visible) > line,
+.hlFlOw:focus:not(:focus-visible) > path,
+.hlFlOw:focus:not(:focus-visible) > polygon,
+.hlFlOw:focus:not(:focus-visible) > polyline,
+.hlFlOw:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
-.dXNPNQ:focus:not(:focus-visible) ::-moz-focus-inner {
+.hlFlOw:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 .dhoKxJ {
@@ -5809,7 +5809,7 @@ exports[`SelectMultiple with portal empty options 2`] = `
     margin-right: 6px;
   }
 }
-.dXNPNQ {
+.hlFlOw {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -5825,38 +5825,38 @@ exports[`SelectMultiple with portal empty options 2`] = `
   padding: 0;
   text-align: inherit;
 }
-.dXNPNQ:focus {
+.hlFlOw:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6fffb0;
 }
-.dXNPNQ:focus > circle,
-.dXNPNQ:focus > ellipse,
-.dXNPNQ:focus > line,
-.dXNPNQ:focus > path,
-.dXNPNQ:focus > polygon,
-.dXNPNQ:focus > polyline,
-.dXNPNQ:focus > rect {
+.hlFlOw:focus > circle,
+.hlFlOw:focus > ellipse,
+.hlFlOw:focus > line,
+.hlFlOw:focus > path,
+.hlFlOw:focus > polygon,
+.hlFlOw:focus > polyline,
+.hlFlOw:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6fffb0;
 }
-.dXNPNQ:focus ::-moz-focus-inner {
+.hlFlOw:focus ::-moz-focus-inner {
   border: 0;
 }
-.dXNPNQ:focus:not(:focus-visible) {
+.hlFlOw:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
-.dXNPNQ:focus:not(:focus-visible) > circle,
-.dXNPNQ:focus:not(:focus-visible) > ellipse,
-.dXNPNQ:focus:not(:focus-visible) > line,
-.dXNPNQ:focus:not(:focus-visible) > path,
-.dXNPNQ:focus:not(:focus-visible) > polygon,
-.dXNPNQ:focus:not(:focus-visible) > polyline,
-.dXNPNQ:focus:not(:focus-visible) > rect {
+.hlFlOw:focus:not(:focus-visible) > circle,
+.hlFlOw:focus:not(:focus-visible) > ellipse,
+.hlFlOw:focus:not(:focus-visible) > line,
+.hlFlOw:focus:not(:focus-visible) > path,
+.hlFlOw:focus:not(:focus-visible) > polygon,
+.hlFlOw:focus:not(:focus-visible) > polyline,
+.hlFlOw:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
-.dXNPNQ:focus:not(:focus-visible) ::-moz-focus-inner {
+.hlFlOw:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 .dhoKxJ {
@@ -6140,7 +6140,7 @@ exports[`SelectMultiple with portal limit 2`] = `
     margin-right: 6px;
   }
 }
-.dXNPNQ {
+.hlFlOw {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -6156,38 +6156,38 @@ exports[`SelectMultiple with portal limit 2`] = `
   padding: 0;
   text-align: inherit;
 }
-.dXNPNQ:focus {
+.hlFlOw:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6fffb0;
 }
-.dXNPNQ:focus > circle,
-.dXNPNQ:focus > ellipse,
-.dXNPNQ:focus > line,
-.dXNPNQ:focus > path,
-.dXNPNQ:focus > polygon,
-.dXNPNQ:focus > polyline,
-.dXNPNQ:focus > rect {
+.hlFlOw:focus > circle,
+.hlFlOw:focus > ellipse,
+.hlFlOw:focus > line,
+.hlFlOw:focus > path,
+.hlFlOw:focus > polygon,
+.hlFlOw:focus > polyline,
+.hlFlOw:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6fffb0;
 }
-.dXNPNQ:focus ::-moz-focus-inner {
+.hlFlOw:focus ::-moz-focus-inner {
   border: 0;
 }
-.dXNPNQ:focus:not(:focus-visible) {
+.hlFlOw:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
-.dXNPNQ:focus:not(:focus-visible) > circle,
-.dXNPNQ:focus:not(:focus-visible) > ellipse,
-.dXNPNQ:focus:not(:focus-visible) > line,
-.dXNPNQ:focus:not(:focus-visible) > path,
-.dXNPNQ:focus:not(:focus-visible) > polygon,
-.dXNPNQ:focus:not(:focus-visible) > polyline,
-.dXNPNQ:focus:not(:focus-visible) > rect {
+.hlFlOw:focus:not(:focus-visible) > circle,
+.hlFlOw:focus:not(:focus-visible) > ellipse,
+.hlFlOw:focus:not(:focus-visible) > line,
+.hlFlOw:focus:not(:focus-visible) > path,
+.hlFlOw:focus:not(:focus-visible) > polygon,
+.hlFlOw:focus:not(:focus-visible) > polyline,
+.hlFlOw:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
-.dXNPNQ:focus:not(:focus-visible) ::-moz-focus-inner {
+.hlFlOw:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 .dhoKxJ {
@@ -6471,7 +6471,7 @@ exports[`SelectMultiple with portal select all and clear 2`] = `
     margin-right: 6px;
   }
 }
-.dXNPNQ {
+.hlFlOw {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -6487,38 +6487,38 @@ exports[`SelectMultiple with portal select all and clear 2`] = `
   padding: 0;
   text-align: inherit;
 }
-.dXNPNQ:focus {
+.hlFlOw:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6fffb0;
 }
-.dXNPNQ:focus > circle,
-.dXNPNQ:focus > ellipse,
-.dXNPNQ:focus > line,
-.dXNPNQ:focus > path,
-.dXNPNQ:focus > polygon,
-.dXNPNQ:focus > polyline,
-.dXNPNQ:focus > rect {
+.hlFlOw:focus > circle,
+.hlFlOw:focus > ellipse,
+.hlFlOw:focus > line,
+.hlFlOw:focus > path,
+.hlFlOw:focus > polygon,
+.hlFlOw:focus > polyline,
+.hlFlOw:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6fffb0;
 }
-.dXNPNQ:focus ::-moz-focus-inner {
+.hlFlOw:focus ::-moz-focus-inner {
   border: 0;
 }
-.dXNPNQ:focus:not(:focus-visible) {
+.hlFlOw:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
-.dXNPNQ:focus:not(:focus-visible) > circle,
-.dXNPNQ:focus:not(:focus-visible) > ellipse,
-.dXNPNQ:focus:not(:focus-visible) > line,
-.dXNPNQ:focus:not(:focus-visible) > path,
-.dXNPNQ:focus:not(:focus-visible) > polygon,
-.dXNPNQ:focus:not(:focus-visible) > polyline,
-.dXNPNQ:focus:not(:focus-visible) > rect {
+.hlFlOw:focus:not(:focus-visible) > circle,
+.hlFlOw:focus:not(:focus-visible) > ellipse,
+.hlFlOw:focus:not(:focus-visible) > line,
+.hlFlOw:focus:not(:focus-visible) > path,
+.hlFlOw:focus:not(:focus-visible) > polygon,
+.hlFlOw:focus:not(:focus-visible) > polyline,
+.hlFlOw:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
-.dXNPNQ:focus:not(:focus-visible) ::-moz-focus-inner {
+.hlFlOw:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 .dhoKxJ {
@@ -6532,7 +6532,7 @@ exports[`SelectMultiple with portal select all and clear 3`] = `
   aria-expanded="true"
   aria-haspopup="listbox"
   aria-label="Open drop. 0 selected"
-  class="StyledButton-sc-323bzc-0 dXNPNQ StyledSelect__StyledSelectDropButton-sc-znp66n-5 dhoKxJ"
+  class="StyledButton-sc-323bzc-0 hlFlOw StyledSelect__StyledSelectDropButton-sc-znp66n-5 dhoKxJ"
   id="test-select__drop"
   tabindex="0"
   type="button"
@@ -6585,7 +6585,7 @@ exports[`SelectMultiple with portal select all and clear 4`] = `
     margin-right: 6px;
   }
 }
-.dXNPNQ {
+.hlFlOw {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -6601,38 +6601,38 @@ exports[`SelectMultiple with portal select all and clear 4`] = `
   padding: 0;
   text-align: inherit;
 }
-.dXNPNQ:focus {
+.hlFlOw:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6fffb0;
 }
-.dXNPNQ:focus > circle,
-.dXNPNQ:focus > ellipse,
-.dXNPNQ:focus > line,
-.dXNPNQ:focus > path,
-.dXNPNQ:focus > polygon,
-.dXNPNQ:focus > polyline,
-.dXNPNQ:focus > rect {
+.hlFlOw:focus > circle,
+.hlFlOw:focus > ellipse,
+.hlFlOw:focus > line,
+.hlFlOw:focus > path,
+.hlFlOw:focus > polygon,
+.hlFlOw:focus > polyline,
+.hlFlOw:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6fffb0;
 }
-.dXNPNQ:focus ::-moz-focus-inner {
+.hlFlOw:focus ::-moz-focus-inner {
   border: 0;
 }
-.dXNPNQ:focus:not(:focus-visible) {
+.hlFlOw:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
-.dXNPNQ:focus:not(:focus-visible) > circle,
-.dXNPNQ:focus:not(:focus-visible) > ellipse,
-.dXNPNQ:focus:not(:focus-visible) > line,
-.dXNPNQ:focus:not(:focus-visible) > path,
-.dXNPNQ:focus:not(:focus-visible) > polygon,
-.dXNPNQ:focus:not(:focus-visible) > polyline,
-.dXNPNQ:focus:not(:focus-visible) > rect {
+.hlFlOw:focus:not(:focus-visible) > circle,
+.hlFlOw:focus:not(:focus-visible) > ellipse,
+.hlFlOw:focus:not(:focus-visible) > line,
+.hlFlOw:focus:not(:focus-visible) > path,
+.hlFlOw:focus:not(:focus-visible) > polygon,
+.hlFlOw:focus:not(:focus-visible) > polyline,
+.hlFlOw:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
-.dXNPNQ:focus:not(:focus-visible) ::-moz-focus-inner {
+.hlFlOw:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 .dhoKxJ {

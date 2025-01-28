@@ -281,6 +281,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           color: 'focus',
           size: '2px',
         },
+        twoColor: undefined,
       },
       font: {
         ...fontSizing(0),

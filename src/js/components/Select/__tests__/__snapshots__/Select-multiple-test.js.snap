@@ -4881,7 +4881,7 @@ exports[`Select Controlled multiple values 2`] = `
     aria-expanded="true"
     aria-haspopup="listbox"
     aria-label="test select; Selected: one, two"
-    class="StyledButton-sc-323bzc-0 dXNPNQ StyledSelect__StyledSelectDropButton-sc-znp66n-5 dhoKxJ"
+    class="StyledButton-sc-323bzc-0 hlFlOw StyledSelect__StyledSelectDropButton-sc-znp66n-5 dhoKxJ"
     id="test-select"
     type="button"
   >

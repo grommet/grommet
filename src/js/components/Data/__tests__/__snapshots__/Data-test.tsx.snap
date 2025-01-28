@@ -541,7 +541,7 @@ exports[`Data controlled search 2`] = `
             <input
               aria-label="Search"
               autocomplete="off"
-              class="StyledTextInput-sc-1x30a0s-0 cIVGNd"
+              class="StyledTextInput-sc-1x30a0s-0 ioAtuV"
               id="data--search"
               name="_search"
               type="search"
@@ -554,7 +554,7 @@ exports[`Data controlled search 2`] = `
         >
           <button
             aria-label="Open filters"
-            class="StyledButton-sc-323bzc-0 kZiUKa"
+            class="StyledButton-sc-323bzc-0 jVYNwi"
             id="data--filters-control"
             type="button"
           >
@@ -6389,7 +6389,7 @@ exports[`Data uncontrolled search 2`] = `
             <input
               aria-label="Search"
               autocomplete="off"
-              class="StyledTextInput-sc-1x30a0s-0 cIVGNd"
+              class="StyledTextInput-sc-1x30a0s-0 ioAtuV"
               id="data--search"
               name="_search"
               type="search"
@@ -6402,7 +6402,7 @@ exports[`Data uncontrolled search 2`] = `
         >
           <button
             aria-label="Open filters"
-            class="StyledButton-sc-323bzc-0 kZiUKa"
+            class="StyledButton-sc-323bzc-0 jVYNwi"
             id="data--filters-control"
             type="button"
           >
@@ -7450,7 +7450,7 @@ exports[`Data uncontrolled, when paginated, search should return to page 1 2`] =
             <input
               aria-label="Search"
               autocomplete="off"
-              class="StyledTextInput-sc-1x30a0s-0 cIVGNd"
+              class="StyledTextInput-sc-1x30a0s-0 ioAtuV"
               id="data--search"
               name="_search"
               type="search"
@@ -7463,7 +7463,7 @@ exports[`Data uncontrolled, when paginated, search should return to page 1 2`] =
         >
           <button
             aria-label="Open filters"
-            class="StyledButton-sc-323bzc-0 kZiUKa"
+            class="StyledButton-sc-323bzc-0 jVYNwi"
             id="data--filters-control"
             type="button"
           >
@@ -7610,7 +7610,7 @@ exports[`Data uncontrolled, when paginated, search should return to page 1 2`] =
             <button
               aria-disabled="true"
               aria-label="Go to previous page"
-              class="StyledButtonKind-sc-1vhfpnt-0 jKAPiR StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 gUcfAz"
+              class="StyledButtonKind-sc-1vhfpnt-0 jGhuYZ StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 gUcfAz"
               disabled=""
               type="button"
             >
@@ -7634,7 +7634,7 @@ exports[`Data uncontrolled, when paginated, search should return to page 1 2`] =
             <button
               aria-current="page"
               aria-label="Go to page 1"
-              class="StyledButtonKind-sc-1vhfpnt-0 fLDMTj StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 gUcfAz"
+              class="StyledButtonKind-sc-1vhfpnt-0 eTknFX StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 gUcfAz"
               type="button"
             >
               1
@@ -7646,7 +7646,7 @@ exports[`Data uncontrolled, when paginated, search should return to page 1 2`] =
             <button
               aria-disabled="true"
               aria-label="Go to next page"
-              class="StyledButtonKind-sc-1vhfpnt-0 jKAPiR StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 gUcfAz"
+              class="StyledButtonKind-sc-1vhfpnt-0 jGhuYZ StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 gUcfAz"
               disabled=""
               type="button"
             >
@@ -7770,7 +7770,7 @@ exports[`Data uncontrolled, when paginated, search should return to page 1 3`] =
             <input
               aria-label="Search"
               autocomplete="off"
-              class="StyledTextInput-sc-1x30a0s-0 cIVGNd"
+              class="StyledTextInput-sc-1x30a0s-0 ioAtuV"
               id="data--search"
               name="_search"
               type="search"
@@ -7783,7 +7783,7 @@ exports[`Data uncontrolled, when paginated, search should return to page 1 3`] =
         >
           <button
             aria-label="Open filters"
-            class="StyledButton-sc-323bzc-0 kZiUKa"
+            class="StyledButton-sc-323bzc-0 jVYNwi"
             id="data--filters-control"
             type="button"
           >
@@ -7948,7 +7948,7 @@ exports[`Data uncontrolled, when paginated, search should return to page 1 3`] =
             <button
               aria-disabled="true"
               aria-label="Go to previous page"
-              class="StyledButtonKind-sc-1vhfpnt-0 jKAPiR StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 gUcfAz"
+              class="StyledButtonKind-sc-1vhfpnt-0 jGhuYZ StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 gUcfAz"
               disabled=""
               type="button"
             >
@@ -7972,7 +7972,7 @@ exports[`Data uncontrolled, when paginated, search should return to page 1 3`] =
             <button
               aria-current="page"
               aria-label="Go to page 1"
-              class="StyledButtonKind-sc-1vhfpnt-0 fLDMTj StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 gUcfAz"
+              class="StyledButtonKind-sc-1vhfpnt-0 eTknFX StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 gUcfAz"
               type="button"
             >
               1
@@ -7983,7 +7983,7 @@ exports[`Data uncontrolled, when paginated, search should return to page 1 3`] =
           >
             <button
               aria-label="Go to page 2"
-              class="StyledButtonKind-sc-1vhfpnt-0 iWCzxN StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 gUcfAz"
+              class="StyledButtonKind-sc-1vhfpnt-0 kXByXV StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 gUcfAz"
               type="button"
             >
               2
