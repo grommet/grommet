@@ -1010,7 +1010,6 @@ exports[`Anchor renders size specific theming 1`] = `
   display: inline-flex;
   font-size: 14px;
   line-height: 20px;
-  gap: xsmall;
   color: #7D4CDB;
   font-weight: 500;
   text-decoration: none;
@@ -1026,7 +1025,6 @@ exports[`Anchor renders size specific theming 1`] = `
   display: inline-flex;
   font-size: 18px;
   line-height: 24px;
-  gap: small;
   color: #7D4CDB;
   font-weight: 500;
   text-decoration: none;
@@ -1042,7 +1040,6 @@ exports[`Anchor renders size specific theming 1`] = `
   display: inline-flex;
   font-size: 22px;
   line-height: 28px;
-  gap: large;
   color: #7D4CDB;
   font-weight: 500;
   text-decoration: none;
