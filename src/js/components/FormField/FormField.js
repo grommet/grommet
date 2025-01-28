@@ -286,7 +286,7 @@ const FormField = forwardRef(
             // Apply the modified focusIndicator
             if (wantInputFocusIndicator) {
               const modifiedFocusIndicator =
-                theme.formField.focusIndicator === false ? true : false;
+                theme.formField.focusIndicator === false;
               return cloneElement(child, {
                 focusIndicator: modifiedFocusIndicator,
               });
