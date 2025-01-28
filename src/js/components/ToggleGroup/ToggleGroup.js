@@ -1,9 +1,14 @@
 import React, { useCallback, useState, useRef, useMemo } from 'react';
+import styled from 'styled-components';
 import { Box } from '../Box';
 import { Keyboard } from '../Keyboard';
 import { ToggleGroupPropTypes } from './propTypes';
 import { StyledButton } from './StyledToggleGroup';
 import { useThemeValue } from '../../utils/useThemeValue';
+
+const StyledToggleGroupBox = styled(Box)`
+  ${(props) => props.theme.toggleGroup?.container?.extend};
+`;
 
 const useControlled = ({ prop, defaultProp, onChange = () => {} }) => {
   const [uncontrolledProp, setUncontrolledProp] = useState(defaultProp);
@@ -107,7 +112,7 @@ const ToggleGroup = ({
       onLeft={onPrevious}
       onRight={onNext}
     >
-      <Box
+      <StyledToggleGroupBox
         ref={ref}
         alignSelf="start"
         direction="row"
@@ -188,7 +193,7 @@ const ToggleGroup = ({
             </Box>
           );
         })}
-      </Box>
+      </StyledToggleGroupBox>
     </Keyboard>
   );
 };

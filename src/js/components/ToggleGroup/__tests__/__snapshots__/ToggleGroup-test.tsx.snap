@@ -156,7 +156,7 @@ exports[`ToggleGroup Should call onToggle in uncontrolled scenarios 1`] = `
     class="c0"
   >
     <div
-      class="c1"
+      class="c1 "
       role="radiogroup"
     >
       <div
@@ -359,7 +359,7 @@ exports[`ToggleGroup Should call onToggle in uncontrolled scenarios with multipl
     class="c0"
   >
     <div
-      class="c1"
+      class="c1 "
       role="group"
     >
       <div
@@ -622,7 +622,7 @@ exports[`ToggleGroup Should put tab focus on active button when value 1`] = `
     class="c0"
   >
     <div
-      class="c1"
+      class="c1 "
       role="radiogroup"
     >
       <div
@@ -955,7 +955,7 @@ exports[`ToggleGroup Should put tab focus on active button when value with multi
     class="c0"
   >
     <div
-      class="c1"
+      class="c1 "
       role="group"
     >
       <div
@@ -1216,7 +1216,7 @@ exports[`ToggleGroup Should put tab focus on first button when no value 1`] = `
     class="c0"
   >
     <div
-      class="c1"
+      class="c1 "
       role="radiogroup"
     >
       <div
@@ -1480,7 +1480,7 @@ exports[`ToggleGroup Should put tab focus on first button when no value with mul
     class="c0"
   >
     <div
-      class="c1"
+      class="c1 "
       role="group"
     >
       <div
@@ -1669,7 +1669,7 @@ exports[`ToggleGroup Should render when options is array of objects with multipl
     class="c0"
   >
     <div
-      class="c1"
+      class="c1 "
       role="group"
     >
       <div
@@ -1726,7 +1726,7 @@ exports[`ToggleGroup custom theme with hover green 1`] = `
   border-radius: 3px;
 }
 
-.c2 {
+.c3 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -1736,7 +1736,7 @@ exports[`ToggleGroup custom theme with hover green 1`] = `
   flex-direction: column;
 }
 
-.c5 {
+.c6 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -1745,7 +1745,7 @@ exports[`ToggleGroup custom theme with hover green 1`] = `
   flex-direction: column;
 }
 
-.c3 {
+.c4 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -1766,88 +1766,86 @@ exports[`ToggleGroup custom theme with hover green 1`] = `
   transition-timing-function: ease-in-out;
 }
 
-.c3:hover {
+.c4:hover {
   box-shadow: 0px 0px 0px 2px #7D4CDB;
 }
 
-.c3:focus {
+.c4:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus >circle,
-.c3:focus >ellipse,
-.c3:focus >line,
-.c3:focus >path,
-.c3:focus >polygon,
-.c3:focus >polyline,
-.c3:focus >rect {
+.c4:focus >circle,
+.c4:focus >ellipse,
+.c4:focus >line,
+.c4:focus >path,
+.c4:focus >polygon,
+.c4:focus >polyline,
+.c4:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus ::-moz-focus-inner {
+.c4:focus ::-moz-focus-inner {
   border: 0;
 }
 
-.c3:focus:not(:focus-visible) {
+.c4:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c3:focus:not(:focus-visible) >circle,
-.c3:focus:not(:focus-visible) >ellipse,
-.c3:focus:not(:focus-visible) >line,
-.c3:focus:not(:focus-visible) >path,
-.c3:focus:not(:focus-visible) >polygon,
-.c3:focus:not(:focus-visible) >polyline,
-.c3:focus:not(:focus-visible) >rect {
+.c4:focus:not(:focus-visible) >circle,
+.c4:focus:not(:focus-visible) >ellipse,
+.c4:focus:not(:focus-visible) >line,
+.c4:focus:not(:focus-visible) >path,
+.c4:focus:not(:focus-visible) >polygon,
+.c4:focus:not(:focus-visible) >polyline,
+.c4:focus:not(:focus-visible) >rect {
   outline: none;
   box-shadow: none;
 }
 
-.c3:focus:not(:focus-visible) ::-moz-focus-inner {
+.c4:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 
-.c4 {
+.c5 {
   border: none;
   border-radius: 0;
   border-top-left-radius: 3px;
   border-bottom-left-radius: 3px;
   padding: 11px;
-  border: 1px solid red;
 }
 
-.c4:hover {
+.c5:hover {
   border: none;
   box-shadow: none;
 }
 
-.c4:hover {
-  background-color: green;
-}
-
-.c6 {
+.c7 {
   border: none;
   border-radius: 0;
   border-top-right-radius: 3px;
   border-bottom-right-radius: 3px;
   padding: 11px;
-  border: 1px solid red;
 }
 
-.c6:hover {
+.c7:hover {
   border: none;
   box-shadow: none;
 }
 
-.c6:hover {
-  background-color: green;
+.c2 {
+  background: red;
+}
+
+.c2:hover {
+  background: pink;
 }
 
 @media only screen and (max-width: 768px) {
-  .c2 {
+  .c3 {
     border-right: solid 1px #7D4CDB;
   }
 }
@@ -1856,15 +1854,15 @@ exports[`ToggleGroup custom theme with hover green 1`] = `
     class="c0"
   >
     <div
-      class="c1"
+      class="c1 c2"
       role="radiogroup"
     >
       <div
-        class="c2"
+        class="c3"
       >
         <button
           aria-checked="false"
-          class="c3 c4"
+          class="c4 c5"
           role="radio"
           tabindex="0"
           type="button"
@@ -1873,11 +1871,11 @@ exports[`ToggleGroup custom theme with hover green 1`] = `
         </button>
       </div>
       <div
-        class="c5"
+        class="c6"
       >
         <button
           aria-checked="false"
-          class="c3 c6"
+          class="c4 c7"
           role="radio"
           tabindex="-1"
           type="button"
@@ -1915,7 +1913,7 @@ exports[`ToggleGroup custom theme with hover green 2`] = `
   border-radius: 3px;
 }
 
-.c2 {
+.c3 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -1925,7 +1923,7 @@ exports[`ToggleGroup custom theme with hover green 2`] = `
   flex-direction: column;
 }
 
-.c5 {
+.c6 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -1934,7 +1932,7 @@ exports[`ToggleGroup custom theme with hover green 2`] = `
   flex-direction: column;
 }
 
-.c3 {
+.c4 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -1955,88 +1953,86 @@ exports[`ToggleGroup custom theme with hover green 2`] = `
   transition-timing-function: ease-in-out;
 }
 
-.c3:hover {
+.c4:hover {
   box-shadow: 0px 0px 0px 2px #7D4CDB;
 }
 
-.c3:focus {
+.c4:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus >circle,
-.c3:focus >ellipse,
-.c3:focus >line,
-.c3:focus >path,
-.c3:focus >polygon,
-.c3:focus >polyline,
-.c3:focus >rect {
+.c4:focus >circle,
+.c4:focus >ellipse,
+.c4:focus >line,
+.c4:focus >path,
+.c4:focus >polygon,
+.c4:focus >polyline,
+.c4:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus ::-moz-focus-inner {
+.c4:focus ::-moz-focus-inner {
   border: 0;
 }
 
-.c3:focus:not(:focus-visible) {
+.c4:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c3:focus:not(:focus-visible) >circle,
-.c3:focus:not(:focus-visible) >ellipse,
-.c3:focus:not(:focus-visible) >line,
-.c3:focus:not(:focus-visible) >path,
-.c3:focus:not(:focus-visible) >polygon,
-.c3:focus:not(:focus-visible) >polyline,
-.c3:focus:not(:focus-visible) >rect {
+.c4:focus:not(:focus-visible) >circle,
+.c4:focus:not(:focus-visible) >ellipse,
+.c4:focus:not(:focus-visible) >line,
+.c4:focus:not(:focus-visible) >path,
+.c4:focus:not(:focus-visible) >polygon,
+.c4:focus:not(:focus-visible) >polyline,
+.c4:focus:not(:focus-visible) >rect {
   outline: none;
   box-shadow: none;
 }
 
-.c3:focus:not(:focus-visible) ::-moz-focus-inner {
+.c4:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 
-.c4 {
+.c5 {
   border: none;
   border-radius: 0;
   border-top-left-radius: 3px;
   border-bottom-left-radius: 3px;
   padding: 11px;
-  border: 1px solid red;
 }
 
-.c4:hover {
+.c5:hover {
   border: none;
   box-shadow: none;
 }
 
-.c4:hover {
-  background-color: green;
-}
-
-.c6 {
+.c7 {
   border: none;
   border-radius: 0;
   border-top-right-radius: 3px;
   border-bottom-right-radius: 3px;
   padding: 11px;
-  border: 1px solid red;
 }
 
-.c6:hover {
+.c7:hover {
   border: none;
   box-shadow: none;
 }
 
-.c6:hover {
-  background-color: green;
+.c2 {
+  background: red;
+}
+
+.c2:hover {
+  background: pink;
 }
 
 @media only screen and (max-width: 768px) {
-  .c2 {
+  .c3 {
     border-right: solid 1px #7D4CDB;
   }
 }
@@ -2045,15 +2041,15 @@ exports[`ToggleGroup custom theme with hover green 2`] = `
     class="c0"
   >
     <div
-      class="c1"
+      class="c1 c2"
       role="radiogroup"
     >
       <div
-        class="c2"
+        class="c3"
       >
         <button
           aria-checked="false"
-          class="c3 c4"
+          class="c4 c5"
           role="radio"
           tabindex="0"
           type="button"
@@ -2062,11 +2058,11 @@ exports[`ToggleGroup custom theme with hover green 2`] = `
         </button>
       </div>
       <div
-        class="c5"
+        class="c6"
       >
         <button
           aria-checked="false"
-          class="c3 c6"
+          class="c4 c7"
           role="radio"
           tabindex="-1"
           type="button"
@@ -2424,7 +2420,7 @@ exports[`ToggleGroup icon with values 1`] = `
     class="c0"
   >
     <div
-      class="c1"
+      class="c1 "
       role="radiogroup"
     >
       <div
@@ -2625,7 +2621,7 @@ exports[`ToggleGroup object options 1`] = `
     class="c0"
   >
     <div
-      class="c1"
+      class="c1 "
       role="radiogroup"
     >
       <div
@@ -2675,7 +2671,7 @@ exports[`ToggleGroup renders without grommet wrapper 1`] = `
 }
 
 <div
-    class="c0"
+    class="c0 "
     role="radiogroup"
   />
 </DocumentFragment>
@@ -2710,7 +2706,7 @@ exports[`ToggleGroup renders without props 1`] = `
     class="c0"
   >
     <div
-      class="c1"
+      class="c1 "
       role="radiogroup"
     />
   </div>
@@ -2846,7 +2842,7 @@ exports[`ToggleGroup should allow divider to be set to false 1`] = `
     class="c0"
   >
     <div
-      class="c1"
+      class="c1 "
       role="radiogroup"
     >
       <div
@@ -3011,7 +3007,7 @@ exports[`ToggleGroup should allow rounding on individual buttons 1`] = `
     class="c0"
   >
     <div
-      class="c1"
+      class="c1 "
       role="radiogroup"
     >
       <div
@@ -3165,7 +3161,7 @@ exports[`ToggleGroup should allow toggleGroup.button.kind as string 1`] = `
     class="c0"
   >
     <div
-      class="c1"
+      class="c1 "
       role="radiogroup"
     >
       <div
@@ -3355,7 +3351,7 @@ exports[`ToggleGroup should have no accessibility violations 1`] = `
     class="c0"
   >
     <div
-      class="c1"
+      class="c1 "
       role="radiogroup"
     >
       <div
@@ -3547,7 +3543,7 @@ exports[`ToggleGroup string options 1`] = `
     class="c0"
   >
     <div
-      class="c1"
+      class="c1 "
       role="radiogroup"
     >
       <div
@@ -3726,7 +3722,7 @@ exports[`ToggleGroup string options with multiple prop 1`] = `
     class="c0"
   >
     <div
-      class="c1"
+      class="c1 "
       role="group"
     >
       <div

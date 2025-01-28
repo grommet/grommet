@@ -547,9 +547,10 @@ describe('ToggleGroup', () => {
             container: {
               round: 'xxsmall',
               extend: `
-                border: 1px solid red;
+                background: red;
+                
                 &:hover {
-                  background-color: green;
+                  background: pink;
                 }
               `,
             },
