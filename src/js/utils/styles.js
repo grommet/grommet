@@ -244,11 +244,11 @@ const focusStyles = (props, { forceOutline, justBorder } = {}) => {
         outline: ${size} solid ${color};
       `;
       compoundFocusStyle += outlineStyle;
-      if (!focus.allowAll) return outlineStyle;
+      if (!focus.twoColor) return outlineStyle;
     } else {
       const outlineStyle = `outline: ${focus.outline};`;
       compoundFocusStyle += outlineStyle;
-      if (!focus.allowAll) return outlineStyle;
+      if (!focus.twoColor) return outlineStyle;
     }
   }
   if (focus.shadow && (!focus.border || !justBorder)) {
@@ -266,23 +266,23 @@ const focusStyles = (props, { forceOutline, justBorder } = {}) => {
         inset ? ` ${inset}` : ''
       };`;
       compoundFocusStyle += shadowStyle;
-      if (!focus.allowAll)
+      if (!focus.twoColor)
         return `
         outline: none;
       ${shadowStyle}`;
     } else {
       const shadowStyle = `box-shadow: ${focus.shadow};`;
       compoundFocusStyle += shadowStyle;
-      if (!focus.allowAll) return `outline: none; ${shadowStyle}`;
+      if (!focus.twoColor) return `outline: none; ${shadowStyle}`;
     }
   }
   if (focus.border) {
     const color = normalizeColor(focus.border.color || 'focus', props.theme);
     const borderStyle = `border-color: ${color};`;
     compoundFocusStyle += borderStyle;
-    if (!focus.allowAll) return `outline: none; ${borderStyle}`;
+    if (!focus.twoColor) return `outline: none; ${borderStyle}`;
   }
-  if (focus.allowAll && compoundFocusStyle.length) return compoundFocusStyle;
+  if (focus.twoColor && compoundFocusStyle.length) return compoundFocusStyle;
   return ''; // defensive
 };
 

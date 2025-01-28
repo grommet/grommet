@@ -412,7 +412,7 @@ export interface ThemeType {
             size?: string;
             blur?: string;
           };
-      allowAll?: boolean;
+      twoColor?: boolean;
     };
     font?: {
       face?: string;

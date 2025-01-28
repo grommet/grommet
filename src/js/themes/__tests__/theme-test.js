@@ -99,7 +99,7 @@ const customTheme = {
         blur: '0px',
         inset: true,
       },
-      allowAll: true,
+      twoColor: true,
     },
     colors: {
       custom: '#cc6633',
