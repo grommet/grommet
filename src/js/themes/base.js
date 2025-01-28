@@ -884,6 +884,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
     dataTable: {
       // body: {
       //   extend: undefined,
+      //   row: {
+      //     extend: undefined,
+      //   }
       //   selected: undefined,
       // },
       pinned: {
@@ -1029,6 +1032,12 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         //   color: undefined,
         // },
         // label: {
+        //   color: undefined,
+        // },
+        // help: {
+        //   color: undefined,
+        // },
+        // info: {
         //   color: undefined,
         // },
       },
@@ -2120,6 +2129,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       container: {
         round: 'xsmall',
         border: true,
+        // extend: undefined,
       },
       divider: {
         color: 'border',

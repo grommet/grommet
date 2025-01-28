@@ -62,20 +62,24 @@ const hoverStyle = css`
     )};
 `;
 
-const StyledDataTableRow = styled(TableRow)`
+const rowStyles = css`
   ${(props) =>
     props.size &&
-    `
-    display: table;
+    `display: table;
     width: 100%;
     table-layout: fixed;
   `}
-  ${(props) =>
-    props.onClick &&
-    `
-    cursor: pointer;
-  `}
+  ${(props) => props.onClick && `cursor: pointer;`}
   ${(props) => props.active && hoverStyle}
+`;
+
+const StyledDataTableRow = styled(TableRow)`
+  ${(props) => props.theme.dataTable?.body?.row?.extend};
+  ${rowStyles}
+`;
+
+const StyledDataTableRowHeader = styled(TableRow)`
+  ${rowStyles}
 `;
 
 // focus styling other than outline doesn't work on <tbody />
@@ -172,6 +176,7 @@ export {
   StyledContainer,
   StyledDataTable,
   StyledDataTableRow,
+  StyledDataTableRowHeader,
   StyledDataTableBody,
   StyledDataTableCell,
   StyledDataTableHeader,

@@ -832,7 +832,7 @@ exports[`DataTableColumns remove column 1`] = `
         class="c5 c6"
       >
         <thead
-          class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
+          class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-5"
         >
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
@@ -1755,7 +1755,7 @@ exports[`DataTableColumns renders 1`] = `
         class="c9 c10"
       >
         <thead
-          class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
+          class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-5"
         >
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
@@ -2936,7 +2936,7 @@ exports[`DataTableColumns search 1`] = `
       class="c5 c6"
     >
       <thead
-        class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
+        class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-5"
       >
         <tr
           class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
