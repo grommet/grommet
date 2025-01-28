@@ -109,7 +109,7 @@ var ToggleGroup = exports.ToggleGroup = function ToggleGroup(_ref2) {
     onDown: onNext,
     onLeft: onPrevious,
     onRight: onNext
-  }, /*#__PURE__*/_react["default"].createElement(_Box.Box, _extends({
+  }, /*#__PURE__*/_react["default"].createElement(_StyledToggleGroup.StyledBox, _extends({
     ref: ref,
     alignSelf: "start",
     direction: "row",

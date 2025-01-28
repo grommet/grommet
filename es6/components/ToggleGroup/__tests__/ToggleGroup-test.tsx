@@ -531,8 +531,8 @@ describe('ToggleGroup', () => {
     expect(toggleButtonThree).toHaveAttribute('aria-pressed', 'true');
   });
 
-  test('custom theme', () => {
-    const { asFragment } = render(
+  test('custom theme with hover green', () => {
+    const { asFragment, getByText } = render(
       <Grommet
         theme={{
           toggleGroup: {
@@ -546,6 +546,13 @@ describe('ToggleGroup', () => {
             },
             container: {
               round: 'xxsmall',
+              extend: `
+                background: red;
+                
+                &:hover {
+                  background: pink;
+                }
+              `,
             },
             divider: {
               color: 'brand',
@@ -556,6 +563,20 @@ describe('ToggleGroup', () => {
         <ToggleGroup options={['one', 'two']} />
       </Grommet>,
     );
+
+    // Snapshot before hover (initial state)
+    expect(asFragment()).toMatchSnapshot();
+
+    // Find the container element
+    const container = getByText('one').closest('div');
+
+    if (container) {
+      fireEvent.mouseEnter(container);
+    } else {
+      throw new Error('Container element not found');
+    }
+
+    // Snapshot after hover event
     expect(asFragment()).toMatchSnapshot();
   });
 

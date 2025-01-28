@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { Button } from '../Button';
+import { Box } from '../Box';
 import { roundStyle, edgeStyle, parseMetricToNum } from '../../utils';
 var adjustPad = function adjustPad(value, theme) {
   // resolve t-shirt size if it exists
@@ -35,4 +36,11 @@ export var StyledButton = styled(Button).withConfig({
     // remove hover style from StyledButton/StyledButtonKind theme
     !props.kind && "border: none;\n    box-shadow: none;"
   );
+});
+export var StyledBox = styled(Box).withConfig({
+  displayName: "StyledToggleGroup__StyledBox",
+  componentId: "sc-13k5sx8-1"
+})(["", ";"], function (props) {
+  var _props$theme$toggleGr;
+  return (_props$theme$toggleGr = props.theme.toggleGroup) == null || (_props$theme$toggleGr = _props$theme$toggleGr.container) == null ? void 0 : _props$theme$toggleGr.extend;
 });

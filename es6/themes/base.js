@@ -2285,6 +2285,7 @@ export var generate = function generate(baseSpacing, scale) {
       container: {
         round: 'xsmall',
         border: true
+        // extend: undefined,
       },
       divider: {
         color: 'border'

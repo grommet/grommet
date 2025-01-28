@@ -1,9 +1,10 @@
 "use strict";
 
 exports.__esModule = true;
-exports.StyledButton = void 0;
+exports.StyledButton = exports.StyledBox = void 0;
 var _styledComponents = _interopRequireDefault(require("styled-components"));
 var _Button = require("../Button");
+var _Box = require("../Box");
 var _utils = require("../../utils");
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
 var adjustPad = function adjustPad(value, theme) {
@@ -40,4 +41,11 @@ var StyledButton = exports.StyledButton = (0, _styledComponents["default"])(_But
     // remove hover style from StyledButton/StyledButtonKind theme
     !props.kind && "border: none;\n    box-shadow: none;"
   );
+});
+var StyledBox = exports.StyledBox = (0, _styledComponents["default"])(_Box.Box).withConfig({
+  displayName: "StyledToggleGroup__StyledBox",
+  componentId: "sc-13k5sx8-1"
+})(["", ";"], function (props) {
+  var _props$theme$toggleGr;
+  return (_props$theme$toggleGr = props.theme.toggleGroup) == null || (_props$theme$toggleGr = _props$theme$toggleGr.container) == null ? void 0 : _props$theme$toggleGr.extend;
 });

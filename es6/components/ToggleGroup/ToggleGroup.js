@@ -5,7 +5,7 @@ import React, { useCallback, useState, useRef, useMemo } from 'react';
 import { Box } from '../Box';
 import { Keyboard } from '../Keyboard';
 import { ToggleGroupPropTypes } from './propTypes';
-import { StyledButton } from './StyledToggleGroup';
+import { StyledButton, StyledBox } from './StyledToggleGroup';
 import { useThemeValue } from '../../utils/useThemeValue';
 var useControlled = function useControlled(_ref) {
   var prop = _ref.prop,
@@ -103,7 +103,7 @@ var ToggleGroup = function ToggleGroup(_ref2) {
     onDown: onNext,
     onLeft: onPrevious,
     onRight: onNext
-  }, /*#__PURE__*/React.createElement(Box, _extends({
+  }, /*#__PURE__*/React.createElement(StyledBox, _extends({
     ref: ref,
     alignSelf: "start",
     direction: "row",
