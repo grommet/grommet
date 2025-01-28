@@ -165,7 +165,9 @@ describe('FormField', () => {
       <Grommet
         theme={{
           formField: {
-            focusIndicator: false,
+            focus: {
+              focusIndicator: false,
+            },
           },
         }}
       >

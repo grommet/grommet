@@ -1032,6 +1032,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         // },
       },
       // focus: {
+      // focusIndicator: undefined,
       //   background: {
       //     color: undefined,
       //   },
@@ -1039,7 +1040,6 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       //     color: undefined,
       //   },
       // },
-      // focusIndicator: undefined,
       error: {
         color: 'status-critical',
         margin: { vertical: 'xsmall', horizontal: 'small' },

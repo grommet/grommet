@@ -30,6 +30,17 @@ import { FormFieldPropTypes } from './propTypes';
 import { useThemeValue } from '../../utils/useThemeValue';
 import { AnnounceContext } from '../../contexts/AnnounceContext';
 
+const grommetInputFocusNames = [
+  'CheckBox',
+  'CheckBoxGroup',
+  'RadioButton',
+  'RadioButtonGroup',
+  'RangeInput',
+  'RangeSelector',
+  'StarRating',
+  'ThumbsRating',
+];
+
 const grommetInputNames = [
   'CheckBox',
   'CheckBoxGroup',
@@ -266,17 +277,11 @@ const FormField = forwardRef(
             child &&
             child.type &&
             grommetInputNames.indexOf(child.type.displayName) !== -1;
-          // inputs that would have their own focus indicator
-          // if theme.formField.focusIndicator is false
+
+          // Check if the component is in grommetInputFocusNames
           const wantInputFocusIndicator =
             isInputComponent &&
-            (child.type.displayName === 'CheckBox' ||
-              child.type.displayName === 'CheckBoxGroup' ||
-              child.type.displayName === 'RadioButtonGroup' ||
-              child.type.displayName === 'RangeInput' ||
-              child.type.displayName === 'RangeSelector' ||
-              child.type.displayName === 'StarRating' ||
-              child.type.displayName === 'ThumbsRating');
+            grommetInputFocusNames.includes(child.type.displayName);
 
           if (
             isInputComponent &&
@@ -286,7 +291,7 @@ const FormField = forwardRef(
             // Apply the modified focusIndicator
             if (wantInputFocusIndicator) {
               const modifiedFocusIndicator =
-                theme.formField.focusIndicator === false;
+                theme.formField?.focus?.focusIndicator === false;
               return cloneElement(child, {
                 focusIndicator: modifiedFocusIndicator,
               });
@@ -552,14 +557,15 @@ const FormField = forwardRef(
           const targetType = event.target.type || event.target.tagName;
           // Check if the target is one of the input
           // components that have their own focus indicator
-          const shouldSkipFocus = [
-            'checkbox', // For CheckBox (native checkbox)
-            'radio', // For RadioButton
-            'range', // For RangeInput
-          ].includes(targetType.toLowerCase());
+          const shouldSkipFocus = ['checkbox', 'radio', 'range'].includes(
+            targetType.toLowerCase(),
+          );
 
-          // skip focus
-          if (shouldSkipFocus && theme.formField.focusIndicator === false) {
+          if (
+            shouldSkipFocus &&
+            theme.formField?.focus?.focusIndicator === false
+          ) {
+            setFocus(false);
             return;
           }
           const root = formFieldRef.current?.getRootNode();
