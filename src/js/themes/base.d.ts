@@ -801,6 +801,9 @@ export interface ThemeType {
   dataTable?: {
     body?: {
       extend?: ExtendType;
+      row?: {
+        extend?: ExtendType;
+      };
       selected?: {
         background?: BackgroundType;
       };
@@ -929,6 +932,12 @@ export interface ThemeType {
         color?: ColorType;
       };
       label?: {
+        color?: ColorType;
+      };
+      help?: {
+        color?: ColorType;
+      };
+      info?: {
         color?: ColorType;
       };
     };
@@ -1937,7 +1946,7 @@ export interface ThemeType {
       };
       pad?: PadType;
     };
-    container?: BoxProps;
+    container?: BoxProps & { extend?: ExtendType };
     divider?:
       | {
           color?: ColorType;
