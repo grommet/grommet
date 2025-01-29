@@ -17,15 +17,12 @@ import { Text } from '../Text';
 import { NotificationType } from './propTypes';
 import { useThemeValue } from '../../utils/useThemeValue';
 
-const Message = ({
-  fill,
-  direction,
-  ...rest,
-}) => {
-  return direction === 'row'
-    ? <Text {...rest} />
-    : <Paragraph {...rest} fill={fill || false} />;
-};
+const Message = ({ fill, direction, ...rest }) =>
+  direction === 'row' ? (
+    <Text {...rest} />
+  ) : (
+    <Paragraph {...rest} fill={fill || false} />
+  );
 const adaptThemeStyle = (value, theme) => {
   let textStyle = value;
   let closeButtonStyle = value;
@@ -180,11 +177,15 @@ const Notification = ({
   if (message || actions) {
     message =
       typeof message === 'string' ? (
-<Message {...theme.notification.message} color={messageColor} direction={direction} >
-  <Text margin={{ right: 'xsmall' }}>{message}</Text>
-  {/* include actions with message so it wraps with message */}
-  {actions}
-</Message>
+        <Message
+          {...theme.notification.message}
+          color={messageColor}
+          direction={direction}
+        >
+          <Text margin={{ right: 'xsmall' }}>{message}</Text>
+          {/* include actions with message so it wraps with message */}
+          {actions}
+        </Message>
       ) : (
         message
       );
