@@ -1032,7 +1032,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         // },
       },
       focus: {
-        nativeFocus: false,
+        childFocus: false,
         // background: {
         //   color: undefined,
         // },

@@ -77,7 +77,7 @@ const FormFieldBox = styled(Box)`
     if (
       props.focus &&
       props.shouldSkipFocus &&
-      props.theme.formField.focus.nativeFocus
+      props.theme.formField.focus.childFocus
     ) {
       return null;
     }
@@ -91,7 +91,7 @@ const FormFieldContentBox = styled(Box)`
     if (
       props.focus &&
       props.shouldSkipFocus &&
-      props.theme.formField.focus.nativeFocus
+      props.theme.formField.focus.childFocus
     ) {
       return null;
     }
@@ -278,7 +278,6 @@ const FormField = forwardRef(
         if (
           child &&
           child.type &&
-          grommetInputNames.indexOf(child.type.displayName) !== -1 &&
           grommetInputFocusNames.includes(child.type.displayName)
         ) {
           focusIndicatorFlag = true;
@@ -322,7 +321,7 @@ const FormField = forwardRef(
             // Apply the modified focusIndicator
             if (wantInputFocusIndicator) {
               const modifiedFocusIndicator =
-                theme.formField?.focus?.nativeFocus === true;
+                theme.formField?.focus?.childFocus === true;
               return cloneElement(child, {
                 focusIndicator: modifiedFocusIndicator,
               });
