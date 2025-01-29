@@ -72,31 +72,24 @@ const isGrommetInput = (comp) =>
   (grommetInputNames.indexOf(comp.displayName) !== -1 ||
     grommetInputPadNames.indexOf(comp.displayName) !== -1);
 
+const getFocusStyle = (props) => {
+  if (
+    props.focus &&
+    props.shouldSkipFocus &&
+    props.theme.formField.focus.childFocus
+  ) {
+    return null;
+  }
+  return props.focus ? focusStyle({ justBorder: true }) : undefined;
+};
+
 const FormFieldBox = styled(Box)`
-  ${(props) => {
-    if (
-      props.focus &&
-      props.shouldSkipFocus &&
-      props.theme.formField.focus.childFocus
-    ) {
-      return null;
-    }
-    return props.focus ? focusStyle({ justBorder: true }) : undefined;
-  }}
+  ${(props) => getFocusStyle(props)}
   ${(props) => props.theme.formField?.extend}
 `;
 
 const FormFieldContentBox = styled(Box)`
-  ${(props) => {
-    if (
-      props.focus &&
-      props.shouldSkipFocus &&
-      props.theme.formField.focus.childFocus
-    ) {
-      return null;
-    }
-    return props.focus ? focusStyle({ justBorder: true }) : undefined;
-  }}
+  ${(props) => getFocusStyle(props)}
 `;
 
 const StyledMessageContainer = styled(Box)`
