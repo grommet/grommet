@@ -17,6 +17,32 @@ import { Text } from '../Text';
 import { NotificationType } from './propTypes';
 import { useThemeValue } from '../../utils/useThemeValue';
 
+const MessageComponent = ({
+  message,
+  actions,
+  theme,
+  direction,
+  messageColor,
+}) => {
+  const Message = direction === 'row' ? Text : Paragraph;
+
+  const messageFill =
+    Message === Paragraph
+      ? theme.notification.message?.fill || false
+      : undefined;
+
+  return (
+    <Message
+      {...theme.notification.message}
+      color={messageColor}
+      fill={messageFill}
+    >
+      <Text margin={{ right: 'xsmall' }}>{message}</Text>
+      {actions}
+    </Message>
+  );
+};
+
 const adaptThemeStyle = (value, theme) => {
   let textStyle = value;
   let closeButtonStyle = value;
@@ -168,26 +194,20 @@ const Notification = ({
       </Fragment>
     ));
 
-  const Message = direction !== 'row' ? Paragraph : Text;
-  if (message || actions)
+  if (message || actions) {
     message =
       typeof message === 'string' ? (
-        <Message
-          {...theme.notification.message}
-          color={messageColor}
-          fill={
-            Message === Paragraph
-              ? theme.notification.message?.fill || false
-              : undefined
-          }
-        >
-          <Text margin={{ right: 'xsmall' }}>{message}</Text>
-          {/* include actions with message so it wraps with message */}
-          {actions}
-        </Message>
+        <MessageComponent
+          message={message}
+          actions={actions}
+          theme={theme}
+          direction={direction}
+          messageColor={messageColor}
+        />
       ) : (
         message
       );
+  }
 
   const iconDimension = theme.notification?.message?.size || 'medium';
 
