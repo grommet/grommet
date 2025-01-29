@@ -17,32 +17,15 @@ import { Text } from '../Text';
 import { NotificationType } from './propTypes';
 import { useThemeValue } from '../../utils/useThemeValue';
 
-const MessageComponent = ({
-  message,
-  actions,
-  theme,
+const Message = ({
+  fill,
   direction,
-  messageColor,
+  ...rest,
 }) => {
-  const Message = direction === 'row' ? Text : Paragraph;
-
-  const messageFill =
-    Message === Paragraph
-      ? theme.notification.message?.fill || false
-      : undefined;
-
-  return (
-    <Message
-      {...theme.notification.message}
-      color={messageColor}
-      fill={messageFill}
-    >
-      <Text margin={{ right: 'xsmall' }}>{message}</Text>
-      {actions}
-    </Message>
-  );
+  return direction === 'row'
+    ? <Text {...rest} />
+    : <Paragraph {...rest} fill={fill || false} />;
 };
-
 const adaptThemeStyle = (value, theme) => {
   let textStyle = value;
   let closeButtonStyle = value;
