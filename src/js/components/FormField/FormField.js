@@ -74,22 +74,29 @@ const isGrommetInput = (comp) =>
 
 const FormFieldBox = styled(Box)`
   ${(props) => {
-    return (
+    if (
       props.focus &&
-      // need to look at inputs for focus
-      props.theme.formField.focus.nativeFocus !== true &&
-      focusStyle({ justBorder: true })
-    );
+      props.shouldSkipFocus &&
+      props.theme.formField.focus.nativeFocus
+    ) {
+      return null;
+    }
+    return props.focus ? focusStyle({ justBorder: true }) : undefined;
   }}
-  ${(props) => props.theme.formField && props.theme.formField.extend}
+  ${(props) => props.theme.formField?.extend}
 `;
 
 const FormFieldContentBox = styled(Box)`
-  ${(props) =>
-    props.focus &&
-    // need to look at inputs for focus
-    props.theme.formField.focus.nativeFocus !== true &&
-    focusStyle({ justBorder: true })}
+  ${(props) => {
+    if (
+      props.focus &&
+      props.shouldSkipFocus &&
+      props.theme.formField.focus.nativeFocus
+    ) {
+      return null;
+    }
+    return props.focus ? focusStyle({ justBorder: true }) : undefined;
+  }}
 `;
 
 const StyledMessageContainer = styled(Box)`
@@ -230,7 +237,8 @@ const FormField = forwardRef(
     });
     const formKind = formContext.kind;
     const [focus, setFocus] = useState();
-    const [shouldSkipFocus, setShouldSkipFocus] = useState(false);
+    const [wantInputFocusIndicator, setWantInputFocusIndicator] =
+      useState(false);
     const formFieldRef = useForwardedRef(ref);
 
     const { formField: formFieldTheme } = theme;
@@ -264,13 +272,21 @@ const FormField = forwardRef(
       return readOnly;
     }, [children]);
 
-    const handleFocus = (event) => {
-      const targetType = event.target.type || event.target.tagName;
-      const skipFocus = ['checkbox', 'radio', 'range'].includes(
-        targetType.toLowerCase(),
-      );
-      setShouldSkipFocus(skipFocus);
-    };
+    useEffect(() => {
+      let focusIndicatorFlag = false;
+      Children.forEach(children, (child) => {
+        if (
+          child &&
+          child.type &&
+          grommetInputNames.indexOf(child.type.displayName) !== -1 &&
+          grommetInputFocusNames.includes(child.type.displayName)
+        ) {
+          focusIndicatorFlag = true;
+        }
+      });
+
+      setWantInputFocusIndicator(focusIndicatorFlag);
+    }, [children]);
 
     // This is here for backwards compatibility. In case the child is a grommet
     // input component, set plain and focusIndicator props, if they aren't
@@ -297,11 +313,6 @@ const FormField = forwardRef(
             child &&
             child.type &&
             grommetInputNames.indexOf(child.type.displayName) !== -1;
-
-          // Check if the component is in grommetInputFocusNames
-          const wantInputFocusIndicator =
-            isInputComponent &&
-            grommetInputFocusNames.includes(child.type.displayName);
 
           if (
             isInputComponent &&
@@ -476,7 +487,7 @@ const FormField = forwardRef(
           {...themeContentProps}
           {...innerProps}
           {...contentProps}
-          shouldSkipFocus={shouldSkipFocus} // internal prop
+          shouldSkipFocus={wantInputFocusIndicator} // internal prop
           {...passThemeFlag}
         >
           {contents}
@@ -574,7 +585,7 @@ const FormField = forwardRef(
         margin={abut ? abutMargin : margin || { ...formFieldTheme.margin }}
         {...outerProps}
         style={outerStyle}
-        shouldSkipFocus={shouldSkipFocus} // internal prop
+        shouldSkipFocus={wantInputFocusIndicator} // internal prop
         onFocus={(event) => {
           const root = formFieldRef.current?.getRootNode();
           if (root) {
