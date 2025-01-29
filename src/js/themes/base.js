@@ -1031,15 +1031,15 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         //   color: undefined,
         // },
       },
-      // focus: {
-      // focusIndicator: undefined,
-      //   background: {
-      //     color: undefined,
-      //   },
-      //   border: {
-      //     color: undefined,
-      //   },
-      // },
+      focus: {
+        nativeFocus: true,
+        // background: {
+        //   color: undefined,
+        // },
+        // border: {
+        //   color: undefined,
+        // },
+      },
       error: {
         color: 'status-critical',
         margin: { vertical: 'xsmall', horizontal: 'small' },

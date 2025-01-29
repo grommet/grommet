@@ -73,12 +73,23 @@ const isGrommetInput = (comp) =>
     grommetInputPadNames.indexOf(comp.displayName) !== -1);
 
 const FormFieldBox = styled(Box)`
-  ${(props) => props.focus && focusStyle({ justBorder: true })}
+  ${(props) => {
+    return (
+      props.focus &&
+      // need to look at inputs for focus
+      props.theme.formField.focus.nativeFocus !== true &&
+      focusStyle({ justBorder: true })
+    );
+  }}
   ${(props) => props.theme.formField && props.theme.formField.extend}
 `;
 
 const FormFieldContentBox = styled(Box)`
-  ${(props) => props.focus && focusStyle({ justBorder: true })}
+  ${(props) =>
+    props.focus &&
+    // need to look at inputs for focus
+    props.theme.formField.focus.nativeFocus !== true &&
+    focusStyle({ justBorder: true })}
 `;
 
 const StyledMessageContainer = styled(Box)`
@@ -219,6 +230,7 @@ const FormField = forwardRef(
     });
     const formKind = formContext.kind;
     const [focus, setFocus] = useState();
+    const [shouldSkipFocus, setShouldSkipFocus] = useState(false);
     const formFieldRef = useForwardedRef(ref);
 
     const { formField: formFieldTheme } = theme;
@@ -251,6 +263,14 @@ const FormField = forwardRef(
       }
       return readOnly;
     }, [children]);
+
+    const handleFocus = (event) => {
+      const targetType = event.target.type || event.target.tagName;
+      const skipFocus = ['checkbox', 'radio', 'range'].includes(
+        targetType.toLowerCase(),
+      );
+      setShouldSkipFocus(skipFocus);
+    };
 
     // This is here for backwards compatibility. In case the child is a grommet
     // input component, set plain and focusIndicator props, if they aren't
@@ -291,7 +311,7 @@ const FormField = forwardRef(
             // Apply the modified focusIndicator
             if (wantInputFocusIndicator) {
               const modifiedFocusIndicator =
-                theme.formField?.focus?.focusIndicator === false;
+                theme.formField?.focus?.nativeFocus === true;
               return cloneElement(child, {
                 focusIndicator: modifiedFocusIndicator,
               });
@@ -456,6 +476,7 @@ const FormField = forwardRef(
           {...themeContentProps}
           {...innerProps}
           {...contentProps}
+          shouldSkipFocus={shouldSkipFocus} // internal prop
           {...passThemeFlag}
         >
           {contents}
@@ -553,21 +574,8 @@ const FormField = forwardRef(
         margin={abut ? abutMargin : margin || { ...formFieldTheme.margin }}
         {...outerProps}
         style={outerStyle}
+        shouldSkipFocus={shouldSkipFocus} // internal prop
         onFocus={(event) => {
-          const targetType = event.target.type || event.target.tagName;
-          // Check if the target is one of the input
-          // components that have their own focus indicator
-          const shouldSkipFocus = ['checkbox', 'radio', 'range'].includes(
-            targetType.toLowerCase(),
-          );
-
-          if (
-            shouldSkipFocus &&
-            theme.formField?.focus?.focusIndicator === false
-          ) {
-            setFocus(false);
-            return;
-          }
           const root = formFieldRef.current?.getRootNode();
           if (root) {
             setFocus(
