@@ -197,13 +197,11 @@ const Notification = ({
   if (message || actions) {
     message =
       typeof message === 'string' ? (
-        <MessageComponent
-          message={message}
-          actions={actions}
-          theme={theme}
-          direction={direction}
-          messageColor={messageColor}
-        />
+<Message {...theme.notification.message} color={messageColor} direction={direction} >
+  <Text margin={{ right: 'xsmall' }}>{message}</Text>
+  {/* include actions with message so it wraps with message */}
+  {actions}
+</Message>
       ) : (
         message
       );
