@@ -574,7 +574,7 @@ const FormField = forwardRef(
         margin={abut ? abutMargin : margin || { ...formFieldTheme.margin }}
         {...outerProps}
         style={outerStyle}
-        shouldSkipFocus={wantFocusIndicator} // internal prop
+        containerFocus={containerFocus} // internal prop
         onFocus={(event) => {
           const root = formFieldRef.current?.getRootNode();
           if (root) {
