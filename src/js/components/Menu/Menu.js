@@ -365,7 +365,8 @@ const Menu = forwardRef((props, ref) => {
   };
 
   let menuContent;
-  if (itemCount && Array.isArray(items[0])) {
+  const grouped = itemCount && Array.isArray(items[0]);
+  if (grouped) {
     let index = 0;
     menuContent = items.map((group, groupIndex) => (
       <Box
@@ -386,7 +387,7 @@ const Menu = forwardRef((props, ref) => {
             />
           </Box>
         )}
-        <Box {...theme.menu.group?.container}>
+        <Box {...theme.menu.container} {...theme.menu.group?.container}>
           {group.map((item) => {
             // item index needs to be its index in the entire menu as if
             // it were a flat array
@@ -444,7 +445,12 @@ const Menu = forwardRef((props, ref) => {
               align.top !== 'bottom'
                 ? controlMirror
                 : undefined}
-              <Box overflow="auto" role="menu" a11yTitle={a11y}>
+              <Box
+                overflow="auto"
+                role="menu"
+                a11yTitle={a11y}
+                {...(!grouped ? theme.menu.container : {})}
+              >
                 {menuContent}
               </Box>
               {/*
