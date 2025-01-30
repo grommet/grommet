@@ -517,12 +517,14 @@ export interface ThemeType {
         color?: ColorType;
         fontWeight?: number;
         textDecoration?: string;
+        gap?: GapType;
       };
       [x: string]:
         | {
             color?: ColorType;
             fontWeight?: number;
             textDecoration?: string;
+            gap?: GapType;
           }
         | undefined;
     };
@@ -1248,7 +1250,7 @@ export interface ThemeType {
     iconContainer?: BoxProps;
     textContainer?: BoxProps;
     title?: TextProps;
-    message?: TextProps;
+    message?: TextProps & { fill?: boolean };
     close?: {
       icon?: React.ReactNode | Icon;
       color?: ColorType;
@@ -1673,6 +1675,9 @@ export interface ThemeType {
       up?: React.ReactNode | Icon;
       margin?: MarginType;
     };
+    listbox?: {
+      extend?: ExtendType;
+    };
     options?: {
       container?: PropsOf<typeof Box>;
       text?: PropsOf<typeof Text>;
@@ -1683,6 +1688,9 @@ export interface ThemeType {
   };
   selectMultiple?: {
     maxInline?: number;
+    listbox?: {
+      extend?: ExtendType;
+    };
   };
   skeleton?: BoxProps & { colors?: SkeletonColorsType; extend?: ExtendType };
   skipLinks?: {
