@@ -2,7 +2,7 @@ import React, { useCallback, useState, useRef, useMemo } from 'react';
 import { Box } from '../Box';
 import { Keyboard } from '../Keyboard';
 import { ToggleGroupPropTypes } from './propTypes';
-import { StyledButton } from './StyledToggleGroup';
+import { StyledButton, StyledBox } from './StyledToggleGroup';
 import { useThemeValue } from '../../utils/useThemeValue';
 
 const useControlled = ({ prop, defaultProp, onChange = () => {} }) => {
@@ -107,7 +107,7 @@ const ToggleGroup = ({
       onLeft={onPrevious}
       onRight={onNext}
     >
-      <Box
+      <StyledBox
         ref={ref}
         alignSelf="start"
         direction="row"
@@ -188,7 +188,7 @@ const ToggleGroup = ({
             </Box>
           );
         })}
-      </Box>
+      </StyledBox>
     </Keyboard>
   );
 };

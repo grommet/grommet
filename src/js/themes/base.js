@@ -281,6 +281,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           color: 'focus',
           size: '2px',
         },
+        twoColor: undefined,
       },
       font: {
         ...fontSizing(0),
@@ -883,6 +884,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
     dataTable: {
       // body: {
       //   extend: undefined,
+      //   row: {
+      //     extend: undefined,
+      //   }
       //   selected: undefined,
       // },
       pinned: {
@@ -1028,6 +1032,12 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         //   color: undefined,
         // },
         // label: {
+        //   color: undefined,
+        // },
+        // help: {
+        //   color: undefined,
+        // },
+        // info: {
         //   color: undefined,
         // },
       },
@@ -1855,6 +1865,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         down: FormDown,
         // up: undefined
       },
+      // listbox: {
+      //   extend: undefined,
+      // },
       options: {
         container: {
           align: 'start',
@@ -1869,6 +1882,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
     },
     selectMultiple: {
       maxInline: 5,
+      // listbox: {
+      //   extend: () => undefined,
+      // },
     },
     skeleton: {
       border: false,
@@ -2120,6 +2136,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       container: {
         round: 'xsmall',
         border: true,
+        // extend: undefined,
       },
       divider: {
         color: 'border',

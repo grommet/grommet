@@ -33,6 +33,14 @@ export const OptionsContainer = styled.div.withConfig(styledComponentsConfig)`
   scroll-behavior: smooth;
   overflow: auto;
   outline: none;
+  ${(props) => {
+    if (props.selectMultiple)
+      return (
+        props.theme.selectMultiple.listbox &&
+        props.theme.selectMultiple.listbox.extend
+      );
+    return props.theme.select.listbox && props.theme.select.listbox.extend;
+  }};
 `;
 
 export const HiddenInput = styled.input.withConfig(styledComponentsConfig)`

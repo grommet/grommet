@@ -21,7 +21,7 @@ import { ExpanderCell } from './ExpanderCell';
 import {
   StyledDataTableCell,
   StyledDataTableHeader,
-  StyledDataTableRow,
+  StyledDataTableRowHeader,
 } from './StyledDataTable';
 import { datumValue } from './buildState';
 import { kindPartStyles } from '../../utils/styles';
@@ -228,7 +228,7 @@ const Header = forwardRef(
 
     return (
       <StyledDataTableHeader ref={ref} fillProp={fill} {...rest}>
-        <StyledDataTableRow>
+        <StyledDataTableRowHeader>
           {groups && (
             <ExpanderCell
               background={cellProps.background}
@@ -460,7 +460,7 @@ const Header = forwardRef(
               );
             },
           )}
-        </StyledDataTableRow>
+        </StyledDataTableRowHeader>
       </StyledDataTableHeader>
     );
   },

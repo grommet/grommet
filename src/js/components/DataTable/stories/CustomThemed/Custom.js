@@ -23,6 +23,16 @@ const customTheme = {
     },
   },
   dataTable: {
+    body: {
+      row: {
+        extend: `&:last-child td {
+          border: none;
+          }
+          &:last-child th {
+          border: none;
+          }`,
+      },
+    },
     header: {
       color: 'text-strong',
       extend: ({ column, sort, sortable }) => `
@@ -55,6 +65,7 @@ export const Custom = () => {
     <Grommet theme={customTheme}>
       <Box align="center" pad="large">
         <DataTable
+          border={{ body: 'bottom' }}
           columns={columns}
           data={DATA}
           step={10}
