@@ -2451,7 +2451,7 @@ exports[`Select Controlled multiple onChange without labelKey 4`] = `
   >
     <div
       aria-multiselectable="true"
-      class="StyledSelect__OptionsContainer-sc-znp66n-1 oteVR"
+      class="StyledSelect__OptionsContainer-sc-znp66n-1 hjcpqT"
       role="listbox"
       tabindex="-1"
     >
@@ -2524,7 +2524,7 @@ exports[`Select Controlled multiple onChange without labelKey 6`] = `
   >
     <div
       aria-multiselectable="true"
-      class="StyledSelect__OptionsContainer-sc-znp66n-1 oteVR"
+      class="StyledSelect__OptionsContainer-sc-znp66n-1 hjcpqT"
       role="listbox"
       tabindex="-1"
     >
@@ -3336,7 +3336,7 @@ exports[`Select Controlled multiple onChange without valueKey 4`] = `
   >
     <div
       aria-multiselectable="true"
-      class="StyledSelect__OptionsContainer-sc-znp66n-1 oteVR"
+      class="StyledSelect__OptionsContainer-sc-znp66n-1 hjcpqT"
       role="listbox"
       tabindex="-1"
     >
@@ -3409,7 +3409,7 @@ exports[`Select Controlled multiple onChange without valueKey 6`] = `
   >
     <div
       aria-multiselectable="true"
-      class="StyledSelect__OptionsContainer-sc-znp66n-1 oteVR"
+      class="StyledSelect__OptionsContainer-sc-znp66n-1 hjcpqT"
       role="listbox"
       tabindex="-1"
     >
@@ -4223,7 +4223,7 @@ exports[`Select Controlled multiple onChange without valueKey or labelKey 4`] = 
   >
     <div
       aria-multiselectable="true"
-      class="StyledSelect__OptionsContainer-sc-znp66n-1 oteVR"
+      class="StyledSelect__OptionsContainer-sc-znp66n-1 hjcpqT"
       role="listbox"
       tabindex="-1"
     >
@@ -4294,7 +4294,7 @@ exports[`Select Controlled multiple onChange without valueKey or labelKey 6`] = 
   >
     <div
       aria-multiselectable="true"
-      class="StyledSelect__OptionsContainer-sc-znp66n-1 oteVR"
+      class="StyledSelect__OptionsContainer-sc-znp66n-1 hjcpqT"
       role="listbox"
       tabindex="-1"
     >

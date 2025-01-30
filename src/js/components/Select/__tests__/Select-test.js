@@ -1815,6 +1815,39 @@ describe('Select', () => {
     expectPortal('test-clear-selection__drop').toMatchSnapshot();
   });
 
+  test('renders custom listbox styling', () => {
+    jest.useFakeTimers();
+    const customTheme = {
+      select: {
+        listbox: {
+          extend: `padding: 24px;`,
+        },
+      },
+    };
+
+    const { getByPlaceholderText, getByRole } = render(
+      <Grommet theme={customTheme}>
+        <Select
+          data-testid="test-select-style-open"
+          id="test-listbox"
+          options={['morning', 'afternoon', 'evening']}
+          placeholder="Select time"
+          value="afternoon"
+        />
+      </Grommet>,
+    );
+
+    fireEvent.click(getByPlaceholderText('Select time'));
+    act(() => {
+      jest.advanceTimersByTime(100);
+    });
+
+    expectPortal('test-listbox__drop').toMatchSnapshot();
+    const listbox = getByRole('listbox');
+    const styles = window.getComputedStyle(listbox);
+    expect(styles.padding).toBe('24px');
+  });
+
   window.scrollTo.mockRestore();
   window.HTMLElement.prototype.scrollIntoView.mockRestore();
 });
