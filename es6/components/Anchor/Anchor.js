@@ -10,6 +10,7 @@ import { useAnalytics } from '../../contexts/AnalyticsContext';
 import { TextContext } from '../Text/TextContext';
 import { useThemeValue } from '../../utils/useThemeValue';
 var Anchor = /*#__PURE__*/forwardRef(function (_ref, ref) {
+  var _theme$anchor3, _theme$anchor4;
   var a11yTitle = _ref.a11yTitle,
     ariaLabel = _ref['aria-label'],
     children = _ref.children,
@@ -83,7 +84,7 @@ var Anchor = /*#__PURE__*/forwardRef(function (_ref, ref) {
     as: "span",
     direction: "row",
     align: "center",
-    gap: gap || theme.anchor.gap,
+    gap: gap || ((_theme$anchor3 = theme.anchor) == null || (_theme$anchor3 = _theme$anchor3.size) == null || (_theme$anchor3 = _theme$anchor3[sizeProp]) == null ? void 0 : _theme$anchor3.gap) || ((_theme$anchor4 = theme.anchor) == null ? void 0 : _theme$anchor4.gap),
     responsive: false
   }, first, second) : first || second || children);
 });

@@ -16,6 +16,7 @@ function _interopRequireWildcard(e, r) { if (!r && e && e.__esModule) return e; 
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (-1 !== e.indexOf(n)) continue; t[n] = r[n]; } return t; }
 var Anchor = exports.Anchor = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
+  var _theme$anchor3, _theme$anchor4;
   var a11yTitle = _ref.a11yTitle,
     ariaLabel = _ref['aria-label'],
     children = _ref.children,
@@ -89,7 +90,7 @@ var Anchor = exports.Anchor = /*#__PURE__*/(0, _react.forwardRef)(function (_ref
     as: "span",
     direction: "row",
     align: "center",
-    gap: gap || theme.anchor.gap,
+    gap: gap || ((_theme$anchor3 = theme.anchor) == null || (_theme$anchor3 = _theme$anchor3.size) == null || (_theme$anchor3 = _theme$anchor3[sizeProp]) == null ? void 0 : _theme$anchor3.gap) || ((_theme$anchor4 = theme.anchor) == null ? void 0 : _theme$anchor4.gap),
     responsive: false
   }, first, second) : first || second || children);
 });

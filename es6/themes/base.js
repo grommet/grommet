@@ -414,6 +414,7 @@ export var generate = function generate(baseSpacing, scale) {
       //     color: undefined,
       //     fontWeight: undefined,
       //     textDecoration: undefined,
+      //     gap: undefined,
       //   },
       // },
       // extend: undefined,

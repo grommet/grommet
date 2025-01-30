@@ -517,12 +517,14 @@ export interface ThemeType {
         color?: ColorType;
         fontWeight?: number;
         textDecoration?: string;
+        gap?: GapType;
       };
       [x: string]:
         | {
             color?: ColorType;
             fontWeight?: number;
             textDecoration?: string;
+            gap?: GapType;
           }
         | undefined;
     };
