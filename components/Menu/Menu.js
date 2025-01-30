@@ -331,7 +331,8 @@ var Menu = exports.Menu = /*#__PURE__*/(0, _react.forwardRef)(function (props, r
     );
   };
   var menuContent;
-  if (itemCount && Array.isArray(items[0])) {
+  var grouped = itemCount && Array.isArray(items[0]);
+  if (grouped) {
     var index = 0;
     menuContent = items.map(function (group, groupIndex) {
       var _theme$menu$group, _theme$menu$group2, _theme$menu$group3;
@@ -351,7 +352,7 @@ var Menu = exports.Menu = /*#__PURE__*/(0, _react.forwardRef)(function (props, r
           color: (_theme$menu$group = theme.menu.group) == null || (_theme$menu$group = _theme$menu$group.separator) == null ? void 0 : _theme$menu$group.color,
           size: (_theme$menu$group2 = theme.menu.group) == null || (_theme$menu$group2 = _theme$menu$group2.separator) == null ? void 0 : _theme$menu$group2.size
         }
-      })), /*#__PURE__*/_react["default"].createElement(_Box.Box, (_theme$menu$group3 = theme.menu.group) == null ? void 0 : _theme$menu$group3.container, group.map(function (item) {
+      })), /*#__PURE__*/_react["default"].createElement(_Box.Box, _extends({}, theme.menu.container, (_theme$menu$group3 = theme.menu.group) == null ? void 0 : _theme$menu$group3.container), group.map(function (item) {
         // item index needs to be its index in the entire menu as if
         // it were a flat array
         var currentIndex = index;
@@ -397,11 +398,11 @@ var Menu = exports.Menu = /*#__PURE__*/(0, _react.forwardRef)(function (props, r
       ref: dropContainerRef,
       tabIndex: -1,
       background: dropBackground || theme.menu.background
-    }, passThemeFlag), alignControlMirror === 'top' && align.bottom !== 'top' && align.top !== 'bottom' ? controlMirror : undefined, /*#__PURE__*/_react["default"].createElement(_Box.Box, {
+    }, passThemeFlag), alignControlMirror === 'top' && align.bottom !== 'top' && align.top !== 'bottom' ? controlMirror : undefined, /*#__PURE__*/_react["default"].createElement(_Box.Box, _extends({
       overflow: "auto",
       role: "menu",
       a11yTitle: a11y
-    }, menuContent), !initialAlignTop &&
+    }, !grouped ? theme.menu.container : {}), menuContent), !initialAlignTop &&
     // don't show controlMirror if caller is using
     // align.bottom === 'top'
     alignControlMirror === 'bottom' && align.bottom !== 'top' && align.top !== 'bottom' ? controlMirror : undefined))
