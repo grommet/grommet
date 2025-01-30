@@ -916,6 +916,7 @@ export interface ThemeType {
     round?: RoundType;
   };
   formField?: {
+    // TODO add TS type
     border?: BorderType & {
       error?: {
         color?: ColorType;
