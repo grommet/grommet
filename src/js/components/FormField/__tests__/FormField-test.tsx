@@ -166,7 +166,7 @@ describe('FormField', () => {
         theme={{
           formField: {
             focus: {
-              nativeFocus: false,
+              containerFocus: true,
             },
           },
         }}

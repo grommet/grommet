@@ -76,7 +76,7 @@ const getFocusStyle = (props) => {
   if (
     props.focus &&
     props.shouldSkipFocus &&
-    props.theme.formField.focus.childFocus
+    props.theme.formField.focus.conatinerFocus === false
   ) {
     return null;
   }
@@ -314,7 +314,7 @@ const FormField = forwardRef(
             // Apply the modified focusIndicator
             if (wantInputFocusIndicator) {
               const modifiedFocusIndicator =
-                theme.formField?.focus?.childFocus === true;
+                theme.formField?.focus?.conatinerFocus === false;
               return cloneElement(child, {
                 focusIndicator: modifiedFocusIndicator,
               });

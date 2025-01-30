@@ -934,7 +934,7 @@ export interface ThemeType {
       border?: {
         color?: ColorType;
       };
-      nativeFocus?: boolean;
+      containerFocus?: boolean;
     };
     error?: {
       background?: BackgroundType;
