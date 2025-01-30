@@ -263,7 +263,7 @@ const FormField = forwardRef(
       return readOnly;
     }, [children]);
 
-    const wantFocusIndicator = useMemo(() => {
+    const containerFocus = useMemo(() => {
       let focusIndicatorFlag = false;
       Children.forEach(children, (child) => {
         if (
