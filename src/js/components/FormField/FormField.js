@@ -230,8 +230,6 @@ const FormField = forwardRef(
     });
     const formKind = formContext.kind;
     const [focus, setFocus] = useState();
-    const [wantInputFocusIndicator, setWantInputFocusIndicator] =
-      useState(false);
     const formFieldRef = useForwardedRef(ref);
 
     const { formField: formFieldTheme } = theme;
@@ -265,7 +263,7 @@ const FormField = forwardRef(
       return readOnly;
     }, [children]);
 
-    useEffect(() => {
+    const wantFocusIndicator = useMemo(() => {
       let focusIndicatorFlag = false;
       Children.forEach(children, (child) => {
         if (
@@ -276,8 +274,7 @@ const FormField = forwardRef(
           focusIndicatorFlag = true;
         }
       });
-
-      setWantInputFocusIndicator(focusIndicatorFlag);
+      return focusIndicatorFlag;
     }, [children]);
 
     // This is here for backwards compatibility. In case the child is a grommet
@@ -312,7 +309,7 @@ const FormField = forwardRef(
             child.props.focusIndicator === undefined
           ) {
             // Apply the modified focusIndicator
-            if (wantInputFocusIndicator) {
+            if (wantFocusIndicator) {
               const modifiedFocusIndicator =
                 theme.formField?.focus?.conatinerFocus === false;
               return cloneElement(child, {
@@ -479,7 +476,7 @@ const FormField = forwardRef(
           {...themeContentProps}
           {...innerProps}
           {...contentProps}
-          shouldSkipFocus={wantInputFocusIndicator} // internal prop
+          shouldSkipFocus={wantFocusIndicator} // internal prop
           {...passThemeFlag}
         >
           {contents}
@@ -577,7 +574,7 @@ const FormField = forwardRef(
         margin={abut ? abutMargin : margin || { ...formFieldTheme.margin }}
         {...outerProps}
         style={outerStyle}
-        shouldSkipFocus={wantInputFocusIndicator} // internal prop
+        shouldSkipFocus={wantFocusIndicator} // internal prop
         onFocus={(event) => {
           const root = formFieldRef.current?.getRootNode();
           if (root) {
