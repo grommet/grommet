@@ -435,7 +435,7 @@ const SelectMultipleContainer = forwardRef(
               aria-multiselectable
               onMouseMove={() => setKeyboardNavigation(false)}
               aria-activedescendant={optionsRef?.current?.children[activeIndex]}
-              selectMultiple
+              selectMultiple // internal prop
             >
               <InfiniteScroll
                 items={options}
