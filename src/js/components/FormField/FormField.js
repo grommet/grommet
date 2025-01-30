@@ -76,7 +76,7 @@ const getFocusStyle = (props) => {
   if (
     props.focus &&
     props.shouldSkipFocus &&
-    props.theme.formField.focus.conatinerFocus === false
+    props.theme.formField?.focus?.conatinerFocus === false
   ) {
     return null;
   }
