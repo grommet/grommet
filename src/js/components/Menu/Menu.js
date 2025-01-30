@@ -387,7 +387,7 @@ const Menu = forwardRef((props, ref) => {
             />
           </Box>
         )}
-        <Box {...theme.menu.group?.container}>
+        <Box {...theme.menu.container} {...theme.menu.group?.container}>
           {group.map((item) => {
             // item index needs to be its index in the entire menu as if
             // it were a flat array
