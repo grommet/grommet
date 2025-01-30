@@ -330,7 +330,8 @@ var SelectMultipleContainer = /*#__PURE__*/forwardRef(function (_ref, ref) {
     onMouseMove: function onMouseMove() {
       return setKeyboardNavigation(false);
     },
-    "aria-activedescendant": optionsRef == null || (_optionsRef$current = optionsRef.current) == null ? void 0 : _optionsRef$current.children[activeIndex]
+    "aria-activedescendant": optionsRef == null || (_optionsRef$current = optionsRef.current) == null ? void 0 : _optionsRef$current.children[activeIndex],
+    selectMultiple: true // internal prop
   }, /*#__PURE__*/React.createElement(InfiniteScroll, {
     items: options,
     step: theme.select.step,

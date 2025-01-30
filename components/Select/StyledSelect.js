@@ -22,7 +22,10 @@ var StyledContainer = exports.StyledContainer = (0, _styledComponents["default"]
 var OptionsContainer = exports.OptionsContainer = _styledComponents["default"].div.withConfig(_utils.styledComponentsConfig).withConfig({
   displayName: "StyledSelect__OptionsContainer",
   componentId: "sc-znp66n-1"
-})(["position:relative;scroll-behavior:smooth;overflow:auto;outline:none;"]);
+})(["position:relative;scroll-behavior:smooth;overflow:auto;outline:none;", ";"], function (props) {
+  if (props.selectMultiple) return props.theme.selectMultiple.listbox && props.theme.selectMultiple.listbox.extend;
+  return props.theme.select.listbox && props.theme.select.listbox.extend;
+});
 var HiddenInput = exports.HiddenInput = _styledComponents["default"].input.withConfig(_utils.styledComponentsConfig).withConfig({
   displayName: "StyledSelect__HiddenInput",
   componentId: "sc-znp66n-2"

@@ -1982,6 +1982,9 @@ var generate = exports.generate = function generate(baseSpacing, scale) {
         down: _FormDown.FormDown
         // up: undefined
       },
+      // listbox: {
+      //   extend: undefined,
+      // },
       options: {
         container: {
           align: 'start',
@@ -1996,6 +1999,9 @@ var generate = exports.generate = function generate(baseSpacing, scale) {
     },
     selectMultiple: {
       maxInline: 5
+      // listbox: {
+      //   extend: () => undefined,
+      // },
     },
     skeleton: {
       border: false,

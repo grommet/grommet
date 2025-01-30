@@ -336,7 +336,8 @@ var SelectMultipleContainer = exports.SelectMultipleContainer = /*#__PURE__*/(0,
     onMouseMove: function onMouseMove() {
       return setKeyboardNavigation(false);
     },
-    "aria-activedescendant": optionsRef == null || (_optionsRef$current = optionsRef.current) == null ? void 0 : _optionsRef$current.children[activeIndex]
+    "aria-activedescendant": optionsRef == null || (_optionsRef$current = optionsRef.current) == null ? void 0 : _optionsRef$current.children[activeIndex],
+    selectMultiple: true // internal prop
   }, /*#__PURE__*/_react["default"].createElement(_InfiniteScroll.InfiniteScroll, {
     items: options,
     step: theme.select.step,

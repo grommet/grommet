@@ -17,7 +17,10 @@ export var StyledContainer = styled(Box).withConfig({
 export var OptionsContainer = styled.div.withConfig(styledComponentsConfig).withConfig({
   displayName: "StyledSelect__OptionsContainer",
   componentId: "sc-znp66n-1"
-})(["position:relative;scroll-behavior:smooth;overflow:auto;outline:none;"]);
+})(["position:relative;scroll-behavior:smooth;overflow:auto;outline:none;", ";"], function (props) {
+  if (props.selectMultiple) return props.theme.selectMultiple.listbox && props.theme.selectMultiple.listbox.extend;
+  return props.theme.select.listbox && props.theme.select.listbox.extend;
+});
 export var HiddenInput = styled.input.withConfig(styledComponentsConfig).withConfig({
   displayName: "StyledSelect__HiddenInput",
   componentId: "sc-znp66n-2"

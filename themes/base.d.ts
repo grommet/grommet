@@ -1672,6 +1672,9 @@ export interface ThemeType {
       up?: React.ReactNode | Icon;
       margin?: MarginType;
     };
+    listbox?: {
+      extend?: ExtendType;
+    };
     options?: {
       container?: PropsOf<typeof Box>;
       text?: PropsOf<typeof Text>;
@@ -1682,6 +1685,9 @@ export interface ThemeType {
   };
   selectMultiple?: {
     maxInline?: number;
+    listbox?: {
+      extend?: ExtendType;
+    };
   };
   skeleton?: BoxProps & { colors?: SkeletonColorsType; extend?: ExtendType };
   skipLinks?: {
