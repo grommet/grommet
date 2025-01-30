@@ -271,7 +271,7 @@ const FormField = forwardRef(
           child.type &&
           grommetInputFocusNames.includes(child.type.displayName)
         ) {
-          focusIndicatorFlag = true;
+          focusIndicatorFlag = false;
         }
       });
       return focusIndicatorFlag;
