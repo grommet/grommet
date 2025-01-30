@@ -585,4 +585,38 @@ describe('SelectMultiple with portal', () => {
 
     expectPortal('test-select__drop').toMatchSnapshot();
   });
+
+  test('renders custom listbox styling', () => {
+    jest.useFakeTimers();
+    const customTheme = {
+      selectMultiple: {
+        listbox: {
+          extend: `padding: 24px;`,
+        },
+      },
+    };
+
+    const { getByRole } = render(
+      <Grommet theme={customTheme}>
+        <SelectMultiple
+          data-testid="test-select-style-open"
+          id="test-listbox"
+          options={['morning', 'afternoon', 'evening']}
+          placeholder="Select time"
+          value={[]}
+        />
+      </Grommet>,
+    );
+
+    // open SelectMultiple
+    fireEvent.click(getByRole('button', { name: /Select time. 0 selected/i }));
+    act(() => {
+      jest.advanceTimersByTime(100);
+    });
+
+    expectPortal('test-listbox__drop').toMatchSnapshot();
+    const listbox = getByRole('listbox');
+    const styles = window.getComputedStyle(listbox);
+    expect(styles.padding).toBe('24px');
+  });
 });
