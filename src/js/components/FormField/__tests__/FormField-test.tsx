@@ -160,7 +160,7 @@ describe('FormField', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
-  test.only('does not apply focusIndicator when formField.focusIndicator is false', () => {
+  test('does not apply focusIndicator when formField.focusIndicator is false', () => {
     const { container } = render(
       <Grommet
         theme={{
