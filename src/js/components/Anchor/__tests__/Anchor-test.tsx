@@ -288,6 +288,11 @@ describe('Anchor', () => {
         <Anchor
           label="Large anchor with icon should receive color on icon"
           icon={<LinkNext />}
+          size="small"
+        />
+        <Anchor
+          label="Large anchor with icon should receive color on icon"
+          icon={<LinkNext />}
           size="large"
         />
       </Grommet>,

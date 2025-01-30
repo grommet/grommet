@@ -987,6 +987,12 @@ exports[`Anchor renders size specific theming 1`] = `
 .c21 {
   flex: 0 0 auto;
   align-self: stretch;
+  width: 6px;
+}
+
+.c22 {
+  flex: 0 0 auto;
+  align-self: stretch;
   width: 48px;
 }
 
@@ -1310,7 +1316,7 @@ exports[`Anchor renders size specific theming 1`] = `
       </span>
     </a>
     <a
-      class="c8"
+      class="c4"
     >
       <span
         class="c17"
@@ -1329,6 +1335,30 @@ exports[`Anchor renders size specific theming 1`] = `
         </svg>
         <span
           class="c21"
+        />
+        Large anchor with icon should receive color on icon
+      </span>
+    </a>
+    <a
+      class="c8"
+    >
+      <span
+        class="c17"
+      >
+        <svg
+          aria-label="LinkNext"
+          class="c20"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M2 12h20m-9-9 9 9-9 9"
+            fill="none"
+            stroke="#000"
+            stroke-width="2"
+          />
+        </svg>
+        <span
+          class="c22"
         />
         Large anchor with icon should receive color on icon
       </span>
