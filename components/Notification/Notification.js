@@ -12,12 +12,21 @@ var _Paragraph = require("../Paragraph");
 var _Text = require("../Text");
 var _propTypes = require("./propTypes");
 var _useThemeValue2 = require("../../utils/useThemeValue");
-var _excluded = ["actions", "message", "onClose", "id", "global", "status", "title", "toast", "icon", "time"];
+var _excluded = ["fill", "direction"],
+  _excluded2 = ["actions", "message", "onClose", "id", "global", "status", "title", "toast", "icon", "time"];
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
 function _getRequireWildcardCache(e) { if ("function" != typeof WeakMap) return null; var r = new WeakMap(), t = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(e) { return e ? t : r; })(e); }
 function _interopRequireWildcard(e, r) { if (!r && e && e.__esModule) return e; if (null === e || "object" != typeof e && "function" != typeof e) return { "default": e }; var t = _getRequireWildcardCache(r); if (t && t.has(e)) return t.get(e); var n = { __proto__: null }, a = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var u in e) if ("default" !== u && {}.hasOwnProperty.call(e, u)) { var i = a ? Object.getOwnPropertyDescriptor(e, u) : null; i && (i.get || i.set) ? Object.defineProperty(n, u, i) : n[u] = e[u]; } return n["default"] = e, t && t.set(e, n), n; }
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (-1 !== e.indexOf(n)) continue; t[n] = r[n]; } return t; }
+var Message = function Message(_ref) {
+  var fill = _ref.fill,
+    direction = _ref.direction,
+    rest = _objectWithoutPropertiesLoose(_ref, _excluded);
+  return direction === 'row' ? /*#__PURE__*/_react["default"].createElement(_Text.Text, rest) : /*#__PURE__*/_react["default"].createElement(_Paragraph.Paragraph, _extends({}, rest, {
+    fill: fill || false
+  }));
+};
 var adaptThemeStyle = function adaptThemeStyle(value, theme) {
   var textStyle = value;
   var closeButtonStyle = value;
@@ -62,21 +71,21 @@ var NotificationAnchor = (0, _styledComponents["default"])(_Anchor.Anchor).withC
   displayName: "Notification__NotificationAnchor",
   componentId: "sc-1yq09yz-0"
 })(["white-space:nowrap;"]);
-var Notification = exports.Notification = function Notification(_ref) {
+var Notification = exports.Notification = function Notification(_ref2) {
   var _theme$notification6, _theme$notification7, _theme$notification8, _theme$notification9, _theme$notification10;
-  var actionsProp = _ref.actions,
-    messageProp = _ref.message,
-    onClose = _ref.onClose,
-    id = _ref.id,
-    global = _ref.global,
-    _ref$status = _ref.status,
-    status = _ref$status === void 0 ? 'unknown' : _ref$status,
-    title = _ref.title,
-    _ref$toast = _ref.toast,
-    toast = _ref$toast === void 0 ? false : _ref$toast,
-    icon = _ref.icon,
-    time = _ref.time,
-    rest = _objectWithoutPropertiesLoose(_ref, _excluded);
+  var actionsProp = _ref2.actions,
+    messageProp = _ref2.message,
+    onClose = _ref2.onClose,
+    id = _ref2.id,
+    global = _ref2.global,
+    _ref2$status = _ref2.status,
+    status = _ref2$status === void 0 ? 'unknown' : _ref2$status,
+    title = _ref2.title,
+    _ref2$toast = _ref2.toast,
+    toast = _ref2$toast === void 0 ? false : _ref2$toast,
+    icon = _ref2.icon,
+    time = _ref2.time,
+    rest = _objectWithoutPropertiesLoose(_ref2, _excluded2);
   var autoClose = toast && (toast == null ? void 0 : toast.autoClose) === undefined ? true : toast.autoClose;
   var _useThemeValue = (0, _useThemeValue2.useThemeValue)(),
     theme = _useThemeValue.theme;
@@ -100,9 +109,9 @@ var Notification = exports.Notification = function Notification(_ref) {
     return undefined;
   }, [autoClose, close, theme.notification.toast.time, theme.notification.time, time]);
   var CloseIcon = theme.notification.close.icon;
-  var _ref2 = ((_theme$notification6 = theme.notification) == null ? void 0 : _theme$notification6[status]) || theme.notification.unknown,
-    StatusIcon = _ref2.icon,
-    color = _ref2.color;
+  var _ref3 = ((_theme$notification6 = theme.notification) == null ? void 0 : _theme$notification6[status]) || theme.notification.unknown,
+    StatusIcon = _ref3.icon,
+    color = _ref3.color;
   var closeIconColor = theme.notification.close.color;
   var kind = (0, _react.useMemo)(function () {
     if (toast) return 'toast';
@@ -145,14 +154,16 @@ var Notification = exports.Notification = function Notification(_ref) {
       }
     }, action, theme.notification.actions)), ' ');
   });
-  var Message = direction !== 'row' ? _Paragraph.Paragraph : _Text.Text;
-  if (message || actions) message = typeof message === 'string' ? /*#__PURE__*/_react["default"].createElement(Message, _extends({}, theme.notification.message, {
-    color: messageColor
-  }), /*#__PURE__*/_react["default"].createElement(_Text.Text, {
-    margin: {
-      right: 'xsmall'
-    }
-  }, message), actions) : message;
+  if (message || actions) {
+    message = typeof message === 'string' ? /*#__PURE__*/_react["default"].createElement(Message, _extends({}, theme.notification.message, {
+      color: messageColor,
+      direction: direction
+    }), /*#__PURE__*/_react["default"].createElement(_Text.Text, {
+      margin: {
+        right: 'xsmall'
+      }
+    }, message), actions) : message;
+  }
   var iconDimension = ((_theme$notification10 = theme.notification) == null || (_theme$notification10 = _theme$notification10.message) == null ? void 0 : _theme$notification10.size) || 'medium';
   var content = /*#__PURE__*/_react["default"].createElement(_Box.Box, _extends({}, theme.notification.container, global ? _extends({}, theme.notification.global.container) : {}, toast ? _extends({}, theme.notification.toast.container) : {}, {
     background: background

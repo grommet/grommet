@@ -237,11 +237,27 @@ describe('Notification', () => {
       },
     };
 
+    const themeTest: ThemeType = {
+      notification: {
+        message: {
+          fill: true,
+        },
+        critical: {
+          background: 'red',
+        },
+      },
+    };
+
     const Test = () => (
-      <Grommet theme={theme}>
-        <TestNotification status="critical" />
-        <TestNotification toast title="Toast title" status="critical" />
-      </Grommet>
+      <>
+        <Grommet theme={theme}>
+          <TestNotification status="critical" />
+          <TestNotification toast title="Toast title" status="critical" />
+        </Grommet>
+        <Grommet theme={themeTest}>
+          <TestNotification status="critical" />
+        </Grommet>
+      </>
     );
     const { asFragment } = render(<Test />);
 

@@ -1441,6 +1441,7 @@ export var generate = function generate(baseSpacing, scale) {
       message: {
         // any text props
         margin: 'none'
+        // fill: undefined,
       },
       close: {
         icon: FormClose
