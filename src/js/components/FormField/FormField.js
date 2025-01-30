@@ -476,7 +476,7 @@ const FormField = forwardRef(
           {...themeContentProps}
           {...innerProps}
           {...contentProps}
-          shouldSkipFocus={wantFocusIndicator} // internal prop
+          containerFocus={containerFocus} // internal prop
           {...passThemeFlag}
         >
           {contents}
