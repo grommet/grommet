@@ -264,7 +264,7 @@ const FormField = forwardRef(
     }, [children]);
 
     const containerFocus = useMemo(() => {
-      let focusIndicatorFlag = false;
+      let focusIndicatorFlag = true;
       Children.forEach(children, (child) => {
         if (
           child &&
