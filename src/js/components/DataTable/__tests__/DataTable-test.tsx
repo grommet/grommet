@@ -1327,6 +1327,39 @@ describe('DataTable', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
+  test('should apply theme for removing border on the last table row', () => {
+    const theme = {
+      dataTable: {
+        body: {
+          row: {
+            extend: `&:last-child td {
+              border: none;
+              }
+              &:last-child th {
+              border: none;
+              }`,
+          },
+        },
+      },
+    };
+    const { asFragment } = render(
+      <Grommet theme={theme}>
+        <DataTable
+          border={{ body: 'bottom' }}
+          columns={[
+            { property: 'a', header: 'A' },
+            { property: 'b', header: 'B' },
+          ]}
+          data={[
+            { a: 'one', b: 1 },
+            { a: 'two', b: 2 },
+          ]}
+        />
+      </Grommet>,
+    );
+    expect(asFragment()).toMatchSnapshot();
+  });
+
   test('units', () => {
     const { container } = render(
       <Grommet>

@@ -403,13 +403,16 @@ export interface ThemeType {
       outline?: {
         color?: ColorType;
         size?: string;
+        offset?: string;
       };
       shadow?:
         | string
         | {
             color?: ColorType;
             size?: string;
+            blur?: string;
           };
+      twoColor?: boolean;
     };
     font?: {
       face?: string;
@@ -800,6 +803,9 @@ export interface ThemeType {
   dataTable?: {
     body?: {
       extend?: ExtendType;
+      row?: {
+        extend?: ExtendType;
+      };
       selected?: {
         background?: BackgroundType;
       };
@@ -928,6 +934,12 @@ export interface ThemeType {
         color?: ColorType;
       };
       label?: {
+        color?: ColorType;
+      };
+      help?: {
+        color?: ColorType;
+      };
+      info?: {
         color?: ColorType;
       };
     };
@@ -1237,7 +1249,7 @@ export interface ThemeType {
     iconContainer?: BoxProps;
     textContainer?: BoxProps;
     title?: TextProps;
-    message?: TextProps;
+    message?: TextProps & { fill?: boolean };
     close?: {
       icon?: React.ReactNode | Icon;
       color?: ColorType;
@@ -1662,6 +1674,9 @@ export interface ThemeType {
       up?: React.ReactNode | Icon;
       margin?: MarginType;
     };
+    listbox?: {
+      extend?: ExtendType;
+    };
     options?: {
       container?: PropsOf<typeof Box>;
       text?: PropsOf<typeof Text>;
@@ -1672,6 +1687,9 @@ export interface ThemeType {
   };
   selectMultiple?: {
     maxInline?: number;
+    listbox?: {
+      extend?: ExtendType;
+    };
   };
   skeleton?: BoxProps & { colors?: SkeletonColorsType; extend?: ExtendType };
   skipLinks?: {
@@ -1936,7 +1954,7 @@ export interface ThemeType {
       };
       pad?: PadType;
     };
-    container?: BoxProps;
+    container?: BoxProps & { extend?: ExtendType };
     divider?:
       | {
           color?: ColorType;
