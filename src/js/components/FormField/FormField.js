@@ -75,7 +75,7 @@ const isGrommetInput = (comp) =>
 const getFocusStyle = (props) => {
   if (
     props.focus &&
-    props.shouldSkipFocus &&
+    props.containerFocus === false &&
     props.theme.formField?.focus?.containerFocus === false
   ) {
     return null;
@@ -269,13 +269,14 @@ const FormField = forwardRef(
         if (
           child &&
           child.type &&
-          grommetInputFocusNames.includes(child.type.displayName)
+          grommetInputFocusNames.includes(child.type.displayName) &&
+          theme.formField?.focus?.containerFocus !== true
         ) {
           focusIndicatorFlag = false;
         }
       });
       return focusIndicatorFlag;
-    }, [children]);
+    }, [children, theme.formField?.focus?.containerFocus]);
 
     // This is here for backwards compatibility. In case the child is a grommet
     // input component, set plain and focusIndicator props, if they aren't
@@ -308,17 +309,12 @@ const FormField = forwardRef(
             child.props.plain === undefined &&
             child.props.focusIndicator === undefined
           ) {
-            // Apply the modified focusIndicator
-            if (wantFocusIndicator) {
-              const modifiedFocusIndicator =
-                theme.formField?.focus?.conatinerFocus === false;
-              return cloneElement(child, {
-                focusIndicator: modifiedFocusIndicator,
-              });
-            }
             return cloneElement(child, {
               plain: true,
-              focusIndicator: false,
+              focusIndicator: !(
+                theme.formField?.focus?.containerFocus === true &&
+                containerFocus !== false
+              ),
               pad:
                 'CheckBox'.indexOf(child.type.displayName) !== -1
                   ? formFieldTheme?.checkBox?.pad

@@ -296,11 +296,30 @@ exports[`FormField checkbox pad is defined in formfield 1`] = `
   user-select: none;
   -webkit-user-select: none;
   width: fit-content;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
   cursor: pointer;
 }
 
 .c4:hover input:not([disabled])+div,
 .c4:hover input:not([disabled])+span {
+  border-color: #000000;
+}
+
+.c9 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  user-select: none;
+  -webkit-user-select: none;
+  width: fit-content;
+  cursor: pointer;
+}
+
+.c9:hover input:not([disabled])+div,
+.c9:hover input:not([disabled])+span {
   border-color: #000000;
 }
 
@@ -407,7 +426,7 @@ exports[`FormField checkbox pad is defined in formfield 1`] = `
       </div>
     </div>
     <label
-      class="c4"
+      class="c9"
     >
       <div
         class="c5 c6"
