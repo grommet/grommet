@@ -1336,7 +1336,7 @@ exports[`Anchor renders size specific theming 1`] = `
         <span
           class="c21"
         />
-        Large anchor with icon should receive color on icon
+        small anchor with icon should receive color on icon
       </span>
     </a>
     <a

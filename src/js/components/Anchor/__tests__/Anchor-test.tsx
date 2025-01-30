@@ -286,7 +286,7 @@ describe('Anchor', () => {
         <Anchor label="Default anchor with no size prop should receive medium" />
         <Anchor label="Anchor with icon" icon={<LinkNext />} />
         <Anchor
-          label="Large anchor with icon should receive color on icon"
+          label="small anchor with icon should receive color on icon"
           icon={<LinkNext />}
           size="small"
         />
