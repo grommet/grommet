@@ -82,7 +82,7 @@ exports[`FormField Custom theme TextInput FormField container 1`] = `
 }
 
 .c4 {
-  color: red;
+  color: green;
 }
 
 .c0 {

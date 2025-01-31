@@ -641,7 +641,7 @@ describe('FormField', () => {
             textInput: {
               container: {
                 extend: (props: any) => css`
-                  color: ${props['href'] ? 'green' : 'red'};
+                  color: ${props['disabledProp'] ? 'green' : 'red'};
                 `,
               },
             },
