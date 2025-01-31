@@ -20,38 +20,45 @@ import { FormContext } from '../Form/FormContext';
 import { FormFieldPropTypes } from './propTypes';
 import { useThemeValue } from '../../utils/useThemeValue';
 import { AnnounceContext } from '../../contexts/AnnounceContext';
+var grommetInputFocusNames = ['CheckBox', 'CheckBoxGroup', 'RadioButton', 'RadioButtonGroup', 'RangeInput', 'RangeSelector', 'StarRating', 'ThumbsRating'];
 var grommetInputNames = ['CheckBox', 'CheckBoxGroup', 'TextInput', 'Select', 'MaskedInput', 'SelectMultiple', 'TextArea', 'DateInput', 'FileInput', 'RadioButton', 'RadioButtonGroup', 'RangeInput', 'RangeSelector', 'StarRating', 'ThumbsRating'];
 var grommetInputPadNames = ['CheckBox', 'CheckBoxGroup', 'RadioButton', 'RadioButtonGroup', 'RangeInput', 'RangeSelector'];
 var isGrommetInput = function isGrommetInput(comp) {
   return comp && (grommetInputNames.indexOf(comp.displayName) !== -1 || grommetInputPadNames.indexOf(comp.displayName) !== -1);
 };
+var getFocusStyle = function getFocusStyle(props) {
+  var _props$theme$formFiel;
+  if (props.focus && props.containerFocus === false && ((_props$theme$formFiel = props.theme.formField) == null || (_props$theme$formFiel = _props$theme$formFiel.focus) == null ? void 0 : _props$theme$formFiel.containerFocus) === false) {
+    return null;
+  }
+  return props.focus ? focusStyle({
+    justBorder: true
+  }) : undefined;
+};
 var FormFieldBox = styled(Box).withConfig({
   displayName: "FormField__FormFieldBox",
   componentId: "sc-m9hood-0"
 })(["", " ", ""], function (props) {
-  return props.focus && focusStyle({
-    justBorder: true
-  });
+  return getFocusStyle(props);
 }, function (props) {
-  return props.theme.formField && props.theme.formField.extend;
+  var _props$theme$formFiel2;
+  return (_props$theme$formFiel2 = props.theme.formField) == null ? void 0 : _props$theme$formFiel2.extend;
 });
 var FormFieldContentBox = styled(Box).withConfig({
   displayName: "FormField__FormFieldContentBox",
   componentId: "sc-m9hood-1"
 })(["", " ", ""], function (props) {
-  return props.focus && focusStyle({
-    justBorder: true
-  });
+  return getFocusStyle(props);
 }, function (props) {
-  var _props$theme$formFiel;
-  return props.theme.formField && ((_props$theme$formFiel = props.theme.formField[props == null ? void 0 : props.componentName]) == null || (_props$theme$formFiel = _props$theme$formFiel.container) == null ? void 0 : _props$theme$formFiel.extend);
+  var _props$theme$formFiel3;
+  return props.theme.formField && ((_props$theme$formFiel3 = props.theme.formField[props == null ? void 0 : props.componentName]) == null || (_props$theme$formFiel3 = _props$theme$formFiel3.container) == null ? void 0 : _props$theme$formFiel3.extend);
 });
 var StyledContentsBox = styled(Box).withConfig({
   displayName: "FormField__StyledContentsBox",
   componentId: "sc-m9hood-2"
 })(["", ""], function (props) {
-  var _props$theme$formFiel2;
-  return props.theme.formField && ((_props$theme$formFiel2 = props.theme.formField[props == null ? void 0 : props.componentName]) == null || (_props$theme$formFiel2 = _props$theme$formFiel2.container) == null ? void 0 : _props$theme$formFiel2.extend);
+  var _props$theme$formFiel4;
+  return props.theme.formField && ((_props$theme$formFiel4 = props.theme.formField[props == null ? void 0 : props.componentName]) == null || (_props$theme$formFiel4 = _props$theme$formFiel4.container) == null ? void 0 : _props$theme$formFiel4.extend);
 });
 var StyledMessageContainer = styled(Box).withConfig({
   displayName: "FormField__StyledMessageContainer",
@@ -132,7 +139,7 @@ var Input = function Input(_ref2) {
   }, rest, extraProps));
 };
 var FormField = /*#__PURE__*/forwardRef(function (_ref3, ref) {
-  var _theme$global$input, _formFieldTheme$disab, _formFieldTheme$disab2;
+  var _theme$formField2, _theme$global$input, _formFieldTheme$disab, _formFieldTheme$disab2;
   var children = _ref3.children,
     className = _ref3.className,
     component = _ref3.component,
@@ -199,6 +206,16 @@ var FormField = /*#__PURE__*/forwardRef(function (_ref3, ref) {
     }
     return readOnly;
   }, [children]);
+  var containerFocus = useMemo(function () {
+    var focusIndicatorFlag = true;
+    Children.forEach(children, function (child) {
+      var _theme$formField;
+      if (child && child.type && grommetInputFocusNames.includes(child.type.displayName) && ((_theme$formField = theme.formField) == null || (_theme$formField = _theme$formField.focus) == null ? void 0 : _theme$formField.containerFocus) !== true) {
+        focusIndicatorFlag = false;
+      }
+    });
+    return focusIndicatorFlag;
+  }, [children, (_theme$formField2 = theme.formField) == null || (_theme$formField2 = _theme$formField2.focus) == null ? void 0 : _theme$formField2.containerFocus]);
 
   // This is here for backwards compatibility. In case the child is a grommet
   // input component, set plain and focusIndicator props, if they aren't
@@ -208,11 +225,12 @@ var FormField = /*#__PURE__*/forwardRef(function (_ref3, ref) {
     if (child && child.type && grommetInputPadNames.indexOf(child.type.displayName) !== -1) {
       wantContentPad = true;
     }
-    if (child && child.type && grommetInputNames.indexOf(child.type.displayName) !== -1 && child.props.plain === undefined && child.props.focusIndicator === undefined) {
+    var isInputComponent = child && child.type && grommetInputNames.indexOf(child.type.displayName) !== -1;
+    if (isInputComponent && child.props.plain === undefined && child.props.focusIndicator === undefined) {
       var _formFieldTheme$check;
       return /*#__PURE__*/cloneElement(child, {
         plain: true,
-        focusIndicator: false,
+        focusIndicator: !containerFocus,
         pad: 'CheckBox'.indexOf(child.type.displayName) !== -1 ? formFieldTheme == null || (_formFieldTheme$check = formFieldTheme.checkBox) == null ? void 0 : _formFieldTheme$check.pad : undefined
       });
     }
@@ -327,7 +345,9 @@ var FormField = /*#__PURE__*/forwardRef(function (_ref3, ref) {
       disabledProp: disabled,
       error: error,
       componentName: childName
-    }, themeContentProps, innerProps, contentProps, passThemeFlag), contents);
+    }, themeContentProps, innerProps, contentProps, {
+      containerFocus: containerFocus // internal prop
+    }, passThemeFlag), contents);
     var mergedMargin = margin || formFieldTheme.margin;
     abut = themeBorder.position === 'outer' && (themeBorder.side === 'all' || themeBorder.side === 'horizontal' || !themeBorder.side) && !(mergedMargin && (typeof mergedMargin === 'string' && mergedMargin !== 'none' || mergedMargin.bottom && mergedMargin.bottom !== 'none' || mergedMargin.horizontal && mergedMargin.horizontal !== 'none'));
     if (abut) {
@@ -386,6 +406,8 @@ var FormField = /*#__PURE__*/forwardRef(function (_ref3, ref) {
     margin: abut ? abutMargin : margin || _extends({}, formFieldTheme.margin)
   }, outerProps, {
     style: outerStyle,
+    containerFocus: containerFocus // internal prop
+    ,
     onFocus: function onFocus(event) {
       var _formFieldRef$current;
       var root = (_formFieldRef$current = formFieldRef.current) == null ? void 0 : _formFieldRef$current.getRootNode();

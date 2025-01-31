@@ -1113,14 +1113,15 @@ export var generate = function generate(baseSpacing, scale) {
         //   color: undefined,
         // },
       },
-      // focus: {
-      //   background: {
-      //     color: undefined,
-      //   },
-      //   border: {
-      //     color: undefined,
-      //   },
-      // },
+      focus: {
+        containerFocus: true
+        // background: {
+        //   color: undefined,
+        // },
+        // border: {
+        //   color: undefined,
+        // },
+      },
       error: {
         color: 'status-critical',
         margin: {

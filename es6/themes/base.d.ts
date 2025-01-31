@@ -951,6 +951,7 @@ export interface ThemeType {
       border?: {
         color?: ColorType;
       };
+      containerFocus?: boolean;
     };
     error?: {
       background?: BackgroundType;
