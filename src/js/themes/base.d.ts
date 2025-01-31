@@ -916,7 +916,6 @@ export interface ThemeType {
     round?: RoundType;
   };
   formField?: {
-    // TODO add TS type
     border?: BorderType & {
       error?: {
         color?: ColorType;
@@ -927,6 +926,9 @@ export interface ThemeType {
       pad?: PadType;
     };
     checkBox?: {
+      container?: {
+        extend?: ExtendType;
+      };
       pad?: PadType;
     };
     disabled?: {
@@ -981,6 +983,71 @@ export interface ThemeType {
         margin?: MarginType;
         size?: string;
         color?: ColorType;
+      };
+    };
+    checkBoxGroup?: {
+      container?: {
+        extend?: ExtendType;
+      };
+    };
+    textArea?: {
+      container?: {
+        extend?: ExtendType;
+      };
+    };
+    textInput?: {
+      container?: {
+        extend?: ExtendType;
+      };
+    };
+    select?: {
+      container?: {
+        extend?: ExtendType;
+      };
+    };
+    maskedInput?: {
+      container?: {
+        extend?: ExtendType;
+      };
+    };
+    selectMultiple?: {
+      container?: {
+        extend?: ExtendType;
+      };
+    };
+    dateInput?: {
+      container?: {
+        extend?: ExtendType;
+      };
+    };
+    fileInput?: {
+      container?: {
+        extend?: ExtendType;
+      };
+    };
+    radioButton?: {
+      container?: {
+        extend?: ExtendType;
+      };
+    };
+    radioButtonGroup?: {
+      container?: {
+        extend?: ExtendType;
+      };
+    };
+    rangeSelector?: {
+      container?: {
+        extend?: ExtendType;
+      };
+    };
+    starRating?: {
+      container?: {
+        extend?: ExtendType;
+      };
+    };
+    thumbsRating?: {
+      container?: {
+        extend?: ExtendType;
       };
     };
   };

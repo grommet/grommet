@@ -349,7 +349,8 @@ const FormField = forwardRef(
     Children.forEach(children, (child) => {
       if (child && child.type) {
         childName = child.type.displayName;
-        if (childName?.length > 1)
+        // camelCase component name to match theme object key
+        if (childName?.length > 0)
           childName = childName.charAt(0).toLowerCase() + childName.slice(1);
       }
     });

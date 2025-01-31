@@ -4,7 +4,7 @@ import 'jest-axe/extend-expect';
 import 'jest-styled-components';
 import React from 'react';
 import 'regenerator-runtime/runtime';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 import { Alert, New, StatusInfo } from 'grommet-icons';
 import { FormField } from '..';
@@ -627,6 +627,29 @@ describe('FormField', () => {
         <FormField label="Label">
           <TextInput />
           {false && <Text>foobar</Text>}
+        </FormField>
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('Custom theme TextInput FormField container', () => {
+    const { container } = render(
+      <Grommet
+        theme={{
+          formField: {
+            textInput: {
+              container: {
+                extend: (props: any) => css`
+                  color: ${props['href'] ? 'green' : 'red'};
+                `,
+              },
+            },
+          },
+        }}
+      >
+        <FormField disabled label="Label">
+          <TextInput />
         </FormField>
       </Grommet>,
     );
