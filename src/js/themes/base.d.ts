@@ -282,6 +282,12 @@ type DigitalTexts =
   | 'xxlarge'
   | string;
 
+type ContainerExtend = {
+  container?: {
+    extend?: ExtendType;
+  };
+};
+
 export interface ThemeType {
   global?: {
     active?: {
@@ -925,12 +931,6 @@ export interface ThemeType {
       margin?: MarginType;
       pad?: PadType;
     };
-    checkBox?: {
-      container?: {
-        extend?: ExtendType;
-      };
-      pad?: PadType;
-    };
     disabled?: {
       background?: BackgroundType;
       border?: {
@@ -985,71 +985,20 @@ export interface ThemeType {
         color?: ColorType;
       };
     };
-    checkBoxGroup?: {
-      container?: {
-        extend?: ExtendType;
-      };
-    };
-    textArea?: {
-      container?: {
-        extend?: ExtendType;
-      };
-    };
-    textInput?: {
-      container?: {
-        extend?: ExtendType;
-      };
-    };
-    select?: {
-      container?: {
-        extend?: ExtendType;
-      };
-    };
-    maskedInput?: {
-      container?: {
-        extend?: ExtendType;
-      };
-    };
-    selectMultiple?: {
-      container?: {
-        extend?: ExtendType;
-      };
-    };
-    dateInput?: {
-      container?: {
-        extend?: ExtendType;
-      };
-    };
-    fileInput?: {
-      container?: {
-        extend?: ExtendType;
-      };
-    };
-    radioButton?: {
-      container?: {
-        extend?: ExtendType;
-      };
-    };
-    radioButtonGroup?: {
-      container?: {
-        extend?: ExtendType;
-      };
-    };
-    rangeSelector?: {
-      container?: {
-        extend?: ExtendType;
-      };
-    };
-    starRating?: {
-      container?: {
-        extend?: ExtendType;
-      };
-    };
-    thumbsRating?: {
-      container?: {
-        extend?: ExtendType;
-      };
-    };
+    checkBox?: ContainerExtend & { pad?: PadType };
+    checkBoxGroup?: ContainerExtend;
+    textArea?: ContainerExtend;
+    textInput?: ContainerExtend;
+    select?: ContainerExtend;
+    maskedInput?: ContainerExtend;
+    selectMultiple?: ContainerExtend;
+    dateInput?: ContainerExtend;
+    fileInput?: ContainerExtend;
+    radioButton?: ContainerExtend;
+    radioButtonGroup?: ContainerExtend;
+    rangeSelector?: ContainerExtend;
+    starRating?: ContainerExtend;
+    thumbsRating?: ContainerExtend;
   };
   grommet?: {
     extend?: ExtendType;
