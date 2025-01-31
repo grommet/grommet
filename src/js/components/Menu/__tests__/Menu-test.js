@@ -21,6 +21,10 @@ const customTheme = {
       },
       elevation: 'xlarge',
     },
+    container: {
+      pad: 'xsmall',
+      gap: 'xsmall',
+    },
     icons: {
       color: '#F08080',
     },
@@ -628,6 +632,26 @@ describe('Menu', () => {
             [{ label: 'Item 1' }, { label: 'Item 2' }],
             [{ label: 'Item 3' }],
           ]}
+        />
+      </Grommet>,
+    );
+    fireEvent.keyDown(screen.getByText('Test Menu'), {
+      key: 'Down',
+      keyCode: 40,
+      which: 40,
+    });
+
+    expectPortal('test-menu__drop').toMatchSnapshot();
+  });
+
+  test('should apply theme.menu.container', () => {
+    window.scrollTo = jest.fn();
+    render(
+      <Grommet theme={customTheme}>
+        <Menu
+          id="test-menu"
+          label="Test Menu"
+          items={[{ label: 'Item 1' }, { label: 'Item 2' }]}
         />
       </Grommet>,
     );

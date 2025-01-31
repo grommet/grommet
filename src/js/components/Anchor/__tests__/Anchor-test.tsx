@@ -236,10 +236,23 @@ describe('Anchor', () => {
         textDecoration: 'underline',
         fontWeight: 700,
         size: {
+          small: {
+            color: 'brand',
+            textDecoration: 'none',
+            fontWeight: 500,
+            gap: 'xsmall',
+          },
+          medium: {
+            color: 'brand',
+            textDecoration: 'none',
+            fontWeight: 500,
+            gap: 'small',
+          },
           large: {
             color: 'brand',
             textDecoration: 'none',
             fontWeight: 500,
+            gap: 'large',
           },
           xlarge: {
             color: 'brand',
@@ -272,6 +285,11 @@ describe('Anchor', () => {
         </Paragraph>
         <Anchor label="Default anchor with no size prop should receive medium" />
         <Anchor label="Anchor with icon" icon={<LinkNext />} />
+        <Anchor
+          label="small anchor with icon should receive color on icon"
+          icon={<LinkNext />}
+          size="small"
+        />
         <Anchor
           label="Large anchor with icon should receive color on icon"
           icon={<LinkNext />}
