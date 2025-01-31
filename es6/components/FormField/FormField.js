@@ -38,24 +38,34 @@ var FormFieldBox = styled(Box).withConfig({
 var FormFieldContentBox = styled(Box).withConfig({
   displayName: "FormField__FormFieldContentBox",
   componentId: "sc-m9hood-1"
-})(["", ""], function (props) {
+})(["", " ", ""], function (props) {
   return props.focus && focusStyle({
     justBorder: true
   });
+}, function (props) {
+  var _props$theme$formFiel;
+  return props.theme.formField && ((_props$theme$formFiel = props.theme.formField[props == null ? void 0 : props.componentName]) == null || (_props$theme$formFiel = _props$theme$formFiel.container) == null ? void 0 : _props$theme$formFiel.extend);
+});
+var StyledContentsBox = styled(Box).withConfig({
+  displayName: "FormField__StyledContentsBox",
+  componentId: "sc-m9hood-2"
+})(["", ""], function (props) {
+  var _props$theme$formFiel2;
+  return props.theme.formField && ((_props$theme$formFiel2 = props.theme.formField[props == null ? void 0 : props.componentName]) == null || (_props$theme$formFiel2 = _props$theme$formFiel2.container) == null ? void 0 : _props$theme$formFiel2.extend);
 });
 var StyledMessageContainer = styled(Box).withConfig({
   displayName: "FormField__StyledMessageContainer",
-  componentId: "sc-m9hood-2"
+  componentId: "sc-m9hood-3"
 })(["", ""], function (props) {
   return props.messageType && props.theme.formField[props.messageType].container && props.theme.formField[props.messageType].container.extend;
 });
 var RequiredText = styled(Text).withConfig({
   displayName: "FormField__RequiredText",
-  componentId: "sc-m9hood-3"
+  componentId: "sc-m9hood-4"
 })(["color:inherit;font-weight:inherit;line-height:inherit;"]);
 var ScreenReaderOnly = styled(Text).withConfig({
   displayName: "FormField__ScreenReaderOnly",
-  componentId: "sc-m9hood-4"
+  componentId: "sc-m9hood-5"
 })(["position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0;"]);
 var Message = function Message(_ref) {
   var error = _ref.error,
@@ -245,8 +255,21 @@ var FormField = /*#__PURE__*/forwardRef(function (_ref3, ref) {
   if (component && component.displayName === 'FileInput' && !isFileInputComponent) {
     isFileInputComponent = true;
   }
+  var childName;
+  Children.forEach(children, function (child) {
+    if (child && child.type) {
+      var _childName;
+      childName = child.type.displayName;
+      // camelCase component name to match theme object key
+      if (((_childName = childName) == null ? void 0 : _childName.length) > 0) childName = childName.charAt(0).toLowerCase() + childName.slice(1);
+    }
+  });
   if (!themeBorder) {
-    contents = /*#__PURE__*/React.createElement(Box, _extends({}, themeContentProps, contentProps), contents);
+    contents = /*#__PURE__*/React.createElement(StyledContentsBox, _extends({
+      disabledProp: disabled,
+      error: error,
+      componentName: childName
+    }, themeContentProps, contentProps), contents);
   }
   var borderColor;
   if (disabled && formFieldTheme.disabled.border && formFieldTheme.disabled.border.color) {
@@ -300,7 +323,11 @@ var FormField = /*#__PURE__*/forwardRef(function (_ref3, ref) {
       round: formFieldTheme.round,
       focus: isFileInputComponent ? undefined : focus
     } : {};
-    contents = /*#__PURE__*/React.createElement(FormFieldContentBox, _extends({}, themeContentProps, innerProps, contentProps, passThemeFlag), contents);
+    contents = /*#__PURE__*/React.createElement(FormFieldContentBox, _extends({
+      disabledProp: disabled,
+      error: error,
+      componentName: childName
+    }, themeContentProps, innerProps, contentProps, passThemeFlag), contents);
     var mergedMargin = margin || formFieldTheme.margin;
     abut = themeBorder.position === 'outer' && (themeBorder.side === 'all' || themeBorder.side === 'horizontal' || !themeBorder.side) && !(mergedMargin && (typeof mergedMargin === 'string' && mergedMargin !== 'none' || mergedMargin.bottom && mergedMargin.bottom !== 'none' || mergedMargin.horizontal && mergedMargin.horizontal !== 'none'));
     if (abut) {

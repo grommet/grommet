@@ -863,7 +863,7 @@ exports[`DataSort renders 1`] = `
                 Sort by
               </label>
               <div
-                class="c7 FormField__FormFieldContentBox-sc-m9hood-1"
+                class="c7 "
               >
                 <button
                   aria-expanded="false"
@@ -926,7 +926,7 @@ exports[`DataSort renders 1`] = `
                 Sort direction
               </label>
               <div
-                class="c16 FormField__FormFieldContentBox-sc-m9hood-1"
+                class="c16 "
               >
                 <div
                   class="c17"
@@ -1357,7 +1357,7 @@ exports[`DataSort sort when data array is empty 1`] = `
           Sort by
         </label>
         <div
-          class="c5 FormField__FormFieldContentBox-sc-m9hood-1"
+          class="c5 "
         >
           <button
             aria-expanded="false"
@@ -1420,7 +1420,7 @@ exports[`DataSort sort when data array is empty 1`] = `
           Sort direction
         </label>
         <div
-          class="c14 FormField__FormFieldContentBox-sc-m9hood-1"
+          class="c14 "
         >
           <div
             class="c15"

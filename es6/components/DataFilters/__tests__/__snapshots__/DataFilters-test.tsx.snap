@@ -332,7 +332,7 @@ exports[`DataFilters clear 1`] = `
                 name
               </label>
               <div
-                class="c7 FormField__FormFieldContentBox-sc-m9hood-1"
+                class="c7 "
               >
                 <div
                   class="c8 StyledCheckBoxGroup-sc-2nhc5d-0"
@@ -1714,7 +1714,7 @@ exports[`DataFilters layer 2`] = `
                   name
                 </label>
                 <div
-                  class="c15 FormField__FormFieldContentBox-sc-m9hood-1"
+                  class="c15 "
                 >
                   <div
                     class="c16 StyledCheckBoxGroup-sc-2nhc5d-0"
@@ -2123,7 +2123,7 @@ exports[`DataFilters properties array 1`] = `
                 name
               </label>
               <div
-                class="c7 FormField__FormFieldContentBox-sc-m9hood-1"
+                class="c7 "
               >
                 <div
                   class="c8 StyledCheckBoxGroup-sc-2nhc5d-0"
@@ -2493,7 +2493,7 @@ exports[`DataFilters properties object 1`] = `
                 name
               </label>
               <div
-                class="c7 FormField__FormFieldContentBox-sc-m9hood-1"
+                class="c7 "
               >
                 <div
                   class="c8 StyledCheckBoxGroup-sc-2nhc5d-0"
@@ -2863,7 +2863,7 @@ exports[`DataFilters renders 1`] = `
                 name
               </label>
               <div
-                class="c7 FormField__FormFieldContentBox-sc-m9hood-1"
+                class="c7 "
               >
                 <div
                   class="c8 StyledCheckBoxGroup-sc-2nhc5d-0"
@@ -3316,7 +3316,7 @@ exports[`DataFilters should display all filter options regardless of result set 
                   name
                 </label>
                 <div
-                  class="c7 FormField__FormFieldContentBox-sc-m9hood-1"
+                  class="c7 "
                 >
                   <div
                     class="c8 StyledCheckBoxGroup-sc-2nhc5d-0"
@@ -3375,7 +3375,7 @@ exports[`DataFilters should display all filter options regardless of result set 
                   color
                 </label>
                 <div
-                  class="c7 FormField__FormFieldContentBox-sc-m9hood-1"
+                  class="c7 "
                 >
                   <div
                     class="c8 StyledCheckBoxGroup-sc-2nhc5d-0"
@@ -4208,7 +4208,7 @@ exports[`DataFilters sub objects 1`] = `
                 City
               </label>
               <div
-                class="c7 FormField__FormFieldContentBox-sc-m9hood-1"
+                class="c7 "
               >
                 <div
                   class="c8 StyledCheckBoxGroup-sc-2nhc5d-0"
@@ -4279,7 +4279,7 @@ exports[`DataFilters sub objects 1`] = `
                 Latitude
               </label>
               <div
-                class="c7 FormField__FormFieldContentBox-sc-m9hood-1"
+                class="c7 "
               >
                 <div
                   class="c17"

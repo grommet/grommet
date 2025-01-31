@@ -4166,7 +4166,7 @@ exports[`Data should render property label and return property value to view whe
                   SelectMultiple Name
                 </label>
                 <div
-                  class="c7 FormField__FormFieldContentBox-sc-m9hood-1"
+                  class="c7 "
                 >
                   <div
                     class="c8 "
@@ -4241,7 +4241,7 @@ exports[`Data should render property label and return property value to view whe
                   SelectMultiple Simple Name
                 </label>
                 <div
-                  class="c7 FormField__FormFieldContentBox-sc-m9hood-1"
+                  class="c7 "
                 >
                   <div
                     class="c8 "
@@ -4370,7 +4370,7 @@ exports[`Data should render property label and return property value to view whe
                   CheckBoxGroup Name
                 </label>
                 <div
-                  class="c27 FormField__FormFieldContentBox-sc-m9hood-1"
+                  class="c27 "
                 >
                   <div
                     class="c28 StyledCheckBoxGroup-sc-2nhc5d-0"

@@ -1072,6 +1072,11 @@ export var generate = function generate(baseSpacing, scale) {
       // extend: undefined,
     },
     formField: {
+      // [inputname]: {
+      //  container: {
+      //    extend: undefined,
+      //   }
+      // }
       border: {
         color: 'border',
         error: {
