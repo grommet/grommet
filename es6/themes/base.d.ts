@@ -320,18 +320,21 @@ export interface ThemeType {
         value?: number;
         borderSize?: BreakpointBorderSize;
         edgeSize?: BreakpointEdgeSize;
+        radius?: BreakpointEdgeSize;
         size?: BreakpointSize;
       };
       medium?: {
         value?: number;
         borderSize?: BreakpointBorderSize;
         edgeSize?: BreakpointEdgeSize;
+        radius?: BreakpointEdgeSize;
         size?: BreakpointSize;
       };
       large?: {
         value?: number;
         borderSize?: BreakpointBorderSize;
         edgeSize?: BreakpointEdgeSize;
+        radius?: BreakpointEdgeSize;
         size?: BreakpointSize;
       };
       [x: string]:
@@ -339,6 +342,7 @@ export interface ThemeType {
             value?: number;
             borderSize?: BreakpointBorderSize;
             edgeSize?: BreakpointEdgeSize;
+            radius?: BreakpointEdgeSize;
             size?: BreakpointSize;
           }
         | undefined;
@@ -466,6 +470,7 @@ export interface ThemeType {
       medium?: number;
       weak?: number;
     };
+    radius?: BreakpointEdgeSize;
     selected?: {
       background?: BackgroundType;
       color?: ColorType;

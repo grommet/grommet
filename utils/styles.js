@@ -369,10 +369,13 @@ var ROUND_MAP = {
 };
 var roundStyle = exports.roundStyle = function roundStyle(data, responsive, theme) {
   var breakpoint = (0, _responsive.getBreakpointStyle)(theme, theme.box.responsiveBreakpoint);
+  // fallback to edgeSize for backwards compatibility
+  var radius = theme.global.radius ? 'radius' : 'edgeSize';
   var styles = [];
   if (typeof data === 'object') {
-    var size = ROUND_MAP[data.size] || theme.global.edgeSize[data.size || 'medium'] || data.size;
-    var responsiveSize = responsive && breakpoint && breakpoint.edgeSize[data.size] && (breakpoint.edgeSize[data.size] || data.size);
+    var _breakpoint$radius;
+    var size = ROUND_MAP[data.size] || theme.global[radius][data.size || 'medium'] || data.size;
+    var responsiveSize = responsive && breakpoint && ((_breakpoint$radius = breakpoint[radius]) == null ? void 0 : _breakpoint$radius[data.size]) && (breakpoint[radius][data.size] || data.size);
     if (data.corner === 'top') {
       styles.push((0, _styledComponents.css)(["border-top-left-radius:", ";border-top-right-radius:", ";"], size, size));
       if (responsiveSize) {
@@ -405,9 +408,10 @@ var roundStyle = exports.roundStyle = function roundStyle(data, responsive, them
       }
     }
   } else {
+    var _theme$global$radius, _breakpoint$radius2;
     var _size2 = data === true ? 'medium' : data;
-    styles.push((0, _styledComponents.css)(["border-radius:", ";"], ROUND_MAP[_size2] || theme.global.edgeSize[_size2] || _size2));
-    var _responsiveSize = responsive && breakpoint && breakpoint.edgeSize[_size2];
+    styles.push((0, _styledComponents.css)(["border-radius:", ";"], ROUND_MAP[_size2] || ((_theme$global$radius = theme.global[radius]) == null ? void 0 : _theme$global$radius[_size2]) || _size2));
+    var _responsiveSize = responsive && breakpoint && ((_breakpoint$radius2 = breakpoint[radius]) == null ? void 0 : _breakpoint$radius2[_size2]);
     if (_responsiveSize) {
       styles.push((0, _mixins.breakpointStyle)(breakpoint, "\n        border-radius: " + _responsiveSize + ";\n      "));
     }

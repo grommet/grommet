@@ -186,6 +186,7 @@ export var generate = function generate(baseSpacing, scale) {
             // 24
             xlarge: baseSpacing * 2 + "px" // 48
           },
+          // radius: {},
           size: {
             xxsmall: baseSpacing + "px",
             // 24
@@ -330,6 +331,7 @@ export var generate = function generate(baseSpacing, scale) {
         medium: 0.4,
         weak: 0.1
       },
+      // radius: {},
       selected: {
         background: 'selected',
         color: 'white'

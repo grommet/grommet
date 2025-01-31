@@ -25,6 +25,7 @@ export var getBreakpointStyle = function getBreakpointStyle(theme, breakpointSiz
   var breakpoint = breakpointSize && theme.global.breakpoints[breakpointSize] || {};
   if (!breakpoint.edgeSize) breakpoint.edgeSize = theme.global.edgeSize;
   if (!breakpoint.borderSize) breakpoint.borderSize = theme.global.borderSize;
+  if (!breakpoint.radius) breakpoint.radius = theme.global.radius;
   if (!breakpoint.size) breakpoint.size = theme.global.size;
   return breakpoint;
 };

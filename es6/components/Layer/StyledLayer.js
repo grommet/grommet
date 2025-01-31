@@ -374,7 +374,8 @@ var POSITIONS = {
 var roundStyle = function roundStyle(data, theme, position, margin) {
   var styles = [];
   var size = data === true ? 'medium' : data;
-  var round = theme.global.edgeSize[size] || size;
+  // fallback to edgeSize for backwards compatibility
+  var round = theme.global[theme.global.radius ? 'radius' : 'edgeSize'][size] || size;
   // if user provides CSS string such as '50px 12px', apply that always
   var customCSS = round.split(' ').length > 1;
   if (margin === 'none' && !customCSS && theme.layer.border.intelligentRounding === true) {

@@ -1,7 +1,9 @@
 import styled, { css } from 'styled-components';
 import { genericStyles, styledComponentsConfig } from '../../utils';
+
+// fallback to edgeSize for backwards compatibility
 var roundStyle = css(["border-radius:", ";"], function (props) {
-  return props.theme.global.edgeSize[props.round.size];
+  return props.theme.global[props.theme.global.radius ? 'radius' : 'edgeSize'][props.round.size];
 });
 
 // overflow: hidden is needed for ie11

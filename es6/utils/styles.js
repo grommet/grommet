@@ -365,10 +365,13 @@ var ROUND_MAP = {
 };
 export var roundStyle = function roundStyle(data, responsive, theme) {
   var breakpoint = getBreakpointStyle(theme, theme.box.responsiveBreakpoint);
+  // fallback to edgeSize for backwards compatibility
+  var radius = theme.global.radius ? 'radius' : 'edgeSize';
   var styles = [];
   if (typeof data === 'object') {
-    var size = ROUND_MAP[data.size] || theme.global.edgeSize[data.size || 'medium'] || data.size;
-    var responsiveSize = responsive && breakpoint && breakpoint.edgeSize[data.size] && (breakpoint.edgeSize[data.size] || data.size);
+    var _breakpoint$radius;
+    var size = ROUND_MAP[data.size] || theme.global[radius][data.size || 'medium'] || data.size;
+    var responsiveSize = responsive && breakpoint && ((_breakpoint$radius = breakpoint[radius]) == null ? void 0 : _breakpoint$radius[data.size]) && (breakpoint[radius][data.size] || data.size);
     if (data.corner === 'top') {
       styles.push(css(["border-top-left-radius:", ";border-top-right-radius:", ";"], size, size));
       if (responsiveSize) {
@@ -401,9 +404,10 @@ export var roundStyle = function roundStyle(data, responsive, theme) {
       }
     }
   } else {
+    var _theme$global$radius, _breakpoint$radius2;
     var _size2 = data === true ? 'medium' : data;
-    styles.push(css(["border-radius:", ";"], ROUND_MAP[_size2] || theme.global.edgeSize[_size2] || _size2));
-    var _responsiveSize = responsive && breakpoint && breakpoint.edgeSize[_size2];
+    styles.push(css(["border-radius:", ";"], ROUND_MAP[_size2] || ((_theme$global$radius = theme.global[radius]) == null ? void 0 : _theme$global$radius[_size2]) || _size2));
+    var _responsiveSize = responsive && breakpoint && ((_breakpoint$radius2 = breakpoint[radius]) == null ? void 0 : _breakpoint$radius2[_size2]);
     if (_responsiveSize) {
       styles.push(breakpointStyle(breakpoint, "\n        border-radius: " + _responsiveSize + ";\n      "));
     }
