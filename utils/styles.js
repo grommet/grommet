@@ -152,6 +152,7 @@ var unfocusStyles = function unfocusStyles(props, _temp2) {
     forceOutline = _ref2.forceOutline,
     justBorder = _ref2.justBorder;
   var focus = props.theme.global.focus;
+  var compoundFocusStyle = '';
   if (!focus || forceOutline && !focus.outline) {
     var color = (0, _colors.normalizeColor)('focus', props.theme);
     if (color) return "outline: none;";
@@ -159,19 +160,32 @@ var unfocusStyles = function unfocusStyles(props, _temp2) {
   }
   if (focus.outline && (!focus.border || !justBorder)) {
     if (typeof focus.outline === 'object') {
-      return "\n        outline-offset: 0px;\n        outline: none;\n      ";
+      var outlineStyle = "\n        outline-offset: 0px;\n        outline: none;\n      ";
+      compoundFocusStyle += outlineStyle;
+      if (!focus.twoColor) return "\n        outline-offset: 0px;\n        outline: none;\n      ";
+    } else {
+      var _outlineStyle2 = "outline: none;";
+      compoundFocusStyle += _outlineStyle2;
+      if (!focus.twoColor) return _outlineStyle2;
     }
-    return "outline: none;";
   }
   if (focus.shadow && (!focus.border || !justBorder)) {
     if (typeof focus.shadow === 'object') {
-      return "\n        outline: none;\n        box-shadow: none;\n      ";
+      var shadowStyle = "\n        outline: none;\n        box-shadow: none;\n      ";
+      compoundFocusStyle += shadowStyle;
+      if (!focus.twoColor) return shadowStyle;
+    } else {
+      var _shadowStyle2 = "\n        outline: none;\n        box-shadow: none;\n      ";
+      compoundFocusStyle += _shadowStyle2;
+      if (!focus.twoColor) return _shadowStyle2;
     }
-    return "\n      outline: none;\n      box-shadow: none;\n    ";
   }
   if (focus.border) {
-    return "\n      outline: none;\n      border-color: none;\n    ";
+    var borderStyle = "\n      outline: none;\n      border-color: none;\n    ";
+    compoundFocusStyle += borderStyle;
+    if (!focus.twoColor) return borderStyle;
   }
+  if (focus.twoColor && compoundFocusStyle.length) return compoundFocusStyle;
   return ''; // defensive
 };
 
