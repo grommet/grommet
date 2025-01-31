@@ -810,7 +810,7 @@ export const roundStyle = (data, responsive, theme) => {
   } else {
     const size = data === true ? 'medium' : data;
     styles.push(css`
-      border-radius: ${ROUND_MAP[size] || theme.global[radius][size] || size};
+      border-radius: ${ROUND_MAP[size] || theme.global[radius]?.[size] || size};
     `);
     const responsiveSize =
       responsive && breakpoint && breakpoint[radius]?.[size];
