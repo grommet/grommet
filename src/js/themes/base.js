@@ -1006,6 +1006,11 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       // extend: undefined,
     },
     formField: {
+      // [inputname]: {
+      //  container: {
+      //    extend: undefined,
+      //   }
+      // }
       border: {
         color: 'border',
         error: {

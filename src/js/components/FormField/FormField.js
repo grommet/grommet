@@ -68,6 +68,15 @@ const FormFieldBox = styled(Box)`
 
 const FormFieldContentBox = styled(Box)`
   ${(props) => props.focus && focusStyle({ justBorder: true })}
+  ${(props) =>
+    props.theme.formField &&
+    props.theme.formField[props?.componentName]?.container?.extend}
+`;
+
+const StyledContentsBox = styled(Box)`
+  ${(props) =>
+    props.theme.formField &&
+    props.theme.formField[props?.componentName]?.container?.extend}
 `;
 
 const StyledMessageContainer = styled(Box)`
@@ -336,11 +345,27 @@ const FormField = forwardRef(
       isFileInputComponent = true;
     }
 
+    let childName;
+    Children.forEach(children, (child) => {
+      if (child && child.type) {
+        childName = child.type.displayName;
+        // camelCase component name to match theme object key
+        if (childName?.length > 0)
+          childName = childName.charAt(0).toLowerCase() + childName.slice(1);
+      }
+    });
+
     if (!themeBorder) {
       contents = (
-        <Box {...themeContentProps} {...contentProps}>
+        <StyledContentsBox
+          disabledProp={disabled}
+          error={error}
+          componentName={childName}
+          {...themeContentProps}
+          {...contentProps}
+        >
           {contents}
-        </Box>
+        </StyledContentsBox>
       );
     }
 
@@ -435,6 +460,9 @@ const FormField = forwardRef(
           : {};
       contents = (
         <FormFieldContentBox
+          disabledProp={disabled}
+          error={error}
+          componentName={childName}
           {...themeContentProps}
           {...innerProps}
           {...contentProps}
