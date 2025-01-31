@@ -398,6 +398,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       //     color: undefined,
       //     fontWeight: undefined,
       //     textDecoration: undefined,
+      //     gap: undefined,
       //   },
       // },
       // extend: undefined,
@@ -1237,6 +1238,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         },
         // any drop props
       },
+      // container: {
+      //   // any box props
+      // },
       group: {
         container: {
           pad: {
@@ -1349,6 +1353,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       message: {
         // any text props
         margin: 'none',
+        // fill: undefined,
       },
       close: {
         icon: FormClose,
@@ -1864,6 +1869,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         down: FormDown,
         // up: undefined
       },
+      // listbox: {
+      //   extend: undefined,
+      // },
       options: {
         container: {
           align: 'start',
@@ -1878,6 +1886,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
     },
     selectMultiple: {
       maxInline: 5,
+      // listbox: {
+      //   extend: () => undefined,
+      // },
     },
     skeleton: {
       border: false,

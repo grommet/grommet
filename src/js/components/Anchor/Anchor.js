@@ -112,7 +112,9 @@ const Anchor = forwardRef(
             as="span"
             direction="row"
             align="center"
-            gap={gap || theme.anchor.gap}
+            gap={
+              gap || theme.anchor?.size?.[sizeProp]?.gap || theme.anchor?.gap
+            }
             responsive={false}
           >
             {first}
