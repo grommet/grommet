@@ -188,6 +188,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
             large: `${baseSpacing}px`, // 24
             xlarge: `${baseSpacing * 2}px`, // 48
           },
+          // radius: {},
           size: {
             xxsmall: `${baseSpacing}px`, // 24
             xsmall: `${baseSpacing * 2}px`, // 48
@@ -328,6 +329,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         medium: 0.4,
         weak: 0.1,
       },
+      // radius: {},
       selected: {
         background: 'selected',
         color: 'white',

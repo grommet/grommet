@@ -618,7 +618,9 @@ const POSITIONS = {
 const roundStyle = (data, theme, position, margin) => {
   const styles = [];
   const size = data === true ? 'medium' : data;
-  const round = theme.global.edgeSize[size] || size;
+  // fallback to edgeSize for backwards compatibility
+  const round =
+    theme.global[theme.global.radius ? 'radius' : 'edgeSize'][size] || size;
   // if user provides CSS string such as '50px 12px', apply that always
   const customCSS = round.split(' ').length > 1;
 
