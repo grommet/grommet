@@ -1392,7 +1392,7 @@ exports[`StarRating value for rating 1`] = `
         test-starRating
       </label>
       <div
-        class="c3 FormField__FormFieldContentBox-sc-m9hood-1"
+        class="c3 "
       >
         <div
           class="c4"

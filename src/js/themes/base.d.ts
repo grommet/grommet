@@ -282,6 +282,12 @@ type DigitalTexts =
   | 'xxlarge'
   | string;
 
+type ContainerExtend = {
+  container?: {
+    extend?: ExtendType;
+  };
+};
+
 export interface ThemeType {
   global?: {
     active?: {
@@ -930,9 +936,6 @@ export interface ThemeType {
       margin?: MarginType;
       pad?: PadType;
     };
-    checkBox?: {
-      pad?: PadType;
-    };
     disabled?: {
       background?: BackgroundType;
       border?: {
@@ -953,6 +956,7 @@ export interface ThemeType {
       border?: {
         color?: ColorType;
       };
+      containerFocus?: boolean;
     };
     error?: {
       background?: BackgroundType;
@@ -987,6 +991,20 @@ export interface ThemeType {
         color?: ColorType;
       };
     };
+    checkBox?: ContainerExtend & { pad?: PadType };
+    checkBoxGroup?: ContainerExtend;
+    textArea?: ContainerExtend;
+    textInput?: ContainerExtend;
+    select?: ContainerExtend;
+    maskedInput?: ContainerExtend;
+    selectMultiple?: ContainerExtend;
+    dateInput?: ContainerExtend;
+    fileInput?: ContainerExtend;
+    radioButton?: ContainerExtend;
+    radioButtonGroup?: ContainerExtend;
+    rangeSelector?: ContainerExtend;
+    starRating?: ContainerExtend;
+    thumbsRating?: ContainerExtend;
   };
   grommet?: {
     extend?: ExtendType;

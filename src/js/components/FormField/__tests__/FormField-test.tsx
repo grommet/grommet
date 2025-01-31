@@ -4,11 +4,13 @@ import 'jest-axe/extend-expect';
 import 'jest-styled-components';
 import React from 'react';
 import 'regenerator-runtime/runtime';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 import { Alert, New, StatusInfo } from 'grommet-icons';
 import { FormField } from '..';
 import { CheckBox } from '../../CheckBox';
+import { RadioButtonGroup } from '../../RadioButtonGroup';
+import { RangeInput } from '../../RangeInput';
 import { Form } from '../../Form';
 import { Grommet } from '../../Grommet';
 import { TextInput } from '../../TextInput';
@@ -156,6 +158,41 @@ describe('FormField', () => {
     );
 
     expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('does not apply focusIndicator when formField.focusIndicator is false', () => {
+    const { container } = render(
+      <Grommet
+        theme={{
+          formField: {
+            focus: {
+              containerFocus: true,
+            },
+          },
+        }}
+      >
+        <FormField htmlFor="checkbox-id">
+          <CheckBox label="CheckBox" />
+        </FormField>
+        <FormField htmlFor="radio-id">
+          <RadioButtonGroup
+            name="radio-group"
+            options={['Option 1', 'Option 2']}
+          />
+        </FormField>
+        <FormField htmlFor="range-id">
+          <RangeInput name="range" min={0} max={100} />
+        </FormField>
+      </Grommet>,
+    );
+
+    // Simulate focus
+    fireEvent.focus(screen.getByRole('checkbox'));
+    fireEvent.focus(screen.getByLabelText('Option 1'));
+    fireEvent.focus(screen.getByLabelText('Option 2'));
+    fireEvent.focus(screen.getByRole('slider'));
+
+    expect(container).toMatchSnapshot();
   });
 
   test('abut with margin', () => {
@@ -627,6 +664,29 @@ describe('FormField', () => {
         <FormField label="Label">
           <TextInput />
           {false && <Text>foobar</Text>}
+        </FormField>
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('Custom theme TextInput FormField container', () => {
+    const { container } = render(
+      <Grommet
+        theme={{
+          formField: {
+            textInput: {
+              container: {
+                extend: (props: any) => css`
+                  color: ${props['disabledProp'] ? 'green' : 'red'};
+                `,
+              },
+            },
+          },
+        }}
+      >
+        <FormField disabled label="Label">
+          <TextInput />
         </FormField>
       </Grommet>,
     );

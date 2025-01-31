@@ -647,7 +647,7 @@ exports[`DataSearch renders 1`] = `
                 Search
               </label>
               <div
-                class="c7 FormField__FormFieldContentBox-sc-m9hood-1"
+                class="c7 "
               >
                 <div
                   class="c8"

@@ -728,7 +728,7 @@ exports[`DataFilter children 1`] = `
                 name
               </label>
               <div
-                class="c7 FormField__FormFieldContentBox-sc-m9hood-1"
+                class="c7 "
               >
                 <div
                   class="c8"
@@ -1061,7 +1061,7 @@ exports[`DataFilter options 1`] = `
                 name
               </label>
               <div
-                class="c7 FormField__FormFieldContentBox-sc-m9hood-1"
+                class="c7 "
               >
                 <div
                   class="c8 StyledCheckBoxGroup-sc-2nhc5d-0"
@@ -1141,7 +1141,7 @@ exports[`DataFilter options 1`] = `
                 Enabled
               </label>
               <div
-                class="c7 FormField__FormFieldContentBox-sc-m9hood-1"
+                class="c7 "
               >
                 <div
                   class="c8 StyledCheckBoxGroup-sc-2nhc5d-0"
@@ -1200,7 +1200,7 @@ exports[`DataFilter options 1`] = `
                 Type
               </label>
               <div
-                class="c7 FormField__FormFieldContentBox-sc-m9hood-1"
+                class="c7 "
               >
                 <div
                   class="c8 StyledCheckBoxGroup-sc-2nhc5d-0"
@@ -1598,7 +1598,7 @@ exports[`DataFilter range Data 1`] = `
                 Rating
               </label>
               <div
-                class="c7 FormField__FormFieldContentBox-sc-m9hood-1"
+                class="c7 "
               >
                 <div
                   class="c8"
@@ -2023,7 +2023,7 @@ exports[`DataFilter range prop 1`] = `
                 rating
               </label>
               <div
-                class="c7 FormField__FormFieldContentBox-sc-m9hood-1"
+                class="c7 "
               >
                 <div
                   class="c8"
@@ -2541,7 +2541,7 @@ exports[`DataFilter renders 1`] = `
                 name
               </label>
               <div
-                class="c7 FormField__FormFieldContentBox-sc-m9hood-1"
+                class="c7 "
               >
                 <div
                   class="c8 StyledCheckBoxGroup-sc-2nhc5d-0"
@@ -2621,7 +2621,7 @@ exports[`DataFilter renders 1`] = `
                 enabled
               </label>
               <div
-                class="c7 FormField__FormFieldContentBox-sc-m9hood-1"
+                class="c7 "
               >
                 <div
                   class="c8 StyledCheckBoxGroup-sc-2nhc5d-0"
@@ -2680,7 +2680,7 @@ exports[`DataFilter renders 1`] = `
                 rating
               </label>
               <div
-                class="c7 FormField__FormFieldContentBox-sc-m9hood-1"
+                class="c7 "
               >
                 <div
                   class="c15"

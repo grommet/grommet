@@ -1008,6 +1008,11 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       // extend: undefined,
     },
     formField: {
+      // [inputname]: {
+      //  container: {
+      //    extend: undefined,
+      //   }
+      // }
       border: {
         color: 'border',
         error: {
@@ -1044,14 +1049,15 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         //   color: undefined,
         // },
       },
-      // focus: {
-      //   background: {
-      //     color: undefined,
-      //   },
-      //   border: {
-      //     color: undefined,
-      //   },
-      // },
+      focus: {
+        containerFocus: true,
+        // background: {
+        //   color: undefined,
+        // },
+        // border: {
+        //   color: undefined,
+        // },
+      },
       error: {
         color: 'status-critical',
         margin: { vertical: 'xsmall', horizontal: 'small' },
