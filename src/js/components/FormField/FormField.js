@@ -30,6 +30,17 @@ import { FormFieldPropTypes } from './propTypes';
 import { useThemeValue } from '../../utils/useThemeValue';
 import { AnnounceContext } from '../../contexts/AnnounceContext';
 
+const grommetInputFocusNames = [
+  'CheckBox',
+  'CheckBoxGroup',
+  'RadioButton',
+  'RadioButtonGroup',
+  'RangeInput',
+  'RangeSelector',
+  'StarRating',
+  'ThumbsRating',
+];
+
 const grommetInputNames = [
   'CheckBox',
   'CheckBoxGroup',
@@ -61,13 +72,24 @@ const isGrommetInput = (comp) =>
   (grommetInputNames.indexOf(comp.displayName) !== -1 ||
     grommetInputPadNames.indexOf(comp.displayName) !== -1);
 
+const getFocusStyle = (props) => {
+  if (
+    props.focus &&
+    props.containerFocus === false &&
+    props.theme.formField?.focus?.containerFocus === false
+  ) {
+    return null;
+  }
+  return props.focus ? focusStyle({ justBorder: true }) : undefined;
+};
+
 const FormFieldBox = styled(Box)`
-  ${(props) => props.focus && focusStyle({ justBorder: true })}
-  ${(props) => props.theme.formField && props.theme.formField.extend}
+  ${(props) => getFocusStyle(props)}
+  ${(props) => props.theme.formField?.extend}
 `;
 
 const FormFieldContentBox = styled(Box)`
-  ${(props) => props.focus && focusStyle({ justBorder: true })}
+  ${(props) => getFocusStyle(props)}
   ${(props) =>
     props.theme.formField &&
     props.theme.formField[props?.componentName]?.container?.extend}
@@ -250,6 +272,21 @@ const FormField = forwardRef(
       return readOnly;
     }, [children]);
 
+    const containerFocus = useMemo(() => {
+      let focusIndicatorFlag = true;
+      Children.forEach(children, (child) => {
+        if (
+          child &&
+          child.type &&
+          grommetInputFocusNames.includes(child.type.displayName) &&
+          theme.formField?.focus?.containerFocus !== true
+        ) {
+          focusIndicatorFlag = false;
+        }
+      });
+      return focusIndicatorFlag;
+    }, [children, theme.formField?.focus?.containerFocus]);
+
     // This is here for backwards compatibility. In case the child is a grommet
     // input component, set plain and focusIndicator props, if they aren't
     // already set.
@@ -270,16 +307,20 @@ const FormField = forwardRef(
           ) {
             wantContentPad = true;
           }
-          if (
+
+          const isInputComponent =
             child &&
             child.type &&
-            grommetInputNames.indexOf(child.type.displayName) !== -1 &&
+            grommetInputNames.indexOf(child.type.displayName) !== -1;
+
+          if (
+            isInputComponent &&
             child.props.plain === undefined &&
             child.props.focusIndicator === undefined
           ) {
             return cloneElement(child, {
               plain: true,
-              focusIndicator: false,
+              focusIndicator: !containerFocus,
               pad:
                 'CheckBox'.indexOf(child.type.displayName) !== -1
                   ? formFieldTheme?.checkBox?.pad
@@ -466,6 +507,7 @@ const FormField = forwardRef(
           {...themeContentProps}
           {...innerProps}
           {...contentProps}
+          containerFocus={containerFocus} // internal prop
           {...passThemeFlag}
         >
           {contents}
@@ -563,6 +605,7 @@ const FormField = forwardRef(
         margin={abut ? abutMargin : margin || { ...formFieldTheme.margin }}
         {...outerProps}
         style={outerStyle}
+        containerFocus={containerFocus} // internal prop
         onFocus={(event) => {
           const root = formFieldRef.current?.getRootNode();
           if (root) {

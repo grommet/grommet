@@ -1047,14 +1047,15 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         //   color: undefined,
         // },
       },
-      // focus: {
-      //   background: {
-      //     color: undefined,
-      //   },
-      //   border: {
-      //     color: undefined,
-      //   },
-      // },
+      focus: {
+        containerFocus: true,
+        // background: {
+        //   color: undefined,
+        // },
+        // border: {
+        //   color: undefined,
+        // },
+      },
       error: {
         color: 'status-critical',
         margin: { vertical: 'xsmall', horizontal: 'small' },
