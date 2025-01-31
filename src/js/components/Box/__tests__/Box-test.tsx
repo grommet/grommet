@@ -96,4 +96,28 @@ describe('Box', () => {
     expect(getByLabelText('test-2')).toBeTruthy();
     expect(container).toMatchSnapshot();
   });
+
+  test('custom theme radius', () => {
+    const customTheme = {
+      global: {
+        radius: {
+          small: '4px',
+          medium: '7px',
+        },
+      },
+    };
+    const { getByText, asFragment } = render(
+      <Grommet theme={customTheme}>
+        <Box round="small">Small rounding</Box>
+        <Box round="medium">Medium rounding</Box>
+      </Grommet>,
+    );
+    expect(asFragment()).toMatchSnapshot();
+    const small = getByText('Small rounding');
+    const medium = getByText('Medium rounding');
+    let style = window.getComputedStyle(small);
+    expect(style.borderRadius).toBe('4px');
+    style = window.getComputedStyle(medium);
+    expect(style.borderRadius).toBe('7px');
+  });
 });

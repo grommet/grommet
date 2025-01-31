@@ -700,17 +700,20 @@ const ROUND_MAP = {
 
 export const roundStyle = (data, responsive, theme) => {
   const breakpoint = getBreakpointStyle(theme, theme.box.responsiveBreakpoint);
+  // fallback to edgeSize for backwards compatibility
+  const radius = theme.global.radius ? 'radius' : 'edgeSize';
+
   const styles = [];
   if (typeof data === 'object') {
     const size =
       ROUND_MAP[data.size] ||
-      theme.global.edgeSize[data.size || 'medium'] ||
+      theme.global[radius][data.size || 'medium'] ||
       data.size;
     const responsiveSize =
       responsive &&
       breakpoint &&
-      breakpoint.edgeSize[data.size] &&
-      (breakpoint.edgeSize[data.size] || data.size);
+      breakpoint[radius]?.[data.size] &&
+      (breakpoint[radius][data.size] || data.size);
     if (data.corner === 'top') {
       styles.push(css`
         border-top-left-radius: ${size};
@@ -807,10 +810,10 @@ export const roundStyle = (data, responsive, theme) => {
   } else {
     const size = data === true ? 'medium' : data;
     styles.push(css`
-      border-radius: ${ROUND_MAP[size] || theme.global.edgeSize[size] || size};
+      border-radius: ${ROUND_MAP[size] || theme.global[radius][size] || size};
     `);
     const responsiveSize =
-      responsive && breakpoint && breakpoint.edgeSize[size];
+      responsive && breakpoint && breakpoint[radius]?.[size];
     if (responsiveSize) {
       styles.push(
         breakpointStyle(
