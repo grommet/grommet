@@ -1230,6 +1230,7 @@ export interface ThemeType {
         };
     drop?: DropType;
     extend?: ExtendType;
+    container?: BoxProps;
     group?: {
       container?: BoxProps;
       separator?: {

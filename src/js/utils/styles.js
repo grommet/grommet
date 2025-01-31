@@ -292,6 +292,7 @@ const unfocusStyles = (props, { forceOutline, justBorder } = {}) => {
       global: { focus },
     },
   } = props;
+  let compoundFocusStyle = '';
   if (!focus || (forceOutline && !focus.outline)) {
     const color = normalizeColor('focus', props.theme);
     if (color) return `outline: none;`;
@@ -299,31 +300,48 @@ const unfocusStyles = (props, { forceOutline, justBorder } = {}) => {
   }
   if (focus.outline && (!focus.border || !justBorder)) {
     if (typeof focus.outline === 'object') {
-      return `
+      const outlineStyle = `
         outline-offset: 0px;
         outline: none;
       `;
+      compoundFocusStyle += outlineStyle;
+      if (!focus.twoColor)
+        return `
+        outline-offset: 0px;
+        outline: none;
+      `;
+    } else {
+      const outlineStyle = `outline: none;`;
+      compoundFocusStyle += outlineStyle;
+      if (!focus.twoColor) return outlineStyle;
     }
-    return `outline: none;`;
   }
   if (focus.shadow && (!focus.border || !justBorder)) {
     if (typeof focus.shadow === 'object') {
-      return `
+      const shadowStyle = `
         outline: none;
         box-shadow: none;
       `;
+      compoundFocusStyle += shadowStyle;
+      if (!focus.twoColor) return shadowStyle;
+    } else {
+      const shadowStyle = `
+        outline: none;
+        box-shadow: none;
+      `;
+      compoundFocusStyle += shadowStyle;
+      if (!focus.twoColor) return shadowStyle;
     }
-    return `
-      outline: none;
-      box-shadow: none;
-    `;
   }
   if (focus.border) {
-    return `
+    const borderStyle = `
       outline: none;
       border-color: none;
     `;
+    compoundFocusStyle += borderStyle;
+    if (!focus.twoColor) return borderStyle;
   }
+  if (focus.twoColor && compoundFocusStyle.length) return compoundFocusStyle;
   return ''; // defensive
 };
 

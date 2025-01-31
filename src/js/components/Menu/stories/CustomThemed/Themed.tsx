@@ -61,6 +61,10 @@ const customBreakpoints: ThemeType = {
   },
   menu: {
     background: 'light-3',
+    container: {
+      pad: 'xsmall',
+      gap: 'xsmall',
+    },
     icons: {
       down: FormDown,
       up: FormUp,
