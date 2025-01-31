@@ -311,10 +311,7 @@ const FormField = forwardRef(
           ) {
             return cloneElement(child, {
               plain: true,
-              focusIndicator: !(
-                theme.formField?.focus?.containerFocus === true &&
-                containerFocus !== false
-              ),
+              focusIndicator: !containerFocus,
               pad:
                 'CheckBox'.indexOf(child.type.displayName) !== -1
                   ? formFieldTheme?.checkBox?.pad
