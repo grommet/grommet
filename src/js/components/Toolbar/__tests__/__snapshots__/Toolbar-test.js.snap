@@ -473,7 +473,7 @@ exports[`DataFilters renders 1`] = `
                   name
                 </label>
                 <div
-                  class="c13 FormField__FormFieldContentBox-sc-m9hood-1"
+                  class="c13 "
                 >
                   <div
                     class="c3 StyledCheckBoxGroup-sc-2nhc5d-0"
@@ -995,7 +995,7 @@ exports[`DataFilters renders outside grommet wrapper 1`] = `
                 name
               </label>
               <div
-                class="c12 FormField__FormFieldContentBox-sc-m9hood-1"
+                class="c12 "
               >
                 <div
                   class="c2 StyledCheckBoxGroup-sc-2nhc5d-0"

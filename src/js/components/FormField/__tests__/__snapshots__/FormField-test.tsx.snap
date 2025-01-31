@@ -1,5 +1,139 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`FormField Custom theme TextInput FormField container 1`] = `
+.c1 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin-bottom: 12px;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+}
+
+.c3 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  background-color: rgba(204, 204, 204, 0.4);
+  color: #444444;
+  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+}
+
+.c2 {
+  margin-left: 12px;
+  margin-right: 12px;
+  margin-top: 6px;
+  margin-bottom: 6px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c6 {
+  box-sizing: border-box;
+  font-size: inherit;
+  font-family: inherit;
+  border: none;
+  -webkit-appearance: none;
+  background: transparent;
+  color: inherit;
+  width: 100%;
+  padding: 11px;
+  font-weight: 600;
+  margin: 0;
+  border: 1px solid rgba(0, 0, 0, 0.33);
+  border-radius: 4px;
+  outline: none;
+  border: none;
+}
+
+.c6::-webkit-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c6::-moz-placeholder {
+  color: #AAAAAA;
+}
+
+.c6:-ms-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c6 ::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+.c6::-moz-focus-inner {
+  border: none;
+  outline: none;
+}
+
+.c6:-moz-placeholder,
+.c6::-moz-placeholder {
+  opacity: 1;
+}
+
+.c5 {
+  position: relative;
+  width: 100%;
+}
+
+.c4 {
+  color: green;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+@media only screen and (max-width: 768px) {
+  .c1 {
+    margin-bottom: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c3 {
+    border-bottom: solid 1px rgba(0, 0, 0, 0.33);
+  }
+}
+
+<div
+  class="c0"
+>
+  <div
+    class="c1 "
+  >
+    <label
+      class="c2"
+    >
+      Label
+    </label>
+    <div
+      class="c3 c4"
+    >
+      <div
+        class="c5"
+      >
+        <input
+          autocomplete="off"
+          class="c6"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`FormField Field with null as child 1`] = `
 .c1 {
   display: flex;
@@ -113,7 +247,7 @@ exports[`FormField Field with null as child 1`] = `
       Label
     </label>
     <div
-      class="c3 FormField__FormFieldContentBox-sc-m9hood-1"
+      class="c3 "
     >
       <div
         class="c4"
@@ -178,7 +312,7 @@ exports[`FormField abut 1`] = `
     class="c1 "
   >
     <div
-      class="c2 FormField__FormFieldContentBox-sc-m9hood-1"
+      class="c2 "
     />
   </div>
 </div>
@@ -234,7 +368,7 @@ exports[`FormField abut with margin 1`] = `
     class="c1 "
   >
     <div
-      class="c2 FormField__FormFieldContentBox-sc-m9hood-1"
+      class="c2 "
     />
   </div>
 </div>
@@ -403,7 +537,7 @@ exports[`FormField checkbox pad is defined in formfield 1`] = `
         label
       </label>
       <div
-        class="c3 FormField__FormFieldContentBox-sc-m9hood-1"
+        class="c3 "
       >
         <label
           class="c4"
@@ -554,7 +688,7 @@ exports[`FormField contentProps 1`] = `
         label
       </label>
       <div
-        class="c3 FormField__FormFieldContentBox-sc-m9hood-1"
+        class="c3 "
       >
         <div
           class="c4"
@@ -768,7 +902,7 @@ exports[`FormField custom error and info icon and container 1`] = `
         label
       </label>
       <div
-        class="c3 FormField__FormFieldContentBox-sc-m9hood-1"
+        class="c3 "
       >
         <div
           class="c4"
@@ -781,7 +915,7 @@ exports[`FormField custom error and info icon and container 1`] = `
         </div>
       </div>
       <div
-        class="c6 FormField__StyledMessageContainer-sc-m9hood-2"
+        class="c6 FormField__StyledMessageContainer-sc-m9hood-3"
       >
         <div
           class="c7"
@@ -806,7 +940,7 @@ exports[`FormField custom error and info icon and container 1`] = `
         </span>
       </div>
       <div
-        class="c10 FormField__StyledMessageContainer-sc-m9hood-2"
+        class="c10 FormField__StyledMessageContainer-sc-m9hood-3"
       >
         <div
           class="c7"
@@ -889,7 +1023,7 @@ exports[`FormField custom formfield 1`] = `
     class="c1 c2"
   >
     <div
-      class="c3 FormField__FormFieldContentBox-sc-m9hood-1"
+      class="c3 "
     />
   </div>
 </div>
@@ -1018,7 +1152,7 @@ exports[`FormField custom input margin 1`] = `
         label
       </label>
       <div
-        class="c3 FormField__FormFieldContentBox-sc-m9hood-1"
+        class="c3 "
       >
         <div
           class="c4"
@@ -1147,7 +1281,7 @@ exports[`FormField custom label 1`] = `
         label
       </label>
       <div
-        class="c3 FormField__FormFieldContentBox-sc-m9hood-1"
+        class="c3 "
       >
         <div
           class="c4"
@@ -1262,14 +1396,14 @@ exports[`FormField default 1`] = `
     class="c1 "
   >
     <div
-      class="c2 FormField__FormFieldContentBox-sc-m9hood-1"
+      class="c2 "
     />
   </div>
   <div
     class="c1 "
   >
     <div
-      class="c2 FormField__FormFieldContentBox-sc-m9hood-1"
+      class="c2 "
     >
       <div
         class="c3"
@@ -1321,7 +1455,7 @@ exports[`FormField default outside grommet wrapper 1`] = `
   class="c0 "
 >
   <div
-    class="c1 FormField__FormFieldContentBox-sc-m9hood-1"
+    class="c1 "
   />
 </div>
 `;
@@ -1429,7 +1563,7 @@ exports[`FormField disabled 1`] = `
     class="c1 "
   >
     <div
-      class="c2 FormField__FormFieldContentBox-sc-m9hood-1"
+      class="c2 "
     />
   </div>
    
@@ -1438,7 +1572,7 @@ exports[`FormField disabled 1`] = `
       class="c1 "
     >
       <div
-        class="c2 FormField__FormFieldContentBox-sc-m9hood-1"
+        class="c2 "
       >
         <div
           class="c3"
@@ -1593,7 +1727,7 @@ exports[`FormField disabled with custom label for help and info 1`] = `
         Text to help the user know what is possible
       </span>
       <div
-        class="c4 FormField__FormFieldContentBox-sc-m9hood-1"
+        class="c4 "
       >
         <div
           class="c5"
@@ -1959,7 +2093,7 @@ exports[`FormField does not apply focusIndicator when formField.focusIndicator i
       class="c1 "
     >
       <div
-        class="c2 FormField__FormFieldContentBox-sc-m9hood-1"
+        class="c2 "
       >
         <label
           class="c3"
@@ -1985,7 +2119,7 @@ exports[`FormField does not apply focusIndicator when formField.focusIndicator i
       class="c1 "
     >
       <div
-        class="c2 FormField__FormFieldContentBox-sc-m9hood-1"
+        class="c2 "
       >
         <div
           class="c8"
@@ -2051,7 +2185,7 @@ exports[`FormField does not apply focusIndicator when formField.focusIndicator i
       class="c1 "
     >
       <div
-        class="c2 FormField__FormFieldContentBox-sc-m9hood-1"
+        class="c2 "
       >
         <input
           aria-valuemax="100"
@@ -2120,7 +2254,7 @@ exports[`FormField empty margin 1`] = `
     class="c1 "
   >
     <div
-      class="c2 FormField__FormFieldContentBox-sc-m9hood-1"
+      class="c2 "
     />
   </div>
 </div>
@@ -2186,7 +2320,7 @@ exports[`FormField error 1`] = `
     class="c1 "
   >
     <div
-      class="c2 FormField__FormFieldContentBox-sc-m9hood-1"
+      class="c2 "
     />
     <span
       class="c3"
@@ -2259,7 +2393,7 @@ exports[`FormField help 1`] = `
       test help
     </span>
     <div
-      class="c3 FormField__FormFieldContentBox-sc-m9hood-1"
+      class="c3 "
     />
   </div>
 </div>
@@ -2315,7 +2449,7 @@ exports[`FormField htmlFor 1`] = `
     class="c1 "
   >
     <div
-      class="c2 FormField__FormFieldContentBox-sc-m9hood-1"
+      class="c2 "
     />
   </div>
 </div>
@@ -2381,7 +2515,7 @@ exports[`FormField info 1`] = `
     class="c1 "
   >
     <div
-      class="c2 FormField__FormFieldContentBox-sc-m9hood-1"
+      class="c2 "
     />
     <span
       class="c3"
@@ -2479,7 +2613,7 @@ exports[`FormField info and help label colors 1`] = `
       Text to help the user know what is possible
     </span>
     <div
-      class="c4 FormField__FormFieldContentBox-sc-m9hood-1"
+      class="c4 "
     />
     <span
       class="c5"
@@ -2554,7 +2688,7 @@ exports[`FormField label 1`] = `
       test label
     </label>
     <div
-      class="c3 FormField__FormFieldContentBox-sc-m9hood-1"
+      class="c3 "
     />
   </div>
 </div>
@@ -2610,7 +2744,7 @@ exports[`FormField margin 1`] = `
     class="c1 "
   >
     <div
-      class="c2 FormField__FormFieldContentBox-sc-m9hood-1"
+      class="c2 "
     />
   </div>
 </div>
@@ -2731,7 +2865,7 @@ exports[`FormField max and threshold validation 1`] = `
         label
       </label>
       <div
-        class="c3 FormField__FormFieldContentBox-sc-m9hood-1"
+        class="c3 "
       >
         <div
           class="c4"
@@ -2807,7 +2941,7 @@ exports[`FormField pad 1`] = `
     class="c1 "
   >
     <div
-      class="c2 FormField__FormFieldContentBox-sc-m9hood-1"
+      class="c2 "
     />
   </div>
 </div>
@@ -2927,7 +3061,7 @@ exports[`FormField pad with border undefined 1`] = `
         label
       </label>
       <div
-        class="c3"
+        class="c3 FormField__StyledContentsBox-sc-m9hood-2"
       >
         <div
           class="c4"
@@ -3042,7 +3176,7 @@ exports[`FormField required 1`] = `
     class="c1 "
   >
     <div
-      class="c2 FormField__FormFieldContentBox-sc-m9hood-1"
+      class="c2 "
     />
   </div>
    
@@ -3051,7 +3185,7 @@ exports[`FormField required 1`] = `
       class="c1 "
     >
       <div
-        class="c2 FormField__FormFieldContentBox-sc-m9hood-1"
+        class="c2 "
       >
         <div
           class="c3"
@@ -3117,7 +3251,7 @@ exports[`FormField should have no accessibility violations 1`] = `
     class="c1 "
   >
     <div
-      class="c2 FormField__FormFieldContentBox-sc-m9hood-1"
+      class="c2 "
     />
   </div>
 </div>
@@ -3237,7 +3371,7 @@ exports[`FormField should not render asterisk when required.indicator === false 
         label
       </label>
       <div
-        class="c3 FormField__FormFieldContentBox-sc-m9hood-1"
+        class="c3 "
       >
         <div
           class="c4"
@@ -3400,7 +3534,7 @@ exports[`FormField should render asterisk when requiredIndicator === true 1`] = 
         </span>
       </label>
       <div
-        class="c6 FormField__FormFieldContentBox-sc-m9hood-1"
+        class="c6 "
       >
         <div
           class="c7"
@@ -3575,7 +3709,7 @@ exports[`FormField should render custom indicator when requiredIndicator is
         </svg>
       </label>
       <div
-        class="c4 FormField__FormFieldContentBox-sc-m9hood-1"
+        class="c4 "
       >
         <div
           class="c5"

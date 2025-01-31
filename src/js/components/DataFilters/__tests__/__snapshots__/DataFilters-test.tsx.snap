@@ -332,7 +332,7 @@ exports[`DataFilters clear 1`] = `
                 name
               </label>
               <div
-                class="c7 FormField__FormFieldContentBox-sc-m9hood-1"
+                class="c7 "
               >
                 <div
                   class="c8 StyledCheckBoxGroup-sc-2nhc5d-0"
@@ -570,7 +570,7 @@ exports[`DataFilters drop 1`] = `
 exports[`DataFilters drop 2`] = `
 <button
   aria-label="Open filters"
-  class="StyledButton-sc-323bzc-0 jVYNwi"
+  class="StyledButton-sc-323bzc-0 drCkHJ"
   data-g-tabindex="none"
   id="test-data--filters-control"
   tabindex="-1"
@@ -578,7 +578,7 @@ exports[`DataFilters drop 2`] = `
 >
   <svg
     aria-label="Filter"
-    class="StyledIcon-sc-ofa7kd-0 dUXZZZ"
+    class="StyledIcon-sc-ofa7kd-0 hGRmVS"
     viewBox="0 0 24 24"
   >
     <path
@@ -593,37 +593,37 @@ exports[`DataFilters drop 2`] = `
 
 exports[`DataFilters drop 3`] = `
 "@media only screen and (max-width: 768px) {
-  .ipOUDz {
+  .jhVljw {
     margin-bottom: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .itXtYk {
+  .jpZXcT {
     border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   }
 }
 @media only screen and (max-width: 768px) {
-  .itXtYk {
+  .jpZXcT {
     padding: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .hIHCFf {
+  .hvphdk {
     margin-right: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .lfKhzE {
+  .laRgif {
     border: solid 2px rgba(0, 0, 0, 0.15);
   }
 }
 @media only screen and (max-width: 768px) {
-  .bwQGpG {
+  .fgEJkt {
     margin-top: 12px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .jHRpNY {
+  .hFTcmz {
     height: 6px;
   }
 }"
@@ -1714,7 +1714,7 @@ exports[`DataFilters layer 2`] = `
                   name
                 </label>
                 <div
-                  class="c15 FormField__FormFieldContentBox-sc-m9hood-1"
+                  class="c15 "
                 >
                   <div
                     class="c16 StyledCheckBoxGroup-sc-2nhc5d-0"
@@ -1784,37 +1784,37 @@ exports[`DataFilters layer 2`] = `
 
 exports[`DataFilters layer 3`] = `
 "@media only screen and (max-width: 768px) {
-  .ipOUDz {
+  .jhVljw {
     margin-bottom: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .itXtYk {
+  .jpZXcT {
     border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   }
 }
 @media only screen and (max-width: 768px) {
-  .itXtYk {
+  .jpZXcT {
     padding: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .hIHCFf {
+  .hvphdk {
     margin-right: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .lfKhzE {
+  .laRgif {
     border: solid 2px rgba(0, 0, 0, 0.15);
   }
 }
 @media only screen and (max-width: 768px) {
-  .bwQGpG {
+  .fgEJkt {
     margin-top: 12px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .jHRpNY {
+  .hFTcmz {
     height: 6px;
   }
 }"
@@ -2123,7 +2123,7 @@ exports[`DataFilters properties array 1`] = `
                 name
               </label>
               <div
-                class="c7 FormField__FormFieldContentBox-sc-m9hood-1"
+                class="c7 "
               >
                 <div
                   class="c8 StyledCheckBoxGroup-sc-2nhc5d-0"
@@ -2493,7 +2493,7 @@ exports[`DataFilters properties object 1`] = `
                 name
               </label>
               <div
-                class="c7 FormField__FormFieldContentBox-sc-m9hood-1"
+                class="c7 "
               >
                 <div
                   class="c8 StyledCheckBoxGroup-sc-2nhc5d-0"
@@ -2863,7 +2863,7 @@ exports[`DataFilters renders 1`] = `
                 name
               </label>
               <div
-                class="c7 FormField__FormFieldContentBox-sc-m9hood-1"
+                class="c7 "
               >
                 <div
                   class="c8 StyledCheckBoxGroup-sc-2nhc5d-0"
@@ -3316,7 +3316,7 @@ exports[`DataFilters should display all filter options regardless of result set 
                   name
                 </label>
                 <div
-                  class="c7 FormField__FormFieldContentBox-sc-m9hood-1"
+                  class="c7 "
                 >
                   <div
                     class="c8 StyledCheckBoxGroup-sc-2nhc5d-0"
@@ -3375,7 +3375,7 @@ exports[`DataFilters should display all filter options regardless of result set 
                   color
                 </label>
                 <div
-                  class="c7 FormField__FormFieldContentBox-sc-m9hood-1"
+                  class="c7 "
                 >
                   <div
                     class="c8 StyledCheckBoxGroup-sc-2nhc5d-0"
@@ -4208,7 +4208,7 @@ exports[`DataFilters sub objects 1`] = `
                 City
               </label>
               <div
-                class="c7 FormField__FormFieldContentBox-sc-m9hood-1"
+                class="c7 "
               >
                 <div
                   class="c8 StyledCheckBoxGroup-sc-2nhc5d-0"
@@ -4279,7 +4279,7 @@ exports[`DataFilters sub objects 1`] = `
                 Latitude
               </label>
               <div
-                class="c7 FormField__FormFieldContentBox-sc-m9hood-1"
+                class="c7 "
               >
                 <div
                   class="c17"
