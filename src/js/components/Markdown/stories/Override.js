@@ -21,10 +21,10 @@ import { Grommet } from 'grommet';
 
   ![alt text](//v2.grommet.io/assets/IMG_4245.jpg "Markdown Image")
 
-  Markdown | Less | Pretty
-  --- | --- | ---
-  *Still* | \`renders\` | **nicely**
-  1 | 2 | 3
+  | Markdown | Less | Pretty |
+  | --- | --- | --- |
+  | *Still* | \`renders\` | **nicely** |
+  | 1 | 2 | 3 |
 `;
 
 const StyledPre = styled.pre.withConfig(styledComponentsConfig)`

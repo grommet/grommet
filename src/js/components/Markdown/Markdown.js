@@ -50,7 +50,12 @@ const GrommetMarkdown = forwardRef(
       <div ref={ref} {...rest}>
         <Markdown
           {...{ children }}
-          options={{ wrapper: Fragment, ...options, overrides }}
+          options={{
+            wrapper: Fragment,
+            disableAutoLink: true, // Maintain current behaviour
+            ...options,
+            overrides,
+          }}
         />
       </div>
     );
