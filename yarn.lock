@@ -11381,14 +11381,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"grommet-icons@npm:^4.12.3":
-  version: 4.12.3
-  resolution: "grommet-icons@npm:4.12.3"
+"grommet-icons@npm:^4.12.4":
+  version: 4.12.4
+  resolution: "grommet-icons@npm:4.12.4"
   peerDependencies:
     react: ^16.6.0 || ^17.0.0 || ^18.0.0
     react-dom: ^16.6.0 || ^17.0.0 || ^18.0.0
     styled-components: ">= 5.x"
-  checksum: 10c0/ccc48ba741dab1681b7c7cde1c227e1ed766c2269fde3abed5b619208d7bcaeb6e7bf61280d188ad4df50f4cc8288fe9a18ab4815323b988cfb371071a8a793d
+  checksum: 10c0/03219faf59daf0ec904e6884b2696945e8642d645cd74ab60bba5f20beb51fe085f043cb88d5b356fa7d2d51efb69d22927c49f663392c6edc7bc448e7d8fdee
   languageName: node
   linkType: hard
 
@@ -11465,7 +11465,7 @@ __metadata:
     eslint-plugin-react-hooks: "npm:5.0.0"
     eslint-plugin-testing-library: "npm:^6.4.0"
     fs-extra: "npm:^11.3.0"
-    grommet-icons: "npm:^4.12.3"
+    grommet-icons: "npm:^4.12.4"
     grommet-theme-hpe: "npm:^5.7.0"
     hoist-non-react-statics: "npm:^3.3.2"
     jest: "npm:^29.7.0"
