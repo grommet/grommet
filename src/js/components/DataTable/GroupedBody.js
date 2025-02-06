@@ -236,9 +236,7 @@ export const GroupedBody = forwardRef(
                       pad={cellProps.pad}
                       scope={scope}
                       pinnedOffset={
-                        context === 'groupHeader' &&
-                        pinnedOffset &&
-                        pinnedOffset[column.property]
+                        pinnedOffset && pinnedOffset[column.property]
                       }
                       verticalAlign={verticalAlign}
                     />
