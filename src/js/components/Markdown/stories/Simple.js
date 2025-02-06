@@ -19,10 +19,10 @@ import { Grommet } from 'grommet';
 
   ![alt text](//v2.grommet.io/assets/IMG_4245.jpg "Markdown Image")
 
-  Markdown | Less | Pretty
-  --- | --- | ---
-  Content *still* | \`renders\` | **nicely** in a table
-  1 | 2 | 3
+  | Markdown | Less | Pretty |
+  | --- | --- | --- |
+  | Content *still* | \`renders\` | **nicely** in a table |
+  | 1 | 2 | 3 |
 `;
 
 export const Simple = () => {
