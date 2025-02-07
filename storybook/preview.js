@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo, useCallback } from 'react';
 import Root from 'react-shadow';
 import { StyleSheetManager } from 'styled-components';
 import { hpe } from 'grommet-theme-hpe';
@@ -15,62 +15,36 @@ const THEMES = {
 
 export const decorators = [
   (Story, context) => {
+    const { theme: selectedTheme, root: rootType } = context.globals;
+    const { full = 'min', dir, options } = context.allArgs || {};
+
     const [rootRef, setRootRef] = useState(null);
-    const [state, setState] = useState('grommet');
-    const [root, setRoot] = useState('document');
-    const full = context.allArgs?.full || 'min';
-    const dir = context.allArgs?.dir;
-    const options = context.allArgs?.options;
+    const rootCallback = useCallback(setRootRef, []);
 
-    useEffect(() => {
-      setState(context.globals.theme);
-    }, [context.globals.theme]);
-    useEffect(() => {
-      setRoot(context.globals.root);
-    }, [context.globals.root]);
+    const theme = useMemo(() => THEMES[selectedTheme] || THEMES.grommet, [selectedTheme]);
 
-    /**
-     * This demonstrates that custom themed stories are driven off the "base"
-     * theme. Custom themed stories will live under a "CustomThemed" directory.
-     */
-    if (context.kind.split('/')[2] === CUSTOM_THEMED && state !== 'base') {
-      // if we are running the story in chromatic we want the chromatic snapshot
-      // to be taken in the base theme for custom theme stories
-      if (isChromatic()) {
-        return (
-          <Grommet theme={THEMES.base}>
-            <Story state={THEMES.base} />
-          </Grommet>
-        );
-      }
-      return (
+    // ensure base theme is used in Chromatic snapshots for custom themed stories
+    if (context.kind.split('/')[2] === CUSTOM_THEMED && selectedTheme !== 'base') {
+      return isChromatic() ? (
+        <Grommet theme={THEMES.base}>
+          <Story />
+        </Grommet>
+      ) : (
         <Box align="center" pad="large">
           <Text size="large">
-            {`Custom themed stories are only displayed in the
-                "base" theme mode. To enable, select "base" from the
-                Theme menu above.`}
+            {`Custom themed stories are only displayed in the "base" theme mode. To enable, select "base" from the Theme menu above.`}
           </Text>
-          <div hidden>
-            <Story state={THEMES[state]} />
-          </div>
         </Box>
       );
     }
 
-    if (root === 'shadow') {
+    if (rootType === 'shadow') {
       return (
-        // eslint-disable-next-line react/jsx-pascal-case
-        <Root.div ref={setRootRef}>
+        <Root.div ref={rootCallback}>
           {rootRef && (
             <StyleSheetManager target={rootRef.shadowRoot}>
-              <Grommet
-                theme={THEMES[state]}
-                full={full}
-                dir={dir}
-                options={options}
-                containerTarget={rootRef.shadowRoot}
-              >
-                <Story state={THEMES[state]} />
+              <Grommet theme={theme} full={full} dir={dir} options={options} containerTarget={rootRef.shadowRoot}>
+                <Story />
               </Grommet>
             </StyleSheetManager>
           )}
@@ -79,8 +53,8 @@ export const decorators = [
     }
 
     return (
-      <Grommet theme={THEMES[state]} full={full} dir={dir} options={options}>
-        <Story state={THEMES[state]} />
+      <Grommet theme={theme} full={full} dir={dir} options={options}>
+        <Story />
       </Grommet>
     );
   },
@@ -89,27 +63,13 @@ export const decorators = [
 export const parameters = {
   layout: 'fullscreen',
   options: {
-    storySort: (first, second) => {
-      /**
-       * The story sort algorithm will only ever compare two stories
-       * a single time. This means that every story will only ever be either
-       * the "first" parameter OR the "second" parameter, but not both.
-       * So, the checks for custom themed stories need to happen on both inputs
-       * of this function.
-       *
-       * A return value of 1 results in sorting the "first" story AFTER the
-       * "second" story.
-       *
-       * A return value of 0 results in sorting the "first" story BEFORE the
-       * secondary story.
-       */
-      const isFirstCustom = first[1].kind.split('/')[2] === CUSTOM_THEMED;
-      const isSecondCustom = second[1].kind.split('/')[2] === CUSTOM_THEMED;
+    storySort: ([, firstMeta], [, secondMeta]) => {
+      const isFirstCustom = firstMeta.kind.split('/')[2] === CUSTOM_THEMED;
+      const isSecondCustom = secondMeta.kind.split('/')[2] === CUSTOM_THEMED;
+
       if (isFirstCustom) return 1;
-      if (isSecondCustom) return 0;
-      return first[1].kind === second[1].kind
-        ? 0
-        : first[1].id.localeCompare(second[1].id, undefined, { numeric: true });
+      if (isSecondCustom) return -1;
+      return firstMeta.id.localeCompare(secondMeta.id, undefined, { numeric: true });
     },
   },
 };
@@ -119,12 +79,7 @@ export const globalTypes = {
     defaultValue: 'grommet',
     toolbar: {
       title: 'Theme',
-      items: [
-        { title: 'base', value: 'base' },
-        { title: 'grommet', value: 'grommet' },
-        { title: 'hpe', value: 'hpe' },
-        { title: 'hacktoberfest2022', value: 'hacktoberfest2022' },
-      ],
+      items: Object.keys(THEMES).map((key) => ({ title: key, value: key })),
     },
   },
   root: {
