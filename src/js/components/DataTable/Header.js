@@ -22,6 +22,10 @@ import { kindPartStyles } from '../../utils/styles';
 import { normalizeColor } from '../../utils/colors';
 import { useThemeValue } from '../../utils/useThemeValue';
 
+// delay before triggering width update. This allows most/all header resizes
+// to be batched together causing fewer render passes
+const WIDTH_UPDATE_DELAY = 100;
+
 // separate theme values into groupings depending on what
 // part of header cell they should style
 const separateThemeProps = (theme) => {
@@ -165,7 +169,7 @@ const Header = forwardRef(
       // save width for this column. Subtract 1 to avoid gap due to rounding
       cellWidths[property] = width - 1;
       if (timerRef.current) clearTimeout(timerRef.current);
-      timerRef.current = setTimeout(handleWidths, 100);
+      timerRef.current = setTimeout(handleWidths, WIDTH_UPDATE_DELAY);
     };
 
     const pin = pinProp ? ['top'] : [];
