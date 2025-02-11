@@ -1522,8 +1522,8 @@ exports[`Grommet hpe theme 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background-color: #01A982;
-  color: #FFFFFF;
+  background-color: #01a982;
+  color: #ffffff;
   min-width: 0;
   min-height: 0;
   flex-direction: column;
@@ -1533,7 +1533,7 @@ exports[`Grommet hpe theme 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background-color: #0000000A;
+  background-color: rgba(0, 0, 0, 0.04);
   color: #555555;
   min-width: 0;
   min-height: 0;
@@ -1544,7 +1544,7 @@ exports[`Grommet hpe theme 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   color: #555555;
   min-width: 0;
   min-height: 0;
@@ -1555,8 +1555,8 @@ exports[`Grommet hpe theme 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background-color: #FF8300;
-  color: #555555;
+  background-color: #008567;
+  color: #ffffff;
   min-width: 0;
   min-height: 0;
   flex-direction: column;
@@ -1566,8 +1566,8 @@ exports[`Grommet hpe theme 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background-color: #00739D;
-  color: #FFFFFF;
+  background-color: #00384d;
+  color: #ffffff;
   min-width: 0;
   min-height: 0;
   flex-direction: column;
@@ -1577,8 +1577,8 @@ exports[`Grommet hpe theme 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background-color: #7630EA;
-  color: #FFFFFF;
+  background-color: #bd8d09;
+  color: #555555;
   min-width: 0;
   min-height: 0;
   flex-direction: column;
@@ -1588,8 +1588,8 @@ exports[`Grommet hpe theme 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background-color: #FEC901;
-  color: #555555;
+  background-color: #7022ec;
+  color: #ffffff;
   min-width: 0;
   min-height: 0;
   flex-direction: column;
@@ -1599,7 +1599,7 @@ exports[`Grommet hpe theme 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background-color: #00E8CF;
+  background-color: #3e92cc;
   color: #555555;
   min-width: 0;
   min-height: 0;
@@ -1610,14 +1610,25 @@ exports[`Grommet hpe theme 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background-color: #FC5A5A;
-  color: #555555;
+  background-color: #004233;
+  color: #ffffff;
   min-width: 0;
   min-height: 0;
   flex-direction: column;
 }
 
 .c11 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  background-color: #ec3331;
+  color: #ffffff;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+}
+
+.c12 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -1628,23 +1639,12 @@ exports[`Grommet hpe theme 1`] = `
   flex-direction: column;
 }
 
-.c12 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  background-color: #17EBA0;
-  color: #555555;
-  min-width: 0;
-  min-height: 0;
-  flex-direction: column;
-}
-
 .c13 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background-color: #FFBC44;
-  color: #555555;
+  background-color: #009a71;
+  color: #ffffff;
   min-width: 0;
   min-height: 0;
   flex-direction: column;
@@ -1654,23 +1654,46 @@ exports[`Grommet hpe theme 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  background-color: #8c8c8c;
+  color: #555555;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+}
+
+.c15 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  background-color: #d36d00;
+  color: #555555;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+}
+
+.c16 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
   background-color: #555555;
-  color: #FFFFFF;
+  color: #ffffff;
   min-width: 0;
   min-height: 0;
   flex-direction: column;
 }
 
 .c2 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  font-weight: undefined;
 }
 
 .c0 {
   font-family: 'Metric',Arial,sans-serif;
-  font-size: 18px;
-  line-height: 24px;
-  background-color: #FFFFFF;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
   color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
@@ -1710,7 +1733,7 @@ exports[`Grommet hpe theme 1`] = `
     </span>
   </div>
   <div
-    class="c1"
+    class="c5"
   >
     <span
       class="c2"
@@ -1719,7 +1742,7 @@ exports[`Grommet hpe theme 1`] = `
     </span>
   </div>
   <div
-    class="c5"
+    class="c1"
   >
     <span
       class="c2"
@@ -1764,7 +1787,7 @@ exports[`Grommet hpe theme 1`] = `
     </span>
   </div>
   <div
-    class="c9"
+    class="c10"
   >
     <span
       class="c2"
@@ -1773,7 +1796,7 @@ exports[`Grommet hpe theme 1`] = `
     </span>
   </div>
   <div
-    class="c10"
+    class="c11"
   >
     <span
       class="c2"
@@ -1782,7 +1805,7 @@ exports[`Grommet hpe theme 1`] = `
     </span>
   </div>
   <div
-    class="c11"
+    class="c12"
   >
     <span
       class="c2"
@@ -1791,7 +1814,7 @@ exports[`Grommet hpe theme 1`] = `
     </span>
   </div>
   <div
-    class="c12"
+    class="c13"
   >
     <span
       class="c2"
@@ -1800,7 +1823,7 @@ exports[`Grommet hpe theme 1`] = `
     </span>
   </div>
   <div
-    class="c11"
+    class="c14"
   >
     <span
       class="c2"
@@ -1809,7 +1832,7 @@ exports[`Grommet hpe theme 1`] = `
     </span>
   </div>
   <div
-    class="c13"
+    class="c15"
   >
     <span
       class="c2"
@@ -1818,7 +1841,7 @@ exports[`Grommet hpe theme 1`] = `
     </span>
   </div>
   <div
-    class="c14"
+    class="c16"
   >
     <span
       class="c2"
