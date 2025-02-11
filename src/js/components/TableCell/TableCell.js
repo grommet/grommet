@@ -56,8 +56,8 @@ const TableCell = forwardRef(
       if (onWidth) {
         if (typeof window !== 'undefined' && window.ResizeObserver) {
           resizeObserver = new window.ResizeObserver((entries) => {
-            const entry = entries[0];
-            const { width } = entry.contentRect;
+            const entry = entries[0].borderBoxSize[0];
+            const width = entry?.inlineSize;
             if (widthRef.current !== width) {
               widthRef.current = width;
               onWidth(width);
