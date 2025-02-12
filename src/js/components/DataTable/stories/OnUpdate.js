@@ -1,4 +1,3 @@
-/* eslint-disable no-param-reassign */
 import React, { useCallback, useMemo, useState } from 'react';
 
 import { Box, DataTable } from 'grommet';

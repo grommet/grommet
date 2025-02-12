@@ -451,7 +451,6 @@ const SelectContainer = forwardRef(
                   // if we have a child, turn on plain, and hoverIndicator
                   return (
                     <SelectOption
-                      // eslint-disable-next-line react/no-array-index-key
                       key={index}
                       // merge optionRef and activeRef
                       ref={(node) => {

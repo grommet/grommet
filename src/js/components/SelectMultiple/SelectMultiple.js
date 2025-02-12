@@ -482,7 +482,6 @@ const SelectMultiple = forwardRef(
                         tabIndex="-1"
                         type="text"
                         placeholder={
-                          // eslint-disable-next-line no-nested-ternary
                           !value || value?.length === 0
                             ? placeholder || selectValue || displayLabelKey
                             : format({

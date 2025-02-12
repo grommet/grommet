@@ -6,7 +6,6 @@ const allItems = Array(2000)
   .fill()
   .map((_, i) => `item ${i + 1}`);
 
-/* eslint-disable react/prefer-stateless-function */
 const MyItem = ({ item }) => (
   <Box pad="medium" border={{ side: 'bottom' }} align="center">
     <Text>{item}</Text>

@@ -290,7 +290,6 @@ describe('Layer', () => {
         <input autoFocus />
       </Grommet>,
     );
-    /* eslint-disable jsx-a11y/no-autofocus */
 
     const layerNode = getByTestId(document, 'focus-layer-test');
     expect(layerNode).toMatchSnapshot();
@@ -307,7 +306,6 @@ describe('Layer', () => {
         </Layer>
       </Grommet>,
     );
-    /* eslint-disable jsx-a11y/no-autofocus */
     const layerNode = getByTestId(document, 'focus-layer-input-test');
     const inputNode = getByTestId(document, 'focus-input');
     expect(layerNode).toMatchSnapshot();
