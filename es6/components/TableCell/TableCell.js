@@ -37,13 +37,39 @@ var TableCell = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var tableContext = useContext(TableContext);
   var cellRef = useForwardedRef(ref);
   var containerRef = useRef();
+  var widthRef = useRef();
   useLayoutEffect(function () {
+    var resizeObserver;
+    var element = cellRef.current;
     if (onWidth) {
-      var _cellRef$current$getB = cellRef.current.getBoundingClientRect(),
-        width = _cellRef$current$getB.width;
-      onWidth(width);
+      if (typeof window !== 'undefined' && window.ResizeObserver) {
+        resizeObserver = new window.ResizeObserver(function (entries) {
+          var entry = entries[0].borderBoxSize[0];
+          var width = entry == null ? void 0 : entry.inlineSize;
+          if (widthRef.current !== width) {
+            widthRef.current = width;
+            onWidth(width);
+          }
+        });
+        if (element) {
+          resizeObserver.observe(cellRef.current);
+        }
+      } else {
+        // fallback for server side rendering
+        var _cellRef$current$getB = cellRef.current.getBoundingClientRect(),
+          width = _cellRef$current$getB.width;
+        if (widthRef.current !== width) {
+          widthRef.current = width;
+          onWidth(width);
+        }
+      }
     }
-  }, [cellRef, onWidth]);
+    return function () {
+      if (resizeObserver && element) {
+        resizeObserver.unobserve(element);
+      }
+    };
+  }, [onWidth, cellRef, widthRef]);
 
   // if window resizes, recalculate cell height so that content
   // will continue to fill the height if the dimensions of the cell

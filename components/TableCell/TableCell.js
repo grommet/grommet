@@ -43,13 +43,39 @@ var TableCell = exports.TableCell = /*#__PURE__*/(0, _react.forwardRef)(function
   var tableContext = (0, _react.useContext)(_TableContext.TableContext);
   var cellRef = (0, _utils.useForwardedRef)(ref);
   var containerRef = (0, _react.useRef)();
+  var widthRef = (0, _react.useRef)();
   (0, _useIsomorphicLayoutEffect.useLayoutEffect)(function () {
+    var resizeObserver;
+    var element = cellRef.current;
     if (onWidth) {
-      var _cellRef$current$getB = cellRef.current.getBoundingClientRect(),
-        width = _cellRef$current$getB.width;
-      onWidth(width);
+      if (typeof window !== 'undefined' && window.ResizeObserver) {
+        resizeObserver = new window.ResizeObserver(function (entries) {
+          var entry = entries[0].borderBoxSize[0];
+          var width = entry == null ? void 0 : entry.inlineSize;
+          if (widthRef.current !== width) {
+            widthRef.current = width;
+            onWidth(width);
+          }
+        });
+        if (element) {
+          resizeObserver.observe(cellRef.current);
+        }
+      } else {
+        // fallback for server side rendering
+        var _cellRef$current$getB = cellRef.current.getBoundingClientRect(),
+          width = _cellRef$current$getB.width;
+        if (widthRef.current !== width) {
+          widthRef.current = width;
+          onWidth(width);
+        }
+      }
     }
-  }, [cellRef, onWidth]);
+    return function () {
+      if (resizeObserver && element) {
+        resizeObserver.unobserve(element);
+      }
+    };
+  }, [onWidth, cellRef, widthRef]);
 
   // if window resizes, recalculate cell height so that content
   // will continue to fill the height if the dimensions of the cell

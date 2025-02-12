@@ -176,7 +176,7 @@ var GroupedBody = exports.GroupedBody = /*#__PURE__*/(0, _react.forwardRef)(func
         datum: datum,
         pad: cellProps.pad,
         scope: scope,
-        pinnedOffset: context === 'groupHeader' && pinnedOffset && pinnedOffset[column.property],
+        pinnedOffset: pinnedOffset && pinnedOffset[column.property],
         verticalAlign: verticalAlign
       });
     }));

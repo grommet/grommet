@@ -170,7 +170,7 @@ export var GroupedBody = /*#__PURE__*/forwardRef(function (_ref, ref) {
         datum: datum,
         pad: cellProps.pad,
         scope: scope,
-        pinnedOffset: context === 'groupHeader' && pinnedOffset && pinnedOffset[column.property],
+        pinnedOffset: pinnedOffset && pinnedOffset[column.property],
         verticalAlign: verticalAlign
       });
     }));

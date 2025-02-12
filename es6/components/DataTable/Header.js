@@ -3,7 +3,7 @@ var _excluded = ["background", "border", "color", "font", "gap", "pad", "units"]
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (-1 !== e.indexOf(n)) continue; t[n] = r[n]; } return t; }
 /* eslint-disable no-underscore-dangle */
-import React, { forwardRef, useCallback, useContext, useEffect, useState } from 'react';
+import React, { forwardRef, useCallback, useContext, useRef } from 'react';
 import styled, { css } from 'styled-components';
 import { DataContext } from '../../contexts/DataContext';
 import { Box } from '../Box';
@@ -19,6 +19,10 @@ import { datumValue } from './buildState';
 import { kindPartStyles } from '../../utils/styles';
 import { normalizeColor } from '../../utils/colors';
 import { useThemeValue } from '../../utils/useThemeValue';
+
+// delay before triggering width update. This allows most/all header resizes
+// to be batched together causing fewer render passes
+var WIDTH_UPDATE_DELAY = 100;
 
 // separate theme values into groupings depending on what
 // part of header cell they should style
@@ -129,19 +133,25 @@ var Header = /*#__PURE__*/forwardRef(function (_ref2, ref) {
     textProps = _separateThemeProps2[1];
   var _useContext = useContext(DataContext),
     contextTotal = _useContext.total;
-  var _useState = useState([]),
-    cellWidths = _useState[0],
-    setCellWidths = _useState[1];
-  var updateWidths = useCallback(function (width) {
-    return setCellWidths(function (values) {
-      return [].concat(values, [width]);
-    });
-  }, []);
-  useEffect(function () {
-    if (onWidths && cellWidths.length !== 0) {
-      onWidths(cellWidths);
+  var cellWidthsRef = useRef({});
+  var timerRef = useRef();
+  var handleWidths = function handleWidths() {
+    var cellWidths = cellWidthsRef.current;
+    if (onWidths && cellWidths) {
+      var internalColumnWidths = selected || onSelect ? [cellWidths._grommetDataTableSelect] : [];
+      onWidths([].concat(internalColumnWidths, columns.map(function (_ref3) {
+        var property = _ref3.property;
+        return cellWidths[property];
+      })));
     }
-  }, [cellWidths, onWidths]);
+  };
+  var updateWidths = function updateWidths(property, width) {
+    var cellWidths = cellWidthsRef.current;
+    // save width for this column. Subtract 1 to avoid gap due to rounding
+    cellWidths[property] = width - 1;
+    if (timerRef.current) clearTimeout(timerRef.current);
+    timerRef.current = setTimeout(handleWidths, WIDTH_UPDATE_DELAY);
+  };
   var pin = pinProp ? ['top'] : [];
   var selectPin = pinnedOffset != null && pinnedOffset._grommetDataTableSelect ? [].concat(pin, ['left']) : pin;
   var totalSelectedGroups = groupBy != null && groupBy.select ? Object.keys(groupBy.select).reduce(function (total, cur) {
@@ -207,7 +217,9 @@ var Header = /*#__PURE__*/forwardRef(function (_ref2, ref) {
     pad: cellProps.pad
   }), (selected || onSelect) && /*#__PURE__*/React.createElement(StyledDataTableCell, _extends({
     background: cellProps.background,
-    onWidth: updateWidths,
+    onWidth: function onWidth(width) {
+      return updateWidths('_grommetDataTableSelect', width);
+    },
     plain: "noPad",
     size: "auto",
     context: "header",
@@ -225,16 +237,16 @@ var Header = /*#__PURE__*/forwardRef(function (_ref2, ref) {
     size: "xxsmall",
     plain: true,
     pad: "none"
-  }), columns.map(function (_ref3) {
-    var property = _ref3.property,
-      header = _ref3.header,
-      align = _ref3.align,
-      columnPin = _ref3.pin,
-      search = _ref3.search,
-      sortable = _ref3.sortable,
-      columnVerticalAlign = _ref3.verticalAlign,
-      size = _ref3.size,
-      units = _ref3.units;
+  }), columns.map(function (_ref4) {
+    var property = _ref4.property,
+      header = _ref4.header,
+      align = _ref4.align,
+      columnPin = _ref4.pin,
+      search = _ref4.search,
+      sortable = _ref4.sortable,
+      columnVerticalAlign = _ref4.verticalAlign,
+      size = _ref4.size,
+      units = _ref4.units;
     var content;
     var unitsContent = units ? /*#__PURE__*/React.createElement(Text, _extends({}, textProps, theme.dataTable.header.units), units) : undefined;
     if (typeof header === 'string') {
@@ -332,7 +344,9 @@ var Header = /*#__PURE__*/forwardRef(function (_ref2, ref) {
       verticalAlign: verticalAlign || columnVerticalAlign,
       background: cellProps.background,
       border: cellProps.border,
-      onWidth: updateWidths
+      onWidth: function onWidth(width) {
+        return updateWidths(property, width);
+      }
       // if sortable, pad will be included in the button styling
       ,
       pad: sortable === false || !onSort ? cellProps.pad : 'none',

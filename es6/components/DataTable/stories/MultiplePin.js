@@ -208,14 +208,8 @@ var columns = [{
   sortable: false
 }, {
   property: 'size',
-  header: /*#__PURE__*/React.createElement(Text, {
-    color: "text-strong",
-    weight: "bold"
-  }, "Size", ' ', /*#__PURE__*/React.createElement(Text, {
-    size: "xsmall",
-    weight: "normal",
-    color: "text"
-  }, "(TiB)")),
+  header: 'Size',
+  units: 'TiB',
   render: function render(datum) {
     return (
       // bytes to tebibytes
@@ -225,14 +219,8 @@ var columns = [{
   align: 'end'
 }, {
   property: 'pinnable',
-  header: /*#__PURE__*/React.createElement(Text, {
-    color: "text-strong",
-    weight: "bold"
-  }, "Pinnable", ' ', /*#__PURE__*/React.createElement(Text, {
-    size: "xsmall",
-    weight: "normal",
-    color: "text"
-  }, "(B)")),
+  header: 'Pinnable',
+  units: 'B',
   render: function render(datum) {
     return (
       // bytes to tebibytes
@@ -244,19 +232,8 @@ var columns = [{
   footer: 'Pinnable'
 }, {
   property: 'pinned',
-  header: /*#__PURE__*/React.createElement(Box, {
-    pad: {
-      horizontal: 'small',
-      vertical: 'xsmall'
-    }
-  }, /*#__PURE__*/React.createElement(Text, {
-    color: "text-strong",
-    weight: "bold"
-  }, "Pinned", ' ', /*#__PURE__*/React.createElement(Text, {
-    size: "xsmall",
-    weight: "normal",
-    color: "text"
-  }, "%"))),
+  header: 'Pinned',
+  units: '%',
   render: function render(_ref2) {
     var pinnable = _ref2.pinnable,
       pinned = _ref2.pinned;
@@ -277,14 +254,8 @@ var columns = [{
   sortable: false
 }, {
   property: 'savings',
-  header: /*#__PURE__*/React.createElement(Text, {
-    color: "text-strong",
-    weight: "bold"
-  }, "Savings", ' ', /*#__PURE__*/React.createElement(Text, {
-    size: "xsmall",
-    weight: "normal",
-    color: "text"
-  }, "(xGHz)")),
+  header: 'Savings',
+  units: 'xGHz',
   align: 'end',
   render: function render(_ref3) {
     var savings = _ref3.savings;

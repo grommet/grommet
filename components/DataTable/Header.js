@@ -25,6 +25,10 @@ function _getRequireWildcardCache(e) { if ("function" != typeof WeakMap) return 
 function _interopRequireWildcard(e, r) { if (!r && e && e.__esModule) return e; if (null === e || "object" != typeof e && "function" != typeof e) return { "default": e }; var t = _getRequireWildcardCache(r); if (t && t.has(e)) return t.get(e); var n = { __proto__: null }, a = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var u in e) if ("default" !== u && {}.hasOwnProperty.call(e, u)) { var i = a ? Object.getOwnPropertyDescriptor(e, u) : null; i && (i.get || i.set) ? Object.defineProperty(n, u, i) : n[u] = e[u]; } return n["default"] = e, t && t.set(e, n), n; }
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (-1 !== e.indexOf(n)) continue; t[n] = r[n]; } return t; }
+// delay before triggering width update. This allows most/all header resizes
+// to be batched together causing fewer render passes
+var WIDTH_UPDATE_DELAY = 100;
+
 // separate theme values into groupings depending on what
 // part of header cell they should style
 var separateThemeProps = function separateThemeProps(theme) {
@@ -134,19 +138,25 @@ var Header = exports.Header = /*#__PURE__*/(0, _react.forwardRef)(function (_ref
     textProps = _separateThemeProps2[1];
   var _useContext = (0, _react.useContext)(_DataContext.DataContext),
     contextTotal = _useContext.total;
-  var _useState = (0, _react.useState)([]),
-    cellWidths = _useState[0],
-    setCellWidths = _useState[1];
-  var updateWidths = (0, _react.useCallback)(function (width) {
-    return setCellWidths(function (values) {
-      return [].concat(values, [width]);
-    });
-  }, []);
-  (0, _react.useEffect)(function () {
-    if (onWidths && cellWidths.length !== 0) {
-      onWidths(cellWidths);
+  var cellWidthsRef = (0, _react.useRef)({});
+  var timerRef = (0, _react.useRef)();
+  var handleWidths = function handleWidths() {
+    var cellWidths = cellWidthsRef.current;
+    if (onWidths && cellWidths) {
+      var internalColumnWidths = selected || onSelect ? [cellWidths._grommetDataTableSelect] : [];
+      onWidths([].concat(internalColumnWidths, columns.map(function (_ref3) {
+        var property = _ref3.property;
+        return cellWidths[property];
+      })));
     }
-  }, [cellWidths, onWidths]);
+  };
+  var updateWidths = function updateWidths(property, width) {
+    var cellWidths = cellWidthsRef.current;
+    // save width for this column. Subtract 1 to avoid gap due to rounding
+    cellWidths[property] = width - 1;
+    if (timerRef.current) clearTimeout(timerRef.current);
+    timerRef.current = setTimeout(handleWidths, WIDTH_UPDATE_DELAY);
+  };
   var pin = pinProp ? ['top'] : [];
   var selectPin = pinnedOffset != null && pinnedOffset._grommetDataTableSelect ? [].concat(pin, ['left']) : pin;
   var totalSelectedGroups = groupBy != null && groupBy.select ? Object.keys(groupBy.select).reduce(function (total, cur) {
@@ -212,7 +222,9 @@ var Header = exports.Header = /*#__PURE__*/(0, _react.forwardRef)(function (_ref
     pad: cellProps.pad
   }), (selected || onSelect) && /*#__PURE__*/_react["default"].createElement(_StyledDataTable.StyledDataTableCell, _extends({
     background: cellProps.background,
-    onWidth: updateWidths,
+    onWidth: function onWidth(width) {
+      return updateWidths('_grommetDataTableSelect', width);
+    },
     plain: "noPad",
     size: "auto",
     context: "header",
@@ -230,16 +242,16 @@ var Header = exports.Header = /*#__PURE__*/(0, _react.forwardRef)(function (_ref
     size: "xxsmall",
     plain: true,
     pad: "none"
-  }), columns.map(function (_ref3) {
-    var property = _ref3.property,
-      header = _ref3.header,
-      align = _ref3.align,
-      columnPin = _ref3.pin,
-      search = _ref3.search,
-      sortable = _ref3.sortable,
-      columnVerticalAlign = _ref3.verticalAlign,
-      size = _ref3.size,
-      units = _ref3.units;
+  }), columns.map(function (_ref4) {
+    var property = _ref4.property,
+      header = _ref4.header,
+      align = _ref4.align,
+      columnPin = _ref4.pin,
+      search = _ref4.search,
+      sortable = _ref4.sortable,
+      columnVerticalAlign = _ref4.verticalAlign,
+      size = _ref4.size,
+      units = _ref4.units;
     var content;
     var unitsContent = units ? /*#__PURE__*/_react["default"].createElement(_Text.Text, _extends({}, textProps, theme.dataTable.header.units), units) : undefined;
     if (typeof header === 'string') {
@@ -337,7 +349,9 @@ var Header = exports.Header = /*#__PURE__*/(0, _react.forwardRef)(function (_ref
       verticalAlign: verticalAlign || columnVerticalAlign,
       background: cellProps.background,
       border: cellProps.border,
-      onWidth: updateWidths
+      onWidth: function onWidth(width) {
+        return updateWidths(property, width);
+      }
       // if sortable, pad will be included in the button styling
       ,
       pad: sortable === false || !onSort ? cellProps.pad : 'none',
