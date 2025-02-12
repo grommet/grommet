@@ -322,7 +322,6 @@ const Menu = forwardRef((props, ref) => {
 
     // if we have a child, turn on plain, and hoverIndicator
     return (
-      // eslint-disable-next-line react/no-array-index-key
       <Box key={index} flex={false} role="none">
         <Button
           ref={(r) => {
