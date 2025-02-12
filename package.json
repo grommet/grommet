@@ -138,7 +138,7 @@
     "storybook": "7.0.20",
     "styled-components": "^6.1.15",
     "tarball-extract": "^0.0.6",
-    "testcafe": "3.3.0",
+    "testcafe": "^3.7.1",
     "testcafe-react-selectors": "^5.0.3",
     "testcafe-reporter-xunit": "^2.2.3",
     "ts-jest": "^29.2.5",
