@@ -1,11 +1,5 @@
 /* eslint-disable no-underscore-dangle */
-import React, {
-  forwardRef,
-  useCallback,
-  useContext,
-  useEffect,
-  useState,
-} from 'react';
+import React, { forwardRef, useCallback, useContext, useRef } from 'react';
 import styled, { css } from 'styled-components';
 import { DataContext } from '../../contexts/DataContext';
 
@@ -27,6 +21,10 @@ import { datumValue } from './buildState';
 import { kindPartStyles } from '../../utils/styles';
 import { normalizeColor } from '../../utils/colors';
 import { useThemeValue } from '../../utils/useThemeValue';
+
+// delay before triggering width update. This allows most/all header resizes
+// to be batched together causing fewer render passes
+const WIDTH_UPDATE_DELAY = 100;
 
 // separate theme values into groupings depending on what
 // part of header cell they should style
@@ -151,18 +149,28 @@ const Header = forwardRef(
     const [layoutProps, textProps] = separateThemeProps(theme);
     const { total: contextTotal } = useContext(DataContext);
 
-    const [cellWidths, setCellWidths] = useState([]);
+    const cellWidthsRef = useRef({});
+    const timerRef = useRef();
 
-    const updateWidths = useCallback(
-      (width) => setCellWidths((values) => [...values, width]),
-      [],
-    );
-
-    useEffect(() => {
-      if (onWidths && cellWidths.length !== 0) {
-        onWidths(cellWidths);
+    const handleWidths = () => {
+      const cellWidths = cellWidthsRef.current;
+      if (onWidths && cellWidths) {
+        const internalColumnWidths =
+          selected || onSelect ? [cellWidths._grommetDataTableSelect] : [];
+        onWidths([
+          ...internalColumnWidths,
+          ...columns.map(({ property }) => cellWidths[property]),
+        ]);
       }
-    }, [cellWidths, onWidths]);
+    };
+
+    const updateWidths = (property, width) => {
+      const cellWidths = cellWidthsRef.current;
+      // save width for this column. Subtract 1 to avoid gap due to rounding
+      cellWidths[property] = width - 1;
+      if (timerRef.current) clearTimeout(timerRef.current);
+      timerRef.current = setTimeout(handleWidths, WIDTH_UPDATE_DELAY);
+    };
 
     const pin = pinProp ? ['top'] : [];
     const selectPin = pinnedOffset?._grommetDataTableSelect
@@ -246,7 +254,9 @@ const Header = forwardRef(
           {(selected || onSelect) && (
             <StyledDataTableCell
               background={cellProps.background}
-              onWidth={updateWidths}
+              onWidth={(width) =>
+                updateWidths('_grommetDataTableSelect', width)
+              }
               plain="noPad"
               size="auto"
               context="header"
@@ -440,7 +450,7 @@ const Header = forwardRef(
                   verticalAlign={verticalAlign || columnVerticalAlign}
                   background={cellProps.background}
                   border={cellProps.border}
-                  onWidth={updateWidths}
+                  onWidth={(width) => updateWidths(property, width)}
                   // if sortable, pad will be included in the button styling
                   pad={sortable === false || !onSort ? cellProps.pad : 'none'}
                   pin={cellPin}

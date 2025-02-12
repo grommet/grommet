@@ -48,13 +48,39 @@ const TableCell = forwardRef(
     const tableContext = useContext(TableContext);
     const cellRef = useForwardedRef(ref);
     const containerRef = useRef();
+    const widthRef = useRef();
 
     useLayoutEffect(() => {
+      let resizeObserver;
+      const element = cellRef.current;
       if (onWidth) {
-        const { width } = cellRef.current.getBoundingClientRect();
-        onWidth(width);
+        if (typeof window !== 'undefined' && window.ResizeObserver) {
+          resizeObserver = new window.ResizeObserver((entries) => {
+            const entry = entries[0].borderBoxSize[0];
+            const width = entry?.inlineSize;
+            if (widthRef.current !== width) {
+              widthRef.current = width;
+              onWidth(width);
+            }
+          });
+          if (element) {
+            resizeObserver.observe(cellRef.current);
+          }
+        } else {
+          // fallback for server side rendering
+          const { width } = cellRef.current.getBoundingClientRect();
+          if (widthRef.current !== width) {
+            widthRef.current = width;
+            onWidth(width);
+          }
+        }
       }
-    }, [cellRef, onWidth]);
+      return () => {
+        if (resizeObserver && element) {
+          resizeObserver.unobserve(element);
+        }
+      };
+    }, [onWidth, cellRef, widthRef]);
 
     // if window resizes, recalculate cell height so that content
     // will continue to fill the height if the dimensions of the cell
