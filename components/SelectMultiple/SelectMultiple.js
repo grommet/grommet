@@ -416,9 +416,7 @@ var SelectMultiple = exports.SelectMultiple = /*#__PURE__*/(0, _react.forwardRef
   }, rest, {
     tabIndex: "-1",
     type: "text",
-    placeholder:
-    // eslint-disable-next-line no-nested-ternary
-    !value || (value == null ? void 0 : value.length) === 0 ? placeholder || selectValue || displayLabelKey : format({
+    placeholder: !value || (value == null ? void 0 : value.length) === 0 ? placeholder || selectValue || displayLabelKey : format({
       id: onMore ? 'selectMultiple.selected' : 'selectMultiple.selectedOfTotal',
       messages: messages,
       values: _extends({

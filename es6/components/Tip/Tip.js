@@ -56,7 +56,6 @@ var Tip = /*#__PURE__*/forwardRef(function (_ref, tipRef) {
       if (typeof componentRef === 'function') {
         componentRef(node);
       } else if (componentRef) {
-        // eslint-disable-next-line no-param-reassign
         componentRef.current = node;
       }
       // Call the original ref, if any

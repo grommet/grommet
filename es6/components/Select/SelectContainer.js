@@ -341,9 +341,7 @@ var SelectContainer = /*#__PURE__*/forwardRef(function (_ref3, ref) {
     }
 
     // if we have a child, turn on plain, and hoverIndicator
-    return /*#__PURE__*/React.createElement(SelectOption
-    // eslint-disable-next-line react/no-array-index-key
-    , _extends({
+    return /*#__PURE__*/React.createElement(SelectOption, _extends({
       key: index
       // merge optionRef and activeRef
       ,

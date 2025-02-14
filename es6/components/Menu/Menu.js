@@ -283,45 +283,41 @@ var Menu = /*#__PURE__*/forwardRef(function (props, ref) {
     }, item.reverse && item.label, item.icon, !item.reverse && item.label) : undefined;
 
     // if we have a child, turn on plain, and hoverIndicator
-    return (
-      /*#__PURE__*/
-      // eslint-disable-next-line react/no-array-index-key
-      React.createElement(Box, {
-        key: index,
-        flex: false,
-        role: "none"
-      }, /*#__PURE__*/React.createElement(Button, _extends({
-        ref: function ref(r) {
-          buttonRefs.current[index] = r;
-        },
-        role: "menuitem",
-        onFocus: function onFocus() {
-          setActiveItemIndex(index);
-        },
-        active: activeItemIndex === index,
-        focusIndicator: false,
-        plain: !child ? undefined : true,
-        align: "start",
-        kind: !child ? 'option' : undefined,
-        hoverIndicator: !child ? undefined : 'background'
-      }, theme.menu.item, {
-        justify: item.justify || ((_theme$menu$item4 = theme.menu.item) == null ? void 0 : _theme$menu$item4.justify)
-      }, !child ? item : _extends({}, item, {
-        gap: undefined,
-        icon: undefined,
-        label: undefined,
-        reverse: undefined
-      }), {
-        onClick: function onClick() {
-          if (item.onClick) {
-            item.onClick.apply(item, arguments);
-          }
-          if (item.close !== false) {
-            onDropClose();
-          }
+    return /*#__PURE__*/React.createElement(Box, {
+      key: index,
+      flex: false,
+      role: "none"
+    }, /*#__PURE__*/React.createElement(Button, _extends({
+      ref: function ref(r) {
+        buttonRefs.current[index] = r;
+      },
+      role: "menuitem",
+      onFocus: function onFocus() {
+        setActiveItemIndex(index);
+      },
+      active: activeItemIndex === index,
+      focusIndicator: false,
+      plain: !child ? undefined : true,
+      align: "start",
+      kind: !child ? 'option' : undefined,
+      hoverIndicator: !child ? undefined : 'background'
+    }, theme.menu.item, {
+      justify: item.justify || ((_theme$menu$item4 = theme.menu.item) == null ? void 0 : _theme$menu$item4.justify)
+    }, !child ? item : _extends({}, item, {
+      gap: undefined,
+      icon: undefined,
+      label: undefined,
+      reverse: undefined
+    }), {
+      onClick: function onClick() {
+        if (item.onClick) {
+          item.onClick.apply(item, arguments);
         }
-      }), child))
-    );
+        if (item.close !== false) {
+          onDropClose();
+        }
+      }
+    }), child));
   };
   var menuContent;
   var grouped = itemCount && Array.isArray(items[0]);

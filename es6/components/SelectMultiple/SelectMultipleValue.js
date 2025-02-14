@@ -138,9 +138,7 @@ var SelectMultipleValue = function SelectMultipleValue(_ref) {
     })
   }, value && allOptions.filter(function (i) {
     return arrayIncludes(value, valueKey && valueKey.reduce ? applyKey(i, valueKey) : i, valueKey || labelKey);
-  })
-  /* eslint-disable-next-line array-callback-return, 
-      consistent-return */.map(function (i) {
+  }).map(function (i) {
     return visibleValue(i);
   }), showA11yDiv && /*#__PURE__*/React.createElement(Box, {
     height: "0px",

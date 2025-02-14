@@ -56,7 +56,7 @@ export var FocusedContainer = function FocusedContainer(_ref) {
       ignoreUtilFocusRef.current = true;
       try {
         element.focus();
-      } catch (e) {
+      } catch (_unused) {
         // continue regardless of error
       }
       ignoreUtilFocusRef.current = false;

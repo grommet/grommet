@@ -144,9 +144,7 @@ var SelectMultipleValue = exports.SelectMultipleValue = function SelectMultipleV
     })
   }, value && allOptions.filter(function (i) {
     return (0, _utils.arrayIncludes)(value, valueKey && valueKey.reduce ? (0, _utils.applyKey)(i, valueKey) : i, valueKey || labelKey);
-  })
-  /* eslint-disable-next-line array-callback-return, 
-      consistent-return */.map(function (i) {
+  }).map(function (i) {
     return visibleValue(i);
   }), showA11yDiv && /*#__PURE__*/_react["default"].createElement(_Box.Box, {
     height: "0px",

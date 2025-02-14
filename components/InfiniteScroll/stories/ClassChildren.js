@@ -9,8 +9,6 @@ function _extends() { return _extends = Object.assign ? Object.assign.bind() : f
 var allItems = Array(2000).fill().map(function (_, i) {
   return "item " + (i + 1);
 });
-
-/* eslint-disable react/prefer-stateless-function */
 var MyItem = function MyItem(_ref) {
   var item = _ref.item;
   return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {

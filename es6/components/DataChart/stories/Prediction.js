@@ -1,4 +1,3 @@
-/* eslint-disable max-len */
 import React from 'react';
 import styled, { keyframes } from 'styled-components';
 import { Box, DataChart, Stack } from 'grommet';

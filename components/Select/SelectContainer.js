@@ -347,9 +347,7 @@ var SelectContainer = exports.SelectContainer = /*#__PURE__*/(0, _react.forwardR
     }
 
     // if we have a child, turn on plain, and hoverIndicator
-    return /*#__PURE__*/_react["default"].createElement(_StyledSelect.SelectOption
-    // eslint-disable-next-line react/no-array-index-key
-    , _extends({
+    return /*#__PURE__*/_react["default"].createElement(_StyledSelect.SelectOption, _extends({
       key: index
       // merge optionRef and activeRef
       ,

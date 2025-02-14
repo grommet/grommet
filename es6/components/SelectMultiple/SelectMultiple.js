@@ -409,9 +409,7 @@ var SelectMultiple = /*#__PURE__*/forwardRef(function (_ref, ref) {
   }, rest, {
     tabIndex: "-1",
     type: "text",
-    placeholder:
-    // eslint-disable-next-line no-nested-ternary
-    !value || (value == null ? void 0 : value.length) === 0 ? placeholder || selectValue || displayLabelKey : format({
+    placeholder: !value || (value == null ? void 0 : value.length) === 0 ? placeholder || selectValue || displayLabelKey : format({
       id: onMore ? 'selectMultiple.selected' : 'selectMultiple.selectedOfTotal',
       messages: messages,
       values: _extends({

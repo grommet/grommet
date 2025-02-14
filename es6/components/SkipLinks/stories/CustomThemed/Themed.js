@@ -1,4 +1,3 @@
-/* eslint-disable jsx-a11y/tabindex-no-positive */
 import React from 'react';
 import { Avatar, Box, Anchor, Footer, Grommet, Header, Nav, Paragraph, SkipLinkTarget, SkipLink, SkipLinks, Heading } from 'grommet';
 var avatarSrc = '//s.gravatar.com/avatar/b7fb138d53ba0f573212ccce38a7c43b?s=80';

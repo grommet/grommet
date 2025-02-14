@@ -432,9 +432,7 @@ var SelectMultipleContainer = exports.SelectMultipleContainer = /*#__PURE__*/(0,
         values: {
           optionLabel: optionLabel
         }
-      })
-      // eslint-disable-next-line react/no-array-index-key
-      ,
+      }),
       key: index
       // merge optionRef and activeRef
       ,

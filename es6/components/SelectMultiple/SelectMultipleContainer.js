@@ -426,9 +426,7 @@ var SelectMultipleContainer = /*#__PURE__*/forwardRef(function (_ref, ref) {
         values: {
           optionLabel: optionLabel
         }
-      })
-      // eslint-disable-next-line react/no-array-index-key
-      ,
+      }),
       key: index
       // merge optionRef and activeRef
       ,

@@ -4,8 +4,6 @@ import { Box, InfiniteScroll, Text } from 'grommet';
 var allItems = Array(2000).fill().map(function (_, i) {
   return "item " + (i + 1);
 });
-
-/* eslint-disable react/prefer-stateless-function */
 var MyItem = function MyItem(_ref) {
   var item = _ref.item;
   return /*#__PURE__*/React.createElement(Box, {
