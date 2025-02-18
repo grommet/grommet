@@ -398,6 +398,7 @@ const FileInput = forwardRef(
                   })}
                   icon={<RemoveIcon />}
                   hoverIndicator
+                  disabled={disabled}
                   onClick={(event) => {
                     if (confirmRemove) {
                       event.persist(); // necessary for when React < v17
@@ -493,6 +494,7 @@ const FileInput = forwardRef(
                     })} ${file.name}`}
                     icon={<RemoveIcon />}
                     hoverIndicator
+                    disabled={disabled}
                     onClick={(event) => {
                       if (confirmRemove) {
                         event.persist(); // necessary for when React < v17
