@@ -359,6 +359,7 @@ var FileInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
     }),
     icon: /*#__PURE__*/React.createElement(RemoveIcon, null),
     hoverIndicator: true,
+    disabled: disabled,
     onClick: function onClick(event) {
       if (confirmRemove) {
         event.persist(); // necessary for when React < v17
@@ -430,6 +431,7 @@ var FileInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
       }) + " " + file.name,
       icon: /*#__PURE__*/React.createElement(RemoveIcon, null),
       hoverIndicator: true,
+      disabled: disabled,
       onClick: function onClick(event) {
         if (confirmRemove) {
           event.persist(); // necessary for when React < v17

@@ -366,6 +366,7 @@ var FileInput = exports.FileInput = /*#__PURE__*/(0, _react.forwardRef)(function
     }),
     icon: /*#__PURE__*/_react["default"].createElement(RemoveIcon, null),
     hoverIndicator: true,
+    disabled: disabled,
     onClick: function onClick(event) {
       if (confirmRemove) {
         event.persist(); // necessary for when React < v17
@@ -437,6 +438,7 @@ var FileInput = exports.FileInput = /*#__PURE__*/(0, _react.forwardRef)(function
       }) + " " + file.name,
       icon: /*#__PURE__*/_react["default"].createElement(RemoveIcon, null),
       hoverIndicator: true,
+      disabled: disabled,
       onClick: function onClick(event) {
         if (confirmRemove) {
           event.persist(); // necessary for when React < v17
