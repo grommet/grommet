@@ -319,7 +319,6 @@ export type WidthType =
   | 'xxlarge'
   | TShirtSizeType
   | '100%'
-  | string[]
   | {
       width?: 'xxsmall' | 'xxlarge' | TShirtSizeType | '100%';
       max?: 'xxsmall' | 'xxlarge' | TShirtSizeType | '100%';
