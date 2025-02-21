@@ -103,13 +103,14 @@ export const parameters = {
        * A return value of 0 results in sorting the "first" story BEFORE the
        * secondary story.
        */
-      const isFirstCustom = first[1].kind.split('/')[2] === CUSTOM_THEMED;
-      const isSecondCustom = second[1].kind.split('/')[2] === CUSTOM_THEMED;
+      const CUSTOM_THEMED = 'Custom Themed';
+      const isFirstCustom = first.title.split('/')[2] === CUSTOM_THEMED;
+      const isSecondCustom = second.title.split('/')[2] === CUSTOM_THEMED;
       if (isFirstCustom) return 1;
       if (isSecondCustom) return 0;
-      return first[1].kind === second[1].kind
+      return first.title === second.title
         ? 0
-        : first[1].id.localeCompare(second[1].id, undefined, { numeric: true });
+        : first.id.localeCompare(second.id, undefined, { numeric: true });
     },
   },
 };

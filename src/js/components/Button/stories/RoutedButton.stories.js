@@ -14,5 +14,5 @@ export const RoutedButton = () => (
 RoutedButton.storyName = 'Routed button';
 
 export default {
-  title: `Controls/Button/Routed button`,
+  title: 'Controls/Button/Routed button',
 };

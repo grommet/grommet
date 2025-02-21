@@ -45,5 +45,5 @@ export const DSTCalendar = () => (
 DSTCalendar.storyName = 'Daylight savings time';
 
 export default {
-  title: `Visualizations/Calendar/Daylight savings time`,
+  title: 'Visualizations/Calendar/Daylight savings time',
 };

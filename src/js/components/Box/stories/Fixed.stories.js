@@ -50,5 +50,5 @@ export const FixedSizesBox = () => (
 FixedSizesBox.storyName = 'Fixed sizes';
 
 export default {
-  title: `Layout/Box/Fixed sizes`,
+  title: 'Layout/Box/Fixed sizes',
 };

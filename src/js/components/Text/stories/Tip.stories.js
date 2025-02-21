@@ -41,5 +41,5 @@ Tip.parameters = {
 };
 
 export default {
-  title: `Type/Text/Tip`,
+  title: 'Type/Text/Tip',
 };

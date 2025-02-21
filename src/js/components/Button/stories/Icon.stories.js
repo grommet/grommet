@@ -35,5 +35,5 @@ export const Icon = () => (
 Icon.storyName = 'Icon plain';
 
 export default {
-  title: `Controls/Button/Icon plain`,
+  title: 'Controls/Button/Icon plain',
 };

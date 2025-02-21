@@ -102,5 +102,5 @@ export const RichFooter = () => {
 RichFooter.storyName = 'Rich footer';
 
 export default {
-  title: `Layout/Card/Custom Themed/Rich footer`,
+  title: 'Layout/Card/Custom Themed/Rich footer',
 };

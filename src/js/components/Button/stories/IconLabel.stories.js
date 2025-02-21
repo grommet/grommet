@@ -20,5 +20,5 @@ export const IconLabel = () => (
 IconLabel.storyName = 'Icon label';
 
 export default {
-  title: `Controls/Button/Icon label`,
+  title: 'Controls/Button/Icon label',
 };
