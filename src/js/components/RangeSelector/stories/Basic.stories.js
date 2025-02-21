@@ -45,5 +45,5 @@ export const Simple = ({ direction = 'horizontal' }) => {
 };
 
 export default {
-  title: 'Input/RangeSelector/Basic',
+  title: 'Input/RangeSelector/Simple',
 };
