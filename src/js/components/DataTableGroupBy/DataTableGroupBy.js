@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from 'react';
 import { DataForm } from '../Data/DataForm';
 import { DataContext } from '../../contexts/DataContext';
-import { FormContext } from '../Form/FormContext';
+import { DataFormContext } from '../../contexts/DataFormContext';
 import { FormField } from '../FormField';
 import { Select } from '../Select';
 import { MessageContext } from '../../contexts/MessageContext';
@@ -9,13 +9,13 @@ import { DataTableGroupByPropTypes } from './propTypes';
 
 export const DataTableGroupBy = ({ id: idProp, options, ...rest }) => {
   const { id: dataId, messages, view, addToolbarKey } = useContext(DataContext);
-  const { noForm } = useContext(FormContext);
+  const { inDataForm } = useContext(DataFormContext);
   const { format } = useContext(MessageContext);
   const id = idProp || `${dataId}--groupby`;
 
   useEffect(() => {
-    if (noForm) addToolbarKey('_groupBy');
-  }, [addToolbarKey, noForm]);
+    if (!inDataForm) addToolbarKey('_groupBy');
+  }, [addToolbarKey, inDataForm]);
 
   if (!options) return null;
 
@@ -24,7 +24,7 @@ export const DataTableGroupBy = ({ id: idProp, options, ...rest }) => {
       id={id}
       name="_groupBy"
       showSelectedInline
-      placeholder={noForm ? 'Group by' : undefined}
+      placeholder={!inDataForm ? 'Group by' : undefined}
       options={options}
       labelKey="label"
       clear={
@@ -43,7 +43,7 @@ export const DataTableGroupBy = ({ id: idProp, options, ...rest }) => {
     />
   );
 
-  if (noForm)
+  if (!inDataForm)
     // likely in Toolbar
     content = (
       <DataForm footer={false} updateOn="change">

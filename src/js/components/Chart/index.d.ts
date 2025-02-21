@@ -31,8 +31,8 @@ export interface ChartProps {
   dash?: boolean;
   direction?: 'horizontal' | 'vertical';
   gap?: GapType;
-  onClick?: (...args: any[]) => any;
-  onHover?: (...args: any[]) => any;
+  onClick?: (event: React.MouseEvent) => void;
+  onHover?: (over: boolean) => void;
   opacity?: 'weak' | 'medium' | 'strong' | boolean | number;
   overflow?: boolean;
   pad?: EdgeSizeType | { horizontal?: EdgeSizeType; vertical?: EdgeSizeType };
@@ -93,8 +93,8 @@ export interface ChartProps {
     | {
         color?: ColorType;
         label?: string;
-        onClick?: (...args: any[]) => any;
-        onHover?: (...args: any[]) => any;
+        onClick?: (event: React.MouseEvent) => void;
+        onHover?: (over: boolean) => void;
         opacity?: 'weak' | 'medium' | 'strong' | boolean | number;
         thickness?: ThicknessType;
         value: number | number[];

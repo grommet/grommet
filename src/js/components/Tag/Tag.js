@@ -1,19 +1,17 @@
-import React, { forwardRef, useContext } from 'react';
-import { ThemeContext } from 'styled-components';
-
+import React, { forwardRef } from 'react';
 import { FormClose } from 'grommet-icons/icons/FormClose';
-
-import { defaultProps } from '../../default-props';
 
 import { TagPropTypes } from './propTypes';
 import { Box } from '../Box';
 import { Text } from '../Text';
 
 import { StyledRemoveButton, StyledTagButton } from './StyledTag';
+import { useThemeValue } from '../../utils/useThemeValue';
 
 const Tag = forwardRef(
-  ({ name, value, size, onRemove, onClick, ...rest }, ref) => {
-    const theme = useContext(ThemeContext) || defaultProps.theme;
+  ({ name, value, size = 'medium', onRemove, onClick, ...rest }, ref) => {
+    const { theme, passThemeFlag } = useThemeValue();
+    const RemoveIcon = theme.tag.icons?.remove || FormClose;
 
     const containerProps = {
       ref,
@@ -49,6 +47,14 @@ const Tag = forwardRef(
       console.warn('Tag cannot combine "onClick" and "onRemove".');
     }
 
+    const removeProps = !theme.tag.remove.kind
+      ? {
+          plain: true,
+          hoverIndicator: true,
+          focusIndicator: true,
+        }
+      : {};
+
     return onRemove || !onClick ? (
       <Box
         flex={false}
@@ -60,12 +66,12 @@ const Tag = forwardRef(
         {onRemove && (
           <StyledRemoveButton
             onClick={onRemove}
-            plain
-            hoverIndicator
-            focusIndicator
-            icon={<FormClose {...theme.tag.size?.[size]?.icon} />}
+            {...removeProps}
+            icon={<RemoveIcon {...theme.tag.size?.[size]?.icon} />}
             round={theme.tag.size?.[size]?.round || theme.tag.round}
             {...theme.tag.remove}
+            {...theme.tag.size?.[size]?.remove}
+            {...passThemeFlag}
           />
         )}
       </Box>
@@ -77,6 +83,7 @@ const Tag = forwardRef(
         hoverIndicator
         focusIndicator
         {...containerProps}
+        {...passThemeFlag}
       >
         {contents}
       </StyledTagButton>

@@ -61,6 +61,7 @@ export const ControlledLazy = () => {
           </FormField>
           <FormField label="Email" htmlFor="email" name="email" required>
             <MaskedInput
+              aria-required
               id="email"
               name="email"
               mask={[
@@ -72,16 +73,19 @@ export const ControlledLazy = () => {
               ]}
             />
           </FormField>
-          <FormField name="subscribe">
-            <CheckBox name="subscribe" label="Subscribe?" />
+          <FormField htmlFor="subscribe" name="subscribe">
+            <CheckBox id="subscribe" name="subscribe" label="Subscribe?" />
           </FormField>
-          <FormField name="ampm">
-            <RadioButtonGroup name="ampm" options={['morning', 'evening']} />
+          <FormField htmlFor="ampm" name="ampm">
+            <RadioButtonGroup
+              id="ampm"
+              name="ampm"
+              options={['morning', 'evening']}
+            />
           </FormField>
           <FormField label="Size" htmlFor="size" name="size">
             <Select
               id="size"
-              aria-label="size"
               name="size"
               options={['small', 'medium', 'large']}
             />

@@ -1,28 +1,20 @@
-import React, { forwardRef, useMemo, useContext } from 'react';
-import { ThemeContext } from 'styled-components';
+import React, { forwardRef, useContext, useMemo } from 'react';
 
-import { defaultProps } from '../../default-props';
 import { Bar } from './Bar';
 import { Circle } from './Circle';
 import { MeterPropTypes } from './propTypes';
-
-const deriveMax = (values) => {
-  let max = 100;
-  if (values && values.length > 1) {
-    max = 0;
-    values.forEach((v) => {
-      max += v.value;
-    });
-  }
-  return max;
-};
+import { useThemeValue } from '../../utils/useThemeValue';
+import { MessageContext } from '../../contexts/MessageContext';
 
 const Meter = forwardRef(
   (
     {
+      'aria-label': ariaLabel,
       background = { color: 'light-2', opacity: 'medium' },
       color,
       direction = 'horizontal',
+      max: maxProp,
+      messages,
       size = 'medium',
       thickness = 'medium',
       type = 'bar',
@@ -33,7 +25,8 @@ const Meter = forwardRef(
     },
     ref,
   ) => {
-    const theme = useContext(ThemeContext) || defaultProps.theme;
+    const { theme } = useThemeValue();
+    const { format } = useContext(MessageContext);
 
     // normalize values to an array of objects
     const values = useMemo(() => {
@@ -47,13 +40,41 @@ const Meter = forwardRef(
       (theme.dir === 'rtl' || reverseProp) &&
       !(theme.dir === 'rtl' && reverseProp);
 
-    const memoizedMax = useMemo(() => deriveMax(values), [values]);
+    const max = useMemo(() => {
+      let maxValue = 100;
+      if (values?.length > 1) {
+        maxValue = values.reduce(
+          (total, currentValue) => total + currentValue.value,
+          0,
+        );
+      }
+      return maxProp || maxValue || 100;
+    }, [maxProp, values]);
+
+    const messageId = values?.length === 1 ? 'singular' : 'plural';
+
+    const meterType = type || 'bar';
+
+    const meterAriaLabel =
+      ariaLabel ||
+      format({
+        id: `meter.${meterType}.${messageId}`,
+        messages: messages?.meter?.[meterType],
+        values: {
+          meterValue:
+            value || values.map((item) => item.value ?? 0).join(', ') || 0,
+          type,
+          max,
+        },
+      });
+
     let content;
     if (type === 'bar') {
       content = (
         <Bar
           ref={ref}
-          max={memoizedMax}
+          aria-label={meterAriaLabel}
+          max={max}
           values={values}
           size={size}
           thickness={thickness}
@@ -66,8 +87,9 @@ const Meter = forwardRef(
     } else if (type === 'circle' || type === 'pie' || type === 'semicircle') {
       content = (
         <Circle
+          aria-label={meterAriaLabel}
           ref={ref}
-          max={memoizedMax}
+          max={max}
           values={values}
           size={size}
           thickness={thickness}

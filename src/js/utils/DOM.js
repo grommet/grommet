@@ -157,7 +157,8 @@ export const makeNodeFocusable = (node) => {
   }
 };
 
-const autoFocusingTags = /(a|area|input|select|textarea|button|iframe)$/;
+// Using ^ and $ to match the whole tagName, and not e.g. <meta> and <data>.
+const autoFocusingTags = /^(a|area|input|select|textarea|button|iframe)$/;
 
 export const makeNodeUnfocusable = (node) => {
   // do not touch aria live containers so that announcements work
@@ -172,7 +173,9 @@ export const makeNodeUnfocusable = (node) => {
         (element) => element.getAttribute(TABINDEX) !== null,
       )
       .forEach((element) => {
-        element.setAttribute(TABINDEX_STATE, element.getAttribute(TABINDEX));
+        // if TABINDEX_STATE already exists, it's holding the original value
+        if (!element.getAttribute(TABINDEX_STATE))
+          element.setAttribute(TABINDEX_STATE, element.getAttribute(TABINDEX));
         element.setAttribute(TABINDEX, -1);
       });
     // then, if any element is inherently focusable and not handled above,

@@ -45,6 +45,12 @@ describe('Tag', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
+  test('basic outside grommet wrapper', () => {
+    const { container } = render(<Tag name="Name" value="Value" />);
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
   test('onClick', async () => {
     const user = userEvent.setup();
 
@@ -89,5 +95,78 @@ describe('Tag', () => {
     );
 
     expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('renders custom remove icon', () => {
+    const CustomRemoveIcon = () => <svg data-testid="custom-remove-icon" />;
+    const customTheme = {
+      tag: {
+        icons: {
+          remove: CustomRemoveIcon,
+        },
+      },
+    };
+
+    const { container, getByTestId } = render(
+      <Grommet theme={customTheme}>
+        <Tag value="Value" onRemove={jest.fn()} />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+    expect(getByTestId('custom-remove-icon')).toBeDefined();
+  });
+
+  test('renders default remove icon', () => {
+    const { container } = render(<Tag value="Value" onRemove={jest.fn()} />);
+    expect(container).toMatchSnapshot();
+    expect(screen.getByLabelText('FormClose')).toBeDefined();
+  });
+
+  test('renders custom remove button kind and size', () => {
+    const customTheme = {
+      button: {
+        default: {
+          background: 'blue',
+        },
+      },
+      tag: {
+        remove: {
+          kind: 'default',
+        },
+        size: {
+          medium: {
+            remove: {
+              size: 'small',
+              margin: 'small',
+            },
+          },
+          large: {
+            remove: {
+              size: 'medium',
+              margin: {
+                vertical: '12px',
+                horizontal: '18px',
+              },
+            },
+          },
+          xlarge: {
+            remove: {
+              size: 'large',
+              margin: '10px',
+            },
+          },
+        },
+      },
+    };
+
+    const { asFragment } = render(
+      <Grommet theme={customTheme}>
+        <Tag value="Value" onRemove={jest.fn()} />
+        <Tag value="Value" size="medium" onRemove={jest.fn()} />
+        <Tag value="Value" size="large" onRemove={jest.fn()} />
+        <Tag value="Value" size="xlarge" onRemove={jest.fn()} />
+      </Grommet>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 });

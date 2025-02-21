@@ -32,7 +32,11 @@ export interface FormFieldProps {
             status?: 'error' | 'info';
           }
         | ((...args: any[]) => any)
-      )[];
+      )[]
+    | {
+        max: number;
+        threshold?: number;
+      };
   validateOn?: 'blur' | 'submit' | 'change';
 }
 

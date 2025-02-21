@@ -5,7 +5,7 @@ import 'jest-axe/extend-expect';
 import 'regenerator-runtime/runtime';
 
 import { axe } from 'jest-axe';
-import { render, fireEvent, screen } from '@testing-library/react';
+import { render, fireEvent } from '@testing-library/react';
 
 import { Grommet, Tab, Tabs } from '../..';
 import { ThemeType } from '../../../themes';
@@ -56,6 +56,17 @@ describe('Tabs', () => {
           <Tab title="Tab 2">Tab body 2</Tab>
         </Tabs>
       </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('renders outside grommet wrapper', () => {
+    const { container } = render(
+      <Tabs>
+        <Tab title="Tab 1">Tab body 1</Tab>
+        {undefined}
+        <Tab title="Tab 2">Tab body 2</Tab>
+      </Tabs>,
     );
     expect(container.firstChild).toMatchSnapshot();
   });
@@ -357,9 +368,5 @@ describe('Tabs', () => {
     );
 
     expect(asFragment()).toMatchSnapshot();
-
-    const tabsHeader = screen.getByRole('tablist')!;
-    const tabsHeaderStyle = window.getComputedStyle(tabsHeader);
-    expect(tabsHeaderStyle.alignSelf).toBe('flex-start');
   });
 });

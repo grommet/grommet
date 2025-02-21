@@ -23,8 +23,9 @@ exports[`TextArea Event tests onFocus 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
+  border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
+  max-width: 100%;
 }
 
 .c1:focus {
@@ -32,18 +33,18 @@ exports[`TextArea Event tests onFocus 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus > circle,
-.c1:focus > ellipse,
-.c1:focus > line,
-.c1:focus > path,
-.c1:focus > polygon,
-.c1:focus > polyline,
-.c1:focus > rect {
+.c1:focus >circle,
+.c1:focus >ellipse,
+.c1:focus >line,
+.c1:focus >path,
+.c1:focus >polygon,
+.c1:focus >polyline,
+.c1:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus::-moz-focus-inner {
+.c1:focus ::-moz-focus-inner {
   border: 0;
 }
 
@@ -59,7 +60,7 @@ exports[`TextArea Event tests onFocus 1`] = `
   color: #AAAAAA;
 }
 
-.c1::-webkit-search-decoration {
+.c1 ::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -110,8 +111,9 @@ HTMLCollection [
   margin: 0;
   font-size: 12px;
   line-height: 18px;
-  border: 1px solid rgba(0,0,0,0.33);
+  border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
+  max-width: 100%;
 }
 
 .c1:focus {
@@ -119,18 +121,18 @@ HTMLCollection [
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus > circle,
-.c1:focus > ellipse,
-.c1:focus > line,
-.c1:focus > path,
-.c1:focus > polygon,
-.c1:focus > polyline,
-.c1:focus > rect {
+.c1:focus >circle,
+.c1:focus >ellipse,
+.c1:focus >line,
+.c1:focus >path,
+.c1:focus >polygon,
+.c1:focus >polyline,
+.c1:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus::-moz-focus-inner {
+.c1:focus ::-moz-focus-inner {
   border: 0;
 }
 
@@ -146,7 +148,7 @@ HTMLCollection [
   color: #AAAAAA;
 }
 
-.c1::-webkit-search-decoration {
+.c1 ::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -174,8 +176,9 @@ HTMLCollection [
   margin: 0;
   font-size: 14px;
   line-height: 20px;
-  border: 1px solid rgba(0,0,0,0.33);
+  border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
+  max-width: 100%;
 }
 
 .c2:focus {
@@ -183,18 +186,18 @@ HTMLCollection [
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c2:focus > circle,
-.c2:focus > ellipse,
-.c2:focus > line,
-.c2:focus > path,
-.c2:focus > polygon,
-.c2:focus > polyline,
-.c2:focus > rect {
+.c2:focus >circle,
+.c2:focus >ellipse,
+.c2:focus >line,
+.c2:focus >path,
+.c2:focus >polygon,
+.c2:focus >polyline,
+.c2:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c2:focus::-moz-focus-inner {
+.c2:focus ::-moz-focus-inner {
   border: 0;
 }
 
@@ -210,7 +213,7 @@ HTMLCollection [
   color: #AAAAAA;
 }
 
-.c2::-webkit-search-decoration {
+.c2 ::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -238,8 +241,9 @@ HTMLCollection [
   margin: 0;
   font-size: 18px;
   line-height: 24px;
-  border: 1px solid rgba(0,0,0,0.33);
+  border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
+  max-width: 100%;
 }
 
 .c3:focus {
@@ -247,18 +251,18 @@ HTMLCollection [
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus > circle,
-.c3:focus > ellipse,
-.c3:focus > line,
-.c3:focus > path,
-.c3:focus > polygon,
-.c3:focus > polyline,
-.c3:focus > rect {
+.c3:focus >circle,
+.c3:focus >ellipse,
+.c3:focus >line,
+.c3:focus >path,
+.c3:focus >polygon,
+.c3:focus >polyline,
+.c3:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus::-moz-focus-inner {
+.c3:focus ::-moz-focus-inner {
   border: 0;
 }
 
@@ -274,7 +278,7 @@ HTMLCollection [
   color: #AAAAAA;
 }
 
-.c3::-webkit-search-decoration {
+.c3 ::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -302,8 +306,9 @@ HTMLCollection [
   margin: 0;
   font-size: 22px;
   line-height: 28px;
-  border: 1px solid rgba(0,0,0,0.33);
+  border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
+  max-width: 100%;
 }
 
 .c4:focus {
@@ -311,18 +316,18 @@ HTMLCollection [
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c4:focus > circle,
-.c4:focus > ellipse,
-.c4:focus > line,
-.c4:focus > path,
-.c4:focus > polygon,
-.c4:focus > polyline,
-.c4:focus > rect {
+.c4:focus >circle,
+.c4:focus >ellipse,
+.c4:focus >line,
+.c4:focus >path,
+.c4:focus >polygon,
+.c4:focus >polyline,
+.c4:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c4:focus::-moz-focus-inner {
+.c4:focus ::-moz-focus-inner {
   border: 0;
 }
 
@@ -338,7 +343,7 @@ HTMLCollection [
   color: #AAAAAA;
 }
 
-.c4::-webkit-search-decoration {
+.c4 ::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -366,8 +371,9 @@ HTMLCollection [
   margin: 0;
   font-size: 26px;
   line-height: 32px;
-  border: 1px solid rgba(0,0,0,0.33);
+  border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
+  max-width: 100%;
 }
 
 .c5:focus {
@@ -375,18 +381,18 @@ HTMLCollection [
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c5:focus > circle,
-.c5:focus > ellipse,
-.c5:focus > line,
-.c5:focus > path,
-.c5:focus > polygon,
-.c5:focus > polyline,
-.c5:focus > rect {
+.c5:focus >circle,
+.c5:focus >ellipse,
+.c5:focus >line,
+.c5:focus >path,
+.c5:focus >polygon,
+.c5:focus >polyline,
+.c5:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c5:focus::-moz-focus-inner {
+.c5:focus ::-moz-focus-inner {
   border: 0;
 }
 
@@ -402,7 +408,7 @@ HTMLCollection [
   color: #AAAAAA;
 }
 
-.c5::-webkit-search-decoration {
+.c5 ::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -430,8 +436,9 @@ HTMLCollection [
   margin: 0;
   font-size: 34px;
   line-height: 40px;
-  border: 1px solid rgba(0,0,0,0.33);
+  border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
+  max-width: 100%;
 }
 
 .c6:focus {
@@ -439,18 +446,18 @@ HTMLCollection [
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c6:focus > circle,
-.c6:focus > ellipse,
-.c6:focus > line,
-.c6:focus > path,
-.c6:focus > polygon,
-.c6:focus > polyline,
-.c6:focus > rect {
+.c6:focus >circle,
+.c6:focus >ellipse,
+.c6:focus >line,
+.c6:focus >path,
+.c6:focus >polygon,
+.c6:focus >polyline,
+.c6:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c6:focus::-moz-focus-inner {
+.c6:focus ::-moz-focus-inner {
   border: 0;
 }
 
@@ -466,7 +473,7 @@ HTMLCollection [
   color: #AAAAAA;
 }
 
-.c6::-webkit-search-decoration {
+.c6 ::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -494,8 +501,9 @@ HTMLCollection [
   margin: 0;
   font-size: 42px;
   line-height: 48px;
-  border: 1px solid rgba(0,0,0,0.33);
+  border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
+  max-width: 100%;
 }
 
 .c7:focus {
@@ -503,18 +511,18 @@ HTMLCollection [
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c7:focus > circle,
-.c7:focus > ellipse,
-.c7:focus > line,
-.c7:focus > path,
-.c7:focus > polygon,
-.c7:focus > polyline,
-.c7:focus > rect {
+.c7:focus >circle,
+.c7:focus >ellipse,
+.c7:focus >line,
+.c7:focus >path,
+.c7:focus >polygon,
+.c7:focus >polyline,
+.c7:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c7:focus::-moz-focus-inner {
+.c7:focus ::-moz-focus-inner {
   border: 0;
 }
 
@@ -530,7 +538,7 @@ HTMLCollection [
   color: #AAAAAA;
 }
 
-.c7::-webkit-search-decoration {
+.c7 ::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -558,8 +566,9 @@ HTMLCollection [
   margin: 0;
   font-size: 54px;
   line-height: 60px;
-  border: 1px solid rgba(0,0,0,0.33);
+  border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
+  max-width: 100%;
 }
 
 .c8:focus {
@@ -567,18 +576,18 @@ HTMLCollection [
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c8:focus > circle,
-.c8:focus > ellipse,
-.c8:focus > line,
-.c8:focus > path,
-.c8:focus > polygon,
-.c8:focus > polyline,
-.c8:focus > rect {
+.c8:focus >circle,
+.c8:focus >ellipse,
+.c8:focus >line,
+.c8:focus >path,
+.c8:focus >polygon,
+.c8:focus >polyline,
+.c8:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c8:focus::-moz-focus-inner {
+.c8:focus ::-moz-focus-inner {
   border: 0;
 }
 
@@ -594,7 +603,7 @@ HTMLCollection [
   color: #AAAAAA;
 }
 
-.c8::-webkit-search-decoration {
+.c8 ::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -622,8 +631,9 @@ HTMLCollection [
   margin: 0;
   font-size: 70px;
   line-height: 76px;
-  border: 1px solid rgba(0,0,0,0.33);
+  border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
+  max-width: 100%;
 }
 
 .c9:focus {
@@ -631,18 +641,18 @@ HTMLCollection [
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c9:focus > circle,
-.c9:focus > ellipse,
-.c9:focus > line,
-.c9:focus > path,
-.c9:focus > polygon,
-.c9:focus > polyline,
-.c9:focus > rect {
+.c9:focus >circle,
+.c9:focus >ellipse,
+.c9:focus >line,
+.c9:focus >path,
+.c9:focus >polygon,
+.c9:focus >polyline,
+.c9:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c9:focus::-moz-focus-inner {
+.c9:focus ::-moz-focus-inner {
   border: 0;
 }
 
@@ -658,7 +668,7 @@ HTMLCollection [
   color: #AAAAAA;
 }
 
-.c9::-webkit-search-decoration {
+.c9 ::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -686,8 +696,9 @@ HTMLCollection [
   margin: 0;
   font-size: 90px;
   line-height: 96px;
-  border: 1px solid rgba(0,0,0,0.33);
+  border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
+  max-width: 100%;
 }
 
 .c10:focus {
@@ -695,18 +706,18 @@ HTMLCollection [
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c10:focus > circle,
-.c10:focus > ellipse,
-.c10:focus > line,
-.c10:focus > path,
-.c10:focus > polygon,
-.c10:focus > polyline,
-.c10:focus > rect {
+.c10:focus >circle,
+.c10:focus >ellipse,
+.c10:focus >line,
+.c10:focus >path,
+.c10:focus >polygon,
+.c10:focus >polyline,
+.c10:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c10:focus::-moz-focus-inner {
+.c10:focus ::-moz-focus-inner {
   border: 0;
 }
 
@@ -722,7 +733,7 @@ HTMLCollection [
   color: #AAAAAA;
 }
 
-.c10::-webkit-search-decoration {
+.c10 ::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -749,8 +760,9 @@ HTMLCollection [
   font-weight: 600;
   margin: 0;
   font-size: 16px;
-  border: 1px solid rgba(0,0,0,0.33);
+  border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
+  max-width: 100%;
 }
 
 .c11:focus {
@@ -758,18 +770,18 @@ HTMLCollection [
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c11:focus > circle,
-.c11:focus > ellipse,
-.c11:focus > line,
-.c11:focus > path,
-.c11:focus > polygon,
-.c11:focus > polyline,
-.c11:focus > rect {
+.c11:focus >circle,
+.c11:focus >ellipse,
+.c11:focus >line,
+.c11:focus >path,
+.c11:focus >polygon,
+.c11:focus >polyline,
+.c11:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c11:focus::-moz-focus-inner {
+.c11:focus ::-moz-focus-inner {
   border: 0;
 }
 
@@ -785,7 +797,7 @@ HTMLCollection [
   color: #AAAAAA;
 }
 
-.c11::-webkit-search-decoration {
+.c11 ::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -812,8 +824,9 @@ HTMLCollection [
   font-weight: 600;
   margin: 0;
   font-size: 1rem;
-  border: 1px solid rgba(0,0,0,0.33);
+  border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
+  max-width: 100%;
 }
 
 .c12:focus {
@@ -821,18 +834,18 @@ HTMLCollection [
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c12:focus > circle,
-.c12:focus > ellipse,
-.c12:focus > line,
-.c12:focus > path,
-.c12:focus > polygon,
-.c12:focus > polyline,
-.c12:focus > rect {
+.c12:focus >circle,
+.c12:focus >ellipse,
+.c12:focus >line,
+.c12:focus >path,
+.c12:focus >polygon,
+.c12:focus >polyline,
+.c12:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c12:focus::-moz-focus-inner {
+.c12:focus ::-moz-focus-inner {
   border: 0;
 }
 
@@ -848,7 +861,7 @@ HTMLCollection [
   color: #AAAAAA;
 }
 
-.c12::-webkit-search-decoration {
+.c12 ::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -875,8 +888,9 @@ HTMLCollection [
   font-weight: 600;
   margin: 0;
   font-size: 100%;
-  border: 1px solid rgba(0,0,0,0.33);
+  border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
+  max-width: 100%;
 }
 
 .c13:focus {
@@ -884,18 +898,18 @@ HTMLCollection [
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c13:focus > circle,
-.c13:focus > ellipse,
-.c13:focus > line,
-.c13:focus > path,
-.c13:focus > polygon,
-.c13:focus > polyline,
-.c13:focus > rect {
+.c13:focus >circle,
+.c13:focus >ellipse,
+.c13:focus >line,
+.c13:focus >path,
+.c13:focus >polygon,
+.c13:focus >polyline,
+.c13:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c13:focus::-moz-focus-inner {
+.c13:focus ::-moz-focus-inner {
   border: 0;
 }
 
@@ -911,7 +925,7 @@ HTMLCollection [
   color: #AAAAAA;
 }
 
-.c13::-webkit-search-decoration {
+.c13 ::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -997,8 +1011,9 @@ exports[`TextArea basic 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
+  border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
+  max-width: 100%;
 }
 
 .c1:focus {
@@ -1006,18 +1021,18 @@ exports[`TextArea basic 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus > circle,
-.c1:focus > ellipse,
-.c1:focus > line,
-.c1:focus > path,
-.c1:focus > polygon,
-.c1:focus > polyline,
-.c1:focus > rect {
+.c1:focus >circle,
+.c1:focus >ellipse,
+.c1:focus >line,
+.c1:focus >path,
+.c1:focus >polygon,
+.c1:focus >polyline,
+.c1:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus::-moz-focus-inner {
+.c1:focus ::-moz-focus-inner {
   border: 0;
 }
 
@@ -1033,7 +1048,7 @@ exports[`TextArea basic 1`] = `
   color: #AAAAAA;
 }
 
-.c1::-webkit-search-decoration {
+.c1 ::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -1056,6 +1071,77 @@ exports[`TextArea basic 1`] = `
     name="item"
   />
 </div>
+`;
+
+exports[`TextArea basic outside grommet wrapper 1`] = `
+.c0 {
+  box-sizing: border-box;
+  font-size: inherit;
+  font-family: inherit;
+  border: none;
+  -webkit-appearance: none;
+  background: transparent;
+  color: inherit;
+  width: 100%;
+  padding: 11px;
+  font-weight: 600;
+  margin: 0;
+  border: 1px solid rgba(0, 0, 0, 0.33);
+  border-radius: 4px;
+  max-width: 100%;
+}
+
+.c0:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c0:focus >circle,
+.c0:focus >ellipse,
+.c0:focus >line,
+.c0:focus >path,
+.c0:focus >polygon,
+.c0:focus >polyline,
+.c0:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c0:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c0::-webkit-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c0::-moz-placeholder {
+  color: #AAAAAA;
+}
+
+.c0:-ms-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c0 ::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+.c0::-moz-focus-inner {
+  border: none;
+  outline: none;
+}
+
+.c0:-moz-placeholder,
+.c0::-moz-placeholder {
+  opacity: 1;
+}
+
+<textarea
+  class="c0"
+  id="item"
+  name="item"
+/>
 `;
 
 exports[`TextArea custom theme input font size 1`] = `
@@ -1081,8 +1167,9 @@ exports[`TextArea custom theme input font size 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
+  border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
+  max-width: 100%;
 }
 
 .c1:focus {
@@ -1090,18 +1177,18 @@ exports[`TextArea custom theme input font size 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus > circle,
-.c1:focus > ellipse,
-.c1:focus > line,
-.c1:focus > path,
-.c1:focus > polygon,
-.c1:focus > polyline,
-.c1:focus > rect {
+.c1:focus >circle,
+.c1:focus >ellipse,
+.c1:focus >line,
+.c1:focus >path,
+.c1:focus >polygon,
+.c1:focus >polyline,
+.c1:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus::-moz-focus-inner {
+.c1:focus ::-moz-focus-inner {
   border: 0;
 }
 
@@ -1117,7 +1204,7 @@ exports[`TextArea custom theme input font size 1`] = `
   color: #AAAAAA;
 }
 
-.c1::-webkit-search-decoration {
+.c1 ::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -1163,7 +1250,7 @@ exports[`TextArea disabled 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
+  border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
   outline: none;
   border: none;
@@ -1171,6 +1258,7 @@ exports[`TextArea disabled 1`] = `
   -webkit-appearance: none;
   opacity: 0.3;
   cursor: default;
+  max-width: 100%;
 }
 
 .c1:focus {
@@ -1178,18 +1266,18 @@ exports[`TextArea disabled 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus > circle,
-.c1:focus > ellipse,
-.c1:focus > line,
-.c1:focus > path,
-.c1:focus > polygon,
-.c1:focus > polyline,
-.c1:focus > rect {
+.c1:focus >circle,
+.c1:focus >ellipse,
+.c1:focus >line,
+.c1:focus >path,
+.c1:focus >polygon,
+.c1:focus >polyline,
+.c1:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus::-moz-focus-inner {
+.c1:focus ::-moz-focus-inner {
   border: 0;
 }
 
@@ -1205,7 +1293,7 @@ exports[`TextArea disabled 1`] = `
   color: #AAAAAA;
 }
 
-.c1::-webkit-search-decoration {
+.c1 ::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -1254,9 +1342,10 @@ exports[`TextArea fill 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
+  border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
   height: 100%;
+  max-width: 100%;
 }
 
 .c1:focus {
@@ -1264,18 +1353,18 @@ exports[`TextArea fill 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus > circle,
-.c1:focus > ellipse,
-.c1:focus > line,
-.c1:focus > path,
-.c1:focus > polygon,
-.c1:focus > polyline,
-.c1:focus > rect {
+.c1:focus >circle,
+.c1:focus >ellipse,
+.c1:focus >line,
+.c1:focus >path,
+.c1:focus >polygon,
+.c1:focus >polyline,
+.c1:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus::-moz-focus-inner {
+.c1:focus ::-moz-focus-inner {
   border: 0;
 }
 
@@ -1291,7 +1380,7 @@ exports[`TextArea fill 1`] = `
   color: #AAAAAA;
 }
 
-.c1::-webkit-search-decoration {
+.c1 ::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -1339,8 +1428,9 @@ exports[`TextArea focusIndicator 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
+  border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
+  max-width: 100%;
 }
 
 .c1:focus {
@@ -1348,18 +1438,18 @@ exports[`TextArea focusIndicator 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus > circle,
-.c1:focus > ellipse,
-.c1:focus > line,
-.c1:focus > path,
-.c1:focus > polygon,
-.c1:focus > polyline,
-.c1:focus > rect {
+.c1:focus >circle,
+.c1:focus >ellipse,
+.c1:focus >line,
+.c1:focus >path,
+.c1:focus >polygon,
+.c1:focus >polyline,
+.c1:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus::-moz-focus-inner {
+.c1:focus ::-moz-focus-inner {
   border: 0;
 }
 
@@ -1375,7 +1465,7 @@ exports[`TextArea focusIndicator 1`] = `
   color: #AAAAAA;
 }
 
-.c1::-webkit-search-decoration {
+.c1 ::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -1423,8 +1513,9 @@ exports[`TextArea placeholder 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
+  border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
+  max-width: 100%;
 }
 
 .c1:focus {
@@ -1432,18 +1523,18 @@ exports[`TextArea placeholder 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus > circle,
-.c1:focus > ellipse,
-.c1:focus > line,
-.c1:focus > path,
-.c1:focus > polygon,
-.c1:focus > polyline,
-.c1:focus > rect {
+.c1:focus >circle,
+.c1:focus >ellipse,
+.c1:focus >line,
+.c1:focus >path,
+.c1:focus >polygon,
+.c1:focus >polyline,
+.c1:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus::-moz-focus-inner {
+.c1:focus ::-moz-focus-inner {
   border: 0;
 }
 
@@ -1459,7 +1550,7 @@ exports[`TextArea placeholder 1`] = `
   color: #AAAAAA;
 }
 
-.c1::-webkit-search-decoration {
+.c1 ::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -1508,12 +1599,13 @@ exports[`TextArea plain 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
+  border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
   outline: none;
   border: none;
   width: 100%;
   -webkit-appearance: none;
+  max-width: 100%;
 }
 
 .c1:focus {
@@ -1521,18 +1613,18 @@ exports[`TextArea plain 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus > circle,
-.c1:focus > ellipse,
-.c1:focus > line,
-.c1:focus > path,
-.c1:focus > polygon,
-.c1:focus > polyline,
-.c1:focus > rect {
+.c1:focus >circle,
+.c1:focus >ellipse,
+.c1:focus >line,
+.c1:focus >path,
+.c1:focus >polygon,
+.c1:focus >polyline,
+.c1:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus::-moz-focus-inner {
+.c1:focus ::-moz-focus-inner {
   border: 0;
 }
 
@@ -1548,7 +1640,7 @@ exports[`TextArea plain 1`] = `
   color: #AAAAAA;
 }
 
-.c1::-webkit-search-decoration {
+.c1 ::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -1596,9 +1688,10 @@ exports[`TextArea resize false 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
+  border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
   resize: none;
+  max-width: 100%;
 }
 
 .c1:focus {
@@ -1606,18 +1699,18 @@ exports[`TextArea resize false 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus > circle,
-.c1:focus > ellipse,
-.c1:focus > line,
-.c1:focus > path,
-.c1:focus > polygon,
-.c1:focus > polyline,
-.c1:focus > rect {
+.c1:focus >circle,
+.c1:focus >ellipse,
+.c1:focus >line,
+.c1:focus >path,
+.c1:focus >polygon,
+.c1:focus >polyline,
+.c1:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus::-moz-focus-inner {
+.c1:focus ::-moz-focus-inner {
   border: 0;
 }
 
@@ -1633,7 +1726,7 @@ exports[`TextArea resize false 1`] = `
   color: #AAAAAA;
 }
 
-.c1::-webkit-search-decoration {
+.c1 ::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -1681,9 +1774,10 @@ exports[`TextArea resize horizontal 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
+  border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
   resize: horizontal;
+  max-width: 100%;
 }
 
 .c1:focus {
@@ -1691,18 +1785,18 @@ exports[`TextArea resize horizontal 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus > circle,
-.c1:focus > ellipse,
-.c1:focus > line,
-.c1:focus > path,
-.c1:focus > polygon,
-.c1:focus > polyline,
-.c1:focus > rect {
+.c1:focus >circle,
+.c1:focus >ellipse,
+.c1:focus >line,
+.c1:focus >path,
+.c1:focus >polygon,
+.c1:focus >polyline,
+.c1:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus::-moz-focus-inner {
+.c1:focus ::-moz-focus-inner {
   border: 0;
 }
 
@@ -1718,7 +1812,7 @@ exports[`TextArea resize horizontal 1`] = `
   color: #AAAAAA;
 }
 
-.c1::-webkit-search-decoration {
+.c1 ::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -1766,9 +1860,10 @@ exports[`TextArea resize true 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
+  border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
   resize: both;
+  max-width: 100%;
 }
 
 .c1:focus {
@@ -1776,18 +1871,18 @@ exports[`TextArea resize true 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus > circle,
-.c1:focus > ellipse,
-.c1:focus > line,
-.c1:focus > path,
-.c1:focus > polygon,
-.c1:focus > polyline,
-.c1:focus > rect {
+.c1:focus >circle,
+.c1:focus >ellipse,
+.c1:focus >line,
+.c1:focus >path,
+.c1:focus >polygon,
+.c1:focus >polyline,
+.c1:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus::-moz-focus-inner {
+.c1:focus ::-moz-focus-inner {
   border: 0;
 }
 
@@ -1803,7 +1898,7 @@ exports[`TextArea resize true 1`] = `
   color: #AAAAAA;
 }
 
-.c1::-webkit-search-decoration {
+.c1 ::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -1851,9 +1946,10 @@ exports[`TextArea resize vertical 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
+  border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
   resize: vertical;
+  max-width: 100%;
 }
 
 .c1:focus {
@@ -1861,18 +1957,18 @@ exports[`TextArea resize vertical 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus > circle,
-.c1:focus > ellipse,
-.c1:focus > line,
-.c1:focus > path,
-.c1:focus > polygon,
-.c1:focus > polyline,
-.c1:focus > rect {
+.c1:focus >circle,
+.c1:focus >ellipse,
+.c1:focus >line,
+.c1:focus >path,
+.c1:focus >polygon,
+.c1:focus >polyline,
+.c1:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus::-moz-focus-inner {
+.c1:focus ::-moz-focus-inner {
   border: 0;
 }
 
@@ -1888,7 +1984,7 @@ exports[`TextArea resize vertical 1`] = `
   color: #AAAAAA;
 }
 
-.c1::-webkit-search-decoration {
+.c1 ::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -1936,8 +2032,9 @@ exports[`TextArea should apply a11yTitle or aria-label 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
+  border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
+  max-width: 100%;
 }
 
 .c1:focus {
@@ -1945,18 +2042,18 @@ exports[`TextArea should apply a11yTitle or aria-label 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus > circle,
-.c1:focus > ellipse,
-.c1:focus > line,
-.c1:focus > path,
-.c1:focus > polygon,
-.c1:focus > polyline,
-.c1:focus > rect {
+.c1:focus >circle,
+.c1:focus >ellipse,
+.c1:focus >line,
+.c1:focus >path,
+.c1:focus >polygon,
+.c1:focus >polyline,
+.c1:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus::-moz-focus-inner {
+.c1:focus ::-moz-focus-inner {
   border: 0;
 }
 
@@ -1972,7 +2069,7 @@ exports[`TextArea should apply a11yTitle or aria-label 1`] = `
   color: #AAAAAA;
 }
 
-.c1::-webkit-search-decoration {
+.c1 ::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -2029,8 +2126,9 @@ exports[`TextArea size large 1`] = `
   margin: 0;
   font-size: 22px;
   line-height: 28px;
-  border: 1px solid rgba(0,0,0,0.33);
+  border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
+  max-width: 100%;
 }
 
 .c1:focus {
@@ -2038,18 +2136,18 @@ exports[`TextArea size large 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus > circle,
-.c1:focus > ellipse,
-.c1:focus > line,
-.c1:focus > path,
-.c1:focus > polygon,
-.c1:focus > polyline,
-.c1:focus > rect {
+.c1:focus >circle,
+.c1:focus >ellipse,
+.c1:focus >line,
+.c1:focus >path,
+.c1:focus >polygon,
+.c1:focus >polyline,
+.c1:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus::-moz-focus-inner {
+.c1:focus ::-moz-focus-inner {
   border: 0;
 }
 
@@ -2065,7 +2163,7 @@ exports[`TextArea size large 1`] = `
   color: #AAAAAA;
 }
 
-.c1::-webkit-search-decoration {
+.c1 ::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -2115,8 +2213,9 @@ exports[`TextArea size medium 1`] = `
   margin: 0;
   font-size: 18px;
   line-height: 24px;
-  border: 1px solid rgba(0,0,0,0.33);
+  border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
+  max-width: 100%;
 }
 
 .c1:focus {
@@ -2124,18 +2223,18 @@ exports[`TextArea size medium 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus > circle,
-.c1:focus > ellipse,
-.c1:focus > line,
-.c1:focus > path,
-.c1:focus > polygon,
-.c1:focus > polyline,
-.c1:focus > rect {
+.c1:focus >circle,
+.c1:focus >ellipse,
+.c1:focus >line,
+.c1:focus >path,
+.c1:focus >polygon,
+.c1:focus >polyline,
+.c1:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus::-moz-focus-inner {
+.c1:focus ::-moz-focus-inner {
   border: 0;
 }
 
@@ -2151,7 +2250,7 @@ exports[`TextArea size medium 1`] = `
   color: #AAAAAA;
 }
 
-.c1::-webkit-search-decoration {
+.c1 ::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -2201,8 +2300,9 @@ exports[`TextArea size small 1`] = `
   margin: 0;
   font-size: 14px;
   line-height: 20px;
-  border: 1px solid rgba(0,0,0,0.33);
+  border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
+  max-width: 100%;
 }
 
 .c1:focus {
@@ -2210,18 +2310,18 @@ exports[`TextArea size small 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus > circle,
-.c1:focus > ellipse,
-.c1:focus > line,
-.c1:focus > path,
-.c1:focus > polygon,
-.c1:focus > polyline,
-.c1:focus > rect {
+.c1:focus >circle,
+.c1:focus >ellipse,
+.c1:focus >line,
+.c1:focus >path,
+.c1:focus >polygon,
+.c1:focus >polyline,
+.c1:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus::-moz-focus-inner {
+.c1:focus ::-moz-focus-inner {
   border: 0;
 }
 
@@ -2237,7 +2337,7 @@ exports[`TextArea size small 1`] = `
   color: #AAAAAA;
 }
 
-.c1::-webkit-search-decoration {
+.c1 ::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 

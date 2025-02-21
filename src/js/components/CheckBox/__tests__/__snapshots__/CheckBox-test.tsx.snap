@@ -12,49 +12,27 @@ exports[`CheckBox checked renders 1`] = `
 }
 
 .c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
   justify-content: center;
 }
 
 .c5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
   border: solid 2px #7D4CDB;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
   height: 24px;
   width: 24px;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
   justify-content: center;
   border-radius: 4px;
 }
@@ -68,25 +46,16 @@ exports[`CheckBox checked renders 1`] = `
 }
 
 .c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
   user-select: none;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
+  -webkit-user-select: none;
   width: fit-content;
   cursor: pointer;
 }
 
-.c1:hover input:not([disabled]) + div,
-.c1:hover input:not([disabled]) + span {
+.c1:hover input:not([disabled])+div,
+.c1:hover input:not([disabled])+span {
   border-color: #000000;
 }
 
@@ -99,18 +68,16 @@ exports[`CheckBox checked renders 1`] = `
   cursor: pointer;
 }
 
-.c4:checked + span > span {
+.c4:checked+span>span {
   left: calc( 48px - 24px );
   background: #7D4CDB;
 }
 
 .c3 {
-  -webkit-flex-shrink: 0;
-  -ms-flex-negative: 0;
   flex-shrink: 0;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c5 {
     border: solid 2px #7D4CDB;
   }
@@ -161,50 +128,28 @@ exports[`CheckBox controlled 1`] = `
 }
 
 .c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   margin-right: 12px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
   justify-content: center;
 }
 
 .c5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
   border: solid 2px #7D4CDB;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
   height: 24px;
   width: 24px;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
   justify-content: center;
   border-radius: 4px;
 }
@@ -218,29 +163,17 @@ exports[`CheckBox controlled 1`] = `
 }
 
 .c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
   user-select: none;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
+  -webkit-user-select: none;
   width: fit-content;
   cursor: pointer;
 }
 
-.c1:hover input:not([disabled]) + div,
-.c1:hover input:not([disabled]) + span {
+.c1:hover input:not([disabled])+div,
+.c1:hover input:not([disabled])+span {
   border-color: #000000;
 }
 
@@ -253,24 +186,22 @@ exports[`CheckBox controlled 1`] = `
   cursor: pointer;
 }
 
-.c4:checked + span > span {
+.c4:checked+span>span {
   left: calc( 48px - 24px );
   background: #7D4CDB;
 }
 
 .c3 {
-  -webkit-flex-shrink: 0;
-  -ms-flex-negative: 0;
   flex-shrink: 0;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c2 {
     margin-right: 6px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c5 {
     border: solid 2px #7D4CDB;
   }
@@ -281,7 +212,6 @@ exports[`CheckBox controlled 1`] = `
 >
   <label
     class="c1"
-    label="test-label"
   >
     <div
       class="c2 c3"
@@ -315,25 +245,24 @@ exports[`CheckBox controlled 1`] = `
 
 exports[`CheckBox controlled 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 gIiCYk"
+  class="StyledGrommet-sc-19lkkz7-0 fHTwQM"
 >
   <label
-    class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 gVeQxx"
-    label="test-label"
+    class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 jaPbMk"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 vOYHH StyledCheckBox-sc-1dbk5ju-6 bjeWAX"
+      class="StyledBox-sc-13pk1d4-0 llqfhu StyledCheckBox-sc-1dbk5ju-6 iybiqv"
     >
       <input
         checked=""
-        class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 etniDJ"
+        class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 BGjjG"
         type="checkbox"
       />
       <div
-        class="StyledBox-sc-13pk1d4-0 fRMvyw StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 goelDJ"
+        class="StyledBox-sc-13pk1d4-0 kZSzDp StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 iXXfEH"
       >
         <svg
-          class="StyledCheckBox__StyledCheckBoxIcon-sc-1dbk5ju-0 cAKqJx"
+          class="StyledCheckBox__StyledCheckBoxIcon-sc-1dbk5ju-0 fTWMAU"
           preserveAspectRatio="xMidYMid meet"
           viewBox="0 0 24 24"
         >
@@ -363,72 +292,38 @@ exports[`CheckBox custom theme 1`] = `
 }
 
 .c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   margin-right: 12px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
   justify-content: center;
 }
 
 .c5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
-  border: solid 2px rgba(0,0,0,0.15);
+  border: solid 2px rgba(0, 0, 0, 0.15);
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
   height: 24px;
   width: 24px;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
   justify-content: center;
   border-radius: 4px;
 }
 
 .c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
   user-select: none;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
+  -webkit-user-select: none;
   width: fit-content;
   padding-left: 12px;
   padding-right: 12px;
@@ -437,8 +332,8 @@ exports[`CheckBox custom theme 1`] = `
   cursor: pointer;
 }
 
-.c1:hover input:not([disabled]) + div,
-.c1:hover input:not([disabled]) + span {
+.c1:hover input:not([disabled])+div,
+.c1:hover input:not([disabled])+span {
   border-color: #000000;
 }
 
@@ -451,26 +346,24 @@ exports[`CheckBox custom theme 1`] = `
   cursor: pointer;
 }
 
-.c4:checked + span > span {
+.c4:checked+span>span {
   left: calc( 48px - 24px );
   background: #7D4CDB;
 }
 
 .c3 {
-  -webkit-flex-shrink: 0;
-  -ms-flex-negative: 0;
   flex-shrink: 0;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c2 {
     margin-right: 6px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c5 {
-    border: solid 2px rgba(0,0,0,0.15);
+    border: solid 2px rgba(0, 0, 0, 0.15);
   }
 }
 
@@ -479,7 +372,6 @@ exports[`CheckBox custom theme 1`] = `
 >
   <label
     class="c1"
-    label="test-label"
   >
     <div
       class="c2 c3"
@@ -511,49 +403,27 @@ exports[`CheckBox defaultChecked 1`] = `
 }
 
 .c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
   justify-content: center;
 }
 
 .c5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
   border: solid 2px #7D4CDB;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
   height: 24px;
   width: 24px;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
   justify-content: center;
   border-radius: 4px;
 }
@@ -567,25 +437,16 @@ exports[`CheckBox defaultChecked 1`] = `
 }
 
 .c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
   user-select: none;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
+  -webkit-user-select: none;
   width: fit-content;
   cursor: pointer;
 }
 
-.c1:hover input:not([disabled]) + div,
-.c1:hover input:not([disabled]) + span {
+.c1:hover input:not([disabled])+div,
+.c1:hover input:not([disabled])+span {
   border-color: #000000;
 }
 
@@ -598,18 +459,16 @@ exports[`CheckBox defaultChecked 1`] = `
   cursor: pointer;
 }
 
-.c4:checked + span > span {
+.c4:checked+span>span {
   left: calc( 48px - 24px );
   background: #7D4CDB;
 }
 
 .c3 {
-  -webkit-flex-shrink: 0;
-  -ms-flex-negative: 0;
   flex-shrink: 0;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c5 {
     border: solid 2px #7D4CDB;
   }
@@ -660,75 +519,42 @@ exports[`CheckBox disabled renders 1`] = `
 }
 
 .c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
   justify-content: center;
 }
 
 .c5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
-  border: solid 2px rgba(0,0,0,0.15);
+  border: solid 2px rgba(0, 0, 0, 0.15);
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
   height: 24px;
   width: 24px;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
   justify-content: center;
   border-radius: 4px;
 }
 
 .c6 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
   border: solid 2px #7D4CDB;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
   height: 24px;
   width: 24px;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
   justify-content: center;
   border-radius: 4px;
 }
@@ -742,26 +568,17 @@ exports[`CheckBox disabled renders 1`] = `
 }
 
 .c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
   user-select: none;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
+  -webkit-user-select: none;
   width: fit-content;
   opacity: 0.5;
   cursor: default;
 }
 
-.c1:hover input:not([disabled]) + div,
-.c1:hover input:not([disabled]) + span {
+.c1:hover input:not([disabled])+div,
+.c1:hover input:not([disabled])+span {
   border-color: #000000;
 }
 
@@ -773,24 +590,22 @@ exports[`CheckBox disabled renders 1`] = `
   margin: 0;
 }
 
-.c4:checked + span > span {
+.c4:checked+span>span {
   left: calc( 48px - 24px );
   background: #7D4CDB;
 }
 
 .c3 {
-  -webkit-flex-shrink: 0;
-  -ms-flex-negative: 0;
   flex-shrink: 0;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c5 {
-    border: solid 2px rgba(0,0,0,0.15);
+    border: solid 2px rgba(0, 0, 0, 0.15);
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c6 {
     border: solid 2px #7D4CDB;
   }
@@ -869,73 +684,40 @@ exports[`CheckBox indeterminate renders 1`] = `
 }
 
 .c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
   justify-content: center;
 }
 
 .c5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
-  border: solid 2px rgba(0,0,0,0.15);
+  border: solid 2px rgba(0, 0, 0, 0.15);
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
   height: 24px;
   width: 24px;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
   justify-content: center;
   border-radius: 4px;
 }
 
 .c8 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   margin-right: 12px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
   justify-content: center;
 }
 
@@ -948,52 +730,31 @@ exports[`CheckBox indeterminate renders 1`] = `
 }
 
 .c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
   user-select: none;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
+  -webkit-user-select: none;
   width: fit-content;
   cursor: pointer;
 }
 
-.c1:hover input:not([disabled]) + div,
-.c1:hover input:not([disabled]) + span {
+.c1:hover input:not([disabled])+div,
+.c1:hover input:not([disabled])+span {
   border-color: #000000;
 }
 
 .c7 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
   user-select: none;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
+  -webkit-user-select: none;
   width: fit-content;
   cursor: pointer;
 }
 
-.c7:hover input:not([disabled]) + div,
-.c7:hover input:not([disabled]) + span {
+.c7:hover input:not([disabled])+div,
+.c7:hover input:not([disabled])+span {
   border-color: #000000;
 }
 
@@ -1006,24 +767,22 @@ exports[`CheckBox indeterminate renders 1`] = `
   cursor: pointer;
 }
 
-.c4:checked + span > span {
+.c4:checked+span>span {
   left: calc( 48px - 24px );
   background: #7D4CDB;
 }
 
 .c3 {
-  -webkit-flex-shrink: 0;
-  -ms-flex-negative: 0;
   flex-shrink: 0;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c5 {
-    border: solid 2px rgba(0,0,0,0.15);
+    border: solid 2px rgba(0, 0, 0, 0.15);
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c8 {
     margin-right: 6px;
   }
@@ -1060,7 +819,6 @@ exports[`CheckBox indeterminate renders 1`] = `
   </label>
   <label
     class="c7"
-    label="test label"
   >
     <div
       class="c8 c3"
@@ -1103,101 +861,58 @@ exports[`CheckBox label renders 1`] = `
 }
 
 .c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   margin-right: 12px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
   justify-content: center;
 }
 
 .c5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
-  border: solid 2px rgba(0,0,0,0.15);
+  border: solid 2px rgba(0, 0, 0, 0.15);
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
   height: 24px;
   width: 24px;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
   justify-content: center;
   border-radius: 4px;
 }
 
 .c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
   user-select: none;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
+  -webkit-user-select: none;
   width: fit-content;
   cursor: pointer;
 }
 
-.c1:hover input:not([disabled]) + div,
-.c1:hover input:not([disabled]) + span {
+.c1:hover input:not([disabled])+div,
+.c1:hover input:not([disabled])+span {
   border-color: #000000;
 }
 
 .c6 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
   user-select: none;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
+  -webkit-user-select: none;
   width: fit-content;
   cursor: pointer;
 }
 
-.c6:hover input:not([disabled]) + div,
-.c6:hover input:not([disabled]) + span {
+.c6:hover input:not([disabled])+div,
+.c6:hover input:not([disabled])+span {
   border-color: #000000;
 }
 
@@ -1210,26 +925,24 @@ exports[`CheckBox label renders 1`] = `
   cursor: pointer;
 }
 
-.c4:checked + span > span {
+.c4:checked+span>span {
   left: calc( 48px - 24px );
   background: #7D4CDB;
 }
 
 .c3 {
-  -webkit-flex-shrink: 0;
-  -ms-flex-negative: 0;
   flex-shrink: 0;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c2 {
     margin-right: 6px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c5 {
-    border: solid 2px rgba(0,0,0,0.15);
+    border: solid 2px rgba(0, 0, 0, 0.15);
   }
 }
 
@@ -1238,7 +951,6 @@ exports[`CheckBox label renders 1`] = `
 >
   <label
     class="c1"
-    label="test label"
   >
     <div
       class="c2 c3"
@@ -1257,7 +969,6 @@ exports[`CheckBox label renders 1`] = `
   </label>
   <label
     class="c6"
-    label="[object Object]"
   >
     <div
       class="c2 c3"
@@ -1289,78 +1000,44 @@ exports[`CheckBox label should not have accessibility violations 1`] = `
 }
 
 .c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   margin-right: 12px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
   justify-content: center;
 }
 
 .c5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
-  border: solid 2px rgba(0,0,0,0.15);
+  border: solid 2px rgba(0, 0, 0, 0.15);
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
   height: 24px;
   width: 24px;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
   justify-content: center;
   border-radius: 4px;
 }
 
 .c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
   user-select: none;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
+  -webkit-user-select: none;
   width: fit-content;
   cursor: pointer;
 }
 
-.c1:hover input:not([disabled]) + div,
-.c1:hover input:not([disabled]) + span {
+.c1:hover input:not([disabled])+div,
+.c1:hover input:not([disabled])+span {
   border-color: #000000;
 }
 
@@ -1373,26 +1050,24 @@ exports[`CheckBox label should not have accessibility violations 1`] = `
   cursor: pointer;
 }
 
-.c4:checked + span > span {
+.c4:checked+span>span {
   left: calc( 48px - 24px );
   background: #7D4CDB;
 }
 
 .c3 {
-  -webkit-flex-shrink: 0;
-  -ms-flex-negative: 0;
   flex-shrink: 0;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c2 {
     margin-right: 6px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c5 {
-    border: solid 2px rgba(0,0,0,0.15);
+    border: solid 2px rgba(0, 0, 0, 0.15);
   }
 }
 
@@ -1401,7 +1076,6 @@ exports[`CheckBox label should not have accessibility violations 1`] = `
 >
   <label
     class="c1"
-    label="test"
   >
     <div
       class="c2 c3"
@@ -1433,73 +1107,42 @@ exports[`CheckBox renders 1`] = `
 }
 
 .c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
   justify-content: center;
 }
 
 .c5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
-  border: solid 2px rgba(0,0,0,0.15);
+  border: solid 2px rgba(0, 0, 0, 0.15);
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
   height: 24px;
   width: 24px;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
   justify-content: center;
   border-radius: 4px;
 }
 
 .c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
   user-select: none;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
+  -webkit-user-select: none;
   width: fit-content;
   cursor: pointer;
 }
 
-.c1:hover input:not([disabled]) + div,
-.c1:hover input:not([disabled]) + span {
+.c1:hover input:not([disabled])+div,
+.c1:hover input:not([disabled])+span {
   border-color: #000000;
 }
 
@@ -1512,20 +1155,18 @@ exports[`CheckBox renders 1`] = `
   cursor: pointer;
 }
 
-.c4:checked + span > span {
+.c4:checked+span>span {
   left: calc( 48px - 24px );
   background: #7D4CDB;
 }
 
 .c3 {
-  -webkit-flex-shrink: 0;
-  -ms-flex-negative: 0;
   flex-shrink: 0;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c5 {
-    border: solid 2px rgba(0,0,0,0.15);
+    border: solid 2px rgba(0, 0, 0, 0.15);
   }
 }
 
@@ -1580,73 +1221,42 @@ exports[`CheckBox renders a11yTitle and aria-label 1`] = `
 }
 
 .c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
   justify-content: center;
 }
 
 .c5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
-  border: solid 2px rgba(0,0,0,0.15);
+  border: solid 2px rgba(0, 0, 0, 0.15);
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
   height: 24px;
   width: 24px;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
   justify-content: center;
   border-radius: 4px;
 }
 
 .c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
   user-select: none;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
+  -webkit-user-select: none;
   width: fit-content;
   cursor: pointer;
 }
 
-.c1:hover input:not([disabled]) + div,
-.c1:hover input:not([disabled]) + span {
+.c1:hover input:not([disabled])+div,
+.c1:hover input:not([disabled])+span {
   border-color: #000000;
 }
 
@@ -1659,20 +1269,18 @@ exports[`CheckBox renders a11yTitle and aria-label 1`] = `
   cursor: pointer;
 }
 
-.c4:checked + span > span {
+.c4:checked+span>span {
   left: calc( 48px - 24px );
   background: #7D4CDB;
 }
 
 .c3 {
-  -webkit-flex-shrink: 0;
-  -ms-flex-negative: 0;
   flex-shrink: 0;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c5 {
-    border: solid 2px rgba(0,0,0,0.15);
+    border: solid 2px rgba(0, 0, 0, 0.15);
   }
 }
 
@@ -1726,78 +1334,44 @@ exports[`CheckBox renders custom checked icon 1`] = `
 }
 
 .c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   margin-right: 12px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
   justify-content: center;
 }
 
 .c5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
   border: solid 2px #7D4CDB;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
   height: 24px;
   width: 24px;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
   justify-content: center;
   border-radius: 4px;
 }
 
 .c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
   user-select: none;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
+  -webkit-user-select: none;
   width: fit-content;
   cursor: pointer;
 }
 
-.c1:hover input:not([disabled]) + div,
-.c1:hover input:not([disabled]) + span {
+.c1:hover input:not([disabled])+div,
+.c1:hover input:not([disabled])+span {
   border-color: #000000;
 }
 
@@ -1810,24 +1384,22 @@ exports[`CheckBox renders custom checked icon 1`] = `
   cursor: pointer;
 }
 
-.c4:checked + span > span {
+.c4:checked+span>span {
   left: calc( 48px - 24px );
   background: #7D4CDB;
 }
 
 .c3 {
-  -webkit-flex-shrink: 0;
-  -ms-flex-negative: 0;
   flex-shrink: 0;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c2 {
     margin-right: 6px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c5 {
     border: solid 2px #7D4CDB;
   }
@@ -1838,7 +1410,6 @@ exports[`CheckBox renders custom checked icon 1`] = `
 >
   <label
     class="c1"
-    label="test-label"
   >
     <div
       class="c2 c3"
@@ -1863,6 +1434,88 @@ exports[`CheckBox renders custom checked icon 1`] = `
 </div>
 `;
 
+exports[`CheckBox renders without grommet wrapper 1`] = `
+.c1 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.c4 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-items: center;
+  border: solid 2px rgba(0, 0, 0, 0.15);
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  height: 24px;
+  width: 24px;
+  justify-content: center;
+  border-radius: 4px;
+}
+
+.c0 {
+  display: flex;
+  flex-direction: row;
+  user-select: none;
+  -webkit-user-select: none;
+  width: fit-content;
+  cursor: pointer;
+}
+
+.c0:hover input:not([disabled])+div,
+.c0:hover input:not([disabled])+span {
+  border-color: #000000;
+}
+
+.c3 {
+  opacity: 0;
+  -moz-appearance: none;
+  width: 0;
+  height: 0;
+  margin: 0;
+  cursor: pointer;
+}
+
+.c3:checked+span>span {
+  left: calc( 48px - 24px );
+  background: #7D4CDB;
+}
+
+.c2 {
+  flex-shrink: 0;
+}
+
+@media only screen and (max-width: 768px) {
+  .c4 {
+    border: solid 2px rgba(0, 0, 0, 0.15);
+  }
+}
+
+<label
+  class="c0"
+>
+  <div
+    class="c1 c2"
+  >
+    <input
+      class="c3"
+      type="checkbox"
+    />
+    <div
+      class="c4 "
+    />
+  </div>
+</label>
+`;
+
 exports[`CheckBox reverse renders 1`] = `
 .c0 {
   font-size: 18px;
@@ -1875,78 +1528,44 @@ exports[`CheckBox reverse renders 1`] = `
 }
 
 .c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   margin-left: 12px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
   justify-content: center;
 }
 
 .c5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
-  border: solid 2px rgba(0,0,0,0.15);
+  border: solid 2px rgba(0, 0, 0, 0.15);
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
   height: 24px;
   width: 24px;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
   justify-content: center;
   border-radius: 4px;
 }
 
 .c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
   user-select: none;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
+  -webkit-user-select: none;
   width: fit-content;
   cursor: pointer;
 }
 
-.c1:hover input:not([disabled]) + div,
-.c1:hover input:not([disabled]) + span {
+.c1:hover input:not([disabled])+div,
+.c1:hover input:not([disabled])+span {
   border-color: #000000;
 }
 
@@ -1959,26 +1578,24 @@ exports[`CheckBox reverse renders 1`] = `
   cursor: pointer;
 }
 
-.c4:checked + span > span {
+.c4:checked+span>span {
   left: calc( 48px - 24px );
   background: #7D4CDB;
 }
 
 .c3 {
-  -webkit-flex-shrink: 0;
-  -ms-flex-negative: 0;
   flex-shrink: 0;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c2 {
     margin-left: 6px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c5 {
-    border: solid 2px rgba(0,0,0,0.15);
+    border: solid 2px rgba(0, 0, 0, 0.15);
   }
 }
 
@@ -1987,7 +1604,6 @@ exports[`CheckBox reverse renders 1`] = `
 >
   <label
     class="c1"
-    label="test label"
   >
     <span>
       test label
@@ -2019,82 +1635,45 @@ exports[`CheckBox reverse toggle fill 1`] = `
 }
 
 .c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   margin-left: 12px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
   justify-content: center;
 }
 
 .c7 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   margin-right: 12px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
   justify-content: center;
 }
 
 .c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
   user-select: none;
+  -webkit-user-select: none;
   width: auto;
   height: 100%;
   max-width: none;
-  -webkit-flex: 1 0 auto;
-  -ms-flex: 1 0 auto;
   flex: 1 0 auto;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
   justify-content: space-between;
   cursor: pointer;
 }
 
-.c1:hover input:not([disabled]) + div,
-.c1:hover input:not([disabled]) + span {
+.c1:hover input:not([disabled])+div,
+.c1:hover input:not([disabled])+span {
   border-color: #000000;
 }
 
@@ -2107,7 +1686,7 @@ exports[`CheckBox reverse toggle fill 1`] = `
   cursor: pointer;
 }
 
-.c4:checked + span > span {
+.c4:checked+span>span {
   left: calc( 48px - 24px );
   background: #7D4CDB;
 }
@@ -2119,7 +1698,7 @@ exports[`CheckBox reverse toggle fill 1`] = `
   width: 48px;
   height: 24px;
   border: 2px solid;
-  border-color: rgba(0,0,0,0.15);
+  border-color: rgba(0, 0, 0, 0.15);
   border-radius: 24px;
   background-color: transparent;
 }
@@ -2130,7 +1709,6 @@ exports[`CheckBox reverse toggle fill 1`] = `
   display: inherit;
   top: -2px;
   left: -2px;
-  -webkit-transition: all 0.3s;
   transition: all 0.3s;
   width: 24px;
   height: 24px;
@@ -2139,18 +1717,16 @@ exports[`CheckBox reverse toggle fill 1`] = `
 }
 
 .c3 {
-  -webkit-flex-shrink: 0;
-  -ms-flex-negative: 0;
   flex-shrink: 0;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c2 {
     margin-left: 6px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c7 {
     margin-right: 6px;
   }
@@ -2161,7 +1737,6 @@ exports[`CheckBox reverse toggle fill 1`] = `
 >
   <label
     class="c1"
-    label="test label"
   >
     <span>
       test label
@@ -2184,7 +1759,6 @@ exports[`CheckBox reverse toggle fill 1`] = `
   </label>
   <label
     class="c1"
-    label="test label"
   >
     <div
       class="c7 c3"
@@ -2220,73 +1794,42 @@ exports[`CheckBox should not have accessibility violations 1`] = `
 }
 
 .c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
   justify-content: center;
 }
 
 .c5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
-  border: solid 2px rgba(0,0,0,0.15);
+  border: solid 2px rgba(0, 0, 0, 0.15);
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
   height: 24px;
   width: 24px;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
   justify-content: center;
   border-radius: 4px;
 }
 
 .c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
   user-select: none;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
+  -webkit-user-select: none;
   width: fit-content;
   cursor: pointer;
 }
 
-.c1:hover input:not([disabled]) + div,
-.c1:hover input:not([disabled]) + span {
+.c1:hover input:not([disabled])+div,
+.c1:hover input:not([disabled])+span {
   border-color: #000000;
 }
 
@@ -2299,20 +1842,18 @@ exports[`CheckBox should not have accessibility violations 1`] = `
   cursor: pointer;
 }
 
-.c4:checked + span > span {
+.c4:checked+span>span {
   left: calc( 48px - 24px );
   background: #7D4CDB;
 }
 
 .c3 {
-  -webkit-flex-shrink: 0;
-  -ms-flex-negative: 0;
   flex-shrink: 0;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c5 {
-    border: solid 2px rgba(0,0,0,0.15);
+    border: solid 2px rgba(0, 0, 0, 0.15);
   }
 }
 
@@ -2350,97 +1891,54 @@ exports[`CheckBox toggle renders 1`] = `
 }
 
 .c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
   justify-content: center;
 }
 
 .c8 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   margin-right: 12px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
   justify-content: center;
 }
 
 .c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
   user-select: none;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
+  -webkit-user-select: none;
   width: fit-content;
   cursor: pointer;
 }
 
-.c1:hover input:not([disabled]) + div,
-.c1:hover input:not([disabled]) + span {
+.c1:hover input:not([disabled])+div,
+.c1:hover input:not([disabled])+span {
   border-color: #000000;
 }
 
 .c7 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
   user-select: none;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
+  -webkit-user-select: none;
   width: fit-content;
   cursor: pointer;
 }
 
-.c7:hover input:not([disabled]) + div,
-.c7:hover input:not([disabled]) + span {
+.c7:hover input:not([disabled])+div,
+.c7:hover input:not([disabled])+span {
   border-color: #000000;
 }
 
@@ -2453,7 +1951,7 @@ exports[`CheckBox toggle renders 1`] = `
   cursor: pointer;
 }
 
-.c4:checked + span > span {
+.c4:checked+span>span {
   left: calc( 48px - 24px );
   background: #7D4CDB;
 }
@@ -2465,7 +1963,7 @@ exports[`CheckBox toggle renders 1`] = `
   width: 48px;
   height: 24px;
   border: 2px solid;
-  border-color: rgba(0,0,0,0.15);
+  border-color: rgba(0, 0, 0, 0.15);
   border-radius: 24px;
   background-color: transparent;
 }
@@ -2476,7 +1974,6 @@ exports[`CheckBox toggle renders 1`] = `
   display: inherit;
   top: -2px;
   left: -2px;
-  -webkit-transition: all 0.3s;
   transition: all 0.3s;
   width: 24px;
   height: 24px;
@@ -2485,12 +1982,10 @@ exports[`CheckBox toggle renders 1`] = `
 }
 
 .c3 {
-  -webkit-flex-shrink: 0;
-  -ms-flex-negative: 0;
   flex-shrink: 0;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c8 {
     margin-right: 6px;
   }
@@ -2540,7 +2035,6 @@ exports[`CheckBox toggle renders 1`] = `
   </label>
   <label
     class="c7"
-    label="test label"
   >
     <div
       class="c8 c3"

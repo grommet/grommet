@@ -1,29 +1,25 @@
-import React, { useCallback, useContext, useEffect, useState } from 'react';
+import React, {
+  useMemo,
+  useCallback,
+  useContext,
+  useEffect,
+  useRef,
+  useState,
+} from 'react';
 import styled from 'styled-components';
 import { Box } from '../Box';
 import { Button } from '../Button';
 import { Footer } from '../Footer';
 import { Form } from '../Form';
 import { DataContext } from '../../contexts/DataContext';
+import { DataFormContext } from '../../contexts/DataFormContext';
 import { MessageContext } from '../../contexts/MessageContext';
-
-const HideableButton = styled(Button)`
-  ${(props) =>
-    props.disabled &&
-    `
-  opacity: 0;`}
-`;
+import { useDebounce } from '../../utils/use-debounce';
 
 const MaxForm = styled(Form)`
   max-width: 100%;
   ${(props) => props.fill && 'max-height: 100%;'}
 `;
-
-const hideButtonProps = {
-  'aria-hidden': true,
-  disabled: true,
-  tabIndex: -1,
-};
 
 // We convert the view structure to something more flat to work better
 // with the Form inputs. These keys are how we flatten the Form value object
@@ -47,22 +43,31 @@ const viewFormKeyMap = {
   view: formViewNameKey,
 };
 
-// flatten nested objects. For example: { a: { b: v } } -> { 'a.b': v }
+// flatten nested objects.
+// For example: { a: { b: v, c: z } } -> { 'a.b': v, 'a.c': z }
 const flatten = (formValue, options) => {
   const result = JSON.parse(JSON.stringify(formValue));
-  Object.keys(result).forEach((k) => {
-    let name = k;
-    // flatten one level at a time, ignore _range situations
-    while (
-      typeof result[name] === 'object' &&
-      !Array.isArray(result[name]) &&
-      (options?.full || !result[name][formRangeKey])
+  Object.keys(result).forEach((i) => {
+    // We check the type of the i using
+    // typeof() function and recursively
+    // call the function again
+    // ignore _range situations
+    if (
+      typeof result[i] === 'object' &&
+      !Array.isArray(result[i]) &&
+      (options?.full || !result[i][formRangeKey])
     ) {
-      const subPath = Object.keys(result[name])[0];
-      const path = `${name}.${subPath}`;
-      result[path] = result[name][subPath];
-      delete result[name];
-      name = path;
+      const temp = flatten(result[i], options);
+      Object.keys(temp).forEach((j) => {
+        // Store temp in result
+        // ignore empty arrays
+        if (
+          !Array.isArray(temp[j]) ||
+          (Array.isArray(temp[j]) && temp[j].length)
+        )
+          result[`${i}.${j}`] = temp[j];
+      });
+      delete result[i];
     }
   });
   return result;
@@ -156,10 +161,22 @@ const formValueToView = (value, views) => {
 
 // remove any empty arrays of property values by deleting the key for
 // that property in the view properties
-const clearEmpty = (formValue) => {
+const clearEmpty = (formValue, pendingReset) => {
   const value = formValue;
   Object.keys(value).forEach((k) => {
     if (Array.isArray(value[k]) && value[k].length === 0) delete value[k];
+    // special case for when range selector returns to its min/max
+    // flat format with full: true needed to match filter name structure
+    // { a: b: { _range: [0, 100] } } ==> a.b._range: [0, 100]
+    if (typeof value[k] === 'object' && !Array.isArray(value[k])) {
+      const filterName = `${k}.${
+        Object.keys(flatten(value[k], { full: true }))[0]
+      }`;
+      if (pendingReset?.current?.has(filterName)) {
+        delete value[k];
+        pendingReset.current.delete(filterName);
+      }
+    }
   });
   return value;
 };
@@ -171,20 +188,9 @@ const resetPage = (nextFormValue, prevFormValue) => {
     nextFormValue[formPageKey] = 1;
 };
 
-const transformTouched = (touched, value) => {
-  const result = {};
-  Object.keys(touched).forEach((key) => {
-    // special case _range fields
-    const parts = key.split('.');
-    if (parts[1] === formRangeKey) result[key] = value[parts[0]];
-    else result[key] = flatten(value, { full: true })[key];
-  });
-  return result;
-};
-
 // function shared by onSubmit and onChange to coordinate view
 // name changes
-const normalizeValue = (nextValue, prevValue, views) => {
+const normalizeValue = (nextValue, prevValue, views, pendingReset) => {
   if (
     nextValue[formViewNameKey] &&
     nextValue[formViewNameKey] !== prevValue[formViewNameKey]
@@ -197,14 +203,16 @@ const normalizeValue = (nextValue, prevValue, views) => {
   // something else changed
 
   // clear empty properties
-  const result = clearEmpty(nextValue);
+  const result = clearEmpty(nextValue, pendingReset);
 
-  // if we have a view and something related to it changed, clear the view
+  // if we have a view and something changed, clear the view
   if (result[formViewNameKey]) {
     const view = views.find((v) => v.name === result[formViewNameKey]);
     const viewValue = viewToFormValue(view);
-    clearEmpty(viewValue);
-    if (
+    clearEmpty(viewValue, pendingReset);
+    if (Object.keys(viewValue).length !== Object.keys(result).length) {
+      delete result[formViewNameKey];
+    } else if (
       Object.keys(viewValue).some(
         (k) =>
           // allow mismatch between empty and set strings
@@ -220,58 +228,54 @@ const normalizeValue = (nextValue, prevValue, views) => {
   return result;
 };
 
+// 300ms was chosen empirically as a reasonable default
+const DEBOUNCE_TIMEOUT = 300;
+
 export const DataForm = ({
   children,
   footer,
   onDone,
-  onTouched,
   pad,
-  updateOn: updateOnProp,
+  updateOn = 'submit',
   ...rest
 }) => {
-  const {
-    messages,
-    onView,
-    updateOn: updateOnData,
-    view,
-    views,
-  } = useContext(DataContext);
-  const updateOn = updateOnProp ?? updateOnData;
+  const { messages, onView, view, views } = useContext(DataContext);
   const { format } = useContext(MessageContext);
   const [formValue, setFormValue] = useState(viewToFormValue(view));
-  const [changed, setChanged] = useState();
+  // special case for range selectors which always have a value.
+  // when value returns to its min/max, remove it from view
+  // like other properties
+  const pendingReset = useRef(new Set());
+  const contextValue = useMemo(() => ({ inDataForm: true, pendingReset }), []);
+  const debounce = useDebounce(DEBOUNCE_TIMEOUT);
 
   const onSubmit = useCallback(
-    ({ value, touched }) => {
-      const nextValue = normalizeValue(value, formValue, views);
+    ({ value }) => {
+      const nextValue = normalizeValue(value, formValue, views, pendingReset);
       resetPage(nextValue, formValue);
       setFormValue(nextValue);
-      setChanged(false);
-      if (onTouched) onTouched(transformTouched(touched, nextValue));
       onView(formValueToView(nextValue, views));
       if (onDone) onDone();
     },
-    [formValue, onDone, onTouched, onView, views],
+    [formValue, onDone, onView, views],
   );
 
   const onChange = useCallback(
     (value, { touched }) => {
-      const nextValue = normalizeValue(value, formValue, views);
+      const nextValue = normalizeValue(value, formValue, views, pendingReset);
       resetPage(nextValue, formValue);
       setFormValue(nextValue);
-      setChanged(true);
       if (updateOn === 'change') {
-        if (onTouched) onTouched(transformTouched(touched, nextValue));
-        onView(formValueToView(nextValue, views));
+        // debounce search
+        if (touched[formSearchKey]) {
+          debounce(() => () => onView(formValueToView(nextValue, views)));
+        } else {
+          onView(formValueToView(nextValue, views));
+        }
       }
     },
-    [formValue, onTouched, onView, updateOn, views],
+    [debounce, formValue, onView, updateOn, views],
   );
-
-  const onReset = useCallback(() => {
-    setFormValue(viewToFormValue(view));
-    setChanged(false);
-  }, [view]);
 
   useEffect(() => setFormValue(viewToFormValue(view)), [view]);
 
@@ -285,7 +289,7 @@ export const DataForm = ({
         {footer !== false && updateOn === 'submit' && (
           <Footer
             flex={false}
-            margin={{ top: 'small' }}
+            margin={{ top: 'medium' }}
             pad={{ horizontal: pad, bottom: pad }}
             gap="small"
           >
@@ -296,15 +300,6 @@ export const DataForm = ({
               })}
               type="submit"
               primary
-            />
-            <HideableButton
-              label={format({
-                id: 'dataForm.reset',
-                messages: messages?.dataForm,
-              })}
-              type="reset"
-              onClick={onReset}
-              {...(!changed ? hideButtonProps : {})}
             />
           </Footer>
         )}
@@ -319,7 +314,9 @@ export const DataForm = ({
       onSubmit={updateOn === 'submit' ? onSubmit : undefined}
       onChange={onChange}
     >
-      {content}
+      <DataFormContext.Provider value={contextValue}>
+        {content}
+      </DataFormContext.Provider>
     </MaxForm>
   );
 };

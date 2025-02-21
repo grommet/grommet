@@ -32,6 +32,12 @@ test('Paragraph size renders', () => {
   expect(container.firstChild).toMatchSnapshot();
 });
 
+test('Paragraph size renders outside grommet wrapper', () => {
+  const { container } = render(<Paragraph size="small" />);
+
+  expect(container.firstChild).toMatchSnapshot();
+});
+
 test('Paragraph margin renders', () => {
   const { container } = render(
     <Grommet>

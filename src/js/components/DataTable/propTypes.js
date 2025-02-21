@@ -59,6 +59,7 @@ let PropType = {};
 if (process.env.NODE_ENV !== 'production') {
   PropType = {
     ...genericProps,
+    allowSelectAll: PropTypes.bool,
     background: PropTypes.oneOfType([
       PropTypes.string,
       PropTypes.arrayOf(PropTypes.string),

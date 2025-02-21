@@ -39,7 +39,7 @@ const LazyDrop = () => {
       <Box fill justify="between" pad="large" gap="small">
         <Box direction="row" justify="between" pad={{ horizontal: 'small' }}>
           <Box
-            background="dark-3"
+            background="dark-2"
             pad="medium"
             align="center"
             ref={topLeftTargetRef}
@@ -61,7 +61,7 @@ const LazyDrop = () => {
             </Drop>
           )}
           <Box
-            background="dark-3"
+            background="dark-2"
             pad="medium"
             align="center"
             ref={topRightTargetRef}
@@ -85,7 +85,7 @@ const LazyDrop = () => {
         </Box>
 
         <Box direction="row" justify="between">
-          <Box background="dark-3" pad="medium" ref={bottomLeftTargetRef}>
+          <Box background="dark-2" pad="medium" ref={bottomLeftTargetRef}>
             Target
           </Box>
           {bottomLeftTargetRef.current && (
@@ -102,7 +102,7 @@ const LazyDrop = () => {
               </Box>
             </Drop>
           )}
-          <Box background="dark-3" pad="medium" ref={bottomRightTargetRef}>
+          <Box background="dark-2" pad="medium" ref={bottomRightTargetRef}>
             Target
           </Box>
           {bottomRightTargetRef.current && (

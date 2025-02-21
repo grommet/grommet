@@ -42,13 +42,15 @@ describe('Select Controlled', () => {
 
   test('multiple', () => {
     const { container } = render(
-      <Select
-        id="test-select"
-        multiple
-        options={['one', 'two']}
-        selected={[]}
-        value={[]}
-      />,
+      <Grommet>
+        <Select
+          id="test-select"
+          multiple
+          options={['one', 'two']}
+          selected={[]}
+          value={[]}
+        />
+      </Grommet>,
     );
 
     expect(container.firstChild).toMatchSnapshot();
@@ -56,14 +58,16 @@ describe('Select Controlled', () => {
 
   test('multiple values', () => {
     const { getByPlaceholderText, container } = render(
-      <Select
-        id="test-select"
-        placeholder="test select"
-        multiple
-        options={['one', 'two']}
-        selected={[0, 1]}
-        value={['one', 'two']}
-      />,
+      <Grommet>
+        <Select
+          id="test-select"
+          placeholder="test select"
+          multiple
+          options={['one', 'two']}
+          selected={[0, 1]}
+          value={['one', 'two']}
+        />
+      </Grommet>,
     );
     expect(container.firstChild).toMatchSnapshot();
 
@@ -76,15 +80,17 @@ describe('Select Controlled', () => {
   test('select another option', () => {
     const onChange = jest.fn();
     const { getByPlaceholderText, container } = render(
-      <Select
-        id="test-select"
-        placeholder="test select"
-        multiple
-        options={['one', 'two']}
-        onChange={onChange}
-        value={['two']}
-        selected={[1]}
-      />,
+      <Grommet>
+        <Select
+          id="test-select"
+          placeholder="test select"
+          multiple
+          options={['one', 'two']}
+          onChange={onChange}
+          value={['two']}
+          selected={[1]}
+        />
+      </Grommet>,
     );
     expect(container.firstChild).toMatchSnapshot();
 
@@ -101,15 +107,17 @@ describe('Select Controlled', () => {
   test('deselect an option', () => {
     const onChange = jest.fn();
     const { getByPlaceholderText, container } = render(
-      <Select
-        id="test-select"
-        placeholder="test select"
-        multiple
-        options={['one', 'two']}
-        onChange={onChange}
-        value={['one']}
-        selected={[0]}
-      />,
+      <Grommet>
+        <Select
+          id="test-select"
+          placeholder="test select"
+          multiple
+          options={['one', 'two']}
+          onChange={onChange}
+          value={['one']}
+          selected={[0]}
+        />
+      </Grommet>,
     );
     expect(container.firstChild).toMatchSnapshot();
 
@@ -125,13 +133,15 @@ describe('Select Controlled', () => {
     const user = userEvent.setup();
 
     render(
-      <Select
-        id="test-select"
-        placeholder="test select"
-        multiple
-        options={['one', 'two']}
-        clear
-      />,
+      <Grommet>
+        <Select
+          id="test-select"
+          placeholder="test select"
+          multiple
+          options={['one', 'two']}
+          clear
+        />
+      </Grommet>,
     );
 
     await user.click(screen.getByPlaceholderText('test select'));
@@ -678,6 +688,41 @@ describe('Select Controlled', () => {
       { id: 15, name: 'Value15' },
       { id: 22, name: 'Value22' },
     ]);
+  });
+
+  test('Value should be of same order as the order of selection', () => {
+    const onChange = jest.fn();
+    const Test = () => {
+      const [value, setValue] = React.useState();
+      return (
+        <Select
+          id="test-select"
+          placeholder="test select"
+          value={value}
+          options={['one', 'two', 'three', 'four', 'five']}
+          onChange={({ value: nextValue }) => {
+            setValue(nextValue);
+            onChange(nextValue);
+          }}
+          multiple
+        />
+      );
+    };
+    const { getByPlaceholderText, getByText } = render(
+      <Grommet>
+        <Test />
+      </Grommet>,
+    );
+    const select = getByPlaceholderText('test select');
+    fireEvent.click(select);
+    fireEvent.click(getByText('five'));
+    expect(onChange).toHaveBeenCalledWith(['five']);
+    fireEvent.click(select);
+    fireEvent.click(getByText('one'));
+    expect(onChange).toHaveBeenCalledWith(['five', 'one']);
+    fireEvent.click(select);
+    fireEvent.click(getByText('three'));
+    expect(onChange).toHaveBeenCalledWith(['five', 'one', 'three']);
   });
 
   window.scrollTo.mockRestore();

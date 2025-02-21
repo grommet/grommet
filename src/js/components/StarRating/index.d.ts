@@ -1,7 +1,7 @@
 import * as React from 'react';
-import { RadioButtonGroupProps } from '../RadioButtonGroup/index';
+import { RadioButtonGroupExtendedProps } from '../RadioButtonGroup/index';
 
-type RadioButtonGroup = Omit<RadioButtonGroupProps, 'options'>;
+type RadioButtonGroup = Omit<RadioButtonGroupExtendedProps, 'options'>;
 declare const StarRating: React.FC<RadioButtonGroup>;
 
 export { StarRating };

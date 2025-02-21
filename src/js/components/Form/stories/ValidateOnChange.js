@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import { Box, Button, Form, FormField, Select } from 'grommet';
+import { Box, Button, Form, FormField, TextInput, Select } from 'grommet';
 
 export const ValidateOnChange = () => {
   const [valid, setValid] = useState(false);
@@ -22,7 +22,6 @@ export const ValidateOnChange = () => {
           <FormField
             label="First Name"
             htmlFor="firstName"
-            id="firstName"
             name="firstName"
             required
             validate={[
@@ -33,12 +32,12 @@ export const ValidateOnChange = () => {
                 return undefined;
               },
             ]}
-          />
-
+          >
+            <TextInput aria-required id="firstName" name="firstName" />
+          </FormField>
           <FormField
             label="Last Name"
             htmlFor="lastName"
-            id="lastName"
             name="lastName"
             required
             validate={[
@@ -49,7 +48,9 @@ export const ValidateOnChange = () => {
                 return undefined;
               },
             ]}
-          />
+          >
+            <TextInput aria-required id="lastName" name="lastName" />
+          </FormField>
           <FormField
             label="Size"
             name="select-size"
@@ -65,8 +66,8 @@ export const ValidateOnChange = () => {
             <Select
               name="select-size"
               htmlFor="select-size"
+              aria-required
               id="select-size"
-              aria-label="select-size"
               options={['small', 'medium', 'large']}
             />
           </FormField>

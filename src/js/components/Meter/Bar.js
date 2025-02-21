@@ -1,15 +1,14 @@
-import React, { forwardRef, useContext } from 'react';
-import { ThemeContext } from 'styled-components';
+import React, { forwardRef } from 'react';
 
-import { defaultProps } from '../../default-props';
 import { parseMetricToNum } from '../../utils';
 
 import { StyledMeter } from './StyledMeter';
 import { strokeProps, defaultColor } from './utils';
+import { useThemeValue } from '../../utils/useThemeValue';
 
 const Bar = forwardRef((props, ref) => {
   const {
-    background,
+    background = 'light-1',
     max,
     round,
     size,
@@ -19,7 +18,7 @@ const Bar = forwardRef((props, ref) => {
     reverse,
     ...rest
   } = props;
-  const theme = useContext(ThemeContext) || defaultProps.theme;
+  const { theme, passThemeFlag } = useThemeValue();
   const length =
     size === 'full' ? 288 : parseMetricToNum(theme.global.size[size] || size);
   const thickness = parseMetricToNum(
@@ -107,6 +106,7 @@ const Bar = forwardRef((props, ref) => {
       width={width}
       height={direction === 'horizontal' ? thickness : length}
       round={round ? { size: thicknessProp } : undefined}
+      {...passThemeFlag}
       {...rest}
       reverse={reverse}
     >
@@ -123,11 +123,5 @@ const Bar = forwardRef((props, ref) => {
 });
 
 Bar.displayName = 'Bar';
-
-Bar.defaultProps = {
-  background: 'light-1',
-};
-
-Object.setPrototypeOf(Bar.defaultProps, defaultProps);
 
 export { Bar };

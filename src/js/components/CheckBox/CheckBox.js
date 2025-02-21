@@ -1,9 +1,6 @@
 import React, { forwardRef, useContext, useEffect, useState } from 'react';
-import { ThemeContext } from 'styled-components';
 
 import { removeUndefined } from '../../utils/object';
-import { defaultProps } from '../../default-props';
-import { Box } from '../Box';
 import { FormContext } from '../Form/FormContext';
 import { CheckBoxPropTypes } from './propTypes';
 
@@ -18,6 +15,7 @@ import {
 } from './StyledCheckBox';
 
 import { normalizeColor } from '../../utils';
+import { useThemeValue } from '../../utils/useThemeValue';
 
 const stopLabelClick = (event) => {
   // prevents clicking on the label trigging the event twice
@@ -34,6 +32,7 @@ const CheckBox = forwardRef(
       'aria-label': ariaLabel,
       checked: checkedProp,
       children,
+      containerProps, // internal only for now, used by SelectMultiple
       defaultChecked = false,
       disabled,
       fill,
@@ -57,7 +56,7 @@ const CheckBox = forwardRef(
     },
     ref,
   ) => {
-    const theme = useContext(ThemeContext) || defaultProps.theme;
+    const { theme, passThemeFlag } = useThemeValue();
     const formContext = useContext(FormContext);
 
     const [checked, setChecked] = formContext.useFormInput({
@@ -116,12 +115,11 @@ const CheckBox = forwardRef(
     }
 
     const visual = toggle ? (
-      <StyledCheckBoxToggle {...themeableProps}>
-        <StyledCheckBoxKnob {...themeableProps} />
+      <StyledCheckBoxToggle {...passThemeFlag} {...themeableProps}>
+        <StyledCheckBoxKnob {...passThemeFlag} {...themeableProps} />
       </StyledCheckBoxToggle>
     ) : (
       <StyledCheckBoxBox
-        as={Box}
         align="center"
         justify="center"
         width={theme.checkBox.size}
@@ -131,6 +129,7 @@ const CheckBox = forwardRef(
           color: borderColor,
         }}
         round={theme.checkBox.check.radius}
+        {...passThemeFlag}
         {...themeableProps}
       >
         {!indeterminate &&
@@ -167,7 +166,6 @@ const CheckBox = forwardRef(
     const side = !reverse !== !theme.dir ? 'left' : 'right';
     const checkBoxNode = (
       <StyledCheckBox
-        as={Box}
         align="center"
         justify="center"
         margin={label && { [side]: theme.checkBox.gap || 'small' }}
@@ -175,6 +173,7 @@ const CheckBox = forwardRef(
       >
         <StyledCheckBoxInput
           aria-label={ariaLabel || a11yTitle}
+          {...passThemeFlag}
           {...rest}
           ref={ref}
           type="checkbox"
@@ -215,14 +214,16 @@ const CheckBox = forwardRef(
         reverse={reverse}
         {...removeUndefined({ htmlFor: id, disabled })}
         checked={checked}
-        label={label}
+        labelProp={label}
         onClick={stopLabelClick}
         pad={pad}
         onMouseEnter={(event) => onMouseEnter?.(event)}
         onMouseOver={(event) => onMouseOver?.(event)}
         onMouseLeave={(event) => onMouseLeave?.(event)}
         onMouseOut={(event) => onMouseOut?.(event)}
+        {...passThemeFlag}
         {...themeableProps}
+        {...containerProps}
       >
         {first}
         {second}

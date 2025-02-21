@@ -10,6 +10,7 @@ import '@testing-library/jest-dom';
 
 import { Add, Next } from 'grommet-icons';
 import { Grommet, Button, Text } from '../..';
+import { ThemeType } from '../../../themes';
 
 describe('Button', () => {
   test('should have no accessibility violations', async () => {
@@ -46,6 +47,12 @@ describe('Button', () => {
         <Button label="Test" onClick={() => {}} />
       </Grommet>,
     );
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('render without grommet wrapper', () => {
+    const { container } = render(<Button label="Test" onClick={() => {}} />);
 
     expect(container.firstChild).toMatchSnapshot();
   });
@@ -358,7 +365,7 @@ describe('Button', () => {
 
     expect(
       screen.getByRole('button', { name: 'hoverIndicator' }),
-    ).toHaveStyleRule('background-color', 'rgba(221,221,221,0.4)', {
+    ).toHaveStyleRule('background-color', 'rgba(221, 221, 221, 0.4)', {
       modifier: ':hover',
     });
     expect(container.firstChild).toMatchSnapshot();
@@ -375,7 +382,7 @@ describe('Button', () => {
 
     expect(
       screen.getByRole('button', { name: 'hoverIndicator' }),
-    ).toHaveStyleRule('background-color', 'rgba(125,76,219,1)', {
+    ).toHaveStyleRule('background-color', 'rgba(125, 76, 219, 1)', {
       modifier: ':hover',
     });
     expect(container.firstChild).toMatchSnapshot();
@@ -616,6 +623,42 @@ describe('Button', () => {
 
     style = window.getComputedStyle(childPadButton);
     expect(style.padding).toBe('0px');
+
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  test('should render elevation', () => {
+    const DEFAULT_ELEVATION = 'inset 3px 0 red';
+    const PRIMARY_ELEVATION = 'inset 5px 0 blue';
+    const theme: ThemeType = {
+      global: {
+        elevation: {
+          light: {
+            'test-elevation': DEFAULT_ELEVATION,
+            'test-elevation-primary': PRIMARY_ELEVATION,
+          },
+          dark: {
+            'test-elevation': DEFAULT_ELEVATION,
+            'test-elevation-primary': PRIMARY_ELEVATION,
+          },
+        },
+      },
+      button: {
+        elevation: 'test-elevation',
+        primary: {
+          elevation: 'test-elevation-primary',
+        },
+      },
+    };
+
+    const { asFragment } = render(
+      <Grommet theme={theme}>
+        <Button label="Default" />
+        <Button label="Primary" primary />
+        {/* should not render elevation on plain button */}
+        <Button>Plain</Button>
+      </Grommet>,
+    );
 
     expect(asFragment()).toMatchSnapshot();
   });

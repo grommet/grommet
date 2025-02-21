@@ -34,6 +34,11 @@ describe('DataChart', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
+  test('default without grommet wrapper', () => {
+    const { container } = render(<DataChart data={data} series="a" />);
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
   test('nothing', () => {
     const { container } = render(
       <Grommet>

@@ -43,7 +43,7 @@ if (process.env.NODE_ENV !== 'production') {
       PropTypes.shape({
         value: PropTypes.number,
       }),
-    ).isRequired,
+    ),
   };
 }
 export const DistributionPropTypes = PropType;

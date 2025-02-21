@@ -7,9 +7,8 @@ import React, {
   useState,
   useCallback,
 } from 'react';
-import { ThemeContext } from 'styled-components';
+import styled from 'styled-components';
 import { Calendar as CalendarIcon } from 'grommet-icons/icons/Calendar';
-import { defaultProps } from '../../default-props';
 import { AnnounceContext } from '../../contexts/AnnounceContext';
 import { MessageContext } from '../../contexts/MessageContext';
 import { Box } from '../Box';
@@ -21,6 +20,7 @@ import { FormContext } from '../Form';
 import { Keyboard } from '../Keyboard';
 import { MaskedInput } from '../MaskedInput';
 import { useForwardedRef, setHoursWithOffset } from '../../utils';
+import { readOnlyStyle } from '../../utils/readOnly';
 import {
   formatToSchema,
   schemaToMask,
@@ -31,6 +31,12 @@ import {
 } from './utils';
 import { DateInputPropTypes } from './propTypes';
 import { getOutputFormat } from '../Calendar/Calendar';
+import { CopyButton } from '../TextInput/CopyButton';
+import { useThemeValue } from '../../utils/useThemeValue';
+
+const StyledDateInputContainer = styled(Box)`
+  ${(props) => props.readOnlyProp && readOnlyStyle(props.theme)}};
+`;
 
 const getReference = (value) => {
   let adjustedDate;
@@ -63,6 +69,8 @@ const DateInput = forwardRef(
       onChange,
       onFocus,
       plain,
+      readOnly: readOnlyProp,
+      readOnlyCopy,
       reverse: reverseProp = false,
       value: valueArg,
       messages,
@@ -70,7 +78,7 @@ const DateInput = forwardRef(
     },
     refArg,
   ) => {
-    const theme = useContext(ThemeContext) || defaultProps.theme;
+    const { theme, passThemeFlag } = useThemeValue();
     const announce = useContext(AnnounceContext);
     const { format: formatMessage } = useContext(MessageContext);
     const iconSize =
@@ -80,6 +88,7 @@ const DateInput = forwardRef(
     const { useFormInput } = useContext(FormContext);
     const ref = useForwardedRef(refArg);
     const containerRef = useRef();
+    const readOnly = readOnlyProp || readOnlyCopy;
     const [value, setValue] = useFormInput({
       name,
       value: valueArg,
@@ -113,6 +122,17 @@ const DateInput = forwardRef(
     const [textValue, setTextValue] = useState(
       schema ? valueToText(value, schema) : undefined,
     );
+
+    const readOnlyCopyValidation = formatMessage({
+      id: 'input.readOnlyCopy.validation',
+      messages,
+    });
+    const readOnlyCopyPrompt = formatMessage({
+      id: 'input.readOnlyCopy.prompt',
+      messages,
+    });
+
+    const [tip, setTip] = useState(readOnlyCopyPrompt);
 
     // Setting the icon through `inputProps` is deprecated.
     // The `icon` prop should be used instead.
@@ -244,7 +264,25 @@ Use the icon prop instead.`,
       );
     }
 
-    const calendarButton = (
+    const onClickCopy = () => {
+      global.navigator.clipboard.writeText(textValue);
+      announce(readOnlyCopyValidation, 'assertive');
+      setTip(readOnlyCopyValidation);
+    };
+
+    const onBlurCopy = () => {
+      if (tip === readOnlyCopyValidation) setTip(readOnlyCopyPrompt);
+    };
+
+    const DateInputButton = readOnlyCopy ? (
+      <CopyButton
+        onBlurCopy={onBlurCopy}
+        onClickCopy={onClickCopy}
+        readOnlyCopyPrompt={readOnlyCopyPrompt}
+        tip={tip}
+        value={value}
+      />
+    ) : (
       <Button
         onClick={open ? closeCalendar : openCalendar}
         plain
@@ -262,19 +300,25 @@ Use the icon prop instead.`,
         <Keyboard
           onEsc={open ? () => closeCalendar() : undefined}
           onSpace={(event) => {
-            event.preventDefault();
-            openCalendar();
+            if (!readOnlyCopy) {
+              event.preventDefault();
+              if (!readOnly) openCalendar();
+            }
           }}
         >
-          <Box
+          <StyledDateInputContainer
             ref={containerRef}
             border={!plain}
             round={theme.dateInput.container.round}
             direction="row"
+            // readOnly prop shouldn't get passed to the dom here
+            readOnlyProp={readOnly}
             fill
+            {...passThemeFlag}
           >
-            {reverse && calendarButton}
+            {reverse && (!readOnly || readOnlyCopy) && DateInputButton}
             <MaskedInput
+              readOnly={readOnly}
               ref={ref}
               id={id}
               name={name}
@@ -317,14 +361,16 @@ Use the icon prop instead.`,
                 }
               }}
               onFocus={(event) => {
-                announce(
-                  formatMessage({ id: 'dateInput.openCalendar', messages }),
-                );
+                if (!readOnly) {
+                  announce(
+                    formatMessage({ id: 'dateInput.openCalendar', messages }),
+                  );
+                }
                 if (onFocus) onFocus(event);
               }}
             />
-            {!reverse && calendarButton}
-          </Box>
+            {!reverse && (!readOnly || readOnlyCopy) && DateInputButton}
+          </StyledDateInputContainer>
         </Keyboard>
       </FormContext.Provider>
     );
@@ -338,7 +384,7 @@ Use the icon prop instead.`,
       );
     }
 
-    if (open) {
+    if (open && !readOnly) {
       return [
         input,
         <Keyboard key="drop" onEsc={() => ref.current.focus()}>

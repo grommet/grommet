@@ -3,11 +3,11 @@ import React, {
   cloneElement,
   forwardRef,
   useContext,
-  useState,
   useEffect,
+  useMemo,
+  useState,
 } from 'react';
-import styled, { ThemeContext } from 'styled-components';
-import { defaultProps } from '../../default-props';
+import styled from 'styled-components';
 
 import {
   containsFocus,
@@ -15,6 +15,7 @@ import {
   withinDropPortal,
   PortalContext,
 } from '../../utils';
+import { useDebounce } from '../../utils/use-debounce';
 import { focusStyle } from '../../utils/styles';
 import { parseMetricToNum } from '../../utils/mixins';
 import { useForwardedRef } from '../../utils/refs';
@@ -26,6 +27,19 @@ import { Text } from '../Text';
 import { TextInput } from '../TextInput';
 import { FormContext } from '../Form/FormContext';
 import { FormFieldPropTypes } from './propTypes';
+import { useThemeValue } from '../../utils/useThemeValue';
+import { AnnounceContext } from '../../contexts/AnnounceContext';
+
+const grommetInputFocusNames = [
+  'CheckBox',
+  'CheckBoxGroup',
+  'RadioButton',
+  'RadioButtonGroup',
+  'RangeInput',
+  'RangeSelector',
+  'StarRating',
+  'ThumbsRating',
+];
 
 const grommetInputNames = [
   'CheckBox',
@@ -37,6 +51,7 @@ const grommetInputNames = [
   'TextArea',
   'DateInput',
   'FileInput',
+  'RadioButton',
   'RadioButtonGroup',
   'RangeInput',
   'RangeSelector',
@@ -46,6 +61,7 @@ const grommetInputNames = [
 const grommetInputPadNames = [
   'CheckBox',
   'CheckBoxGroup',
+  'RadioButton',
   'RadioButtonGroup',
   'RangeInput',
   'RangeSelector',
@@ -56,13 +72,33 @@ const isGrommetInput = (comp) =>
   (grommetInputNames.indexOf(comp.displayName) !== -1 ||
     grommetInputPadNames.indexOf(comp.displayName) !== -1);
 
+const getFocusStyle = (props) => {
+  if (
+    props.focus &&
+    props.containerFocus === false &&
+    props.theme.formField?.focus?.containerFocus === false
+  ) {
+    return null;
+  }
+  return props.focus ? focusStyle({ justBorder: true }) : undefined;
+};
+
 const FormFieldBox = styled(Box)`
-  ${(props) => props.focus && focusStyle({ justBorder: true })}
-  ${(props) => props.theme.formField && props.theme.formField.extend}
+  ${(props) => getFocusStyle(props)}
+  ${(props) => props.theme.formField?.extend}
 `;
 
 const FormFieldContentBox = styled(Box)`
-  ${(props) => props.focus && focusStyle({ justBorder: true })}
+  ${(props) => getFocusStyle(props)}
+  ${(props) =>
+    props.theme.formField &&
+    props.theme.formField[props?.componentName]?.container?.extend}
+`;
+
+const StyledContentsBox = styled(Box)`
+  ${(props) =>
+    props.theme.formField &&
+    props.theme.formField[props?.componentName]?.container?.extend}
 `;
 
 const StyledMessageContainer = styled(Box)`
@@ -90,8 +126,7 @@ const ScreenReaderOnly = styled(Text)`
 `;
 
 const Message = ({ error, info, message, type, ...rest }) => {
-  const theme = useContext(ThemeContext) || defaultProps.theme;
-
+  const { theme, passThemeFlag } = useThemeValue();
   if (message) {
     let icon;
     let containerProps;
@@ -111,6 +146,7 @@ const Message = ({ error, info, message, type, ...rest }) => {
         direction="row"
         messageType={type}
         {...containerProps}
+        {...passThemeFlag}
       >
         {icon && <Box flex={false}>{icon}</Box>}
         {messageContent}
@@ -156,19 +192,6 @@ const Input = ({ component, disabled, invalid, name, onChange, ...rest }) => {
   );
 };
 
-const useDebounce = () => {
-  const [func, setFunc] = useState();
-  const theme = useContext(ThemeContext) || defaultProps.theme;
-
-  useEffect(() => {
-    let timer;
-    if (func) timer = setTimeout(() => func(), theme.global.debounceDelay);
-    return () => clearTimeout(timer);
-  }, [func, theme.global.debounceDelay]);
-
-  return setFunc;
-};
-
 const FormField = forwardRef(
   (
     {
@@ -196,8 +219,9 @@ const FormField = forwardRef(
     },
     ref,
   ) => {
-    const theme = useContext(ThemeContext) || defaultProps.theme;
+    const { theme, passThemeFlag } = useThemeValue();
     const formContext = useContext(FormContext);
+
     const {
       error,
       info,
@@ -222,6 +246,46 @@ const FormField = forwardRef(
     const debounce = useDebounce();
 
     const portalContext = useContext(PortalContext);
+    const announce = useContext(AnnounceContext);
+
+    useEffect(() => {
+      if (error && validate?.max) {
+        announce(error, 'polite', 5000);
+      }
+    }, [error, announce, validate?.max]);
+
+    const readOnlyField = useMemo(() => {
+      let readOnly = false;
+      if (children) {
+        Children.map(children, (child) => {
+          if (
+            (child?.props?.readOnly === true ||
+              child?.props?.readOnlyCopy === true) &&
+            child.type &&
+            ('TextInput'.indexOf(child.type.displayName) !== -1 ||
+              'DateInput'.indexOf(child.type.displayName) !== -1)
+          ) {
+            readOnly = true;
+          }
+        });
+      }
+      return readOnly;
+    }, [children]);
+
+    const containerFocus = useMemo(() => {
+      let focusIndicatorFlag = true;
+      Children.forEach(children, (child) => {
+        if (
+          child &&
+          child.type &&
+          grommetInputFocusNames.includes(child.type.displayName) &&
+          theme.formField?.focus?.containerFocus !== true
+        ) {
+          focusIndicatorFlag = false;
+        }
+      });
+      return focusIndicatorFlag;
+    }, [children, theme.formField?.focus?.containerFocus]);
 
     // This is here for backwards compatibility. In case the child is a grommet
     // input component, set plain and focusIndicator props, if they aren't
@@ -243,16 +307,20 @@ const FormField = forwardRef(
           ) {
             wantContentPad = true;
           }
-          if (
+
+          const isInputComponent =
             child &&
             child.type &&
-            grommetInputNames.indexOf(child.type.displayName) !== -1 &&
+            grommetInputNames.indexOf(child.type.displayName) !== -1;
+
+          if (
+            isInputComponent &&
             child.props.plain === undefined &&
             child.props.focusIndicator === undefined
           ) {
             return cloneElement(child, {
               plain: true,
-              focusIndicator: false,
+              focusIndicator: !containerFocus,
               pad:
                 'CheckBox'.indexOf(child.type.displayName) !== -1
                   ? formFieldTheme?.checkBox?.pad
@@ -286,7 +354,9 @@ const FormField = forwardRef(
     }
 
     if (themeBorder && themeBorder.position === 'inner') {
-      if (error && formFieldTheme.error) {
+      if (readOnlyField) {
+        themeContentProps.background = theme.global.input.readOnly?.background;
+      } else if (error && formFieldTheme.error) {
         themeContentProps.background = formFieldTheme.error.background;
       } else if (disabled && formFieldTheme.disabled) {
         themeContentProps.background = formFieldTheme.disabled.background;
@@ -316,11 +386,27 @@ const FormField = forwardRef(
       isFileInputComponent = true;
     }
 
+    let childName;
+    Children.forEach(children, (child) => {
+      if (child && child.type) {
+        childName = child.type.displayName;
+        // camelCase component name to match theme object key
+        if (childName?.length > 0)
+          childName = childName.charAt(0).toLowerCase() + childName.slice(1);
+      }
+    });
+
     if (!themeBorder) {
       contents = (
-        <Box {...themeContentProps} {...contentProps}>
+        <StyledContentsBox
+          disabledProp={disabled}
+          error={error}
+          componentName={childName}
+          {...themeContentProps}
+          {...contentProps}
+        >
           {contents}
-        </Box>
+        </StyledContentsBox>
       );
     }
 
@@ -332,6 +418,8 @@ const FormField = forwardRef(
       formFieldTheme.disabled.border.color
     ) {
       borderColor = formFieldTheme.disabled.border.color;
+    } else if (readOnlyField && theme.global.input?.readOnly?.border?.color) {
+      borderColor = theme.global.input?.readOnly?.border?.color;
     } else if (
       // backward compatibility check
       (error && themeBorder && themeBorder.error.color) ||
@@ -371,6 +459,16 @@ const FormField = forwardRef(
           : labelStyle.color;
     }
 
+    const themeHelpProps = {
+      ...formFieldTheme.help,
+      ...(disabled && { color: formFieldTheme?.disabled?.help?.color }),
+    };
+
+    const themeInfoProps = {
+      ...formFieldTheme.info,
+      ...(disabled && { color: formFieldTheme?.disabled?.info?.color }),
+    };
+
     let abut;
     let abutMargin;
     let outerStyle = style;
@@ -403,9 +501,14 @@ const FormField = forwardRef(
           : {};
       contents = (
         <FormFieldContentBox
+          disabledProp={disabled}
+          error={error}
+          componentName={childName}
           {...themeContentProps}
           {...innerProps}
           {...contentProps}
+          containerFocus={containerFocus} // internal prop
+          {...passThemeFlag}
         >
           {contents}
         </FormFieldContentBox>
@@ -502,6 +605,7 @@ const FormField = forwardRef(
         margin={abut ? abutMargin : margin || { ...formFieldTheme.margin }}
         {...outerProps}
         style={outerStyle}
+        containerFocus={containerFocus} // internal prop
         onFocus={(event) => {
           const root = formFieldRef.current?.getRootNode();
           if (root) {
@@ -538,6 +642,7 @@ const FormField = forwardRef(
             : undefined
         }
         {...containerRest}
+        {...passThemeFlag}
       >
         {(label && component !== CheckBox) || help ? (
           <>
@@ -547,12 +652,12 @@ const FormField = forwardRef(
                 {showRequiredIndicator ? requiredIndicator : undefined}
               </Text>
             )}
-            <Message message={help} {...formFieldTheme.help} />
+            <Message message={help} {...themeHelpProps} />
           </>
         ) : undefined}
         {contents}
         <Message type="error" message={error} {...formFieldTheme.error} />
-        <Message type="info" message={info} {...formFieldTheme.info} />
+        <Message type="info" message={info} {...themeInfoProps} />
       </FormFieldBox>
     );
   },

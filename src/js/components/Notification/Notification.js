@@ -1,13 +1,11 @@
 import React, {
   useCallback,
-  useContext,
   useEffect,
   useState,
   useMemo,
   Fragment,
 } from 'react';
-import styled, { ThemeContext } from 'styled-components';
-import { defaultProps } from '../../default-props';
+import styled from 'styled-components';
 
 import { Anchor } from '../Anchor';
 import { Box } from '../Box';
@@ -17,6 +15,14 @@ import { Paragraph } from '../Paragraph';
 import { Text } from '../Text';
 
 import { NotificationType } from './propTypes';
+import { useThemeValue } from '../../utils/useThemeValue';
+
+const Message = ({ fill, direction, ...rest }) =>
+  direction === 'row' ? (
+    <Text {...rest} />
+  ) : (
+    <Paragraph {...rest} fill={fill || false} />
+  );
 
 const adaptThemeStyle = (value, theme) => {
   let textStyle = value;
@@ -47,6 +53,16 @@ const adaptThemeStyle = (value, theme) => {
   return [textStyle, closeButtonStyle];
 };
 
+const getTextColor = (part, status, kind, theme) => {
+  let color;
+  if (theme.notification?.[status]?.[kind]?.[part]?.color)
+    color = theme.notification?.[status]?.[kind]?.[part]?.color;
+  else if (theme.notification?.[status]?.[part]?.color)
+    color = theme.notification?.[status]?.[part]?.color;
+  else color = theme.notification?.[part]?.color;
+  return color;
+};
+
 const NotificationAnchor = styled(Anchor)`
   white-space: nowrap;
 `;
@@ -57,16 +73,16 @@ const Notification = ({
   onClose,
   id,
   global,
-  status,
+  status = 'unknown',
   title,
-  toast,
+  toast = false,
   icon,
   time,
   ...rest
 }) => {
   const autoClose =
     toast && toast?.autoClose === undefined ? true : toast.autoClose;
-  const theme = useContext(ThemeContext) || defaultProps.theme;
+  const { theme } = useThemeValue();
   const [visible, setVisible] = useState(true);
 
   const position = useMemo(() => (toast && toast?.position) || 'top', [toast]);
@@ -142,6 +158,9 @@ const Notification = ({
   let actions;
   let message = messageProp;
 
+  const messageColor = getTextColor('message', status, kind, theme);
+  const titleColor = getTextColor('title', status, kind, theme);
+
   if (actionsProp)
     actions = actionsProp.map((action) => (
       <Fragment key={action.label}>
@@ -156,11 +175,14 @@ const Notification = ({
       </Fragment>
     ));
 
-  const Message = direction !== 'row' ? Paragraph : Text;
-  if (message || actions)
+  if (message || actions) {
     message =
       typeof message === 'string' ? (
-        <Message {...theme.notification.message}>
+        <Message
+          {...theme.notification.message}
+          color={messageColor}
+          direction={direction}
+        >
           <Text margin={{ right: 'xsmall' }}>{message}</Text>
           {/* include actions with message so it wraps with message */}
           {actions}
@@ -168,6 +190,7 @@ const Notification = ({
       ) : (
         message
       );
+  }
 
   const iconDimension = theme.notification?.message?.size || 'medium';
 
@@ -184,7 +207,7 @@ const Notification = ({
       id={toast ? undefined : id}
       {...rest}
     >
-      {/* separate from onClose button to allow "onClick" in the future and 
+      {/* separate from onClose button to allow "onClick" in the future and
         avoid nested interactive elements */}
       <Box direction="row" pad={textPad} flex>
         <Box {...theme.notification.iconContainer}>
@@ -192,7 +215,11 @@ const Notification = ({
         </Box>
         <Box {...theme.notification.textContainer}>
           <TextWrapper>
-            {title && <Text {...theme.notification.title}>{title}</Text>}
+            {title && (
+              <Text {...theme.notification.title} color={titleColor}>
+                {title}
+              </Text>
+            )}
             {message && title && direction === 'row' && <>&nbsp;</>}
             {message}
           </TextWrapper>
@@ -241,12 +268,6 @@ const Notification = ({
   return content;
 };
 
-Notification.defaultProps = {
-  status: 'unknown',
-  toast: false,
-};
-
-Object.setPrototypeOf(Notification.defaultProps, defaultProps);
 Notification.displayName = 'Notification';
 
 Notification.propTypes = NotificationType;

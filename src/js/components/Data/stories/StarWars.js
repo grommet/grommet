@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { Box, Data, Grid, List, Notification, Pagination } from 'grommet';
+import { Box, Data, List, Pagination } from 'grommet';
 
 // Uses the StarWars API for starships, see https://swapi.dev
 
@@ -50,31 +50,21 @@ export const StarWars = () => {
   return (
     // Uncomment <Grommet> lines when using outside of storybook
     // <Grommet theme={...}>
-    <Grid
-      flex={false}
-      pad="large"
-      columns={[['small', 'large']]}
-      justifyContent="center"
-      gap="large"
-    >
-      <Notification
-        status="info"
-        message="Data is in 'beta'. The API surface is subject to change."
-      />
-      <Box skeleton={!result.data}>
-        <Data
-          data={result.data}
-          total={total}
-          filteredTotal={result.filteredTotal}
-          view={view}
-          onView={setView}
-          toolbar="search"
-        >
-          <List primaryKey="name" secondaryKey="starship_class" />
-          <Pagination />
-        </Data>
-      </Box>
-    </Grid>
+
+    <Box skeleton={!result.data} width="large" pad="large">
+      <Data
+        data={result.data}
+        total={total}
+        filteredTotal={result.filteredTotal}
+        view={view}
+        onView={setView}
+        toolbar="search"
+      >
+        <List primaryKey="name" secondaryKey="starship_class" />
+        <Pagination />
+      </Data>
+    </Box>
+
     // </Grommet>
   );
 };

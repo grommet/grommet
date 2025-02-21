@@ -15,14 +15,92 @@ export interface GrommetProps {
     layer?: {
       singleId?: boolean;
     };
+    drop?: {
+      checkContainingBlock?: boolean;
+    };
   };
   messages?: {
     messages?: {
+      button?: {
+        busy?: string;
+        success?: string;
+      };
+      calendar?: {
+        previousMove?: string;
+        previous?: string;
+        nextMove?: string;
+        next?: string;
+      };
+      carousel?: {
+        previous?: string;
+        next?: string;
+        jump?: string;
+      };
+      dateInput?: {
+        openCalendar?: string;
+        enterCalendar?: string;
+        exitCalendar?: string;
+      };
+      dataChart?: {
+        detailTitle?: string;
+        detailFocus?: string;
+      };
+      dataFilters?: {
+        clear?: string;
+        heading?: string;
+        open?: string;
+        openSet?: {
+          singular?: string;
+          plural?: string;
+        };
+      };
+      dataForm?: {
+        submit?: string;
+      };
+      dataSearch?: {
+        label?: string;
+        open?: string;
+      };
+      dataSort?: {
+        ascending?: string;
+        by?: string;
+        descending?: string;
+        direction?: string;
+        open?: string;
+      };
+      dataSummary?: {
+        filtered?: string;
+        filteredSingle?: string;
+        items?: string;
+        itemsSingle?: string;
+        selected?: string;
+        total?: string;
+        totalSingle?: string;
+      };
+      dataTableColumns?: {
+        open?: string;
+        order?: string;
+        select?: string;
+        tip?: string;
+      };
+      dataTableGroupBy?: {
+        clear?: string;
+        label?: string;
+      };
+      dataView?: {
+        label?: string;
+      };
       fileInput?: {
         browse?: string;
         dropPrompt?: string;
         dropPromptMultiple?: string;
         files?: string;
+        maxFile?: string;
+        maxSizeSingle?: string;
+        maxSizeMultiple?: {
+          singular?: string;
+          plural?: string;
+        };
         remove?: string;
         removeAll?: string;
       };
@@ -30,9 +108,39 @@ export interface GrommetProps {
         invalid?: string;
         required?: string;
       };
+      formField?: {
+        maxCharacters?: {
+          remaining?: {
+            singular?: string;
+            plural?: string;
+          };
+          overLimit?: {
+            singular?: string;
+            plural: string;
+          };
+        };
+      };
       menu?: {
         openMenu?: string;
         closeMenu?: string;
+      };
+      meter?: {
+        bar?: {
+          singular?: string;
+          plural?: string;
+        };
+        circle?: {
+          singular?: string;
+          plural?: string;
+        };
+        pie?: {
+          singular?: string;
+          plural?: string;
+        };
+        semicircle?: {
+          singular?: string;
+          plural?: string;
+        };
       };
       rangeSelector?: {
         lower?: string;
@@ -40,6 +148,23 @@ export interface GrommetProps {
       };
       select?: {
         multiple?: string;
+        selected?: string;
+      };
+      selectMultiple?: {
+        clearAll?: string;
+        clearAllA11y?: string;
+        open?: string;
+        optionNotSelected?: string;
+        optionSelected?: string;
+        search?: string;
+        selectAll?: string;
+        selectAllA11y?: string;
+        selectDrop?: string;
+        selected?: string;
+        selectedOfTotal?: string;
+        selectedOptions?: string;
+        showMore?: string;
+        summarizedValue?: string;
       };
       skipLinks?: {
         skipTo?: string;
@@ -54,7 +179,10 @@ export interface GrommetProps {
         suggestionIsOpen?: string;
       };
       video?: {
+        audioDescriptions?: string;
+        captions?: string;
         closeMenu?: string;
+        description?: string;
         fullScreen?: string;
         progressMeter?: string;
         scrubber?: string;
@@ -65,7 +193,7 @@ export interface GrommetProps {
         volumeUp?: string;
       };
     };
-    format: (...args: any[]) => void;
+    format?: (...args: any[]) => void;
   };
   onAnalytics?: (data: any) => void;
   plain?: boolean;

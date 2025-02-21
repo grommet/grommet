@@ -8,10 +8,8 @@ import React, {
   useRef,
   useEffect,
 } from 'react';
-import { ThemeContext } from 'styled-components';
 
 import { useKeyboard } from '../../utils';
-import { defaultProps } from '../../default-props';
 
 import { Box } from '../Box';
 import { Keyboard } from '../Keyboard';
@@ -26,13 +24,12 @@ import {
   getSelectIcon,
   getDisplayLabelKey,
   getIconColor,
+  formatValueForA11y,
 } from './utils';
 import { DefaultSelectTextInput } from './DefaultSelectTextInput';
 import { MessageContext } from '../../contexts/MessageContext';
 import { SelectPropTypes } from './propTypes';
-
-StyledSelectDropButton.defaultProps = {};
-Object.setPrototypeOf(StyledSelectDropButton.defaultProps, defaultProps);
+import { useThemeValue } from '../../utils/useThemeValue';
 
 const defaultDropAlign = { top: 'bottom', left: 'left' };
 
@@ -86,7 +83,7 @@ const Select = forwardRef(
     },
     ref,
   ) => {
-    const theme = useContext(ThemeContext) || defaultProps.theme;
+    const { theme } = useThemeValue();
     const inputRef = useRef();
     const formContext = useContext(FormContext);
     const { format } = useContext(MessageContext);
@@ -140,21 +137,28 @@ const Select = forwardRef(
     // the option indexes present in the value
     const optionIndexesInValue = useMemo(() => {
       const result = [];
-      allOptions.forEach((option, index) => {
-        if (selected !== undefined) {
-          if (Array.isArray(selected)) {
-            if (selected.indexOf(index) !== -1) result.push(index);
-          } else if (index === selected) {
-            result.push(index);
-          }
-        } else if (Array.isArray(normalizedValue)) {
-          if (normalizedValue.some((v) => v === applyKey(option, valueKey))) {
-            result.push(index);
-          }
-        } else if (normalizedValue === applyKey(option, valueKey)) {
+      if (selected !== undefined) {
+        if (Array.isArray(selected)) {
+          const validSelections = selected.filter((i) => i in allOptions);
+          result.push(...validSelections);
+        } else if (selected in allOptions) {
+          result.push(selected);
+        }
+      } else if (Array.isArray(normalizedValue)) {
+        normalizedValue.forEach((v) => {
+          const index = allOptions
+            .map((option) => applyKey(option, valueKey))
+            .indexOf(v);
+          if (index !== -1) result.push(index);
+        });
+      } else {
+        const index = allOptions
+          .map((option) => applyKey(option, valueKey))
+          .indexOf(normalizedValue);
+        if (index !== -1) {
           result.push(index);
         }
-      });
+      }
       return result;
     }, [allOptions, selected, valueKey, normalizedValue]);
 
@@ -287,7 +291,9 @@ const Select = forwardRef(
               ? format({
                   id: 'select.selected',
                   messages,
-                  values: { currentSelectedValue: value },
+                  values: {
+                    currentSelectedValue: formatValueForA11y(value, labelKey),
+                  },
                 })
               : ''
           }`}
@@ -299,7 +305,7 @@ const Select = forwardRef(
           dropTarget={dropTarget}
           open={open}
           alignSelf={alignSelf}
-          focusIndicator={focusIndicator}
+          focusIndicator={plain ? focusIndicator : true}
           onFocus={onFocus}
           onBlur={onBlur}
           gridArea={gridArea}
@@ -357,6 +363,7 @@ const Select = forwardRef(
                     type="text"
                     name={name}
                     id={id ? `${id}__input` : undefined}
+                    inert="" // revisit for React 19
                     value={inputValue}
                     ref={inputRef}
                     readOnly
@@ -372,6 +379,7 @@ const Select = forwardRef(
                   }
                   disabled={disabled}
                   id={id}
+                  inert="" // revisit for React 19
                   name={name}
                   ref={inputRef}
                   placeholder={placeholder}
@@ -401,8 +409,6 @@ const Select = forwardRef(
     );
   },
 );
-
-Select.defaultProps = { ...defaultProps };
 
 Select.displayName = 'Select';
 Select.propTypes = SelectPropTypes;

@@ -1,11 +1,13 @@
 import React, { forwardRef, useContext, useEffect, useState } from 'react';
-import styled, { ThemeContext } from 'styled-components';
-import { defaultProps } from '../../default-props';
+import styled from 'styled-components';
 import { DataContext } from '../../contexts/DataContext';
 import { Box } from '../Box';
 import { Nav } from '../Nav';
 import { PageControl } from './PageControl';
+import { PaginationStep } from './PaginationStep';
+import { PaginationSummary } from './PaginationSummary';
 import { PaginationPropTypes } from './propTypes';
+import { useThemeValue } from '../../utils/useThemeValue';
 
 const StyledPaginationContainer = styled(Box)`
   ${(props) =>
@@ -30,16 +32,19 @@ const Pagination = forwardRef(
       // number of page controls in the middle
       numberMiddlePages: numberMiddlePagesProp = 3,
       onChange,
+      messages,
       page: pageProp,
       size,
       step: stepProp,
+      stepOptions,
+      summary,
       ...rest
     },
     ref,
   ) => {
-    const theme = useContext(ThemeContext) || defaultProps.theme;
+    const { theme, passThemeFlag } = useThemeValue();
     const { onView, filteredTotal, view } = useContext(DataContext);
-    const step = stepProp || view?.step || 10;
+    const [step, setStep] = useState(stepProp || view?.step || 10);
     const total = numberItems ?? filteredTotal ?? 0;
     const page = pageProp || view?.page || 1;
 
@@ -48,6 +53,10 @@ const Pagination = forwardRef(
     const [activePage, setActivePage] = useState(
       Math.min(page, totalPages) || 1,
     );
+
+    useEffect(() => {
+      if (stepProp) setStep(stepProp);
+    }, [stepProp]);
 
     useEffect(() => {
       setActivePage(page);
@@ -199,27 +208,74 @@ const Pagination = forwardRef(
       ...navProps[control],
     }));
 
+    const paginationControls = (
+      <Nav
+        a11yTitle={ariaLabel || a11yTitle || 'Pagination Navigation'}
+        ref={ref}
+      >
+        <Box as="ul" {...theme.pagination.controls} cssGap>
+          {controls.map((control, index) => (
+            /* Using index as key (as opposed to a unique id) seems to
+             * help React prioritize rendering the updated controls as
+             * desired. Whereas, using a unique id resulted in rendering
+             * the active control with an undesired lag. */
+            // eslint-disable-next-line react/no-array-index-key
+            <PageControl key={index} size={size} {...control} />
+          ))}
+        </Box>
+      </Nav>
+    );
+
+    // for backwards compatibility
+    if (!summary && !stepOptions)
+      return (
+        <StyledPaginationContainer
+          flex={false}
+          {...theme.pagination.container}
+          {...passThemeFlag}
+          {...rest}
+        >
+          {paginationControls}
+        </StyledPaginationContainer>
+      );
+
     return (
       <StyledPaginationContainer
+        direction="row"
+        align="center"
+        gap={{ column: 'xsmall', row: 'small' }}
+        wrap
         flex={false}
         {...theme.pagination.container}
+        {...passThemeFlag}
         {...rest}
       >
-        <Nav
-          a11yTitle={ariaLabel || a11yTitle || 'Pagination Navigation'}
-          ref={ref}
+        <Box flex="grow">
+          {summary && (
+            <PaginationSummary
+              messages={messages}
+              page={activePage}
+              step={step}
+              numberItems={total}
+            />
+          )}
+        </Box>
+        <Box
+          align="center"
+          direction="row"
+          gap={{ column: 'xsmall', row: 'small' }}
+          wrap
         >
-          <Box as="ul" {...theme.pagination.controls}>
-            {controls.map((control, index) => (
-              /* Using index as key (as opposed to a unique id) seems to
-               * help React prioritize rendering the updated controls as
-               * desired. Whereas, using a unique id resulted in rendering
-               * the active control with an undesired lag. */
-              // eslint-disable-next-line react/no-array-index-key
-              <PageControl key={index} size={size} {...control} />
-            ))}
-          </Box>
-        </Nav>
+          {stepOptions && (
+            <PaginationStep
+              messages={messages}
+              options={Array.isArray(stepOptions) ? stepOptions : undefined}
+              step={step}
+              onChange={({ value }) => setStep(value)}
+            />
+          )}
+          {paginationControls}
+        </Box>
       </StyledPaginationContainer>
     );
   },

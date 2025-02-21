@@ -6,6 +6,7 @@ import { HeadingPropTypes } from './propTypes';
 import { useForwardedRef } from '../../utils';
 import { useSkeleton } from '../Skeleton';
 import { HeadingSkeleton } from './HeadingSkeleton';
+import { useThemeValue } from '../../utils/useThemeValue';
 
 const Heading = forwardRef(
   (
@@ -13,14 +14,16 @@ const Heading = forwardRef(
       children,
       color,
       fill,
-      level,
+      level = 1,
       overflowWrap: overflowWrapProp,
+      responsive = true,
       weight,
       ...rest
     },
 
     ref, // munged to avoid styled-components putting it in the DOM
   ) => {
+    const { passThemeFlag } = useThemeValue();
     const headingRef = useForwardedRef(ref);
     const [overflowWrap, setOverflowWrap] = useState(
       overflowWrapProp || 'break-word',
@@ -48,7 +51,14 @@ const Heading = forwardRef(
 
     let content = children;
     if (skeleton) {
-      content = <HeadingSkeleton level={level} fill={fill} {...rest} />;
+      content = (
+        <HeadingSkeleton
+          level={level}
+          fill={fill}
+          responsive={responsive}
+          {...rest}
+        />
+      );
     }
 
     return (
@@ -59,7 +69,9 @@ const Heading = forwardRef(
         fillProp={fill}
         level={+level}
         overflowWrap={overflowWrap}
+        responsive={responsive}
         weight={weight}
+        {...passThemeFlag}
         {...rest}
         ref={headingRef}
       >
@@ -70,10 +82,6 @@ const Heading = forwardRef(
 );
 
 Heading.displayName = 'Heading';
-Heading.defaultProps = {
-  level: 1,
-  responsive: true,
-};
 Heading.propTypes = HeadingPropTypes;
 
 export { Heading };

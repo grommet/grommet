@@ -1,17 +1,17 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 import styled from 'styled-components';
-
 import 'jest-styled-components';
 
-import { grommet, defaultProps, extendDefaultTheme, Box, Grommet } from '..';
+import { styledComponentsConfig } from '../utils/styles';
 
-const CustomBox = styled.div`
+import { grommet, extendDefaultTheme, withTheme, Box, Grommet } from '..';
+
+const CustomBox = styled.div
+  .withConfig(styledComponentsConfig)
+  .attrs(withTheme)`
   background: ${(props) => props.theme.global.colors.brand};
 `;
-CustomBox.defaultProps = {};
-Object.setPrototypeOf(CustomBox.defaultProps, defaultProps);
-
 test('default theme is used', () => {
   const { container } = render(<Box background="brand" />);
 

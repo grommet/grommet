@@ -1,8 +1,9 @@
 import React, { forwardRef, useContext, useMemo } from 'react';
-import { ThemeContext } from 'styled-components';
 import { Grid } from '../Grid';
 import { ResponsiveContext } from '../../contexts/ResponsiveContext';
 import { NameValueListContext } from './NameValueListContext';
+import { isSmall } from '../../utils/responsive';
+import { useThemeValue } from '../../utils/useThemeValue';
 
 const NameValueList = forwardRef(
   (
@@ -17,7 +18,7 @@ const NameValueList = forwardRef(
     ref,
   ) => {
     const size = useContext(ResponsiveContext);
-    const theme = useContext(ThemeContext);
+    const { theme } = useThemeValue();
 
     // If layout is grid, valueWidth sets the max width of the column.
     // Grid will 'fit' as many columns of valueWidth per row as container's
@@ -25,7 +26,7 @@ const NameValueList = forwardRef(
     let columns;
     const valueWidth = valueProps?.width || theme.nameValueList.value.width;
     const nameWidth = nameProps?.width || theme.nameValueList.name.width;
-    if (size === 'small' || layout === 'grid')
+    if (isSmall(size) || layout === 'grid')
       columns = {
         count: 'fit',
         size: !Array.isArray(valueWidth) ? ['auto', valueWidth] : valueWidth,
@@ -39,7 +40,7 @@ const NameValueList = forwardRef(
 
     let { gap } = theme.nameValueList;
     if (
-      (pairProps.direction === 'column' || size === 'small') &&
+      (pairProps.direction === 'column' || isSmall(size)) &&
       theme.nameValueList.pair?.column?.gap
     ) {
       gap = theme.nameValueList.pair.column.gap;

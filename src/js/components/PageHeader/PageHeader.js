@@ -1,5 +1,4 @@
 import React, { forwardRef, useContext } from 'react';
-import { ThemeContext } from 'styled-components';
 
 import { Box } from '../Box';
 import { Header } from '../Header';
@@ -7,6 +6,7 @@ import { Heading } from '../Heading';
 import { Grid } from '../Grid';
 import { Paragraph } from '../Paragraph';
 import { ResponsiveContext } from '../../contexts/ResponsiveContext';
+import { useThemeValue } from '../../utils/useThemeValue';
 
 const sizeStyle = (size, feature, theme, breakpoint) => {
   const style = {
@@ -32,11 +32,12 @@ const PageHeader = forwardRef(
       size,
       subtitle,
       title,
+      level,
       ...rest
     },
     ref,
   ) => {
-    const theme = useContext(ThemeContext);
+    const { theme } = useThemeValue();
     const breakpoint = useContext(ResponsiveContext);
 
     let actionsProps = { ...theme.pageHeader.actions };
@@ -76,7 +77,9 @@ const PageHeader = forwardRef(
           </Box>
           <Box gridArea="title">
             {typeof title === 'string' ? (
-              <Heading {...sizeStyle(size, 'title', theme)}>{title}</Heading>
+              <Heading {...sizeStyle(size, 'title', theme)} level={level}>
+                {title}
+              </Heading>
             ) : (
               title
             )}

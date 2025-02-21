@@ -1,8 +1,7 @@
 /* eslint-disable no-underscore-dangle */
-import React, { forwardRef, memo, useContext } from 'react';
-import { ThemeContext } from 'styled-components';
+import React, { forwardRef, memo, useEffect } from 'react';
 
-import { useKeyboard } from '../../utils';
+import { useKeyboard, useForwardedRef } from '../../utils';
 import { CheckBox } from '../CheckBox';
 import { InfiniteScroll } from '../InfiniteScroll';
 import { TableRow } from '../TableRow';
@@ -13,7 +12,7 @@ import { ExpanderCell } from './ExpanderCell';
 import { Cell } from './Cell';
 import { StyledDataTableBody, StyledDataTableRow } from './StyledDataTable';
 import { datumValue, normalizeRowCellProps } from './buildState';
-import { defaultProps } from '../../default-props';
+import { useThemeValue } from '../../utils/useThemeValue';
 
 const Row = memo(
   ({
@@ -77,6 +76,7 @@ const Row = memo(
         {(selected || onSelect) && (
           <Cell
             background={
+              (isSelected && cellProps.selected.background) ||
               (pinnedOffset?._grommetDataTableSelect &&
                 cellProps.pinned.background) ||
               cellProps.background
@@ -114,6 +114,7 @@ const Row = memo(
 
         {rowDetails && (
           <ExpanderCell
+            background={isSelected && cellProps.selected.background}
             context={isRowExpanded ? 'groupHeader' : 'body'}
             expanded={isRowExpanded}
             onToggle={() => {
@@ -131,6 +132,7 @@ const Row = memo(
           <Cell
             key={column.property}
             background={
+              (isSelected && cellProps.selected.background) ||
               (column.pin && cellProps.pinned.background) ||
               cellProps.background
             }
@@ -138,6 +140,7 @@ const Row = memo(
             context="body"
             column={column}
             datum={datum}
+            isSelected={isSelected}
             pad={(column.pin && cellProps.pinned.pad) || cellProps.pad}
             pinnedOffset={pinnedOffset && pinnedOffset[column.property]}
             primaryProperty={primaryProperty}
@@ -188,15 +191,17 @@ const Body = forwardRef(
     },
     ref,
   ) => {
-    const theme = useContext(ThemeContext) || defaultProps.theme;
+    const { theme, passThemeFlag } = useThemeValue();
     const [active, setActive] = React.useState();
     const [lastActive, setLastActive] = React.useState();
+    const [scroll, setScroll] = React.useState();
+    const containerRef = useForwardedRef(ref);
 
     // Determine if using a keyboard to cover focus behavior
     const usingKeyboard = useKeyboard();
 
     const onFocusActive =
-      active ?? lastActive ?? (usingKeyboard ? 0 : undefined);
+      active ?? lastActive ?? (usingKeyboard && onClickRow ? 0 : undefined);
 
     const activePrimaryValue =
       active >= 0 ? datumValue(data[active], primaryProperty) : undefined;
@@ -215,6 +220,16 @@ const Body = forwardRef(
       (!disabled ||
         (activePrimaryValue !== undefined &&
           !disabled.includes(activePrimaryValue)));
+
+    // Determine if the DataTable body is scrollable
+    useEffect(() => {
+      if (containerRef.current) {
+        const element = containerRef.current;
+        if (element.scrollHeight > element.offsetHeight) {
+          setScroll(true);
+        }
+      }
+    }, [containerRef]);
 
     return (
       <Keyboard
@@ -235,13 +250,22 @@ const Body = forwardRef(
             : undefined
         }
         // The WCAG recommendation for checkboxes is to select them with "Space"
-        onSpace={() => {
-          if (clickableRow) {
-            if (onClickRow === 'select') {
-              selectRow();
-            }
-          }
-        }}
+        onSpace={
+          clickableRow
+            ? (event) => {
+                event.preventDefault();
+
+                if (typeof onClickRow === 'function') {
+                  event.persist();
+                  const adjustedEvent = event;
+                  adjustedEvent.datum = data?.[active];
+                  onClickRow(adjustedEvent);
+                } else if (onClickRow === 'select') {
+                  selectRow();
+                }
+              }
+            : undefined
+        }
         onUp={onClickRow && active ? () => setActive(active - 1) : undefined}
         onDown={
           onClickRow && data.length && active < data.length - 1
@@ -250,14 +274,15 @@ const Body = forwardRef(
         }
       >
         <StyledDataTableBody
-          ref={ref}
+          ref={containerRef}
           size={size}
-          tabIndex={onClickRow ? 0 : undefined}
+          tabIndex={onClickRow || scroll ? 0 : undefined}
           onFocus={() => setActive(onFocusActive)}
           onBlur={() => {
             setLastActive(active);
             setActive(undefined);
           }}
+          {...passThemeFlag}
           {...rest}
         >
           <InfiniteScroll

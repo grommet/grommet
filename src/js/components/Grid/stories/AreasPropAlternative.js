@@ -14,8 +14,10 @@ export const GridAreasAlternative = () => (
       ['footer', 'footer'],
     ]}
     gap="small"
+    // needed for keyboard accessibility of scroll region
+    tabIndex={0}
   >
-    <Box background="brand" gridArea="header">
+    <Box background="dark-1" gridArea="header">
       Header
     </Box>
 

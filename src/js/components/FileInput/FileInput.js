@@ -1,9 +1,7 @@
 import React, { forwardRef, useContext, useRef, useState } from 'react';
-import styled, { ThemeContext } from 'styled-components';
+import styled from 'styled-components';
 import { CircleAlert } from 'grommet-icons/icons/CircleAlert';
 import { MessageContext } from '../../contexts/MessageContext';
-
-import { defaultProps } from '../../default-props';
 
 import {
   disabledStyle,
@@ -24,6 +22,7 @@ import { Text } from '../Text';
 import { StyledFileInput } from './StyledFileInput';
 import { FileInputPropTypes } from './propTypes';
 import { formatBytes } from './utils/formatBytes';
+import { useThemeValue } from '../../utils/useThemeValue';
 // We want the interaction of <input type="file" /> but none of its styling.
 // So, we put what we want to show underneath and
 // position the <input /> on top with an opacity of zero.
@@ -92,7 +91,7 @@ const FileInput = forwardRef(
     },
     ref,
   ) => {
-    const theme = useContext(ThemeContext);
+    const { theme, passThemeFlag } = useThemeValue();
     const { format } = useContext(MessageContext);
     const formContext = useContext(FormContext);
     const [hover, setHover] = React.useState();
@@ -282,6 +281,7 @@ const FileInput = forwardRef(
           onMouseOut={disabled ? undefined : () => setHover(false)}
           dragOver={dragOver}
           focus={usingKeyboard && focus}
+          {...passThemeFlag}
         >
           <StyledFileInput
             ref={inputRef}
@@ -293,6 +293,7 @@ const FileInput = forwardRef(
             disabled={disabled}
             plain
             rightOffset={rightOffset}
+            {...passThemeFlag}
             {...rest}
             onDragOver={() => setDragOver(true)}
             onDragLeave={() => setDragOver(false)}
@@ -328,7 +329,9 @@ const FileInput = forwardRef(
             >
               {files.length <= aggregateThreshold && (
                 <>
-                  <Message {...theme.fileInput.message}>{message}</Message>
+                  <Message {...theme.fileInput.message} {...passThemeFlag}>
+                    {message}
+                  </Message>
                   <Keyboard
                     onSpace={(event) => {
                       event.preventDefault();
@@ -379,7 +382,7 @@ const FileInput = forwardRef(
           )}
           {files.length > aggregateThreshold && (
             <Box justify="between" direction="row" align="center">
-              <Label {...theme.fileInput.label}>
+              <Label {...theme.fileInput.label} {...passThemeFlag}>
                 {files.length}{' '}
                 {format({
                   id: 'fileInput.files',
@@ -395,6 +398,7 @@ const FileInput = forwardRef(
                   })}
                   icon={<RemoveIcon />}
                   hoverIndicator
+                  disabled={disabled}
                   onClick={(event) => {
                     if (confirmRemove) {
                       event.persist(); // necessary for when React < v17
@@ -475,6 +479,7 @@ const FileInput = forwardRef(
                         theme.global.input.font.weight
                       }
                       truncate
+                      {...passThemeFlag}
                     >
                       {file.name}
                     </Label>
@@ -489,6 +494,7 @@ const FileInput = forwardRef(
                     })} ${file.name}`}
                     icon={<RemoveIcon />}
                     hoverIndicator
+                    disabled={disabled}
                     onClick={(event) => {
                       if (confirmRemove) {
                         event.persist(); // necessary for when React < v17
@@ -559,10 +565,6 @@ const FileInput = forwardRef(
     );
   },
 );
-
-FileInput.defaultProps = {};
-
-Object.setPrototypeOf(FileInput.defaultProps, defaultProps);
 
 FileInput.displayName = 'FileInput';
 FileInput.propTypes = FileInputPropTypes;

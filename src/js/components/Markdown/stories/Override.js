@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import { Box, Markdown } from 'grommet';
+import { styledComponentsConfig } from '../../../utils/styles';
 
 const CONTENT = `
   # Out of Breath
@@ -26,7 +27,7 @@ import { Grommet } from 'grommet';
   1 | 2 | 3
 `;
 
-const StyledPre = styled.pre`
+const StyledPre = styled.pre.withConfig(styledComponentsConfig)`
   background-color: #ffca58;
 `;
 

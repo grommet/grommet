@@ -23,6 +23,11 @@ describe('Avatar', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
+  test('renders outside grommet wrapper', () => {
+    const { container } = render(<Avatar />);
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
   test('size', () => {
     const { container } = render(
       <Grommet>

@@ -1,14 +1,22 @@
 import React from 'react';
-import { fireEvent, render, screen } from '@testing-library/react';
-import userEvent from '@testing-library/user-event';
+import range from 'lodash/range';
+import '@testing-library/jest-dom';
+import { act, fireEvent, render, screen } from '@testing-library/react';
 import 'jest-styled-components';
 
 import { Grommet } from '../../Grommet';
+import { DataFilter } from '../../DataFilter';
 import { DataFilters } from '../../DataFilters';
 import { DataTable } from '../../DataTable';
 import { Pagination } from '../../Pagination';
+import { Toolbar } from '../../Toolbar';
 import { Data } from '..';
 import { createPortal, expectPortal } from '../../../utils/portal';
+const DEBOUNCE_TIMEOUT = 300;
+
+// asserts that AnnounceContext aria-live region and visible DataSummary each have this text
+const expectDataSummary = (message: string) =>
+  expect(screen.getAllByText(message)).toHaveLength(2);
 
 const data = [
   {
@@ -30,6 +38,7 @@ const data = [
 ];
 
 describe('Data', () => {
+  window.scrollTo = jest.fn();
   beforeEach(createPortal);
 
   test('renders', () => {
@@ -42,8 +51,13 @@ describe('Data', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
+  test('renders outside grommet wrapper', () => {
+    const { container } = render(<Data data={data} />);
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
   test('toolbar', () => {
-    const { getByText, container } = render(
+    const { container } = render(
       <Grommet>
         <Data
           data={data}
@@ -58,7 +72,7 @@ describe('Data', () => {
       </Grommet>,
     );
 
-    expect(getByText('4 items')).toBeTruthy();
+    expectDataSummary('4 items');
     expect(container.firstChild).toMatchSnapshot();
   });
 
@@ -99,7 +113,7 @@ describe('Data', () => {
       </Grommet>,
     );
 
-    expect(getByText('1 result of 4 items')).toBeTruthy();
+    expectDataSummary('1 result of 4 items');
     expect(getByText('aa')).toBeTruthy();
     expect(queryByText('bb')).toBeFalsy();
     expect(container.firstChild).toMatchSnapshot();
@@ -124,7 +138,7 @@ describe('Data', () => {
       </Grommet>,
     );
 
-    expect(getByText('1 result of 4 items')).toBeTruthy();
+    expectDataSummary('1 result of 4 items');
     expect(getByText('aa')).toBeTruthy();
     expect(container.firstChild).toMatchSnapshot();
   });
@@ -149,13 +163,13 @@ describe('Data', () => {
       </Grommet>,
     );
 
-    expect(getByText('1 result of 4 items')).toBeTruthy();
+    expectDataSummary('1 result of 4 items');
     expect(getByText('bb')).toBeTruthy();
     expect(container.firstChild).toMatchSnapshot();
   });
 
   test('view sort', () => {
-    const { getByText, container } = render(
+    const { container } = render(
       <Grommet>
         <Data
           data={data}
@@ -173,7 +187,32 @@ describe('Data', () => {
       </Grommet>,
     );
 
-    expect(getByText('4 items')).toBeTruthy();
+    expectDataSummary('4 items');
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('view columns', () => {
+    const { getByText, queryByText, container } = render(
+      <Grommet>
+        <Data
+          data={data}
+          properties={{
+            name: { label: 'Name' },
+            'sub.note': { label: 'Note' },
+          }}
+          view={{
+            columns: ['sub.note'],
+          }}
+          toolbar
+        >
+          <DataTable />
+        </Data>
+      </Grommet>,
+    );
+
+    expectDataSummary('4 items');
+    expect(queryByText('aa')).toBeFalsy();
+    expect(getByText('ZZ')).toBeTruthy();
     expect(container.firstChild).toMatchSnapshot();
   });
 
@@ -190,6 +229,7 @@ describe('Data', () => {
             search: 'a',
             properties: { enabled: [true] },
             sort: { property: 'name', direction: 'desc' },
+            columns: ['name'],
           }}
           toolbar
         >
@@ -198,7 +238,7 @@ describe('Data', () => {
       </Grommet>,
     );
 
-    expect(getByText('1 result of 4 items')).toBeTruthy();
+    expectDataSummary('1 result of 4 items');
     expect(getByText('aa')).toBeTruthy();
     expect(container.firstChild).toMatchSnapshot();
   });
@@ -224,12 +264,13 @@ describe('Data', () => {
       </Grommet>,
     );
 
-    expect(getByText('4 things')).toBeTruthy();
+    expectDataSummary('4 things');
     expect(getByText('aa')).toBeTruthy();
     expect(container.firstChild).toMatchSnapshot();
   });
 
   test('uncontrolled search', () => {
+    jest.useFakeTimers();
     const { getByRole, getByText, queryByText, container } = render(
       <Grommet>
         <Data
@@ -237,26 +278,29 @@ describe('Data', () => {
           properties={{ name: { label: 'Name' } }}
           view={{ search: '', properties: {} }}
           toolbar
-          updateOn="change"
         >
           <DataTable />
         </Data>
       </Grommet>,
     );
 
-    expect(getByText('4 items')).toBeTruthy();
+    expectDataSummary('4 items');
     expect(getByText('bb')).toBeTruthy();
     expect(container.firstChild).toMatchSnapshot();
 
     fireEvent.change(getByRole('searchbox'), {
       target: { value: 'a' },
     });
-    expect(getByText('1 result of 4 items')).toBeTruthy();
+    act(() => {
+      jest.advanceTimersByTime(DEBOUNCE_TIMEOUT);
+    });
+    expectDataSummary('1 result of 4 items');
     expect(queryByText('bb')).toBeFalsy();
     expect(container.firstChild).toMatchSnapshot();
   });
 
   test('controlled search', () => {
+    jest.useFakeTimers();
     const onView = jest.fn();
     const { getByRole, getByText, container } = render(
       <Grommet>
@@ -265,7 +309,6 @@ describe('Data', () => {
           properties={{ name: { label: 'Name' } }}
           view={{ search: '', properties: {} }}
           toolbar
-          updateOn="change"
           onView={onView}
         >
           <DataTable />
@@ -281,6 +324,10 @@ describe('Data', () => {
     });
     expect(getByText('bb')).toBeTruthy();
     expect(container.firstChild).toMatchSnapshot();
+
+    act(() => {
+      jest.advanceTimersByTime(DEBOUNCE_TIMEOUT);
+    });
     expect(onView).toHaveBeenNthCalledWith(
       1,
       expect.objectContaining({
@@ -384,8 +431,6 @@ describe('Data', () => {
   });
 
   test('properties when property is an array', () => {
-    const user = userEvent.setup();
-
     const { asFragment } = render(
       <Grommet>
         <Data
@@ -423,7 +468,268 @@ describe('Data', () => {
     expect(asFragment()).toMatchSnapshot();
     const filtersButton = screen.getByRole('button', { name: 'Open filters' });
     expect(filtersButton).toBeTruthy();
-    user.click(filtersButton);
+    fireEvent.click(filtersButton);
+    expect(screen.getByRole('button', { name: 'Apply filters' })).toBeTruthy();
     expectPortal('data--filters-control').toMatchSnapshot();
+  });
+
+  test('should include badge based on view', () => {
+    render(
+      <Grommet>
+        <Data
+          data={data}
+          view={{
+            properties: { rating: { min: 3, max: 5 }, enabled: [true] },
+          }}
+          toolbar="filters"
+        >
+          <DataTable />
+        </Data>
+      </Grommet>,
+    );
+
+    const filterButton = screen.getByRole('button', {
+      name: 'Open filters, 2 filters applied',
+    });
+
+    expect(filterButton).toBeTruthy();
+  });
+
+  test('should not include properties with badge: false in badge count', () => {
+    render(
+      <Grommet>
+        <Data
+          data={data}
+          properties={{
+            name: {
+              badge: false,
+            },
+            enabled: {},
+            rating: {},
+          }}
+        >
+          <Toolbar>
+            <DataFilter property="name" />
+            <DataFilters layer>
+              <DataFilter property="enabled" />
+              <DataFilter property="rating" />
+            </DataFilters>
+          </Toolbar>
+        </Data>
+      </Grommet>,
+    );
+
+    const checkBox = screen.getByText('aa');
+    fireEvent.click(checkBox);
+
+    // no badge should be applied, so expect default tip
+    const filterButton = screen.getByRole('button', {
+      name: 'Open filters',
+    });
+
+    expect(filterButton).toBeTruthy();
+  });
+
+  test('uncontrolled, when paginated, search should return to page 1', () => {
+    const properties = {
+      name: { label: 'Name' },
+    };
+    const view = {
+      step: 2,
+      page: 1,
+      search: '',
+    };
+    const columns = [
+      { property: 'name', header: 'Name', size: 'small', primary: true },
+    ];
+
+    jest.useFakeTimers();
+    const { getByRole, getByText, container } = render(
+      <Grommet>
+        <Data data={data} properties={properties} view={view} toolbar>
+          <DataTable columns={columns} />
+          <Pagination />
+        </Data>
+      </Grommet>,
+    );
+
+    const page1Button = getByRole('button', { name: 'Go to page 1' });
+    const page2Button = getByRole('button', { name: 'Go to page 2' });
+    const searchBox = getByRole('searchbox');
+
+    fireEvent.click(page2Button);
+    expect(getByText('cc')).toBeTruthy();
+    expect(page1Button).not.toHaveAttribute('aria-current', 'page');
+    expect(page2Button).toHaveAttribute('aria-current', 'page');
+    expect(container.firstChild).toMatchSnapshot();
+
+    fireEvent.change(searchBox, {
+      target: { value: 'a' },
+    });
+    act(() => {
+      jest.advanceTimersByTime(DEBOUNCE_TIMEOUT);
+    });
+    expect(getByText('aa')).toBeTruthy();
+    expect(page1Button).toHaveAttribute('aria-current', 'page');
+    expect(container.firstChild).toMatchSnapshot();
+
+    fireEvent.change(searchBox, {
+      target: { value: '' },
+    });
+    act(() => {
+      jest.advanceTimersByTime(DEBOUNCE_TIMEOUT);
+    });
+    expect(getByText('bb')).toBeTruthy();
+    expect(page1Button).toHaveAttribute('aria-current', 'page');
+    expect(page2Button).not.toHaveAttribute('aria-current', 'page');
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('controlled, when paginated, search should call onView with page 1', () => {
+    const properties = {
+      name: { label: 'Name' },
+    };
+    const view = {
+      step: 2,
+      page: 1,
+      search: '',
+    };
+    const columns = [
+      { property: 'name', header: 'Name', size: 'small', primary: true },
+    ];
+
+    jest.useFakeTimers();
+    const onView = jest.fn();
+    const { getByRole } = render(
+      <Grommet>
+        <Data
+          data={data}
+          properties={properties}
+          view={view}
+          toolbar
+          onView={onView}
+        >
+          <DataTable columns={columns} />
+          <Pagination />
+        </Data>
+      </Grommet>,
+    );
+
+    const page1Button = getByRole('button', { name: 'Go to page 1' });
+    const page2Button = getByRole('button', { name: 'Go to page 2' });
+    const searchBox = getByRole('searchbox');
+
+    fireEvent.click(page2Button);
+    expect(page1Button).not.toHaveAttribute('aria-current', 'page');
+    expect(page2Button).toHaveAttribute('aria-current', 'page');
+    expect(onView).toHaveBeenNthCalledWith(
+      1,
+      expect.objectContaining({
+        page: 2,
+      }),
+    );
+
+    fireEvent.change(searchBox, {
+      target: { value: 'a' },
+    });
+    act(() => {
+      jest.advanceTimersByTime(DEBOUNCE_TIMEOUT);
+    });
+    expect(onView).toHaveBeenNthCalledWith(
+      2,
+      expect.objectContaining({
+        search: 'a',
+        page: 1,
+      }),
+    );
+
+    fireEvent.change(searchBox, {
+      target: { value: '' },
+    });
+    act(() => {
+      jest.advanceTimersByTime(DEBOUNCE_TIMEOUT);
+    });
+    expect(onView).toHaveBeenNthCalledWith(
+      3,
+      expect.objectContaining({
+        search: '',
+        page: 1,
+      }),
+    );
+  });
+
+  test('should render property label and return property value to view when options are object', () => {
+    const onView = jest.fn();
+    const App = () => {
+      return (
+        <Grommet>
+          <Data
+            data={[]}
+            properties={{
+              selectMultiple: {
+                label: 'SelectMultiple Name',
+                options: range(9).map((i) => ({
+                  value: `selectmultiple${i}`,
+                  label: `SelectMultiple Name ${i}`,
+                })),
+              },
+              selectMultipleSimple: {
+                label: 'SelectMultiple Simple Name',
+                options: range(9).map((i) => `selectmultiple-simple${i}`),
+              },
+              checkBoxGroup: {
+                label: 'CheckBoxGroup Name',
+                options: range(4).map((i) => ({
+                  value: `checkboxgroup${i}`,
+                  label: `CheckBoxGroup Name ${i}`,
+                })),
+              },
+            }}
+            view={{
+              properties: {
+                selectMultiple: ['selectmultiple5'],
+                checkBoxGroup: ['checkboxgroup2'],
+                selectMultipleSimple: ['selectmultiple-simple2'],
+              },
+            }}
+            onView={onView}
+          >
+            <DataFilters />
+          </Data>
+        </Grommet>
+      );
+    };
+    const { asFragment, getByRole, getByText, getByLabelText } = render(
+      <App />,
+    );
+
+    expect(
+      getByRole('option', {
+        name: 'SelectMultiple Name 5 selected',
+      }),
+    ).toBeTruthy();
+    expect(
+      getByRole('option', {
+        name: 'selectmultiple-simple2 selected',
+      }),
+    ).toBeTruthy();
+    expect(getByText('CheckBoxGroup Name 2')).toBeTruthy();
+
+    fireEvent.click(getByLabelText('SelectMultiple Name'));
+    fireEvent.click(
+      getByRole('option', {
+        name: 'SelectMultiple Name 0 not selected',
+      }),
+    );
+
+    fireEvent.click(getByRole('button', { name: 'Apply filters' }));
+    expect(onView).toHaveBeenCalledWith({
+      properties: {
+        checkBoxGroup: ['checkboxgroup2'],
+        selectMultiple: ['selectmultiple5', 'selectmultiple0'],
+        selectMultipleSimple: ['selectmultiple-simple2'],
+      },
+    });
+    expect(asFragment()).toMatchSnapshot();
   });
 });

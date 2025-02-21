@@ -1,11 +1,17 @@
-import React, { Children, useContext, useMemo, useState } from 'react';
+import React, {
+  Children,
+  useContext,
+  useEffect,
+  useMemo,
+  useState,
+} from 'react';
 import { Filter } from 'grommet-icons/icons/Filter';
-import { FormClose } from 'grommet-icons/icons/FormClose';
+import { Close } from 'grommet-icons/icons/Close';
 import { Box } from '../Box';
 import { Button } from '../Button';
+import { DataClearFilters } from '../DataClearFilters';
 import { DataFilter } from '../DataFilter';
 import { DataForm } from '../Data/DataForm';
-import { DataSort } from '../DataSort';
 import { DropButton } from '../DropButton';
 import { Header } from '../Header';
 import { Heading } from '../Heading';
@@ -13,6 +19,7 @@ import { Layer } from '../Layer';
 import { DataContext } from '../../contexts/DataContext';
 import { MessageContext } from '../../contexts/MessageContext';
 import { DataFiltersPropTypes } from './propTypes';
+import { useThemeValue } from '../../utils/useThemeValue';
 
 const dropProps = {
   align: { top: 'bottom', right: 'right' },
@@ -23,24 +30,68 @@ const layerProps = {
   position: 'right',
 };
 
-export const DataFilters = ({ drop, children, heading, layer, ...rest }) => {
+const defaultTouched = {};
+export const DataFilters = ({
+  drop,
+  children,
+  clearFilters = true,
+  heading,
+  layer,
+  updateOn,
+  ...rest
+}) => {
   const {
-    clearFilters,
-    data,
     id: dataId,
     messages,
     properties,
+    unfilteredData,
+    filtersCleared,
+    setFiltersCleared,
     view,
   } = useContext(DataContext);
   const { format } = useContext(MessageContext);
+  const { theme } = useThemeValue();
   const [showContent, setShowContent] = useState();
-  // touched is a map of form field name to its value, it only has fields that
-  // were changed as part of the DataForm here. This is so we can track based
-  // on what's inside DataFilters as opposed to trying to track from the view
-  // object.
-  const [touched, setTouched] = useState({});
+  // touched is a map of property to its value based on if user interacts
+  // with a filter or a view applies of set of filters
+  const [touched, setTouched] = useState(defaultTouched);
+
+  // if filters have been applied by this DataFilters, update
+  // the DataContext that filters are not in a "cleared" state
+  useEffect(() => {
+    setFiltersCleared(!Object.keys(touched).length);
+  }, [touched, setFiltersCleared]);
+
+  // if filters have been cleared via clearFilters in DataContext,
+  // reset touched to default state so badge is removed
+  useEffect(() => {
+    if (filtersCleared) {
+      setTouched(defaultTouched);
+    }
+  }, [filtersCleared]);
   const controlled = useMemo(() => drop || layer, [drop, layer]);
-  // generate the badge value based on touched fields that have a value
+
+  const configured = Children.count(children) === 0;
+  useEffect(() => {
+    // when view changes via DataView or user interacting with filters,
+    // adjust badge to reflect that
+    if (controlled && view.properties) {
+      const nextTouched = { ...view.properties };
+      Object.keys(nextTouched).forEach((k) => {
+        if (
+          properties?.[k]?.badge === false ||
+          (configured && properties && !properties?.[k])
+        ) {
+          delete nextTouched[k];
+        }
+      });
+      setTouched(nextTouched);
+    }
+  }, [configured, controlled, properties, view]);
+
+  // generate the badge value based on touched fields that have a value.
+  // only show the badge based off of what's included in this DataFilters
+  // since multiple DataFilters may exist
   const badge = useMemo(
     () =>
       (controlled && Object.keys(touched).filter((k) => touched[k]).length) ||
@@ -48,62 +99,41 @@ export const DataFilters = ({ drop, children, heading, layer, ...rest }) => {
     [controlled, touched],
   );
 
-  const clearControl = badge && (
+  const clearControl = badge && clearFilters && (
     <Box flex={false} margin={{ start: 'small' }}>
-      <Button
-        label={format({
-          id: 'dataFilters.clear',
-          messages: messages?.dataFilters,
-        })}
-        onClick={() => {
-          setTouched({});
-          clearFilters();
-        }}
-      />
+      <DataClearFilters />
     </Box>
   );
 
   let content = children;
   if (Children.count(children) === 0) {
     let filtersFor;
-    if (!properties && data && data.length)
+    if (!properties && unfilteredData && unfilteredData.length)
       // build from a piece of data, ignore object values
-      filtersFor = Object.keys(data[0]).filter(
-        (k) => typeof data[0][k] !== 'object',
+      filtersFor = Object.keys(unfilteredData[0]).filter(
+        (k) => typeof unfilteredData[0][k] !== 'object',
       );
     else if (Array.isArray(properties)) filtersFor = properties;
-    else if (typeof properties === 'object')
-      filtersFor = Object.keys(properties);
-    else filtersFor = [];
+    else if (typeof properties === 'object') {
+      filtersFor = Object.keys(properties).filter(
+        (property) => !(properties[property]?.filter === false),
+      );
+    } else filtersFor = [];
     content = filtersFor.map((property) => (
       <DataFilter key={property} property={property} />
     ));
-    if (view?.sort) {
-      content.push(<DataSort key="_sort" />);
-    }
   }
 
   content = (
     <DataForm
       pad={controlled ? 'medium' : undefined}
       onDone={() => setShowContent(false)}
-      onTouched={
-        controlled
-          ? (currentTouched) =>
-              // we merge this with our prior state to handle the case where the
-              // user opens and closes the drop multiple times and we want to
-              // track both new changes and prior changes.
-              setTouched((prevTouched) => ({
-                ...prevTouched,
-                ...currentTouched,
-              }))
-          : undefined
-      }
+      updateOn={updateOn}
       {...(!controlled ? rest : { fill: 'vertical' })}
     >
       {layer && (
         <Header>
-          <Heading margin="none" level={2} size="small">
+          <Heading margin="none" level={2}>
             {heading ||
               format({
                 id: 'dataFilters.heading',
@@ -111,11 +141,7 @@ export const DataFilters = ({ drop, children, heading, layer, ...rest }) => {
               })}
           </Heading>
           {!controlled && clearControl}
-          <Button
-            icon={<FormClose />}
-            hoverIndicator
-            onClick={() => setShowContent(undefined)}
-          />
+          <Button icon={<Close />} onClick={() => setShowContent(undefined)} />
         </Header>
       )}
       {content}
@@ -139,9 +165,8 @@ export const DataFilters = ({ drop, children, heading, layer, ...rest }) => {
         id={`${dataId}--filters-control`}
         tip={tip}
         aria-label={tip}
-        kind="toolbar"
+        kind={theme.data.button?.kind}
         icon={<Filter />}
-        hoverIndicator
         dropProps={dropProps}
         dropContent={content}
         badge={badge}
@@ -156,8 +181,7 @@ export const DataFilters = ({ drop, children, heading, layer, ...rest }) => {
         id={`${dataId}--filters-control`}
         tip={tip}
         aria-label={tip}
-        kind="toolbar"
-        hoverIndicator
+        kind={theme.data.button?.kind}
         icon={<Filter />}
         badge={badge}
         onClick={() => setShowContent(true)}
@@ -176,7 +200,7 @@ export const DataFilters = ({ drop, children, heading, layer, ...rest }) => {
           onClickOutside={() => setShowContent(undefined)}
           onEsc={() => setShowContent(undefined)}
         >
-          {content}
+          <Box width={{ min: 'medium' }}>{content}</Box>
         </Layer>
       )}
     </Box>

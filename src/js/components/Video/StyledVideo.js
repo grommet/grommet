@@ -1,7 +1,11 @@
 import styled, { css } from 'styled-components';
 
-import { focusStyle, genericStyles, normalizeColor } from '../../utils';
-import { defaultProps } from '../../default-props';
+import {
+  focusStyle,
+  genericStyles,
+  normalizeColor,
+  styledComponentsConfig,
+} from '../../utils';
 
 const FIT_MAP = {
   cover: 'cover',
@@ -15,7 +19,7 @@ const fitStyle = css`
 `;
 
 // z-index is for Safari so controls aren't hidden
-const StyledVideo = styled.video`
+const StyledVideo = styled.video.withConfig(styledComponentsConfig)`
   max-width: 100%;
   z-index: 1;
   ${(props) => props.fit && fitStyle} ::cue {
@@ -25,10 +29,7 @@ const StyledVideo = styled.video`
   ${(props) => props.theme.video && props.theme.video.extend};
 `;
 
-StyledVideo.defaultProps = {};
-Object.setPrototypeOf(StyledVideo.defaultProps, defaultProps);
-
-const StyledVideoContainer = styled.div`
+const StyledVideoContainer = styled.div.withConfig(styledComponentsConfig)`
   flex: 1 1;
   display: flex;
   flex-direction: column;
@@ -40,9 +41,6 @@ const StyledVideoContainer = styled.div`
   }
 `;
 
-StyledVideoContainer.defaultProps = {};
-Object.setPrototypeOf(StyledVideoContainer.defaultProps, defaultProps);
-
 // z-index is for Safari so controls aren't hidden
 const positionStyle = css`
   position: absolute;
@@ -52,15 +50,12 @@ const positionStyle = css`
   z-index: 1;
 `;
 
-const StyledVideoControls = styled.div`
+const StyledVideoControls = styled.div.withConfig(styledComponentsConfig)`
   flex: 0 0;
   ${(props) => props.over && positionStyle} opacity: 0;
   transition: opacity 0.3s;
   ${(props) => (props.active ? 'opacity: 1;' : 'pointer-events: none')};
 `;
-
-StyledVideoControls.defaultProps = {};
-Object.setPrototypeOf(StyledVideoControls.defaultProps, defaultProps);
 
 const headStyle = css`
   ::after {
@@ -74,7 +69,7 @@ const headStyle = css`
   }
 `;
 
-const StyledVideoScrubber = styled.div`
+const StyledVideoScrubber = styled.div.withConfig(styledComponentsConfig)`
   cursor: pointer;
   width: 100%;
   height: 100%;
@@ -83,9 +78,6 @@ const StyledVideoScrubber = styled.div`
     ${focusStyle()}
   }
 `;
-
-StyledVideoScrubber.defaultProps = {};
-Object.setPrototypeOf(StyledVideoScrubber.defaultProps, defaultProps);
 
 export {
   StyledVideo,

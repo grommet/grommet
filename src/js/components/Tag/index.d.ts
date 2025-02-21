@@ -1,16 +1,7 @@
 import * as React from 'react';
-import {
-  A11yTitleType,
-  AlignSelfType,
-  GridAreaType,
-  PolymorphicType,
-} from '../../utils';
+import { BoxProps } from '../Box';
 
 export interface TagProps {
-  a11yTitle?: A11yTitleType;
-  alignSelf?: AlignSelfType;
-  as?: PolymorphicType;
-  gridArea?: GridAreaType;
   name?: string;
   onClick?: (...args: any[]) => any;
   onRemove?: (...args: any[]) => any;
@@ -25,7 +16,7 @@ export interface TagProps {
   value: string | number;
 }
 
-export interface TagExtendedProps extends TagProps {}
+export interface TagExtendedProps extends BoxProps, TagProps {}
 
 // Keep type alias for backwards compatibility.
 export type TagType = TagProps;

@@ -62,7 +62,6 @@ reported either through Github or by reaching out to one of the following worksp
 
 - Jessica Filben (@Jessica Filben on Slack)
 - Matt Glissmann (@gliss on Slack)
-- Eric Soderberg (@ericsoderberg on Slack)
 
 All complaints will be reviewed and investigated promptly and fairly.
 

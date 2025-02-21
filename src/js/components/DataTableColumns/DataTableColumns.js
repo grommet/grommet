@@ -1,9 +1,11 @@
 import React, { useCallback, useContext, useMemo, useState } from 'react';
 import { Search } from 'grommet-icons/icons/Search';
 import { Splits } from 'grommet-icons/icons/Splits';
+import { Lock } from 'grommet-icons/icons/Lock';
 import { Box } from '../Box';
 import { CheckBoxGroup } from '../CheckBoxGroup';
 import { DataForm, formColumnsKey } from '../Data';
+import { DataFormContext } from '../../contexts/DataFormContext';
 import { FormContext } from '../Form/FormContext';
 import { DropButton } from '../DropButton';
 import { List } from '../List';
@@ -13,6 +15,7 @@ import { TextInput } from '../TextInput';
 import { DataContext } from '../../contexts/DataContext';
 import { MessageContext } from '../../contexts/MessageContext';
 import { DataTableColumnsPropTypes } from './propTypes';
+import { useThemeValue } from '../../utils/useThemeValue';
 
 const dropProps = {
   align: { top: 'bottom', left: 'left' },
@@ -26,7 +29,7 @@ const tabsProps = {
 // options can either be an array of property names or an array of objects.
 // The form value always uses an array of property names.
 const optionsToValue = (options) =>
-  options.map((o) => (typeof o === 'object' && o.property) || o) || [];
+  options?.map((o) => (typeof o === 'object' && o.property) || o) || [];
 
 const optionProperty = (option) =>
   typeof option === 'object' ? option.property : option;
@@ -45,7 +48,7 @@ const alignOrder = (value, prevValue, options) =>
 
 // Content is a separate component since it might be getting its form context
 // from the DataForm rendered inside DataTableColumns.
-const Content = ({ drop, options, ...rest }) => {
+const Content = ({ drop, options = [], ...rest }) => {
   const { id: dataId, messages } = useContext(DataContext);
   const { useFormInput } = useContext(FormContext);
   const { format } = useContext(MessageContext);
@@ -62,6 +65,21 @@ const Content = ({ drop, options, ...rest }) => {
     [options],
   );
 
+  const pinned = useMemo(() => {
+    const items = objectOptions
+      ? options
+          .filter((option) => option.pinned && option.label)
+          .map((option) => option.label)
+      : [];
+    return items?.length
+      ? {
+          background: 'none',
+          color: 'text-weak',
+          icon: <Lock />,
+          items,
+        }
+      : undefined;
+  }, [options, objectOptions]);
   // 'value' is an array of property names
   const [value, setValue] = useFormInput({
     name: formColumnsKey,
@@ -137,6 +155,7 @@ const Content = ({ drop, options, ...rest }) => {
               onOrder={(nextData) => setValue(optionsToValue(nextData))}
               pad="none"
               primaryKey={(objectOptions && 'label') || undefined}
+              pinned={pinned}
             />
           </Box>
         </Tab>
@@ -147,8 +166,9 @@ const Content = ({ drop, options, ...rest }) => {
 
 export const DataTableColumns = ({ drop, options, ...rest }) => {
   const { id: dataId, messages } = useContext(DataContext);
-  const { noForm } = useContext(FormContext);
+  const { inDataForm } = useContext(DataFormContext);
   const { format } = useContext(MessageContext);
+  const { theme } = useThemeValue();
   const [showContent, setShowContent] = useState();
 
   const tip = format({
@@ -157,7 +177,7 @@ export const DataTableColumns = ({ drop, options, ...rest }) => {
   });
 
   let content = <Content drop={drop} options={options} />;
-  if (noForm)
+  if (!inDataForm)
     content = (
       <DataForm footer={false} updateOn="change">
         {content}
@@ -173,7 +193,7 @@ export const DataTableColumns = ({ drop, options, ...rest }) => {
         id: 'dataTableColumns.open',
         messages: messages?.dataTableColumns,
       })}
-      kind="toolbar"
+      kind={theme.data.button?.kind}
       icon={<Splits />}
       tip={tip}
       dropProps={dropProps}

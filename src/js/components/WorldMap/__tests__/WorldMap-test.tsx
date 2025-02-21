@@ -17,6 +17,12 @@ describe('WorldMap', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
+  test('renders outside grommet wrapper', () => {
+    const { container } = render(<WorldMap />);
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
   test('color', () => {
     const { container } = render(
       <Grommet>

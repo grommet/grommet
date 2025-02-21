@@ -30,6 +30,12 @@ test('renders', () => {
   expect(container.firstChild).toMatchSnapshot();
 });
 
+test('renders outside grommet wrapper', () => {
+  const { container } = render(<Text>text</Text>);
+
+  expect(container.firstChild).toMatchSnapshot();
+});
+
 test('accepts ref', () => {
   const ref = React.createRef<HTMLParagraphElement>();
   const { container } = render(

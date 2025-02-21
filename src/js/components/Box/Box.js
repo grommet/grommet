@@ -8,7 +8,6 @@ import React, {
 } from 'react';
 
 import { ThemeContext } from 'styled-components';
-import { defaultProps } from '../../default-props';
 import { backgroundIsDark } from '../../utils';
 import { Keyboard } from '../Keyboard';
 
@@ -18,6 +17,7 @@ import { SkeletonContext, useSkeleton } from '../Skeleton';
 import { AnnounceContext } from '../../contexts/AnnounceContext';
 import { OptionsContext } from '../../contexts/OptionsContext';
 import { ResponsiveContainerContext } from '../../contexts';
+import { useThemeValue } from '../../utils/useThemeValue';
 
 const Box = forwardRef(
   (
@@ -26,7 +26,7 @@ const Box = forwardRef(
       background: backgroundProp,
       border,
       children,
-      cssGap, // internal for now
+      cssGap,
       direction = 'column',
       elevation, // munged to avoid styled-components putting it in the DOM
       fill, // munged to avoid styled-components putting it in the DOM
@@ -48,7 +48,7 @@ const Box = forwardRef(
     },
     ref,
   ) => {
-    const theme = useContext(ThemeContext) || defaultProps.theme;
+    const { theme, passThemeFlag } = useThemeValue();
     // boxOptions was created to preserve backwards compatibility but
     // should not be supported in v3
     const { box: boxOptions } = useContext(OptionsContext);
@@ -118,7 +118,7 @@ const Box = forwardRef(
     if (
       gap &&
       gap !== 'none' &&
-      (!(boxOptions?.cssGap || cssGap) ||
+      (!(boxOptions?.cssGap || cssGap || typeof gap === 'object') ||
         // need this approach to show border between
         border === 'between' ||
         border?.side === 'between' ||
@@ -145,6 +145,7 @@ const Box = forwardRef(
                 directionProp={direction}
                 responsive={responsive}
                 border={styledBoxGapBorder}
+                {...passThemeFlag}
               />,
             );
           }
@@ -226,7 +227,7 @@ const Box = forwardRef(
         fillProp={fill}
         focus={focus}
         gap={
-          (boxOptions?.cssGap || cssGap) &&
+          (boxOptions?.cssGap || cssGap || typeof gap === 'object') &&
           gap &&
           gap !== 'none' &&
           border !== 'between' &&
@@ -243,6 +244,7 @@ const Box = forwardRef(
         responsive={responsive}
         tabIndex={adjustedTabIndex}
         {...clickProps}
+        {...passThemeFlag}
         {...rest}
         {...skeletonProps}
       >

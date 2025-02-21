@@ -24,6 +24,12 @@ describe('Tip', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
+  test('renders outside grommet wrapper', async () => {
+    const { container } = render(<Tip content="tooltip content"> Example</Tip>);
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
   test(`mouseOver and mouseOut events on the Tip's child`, async () => {
     const { getByText } = render(
       <Grommet>
@@ -196,5 +202,19 @@ describe('Tip', () => {
     expect(onFocus).toHaveBeenCalledTimes(1);
     await user.tab();
     expect(onBlur).toHaveBeenCalledTimes(1);
+  });
+
+  test(`should be visible by default`, async () => {
+    const { getByText } = render(
+      <Grommet>
+        <Tip content="tooltip" defaultVisible>
+          Default Visible
+        </Tip>
+      </Grommet>,
+    );
+
+    fireEvent.mouseOver(getByText('Default Visible'));
+    const tooltip = await waitFor(() => screen.getByText('tooltip'));
+    expect(tooltip?.parentNode?.parentNode).toMatchSnapshot();
   });
 });

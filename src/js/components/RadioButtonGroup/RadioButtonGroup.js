@@ -1,18 +1,11 @@
-import React, {
-  forwardRef,
-  useContext,
-  useEffect,
-  useRef,
-  useState,
-} from 'react';
+import React, { forwardRef, useContext, useRef, useState } from 'react';
 
-import { ThemeContext } from 'styled-components';
 import { FormContext } from '../Form/FormContext';
-import { defaultProps } from '../../default-props';
 import { Keyboard } from '../Keyboard';
 import { Box } from '../Box';
 import { RadioButton } from '../RadioButton';
 import { RadioButtonGroupPropTypes } from './propTypes';
+import { useThemeValue } from '../../utils/useThemeValue';
 
 const RadioButtonGroup = forwardRef(
   (
@@ -31,7 +24,7 @@ const RadioButtonGroup = forwardRef(
     ref,
   ) => {
     const formContext = useContext(FormContext);
-    const theme = useContext(ThemeContext) || defaultProps.theme;
+    const { theme } = useThemeValue();
 
     // normalize options to always use an object
     const options = optionsProp.map((o) =>
@@ -67,14 +60,6 @@ const RadioButtonGroup = forwardRef(
       });
       return result;
     }, [options, value]);
-
-    useEffect(() => {
-      // if tab comes back to RadioButtonGroup when there still is no selection,
-      // we want focus to be on the first RadioButton
-      if (focus && !valueIndex) {
-        optionRefs.current[0].focus();
-      }
-    }, [focus, valueIndex]);
 
     const onNext = () => {
       if (valueIndex !== undefined && valueIndex < options.length - 1) {

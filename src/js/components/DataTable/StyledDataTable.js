@@ -7,8 +7,8 @@ import {
   unfocusStyle,
   genericStyles,
   normalizeColor,
+  styledComponentsConfig,
 } from '../../utils';
-import { defaultProps } from '../../default-props';
 import { Box } from '../Box';
 import { TableRow } from '../TableRow';
 import { Table } from '../Table';
@@ -30,9 +30,6 @@ const StyledDataTable = styled(Table)`
     props.theme.dataTable.body.extend};
 `;
 
-StyledDataTable.defaultProps = {};
-Object.setPrototypeOf(StyledDataTable.defaultProps, defaultProps);
-
 // when paginated, this wraps the data table and pagination component
 const StyledContainer = styled(Box)`
   ${(props) =>
@@ -40,9 +37,6 @@ const StyledContainer = styled(Box)`
     props.theme.dataTable.container &&
     props.theme.dataTable.container.extend};
 `;
-
-StyledContainer.defaultProps = {};
-Object.setPrototypeOf(StyledContainer.defaultProps, defaultProps);
 
 const hoverStyle = css`
   ${(props) =>
@@ -68,24 +62,25 @@ const hoverStyle = css`
     )};
 `;
 
-const StyledDataTableRow = styled(TableRow)`
+const rowStyles = css`
   ${(props) =>
     props.size &&
-    `
-    display: table;
+    `display: table;
     width: 100%;
     table-layout: fixed;
   `}
-  ${(props) =>
-    props.onClick &&
-    `
-    cursor: pointer;
-  `}
+  ${(props) => props.onClick && `cursor: pointer;`}
   ${(props) => props.active && hoverStyle}
 `;
 
-StyledDataTableRow.defaultProps = {};
-Object.setPrototypeOf(StyledDataTableRow.defaultProps, defaultProps);
+const StyledDataTableRow = styled(TableRow)`
+  ${(props) => props.theme.dataTable?.body?.row?.extend};
+  ${rowStyles}
+`;
+
+const StyledDataTableRowHeader = styled(TableRow)`
+  ${rowStyles}
+`;
 
 // focus styling other than outline doesn't work on <tbody />
 const StyledDataTableBody = styled(TableBody)`
@@ -107,9 +102,6 @@ const StyledDataTableBody = styled(TableBody)`
   }
 `;
 
-StyledDataTableBody.defaultProps = {};
-Object.setPrototypeOf(StyledDataTableBody.defaultProps, defaultProps);
-
 const StyledDataTableHeader = styled(TableHeader)`
   ${(props) =>
     props.size &&
@@ -120,9 +112,6 @@ const StyledDataTableHeader = styled(TableHeader)`
     table-layout: fixed;
   `}
 `;
-
-StyledDataTableHeader.defaultProps = {};
-Object.setPrototypeOf(StyledDataTableHeader.defaultProps, defaultProps);
 
 const StyledDataTableFooter = styled(TableFooter)`
   ${(props) =>
@@ -141,9 +130,6 @@ const StyledDataTableFooter = styled(TableFooter)`
       z-index: 1;
   `}
 `;
-
-StyledDataTableFooter.defaultProps = {};
-Object.setPrototypeOf(StyledDataTableFooter.defaultProps, defaultProps);
 
 const StyledDataTableCell = styled(TableCell)`
   ${(props) =>
@@ -178,10 +164,7 @@ const StyledDataTableCell = styled(TableCell)`
       : ''}
 `;
 
-StyledDataTableCell.defaultProps = {};
-Object.setPrototypeOf(StyledDataTableCell.defaultProps, defaultProps);
-
-const StyledPlaceholder = styled('caption')`
+const StyledPlaceholder = styled('caption').withConfig(styledComponentsConfig)`
   position: absolute;
   ${(props) => `top: ${props.top || 0}px;`}
   ${(props) => `bottom: ${props.bottom || 0}px;`}
@@ -193,6 +176,7 @@ export {
   StyledContainer,
   StyledDataTable,
   StyledDataTableRow,
+  StyledDataTableRowHeader,
   StyledDataTableBody,
   StyledDataTableCell,
   StyledDataTableHeader,

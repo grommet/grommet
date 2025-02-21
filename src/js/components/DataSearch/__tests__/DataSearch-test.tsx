@@ -60,3 +60,53 @@ describe('DataSearch', () => {
     expectPortal('test-data--search-control').toMatchSnapshot();
   });
 });
+
+test('enter', async () => {
+  jest.useFakeTimers();
+  const onView = jest.fn();
+  const { getByRole } = render(
+    <Grommet>
+      <Data data={data} onView={onView}>
+        <DataSearch data-testid="input_submit" updateOn="submit" />
+      </Data>
+    </Grommet>,
+  );
+  const searchbox = getByRole('searchbox');
+  expect(searchbox).toBeTruthy();
+
+  fireEvent.change(searchbox, { target: { value: 'one' } });
+  act(() => jest.advanceTimersByTime(300));
+
+  fireEvent.keyDown(searchbox, { key: 'enter', keyCode: 13 });
+
+  expect(onView).toHaveBeenNthCalledWith(
+    1,
+    expect.objectContaining({
+      search: 'one',
+    }),
+  );
+}, 20000);
+
+test('change', async () => {
+  jest.useFakeTimers();
+  const onView = jest.fn();
+  const { getByRole } = render(
+    <Grommet>
+      <Data data={data} onView={onView}>
+        <DataSearch data-testid="input_change" updateOn="change" />
+      </Data>
+    </Grommet>,
+  );
+  const searchbox = getByRole('searchbox');
+  expect(searchbox).toBeTruthy();
+
+  fireEvent.change(searchbox, { target: { value: 'two' } });
+  act(() => jest.advanceTimersByTime(300));
+
+  expect(onView).toHaveBeenNthCalledWith(
+    1,
+    expect.objectContaining({
+      search: 'two',
+    }),
+  );
+}, 20000);

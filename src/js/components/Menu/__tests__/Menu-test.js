@@ -6,7 +6,7 @@ import { axe } from 'jest-axe';
 import 'jest-axe/extend-expect';
 import 'regenerator-runtime/runtime';
 import 'jest-styled-components';
-import '@testing-library/jest-dom/extend-expect';
+import '@testing-library/jest-dom';
 
 import { createPortal, expectPortal } from '../../../utils/portal';
 
@@ -20,6 +20,10 @@ const customTheme = {
         left: 'right',
       },
       elevation: 'xlarge',
+    },
+    container: {
+      pad: 'xsmall',
+      gap: 'xsmall',
     },
     icons: {
       color: '#F08080',
@@ -68,6 +72,19 @@ describe('Menu', () => {
           items={[{ label: 'Item 1' }, { label: 'Item 2' }]}
         />
       </Grommet>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('basic outside grommet wrapper', () => {
+    const { container } = render(
+      <Menu
+        icon={<svg />}
+        label="Test Menu"
+        id="test-menu"
+        items={[{ label: 'Item 1' }, { label: 'Item 2' }]}
+      />,
     );
 
     expect(container.firstChild).toMatchSnapshot();
@@ -615,6 +632,26 @@ describe('Menu', () => {
             [{ label: 'Item 1' }, { label: 'Item 2' }],
             [{ label: 'Item 3' }],
           ]}
+        />
+      </Grommet>,
+    );
+    fireEvent.keyDown(screen.getByText('Test Menu'), {
+      key: 'Down',
+      keyCode: 40,
+      which: 40,
+    });
+
+    expectPortal('test-menu__drop').toMatchSnapshot();
+  });
+
+  test('should apply theme.menu.container', () => {
+    window.scrollTo = jest.fn();
+    render(
+      <Grommet theme={customTheme}>
+        <Menu
+          id="test-menu"
+          label="Test Menu"
+          items={[{ label: 'Item 1' }, { label: 'Item 2' }]}
         />
       </Grommet>,
     );

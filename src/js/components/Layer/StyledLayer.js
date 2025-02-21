@@ -1,12 +1,12 @@
 import styled, { css, keyframes } from 'styled-components';
-
+import isPropValid from '@emotion/is-prop-valid';
 import {
   baseStyle,
   backgroundStyle,
   breakpointStyle,
   parseMetricToNum,
+  styledComponentsConfig,
 } from '../../utils';
-import { defaultProps } from '../../default-props';
 
 const hiddenPositionStyle = css`
   left: -100%;
@@ -30,7 +30,7 @@ const responsiveLayerStyle = `
   min-height: 100vh;
 `;
 
-const StyledLayer = styled.div`
+const StyledLayer = styled.div.withConfig(styledComponentsConfig)`
   ${baseStyle}
   background: transparent;
   position: relative;
@@ -58,10 +58,7 @@ const StyledLayer = styled.div`
   ${(props) => props.theme.layer && props.theme.layer.extend};
 `;
 
-StyledLayer.defaultProps = {};
-Object.setPrototypeOf(StyledLayer.defaultProps, defaultProps);
-
-const StyledOverlay = styled.div`
+const StyledOverlay = styled.div.withConfig(styledComponentsConfig)`
   position: absolute;
   ${(props) => {
     if (props.responsive && props.theme.layer.responsiveBreakpoint) {
@@ -621,7 +618,9 @@ const POSITIONS = {
 const roundStyle = (data, theme, position, margin) => {
   const styles = [];
   const size = data === true ? 'medium' : data;
-  const round = theme.global.edgeSize[size] || size;
+  // fallback to edgeSize for backwards compatibility
+  const round =
+    theme.global[theme.global.radius ? 'radius' : 'edgeSize'][size] || size;
   // if user provides CSS string such as '50px 12px', apply that always
   const customCSS = round.split(' ').length > 1;
 
@@ -772,10 +771,8 @@ const elevationStyle = css`
 `;
 
 const StyledContainer = styled.div.withConfig({
-  // don't let elevation leak to DOM
-  // https://styled-components.com/docs/api#shouldforwardprop
-  shouldForwardProp: (prop, defaultValidatorFn) =>
-    !['elevation'].includes(prop) && defaultValidatorFn(prop),
+  shouldForwardProp: (prop) =>
+    isPropValid(prop) && !['elevation'].includes(prop),
 })`
   ${(props) => (!props.modal ? baseStyle : '')}
   display: flex;
@@ -806,8 +803,5 @@ const StyledContainer = styled.div.withConfig({
   ${(props) =>
     props.theme.layer.container && props.theme.layer.container.extend};
 `;
-
-StyledContainer.defaultProps = {};
-Object.setPrototypeOf(StyledContainer.defaultProps, defaultProps);
 
 export { animationDuration, StyledLayer, StyledOverlay, StyledContainer };

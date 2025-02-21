@@ -5,6 +5,7 @@ import { Keyboard } from '../Keyboard';
 
 import { StyledTextArea } from './StyledTextArea';
 import { TextAreaPropTypes } from './propTypes';
+import { useThemeValue } from '../../utils/useThemeValue';
 
 const TextArea = forwardRef(
   (
@@ -22,6 +23,7 @@ const TextArea = forwardRef(
     },
     ref,
   ) => {
+    const { passThemeFlag } = useThemeValue();
     const formContext = useContext(FormContext);
     const [value, setValue] = formContext.useFormInput({
       name,
@@ -47,6 +49,7 @@ const TextArea = forwardRef(
           focus={focus}
           value={value}
           focusIndicator={focusIndicator}
+          {...passThemeFlag}
           {...rest}
           onFocus={(event) => {
             setFocus(true);

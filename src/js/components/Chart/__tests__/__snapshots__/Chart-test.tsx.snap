@@ -15,10 +15,7 @@ exports[`Chart animate 1`] = `
   display: block;
   max-width: 100%;
   overflow: visible;
-  -webkit-animation: eOzisH 1s forwards;
   animation: eOzisH 1s forwards;
-  -webkit-transform-origin: center bottom 0;
-  -ms-transform-origin: center bottom 0;
   transform-origin: center bottom 0;
 }
 
@@ -27,7 +24,6 @@ exports[`Chart animate 1`] = `
   max-width: 100%;
   overflow: visible;
   stroke-dasharray: 200%;
-  -webkit-animation: hbbtVo 1s forwards;
   animation: hbbtVo 1s forwards;
 }
 
@@ -35,7 +31,6 @@ exports[`Chart animate 1`] = `
   display: block;
   max-width: 100%;
   overflow: visible;
-  -webkit-animation: ipYAVD 1s forwards;
   animation: ipYAVD 1s forwards;
 }
 
@@ -856,16 +851,11 @@ exports[`Chart gap 1`] = `
 }
 
 .c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
   width: 768px;
 }
@@ -2199,16 +2189,11 @@ exports[`Chart size 1`] = `
 }
 
 .c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
   width: 768px;
 }
@@ -3052,7 +3037,7 @@ exports[`Chart value style 1`] = `
       stroke-linejoin="miter"
     >
       <g
-        fill="#00C781"
+        fill="#009E67"
         opacity="0.8"
         stroke="none"
       >
@@ -3099,7 +3084,7 @@ exports[`Chart value style 1`] = `
       <g
         fill="none"
         opacity="0.8"
-        stroke="#00C781"
+        stroke="#009E67"
         stroke-width="12"
       >
         <title>

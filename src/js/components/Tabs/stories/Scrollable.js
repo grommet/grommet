@@ -15,6 +15,7 @@ const ScrollableTabs = () => (
           pad="xlarge"
           align="center"
           background="light-2"
+          tabIndex={0}
         >
           <Heading>Title</Heading>
           <Paragraph>

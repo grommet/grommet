@@ -15,26 +15,18 @@ exports[`NameValueList should accept and apply Grid props 1`] = `
   display: grid;
   box-sizing: border-box;
   margin: 0px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
-  grid-template-columns: repeat( auto-fit,minmax(auto,384px) );
+  grid-template-columns: repeat( auto-fit,minmax(auto, 384px) );
   grid-gap: 48px 96px;
   justify-items: center;
 }
 
 .c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
 }
 
@@ -53,11 +45,11 @@ exports[`NameValueList should accept and apply Grid props 1`] = `
   font-weight: bold;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
 
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c1 {
     margin: 0px;
   }
@@ -130,21 +122,16 @@ exports[`NameValueList should render 1`] = `
   display: grid;
   box-sizing: border-box;
   margin: 0px;
-  grid-template-columns: repeat( auto-fit,minmax(auto,384px) );
+  grid-template-columns: repeat( auto-fit,minmax(auto, 384px) );
   grid-gap: 24px 48px;
 }
 
 .c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
 }
 
@@ -163,11 +150,11 @@ exports[`NameValueList should render 1`] = `
   font-weight: bold;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
 
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c1 {
     margin: 0px;
   }
@@ -240,21 +227,16 @@ exports[`NameValueList should render correct alignment of name 1`] = `
   display: grid;
   box-sizing: border-box;
   margin: 0px;
-  grid-template-columns: repeat( auto-fit,minmax(auto,384px) );
+  grid-template-columns: repeat( auto-fit,minmax(auto, 384px) );
   grid-gap: 24px 48px;
 }
 
 .c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
 }
 
@@ -273,11 +255,11 @@ exports[`NameValueList should render correct alignment of name 1`] = `
   font-weight: bold;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
 
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c1 {
     margin: 0px;
   }
@@ -350,21 +332,16 @@ exports[`NameValueList should render correct alignment of value 1`] = `
   display: grid;
   box-sizing: border-box;
   margin: 0px;
-  grid-template-columns: repeat( auto-fit,minmax(auto,384px) );
+  grid-template-columns: repeat( auto-fit,minmax(auto, 384px) );
   grid-gap: 24px 48px;
 }
 
 .c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
 }
 
@@ -383,11 +360,11 @@ exports[`NameValueList should render correct alignment of value 1`] = `
   color: #444444;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
 
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c1 {
     margin: 0px;
   }
@@ -460,21 +437,16 @@ exports[`NameValueList should render correct gap between rows and columns 1`] = 
   display: grid;
   box-sizing: border-box;
   margin: 0px;
-  grid-template-columns: repeat( auto-fit,minmax(auto,384px) );
+  grid-template-columns: repeat( auto-fit,minmax(auto, 384px) );
   grid-gap: 24px 48px;
 }
 
 .c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
 }
 
@@ -493,11 +465,11 @@ exports[`NameValueList should render correct gap between rows and columns 1`] = 
   font-weight: bold;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
 
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c1 {
     margin: 0px;
   }
@@ -570,21 +542,16 @@ exports[`NameValueList should render correct width of name 1`] = `
   display: grid;
   box-sizing: border-box;
   margin: 0px;
-  grid-template-columns: repeat( auto-fit,minmax(auto,384px) );
+  grid-template-columns: repeat( auto-fit,minmax(auto, 384px) );
   grid-gap: 24px 48px;
 }
 
 .c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
 }
 
@@ -603,11 +570,11 @@ exports[`NameValueList should render correct width of name 1`] = `
   font-weight: bold;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
 
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c1 {
     margin: 0px;
   }
@@ -680,21 +647,16 @@ exports[`NameValueList should render correct width of value 1`] = `
   display: grid;
   box-sizing: border-box;
   margin: 0px;
-  grid-template-columns: repeat( auto-fit,minmax(auto,96px) );
+  grid-template-columns: repeat( auto-fit,minmax(auto, 96px) );
   grid-gap: 24px 48px;
 }
 
 .c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
 }
 
@@ -713,11 +675,11 @@ exports[`NameValueList should render correct width of value 1`] = `
   font-weight: bold;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
 
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c1 {
     margin: 0px;
   }
@@ -791,21 +753,16 @@ exports[`NameValueList should render correct width of value when value is array 
   display: grid;
   box-sizing: border-box;
   margin: 0px;
-  grid-template-columns: repeat( auto-fit,minmax(auto,96px) );
+  grid-template-columns: repeat( auto-fit,minmax(auto, 96px) );
   grid-gap: 24px 48px;
 }
 
 .c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
 }
 
@@ -824,11 +781,11 @@ exports[`NameValueList should render correct width of value when value is array 
   font-weight: bold;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
 
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c1 {
     margin: 0px;
   }
@@ -903,21 +860,16 @@ exports[`NameValueList should render name/value as a column when pairProps = { d
   display: grid;
   box-sizing: border-box;
   margin: 0px;
-  grid-template-columns: repeat( auto-fit,minmax(auto,384px) );
+  grid-template-columns: repeat( auto-fit,minmax(auto, 384px) );
   grid-gap: 24px 48px;
 }
 
 .c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
 }
 
@@ -936,11 +888,11 @@ exports[`NameValueList should render name/value as a column when pairProps = { d
   color: #444444;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
 
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c1 {
     margin: 0px;
   }
@@ -998,6 +950,71 @@ exports[`NameValueList should render name/value as a column when pairProps = { d
 </div>
 `;
 
+exports[`NameValueList should render outside grommet wrapper 1`] = `
+.c0 {
+  display: grid;
+  box-sizing: border-box;
+  margin: 0px;
+  grid-template-columns: 192px minmax(auto, 384px);
+  grid-gap: 12px 48px;
+}
+
+.c1 {
+  font-size: 18px;
+  line-height: 24px;
+  color: #444444;
+  font-weight: bold;
+}
+
+.c2 {
+  margin: 0px;
+  font-size: 18px;
+  line-height: 24px;
+  color: #444444;
+}
+
+@media only screen and (max-width: 768px) {
+  .c0 {
+    margin: 0px;
+  }
+}
+
+<dl
+  class="c0"
+>
+  <dt
+    class="c1"
+  >
+    name
+  </dt>
+  <dd
+    class="c2"
+  >
+    entry
+  </dd>
+  <dt
+    class="c1"
+  >
+    location
+  </dt>
+  <dd
+    class="c2"
+  >
+    San Francisco
+  </dd>
+  <dt
+    class="c1"
+  >
+    health
+  </dt>
+  <dd
+    class="c2"
+  >
+    80
+  </dd>
+</dl>
+`;
+
 exports[`NameValueList should render pairs in a grid when layout="grid" 1`] = `
 .c0 {
   font-size: 18px;
@@ -1013,21 +1030,16 @@ exports[`NameValueList should render pairs in a grid when layout="grid" 1`] = `
   display: grid;
   box-sizing: border-box;
   margin: 0px;
-  grid-template-columns: repeat( auto-fit,minmax(auto,384px) );
+  grid-template-columns: repeat( auto-fit,minmax(auto, 384px) );
   grid-gap: 24px 48px;
 }
 
 .c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
 }
 
@@ -1046,11 +1058,11 @@ exports[`NameValueList should render pairs in a grid when layout="grid" 1`] = `
   font-weight: bold;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
 
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c1 {
     margin: 0px;
   }
@@ -1124,21 +1136,16 @@ exports[`NameValueList should render value above name when pairProps = { directi
   display: grid;
   box-sizing: border-box;
   margin: 0px;
-  grid-template-columns: repeat( auto-fit,minmax(auto,384px) );
+  grid-template-columns: repeat( auto-fit,minmax(auto, 384px) );
   grid-gap: 24px 48px;
 }
 
 .c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
 }
 
@@ -1157,11 +1164,11 @@ exports[`NameValueList should render value above name when pairProps = { directi
   font-weight: bold;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
 
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c1 {
     margin: 0px;
   }
@@ -1234,21 +1241,16 @@ exports[`NameValueList should support custom theme 1`] = `
   display: grid;
   box-sizing: border-box;
   margin: 0px;
-  grid-template-columns: repeat( auto-fit,minmax(auto,192px) );
+  grid-template-columns: repeat( auto-fit,minmax(auto, 192px) );
   grid-gap: 12px 24px;
 }
 
 .c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
 }
 
@@ -1268,11 +1270,11 @@ exports[`NameValueList should support custom theme 1`] = `
   font-weight: bold;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
 
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c1 {
     margin: 0px;
   }

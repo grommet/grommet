@@ -38,6 +38,14 @@ describe('StarRating', () => {
     expect(container).toMatchSnapshot();
   });
 
+  test('renders without grommet wrapper', () => {
+    const { container } = render(
+      <StarRating name="test" data-testid="starRating-icon" />,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
   test('value for rating', async () => {
     const onSubmit = jest.fn();
     const user = userEvent.setup();
@@ -63,5 +71,14 @@ describe('StarRating', () => {
         value: { test: 2 },
       }),
     );
+  });
+
+  test('StarRating has default value', async () => {
+    const { container } = render(
+      <Grommet>
+        <StarRating name="test" defaultValue={3} />
+      </Grommet>,
+    );
+    expect(container).toMatchSnapshot();
   });
 });

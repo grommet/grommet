@@ -1,120 +1,544 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`DataFilter children 1`] = `
+exports[`DataFilter !inDataForm 1`] = `
 .c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
+.c4 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+}
+
+.c6 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin-right: 12px;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.c9 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-items: center;
+  border: solid 2px rgba(0, 0, 0, 0.15);
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  height: 24px;
+  width: 24px;
+  justify-content: center;
+  border-radius: 4px;
+}
+
+.c11 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+}
+
+.c13 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+.c15 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-self: stretch;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  width: 100%;
+  border-radius: 12px;
+}
+
+.c16 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-self: stretch;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  justify-content: center;
+  overflow: visible;
+}
+
+.c17 {
+  display: flex;
+  box-sizing: border-box;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  flex-basis: 100%;
+  height: 100%;
+  justify-content: center;
+}
+
+.c18 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  background-color: #7D4CDB;
+  color: #f8f8f8;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  height: 12px;
+  width: 12px;
+  border-radius: 100%;
+}
+
+.c19 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-self: stretch;
+  background-color: rgba(125, 76, 219, 0.4);
+  color: #444444;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  width: 100%;
+  border-radius: 12px;
+}
+
+.c2 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-items: flex-start;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: row;
+  flex: 0 0 auto;
+  flex-wrap: wrap;
+  column-gap: 12px;
+  row-gap: 12px;
+}
+
+.c10 {
+  flex: 0 0 auto;
+  align-self: stretch;
+  height: 12px;
+}
+
+.c12 {
+  margin-left: 12px;
+  margin-right: 12px;
+  font-size: 14px;
+  line-height: 20px;
+  text-align: right;
+}
+
+.c20 {
+  margin-left: 12px;
+  margin-right: 12px;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.c3 {
+  max-width: 100%;
+}
+
+.c5 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  user-select: none;
+  -webkit-user-select: none;
+  width: fit-content;
+  cursor: pointer;
+}
+
+.c5:hover input:not([disabled])+div,
+.c5:hover input:not([disabled])+span {
+  border-color: #000000;
+}
+
+.c8 {
+  opacity: 0;
+  -moz-appearance: none;
+  width: 0;
+  height: 0;
+  margin: 0;
+  cursor: pointer;
+}
+
+.c8:checked+span>span {
+  left: calc( 48px - 24px );
+  background: #7D4CDB;
+}
+
+.c7 {
+  flex-shrink: 0;
+}
+
+.c14 {
+  user-select: none;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+@media only screen and (max-width: 768px) {
+
+}
+
+@media only screen and (max-width: 768px) {
+  .c6 {
+    margin-right: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c9 {
+    border: solid 2px rgba(0, 0, 0, 0.15);
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c15 {
+    border-radius: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c19 {
+    border-radius: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    column-gap: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c10 {
+    height: 6px;
+  }
+}
+
+<div
+  class="c0"
+>
+  <div
+    class="c1"
+    id="data"
+  >
+    <div
+      class="c2"
+    >
+      <form
+        class="c3"
+      >
+        <div
+          aria-label="name"
+          class="c4 StyledCheckBoxGroup-sc-2nhc5d-0"
+          id="data-name"
+          role="group"
+        >
+          <label
+            class="c5"
+          >
+            <div
+              class="c6 c7"
+            >
+              <input
+                class="c8"
+                type="checkbox"
+              />
+              <div
+                class="c9 "
+              />
+            </div>
+            <span>
+              aa
+            </span>
+          </label>
+          <div
+            class="c10"
+          />
+          <label
+            class="c5"
+          >
+            <div
+              class="c6 c7"
+            >
+              <input
+                class="c8"
+                type="checkbox"
+              />
+              <div
+                class="c9 "
+              />
+            </div>
+            <span>
+              bb
+            </span>
+          </label>
+          <div
+            class="c10"
+          />
+          <label
+            class="c5"
+          >
+            <div
+              class="c6 c7"
+            >
+              <input
+                class="c8"
+                type="checkbox"
+              />
+              <div
+                class="c9 "
+              />
+            </div>
+            <span>
+              cc
+            </span>
+          </label>
+        </div>
+      </form>
+      <form
+        class="c3"
+      >
+        <div
+          aria-label="enabled"
+          class="c4 StyledCheckBoxGroup-sc-2nhc5d-0"
+          id="data-enabled"
+          role="group"
+        >
+          <label
+            class="c5"
+          >
+            <div
+              class="c6 c7"
+            >
+              <input
+                class="c8"
+                type="checkbox"
+              />
+              <div
+                class="c9 "
+              />
+            </div>
+            <span>
+              true
+            </span>
+          </label>
+          <div
+            class="c10"
+          />
+          <label
+            class="c5"
+          >
+            <div
+              class="c6 c7"
+            >
+              <input
+                class="c8"
+                type="checkbox"
+              />
+              <div
+                class="c9 "
+              />
+            </div>
+            <span>
+              false
+            </span>
+          </label>
+        </div>
+      </form>
+      <form
+        class="c3"
+      >
+        <div
+          aria-label="rating"
+          class="c11"
+          id="data-rating"
+        >
+          <span
+            class="c12"
+            style="width: 0px;"
+          >
+            2.1
+          </span>
+          <div
+            class="c13 c14"
+            tabindex="-1"
+          >
+            <div
+              class="c15"
+              style="flex: 0 0 0px;"
+            />
+            <div
+              class="c16"
+              style="flex: 0 0 1px;"
+            >
+              <div
+                aria-label="Lower Bounds"
+                aria-valuemax="4.9"
+                aria-valuemin="2.1"
+                aria-valuenow="2.1"
+                class="c17"
+                role="slider"
+                style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
+                tabindex="0"
+              >
+                <div
+                  class="c18 EdgeControl__StyledBox-sc-1xo2yt9-0"
+                />
+              </div>
+            </div>
+            <div
+              class="c19"
+              style="flex: 3.8000000000000003 0 0px; cursor: ew-resize;"
+            />
+            <div
+              class="c16"
+              style="flex: 0 0 1px;"
+            >
+              <div
+                aria-label="Upper Bounds"
+                aria-valuemax="4.9"
+                aria-valuemin="2.1"
+                aria-valuenow="4.9"
+                class="c17"
+                role="slider"
+                style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
+                tabindex="0"
+              >
+                <div
+                  class="c18 EdgeControl__StyledBox-sc-1xo2yt9-0"
+                />
+              </div>
+            </div>
+            <div
+              class="c15"
+              style="flex: 0 0 0px;"
+            />
+          </div>
+          <span
+            class="c20"
+            style="width: 0px;"
+          >
+            4.9
+          </span>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`DataFilter children 1`] = `
+.c1 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
   flex: 0 0 auto;
 }
 
 .c3 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
   height: 100%;
 }
 
 .c4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex: 1 1;
-  -ms-flex: 1 1;
   flex: 1 1;
   overflow: auto;
 }
 
 .c5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   margin-bottom: 12px;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
 }
 
 .c7 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
 }
 
 .c10 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  margin-top: 12px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
+  margin-top: 24px;
   align-items: center;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
   justify-content: space-between;
-}
-
-.c12 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  -webkit-align-self: stretch;
-  -ms-flex-item-align: stretch;
-  align-self: stretch;
-  width: 12px;
 }
 
 .c6 {
@@ -131,7 +555,6 @@ exports[`DataFilter children 1`] = `
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
-  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -146,11 +569,8 @@ exports[`DataFilter children 1`] = `
   background-color: #7D4CDB;
   color: #f8f8f8;
   border-radius: 18px;
-  -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
-  -webkit-transition-duration: 0.1s;
   transition-duration: 0.1s;
-  -webkit-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
 }
 
@@ -163,18 +583,18 @@ exports[`DataFilter children 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c11:focus > circle,
-.c11:focus > ellipse,
-.c11:focus > line,
-.c11:focus > path,
-.c11:focus > polygon,
-.c11:focus > polyline,
-.c11:focus > rect {
+.c11:focus >circle,
+.c11:focus >ellipse,
+.c11:focus >line,
+.c11:focus >path,
+.c11:focus >polygon,
+.c11:focus >polyline,
+.c11:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c11:focus::-moz-focus-inner {
+.c11:focus ::-moz-focus-inner {
   border: 0;
 }
 
@@ -183,90 +603,19 @@ exports[`DataFilter children 1`] = `
   box-shadow: none;
 }
 
-.c11:focus:not(:focus-visible) > circle,
-.c11:focus:not(:focus-visible) > ellipse,
-.c11:focus:not(:focus-visible) > line,
-.c11:focus:not(:focus-visible) > path,
-.c11:focus:not(:focus-visible) > polygon,
-.c11:focus:not(:focus-visible) > polyline,
-.c11:focus:not(:focus-visible) > rect {
+.c11:focus:not(:focus-visible) >circle,
+.c11:focus:not(:focus-visible) >ellipse,
+.c11:focus:not(:focus-visible) >line,
+.c11:focus:not(:focus-visible) >path,
+.c11:focus:not(:focus-visible) >polygon,
+.c11:focus:not(:focus-visible) >polyline,
+.c11:focus:not(:focus-visible) >rect {
   outline: none;
   box-shadow: none;
 }
 
-.c11:focus:not(:focus-visible)::-moz-focus-inner {
+.c11:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
-}
-
-.c13 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  font: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  border: 2px solid #7D4CDB;
-  border-radius: 18px;
-  color: #444444;
-  padding: 4px 22px;
-  font-size: 18px;
-  line-height: 24px;
-  opacity: 0.3;
-  cursor: default;
-  -webkit-transition-property: color,background-color,border-color,box-shadow;
-  transition-property: color,background-color,border-color,box-shadow;
-  -webkit-transition-duration: 0.1s;
-  transition-duration: 0.1s;
-  -webkit-transition-timing-function: ease-in-out;
-  transition-timing-function: ease-in-out;
-}
-
-.c13:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c13:focus > circle,
-.c13:focus > ellipse,
-.c13:focus > line,
-.c13:focus > path,
-.c13:focus > polygon,
-.c13:focus > polyline,
-.c13:focus > rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c13:focus::-moz-focus-inner {
-  border: 0;
-}
-
-.c13:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c13:focus:not(:focus-visible) > circle,
-.c13:focus:not(:focus-visible) > ellipse,
-.c13:focus:not(:focus-visible) > line,
-.c13:focus:not(:focus-visible) > path,
-.c13:focus:not(:focus-visible) > polygon,
-.c13:focus:not(:focus-visible) > polyline,
-.c13:focus:not(:focus-visible) > rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c13:focus:not(:focus-visible)::-moz-focus-inner {
-  border: 0;
-}
-
-.c14 {
-  opacity: 0;
 }
 
 .c2 {
@@ -285,7 +634,7 @@ exports[`DataFilter children 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
+  border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
   outline: none;
   border: none;
@@ -303,7 +652,7 @@ exports[`DataFilter children 1`] = `
   color: #AAAAAA;
 }
 
-.c9::-webkit-search-decoration {
+.c9 ::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -332,27 +681,21 @@ exports[`DataFilter children 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c5 {
     margin-bottom: 6px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c7 {
-    border-bottom: solid 1px rgba(0,0,0,0.33);
+    border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c10 {
-    margin-top: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c12 {
-    width: 6px;
+    margin-top: 12px;
   }
 }
 
@@ -385,7 +728,7 @@ exports[`DataFilter children 1`] = `
                 name
               </label>
               <div
-                class="c7 FormField__FormFieldContentBox-sc-m9hood-1"
+                class="c7 "
               >
                 <div
                   class="c8"
@@ -393,7 +736,6 @@ exports[`DataFilter children 1`] = `
                   <input
                     autocomplete="off"
                     class="c9"
-                    value=""
                   />
                 </div>
               </div>
@@ -409,18 +751,6 @@ exports[`DataFilter children 1`] = `
           >
             Apply filters
           </button>
-          <div
-            class="c12"
-          />
-          <button
-            aria-hidden="true"
-            class="c13 c14"
-            disabled=""
-            tabindex="-1"
-            type="reset"
-          >
-            Undo changes
-          </button>
         </footer>
       </div>
     </form>
@@ -428,803 +758,112 @@ exports[`DataFilter children 1`] = `
 </div>
 `;
 
-exports[`DataFilter noForm 1`] = `
-.c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-}
-
-.c4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.c6 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  margin-right: 12px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-}
-
-.c9 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  border: solid 2px rgba(0,0,0,0.15);
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  height: 24px;
-  width: 24px;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  border-radius: 4px;
-}
-
-.c11 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  width: 100%;
-  height: 100%;
-}
-
-.c13 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  width: 100%;
-  height: 100%;
-  cursor: pointer;
-}
-
-.c15 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  -webkit-align-self: stretch;
-  -ms-flex-item-align: stretch;
-  align-self: stretch;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  width: 100%;
-  border-radius: 12px;
-}
-
-.c16 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  -webkit-align-self: stretch;
-  -ms-flex-item-align: stretch;
-  align-self: stretch;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  overflow: visible;
-}
-
-.c17 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-flex-basis: 100%;
-  -ms-flex-preferred-size: 100%;
-  flex-basis: 100%;
-  height: 100%;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-}
-
-.c18 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  background-color: #7D4CDB;
-  color: #f8f8f8;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  height: 12px;
-  width: 12px;
-  border-radius: 100%;
-}
-
-.c19 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  -webkit-align-self: stretch;
-  -ms-flex-item-align: stretch;
-  align-self: stretch;
-  background-color: rgba(125,76,219,0.4);
-  color: #444444;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  width: 100%;
-  border-radius: 12px;
-}
-
-.c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  -webkit-align-items: flex-start;
-  -webkit-box-align: flex-start;
-  -ms-flex-align: flex-start;
-  align-items: flex-start;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  -webkit-column-gap: 12px;
-  column-gap: 12px;
-  row-gap: 12px;
-}
-
-.c10 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  -webkit-align-self: stretch;
-  -ms-flex-item-align: stretch;
-  align-self: stretch;
-  height: 12px;
-}
-
-.c12 {
-  margin-left: 12px;
-  margin-right: 12px;
-  font-size: 14px;
-  line-height: 20px;
-  text-align: right;
-}
-
-.c20 {
-  margin-left: 12px;
-  margin-right: 12px;
-  font-size: 14px;
-  line-height: 20px;
-}
-
-.c3 {
-  max-width: 100%;
-}
-
-.c5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-  cursor: pointer;
-}
-
-.c5:hover input:not([disabled]) + div,
-.c5:hover input:not([disabled]) + span {
-  border-color: #000000;
-}
-
-.c8 {
-  opacity: 0;
-  -moz-appearance: none;
-  width: 0;
-  height: 0;
-  margin: 0;
-  cursor: pointer;
-}
-
-.c8:checked + span > span {
-  left: calc( 48px - 24px );
-  background: #7D4CDB;
-}
-
-.c7 {
-  -webkit-flex-shrink: 0;
-  -ms-flex-negative: 0;
-  flex-shrink: 0;
-}
-
-.c14 {
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
-.c0 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
-@media only screen and (max-width:768px) {
-
-}
-
-@media only screen and (max-width:768px) {
-  .c6 {
-    margin-right: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c9 {
-    border: solid 2px rgba(0,0,0,0.15);
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c15 {
-    border-radius: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c19 {
-    border-radius: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c2 {
-    -webkit-column-gap: 6px;
-    column-gap: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c10 {
-    height: 6px;
-  }
-}
-
-<div
-  class="c0"
->
-  <div
-    class="c1"
-    id="data"
-  >
-    <div
-      class="c2"
-    >
-      <form
-        class="c3"
-      >
-        <div
-          class="c4 StyledCheckBoxGroup-sc-2nhc5d-0"
-          id="data-name"
-          role="group"
-        >
-          <label
-            class="c5"
-            label="aa"
-          >
-            <div
-              class="c6 c7"
-            >
-              <input
-                class="c8"
-                type="checkbox"
-              />
-              <div
-                class="c9 "
-              />
-            </div>
-            <span>
-              aa
-            </span>
-          </label>
-          <div
-            class="c10"
-          />
-          <label
-            class="c5"
-            label="bb"
-          >
-            <div
-              class="c6 c7"
-            >
-              <input
-                class="c8"
-                type="checkbox"
-              />
-              <div
-                class="c9 "
-              />
-            </div>
-            <span>
-              bb
-            </span>
-          </label>
-          <div
-            class="c10"
-          />
-          <label
-            class="c5"
-            label="cc"
-          >
-            <div
-              class="c6 c7"
-            >
-              <input
-                class="c8"
-                type="checkbox"
-              />
-              <div
-                class="c9 "
-              />
-            </div>
-            <span>
-              cc
-            </span>
-          </label>
-        </div>
-      </form>
-      <form
-        class="c3"
-      >
-        <div
-          class="c4 StyledCheckBoxGroup-sc-2nhc5d-0"
-          id="data-enabled"
-          role="group"
-        >
-          <label
-            class="c5"
-            label="true"
-          >
-            <div
-              class="c6 c7"
-            >
-              <input
-                class="c8"
-                type="checkbox"
-              />
-              <div
-                class="c9 "
-              />
-            </div>
-            <span>
-              true
-            </span>
-          </label>
-          <div
-            class="c10"
-          />
-          <label
-            class="c5"
-            label="false"
-          >
-            <div
-              class="c6 c7"
-            >
-              <input
-                class="c8"
-                type="checkbox"
-              />
-              <div
-                class="c9 "
-              />
-            </div>
-            <span>
-              false
-            </span>
-          </label>
-        </div>
-      </form>
-      <form
-        class="c3"
-      >
-        <div
-          class="c11"
-          id="data-rating"
-        >
-          <span
-            class="c12"
-            style="width: 0px;"
-          >
-            2.0999999999999996
-          </span>
-          <div
-            class="c13 c14"
-            tabindex="-1"
-          >
-            <div
-              class="c15"
-              style="flex: 0 0 0px;"
-            />
-            <div
-              class="c16"
-              style="flex: 0 0 1px;"
-            >
-              <div
-                aria-label="Lower Bounds"
-                aria-valuemax="4.8999999999999995"
-                aria-valuemin="2.0999999999999996"
-                aria-valuenow="2.0999999999999996"
-                class="c17"
-                role="slider"
-                style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
-                tabindex="0"
-              >
-                <div
-                  class="c18 EdgeControl__StyledBox-sc-1xo2yt9-0"
-                />
-              </div>
-            </div>
-            <div
-              class="c19"
-              style="flex: 3.8 0 0px; cursor: ew-resize;"
-            />
-            <div
-              class="c16"
-              style="flex: 0 0 1px;"
-            >
-              <div
-                aria-label="Upper Bounds"
-                aria-valuemax="4.8999999999999995"
-                aria-valuemin="2.0999999999999996"
-                aria-valuenow="4.8999999999999995"
-                class="c17"
-                role="slider"
-                style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
-                tabindex="0"
-              >
-                <div
-                  class="c18 EdgeControl__StyledBox-sc-1xo2yt9-0"
-                />
-              </div>
-            </div>
-            <div
-              class="c15"
-              style="flex: 0 0 0px;"
-            />
-          </div>
-          <span
-            class="c20"
-            style="width: 0px;"
-          >
-            4.8999999999999995
-          </span>
-        </div>
-      </form>
-    </div>
-  </div>
-</div>
-`;
-
 exports[`DataFilter options 1`] = `
 .c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
 }
 
 .c3 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
   height: 100%;
 }
 
 .c4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex: 1 1;
-  -ms-flex: 1 1;
   flex: 1 1;
   overflow: auto;
 }
 
 .c5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   margin-bottom: 12px;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
 }
 
 .c7 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
   padding: 12px;
 }
 
 .c8 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
 }
 
 .c10 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   margin-right: 12px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
   justify-content: center;
 }
 
 .c13 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
-  border: solid 2px rgba(0,0,0,0.15);
+  border: solid 2px rgba(0, 0, 0, 0.15);
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
   height: 24px;
   width: 24px;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
   justify-content: center;
   border-radius: 4px;
 }
 
 .c15 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  margin-top: 12px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
+  margin-top: 24px;
   align-items: center;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
   justify-content: space-between;
 }
 
 .c14 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  -webkit-align-self: stretch;
-  -ms-flex-item-align: stretch;
   align-self: stretch;
   height: 12px;
-}
-
-.c17 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  -webkit-align-self: stretch;
-  -ms-flex-item-align: stretch;
-  align-self: stretch;
-  width: 12px;
 }
 
 .c6 {
@@ -1241,7 +880,6 @@ exports[`DataFilter options 1`] = `
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
-  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -1256,11 +894,8 @@ exports[`DataFilter options 1`] = `
   background-color: #7D4CDB;
   color: #f8f8f8;
   border-radius: 18px;
-  -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
-  -webkit-transition-duration: 0.1s;
   transition-duration: 0.1s;
-  -webkit-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
 }
 
@@ -1273,18 +908,18 @@ exports[`DataFilter options 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c16:focus > circle,
-.c16:focus > ellipse,
-.c16:focus > line,
-.c16:focus > path,
-.c16:focus > polygon,
-.c16:focus > polyline,
-.c16:focus > rect {
+.c16:focus >circle,
+.c16:focus >ellipse,
+.c16:focus >line,
+.c16:focus >path,
+.c16:focus >polygon,
+.c16:focus >polyline,
+.c16:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c16:focus::-moz-focus-inner {
+.c16:focus ::-moz-focus-inner {
   border: 0;
 }
 
@@ -1293,90 +928,19 @@ exports[`DataFilter options 1`] = `
   box-shadow: none;
 }
 
-.c16:focus:not(:focus-visible) > circle,
-.c16:focus:not(:focus-visible) > ellipse,
-.c16:focus:not(:focus-visible) > line,
-.c16:focus:not(:focus-visible) > path,
-.c16:focus:not(:focus-visible) > polygon,
-.c16:focus:not(:focus-visible) > polyline,
-.c16:focus:not(:focus-visible) > rect {
+.c16:focus:not(:focus-visible) >circle,
+.c16:focus:not(:focus-visible) >ellipse,
+.c16:focus:not(:focus-visible) >line,
+.c16:focus:not(:focus-visible) >path,
+.c16:focus:not(:focus-visible) >polygon,
+.c16:focus:not(:focus-visible) >polyline,
+.c16:focus:not(:focus-visible) >rect {
   outline: none;
   box-shadow: none;
 }
 
-.c16:focus:not(:focus-visible)::-moz-focus-inner {
+.c16:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
-}
-
-.c18 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  font: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  border: 2px solid #7D4CDB;
-  border-radius: 18px;
-  color: #444444;
-  padding: 4px 22px;
-  font-size: 18px;
-  line-height: 24px;
-  opacity: 0.3;
-  cursor: default;
-  -webkit-transition-property: color,background-color,border-color,box-shadow;
-  transition-property: color,background-color,border-color,box-shadow;
-  -webkit-transition-duration: 0.1s;
-  transition-duration: 0.1s;
-  -webkit-transition-timing-function: ease-in-out;
-  transition-timing-function: ease-in-out;
-}
-
-.c18:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c18:focus > circle,
-.c18:focus > ellipse,
-.c18:focus > line,
-.c18:focus > path,
-.c18:focus > polygon,
-.c18:focus > polyline,
-.c18:focus > rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c18:focus::-moz-focus-inner {
-  border: 0;
-}
-
-.c18:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c18:focus:not(:focus-visible) > circle,
-.c18:focus:not(:focus-visible) > ellipse,
-.c18:focus:not(:focus-visible) > line,
-.c18:focus:not(:focus-visible) > path,
-.c18:focus:not(:focus-visible) > polygon,
-.c18:focus:not(:focus-visible) > polyline,
-.c18:focus:not(:focus-visible) > rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c18:focus:not(:focus-visible)::-moz-focus-inner {
-  border: 0;
-}
-
-.c19 {
-  opacity: 0;
 }
 
 .c2 {
@@ -1384,29 +948,17 @@ exports[`DataFilter options 1`] = `
 }
 
 .c9 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
   user-select: none;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
+  -webkit-user-select: none;
   width: fit-content;
   cursor: pointer;
 }
 
-.c9:hover input:not([disabled]) + div,
-.c9:hover input:not([disabled]) + span {
+.c9:hover input:not([disabled])+div,
+.c9:hover input:not([disabled])+span {
   border-color: #000000;
 }
 
@@ -1419,14 +971,12 @@ exports[`DataFilter options 1`] = `
   cursor: pointer;
 }
 
-.c12:checked + span > span {
+.c12:checked+span>span {
   left: calc( 48px - 24px );
   background: #7D4CDB;
 }
 
 .c11 {
-  -webkit-flex-shrink: 0;
-  -ms-flex-negative: 0;
   flex-shrink: 0;
 }
 
@@ -1440,51 +990,45 @@ exports[`DataFilter options 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c5 {
     margin-bottom: 6px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c7 {
-    border-bottom: solid 1px rgba(0,0,0,0.33);
+    border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c7 {
     padding: 6px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c10 {
     margin-right: 6px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c13 {
-    border: solid 2px rgba(0,0,0,0.15);
+    border: solid 2px rgba(0, 0, 0, 0.15);
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c15 {
-    margin-top: 6px;
+    margin-top: 12px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c14 {
     height: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c17 {
-    width: 6px;
   }
 }
 
@@ -1517,7 +1061,7 @@ exports[`DataFilter options 1`] = `
                 name
               </label>
               <div
-                class="c7 FormField__FormFieldContentBox-sc-m9hood-1"
+                class="c7 "
               >
                 <div
                   class="c8 StyledCheckBoxGroup-sc-2nhc5d-0"
@@ -1526,7 +1070,6 @@ exports[`DataFilter options 1`] = `
                 >
                   <label
                     class="c9"
-                    label="aa"
                   >
                     <div
                       class="c10 c11"
@@ -1548,7 +1091,6 @@ exports[`DataFilter options 1`] = `
                   />
                   <label
                     class="c9"
-                    label="bb"
                   >
                     <div
                       class="c10 c11"
@@ -1570,7 +1112,6 @@ exports[`DataFilter options 1`] = `
                   />
                   <label
                     class="c9"
-                    label="cc"
                   >
                     <div
                       class="c10 c11"
@@ -1600,7 +1141,7 @@ exports[`DataFilter options 1`] = `
                 Enabled
               </label>
               <div
-                class="c7 FormField__FormFieldContentBox-sc-m9hood-1"
+                class="c7 "
               >
                 <div
                   class="c8 StyledCheckBoxGroup-sc-2nhc5d-0"
@@ -1609,7 +1150,6 @@ exports[`DataFilter options 1`] = `
                 >
                   <label
                     class="c9"
-                    label="Enabled"
                   >
                     <div
                       class="c10 c11"
@@ -1631,7 +1171,6 @@ exports[`DataFilter options 1`] = `
                   />
                   <label
                     class="c9"
-                    label="Disabled"
                   >
                     <div
                       class="c10 c11"
@@ -1661,7 +1200,7 @@ exports[`DataFilter options 1`] = `
                 Type
               </label>
               <div
-                class="c7 FormField__FormFieldContentBox-sc-m9hood-1"
+                class="c7 "
               >
                 <div
                   class="c8 StyledCheckBoxGroup-sc-2nhc5d-0"
@@ -1670,7 +1209,6 @@ exports[`DataFilter options 1`] = `
                 >
                   <label
                     class="c9"
-                    label="ZZ"
                   >
                     <div
                       class="c10 c11"
@@ -1692,7 +1230,6 @@ exports[`DataFilter options 1`] = `
                   />
                   <label
                     class="c9"
-                    label="YY"
                   >
                     <div
                       class="c10 c11"
@@ -1723,18 +1260,6 @@ exports[`DataFilter options 1`] = `
           >
             Apply filters
           </button>
-          <div
-            class="c17"
-          />
-          <button
-            aria-hidden="true"
-            class="c18 c19"
-            disabled=""
-            tabindex="-1"
-            type="reset"
-          >
-            Undo changes
-          </button>
         </footer>
       </div>
     </form>
@@ -1744,121 +1269,76 @@ exports[`DataFilter options 1`] = `
 
 exports[`DataFilter range Data 1`] = `
 .c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
 }
 
 .c3 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
   height: 100%;
 }
 
 .c4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex: 1 1;
-  -ms-flex: 1 1;
   flex: 1 1;
   overflow: auto;
 }
 
 .c5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   margin-bottom: 12px;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
 }
 
 .c7 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
   padding: 12px;
 }
 
 .c8 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
   flex-direction: row;
   width: 100%;
   height: 100%;
 }
 
 .c10 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
   flex-direction: row;
   width: 100%;
   height: 100%;
@@ -1866,79 +1346,43 @@ exports[`DataFilter range Data 1`] = `
 }
 
 .c12 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  -webkit-align-self: stretch;
-  -ms-flex-item-align: stretch;
   align-self: stretch;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
   width: 100%;
   border-radius: 12px;
 }
 
 .c13 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  -webkit-align-self: stretch;
-  -ms-flex-item-align: stretch;
   align-self: stretch;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
   justify-content: center;
   overflow: visible;
 }
 
 .c14 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex-basis: 100%;
-  -ms-flex-preferred-size: 100%;
   flex-basis: 100%;
   height: 100%;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
   justify-content: center;
 }
 
 .c15 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -1946,8 +1390,6 @@ exports[`DataFilter range Data 1`] = `
   color: #f8f8f8;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
   height: 12px;
   width: 12px;
@@ -1955,60 +1397,30 @@ exports[`DataFilter range Data 1`] = `
 }
 
 .c16 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  -webkit-align-self: stretch;
-  -ms-flex-item-align: stretch;
   align-self: stretch;
-  background-color: rgba(125,76,219,0.4);
+  background-color: rgba(125, 76, 219, 0.4);
   color: #444444;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
   width: 100%;
   border-radius: 12px;
 }
 
 .c18 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  margin-top: 12px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
+  margin-top: 24px;
   align-items: center;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
   justify-content: space-between;
-}
-
-.c20 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  -webkit-align-self: stretch;
-  -ms-flex-item-align: stretch;
-  align-self: stretch;
-  width: 12px;
 }
 
 .c6 {
@@ -2040,7 +1452,6 @@ exports[`DataFilter range Data 1`] = `
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
-  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -2055,11 +1466,8 @@ exports[`DataFilter range Data 1`] = `
   background-color: #7D4CDB;
   color: #f8f8f8;
   border-radius: 18px;
-  -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
-  -webkit-transition-duration: 0.1s;
   transition-duration: 0.1s;
-  -webkit-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
 }
 
@@ -2072,18 +1480,18 @@ exports[`DataFilter range Data 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c19:focus > circle,
-.c19:focus > ellipse,
-.c19:focus > line,
-.c19:focus > path,
-.c19:focus > polygon,
-.c19:focus > polyline,
-.c19:focus > rect {
+.c19:focus >circle,
+.c19:focus >ellipse,
+.c19:focus >line,
+.c19:focus >path,
+.c19:focus >polygon,
+.c19:focus >polyline,
+.c19:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c19:focus::-moz-focus-inner {
+.c19:focus ::-moz-focus-inner {
   border: 0;
 }
 
@@ -2092,90 +1500,19 @@ exports[`DataFilter range Data 1`] = `
   box-shadow: none;
 }
 
-.c19:focus:not(:focus-visible) > circle,
-.c19:focus:not(:focus-visible) > ellipse,
-.c19:focus:not(:focus-visible) > line,
-.c19:focus:not(:focus-visible) > path,
-.c19:focus:not(:focus-visible) > polygon,
-.c19:focus:not(:focus-visible) > polyline,
-.c19:focus:not(:focus-visible) > rect {
+.c19:focus:not(:focus-visible) >circle,
+.c19:focus:not(:focus-visible) >ellipse,
+.c19:focus:not(:focus-visible) >line,
+.c19:focus:not(:focus-visible) >path,
+.c19:focus:not(:focus-visible) >polygon,
+.c19:focus:not(:focus-visible) >polyline,
+.c19:focus:not(:focus-visible) >rect {
   outline: none;
   box-shadow: none;
 }
 
-.c19:focus:not(:focus-visible)::-moz-focus-inner {
+.c19:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
-}
-
-.c21 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  font: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  border: 2px solid #7D4CDB;
-  border-radius: 18px;
-  color: #444444;
-  padding: 4px 22px;
-  font-size: 18px;
-  line-height: 24px;
-  opacity: 0.3;
-  cursor: default;
-  -webkit-transition-property: color,background-color,border-color,box-shadow;
-  transition-property: color,background-color,border-color,box-shadow;
-  -webkit-transition-duration: 0.1s;
-  transition-duration: 0.1s;
-  -webkit-transition-timing-function: ease-in-out;
-  transition-timing-function: ease-in-out;
-}
-
-.c21:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c21:focus > circle,
-.c21:focus > ellipse,
-.c21:focus > line,
-.c21:focus > path,
-.c21:focus > polygon,
-.c21:focus > polyline,
-.c21:focus > rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c21:focus::-moz-focus-inner {
-  border: 0;
-}
-
-.c21:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c21:focus:not(:focus-visible) > circle,
-.c21:focus:not(:focus-visible) > ellipse,
-.c21:focus:not(:focus-visible) > line,
-.c21:focus:not(:focus-visible) > path,
-.c21:focus:not(:focus-visible) > polygon,
-.c21:focus:not(:focus-visible) > polyline,
-.c21:focus:not(:focus-visible) > rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c21:focus:not(:focus-visible)::-moz-focus-inner {
-  border: 0;
-}
-
-.c22 {
-  opacity: 0;
 }
 
 .c2 {
@@ -2183,9 +1520,6 @@ exports[`DataFilter range Data 1`] = `
 }
 
 .c11 {
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
   user-select: none;
 }
 
@@ -2199,45 +1533,39 @@ exports[`DataFilter range Data 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c5 {
     margin-bottom: 6px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c7 {
-    border-bottom: solid 1px rgba(0,0,0,0.33);
+    border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c7 {
     padding: 6px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c12 {
     border-radius: 6px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c16 {
     border-radius: 6px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c18 {
-    margin-top: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c20 {
-    width: 6px;
+    margin-top: 12px;
   }
 }
 
@@ -2270,7 +1598,7 @@ exports[`DataFilter range Data 1`] = `
                 Rating
               </label>
               <div
-                class="c7 FormField__FormFieldContentBox-sc-m9hood-1"
+                class="c7 "
               >
                 <div
                   class="c8"
@@ -2357,18 +1685,6 @@ exports[`DataFilter range Data 1`] = `
           >
             Apply filters
           </button>
-          <div
-            class="c20"
-          />
-          <button
-            aria-hidden="true"
-            class="c21 c22"
-            disabled=""
-            tabindex="-1"
-            type="reset"
-          >
-            Undo changes
-          </button>
         </footer>
       </div>
     </form>
@@ -2378,121 +1694,76 @@ exports[`DataFilter range Data 1`] = `
 
 exports[`DataFilter range prop 1`] = `
 .c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
 }
 
 .c3 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
   height: 100%;
 }
 
 .c4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex: 1 1;
-  -ms-flex: 1 1;
   flex: 1 1;
   overflow: auto;
 }
 
 .c5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   margin-bottom: 12px;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
 }
 
 .c7 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
   padding: 12px;
 }
 
 .c8 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
   flex-direction: row;
   width: 100%;
   height: 100%;
 }
 
 .c10 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
   flex-direction: row;
   width: 100%;
   height: 100%;
@@ -2500,79 +1771,43 @@ exports[`DataFilter range prop 1`] = `
 }
 
 .c12 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  -webkit-align-self: stretch;
-  -ms-flex-item-align: stretch;
   align-self: stretch;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
   width: 100%;
   border-radius: 12px;
 }
 
 .c13 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  -webkit-align-self: stretch;
-  -ms-flex-item-align: stretch;
   align-self: stretch;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
   justify-content: center;
   overflow: visible;
 }
 
 .c14 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex-basis: 100%;
-  -ms-flex-preferred-size: 100%;
   flex-basis: 100%;
   height: 100%;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
   justify-content: center;
 }
 
 .c15 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -2580,8 +1815,6 @@ exports[`DataFilter range prop 1`] = `
   color: #f8f8f8;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
   height: 12px;
   width: 12px;
@@ -2589,60 +1822,30 @@ exports[`DataFilter range prop 1`] = `
 }
 
 .c16 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  -webkit-align-self: stretch;
-  -ms-flex-item-align: stretch;
   align-self: stretch;
-  background-color: rgba(125,76,219,0.4);
+  background-color: rgba(125, 76, 219, 0.4);
   color: #444444;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
   width: 100%;
   border-radius: 12px;
 }
 
 .c18 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  margin-top: 12px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
+  margin-top: 24px;
   align-items: center;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
   justify-content: space-between;
-}
-
-.c20 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  -webkit-align-self: stretch;
-  -ms-flex-item-align: stretch;
-  align-self: stretch;
-  width: 12px;
 }
 
 .c6 {
@@ -2674,7 +1877,6 @@ exports[`DataFilter range prop 1`] = `
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
-  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -2689,11 +1891,8 @@ exports[`DataFilter range prop 1`] = `
   background-color: #7D4CDB;
   color: #f8f8f8;
   border-radius: 18px;
-  -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
-  -webkit-transition-duration: 0.1s;
   transition-duration: 0.1s;
-  -webkit-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
 }
 
@@ -2706,18 +1905,18 @@ exports[`DataFilter range prop 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c19:focus > circle,
-.c19:focus > ellipse,
-.c19:focus > line,
-.c19:focus > path,
-.c19:focus > polygon,
-.c19:focus > polyline,
-.c19:focus > rect {
+.c19:focus >circle,
+.c19:focus >ellipse,
+.c19:focus >line,
+.c19:focus >path,
+.c19:focus >polygon,
+.c19:focus >polyline,
+.c19:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c19:focus::-moz-focus-inner {
+.c19:focus ::-moz-focus-inner {
   border: 0;
 }
 
@@ -2726,90 +1925,19 @@ exports[`DataFilter range prop 1`] = `
   box-shadow: none;
 }
 
-.c19:focus:not(:focus-visible) > circle,
-.c19:focus:not(:focus-visible) > ellipse,
-.c19:focus:not(:focus-visible) > line,
-.c19:focus:not(:focus-visible) > path,
-.c19:focus:not(:focus-visible) > polygon,
-.c19:focus:not(:focus-visible) > polyline,
-.c19:focus:not(:focus-visible) > rect {
+.c19:focus:not(:focus-visible) >circle,
+.c19:focus:not(:focus-visible) >ellipse,
+.c19:focus:not(:focus-visible) >line,
+.c19:focus:not(:focus-visible) >path,
+.c19:focus:not(:focus-visible) >polygon,
+.c19:focus:not(:focus-visible) >polyline,
+.c19:focus:not(:focus-visible) >rect {
   outline: none;
   box-shadow: none;
 }
 
-.c19:focus:not(:focus-visible)::-moz-focus-inner {
+.c19:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
-}
-
-.c21 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  font: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  border: 2px solid #7D4CDB;
-  border-radius: 18px;
-  color: #444444;
-  padding: 4px 22px;
-  font-size: 18px;
-  line-height: 24px;
-  opacity: 0.3;
-  cursor: default;
-  -webkit-transition-property: color,background-color,border-color,box-shadow;
-  transition-property: color,background-color,border-color,box-shadow;
-  -webkit-transition-duration: 0.1s;
-  transition-duration: 0.1s;
-  -webkit-transition-timing-function: ease-in-out;
-  transition-timing-function: ease-in-out;
-}
-
-.c21:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c21:focus > circle,
-.c21:focus > ellipse,
-.c21:focus > line,
-.c21:focus > path,
-.c21:focus > polygon,
-.c21:focus > polyline,
-.c21:focus > rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c21:focus::-moz-focus-inner {
-  border: 0;
-}
-
-.c21:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c21:focus:not(:focus-visible) > circle,
-.c21:focus:not(:focus-visible) > ellipse,
-.c21:focus:not(:focus-visible) > line,
-.c21:focus:not(:focus-visible) > path,
-.c21:focus:not(:focus-visible) > polygon,
-.c21:focus:not(:focus-visible) > polyline,
-.c21:focus:not(:focus-visible) > rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c21:focus:not(:focus-visible)::-moz-focus-inner {
-  border: 0;
-}
-
-.c22 {
-  opacity: 0;
 }
 
 .c2 {
@@ -2817,9 +1945,6 @@ exports[`DataFilter range prop 1`] = `
 }
 
 .c11 {
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
   user-select: none;
 }
 
@@ -2833,45 +1958,39 @@ exports[`DataFilter range prop 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c5 {
     margin-bottom: 6px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c7 {
-    border-bottom: solid 1px rgba(0,0,0,0.33);
+    border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c7 {
     padding: 6px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c12 {
     border-radius: 6px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c16 {
     border-radius: 6px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c18 {
-    margin-top: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c20 {
-    width: 6px;
+    margin-top: 12px;
   }
 }
 
@@ -2904,7 +2023,7 @@ exports[`DataFilter range prop 1`] = `
                 rating
               </label>
               <div
-                class="c7 FormField__FormFieldContentBox-sc-m9hood-1"
+                class="c7 "
               >
                 <div
                   class="c8"
@@ -2991,18 +2110,6 @@ exports[`DataFilter range prop 1`] = `
           >
             Apply filters
           </button>
-          <div
-            class="c20"
-          />
-          <button
-            aria-hidden="true"
-            class="c21 c22"
-            disabled=""
-            tabindex="-1"
-            type="reset"
-          >
-            Undo changes
-          </button>
         </footer>
       </div>
     </form>
@@ -3012,184 +2119,112 @@ exports[`DataFilter range prop 1`] = `
 
 exports[`DataFilter renders 1`] = `
 .c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
 }
 
 .c3 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
   height: 100%;
 }
 
 .c4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex: 1 1;
-  -ms-flex: 1 1;
   flex: 1 1;
   overflow: auto;
 }
 
 .c5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   margin-bottom: 12px;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
 }
 
 .c7 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
   padding: 12px;
 }
 
 .c8 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
 }
 
 .c10 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   margin-right: 12px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
   justify-content: center;
 }
 
 .c13 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
-  border: solid 2px rgba(0,0,0,0.15);
+  border: solid 2px rgba(0, 0, 0, 0.15);
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
   height: 24px;
   width: 24px;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
   justify-content: center;
   border-radius: 4px;
 }
 
 .c15 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
   flex-direction: row;
   width: 100%;
   height: 100%;
 }
 
 .c17 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
   flex-direction: row;
   width: 100%;
   height: 100%;
@@ -3197,79 +2232,43 @@ exports[`DataFilter renders 1`] = `
 }
 
 .c19 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  -webkit-align-self: stretch;
-  -ms-flex-item-align: stretch;
   align-self: stretch;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
   width: 100%;
   border-radius: 12px;
 }
 
 .c20 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  -webkit-align-self: stretch;
-  -ms-flex-item-align: stretch;
   align-self: stretch;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
   justify-content: center;
   overflow: visible;
 }
 
 .c21 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex-basis: 100%;
-  -ms-flex-preferred-size: 100%;
   flex-basis: 100%;
   height: 100%;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
   justify-content: center;
 }
 
 .c22 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -3277,8 +2276,6 @@ exports[`DataFilter renders 1`] = `
   color: #f8f8f8;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
   height: 12px;
   width: 12px;
@@ -3286,70 +2283,36 @@ exports[`DataFilter renders 1`] = `
 }
 
 .c23 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  -webkit-align-self: stretch;
-  -ms-flex-item-align: stretch;
   align-self: stretch;
-  background-color: rgba(125,76,219,0.4);
+  background-color: rgba(125, 76, 219, 0.4);
   color: #444444;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
   width: 100%;
   border-radius: 12px;
 }
 
 .c25 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  margin-top: 12px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
+  margin-top: 24px;
   align-items: center;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
   justify-content: space-between;
 }
 
 .c14 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  -webkit-align-self: stretch;
-  -ms-flex-item-align: stretch;
   align-self: stretch;
   height: 12px;
-}
-
-.c27 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  -webkit-align-self: stretch;
-  -ms-flex-item-align: stretch;
-  align-self: stretch;
-  width: 12px;
 }
 
 .c6 {
@@ -3381,7 +2344,6 @@ exports[`DataFilter renders 1`] = `
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
-  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -3396,11 +2358,8 @@ exports[`DataFilter renders 1`] = `
   background-color: #7D4CDB;
   color: #f8f8f8;
   border-radius: 18px;
-  -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
-  -webkit-transition-duration: 0.1s;
   transition-duration: 0.1s;
-  -webkit-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
 }
 
@@ -3413,18 +2372,18 @@ exports[`DataFilter renders 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c26:focus > circle,
-.c26:focus > ellipse,
-.c26:focus > line,
-.c26:focus > path,
-.c26:focus > polygon,
-.c26:focus > polyline,
-.c26:focus > rect {
+.c26:focus >circle,
+.c26:focus >ellipse,
+.c26:focus >line,
+.c26:focus >path,
+.c26:focus >polygon,
+.c26:focus >polyline,
+.c26:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c26:focus::-moz-focus-inner {
+.c26:focus ::-moz-focus-inner {
   border: 0;
 }
 
@@ -3433,90 +2392,19 @@ exports[`DataFilter renders 1`] = `
   box-shadow: none;
 }
 
-.c26:focus:not(:focus-visible) > circle,
-.c26:focus:not(:focus-visible) > ellipse,
-.c26:focus:not(:focus-visible) > line,
-.c26:focus:not(:focus-visible) > path,
-.c26:focus:not(:focus-visible) > polygon,
-.c26:focus:not(:focus-visible) > polyline,
-.c26:focus:not(:focus-visible) > rect {
+.c26:focus:not(:focus-visible) >circle,
+.c26:focus:not(:focus-visible) >ellipse,
+.c26:focus:not(:focus-visible) >line,
+.c26:focus:not(:focus-visible) >path,
+.c26:focus:not(:focus-visible) >polygon,
+.c26:focus:not(:focus-visible) >polyline,
+.c26:focus:not(:focus-visible) >rect {
   outline: none;
   box-shadow: none;
 }
 
-.c26:focus:not(:focus-visible)::-moz-focus-inner {
+.c26:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
-}
-
-.c28 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  font: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  border: 2px solid #7D4CDB;
-  border-radius: 18px;
-  color: #444444;
-  padding: 4px 22px;
-  font-size: 18px;
-  line-height: 24px;
-  opacity: 0.3;
-  cursor: default;
-  -webkit-transition-property: color,background-color,border-color,box-shadow;
-  transition-property: color,background-color,border-color,box-shadow;
-  -webkit-transition-duration: 0.1s;
-  transition-duration: 0.1s;
-  -webkit-transition-timing-function: ease-in-out;
-  transition-timing-function: ease-in-out;
-}
-
-.c28:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c28:focus > circle,
-.c28:focus > ellipse,
-.c28:focus > line,
-.c28:focus > path,
-.c28:focus > polygon,
-.c28:focus > polyline,
-.c28:focus > rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c28:focus::-moz-focus-inner {
-  border: 0;
-}
-
-.c28:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c28:focus:not(:focus-visible) > circle,
-.c28:focus:not(:focus-visible) > ellipse,
-.c28:focus:not(:focus-visible) > line,
-.c28:focus:not(:focus-visible) > path,
-.c28:focus:not(:focus-visible) > polygon,
-.c28:focus:not(:focus-visible) > polyline,
-.c28:focus:not(:focus-visible) > rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c28:focus:not(:focus-visible)::-moz-focus-inner {
-  border: 0;
-}
-
-.c29 {
-  opacity: 0;
 }
 
 .c2 {
@@ -3524,29 +2412,17 @@ exports[`DataFilter renders 1`] = `
 }
 
 .c9 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
   user-select: none;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
+  -webkit-user-select: none;
   width: fit-content;
   cursor: pointer;
 }
 
-.c9:hover input:not([disabled]) + div,
-.c9:hover input:not([disabled]) + span {
+.c9:hover input:not([disabled])+div,
+.c9:hover input:not([disabled])+span {
   border-color: #000000;
 }
 
@@ -3559,21 +2435,16 @@ exports[`DataFilter renders 1`] = `
   cursor: pointer;
 }
 
-.c12:checked + span > span {
+.c12:checked+span>span {
   left: calc( 48px - 24px );
   background: #7D4CDB;
 }
 
 .c11 {
-  -webkit-flex-shrink: 0;
-  -ms-flex-negative: 0;
   flex-shrink: 0;
 }
 
 .c18 {
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
   user-select: none;
 }
 
@@ -3587,63 +2458,57 @@ exports[`DataFilter renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c5 {
     margin-bottom: 6px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c7 {
-    border-bottom: solid 1px rgba(0,0,0,0.33);
+    border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c7 {
     padding: 6px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c10 {
     margin-right: 6px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c13 {
-    border: solid 2px rgba(0,0,0,0.15);
+    border: solid 2px rgba(0, 0, 0, 0.15);
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c19 {
     border-radius: 6px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c23 {
     border-radius: 6px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c25 {
-    margin-top: 6px;
+    margin-top: 12px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c14 {
     height: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c27 {
-    width: 6px;
   }
 }
 
@@ -3676,7 +2541,7 @@ exports[`DataFilter renders 1`] = `
                 name
               </label>
               <div
-                class="c7 FormField__FormFieldContentBox-sc-m9hood-1"
+                class="c7 "
               >
                 <div
                   class="c8 StyledCheckBoxGroup-sc-2nhc5d-0"
@@ -3685,7 +2550,6 @@ exports[`DataFilter renders 1`] = `
                 >
                   <label
                     class="c9"
-                    label="aa"
                   >
                     <div
                       class="c10 c11"
@@ -3707,7 +2571,6 @@ exports[`DataFilter renders 1`] = `
                   />
                   <label
                     class="c9"
-                    label="bb"
                   >
                     <div
                       class="c10 c11"
@@ -3729,7 +2592,6 @@ exports[`DataFilter renders 1`] = `
                   />
                   <label
                     class="c9"
-                    label="cc"
                   >
                     <div
                       class="c10 c11"
@@ -3759,7 +2621,7 @@ exports[`DataFilter renders 1`] = `
                 enabled
               </label>
               <div
-                class="c7 FormField__FormFieldContentBox-sc-m9hood-1"
+                class="c7 "
               >
                 <div
                   class="c8 StyledCheckBoxGroup-sc-2nhc5d-0"
@@ -3768,7 +2630,6 @@ exports[`DataFilter renders 1`] = `
                 >
                   <label
                     class="c9"
-                    label="true"
                   >
                     <div
                       class="c10 c11"
@@ -3790,7 +2651,6 @@ exports[`DataFilter renders 1`] = `
                   />
                   <label
                     class="c9"
-                    label="false"
                   >
                     <div
                       class="c10 c11"
@@ -3820,7 +2680,7 @@ exports[`DataFilter renders 1`] = `
                 rating
               </label>
               <div
-                class="c7 FormField__FormFieldContentBox-sc-m9hood-1"
+                class="c7 "
               >
                 <div
                   class="c15"
@@ -3830,7 +2690,7 @@ exports[`DataFilter renders 1`] = `
                     class="c16"
                     style="width: 0px;"
                   >
-                    2.0999999999999996
+                    2.1
                   </span>
                   <div
                     class="c17 c18"
@@ -3846,9 +2706,9 @@ exports[`DataFilter renders 1`] = `
                     >
                       <div
                         aria-label="Lower Bounds"
-                        aria-valuemax="4.8999999999999995"
-                        aria-valuemin="2.0999999999999996"
-                        aria-valuenow="2.0999999999999996"
+                        aria-valuemax="4.9"
+                        aria-valuemin="2.1"
+                        aria-valuenow="2.1"
                         class="c21"
                         role="slider"
                         style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
@@ -3861,7 +2721,7 @@ exports[`DataFilter renders 1`] = `
                     </div>
                     <div
                       class="c23"
-                      style="flex: 3.8 0 0px; cursor: ew-resize;"
+                      style="flex: 3.8000000000000003 0 0px; cursor: ew-resize;"
                     />
                     <div
                       class="c20"
@@ -3869,9 +2729,9 @@ exports[`DataFilter renders 1`] = `
                     >
                       <div
                         aria-label="Upper Bounds"
-                        aria-valuemax="4.8999999999999995"
-                        aria-valuemin="2.0999999999999996"
-                        aria-valuenow="4.8999999999999995"
+                        aria-valuemax="4.9"
+                        aria-valuemin="2.1"
+                        aria-valuenow="4.9"
                         class="c21"
                         role="slider"
                         style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
@@ -3891,7 +2751,7 @@ exports[`DataFilter renders 1`] = `
                     class="c24"
                     style="width: 0px;"
                   >
-                    4.8999999999999995
+                    4.9
                   </span>
                 </div>
               </div>
@@ -3907,18 +2767,6 @@ exports[`DataFilter renders 1`] = `
           >
             Apply filters
           </button>
-          <div
-            class="c27"
-          />
-          <button
-            aria-hidden="true"
-            class="c28 c29"
-            disabled=""
-            tabindex="-1"
-            type="reset"
-          >
-            Undo changes
-          </button>
         </footer>
       </div>
     </form>
@@ -3928,10 +2776,54 @@ exports[`DataFilter renders 1`] = `
 
 exports[`DataFilter select multiple options 1`] = `
 <DocumentFragment>
-  .c6 {
+  .c1 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  flex: 0 0 auto;
+}
+
+.c2 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: row;
+  flex: 0 0 auto;
+}
+
+.c8 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-items: center;
+  background-color: #7D4CDB;
+  color: #f8f8f8;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  flex: 0 0 auto;
+  justify-content: center;
+  border-radius: 24px;
+}
+
+.c10 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin-inline-start: 12px;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  flex: 0 0 auto;
+}
+
+.c6 {
   display: inline-block;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
@@ -3962,86 +2854,6 @@ exports[`DataFilter select multiple options 1`] = `
   stroke: none;
 }
 
-.c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-}
-
-.c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-}
-
-.c8 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  background-color: #7D4CDB;
-  color: #f8f8f8;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  border-radius: 24px;
-}
-
-.c10 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  margin-inline-start: 12px;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-}
-
 .c4 {
   position: relative;
 }
@@ -4069,7 +2881,6 @@ exports[`DataFilter select multiple options 1`] = `
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
-  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -4089,18 +2900,18 @@ exports[`DataFilter select multiple options 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus > circle,
-.c3:focus > ellipse,
-.c3:focus > line,
-.c3:focus > path,
-.c3:focus > polygon,
-.c3:focus > polyline,
-.c3:focus > rect {
+.c3:focus >circle,
+.c3:focus >ellipse,
+.c3:focus >line,
+.c3:focus >path,
+.c3:focus >polygon,
+.c3:focus >polyline,
+.c3:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus::-moz-focus-inner {
+.c3:focus ::-moz-focus-inner {
   border: 0;
 }
 
@@ -4109,18 +2920,18 @@ exports[`DataFilter select multiple options 1`] = `
   box-shadow: none;
 }
 
-.c3:focus:not(:focus-visible) > circle,
-.c3:focus:not(:focus-visible) > ellipse,
-.c3:focus:not(:focus-visible) > line,
-.c3:focus:not(:focus-visible) > path,
-.c3:focus:not(:focus-visible) > polygon,
-.c3:focus:not(:focus-visible) > polyline,
-.c3:focus:not(:focus-visible) > rect {
+.c3:focus:not(:focus-visible) >circle,
+.c3:focus:not(:focus-visible) >ellipse,
+.c3:focus:not(:focus-visible) >line,
+.c3:focus:not(:focus-visible) >path,
+.c3:focus:not(:focus-visible) >polygon,
+.c3:focus:not(:focus-visible) >polyline,
+.c3:focus:not(:focus-visible) >rect {
   outline: none;
   box-shadow: none;
 }
 
-.c3:focus:not(:focus-visible)::-moz-focus-inner {
+.c3:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 
@@ -4129,7 +2940,6 @@ exports[`DataFilter select multiple options 1`] = `
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
-  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -4141,11 +2951,8 @@ exports[`DataFilter select multiple options 1`] = `
   padding: 4px 22px;
   font-size: 18px;
   line-height: 24px;
-  -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
-  -webkit-transition-duration: 0.1s;
   transition-duration: 0.1s;
-  -webkit-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
 }
 
@@ -4158,18 +2965,18 @@ exports[`DataFilter select multiple options 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c11:focus > circle,
-.c11:focus > ellipse,
-.c11:focus > line,
-.c11:focus > path,
-.c11:focus > polygon,
-.c11:focus > polyline,
-.c11:focus > rect {
+.c11:focus >circle,
+.c11:focus >ellipse,
+.c11:focus >line,
+.c11:focus >path,
+.c11:focus >polygon,
+.c11:focus >polyline,
+.c11:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c11:focus::-moz-focus-inner {
+.c11:focus ::-moz-focus-inner {
   border: 0;
 }
 
@@ -4178,18 +2985,18 @@ exports[`DataFilter select multiple options 1`] = `
   box-shadow: none;
 }
 
-.c11:focus:not(:focus-visible) > circle,
-.c11:focus:not(:focus-visible) > ellipse,
-.c11:focus:not(:focus-visible) > line,
-.c11:focus:not(:focus-visible) > path,
-.c11:focus:not(:focus-visible) > polygon,
-.c11:focus:not(:focus-visible) > polyline,
-.c11:focus:not(:focus-visible) > rect {
+.c11:focus:not(:focus-visible) >circle,
+.c11:focus:not(:focus-visible) >ellipse,
+.c11:focus:not(:focus-visible) >line,
+.c11:focus:not(:focus-visible) >path,
+.c11:focus:not(:focus-visible) >polygon,
+.c11:focus:not(:focus-visible) >polyline,
+.c11:focus:not(:focus-visible) >rect {
   outline: none;
   box-shadow: none;
 }
 
-.c11:focus:not(:focus-visible)::-moz-focus-inner {
+.c11:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 
@@ -4203,91 +3010,91 @@ exports[`DataFilter select multiple options 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
 
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
 
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
 
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
 
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
 
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
 
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
 
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
 
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
 
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
 
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
 
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
 
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
 
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
 
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
 
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
 
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
 
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
 
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c8 {
     border-radius: 12px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c10 {
     margin-inline-start: 6px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
 
 }
 
@@ -4373,10 +3180,28 @@ exports[`DataFilter select multiple options 1`] = `
 
 exports[`DataFilter select multiple options search 1`] = `
 <DocumentFragment>
-  .c4 {
+  .c1 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  flex: 0 0 auto;
+}
+
+.c2 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: row;
+  flex: 0 0 auto;
+}
+
+.c4 {
   display: inline-block;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
@@ -4407,46 +3232,11 @@ exports[`DataFilter select multiple options search 1`] = `
   stroke: none;
 }
 
-.c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-}
-
-.c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-}
-
 .c3 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
-  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -4461,28 +3251,23 @@ exports[`DataFilter select multiple options search 1`] = `
   padding: 12px;
 }
 
-.c3:hover {
-  background-color: rgba(221,221,221,0.4);
-  color: #000000;
-}
-
 .c3:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus > circle,
-.c3:focus > ellipse,
-.c3:focus > line,
-.c3:focus > path,
-.c3:focus > polygon,
-.c3:focus > polyline,
-.c3:focus > rect {
+.c3:focus >circle,
+.c3:focus >ellipse,
+.c3:focus >line,
+.c3:focus >path,
+.c3:focus >polygon,
+.c3:focus >polyline,
+.c3:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus::-moz-focus-inner {
+.c3:focus ::-moz-focus-inner {
   border: 0;
 }
 
@@ -4491,18 +3276,18 @@ exports[`DataFilter select multiple options search 1`] = `
   box-shadow: none;
 }
 
-.c3:focus:not(:focus-visible) > circle,
-.c3:focus:not(:focus-visible) > ellipse,
-.c3:focus:not(:focus-visible) > line,
-.c3:focus:not(:focus-visible) > path,
-.c3:focus:not(:focus-visible) > polygon,
-.c3:focus:not(:focus-visible) > polyline,
-.c3:focus:not(:focus-visible) > rect {
+.c3:focus:not(:focus-visible) >circle,
+.c3:focus:not(:focus-visible) >ellipse,
+.c3:focus:not(:focus-visible) >line,
+.c3:focus:not(:focus-visible) >path,
+.c3:focus:not(:focus-visible) >polygon,
+.c3:focus:not(:focus-visible) >polyline,
+.c3:focus:not(:focus-visible) >rect {
   outline: none;
   box-shadow: none;
 }
 
-.c3:focus:not(:focus-visible)::-moz-focus-inner {
+.c3:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 
@@ -4551,294 +3336,172 @@ exports[`DataFilter select multiple options search 1`] = `
 </DocumentFragment>
 `;
 
-exports[`DataFilter select multiple options search 2`] = `
-.c11 {
+exports[`DataFilter should allow filtering on multiple sub-properties from same parent property 1`] = `
+<DocumentFragment>
+  .c1 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  flex: 0 0 auto;
+}
+
+.c2 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: row;
+  flex: 0 0 auto;
+}
+
+.c8 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-items: center;
+  background-color: #7D4CDB;
+  color: #f8f8f8;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  flex: 0 0 auto;
+  justify-content: center;
+  border-radius: 24px;
+}
+
+.c10 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin-inline-start: 12px;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  flex: 0 0 auto;
+}
+
+.c6 {
   display: inline-block;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
+  fill: #666666;
+  stroke: #666666;
 }
 
-.c11 g {
+.c6 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c11 *:not([stroke])[fill='none'] {
+.c6 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c11 *[stroke*='#'],
-.c11 *[STROKE*='#'] {
+.c6 *[stroke*='#'],
+.c6 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
-.c11 *[fill-rule],
-.c11 *[FILL-RULE],
-.c11 *[fill*='#'],
-.c11 *[FILL*='#'] {
+.c6 *[fill-rule],
+.c6 *[FILL-RULE],
+.c6 *[fill*='#'],
+.c6 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
 
-.c0 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  overflow: auto;
-  box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
-}
-
-.c10 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  -webkit-align-self: center;
-  -ms-flex-item-align: center;
-  align-self: center;
-  margin-left: 12px;
-  margin-right: 12px;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  min-width: auto;
-}
-
-.c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
 .c4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
+  position: relative;
 }
 
 .c5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  min-height: 48px;
-  -webkit-flex: 1 1;
-  -ms-flex: 1 1;
-  flex: 1 1;
-  width: 100%;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  padding-top: 6px;
-  padding-bottom: 6px;
-  padding-left: 6px;
-}
-
-.c12 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  padding: 6px;
-}
-
-.c19 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  margin-right: 12px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-}
-
-.c22 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  border: solid 2px rgba(0,0,0,0.15);
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  height: 24px;
-  width: 24px;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  border-radius: 4px;
-}
-
-.c23 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  -webkit-align-self: center;
-  -ms-flex-item-align: center;
-  align-self: center;
-  -webkit-align-items: flex-start;
-  -webkit-box-align: flex-start;
-  -ms-flex-align: flex-start;
-  align-items: flex-start;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  width: 100%;
-}
-
-.c24 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  height: 0px;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
+  position: relative;
+  display: block;
 }
 
 .c7 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  -webkit-align-self: stretch;
-  -ms-flex-item-align: stretch;
-  align-self: stretch;
-  width: 12px;
+  position: absolute;
+  top: 0;
+  right: 0;
 }
 
-.c1 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  border-radius: 0px;
-  position: fixed;
-  z-index: 20;
-  outline: none;
-  background-color: #FFFFFF;
-  color: #444444;
-  opacity: 0;
-  -webkit-transform-origin: top right;
-  -ms-transform-origin: top right;
-  transform-origin: top right;
-  -webkit-animation: kPQHBD 0.1s forwards;
-  animation: kPQHBD 0.1s forwards;
-  -webkit-animation-delay: 0.01s;
-  animation-delay: 0.01s;
-}
-
-.c6 {
+.c9 {
   font-size: 14px;
   line-height: 20px;
+  color: #FFFFFF;
+  font-weight: normal;
 }
 
-.c8 {
+.c3 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
-  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+  line-height: 0;
+  padding: 12px;
+}
+
+.c3:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c3:focus >circle,
+.c3:focus >ellipse,
+.c3:focus >line,
+.c3:focus >path,
+.c3:focus >polygon,
+.c3:focus >polyline,
+.c3:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c3:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c3:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c3:focus:not(:focus-visible) >circle,
+.c3:focus:not(:focus-visible) >ellipse,
+.c3:focus:not(:focus-visible) >line,
+.c3:focus:not(:focus-visible) >path,
+.c3:focus:not(:focus-visible) >polygon,
+.c3:focus:not(:focus-visible) >polyline,
+.c3:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c3:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
+}
+
+.c11 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -4850,377 +3513,143 @@ exports[`DataFilter select multiple options search 2`] = `
   padding: 4px 22px;
   font-size: 18px;
   line-height: 24px;
-  -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
-  -webkit-transition-duration: 0.1s;
   transition-duration: 0.1s;
-  -webkit-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
 }
 
-.c8:hover {
+.c11:hover {
   box-shadow: 0px 0px 0px 2px #7D4CDB;
 }
 
-.c8:focus {
+.c11:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c8:focus > circle,
-.c8:focus > ellipse,
-.c8:focus > line,
-.c8:focus > path,
-.c8:focus > polygon,
-.c8:focus > polyline,
-.c8:focus > rect {
+.c11:focus >circle,
+.c11:focus >ellipse,
+.c11:focus >line,
+.c11:focus >path,
+.c11:focus >polygon,
+.c11:focus >polyline,
+.c11:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c8:focus::-moz-focus-inner {
+.c11:focus ::-moz-focus-inner {
   border: 0;
 }
 
-.c8:focus:not(:focus-visible) {
+.c11:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c8:focus:not(:focus-visible) > circle,
-.c8:focus:not(:focus-visible) > ellipse,
-.c8:focus:not(:focus-visible) > line,
-.c8:focus:not(:focus-visible) > path,
-.c8:focus:not(:focus-visible) > polygon,
-.c8:focus:not(:focus-visible) > polyline,
-.c8:focus:not(:focus-visible) > rect {
+.c11:focus:not(:focus-visible) >circle,
+.c11:focus:not(:focus-visible) >ellipse,
+.c11:focus:not(:focus-visible) >line,
+.c11:focus:not(:focus-visible) >path,
+.c11:focus:not(:focus-visible) >polygon,
+.c11:focus:not(:focus-visible) >polyline,
+.c11:focus:not(:focus-visible) >rect {
   outline: none;
   box-shadow: none;
 }
 
-.c8:focus:not(:focus-visible)::-moz-focus-inner {
+.c11:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 
-.c9 {
-  display: inline-block;
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
   box-sizing: border-box;
-  cursor: pointer;
-  font: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  color: inherit;
-  outline: none;
-  border: none;
-  padding: 0;
-  text-align: inherit;
-  height: 100%;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
 }
 
-.c9:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c9:focus > circle,
-.c9:focus > ellipse,
-.c9:focus > line,
-.c9:focus > path,
-.c9:focus > polygon,
-.c9:focus > polyline,
-.c9:focus > rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c9:focus::-moz-focus-inner {
-  border: 0;
-}
-
-.c9:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c9:focus:not(:focus-visible) > circle,
-.c9:focus:not(:focus-visible) > ellipse,
-.c9:focus:not(:focus-visible) > line,
-.c9:focus:not(:focus-visible) > path,
-.c9:focus:not(:focus-visible) > polygon,
-.c9:focus:not(:focus-visible) > polyline,
-.c9:focus:not(:focus-visible) > rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c9:focus:not(:focus-visible)::-moz-focus-inner {
-  border: 0;
-}
-
-.c16 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  font: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  color: inherit;
-  outline: none;
-  border: none;
-  padding: 0;
-  text-align: inherit;
-}
-
-.c16:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c16:focus:not(:focus-visible) > circle,
-.c16:focus:not(:focus-visible) > ellipse,
-.c16:focus:not(:focus-visible) > line,
-.c16:focus:not(:focus-visible) > path,
-.c16:focus:not(:focus-visible) > polygon,
-.c16:focus:not(:focus-visible) > polyline,
-.c16:focus:not(:focus-visible) > rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c16:focus:not(:focus-visible)::-moz-focus-inner {
-  border: 0;
-}
-
-.c18 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-  padding: 6px;
-  cursor: pointer;
-}
-
-.c18:hover input:not([disabled]) + div,
-.c18:hover input:not([disabled]) + span {
-  border-color: #000000;
-}
-
-.c21 {
-  opacity: 0;
-  -moz-appearance: none;
-  width: 0;
-  height: 0;
-  margin: 0;
-  cursor: pointer;
-}
-
-.c21:checked + span > span {
-  left: calc( 48px - 24px );
-  background: #7D4CDB;
-}
-
-.c20 {
-  -webkit-flex-shrink: 0;
-  -ms-flex-negative: 0;
-  flex-shrink: 0;
-}
-
-.c14 {
-  box-sizing: border-box;
-  font-size: inherit;
-  font-family: inherit;
-  border: none;
-  -webkit-appearance: none;
-  background: transparent;
-  color: inherit;
-  width: 100%;
-  padding: 11px;
-  font-weight: 600;
-  margin: 0;
-  font-size: 14px;
-  line-height: 20px;
-  border: 1px solid rgba(0,0,0,0.33);
-  border-radius: 4px;
-}
-
-.c14:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c14:focus > circle,
-.c14:focus > ellipse,
-.c14:focus > line,
-.c14:focus > path,
-.c14:focus > polygon,
-.c14:focus > polyline,
-.c14:focus > rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c14:focus::-moz-focus-inner {
-  border: 0;
-}
-
-.c14::-webkit-input-placeholder {
-  color: #AAAAAA;
-}
-
-.c14::-moz-placeholder {
-  color: #AAAAAA;
-}
-
-.c14:-ms-input-placeholder {
-  color: #AAAAAA;
-}
-
-.c14::-webkit-search-decoration {
-  -webkit-appearance: none;
-}
-
-.c14::-moz-focus-inner {
-  border: none;
-  outline: none;
-}
-
-.c14:-moz-placeholder,
-.c14::-moz-placeholder {
-  opacity: 1;
-}
-
-.c13 {
-  position: relative;
-  width: 100%;
-}
-
-.c3 {
-  max-height: inherit;
-}
-
-.c15 {
-  position: relative;
-  -webkit-scroll-behavior: smooth;
-  -moz-scroll-behavior: smooth;
-  -ms-scroll-behavior: smooth;
-  scroll-behavior: smooth;
-  overflow: auto;
-  outline: none;
-}
-
-.c17 {
-  display: block;
-  width: 100%;
-}
-
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
 
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
 
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
 
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
 
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
 
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
 
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
 
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
 
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
 
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
+
+}
+
+@media only screen and (max-width: 768px) {
+
+}
+
+@media only screen and (max-width: 768px) {
+
+}
+
+@media only screen and (max-width: 768px) {
+
+}
+
+@media only screen and (max-width: 768px) {
+
+}
+
+@media only screen and (max-width: 768px) {
+
+}
+
+@media only screen and (max-width: 768px) {
+  .c8 {
+    border-radius: 12px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
   .c10 {
-    margin-left: 6px;
-    margin-right: 6px;
+    margin-inline-start: 6px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
 
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
 
-}
-
-@media only screen and (max-width:768px) {
-
-}
-
-@media only screen and (max-width:768px) {
-  .c5 {
-    padding-top: 3px;
-    padding-bottom: 3px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c5 {
-    padding-left: 3px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c12 {
-    padding: 3px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c19 {
-    margin-right: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c22 {
-    border: solid 2px rgba(0,0,0,0.15);
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c7 {
-    width: 6px;
-  }
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
@@ -5228,503 +3657,73 @@ exports[`DataFilter select multiple options search 2`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .c1 {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-align-items: stretch;
-    -webkit-box-align: stretch;
-    -ms-flex-align: stretch;
-    align-items: stretch;
-  }
-}
 
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .c3 {
-    width: 100%;
-  }
 }
 
 <div
-  class="c0 c1"
-  data-g-portal-id="1"
-  id="test-data-type.name__drop"
-  style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
-  tabindex="-1"
->
-  <div
-    aria-label="Select dropdown"
-    class="c2 c3"
-    id="test-data-type.name__select-drop"
+    class="c0"
   >
     <div
-      class="c4"
+      class="c1"
+      id="data"
     >
-      <div
-        class="c5"
-      >
-        <span
-          class="c6"
-        >
-          0 selected
-        </span>
-        <div
-          class="c7"
-        />
-        <button
-          aria-label="Select all 10 options"
-          class="c8"
-          type="button"
-        >
-          Select All
-        </button>
-      </div>
       <div
         class="c2"
       >
         <button
-          aria-label="Close Select"
-          class="c9"
+          aria-label="Open filters, 2 filters applied"
+          class="c3"
+          id="data--filters-control"
           type="button"
         >
           <div
-            class="c10"
+            class="c4"
           >
-            <svg
-              aria-label="FormDown"
-              class="c11"
-              viewBox="0 0 24 24"
+            <div
+              class="c5"
             >
-              <path
-                d="m18 9-6 6-6-6"
-                fill="none"
-                stroke="#000"
-                stroke-width="2"
-              />
-            </svg>
+              <svg
+                aria-label="Filter"
+                class="c6"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="m3 6 7 7v8h4v-8l7-7V3H3z"
+                  fill="none"
+                  stroke="#000"
+                  stroke-width="2"
+                />
+              </svg>
+            </div>
+            <div
+              class="c7"
+              style="top: 0px; right: 0px; transform: translate(50%, -50%); transform-origin: 100% 0%;"
+            >
+              <div
+                class="c8 Badge__StyledBadgeContainer-sc-1es4ws1-0"
+                style="min-height: 24px; min-width: 24px;"
+              >
+                <span
+                  class="c9"
+                >
+                  2
+                </span>
+              </div>
+            </div>
           </div>
         </button>
+        <div
+          class="c10"
+        >
+          <button
+            class="c11"
+            type="button"
+          >
+            Clear filters
+          </button>
+        </div>
       </div>
-    </div>
-    <div
-      class="c12"
-    >
-      <div
-        class="c13"
-      >
-        <input
-          aria-label="Search to filter options."
-          autocomplete="off"
-          class="c14"
-          type="search"
-          value=""
-        />
-      </div>
-    </div>
-    <div
-      aria-multiselectable="true"
-      class="c15"
-      role="listbox"
-      tabindex="0"
-    >
-      <button
-        aria-label="ZZ not selected"
-        aria-posinset="1"
-        aria-selected="false"
-        aria-setsize="10"
-        class="c16 c17"
-        id="option0"
-        role="option"
-        tabindex="-1"
-        type="button"
-      >
-        <label
-          class="c18"
-          label="[object Object]"
-        >
-          <div
-            class="c19 c20"
-          >
-            <input
-              class="c21"
-              tabindex="-1"
-              type="checkbox"
-            />
-            <div
-              class="c22 "
-            />
-          </div>
-          <div
-            class="c23"
-          >
-            ZZ
-          </div>
-        </label>
-      </button>
-      <button
-        aria-label="YY not selected"
-        aria-posinset="2"
-        aria-selected="false"
-        aria-setsize="10"
-        class="c16 c17"
-        id="option1"
-        role="option"
-        tabindex="-1"
-        type="button"
-      >
-        <label
-          class="c18"
-          label="[object Object]"
-        >
-          <div
-            class="c19 c20"
-          >
-            <input
-              class="c21"
-              tabindex="-1"
-              type="checkbox"
-            />
-            <div
-              class="c22 "
-            />
-          </div>
-          <div
-            class="c23"
-          >
-            YY
-          </div>
-        </label>
-      </button>
-      <button
-        aria-label="aa not selected"
-        aria-posinset="3"
-        aria-selected="false"
-        aria-setsize="10"
-        class="c16 c17"
-        id="option2"
-        role="option"
-        tabindex="-1"
-        type="button"
-      >
-        <label
-          class="c18"
-          label="[object Object]"
-        >
-          <div
-            class="c19 c20"
-          >
-            <input
-              class="c21"
-              tabindex="-1"
-              type="checkbox"
-            />
-            <div
-              class="c22 "
-            />
-          </div>
-          <div
-            class="c23"
-          >
-            aa
-          </div>
-        </label>
-      </button>
-      <button
-        aria-label="bb not selected"
-        aria-posinset="4"
-        aria-selected="false"
-        aria-setsize="10"
-        class="c16 c17"
-        id="option3"
-        role="option"
-        tabindex="-1"
-        type="button"
-      >
-        <label
-          class="c18"
-          label="[object Object]"
-        >
-          <div
-            class="c19 c20"
-          >
-            <input
-              class="c21"
-              tabindex="-1"
-              type="checkbox"
-            />
-            <div
-              class="c22 "
-            />
-          </div>
-          <div
-            class="c23"
-          >
-            bb
-          </div>
-        </label>
-      </button>
-      <button
-        aria-label="cc not selected"
-        aria-posinset="5"
-        aria-selected="false"
-        aria-setsize="10"
-        class="c16 c17"
-        id="option4"
-        role="option"
-        tabindex="-1"
-        type="button"
-      >
-        <label
-          class="c18"
-          label="[object Object]"
-        >
-          <div
-            class="c19 c20"
-          >
-            <input
-              class="c21"
-              tabindex="-1"
-              type="checkbox"
-            />
-            <div
-              class="c22 "
-            />
-          </div>
-          <div
-            class="c23"
-          >
-            cc
-          </div>
-        </label>
-      </button>
-      <button
-        aria-label="dd not selected"
-        aria-posinset="6"
-        aria-selected="false"
-        aria-setsize="10"
-        class="c16 c17"
-        id="option5"
-        role="option"
-        tabindex="-1"
-        type="button"
-      >
-        <label
-          class="c18"
-          label="[object Object]"
-        >
-          <div
-            class="c19 c20"
-          >
-            <input
-              class="c21"
-              tabindex="-1"
-              type="checkbox"
-            />
-            <div
-              class="c22 "
-            />
-          </div>
-          <div
-            class="c23"
-          >
-            dd
-          </div>
-        </label>
-      </button>
-      <button
-        aria-label="ee not selected"
-        aria-posinset="7"
-        aria-selected="false"
-        aria-setsize="10"
-        class="c16 c17"
-        id="option6"
-        role="option"
-        tabindex="-1"
-        type="button"
-      >
-        <label
-          class="c18"
-          label="[object Object]"
-        >
-          <div
-            class="c19 c20"
-          >
-            <input
-              class="c21"
-              tabindex="-1"
-              type="checkbox"
-            />
-            <div
-              class="c22 "
-            />
-          </div>
-          <div
-            class="c23"
-          >
-            ee
-          </div>
-        </label>
-      </button>
-      <button
-        aria-label="ff not selected"
-        aria-posinset="8"
-        aria-selected="false"
-        aria-setsize="10"
-        class="c16 c17"
-        id="option7"
-        role="option"
-        tabindex="-1"
-        type="button"
-      >
-        <label
-          class="c18"
-          label="[object Object]"
-        >
-          <div
-            class="c19 c20"
-          >
-            <input
-              class="c21"
-              tabindex="-1"
-              type="checkbox"
-            />
-            <div
-              class="c22 "
-            />
-          </div>
-          <div
-            class="c23"
-          >
-            ff
-          </div>
-        </label>
-      </button>
-      <button
-        aria-label="gg not selected"
-        aria-posinset="9"
-        aria-selected="false"
-        aria-setsize="10"
-        class="c16 c17"
-        id="option8"
-        role="option"
-        tabindex="-1"
-        type="button"
-      >
-        <label
-          class="c18"
-          label="[object Object]"
-        >
-          <div
-            class="c19 c20"
-          >
-            <input
-              class="c21"
-              tabindex="-1"
-              type="checkbox"
-            />
-            <div
-              class="c22 "
-            />
-          </div>
-          <div
-            class="c23"
-          >
-            gg
-          </div>
-        </label>
-      </button>
-      <button
-        aria-label="hh not selected"
-        aria-posinset="10"
-        aria-selected="false"
-        aria-setsize="10"
-        class="c16 c17"
-        id="option9"
-        role="option"
-        tabindex="-1"
-        type="button"
-      >
-        <label
-          class="c18"
-          label="[object Object]"
-        >
-          <div
-            class="c19 c20"
-          >
-            <input
-              class="c21"
-              tabindex="-1"
-              type="checkbox"
-            />
-            <div
-              class="c22 "
-            />
-          </div>
-          <div
-            class="c23"
-          >
-            hh
-          </div>
-        </label>
-      </button>
-      <div
-        class="c24"
-      />
     </div>
   </div>
-</div>
-`;
-
-exports[`DataFilter select multiple options search 3`] = `
-"@media only screen and (max-width: 768px) {
-  .jstWSP {
-    margin-bottom: 6px;
-  }
-}
-@media only screen and (max-width: 768px) {
-  .gkHEjs {
-    border-bottom: solid 1px rgba(0, 0, 0, 0.33);
-  }
-}
-@media only screen and (max-width: 768px) {
-  .gkHEjs {
-    padding: 6px;
-  }
-}
-@media only screen and (max-width: 768px) {
-  .vOYHH {
-    margin-right: 6px;
-  }
-}
-@media only screen and (max-width: 768px) {
-  .gPKPHc {
-    border: solid 2px rgba(0, 0, 0, 0.15);
-  }
-}
-@media only screen and (max-width: 768px) {
-  .dmBBcR {
-    border-radius: 6px;
-  }
-}
-@media only screen and (max-width: 768px) {
-  .iPXDvR {
-    border-radius: 6px;
-  }
-}
-@media only screen and (max-width: 768px) {
-  .dypTlm {
-    margin-top: 6px;
-  }
-}
-@media only screen and (max-width: 768px) {
-  .biJsVL {
-    height: 6px;
-  }
-}
-@media only screen and (max-width: 768px) {
-  .EuOQj {
-    width: 6px;
-  }
-}"
+</DocumentFragment>
 `;

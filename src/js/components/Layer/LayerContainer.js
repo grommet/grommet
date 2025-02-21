@@ -5,8 +5,7 @@ import React, {
   useMemo,
   useRef,
 } from 'react';
-import styled, { ThemeContext } from 'styled-components';
-import { defaultProps } from '../../default-props';
+import { ThemeContext } from 'styled-components';
 
 import { FocusedContainer } from '../FocusedContainer';
 import { Keyboard } from '../Keyboard';
@@ -22,13 +21,7 @@ import {
 } from '../../utils';
 
 import { StyledLayer, StyledContainer, StyledOverlay } from './StyledLayer';
-
-const HiddenAnchor = styled.a`
-  width: 0;
-  height: 0;
-  overflow: hidden;
-  position: absolute;
-`;
+import { useThemeValue } from '../../utils/useThemeValue';
 
 const LayerContainer = forwardRef(
   (
@@ -50,12 +43,11 @@ const LayerContainer = forwardRef(
     ref,
   ) => {
     const containerTarget = useContext(ContainerTargetContext);
-    const theme = useContext(ThemeContext) || defaultProps.theme;
+    const { theme, passThemeFlag } = useThemeValue();
     const size = useContext(ResponsiveContext);
     // layerOptions was created to preserve backwards compatibility but
     // should not be supported in v3
     const { layer: layerOptions } = useContext(OptionsContext);
-    const anchorRef = useRef();
     const containerRef = useRef();
     const layerRef = useRef();
     const portalContext = useContext(PortalContext);
@@ -95,7 +87,8 @@ const LayerContainer = forwardRef(
         // Once layer is open we make sure it has focus so that you
         // can start tabbing inside the layer. If the caller put focus
         // on an element already, we honor that. Otherwise, we put
-        // the focus in the hidden anchor.
+        // the focus within the layer. Look at FocusedContainer.js for
+        // more details.
         let element = document.activeElement;
         while (element) {
           if (element === containerRef.current) {
@@ -103,9 +96,6 @@ const LayerContainer = forwardRef(
             break;
           }
           element = element.parentElement;
-        }
-        if (modal && !element && anchorRef.current) {
-          anchorRef.current.focus();
         }
       }
     }, [modal, position, ref]);
@@ -214,6 +204,7 @@ const LayerContainer = forwardRef(
         full={full}
         margin={margin}
         modal={modal}
+        {...passThemeFlag}
         {...rest}
         position={position}
         plain={plain}
@@ -224,11 +215,6 @@ const LayerContainer = forwardRef(
         // or outside of the layer
         data-g-portal-id={portalId}
       >
-        {/* eslint-disable max-len */}
-        {/* eslint-disable jsx-a11y/anchor-is-valid, jsx-a11y/anchor-has-content */}
-        <HiddenAnchor ref={anchorRef} tabIndex="-1" aria-hidden="true" />
-        {/* eslint-enable jsx-a11y/anchor-is-valid, jsx-a11y/anchor-has-content */}
-        {/* eslint-enable max-len */}
         {children}
       </StyledContainer>
     );
@@ -242,12 +228,14 @@ const LayerContainer = forwardRef(
         layerTarget={layerTarget}
         tabIndex="-1"
         dir={theme.dir}
+        {...passThemeFlag}
       >
         {modal && (
           <StyledOverlay
             plain={plain}
             responsive={responsive}
             onMouseDown={onClickOutside}
+            {...passThemeFlag}
           />
         )}
         {content}
@@ -310,8 +298,9 @@ const LayerContainer = forwardRef(
           // restricting scroll could inhibit the user's
           // ability to scroll the page while the layer is open.
           restrictScroll={
-            !layerTarget &&
-            (modal || hitResponsiveBreakpoint) ? true : undefined
+            !layerTarget && (modal || hitResponsiveBreakpoint)
+              ? true
+              : undefined
           }
           trapFocus
         >

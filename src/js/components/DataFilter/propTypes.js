@@ -18,6 +18,11 @@ if (process.env.NODE_ENV !== 'production') {
       ]),
     ),
     property: PropTypes.string,
+    range: PropTypes.shape({
+      max: PropTypes.number,
+      min: PropTypes.number,
+      step: PropTypes.number,
+    }),
   };
 }
 export const DataFilterPropTypes = PropType;

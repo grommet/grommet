@@ -27,7 +27,7 @@ export interface CheckBoxGroupProps {
 export interface CheckBoxGroupExtendedProps
   extends CheckBoxGroupProps,
     BoxProps,
-    Omit<JSX.IntrinsicElements['div'], 'onClick' | keyof CheckBoxGroupProps> {}
+    Omit<JSX.IntrinsicElements['div'], keyof CheckBoxGroupProps> {}
 
 declare const CheckBoxGroup: React.FC<CheckBoxGroupExtendedProps>;
 

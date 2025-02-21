@@ -33,12 +33,13 @@ export interface BoxProps {
   background?: BackgroundType;
   basis?: BasisType;
   border?: BorderType;
+  cssGap?: boolean;
   direction?: DirectionType;
   elevation?: ElevationType;
   flex?: 'grow' | 'shrink' | boolean | { grow?: number; shrink?: number };
   fill?: FillType;
   focusIndicator?: boolean;
-  gap?: GapType;
+  gap?: GapType | { row?: GapType; column?: GapType };
   height?: HeightType;
   hoverIndicator?:
     | { background?: BackgroundType; elevation?: ElevationType }
@@ -52,7 +53,6 @@ export interface BoxProps {
     | 'evenly'
     | 'start'
     | 'stretch';
-  onClick?: (...args: any[]) => any;
   overflow?:
     | 'auto'
     | 'hidden'

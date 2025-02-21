@@ -11,7 +11,7 @@ import {
   getHoverIndicatorStyle,
   normalizeColor,
 } from '../../utils';
-import { defaultProps } from '../../default-props';
+import { elevationStyle, styledComponentsConfig } from '../../utils/styles';
 
 const radiusStyle = (props) => {
   // border.radius shouldn't impact an only-icon rendering.
@@ -60,6 +60,8 @@ const basicStyle = (props) => css`
       props.theme,
     )};
   border-radius: ${radiusStyle(props)};
+  ${props.theme.button.elevation &&
+  elevationStyle(props.theme.button.elevation)}
   color: ${normalizeColor(props.theme.button.color || 'text', props.theme)};
   padding: ${padStyle(props)};
   ${fontStyle(props)}
@@ -77,6 +79,8 @@ const primaryStyle = (props) => css`
     props.theme.button.color,
   )}
   border-radius: ${radiusStyle(props)};
+  ${props.theme.button.primary?.elevation &&
+  elevationStyle(props.theme.button.primary?.elevation)}
   ${props.theme.button.primary && props.theme.button.primary.extend}
 `;
 
@@ -184,7 +188,7 @@ const disabledButtonStyle = (props) => css`
 `;
 
 // Deprecate props.theme.button.disabled.opacity in V3
-const StyledButton = styled.button`
+const StyledButton = styled.button.withConfig(styledComponentsConfig)`
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -257,8 +261,5 @@ const StyledButton = styled.button`
     cursor: default;
   `}
 `;
-
-StyledButton.defaultProps = {};
-Object.setPrototypeOf(StyledButton.defaultProps, defaultProps);
 
 export { StyledButton };

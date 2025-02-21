@@ -1,10 +1,10 @@
 version: 2.1
 orbs:
-  browser-tools: circleci/browser-tools@1.4.1
+  browser-tools: circleci/browser-tools@1.4.8
 defaults: &defaults
   working_directory: ~/grommet-ci
   docker:
-    - image: cimg/node:18.13.0-browsers
+    - image: cimg/node:20.18.0-browsers
 jobs:
   checkout:
     <<: *defaults
@@ -50,7 +50,7 @@ jobs:
           at: ~/grommet-ci
       - run:
           name: Running chromatic test
-          command: yarn chromatic --exit-zero-on-changes
+          command: yarn chromatic -t $CHROMATIC_TOKEN --exit-zero-on-changes
   chromatic-accept:
     <<: *defaults
     steps:
@@ -58,7 +58,7 @@ jobs:
           at: ~/grommet-ci
       - run:
           name: Running chromatic test
-          command: yarn chromatic --exit-zero-on-changes --auto-accept-changes
+          command: yarn chromatic -t $CHROMATIC_TOKEN --exit-zero-on-changes --auto-accept-changes
   build:
     <<: *defaults
     resource_class: medium+
@@ -83,13 +83,17 @@ jobs:
           command: yarn test-bundlesize
   test:
     <<: *defaults
-    resource_class: small 
+    resource_class: small
     # Assigned a size small resource class because we currently only have 3 end
     # to end tests. As we expand our e2e testing we may want to adjust this.
     steps:
       - attach_workspace:
           at: ~/grommet-ci
-      - browser-tools/install-chrome
+      - run: sudo apt-get update
+      - browser-tools/install-chrome:
+          replace-existing: true
+          chrome-version: 129.0.6668.100
+          # temporary solution, v130 is causing websocket connection issue
       - browser-tools/install-chromedriver
       - run:
           name: Start project
@@ -178,6 +182,8 @@ workflows:
             tags:
               only: /.*/
       - release:
+          context:
+            - grommet
           requires:
             - jest
             - chromatic
@@ -188,6 +194,8 @@ workflows:
               only:
                 - master
       - publish:
+          context:
+            - grommet
           requires:
             - jest
             - chromatic

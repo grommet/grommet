@@ -22,6 +22,7 @@ export interface DateInputProps {
   };
   name?: string;
   onChange?: (event: { value: string | string[] }) => void;
+  readOnlyCopy?: boolean;
   size?:
     | 'xsmall'
     | 'small'

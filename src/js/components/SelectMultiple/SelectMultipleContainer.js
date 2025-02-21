@@ -6,11 +6,8 @@ import React, {
   useRef,
   useState,
 } from 'react';
-import { ThemeContext } from 'styled-components';
 
 import { setFocusWithoutScroll } from '../../utils';
-
-import { defaultProps } from '../../default-props';
 
 import { Box } from '../Box';
 import { Button } from '../Button';
@@ -34,6 +31,8 @@ import {
   arrayIncludes,
 } from '../Select/utils';
 import { EmptySearchOption } from '../Select/EmptySearchOption';
+import { MessageContext } from '../../contexts/MessageContext';
+import { useThemeValue } from '../../utils/useThemeValue';
 
 const SelectMultipleContainer = forwardRef(
   (
@@ -49,6 +48,7 @@ const SelectMultipleContainer = forwardRef(
       id,
       labelKey,
       limit,
+      messages,
       onChange,
       onClose,
       onKeyDown,
@@ -67,9 +67,10 @@ const SelectMultipleContainer = forwardRef(
     },
     ref,
   ) => {
-    const theme = useContext(ThemeContext) || defaultProps.theme;
+    const { theme } = useThemeValue();
     const [activeIndex, setActiveIndex] = useState(-1);
     const [keyboardNavigation, setKeyboardNavigation] = useState(usingKeyboard);
+    const { format } = useContext(MessageContext);
     const searchRef = useRef();
     const optionsRef = useRef();
     const [disabled, setDisabled] = useState(disabledProp);
@@ -111,7 +112,7 @@ const SelectMultipleContainer = forwardRef(
 
     useEffect(() => {
       const optionsNode = optionsRef.current;
-      if (optionsNode.children) {
+      if (optionsNode?.children) {
         const optionNode = optionsNode.children[activeIndex];
         if (optionNode) optionNode.focus();
       }
@@ -185,7 +186,7 @@ const SelectMultipleContainer = forwardRef(
       (event) => {
         event.preventDefault();
         const nextActiveIndex = activeIndex + 1;
-        if (nextActiveIndex !== options.length) {
+        if (nextActiveIndex !== options?.length) {
           setActiveIndex(nextActiveIndex);
           setKeyboardNavigation(true);
         }
@@ -255,7 +256,7 @@ const SelectMultipleContainer = forwardRef(
         if (
           !isDisabled(activeIndex) &&
           activeIndex >= 0 &&
-          activeIndex < options.length
+          activeIndex < options?.length
         ) {
           event.preventDefault(); // prevent submitting forms
           selectOption(activeIndex)(event);
@@ -299,7 +300,7 @@ const SelectMultipleContainer = forwardRef(
         if (value.length === limit) {
           const newDisabled = [...disabledProp];
           // disable everything that is not selected
-          for (let i = 0; i < options.length; i += 1) {
+          for (let i = 0; i < options?.length; i += 1) {
             if (!isSelected(i) && !originallyDisabled(i)) {
               newDisabled.push(options[i]);
             }
@@ -343,6 +344,7 @@ const SelectMultipleContainer = forwardRef(
         isSelected={isSelected}
         labelKey={labelKey}
         limit={limit}
+        messages={messages}
         onChange={onChange}
         onMore={onMore}
         options={options}
@@ -388,10 +390,12 @@ const SelectMultipleContainer = forwardRef(
       >
         <StyledContainer
           ref={ref}
-          as={Box}
           id={id ? `${id}__select-drop` : undefined}
           dropHeight={dropHeight}
-          a11yTitle="Select dropdown"
+          a11yTitle={format({
+            id: 'selectMultiple.selectDrop',
+            messages,
+          })}
         >
           {summaryContent}
           {onSearch && (
@@ -402,7 +406,10 @@ const SelectMultipleContainer = forwardRef(
                 }}
               >
                 <SelectTextInput
-                  a11yTitle="Search to filter options."
+                  a11yTitle={format({
+                    id: 'selectMultiple.search',
+                    messages,
+                  })}
                   focusIndicator={!customSearchInput}
                   size="small"
                   ref={searchRef}
@@ -420,7 +427,7 @@ const SelectMultipleContainer = forwardRef(
             </Box>
           )}
           {helpContent}
-          {options.length > 0 ? (
+          {options?.length > 0 ? (
             <OptionsContainer
               role="listbox"
               tabIndex="0"
@@ -428,6 +435,7 @@ const SelectMultipleContainer = forwardRef(
               aria-multiselectable
               onMouseMove={() => setKeyboardNavigation(false)}
               aria-activedescendant={optionsRef?.current?.children[activeIndex]}
+              selectMultiple // internal prop
             >
               <InfiniteScroll
                 items={options}
@@ -483,6 +491,16 @@ const SelectMultipleContainer = forwardRef(
                         tabIndex="-1"
                         checked={optionSelected}
                         disabled={optionDisabled}
+                        inert="" // revisit for React 19
+                        containerProps={{
+                          // in Firefox when we have inert set, the checkbox
+                          // click event gets swallowed by the checkbox.
+                          // We need the click event to go the the button
+                          // around the checkbox so we use pointerEvents =
+                          // none. For code clarity we decided an inline
+                          // style made sense here.
+                          style: { pointerEvents: 'none' },
+                        }}
                       />
                     );
                   }
@@ -529,6 +547,16 @@ const SelectMultipleContainer = forwardRef(
                           tabIndex="-1"
                           checked={optionSelected}
                           disabled={optionDisabled}
+                          inert="" // revisit for React 19
+                          containerProps={{
+                            // in Firefox when we have inert set, the checkbox
+                            // click event gets swallowed by the checkbox.
+                            // We need the click event to go the the button
+                            // around the checkbox so we use pointerEvents =
+                            // none. For code clarity we decided an inline
+                            // style made sense here.
+                            style: { pointerEvents: 'none' },
+                          }}
                         />
                       );
                     }
@@ -537,12 +565,15 @@ const SelectMultipleContainer = forwardRef(
                   // if we have a child, turn on plain, and hoverIndicator
                   return (
                     <SelectOption
-                      a11yTitle={
-                        optionSelected
-                          ? `${optionLabel} selected`
-                          : `${optionLabel} not selected`
-                      }
-                      // eslint-disable-next-line react/no-array-index-key
+                      a11yTitle={format({
+                        id: optionSelected
+                          ? 'selectMultiple.optionSelected'
+                          : 'selectMultiple.optionNotSelected',
+                        messages,
+                        values: {
+                          optionLabel,
+                        },
+                      })}
                       key={index}
                       // merge optionRef and activeRef
                       ref={(node) => {

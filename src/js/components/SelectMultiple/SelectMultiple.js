@@ -8,9 +8,8 @@ import React, {
   useRef,
   useEffect,
 } from 'react';
-import styled, { ThemeContext } from 'styled-components';
+import styled from 'styled-components';
 import { controlBorderStyle, useKeyboard, useForwardedRef } from '../../utils';
-import { defaultProps } from '../../default-props';
 
 import { Box } from '../Box';
 import { DropButton } from '../DropButton';
@@ -36,15 +35,13 @@ import {
 import { DefaultSelectTextInput } from '../Select/DefaultSelectTextInput';
 import { MessageContext } from '../../contexts/MessageContext';
 import { SelectMultiplePropTypes } from './propTypes';
+import { useThemeValue } from '../../utils/useThemeValue';
 
 const StyledSelectBox = styled(Box)`
   ${(props) => !props.plainSelect && controlBorderStyle};
   ${(props) => props.theme.select?.control?.extend};
   ${(props) => props.open && props.theme.select.control?.open};
 `;
-
-StyledSelectDropButton.defaultProps = {};
-Object.setPrototypeOf(StyledSelectDropButton.defaultProps, defaultProps);
 
 const SelectMultiple = forwardRef(
   (
@@ -97,7 +94,7 @@ const SelectMultiple = forwardRef(
     },
     ref,
   ) => {
-    const theme = useContext(ThemeContext) || defaultProps.theme;
+    const { theme, passThemeFlag } = useThemeValue();
     const inputRef = useRef();
     const formContext = useContext(FormContext);
     const { format } = useContext(MessageContext);
@@ -153,16 +150,36 @@ const SelectMultiple = forwardRef(
     }, [optionsProp, search]);
 
     useEffect(() => {
+      if (search && optionsProp && optionsProp.length > 0) {
+        const additionalOptions = [...allOptions];
+        optionsProp.forEach(
+          (i) =>
+            !additionalOptions.some((j) =>
+              typeof i === 'object'
+                ? applyKey(i, valueKey) === applyKey(j, valueKey)
+                : i === j,
+            ) && additionalOptions.push(i),
+        );
+        if (allOptions.length !== additionalOptions.length)
+          setAllOptions(additionalOptions);
+      }
+    }, [allOptions, optionsProp, search, valueKey]);
+
+    useEffect(() => {
       if (sortSelectedOnClose) setOrderedOptions(optionsProp);
     }, [optionsProp, sortSelectedOnClose]);
 
     // the option indexes present in the value
     const optionIndexesInValue = useMemo(() => {
       const result = [];
-      allOptions.forEach((option, index) => {
-        if (normalizedValue?.some?.((v) => v === applyKey(option, valueKey))) {
-          result.push(index);
-        }
+      if (!Array.isArray(normalizedValue)) {
+        return result;
+      }
+      normalizedValue.forEach((v) => {
+        const index = allOptions
+          .map((option) => applyKey(option, valueKey))
+          .indexOf(v);
+        if (index !== -1) result.push(index);
       });
       return result;
     }, [allOptions, valueKey, normalizedValue]);
@@ -264,6 +281,7 @@ const SelectMultiple = forwardRef(
             disabledKey={disabledKey}
             dropButtonRef={dropButtonRef}
             labelKey={labelKey}
+            messages={messages}
             onRequestOpen={onRequestOpen}
             onSelectChange={onSelectChange}
             theme={theme}
@@ -276,19 +294,20 @@ const SelectMultiple = forwardRef(
       }
       return result;
     }, [
-      valueKey,
-      value,
-      valueLabel,
-      showSelectedInline,
-      onRequestOpen,
       allOptions,
       children,
-      labelKey,
-      onSelectChange,
       disabled,
       disabledKey,
       dropButtonRef,
+      labelKey,
+      messages,
+      onRequestOpen,
+      onSelectChange,
+      showSelectedInline,
       theme,
+      value,
+      valueKey,
+      valueLabel,
     ]);
 
     const displayLabelKey = useMemo(
@@ -316,17 +335,27 @@ const SelectMultiple = forwardRef(
         if (optionIndexesInValue.length === 0) return '';
         if (optionIndexesInValue.length === 1)
           return applyKey(allOptions[optionIndexesInValue[0]], labelKey);
-        if (messages) return format({ id: 'select.multiple', messages });
-        return `${optionIndexesInValue.length} selected`;
+        // keeping messages.multiple for backwards compatibility
+        if (messages?.multiple && !messages.summarizedValue) {
+          return format({ id: 'select.multiple', messages });
+        }
+        return format({
+          id: 'selectMultiple.summarizedValue',
+          messages,
+          values: {
+            selected: optionIndexesInValue.length,
+            total: allOptions.length,
+          },
+        });
       }
       return undefined;
     }, [
-      labelKey,
-      messages,
-      format,
+      selectValue,
       optionIndexesInValue,
       allOptions,
-      selectValue,
+      labelKey,
+      format,
+      messages,
     ]);
 
     const iconColor = getIconColor(theme);
@@ -357,6 +386,7 @@ const SelectMultiple = forwardRef(
         id={id}
         labelKey={labelKey}
         limit={limit}
+        messages={messages}
         onChange={onSelectChange}
         onClose={onRequestClose}
         onKeyDown={onKeyDown}
@@ -379,9 +409,21 @@ const SelectMultiple = forwardRef(
 
     const dropButtonProps = {
       ref: dropButtonRef,
-      a11yTitle: `${ariaLabel || a11yTitle || placeholder || 'Open Drop'}. ${
-        value?.length || 0
-      } selected.`,
+      a11yTitle: `${
+        ariaLabel ||
+        a11yTitle ||
+        placeholder ||
+        format({
+          id: 'selectMultiple.open',
+          messages,
+        })
+      }. ${format({
+        id: 'selectMultiple.selected',
+        values: {
+          selected: value?.length || 0,
+          total: allOptions.length,
+        },
+      })}`,
       'aria-expanded': Boolean(open),
       'aria-haspopup': 'listbox',
       id,
@@ -415,6 +457,7 @@ const SelectMultiple = forwardRef(
             flex={false}
             plainSelect={plain}
             width={width}
+            {...passThemeFlag}
           >
             <Box width="100%">
               <DropButton
@@ -432,20 +475,27 @@ const SelectMultiple = forwardRef(
                         defaultCursor={disabled === true || undefined}
                         focusIndicator={false}
                         id={id ? `${id}__input` : undefined}
+                        inert="" // revisit for React 19
                         name={name}
                         width="100%"
                         {...rest}
                         tabIndex="-1"
                         type="text"
                         placeholder={
-                          // eslint-disable-next-line no-nested-ternary
                           !value || value?.length === 0
                             ? placeholder || selectValue || displayLabelKey
-                            : onMore
-                            ? `${value?.length || '0'} selected`
-                            : `${value?.length || '0'} selected of ${
-                                allOptions.length
-                              }`
+                            : format({
+                                id: onMore
+                                  ? 'selectMultiple.selected'
+                                  : 'selectMultiple.selectedOfTotal',
+                                messages,
+                                values: {
+                                  selected: value?.length || 0,
+                                  ...(!onMore
+                                    ? { total: allOptions.length }
+                                    : {}),
+                                },
+                              })
                         }
                         plain
                         readOnly
@@ -458,6 +508,7 @@ const SelectMultiple = forwardRef(
                       type="text"
                       name={name}
                       id={id ? `${id}__input` : undefined}
+                      inert="" // revisit for React 19
                       value={inputValue}
                       ref={inputRef}
                       readOnly
@@ -469,6 +520,7 @@ const SelectMultiple = forwardRef(
                       a11yTitle={ariaLabel || a11yTitle}
                       disabled={disabled}
                       id={id}
+                      inert="" // revisit for React 19
                       name={name}
                       ref={inputRef}
                       placeholder={placeholder || 'Select'}
@@ -507,6 +559,7 @@ const SelectMultiple = forwardRef(
                         type="text"
                         name={name}
                         id={id ? `${id}__input` : undefined}
+                        inert="" // revisit for React 19
                         value={inputValue}
                         ref={inputRef}
                         readOnly
@@ -517,6 +570,7 @@ const SelectMultiple = forwardRef(
                       a11yTitle={ariaLabel || a11yTitle}
                       disabled={disabled}
                       id={id}
+                      inert="" // revisit for React 19
                       name={name}
                       ref={inputRef}
                       placeholder={placeholder}
@@ -536,8 +590,6 @@ const SelectMultiple = forwardRef(
     );
   },
 );
-
-SelectMultiple.defaultProps = { ...defaultProps };
 
 SelectMultiple.displayName = 'SelectMultiple';
 SelectMultiple.propTypes = SelectMultiplePropTypes;

@@ -1,8 +1,6 @@
 import React, { forwardRef, useContext, useMemo, useState } from 'react';
-import { ThemeContext } from 'styled-components';
-import { defaultProps } from '../../default-props';
 
-import { normalizeColor, parseMetricToNum } from '../../utils';
+import { normalizeColor, parseMetricToNum, useId } from '../../utils';
 import { Box } from '../Box';
 import { Button } from '../Button';
 import { Collapsible } from '../Collapsible';
@@ -10,12 +8,14 @@ import { Heading } from '../Heading';
 
 import { AccordionContext } from '../Accordion/AccordionContext';
 import { AccordionPanelPropTypes } from './propTypes';
+import { useThemeValue } from '../../utils/useThemeValue';
 
 const AccordionPanel = forwardRef(
   (
     {
       children,
       header,
+      id,
       label,
       onClick,
       onMouseOut,
@@ -26,7 +26,8 @@ const AccordionPanel = forwardRef(
     },
     ref,
   ) => {
-    const theme = useContext(ThemeContext) || defaultProps.theme;
+    const panelButtonId = useId();
+    const { theme } = useThemeValue();
     const { active, animate, level, onPanelChange } =
       useContext(AccordionContext);
     const [hover, setHover] = useState(undefined);
@@ -51,7 +52,7 @@ const AccordionPanel = forwardRef(
     // accordion.hover.color will be deprecated in v3.
     if (JSON.stringify(theme.accordion.hover.color) !== defaultHoverColor)
       console.warn(
-        `The theme style for accordion.hover.color is deprecated, 
+        `The theme style for accordion.hover.color is deprecated,
         use accordion.hover.heading.color instead.`,
       );
 
@@ -90,6 +91,7 @@ const AccordionPanel = forwardRef(
         margin={abutMargin}
       >
         <Button
+          id={panelButtonId}
           aria-expanded={active}
           plain={theme.button.default ? true : undefined}
           onClick={onPanelChange}
@@ -115,7 +117,13 @@ const AccordionPanel = forwardRef(
           style={focus ? { zIndex: 1 } : undefined}
         >
           {header || (
-            <Box align="center" direction="row" justify="between" {...rest}>
+            <Box
+              align="center"
+              direction="row"
+              justify="between"
+              id={id}
+              {...rest}
+            >
               {typeof label === 'string' ? (
                 <Box pad={{ horizontal: 'xsmall' }}>
                   <Heading
@@ -149,7 +157,11 @@ const AccordionPanel = forwardRef(
             </Box>
           )}
         </Button>
-        <Box role="region" border={contentBorder}>
+        <Box
+          role="region"
+          border={contentBorder}
+          aria-labelledby={panelButtonId}
+        >
           {animate ? (
             <Collapsible open={active}>{children}</Collapsible>
           ) : (

@@ -8,16 +8,20 @@ export const Simple = () => (
   <Box align="start" pad="small" gap="medium">
     <Box>
       <Text>Default</Text>
-      <Pagination numberItems={237} />
+      <Pagination
+        aria-label="Pagination with default settings"
+        numberItems={237}
+      />
     </Box>
     <Box>
       <Text>Box Props</Text>
       <Pagination
         numberItems={1237}
         page={24}
-        background="brand"
+        background="dark-1"
         pad="medium"
         margin="small"
+        aria-label="Pagination with custom background and spacing"
       />
     </Box>
   </Box>

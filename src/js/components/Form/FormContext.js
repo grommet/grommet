@@ -24,5 +24,4 @@ const useFormField = ({ error, info, disabled }) => ({ error, info, disabled });
 export const FormContext = React.createContext({
   useFormField,
   useFormInput,
-  noForm: true,
 });

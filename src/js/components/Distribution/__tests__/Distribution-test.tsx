@@ -15,6 +15,11 @@ describe('Distribution', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
+  test('renders outside grommet wrapper', () => {
+    const { container } = render(<Distribution values={[]} />);
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
   test('values renders', () => {
     const { container } = render(
       <Grommet>

@@ -1,8 +1,14 @@
 import { css } from 'styled-components';
+import isPropValid from '@emotion/is-prop-valid';
 import { backgroundStyle } from './background';
 import { normalizeColor } from './colors';
 import { getBreakpointStyle } from './responsive';
 import { breakpointStyle, parseMetricToNum } from './mixins';
+
+// ensure only valid DOM attributes are forwarded onto DOM
+export const styledComponentsConfig = {
+  shouldForwardProp: isPropValid,
+};
 
 export const baseStyle = css`
   font-family: ${(props) => props.theme.global.font.family};
@@ -232,6 +238,7 @@ const focusStyles = (props, { forceOutline, justBorder } = {}) => {
       global: { focus },
     },
   } = props;
+  let compoundFocusStyle = '';
   if (!focus || (forceOutline && !focus.outline)) {
     const color = normalizeColor('focus', props.theme);
     if (color) return `outline: 2px solid ${color};`;
@@ -241,12 +248,18 @@ const focusStyles = (props, { forceOutline, justBorder } = {}) => {
     if (typeof focus.outline === 'object') {
       const color = normalizeColor(focus.outline.color || 'focus', props.theme);
       const size = focus.outline.size || '2px';
-      return `
-        outline-offset: 0px;
+      const offset = focus.outline.offset || '0px';
+      const outlineStyle = `
+        outline-offset: ${offset};
         outline: ${size} solid ${color};
       `;
+      compoundFocusStyle += outlineStyle;
+      if (!focus.twoColor) return outlineStyle;
+    } else {
+      const outlineStyle = `outline: ${focus.outline};`;
+      compoundFocusStyle += outlineStyle;
+      if (!focus.twoColor) return outlineStyle;
     }
-    return `outline: ${focus.outline};`;
   }
   if (focus.shadow && (!focus.border || !justBorder)) {
     if (typeof focus.shadow === 'object') {
@@ -257,23 +270,29 @@ const focusStyles = (props, { forceOutline, justBorder } = {}) => {
         props.theme,
       );
       const size = focus.shadow.size || '2px'; // backwards compatible default
-      return `
+      const blur = focus.shadow.blur || size; // backwards compatible default
+      const inset = focus.shadow.inset ? 'inset ' : '';
+      const shadowStyle = `box-shadow: 0 0 ${blur} ${size} ${color}${
+        inset ? ` ${inset}` : ''
+      };`;
+      compoundFocusStyle += shadowStyle;
+      if (!focus.twoColor)
+        return `
         outline: none;
-        box-shadow: 0 0 ${size} ${size} ${color};
-      `;
+      ${shadowStyle}`;
+    } else {
+      const shadowStyle = `box-shadow: ${focus.shadow};`;
+      compoundFocusStyle += shadowStyle;
+      if (!focus.twoColor) return `outline: none; ${shadowStyle}`;
     }
-    return `
-      outline: none;
-      box-shadow: ${focus.shadow};
-    `;
   }
   if (focus.border) {
     const color = normalizeColor(focus.border.color || 'focus', props.theme);
-    return `
-      outline: none;
-      border-color: ${color};
-    `;
+    const borderStyle = `border-color: ${color};`;
+    compoundFocusStyle += borderStyle;
+    if (!focus.twoColor) return `outline: none; ${borderStyle}`;
   }
+  if (focus.twoColor && compoundFocusStyle.length) return compoundFocusStyle;
   return ''; // defensive
 };
 
@@ -283,6 +302,7 @@ const unfocusStyles = (props, { forceOutline, justBorder } = {}) => {
       global: { focus },
     },
   } = props;
+  let compoundFocusStyle = '';
   if (!focus || (forceOutline && !focus.outline)) {
     const color = normalizeColor('focus', props.theme);
     if (color) return `outline: none;`;
@@ -290,31 +310,48 @@ const unfocusStyles = (props, { forceOutline, justBorder } = {}) => {
   }
   if (focus.outline && (!focus.border || !justBorder)) {
     if (typeof focus.outline === 'object') {
-      return `
+      const outlineStyle = `
         outline-offset: 0px;
         outline: none;
       `;
+      compoundFocusStyle += outlineStyle;
+      if (!focus.twoColor)
+        return `
+        outline-offset: 0px;
+        outline: none;
+      `;
+    } else {
+      const outlineStyle = `outline: none;`;
+      compoundFocusStyle += outlineStyle;
+      if (!focus.twoColor) return outlineStyle;
     }
-    return `outline: none;`;
   }
   if (focus.shadow && (!focus.border || !justBorder)) {
     if (typeof focus.shadow === 'object') {
-      return `
+      const shadowStyle = `
         outline: none;
         box-shadow: none;
       `;
+      compoundFocusStyle += shadowStyle;
+      if (!focus.twoColor) return shadowStyle;
+    } else {
+      const shadowStyle = `
+        outline: none;
+        box-shadow: none;
+      `;
+      compoundFocusStyle += shadowStyle;
+      if (!focus.twoColor) return shadowStyle;
     }
-    return `
-      outline: none;
-      box-shadow: none;
-    `;
   }
   if (focus.border) {
-    return `
+    const borderStyle = `
       outline: none;
       border-color: none;
     `;
+    compoundFocusStyle += borderStyle;
+    if (!focus.twoColor) return borderStyle;
   }
+  if (focus.twoColor && compoundFocusStyle.length) return compoundFocusStyle;
   return ''; // defensive
 };
 
@@ -585,6 +622,13 @@ export const plainInputStyle = css`
   border: none;
 `;
 
+export const elevationStyle = (elevation) => css`
+  box-shadow: ${(props) =>
+    props.theme.global.elevation[props.theme.dark ? 'dark' : 'light'][
+      elevation
+    ]};
+`;
+
 // CSS for this sub-object in the theme
 export const kindPartStyles = (obj, theme, colorValue) => {
   const styles = [];
@@ -653,6 +697,9 @@ export const kindPartStyles = (obj, theme, colorValue) => {
         : theme.global.opacity[obj.opacity] || obj.opacity;
     styles.push(`opacity: ${opacity};`);
   }
+  if (obj.elevation) {
+    styles.push(elevationStyle(obj.elevation));
+  }
   if (obj.extend) styles.push(obj.extend);
   return styles;
 };
@@ -663,17 +710,20 @@ const ROUND_MAP = {
 
 export const roundStyle = (data, responsive, theme) => {
   const breakpoint = getBreakpointStyle(theme, theme.box.responsiveBreakpoint);
+  // fallback to edgeSize for backwards compatibility
+  const radius = theme.global.radius ? 'radius' : 'edgeSize';
+
   const styles = [];
   if (typeof data === 'object') {
     const size =
       ROUND_MAP[data.size] ||
-      theme.global.edgeSize[data.size || 'medium'] ||
+      theme.global[radius][data.size || 'medium'] ||
       data.size;
     const responsiveSize =
       responsive &&
       breakpoint &&
-      breakpoint.edgeSize[data.size] &&
-      (breakpoint.edgeSize[data.size] || data.size);
+      breakpoint[radius]?.[data.size] &&
+      (breakpoint[radius][data.size] || data.size);
     if (data.corner === 'top') {
       styles.push(css`
         border-top-left-radius: ${size};
@@ -776,9 +826,10 @@ export const roundStyle = (data, responsive, theme) => {
   } else {
     const size = data === true ? 'medium' : data;
     styles.push(css`
-      border-radius: ${ROUND_MAP[size] || theme.global.edgeSize[size] || size};
+      border-radius: ${ROUND_MAP[size] || theme.global[radius]?.[size] || size};
     `);
-    const responsiveSize = breakpoint && breakpoint.edgeSize[size];
+    const responsiveSize =
+      responsive && breakpoint && breakpoint[radius]?.[size];
     if (responsiveSize) {
       styles.push(
         breakpointStyle(

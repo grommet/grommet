@@ -150,6 +150,7 @@ interface ButtonKindType {
     | boolean;
   color?: ColorType;
   direction?: DirectionType;
+  elevation?: ElevationType;
   font?: {
     size?: string;
     weight?: number | string;
@@ -164,6 +165,7 @@ interface ButtonKindType {
 }
 
 interface ButtonType {
+  intelligentPad?: boolean;
   badge?: {
     align?: 'container';
     container?: {
@@ -181,12 +183,14 @@ interface ButtonType {
     };
   };
   gap?: GapType;
+  background?: BackgroundType;
   border?: {
     color?: ColorType;
     width?: string;
     radius?: string;
   };
   color?: ColorType;
+  elevation?: ElevationType;
   extend?: ExtendType;
   minWidth?: string;
   maxWidth?: string;
@@ -278,6 +282,12 @@ type DigitalTexts =
   | 'xxlarge'
   | string;
 
+type ContainerExtend = {
+  container?: {
+    extend?: ExtendType;
+  };
+};
+
 export interface ThemeType {
   global?: {
     active?: {
@@ -310,18 +320,21 @@ export interface ThemeType {
         value?: number;
         borderSize?: BreakpointBorderSize;
         edgeSize?: BreakpointEdgeSize;
+        radius?: BreakpointEdgeSize;
         size?: BreakpointSize;
       };
       medium?: {
         value?: number;
         borderSize?: BreakpointBorderSize;
         edgeSize?: BreakpointEdgeSize;
+        radius?: BreakpointEdgeSize;
         size?: BreakpointSize;
       };
       large?: {
         value?: number;
         borderSize?: BreakpointBorderSize;
         edgeSize?: BreakpointEdgeSize;
+        radius?: BreakpointEdgeSize;
         size?: BreakpointSize;
       };
       [x: string]:
@@ -329,6 +342,7 @@ export interface ThemeType {
             value?: number;
             borderSize?: BreakpointBorderSize;
             edgeSize?: BreakpointEdgeSize;
+            radius?: BreakpointEdgeSize;
             size?: BreakpointSize;
           }
         | undefined;
@@ -380,6 +394,7 @@ export interface ThemeType {
         medium?: string;
         large?: string;
         xlarge?: string;
+        [x: string]: string;
       };
       dark?: {
         none?: string;
@@ -388,6 +403,7 @@ export interface ThemeType {
         medium?: string;
         large?: string;
         xlarge?: string;
+        [x: string]: string;
       };
     };
     focus?: {
@@ -397,13 +413,16 @@ export interface ThemeType {
       outline?: {
         color?: ColorType;
         size?: string;
+        offset?: string;
       };
       shadow?:
         | string
         | {
             color?: ColorType;
             size?: string;
+            blur?: string;
           };
+      twoColor?: boolean;
     };
     font?: {
       face?: string;
@@ -438,6 +457,12 @@ export interface ThemeType {
         size?: string;
         weight?: number | string;
       };
+      readOnly?: {
+        background?: BackgroundType;
+        border?: {
+          color?: ColorType;
+        };
+      };
       weight?: number | string;
     };
     opacity?: {
@@ -445,6 +470,7 @@ export interface ThemeType {
       medium?: number;
       weak?: number;
     };
+    radius?: BreakpointEdgeSize;
     selected?: {
       background?: BackgroundType;
       color?: ColorType;
@@ -493,18 +519,23 @@ export interface ThemeType {
       extend?: ExtendType<PropsOf<typeof Anchor>>;
       textDecoration?: string;
     };
+    icon?: {
+      color?: ColorType;
+    };
     textDecoration?: string;
     size?: {
       medium?: {
         color?: ColorType;
         fontWeight?: number;
         textDecoration?: string;
+        gap?: GapType;
       };
       [x: string]:
         | {
             color?: ColorType;
             fontWeight?: number;
             textDecoration?: string;
+            gap?: GapType;
           }
         | undefined;
     };
@@ -539,10 +570,53 @@ export interface ThemeType {
   button?: ButtonType;
   calendar?: {
     day?: {
+      adjacent?: {
+        color?: ColorType;
+      };
+      hover?: {
+        background?: BackgroundType;
+        color?: ColorType;
+      };
+      selected?: {
+        background?: BackgroundType;
+        color?: ColorType;
+        font?: {
+          weight?: string | number;
+        };
+        hover?: {
+          background?: BackgroundType;
+          color?: ColorType;
+        };
+      };
+      inRange?: {
+        color?: ColorType;
+        font?: {
+          weight?: string | number;
+        };
+        hover?: {
+          background?: BackgroundType;
+          color?: ColorType;
+        };
+      };
       extend?: ExtendType;
+    };
+    range?: {
+      background?: BackgroundType;
     };
     extend?: ExtendType;
     small?: {
+      day?: {
+        round?: RoundType;
+      };
+      range?: {
+        round?: RoundType;
+        start?: {
+          round?: RoundType;
+        };
+        end?: {
+          round?: RoundType;
+        };
+      };
       title?: TextProps;
       fontSize?: string;
       lineHeight?: number;
@@ -550,6 +624,18 @@ export interface ThemeType {
       slideDuration?: string;
     };
     medium?: {
+      day?: {
+        round?: RoundType;
+      };
+      range?: {
+        round?: RoundType;
+        start?: {
+          round?: RoundType;
+        };
+        end?: {
+          round?: RoundType;
+        };
+      };
       title?: TextProps;
       fontSize?: string;
       lineHeight?: number;
@@ -557,6 +643,18 @@ export interface ThemeType {
       slideDuration?: string;
     };
     large?: {
+      day?: {
+        round?: RoundType;
+      };
+      range?: {
+        round?: RoundType;
+        start?: {
+          round?: RoundType;
+        };
+        end?: {
+          round?: RoundType;
+        };
+      };
       title?: TextProps;
       fontSize?: string;
       lineHeight?: number;
@@ -700,6 +798,11 @@ export interface ThemeType {
     minSpeed?: number;
     baseline?: number;
   };
+  data?: {
+    button?: {
+      kind?: string;
+    };
+  };
   dateInput?: {
     container?: {
       round?: RoundType;
@@ -711,6 +814,12 @@ export interface ThemeType {
   dataTable?: {
     body?: {
       extend?: ExtendType;
+      row?: {
+        extend?: ExtendType;
+      };
+      selected?: {
+        background?: BackgroundType;
+      };
     };
     container?: BoxProps;
     header?: {
@@ -827,9 +936,6 @@ export interface ThemeType {
       margin?: MarginType;
       pad?: PadType;
     };
-    checkBox?: {
-      pad?: PadType;
-    };
     disabled?: {
       background?: BackgroundType;
       border?: {
@@ -838,12 +944,19 @@ export interface ThemeType {
       label?: {
         color?: ColorType;
       };
+      help?: {
+        color?: ColorType;
+      };
+      info?: {
+        color?: ColorType;
+      };
     };
     focus?: {
       background?: BackgroundType;
       border?: {
         color?: ColorType;
       };
+      containerFocus?: boolean;
     };
     error?: {
       background?: BackgroundType;
@@ -871,6 +984,27 @@ export interface ThemeType {
     margin?: MarginType;
     round?: RoundType;
     extend?: ExtendType;
+    survey?: {
+      label?: {
+        margin?: MarginType;
+        size?: string;
+        color?: ColorType;
+      };
+    };
+    checkBox?: ContainerExtend & { pad?: PadType };
+    checkBoxGroup?: ContainerExtend;
+    textArea?: ContainerExtend;
+    textInput?: ContainerExtend;
+    select?: ContainerExtend;
+    maskedInput?: ContainerExtend;
+    selectMultiple?: ContainerExtend;
+    dateInput?: ContainerExtend;
+    fileInput?: ContainerExtend;
+    radioButton?: ContainerExtend;
+    radioButtonGroup?: ContainerExtend;
+    rangeSelector?: ContainerExtend;
+    starRating?: ContainerExtend;
+    thumbsRating?: ContainerExtend;
   };
   grommet?: {
     extend?: ExtendType;
@@ -1068,9 +1202,17 @@ export interface ThemeType {
         color?: ColorType;
         cursor?: string;
       };
+      pinned?: {
+        background?: BackgroundType;
+        icon?: {
+          size?: string;
+          pad?: PadType;
+        };
+      };
       pad?: PadType;
       extend?: ExtendType;
     };
+    primaryKey?: TextProps;
     icons?: {
       down?: React.ReactNode | Icon;
       up?: React.ReactNode | Icon;
@@ -1094,6 +1236,7 @@ export interface ThemeType {
         };
     drop?: DropType;
     extend?: ExtendType;
+    container?: BoxProps;
     group?: {
       container?: BoxProps;
       separator?: {
@@ -1130,7 +1273,7 @@ export interface ThemeType {
     iconContainer?: BoxProps;
     textContainer?: BoxProps;
     title?: TextProps;
-    message?: TextProps;
+    message?: TextProps & { fill?: boolean };
     close?: {
       icon?: React.ReactNode | Icon;
       color?: ColorType;
@@ -1139,66 +1282,174 @@ export interface ThemeType {
       icon?: React.ReactNode | Icon;
       background?: BackgroundType;
       color?: ColorType;
+      message?: {
+        color?: ColorType;
+      };
+      title?: {
+        color?: ColorType;
+      };
       global?: {
         background?: BackgroundType;
+        message?: {
+          color?: ColorType;
+        };
+        title?: {
+          color?: ColorType;
+        };
       };
       toast?: {
         background?: BackgroundType;
+        message?: {
+          color?: ColorType;
+        };
+        title?: {
+          color?: ColorType;
+        };
       };
     };
     warning?: {
       icon?: React.ReactNode | Icon;
       background?: BackgroundType;
       color?: ColorType;
+      message?: {
+        color?: ColorType;
+      };
+      title?: {
+        color?: ColorType;
+      };
       global?: {
         background?: BackgroundType;
+        message?: {
+          color?: ColorType;
+        };
+        title?: {
+          color?: ColorType;
+        };
       };
       toast?: {
         background?: BackgroundType;
+        message?: {
+          color?: ColorType;
+        };
+        title?: {
+          color?: ColorType;
+        };
       };
     };
     normal?: {
       icon?: React.ReactNode | Icon;
       background?: BackgroundType;
       color?: ColorType;
+      message?: {
+        color?: ColorType;
+      };
+      title?: {
+        color?: ColorType;
+      };
       global?: {
         background?: BackgroundType;
+        message?: {
+          color?: ColorType;
+        };
+        title?: {
+          color?: ColorType;
+        };
       };
       toast?: {
         background?: BackgroundType;
+        message?: {
+          color?: ColorType;
+        };
+        title?: {
+          color?: ColorType;
+        };
       };
     };
     info?: {
       icon?: React.ReactNode | Icon;
       background?: BackgroundType;
       color?: ColorType;
+      message?: {
+        color?: ColorType;
+      };
+      title?: {
+        color?: ColorType;
+      };
       global?: {
         background?: BackgroundType;
+        message?: {
+          color?: ColorType;
+        };
+        title?: {
+          color?: ColorType;
+        };
       };
       toast?: {
         background?: BackgroundType;
+        message?: {
+          color?: ColorType;
+        };
+        title?: {
+          color?: ColorType;
+        };
       };
     };
     unknown?: {
       icon?: React.ReactNode | Icon;
       background?: BackgroundType;
       color?: ColorType;
+      message?: {
+        color?: ColorType;
+      };
+      title?: {
+        color?: ColorType;
+      };
       global?: {
         background?: BackgroundType;
+        message?: {
+          color?: ColorType;
+        };
+        title?: {
+          color?: ColorType;
+        };
       };
       toast?: {
         background?: BackgroundType;
+        message?: {
+          color?: ColorType;
+        };
+        title?: {
+          color?: ColorType;
+        };
       };
     };
     undefined?: {
       icon?: React.ReactNode | Icon;
       background?: BackgroundType;
       color?: ColorType;
+      message?: {
+        color?: ColorType;
+      };
+      title?: {
+        color?: ColorType;
+      };
       global?: {
         background?: BackgroundType;
+        message?: {
+          color?: ColorType;
+        };
+        title?: {
+          color?: ColorType;
+        };
       };
       toast?: {
         background?: BackgroundType;
+        message?: {
+          color?: ColorType;
+        };
+        title?: {
+          color?: ColorType;
+        };
       };
     };
   };
@@ -1315,6 +1566,9 @@ export interface ThemeType {
     container?: {
       extend?: ExtendType;
     };
+    background?: {
+      color?: ColorType;
+    };
     border?: {
       color?: ColorType;
       width?: string;
@@ -1407,6 +1661,7 @@ export interface ThemeType {
       color?: ColorType;
       extend?: ExtendType;
     };
+    wheel?: boolean;
     extend?: ExtendType;
   };
   rangeSelector?: {
@@ -1422,7 +1677,7 @@ export interface ThemeType {
   select?: {
     background?: BackgroundType;
     clear?: {
-      container?: BoxProps;
+      container?: BoxProps & { hover?: BoxProps };
       text?: TextProps;
     };
     container?: {
@@ -1443,6 +1698,9 @@ export interface ThemeType {
       up?: React.ReactNode | Icon;
       margin?: MarginType;
     };
+    listbox?: {
+      extend?: ExtendType;
+    };
     options?: {
       container?: PropsOf<typeof Box>;
       text?: PropsOf<typeof Text>;
@@ -1453,8 +1711,11 @@ export interface ThemeType {
   };
   selectMultiple?: {
     maxInline?: number;
+    listbox?: {
+      extend?: ExtendType;
+    };
   };
-  skeleton?: BoxProps & { colors?: SkeletonColorsType };
+  skeleton?: BoxProps & { colors?: SkeletonColorsType; extend?: ExtendType };
   skipLinks?: {
     position?: LayerPositionType;
     container?: BoxProps;
@@ -1582,7 +1843,7 @@ export interface ThemeType {
     round?: RoundType;
     name?: TextProps;
     pad?: PadType;
-    remove?: ButtonType;
+    remove?: ButtonType | { kind?: string };
     separator?: string;
     size?: {
       xsmall?: {
@@ -1590,33 +1851,41 @@ export interface ThemeType {
         icon?: {
           size?: string;
         };
+        remove?: { size?: string; margin?: MarginType };
       };
       small?: {
         pad?: PadType;
         icon?: {
           size?: string;
         };
+        remove?: { size?: string; margin?: MarginType };
       };
       medium?: {
         pad?: PadType;
         icon?: {
           size?: string;
         };
+        remove?: { size?: string; margin?: MarginType };
       };
       large?: {
         pad?: PadType;
         icon?: {
           size?: string;
         };
+        remove?: { size?: string; margin?: MarginType };
       };
       xlarge?: {
         pad?: PadType;
         icon?: {
           size?: string;
         };
+        remove?: { size?: string; margin?: MarginType };
       };
     };
     value?: TextProps;
+    icons?: {
+      remove?: React.ReactNode | Icon;
+    };
   };
   text?: {
     extend?: ExtendType;
@@ -1697,6 +1966,24 @@ export interface ThemeType {
   tip?: {
     content?: BoxProps;
     drop?: DropProps;
+  };
+  toggleGroup?: {
+    button?: {
+      kind?: string;
+      border?: {
+        radius?: string;
+      };
+      iconOnly?: {
+        pad?: PadType;
+      };
+      pad?: PadType;
+    };
+    container?: BoxProps & { extend?: ExtendType };
+    divider?:
+      | {
+          color?: ColorType;
+        }
+      | boolean;
   };
   video?: {
     captions?: {

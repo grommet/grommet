@@ -30,6 +30,14 @@ describe('CheckBoxGroup', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
+  test('renders without grommet wrapper', () => {
+    const { container } = render(
+      <CheckBoxGroup options={['First', 'Second']} />,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
   test('value renders', () => {
     const { container } = render(
       <Grommet>

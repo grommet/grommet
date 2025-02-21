@@ -1,6 +1,7 @@
 import styled, { css } from 'styled-components';
 
 import {
+  controlBorderStyle,
   disabledStyle,
   getInputPadBySide,
   inputStyle,
@@ -8,9 +9,10 @@ import {
   plainInputStyle,
   textAlignStyle,
   widthStyle,
+  styledComponentsConfig,
 } from '../../utils';
-import { defaultProps } from '../../default-props';
 import { inputPadForIcon } from '../../utils/styles';
+import { readOnlyStyle } from '../../utils/readOnly';
 
 const getPlainStyle = (plain) => {
   if (plain === 'full') {
@@ -21,8 +23,14 @@ const getPlainStyle = (plain) => {
   return plain && plainInputStyle;
 };
 
-const StyledTextInput = styled.input`
+const StyledTextInput = styled.input.withConfig(styledComponentsConfig)`
   ${inputStyle}
+  ${(props) =>
+    props.readOnlyCopy
+      ? `padding-${props.reverse ? 'left' : 'right'}: 0px;`
+      : ''}
+  // readOnly border is handled by StyledTextInputContainer
+  ${(props) => props.readOnly && `border: none;`}
   ${(props) => getPlainStyle(props.plain)}
   ${(props) => props.icon && inputPadForIcon}
   ${(props) =>
@@ -35,12 +43,21 @@ const StyledTextInput = styled.input`
   ${(props) => props.theme.textInput && props.theme.textInput.extend};
 `;
 
-StyledTextInput.defaultProps = {};
-Object.setPrototypeOf(StyledTextInput.defaultProps, defaultProps);
-
-const StyledTextInputContainer = styled.div`
+const StyledTextInputContainer = styled.div.withConfig(styledComponentsConfig)`
   position: relative;
   width: 100%;
+
+  ${(props) => props.readOnlyProp && !props.plain && controlBorderStyle};
+
+  ${(props) =>
+    props.readOnlyCopy &&
+    `
+    box-sizing: border-box;
+    flex-direction: row;
+    display: flex;
+  `};
+
+  ${(props) => props.readOnlyProp && !props.plain && readOnlyStyle(props.theme)}
 
   ${(props) =>
     props.theme.textInput &&
@@ -48,10 +65,7 @@ const StyledTextInputContainer = styled.div`
     props.theme.textInput.container.extend};
 `;
 
-StyledTextInputContainer.defaultProps = {};
-Object.setPrototypeOf(StyledTextInputContainer.defaultProps, defaultProps);
-
-const StyledPlaceholder = styled.div`
+const StyledPlaceholder = styled.div.withConfig(styledComponentsConfig)`
   position: absolute;
   left: ${(props) =>
     parseMetricToNum(getInputPadBySide(props, 'left')) -
@@ -68,10 +82,7 @@ const StyledPlaceholder = styled.div`
     props.theme.textInput.placeholder.extend};
 `;
 
-StyledPlaceholder.defaultProps = {};
-Object.setPrototypeOf(StyledPlaceholder.defaultProps, defaultProps);
-
-const StyledIcon = styled.div`
+const StyledIcon = styled.div.withConfig(styledComponentsConfig)`
   position: absolute;
   display: flex;
   justify: center;
@@ -84,7 +95,7 @@ const StyledIcon = styled.div`
       : `left: ${getInputPadBySide(props, 'left')};`}
 `;
 
-const StyledSuggestions = styled.ol`
+const StyledSuggestions = styled.ol.withConfig(styledComponentsConfig)`
   border-top-left-radius: 0;
   border-top-right-radius: 0;
   margin: 0;
@@ -96,9 +107,6 @@ const StyledSuggestions = styled.ol`
     props.theme.textInput.suggestions &&
     props.theme.textInput.suggestions.extend};
 `;
-
-StyledSuggestions.defaultProps = {};
-Object.setPrototypeOf(StyledSuggestions.defaultProps, defaultProps);
 
 export {
   StyledTextInput,

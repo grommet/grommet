@@ -19,9 +19,7 @@ export interface View {
     direction: 'asc' | 'desc';
   };
   step?: number; // page size
-
-  // Future column ordering, requires 'properties' property on Data
-  // columns?: string[];
+  columns?: string[];
 }
 
 export interface DataProps {
@@ -35,16 +33,16 @@ export interface DataProps {
   defaultView?: View;
   view?: string | View;
   onView?: (view: View) => void;
-  // when view changes should be delivered
-  updateOn?: 'change' | 'submit';
 
   // whether to render a Toolbar
-  toolbar?: boolean | 'search' | 'filters';
+  toolbar?: boolean | 'search' | 'filters' | 'view';
 
   properties?:
     | string[]
     | {
         [key: string]: {
+          badge?: boolean;
+          filter?: boolean;
           // for DataTable column header, DataFilter label, DataTableColumns label
           label?: string | React.ReactNode;
           // DataFilter options
@@ -58,11 +56,13 @@ export interface DataProps {
           )[];
           // DataFilter range
           range?: {
-            max: number;
-            min: number;
+            max?: number;
+            min?: number;
+            step?: number;
           };
           // for internal filtering only, should searching evaluate this property
           search?: boolean;
+          sort?: boolean;
         };
       };
 
@@ -71,23 +71,46 @@ export interface DataProps {
       clear?: string;
       heading?: string;
       open?: string;
+      openSet?: {
+        singular?: string;
+        plural?: string;
+      };
     };
     dataForm?: {
-      reset?: string;
       submit?: string;
     };
     dataSearch?: {
       label?: string;
+      open?: string;
     };
     dataSort?: {
       ascending?: string;
       by?: string;
       descending?: string;
       direction?: string;
+      open?: string;
     };
     dataSummary?: {
-      filteredTotal?: string;
+      filtered?: string;
+      filteredSingle?: string;
+      items?: string;
+      itemsSingle?: string;
+      selected?: string;
       total?: string;
+      totalSingle?: string;
+    };
+    dataTableColumns?: {
+      open?: string;
+      order?: string;
+      select?: string;
+      tip?: string;
+    };
+    dataTableGroupBy?: {
+      clear?: string;
+      label?: string;
+    };
+    dataView?: {
+      label?: string;
     };
   };
 

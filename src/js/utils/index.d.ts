@@ -57,7 +57,7 @@ export type PropsOf<TComponent> = TComponent extends React.ComponentType<
   : never;
 
 // the basic T-Shirt sizes xsmall through xlarge. Some places add on.
-type TShirtSizeType =
+export type TShirtSizeType =
   | 'xsmall'
   | 'small'
   | 'medium'
@@ -66,7 +66,7 @@ type TShirtSizeType =
   | string;
 
 // Extracting types for common properties among components
-type BoxSideType =
+export type BoxSideType =
   | 'top'
   | 'left'
   | 'bottom'
@@ -77,8 +77,14 @@ type BoxSideType =
   | 'vertical'
   | 'all'
   | 'between';
-type BoxSizeType = 'xsmall' | 'small' | 'medium' | 'large' | 'xlarge' | string;
-type BoxStyleType =
+export type BoxSizeType =
+  | 'xsmall'
+  | 'small'
+  | 'medium'
+  | 'large'
+  | 'xlarge'
+  | string;
+export type BoxStyleType =
   | 'solid'
   | 'dashed'
   | 'dotted'
@@ -95,7 +101,7 @@ export type EdgeSizeType =
   | 'medium'
   | 'large'
   | 'xlarge';
-type EdgeType =
+export type EdgeType =
   | 'none'
   | EdgeSizeType
   | {

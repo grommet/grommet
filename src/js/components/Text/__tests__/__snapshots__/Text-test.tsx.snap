@@ -68,7 +68,7 @@ exports[`renders color 1`] = `
 .c1 {
   font-size: 18px;
   line-height: 24px;
-  color: #FF4040;
+  color: #EB0000;
 }
 
 <div
@@ -187,6 +187,19 @@ exports[`renders margin 1`] = `
     class="c10"
   />
 </div>
+`;
+
+exports[`renders outside grommet wrapper 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+<span
+  class="c0"
+>
+  text
+</span>
 `;
 
 exports[`renders size 1`] = `
@@ -383,23 +396,23 @@ exports[`renders tip 1`] = `
   line-height: 24px;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
 
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
 
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
 
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
 
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
 
 }
 

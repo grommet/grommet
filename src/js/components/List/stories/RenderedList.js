@@ -28,10 +28,11 @@ export const RenderedList = () => (
         </Text>
       )}
       secondaryKey={(item) => (
-        <Text key={item.location} size="small" color="dark-4">
+        <Text key={item.location} size="small" color="dark-2">
           {item.location}
         </Text>
       )}
+      itemKey={(item) => item.entry}
     />
   </Box>
 );

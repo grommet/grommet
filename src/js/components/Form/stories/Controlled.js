@@ -51,6 +51,7 @@ export const Controlled = () => {
             <MaskedInput
               id="email"
               name="email"
+              aria-required
               mask={[
                 { regexp: /^[\w\-_.]+$/, placeholder: 'example' },
                 { fixed: '@' },
@@ -60,16 +61,19 @@ export const Controlled = () => {
               ]}
             />
           </FormField>
-          <FormField name="subscribe">
-            <CheckBox name="subscribe" label="Subscribe?" />
+          <FormField htmlFor="subscribe" name="subscribe">
+            <CheckBox id="subscribe" name="subscribe" label="Subscribe?" />
           </FormField>
-          <FormField name="ampm">
-            <RadioButtonGroup name="ampm" options={['morning', 'evening']} />
+          <FormField htmlFor="ampm" name="ampm">
+            <RadioButtonGroup
+              id="ampm"
+              name="ampm"
+              options={['morning', 'evening']}
+            />
           </FormField>
           <FormField label="Size" htmlFor="size" name="size">
             <Select
               id="size"
-              aria-label="size"
               name="size"
               options={['small', 'medium', 'large']}
             />
@@ -78,7 +82,15 @@ export const Controlled = () => {
             <TextArea id="comments" name="comments" />
           </FormField>
           <FormField label="Age" htmlFor="age" name="age" pad>
-            <RangeInput id="age" name="age" min={15} max={75} />
+            <RangeInput
+              aria-valuemin={15}
+              aria-valuemax={75}
+              aria-valuenow={30}
+              id="age"
+              name="age"
+              min={15}
+              max={75}
+            />
           </FormField>
           <Box direction="row" justify="between" margin={{ top: 'medium' }}>
             <Button label="Cancel" />

@@ -100,6 +100,8 @@ started you should:
 1. clone it `git clone https://github.com/<your-username>/grommet.git`
 1. install dependencies using: `yarn install`
 
+Grommet is using yarn v4.
+
 The components code lives in `src/js/components`. A few gotchas you may run
 into while contributing could include:
 
@@ -116,6 +118,8 @@ into while contributing could include:
   forget to update corresponding `index.d.ts` files.
 - For code syntax alignment in your pull request, use [prettier].
 - Pull requests with code should include tests that validate the changes.
+- All commits should be signed. Add the `-s` flag to your commit command. For more
+  details take a look at the [DCO app](https://probot.github.io/apps/dco/).
 
 We review issues and pull requests on a weekly basis (sometimes more
 frequently). If you feel we missed yours don’t hesitate to ping us on
@@ -151,7 +155,6 @@ The following best practices should be observed when writing Jest tests with Rea
 
 - `screen` should be used for querying.
 - Ensure the correct query is being used by referring to [this list of queries](https://testing-library.com/docs/queries/about/#priority), ordered by priority. The majority of the time `getByRole` should be used.
-- In most cases `userEvent` should be used in place of `fireEvent`.
 - Snapshot tests should use `asFragment()` instead of `container.firstChild`.
 
 This article, [Common mistakes with React Testing Library](https://kentcdodds.com/blog/common-mistakes-with-react-testing-library), contains more information and testing best practices.

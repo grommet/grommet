@@ -28,6 +28,12 @@ describe('Calendar', () => {
     expect(results).toHaveNoViolations();
   });
 
+  test('render without grommet wrapper', () => {
+    const { container } = render(<Calendar date={DATE} animate={false} />);
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
   test('date', () => {
     // need to set the date to avoid snapshot drift over time
     const { container } = render(
@@ -94,6 +100,25 @@ describe('Calendar', () => {
     );
 
     expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('prop header size', () => {
+    const {} = render(
+      <Grommet>
+        <Calendar size="small" level={3} date={DATE} />
+        <Calendar size="medium" level={2} date={DATE} />
+        <Calendar size="large" level={1} date={DATE} />
+      </Grommet>,
+    );
+
+    // Check for each calendar heading level
+    const smallCalendarHeading = screen.getByRole('heading', { level: 3 });
+    const mediumCalendarHeading = screen.getByRole('heading', { level: 2 });
+    const largeCalendarHeading = screen.getByRole('heading', { level: 1 });
+
+    expect(smallCalendarHeading).toBeInTheDocument();
+    expect(mediumCalendarHeading).toBeInTheDocument();
+    expect(largeCalendarHeading).toBeInTheDocument();
   });
 
   test('fill', () => {
@@ -645,6 +670,95 @@ describe('Calendar', () => {
       ),
     );
   });
+
+  test('should render day and range rounding and states', () => {
+    const { asFragment } = render(
+      <Grommet
+        theme={{
+          global: {
+            colors: {
+              blue: '#00C8FF',
+              purple: '#F740FF',
+            },
+            active: {
+              background: 'skyblue',
+            },
+          },
+          calendar: {
+            day: {
+              hover: {
+                background: 'blue',
+                color: 'red',
+              },
+              selected: {
+                background: 'purple',
+                color: '#000000',
+                font: {
+                  weight: 500,
+                },
+                hover: {
+                  background: '#006750',
+                  color: '#FFFFFF',
+                },
+              },
+              inRange: {
+                color: 'blue',
+                hover: {
+                  background: 'rgb(174, 246, 223)',
+                  color: 'text-strong',
+                },
+              },
+            },
+            range: {
+              background: '#CBFAEB',
+            },
+            medium: {
+              day: {
+                round: 'full',
+              },
+              range: {
+                round: 'none',
+                start: {
+                  round: {
+                    corner: 'left',
+                    size: 'full',
+                  },
+                },
+                end: {
+                  round: {
+                    corner: 'right',
+                    size: 'full',
+                  },
+                },
+              },
+            },
+          },
+        }}
+      >
+        <Calendar date={DATES} animate={false} />
+      </Grommet>,
+    );
+    expect(asFragment()).toMatchSnapshot();
+
+    let style: CSSStyleDeclaration;
+    const selectedDay = screen.getByText('10');
+    fireEvent.mouseOver(selectedDay);
+    style = window.getComputedStyle(selectedDay);
+    expect(style.background).toEqual('rgb(0, 103, 80)'); // rgb equivalent of selected.hover.background
+    expect(style.color).toEqual('rgb(255, 255, 255)');
+
+    const inRangeDay = screen.getByText('9');
+    fireEvent.mouseOver(inRangeDay);
+    style = window.getComputedStyle(inRangeDay);
+    expect(style.background).toEqual('rgb(174, 246, 223)');
+    expect(style.color).toEqual('rgb(0, 0, 0)'); // rgb equivalent of text-strong
+
+    const day = screen.getByText('16');
+    fireEvent.mouseOver(day);
+    style = window.getComputedStyle(day);
+    expect(style.background).toEqual('rgb(0, 200, 255)'); // rgb equivalent of theme blue
+    expect(style.color).toEqual('red');
+  });
 });
 
 describe('Calendar Keyboard events', () => {
@@ -750,6 +864,24 @@ describe('Calendar Keyboard events', () => {
       key: 'Enter',
       keyCode: 13,
       which: 13,
+    });
+    // Jan 16th is set to active
+    expect(onSelect).toBeCalledWith(expect.stringMatching(/^2020-01-16T/));
+  });
+  test('onSpace', () => {
+    const { getByText } = render(<App />);
+    fireEvent.mouseOver(getByText('15'));
+    fireEvent.click(getByText('15'));
+    fireEvent.keyDown(getByText('15'), {
+      key: 'ArrowRight',
+      keyCode: 39,
+      which: 39,
+    });
+    // press space to change date to active
+    fireEvent.keyDown(getByText('16'), {
+      key: 'space',
+      keyCode: 32,
+      which: 32,
     });
     // Jan 16th is set to active
     expect(onSelect).toBeCalledWith(expect.stringMatching(/^2020-01-16T/));

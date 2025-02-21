@@ -23,6 +23,12 @@ describe('Spinner', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
+  test('renders outside grommet wrapper', () => {
+    const { container } = render(<Spinner />);
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
   test('size renders', () => {
     const { container } = render(
       <Grommet>
@@ -37,7 +43,7 @@ describe('Spinner', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
-  test('size renders', () => {
+  test('color renders', () => {
     const { container } = render(
       <Grommet>
         <Spinner color="graph-0" />

@@ -10,6 +10,7 @@ import {
   Grid,
   Grommet,
   Text,
+  Main,
 } from 'grommet';
 
 const theme = {
@@ -110,33 +111,35 @@ const Identifier = ({ children, title, subTitle, size, ...rest }) => (
 
 export const Clickable = () => (
   <Grommet theme={theme} full>
-    <Box pad="large" height="100%">
-      <Grid gap="medium" columns={{ count: 'fit', size: 'small' }}>
-        {data.map((value) => (
-          <Card
-            key={value.title}
-            onClick={() => {
-              // eslint-disable-next-line no-alert
-              alert('Card was Clicked!');
-            }}
-          >
-            <CardBody pad="small">
-              <Identifier
-                title={value.title}
-                subTitle={value.subTitle}
-                size="small"
-              >
-                {value.icon}
-              </Identifier>
-              <ChartPreview type={value.type} />
-            </CardBody>
-            <CardFooter pad={{ horizontal: 'medium', vertical: 'small' }}>
-              <Text size="xsmall">{value.message}</Text>
-            </CardFooter>
-          </Card>
-        ))}
-      </Grid>
-    </Box>
+    <Main>
+      <Box pad="large" height="100%">
+        <Grid gap="medium" columns={{ count: 'fit', size: 'small' }}>
+          {data.map((value) => (
+            <Card
+              key={value.title}
+              onClick={() => {
+                // eslint-disable-next-line no-alert
+                alert('Card was Clicked!');
+              }}
+            >
+              <CardBody pad="small">
+                <Identifier
+                  title={value.title}
+                  subTitle={value.subTitle}
+                  size="small"
+                >
+                  {value.icon}
+                </Identifier>
+                <ChartPreview type={value.type} />
+              </CardBody>
+              <CardFooter pad={{ horizontal: 'medium', vertical: 'small' }}>
+                <Text size="xsmall">{value.message}</Text>
+              </CardFooter>
+            </Card>
+          ))}
+        </Grid>
+      </Box>
+    </Main>
   </Grommet>
 );
 

@@ -1,14 +1,13 @@
-import React, { useContext, useEffect, useMemo, useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 
-import { ThemeContext } from 'styled-components';
 import { useLayoutEffect } from '../../utils/use-isomorphic-layout-effect';
-import { defaultProps } from '../../default-props';
 
 import { normalizeColor, parseMetricToNum, useForwardedRef } from '../../utils';
 
 import { StyledChart } from './StyledChart';
 import { normalizeBounds, normalizeValues } from './utils';
 import { ChartPropTypes } from './propTypes';
+import { useThemeValue } from '../../utils/useThemeValue';
 
 const gradientMaskColor = '#ffffff';
 
@@ -43,7 +42,7 @@ const Chart = React.forwardRef(
     ref,
   ) => {
     const containerRef = useForwardedRef(ref);
-    const theme = useContext(ThemeContext) || defaultProps.theme;
+    const { theme, passThemeFlag } = useThemeValue();
 
     const values = useMemo(() => normalizeValues(valuesProp), [valuesProp]);
 
@@ -709,6 +708,7 @@ const Chart = React.forwardRef(
         width={size === 'full' ? '100%' : size.width}
         height={size === 'full' ? '100%' : size.height}
         typeProp={type} // prevent adding to DOM
+        {...passThemeFlag}
         {...rest}
       >
         {defs.length && <defs>{defs}</defs>}

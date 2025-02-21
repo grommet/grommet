@@ -19,6 +19,10 @@
     "enterCalendar": "Calendar is open, use arrow keys and enter to select a date.",
     "exitCalendar": "Exited calendar dialog"
   },
+  "dataChart": {
+    "detailTitle": "Data chart",
+    "detailFocus": "Use the left and right arrow keys to navigate the chart data."
+  },
   "dataFilters": {
     "clear": "Clear filters",
     "heading": "Filters",
@@ -29,7 +33,6 @@
     }
   },
   "dataForm": {
-    "reset": "Undo changes",
     "submit": "Apply filters"
   },
   "dataSearch": {
@@ -44,9 +47,13 @@
     "open": "Open sort"
   },
   "dataSummary": {
-    "filtered": "{filteredTotal} results of {total} items",
-    "filteredSingle": "{filteredTotal} result of {total} items",
-    "total": "{total} items"
+    "filtered": "{filteredTotal} results of {total} {items}",
+    "filteredSingle": "{filteredTotal} result of {total} {items}",
+    "items": "items",
+    "itemsSingle": "item",
+    "selected": "{selected} selected",
+    "total": "{total} {items}",
+    "totalSingle": "{total} {items}"
   },
   "dataTableColumns": {
     "open": "Open column selector",
@@ -66,22 +73,63 @@
     "dropPrompt": "Drop file here or",
     "dropPromptMultiple": "Drop files here or",
     "files": "files",
+    "maxFile": "Attach a maximum of {max} files only.",
     "maxSizeSingle": "The file is too large. Select a file no larger than {maxSize}.",
     "maxSizeMultiple": {
       "singular": "One file is too large. Select files which are no larger than {maxSize}.",
       "plural": "{numOfFiles} files are too large. Select files which are no larger than {maxSize}."
     },
     "remove": "remove",
-    "removeAll": "remove all",
-    "maxFile": "Attach a maximum of {max} files only."
+    "removeAll": "remove all"
   },
   "form": {
     "invalid": "invalid",
     "required": "required"
   },
+  "formField": {
+    "maxCharacters": {
+      "remaining": {
+        "singular": "{number} character left",
+        "plural": "{number} characters left"
+      },
+      "overLimit": {
+        "singular": "{number} character over limit",
+        "plural": "{number} characters over limit"
+      }
+    }
+  },
+  "input": {
+    "readOnlyCopy": {
+      "prompt": "Copy to clipboard",
+      "validation": "Copied"
+    }
+  },
   "menu": {
     "openMenu": "Open Menu",
     "closeMenu": "Close Menu"
+  },
+  "meter": {
+    "bar": {
+      "singular": "Bar meter with value {meterValue} out of {max}",
+      "plural": "Bar meter with values {meterValue} out of {max}"
+    },
+    "circle": {
+      "singular": "Circle meter with value {meterValue} out of {max}",
+      "plural": "Circle meter with values {meterValue} out of {max}"
+    },
+    "pie": {
+      "singular": "Pie meter with value {meterValue} out of {max}",
+      "plural": "Pie meter with values {meterValue} out of {max}"
+    },
+    "semicircle": {
+      "singular": "Semicircle meter with value {meterValue} out of {max}",
+      "plural": "Semicircle meter with values {meterValue} out of {max}"
+    }
+  },
+  "pagination": {
+    "stepLabel": "Items per page",
+    "summary": "Showing {start}-{end} of {total}",
+    "summaryNoItems": "0 items"
   },
   "rangeSelector": {
     "lower": "Lower Bounds",
@@ -90,6 +138,22 @@
   "select": {
     "multiple": "multiple",
     "selected": "; Selected: {currentSelectedValue}"
+  },
+  "selectMultiple": {
+    "clearAll": "Clear All",
+    "clearAllA11y": "{selected} options selected. Clear all?",
+    "open": "Open drop",
+    "optionNotSelected": "{optionLabel} not selected",
+    "optionSelected": "{optionLabel} selected",
+    "search": "Search to filter options",
+    "selectAll": "Select All",
+    "selectAllA11y": "Select all {total} options",
+    "selectDrop": "Select dropdown",
+    "selected": "{selected} selected",
+    "selectedOfTotal": "{selected} selected of {total}",
+    "selectedOptions": "Selected options",
+    "showMore": "+ {remaining} more",
+    "summarizedValue": "{selected} selected"
   },
   "skipLinks": {
     "skipTo": "Skip To:"
@@ -104,9 +168,10 @@
     "suggestionIsOpen": "Suggestions drop is open, continue to use arrow keys to navigate"
   },
   "video": {
+    "audioDescriptions": "video audio description",
     "captions": "closed captions",
     "closeMenu": "close menu",
-    "audioDescriptions": "video audio description",
+    "description": "video audio description",
     "fullScreen": "full screen",
     "progressMeter": "video progress",
     "scrubber": "scrubber",
@@ -114,7 +179,6 @@
     "pauseButton": "pause",
     "playButton": "play",
     "volumeDown": "volume down",
-    "volumeUp": "volume up",
-    "description": "video audio description"
+    "volumeUp": "volume up"
   }
 }

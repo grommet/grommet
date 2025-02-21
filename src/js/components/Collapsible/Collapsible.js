@@ -1,18 +1,11 @@
-import React, {
-  forwardRef,
-  useContext,
-  useEffect,
-  useMemo,
-  useRef,
-  useState,
-} from 'react';
-import styled, { ThemeContext } from 'styled-components';
+import React, { forwardRef, useEffect, useMemo, useRef, useState } from 'react';
+import styled from 'styled-components';
 
 import { useLayoutEffect } from '../../utils/use-isomorphic-layout-effect';
-import { defaultProps } from '../../default-props';
 import { useForwardedRef } from '../../utils';
 import { Box } from '../Box';
 import { CollapsiblePropTypes } from './propTypes';
+import { useThemeValue } from '../../utils/useThemeValue';
 
 const AnimatedBox = styled(Box)`
   ${(props) =>
@@ -28,7 +21,7 @@ const AnimatedBox = styled(Box)`
 
 const Collapsible = forwardRef(
   ({ children, direction, open: openArg }, ref) => {
-    const theme = useContext(ThemeContext) || defaultProps.theme;
+    const { theme } = useThemeValue();
     const [open, setOpen] = useState(openArg);
     const [animate, setAnimate] = useState(false);
     const [speed, setSpeed] = useState(theme.collapsible.minSpeed);

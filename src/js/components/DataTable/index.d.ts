@@ -76,6 +76,7 @@ export interface DataTableProps<TRowType = any> {
 
   // Appearance
   alignSelf?: AlignSelfType;
+  allowSelectAll?: boolean;
   background?:
     | BackgroundType
     | BackgroundType[]
@@ -113,7 +114,11 @@ export interface DataTableProps<TRowType = any> {
         expandable?: Array<string>;
         select?: { [key: string]: 'all' | 'some' | 'none' };
         onExpand?: (expandedKeys: string[]) => void;
-        onSelect?: (select: (string | number)[], datum: TRowType) => void;
+        onSelect?: (
+          select: (string | number)[],
+          datum: TRowType,
+          groupBySelected: any,
+        ) => void;
       };
   primaryKey?: string | boolean;
   select?: (string | number)[];

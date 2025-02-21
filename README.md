@@ -2,7 +2,6 @@
 
 [![PRs Welcome](https://img.shields.io/badge/pr's-welcome-7d4cdb.svg)][contributing]
 [![slack](https://img.shields.io/badge/join%20the%20community-slack-fd6fff.svg)][slack]
-[![follow](https://img.shields.io/twitter/follow/grommet_io.svg?label=follow%20&style=social)][twitter]
 [![blogs](https://img.shields.io/badge/view%20blogs%20on-medium-000000.svg)][medium]
 [![npm package](https://img.shields.io/npm/v/grommet.svg?color=ffca58)][npm]
 [![npm downloads](https://img.shields.io/npm/dm/grommet.svg?color=3d138d)][npm]
@@ -52,7 +51,7 @@ version.
      $ yarn storybook
    ```
 
-1. Basic [code-sandbox playgrounds][playground] for each component.
+1. Grommet starter template [sandbox](https://codesandbox.io/p/sandbox/m7mml8l0zj?file=%2Findex.js).
 1. [Templates, patterns, and starters][sandboxes]: feel free to share with us
    more pattern ideas on [Slack].
 1. End-to-end project examples from our community in the
@@ -90,9 +89,8 @@ Grommet is produced using this great tool:
 [grommet]: https://grommet.io/
 [medium]: https://medium.com/grommet-io
 [npm]: https://www.npmjs.com/package/grommet
-[playground]: https://codesandbox.io/s/github/grommet/grommet-sandbox
 [prettier]: https://github.com/prettier/prettier
 [sandboxes]: https://codesandbox.io/u/grommetux/sandboxes
+[sandbox]: https://codesandbox.io/p/sandbox/m7mml8l0zj?file=%2Findex.js
 [slack]: https://slack-invite.grommet.io
 [storybook]: https://storybook.grommet.io
-[twitter]: https://twitter.com/grommet_io

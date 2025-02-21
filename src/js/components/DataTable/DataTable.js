@@ -7,9 +7,6 @@ import React, {
   useState,
   Fragment,
 } from 'react';
-import { ThemeContext } from 'styled-components';
-
-import { defaultProps } from '../../default-props';
 
 import { useLayoutEffect } from '../../utils/use-isomorphic-layout-effect';
 import { DataContext } from '../../contexts/DataContext';
@@ -37,6 +34,7 @@ import {
 } from './StyledDataTable';
 import { DataTablePropTypes } from './propTypes';
 import { PlaceholderBody } from './PlaceholderBody';
+import { useThemeValue } from '../../utils/useThemeValue';
 
 const emptyData = [];
 
@@ -58,6 +56,7 @@ function useGroupState(groups, groupBy) {
 }
 
 const DataTable = ({
+  allowSelectAll = true,
   background,
   border,
   columns: columnsProp,
@@ -89,12 +88,13 @@ const DataTable = ({
   verticalAlign,
   ...rest
 }) => {
-  const theme = useContext(ThemeContext) || defaultProps.theme;
+  const { theme, passThemeFlag } = useThemeValue();
   const {
     view,
     data: contextData,
     properties,
     onView,
+    setSelected: setSelectedDataContext,
   } = useContext(DataContext);
   const data = dataProp || contextData || emptyData;
 
@@ -185,6 +185,11 @@ const DataTable = ({
     () => setSelected(select || (onSelect && []) || undefined),
     [onSelect, select],
   );
+  useEffect(() => {
+    if (select && setSelectedDataContext) {
+      setSelectedDataContext(select.length);
+    }
+  }, [select, setSelectedDataContext]);
 
   const [rowExpand, setRowExpand] = useState([]);
 
@@ -215,7 +220,7 @@ const DataTable = ({
       }
       const nextPinnedOffset = {};
 
-      if (columnWidths !== []) {
+      if (columnWidths.length !== 0) {
         pinnedProperties.forEach((property, index) => {
           const columnIndex =
             property === '_grommetDataTableSelect'
@@ -383,7 +388,11 @@ const DataTable = ({
 
   const Container = paginate ? StyledContainer : Fragment;
   const containterProps = paginate
-    ? { ...theme.dataTable.container, fill }
+    ? {
+        ...theme.dataTable.container,
+        fill,
+        ...passThemeFlag,
+      }
     : undefined;
 
   // DataTable should overflow if paginating but pagination component
@@ -415,10 +424,20 @@ const DataTable = ({
     );
   }
 
+  const handleSelect = (nextSelected, row) => {
+    setSelected(nextSelected);
+    if (setSelectedDataContext) setSelectedDataContext(nextSelected.length);
+    if (row) onSelect(nextSelected, row);
+    else onSelect(nextSelected);
+  };
+
   const bodyContent = groups ? (
     <GroupedBody
       ref={bodyRef}
-      cellProps={cellProps.body}
+      cellProps={{
+        body: cellProps.body,
+        groupHeader: { ...cellProps.body, ...cellProps.groupHeader },
+      }}
       columns={columns}
       disabled={disabled}
       groupBy={typeof groupBy === 'string' ? { property: groupBy } : groupBy}
@@ -444,14 +463,7 @@ const DataTable = ({
             }
           : onMore
       }
-      onSelect={
-        onSelect
-          ? (nextSelected, row) => {
-              setSelected(nextSelected);
-              if (onSelect) onSelect(nextSelected, row);
-            }
-          : undefined
-      }
+      onSelect={onSelect ? handleSelect : undefined}
       onToggle={onToggleGroup}
       onUpdate={onUpdate}
       replace={replace}
@@ -487,14 +499,7 @@ const DataTable = ({
       }
       replace={replace}
       onClickRow={onClickRow}
-      onSelect={
-        onSelect
-          ? (nextSelected, row) => {
-              setSelected(nextSelected);
-              if (onSelect) onSelect(nextSelected, row);
-            }
-          : undefined
-      }
+      onSelect={onSelect ? handleSelect : undefined}
       pinnedCellProps={cellProps.pinned}
       pinnedOffset={pinnedOffset}
       primaryProperty={primaryProperty}
@@ -518,10 +523,12 @@ const DataTable = ({
         <StyledDataTable
           fillProp={!paginate ? fill : undefined}
           {...paginatedDataTableProps}
+          {...passThemeFlag}
           {...rest}
         >
           <Header
             ref={headerRef}
+            allowSelectAll={allowSelectAll}
             cellProps={cellProps.header}
             columns={columns}
             data={adjustedData}
@@ -541,14 +548,7 @@ const DataTable = ({
             onFiltering={onFiltering}
             onFilter={onFilter}
             onResize={resizeable ? onResize : undefined}
-            onSelect={
-              onSelect
-                ? (nextSelected) => {
-                    setSelected(nextSelected);
-                    if (onSelect) onSelect(nextSelected);
-                  }
-                : undefined
-            }
+            onSelect={onSelect ? handleSelect : undefined}
             onSort={sortable || sortProp || onSortProp ? onSort : undefined}
             onToggle={onToggleGroups}
             onWidths={onHeaderWidths}

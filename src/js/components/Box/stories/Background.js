@@ -49,8 +49,8 @@ export const BackgroundBox = () => (
         low opacity on light background
       </Box>
     </Box>
-    <Box background={{ color: 'background', dark: true }} pad="medium">
-      <Text color="brand">force dark background</Text>
+    <Box background={{ color: 'background-front', dark: true }} pad="medium">
+      <Text>force dark background</Text>
     </Box>
     <Box background="dark-1" pad="medium">
       <Box background={{ color: 'background', dark: false }} pad="medium">
@@ -59,12 +59,12 @@ export const BackgroundBox = () => (
     </Box>
     <Box
       background={{
-        color: { dark: 'darkgrey', light: 'lightgrey' },
+        color: { dark: 'dark-2', light: 'lightgrey' },
         dark: true,
       }}
       pad="medium"
     >
-      <Text color="brand">force dark background with color as object</Text>
+      <Text>force dark background with color as object</Text>
     </Box>
     <Box background="dark-1" pad="medium">
       <Box
@@ -74,7 +74,7 @@ export const BackgroundBox = () => (
         }}
         pad="medium"
       >
-        <Text color="brand">force light background with color as object</Text>
+        <Text>force light background with color as object</Text>
       </Box>
     </Box>
   </Box>

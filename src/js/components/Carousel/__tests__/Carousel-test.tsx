@@ -32,6 +32,18 @@ describe('Carousel', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
+  test('basic without grommet wrapper', () => {
+    const { asFragment } = render(
+      <Carousel>
+        <div>Slide One</div>
+        <div>Slide Two</div>
+      </Carousel>,
+    );
+    expect(getSlideOne()).toBeVisible();
+    expect(getSlideTwo()).not.toBeVisible();
+    expect(asFragment()).toMatchSnapshot();
+  });
+
   test('basic with `initialChild: 1`', () => {
     render(
       <Grommet>

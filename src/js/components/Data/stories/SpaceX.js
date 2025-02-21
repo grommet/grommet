@@ -1,16 +1,6 @@
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
-import {
-  Box,
-  DataTable,
-  Data,
-  Footer,
-  Grid,
-  Notification,
-  Pagination,
-  Text,
-  Tip,
-} from 'grommet';
+import { Box, DataTable, Data, Grid, Pagination, Text, Tip } from 'grommet';
 
 import { StatusCritical } from 'grommet-icons';
 
@@ -166,15 +156,6 @@ export const SpaceX = () => {
     });
   }, [view]);
 
-  const pageBounds = useMemo(() => {
-    if (result?.page)
-      return [
-        (result.page - 1) * view.step + 1,
-        Math.min(result.page * view.step, result.filteredTotal),
-      ];
-    return [];
-  }, [result, view]);
-
   return (
     // Uncomment <Grommet> lines when using outside of storybook
     // <Grommet theme={...}>
@@ -183,38 +164,25 @@ export const SpaceX = () => {
       pad="large"
       columns={[['small', 'large']]}
       justifyContent="center"
-      gap="large"
     >
-      <Notification
-        status="info"
-        message="Data is in 'beta'. The API surface is subject to change."
-      />
-      <Box>
-        <Data
-          properties={{
-            rocket: { label: 'Rocket', options: rockets },
-            success: { label: 'Success', options: ['Successful', 'Failed'] },
-          }}
-          data={result.data}
-          total={total}
-          filteredTotal={result.filteredTotal}
-          defaultView={defaultView}
-          view={view}
-          onView={setView}
-          toolbar
-        >
-          <DataTable columns={columns} sortable />
-          {result.filteredTotal > view.step && (
-            <Footer>
-              <Text>
-                Showing {pageBounds[0]}-{pageBounds[1]} of{' '}
-                {result.filteredTotal}
-              </Text>
-              <Pagination />
-            </Footer>
-          )}
-        </Data>
-      </Box>
+      <Data
+        properties={{
+          rocket: { label: 'Rocket', options: rockets },
+          success: { label: 'Success', options: ['Successful', 'Failed'] },
+        }}
+        data={result.data}
+        total={total}
+        filteredTotal={result.filteredTotal}
+        defaultView={defaultView}
+        view={view}
+        onView={setView}
+        toolbar
+      >
+        <DataTable columns={columns} sortable />
+        {result.filteredTotal > view.step && (
+          <Pagination summary border="top" pad={{ vertical: 'xsmall' }} />
+        )}
+      </Data>
     </Grid>
     // </Grommet>
   );

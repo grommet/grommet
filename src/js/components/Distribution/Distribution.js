@@ -16,13 +16,21 @@ Value.propTypes = {
   children: PropTypes.node.isRequired,
 };
 
+const defaultChildrenPropValue = (value) => (
+  <Box fill border>
+    <Text>{value.value}</Text>
+  </Box>
+);
+
+const defaultValues = [];
+
 const Distribution = ({
   basis,
-  children,
-  direction,
+  children = defaultChildrenPropValue,
+  direction = 'row',
   fill,
-  gap,
-  values,
+  gap = 'xsmall',
+  values = defaultValues,
   ...rest
 }) => {
   if (values.length === 1) {
@@ -105,19 +113,6 @@ const Distribution = ({
     );
   }
   return null;
-};
-
-Distribution.defaultProps = {
-  basis: undefined,
-  children: (value) => (
-    <Box fill border>
-      {/* eslint-disable-next-line react/destructuring-assignment */}
-      <Text>{value.value}</Text>
-    </Box>
-  ),
-  direction: 'row',
-  gap: 'xsmall',
-  values: [],
 };
 
 Distribution.propTypes = DistributionPropTypes;

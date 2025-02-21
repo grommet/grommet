@@ -1,5 +1,12 @@
-import React, { Fragment, useContext, useMemo, useRef, useState } from 'react';
-import styled, { ThemeContext } from 'styled-components';
+import React, {
+  Fragment,
+  cloneElement,
+  useContext,
+  useMemo,
+  useRef,
+  useState,
+} from 'react';
+import styled from 'styled-components';
 
 import { DataContext } from '../../contexts/DataContext';
 import { Box } from '../Box';
@@ -16,14 +23,16 @@ import {
   unfocusStyle,
   useForwardedRef,
   usePagination,
+  styledComponentsConfig,
 } from '../../utils';
 import { useAnalytics } from '../../contexts/AnalyticsContext';
 
 import { ListPropTypes } from './propTypes';
+import { useThemeValue } from '../../utils/useThemeValue';
 
 const emptyData = [];
 
-const StyledList = styled.ul`
+const StyledList = styled.ul.withConfig(styledComponentsConfig)`
   list-style: none;
   ${(props) => !props.margin && 'margin: 0;'}
   padding: 0;
@@ -36,15 +45,11 @@ const StyledList = styled.ul`
       focusStyle({ forceOutline: true, skipSvgChildren: true })}
   }
 
-  // during the interim state when a user is holding down a click,
-  // the individual list item has focus in the DOM until the click
-  // completes and focus is placed back on the list container.
-  // for visual consistency, we want to keep the focus indicator on the
-  // list container the whole time.
-  ${(props) =>
-    props.itemFocus &&
-    focusStyle({ forceOutline: true, skipSvgChildren: true })}}
   ${(props) => props.theme.list && props.theme.list.extend}}
+
+  &:focus:not(:focus-visible) {
+    ${unfocusStyle()}
+  }
 `;
 
 const StyledItem = styled(Box)`
@@ -140,6 +145,7 @@ const List = React.forwardRef(
       onKeyDown,
       onMore,
       onOrder,
+      showIndex = true,
       pad,
       paginate,
       pinned = [],
@@ -152,7 +158,7 @@ const List = React.forwardRef(
     ref,
   ) => {
     const listRef = useForwardedRef(ref);
-    const theme = useContext(ThemeContext);
+    const { theme, passThemeFlag } = useThemeValue();
     const { data: contextData } = useContext(DataContext);
     const data = dataProp || contextData || emptyData;
 
@@ -193,7 +199,11 @@ const List = React.forwardRef(
 
       currentData.forEach((item, index) => {
         const key = getValue(item, index, itemKey);
-        if (pinned.includes(key)) {
+        const isPinned = Array.isArray(pinned)
+          ? pinned.includes(key)
+          : typeof pinned === 'object' && pinned?.items?.includes(key);
+
+        if (isPinned) {
           pinnedData.push(item);
           pinnedIndexes.push(index);
         } else {
@@ -213,13 +223,18 @@ const List = React.forwardRef(
     });
 
     const Container = paginate ? StyledContainer : Fragment;
-    const containterProps = paginate ? { ...theme.list.container } : undefined;
+    const containterProps = paginate
+      ? {
+          ...theme.list.container,
+          ...passThemeFlag,
+        }
+      : undefined;
     const draggingRef = useRef();
 
     const sendAnalytics = useAnalytics();
 
     const ariaProps = {
-      role: onClickItem || onOrder ? 'listbox' : 'list',
+      role: onClickItem ? 'listbox' : 'list',
     };
 
     if (active >= 0) {
@@ -249,73 +264,100 @@ const List = React.forwardRef(
       ariaProps['aria-activedescendant'] = activeId;
     }
 
+    const onSelectOption = (event) => {
+      if ((onClickItem || onOrder) && active >= 0) {
+        if (onOrder) {
+          const index = Math.trunc(active / 2);
+          // Call onOrder with the re-ordered data.
+          // Update the active control index so that the
+          // active control will stay on the same item
+          // even though it moved up or down.
+          const newIndex = active % 2 ? index + 1 : index - 1;
+          onOrder(reorder(orderableData, pinnedInfo, index, newIndex));
+          updateActive(
+            active % 2
+              ? Math.min(active + 2, orderableData.length * 2 - 2)
+              : Math.max(active - 2, 1),
+          );
+        } else if (
+          disabledItems?.includes(getValue(data[active], active, itemKey))
+        ) {
+          event.preventDefault();
+        } else if (onClickItem) {
+          event.persist();
+          const adjustedEvent = event;
+          adjustedEvent.item = data[active];
+          adjustedEvent.index = active;
+          onClickItem(adjustedEvent);
+          sendAnalytics({
+            type: 'listItemClick',
+            element: listRef.current,
+            event: adjustedEvent,
+            item: data[active],
+            index: active,
+          });
+        }
+      }
+    };
+
     return (
       <Container {...containterProps}>
         <Keyboard
-          onEnter={
-            (onClickItem || onOrder) && active >= 0
-              ? (event) => {
-                  if (onOrder) {
-                    const index = Math.trunc(active / 2);
-                    // Call onOrder with the re-ordered data.
-                    // Update the active control index so that the
-                    // active control will stay on the same item
-                    // even though it moved up or down.
-                    if (active % 2) {
-                      onOrder(
-                        reorder(orderableData, pinnedInfo, index, index + 1),
-                      );
-                      updateActive(
-                        Math.min(active + 2, orderableData.length * 2 - 2),
-                      );
-                    } else {
-                      onOrder(
-                        reorder(orderableData, pinnedInfo, index, index - 1),
-                      );
-                      updateActive(Math.max(active - 2, 1));
-                    }
-                  } else if (
-                    disabledItems?.includes(
-                      getValue(data[active], active, itemKey),
-                    )
-                  ) {
-                    event.preventDefault();
-                  } else if (onClickItem) {
-                    event.persist();
-                    const adjustedEvent = event;
-                    adjustedEvent.item = data[active];
-                    adjustedEvent.index = active;
-                    onClickItem(adjustedEvent);
-                    sendAnalytics({
-                      type: 'listItemClick',
-                      element: listRef.current,
-                      event: adjustedEvent,
-                      item: data[active],
-                      index: active,
-                    });
-                  }
-                }
-              : undefined
-          }
-          onUp={
-            (onClickItem || onOrder) && active
-              ? () => {
-                  const min = onOrder ? 1 : 0;
-                  updateActive(Math.max(active - 1, min));
-                }
-              : undefined
-          }
-          onDown={
-            (onClickItem || onOrder) && orderableData && orderableData.length
-              ? () => {
-                  const min = onOrder ? 1 : 0;
-                  const max = onOrder
-                    ? orderableData.length * 2 - 2
-                    : data.length - 1;
-                  updateActive(active >= min ? Math.min(active + 1, max) : min);
-                }
-              : undefined
-          }
+          onEnter={onSelectOption}
+          onSpace={(event) => {
+            if (onClickItem || onOrder) {
+              event.preventDefault();
+            }
+            onSelectOption(event);
+          }}
+          onUp={(event) => {
+            if (onClickItem || onOrder) {
+              event.preventDefault();
+              if (active) {
+                const min = onOrder ? 1 : 0;
+                const activeElementIndex = Math.max(active - 1, min);
+                updateActive(activeElementIndex);
+
+                // Ensure the active item is in view
+                // setTimeout for activeElement to be updated
+                setTimeout(() => {
+                  // eslint-disable max-len
+                  listRef.current?.children[activeElementIndex]?.scrollIntoView(
+                    {
+                      behavior: 'smooth',
+                      block: 'nearest',
+                    },
+                  );
+                }, 0);
+              }
+            }
+          }}
+          onDown={(event) => {
+            if (onClickItem || onOrder) {
+              event.preventDefault();
+              if (orderableData && orderableData.length) {
+                const min = onOrder ? 1 : 0;
+                const max = onOrder
+                  ? orderableData.length * 2 - 2
+                  : data.length - 1;
+                const activeElementIndex =
+                  active >= min ? Math.min(active + 1, max) : min;
+                updateActive(activeElementIndex);
+
+                // Ensure the active item is in view
+                // setTimeout for activeElement to be updated
+                setTimeout(() => {
+                  //  eslint-disable max-len
+                  listRef.current?.children[activeElementIndex]?.scrollIntoView(
+                    {
+                      behavior: 'smooth',
+                      block: 'nearest',
+                    },
+                  );
+                }, 0);
+              }
+            }
+          }}
           onKeyDown={onKeyDown}
         >
           <StyledList
@@ -338,6 +380,7 @@ const List = React.forwardRef(
               updateActive(undefined);
             }}
             {...ariaProps}
+            {...passThemeFlag}
             {...rest}
           >
             <InfiniteScroll
@@ -355,6 +398,25 @@ const List = React.forwardRef(
                 let content;
                 let boxProps = {};
 
+                const key = getValue(item, index, itemKey) || index;
+                let isPinned;
+                if (
+                  (Array.isArray(pinned) && pinned.length > 0) ||
+                  (Array.isArray(pinned?.items) && pinned?.items?.length > 0)
+                ) {
+                  if (typeof item === 'object' && !itemKey) {
+                    console.error(
+                      // eslint-disable-next-line max-len
+                      `Warning: Missing prop itemKey. Prop pin requires itemKey to be specified when data is of type 'object'.`,
+                    );
+                  }
+                  isPinned = Array.isArray(pinned)
+                    ? pinned?.includes(key)
+                    : pinned.items.some((pinnedItem) => pinnedItem === key);
+                }
+
+                const pinnedColor = isPinned ? pinned.color : undefined;
+
                 if (children) {
                   content = children(
                     item,
@@ -366,7 +428,11 @@ const List = React.forwardRef(
                   content =
                     typeof primary === 'string' ||
                     typeof primary === 'number' ? (
-                      <Text key="p" weight="bold">
+                      <Text
+                        color={pinnedColor}
+                        key="p"
+                        {...theme.list.primaryKey}
+                      >
                         {primary}
                       </Text>
                     ) : (
@@ -378,7 +444,7 @@ const List = React.forwardRef(
                       content,
                       typeof secondary === 'string' ||
                       typeof secondary === 'number' ? (
-                        <Text key="s">
+                        <Text color={pinnedColor} key="s">
                           {getValue(item, index, secondaryKey)}
                         </Text>
                       ) : (
@@ -393,12 +459,24 @@ const List = React.forwardRef(
                     };
                   }
                 } else if (typeof item === 'object') {
-                  content = item[Object.keys(item)[0]];
+                  const value = item[Object.keys(item)[0]];
+                  content =
+                    // for backwards compatibility, only wrap in Text if
+                    // pinned.color is defined
+                    pinnedColor && typeof value === 'string' ? (
+                      <Text color={pinnedColor}>{value}</Text>
+                    ) : (
+                      value
+                    );
                 } else {
-                  content = item;
+                  // for backwards compatibility, only wrap in Text if
+                  // pinned.color is defined
+                  content = pinnedColor ? (
+                    <Text color={pinnedColor}>{item}</Text>
+                  ) : (
+                    item
+                  );
                 }
-
-                const key = getValue(item, index, itemKey) || index;
 
                 const orderableIndex = orderableData.findIndex(
                   (ordItem, ordIndex) =>
@@ -414,17 +492,6 @@ const List = React.forwardRef(
                     );
                   }
                   isDisabled = disabledItems?.includes(key);
-                }
-
-                let isPinned;
-                if (pinned.length > 0) {
-                  if (typeof item === 'object' && !itemKey) {
-                    console.error(
-                      // eslint-disable-next-line max-len
-                      `Warning: Missing prop itemKey. Prop pin requires itemKey to be specified when data is of type 'object'.`,
-                    );
-                  }
-                  isPinned = pinned?.includes(key);
                 }
 
                 if (action) {
@@ -450,7 +517,8 @@ const List = React.forwardRef(
                   adjustedBackground =
                     adjustedBackground[index % adjustedBackground.length];
                 } else if (isPinned) {
-                  adjustedBackground = theme.list.item.pinned.background;
+                  adjustedBackground =
+                    pinned?.background || theme.list.item.pinned.background;
                 }
 
                 let adjustedBorder =
@@ -645,10 +713,17 @@ const List = React.forwardRef(
 
                 let displayPinned;
                 if (isPinned) {
-                  // Pinned icon and settings
-                  const Pin = theme.list.icons.pin;
                   const pinSize = theme.list.item.pinned.icon.size;
                   const pinPad = theme.list.item.pinned.icon.pad;
+                  const Icon = pinned?.icon || theme.list.icons.pin;
+                  let pinIcon = React.isValidElement(Icon) ? Icon : <Icon />;
+                  pinIcon = cloneElement(pinIcon, {
+                    // icon color prop should win over pinned.color
+                    ...(!pinIcon.props?.color && pinnedColor
+                      ? { color: pinnedColor }
+                      : {}),
+                    size: pinSize,
+                  });
 
                   boxProps = {
                     direction: 'row',
@@ -663,7 +738,7 @@ const List = React.forwardRef(
                       justify="end"
                       pad={pinPad}
                     >
-                      <Pin size={pinSize} />
+                      {pinIcon}
                     </Box>
                   );
                   content = <Box flex>{content}</Box>;
@@ -687,8 +762,11 @@ const List = React.forwardRef(
                     {...clickProps}
                     {...orderProps}
                     {...itemAriaProps}
+                    {...passThemeFlag}
                   >
-                    {onOrder && <Text>{index + 1}</Text>}
+                    {showIndex && onOrder && (
+                      <Text color={pinnedColor}>{index + 1}</Text>
+                    )}
                     {content}
                     {displayPinned}
                     {orderControls}
