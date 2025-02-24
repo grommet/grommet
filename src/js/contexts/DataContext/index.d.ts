@@ -82,8 +82,8 @@ interface DataContextType {
           sort?: boolean;
         };
       };
-  result: any[];
-  selected: any;
+  result: { [key: string]: any };
+  selected: any[];
   toolbarKeys: string[];
   view?: string | View;
   views: View[];
