@@ -101,7 +101,7 @@ export const parameters = {
        * "second" story.
        *
        * A return value of 0 results in sorting the "first" story BEFORE the
-       * secondary story.
+       * secondary story, based on the titles.
        */
       const CUSTOM_THEMED = 'Custom Themed';
       const isFirstCustom = first.title.split('/')[2] === CUSTOM_THEMED;
