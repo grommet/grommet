@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 import { Box, RangeSelector, Stack, Text } from 'grommet';
 
-export const Simple = ({ direction = 'horizontal' }) => {
+export const Basic = ({ direction = 'horizontal' }) => {
   const [range, setRange] = useState([12, 16]);
   const onChange = (values) => {
     setRange(values);
@@ -45,5 +45,5 @@ export const Simple = ({ direction = 'horizontal' }) => {
 };
 
 export default {
-  title: 'Input/RangeSelector/Simple',
+  title: 'Input/RangeSelector/Basic',
 };
