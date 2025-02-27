@@ -6,10 +6,9 @@ import {
 } from '../../contexts';
 import { StyledResponsiveContainer } from './StyledResponsiveContainer';
 
-// Borrowed ResponsiveContext breakpoint code from Grommet
+// Borrowed ResponsiveContext breakpoint code
 // but based the breakpoint on the container size rather
 // than the full document size
-// TODO: incorporate this back into Grommet
 
 const getBreakpoint = (viewportWidth, theme) => {
   const sortedBreakpoints = Object.keys(theme.global.breakpoints).sort(
@@ -73,6 +72,8 @@ export const ResponsiveContainer = ({ ...rest }) => {
 
     if (!element) return undefined;
 
+    // TODO: fallback to clientWidth when no window
+
     // eslint-disable-next-line no-undef
     const observer = new ResizeObserver((entries) => {
       window.requestAnimationFrame(() => {
@@ -98,18 +99,13 @@ export const ResponsiveContainer = ({ ...rest }) => {
 
   const responsive =
     stateResponsive ||
-    // eslint-disable-next-line no-undef
     deviceResponsive(navigator.userAgent, theme) ||
     theme?.global?.deviceBreakpoints.tablet;
 
   return (
     <ResponsiveContext.Provider value={responsive}>
       <ResponsiveContainerContext.Provider value={responsiveContainerValue}>
-        <StyledResponsiveContainer
-          ref={ref}
-          overflow={{ horizontal: 'hidden' }}
-          {...rest}
-        />
+        <StyledResponsiveContainer ref={ref} {...rest} />
       </ResponsiveContainerContext.Provider>
     </ResponsiveContext.Provider>
   );
