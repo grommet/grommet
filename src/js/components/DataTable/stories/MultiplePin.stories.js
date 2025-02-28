@@ -182,14 +182,8 @@ const columns = [
   },
   {
     property: 'size',
-    header: (
-      <Text color="text-strong" weight="bold">
-        Size{' '}
-        <Text size="xsmall" weight="normal" color="text">
-          (TiB)
-        </Text>
-      </Text>
-    ),
+    header: 'Size',
+    units: 'TiB',
     render: (datum) =>
       // bytes to tebibytes
       (datum.size / 2 ** 40).toFixed([1]),
@@ -197,14 +191,8 @@ const columns = [
   },
   {
     property: 'pinnable',
-    header: (
-      <Text color="text-strong" weight="bold">
-        Pinnable{' '}
-        <Text size="xsmall" weight="normal" color="text">
-          (B)
-        </Text>
-      </Text>
-    ),
+    header: 'Pinnable',
+    units: 'B',
     render: (datum) =>
       // bytes to tebibytes
       (datum.pinnable / 2 ** 40).toFixed([1]),
@@ -214,16 +202,8 @@ const columns = [
   },
   {
     property: 'pinned',
-    header: (
-      <Box pad={{ horizontal: 'small', vertical: 'xsmall' }}>
-        <Text color="text-strong" weight="bold">
-          Pinned{' '}
-          <Text size="xsmall" weight="normal" color="text">
-            %
-          </Text>
-        </Text>
-      </Box>
-    ),
+    header: 'Pinned',
+    units: '%',
     render: ({ pinnable, pinned }) => (
       <Box pad={{ vertical: 'xsmall' }}>
         <Meter
@@ -238,14 +218,8 @@ const columns = [
   },
   {
     property: 'savings',
-    header: (
-      <Text color="text-strong" weight="bold">
-        Savings{' '}
-        <Text size="xsmall" weight="normal" color="text">
-          (xGHz)
-        </Text>
-      </Text>
-    ),
+    header: 'Savings',
+    units: 'xGHz',
     align: 'end',
     render: ({ savings }) => (
       <Text truncate>{savings[1] && `${savings[1].value}`}</Text>

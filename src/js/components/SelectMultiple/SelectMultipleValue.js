@@ -229,8 +229,6 @@ const SelectMultipleValue = ({
                 valueKey || labelKey,
               ),
             )
-            /* eslint-disable-next-line array-callback-return, 
-                consistent-return */
             .map((i) => visibleValue(i))}
         {showA11yDiv && (
           <Box

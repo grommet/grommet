@@ -62,5 +62,5 @@ export const ActiveDate = () => {
 ActiveDate.storyName = 'Active date';
 
 export default {
-  title: `Visualizations/Calendar/Active date`,
+  title: 'Visualizations/Calendar/Active date',
 };
