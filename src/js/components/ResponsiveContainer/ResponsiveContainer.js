@@ -64,7 +64,7 @@ const responsiveContainerValue = true;
 
 export const ResponsiveContainer = ({ ...rest }) => {
   const theme = useContext(ThemeContext);
-  const ref = useRef();
+  const ref = useRef(undefined);
   const [stateResponsive, setResponsive] = useState();
 
   useEffect(() => {
