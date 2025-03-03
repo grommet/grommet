@@ -135,7 +135,7 @@ describe('NameValueList', () => {
     const { asFragment } = render(
       <Grommet>
         <NameValueList
-          valueProps={{ width: { min: 'xsmall', max: 'max-content' } }}
+          valueProps={{ width: { min: 'small', max: 'medium' } }}
         >
           {Object.entries(data).map(([name, value]) => (
             <NameValuePair key={name} name={name}>
