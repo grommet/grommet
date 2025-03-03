@@ -113,7 +113,7 @@ describe('NameValueList', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  test(`should render correct width with max and min`, () => {
+  test(`should render correct nameProps width with max and min`, () => {
     const { asFragment } = render(
       <Grommet>
         <NameValueList
