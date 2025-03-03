@@ -2,7 +2,7 @@ import React from 'react';
 import { View } from '../../components/Data';
 
 interface DataContextType {
-  data: any[];
+  data: Array<{}> | [];
   addToolbarKey: (key: string) => void;
   id: string;
   messages?: {
