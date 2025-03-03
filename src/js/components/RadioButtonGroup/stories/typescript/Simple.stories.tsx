@@ -2,7 +2,9 @@ import React, { ChangeEvent, useState } from 'react';
 
 import { Box, RadioButtonGroup } from 'grommet';
 
-type EventWithValueProp = ChangeEvent<HTMLInputElement> & {value: string | number};
+type EventWithValueProp = ChangeEvent<HTMLInputElement> & {
+  value: string | number;
+};
 
 export const Simple = () => {
   const postMethods = [

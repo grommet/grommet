@@ -41,5 +41,5 @@ TipOnButton.parameters = {
 };
 
 export default {
-  title: `Controls/Button/Tip on button`,
+  title: 'Controls/Button/Tip on button',
 };
