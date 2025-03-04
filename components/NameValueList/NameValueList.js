@@ -35,6 +35,11 @@ var NameValueList = exports.NameValueList = /*#__PURE__*/(0, _react.forwardRef)(
   var columns;
   var valueWidth = (valueProps == null ? void 0 : valueProps.width) || theme.nameValueList.value.width;
   var nameWidth = (nameProps == null ? void 0 : nameProps.width) || theme.nameValueList.name.width;
+  var formatWidth = function formatWidth(width) {
+    return typeof width === 'object' ? [width.min, width.max] : width;
+  };
+  nameWidth = formatWidth(nameWidth);
+  valueWidth = formatWidth(valueWidth);
   if ((0, _responsive.isSmall)(size) || layout === 'grid') columns = {
     count: 'fit',
     size: !Array.isArray(valueWidth) ? ['auto', valueWidth] : valueWidth
