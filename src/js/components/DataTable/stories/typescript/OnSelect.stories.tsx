@@ -148,7 +148,7 @@ const DATA: RowType[] = [
 
 export const OnSelectDataTable = () => {
   // Type arguments can only be used in TypeScript files.
-  // Remove <ReactText[]> if you are not using Typescript.
+  // Remove <(number | string)[]> if you are not using Typescript.
   const [select, setSelect] = useState<(number | string)[]>([]);
 
   return (

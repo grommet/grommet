@@ -27,49 +27,13 @@ export interface HeadingProps {
   weight?: 'normal' | 'bold' | 'lighter' | 'bolder' | number | string;
 }
 
-type hProps =
-  | Omit<
-      React.DetailedHTMLProps<
-        React.HTMLAttributes<HTMLHeadingElement>,
-        HTMLHeadingElement
-      >,
-      'color'
-    >
-  | Omit<
-      React.DetailedHTMLProps<
-        React.HTMLAttributes<HTMLHeadingElement>,
-        HTMLHeadingElement
-      >,
-      'color'
-    >
-  | Omit<
-      React.DetailedHTMLProps<
-        React.HTMLAttributes<HTMLHeadingElement>,
-        HTMLHeadingElement
-      >,
-      'color'
-    >
-  | Omit<
-      React.DetailedHTMLProps<
-        React.HTMLAttributes<HTMLHeadingElement>,
-        HTMLHeadingElement
-      >,
-      'color'
-    >
-  | Omit<
-      React.DetailedHTMLProps<
-        React.HTMLAttributes<HTMLHeadingElement>,
-        HTMLHeadingElement
-      >,
-      'color'
-    >
-  | Omit<
-      React.DetailedHTMLProps<
-        React.HTMLAttributes<HTMLHeadingElement>,
-        HTMLHeadingElement
-      >,
-      'color'
-    >;
+type hProps = Omit<
+  React.DetailedHTMLProps<
+    React.HTMLAttributes<HTMLHeadingElement>,
+    HTMLHeadingElement
+  >,
+  'color'
+>;
 
 export interface HeadingExtendedProps extends HeadingProps, hProps {}
 
