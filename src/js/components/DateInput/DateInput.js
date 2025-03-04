@@ -288,6 +288,7 @@ Use the icon prop instead.`,
         plain
         icon={icon || MaskedInputIcon || <CalendarIcon size={iconSize} />}
         margin={reverse ? { left: 'small' } : { right: 'small' }}
+        disabled={disabled}
       />
     );
 
