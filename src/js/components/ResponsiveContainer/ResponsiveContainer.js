@@ -82,11 +82,6 @@ export const ResponsiveContainer = ({ ...rest }) => {
         }
         const size = entries[0]?.borderBoxSize?.[0]?.inlineSize;
         if (size) {
-          console.log(
-            'OFFSET',
-            document.body.clientWidth - size,
-            document.body.clientWidth,
-          );
           setResponsive(getBreakpoint(size, theme));
         }
       });
