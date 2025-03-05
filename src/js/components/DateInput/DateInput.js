@@ -19,7 +19,11 @@ import { DropButton } from '../DropButton';
 import { FormContext } from '../Form';
 import { Keyboard } from '../Keyboard';
 import { MaskedInput } from '../MaskedInput';
-import { useForwardedRef, setHoursWithOffset } from '../../utils';
+import {
+  useForwardedRef,
+  setHoursWithOffset,
+  disabledStyle,
+} from '../../utils';
 import { readOnlyStyle } from '../../utils/readOnly';
 import {
   formatToSchema,
@@ -34,8 +38,11 @@ import { getOutputFormat } from '../Calendar/Calendar';
 import { CopyButton } from '../TextInput/CopyButton';
 import { useThemeValue } from '../../utils/useThemeValue';
 
-const StyledDateInputContainer = styled(Box)`
-  ${(props) => props.readOnlyProp && readOnlyStyle(props.theme)}};
+const StyledDateInputContainer = styled(Box).withConfig({
+  shouldForwardProp: (prop) => prop !== 'disabled',
+})`
+  ${(props) => props.disabled && disabledStyle()}
+  ${(props) => props.readOnlyProp && readOnlyStyle(props.theme)}}
 `;
 
 const getReference = (value) => {
@@ -311,6 +318,7 @@ Use the icon prop instead.`,
             border={!plain}
             round={theme.dateInput.container.round}
             direction="row"
+            disabled={disabled}
             // readOnly prop shouldn't get passed to the dom here
             readOnlyProp={readOnly}
             fill
