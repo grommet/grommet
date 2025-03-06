@@ -14,8 +14,8 @@ import { ResponsiveContainer } from '../ResponsiveContainer';
 const App = ({ title }) => {
   const theme = React.useContext(ThemeContext);
 
-  const widthRef = React.useRef();
-  const containerRef = React.useRef();
+  const widthRef = React.useRef(undefined);
+  const containerRef = React.useRef(undefined);
   useEffect(() => {
     let resizeObserver;
     const element = containerRef.current;
