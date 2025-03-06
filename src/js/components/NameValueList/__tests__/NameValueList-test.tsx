@@ -113,6 +113,42 @@ describe('NameValueList', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
+  test(`should render correct nameProps width with max and min`, () => {
+    const { asFragment } = render(
+      <Grommet>
+        <NameValueList
+          nameProps={{ width: { min: 'xsmall', max: 'max-content' } }}
+        >
+          {Object.entries(data).map(([name, value]) => (
+            <NameValuePair key={name} name={name}>
+              {value}
+            </NameValuePair>
+          ))}
+        </NameValueList>
+      </Grommet>,
+    );
+
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  test(`should render correct valueProps width with max and min`, () => {
+    const { asFragment } = render(
+      <Grommet>
+        <NameValueList
+          valueProps={{ width: { min: 'small', max: 'medium' } }}
+        >
+          {Object.entries(data).map(([name, value]) => (
+            <NameValuePair key={name} name={name}>
+              {value}
+            </NameValuePair>
+          ))}
+        </NameValueList>
+      </Grommet>,
+    );
+
+    expect(asFragment()).toMatchSnapshot();
+  });
+
   test(`should render correct alignment of name`, () => {
     const { container } = render(
       <Grommet>
