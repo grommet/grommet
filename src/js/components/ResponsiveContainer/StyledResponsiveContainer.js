@@ -1,7 +1,8 @@
-import styled from "styled-components";
-import { Box } from "../Box";
+import styled from 'styled-components';
+import { styledComponentsConfig } from '../../utils/styles';
 
-export const StyledResponsiveContainer = styled(Box)`
+export const StyledResponsiveContainer = styled.div.withConfig(
+  styledComponentsConfig,
+)`
   container-type: inline-size;
 `;
- 

@@ -9,13 +9,35 @@ import {
   ThemeContext,
 } from 'grommet';
 import { FormNext, FormPrevious } from 'grommet-icons';
-import { ResponsiveContainer } from '../ResponsiveContainer';
 
-const App = ({ title }) => {
-  const theme = React.useContext(ThemeContext);
+// Some content to show the effects of responsive layout.
+// The heading will change size at the small breakpoint
+// and the child Text items will switch from row to column
+// layout at the small breakpoint.
+const Content = ({ title, children }) => {
+  const size = useContext(ResponsiveContext);
+  const theme = useContext(ThemeContext);
+  const smallBreakpoint = theme.global.breakpoints.small.value;
+  return (
+    <Box pad="medium">
+      <Heading>{title}</Heading>
+      <Box direction="row-responsive" gap={{ column: 'medium', row: 'xsmall' }}>
+        <Text>I am row-responsive</Text>
+        <Text>Small breakpoint: {smallBreakpoint}</Text>
+        {children}
+        <Text>
+          Current size:&nbsp;<Text weight="bold">{size}</Text>{' '}
+        </Text>
+      </Box>
+    </Box>
+  );
+};
 
+const App = ({ title, responsive = true }) => {
   const widthRef = React.useRef(undefined);
   const containerRef = React.useRef(undefined);
+
+  // track the width of the container just so we can display it as it changes
   useEffect(() => {
     let resizeObserver;
     const element = containerRef.current;
@@ -44,31 +66,11 @@ const App = ({ title }) => {
     };
   });
 
-  const smallBreakpoint = theme.global.breakpoints.small.value;
-  const size = useContext(ResponsiveContext);
   return (
-    <Box
-      ref={containerRef}
-      direction="row"
-      gap="medium"
-      justify="between"
-      align="start"
-      flex="grow"
-    >
-      <Box pad="medium">
-        <Heading>{title}</Heading>
-        <Box
-          direction="row-responsive"
-          gap={{ column: 'medium', row: 'xsmall' }}
-        >
-          <Text>I am row-responsive</Text>
-          <Text>Small breakpoint: {smallBreakpoint}</Text>
-          <Text ref={widthRef} />
-          <Text>
-            Current size:&nbsp;<Text weight="bold">{size}</Text>{' '}
-          </Text>
-        </Box>
-      </Box>
+    <Box ref={containerRef} gap="medium" flex="grow" responsive={responsive}>
+      <Content title={title}>
+        <Text ref={widthRef} />
+      </Content>
     </Box>
   );
 };
@@ -100,9 +102,7 @@ const SidePanel = () => {
 export const Simple = () => (
   <Box direction="row" height="100vh" width="100vw" overflow="hidden">
     <Box overflow="auto" fill="horizontal">
-      <ResponsiveContainer flex="grow">
-        <App title="Responsive to container" />
-      </ResponsiveContainer>
+      <App title="Responsive to container" responsive="container" />
       <App title="Responsive to window" />
     </Box>
     <SidePanel />

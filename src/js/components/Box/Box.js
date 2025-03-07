@@ -18,6 +18,7 @@ import { AnnounceContext } from '../../contexts/AnnounceContext';
 import { OptionsContext } from '../../contexts/OptionsContext';
 import { ResponsiveContainerContext } from '../../contexts';
 import { useThemeValue } from '../../utils/useThemeValue';
+import { ResponsiveContainer } from '../ResponsiveContainer/ResponsiveContainer';
 
 const Box = forwardRef(
   (
@@ -253,6 +254,10 @@ const Box = forwardRef(
         </ThemeContext.Provider>
       </StyledBox>
     );
+
+    if (responsiveProp === 'container') {
+      content = <ResponsiveContainer>{content}</ResponsiveContainer>;
+    }
 
     if (onClick) {
       content = <Keyboard onEnter={onClick}>{content}</Keyboard>;

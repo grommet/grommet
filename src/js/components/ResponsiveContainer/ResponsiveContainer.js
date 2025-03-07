@@ -9,7 +9,7 @@ import { deviceResponsive, getBreakpoint } from '../../utils';
 
 const responsiveContainerValue = true;
 
-export const ResponsiveContainer = ({ ...rest }) => {
+export const ResponsiveContainer = ({ children }) => {
   const theme = useContext(ThemeContext);
   const ref = useRef(undefined);
   const [stateResponsive, setResponsive] = useState();
@@ -54,11 +54,10 @@ export const ResponsiveContainer = ({ ...rest }) => {
   return (
     <ResponsiveContext.Provider value={responsive}>
       <ResponsiveContainerContext.Provider value={responsiveContainerValue}>
-        <StyledResponsiveContainer ref={ref} {...rest} />
+        <StyledResponsiveContainer ref={ref}>
+          {children}
+        </StyledResponsiveContainer>
       </ResponsiveContainerContext.Provider>
     </ResponsiveContext.Provider>
   );
 };
-
-// TBD StyledLayer
-// TBD StyledHeading
