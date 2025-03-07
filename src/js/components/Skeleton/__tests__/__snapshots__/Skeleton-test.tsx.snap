@@ -245,6 +245,12 @@ exports[`Skeleton Box skeleton loading 1`] = `
 }
 
 @media only screen and (max-width: 768px) {
+  .c3 {
+    height: 40px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
   .c7 {
     height: 3px;
   }
@@ -398,6 +404,12 @@ exports[`Skeleton Box skeleton sizes loading 1`] = `
   max-width: 624px;
   font-weight: 600;
   overflow-wrap: break-word;
+}
+
+@media only screen and (max-width: 768px) {
+  .c3 {
+    height: 28px;
+  }
 }
 
 @media only screen and (max-width: 768px) {
@@ -632,12 +644,6 @@ exports[`Skeleton with styling props 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-}
-
-@media only screen and (max-width: 768px) {
-  .c1 {
-    border-radius: 6px;
-  }
 }
 
 <div
