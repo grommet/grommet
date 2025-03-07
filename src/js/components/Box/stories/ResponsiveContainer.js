@@ -99,7 +99,7 @@ const SidePanel = () => {
   );
 };
 
-export const Simple = () => (
+export const ResponsiveContainer = () => (
   <Box direction="row" height="100vh" width="100vw" overflow="hidden">
     <Box overflow="auto" fill="horizontal">
       <App title="Responsive to container" responsive="container" />
@@ -109,6 +109,10 @@ export const Simple = () => (
   </Box>
 );
 
+ResponsiveContainer.storyName = 'Responsive container';
+ResponsiveContainer.parameters = {
+  chromatic: { disable: true },
+};
 export default {
-  title: `Layout/ResponsiveContainer/Simple`,
+  title: `Layout/Box/Responsive container`,
 };

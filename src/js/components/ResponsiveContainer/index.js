@@ -1,1 +1,0 @@
-export { ResponsiveContainer } from './ResponsiveContainer';

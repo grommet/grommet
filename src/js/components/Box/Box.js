@@ -18,7 +18,7 @@ import { AnnounceContext } from '../../contexts/AnnounceContext';
 import { OptionsContext } from '../../contexts/OptionsContext';
 import { ResponsiveContainerContext } from '../../contexts';
 import { useThemeValue } from '../../utils/useThemeValue';
-import { ResponsiveContainer } from '../ResponsiveContainer/ResponsiveContainer';
+import { ResponsiveContainer } from './ResponsiveContainer';
 
 const Box = forwardRef(
   (
