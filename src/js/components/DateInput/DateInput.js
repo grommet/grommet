@@ -39,6 +39,7 @@ import { CopyButton } from '../TextInput/CopyButton';
 import { useThemeValue } from '../../utils/useThemeValue';
 
 const StyledDateInputContainer = styled(Box).withConfig({
+  // to not pass props on dom through Box
   shouldForwardProp: (prop) => prop !== 'disabled',
 })`
   ${(props) => props.disabled && disabledStyle()}
