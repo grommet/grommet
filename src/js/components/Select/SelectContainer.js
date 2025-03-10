@@ -451,6 +451,8 @@ const SelectContainer = forwardRef(
                   // if we have a child, turn on plain, and hoverIndicator
                   return (
                     <SelectOption
+                      // lint isn't flagging this but we shouldn't use index
+                      // as a key see no-array-index-key lint rule
                       key={index}
                       // merge optionRef and activeRef
                       ref={(node) => {
