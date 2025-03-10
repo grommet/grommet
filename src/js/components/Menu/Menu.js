@@ -322,6 +322,8 @@ const Menu = forwardRef((props, ref) => {
 
     // if we have a child, turn on plain, and hoverIndicator
     return (
+      // lint isn't flagging this but we shouldn't use index as a key
+      // see no-array-index-key lint rule
       <Box key={index} flex={false} role="none">
         <Button
           ref={(r) => {
