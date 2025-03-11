@@ -4052,6 +4052,14 @@ exports[`Data should render property label and return property value to view whe
   width: 100%;
 }
 
+.c19:focus-visible {
+  outline: 2px solid #2684ff;
+  outline-offset: -2px;
+  box-shadow: 0 0 0 2px #2684ff;
+  z-index: 1;
+  position: relative;
+}
+
 .c14 {
   cursor: pointer;
 }

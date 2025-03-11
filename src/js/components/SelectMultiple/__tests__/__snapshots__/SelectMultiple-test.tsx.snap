@@ -3335,6 +3335,14 @@ exports[`SelectMultiple showSelectionInline 1`] = `
   width: 100%;
 }
 
+.c13:focus-visible {
+  outline: 2px solid #2684ff;
+  outline-offset: -2px;
+  box-shadow: 0 0 0 2px #2684ff;
+  z-index: 1;
+  position: relative;
+}
+
 .c8 {
   cursor: pointer;
 }
@@ -3914,6 +3922,14 @@ exports[`SelectMultiple showSelectionInline with children 1`] = `
 .c13 {
   display: block;
   width: 100%;
+}
+
+.c13:focus-visible {
+  outline: 2px solid #2684ff;
+  outline-offset: -2px;
+  box-shadow: 0 0 0 2px #2684ff;
+  z-index: 1;
+  position: relative;
 }
 
 .c8 {
@@ -4519,6 +4535,14 @@ exports[`SelectMultiple showSelectionInline with disabled options 1`] = `
   cursor: default;
 }
 
+.c13:focus-visible {
+  outline: 2px solid #2684ff;
+  outline-offset: -2px;
+  box-shadow: 0 0 0 2px #2684ff;
+  z-index: 1;
+  position: relative;
+}
+
 .c8 {
   cursor: pointer;
 }
@@ -5018,6 +5042,14 @@ exports[`SelectMultiple valueKey and labelKey 1`] = `
 .c13 {
   display: block;
   width: 100%;
+}
+
+.c13:focus-visible {
+  outline: 2px solid #2684ff;
+  outline-offset: -2px;
+  box-shadow: 0 0 0 2px #2684ff;
+  z-index: 1;
+  position: relative;
 }
 
 .c8 {
@@ -6426,6 +6458,14 @@ exports[`SelectMultiple with portal renders custom listbox styling 1`] = `
 .c10 {
   display: block;
   width: 100%;
+}
+
+.c10:focus-visible {
+  outline: 2px solid #2684ff;
+  outline-offset: -2px;
+  box-shadow: 0 0 0 2px #2684ff;
+  z-index: 1;
+  position: relative;
 }
 
 .c11 {

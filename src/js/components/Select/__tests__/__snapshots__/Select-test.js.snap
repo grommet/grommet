@@ -472,11 +472,27 @@ exports[`Select Clear option renders - bottom 1`] = `
   width: 100%;
 }
 
+.c10:focus-visible {
+  outline: 2px solid #2684ff;
+  outline-offset: -2px;
+  box-shadow: 0 0 0 2px #2684ff;
+  z-index: 1;
+  position: relative;
+}
+
 .c6 {
   background-color: #7D4CDB;
   color: #FFFFFF;
   display: block;
   width: 100%;
+}
+
+.c6:focus-visible {
+  outline: 2px solid #2684ff;
+  outline-offset: -2px;
+  box-shadow: 0 0 0 2px #2684ff;
+  z-index: 1;
+  position: relative;
 }
 
 .c13:focus {
@@ -721,6 +737,14 @@ exports[`Select Clear option renders correct label when wrapped in FormField 1`]
   width: 100%;
 }
 
+.c6:focus-visible {
+  outline: 2px solid #2684ff;
+  outline-offset: -2px;
+  box-shadow: 0 0 0 2px #2684ff;
+  z-index: 1;
+  position: relative;
+}
+
 @media only screen and (max-width: 768px) {
 
 }
@@ -943,6 +967,14 @@ exports[`Select Clear option renders custom label 1`] = `
 .c6 {
   display: block;
   width: 100%;
+}
+
+.c6:focus-visible {
+  outline: 2px solid #2684ff;
+  outline-offset: -2px;
+  box-shadow: 0 0 0 2px #2684ff;
+  z-index: 1;
+  position: relative;
 }
 
 @media only screen and (max-width: 768px) {
@@ -1255,11 +1287,27 @@ exports[`Select Clear option renders- top 1`] = `
   width: 100%;
 }
 
+.c14:focus-visible {
+  outline: 2px solid #2684ff;
+  outline-offset: -2px;
+  box-shadow: 0 0 0 2px #2684ff;
+  z-index: 1;
+  position: relative;
+}
+
 .c10 {
   background-color: #7D4CDB;
   color: #FFFFFF;
   display: block;
   width: 100%;
+}
+
+.c10:focus-visible {
+  outline: 2px solid #2684ff;
+  outline-offset: -2px;
+  box-shadow: 0 0 0 2px #2684ff;
+  z-index: 1;
+  position: relative;
 }
 
 .c5:focus {
@@ -2327,6 +2375,14 @@ exports[`Select applies custom global.hover theme to options 2`] = `
   color: #7D4CDB;
 }
 
+.c1:focus-visible {
+  outline: 2px solid #2684ff;
+  outline-offset: -2px;
+  box-shadow: 0 0 0 2px #2684ff;
+  z-index: 1;
+  position: relative;
+}
+
 @media only screen and (max-width: 768px) {
 
 }
@@ -3275,6 +3331,14 @@ exports[`Select complex options and children 3`] = `
   width: 100%;
 }
 
+.c6:focus-visible {
+  outline: 2px solid #2684ff;
+  outline-offset: -2px;
+  box-shadow: 0 0 0 2px #2684ff;
+  z-index: 1;
+  position: relative;
+}
+
 @media only screen and (max-width: 768px) {
 
 }
@@ -4092,11 +4156,27 @@ exports[`Select default value clear 1`] = `
   width: 100%;
 }
 
+.c10:focus-visible {
+  outline: 2px solid #2684ff;
+  outline-offset: -2px;
+  box-shadow: 0 0 0 2px #2684ff;
+  z-index: 1;
+  position: relative;
+}
+
 .c14 {
   background-color: #7D4CDB;
   color: #FFFFFF;
   display: block;
   width: 100%;
+}
+
+.c14:focus-visible {
+  outline: 2px solid #2684ff;
+  outline-offset: -2px;
+  box-shadow: 0 0 0 2px #2684ff;
+  z-index: 1;
+  position: relative;
 }
 
 .c5:focus {
@@ -5203,9 +5283,25 @@ exports[`Select disabled key 2`] = `
   cursor: default;
 }
 
+.c6:focus-visible {
+  outline: 2px solid #2684ff;
+  outline-offset: -2px;
+  box-shadow: 0 0 0 2px #2684ff;
+  z-index: 1;
+  position: relative;
+}
+
 .c10 {
   display: block;
   width: 100%;
+}
+
+.c10:focus-visible {
+  outline: 2px solid #2684ff;
+  outline-offset: -2px;
+  box-shadow: 0 0 0 2px #2684ff;
+  z-index: 1;
+  position: relative;
 }
 
 @media only screen and (max-width: 768px) {
@@ -5466,9 +5562,25 @@ exports[`Select disabled option value 1`] = `
   cursor: default;
 }
 
+.c6:focus-visible {
+  outline: 2px solid #2684ff;
+  outline-offset: -2px;
+  box-shadow: 0 0 0 2px #2684ff;
+  z-index: 1;
+  position: relative;
+}
+
 .c10 {
   display: block;
   width: 100%;
+}
+
+.c10:focus-visible {
+  outline: 2px solid #2684ff;
+  outline-offset: -2px;
+  box-shadow: 0 0 0 2px #2684ff;
+  z-index: 1;
+  position: relative;
 }
 
 @media only screen and (max-width: 768px) {
@@ -6052,6 +6164,14 @@ exports[`Select large drop container height 1`] = `
   width: 100%;
 }
 
+.c6:focus-visible {
+  outline: 2px solid #2684ff;
+  outline-offset: -2px;
+  box-shadow: 0 0 0 2px #2684ff;
+  z-index: 1;
+  position: relative;
+}
+
 @media only screen and (max-width: 768px) {
 
 }
@@ -6257,6 +6377,14 @@ exports[`Select medium drop container height 1`] = `
 .c6 {
   display: block;
   width: 100%;
+}
+
+.c6:focus-visible {
+  outline: 2px solid #2684ff;
+  outline-offset: -2px;
+  box-shadow: 0 0 0 2px #2684ff;
+  z-index: 1;
+  position: relative;
 }
 
 @media only screen and (max-width: 768px) {
@@ -7234,6 +7362,14 @@ exports[`Select onChange with valueKey object 2`] = `
   width: 100%;
 }
 
+.c6:focus-visible {
+  outline: 2px solid #2684ff;
+  outline-offset: -2px;
+  box-shadow: 0 0 0 2px #2684ff;
+  z-index: 1;
+  position: relative;
+}
+
 @media only screen and (max-width: 768px) {
 
 }
@@ -7972,6 +8108,14 @@ exports[`Select onChange with valueKey string 2`] = `
   width: 100%;
 }
 
+.c6:focus-visible {
+  outline: 2px solid #2684ff;
+  outline-offset: -2px;
+  box-shadow: 0 0 0 2px #2684ff;
+  z-index: 1;
+  position: relative;
+}
+
 @media only screen and (max-width: 768px) {
 
 }
@@ -8655,6 +8799,14 @@ exports[`Select onChange with valueLabel 2`] = `
   width: 100%;
 }
 
+.c6:focus-visible {
+  outline: 2px solid #2684ff;
+  outline-offset: -2px;
+  box-shadow: 0 0 0 2px #2684ff;
+  z-index: 1;
+  position: relative;
+}
+
 @media only screen and (max-width: 768px) {
 
 }
@@ -9125,6 +9277,14 @@ exports[`Select onChange without labelKey 2`] = `
 .c6 {
   display: block;
   width: 100%;
+}
+
+.c6:focus-visible {
+  outline: 2px solid #2684ff;
+  outline-offset: -2px;
+  box-shadow: 0 0 0 2px #2684ff;
+  z-index: 1;
+  position: relative;
 }
 
 @media only screen and (max-width: 768px) {
@@ -9865,6 +10025,14 @@ exports[`Select onChange without labelKey or valueKey 2`] = `
   width: 100%;
 }
 
+.c6:focus-visible {
+  outline: 2px solid #2684ff;
+  outline-offset: -2px;
+  box-shadow: 0 0 0 2px #2684ff;
+  z-index: 1;
+  position: relative;
+}
+
 @media only screen and (max-width: 768px) {
 
 }
@@ -10601,6 +10769,14 @@ exports[`Select onChange without valueKey 2`] = `
 .c6 {
   display: block;
   width: 100%;
+}
+
+.c6:focus-visible {
+  outline: 2px solid #2684ff;
+  outline-offset: -2px;
+  box-shadow: 0 0 0 2px #2684ff;
+  z-index: 1;
+  position: relative;
 }
 
 @media only screen and (max-width: 768px) {
@@ -11916,6 +12092,14 @@ exports[`Select prop: onOpen 3`] = `
   width: 100%;
 }
 
+.c6:focus-visible {
+  outline: 2px solid #2684ff;
+  outline-offset: -2px;
+  box-shadow: 0 0 0 2px #2684ff;
+  z-index: 1;
+  position: relative;
+}
+
 @media only screen and (max-width: 768px) {
 
 }
@@ -12020,7 +12204,7 @@ exports[`Select prop: onOpen 5`] = `
     aria-posinset="1"
     aria-selected="false"
     aria-setsize="2"
-    class="StyledButton-sc-323bzc-0 eKvjSA StyledSelect__SelectOption-sc-znp66n-3 iqnnfQ"
+    class="StyledButton-sc-323bzc-0 eKvjSA StyledSelect__SelectOption-sc-znp66n-3 bXFxDh"
     role="option"
     tabindex="-1"
     type="button"
@@ -12039,7 +12223,7 @@ exports[`Select prop: onOpen 5`] = `
     aria-posinset="2"
     aria-selected="false"
     aria-setsize="2"
-    class="StyledButton-sc-323bzc-0 eKvjSA StyledSelect__SelectOption-sc-znp66n-3 iqnnfQ"
+    class="StyledButton-sc-323bzc-0 eKvjSA StyledSelect__SelectOption-sc-znp66n-3 bXFxDh"
     role="option"
     tabindex="-1"
     type="button"
@@ -12536,11 +12720,27 @@ exports[`Select renders custom clear selection styling 2`] = `
   width: 100%;
 }
 
+.c10:focus-visible {
+  outline: 2px solid #2684ff;
+  outline-offset: -2px;
+  box-shadow: 0 0 0 2px #2684ff;
+  z-index: 1;
+  position: relative;
+}
+
 .c14 {
   background-color: #7D4CDB;
   color: #FFFFFF;
   display: block;
   width: 100%;
+}
+
+.c14:focus-visible {
+  outline: 2px solid #2684ff;
+  outline-offset: -2px;
+  box-shadow: 0 0 0 2px #2684ff;
+  z-index: 1;
+  position: relative;
 }
 
 .c5:focus {
@@ -13111,11 +13311,27 @@ exports[`Select renders custom listbox styling 1`] = `
   width: 100%;
 }
 
+.c6:focus-visible {
+  outline: 2px solid #2684ff;
+  outline-offset: -2px;
+  box-shadow: 0 0 0 2px #2684ff;
+  z-index: 1;
+  position: relative;
+}
+
 .c10 {
   background-color: #7D4CDB;
   color: #FFFFFF;
   display: block;
   width: 100%;
+}
+
+.c10:focus-visible {
+  outline: 2px solid #2684ff;
+  outline-offset: -2px;
+  box-shadow: 0 0 0 2px #2684ff;
+  z-index: 1;
+  position: relative;
 }
 
 @media only screen and (max-width: 768px) {
@@ -15381,11 +15597,27 @@ exports[`Select search 2`] = `
   width: 100%;
 }
 
+.c9:focus-visible {
+  outline: 2px solid #2684ff;
+  outline-offset: -2px;
+  box-shadow: 0 0 0 2px #2684ff;
+  z-index: 1;
+  position: relative;
+}
+
 .c13 {
   background-color: #7D4CDB;
   color: #FFFFFF;
   display: block;
   width: 100%;
+}
+
+.c13:focus-visible {
+  outline: 2px solid #2684ff;
+  outline-offset: -2px;
+  box-shadow: 0 0 0 2px #2684ff;
+  z-index: 1;
+  position: relative;
 }
 
 @media only screen and (max-width: 768px) {
@@ -15974,6 +16206,14 @@ exports[`Select search and select 2`] = `
 .c9 {
   display: block;
   width: 100%;
+}
+
+.c9:focus-visible {
+  outline: 2px solid #2684ff;
+  outline-offset: -2px;
+  box-shadow: 0 0 0 2px #2684ff;
+  z-index: 1;
+  position: relative;
 }
 
 @media only screen and (max-width: 768px) {
@@ -19062,6 +19302,14 @@ exports[`Select small drop container height 1`] = `
 .c6 {
   display: block;
   width: 100%;
+}
+
+.c6:focus-visible {
+  outline: 2px solid #2684ff;
+  outline-offset: -2px;
+  box-shadow: 0 0 0 2px #2684ff;
+  z-index: 1;
+  position: relative;
 }
 
 @media only screen and (max-width: 768px) {
