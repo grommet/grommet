@@ -34,5 +34,5 @@ export const CustomSizeCalendar = () => {
 CustomSizeCalendar.storyName = 'Heading size';
 
 export default {
-  title: `Visualizations/Calendar/Custom Themed/Heading size`,
+  title: 'Visualizations/Calendar/Custom Themed/Heading size',
 };

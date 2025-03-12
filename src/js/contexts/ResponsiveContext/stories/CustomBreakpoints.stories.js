@@ -51,7 +51,7 @@ const customBreakpoints = {
 export const CustomBreakpoints = () => (
   <Grommet theme={customBreakpoints} full>
     <ResponsiveContext.Consumer>
-      {size => (
+      {(size) => (
         <Box fill background="brand">
           <Heading>{`Hi, I'm ${size}, resize me!`}</Heading>
         </Box>

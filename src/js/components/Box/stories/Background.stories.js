@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Box, Text } from 'grommet';
 
-export const BackgroundBox = () => (
+export const Background = () => (
   // Uncomment <Grommet> lines when using outside of storybook
   // <Grommet theme={...}>
   <Box pad="small" gap="small" align="start">
@@ -81,7 +81,6 @@ export const BackgroundBox = () => (
   // </Grommet>
 );
 
-BackgroundBox.storyName = 'Background';
 
 export default {
   title: 'Layout/Box/Background',

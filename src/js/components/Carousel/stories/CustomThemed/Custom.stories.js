@@ -40,5 +40,5 @@ export const CustomCarousel = ({ controls, ...rest }) => (
 CustomCarousel.storyName = 'Custom controls';
 
 export default {
-  title: `Media/Carousel/Custom Themed/Custom controls`,
+  title: 'Media/Carousel/Custom Themed/Custom controls',
 };
