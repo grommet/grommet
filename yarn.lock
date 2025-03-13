@@ -8287,7 +8287,6 @@ __metadata:
     globals: "npm:^15.15.0"
     grommet-icons: "npm:^4.12.4"
     grommet-theme-hpe: "npm:^6.0.0"
-    hoist-non-react-statics: "npm:^3.3.2"
     jest: "npm:^29.7.0"
     jest-axe: "npm:^9.0.0"
     jest-cli: "npm:^29.7.0"
@@ -8436,7 +8435,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"hoist-non-react-statics@npm:^3.3.0, hoist-non-react-statics@npm:^3.3.2":
+"hoist-non-react-statics@npm:^3.3.0":
   version: 3.3.2
   resolution: "hoist-non-react-statics@npm:3.3.2"
   dependencies:
