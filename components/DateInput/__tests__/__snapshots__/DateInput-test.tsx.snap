@@ -1652,7 +1652,7 @@ exports[`DateInput controlled format inline 2`] = `
     class="StyledBox-sc-13pk1d4-0 klipST"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 dNZpDp DateInput__StyledDateInputContainer-sc-1jfta23-0 diTYrm"
+      class="StyledBox-sc-13pk1d4-0 dNZpDp DateInput__StyledDateInputContainer-sc-1jfta23-0 cYvFsr"
     >
       <div
         class="StyledMaskedInput__StyledMaskedInputContainer-sc-99vkfa-1 dcJdYQ"
@@ -6359,7 +6359,7 @@ exports[`DateInput format 1`] = `
 `;
 
 exports[`DateInput format disabled 1`] = `
-.c5 {
+.c6 {
   display: inline-block;
   flex: 0 0 auto;
   width: 24px;
@@ -6368,25 +6368,25 @@ exports[`DateInput format disabled 1`] = `
   stroke: #666666;
 }
 
-.c5 g {
+.c6 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c5 *:not([stroke])[fill='none'] {
+.c6 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c5 *[stroke*='#'],
-.c5 *[STROKE*='#'] {
+.c6 *[stroke*='#'],
+.c6 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
-.c5 *[fill-rule],
-.c5 *[FILL-RULE],
-.c5 *[fill*='#'],
-.c5 *[FILL*='#'] {
+.c6 *[fill-rule],
+.c6 *[FILL-RULE],
+.c6 *[fill*='#'],
+.c6 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -6414,7 +6414,7 @@ exports[`DateInput format disabled 1`] = `
   border-radius: 3px;
 }
 
-.c4 {
+.c5 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -6431,6 +6431,66 @@ exports[`DateInput format disabled 1`] = `
   padding: 0;
   text-align: inherit;
   line-height: 0;
+}
+
+.c5:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus >circle,
+.c5:focus >ellipse,
+.c5:focus >line,
+.c5:focus >path,
+.c5:focus >polygon,
+.c5:focus >polyline,
+.c5:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c5:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible) >circle,
+.c5:focus:not(:focus-visible) >ellipse,
+.c5:focus:not(:focus-visible) >line,
+.c5:focus:not(:focus-visible) >path,
+.c5:focus:not(:focus-visible) >polygon,
+.c5:focus:not(:focus-visible) >polyline,
+.c5:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
+}
+
+.c4 {
+  box-sizing: border-box;
+  font-size: inherit;
+  font-family: inherit;
+  border: none;
+  -webkit-appearance: none;
+  background: transparent;
+  color: inherit;
+  width: 100%;
+  padding: 11px;
+  font-weight: 600;
+  margin: 0;
+  border: 1px solid rgba(0, 0, 0, 0.33);
+  border-radius: 4px;
+  outline: none;
+  border: none;
+  opacity: 0.3;
+  cursor: default;
 }
 
 .c4:focus {
@@ -6453,95 +6513,40 @@ exports[`DateInput format disabled 1`] = `
   border: 0;
 }
 
-.c4:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c4:focus:not(:focus-visible) >circle,
-.c4:focus:not(:focus-visible) >ellipse,
-.c4:focus:not(:focus-visible) >line,
-.c4:focus:not(:focus-visible) >path,
-.c4:focus:not(:focus-visible) >polygon,
-.c4:focus:not(:focus-visible) >polyline,
-.c4:focus:not(:focus-visible) >rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c4:focus:not(:focus-visible) ::-moz-focus-inner {
-  border: 0;
-}
-
-.c3 {
-  box-sizing: border-box;
-  font-size: inherit;
-  font-family: inherit;
-  border: none;
-  -webkit-appearance: none;
-  background: transparent;
-  color: inherit;
-  width: 100%;
-  padding: 11px;
-  font-weight: 600;
-  margin: 0;
-  border: 1px solid rgba(0, 0, 0, 0.33);
-  border-radius: 4px;
-  outline: none;
-  border: none;
-  opacity: 0.3;
-  cursor: default;
-}
-
-.c3:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c3:focus >circle,
-.c3:focus >ellipse,
-.c3:focus >line,
-.c3:focus >path,
-.c3:focus >polygon,
-.c3:focus >polyline,
-.c3:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c3:focus ::-moz-focus-inner {
-  border: 0;
-}
-
-.c3::-webkit-input-placeholder {
+.c4::-webkit-input-placeholder {
   color: #AAAAAA;
 }
 
-.c3::-moz-placeholder {
+.c4::-moz-placeholder {
   color: #AAAAAA;
 }
 
-.c3:-ms-input-placeholder {
+.c4:-ms-input-placeholder {
   color: #AAAAAA;
 }
 
-.c3 ::-webkit-search-decoration {
+.c4 ::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
-.c3::-moz-focus-inner {
+.c4::-moz-focus-inner {
   border: none;
   outline: none;
 }
 
-.c3:-moz-placeholder,
-.c3::-moz-placeholder {
+.c4:-moz-placeholder,
+.c4::-moz-placeholder {
   opacity: 1;
 }
 
-.c2 {
+.c3 {
   position: relative;
   width: 100%;
+}
+
+.c2 {
+  opacity: 0.3;
+  cursor: default;
 }
 
 @media only screen and (max-width: 768px) {
@@ -6560,14 +6565,14 @@ exports[`DateInput format disabled 1`] = `
   class="c0"
 >
   <div
-    class="c1 "
+    class="c1 c2"
   >
     <div
-      class="c2"
+      class="c3"
     >
       <input
         autocomplete="off"
-        class="c3"
+        class="c4"
         disabled=""
         id="item"
         name="item"
@@ -6576,12 +6581,12 @@ exports[`DateInput format disabled 1`] = `
       />
     </div>
     <button
-      class="c4"
+      class="c5"
       type="button"
     >
       <svg
         aria-label="Calendar"
-        class="c5"
+        class="c6"
         viewBox="0 0 24 24"
       >
         <path
@@ -15302,7 +15307,7 @@ exports[`DateInput select format 2`] = `
   class="StyledGrommet-sc-19lkkz7-0 fHTwQM"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 dNZpDp DateInput__StyledDateInputContainer-sc-1jfta23-0 diTYrm"
+    class="StyledBox-sc-13pk1d4-0 dNZpDp DateInput__StyledDateInputContainer-sc-1jfta23-0 cYvFsr"
   >
     <div
       class="StyledMaskedInput__StyledMaskedInputContainer-sc-99vkfa-1 dcJdYQ"
@@ -17934,7 +17939,7 @@ exports[`DateInput select format inline 2`] = `
     class="StyledBox-sc-13pk1d4-0 klipST"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 dNZpDp DateInput__StyledDateInputContainer-sc-1jfta23-0 diTYrm"
+      class="StyledBox-sc-13pk1d4-0 dNZpDp DateInput__StyledDateInputContainer-sc-1jfta23-0 cYvFsr"
     >
       <div
         class="StyledMaskedInput__StyledMaskedInputContainer-sc-99vkfa-1 dcJdYQ"
@@ -22838,7 +22843,7 @@ exports[`DateInput select format inline range 2`] = `
     class="StyledBox-sc-13pk1d4-0 klipST"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 dNZpDp DateInput__StyledDateInputContainer-sc-1jfta23-0 diTYrm"
+      class="StyledBox-sc-13pk1d4-0 dNZpDp DateInput__StyledDateInputContainer-sc-1jfta23-0 cYvFsr"
     >
       <div
         class="StyledMaskedInput__StyledMaskedInputContainer-sc-99vkfa-1 dcJdYQ"
@@ -31743,7 +31748,7 @@ exports[`DateInput type format inline 2`] = `
     class="StyledBox-sc-13pk1d4-0 klipST"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 dNZpDp DateInput__StyledDateInputContainer-sc-1jfta23-0 diTYrm"
+      class="StyledBox-sc-13pk1d4-0 dNZpDp DateInput__StyledDateInputContainer-sc-1jfta23-0 cYvFsr"
     >
       <div
         class="StyledMaskedInput__StyledMaskedInputContainer-sc-99vkfa-1 dcJdYQ"
@@ -36569,7 +36574,7 @@ exports[`DateInput type format inline range 2`] = `
     class="StyledBox-sc-13pk1d4-0 klipST"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 dNZpDp DateInput__StyledDateInputContainer-sc-1jfta23-0 diTYrm"
+      class="StyledBox-sc-13pk1d4-0 dNZpDp DateInput__StyledDateInputContainer-sc-1jfta23-0 cYvFsr"
     >
       <div
         class="StyledMaskedInput__StyledMaskedInputContainer-sc-99vkfa-1 dcJdYQ"
@@ -38761,7 +38766,7 @@ exports[`DateInput type format inline range partial 2`] = `
     class="StyledBox-sc-13pk1d4-0 klipST"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 dNZpDp DateInput__StyledDateInputContainer-sc-1jfta23-0 diTYrm"
+      class="StyledBox-sc-13pk1d4-0 dNZpDp DateInput__StyledDateInputContainer-sc-1jfta23-0 cYvFsr"
     >
       <div
         class="StyledMaskedInput__StyledMaskedInputContainer-sc-99vkfa-1 dcJdYQ"
@@ -39626,7 +39631,7 @@ exports[`DateInput type format inline range partial 3`] = `
     class="StyledBox-sc-13pk1d4-0 klipST"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 dNZpDp DateInput__StyledDateInputContainer-sc-1jfta23-0 diTYrm"
+      class="StyledBox-sc-13pk1d4-0 dNZpDp DateInput__StyledDateInputContainer-sc-1jfta23-0 cYvFsr"
     >
       <div
         class="StyledMaskedInput__StyledMaskedInputContainer-sc-99vkfa-1 dcJdYQ"
@@ -48430,7 +48435,7 @@ exports[`DateInput type format inline short 2`] = `
     class="StyledBox-sc-13pk1d4-0 klipST"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 dNZpDp DateInput__StyledDateInputContainer-sc-1jfta23-0 diTYrm"
+      class="StyledBox-sc-13pk1d4-0 dNZpDp DateInput__StyledDateInputContainer-sc-1jfta23-0 cYvFsr"
     >
       <div
         class="StyledMaskedInput__StyledMaskedInputContainer-sc-99vkfa-1 dcJdYQ"

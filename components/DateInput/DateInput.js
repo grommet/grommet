@@ -30,9 +30,16 @@ function _interopRequireWildcard(e, r) { if (!r && e && e.__esModule) return e; 
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (-1 !== e.indexOf(n)) continue; t[n] = r[n]; } return t; }
 var StyledDateInputContainer = (0, _styledComponents["default"])(_Box.Box).withConfig({
+  // to not pass props on dom through Box
+  shouldForwardProp: function shouldForwardProp(prop) {
+    return prop !== 'disabled';
+  }
+}).withConfig({
   displayName: "DateInput__StyledDateInputContainer",
   componentId: "sc-1jfta23-0"
-})(["", "};"], function (props) {
+})(["", " ", "}"], function (props) {
+  return props.disabled && (0, _utils.disabledStyle)();
+}, function (props) {
   return props.readOnlyProp && (0, _readOnly.readOnlyStyle)(props.theme);
 });
 var getReference = function getReference(value) {
@@ -309,7 +316,8 @@ var DateInput = exports.DateInput = /*#__PURE__*/(0, _react.forwardRef)(function
     ref: containerRef,
     border: !plain,
     round: theme.dateInput.container.round,
-    direction: "row"
+    direction: "row",
+    disabled: disabled
     // readOnly prop shouldn't get passed to the dom here
     ,
     readOnlyProp: readOnly,

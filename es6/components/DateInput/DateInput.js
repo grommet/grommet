@@ -15,7 +15,7 @@ import { DropButton } from '../DropButton';
 import { FormContext } from '../Form';
 import { Keyboard } from '../Keyboard';
 import { MaskedInput } from '../MaskedInput';
-import { useForwardedRef, setHoursWithOffset } from '../../utils';
+import { useForwardedRef, setHoursWithOffset, disabledStyle } from '../../utils';
 import { readOnlyStyle } from '../../utils/readOnly';
 import { formatToSchema, schemaToMask, valuesAreEqual, valueToText, textToValue, validateBounds } from './utils';
 import { DateInputPropTypes } from './propTypes';
@@ -23,9 +23,16 @@ import { getOutputFormat } from '../Calendar/Calendar';
 import { CopyButton } from '../TextInput/CopyButton';
 import { useThemeValue } from '../../utils/useThemeValue';
 var StyledDateInputContainer = styled(Box).withConfig({
+  // to not pass props on dom through Box
+  shouldForwardProp: function shouldForwardProp(prop) {
+    return prop !== 'disabled';
+  }
+}).withConfig({
   displayName: "DateInput__StyledDateInputContainer",
   componentId: "sc-1jfta23-0"
-})(["", "};"], function (props) {
+})(["", " ", "}"], function (props) {
+  return props.disabled && disabledStyle();
+}, function (props) {
   return props.readOnlyProp && readOnlyStyle(props.theme);
 });
 var getReference = function getReference(value) {
@@ -302,7 +309,8 @@ var DateInput = /*#__PURE__*/forwardRef(function (_ref, refArg) {
     ref: containerRef,
     border: !plain,
     round: theme.dateInput.container.round,
-    direction: "row"
+    direction: "row",
+    disabled: disabled
     // readOnly prop shouldn't get passed to the dom here
     ,
     readOnlyProp: readOnly,
