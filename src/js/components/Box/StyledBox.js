@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components';
+import isPropValid from '@emotion/is-prop-valid';
 
 import {
   alignContentStyle,
@@ -256,7 +257,12 @@ const gapStyle = (directionProp, gap, responsive, wrap, theme) => {
 };
 
 // NOTE: basis must be after flex! Otherwise, flex overrides basis
-const StyledBox = styled.div.withConfig(styledComponentsConfig)`
+// After upgrading to react 19 the 'selected' prop is leaking through
+// to the DOM, added a check to prevent this.
+const StyledBox = styled.div.withConfig({
+  shouldForwardProp: (prop) =>
+    isPropValid(prop) && !['selected'].includes(prop),
+})`
   display: flex;
   box-sizing: border-box;
   ${(props) => !props.basis && 'max-width: 100%;'};
