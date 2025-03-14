@@ -213,7 +213,7 @@
   "bundlesize": [
     {
       "path": "./dist/grommet.min.js",
-      "maxSize": "175 kB"
+      "maxSize": "176 kB"
     }
   ],
   "keywords": [

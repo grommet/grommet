@@ -10,8 +10,8 @@ import {
 import {
   deepMerge,
   backgroundIsDark,
+  deviceResponsive,
   getBreakpoint,
-  getDeviceBreakpoint,
   normalizeColor,
   useForwardedRef,
 } from '../../utils';
@@ -27,27 +27,6 @@ import { AnalyticsProvider } from '../../contexts/AnalyticsContext';
 const FullGlobalStyle = createGlobalStyle`
   body { margin: 0; }
 `;
-
-const deviceResponsive = (userAgent, theme) => {
-  // log('--deviceResponsive', userAgent, theme);
-  /*
-   * Regexes provided for mobile and tablet detection are meant to replace
-   * a full-featured specific library due to contributing a considerable size
-   * into the bundle.
-   *
-   * User agents found https://deviceatlas.com/blog/list-of-user-agent-strings
-   */
-  if (userAgent) {
-    if (/(tablet|ipad|playbook|silk)|(android(?!.*mobile))/i.test(userAgent)) {
-      return getDeviceBreakpoint('tablet', theme);
-    }
-    if (/Mobile|iPhone|Android/.test(userAgent)) {
-      return getDeviceBreakpoint('phone', theme);
-    }
-    return getDeviceBreakpoint('computer', theme);
-  }
-  return undefined;
-};
 
 const defaultOptions = {};
 

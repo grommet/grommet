@@ -13,10 +13,13 @@ import { Keyboard } from '../Keyboard';
 
 import { StyledBox, StyledBoxGap } from './StyledBox';
 import { BoxPropTypes } from './propTypes';
+import { ResponsiveContainer } from './ResponsiveContainer';
 import { SkeletonContext, useSkeleton } from '../Skeleton';
 import { AnnounceContext } from '../../contexts/AnnounceContext';
 import { OptionsContext } from '../../contexts/OptionsContext';
+import { ResponsiveContainerContext } from '../../contexts';
 import { useThemeValue } from '../../utils/useThemeValue';
+import { supportsContainerQueries } from '../../utils/responsive';
 
 const Box = forwardRef(
   (
@@ -35,7 +38,7 @@ const Box = forwardRef(
       onClick,
       onFocus,
       overflow, // munged to avoid styled-components putting it in the DOM
-      responsive = true,
+      responsive: responsiveProp = true,
       tag,
       as,
       wrap, // munged to avoid styled-components putting it in the DOM,
@@ -53,6 +56,10 @@ const Box = forwardRef(
     const { box: boxOptions } = useContext(OptionsContext);
 
     const skeleton = useSkeleton();
+
+    const responsiveContainer = useContext(ResponsiveContainerContext);
+    const responsive =
+      responsiveContainer && responsiveProp ? 'container' : responsiveProp;
 
     let background = backgroundProp;
 
@@ -248,6 +255,16 @@ const Box = forwardRef(
         </ThemeContext.Provider>
       </StyledBox>
     );
+
+    if (responsiveProp === 'container') {
+      if (supportsContainerQueries()) {
+        content = <ResponsiveContainer>{content}</ResponsiveContainer>;
+      } else {
+        console.warn(
+          '<Box responsive="container"> requires styled-components v6 or later',
+        );
+      }
+    }
 
     if (onClick) {
       content = <Keyboard onEnter={onClick}>{content}</Keyboard>;
