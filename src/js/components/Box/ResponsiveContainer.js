@@ -12,7 +12,7 @@ const responsiveContainerValue = true;
 export const ResponsiveContainer = ({ children }) => {
   const theme = useContext(ThemeContext);
   const ref = useRef(undefined);
-  const [stateResponsive, setResponsive] = useState();
+  const [stateResponsive, setStateResponsive] = useState();
 
   useEffect(() => {
     const element = ref?.current;
@@ -28,7 +28,7 @@ export const ResponsiveContainer = ({ children }) => {
           }
           const size = entries[0]?.borderBoxSize?.[0]?.inlineSize;
           if (size) {
-            setResponsive(getBreakpoint(size, theme));
+            setStateResponsive(getBreakpoint(size, theme));
           }
         });
       });
@@ -37,7 +37,7 @@ export const ResponsiveContainer = ({ children }) => {
     } else {
       // fallback for server side rendering
       const { width } = element.getBoundingClientRect();
-      setResponsive(getBreakpoint(width, theme));
+      setStateResponsive(getBreakpoint(width, theme));
     }
     return () => {
       if (resizeObserver) {

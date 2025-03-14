@@ -54,7 +54,7 @@ const App = ({ title, responsive = true }) => {
       }
     } else {
       // fallback for server side rendering
-      const width = containerRef.current.getBoundingClientRect();
+      const { width } = containerRef.current.getBoundingClientRect();
       if (widthRef.current) {
         widthRef.current.innerText = `Container width: ${width.toFixed()}px`;
       }
