@@ -209,8 +209,7 @@ const gapStyle = (directionProp, gap, responsive, wrap, theme) => {
       );
       if (responsiveMetric) {
         styles.push(
-          breakpointStyle(breakpoint, `gap: ${responsiveMetric};`),
-          responsive,
+          breakpointStyle(breakpoint, `gap: ${responsiveMetric};`, responsive),
         );
       }
     } else if (gap.row !== undefined) {
@@ -242,8 +241,11 @@ const gapStyle = (directionProp, gap, responsive, wrap, theme) => {
     styles.push(`row-gap: ${metric};`);
     if (responsiveMetric) {
       styles.push(
-        breakpointStyle(breakpoint, `row-gap: ${responsiveMetric};`),
-        responsive,
+        breakpointStyle(
+          breakpoint,
+          `row-gap: ${responsiveMetric};`,
+          responsive,
+        ),
       );
     }
   } else {
@@ -262,9 +264,7 @@ const gapStyle = (directionProp, gap, responsive, wrap, theme) => {
         styles.push(
           breakpointStyle(
             breakpoint,
-            `
-          row-gap: ${responsiveMetric};
-        `,
+            `row-gap: ${responsiveMetric};`,
             responsive,
           ),
         );
