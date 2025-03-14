@@ -13,12 +13,13 @@ import { Keyboard } from '../Keyboard';
 
 import { StyledBox, StyledBoxGap } from './StyledBox';
 import { BoxPropTypes } from './propTypes';
+import { ResponsiveContainer } from './ResponsiveContainer';
 import { SkeletonContext, useSkeleton } from '../Skeleton';
 import { AnnounceContext } from '../../contexts/AnnounceContext';
 import { OptionsContext } from '../../contexts/OptionsContext';
 import { ResponsiveContainerContext } from '../../contexts';
 import { useThemeValue } from '../../utils/useThemeValue';
-import { ResponsiveContainer } from './ResponsiveContainer';
+import { supportsContainerQueries } from '../../utils/responsive';
 
 const Box = forwardRef(
   (
@@ -256,7 +257,13 @@ const Box = forwardRef(
     );
 
     if (responsiveProp === 'container') {
-      content = <ResponsiveContainer>{content}</ResponsiveContainer>;
+      if (supportsContainerQueries()) {
+        content = <ResponsiveContainer>{content}</ResponsiveContainer>;
+      } else {
+        console.warn(
+          '<Box responsive="container"> requires styled-components v6 or later',
+        );
+      }
     }
 
     if (onClick) {

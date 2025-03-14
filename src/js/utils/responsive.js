@@ -1,3 +1,5 @@
+import styled from 'styled-components';
+
 export const getBreakpoint = (viewportWidth, theme) => {
   const sortedBreakpoints = Object.keys(theme.global.breakpoints).sort(
     (a, b) => {
@@ -60,4 +62,14 @@ export const deviceResponsive = (userAgent, theme) => {
     return getDeviceBreakpoint('computer', theme);
   }
   return undefined;
+};
+
+export const supportsContainerQueries = () => {
+  // styled-components v6 and later do not have a withComponent
+  // method. We need v6 or later to support container queries.
+  const comp = styled.div`
+    display: flex;
+  `;
+  const isPreV6 = typeof comp.withComponent === 'function';
+  return !isPreV6;
 };
