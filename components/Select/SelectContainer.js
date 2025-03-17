@@ -347,7 +347,10 @@ var SelectContainer = exports.SelectContainer = /*#__PURE__*/(0, _react.forwardR
     }
 
     // if we have a child, turn on plain, and hoverIndicator
-    return /*#__PURE__*/_react["default"].createElement(_StyledSelect.SelectOption, _extends({
+    return /*#__PURE__*/_react["default"].createElement(_StyledSelect.SelectOption
+    // lint isn't flagging this but we shouldn't use index
+    // as a key see no-array-index-key lint rule
+    , _extends({
       key: index
       // merge optionRef and activeRef
       ,

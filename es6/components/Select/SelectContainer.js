@@ -341,7 +341,10 @@ var SelectContainer = /*#__PURE__*/forwardRef(function (_ref3, ref) {
     }
 
     // if we have a child, turn on plain, and hoverIndicator
-    return /*#__PURE__*/React.createElement(SelectOption, _extends({
+    return /*#__PURE__*/React.createElement(SelectOption
+    // lint isn't flagging this but we shouldn't use index
+    // as a key see no-array-index-key lint rule
+    , _extends({
       key: index
       // merge optionRef and activeRef
       ,

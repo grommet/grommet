@@ -432,7 +432,10 @@ var SelectMultipleContainer = exports.SelectMultipleContainer = /*#__PURE__*/(0,
         values: {
           optionLabel: optionLabel
         }
-      }),
+      })
+      // lint isn't flagging this but we shouldn't use index
+      // as a key see no-array-index-key lint rule
+      ,
       key: index
       // merge optionRef and activeRef
       ,

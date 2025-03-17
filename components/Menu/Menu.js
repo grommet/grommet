@@ -290,41 +290,46 @@ var Menu = exports.Menu = /*#__PURE__*/(0, _react.forwardRef)(function (props, r
     }, item.reverse && item.label, item.icon, !item.reverse && item.label) : undefined;
 
     // if we have a child, turn on plain, and hoverIndicator
-    return /*#__PURE__*/_react["default"].createElement(_Box.Box, {
-      key: index,
-      flex: false,
-      role: "none"
-    }, /*#__PURE__*/_react["default"].createElement(_Button.Button, _extends({
-      ref: function ref(r) {
-        buttonRefs.current[index] = r;
-      },
-      role: "menuitem",
-      onFocus: function onFocus() {
-        setActiveItemIndex(index);
-      },
-      active: activeItemIndex === index,
-      focusIndicator: false,
-      plain: !child ? undefined : true,
-      align: "start",
-      kind: !child ? 'option' : undefined,
-      hoverIndicator: !child ? undefined : 'background'
-    }, theme.menu.item, {
-      justify: item.justify || ((_theme$menu$item4 = theme.menu.item) == null ? void 0 : _theme$menu$item4.justify)
-    }, !child ? item : _extends({}, item, {
-      gap: undefined,
-      icon: undefined,
-      label: undefined,
-      reverse: undefined
-    }), {
-      onClick: function onClick() {
-        if (item.onClick) {
-          item.onClick.apply(item, arguments);
+    return (
+      /*#__PURE__*/
+      // lint isn't flagging this but we shouldn't use index as a key
+      // see no-array-index-key lint rule
+      _react["default"].createElement(_Box.Box, {
+        key: index,
+        flex: false,
+        role: "none"
+      }, /*#__PURE__*/_react["default"].createElement(_Button.Button, _extends({
+        ref: function ref(r) {
+          buttonRefs.current[index] = r;
+        },
+        role: "menuitem",
+        onFocus: function onFocus() {
+          setActiveItemIndex(index);
+        },
+        active: activeItemIndex === index,
+        focusIndicator: false,
+        plain: !child ? undefined : true,
+        align: "start",
+        kind: !child ? 'option' : undefined,
+        hoverIndicator: !child ? undefined : 'background'
+      }, theme.menu.item, {
+        justify: item.justify || ((_theme$menu$item4 = theme.menu.item) == null ? void 0 : _theme$menu$item4.justify)
+      }, !child ? item : _extends({}, item, {
+        gap: undefined,
+        icon: undefined,
+        label: undefined,
+        reverse: undefined
+      }), {
+        onClick: function onClick() {
+          if (item.onClick) {
+            item.onClick.apply(item, arguments);
+          }
+          if (item.close !== false) {
+            onDropClose();
+          }
         }
-        if (item.close !== false) {
-          onDropClose();
-        }
-      }
-    }), child));
+      }), child))
+    );
   };
   var menuContent;
   var grouped = itemCount && Array.isArray(items[0]);
