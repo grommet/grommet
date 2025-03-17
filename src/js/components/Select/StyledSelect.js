@@ -69,6 +69,19 @@ export const SelectOption = styled(Button)`
         props.theme,
       )}
   }
+
+  // Add distinct focus indicator to ensure accessibility for keyboard
+  // navigation
+  // The outline and box-shadow are added to clearly highlight the option
+  // when focused
+  &:focus-visible {
+    outline: 2px solid #2684ff;
+    outline-offset: -2px;
+    box-shadow: 0 0 0 2px #2684ff;
+    z-index: 1;
+    position: relative;
+  }
+
   display: block;
   width: 100%;
   ${(props) => props[`aria-disabled`] && `cursor: default`};
