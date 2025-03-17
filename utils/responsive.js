@@ -1,7 +1,9 @@
 "use strict";
 
 exports.__esModule = true;
-exports.isSmall = exports.getDeviceBreakpoint = exports.getBreakpointStyle = exports.getBreakpoint = void 0;
+exports.supportsContainerQueries = exports.isSmall = exports.getDeviceBreakpoint = exports.getBreakpointStyle = exports.getBreakpoint = exports.deviceResponsive = void 0;
+var _styledComponents = _interopRequireDefault(require("styled-components"));
+function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
 var getBreakpoint = exports.getBreakpoint = function getBreakpoint(viewportWidth, theme) {
   var sortedBreakpoints = Object.keys(theme.global.breakpoints).sort(function (a, b) {
     var first = theme.global.breakpoints[a];
@@ -38,4 +40,34 @@ var getBreakpointStyle = exports.getBreakpointStyle = function getBreakpointStyl
 // as well since we use xsmall in the hpe theme
 var isSmall = exports.isSmall = function isSmall(size) {
   return ['xsmall', 'small'].includes(size);
+};
+var deviceResponsive = exports.deviceResponsive = function deviceResponsive(userAgent, theme) {
+  // log('--deviceResponsive', userAgent, theme);
+  /*
+   * Regexes provided for mobile and tablet detection are meant to replace
+   * a full-featured specific library due to contributing a considerable size
+   * into the bundle.
+   *
+   * User agents found https://deviceatlas.com/blog/list-of-user-agent-strings
+   */
+  if (userAgent) {
+    if (/(tablet|ipad|playbook|silk)|(android(?!.*mobile))/i.test(userAgent)) {
+      return getDeviceBreakpoint('tablet', theme);
+    }
+    if (/Mobile|iPhone|Android/.test(userAgent)) {
+      return getDeviceBreakpoint('phone', theme);
+    }
+    return getDeviceBreakpoint('computer', theme);
+  }
+  return undefined;
+};
+var supportsContainerQueries = exports.supportsContainerQueries = function supportsContainerQueries() {
+  // styled-components v6 and later do not have a withComponent
+  // method. We need v6 or later to support container queries.
+  var comp = _styledComponents["default"].div.withConfig({
+    displayName: "responsive__comp",
+    componentId: "sc-336m7y-0"
+  })(["display:flex;"]);
+  var isPreV6 = typeof comp.withComponent === 'function';
+  return !isPreV6;
 };

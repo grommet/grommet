@@ -50,7 +50,7 @@ if (process.env.NODE_ENV !== 'production') {
     onClick: _propTypes["default"].func,
     overflow: overflowPropType,
     pad: _generalPropTypes.padPropType,
-    responsive: _propTypes["default"].bool,
+    responsive: _propTypes["default"].oneOfType([_propTypes["default"].bool, _propTypes["default"].oneOf(['container'])]),
     round: _generalPropTypes.roundPropType,
     skeleton: _generalPropTypes.skeletonPropType,
     tag: _propTypes["default"].oneOfType([_propTypes["default"].string, _propTypes["default"].func]),

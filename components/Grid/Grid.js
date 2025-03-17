@@ -6,6 +6,7 @@ var _react = _interopRequireWildcard(require("react"));
 var _StyledGrid = require("./StyledGrid");
 var _propTypes = require("./propTypes");
 var _useThemeValue2 = require("../../utils/useThemeValue");
+var _contexts = require("../../contexts");
 var _excluded = ["a11yTitle", "aria-label", "border", "fill", "height", "responsive", "rows", "tag", "as", "width"];
 function _getRequireWildcardCache(e) { if ("function" != typeof WeakMap) return null; var r = new WeakMap(), t = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(e) { return e ? t : r; })(e); }
 function _interopRequireWildcard(e, r) { if (!r && e && e.__esModule) return e; if (null === e || "object" != typeof e && "function" != typeof e) return { "default": e }; var t = _getRequireWildcardCache(r); if (t && t.has(e)) return t.get(e); var n = { __proto__: null }, a = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var u in e) if ("default" !== u && {}.hasOwnProperty.call(e, u)) { var i = a ? Object.getOwnPropertyDescriptor(e, u) : null; i && (i.get || i.set) ? Object.defineProperty(n, u, i) : n[u] = e[u]; } return n["default"] = e, t && t.set(e, n), n; }
@@ -18,7 +19,7 @@ var Grid = exports.Grid = /*#__PURE__*/(0, _react.forwardRef)(function (props, r
     fill = props.fill,
     height = props.height,
     _props$responsive = props.responsive,
-    responsive = _props$responsive === void 0 ? true : _props$responsive,
+    responsiveProp = _props$responsive === void 0 ? true : _props$responsive,
     rows = props.rows,
     tag = props.tag,
     as = props.as,
@@ -26,6 +27,8 @@ var Grid = exports.Grid = /*#__PURE__*/(0, _react.forwardRef)(function (props, r
     rest = _objectWithoutPropertiesLoose(props, _excluded);
   var _useThemeValue = (0, _useThemeValue2.useThemeValue)(),
     passThemeFlag = _useThemeValue.passThemeFlag;
+  var responsiveContainer = (0, _react.useContext)(_contexts.ResponsiveContainerContext);
+  var responsive = responsiveContainer && responsiveProp ? 'container' : responsiveProp;
   return /*#__PURE__*/_react["default"].createElement(_StyledGrid.StyledGrid, _extends({
     ref: ref,
     "aria-label": ariaLabel || a11yTitle,

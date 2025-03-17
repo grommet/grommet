@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { backgroundStyle, edgeStyle, genericStyles, heightStyle, roundStyle, widthStyle, styledComponentsConfig } from '../../utils';
+import { breakpointStyle } from '../../utils/mixins';
 
 // Styling a div directly rather than just using
 // a Box since Box itself will react to a SkeletonContext
@@ -7,7 +8,7 @@ import { backgroundStyle, edgeStyle, genericStyles, heightStyle, roundStyle, wid
 export var StyledSkeleton = styled.div.withConfig(styledComponentsConfig).withConfig({
   displayName: "StyledSkeleton",
   componentId: "sc-1omqm6u-0"
-})(["display:flex;box-sizing:border-box;", " ", " ", " ", " ", " ", " ", ""], genericStyles, function (props) {
+})(["display:flex;box-sizing:border-box;", " ", " ", " ", " ", " ", " ", " ", ""], genericStyles, function (props) {
   return props.background && backgroundStyle(props.background, props.theme);
 }, function (props) {
   var _props$theme$text;
@@ -17,8 +18,10 @@ export var StyledSkeleton = styled.div.withConfig(styledComponentsConfig).withCo
 }, function (props) {
   return props.pad && edgeStyle('padding', props.pad, props.responsive, props.theme.box.responsiveBreakpoint, props.theme);
 }, function (props) {
-  return props.round && roundStyle(props.round, true, props.theme);
+  return props.round && roundStyle(props.round, props.responsive, props.theme);
 }, function (props) {
   var _props$theme;
   return (_props$theme = props.theme) == null || (_props$theme = _props$theme.skeleton) == null ? void 0 : _props$theme.extend;
+}, function (props) {
+  return props.responsiveSize && breakpointStyle(props.responsiveSize.breakpoint, heightStyle(props.responsiveSize.height, props.theme), props.responsive);
 });

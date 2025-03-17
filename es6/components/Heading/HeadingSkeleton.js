@@ -3,19 +3,34 @@ import React, { forwardRef } from 'react';
 import { Skeleton } from '../Skeleton';
 import { useThemeValue } from '../../utils/useThemeValue';
 var HeadingSkeleton = /*#__PURE__*/forwardRef(function (_ref, ref) {
+  var _theme$heading$level$;
   var as = _ref.as,
     _ref$level = _ref.level,
     level = _ref$level === void 0 ? 1 : _ref$level,
-    size = _ref.size;
+    _ref$size = _ref.size,
+    size = _ref$size === void 0 ? 'medium' : _ref$size,
+    responsive = _ref.responsive;
   var _useThemeValue = useThemeValue(),
     theme = _useThemeValue.theme;
-  var levelStyle = theme.heading.level[level];
-  var data = levelStyle == null ? void 0 : levelStyle[size || 'medium'];
-  var height = data ? data.height : size;
+  var height = ((_theme$heading$level$ = theme.heading.level[level]) == null || (_theme$heading$level$ = _theme$heading$level$[size]) == null ? void 0 : _theme$heading$level$.height) || size;
+  var responsiveSize;
+  if (responsive && theme.heading.responsiveBreakpoint) {
+    var breakpoint = theme.global.breakpoints[theme.heading.responsiveBreakpoint];
+    if (breakpoint) {
+      var _theme$heading$level$2, _theme$heading$level$3;
+      var responsiveHeight = theme.heading.level[level + 1] ? (_theme$heading$level$2 = theme.heading.level[level + 1][size]) == null ? void 0 : _theme$heading$level$2.height : (_theme$heading$level$3 = theme.heading.level[level][size]) == null ? void 0 : _theme$heading$level$3.height;
+      responsiveSize = {
+        breakpoint: breakpoint,
+        height: responsiveHeight || height
+      };
+    }
+  }
   return /*#__PURE__*/React.createElement(Skeleton, _extends({
     as: as,
     ref: ref,
-    height: height
+    height: height,
+    responsive: responsive,
+    responsiveSize: responsiveSize
   }, theme.heading.skeleton));
 });
 HeadingSkeleton.displayName = 'HeadingSkeleton';

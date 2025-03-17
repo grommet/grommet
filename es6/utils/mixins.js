@@ -16,8 +16,9 @@ export var fontSize = function fontSize(size, lineHeight) {
     return lineHeight || Math.ceil(parseMetricToNum(size) / parseMetricToNum(props.theme.global.lineHeight)) * (parseMetricToNum(props.theme.global.lineHeight) / parseMetricToNum(size)) + "px";
   });
 };
-export var breakpointStyle = function breakpointStyle(breakpoint, content) {
-  return css(["@media only screen ", "{", ";}"], breakpoint.value && "and (max-width: " + breakpoint.value + "px)", content);
+export var breakpointStyle = function breakpointStyle(breakpoint, content, responsive) {
+  var st = responsive === 'container' ? css(["@container ", "{", ";}"], breakpoint.value && "(max-width: " + breakpoint.value + "px)", content) : css(["@media only screen ", "{", ";}"], breakpoint.value && "and (max-width: " + breakpoint.value + "px)", content);
+  return st;
 };
 var _findAllByType = function findAllByType(component, type) {
   var matches = [];

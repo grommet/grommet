@@ -20,8 +20,9 @@ var fontSize = exports.fontSize = function fontSize(size, lineHeight) {
     return lineHeight || Math.ceil(parseMetricToNum(size) / parseMetricToNum(props.theme.global.lineHeight)) * (parseMetricToNum(props.theme.global.lineHeight) / parseMetricToNum(size)) + "px";
   });
 };
-var breakpointStyle = exports.breakpointStyle = function breakpointStyle(breakpoint, content) {
-  return (0, _styledComponents.css)(["@media only screen ", "{", ";}"], breakpoint.value && "and (max-width: " + breakpoint.value + "px)", content);
+var breakpointStyle = exports.breakpointStyle = function breakpointStyle(breakpoint, content, responsive) {
+  var st = responsive === 'container' ? (0, _styledComponents.css)(["@container ", "{", ";}"], breakpoint.value && "(max-width: " + breakpoint.value + "px)", content) : (0, _styledComponents.css)(["@media only screen ", "{", ";}"], breakpoint.value && "and (max-width: " + breakpoint.value + "px)", content);
+  return st;
 };
 var _findAllByType = exports.findAllByType = function findAllByType(component, type) {
   var matches = [];

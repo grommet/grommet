@@ -8,10 +8,13 @@ import { backgroundIsDark } from '../../utils';
 import { Keyboard } from '../Keyboard';
 import { StyledBox, StyledBoxGap } from './StyledBox';
 import { BoxPropTypes } from './propTypes';
+import { ResponsiveContainer } from './ResponsiveContainer';
 import { SkeletonContext, useSkeleton } from '../Skeleton';
 import { AnnounceContext } from '../../contexts/AnnounceContext';
 import { OptionsContext } from '../../contexts/OptionsContext';
+import { ResponsiveContainerContext } from '../../contexts';
 import { useThemeValue } from '../../utils/useThemeValue';
+import { supportsContainerQueries } from '../../utils/responsive';
 var Box = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var a11yTitle = _ref.a11yTitle,
     backgroundProp = _ref.background,
@@ -29,7 +32,7 @@ var Box = /*#__PURE__*/forwardRef(function (_ref, ref) {
     _onFocus = _ref.onFocus,
     overflow = _ref.overflow,
     _ref$responsive = _ref.responsive,
-    responsive = _ref$responsive === void 0 ? true : _ref$responsive,
+    responsiveProp = _ref$responsive === void 0 ? true : _ref$responsive,
     tag = _ref.tag,
     as = _ref.as,
     wrap = _ref.wrap,
@@ -46,6 +49,8 @@ var Box = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var _useContext = useContext(OptionsContext),
     boxOptions = _useContext.box;
   var skeleton = useSkeleton();
+  var responsiveContainer = useContext(ResponsiveContainerContext);
+  var responsive = responsiveContainer && responsiveProp ? 'container' : responsiveProp;
   var background = backgroundProp;
   var announce = useContext(AnnounceContext);
   useEffect(function () {
@@ -200,6 +205,13 @@ var Box = /*#__PURE__*/forwardRef(function (_ref, ref) {
   }, clickProps, passThemeFlag, rest, skeletonProps), /*#__PURE__*/React.createElement(ThemeContext.Provider, {
     value: nextTheme
   }, contents));
+  if (responsiveProp === 'container') {
+    if (supportsContainerQueries()) {
+      content = /*#__PURE__*/React.createElement(ResponsiveContainer, null, content);
+    } else {
+      console.warn('<Box responsive="container"> requires styled-components v6 or later');
+    }
+  }
   if (onClick) {
     content = /*#__PURE__*/React.createElement(Keyboard, {
       onEnter: onClick

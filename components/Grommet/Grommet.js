@@ -21,26 +21,6 @@ function _interopRequireWildcard(e, r) { if (!r && e && e.__esModule) return e; 
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (-1 !== e.indexOf(n)) continue; t[n] = r[n]; } return t; }
 var FullGlobalStyle = (0, _styledComponents.createGlobalStyle)(["body{margin:0;}"]);
-var deviceResponsive = function deviceResponsive(userAgent, theme) {
-  // log('--deviceResponsive', userAgent, theme);
-  /*
-   * Regexes provided for mobile and tablet detection are meant to replace
-   * a full-featured specific library due to contributing a considerable size
-   * into the bundle.
-   *
-   * User agents found https://deviceatlas.com/blog/list-of-user-agent-strings
-   */
-  if (userAgent) {
-    if (/(tablet|ipad|playbook|silk)|(android(?!.*mobile))/i.test(userAgent)) {
-      return (0, _utils.getDeviceBreakpoint)('tablet', theme);
-    }
-    if (/Mobile|iPhone|Android/.test(userAgent)) {
-      return (0, _utils.getDeviceBreakpoint)('phone', theme);
-    }
-    return (0, _utils.getDeviceBreakpoint)('computer', theme);
-  }
-  return undefined;
-};
 var defaultOptions = {};
 var Grommet = exports.Grommet = /*#__PURE__*/(0, _react.forwardRef)(function (props, ref) {
   var children = props.children,
@@ -108,7 +88,7 @@ var Grommet = exports.Grommet = /*#__PURE__*/(0, _react.forwardRef)(function (pr
       window.removeEventListener('resize', onResize);
     };
   }, [theme]);
-  var responsive = stateResponsive || deviceResponsive(userAgent, theme) || theme.global.deviceBreakpoints.tablet;
+  var responsive = stateResponsive || (0, _utils.deviceResponsive)(userAgent, theme) || theme.global.deviceBreakpoints.tablet;
   var grommetRef = (0, _utils.useForwardedRef)(ref);
 
   // track open FocusedContainers in a global array to manage

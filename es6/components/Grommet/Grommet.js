@@ -4,7 +4,7 @@ function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t =
 import React, { forwardRef, useEffect, useMemo, useRef, useState } from 'react';
 import { createGlobalStyle } from 'styled-components';
 import { ContainerTargetContext, ResponsiveContext, ThemeContext } from '../../contexts';
-import { deepMerge, backgroundIsDark, getBreakpoint, getDeviceBreakpoint, normalizeColor, useForwardedRef } from '../../utils';
+import { deepMerge, backgroundIsDark, deviceResponsive, getBreakpoint, normalizeColor, useForwardedRef } from '../../utils';
 import { base as baseTheme } from '../../themes';
 import { StyledGrommet } from './StyledGrommet';
 import { RootsContext } from '../../contexts/RootsContext';
@@ -14,26 +14,6 @@ import defaultMessages from '../../languages/default.json';
 import { GrommetPropTypes } from './propTypes';
 import { AnalyticsProvider } from '../../contexts/AnalyticsContext';
 var FullGlobalStyle = createGlobalStyle(["body{margin:0;}"]);
-var deviceResponsive = function deviceResponsive(userAgent, theme) {
-  // log('--deviceResponsive', userAgent, theme);
-  /*
-   * Regexes provided for mobile and tablet detection are meant to replace
-   * a full-featured specific library due to contributing a considerable size
-   * into the bundle.
-   *
-   * User agents found https://deviceatlas.com/blog/list-of-user-agent-strings
-   */
-  if (userAgent) {
-    if (/(tablet|ipad|playbook|silk)|(android(?!.*mobile))/i.test(userAgent)) {
-      return getDeviceBreakpoint('tablet', theme);
-    }
-    if (/Mobile|iPhone|Android/.test(userAgent)) {
-      return getDeviceBreakpoint('phone', theme);
-    }
-    return getDeviceBreakpoint('computer', theme);
-  }
-  return undefined;
-};
 var defaultOptions = {};
 var Grommet = /*#__PURE__*/forwardRef(function (props, ref) {
   var children = props.children,

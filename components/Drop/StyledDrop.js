@@ -40,7 +40,7 @@ var StyledDrop = exports.StyledDrop = (0, _styledComponents["default"])(_Box.Box
   displayName: "StyledDrop",
   componentId: "sc-16s5rx8-0"
 })(["", " ", " position:fixed;z-index:", ";outline:none;", " ", " opacity:0;transform-origin:", ";animation:", " 0.1s forwards;animation-delay:0.01s;@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none){display:flex;align-items:stretch;}", ""], _styles.baseStyle, function (props) {
-  return !props.plain && (props.round && (0, _styles.roundStyle)(props.round, true, props.theme) || "border-radius: " + props.theme.global.drop.border.radius + ";");
+  return !props.plain && (props.round && (0, _styles.roundStyle)(props.round, props.responsive || true, props.theme) || "border-radius: " + props.theme.global.drop.border.radius + ";");
 }, function (props) {
   return props.theme.global.drop.zIndex;
 }, function (props) {

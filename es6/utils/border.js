@@ -31,29 +31,29 @@ export var borderStyle = function borderStyle(borderData, responsive, theme) {
     if (side === 'top' || side === 'bottom' || side === 'left' || side === 'right') {
       styles.push("border-" + side + ": " + value + ";");
       if (responsiveStyle) {
-        styles.push(breakpointStyle(breakpoint, responsiveStyle));
+        styles.push(breakpointStyle(breakpoint, responsiveStyle, responsive));
       }
     } else if (side === 'end' || side === 'start') {
       styles.push(css(["border-inline-", ":", ";"], side, value));
       if (responsiveStyle) {
-        styles.push(breakpointStyle(breakpoint, responsiveStyle));
+        styles.push(breakpointStyle(breakpoint, responsiveStyle, responsive));
       }
     } else if (side === 'vertical') {
       styles.push(css(["border-left:", ";border-right:", ";"], value, value));
       if (responsiveStyle) {
-        styles.push(breakpointStyle(breakpoint, responsiveStyle));
+        styles.push(breakpointStyle(breakpoint, responsiveStyle, responsive));
       }
     } else if (side === 'horizontal') {
       styles.push(css(["border-top:", ";border-bottom:", ";"], value, value));
       if (responsiveStyle) {
-        styles.push(breakpointStyle(breakpoint, responsiveStyle));
+        styles.push(breakpointStyle(breakpoint, responsiveStyle, responsive));
       }
     } else if (side === 'between') {
       // no-op
     } else {
       styles.push(css(["border:", ";"], value));
       if (responsiveStyle) {
-        styles.push(breakpointStyle(breakpoint, responsiveStyle));
+        styles.push(breakpointStyle(breakpoint, responsiveStyle, responsive));
       }
     }
     borderStyles.push(styles);

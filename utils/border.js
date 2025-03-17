@@ -35,29 +35,29 @@ var borderStyle = exports.borderStyle = function borderStyle(borderData, respons
     if (side === 'top' || side === 'bottom' || side === 'left' || side === 'right') {
       styles.push("border-" + side + ": " + value + ";");
       if (responsiveStyle) {
-        styles.push((0, _mixins.breakpointStyle)(breakpoint, responsiveStyle));
+        styles.push((0, _mixins.breakpointStyle)(breakpoint, responsiveStyle, responsive));
       }
     } else if (side === 'end' || side === 'start') {
       styles.push((0, _styledComponents.css)(["border-inline-", ":", ";"], side, value));
       if (responsiveStyle) {
-        styles.push((0, _mixins.breakpointStyle)(breakpoint, responsiveStyle));
+        styles.push((0, _mixins.breakpointStyle)(breakpoint, responsiveStyle, responsive));
       }
     } else if (side === 'vertical') {
       styles.push((0, _styledComponents.css)(["border-left:", ";border-right:", ";"], value, value));
       if (responsiveStyle) {
-        styles.push((0, _mixins.breakpointStyle)(breakpoint, responsiveStyle));
+        styles.push((0, _mixins.breakpointStyle)(breakpoint, responsiveStyle, responsive));
       }
     } else if (side === 'horizontal') {
       styles.push((0, _styledComponents.css)(["border-top:", ";border-bottom:", ";"], value, value));
       if (responsiveStyle) {
-        styles.push((0, _mixins.breakpointStyle)(breakpoint, responsiveStyle));
+        styles.push((0, _mixins.breakpointStyle)(breakpoint, responsiveStyle, responsive));
       }
     } else if (side === 'between') {
       // no-op
     } else {
       styles.push((0, _styledComponents.css)(["border:", ";"], value));
       if (responsiveStyle) {
-        styles.push((0, _mixins.breakpointStyle)(breakpoint, responsiveStyle));
+        styles.push((0, _mixins.breakpointStyle)(breakpoint, responsiveStyle, responsive));
       }
     }
     borderStyles.push(styles);

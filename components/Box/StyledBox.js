@@ -28,12 +28,12 @@ var basisStyle = (0, _styledComponents.css)(["flex-basis:", ";"], function (prop
 // https://stackoverflow.com/questions/36247140/why-doesnt-flex-item-shrink-past-content-size
 // we assume we are in the context of a Box going the other direction
 // TODO: revisit this
-var directionStyle = function directionStyle(direction, theme) {
+var directionStyle = function directionStyle(direction, responsive, theme) {
   var styles = [(0, _styledComponents.css)(["min-width:0;min-height:0;flex-direction:", ";"], direction === 'row-responsive' ? 'row' : direction)];
   if (direction === 'row-responsive' && theme.box.responsiveBreakpoint) {
     var breakpoint = (0, _utils.getBreakpointStyle)(theme, theme.box.responsiveBreakpoint);
     if (breakpoint) {
-      styles.push((0, _utils.breakpointStyle)(breakpoint, "\n        flex-direction: column;\n        flex-basis: auto;\n        justify-content: flex-start;\n        align-items: stretch;\n      "));
+      styles.push((0, _utils.breakpointStyle)(breakpoint, "\n        flex-direction: column;\n        flex-basis: auto;\n        justify-content: flex-start;\n        align-items: stretch;\n      ", responsive));
     }
   }
   return styles;
@@ -131,32 +131,32 @@ var gapStyle = function gapStyle(directionProp, gap, responsive, wrap, theme) {
     if (gap.row !== undefined && gap.column !== undefined) {
       styles.push("gap: " + (theme.global.edgeSize[gap.row] || gap.row) + " " + (theme.global.edgeSize[gap.column] || gap.column) + ";");
       if (responsiveMetric) {
-        styles.push((0, _utils.breakpointStyle)(breakpoint, "gap: " + responsiveMetric + ";"));
+        styles.push((0, _utils.breakpointStyle)(breakpoint, "gap: " + responsiveMetric + ";", responsive));
       }
     } else if (gap.row !== undefined) {
       styles.push("row-gap: " + (theme.global.edgeSize[gap.row] || gap.row) + ";");
       if (responsiveMetric) {
-        styles.push((0, _utils.breakpointStyle)(breakpoint, "row-gap: " + responsiveMetric + ";"));
+        styles.push((0, _utils.breakpointStyle)(breakpoint, "row-gap: " + responsiveMetric + ";", responsive));
       }
     } else if (gap.column !== undefined) {
       styles.push("column-gap: " + (theme.global.edgeSize[gap.column] || gap.column) + ";");
       if (responsiveMetric) {
-        styles.push((0, _utils.breakpointStyle)(breakpoint, "column-gap: " + responsiveMetric + ";"));
+        styles.push((0, _utils.breakpointStyle)(breakpoint, "column-gap: " + responsiveMetric + ";", responsive));
       }
     }
   } else if (directionProp === 'column' || directionProp === 'column-reverse') {
     styles.push("row-gap: " + metric + ";");
     if (responsiveMetric) {
-      styles.push((0, _utils.breakpointStyle)(breakpoint, "row-gap: " + responsiveMetric + ";"));
+      styles.push((0, _utils.breakpointStyle)(breakpoint, "row-gap: " + responsiveMetric + ";", responsive));
     }
   } else {
     styles.push("column-gap: " + metric + ";");
     if (wrap) styles.push("row-gap: " + metric + ";");
     if (responsiveMetric) {
       if (directionProp === 'row' || directionProp === 'row-reverse') {
-        styles.push((0, _utils.breakpointStyle)(breakpoint, "column-gap: " + responsiveMetric + ";"));
+        styles.push((0, _utils.breakpointStyle)(breakpoint, "column-gap: " + responsiveMetric + ";", responsive));
       } else if (directionProp === 'row-responsive') {
-        styles.push((0, _utils.breakpointStyle)(breakpoint, "\n          row-gap: " + responsiveMetric + ";\n        "));
+        styles.push((0, _utils.breakpointStyle)(breakpoint, "row-gap: " + responsiveMetric + ";", responsive));
       }
     }
   }
@@ -178,7 +178,7 @@ var StyledBox = exports.StyledBox = _styledComponents["default"].div.withConfig(
 }, function (props) {
   return props.border && (0, _utils.borderStyle)(props.border, props.responsive, props.theme);
 }, function (props) {
-  return props.directionProp && directionStyle(props.directionProp, props.theme);
+  return props.directionProp && directionStyle(props.directionProp, props.responsive, props.theme);
 }, function (props) {
   return props.heightProp && (0, _utils.heightStyle)(props.heightProp, props.theme);
 }, function (props) {
@@ -222,15 +222,15 @@ var gapGapStyle = function gapGapStyle(directionProp, gap, responsive, border, t
   if (directionProp === 'column' || directionProp === 'column-reverse') {
     styles.push("height: " + metric + ";");
     if (responsiveMetric) {
-      styles.push((0, _utils.breakpointStyle)(breakpoint, "height: " + responsiveMetric + ";"));
+      styles.push((0, _utils.breakpointStyle)(breakpoint, "height: " + responsiveMetric + ";", responsive));
     }
   } else {
     styles.push("width: " + metric + ";");
     if (responsiveMetric) {
       if (directionProp === 'row' || directionProp === 'row-reverse') {
-        styles.push((0, _utils.breakpointStyle)(breakpoint, "width: " + responsiveMetric + ";"));
+        styles.push((0, _utils.breakpointStyle)(breakpoint, "width: " + responsiveMetric + ";", responsive));
       } else if (directionProp === 'row-responsive') {
-        styles.push((0, _utils.breakpointStyle)(breakpoint, "\n          width: auto;\n          height: " + responsiveMetric + ";\n        "));
+        styles.push((0, _utils.breakpointStyle)(breakpoint, "\n          width: auto;\n          height: " + responsiveMetric + ";\n        ", responsive));
       }
     }
   }
@@ -246,7 +246,7 @@ var gapGapStyle = function gapGapStyle(directionProp, gap, responsive, border, t
       });
       styles.push((0, _styledComponents.css)(["position:relative;&:after{content:'';position:absolute;width:100%;top:", ";", "}"], borderOffset, (0, _utils.borderStyle)(adjustedBorder, responsive, theme)));
       if (responsiveBorderOffset) {
-        styles.push((0, _utils.breakpointStyle)(breakpoint, "\n            &:after {\n              content: '';\n              top: " + responsiveBorderOffset + ";\n            }"));
+        styles.push((0, _utils.breakpointStyle)(breakpoint, "\n            &:after {\n              content: '';\n              top: " + responsiveBorderOffset + ";\n            }", responsive));
       }
     } else {
       var _adjustedBorder = typeof border === 'string' ? 'left' : _extends({}, border, {
@@ -255,12 +255,12 @@ var gapGapStyle = function gapGapStyle(directionProp, gap, responsive, border, t
       styles.push((0, _styledComponents.css)(["position:relative;&:after{content:'';position:absolute;height:100%;left:", ";", "}"], borderOffset, (0, _utils.borderStyle)(_adjustedBorder, directionProp !== 'row-responsive' && responsive, theme)));
       if (responsiveBorderOffset) {
         if (directionProp === 'row' || directionProp === 'row-reverse') {
-          styles.push((0, _utils.breakpointStyle)(breakpoint, "\n              &:after {\n                content: '';\n                left: " + responsiveBorderOffset + ";\n              }"));
+          styles.push((0, _utils.breakpointStyle)(breakpoint, "\n              &:after {\n                content: '';\n                left: " + responsiveBorderOffset + ";\n              }", responsive));
         } else if (directionProp === 'row-responsive') {
           var adjustedBorder2 = typeof border === 'string' ? 'top' : _extends({}, border, {
             side: 'top'
           });
-          styles.push((0, _utils.breakpointStyle)(breakpoint, "\n              &:after {\n                content: '';\n                height: auto;\n                left: unset;\n                width: 100%;\n                top: " + responsiveBorderOffset + ";\n                border-left: none;\n                " + (0, _utils.responsiveBorderStyle)(adjustedBorder2, theme) + "\n              }"));
+          styles.push((0, _utils.breakpointStyle)(breakpoint, "\n              &:after {\n                content: '';\n                height: auto;\n                left: unset;\n                width: 100%;\n                top: " + responsiveBorderOffset + ";\n                border-left: none;\n                " + (0, _utils.responsiveBorderStyle)(adjustedBorder2, theme) + "\n              }", responsive));
         }
       }
     }

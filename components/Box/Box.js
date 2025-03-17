@@ -8,10 +8,13 @@ var _utils = require("../../utils");
 var _Keyboard = require("../Keyboard");
 var _StyledBox = require("./StyledBox");
 var _propTypes = require("./propTypes");
+var _ResponsiveContainer = require("./ResponsiveContainer");
 var _Skeleton = require("../Skeleton");
 var _AnnounceContext = require("../../contexts/AnnounceContext");
 var _OptionsContext = require("../../contexts/OptionsContext");
+var _contexts = require("../../contexts");
 var _useThemeValue2 = require("../../utils/useThemeValue");
+var _responsive = require("../../utils/responsive");
 var _excluded = ["a11yTitle", "background", "border", "children", "cssGap", "direction", "elevation", "fill", "gap", "kind", "onBlur", "onClick", "onFocus", "overflow", "responsive", "tag", "as", "wrap", "width", "height", "tabIndex", "skeleton"],
   _excluded2 = ["colors", "size"];
 function _getRequireWildcardCache(e) { if ("function" != typeof WeakMap) return null; var r = new WeakMap(), t = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(e) { return e ? t : r; })(e); }
@@ -35,7 +38,7 @@ var Box = exports.Box = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref)
     _onFocus = _ref.onFocus,
     overflow = _ref.overflow,
     _ref$responsive = _ref.responsive,
-    responsive = _ref$responsive === void 0 ? true : _ref$responsive,
+    responsiveProp = _ref$responsive === void 0 ? true : _ref$responsive,
     tag = _ref.tag,
     as = _ref.as,
     wrap = _ref.wrap,
@@ -52,6 +55,8 @@ var Box = exports.Box = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref)
   var _useContext = (0, _react.useContext)(_OptionsContext.OptionsContext),
     boxOptions = _useContext.box;
   var skeleton = (0, _Skeleton.useSkeleton)();
+  var responsiveContainer = (0, _react.useContext)(_contexts.ResponsiveContainerContext);
+  var responsive = responsiveContainer && responsiveProp ? 'container' : responsiveProp;
   var background = backgroundProp;
   var announce = (0, _react.useContext)(_AnnounceContext.AnnounceContext);
   (0, _react.useEffect)(function () {
@@ -206,6 +211,13 @@ var Box = exports.Box = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref)
   }, clickProps, passThemeFlag, rest, skeletonProps), /*#__PURE__*/_react["default"].createElement(_styledComponents.ThemeContext.Provider, {
     value: nextTheme
   }, contents));
+  if (responsiveProp === 'container') {
+    if ((0, _responsive.supportsContainerQueries)()) {
+      content = /*#__PURE__*/_react["default"].createElement(_ResponsiveContainer.ResponsiveContainer, null, content);
+    } else {
+      console.warn('<Box responsive="container"> requires styled-components v6 or later');
+    }
+  }
   if (onClick) {
     content = /*#__PURE__*/_react["default"].createElement(_Keyboard.Keyboard, {
       onEnter: onClick
