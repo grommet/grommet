@@ -99,7 +99,13 @@ export interface DataTableProps<TRowType = any> {
       pad?: PadType;
     };
   };
-  rowDetails?: (row: TRowType) => React.ReactNode;
+  rowDetails?:
+    | ((row: TRowType) => React.ReactNode)
+    | {
+        render: (row: TRowType) => React.ReactNode;
+        expand?: Array<string>;
+        onExpand?: (expandedKeys: string[], datum: TRowType) => void;
+      };
   show?: number | { page?: number };
   size?: 'small' | 'medium' | 'large' | 'xlarge' | string;
 

@@ -36,7 +36,6 @@ const Row = memo(
     columns,
     pinnedOffset,
     primaryProperty,
-    data,
     verticalAlign,
   }) => (
     <>
@@ -118,11 +117,17 @@ const Row = memo(
             context={isRowExpanded ? 'groupHeader' : 'body'}
             expanded={isRowExpanded}
             onToggle={() => {
+              let nextRowExpand;
               const rowKey = primaryValue || index;
               if (isRowExpanded) {
-                setRowExpand(rowExpand.filter((s) => s !== rowKey));
+                nextRowExpand = rowExpand.filter((s) => s !== rowKey);
               } else {
-                setRowExpand([...rowExpand, rowKey]);
+                nextRowExpand = [...rowExpand, rowKey];
+              }
+              if (rowDetails.onExpand) {
+                rowDetails.onExpand(nextRowExpand, datum);
+              } else {
+                setRowExpand(nextRowExpand);
               }
             }}
             pad={cellProps.pad}
@@ -158,7 +163,7 @@ const Row = memo(
         <StyledDataTableRow key={`${index.toString()}_expand`}>
           {(selected || onSelect) && <TableCell />}
           <TableCell colSpan={columns.length + 1}>
-            {rowDetails(data[index])}
+            {rowDetails.render ? rowDetails.render(datum) : rowDetails(datum)}
           </TableCell>
         </StyledDataTableRow>
       )}
