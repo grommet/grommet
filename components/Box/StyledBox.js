@@ -128,20 +128,22 @@ var gapStyle = function gapStyle(directionProp, gap, responsive, wrap, theme) {
   var responsiveMetric = responsive && breakpoint && breakpoint.edgeSize[gap];
   var styles = [];
   if (typeof gap === 'object') {
+    var responsiveColumnMetric = responsive && breakpoint && breakpoint.edgeSize[gap.column];
+    var responsiveRowMetric = responsive && breakpoint && breakpoint.edgeSize[gap.row];
     if (gap.row !== undefined && gap.column !== undefined) {
       styles.push("gap: " + (theme.global.edgeSize[gap.row] || gap.row) + " " + (theme.global.edgeSize[gap.column] || gap.column) + ";");
-      if (responsiveMetric) {
-        styles.push((0, _utils.breakpointStyle)(breakpoint, "gap: " + responsiveMetric + ";", responsive));
+      if (responsiveRowMetric || responsiveColumnMetric) {
+        styles.push((0, _utils.breakpointStyle)(breakpoint, "gap: " + (responsiveRowMetric || gap.row) + " " + (responsiveColumnMetric || gap.column) + ";", responsive));
       }
     } else if (gap.row !== undefined) {
       styles.push("row-gap: " + (theme.global.edgeSize[gap.row] || gap.row) + ";");
-      if (responsiveMetric) {
-        styles.push((0, _utils.breakpointStyle)(breakpoint, "row-gap: " + responsiveMetric + ";", responsive));
+      if (responsiveRowMetric) {
+        styles.push((0, _utils.breakpointStyle)(breakpoint, "row-gap: " + responsiveRowMetric + ";", responsive));
       }
     } else if (gap.column !== undefined) {
       styles.push("column-gap: " + (theme.global.edgeSize[gap.column] || gap.column) + ";");
-      if (responsiveMetric) {
-        styles.push((0, _utils.breakpointStyle)(breakpoint, "column-gap: " + responsiveMetric + ";", responsive));
+      if (responsiveColumnMetric) {
+        styles.push((0, _utils.breakpointStyle)(breakpoint, "column-gap: " + responsiveColumnMetric + ";", responsive));
       }
     }
   } else if (directionProp === 'column' || directionProp === 'column-reverse') {
