@@ -1,77 +1,157 @@
-import React from 'react';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
+import {
+  Box,
+  Data,
+  DataTable,
+  NameValueList,
+  NameValuePair,
+  Pagination,
+  Text,
+} from 'grommet';
 
-import { Box, DataTable, CheckBox } from 'grommet';
+// Uses the StarWars API for starships, see https://swapi.dev
 
-// Source code for the data can be found here
-// https://github.com/grommet/grommet/blob/master/src/js/components/DataTable/stories/data.js
-import { columns, DATA } from './data';
+const step = 10; // default for https://swapi.dev
 
-const controlledColumns = columns.map((col) => ({ ...col }));
-delete controlledColumns[0].footer;
-delete controlledColumns[3].footer;
-delete controlledColumns[4].footer;
-delete controlledColumns[4].aggregate;
+const fetchData = async (view, signal) => {
+  const params = {};
+  if (view.search) params.search = view.search;
+  if (view.page) params.page = view.page;
+  const url = `https://swapi.dev/api/starships?${Object.keys(params)
+    .map((k) => `${k}=${params[k]}`)
+    .join('&')}`;
+  return fetch(url, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    signal,
+  })
+    .then((response) => response.json())
+    .catch((err) => {
+      if (err.name !== 'AbortError') throw err;
+      return {};
+    });
+};
 
-export const ControlledDataTable = () => {
-  const [checked, setChecked] = React.useState([]);
+const ShipProperties = ({ ship }) => (
+  <NameValueList
+    pairProps={{ direction: 'column' }}
+    valueProps={{ width: 'xsmall' }}
+    layout="grid"
+    pad={{ left: 'large', bottom: 'small' }}
+    gap={{ row: 'xsmall', column: 'large' }}
+  >
+    <NameValuePair
+      name={
+        <Text size="small" weight="bold">
+          Name
+        </Text>
+      }
+    >
+      <Text size="xsmall">{ship.name}</Text>
+    </NameValuePair>
+    <NameValuePair
+      name={
+        <Text size="small" weight="bold">
+          Model
+        </Text>
+      }
+    >
+      <Text size="xsmall">{ship.model}</Text>
+    </NameValuePair>
+    <NameValuePair
+      name=<Text size="small" weight="bold">
+        Manufacturer
+      </Text>
+    >
+      <Text size="xsmall">{ship.manufacturer}</Text>
+    </NameValuePair>
+    <NameValuePair
+      name=<Text size="small" weight="bold">
+        Passengers
+      </Text>
+    >
+      <Text size="xsmall">{ship.passengers}</Text>
+    </NameValuePair>
+  </NameValueList>
+);
 
-  const onCheck = (event, value) => {
-    if (event.target.checked) {
-      setChecked([...checked, value]);
-    } else {
-      setChecked(checked.filter((item) => item !== value));
-    }
-  };
+export const RowDetails = () => {
+  const [result, setResult] = useState({});
+  const [total, setTotal] = useState(0);
+  const [view, setView] = useState({ search: '', step });
+  const abortRef = useRef();
+  const [expand, setExpand] = useState(['Y-wing']);
 
-  const onCheckAll = (event) =>
-    setChecked(event.target.checked ? DATA.map((datum) => datum.name) : []);
+  useEffect(() => {
+    // This API is a bit slow, abort any uncompleted requests.
+    abortRef?.current?.abort();
+    abortRef.current = new AbortController();
+    fetchData(view, abortRef.current.signal).then(({ count, results }) => {
+      if (results) {
+        // The API doesn't provide a non-filtered total, so we rely on the
+        // first call having no filtering telling us the total.
+        setTotal((prevTotal) => Math.max(prevTotal, count));
+        setResult({ data: results, filteredTotal: count });
+        abortRef.current = undefined;
+      }
+    });
+  }, [view]);
+
+  const rowDetails = useMemo(
+    () => ({
+      render: (row) => <ShipProperties ship={row} />,
+      expand,
+      onExpand: (nextExpand /* , datum */) => setExpand(nextExpand),
+    }),
+    [expand],
+  );
 
   return (
     // Uncomment <Grommet> lines when using outside of storybook
-    // <Grommet theme={grommet}>
-    <Box align="center" pad="medium">
-      <DataTable
-        columns={[
-          {
-            property: 'checkbox',
-            render: ({ name }) => (
-              <CheckBox
-                key={name}
-                checked={checked.indexOf(name) !== -1}
-                onChange={(e) => onCheck(e, name)}
-                aria-label="row checkbox"
-              />
-            ),
-            header: (
-              <CheckBox
-                checked={checked.length === DATA.length}
-                indeterminate={
-                  checked.length > 0 && checked.length < DATA.length
-                }
-                onChange={onCheckAll}
-                aria-label="header checkbox"
-              />
-            ),
-            sortable: false,
-          },
-          ...controlledColumns,
-        ].map((col) => ({ ...col }))}
-        data={DATA}
-        sortable
-        rowDetails={(row) => {
-          if (row.name === 'Alan') {
-            return <Box> {row.name} </Box>;
-          }
-          return <Box>Blah {row.name} </Box>;
-        }}
-        size="medium"
-      />
+    // <Grommet theme={...}>
+
+    <Box skeleton={!result.data} width="large" pad="large">
+      <Data
+        data={result.data}
+        total={total}
+        filteredTotal={result.filteredTotal}
+        view={view}
+        onView={setView}
+        toolbar="search"
+      >
+        <DataTable
+          columns={[
+            {
+              property: 'name',
+              header: 'Name',
+              primary: true,
+            },
+            {
+              property: 'starship_class',
+              header: 'Class',
+            },
+          ]}
+          rowDetails={rowDetails}
+        />
+        <Pagination />
+      </Data>
     </Box>
+
     // </Grommet>
   );
 };
 
-ControlledDataTable.storyName = 'rowDetails';
+RowDetails.storyName = 'rowDetails';
+
+RowDetails.parameters = {
+  chromatic: { disable: true },
+};
+
+RowDetails.args = {
+  full: true,
+};
 
 export default {
   title: 'Visualizations/DataTable/rowDetails',

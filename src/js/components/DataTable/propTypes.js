@@ -132,7 +132,14 @@ if (process.env.NODE_ENV !== 'production') {
       PropTypes.func,
       PropTypes.oneOf(['select']),
     ]),
-    rowDetails: PropTypes.func,
+    rowDetails: PropTypes.oneOfType([
+      PropTypes.func,
+      PropTypes.shape({
+        render: PropTypes.func.isRequired,
+        expand: PropTypes.arrayOf(PropTypes.string),
+        onExpand: PropTypes.func,
+      }),
+    ]),
     onMore: PropTypes.func,
     onSearch: PropTypes.func,
     onSelect: PropTypes.func,

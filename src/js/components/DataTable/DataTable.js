@@ -191,7 +191,12 @@ const DataTable = ({
     }
   }, [select, setSelectedDataContext]);
 
-  const [rowExpand, setRowExpand] = useState([]);
+  const [rowExpand, setRowExpand] = useState(rowDetails?.expand || []);
+  useEffect(() => {
+    if (rowDetails?.expand) {
+      setRowExpand(rowDetails.expand);
+    }
+  }, [rowDetails?.expand]);
 
   // any customized column widths
   const [widths, setWidths] = useState({});
