@@ -201,24 +201,34 @@ const gapStyle = (directionProp, gap, responsive, wrap, theme) => {
 
   const styles = [];
   if (typeof gap === 'object') {
+    const responsiveColumnMetric =
+      responsive && breakpoint && breakpoint.edgeSize[gap.column];
+    const responsiveRowMetric =
+      responsive && breakpoint && breakpoint.edgeSize[gap.row];
     if (gap.row !== undefined && gap.column !== undefined) {
       styles.push(
         `gap: ${theme.global.edgeSize[gap.row] || gap.row} ${
           theme.global.edgeSize[gap.column] || gap.column
         };`,
       );
-      if (responsiveMetric) {
+      if (responsiveRowMetric || responsiveColumnMetric) {
         styles.push(
-          breakpointStyle(breakpoint, `gap: ${responsiveMetric};`, responsive),
+          breakpointStyle(
+            breakpoint,
+            `gap: ${responsiveRowMetric || gap.row} ${
+              responsiveColumnMetric || gap.column
+            };`,
+            responsive,
+          ),
         );
       }
     } else if (gap.row !== undefined) {
       styles.push(`row-gap: ${theme.global.edgeSize[gap.row] || gap.row};`);
-      if (responsiveMetric) {
+      if (responsiveRowMetric) {
         styles.push(
           breakpointStyle(
             breakpoint,
-            `row-gap: ${responsiveMetric};`,
+            `row-gap: ${responsiveRowMetric};`,
             responsive,
           ),
         );
@@ -227,11 +237,11 @@ const gapStyle = (directionProp, gap, responsive, wrap, theme) => {
       styles.push(
         `column-gap: ${theme.global.edgeSize[gap.column] || gap.column};`,
       );
-      if (responsiveMetric) {
+      if (responsiveColumnMetric) {
         styles.push(
           breakpointStyle(
             breakpoint,
-            `column-gap: ${responsiveMetric};`,
+            `column-gap: ${responsiveColumnMetric};`,
             responsive,
           ),
         );
