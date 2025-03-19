@@ -118,10 +118,11 @@ const Row = memo(
             context={isRowExpanded ? 'groupHeader' : 'body'}
             expanded={isRowExpanded}
             onToggle={() => {
+              const rowKey = primaryValue || index;
               if (isRowExpanded) {
-                setRowExpand(rowExpand.filter((s) => s !== index));
+                setRowExpand(rowExpand.filter((s) => s !== rowKey));
               } else {
-                setRowExpand([...rowExpand, index]);
+                setRowExpand([...rowExpand, rowKey]);
               }
             }}
             pad={cellProps.pad}
@@ -303,7 +304,8 @@ const Body = forwardRef(
                 : undefined;
               const isSelected = selected && selected.includes(primaryValue);
               const isDisabled = disabled && disabled.includes(primaryValue);
-              const isRowExpanded = rowExpand && rowExpand.includes(index);
+              const isRowExpanded =
+                rowExpand && rowExpand.includes(primaryValue || index);
               const cellProps = normalizeRowCellProps(
                 rowProps,
                 cellPropsProp,
