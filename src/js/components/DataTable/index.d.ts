@@ -103,8 +103,8 @@ export interface DataTableProps<TRowType = any> {
     | ((row: TRowType) => React.ReactNode)
     | {
         render: (row: TRowType) => React.ReactNode;
-        expand?: Array<string>;
-        onExpand?: (expandedKeys: string[], datum: TRowType) => void;
+        expand?: (string | number)[];
+        onExpand?: (expandedKeys: (string | number)[], datum: TRowType) => void;
       };
   show?: number | { page?: number };
   size?: 'small' | 'medium' | 'large' | 'xlarge' | string;

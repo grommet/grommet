@@ -136,7 +136,9 @@ if (process.env.NODE_ENV !== 'production') {
       PropTypes.func,
       PropTypes.shape({
         render: PropTypes.func.isRequired,
-        expand: PropTypes.arrayOf(PropTypes.string),
+        expand: PropTypes.arrayOf(
+          PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+        ),
         onExpand: PropTypes.func,
       }),
     ]),
