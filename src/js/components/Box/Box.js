@@ -8,12 +8,7 @@ import React, {
 } from 'react';
 
 import { ThemeContext } from 'styled-components';
-import {
-  backgroundIsDark,
-  useForwardedRef,
-  deviceResponsive,
-  getBreakpoint,
-} from '../../utils';
+import { backgroundIsDark, useForwardedRef } from '../../utils';
 import { Keyboard } from '../Keyboard';
 
 import { StyledBox, StyledBoxGap } from './StyledBox';
@@ -21,13 +16,10 @@ import { BoxPropTypes } from './propTypes';
 import { SkeletonContext, useSkeleton } from '../Skeleton';
 import { AnnounceContext } from '../../contexts/AnnounceContext';
 import { OptionsContext } from '../../contexts/OptionsContext';
-import { ResponsiveContainerContext, ResponsiveContext } from '../../contexts';
+import { ResponsiveContainerContext } from '../../contexts';
+import { ResponsiveContainerProvider } from './ResponsiveContainerProvider';
 import { useThemeValue } from '../../utils/useThemeValue';
 import { supportsContainerQueries } from '../../utils/responsive';
-
-// The value of ResponsiveContainerContext
-// when we're within a responsive container
-const responsiveContainerValue = true;
 
 const Box = forwardRef(
   (
@@ -63,9 +55,9 @@ const Box = forwardRef(
     // should not be supported in v3
     const { box: boxOptions } = useContext(OptionsContext);
 
-    console.log('as', as, typeof as);
     const skeleton = useSkeleton();
 
+    const [containerElement, setContainerElement] = useState(undefined);
     const responsiveContainer = useContext(ResponsiveContainerContext);
     const responsive =
       responsiveContainer && responsiveProp ? 'container' : responsiveProp;
@@ -74,49 +66,16 @@ const Box = forwardRef(
 
     const announce = useContext(AnnounceContext);
 
-    const [containerBreakpoint, setContainerBreakpoint] = useState(
-      deviceResponsive(navigator.userAgent, theme) ||
-        theme?.global?.deviceBreakpoints.tablet,
-    );
-
     const containerRef = useForwardedRef(ref);
-    // console.log('render', responsiveProp, containerRef);
 
-    // Update the size in the ResponsiveContext at this
-    // level if we're in responsive container mode.
+    // Save the ref as a state if we're in a responsive container.
+    // We only need it in the responsive container case and it
+    // needs to be in a state to cause a re-render.
     useEffect(() => {
-      // console.log('usEffect', responsiveProp, containerRef);
-      const containerElement = containerRef?.current;
-      if (responsiveProp !== 'container' || !containerElement) return undefined;
-
-      let resizeObserver;
-      if (typeof window !== 'undefined' && window.ResizeObserver) {
-        resizeObserver = new window.ResizeObserver((entries) => {
-          window.requestAnimationFrame(() => {
-            if (!Array.isArray(entries) || !entries.length) {
-              return;
-            }
-            const size = entries[0]?.borderBoxSize?.[0]?.inlineSize;
-            // console.log('Observer size', size, getBreakpoint(size, theme));
-            if (size) {
-              setContainerBreakpoint(getBreakpoint(size, theme));
-            }
-          });
-        });
-
-        resizeObserver.observe(containerElement);
+      if (responsiveProp === 'container' && containerRef.current) {
+        setContainerElement(containerRef.current);
       }
-      // Initial size for ResponsiveContext in responsive container mode.
-      // Also is a fallback for server side rendering
-      const containerWidth = containerElement.getBoundingClientRect().width;
-      setContainerBreakpoint(getBreakpoint(containerWidth, theme));
-
-      return () => {
-        if (resizeObserver) {
-          resizeObserver.disconnect();
-        }
-      };
-    }, [theme, responsiveProp, containerRef]);
+    }, [containerRef, responsiveProp]);
 
     useEffect(() => {
       if (skeletonProp?.message?.start) announce(skeletonProp.message.start);
@@ -313,13 +272,12 @@ const Box = forwardRef(
     if (responsiveProp === 'container') {
       if (supportsContainerQueries()) {
         content = (
-          <ResponsiveContext.Provider value={containerBreakpoint}>
-            <ResponsiveContainerContext.Provider
-              value={responsiveContainerValue}
-            >
-              {content}
-            </ResponsiveContainerContext.Provider>
-          </ResponsiveContext.Provider>
+          <ResponsiveContainerProvider
+            container={containerElement}
+            theme={theme}
+          >
+            {content}
+          </ResponsiveContainerProvider>
         );
       } else {
         console.warn(

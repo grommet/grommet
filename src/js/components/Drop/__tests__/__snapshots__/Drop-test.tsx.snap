@@ -51,7 +51,7 @@ exports[`Drop align left left 1`] = `
 `;
 
 exports[`Drop align left left 2`] = `
-".ehfyRn {
+".ieGCTl {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -120,7 +120,7 @@ exports[`Drop align left right top bottom 1`] = `
 `;
 
 exports[`Drop align left right top bottom 2`] = `
-".ehfyRn {
+".ieGCTl {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -208,7 +208,7 @@ exports[`Drop align right left top top 1`] = `
 `;
 
 exports[`Drop align right left top top 2`] = `
-".ehfyRn {
+".ieGCTl {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -277,7 +277,7 @@ exports[`Drop align right right 1`] = `
 `;
 
 exports[`Drop align right right 2`] = `
-".ehfyRn {
+".ieGCTl {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -346,7 +346,7 @@ exports[`Drop align right right bottom top 1`] = `
 `;
 
 exports[`Drop align right right bottom top 2`] = `
-".ehfyRn {
+".ieGCTl {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -415,7 +415,7 @@ exports[`Drop align right right bottom top 3`] = `
 `;
 
 exports[`Drop align right right bottom top 4`] = `
-".ehfyRn {
+".ieGCTl {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -545,7 +545,7 @@ exports[`Drop basic 1`] = `
 `;
 
 exports[`Drop basic 2`] = `
-".ehfyRn {
+".ieGCTl {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -633,7 +633,7 @@ exports[`Drop close 1`] = `
 `;
 
 exports[`Drop close 2`] = `
-".ehfyRn {
+".ieGCTl {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -721,7 +721,7 @@ exports[`Drop default elevation renders 1`] = `
 `;
 
 exports[`Drop default elevation renders 2`] = `
-".ehfyRn {
+".ieGCTl {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -869,7 +869,7 @@ exports[`Drop invalid align 1`] = `
 `;
 
 exports[`Drop invalid align 2`] = `
-".ehfyRn {
+".ieGCTl {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -957,7 +957,7 @@ exports[`Drop invoke onClickOutside 1`] = `
 `;
 
 exports[`Drop invoke onClickOutside 2`] = `
-".ehfyRn {
+".ieGCTl {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -1112,7 +1112,7 @@ exports[`Drop no stretch 1`] = `
 `;
 
 exports[`Drop no stretch 2`] = `
-".ehfyRn {
+".ieGCTl {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -1255,7 +1255,7 @@ exports[`Drop resize 1`] = `
 `;
 
 exports[`Drop resize 2`] = `
-".ehfyRn {
+".ieGCTl {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -1344,7 +1344,7 @@ exports[`Drop restrict focus 1`] = `
 
 exports[`Drop restrict focus 2`] = `
 <div
-  class="StyledBox-sc-13pk1d4-0 ehfyRn StyledDrop-sc-16s5rx8-0 jUYQEB"
+  class="StyledBox-sc-13pk1d4-0 ieGCTl StyledDrop-sc-16s5rx8-0 jUYQEB"
   data-g-portal-id="0"
   id="drop-node"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 1000px;"
@@ -1355,7 +1355,7 @@ exports[`Drop restrict focus 2`] = `
 `;
 
 exports[`Drop restrict focus 3`] = `
-".ehfyRn {
+".ieGCTl {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -1543,7 +1543,7 @@ exports[`Drop should render correct margin depending on value of align:
 
 exports[`Drop should render correct margin depending on value of align: 
     {"bottom":"bottom","left":"right"} 2`] = `
-".ehfyRn {
+".ieGCTl {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -1615,7 +1615,7 @@ exports[`Drop should render correct margin depending on value of align:
 
 exports[`Drop should render correct margin depending on value of align: 
     {"bottom":"bottom","right":"left"} 2`] = `
-".ehfyRn {
+".ieGCTl {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -1687,7 +1687,7 @@ exports[`Drop should render correct margin depending on value of align:
 
 exports[`Drop should render correct margin depending on value of align: 
     {"bottom":"top","left":"left"} 2`] = `
-".ehfyRn {
+".ieGCTl {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -1760,7 +1760,7 @@ exports[`Drop should render correct margin depending on value of align:
 
 exports[`Drop should render correct margin depending on value of align: 
     {"bottom":"top","left":"right"} 2`] = `
-".ehfyRn {
+".ieGCTl {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -1833,7 +1833,7 @@ exports[`Drop should render correct margin depending on value of align:
 
 exports[`Drop should render correct margin depending on value of align: 
     {"bottom":"top","right":"left"} 2`] = `
-".ehfyRn {
+".ieGCTl {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -1906,7 +1906,7 @@ exports[`Drop should render correct margin depending on value of align:
 
 exports[`Drop should render correct margin depending on value of align: 
     {"bottom":"top","right":"left"} 4`] = `
-".ehfyRn {
+".ieGCTl {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -1978,7 +1978,7 @@ exports[`Drop should render correct margin depending on value of align:
 
 exports[`Drop should render correct margin depending on value of align: 
     {"right":"right","bottom":"top"} 2`] = `
-".ehfyRn {
+".ieGCTl {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -2050,7 +2050,7 @@ exports[`Drop should render correct margin depending on value of align:
 
 exports[`Drop should render correct margin depending on value of align: 
     {"top":"bottom","left":"left"} 2`] = `
-".ehfyRn {
+".ieGCTl {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -2123,7 +2123,7 @@ exports[`Drop should render correct margin depending on value of align:
 
 exports[`Drop should render correct margin depending on value of align: 
     {"top":"bottom","left":"right"} 2`] = `
-".ehfyRn {
+".ieGCTl {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -2196,7 +2196,7 @@ exports[`Drop should render correct margin depending on value of align:
 
 exports[`Drop should render correct margin depending on value of align: 
     {"top":"bottom","right":"left"} 2`] = `
-".ehfyRn {
+".ieGCTl {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -2268,7 +2268,7 @@ exports[`Drop should render correct margin depending on value of align:
 
 exports[`Drop should render correct margin depending on value of align: 
     {"top":"bottom","right":"right"} 2`] = `
-".ehfyRn {
+".ieGCTl {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -2340,7 +2340,7 @@ exports[`Drop should render correct margin depending on value of align:
 
 exports[`Drop should render correct margin depending on value of align: 
     {"top":"bottom"} 2`] = `
-".ehfyRn {
+".ieGCTl {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -2412,7 +2412,7 @@ exports[`Drop should render correct margin depending on value of align:
 
 exports[`Drop should render correct margin depending on value of align: 
     {"top":"top","left":"right"} 2`] = `
-".ehfyRn {
+".ieGCTl {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -2484,7 +2484,7 @@ exports[`Drop should render correct margin depending on value of align:
 
 exports[`Drop should render correct margin depending on value of align: 
     {"top":"top","right":"left"} 2`] = `
-".ehfyRn {
+".ieGCTl {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -2553,7 +2553,7 @@ exports[`Drop stretch = align 1`] = `
 `;
 
 exports[`Drop stretch = align 2`] = `
-".ehfyRn {
+".ieGCTl {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;

@@ -2271,7 +2271,7 @@ exports[`DataTableColumns renders 3`] = `
   role="tabpanel"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 cCuVLi"
+    class="StyledBox-sc-13pk1d4-0 bkGyZE"
   >
     .c1 {
   display: flex;
@@ -3466,98 +3466,98 @@ exports[`DataTableColumns search 3`] = `
 
 exports[`DataTableColumns search 4`] = `
 "@media only screen and (max-width: 768px) {
-  .eYqvdH {
+  .cDlOEt {
     margin-top: 12px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .dAVRpa {
+  .hEYtCA {
     padding: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .fvdFVx {
+  .ddIkqv {
     margin-left: 6px;
     margin-right: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .fvdFVx {
+  .ddIkqv {
     margin-top: 2px;
     margin-bottom: 2px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .fvdFVx {
+  .ddIkqv {
     border-bottom: solid 2px #000000;
   }
 }
 @media only screen and (max-width: 768px) {
-  .fvdFVx {
+  .ddIkqv {
     padding-bottom: 3px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .eXPbcB {
+  .eTSIn {
     margin-left: 6px;
     margin-right: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .eXPbcB {
+  .eTSIn {
     margin-top: 2px;
     margin-bottom: 2px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .eXPbcB {
+  .eTSIn {
     border-bottom: solid 2px #7d4cdb;
   }
 }
 @media only screen and (max-width: 768px) {
-  .eXPbcB {
+  .eTSIn {
     padding-bottom: 3px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .keyPPF {
+  .fjbwrr {
     padding-top: 6px;
     padding-bottom: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .llqfhu {
+  .igvkso {
     margin-right: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .kZSzDp {
+  .lhPbCL {
     border: solid 2px #7d4cdb;
   }
 }
 @media only screen and (max-width: 768px) {
-  .cCuVLi {
+  .bkGyZE {
     padding-top: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .ilvDbX {
+  .elelWJ {
     border-top: solid 1px rgba(0, 0, 0, 0.33);
     border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   }
 }
 @media only screen and (max-width: 768px) {
-  .ilvDbX {
+  .elelWJ {
     padding: 0px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .bIQaFZ {
+  .iqgpPv {
     border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   }
 }
 @media only screen and (max-width: 768px) {
-  .bIQaFZ {
+  .iqgpPv {
     padding: 0px;
   }
 }
