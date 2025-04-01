@@ -6,6 +6,7 @@ import 'jest-styled-components';
 import 'jest-axe/extend-expect';
 import 'regenerator-runtime/runtime';
 import userEvent from '@testing-library/user-event';
+import '@testing-library/jest-dom';
 
 import { Box } from '../../Box';
 import { Button } from '../../Button';
@@ -216,5 +217,23 @@ describe('Tip', () => {
     fireEvent.mouseOver(getByText('Default Visible'));
     const tooltip = await waitFor(() => screen.getByText('tooltip'));
     expect(tooltip?.parentNode?.parentNode).toMatchSnapshot();
+  });
+
+  test('pressing Escape key closes tooltip', async () => {
+    const user = userEvent.setup();
+    render(
+      <Grommet>
+        <Tip content="tooltip text" defaultVisible>
+          <button>Hover me</button>
+        </Tip>
+      </Grommet>,
+    );
+    expect(screen.getByText('tooltip text')).toBeInTheDocument();
+
+    await user.keyboard('{Escape}');
+
+    await waitFor(() => {
+      expect(screen.queryByText('tooltip text')).not.toBeInTheDocument();
+    });
   });
 });
