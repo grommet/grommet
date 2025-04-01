@@ -235,7 +235,7 @@ const Box = forwardRef(
         aria-label={a11yTitle}
         background={background}
         border={border}
-        ref={containerRef}
+        ref={typeof as === 'function' ? undefined : containerRef}
         directionProp={direction}
         elevationProp={elevation}
         fillProp={fill}
