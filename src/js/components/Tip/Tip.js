@@ -21,6 +21,21 @@ const Tip = forwardRef(
 
     const componentRef = useForwardedRef(tipRef);
 
+    useEffect(() => {
+      const handleKeyDown = (event) => {
+        if (event.key === 'Escape') {
+          setOver(false);
+          setTooltipOver(false);
+        }
+      };
+
+      document.addEventListener('keydown', handleKeyDown);
+
+      return () => {
+        document.removeEventListener('keydown', handleKeyDown);
+      };
+    }, []);
+
     // Three use case for children
     // 1. Tip has a single child + it is a React Element => Great!
     // 2. Tip has a single child +  not React Element =>
