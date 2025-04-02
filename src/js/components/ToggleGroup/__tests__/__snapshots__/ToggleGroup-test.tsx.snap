@@ -2093,7 +2093,10 @@ exports[`ToggleGroup icon with tooltip 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  margin: 6px;
+  margin-top: 6px;
+  margin-bottom: 6px;
+  margin-left: 6px;
+  margin-right: 6px;
   background-color: #33333310;
   color: #444444;
   min-width: 0;
@@ -2139,7 +2142,25 @@ exports[`ToggleGroup icon with tooltip 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c2 {
-    margin: 3px;
+    margin-top: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    margin-bottom: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    margin-left: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    margin-right: 6px;
   }
 }
 
