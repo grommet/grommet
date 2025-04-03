@@ -80,7 +80,6 @@ const Tip = forwardRef(
           onEsc={() => {
             setOver(false);
             setTooltipOver(false);
-            console.log('Escape key pressed');
           }}
         >
           <Drop
