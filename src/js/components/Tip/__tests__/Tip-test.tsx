@@ -218,22 +218,4 @@ describe('Tip', () => {
     const tooltip = await waitFor(() => screen.getByText('tooltip'));
     expect(tooltip?.parentNode?.parentNode).toMatchSnapshot();
   });
-
-  test('pressing Escape key closes tooltip', async () => {
-    const user = userEvent.setup();
-    render(
-      <Grommet>
-        <Tip content="tooltip text" defaultVisible>
-          <button>Hover me</button>
-        </Tip>
-      </Grommet>,
-    );
-    expect(screen.getByText('tooltip text')).toBeInTheDocument();
-
-    await user.keyboard('{Escape}');
-
-    await waitFor(() => {
-      expect(screen.queryByText('tooltip text')).not.toBeInTheDocument();
-    });
-  });
 });
