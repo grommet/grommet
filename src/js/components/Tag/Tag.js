@@ -49,6 +49,7 @@ const Tag = forwardRef(
         <Text size={size}>
           {name && (
             <Text {...theme.tag.name} size={size}>
+              {' '}
               {name}
             </Text>
           )}

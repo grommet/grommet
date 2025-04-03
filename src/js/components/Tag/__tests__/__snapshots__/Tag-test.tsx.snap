@@ -91,6 +91,7 @@ exports[`Tag basic 1`] = `
         <span
           class="c3"
         >
+           
           Name
         </span>
         <span
@@ -187,6 +188,7 @@ exports[`Tag basic outside grommet wrapper 1`] = `
       <span
         class="c2"
       >
+         
         Name
       </span>
       <span
@@ -1828,6 +1830,7 @@ exports[`Tag size 1`] = `
         <span
           class="c3"
         >
+           
           Name
         </span>
         <span
@@ -1855,6 +1858,7 @@ exports[`Tag size 1`] = `
         <span
           class="c6"
         >
+           
           Name
         </span>
         <span
@@ -1882,6 +1886,7 @@ exports[`Tag size 1`] = `
         <span
           class="c9"
         >
+           
           Name
         </span>
         <span
@@ -1909,6 +1914,7 @@ exports[`Tag size 1`] = `
         <span
           class="c12"
         >
+           
           Name
         </span>
         <span
@@ -1936,6 +1942,7 @@ exports[`Tag size 1`] = `
         <span
           class="c15"
         >
+           
           Name
         </span>
         <span
