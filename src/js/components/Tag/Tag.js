@@ -9,7 +9,10 @@ import { StyledRemoveButton, StyledTagButton } from './StyledTag';
 import { useThemeValue } from '../../utils/useThemeValue';
 
 const Tag = forwardRef(
-  ({ name, value, size = 'medium', onRemove, onClick, ...rest }, ref) => {
+  (
+    { name, value, size = 'medium', onRemove, onClick, ariaLabel, ...rest },
+    ref,
+  ) => {
     const { theme, passThemeFlag } = useThemeValue();
     const RemoveIcon = theme.tag.icons?.remove || FormClose;
 
@@ -66,6 +69,7 @@ const Tag = forwardRef(
         {onRemove && (
           <StyledRemoveButton
             onClick={onRemove}
+            aria-label={ariaLabel || 'Remove tag'}
             {...removeProps}
             icon={<RemoveIcon {...theme.tag.size?.[size]?.icon} />}
             round={theme.tag.size?.[size]?.round || theme.tag.round}
