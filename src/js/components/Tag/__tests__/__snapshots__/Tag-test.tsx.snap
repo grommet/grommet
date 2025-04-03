@@ -91,7 +91,6 @@ exports[`Tag basic 1`] = `
         <span
           class="c3"
         >
-           
           Name
         </span>
         <span
@@ -188,7 +187,6 @@ exports[`Tag basic outside grommet wrapper 1`] = `
       <span
         class="c2"
       >
-         
         Name
       </span>
       <span
@@ -551,7 +549,7 @@ exports[`Tag onRemove 1`] = `
       </span>
     </div>
     <button
-      aria-label="Remove tag"
+      aria-label="Remove undefined Test"
       class="c5 c6"
       type="button"
     >
@@ -1063,7 +1061,7 @@ exports[`Tag renders custom remove button kind and size 1`] = `
         </span>
       </div>
       <button
-        aria-label="Remove tag"
+        aria-label="Remove undefined Value"
         class="c5 c6"
         type="button"
       >
@@ -1098,7 +1096,7 @@ exports[`Tag renders custom remove button kind and size 1`] = `
         </span>
       </div>
       <button
-        aria-label="Remove tag"
+        aria-label="Remove undefined Value"
         class="c5 c6"
         type="button"
       >
@@ -1133,7 +1131,7 @@ exports[`Tag renders custom remove button kind and size 1`] = `
         </span>
       </div>
       <button
-        aria-label="Remove tag"
+        aria-label="Remove undefined Value"
         class="c11 c6"
         type="button"
       >
@@ -1168,7 +1166,7 @@ exports[`Tag renders custom remove button kind and size 1`] = `
         </span>
       </div>
       <button
-        aria-label="Remove tag"
+        aria-label="Remove undefined Value"
         class="c16 c6"
         type="button"
       >
@@ -1360,7 +1358,7 @@ exports[`Tag renders custom remove icon 1`] = `
       </span>
     </div>
     <button
-      aria-label="Remove tag"
+      aria-label="Remove undefined Value"
       class="c5 c6"
       type="button"
     >
@@ -1562,7 +1560,7 @@ exports[`Tag renders default remove icon 1`] = `
       </span>
     </div>
     <button
-      aria-label="Remove tag"
+      aria-label="Remove undefined Value"
       class="c4 c5"
       type="button"
     >
@@ -1830,7 +1828,6 @@ exports[`Tag size 1`] = `
         <span
           class="c3"
         >
-           
           Name
         </span>
         <span
@@ -1858,7 +1855,6 @@ exports[`Tag size 1`] = `
         <span
           class="c6"
         >
-           
           Name
         </span>
         <span
@@ -1886,7 +1882,6 @@ exports[`Tag size 1`] = `
         <span
           class="c9"
         >
-           
           Name
         </span>
         <span
@@ -1914,7 +1909,6 @@ exports[`Tag size 1`] = `
         <span
           class="c12"
         >
-           
           Name
         </span>
         <span
@@ -1942,7 +1936,6 @@ exports[`Tag size 1`] = `
         <span
           class="c15"
         >
-           
           Name
         </span>
         <span
