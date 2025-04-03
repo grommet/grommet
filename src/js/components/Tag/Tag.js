@@ -67,7 +67,7 @@ const Tag = forwardRef(
       console.warn('Tag cannot combine "onClick" and "onRemove".');
     }
 
-    const computedRemoveProps = !theme.tag.remove.kind
+    const themeTagRemoveProps = !theme.tag.remove.kind
       ? {
           plain: true,
           hoverIndicator: true,
@@ -86,7 +86,7 @@ const Tag = forwardRef(
         {onRemove && (
           <StyledRemoveButton
             onClick={onRemove}
-            {...computedRemoveProps}
+            {...themeTagRemoveProps}
             {...removeProps}
             aria-label={removeLabel}
             icon={<RemoveIcon {...theme.tag.size?.[size]?.icon} />}
