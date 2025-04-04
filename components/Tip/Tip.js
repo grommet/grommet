@@ -5,6 +5,7 @@ exports.Tip = void 0;
 var _react = _interopRequireWildcard(require("react"));
 var _Box = require("../Box");
 var _Drop = require("../Drop");
+var _Keyboard = require("../Keyboard");
 var _utils = require("../../utils");
 var _propTypes = require("./propTypes");
 var _useThemeValue2 = require("../../utils/useThemeValue");
@@ -76,7 +77,13 @@ var Tip = exports.Tip = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, tipR
   (0, _react.useEffect)(function () {
     setOver(defaultVisible);
   }, [defaultVisible]);
-  return [clonedChild, (over || tooltipOver) && /*#__PURE__*/_react["default"].createElement(_Drop.Drop, _extends({
+  return [clonedChild, (over || tooltipOver) && /*#__PURE__*/_react["default"].createElement(_Keyboard.Keyboard, {
+    key: "tip-keyboard",
+    onEsc: function onEsc() {
+      setOver(false);
+      setTooltipOver(false);
+    }
+  }, /*#__PURE__*/_react["default"].createElement(_Drop.Drop, _extends({
     target: componentRef.current,
     trapFocus: false,
     key: "tip-drop"
@@ -87,7 +94,7 @@ var Tip = exports.Tip = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, tipR
     onMouseLeave: function onMouseLeave() {
       return setTooltipOver(false);
     }
-  }), plain ? content : /*#__PURE__*/_react["default"].createElement(_Box.Box, theme.tip.content, content))];
+  }), plain ? content : /*#__PURE__*/_react["default"].createElement(_Box.Box, theme.tip.content, content)))];
 });
 Tip.displayName = 'Tip';
 Tip.propTypes = _propTypes.TipPropTypes;

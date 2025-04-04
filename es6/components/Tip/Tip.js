@@ -2,6 +2,7 @@ function _extends() { return _extends = Object.assign ? Object.assign.bind() : f
 import React, { Children, cloneElement, forwardRef, useEffect, useState } from 'react';
 import { Box } from '../Box';
 import { Drop } from '../Drop';
+import { Keyboard } from '../Keyboard';
 import { useForwardedRef, useKeyboard } from '../../utils';
 import { TipPropTypes } from './propTypes';
 import { useThemeValue } from '../../utils/useThemeValue';
@@ -70,7 +71,13 @@ var Tip = /*#__PURE__*/forwardRef(function (_ref, tipRef) {
   useEffect(function () {
     setOver(defaultVisible);
   }, [defaultVisible]);
-  return [clonedChild, (over || tooltipOver) && /*#__PURE__*/React.createElement(Drop, _extends({
+  return [clonedChild, (over || tooltipOver) && /*#__PURE__*/React.createElement(Keyboard, {
+    key: "tip-keyboard",
+    onEsc: function onEsc() {
+      setOver(false);
+      setTooltipOver(false);
+    }
+  }, /*#__PURE__*/React.createElement(Drop, _extends({
     target: componentRef.current,
     trapFocus: false,
     key: "tip-drop"
@@ -81,7 +88,7 @@ var Tip = /*#__PURE__*/forwardRef(function (_ref, tipRef) {
     onMouseLeave: function onMouseLeave() {
       return setTooltipOver(false);
     }
-  }), plain ? content : /*#__PURE__*/React.createElement(Box, theme.tip.content, content))];
+  }), plain ? content : /*#__PURE__*/React.createElement(Box, theme.tip.content, content)))];
 });
 Tip.displayName = 'Tip';
 Tip.propTypes = TipPropTypes;
