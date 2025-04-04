@@ -18,7 +18,6 @@ const Tag = forwardRef(
       onRemove,
       onClick,
       messages,
-      removeProps = { 'aria-label': '' },
       ...rest
     },
     ref,
