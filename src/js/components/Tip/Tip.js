@@ -21,6 +21,90 @@ const Tip = forwardRef(
 
     const componentRef = useForwardedRef(tipRef);
 
+    // if margin is a string, parse it or use the theme value
+    const normalizeMargin = (margin) => {
+      if (typeof margin === 'string') {
+        const value = theme.global.edgeSize[margin] || parseInt(margin, 10);
+        return { top: value, bottom: value, left: value, right: value };
+      }
+      return { top: 0, bottom: 0, left: 0, right: 0 };
+    };
+
+    const tipMarginStyle = (theme, align) => {
+      const themeDropMargin =
+        theme.global.edgeSize[theme.global?.drop?.margin] ||
+        theme.global.drop.margin;
+      const themeTipMargin =
+        theme.global.edgeSize[theme.tip?.content?.margin] ||
+        theme.tip.content.margin;
+
+      const parsedThemeDropMargin =
+        typeof themeDropMargin === 'string'
+          ? parseInt(themeDropMargin, 10)
+          : themeDropMargin;
+      const parsedThemeTipMargin =
+        typeof themeTipMargin === 'string'
+          ? parseInt(themeTipMargin, 10)
+          : themeTipMargin;
+
+      const adjustedMargin = {};
+      // if themeDropMargin is an object, use the values directly
+      if (typeof themeDropMargin === 'object') {
+        adjustedMargin.top = themeDropMargin.top || 0;
+        adjustedMargin.bottom = themeDropMargin.bottom || 0;
+        adjustedMargin.left = themeDropMargin.left || 0;
+        adjustedMargin.right = themeDropMargin.right || 0;
+      } else if (
+        // Apply intelligent margin logic based on alignment
+        theme.global.drop.intelligentMargin === true &&
+        typeof themeDropMargin === 'string'
+      ) {
+        if (align.top === 'bottom')
+          adjustedMargin.top = `${
+            parsedThemeDropMargin + parsedThemeTipMargin
+          }px`;
+        if (align.bottom === 'top')
+          adjustedMargin.bottom = `${
+            parsedThemeDropMargin + parsedThemeTipMargin
+          }px`;
+        if (align.right === 'left')
+          adjustedMargin.right = `${
+            parsedThemeDropMargin + parsedThemeTipMargin
+          }px`;
+        if (align.left === 'right')
+          adjustedMargin.left = `${
+            parsedThemeDropMargin + parsedThemeTipMargin
+          }px`;
+        if (align.top === 'top' && align.left === 'left')
+          adjustedMargin.top = `${
+            parsedThemeDropMargin + parsedThemeTipMargin
+          }px`;
+      }
+      return adjustedMargin;
+    };
+
+    const finalMargin = {
+      ...normalizeMargin(theme.tip.content.margin),
+      ...tipMarginStyle(
+        theme,
+        dropProps?.align || { top: 'top', left: 'left' }, // Default align
+      ),
+    };
+
+    // if dropProps.margin is set that takes precedence wont use theme
+    // If dropProps.margin is given add to the tip margin
+    if (dropProps?.margin) {
+      const dropMargin = normalizeMargin(dropProps.margin, theme);
+      const themeTipMargin = normalizeMargin(
+        theme.global.edgeSize[theme.tip.content.margin],
+        theme,
+      );
+      finalMargin.top = `${themeTipMargin.top + dropMargin.top}px`;
+      finalMargin.bottom = `${themeTipMargin.bottom + dropMargin.bottom}px`;
+      finalMargin.left = `${themeTipMargin.left + dropMargin.left}px`;
+      finalMargin.right = `${themeTipMargin.right + dropMargin.right}px`;
+    }
+
     // Three use case for children
     // 1. Tip has a single child + it is a React Element => Great!
     // 2. Tip has a single child +  not React Element =>
@@ -82,8 +166,15 @@ const Tip = forwardRef(
           {...dropProps}
           onMouseEnter={() => setTooltipOver(true)}
           onMouseLeave={() => setTooltipOver(false)}
+          margin="none"
         >
-          {plain ? content : <Box {...theme.tip.content}>{content}</Box>}
+          {plain ? (
+            content
+          ) : (
+            <Box {...theme.tip.content} margin={finalMargin}>
+              {content}
+            </Box>
+          )}
         </Drop>
       ),
     ];
