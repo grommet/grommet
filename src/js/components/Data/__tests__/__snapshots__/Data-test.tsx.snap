@@ -507,17 +507,17 @@ exports[`Data controlled search 2`] = `
   class="StyledGrommet-sc-19lkkz7-0 fHTwQM"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 CpBzq"
+    class="StyledBox-sc-13pk1d4-0 cSZgLU"
     id="data"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 QYEeA"
+      class="StyledBox-sc-13pk1d4-0 leTTbi"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 ddKxBZ"
+        class="StyledBox-sc-13pk1d4-0 chAQmP"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 klipST"
+          class="StyledBox-sc-13pk1d4-0 dqmqKB"
         >
           <div
             class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 jHtDgz"
@@ -550,7 +550,7 @@ exports[`Data controlled search 2`] = `
           </div>
         </div>
         <div
-          class="StyledBox-sc-13pk1d4-0 lnSWDe"
+          class="StyledBox-sc-13pk1d4-0 lpdLxY"
         >
           <button
             aria-label="Open filters"
@@ -593,7 +593,7 @@ exports[`Data controlled search 2`] = `
             scope="col"
           >
             <div
-              class="StyledBox-sc-13pk1d4-0 dyjxFz"
+              class="StyledBox-sc-13pk1d4-0 bSsvEl"
             />
           </th>
         </tr>
@@ -609,7 +609,7 @@ exports[`Data controlled search 2`] = `
             scope="row"
           >
             <div
-              class="StyledBox-sc-13pk1d4-0 klipST"
+              class="StyledBox-sc-13pk1d4-0 dqmqKB"
             >
               <span
                 class="StyledText-sc-1sadyjn-0 epapWo"
@@ -627,7 +627,7 @@ exports[`Data controlled search 2`] = `
             scope="row"
           >
             <div
-              class="StyledBox-sc-13pk1d4-0 klipST"
+              class="StyledBox-sc-13pk1d4-0 dqmqKB"
             >
               <span
                 class="StyledText-sc-1sadyjn-0 epapWo"
@@ -645,7 +645,7 @@ exports[`Data controlled search 2`] = `
             scope="row"
           >
             <div
-              class="StyledBox-sc-13pk1d4-0 klipST"
+              class="StyledBox-sc-13pk1d4-0 dqmqKB"
             >
               <span
                 class="StyledText-sc-1sadyjn-0 epapWo"
@@ -663,7 +663,7 @@ exports[`Data controlled search 2`] = `
             scope="row"
           >
             <div
-              class="StyledBox-sc-13pk1d4-0 klipST"
+              class="StyledBox-sc-13pk1d4-0 dqmqKB"
             >
               <span
                 class="StyledText-sc-1sadyjn-0 epapWo"
@@ -6355,17 +6355,17 @@ exports[`Data uncontrolled search 2`] = `
   class="StyledGrommet-sc-19lkkz7-0 fHTwQM"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 CpBzq"
+    class="StyledBox-sc-13pk1d4-0 cSZgLU"
     id="data"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 QYEeA"
+      class="StyledBox-sc-13pk1d4-0 leTTbi"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 ddKxBZ"
+        class="StyledBox-sc-13pk1d4-0 chAQmP"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 klipST"
+          class="StyledBox-sc-13pk1d4-0 dqmqKB"
         >
           <div
             class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 jHtDgz"
@@ -6398,7 +6398,7 @@ exports[`Data uncontrolled search 2`] = `
           </div>
         </div>
         <div
-          class="StyledBox-sc-13pk1d4-0 lnSWDe"
+          class="StyledBox-sc-13pk1d4-0 lpdLxY"
         >
           <button
             aria-label="Open filters"
@@ -6441,7 +6441,7 @@ exports[`Data uncontrolled search 2`] = `
             scope="col"
           >
             <div
-              class="StyledBox-sc-13pk1d4-0 dyjxFz"
+              class="StyledBox-sc-13pk1d4-0 bSsvEl"
             />
           </th>
         </tr>
@@ -6457,7 +6457,7 @@ exports[`Data uncontrolled search 2`] = `
             scope="row"
           >
             <div
-              class="StyledBox-sc-13pk1d4-0 klipST"
+              class="StyledBox-sc-13pk1d4-0 dqmqKB"
             >
               <span
                 class="StyledText-sc-1sadyjn-0 epapWo"
@@ -7416,17 +7416,17 @@ exports[`Data uncontrolled, when paginated, search should return to page 1 2`] =
   class="StyledGrommet-sc-19lkkz7-0 fHTwQM"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 CpBzq"
+    class="StyledBox-sc-13pk1d4-0 cSZgLU"
     id="data"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 QYEeA"
+      class="StyledBox-sc-13pk1d4-0 leTTbi"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 ddKxBZ"
+        class="StyledBox-sc-13pk1d4-0 chAQmP"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 klipST"
+          class="StyledBox-sc-13pk1d4-0 dqmqKB"
         >
           <div
             class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 jHtDgz"
@@ -7459,7 +7459,7 @@ exports[`Data uncontrolled, when paginated, search should return to page 1 2`] =
           </div>
         </div>
         <div
-          class="StyledBox-sc-13pk1d4-0 lnSWDe"
+          class="StyledBox-sc-13pk1d4-0 lpdLxY"
         >
           <button
             aria-label="Open filters"
@@ -7502,7 +7502,7 @@ exports[`Data uncontrolled, when paginated, search should return to page 1 2`] =
             scope="col"
           >
             <div
-              class="StyledBox-sc-13pk1d4-0 dyjxFz"
+              class="StyledBox-sc-13pk1d4-0 bSsvEl"
             >
               <span
                 class="StyledText-sc-1sadyjn-0 iUzxnW"
@@ -7595,14 +7595,14 @@ exports[`Data uncontrolled, when paginated, search should return to page 1 2`] =
       </tbody>
     </table>
     <div
-      class="StyledBox-sc-13pk1d4-0 CpBzq Pagination__StyledPaginationContainer-sc-rnlw6m-0"
+      class="StyledBox-sc-13pk1d4-0 cSZgLU Pagination__StyledPaginationContainer-sc-rnlw6m-0"
     >
       <nav
         aria-label="Pagination Navigation"
-        class="StyledBox-sc-13pk1d4-0 CpBzq"
+        class="StyledBox-sc-13pk1d4-0 cSZgLU"
       >
         <ul
-          class="StyledBox-sc-13pk1d4-0 dRQkqJ"
+          class="StyledBox-sc-13pk1d4-0 PjWMT"
         >
           <li
             class="StyledPageControl__StyledContainer-sc-1vlfaez-1 eqSlDO"
@@ -7736,17 +7736,17 @@ exports[`Data uncontrolled, when paginated, search should return to page 1 3`] =
   class="StyledGrommet-sc-19lkkz7-0 fHTwQM"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 CpBzq"
+    class="StyledBox-sc-13pk1d4-0 cSZgLU"
     id="data"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 QYEeA"
+      class="StyledBox-sc-13pk1d4-0 leTTbi"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 ddKxBZ"
+        class="StyledBox-sc-13pk1d4-0 chAQmP"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 klipST"
+          class="StyledBox-sc-13pk1d4-0 dqmqKB"
         >
           <div
             class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 jHtDgz"
@@ -7779,7 +7779,7 @@ exports[`Data uncontrolled, when paginated, search should return to page 1 3`] =
           </div>
         </div>
         <div
-          class="StyledBox-sc-13pk1d4-0 lnSWDe"
+          class="StyledBox-sc-13pk1d4-0 lpdLxY"
         >
           <button
             aria-label="Open filters"
@@ -7822,7 +7822,7 @@ exports[`Data uncontrolled, when paginated, search should return to page 1 3`] =
             scope="col"
           >
             <div
-              class="StyledBox-sc-13pk1d4-0 dyjxFz"
+              class="StyledBox-sc-13pk1d4-0 bSsvEl"
             >
               <span
                 class="StyledText-sc-1sadyjn-0 iUzxnW"
@@ -7844,7 +7844,7 @@ exports[`Data uncontrolled, when paginated, search should return to page 1 3`] =
             scope="row"
           >
             <div
-              class="StyledBox-sc-13pk1d4-0 klipST"
+              class="StyledBox-sc-13pk1d4-0 dqmqKB"
             >
               <span
                 class="StyledText-sc-1sadyjn-0 epapWo"
@@ -7933,14 +7933,14 @@ exports[`Data uncontrolled, when paginated, search should return to page 1 3`] =
       </tbody>
     </table>
     <div
-      class="StyledBox-sc-13pk1d4-0 CpBzq Pagination__StyledPaginationContainer-sc-rnlw6m-0"
+      class="StyledBox-sc-13pk1d4-0 cSZgLU Pagination__StyledPaginationContainer-sc-rnlw6m-0"
     >
       <nav
         aria-label="Pagination Navigation"
-        class="StyledBox-sc-13pk1d4-0 CpBzq"
+        class="StyledBox-sc-13pk1d4-0 cSZgLU"
       >
         <ul
-          class="StyledBox-sc-13pk1d4-0 dRQkqJ"
+          class="StyledBox-sc-13pk1d4-0 PjWMT"
         >
           <li
             class="StyledPageControl__StyledContainer-sc-1vlfaez-1 eqSlDO"

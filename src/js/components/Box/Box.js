@@ -8,16 +8,16 @@ import React, {
 } from 'react';
 
 import { ThemeContext } from 'styled-components';
-import { backgroundIsDark } from '../../utils';
+import { backgroundIsDark, useForwardedRef } from '../../utils';
 import { Keyboard } from '../Keyboard';
 
 import { StyledBox, StyledBoxGap } from './StyledBox';
 import { BoxPropTypes } from './propTypes';
-import { ResponsiveContainer } from './ResponsiveContainer';
 import { SkeletonContext, useSkeleton } from '../Skeleton';
 import { AnnounceContext } from '../../contexts/AnnounceContext';
 import { OptionsContext } from '../../contexts/OptionsContext';
 import { ResponsiveContainerContext } from '../../contexts';
+import { ResponsiveContainerProvider } from './ResponsiveContainerProvider';
 import { useThemeValue } from '../../utils/useThemeValue';
 import { supportsContainerQueries } from '../../utils/responsive';
 
@@ -48,7 +48,7 @@ const Box = forwardRef(
       skeleton: skeletonProp,
       ...rest
     },
-    ref,
+    refProp,
   ) => {
     const { theme, passThemeFlag } = useThemeValue();
     // boxOptions was created to preserve backwards compatibility but
@@ -57,6 +57,7 @@ const Box = forwardRef(
 
     const skeleton = useSkeleton();
 
+    const [containerElement, setContainerElement] = useState(undefined);
     const responsiveContainer = useContext(ResponsiveContainerContext);
     const responsive =
       responsiveContainer && responsiveProp ? 'container' : responsiveProp;
@@ -64,6 +65,33 @@ const Box = forwardRef(
     let background = backgroundProp;
 
     const announce = useContext(AnnounceContext);
+
+    const containerRef = useForwardedRef(refProp);
+
+    // Save the ref as a state if we're in a responsive container.
+    // We only need it in the responsive container case and it
+    // needs to be in a state to cause a re-render.
+    useEffect(() => {
+      if (responsiveProp === 'container' && containerRef.current) {
+        setContainerElement(containerRef.current);
+      }
+    }, [containerRef, responsiveProp]);
+
+    useEffect(() => {
+      if (typeof as === 'function') {
+        if (refProp) {
+          console.warn(
+            'ref and as={function} are incompatible. The ref will not get set.',
+          );
+        }
+        if (responsiveProp === 'container') {
+          console.warn(
+            // eslint-disable-next-line max-len
+            'responsive="container" and as={function} are incompatible. Use one or the other.',
+          );
+        }
+      }
+    }, [refProp, as, responsiveProp]);
 
     useEffect(() => {
       if (skeletonProp?.message?.start) announce(skeletonProp.message.start);
@@ -217,6 +245,12 @@ const Box = forwardRef(
       return result || theme;
     }, [background, theme]);
 
+    // Only pass along the ref if the as prop is not a function.
+    // The styled component will throw a warning if we try to pass
+    // a ref when the as prop is a function. We do a console.warn
+    // about this above in this case.
+    const ref = typeof as === 'function' ? undefined : containerRef;
+
     let content = (
       <StyledBox
         as={!as && tag ? tag : as}
@@ -244,6 +278,7 @@ const Box = forwardRef(
         widthProp={width}
         heightProp={height}
         responsive={responsive}
+        responsiveContainer={responsiveProp === 'container'}
         tabIndex={adjustedTabIndex}
         {...clickProps}
         {...passThemeFlag}
@@ -258,7 +293,14 @@ const Box = forwardRef(
 
     if (responsiveProp === 'container') {
       if (supportsContainerQueries()) {
-        content = <ResponsiveContainer>{content}</ResponsiveContainer>;
+        content = (
+          <ResponsiveContainerProvider
+            container={containerElement}
+            theme={theme}
+          >
+            {content}
+          </ResponsiveContainerProvider>
+        );
       } else {
         console.warn(
           '<Box responsive="container"> requires styled-components v6 or later',

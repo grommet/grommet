@@ -64,12 +64,12 @@ export const deviceResponsive = (userAgent, theme) => {
   return undefined;
 };
 
+// styled-components v6 and later do not have a withComponent
+// method. We need v6 or later to support container queries.
+const testComp = styled.div`
+  display: flex;
+`;
 export const supportsContainerQueries = () => {
-  // styled-components v6 and later do not have a withComponent
-  // method. We need v6 or later to support container queries.
-  const comp = styled.div`
-    display: flex;
-  `;
-  const isPreV6 = typeof comp.withComponent === 'function';
+  const isPreV6 = typeof testComp.withComponent === 'function';
   return !isPreV6;
 };
