@@ -64,7 +64,7 @@ export interface BoxProps {
       }
     | string;
   pad?: PadType;
-  responsive?: boolean;
+  responsive?: boolean | 'container';
   round?: RoundType;
   skeleton?: SkeletonType;
   tag?: PolymorphicType;

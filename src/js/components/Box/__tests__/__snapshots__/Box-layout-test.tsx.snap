@@ -2501,6 +2501,12 @@ exports[`Box row and column gap 1`] = `
 }
 
 @media only screen and (max-width: 768px) {
+  .c1 {
+    gap: 48px 30px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
   .c3 {
     height: 6px;
   }
