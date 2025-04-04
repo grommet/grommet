@@ -21,29 +21,23 @@ const Tip = forwardRef(
 
     const componentRef = useForwardedRef(tipRef);
 
+    // if margin is a string, parse it or use the theme value
     const normalizeMargin = (margin) => {
       if (typeof margin === 'string') {
-        if (margin.includes('px')) {
-          const value = parseInt(margin, 10);
-          return { top: value, bottom: value, left: value, right: value };
-        }
-        const value = theme.global.edgeSize[margin] || margin;
+        const value = theme.global.edgeSize[margin] || parseInt(margin, 10);
         return { top: value, bottom: value, left: value, right: value };
       }
-      return margin || { top: 0, bottom: 0, left: 0, right: 0 };
+      return { top: 0, bottom: 0, left: 0, right: 0 };
     };
 
-    const tipMarginStyle = (theme, align, dropMargin) => {
-      if (dropMargin) {
-        return normalizeMargin(dropMargin, theme);
-      }
-
+    const tipMarginStyle = (theme, align) => {
       const themeDropMargin =
-        theme.global.edgeSize[theme?.global?.drop?.margin] ||
+        theme.global.edgeSize[theme.global?.drop?.margin] ||
         theme.global.drop.margin;
       const themeTipMargin =
-        theme.global.edgeSize[theme.tip.content.margin] ||
+        theme.global.edgeSize[theme.tip?.content?.margin] ||
         theme.tip.content.margin;
+
       const parsedThemeDropMargin =
         typeof themeDropMargin === 'string'
           ? parseInt(themeDropMargin, 10)
@@ -52,10 +46,16 @@ const Tip = forwardRef(
         typeof themeTipMargin === 'string'
           ? parseInt(themeTipMargin, 10)
           : themeTipMargin;
-      const adjustedMargin = {};
 
-      // Apply intelligent margin logic based on alignment
-      if (
+      const adjustedMargin = {};
+      // if themeDropMargin is an object, use the values directly
+      if (typeof themeDropMargin === 'object') {
+        adjustedMargin.top = themeDropMargin.top || 0;
+        adjustedMargin.bottom = themeDropMargin.bottom || 0;
+        adjustedMargin.left = themeDropMargin.left || 0;
+        adjustedMargin.right = themeDropMargin.right || 0;
+      } else if (
+        // Apply intelligent margin logic based on alignment
         theme.global.drop.intelligentMargin === true &&
         typeof themeDropMargin === 'string'
       ) {
@@ -84,14 +84,14 @@ const Tip = forwardRef(
     };
 
     const finalMargin = {
-      ...normalizeMargin(theme.tip.content.margin, theme),
+      ...normalizeMargin(theme.tip.content.margin),
       ...tipMarginStyle(
         theme,
         dropProps?.align || { top: 'top', left: 'left' }, // Default align
-        dropProps?.margin, // If drop margin exists, use it
       ),
     };
 
+    // if dropProps.margin is set that takes precedence wont use theme
     // If dropProps.margin is given add to the tip margin
     if (dropProps?.margin) {
       const dropMargin = normalizeMargin(dropProps.margin, theme);
@@ -99,7 +99,6 @@ const Tip = forwardRef(
         theme.global.edgeSize[theme.tip.content.margin],
         theme,
       );
-
       finalMargin.top = `${themeTipMargin.top + dropMargin.top}px`;
       finalMargin.bottom = `${themeTipMargin.bottom + dropMargin.bottom}px`;
       finalMargin.left = `${themeTipMargin.left + dropMargin.left}px`;
