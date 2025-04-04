@@ -88,7 +88,7 @@ const StyledDrop = styled(Box)`
     marginStyle(
       props.theme,
       props.alignProp,
-      props.margin || props.theme.global.drop.margin,
+      props.theme.global.drop.margin,
       props.responsive,
       props.margin,
     )}
