@@ -419,7 +419,7 @@ exports[`DataClearFilters clear filters should not clear search, sort, or step 1
       <span
         class="c11"
       >
-        3 results of  items
+        3 results of undefined items
       </span>
     </div>
   </div>

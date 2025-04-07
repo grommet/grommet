@@ -162,7 +162,11 @@
     "tabContents": "Tab Contents"
   },
   "tag": {
-    "removeLabel": "Remove {name} {value}"
+    "removeLabel": {
+      "nameAndValue": "Remove {name}: {value}",
+      "nameOnly": "Remove {name}",
+      "valueOnly": "Remove {value}"
+    }
   },
   "textInput": {
     "enterSelect": "(Press Enter to Select)",

@@ -18,8 +18,15 @@ const Tag = forwardRef(
     const { theme, passThemeFlag } = useThemeValue();
     const RemoveIcon = theme.tag.icons?.remove || FormClose;
 
+    let removeLabelId = 'tag.removeLabel.valueOnly';
+    if (name && value) {
+      removeLabelId = 'tag.removeLabel.nameAndValue';
+    } else if (name) {
+      removeLabelId = 'tag.removeLabel.nameOnly';
+    }
+
     const removeLabel = format({
-      id: 'tag.removeLabel',
+      id: removeLabelId,
       messages,
       values: { name, value },
     });

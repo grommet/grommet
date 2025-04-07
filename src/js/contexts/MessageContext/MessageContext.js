@@ -45,15 +45,12 @@ export const format = (options, messages) => {
   const tokens = message?.match(/\{(.+?)\}/g);
   tokens?.forEach((token) => {
     const names = token.substr(1, token.length - 2);
-    let value = values[names];
+    const value = values[names];
 
-    if (value === undefined || value === null) {
-      value = '';
-    }
     newMessage = newMessage.replace(token, value);
   });
 
-  return newMessage;
+  return values ? newMessage : message;
 };
 
 const defaultValue = {
