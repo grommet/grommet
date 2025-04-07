@@ -4,10 +4,38 @@ import { StyleSheetManager } from 'styled-components';
 import { hpe } from 'grommet-theme-hpe';
 import isChromatic from 'chromatic/isChromatic';
 import { Grommet, grommet, hacktoberfest2022, Box, Text } from '../src/js';
+import { deepMerge } from '../src/js/utils';
+// eslint-disable-next-line import/no-unresolved
+import { light } from 'hpe-design-tokens/grommet';
 
+const hpeNext = deepMerge(hpe, {
+  button: {
+    active: {
+      extend: ({ usingKeyboard }) =>
+        usingKeyboard
+          ? `
+      position: relative;
+      &::before {
+        display: block;
+        position: absolute;
+        content: '';
+        width: 6px;
+        border-top-left-radius: 6px;
+        border-bottom-left-radius: 6px;
+        top: -1px;
+        bottom: -1px;
+        left: -1px;
+        background: ${light.hpe.color.border.selected};
+      }
+    `
+          : '',
+    },
+  },
+});
 const CUSTOM_THEMED = 'Custom Themed';
 const THEMES = {
   hpe,
+  hpeNext,
   grommet,
   hacktoberfest2022,
   base: {},
@@ -124,6 +152,7 @@ export const globalTypes = {
         { title: 'base', value: 'base' },
         { title: 'grommet', value: 'grommet' },
         { title: 'hpe', value: 'hpe' },
+        { title: 'hpeNext', value: 'hpeNext' },
         { title: 'hacktoberfest2022', value: 'hacktoberfest2022' },
       ],
     },

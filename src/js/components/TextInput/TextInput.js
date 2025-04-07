@@ -242,6 +242,10 @@ const TextInput = forwardRef(
     // Only update active suggestion index when the mouse actually moves,
     // not when suggestions are moving under the mouse.
     const [mouseMovedSinceLastKey, setMouseMovedSinceLastKey] = useState();
+    const usingKeyboard = useMemo(
+      () => !mouseMovedSinceLastKey,
+      [mouseMovedSinceLastKey],
+    );
 
     // set activeSuggestionIndex when value changes
     useEffect(
@@ -421,6 +425,7 @@ const TextInput = forwardRef(
                             ? () => setActiveSuggestionIndex(index)
                             : undefined
                         }
+                        usingKeyboard={usingKeyboard}
                       >
                         {child}
                       </Button>
