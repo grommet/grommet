@@ -4090,23 +4090,23 @@ exports[`SelectMultiple showSelectionInline with children 1`] = `
 
 exports[`SelectMultiple showSelectionInline with children 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 fHTwQM"
+  class="StyledGrommet-sc-19lkkz7-0 cBoJUe"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 ezfPMY SelectMultiple__StyledSelectBox-sc-18zwyth-0 kzfSZn"
+    class="StyledBox-sc-13pk1d4-0 dCQdqi SelectMultiple__StyledSelectBox-sc-18zwyth-0 hIidgd"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 kVZfCE"
+      class="StyledBox-sc-13pk1d4-0 ewwMyC"
     >
       <button
         aria-expanded="false"
         aria-haspopup="listbox"
         aria-label="Open drop. 0 selected"
-        class="StyledButton-sc-323bzc-0 jLjZi"
+        class="StyledButton-sc-323bzc-0 ga-DnKw"
         type="button"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 bvWvwP"
+          class="StyledBox-sc-13pk1d4-0 kWKGDp"
         >
           .c1 {
   box-sizing: border-box;
@@ -4205,11 +4205,11 @@ exports[`SelectMultiple showSelectionInline with children 2`] = `
             />
           </div>
           <div
-            class="StyledBox-sc-13pk1d4-0 dxeULw"
+            class="StyledBox-sc-13pk1d4-0 jexDEq"
           >
             <svg
               aria-label="FormDown"
-              class="StyledIcon-sc-ofa7kd-0 iVpWnA"
+              class="StyledIcon-sc-ofa7kd-0 bHtbkK"
               viewBox="0 0 24 24"
             >
               <path
@@ -5485,12 +5485,12 @@ exports[`SelectMultiple with portal disabled option 1`] = `
 
 exports[`SelectMultiple with portal disabled option 2`] = `
 "@media only screen and (max-width: 768px) {
-  .dxeULw {
+  .jexDEq {
     margin-left: 6px;
     margin-right: 6px;
   }
 }
-.iWGNVl {
+.eNtKJP {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -5506,41 +5506,41 @@ exports[`SelectMultiple with portal disabled option 2`] = `
   padding: 0;
   text-align: inherit;
 }
-.iWGNVl:focus {
+.eNtKJP:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6fffb0;
 }
-.iWGNVl:focus > circle,
-.iWGNVl:focus > ellipse,
-.iWGNVl:focus > line,
-.iWGNVl:focus > path,
-.iWGNVl:focus > polygon,
-.iWGNVl:focus > polyline,
-.iWGNVl:focus > rect {
+.eNtKJP:focus > circle,
+.eNtKJP:focus > ellipse,
+.eNtKJP:focus > line,
+.eNtKJP:focus > path,
+.eNtKJP:focus > polygon,
+.eNtKJP:focus > polyline,
+.eNtKJP:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6fffb0;
 }
-.iWGNVl:focus ::-moz-focus-inner {
+.eNtKJP:focus ::-moz-focus-inner {
   border: 0;
 }
-.iWGNVl:focus:not(:focus-visible) {
+.eNtKJP:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
-.iWGNVl:focus:not(:focus-visible) > circle,
-.iWGNVl:focus:not(:focus-visible) > ellipse,
-.iWGNVl:focus:not(:focus-visible) > line,
-.iWGNVl:focus:not(:focus-visible) > path,
-.iWGNVl:focus:not(:focus-visible) > polygon,
-.iWGNVl:focus:not(:focus-visible) > polyline,
-.iWGNVl:focus:not(:focus-visible) > rect {
+.eNtKJP:focus:not(:focus-visible) > circle,
+.eNtKJP:focus:not(:focus-visible) > ellipse,
+.eNtKJP:focus:not(:focus-visible) > line,
+.eNtKJP:focus:not(:focus-visible) > path,
+.eNtKJP:focus:not(:focus-visible) > polygon,
+.eNtKJP:focus:not(:focus-visible) > polyline,
+.eNtKJP:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
-.iWGNVl:focus:not(:focus-visible) ::-moz-focus-inner {
+.eNtKJP:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
-.jWsnmo {
+.gePUQK {
   border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
 }"
@@ -5804,12 +5804,12 @@ exports[`SelectMultiple with portal empty options 1`] = `
 
 exports[`SelectMultiple with portal empty options 2`] = `
 "@media only screen and (max-width: 768px) {
-  .dxeULw {
+  .jexDEq {
     margin-left: 6px;
     margin-right: 6px;
   }
 }
-.iWGNVl {
+.eNtKJP {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -5825,41 +5825,41 @@ exports[`SelectMultiple with portal empty options 2`] = `
   padding: 0;
   text-align: inherit;
 }
-.iWGNVl:focus {
+.eNtKJP:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6fffb0;
 }
-.iWGNVl:focus > circle,
-.iWGNVl:focus > ellipse,
-.iWGNVl:focus > line,
-.iWGNVl:focus > path,
-.iWGNVl:focus > polygon,
-.iWGNVl:focus > polyline,
-.iWGNVl:focus > rect {
+.eNtKJP:focus > circle,
+.eNtKJP:focus > ellipse,
+.eNtKJP:focus > line,
+.eNtKJP:focus > path,
+.eNtKJP:focus > polygon,
+.eNtKJP:focus > polyline,
+.eNtKJP:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6fffb0;
 }
-.iWGNVl:focus ::-moz-focus-inner {
+.eNtKJP:focus ::-moz-focus-inner {
   border: 0;
 }
-.iWGNVl:focus:not(:focus-visible) {
+.eNtKJP:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
-.iWGNVl:focus:not(:focus-visible) > circle,
-.iWGNVl:focus:not(:focus-visible) > ellipse,
-.iWGNVl:focus:not(:focus-visible) > line,
-.iWGNVl:focus:not(:focus-visible) > path,
-.iWGNVl:focus:not(:focus-visible) > polygon,
-.iWGNVl:focus:not(:focus-visible) > polyline,
-.iWGNVl:focus:not(:focus-visible) > rect {
+.eNtKJP:focus:not(:focus-visible) > circle,
+.eNtKJP:focus:not(:focus-visible) > ellipse,
+.eNtKJP:focus:not(:focus-visible) > line,
+.eNtKJP:focus:not(:focus-visible) > path,
+.eNtKJP:focus:not(:focus-visible) > polygon,
+.eNtKJP:focus:not(:focus-visible) > polyline,
+.eNtKJP:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
-.iWGNVl:focus:not(:focus-visible) ::-moz-focus-inner {
+.eNtKJP:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
-.jWsnmo {
+.gePUQK {
   border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
 }"
@@ -6135,12 +6135,12 @@ exports[`SelectMultiple with portal limit 1`] = `
 
 exports[`SelectMultiple with portal limit 2`] = `
 "@media only screen and (max-width: 768px) {
-  .dxeULw {
+  .jexDEq {
     margin-left: 6px;
     margin-right: 6px;
   }
 }
-.iWGNVl {
+.eNtKJP {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -6156,41 +6156,41 @@ exports[`SelectMultiple with portal limit 2`] = `
   padding: 0;
   text-align: inherit;
 }
-.iWGNVl:focus {
+.eNtKJP:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6fffb0;
 }
-.iWGNVl:focus > circle,
-.iWGNVl:focus > ellipse,
-.iWGNVl:focus > line,
-.iWGNVl:focus > path,
-.iWGNVl:focus > polygon,
-.iWGNVl:focus > polyline,
-.iWGNVl:focus > rect {
+.eNtKJP:focus > circle,
+.eNtKJP:focus > ellipse,
+.eNtKJP:focus > line,
+.eNtKJP:focus > path,
+.eNtKJP:focus > polygon,
+.eNtKJP:focus > polyline,
+.eNtKJP:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6fffb0;
 }
-.iWGNVl:focus ::-moz-focus-inner {
+.eNtKJP:focus ::-moz-focus-inner {
   border: 0;
 }
-.iWGNVl:focus:not(:focus-visible) {
+.eNtKJP:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
-.iWGNVl:focus:not(:focus-visible) > circle,
-.iWGNVl:focus:not(:focus-visible) > ellipse,
-.iWGNVl:focus:not(:focus-visible) > line,
-.iWGNVl:focus:not(:focus-visible) > path,
-.iWGNVl:focus:not(:focus-visible) > polygon,
-.iWGNVl:focus:not(:focus-visible) > polyline,
-.iWGNVl:focus:not(:focus-visible) > rect {
+.eNtKJP:focus:not(:focus-visible) > circle,
+.eNtKJP:focus:not(:focus-visible) > ellipse,
+.eNtKJP:focus:not(:focus-visible) > line,
+.eNtKJP:focus:not(:focus-visible) > path,
+.eNtKJP:focus:not(:focus-visible) > polygon,
+.eNtKJP:focus:not(:focus-visible) > polyline,
+.eNtKJP:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
-.iWGNVl:focus:not(:focus-visible) ::-moz-focus-inner {
+.eNtKJP:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
-.jWsnmo {
+.gePUQK {
   border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
 }"
@@ -6654,7 +6654,7 @@ exports[`SelectMultiple with portal renders custom listbox styling 1`] = `
 
 exports[`SelectMultiple with portal renders custom listbox styling 2`] = `
 "@media only screen and (max-width: 768px) {
-  .dxeULw {
+  .jexDEq {
     margin-left: 6px;
     margin-right: 6px;
   }
@@ -6931,12 +6931,12 @@ exports[`SelectMultiple with portal select all and clear 1`] = `
 
 exports[`SelectMultiple with portal select all and clear 2`] = `
 "@media only screen and (max-width: 768px) {
-  .dxeULw {
+  .jexDEq {
     margin-left: 6px;
     margin-right: 6px;
   }
 }
-.iWGNVl {
+.eNtKJP {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -6952,41 +6952,41 @@ exports[`SelectMultiple with portal select all and clear 2`] = `
   padding: 0;
   text-align: inherit;
 }
-.iWGNVl:focus {
+.eNtKJP:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6fffb0;
 }
-.iWGNVl:focus > circle,
-.iWGNVl:focus > ellipse,
-.iWGNVl:focus > line,
-.iWGNVl:focus > path,
-.iWGNVl:focus > polygon,
-.iWGNVl:focus > polyline,
-.iWGNVl:focus > rect {
+.eNtKJP:focus > circle,
+.eNtKJP:focus > ellipse,
+.eNtKJP:focus > line,
+.eNtKJP:focus > path,
+.eNtKJP:focus > polygon,
+.eNtKJP:focus > polyline,
+.eNtKJP:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6fffb0;
 }
-.iWGNVl:focus ::-moz-focus-inner {
+.eNtKJP:focus ::-moz-focus-inner {
   border: 0;
 }
-.iWGNVl:focus:not(:focus-visible) {
+.eNtKJP:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
-.iWGNVl:focus:not(:focus-visible) > circle,
-.iWGNVl:focus:not(:focus-visible) > ellipse,
-.iWGNVl:focus:not(:focus-visible) > line,
-.iWGNVl:focus:not(:focus-visible) > path,
-.iWGNVl:focus:not(:focus-visible) > polygon,
-.iWGNVl:focus:not(:focus-visible) > polyline,
-.iWGNVl:focus:not(:focus-visible) > rect {
+.eNtKJP:focus:not(:focus-visible) > circle,
+.eNtKJP:focus:not(:focus-visible) > ellipse,
+.eNtKJP:focus:not(:focus-visible) > line,
+.eNtKJP:focus:not(:focus-visible) > path,
+.eNtKJP:focus:not(:focus-visible) > polygon,
+.eNtKJP:focus:not(:focus-visible) > polyline,
+.eNtKJP:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
-.iWGNVl:focus:not(:focus-visible) ::-moz-focus-inner {
+.eNtKJP:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
-.jWsnmo {
+.gePUQK {
   border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
 }"
@@ -6997,23 +6997,23 @@ exports[`SelectMultiple with portal select all and clear 3`] = `
   aria-expanded="true"
   aria-haspopup="listbox"
   aria-label="Open drop. 0 selected"
-  class="StyledButton-sc-323bzc-0 iWGNVl StyledSelect__StyledSelectDropButton-sc-znp66n-5 jWsnmo"
+  class="StyledButton-sc-323bzc-0 eNtKJP StyledSelect__StyledSelectDropButton-sc-znp66n-5 gePUQK"
   id="test-select__drop"
   tabindex="0"
   type="button"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 kmCpPX"
+    class="StyledBox-sc-13pk1d4-0 fCLFZR"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 llKkdx"
+      class="StyledBox-sc-13pk1d4-0 jRxALT"
     >
       <div
-        class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 jHtDgz"
+        class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 ddykB"
       >
         <input
           autocomplete="off"
-          class="StyledTextInput-sc-1x30a0s-0 hgBTwY StyledSelect__SelectTextInput-sc-znp66n-4 hPdVtq"
+          class="StyledTextInput-sc-1x30a0s-0 LBzQG StyledSelect__SelectTextInput-sc-znp66n-4 djgtjA"
           id="test-select__drop__input"
           inert=""
           readonly=""
@@ -7024,11 +7024,11 @@ exports[`SelectMultiple with portal select all and clear 3`] = `
       </div>
     </div>
     <div
-      class="StyledBox-sc-13pk1d4-0 dxeULw"
+      class="StyledBox-sc-13pk1d4-0 jexDEq"
     >
       <svg
         aria-label="FormDown"
-        class="StyledIcon-sc-ofa7kd-0 iVpWnA"
+        class="StyledIcon-sc-ofa7kd-0 bHtbkK"
         viewBox="0 0 24 24"
       >
         <path
@@ -7045,12 +7045,12 @@ exports[`SelectMultiple with portal select all and clear 3`] = `
 
 exports[`SelectMultiple with portal select all and clear 4`] = `
 "@media only screen and (max-width: 768px) {
-  .dxeULw {
+  .jexDEq {
     margin-left: 6px;
     margin-right: 6px;
   }
 }
-.iWGNVl {
+.eNtKJP {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -7066,41 +7066,41 @@ exports[`SelectMultiple with portal select all and clear 4`] = `
   padding: 0;
   text-align: inherit;
 }
-.iWGNVl:focus {
+.eNtKJP:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6fffb0;
 }
-.iWGNVl:focus > circle,
-.iWGNVl:focus > ellipse,
-.iWGNVl:focus > line,
-.iWGNVl:focus > path,
-.iWGNVl:focus > polygon,
-.iWGNVl:focus > polyline,
-.iWGNVl:focus > rect {
+.eNtKJP:focus > circle,
+.eNtKJP:focus > ellipse,
+.eNtKJP:focus > line,
+.eNtKJP:focus > path,
+.eNtKJP:focus > polygon,
+.eNtKJP:focus > polyline,
+.eNtKJP:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6fffb0;
 }
-.iWGNVl:focus ::-moz-focus-inner {
+.eNtKJP:focus ::-moz-focus-inner {
   border: 0;
 }
-.iWGNVl:focus:not(:focus-visible) {
+.eNtKJP:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
-.iWGNVl:focus:not(:focus-visible) > circle,
-.iWGNVl:focus:not(:focus-visible) > ellipse,
-.iWGNVl:focus:not(:focus-visible) > line,
-.iWGNVl:focus:not(:focus-visible) > path,
-.iWGNVl:focus:not(:focus-visible) > polygon,
-.iWGNVl:focus:not(:focus-visible) > polyline,
-.iWGNVl:focus:not(:focus-visible) > rect {
+.eNtKJP:focus:not(:focus-visible) > circle,
+.eNtKJP:focus:not(:focus-visible) > ellipse,
+.eNtKJP:focus:not(:focus-visible) > line,
+.eNtKJP:focus:not(:focus-visible) > path,
+.eNtKJP:focus:not(:focus-visible) > polygon,
+.eNtKJP:focus:not(:focus-visible) > polyline,
+.eNtKJP:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
-.iWGNVl:focus:not(:focus-visible) ::-moz-focus-inner {
+.eNtKJP:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
-.jWsnmo {
+.gePUQK {
   border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
 }"
