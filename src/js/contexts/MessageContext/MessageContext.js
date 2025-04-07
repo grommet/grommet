@@ -46,7 +46,6 @@ export const format = (options, messages) => {
   tokens?.forEach((token) => {
     const names = token.substr(1, token.length - 2);
     const value = values[names];
-
     newMessage = newMessage.replace(token, value);
   });
 
