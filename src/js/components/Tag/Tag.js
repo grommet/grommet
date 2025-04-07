@@ -11,15 +11,7 @@ import { MessageContext } from '../../contexts/MessageContext';
 
 const Tag = forwardRef(
   (
-    {
-      name,
-      value,
-      size = 'medium',
-      onRemove,
-      onClick,
-      messages,
-      ...rest
-    },
+    { name, value, size = 'medium', onRemove, onClick, messages, ...rest },
     ref,
   ) => {
     const { format } = useContext(MessageContext);
@@ -66,7 +58,7 @@ const Tag = forwardRef(
       console.warn('Tag cannot combine "onClick" and "onRemove".');
     }
 
-    const themeTagRemoveProps = !theme.tag.remove.kind
+    const removeProps = !theme.tag.remove.kind
       ? {
           plain: true,
           hoverIndicator: true,
@@ -85,7 +77,6 @@ const Tag = forwardRef(
         {onRemove && (
           <StyledRemoveButton
             onClick={onRemove}
-            {...themeTagRemoveProps}
             {...removeProps}
             aria-label={removeLabel}
             icon={<RemoveIcon {...theme.tag.size?.[size]?.icon} />}

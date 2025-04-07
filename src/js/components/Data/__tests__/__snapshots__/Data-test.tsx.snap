@@ -400,7 +400,7 @@ exports[`Data controlled search 1`] = `
     <span
       class="c11"
     >
-      4 results of undefined items
+      4 results of  items
     </span>
     <table
       class="c12 c13"
@@ -577,7 +577,7 @@ exports[`Data controlled search 2`] = `
     <span
       class="StyledText-sc-1sadyjn-0 fxDZdp"
     >
-      4 results of undefined items
+      4 results of  items
     </span>
     <table
       class="StyledTable-sc-1m3u5g-6 ebsCTC StyledDataTable-sc-xrlyjm-0 dCkQEh"
