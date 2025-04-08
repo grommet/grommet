@@ -56,13 +56,14 @@ export var deviceResponsive = function deviceResponsive(userAgent, theme) {
   }
   return undefined;
 };
+
+// styled-components v6 and later do not have a withComponent
+// method. We need v6 or later to support container queries.
+var testComp = styled.div.withConfig({
+  displayName: "responsive__testComp",
+  componentId: "sc-336m7y-0"
+})(["display:flex;"]);
 export var supportsContainerQueries = function supportsContainerQueries() {
-  // styled-components v6 and later do not have a withComponent
-  // method. We need v6 or later to support container queries.
-  var comp = styled.div.withConfig({
-    displayName: "responsive__comp",
-    componentId: "sc-336m7y-0"
-  })(["display:flex;"]);
-  var isPreV6 = typeof comp.withComponent === 'function';
+  var isPreV6 = typeof testComp.withComponent === 'function';
   return !isPreV6;
 };

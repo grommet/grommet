@@ -8,11 +8,11 @@ var _utils = require("../../utils");
 var _Keyboard = require("../Keyboard");
 var _StyledBox = require("./StyledBox");
 var _propTypes = require("./propTypes");
-var _ResponsiveContainer = require("./ResponsiveContainer");
 var _Skeleton = require("../Skeleton");
 var _AnnounceContext = require("../../contexts/AnnounceContext");
 var _OptionsContext = require("../../contexts/OptionsContext");
 var _contexts = require("../../contexts");
+var _ResponsiveContainerProvider = require("./ResponsiveContainerProvider");
 var _useThemeValue2 = require("../../utils/useThemeValue");
 var _responsive = require("../../utils/responsive");
 var _excluded = ["a11yTitle", "background", "border", "children", "cssGap", "direction", "elevation", "fill", "gap", "kind", "onBlur", "onClick", "onFocus", "overflow", "responsive", "tag", "as", "wrap", "width", "height", "tabIndex", "skeleton"],
@@ -21,7 +21,7 @@ function _getRequireWildcardCache(e) { if ("function" != typeof WeakMap) return 
 function _interopRequireWildcard(e, r) { if (!r && e && e.__esModule) return e; if (null === e || "object" != typeof e && "function" != typeof e) return { "default": e }; var t = _getRequireWildcardCache(r); if (t && t.has(e)) return t.get(e); var n = { __proto__: null }, a = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var u in e) if ("default" !== u && {}.hasOwnProperty.call(e, u)) { var i = a ? Object.getOwnPropertyDescriptor(e, u) : null; i && (i.get || i.set) ? Object.defineProperty(n, u, i) : n[u] = e[u]; } return n["default"] = e, t && t.set(e, n), n; }
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (-1 !== e.indexOf(n)) continue; t[n] = r[n]; } return t; }
-var Box = exports.Box = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
+var Box = exports.Box = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, refProp) {
   var a11yTitle = _ref.a11yTitle,
     backgroundProp = _ref.background,
     border = _ref.border,
@@ -55,10 +55,35 @@ var Box = exports.Box = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref)
   var _useContext = (0, _react.useContext)(_OptionsContext.OptionsContext),
     boxOptions = _useContext.box;
   var skeleton = (0, _Skeleton.useSkeleton)();
+  var _useState = (0, _react.useState)(undefined),
+    containerElement = _useState[0],
+    setContainerElement = _useState[1];
   var responsiveContainer = (0, _react.useContext)(_contexts.ResponsiveContainerContext);
   var responsive = responsiveContainer && responsiveProp ? 'container' : responsiveProp;
   var background = backgroundProp;
   var announce = (0, _react.useContext)(_AnnounceContext.AnnounceContext);
+  var containerRef = (0, _utils.useForwardedRef)(refProp);
+
+  // Save the ref as a state if we're in a responsive container.
+  // We only need it in the responsive container case and it
+  // needs to be in a state to cause a re-render.
+  (0, _react.useEffect)(function () {
+    if (responsiveProp === 'container' && containerRef.current) {
+      setContainerElement(containerRef.current);
+    }
+  }, [containerRef, responsiveProp]);
+  (0, _react.useEffect)(function () {
+    if (typeof as === 'function') {
+      if (refProp) {
+        console.warn('ref and as={function} are incompatible. The ref will not get set.');
+      }
+      if (responsiveProp === 'container') {
+        console.warn(
+        // eslint-disable-next-line max-len
+        'responsive="container" and as={function} are incompatible. Use one or the other.');
+      }
+    }
+  }, [refProp, as, responsiveProp]);
   (0, _react.useEffect)(function () {
     var _skeletonProp$message;
     if (skeletonProp != null && (_skeletonProp$message = skeletonProp.message) != null && _skeletonProp$message.start) announce(skeletonProp.message.start);else if (typeof (skeletonProp == null ? void 0 : skeletonProp.message) === 'string') announce(skeletonProp.message);
@@ -70,9 +95,9 @@ var Box = exports.Box = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref)
   var focusable = (0, _react.useMemo)(function () {
     return onClick && !(tabIndex < 0);
   }, [onClick, tabIndex]);
-  var _useState = (0, _react.useState)(),
-    focus = _useState[0],
-    setFocus = _useState[1];
+  var _useState2 = (0, _react.useState)(),
+    focus = _useState2[0],
+    setFocus = _useState2[1];
   var clickProps = (0, _react.useMemo)(function () {
     if (focusable) {
       return {
@@ -188,6 +213,12 @@ var Box = exports.Box = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref)
     }
     return result || theme;
   }, [background, theme]);
+
+  // Only pass along the ref if the as prop is not a function.
+  // The styled component will throw a warning if we try to pass
+  // a ref when the as prop is a function. We do a console.warn
+  // about this above in this case.
+  var ref = typeof as === 'function' ? undefined : containerRef;
   var content = /*#__PURE__*/_react["default"].createElement(_StyledBox.StyledBox, _extends({
     as: !as && tag ? tag : as,
     "aria-label": a11yTitle,
@@ -207,13 +238,17 @@ var Box = exports.Box = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref)
     widthProp: width,
     heightProp: height,
     responsive: responsive,
+    responsiveContainer: responsiveProp === 'container',
     tabIndex: adjustedTabIndex
   }, clickProps, passThemeFlag, rest, skeletonProps), /*#__PURE__*/_react["default"].createElement(_styledComponents.ThemeContext.Provider, {
     value: nextTheme
   }, contents));
   if (responsiveProp === 'container') {
     if ((0, _responsive.supportsContainerQueries)()) {
-      content = /*#__PURE__*/_react["default"].createElement(_ResponsiveContainer.ResponsiveContainer, null, content);
+      content = /*#__PURE__*/_react["default"].createElement(_ResponsiveContainerProvider.ResponsiveContainerProvider, {
+        container: containerElement,
+        theme: theme
+      }, content);
     } else {
       console.warn('<Box responsive="container"> requires styled-components v6 or later');
     }

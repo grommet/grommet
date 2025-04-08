@@ -164,12 +164,13 @@ var gapStyle = function gapStyle(directionProp, gap, responsive, wrap, theme) {
   }
   return styles;
 };
+var responsiveContainerStyle = (0, _styledComponents.css)(["container-type:inline-size;"]);
 
 // NOTE: basis must be after flex! Otherwise, flex overrides basis
 var StyledBox = exports.StyledBox = _styledComponents["default"].div.withConfig(_styles.styledComponentsConfig).withConfig({
   displayName: "StyledBox",
   componentId: "sc-13pk1d4-0"
-})(["display:flex;box-sizing:border-box;", ";", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", ""], function (props) {
+})(["display:flex;box-sizing:border-box;", ";", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", ""], function (props) {
   return !props.basis && 'max-width: 100%;';
 }, _utils.genericStyles, function (props) {
   return props.align && _utils.alignStyle;
@@ -215,6 +216,8 @@ var StyledBox = exports.StyledBox = _styledComponents["default"].div.withConfig(
   return props.theme.box && props.theme.box.extend;
 }, function (props) {
   return props.kindProp && props.kindProp.extend;
+}, function (props) {
+  return props.responsiveContainer ? responsiveContainerStyle : '';
 });
 var gapGapStyle = function gapGapStyle(directionProp, gap, responsive, border, theme) {
   var metric = theme.global.edgeSize[gap] || gap;

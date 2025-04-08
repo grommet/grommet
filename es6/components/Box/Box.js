@@ -4,18 +4,18 @@ function _extends() { return _extends = Object.assign ? Object.assign.bind() : f
 function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (-1 !== e.indexOf(n)) continue; t[n] = r[n]; } return t; }
 import React, { Children, forwardRef, useContext, useEffect, useMemo, useState } from 'react';
 import { ThemeContext } from 'styled-components';
-import { backgroundIsDark } from '../../utils';
+import { backgroundIsDark, useForwardedRef } from '../../utils';
 import { Keyboard } from '../Keyboard';
 import { StyledBox, StyledBoxGap } from './StyledBox';
 import { BoxPropTypes } from './propTypes';
-import { ResponsiveContainer } from './ResponsiveContainer';
 import { SkeletonContext, useSkeleton } from '../Skeleton';
 import { AnnounceContext } from '../../contexts/AnnounceContext';
 import { OptionsContext } from '../../contexts/OptionsContext';
 import { ResponsiveContainerContext } from '../../contexts';
+import { ResponsiveContainerProvider } from './ResponsiveContainerProvider';
 import { useThemeValue } from '../../utils/useThemeValue';
 import { supportsContainerQueries } from '../../utils/responsive';
-var Box = /*#__PURE__*/forwardRef(function (_ref, ref) {
+var Box = /*#__PURE__*/forwardRef(function (_ref, refProp) {
   var a11yTitle = _ref.a11yTitle,
     backgroundProp = _ref.background,
     border = _ref.border,
@@ -49,10 +49,35 @@ var Box = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var _useContext = useContext(OptionsContext),
     boxOptions = _useContext.box;
   var skeleton = useSkeleton();
+  var _useState = useState(undefined),
+    containerElement = _useState[0],
+    setContainerElement = _useState[1];
   var responsiveContainer = useContext(ResponsiveContainerContext);
   var responsive = responsiveContainer && responsiveProp ? 'container' : responsiveProp;
   var background = backgroundProp;
   var announce = useContext(AnnounceContext);
+  var containerRef = useForwardedRef(refProp);
+
+  // Save the ref as a state if we're in a responsive container.
+  // We only need it in the responsive container case and it
+  // needs to be in a state to cause a re-render.
+  useEffect(function () {
+    if (responsiveProp === 'container' && containerRef.current) {
+      setContainerElement(containerRef.current);
+    }
+  }, [containerRef, responsiveProp]);
+  useEffect(function () {
+    if (typeof as === 'function') {
+      if (refProp) {
+        console.warn('ref and as={function} are incompatible. The ref will not get set.');
+      }
+      if (responsiveProp === 'container') {
+        console.warn(
+        // eslint-disable-next-line max-len
+        'responsive="container" and as={function} are incompatible. Use one or the other.');
+      }
+    }
+  }, [refProp, as, responsiveProp]);
   useEffect(function () {
     var _skeletonProp$message;
     if (skeletonProp != null && (_skeletonProp$message = skeletonProp.message) != null && _skeletonProp$message.start) announce(skeletonProp.message.start);else if (typeof (skeletonProp == null ? void 0 : skeletonProp.message) === 'string') announce(skeletonProp.message);
@@ -64,9 +89,9 @@ var Box = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var focusable = useMemo(function () {
     return onClick && !(tabIndex < 0);
   }, [onClick, tabIndex]);
-  var _useState = useState(),
-    focus = _useState[0],
-    setFocus = _useState[1];
+  var _useState2 = useState(),
+    focus = _useState2[0],
+    setFocus = _useState2[1];
   var clickProps = useMemo(function () {
     if (focusable) {
       return {
@@ -182,6 +207,12 @@ var Box = /*#__PURE__*/forwardRef(function (_ref, ref) {
     }
     return result || theme;
   }, [background, theme]);
+
+  // Only pass along the ref if the as prop is not a function.
+  // The styled component will throw a warning if we try to pass
+  // a ref when the as prop is a function. We do a console.warn
+  // about this above in this case.
+  var ref = typeof as === 'function' ? undefined : containerRef;
   var content = /*#__PURE__*/React.createElement(StyledBox, _extends({
     as: !as && tag ? tag : as,
     "aria-label": a11yTitle,
@@ -201,13 +232,17 @@ var Box = /*#__PURE__*/forwardRef(function (_ref, ref) {
     widthProp: width,
     heightProp: height,
     responsive: responsive,
+    responsiveContainer: responsiveProp === 'container',
     tabIndex: adjustedTabIndex
   }, clickProps, passThemeFlag, rest, skeletonProps), /*#__PURE__*/React.createElement(ThemeContext.Provider, {
     value: nextTheme
   }, contents));
   if (responsiveProp === 'container') {
     if (supportsContainerQueries()) {
-      content = /*#__PURE__*/React.createElement(ResponsiveContainer, null, content);
+      content = /*#__PURE__*/React.createElement(ResponsiveContainerProvider, {
+        container: containerElement,
+        theme: theme
+      }, content);
     } else {
       console.warn('<Box responsive="container"> requires styled-components v6 or later');
     }
