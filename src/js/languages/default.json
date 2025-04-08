@@ -164,7 +164,6 @@
   "tag": {
     "removeLabel": {
       "nameAndValue": "Remove {name}: {value}",
-      "nameOnly": "Remove {name}",
       "valueOnly": "Remove {value}"
     }
   },

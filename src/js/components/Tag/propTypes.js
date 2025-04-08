@@ -8,7 +8,10 @@ if (process.env.NODE_ENV !== 'production') {
     onClick: PropTypes.func,
     onRemove: PropTypes.func,
     messages: PropTypes.shape({
-      removeLabel: PropTypes.string,
+      removeLabel: PropTypes.shape({
+        nameAndValue: PropTypes.string,
+        valueOnly: PropTypes.string,
+      }),
     }),
     size: PropTypes.oneOfType([
       PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge']),

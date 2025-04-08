@@ -6,7 +6,10 @@ export interface TagProps {
   onClick?: (...args: any[]) => any;
   onRemove?: (...args: any[]) => any;
   messages?: {
-    removeLabel?: string;
+    removeLabel?: {
+      nameAndValue?: string;
+      valueOnly?: string;
+    };
   };
   size?:
     | 'xsmall'
