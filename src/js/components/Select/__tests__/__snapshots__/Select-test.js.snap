@@ -3116,13 +3116,13 @@ exports[`Select complex options and children 1`] = `
 
 exports[`Select complex options and children 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 fHTwQM"
+  class="StyledGrommet-sc-19lkkz7-0 cBoJUe"
 >
   <button
     aria-expanded="true"
     aria-haspopup="listbox"
     aria-label="test select"
-    class="StyledButton-sc-323bzc-0 iWGNVl StyledSelect__StyledSelectDropButton-sc-znp66n-5 jWsnmo"
+    class="StyledButton-sc-323bzc-0 eNtKJP StyledSelect__StyledSelectDropButton-sc-znp66n-5 gePUQK"
     id="test-select"
     type="button"
   >
@@ -3133,11 +3133,11 @@ exports[`Select complex options and children 2`] = `
         class="StyledBox-sc-13pk1d4-0 edNvA-D"
       >
         <div
-          class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 jHtDgz"
+          class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 ddykB"
         >
           <input
             autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 hgBTwY StyledSelect__SelectTextInput-sc-znp66n-4 hPdVtq"
+            class="StyledTextInput-sc-1x30a0s-0 LBzQG StyledSelect__SelectTextInput-sc-znp66n-4 djgtjA"
             id="test-select__input"
             inert=""
             placeholder="test select"
@@ -3154,7 +3154,7 @@ exports[`Select complex options and children 2`] = `
       >
         <svg
           aria-label="FormDown"
-          class="StyledIcon-sc-ofa7kd-0 iVpWnA"
+          class="StyledIcon-sc-ofa7kd-0 bHtbkK"
           viewBox="0 0 24 24"
         >
           <path
@@ -4732,13 +4732,13 @@ exports[`Select disabled 1`] = `
 
 exports[`Select disabled 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 fHTwQM"
+  class="StyledGrommet-sc-19lkkz7-0 cBoJUe"
 >
   <button
     aria-expanded="false"
     aria-haspopup="listbox"
     aria-label="test select"
-    class="StyledButton-sc-323bzc-0 kanUhP StyledSelect__StyledSelectDropButton-sc-znp66n-5 jWsnmo"
+    class="StyledButton-sc-323bzc-0 iACvWN StyledSelect__StyledSelectDropButton-sc-znp66n-5 gePUQK"
     disabled=""
     id="test-select"
     type="button"
@@ -4750,11 +4750,11 @@ exports[`Select disabled 2`] = `
         class="StyledBox-sc-13pk1d4-0 edNvA-D"
       >
         <div
-          class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 jHtDgz"
+          class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 ddykB"
         >
           <input
             autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 hgBTwY StyledSelect__SelectTextInput-sc-znp66n-4 gkeygu"
+            class="StyledTextInput-sc-1x30a0s-0 LBzQG StyledSelect__SelectTextInput-sc-znp66n-4 bRIBaE"
             id="test-select__input"
             inert=""
             placeholder="test select"
@@ -4771,7 +4771,7 @@ exports[`Select disabled 2`] = `
       >
         <svg
           aria-label="FormDown"
-          class="StyledIcon-sc-ofa7kd-0 iVpWnA"
+          class="StyledIcon-sc-ofa7kd-0 bHtbkK"
           viewBox="0 0 24 24"
         >
           <path
@@ -11747,7 +11747,7 @@ exports[`Select prop: onOpen 2`] = `
   aria-expanded="true"
   aria-haspopup="listbox"
   aria-label="test select"
-  class="StyledButton-sc-323bzc-0 iWGNVl StyledSelect__StyledSelectDropButton-sc-znp66n-5 jWsnmo"
+  class="StyledButton-sc-323bzc-0 eNtKJP StyledSelect__StyledSelectDropButton-sc-znp66n-5 gePUQK"
   id="test-select"
   type="button"
 >
@@ -11758,11 +11758,11 @@ exports[`Select prop: onOpen 2`] = `
       class="StyledBox-sc-13pk1d4-0 edNvA-D"
     >
       <div
-        class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 jHtDgz"
+        class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 ddykB"
       >
         <input
           autocomplete="off"
-          class="StyledTextInput-sc-1x30a0s-0 hgBTwY StyledSelect__SelectTextInput-sc-znp66n-4 hPdVtq"
+          class="StyledTextInput-sc-1x30a0s-0 LBzQG StyledSelect__SelectTextInput-sc-znp66n-4 djgtjA"
           id="test-select__input"
           inert=""
           placeholder="test select"
@@ -11779,7 +11779,7 @@ exports[`Select prop: onOpen 2`] = `
     >
       <svg
         aria-label="FormDown"
-        class="StyledIcon-sc-ofa7kd-0 iVpWnA"
+        class="StyledIcon-sc-ofa7kd-0 bHtbkK"
         viewBox="0 0 24 24"
       >
         <path
@@ -12012,7 +12012,7 @@ exports[`Select prop: onOpen 4`] = `
 
 exports[`Select prop: onOpen 5`] = `
 <div
-  class="StyledSelect__OptionsContainer-sc-znp66n-1 jyRyMe"
+  class="StyledSelect__OptionsContainer-sc-znp66n-1 kZgTFI"
   role="listbox"
   tabindex="-1"
 >
@@ -12020,7 +12020,7 @@ exports[`Select prop: onOpen 5`] = `
     aria-posinset="1"
     aria-selected="false"
     aria-setsize="2"
-    class="StyledButton-sc-323bzc-0 eKvjSA StyledSelect__SelectOption-sc-znp66n-3 iqnnfQ"
+    class="StyledButton-sc-323bzc-0 fBAPqi StyledSelect__SelectOption-sc-znp66n-3 falZxG"
     role="option"
     tabindex="-1"
     type="button"
@@ -12029,7 +12029,7 @@ exports[`Select prop: onOpen 5`] = `
       class="StyledBox-sc-13pk1d4-0 hTilLZ"
     >
       <span
-        class="StyledText-sc-1sadyjn-0 hpgwSO"
+        class="StyledText-sc-1sadyjn-0 hQGpTM"
       >
         one
       </span>
@@ -12039,7 +12039,7 @@ exports[`Select prop: onOpen 5`] = `
     aria-posinset="2"
     aria-selected="false"
     aria-setsize="2"
-    class="StyledButton-sc-323bzc-0 eKvjSA StyledSelect__SelectOption-sc-znp66n-3 iqnnfQ"
+    class="StyledButton-sc-323bzc-0 fBAPqi StyledSelect__SelectOption-sc-znp66n-3 falZxG"
     role="option"
     tabindex="-1"
     type="button"
@@ -12048,7 +12048,7 @@ exports[`Select prop: onOpen 5`] = `
       class="StyledBox-sc-13pk1d4-0 hTilLZ"
     >
       <span
-        class="StyledText-sc-1sadyjn-0 hpgwSO"
+        class="StyledText-sc-1sadyjn-0 hQGpTM"
       >
         two
       </span>
@@ -13485,13 +13485,13 @@ exports[`Select renders custom up and down icons 1`] = `
 
 exports[`Select renders custom up and down icons 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 fHTwQM"
+  class="StyledGrommet-sc-19lkkz7-0 cBoJUe"
 >
   <button
     aria-expanded="true"
     aria-haspopup="listbox"
     aria-label="Select..."
-    class="StyledButton-sc-323bzc-0 iWGNVl StyledSelect__StyledSelectDropButton-sc-znp66n-5 jWsnmo"
+    class="StyledButton-sc-323bzc-0 eNtKJP StyledSelect__StyledSelectDropButton-sc-znp66n-5 gePUQK"
     type="button"
   >
     <div
@@ -13501,11 +13501,11 @@ exports[`Select renders custom up and down icons 2`] = `
         class="StyledBox-sc-13pk1d4-0 edNvA-D"
       >
         <div
-          class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 jHtDgz"
+          class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 ddykB"
         >
           <input
             autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 hgBTwY StyledSelect__SelectTextInput-sc-znp66n-4 hPdVtq"
+            class="StyledTextInput-sc-1x30a0s-0 LBzQG StyledSelect__SelectTextInput-sc-znp66n-4 djgtjA"
             inert=""
             placeholder="Select..."
             readonly=""
@@ -15505,7 +15505,7 @@ exports[`Select search 3`] = `
 exports[`Select search 4`] = `
 <input
   autocomplete="off"
-  class="StyledTextInput-sc-1x30a0s-0 RRTMe"
+  class="StyledTextInput-sc-1x30a0s-0 OgZQw"
   type="search"
   value=""
 />
@@ -15514,7 +15514,7 @@ exports[`Select search 4`] = `
 exports[`Select search 5`] = `
 <input
   autocomplete="off"
-  class="StyledTextInput-sc-1x30a0s-0 RRTMe"
+  class="StyledTextInput-sc-1x30a0s-0 OgZQw"
   type="search"
   value="o"
 />
@@ -16093,7 +16093,7 @@ exports[`Select search and select 3`] = `
 exports[`Select search and select 4`] = `
 <input
   autocomplete="off"
-  class="StyledTextInput-sc-1x30a0s-0 RRTMe"
+  class="StyledTextInput-sc-1x30a0s-0 OgZQw"
   type="search"
   value=""
 />
@@ -16102,7 +16102,7 @@ exports[`Select search and select 4`] = `
 exports[`Select search and select 5`] = `
 <input
   autocomplete="off"
-  class="StyledTextInput-sc-1x30a0s-0 RRTMe"
+  class="StyledTextInput-sc-1x30a0s-0 OgZQw"
   type="search"
   value="t"
 />
@@ -17828,13 +17828,13 @@ exports[`Select select option by typing should not break if caller passes JSX 1`
 
 exports[`Select select option by typing should not break if caller passes JSX 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 fHTwQM"
+  class="StyledGrommet-sc-19lkkz7-0 cBoJUe"
 >
   <button
     aria-expanded="false"
     aria-haspopup="listbox"
     aria-label="test select; Selected: two"
-    class="StyledButton-sc-323bzc-0 iWGNVl StyledSelect__StyledSelectDropButton-sc-znp66n-5 jWsnmo"
+    class="StyledButton-sc-323bzc-0 eNtKJP StyledSelect__StyledSelectDropButton-sc-znp66n-5 gePUQK"
     id="test-select"
     type="button"
   >
@@ -17845,11 +17845,11 @@ exports[`Select select option by typing should not break if caller passes JSX 2`
         class="StyledBox-sc-13pk1d4-0 edNvA-D"
       >
         <div
-          class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 jHtDgz"
+          class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 ddykB"
         >
           <input
             autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 hgBTwY StyledSelect__SelectTextInput-sc-znp66n-4 hPdVtq"
+            class="StyledTextInput-sc-1x30a0s-0 LBzQG StyledSelect__SelectTextInput-sc-znp66n-4 djgtjA"
             id="test-select__input"
             inert=""
             placeholder="test select"
@@ -17866,7 +17866,7 @@ exports[`Select select option by typing should not break if caller passes JSX 2`
       >
         <svg
           aria-label="FormDown"
-          class="StyledIcon-sc-ofa7kd-0 iVpWnA"
+          class="StyledIcon-sc-ofa7kd-0 bHtbkK"
           viewBox="0 0 24 24"
         >
           <path

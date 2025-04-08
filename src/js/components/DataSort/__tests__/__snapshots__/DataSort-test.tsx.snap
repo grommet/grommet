@@ -145,7 +145,7 @@ exports[`DataSort drop 1`] = `
 exports[`DataSort drop 2`] = `
 <button
   aria-label="Open sort"
-  class="StyledButton-sc-323bzc-0 geHpTD"
+  class="StyledButton-sc-323bzc-0 iGmGqZ"
   data-g-tabindex="none"
   id="test-data--sort-control"
   tabindex="-1"
@@ -153,7 +153,7 @@ exports[`DataSort drop 2`] = `
 >
   <svg
     aria-label="Descend"
-    class="StyledIcon-sc-ofa7kd-0 bqRbRY"
+    class="StyledIcon-sc-ofa7kd-0 jCZnaS"
     viewBox="0 0 24 24"
   >
     <path
@@ -209,7 +209,7 @@ exports[`DataSort drop 3`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .cvOsLl {
+  .oSxZH {
     height: 6px;
   }
 }"

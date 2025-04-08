@@ -1098,7 +1098,7 @@ exports[`Tabs change to second tab 1`] = `
 
 exports[`Tabs change to second tab 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 fHTwQM"
+  class="StyledGrommet-sc-19lkkz7-0 cBoJUe"
 >
   <div
     class="StyledBox-sc-13pk1d4-0 dqmqKB StyledTabs-sc-a4fwxl-2 iaHPoT"
@@ -1113,7 +1113,7 @@ exports[`Tabs change to second tab 2`] = `
         <button
           aria-expanded="false"
           aria-selected="false"
-          class="StyledButton-sc-323bzc-0 iWGNVl"
+          class="StyledButton-sc-323bzc-0 eNtKJP"
           role="tab"
           type="button"
         >
@@ -1121,7 +1121,7 @@ exports[`Tabs change to second tab 2`] = `
             class="StyledBox-sc-13pk1d4-0 eTSIn StyledTab-sc-1nnwnsb-0 bdwidb"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 fcxlPv"
+              class="StyledText-sc-1sadyjn-0 ejFHJV"
             >
               Tab 1
             </span>
@@ -1130,7 +1130,7 @@ exports[`Tabs change to second tab 2`] = `
         <button
           aria-expanded="true"
           aria-selected="true"
-          class="StyledButton-sc-323bzc-0 iWGNVl"
+          class="StyledButton-sc-323bzc-0 eNtKJP"
           role="tab"
           type="button"
         >
@@ -1138,7 +1138,7 @@ exports[`Tabs change to second tab 2`] = `
             class="StyledBox-sc-13pk1d4-0 ddIkqv StyledTab-sc-1nnwnsb-0 bdwidb"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 kLIqFV"
+              class="StyledText-sc-1sadyjn-0 cZDUNT"
             >
               Tab 2
             </span>
@@ -1148,7 +1148,7 @@ exports[`Tabs change to second tab 2`] = `
     </div>
     <div
       aria-label="Tab 2 Tab Contents"
-      class="StyledTabs__StyledTabPanel-sc-a4fwxl-1 bssksh"
+      class="StyledTabs__StyledTabPanel-sc-a4fwxl-1 nPZgL"
       role="tabpanel"
     >
       Tab body 2
@@ -2556,7 +2556,7 @@ exports[`Tabs set on hover 1`] = `
 
 exports[`Tabs set on hover 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 fHTwQM"
+  class="StyledGrommet-sc-19lkkz7-0 cBoJUe"
 >
   <div
     class="StyledBox-sc-13pk1d4-0 dqmqKB StyledTabs-sc-a4fwxl-2 iaHPoT"
@@ -2571,7 +2571,7 @@ exports[`Tabs set on hover 2`] = `
         <button
           aria-expanded="true"
           aria-selected="true"
-          class="StyledButton-sc-323bzc-0 iWGNVl"
+          class="StyledButton-sc-323bzc-0 eNtKJP"
           role="tab"
           type="button"
         >
@@ -2579,7 +2579,7 @@ exports[`Tabs set on hover 2`] = `
             class="StyledBox-sc-13pk1d4-0 ddIkqv StyledTab-sc-1nnwnsb-0 bdwidb"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 kLIqFV"
+              class="StyledText-sc-1sadyjn-0 cZDUNT"
             >
               Tab 1
             </span>
@@ -2588,7 +2588,7 @@ exports[`Tabs set on hover 2`] = `
         <button
           aria-expanded="false"
           aria-selected="false"
-          class="StyledButton-sc-323bzc-0 iWGNVl"
+          class="StyledButton-sc-323bzc-0 eNtKJP"
           role="tab"
           type="button"
         >
@@ -2596,7 +2596,7 @@ exports[`Tabs set on hover 2`] = `
             class="StyledBox-sc-13pk1d4-0 eTSIn StyledTab-sc-1nnwnsb-0 bdwidb"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 fcxlPv"
+              class="StyledText-sc-1sadyjn-0 ejFHJV"
             >
               Tab 2
             </span>
@@ -2606,7 +2606,7 @@ exports[`Tabs set on hover 2`] = `
     </div>
     <div
       aria-label="Tab 1 Tab Contents"
-      class="StyledTabs__StyledTabPanel-sc-a4fwxl-1 bssksh"
+      class="StyledTabs__StyledTabPanel-sc-a4fwxl-1 nPZgL"
       role="tabpanel"
     >
       Tab body 1
@@ -2617,7 +2617,7 @@ exports[`Tabs set on hover 2`] = `
 
 exports[`Tabs set on hover 3`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 fHTwQM"
+  class="StyledGrommet-sc-19lkkz7-0 cBoJUe"
 >
   <div
     class="StyledBox-sc-13pk1d4-0 dqmqKB StyledTabs-sc-a4fwxl-2 iaHPoT"
@@ -2632,7 +2632,7 @@ exports[`Tabs set on hover 3`] = `
         <button
           aria-expanded="true"
           aria-selected="true"
-          class="StyledButton-sc-323bzc-0 iWGNVl"
+          class="StyledButton-sc-323bzc-0 eNtKJP"
           role="tab"
           type="button"
         >
@@ -2640,7 +2640,7 @@ exports[`Tabs set on hover 3`] = `
             class="StyledBox-sc-13pk1d4-0 ddIkqv StyledTab-sc-1nnwnsb-0 bdwidb"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 kLIqFV"
+              class="StyledText-sc-1sadyjn-0 cZDUNT"
             >
               Tab 1
             </span>
@@ -2649,7 +2649,7 @@ exports[`Tabs set on hover 3`] = `
         <button
           aria-expanded="false"
           aria-selected="false"
-          class="StyledButton-sc-323bzc-0 iWGNVl"
+          class="StyledButton-sc-323bzc-0 eNtKJP"
           role="tab"
           type="button"
         >
@@ -2657,7 +2657,7 @@ exports[`Tabs set on hover 3`] = `
             class="StyledBox-sc-13pk1d4-0 ddIkqv StyledTab-sc-1nnwnsb-0 bdwidb"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 jmLtBp"
+              class="StyledText-sc-1sadyjn-0 bAGXJn"
             >
               Tab 2
             </span>
@@ -2667,7 +2667,7 @@ exports[`Tabs set on hover 3`] = `
     </div>
     <div
       aria-label="Tab 1 Tab Contents"
-      class="StyledTabs__StyledTabPanel-sc-a4fwxl-1 bssksh"
+      class="StyledTabs__StyledTabPanel-sc-a4fwxl-1 nPZgL"
       role="tabpanel"
     >
       Tab body 1
@@ -2678,7 +2678,7 @@ exports[`Tabs set on hover 3`] = `
 
 exports[`Tabs set on hover 4`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 fHTwQM"
+  class="StyledGrommet-sc-19lkkz7-0 cBoJUe"
 >
   <div
     class="StyledBox-sc-13pk1d4-0 dqmqKB StyledTabs-sc-a4fwxl-2 iaHPoT"
@@ -2693,7 +2693,7 @@ exports[`Tabs set on hover 4`] = `
         <button
           aria-expanded="true"
           aria-selected="true"
-          class="StyledButton-sc-323bzc-0 iWGNVl"
+          class="StyledButton-sc-323bzc-0 eNtKJP"
           role="tab"
           type="button"
         >
@@ -2701,7 +2701,7 @@ exports[`Tabs set on hover 4`] = `
             class="StyledBox-sc-13pk1d4-0 ddIkqv StyledTab-sc-1nnwnsb-0 bdwidb"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 kLIqFV"
+              class="StyledText-sc-1sadyjn-0 cZDUNT"
             >
               Tab 1
             </span>
@@ -2710,7 +2710,7 @@ exports[`Tabs set on hover 4`] = `
         <button
           aria-expanded="false"
           aria-selected="false"
-          class="StyledButton-sc-323bzc-0 iWGNVl"
+          class="StyledButton-sc-323bzc-0 eNtKJP"
           role="tab"
           type="button"
         >
@@ -2718,7 +2718,7 @@ exports[`Tabs set on hover 4`] = `
             class="StyledBox-sc-13pk1d4-0 ddIkqv StyledTab-sc-1nnwnsb-0 bdwidb"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 jmLtBp"
+              class="StyledText-sc-1sadyjn-0 bAGXJn"
             >
               Tab 2
             </span>
@@ -2728,7 +2728,7 @@ exports[`Tabs set on hover 4`] = `
     </div>
     <div
       aria-label="Tab 1 Tab Contents"
-      class="StyledTabs__StyledTabPanel-sc-a4fwxl-1 bssksh"
+      class="StyledTabs__StyledTabPanel-sc-a4fwxl-1 nPZgL"
       role="tabpanel"
     >
       Tab body 1
@@ -2739,7 +2739,7 @@ exports[`Tabs set on hover 4`] = `
 
 exports[`Tabs set on hover 5`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 fHTwQM"
+  class="StyledGrommet-sc-19lkkz7-0 cBoJUe"
 >
   <div
     class="StyledBox-sc-13pk1d4-0 dqmqKB StyledTabs-sc-a4fwxl-2 iaHPoT"
@@ -2754,7 +2754,7 @@ exports[`Tabs set on hover 5`] = `
         <button
           aria-expanded="true"
           aria-selected="true"
-          class="StyledButton-sc-323bzc-0 iWGNVl"
+          class="StyledButton-sc-323bzc-0 eNtKJP"
           role="tab"
           type="button"
         >
@@ -2762,7 +2762,7 @@ exports[`Tabs set on hover 5`] = `
             class="StyledBox-sc-13pk1d4-0 ddIkqv StyledTab-sc-1nnwnsb-0 bdwidb"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 kLIqFV"
+              class="StyledText-sc-1sadyjn-0 cZDUNT"
             >
               Tab 1
             </span>
@@ -2771,7 +2771,7 @@ exports[`Tabs set on hover 5`] = `
         <button
           aria-expanded="false"
           aria-selected="false"
-          class="StyledButton-sc-323bzc-0 iWGNVl"
+          class="StyledButton-sc-323bzc-0 eNtKJP"
           role="tab"
           type="button"
         >
@@ -2779,7 +2779,7 @@ exports[`Tabs set on hover 5`] = `
             class="StyledBox-sc-13pk1d4-0 eTSIn StyledTab-sc-1nnwnsb-0 bdwidb"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 fcxlPv"
+              class="StyledText-sc-1sadyjn-0 ejFHJV"
             >
               Tab 2
             </span>
@@ -2789,7 +2789,7 @@ exports[`Tabs set on hover 5`] = `
     </div>
     <div
       aria-label="Tab 1 Tab Contents"
-      class="StyledTabs__StyledTabPanel-sc-a4fwxl-1 bssksh"
+      class="StyledTabs__StyledTabPanel-sc-a4fwxl-1 nPZgL"
       role="tabpanel"
     >
       Tab body 1

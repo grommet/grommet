@@ -2267,7 +2267,7 @@ exports[`DataTableColumns renders 2`] = `
 exports[`DataTableColumns renders 3`] = `
 <div
   aria-label="Order columns Tab Contents"
-  class="StyledTabs__StyledTabPanel-sc-a4fwxl-1 bssksh"
+  class="StyledTabs__StyledTabPanel-sc-a4fwxl-1 nPZgL"
   role="tabpanel"
 >
   <div
@@ -3443,7 +3443,7 @@ exports[`DataTableColumns search 2`] = `
 exports[`DataTableColumns search 3`] = `
 <button
   aria-label="Open column selector"
-  class="StyledButton-sc-323bzc-0 geHpTD"
+  class="StyledButton-sc-323bzc-0 iGmGqZ"
   data-g-tabindex="none"
   id="test-data--columns-control"
   tabindex="-1"
@@ -3451,7 +3451,7 @@ exports[`DataTableColumns search 3`] = `
 >
   <svg
     aria-label="Splits"
-    class="StyledIcon-sc-ofa7kd-0 bqRbRY"
+    class="StyledIcon-sc-ofa7kd-0 jCZnaS"
     viewBox="0 0 24 24"
   >
     <path
@@ -3562,27 +3562,27 @@ exports[`DataTableColumns search 4`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .hVnmBJ {
+  .bhppRX {
     height: 3px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .cvOsLl {
+  .oSxZH {
     height: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .nSztt {
+  .iGPQzj {
     width: 12px;
   }
 }
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-  .jUYQEB {
+  .dRYfuX {
     display: flex;
     align-items: stretch;
   }
 }
-.geHpTD {
+.iGmGqZ {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -3600,38 +3600,38 @@ exports[`DataTableColumns search 4`] = `
   line-height: 0;
   padding: 12px;
 }
-.geHpTD:focus {
+.iGmGqZ:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6fffb0;
 }
-.geHpTD:focus > circle,
-.geHpTD:focus > ellipse,
-.geHpTD:focus > line,
-.geHpTD:focus > path,
-.geHpTD:focus > polygon,
-.geHpTD:focus > polyline,
-.geHpTD:focus > rect {
+.iGmGqZ:focus > circle,
+.iGmGqZ:focus > ellipse,
+.iGmGqZ:focus > line,
+.iGmGqZ:focus > path,
+.iGmGqZ:focus > polygon,
+.iGmGqZ:focus > polyline,
+.iGmGqZ:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6fffb0;
 }
-.geHpTD:focus ::-moz-focus-inner {
+.iGmGqZ:focus ::-moz-focus-inner {
   border: 0;
 }
-.geHpTD:focus:not(:focus-visible) {
+.iGmGqZ:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
-.geHpTD:focus:not(:focus-visible) > circle,
-.geHpTD:focus:not(:focus-visible) > ellipse,
-.geHpTD:focus:not(:focus-visible) > line,
-.geHpTD:focus:not(:focus-visible) > path,
-.geHpTD:focus:not(:focus-visible) > polygon,
-.geHpTD:focus:not(:focus-visible) > polyline,
-.geHpTD:focus:not(:focus-visible) > rect {
+.iGmGqZ:focus:not(:focus-visible) > circle,
+.iGmGqZ:focus:not(:focus-visible) > ellipse,
+.iGmGqZ:focus:not(:focus-visible) > line,
+.iGmGqZ:focus:not(:focus-visible) > path,
+.iGmGqZ:focus:not(:focus-visible) > polygon,
+.iGmGqZ:focus:not(:focus-visible) > polyline,
+.iGmGqZ:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
-.geHpTD:focus:not(:focus-visible) ::-moz-focus-inner {
+.iGmGqZ:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }"
 `;
