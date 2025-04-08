@@ -7,7 +7,6 @@ import React, {
   useRef,
   useState,
 } from 'react';
-import styled from 'styled-components';
 import { AnnounceContext } from '../../contexts/AnnounceContext';
 import { MessageContext } from '../../contexts/MessageContext';
 
@@ -22,6 +21,7 @@ import { CalendarPropTypes } from './propTypes';
 import {
   StyledCalendar,
   StyledDay,
+  StyledDayButton,
   StyledDayContainer,
   StyledWeek,
   StyledWeeks,
@@ -200,13 +200,6 @@ export const getOutputFormat = (dates) => {
 
 const millisecondsPerYear = 31557600000;
 
-// when caller opts in to day hover styling, apply all state styles
-// on CalendarDay instead of active state on CalendarDayButton
-const CalendarDayButton = styled(Button)`
-  ${(props) =>
-    props.theme.calendar?.day?.hover?.background && 'background: inherit;'}
-`;
-
 const CalendarDay = ({
   children,
   fill,
@@ -229,7 +222,7 @@ const CalendarDay = ({
       sizeProp={size}
       fillContainer={fill}
     >
-      <CalendarDayButton fill={fill} tabIndex={-1} plain {...buttonProps}>
+      <StyledDayButton fill={fill} tabIndex={-1} plain {...buttonProps}>
         {({ active, hover }) => (
           <StyledDay
             // only apply active styling when using keyboard
@@ -247,7 +240,7 @@ const CalendarDay = ({
             {children}
           </StyledDay>
         )}
-      </CalendarDayButton>
+      </StyledDayButton>
     </StyledDayContainer>
   );
 };
@@ -263,9 +256,9 @@ const CalendarCustomDay = ({ children, fill, size, buttonProps }) => {
 
   return (
     <StyledDayContainer role="gridcell" sizeProp={size} fillContainer={fill}>
-      <CalendarDayButton fill={fill} {...buttonProps}>
+      <StyledDayButton fill={fill} {...buttonProps}>
         {children}
-      </CalendarDayButton>
+      </StyledDayButton>
     </StyledDayContainer>
   );
 };

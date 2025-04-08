@@ -1,4 +1,5 @@
 import styled, { css, keyframes } from 'styled-components';
+import { Button } from '../Button';
 import {
   backgroundStyle,
   focusStyle,
@@ -192,6 +193,21 @@ const StyledDayContainer = styled.div.withConfig(styledComponentsConfig)`
   ${(props) => responsiveDayContainerStyle(props)}
 `;
 
+const responsiveDayButtonStyle = (props) => {
+  const breakpoint = props.theme.global.size[props.sizeProp];
+  return breakpointStyle({ value: breakpoint }, `
+    width: 100%;
+  `, true);
+};
+
+// when caller opts in to day hover styling, apply all state styles
+// on CalendarDay instead of active state on CalendarDayButton
+const StyledDayButton = styled(Button)`
+  ${(props) =>
+    props.theme.calendar?.day?.hover?.background && 'background: inherit;'}
+  ${(props) => responsiveDayButtonStyle(props)}
+`;
+
 const daySizeStyle = (props) => {
   const data = props.theme.calendar[props.sizeProp];
 
@@ -323,5 +339,6 @@ export {
   StyledWeeks,
   StyledWeek,
   StyledDayContainer,
+  StyledDayButton,
   StyledDay,
 };
