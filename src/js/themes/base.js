@@ -648,7 +648,6 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       //   background: undefined,
       // },
       // daySize must align with global.size
-      responsiveBreakpoint: 'medium',
       small: {
         // day: {
         //   round: undefined,

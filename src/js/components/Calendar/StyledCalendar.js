@@ -13,45 +13,18 @@ import {
 import { activeStyle } from '../../utils/background';
 import { breakpointStyle } from '../../utils/mixins';
 
-const getResponsiveSize = (theme, size) => {
-  if (!size) return undefined;
-  const sortedBreakpoints = Object.keys(theme.global.size).sort(
-    (a, b) => {
-      const first = theme.global.size[a];
-      const second = theme.global.size[b];
-      if (!first) return 1;
-      if (!second) return -1;
-      return first.value - second.value;
-    },
-  );
-  // Return the size one smaller than the specified size, if any.
-  const index = sortedBreakpoints.indexOf(size);
-  return index > 0 ? sortedBreakpoints[index - 1] : undefined;
-};
-
-const responsiveStyle2 = (props) => {
-  const breakpointSize = props.theme.calendar.responsiveBreakpoint;
-  const responsiveSize = getResponsiveSize(props.theme, breakpointSize);
-  const data = props.theme.calendar[responsiveSize];
-  const width = props.theme.global.size[responsiveSize];
-  const breakpoint = props.theme.global.size[breakpointSize];
-  // try width: 100%; max-width: width
-  return breakpointStyle({value: breakpoint}, `
-    font-size: ${data.fontSize};
-    line-height: ${data.lineHeight};
-    width: ${props.fillContainer ? '100%' : width};
-  `, true);
-};
-
-const responsiveStyle = (props) => {
+const responsiveSizeStyle = (props) => {
   const breakpoint = props.theme.global.size[props.sizeProp];
   // try width: 100%; max-width: width
-  return breakpointStyle({value: breakpoint}, `
+  return breakpointStyle(
+    { value: breakpoint },
+    `
     width: 100vw;
     max-width: ${breakpoint};
-  `, true);
+  `,
+    true,
+  );
 };
-
 
 const sizeStyle = (props) => {
   const data = props.theme.calendar[props.sizeProp];
@@ -70,25 +43,9 @@ const sizeStyle = (props) => {
 const StyledCalendar = styled.div.withConfig(styledComponentsConfig)`
   ${genericStyles}
   ${(props) => sizeStyle(props)}
-  ${(props) => responsiveStyle(props)}
+  ${(props) => props.responsive && responsiveSizeStyle(props)}
   ${(props) => props.theme.calendar && props.theme.calendar.extend}
 `;
-
-const weeksContainerResponsiveSizeStyle2 = (props) => {
-  const breakpointSize = props.theme.calendar.responsiveBreakpoint;
-  const responsiveSize = getResponsiveSize(props.theme, breakpointSize);
-  const data = props.theme.calendar[responsiveSize];
-  const height = data && `${parseMetricToNum(data.daySize) * 6}px`;
-  console.log('week', responsiveSize, data, height);
-  const breakpoint = props.theme.global.size[breakpointSize];
-  return breakpointStyle({value: breakpoint}, `
-    height: ${props.fillContainer ? '100%' : height};
-  `, true);
-};
-
-const weeksContainerResponsiveSizeStyle = (props) => {
-  return '';
-};
 
 const weeksContainerSizeStyle = (props) => {
   const height = props.fillContainer
@@ -102,7 +59,6 @@ const weeksContainerSizeStyle = (props) => {
 const StyledWeeksContainer = styled.div.withConfig(styledComponentsConfig)`
   overflow: hidden;
   ${(props) => weeksContainerSizeStyle(props)}
-  ${(props) => weeksContainerResponsiveSizeStyle(props)}
   ${(props) => props.focus && !props.plain && focusStyle()};
 `;
 
@@ -175,9 +131,13 @@ const StyledWeek = styled.div.withConfig(styledComponentsConfig)`
 
 const responsiveDayContainerStyle = (props) => {
   const breakpoint = props.theme.global.size[props.sizeProp];
-  return breakpointStyle({ value: breakpoint }, `
+  return breakpointStyle(
+    { value: breakpoint },
+    `
     width: 14.3%;
-  `, true);
+  `,
+    true,
+  );
 };
 
 // The width of 14.3% is derived from dividing 100/7. We want the
@@ -190,14 +150,18 @@ const StyledDayContainer = styled.div.withConfig(styledComponentsConfig)`
     props.theme.calendar?.range?.background &&
     backgroundStyle(props.theme.calendar.range.background, props.theme)}
   ${(props) => rangeRoundStyle(props)}
-  ${(props) => responsiveDayContainerStyle(props)}
+  ${(props) => props.responsive && responsiveDayContainerStyle(props)}
 `;
 
 const responsiveDayButtonStyle = (props) => {
   const breakpoint = props.theme.global.size[props.sizeProp];
-  return breakpointStyle({ value: breakpoint }, `
+  return breakpointStyle(
+    { value: breakpoint },
+    `
     width: 100%;
-  `, true);
+  `,
+    true,
+  );
 };
 
 // when caller opts in to day hover styling, apply all state styles
@@ -205,7 +169,7 @@ const responsiveDayButtonStyle = (props) => {
 const StyledDayButton = styled(Button)`
   ${(props) =>
     props.theme.calendar?.day?.hover?.background && 'background: inherit;'}
-  ${(props) => responsiveDayButtonStyle(props)}
+  ${(props) => props.responsive && responsiveDayButtonStyle(props)}
 `;
 
 const daySizeStyle = (props) => {
@@ -217,29 +181,20 @@ const daySizeStyle = (props) => {
   `;
 };
 
-const responsiveDaySizeStyle2 = (props) => {
-  const breakpointSize = props.theme.calendar.responsiveBreakpoint;
-  const responsiveSize = getResponsiveSize(props.theme, breakpointSize);
-  const data = props.theme.calendar[responsiveSize];
-  const breakpoint = props.theme.global.size[breakpointSize];
-  // try width: 100%; max-width: data.daySize
-  return breakpointStyle({value: breakpoint}, `
-    font-size: ${data.fontSize};
-    line-height: ${data.lineHeight};
-    width: ${props.fillContainer ? '100%' : data.daySize};
-    height: ${props.fillContainer ? '100%' : data.daySize};
-  `, true);
-};
-
 const responsiveDaySizeStyle = (props) => {
   const breakpoint = props.theme.global.size[props.sizeProp];
   const data = props.theme.calendar[props.sizeProp];
   // try width: 100%; max-width: data.daySize
-  return breakpointStyle({value: breakpoint}, `
-    width: 100%;
-    max-width: ${data.daySize};
-  `, true);
+  return breakpointStyle(
+    { value: breakpoint },
+    `
+      width: 100%;
+      max-width: ${data.daySize};
+    `,
+    true,
+  );
 };
+
 const dayStyle = (props) => {
   let backgroundObj;
   let colorObj;
@@ -309,7 +264,7 @@ const StyledDay = styled.div.withConfig(styledComponentsConfig)`
       props.theme,
     )};
   ${(props) => daySizeStyle(props)}
-  ${(props) => responsiveDaySizeStyle(props)}
+  ${(props) => props.responsive && responsiveDaySizeStyle(props)}
   ${(props) => dayStyle(props)}
   ${(props) => dayFontStyle(props)}
    ${(props) => {
