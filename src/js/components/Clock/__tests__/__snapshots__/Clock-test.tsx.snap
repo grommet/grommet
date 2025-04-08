@@ -414,10 +414,10 @@ exports[`Clock run 1`] = `
 
 exports[`Clock run 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 fHTwQM"
+  class="StyledGrommet-sc-19lkkz7-0 cBoJUe"
 >
   <svg
-    class="StyledClock__StyledAnalog-sc-y4xw8s-3 bZSkkW"
+    class="StyledClock__StyledAnalog-sc-y4xw8s-3 kbBsrg"
     height="96"
     preserveAspectRatio="xMidYMid meet"
     version="1.1"
@@ -425,7 +425,7 @@ exports[`Clock run 2`] = `
     width="96"
   >
     <line
-      class="StyledClock__StyledSecond-sc-y4xw8s-2 fneonE"
+      class="StyledClock__StyledSecond-sc-y4xw8s-2 fHbHWq"
       stroke="#000000"
       stroke-linecap="round"
       style="transform: rotate(210deg); transform-origin: 48px 48px;"
@@ -435,7 +435,7 @@ exports[`Clock run 2`] = `
       y2="9"
     />
     <line
-      class="StyledClock__StyledMinute-sc-y4xw8s-1 bCdeKk"
+      class="StyledClock__StyledMinute-sc-y4xw8s-1 bYJLnK"
       stroke="#000000"
       stroke-linecap="round"
       style="transform: rotate(138deg); transform-origin: 48px 48px;"
@@ -445,7 +445,7 @@ exports[`Clock run 2`] = `
       y2="12"
     />
     <line
-      class="StyledClock__StyledHour-sc-y4xw8s-0 kdArff"
+      class="StyledClock__StyledHour-sc-y4xw8s-0 bSTmBF"
       stroke="#000000"
       stroke-linecap="round"
       style="transform: rotate(191.5deg); transform-origin: 48px 48px;"
@@ -456,7 +456,7 @@ exports[`Clock run 2`] = `
     />
   </svg>
   <svg
-    class="StyledClock__StyledAnalog-sc-y4xw8s-3 bZSkkW"
+    class="StyledClock__StyledAnalog-sc-y4xw8s-3 kbBsrg"
     height="96"
     preserveAspectRatio="xMidYMid meet"
     version="1.1"
@@ -464,7 +464,7 @@ exports[`Clock run 2`] = `
     width="96"
   >
     <line
-      class="StyledClock__StyledSecond-sc-y4xw8s-2 fneonE"
+      class="StyledClock__StyledSecond-sc-y4xw8s-2 fHbHWq"
       stroke="#000000"
       stroke-linecap="round"
       style="transform: rotate(198deg); transform-origin: 48px 48px;"
@@ -474,7 +474,7 @@ exports[`Clock run 2`] = `
       y2="9"
     />
     <line
-      class="StyledClock__StyledMinute-sc-y4xw8s-1 bCdeKk"
+      class="StyledClock__StyledMinute-sc-y4xw8s-1 bYJLnK"
       stroke="#000000"
       stroke-linecap="round"
       style="transform: rotate(138deg); transform-origin: 48px 48px;"
@@ -484,7 +484,7 @@ exports[`Clock run 2`] = `
       y2="12"
     />
     <line
-      class="StyledClock__StyledHour-sc-y4xw8s-0 kdArff"
+      class="StyledClock__StyledHour-sc-y4xw8s-0 bSTmBF"
       stroke="#000000"
       stroke-linecap="round"
       style="transform: rotate(191.5deg); transform-origin: 48px 48px;"
@@ -495,45 +495,45 @@ exports[`Clock run 2`] = `
     />
   </svg>
   <div
-    class="StyledBox-sc-13pk1d4-0 bvWvwP"
+    class="StyledBox-sc-13pk1d4-0 cngkLX"
   >
     <div
-      class="StyledClock__StyledDigitalDigit-sc-y4xw8s-4 cAnGYC"
+      class="StyledClock__StyledDigitalDigit-sc-y4xw8s-4 fVdcAE"
     >
       1
     </div>
     <div
-      class="StyledClock__StyledDigitalDigit-sc-y4xw8s-4 cAnGYC"
+      class="StyledClock__StyledDigitalDigit-sc-y4xw8s-4 fVdcAE"
     >
       8
     </div>
     <div
-      class="StyledClock__StyledDigitalDigit-sc-y4xw8s-4 cAnGYC"
+      class="StyledClock__StyledDigitalDigit-sc-y4xw8s-4 fVdcAE"
     >
       :
     </div>
     <div
-      class="StyledClock__StyledDigitalDigit-sc-y4xw8s-4 cAnGYC"
+      class="StyledClock__StyledDigitalDigit-sc-y4xw8s-4 fVdcAE"
     >
       2
     </div>
     <div
-      class="StyledClock__StyledDigitalDigit-sc-y4xw8s-4 cAnGYC"
+      class="StyledClock__StyledDigitalDigit-sc-y4xw8s-4 fVdcAE"
     >
       3
     </div>
     <div
-      class="StyledClock__StyledDigitalDigit-sc-y4xw8s-4 cAnGYC"
+      class="StyledClock__StyledDigitalDigit-sc-y4xw8s-4 fVdcAE"
     >
       :
     </div>
     <div
-      class="StyledClock__StyledDigitalDigit-sc-y4xw8s-4 cAnGYC"
+      class="StyledClock__StyledDigitalDigit-sc-y4xw8s-4 fVdcAE"
     >
       3
     </div>
     <div
-      class="StyledClock__StyledDigitalDigit-sc-y4xw8s-4 cAnGYC"
+      class="StyledClock__StyledDigitalDigit-sc-y4xw8s-4 fVdcAE"
     >
       .c0 {
   position: absolute;
@@ -568,45 +568,45 @@ exports[`Clock run 2`] = `
     </div>
   </div>
   <div
-    class="StyledBox-sc-13pk1d4-0 bvWvwP"
+    class="StyledBox-sc-13pk1d4-0 cngkLX"
   >
     <div
-      class="StyledClock__StyledDigitalDigit-sc-y4xw8s-4 cAnGYC"
+      class="StyledClock__StyledDigitalDigit-sc-y4xw8s-4 fVdcAE"
     >
       1
     </div>
     <div
-      class="StyledClock__StyledDigitalDigit-sc-y4xw8s-4 cAnGYC"
+      class="StyledClock__StyledDigitalDigit-sc-y4xw8s-4 fVdcAE"
     >
       8
     </div>
     <div
-      class="StyledClock__StyledDigitalDigit-sc-y4xw8s-4 cAnGYC"
+      class="StyledClock__StyledDigitalDigit-sc-y4xw8s-4 fVdcAE"
     >
       :
     </div>
     <div
-      class="StyledClock__StyledDigitalDigit-sc-y4xw8s-4 cAnGYC"
+      class="StyledClock__StyledDigitalDigit-sc-y4xw8s-4 fVdcAE"
     >
       2
     </div>
     <div
-      class="StyledClock__StyledDigitalDigit-sc-y4xw8s-4 cAnGYC"
+      class="StyledClock__StyledDigitalDigit-sc-y4xw8s-4 fVdcAE"
     >
       3
     </div>
     <div
-      class="StyledClock__StyledDigitalDigit-sc-y4xw8s-4 cAnGYC"
+      class="StyledClock__StyledDigitalDigit-sc-y4xw8s-4 fVdcAE"
     >
       :
     </div>
     <div
-      class="StyledClock__StyledDigitalDigit-sc-y4xw8s-4 cAnGYC"
+      class="StyledClock__StyledDigitalDigit-sc-y4xw8s-4 fVdcAE"
     >
       3
     </div>
     <div
-      class="StyledClock__StyledDigitalDigit-sc-y4xw8s-4 cAnGYC"
+      class="StyledClock__StyledDigitalDigit-sc-y4xw8s-4 fVdcAE"
     >
       .c0 {
   position: absolute;

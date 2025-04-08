@@ -285,6 +285,10 @@ const gapStyle = (directionProp, gap, responsive, wrap, theme) => {
   return styles;
 };
 
+const responsiveContainerStyle = css`
+  container-type: inline-size;
+`;
+
 // NOTE: basis must be after flex! Otherwise, flex overrides basis
 const StyledBox = styled.div.withConfig(styledComponentsConfig)`
   display: flex;
@@ -338,6 +342,7 @@ const StyledBox = styled.div.withConfig(styledComponentsConfig)`
     focusStyle()}
   ${(props) => props.theme.box && props.theme.box.extend}
   ${(props) => props.kindProp && props.kindProp.extend}
+  ${(props) => (props.responsiveContainer ? responsiveContainerStyle : '')}
 `;
 
 const gapGapStyle = (directionProp, gap, responsive, border, theme) => {
