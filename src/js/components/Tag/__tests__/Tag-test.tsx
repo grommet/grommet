@@ -194,6 +194,29 @@ describe('Tag', () => {
     );
   });
 
+  test('renders aria-label from grommet messages (name and value)', () => {
+    render(
+      <Grommet
+        messages={{
+          messages: {
+            tag: {
+              removeLabel: {
+                nameAndValue: 'Remove {name}: {value}',
+              },
+            },
+          },
+        }}
+      >
+        <Tag name="Category" value="Fruits" onRemove={() => {}} />
+      </Grommet>,
+    );
+
+    expect(screen.getByRole('button')).toHaveAttribute(
+      'aria-label',
+      'Remove Category: Fruits',
+    );
+  });
+
   test('renders aria-label from messages (value only)', () => {
     const messages = {
       removeLabel: {
