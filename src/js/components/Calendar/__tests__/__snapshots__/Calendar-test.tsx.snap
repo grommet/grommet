@@ -290,6 +290,13 @@ exports[`Calendar Keyboard events heading text font size 1`] = `
 }
 
 @media only screen and (max-width: 768px) {
+  .c13 {
+    height: auto;
+    aspect-ratio: 7/6;
+  }
+}
+
+@media only screen and (max-width: 768px) {
   .c11 {
     width: 14.3%;
   }
@@ -305,6 +312,8 @@ exports[`Calendar Keyboard events heading text font size 1`] = `
   .c12 {
     width: 100%;
     max-width: 109.71428571428571px;
+    height: auto;
+    aspect-ratio: 1;
   }
 }
 
@@ -312,6 +321,8 @@ exports[`Calendar Keyboard events heading text font size 1`] = `
   .c17 {
     width: 100%;
     max-width: 109.71428571428571px;
+    height: auto;
+    aspect-ratio: 1;
   }
 }
 
@@ -319,6 +330,8 @@ exports[`Calendar Keyboard events heading text font size 1`] = `
   .c18 {
     width: 100%;
     max-width: 109.71428571428571px;
+    height: auto;
+    aspect-ratio: 1;
   }
 }
 
@@ -1520,6 +1533,13 @@ exports[`Calendar change months 1`] = `
 }
 
 @media only screen and (max-width: 384px) {
+  .c10 {
+    height: auto;
+    aspect-ratio: 7/6;
+  }
+}
+
+@media only screen and (max-width: 384px) {
   .c13 {
     width: 14.3%;
   }
@@ -1535,6 +1555,8 @@ exports[`Calendar change months 1`] = `
   .c17 {
     width: 100%;
     max-width: 54.857142857142854px;
+    height: auto;
+    aspect-ratio: 1;
   }
 }
 
@@ -1542,6 +1564,8 @@ exports[`Calendar change months 1`] = `
   .c16 {
     width: 100%;
     max-width: 54.857142857142854px;
+    height: auto;
+    aspect-ratio: 1;
   }
 }
 
@@ -2449,7 +2473,7 @@ exports[`Calendar change months 2`] = `
       >
         <div
           aria-label="January 2020; Currently selected January 15, 2020;"
-          class="StyledCalendar__StyledWeeksContainer-sc-1y4xhmp-1 gcFzSw"
+          class="StyledCalendar__StyledWeeksContainer-sc-1y4xhmp-1 fCEKys"
           role="rowgroup"
           tabindex="0"
         >
@@ -2471,7 +2495,7 @@ exports[`Calendar change months 2`] = `
                   type="button"
                 >
                   <div
-                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 biteN"
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 hhOBws"
                   >
                     29
                   </div>
@@ -2488,7 +2512,7 @@ exports[`Calendar change months 2`] = `
                   type="button"
                 >
                   <div
-                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 biteN"
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 hhOBws"
                   >
                     30
                   </div>
@@ -2505,7 +2529,7 @@ exports[`Calendar change months 2`] = `
                   type="button"
                 >
                   <div
-                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 biteN"
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 hhOBws"
                   >
                     31
                   </div>
@@ -2522,7 +2546,7 @@ exports[`Calendar change months 2`] = `
                   type="button"
                 >
                   <div
-                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 drslLZ"
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 hdAptU"
                   >
                     1
                   </div>
@@ -2539,7 +2563,7 @@ exports[`Calendar change months 2`] = `
                   type="button"
                 >
                   <div
-                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 drslLZ"
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 hdAptU"
                   >
                     2
                   </div>
@@ -2556,7 +2580,7 @@ exports[`Calendar change months 2`] = `
                   type="button"
                 >
                   <div
-                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 drslLZ"
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 hdAptU"
                   >
                     3
                   </div>
@@ -2573,7 +2597,7 @@ exports[`Calendar change months 2`] = `
                   type="button"
                 >
                   <div
-                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 drslLZ"
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 hdAptU"
                   >
                     4
                   </div>
@@ -2595,7 +2619,7 @@ exports[`Calendar change months 2`] = `
                   type="button"
                 >
                   <div
-                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 drslLZ"
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 hdAptU"
                   >
                     5
                   </div>
@@ -2612,7 +2636,7 @@ exports[`Calendar change months 2`] = `
                   type="button"
                 >
                   <div
-                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 drslLZ"
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 hdAptU"
                   >
                     6
                   </div>
@@ -2629,7 +2653,7 @@ exports[`Calendar change months 2`] = `
                   type="button"
                 >
                   <div
-                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 drslLZ"
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 hdAptU"
                   >
                     7
                   </div>
@@ -2646,7 +2670,7 @@ exports[`Calendar change months 2`] = `
                   type="button"
                 >
                   <div
-                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 drslLZ"
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 hdAptU"
                   >
                     8
                   </div>
@@ -2663,7 +2687,7 @@ exports[`Calendar change months 2`] = `
                   type="button"
                 >
                   <div
-                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 drslLZ"
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 hdAptU"
                   >
                     9
                   </div>
@@ -2680,7 +2704,7 @@ exports[`Calendar change months 2`] = `
                   type="button"
                 >
                   <div
-                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 drslLZ"
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 hdAptU"
                   >
                     10
                   </div>
@@ -2697,7 +2721,7 @@ exports[`Calendar change months 2`] = `
                   type="button"
                 >
                   <div
-                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 drslLZ"
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 hdAptU"
                   >
                     11
                   </div>
@@ -2808,6 +2832,10 @@ exports[`Calendar change months 2`] = `
 }
 
 @media only screen and (max-width: 384px) {
+
+}
+
+@media only screen and (max-width: 384px) {
   .c1 {
     width: 14.3%;
   }
@@ -2827,6 +2855,8 @@ exports[`Calendar change months 2`] = `
   .c4 {
     width: 100%;
     max-width: 54.857142857142854px;
+    height: auto;
+    aspect-ratio: 1;
   }
 }
 
@@ -2834,6 +2864,8 @@ exports[`Calendar change months 2`] = `
   .c5 {
     width: 100%;
     max-width: 54.857142857142854px;
+    height: auto;
+    aspect-ratio: 1;
   }
 }
 
@@ -3057,6 +3089,10 @@ exports[`Calendar change months 2`] = `
 }
 
 @media only screen and (max-width: 384px) {
+
+}
+
+@media only screen and (max-width: 384px) {
   .c1 {
     width: 14.3%;
   }
@@ -3076,6 +3112,8 @@ exports[`Calendar change months 2`] = `
   .c4 {
     width: 100%;
     max-width: 54.857142857142854px;
+    height: auto;
+    aspect-ratio: 1;
   }
 }
 
@@ -3312,6 +3350,10 @@ exports[`Calendar change months 2`] = `
 }
 
 @media only screen and (max-width: 384px) {
+
+}
+
+@media only screen and (max-width: 384px) {
   .c1 {
     width: 14.3%;
   }
@@ -3327,6 +3369,8 @@ exports[`Calendar change months 2`] = `
   .c5 {
     width: 100%;
     max-width: 54.857142857142854px;
+    height: auto;
+    aspect-ratio: 1;
   }
 }
 
@@ -3334,6 +3378,8 @@ exports[`Calendar change months 2`] = `
   .c4 {
     width: 100%;
     max-width: 54.857142857142854px;
+    height: auto;
+    aspect-ratio: 1;
   }
 }
 
@@ -3561,6 +3607,10 @@ exports[`Calendar change months 2`] = `
 }
 
 @media only screen and (max-width: 384px) {
+
+}
+
+@media only screen and (max-width: 384px) {
   .c1 {
     width: 14.3%;
   }
@@ -3576,6 +3626,8 @@ exports[`Calendar change months 2`] = `
   .c4 {
     width: 100%;
     max-width: 54.857142857142854px;
+    height: auto;
+    aspect-ratio: 1;
   }
 }
 
@@ -4781,6 +4833,13 @@ exports[`Calendar date 1`] = `
 }
 
 @media only screen and (max-width: 384px) {
+  .c10 {
+    height: auto;
+    aspect-ratio: 7/6;
+  }
+}
+
+@media only screen and (max-width: 384px) {
   .c13 {
     width: 14.3%;
   }
@@ -4796,6 +4855,8 @@ exports[`Calendar date 1`] = `
   .c16 {
     width: 100%;
     max-width: 54.857142857142854px;
+    height: auto;
+    aspect-ratio: 1;
   }
 }
 
@@ -4803,6 +4864,8 @@ exports[`Calendar date 1`] = `
   .c17 {
     width: 100%;
     max-width: 54.857142857142854px;
+    height: auto;
+    aspect-ratio: 1;
   }
 }
 
@@ -4810,6 +4873,8 @@ exports[`Calendar date 1`] = `
   .c18 {
     width: 100%;
     max-width: 54.857142857142854px;
+    height: auto;
+    aspect-ratio: 1;
   }
 }
 
@@ -5958,6 +6023,13 @@ exports[`Calendar dates 1`] = `
 }
 
 @media only screen and (max-width: 384px) {
+  .c10 {
+    height: auto;
+    aspect-ratio: 7/6;
+  }
+}
+
+@media only screen and (max-width: 384px) {
   .c13 {
     width: 14.3%;
   }
@@ -5973,6 +6045,8 @@ exports[`Calendar dates 1`] = `
   .c16 {
     width: 100%;
     max-width: 54.857142857142854px;
+    height: auto;
+    aspect-ratio: 1;
   }
 }
 
@@ -5980,6 +6054,8 @@ exports[`Calendar dates 1`] = `
   .c17 {
     width: 100%;
     max-width: 54.857142857142854px;
+    height: auto;
+    aspect-ratio: 1;
   }
 }
 
@@ -5987,6 +6063,8 @@ exports[`Calendar dates 1`] = `
   .c18 {
     width: 100%;
     max-width: 54.857142857142854px;
+    height: auto;
+    aspect-ratio: 1;
   }
 }
 
@@ -5994,6 +6072,8 @@ exports[`Calendar dates 1`] = `
   .c19 {
     width: 100%;
     max-width: 54.857142857142854px;
+    height: auto;
+    aspect-ratio: 1;
   }
 }
 
@@ -7142,6 +7222,13 @@ exports[`Calendar daysOfWeek 1`] = `
 }
 
 @media only screen and (max-width: 384px) {
+  .c13 {
+    height: auto;
+    aspect-ratio: 7/6;
+  }
+}
+
+@media only screen and (max-width: 384px) {
   .c11 {
     width: 14.3%;
   }
@@ -7157,6 +7244,8 @@ exports[`Calendar daysOfWeek 1`] = `
   .c12 {
     width: 100%;
     max-width: 54.857142857142854px;
+    height: auto;
+    aspect-ratio: 1;
   }
 }
 
@@ -7164,6 +7253,8 @@ exports[`Calendar daysOfWeek 1`] = `
   .c17 {
     width: 100%;
     max-width: 54.857142857142854px;
+    height: auto;
+    aspect-ratio: 1;
   }
 }
 
@@ -7171,6 +7262,8 @@ exports[`Calendar daysOfWeek 1`] = `
   .c18 {
     width: 100%;
     max-width: 54.857142857142854px;
+    height: auto;
+    aspect-ratio: 1;
   }
 }
 
@@ -7178,6 +7271,8 @@ exports[`Calendar daysOfWeek 1`] = `
   .c19 {
     width: 100%;
     max-width: 54.857142857142854px;
+    height: auto;
+    aspect-ratio: 1;
   }
 }
 
@@ -8450,6 +8545,13 @@ exports[`Calendar disabled 1`] = `
 }
 
 @media only screen and (max-width: 384px) {
+  .c10 {
+    height: auto;
+    aspect-ratio: 7/6;
+  }
+}
+
+@media only screen and (max-width: 384px) {
   .c13 {
     width: 14.3%;
   }
@@ -8465,6 +8567,8 @@ exports[`Calendar disabled 1`] = `
   .c16 {
     width: 100%;
     max-width: 54.857142857142854px;
+    height: auto;
+    aspect-ratio: 1;
   }
 }
 
@@ -8472,6 +8576,8 @@ exports[`Calendar disabled 1`] = `
   .c17 {
     width: 100%;
     max-width: 54.857142857142854px;
+    height: auto;
+    aspect-ratio: 1;
   }
 }
 
@@ -8479,6 +8585,8 @@ exports[`Calendar disabled 1`] = `
   .c18 {
     width: 100%;
     max-width: 54.857142857142854px;
+    height: auto;
+    aspect-ratio: 1;
   }
 }
 
@@ -10745,6 +10853,13 @@ exports[`Calendar first day sunday week monday 1`] = `
 }
 
 @media only screen and (max-width: 384px) {
+  .c10 {
+    height: auto;
+    aspect-ratio: 7/6;
+  }
+}
+
+@media only screen and (max-width: 384px) {
   .c13 {
     width: 14.3%;
   }
@@ -10760,6 +10875,8 @@ exports[`Calendar first day sunday week monday 1`] = `
   .c16 {
     width: 100%;
     max-width: 54.857142857142854px;
+    height: auto;
+    aspect-ratio: 1;
   }
 }
 
@@ -10767,6 +10884,8 @@ exports[`Calendar first day sunday week monday 1`] = `
   .c17 {
     width: 100%;
     max-width: 54.857142857142854px;
+    height: auto;
+    aspect-ratio: 1;
   }
 }
 
@@ -10774,6 +10893,8 @@ exports[`Calendar first day sunday week monday 1`] = `
   .c18 {
     width: 100%;
     max-width: 54.857142857142854px;
+    height: auto;
+    aspect-ratio: 1;
   }
 }
 
@@ -11911,6 +12032,13 @@ exports[`Calendar firstDayOfWeek 1`] = `
 }
 
 @media only screen and (max-width: 384px) {
+  .c10 {
+    height: auto;
+    aspect-ratio: 7/6;
+  }
+}
+
+@media only screen and (max-width: 384px) {
   .c13 {
     width: 14.3%;
   }
@@ -11926,6 +12054,8 @@ exports[`Calendar firstDayOfWeek 1`] = `
   .c16 {
     width: 100%;
     max-width: 54.857142857142854px;
+    height: auto;
+    aspect-ratio: 1;
   }
 }
 
@@ -11933,6 +12063,8 @@ exports[`Calendar firstDayOfWeek 1`] = `
   .c17 {
     width: 100%;
     max-width: 54.857142857142854px;
+    height: auto;
+    aspect-ratio: 1;
   }
 }
 
@@ -11940,6 +12072,8 @@ exports[`Calendar firstDayOfWeek 1`] = `
   .c18 {
     width: 100%;
     max-width: 54.857142857142854px;
+    height: auto;
+    aspect-ratio: 1;
   }
 }
 
@@ -13848,6 +13982,13 @@ exports[`Calendar header 1`] = `
 }
 
 @media only screen and (max-width: 192px) {
+  .c8 {
+    height: auto;
+    aspect-ratio: 7/6;
+  }
+}
+
+@media only screen and (max-width: 192px) {
   .c11 {
     width: 14.3%;
   }
@@ -13863,6 +14004,8 @@ exports[`Calendar header 1`] = `
   .c14 {
     width: 100%;
     max-width: 27.428571428571427px;
+    height: auto;
+    aspect-ratio: 1;
   }
 }
 
@@ -13870,6 +14013,8 @@ exports[`Calendar header 1`] = `
   .c15 {
     width: 100%;
     max-width: 27.428571428571427px;
+    height: auto;
+    aspect-ratio: 1;
   }
 }
 
@@ -13877,6 +14022,8 @@ exports[`Calendar header 1`] = `
   .c16 {
     width: 100%;
     max-width: 27.428571428571427px;
+    height: auto;
+    aspect-ratio: 1;
   }
 }
 
@@ -15044,6 +15191,13 @@ exports[`Calendar reference 1`] = `
 }
 
 @media only screen and (max-width: 384px) {
+  .c10 {
+    height: auto;
+    aspect-ratio: 7/6;
+  }
+}
+
+@media only screen and (max-width: 384px) {
   .c13 {
     width: 14.3%;
   }
@@ -15059,6 +15213,8 @@ exports[`Calendar reference 1`] = `
   .c16 {
     width: 100%;
     max-width: 54.857142857142854px;
+    height: auto;
+    aspect-ratio: 1;
   }
 }
 
@@ -15066,6 +15222,8 @@ exports[`Calendar reference 1`] = `
   .c17 {
     width: 100%;
     max-width: 54.857142857142854px;
+    height: auto;
+    aspect-ratio: 1;
   }
 }
 
@@ -16193,6 +16351,13 @@ exports[`Calendar render without grommet wrapper 1`] = `
 }
 
 @media only screen and (max-width: 384px) {
+  .c9 {
+    height: auto;
+    aspect-ratio: 7/6;
+  }
+}
+
+@media only screen and (max-width: 384px) {
   .c12 {
     width: 14.3%;
   }
@@ -16208,6 +16373,8 @@ exports[`Calendar render without grommet wrapper 1`] = `
   .c15 {
     width: 100%;
     max-width: 54.857142857142854px;
+    height: auto;
+    aspect-ratio: 1;
   }
 }
 
@@ -16215,6 +16382,8 @@ exports[`Calendar render without grommet wrapper 1`] = `
   .c16 {
     width: 100%;
     max-width: 54.857142857142854px;
+    height: auto;
+    aspect-ratio: 1;
   }
 }
 
@@ -16222,6 +16391,8 @@ exports[`Calendar render without grommet wrapper 1`] = `
   .c17 {
     width: 100%;
     max-width: 54.857142857142854px;
+    height: auto;
+    aspect-ratio: 1;
   }
 }
 
@@ -17355,6 +17526,13 @@ exports[`Calendar select date 1`] = `
 }
 
 @media only screen and (max-width: 384px) {
+  .c10 {
+    height: auto;
+    aspect-ratio: 7/6;
+  }
+}
+
+@media only screen and (max-width: 384px) {
   .c13 {
     width: 14.3%;
   }
@@ -17370,6 +17548,8 @@ exports[`Calendar select date 1`] = `
   .c16 {
     width: 100%;
     max-width: 54.857142857142854px;
+    height: auto;
+    aspect-ratio: 1;
   }
 }
 
@@ -17377,6 +17557,8 @@ exports[`Calendar select date 1`] = `
   .c17 {
     width: 100%;
     max-width: 54.857142857142854px;
+    height: auto;
+    aspect-ratio: 1;
   }
 }
 
@@ -17384,6 +17566,8 @@ exports[`Calendar select date 1`] = `
   .c18 {
     width: 100%;
     max-width: 54.857142857142854px;
+    height: auto;
+    aspect-ratio: 1;
   }
 }
 
@@ -18283,7 +18467,7 @@ exports[`Calendar select date 2`] = `
       >
         <div
           aria-label="January 2020; Currently selected January 15, 2020;"
-          class="StyledCalendar__StyledWeeksContainer-sc-1y4xhmp-1 ejkRAt"
+          class="StyledCalendar__StyledWeeksContainer-sc-1y4xhmp-1 IyGPB"
           role="rowgroup"
           tabindex="0"
         >
@@ -18305,7 +18489,7 @@ exports[`Calendar select date 2`] = `
                   type="button"
                 >
                   <div
-                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 biteN"
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 hhOBws"
                   >
                     29
                   </div>
@@ -18322,7 +18506,7 @@ exports[`Calendar select date 2`] = `
                   type="button"
                 >
                   <div
-                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 biteN"
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 hhOBws"
                   >
                     30
                   </div>
@@ -18339,7 +18523,7 @@ exports[`Calendar select date 2`] = `
                   type="button"
                 >
                   <div
-                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 biteN"
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 hhOBws"
                   >
                     31
                   </div>
@@ -18356,7 +18540,7 @@ exports[`Calendar select date 2`] = `
                   type="button"
                 >
                   <div
-                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 drslLZ"
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 hdAptU"
                   >
                     1
                   </div>
@@ -18373,7 +18557,7 @@ exports[`Calendar select date 2`] = `
                   type="button"
                 >
                   <div
-                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 drslLZ"
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 hdAptU"
                   >
                     2
                   </div>
@@ -18390,7 +18574,7 @@ exports[`Calendar select date 2`] = `
                   type="button"
                 >
                   <div
-                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 drslLZ"
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 hdAptU"
                   >
                     3
                   </div>
@@ -18407,7 +18591,7 @@ exports[`Calendar select date 2`] = `
                   type="button"
                 >
                   <div
-                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 drslLZ"
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 hdAptU"
                   >
                     4
                   </div>
@@ -18429,7 +18613,7 @@ exports[`Calendar select date 2`] = `
                   type="button"
                 >
                   <div
-                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 drslLZ"
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 hdAptU"
                   >
                     5
                   </div>
@@ -18446,7 +18630,7 @@ exports[`Calendar select date 2`] = `
                   type="button"
                 >
                   <div
-                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 drslLZ"
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 hdAptU"
                   >
                     6
                   </div>
@@ -18463,7 +18647,7 @@ exports[`Calendar select date 2`] = `
                   type="button"
                 >
                   <div
-                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 drslLZ"
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 hdAptU"
                   >
                     7
                   </div>
@@ -18480,7 +18664,7 @@ exports[`Calendar select date 2`] = `
                   type="button"
                 >
                   <div
-                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 drslLZ"
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 hdAptU"
                   >
                     8
                   </div>
@@ -18497,7 +18681,7 @@ exports[`Calendar select date 2`] = `
                   type="button"
                 >
                   <div
-                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 drslLZ"
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 hdAptU"
                   >
                     9
                   </div>
@@ -18514,7 +18698,7 @@ exports[`Calendar select date 2`] = `
                   type="button"
                 >
                   <div
-                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 drslLZ"
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 hdAptU"
                   >
                     10
                   </div>
@@ -18531,7 +18715,7 @@ exports[`Calendar select date 2`] = `
                   type="button"
                 >
                   <div
-                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 drslLZ"
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 hdAptU"
                   >
                     11
                   </div>
@@ -18553,7 +18737,7 @@ exports[`Calendar select date 2`] = `
                   type="button"
                 >
                   <div
-                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 drslLZ"
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 hdAptU"
                   >
                     12
                   </div>
@@ -18570,7 +18754,7 @@ exports[`Calendar select date 2`] = `
                   type="button"
                 >
                   <div
-                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 drslLZ"
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 hdAptU"
                   >
                     13
                   </div>
@@ -18587,7 +18771,7 @@ exports[`Calendar select date 2`] = `
                   type="button"
                 >
                   <div
-                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 drslLZ"
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 hdAptU"
                   >
                     14
                   </div>
@@ -18604,7 +18788,7 @@ exports[`Calendar select date 2`] = `
                   type="button"
                 >
                   <div
-                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 dEaKGc"
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 eggIHl"
                   >
                     15
                   </div>
@@ -18621,7 +18805,7 @@ exports[`Calendar select date 2`] = `
                   type="button"
                 >
                   <div
-                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 drslLZ"
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 hdAptU"
                   >
                     16
                   </div>
@@ -18638,7 +18822,7 @@ exports[`Calendar select date 2`] = `
                   type="button"
                 >
                   <div
-                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 drslLZ"
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 hdAptU"
                   >
                     17
                   </div>
@@ -18655,7 +18839,7 @@ exports[`Calendar select date 2`] = `
                   type="button"
                 >
                   <div
-                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 drslLZ"
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 hdAptU"
                   >
                     18
                   </div>
@@ -18677,7 +18861,7 @@ exports[`Calendar select date 2`] = `
                   type="button"
                 >
                   <div
-                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 drslLZ"
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 hdAptU"
                   >
                     19
                   </div>
@@ -18694,7 +18878,7 @@ exports[`Calendar select date 2`] = `
                   type="button"
                 >
                   <div
-                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 drslLZ"
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 hdAptU"
                   >
                     20
                   </div>
@@ -18711,7 +18895,7 @@ exports[`Calendar select date 2`] = `
                   type="button"
                 >
                   <div
-                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 drslLZ"
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 hdAptU"
                   >
                     21
                   </div>
@@ -18728,7 +18912,7 @@ exports[`Calendar select date 2`] = `
                   type="button"
                 >
                   <div
-                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 drslLZ"
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 hdAptU"
                   >
                     22
                   </div>
@@ -18745,7 +18929,7 @@ exports[`Calendar select date 2`] = `
                   type="button"
                 >
                   <div
-                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 drslLZ"
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 hdAptU"
                   >
                     23
                   </div>
@@ -18762,7 +18946,7 @@ exports[`Calendar select date 2`] = `
                   type="button"
                 >
                   <div
-                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 drslLZ"
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 hdAptU"
                   >
                     24
                   </div>
@@ -18779,7 +18963,7 @@ exports[`Calendar select date 2`] = `
                   type="button"
                 >
                   <div
-                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 drslLZ"
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 hdAptU"
                   >
                     25
                   </div>
@@ -18801,7 +18985,7 @@ exports[`Calendar select date 2`] = `
                   type="button"
                 >
                   <div
-                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 drslLZ"
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 hdAptU"
                   >
                     26
                   </div>
@@ -18818,7 +19002,7 @@ exports[`Calendar select date 2`] = `
                   type="button"
                 >
                   <div
-                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 drslLZ"
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 hdAptU"
                   >
                     27
                   </div>
@@ -18835,7 +19019,7 @@ exports[`Calendar select date 2`] = `
                   type="button"
                 >
                   <div
-                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 drslLZ"
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 hdAptU"
                   >
                     28
                   </div>
@@ -18852,7 +19036,7 @@ exports[`Calendar select date 2`] = `
                   type="button"
                 >
                   <div
-                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 drslLZ"
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 hdAptU"
                   >
                     29
                   </div>
@@ -18869,7 +19053,7 @@ exports[`Calendar select date 2`] = `
                   type="button"
                 >
                   <div
-                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 drslLZ"
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 hdAptU"
                   >
                     30
                   </div>
@@ -18886,7 +19070,7 @@ exports[`Calendar select date 2`] = `
                   type="button"
                 >
                   <div
-                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 drslLZ"
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 hdAptU"
                   >
                     31
                   </div>
@@ -18903,7 +19087,7 @@ exports[`Calendar select date 2`] = `
                   type="button"
                 >
                   <div
-                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 biteN"
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 hhOBws"
                   >
                     1
                   </div>
@@ -18925,7 +19109,7 @@ exports[`Calendar select date 2`] = `
                   type="button"
                 >
                   <div
-                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 biteN"
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 hhOBws"
                   >
                     2
                   </div>
@@ -18942,7 +19126,7 @@ exports[`Calendar select date 2`] = `
                   type="button"
                 >
                   <div
-                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 biteN"
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 hhOBws"
                   >
                     3
                   </div>
@@ -18959,7 +19143,7 @@ exports[`Calendar select date 2`] = `
                   type="button"
                 >
                   <div
-                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 biteN"
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 hhOBws"
                   >
                     4
                   </div>
@@ -18976,7 +19160,7 @@ exports[`Calendar select date 2`] = `
                   type="button"
                 >
                   <div
-                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 biteN"
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 hhOBws"
                   >
                     5
                   </div>
@@ -18993,7 +19177,7 @@ exports[`Calendar select date 2`] = `
                   type="button"
                 >
                   <div
-                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 biteN"
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 hhOBws"
                   >
                     6
                   </div>
@@ -19010,7 +19194,7 @@ exports[`Calendar select date 2`] = `
                   type="button"
                 >
                   <div
-                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 biteN"
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 hhOBws"
                   >
                     7
                   </div>
@@ -19027,7 +19211,7 @@ exports[`Calendar select date 2`] = `
                   type="button"
                 >
                   <div
-                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 biteN"
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 hhOBws"
                   >
                     8
                   </div>
@@ -19360,6 +19544,13 @@ exports[`Calendar select dates 1`] = `
 }
 
 @media only screen and (max-width: 384px) {
+  .c10 {
+    height: auto;
+    aspect-ratio: 7/6;
+  }
+}
+
+@media only screen and (max-width: 384px) {
   .c13 {
     width: 14.3%;
   }
@@ -19375,6 +19566,8 @@ exports[`Calendar select dates 1`] = `
   .c16 {
     width: 100%;
     max-width: 54.857142857142854px;
+    height: auto;
+    aspect-ratio: 1;
   }
 }
 
@@ -19382,6 +19575,8 @@ exports[`Calendar select dates 1`] = `
   .c17 {
     width: 100%;
     max-width: 54.857142857142854px;
+    height: auto;
+    aspect-ratio: 1;
   }
 }
 
@@ -19389,6 +19584,8 @@ exports[`Calendar select dates 1`] = `
   .c18 {
     width: 100%;
     max-width: 54.857142857142854px;
+    height: auto;
+    aspect-ratio: 1;
   }
 }
 
@@ -19396,6 +19593,8 @@ exports[`Calendar select dates 1`] = `
   .c19 {
     width: 100%;
     max-width: 54.857142857142854px;
+    height: auto;
+    aspect-ratio: 1;
   }
 }
 
@@ -20295,7 +20494,7 @@ exports[`Calendar select dates 2`] = `
       >
         <div
           aria-label="January 2020; Currently selected January 12, 2020,January 8, 2020 through January 10, 2020"
-          class="StyledCalendar__StyledWeeksContainer-sc-1y4xhmp-1 ejkRAt"
+          class="StyledCalendar__StyledWeeksContainer-sc-1y4xhmp-1 IyGPB"
           role="rowgroup"
           tabindex="0"
         >
@@ -20317,7 +20516,7 @@ exports[`Calendar select dates 2`] = `
                   type="button"
                 >
                   <div
-                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 biteN"
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 hhOBws"
                   >
                     29
                   </div>
@@ -20334,7 +20533,7 @@ exports[`Calendar select dates 2`] = `
                   type="button"
                 >
                   <div
-                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 biteN"
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 hhOBws"
                   >
                     30
                   </div>
@@ -20351,7 +20550,7 @@ exports[`Calendar select dates 2`] = `
                   type="button"
                 >
                   <div
-                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 biteN"
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 hhOBws"
                   >
                     31
                   </div>
@@ -20368,7 +20567,7 @@ exports[`Calendar select dates 2`] = `
                   type="button"
                 >
                   <div
-                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 drslLZ"
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 hdAptU"
                   >
                     1
                   </div>
@@ -20385,7 +20584,7 @@ exports[`Calendar select dates 2`] = `
                   type="button"
                 >
                   <div
-                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 drslLZ"
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 hdAptU"
                   >
                     2
                   </div>
@@ -20402,7 +20601,7 @@ exports[`Calendar select dates 2`] = `
                   type="button"
                 >
                   <div
-                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 drslLZ"
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 hdAptU"
                   >
                     3
                   </div>
@@ -20419,7 +20618,7 @@ exports[`Calendar select dates 2`] = `
                   type="button"
                 >
                   <div
-                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 drslLZ"
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 hdAptU"
                   >
                     4
                   </div>
@@ -20441,7 +20640,7 @@ exports[`Calendar select dates 2`] = `
                   type="button"
                 >
                   <div
-                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 drslLZ"
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 hdAptU"
                   >
                     5
                   </div>
@@ -20458,7 +20657,7 @@ exports[`Calendar select dates 2`] = `
                   type="button"
                 >
                   <div
-                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 drslLZ"
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 hdAptU"
                   >
                     6
                   </div>
@@ -20475,7 +20674,7 @@ exports[`Calendar select dates 2`] = `
                   type="button"
                 >
                   <div
-                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 drslLZ"
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 hdAptU"
                   >
                     7
                   </div>
@@ -20492,7 +20691,7 @@ exports[`Calendar select dates 2`] = `
                   type="button"
                 >
                   <div
-                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 dEaKGc"
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 eggIHl"
                   >
                     8
                   </div>
@@ -20509,7 +20708,7 @@ exports[`Calendar select dates 2`] = `
                   type="button"
                 >
                   <div
-                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 hvfcul"
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 fXRQQE"
                   >
                     9
                   </div>
@@ -20526,7 +20725,7 @@ exports[`Calendar select dates 2`] = `
                   type="button"
                 >
                   <div
-                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 dEaKGc"
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 eggIHl"
                   >
                     10
                   </div>
@@ -20543,7 +20742,7 @@ exports[`Calendar select dates 2`] = `
                   type="button"
                 >
                   <div
-                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 drslLZ"
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 hdAptU"
                   >
                     11
                   </div>
@@ -20565,7 +20764,7 @@ exports[`Calendar select dates 2`] = `
                   type="button"
                 >
                   <div
-                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 dEaKGc"
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 eggIHl"
                   >
                     12
                   </div>
@@ -20582,7 +20781,7 @@ exports[`Calendar select dates 2`] = `
                   type="button"
                 >
                   <div
-                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 drslLZ"
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 hdAptU"
                   >
                     13
                   </div>
@@ -20599,7 +20798,7 @@ exports[`Calendar select dates 2`] = `
                   type="button"
                 >
                   <div
-                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 drslLZ"
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 hdAptU"
                   >
                     14
                   </div>
@@ -20616,7 +20815,7 @@ exports[`Calendar select dates 2`] = `
                   type="button"
                 >
                   <div
-                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 drslLZ"
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 hdAptU"
                   >
                     15
                   </div>
@@ -20633,7 +20832,7 @@ exports[`Calendar select dates 2`] = `
                   type="button"
                 >
                   <div
-                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 drslLZ"
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 hdAptU"
                   >
                     16
                   </div>
@@ -20650,7 +20849,7 @@ exports[`Calendar select dates 2`] = `
                   type="button"
                 >
                   <div
-                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 drslLZ"
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 hdAptU"
                   >
                     17
                   </div>
@@ -20667,7 +20866,7 @@ exports[`Calendar select dates 2`] = `
                   type="button"
                 >
                   <div
-                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 drslLZ"
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 hdAptU"
                   >
                     18
                   </div>
@@ -20689,7 +20888,7 @@ exports[`Calendar select dates 2`] = `
                   type="button"
                 >
                   <div
-                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 drslLZ"
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 hdAptU"
                   >
                     19
                   </div>
@@ -20706,7 +20905,7 @@ exports[`Calendar select dates 2`] = `
                   type="button"
                 >
                   <div
-                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 drslLZ"
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 hdAptU"
                   >
                     20
                   </div>
@@ -20723,7 +20922,7 @@ exports[`Calendar select dates 2`] = `
                   type="button"
                 >
                   <div
-                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 drslLZ"
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 hdAptU"
                   >
                     21
                   </div>
@@ -20740,7 +20939,7 @@ exports[`Calendar select dates 2`] = `
                   type="button"
                 >
                   <div
-                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 drslLZ"
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 hdAptU"
                   >
                     22
                   </div>
@@ -20757,7 +20956,7 @@ exports[`Calendar select dates 2`] = `
                   type="button"
                 >
                   <div
-                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 drslLZ"
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 hdAptU"
                   >
                     23
                   </div>
@@ -20774,7 +20973,7 @@ exports[`Calendar select dates 2`] = `
                   type="button"
                 >
                   <div
-                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 drslLZ"
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 hdAptU"
                   >
                     24
                   </div>
@@ -20791,7 +20990,7 @@ exports[`Calendar select dates 2`] = `
                   type="button"
                 >
                   <div
-                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 drslLZ"
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 hdAptU"
                   >
                     25
                   </div>
@@ -20813,7 +21012,7 @@ exports[`Calendar select dates 2`] = `
                   type="button"
                 >
                   <div
-                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 drslLZ"
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 hdAptU"
                   >
                     26
                   </div>
@@ -20830,7 +21029,7 @@ exports[`Calendar select dates 2`] = `
                   type="button"
                 >
                   <div
-                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 drslLZ"
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 hdAptU"
                   >
                     27
                   </div>
@@ -20847,7 +21046,7 @@ exports[`Calendar select dates 2`] = `
                   type="button"
                 >
                   <div
-                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 drslLZ"
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 hdAptU"
                   >
                     28
                   </div>
@@ -20864,7 +21063,7 @@ exports[`Calendar select dates 2`] = `
                   type="button"
                 >
                   <div
-                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 drslLZ"
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 hdAptU"
                   >
                     29
                   </div>
@@ -20881,7 +21080,7 @@ exports[`Calendar select dates 2`] = `
                   type="button"
                 >
                   <div
-                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 drslLZ"
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 hdAptU"
                   >
                     30
                   </div>
@@ -20898,7 +21097,7 @@ exports[`Calendar select dates 2`] = `
                   type="button"
                 >
                   <div
-                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 drslLZ"
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 hdAptU"
                   >
                     31
                   </div>
@@ -20915,7 +21114,7 @@ exports[`Calendar select dates 2`] = `
                   type="button"
                 >
                   <div
-                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 biteN"
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 hhOBws"
                   >
                     1
                   </div>
@@ -20937,7 +21136,7 @@ exports[`Calendar select dates 2`] = `
                   type="button"
                 >
                   <div
-                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 biteN"
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 hhOBws"
                   >
                     2
                   </div>
@@ -20954,7 +21153,7 @@ exports[`Calendar select dates 2`] = `
                   type="button"
                 >
                   <div
-                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 biteN"
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 hhOBws"
                   >
                     3
                   </div>
@@ -20971,7 +21170,7 @@ exports[`Calendar select dates 2`] = `
                   type="button"
                 >
                   <div
-                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 biteN"
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 hhOBws"
                   >
                     4
                   </div>
@@ -20988,7 +21187,7 @@ exports[`Calendar select dates 2`] = `
                   type="button"
                 >
                   <div
-                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 biteN"
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 hhOBws"
                   >
                     5
                   </div>
@@ -21005,7 +21204,7 @@ exports[`Calendar select dates 2`] = `
                   type="button"
                 >
                   <div
-                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 biteN"
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 hhOBws"
                   >
                     6
                   </div>
@@ -21022,7 +21221,7 @@ exports[`Calendar select dates 2`] = `
                   type="button"
                 >
                   <div
-                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 biteN"
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 hhOBws"
                   >
                     7
                   </div>
@@ -21039,7 +21238,7 @@ exports[`Calendar select dates 2`] = `
                   type="button"
                 >
                   <div
-                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 biteN"
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 hhOBws"
                   >
                     8
                   </div>
@@ -21412,6 +21611,13 @@ exports[`Calendar should render day and range rounding and states 1`] = `
   }
 }
 
+@media only screen and (max-width: 384px) {
+  .c10 {
+    height: auto;
+    aspect-ratio: 7/6;
+  }
+}
+
 @media only screen and (max-width: 768px) {
   .c13 {
     border-radius: 0px;
@@ -21464,6 +21670,8 @@ exports[`Calendar should render day and range rounding and states 1`] = `
   .c16 {
     width: 100%;
     max-width: 54.857142857142854px;
+    height: auto;
+    aspect-ratio: 1;
   }
 }
 
@@ -21471,6 +21679,8 @@ exports[`Calendar should render day and range rounding and states 1`] = `
   .c17 {
     width: 100%;
     max-width: 54.857142857142854px;
+    height: auto;
+    aspect-ratio: 1;
   }
 }
 
@@ -21478,6 +21688,8 @@ exports[`Calendar should render day and range rounding and states 1`] = `
   .c19 {
     width: 100%;
     max-width: 54.857142857142854px;
+    height: auto;
+    aspect-ratio: 1;
   }
 }
 
@@ -21485,6 +21697,8 @@ exports[`Calendar should render day and range rounding and states 1`] = `
   .c21 {
     width: 100%;
     max-width: 54.857142857142854px;
+    height: auto;
+    aspect-ratio: 1;
   }
 }
 
@@ -22623,6 +22837,13 @@ exports[`Calendar showAdjacentDays 1`] = `
 }
 
 @media only screen and (max-width: 384px) {
+  .c10 {
+    height: auto;
+    aspect-ratio: 7/6;
+  }
+}
+
+@media only screen and (max-width: 384px) {
   .c13 {
     width: 14.3%;
   }
@@ -22638,6 +22859,8 @@ exports[`Calendar showAdjacentDays 1`] = `
   .c16 {
     width: 100%;
     max-width: 54.857142857142854px;
+    height: auto;
+    aspect-ratio: 1;
   }
 }
 
@@ -22645,6 +22868,8 @@ exports[`Calendar showAdjacentDays 1`] = `
   .c17 {
     width: 100%;
     max-width: 54.857142857142854px;
+    height: auto;
+    aspect-ratio: 1;
   }
 }
 
@@ -22652,6 +22877,8 @@ exports[`Calendar showAdjacentDays 1`] = `
   .c18 {
     width: 100%;
     max-width: 54.857142857142854px;
+    height: auto;
+    aspect-ratio: 1;
   }
 }
 
@@ -25473,6 +25700,27 @@ exports[`Calendar size 1`] = `
 }
 
 @media only screen and (max-width: 192px) {
+  .c10 {
+    height: auto;
+    aspect-ratio: 7/6;
+  }
+}
+
+@media only screen and (max-width: 384px) {
+  .c22 {
+    height: auto;
+    aspect-ratio: 7/6;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c31 {
+    height: auto;
+    aspect-ratio: 7/6;
+  }
+}
+
+@media only screen and (max-width: 192px) {
   .c13 {
     width: 14.3%;
   }
@@ -25500,6 +25748,8 @@ exports[`Calendar size 1`] = `
   .c16 {
     width: 100%;
     max-width: 27.428571428571427px;
+    height: auto;
+    aspect-ratio: 1;
   }
 }
 
@@ -25507,6 +25757,8 @@ exports[`Calendar size 1`] = `
   .c17 {
     width: 100%;
     max-width: 27.428571428571427px;
+    height: auto;
+    aspect-ratio: 1;
   }
 }
 
@@ -25514,6 +25766,8 @@ exports[`Calendar size 1`] = `
   .c18 {
     width: 100%;
     max-width: 27.428571428571427px;
+    height: auto;
+    aspect-ratio: 1;
   }
 }
 
@@ -25521,6 +25775,8 @@ exports[`Calendar size 1`] = `
   .c24 {
     width: 100%;
     max-width: 54.857142857142854px;
+    height: auto;
+    aspect-ratio: 1;
   }
 }
 
@@ -25528,6 +25784,8 @@ exports[`Calendar size 1`] = `
   .c25 {
     width: 100%;
     max-width: 54.857142857142854px;
+    height: auto;
+    aspect-ratio: 1;
   }
 }
 
@@ -25535,6 +25793,8 @@ exports[`Calendar size 1`] = `
   .c26 {
     width: 100%;
     max-width: 54.857142857142854px;
+    height: auto;
+    aspect-ratio: 1;
   }
 }
 
@@ -25542,6 +25802,8 @@ exports[`Calendar size 1`] = `
   .c33 {
     width: 100%;
     max-width: 109.71428571428571px;
+    height: auto;
+    aspect-ratio: 1;
   }
 }
 
@@ -25549,6 +25811,8 @@ exports[`Calendar size 1`] = `
   .c34 {
     width: 100%;
     max-width: 109.71428571428571px;
+    height: auto;
+    aspect-ratio: 1;
   }
 }
 
@@ -25556,6 +25820,8 @@ exports[`Calendar size 1`] = `
   .c35 {
     width: 100%;
     max-width: 109.71428571428571px;
+    height: auto;
+    aspect-ratio: 1;
   }
 }
 

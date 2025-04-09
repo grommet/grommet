@@ -1010,6 +1010,7 @@ const Calendar = forwardRef(
                 ref={daysRef}
                 sizeProp={size}
                 fillContainer={fill}
+                responsive={responsive}
                 focus={focus}
                 onFocus={() => {
                   setFocus(true);

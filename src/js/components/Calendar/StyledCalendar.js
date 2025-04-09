@@ -56,9 +56,23 @@ const weeksContainerSizeStyle = (props) => {
 
   `;
 };
+
+const weeksContainerResponsiveSizeStyle = (props) => {
+  const breakpoint = props.theme.global.size[props.sizeProp];
+  return breakpointStyle(
+    { value: breakpoint },
+    `
+    height: auto;
+    aspect-ratio: 7/6;
+    `,
+    true,
+  );
+};
+
 const StyledWeeksContainer = styled.div.withConfig(styledComponentsConfig)`
   overflow: hidden;
   ${(props) => weeksContainerSizeStyle(props)}
+  ${(props) => props.responsive && weeksContainerResponsiveSizeStyle(props)}
   ${(props) => props.focus && !props.plain && focusStyle()};
 `;
 
@@ -190,6 +204,8 @@ const responsiveDaySizeStyle = (props) => {
     `
       width: 100%;
       max-width: ${data.daySize};
+      height: auto;
+      aspect-ratio: 1;
     `,
     true,
   );
