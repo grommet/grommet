@@ -125,7 +125,6 @@ const Tip = forwardRef(
     const componentRef = useForwardedRef(tipRef);
 
     const combinedMargin = calculateCombinedMargin(theme, dropProps);
-
     // Three use case for children
     // 1. Tip has a single child + it is a React Element => Great!
     // 2. Tip has a single child +  not React Element =>
