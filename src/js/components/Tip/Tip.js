@@ -44,14 +44,10 @@ import { useThemeValue } from '../../utils/useThemeValue';
 // theme.tip.content.margin should apply to remaining theme-defined sides.
 //
 // Scenario 5:
-// 1. dropProps.margin is a string
-// 2. theme.global.drop.intelligentMargin = true
-// 3. theme.global.drop.margin is a string
-// 4. theme.tip.content.margin is an string
-// Output: Combined margin of dropProps.margin and theme.tip.content.margin
-// should only apply between the target and the tip, theme.tip.content.margin
-// should apply to remaining sides.
-// ...
+// 1. dropProps.margin is passed
+// Output: Regardless of what is in the theme the dropProps.margin
+// should be used and applied on all sides if string otherwise only
+// on the sides defined by user.
 
 /**
  * Calculates the combined margin for the tip based on the theme and dropProps.
@@ -60,8 +56,10 @@ import { useThemeValue } from '../../utils/useThemeValue';
  * object with top, bottom, left, and right properties.
  */
 const calculateCombinedMargin = (theme, dropProps) => {
-  const getMarginValue = (val) =>
-    parseInt(theme.global.edgeSize?.[val], 10) || parseInt(val, 10) || 0;
+  const getMarginValue = (marginValue) =>
+    parseInt(theme.global.edgeSize?.[marginValue], 10) ||
+    parseInt(marginValue, 10) ||
+    0;
 
   const normalizeMargin = (margin) => {
     if (typeof margin === 'string') {
