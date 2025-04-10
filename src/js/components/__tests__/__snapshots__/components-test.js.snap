@@ -1037,6 +1037,7 @@ exports[`Components loads 1`] = `
   "Tag": {
     "$$typeof": Symbol(react.forward_ref),
     "prototype": {
+      "messages": [Function],
       "name": [Function],
       "onClick": [Function],
       "onRemove": [Function],

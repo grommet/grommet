@@ -161,6 +161,12 @@
   "tabs": {
     "tabContents": "Tab Contents"
   },
+  "tag": {
+    "removeLabel": {
+      "nameAndValue": "Remove {name}: {value}",
+      "valueOnly": "Remove {value}"
+    }
+  },
   "textInput": {
     "enterSelect": "(Press Enter to Select)",
     "suggestionsCount": "suggestions available",

@@ -1,4 +1,4 @@
-import React, { forwardRef } from 'react';
+import React, { useContext, forwardRef } from 'react';
 import { FormClose } from 'grommet-icons/icons/FormClose';
 
 import { TagPropTypes } from './propTypes';
@@ -7,11 +7,26 @@ import { Text } from '../Text';
 
 import { StyledRemoveButton, StyledTagButton } from './StyledTag';
 import { useThemeValue } from '../../utils/useThemeValue';
+import { MessageContext } from '../../contexts/MessageContext';
 
 const Tag = forwardRef(
-  ({ name, value, size = 'medium', onRemove, onClick, ...rest }, ref) => {
+  (
+    { name, value, size = 'medium', onRemove, onClick, messages, ...rest },
+    ref,
+  ) => {
+    const { format } = useContext(MessageContext);
     const { theme, passThemeFlag } = useThemeValue();
     const RemoveIcon = theme.tag.icons?.remove || FormClose;
+
+    const removeLabelId = name
+      ? 'tag.removeLabel.nameAndValue'
+      : 'tag.removeLabel.valueOnly';
+
+    const removeLabel = format({
+      id: removeLabelId,
+      messages,
+      values: { name, value },
+    });
 
     const containerProps = {
       ref,
@@ -67,6 +82,7 @@ const Tag = forwardRef(
           <StyledRemoveButton
             onClick={onRemove}
             {...removeProps}
+            aria-label={removeLabel}
             icon={<RemoveIcon {...theme.tag.size?.[size]?.icon} />}
             round={theme.tag.size?.[size]?.round || theme.tag.round}
             {...theme.tag.remove}

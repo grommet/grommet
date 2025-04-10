@@ -169,4 +169,70 @@ describe('Tag', () => {
     );
     expect(asFragment()).toMatchSnapshot();
   });
+
+  test('renders aria-label from messages (name and value)', () => {
+    const messages = {
+      removeLabel: {
+        nameAndValue: 'Remove {name}: {value}',
+      },
+    };
+
+    render(
+      <Grommet>
+        <Tag
+          name="Category"
+          value="Fruits"
+          onRemove={() => {}}
+          messages={messages}
+        />
+      </Grommet>,
+    );
+
+    expect(screen.getByRole('button')).toHaveAttribute(
+      'aria-label',
+      'Remove Category: Fruits',
+    );
+  });
+
+  test('renders aria-label from grommet messages (name and value)', () => {
+    render(
+      <Grommet
+        messages={{
+          messages: {
+            tag: {
+              removeLabel: {
+                nameAndValue: 'Remove {name}: {value}',
+              },
+            },
+          },
+        }}
+      >
+        <Tag name="Category" value="Fruits" onRemove={() => {}} />
+      </Grommet>,
+    );
+
+    expect(screen.getByRole('button')).toHaveAttribute(
+      'aria-label',
+      'Remove Category: Fruits',
+    );
+  });
+
+  test('renders aria-label from messages (value only)', () => {
+    const messages = {
+      removeLabel: {
+        valueOnly: 'Remove {value}',
+      },
+    };
+
+    render(
+      <Grommet>
+        <Tag value="Fruits" onRemove={() => {}} messages={messages} />
+      </Grommet>,
+    );
+
+    expect(screen.getByRole('button')).toHaveAttribute(
+      'aria-label',
+      'Remove Fruits',
+    );
+  });
 });
