@@ -147,6 +147,7 @@ exports[`Components loads 1`] = `
       "onSelect": [Function],
       "range": [Function],
       "reference": [Function],
+      "responsive": [Function],
       "showAdjacentDays": [Function],
       "size": [Function],
     },

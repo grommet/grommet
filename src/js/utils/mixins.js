@@ -30,17 +30,21 @@ export const fontSize = (size, lineHeight) => css`
 `;
 
 export const breakpointStyle = (breakpoint, content, responsive) => {
+  const px =
+    typeof breakpoint?.value === 'string' && breakpoint.value.endsWith('px')
+      ? ''
+      : 'px';
   const st =
     responsive === 'container'
       ? css`
           @container ${breakpoint.value &&
-          `(max-width: ${breakpoint.value}px)`} {
+          `(max-width: ${breakpoint.value}${px})`} {
             ${content};
           }
         `
       : css`
           @media only screen ${breakpoint.value &&
-            `and (max-width: ${breakpoint.value}px)`} {
+            `and (max-width: ${breakpoint.value}${px})`} {
             ${content};
           }
         `;
