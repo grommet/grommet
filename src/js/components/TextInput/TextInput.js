@@ -421,6 +421,7 @@ const TextInput = forwardRef(
                             ? () => setActiveSuggestionIndex(index)
                             : undefined
                         }
+                        keyboard={!mouseMovedSinceLastKey}
                       >
                         {child}
                       </Button>
