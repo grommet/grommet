@@ -18,7 +18,9 @@ import { useThemeValue } from '../../utils/useThemeValue';
 // 2. theme.global.drop.intelligentMargin = true
 // 3. theme.global.drop.margin is a string
 // 5. theme.tip.content.margin is a string
-// Output: Combined margin should only apply between the target and the tip,
+// Output: Combined margin of theme.global.drop.margin
+// and theme.tip.content.margin
+// should only apply between the target and the tip,
 // theme.tip.content.margin should apply to remaining sides.
 //
 // Scenario 2:
