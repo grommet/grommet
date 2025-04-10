@@ -246,4 +246,154 @@ describe('Tip', () => {
       expect(screen.queryByText('tooltip text')).not.toBeInTheDocument();
     });
   });
+
+  test(`Scenario 1: Combined margin should apply between the target and the tip,
+       theme.tip.content.margin should apply to remaining sides`, async () => {
+    render(
+      <Grommet
+        theme={{
+          global: {
+            drop: {
+              intelligentMargin: true,
+              margin: '10px',
+            },
+          },
+          tip: {
+            content: {
+              margin: '5px',
+            },
+          },
+        }}
+      >
+        <Tip defaultVisible content="tooltip text">
+          <button>Hover me</button>
+        </Tip>
+      </Grommet>,
+    );
+
+    const tooltip = screen.getByText('tooltip text');
+    expect(screen.queryByText('tooltip text')).toBeInTheDocument();
+    expect(tooltip).toHaveStyle('margin: 15px 5px 5px 5px');
+  });
+
+  test(`Scenario 2: Combined margin should apply to all sides
+     when intelligentMargin is false`, async () => {
+    render(
+      <Grommet
+        theme={{
+          global: {
+            drop: {
+              intelligentMargin: false,
+              margin: '10px',
+            },
+          },
+          tip: {
+            content: {
+              margin: '5px',
+            },
+          },
+        }}
+      >
+        <Tip defaultVisible content="tooltip text">
+          <button>Hover me</button>
+        </Tip>
+      </Grommet>,
+    );
+
+    const tooltip = screen.getByText('tooltip text');
+    expect(screen.queryByText('tooltip text')).toBeInTheDocument();
+    expect(tooltip).toHaveStyle('margin: 15px 15px 15px 15px');
+  });
+
+  test(`Scenario 3: Combined margin should apply to all theme-defined sides
+     when theme.tip.content.margin is an object`, async () => {
+    render(
+      <Grommet
+        theme={{
+          global: {
+            drop: {
+              intelligentMargin: false,
+              margin: 'small',
+            },
+          },
+          tip: {
+            content: {
+              margin: { top: '5px', right: '7px', bottom: '5px', left: '7px' },
+            },
+          },
+        }}
+      >
+        <Tip defaultVisible content="tooltip text">
+          <button>Hover me</button>
+        </Tip>
+      </Grommet>,
+    );
+
+    const tooltip = screen.getByText('tooltip text');
+    expect(screen.queryByText('tooltip text')).toBeInTheDocument();
+    expect(tooltip).toHaveStyle('margin: 17px 19px 17px 19px');
+  });
+
+  test(`Scenario 4: Combined margin should only apply between the target
+     and the tip, theme.tip.content.margin should apply to
+     remaining theme-defined sides`, async () => {
+    render(
+      <Grommet
+        theme={{
+          global: {
+            drop: {
+              intelligentMargin: true,
+              margin: 'small',
+            },
+          },
+          tip: {
+            content: {
+              margin: {
+                top: 'small',
+                right: 'xsmall',
+                bottom: 'small',
+                left: 'xsmall',
+              },
+            },
+          },
+        }}
+      >
+        <Tip defaultVisible content="tooltip text">
+          <button>Hover me</button>
+        </Tip>
+      </Grommet>,
+    );
+
+    const tooltip = screen.getByText('tooltip text');
+    expect(screen.queryByText('tooltip text')).toBeInTheDocument();
+    expect(tooltip).toHaveStyle('margin: 24px 6px 12px 6px');
+  });
+  test(`Scenario 4: Combined margin should only apply between the target
+    and the tip, theme.tip.content.margin should apply to
+    remaining theme-defined sides`, async () => {
+    render(
+      <Grommet
+        theme={{
+          global: {
+            drop: {
+              intelligentMargin: true,
+              margin: 'small',
+            },
+          },
+        }}
+      >
+        <Tip
+          dropProps={{ margin: 'large' }}
+          defaultVisible
+          content="tooltip text"
+        >
+          <button>Hover me</button>
+        </Tip>
+      </Grommet>,
+    );
+
+    const tooltip = screen.getByText('tooltip text');
+    expect(screen.queryByText('tooltip text')).toBeInTheDocument();
+    expect(tooltip).toHaveStyle('margin: 54px 54px 54px 54px');
+  });
 });
