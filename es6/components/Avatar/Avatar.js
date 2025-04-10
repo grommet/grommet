@@ -1,4 +1,4 @@
-var _excluded = ["a11yTitle", "aria-label", "align", "children", "height", "justify", "round", "size", "src", "width"];
+var _excluded = ["a11yTitle", "aria-label", "align", "children", "height", "imageProps", "justify", "round", "size", "src", "width"];
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (-1 !== e.indexOf(n)) continue; t[n] = r[n]; } return t; }
 import React, { useCallback, useMemo } from 'react';
@@ -13,6 +13,7 @@ var Avatar = function Avatar(_ref) {
     align = _ref$align === void 0 ? 'center' : _ref$align,
     children = _ref.children,
     height = _ref.height,
+    imageProps = _ref.imageProps,
     _ref$justify = _ref.justify,
     justify = _ref$justify === void 0 ? 'center' : _ref$justify,
     _ref$round = _ref.round,
@@ -50,11 +51,11 @@ var Avatar = function Avatar(_ref) {
       size: avatarTextSize
     }, passThemeFlag), children);
   } else if (typeof src === 'string') {
-    content = /*#__PURE__*/React.createElement(Image, {
+    content = /*#__PURE__*/React.createElement(Image, _extends({
       role: "presentation",
       fit: "contain",
       src: src
-    });
+    }, imageProps));
   }
   if (typeof children === 'string' || typeof src === 'string') {
     return /*#__PURE__*/React.createElement(StyledAvatar, _extends({
