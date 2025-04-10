@@ -18,6 +18,7 @@ if (process.env.NODE_ENV !== 'production') {
       PropTypes.string,
     ]),
     src: PropTypes.string,
+    imageProps: PropTypes.object,
   };
 }
 export const AvatarPropTypes = PropType;

@@ -368,9 +368,7 @@ describe('Tip', () => {
     expect(screen.queryByText('tooltip text')).toBeInTheDocument();
     expect(tooltip).toHaveStyle('margin: 24px 6px 12px 6px');
   });
-  test(`Scenario 4: Combined margin should only apply between the target
-    and the tip, theme.tip.content.margin should apply to
-    remaining theme-defined sides`, async () => {
+  test('Scenario 5: dropProps.margin is passed', async () => {
     render(
       <Grommet
         theme={{
