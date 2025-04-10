@@ -54,7 +54,7 @@ const marginStyle = (theme, align, data, responsive, marginProp) => {
   }
   return edgeStyle(
     'margin',
-    adjustedMargin,
+    marginProp || adjustedMargin,
     responsive,
     theme.global.edgeSize.responsiveBreakpoint,
     theme,
@@ -88,7 +88,7 @@ const StyledDrop = styled(Box)`
     marginStyle(
       props.theme,
       props.alignProp,
-      props.theme.global.drop.margin,
+      props.margin || props.theme.global.drop.margin,
       props.responsive,
       props.margin,
     )}

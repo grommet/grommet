@@ -13,6 +13,108 @@ import { useForwardedRef, useKeyboard } from '../../utils';
 import { TipPropTypes } from './propTypes';
 import { useThemeValue } from '../../utils/useThemeValue';
 
+// Scenario 1:
+// 1. No dropProps.margin
+// 2. theme.global.drop.intelligentMargin = true
+// 3. theme.global.drop.margin is a string
+// 5. theme.tip.content.margin is a string
+// Output: Combined margin of theme.global.drop.margin
+// and theme.tip.content.margin
+// should only apply between the target and the tip,
+// theme.tip.content.margin should apply to remaining sides.
+//
+// Scenario 2:
+// 1. No dropProps.margin
+// 2. theme.global.drop.intelligentMargin = false
+// 3. theme.global.drop.margin is a string
+// 4. theme.tip.content.margin is an string
+// Output: Combined margin should apply to all sides.
+//
+// Scenario 3:
+// 1. No dropProps.margin
+// 2. theme.global.drop.intelligentMargin = false
+// 3. theme.global.drop.margin is a string
+// 4. theme.tip.content.margin is an object
+// Output: Combined margin should apply to all theme-defined sides.
+//
+// Scenario 4:
+// 1. No dropProps.margin
+// 2. theme.global.drop.intelligentMargin = true
+// 3. theme.global.drop.margin is a string
+// 4. theme.tip.content.margin is an object
+// Output: Combined margin should only apply between the target and the tip,
+// theme.tip.content.margin should apply to remaining theme-defined sides.
+//
+// Scenario 5:
+// 1. dropProps.margin is passed
+// Output: Regardless of what is in the theme the dropProps.margin
+// should be used and applied on all sides if string otherwise only
+// on the sides defined by user.
+
+/**
+ * Calculates the combined margin for the tip based on the theme and dropProps.
+ * It normalizes the margin values and applies intelligent margin logic
+ * based on the alignment of the drop. The final margin is returned as an
+ * object with top, bottom, left, and right properties.
+ */
+const calculateCombinedMargin = (theme, dropProps) => {
+  const getMarginValue = (marginValue) =>
+    parseInt(theme.global.edgeSize?.[marginValue], 10) ||
+    parseInt(marginValue, 10) ||
+    0;
+
+  const normalizeMargin = (margin) => {
+    if (typeof margin === 'string') {
+      const value = getMarginValue(margin);
+      return { top: value, bottom: value, left: value, right: value };
+    }
+    return {
+      top: getMarginValue(margin?.top),
+      bottom: getMarginValue(margin?.bottom),
+      left: getMarginValue(margin?.left),
+      right: getMarginValue(margin?.right),
+    };
+  };
+
+  const themeDropMargin = normalizeMargin(theme.global.drop.margin);
+  const themeTipMargin = normalizeMargin(theme.tip.content.margin);
+  const dropMarginProp = dropProps?.margin
+    ? normalizeMargin(dropProps.margin)
+    : undefined;
+
+  const align = dropProps?.align ||
+    theme.tip.drop.align || { top: 'top', left: 'left' };
+
+  const finalMargin = { top: 0, bottom: 0, left: 0, right: 0 };
+
+  if (dropMarginProp) {
+    // If user provided margin explicitly, respect that and use it on all sides
+    Object.assign(finalMargin, dropMarginProp);
+  } else if (theme.global.drop.intelligentMargin) {
+    // Apply intelligent margin logic based on alignment
+    if (align.top === 'bottom') finalMargin.top = themeDropMargin.top;
+    if (align.bottom === 'top') finalMargin.bottom = themeDropMargin.bottom;
+    if (align.left === 'right') finalMargin.left = themeDropMargin.left;
+    if (align.right === 'left') finalMargin.right = themeDropMargin.right;
+  } else {
+    // Apply theme.global.drop.margin to all defined sides
+    Object.assign(finalMargin, themeDropMargin);
+  }
+
+  // Always add themeTipMargin at the end
+  finalMargin.top += parseInt(themeTipMargin.top, 10);
+  finalMargin.bottom += parseInt(themeTipMargin.bottom, 10);
+  finalMargin.left += parseInt(themeTipMargin.left, 10);
+  finalMargin.right += parseInt(themeTipMargin.right, 10);
+
+  // Convert to pixel values
+  Object.keys(finalMargin).forEach((key) => {
+    finalMargin[key] = `${finalMargin[key]}px`;
+  });
+
+  return finalMargin;
+};
+
 const Tip = forwardRef(
   ({ children, content, defaultVisible = false, dropProps, plain }, tipRef) => {
     const { theme } = useThemeValue();
@@ -22,6 +124,7 @@ const Tip = forwardRef(
 
     const componentRef = useForwardedRef(tipRef);
 
+    const combinedMargin = calculateCombinedMargin(theme, dropProps);
     // Three use case for children
     // 1. Tip has a single child + it is a React Element => Great!
     // 2. Tip has a single child +  not React Element =>
@@ -90,8 +193,17 @@ const Tip = forwardRef(
             {...dropProps}
             onMouseEnter={() => setTooltipOver(true)}
             onMouseLeave={() => setTooltipOver(false)}
+            // to allow cursor to move between drop target and tip,
+            // place margin on internal box
+            margin="none"
           >
-            {plain ? content : <Box {...theme.tip.content}>{content}</Box>}
+            {plain ? (
+              content
+            ) : (
+              <Box {...theme.tip.content} margin={combinedMargin}>
+                {content}
+              </Box>
+            )}
           </Drop>
         </Keyboard>
       ),

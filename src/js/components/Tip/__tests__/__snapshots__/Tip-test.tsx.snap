@@ -18,7 +18,10 @@ exports[`Tip dropProps should pass props to Drop 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  margin: 6px;
+  margin-top: 6px;
+  margin-bottom: 6px;
+  margin-left: 6px;
+  margin-right: 6px;
   background-color: #33333310;
   color: #444444;
   min-width: 0;
@@ -60,7 +63,25 @@ exports[`Tip dropProps should pass props to Drop 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c2 {
-    margin: 3px;
+    margin-top: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    margin-bottom: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    margin-left: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    margin-right: 6px;
   }
 }
 
@@ -224,7 +245,10 @@ exports[`Tip mouseOver and mouseOut events on the Tip's child 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  margin: 6px;
+  margin-top: 6px;
+  margin-bottom: 6px;
+  margin-left: 6px;
+  margin-right: 6px;
   background-color: #33333310;
   color: #444444;
   min-width: 0;
@@ -275,7 +299,25 @@ exports[`Tip mouseOver and mouseOut events on the Tip's child 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c2 {
-    margin: 3px;
+    margin-top: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    margin-bottom: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    margin-left: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    margin-right: 6px;
   }
 }
 
@@ -413,7 +455,10 @@ exports[`Tip should be visible by default 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  margin: 6px;
+  margin-top: 6px;
+  margin-bottom: 6px;
+  margin-left: 6px;
+  margin-right: 6px;
   background-color: #33333310;
   color: #444444;
   min-width: 0;
@@ -455,7 +500,25 @@ exports[`Tip should be visible by default 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c2 {
-    margin: 3px;
+    margin-top: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    margin-bottom: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    margin-left: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    margin-right: 6px;
   }
 }
 
@@ -567,7 +630,7 @@ exports[`Tip themed 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  margin: 21px;
+  margin: 0px;
   background-color: #7D4CDB;
   color: #f8f8f8;
   min-width: 0;
@@ -581,7 +644,10 @@ exports[`Tip themed 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  margin: 6px;
+  margin-top: 6px;
+  margin-bottom: 6px;
+  margin-left: 6px;
+  margin-right: 6px;
   background-color: #FFFFFF18;
   color: #f8f8f8;
   min-width: 0;
@@ -609,7 +675,7 @@ exports[`Tip themed 1`] = `
   outline: none;
   background-color: #7D4CDB;
   color: #f8f8f8;
-  margin: 21px;
+  margin: 0px;
   opacity: 0;
   transform-origin: top left;
   animation: kPQHBD 0.1s forwards;
@@ -618,13 +684,31 @@ exports[`Tip themed 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c0 {
-    margin: 21px;
+    margin: 0px;
   }
 }
 
 @media only screen and (max-width: 768px) {
   .c2 {
-    margin: 3px;
+    margin-top: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    margin-bottom: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    margin-left: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    margin-right: 6px;
   }
 }
 
