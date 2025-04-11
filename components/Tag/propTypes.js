@@ -11,6 +11,12 @@ if (process.env.NODE_ENV !== 'production') {
     value: _propTypes["default"].string.isRequired,
     onClick: _propTypes["default"].func,
     onRemove: _propTypes["default"].func,
+    messages: _propTypes["default"].shape({
+      removeLabel: _propTypes["default"].shape({
+        nameAndValue: _propTypes["default"].string,
+        valueOnly: _propTypes["default"].string
+      })
+    }),
     size: _propTypes["default"].oneOfType([_propTypes["default"].oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge']), _propTypes["default"].string])
   };
 }

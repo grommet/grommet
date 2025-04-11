@@ -179,6 +179,12 @@ if (process.env.NODE_ENV !== 'production') {
         tabs: _propTypes["default"].shape({
           tabContents: _propTypes["default"].string
         }),
+        tag: _propTypes["default"].shape({
+          removeLabel: _propTypes["default"].shape({
+            nameAndValue: _propTypes["default"].string,
+            valueOnly: _propTypes["default"].string
+          })
+        }),
         textInput: _propTypes["default"].shape({
           enterSelect: _propTypes["default"].string,
           suggestionsCount: _propTypes["default"].string,

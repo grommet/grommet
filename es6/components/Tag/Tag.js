@@ -1,13 +1,14 @@
-var _excluded = ["name", "value", "size", "onRemove", "onClick"];
+var _excluded = ["name", "value", "size", "onRemove", "onClick", "messages"];
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (-1 !== e.indexOf(n)) continue; t[n] = r[n]; } return t; }
-import React, { forwardRef } from 'react';
+import React, { useContext, forwardRef } from 'react';
 import { FormClose } from 'grommet-icons/icons/FormClose';
 import { TagPropTypes } from './propTypes';
 import { Box } from '../Box';
 import { Text } from '../Text';
 import { StyledRemoveButton, StyledTagButton } from './StyledTag';
 import { useThemeValue } from '../../utils/useThemeValue';
+import { MessageContext } from '../../contexts/MessageContext';
 var Tag = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var _theme$tag$icons, _theme$tag$size, _theme$tag$size2, _theme$tag$size3, _theme$tag$size4, _theme$tag$size5;
   var name = _ref.name,
@@ -16,11 +17,23 @@ var Tag = /*#__PURE__*/forwardRef(function (_ref, ref) {
     size = _ref$size === void 0 ? 'medium' : _ref$size,
     onRemove = _ref.onRemove,
     onClick = _ref.onClick,
+    messages = _ref.messages,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
+  var _useContext = useContext(MessageContext),
+    format = _useContext.format;
   var _useThemeValue = useThemeValue(),
     theme = _useThemeValue.theme,
     passThemeFlag = _useThemeValue.passThemeFlag;
   var RemoveIcon = ((_theme$tag$icons = theme.tag.icons) == null ? void 0 : _theme$tag$icons.remove) || FormClose;
+  var removeLabelId = name ? 'tag.removeLabel.nameAndValue' : 'tag.removeLabel.valueOnly';
+  var removeLabel = format({
+    id: removeLabelId,
+    messages: messages,
+    values: {
+      name: name,
+      value: value
+    }
+  });
   var containerProps = _extends({
     ref: ref,
     align: 'center',
@@ -59,6 +72,7 @@ var Tag = /*#__PURE__*/forwardRef(function (_ref, ref) {
   }, containerProps), contents, onRemove && /*#__PURE__*/React.createElement(StyledRemoveButton, _extends({
     onClick: onRemove
   }, removeProps, {
+    "aria-label": removeLabel,
     icon: /*#__PURE__*/React.createElement(RemoveIcon, (_theme$tag$size3 = theme.tag.size) == null || (_theme$tag$size3 = _theme$tag$size3[size]) == null ? void 0 : _theme$tag$size3.icon),
     round: ((_theme$tag$size4 = theme.tag.size) == null || (_theme$tag$size4 = _theme$tag$size4[size]) == null ? void 0 : _theme$tag$size4.round) || theme.tag.round
   }, theme.tag.remove, (_theme$tag$size5 = theme.tag.size) == null || (_theme$tag$size5 = _theme$tag$size5[size]) == null ? void 0 : _theme$tag$size5.remove, passThemeFlag))) : /*#__PURE__*/React.createElement(StyledTagButton, _extends({

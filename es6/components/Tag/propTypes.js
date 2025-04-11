@@ -6,6 +6,12 @@ if (process.env.NODE_ENV !== 'production') {
     value: PropTypes.string.isRequired,
     onClick: PropTypes.func,
     onRemove: PropTypes.func,
+    messages: PropTypes.shape({
+      removeLabel: PropTypes.shape({
+        nameAndValue: PropTypes.string,
+        valueOnly: PropTypes.string
+      })
+    }),
     size: PropTypes.oneOfType([PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge']), PropTypes.string])
   };
 }
