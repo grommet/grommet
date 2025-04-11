@@ -251,7 +251,7 @@ exports[`CheckBox controlled 2`] = `
     class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 hJexaG"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 iKkpKs StyledCheckBox-sc-1dbk5ju-6 kMcDgp"
+      class="StyledBox-sc-13pk1d4-0 gCGMUC StyledCheckBox-sc-1dbk5ju-6 kMcDgp"
     >
       <input
         checked=""
@@ -259,7 +259,7 @@ exports[`CheckBox controlled 2`] = `
         type="checkbox"
       />
       <div
-        class="StyledBox-sc-13pk1d4-0 bHTahv StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 cypHTx"
+        class="StyledBox-sc-13pk1d4-0 SUcZR StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 cypHTx"
       >
         <svg
           class="StyledCheckBox__StyledCheckBoxIcon-sc-1dbk5ju-0 gMqahO"
