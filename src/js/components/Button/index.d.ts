@@ -43,7 +43,7 @@ export interface ButtonProps {
   busy?: boolean;
   gridArea?: GridAreaType;
   margin?: MarginType;
-  active?: boolean;
+  active?: boolean | 'keyboard';
   color?: ColorType;
   disabled?: boolean;
   fill?: FillType;

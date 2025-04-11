@@ -463,7 +463,11 @@ const MaskedInput = forwardRef(
                         onClick={onOption(option)}
                         onMouseOver={() => setActiveOptionIndex(index)}
                         onFocus={() => {}}
-                        active={index === activeOptionIndex}
+                        active={
+                          index === activeOptionIndex && !mouseMovedSinceLastKey
+                            ? 'keyboard'
+                            : index === activeOptionIndex
+                        }
                         plain={!child ? undefined : true}
                         align="start"
                         kind={!child ? 'option' : undefined}

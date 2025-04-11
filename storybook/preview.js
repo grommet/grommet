@@ -11,8 +11,8 @@ import { light } from 'hpe-design-tokens/grommet';
 const hpeNext = deepMerge(hpe, {
   button: {
     active: {
-      extend: ({ keyboard }) =>
-        keyboard
+      extend: ({ active }) =>
+        active === 'keyboard'
           ? `
       position: relative;
       &::before {
