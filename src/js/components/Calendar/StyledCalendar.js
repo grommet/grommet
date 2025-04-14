@@ -15,7 +15,6 @@ import { breakpointStyle } from '../../utils/mixins';
 
 const responsiveSizeStyle = (props) => {
   const breakpoint = props.theme.global.size[props.sizeProp];
-  // try width: 100%; max-width: width
   return breakpointStyle(
     { value: breakpoint },
     `
@@ -59,6 +58,7 @@ const weeksContainerSizeStyle = (props) => {
 
 const weeksContainerResponsiveSizeStyle = (props) => {
   const breakpoint = props.theme.global.size[props.sizeProp];
+  // set aspect-ratio to 7 days by 6 weeks
   return breakpointStyle(
     { value: breakpoint },
     `
@@ -198,7 +198,6 @@ const daySizeStyle = (props) => {
 const responsiveDaySizeStyle = (props) => {
   const breakpoint = props.theme.global.size[props.sizeProp];
   const data = props.theme.calendar[props.sizeProp];
-  // try width: 100%; max-width: data.daySize
   return breakpointStyle(
     { value: breakpoint },
     `
