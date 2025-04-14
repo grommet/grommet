@@ -16,10 +16,7 @@ if (process.env.NODE_ENV !== 'production') {
       PropTypes.object,
       PropTypes.node,
     ]),
-    active: PropTypes.oneOfType([
-      PropTypes.bool,
-      PropTypes.oneOf(['keyboard']),
-    ]),
+    active: PropTypes.bool,
     as: PropTypes.oneOfType([
       PropTypes.string,
       PropTypes.func,

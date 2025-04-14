@@ -406,11 +406,7 @@ const TextInput = forwardRef(
                         id={id ? `listbox-option-${index}__${id}` : undefined}
                         role="option"
                         aria-selected={selected ? 'true' : 'false'}
-                        active={
-                          active && !mouseMovedSinceLastKey
-                            ? 'keyboard'
-                            : active
-                        }
+                        active={active}
                         fill="horizontal"
                         plain={!child ? undefined : true}
                         align="start"
@@ -425,6 +421,7 @@ const TextInput = forwardRef(
                             ? () => setActiveSuggestionIndex(index)
                             : undefined
                         }
+                        keyboard={!mouseMovedSinceLastKey}
                       >
                         {child}
                       </Button>
