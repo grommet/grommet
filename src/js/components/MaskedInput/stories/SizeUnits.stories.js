@@ -10,6 +10,7 @@ export const SizeUnitsMaskedInput = () => {
     <Box fill align="center" justify="start" pad="large">
       <Box width="medium">
         <MaskedInput
+          id="size-units"
           mask={[
             {
               length: [1, 4],
