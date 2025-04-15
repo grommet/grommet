@@ -171,6 +171,12 @@ if (process.env.NODE_ENV !== 'production') {
         tabs: PropTypes.shape({
           tabContents: PropTypes.string,
         }),
+        tag: PropTypes.shape({
+          removeLabel: PropTypes.shape({
+            nameAndValue: PropTypes.string,
+            valueOnly: PropTypes.string,
+          }),
+        }),
         textInput: PropTypes.shape({
           enterSelect: PropTypes.string,
           suggestionsCount: PropTypes.string,
