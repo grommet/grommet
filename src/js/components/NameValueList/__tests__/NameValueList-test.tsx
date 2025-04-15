@@ -134,9 +134,7 @@ describe('NameValueList', () => {
   test(`should render correct valueProps width with max and min`, () => {
     const { asFragment } = render(
       <Grommet>
-        <NameValueList
-          valueProps={{ width: { min: 'small', max: 'medium' } }}
-        >
+        <NameValueList valueProps={{ width: { min: 'small', max: 'medium' } }}>
           {Object.entries(data).map(([name, value]) => (
             <NameValuePair key={name} name={name}>
               {value}
