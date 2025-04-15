@@ -17,7 +17,8 @@ export var fontSize = function fontSize(size, lineHeight) {
   });
 };
 export var breakpointStyle = function breakpointStyle(breakpoint, content, responsive) {
-  var st = responsive === 'container' ? css(["@container ", "{", ";}"], breakpoint.value && "(max-width: " + breakpoint.value + "px)", content) : css(["@media only screen ", "{", ";}"], breakpoint.value && "and (max-width: " + breakpoint.value + "px)", content);
+  var px = typeof (breakpoint == null ? void 0 : breakpoint.value) === 'string' && breakpoint.value.endsWith('px') ? '' : 'px';
+  var st = responsive === 'container' ? css(["@container ", "{", ";}"], breakpoint.value && "(max-width: " + breakpoint.value + px + ")", content) : css(["@media only screen ", "{", ";}"], breakpoint.value && "and (max-width: " + breakpoint.value + px + ")", content);
   return st;
 };
 var _findAllByType = function findAllByType(component, type) {

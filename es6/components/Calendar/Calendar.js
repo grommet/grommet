@@ -1,8 +1,7 @@
-var _excluded = ["activeDate", "animate", "bounds", "children", "date", "dates", "daysOfWeek", "disabled", "initialFocus", "fill", "firstDayOfWeek", "header", "level", "locale", "messages", "onReference", "onSelect", "range", "reference", "showAdjacentDays", "size", "timestamp"];
+var _excluded = ["activeDate", "animate", "bounds", "children", "date", "dates", "daysOfWeek", "disabled", "initialFocus", "fill", "firstDayOfWeek", "header", "level", "locale", "messages", "onReference", "onSelect", "range", "reference", "responsive", "showAdjacentDays", "size", "timestamp"];
 function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (-1 !== e.indexOf(n)) continue; t[n] = r[n]; } return t; }
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 import React, { forwardRef, useCallback, useContext, useEffect, useMemo, useRef, useState } from 'react';
-import styled from 'styled-components';
 import { AnnounceContext } from '../../contexts/AnnounceContext';
 import { MessageContext } from '../../contexts/MessageContext';
 import { Box } from '../Box';
@@ -12,7 +11,7 @@ import { Heading } from '../Heading';
 import { Keyboard } from '../Keyboard';
 import { Text } from '../Text';
 import { CalendarPropTypes } from './propTypes';
-import { StyledCalendar, StyledDay, StyledDayContainer, StyledWeek, StyledWeeks, StyledWeeksContainer } from './StyledCalendar';
+import { StyledCalendar, StyledDay, StyledDayButton, StyledDayContainer, StyledWeek, StyledWeeks, StyledWeeksContainer } from './StyledCalendar';
 import { addDays, addMonths, betweenDates, daysApart, endOfMonth, handleOffset, sameDayOrAfter, sameDayOrBefore, startOfMonth, subtractDays, subtractMonths, withinDates } from './utils';
 import { setHoursWithOffset } from '../../utils/dates';
 import { useThemeValue } from '../../utils/useThemeValue';
@@ -151,16 +150,6 @@ var _getOutputFormat = function getOutputFormat(dates) {
 };
 export { _getOutputFormat as getOutputFormat };
 var millisecondsPerYear = 31557600000;
-
-// when caller opts in to day hover styling, apply all state styles
-// on CalendarDay instead of active state on CalendarDayButton
-var CalendarDayButton = styled(Button).withConfig({
-  displayName: "Calendar__CalendarDayButton",
-  componentId: "sc-1chaf9i-0"
-})(["", ""], function (props) {
-  var _props$theme$calendar;
-  return ((_props$theme$calendar = props.theme.calendar) == null || (_props$theme$calendar = _props$theme$calendar.day) == null || (_props$theme$calendar = _props$theme$calendar.hover) == null ? void 0 : _props$theme$calendar.background) && 'background: inherit;';
-});
 var CalendarDay = function CalendarDay(_ref) {
   var children = _ref.children,
     fill = _ref.fill,
@@ -170,7 +159,8 @@ var CalendarDay = function CalendarDay(_ref) {
     otherMonth = _ref.otherMonth,
     rangePosition = _ref.rangePosition,
     _ref$buttonProps = _ref.buttonProps,
-    buttonProps = _ref$buttonProps === void 0 ? {} : _ref$buttonProps;
+    buttonProps = _ref$buttonProps === void 0 ? {} : _ref$buttonProps,
+    responsive = _ref.responsive;
   var _useThemeValue = useThemeValue(),
     passThemeFlag = _useThemeValue.passThemeFlag;
   var usingKeyboard = useKeyboard();
@@ -180,11 +170,13 @@ var CalendarDay = function CalendarDay(_ref) {
     isSelected: isSelected,
     rangePosition: rangePosition,
     sizeProp: size,
-    fillContainer: fill
-  }, /*#__PURE__*/React.createElement(CalendarDayButton, _extends({
+    fillContainer: fill,
+    responsive: responsive
+  }, /*#__PURE__*/React.createElement(StyledDayButton, _extends({
     fill: fill,
     tabIndex: -1,
-    plain: true
+    plain: true,
+    responsive: responsive
   }, buttonProps), function (_ref2) {
     var active = _ref2.active,
       hover = _ref2.hover;
@@ -199,7 +191,8 @@ var CalendarDay = function CalendarDay(_ref) {
       isSelected: isSelected,
       otherMonth: otherMonth,
       sizeProp: size,
-      fillContainer: fill
+      fillContainer: fill,
+      responsive: responsive
     }, passThemeFlag), children);
   }));
 };
@@ -207,20 +200,24 @@ var CalendarCustomDay = function CalendarCustomDay(_ref3) {
   var children = _ref3.children,
     fill = _ref3.fill,
     size = _ref3.size,
-    buttonProps = _ref3.buttonProps;
+    buttonProps = _ref3.buttonProps,
+    responsive = _ref3.responsive;
   if (!buttonProps) {
     return /*#__PURE__*/React.createElement(StyledDayContainer, {
       role: "gridcell",
       sizeProp: size,
-      fillContainer: fill
+      fillContainer: fill,
+      responsive: responsive
     }, children);
   }
   return /*#__PURE__*/React.createElement(StyledDayContainer, {
     role: "gridcell",
     sizeProp: size,
-    fillContainer: fill
-  }, /*#__PURE__*/React.createElement(CalendarDayButton, _extends({
-    fill: fill
+    fillContainer: fill,
+    responsive: responsive
+  }, /*#__PURE__*/React.createElement(StyledDayButton, _extends({
+    fill: fill,
+    responsive: responsive
   }, buttonProps), children));
 };
 var Calendar = /*#__PURE__*/forwardRef(function (_ref4, ref) {
@@ -246,6 +243,8 @@ var Calendar = /*#__PURE__*/forwardRef(function (_ref4, ref) {
     onSelect = _ref4.onSelect,
     range = _ref4.range,
     referenceProp = _ref4.reference,
+    _ref4$responsive = _ref4.responsive,
+    responsiveProp = _ref4$responsive === void 0 ? true : _ref4$responsive,
     _ref4$showAdjacentDay = _ref4.showAdjacentDays,
     showAdjacentDays = _ref4$showAdjacentDay === void 0 ? true : _ref4$showAdjacentDay,
     _ref4$size = _ref4.size,
@@ -258,6 +257,9 @@ var Calendar = /*#__PURE__*/forwardRef(function (_ref4, ref) {
   var announce = useContext(AnnounceContext);
   var _useContext = useContext(MessageContext),
     format = _useContext.format;
+
+  // If fill is true the responsive behavior isn't needed.
+  var responsive = responsiveProp && !fill;
 
   // when mousedown, we don't want to let Calendar set
   // active date to firstInMonth
@@ -605,10 +607,12 @@ var Calendar = /*#__PURE__*/forwardRef(function (_ref4, ref) {
         role: "gridcell",
         key: days.length,
         sizeProp: size,
-        fillContainer: fill
+        fillContainer: fill,
+        responsive: responsive
       }, /*#__PURE__*/React.createElement(StyledDay, {
         sizeProp: size,
-        fillContainer: fill
+        fillContainer: fill,
+        responsive: responsive
       }, day.toLocaleDateString(locale, {
         weekday: 'narrow'
       }))));
@@ -639,10 +643,12 @@ var Calendar = /*#__PURE__*/forwardRef(function (_ref4, ref) {
       days.push(/*#__PURE__*/React.createElement(StyledDayContainer, {
         key: day.getTime(),
         sizeProp: size,
-        fillContainer: fill
+        fillContainer: fill,
+        responsive: responsive
       }, /*#__PURE__*/React.createElement(StyledDay, {
         sizeProp: size,
-        fillContainer: fill
+        fillContainer: fill,
+        responsive: responsive
       })));
       if (weeks.length === 5 &&
       /* If the length days array is less than the current getDate()
@@ -661,10 +667,12 @@ var Calendar = /*#__PURE__*/forwardRef(function (_ref4, ref) {
       days.push(/*#__PURE__*/React.createElement(StyledDayContainer, {
         key: day.getTime(),
         sizeProp: size,
-        fillContainer: fill
+        fillContainer: fill,
+        responsive: responsive
       }, /*#__PURE__*/React.createElement(StyledDay, {
         sizeProp: size,
-        fillContainer: fill
+        fillContainer: fill,
+        responsive: responsive
       })));
     } else {
       var dateObject = day;
@@ -707,7 +715,8 @@ var Calendar = /*#__PURE__*/forwardRef(function (_ref4, ref) {
           otherMonth: day.getMonth() !== reference.getMonth(),
           rangePosition: rangePosition,
           size: size,
-          fill: fill
+          fill: fill,
+          responsive: responsive
         }, day.getDate()));
       } else {
         days.push(/*#__PURE__*/React.createElement(CalendarCustomDay, {
@@ -727,7 +736,8 @@ var Calendar = /*#__PURE__*/forwardRef(function (_ref4, ref) {
             }
           } : null,
           size: size,
-          fill: fill
+          fill: fill,
+          responsive: responsive
         }, children({
           date: day,
           day: day.getDate(),
@@ -752,7 +762,8 @@ var Calendar = /*#__PURE__*/forwardRef(function (_ref4, ref) {
   return /*#__PURE__*/React.createElement(StyledCalendar, _extends({
     ref: ref,
     sizeProp: size,
-    fillContainer: fill
+    fillContainer: fill,
+    responsive: responsive
   }, passThemeFlag, rest), /*#__PURE__*/React.createElement(Box, {
     fill: fill
   }, header ? header({
@@ -837,6 +848,7 @@ var Calendar = /*#__PURE__*/forwardRef(function (_ref4, ref) {
     ref: daysRef,
     sizeProp: size,
     fillContainer: fill,
+    responsive: responsive,
     focus: focus,
     onFocus: function onFocus() {
       setFocus(true);

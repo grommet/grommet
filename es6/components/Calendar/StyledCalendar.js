@@ -1,6 +1,14 @@
 import styled, { css, keyframes } from 'styled-components';
+import { Button } from '../Button';
 import { backgroundStyle, focusStyle, genericStyles, kindPartStyles, normalizeColor, parseMetricToNum, roundStyle, styledComponentsConfig } from '../../utils';
 import { activeStyle } from '../../utils/background';
+import { breakpointStyle } from '../../utils/mixins';
+var responsiveSizeStyle = function responsiveSizeStyle(props) {
+  var breakpoint = props.theme.global.size[props.sizeProp];
+  return breakpointStyle({
+    value: breakpoint
+  }, "\n    width: 100vw;\n    max-width: " + breakpoint + ";\n  ", true);
+};
 var sizeStyle = function sizeStyle(props) {
   var data = props.theme.calendar[props.sizeProp];
   var width = props.fillContainer ? '100%' : props.theme.global.size[props.sizeProp];
@@ -11,8 +19,10 @@ var sizeStyle = function sizeStyle(props) {
 var StyledCalendar = styled.div.withConfig(styledComponentsConfig).withConfig({
   displayName: "StyledCalendar",
   componentId: "sc-1y4xhmp-0"
-})(["", " ", " ", ""], genericStyles, function (props) {
+})(["", " ", " ", " ", ""], genericStyles, function (props) {
   return sizeStyle(props);
+}, function (props) {
+  return props.responsive && responsiveSizeStyle(props);
 }, function (props) {
   return props.theme.calendar && props.theme.calendar.extend;
 });
@@ -20,11 +30,20 @@ var weeksContainerSizeStyle = function weeksContainerSizeStyle(props) {
   var height = props.fillContainer ? '100%' : parseMetricToNum(props.theme.calendar[props.sizeProp].daySize) * 6 + "px";
   return "\n    height: " + height + ";\n\n  ";
 };
+var weeksContainerResponsiveSizeStyle = function weeksContainerResponsiveSizeStyle(props) {
+  var breakpoint = props.theme.global.size[props.sizeProp];
+  // set aspect-ratio to 7 days by 6 weeks
+  return breakpointStyle({
+    value: breakpoint
+  }, "\n    height: auto;\n    aspect-ratio: 7/6;\n    ", true);
+};
 var StyledWeeksContainer = styled.div.withConfig(styledComponentsConfig).withConfig({
   displayName: "StyledCalendar__StyledWeeksContainer",
   componentId: "sc-1y4xhmp-1"
-})(["overflow:hidden;", " ", ";"], function (props) {
+})(["overflow:hidden;", " ", " ", ";"], function (props) {
   return weeksContainerSizeStyle(props);
+}, function (props) {
+  return props.responsive && weeksContainerResponsiveSizeStyle(props);
 }, function (props) {
   return props.focus && !props.plain && focusStyle();
 });
@@ -75,45 +94,78 @@ var StyledWeek = styled.div.withConfig(styledComponentsConfig).withConfig({
 })(["display:flex;justify-content:space-between;", ""], function (props) {
   return props.fillContainer && 'flex: 1;';
 });
+var responsiveDayContainerStyle = function responsiveDayContainerStyle(props) {
+  var breakpoint = props.theme.global.size[props.sizeProp];
+  return breakpointStyle({
+    value: breakpoint
+  }, "\n    width: 14.3%;\n  ", true);
+};
 
 // The width of 14.3% is derived from dividing 100/7. We want the
 // widths of 7 days to equally fill 100% of the row.
 var StyledDayContainer = styled.div.withConfig(styledComponentsConfig).withConfig({
   displayName: "StyledCalendar__StyledDayContainer",
   componentId: "sc-1y4xhmp-4"
-})(["flex:0 1 auto;", " ", " ", ""], function (props) {
+})(["flex:0 1 auto;", " ", " ", " ", ""], function (props) {
   return props.fillContainer && 'width: 14.3%;';
 }, function (props) {
   var _props$theme$calendar7;
   return (props.inRange || props.isSelected && props.rangePosition) && ((_props$theme$calendar7 = props.theme.calendar) == null || (_props$theme$calendar7 = _props$theme$calendar7.range) == null ? void 0 : _props$theme$calendar7.background) && backgroundStyle(props.theme.calendar.range.background, props.theme);
 }, function (props) {
   return rangeRoundStyle(props);
+}, function (props) {
+  return props.responsive && responsiveDayContainerStyle(props);
+});
+var responsiveDayButtonStyle = function responsiveDayButtonStyle(props) {
+  var breakpoint = props.theme.global.size[props.sizeProp];
+  return breakpointStyle({
+    value: breakpoint
+  }, "\n    width: 100%;\n  ", true);
+};
+
+// when caller opts in to day hover styling, apply all state styles
+// on CalendarDay instead of active state on CalendarDayButton
+var StyledDayButton = styled(Button).withConfig({
+  displayName: "StyledCalendar__StyledDayButton",
+  componentId: "sc-1y4xhmp-5"
+})(["", " ", ""], function (props) {
+  var _props$theme$calendar8;
+  return ((_props$theme$calendar8 = props.theme.calendar) == null || (_props$theme$calendar8 = _props$theme$calendar8.day) == null || (_props$theme$calendar8 = _props$theme$calendar8.hover) == null ? void 0 : _props$theme$calendar8.background) && 'background: inherit;';
+}, function (props) {
+  return props.responsive && responsiveDayButtonStyle(props);
 });
 var daySizeStyle = function daySizeStyle(props) {
   var data = props.theme.calendar[props.sizeProp];
   return css(["width:", ";height:", ";"], props.fillContainer ? '100%' : data.daySize, props.fillContainer ? '100%' : data.daySize);
 };
+var responsiveDaySizeStyle = function responsiveDaySizeStyle(props) {
+  var breakpoint = props.theme.global.size[props.sizeProp];
+  var data = props.theme.calendar[props.sizeProp];
+  return breakpointStyle({
+    value: breakpoint
+  }, "\n      width: 100%;\n      max-width: " + data.daySize + ";\n      height: auto;\n      aspect-ratio: 1;\n    ", true);
+};
 var dayStyle = function dayStyle(props) {
   var backgroundObj;
   var colorObj;
   if (props.isSelected) {
-    var _props$theme$calendar8, _props$theme$calendar9;
-    backgroundObj = ((_props$theme$calendar8 = props.theme.calendar.day) == null || (_props$theme$calendar8 = _props$theme$calendar8.selected) == null ? void 0 : _props$theme$calendar8.background) || 'control';
-    colorObj = (_props$theme$calendar9 = props.theme.calendar.day) == null || (_props$theme$calendar9 = _props$theme$calendar9.selected) == null ? void 0 : _props$theme$calendar9.color;
+    var _props$theme$calendar9, _props$theme$calendar10;
+    backgroundObj = ((_props$theme$calendar9 = props.theme.calendar.day) == null || (_props$theme$calendar9 = _props$theme$calendar9.selected) == null ? void 0 : _props$theme$calendar9.background) || 'control';
+    colorObj = (_props$theme$calendar10 = props.theme.calendar.day) == null || (_props$theme$calendar10 = _props$theme$calendar10.selected) == null ? void 0 : _props$theme$calendar10.color;
   } else if (props.inRange) {
-    var _props$theme$calendar10, _props$theme$calendar11, _props$theme$calendar12, _props$theme$calendar13;
+    var _props$theme$calendar11, _props$theme$calendar12, _props$theme$calendar13, _props$theme$calendar14;
     // for backwards compatability, only apply this if caller hasn't specified
     // range specific rounding
     // if they have, background will be applied to StyledDayContainer
-    backgroundObj = !((_props$theme$calendar10 = props.theme.calendar) != null && (_props$theme$calendar10 = _props$theme$calendar10[props.sizeProp]) != null && (_props$theme$calendar10 = _props$theme$calendar10.range) != null && _props$theme$calendar10.round) && !((_props$theme$calendar11 = props.theme.calendar) != null && (_props$theme$calendar11 = _props$theme$calendar11.medium.range) != null && _props$theme$calendar11.round) && (((_props$theme$calendar12 = props.theme.calendar.day) == null || (_props$theme$calendar12 = _props$theme$calendar12.inRange) == null ? void 0 : _props$theme$calendar12.background) || {
+    backgroundObj = !((_props$theme$calendar11 = props.theme.calendar) != null && (_props$theme$calendar11 = _props$theme$calendar11[props.sizeProp]) != null && (_props$theme$calendar11 = _props$theme$calendar11.range) != null && _props$theme$calendar11.round) && !((_props$theme$calendar12 = props.theme.calendar) != null && (_props$theme$calendar12 = _props$theme$calendar12.medium.range) != null && _props$theme$calendar12.round) && (((_props$theme$calendar13 = props.theme.calendar.day) == null || (_props$theme$calendar13 = _props$theme$calendar13.inRange) == null ? void 0 : _props$theme$calendar13.background) || {
       color: 'control',
       opacity: 'weak'
     });
-    colorObj = (_props$theme$calendar13 = props.theme.calendar.day) == null || (_props$theme$calendar13 = _props$theme$calendar13.inRange) == null ? void 0 : _props$theme$calendar13.color;
+    colorObj = (_props$theme$calendar14 = props.theme.calendar.day) == null || (_props$theme$calendar14 = _props$theme$calendar14.inRange) == null ? void 0 : _props$theme$calendar14.color;
   } else {
-    var _props$theme$calendar14, _props$theme$calendar15;
-    backgroundObj = (_props$theme$calendar14 = props.theme.calendar.day) == null ? void 0 : _props$theme$calendar14.background;
-    colorObj = (_props$theme$calendar15 = props.theme.calendar.day) == null ? void 0 : _props$theme$calendar15.color;
+    var _props$theme$calendar15, _props$theme$calendar16;
+    backgroundObj = (_props$theme$calendar15 = props.theme.calendar.day) == null ? void 0 : _props$theme$calendar15.background;
+    colorObj = (_props$theme$calendar16 = props.theme.calendar.day) == null ? void 0 : _props$theme$calendar16.color;
   }
   if (colorObj && !backgroundObj) return "color: " + normalizeColor(colorObj, props.theme) + ";";
   return backgroundStyle(backgroundObj, props.theme, colorObj);
@@ -122,17 +174,17 @@ var dayHoverStyle = function dayHoverStyle(props) {
   var backgroundObj;
   var colorObj;
   if (props.isSelected) {
-    var _props$theme$calendar16, _props$theme$calendar17;
-    backgroundObj = (_props$theme$calendar16 = props.theme.calendar.day) == null || (_props$theme$calendar16 = _props$theme$calendar16.selected) == null || (_props$theme$calendar16 = _props$theme$calendar16.hover) == null ? void 0 : _props$theme$calendar16.background;
-    colorObj = (_props$theme$calendar17 = props.theme.calendar.day) == null || (_props$theme$calendar17 = _props$theme$calendar17.selected) == null || (_props$theme$calendar17 = _props$theme$calendar17.hover) == null ? void 0 : _props$theme$calendar17.color;
+    var _props$theme$calendar17, _props$theme$calendar18;
+    backgroundObj = (_props$theme$calendar17 = props.theme.calendar.day) == null || (_props$theme$calendar17 = _props$theme$calendar17.selected) == null || (_props$theme$calendar17 = _props$theme$calendar17.hover) == null ? void 0 : _props$theme$calendar17.background;
+    colorObj = (_props$theme$calendar18 = props.theme.calendar.day) == null || (_props$theme$calendar18 = _props$theme$calendar18.selected) == null || (_props$theme$calendar18 = _props$theme$calendar18.hover) == null ? void 0 : _props$theme$calendar18.color;
   } else if (props.inRange) {
-    var _props$theme$calendar18, _props$theme$calendar19;
-    backgroundObj = (_props$theme$calendar18 = props.theme.calendar.day) == null || (_props$theme$calendar18 = _props$theme$calendar18.inRange) == null || (_props$theme$calendar18 = _props$theme$calendar18.hover) == null ? void 0 : _props$theme$calendar18.background;
-    colorObj = (_props$theme$calendar19 = props.theme.calendar.day) == null || (_props$theme$calendar19 = _props$theme$calendar19.inRange) == null || (_props$theme$calendar19 = _props$theme$calendar19.hover) == null ? void 0 : _props$theme$calendar19.color;
+    var _props$theme$calendar19, _props$theme$calendar20;
+    backgroundObj = (_props$theme$calendar19 = props.theme.calendar.day) == null || (_props$theme$calendar19 = _props$theme$calendar19.inRange) == null || (_props$theme$calendar19 = _props$theme$calendar19.hover) == null ? void 0 : _props$theme$calendar19.background;
+    colorObj = (_props$theme$calendar20 = props.theme.calendar.day) == null || (_props$theme$calendar20 = _props$theme$calendar20.inRange) == null || (_props$theme$calendar20 = _props$theme$calendar20.hover) == null ? void 0 : _props$theme$calendar20.color;
   } else {
-    var _props$theme$calendar20, _props$theme$calendar21;
-    backgroundObj = (_props$theme$calendar20 = props.theme.calendar.day) == null || (_props$theme$calendar20 = _props$theme$calendar20.hover) == null ? void 0 : _props$theme$calendar20.background;
-    colorObj = (_props$theme$calendar21 = props.theme.calendar.day) == null || (_props$theme$calendar21 = _props$theme$calendar21.hover) == null ? void 0 : _props$theme$calendar21.color;
+    var _props$theme$calendar21, _props$theme$calendar22;
+    backgroundObj = (_props$theme$calendar21 = props.theme.calendar.day) == null || (_props$theme$calendar21 = _props$theme$calendar21.hover) == null ? void 0 : _props$theme$calendar21.background;
+    colorObj = (_props$theme$calendar22 = props.theme.calendar.day) == null || (_props$theme$calendar22 = _props$theme$calendar22.hover) == null ? void 0 : _props$theme$calendar22.color;
   }
   if (colorObj && !backgroundObj) return "color: " + normalizeColor(colorObj, props.theme) + ";";
   return backgroundStyle(backgroundObj, props.theme, colorObj);
@@ -140,30 +192,32 @@ var dayHoverStyle = function dayHoverStyle(props) {
 var dayFontStyle = function dayFontStyle(props) {
   var fontWeight;
   if (props.isSelected) {
-    var _props$theme$calendar22;
-    fontWeight = (_props$theme$calendar22 = props.theme.calendar.day) == null || (_props$theme$calendar22 = _props$theme$calendar22.selected) == null || (_props$theme$calendar22 = _props$theme$calendar22.font) == null ? void 0 : _props$theme$calendar22.weight;
-  } else if (props.inRange) {
     var _props$theme$calendar23;
-    fontWeight = (_props$theme$calendar23 = props.theme.calendar.day) == null || (_props$theme$calendar23 = _props$theme$calendar23.inRange) == null || (_props$theme$calendar23 = _props$theme$calendar23.font) == null ? void 0 : _props$theme$calendar23.weight;
+    fontWeight = (_props$theme$calendar23 = props.theme.calendar.day) == null || (_props$theme$calendar23 = _props$theme$calendar23.selected) == null || (_props$theme$calendar23 = _props$theme$calendar23.font) == null ? void 0 : _props$theme$calendar23.weight;
+  } else if (props.inRange) {
+    var _props$theme$calendar24;
+    fontWeight = (_props$theme$calendar24 = props.theme.calendar.day) == null || (_props$theme$calendar24 = _props$theme$calendar24.inRange) == null || (_props$theme$calendar24 = _props$theme$calendar24.font) == null ? void 0 : _props$theme$calendar24.weight;
   }
   return fontWeight && "font-weight: " + fontWeight + ";";
 };
 var StyledDay = styled.div.withConfig(styledComponentsConfig).withConfig({
   displayName: "StyledCalendar__StyledDay",
-  componentId: "sc-1y4xhmp-5"
-})(["display:flex;justify-content:center;align-items:center;color:", ";", " ", " ", " ", " ", " ", " ", " ", ""], function (props) {
-  var _props$theme$calendar24;
-  return normalizeColor(props.otherMonth ? ((_props$theme$calendar24 = props.theme.calendar) == null || (_props$theme$calendar24 = _props$theme$calendar24.day) == null || (_props$theme$calendar24 = _props$theme$calendar24.adjacent) == null ? void 0 : _props$theme$calendar24.color) || 'text-xweak' : 'text-strong', props.theme);
+  componentId: "sc-1y4xhmp-6"
+})(["display:flex;justify-content:center;align-items:center;color:", ";", " ", " ", " ", " ", " ", " ", " ", " ", ""], function (props) {
+  var _props$theme$calendar25;
+  return normalizeColor(props.otherMonth ? ((_props$theme$calendar25 = props.theme.calendar) == null || (_props$theme$calendar25 = _props$theme$calendar25.day) == null || (_props$theme$calendar25 = _props$theme$calendar25.adjacent) == null ? void 0 : _props$theme$calendar25.color) || 'text-xweak' : 'text-strong', props.theme);
 }, function (props) {
   return daySizeStyle(props);
+}, function (props) {
+  return props.responsive && responsiveDaySizeStyle(props);
 }, function (props) {
   return dayStyle(props);
 }, function (props) {
   return dayFontStyle(props);
 }, function (props) {
-  var _props$theme$calendar25, _props$theme$calendar26;
+  var _props$theme$calendar26, _props$theme$calendar27;
   // fallback to medium if no size-specific styles
-  var round = ((_props$theme$calendar25 = props.theme.calendar) == null || (_props$theme$calendar25 = _props$theme$calendar25[props.sizeProp]) == null || (_props$theme$calendar25 = _props$theme$calendar25.day) == null ? void 0 : _props$theme$calendar25.round) || ((_props$theme$calendar26 = props.theme.calendar) == null || (_props$theme$calendar26 = _props$theme$calendar26.medium) == null || (_props$theme$calendar26 = _props$theme$calendar26.day) == null ? void 0 : _props$theme$calendar26.round);
+  var round = ((_props$theme$calendar26 = props.theme.calendar) == null || (_props$theme$calendar26 = _props$theme$calendar26[props.sizeProp]) == null || (_props$theme$calendar26 = _props$theme$calendar26.day) == null ? void 0 : _props$theme$calendar26.round) || ((_props$theme$calendar27 = props.theme.calendar) == null || (_props$theme$calendar27 = _props$theme$calendar27.medium) == null || (_props$theme$calendar27 = _props$theme$calendar27.day) == null ? void 0 : _props$theme$calendar27.round);
   return round && roundStyle(round, props.responsive, props.theme);
 }, function (props) {
   return props.active && activeStyle;
@@ -178,4 +232,4 @@ var StyledDay = styled.div.withConfig(styledComponentsConfig).withConfig({
 }, function (props) {
   return props.theme.calendar && props.theme.calendar.day && props.theme.calendar.day.extend;
 });
-export { StyledCalendar, StyledWeeksContainer, StyledWeeks, StyledWeek, StyledDayContainer, StyledDay };
+export { StyledCalendar, StyledWeeksContainer, StyledWeeks, StyledWeek, StyledDayContainer, StyledDayButton, StyledDay };

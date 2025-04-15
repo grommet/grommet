@@ -30,6 +30,7 @@ if (process.env.NODE_ENV !== 'production') {
     onSelect: _propTypes["default"].func,
     range: _propTypes["default"].oneOfType([_propTypes["default"].bool, _propTypes["default"].oneOf(['array'])]),
     reference: _propTypes["default"].string,
+    responsive: _propTypes["default"].bool,
     showAdjacentDays: _propTypes["default"].oneOfType([_propTypes["default"].bool, _propTypes["default"].oneOf(['trim'])]),
     size: _propTypes["default"].oneOfType([_propTypes["default"].oneOf(['small', 'medium', 'large']), _propTypes["default"].string])
   });

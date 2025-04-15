@@ -3,7 +3,6 @@
 exports.__esModule = true;
 exports.getOutputFormat = exports.Calendar = void 0;
 var _react = _interopRequireWildcard(require("react"));
-var _styledComponents = _interopRequireDefault(require("styled-components"));
 var _AnnounceContext = require("../../contexts/AnnounceContext");
 var _MessageContext = require("../../contexts/MessageContext");
 var _Box = require("../Box");
@@ -18,8 +17,7 @@ var _utils = require("./utils");
 var _dates = require("../../utils/dates");
 var _useThemeValue3 = require("../../utils/useThemeValue");
 var _utils2 = require("../../utils");
-var _excluded = ["activeDate", "animate", "bounds", "children", "date", "dates", "daysOfWeek", "disabled", "initialFocus", "fill", "firstDayOfWeek", "header", "level", "locale", "messages", "onReference", "onSelect", "range", "reference", "showAdjacentDays", "size", "timestamp"];
-function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
+var _excluded = ["activeDate", "animate", "bounds", "children", "date", "dates", "daysOfWeek", "disabled", "initialFocus", "fill", "firstDayOfWeek", "header", "level", "locale", "messages", "onReference", "onSelect", "range", "reference", "responsive", "showAdjacentDays", "size", "timestamp"];
 function _getRequireWildcardCache(e) { if ("function" != typeof WeakMap) return null; var r = new WeakMap(), t = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(e) { return e ? t : r; })(e); }
 function _interopRequireWildcard(e, r) { if (!r && e && e.__esModule) return e; if (null === e || "object" != typeof e && "function" != typeof e) return { "default": e }; var t = _getRequireWildcardCache(r); if (t && t.has(e)) return t.get(e); var n = { __proto__: null }, a = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var u in e) if ("default" !== u && {}.hasOwnProperty.call(e, u)) { var i = a ? Object.getOwnPropertyDescriptor(e, u) : null; i && (i.get || i.set) ? Object.defineProperty(n, u, i) : n[u] = e[u]; } return n["default"] = e, t && t.set(e, n), n; }
 function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (-1 !== e.indexOf(n)) continue; t[n] = r[n]; } return t; }
@@ -157,16 +155,6 @@ var _getOutputFormat = exports.getOutputFormat = function getOutputFormat(dates)
   return 'date timezone';
 };
 var millisecondsPerYear = 31557600000;
-
-// when caller opts in to day hover styling, apply all state styles
-// on CalendarDay instead of active state on CalendarDayButton
-var CalendarDayButton = (0, _styledComponents["default"])(_Button.Button).withConfig({
-  displayName: "Calendar__CalendarDayButton",
-  componentId: "sc-1chaf9i-0"
-})(["", ""], function (props) {
-  var _props$theme$calendar;
-  return ((_props$theme$calendar = props.theme.calendar) == null || (_props$theme$calendar = _props$theme$calendar.day) == null || (_props$theme$calendar = _props$theme$calendar.hover) == null ? void 0 : _props$theme$calendar.background) && 'background: inherit;';
-});
 var CalendarDay = function CalendarDay(_ref) {
   var children = _ref.children,
     fill = _ref.fill,
@@ -176,7 +164,8 @@ var CalendarDay = function CalendarDay(_ref) {
     otherMonth = _ref.otherMonth,
     rangePosition = _ref.rangePosition,
     _ref$buttonProps = _ref.buttonProps,
-    buttonProps = _ref$buttonProps === void 0 ? {} : _ref$buttonProps;
+    buttonProps = _ref$buttonProps === void 0 ? {} : _ref$buttonProps,
+    responsive = _ref.responsive;
   var _useThemeValue = (0, _useThemeValue3.useThemeValue)(),
     passThemeFlag = _useThemeValue.passThemeFlag;
   var usingKeyboard = (0, _utils2.useKeyboard)();
@@ -186,11 +175,13 @@ var CalendarDay = function CalendarDay(_ref) {
     isSelected: isSelected,
     rangePosition: rangePosition,
     sizeProp: size,
-    fillContainer: fill
-  }, /*#__PURE__*/_react["default"].createElement(CalendarDayButton, _extends({
+    fillContainer: fill,
+    responsive: responsive
+  }, /*#__PURE__*/_react["default"].createElement(_StyledCalendar.StyledDayButton, _extends({
     fill: fill,
     tabIndex: -1,
-    plain: true
+    plain: true,
+    responsive: responsive
   }, buttonProps), function (_ref2) {
     var active = _ref2.active,
       hover = _ref2.hover;
@@ -205,7 +196,8 @@ var CalendarDay = function CalendarDay(_ref) {
       isSelected: isSelected,
       otherMonth: otherMonth,
       sizeProp: size,
-      fillContainer: fill
+      fillContainer: fill,
+      responsive: responsive
     }, passThemeFlag), children);
   }));
 };
@@ -213,20 +205,24 @@ var CalendarCustomDay = function CalendarCustomDay(_ref3) {
   var children = _ref3.children,
     fill = _ref3.fill,
     size = _ref3.size,
-    buttonProps = _ref3.buttonProps;
+    buttonProps = _ref3.buttonProps,
+    responsive = _ref3.responsive;
   if (!buttonProps) {
     return /*#__PURE__*/_react["default"].createElement(_StyledCalendar.StyledDayContainer, {
       role: "gridcell",
       sizeProp: size,
-      fillContainer: fill
+      fillContainer: fill,
+      responsive: responsive
     }, children);
   }
   return /*#__PURE__*/_react["default"].createElement(_StyledCalendar.StyledDayContainer, {
     role: "gridcell",
     sizeProp: size,
-    fillContainer: fill
-  }, /*#__PURE__*/_react["default"].createElement(CalendarDayButton, _extends({
-    fill: fill
+    fillContainer: fill,
+    responsive: responsive
+  }, /*#__PURE__*/_react["default"].createElement(_StyledCalendar.StyledDayButton, _extends({
+    fill: fill,
+    responsive: responsive
   }, buttonProps), children));
 };
 var Calendar = exports.Calendar = /*#__PURE__*/(0, _react.forwardRef)(function (_ref4, ref) {
@@ -252,6 +248,8 @@ var Calendar = exports.Calendar = /*#__PURE__*/(0, _react.forwardRef)(function (
     onSelect = _ref4.onSelect,
     range = _ref4.range,
     referenceProp = _ref4.reference,
+    _ref4$responsive = _ref4.responsive,
+    responsiveProp = _ref4$responsive === void 0 ? true : _ref4$responsive,
     _ref4$showAdjacentDay = _ref4.showAdjacentDays,
     showAdjacentDays = _ref4$showAdjacentDay === void 0 ? true : _ref4$showAdjacentDay,
     _ref4$size = _ref4.size,
@@ -264,6 +262,9 @@ var Calendar = exports.Calendar = /*#__PURE__*/(0, _react.forwardRef)(function (
   var announce = (0, _react.useContext)(_AnnounceContext.AnnounceContext);
   var _useContext = (0, _react.useContext)(_MessageContext.MessageContext),
     format = _useContext.format;
+
+  // If fill is true the responsive behavior isn't needed.
+  var responsive = responsiveProp && !fill;
 
   // when mousedown, we don't want to let Calendar set
   // active date to firstInMonth
@@ -611,10 +612,12 @@ var Calendar = exports.Calendar = /*#__PURE__*/(0, _react.forwardRef)(function (
         role: "gridcell",
         key: days.length,
         sizeProp: size,
-        fillContainer: fill
+        fillContainer: fill,
+        responsive: responsive
       }, /*#__PURE__*/_react["default"].createElement(_StyledCalendar.StyledDay, {
         sizeProp: size,
-        fillContainer: fill
+        fillContainer: fill,
+        responsive: responsive
       }, day.toLocaleDateString(locale, {
         weekday: 'narrow'
       }))));
@@ -645,10 +648,12 @@ var Calendar = exports.Calendar = /*#__PURE__*/(0, _react.forwardRef)(function (
       days.push(/*#__PURE__*/_react["default"].createElement(_StyledCalendar.StyledDayContainer, {
         key: day.getTime(),
         sizeProp: size,
-        fillContainer: fill
+        fillContainer: fill,
+        responsive: responsive
       }, /*#__PURE__*/_react["default"].createElement(_StyledCalendar.StyledDay, {
         sizeProp: size,
-        fillContainer: fill
+        fillContainer: fill,
+        responsive: responsive
       })));
       if (weeks.length === 5 &&
       /* If the length days array is less than the current getDate()
@@ -667,10 +672,12 @@ var Calendar = exports.Calendar = /*#__PURE__*/(0, _react.forwardRef)(function (
       days.push(/*#__PURE__*/_react["default"].createElement(_StyledCalendar.StyledDayContainer, {
         key: day.getTime(),
         sizeProp: size,
-        fillContainer: fill
+        fillContainer: fill,
+        responsive: responsive
       }, /*#__PURE__*/_react["default"].createElement(_StyledCalendar.StyledDay, {
         sizeProp: size,
-        fillContainer: fill
+        fillContainer: fill,
+        responsive: responsive
       })));
     } else {
       var dateObject = day;
@@ -713,7 +720,8 @@ var Calendar = exports.Calendar = /*#__PURE__*/(0, _react.forwardRef)(function (
           otherMonth: day.getMonth() !== reference.getMonth(),
           rangePosition: rangePosition,
           size: size,
-          fill: fill
+          fill: fill,
+          responsive: responsive
         }, day.getDate()));
       } else {
         days.push(/*#__PURE__*/_react["default"].createElement(CalendarCustomDay, {
@@ -733,7 +741,8 @@ var Calendar = exports.Calendar = /*#__PURE__*/(0, _react.forwardRef)(function (
             }
           } : null,
           size: size,
-          fill: fill
+          fill: fill,
+          responsive: responsive
         }, children({
           date: day,
           day: day.getDate(),
@@ -758,7 +767,8 @@ var Calendar = exports.Calendar = /*#__PURE__*/(0, _react.forwardRef)(function (
   return /*#__PURE__*/_react["default"].createElement(_StyledCalendar.StyledCalendar, _extends({
     ref: ref,
     sizeProp: size,
-    fillContainer: fill
+    fillContainer: fill,
+    responsive: responsive
   }, passThemeFlag, rest), /*#__PURE__*/_react["default"].createElement(_Box.Box, {
     fill: fill
   }, header ? header({
@@ -843,6 +853,7 @@ var Calendar = exports.Calendar = /*#__PURE__*/(0, _react.forwardRef)(function (
     ref: daysRef,
     sizeProp: size,
     fillContainer: fill,
+    responsive: responsive,
     focus: focus,
     onFocus: function onFocus() {
       setFocus(true);

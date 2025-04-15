@@ -21,7 +21,8 @@ var fontSize = exports.fontSize = function fontSize(size, lineHeight) {
   });
 };
 var breakpointStyle = exports.breakpointStyle = function breakpointStyle(breakpoint, content, responsive) {
-  var st = responsive === 'container' ? (0, _styledComponents.css)(["@container ", "{", ";}"], breakpoint.value && "(max-width: " + breakpoint.value + "px)", content) : (0, _styledComponents.css)(["@media only screen ", "{", ";}"], breakpoint.value && "and (max-width: " + breakpoint.value + "px)", content);
+  var px = typeof (breakpoint == null ? void 0 : breakpoint.value) === 'string' && breakpoint.value.endsWith('px') ? '' : 'px';
+  var st = responsive === 'container' ? (0, _styledComponents.css)(["@container ", "{", ";}"], breakpoint.value && "(max-width: " + breakpoint.value + px + ")", content) : (0, _styledComponents.css)(["@media only screen ", "{", ";}"], breakpoint.value && "and (max-width: " + breakpoint.value + px + ")", content);
   return st;
 };
 var _findAllByType = exports.findAllByType = function findAllByType(component, type) {
