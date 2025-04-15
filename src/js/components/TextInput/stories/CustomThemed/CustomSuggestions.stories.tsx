@@ -156,6 +156,7 @@ export const CustomSuggestions = () => {
         >
           <Search color="brand" />
           <TextInput
+            id="grommet-custom-suggestions"
             dropTarget={boxRef.current}
             placeholder="Enter your name..."
             plain
