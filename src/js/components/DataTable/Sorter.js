@@ -33,6 +33,7 @@ const Sorter = ({
       direction="row"
       justify={align}
       align="center"
+      // TO DO theme object
       gap="xsmall"
       fill={fill}
     >

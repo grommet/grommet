@@ -127,6 +127,7 @@ export const DataSort = ({ drop, options, ...rest }) => {
       kind={theme.data.button?.kind}
       icon={<Descend />}
       dropProps={dropProps}
+      // TO DO theme object
       dropContent={<Box pad="small">{content}</Box>}
       open={showContent}
       onOpen={() => setShowContent(undefined)}

@@ -492,6 +492,7 @@ const Video = forwardRef(
                         : undefined
                     }
                     size="full"
+                    // TO DO theme object
                     thickness="small"
                     values={[{ value: percentagePlayed || 0 }]}
                   />
@@ -516,6 +517,7 @@ const Video = forwardRef(
                   />
                 </Stack>
               </Box>
+              {/* TO DO theme object */}
               <Box pad={{ horizontal: 'small' }}>
                 <Text margin="none">{formattedTime}</Text>
               </Box>

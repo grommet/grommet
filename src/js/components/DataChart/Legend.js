@@ -22,6 +22,7 @@ const Legend = ({
     [series, seriesStyles],
   );
   return (
+    // TO DO theme object
     <Box margin={{ top: 'small' }} direction="row" wrap gap="small">
       {series.map(({ property, label }) => {
         const isActive = property === activeProperty;
@@ -40,7 +41,9 @@ const Legend = ({
             key={property}
             direction="row"
             align="center"
+            // TO DO theme object
             pad={{ horizontal: 'small', vertical: 'xsmall' }}
+            // TO DO theme object
             gap="xsmall"
           >
             <Swatch {...seriesStyles[property]} {...swatchProps} />

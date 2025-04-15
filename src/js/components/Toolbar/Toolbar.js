@@ -7,6 +7,7 @@ import { isSmall } from '../../utils/responsive';
 const defaultLayoutProps = {
   direction: 'row',
   align: 'start',
+  // TO DO theme object
   gap: 'small',
 };
 
@@ -14,6 +15,7 @@ const smallLayoutProps = {
   direction: 'row',
   wrap: true,
   align: 'start',
+  // TO DO theme object
   gap: 'small',
 };
 

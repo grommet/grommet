@@ -1,5 +1,6 @@
 import { calcMinMax, normalizeValues } from './utils';
 
+// TO DO theme object
 const thicknessPad = {
   xlarge: 'large',
   large: 'medium',
@@ -200,6 +201,7 @@ export const calcs = (values = [], options = {}) => {
     // Someday, it would be better to include the actual rendered size.
     // These values were emirically determined, trying to balance visibility
     // and overlap across resolutions.
+    // TO DO theme object
     if (values.length < 5) {
       thickness = 'xlarge';
     } else if (values.length < 11) {

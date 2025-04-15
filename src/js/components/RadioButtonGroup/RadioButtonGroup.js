@@ -118,7 +118,8 @@ const RadioButtonGroup = forwardRef(
             (theme.radioButtonGroup.container &&
             theme.radioButtonGroup.container.gap
               ? theme.radioButtonGroup.container.gap
-              : 'small')
+              : // TO DO move to theme object
+                'small')
           }
           {...rest}
         >

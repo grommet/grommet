@@ -125,6 +125,7 @@ const AccordionPanel = forwardRef(
               {...rest}
             >
               {typeof label === 'string' ? (
+                // TO DO theme object
                 <Box pad={{ horizontal: 'xsmall' }}>
                   <Heading
                     level={
@@ -147,6 +148,7 @@ const AccordionPanel = forwardRef(
                 label
               )}
               {AccordionIcon && (
+                // TO DO theme object
                 <Box
                   pad={{ horizontal: 'small' }}
                   width={{ min: 'fit-content' }}

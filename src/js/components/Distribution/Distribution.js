@@ -29,6 +29,7 @@ const Distribution = ({
   children = defaultChildrenPropValue,
   direction = 'row',
   fill,
+  // TO DO theme object
   gap = 'xsmall',
   values = defaultValues,
   ...rest

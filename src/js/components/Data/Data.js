@@ -163,6 +163,7 @@ export const Data = ({
   let toolbarContent;
   if (toolbar) {
     toolbarContent = [
+      // TO DO theme object
       <Toolbar key="toolbar" gap="medium">
         <Toolbar>
           {(toolbar === true || toolbar === 'search') && <DataSearch />}

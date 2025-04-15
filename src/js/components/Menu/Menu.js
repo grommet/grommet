@@ -256,7 +256,9 @@ const Menu = forwardRef((props, ref) => {
         direction="row"
         justify={justifyContent}
         align="center"
+        // TO DO theme object
         pad="small"
+        // TO DO theme object
         gap={label && icon !== false ? 'small' : undefined}
       >
         <Text size={size}>{label}</Text>
@@ -309,6 +311,7 @@ const Menu = forwardRef((props, ref) => {
     const child = !theme.button.option ? (
       <Box
         align={theme.menu.item?.align || 'start'}
+        // TO DO theme object
         pad="small"
         direction="row"
         gap={item.gap || theme.menu.item?.gap}

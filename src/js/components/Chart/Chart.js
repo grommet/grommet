@@ -12,6 +12,7 @@ import { useThemeValue } from '../../utils/useThemeValue';
 const gradientMaskColor = '#ffffff';
 
 // use constants so re-renders don't re-trigger effects
+// TO DO theme object?
 const defaultSize = { height: 'small', width: 'medium' };
 const defaultValues = [];
 
@@ -34,6 +35,7 @@ const Chart = React.forwardRef(
       point,
       round,
       size: sizeProp,
+      // TO DO theme object?
       thickness = 'medium',
       type = 'bar',
       values: valuesProp = defaultValues,

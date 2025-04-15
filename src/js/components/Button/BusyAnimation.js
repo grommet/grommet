@@ -33,6 +33,7 @@ export const EllipsisAnimation = () => (
     alignContent="center"
     justify="center"
   >
+    {/* TO DO theme object */}
     <Box alignSelf="center" direction="row" gap="small">
       {/* A negative delay starts the animation sooner. The first dot
       should begin animating before the second and so on. */}

@@ -386,6 +386,7 @@ const RangeSelector = forwardRef(
             {typeof label === 'function' ? label(lower) : lower}
           </Text>
           {content}
+          {/* TO DO theme object */}
           <Text ref={maxRef} size="small" margin={{ horizontal: 'small' }}>
             {typeof label === 'function' ? label(upper) : upper}
           </Text>

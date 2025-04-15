@@ -8,6 +8,7 @@ const Footer = ({ ...rest }) => (
     align="center"
     direction="row"
     flex={false}
+    // TO DO theme object
     gap="medium"
     justify="between"
     {...rest}

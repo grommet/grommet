@@ -100,6 +100,7 @@ export const DataFilters = ({
   );
 
   const clearControl = badge && clearFilters && (
+    // TO DO theme object
     <Box flex={false} margin={{ start: 'small' }}>
       <DataClearFilters />
     </Box>
@@ -126,6 +127,7 @@ export const DataFilters = ({
 
   content = (
     <DataForm
+      // TO DO theme object
       pad={controlled ? 'medium' : undefined}
       onDone={() => setShowContent(false)}
       updateOn={updateOn}
@@ -200,6 +202,7 @@ export const DataFilters = ({
           onClickOutside={() => setShowContent(undefined)}
           onEsc={() => setShowContent(undefined)}
         >
+          {/* TO DO theme object? */}
           <Box width={{ min: 'medium' }}>{content}</Box>
         </Layer>
       )}
