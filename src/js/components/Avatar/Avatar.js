@@ -11,6 +11,7 @@ const Avatar = ({
   align = 'center',
   children,
   height, // for warning check and discarding the value
+  imageProps,
   justify = 'center',
   round = 'full',
   size = 'medium',
@@ -61,7 +62,9 @@ const Avatar = ({
       </StyledAvatarText>
     );
   } else if (typeof src === 'string') {
-    content = <Image role="presentation" fit="contain" src={src} />;
+    content = (
+      <Image role="presentation" fit="contain" src={src} {...imageProps} />
+    );
   }
 
   if (typeof children === 'string' || typeof src === 'string') {

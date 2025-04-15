@@ -66,7 +66,8 @@ const StyledDrop = styled(Box)`
 
   ${(props) =>
     !props.plain &&
-    ((props.round && roundStyle(props.round, true, props.theme)) ||
+    ((props.round &&
+      roundStyle(props.round, props.responsive || true, props.theme)) ||
       `border-radius: ${props.theme.global.drop.border.radius};`)}
 
   position: fixed;

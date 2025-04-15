@@ -146,6 +146,12 @@ export interface GrommetProps {
         lower?: string;
         upper?: string;
       };
+      tag?: {
+        removeLabel?: {
+          nameAndValue?: string;
+          valueOnly?: string;
+        };
+      };
       select?: {
         multiple?: string;
         selected?: string;

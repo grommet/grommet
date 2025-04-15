@@ -9,6 +9,7 @@ import {
   widthStyle,
   styledComponentsConfig,
 } from '../../utils';
+import { breakpointStyle } from '../../utils/mixins';
 
 // Styling a div directly rather than just using
 // a Box since Box itself will react to a SkeletonContext
@@ -37,6 +38,14 @@ export const StyledSkeleton = styled.div.withConfig(styledComponentsConfig)`
       props.theme.box.responsiveBreakpoint,
       props.theme,
     )}
-  ${(props) => props.round && roundStyle(props.round, true, props.theme)}
+  ${(props) =>
+    props.round && roundStyle(props.round, props.responsive, props.theme)}
   ${(props) => props.theme?.skeleton?.extend}
+  ${(props) =>
+    props.responsiveSize &&
+    breakpointStyle(
+      props.responsiveSize.breakpoint,
+      heightStyle(props.responsiveSize.height, props.theme),
+      props.responsive,
+    )}
 `;

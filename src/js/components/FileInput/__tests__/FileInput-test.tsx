@@ -4,6 +4,8 @@ import { render } from '@testing-library/react';
 
 import { Grommet } from '../../Grommet';
 import { FileInput } from '..';
+import { Form } from '../../Form';
+import { FormField } from '../../FormField';
 
 describe('FileInput', () => {
   test('basic', () => {
@@ -159,6 +161,32 @@ describe('FileInput', () => {
             max: 5,
           }}
         />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('disabled with file selected', () => {
+    const exampleFile = { name: 'file-size-okay.csv', size: 15000 };
+    const Test = () => {
+      const [value, setValue] = React.useState({
+        fileInput: [exampleFile],
+      });
+      return (
+        <Form validate="change" value={value} onChange={setValue}>
+          <FormField
+            label="File input with max size"
+            htmlFor="fileInput"
+            name="fileInput"
+          >
+            <FileInput id="fileInput" name="fileInput" disabled />
+          </FormField>
+        </Form>
+      );
+    };
+    const { container } = render(
+      <Grommet>
+        <Test />
       </Grommet>,
     );
     expect(container.firstChild).toMatchSnapshot();

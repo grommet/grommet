@@ -1,3 +1,5 @@
+import styled from 'styled-components';
+
 export const getBreakpoint = (viewportWidth, theme) => {
   const sortedBreakpoints = Object.keys(theme.global.breakpoints).sort(
     (a, b) => {
@@ -40,3 +42,34 @@ export const getBreakpointStyle = (theme, breakpointSize) => {
 // for checks that look for a small screen size, flag for xsmall
 // as well since we use xsmall in the hpe theme
 export const isSmall = (size) => ['xsmall', 'small'].includes(size);
+
+export const deviceResponsive = (userAgent, theme) => {
+  // log('--deviceResponsive', userAgent, theme);
+  /*
+   * Regexes provided for mobile and tablet detection are meant to replace
+   * a full-featured specific library due to contributing a considerable size
+   * into the bundle.
+   *
+   * User agents found https://deviceatlas.com/blog/list-of-user-agent-strings
+   */
+  if (userAgent) {
+    if (/(tablet|ipad|playbook|silk)|(android(?!.*mobile))/i.test(userAgent)) {
+      return getDeviceBreakpoint('tablet', theme);
+    }
+    if (/Mobile|iPhone|Android/.test(userAgent)) {
+      return getDeviceBreakpoint('phone', theme);
+    }
+    return getDeviceBreakpoint('computer', theme);
+  }
+  return undefined;
+};
+
+// styled-components v6 and later do not have a withComponent
+// method. We need v6 or later to support container queries.
+const testComp = styled.div`
+  display: flex;
+`;
+export const supportsContainerQueries = () => {
+  const isPreV6 = typeof testComp.withComponent === 'function';
+  return !isPreV6;
+};

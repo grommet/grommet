@@ -8,6 +8,7 @@ import React, {
 
 import { Box } from '../Box';
 import { Drop } from '../Drop';
+import { Keyboard } from '../Keyboard';
 import { useForwardedRef, useKeyboard } from '../../utils';
 import { TipPropTypes } from './propTypes';
 import { useThemeValue } from '../../utils/useThemeValue';
@@ -92,17 +93,25 @@ const Tip = forwardRef(
     return [
       clonedChild,
       (over || tooltipOver) && (
-        <Drop
-          target={componentRef.current}
-          trapFocus={false}
-          key="tip-drop"
-          {...theme.tip.drop}
-          {...dropProps}
-          onMouseEnter={() => setTooltipOver(true)}
-          onMouseLeave={() => setTooltipOver(false)}
+        <Keyboard
+          key="tip-keyboard"
+          onEsc={() => {
+            setOver(false);
+            setTooltipOver(false);
+          }}
         >
-          {plain ? content : <Box {...theme.tip.content}>{content}</Box>}
-        </Drop>
+          <Drop
+            target={componentRef.current}
+            trapFocus={false}
+            key="tip-drop"
+            {...theme.tip.drop}
+            {...dropProps}
+            onMouseEnter={() => setTooltipOver(true)}
+            onMouseLeave={() => setTooltipOver(false)}
+          >
+            {plain ? content : <Box {...theme.tip.content}>{content}</Box>}
+          </Drop>
+        </Keyboard>
       ),
     ];
   },
