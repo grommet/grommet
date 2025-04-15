@@ -3,10 +3,12 @@
 exports.__esModule = true;
 exports.StyledBoxGap = exports.StyledBox = void 0;
 var _styledComponents = _interopRequireWildcard(require("styled-components"));
+var _isPropValid = _interopRequireDefault(require("@emotion/is-prop-valid"));
 var _utils = require("../../utils");
 var _styles = require("../../utils/styles");
 var _animation = require("../../utils/animation");
 var _FLEX_MAP;
+function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
 function _getRequireWildcardCache(e) { if ("function" != typeof WeakMap) return null; var r = new WeakMap(), t = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(e) { return e ? t : r; })(e); }
 function _interopRequireWildcard(e, r) { if (!r && e && e.__esModule) return e; if (null === e || "object" != typeof e && "function" != typeof e) return { "default": e }; var t = _getRequireWildcardCache(r); if (t && t.has(e)) return t.get(e); var n = { __proto__: null }, a = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var u in e) if ("default" !== u && {}.hasOwnProperty.call(e, u)) { var i = a ? Object.getOwnPropertyDescriptor(e, u) : null; i && (i.get || i.set) ? Object.defineProperty(n, u, i) : n[u] = e[u]; } return n["default"] = e, t && t.set(e, n), n; }
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
@@ -167,7 +169,13 @@ var gapStyle = function gapStyle(directionProp, gap, responsive, wrap, theme) {
 var responsiveContainerStyle = (0, _styledComponents.css)(["container-type:inline-size;"]);
 
 // NOTE: basis must be after flex! Otherwise, flex overrides basis
-var StyledBox = exports.StyledBox = _styledComponents["default"].div.withConfig(_styles.styledComponentsConfig).withConfig({
+// After upgrading to react 19 the 'selected' prop is leaking through
+// to the DOM, added a check to prevent this.
+var StyledBox = exports.StyledBox = _styledComponents["default"].div.withConfig({
+  shouldForwardProp: function shouldForwardProp(prop) {
+    return (0, _isPropValid["default"])(prop) && !['selected'].includes(prop);
+  }
+}).withConfig({
   displayName: "StyledBox",
   componentId: "sc-13pk1d4-0"
 })(["display:flex;box-sizing:border-box;", ";", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", ""], function (props) {

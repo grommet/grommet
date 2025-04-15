@@ -1,6 +1,7 @@
 var _FLEX_MAP;
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 import styled, { css } from 'styled-components';
+import isPropValid from '@emotion/is-prop-valid';
 import { alignContentStyle, alignStyle, backgroundStyle, borderStyle, breakpointStyle, edgeStyle, elevationStyle, fillStyle, focusStyle, genericStyles, getBreakpointStyle, getHoverIndicatorStyle, heightStyle, overflowStyle, parseMetricToNum, responsiveBorderStyle, widthStyle } from '../../utils';
 import { roundStyle, styledComponentsConfig } from '../../utils/styles';
 import { animationBounds, animationObjectStyle } from '../../utils/animation';
@@ -161,7 +162,13 @@ var gapStyle = function gapStyle(directionProp, gap, responsive, wrap, theme) {
 var responsiveContainerStyle = css(["container-type:inline-size;"]);
 
 // NOTE: basis must be after flex! Otherwise, flex overrides basis
-var StyledBox = styled.div.withConfig(styledComponentsConfig).withConfig({
+// After upgrading to react 19 the 'selected' prop is leaking through
+// to the DOM, added a check to prevent this.
+var StyledBox = styled.div.withConfig({
+  shouldForwardProp: function shouldForwardProp(prop) {
+    return isPropValid(prop) && !['selected'].includes(prop);
+  }
+}).withConfig({
   displayName: "StyledBox",
   componentId: "sc-13pk1d4-0"
 })(["display:flex;box-sizing:border-box;", ";", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", ""], function (props) {

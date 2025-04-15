@@ -3,7 +3,7 @@ import { Box } from '../Box';
 import { Button } from '../Button';
 import { CheckBox } from '../CheckBox';
 import { SelectOption } from '../Select/StyledSelect';
-import { applyKey, getOptionLabel, useDisabled, arrayIncludes, getOptionIndex } from '../Select/utils';
+import { applyKey, getOptionLabel, useDisabled, arrayIncludes, getOptionIndex, inertTrueValue } from '../Select/utils';
 import { MessageContext } from '../../contexts/MessageContext';
 var SelectMultipleValue = function SelectMultipleValue(_ref) {
   var allOptions = _ref.allOptions,
@@ -101,8 +101,7 @@ var SelectMultipleValue = function SelectMultipleValue(_ref) {
         pad: "xsmall",
         tabIndex: "-1",
         checked: optionSelected,
-        inert: "" // revisit for React 19
-        ,
+        inert: inertTrueValue,
         containerProps: {
           // in Firefox when we have inert set, the checkbox
           // click event gets swallowed by the checkbox.

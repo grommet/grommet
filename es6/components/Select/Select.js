@@ -8,7 +8,7 @@ import { Keyboard } from '../Keyboard';
 import { FormContext } from '../Form/FormContext';
 import { SelectContainer } from './SelectContainer';
 import { HiddenInput, StyledSelectDropButton } from './StyledSelect';
-import { applyKey, getNormalizedValue, changeEvent, getSelectIcon, getDisplayLabelKey, getIconColor, formatValueForA11y } from './utils';
+import { applyKey, getNormalizedValue, changeEvent, getSelectIcon, getDisplayLabelKey, getIconColor, formatValueForA11y, inertTrueValue } from './utils';
 import { DefaultSelectTextInput } from './DefaultSelectTextInput';
 import { MessageContext } from '../../contexts/MessageContext';
 import { SelectPropTypes } from './propTypes';
@@ -325,8 +325,7 @@ var Select = /*#__PURE__*/forwardRef(function (_ref, ref) {
     type: "text",
     name: name,
     id: id ? id + "__input" : undefined,
-    inert: "" // revisit for React 19
-    ,
+    inert: inertTrueValue,
     value: inputValue,
     ref: inputRef,
     readOnly: true
@@ -334,8 +333,7 @@ var Select = /*#__PURE__*/forwardRef(function (_ref, ref) {
     a11yTitle: (ariaLabel || a11yTitle) && "" + (ariaLabel || a11yTitle) + (value && typeof value === 'string' ? ", " + value : ''),
     disabled: disabled,
     id: id,
-    inert: "" // revisit for React 19
-    ,
+    inert: inertTrueValue,
     name: name,
     ref: inputRef,
     placeholder: placeholder,

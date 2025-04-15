@@ -1,4 +1,4 @@
-import { useCallback, isValidElement } from 'react';
+import React, { useCallback, isValidElement } from 'react';
 import { normalizeColor } from '../../utils';
 var _applyKey = function applyKey(option, key) {
   if (/*#__PURE__*/isValidElement(option)) return option;
@@ -105,4 +105,11 @@ var _formatValueForA11y = function formatValueForA11y(value, labelKey) {
   }
   return _applyKey(value, labelKey);
 };
+
+// In react 18 and below the inert attribute is not supported
+// so we use an empty string instead of true. In react 19 and above
+// inert is supported so we should use true. The use function is
+// used to determine the react version because it is only available
+// in react 19 and above.
 export { _formatValueForA11y as formatValueForA11y };
+export var inertTrueValue = React.use ? true : '';

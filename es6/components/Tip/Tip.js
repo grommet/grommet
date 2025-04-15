@@ -6,6 +6,22 @@ import { Keyboard } from '../Keyboard';
 import { useForwardedRef, useKeyboard } from '../../utils';
 import { TipPropTypes } from './propTypes';
 import { useThemeValue } from '../../utils/useThemeValue';
+
+/*
+ * This function getReactNodeRef is adapted from
+ * [Material UI] (https://github.com/mui/material-ui)
+ * Licensed under the MIT License (c) 2024 aarongarciah
+ * The function has been modified from its original version.
+ */
+var getReactNodeRef = function getReactNodeRef(element) {
+  if (!element || ! /*#__PURE__*/React.isValidElement(element)) {
+    return null;
+  }
+
+  // 'ref' is passed as prop in React 19, whereas 'ref' is directly attached to
+  // children in older versions
+  return {}.propertyIsEnumerable.call(element.props, 'ref') ? element.props.ref : element.ref;
+};
 var Tip = /*#__PURE__*/forwardRef(function (_ref, tipRef) {
   var children = _ref.children,
     content = _ref.content,
@@ -60,7 +76,7 @@ var Tip = /*#__PURE__*/forwardRef(function (_ref, tipRef) {
         componentRef.current = node;
       }
       // Call the original ref, if any
-      var callerRef = child.ref;
+      var callerRef = getReactNodeRef(child);
       if (typeof callerRef === 'function') {
         callerRef(node);
       } else if (callerRef) {

@@ -107,8 +107,7 @@ var SelectMultipleValue = exports.SelectMultipleValue = function SelectMultipleV
         pad: "xsmall",
         tabIndex: "-1",
         checked: optionSelected,
-        inert: "" // revisit for React 19
-        ,
+        inert: _utils.inertTrueValue,
         containerProps: {
           // in Firefox when we have inert set, the checkbox
           // click event gets swallowed by the checkbox.

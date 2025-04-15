@@ -409,8 +409,7 @@ var SelectMultiple = exports.SelectMultiple = /*#__PURE__*/(0, _react.forwardRef
     defaultCursor: disabled === true || undefined,
     focusIndicator: false,
     id: id ? id + "__input" : undefined,
-    inert: "" // revisit for React 19
-    ,
+    inert: _utils2.inertTrueValue,
     name: name,
     width: "100%"
   }, rest, {
@@ -433,8 +432,7 @@ var SelectMultiple = exports.SelectMultiple = /*#__PURE__*/(0, _react.forwardRef
     type: "text",
     name: name,
     id: id ? id + "__input" : undefined,
-    inert: "" // revisit for React 19
-    ,
+    inert: _utils2.inertTrueValue,
     value: inputValue,
     ref: inputRef,
     readOnly: true
@@ -444,8 +442,7 @@ var SelectMultiple = exports.SelectMultiple = /*#__PURE__*/(0, _react.forwardRef
     a11yTitle: ariaLabel || a11yTitle,
     disabled: disabled,
     id: id,
-    inert: "" // revisit for React 19
-    ,
+    inert: _utils2.inertTrueValue,
     name: name,
     ref: inputRef,
     placeholder: placeholder || 'Select',
@@ -472,8 +469,7 @@ var SelectMultiple = exports.SelectMultiple = /*#__PURE__*/(0, _react.forwardRef
     type: "text",
     name: name,
     id: id ? id + "__input" : undefined,
-    inert: "" // revisit for React 19
-    ,
+    inert: _utils2.inertTrueValue,
     value: inputValue,
     ref: inputRef,
     readOnly: true
@@ -481,8 +477,7 @@ var SelectMultiple = exports.SelectMultiple = /*#__PURE__*/(0, _react.forwardRef
     a11yTitle: ariaLabel || a11yTitle,
     disabled: disabled,
     id: id,
-    inert: "" // revisit for React 19
-    ,
+    inert: _utils2.inertTrueValue,
     name: name,
     ref: inputRef,
     placeholder: placeholder,

@@ -1,9 +1,11 @@
 "use strict";
 
 exports.__esModule = true;
-exports.useDisabled = exports.getSelectIcon = exports.getOptionValue = exports.getOptionLabel = exports.getOptionIndex = exports.getNormalizedValue = exports.getIconColor = exports.getDisplayLabelKey = exports.formatValueForA11y = exports.changeEvent = exports.arrayIncludes = exports.applyKey = void 0;
-var _react = require("react");
+exports.useDisabled = exports.inertTrueValue = exports.getSelectIcon = exports.getOptionValue = exports.getOptionLabel = exports.getOptionIndex = exports.getNormalizedValue = exports.getIconColor = exports.getDisplayLabelKey = exports.formatValueForA11y = exports.changeEvent = exports.arrayIncludes = exports.applyKey = void 0;
+var _react = _interopRequireWildcard(require("react"));
 var _utils = require("../../utils");
+function _getRequireWildcardCache(e) { if ("function" != typeof WeakMap) return null; var r = new WeakMap(), t = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(e) { return e ? t : r; })(e); }
+function _interopRequireWildcard(e, r) { if (!r && e && e.__esModule) return e; if (null === e || "object" != typeof e && "function" != typeof e) return { "default": e }; var t = _getRequireWildcardCache(r); if (t && t.has(e)) return t.get(e); var n = { __proto__: null }, a = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var u in e) if ("default" !== u && {}.hasOwnProperty.call(e, u)) { var i = a ? Object.getOwnPropertyDescriptor(e, u) : null; i && (i.get || i.set) ? Object.defineProperty(n, u, i) : n[u] = e[u]; } return n["default"] = e, t && t.set(e, n), n; }
 var _applyKey = exports.applyKey = function applyKey(option, key) {
   if (/*#__PURE__*/(0, _react.isValidElement)(option)) return option;
   if (option === undefined || option === null) return undefined;
@@ -108,3 +110,10 @@ var _formatValueForA11y = exports.formatValueForA11y = function formatValueForA1
   }
   return _applyKey(value, labelKey);
 };
+
+// In react 18 and below the inert attribute is not supported
+// so we use an empty string instead of true. In react 19 and above
+// inert is supported so we should use true. The use function is
+// used to determine the react version because it is only available
+// in react 19 and above.
+var inertTrueValue = exports.inertTrueValue = _react["default"].use ? true : '';

@@ -78,18 +78,19 @@ var Text = exports.Text = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, re
   }), children !== undefined ? /*#__PURE__*/_react["default"].createElement(_TextContext.TextContext.Provider, {
     value: textContextValue
   }, children) : undefined);
+  var tipProps = tipProp && typeof tipProp === 'object' ? tipProp : {};
   if (tipProp || textTruncated) {
     // place the text content in a tip if truncate === 'tip'
     // and the text has been truncated
     if (textTruncated) {
       return /*#__PURE__*/_react["default"].createElement(_Tip.Tip, _extends({
         content: children
-      }, tipProp), styledTextResult);
+      }, tipProps), styledTextResult);
     }
     // place the text content in a tip if truncate !== 'tip'
     // it displays even if the text has not truncated
     if (truncate !== 'tip') {
-      return /*#__PURE__*/_react["default"].createElement(_Tip.Tip, tipProp, styledTextResult);
+      return /*#__PURE__*/_react["default"].createElement(_Tip.Tip, tipProps, styledTextResult);
     }
   }
   return styledTextResult;

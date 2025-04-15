@@ -10,7 +10,7 @@ import { Text } from '../Text';
 import { TextInput } from '../TextInput';
 import { SelectionSummary } from './SelectionSummary';
 import { StyledContainer, OptionsContainer, SelectOption } from '../Select/StyledSelect';
-import { applyKey, getOptionLabel, getOptionValue, useDisabled, getOptionIndex, arrayIncludes } from '../Select/utils';
+import { applyKey, getOptionLabel, getOptionValue, useDisabled, getOptionIndex, arrayIncludes, inertTrueValue } from '../Select/utils';
 import { EmptySearchOption } from '../Select/EmptySearchOption';
 import { MessageContext } from '../../contexts/MessageContext';
 import { useThemeValue } from '../../utils/useThemeValue';
@@ -366,8 +366,7 @@ var SelectMultipleContainer = /*#__PURE__*/forwardRef(function (_ref, ref) {
         tabIndex: "-1",
         checked: optionSelected,
         disabled: optionDisabled,
-        inert: "" // revisit for React 19
-        ,
+        inert: inertTrueValue,
         containerProps: {
           // in Firefox when we have inert set, the checkbox
           // click event gets swallowed by the checkbox.
@@ -401,8 +400,7 @@ var SelectMultipleContainer = /*#__PURE__*/forwardRef(function (_ref, ref) {
           tabIndex: "-1",
           checked: optionSelected,
           disabled: optionDisabled,
-          inert: "" // revisit for React 19
-          ,
+          inert: inertTrueValue,
           containerProps: {
             // in Firefox when we have inert set, the checkbox
             // click event gets swallowed by the checkbox.
