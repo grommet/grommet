@@ -5,7 +5,7 @@ import React, {
   useEffect,
   useState,
 } from 'react';
-
+import styled from 'styled-components';
 import { Box } from '../Box';
 import { Drop } from '../Drop';
 import { Keyboard } from '../Keyboard';
@@ -13,12 +13,82 @@ import { useForwardedRef, useKeyboard } from '../../utils';
 import { TipPropTypes } from './propTypes';
 import { useThemeValue } from '../../utils/useThemeValue';
 
-/*
- * This function getReactNodeRef is adapted from
- * [Material UI] (https://github.com/mui/material-ui)
- * Licensed under the MIT License (c) 2024 aarongarciah
- * The function has been modified from its original version.
- */
+const BufferBox = styled(Box)`
+  position: fixed;
+  background: transparent;
+  z-index: 21;
+  pointer-events: auto;
+  top: ${(props) => props.top}px;
+  left: ${(props) => props.left}px;
+  width: ${(props) => props.width}px;
+  height: ${(props) => props.height}px;
+`;
+const getMarginValue = (marginValue, theme, direction = 'vertical') => {
+  const edgeSize = theme.global?.edgeSize || {};
+
+  if (!marginValue || marginValue === 'none') return 0;
+  if (typeof marginValue === 'string') {
+    const numericValue =
+      parseInt(edgeSize[marginValue], 10) || parseInt(marginValue, 10);
+    return Number.isNaN(numericValue) ? 0 : numericValue;
+  }
+
+  if (typeof marginValue === 'object') {
+    if (direction === 'vertical') {
+      return (
+        getMarginValue(marginValue.vertical, theme) ||
+        getMarginValue(marginValue.top, theme) ||
+        getMarginValue(marginValue.bottom, theme)
+      );
+    }
+
+    if (direction === 'horizontal') {
+      return (
+        getMarginValue(marginValue.horizontal, theme) ||
+        getMarginValue(marginValue.left, theme) ||
+        getMarginValue(marginValue.right, theme)
+      );
+    }
+  }
+  return 0;
+};
+
+const calculateBufferPosition = (align, targetRect, margin, theme) => {
+  const marginValue = getMarginValue(margin, theme);
+
+  const position = {
+    top: 0,
+    left: 0,
+    width: targetRect.width,
+    height: 0,
+  };
+
+  if (align.top === 'bottom') {
+    // Tooltip appears below the target, buffer goes below the target
+    position.top = targetRect.bottom;
+    position.height = marginValue;
+    position.left = targetRect.left;
+  } else if (align.bottom === 'top') {
+    // Tooltip appears above the target, buffer goes above the target
+    position.top = targetRect.top - marginValue;
+    position.height = marginValue;
+    position.left = targetRect.left;
+  } else if (align.left === 'right') {
+    // Tooltip appears to the right, buffer goes to the right
+    position.top = targetRect.top;
+    position.left = targetRect.right;
+    position.width = marginValue;
+    position.height = targetRect.height;
+  } else if (align.right === 'left') {
+    // Tooltip appears to the left, buffer goes to the left
+    position.top = targetRect.top;
+    position.left = targetRect.left - marginValue;
+    position.width = marginValue;
+    position.height = targetRect.height;
+  }
+  return position;
+};
+
 const getReactNodeRef = (element) => {
   if (!element || !React.isValidElement(element)) {
     return null;
@@ -86,34 +156,85 @@ const Tip = forwardRef(
       },
     });
 
+    const [buffer, setBuffer] = useState({
+      top: 0,
+      left: 0,
+      width: 0,
+      height: 0,
+    });
+    // Get the margin from the theme or dropProps and ignore 'none'
+    const resolveMargin = (...margins) =>
+      margins.find((m) => m !== undefined && m !== 'none');
+    const themeMargin = resolveMargin(
+      dropProps?.margin,
+      theme.tip.drop.margin,
+      theme.global.drop.margin,
+    );
+
+    const calculateBuffer = React.useCallback(() => {
+      if (!componentRef.current) return;
+      const rect = componentRef.current.getBoundingClientRect();
+      const align = dropProps?.align ||
+        theme.tip.drop.align || {
+          top: 'bottom',
+          left: 'left',
+        };
+
+      const bufferBox = calculateBufferPosition(
+        align,
+        rect,
+        themeMargin,
+        theme,
+      );
+      setBuffer(bufferBox);
+    }, [componentRef, dropProps, themeMargin, theme]);
+
+    useEffect(() => {
+      calculateBuffer();
+    }, [calculateBuffer]);
+
     useEffect(() => {
       setOver(defaultVisible);
     }, [defaultVisible]);
 
-    return [
-      clonedChild,
-      (over || tooltipOver) && (
-        <Keyboard
-          key="tip-keyboard"
-          onEsc={() => {
-            setOver(false);
-            setTooltipOver(false);
-          }}
-        >
-          <Drop
-            target={componentRef.current}
-            trapFocus={false}
-            key="tip-drop"
-            {...theme.tip.drop}
-            {...dropProps}
-            onMouseEnter={() => setTooltipOver(true)}
-            onMouseLeave={() => setTooltipOver(false)}
-          >
-            {plain ? content : <Box {...theme.tip.content}>{content}</Box>}
-          </Drop>
-        </Keyboard>
-      ),
-    ];
+    return (
+      <>
+        {clonedChild}
+        {(over || tooltipOver) && (
+          <>
+            {themeMargin && (
+              <BufferBox
+                top={buffer.top}
+                left={buffer.left}
+                width={buffer.width}
+                height={buffer.height}
+                onMouseEnter={() => setTooltipOver(true)}
+                onMouseLeave={() => setTooltipOver(false)}
+              />
+            )}
+            <Keyboard
+              key="tip-keyboard"
+              onEsc={() => {
+                setOver(false);
+                setTooltipOver(false);
+              }}
+            >
+              <Drop
+                target={componentRef.current}
+                trapFocus={false}
+                key="tip-drop"
+                {...theme.tip.drop}
+                {...dropProps}
+                onMouseEnter={() => setTooltipOver(true)}
+                onMouseLeave={() => setTooltipOver(false)}
+              >
+                {plain ? content : <Box {...theme.tip.content}>{content}</Box>}
+              </Drop>
+            </Keyboard>
+          </>
+        )}
+      </>
+    );
   },
 );
 
