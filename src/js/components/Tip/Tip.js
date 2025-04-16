@@ -89,6 +89,13 @@ const calculateBufferPosition = (align, targetRect, margin, theme) => {
   return position;
 };
 
+/*
+ * This function getReactNodeRef is adapted from
+ * [Material UI] (https://github.com/mui/material-ui)
+ * Licensed under the MIT License (c) 2024 aarongarciah
+ * The function has been modified from its original version.
+ */
+
 const getReactNodeRef = (element) => {
   if (!element || !React.isValidElement(element)) {
     return null;
