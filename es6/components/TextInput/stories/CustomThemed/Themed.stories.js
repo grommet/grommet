@@ -56,6 +56,7 @@ export var Themed = function Themed() {
   }, /*#__PURE__*/React.createElement(Box, {
     width: "medium"
   }, /*#__PURE__*/React.createElement(TextInput, {
+    id: "grommet-password",
     type: "password",
     value: value,
     dropProps: {

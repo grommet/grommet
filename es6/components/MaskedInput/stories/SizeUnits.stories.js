@@ -16,6 +16,7 @@ export var SizeUnitsMaskedInput = function SizeUnitsMaskedInput() {
     }, /*#__PURE__*/React.createElement(Box, {
       width: "medium"
     }, /*#__PURE__*/React.createElement(MaskedInput, {
+      id: "grommet-size-units",
       mask: [{
         length: [1, 4],
         options: [1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024],

@@ -16,6 +16,7 @@ export var Time = function Time() {
     }, /*#__PURE__*/React.createElement(Box, {
       width: "medium"
     }, /*#__PURE__*/React.createElement(MaskedInput, {
+      id: "grommet-maskedinput-time",
       mask: [{
         length: [1, 2],
         options: Array.from({

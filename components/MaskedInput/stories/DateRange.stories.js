@@ -24,6 +24,7 @@ var DateRange = exports.DateRange = function DateRange() {
     }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
       width: "medium"
     }, /*#__PURE__*/_react["default"].createElement(_grommet.MaskedInput, {
+      id: "grommet-daterange",
       mask: [{
         length: [1, 2],
         options: Array.from({

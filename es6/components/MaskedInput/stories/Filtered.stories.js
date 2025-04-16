@@ -36,6 +36,7 @@ export var Filtered = function Filtered() {
     }, /*#__PURE__*/React.createElement(Box, {
       width: "medium"
     }, /*#__PURE__*/React.createElement(MaskedInput, {
+      id: "grommet-filtered",
       mask: [{
         options: poets,
         placeholder: 'poet'

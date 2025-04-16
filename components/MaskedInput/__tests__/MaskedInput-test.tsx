@@ -242,7 +242,7 @@ describe('MaskedInput', () => {
       </Grommet>,
     );
 
-    await user.type(screen.getByRole('textbox'), 'abbb');
+    await user.type(screen.getByRole('combobox'), 'abbb');
 
     expect(onChange).toHaveBeenCalled();
     expect(onChange).toHaveReturnedWith('abb');
@@ -270,7 +270,7 @@ describe('MaskedInput', () => {
       </Grommet>,
     );
 
-    await user.type(screen.getByRole('textbox'), 'abbb');
+    await user.type(screen.getByRole('combobox'), 'abbb');
 
     expect(onChange).toHaveBeenCalled();
     expect(onChange).toHaveReturnedWith('abbb');

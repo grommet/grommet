@@ -36,6 +36,7 @@ var DropContent = function DropContent(_ref) {
       close();
     }
   }, /*#__PURE__*/_react["default"].createElement(_grommet.MaskedInput, {
+    id: "grommet-date-time",
     mask: [{
       length: [1, 2],
       options: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12'],

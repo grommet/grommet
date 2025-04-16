@@ -41,6 +41,7 @@ var Filtered = exports.Filtered = function Filtered() {
     }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
       width: "medium"
     }, /*#__PURE__*/_react["default"].createElement(_grommet.MaskedInput, {
+      id: "grommet-filtered",
       mask: [{
         options: poets,
         placeholder: 'poet'

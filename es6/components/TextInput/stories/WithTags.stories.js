@@ -135,6 +135,7 @@ export var WithTags = function WithTags() {
     React.createElement(Box, {
       pad: "small"
     }, /*#__PURE__*/React.createElement(TagInput, {
+      id: "grommet-tag-input",
       placeholder: "Search for aliases...",
       suggestions: suggestions,
       value: selectedTags,

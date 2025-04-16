@@ -24,6 +24,7 @@ var DateMaskedInput = exports.DateMaskedInput = function DateMaskedInput() {
     }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
       width: "medium"
     }, /*#__PURE__*/_react["default"].createElement(_grommet.MaskedInput, {
+      id: "grommet-date",
       mask: [{
         length: [1, 2],
         options: Array.from({

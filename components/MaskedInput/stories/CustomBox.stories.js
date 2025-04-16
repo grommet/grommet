@@ -31,6 +31,7 @@ var CustomBoxMaskedInput = exports.CustomBoxMaskedInput = function CustomBoxMask
       width: "medium",
       gap: "medium"
     }, /*#__PURE__*/_react["default"].createElement(_grommet.MaskedInput, {
+      id: "grommet-custom-box",
       plain: true,
       dropProps: {
         target: boxRef.current

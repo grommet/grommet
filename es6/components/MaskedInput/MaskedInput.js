@@ -322,6 +322,36 @@ var MaskedInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
     }).join('');
   };
   var maskedInputIcon = useSizedIcon(icon, rest.size, theme);
+
+  /*
+  If the masked input has a list of options, add the WAI-ARIA 1.2
+  combobox role and states.
+  */
+  var comboboxProps = {};
+  var activeOptionID;
+  var options = useMemo(function () {
+    var _mask$find, _mask$activeMaskIndex;
+    var res;
+    if (!activeMaskIndex)
+      // ensures that comboboxProps gets set on input initially
+      res = (_mask$find = mask.find(function (item) {
+        var _item$options;
+        return (item == null || (_item$options = item.options) == null ? void 0 : _item$options.length) > 0;
+      })) == null ? void 0 : _mask$find.options;else res = (_mask$activeMaskIndex = mask[activeMaskIndex]) == null ? void 0 : _mask$activeMaskIndex.options;
+    return res;
+  }, [mask, activeMaskIndex]);
+  if (id && (options == null ? void 0 : options.length) > 0) {
+    if (showDrop && options) {
+      activeOptionID = "listbox-option-" + activeOptionIndex + "__" + id;
+    }
+    comboboxProps = {
+      'aria-activedescendant': activeOptionID,
+      'aria-autocomplete': 'list',
+      'aria-expanded': showDrop ? 'true' : 'false',
+      'aria-controls': showDrop ? "listbox__" + id : undefined,
+      role: 'combobox'
+    };
+  }
   return /*#__PURE__*/React.createElement(StyledMaskedInputContainer, _extends({
     plain: plain
   }, passThemeFlag), maskedInputIcon && /*#__PURE__*/React.createElement(StyledIcon, {
@@ -353,7 +383,7 @@ var MaskedInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
     reverse: reverse,
     focus: focus,
     textAlign: textAlign
-  }, rest, {
+  }, comboboxProps, rest, {
     value: value,
     theme: theme,
     onFocus: function onFocus(event) {
@@ -386,6 +416,8 @@ var MaskedInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
   }, dropProps), /*#__PURE__*/React.createElement(ContainerBox, _extends({
     ref: dropRef,
     overflow: "auto",
+    id: id ? "listbox__" + id : undefined,
+    role: "listbox",
     dropHeight: dropHeight
   }, passThemeFlag), mask[activeMaskIndex].options.map(function (option, index) {
     // Determine whether the label is done as a child or
@@ -402,6 +434,7 @@ var MaskedInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
       key: option,
       flex: false
     }, /*#__PURE__*/React.createElement(Button, {
+      id: id ? "listbox-option-" + index + "__" + id : undefined,
       tabIndex: "-1",
       onClick: onOption(option),
       onMouseOver: function onMouseOver() {

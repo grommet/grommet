@@ -35,6 +35,7 @@ var OnSelect = exports.OnSelect = function OnSelect() {
     }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
       width: "medium"
     }, /*#__PURE__*/_react["default"].createElement(_grommet.TextInput, {
+      id: "grommet-onselect",
       value: value,
       onChange: onChange,
       onSelect: onHighlight,
