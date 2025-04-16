@@ -424,12 +424,12 @@ describe('Pagination', () => {
       </Grommet>,
     );
     // open stepOptions
-    await user.click(screen.getByRole('button', { name: /Items per Page/i }));
+    await user.click(screen.getByRole('button', { name: /Items per page/i }));
     // click on first option
     await user.click(screen.getByRole('option', { name: /50/i }));
     // expect input value to be 50
     const updatedSelectButton = screen.getByRole('button', {
-      name: 'Items per Page; Selected: 50',
+      name: 'Items per page; Selected: 50',
     });
     expect(updatedSelectButton).toBeTruthy();
     expect(asFragment()).toMatchSnapshot();
@@ -447,12 +447,12 @@ describe('Pagination', () => {
       </Grommet>,
     );
     // open stepOptions
-    await user.click(screen.getByRole('button', { name: /Items per Page/i }));
+    await user.click(screen.getByRole('button', { name: /Items per page/i }));
     // click on first option
     await user.click(screen.getByRole('option', { name: /10/i }));
     // expect input value to be 10
     const updatedSelectButton = screen.getByRole('button', {
-      name: 'Items per Page; Selected: 10',
+      name: 'Items per page; Selected: 10',
     });
     expect(updatedSelectButton).toBeTruthy();
   });
@@ -480,7 +480,7 @@ describe('Pagination', () => {
     await user.click(screen.getByRole('option', { name: '50' }));
     // stepOptions should have updated
     const updatedSelectButton = screen.getByRole('button', {
-      name: 'Items per Page; Selected: 50',
+      name: 'Items per page; Selected: 50',
     });
     expect(updatedSelectButton).toBeTruthy();
     expect(screen.getByRole('button', { name: 'Go to page 5' })).toBeTruthy();
@@ -534,7 +534,7 @@ describe('Pagination', () => {
         <Select
           options={[10, 20, 50, 100]}
           value={itemPerPage} // Set value of Select to itemPerPage
-          a11yTitle="Items per Page"
+          a11yTitle="Items per page"
           onChange={({ option }) => {
             // Update itemPerPage state when Select value changes
             setItemPerPage(option);
@@ -549,21 +549,21 @@ describe('Pagination', () => {
     render(<TestComponent />);
     // Open select
     await userEvent.click(
-      screen.getByRole('button', { name: /Items per Page/i }),
+      screen.getByRole('button', { name: /Items per page/i }),
     );
     // Click on the option '10'
     await userEvent.click(screen.getByRole('option', { name: '10' }));
 
     // Expect input value to be 10
     const updatedSelectButton = screen.getByRole('button', {
-      name: 'Items per Page; Selected: 10',
+      name: 'Items per page; Selected: 10',
     });
     expect(updatedSelectButton).toBeTruthy();
     expect(screen.getByText(`Showing 1-10 of 100`)).toBeTruthy();
 
     // Open select again
     await userEvent.click(
-      screen.getByRole('button', { name: /Items per Page/i }),
+      screen.getByRole('button', { name: /Items per page/i }),
     );
 
     // Click on the option '50'
@@ -571,14 +571,14 @@ describe('Pagination', () => {
 
     // Expect input value to be 50
     const updatedSelectButton1 = screen.getByRole('button', {
-      name: 'Items per Page; Selected: 50',
+      name: 'Items per page; Selected: 50',
     });
     expect(updatedSelectButton1).toBeTruthy();
     expect(screen.getByText(`Showing 1-50 of 100`)).toBeTruthy();
 
     // Open select again
     await userEvent.click(
-      screen.getByRole('button', { name: /Items per Page/i }),
+      screen.getByRole('button', { name: /Items per page/i }),
     );
 
     // Click on the option '100'
@@ -586,7 +586,7 @@ describe('Pagination', () => {
 
     // Expect input value to be 100
     const updatedSelectButton2 = screen.getByRole('button', {
-      name: 'Items per Page; Selected: 100',
+      name: 'Items per page; Selected: 100',
     });
     expect(updatedSelectButton2).toBeTruthy();
     expect(screen.getByText(`Showing 1-100 of 100`)).toBeTruthy();
