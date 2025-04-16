@@ -23,14 +23,15 @@ const BufferBox = styled(Box)`
   width: ${(props) => props.width}px;
   height: ${(props) => props.height}px;
 `;
-const getMarginValue = (marginValue, theme, direction = 'vertical') => {
+const getMarginValue = (marginValue, theme, direction) => {
   const edgeSize = theme.global?.edgeSize || {};
 
   if (!marginValue || marginValue === 'none') return 0;
+  // if marginValue is a string get the value
   if (typeof marginValue === 'string') {
     const numericValue =
       parseInt(edgeSize[marginValue], 10) || parseInt(marginValue, 10);
-    return Number.isNaN(numericValue) ? 0 : numericValue;
+    return numericValue;
   }
 
   if (typeof marginValue === 'object') {
@@ -53,9 +54,13 @@ const getMarginValue = (marginValue, theme, direction = 'vertical') => {
   return 0;
 };
 
+/**
+ * Calculates the position and dimensions of a buffer element
+ * based on the alignment. The buffer element is used to
+ * create spacing between the tooltip and the target element.
+ */
 const calculateBufferPosition = (align, targetRect, margin, theme) => {
   const marginValue = getMarginValue(margin, theme);
-
   const position = {
     top: 0,
     left: 0,
