@@ -374,7 +374,11 @@ const MaskedInput = forwardRef(
     const maskedInputIcon = useSizedIcon(icon, rest.size, theme);
 
     return (
-      <StyledMaskedInputContainer plain={plain} {...passThemeFlag}>
+      <StyledMaskedInputContainer
+        plain={plain}
+        onMouseMove={() => setMouseMovedSinceLastKey(true)}
+        {...passThemeFlag}
+      >
         {maskedInputIcon && (
           <StyledIcon reverse={reverse} theme={theme}>
             {maskedInputIcon}

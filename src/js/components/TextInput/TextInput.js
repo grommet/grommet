@@ -494,6 +494,7 @@ const TextInput = forwardRef(
         readOnlyCopy={readOnlyCopy}
         plain={plain}
         border={!plain}
+        onMouseMove={() => setMouseMovedSinceLastKey(true)}
         {...passThemeFlag}
       >
         {reverse && readOnlyCopy && ReadOnlyCopyButton}
