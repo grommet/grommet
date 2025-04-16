@@ -1178,7 +1178,7 @@ exports[`Pagination should apply a select component with default values for step
           <button
             aria-expanded="false"
             aria-haspopup="listbox"
-            aria-label="Open Drop; Selected: 50"
+            aria-label="Items per Page; Selected: 50"
             class="c7 c8"
             type="button"
           >
