@@ -30,6 +30,7 @@ export const OnSelect = () => {
     <Box fill align="center" justify="start" pad="large">
       <Box width="medium">
         <TextInput
+          id="grommet-onselect"
           value={value}
           onChange={onChange}
           onSelect={onHighlight}

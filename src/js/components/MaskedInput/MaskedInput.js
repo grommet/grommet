@@ -373,6 +373,34 @@ const MaskedInput = forwardRef(
 
     const maskedInputIcon = useSizedIcon(icon, rest.size, theme);
 
+    /*
+    If the masked input has a list of options, add the WAI-ARIA 1.2
+    combobox role and states.
+    */
+    let comboboxProps = {};
+    let activeOptionID;
+    const options = useMemo(() => {
+      let res;
+      if (!activeMaskIndex)
+        // ensures that comboboxProps gets set on input initially
+        res = mask.find((item) => item?.options?.length > 0)?.options;
+      else res = mask[activeMaskIndex]?.options;
+      return res;
+    }, [mask, activeMaskIndex]);
+
+    if (id && options?.length > 0) {
+      if (showDrop && options) {
+        activeOptionID = `listbox-option-${activeOptionIndex}__${id}`;
+      }
+      comboboxProps = {
+        'aria-activedescendant': activeOptionID,
+        'aria-autocomplete': 'list',
+        'aria-expanded': showDrop ? 'true' : 'false',
+        'aria-controls': showDrop ? `listbox__${id}` : undefined,
+        role: 'combobox',
+      };
+    }
+
     return (
       <StyledMaskedInputContainer
         plain={plain}
@@ -407,6 +435,7 @@ const MaskedInput = forwardRef(
             reverse={reverse}
             focus={focus}
             textAlign={textAlign}
+            {...comboboxProps}
             {...rest}
             value={value}
             theme={theme}
@@ -446,6 +475,8 @@ const MaskedInput = forwardRef(
               <ContainerBox
                 ref={dropRef}
                 overflow="auto"
+                id={id ? `listbox__${id}` : undefined}
+                role="listbox"
                 dropHeight={dropHeight}
                 onMouseOver={() => setMouseMovedSinceLastKey(true)}
                 {...passThemeFlag}
@@ -463,6 +494,7 @@ const MaskedInput = forwardRef(
                   return (
                     <Box key={option} flex={false}>
                       <Button
+                        id={id ? `listbox-option-${index}__${id}` : undefined}
                         tabIndex="-1"
                         onClick={onOption(option)}
                         onMouseOver={() => setActiveOptionIndex(index)}
