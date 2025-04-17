@@ -5,13 +5,23 @@ exports[`Tip dropProps should pass props to Drop 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  margin: 0px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+}
+
+.c1 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
   background: none;
   min-width: 0;
   min-height: 0;
   flex-direction: column;
-  overflow: auto;
-  box-shadow: none;
 }
 
 .c2 {
@@ -32,29 +42,31 @@ exports[`Tip dropProps should pass props to Drop 1`] = `
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.20);
 }
 
-.c1 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  border-radius: 0px;
-  position: fixed;
-  z-index: 20;
-  outline: none;
-  background: none;
-  margin: 0px;
-  opacity: 0;
-  transform-origin: top left;
-  animation: kPQHBD 0.1s forwards;
-  animation-delay: 0.01s;
+@media only screen and (max-width: 768px) {
+
 }
 
 @media only screen and (max-width: 768px) {
   .c0 {
-    margin: 0px;
+    margin-top: 0px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c0 {
+    margin-bottom: 0px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c0 {
+    margin-left: 0px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c0 {
+    margin-right: 0px;
   }
 }
 
@@ -85,20 +97,14 @@ exports[`Tip dropProps should pass props to Drop 1`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .c1 {
-    display: flex;
-    align-items: stretch;
-  }
+
 }
 
 <div
-  aria-hidden="false"
+  class="c0"
 >
   <div
-    class="c0 c1"
-    data-g-portal-id="0"
-    style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
-    tabindex="-1"
+    class="c1"
   >
     <div
       class="c2"
@@ -211,16 +217,13 @@ exports[`Tip mouseOver and mouseOut events on the Tip's child 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  margin: 0px;
   background: none;
   min-width: 0;
   min-height: 0;
   flex-direction: column;
-  overflow: auto;
-  box-shadow: none;
 }
 
-.c2 {
+.c1 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -238,10 +241,115 @@ exports[`Tip mouseOver and mouseOut events on the Tip's child 1`] = `
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.20);
 }
 
+.c2 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+}
+
+@media only screen and (max-width: 768px) {
+
+}
+
+@media only screen and (max-width: 768px) {
+
+}
+
+@media only screen and (max-width: 768px) {
+
+}
+
+@media only screen and (max-width: 768px) {
+
+}
+
+@media only screen and (max-width: 768px) {
+
+}
+
+@media only screen and (max-width: 768px) {
+  .c1 {
+    margin: 3px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c1 {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c1 {
+    padding-top: 3px;
+    padding-bottom: 3px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c1 {
+    border-radius: 6px;
+  }
+}
+
+@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
+
+}
+
+<div
+  class="c0"
+>
+  <div
+    class="c1"
+  >
+    <div
+      class="c2"
+      data-testid="tooltip"
+      id="tooltip-id"
+    >
+      tooltip
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Tip plain 1`] = `
+.c0 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin: 0px;
+  background-color: transparent;
+  color: #444444;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  overflow: auto;
+  box-shadow: none;
+}
+
+.c2 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+}
+
 .c3 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  background: none;
   min-width: 0;
   min-height: 0;
   flex-direction: column;
@@ -259,7 +367,8 @@ exports[`Tip mouseOver and mouseOut events on the Tip's child 1`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  background: none;
+  background-color: transparent;
+  color: #444444;
   margin: 0px;
   opacity: 0;
   transform-origin: top left;
@@ -275,27 +384,25 @@ exports[`Tip mouseOver and mouseOut events on the Tip's child 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c2 {
-    margin: 3px;
+    margin-top: 0px;
   }
 }
 
 @media only screen and (max-width: 768px) {
   .c2 {
-    padding-left: 6px;
-    padding-right: 6px;
+    margin-bottom: 0px;
   }
 }
 
 @media only screen and (max-width: 768px) {
   .c2 {
-    padding-top: 3px;
-    padding-bottom: 3px;
+    margin-left: 0px;
   }
 }
 
 @media only screen and (max-width: 768px) {
   .c2 {
-    border-radius: 6px;
+    margin-right: 0px;
   }
 }
 
@@ -317,71 +424,6 @@ exports[`Tip mouseOver and mouseOut events on the Tip's child 1`] = `
   >
     <div
       class="c3"
-      data-testid="tooltip"
-      id="tooltip-id"
-    >
-      tooltip
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Tip plain 1`] = `
-.c0 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  margin: 0px;
-  background: none;
-  min-width: 0;
-  min-height: 0;
-  flex-direction: column;
-  overflow: auto;
-  box-shadow: none;
-}
-
-.c1 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  border-radius: 0px;
-  position: fixed;
-  z-index: 20;
-  outline: none;
-  background: none;
-  margin: 0px;
-  opacity: 0;
-  transform-origin: top left;
-  animation: kPQHBD 0.1s forwards;
-  animation-delay: 0.01s;
-}
-
-@media only screen and (max-width: 768px) {
-  .c0 {
-    margin: 0px;
-  }
-}
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .c1 {
-    display: flex;
-    align-items: stretch;
-  }
-}
-
-<div>
-  <div
-    aria-hidden="false"
-  >
-    <div
-      class="c0 c1"
-      data-g-portal-id="0"
-      style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
-      tabindex="-1"
     >
       tooltip
     </div>
@@ -400,13 +442,23 @@ exports[`Tip should be visible by default 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  margin: 0px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+}
+
+.c1 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
   background: none;
   min-width: 0;
   min-height: 0;
   flex-direction: column;
-  overflow: auto;
-  box-shadow: none;
 }
 
 .c2 {
@@ -427,29 +479,31 @@ exports[`Tip should be visible by default 1`] = `
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.20);
 }
 
-.c1 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  border-radius: 0px;
-  position: fixed;
-  z-index: 20;
-  outline: none;
-  background: none;
-  margin: 0px;
-  opacity: 0;
-  transform-origin: top left;
-  animation: kPQHBD 0.1s forwards;
-  animation-delay: 0.01s;
+@media only screen and (max-width: 768px) {
+
 }
 
 @media only screen and (max-width: 768px) {
   .c0 {
-    margin: 0px;
+    margin-top: 0px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c0 {
+    margin-bottom: 0px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c0 {
+    margin-left: 0px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c0 {
+    margin-right: 0px;
   }
 }
 
@@ -480,20 +534,14 @@ exports[`Tip should be visible by default 1`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .c1 {
-    display: flex;
-    align-items: stretch;
-  }
+
 }
 
 <div
-  aria-hidden="false"
+  class="c0"
 >
   <div
-    class="c0 c1"
-    data-g-portal-id="0"
-    style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
-    tabindex="-1"
+    class="c1"
   >
     <div
       class="c2"
@@ -568,13 +616,20 @@ exports[`Tip themed 1`] = `
   box-sizing: border-box;
   max-width: 100%;
   margin: 21px;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+}
+
+.c1 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
   background-color: #7D4CDB;
   color: #f8f8f8;
   min-width: 0;
   min-height: 0;
   flex-direction: column;
-  overflow: auto;
-  box-shadow: 0px 8px 16px rgba(255, 255, 255, 0.40);
 }
 
 .c2 {
@@ -595,25 +650,8 @@ exports[`Tip themed 1`] = `
   box-shadow: 0px 4px 4px rgba(255, 255, 255, 0.40);
 }
 
-.c1 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  border-radius: 0px;
-  position: fixed;
-  z-index: 20;
-  outline: none;
-  background-color: #7D4CDB;
-  color: #f8f8f8;
-  margin: 21px;
-  opacity: 0;
-  transform-origin: top left;
-  animation: kPQHBD 0.1s forwards;
-  animation-delay: 0.01s;
+@media only screen and (max-width: 768px) {
+
 }
 
 @media only screen and (max-width: 768px) {
@@ -649,20 +687,14 @@ exports[`Tip themed 1`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .c1 {
-    display: flex;
-    align-items: stretch;
-  }
+
 }
 
 <div
-  aria-hidden="false"
+  class="c0"
 >
   <div
-    class="c0 c1"
-    data-g-portal-id="0"
-    style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
-    tabindex="-1"
+    class="c1"
   >
     <div
       class="c2"

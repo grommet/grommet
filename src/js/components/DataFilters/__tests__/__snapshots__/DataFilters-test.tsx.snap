@@ -1529,6 +1529,22 @@ exports[`DataFilters layer 2`] = `
 }
 
 @media only screen and (max-width: 768px) {
+
+}
+
+@media only screen and (max-width: 768px) {
+
+}
+
+@media only screen and (max-width: 768px) {
+
+}
+
+@media only screen and (max-width: 768px) {
+
+}
+
+@media only screen and (max-width: 768px) {
   .c6 {
     padding-left: 12px;
     padding-right: 12px;
