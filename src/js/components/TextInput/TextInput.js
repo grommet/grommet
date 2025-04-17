@@ -362,7 +362,7 @@ const TextInput = forwardRef(
         >
           <ContainerBox
             aria-label={
-              defaultSuggestion !== -1
+              defaultSuggestion !== undefined
                 ? 'Suggestions list for text input'
                 : undefined
             }
@@ -409,7 +409,7 @@ const TextInput = forwardRef(
                     >
                       <Button
                         aria-label={
-                          defaultSuggestion !== -1
+                          defaultSuggestion !== undefined
                             ? `You are on the default suggestion ${index + 1}`
                             : undefined
                         }
