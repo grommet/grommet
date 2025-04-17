@@ -23,7 +23,6 @@ import {
   sizeStyle,
   useForwardedRef,
   useSizedIcon,
-  useKeyboard,
 } from '../../utils';
 
 import {
@@ -122,22 +121,6 @@ const TextInput = forwardRef(
 
     const [focus, setFocus] = useState();
     const [showDrop, setShowDrop] = useState(false);
-    const [arrowDownInitiated, setArrowDownInitiated] = useState(false);
-
-    const usingKeyboard = useKeyboard();
-    useEffect(() => {
-      const handleKeyDown = (event) => {
-        if (event.key === 'ArrowDown') {
-          setArrowDownInitiated(true);
-        }
-      };
-
-      document.addEventListener('keydown', handleKeyDown);
-
-      return () => {
-        document.removeEventListener('keydown', handleKeyDown);
-      };
-    }, []);
 
     const handleSuggestionSelect = useMemo(
       () => (onSelect && !onSuggestionSelect ? onSelect : onSuggestionSelect),
@@ -378,6 +361,11 @@ const TextInput = forwardRef(
           {...dropProps}
         >
           <ContainerBox
+            aria-label={
+              defaultSuggestion !== -1
+                ? 'Suggestions list for text input'
+                : undefined
+            }
             id={id ? `listbox__${id}` : undefined}
             role="listbox"
             overflow="auto"
@@ -420,6 +408,11 @@ const TextInput = forwardRef(
                       ref={itemRef}
                     >
                       <Button
+                        aria-label={
+                          defaultSuggestion !== -1
+                            ? `You are on the default suggestion ${index + 1}`
+                            : undefined
+                        }
                         id={id ? `listbox-option-${index}__${id}` : undefined}
                         role="option"
                         aria-selected={selected ? 'true' : 'false'}
@@ -478,14 +471,8 @@ const TextInput = forwardRef(
       if (showDrop && activeSuggestionIndex > -1) {
         activeOptionID = `listbox-option-${activeSuggestionIndex}__${id}`;
       }
-      // The moment aria-expanded=true, and aria-activedescendant is set
-      // (which happens when activeSuggestionIndex is not -1), VoiceOver:
-      // assumes the focus is within the listbox Skips past the text input
-      // we want to avoid this, so we set aria-activedescendant only when
-      // the user is using the keyboard to navigate the listbox.
       comboboxProps = {
-        'aria-activedescendant':
-          !usingKeyboard || arrowDownInitiated ? activeOptionID : undefined,
+        'aria-activedescendant': activeOptionID,
         'aria-autocomplete': 'list',
         'aria-expanded': showDrop ? 'true' : 'false',
         'aria-controls': showDrop ? `listbox__${id}` : undefined,

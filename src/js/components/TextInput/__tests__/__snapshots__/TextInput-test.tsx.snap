@@ -431,6 +431,7 @@ exports[`TextInput calls onSuggestionsClose 2`] = `
   tabindex="-1"
 >
   <div
+    aria-label="Suggestions list for text input"
     class="c2 c3"
     id="listbox__item"
     role="listbox"
@@ -440,6 +441,7 @@ exports[`TextInput calls onSuggestionsClose 2`] = `
     >
       <li>
         <button
+          aria-label="You are on the default suggestion 1"
           aria-selected="false"
           class="c5"
           id="listbox-option-0__item"
@@ -455,6 +457,7 @@ exports[`TextInput calls onSuggestionsClose 2`] = `
       </li>
       <li>
         <button
+          aria-label="You are on the default suggestion 2"
           aria-selected="false"
           class="c5"
           id="listbox-option-1__item"
@@ -646,6 +649,7 @@ exports[`TextInput calls onSuggestionsOpen 1`] = `
   tabindex="-1"
 >
   <div
+    aria-label="Suggestions list for text input"
     class="c2 c3"
     id="listbox__item"
     role="listbox"
@@ -655,6 +659,7 @@ exports[`TextInput calls onSuggestionsOpen 1`] = `
     >
       <li>
         <button
+          aria-label="You are on the default suggestion 1"
           aria-selected="false"
           class="c5"
           id="listbox-option-0__item"
@@ -670,6 +675,7 @@ exports[`TextInput calls onSuggestionsOpen 1`] = `
       </li>
       <li>
         <button
+          aria-label="You are on the default suggestion 2"
           aria-selected="false"
           class="c5"
           id="listbox-option-1__item"
@@ -938,6 +944,7 @@ exports[`TextInput close suggestion drop 2`] = `
   tabindex="-1"
 >
   <div
+    aria-label="Suggestions list for text input"
     class="c2 c3"
     id="listbox__item"
     role="listbox"
@@ -947,6 +954,7 @@ exports[`TextInput close suggestion drop 2`] = `
     >
       <li>
         <button
+          aria-label="You are on the default suggestion 1"
           aria-selected="false"
           class="c5"
           id="listbox-option-0__item"
@@ -962,6 +970,7 @@ exports[`TextInput close suggestion drop 2`] = `
       </li>
       <li>
         <button
+          aria-label="You are on the default suggestion 2"
           aria-selected="false"
           class="c5"
           id="listbox-option-1__item"
@@ -1251,6 +1260,7 @@ exports[`TextInput complex suggestions 2`] = `
   tabindex="-1"
 >
   <div
+    aria-label="Suggestions list for text input"
     class="c2 c3"
     id="listbox__item"
     role="listbox"
@@ -1260,6 +1270,7 @@ exports[`TextInput complex suggestions 2`] = `
     >
       <li>
         <button
+          aria-label="You are on the default suggestion 1"
           aria-selected="false"
           class="c5"
           id="listbox-option-0__item"
@@ -1275,6 +1286,7 @@ exports[`TextInput complex suggestions 2`] = `
       </li>
       <li>
         <button
+          aria-label="You are on the default suggestion 2"
           aria-selected="false"
           class="c5"
           id="listbox-option-1__item"
@@ -2008,6 +2020,7 @@ exports[`TextInput large drop height 1`] = `
   tabindex="-1"
 >
   <div
+    aria-label="Suggestions list for text input"
     class="c2 c3"
     id="listbox__item"
     role="listbox"
@@ -2017,6 +2030,7 @@ exports[`TextInput large drop height 1`] = `
     >
       <li>
         <button
+          aria-label="You are on the default suggestion 1"
           aria-selected="false"
           class="c5"
           id="listbox-option-0__item"
@@ -2032,6 +2046,7 @@ exports[`TextInput large drop height 1`] = `
       </li>
       <li>
         <button
+          aria-label="You are on the default suggestion 2"
           aria-selected="false"
           class="c5"
           id="listbox-option-1__item"
@@ -2599,6 +2614,7 @@ exports[`TextInput medium drop height 1`] = `
   tabindex="-1"
 >
   <div
+    aria-label="Suggestions list for text input"
     class="c2 c3"
     id="listbox__item"
     role="listbox"
@@ -2608,6 +2624,7 @@ exports[`TextInput medium drop height 1`] = `
     >
       <li>
         <button
+          aria-label="You are on the default suggestion 1"
           aria-selected="false"
           class="c5"
           id="listbox-option-0__item"
@@ -2623,6 +2640,7 @@ exports[`TextInput medium drop height 1`] = `
       </li>
       <li>
         <button
+          aria-label="You are on the default suggestion 2"
           aria-selected="false"
           class="c5"
           id="listbox-option-1__item"
@@ -4400,6 +4418,7 @@ exports[`TextInput select suggestion 2`] = `
   tabindex="-1"
 >
   <div
+    aria-label="Suggestions list for text input"
     class="c2 c3"
     id="listbox__item"
     role="listbox"
@@ -4409,6 +4428,7 @@ exports[`TextInput select suggestion 2`] = `
     >
       <li>
         <button
+          aria-label="You are on the default suggestion 1"
           aria-selected="false"
           class="c5"
           id="listbox-option-0__item"
@@ -4424,6 +4444,7 @@ exports[`TextInput select suggestion 2`] = `
       </li>
       <li>
         <button
+          aria-label="You are on the default suggestion 2"
           aria-selected="false"
           class="c5"
           id="listbox-option-1__item"
@@ -5332,6 +5353,7 @@ exports[`TextInput small drop height 1`] = `
   tabindex="-1"
 >
   <div
+    aria-label="Suggestions list for text input"
     class="c2 c3"
     id="listbox__item"
     role="listbox"
@@ -5341,6 +5363,7 @@ exports[`TextInput small drop height 1`] = `
     >
       <li>
         <button
+          aria-label="You are on the default suggestion 1"
           aria-selected="false"
           class="c5"
           id="listbox-option-0__item"
@@ -5356,6 +5379,7 @@ exports[`TextInput small drop height 1`] = `
       </li>
       <li>
         <button
+          aria-label="You are on the default suggestion 2"
           aria-selected="false"
           class="c5"
           id="listbox-option-1__item"
@@ -5610,6 +5634,7 @@ exports[`TextInput suggestions 2`] = `
   tabindex="-1"
 >
   <div
+    aria-label="Suggestions list for text input"
     class="c2 c3"
     id="listbox__item"
     role="listbox"
@@ -5619,6 +5644,7 @@ exports[`TextInput suggestions 2`] = `
     >
       <li>
         <button
+          aria-label="You are on the default suggestion 1"
           aria-selected="false"
           class="c5"
           id="listbox-option-0__item"
@@ -5634,6 +5660,7 @@ exports[`TextInput suggestions 2`] = `
       </li>
       <li>
         <button
+          aria-label="You are on the default suggestion 2"
           aria-selected="false"
           class="c5"
           id="listbox-option-1__item"
