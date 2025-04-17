@@ -2080,13 +2080,23 @@ exports[`ToggleGroup icon with tooltip 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  margin: 0px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+}
+
+.c1 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
   background: none;
   min-width: 0;
   min-height: 0;
   flex-direction: column;
-  overflow: auto;
-  box-shadow: none;
 }
 
 .c2 {
@@ -2107,24 +2117,8 @@ exports[`ToggleGroup icon with tooltip 1`] = `
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.20);
 }
 
-.c1 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  border-radius: 0px;
-  position: fixed;
-  z-index: 20;
-  outline: none;
-  background: none;
-  margin: 0px;
-  opacity: 0;
-  transform-origin: top left;
-  animation: kPQHBD 0.1s forwards;
-  animation-delay: 0.01s;
+@media only screen and (max-width: 768px) {
+
 }
 
 @media only screen and (max-width: 768px) {
@@ -2133,7 +2127,25 @@ exports[`ToggleGroup icon with tooltip 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c0 {
-    margin: 0px;
+    margin-top: 0px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c0 {
+    margin-bottom: 0px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c0 {
+    margin-left: 0px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c0 {
+    margin-right: 0px;
   }
 }
 
@@ -2164,20 +2176,14 @@ exports[`ToggleGroup icon with tooltip 1`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .c1 {
-    display: flex;
-    align-items: stretch;
-  }
+
 }
 
 <div
-  aria-hidden="false"
+  class="c0"
 >
   <div
-    class="c0 c1"
-    data-g-portal-id="0"
-    style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
-    tabindex="-1"
+    class="c1"
   >
     <div
       class="c2"

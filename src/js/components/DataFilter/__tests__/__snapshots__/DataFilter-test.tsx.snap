@@ -3083,6 +3083,22 @@ exports[`DataFilter select multiple options 1`] = `
 }
 
 @media only screen and (max-width: 768px) {
+
+}
+
+@media only screen and (max-width: 768px) {
+
+}
+
+@media only screen and (max-width: 768px) {
+
+}
+
+@media only screen and (max-width: 768px) {
+
+}
+
+@media only screen and (max-width: 768px) {
   .c8 {
     border-radius: 12px;
   }
