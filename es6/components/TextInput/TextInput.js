@@ -333,7 +333,8 @@ var TextInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
         },
         onMouseMove: mouseMovedSinceLastKey && activeSuggestionIndex !== index ? function () {
           return setActiveSuggestionIndex(index);
-        } : undefined
+        } : undefined,
+        keyboard: !mouseMovedSinceLastKey
       }, child));
     }))));
   }
@@ -390,7 +391,10 @@ var TextInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
     ,
     readOnlyCopy: readOnlyCopy,
     plain: plain,
-    border: !plain
+    border: !plain,
+    onMouseMove: function onMouseMove() {
+      return setMouseMovedSinceLastKey(true);
+    }
   }, passThemeFlag), reverse && readOnlyCopy && ReadOnlyCopyButton, showStyledPlaceholder && /*#__PURE__*/React.createElement(StyledPlaceholder, passThemeFlag, placeholder), textInputIcon && !readOnly && /*#__PURE__*/React.createElement(StyledIcon, {
     reverse: reverse,
     theme: theme

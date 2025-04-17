@@ -229,6 +229,9 @@ var MaskedInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
     });
     inputRef.current.dispatchEvent(event);
   }, [inputRef]);
+  var _useState6 = useState(),
+    mouseMovedSinceLastKey = _useState6[0],
+    setMouseMovedSinceLastKey = _useState6[1];
 
   // This could be due to a paste or as the user is typing.
   var onChangeInput = useCallback(function (event) {
@@ -287,6 +290,7 @@ var MaskedInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
     if (item && item.options) {
       event.preventDefault();
       var index = Math.min(activeOptionIndex + 1, item.options.length - 1);
+      setMouseMovedSinceLastKey(false);
       setActiveOptionIndex(index);
     }
   }, [activeMaskIndex, activeOptionIndex, mask]);
@@ -294,6 +298,7 @@ var MaskedInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
     if (activeMaskIndex >= 0 && mask[activeMaskIndex].options) {
       event.preventDefault();
       var index = Math.max(activeOptionIndex - 1, 0);
+      setMouseMovedSinceLastKey(false);
       setActiveOptionIndex(index);
     }
   }, [activeMaskIndex, activeOptionIndex, mask]);
@@ -353,7 +358,10 @@ var MaskedInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
     };
   }
   return /*#__PURE__*/React.createElement(StyledMaskedInputContainer, _extends({
-    plain: plain
+    plain: plain,
+    onMouseMove: function onMouseMove() {
+      return setMouseMovedSinceLastKey(true);
+    }
   }, passThemeFlag), maskedInputIcon && /*#__PURE__*/React.createElement(StyledIcon, {
     reverse: reverse,
     theme: theme
@@ -418,7 +426,10 @@ var MaskedInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
     overflow: "auto",
     id: id ? "listbox__" + id : undefined,
     role: "listbox",
-    dropHeight: dropHeight
+    dropHeight: dropHeight,
+    onMouseOver: function onMouseOver() {
+      return setMouseMovedSinceLastKey(true);
+    }
   }, passThemeFlag), mask[activeMaskIndex].options.map(function (option, index) {
     // Determine whether the label is done as a child or
     // as an option Button kind property.
@@ -446,7 +457,8 @@ var MaskedInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
       align: "start",
       kind: !child ? 'option' : undefined,
       hoverIndicator: !child ? undefined : 'background',
-      label: !child ? option : undefined
+      label: !child ? option : undefined,
+      keyboard: !mouseMovedSinceLastKey
     }, child));
   }))));
 });

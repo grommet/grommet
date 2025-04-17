@@ -340,7 +340,8 @@ var TextInput = exports.TextInput = /*#__PURE__*/(0, _react.forwardRef)(function
         },
         onMouseMove: mouseMovedSinceLastKey && activeSuggestionIndex !== index ? function () {
           return setActiveSuggestionIndex(index);
-        } : undefined
+        } : undefined,
+        keyboard: !mouseMovedSinceLastKey
       }, child));
     }))));
   }
@@ -397,7 +398,10 @@ var TextInput = exports.TextInput = /*#__PURE__*/(0, _react.forwardRef)(function
     ,
     readOnlyCopy: readOnlyCopy,
     plain: plain,
-    border: !plain
+    border: !plain,
+    onMouseMove: function onMouseMove() {
+      return setMouseMovedSinceLastKey(true);
+    }
   }, passThemeFlag), reverse && readOnlyCopy && ReadOnlyCopyButton, showStyledPlaceholder && /*#__PURE__*/_react["default"].createElement(_StyledTextInput.StyledPlaceholder, passThemeFlag, placeholder), textInputIcon && !readOnly && /*#__PURE__*/_react["default"].createElement(_StyledTextInput.StyledIcon, {
     reverse: reverse,
     theme: theme
