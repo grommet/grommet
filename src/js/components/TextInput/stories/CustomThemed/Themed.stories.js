@@ -70,6 +70,7 @@ export const Themed = () => {
       <Box fill align="center" justify="start" pad="large">
         <Box width="medium">
           <TextInput
+            id="grommet-password"
             type="password"
             value={value}
             dropProps={{ height: 'small' }}

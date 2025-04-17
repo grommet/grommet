@@ -38,6 +38,7 @@ export const Filtered = () => {
     <Box fill align="center" justify="start" pad="large">
       <Box width="medium">
         <MaskedInput
+          id="grommet-filtered"
           mask={[
             {
               options: poets,

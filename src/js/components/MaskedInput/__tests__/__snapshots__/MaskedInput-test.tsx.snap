@@ -89,12 +89,15 @@ exports[`MaskedInput applies custom global.hover theme to options 1`] = `
     class="c1"
   >
     <input
+      aria-autocomplete="list"
+      aria-expanded="false"
       autocomplete="off"
       class="c2"
       data-testid="test-input"
       id="item"
       name="item"
       placeholder="!"
+      role="combobox"
       value=""
     />
   </div>
@@ -199,6 +202,7 @@ exports[`MaskedInput applies custom global.hover theme to options 2`] = `
 
 <button
   class="c0"
+  id="listbox-option-1__item"
   tabindex="-1"
   type="button"
 >
@@ -828,12 +832,15 @@ exports[`MaskedInput event target props are available option via keyboard 1`] = 
     class="c1"
   >
     <input
+      aria-autocomplete="list"
+      aria-expanded="false"
       autocomplete="off"
       class="c2"
       data-testid="test-input"
       id="item"
       name="item"
       placeholder="!"
+      role="combobox"
       value=""
     />
   </div>
@@ -929,12 +936,15 @@ exports[`MaskedInput event target props are available option via mouse 1`] = `
     class="c1"
   >
     <input
+      aria-autocomplete="list"
+      aria-expanded="false"
       autocomplete="off"
       class="c2"
       data-testid="test-input"
       id="item"
       name="item"
       placeholder="!"
+      role="combobox"
       value=""
     />
   </div>
@@ -1102,12 +1112,15 @@ exports[`MaskedInput event target props are available option via mouse 2`] = `
 >
   <div
     class="c2 c3"
+    id="listbox__item"
+    role="listbox"
   >
     <div
       class="c4"
     >
       <button
         class="c5"
+        id="listbox-option-0__item"
         tabindex="-1"
         type="button"
       >
@@ -1123,6 +1136,7 @@ exports[`MaskedInput event target props are available option via mouse 2`] = `
     >
       <button
         class="c5"
+        id="listbox-option-1__item"
         tabindex="-1"
         type="button"
       >
@@ -1147,12 +1161,17 @@ exports[`MaskedInput event target props are available option via mouse 4`] = `
     class="StyledMaskedInput__StyledMaskedInputContainer-sc-99vkfa-1 fWbzkO"
   >
     <input
+      aria-activedescendant="listbox-option--1__item"
+      aria-autocomplete="list"
+      aria-controls="listbox__item"
+      aria-expanded="true"
       autocomplete="off"
       class="StyledMaskedInput-sc-99vkfa-0 dnAGMh"
       data-testid="test-input"
       id="item"
       name="item"
       placeholder="!"
+      role="combobox"
       value="aa!"
     />
   </div>
@@ -1552,12 +1571,15 @@ exports[`MaskedInput mask 1`] = `
     class="c1"
   >
     <input
+      aria-autocomplete="list"
+      aria-expanded="false"
       autocomplete="off"
       class="c2"
       data-testid="test-input"
       id="item"
       name="item"
       placeholder="!"
+      role="combobox"
       value="a"
     />
   </div>
@@ -1725,12 +1747,15 @@ exports[`MaskedInput mask 2`] = `
 >
   <div
     class="c2 c3"
+    id="listbox__item"
+    role="listbox"
   >
     <div
       class="c4"
     >
       <button
         class="c5"
+        id="listbox-option-0__item"
         tabindex="-1"
         type="button"
       >
@@ -1746,6 +1771,7 @@ exports[`MaskedInput mask 2`] = `
     >
       <button
         class="c5"
+        id="listbox-option-1__item"
         tabindex="-1"
         type="button"
       >
@@ -2305,12 +2331,15 @@ exports[`MaskedInput option via keyboard 1`] = `
     class="c1"
   >
     <input
+      aria-autocomplete="list"
+      aria-expanded="false"
       autocomplete="off"
       class="c2"
       data-testid="test-input"
       id="item"
       name="item"
       placeholder="!"
+      role="combobox"
       value=""
     />
   </div>
@@ -2406,12 +2435,15 @@ exports[`MaskedInput option via mouse 1`] = `
     class="c1"
   >
     <input
+      aria-autocomplete="list"
+      aria-expanded="false"
       autocomplete="off"
       class="c2"
       data-testid="test-input"
       id="item"
       name="item"
       placeholder="!"
+      role="combobox"
       value=""
     />
   </div>
@@ -2579,12 +2611,15 @@ exports[`MaskedInput option via mouse 2`] = `
 >
   <div
     class="c2 c3"
+    id="listbox__item"
+    role="listbox"
   >
     <div
       class="c4"
     >
       <button
         class="c5"
+        id="listbox-option-0__item"
         tabindex="-1"
         type="button"
       >
@@ -2600,6 +2635,7 @@ exports[`MaskedInput option via mouse 2`] = `
     >
       <button
         class="c5"
+        id="listbox-option-1__item"
         tabindex="-1"
         type="button"
       >
@@ -2624,12 +2660,17 @@ exports[`MaskedInput option via mouse 4`] = `
     class="StyledMaskedInput__StyledMaskedInputContainer-sc-99vkfa-1 fWbzkO"
   >
     <input
+      aria-activedescendant="listbox-option--1__item"
+      aria-autocomplete="list"
+      aria-controls="listbox__item"
+      aria-expanded="true"
       autocomplete="off"
       class="StyledMaskedInput-sc-99vkfa-0 dnAGMh"
       data-testid="test-input"
       id="item"
       name="item"
       placeholder="!"
+      role="combobox"
       value="aa!"
     />
   </div>
