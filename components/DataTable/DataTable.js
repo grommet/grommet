@@ -190,9 +190,14 @@ var DataTable = exports.DataTable = function DataTable(_ref) {
       setSelectedDataContext(select.length);
     }
   }, [select, setSelectedDataContext]);
-  var _useState8 = (0, _react.useState)([]),
+  var _useState8 = (0, _react.useState)((rowDetails == null ? void 0 : rowDetails.expand) || []),
     rowExpand = _useState8[0],
     setRowExpand = _useState8[1];
+  (0, _react.useEffect)(function () {
+    if (rowDetails != null && rowDetails.expand) {
+      setRowExpand(rowDetails.expand);
+    }
+  }, [rowDetails == null ? void 0 : rowDetails.expand]);
 
   // any customized column widths
   var _useState9 = (0, _react.useState)({}),

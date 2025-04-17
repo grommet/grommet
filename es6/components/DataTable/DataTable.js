@@ -184,9 +184,14 @@ var DataTable = function DataTable(_ref) {
       setSelectedDataContext(select.length);
     }
   }, [select, setSelectedDataContext]);
-  var _useState8 = useState([]),
+  var _useState8 = useState((rowDetails == null ? void 0 : rowDetails.expand) || []),
     rowExpand = _useState8[0],
     setRowExpand = _useState8[1];
+  useEffect(function () {
+    if (rowDetails != null && rowDetails.expand) {
+      setRowExpand(rowDetails.expand);
+    }
+  }, [rowDetails == null ? void 0 : rowDetails.expand]);
 
   // any customized column widths
   var _useState9 = useState({}),

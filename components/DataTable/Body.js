@@ -41,7 +41,6 @@ var Row = /*#__PURE__*/(0, _react.memo)(function (_ref) {
     columns = _ref.columns,
     pinnedOffset = _ref.pinnedOffset,
     primaryProperty = _ref.primaryProperty,
-    data = _ref.data,
     verticalAlign = _ref.verticalAlign;
   return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_StyledDataTable.StyledDataTableRow, {
     ref: rowRef,
@@ -104,12 +103,19 @@ var Row = /*#__PURE__*/(0, _react.memo)(function (_ref) {
     context: isRowExpanded ? 'groupHeader' : 'body',
     expanded: isRowExpanded,
     onToggle: function onToggle() {
+      var nextRowExpand;
+      var rowKey = primaryValue || index;
       if (isRowExpanded) {
-        setRowExpand(rowExpand.filter(function (s) {
-          return s !== index;
-        }));
+        nextRowExpand = rowExpand.filter(function (s) {
+          return s !== rowKey;
+        });
       } else {
-        setRowExpand([].concat(rowExpand, [index]));
+        nextRowExpand = [].concat(rowExpand, [rowKey]);
+      }
+      if (rowDetails.onExpand) {
+        rowDetails.onExpand(nextRowExpand, datum);
+      } else {
+        setRowExpand(nextRowExpand);
       }
     },
     pad: cellProps.pad,
@@ -133,7 +139,7 @@ var Row = /*#__PURE__*/(0, _react.memo)(function (_ref) {
     key: index.toString() + "_expand"
   }, (selected || onSelect) && /*#__PURE__*/_react["default"].createElement(_TableCell.TableCell, null), /*#__PURE__*/_react["default"].createElement(_TableCell.TableCell, {
     colSpan: columns.length + 1
-  }, rowDetails(data[index]))));
+  }, rowDetails.render ? rowDetails.render(datum) : rowDetails(datum))));
 });
 var Body = exports.Body = /*#__PURE__*/(0, _react.forwardRef)(function (_ref2, ref) {
   var _ref3;
@@ -251,7 +257,7 @@ var Body = exports.Body = /*#__PURE__*/(0, _react.forwardRef)(function (_ref2, r
     var primaryValue = primaryProperty ? (0, _buildState.datumValue)(datum, primaryProperty) : undefined;
     var isSelected = selected && selected.includes(primaryValue);
     var isDisabled = disabled && disabled.includes(primaryValue);
-    var isRowExpanded = rowExpand && rowExpand.includes(index);
+    var isRowExpanded = rowExpand && rowExpand.includes(primaryValue || index);
     var cellProps = (0, _buildState.normalizeRowCellProps)(rowProps, cellPropsProp, primaryValue, index);
     return /*#__PURE__*/_react["default"].createElement(Row, {
       key: primaryValue != null ? primaryValue : index,

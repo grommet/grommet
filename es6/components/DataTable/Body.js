@@ -35,7 +35,6 @@ var Row = /*#__PURE__*/memo(function (_ref) {
     columns = _ref.columns,
     pinnedOffset = _ref.pinnedOffset,
     primaryProperty = _ref.primaryProperty,
-    data = _ref.data,
     verticalAlign = _ref.verticalAlign;
   return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(StyledDataTableRow, {
     ref: rowRef,
@@ -98,12 +97,19 @@ var Row = /*#__PURE__*/memo(function (_ref) {
     context: isRowExpanded ? 'groupHeader' : 'body',
     expanded: isRowExpanded,
     onToggle: function onToggle() {
+      var nextRowExpand;
+      var rowKey = primaryValue || index;
       if (isRowExpanded) {
-        setRowExpand(rowExpand.filter(function (s) {
-          return s !== index;
-        }));
+        nextRowExpand = rowExpand.filter(function (s) {
+          return s !== rowKey;
+        });
       } else {
-        setRowExpand([].concat(rowExpand, [index]));
+        nextRowExpand = [].concat(rowExpand, [rowKey]);
+      }
+      if (rowDetails.onExpand) {
+        rowDetails.onExpand(nextRowExpand, datum);
+      } else {
+        setRowExpand(nextRowExpand);
       }
     },
     pad: cellProps.pad,
@@ -127,7 +133,7 @@ var Row = /*#__PURE__*/memo(function (_ref) {
     key: index.toString() + "_expand"
   }, (selected || onSelect) && /*#__PURE__*/React.createElement(TableCell, null), /*#__PURE__*/React.createElement(TableCell, {
     colSpan: columns.length + 1
-  }, rowDetails(data[index]))));
+  }, rowDetails.render ? rowDetails.render(datum) : rowDetails(datum))));
 });
 var Body = /*#__PURE__*/forwardRef(function (_ref2, ref) {
   var _ref3;
@@ -245,7 +251,7 @@ var Body = /*#__PURE__*/forwardRef(function (_ref2, ref) {
     var primaryValue = primaryProperty ? datumValue(datum, primaryProperty) : undefined;
     var isSelected = selected && selected.includes(primaryValue);
     var isDisabled = disabled && disabled.includes(primaryValue);
-    var isRowExpanded = rowExpand && rowExpand.includes(index);
+    var isRowExpanded = rowExpand && rowExpand.includes(primaryValue || index);
     var cellProps = normalizeRowCellProps(rowProps, cellPropsProp, primaryValue, index);
     return /*#__PURE__*/React.createElement(Row, {
       key: primaryValue != null ? primaryValue : index,

@@ -78,7 +78,11 @@ if (process.env.NODE_ENV !== 'production') {
       onSelect: _propTypes["default"].func
     })]),
     onClickRow: _propTypes["default"].oneOfType([_propTypes["default"].func, _propTypes["default"].oneOf(['select'])]),
-    rowDetails: _propTypes["default"].func,
+    rowDetails: _propTypes["default"].oneOfType([_propTypes["default"].func, _propTypes["default"].shape({
+      render: _propTypes["default"].func.isRequired,
+      expand: _propTypes["default"].arrayOf(_propTypes["default"].oneOfType([_propTypes["default"].string, _propTypes["default"].number])),
+      onExpand: _propTypes["default"].func
+    })]),
     onMore: _propTypes["default"].func,
     onSearch: _propTypes["default"].func,
     onSelect: _propTypes["default"].func,
