@@ -165,6 +165,7 @@ const SelectMultipleValue = ({
                   </Box>
                 }
                 key={optionLabel}
+                // TO DO theme object
                 pad="xsmall"
                 tabIndex="-1"
                 checked={optionSelected}
@@ -246,6 +247,7 @@ const SelectMultipleValue = ({
       </Box>
       {value && value.length > theme.selectMultiple.maxInline && (
         <Box
+          // TO DO theme object
           pad={{ horizontal: 'small', bottom: 'small', top: 'xsmall' }}
           alignSelf="start"
         >

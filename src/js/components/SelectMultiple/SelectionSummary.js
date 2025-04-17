@@ -117,15 +117,18 @@ const SelectionSummary = ({
 
   return (
     <Box
+      // TO DO theme object
       pad={
         showSelectedInline ? { left: 'xsmall', vertical: 'xsmall' } : 'xsmall'
       }
       direction="row"
       justify="between"
+      // TO DO theme object
       gap="small"
       fill="horizontal"
       flex={showSelectedInline}
       align="center"
+      // TO DO theme object
       height={{ min: 'xxsmall' }}
     >
       <Text size="small">{summaryText}</Text>

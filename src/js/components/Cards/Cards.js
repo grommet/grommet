@@ -25,6 +25,7 @@ const Cards = React.forwardRef(
       pad,
       paginate,
       show: showProp,
+      // TO DO theme object ?
       size = 'small',
       step = paginate ? 50 : undefined,
       ...rest
@@ -54,6 +55,7 @@ const Cards = React.forwardRef(
           ref={ref}
           as={as}
           columns={size}
+          // TO DO theme object
           gap="medium"
           margin={(!paginate && margin) || 'none'}
           pad={(!paginate && pad) || 'none'}
