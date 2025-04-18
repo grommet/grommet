@@ -176,6 +176,7 @@ if (process.env.NODE_ENV !== 'production') {
           suggestionsCount: PropTypes.string,
           suggestionsExist: PropTypes.string,
           suggestionIsOpen: PropTypes.string,
+          defaultSuggestions: PropTypes.string,
         }),
         video: PropTypes.shape({
           audioDescriptions: PropTypes.string,

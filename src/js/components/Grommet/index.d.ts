@@ -177,6 +177,7 @@ export interface GrommetProps {
         suggestionsCount?: string;
         suggestionsExist?: string;
         suggestionIsOpen?: string;
+        defaultSuggestion?: string;
       };
       video?: {
         audioDescriptions?: string;

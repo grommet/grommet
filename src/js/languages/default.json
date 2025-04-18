@@ -165,7 +165,8 @@
     "enterSelect": "(Press Enter to Select)",
     "suggestionsCount": "suggestions available",
     "suggestionsExist": "This input has suggestions use arrow keys to navigate",
-    "suggestionIsOpen": "Suggestions drop is open, continue to use arrow keys to navigate"
+    "suggestionIsOpen": "Suggestions drop is open, continue to use arrow keys to navigate",
+    "defaultSuggestion": "TextInput with suggestions type text to display a list of suggestions"
   },
   "video": {
     "audioDescriptions": "video audio description",

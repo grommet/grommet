@@ -363,8 +363,10 @@ const TextInput = forwardRef(
           <ContainerBox
             aria-label={
               defaultSuggestion !== undefined
-                ? `combobox with suggestions type
-                 text to display a list of suggestions`
+                ? format({
+                    id: 'textInput.defaultSuggestion',
+                    messages,
+                  })
                 : undefined
             }
             id={id ? `listbox__${id}` : undefined}
