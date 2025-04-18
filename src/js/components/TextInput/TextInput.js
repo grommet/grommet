@@ -361,6 +361,14 @@ const TextInput = forwardRef(
           {...dropProps}
         >
           <ContainerBox
+            aria-label={
+              defaultSuggestion !== undefined
+                ? format({
+                    id: 'textInput.defaultSuggestion',
+                    messages,
+                  })
+                : undefined
+            }
             id={id ? `listbox__${id}` : undefined}
             role="listbox"
             overflow="auto"

@@ -35,6 +35,7 @@ export interface TextInputProps
     suggestionsCount?: string;
     suggestionsExist?: string;
     suggestionIsOpen?: string;
+    defaultSuggestion?: string;
   };
   name?: string;
   onSelect?: (x: {
