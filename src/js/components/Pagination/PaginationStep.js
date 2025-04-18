@@ -21,7 +21,7 @@ export const PaginationStep = ({
       <Select
         options={options}
         value={step}
-        a11yTitle={formatMessage({ id: 'pagination.stepLabel', messages })}
+        aria-label={formatMessage({ id: 'pagination.stepLabel', messages })}
         valueLabel={
           <Box {...theme.global.input} pad={theme.global.input.padding}>
             <Text {...theme.global.input.font}>{step}</Text>
