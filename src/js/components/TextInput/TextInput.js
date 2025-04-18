@@ -421,6 +421,7 @@ const TextInput = forwardRef(
                             ? () => setActiveSuggestionIndex(index)
                             : undefined
                         }
+                        keyboard={!mouseMovedSinceLastKey}
                       >
                         {child}
                       </Button>
@@ -493,6 +494,7 @@ const TextInput = forwardRef(
         readOnlyCopy={readOnlyCopy}
         plain={plain}
         border={!plain}
+        onMouseMove={() => setMouseMovedSinceLastKey(true)}
         {...passThemeFlag}
       >
         {reverse && readOnlyCopy && ReadOnlyCopyButton}
