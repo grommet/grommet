@@ -363,7 +363,8 @@ const TextInput = forwardRef(
           <ContainerBox
             aria-label={
               defaultSuggestion !== undefined
-                ? 'Suggestions list for text input'
+                ? `combobox with suggestions type
+                 text to display a list of suggestions`
                 : undefined
             }
             id={id ? `listbox__${id}` : undefined}
@@ -408,11 +409,6 @@ const TextInput = forwardRef(
                       ref={itemRef}
                     >
                       <Button
-                        aria-label={
-                          defaultSuggestion !== undefined
-                            ? `You are on the default suggestion ${index + 1}`
-                            : undefined
-                        }
                         id={id ? `listbox-option-${index}__${id}` : undefined}
                         role="option"
                         aria-selected={selected ? 'true' : 'false'}
