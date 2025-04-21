@@ -11,17 +11,19 @@ import { findButtonParent, normalizeColor, useSizedIcon } from '../../utils';
 
 import { Box } from '../Box';
 
-import { StyledAnchor } from './StyledAnchor';
+import { StyledAnchor, StyledPopover } from './StyledAnchor';
 import { AnchorPropTypes } from './propTypes';
 import { useAnalytics } from '../../contexts/AnalyticsContext';
 import { TextContext } from '../Text/TextContext';
 import { useThemeValue } from '../../utils/useThemeValue';
+import { useId } from '../../utils/useId';
 
 const Anchor = forwardRef(
   (
     {
       a11yTitle,
       'aria-label': ariaLabel,
+      as,
       children,
       color,
       disabled,
@@ -32,6 +34,7 @@ const Anchor = forwardRef(
       onBlur,
       onClick: onClickProp,
       onFocus,
+      popover,
       reverse,
       size: sizeProp,
       ...rest
@@ -42,6 +45,7 @@ const Anchor = forwardRef(
     const [focus, setFocus] = useState();
     const { size } = useContext(TextContext);
     const sendAnalytics = useAnalytics();
+    const popoverId = useId();
 
     const onClick = useCallback(
       (event) => {
@@ -83,9 +87,13 @@ const Anchor = forwardRef(
     const first = reverse ? label : anchorIcon;
     const second = reverse ? anchorIcon : label;
 
+    const domTag = as || (popover ? 'button' : 'a');
+
     return (
+      <>
       <StyledAnchor
         {...rest}
+        as={domTag}
         ref={ref}
         aria-label={ariaLabel || a11yTitle}
         colorProp={color}
@@ -104,6 +112,7 @@ const Anchor = forwardRef(
           setFocus(false);
           if (onBlur) onBlur(event);
         }}
+        popovertarget={popover ? popoverId : undefined}
         size={sizeProp || size}
         {...passThemeFlag}
       >
@@ -124,6 +133,12 @@ const Anchor = forwardRef(
           first || second || children
         )}
       </StyledAnchor>
+      {popover && (
+        <StyledPopover id={popoverId} popover="auto">
+          {popover}
+        </StyledPopover>
+      )}
+      </>
     );
   },
 );
