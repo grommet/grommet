@@ -54,7 +54,7 @@ const marginStyle = (theme, align, data, responsive, marginProp) => {
   }
   return edgeStyle(
     'margin',
-    adjustedMargin,
+    marginProp || adjustedMargin,
     responsive,
     theme.global.edgeSize.responsiveBreakpoint,
     theme,
