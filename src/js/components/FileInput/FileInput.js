@@ -18,6 +18,7 @@ import { Button } from '../Button';
 import { FormContext } from '../Form/FormContext';
 import { Keyboard } from '../Keyboard';
 import { Text } from '../Text';
+import { Tip } from '../Tip';
 
 import { StyledFileInput } from './StyledFileInput';
 import { FileInputPropTypes } from './propTypes';
@@ -461,29 +462,42 @@ const FileInput = forwardRef(
                 justify="between"
                 direction="row"
                 align="center"
+                style={{ zIndex: 0 }} // make the tip appear on file name hover
               >
                 {renderFile ? (
                   renderFile(file)
                 ) : (
-                  <Box
-                    {...theme.fileInput.label}
-                    gap="xsmall"
-                    align="center"
-                    direction="row"
+                  <Tip
+                    content={file.name}
+                    dropProps={{
+                      align: { top: 'bottom' },
+                      width: 'small',
+                      round: 'xsmall',
+                      background: { ...theme.tip.drop },
+                    }}
                   >
-                    {((maxSize && file.size > maxSize) ||
-                      (max && index >= max)) && <CircleAlert />}
-                    <Label
-                      weight={
-                        theme.global.input.weight ||
-                        theme.global.input.font.weight
-                      }
-                      truncate
-                      {...passThemeFlag}
+                    <Box
+                      {...theme.fileInput.label}
+                      gap="xsmall"
+                      align="center"
+                      direction="row"
+                      tabIndex={0} // make name focusable with keyboard
+                      flex // make file with shortname have larger hover area
                     >
-                      {file.name}
-                    </Label>
-                  </Box>
+                      {((maxSize && file.size > maxSize) ||
+                        (max && index >= max)) && <CircleAlert />}
+                      <Label
+                        weight={
+                          theme.global.input.weight ||
+                          theme.global.input.font.weight
+                        }
+                        truncate
+                        {...passThemeFlag}
+                      >
+                        {file.name}
+                      </Label>
+                    </Box>
+                  </Tip>
                 )}
                 <Box flex={false} direction="row" align="center">
                   <Button
