@@ -34,6 +34,10 @@ var PaginationStep = exports.PaginationStep = function PaginationStep(_ref) {
   })), /*#__PURE__*/_react["default"].createElement(_Select.Select, {
     options: options,
     value: step,
+    "aria-label": formatMessage({
+      id: 'pagination.stepLabel',
+      messages: messages
+    }),
     valueLabel: /*#__PURE__*/_react["default"].createElement(_Box.Box, _extends({}, theme.global.input, {
       pad: theme.global.input.padding
     }), /*#__PURE__*/_react["default"].createElement(_Text.Text, theme.global.input.font, step)),
