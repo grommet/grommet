@@ -429,6 +429,7 @@ exports[`renders tip 1`] = `
   >
     Default Tip
   </span>
+  <div />
 </div>
 `;
 

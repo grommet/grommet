@@ -2982,6 +2982,7 @@ exports[`TextInput read only copy 1`] = `
           />
         </svg>
       </button>
+      <div />
     </div>
   </div>
 </DocumentFragment>

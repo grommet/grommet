@@ -5153,6 +5153,7 @@ exports[`Button tip 1`] = `
   >
     Default Tip
   </button>
+  <div />
 </div>
 `;
 

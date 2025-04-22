@@ -3,6 +3,7 @@ import React, {
   cloneElement,
   forwardRef,
   useEffect,
+  useRef,
   useState,
 } from 'react';
 
@@ -37,8 +38,23 @@ const Tip = forwardRef(
     const [over, setOver] = useState(false);
     const [tooltipOver, setTooltipOver] = useState(false);
     const usingKeyboard = useKeyboard();
-
     const componentRef = useForwardedRef(tipRef);
+
+    // add a small delay to the tooltip
+    const leaveTimeoutRef = useRef();
+
+    const handleEnter = () => {
+      clearTimeout(leaveTimeoutRef.current);
+      setOver(true);
+      setTooltipOver(true);
+    };
+
+    const handleLeave = () => {
+      leaveTimeoutRef.current = setTimeout(() => {
+        setOver(false);
+        setTooltipOver(false);
+      }, 100);
+    };
 
     // Three use case for children
     // 1. Tip has a single child + it is a React Element => Great!
@@ -53,19 +69,19 @@ const Tip = forwardRef(
 
     const clonedChild = cloneElement(child, {
       onMouseEnter: (event) => {
-        setOver(true);
+        handleEnter();
         if (child.props?.onMouseEnter) child.props.onMouseEnter(event);
       },
       onMouseLeave: (event) => {
-        setOver(false);
+        handleLeave();
         if (child.props?.onMouseLeave) child.props.onMouseLeave(event);
       },
       onFocus: (event) => {
-        if (usingKeyboard) setOver(true);
+        if (usingKeyboard) handleEnter();
         if (child.props?.onFocus) child.props.onFocus(event);
       },
       onBlur: (event) => {
-        if (usingKeyboard) setOver(false);
+        if (usingKeyboard) handleLeave();
         if (child.props?.onBlur) child.props.onBlur(event);
       },
       key: 'tip-child',
@@ -100,17 +116,19 @@ const Tip = forwardRef(
             setTooltipOver(false);
           }}
         >
-          <Drop
-            target={componentRef.current}
-            trapFocus={false}
-            key="tip-drop"
-            {...theme.tip.drop}
-            {...dropProps}
-            onMouseEnter={() => setTooltipOver(true)}
-            onMouseLeave={() => setTooltipOver(false)}
-          >
-            {plain ? content : <Box {...theme.tip.content}>{content}</Box>}
-          </Drop>
+          <div onMouseEnter={handleEnter} onMouseLeave={handleLeave}>
+            <Drop
+              target={componentRef.current}
+              trapFocus={false}
+              key="tip-drop"
+              {...theme.tip.drop}
+              {...dropProps}
+              onMouseEnter={() => setTooltipOver(true)}
+              onMouseLeave={() => setTooltipOver(false)}
+            >
+              {plain ? content : <Box {...theme.tip.content}>{content}</Box>}
+            </Drop>
+          </div>
         </Keyboard>
       ),
     ];
