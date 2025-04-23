@@ -42,18 +42,17 @@ export const edgeStyle = (
   theme,
 ) => {
   const breakpoint = getBreakpointStyle(theme, responsiveBreakpoint);
-  const metric = theme.global.edgeSize[data] || data;
-  const responsiveMetric = responsive && breakpoint &&
-    breakpoint.edgeSize[data];
+  const value = theme.global.edgeSize[data] || data;
+  const responsiveValue = responsive && breakpoint && breakpoint.edgeSize[data];
 
   if (typeof data === 'string') {
     return css`
-      ${kind}: ${metric};
-      ${responsiveMetric
+      ${kind}: ${value};
+      ${responsiveValue
         ? breakpointStyle(
             breakpoint,
             `
-        ${kind}: ${responsiveMetric};
+        ${kind}: ${responsiveValue};
       `,
           )
         : ''};
@@ -74,14 +73,14 @@ export const edgeStyle = (
   if (horizontalVerticalEqual || allSidesEqual) {
     // since the values will be the same between vertical & horizontal OR
     // left, right, top, & bottom, we can just choose one
-    const value = horizontalVerticalEqual ? horizontal : top;
+    const commonValue = horizontalVerticalEqual ? horizontal : top;
     return css`
-      ${kind}: ${theme.global.edgeSize[value] || value};
+      ${kind}: ${theme.global.edgeSize[commonValue] || commonValue};
       ${responsive && breakpoint
         ? breakpointStyle(
             breakpoint,
             `
-        ${kind}: ${breakpoint.edgeSize[value] || value};
+        ${kind}: ${breakpoint.edgeSize[commonValue] || commonValue};
       `,
           )
         : ''};
