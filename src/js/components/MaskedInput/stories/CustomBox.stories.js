@@ -21,6 +21,7 @@ export const CustomBoxMaskedInput = () => {
       </span>
       <Box flex width="medium" gap="medium">
         <MaskedInput
+          id="grommet-custom-box"
           plain
           dropProps={{ target: boxRef.current }}
           mask={[
