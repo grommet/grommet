@@ -407,7 +407,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       popover: {
         round: 'small',
         elevation: 'small',
-        background: 'background-contrast',
+        background: 'background-back',
         pad: 'small',
       },
     },

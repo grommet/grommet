@@ -112,7 +112,7 @@ const Anchor = forwardRef(
           setFocus(false);
           if (onBlur) onBlur(event);
         }}
-        popovertarget={popover ? popoverId : undefined}
+        popoverTarget={popover ? popoverId : undefined}
         size={sizeProp || size}
         {...passThemeFlag}
       >

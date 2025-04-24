@@ -73,23 +73,25 @@ const StyledAnchor = styled.a.withConfig(styledComponentsConfig)`
   ${(props) =>
     props.hasIcon &&
     !props.hasLabel &&
+    !props.popoverTarget
     `
     padding: ${props.theme.global.edgeSize.small};
   `}
   ${(props) => props.disabled && disabledStyle}
   ${(props) => props.focus && focusStyle()}
   ${(props) => props.theme.anchor.extend}
-  ${(props) => props.popovertarget && `
+  ${(props) => props.popoverTarget && `
     text-decoration: underline dotted;
     text-underline-offset: 4px;
     border: none;
     background: none;
+    font-family: inherit;
+    padding: 0;
   `}
 `;
 
 const StyledPopover = styled.div`
     border: none;
-    padding: 0;
     ${(props) => props.theme.anchor.popover?.round &&
       roundStyle(props.theme.anchor.popover.round,
         props.responsive,

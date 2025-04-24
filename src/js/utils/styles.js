@@ -6,7 +6,7 @@ import { getBreakpointStyle } from './responsive';
 import { breakpointStyle, parseMetricToNum } from './mixins';
 
 // ensure only valid DOM attributes are forwarded onto DOM
-const extendedProps = ['popover', 'popovertarget'];
+const extendedProps = ['popover', 'popoverTarget'];
 export const shouldForwardProp = (prop) =>
   isPropValid(prop) || extendedProps.includes(prop);
 
