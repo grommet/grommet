@@ -149,6 +149,11 @@ if (process.env.NODE_ENV !== 'production') {
             plural: _propTypes["default"].string
           })
         }),
+        pagination: _propTypes["default"].shape({
+          stepLabel: _propTypes["default"].string,
+          summary: _propTypes["default"].string,
+          summaryNoItems: PropType.string
+        }),
         rangeSelector: _propTypes["default"].shape({
           lower: _propTypes["default"].string,
           upper: _propTypes["default"].string
