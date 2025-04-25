@@ -21,6 +21,11 @@ export interface PaginationProps extends BoxProps {
   step?: number;
   stepOptions?: boolean | (string | boolean | number | JSX.Element | object)[];
   summary?: boolean;
+  messages?: {
+    stepLabel?: string;
+    summary?: string;
+    summaryNoItems?: string;
+  };
 }
 
 declare const Pagination: React.FC<PaginationProps>;

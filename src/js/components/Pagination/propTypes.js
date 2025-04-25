@@ -25,6 +25,11 @@ if (process.env.NODE_ENV !== 'production') {
       ),
     ]),
     summary: PropTypes.bool,
+    messages: PropTypes.shape({
+      stepLabel: PropTypes.string,
+      summary: PropTypes.string,
+      summaryNoItems: PropType.string,
+    }),
   };
 }
 export const PaginationPropTypes = PropType;

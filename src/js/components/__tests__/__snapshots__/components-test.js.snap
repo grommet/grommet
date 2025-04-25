@@ -716,6 +716,7 @@ exports[`Components loads 1`] = `
       "alignSelf": [Function],
       "gridArea": [Function],
       "margin": [Function],
+      "messages": [Function],
       "numberEdgePages": [Function],
       "numberItems": [Function],
       "numberMiddlePages": [Function],
