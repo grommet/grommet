@@ -793,11 +793,9 @@ describe('Calendar', () => {
 });
 
 describe('Calendar Keyboard events', () => {
-  // let onSelect: CalendarProps['onSelect'];
   let App: React.FC;
 
   beforeEach(() => {
-    // onSelect = jest.fn();
     App = () => {
       const [date, setDate] = React.useState<any>(DATE);
       const onSelect = (nextDate: CalendarProps['date']) => {
@@ -808,7 +806,6 @@ describe('Calendar Keyboard events', () => {
           <Calendar
             bounds={['2020-01-01', '2020-01-31']}
             date={date}
-            // date={DATE}
             onSelect={onSelect}
             animate={false}
           />
@@ -821,9 +818,7 @@ describe('Calendar Keyboard events', () => {
     jest.useFakeTimers();
     const user = userEvent.setup({ delay: null });
     render(<App />);
-    // fireEvent.mouseOver(getByText('15'));
-    // const dateButton = getByRole('button', { name: 'Wed Jan 15 2020' });
-    // const newDateButton = getByRole('button', { name: 'Thu Jan 16 2020' });
+
     const dateButton = screen.getByRole('gridcell', {
       name: 'Wed Jan 15 2020',
     });
@@ -833,33 +828,9 @@ describe('Calendar Keyboard events', () => {
     await user.tab();
     await user.tab();
     await user.type(firstDateButton, '{enter}');
-    // await user.type(toggleButtonTwo, '{arrowUp}');
-    // await user.type(toggleButtonTwo, '{enter}');
-    // await user.type(toggleButtonThree, '{arrowLeft}');
-    // await user.type(toggleButtonThree, '{enter}');
     expect(dateButton).toHaveAttribute('aria-selected', 'false');
     expect(firstDateButton).toHaveAttribute('aria-selected', 'true');
     jest.useRealTimers();
-    // act(() => {
-    //   dateButton.focus();
-    // });
-    // // fireEvent.click(getByText('15'));
-    // fireEvent.keyDown(dateButton, {
-    //   key: 'ArrowLeft',
-    //   keyCode: 37,
-    //   which: 37,
-    // });
-    // fireEvent.keyDown(newDateButton, {
-    //   key: 'Enter',
-    //   keyCode: 13,
-    //   which: 13,
-    // });
-    // // fireEvent.mouseOut(getByText('15'));
-    // // Jan 15th is set to active
-    // expect(onSelect).toHaveBeenCalledWith(
-    //   expect.stringMatching(/^2020-01-16T/),
-    // );
-    // expect(newDateButton).toHaveAttribute('aria-selected', 'true');
   });
 
   test('onArrowUp and onArrowDown', async () => {
