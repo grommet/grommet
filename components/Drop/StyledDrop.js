@@ -23,6 +23,8 @@ var dropKeyFrames = (0, _styledComponents.keyframes)(["0%{opacity:0.5;transform:
 
 // The desired margin may be adjusted depending on drops alignment
 var marginStyle = function marginStyle(theme, align, data, responsive, marginProp) {
+  // NOTE: If marginProp is passed, it overrides the alignment-aware
+  //  margin logic and uses the provided value instead.
   var margin = theme.global.edgeSize[data] || data;
   var adjustedMargin = {};
   // if user provides CSS string such as '50px 12px', apply that always
@@ -34,7 +36,7 @@ var marginStyle = function marginStyle(theme, align, data, responsive, marginPro
   } else {
     return (0, _styles.edgeStyle)('margin', marginProp || theme.global.drop.margin, responsive, theme.global.edgeSize.responsiveBreakpoint, theme);
   }
-  return (0, _styles.edgeStyle)('margin', adjustedMargin, responsive, theme.global.edgeSize.responsiveBreakpoint, theme);
+  return (0, _styles.edgeStyle)('margin', marginProp || adjustedMargin, responsive, theme.global.edgeSize.responsiveBreakpoint, theme);
 };
 var StyledDrop = exports.StyledDrop = (0, _styledComponents["default"])(_Box.Box).withConfig({
   displayName: "StyledDrop",
