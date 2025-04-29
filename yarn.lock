@@ -8441,16 +8441,16 @@ __metadata:
   linkType: hard
 
 "grommet-theme-hpe@npm:^6.1.0":
-  version: 6.1.0
-  resolution: "grommet-theme-hpe@npm:6.1.0"
+  version: 6.2.0
+  resolution: "grommet-theme-hpe@npm:6.2.0"
   dependencies:
-    hpe-design-tokens: "npm:~1.1.0"
+    hpe-design-tokens: "npm:~1.2.0"
   peerDependencies:
     grommet: ^2.45.1
     grommet-icons: ^4.12.4
     react: ^16.13.1 || ^17.0.1 || ^18.0.0
     styled-components: ^5.0.0 || ^6.0.0
-  checksum: 10c0/e0f39055041b4d801743aca6acc799cffa0ddef40b584bef6f5dc70e9882ac6acf62776668bdbcc0485f2d92393bbab4e7a58101fdec24a13ebd81532711ed90
+  checksum: 10c0/f40710e7e923eead3921a2a69b0d4b174fc480f99c4b1133a221ed3575101088295fa8ee7bb08fd930fe927de478948a415b3b58a03c7f8538319e1552572a34
   languageName: node
   linkType: hard
 
@@ -8701,10 +8701,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"hpe-design-tokens@npm:~1.1.0":
-  version: 1.1.0
-  resolution: "hpe-design-tokens@npm:1.1.0"
-  checksum: 10c0/09b40714cdf883ae2b4e1c98e8d6ea81d1ef6142eaddd7ae13469e96250643d296bd0857e5c8952b2752b6fef00e4f677ca5b02e17b68016e8ace1afa25db698
+"hpe-design-tokens@npm:~1.2.0":
+  version: 1.2.0
+  resolution: "hpe-design-tokens@npm:1.2.0"
+  checksum: 10c0/b5edba6bd57b327bf9999ce44156d31dc6c6872bbe53c2f89a38d1fd1e1246f30cc2471b3d1e09a8b1b07e8385556ea64df2a3bb1a423ccc874094fad8930b10
   languageName: node
   linkType: hard
 

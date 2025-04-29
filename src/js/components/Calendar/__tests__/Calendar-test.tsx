@@ -4,6 +4,7 @@ import 'jest-styled-components';
 import 'jest-axe/extend-expect';
 import 'regenerator-runtime/runtime';
 import '@testing-library/jest-dom';
+import userEvent from '@testing-library/user-event';
 
 import { axe } from 'jest-axe';
 import { fireEvent, render, act, screen } from '@testing-library/react';
@@ -283,6 +284,7 @@ describe('Calendar', () => {
       jest.runAllTimers();
     });
     expect(container.firstChild).toMatchSnapshot();
+    jest.useRealTimers();
   });
 
   test('select date with range', () => {
@@ -759,133 +761,6 @@ describe('Calendar', () => {
     expect(style.background).toEqual('rgb(0, 200, 255)'); // rgb equivalent of theme blue
     expect(style.color).toEqual('red');
   });
-});
-
-describe('Calendar Keyboard events', () => {
-  let onSelect: CalendarProps['onSelect'];
-  let App: React.FC;
-
-  beforeEach(() => {
-    onSelect = jest.fn();
-    App = () => (
-      <Grommet>
-        <Calendar
-          bounds={['2020-01-01', '2020-01-31']}
-          date={DATE}
-          onSelect={onSelect}
-          animate={false}
-        />
-      </Grommet>
-    );
-  });
-
-  test('onEnter', async () => {
-    const { getByText } = render(<App />);
-    fireEvent.mouseOver(getByText('15'));
-    fireEvent.click(getByText('15'));
-    fireEvent.keyDown(getByText('15'), {
-      key: 'Enter',
-      keyCode: 13,
-      which: 13,
-    });
-    fireEvent.mouseOut(getByText('15'));
-    // Jan 15th is set to active
-    expect(onSelect).toBeCalledWith(expect.stringMatching(/^2020-01-15T/));
-  });
-
-  test('onKeyUp', () => {
-    const { getByText } = render(<App />);
-    fireEvent.mouseOver(getByText('15'));
-    fireEvent.click(getByText('15'));
-    fireEvent.keyDown(getByText('15'), {
-      key: 'ArrowUp',
-      keyCode: 38,
-      which: 38,
-    });
-    // press enter to change date to active
-    fireEvent.keyDown(getByText('15'), {
-      key: 'Enter',
-      keyCode: 13,
-      which: 13,
-    });
-    // Jan 8th is set to active
-    expect(onSelect).toBeCalledWith(expect.stringMatching(/^2020-01-08T/));
-  });
-
-  test('onKeyDown', () => {
-    const { getByText } = render(<App />);
-    fireEvent.mouseOver(getByText('15'));
-    fireEvent.click(getByText('15'));
-    fireEvent.keyDown(getByText('15'), {
-      key: 'ArrowDown',
-      keyCode: 40,
-      which: 40,
-    });
-    // press enter to change date to active
-    fireEvent.keyDown(getByText('15'), {
-      key: 'Enter',
-      keyCode: 13,
-      which: 13,
-    });
-    // Jan 22th is set to active
-    expect(onSelect).toBeCalledWith(expect.stringMatching(/^2020-01-22T/));
-  });
-
-  test('onKeyLeft', () => {
-    const { getByText } = render(<App />);
-    fireEvent.mouseOver(getByText('15'));
-    fireEvent.click(getByText('15'));
-    fireEvent.keyDown(getByText('15'), {
-      key: 'ArrowLeft',
-      keyCode: 37,
-      which: 37,
-    });
-    // press enter to change date to active
-    fireEvent.keyDown(getByText('15'), {
-      key: 'Enter',
-      keyCode: 13,
-      which: 13,
-    });
-    // Jan 14th is set to active
-    expect(onSelect).toBeCalledWith(expect.stringMatching(/^2020-01-14T/));
-  });
-
-  test('onKeyRight', () => {
-    const { getByText } = render(<App />);
-    fireEvent.mouseOver(getByText('15'));
-    fireEvent.click(getByText('15'));
-    fireEvent.keyDown(getByText('15'), {
-      key: 'ArrowRight',
-      keyCode: 39,
-      which: 39,
-    });
-    // press enter to change date to active
-    fireEvent.keyDown(getByText('15'), {
-      key: 'Enter',
-      keyCode: 13,
-      which: 13,
-    });
-    // Jan 16th is set to active
-    expect(onSelect).toBeCalledWith(expect.stringMatching(/^2020-01-16T/));
-  });
-  test('onSpace', () => {
-    const { getByText } = render(<App />);
-    fireEvent.mouseOver(getByText('15'));
-    fireEvent.click(getByText('15'));
-    fireEvent.keyDown(getByText('15'), {
-      key: 'ArrowRight',
-      keyCode: 39,
-      which: 39,
-    });
-    // press space to change date to active
-    fireEvent.keyDown(getByText('16'), {
-      key: 'space',
-      keyCode: 32,
-      which: 32,
-    });
-    // Jan 16th is set to active
-    expect(onSelect).toBeCalledWith(expect.stringMatching(/^2020-01-16T/));
-  });
 
   test('heading text font size', () => {
     const { asFragment } = render(
@@ -914,5 +789,120 @@ describe('Calendar Keyboard events', () => {
       </Grommet>,
     );
     expect(asFragment()).toMatchSnapshot();
+  });
+});
+
+describe('Calendar Keyboard events', () => {
+  // let onSelect: CalendarProps['onSelect'];
+  let App: React.FC;
+
+  beforeEach(() => {
+    // onSelect = jest.fn();
+    App = () => {
+      const [date, setDate] = React.useState<any>(DATE);
+      const onSelect = (nextDate: CalendarProps['date']) => {
+        setDate(nextDate);
+      };
+      return (
+        <Grommet>
+          <Calendar
+            bounds={['2020-01-01', '2020-01-31']}
+            date={date}
+            // date={DATE}
+            onSelect={onSelect}
+            animate={false}
+          />
+        </Grommet>
+      );
+    };
+  });
+
+  test('onEnter', async () => {
+    jest.useFakeTimers();
+    const user = userEvent.setup({ delay: null });
+    render(<App />);
+    // fireEvent.mouseOver(getByText('15'));
+    // const dateButton = getByRole('button', { name: 'Wed Jan 15 2020' });
+    // const newDateButton = getByRole('button', { name: 'Thu Jan 16 2020' });
+    const dateButton = screen.getByRole('gridcell', {
+      name: 'Wed Jan 15 2020',
+    });
+    const firstDateButton = screen.getByRole('gridcell', {
+      name: 'Wed Jan 01 2020',
+    });
+    await user.tab();
+    await user.tab();
+    await user.type(firstDateButton, '{enter}');
+    // await user.type(toggleButtonTwo, '{arrowUp}');
+    // await user.type(toggleButtonTwo, '{enter}');
+    // await user.type(toggleButtonThree, '{arrowLeft}');
+    // await user.type(toggleButtonThree, '{enter}');
+    expect(dateButton).toHaveAttribute('aria-selected', 'false');
+    expect(firstDateButton).toHaveAttribute('aria-selected', 'true');
+    jest.useRealTimers();
+    // act(() => {
+    //   dateButton.focus();
+    // });
+    // // fireEvent.click(getByText('15'));
+    // fireEvent.keyDown(dateButton, {
+    //   key: 'ArrowLeft',
+    //   keyCode: 37,
+    //   which: 37,
+    // });
+    // fireEvent.keyDown(newDateButton, {
+    //   key: 'Enter',
+    //   keyCode: 13,
+    //   which: 13,
+    // });
+    // // fireEvent.mouseOut(getByText('15'));
+    // // Jan 15th is set to active
+    // expect(onSelect).toHaveBeenCalledWith(
+    //   expect.stringMatching(/^2020-01-16T/),
+    // );
+    // expect(newDateButton).toHaveAttribute('aria-selected', 'true');
+  });
+
+  test('onArrowUp and onArrowDown', async () => {
+    jest.useFakeTimers();
+    const user = userEvent.setup({ delay: null });
+    render(<App />);
+
+    const firstDateButton = screen.getByRole('gridcell', {
+      name: 'Wed Jan 01 2020',
+    });
+    const eightDateButton = screen.getByRole('gridcell', {
+      name: 'Wed Jan 08 2020',
+    });
+    await user.tab();
+    await user.tab();
+    await user.type(firstDateButton, '{arrowDown}');
+    await user.type(eightDateButton, '{enter}');
+    expect(eightDateButton).toHaveAttribute('aria-selected', 'true');
+    await user.type(eightDateButton, '{arrowUp}');
+    await user.type(firstDateButton, '{enter}');
+    expect(firstDateButton).toHaveAttribute('aria-selected', 'true');
+    jest.useRealTimers();
+  });
+
+  test('onArrowRight and onArrowLeft', async () => {
+    jest.useFakeTimers();
+    const user = userEvent.setup({ delay: null });
+    render(<App />);
+
+    const firstDateButton = screen.getByRole('gridcell', {
+      name: 'Wed Jan 01 2020',
+    });
+    const secondDateButton = screen.getByRole('gridcell', {
+      name: 'Thu Jan 02 2020',
+    });
+    await user.tab();
+    await user.tab();
+    await user.type(firstDateButton, '{arrowRight}');
+    await user.type(secondDateButton, '{space}');
+    expect(secondDateButton).toHaveAttribute('aria-selected', 'true');
+    await user.type(secondDateButton, '{arrowLeft}');
+    await user.type(firstDateButton, '{space}');
+    expect(firstDateButton).toHaveAttribute('aria-selected', 'true');
+    jest.useRealTimers();
   });
 });

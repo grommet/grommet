@@ -9,7 +9,6 @@ import {
   roundStyle,
   styledComponentsConfig,
 } from '../../utils';
-import { activeStyle } from '../../utils/background';
 
 const sizeStyle = (props) => {
   const data = props.theme.calendar[props.sizeProp];
@@ -93,12 +92,7 @@ const rangeRoundStyle = (props) => {
     themeObj =
       props.theme.calendar?.[props.sizeProp]?.range?.round ||
       props.theme.calendar?.medium?.range?.round;
-  return (
-    themeObj && [
-      roundStyle(themeObj, props.responsive, props.theme),
-      'overflow: hidden;',
-    ]
-  );
+  return themeObj && [roundStyle(themeObj, props.responsive, props.theme)];
 };
 
 const StyledWeeks = styled.div.withConfig(styledComponentsConfig)`
@@ -212,15 +206,14 @@ const StyledDay = styled.div.withConfig(styledComponentsConfig)`
       props.theme.calendar?.medium?.day?.round;
     return round && roundStyle(round, props.responsive, props.theme);
   }}
-  ${(props) => props.active && activeStyle}
-  ${(props) => props.hover && dayHoverStyle(props)}
+  ${(props) => props.hover && !props.disabledProp && dayHoverStyle(props)}
   ${(props) =>
     // when theme uses kind Buttons, since we use children for Button,
     // we have to special case how we handle disabled days here
     props.disabledProp &&
     props.theme.button.default &&
     kindPartStyles(props.theme.button.disabled, props.theme)}
-  ${(props) =>
+    ${(props) =>
     props.theme.calendar &&
     props.theme.calendar.day &&
     props.theme.calendar.day.extend}

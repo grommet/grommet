@@ -43,7 +43,7 @@ import {
 } from './utils';
 import { setHoursWithOffset } from '../../utils/dates';
 import { useThemeValue } from '../../utils/useThemeValue';
-import { useKeyboard } from '../../utils';
+import { disabledStyle } from '../../utils';
 
 const headingPadMap = {
   small: 'xsmall',
@@ -204,53 +204,66 @@ const millisecondsPerYear = 31557600000;
 // on CalendarDay instead of active state on CalendarDayButton
 const CalendarDayButton = styled(Button)`
   ${(props) =>
-    props.theme.calendar?.day?.hover?.background && 'background: inherit;'}
+    props.disabledProp && disabledStyle(props.theme.button.disabled.opacity)}
 `;
 
-const CalendarDay = ({
-  children,
-  fill,
-  size,
-  isInRange,
-  isSelected,
-  otherMonth,
-  rangePosition,
-  buttonProps = {},
-}) => {
-  const { passThemeFlag } = useThemeValue();
-  const usingKeyboard = useKeyboard();
-
-  return (
-    <StyledDayContainer
-      role="gridcell"
-      inRange={isInRange}
-      isSelected={isSelected}
-      rangePosition={rangePosition}
-      sizeProp={size}
-      fillContainer={fill}
-    >
-      <CalendarDayButton fill={fill} tabIndex={-1} plain {...buttonProps}>
-        {({ active, hover }) => (
-          <StyledDay
-            // only apply active styling when using keyboard
-            // otherwise apply hover styling
-            active={usingKeyboard ? active : undefined}
-            disabledProp={buttonProps.disabled}
-            hover={hover}
-            inRange={isInRange}
-            isSelected={isSelected}
-            otherMonth={otherMonth}
-            sizeProp={size}
-            fillContainer={fill}
-            {...passThemeFlag}
-          >
-            {children}
-          </StyledDay>
-        )}
-      </CalendarDayButton>
-    </StyledDayContainer>
-  );
-};
+const CalendarDay = forwardRef(
+  (
+    {
+      activeProp,
+      children,
+      day,
+      disabledProp,
+      fill,
+      size,
+      isInRange,
+      isSelected,
+      otherMonth,
+      rangePosition,
+      buttonProps = {},
+    },
+    ref,
+  ) => {
+    const { passThemeFlag } = useThemeValue();
+    return (
+      <StyledDayContainer
+        inRange={isInRange}
+        isSelected={isSelected}
+        rangePosition={rangePosition}
+        sizeProp={size}
+        fillContainer={fill}
+      >
+        <CalendarDayButton
+          role="gridcell"
+          aria-current={activeProp?.getTime() === day?.getTime()}
+          aria-disabled={disabledProp}
+          aria-selected={isSelected}
+          disabledProp={disabledProp}
+          fill={fill}
+          plain
+          tabIndex={activeProp?.getTime() === day?.getTime() ? 0 : -1}
+          {...buttonProps}
+          ref={activeProp?.getTime() === day?.getTime() ? ref : undefined}
+        >
+          {({ hover }) => (
+            <StyledDay
+              disabledProp={disabledProp}
+              hover={hover}
+              inRange={isInRange}
+              isSelected={isSelected}
+              otherMonth={otherMonth}
+              sizeProp={size}
+              fillContainer={fill}
+              {...passThemeFlag}
+            >
+              {children}
+            </StyledDay>
+          )}
+        </CalendarDayButton>
+      </StyledDayContainer>
+    );
+  },
+);
 
 const CalendarCustomDay = ({ children, fill, size, buttonProps }) => {
   if (!buttonProps) {
@@ -302,20 +315,6 @@ const Calendar = forwardRef(
     const { theme, passThemeFlag } = useThemeValue();
     const announce = useContext(AnnounceContext);
     const { format } = useContext(MessageContext);
-
-    // when mousedown, we don't want to let Calendar set
-    // active date to firstInMonth
-    const [mouseDown, setMouseDown] = useState(false);
-    const onMouseDown = () => setMouseDown(true);
-    const onMouseUp = () => setMouseDown(false);
-    useEffect(() => {
-      document.addEventListener('mousedown', onMouseDown);
-      document.addEventListener('mouseup', onMouseUp);
-      return () => {
-        document.removeEventListener('mousedown', onMouseDown);
-        document.removeEventListener('mouseup', onMouseUp);
-      };
-    }, []);
 
     // set activeDate when caller changes it, allows us to change
     // it internally too
@@ -481,14 +480,15 @@ const Calendar = forwardRef(
       () => startOfMonth(addMonths(startOfMonth(reference), 1)),
       [reference],
     );
-
-    const daysRef = useRef();
+    const firstDay = new Date(displayBounds[0]);
     const [focus, setFocus] = useState();
-    const [active, setActive] = useState();
+    const [active, setActive] = useState(firstDay);
+    const focusableDateRef = useRef(undefined);
 
     useEffect(() => {
-      if (initialFocus === 'days') daysRef.current.focus();
-    }, [initialFocus]);
+      if (focusableDateRef?.current && initialFocus === 'days')
+        focusableDateRef.current.focus();
+    }, [initialFocus, focusableDateRef]);
 
     const handleReference = useCallback(
       (nextReference) => {
@@ -507,6 +507,15 @@ const Calendar = forwardRef(
 
     const changeCalendarMonth = (messageId, newMonth) => {
       handleReference(newMonth);
+      const firstOfMonth = new Date(
+        newMonth.getFullYear(),
+        newMonth.getMonth(),
+        1,
+        firstDay.getHours(),
+        firstDay.getMinutes(),
+        firstDay.getSeconds(),
+      );
+      setActive(firstOfMonth);
 
       announce(
         format({
@@ -598,9 +607,6 @@ const Calendar = forwardRef(
         `Selected ${getLocaleString(selectedDate, locale)}`,
         'assertive',
       );
-      // Chrome moves the focus indicator to this button. Set
-      // the focus to the grid of days instead.
-      daysRef.current.focus();
       setActive(selectedDate);
     };
 
@@ -810,14 +816,16 @@ const Calendar = forwardRef(
         if (!children) {
           days.push(
             <CalendarDay
+              activeProp={active}
+              day={day}
               key={day.getTime()}
+              disabledProp={dayDisabled && !!dayDisabled}
               buttonProps={{
                 a11yTitle: day.toDateString(),
-                active: active && active.getTime() === day.getTime(),
-                disabled: dayDisabled && !!dayDisabled,
-                onClick: () => onClick(dateObject),
-                onMouseOver: () => setActive(dateObject),
-                onMouseOut: () => setActive(undefined),
+                onClick:
+                  dayDisabled && !!dayDisabled
+                    ? () => {}
+                    : () => onClick(dateObject),
               }}
               isInRange={inRange}
               isSelected={selected}
@@ -825,6 +833,7 @@ const Calendar = forwardRef(
               rangePosition={rangePosition}
               size={size}
               fill={fill}
+              ref={focusableDateRef}
             >
               {day.getDate()}
             </CalendarDay>,
@@ -839,9 +848,10 @@ const Calendar = forwardRef(
                       a11yTitle: day.toDateString(),
                       active: active && active.getTime() === day.getTime(),
                       disabled: dayDisabled && !!dayDisabled,
-                      onClick: () => onClick(dateObject),
-                      onMouseOver: () => setActive(dateObject),
-                      onMouseOut: () => setActive(undefined),
+                      onClick:
+                        dayDisabled && !!dayDisabled
+                          ? () => {}
+                          : () => onClick(dateObject),
                     }
                   : null
               }
@@ -872,6 +882,11 @@ const Calendar = forwardRef(
       </StyledWeek>,
     );
 
+    useEffect(() => {
+      if (!animating && active && focus && focusableDateRef?.current)
+        focusableDateRef.current.focus();
+    }, [focusableDateRef, active, focus, animating]);
+
     return (
       <StyledCalendar
         ref={ref}
@@ -887,6 +902,7 @@ const Calendar = forwardRef(
                 locale,
                 onPreviousMonth: () => {
                   changeReference(previousMonth);
+                  setActive(previousMonth);
                   announce(
                     format({
                       id: 'calendar.previous',
@@ -902,6 +918,7 @@ const Calendar = forwardRef(
                 },
                 onNextMonth: () => {
                   changeReference(nextMonth);
+                  setActive(nextMonth);
                   announce(
                     format({
                       id: 'calendar.next',
@@ -922,65 +939,72 @@ const Calendar = forwardRef(
           <Box fill role="grid">
             {daysOfWeek && renderDaysOfWeek()}
             <Keyboard
-              onEnter={() =>
-                active !== undefined ? onClick(active) : undefined
-              }
-              onSpace={(event) => {
-                event.preventDefault();
-                if (active !== undefined) {
-                  onClick(active);
-                }
-              }}
               onUp={(event) => {
+                const nextActive = addDays(active, -7);
                 event.preventDefault();
                 event.stopPropagation(); // so the page doesn't scroll
-                setActive(addDays(active, -7));
-                if (!betweenDates(addDays(active, -7), displayBounds)) {
-                  changeReference(addDays(active, -7));
+                if (
+                  !!betweenDates(nextActive, normalizeInput(bounds)) ||
+                  !bounds
+                ) {
+                  setActive(nextActive);
+                  if (!betweenDates(nextActive, displayBounds)) {
+                    changeReference(nextActive);
+                  }
                 }
               }}
               onDown={(event) => {
+                const nextActive = addDays(active, 7);
                 event.preventDefault();
                 event.stopPropagation(); // so the page doesn't scroll
-                setActive(addDays(active, 7));
-                if (!betweenDates(addDays(active, 7), displayBounds)) {
-                  changeReference(active);
+                if (
+                  !!betweenDates(nextActive, normalizeInput(bounds)) ||
+                  !bounds
+                ) {
+                  setActive(nextActive);
+                  if (!betweenDates(nextActive, displayBounds)) {
+                    changeReference(nextActive);
+                  }
                 }
               }}
               onLeft={() => {
-                setActive(addDays(active, -1));
-                if (!betweenDates(addDays(active, -1), displayBounds)) {
-                  changeReference(active);
+                const nextActive = addDays(active, -1);
+                if (
+                  !!betweenDates(nextActive, normalizeInput(bounds)) ||
+                  !bounds
+                ) {
+                  setActive(nextActive);
+                  if (!betweenDates(nextActive, displayBounds)) {
+                    changeReference(nextActive);
+                  }
                 }
               }}
               onRight={() => {
-                setActive(addDays(active, 1));
-                if (!betweenDates(addDays(active, 2), displayBounds)) {
-                  changeReference(active);
+                const nextActive = addDays(active, 1);
+                if (
+                  !!betweenDates(nextActive, normalizeInput(bounds)) ||
+                  !bounds
+                ) {
+                  setActive(nextActive);
+                  if (!betweenDates(nextActive, displayBounds)) {
+                    changeReference(nextActive);
+                  }
                 }
               }}
             >
               <StyledWeeksContainer
-                tabIndex={0}
                 role="rowgroup"
                 aria-label={`${reference.toLocaleDateString(locale, {
                   month: 'long',
                   year: 'numeric',
                 })}; ${currentlySelectedString(value, locale)}`}
-                ref={daysRef}
                 sizeProp={size}
                 fillContainer={fill}
-                focus={focus}
                 onFocus={() => {
                   setFocus(true);
-                  // caller focused onto Calendar via keyboard
-                  if (!mouseDown) {
-                    setActive(new Date(firstDayInMonth));
-                  }
                 }}
                 onBlur={() => {
                   setFocus(false);
-                  setActive(undefined);
                 }}
                 {...passThemeFlag}
               >
