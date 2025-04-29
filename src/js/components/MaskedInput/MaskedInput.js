@@ -257,6 +257,8 @@ const MaskedInput = forwardRef(
       [inputRef],
     );
 
+    const [mouseMovedSinceLastKey, setMouseMovedSinceLastKey] = useState();
+
     // This could be due to a paste or as the user is typing.
     const onChangeInput = useCallback(
       (event) => {
@@ -321,6 +323,7 @@ const MaskedInput = forwardRef(
             activeOptionIndex + 1,
             item.options.length - 1,
           );
+          setMouseMovedSinceLastKey(false);
           setActiveOptionIndex(index);
         }
       },
@@ -332,6 +335,7 @@ const MaskedInput = forwardRef(
         if (activeMaskIndex >= 0 && mask[activeMaskIndex].options) {
           event.preventDefault();
           const index = Math.max(activeOptionIndex - 1, 0);
+          setMouseMovedSinceLastKey(false);
           setActiveOptionIndex(index);
         }
       },
@@ -398,7 +402,11 @@ const MaskedInput = forwardRef(
     }
 
     return (
-      <StyledMaskedInputContainer plain={plain} {...passThemeFlag}>
+      <StyledMaskedInputContainer
+        plain={plain}
+        onMouseMove={() => setMouseMovedSinceLastKey(true)}
+        {...passThemeFlag}
+      >
         {maskedInputIcon && (
           <StyledIcon reverse={reverse} theme={theme}>
             {maskedInputIcon}
@@ -470,6 +478,7 @@ const MaskedInput = forwardRef(
                 id={id ? `listbox__${id}` : undefined}
                 role="listbox"
                 dropHeight={dropHeight}
+                onMouseOver={() => setMouseMovedSinceLastKey(true)}
                 {...passThemeFlag}
               >
                 {mask[activeMaskIndex].options.map((option, index) => {
@@ -496,6 +505,7 @@ const MaskedInput = forwardRef(
                         kind={!child ? 'option' : undefined}
                         hoverIndicator={!child ? undefined : 'background'}
                         label={!child ? option : undefined}
+                        keyboard={!mouseMovedSinceLastKey}
                       >
                         {child}
                       </Button>
