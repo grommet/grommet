@@ -156,4 +156,20 @@ describe('Avatar', () => {
 
     expect(container.firstChild).toMatchSnapshot();
   });
+  test('apply imageProps to avatar', () => {
+    const { container } = render(
+      <Grommet>
+        <Avatar
+          imageProps={{
+            'aria-label': 'test image',
+            fallback: 'fallbackimage',
+            opacity: 'strong',
+          }}
+          src={src}
+        />
+      </Grommet>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
 });
