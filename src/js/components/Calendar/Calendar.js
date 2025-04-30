@@ -7,7 +7,6 @@ import React, {
   useRef,
   useState,
 } from 'react';
-import styled from 'styled-components';
 import { AnnounceContext } from '../../contexts/AnnounceContext';
 import { MessageContext } from '../../contexts/MessageContext';
 
@@ -22,6 +21,7 @@ import { CalendarPropTypes } from './propTypes';
 import {
   StyledCalendar,
   StyledDay,
+  StyledDayButton,
   StyledDayContainer,
   StyledWeek,
   StyledWeeks,
@@ -43,7 +43,6 @@ import {
 } from './utils';
 import { setHoursWithOffset } from '../../utils/dates';
 import { useThemeValue } from '../../utils/useThemeValue';
-import { disabledStyle } from '../../utils';
 
 const headingPadMap = {
   small: 'xsmall',
@@ -200,13 +199,6 @@ export const getOutputFormat = (dates) => {
 
 const millisecondsPerYear = 31557600000;
 
-// when caller opts in to day hover styling, apply all state styles
-// on CalendarDay instead of active state on CalendarDayButton
-const CalendarDayButton = styled(Button)`
-  ${(props) =>
-    props.disabledProp && disabledStyle(props.theme.button.disabled.opacity)}
-`;
-
 const CalendarDay = forwardRef(
   (
     {
@@ -221,6 +213,7 @@ const CalendarDay = forwardRef(
       otherMonth,
       rangePosition,
       buttonProps = {},
+      responsive,
     },
     ref,
   ) => {
@@ -232,8 +225,9 @@ const CalendarDay = forwardRef(
         rangePosition={rangePosition}
         sizeProp={size}
         fillContainer={fill}
+        responsive={responsive}
       >
-        <CalendarDayButton
+        <StyledDayButton
           role="gridcell"
           aria-current={activeProp?.getTime() === day?.getTime()}
           aria-disabled={disabledProp}
@@ -242,6 +236,7 @@ const CalendarDay = forwardRef(
           fill={fill}
           plain
           tabIndex={activeProp?.getTime() === day?.getTime() ? 0 : -1}
+          responsive={responsive}
           {...buttonProps}
           ref={activeProp?.getTime() === day?.getTime() ? ref : undefined}
         >
@@ -254,31 +249,48 @@ const CalendarDay = forwardRef(
               otherMonth={otherMonth}
               sizeProp={size}
               fillContainer={fill}
+              responsive={responsive}
               {...passThemeFlag}
             >
               {children}
             </StyledDay>
           )}
-        </CalendarDayButton>
+        </StyledDayButton>
       </StyledDayContainer>
     );
   },
 );
 
-const CalendarCustomDay = ({ children, fill, size, buttonProps }) => {
+const CalendarCustomDay = ({
+  children,
+  fill,
+  size,
+  buttonProps,
+  responsive,
+}) => {
   if (!buttonProps) {
     return (
-      <StyledDayContainer role="gridcell" sizeProp={size} fillContainer={fill}>
+      <StyledDayContainer
+        role="gridcell"
+        sizeProp={size}
+        fillContainer={fill}
+        responsive={responsive}
+      >
         {children}
       </StyledDayContainer>
     );
   }
 
   return (
-    <StyledDayContainer role="gridcell" sizeProp={size} fillContainer={fill}>
-      <CalendarDayButton fill={fill} {...buttonProps}>
+    <StyledDayContainer
+      role="gridcell"
+      sizeProp={size}
+      fillContainer={fill}
+      responsive={responsive}
+    >
+      <StyledDayButton fill={fill} responsive={responsive} {...buttonProps}>
         {children}
-      </CalendarDayButton>
+      </StyledDayButton>
     </StyledDayContainer>
   );
 };
@@ -305,6 +317,7 @@ const Calendar = forwardRef(
       onSelect,
       range,
       reference: referenceProp,
+      responsive: responsiveProp = true,
       showAdjacentDays = true,
       size = 'medium',
       timestamp: timestampProp,
@@ -315,6 +328,9 @@ const Calendar = forwardRef(
     const { theme, passThemeFlag } = useThemeValue();
     const announce = useContext(AnnounceContext);
     const { format } = useContext(MessageContext);
+
+    // If fill is true the responsive behavior isn't needed.
+    const responsive = responsiveProp && !fill;
 
     // set activeDate when caller changes it, allows us to change
     // it internally too
@@ -713,8 +729,13 @@ const Calendar = forwardRef(
             key={days.length}
             sizeProp={size}
             fillContainer={fill}
+            responsive={responsive}
           >
-            <StyledDay sizeProp={size} fillContainer={fill}>
+            <StyledDay
+              sizeProp={size}
+              fillContainer={fill}
+              responsive={responsive}
+            >
               {day.toLocaleDateString(locale, { weekday: 'narrow' })}
             </StyledDay>
           </StyledDayContainer>,
@@ -749,8 +770,13 @@ const Calendar = forwardRef(
             key={day.getTime()}
             sizeProp={size}
             fillContainer={fill}
+            responsive={responsive}
           >
-            <StyledDay sizeProp={size} fillContainer={fill} />
+            <StyledDay
+              sizeProp={size}
+              fillContainer={fill}
+              responsive={responsive}
+            />
           </StyledDayContainer>,
         );
 
@@ -778,8 +804,13 @@ const Calendar = forwardRef(
             key={day.getTime()}
             sizeProp={size}
             fillContainer={fill}
+            responsive={responsive}
           >
-            <StyledDay sizeProp={size} fillContainer={fill} />
+            <StyledDay
+              sizeProp={size}
+              fillContainer={fill}
+              responsive={responsive}
+            />
           </StyledDayContainer>,
         );
       } else {
@@ -834,6 +865,7 @@ const Calendar = forwardRef(
               size={size}
               fill={fill}
               ref={focusableDateRef}
+              responsive={responsive}
             >
               {day.getDate()}
             </CalendarDay>,
@@ -857,6 +889,7 @@ const Calendar = forwardRef(
               }
               size={size}
               fill={fill}
+              responsive={responsive}
             >
               {children({
                 date: day,
@@ -892,6 +925,7 @@ const Calendar = forwardRef(
         ref={ref}
         sizeProp={size}
         fillContainer={fill}
+        responsive={responsive}
         {...passThemeFlag}
         {...rest}
       >
@@ -1000,6 +1034,7 @@ const Calendar = forwardRef(
                 })}; ${currentlySelectedString(value, locale)}`}
                 sizeProp={size}
                 fillContainer={fill}
+                responsive={responsive}
                 onFocus={() => {
                   setFocus(true);
                 }}

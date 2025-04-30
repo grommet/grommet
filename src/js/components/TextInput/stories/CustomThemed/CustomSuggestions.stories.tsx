@@ -99,7 +99,7 @@ export const CustomSuggestions = () => {
   const [value, setValue] = useState('');
   const [suggestionOpen, setSuggestionOpen] = useState(false);
   const [suggestions, setSuggestions] = useState([]);
-  const boxRef = useRef();
+  const boxRef = useRef(undefined);
 
   const onChange = useCallback((event) => {
     const { value: newValue } = event.target;
@@ -156,6 +156,7 @@ export const CustomSuggestions = () => {
         >
           <Search color="brand" />
           <TextInput
+            id="grommet-custom-suggestions"
             dropTarget={boxRef.current}
             placeholder="Enter your name..."
             plain

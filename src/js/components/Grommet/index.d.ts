@@ -142,9 +142,20 @@ export interface GrommetProps {
           plural?: string;
         };
       };
+      pagination?: {
+        stepLabel?: string;
+        summary?: string;
+        summaryNoItems?: string;
+      };
       rangeSelector?: {
         lower?: string;
         upper?: string;
+      };
+      tag?: {
+        removeLabel?: {
+          nameAndValue?: string;
+          valueOnly?: string;
+        };
       };
       select?: {
         multiple?: string;
@@ -204,7 +215,13 @@ export interface GrommetProps {
 
 export interface GrommetExtendedProps
   extends GrommetProps,
-    Omit<JSX.IntrinsicElements['div'], 'dir'> {}
+    Omit<
+      React.DetailedHTMLProps<
+        React.HTMLAttributes<HTMLDivElement>,
+        HTMLDivElement
+      >,
+      'dir'
+    > {}
 
 declare const Grommet: React.FC<GrommetExtendedProps>;
 

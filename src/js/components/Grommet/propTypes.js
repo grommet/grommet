@@ -141,6 +141,11 @@ if (process.env.NODE_ENV !== 'production') {
             plural: PropTypes.string,
           }),
         }),
+        pagination: PropTypes.shape({
+          stepLabel: PropTypes.string,
+          summary: PropTypes.string,
+          summaryNoItems: PropType.string,
+        }),
         rangeSelector: PropTypes.shape({
           lower: PropTypes.string,
           upper: PropTypes.string,
@@ -170,6 +175,12 @@ if (process.env.NODE_ENV !== 'production') {
         }),
         tabs: PropTypes.shape({
           tabContents: PropTypes.string,
+        }),
+        tag: PropTypes.shape({
+          removeLabel: PropTypes.shape({
+            nameAndValue: PropTypes.string,
+            valueOnly: PropTypes.string,
+          }),
         }),
         textInput: PropTypes.shape({
           enterSelect: PropTypes.string,

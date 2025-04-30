@@ -108,6 +108,31 @@ describe('Tip', () => {
     expect(tooltip?.parentNode?.parentNode).toMatchSnapshot();
   });
 
+  test('tip content margin overides global drop margin', async () => {
+    const { getByText } = render(
+      <Grommet
+        theme={{
+          global: {
+            drop: {
+              margin: '10px',
+            },
+          },
+          tip: {
+            content: {
+              margin: '20px',
+            },
+          },
+        }}
+      >
+        <Tip content="tooltip">Example</Tip>
+      </Grommet>,
+    );
+
+    fireEvent.mouseOver(getByText('Example'));
+    const tooltip = await waitFor(() => screen.getByText('tooltip'));
+    expect(tooltip?.parentNode?.parentNode).toMatchSnapshot();
+  });
+
   test(`dropProps should pass props to Drop`, async () => {
     const { getByText } = render(
       <Grommet>

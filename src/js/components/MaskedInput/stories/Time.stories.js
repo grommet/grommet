@@ -10,6 +10,7 @@ export const Time = () => {
     <Box fill align="center" justify="start" pad="large">
       <Box width="medium">
         <MaskedInput
+          id="grommet-maskedinput-time"
           mask={[
             {
               length: [1, 2],

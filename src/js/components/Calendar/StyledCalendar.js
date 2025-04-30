@@ -1,6 +1,8 @@
 import styled, { css, keyframes } from 'styled-components';
+import { Button } from '../Button';
 import {
   backgroundStyle,
+  disabledStyle,
   focusStyle,
   genericStyles,
   kindPartStyles,
@@ -9,6 +11,20 @@ import {
   roundStyle,
   styledComponentsConfig,
 } from '../../utils';
+// import { activeStyle } from '../../utils/background';
+import { breakpointStyle } from '../../utils/mixins';
+
+const responsiveSizeStyle = (props) => {
+  const breakpoint = props.theme.global.size[props.sizeProp];
+  return breakpointStyle(
+    { value: breakpoint },
+    `
+    width: 100vw;
+    max-width: ${breakpoint};
+  `,
+    true,
+  );
+};
 
 const sizeStyle = (props) => {
   const data = props.theme.calendar[props.sizeProp];
@@ -27,6 +43,7 @@ const sizeStyle = (props) => {
 const StyledCalendar = styled.div.withConfig(styledComponentsConfig)`
   ${genericStyles}
   ${(props) => sizeStyle(props)}
+  ${(props) => props.responsive && responsiveSizeStyle(props)}
   ${(props) => props.theme.calendar && props.theme.calendar.extend}
 `;
 
@@ -39,9 +56,24 @@ const weeksContainerSizeStyle = (props) => {
 
   `;
 };
+
+const weeksContainerResponsiveSizeStyle = (props) => {
+  const breakpoint = props.theme.global.size[props.sizeProp];
+  // set aspect-ratio to 7 days by 6 weeks
+  return breakpointStyle(
+    { value: breakpoint },
+    `
+    height: auto;
+    aspect-ratio: 7/6;
+    `,
+    true,
+  );
+};
+
 const StyledWeeksContainer = styled.div.withConfig(styledComponentsConfig)`
   overflow: hidden;
   ${(props) => weeksContainerSizeStyle(props)}
+  ${(props) => props.responsive && weeksContainerResponsiveSizeStyle(props)}
   ${(props) => props.focus && !props.plain && focusStyle()};
 `;
 
@@ -107,6 +139,17 @@ const StyledWeek = styled.div.withConfig(styledComponentsConfig)`
   ${(props) => props.fillContainer && 'flex: 1;'}
 `;
 
+const responsiveDayContainerStyle = (props) => {
+  const breakpoint = props.theme.global.size[props.sizeProp];
+  return breakpointStyle(
+    { value: breakpoint },
+    `
+    width: 14.3%;
+  `,
+    true,
+  );
+};
+
 // The width of 14.3% is derived from dividing 100/7. We want the
 // widths of 7 days to equally fill 100% of the row.
 const StyledDayContainer = styled.div.withConfig(styledComponentsConfig)`
@@ -117,6 +160,28 @@ const StyledDayContainer = styled.div.withConfig(styledComponentsConfig)`
     props.theme.calendar?.range?.background &&
     backgroundStyle(props.theme.calendar.range.background, props.theme)}
   ${(props) => rangeRoundStyle(props)}
+  ${(props) => props.responsive && responsiveDayContainerStyle(props)}
+`;
+
+const responsiveDayButtonStyle = (props) => {
+  const breakpoint = props.theme.global.size[props.sizeProp];
+  return breakpointStyle(
+    { value: breakpoint },
+    `
+    width: 100%;
+  `,
+    true,
+  );
+};
+
+// when caller opts in to day hover styling, apply all state styles
+// on CalendarDay instead of active state on CalendarDayButton
+// ${(props) =>
+//   props.theme.calendar?.day?.hover?.background && 'background: inherit;'}
+const StyledDayButton = styled(Button)`
+  ${(props) =>
+    props.disabledProp && disabledStyle(props.theme.button.disabled.opacity)}
+  ${(props) => props.responsive && responsiveDayButtonStyle(props)}
 `;
 
 const daySizeStyle = (props) => {
@@ -126,6 +191,21 @@ const daySizeStyle = (props) => {
     width: ${props.fillContainer ? '100%' : data.daySize};
     height: ${props.fillContainer ? '100%' : data.daySize};
   `;
+};
+
+const responsiveDaySizeStyle = (props) => {
+  const breakpoint = props.theme.global.size[props.sizeProp];
+  const data = props.theme.calendar[props.sizeProp];
+  return breakpointStyle(
+    { value: breakpoint },
+    `
+      width: 100%;
+      max-width: ${data.daySize};
+      height: auto;
+      aspect-ratio: 1;
+    `,
+    true,
+  );
 };
 
 const dayStyle = (props) => {
@@ -197,6 +277,7 @@ const StyledDay = styled.div.withConfig(styledComponentsConfig)`
       props.theme,
     )};
   ${(props) => daySizeStyle(props)}
+  ${(props) => props.responsive && responsiveDaySizeStyle(props)}
   ${(props) => dayStyle(props)}
   ${(props) => dayFontStyle(props)}
    ${(props) => {
@@ -225,5 +306,6 @@ export {
   StyledWeeks,
   StyledWeek,
   StyledDayContainer,
+  StyledDayButton,
   StyledDay,
 };

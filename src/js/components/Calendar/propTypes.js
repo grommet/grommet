@@ -44,6 +44,7 @@ if (process.env.NODE_ENV !== 'production') {
     onSelect: PropTypes.func,
     range: PropTypes.oneOfType([PropTypes.bool, PropTypes.oneOf(['array'])]),
     reference: PropTypes.string,
+    responsive: PropTypes.bool,
     showAdjacentDays: PropTypes.oneOfType([
       PropTypes.bool,
       PropTypes.oneOf(['trim']),

@@ -12,6 +12,7 @@ export const DateRange = () => {
     <Box fill align="center" justify="start" pad="large">
       <Box width="medium">
         <MaskedInput
+          id="grommet-daterange"
           mask={[
             {
               length: [1, 2],
