@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import 'jest-styled-components';
 import { render, fireEvent, screen } from '@testing-library/react';
+import '@testing-library/jest-dom';
 
 import { Grommet } from '../../Grommet';
 import { Box } from '../../Box';
@@ -2107,5 +2108,50 @@ describe('DataTable', () => {
 
     expect(onClickRow).not.toHaveBeenCalled();
     expect(container.firstChild).toMatchSnapshot();
+  });
+
+  type Ship = {
+    name: string;
+    model: string;
+    manufacturer: string;
+    passengers: string;
+  };
+
+  test('rowDetails renders only for expanded rows', () => {
+    const data: Ship[] = [
+      {
+        name: 'Y-wing',
+        model: 'BTL Y-wing',
+        manufacturer: 'Koensayr Manufacturing',
+        passengers: '0',
+      },
+      {
+        name: 'X-wing',
+        model: 'T-65 X-wing',
+        manufacturer: 'Incom Corporation',
+        passengers: '0',
+      },
+    ];
+
+    const rowDetails = {
+      render: (row: Ship) => <Text>Model: {row.model}</Text>,
+      expand: ['Y-wing'],
+      onExpand: jest.fn(),
+    };
+
+    render(
+      <Grommet>
+        <DataTable
+          columns={[
+            { property: 'name', header: 'Name', primary: true },
+            { property: 'manufacturer', header: 'Manufacturer' },
+          ]}
+          data={data}
+          rowDetails={rowDetails}
+        />
+      </Grommet>,
+    );
+    expect(screen.getByText('Model: BTL Y-wing')).toBeInTheDocument();
+    expect(screen.queryByText('Model: T-65 X-wing')).not.toBeInTheDocument();
   });
 });
