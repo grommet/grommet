@@ -49,6 +49,56 @@ exports[`Avatar a11yTitle renders 1`] = `
 </div>
 `;
 
+exports[`Avatar apply imageProps to avatar 1`] = `
+.c1 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  height: 48px;
+  width: 48px;
+  justify-content: center;
+  border-radius: 100%;
+  overflow: hidden;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c2 {
+  flex: 1 1;
+  overflow: hidden;
+  object-fit: contain;
+  opacity: 0.8;
+}
+
+<div
+  class="c0"
+>
+  <div
+    class="c1 StyledAvatar-sc-1suyamb-1"
+    role="figure"
+  >
+    <img
+      aria-label="test image"
+      class="c2"
+      role="presentation"
+      src="test.png"
+    />
+  </div>
+</div>
+`;
+
 exports[`Avatar icon renders 1`] = `
 .c2 {
   display: inline-block;
