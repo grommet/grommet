@@ -21,6 +21,7 @@ const dropProps = {
   align: { top: 'bottom', left: 'left' },
 };
 
+// TO DO theme object
 const tabsProps = {
   drop: { pad: 'small' },
   noDrop: { justify: 'start' },
@@ -113,6 +114,7 @@ const Content = ({ drop, options = [], ...rest }) => {
             messages: messages?.dataTableColumns,
           })}
         >
+          {/* TO DO theme object */}
           <Box pad={{ vertical: 'small' }} gap="xsmall">
             <TextInput
               type="search"
@@ -143,6 +145,7 @@ const Content = ({ drop, options = [], ...rest }) => {
             messages: messages?.dataTableColumns,
           })}
         >
+          {/* TO DO theme object */}
           <Box pad={{ top: 'small' }}>
             <List
               id={`${dataId}--order-columns`}
