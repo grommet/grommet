@@ -220,6 +220,8 @@ const CalendarDay = forwardRef(
     const { passThemeFlag } = useThemeValue();
     return (
       <StyledDayContainer
+        role="gridcell"
+        aria-selected={isSelected}
         inRange={isInRange}
         isSelected={isSelected}
         rangePosition={rangePosition}
@@ -228,10 +230,7 @@ const CalendarDay = forwardRef(
         responsive={responsive}
       >
         <StyledDayButton
-          role="gridcell"
-          aria-current={activeProp?.getTime() === day?.getTime()}
           aria-disabled={disabledProp}
-          aria-selected={isSelected}
           disabledProp={disabledProp}
           fill={fill}
           plain
@@ -915,6 +914,8 @@ const Calendar = forwardRef(
       </StyledWeek>,
     );
 
+    // While the calendar contains focus and is not animating, set
+    // the focus to the active date.
     useEffect(() => {
       if (!animating && active && focus && focusableDateRef?.current)
         focusableDateRef.current.focus();

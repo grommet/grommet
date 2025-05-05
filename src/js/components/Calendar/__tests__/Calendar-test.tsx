@@ -819,17 +819,20 @@ describe('Calendar Keyboard events', () => {
     const user = userEvent.setup({ delay: null });
     render(<App />);
 
-    const dateButton = screen.getByRole('gridcell', {
+    const dateButton = screen.getByRole('button', {
       name: 'Wed Jan 15 2020',
     });
-    const firstDateButton = screen.getByRole('gridcell', {
+    const firstDateButton = screen.getByRole('button', {
       name: 'Wed Jan 01 2020',
     });
     await user.tab();
     await user.tab();
     await user.type(firstDateButton, '{enter}');
-    expect(dateButton).toHaveAttribute('aria-selected', 'false');
-    expect(firstDateButton).toHaveAttribute('aria-selected', 'true');
+    expect(dateButton.closest('div')).toHaveAttribute('aria-selected', 'false');
+    expect(firstDateButton.closest('div')).toHaveAttribute(
+      'aria-selected',
+      'true',
+    );
     jest.useRealTimers();
   });
 
@@ -838,20 +841,26 @@ describe('Calendar Keyboard events', () => {
     const user = userEvent.setup({ delay: null });
     render(<App />);
 
-    const firstDateButton = screen.getByRole('gridcell', {
+    const firstDateButton = screen.getByRole('button', {
       name: 'Wed Jan 01 2020',
     });
-    const eightDateButton = screen.getByRole('gridcell', {
+    const eightDateButton = screen.getByRole('button', {
       name: 'Wed Jan 08 2020',
     });
     await user.tab();
     await user.tab();
     await user.type(firstDateButton, '{arrowDown}');
     await user.type(eightDateButton, '{enter}');
-    expect(eightDateButton).toHaveAttribute('aria-selected', 'true');
+    expect(eightDateButton.closest('div')).toHaveAttribute(
+      'aria-selected',
+      'true',
+    );
     await user.type(eightDateButton, '{arrowUp}');
     await user.type(firstDateButton, '{enter}');
-    expect(firstDateButton).toHaveAttribute('aria-selected', 'true');
+    expect(firstDateButton.closest('div')).toHaveAttribute(
+      'aria-selected',
+      'true',
+    );
     jest.useRealTimers();
   });
 
@@ -860,20 +869,26 @@ describe('Calendar Keyboard events', () => {
     const user = userEvent.setup({ delay: null });
     render(<App />);
 
-    const firstDateButton = screen.getByRole('gridcell', {
+    const firstDateButton = screen.getByRole('button', {
       name: 'Wed Jan 01 2020',
     });
-    const secondDateButton = screen.getByRole('gridcell', {
+    const secondDateButton = screen.getByRole('button', {
       name: 'Thu Jan 02 2020',
     });
     await user.tab();
     await user.tab();
     await user.type(firstDateButton, '{arrowRight}');
     await user.type(secondDateButton, '{space}');
-    expect(secondDateButton).toHaveAttribute('aria-selected', 'true');
+    expect(secondDateButton.closest('div')).toHaveAttribute(
+      'aria-selected',
+      'true',
+    );
     await user.type(secondDateButton, '{arrowLeft}');
     await user.type(firstDateButton, '{space}');
-    expect(firstDateButton).toHaveAttribute('aria-selected', 'true');
+    expect(firstDateButton.closest('div')).toHaveAttribute(
+      'aria-selected',
+      'true',
+    );
     jest.useRealTimers();
   });
 });
