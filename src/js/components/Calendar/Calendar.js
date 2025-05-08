@@ -921,6 +921,25 @@ const Calendar = forwardRef(
         focusableDateRef.current.focus();
     }, [focusableDateRef, active, focus, animating]);
 
+    useEffect(() => {
+      if (bounds && active) {
+        const normalizedBounds = normalizeInput(bounds);
+        if (!betweenDates(active, normalizedBounds)) {
+          const diff1 = Math.abs(
+            active.getTime() - normalizedBounds[0].getTime(),
+          );
+          const diff2 = Math.abs(
+            active.getTime() - normalizedBounds[1].getTime(),
+          );
+          let closerDate = 1;
+          if (diff1 < diff2) {
+            closerDate = 0;
+          }
+          setActive(normalizedBounds[closerDate]);
+        }
+      }
+    }, [active, bounds]);
+
     return (
       <StyledCalendar
         ref={ref}

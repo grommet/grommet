@@ -13183,7 +13183,7 @@ exports[`Calendar header 1`] = `
                   aria-disabled="true"
                   aria-label="Sun Dec 29 2019"
                   class="c4 c12"
-                  tabindex="0"
+                  tabindex="-1"
                   type="button"
                 >
                   <div

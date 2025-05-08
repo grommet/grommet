@@ -176,8 +176,6 @@ const responsiveDayButtonStyle = (props) => {
 
 // when caller opts in to day hover styling, apply all state styles
 // on CalendarDay instead of active state on CalendarDayButton
-// ${(props) =>
-//   props.theme.calendar?.day?.hover?.background && 'background: inherit;'}
 const StyledDayButton = styled(Button)`
   ${(props) =>
     props.disabledProp && disabledStyle(props.theme.button.disabled.opacity)}
