@@ -11,7 +11,6 @@ import {
   roundStyle,
   styledComponentsConfig,
 } from '../../utils';
-// import { activeStyle } from '../../utils/background';
 import { breakpointStyle } from '../../utils/mixins';
 
 const responsiveSizeStyle = (props) => {
