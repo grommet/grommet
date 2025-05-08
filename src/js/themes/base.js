@@ -617,10 +617,10 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         // adjacent: {
         //   color: undefined,
         // },
-        // hover: {
-        //   background: undefined,
-        //   color: undefined,
-        // },
+        hover: {
+          background: 'active-background',
+          // color: undefined,
+        },
         selected: {
           // background: undefined,
           // color: undefined,

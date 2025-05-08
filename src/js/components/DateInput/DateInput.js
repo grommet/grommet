@@ -241,7 +241,6 @@ Use the icon prop instead.`,
                 if (onChange) onChange({ value: normalizedValue });
                 if (open && !range) {
                   closeCalendar();
-                  setTimeout(() => ref.current?.focus(), 1);
                 }
               }
         }
@@ -396,7 +395,14 @@ Use the icon prop instead.`,
     if (open && !readOnly) {
       return [
         input,
-        <Keyboard key="drop" onEsc={() => ref.current.focus()}>
+        <Keyboard
+          key="drop"
+          onEsc={() => {
+            setTimeout(() => {
+              ref?.current.focus();
+            }, 1);
+          }}
+        >
           <Drop
             overflow="visible"
             id={id ? `${id}__drop` : undefined}
