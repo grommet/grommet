@@ -832,9 +832,10 @@ const Calendar = forwardRef(
         } else if (selectedState === 1) {
           inRange = true;
         }
-        const dayDisabled =
+        const dayDisabled = !!(
           withinDates(day, normalizeInput(disabled))[0] ||
-          (bounds && !betweenDates(day, normalizeInput(bounds)));
+          (bounds && !betweenDates(day, normalizeInput(bounds)))
+        );
         if (
           !firstDayInMonth &&
           !dayDisabled &&
@@ -849,13 +850,10 @@ const Calendar = forwardRef(
               activeProp={active}
               day={day}
               key={day.getTime()}
-              disabledProp={dayDisabled && !!dayDisabled}
+              disabledProp={dayDisabled}
               buttonProps={{
                 a11yTitle: day.toDateString(),
-                onClick:
-                  dayDisabled && !!dayDisabled
-                    ? () => {}
-                    : () => onClick(dateObject),
+                onClick: dayDisabled ? () => {} : () => onClick(dateObject),
               }}
               isInRange={inRange}
               isSelected={selected}
@@ -878,11 +876,10 @@ const Calendar = forwardRef(
                   ? {
                       a11yTitle: day.toDateString(),
                       active: active && active.getTime() === day.getTime(),
-                      disabled: dayDisabled && !!dayDisabled,
-                      onClick:
-                        dayDisabled && !!dayDisabled
-                          ? () => {}
-                          : () => onClick(dateObject),
+                      disabled: dayDisabled,
+                      onClick: dayDisabled
+                        ? () => {}
+                        : () => onClick(dateObject),
                     }
                   : null
               }

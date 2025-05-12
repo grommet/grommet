@@ -400,7 +400,7 @@ Use the icon prop instead.`,
           onEsc={() => {
             setTimeout(() => {
               ref?.current.focus();
-            }, 1);
+            }, 0);
           }}
         >
           <Drop

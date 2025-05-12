@@ -175,7 +175,13 @@ const responsiveDayButtonStyle = (props) => {
 
 // when caller opts in to day hover styling, apply all state styles
 // on CalendarDay instead of active state on CalendarDayButton
+// position relative and z-index are added to prevent the focus
+// indicator from getting cut off
 const StyledDayButton = styled(Button)`
+  &:focus {
+    position: relative;
+    z-index: 1;
+  }
   ${(props) =>
     props.disabledProp && disabledStyle(props.theme.button.disabled.opacity)}
   ${(props) => props.responsive && responsiveDayButtonStyle(props)}
