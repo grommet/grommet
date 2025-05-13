@@ -620,9 +620,9 @@ var DataChart = /*#__PURE__*/forwardRef(function (_ref, ref) {
       // reverse to ensure area Charts are stacked in the right order
       return prop.map(function (cProp, j) {
         var pProp = cProp.property || cProp;
-        var _ref10 = typeof cProp === 'object' ? cProp : {},
-          property = _ref10.property,
-          propRest = _objectWithoutPropertiesLoose(_ref10, _excluded4);
+        var _ref0 = typeof cProp === 'object' ? cProp : {},
+          property = _ref0.property,
+          propRest = _objectWithoutPropertiesLoose(_ref0, _excluded4);
         return /*#__PURE__*/React.createElement(Chart
         // eslint-disable-next-line react/no-array-index-key
         , _extends({

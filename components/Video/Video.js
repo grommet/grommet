@@ -18,8 +18,7 @@ var _MessageContext = require("../../contexts/MessageContext");
 var _propTypes = require("./propTypes");
 var _useThemeValue2 = require("../../utils/useThemeValue");
 var _excluded = ["alignSelf", "autoPlay", "children", "controls", "gridArea", "loop", "margin", "messages", "mute", "onDurationChange", "onEnded", "onPause", "onPlay", "onTimeUpdate", "onVolumeChange", "skipInterval"];
-function _getRequireWildcardCache(e) { if ("function" != typeof WeakMap) return null; var r = new WeakMap(), t = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(e) { return e ? t : r; })(e); }
-function _interopRequireWildcard(e, r) { if (!r && e && e.__esModule) return e; if (null === e || "object" != typeof e && "function" != typeof e) return { "default": e }; var t = _getRequireWildcardCache(r); if (t && t.has(e)) return t.get(e); var n = { __proto__: null }, a = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var u in e) if ("default" !== u && {}.hasOwnProperty.call(e, u)) { var i = a ? Object.getOwnPropertyDescriptor(e, u) : null; i && (i.get || i.set) ? Object.defineProperty(n, u, i) : n[u] = e[u]; } return n["default"] = e, t && t.set(e, n), n; }
+function _interopRequireWildcard(e, t) { if ("function" == typeof WeakMap) var r = new WeakMap(), n = new WeakMap(); return (_interopRequireWildcard = function _interopRequireWildcard(e, t) { if (!t && e && e.__esModule) return e; var o, i, f = { __proto__: null, "default": e }; if (null === e || "object" != typeof e && "function" != typeof e) return f; if (o = t ? n : r) { if (o.has(e)) return o.get(e); o.set(e, f); } for (var _t in e) "default" !== _t && {}.hasOwnProperty.call(e, _t) && ((i = (o = Object.defineProperty) && Object.getOwnPropertyDescriptor(e, _t)) && (i.get || i.set) ? o(f, _t, i) : f[_t] = e[_t]); return f; })(e, t); }
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (-1 !== e.indexOf(n)) continue; t[n] = r[n]; } return t; }
 // Split the volume control into 6 segments. Empirically determined.
@@ -86,15 +85,15 @@ var Video = exports.Video = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, 
   var _useState9 = (0, _react.useState)(false),
     hasPlayed = _useState9[0],
     setHasPlayed = _useState9[1];
+  var _useState0 = (0, _react.useState)(),
+    interacting = _useState0[0],
+    setInteracting = _useState0[1];
+  var _useState1 = (0, _react.useState)(),
+    height = _useState1[0],
+    setHeight = _useState1[1];
   var _useState10 = (0, _react.useState)(),
-    interacting = _useState10[0],
-    setInteracting = _useState10[1];
-  var _useState11 = (0, _react.useState)(),
-    height = _useState11[0],
-    setHeight = _useState11[1];
-  var _useState12 = (0, _react.useState)(),
-    width = _useState12[0],
-    setWidth = _useState12[1];
+    width = _useState10[0],
+    setWidth = _useState10[1];
   var containerRef = (0, _react.useRef)();
   var scrubberRef = (0, _react.useRef)();
   var videoRef = (0, _utils.useForwardedRef)(ref);
@@ -148,9 +147,9 @@ var Video = exports.Video = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, 
   }, [interacting]);
 
   // track which audio description track is active
-  var _useState13 = (0, _react.useState)(),
-    activeTrack = _useState13[0],
-    setActiveTrack = _useState13[1];
+  var _useState11 = (0, _react.useState)(),
+    activeTrack = _useState11[0],
+    setActiveTrack = _useState11[1];
   (0, _useIsomorphicLayoutEffect.useLayoutEffect)(function () {
     var video = videoRef.current;
     if (video) {

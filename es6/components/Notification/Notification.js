@@ -65,7 +65,7 @@ var NotificationAnchor = styled(Anchor).withConfig({
   componentId: "sc-1yq09yz-0"
 })(["white-space:nowrap;"]);
 var Notification = function Notification(_ref2) {
-  var _theme$notification6, _theme$notification7, _theme$notification8, _theme$notification9, _theme$notification10;
+  var _theme$notification6, _theme$notification7, _theme$notification8, _theme$notification9, _theme$notification0;
   var actionsProp = _ref2.actions,
     messageProp = _ref2.message,
     onClose = _ref2.onClose,
@@ -157,7 +157,7 @@ var Notification = function Notification(_ref2) {
       }
     }, message), actions) : message;
   }
-  var iconDimension = ((_theme$notification10 = theme.notification) == null || (_theme$notification10 = _theme$notification10.message) == null ? void 0 : _theme$notification10.size) || 'medium';
+  var iconDimension = ((_theme$notification0 = theme.notification) == null || (_theme$notification0 = _theme$notification0.message) == null ? void 0 : _theme$notification0.size) || 'medium';
   var content = /*#__PURE__*/React.createElement(Box, _extends({}, theme.notification.container, global ? _extends({}, theme.notification.global.container) : {}, toast ? _extends({}, theme.notification.toast.container) : {}, {
     background: background
     // let internal box control pad

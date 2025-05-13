@@ -484,9 +484,9 @@ var Chart = /*#__PURE__*/React.forwardRef(function (_ref, ref) {
       y2: horizontal ? 0 : 1
     }, color.slice(0).sort(function (c1, c2) {
       return horizontal ? c1.value - c2.value : c2.value - c1.value;
-    }).map(function (_ref10) {
-      var value = _ref10.value,
-        gradientColor = _ref10.color;
+    }).map(function (_ref0) {
+      var value = _ref0.value,
+        gradientColor = _ref0.color;
       return /*#__PURE__*/React.createElement("stop", {
         key: value,
         offset: horizontal ? (value - bounds.x.min) * scale.x / size.width : (size.height - (value - bounds.y.min) * scale.y) / size.height,

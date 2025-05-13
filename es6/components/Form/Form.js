@@ -532,22 +532,22 @@ var Form = /*#__PURE__*/forwardRef(function (_ref2, ref) {
         if (initialValue !== undefined) setInputValue(nextComponentValue);
       }];
     };
-    var useFormField = function useFormField(_ref10) {
-      var errorArg = _ref10.error,
-        infoArg = _ref10.info,
-        name = _ref10.name,
-        required = _ref10.required,
-        disabled = _ref10.disabled,
-        validateArg = _ref10.validate,
-        validateOnArg = _ref10.validateOn;
+    var useFormField = function useFormField(_ref0) {
+      var errorArg = _ref0.error,
+        infoArg = _ref0.info,
+        name = _ref0.name,
+        required = _ref0.required,
+        disabled = _ref0.disabled,
+        validateArg = _ref0.validate,
+        validateOnArg = _ref0.validateOn;
       var error = disabled ? undefined : errorArg || validationResults.errors[name];
       var info = infoArg || validationResults.infos[name];
       useEffect(function () {
         setValidateOn(function (prevValues) {
           var _extends2;
           if (typeof prevValues === 'string') {
-            var _ref11;
-            return _ref11 = {}, _ref11[name] = validateOnArg || validateOnProp, _ref11;
+            var _ref1;
+            return _ref1 = {}, _ref1[name] = validateOnArg || validateOnProp, _ref1;
           }
           return _extends({}, prevValues, (_extends2 = {}, _extends2[name] = validateOnArg || validateOnProp, _extends2));
         });

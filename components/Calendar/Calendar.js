@@ -18,8 +18,7 @@ var _dates = require("../../utils/dates");
 var _useThemeValue3 = require("../../utils/useThemeValue");
 var _utils2 = require("../../utils");
 var _excluded = ["activeDate", "animate", "bounds", "children", "date", "dates", "daysOfWeek", "disabled", "initialFocus", "fill", "firstDayOfWeek", "header", "level", "locale", "messages", "onReference", "onSelect", "range", "reference", "responsive", "showAdjacentDays", "size", "timestamp"];
-function _getRequireWildcardCache(e) { if ("function" != typeof WeakMap) return null; var r = new WeakMap(), t = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(e) { return e ? t : r; })(e); }
-function _interopRequireWildcard(e, r) { if (!r && e && e.__esModule) return e; if (null === e || "object" != typeof e && "function" != typeof e) return { "default": e }; var t = _getRequireWildcardCache(r); if (t && t.has(e)) return t.get(e); var n = { __proto__: null }, a = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var u in e) if ("default" !== u && {}.hasOwnProperty.call(e, u)) { var i = a ? Object.getOwnPropertyDescriptor(e, u) : null; i && (i.get || i.set) ? Object.defineProperty(n, u, i) : n[u] = e[u]; } return n["default"] = e, t && t.set(e, n), n; }
+function _interopRequireWildcard(e, t) { if ("function" == typeof WeakMap) var r = new WeakMap(), n = new WeakMap(); return (_interopRequireWildcard = function _interopRequireWildcard(e, t) { if (!t && e && e.__esModule) return e; var o, i, f = { __proto__: null, "default": e }; if (null === e || "object" != typeof e && "function" != typeof e) return f; if (o = t ? n : r) { if (o.has(e)) return o.get(e); o.set(e, f); } for (var _t in e) "default" !== _t && {}.hasOwnProperty.call(e, _t) && ((i = (o = Object.defineProperty) && Object.getOwnPropertyDescriptor(e, _t)) && (i.get || i.set) ? o(f, _t, i) : f[_t] = e[_t]); return f; })(e, t); }
 function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (-1 !== e.indexOf(n)) continue; t[n] = r[n]; } return t; }
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 var headingPadMap = {
@@ -334,9 +333,9 @@ var Calendar = exports.Calendar = /*#__PURE__*/(0, _react.forwardRef)(function (
   var _useState9 = (0, _react.useState)(),
     slide = _useState9[0],
     setSlide = _useState9[1];
-  var _useState10 = (0, _react.useState)(),
-    animating = _useState10[0],
-    setAnimating = _useState10[1];
+  var _useState0 = (0, _react.useState)(),
+    animating = _useState0[0],
+    setAnimating = _useState0[1];
 
   // When the reference changes, we need to update the displayBounds.
   // This is easy when we aren't animating. If we are animating,
@@ -429,12 +428,12 @@ var Calendar = exports.Calendar = /*#__PURE__*/(0, _react.forwardRef)(function (
     return (0, _utils.startOfMonth)((0, _utils.addMonths)((0, _utils.startOfMonth)(reference), 1));
   }, [reference]);
   var daysRef = (0, _react.useRef)();
-  var _useState11 = (0, _react.useState)(),
-    focus = _useState11[0],
-    setFocus = _useState11[1];
-  var _useState12 = (0, _react.useState)(),
-    active = _useState12[0],
-    setActive = _useState12[1];
+  var _useState1 = (0, _react.useState)(),
+    focus = _useState1[0],
+    setFocus = _useState1[1];
+  var _useState10 = (0, _react.useState)(),
+    active = _useState10[0],
+    setActive = _useState10[1];
   (0, _react.useEffect)(function () {
     if (initialFocus === 'days') daysRef.current.focus();
   }, [initialFocus]);

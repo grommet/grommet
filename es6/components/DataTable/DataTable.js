@@ -202,22 +202,22 @@ var DataTable = function DataTable(_ref) {
   var headerRef = useRef();
   var bodyRef = useRef();
   var footerRef = useRef();
-  var _useState10 = useState(),
-    headerHeight = _useState10[0],
-    setHeaderHeight = _useState10[1];
-  var _useState11 = useState(),
-    footerHeight = _useState11[0],
-    setFooterHeight = _useState11[1];
+  var _useState0 = useState(),
+    headerHeight = _useState0[0],
+    setHeaderHeight = _useState0[1];
+  var _useState1 = useState(),
+    footerHeight = _useState1[0],
+    setFooterHeight = _useState1[1];
 
   // offset compensation when body overflows
-  var _useState12 = useState(0),
-    scrollOffset = _useState12[0],
-    setScrollOffset = _useState12[1];
+  var _useState10 = useState(0),
+    scrollOffset = _useState10[0],
+    setScrollOffset = _useState10[1];
 
   // multiple pinned columns offset
-  var _useState13 = useState(),
-    pinnedOffset = _useState13[0],
-    setPinnedOffset = _useState13[1];
+  var _useState11 = useState(),
+    pinnedOffset = _useState11[0],
+    setPinnedOffset = _useState11[1];
   var onHeaderWidths = useCallback(function (columnWidths) {
     var hasSelectColumn = Boolean(select || onSelect);
     var pinnedProperties = columns.map(function (pinnedColumn) {

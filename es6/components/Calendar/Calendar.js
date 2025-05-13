@@ -329,9 +329,9 @@ var Calendar = /*#__PURE__*/forwardRef(function (_ref4, ref) {
   var _useState9 = useState(),
     slide = _useState9[0],
     setSlide = _useState9[1];
-  var _useState10 = useState(),
-    animating = _useState10[0],
-    setAnimating = _useState10[1];
+  var _useState0 = useState(),
+    animating = _useState0[0],
+    setAnimating = _useState0[1];
 
   // When the reference changes, we need to update the displayBounds.
   // This is easy when we aren't animating. If we are animating,
@@ -424,12 +424,12 @@ var Calendar = /*#__PURE__*/forwardRef(function (_ref4, ref) {
     return startOfMonth(addMonths(startOfMonth(reference), 1));
   }, [reference]);
   var daysRef = useRef();
-  var _useState11 = useState(),
-    focus = _useState11[0],
-    setFocus = _useState11[1];
-  var _useState12 = useState(),
-    active = _useState12[0],
-    setActive = _useState12[1];
+  var _useState1 = useState(),
+    focus = _useState1[0],
+    setFocus = _useState1[1];
+  var _useState10 = useState(),
+    active = _useState10[0],
+    setActive = _useState10[1];
   useEffect(function () {
     if (initialFocus === 'days') daysRef.current.focus();
   }, [initialFocus]);

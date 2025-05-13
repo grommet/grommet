@@ -81,15 +81,15 @@ var Video = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var _useState9 = useState(false),
     hasPlayed = _useState9[0],
     setHasPlayed = _useState9[1];
+  var _useState0 = useState(),
+    interacting = _useState0[0],
+    setInteracting = _useState0[1];
+  var _useState1 = useState(),
+    height = _useState1[0],
+    setHeight = _useState1[1];
   var _useState10 = useState(),
-    interacting = _useState10[0],
-    setInteracting = _useState10[1];
-  var _useState11 = useState(),
-    height = _useState11[0],
-    setHeight = _useState11[1];
-  var _useState12 = useState(),
-    width = _useState12[0],
-    setWidth = _useState12[1];
+    width = _useState10[0],
+    setWidth = _useState10[1];
   var containerRef = useRef();
   var scrubberRef = useRef();
   var videoRef = useForwardedRef(ref);
@@ -143,9 +143,9 @@ var Video = /*#__PURE__*/forwardRef(function (_ref, ref) {
   }, [interacting]);
 
   // track which audio description track is active
-  var _useState13 = useState(),
-    activeTrack = _useState13[0],
-    setActiveTrack = _useState13[1];
+  var _useState11 = useState(),
+    activeTrack = _useState11[0],
+    setActiveTrack = _useState11[1];
   useLayoutEffect(function () {
     var video = videoRef.current;
     if (video) {
