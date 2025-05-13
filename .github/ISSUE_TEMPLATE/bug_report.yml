@@ -1,0 +1,48 @@
+name: Bug/Enhancement report
+description: File a bug report or enhancement to help us improve
+body:
+  - type: dropdown
+    id: will_contribute
+    attributes:
+      label: Is this something you or your team is interested in contributing a pull request towards?
+      options:
+        - 'Yes'
+        - 'No'
+        - 'Not sure yet'
+
+  - type: textarea
+    id: expected_behavior
+    attributes:
+      label: Expected Behavior
+      description: What should happen?
+
+  - type: textarea
+    id: actual_behavior
+    attributes:
+      label: Actual Behavior
+      description: What happens instead?
+
+  - type: textarea
+    id: evidence
+    attributes:
+      label: URL, Screenshot, or CodeSandbox
+      description: 'Provide a link or screenshot (template: https://codesandbox.io/s/m7mml8l0zj)'
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to Reproduce
+      placeholder: |
+        1. ...
+        2. ...
+        3. ...
+
+  - type: textarea
+    id: environment
+    attributes:
+      label: Your Environment
+      description: |
+        Please provide the following:
+        - Grommet version
+        - Browser name and version
+        - Operating System and version
