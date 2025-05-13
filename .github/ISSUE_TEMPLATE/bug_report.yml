@@ -16,16 +16,12 @@ body:
     attributes:
       label: Expected Behavior
       description: What should happen?
-    validations:
-      required: true
 
   - type: textarea
     id: actual_behavior
     attributes:
       label: Actual Behavior
       description: What happens instead?
-    validations:
-      required: true
 
   - type: textarea
     id: evidence
@@ -41,8 +37,6 @@ body:
         1. ...
         2. ...
         3. ...
-    validations:
-      required: true
 
   - type: textarea
     id: environment
