@@ -1566,7 +1566,7 @@ exports[`Grommet hpe theme 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background-color: #00384d;
+  background-color: #3c3aa1;
   color: #ffffff;
   min-width: 0;
   min-height: 0;
@@ -1577,7 +1577,7 @@ exports[`Grommet hpe theme 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background-color: #bd8d09;
+  background-color: #b0840d;
   color: #555555;
   min-width: 0;
   min-height: 0;
@@ -1588,7 +1588,7 @@ exports[`Grommet hpe theme 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background-color: #7022ec;
+  background-color: #a95589;
   color: #ffffff;
   min-width: 0;
   min-height: 0;
@@ -1599,14 +1599,25 @@ exports[`Grommet hpe theme 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background-color: #3e92cc;
-  color: #555555;
+  background-color: #2053d9;
+  color: #ffffff;
   min-width: 0;
   min-height: 0;
   flex-direction: column;
 }
 
 .c10 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  background-color: #a78972;
+  color: #555555;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+}
+
+.c11 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -1617,7 +1628,7 @@ exports[`Grommet hpe theme 1`] = `
   flex-direction: column;
 }
 
-.c11 {
+.c12 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -1628,7 +1639,7 @@ exports[`Grommet hpe theme 1`] = `
   flex-direction: column;
 }
 
-.c12 {
+.c13 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -1639,7 +1650,7 @@ exports[`Grommet hpe theme 1`] = `
   flex-direction: column;
 }
 
-.c13 {
+.c14 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -1650,18 +1661,18 @@ exports[`Grommet hpe theme 1`] = `
   flex-direction: column;
 }
 
-.c14 {
+.c15 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background-color: #8c8c8c;
-  color: #555555;
+  background-color: #757575;
+  color: #ffffff;
   min-width: 0;
   min-height: 0;
   flex-direction: column;
 }
 
-.c15 {
+.c16 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -1672,7 +1683,7 @@ exports[`Grommet hpe theme 1`] = `
   flex-direction: column;
 }
 
-.c16 {
+.c17 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -1742,7 +1753,7 @@ exports[`Grommet hpe theme 1`] = `
     </span>
   </div>
   <div
-    class="c1"
+    class="c6"
   >
     <span
       class="c2"
@@ -1751,7 +1762,7 @@ exports[`Grommet hpe theme 1`] = `
     </span>
   </div>
   <div
-    class="c6"
+    class="c7"
   >
     <span
       class="c2"
@@ -1760,7 +1771,7 @@ exports[`Grommet hpe theme 1`] = `
     </span>
   </div>
   <div
-    class="c7"
+    class="c8"
   >
     <span
       class="c2"
@@ -1769,7 +1780,7 @@ exports[`Grommet hpe theme 1`] = `
     </span>
   </div>
   <div
-    class="c8"
+    class="c9"
   >
     <span
       class="c2"
@@ -1778,7 +1789,7 @@ exports[`Grommet hpe theme 1`] = `
     </span>
   </div>
   <div
-    class="c9"
+    class="c10"
   >
     <span
       class="c2"
@@ -1787,7 +1798,7 @@ exports[`Grommet hpe theme 1`] = `
     </span>
   </div>
   <div
-    class="c10"
+    class="c11"
   >
     <span
       class="c2"
@@ -1796,7 +1807,7 @@ exports[`Grommet hpe theme 1`] = `
     </span>
   </div>
   <div
-    class="c11"
+    class="c12"
   >
     <span
       class="c2"
@@ -1805,7 +1816,7 @@ exports[`Grommet hpe theme 1`] = `
     </span>
   </div>
   <div
-    class="c12"
+    class="c13"
   >
     <span
       class="c2"
@@ -1814,7 +1825,7 @@ exports[`Grommet hpe theme 1`] = `
     </span>
   </div>
   <div
-    class="c13"
+    class="c14"
   >
     <span
       class="c2"
@@ -1823,7 +1834,7 @@ exports[`Grommet hpe theme 1`] = `
     </span>
   </div>
   <div
-    class="c14"
+    class="c15"
   >
     <span
       class="c2"
@@ -1832,7 +1843,7 @@ exports[`Grommet hpe theme 1`] = `
     </span>
   </div>
   <div
-    class="c15"
+    class="c16"
   >
     <span
       class="c2"
@@ -1841,7 +1852,7 @@ exports[`Grommet hpe theme 1`] = `
     </span>
   </div>
   <div
-    class="c16"
+    class="c17"
   >
     <span
       class="c2"
