@@ -1,6 +1,5 @@
 name: Bug/Enhancement report
 description: File a bug report or enhancement to help us improve
-title: ''
 body:
   - type: dropdown
     id: will_contribute
@@ -42,7 +41,8 @@ body:
     id: environment
     attributes:
       label: Your Environment
-      default: |
-        - Grommet version:
-        - Browser name and version:
-        - Operating System and version:
+      description: |
+        Please provide the following:
+        - Grommet version
+        - Browser name and version
+        - Operating System and version
