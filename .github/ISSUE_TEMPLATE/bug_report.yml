@@ -1,7 +1,6 @@
-name: Bug report
-description: File a bug report to help us improve
-title: '[Bug]: '
-labels: [bug]
+name: Bug/Enhancement report
+description: File a bug report or enhancement to help us improve
+title: ''
 body:
   - type: dropdown
     id: will_contribute
@@ -17,16 +16,12 @@ body:
     attributes:
       label: Expected Behavior
       description: What should happen?
-    validations:
-      required: true
 
   - type: textarea
     id: actual_behavior
     attributes:
       label: Actual Behavior
       description: What happens instead?
-    validations:
-      required: true
 
   - type: textarea
     id: evidence
@@ -42,14 +37,12 @@ body:
         1. ...
         2. ...
         3. ...
-    validations:
-      required: true
 
   - type: textarea
     id: environment
     attributes:
       label: Your Environment
-      placeholder: |
+      default: |
         - Grommet version:
         - Browser name and version:
         - Operating System and version:
