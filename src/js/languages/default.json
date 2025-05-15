@@ -80,7 +80,8 @@
       "plural": "{numOfFiles} files are too large. Select files which are no larger than {maxSize}."
     },
     "remove": "remove",
-    "removeAll": "remove all"
+    "removeAll": "remove all",
+    "removeMaxFileSize": "Error - remove {fileName} (exceeds max file size) {maxSize}."
   },
   "form": {
     "invalid": "invalid",

@@ -472,7 +472,7 @@ const FileInput = forwardRef(
                     direction="row"
                   >
                     {((maxSize && file.size > maxSize) ||
-                      (max && index >= max)) && <CircleAlert />}
+                      (max && index >= max)) && <CircleAlert a11yTitle="" />}
                     <Label
                       weight={
                         theme.global.input.weight ||
@@ -488,10 +488,25 @@ const FileInput = forwardRef(
                 <Box flex={false} direction="row" align="center">
                   <Button
                     ref={index ? undefined : removeRef}
-                    a11yTitle={`${format({
-                      id: 'fileInput.remove',
-                      messages,
-                    })} ${file.name}`}
+                    // a11yTitle={`${format({
+                    //   id: 'fileInput.remove',
+                    //   messages,
+                    // })} ${file.name}`}
+                    a11yTitle={
+                      (maxSize && file.size > maxSize) || (max && index >= max)
+                        ? format({
+                            id: 'fileInput.removeMaxFileSize',
+                            messages,
+                            values: {
+                              fileName: file.name,
+                              maxSize: formatBytes(maxSize),
+                            },
+                          })
+                        : `${format({
+                            id: 'fileInput.remove',
+                            messages,
+                          })} ${file.name}`
+                    }
                     icon={<RemoveIcon />}
                     hoverIndicator
                     disabled={disabled}
