@@ -261,6 +261,7 @@ const CalendarDay = forwardRef(
 );
 
 const CalendarCustomDay = ({
+  'aria-selected': ariaSelected,
   children,
   fill,
   size,
@@ -270,6 +271,7 @@ const CalendarCustomDay = ({
   if (!buttonProps) {
     return (
       <StyledDayContainer
+        aria-selected={ariaSelected}
         role="gridcell"
         sizeProp={size}
         fillContainer={fill}
@@ -282,6 +284,7 @@ const CalendarCustomDay = ({
 
   return (
     <StyledDayContainer
+      aria-selected={ariaSelected}
       role="gridcell"
       sizeProp={size}
       fillContainer={fill}
@@ -871,6 +874,7 @@ const Calendar = forwardRef(
           days.push(
             <CalendarCustomDay
               key={day.getTime()}
+              aria-selected={selected}
               buttonProps={
                 onSelect
                   ? {
