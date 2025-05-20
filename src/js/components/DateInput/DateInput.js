@@ -23,6 +23,7 @@ import {
   useForwardedRef,
   setHoursWithOffset,
   disabledStyle,
+  useKeyboard,
 } from '../../utils';
 import { readOnlyStyle } from '../../utils/readOnly';
 import {
@@ -102,6 +103,7 @@ const DateInput = forwardRef(
       value: valueArg,
       initialValue: defaultValue,
     });
+    const usingKeyboard = useKeyboard();
 
     const [outputFormat, setOutputFormat] = useState(getOutputFormat(value));
     useEffect(() => {
@@ -203,9 +205,14 @@ Use the icon prop instead.`,
     }, [announce, formatMessage, messages]);
 
     const closeCalendar = useCallback(() => {
+      if (usingKeyboard && !inline && ref?.current) {
+        setTimeout(() => {
+          ref?.current?.focus();
+        }, 0);
+      }
       setOpen(false);
       announce(formatMessage({ id: 'dateInput.exitCalendar', messages }));
-    }, [announce, formatMessage, messages]);
+    }, [announce, formatMessage, messages, usingKeyboard, ref, inline]);
 
     const dates = useMemo(
       () => (range && value?.length ? [value] : undefined),
@@ -395,33 +402,25 @@ Use the icon prop instead.`,
     if (open && !readOnly) {
       return [
         input,
-        <Keyboard
+        <Drop
           key="drop"
-          onEsc={() => {
-            setTimeout(() => {
-              ref?.current.focus();
-            }, 0);
+          overflow="visible"
+          id={id ? `${id}__drop` : undefined}
+          target={containerRef.current}
+          align={{ ...calendarDropdownAlign, ...dropProps }}
+          onEsc={closeCalendar}
+          onClickOutside={({ target }) => {
+            if (
+              target !== containerRef.current &&
+              !containerRef.current.contains(target)
+            ) {
+              closeCalendar();
+            }
           }}
+          {...dropProps}
         >
-          <Drop
-            overflow="visible"
-            id={id ? `${id}__drop` : undefined}
-            target={containerRef.current}
-            align={{ ...calendarDropdownAlign, ...dropProps }}
-            onEsc={closeCalendar}
-            onClickOutside={({ target }) => {
-              if (
-                target !== containerRef.current &&
-                !containerRef.current.contains(target)
-              ) {
-                closeCalendar();
-              }
-            }}
-            {...dropProps}
-          >
-            {calendar}
-          </Drop>
-        </Keyboard>,
+          {calendar}
+        </Drop>,
       ];
     }
 
