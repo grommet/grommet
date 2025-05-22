@@ -377,6 +377,7 @@ const Tabs = forwardRef(
               tabIndex={-1}
               onClick={() => moveByArrowKey('next')}
             >
+              {/* TO DO theme object */}
               <Box pad={{ vertical: 'xsmall', horizontal: 'small' }}>
                 <Next
                   color={

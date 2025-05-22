@@ -18,6 +18,7 @@ export const heightYGranularity = {
   xlarge: { fine: 11, medium: 5 },
 };
 
+// TO DO theme object?
 export const halfPad = {
   xlarge: 'large',
   large: 'medium',
@@ -26,6 +27,7 @@ export const halfPad = {
   xsmall: 'xxsmall',
 };
 
+// TO DO theme object?
 export const doublePad = {
   large: 'xlarge',
   medium: 'large',
@@ -34,6 +36,7 @@ export const doublePad = {
   xxsmall: 'xsmall',
 };
 
+// TO DO theme object?
 const orderedSizes = [
   'xlarge',
   'large',
