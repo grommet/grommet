@@ -442,7 +442,7 @@ var SelectMultipleContainer = /*#__PURE__*/forwardRef(function (_ref, ref) {
       "aria-setsize": options.length,
       "aria-posinset": index + 1,
       "aria-selected": optionSelected,
-      focusIndicator: false,
+      focusIndicator: usingKeyboard,
       "aria-disabled": optionDisabled || undefined,
       plain: !child ? undefined : true,
       align: "start",

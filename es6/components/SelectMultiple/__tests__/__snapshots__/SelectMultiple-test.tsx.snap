@@ -6330,6 +6330,26 @@ exports[`SelectMultiple with portal renders custom listbox styling 1`] = `
   text-align: inherit;
 }
 
+.c9:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c9:focus >circle,
+.c9:focus >ellipse,
+.c9:focus >line,
+.c9:focus >path,
+.c9:focus >polygon,
+.c9:focus >polyline,
+.c9:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c9:focus ::-moz-focus-inner {
+  border: 0;
+}
+
 .c9:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
