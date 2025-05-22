@@ -932,10 +932,7 @@ const Calendar = forwardRef(
           const diff2 = Math.abs(
             active.getTime() - normalizedBounds[1].getTime(),
           );
-          let closerDate = 1;
-          if (diff1 < diff2) {
-            closerDate = 0;
-          }
+          const closerDate = diff1 < diff2 ? 0 : 1;
           setActive(normalizedBounds[closerDate]);
         }
       }
