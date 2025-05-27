@@ -171,6 +171,13 @@ const buildDisplayBounds = (reference, firstDayOfWeek) => {
   return [start, end];
 };
 
+const monthBounds = (reference) => {
+  const start = new Date(reference);
+  start.setDate(1); // first of month
+  const end = endOfMonth(start);
+  return [start, end];
+};
+
 const disabledCalendarPreviousMonthButton = (date, reference, bounds) => {
   if (!bounds) return false;
 
@@ -498,9 +505,8 @@ const Calendar = forwardRef(
       () => startOfMonth(addMonths(startOfMonth(reference), 1)),
       [reference],
     );
-    const firstDay = new Date(displayBounds[0]);
     const [focus, setFocus] = useState();
-    const [active, setActive] = useState(firstDay);
+    const [active, setActive] = useState(startOfMonth(reference));
     const focusableDateRef = useRef(undefined);
 
     useEffect(() => {
@@ -529,9 +535,9 @@ const Calendar = forwardRef(
         newMonth.getFullYear(),
         newMonth.getMonth(),
         1,
-        firstDay.getHours(),
-        firstDay.getMinutes(),
-        firstDay.getSeconds(),
+        startOfMonth(reference).getHours(),
+        startOfMonth(reference).getMinutes(),
+        startOfMonth(reference).getSeconds(),
       );
       setActive(firstOfMonth);
 
@@ -1000,7 +1006,11 @@ const Calendar = forwardRef(
                   !bounds
                 ) {
                   setActive(nextActive);
-                  if (!betweenDates(nextActive, displayBounds)) {
+                  if (
+                    !betweenDates(nextActive, displayBounds) ||
+                    (!showAdjacentDays &&
+                      !betweenDates(nextActive, monthBounds(reference)))
+                  ) {
                     changeReference(nextActive);
                   }
                 }
@@ -1014,7 +1024,11 @@ const Calendar = forwardRef(
                   !bounds
                 ) {
                   setActive(nextActive);
-                  if (!betweenDates(nextActive, displayBounds)) {
+                  if (
+                    !betweenDates(nextActive, displayBounds) ||
+                    (!showAdjacentDays &&
+                      !betweenDates(nextActive, monthBounds(reference)))
+                  ) {
                     changeReference(nextActive);
                   }
                 }
@@ -1026,7 +1040,11 @@ const Calendar = forwardRef(
                   !bounds
                 ) {
                   setActive(nextActive);
-                  if (!betweenDates(nextActive, displayBounds)) {
+                  if (
+                    !betweenDates(nextActive, displayBounds) ||
+                    (!showAdjacentDays &&
+                      !betweenDates(nextActive, monthBounds(reference)))
+                  ) {
                     changeReference(nextActive);
                   }
                 }
@@ -1038,7 +1056,11 @@ const Calendar = forwardRef(
                   !bounds
                 ) {
                   setActive(nextActive);
-                  if (!betweenDates(nextActive, displayBounds)) {
+                  if (
+                    !betweenDates(nextActive, displayBounds) ||
+                    (!showAdjacentDays &&
+                      !betweenDates(nextActive, monthBounds(reference)))
+                  ) {
                     changeReference(nextActive);
                   }
                 }
