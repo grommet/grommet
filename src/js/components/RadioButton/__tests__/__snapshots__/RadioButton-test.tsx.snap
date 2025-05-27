@@ -59,6 +59,10 @@ exports[`RadioButton background-color check themed 1`] = `
   cursor: pointer;
 }
 
+.c5 {
+  transform: scale(1);
+}
+
 @media only screen and (max-width: 768px) {
   .c4 {
     border: solid 2px rgba(0, 0, 0, 0.15);
@@ -80,7 +84,7 @@ exports[`RadioButton background-color check themed 1`] = `
         type="radio"
       />
       <div
-        class="c4 "
+        class="c4 c5"
       />
     </div>
   </label>
@@ -148,6 +152,7 @@ exports[`RadioButton background-color themed 1`] = `
 
 .c5 {
   background-color: blue;
+  transform: scale(1);
 }
 
 @media only screen and (max-width: 768px) {
@@ -237,6 +242,10 @@ exports[`RadioButton background-color themed symbolic 1`] = `
   cursor: pointer;
 }
 
+.c5 {
+  transform: scale(1);
+}
+
 @media only screen and (max-width: 768px) {
   .c4 {
     border: solid 2px rgba(0, 0, 0, 0.15);
@@ -258,7 +267,7 @@ exports[`RadioButton background-color themed symbolic 1`] = `
         type="radio"
       />
       <div
-        class="c4 "
+        class="c4 c5"
       />
     </div>
   </label>
@@ -324,6 +333,10 @@ exports[`RadioButton basic 1`] = `
   cursor: pointer;
 }
 
+.c5 {
+  transform: scale(1);
+}
+
 @media only screen and (max-width: 768px) {
   .c4 {
     border: solid 2px rgba(0, 0, 0, 0.15);
@@ -346,7 +359,7 @@ exports[`RadioButton basic 1`] = `
         value="1"
       />
       <div
-        class="c4 "
+        class="c4 c5"
       />
     </div>
   </label>
@@ -365,7 +378,7 @@ exports[`RadioButton basic 1`] = `
         value="2"
       />
       <div
-        class="c4 "
+        class="c4 c5"
       />
     </div>
   </label>
@@ -421,6 +434,10 @@ exports[`RadioButton basic renders outside grommet wrapper 1`] = `
   cursor: pointer;
 }
 
+.c4 {
+  transform: scale(1);
+}
+
 @media only screen and (max-width: 768px) {
   .c3 {
     border: solid 2px rgba(0, 0, 0, 0.15);
@@ -440,7 +457,7 @@ exports[`RadioButton basic renders outside grommet wrapper 1`] = `
       value="1"
     />
     <div
-      class="c3 "
+      class="c3 c4"
     />
   </div>
 </label>
@@ -505,11 +522,16 @@ exports[`RadioButton checked 1`] = `
   cursor: pointer;
 }
 
-.c5 {
+.c6 {
   box-sizing: border-box;
   width: 24px;
   height: 24px;
   fill: #7D4CDB;
+  transform: scale(1);
+}
+
+.c5 {
+  transform: scale(1);
 }
 
 @media only screen and (max-width: 768px) {
@@ -535,10 +557,10 @@ exports[`RadioButton checked 1`] = `
         value="1"
       />
       <div
-        class="c4 "
+        class="c4 c5"
       >
         <svg
-          class="c5"
+          class="c6"
           preserveAspectRatio="xMidYMid meet"
           viewBox="0 0 24 24"
         >
@@ -711,7 +733,7 @@ exports[`RadioButton disabled 1`] = `
   border-radius: 100%;
 }
 
-.c5 {
+.c6 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -749,11 +771,16 @@ exports[`RadioButton disabled 1`] = `
   margin: 0;
 }
 
-.c6 {
+.c7 {
   box-sizing: border-box;
   width: 24px;
   height: 24px;
   fill: #7D4CDB;
+  transform: scale(1);
+}
+
+.c5 {
+  transform: scale(1);
 }
 
 @media only screen and (max-width: 768px) {
@@ -763,7 +790,7 @@ exports[`RadioButton disabled 1`] = `
 }
 
 @media only screen and (max-width: 768px) {
-  .c5 {
+  .c6 {
     border: solid 2px #7D4CDB;
   }
 }
@@ -786,7 +813,7 @@ exports[`RadioButton disabled 1`] = `
         value="1"
       />
       <div
-        class="c4 "
+        class="c4 c5"
       />
     </div>
   </label>
@@ -806,10 +833,10 @@ exports[`RadioButton disabled 1`] = `
         value="2"
       />
       <div
-        class="c5 "
+        class="c6 c5"
       >
         <svg
-          class="c6"
+          class="c7"
           preserveAspectRatio="xMidYMid meet"
           viewBox="0 0 24 24"
         >
@@ -885,6 +912,10 @@ exports[`RadioButton label 1`] = `
   cursor: pointer;
 }
 
+.c5 {
+  transform: scale(1);
+}
+
 @media only screen and (max-width: 768px) {
   .c2 {
     margin-right: 6px;
@@ -913,7 +944,7 @@ exports[`RadioButton label 1`] = `
         value="1"
       />
       <div
-        class="c4 "
+        class="c4 c5"
       />
     </div>
     <span
@@ -935,7 +966,7 @@ exports[`RadioButton label 1`] = `
         value="2"
       />
       <div
-        class="c4 "
+        class="c4 c5"
       />
     </div>
     <div>
@@ -1005,8 +1036,12 @@ exports[`RadioButton label themed 1`] = `
   cursor: pointer;
 }
 
-.c5 {
+.c6 {
   font-weight: 500;
+}
+
+.c5 {
+  transform: scale(1);
 }
 
 @media only screen and (max-width: 768px) {
@@ -1036,11 +1071,11 @@ exports[`RadioButton label themed 1`] = `
         type="radio"
       />
       <div
-        class="c4 "
+        class="c4 c5"
       />
     </div>
     <span
-      class="c5"
+      class="c6"
     >
       test
     </span>
@@ -1107,6 +1142,10 @@ exports[`RadioButton renders custom circle icon 1`] = `
   cursor: pointer;
 }
 
+.c5 {
+  transform: scale(1);
+}
+
 @media only screen and (max-width: 768px) {
   .c4 {
     border: solid 2px #7D4CDB;
@@ -1129,7 +1168,7 @@ exports[`RadioButton renders custom circle icon 1`] = `
         type="radio"
       />
       <div
-        class="c4 "
+        class="c4 c5"
       >
         <svg
           as=".StyledRadioButton__StyledRadioButtonIcon-sc-g1f6ld-3"
@@ -1201,6 +1240,10 @@ exports[`RadioButton should apply a11yTitle or aria-label 1`] = `
   cursor: pointer;
 }
 
+.c5 {
+  transform: scale(1);
+}
+
 @media only screen and (max-width: 768px) {
   .c4 {
     border: solid 2px rgba(0, 0, 0, 0.15);
@@ -1223,7 +1266,7 @@ exports[`RadioButton should apply a11yTitle or aria-label 1`] = `
         type="radio"
       />
       <div
-        class="c4 "
+        class="c4 c5"
       />
     </div>
   </label>
@@ -1240,7 +1283,7 @@ exports[`RadioButton should apply a11yTitle or aria-label 1`] = `
         type="radio"
       />
       <div
-        class="c4 "
+        class="c4 c5"
       />
     </div>
   </label>
@@ -1306,6 +1349,10 @@ exports[`RadioButton should have no accessibility violations 1`] = `
   cursor: pointer;
 }
 
+.c5 {
+  transform: scale(1);
+}
+
 @media only screen and (max-width: 768px) {
   .c4 {
     border: solid 2px rgba(0, 0, 0, 0.15);
@@ -1328,7 +1375,7 @@ exports[`RadioButton should have no accessibility violations 1`] = `
         type="radio"
       />
       <div
-        class="c4 "
+        class="c4 c5"
       />
     </div>
   </label>
