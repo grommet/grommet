@@ -33,7 +33,7 @@ var StyledRadioButtonLabel = styled.span.withConfig(styledComponentsConfig).with
 var StyledRadioButtonIcon = styled.svg.withConfig(styledComponentsConfig).withConfig({
   displayName: "StyledRadioButton__StyledRadioButtonIcon",
   componentId: "sc-g1f6ld-3"
-})(["box-sizing:border-box;width:", ";height:", ";fill:", ";", ";"], function (props) {
+})(["box-sizing:border-box;width:", ";height:", ";fill:", ";transform:scale(1);", ";"], function (props) {
   return props.theme.radioButton.icon.size || props.theme.radioButton.size;
 }, function (props) {
   return props.theme.radioButton.icon.size || props.theme.radioButton.size;
@@ -45,7 +45,7 @@ var StyledRadioButtonIcon = styled.svg.withConfig(styledComponentsConfig).withCo
 var StyledRadioButtonBox = styled(Box).withConfig({
   displayName: "StyledRadioButton__StyledRadioButtonBox",
   componentId: "sc-g1f6ld-4"
-})(["background-color:", ";", ";", ";"], function (props) {
+})(["background-color:", ";transform:scale(1);", ";", ";"], function (props) {
   return props.backgroundColor;
 }, function (props) {
   return props.focus && focusStyle();
