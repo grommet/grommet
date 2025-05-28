@@ -523,7 +523,7 @@ exports[`DataSort renders 1`] = `
   border-radius: 100%;
 }
 
-.c23 {
+.c24 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -536,7 +536,7 @@ exports[`DataSort renders 1`] = `
   justify-content: space-between;
 }
 
-.c22 {
+.c23 {
   flex: 0 0 auto;
   align-self: stretch;
   height: 12px;
@@ -620,7 +620,7 @@ exports[`DataSort renders 1`] = `
   border: 0;
 }
 
-.c24 {
+.c25 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -644,47 +644,47 @@ exports[`DataSort renders 1`] = `
   transition-timing-function: ease-in-out;
 }
 
-.c24:hover {
+.c25:hover {
   box-shadow: 0px 0px 0px 2px #7D4CDB;
 }
 
-.c24:focus {
+.c25:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c24:focus >circle,
-.c24:focus >ellipse,
-.c24:focus >line,
-.c24:focus >path,
-.c24:focus >polygon,
-.c24:focus >polyline,
-.c24:focus >rect {
+.c25:focus >circle,
+.c25:focus >ellipse,
+.c25:focus >line,
+.c25:focus >path,
+.c25:focus >polygon,
+.c25:focus >polyline,
+.c25:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c24:focus ::-moz-focus-inner {
+.c25:focus ::-moz-focus-inner {
   border: 0;
 }
 
-.c24:focus:not(:focus-visible) {
+.c25:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c24:focus:not(:focus-visible) >circle,
-.c24:focus:not(:focus-visible) >ellipse,
-.c24:focus:not(:focus-visible) >line,
-.c24:focus:not(:focus-visible) >path,
-.c24:focus:not(:focus-visible) >polygon,
-.c24:focus:not(:focus-visible) >polyline,
-.c24:focus:not(:focus-visible) >rect {
+.c25:focus:not(:focus-visible) >circle,
+.c25:focus:not(:focus-visible) >ellipse,
+.c25:focus:not(:focus-visible) >line,
+.c25:focus:not(:focus-visible) >path,
+.c25:focus:not(:focus-visible) >polygon,
+.c25:focus:not(:focus-visible) >polyline,
+.c25:focus:not(:focus-visible) >rect {
   outline: none;
   box-shadow: none;
 }
 
-.c24:focus:not(:focus-visible) ::-moz-focus-inner {
+.c25:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 
@@ -713,6 +713,10 @@ exports[`DataSort renders 1`] = `
   height: 0;
   margin: 0;
   cursor: pointer;
+}
+
+.c22 {
+  transform: scale(1);
 }
 
 .c12 {
@@ -823,13 +827,13 @@ exports[`DataSort renders 1`] = `
 }
 
 @media only screen and (max-width: 768px) {
-  .c23 {
+  .c24 {
     margin-top: 12px;
   }
 }
 
 @media only screen and (max-width: 768px) {
-  .c22 {
+  .c23 {
     height: 6px;
   }
 }
@@ -947,7 +951,7 @@ exports[`DataSort renders 1`] = `
                         value="asc"
                       />
                       <div
-                        class="c21 "
+                        class="c21 c22"
                       />
                     </div>
                     <span
@@ -957,7 +961,7 @@ exports[`DataSort renders 1`] = `
                     </span>
                   </label>
                   <div
-                    class="c22"
+                    class="c23"
                   />
                   <label
                     class="c18"
@@ -973,7 +977,7 @@ exports[`DataSort renders 1`] = `
                         value="desc"
                       />
                       <div
-                        class="c21 "
+                        class="c21 c22"
                       />
                     </div>
                     <span
@@ -988,10 +992,10 @@ exports[`DataSort renders 1`] = `
           </div>
         </div>
         <footer
-          class="c23"
+          class="c24"
         >
           <button
-            class="c24"
+            class="c25"
             type="submit"
           >
             Apply filters
@@ -1113,7 +1117,7 @@ exports[`DataSort sort when data array is empty 1`] = `
   border-radius: 100%;
 }
 
-.c20 {
+.c21 {
   flex: 0 0 auto;
   align-self: stretch;
   height: 12px;
@@ -1224,6 +1228,10 @@ exports[`DataSort sort when data array is empty 1`] = `
   cursor: pointer;
 }
 
+.c20 {
+  transform: scale(1);
+}
+
 .c10 {
   box-sizing: border-box;
   font-size: inherit;
@@ -1332,7 +1340,7 @@ exports[`DataSort sort when data array is empty 1`] = `
 }
 
 @media only screen and (max-width: 768px) {
-  .c20 {
+  .c21 {
     height: 6px;
   }
 }
@@ -1441,7 +1449,7 @@ exports[`DataSort sort when data array is empty 1`] = `
                   value="asc"
                 />
                 <div
-                  class="c19 "
+                  class="c19 c20"
                 />
               </div>
               <span
@@ -1451,7 +1459,7 @@ exports[`DataSort sort when data array is empty 1`] = `
               </span>
             </label>
             <div
-              class="c20"
+              class="c21"
             />
             <label
               class="c16"
@@ -1467,7 +1475,7 @@ exports[`DataSort sort when data array is empty 1`] = `
                   value="desc"
                 />
                 <div
-                  class="c19 "
+                  class="c19 c20"
                 />
               </div>
               <span

@@ -91,11 +91,13 @@ const StyledRadioButtonIcon = styled.svg.withConfig(styledComponentsConfig)`
       props.theme.radioButton.check.color || 'control',
       props.theme,
     )};
+  transform: scale(1); // prevent misalignment in certain browsers
   ${(props) => props.theme.radioButton.icon.extend};
 `;
 
 const StyledRadioButtonBox = styled(Box)`
   background-color: ${(props) => props.backgroundColor};
+  transform: scale(1); // prevent misalignment in certain browsers
   ${(props) => props.focus && focusStyle()};
   ${(props) => props.theme.radioButton.check.extend};
 `;
