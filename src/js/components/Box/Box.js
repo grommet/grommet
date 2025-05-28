@@ -14,7 +14,6 @@ import { Keyboard } from '../Keyboard';
 import { StyledBox, StyledBoxGap } from './StyledBox';
 import { BoxPropTypes } from './propTypes';
 import { SkeletonContext, useSkeleton } from '../Skeleton';
-import { AnnounceContext } from '../../contexts/AnnounceContext';
 import { OptionsContext } from '../../contexts/OptionsContext';
 import { ResponsiveContainerContext } from '../../contexts';
 import { ResponsiveContainerProvider } from './ResponsiveContainerProvider';
@@ -64,8 +63,6 @@ const Box = forwardRef(
 
     let background = backgroundProp;
 
-    const announce = useContext(AnnounceContext);
-
     const containerRef = useForwardedRef(refProp);
 
     // Save the ref as a state if we're in a responsive container.
@@ -92,14 +89,6 @@ const Box = forwardRef(
         }
       }
     }, [refProp, as, responsiveProp]);
-
-    useEffect(() => {
-      if (skeletonProp?.message?.start) announce(skeletonProp.message.start);
-      else if (typeof skeletonProp?.message === 'string')
-        announce(skeletonProp.message);
-      return () =>
-        skeletonProp?.message?.end && announce(skeletonProp.message.end);
-    }, [announce, skeletonProp]);
 
     const focusable = useMemo(
       () => onClick && !(tabIndex < 0),
