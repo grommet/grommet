@@ -955,7 +955,7 @@ exports[`DateInput controlled format inline 1`] = `
                     aria-disabled="false"
                     aria-label="Sun Jun 28 2020"
                     class="c18 c19"
-                    tabindex="-1"
+                    tabindex="0"
                     type="button"
                   >
                     <div
@@ -1012,7 +1012,7 @@ exports[`DateInput controlled format inline 1`] = `
                     aria-disabled="false"
                     aria-label="Wed Jul 01 2020"
                     class="c18 c19"
-                    tabindex="0"
+                    tabindex="-1"
                     type="button"
                   >
                     <div
@@ -1909,7 +1909,7 @@ exports[`DateInput controlled format inline 2`] = `
                     aria-disabled="false"
                     aria-label="Sun Jun 28 2020"
                     class="StyledButton-sc-323bzc-0 eNtKJP StyledCalendar__StyledDayButton-sc-1y4xhmp-5 eGOaKg"
-                    tabindex="-1"
+                    tabindex="0"
                     type="button"
                   >
                     <div
@@ -1966,7 +1966,7 @@ exports[`DateInput controlled format inline 2`] = `
                     aria-disabled="false"
                     aria-label="Wed Jul 01 2020"
                     class="StyledButton-sc-323bzc-0 eNtKJP StyledCalendar__StyledDayButton-sc-1y4xhmp-5 eGOaKg"
-                    tabindex="0"
+                    tabindex="-1"
                     type="button"
                   >
                     <div
@@ -3438,7 +3438,7 @@ exports[`DateInput controlled format inline without timezone 1`] = `
                       aria-disabled="false"
                       aria-label="Sun Jun 28 2020"
                       class="c18 c19"
-                      tabindex="-1"
+                      tabindex="0"
                       type="button"
                     >
                       <div
@@ -3495,7 +3495,7 @@ exports[`DateInput controlled format inline without timezone 1`] = `
                       aria-disabled="false"
                       aria-label="Wed Jul 01 2020"
                       class="c18 c19"
-                      tabindex="0"
+                      tabindex="-1"
                       type="button"
                     >
                       <div
@@ -7740,7 +7740,7 @@ exports[`DateInput format inline 1`] = `
                     aria-disabled="false"
                     aria-label="Sun Jun 28 2020"
                     class="c18 c19"
-                    tabindex="-1"
+                    tabindex="0"
                     type="button"
                   >
                     <div
@@ -7797,7 +7797,7 @@ exports[`DateInput format inline 1`] = `
                     aria-disabled="false"
                     aria-label="Wed Jul 01 2020"
                     class="c18 c19"
-                    tabindex="0"
+                    tabindex="-1"
                     type="button"
                   >
                     <div
@@ -9656,7 +9656,7 @@ exports[`DateInput inline 1`] = `
                   aria-disabled="false"
                   aria-label="Sun Jun 28 2020"
                   class="c14 c15"
-                  tabindex="-1"
+                  tabindex="0"
                   type="button"
                 >
                   <div
@@ -9713,7 +9713,7 @@ exports[`DateInput inline 1`] = `
                   aria-disabled="false"
                   aria-label="Wed Jul 01 2020"
                   class="c14 c15"
-                  tabindex="0"
+                  tabindex="-1"
                   type="button"
                 >
                   <div
@@ -12935,7 +12935,7 @@ exports[`DateInput range format inline 1`] = `
                     aria-disabled="false"
                     aria-label="Sun Jun 28 2020"
                     class="c18 c19"
-                    tabindex="-1"
+                    tabindex="0"
                     type="button"
                   >
                     <div
@@ -12992,7 +12992,7 @@ exports[`DateInput range format inline 1`] = `
                     aria-disabled="false"
                     aria-label="Wed Jul 01 2020"
                     class="c18 c19"
-                    tabindex="0"
+                    tabindex="-1"
                     type="button"
                   >
                     <div
@@ -14224,7 +14224,7 @@ exports[`DateInput range inline 1`] = `
                   aria-disabled="false"
                   aria-label="Sun Jun 28 2020"
                   class="c14 c15"
-                  tabindex="-1"
+                  tabindex="0"
                   type="button"
                 >
                   <div
@@ -14281,7 +14281,7 @@ exports[`DateInput range inline 1`] = `
                   aria-disabled="false"
                   aria-label="Wed Jul 01 2020"
                   class="c14 c15"
-                  tabindex="0"
+                  tabindex="-1"
                   type="button"
                 >
                   <div
@@ -16609,63 +16609,6 @@ exports[`DateInput select format 3`] = `
   border: 0;
 }
 
-.c15 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  font: inherit;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  color: inherit;
-  outline: none;
-  border: none;
-  padding: 0;
-  text-align: inherit;
-}
-
-.c15:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c15:focus >circle,
-.c15:focus >ellipse,
-.c15:focus >line,
-.c15:focus >path,
-.c15:focus >polygon,
-.c15:focus >polyline,
-.c15:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c15:focus ::-moz-focus-inner {
-  border: 0;
-}
-
-.c15:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c15:focus:not(:focus-visible) >circle,
-.c15:focus:not(:focus-visible) >ellipse,
-.c15:focus:not(:focus-visible) >line,
-.c15:focus:not(:focus-visible) >path,
-.c15:focus:not(:focus-visible) >polygon,
-.c15:focus:not(:focus-visible) >polyline,
-.c15:focus:not(:focus-visible) >rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c15:focus:not(:focus-visible) ::-moz-focus-inner {
-  border: 0;
-}
-
 .c18 {
   display: inline-block;
   box-sizing: border-box;
@@ -16720,6 +16663,63 @@ exports[`DateInput select format 3`] = `
 }
 
 .c18:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
+}
+
+.c15 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+}
+
+.c15:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c15:focus >circle,
+.c15:focus >ellipse,
+.c15:focus >line,
+.c15:focus >path,
+.c15:focus >polygon,
+.c15:focus >polyline,
+.c15:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c15:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c15:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c15:focus:not(:focus-visible) >circle,
+.c15:focus:not(:focus-visible) >ellipse,
+.c15:focus:not(:focus-visible) >line,
+.c15:focus:not(:focus-visible) >path,
+.c15:focus:not(:focus-visible) >polygon,
+.c15:focus:not(:focus-visible) >polyline,
+.c15:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c15:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 
@@ -16971,7 +16971,7 @@ exports[`DateInput select format 3`] = `
                   aria-disabled="false"
                   aria-label="Sun Jun 28 2020"
                   class="c15 c16"
-                  tabindex="-1"
+                  tabindex="0"
                   type="button"
                 >
                   <div
@@ -16989,7 +16989,7 @@ exports[`DateInput select format 3`] = `
                 <button
                   aria-disabled="false"
                   aria-label="Mon Jun 29 2020"
-                  class="c15 c16"
+                  class="c18 c16"
                   tabindex="-1"
                   type="button"
                 >
@@ -17008,7 +17008,7 @@ exports[`DateInput select format 3`] = `
                 <button
                   aria-disabled="false"
                   aria-label="Tue Jun 30 2020"
-                  class="c15 c16"
+                  class="c18 c16"
                   tabindex="-1"
                   type="button"
                 >
@@ -17028,7 +17028,7 @@ exports[`DateInput select format 3`] = `
                   aria-disabled="false"
                   aria-label="Wed Jul 01 2020"
                   class="c18 c16"
-                  tabindex="0"
+                  tabindex="-1"
                   type="button"
                 >
                   <div
@@ -17046,7 +17046,7 @@ exports[`DateInput select format 3`] = `
                 <button
                   aria-disabled="false"
                   aria-label="Thu Jul 02 2020"
-                  class="c15 c16"
+                  class="c18 c16"
                   tabindex="-1"
                   type="button"
                 >
@@ -17065,7 +17065,7 @@ exports[`DateInput select format 3`] = `
                 <button
                   aria-disabled="false"
                   aria-label="Fri Jul 03 2020"
-                  class="c15 c16"
+                  class="c18 c16"
                   tabindex="-1"
                   type="button"
                 >
@@ -17084,7 +17084,7 @@ exports[`DateInput select format 3`] = `
                 <button
                   aria-disabled="false"
                   aria-label="Sat Jul 04 2020"
-                  class="c15 c16"
+                  class="c18 c16"
                   tabindex="-1"
                   type="button"
                 >
@@ -17108,7 +17108,7 @@ exports[`DateInput select format 3`] = `
                 <button
                   aria-disabled="false"
                   aria-label="Sun Jul 05 2020"
-                  class="c15 c16"
+                  class="c18 c16"
                   tabindex="-1"
                   type="button"
                 >
@@ -17127,7 +17127,7 @@ exports[`DateInput select format 3`] = `
                 <button
                   aria-disabled="false"
                   aria-label="Mon Jul 06 2020"
-                  class="c15 c16"
+                  class="c18 c16"
                   tabindex="-1"
                   type="button"
                 >
@@ -17146,7 +17146,7 @@ exports[`DateInput select format 3`] = `
                 <button
                   aria-disabled="false"
                   aria-label="Tue Jul 07 2020"
-                  class="c15 c16"
+                  class="c18 c16"
                   tabindex="-1"
                   type="button"
                 >
@@ -17165,7 +17165,7 @@ exports[`DateInput select format 3`] = `
                 <button
                   aria-disabled="false"
                   aria-label="Wed Jul 08 2020"
-                  class="c15 c16"
+                  class="c18 c16"
                   tabindex="-1"
                   type="button"
                 >
@@ -17184,7 +17184,7 @@ exports[`DateInput select format 3`] = `
                 <button
                   aria-disabled="false"
                   aria-label="Thu Jul 09 2020"
-                  class="c15 c16"
+                  class="c18 c16"
                   tabindex="-1"
                   type="button"
                 >
@@ -17203,7 +17203,7 @@ exports[`DateInput select format 3`] = `
                 <button
                   aria-disabled="false"
                   aria-label="Fri Jul 10 2020"
-                  class="c15 c16"
+                  class="c18 c16"
                   tabindex="-1"
                   type="button"
                 >
@@ -17222,7 +17222,7 @@ exports[`DateInput select format 3`] = `
                 <button
                   aria-disabled="false"
                   aria-label="Sat Jul 11 2020"
-                  class="c15 c16"
+                  class="c18 c16"
                   tabindex="-1"
                   type="button"
                 >
@@ -17246,7 +17246,7 @@ exports[`DateInput select format 3`] = `
                 <button
                   aria-disabled="false"
                   aria-label="Sun Jul 12 2020"
-                  class="c15 c16"
+                  class="c18 c16"
                   tabindex="-1"
                   type="button"
                 >
@@ -17265,7 +17265,7 @@ exports[`DateInput select format 3`] = `
                 <button
                   aria-disabled="false"
                   aria-label="Mon Jul 13 2020"
-                  class="c15 c16"
+                  class="c18 c16"
                   tabindex="-1"
                   type="button"
                 >
@@ -17284,7 +17284,7 @@ exports[`DateInput select format 3`] = `
                 <button
                   aria-disabled="false"
                   aria-label="Tue Jul 14 2020"
-                  class="c15 c16"
+                  class="c18 c16"
                   tabindex="-1"
                   type="button"
                 >
@@ -17303,7 +17303,7 @@ exports[`DateInput select format 3`] = `
                 <button
                   aria-disabled="false"
                   aria-label="Wed Jul 15 2020"
-                  class="c15 c16"
+                  class="c18 c16"
                   tabindex="-1"
                   type="button"
                 >
@@ -17322,7 +17322,7 @@ exports[`DateInput select format 3`] = `
                 <button
                   aria-disabled="false"
                   aria-label="Thu Jul 16 2020"
-                  class="c15 c16"
+                  class="c18 c16"
                   tabindex="-1"
                   type="button"
                 >
@@ -17341,7 +17341,7 @@ exports[`DateInput select format 3`] = `
                 <button
                   aria-disabled="false"
                   aria-label="Fri Jul 17 2020"
-                  class="c15 c16"
+                  class="c18 c16"
                   tabindex="-1"
                   type="button"
                 >
@@ -17360,7 +17360,7 @@ exports[`DateInput select format 3`] = `
                 <button
                   aria-disabled="false"
                   aria-label="Sat Jul 18 2020"
-                  class="c15 c16"
+                  class="c18 c16"
                   tabindex="-1"
                   type="button"
                 >
@@ -17384,7 +17384,7 @@ exports[`DateInput select format 3`] = `
                 <button
                   aria-disabled="false"
                   aria-label="Sun Jul 19 2020"
-                  class="c15 c16"
+                  class="c18 c16"
                   tabindex="-1"
                   type="button"
                 >
@@ -17403,7 +17403,7 @@ exports[`DateInput select format 3`] = `
                 <button
                   aria-disabled="false"
                   aria-label="Mon Jul 20 2020"
-                  class="c15 c16"
+                  class="c18 c16"
                   tabindex="-1"
                   type="button"
                 >
@@ -17422,7 +17422,7 @@ exports[`DateInput select format 3`] = `
                 <button
                   aria-disabled="false"
                   aria-label="Tue Jul 21 2020"
-                  class="c15 c16"
+                  class="c18 c16"
                   tabindex="-1"
                   type="button"
                 >
@@ -17441,7 +17441,7 @@ exports[`DateInput select format 3`] = `
                 <button
                   aria-disabled="false"
                   aria-label="Wed Jul 22 2020"
-                  class="c15 c16"
+                  class="c18 c16"
                   tabindex="-1"
                   type="button"
                 >
@@ -17460,7 +17460,7 @@ exports[`DateInput select format 3`] = `
                 <button
                   aria-disabled="false"
                   aria-label="Thu Jul 23 2020"
-                  class="c15 c16"
+                  class="c18 c16"
                   tabindex="-1"
                   type="button"
                 >
@@ -17479,7 +17479,7 @@ exports[`DateInput select format 3`] = `
                 <button
                   aria-disabled="false"
                   aria-label="Fri Jul 24 2020"
-                  class="c15 c16"
+                  class="c18 c16"
                   tabindex="-1"
                   type="button"
                 >
@@ -17498,7 +17498,7 @@ exports[`DateInput select format 3`] = `
                 <button
                   aria-disabled="false"
                   aria-label="Sat Jul 25 2020"
-                  class="c15 c16"
+                  class="c18 c16"
                   tabindex="-1"
                   type="button"
                 >
@@ -17522,7 +17522,7 @@ exports[`DateInput select format 3`] = `
                 <button
                   aria-disabled="false"
                   aria-label="Sun Jul 26 2020"
-                  class="c15 c16"
+                  class="c18 c16"
                   tabindex="-1"
                   type="button"
                 >
@@ -17541,7 +17541,7 @@ exports[`DateInput select format 3`] = `
                 <button
                   aria-disabled="false"
                   aria-label="Mon Jul 27 2020"
-                  class="c15 c16"
+                  class="c18 c16"
                   tabindex="-1"
                   type="button"
                 >
@@ -17560,7 +17560,7 @@ exports[`DateInput select format 3`] = `
                 <button
                   aria-disabled="false"
                   aria-label="Tue Jul 28 2020"
-                  class="c15 c16"
+                  class="c18 c16"
                   tabindex="-1"
                   type="button"
                 >
@@ -17579,7 +17579,7 @@ exports[`DateInput select format 3`] = `
                 <button
                   aria-disabled="false"
                   aria-label="Wed Jul 29 2020"
-                  class="c15 c16"
+                  class="c18 c16"
                   tabindex="-1"
                   type="button"
                 >
@@ -17598,7 +17598,7 @@ exports[`DateInput select format 3`] = `
                 <button
                   aria-disabled="false"
                   aria-label="Thu Jul 30 2020"
-                  class="c15 c16"
+                  class="c18 c16"
                   tabindex="-1"
                   type="button"
                 >
@@ -17617,7 +17617,7 @@ exports[`DateInput select format 3`] = `
                 <button
                   aria-disabled="false"
                   aria-label="Fri Jul 31 2020"
-                  class="c15 c16"
+                  class="c18 c16"
                   tabindex="-1"
                   type="button"
                 >
@@ -17636,7 +17636,7 @@ exports[`DateInput select format 3`] = `
                 <button
                   aria-disabled="false"
                   aria-label="Sat Aug 01 2020"
-                  class="c15 c16"
+                  class="c18 c16"
                   tabindex="-1"
                   type="button"
                 >
@@ -17660,7 +17660,7 @@ exports[`DateInput select format 3`] = `
                 <button
                   aria-disabled="false"
                   aria-label="Sun Aug 02 2020"
-                  class="c15 c16"
+                  class="c18 c16"
                   tabindex="-1"
                   type="button"
                 >
@@ -17679,7 +17679,7 @@ exports[`DateInput select format 3`] = `
                 <button
                   aria-disabled="false"
                   aria-label="Mon Aug 03 2020"
-                  class="c15 c16"
+                  class="c18 c16"
                   tabindex="-1"
                   type="button"
                 >
@@ -17698,7 +17698,7 @@ exports[`DateInput select format 3`] = `
                 <button
                   aria-disabled="false"
                   aria-label="Tue Aug 04 2020"
-                  class="c15 c16"
+                  class="c18 c16"
                   tabindex="-1"
                   type="button"
                 >
@@ -17717,7 +17717,7 @@ exports[`DateInput select format 3`] = `
                 <button
                   aria-disabled="false"
                   aria-label="Wed Aug 05 2020"
-                  class="c15 c16"
+                  class="c18 c16"
                   tabindex="-1"
                   type="button"
                 >
@@ -17736,7 +17736,7 @@ exports[`DateInput select format 3`] = `
                 <button
                   aria-disabled="false"
                   aria-label="Thu Aug 06 2020"
-                  class="c15 c16"
+                  class="c18 c16"
                   tabindex="-1"
                   type="button"
                 >
@@ -17755,7 +17755,7 @@ exports[`DateInput select format 3`] = `
                 <button
                   aria-disabled="false"
                   aria-label="Fri Aug 07 2020"
-                  class="c15 c16"
+                  class="c18 c16"
                   tabindex="-1"
                   type="button"
                 >
@@ -17774,7 +17774,7 @@ exports[`DateInput select format 3`] = `
                 <button
                   aria-disabled="false"
                   aria-label="Sat Aug 08 2020"
-                  class="c15 c16"
+                  class="c18 c16"
                   tabindex="-1"
                   type="button"
                 >
@@ -18504,7 +18504,7 @@ exports[`DateInput select format inline 1`] = `
                     aria-disabled="false"
                     aria-label="Sun Jun 28 2020"
                     class="c18 c19"
-                    tabindex="-1"
+                    tabindex="0"
                     type="button"
                   >
                     <div
@@ -18561,7 +18561,7 @@ exports[`DateInput select format inline 1`] = `
                     aria-disabled="false"
                     aria-label="Wed Jul 01 2020"
                     class="c18 c19"
-                    tabindex="0"
+                    tabindex="-1"
                     type="button"
                   >
                     <div
@@ -20910,7 +20910,7 @@ exports[`DateInput select format inline 3`] = `
                       aria-disabled="false"
                       aria-label="Sun Jun 28 2020"
                       class="c18 c19"
-                      tabindex="-1"
+                      tabindex="0"
                       type="button"
                     >
                       <div
@@ -20967,7 +20967,7 @@ exports[`DateInput select format inline 3`] = `
                       aria-disabled="false"
                       aria-label="Wed Jul 01 2020"
                       class="c18 c19"
-                      tabindex="0"
+                      tabindex="-1"
                       type="button"
                     >
                       <div
@@ -23847,7 +23847,7 @@ exports[`DateInput select format inline range 1`] = `
                     aria-disabled="false"
                     aria-label="Sun Jun 28 2020"
                     class="c18 c19"
-                    tabindex="-1"
+                    tabindex="0"
                     type="button"
                   >
                     <div
@@ -23904,7 +23904,7 @@ exports[`DateInput select format inline range 1`] = `
                     aria-disabled="false"
                     aria-label="Wed Jul 01 2020"
                     class="c18 c19"
-                    tabindex="0"
+                    tabindex="-1"
                     type="button"
                   >
                     <div
@@ -26273,7 +26273,7 @@ exports[`DateInput select format inline range without timezone 1`] = `
                       aria-disabled="false"
                       aria-label="Sun Jun 28 2020"
                       class="c18 c19"
-                      tabindex="-1"
+                      tabindex="0"
                       type="button"
                     >
                       <div
@@ -26330,7 +26330,7 @@ exports[`DateInput select format inline range without timezone 1`] = `
                       aria-disabled="false"
                       aria-label="Wed Jul 01 2020"
                       class="c18 c19"
-                      tabindex="0"
+                      tabindex="-1"
                       type="button"
                     >
                       <div
@@ -29214,63 +29214,6 @@ exports[`DateInput select format no timezone 3`] = `
   border: 0;
 }
 
-.c15 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  font: inherit;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  color: inherit;
-  outline: none;
-  border: none;
-  padding: 0;
-  text-align: inherit;
-}
-
-.c15:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c15:focus >circle,
-.c15:focus >ellipse,
-.c15:focus >line,
-.c15:focus >path,
-.c15:focus >polygon,
-.c15:focus >polyline,
-.c15:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c15:focus ::-moz-focus-inner {
-  border: 0;
-}
-
-.c15:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c15:focus:not(:focus-visible) >circle,
-.c15:focus:not(:focus-visible) >ellipse,
-.c15:focus:not(:focus-visible) >line,
-.c15:focus:not(:focus-visible) >path,
-.c15:focus:not(:focus-visible) >polygon,
-.c15:focus:not(:focus-visible) >polyline,
-.c15:focus:not(:focus-visible) >rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c15:focus:not(:focus-visible) ::-moz-focus-inner {
-  border: 0;
-}
-
 .c18 {
   display: inline-block;
   box-sizing: border-box;
@@ -29325,6 +29268,63 @@ exports[`DateInput select format no timezone 3`] = `
 }
 
 .c18:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
+}
+
+.c15 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+}
+
+.c15:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c15:focus >circle,
+.c15:focus >ellipse,
+.c15:focus >line,
+.c15:focus >path,
+.c15:focus >polygon,
+.c15:focus >polyline,
+.c15:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c15:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c15:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c15:focus:not(:focus-visible) >circle,
+.c15:focus:not(:focus-visible) >ellipse,
+.c15:focus:not(:focus-visible) >line,
+.c15:focus:not(:focus-visible) >path,
+.c15:focus:not(:focus-visible) >polygon,
+.c15:focus:not(:focus-visible) >polyline,
+.c15:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c15:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 
@@ -29576,7 +29576,7 @@ exports[`DateInput select format no timezone 3`] = `
                   aria-disabled="false"
                   aria-label="Sun Jun 28 2020"
                   class="c15 c16"
-                  tabindex="-1"
+                  tabindex="0"
                   type="button"
                 >
                   <div
@@ -29594,7 +29594,7 @@ exports[`DateInput select format no timezone 3`] = `
                 <button
                   aria-disabled="false"
                   aria-label="Mon Jun 29 2020"
-                  class="c15 c16"
+                  class="c18 c16"
                   tabindex="-1"
                   type="button"
                 >
@@ -29613,7 +29613,7 @@ exports[`DateInput select format no timezone 3`] = `
                 <button
                   aria-disabled="false"
                   aria-label="Tue Jun 30 2020"
-                  class="c15 c16"
+                  class="c18 c16"
                   tabindex="-1"
                   type="button"
                 >
@@ -29633,7 +29633,7 @@ exports[`DateInput select format no timezone 3`] = `
                   aria-disabled="false"
                   aria-label="Wed Jul 01 2020"
                   class="c18 c16"
-                  tabindex="0"
+                  tabindex="-1"
                   type="button"
                 >
                   <div
@@ -29651,7 +29651,7 @@ exports[`DateInput select format no timezone 3`] = `
                 <button
                   aria-disabled="false"
                   aria-label="Thu Jul 02 2020"
-                  class="c15 c16"
+                  class="c18 c16"
                   tabindex="-1"
                   type="button"
                 >
@@ -29670,7 +29670,7 @@ exports[`DateInput select format no timezone 3`] = `
                 <button
                   aria-disabled="false"
                   aria-label="Fri Jul 03 2020"
-                  class="c15 c16"
+                  class="c18 c16"
                   tabindex="-1"
                   type="button"
                 >
@@ -29689,7 +29689,7 @@ exports[`DateInput select format no timezone 3`] = `
                 <button
                   aria-disabled="false"
                   aria-label="Sat Jul 04 2020"
-                  class="c15 c16"
+                  class="c18 c16"
                   tabindex="-1"
                   type="button"
                 >
@@ -29713,7 +29713,7 @@ exports[`DateInput select format no timezone 3`] = `
                 <button
                   aria-disabled="false"
                   aria-label="Sun Jul 05 2020"
-                  class="c15 c16"
+                  class="c18 c16"
                   tabindex="-1"
                   type="button"
                 >
@@ -29732,7 +29732,7 @@ exports[`DateInput select format no timezone 3`] = `
                 <button
                   aria-disabled="false"
                   aria-label="Mon Jul 06 2020"
-                  class="c15 c16"
+                  class="c18 c16"
                   tabindex="-1"
                   type="button"
                 >
@@ -29751,7 +29751,7 @@ exports[`DateInput select format no timezone 3`] = `
                 <button
                   aria-disabled="false"
                   aria-label="Tue Jul 07 2020"
-                  class="c15 c16"
+                  class="c18 c16"
                   tabindex="-1"
                   type="button"
                 >
@@ -29770,7 +29770,7 @@ exports[`DateInput select format no timezone 3`] = `
                 <button
                   aria-disabled="false"
                   aria-label="Wed Jul 08 2020"
-                  class="c15 c16"
+                  class="c18 c16"
                   tabindex="-1"
                   type="button"
                 >
@@ -29789,7 +29789,7 @@ exports[`DateInput select format no timezone 3`] = `
                 <button
                   aria-disabled="false"
                   aria-label="Thu Jul 09 2020"
-                  class="c15 c16"
+                  class="c18 c16"
                   tabindex="-1"
                   type="button"
                 >
@@ -29808,7 +29808,7 @@ exports[`DateInput select format no timezone 3`] = `
                 <button
                   aria-disabled="false"
                   aria-label="Fri Jul 10 2020"
-                  class="c15 c16"
+                  class="c18 c16"
                   tabindex="-1"
                   type="button"
                 >
@@ -29827,7 +29827,7 @@ exports[`DateInput select format no timezone 3`] = `
                 <button
                   aria-disabled="false"
                   aria-label="Sat Jul 11 2020"
-                  class="c15 c16"
+                  class="c18 c16"
                   tabindex="-1"
                   type="button"
                 >
@@ -29851,7 +29851,7 @@ exports[`DateInput select format no timezone 3`] = `
                 <button
                   aria-disabled="false"
                   aria-label="Sun Jul 12 2020"
-                  class="c15 c16"
+                  class="c18 c16"
                   tabindex="-1"
                   type="button"
                 >
@@ -29870,7 +29870,7 @@ exports[`DateInput select format no timezone 3`] = `
                 <button
                   aria-disabled="false"
                   aria-label="Mon Jul 13 2020"
-                  class="c15 c16"
+                  class="c18 c16"
                   tabindex="-1"
                   type="button"
                 >
@@ -29889,7 +29889,7 @@ exports[`DateInput select format no timezone 3`] = `
                 <button
                   aria-disabled="false"
                   aria-label="Tue Jul 14 2020"
-                  class="c15 c16"
+                  class="c18 c16"
                   tabindex="-1"
                   type="button"
                 >
@@ -29908,7 +29908,7 @@ exports[`DateInput select format no timezone 3`] = `
                 <button
                   aria-disabled="false"
                   aria-label="Wed Jul 15 2020"
-                  class="c15 c16"
+                  class="c18 c16"
                   tabindex="-1"
                   type="button"
                 >
@@ -29927,7 +29927,7 @@ exports[`DateInput select format no timezone 3`] = `
                 <button
                   aria-disabled="false"
                   aria-label="Thu Jul 16 2020"
-                  class="c15 c16"
+                  class="c18 c16"
                   tabindex="-1"
                   type="button"
                 >
@@ -29946,7 +29946,7 @@ exports[`DateInput select format no timezone 3`] = `
                 <button
                   aria-disabled="false"
                   aria-label="Fri Jul 17 2020"
-                  class="c15 c16"
+                  class="c18 c16"
                   tabindex="-1"
                   type="button"
                 >
@@ -29965,7 +29965,7 @@ exports[`DateInput select format no timezone 3`] = `
                 <button
                   aria-disabled="false"
                   aria-label="Sat Jul 18 2020"
-                  class="c15 c16"
+                  class="c18 c16"
                   tabindex="-1"
                   type="button"
                 >
@@ -29989,7 +29989,7 @@ exports[`DateInput select format no timezone 3`] = `
                 <button
                   aria-disabled="false"
                   aria-label="Sun Jul 19 2020"
-                  class="c15 c16"
+                  class="c18 c16"
                   tabindex="-1"
                   type="button"
                 >
@@ -30008,7 +30008,7 @@ exports[`DateInput select format no timezone 3`] = `
                 <button
                   aria-disabled="false"
                   aria-label="Mon Jul 20 2020"
-                  class="c15 c16"
+                  class="c18 c16"
                   tabindex="-1"
                   type="button"
                 >
@@ -30027,7 +30027,7 @@ exports[`DateInput select format no timezone 3`] = `
                 <button
                   aria-disabled="false"
                   aria-label="Tue Jul 21 2020"
-                  class="c15 c16"
+                  class="c18 c16"
                   tabindex="-1"
                   type="button"
                 >
@@ -30046,7 +30046,7 @@ exports[`DateInput select format no timezone 3`] = `
                 <button
                   aria-disabled="false"
                   aria-label="Wed Jul 22 2020"
-                  class="c15 c16"
+                  class="c18 c16"
                   tabindex="-1"
                   type="button"
                 >
@@ -30065,7 +30065,7 @@ exports[`DateInput select format no timezone 3`] = `
                 <button
                   aria-disabled="false"
                   aria-label="Thu Jul 23 2020"
-                  class="c15 c16"
+                  class="c18 c16"
                   tabindex="-1"
                   type="button"
                 >
@@ -30084,7 +30084,7 @@ exports[`DateInput select format no timezone 3`] = `
                 <button
                   aria-disabled="false"
                   aria-label="Fri Jul 24 2020"
-                  class="c15 c16"
+                  class="c18 c16"
                   tabindex="-1"
                   type="button"
                 >
@@ -30103,7 +30103,7 @@ exports[`DateInput select format no timezone 3`] = `
                 <button
                   aria-disabled="false"
                   aria-label="Sat Jul 25 2020"
-                  class="c15 c16"
+                  class="c18 c16"
                   tabindex="-1"
                   type="button"
                 >
@@ -30127,7 +30127,7 @@ exports[`DateInput select format no timezone 3`] = `
                 <button
                   aria-disabled="false"
                   aria-label="Sun Jul 26 2020"
-                  class="c15 c16"
+                  class="c18 c16"
                   tabindex="-1"
                   type="button"
                 >
@@ -30146,7 +30146,7 @@ exports[`DateInput select format no timezone 3`] = `
                 <button
                   aria-disabled="false"
                   aria-label="Mon Jul 27 2020"
-                  class="c15 c16"
+                  class="c18 c16"
                   tabindex="-1"
                   type="button"
                 >
@@ -30165,7 +30165,7 @@ exports[`DateInput select format no timezone 3`] = `
                 <button
                   aria-disabled="false"
                   aria-label="Tue Jul 28 2020"
-                  class="c15 c16"
+                  class="c18 c16"
                   tabindex="-1"
                   type="button"
                 >
@@ -30184,7 +30184,7 @@ exports[`DateInput select format no timezone 3`] = `
                 <button
                   aria-disabled="false"
                   aria-label="Wed Jul 29 2020"
-                  class="c15 c16"
+                  class="c18 c16"
                   tabindex="-1"
                   type="button"
                 >
@@ -30203,7 +30203,7 @@ exports[`DateInput select format no timezone 3`] = `
                 <button
                   aria-disabled="false"
                   aria-label="Thu Jul 30 2020"
-                  class="c15 c16"
+                  class="c18 c16"
                   tabindex="-1"
                   type="button"
                 >
@@ -30222,7 +30222,7 @@ exports[`DateInput select format no timezone 3`] = `
                 <button
                   aria-disabled="false"
                   aria-label="Fri Jul 31 2020"
-                  class="c15 c16"
+                  class="c18 c16"
                   tabindex="-1"
                   type="button"
                 >
@@ -30241,7 +30241,7 @@ exports[`DateInput select format no timezone 3`] = `
                 <button
                   aria-disabled="false"
                   aria-label="Sat Aug 01 2020"
-                  class="c15 c16"
+                  class="c18 c16"
                   tabindex="-1"
                   type="button"
                 >
@@ -30265,7 +30265,7 @@ exports[`DateInput select format no timezone 3`] = `
                 <button
                   aria-disabled="false"
                   aria-label="Sun Aug 02 2020"
-                  class="c15 c16"
+                  class="c18 c16"
                   tabindex="-1"
                   type="button"
                 >
@@ -30284,7 +30284,7 @@ exports[`DateInput select format no timezone 3`] = `
                 <button
                   aria-disabled="false"
                   aria-label="Mon Aug 03 2020"
-                  class="c15 c16"
+                  class="c18 c16"
                   tabindex="-1"
                   type="button"
                 >
@@ -30303,7 +30303,7 @@ exports[`DateInput select format no timezone 3`] = `
                 <button
                   aria-disabled="false"
                   aria-label="Tue Aug 04 2020"
-                  class="c15 c16"
+                  class="c18 c16"
                   tabindex="-1"
                   type="button"
                 >
@@ -30322,7 +30322,7 @@ exports[`DateInput select format no timezone 3`] = `
                 <button
                   aria-disabled="false"
                   aria-label="Wed Aug 05 2020"
-                  class="c15 c16"
+                  class="c18 c16"
                   tabindex="-1"
                   type="button"
                 >
@@ -30341,7 +30341,7 @@ exports[`DateInput select format no timezone 3`] = `
                 <button
                   aria-disabled="false"
                   aria-label="Thu Aug 06 2020"
-                  class="c15 c16"
+                  class="c18 c16"
                   tabindex="-1"
                   type="button"
                 >
@@ -30360,7 +30360,7 @@ exports[`DateInput select format no timezone 3`] = `
                 <button
                   aria-disabled="false"
                   aria-label="Fri Aug 07 2020"
-                  class="c15 c16"
+                  class="c18 c16"
                   tabindex="-1"
                   type="button"
                 >
@@ -30379,7 +30379,7 @@ exports[`DateInput select format no timezone 3`] = `
                 <button
                   aria-disabled="false"
                   aria-label="Sat Aug 08 2020"
-                  class="c15 c16"
+                  class="c18 c16"
                   tabindex="-1"
                   type="button"
                 >
@@ -30921,7 +30921,7 @@ exports[`DateInput select inline 1`] = `
                   aria-disabled="false"
                   aria-label="Sun Jun 28 2020"
                   class="c14 c15"
-                  tabindex="-1"
+                  tabindex="0"
                   type="button"
                 >
                   <div
@@ -30978,7 +30978,7 @@ exports[`DateInput select inline 1`] = `
                   aria-disabled="false"
                   aria-label="Wed Jul 01 2020"
                   class="c14 c15"
-                  tabindex="0"
+                  tabindex="-1"
                   type="button"
                 >
                   <div
@@ -32189,7 +32189,7 @@ exports[`DateInput select inline without timezone 1`] = `
                   aria-disabled="false"
                   aria-label="Sun Jun 28 2020"
                   class="c14 c15"
-                  tabindex="-1"
+                  tabindex="0"
                   type="button"
                 >
                   <div
@@ -32246,7 +32246,7 @@ exports[`DateInput select inline without timezone 1`] = `
                   aria-disabled="false"
                   aria-label="Wed Jul 01 2020"
                   class="c14 c15"
-                  tabindex="0"
+                  tabindex="-1"
                   type="button"
                 >
                   <div
@@ -33645,7 +33645,7 @@ exports[`DateInput type format inline 1`] = `
                     aria-disabled="false"
                     aria-label="Sun Jun 28 2020"
                     class="c18 c19"
-                    tabindex="-1"
+                    tabindex="0"
                     type="button"
                   >
                     <div
@@ -33702,7 +33702,7 @@ exports[`DateInput type format inline 1`] = `
                     aria-disabled="false"
                     aria-label="Wed Jul 01 2020"
                     class="c18 c19"
-                    tabindex="0"
+                    tabindex="-1"
                     type="button"
                   >
                     <div
@@ -34593,7 +34593,7 @@ exports[`DateInput type format inline 2`] = `
                     aria-disabled="false"
                     aria-label="Sun Jun 28 2020"
                     class="StyledButton-sc-323bzc-0 eNtKJP StyledCalendar__StyledDayButton-sc-1y4xhmp-5 eGOaKg"
-                    tabindex="-1"
+                    tabindex="0"
                     type="button"
                   >
                     <div
@@ -34650,7 +34650,7 @@ exports[`DateInput type format inline 2`] = `
                     aria-disabled="false"
                     aria-label="Wed Jul 01 2020"
                     class="StyledButton-sc-323bzc-0 eNtKJP StyledCalendar__StyledDayButton-sc-1y4xhmp-5 eGOaKg"
-                    tabindex="0"
+                    tabindex="-1"
                     type="button"
                   >
                     <div
@@ -36050,7 +36050,7 @@ exports[`DateInput type format inline partial 1`] = `
                     aria-disabled="false"
                     aria-label="Sun Jun 28 2020"
                     class="c18 c19"
-                    tabindex="-1"
+                    tabindex="0"
                     type="button"
                   >
                     <div
@@ -36107,7 +36107,7 @@ exports[`DateInput type format inline partial 1`] = `
                     aria-disabled="false"
                     aria-label="Wed Jul 01 2020"
                     class="c18 c19"
-                    tabindex="0"
+                    tabindex="-1"
                     type="button"
                   >
                     <div
@@ -37508,7 +37508,7 @@ exports[`DateInput type format inline partial without timezone 1`] = `
                       aria-disabled="false"
                       aria-label="Sun Jun 28 2020"
                       class="c18 c19"
-                      tabindex="-1"
+                      tabindex="0"
                       type="button"
                     >
                       <div
@@ -37565,7 +37565,7 @@ exports[`DateInput type format inline partial without timezone 1`] = `
                       aria-disabled="false"
                       aria-label="Wed Jul 01 2020"
                       class="c18 c19"
-                      tabindex="0"
+                      tabindex="-1"
                       type="button"
                     >
                       <div
@@ -38986,7 +38986,7 @@ exports[`DateInput type format inline range 1`] = `
                     aria-disabled="false"
                     aria-label="Sun Jun 28 2020"
                     class="c18 c19"
-                    tabindex="-1"
+                    tabindex="0"
                     type="button"
                   >
                     <div
@@ -39043,7 +39043,7 @@ exports[`DateInput type format inline range 1`] = `
                     aria-disabled="false"
                     aria-label="Wed Jul 01 2020"
                     class="c18 c19"
-                    tabindex="0"
+                    tabindex="-1"
                     type="button"
                   >
                     <div
@@ -39934,7 +39934,7 @@ exports[`DateInput type format inline range 2`] = `
                     aria-disabled="false"
                     aria-label="Sun Jun 28 2020"
                     class="StyledButton-sc-323bzc-0 eNtKJP StyledCalendar__StyledDayButton-sc-1y4xhmp-5 eGOaKg"
-                    tabindex="-1"
+                    tabindex="0"
                     type="button"
                   >
                     <div
@@ -39991,7 +39991,7 @@ exports[`DateInput type format inline range 2`] = `
                     aria-disabled="false"
                     aria-label="Wed Jul 01 2020"
                     class="StyledButton-sc-323bzc-0 eNtKJP StyledCalendar__StyledDayButton-sc-1y4xhmp-5 eGOaKg"
-                    tabindex="0"
+                    tabindex="-1"
                     type="button"
                   >
                     <div
@@ -41411,7 +41411,7 @@ exports[`DateInput type format inline range partial 1`] = `
                     aria-disabled="false"
                     aria-label="Sun Jun 28 2020"
                     class="c18 c19"
-                    tabindex="-1"
+                    tabindex="0"
                     type="button"
                   >
                     <div
@@ -41468,7 +41468,7 @@ exports[`DateInput type format inline range partial 1`] = `
                     aria-disabled="false"
                     aria-label="Wed Jul 01 2020"
                     class="c18 c19"
-                    tabindex="0"
+                    tabindex="-1"
                     type="button"
                   >
                     <div
@@ -42359,7 +42359,7 @@ exports[`DateInput type format inline range partial 2`] = `
                     aria-disabled="false"
                     aria-label="Sun Jun 28 2020"
                     class="StyledButton-sc-323bzc-0 eNtKJP StyledCalendar__StyledDayButton-sc-1y4xhmp-5 eGOaKg"
-                    tabindex="-1"
+                    tabindex="0"
                     type="button"
                   >
                     <div
@@ -42416,7 +42416,7 @@ exports[`DateInput type format inline range partial 2`] = `
                     aria-disabled="false"
                     aria-label="Wed Jul 01 2020"
                     class="StyledButton-sc-323bzc-0 eNtKJP StyledCalendar__StyledDayButton-sc-1y4xhmp-5 eGOaKg"
-                    tabindex="0"
+                    tabindex="-1"
                     type="button"
                   >
                     <div
@@ -43307,7 +43307,7 @@ exports[`DateInput type format inline range partial 3`] = `
                     aria-disabled="false"
                     aria-label="Sun Jun 28 2020"
                     class="StyledButton-sc-323bzc-0 eNtKJP StyledCalendar__StyledDayButton-sc-1y4xhmp-5 eGOaKg"
-                    tabindex="-1"
+                    tabindex="0"
                     type="button"
                   >
                     <div
@@ -43364,7 +43364,7 @@ exports[`DateInput type format inline range partial 3`] = `
                     aria-disabled="false"
                     aria-label="Wed Jul 01 2020"
                     class="StyledButton-sc-323bzc-0 eNtKJP StyledCalendar__StyledDayButton-sc-1y4xhmp-5 eGOaKg"
-                    tabindex="0"
+                    tabindex="-1"
                     type="button"
                   >
                     <div
@@ -44785,7 +44785,7 @@ exports[`DateInput type format inline range partial without timezone 1`] = `
                       aria-disabled="false"
                       aria-label="Sun Jun 28 2020"
                       class="c18 c19"
-                      tabindex="-1"
+                      tabindex="0"
                       type="button"
                     >
                       <div
@@ -44842,7 +44842,7 @@ exports[`DateInput type format inline range partial without timezone 1`] = `
                       aria-disabled="false"
                       aria-label="Wed Jul 01 2020"
                       class="c18 c19"
-                      tabindex="0"
+                      tabindex="-1"
                       type="button"
                     >
                       <div
@@ -46248,7 +46248,7 @@ exports[`DateInput type format inline range partial without timezone 2`] = `
                       aria-disabled="false"
                       aria-label="Sun Jun 28 2020"
                       class="c18 c19"
-                      tabindex="-1"
+                      tabindex="0"
                       type="button"
                     >
                       <div
@@ -46305,7 +46305,7 @@ exports[`DateInput type format inline range partial without timezone 2`] = `
                       aria-disabled="false"
                       aria-label="Wed Jul 01 2020"
                       class="c18 c19"
-                      tabindex="0"
+                      tabindex="-1"
                       type="button"
                     >
                       <div
@@ -47711,7 +47711,7 @@ exports[`DateInput type format inline range partial without timezone 3`] = `
                       aria-disabled="false"
                       aria-label="Sun Jun 28 2020"
                       class="c18 c19"
-                      tabindex="-1"
+                      tabindex="0"
                       type="button"
                     >
                       <div
@@ -47768,7 +47768,7 @@ exports[`DateInput type format inline range partial without timezone 3`] = `
                       aria-disabled="false"
                       aria-label="Wed Jul 01 2020"
                       class="c18 c19"
-                      tabindex="0"
+                      tabindex="-1"
                       type="button"
                     >
                       <div
@@ -49190,7 +49190,7 @@ exports[`DateInput type format inline range without timezone 1`] = `
                       aria-disabled="false"
                       aria-label="Sun Jun 28 2020"
                       class="c18 c19"
-                      tabindex="-1"
+                      tabindex="0"
                       type="button"
                     >
                       <div
@@ -49247,7 +49247,7 @@ exports[`DateInput type format inline range without timezone 1`] = `
                       aria-disabled="false"
                       aria-label="Wed Jul 01 2020"
                       class="c18 c19"
-                      tabindex="0"
+                      tabindex="-1"
                       type="button"
                     >
                       <div
@@ -50669,7 +50669,7 @@ exports[`DateInput type format inline range without timezone 2`] = `
                       aria-disabled="false"
                       aria-label="Sun Jun 28 2020"
                       class="c18 c19"
-                      tabindex="-1"
+                      tabindex="0"
                       type="button"
                     >
                       <div
@@ -50726,7 +50726,7 @@ exports[`DateInput type format inline range without timezone 2`] = `
                       aria-disabled="false"
                       aria-label="Wed Jul 01 2020"
                       class="c18 c19"
-                      tabindex="0"
+                      tabindex="-1"
                       type="button"
                     >
                       <div
@@ -52127,7 +52127,7 @@ exports[`DateInput type format inline short 1`] = `
                     aria-disabled="false"
                     aria-label="Sun Jun 28 2020"
                     class="c18 c19"
-                    tabindex="-1"
+                    tabindex="0"
                     type="button"
                   >
                     <div
@@ -52184,7 +52184,7 @@ exports[`DateInput type format inline short 1`] = `
                     aria-disabled="false"
                     aria-label="Wed Jul 01 2020"
                     class="c18 c19"
-                    tabindex="0"
+                    tabindex="-1"
                     type="button"
                   >
                     <div
@@ -53075,7 +53075,7 @@ exports[`DateInput type format inline short 2`] = `
                     aria-disabled="false"
                     aria-label="Sun Jun 28 2020"
                     class="StyledButton-sc-323bzc-0 eNtKJP StyledCalendar__StyledDayButton-sc-1y4xhmp-5 eGOaKg"
-                    tabindex="-1"
+                    tabindex="0"
                     type="button"
                   >
                     <div
@@ -53132,7 +53132,7 @@ exports[`DateInput type format inline short 2`] = `
                     aria-disabled="false"
                     aria-label="Wed Jul 01 2020"
                     class="StyledButton-sc-323bzc-0 eNtKJP StyledCalendar__StyledDayButton-sc-1y4xhmp-5 eGOaKg"
-                    tabindex="0"
+                    tabindex="-1"
                     type="button"
                   >
                     <div
@@ -54533,7 +54533,7 @@ exports[`DateInput type format inline short without timezone 1`] = `
                       aria-disabled="false"
                       aria-label="Sun Jun 28 2020"
                       class="c18 c19"
-                      tabindex="-1"
+                      tabindex="0"
                       type="button"
                     >
                       <div
@@ -54590,7 +54590,7 @@ exports[`DateInput type format inline short without timezone 1`] = `
                       aria-disabled="false"
                       aria-label="Wed Jul 01 2020"
                       class="c18 c19"
-                      tabindex="0"
+                      tabindex="-1"
                       type="button"
                     >
                       <div
@@ -55992,7 +55992,7 @@ exports[`DateInput type format inline short without timezone 2`] = `
                       aria-disabled="false"
                       aria-label="Sun Jun 28 2020"
                       class="c18 c19"
-                      tabindex="-1"
+                      tabindex="0"
                       type="button"
                     >
                       <div
@@ -56049,7 +56049,7 @@ exports[`DateInput type format inline short without timezone 2`] = `
                       aria-disabled="false"
                       aria-label="Wed Jul 01 2020"
                       class="c18 c19"
-                      tabindex="0"
+                      tabindex="-1"
                       type="button"
                     >
                       <div
@@ -57451,7 +57451,7 @@ exports[`DateInput type format inline without timezone 1`] = `
                       aria-disabled="false"
                       aria-label="Sun Jun 28 2020"
                       class="c18 c19"
-                      tabindex="-1"
+                      tabindex="0"
                       type="button"
                     >
                       <div
@@ -57508,7 +57508,7 @@ exports[`DateInput type format inline without timezone 1`] = `
                       aria-disabled="false"
                       aria-label="Wed Jul 01 2020"
                       class="c18 c19"
-                      tabindex="0"
+                      tabindex="-1"
                       type="button"
                     >
                       <div
@@ -58910,7 +58910,7 @@ exports[`DateInput type format inline without timezone 2`] = `
                       aria-disabled="false"
                       aria-label="Sun Jun 28 2020"
                       class="c18 c19"
-                      tabindex="-1"
+                      tabindex="0"
                       type="button"
                     >
                       <div
@@ -58967,7 +58967,7 @@ exports[`DateInput type format inline without timezone 2`] = `
                       aria-disabled="false"
                       aria-label="Wed Jul 01 2020"
                       class="c18 c19"
-                      tabindex="0"
+                      tabindex="-1"
                       type="button"
                     >
                       <div

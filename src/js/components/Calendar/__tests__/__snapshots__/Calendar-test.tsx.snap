@@ -3964,7 +3964,7 @@ exports[`Calendar date 1`] = `
                   aria-disabled="false"
                   aria-label="Sun Dec 29 2019"
                   class="c14 c15"
-                  tabindex="-1"
+                  tabindex="0"
                   type="button"
                 >
                   <div
@@ -4021,7 +4021,7 @@ exports[`Calendar date 1`] = `
                   aria-disabled="false"
                   aria-label="Wed Jan 01 2020"
                   class="c14 c15"
-                  tabindex="0"
+                  tabindex="-1"
                   type="button"
                 >
                   <div
@@ -5251,7 +5251,7 @@ exports[`Calendar dates 1`] = `
                   aria-disabled="false"
                   aria-label="Sun Dec 29 2019"
                   class="c14 c15"
-                  tabindex="-1"
+                  tabindex="0"
                   type="button"
                 >
                   <div
@@ -5308,7 +5308,7 @@ exports[`Calendar dates 1`] = `
                   aria-disabled="false"
                   aria-label="Wed Jan 01 2020"
                   class="c14 c15"
-                  tabindex="0"
+                  tabindex="-1"
                   type="button"
                 >
                   <div
@@ -6613,7 +6613,7 @@ exports[`Calendar daysOfWeek 1`] = `
                   aria-disabled="false"
                   aria-label="Sun Dec 29 2019"
                   class="c15 c16"
-                  tabindex="-1"
+                  tabindex="0"
                   type="button"
                 >
                   <div
@@ -6670,7 +6670,7 @@ exports[`Calendar daysOfWeek 1`] = `
                   aria-disabled="false"
                   aria-label="Wed Jan 01 2020"
                   class="c15 c16"
-                  tabindex="0"
+                  tabindex="-1"
                   type="button"
                 >
                   <div
@@ -7897,7 +7897,7 @@ exports[`Calendar disabled 1`] = `
                     aria-disabled="false"
                     aria-label="Sun Dec 29 2019"
                     class="c14 c15"
-                    tabindex="-1"
+                    tabindex="0"
                     type="button"
                   >
                     <div
@@ -7954,7 +7954,7 @@ exports[`Calendar disabled 1`] = `
                     aria-disabled="false"
                     aria-label="Wed Jan 01 2020"
                     class="c14 c15"
-                    tabindex="0"
+                    tabindex="-1"
                     type="button"
                   >
                     <div
@@ -9113,7 +9113,7 @@ exports[`Calendar fill 1`] = `
                   aria-disabled="false"
                   aria-label="Sun Dec 29 2019"
                   class="c13 c14"
-                  tabindex="-1"
+                  tabindex="0"
                   type="button"
                 >
                   <div
@@ -9170,7 +9170,7 @@ exports[`Calendar fill 1`] = `
                   aria-disabled="false"
                   aria-label="Wed Jan 01 2020"
                   class="c13 c14"
-                  tabindex="0"
+                  tabindex="-1"
                   type="button"
                 >
                   <div
@@ -10380,7 +10380,7 @@ exports[`Calendar first day sunday week monday 1`] = `
                   aria-disabled="false"
                   aria-label="Mon Feb 24 2020"
                   class="c14 c15"
-                  tabindex="-1"
+                  tabindex="0"
                   type="button"
                 >
                   <div
@@ -10494,7 +10494,7 @@ exports[`Calendar first day sunday week monday 1`] = `
                   aria-disabled="false"
                   aria-label="Sun Mar 01 2020"
                   class="c14 c15"
-                  tabindex="0"
+                  tabindex="-1"
                   type="button"
                 >
                   <div
@@ -11647,7 +11647,7 @@ exports[`Calendar firstDayOfWeek 1`] = `
                   aria-disabled="false"
                   aria-label="Sun Dec 29 2019"
                   class="c14 c15"
-                  tabindex="-1"
+                  tabindex="0"
                   type="button"
                 >
                   <div
@@ -11704,7 +11704,7 @@ exports[`Calendar firstDayOfWeek 1`] = `
                   aria-disabled="false"
                   aria-label="Wed Jan 01 2020"
                   class="c14 c15"
-                  tabindex="0"
+                  tabindex="-1"
                   type="button"
                 >
                   <div
@@ -12551,7 +12551,7 @@ exports[`Calendar firstDayOfWeek 1`] = `
                   aria-disabled="false"
                   aria-label="Mon Dec 30 2019"
                   class="c14 c15"
-                  tabindex="-1"
+                  tabindex="0"
                   type="button"
                 >
                   <div
@@ -12589,7 +12589,7 @@ exports[`Calendar firstDayOfWeek 1`] = `
                   aria-disabled="false"
                   aria-label="Wed Jan 01 2020"
                   class="c14 c15"
-                  tabindex="0"
+                  tabindex="-1"
                   type="button"
                 >
                   <div
@@ -15039,7 +15039,7 @@ exports[`Calendar heading text font size 1`] = `
                     aria-disabled="false"
                     aria-label="Sun Dec 29 2019"
                     class="c15 c16"
-                    tabindex="-1"
+                    tabindex="0"
                     type="button"
                   >
                     <div
@@ -15096,7 +15096,7 @@ exports[`Calendar heading text font size 1`] = `
                     aria-disabled="false"
                     aria-label="Wed Jan 01 2020"
                     class="c15 c16"
-                    tabindex="0"
+                    tabindex="-1"
                     type="button"
                   >
                     <div
@@ -16286,7 +16286,7 @@ exports[`Calendar reference 1`] = `
                   aria-disabled="false"
                   aria-label="Sun Dec 29 2019"
                   class="c14 c15"
-                  tabindex="-1"
+                  tabindex="0"
                   type="button"
                 >
                   <div
@@ -16343,7 +16343,7 @@ exports[`Calendar reference 1`] = `
                   aria-disabled="false"
                   aria-label="Wed Jan 01 2020"
                   class="c14 c15"
-                  tabindex="0"
+                  tabindex="-1"
                   type="button"
                 >
                   <div
@@ -17540,7 +17540,7 @@ exports[`Calendar render without grommet wrapper 1`] = `
                 aria-disabled="false"
                 aria-label="Sun Dec 29 2019"
                 class="c13 c14"
-                tabindex="-1"
+                tabindex="0"
                 type="button"
               >
                 <div
@@ -17597,7 +17597,7 @@ exports[`Calendar render without grommet wrapper 1`] = `
                 aria-disabled="false"
                 aria-label="Wed Jan 01 2020"
                 class="c13 c14"
-                tabindex="0"
+                tabindex="-1"
                 type="button"
               >
                 <div
@@ -18806,7 +18806,7 @@ exports[`Calendar select date 1`] = `
                   aria-disabled="false"
                   aria-label="Sun Dec 29 2019"
                   class="c14 c15"
-                  tabindex="-1"
+                  tabindex="0"
                   type="button"
                 >
                   <div
@@ -18863,7 +18863,7 @@ exports[`Calendar select date 1`] = `
                   aria-disabled="false"
                   aria-label="Wed Jan 01 2020"
                   class="c14 c15"
-                  tabindex="0"
+                  tabindex="-1"
                   type="button"
                 >
                   <div
@@ -21004,7 +21004,7 @@ exports[`Calendar select dates 1`] = `
                   aria-disabled="false"
                   aria-label="Sun Dec 29 2019"
                   class="c14 c15"
-                  tabindex="-1"
+                  tabindex="0"
                   type="button"
                 >
                   <div
@@ -21061,7 +21061,7 @@ exports[`Calendar select dates 1`] = `
                   aria-disabled="false"
                   aria-label="Wed Jan 01 2020"
                   class="c14 c15"
-                  tabindex="0"
+                  tabindex="-1"
                   type="button"
                 >
                   <div
@@ -23271,7 +23271,7 @@ exports[`Calendar should render day and range rounding and states 1`] = `
                     aria-disabled="false"
                     aria-label="Sun Dec 29 2019"
                     class="c14 c15"
-                    tabindex="-1"
+                    tabindex="0"
                     type="button"
                   >
                     <div
@@ -23328,7 +23328,7 @@ exports[`Calendar should render day and range rounding and states 1`] = `
                     aria-disabled="false"
                     aria-label="Wed Jan 01 2020"
                     class="c14 c15"
-                    tabindex="0"
+                    tabindex="-1"
                     type="button"
                   >
                     <div
@@ -24539,7 +24539,7 @@ exports[`Calendar showAdjacentDays 1`] = `
                   aria-disabled="false"
                   aria-label="Sun Dec 29 2019"
                   class="c14 c15"
-                  tabindex="-1"
+                  tabindex="0"
                   type="button"
                 >
                   <div
@@ -24596,7 +24596,7 @@ exports[`Calendar showAdjacentDays 1`] = `
                   aria-disabled="false"
                   aria-label="Wed Jan 01 2020"
                   class="c14 c15"
-                  tabindex="0"
+                  tabindex="-1"
                   type="button"
                 >
                   <div
@@ -26214,7 +26214,7 @@ exports[`Calendar showAdjacentDays 1`] = `
                   aria-disabled="false"
                   aria-label="Sun Dec 29 2019"
                   class="c14 c15"
-                  tabindex="-1"
+                  tabindex="0"
                   type="button"
                 >
                   <div
@@ -26271,7 +26271,7 @@ exports[`Calendar showAdjacentDays 1`] = `
                   aria-disabled="false"
                   aria-label="Wed Jan 01 2020"
                   class="c14 c15"
-                  tabindex="0"
+                  tabindex="-1"
                   type="button"
                 >
                   <div
@@ -27700,7 +27700,7 @@ exports[`Calendar size 1`] = `
                   aria-disabled="false"
                   aria-label="Sun Dec 29 2019"
                   class="c14 c15"
-                  tabindex="-1"
+                  tabindex="0"
                   type="button"
                 >
                   <div
@@ -27757,7 +27757,7 @@ exports[`Calendar size 1`] = `
                   aria-disabled="false"
                   aria-label="Wed Jan 01 2020"
                   class="c14 c15"
-                  tabindex="0"
+                  tabindex="-1"
                   type="button"
                 >
                   <div
@@ -28604,7 +28604,7 @@ exports[`Calendar size 1`] = `
                   aria-disabled="false"
                   aria-label="Sun Dec 29 2019"
                   class="c14 c15"
-                  tabindex="-1"
+                  tabindex="0"
                   type="button"
                 >
                   <div
@@ -28661,7 +28661,7 @@ exports[`Calendar size 1`] = `
                   aria-disabled="false"
                   aria-label="Wed Jan 01 2020"
                   class="c14 c15"
-                  tabindex="0"
+                  tabindex="-1"
                   type="button"
                 >
                   <div
@@ -29508,7 +29508,7 @@ exports[`Calendar size 1`] = `
                   aria-disabled="false"
                   aria-label="Sun Dec 29 2019"
                   class="c14 c15"
-                  tabindex="-1"
+                  tabindex="0"
                   type="button"
                 >
                   <div
@@ -29565,7 +29565,7 @@ exports[`Calendar size 1`] = `
                   aria-disabled="false"
                   aria-label="Wed Jan 01 2020"
                   class="c14 c15"
-                  tabindex="0"
+                  tabindex="-1"
                   type="button"
                 >
                   <div

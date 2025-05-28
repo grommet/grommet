@@ -505,8 +505,11 @@ const Calendar = forwardRef(
       () => startOfMonth(addMonths(startOfMonth(reference), 1)),
       [reference],
     );
+    const initialFocusDate = showAdjacentDays
+      ? new Date(displayBounds[0])
+      : startOfMonth(reference);
     const [focus, setFocus] = useState();
-    const [active, setActive] = useState(startOfMonth(reference));
+    const [active, setActive] = useState(initialFocusDate);
     const focusableDateRef = useRef(undefined);
 
     useEffect(() => {
