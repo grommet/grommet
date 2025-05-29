@@ -1,6 +1,7 @@
 import React from 'react';
 import { render, fireEvent, act, screen } from '@testing-library/react';
 import { axe } from 'jest-axe';
+import userEvent from '@testing-library/user-event';
 import 'jest-axe/extend-expect';
 import 'jest-styled-components';
 import 'regenerator-runtime/runtime';
@@ -937,6 +938,66 @@ describe('Select', () => {
     const optionButton = getByText('morning').closest('button');
     const style = window.getComputedStyle(optionButton.firstChild);
     expect(style.background).toBe('lightgreen');
+  });
+
+  test.only('renders default clear button shows focus indicator', async () => {
+    const user = userEvent.setup();
+    const customTheme = {
+      select: {
+        clear: {
+          button: {
+            border: {
+              radius: 'small',
+            },
+            pad: {
+              vertical: 'xsmall',
+              horizontal: 'small',
+            },
+          },
+        },
+      },
+    };
+
+    const Test = () => {
+      const [value] = React.useState();
+      return (
+        <Select
+          id="test-select"
+          placeholder="test select"
+          value={value}
+          options={['one', 'two']}
+          clear
+        />
+      );
+    };
+    render(
+      <Grommet theme={customTheme}>
+        <Test />
+      </Grommet>,
+    );
+
+    // Select an option to trigger Clear button appearance
+    fireEvent.click(screen.getByPlaceholderText('test select'));
+    fireEvent.click(screen.getByRole('option', { name: 'one' }));
+    fireEvent.click(screen.getByPlaceholderText('test select'));
+
+    const clearButton = screen.getByRole('button', {
+      name: 'Clear selection. Or, press down arrow to move to select options',
+    });
+
+    expect(clearButton).toBeInTheDocument();
+
+    // Move focus to clearButton
+    await user.tab();
+    expect(clearButton).toHaveFocus();
+
+    // Assert styles applied on focus
+    expect(clearButton).toHaveStyleRule('box-shadow', '0 0 2px 2px #6FFFB0', {
+      modifier: ':focus',
+    });
+    expect(clearButton).toHaveStyleRule('outline', 'none', {
+      modifier: ':focus',
+    });
   });
 
   test(`renders styled select options combining select.options.box &&
