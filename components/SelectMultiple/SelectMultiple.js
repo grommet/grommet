@@ -407,7 +407,7 @@ var SelectMultiple = exports.SelectMultiple = /*#__PURE__*/(0, _react.forwardRef
     a11yTitle: ariaLabel || a11yTitle,
     defaultCursor: disabled === true || undefined,
     focusIndicator: false,
-    id: id ? id + "__input" : undefined,
+    id: id ? (0, _utils2.selectInputId)(id) : undefined,
     inert: _utils2.inertTrueValue,
     name: name,
     width: "100%"
@@ -430,7 +430,7 @@ var SelectMultiple = exports.SelectMultiple = /*#__PURE__*/(0, _react.forwardRef
   })), displaySelectIcon), /*#__PURE__*/_react["default"].createElement(_StyledSelect.HiddenInput, {
     type: "text",
     name: name,
-    id: id ? id + "__input" : undefined,
+    id: id ? (0, _utils2.selectInputId)(id) : undefined,
     inert: _utils2.inertTrueValue,
     value: inputValue,
     ref: inputRef,
@@ -467,7 +467,7 @@ var SelectMultiple = exports.SelectMultiple = /*#__PURE__*/(0, _react.forwardRef
   }, selectValue || displayLabelKey ? /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, selectValue || displayLabelKey, /*#__PURE__*/_react["default"].createElement(_StyledSelect.HiddenInput, {
     type: "text",
     name: name,
-    id: id ? id + "__input" : undefined,
+    id: id ? (0, _utils2.selectInputId)(id) : undefined,
     inert: _utils2.inertTrueValue,
     value: inputValue,
     ref: inputRef,

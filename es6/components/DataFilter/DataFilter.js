@@ -11,6 +11,7 @@ import { SelectMultiple } from '../SelectMultiple';
 import { DataFilterPropTypes } from './propTypes';
 import { getDecimalCount } from '../RangeSelector/RangeSelector';
 import { DataFormContext } from '../../contexts/DataFormContext';
+import { selectInputId } from '../Select/utils';
 
 // empirical constants for when we change inputs
 var maxCheckBoxGroupOptions = 4;
@@ -129,6 +130,7 @@ export var DataFilter = function DataFilter(_ref) {
 
   // only add aria-label for no form examples
   var ariaLabel = !inDataForm ? "" + ((properties == null || (_properties$property3 = properties[property]) == null ? void 0 : _properties$property3.label) || property) : undefined;
+  var htmlFor = id;
   var content = children;
   if (!content) {
     if (range) {
@@ -200,6 +202,7 @@ export var DataFilter = function DataFilter(_ref) {
             reduce: true
           }
         });
+        htmlFor = selectInputId(id);
       }
     }
   }
@@ -210,7 +213,7 @@ export var DataFilter = function DataFilter(_ref) {
       footer: false,
       updateOn: "change"
     }, content);else content = /*#__PURE__*/React.createElement(FormField, _extends({
-    htmlFor: id,
+    htmlFor: htmlFor,
     name: property,
     label: (properties == null || (_properties$property5 = properties[property]) == null ? void 0 : _properties$property5.label) || property
   }, rest), content);

@@ -14,6 +14,7 @@ import { Select } from '../Select';
 import { MessageContext } from '../../contexts/MessageContext';
 import { DataSortPropTypes } from './propTypes';
 import { useThemeValue } from '../../utils/useThemeValue';
+import { selectInputId } from '../Select/utils';
 var dropProps = {
   align: {
     top: 'bottom',
@@ -85,7 +86,7 @@ var Content = function Content(_ref) {
   var sortDirectionId = dataId + "--sort-direction";
   return [/*#__PURE__*/React.createElement(FormField, {
     key: "by",
-    htmlFor: sortPropertyId,
+    htmlFor: selectInputId(sortPropertyId),
     label: format({
       id: 'dataSort.by',
       messages: messages == null ? void 0 : messages.dataSort

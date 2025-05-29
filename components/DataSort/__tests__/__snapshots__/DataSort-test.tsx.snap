@@ -862,7 +862,7 @@ exports[`DataSort renders 1`] = `
             >
               <label
                 class="c6"
-                for="data--sort-property"
+                for="data--sort-property__input"
               >
                 Sort by
               </label>
@@ -1360,7 +1360,7 @@ exports[`DataSort sort when data array is empty 1`] = `
       >
         <label
           class="c4"
-          for="test-data--sort-property"
+          for="test-data--sort-property__input"
         >
           Sort by
         </label>

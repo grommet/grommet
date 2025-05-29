@@ -8,7 +8,7 @@ import { Keyboard } from '../Keyboard';
 import { FormContext } from '../Form/FormContext';
 import { SelectContainer } from './SelectContainer';
 import { HiddenInput, StyledSelectDropButton } from './StyledSelect';
-import { applyKey, getNormalizedValue, changeEvent, getSelectIcon, getDisplayLabelKey, getIconColor, formatValueForA11y, inertTrueValue } from './utils';
+import { applyKey, getNormalizedValue, changeEvent, getSelectIcon, getDisplayLabelKey, getIconColor, formatValueForA11y, inertTrueValue, selectInputId } from './utils';
 import { DefaultSelectTextInput } from './DefaultSelectTextInput';
 import { MessageContext } from '../../contexts/MessageContext';
 import { SelectPropTypes } from './propTypes';
@@ -324,7 +324,7 @@ var Select = /*#__PURE__*/forwardRef(function (_ref, ref) {
   }, selectValue || displayLabelKey ? /*#__PURE__*/React.createElement(React.Fragment, null, selectValue || displayLabelKey, /*#__PURE__*/React.createElement(HiddenInput, {
     type: "text",
     name: name,
-    id: id ? id + "__input" : undefined,
+    id: id ? selectInputId(id) : undefined,
     inert: inertTrueValue,
     value: inputValue,
     ref: inputRef,

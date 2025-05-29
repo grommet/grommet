@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.useDisabled = exports.inertTrueValue = exports.getSelectIcon = exports.getOptionValue = exports.getOptionLabel = exports.getOptionIndex = exports.getNormalizedValue = exports.getIconColor = exports.getDisplayLabelKey = exports.formatValueForA11y = exports.changeEvent = exports.arrayIncludes = exports.applyKey = void 0;
+exports.useDisabled = exports.selectInputId = exports.inertTrueValue = exports.getSelectIcon = exports.getOptionValue = exports.getOptionLabel = exports.getOptionIndex = exports.getNormalizedValue = exports.getIconColor = exports.getDisplayLabelKey = exports.formatValueForA11y = exports.changeEvent = exports.arrayIncludes = exports.applyKey = void 0;
 var _react = _interopRequireWildcard(require("react"));
 var _utils = require("../../utils");
 function _interopRequireWildcard(e, t) { if ("function" == typeof WeakMap) var r = new WeakMap(), n = new WeakMap(); return (_interopRequireWildcard = function _interopRequireWildcard(e, t) { if (!t && e && e.__esModule) return e; var o, i, f = { __proto__: null, "default": e }; if (null === e || "object" != typeof e && "function" != typeof e) return f; if (o = t ? n : r) { if (o.has(e)) return o.get(e); o.set(e, f); } for (var _t in e) "default" !== _t && {}.hasOwnProperty.call(e, _t) && ((i = (o = Object.defineProperty) && Object.getOwnPropertyDescriptor(e, _t)) && (i.get || i.set) ? o(f, _t, i) : f[_t] = e[_t]); return f; })(e, t); }
@@ -116,3 +116,13 @@ var _formatValueForA11y = exports.formatValueForA11y = function formatValueForA1
 // used to determine the react version because it is only available
 // in react 19 and above.
 var inertTrueValue = exports.inertTrueValue = _react["default"].use ? true : '';
+
+// Grommet manipulates the provided id by appending "__input" for
+// the id places on the DOM input. In order to properly associate
+// form label htmlFor with select input, we handle appending this
+// to htmlFor for internal components like DataSort and DataFilter.
+// Caller is responsible for appending this on their Select or
+// SelectMultiple instances.
+var selectInputId = exports.selectInputId = function selectInputId(id) {
+  return id + "__input";
+};

@@ -15,6 +15,7 @@ var _Select = require("../Select");
 var _MessageContext = require("../../contexts/MessageContext");
 var _propTypes = require("./propTypes");
 var _useThemeValue2 = require("../../utils/useThemeValue");
+var _utils = require("../Select/utils");
 var _excluded = ["drop", "options"];
 function _interopRequireWildcard(e, t) { if ("function" == typeof WeakMap) var r = new WeakMap(), n = new WeakMap(); return (_interopRequireWildcard = function _interopRequireWildcard(e, t) { if (!t && e && e.__esModule) return e; var o, i, f = { __proto__: null, "default": e }; if (null === e || "object" != typeof e && "function" != typeof e) return f; if (o = t ? n : r) { if (o.has(e)) return o.get(e); o.set(e, f); } for (var _t in e) "default" !== _t && {}.hasOwnProperty.call(e, _t) && ((i = (o = Object.defineProperty) && Object.getOwnPropertyDescriptor(e, _t)) && (i.get || i.set) ? o(f, _t, i) : f[_t] = e[_t]); return f; })(e, t); }
 function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (-1 !== e.indexOf(n)) continue; t[n] = r[n]; } return t; }
@@ -90,7 +91,7 @@ var Content = function Content(_ref) {
   var sortDirectionId = dataId + "--sort-direction";
   return [/*#__PURE__*/_react["default"].createElement(_FormField.FormField, {
     key: "by",
-    htmlFor: sortPropertyId,
+    htmlFor: (0, _utils.selectInputId)(sortPropertyId),
     label: format({
       id: 'dataSort.by',
       messages: messages == null ? void 0 : messages.dataSort

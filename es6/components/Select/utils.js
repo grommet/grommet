@@ -113,3 +113,13 @@ var _formatValueForA11y = function formatValueForA11y(value, labelKey) {
 // in react 19 and above.
 export { _formatValueForA11y as formatValueForA11y };
 export var inertTrueValue = React.use ? true : '';
+
+// Grommet manipulates the provided id by appending "__input" for
+// the id places on the DOM input. In order to properly associate
+// form label htmlFor with select input, we handle appending this
+// to htmlFor for internal components like DataSort and DataFilter.
+// Caller is responsible for appending this on their Select or
+// SelectMultiple instances.
+export var selectInputId = function selectInputId(id) {
+  return id + "__input";
+};

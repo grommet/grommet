@@ -11,7 +11,7 @@ import { FormContext } from '../Form/FormContext';
 import { SelectMultipleValue } from './SelectMultipleValue';
 import { SelectMultipleContainer } from './SelectMultipleContainer';
 import { HiddenInput, SelectTextInput, StyledSelectDropButton } from '../Select/StyledSelect';
-import { applyKey, getNormalizedValue, changeEvent, getSelectIcon, getIconColor, getDisplayLabelKey, arrayIncludes, inertTrueValue } from '../Select/utils';
+import { applyKey, getNormalizedValue, changeEvent, getSelectIcon, getIconColor, getDisplayLabelKey, arrayIncludes, inertTrueValue, selectInputId } from '../Select/utils';
 import { DefaultSelectTextInput } from '../Select/DefaultSelectTextInput';
 import { MessageContext } from '../../contexts/MessageContext';
 import { SelectMultiplePropTypes } from './propTypes';
@@ -401,7 +401,7 @@ var SelectMultiple = /*#__PURE__*/forwardRef(function (_ref, ref) {
     a11yTitle: ariaLabel || a11yTitle,
     defaultCursor: disabled === true || undefined,
     focusIndicator: false,
-    id: id ? id + "__input" : undefined,
+    id: id ? selectInputId(id) : undefined,
     inert: inertTrueValue,
     name: name,
     width: "100%"
@@ -424,7 +424,7 @@ var SelectMultiple = /*#__PURE__*/forwardRef(function (_ref, ref) {
   })), displaySelectIcon), /*#__PURE__*/React.createElement(HiddenInput, {
     type: "text",
     name: name,
-    id: id ? id + "__input" : undefined,
+    id: id ? selectInputId(id) : undefined,
     inert: inertTrueValue,
     value: inputValue,
     ref: inputRef,
@@ -461,7 +461,7 @@ var SelectMultiple = /*#__PURE__*/forwardRef(function (_ref, ref) {
   }, selectValue || displayLabelKey ? /*#__PURE__*/React.createElement(React.Fragment, null, selectValue || displayLabelKey, /*#__PURE__*/React.createElement(HiddenInput, {
     type: "text",
     name: name,
-    id: id ? id + "__input" : undefined,
+    id: id ? selectInputId(id) : undefined,
     inert: inertTrueValue,
     value: inputValue,
     ref: inputRef,
