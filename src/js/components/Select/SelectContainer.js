@@ -59,7 +59,8 @@ const ClearButton = forwardRef(
     };
 
     if (buttonKind) {
-      // New structure when `kind` is defined
+      // New structure when `theme.select.clear.button` is defined
+
       return (
         <Box flex="grow" {...containerProps}>
           <StyledButton
