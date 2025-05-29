@@ -59,7 +59,7 @@ const ClearButton = forwardRef(
     };
 
     if (buttonKind) {
-      // New structure when `theme.select.clear.button` is defined
+      // new structure when `theme.select.clear.button` is defined
 
       return (
         <Box flex="grow" {...containerProps}>
@@ -78,7 +78,7 @@ const ClearButton = forwardRef(
       );
     }
 
-    // Default structure when `kind` is not defined
+    // default structure when `theme.select.clear.button` is not defined
     return (
       <StyledButton focusIndicator={false} plain {...buttonProps}>
         {({ hover }) => {
