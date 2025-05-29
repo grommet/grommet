@@ -10,19 +10,15 @@ const customTheme = deepMerge(hpe, {
       container: {
         background: undefined,
         pad: '6px',
-        hover: { background: 'background-hover' },
         round: 'none',
       },
       button: {
-        active: {
-          alignSelf: 'start',
-          pad: {
-            vertical: '1px',
-            horizontal: '1px',
-          },
-          background: {
-            color: 'active-background',
-          },
+        border: {
+          radius: '6px',
+        },
+        pad: {
+          vertical: '5px',
+          horizontal: '12px',
         },
         hover: {
           background: {
@@ -31,18 +27,15 @@ const customTheme = deepMerge(hpe, {
         },
       },
     },
-    container: {
-      // Applying spacing on Select "Clear selection" button, then placing focus styles on the inner container div
-      extend: () =>
-        `
-          button[aria-label*="Or, press"] {
-            border-radius: 6px;
-            padding-block: unset;
-            padding-inline: unset;
-
-          }
-        `,
-    },
+    // container: {
+    //   // Applying spacing on Select "Clear selection" button, then placing focus styles on the inner container div
+    //   extend: () =>
+    //     `
+    //       button[aria-label*="Or, press"] {
+    //         border-radius: 6px;
+    //       }
+    //     `,
+    // },
   },
 });
 

@@ -50,7 +50,7 @@ const ClearButton = forwardRef(
       const textProps = theme.select.clear?.text || {};
 
       return (
-        <Box flex="grow" fill align={align} {...containerProps}>
+        <Box flex="grow" {...containerProps}>
           <StyledButton
             a11yTitle={`${buttonLabel}. Or, press ${
               position === 'bottom' ? 'shift tab' : 'down arrow'
@@ -61,6 +61,7 @@ const ClearButton = forwardRef(
             onClick={onClear}
             kind={theme.select.clear?.button}
             label={<Text {...textProps}>{buttonLabel}</Text>}
+            align={align}
             {...passThemeFlag}
             {...rest}
           />
