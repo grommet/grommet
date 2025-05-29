@@ -45,7 +45,7 @@ const ClearButton = forwardRef(
     const buttonKind = theme.select.clear?.button;
 
     if (buttonKind) {
-      // New structure when `kind` is defined
+      // New structure when `theme.select.clear.button` is defined
       const containerProps = theme.select.clear?.container || {};
       const textProps = theme.select.clear?.text || {};
 
