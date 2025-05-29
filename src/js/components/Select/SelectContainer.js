@@ -50,7 +50,7 @@ const ClearButton = forwardRef(
       const textProps = theme.select.clear?.text || {};
 
       return (
-        <Box flex="grow" fill align={align} {...containerProps}>
+        <Box flex="grow" align={align} {...containerProps}>
           <StyledButton
             a11yTitle={`${buttonLabel}. Or, press ${
               position === 'bottom' ? 'shift tab' : 'down arrow'
