@@ -43,27 +43,35 @@ const ClearButton = forwardRef(
     const buttonLabel = label || `Clear ${name || 'selection'}`;
     const { passThemeFlag } = useThemeValue();
     const buttonKind = theme.select.clear?.button;
+    const containerProps = theme.select.clear?.container || {};
+    const textProps = theme.select.clear?.text || {};
+
+    const buttonProps = {
+      a11yTitle: `${buttonLabel}. Or, press ${
+        position === 'bottom' ? 'shift tab' : 'down arrow'
+      } to move to select options`,
+      fill: 'horizontal',
+      ref,
+      onClick: onClear,
+      align,
+      ...passThemeFlag,
+      ...rest,
+    };
 
     if (buttonKind) {
       // New structure when `kind` is defined
-      const containerProps = theme.select.clear?.container || {};
-      const textProps = theme.select.clear?.text || {};
-
       return (
         <Box flex="grow" {...containerProps}>
           <StyledButton
-            a11yTitle={`${buttonLabel}. Or, press ${
-              position === 'bottom' ? 'shift tab' : 'down arrow'
-            } to move to select options`}
-            fill="horizontal"
-            justify="start"
-            ref={ref}
-            onClick={onClear}
-            kind={theme.select.clear?.button}
-            label={<Text {...textProps}>{buttonLabel}</Text>}
-            align={align}
-            {...passThemeFlag}
-            {...rest}
+            kind={buttonKind}
+            label={
+              textProps ? (
+                <Text {...textProps}>{buttonLabel}</Text>
+              ) : (
+                buttonLabel
+              )
+            }
+            {...buttonProps}
           />
         </Box>
       );
@@ -71,28 +79,17 @@ const ClearButton = forwardRef(
 
     // Default structure when `kind` is not defined
     return (
-      <StyledButton
-        a11yTitle={`${buttonLabel}. Or, press ${
-          position === 'bottom' ? 'shift tab' : 'down arrow'
-        } to move to select options`}
-        fill="horizontal"
-        ref={ref}
-        onClick={onClear}
-        focusIndicator={false}
-        plain
-        {...passThemeFlag}
-        {...rest}
-      >
+      <StyledButton focusIndicator={false} plain {...buttonProps}>
         {({ hover }) => {
-          const boxProps = { ...theme.select.clear?.container };
-          delete boxProps.hover; // avoid passing hover object to Box
+          const hoverContainerProps = hover
+            ? { ...containerProps, ...containerProps.hover }
+            : containerProps;
+          const cleanProps = { ...hoverContainerProps };
+          delete cleanProps.hover;
+
           return (
-            <Box
-              {...boxProps}
-              {...(hover ? theme.select.clear?.container?.hover : {})}
-              align={align}
-            >
-              <Text {...theme.select.clear?.text}>{buttonLabel}</Text>
+            <Box {...cleanProps} align={align}>
+              <Text {...textProps}>{buttonLabel}</Text>
             </Box>
           );
         }}
