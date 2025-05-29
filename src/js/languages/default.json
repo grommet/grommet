@@ -104,6 +104,9 @@
       "validation": "Copied"
     }
   },
+  "list": {
+    "pinned": "Item pinned, order cannot be changed."
+  },
   "menu": {
     "openMenu": "Open Menu",
     "closeMenu": "Close Menu"

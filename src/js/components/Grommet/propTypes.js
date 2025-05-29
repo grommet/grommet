@@ -119,6 +119,9 @@ if (process.env.NODE_ENV !== 'production') {
             }),
           }),
         }),
+        list: PropTypes.shape({
+          pinned: PropTypes.string,
+        }),
         menu: PropTypes.shape({
           openMenu: PropTypes.string,
           closeMenu: PropTypes.string,

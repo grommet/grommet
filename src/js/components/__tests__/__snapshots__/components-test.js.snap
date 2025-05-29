@@ -594,6 +594,7 @@ exports[`Components loads 1`] = `
       "itemKey": [Function],
       "itemProps": [Function],
       "margin": [Function],
+      "messages": [Function],
       "onActive": [Function],
       "onClickItem": [Function],
       "onMore": [Function],
