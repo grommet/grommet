@@ -142,6 +142,9 @@ export interface GrommetProps {
           plural?: string;
         };
       };
+      notification?: {
+        close?: string;
+      };
       pagination?: {
         stepLabel?: string;
         summary?: string;
