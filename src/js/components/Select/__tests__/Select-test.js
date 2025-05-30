@@ -940,7 +940,7 @@ describe('Select', () => {
     expect(style.background).toBe('lightgreen');
   });
 
-  test.only('renders default clear button shows focus indicator', async () => {
+  test('renders default clear button shows focus indicator', async () => {
     const user = userEvent.setup();
     const customTheme = {
       select: {
