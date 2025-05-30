@@ -51,10 +51,8 @@ var Custom = exports.Custom = function Custom() {
     align: "start",
     skeleton: skeleton
   }, /*#__PURE__*/_react["default"].createElement(_grommet.Heading, {
-    "aria-label": skeleton ? 'heading 1 loading' : undefined,
     level: 1
   }, "Heading 1"), /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, "text"), /*#__PURE__*/_react["default"].createElement(_grommet.Heading, {
-    "aria-label": skeleton ? 'heading 2 loading' : undefined,
     level: 2
   }, "Heading 2"), /*#__PURE__*/_react["default"].createElement(_grommet.Button, {
     alignSelf: "end",

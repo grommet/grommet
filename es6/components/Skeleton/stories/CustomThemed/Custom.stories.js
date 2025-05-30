@@ -46,10 +46,8 @@ export var Custom = function Custom() {
     align: "start",
     skeleton: skeleton
   }, /*#__PURE__*/React.createElement(Heading, {
-    "aria-label": skeleton ? 'heading 1 loading' : undefined,
     level: 1
   }, "Heading 1"), /*#__PURE__*/React.createElement(Text, null, "text"), /*#__PURE__*/React.createElement(Heading, {
-    "aria-label": skeleton ? 'heading 2 loading' : undefined,
     level: 2
   }, "Heading 2"), /*#__PURE__*/React.createElement(Button, {
     alignSelf: "end",

@@ -8,7 +8,6 @@ var HeadingExample = function HeadingExample() {
   }, "Heading"), /*#__PURE__*/React.createElement(Box, {
     skeleton: true
   }, /*#__PURE__*/React.createElement(Heading, {
-    "aria-label": "loading heading",
     level: 2
   }, "Heading")));
 };
