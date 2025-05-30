@@ -64,6 +64,40 @@ describe('Notification', () => {
     expect(onClose).toBeCalled();
   });
 
+  test('Grommet messages', () => {
+    const onClose = jest.fn();
+    render(
+      <Grommet
+        messages={{
+          messages: { notification: { close: 'Clear notification' } },
+        }}
+      >
+        <Notification title="Title" onClose={onClose} />
+      </Grommet>,
+    );
+
+    expect(
+      screen.getByRole('button', { name: 'Clear notification' }),
+    ).toBeInTheDocument();
+  });
+
+  test('messages prop', () => {
+    const onClose = jest.fn();
+    render(
+      <Grommet>
+        <Notification
+          title="Title"
+          onClose={onClose}
+          messages={{ close: 'Clear notification' }}
+        />
+      </Grommet>,
+    );
+
+    expect(
+      screen.getByRole('button', { name: 'Clear notification' }),
+    ).toBeInTheDocument();
+  });
+
   const validPositions: LayerPositionType[] = [
     'top',
     'bottom',
