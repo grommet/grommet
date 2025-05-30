@@ -82,6 +82,8 @@ export interface GrommetProps {
         order?: string;
         select?: string;
         tip?: string;
+        orderAria?: string;
+        selectAria?: string;
       };
       dataTableGroupBy?: {
         clear?: string;

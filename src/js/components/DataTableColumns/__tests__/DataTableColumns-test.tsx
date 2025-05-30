@@ -55,7 +55,11 @@ describe('DataTableColumns', () => {
     expect(firstTabPanel).toMatchSnapshot();
 
     // Click on the "Order columns" tab
-    fireEvent.click(screen.getByRole('tab', { name: 'Order columns' }));
+    fireEvent.click(
+      screen.getByRole('tab', {
+        name: 'Reorder the visible columns in the data table',
+      }),
+    );
 
     // Find the tab panel element using its role and aria-label
     const secondTabPanel = screen.getByRole('tabpanel', {
@@ -185,40 +189,51 @@ describe('DataTableColumns', () => {
 
     render(<App />);
 
+    // Open the drop button to reveal the column settings
     fireEvent.click(
-      screen.getByRole('button', { name: 'Open column selector' }),
+      screen.getByRole('button', {
+        name: 'Open column selector',
+      }),
     );
 
-    // advance timers so drop can open
+    // Let drop animation/timers complete
     act(() => jest.advanceTimersByTime(200));
 
-    fireEvent.click(screen.getByRole('tab', { name: 'Order columns' }));
+    // Click the "Reorder columns" tab using the full aria-label
+    fireEvent.click(
+      screen.getByRole('tab', {
+        name: 'Reorder the visible columns in the data table',
+      }),
+    );
 
-    // snap order tab
+    // Get the tab panel
     const tabPanel = screen.getByRole('tabpanel', {
       name: 'Order columns Tab Contents',
     });
-    // Take a snapshot of the tab panel
+
     expect(tabPanel).toMatchSnapshot();
 
+    // Click the move up button for "Percent"
     const bottomMoveUp = screen.getByRole('button', {
       name: '2 Percent move up',
     });
-
     fireEvent.click(bottomMoveUp);
+
     expect(onView).toBeCalledWith(
       expect.objectContaining({
         columns: ['percent', 'size', 'name'],
       }),
     );
 
+    // Check that another move button exists for "Name"
     screen.getByRole('button', { name: '2 Name move up' });
 
+    // Simulate drag and drop for reordering
     const list = screen.getByRole('list');
     const listItems = within(list).getAllByRole('listitem');
-
     const dragElement = listItems[2];
     const targetElement = listItems[0];
+
     expect(dragElement).toHaveAttribute('draggable', 'true');
 
     const dataTransfer = {
