@@ -45,6 +45,7 @@ const DataChart = forwardRef(
       data = [],
       detail,
       direction = 'vertical',
+      // TO DO theme object
       gap = 'small',
       guide: guideProp,
       legend,
@@ -196,6 +197,7 @@ const DataChart = forwardRef(
         fine: data.length,
         medium,
       };
+      // TO DO theme object?
       const granularity1 = {
         ...(heightYGranularity[(size && size.height) || 'small'] || {
           fine: 5,

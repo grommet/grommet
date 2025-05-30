@@ -86,6 +86,7 @@ const Resizer = ({ onResize, property }) => {
       <Box
         flex={false}
         responsive={false}
+        // TO DO move to theme object?
         pad={{ vertical: 'small' }}
         {...theme.dataTable.resize}
       />
@@ -93,6 +94,7 @@ const Resizer = ({ onResize, property }) => {
       <InteractionBox
         active={active}
         flex={false}
+        // TO DO theme object?
         pad={{ left: 'xsmall' }}
         ref={ref}
         responsive={false}
@@ -100,6 +102,7 @@ const Resizer = ({ onResize, property }) => {
         onMouseMove={start !== undefined ? onMouseMove : undefined}
         onMouseUp={start !== undefined ? onMouseUp : undefined}
       >
+        {/* TO DO theme object */}
         <Box pad={{ vertical: 'small' }} border={border} />
       </InteractionBox>
     </Stack>
