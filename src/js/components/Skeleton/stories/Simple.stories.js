@@ -6,9 +6,7 @@ const HeadingExample = () => (
   <Box gap="small">
     <Heading level={2}>Heading</Heading>
     <Box skeleton>
-      <Heading aria-label="loading heading" level={2}>
-        Heading
-      </Heading>
+      <Heading level={2}>Heading</Heading>
     </Box>
   </Box>
 );
