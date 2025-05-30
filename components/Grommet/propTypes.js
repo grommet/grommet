@@ -149,6 +149,9 @@ if (process.env.NODE_ENV !== 'production') {
             plural: _propTypes["default"].string
           })
         }),
+        notifcation: _propTypes["default"].shape({
+          close: _propTypes["default"].string
+        }),
         pagination: _propTypes["default"].shape({
           stepLabel: _propTypes["default"].string,
           summary: _propTypes["default"].string,

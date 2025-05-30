@@ -10,10 +10,11 @@ var _Button = require("../Button");
 var _Layer = require("../Layer");
 var _Paragraph = require("../Paragraph");
 var _Text = require("../Text");
+var _MessageContext = require("../../contexts/MessageContext");
 var _propTypes = require("./propTypes");
 var _useThemeValue2 = require("../../utils/useThemeValue");
 var _excluded = ["fill", "direction"],
-  _excluded2 = ["actions", "message", "onClose", "id", "global", "status", "title", "toast", "icon", "time"];
+  _excluded2 = ["actions", "message", "messages", "onClose", "id", "global", "status", "title", "toast", "icon", "time"];
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
 function _interopRequireWildcard(e, t) { if ("function" == typeof WeakMap) var r = new WeakMap(), n = new WeakMap(); return (_interopRequireWildcard = function _interopRequireWildcard(e, t) { if (!t && e && e.__esModule) return e; var o, i, f = { __proto__: null, "default": e }; if (null === e || "object" != typeof e && "function" != typeof e) return f; if (o = t ? n : r) { if (o.has(e)) return o.get(e); o.set(e, f); } for (var _t in e) "default" !== _t && {}.hasOwnProperty.call(e, _t) && ((i = (o = Object.defineProperty) && Object.getOwnPropertyDescriptor(e, _t)) && (i.get || i.set) ? o(f, _t, i) : f[_t] = e[_t]); return f; })(e, t); }
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
@@ -74,6 +75,7 @@ var Notification = exports.Notification = function Notification(_ref2) {
   var _theme$notification6, _theme$notification7, _theme$notification8, _theme$notification9, _theme$notification0;
   var actionsProp = _ref2.actions,
     messageProp = _ref2.message,
+    messages = _ref2.messages,
     onClose = _ref2.onClose,
     id = _ref2.id,
     global = _ref2.global,
@@ -91,6 +93,8 @@ var Notification = exports.Notification = function Notification(_ref2) {
   var _useState = (0, _react.useState)(true),
     visible = _useState[0],
     setVisible = _useState[1];
+  var _useContext = (0, _react.useContext)(_MessageContext.MessageContext),
+    format = _useContext.format;
   var position = (0, _react.useMemo)(function () {
     return toast && (toast == null ? void 0 : toast.position) || 'top';
   }, [toast]);
@@ -188,6 +192,10 @@ var Notification = exports.Notification = function Notification(_ref2) {
   _react["default"].createElement(_Box.Box, {
     pad: closeButtonPad
   }, /*#__PURE__*/_react["default"].createElement(_Box.Box, theme.notification.textContainer, /*#__PURE__*/_react["default"].createElement(_Button.Button, {
+    a11yTitle: format({
+      id: 'notification.close',
+      messages: messages
+    }),
     icon: /*#__PURE__*/_react["default"].createElement(CloseIcon, {
       color: closeIconColor,
       height: iconDimension,

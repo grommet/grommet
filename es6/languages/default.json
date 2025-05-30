@@ -126,6 +126,9 @@
       "plural": "Semicircle meter with values {meterValue} out of {max}"
     }
   },
+  "notification": {
+    "close": "Dismiss notification"
+  },
   "pagination": {
     "stepLabel": "Items per page",
     "summary": "Showing {start}-{end} of {total}",

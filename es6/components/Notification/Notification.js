@@ -1,8 +1,8 @@
 var _excluded = ["fill", "direction"],
-  _excluded2 = ["actions", "message", "onClose", "id", "global", "status", "title", "toast", "icon", "time"];
+  _excluded2 = ["actions", "message", "messages", "onClose", "id", "global", "status", "title", "toast", "icon", "time"];
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (-1 !== e.indexOf(n)) continue; t[n] = r[n]; } return t; }
-import React, { useCallback, useEffect, useState, useMemo, Fragment } from 'react';
+import React, { useCallback, useEffect, useState, useMemo, Fragment, useContext } from 'react';
 import styled from 'styled-components';
 import { Anchor } from '../Anchor';
 import { Box } from '../Box';
@@ -10,6 +10,7 @@ import { Button } from '../Button';
 import { Layer } from '../Layer';
 import { Paragraph } from '../Paragraph';
 import { Text } from '../Text';
+import { MessageContext } from '../../contexts/MessageContext';
 import { NotificationType } from './propTypes';
 import { useThemeValue } from '../../utils/useThemeValue';
 var Message = function Message(_ref) {
@@ -68,6 +69,7 @@ var Notification = function Notification(_ref2) {
   var _theme$notification6, _theme$notification7, _theme$notification8, _theme$notification9, _theme$notification0;
   var actionsProp = _ref2.actions,
     messageProp = _ref2.message,
+    messages = _ref2.messages,
     onClose = _ref2.onClose,
     id = _ref2.id,
     global = _ref2.global,
@@ -85,6 +87,8 @@ var Notification = function Notification(_ref2) {
   var _useState = useState(true),
     visible = _useState[0],
     setVisible = _useState[1];
+  var _useContext = useContext(MessageContext),
+    format = _useContext.format;
   var position = useMemo(function () {
     return toast && (toast == null ? void 0 : toast.position) || 'top';
   }, [toast]);
@@ -182,6 +186,10 @@ var Notification = function Notification(_ref2) {
   React.createElement(Box, {
     pad: closeButtonPad
   }, /*#__PURE__*/React.createElement(Box, theme.notification.textContainer, /*#__PURE__*/React.createElement(Button, {
+    a11yTitle: format({
+      id: 'notification.close',
+      messages: messages
+    }),
     icon: /*#__PURE__*/React.createElement(CloseIcon, {
       color: closeIconColor,
       height: iconDimension,
