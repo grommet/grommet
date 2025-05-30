@@ -50,10 +50,10 @@ const ClearButton = forwardRef(
       a11yTitle: `${buttonLabel}. Or, press ${
         position === 'bottom' ? 'shift tab' : 'down arrow'
       } to move to select options`,
-      fill: 'horizontal',
-      ref,
-      onClick: onClear,
       align,
+      fill: 'horizontal',
+      onClick: onClear,
+      ref,
       ...passThemeFlag,
       ...rest,
     };
@@ -82,15 +82,15 @@ const ClearButton = forwardRef(
     return (
       <StyledButton focusIndicator={false} plain {...buttonProps}>
         {({ hover }) => {
-          const hoverContainerProps = hover
-            ? { ...containerProps, ...containerProps.hover }
-            : containerProps;
-          const cleanProps = { ...hoverContainerProps };
-          delete cleanProps.hover;
-
+          const boxProps = { ...theme.select.clear.container };
+          delete boxProps.hover; // avoid passing hover object to Box
           return (
-            <Box {...cleanProps} align={align}>
-              <Text {...textProps}>{buttonLabel}</Text>
+            <Box
+              {...boxProps}
+              {...(hover ? theme.select.clear?.container?.hover : {})}
+              align={align}
+            >
+              <Text {...theme.select.clear.text}>{buttonLabel}</Text>
             </Box>
           );
         }}
