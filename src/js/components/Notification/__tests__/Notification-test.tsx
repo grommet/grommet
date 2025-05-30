@@ -54,19 +54,20 @@ describe('Notification', () => {
     const user = userEvent.setup();
 
     const onClose = jest.fn();
-    render(
+    const { asFragment } = render(
       <Grommet>
         <Notification title="Title" onClose={onClose} />
       </Grommet>,
     );
 
     await user.click(screen.getByRole('button'));
-    expect(onClose).toBeCalled();
+    expect(onClose).toHaveBeenCalled();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('Grommet messages', () => {
     const onClose = jest.fn();
-    render(
+    const { asFragment } = render(
       <Grommet
         messages={{
           messages: { notification: { close: 'Clear notification' } },
@@ -79,11 +80,12 @@ describe('Notification', () => {
     expect(
       screen.getByRole('button', { name: 'Clear notification' }),
     ).toBeInTheDocument();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('messages prop', () => {
     const onClose = jest.fn();
-    render(
+    const { asFragment } = render(
       <Grommet>
         <Notification
           title="Title"
@@ -96,6 +98,7 @@ describe('Notification', () => {
     expect(
       screen.getByRole('button', { name: 'Clear notification' }),
     ).toBeInTheDocument();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   const validPositions: LayerPositionType[] = [
