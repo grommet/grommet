@@ -58,6 +58,7 @@
   "dataTableColumns": {
     "open": "Open column selector",
     "order": "Order columns",
+    "pinned": "Column locked, order cannot be changed.",
     "select": "Select columns",
     "tip": "Manage columns"
   },
