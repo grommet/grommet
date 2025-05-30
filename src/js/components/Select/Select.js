@@ -26,6 +26,7 @@ import {
   getIconColor,
   formatValueForA11y,
   inertTrueValue,
+  selectInputId,
 } from './utils';
 import { DefaultSelectTextInput } from './DefaultSelectTextInput';
 import { MessageContext } from '../../contexts/MessageContext';
@@ -363,7 +364,7 @@ const Select = forwardRef(
                   <HiddenInput
                     type="text"
                     name={name}
-                    id={id ? `${id}__input` : undefined}
+                    id={id ? selectInputId(id) : undefined}
                     inert={inertTrueValue}
                     value={inputValue}
                     ref={inputRef}
