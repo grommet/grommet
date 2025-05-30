@@ -517,7 +517,7 @@ exports[`DataTableColumns pinned 1`] = `
           class="c17"
         >
           <svg
-            aria-label="Lock"
+            aria-label="Column locked, order cannot be changed."
             class="c18"
             viewBox="0 0 24 24"
           >

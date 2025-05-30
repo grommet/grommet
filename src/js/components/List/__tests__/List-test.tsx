@@ -305,6 +305,61 @@ describe('List', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
+  test('grommet messages', () => {
+    const onOrder = jest.fn();
+    const TestApp = () => {
+      const [ordered, setOrdered] = useState([
+        { city: 'Fort Collins', state: 'Colorado' },
+        { city: 'Boise', state: 'Idaho' },
+        { city: 'New Orleans', state: 'Louisiana' },
+      ]);
+      return (
+        <Grommet messages={{ messages: { list: { pinned: 'Item locked.' } } }}>
+          <List
+            data={ordered}
+            itemKey={(item) => item.state}
+            onOrder={(items) => {
+              onOrder(items);
+              setOrdered(items);
+            }}
+            pinned={['Idaho']}
+          />
+        </Grommet>
+      );
+    };
+    const { asFragment } = render(<TestApp />);
+    expect(asFragment()).toMatchSnapshot();
+    expect(screen.getByLabelText('Item locked.')).toBeInTheDocument();
+  });
+
+  test('prop messages', () => {
+    const onOrder = jest.fn();
+    const TestApp = () => {
+      const [ordered, setOrdered] = useState([
+        { city: 'Fort Collins', state: 'Colorado' },
+        { city: 'Boise', state: 'Idaho' },
+        { city: 'New Orleans', state: 'Louisiana' },
+      ]);
+      return (
+        <Grommet>
+          <List
+            data={ordered}
+            itemKey={(item) => item.state}
+            onOrder={(items) => {
+              onOrder(items);
+              setOrdered(items);
+            }}
+            messages={{ pinned: 'Item locked.' }}
+            pinned={['Idaho']}
+          />
+        </Grommet>
+      );
+    };
+    const { asFragment } = render(<TestApp />);
+    expect(asFragment()).toMatchSnapshot();
+    expect(screen.getByLabelText('Item locked.')).toBeInTheDocument();
+  });
+
   test('renders custom theme for primaryKey', () => {
     const theme = {
       list: {
@@ -1079,7 +1134,7 @@ describe('List pinned', () => {
     );
     const numberStyle = window.getComputedStyle(screen.getByText('2'));
     const iconStyle = window.getComputedStyle(
-      screen.getAllByLabelText('Lock')[0],
+      screen.getAllByLabelText('Item pinned, order cannot be changed.')[0],
     );
     expect(locationStyle.color).toBe(pinnedObject.color);
     expect(numberStyle.color).toBe(pinnedObject.color);
@@ -1108,7 +1163,7 @@ describe('List pinned', () => {
     );
     const numberStyle = window.getComputedStyle(screen.getByText('2'));
     const iconStyle = window.getComputedStyle(
-      screen.getAllByLabelText('Lock')[0],
+      screen.getAllByLabelText('Item pinned, order cannot be changed.')[0],
     );
     expect(locationStyle.color).toBe(pinnedObject.color);
     expect(numberStyle.color).toBe(pinnedObject.color);
@@ -1193,7 +1248,7 @@ describe('List pinned', () => {
 
     expect(asFragment()).toMatchSnapshot();
     const iconStyle = window.getComputedStyle(
-      screen.getAllByLabelText('Lock')[0],
+      screen.getAllByLabelText('Item pinned, order cannot be changed.')[0],
     );
     expect(iconStyle.stroke).toBe('pink');
     expect(iconStyle.fill).toBe('pink');

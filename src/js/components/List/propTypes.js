@@ -67,6 +67,9 @@ if (process.env.NODE_ENV !== 'production') {
     showIndex: PropTypes.bool,
     itemKey: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
     itemProps: PropTypes.shape({}),
+    messages: PropTypes.shape({
+      pinned: PropTypes.string,
+    }),
     onActive: PropTypes.func,
     onClickItem: PropTypes.func,
     onMore: PropTypes.func,

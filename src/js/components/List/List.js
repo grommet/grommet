@@ -13,6 +13,7 @@ import { Box } from '../Box';
 import { Button } from '../Button';
 import { InfiniteScroll } from '../InfiniteScroll';
 import { Keyboard } from '../Keyboard';
+import { MessageContext } from '../../contexts/MessageContext';
 import { Pagination } from '../Pagination';
 import { Text } from '../Text';
 import {
@@ -140,6 +141,7 @@ const List = React.forwardRef(
       focus,
       itemKey: defaultItemKey,
       itemProps,
+      messages,
       onActive,
       onClickItem,
       onKeyDown,
@@ -161,6 +163,7 @@ const List = React.forwardRef(
     const { theme, passThemeFlag } = useThemeValue();
     const { data: contextData } = useContext(DataContext);
     const data = dataProp || contextData || emptyData;
+    const { format } = useContext(MessageContext);
 
     // fixes issue where itemKey is undefined when only primaryKey is provided
     const itemKey = defaultItemKey || primaryKey || null;
@@ -722,6 +725,10 @@ const List = React.forwardRef(
                     ...(!pinIcon.props?.color && pinnedColor
                       ? { color: pinnedColor }
                       : {}),
+                    a11yTitle: format({
+                      id: 'list.pinned',
+                      messages,
+                    }),
                     size: pinSize,
                   });
 

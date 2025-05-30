@@ -120,6 +120,9 @@ export interface GrommetProps {
           };
         };
       };
+      list?: {
+        pinned?: string;
+      };
       menu?: {
         openMenu?: string;
         closeMenu?: string;
