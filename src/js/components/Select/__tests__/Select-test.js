@@ -943,7 +943,9 @@ describe('Select', () => {
     const customTheme = {
       select: {
         clear: {
+          text: undefined,
           button: {
+            color: 'red',
             border: {
               radius: 'small',
             },
@@ -993,6 +995,8 @@ describe('Select', () => {
     });
 
     expect(clearButton).toBeInTheDocument();
+
+    expect(clearButton).toHaveStyleRule('color', 'red');
 
     // Move focus manually
     act(() => {
