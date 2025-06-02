@@ -80,6 +80,7 @@ export interface GrommetProps {
       dataTableColumns?: {
         open?: string;
         order?: string;
+        pinned?: string;
         select?: string;
         tip?: string;
       };
