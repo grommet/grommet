@@ -60,7 +60,9 @@
     "order": "Order columns",
     "pinned": "Column locked, order cannot be changed.",
     "select": "Select columns",
-    "tip": "Manage columns"
+    "tip": "Manage columns",
+    "selectAria": "Select which columns to show in the data table",
+    "orderAria": "Reorder the visible columns in the data table"
   },
   "dataTableGroupBy": {
     "clear": "Clear group",

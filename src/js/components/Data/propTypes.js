@@ -59,6 +59,8 @@ if (process.env.NODE_ENV !== 'production') {
         pinned: PropTypes.string,
         select: PropTypes.string,
         tip: PropTypes.string,
+        selectAria: PropTypes.string,
+        orderAria: PropTypes.string,
       }),
       dataTableGroupBy: PropTypes.shape({
         clear: PropTypes.string,
