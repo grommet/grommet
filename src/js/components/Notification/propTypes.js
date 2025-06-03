@@ -9,6 +9,9 @@ if (process.env.NODE_ENV !== 'production') {
     global: PropTypes.bool,
     title: PropTypes.string,
     message: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
+    messages: PropTypes.shape({
+      close: PropTypes.string,
+    }),
     status: PropTypes.oneOf([
       'critical',
       'warning',

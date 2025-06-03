@@ -40,19 +40,9 @@ export const Custom = () => {
           onClick={() => setSkeleton(!skeleton)}
         />
         <Box gap="small" pad="small" align="start" skeleton={skeleton}>
-          <Heading
-            aria-label={skeleton ? 'heading 1 loading' : undefined}
-            level={1}
-          >
-            Heading 1
-          </Heading>
+          <Heading level={1}>Heading 1</Heading>
           <Text>text</Text>
-          <Heading
-            aria-label={skeleton ? 'heading 2 loading' : undefined}
-            level={2}
-          >
-            Heading 2
-          </Heading>
+          <Heading level={2}>Heading 2</Heading>
           <Button alignSelf="end" label="button" />
           <Text>text</Text>
         </Box>

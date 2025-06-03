@@ -145,6 +145,9 @@ if (process.env.NODE_ENV !== 'production') {
             plural: PropTypes.string,
           }),
         }),
+        notifcation: PropTypes.shape({
+          close: PropTypes.string,
+        }),
         pagination: PropTypes.shape({
           stepLabel: PropTypes.string,
           summary: PropTypes.string,
