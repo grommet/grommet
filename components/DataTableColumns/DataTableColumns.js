@@ -141,6 +141,10 @@ var Content = function Content(_ref) {
     title: format({
       id: 'dataTableColumns.select',
       messages: messages == null ? void 0 : messages.dataTableColumns
+    }),
+    "aria-label": format({
+      id: 'dataTableColumns.selectAria',
+      messages: messages == null ? void 0 : messages.dataTableColumns
     })
   }, /*#__PURE__*/_react["default"].createElement(_Box.Box, {
     pad: {
@@ -169,6 +173,10 @@ var Content = function Content(_ref) {
     }
   }))), /*#__PURE__*/_react["default"].createElement(_Tab.Tab, {
     id: dataId + "--order-columns-tab",
+    "aria-label": format({
+      id: 'dataTableColumns.orderAria',
+      messages: messages == null ? void 0 : messages.dataTableColumns
+    }),
     title: format({
       id: 'dataTableColumns.order',
       messages: messages == null ? void 0 : messages.dataTableColumns

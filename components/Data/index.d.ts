@@ -105,6 +105,8 @@ export interface DataProps {
       pinned?: string;
       select?: string;
       tip?: string;
+      orderAria?: string;
+      selectAria?: string;
     };
     dataTableGroupBy?: {
       clear?: string;

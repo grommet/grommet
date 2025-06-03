@@ -89,7 +89,9 @@ if (process.env.NODE_ENV !== 'production') {
           order: _propTypes["default"].string,
           pinned: _propTypes["default"].string,
           select: _propTypes["default"].string,
-          tip: _propTypes["default"].string
+          tip: _propTypes["default"].string,
+          selectAria: _propTypes["default"].string,
+          orderAria: _propTypes["default"].string
         }),
         dataTableGroupBy: _propTypes["default"].shape({
           clear: _propTypes["default"].string,
