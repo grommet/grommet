@@ -947,7 +947,7 @@ describe('Select', () => {
           button: {
             color: 'red',
             border: {
-              radius: 'small',
+              radius: '10px',
             },
             pad: {
               vertical: 'xsmall',
