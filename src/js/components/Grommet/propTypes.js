@@ -79,6 +79,7 @@ if (process.env.NODE_ENV !== 'production') {
         dataTableColumns: PropTypes.shape({
           open: PropTypes.string,
           order: PropTypes.string,
+          pinned: PropTypes.string,
           select: PropTypes.string,
           tip: PropTypes.string,
         }),
@@ -118,6 +119,9 @@ if (process.env.NODE_ENV !== 'production') {
               plural: PropTypes.string,
             }),
           }),
+        }),
+        list: PropTypes.shape({
+          pinned: PropTypes.string,
         }),
         menu: PropTypes.shape({
           openMenu: PropTypes.string,

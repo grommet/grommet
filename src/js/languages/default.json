@@ -58,6 +58,7 @@
   "dataTableColumns": {
     "open": "Open column selector",
     "order": "Order columns",
+    "pinned": "Column locked, order cannot be changed.",
     "select": "Select columns",
     "tip": "Manage columns"
   },
@@ -103,6 +104,9 @@
       "prompt": "Copy to clipboard",
       "validation": "Copied"
     }
+  },
+  "list": {
+    "pinned": "Item pinned, order cannot be changed."
   },
   "menu": {
     "openMenu": "Open Menu",
