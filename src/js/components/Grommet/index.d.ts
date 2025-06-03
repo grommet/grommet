@@ -80,6 +80,7 @@ export interface GrommetProps {
       dataTableColumns?: {
         open?: string;
         order?: string;
+        pinned?: string;
         select?: string;
         tip?: string;
         orderAria?: string;
@@ -122,6 +123,9 @@ export interface GrommetProps {
           };
         };
       };
+      list?: {
+        pinned?: string;
+      };
       menu?: {
         openMenu?: string;
         closeMenu?: string;
@@ -143,6 +147,9 @@ export interface GrommetProps {
           singular?: string;
           plural?: string;
         };
+      };
+      notification?: {
+        close?: string;
       };
       pagination?: {
         stepLabel?: string;

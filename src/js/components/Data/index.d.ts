@@ -102,6 +102,7 @@ export interface DataProps {
     dataTableColumns?: {
       open?: string;
       order?: string;
+      pinned?: string;
       select?: string;
       tip?: string;
       orderAria?: string;

@@ -160,6 +160,12 @@ const Content = ({ drop, options = [], ...rest }) => {
                 (v) =>
                   (objectOptions && options.find((o) => o.property === v)) || v,
               )}
+              messages={{
+                pinned: format({
+                  id: 'dataTableColumns.pinned',
+                  messages: messages?.dataTableColumns,
+                }),
+              }}
               onOrder={(nextData) => setValue(optionsToValue(nextData))}
               pad="none"
               primaryKey={(objectOptions && 'label') || undefined}

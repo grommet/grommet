@@ -11,6 +11,7 @@ import { Select } from '../Select';
 import { MessageContext } from '../../contexts/MessageContext';
 import { DataSortPropTypes } from './propTypes';
 import { useThemeValue } from '../../utils/useThemeValue';
+import { selectInputId } from '../Select/utils';
 
 const dropProps = {
   align: { top: 'bottom', left: 'left' },
@@ -71,7 +72,7 @@ const Content = ({ options: optionsArg }) => {
   return [
     <FormField
       key="by"
-      htmlFor={sortPropertyId}
+      htmlFor={selectInputId(sortPropertyId)}
       label={format({
         id: 'dataSort.by',
         messages: messages?.dataSort,
