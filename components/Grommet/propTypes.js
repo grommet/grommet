@@ -87,6 +87,7 @@ if (process.env.NODE_ENV !== 'production') {
         dataTableColumns: _propTypes["default"].shape({
           open: _propTypes["default"].string,
           order: _propTypes["default"].string,
+          pinned: _propTypes["default"].string,
           select: _propTypes["default"].string,
           tip: _propTypes["default"].string
         }),
@@ -126,6 +127,9 @@ if (process.env.NODE_ENV !== 'production') {
               plural: _propTypes["default"].string
             })
           })
+        }),
+        list: _propTypes["default"].shape({
+          pinned: _propTypes["default"].string
         }),
         menu: _propTypes["default"].shape({
           openMenu: _propTypes["default"].string,

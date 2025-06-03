@@ -1,4 +1,4 @@
-var _excluded = ["a11yTitle", "aria-label", "action", "as", "background", "border", "children", "data", "defaultItemProps", "disabled", "focus", "itemKey", "itemProps", "onActive", "onClickItem", "onKeyDown", "onMore", "onOrder", "showIndex", "pad", "paginate", "pinned", "primaryKey", "secondaryKey", "show", "step"];
+var _excluded = ["a11yTitle", "aria-label", "action", "as", "background", "border", "children", "data", "defaultItemProps", "disabled", "focus", "itemKey", "itemProps", "messages", "onActive", "onClickItem", "onKeyDown", "onMore", "onOrder", "showIndex", "pad", "paginate", "pinned", "primaryKey", "secondaryKey", "show", "step"];
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (-1 !== e.indexOf(n)) continue; t[n] = r[n]; } return t; }
 import React, { Fragment, cloneElement, useContext, useMemo, useRef, useState } from 'react';
@@ -8,6 +8,7 @@ import { Box } from '../Box';
 import { Button } from '../Button';
 import { InfiniteScroll } from '../InfiniteScroll';
 import { Keyboard } from '../Keyboard';
+import { MessageContext } from '../../contexts/MessageContext';
 import { Pagination } from '../Pagination';
 import { Text } from '../Text';
 import { focusStyle, genericStyles, normalizeColor, normalizeShow, unfocusStyle, useForwardedRef, usePagination, styledComponentsConfig } from '../../utils';
@@ -110,6 +111,7 @@ var List = /*#__PURE__*/React.forwardRef(function (_ref, ref) {
     focus = _ref.focus,
     defaultItemKey = _ref.itemKey,
     itemProps = _ref.itemProps,
+    messages = _ref.messages,
     onActive = _ref.onActive,
     onClickItem = _ref.onClickItem,
     onKeyDown = _ref.onKeyDown,
@@ -134,6 +136,8 @@ var List = /*#__PURE__*/React.forwardRef(function (_ref, ref) {
   var _useContext = useContext(DataContext),
     contextData = _useContext.data;
   var data = dataProp || contextData || emptyData;
+  var _useContext2 = useContext(MessageContext),
+    format = _useContext2.format;
 
   // fixes issue where itemKey is undefined when only primaryKey is provided
   var itemKey = defaultItemKey || primaryKey || null;
@@ -602,6 +606,10 @@ var List = /*#__PURE__*/React.forwardRef(function (_ref, ref) {
       pinIcon = /*#__PURE__*/cloneElement(pinIcon, _extends({}, !((_pinIcon$props = pinIcon.props) != null && _pinIcon$props.color) && pinnedColor ? {
         color: pinnedColor
       } : {}, {
+        a11yTitle: format({
+          id: 'list.pinned',
+          messages: messages
+        }),
         size: pinSize
       }));
       boxProps = {

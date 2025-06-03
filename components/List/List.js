@@ -9,13 +9,14 @@ var _Box = require("../Box");
 var _Button = require("../Button");
 var _InfiniteScroll = require("../InfiniteScroll");
 var _Keyboard = require("../Keyboard");
+var _MessageContext = require("../../contexts/MessageContext");
 var _Pagination = require("../Pagination");
 var _Text = require("../Text");
 var _utils = require("../../utils");
 var _AnalyticsContext = require("../../contexts/AnalyticsContext");
 var _propTypes = require("./propTypes");
 var _useThemeValue2 = require("../../utils/useThemeValue");
-var _excluded = ["a11yTitle", "aria-label", "action", "as", "background", "border", "children", "data", "defaultItemProps", "disabled", "focus", "itemKey", "itemProps", "onActive", "onClickItem", "onKeyDown", "onMore", "onOrder", "showIndex", "pad", "paginate", "pinned", "primaryKey", "secondaryKey", "show", "step"];
+var _excluded = ["a11yTitle", "aria-label", "action", "as", "background", "border", "children", "data", "defaultItemProps", "disabled", "focus", "itemKey", "itemProps", "messages", "onActive", "onClickItem", "onKeyDown", "onMore", "onOrder", "showIndex", "pad", "paginate", "pinned", "primaryKey", "secondaryKey", "show", "step"];
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
 function _interopRequireWildcard(e, t) { if ("function" == typeof WeakMap) var r = new WeakMap(), n = new WeakMap(); return (_interopRequireWildcard = function _interopRequireWildcard(e, t) { if (!t && e && e.__esModule) return e; var o, i, f = { __proto__: null, "default": e }; if (null === e || "object" != typeof e && "function" != typeof e) return f; if (o = t ? n : r) { if (o.has(e)) return o.get(e); o.set(e, f); } for (var _t in e) "default" !== _t && {}.hasOwnProperty.call(e, _t) && ((i = (o = Object.defineProperty) && Object.getOwnPropertyDescriptor(e, _t)) && (i.get || i.set) ? o(f, _t, i) : f[_t] = e[_t]); return f; })(e, t); }
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
@@ -116,6 +117,7 @@ var List = exports.List = /*#__PURE__*/_react["default"].forwardRef(function (_r
     focus = _ref.focus,
     defaultItemKey = _ref.itemKey,
     itemProps = _ref.itemProps,
+    messages = _ref.messages,
     onActive = _ref.onActive,
     onClickItem = _ref.onClickItem,
     onKeyDown = _ref.onKeyDown,
@@ -140,6 +142,8 @@ var List = exports.List = /*#__PURE__*/_react["default"].forwardRef(function (_r
   var _useContext = (0, _react.useContext)(_DataContext.DataContext),
     contextData = _useContext.data;
   var data = dataProp || contextData || emptyData;
+  var _useContext2 = (0, _react.useContext)(_MessageContext.MessageContext),
+    format = _useContext2.format;
 
   // fixes issue where itemKey is undefined when only primaryKey is provided
   var itemKey = defaultItemKey || primaryKey || null;
@@ -608,6 +612,10 @@ var List = exports.List = /*#__PURE__*/_react["default"].forwardRef(function (_r
       pinIcon = /*#__PURE__*/(0, _react.cloneElement)(pinIcon, _extends({}, !((_pinIcon$props = pinIcon.props) != null && _pinIcon$props.color) && pinnedColor ? {
         color: pinnedColor
       } : {}, {
+        a11yTitle: format({
+          id: 'list.pinned',
+          messages: messages
+        }),
         size: pinSize
       }));
       boxProps = {

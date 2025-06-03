@@ -56,6 +56,7 @@ if (process.env.NODE_ENV !== 'production') {
       dataTableColumns: _propTypes["default"].shape({
         open: _propTypes["default"].string,
         order: _propTypes["default"].string,
+        pinned: _propTypes["default"].string,
         select: _propTypes["default"].string,
         tip: _propTypes["default"].string
       }),

@@ -187,6 +187,12 @@ var Content = function Content(_ref) {
         return o.property === v;
       }) || v;
     }),
+    messages: {
+      pinned: format({
+        id: 'dataTableColumns.pinned',
+        messages: messages == null ? void 0 : messages.dataTableColumns
+      })
+    },
     onOrder: function onOrder(nextData) {
       return setValue(optionsToValue(nextData));
     },

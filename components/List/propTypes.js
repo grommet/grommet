@@ -35,6 +35,9 @@ if (process.env.NODE_ENV !== 'production') {
     showIndex: _propTypes["default"].bool,
     itemKey: _propTypes["default"].oneOfType([_propTypes["default"].string, _propTypes["default"].func]),
     itemProps: _propTypes["default"].shape({}),
+    messages: _propTypes["default"].shape({
+      pinned: _propTypes["default"].string
+    }),
     onActive: _propTypes["default"].func,
     onClickItem: _propTypes["default"].func,
     onMore: _propTypes["default"].func,
