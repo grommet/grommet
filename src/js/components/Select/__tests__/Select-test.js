@@ -1003,6 +1003,7 @@ describe('Select', () => {
       clearButton.focus();
     });
     expect(clearButton).toHaveFocus();
+    expect(clearButton).toHaveStyleRule('color', 'red');
 
     // Style assertion (optional but included)
     expect(clearButton).toHaveStyleRule('box-shadow', '0 0 2px 2px #6FFFB0', {

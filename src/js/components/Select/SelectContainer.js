@@ -63,7 +63,7 @@ const ClearButton = forwardRef(
 
       return (
         <Box flex="grow" {...containerProps}>
-          <StyledButton
+          <Button
             kind={buttonKind}
             label={
               textProps ? (
