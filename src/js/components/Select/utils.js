@@ -140,3 +140,11 @@ export const formatValueForA11y = (value, labelKey) => {
 // used to determine the react version because it is only available
 // in react 19 and above.
 export const inertTrueValue = React.use ? true : '';
+
+// Grommet manipulates the provided id by appending "__input" for
+// the id places on the DOM input. In order to properly associate
+// form label htmlFor with select input, we handle appending this
+// to htmlFor for internal components like DataSort and DataFilter.
+// Caller is responsible for appending this on their Select or
+// SelectMultiple instances.
+export const selectInputId = (id) => `${id}__input`;

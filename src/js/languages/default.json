@@ -58,8 +58,11 @@
   "dataTableColumns": {
     "open": "Open column selector",
     "order": "Order columns",
+    "pinned": "Column locked, order cannot be changed.",
     "select": "Select columns",
-    "tip": "Manage columns"
+    "tip": "Manage columns",
+    "selectAria": "Select which columns to show in the data table",
+    "orderAria": "Reorder the visible columns in the data table"
   },
   "dataTableGroupBy": {
     "clear": "Clear group",
@@ -104,6 +107,9 @@
       "validation": "Copied"
     }
   },
+  "list": {
+    "pinned": "Item pinned, order cannot be changed."
+  },
   "menu": {
     "openMenu": "Open Menu",
     "closeMenu": "Close Menu"
@@ -125,6 +131,9 @@
       "singular": "Semicircle meter with value {meterValue} out of {max}",
       "plural": "Semicircle meter with values {meterValue} out of {max}"
     }
+  },
+  "notification": {
+    "close": "Dismiss notification"
   },
   "pagination": {
     "stepLabel": "Items per page",
