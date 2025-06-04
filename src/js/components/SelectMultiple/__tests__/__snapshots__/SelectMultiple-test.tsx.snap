@@ -1020,14 +1020,6 @@ exports[`SelectMultiple keyboard interactions 1`] = `
 
 }
 
-@media only screen and (max-width: 768px) {
-
-}
-
-@media only screen and (max-width: 768px) {
-
-}
-
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
 
 }
@@ -1045,7 +1037,7 @@ exports[`SelectMultiple keyboard interactions 1`] = `
     <button
       aria-expanded="true"
       aria-haspopup="listbox"
-      aria-label="Open drop. 2 selected"
+      aria-label="Open drop. 0 selected"
       class="c2 c3"
       tabindex="0"
       type="button"
@@ -1066,7 +1058,7 @@ exports[`SelectMultiple keyboard interactions 1`] = `
               readonly=""
               tabindex="-1"
               type="text"
-              value="2 selected"
+              value=""
             />
           </div>
         </div>
@@ -6557,7 +6549,7 @@ exports[`SelectMultiple with portal renders custom listbox styling 1`] = `
       aria-multiselectable="true"
       class="c8"
       role="listbox"
-      tabindex="0"
+      tabindex="-1"
     >
       <button
         aria-label="morning not selected"
@@ -6567,7 +6559,7 @@ exports[`SelectMultiple with portal renders custom listbox styling 1`] = `
         class="c9 c10"
         id="option0"
         role="option"
-        tabindex="-1"
+        tabindex="0"
         type="button"
       >
         <label
