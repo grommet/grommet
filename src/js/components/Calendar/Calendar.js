@@ -137,7 +137,7 @@ const getReference = (reference, value, activeDate) => {
   if (value) {
     if (Array.isArray(value)) {
       if (value[0] instanceof Date) {
-        // if we just selected an end date, active date will be 'end'
+        // if we just selected an end date, active date will be 'start'
         // and we should set the reference to the end date
         if (activeDate === 'start' && value[1] instanceof Date) {
           [, nextReference] = value;
@@ -145,7 +145,7 @@ const getReference = (reference, value, activeDate) => {
           [nextReference] = value;
         }
       } else if (Array.isArray(value[0])) {
-        // if we just selected an end date, active date will be 'end'
+        // if we just selected an end date, active date will be 'start'
         // and we should set the reference to the end date
         if (activeDate === 'start' && value[0][1]) {
           // eslint-disable-next-line prefer-destructuring
