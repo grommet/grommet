@@ -23,6 +23,7 @@ var StyledButton = styled(Button).withConfig({
   return getHoverIndicatorStyle('background', props.theme);
 });
 var ClearButton = /*#__PURE__*/forwardRef(function (_ref, ref) {
+  var _theme$select$clear, _theme$select$clear2, _theme$select$clear3;
   var clear = _ref.clear,
     onClear = _ref.onClear,
     name = _ref.name,
@@ -34,19 +35,37 @@ var ClearButton = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var buttonLabel = label || "Clear " + (name || 'selection');
   var _useThemeValue = useThemeValue(),
     passThemeFlag = _useThemeValue.passThemeFlag;
-  return /*#__PURE__*/React.createElement(StyledButton, _extends({
+  var buttonKind = (_theme$select$clear = theme.select.clear) == null ? void 0 : _theme$select$clear.button;
+  var containerProps = ((_theme$select$clear2 = theme.select.clear) == null ? void 0 : _theme$select$clear2.container) || {};
+  var textProps = ((_theme$select$clear3 = theme.select.clear) == null ? void 0 : _theme$select$clear3.text) || {};
+  var buttonProps = _extends({
     a11yTitle: buttonLabel + ". Or, press " + (position === 'bottom' ? 'shift tab' : 'down arrow') + " to move to select options",
-    fill: "horizontal",
-    ref: ref,
+    align: align,
+    fill: 'horizontal',
     onClick: onClear,
+    ref: ref
+  }, passThemeFlag, rest);
+  if (buttonKind) {
+    // new structure when `theme.select.clear.button` is defined
+
+    return /*#__PURE__*/React.createElement(Box, _extends({
+      flex: "grow"
+    }, containerProps), /*#__PURE__*/React.createElement(Button, _extends({
+      kind: buttonKind,
+      label: textProps ? /*#__PURE__*/React.createElement(Text, textProps, buttonLabel) : buttonLabel
+    }, buttonProps)));
+  }
+
+  // default structure when `theme.select.clear.button` is not defined
+  return /*#__PURE__*/React.createElement(StyledButton, _extends({
     focusIndicator: false,
     plain: true
-  }, passThemeFlag, rest), function (_ref2) {
-    var _theme$select$clear;
+  }, buttonProps), function (_ref2) {
+    var _theme$select$clear4;
     var hover = _ref2.hover;
     var boxProps = _extends({}, theme.select.clear.container);
     delete boxProps.hover; // avoid passing hover object to Box
-    return /*#__PURE__*/React.createElement(Box, _extends({}, boxProps, hover ? (_theme$select$clear = theme.select.clear) == null || (_theme$select$clear = _theme$select$clear.container) == null ? void 0 : _theme$select$clear.hover : {}, {
+    return /*#__PURE__*/React.createElement(Box, _extends({}, boxProps, hover ? (_theme$select$clear4 = theme.select.clear) == null || (_theme$select$clear4 = _theme$select$clear4.container) == null ? void 0 : _theme$select$clear4.hover : {}, {
       align: align
     }), /*#__PURE__*/React.createElement(Text, theme.select.clear.text, buttonLabel));
   });
