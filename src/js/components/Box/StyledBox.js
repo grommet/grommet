@@ -391,6 +391,7 @@ const gapGapStyle = (directionProp, gap, responsive, border, theme) => {
   }
 
   if (border === 'between' || (border && border.side === 'between')) {
+    // TO DO theme object?
     const borderSize = border.size || 'xsmall';
     const borderMetric = theme.global.borderSize[borderSize] || borderSize;
     const borderOffset = `${
