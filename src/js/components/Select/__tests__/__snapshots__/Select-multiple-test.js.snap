@@ -973,7 +973,7 @@ exports[`Select Controlled multiple onChange toggle with valueKey reduce 2`] = `
         aria-setsize="2"
         class="c5 c6"
         role="option"
-        tabindex="-1"
+        tabindex="0"
         type="button"
       >
         <div
@@ -2461,7 +2461,7 @@ exports[`Select Controlled multiple onChange without labelKey 4`] = `
         aria-setsize="2"
         class="StyledButton-sc-323bzc-0 brhmKp StyledSelect__SelectOption-sc-znp66n-3 jdCSKT"
         role="option"
-        tabindex="-1"
+        tabindex="0"
         type="button"
       >
         <div
@@ -2534,7 +2534,7 @@ exports[`Select Controlled multiple onChange without labelKey 6`] = `
         aria-setsize="2"
         class="StyledButton-sc-323bzc-0 brhmKp StyledSelect__SelectOption-sc-znp66n-3 jdCSKT"
         role="option"
-        tabindex="-1"
+        tabindex="0"
         type="button"
       >
         <div
@@ -2553,7 +2553,7 @@ exports[`Select Controlled multiple onChange without labelKey 6`] = `
         aria-setsize="2"
         class="StyledButton-sc-323bzc-0 brhmKp StyledSelect__SelectOption-sc-znp66n-3 jdCSKT"
         role="option"
-        tabindex="-1"
+        tabindex="0"
         type="button"
       >
         <div
@@ -3346,7 +3346,7 @@ exports[`Select Controlled multiple onChange without valueKey 4`] = `
         aria-setsize="2"
         class="StyledButton-sc-323bzc-0 brhmKp StyledSelect__SelectOption-sc-znp66n-3 jdCSKT"
         role="option"
-        tabindex="-1"
+        tabindex="0"
         type="button"
       >
         <div
@@ -3419,7 +3419,7 @@ exports[`Select Controlled multiple onChange without valueKey 6`] = `
         aria-setsize="2"
         class="StyledButton-sc-323bzc-0 brhmKp StyledSelect__SelectOption-sc-znp66n-3 jdCSKT"
         role="option"
-        tabindex="-1"
+        tabindex="0"
         type="button"
       >
         <div
@@ -3438,7 +3438,7 @@ exports[`Select Controlled multiple onChange without valueKey 6`] = `
         aria-setsize="2"
         class="StyledButton-sc-323bzc-0 brhmKp StyledSelect__SelectOption-sc-znp66n-3 jdCSKT"
         role="option"
-        tabindex="-1"
+        tabindex="0"
         type="button"
       >
         <div
@@ -5099,7 +5099,7 @@ exports[`Select Controlled multiple values 3`] = `
         aria-setsize="2"
         class="c5 c6"
         role="option"
-        tabindex="-1"
+        tabindex="0"
         type="button"
       >
         <div
@@ -5118,7 +5118,7 @@ exports[`Select Controlled multiple values 3`] = `
         aria-setsize="2"
         class="c5 c6"
         role="option"
-        tabindex="-1"
+        tabindex="0"
         type="button"
       >
         <div
