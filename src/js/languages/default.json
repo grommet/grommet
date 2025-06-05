@@ -84,8 +84,8 @@
     },
     "remove": "remove",
     "removeAll": "remove all",
-    "removeMaxFileSize": "Error - remove file: {fileName} (exceeds max file size) of {maxSize}.",
-    "removeMaxFileCount": "Error - remove file: {fileName}, (maximum number of files) - {maxNumber} exceeded."
+    "removeMaxFileSize": "Remove file: {fileName}. This file is too large. Maximum allowed size is {maxSize}.",
+    "removeMaxFileCount": "Remove file: {fileName}. Too many files uploaded. Maximum allowed is {maxNumber}."
   },
   "form": {
     "invalid": "invalid",
