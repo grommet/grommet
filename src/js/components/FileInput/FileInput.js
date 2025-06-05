@@ -456,9 +456,6 @@ const FileInput = forwardRef(
           {files.length > 0 &&
             files.length <= aggregateThreshold &&
             files.map((file, index) => {
-              console.log(
-                `FileInput: rendering file ${file.name} at index ${index}`,
-              );
               let removeIconA11yTitle = '';
               if (maxSize && file.size > maxSize) {
                 removeIconA11yTitle = format({
@@ -484,7 +481,6 @@ const FileInput = forwardRef(
                   messages,
                 })} file: ${file.name}`;
               }
-              console.log('TITLE', removeIconA11yTitle);
               return (
                 <Box
                   key={file.name}
