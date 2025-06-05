@@ -132,14 +132,27 @@ const normalizeRange = (value, activeDate) => {
   return range;
 };
 
-const getReference = (reference, value) => {
+const getReference = (reference, value, activeDate) => {
   let nextReference;
   if (value) {
     if (Array.isArray(value)) {
       if (value[0] instanceof Date) {
-        [nextReference] = value;
+        // if we just selected an end date, active date will be 'end'
+        // and we should set the reference to the end date
+        if (activeDate === 'start' && value[1] instanceof Date) {
+          [, nextReference] = value;
+        } else {
+          [nextReference] = value;
+        }
       } else if (Array.isArray(value[0])) {
-        nextReference = value[0][0] ? value[0][0] : value[0][1];
+        // if we just selected an end date, active date will be 'end'
+        // and we should set the reference to the end date
+        if (activeDate === 'start' && value[0][1]) {
+          // eslint-disable-next-line prefer-destructuring
+          nextReference = value[0][1];
+        } else {
+          nextReference = value[0][0] ? value[0][0] : value[0][1];
+        }
       } else {
         nextReference = new Date();
         nextReference.setHours(0, 0, 0, 0);
@@ -357,13 +370,15 @@ const Calendar = forwardRef(
     }, [dateProp, datesProp]);
 
     const [reference, setReference] = useState(
-      getReference(normalizeInput(referenceProp), value),
+      getReference(normalizeInput(referenceProp), value, activeDate),
     );
     useEffect(() => {
       if (value) {
-        setReference(getReference(normalizeInput(referenceProp), value));
+        setReference(
+          getReference(normalizeInput(referenceProp), value, activeDate),
+        );
       }
-    }, [referenceProp, value]);
+    }, [referenceProp, value, activeDate]);
 
     const [outputFormat, setOutputFormat] = useState(
       getOutputFormat(dateProp || datesProp),
