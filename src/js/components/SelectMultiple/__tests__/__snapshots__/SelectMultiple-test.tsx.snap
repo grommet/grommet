@@ -1020,6 +1020,14 @@ exports[`SelectMultiple keyboard interactions 1`] = `
 
 }
 
+@media only screen and (max-width: 768px) {
+
+}
+
+@media only screen and (max-width: 768px) {
+
+}
+
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
 
 }
@@ -1029,6 +1037,7 @@ exports[`SelectMultiple keyboard interactions 1`] = `
 }
 
 <div
+  aria-hidden="true"
   class="c0"
 >
   <div
@@ -1037,9 +1046,10 @@ exports[`SelectMultiple keyboard interactions 1`] = `
     <button
       aria-expanded="true"
       aria-haspopup="listbox"
-      aria-label="Open drop. 0 selected"
+      aria-label="Open drop. 2 selected"
       class="c2 c3"
-      tabindex="0"
+      data-g-tabindex="0"
+      tabindex="-1"
       type="button"
     >
       <div
@@ -1054,11 +1064,12 @@ exports[`SelectMultiple keyboard interactions 1`] = `
             <input
               autocomplete="off"
               class="c7 c8"
+              data-g-tabindex="-1"
               inert=""
               readonly=""
               tabindex="-1"
               type="text"
-              value=""
+              value="2 selected"
             />
           </div>
         </div>
