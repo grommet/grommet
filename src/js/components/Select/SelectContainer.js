@@ -460,7 +460,7 @@ const SelectContainer = forwardRef(
                         if (optionRef) optionRef.current = node;
                         if (optionActive) activeRef.current = node;
                       }}
-                      tabIndex={optionSelected ? '0' : '-1'}
+                      tabIndex={usingKeyboard && activeIndex === index ? 0 : -1}
                       role="option"
                       aria-setsize={options.length}
                       aria-posinset={index + 1}

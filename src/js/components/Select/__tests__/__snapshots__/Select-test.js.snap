@@ -535,7 +535,7 @@ exports[`Select Clear option renders - bottom 1`] = `
         aria-setsize="2"
         class="c5 c6"
         role="option"
-        tabindex="0"
+        tabindex="-1"
         type="button"
       >
         <div
@@ -1333,7 +1333,7 @@ exports[`Select Clear option renders- top 1`] = `
         aria-setsize="2"
         class="c9 c10"
         role="option"
-        tabindex="0"
+        tabindex="-1"
         type="button"
       >
         <div
@@ -4189,7 +4189,7 @@ exports[`Select default value clear 1`] = `
         aria-setsize="2"
         class="c13 c14"
         role="option"
-        tabindex="0"
+        tabindex="-1"
         type="button"
       >
         <div
@@ -12649,7 +12649,7 @@ exports[`Select renders custom clear selection styling 2`] = `
         aria-setsize="3"
         class="c13 c14"
         role="option"
-        tabindex="0"
+        tabindex="-1"
         type="button"
       >
         <div
@@ -13182,7 +13182,7 @@ exports[`Select renders custom listbox styling 1`] = `
         aria-setsize="3"
         class="c9 c10"
         role="option"
-        tabindex="0"
+        tabindex="-1"
         type="button"
       >
         <div
@@ -15472,7 +15472,7 @@ exports[`Select search 2`] = `
         aria-setsize="2"
         class="c12 c13"
         role="option"
-        tabindex="0"
+        tabindex="-1"
         type="button"
       >
         <div
