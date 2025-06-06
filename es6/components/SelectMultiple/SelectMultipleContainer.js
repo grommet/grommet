@@ -15,7 +15,6 @@ import { EmptySearchOption } from '../Select/EmptySearchOption';
 import { MessageContext } from '../../contexts/MessageContext';
 import { useThemeValue } from '../../utils/useThemeValue';
 var SelectMultipleContainer = /*#__PURE__*/forwardRef(function (_ref, ref) {
-  var _optionsRef$current;
   var allOptions = _ref.allOptions,
     _ref$children = _ref.children,
     children = _ref$children === void 0 ? null : _ref$children,
@@ -49,6 +48,8 @@ var SelectMultipleContainer = /*#__PURE__*/forwardRef(function (_ref, ref) {
     showSelectedInline = _ref.showSelectedInline;
   var _useThemeValue = useThemeValue(),
     theme = _useThemeValue.theme;
+  // the currently active option based on keyboard navigation
+  // or mouse hover, -1 means no active option
   var _useState = useState(-1),
     activeIndex = _useState[0],
     setActiveIndex = _useState[1];
@@ -62,6 +63,10 @@ var SelectMultipleContainer = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var _useState3 = useState(disabledProp),
     disabled = _useState3[0],
     setDisabled = _useState3[1];
+  // the node of the currently active option, as activeIndex changes
+  // this is updated too and the useEffect below ensures the
+  // active option remains in keyboard focus since we're
+  // following roving tab index pattern
   var activeRef = useRef();
   var _useState4 = useState(),
     showA11yLimit = _useState4[0],
@@ -147,7 +152,10 @@ var SelectMultipleContainer = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var onNextOption = useCallback(function (event) {
     event.preventDefault();
     var nextActiveIndex = activeIndex + 1;
-    if (nextActiveIndex !== (options == null ? void 0 : options.length)) {
+    // checking activeIndex > -1 ensures arrow keys don't
+    // move focus when select all/clear all button or search input
+    // are focused
+    if (nextActiveIndex !== (options == null ? void 0 : options.length) && activeIndex > -1) {
       setActiveIndex(nextActiveIndex);
       setKeyboardNavigation(true);
     }
@@ -155,15 +163,12 @@ var SelectMultipleContainer = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var onPreviousOption = useCallback(function (event) {
     event.preventDefault();
     var nextActiveIndex = activeIndex - 1;
-    if (nextActiveIndex === -1) {
-      var searchInput = searchRef.current;
-      if (searchInput && searchInput.focus) {
-        setActiveIndex(nextActiveIndex);
-        setFocusWithoutScroll(searchInput);
-      }
-    }
-    if (nextActiveIndex >= 0) {
-      setActiveIndex(nextActiveIndex);
+
+    // checking activeIndex > -1 ensures arrow keys don't
+    // move focus when select all/clear all button or search input
+    // are focused
+    if (activeIndex > -1) {
+      setActiveIndex(Math.max(nextActiveIndex, 0));
       setKeyboardNavigation(true);
     }
   }, [activeIndex]);
@@ -321,16 +326,18 @@ var SelectMultipleContainer = /*#__PURE__*/forwardRef(function (_ref, ref) {
       setSearch(nextSearch);
       setActiveIndex(-1);
       onSearch(nextSearch);
+    },
+    onFocus: function onFocus() {
+      return setActiveIndex(-1);
     }
   }))), helpContent, (options == null ? void 0 : options.length) > 0 ? /*#__PURE__*/React.createElement(OptionsContainer, {
     role: "listbox",
-    tabIndex: "0",
+    tabIndex: "-1",
     ref: optionsRef,
     "aria-multiselectable": true,
     onMouseMove: function onMouseMove() {
       return setKeyboardNavigation(false);
     },
-    "aria-activedescendant": optionsRef == null || (_optionsRef$current = optionsRef.current) == null ? void 0 : _optionsRef$current.children[activeIndex],
     selectMultiple: true // internal prop
   }, /*#__PURE__*/React.createElement(InfiniteScroll, {
     items: options,
@@ -436,7 +443,10 @@ var SelectMultipleContainer = /*#__PURE__*/forwardRef(function (_ref, ref) {
         if (optionRef) optionRef.current = node;
         if (optionActive) activeRef.current = node;
       },
-      tabIndex: optionSelected ? '0' : '-1',
+      tabIndex: optionSelected || activeIndex === index ||
+      // when nothing is selected and entering listbox
+      // first option should be focused
+      value.length === 0 && activeIndex === -1 && index === 0 ? '0' : '-1',
       role: "option",
       id: "option" + index,
       "aria-setsize": options.length,

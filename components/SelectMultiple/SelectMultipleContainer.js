@@ -20,7 +20,6 @@ var _useThemeValue2 = require("../../utils/useThemeValue");
 function _interopRequireWildcard(e, t) { if ("function" == typeof WeakMap) var r = new WeakMap(), n = new WeakMap(); return (_interopRequireWildcard = function _interopRequireWildcard(e, t) { if (!t && e && e.__esModule) return e; var o, i, f = { __proto__: null, "default": e }; if (null === e || "object" != typeof e && "function" != typeof e) return f; if (o = t ? n : r) { if (o.has(e)) return o.get(e); o.set(e, f); } for (var _t in e) "default" !== _t && {}.hasOwnProperty.call(e, _t) && ((i = (o = Object.defineProperty) && Object.getOwnPropertyDescriptor(e, _t)) && (i.get || i.set) ? o(f, _t, i) : f[_t] = e[_t]); return f; })(e, t); }
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 var SelectMultipleContainer = exports.SelectMultipleContainer = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
-  var _optionsRef$current;
   var allOptions = _ref.allOptions,
     _ref$children = _ref.children,
     children = _ref$children === void 0 ? null : _ref$children,
@@ -54,6 +53,8 @@ var SelectMultipleContainer = exports.SelectMultipleContainer = /*#__PURE__*/(0,
     showSelectedInline = _ref.showSelectedInline;
   var _useThemeValue = (0, _useThemeValue2.useThemeValue)(),
     theme = _useThemeValue.theme;
+  // the currently active option based on keyboard navigation
+  // or mouse hover, -1 means no active option
   var _useState = (0, _react.useState)(-1),
     activeIndex = _useState[0],
     setActiveIndex = _useState[1];
@@ -67,6 +68,10 @@ var SelectMultipleContainer = exports.SelectMultipleContainer = /*#__PURE__*/(0,
   var _useState3 = (0, _react.useState)(disabledProp),
     disabled = _useState3[0],
     setDisabled = _useState3[1];
+  // the node of the currently active option, as activeIndex changes
+  // this is updated too and the useEffect below ensures the
+  // active option remains in keyboard focus since we're
+  // following roving tab index pattern
   var activeRef = (0, _react.useRef)();
   var _useState4 = (0, _react.useState)(),
     showA11yLimit = _useState4[0],
@@ -152,7 +157,10 @@ var SelectMultipleContainer = exports.SelectMultipleContainer = /*#__PURE__*/(0,
   var onNextOption = (0, _react.useCallback)(function (event) {
     event.preventDefault();
     var nextActiveIndex = activeIndex + 1;
-    if (nextActiveIndex !== (options == null ? void 0 : options.length)) {
+    // checking activeIndex > -1 ensures arrow keys don't
+    // move focus when select all/clear all button or search input
+    // are focused
+    if (nextActiveIndex !== (options == null ? void 0 : options.length) && activeIndex > -1) {
       setActiveIndex(nextActiveIndex);
       setKeyboardNavigation(true);
     }
@@ -160,15 +168,12 @@ var SelectMultipleContainer = exports.SelectMultipleContainer = /*#__PURE__*/(0,
   var onPreviousOption = (0, _react.useCallback)(function (event) {
     event.preventDefault();
     var nextActiveIndex = activeIndex - 1;
-    if (nextActiveIndex === -1) {
-      var searchInput = searchRef.current;
-      if (searchInput && searchInput.focus) {
-        setActiveIndex(nextActiveIndex);
-        (0, _utils.setFocusWithoutScroll)(searchInput);
-      }
-    }
-    if (nextActiveIndex >= 0) {
-      setActiveIndex(nextActiveIndex);
+
+    // checking activeIndex > -1 ensures arrow keys don't
+    // move focus when select all/clear all button or search input
+    // are focused
+    if (activeIndex > -1) {
+      setActiveIndex(Math.max(nextActiveIndex, 0));
       setKeyboardNavigation(true);
     }
   }, [activeIndex]);
@@ -326,16 +331,18 @@ var SelectMultipleContainer = exports.SelectMultipleContainer = /*#__PURE__*/(0,
       setSearch(nextSearch);
       setActiveIndex(-1);
       onSearch(nextSearch);
+    },
+    onFocus: function onFocus() {
+      return setActiveIndex(-1);
     }
   }))), helpContent, (options == null ? void 0 : options.length) > 0 ? /*#__PURE__*/_react["default"].createElement(_StyledSelect.OptionsContainer, {
     role: "listbox",
-    tabIndex: "0",
+    tabIndex: "-1",
     ref: optionsRef,
     "aria-multiselectable": true,
     onMouseMove: function onMouseMove() {
       return setKeyboardNavigation(false);
     },
-    "aria-activedescendant": optionsRef == null || (_optionsRef$current = optionsRef.current) == null ? void 0 : _optionsRef$current.children[activeIndex],
     selectMultiple: true // internal prop
   }, /*#__PURE__*/_react["default"].createElement(_InfiniteScroll.InfiniteScroll, {
     items: options,
@@ -441,7 +448,10 @@ var SelectMultipleContainer = exports.SelectMultipleContainer = /*#__PURE__*/(0,
         if (optionRef) optionRef.current = node;
         if (optionActive) activeRef.current = node;
       },
-      tabIndex: optionSelected ? '0' : '-1',
+      tabIndex: optionSelected || activeIndex === index ||
+      // when nothing is selected and entering listbox
+      // first option should be focused
+      value.length === 0 && activeIndex === -1 && index === 0 ? '0' : '-1',
       role: "option",
       id: "option" + index,
       "aria-setsize": options.length,
