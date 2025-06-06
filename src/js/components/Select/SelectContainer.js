@@ -461,11 +461,16 @@ const SelectContainer = forwardRef(
                         if (optionActive) activeRef.current = node;
                       }}
                       tabIndex={
-                        (usingKeyboard && activeIndex === index) ||
                         optionSelected ||
-                        (onSearch && index === 0)
-                          ? 0
-                          : -1
+                        activeIndex === index ||
+                        // when nothing is selected and entering listbox
+                        // first option should be focused
+                        ((!value ||
+                          (Array.isArray(value) && value.length === 0)) &&
+                          activeIndex === -1 &&
+                          index === 0)
+                          ? '0'
+                          : '-1'
                       }
                       role="option"
                       aria-setsize={options.length}

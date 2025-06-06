@@ -774,7 +774,7 @@ exports[`Select Clear option renders correct label when wrapped in FormField 1`]
         aria-setsize="2"
         class="c5 c6"
         role="option"
-        tabindex="-1"
+        tabindex="0"
         type="button"
       >
         <div
@@ -990,7 +990,7 @@ exports[`Select Clear option renders custom label 1`] = `
         aria-setsize="2"
         class="c5 c6"
         role="option"
-        tabindex="-1"
+        tabindex="0"
         type="button"
       >
         <div
@@ -2351,7 +2351,7 @@ exports[`Select applies custom global.hover theme to options 2`] = `
   aria-setsize="3"
   class="c0 c1"
   role="option"
-  tabindex="-1"
+  tabindex="0"
   type="button"
 >
   <div
@@ -3314,7 +3314,7 @@ exports[`Select complex options and children 3`] = `
         aria-setsize="2"
         class="c5 c6"
         role="option"
-        tabindex="-1"
+        tabindex="0"
         type="button"
       >
         <span>
@@ -5255,7 +5255,7 @@ exports[`Select disabled key 2`] = `
         class="c5 c6"
         disabled=""
         role="option"
-        tabindex="-1"
+        tabindex="0"
         type="button"
       >
         <div
@@ -5518,7 +5518,7 @@ exports[`Select disabled option value 1`] = `
         class="c5 c6"
         disabled=""
         role="option"
-        tabindex="-1"
+        tabindex="0"
         type="button"
       >
         <div
@@ -6097,7 +6097,7 @@ exports[`Select large drop container height 1`] = `
         aria-setsize="2"
         class="c5 c6"
         role="option"
-        tabindex="-1"
+        tabindex="0"
         type="button"
       >
         <div
@@ -6304,7 +6304,7 @@ exports[`Select medium drop container height 1`] = `
         aria-setsize="2"
         class="c5 c6"
         role="option"
-        tabindex="-1"
+        tabindex="0"
         type="button"
       >
         <div
@@ -7279,7 +7279,7 @@ exports[`Select onChange with valueKey object 2`] = `
         aria-setsize="2"
         class="c5 c6"
         role="option"
-        tabindex="-1"
+        tabindex="0"
         type="button"
       >
         <div
@@ -8017,7 +8017,7 @@ exports[`Select onChange with valueKey string 2`] = `
         aria-setsize="2"
         class="c5 c6"
         role="option"
-        tabindex="-1"
+        tabindex="0"
         type="button"
       >
         <div
@@ -8700,7 +8700,7 @@ exports[`Select onChange with valueLabel 2`] = `
         aria-setsize="2"
         class="c5 c6"
         role="option"
-        tabindex="-1"
+        tabindex="0"
         type="button"
       >
         <div
@@ -9172,7 +9172,7 @@ exports[`Select onChange without labelKey 2`] = `
         aria-setsize="2"
         class="c5 c6"
         role="option"
-        tabindex="-1"
+        tabindex="0"
         type="button"
       >
         <div
@@ -9910,7 +9910,7 @@ exports[`Select onChange without labelKey or valueKey 2`] = `
         aria-setsize="2"
         class="c5 c6"
         role="option"
-        tabindex="-1"
+        tabindex="0"
         type="button"
       >
         <div
@@ -10648,7 +10648,7 @@ exports[`Select onChange without valueKey 2`] = `
         aria-setsize="2"
         class="c5 c6"
         role="option"
-        tabindex="-1"
+        tabindex="0"
         type="button"
       >
         <div
@@ -11961,7 +11961,7 @@ exports[`Select prop: onOpen 3`] = `
         aria-setsize="2"
         class="c5 c6"
         role="option"
-        tabindex="-1"
+        tabindex="0"
         type="button"
       >
         <div
@@ -12022,7 +12022,7 @@ exports[`Select prop: onOpen 5`] = `
     aria-setsize="2"
     class="StyledButton-sc-323bzc-0 fBAPqi StyledSelect__SelectOption-sc-znp66n-3 falZxG"
     role="option"
-    tabindex="-1"
+    tabindex="0"
     type="button"
   >
     <div
@@ -15453,7 +15453,7 @@ exports[`Select search 2`] = `
         aria-setsize="2"
         class="c8 c9"
         role="option"
-        tabindex="0"
+        tabindex="-1"
         type="button"
       >
         <div
@@ -19109,7 +19109,7 @@ exports[`Select small drop container height 1`] = `
         aria-setsize="2"
         class="c5 c6"
         role="option"
-        tabindex="-1"
+        tabindex="0"
         type="button"
       >
         <div

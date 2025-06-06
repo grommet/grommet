@@ -1444,7 +1444,7 @@ exports[`Select Controlled multiple onChange with valueKey reduce 2`] = `
         aria-setsize="2"
         class="c5 c6"
         role="option"
-        tabindex="-1"
+        tabindex="0"
         type="button"
       >
         <div
@@ -1915,7 +1915,7 @@ exports[`Select Controlled multiple onChange with valueKey string 2`] = `
         aria-setsize="2"
         class="c5 c6"
         role="option"
-        tabindex="-1"
+        tabindex="0"
         type="button"
       >
         <div
@@ -2388,7 +2388,7 @@ exports[`Select Controlled multiple onChange without labelKey 2`] = `
         aria-setsize="2"
         class="c5 c6"
         role="option"
-        tabindex="-1"
+        tabindex="0"
         type="button"
       >
         <div
@@ -3273,7 +3273,7 @@ exports[`Select Controlled multiple onChange without valueKey 2`] = `
         aria-setsize="2"
         class="c5 c6"
         role="option"
-        tabindex="-1"
+        tabindex="0"
         type="button"
       >
         <div
@@ -4160,7 +4160,7 @@ exports[`Select Controlled multiple onChange without valueKey or labelKey 2`] = 
         aria-setsize="2"
         class="c5 c6"
         role="option"
-        tabindex="-1"
+        tabindex="0"
         type="button"
       >
         <div
@@ -5570,7 +5570,7 @@ exports[`Select Controlled multiple with empty results 2`] = `
         aria-setsize="2"
         class="c5 c6"
         role="option"
-        tabindex="-1"
+        tabindex="0"
         type="button"
       >
         <div
