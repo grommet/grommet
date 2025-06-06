@@ -1672,6 +1672,7 @@ export interface ThemeType {
     };
     edge?: {
       type?: string;
+      size?: string;
     };
   };
   select?: {

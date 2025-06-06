@@ -22,6 +22,24 @@ describe('RangeSelector', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
+  test('basic with theme edge size', () => {
+    const theme = {
+      rangeSelector: {
+        edge: {
+          size: 'medium',
+        },
+      },
+    };
+
+    const { container } = render(
+      <Grommet theme={theme}>
+        <RangeSelector values={[20, 30]} />
+      </Grommet>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
   test('basic', () => {
     const { container } = render(
       <Grommet>
