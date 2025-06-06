@@ -591,7 +591,7 @@ const SelectMultipleContainer = forwardRef(
                       tabIndex={
                         optionSelected ||
                         activeIndex === index ||
-                        // when notthing is selected and entering listbox
+                        // when nothing is selected and entering listbox
                         // first option should be focused
                         (value.length === 0 &&
                           activeIndex === -1 &&
