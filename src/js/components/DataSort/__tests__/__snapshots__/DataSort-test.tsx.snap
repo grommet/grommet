@@ -354,7 +354,7 @@ exports[`DataSort properties 1`] = `
     aria-setsize="2"
     class="c1 c2"
     role="option"
-    tabindex="-1"
+    tabindex="0"
     type="button"
   >
     <div
