@@ -462,7 +462,8 @@ const SelectContainer = forwardRef(
                       }}
                       tabIndex={
                         (usingKeyboard && activeIndex === index) ||
-                        optionSelected
+                        optionSelected ||
+                        (onSearch && index === 0)
                           ? 0
                           : -1
                       }

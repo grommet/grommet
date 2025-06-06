@@ -15453,7 +15453,7 @@ exports[`Select search 2`] = `
         aria-setsize="2"
         class="c8 c9"
         role="option"
-        tabindex="-1"
+        tabindex="0"
         type="button"
       >
         <div
@@ -16041,7 +16041,7 @@ exports[`Select search and select 2`] = `
         aria-setsize="2"
         class="c8 c9"
         role="option"
-        tabindex="-1"
+        tabindex="0"
         type="button"
       >
         <div
