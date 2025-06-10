@@ -16,9 +16,18 @@ export interface FileInputProps {
     dropPrompt?: string;
     dropPromptMultiple?: string;
     files?: string;
+    maxFile?: string;
     remove?: string;
     removeAll?: string;
-    maxFile?: string;
+    maxSizeSingle?: string;
+    maxSizeMultiple?: {
+      singular?: string;
+      plural?: string;
+    };
+    alert?: {
+      maxSize?: string;
+      maxFile?: string;
+    };
   };
   multiple?: boolean | { aggregateThreshold?: number; max?: number };
   name?: string;
