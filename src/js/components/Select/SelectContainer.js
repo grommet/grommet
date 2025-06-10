@@ -477,7 +477,6 @@ const SelectContainer = forwardRef(
                       aria-setsize={options.length}
                       aria-posinset={index + 1}
                       aria-selected={optionSelected}
-                      focusIndicator={false}
                       aria-disabled={optionDisabled || undefined}
                       plain={!child ? undefined : true}
                       align="start"
