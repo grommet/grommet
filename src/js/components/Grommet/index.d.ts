@@ -100,12 +100,16 @@ export interface GrommetProps {
         files?: string;
         maxFile?: string;
         maxSizeSingle?: string;
+        remove?: string;
+        removeAll?: string;
         maxSizeMultiple?: {
           singular?: string;
           plural?: string;
         };
-        remove?: string;
-        removeAll?: string;
+        alert?: {
+          maxSize?: string;
+          maxFile?: string;
+        };
       };
       form?: {
         invalid?: string;
