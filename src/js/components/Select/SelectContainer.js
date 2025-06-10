@@ -387,6 +387,7 @@ const SelectContainer = forwardRef(
                   setActiveIndex(-1);
                   onSearch(nextSearch);
                 }}
+                onFocus={() => setActiveIndex(-1)}
               />
             </Box>
           )}
