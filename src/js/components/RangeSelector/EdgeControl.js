@@ -29,7 +29,7 @@ const EdgeControl = forwardRef(
     const { theme } = useThemeValue();
     const [focus, setFocus] = useState(false);
     const { cursor, fill } = DIRECTION_PROPS[direction];
-    const themeSize = theme.rangeSelector?.edge?.size;
+    const themeEdgeSize = theme.rangeSelector?.edge?.size;
     const size =
       typeof themeSize === 'string'
         ? parseMetricToNum(theme.global.edgeSize?.[themeSize] || themeSize)
