@@ -98,13 +98,17 @@ if (process.env.NODE_ENV !== 'production') {
           dropPromptMultiple: PropTypes.string,
           files: PropTypes.string,
           maxFile: PropTypes.string,
+          remove: PropTypes.string,
+          removeAll: PropTypes.string,
           maxSizeSingle: PropTypes.string,
           maxSizeMultiple: PropTypes.shape({
             singular: PropTypes.string,
             plural: PropTypes.string,
           }),
-          remove: PropTypes.string,
-          removeAll: PropTypes.string,
+          alert: PropTypes.shape({
+            maxSize: PropTypes.string,
+            maxFile: PropTypes.string,
+          }),
         }),
         form: PropTypes.shape({
           invalid: PropTypes.string,
