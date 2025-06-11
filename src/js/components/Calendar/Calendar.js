@@ -549,13 +549,14 @@ const Calendar = forwardRef(
 
     const changeCalendarMonth = (messageId, newMonth) => {
       handleReference(newMonth);
+      const referenceStartOfMonth = startOfMonth(reference);
       const firstOfMonth = new Date(
         newMonth.getFullYear(),
         newMonth.getMonth(),
         1,
-        startOfMonth(reference).getHours(),
-        startOfMonth(reference).getMinutes(),
-        startOfMonth(reference).getSeconds(),
+        referenceStartOfMonth.getHours(),
+        referenceStartOfMonth.getMinutes(),
+        referenceStartOfMonth.getSeconds(),
       );
       setActive(firstOfMonth);
 
