@@ -2,6 +2,7 @@ import styled, { css, keyframes } from 'styled-components';
 import { Button } from '../Button';
 import {
   backgroundStyle,
+  disabledStyle,
   focusStyle,
   genericStyles,
   kindPartStyles,
@@ -10,7 +11,6 @@ import {
   roundStyle,
   styledComponentsConfig,
 } from '../../utils';
-import { activeStyle } from '../../utils/background';
 import { breakpointStyle } from '../../utils/mixins';
 
 const responsiveSizeStyle = (props) => {
@@ -123,12 +123,7 @@ const rangeRoundStyle = (props) => {
     themeObj =
       props.theme.calendar?.[props.sizeProp]?.range?.round ||
       props.theme.calendar?.medium?.range?.round;
-  return (
-    themeObj && [
-      roundStyle(themeObj, props.responsive, props.theme),
-      'overflow: hidden;',
-    ]
-  );
+  return themeObj && [roundStyle(themeObj, props.responsive, props.theme)];
 };
 
 const StyledWeeks = styled.div.withConfig(styledComponentsConfig)`
@@ -180,9 +175,15 @@ const responsiveDayButtonStyle = (props) => {
 
 // when caller opts in to day hover styling, apply all state styles
 // on CalendarDay instead of active state on CalendarDayButton
+// position relative and z-index are added to prevent the focus
+// indicator from getting cut off
 const StyledDayButton = styled(Button)`
+  &:focus {
+    position: relative;
+    z-index: 1;
+  }
   ${(props) =>
-    props.theme.calendar?.day?.hover?.background && 'background: inherit;'}
+    props.disabledProp && disabledStyle(props.theme.button.disabled.opacity)}
   ${(props) => props.responsive && responsiveDayButtonStyle(props)}
 `;
 
@@ -289,15 +290,14 @@ const StyledDay = styled.div.withConfig(styledComponentsConfig)`
       props.theme.calendar?.medium?.day?.round;
     return round && roundStyle(round, props.responsive, props.theme);
   }}
-  ${(props) => props.active && activeStyle}
-  ${(props) => props.hover && dayHoverStyle(props)}
+  ${(props) => props.hover && !props.disabledProp && dayHoverStyle(props)}
   ${(props) =>
     // when theme uses kind Buttons, since we use children for Button,
     // we have to special case how we handle disabled days here
     props.disabledProp &&
     props.theme.button.default &&
     kindPartStyles(props.theme.button.disabled, props.theme)}
-  ${(props) =>
+    ${(props) =>
     props.theme.calendar &&
     props.theme.calendar.day &&
     props.theme.calendar.day.extend}
