@@ -317,6 +317,9 @@ var SelectContainer = exports.SelectContainer = /*#__PURE__*/(0, _react.forwardR
       setSearch(nextSearch);
       setActiveIndex(-1);
       onSearch(nextSearch);
+    },
+    onFocus: function onFocus() {
+      return setActiveIndex(-1);
     }
   })), shouldShowClearButton('top') && /*#__PURE__*/_react["default"].createElement(ClearButton, {
     ref: clearRef,
@@ -377,12 +380,14 @@ var SelectContainer = exports.SelectContainer = /*#__PURE__*/(0, _react.forwardR
         if (optionRef) optionRef.current = node;
         if (optionActive) activeRef.current = node;
       },
-      tabIndex: optionSelected ? '0' : '-1',
+      tabIndex: optionSelected || activeIndex === index ||
+      // when nothing is selected and entering listbox
+      // first option should be focused
+      (!value || Array.isArray(value) && value.length === 0) && activeIndex === -1 && index === 0 ? '0' : '-1',
       role: "option",
       "aria-setsize": options.length,
       "aria-posinset": index + 1,
       "aria-selected": optionSelected,
-      focusIndicator: false,
       "aria-disabled": optionDisabled || undefined,
       plain: !child ? undefined : true,
       align: "start",
