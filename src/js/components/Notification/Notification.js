@@ -17,6 +17,26 @@ import { Text } from '../Text';
 import { NotificationType } from './propTypes';
 import { useThemeValue } from '../../utils/useThemeValue';
 
+const ScreenReaderAnnouncement = ({ title, message }) => (
+  <Box
+    as="span"
+    role="alert"
+    style={{
+      position: 'absolute',
+      width: '1px',
+      height: '1px',
+      margin: '-1px',
+      padding: 0,
+      overflow: 'hidden',
+      clip: 'rect(0 0 0 0)',
+      border: 0,
+    }}
+  >
+    {typeof title === 'string' && <span>{title}</span>}
+    {typeof message === 'string' && <span>{message}</span>}
+  </Box>
+);
+
 const Message = ({ fill, direction, ...rest }) =>
   direction === 'row' ? (
     <Text {...rest} />
@@ -80,8 +100,7 @@ const Notification = ({
   time,
   ...rest
 }) => {
-  const autoClose =
-    toast && toast?.autoClose === undefined ? true : toast.autoClose;
+  const autoClose = toast?.autoClose ?? true;
   const { theme } = useThemeValue();
   const [visible, setVisible] = useState(true);
 
@@ -252,7 +271,9 @@ const Notification = ({
     content = visible && (
       <Layer
         {...theme.notification.toast.layer}
-        role="log"
+        role="status"
+        aria-live="assertive"
+        aria-atomic="true"
         modal={false}
         onEsc={onClose}
         id={id}
@@ -260,6 +281,8 @@ const Notification = ({
         plain
         position={position}
       >
+        {/* Visually hide the content for screen readers to announce */}
+        <ScreenReaderAnnouncement title={title} message={messageProp} />
         {content}
       </Layer>
     );
