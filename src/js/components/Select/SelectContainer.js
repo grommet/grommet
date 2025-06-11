@@ -413,6 +413,7 @@ const SelectContainer = forwardRef(
                   setActiveIndex(-1);
                   onSearch(nextSearch);
                 }}
+                onFocus={() => setActiveIndex(-1)}
               />
             </Box>
           )}
@@ -486,12 +487,22 @@ const SelectContainer = forwardRef(
                         if (optionRef) optionRef.current = node;
                         if (optionActive) activeRef.current = node;
                       }}
-                      tabIndex={optionSelected ? '0' : '-1'}
+                      tabIndex={
+                        optionSelected ||
+                        activeIndex === index ||
+                        // when nothing is selected and entering listbox
+                        // first option should be focused
+                        ((!value ||
+                          (Array.isArray(value) && value.length === 0)) &&
+                          activeIndex === -1 &&
+                          index === 0)
+                          ? '0'
+                          : '-1'
+                      }
                       role="option"
                       aria-setsize={options.length}
                       aria-posinset={index + 1}
                       aria-selected={optionSelected}
-                      focusIndicator={false}
                       aria-disabled={optionDisabled || undefined}
                       plain={!child ? undefined : true}
                       align="start"
