@@ -40,6 +40,50 @@ describe('RangeSelector', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
+  const edgeSizes = ['small', 'medium', 'large', 'xlarge']; // use all supported sizes
+
+  edgeSizes.forEach((size) => {
+    test(`renders with edge size: ${size}`, () => {
+      const theme = {
+        rangeSelector: {
+          edge: { size },
+        },
+      };
+      const { container } = render(
+        <Grommet theme={theme}>
+          <RangeSelector values={[10, 40]} />
+        </Grommet>,
+      );
+      expect(container.firstChild).toMatchSnapshot();
+    });
+  });
+
+  test('renders with default edge size when not specified', () => {
+    const theme = {
+      rangeSelector: {},
+    };
+    const { container } = render(
+      <Grommet theme={theme}>
+        <RangeSelector values={[5, 25]} />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('renders gracefully with invalid edge size', () => {
+    const theme = {
+      rangeSelector: {
+        edge: { size: 'not-a-real-size' },
+      },
+    };
+    const { container } = render(
+      <Grommet theme={theme}>
+        <RangeSelector values={[15, 35]} />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
   test('basic', () => {
     const { container } = render(
       <Grommet>

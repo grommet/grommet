@@ -30,11 +30,22 @@ const EdgeControl = forwardRef(
     const [focus, setFocus] = useState(false);
     const { cursor, fill } = DIRECTION_PROPS[direction];
     const themeEdgeSize = theme.rangeSelector?.edge?.size;
-    const size = themeEdgeSize
-      ? parseMetricToNum(
-          theme.global.edgeSize?.[themeEdgeSize] || themeEdgeSize,
-        )
-      : parseMetricToNum(theme.global.spacing) / 2;
+    let size;
+    if (themeEdgeSize != null) {
+      // Try to look up the value in theme.global.edgeSize
+      // If not found, assume it's a raw CSS value like '10px'.
+      const themeEdge = theme.global.edgeSize?.[themeEdgeSize] || themeEdgeSize;
+      const parsedSize = parseMetricToNum(themeEdge);
+      const isValid =
+        typeof parsedSize === 'number' && !Number.isNaN(parsedSize);
+
+      // If parsedSize is a valid number, use it.
+      // Otherwise, fallback to half of the theme's global spacing.
+      size = isValid ? parsedSize : parseMetricToNum(theme.global.spacing) / 2;
+    } else {
+      // If no edge size was specified use default.
+      size = parseMetricToNum(theme.global.spacing) / 2;
+    }
     const keyboardProps =
       direction === 'vertical'
         ? { onUp: onDecrease, onDown: onIncrease }
