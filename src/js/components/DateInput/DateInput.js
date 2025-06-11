@@ -92,6 +92,7 @@ const DateInput = forwardRef(
     const iconSize =
       (theme.icon?.matchSize && rest.size) ||
       theme.dateInput.icon?.size ||
+      // TO DO move to theme object?
       'medium';
     const { useFormInput } = useContext(FormContext);
     const ref = useForwardedRef(refArg);
@@ -295,6 +296,7 @@ Use the icon prop instead.`,
         onClick={open ? closeCalendar : openCalendar}
         plain
         icon={icon || MaskedInputIcon || <CalendarIcon size={iconSize} />}
+        // TO DO theme object
         margin={reverse ? { left: 'small' } : { right: 'small' }}
       />
     );

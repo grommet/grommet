@@ -28,6 +28,7 @@ export const DataSummary = ({ messages, ...rest }) => {
   });
 
   return (
+    // TO DO theme object
     <Text margin={{ vertical: 'xsmall' }} {...rest}>
       {format({
         id: messageId,
@@ -42,6 +43,7 @@ export const DataSummary = ({ messages, ...rest }) => {
         <>
           {/* separator with margin to ensure | is not confused 
           as a 1 in the selected count */}
+          {/* TO DO theme object */}
           <Text margin={{ horizontal: 'small' }}>|</Text>
           <Text>
             {format({
