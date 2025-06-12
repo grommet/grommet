@@ -309,7 +309,11 @@ const Box = forwardRef(
     }
 
     if (onClick) {
-      content = <Keyboard onEnter={onClick}>{content}</Keyboard>;
+      content = (
+        <Keyboard onEnter={onClick} onSpace={onClick}>
+          {content}
+        </Keyboard>
+      );
     }
 
     return content;

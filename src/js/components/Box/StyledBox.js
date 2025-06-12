@@ -11,6 +11,7 @@ import {
   elevationStyle,
   fillStyle,
   focusStyle,
+  unfocusStyle,
   genericStyles,
   getBreakpointStyle,
   getHoverIndicatorStyle,
@@ -345,7 +346,12 @@ const StyledBox = styled.div.withConfig({
     props.onClick &&
     props.focus &&
     props.focusIndicator !== false &&
-    focusStyle()}
+    css`
+      ${focusStyle()}
+      &:focus:not(:focus-visible) {
+        ${unfocusStyle()}
+      }
+    `}
   ${(props) => props.theme.box && props.theme.box.extend}
   ${(props) => props.kindProp && props.kindProp.extend}
   ${(props) => (props.responsiveContainer ? responsiveContainerStyle : '')}
