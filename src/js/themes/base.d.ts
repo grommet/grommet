@@ -15,6 +15,7 @@ import {
   ColorType,
   DeepReadonly,
   DirectionType,
+  EdgeSizeType,
   ElevationType,
   GapType,
   GraphColorsType,
@@ -1672,7 +1673,7 @@ export interface ThemeType {
     };
     edge?: {
       type?: string;
-      size?: string;
+      size?: EdgeSizeType | string;
     };
   };
   select?: {
