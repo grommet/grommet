@@ -968,18 +968,13 @@ exports[`Notification position bottom 1`] = `
   tabindex="-1"
 >
   <div
+    aria-atomic="true"
+    aria-live="polite"
     class="c1"
     data-g-portal-id="0"
     id="position-test"
+    role="status"
   >
-    <div
-      aria-atomic="true"
-      aria-live="assertive"
-      role="alert"
-      style="position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0px; overflow: hidden; border: 0px; white-space: nowrap;"
-    >
-      title. message
-    </div>
     <div
       class="c2"
     >
@@ -1230,18 +1225,13 @@ exports[`Notification position bottom-left 1`] = `
   tabindex="-1"
 >
   <div
+    aria-atomic="true"
+    aria-live="polite"
     class="c1"
     data-g-portal-id="0"
     id="position-test"
+    role="status"
   >
-    <div
-      aria-atomic="true"
-      aria-live="assertive"
-      role="alert"
-      style="position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0px; overflow: hidden; border: 0px; white-space: nowrap;"
-    >
-      title. message
-    </div>
     <div
       class="c2"
     >
@@ -1492,18 +1482,13 @@ exports[`Notification position bottom-right 1`] = `
   tabindex="-1"
 >
   <div
+    aria-atomic="true"
+    aria-live="polite"
     class="c1"
     data-g-portal-id="0"
     id="position-test"
+    role="status"
   >
-    <div
-      aria-atomic="true"
-      aria-live="assertive"
-      role="alert"
-      style="position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0px; overflow: hidden; border: 0px; white-space: nowrap;"
-    >
-      title. message
-    </div>
     <div
       class="c2"
     >
@@ -1754,18 +1739,13 @@ exports[`Notification position center 1`] = `
   tabindex="-1"
 >
   <div
+    aria-atomic="true"
+    aria-live="polite"
     class="c1"
     data-g-portal-id="0"
     id="position-test"
+    role="status"
   >
-    <div
-      aria-atomic="true"
-      aria-live="assertive"
-      role="alert"
-      style="position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0px; overflow: hidden; border: 0px; white-space: nowrap;"
-    >
-      title. message
-    </div>
     <div
       class="c2"
     >
@@ -2016,18 +1996,13 @@ exports[`Notification position end 1`] = `
   tabindex="-1"
 >
   <div
+    aria-atomic="true"
+    aria-live="polite"
     class="c1"
     data-g-portal-id="0"
     id="position-test"
+    role="status"
   >
-    <div
-      aria-atomic="true"
-      aria-live="assertive"
-      role="alert"
-      style="position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0px; overflow: hidden; border: 0px; white-space: nowrap;"
-    >
-      title. message
-    </div>
     <div
       class="c2"
     >
@@ -2278,18 +2253,13 @@ exports[`Notification position left 1`] = `
   tabindex="-1"
 >
   <div
+    aria-atomic="true"
+    aria-live="polite"
     class="c1"
     data-g-portal-id="0"
     id="position-test"
+    role="status"
   >
-    <div
-      aria-atomic="true"
-      aria-live="assertive"
-      role="alert"
-      style="position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0px; overflow: hidden; border: 0px; white-space: nowrap;"
-    >
-      title. message
-    </div>
     <div
       class="c2"
     >
@@ -2540,18 +2510,13 @@ exports[`Notification position right 1`] = `
   tabindex="-1"
 >
   <div
+    aria-atomic="true"
+    aria-live="polite"
     class="c1"
     data-g-portal-id="0"
     id="position-test"
+    role="status"
   >
-    <div
-      aria-atomic="true"
-      aria-live="assertive"
-      role="alert"
-      style="position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0px; overflow: hidden; border: 0px; white-space: nowrap;"
-    >
-      title. message
-    </div>
     <div
       class="c2"
     >
@@ -2802,18 +2767,13 @@ exports[`Notification position start 1`] = `
   tabindex="-1"
 >
   <div
+    aria-atomic="true"
+    aria-live="polite"
     class="c1"
     data-g-portal-id="0"
     id="position-test"
+    role="status"
   >
-    <div
-      aria-atomic="true"
-      aria-live="assertive"
-      role="alert"
-      style="position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0px; overflow: hidden; border: 0px; white-space: nowrap;"
-    >
-      title. message
-    </div>
     <div
       class="c2"
     >
@@ -3064,18 +3024,13 @@ exports[`Notification position top 1`] = `
   tabindex="-1"
 >
   <div
+    aria-atomic="true"
+    aria-live="polite"
     class="c1"
     data-g-portal-id="0"
     id="position-test"
+    role="status"
   >
-    <div
-      aria-atomic="true"
-      aria-live="assertive"
-      role="alert"
-      style="position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0px; overflow: hidden; border: 0px; white-space: nowrap;"
-    >
-      title. message
-    </div>
     <div
       class="c2"
     >
@@ -3326,18 +3281,13 @@ exports[`Notification position top-left 1`] = `
   tabindex="-1"
 >
   <div
+    aria-atomic="true"
+    aria-live="polite"
     class="c1"
     data-g-portal-id="0"
     id="position-test"
+    role="status"
   >
-    <div
-      aria-atomic="true"
-      aria-live="assertive"
-      role="alert"
-      style="position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0px; overflow: hidden; border: 0px; white-space: nowrap;"
-    >
-      title. message
-    </div>
     <div
       class="c2"
     >
@@ -3588,18 +3538,13 @@ exports[`Notification position top-right 1`] = `
   tabindex="-1"
 >
   <div
+    aria-atomic="true"
+    aria-live="polite"
     class="c1"
     data-g-portal-id="0"
     id="position-test"
+    role="status"
   >
-    <div
-      aria-atomic="true"
-      aria-live="assertive"
-      role="alert"
-      style="position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0px; overflow: hidden; border: 0px; white-space: nowrap;"
-    >
-      title. message
-    </div>
     <div
       class="c2"
     >

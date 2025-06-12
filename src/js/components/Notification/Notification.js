@@ -1,5 +1,6 @@
 import React, {
   useCallback,
+  useContext,
   useEffect,
   useState,
   useMemo,
@@ -16,38 +17,7 @@ import { Text } from '../Text';
 
 import { NotificationType } from './propTypes';
 import { useThemeValue } from '../../utils/useThemeValue';
-
-const extractText = (node) => {
-  if (typeof node === 'string' || typeof node === 'number') return node;
-  if (Array.isArray(node)) return node.map(extractText).join(' ');
-  if (React.isValidElement(node)) return extractText(node.props.children);
-  return '';
-};
-
-const ScreenReaderAnnouncement = ({ title, message }) => {
-  const text = [title, message].map(extractText).filter(Boolean).join('. ');
-
-  return (
-    <div
-      role="alert"
-      aria-live="assertive"
-      aria-atomic="true"
-      style={{
-        position: 'absolute',
-        width: 1,
-        height: 1,
-        margin: -1,
-        padding: 0,
-        overflow: 'hidden',
-        clip: 'rect(0 0 0 0)',
-        border: 0,
-        whiteSpace: 'nowrap',
-      }}
-    >
-      {text}
-    </div>
-  );
-};
+import { AnnounceContext } from '../../contexts/AnnounceContext';
 
 const Message = ({ fill, direction, ...rest }) =>
   direction === 'row' ? (
@@ -117,6 +87,38 @@ const Notification = ({
   const [visible, setVisible] = useState(true);
 
   const position = useMemo(() => (toast && toast?.position) || 'top', [toast]);
+  const announce = useContext(AnnounceContext);
+
+  useEffect(() => {
+    if (
+      visible &&
+      toast &&
+      typeof messageProp === 'string' &&
+      typeof title === 'string'
+    ) {
+      const announceText = `${title}. ${messageProp}`;
+      announce(announceText, status === 'critical' ? 'assertive' : 'polite');
+    }
+  }, [announce, visible, toast, messageProp, status, title]);
+
+  // useEffect(() => {
+  //   if (
+  //     visible &&
+  //     toast &&
+  //     typeof messageProp === 'string' &&
+  //     typeof title === 'string'
+  //   ) {
+  //     const announceText = `${title}. ${messageProp}`;
+
+  //     announce(announceText, status === 'critical' ? 'assertive' : 'polite');
+
+  //     const timeout = setTimeout(() => {
+  //       setLiveMessage(announceText);
+  //     }, 20);
+
+  //     return () => clearTimeout(timeout);
+  //   }
+  // }, [announce, visible, toast, messageProp, status, title]);
 
   const close = useCallback(
     (event) => {
@@ -132,7 +134,6 @@ const Notification = ({
         close,
         time || theme.notification.toast.time || theme.notification.time,
       );
-
       return () => clearTimeout(timer);
     }
     return undefined;
@@ -283,6 +284,9 @@ const Notification = ({
     content = visible && (
       <Layer
         {...theme.notification.toast.layer}
+        role={status === 'critical' ? 'alert' : 'status'}
+        aria-live={status === 'critical' ? 'assertive' : 'polite'}
+        aria-atomic="true"
         modal={false}
         onEsc={onClose}
         id={id}
@@ -290,8 +294,6 @@ const Notification = ({
         plain
         position={position}
       >
-        {/* Visually hide the content for screen readers to announce */}
-        <ScreenReaderAnnouncement title={title} message={messageProp} />
         {content}
       </Layer>
     );
