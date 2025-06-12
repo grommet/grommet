@@ -18,11 +18,9 @@ import { MessageContext } from '../../contexts/MessageContext';
 import { Pagination } from '../Pagination';
 import { Text } from '../Text';
 import {
-  // focusStyle,
   genericStyles,
   normalizeColor,
   normalizeShow,
-  // unfocusStyle,
   useForwardedRef,
   usePagination,
   styledComponentsConfig,
@@ -97,16 +95,6 @@ const reorder = (array, pinnedArray, source, target) => {
   return result;
 };
 
-// getItemId returns something appropriate to use as a unique DOM
-// id for an item in the list
-// const getItemId = (item, index, itemKey, primaryKey) => {
-//   // we do primaryKey first to be backward compatible, even though
-//   // itemKey is probably technically the better choice for a DOM id.
-//   if (primaryKey) return getValue(item, index, primaryKey);
-//   if (itemKey) return getValue(item, index, itemKey);
-//   return getValue(item, index) ?? index; // do our best w/o *key properties
-// };
-
 const List = React.forwardRef(
   (
     {
@@ -178,7 +166,6 @@ const List = React.forwardRef(
       }
     }, [active, data]);
 
-    // const [itemFocus, setItemFocus] = useState();
     const [dragging, setDragging] = useState();
     const [orderingData, setOrderingData] = useState();
 
@@ -233,34 +220,6 @@ const List = React.forwardRef(
       role: onClickItem ? 'listbox' : 'list',
     };
 
-    // if (active >= 0) {
-    //   let activeId;
-    //   // We have an item that is 'focused' within the list. This could
-    //   // be the list item or one of the up/down ordering buttons.
-    //   // We need to figure out an id of the thing that will be
-    //   // shown as active
-    //   if (onOrder) {
-    //     // figure out which arrow button will be the active one.
-    //     const buttonId = active % 2 ? 'MoveDown' : 'MoveUp';
-    //     const itemIndex = Math.trunc(active / 2);
-    //     activeId = `${getItemId(
-    //       orderableData[itemIndex],
-    //       itemIndex,
-    //       itemKey,
-    //       primaryKey,
-    //     )}${buttonId}`;
-    //   } else if (onClickItem) {
-    //     // The whole list item is active. Figure out an id
-    //     activeId = getItemId(
-    //       orderableData[active],
-    //       active,
-    //       itemKey,
-    //       primaryKey,
-    //     );
-    //   }
-    //   ariaProps['aria-activedescendant'] = activeId;
-    // }
-
     const onSelectOption = (event, nextActive) => {
       if ((onClickItem || onOrder) && nextActive >= 0) {
         if (onOrder) {
@@ -313,19 +272,6 @@ const List = React.forwardRef(
     return (
       <Container {...containterProps}>
         <Keyboard
-          // onEnter={(event) => {
-          //   // if (onClickItem || onOrder) {
-          //   //   event.preventDefault();
-          //   // }
-          //   console.log('clicking');
-          //   onSelectOption(event);
-          // }}
-          // onSpace={(event) => {
-          //   // if (onClickItem || onOrder) {
-          //   //   event.preventDefault();
-          //   // }
-          //   onSelectOption(event);
-          // }}
           onUp={(event) => {
             if (onClickItem || onOrder) {
               event.preventDefault();
@@ -380,8 +326,6 @@ const List = React.forwardRef(
             aria-label={ariaLabel || a11yTitle}
             ref={listRef}
             as={as || 'ul'}
-            // itemFocus={itemFocus}
-            // tabIndex={onClickItem || onOrder ? 0 : undefined}
             tabIndex={-1}
             onFocus={() => {
               if (onOrder) {
@@ -588,16 +532,6 @@ const List = React.forwardRef(
                         onSelectOption(event, index);
                       }
                     },
-                    // onMouseOver: () => updateActive(index),
-                    // onMouseOut: () => updateActive(undefined),
-                    // onFocus: () => {
-                    //   // updateActive(index);
-                    //   // setItemFocus(true);
-                    // },
-                    // onBlur: () => {
-                    //   // updateActive(undefined);
-                    //   // setItemFocus(false);
-                    // },
                   };
                 }
 
@@ -687,9 +621,8 @@ const List = React.forwardRef(
                         a11yTitle={`${orderableIndex + 1} ${key} move up`}
                         icon={<Up />}
                         hoverIndicator
-                        // focusIndicator={false}
                         disabled={!orderableIndex}
-                        active={active === moveUpIndex} // TO DO likely remove
+                        active={active === moveUpIndex}
                         onClick={(event) => {
                           event.stopPropagation();
                           onSelectOption(event, moveUpIndex);
@@ -700,29 +633,16 @@ const List = React.forwardRef(
                             activeRef.current = node;
                           }
                         }}
-                        // onMouseOver={() => updateActive(moveUpIndex)}
-                        // onMouseOut={() => updateActive(undefined)}
-                        // onFocus={() => {
-                        //   console.log('focusing', moveUpIndex);
-                        //   updateActive(moveUpIndex);
-                        //   // setItemFocus(true);
-                        // }}
-                        // onBlur={() => {
-                        //   updateActive(undefined);
-                        //   // setItemFocus(false);
-                        // }}
                       />
                       <Button
                         id={`${key}MoveDown`}
                         a11yTitle={`${orderableIndex + 1} ${key} move down`}
                         icon={<Down />}
                         hoverIndicator
-                        // focusIndicator={false}
                         disabled={orderableIndex >= orderableData.length - 1}
                         active={active === moveDownIndex}
                         onClick={(event) => {
                           event.stopPropagation();
-                          // console.log('click', active);
                           onSelectOption(event, moveDownIndex);
                         }}
                         tabIndex={moveDownActive}
@@ -731,8 +651,6 @@ const List = React.forwardRef(
                             activeRef.current = node;
                           }
                         }}
-                        // onMouseOver={() => console.log({ moveDownIndex })}
-                        // onMouseOut={() => updateActive(undefined)}
                         onFocus={() => {
                           // make sure first "MoveDown" is focusable
                           if (
@@ -741,12 +659,7 @@ const List = React.forwardRef(
                           ) {
                             updateActive(moveDownIndex);
                           }
-                          // setItemFocus(true);
                         }}
-                        // onBlur={() => {
-                        //   updateActive(undefined);
-                        //   // setItemFocus(false);
-                        // }}
                       />
                     </Box>
                   );
