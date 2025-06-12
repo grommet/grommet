@@ -19,6 +19,38 @@ import { MessageContext } from '../../contexts/MessageContext';
 import { NotificationType } from './propTypes';
 import { useThemeValue } from '../../utils/useThemeValue';
 
+const extractText = (node) => {
+  if (typeof node === 'string' || typeof node === 'number') return node;
+  if (Array.isArray(node)) return node.map(extractText).join(' ');
+  if (React.isValidElement(node)) return extractText(node.props.children);
+  return '';
+};
+
+const ScreenReaderAnnouncement = ({ title, message }) => {
+  const text = [title, message].map(extractText).filter(Boolean).join('. ');
+
+  return (
+    <div
+      role="alert"
+      aria-live="assertive"
+      aria-atomic="true"
+      style={{
+        position: 'absolute',
+        width: 1,
+        height: 1,
+        margin: -1,
+        padding: 0,
+        overflow: 'hidden',
+        clip: 'rect(0 0 0 0)',
+        border: 0,
+        whiteSpace: 'nowrap',
+      }}
+    >
+      {text}
+    </div>
+  );
+};
+
 const Message = ({ fill, direction, ...rest }) =>
   direction === 'row' ? (
     <Text {...rest} />
@@ -83,8 +115,7 @@ const Notification = ({
   time,
   ...rest
 }) => {
-  const autoClose =
-    toast && toast?.autoClose === undefined ? true : toast.autoClose;
+  const autoClose = toast?.autoClose ?? true;
   const { theme } = useThemeValue();
   const [visible, setVisible] = useState(true);
   const { format } = useContext(MessageContext);
@@ -259,7 +290,6 @@ const Notification = ({
     content = visible && (
       <Layer
         {...theme.notification.toast.layer}
-        role="log"
         modal={false}
         onEsc={onClose}
         id={id}
@@ -267,6 +297,8 @@ const Notification = ({
         plain
         position={position}
       >
+        {/* Visually hide the content for screen readers to announce */}
+        <ScreenReaderAnnouncement title={title} message={messageProp} />
         {content}
       </Layer>
     );
