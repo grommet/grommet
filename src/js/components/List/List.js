@@ -152,9 +152,8 @@ const List = React.forwardRef(
       setActive(nextActive);
       // we occasionally call updateActive with undefined when it already is so,
       // no need to call onActive in that case
-      if (onActive && onClickItem && nextActive !== active) {
+      if (onActive && onClickItem && nextActive !== active)
         onActive(nextActive);
-      }
     };
 
     // roving tab index, ensure active item (when onClickItem)
@@ -326,7 +325,6 @@ const List = React.forwardRef(
             aria-label={ariaLabel || a11yTitle}
             ref={listRef}
             as={as || 'ul'}
-            tabIndex={-1}
             onFocus={() => {
               if (onOrder) {
                 if (active === undefined && lastActive === undefined) {
