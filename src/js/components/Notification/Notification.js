@@ -17,25 +17,37 @@ import { Text } from '../Text';
 import { NotificationType } from './propTypes';
 import { useThemeValue } from '../../utils/useThemeValue';
 
-const ScreenReaderAnnouncement = ({ title, message }) => (
-  <Box
-    as="span"
-    role="alert"
-    style={{
-      position: 'absolute',
-      width: '1px',
-      height: '1px',
-      margin: '-1px',
-      padding: 0,
-      overflow: 'hidden',
-      clip: 'rect(0 0 0 0)',
-      border: 0,
-    }}
-  >
-    {typeof title === 'string' && <span>{title}</span>}
-    {typeof message === 'string' && <span>{message}</span>}
-  </Box>
-);
+const extractText = (node) => {
+  if (typeof node === 'string' || typeof node === 'number') return node;
+  if (Array.isArray(node)) return node.map(extractText).join(' ');
+  if (React.isValidElement(node)) return extractText(node.props.children);
+  return '';
+};
+
+const ScreenReaderAnnouncement = ({ title, message }) => {
+  const text = [title, message].map(extractText).filter(Boolean).join('. ');
+
+  return (
+    <div
+      role="alert"
+      aria-live="assertive"
+      aria-atomic="true"
+      style={{
+        position: 'absolute',
+        width: 1,
+        height: 1,
+        margin: -1,
+        padding: 0,
+        overflow: 'hidden',
+        clip: 'rect(0 0 0 0)',
+        border: 0,
+        whiteSpace: 'nowrap',
+      }}
+    >
+      {text}
+    </div>
+  );
+};
 
 const Message = ({ fill, direction, ...rest }) =>
   direction === 'row' ? (
@@ -271,9 +283,6 @@ const Notification = ({
     content = visible && (
       <Layer
         {...theme.notification.toast.layer}
-        role="status"
-        aria-live="assertive"
-        aria-atomic="true"
         modal={false}
         onEsc={onClose}
         id={id}
