@@ -85,8 +85,8 @@
       "plural": "{numOfFiles} files are too large. Select files which are no larger than {maxSize}."
     },
     "alert": {
-      "maxSize": "Error - remove file: {fileName} to continue. This file is too large. Attach files which are no larger than {maxSize}.",
-      "maxFile": "Error - remove file: {fileName} to continue.  Attach a maximum of {max} files only."
+      "maxSize": "File {fileName} is too large. Attach files which are no larger than {maxSize}.",
+      "maxFile": "Attach a maximum of {max} files only. File {fileName} is beyond this limit."
     }
   },
   "form": {
