@@ -6,11 +6,22 @@ if (process.env.NODE_ENV !== 'production') {
     confirmRemove: PropTypes.func,
     disabled: PropTypes.bool,
     id: PropTypes.string,
+    maxSize: PropType.number,
     messages: PropTypes.shape({
+      alert: PropTypes.shape({
+        maxSize: PropTypes.string,
+        maxFile: PropTypes.string,
+      }),
       browse: PropTypes.string,
       dropPrompt: PropTypes.string,
       dropPromptMultiple: PropTypes.string,
       files: PropTypes.string,
+      maxFile: PropTypes.string,
+      maxSizeSingle: PropTypes.string,
+      maxSizeMultiple: PropTypes.shape({
+        singular: PropTypes.string,
+        plural: PropTypes.string,
+      }),
       remove: PropTypes.string,
       removeAll: PropTypes.string,
     }),
@@ -18,6 +29,7 @@ if (process.env.NODE_ENV !== 'production') {
       PropTypes.bool,
       PropTypes.shape({
         aggregateThreshold: PropTypes.number,
+        max: PropType.number,
       }),
     ]),
     name: PropTypes.string,
