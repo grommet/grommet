@@ -580,7 +580,7 @@ const List = React.forwardRef(
                   const Up = theme.list.icons.up;
                   const Down = theme.list.icons.down;
                   const moveUpIndex = orderableIndex * 2;
-                  const moveUpActive =
+                  const moveUpTabIndex =
                     // Don't allow focus on disabled buttons
                     // eslint-disable-next-line no-nested-ternary
                     !orderableIndex
@@ -593,7 +593,7 @@ const List = React.forwardRef(
                       ? 0
                       : -1;
                   const moveDownIndex = orderableIndex * 2 + 1;
-                  const moveDownActive =
+                  const moveDownTabIndex =
                     // Don't allow focus on disabled buttons
                     // eslint-disable-next-line no-nested-ternary
                     orderableIndex >= orderableData.length - 1
@@ -625,7 +625,7 @@ const List = React.forwardRef(
                           event.stopPropagation();
                           onSelectOption(event, moveUpIndex);
                         }}
-                        tabIndex={moveUpActive}
+                        tabIndex={moveUpTabIndex}
                         ref={(node) => {
                           if (active === moveUpIndex) {
                             activeRef.current = node;
@@ -643,7 +643,7 @@ const List = React.forwardRef(
                           event.stopPropagation();
                           onSelectOption(event, moveDownIndex);
                         }}
-                        tabIndex={moveDownActive}
+                        tabIndex={moveDownTabIndex}
                         ref={(node) => {
                           if (active === moveDownIndex) {
                             activeRef.current = node;
