@@ -346,6 +346,8 @@ const StyledBox = styled.div.withConfig({
     props.onClick &&
     props.focus &&
     props.focusIndicator !== false &&
+    // only show focus styles when using keyboard navigation
+    // but not with mouse
     css`
       ${focusStyle()}
       &:focus:not(:focus-visible) {
