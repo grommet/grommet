@@ -31,7 +31,7 @@ const EdgeControl = forwardRef(
     const { cursor, fill } = DIRECTION_PROPS[direction];
     const themeEdgeSize = theme.rangeSelector?.edge?.size;
     let size;
-    if (themeEdgeSize != null) {
+    if (themeEdgeSize) {
       // Try to look up the value in theme.global.edgeSize
       // If not found, assume it's a raw CSS value like '10px'.
       const themeEdge = theme.global.edgeSize?.[themeEdgeSize] || themeEdgeSize;
