@@ -96,14 +96,14 @@ const reorder = (array, pinnedArray, source, target) => {
 };
 
 /** Calculate tabIndex for order control buttons. */
-const calculateTabIndex = (buttonIndex, active, lastActive, disabled) => {
+const calculateTabIndex = (buttonIndex, focused, lastFocused, disabled) => {
   if (disabled) return -1;
-  // is currently active
-  return (active !== undefined && active === buttonIndex) ||
-    // was last active
-    (active === undefined && lastActive === buttonIndex) ||
+  // is currently focused
+  return (focused !== undefined && focused === buttonIndex) ||
+    // was last focused
+    (focused === undefined && lastFocused === buttonIndex) ||
     // first "move down" button when entering the list for first time
-    (active === undefined && lastActive === undefined && buttonIndex === 1)
+    (focused === undefined && lastFocused === undefined && buttonIndex === 1)
     ? 0
     : -1;
 };
@@ -160,7 +160,8 @@ const List = React.forwardRef(
     // List items are likely selectable), active will be the
     // index of the item which is currently active.
     const [active, setActive] = useState();
-    const [lastActive, setLastActive] = useState();
+    /** The item or order control that is most recently interacted with by
+     * mouse over or keyboard  */
     const updateActive = (nextActive) => {
       setActive(nextActive);
       // we occasionally call updateActive with undefined when it already is so,
@@ -169,14 +170,27 @@ const List = React.forwardRef(
         onActive(nextActive);
     };
 
-    // roving tab index, ensure active item (when onClickItem)
+    const [focused, setFocused] = useState();
+    const [lastFocused, setLastFocused] = useState();
+    /** Update the item or move up/move down button that is focused
+     * in the DOM  */
+    const updateFocused = (nextFocused) => {
+      setFocused(nextFocused);
+    };
+
+    const handleFocus = (nextFocused) => {
+      updateActive(nextFocused);
+      updateFocused(nextFocused);
+    };
+
+    // roving tab index, ensure focused item (when onClickItem)
     // or move up / move down button (when onOrder) has DOM focus
-    const activeRef = useRef();
+    const focusedRef = useRef();
     useEffect(() => {
-      if (active !== undefined) {
-        activeRef.current?.focus();
+      if (focused !== undefined) {
+        focusedRef.current?.focus();
       }
-    }, [active, data]);
+    }, [focused, data]);
 
     const [dragging, setDragging] = useState();
     const [orderingData, setOrderingData] = useState();
@@ -232,50 +246,50 @@ const List = React.forwardRef(
       role: onClickItem ? 'listbox' : 'list',
     };
 
-    const onSelectOption = (event, nextActive) => {
-      if ((onClickItem || onOrder) && nextActive >= 0) {
+    const onSelectOption = (event, nextFocused) => {
+      if ((onClickItem || onOrder) && nextFocused >= 0) {
         if (onOrder) {
-          const index = Math.trunc(nextActive / 2);
+          const index = Math.trunc(nextFocused / 2);
           // Call onOrder with the re-ordered data.
           // Update the active control index so that the
           // active control will stay on the same item
           // even though it moved up or down.
-          const newIndex = nextActive % 2 ? index + 1 : index - 1;
+          const newIndex = nextFocused % 2 ? index + 1 : index - 1;
           onOrder(reorder(orderableData, pinnedInfo, index, newIndex));
 
           // distinguish keyboard "click" from mouse "click" event
           // when keyboard, event.detail is always 0
           // https://developer.mozilla.org/en-US/docs/Web/API/Element/click_event#usage_notes
-          // when keyboard, move active control with the moving item
+          // when keyboard, move focus with the moving item
           if (event.detail === 0)
-            updateActive(
-              active % 2
-                ? Math.min(active + 2, orderableData.length * 2 - 2)
-                : Math.max(active - 2, 1),
+            updateFocused(
+              focused % 2
+                ? Math.min(focused + 2, orderableData.length * 2 - 2)
+                : Math.max(focused - 2, 1),
             );
-          // when mouse, keep active on the same control
+          // when mouse, keep focused on the same control
           else {
-            updateActive(nextActive);
+            updateFocused(nextFocused);
           }
         } else if (
           disabledItems?.includes(
-            getValue(data[nextActive], nextActive, itemKey),
+            getValue(data[nextFocused], nextFocused, itemKey),
           )
         ) {
           event.preventDefault();
         } else if (onClickItem) {
           event.persist();
-          updateActive(nextActive);
+          updateFocused(nextFocused);
           const adjustedEvent = event;
-          adjustedEvent.item = data[nextActive];
-          adjustedEvent.index = nextActive;
+          adjustedEvent.item = data[nextFocused];
+          adjustedEvent.index = nextFocused;
           onClickItem(adjustedEvent);
           sendAnalytics({
             type: 'listItemClick',
             element: listRef.current,
             event: adjustedEvent,
-            item: data[nextActive],
-            index: nextActive,
+            item: data[nextFocused],
+            index: nextFocused,
           });
         }
       }
@@ -287,21 +301,21 @@ const List = React.forwardRef(
           onUp={(event) => {
             if (onClickItem || onOrder) {
               event.preventDefault();
-              if (active >= 0) {
+              if (focused >= 0) {
                 const min = onOrder ? 1 : 0;
-                const activeElementIndex = Math.max(active - 1, min);
-                updateActive(activeElementIndex);
+                const focusedElementIndex = Math.max(focused - 1, min);
+                handleFocus(focusedElementIndex);
 
-                // Ensure the active item is in view
-                // setTimeout for activeElement to be updated
+                // Ensure the focused item is in view
+                // setTimeout for focusedElement to be updated
                 setTimeout(() => {
                   // eslint-disable max-len
-                  listRef.current?.children[activeElementIndex]?.scrollIntoView(
-                    {
-                      behavior: 'smooth',
-                      block: 'nearest',
-                    },
-                  );
+                  listRef.current?.children[
+                    focusedElementIndex
+                  ]?.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'nearest',
+                  });
                 }, 0);
               }
             }
@@ -314,20 +328,20 @@ const List = React.forwardRef(
                 const max = onOrder
                   ? orderableData.length * 2 - 2
                   : data.length - 1;
-                const activeElementIndex =
-                  active >= min ? Math.min(active + 1, max) : min;
-                updateActive(activeElementIndex);
+                const focusedElementIndex =
+                  focused >= min ? Math.min(focused + 1, max) : min;
+                handleFocus(focusedElementIndex);
 
-                // Ensure the active item is in view
-                // setTimeout for activeElement to be updated
+                // Ensure the focused item is in view
+                // setTimeout for focusedElement to be updated
                 setTimeout(() => {
                   //  eslint-disable max-len
-                  listRef.current?.children[activeElementIndex]?.scrollIntoView(
-                    {
-                      behavior: 'smooth',
-                      block: 'nearest',
-                    },
-                  );
+                  listRef.current?.children[
+                    focusedElementIndex
+                  ]?.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'nearest',
+                  });
                 }, 0);
               }
             }
@@ -338,29 +352,18 @@ const List = React.forwardRef(
             aria-label={ariaLabel || a11yTitle}
             ref={listRef}
             as={as || 'ul'}
-            onFocus={() => {
-              if (onOrder || onClickItem) {
-                if (active === undefined && lastActive === undefined) {
-                  // first "MoveDown" button or first item
-                  updateActive(onOrder ? 1 : 0);
-                } else if (lastActive >= 0 && active === undefined) {
-                  // if focus is returning to the list, make the last active
-                  // item active again
-                  updateActive(lastActive);
-                }
-              }
-            }}
             onBlur={(event) => {
-              setLastActive(active);
-              // only reset active if the focus is leaving the list
+              setLastFocused(focused);
+              // only reset focused if the focus is leaving the list
               // and not moving to a child element of the list
               if (
                 listRef.current &&
                 !listRef.current.contains(event.relatedTarget)
               ) {
-                updateActive(undefined);
+                updateFocused(undefined);
               }
             }}
+            onMouseOut={() => updateActive(undefined)}
             {...ariaProps}
             {...passThemeFlag}
             {...rest}
@@ -515,25 +518,25 @@ const List = React.forwardRef(
                     role: 'option',
                     tabIndex:
                       // entering list for first time
-                      (active === undefined &&
-                        lastActive === undefined &&
+                      (focused === undefined &&
+                        lastFocused === undefined &&
                         index === 0) ||
                       // returning to list after already using keyboard
-                      (active === undefined &&
-                        lastActive !== undefined &&
-                        lastActive === index) ||
+                      (focused === undefined &&
+                        lastFocused !== undefined &&
+                        lastFocused === index) ||
                       // actively using keyboard
-                      active === index
+                      focused === index
                         ? 0
                         : -1,
                     active: active === index,
-                    focus: active === index,
+                    focus: focused === index,
+                    hoverIndicator: !isDisabled,
                     ref: (node) => {
-                      if (active === index) {
-                        activeRef.current = node;
+                      if (focused === index) {
+                        focusedRef.current = node;
                       }
                     },
-                    hoverIndicator: !isDisabled,
                     onClick: (event) => {
                       // Only prevent event when disabled. We still want screen
                       // readers to be aware that an option exists, but is in a
@@ -544,6 +547,10 @@ const List = React.forwardRef(
                         onSelectOption(event, index);
                       }
                     },
+                    onFocus: () => {
+                      handleFocus(index);
+                    },
+                    onMouseOver: () => updateActive(index),
                   };
                 }
 
@@ -559,7 +566,7 @@ const List = React.forwardRef(
                       // eslint-disable-next-line no-param-reassign
                       event.dataTransfer.effectAllowed = 'move';
                       setDragging(orderableIndex);
-                      updateActive(undefined);
+                      updateFocused(undefined);
                     },
                     onDragEnd: () => {
                       setDragging(undefined);
@@ -597,16 +604,16 @@ const List = React.forwardRef(
                   const moveUpIndex = orderableIndex * 2;
                   const moveUpTabIndex = calculateTabIndex(
                     moveUpIndex,
-                    active,
-                    lastActive,
+                    focused,
+                    lastFocused,
                     !orderableIndex, // first item can't move up
                   );
 
                   const moveDownIndex = orderableIndex * 2 + 1;
                   const moveDownTabIndex = calculateTabIndex(
                     moveDownIndex,
-                    active,
-                    lastActive,
+                    focused,
+                    lastFocused,
                     // last item can't move down
                     orderableIndex >= orderableData.length - 1,
                   );
@@ -619,15 +626,15 @@ const List = React.forwardRef(
                         icon={<Up />}
                         hoverIndicator
                         disabled={!orderableIndex}
-                        active={active === moveUpIndex}
+                        active={focused === moveUpIndex}
                         onClick={(event) => {
                           event.stopPropagation();
                           onSelectOption(event, moveUpIndex);
                         }}
                         tabIndex={moveUpTabIndex}
                         ref={(node) => {
-                          if (active === moveUpIndex) {
-                            activeRef.current = node;
+                          if (focused === moveUpIndex) {
+                            focusedRef.current = node;
                           }
                         }}
                       />
@@ -637,24 +644,24 @@ const List = React.forwardRef(
                         icon={<Down />}
                         hoverIndicator
                         disabled={orderableIndex >= orderableData.length - 1}
-                        active={active === moveDownIndex}
+                        active={focused === moveDownIndex}
                         onClick={(event) => {
                           event.stopPropagation();
                           onSelectOption(event, moveDownIndex);
                         }}
                         tabIndex={moveDownTabIndex}
                         ref={(node) => {
-                          if (active === moveDownIndex) {
-                            activeRef.current = node;
+                          if (focused === moveDownIndex) {
+                            focusedRef.current = node;
                           }
                         }}
                         onFocus={() => {
                           // make sure first "MoveDown" is focusable
                           if (
-                            active === undefined &&
-                            lastActive === undefined
+                            focused === undefined &&
+                            lastFocused === undefined
                           ) {
-                            updateActive(moveDownIndex);
+                            handleFocus(moveDownIndex);
                           }
                         }}
                       />
