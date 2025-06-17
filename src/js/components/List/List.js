@@ -326,9 +326,10 @@ const List = React.forwardRef(
             ref={listRef}
             as={as || 'ul'}
             onFocus={() => {
-              if (onOrder) {
+              if (onOrder || onClickItem) {
                 if (active === undefined && lastActive === undefined) {
-                  updateActive(1); // first "MoveDown" button
+                  // first "MoveDown" button or first item
+                  updateActive(onOrder ? 1 : 0);
                 } else if (lastActive >= 0 && active === undefined) {
                   // if focus is returning to the list, make the last active
                   // item active again
