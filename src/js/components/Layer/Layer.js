@@ -10,7 +10,7 @@ import { ContainerTargetContext } from '../../contexts/ContainerTargetContext';
 import { LayerPropTypes } from './propTypes';
 
 const Layer = forwardRef((props, ref) => {
-  const { animate, animation, targetChildPosition } = props;
+  const { animate, animation, modal, targetChildPosition } = props;
   const [originalFocusedElement, setOriginalFocusedElement] = useState();
   useEffect(() => setOriginalFocusedElement(document.activeElement), []);
   const [layerContainer, setLayerContainer] = useState();
@@ -25,7 +25,7 @@ const Layer = forwardRef((props, ref) => {
   useLayoutEffect(
     () => () => {
       if (originalFocusedElement) {
-        if (originalFocusedElement.focus) {
+        if (modal !== false && originalFocusedElement.focus) {
           // wait for the fixed positioning to come back to normal
           // see layer styling for reference
           setTimeout(() => originalFocusedElement.focus(), 0);
@@ -74,6 +74,7 @@ const Layer = forwardRef((props, ref) => {
       animation,
       containerTarget,
       layerContainer,
+      modal,
       originalFocusedElement,
     ],
   );
