@@ -24,6 +24,7 @@ var StyledBox = styled(Box).withConfig({
   return props.focus && focusStyle();
 });
 var EdgeControl = /*#__PURE__*/forwardRef(function (_ref, ref) {
+  var _theme$rangeSelector;
   var color = _ref.color,
     direction = _ref.direction,
     edge = _ref.edge,
@@ -39,7 +40,23 @@ var EdgeControl = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var _DIRECTION_PROPS$dire = DIRECTION_PROPS[direction],
     cursor = _DIRECTION_PROPS$dire.cursor,
     fill = _DIRECTION_PROPS$dire.fill;
-  var size = parseMetricToNum(theme.global.spacing) / 2;
+  var themeEdgeSize = (_theme$rangeSelector = theme.rangeSelector) == null || (_theme$rangeSelector = _theme$rangeSelector.edge) == null ? void 0 : _theme$rangeSelector.size;
+  var size;
+  if (themeEdgeSize) {
+    var _theme$global$edgeSiz;
+    // Try to look up the value in theme.global.edgeSize
+    // If not found, assume it's a raw CSS value like '10px'.
+    var themeEdge = ((_theme$global$edgeSiz = theme.global.edgeSize) == null ? void 0 : _theme$global$edgeSiz[themeEdgeSize]) || themeEdgeSize;
+    var parsedSize = parseMetricToNum(themeEdge);
+    var isValid = typeof parsedSize === 'number' && !Number.isNaN(parsedSize);
+
+    // If parsedSize is a valid number, use it.
+    // Otherwise, fallback to half of the theme's global spacing.
+    size = isValid ? parsedSize : parseMetricToNum(theme.global.spacing) / 2;
+  } else {
+    // If no edge size was specified use default.
+    size = parseMetricToNum(theme.global.spacing) / 2;
+  }
   var keyboardProps = direction === 'vertical' ? {
     onUp: onDecrease,
     onDown: onIncrease

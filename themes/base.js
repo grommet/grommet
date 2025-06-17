@@ -1956,10 +1956,11 @@ var generate = exports.generate = function generate(baseSpacing, scale) {
         invert: {
           color: 'light-4'
         }
+      },
+      edge: {
+        // type: undefined,
+        // size: undefined,
       }
-      // edge: {
-      //   type: undefined,
-      // },
     },
     select: {
       // background: undefined,
