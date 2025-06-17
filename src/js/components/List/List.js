@@ -95,6 +95,19 @@ const reorder = (array, pinnedArray, source, target) => {
   return result;
 };
 
+/** Calculate tabIndex for order control buttons. */
+const calculateTabIndex = (buttonIndex, active, lastActive, disabled) => {
+  if (disabled) return -1;
+  // is currently active
+  return (active !== undefined && active === buttonIndex) ||
+    // was last active
+    (active === undefined && lastActive === buttonIndex) ||
+    // first "move down" button when entering the list for first time
+    (active === undefined && lastActive === undefined && buttonIndex === 1)
+    ? 0
+    : -1;
+};
+
 const List = React.forwardRef(
   (
     {
@@ -580,38 +593,23 @@ const List = React.forwardRef(
 
                   const Up = theme.list.icons.up;
                   const Down = theme.list.icons.down;
+
                   const moveUpIndex = orderableIndex * 2;
-                  const moveUpTabIndex =
-                    // Don't allow focus on disabled buttons
-                    // eslint-disable-next-line no-nested-ternary
-                    !orderableIndex
-                      ? -1
-                      : // active is defined
-                      (active !== undefined && active === moveUpIndex) ||
-                        // focus is returning to list, make previously active
-                        // button active
-                        (active === undefined && lastActive === moveUpIndex)
-                      ? 0
-                      : -1;
+                  const moveUpTabIndex = calculateTabIndex(
+                    moveUpIndex,
+                    active,
+                    lastActive,
+                    !orderableIndex, // first item can't move up
+                  );
+
                   const moveDownIndex = orderableIndex * 2 + 1;
-                  const moveDownTabIndex =
-                    // Don't allow focus on disabled buttons
-                    // eslint-disable-next-line no-nested-ternary
-                    orderableIndex >= orderableData.length - 1
-                      ? -1
-                      : // active is defined
-                      (active !== undefined && active === moveDownIndex) ||
-                        // focus is returning to list, make previously active
-                        // button active
-                        (active === undefined &&
-                          lastActive === moveDownIndex) ||
-                        // focus entering list for first time
-                        // first "MoveDown" should be focusable
-                        (active === undefined &&
-                          lastActive === undefined &&
-                          moveDownIndex === 1)
-                      ? 0
-                      : -1;
+                  const moveDownTabIndex = calculateTabIndex(
+                    moveDownIndex,
+                    active,
+                    lastActive,
+                    // last item can't move down
+                    orderableIndex >= orderableData.length - 1,
+                  );
 
                   orderControls = !isPinned && (
                     <Box direction="row" align="center" justify="end">
