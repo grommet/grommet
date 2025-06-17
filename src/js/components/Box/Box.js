@@ -310,7 +310,13 @@ const Box = forwardRef(
 
     if (onClick) {
       content = (
-        <Keyboard onEnter={onClick} onSpace={onClick}>
+        <Keyboard
+          onEnter={onClick}
+          onSpace={(e) => {
+            e.preventDefault(); // prevent page scroll
+            onClick(e);
+          }}
+        >
           {content}
         </Keyboard>
       );
