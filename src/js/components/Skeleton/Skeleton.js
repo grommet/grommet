@@ -32,6 +32,9 @@ const Skeleton = forwardRef(
 
     return (
       <StyledSkeleton
+        // Skeletons are purely visual,
+        // so we hide them from screen readers
+        aria-hidden="true"
         ref={ref}
         as={as}
         background={background}

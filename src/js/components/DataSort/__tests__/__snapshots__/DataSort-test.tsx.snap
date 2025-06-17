@@ -261,6 +261,26 @@ exports[`DataSort properties 1`] = `
   text-align: inherit;
 }
 
+.c1:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus >circle,
+.c1:focus >ellipse,
+.c1:focus >line,
+.c1:focus >path,
+.c1:focus >polygon,
+.c1:focus >polyline,
+.c1:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus ::-moz-focus-inner {
+  border: 0;
+}
+
 .c1:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
@@ -354,7 +374,7 @@ exports[`DataSort properties 1`] = `
     aria-setsize="2"
     class="c1 c2"
     role="option"
-    tabindex="-1"
+    tabindex="0"
     type="button"
   >
     <div
