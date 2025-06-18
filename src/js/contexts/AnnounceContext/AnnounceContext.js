@@ -4,30 +4,47 @@ import { AnnounceContextPropTypes } from './propTypes';
 const createAnnouncer = () => {
   const announcer = document.createElement('div');
   announcer.id = 'grommet-announcer';
-  announcer.style.left = '-100%';
-  announcer.style.right = '100%';
-  announcer.style.position = 'fixed';
-  announcer.style['z-index'] = '-1';
+  // Add ARIA attributes during creation
+  announcer.setAttribute('aria-live', 'polite');
+  announcer.setAttribute('aria-atomic', 'true');
+  // Hide visually but keep accessible to screen readers
+  announcer.style.position = 'absolute';
+  announcer.style.left = '-1px';
+  announcer.style.height = '1px';
+  announcer.style.width = '1px';
+  announcer.style.overflow = 'hidden';
+  announcer.style.clip = 'rect(1px, 1px, 1px, 1px)';
+  announcer.style['white-space'] = 'nowrap';
 
   document.body.insertBefore(announcer, document.body.firstChild);
-
   return announcer;
 };
 
 export const AnnounceContext = React.createContext(
   (message, mode = 'polite', timeout = 500) => {
-    // we only create a new container if we don't have one already
-    // we create a separate node so that grommet does not set aria-hidden to it
     const announcer =
-      document.body.querySelector(`#grommet-announcer[aria-live]`) ||
-      createAnnouncer();
+      document.body.querySelector('#grommet-announcer') || createAnnouncer();
 
-    announcer.setAttribute('aria-live', 'off');
-    announcer.innerHTML = message;
+    // Clear any existing announcement
+    announcer.textContent = '';
+
+    // Update aria-live before setting content
     announcer.setAttribute('aria-live', mode);
-    setTimeout(() => {
-      announcer.innerHTML = '';
-    }, timeout);
+
+    // Use requestAnimationFrame to ensure DOM updates are complete
+    requestAnimationFrame(() => {
+      // Set content in next frame
+      requestAnimationFrame(() => {
+        announcer.textContent = message;
+
+        // Clear after timeout
+        if (timeout > 0) {
+          setTimeout(() => {
+            announcer.textContent = '';
+          }, timeout);
+        }
+      });
+    });
   },
 );
 

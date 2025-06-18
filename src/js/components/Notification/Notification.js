@@ -101,25 +101,6 @@ const Notification = ({
     }
   }, [announce, visible, toast, messageProp, status, title]);
 
-  // useEffect(() => {
-  //   if (
-  //     visible &&
-  //     toast &&
-  //     typeof messageProp === 'string' &&
-  //     typeof title === 'string'
-  //   ) {
-  //     const announceText = `${title}. ${messageProp}`;
-
-  //     announce(announceText, status === 'critical' ? 'assertive' : 'polite');
-
-  //     const timeout = setTimeout(() => {
-  //       setLiveMessage(announceText);
-  //     }, 20);
-
-  //     return () => clearTimeout(timeout);
-  //   }
-  // }, [announce, visible, toast, messageProp, status, title]);
-
   const close = useCallback(
     (event) => {
       setVisible(false);
@@ -127,6 +108,15 @@ const Notification = ({
     },
     [onClose],
   );
+
+  useEffect(() => {
+    if (visible && toast) {
+      const announceText =
+        typeof messageProp === 'string' ? `${title}. ${messageProp}` : title;
+
+      announce(announceText, status === 'critical' ? 'assertive' : 'polite');
+    }
+  }, [announce, visible, toast, messageProp, status, title]);
 
   useEffect(() => {
     if (autoClose) {
