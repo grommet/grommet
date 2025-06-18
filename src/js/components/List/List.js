@@ -251,8 +251,8 @@ const List = React.forwardRef(
         if (onOrder) {
           const index = Math.trunc(nextFocused / 2);
           // Call onOrder with the re-ordered data.
-          // Update the active control index so that the
-          // active control will stay on the same item
+          // Update the focused control index so that the
+          // focused control will stay on the same item
           // even though it moved up or down.
           const newIndex = nextFocused % 2 ? index + 1 : index - 1;
           onOrder(reorder(orderableData, pinnedInfo, index, newIndex));
