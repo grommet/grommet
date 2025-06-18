@@ -13,7 +13,7 @@ const createAnnouncer = () => {
   announcer.style.height = '1px';
   announcer.style.width = '1px';
   announcer.style.overflow = 'hidden';
-  announcer.style.clip = 'rect(1px, 1px, 1px, 1px)';
+  announcer.style.clipPath = 'rect(1px, 1px, 1px, 1px)';
   announcer.style['white-space'] = 'nowrap';
 
   document.body.insertBefore(announcer, document.body.firstChild);
