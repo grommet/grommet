@@ -939,6 +939,81 @@ describe('Select', () => {
     expect(style.background).toBe('lightgreen');
   });
 
+  test('renders default clear button shows focus indicator', () => {
+    const customTheme = {
+      select: {
+        clear: {
+          text: undefined,
+          button: {
+            color: 'red',
+            border: {
+              radius: '10px',
+            },
+            pad: {
+              vertical: 'xsmall',
+              horizontal: 'small',
+            },
+          },
+        },
+      },
+    };
+
+    const Test = () => {
+      const [value, setValue] = React.useState();
+      return (
+        <Select
+          id="test-select"
+          placeholder="test select"
+          value={value}
+          onChange={({ option }) => setValue(option)}
+          options={['one', 'two']}
+          clear
+        />
+      );
+    };
+
+    render(
+      <Grommet theme={customTheme}>
+        <Test />
+      </Grommet>,
+    );
+
+    act(() => {
+      fireEvent.click(screen.getByPlaceholderText('test select'));
+    });
+
+    act(() => {
+      fireEvent.click(screen.getByRole('option', { name: 'one' }));
+    });
+
+    act(() => {
+      fireEvent.click(screen.getByPlaceholderText('test select'));
+    });
+
+    const clearButton = screen.getByRole('button', {
+      name: /Clear selection/,
+    });
+
+    expect(clearButton).toBeInTheDocument();
+
+    expect(clearButton).toHaveStyleRule('color', 'red');
+
+    // Move focus manually
+    act(() => {
+      clearButton.focus();
+    });
+    expect(clearButton).toHaveFocus();
+    expect(clearButton).toHaveStyleRule('color', 'red');
+
+    // Style assertion (optional but included)
+    expect(clearButton).toHaveStyleRule('box-shadow', '0 0 2px 2px #6FFFB0', {
+      modifier: ':focus',
+    });
+    expect(clearButton).toHaveStyleRule('outline', 'none', {
+      modifier: ':focus',
+    });
+  });
+
   test(`renders styled select options combining select.options.box &&
     select.options.container;
     select.options.container prioritized if conflict`, () => {
