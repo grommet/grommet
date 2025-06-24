@@ -420,10 +420,7 @@ describe('List events', () => {
       which: 13,
     });
     expect(onActive).toHaveBeenCalledTimes(1);
-    // Reported bug: onEnter calls onClickItem twice instead of once.
-    // Issue #4173. Once fixed it should be
-    // `expect(onClickItem).toHaveBeenCalledTimes(2);`
-    expect(onClickItem).toHaveBeenCalledTimes(3);
+    expect(onClickItem).toHaveBeenCalledTimes(2);
     // Both focus and active should be placed on 'beta'
     expect(container.firstChild).toMatchSnapshot();
   });
@@ -626,53 +623,33 @@ describe('List onOrder', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
-  test('Keyboard move down', () => {
-    const { container, getByText } = render(<App />);
+  test('Keyboard move down', async () => {
+    const user = userEvent.setup();
+    const { asFragment } = render(<App />);
 
-    expect(container.firstChild).toMatchSnapshot();
-    fireEvent.click(getByText('alpha'));
-    fireEvent.mouseOver(getByText('alpha'));
-    fireEvent.keyDown(getByText('alpha'), {
-      key: 'ArrowDown',
-      keyCode: 40,
-      which: 40,
-    });
-    // alpha's down arrow control should be active
-    expect(container.firstChild).toMatchSnapshot();
-    fireEvent.keyDown(getByText('alpha'), {
-      key: 'Enter',
-      keyCode: 13,
-      which: 13,
-    });
-    expect(onOrder).toHaveBeenCalled();
-    expect(container.firstChild).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
+    await user.tab(); // focus into list
+    await user.keyboard('{ArrowDown}'); // move to beta
+    // beta's up arrow control should be active
+    expect(asFragment()).toMatchSnapshot();
+    await user.keyboard('{Enter}');
+    expect(onOrder).toHaveBeenCalledTimes(1);
+    expect(asFragment()).toMatchSnapshot();
   });
 
-  test('Keyboard move up', () => {
-    const { container, getByText } = render(<App />);
+  test('Keyboard move up', async () => {
+    const user = userEvent.setup();
+    const { asFragment } = render(<App />);
 
-    expect(container.firstChild).toMatchSnapshot();
-    fireEvent.click(getByText('alpha'));
-    fireEvent.mouseOver(getByText('alpha'));
-    fireEvent.keyDown(getByText('alpha'), {
-      key: 'ArrowDown',
-      keyCode: 40,
-      which: 40,
-    });
-    fireEvent.keyDown(getByText('alpha'), {
-      key: 'ArrowDown',
-      keyCode: 40,
-      which: 40,
-    });
+    expect(asFragment()).toMatchSnapshot();
+    await user.tab(); // focus into list
+    await user.keyboard('{ArrowDown}'); // move to beta up arrow
     // beta's up arrow control should be active
-    expect(container.firstChild).toMatchSnapshot();
-    fireEvent.keyDown(getByText('alpha'), {
-      key: 'Space',
-      keyCode: 32,
-      which: 32,
-    });
+    expect(asFragment()).toMatchSnapshot();
+    await user.keyboard('{ArrowUp}'); // move to alpha down arrow
+    await user.keyboard('{Enter}'); // move alpha down
     expect(onOrder).toHaveBeenCalledWith([{ a: 'beta' }, { a: 'alpha' }]);
-    expect(container.firstChild).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 });
 
@@ -713,53 +690,33 @@ describe('List onOrder with no-index', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
-  test('Keyboard move down', () => {
-    const { container, getByText } = render(<App />);
+  test('Keyboard move down', async () => {
+    const user = userEvent.setup();
+    const { asFragment } = render(<App />);
 
-    expect(container.firstChild).toMatchSnapshot();
-    fireEvent.click(getByText('alpha'));
-    fireEvent.mouseOver(getByText('alpha'));
-    fireEvent.keyDown(getByText('alpha'), {
-      key: 'ArrowDown',
-      keyCode: 40,
-      which: 40,
-    });
-    // alpha's down arrow control should be active
-    expect(container.firstChild).toMatchSnapshot();
-    fireEvent.keyDown(getByText('alpha'), {
-      key: 'Enter',
-      keyCode: 13,
-      which: 13,
-    });
-    expect(onOrder).toHaveBeenCalled();
-    expect(container.firstChild).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
+    await user.tab(); // focus into list
+    await user.keyboard('{ArrowDown}'); // move to beta
+    // beta's up arrow control should be active
+    expect(asFragment()).toMatchSnapshot();
+    await user.keyboard('{Enter}');
+    expect(onOrder).toHaveBeenCalledTimes(1);
+    expect(asFragment()).toMatchSnapshot();
   });
 
-  test('Keyboard move up', () => {
-    const { container, getByText } = render(<App />);
+  test('Keyboard move up', async () => {
+    const user = userEvent.setup();
+    const { asFragment } = render(<App />);
 
-    expect(container.firstChild).toMatchSnapshot();
-    fireEvent.click(getByText('alpha'));
-    fireEvent.mouseOver(getByText('alpha'));
-    fireEvent.keyDown(getByText('alpha'), {
-      key: 'ArrowDown',
-      keyCode: 40,
-      which: 40,
-    });
-    fireEvent.keyDown(getByText('alpha'), {
-      key: 'ArrowDown',
-      keyCode: 40,
-      which: 40,
-    });
+    expect(asFragment()).toMatchSnapshot();
+    await user.tab(); // focus into list
+    await user.keyboard('{ArrowDown}'); // move to beta up arrow
     // beta's up arrow control should be active
-    expect(container.firstChild).toMatchSnapshot();
-    fireEvent.keyDown(getByText('alpha'), {
-      key: 'Space',
-      keyCode: 32,
-      which: 32,
-    });
+    expect(asFragment()).toMatchSnapshot();
+    await user.keyboard('{ArrowUp}'); // move to alpha down arrow
+    await user.keyboard('{Enter}'); // move alpha down
     expect(onOrder).toHaveBeenCalledWith([{ a: 'beta' }, { a: 'alpha' }]);
-    expect(container.firstChild).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 });
 
@@ -931,9 +888,9 @@ describe('List disabled', () => {
     );
     render(<App />);
 
-    const list = screen.getByRole('listbox');
+    const item = screen.getByRole('option', { name: locations[0] });
     await user.tab();
-    expect(list).toHaveFocus();
+    expect(item).toHaveFocus();
     // user.keyboard is not behaving as expected
     // await user.keyboard('[ArrowUp][Enter]');
     const enabledItems = locations.filter(
