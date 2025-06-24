@@ -9,7 +9,9 @@ import React, {
 } from 'react';
 
 import { useLayoutEffect } from '../../utils/use-isomorphic-layout-effect';
+import { AnnounceContext } from '../../contexts/AnnounceContext';
 import { DataContext } from '../../contexts/DataContext';
+import { MessageContext } from '../../contexts/MessageContext';
 import { Box } from '../Box';
 import { Text } from '../Text';
 import { Header } from './Header';
@@ -64,6 +66,7 @@ const DataTable = ({
   disabled,
   fill,
   groupBy: groupByProp,
+  messages,
   onClickRow, // removing unknown DOM attributes
   onMore,
   onSearch, // removing unknown DOM attributes
@@ -177,7 +180,39 @@ const DataTable = ({
   const [groupState, setGroupState] = useGroupState(groups, groupBy);
 
   const [limit, setLimit] = useState(step);
+  const announce = useContext(AnnounceContext);
+  const { format } = useContext(MessageContext);
+  // only announce number of rows that are rendered
+  // when outside of DataContext, otherwise
+  // Data will make this announcement
+  useEffect(() => {
+    if (dataProp) {
+      let messageId;
+      const rows = format({
+        id:
+          adjustedData.length === 1 ? 'dataTable.rowsSingle' : 'dataTable.rows',
+        messages: messages?.dataSummary,
+      });
+      // when less than one page returned, use specific amount
+      if (adjustedData.length < limit) {
+        if (adjustedData.length === 1) messageId = 'dataTable.totalSingle';
+        else messageId = 'dataTable.total';
+      } else {
+        messageId = 'dataTable.rowsChanged';
+      }
 
+      announce(
+        format({
+          id: messageId,
+          messages: messages?.dataTable,
+          values: {
+            total: adjustedData.length,
+            rows,
+          },
+        }),
+      );
+    }
+  }, [dataProp, adjustedData, announce, format, limit, messages, paginate]);
   const [selected, setSelected] = useState(
     select || (onSelect && []) || undefined,
   );
