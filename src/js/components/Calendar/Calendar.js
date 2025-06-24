@@ -939,12 +939,24 @@ const Calendar = forwardRef(
       </StyledWeek>,
     );
 
-    // While the calendar contains focus and is not animating, set
-    // the focus to the active date.
+    // track if we need to focus when element becomes available
+    const [needsFocus, setNeedsFocus] = useState(false);
+    // while the calendar contains focus, and is not animating, set
+    // the focus to the active date
+
+    // Focus management effect
     useEffect(() => {
-      if (!animating && active && focus && focusableDateRef?.current)
+      if (!animating && active && focus) {
+        setNeedsFocus(true);
+      }
+    }, [animating, active, focus]);
+
+    useEffect(() => {
+      if (needsFocus && focusableDateRef?.current) {
         focusableDateRef.current.focus();
-    }, [focusableDateRef, active, focus, animating]);
+        setNeedsFocus(false); // Reset flag after focus
+      }
+    }, [active, reference, displayBounds, needsFocus, focusableDateRef]);
 
     useEffect(() => {
       if (bounds && active) {
