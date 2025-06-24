@@ -392,7 +392,7 @@ const Header = forwardRef(
                       justify={align}
                     >
                       {content}
-                      {Icon && <Icon a11yTitle={ariaSort} />}
+                      {Icon && <Icon aria-label={ariaSort} />}
                     </Box>
                   </StyledHeaderCellButton>
                 );
