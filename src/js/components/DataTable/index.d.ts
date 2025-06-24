@@ -52,7 +52,12 @@ export interface ColumnConfig<TRowType> {
   messages?: {
     ascending?: string;
     descending?: string;
+    rows?: string;
+    rowsChanged?: string;
+    rowsSingle?: string;
     searchBy?: string;
+    total?: string;
+    totalSingle?: string;
   };
   pin?: boolean;
   plain?: boolean;

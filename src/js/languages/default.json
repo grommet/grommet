@@ -58,7 +58,12 @@
   "dataTable": {
     "ascending": "ascending",
     "descending": "descending",
-    "searchBy": "Open search by {property}"
+    "rows": "rows",
+    "rowsChanged": "Number of rows changed",
+    "rowsSingle": "row",
+    "searchBy": "Open search by {property}",
+    "total": "{total} {rows}",
+    "totalSingle": "{total} {rows}"
   },
   "dataTableColumns": {
     "open": "Open column selector",
