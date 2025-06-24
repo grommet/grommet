@@ -6,23 +6,24 @@ if (process.env.NODE_ENV !== 'production') {
     confirmRemove: PropTypes.func,
     disabled: PropTypes.bool,
     id: PropTypes.string,
+    maxSize: PropTypes.number,
     messages: PropTypes.shape({
+      alert: PropTypes.shape({
+        maxSize: PropTypes.string,
+        maxFile: PropTypes.string,
+      }),
       browse: PropTypes.string,
       dropPrompt: PropTypes.string,
       dropPromptMultiple: PropTypes.string,
       files: PropTypes.string,
       maxFile: PropTypes.string,
-      remove: PropTypes.string,
-      removeAll: PropTypes.string,
       maxSizeSingle: PropTypes.string,
       maxSizeMultiple: PropTypes.shape({
         singular: PropTypes.string,
         plural: PropTypes.string,
       }),
-      alert: PropTypes.shape({
-        maxSize: PropTypes.string,
-        maxFile: PropTypes.string,
-      }),
+      remove: PropTypes.string,
+      removeAll: PropTypes.string,
     }),
     multiple: PropTypes.oneOfType([
       PropTypes.bool,
