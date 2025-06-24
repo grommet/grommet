@@ -94,22 +94,22 @@ export interface GrommetProps {
         label?: string;
       };
       fileInput?: {
+        alert?: {
+          maxSize?: string;
+          maxFile?: string;
+        };
         browse?: string;
         dropPrompt?: string;
         dropPromptMultiple?: string;
         files?: string;
         maxFile?: string;
         maxSizeSingle?: string;
-        remove?: string;
-        removeAll?: string;
         maxSizeMultiple?: {
           singular?: string;
           plural?: string;
         };
-        alert?: {
-          maxSize?: string;
-          maxFile?: string;
-        };
+        remove?: string;
+        removeAll?: string;
       };
       form?: {
         invalid?: string;
