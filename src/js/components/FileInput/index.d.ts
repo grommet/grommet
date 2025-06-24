@@ -7,7 +7,7 @@ export interface FileInputProps {
   }: {
     onConfirm: any;
     onCancel: any;
-  }) => React.ReactElement;
+  }) => React.ReactElement<any>;
   disabled?: boolean;
   id?: string;
   maxSize?: number;
@@ -23,14 +23,19 @@ export interface FileInputProps {
   multiple?: boolean | { aggregateThreshold?: number; max?: number };
   name?: string;
   onChange?: (
-    event?: React.ChangeEvent<HTMLInputElement>,
-    { files }?: { files: File[] },
-    { target }?: { target: { files: FileList } },
+    event: React.ChangeEvent<HTMLInputElement>,
+    { files }: { files: File[] },
   ) => void;
   renderFile?: (...args: any[]) => void;
 }
 
-type inputProps = Omit<JSX.IntrinsicElements['input'], 'multiple' | 'onChange'>;
+type inputProps = Omit<
+  React.DetailedHTMLProps<
+    React.InputHTMLAttributes<HTMLInputElement>,
+    HTMLInputElement
+  >,
+  'multiple' | 'onChange'
+>;
 
 export interface FileInputExtendedProps extends FileInputProps, inputProps {}
 

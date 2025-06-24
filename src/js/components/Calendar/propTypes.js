@@ -34,6 +34,7 @@ if (process.env.NODE_ENV !== 'production') {
     fill: PropTypes.bool,
     firstDayOfWeek: PropTypes.oneOf([0, 1]),
     header: PropTypes.func,
+    level: PropTypes.oneOf([1, 2, 3, 4, 5, 6, '1', '2', '3', '4', '5', '6']),
     locale: PropTypes.string,
     messages: PropTypes.shape({
       previous: PropTypes.string,
@@ -43,6 +44,7 @@ if (process.env.NODE_ENV !== 'production') {
     onSelect: PropTypes.func,
     range: PropTypes.oneOfType([PropTypes.bool, PropTypes.oneOf(['array'])]),
     reference: PropTypes.string,
+    responsive: PropTypes.bool,
     showAdjacentDays: PropTypes.oneOfType([
       PropTypes.bool,
       PropTypes.oneOf(['trim']),

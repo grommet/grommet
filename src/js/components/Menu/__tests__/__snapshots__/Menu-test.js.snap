@@ -719,7 +719,7 @@ exports[`Menu close by clicking outside 2`] = `
 
 exports[`Menu close by clicking outside 3`] = `
 "@media only screen and (max-width: 768px) {
-  .fVBXvN {
+  .dlKNdn {
     padding: 6px;
   }
 }"
@@ -3017,30 +3017,30 @@ exports[`Menu open and close on click 1`] = `
 
 exports[`Menu open and close on click 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 drDzQW"
+  class="StyledGrommet-sc-19lkkz7-0 cBoJUe"
 >
   <button
     aria-expanded="true"
     aria-haspopup="menu"
     aria-label="Open Menu"
-    class="StyledButton-sc-323bzc-0 cWIZhL"
+    class="StyledButton-sc-323bzc-0 eNtKJP"
     id="test-menu"
     type="button"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 fVBXvN"
+      class="StyledBox-sc-13pk1d4-0 dlKNdn"
     >
       <span
-        class="StyledText-sc-1sadyjn-0 fjinKI"
+        class="StyledText-sc-1sadyjn-0 ldA-DUE"
       >
         Test
       </span>
       <div
-        class="StyledBox__StyledBoxGap-sc-13pk1d4-1 bgDHuj"
+        class="StyledBox__StyledBoxGap-sc-13pk1d4-1 bcWBJH"
       />
       <svg
         aria-label="FormDown"
-        class="StyledIcon-sc-ofa7kd-0 jvxuhm"
+        class="StyledIcon-sc-ofa7kd-0 bHtbkK"
         viewBox="0 0 24 24"
       >
         <path
@@ -3368,7 +3368,7 @@ exports[`Menu open and close on click 3`] = `
 
 exports[`Menu open and close on click 4`] = `
 "@media only screen and (max-width: 768px) {
-  .fVBXvN {
+  .dlKNdn {
     padding: 6px;
   }
 }"
@@ -4019,7 +4019,7 @@ exports[`Menu open on up close on esc 2`] = `
 
 exports[`Menu open on up close on esc 3`] = `
 "@media only screen and (max-width: 768px) {
-  .fVBXvN {
+  .dlKNdn {
     padding: 6px;
   }
 }"
@@ -4560,6 +4560,237 @@ exports[`Menu shift + tab through menu until it closes 1`] = `
 </div>
 `;
 
+exports[`Menu should apply theme.menu.container 1`] = `
+.c0 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  overflow: auto;
+  box-shadow: 0px 12px 24px rgba(0, 0, 0, 0.20);
+}
+
+.c2 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+}
+
+.c4 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  padding: 6px;
+  overflow: auto;
+}
+
+.c5 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  flex: 0 0 auto;
+}
+
+.c7 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: row;
+  padding: 12px;
+}
+
+.c8 {
+  flex: 0 0 auto;
+  align-self: stretch;
+  height: 6px;
+}
+
+.c1 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  border-radius: 0px;
+  position: fixed;
+  z-index: 20;
+  outline: none;
+  background-color: #FFFFFF;
+  color: #444444;
+  opacity: 0;
+  transform-origin: top left;
+  animation: kPQHBD 0.1s forwards;
+  animation-delay: 0.01s;
+}
+
+.c6 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+}
+
+.c6:hover {
+  background-color: rgba(221, 221, 221, 0.4);
+  color: #000000;
+}
+
+.c6:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c6:focus:not(:focus-visible) >circle,
+.c6:focus:not(:focus-visible) >ellipse,
+.c6:focus:not(:focus-visible) >line,
+.c6:focus:not(:focus-visible) >path,
+.c6:focus:not(:focus-visible) >polygon,
+.c6:focus:not(:focus-visible) >polyline,
+.c6:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c6:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
+}
+
+.c3 {
+  max-height: inherit;
+}
+
+.c3:focus {
+  outline: none;
+}
+
+@media only screen and (max-width: 768px) {
+
+}
+
+@media only screen and (max-width: 768px) {
+  .c4 {
+    padding: 3px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c7 {
+    padding: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+
+}
+
+@media only screen and (max-width: 768px) {
+  .c8 {
+    height: 3px;
+  }
+}
+
+@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
+  .c1 {
+    display: flex;
+    align-items: stretch;
+  }
+}
+
+@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
+  .c3 {
+    width: 100%;
+  }
+}
+
+<div
+  class="c0 c1"
+  data-g-portal-id="0"
+  id="test-menu__drop"
+  style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
+  tabindex="-1"
+>
+  <div
+    class="c2 c3"
+    tabindex="-1"
+  >
+    <div
+      class="c4"
+      role="menu"
+    >
+      <div
+        class="c5"
+        role="none"
+      >
+        <button
+          class="c6"
+          role="menuitem"
+          type="button"
+        >
+          <div
+            class="c7"
+          >
+            Item 1
+          </div>
+        </button>
+      </div>
+      <div
+        class="c8"
+      />
+      <div
+        class="c5"
+        role="none"
+      >
+        <button
+          class="c6"
+          role="menuitem"
+          type="button"
+        >
+          <div
+            class="c7"
+          >
+            Item 2
+          </div>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Menu should apply theme.menu.container 2`] = `
+"@media only screen and (max-width: 768px) {
+  .dlKNdn {
+    padding: 6px;
+  }
+}"
+`;
+
 exports[`Menu should apply themed drop props 1`] = `
 .c2 {
   display: flex;
@@ -4694,9 +4925,17 @@ exports[`Menu should apply themed drop props 1`] = `
 }
 
 @media only screen and (max-width: 768px) {
+
+}
+
+@media only screen and (max-width: 768px) {
   .c4 {
     width: 6px;
   }
+}
+
+@media only screen and (max-width: 768px) {
+
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
@@ -5133,7 +5372,7 @@ exports[`Menu should group items 1`] = `
 
 exports[`Menu should group items 2`] = `
 "@media only screen and (max-width: 768px) {
-  .fVBXvN {
+  .dlKNdn {
     padding: 6px;
   }
 }"
@@ -5942,7 +6181,7 @@ exports[`Menu with dropAlign bottom renders 2`] = `
 
 exports[`Menu with dropAlign bottom renders 3`] = `
 "@media only screen and (max-width: 768px) {
-  .fVBXvN {
+  .dlKNdn {
     padding: 6px;
   }
 }"
@@ -6419,7 +6658,7 @@ exports[`Menu with dropAlign top renders 2`] = `
 
 exports[`Menu with dropAlign top renders 3`] = `
 "@media only screen and (max-width: 768px) {
-  .fVBXvN {
+  .dlKNdn {
     padding: 6px;
   }
 }"

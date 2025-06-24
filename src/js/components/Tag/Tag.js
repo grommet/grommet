@@ -1,4 +1,4 @@
-import React, { forwardRef } from 'react';
+import React, { useContext, forwardRef } from 'react';
 import { FormClose } from 'grommet-icons/icons/FormClose';
 
 import { TagPropTypes } from './propTypes';
@@ -7,11 +7,26 @@ import { Text } from '../Text';
 
 import { StyledRemoveButton, StyledTagButton } from './StyledTag';
 import { useThemeValue } from '../../utils/useThemeValue';
+import { MessageContext } from '../../contexts/MessageContext';
 
 const Tag = forwardRef(
-  ({ name, value, size, onRemove, onClick, ...rest }, ref) => {
+  (
+    { name, value, size = 'medium', onRemove, onClick, messages, ...rest },
+    ref,
+  ) => {
+    const { format } = useContext(MessageContext);
     const { theme, passThemeFlag } = useThemeValue();
     const RemoveIcon = theme.tag.icons?.remove || FormClose;
+
+    const removeLabelId = name
+      ? 'tag.removeLabel.nameAndValue'
+      : 'tag.removeLabel.valueOnly';
+
+    const removeLabel = format({
+      id: removeLabelId,
+      messages,
+      values: { name, value },
+    });
 
     const containerProps = {
       ref,
@@ -47,6 +62,14 @@ const Tag = forwardRef(
       console.warn('Tag cannot combine "onClick" and "onRemove".');
     }
 
+    const removeProps = !theme.tag.remove.kind
+      ? {
+          plain: true,
+          hoverIndicator: true,
+          focusIndicator: true,
+        }
+      : {};
+
     return onRemove || !onClick ? (
       <Box
         flex={false}
@@ -58,12 +81,12 @@ const Tag = forwardRef(
         {onRemove && (
           <StyledRemoveButton
             onClick={onRemove}
-            plain
-            hoverIndicator
-            focusIndicator
+            {...removeProps}
+            aria-label={removeLabel}
             icon={<RemoveIcon {...theme.tag.size?.[size]?.icon} />}
             round={theme.tag.size?.[size]?.round || theme.tag.round}
             {...theme.tag.remove}
+            {...theme.tag.size?.[size]?.remove}
             {...passThemeFlag}
           />
         )}

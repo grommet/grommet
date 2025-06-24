@@ -245,6 +245,12 @@ exports[`Skeleton Box skeleton loading 1`] = `
 }
 
 @media only screen and (max-width: 768px) {
+  .c3 {
+    height: 40px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
   .c7 {
     height: 3px;
   }
@@ -268,32 +274,38 @@ exports[`Skeleton Box skeleton loading 1`] = `
         class="c2"
       >
         <div
+          aria-hidden="true"
           class="c3"
         />
       </h1>
       <div
+        aria-hidden="true"
         class="c4"
       />
       <div
         class="c5"
       >
         <div
+          aria-hidden="true"
           class="c6"
         />
         <div
           class="c7"
         />
         <div
+          aria-hidden="true"
           class="c6"
         />
         <div
           class="c7"
         />
         <div
+          aria-hidden="true"
           class="c8"
         />
       </div>
       <div
+        aria-hidden="true"
         class="c9"
       />
     </div>
@@ -401,6 +413,12 @@ exports[`Skeleton Box skeleton sizes loading 1`] = `
 }
 
 @media only screen and (max-width: 768px) {
+  .c3 {
+    height: 28px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
   .c7 {
     height: 3px;
   }
@@ -424,32 +442,38 @@ exports[`Skeleton Box skeleton sizes loading 1`] = `
         class="c2"
       >
         <div
+          aria-hidden="true"
           class="c3"
         />
       </h2>
       <div
+        aria-hidden="true"
         class="c4"
       />
       <div
         class="c5"
       >
         <div
+          aria-hidden="true"
           class="c6"
         />
         <div
           class="c7"
         />
         <div
+          aria-hidden="true"
           class="c6"
         />
         <div
           class="c7"
         />
         <div
+          aria-hidden="true"
           class="c8"
         />
       </div>
       <div
+        aria-hidden="true"
         class="c9"
       />
     </div>
@@ -500,6 +524,7 @@ exports[`Skeleton Box skeleton with specific dimensions 1`] = `
       class="c1"
     >
       <div
+        aria-hidden="true"
         class="c2"
       />
     </div>
@@ -557,6 +582,7 @@ exports[`Skeleton Skeleton with theme 1`] = `
       class="c1"
     >
       <div
+        aria-hidden="true"
         class="c2"
       />
     </div>
@@ -589,6 +615,7 @@ exports[`Skeleton renders 1`] = `
     class="c0"
   >
     <div
+      aria-hidden="true"
       class="c1"
     />
   </div>
@@ -607,6 +634,7 @@ exports[`Skeleton renders outside grommet wrapper 1`] = `
 }
 
 <div
+    aria-hidden="true"
     class="c0"
   />
 </DocumentFragment>
@@ -634,16 +662,11 @@ exports[`Skeleton with styling props 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width: 768px) {
-  .c1 {
-    border-radius: 6px;
-  }
-}
-
 <div
     class="c0"
   >
     <div
+      aria-hidden="true"
       class="c1"
     />
   </div>

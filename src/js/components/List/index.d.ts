@@ -60,6 +60,9 @@ export interface ListProps<ListItemType> {
     [_: string]: { background?: string; border?: BorderType; pad?: PadType };
   };
   margin?: MarginType;
+  messages?: {
+    pinned?: string;
+  };
   onActive?: (index: number) => void;
   onClickItem?: (
     event: React.MouseEvent & { item: ListItemType; index: number },
@@ -77,14 +80,20 @@ export interface ListProps<ListItemType> {
         color?: ColorType;
         icon?: JSX.Element;
       };
-  primaryKey?: string | ((item: ListItemType) => React.ReactElement);
-  secondaryKey?: string | ((item: ListItemType) => React.ReactElement);
+  primaryKey?: string | ((item: ListItemType) => React.ReactElement<any>);
+  secondaryKey?: string | ((item: ListItemType) => React.ReactElement<any>);
   show?: number | { page?: number };
   step?: number;
   action?: (item: ListItemType, index: number) => void;
 }
 
-type ulProps = Omit<JSX.IntrinsicElements['ul'], 'children'>;
+type ulProps = Omit<
+  React.DetailedHTMLProps<
+    React.HTMLAttributes<HTMLUListElement>,
+    HTMLUListElement
+  >,
+  'children'
+>;
 
 export interface ListExtendedProps<ListItemType>
   extends ListProps<ListItemType>,

@@ -27,13 +27,13 @@ export interface HeadingProps {
   weight?: 'normal' | 'bold' | 'lighter' | 'bolder' | number | string;
 }
 
-type hProps =
-  | Omit<JSX.IntrinsicElements['h1'], 'color'>
-  | Omit<JSX.IntrinsicElements['h2'], 'color'>
-  | Omit<JSX.IntrinsicElements['h3'], 'color'>
-  | Omit<JSX.IntrinsicElements['h4'], 'color'>
-  | Omit<JSX.IntrinsicElements['h5'], 'color'>
-  | Omit<JSX.IntrinsicElements['h6'], 'color'>;
+type hProps = Omit<
+  React.DetailedHTMLProps<
+    React.HTMLAttributes<HTMLHeadingElement>,
+    HTMLHeadingElement
+  >,
+  'color'
+>;
 
 export interface HeadingExtendedProps extends HeadingProps, hProps {}
 

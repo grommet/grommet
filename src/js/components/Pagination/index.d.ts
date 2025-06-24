@@ -5,8 +5,9 @@ import {
   GridAreaType,
   MarginType,
 } from '../../utils';
+import { BoxProps } from '../Box/index';
 
-export interface PaginationProps {
+export interface PaginationProps extends BoxProps {
   a11yTitle?: A11yTitleType;
   alignSelf?: AlignSelfType;
   gridArea?: GridAreaType;
@@ -20,6 +21,11 @@ export interface PaginationProps {
   step?: number;
   stepOptions?: boolean | (string | boolean | number | JSX.Element | object)[];
   summary?: boolean;
+  messages?: {
+    stepLabel?: string;
+    summary?: string;
+    summaryNoItems?: string;
+  };
 }
 
 declare const Pagination: React.FC<PaginationProps>;

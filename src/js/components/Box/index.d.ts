@@ -33,6 +33,7 @@ export interface BoxProps {
   background?: BackgroundType;
   basis?: BasisType;
   border?: BorderType;
+  cssGap?: boolean;
   direction?: DirectionType;
   elevation?: ElevationType;
   flex?: 'grow' | 'shrink' | boolean | { grow?: number; shrink?: number };
@@ -63,7 +64,7 @@ export interface BoxProps {
       }
     | string;
   pad?: PadType;
-  responsive?: boolean;
+  responsive?: boolean | 'container';
   round?: RoundType;
   skeleton?: SkeletonType;
   tag?: PolymorphicType;
@@ -74,10 +75,17 @@ export interface BoxProps {
 
 export interface BoxExtendedProps
   extends BoxProps,
-    Omit<JSX.IntrinsicElements['div'], keyof BoxProps> {}
+    Omit<
+      React.DetailedHTMLProps<
+        React.HTMLAttributes<HTMLDivElement>,
+        HTMLDivElement
+      >,
+      keyof BoxProps
+    > {}
 
 // Keep type alias for backwards compatibility.
-export type BoxTypes = BoxProps & JSX.IntrinsicElements['div'];
+export type BoxTypes = BoxProps &
+  React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>;
 
 declare const Box: React.FC<BoxExtendedProps>;
 

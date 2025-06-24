@@ -121,6 +121,7 @@ if (process.env.NODE_ENV !== 'production') {
       BORDER_SHAPE,
       PropTypes.arrayOf(BORDER_SHAPE),
     ]),
+    cssGap: PropTypes.bool,
     direction: PropTypes.oneOf([
       'row',
       'column',
@@ -169,7 +170,10 @@ if (process.env.NODE_ENV !== 'production') {
     onClick: PropTypes.func,
     overflow: overflowPropType,
     pad: padPropType,
-    responsive: PropTypes.bool,
+    responsive: PropTypes.oneOfType([
+      PropTypes.bool,
+      PropTypes.oneOf(['container']),
+    ]),
     round: roundPropType,
     skeleton: skeletonPropType,
     tag: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),

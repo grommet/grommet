@@ -102,8 +102,11 @@ export interface DataProps {
     dataTableColumns?: {
       open?: string;
       order?: string;
+      pinned?: string;
       select?: string;
       tip?: string;
+      orderAria?: string;
+      selectAria?: string;
     };
     dataTableGroupBy?: {
       clear?: string;
@@ -125,7 +128,10 @@ export interface DataProps {
   // onDeleteView?: (string) => void;
 }
 
-type divProps = Omit<JSX.IntrinsicElements['div'], 'onClick'>;
+type divProps = Omit<
+  React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>,
+  'onClick'
+>;
 
 export interface DataExtendedProps extends BoxProps, DataProps, divProps {}
 

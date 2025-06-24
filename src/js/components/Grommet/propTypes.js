@@ -40,6 +40,10 @@ if (process.env.NODE_ENV !== 'production') {
           enterCalendar: PropTypes.string,
           exitCalendar: PropTypes.string,
         }),
+        dataChart: PropTypes.shape({
+          detailTitle: PropTypes.string,
+          detailFocus: PropTypes.string,
+        }),
         dataFilters: PropTypes.shape({
           clear: PropTypes.string,
           heading: PropTypes.string,
@@ -75,8 +79,11 @@ if (process.env.NODE_ENV !== 'production') {
         dataTableColumns: PropTypes.shape({
           open: PropTypes.string,
           order: PropTypes.string,
+          pinned: PropTypes.string,
           select: PropTypes.string,
           tip: PropTypes.string,
+          selectAria: PropTypes.string,
+          orderAria: PropTypes.string,
         }),
         dataTableGroupBy: PropTypes.shape({
           clear: PropTypes.string,
@@ -115,9 +122,38 @@ if (process.env.NODE_ENV !== 'production') {
             }),
           }),
         }),
+        list: PropTypes.shape({
+          pinned: PropTypes.string,
+        }),
         menu: PropTypes.shape({
           openMenu: PropTypes.string,
           closeMenu: PropTypes.string,
+        }),
+        meter: PropTypes.shape({
+          bar: PropTypes.shape({
+            singular: PropTypes.string,
+            plural: PropTypes.string,
+          }),
+          circle: PropTypes.shape({
+            singular: PropTypes.string,
+            plural: PropTypes.string,
+          }),
+          pie: PropTypes.shape({
+            singular: PropTypes.string,
+            plural: PropTypes.string,
+          }),
+          semicirlce: PropTypes.shape({
+            singular: PropTypes.string,
+            plural: PropTypes.string,
+          }),
+        }),
+        notifcation: PropTypes.shape({
+          close: PropTypes.string,
+        }),
+        pagination: PropTypes.shape({
+          stepLabel: PropTypes.string,
+          summary: PropTypes.string,
+          summaryNoItems: PropType.string,
         }),
         rangeSelector: PropTypes.shape({
           lower: PropTypes.string,
@@ -148,6 +184,12 @@ if (process.env.NODE_ENV !== 'production') {
         }),
         tabs: PropTypes.shape({
           tabContents: PropTypes.string,
+        }),
+        tag: PropTypes.shape({
+          removeLabel: PropTypes.shape({
+            nameAndValue: PropTypes.string,
+            valueOnly: PropTypes.string,
+          }),
         }),
         textInput: PropTypes.shape({
           enterSelect: PropTypes.string,

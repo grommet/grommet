@@ -54,7 +54,7 @@ export const FocusedContainer = ({
       ignoreUtilFocusRef.current = true;
       try {
         element.focus();
-      } catch (e) {
+      } catch {
         // continue regardless of error
       }
       ignoreUtilFocusRef.current = false;

@@ -939,6 +939,81 @@ describe('Select', () => {
     expect(style.background).toBe('lightgreen');
   });
 
+  test('renders default clear button shows focus indicator', () => {
+    const customTheme = {
+      select: {
+        clear: {
+          text: undefined,
+          button: {
+            color: 'red',
+            border: {
+              radius: '10px',
+            },
+            pad: {
+              vertical: 'xsmall',
+              horizontal: 'small',
+            },
+          },
+        },
+      },
+    };
+
+    const Test = () => {
+      const [value, setValue] = React.useState();
+      return (
+        <Select
+          id="test-select"
+          placeholder="test select"
+          value={value}
+          onChange={({ option }) => setValue(option)}
+          options={['one', 'two']}
+          clear
+        />
+      );
+    };
+
+    render(
+      <Grommet theme={customTheme}>
+        <Test />
+      </Grommet>,
+    );
+
+    act(() => {
+      fireEvent.click(screen.getByPlaceholderText('test select'));
+    });
+
+    act(() => {
+      fireEvent.click(screen.getByRole('option', { name: 'one' }));
+    });
+
+    act(() => {
+      fireEvent.click(screen.getByPlaceholderText('test select'));
+    });
+
+    const clearButton = screen.getByRole('button', {
+      name: /Clear selection/,
+    });
+
+    expect(clearButton).toBeInTheDocument();
+
+    expect(clearButton).toHaveStyleRule('color', 'red');
+
+    // Move focus manually
+    act(() => {
+      clearButton.focus();
+    });
+    expect(clearButton).toHaveFocus();
+    expect(clearButton).toHaveStyleRule('color', 'red');
+
+    // Style assertion (optional but included)
+    expect(clearButton).toHaveStyleRule('box-shadow', '0 0 2px 2px #6FFFB0', {
+      modifier: ':focus',
+    });
+    expect(clearButton).toHaveStyleRule('outline', 'none', {
+      modifier: ':focus',
+    });
+  });
+
   test(`renders styled select options combining select.options.box &&
     select.options.container;
     select.options.container prioritized if conflict`, () => {
@@ -1761,6 +1836,91 @@ describe('Select', () => {
       }),
     );
     expect(onChange.mock.calls[0][0].value.type).toBe(Box);
+  });
+
+  test('renders custom clear selection styling', () => {
+    jest.useFakeTimers();
+    const customTheme = {
+      select: {
+        clear: {
+          container: {
+            pad: {
+              vertical: '6px',
+              horizontal: '12px',
+            },
+            background: undefined,
+            hover: {
+              background: 'blue',
+            },
+          }, // any box props
+          text: {
+            color: 'text-strong',
+            weight: 600,
+          }, // any text props
+        },
+      },
+    };
+
+    const { asFragment, getByRole, getByPlaceholderText } = render(
+      <Grommet theme={customTheme}>
+        <Select
+          data-testid="test-select-style-open"
+          id="test-clear-selection"
+          options={['morning', 'afternoon', 'evening']}
+          placeholder="Select time"
+          value="afternoon"
+          clear
+        />
+      </Grommet>,
+    );
+
+    expect(asFragment()).toMatchSnapshot();
+
+    fireEvent.click(getByPlaceholderText('Select time'));
+    act(() => {
+      jest.advanceTimersByTime(100);
+    });
+
+    const clearButton = getByRole('button', { name: /Clear selection/ });
+    expect(clearButton).toBeInTheDocument();
+    fireEvent.mouseOver(clearButton);
+    act(() => {
+      jest.advanceTimersByTime(200);
+    });
+    expectPortal('test-clear-selection__drop').toMatchSnapshot();
+  });
+
+  test('renders custom listbox styling', () => {
+    jest.useFakeTimers();
+    const customTheme = {
+      select: {
+        listbox: {
+          extend: `padding: 24px;`,
+        },
+      },
+    };
+
+    const { getByPlaceholderText, getByRole } = render(
+      <Grommet theme={customTheme}>
+        <Select
+          data-testid="test-select-style-open"
+          id="test-listbox"
+          options={['morning', 'afternoon', 'evening']}
+          placeholder="Select time"
+          value="afternoon"
+        />
+      </Grommet>,
+    );
+
+    fireEvent.click(getByPlaceholderText('Select time'));
+    act(() => {
+      jest.advanceTimersByTime(100);
+    });
+
+    expectPortal('test-listbox__drop').toMatchSnapshot();
+    const listbox = getByRole('listbox');
+    const styles = window.getComputedStyle(listbox);
+    expect(styles.padding).toBe('24px');
   });
 
   window.scrollTo.mockRestore();

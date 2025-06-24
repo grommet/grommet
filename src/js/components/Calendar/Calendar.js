@@ -21,6 +21,7 @@ import { CalendarPropTypes } from './propTypes';
 import {
   StyledCalendar,
   StyledDay,
+  StyledDayButton,
   StyledDayContainer,
   StyledWeek,
   StyledWeeks,
@@ -42,6 +43,7 @@ import {
 } from './utils';
 import { setHoursWithOffset } from '../../utils/dates';
 import { useThemeValue } from '../../utils/useThemeValue';
+import { useKeyboard } from '../../utils';
 
 const headingPadMap = {
   small: 'xsmall',
@@ -198,8 +200,6 @@ export const getOutputFormat = (dates) => {
 
 const millisecondsPerYear = 31557600000;
 
-const CalendarDayButton = (props) => <Button tabIndex={-1} plain {...props} />;
-
 const CalendarDay = ({
   children,
   fill,
@@ -207,42 +207,83 @@ const CalendarDay = ({
   isInRange,
   isSelected,
   otherMonth,
+  rangePosition,
   buttonProps = {},
+  responsive,
 }) => {
   const { passThemeFlag } = useThemeValue();
+  const usingKeyboard = useKeyboard();
+
   return (
-    <StyledDayContainer role="gridcell" sizeProp={size} fillContainer={fill}>
-      <CalendarDayButton fill={fill} {...buttonProps}>
-        <StyledDay
-          disabledProp={buttonProps.disabled}
-          inRange={isInRange}
-          otherMonth={otherMonth}
-          isSelected={isSelected}
-          sizeProp={size}
-          fillContainer={fill}
-          {...passThemeFlag}
-        >
-          {children}
-        </StyledDay>
-      </CalendarDayButton>
+    <StyledDayContainer
+      role="gridcell"
+      inRange={isInRange}
+      isSelected={isSelected}
+      rangePosition={rangePosition}
+      sizeProp={size}
+      fillContainer={fill}
+      responsive={responsive}
+    >
+      <StyledDayButton
+        fill={fill}
+        tabIndex={-1}
+        plain
+        responsive={responsive}
+        {...buttonProps}
+      >
+        {({ active, hover }) => (
+          <StyledDay
+            // only apply active styling when using keyboard
+            // otherwise apply hover styling
+            active={usingKeyboard ? active : undefined}
+            disabledProp={buttonProps.disabled}
+            hover={hover}
+            inRange={isInRange}
+            isSelected={isSelected}
+            otherMonth={otherMonth}
+            sizeProp={size}
+            fillContainer={fill}
+            responsive={responsive}
+            {...passThemeFlag}
+          >
+            {children}
+          </StyledDay>
+        )}
+      </StyledDayButton>
     </StyledDayContainer>
   );
 };
 
-const CalendarCustomDay = ({ children, fill, size, buttonProps }) => {
+const CalendarCustomDay = ({
+  children,
+  fill,
+  size,
+  buttonProps,
+  responsive,
+}) => {
   if (!buttonProps) {
     return (
-      <StyledDayContainer role="gridcell" sizeProp={size} fillContainer={fill}>
+      <StyledDayContainer
+        role="gridcell"
+        sizeProp={size}
+        fillContainer={fill}
+        responsive={responsive}
+      >
         {children}
       </StyledDayContainer>
     );
   }
 
   return (
-    <StyledDayContainer role="gridcell" sizeProp={size} fillContainer={fill}>
-      <CalendarDayButton fill={fill} {...buttonProps}>
+    <StyledDayContainer
+      role="gridcell"
+      sizeProp={size}
+      fillContainer={fill}
+      responsive={responsive}
+    >
+      <StyledDayButton fill={fill} responsive={responsive} {...buttonProps}>
         {children}
-      </CalendarDayButton>
+      </StyledDayButton>
     </StyledDayContainer>
   );
 };
@@ -262,12 +303,14 @@ const Calendar = forwardRef(
       fill,
       firstDayOfWeek = 0,
       header,
+      level,
       locale = 'en-US',
       messages,
       onReference,
       onSelect,
       range,
       reference: referenceProp,
+      responsive: responsiveProp = true,
       showAdjacentDays = true,
       size = 'medium',
       timestamp: timestampProp,
@@ -278,6 +321,9 @@ const Calendar = forwardRef(
     const { theme, passThemeFlag } = useThemeValue();
     const announce = useContext(AnnounceContext);
     const { format } = useContext(MessageContext);
+
+    // If fill is true the responsive behavior isn't needed.
+    const responsive = responsiveProp && !fill;
 
     // when mousedown, we don't want to let Calendar set
     // active date to firstInMonth
@@ -596,24 +642,27 @@ const Calendar = forwardRef(
         year: 'numeric',
       });
 
+      // theme.calendar.heading.level should be removed in v3 of grommet
+      // theme.calendar[size].title should be used instead
+      let headingLevel;
+      if (level !== undefined) {
+        headingLevel = level;
+      } else if (size === 'small') {
+        headingLevel =
+          (theme.calendar.heading && theme.calendar.heading.level) || 4;
+      } else {
+        headingLevel =
+          ((theme.calendar.heading && theme.calendar.heading.level) || 4) - 1;
+      }
+
       return (
         <Box direction="row" justify="between" align="center">
           <Header flex pad={{ horizontal: headingPadMap[size] || 'small' }}>
             {theme.calendar[size]?.title ? (
               <Text {...theme.calendar[size].title}>{monthAndYear}</Text>
             ) : (
-              // theme.calendar.heading.level should be removed in v3 of grommet
-              // theme.calendar[size].title should be used instead
               <Heading
-                level={
-                  size === 'small'
-                    ? (theme.calendar.heading &&
-                        theme.calendar.heading.level) ||
-                      4
-                    : ((theme.calendar.heading &&
-                        theme.calendar.heading.level) ||
-                        4) - 1
-                }
+                level={headingLevel}
                 size={size}
                 margin="none"
                 overflowWrap="normal"
@@ -680,8 +729,13 @@ const Calendar = forwardRef(
             key={days.length}
             sizeProp={size}
             fillContainer={fill}
+            responsive={responsive}
           >
-            <StyledDay otherMonth sizeProp={size} fillContainer={fill}>
+            <StyledDay
+              sizeProp={size}
+              fillContainer={fill}
+              responsive={responsive}
+            >
               {day.toLocaleDateString(locale, { weekday: 'narrow' })}
             </StyledDay>
           </StyledDayContainer>,
@@ -716,8 +770,13 @@ const Calendar = forwardRef(
             key={day.getTime()}
             sizeProp={size}
             fillContainer={fill}
+            responsive={responsive}
           >
-            <StyledDay sizeProp={size} fillContainer={fill} />
+            <StyledDay
+              sizeProp={size}
+              fillContainer={fill}
+              responsive={responsive}
+            />
           </StyledDayContainer>,
         );
 
@@ -745,8 +804,13 @@ const Calendar = forwardRef(
             key={day.getTime()}
             sizeProp={size}
             fillContainer={fill}
+            responsive={responsive}
           >
-            <StyledDay sizeProp={size} fillContainer={fill} />
+            <StyledDay
+              sizeProp={size}
+              fillContainer={fill}
+              responsive={responsive}
+            />
           </StyledDayContainer>,
         );
       } else {
@@ -754,18 +818,23 @@ const Calendar = forwardRef(
         // this.dayRefs[dateObject] = React.createRef();
         let selected = false;
         let inRange = false;
+        let rangePosition;
 
-        const selectedState = withinDates(
+        const [selectedState] = withinDates(
           day,
           range ? normalizeRange(value, activeDate) : value,
         );
         if (selectedState === 2) {
           selected = true;
+          [, rangePosition] = withinDates(
+            day,
+            range ? normalizeRange(value, activeDate) : value,
+          );
         } else if (selectedState === 1) {
           inRange = true;
         }
         const dayDisabled =
-          withinDates(day, normalizeInput(disabled)) ||
+          withinDates(day, normalizeInput(disabled))[0] ||
           (bounds && !betweenDates(day, normalizeInput(bounds)));
         if (
           !firstDayInMonth &&
@@ -790,8 +859,10 @@ const Calendar = forwardRef(
               isInRange={inRange}
               isSelected={selected}
               otherMonth={day.getMonth() !== reference.getMonth()}
+              rangePosition={rangePosition}
               size={size}
               fill={fill}
+              responsive={responsive}
             >
               {day.getDate()}
             </CalendarDay>,
@@ -814,6 +885,7 @@ const Calendar = forwardRef(
               }
               size={size}
               fill={fill}
+              responsive={responsive}
             >
               {children({
                 date: day,
@@ -844,6 +916,7 @@ const Calendar = forwardRef(
         ref={ref}
         sizeProp={size}
         fillContainer={fill}
+        responsive={responsive}
         {...passThemeFlag}
         {...rest}
       >
@@ -886,72 +959,83 @@ const Calendar = forwardRef(
                 nextInBound: betweenDates(nextMonth, bounds),
               })
             : renderCalendarHeader(previousMonth, nextMonth)}
-          {daysOfWeek && renderDaysOfWeek()}
-          <Keyboard
-            onEnter={() => (active !== undefined ? onClick(active) : undefined)}
-            onUp={(event) => {
-              event.preventDefault();
-              event.stopPropagation(); // so the page doesn't scroll
-              setActive(addDays(active, -7));
-              if (!betweenDates(addDays(active, -7), displayBounds)) {
-                changeReference(addDays(active, -7));
+          <Box fill role="grid">
+            {daysOfWeek && renderDaysOfWeek()}
+            <Keyboard
+              onEnter={() =>
+                active !== undefined ? onClick(active) : undefined
               }
-            }}
-            onDown={(event) => {
-              event.preventDefault();
-              event.stopPropagation(); // so the page doesn't scroll
-              setActive(addDays(active, 7));
-              if (!betweenDates(addDays(active, 7), displayBounds)) {
-                changeReference(active);
-              }
-            }}
-            onLeft={() => {
-              setActive(addDays(active, -1));
-              if (!betweenDates(addDays(active, -1), displayBounds)) {
-                changeReference(active);
-              }
-            }}
-            onRight={() => {
-              setActive(addDays(active, 1));
-              if (!betweenDates(addDays(active, 2), displayBounds)) {
-                changeReference(active);
-              }
-            }}
-          >
-            <StyledWeeksContainer
-              tabIndex={0}
-              role="grid"
-              aria-label={`${reference.toLocaleDateString(locale, {
-                month: 'long',
-                year: 'numeric',
-              })}; ${currentlySelectedString(value, locale)}`}
-              ref={daysRef}
-              sizeProp={size}
-              fillContainer={fill}
-              focus={focus}
-              onFocus={() => {
-                setFocus(true);
-                // caller focused onto Calendar via keyboard
-                if (!mouseDown) {
-                  setActive(new Date(firstDayInMonth));
+              onSpace={(event) => {
+                event.preventDefault();
+                if (active !== undefined) {
+                  onClick(active);
                 }
               }}
-              onBlur={() => {
-                setFocus(false);
-                setActive(undefined);
+              onUp={(event) => {
+                event.preventDefault();
+                event.stopPropagation(); // so the page doesn't scroll
+                setActive(addDays(active, -7));
+                if (!betweenDates(addDays(active, -7), displayBounds)) {
+                  changeReference(addDays(active, -7));
+                }
               }}
-              {...passThemeFlag}
+              onDown={(event) => {
+                event.preventDefault();
+                event.stopPropagation(); // so the page doesn't scroll
+                setActive(addDays(active, 7));
+                if (!betweenDates(addDays(active, 7), displayBounds)) {
+                  changeReference(active);
+                }
+              }}
+              onLeft={() => {
+                setActive(addDays(active, -1));
+                if (!betweenDates(addDays(active, -1), displayBounds)) {
+                  changeReference(active);
+                }
+              }}
+              onRight={() => {
+                setActive(addDays(active, 1));
+                if (!betweenDates(addDays(active, 2), displayBounds)) {
+                  changeReference(active);
+                }
+              }}
             >
-              <StyledWeeks
-                slide={slide}
+              <StyledWeeksContainer
+                tabIndex={0}
+                role="rowgroup"
+                aria-label={`${reference.toLocaleDateString(locale, {
+                  month: 'long',
+                  year: 'numeric',
+                })}; ${currentlySelectedString(value, locale)}`}
+                ref={daysRef}
                 sizeProp={size}
                 fillContainer={fill}
+                responsive={responsive}
+                focus={focus}
+                onFocus={() => {
+                  setFocus(true);
+                  // caller focused onto Calendar via keyboard
+                  if (!mouseDown) {
+                    setActive(new Date(firstDayInMonth));
+                  }
+                }}
+                onBlur={() => {
+                  setFocus(false);
+                  setActive(undefined);
+                }}
                 {...passThemeFlag}
               >
-                {weeks}
-              </StyledWeeks>
-            </StyledWeeksContainer>
-          </Keyboard>
+                <StyledWeeks
+                  slide={slide}
+                  sizeProp={size}
+                  fillContainer={fill}
+                  {...passThemeFlag}
+                >
+                  {weeks}
+                </StyledWeeks>
+              </StyledWeeksContainer>
+            </Keyboard>
+          </Box>
         </Box>
       </StyledCalendar>
     );

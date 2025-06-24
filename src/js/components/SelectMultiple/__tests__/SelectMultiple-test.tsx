@@ -83,6 +83,12 @@ const TestObj = () => {
   );
 };
 
+// useFakeTimers() is global in scope for the test file.
+// Restore real timers so other tests that rely on real timers won't hang or timeout.
+afterEach(() => {
+  jest.useRealTimers();
+});
+
 describe('SelectMultiple', () => {
   test('should not have accessibility violations', async () => {
     const { container } = render(
@@ -281,6 +287,7 @@ describe('SelectMultiple', () => {
     // Mock scrollIntoView since JSDOM doesn't do layout.
     // https://github.com/jsdom/jsdom/issues/1695#issuecomment-449931788
     window.HTMLElement.prototype.scrollIntoView = jest.fn();
+    jest.useFakeTimers();
     const { container } = render(
       <Grommet>
         <SelectMultiple options={['one', 'two', 'three', 'four']} limit={2} />
@@ -288,8 +295,8 @@ describe('SelectMultiple', () => {
     );
 
     fireEvent.click(screen.getByRole('button', { name: /Open Drop/i }));
+    act(() => jest.advanceTimersByTime(200));
     const input = screen.getByRole('listbox');
-    fireEvent.keyDown(input, { keyCode: 40 }); // down
     fireEvent.keyDown(input, { keyCode: 13 }); // enter
     fireEvent.keyDown(input, { keyCode: 40 }); // down
     fireEvent.keyDown(input, { keyCode: 40 }); // down
@@ -584,5 +591,39 @@ describe('SelectMultiple with portal', () => {
     fireEvent.click(screen.getByRole('button', { name: /Open Drop/i }));
 
     expectPortal('test-select__drop').toMatchSnapshot();
+  });
+
+  test('renders custom listbox styling', () => {
+    jest.useFakeTimers();
+    const customTheme = {
+      selectMultiple: {
+        listbox: {
+          extend: `padding: 24px;`,
+        },
+      },
+    };
+
+    const { getByRole } = render(
+      <Grommet theme={customTheme}>
+        <SelectMultiple
+          data-testid="test-select-style-open"
+          id="test-listbox"
+          options={['morning', 'afternoon', 'evening']}
+          placeholder="Select time"
+          value={[]}
+        />
+      </Grommet>,
+    );
+
+    // open SelectMultiple
+    fireEvent.click(getByRole('button', { name: /Select time. 0 selected/i }));
+    act(() => {
+      jest.advanceTimersByTime(100);
+    });
+
+    expectPortal('test-listbox__drop').toMatchSnapshot();
+    const listbox = getByRole('listbox');
+    const styles = window.getComputedStyle(listbox);
+    expect(styles.padding).toBe('24px');
   });
 });

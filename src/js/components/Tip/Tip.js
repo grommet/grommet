@@ -8,9 +8,28 @@ import React, {
 
 import { Box } from '../Box';
 import { Drop } from '../Drop';
+import { Keyboard } from '../Keyboard';
 import { useForwardedRef, useKeyboard } from '../../utils';
 import { TipPropTypes } from './propTypes';
 import { useThemeValue } from '../../utils/useThemeValue';
+
+/*
+ * This function getReactNodeRef is adapted from
+ * [Material UI] (https://github.com/mui/material-ui)
+ * Licensed under the MIT License (c) 2024 aarongarciah
+ * The function has been modified from its original version.
+ */
+const getReactNodeRef = (element) => {
+  if (!element || !React.isValidElement(element)) {
+    return null;
+  }
+
+  // 'ref' is passed as prop in React 19, whereas 'ref' is directly attached to
+  // children in older versions
+  return {}.propertyIsEnumerable.call(element.props, 'ref')
+    ? element.props.ref
+    : element.ref;
+};
 
 const Tip = forwardRef(
   ({ children, content, defaultVisible = false, dropProps, plain }, tipRef) => {
@@ -55,11 +74,10 @@ const Tip = forwardRef(
         if (typeof componentRef === 'function') {
           componentRef(node);
         } else if (componentRef) {
-          // eslint-disable-next-line no-param-reassign
           componentRef.current = node;
         }
         // Call the original ref, if any
-        const { ref: callerRef } = child;
+        const callerRef = getReactNodeRef(child);
         if (typeof callerRef === 'function') {
           callerRef(node);
         } else if (callerRef) {
@@ -75,17 +93,25 @@ const Tip = forwardRef(
     return [
       clonedChild,
       (over || tooltipOver) && (
-        <Drop
-          target={componentRef.current}
-          trapFocus={false}
-          key="tip-drop"
-          {...theme.tip.drop}
-          {...dropProps}
-          onMouseEnter={() => setTooltipOver(true)}
-          onMouseLeave={() => setTooltipOver(false)}
+        <Keyboard
+          key="tip-keyboard"
+          onEsc={() => {
+            setOver(false);
+            setTooltipOver(false);
+          }}
         >
-          {plain ? content : <Box {...theme.tip.content}>{content}</Box>}
-        </Drop>
+          <Drop
+            target={componentRef.current}
+            trapFocus={false}
+            key="tip-drop"
+            {...theme.tip.drop}
+            {...dropProps}
+            onMouseEnter={() => setTooltipOver(true)}
+            onMouseLeave={() => setTooltipOver(false)}
+          >
+            {plain ? content : <Box {...theme.tip.content}>{content}</Box>}
+          </Drop>
+        </Keyboard>
       ),
     ];
   },

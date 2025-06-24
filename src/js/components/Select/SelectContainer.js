@@ -42,21 +42,58 @@ const ClearButton = forwardRef(
     const align = position !== 'bottom' ? 'start' : 'center';
     const buttonLabel = label || `Clear ${name || 'selection'}`;
     const { passThemeFlag } = useThemeValue();
-    return (
-      <StyledButton
-        a11yTitle={`${buttonLabel}. Or, press ${
-          position === 'bottom' ? 'shift tab' : 'down arrow'
-        } to move to select options`}
-        fill="horizontal"
-        ref={ref}
-        onClick={onClear}
-        focusIndicator={false}
-        {...passThemeFlag}
-        {...rest}
-      >
-        <Box {...theme.select.clear.container} align={align}>
-          <Text {...theme.select.clear.text}>{buttonLabel}</Text>
+    const buttonKind = theme.select.clear?.button;
+    const containerProps = theme.select.clear?.container || {};
+    const textProps = theme.select.clear?.text || {};
+
+    const buttonProps = {
+      a11yTitle: `${buttonLabel}. Or, press ${
+        position === 'bottom' ? 'shift tab' : 'down arrow'
+      } to move to select options`,
+      align,
+      fill: 'horizontal',
+      onClick: onClear,
+      ref,
+      ...passThemeFlag,
+      ...rest,
+    };
+
+    if (buttonKind) {
+      // new structure when `theme.select.clear.button` is defined
+
+      return (
+        <Box flex="grow" {...containerProps}>
+          <Button
+            kind={buttonKind}
+            label={
+              textProps ? (
+                <Text {...textProps}>{buttonLabel}</Text>
+              ) : (
+                buttonLabel
+              )
+            }
+            {...buttonProps}
+          />
         </Box>
+      );
+    }
+
+    // default structure when `theme.select.clear.button` is not defined
+    return (
+      <StyledButton focusIndicator={false} plain {...buttonProps}>
+        {({ hover }) => {
+          const boxProps = { ...theme.select.clear.container };
+          delete boxProps.hover; // avoid passing hover object to Box
+          return (
+            <Box
+              {...boxProps}
+              {...(hover ? theme.select.clear?.container?.hover : {})}
+              align={align}
+            >
+              <Text {...theme.select.clear.text}>{buttonLabel}</Text>
+            </Box>
+          );
+        }}
       </StyledButton>
     );
   },
@@ -376,6 +413,7 @@ const SelectContainer = forwardRef(
                   setActiveIndex(-1);
                   onSearch(nextSearch);
                 }}
+                onFocus={() => setActiveIndex(-1)}
               />
             </Box>
           )}
@@ -440,7 +478,8 @@ const SelectContainer = forwardRef(
                   // if we have a child, turn on plain, and hoverIndicator
                   return (
                     <SelectOption
-                      // eslint-disable-next-line react/no-array-index-key
+                      // lint isn't flagging this but we shouldn't use index
+                      // as a key see no-array-index-key lint rule
                       key={index}
                       // merge optionRef and activeRef
                       ref={(node) => {
@@ -448,12 +487,22 @@ const SelectContainer = forwardRef(
                         if (optionRef) optionRef.current = node;
                         if (optionActive) activeRef.current = node;
                       }}
-                      tabIndex={optionSelected ? '0' : '-1'}
+                      tabIndex={
+                        optionSelected ||
+                        activeIndex === index ||
+                        // when nothing is selected and entering listbox
+                        // first option should be focused
+                        ((!value ||
+                          (Array.isArray(value) && value.length === 0)) &&
+                          activeIndex === -1 &&
+                          index === 0)
+                          ? '0'
+                          : '-1'
+                      }
                       role="option"
                       aria-setsize={options.length}
                       aria-posinset={index + 1}
                       aria-selected={optionSelected}
-                      focusIndicator={false}
                       aria-disabled={optionDisabled || undefined}
                       plain={!child ? undefined : true}
                       align="start"
@@ -471,6 +520,9 @@ const SelectContainer = forwardRef(
                       onFocus={() => setActiveIndex(index)}
                       onMouseOver={
                         !optionDisabled ? onActiveOption(index) : undefined
+                      }
+                      onMouseOut={
+                        !optionDisabled ? onActiveOption(-1) : undefined
                       }
                       onClick={
                         !optionDisabled ? selectOption(index) : undefined

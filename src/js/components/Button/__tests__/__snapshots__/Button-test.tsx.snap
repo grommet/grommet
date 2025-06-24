@@ -370,8 +370,8 @@ exports[`Button badge should apply background 1`] = `
   box-sizing: border-box;
   max-width: 100%;
   align-items: center;
-  background-color: #00C781;
-  color: #444444;
+  background-color: #009E67;
+  color: #f8f8f8;
   min-width: 0;
   min-height: 0;
   flex-direction: column;
@@ -398,7 +398,7 @@ exports[`Button badge should apply background 1`] = `
 .c6 {
   font-size: 14px;
   line-height: 20px;
-  color: #000000;
+  color: #FFFFFF;
   font-weight: normal;
 }
 
@@ -3706,6 +3706,236 @@ exports[`Button reverse icon label 1`] = `
     </div>
   </button>
 </div>
+`;
+
+exports[`Button should render elevation 1`] = `
+<DocumentFragment>
+  .c1 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: 2px solid #7D4CDB;
+  border-radius: 18px;
+  box-shadow: inset 3px 0 red;
+  color: #444444;
+  padding: 4px 22px;
+  font-size: 18px;
+  line-height: 24px;
+  transition-property: color,background-color,border-color,box-shadow;
+  transition-duration: 0.1s;
+  transition-timing-function: ease-in-out;
+}
+
+.c1:hover {
+  box-shadow: 0px 0px 0px 2px #7D4CDB;
+}
+
+.c1:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus >circle,
+.c1:focus >ellipse,
+.c1:focus >line,
+.c1:focus >path,
+.c1:focus >polygon,
+.c1:focus >polyline,
+.c1:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c1:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible) >circle,
+.c1:focus:not(:focus-visible) >ellipse,
+.c1:focus:not(:focus-visible) >line,
+.c1:focus:not(:focus-visible) >path,
+.c1:focus:not(:focus-visible) >polygon,
+.c1:focus:not(:focus-visible) >polyline,
+.c1:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
+}
+
+.c2 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: 2px solid #7D4CDB;
+  border-radius: 18px;
+  box-shadow: inset 3px 0 red;
+  color: #444444;
+  padding: 4px 22px;
+  font-size: 18px;
+  line-height: 24px;
+  background-color: #7D4CDB;
+  color: #f8f8f8;
+  border-radius: 18px;
+  box-shadow: inset 5px 0 blue;
+  transition-property: color,background-color,border-color,box-shadow;
+  transition-duration: 0.1s;
+  transition-timing-function: ease-in-out;
+}
+
+.c2:hover {
+  box-shadow: 0px 0px 0px 2px #7D4CDB;
+}
+
+.c2:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c2:focus >circle,
+.c2:focus >ellipse,
+.c2:focus >line,
+.c2:focus >path,
+.c2:focus >polygon,
+.c2:focus >polyline,
+.c2:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c2:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c2:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c2:focus:not(:focus-visible) >circle,
+.c2:focus:not(:focus-visible) >ellipse,
+.c2:focus:not(:focus-visible) >line,
+.c2:focus:not(:focus-visible) >path,
+.c2:focus:not(:focus-visible) >polygon,
+.c2:focus:not(:focus-visible) >polyline,
+.c2:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c2:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
+}
+
+.c3 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+}
+
+.c3:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c3:focus >circle,
+.c3:focus >ellipse,
+.c3:focus >line,
+.c3:focus >path,
+.c3:focus >polygon,
+.c3:focus >polyline,
+.c3:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c3:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c3:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c3:focus:not(:focus-visible) >circle,
+.c3:focus:not(:focus-visible) >ellipse,
+.c3:focus:not(:focus-visible) >line,
+.c3:focus:not(:focus-visible) >path,
+.c3:focus:not(:focus-visible) >polygon,
+.c3:focus:not(:focus-visible) >polyline,
+.c3:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c3:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+<div
+    class="c0"
+  >
+    <button
+      class="c1"
+      type="button"
+    >
+      Default
+    </button>
+    <button
+      class="c2"
+      type="button"
+    >
+      Primary
+    </button>
+    <button
+      class="c3"
+      type="button"
+    >
+      Plain
+    </button>
+  </div>
+</DocumentFragment>
 `;
 
 exports[`Button should render pad 1`] = `

@@ -41,6 +41,10 @@ export interface GrommetProps {
         enterCalendar?: string;
         exitCalendar?: string;
       };
+      dataChart?: {
+        detailTitle?: string;
+        detailFocus?: string;
+      };
       dataFilters?: {
         clear?: string;
         heading?: string;
@@ -76,8 +80,11 @@ export interface GrommetProps {
       dataTableColumns?: {
         open?: string;
         order?: string;
+        pinned?: string;
         select?: string;
         tip?: string;
+        orderAria?: string;
+        selectAria?: string;
       };
       dataTableGroupBy?: {
         clear?: string;
@@ -116,13 +123,48 @@ export interface GrommetProps {
           };
         };
       };
+      list?: {
+        pinned?: string;
+      };
       menu?: {
         openMenu?: string;
         closeMenu?: string;
       };
+      meter?: {
+        bar?: {
+          singular?: string;
+          plural?: string;
+        };
+        circle?: {
+          singular?: string;
+          plural?: string;
+        };
+        pie?: {
+          singular?: string;
+          plural?: string;
+        };
+        semicircle?: {
+          singular?: string;
+          plural?: string;
+        };
+      };
+      notification?: {
+        close?: string;
+      };
+      pagination?: {
+        stepLabel?: string;
+        summary?: string;
+        summaryNoItems?: string;
+      };
       rangeSelector?: {
         lower?: string;
         upper?: string;
+      };
+      tag?: {
+        removeLabel?: {
+          nameAndValue?: string;
+          valueOnly?: string;
+        };
       };
       select?: {
         multiple?: string;
@@ -171,7 +213,7 @@ export interface GrommetProps {
         volumeUp?: string;
       };
     };
-    format: (...args: any[]) => void;
+    format?: (...args: any[]) => void;
   };
   onAnalytics?: (data: any) => void;
   plain?: boolean;
@@ -182,7 +224,13 @@ export interface GrommetProps {
 
 export interface GrommetExtendedProps
   extends GrommetProps,
-    Omit<JSX.IntrinsicElements['div'], 'dir'> {}
+    Omit<
+      React.DetailedHTMLProps<
+        React.HTMLAttributes<HTMLDivElement>,
+        HTMLDivElement
+      >,
+      'dir'
+    > {}
 
 declare const Grommet: React.FC<GrommetExtendedProps>;
 

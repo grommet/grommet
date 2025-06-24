@@ -121,4 +121,118 @@ describe('Tag', () => {
     expect(container).toMatchSnapshot();
     expect(screen.getByLabelText('FormClose')).toBeDefined();
   });
+
+  test('renders custom remove button kind and size', () => {
+    const customTheme = {
+      button: {
+        default: {
+          background: 'blue',
+        },
+      },
+      tag: {
+        remove: {
+          kind: 'default',
+        },
+        size: {
+          medium: {
+            remove: {
+              size: 'small',
+              margin: 'small',
+            },
+          },
+          large: {
+            remove: {
+              size: 'medium',
+              margin: {
+                vertical: '12px',
+                horizontal: '18px',
+              },
+            },
+          },
+          xlarge: {
+            remove: {
+              size: 'large',
+              margin: '10px',
+            },
+          },
+        },
+      },
+    };
+
+    const { asFragment } = render(
+      <Grommet theme={customTheme}>
+        <Tag value="Value" onRemove={jest.fn()} />
+        <Tag value="Value" size="medium" onRemove={jest.fn()} />
+        <Tag value="Value" size="large" onRemove={jest.fn()} />
+        <Tag value="Value" size="xlarge" onRemove={jest.fn()} />
+      </Grommet>,
+    );
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  test('renders aria-label from messages (name and value)', () => {
+    const messages = {
+      removeLabel: {
+        nameAndValue: 'Remove {name}: {value}',
+      },
+    };
+
+    render(
+      <Grommet>
+        <Tag
+          name="Category"
+          value="Fruits"
+          onRemove={() => {}}
+          messages={messages}
+        />
+      </Grommet>,
+    );
+
+    expect(screen.getByRole('button')).toHaveAttribute(
+      'aria-label',
+      'Remove Category: Fruits',
+    );
+  });
+
+  test('renders aria-label from grommet messages (name and value)', () => {
+    render(
+      <Grommet
+        messages={{
+          messages: {
+            tag: {
+              removeLabel: {
+                nameAndValue: 'Remove {name}: {value}',
+              },
+            },
+          },
+        }}
+      >
+        <Tag name="Category" value="Fruits" onRemove={() => {}} />
+      </Grommet>,
+    );
+
+    expect(screen.getByRole('button')).toHaveAttribute(
+      'aria-label',
+      'Remove Category: Fruits',
+    );
+  });
+
+  test('renders aria-label from messages (value only)', () => {
+    const messages = {
+      removeLabel: {
+        valueOnly: 'Remove {value}',
+      },
+    };
+
+    render(
+      <Grommet>
+        <Tag value="Fruits" onRemove={() => {}} messages={messages} />
+      </Grommet>,
+    );
+
+    expect(screen.getByRole('button')).toHaveAttribute(
+      'aria-label',
+      'Remove Fruits',
+    );
+  });
 });

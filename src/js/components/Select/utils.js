@@ -1,8 +1,8 @@
-import React, { useCallback } from 'react';
+import React, { useCallback, isValidElement } from 'react';
 import { normalizeColor } from '../../utils';
 
 export const applyKey = (option, key) => {
-  if (React.isValidElement(option)) return option;
+  if (isValidElement(option)) return option;
   if (option === undefined || option === null) return undefined;
   if (typeof key === 'object') return applyKey(option, key.key);
   if (typeof key === 'function') return key(option);
@@ -124,3 +124,27 @@ export const getDisplayLabelKey = (
 
 export const getIconColor = (theme) =>
   normalizeColor(theme.select.icons.color || 'control', theme);
+
+export const formatValueForA11y = (value, labelKey) => {
+  if (typeof value === 'string') return value;
+  if (isValidElement(value)) return value.toString();
+  if (Array.isArray(value)) {
+    return value.map((item) => formatValueForA11y(item, labelKey)).join(', ');
+  }
+  return applyKey(value, labelKey);
+};
+
+// In react 18 and below the inert attribute is not supported
+// so we use an empty string instead of true. In react 19 and above
+// inert is supported so we should use true. The use function is
+// used to determine the react version because it is only available
+// in react 19 and above.
+export const inertTrueValue = React.use ? true : '';
+
+// Grommet manipulates the provided id by appending "__input" for
+// the id places on the DOM input. In order to properly associate
+// form label htmlFor with select input, we handle appending this
+// to htmlFor for internal components like DataSort and DataFilter.
+// Caller is responsible for appending this on their Select or
+// SelectMultiple instances.
+export const selectInputId = (id) => `${id}__input`;

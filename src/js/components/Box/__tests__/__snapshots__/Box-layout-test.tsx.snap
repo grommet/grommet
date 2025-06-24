@@ -2463,6 +2463,72 @@ exports[`Box responsive 1`] = `
 </div>
 `;
 
+exports[`Box responsive container medium 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  width: 1280px;
+  container-type: inline-size;
+}
+
+<div
+  class="c0"
+>
+  <div
+    class="c1"
+  >
+    medium
+  </div>
+</div>
+`;
+
+exports[`Box responsive container small 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  width: 300px;
+  container-type: inline-size;
+}
+
+<div
+  class="c0"
+>
+  <div
+    class="c1"
+  >
+    small
+  </div>
+</div>
+`;
+
 exports[`Box row and column gap 1`] = `
 <DocumentFragment>
   .c0 {
@@ -2498,6 +2564,12 @@ exports[`Box row and column gap 1`] = `
   flex: 0 0 auto;
   align-self: stretch;
   height: 12px;
+}
+
+@media only screen and (max-width: 768px) {
+  .c1 {
+    gap: 48px 30px;
+  }
 }
 
 @media only screen and (max-width: 768px) {

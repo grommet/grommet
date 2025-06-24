@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import 'jest-styled-components';
 import { render, fireEvent, screen } from '@testing-library/react';
+import '@testing-library/jest-dom';
 
 import { Grommet } from '../../Grommet';
 import { Box } from '../../Box';
@@ -1231,6 +1232,135 @@ describe('DataTable', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
+  test('should apply theme for selected row', () => {
+    const theme = {
+      dataTable: {
+        body: {
+          selected: {
+            background: 'red',
+          },
+        },
+      },
+    };
+    const { asFragment } = render(
+      <Grommet theme={theme}>
+        <DataTable
+          columns={[
+            { property: 'a', header: 'A' },
+            { property: 'b', header: 'B' },
+          ]}
+          data={[
+            { a: 'one', b: 1 },
+            { a: 'two', b: 2 },
+          ]}
+          select={['two']}
+        />
+      </Grommet>,
+    );
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  test('should apply theme for selected row group', () => {
+    const theme = {
+      dataTable: {
+        body: {
+          selected: {
+            background: 'red',
+          },
+        },
+      },
+    };
+    const { asFragment } = render(
+      <Grommet theme={theme}>
+        <DataTable
+          columns={[
+            { property: 'a', header: 'A' },
+            { property: 'b', header: 'B' },
+          ]}
+          data={[
+            { a: 'one', b: 1.1 },
+            { a: 'one', b: 1.2 },
+            { a: 'two', b: 2.1 },
+            { a: 'two', b: 2.2 },
+            { a: 'three', b: 3.1 },
+            { a: 'three', b: 3.2 },
+          ]}
+          groupBy={{
+            property: 'a',
+            expand: ['one', 'two'],
+          }}
+          primaryKey={'b'}
+          select={[1.1, 1.2]}
+        />
+      </Grommet>,
+    );
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  test('should apply theme for selected row detail parent only', () => {
+    const theme = {
+      dataTable: {
+        body: {
+          selected: {
+            background: 'red',
+          },
+        },
+      },
+    };
+    const { asFragment, getAllByLabelText } = render(
+      <Grommet theme={theme}>
+        <DataTable
+          columns={[
+            { property: 'a', header: 'A' },
+            { property: 'b', header: 'B' },
+          ]}
+          data={[
+            { a: 'one', b: 1 },
+            { a: 'two', b: 2 },
+          ]}
+          rowDetails={(row) => <div>{row.a}</div>}
+          select={['two']}
+        />
+      </Grommet>,
+    );
+    // No means to expand row details declaratively
+    fireEvent.click(getAllByLabelText('expand')[1]);
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  test('should apply theme for removing border on the last table row', () => {
+    const theme = {
+      dataTable: {
+        body: {
+          row: {
+            extend: `&:last-child td {
+              border: none;
+              }
+              &:last-child th {
+              border: none;
+              }`,
+          },
+        },
+      },
+    };
+    const { asFragment } = render(
+      <Grommet theme={theme}>
+        <DataTable
+          border={{ body: 'bottom' }}
+          columns={[
+            { property: 'a', header: 'A' },
+            { property: 'b', header: 'B' },
+          ]}
+          data={[
+            { a: 'one', b: 1 },
+            { a: 'two', b: 2 },
+          ]}
+        />
+      </Grommet>,
+    );
+    expect(asFragment()).toMatchSnapshot();
+  });
+
   test('units', () => {
     const { container } = render(
       <Grommet>
@@ -1927,5 +2057,101 @@ describe('DataTable', () => {
     expect(onGroupSelect).toHaveBeenCalledWith([0, 1, 2, 3, 4, 5], undefined, {
       '': 'all',
     });
+  });
+
+  test('row click using space key press', () => {
+    const onClickRow = jest.fn();
+    const { container, getByText } = render(
+      <Grommet>
+        <DataTable
+          columns={[{ property: 'name', header: 'Name' }]}
+          data={[{ name: 'alpha' }]}
+          onClickRow={onClickRow}
+        />
+      </Grommet>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+
+    fireEvent.mouseEnter(getByText('alpha'));
+    fireEvent.keyDown(getByText('alpha'), {
+      code: 'Space',
+      keyCode: 32,
+    });
+
+    expect(onClickRow).toHaveBeenCalledWith(
+      expect.objectContaining({ datum: { name: 'alpha' } }),
+    );
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('disable row click using space key press', () => {
+    const onClickRow = jest.fn();
+    const { container, getByText } = render(
+      <Grommet>
+        <DataTable
+          columns={[{ property: 'name', header: 'Name' }]}
+          data={[{ name: 'alpha' }]}
+          disabled={['alpha']}
+          onClickRow={onClickRow}
+        />
+      </Grommet>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+
+    fireEvent.mouseEnter(getByText('alpha'));
+    fireEvent.keyDown(getByText('alpha'), {
+      code: 'Space',
+      keyCode: 32,
+    });
+
+    expect(onClickRow).not.toHaveBeenCalled();
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  type Ship = {
+    name: string;
+    model: string;
+    manufacturer: string;
+    passengers: string;
+  };
+
+  test('rowDetails renders only for expanded rows', () => {
+    const data: Ship[] = [
+      {
+        name: 'Y-wing',
+        model: 'BTL Y-wing',
+        manufacturer: 'Koensayr Manufacturing',
+        passengers: '0',
+      },
+      {
+        name: 'X-wing',
+        model: 'T-65 X-wing',
+        manufacturer: 'Incom Corporation',
+        passengers: '0',
+      },
+    ];
+
+    const rowDetails = {
+      render: (row: Ship) => <Text>Model: {row.model}</Text>,
+      expand: ['Y-wing'],
+      onExpand: jest.fn(),
+    };
+
+    render(
+      <Grommet>
+        <DataTable
+          columns={[
+            { property: 'name', header: 'Name', primary: true },
+            { property: 'manufacturer', header: 'Manufacturer' },
+          ]}
+          data={data}
+          rowDetails={rowDetails}
+        />
+      </Grommet>,
+    );
+    expect(screen.getByText('Model: BTL Y-wing')).toBeInTheDocument();
+    expect(screen.queryByText('Model: T-65 X-wing')).not.toBeInTheDocument();
   });
 });

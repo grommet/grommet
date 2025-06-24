@@ -31,6 +31,8 @@ import {
   getIconColor,
   getDisplayLabelKey,
   arrayIncludes,
+  inertTrueValue,
+  selectInputId,
 } from '../Select/utils';
 import { DefaultSelectTextInput } from '../Select/DefaultSelectTextInput';
 import { MessageContext } from '../../contexts/MessageContext';
@@ -488,14 +490,14 @@ const SelectMultiple = forwardRef(
                         a11yTitle={ariaLabel || a11yTitle}
                         defaultCursor={disabled === true || undefined}
                         focusIndicator={false}
-                        id={id ? `${id}__input` : undefined}
+                        id={id ? selectInputId(id) : undefined}
+                        inert={inertTrueValue}
                         name={name}
                         width="100%"
                         {...rest}
                         tabIndex="-1"
                         type="text"
                         placeholder={
-                          // eslint-disable-next-line no-nested-ternary
                           !value || value?.length === 0
                             ? placeholder || selectValue || displayLabelKey
                             : format({
@@ -521,7 +523,8 @@ const SelectMultiple = forwardRef(
                     <HiddenInput
                       type="text"
                       name={name}
-                      id={id ? `${id}__input` : undefined}
+                      id={id ? selectInputId(id) : undefined}
+                      inert={inertTrueValue}
                       value={inputValue}
                       ref={inputRef}
                       readOnly
@@ -533,6 +536,7 @@ const SelectMultiple = forwardRef(
                       a11yTitle={ariaLabel || a11yTitle}
                       disabled={disabled}
                       id={id}
+                      inert={inertTrueValue}
                       name={name}
                       ref={inputRef}
                       placeholder={placeholder || 'Select'}
@@ -571,7 +575,8 @@ const SelectMultiple = forwardRef(
                       <HiddenInput
                         type="text"
                         name={name}
-                        id={id ? `${id}__input` : undefined}
+                        id={id ? selectInputId(id) : undefined}
+                        inert={inertTrueValue}
                         value={inputValue}
                         ref={inputRef}
                         readOnly
@@ -582,6 +587,7 @@ const SelectMultiple = forwardRef(
                       a11yTitle={ariaLabel || a11yTitle}
                       disabled={disabled}
                       id={id}
+                      inert={inertTrueValue}
                       name={name}
                       ref={inputRef}
                       placeholder={placeholder}

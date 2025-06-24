@@ -290,11 +290,10 @@ describe('Layer', () => {
         <input autoFocus />
       </Grommet>,
     );
-    /* eslint-disable jsx-a11y/no-autofocus */
 
     const layerNode = getByTestId(document, 'focus-layer-test');
     expect(layerNode).toMatchSnapshot();
-    expect(document.activeElement.nodeName).toBe('A');
+    expect(document.activeElement.nodeName).toBe('INPUT');
   });
 
   test('not steal focus from an autofocus focusable element', () => {
@@ -307,7 +306,6 @@ describe('Layer', () => {
         </Layer>
       </Grommet>,
     );
-    /* eslint-disable jsx-a11y/no-autofocus */
     const layerNode = getByTestId(document, 'focus-layer-input-test');
     const inputNode = getByTestId(document, 'focus-input');
     expect(layerNode).toMatchSnapshot();

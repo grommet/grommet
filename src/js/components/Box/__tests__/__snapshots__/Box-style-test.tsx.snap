@@ -299,7 +299,7 @@ exports[`Box background 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background-color: #FF4040;
+  background-color: #EB0000;
   color: #f8f8f8;
   min-width: 0;
   min-height: 0;

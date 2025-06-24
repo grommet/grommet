@@ -10,6 +10,7 @@ import {
   useDisabled,
   arrayIncludes,
   getOptionIndex,
+  inertTrueValue,
 } from '../Select/utils';
 import { MessageContext } from '../../contexts/MessageContext';
 
@@ -167,6 +168,16 @@ const SelectMultipleValue = ({
                 pad="xsmall"
                 tabIndex="-1"
                 checked={optionSelected}
+                inert={inertTrueValue}
+                containerProps={{
+                  // in Firefox when we have inert set, the checkbox
+                  // click event gets swallowed by the checkbox.
+                  // We need the click event to go the the button
+                  // around the checkbox so we use pointerEvents =
+                  // none. For code clarity we decided an inline
+                  // style made sense here.
+                  style: { pointerEvents: 'none' },
+                }}
               />
             )}
           </SelectOption>
@@ -219,8 +230,6 @@ const SelectMultipleValue = ({
                 valueKey || labelKey,
               ),
             )
-            /* eslint-disable-next-line array-callback-return, 
-                consistent-return */
             .map((i) => visibleValue(i))}
         {showA11yDiv && (
           <Box

@@ -1,8 +1,8 @@
-import React, { useCallback, useState, useRef } from 'react';
+import React, { useCallback, useState, useRef, useMemo } from 'react';
 import { Box } from '../Box';
 import { Keyboard } from '../Keyboard';
 import { ToggleGroupPropTypes } from './propTypes';
-import { StyledButton } from './StyledToggleGroup';
+import { StyledButton, StyledBox } from './StyledToggleGroup';
 import { useThemeValue } from '../../utils/useThemeValue';
 
 const useControlled = ({ prop, defaultProp, onChange = () => {} }) => {
@@ -94,6 +94,12 @@ const ToggleGroup = ({
     setValue(adjustedEvent);
   };
 
+  // if caller defines a button "kind", respect that kind style
+  const kind = useMemo(
+    () => theme.toggleGroup.button.kind,
+    [theme.toggleGroup.button],
+  );
+
   return (
     <Keyboard
       onUp={onPrevious}
@@ -101,7 +107,7 @@ const ToggleGroup = ({
       onLeft={onPrevious}
       onRight={onNext}
     >
-      <Box
+      <StyledBox
         ref={ref}
         alignSelf="start"
         direction="row"
@@ -134,22 +140,26 @@ const ToggleGroup = ({
           const active = Array.isArray(value)
             ? !!value.includes(optionValue)
             : value === optionValue;
-          let round = 0;
-          // round corners of first and last buttons to match container
-          if (
-            typeof theme.toggleGroup.container.round === 'string' &&
-            (index === 0 || index === options.length - 1)
-          ) {
-            round = {
-              corner: index === 0 ? 'left' : 'right',
-              size: theme.toggleGroup.container.round,
-            };
+          let round;
+          if (!kind) {
+            if (theme.toggleGroup.button.border?.radius) {
+              round = theme.toggleGroup.button.border.radius;
+            } else if (
+              typeof theme.toggleGroup.container.round === 'string' &&
+              (index === 0 || index === options.length - 1)
+            ) {
+              // round corners of first and last buttons to match container
+              round = {
+                corner: index === 0 ? 'left' : 'right',
+                size: theme.toggleGroup.container.round,
+              };
+            } else round = 0;
           }
 
           return (
             <Box
               border={
-                index < options.length - 1
+                index < options.length - 1 && theme.toggleGroup.divider
                   ? {
                       side: 'right',
                       color: theme.toggleGroup.divider.color,
@@ -160,9 +170,10 @@ const ToggleGroup = ({
             >
               <StyledButton
                 active={active}
-                aria-pressed={multiple && active}
-                aria-checked={!multiple && active}
+                aria-pressed={multiple ? active : undefined}
+                aria-checked={!multiple ? active : undefined}
                 icon={icon}
+                kind={kind}
                 label={label}
                 tip={tip}
                 onClick={(event) => handleToggle(event, optionValue)}
@@ -177,7 +188,7 @@ const ToggleGroup = ({
             </Box>
           );
         })}
-      </Box>
+      </StyledBox>
     </Keyboard>
   );
 };

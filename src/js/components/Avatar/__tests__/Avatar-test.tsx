@@ -9,7 +9,7 @@ import { Stack } from '../../Stack';
 import { Text } from '../../Text';
 import { Avatar } from '..';
 
-const src = '';
+const src = 'test.png';
 
 describe('Avatar', () => {
   test('renders', () => {
@@ -151,6 +151,22 @@ describe('Avatar', () => {
     const { container } = render(
       <Grommet>
         <Avatar a11yTitle="testing for a11ytitle" src={src} />
+      </Grommet>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
+  test('apply imageProps to avatar', () => {
+    const { container } = render(
+      <Grommet>
+        <Avatar
+          imageProps={{
+            'aria-label': 'test image',
+            fallback: 'fallbackimage',
+            opacity: 'strong',
+          }}
+          src={src}
+        />
       </Grommet>,
     );
 

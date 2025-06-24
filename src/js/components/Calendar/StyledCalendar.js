@@ -1,12 +1,29 @@
 import styled, { css, keyframes } from 'styled-components';
+import { Button } from '../Button';
 import {
   backgroundStyle,
   focusStyle,
   genericStyles,
   kindPartStyles,
+  normalizeColor,
   parseMetricToNum,
+  roundStyle,
   styledComponentsConfig,
 } from '../../utils';
+import { activeStyle } from '../../utils/background';
+import { breakpointStyle } from '../../utils/mixins';
+
+const responsiveSizeStyle = (props) => {
+  const breakpoint = props.theme.global.size[props.sizeProp];
+  return breakpointStyle(
+    { value: breakpoint },
+    `
+    width: 100vw;
+    max-width: ${breakpoint};
+  `,
+    true,
+  );
+};
 
 const sizeStyle = (props) => {
   const data = props.theme.calendar[props.sizeProp];
@@ -25,6 +42,7 @@ const sizeStyle = (props) => {
 const StyledCalendar = styled.div.withConfig(styledComponentsConfig)`
   ${genericStyles}
   ${(props) => sizeStyle(props)}
+  ${(props) => props.responsive && responsiveSizeStyle(props)}
   ${(props) => props.theme.calendar && props.theme.calendar.extend}
 `;
 
@@ -37,9 +55,24 @@ const weeksContainerSizeStyle = (props) => {
 
   `;
 };
+
+const weeksContainerResponsiveSizeStyle = (props) => {
+  const breakpoint = props.theme.global.size[props.sizeProp];
+  // set aspect-ratio to 7 days by 6 weeks
+  return breakpointStyle(
+    { value: breakpoint },
+    `
+    height: auto;
+    aspect-ratio: 7/6;
+    `,
+    true,
+  );
+};
+
 const StyledWeeksContainer = styled.div.withConfig(styledComponentsConfig)`
   overflow: hidden;
   ${(props) => weeksContainerSizeStyle(props)}
+  ${(props) => props.responsive && weeksContainerResponsiveSizeStyle(props)}
   ${(props) => props.focus && !props.plain && focusStyle()};
 `;
 
@@ -72,6 +105,32 @@ const weeksSizeStyle = () => css`
   flex-direction: column;
   height: 100%;
 `;
+
+// fallback to medium if no size-specific styles
+const rangeRoundStyle = (props) => {
+  let themeObj;
+  if (props.isSelected) {
+    const rangeStart =
+      props.theme.calendar?.[props.sizeProp]?.range?.start?.round ||
+      props.theme.calendar?.medium?.range?.start?.round;
+    const rangeEnd =
+      props.theme.calendar?.[props.sizeProp]?.range?.end?.round ||
+      props.theme.calendar?.medium?.range?.end?.round;
+    if (props.rangePosition === 'start' && rangeStart) {
+      themeObj = rangeStart;
+    } else if (props.rangePosition === 'end' && rangeEnd) themeObj = rangeEnd;
+  } else
+    themeObj =
+      props.theme.calendar?.[props.sizeProp]?.range?.round ||
+      props.theme.calendar?.medium?.range?.round;
+  return (
+    themeObj && [
+      roundStyle(themeObj, props.responsive, props.theme),
+      'overflow: hidden;',
+    ]
+  );
+};
+
 const StyledWeeks = styled.div.withConfig(styledComponentsConfig)`
   position: relative;
   ${(props) => props.fillContainer && weeksSizeStyle()}
@@ -84,11 +143,47 @@ const StyledWeek = styled.div.withConfig(styledComponentsConfig)`
   ${(props) => props.fillContainer && 'flex: 1;'}
 `;
 
+const responsiveDayContainerStyle = (props) => {
+  const breakpoint = props.theme.global.size[props.sizeProp];
+  return breakpointStyle(
+    { value: breakpoint },
+    `
+    width: 14.3%;
+  `,
+    true,
+  );
+};
+
 // The width of 14.3% is derived from dividing 100/7. We want the
 // widths of 7 days to equally fill 100% of the row.
 const StyledDayContainer = styled.div.withConfig(styledComponentsConfig)`
   flex: 0 1 auto;
   ${(props) => props.fillContainer && 'width: 14.3%;'}
+  ${(props) =>
+    (props.inRange || (props.isSelected && props.rangePosition)) &&
+    props.theme.calendar?.range?.background &&
+    backgroundStyle(props.theme.calendar.range.background, props.theme)}
+  ${(props) => rangeRoundStyle(props)}
+  ${(props) => props.responsive && responsiveDayContainerStyle(props)}
+`;
+
+const responsiveDayButtonStyle = (props) => {
+  const breakpoint = props.theme.global.size[props.sizeProp];
+  return breakpointStyle(
+    { value: breakpoint },
+    `
+    width: 100%;
+  `,
+    true,
+  );
+};
+
+// when caller opts in to day hover styling, apply all state styles
+// on CalendarDay instead of active state on CalendarDayButton
+const StyledDayButton = styled(Button)`
+  ${(props) =>
+    props.theme.calendar?.day?.hover?.background && 'background: inherit;'}
+  ${(props) => props.responsive && responsiveDayButtonStyle(props)}
 `;
 
 const daySizeStyle = (props) => {
@@ -100,17 +195,102 @@ const daySizeStyle = (props) => {
   `;
 };
 
+const responsiveDaySizeStyle = (props) => {
+  const breakpoint = props.theme.global.size[props.sizeProp];
+  const data = props.theme.calendar[props.sizeProp];
+  return breakpointStyle(
+    { value: breakpoint },
+    `
+      width: 100%;
+      max-width: ${data.daySize};
+      height: auto;
+      aspect-ratio: 1;
+    `,
+    true,
+  );
+};
+
+const dayStyle = (props) => {
+  let backgroundObj;
+  let colorObj;
+  if (props.isSelected) {
+    backgroundObj = props.theme.calendar.day?.selected?.background || 'control';
+    colorObj = props.theme.calendar.day?.selected?.color;
+  } else if (props.inRange) {
+    // for backwards compatability, only apply this if caller hasn't specified
+    // range specific rounding
+    // if they have, background will be applied to StyledDayContainer
+    backgroundObj =
+      !props.theme.calendar?.[props.sizeProp]?.range?.round &&
+      !props.theme.calendar?.medium.range?.round &&
+      (props.theme.calendar.day?.inRange?.background || {
+        color: 'control',
+        opacity: 'weak',
+      });
+    colorObj = props.theme.calendar.day?.inRange?.color;
+  } else {
+    backgroundObj = props.theme.calendar.day?.background;
+    colorObj = props.theme.calendar.day?.color;
+  }
+
+  if (colorObj && !backgroundObj)
+    return `color: ${normalizeColor(colorObj, props.theme)};`;
+  return backgroundStyle(backgroundObj, props.theme, colorObj);
+};
+
+const dayHoverStyle = (props) => {
+  let backgroundObj;
+  let colorObj;
+  if (props.isSelected) {
+    backgroundObj = props.theme.calendar.day?.selected?.hover?.background;
+    colorObj = props.theme.calendar.day?.selected?.hover?.color;
+  } else if (props.inRange) {
+    backgroundObj = props.theme.calendar.day?.inRange?.hover?.background;
+    colorObj = props.theme.calendar.day?.inRange?.hover?.color;
+  } else {
+    backgroundObj = props.theme.calendar.day?.hover?.background;
+    colorObj = props.theme.calendar.day?.hover?.color;
+  }
+
+  if (colorObj && !backgroundObj)
+    return `color: ${normalizeColor(colorObj, props.theme)};`;
+  return backgroundStyle(backgroundObj, props.theme, colorObj);
+};
+
+const dayFontStyle = (props) => {
+  let fontWeight;
+  if (props.isSelected) {
+    fontWeight = props.theme.calendar.day?.selected?.font?.weight;
+  } else if (props.inRange) {
+    fontWeight = props.theme.calendar.day?.inRange?.font?.weight;
+  }
+  return fontWeight && `font-weight: ${fontWeight};`;
+};
+
 const StyledDay = styled.div.withConfig(styledComponentsConfig)`
   display: flex;
   justify-content: center;
   align-items: center;
+  color: ${(props) =>
+    normalizeColor(
+      props.otherMonth
+        ? props.theme.calendar?.day?.adjacent?.color || 'text-xweak'
+        : 'text-strong',
+      props.theme,
+    )};
   ${(props) => daySizeStyle(props)}
-  ${(props) =>
-    (props.isSelected && backgroundStyle('control', props.theme)) ||
-    (props.inRange &&
-      backgroundStyle({ color: 'control', opacity: 'weak' }, props.theme))}
-  ${(props) => props.otherMonth && 'opacity: 0.5;'}
-  ${(props) => props.isSelected && 'font-weight: bold;'}
+  ${(props) => props.responsive && responsiveDaySizeStyle(props)}
+  ${(props) => dayStyle(props)}
+  ${(props) => dayFontStyle(props)}
+   ${(props) => {
+    // fallback to medium if no size-specific styles
+    const round =
+      props.theme.calendar?.[props.sizeProp]?.day?.round ||
+      props.theme.calendar?.medium?.day?.round;
+    return round && roundStyle(round, props.responsive, props.theme);
+  }}
+  ${(props) => props.active && activeStyle}
+  ${(props) => props.hover && dayHoverStyle(props)}
   ${(props) =>
     // when theme uses kind Buttons, since we use children for Button,
     // we have to special case how we handle disabled days here
@@ -129,5 +309,6 @@ export {
   StyledWeeks,
   StyledWeek,
   StyledDayContainer,
+  StyledDayButton,
   StyledDay,
 };

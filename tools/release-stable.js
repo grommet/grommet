@@ -10,7 +10,6 @@ const localDist = path.resolve('dist');
 if (process.env.CI) {
   del(localFolder).then(() => {
     git()
-      .silent(false)
       .clone(repoURL, localFolder)
       .then(() => git(localFolder).checkout('stable'))
       .then(() => del([`${localFolder}/**/*`]))

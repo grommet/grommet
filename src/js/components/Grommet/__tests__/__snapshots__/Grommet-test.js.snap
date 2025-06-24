@@ -122,11 +122,11 @@ exports[`Grommet cssVars 1`] = `
   --neutral-2: #3D138D;
   --neutral-3: #00739D;
   --neutral-4: #A2423D;
-  --status-critical: #FF4040;
+  --status-critical: #EB0000;
   --status-error: #B30000;
-  --status-warning: #FFAA15;
-  --status-ok: #00C781;
-  --status-unknown: #CCCCCC;
+  --status-warning: #C27B00;
+  --status-ok: #009E67;
+  --status-unknown: #919191;
   --status-disabled: #CCCCCC;
 }
 
@@ -199,9 +199,9 @@ exports[`Grommet grommet theme 1`] = `
 exports[`Grommet hpe theme 1`] = `
 .c0 {
   font-family: 'Metric',Arial,sans-serif;
-  font-size: 18px;
-  line-height: 24px;
-  background-color: #FFFFFF;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
   color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;

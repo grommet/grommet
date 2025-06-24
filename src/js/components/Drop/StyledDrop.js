@@ -29,6 +29,8 @@ const dropKeyFrames = keyframes`
 
 // The desired margin may be adjusted depending on drops alignment
 const marginStyle = (theme, align, data, responsive, marginProp) => {
+  // NOTE: If marginProp is passed, it overrides the alignment-aware
+  //  margin logic and uses the provided value instead.
   const margin = theme.global.edgeSize[data] || data;
   let adjustedMargin = {};
   // if user provides CSS string such as '50px 12px', apply that always
@@ -54,7 +56,7 @@ const marginStyle = (theme, align, data, responsive, marginProp) => {
   }
   return edgeStyle(
     'margin',
-    adjustedMargin,
+    marginProp || adjustedMargin,
     responsive,
     theme.global.edgeSize.responsiveBreakpoint,
     theme,
@@ -66,7 +68,8 @@ const StyledDrop = styled(Box)`
 
   ${(props) =>
     !props.plain &&
-    ((props.round && roundStyle(props.round, true, props.theme)) ||
+    ((props.round &&
+      roundStyle(props.round, props.responsive || true, props.theme)) ||
       `border-radius: ${props.theme.global.drop.border.radius};`)}
 
   position: fixed;

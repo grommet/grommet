@@ -4,8 +4,13 @@ import 'jest-styled-components';
 
 import { Grommet } from '../../Grommet';
 import { Box, BoxProps } from '..';
+import { ResponsiveContext } from '../../..';
 
 describe('Box', () => {
+  afterEach(() => {
+    jest.restoreAllMocks();
+  });
+
   test('direction', () => {
     const { container } = render(
       <Grommet>
@@ -25,6 +30,56 @@ describe('Box', () => {
       <Grommet>
         <Box responsive />
         <Box responsive={false} />
+      </Grommet>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('responsive container medium', () => {
+    jest.spyOn(HTMLElement.prototype, 'getBoundingClientRect').mockReturnValue({
+      width: 1280,
+      height: 0,
+      top: 0,
+      left: 0,
+      right: 0,
+      bottom: 0,
+      x: 0,
+      y: 0,
+      toJSON: () => {},
+    });
+    const { container } = render(
+      <Grommet>
+        <Box responsive="container" width="1280px">
+          <ResponsiveContext.Consumer>
+            {(size2) => size2}
+          </ResponsiveContext.Consumer>
+        </Box>
+      </Grommet>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('responsive container small', () => {
+    jest.spyOn(HTMLElement.prototype, 'getBoundingClientRect').mockReturnValue({
+      width: 300,
+      height: 0,
+      top: 0,
+      left: 0,
+      right: 0,
+      bottom: 0,
+      x: 0,
+      y: 0,
+      toJSON: () => {},
+    });
+    const { container } = render(
+      <Grommet>
+        <Box responsive="container" width="300px">
+          <ResponsiveContext.Consumer>
+            {(size2) => size2}
+          </ResponsiveContext.Consumer>
+        </Box>
       </Grommet>,
     );
 

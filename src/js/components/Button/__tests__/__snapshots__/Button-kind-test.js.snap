@@ -157,8 +157,8 @@ exports[`Button kind badge should apply background 1`] = `
   box-sizing: border-box;
   max-width: 100%;
   align-items: center;
-  background-color: #00C781;
-  color: #444444;
+  background-color: #009E67;
+  color: #f8f8f8;
   min-width: 0;
   min-height: 0;
   flex-direction: column;
@@ -185,7 +185,7 @@ exports[`Button kind badge should apply background 1`] = `
 .c6 {
   font-size: 14px;
   line-height: 20px;
-  color: #000000;
+  color: #FFFFFF;
   font-weight: normal;
 }
 
@@ -1484,7 +1484,7 @@ exports[`Button kind button with transparent background 1`] = `
   max-width: 100%;
   align-items: flex-start;
   background-color: rgba(28, 28, 28, 1);
-  color: #FFFFFF;
+  color: #ffffff;
   min-width: 0;
   min-height: 0;
   flex-direction: column;
@@ -1519,23 +1519,22 @@ exports[`Button kind button with transparent background 1`] = `
   overflow: visible;
   text-transform: none;
   border: none;
-  border-radius: 2em;
-  padding: 6px 18px;
-  font-size: 18px;
-  line-height: 24px;
-  background-color: #FFFFFF0F;
-  color: #FFFFFF;
+  border-radius: 9999px;
+  padding: 5px 18px;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
   text-align: center;
   transition-property: color,background-color,border-color,box-shadow;
   transition-duration: 0.1s;
   transition-timing-function: ease-in-out;
-  font-size: 19px;
-  line-height: 24px;
 }
 
 .c2:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #00E8CF;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c2:focus >circle,
@@ -1545,8 +1544,9 @@ exports[`Button kind button with transparent background 1`] = `
 .c2:focus >polygon,
 .c2:focus >polyline,
 .c2:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #00E8CF;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c2:focus ::-moz-focus-inner {
@@ -1554,6 +1554,8 @@ exports[`Button kind button with transparent background 1`] = `
 }
 
 .c2:focus:not(:focus-visible) {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -1565,6 +1567,8 @@ exports[`Button kind button with transparent background 1`] = `
 .c2:focus:not(:focus-visible) >polygon,
 .c2:focus:not(:focus-visible) >polyline,
 .c2:focus:not(:focus-visible) >rect {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -1583,29 +1587,28 @@ exports[`Button kind button with transparent background 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  background-color: #FFFFFF0F;
-  color: #FFFFFF;
+  background-color: rgba(255, 255, 255, 0.06);
+  color: #ffffff;
   border: none;
-  border-radius: 2em;
-  padding: 6px 18px;
-  font-size: 18px;
-  line-height: 24px;
-  background-color: #FFFFFF0F;
-  color: #FFFFFF;
-  background-color: rgba(255, 255, 255, 0.058823529411764705);
-  color: #FFFFFF;
-  color: #FFFFFF;
+  border-radius: 9999px;
+  padding: 5px 18px;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.06);
+  color: #ffffff;
+  color: #ffffff;
   text-align: center;
   transition-property: color,background-color,border-color,box-shadow;
   transition-duration: 0.1s;
   transition-timing-function: ease-in-out;
-  font-size: 19px;
-  line-height: 24px;
 }
 
 .c4:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #00E8CF;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c4:focus >circle,
@@ -1615,8 +1618,9 @@ exports[`Button kind button with transparent background 1`] = `
 .c4:focus >polygon,
 .c4:focus >polyline,
 .c4:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #00E8CF;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c4:focus ::-moz-focus-inner {
@@ -1624,6 +1628,8 @@ exports[`Button kind button with transparent background 1`] = `
 }
 
 .c4:focus:not(:focus-visible) {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -1635,6 +1641,8 @@ exports[`Button kind button with transparent background 1`] = `
 .c4:focus:not(:focus-visible) >polygon,
 .c4:focus:not(:focus-visible) >polyline,
 .c4:focus:not(:focus-visible) >rect {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -1654,23 +1662,22 @@ exports[`Button kind button with transparent background 1`] = `
   overflow: visible;
   text-transform: none;
   border: none;
-  border-radius: 2em;
-  padding: 6px 18px;
-  font-size: 18px;
-  line-height: 24px;
-  background-color: #0000000A;
-  color: #2E2E2E;
+  border-radius: 9999px;
+  padding: 5px 18px;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: rgba(0, 0, 0, 0.04);
+  color: #2e2e2e;
   text-align: center;
   transition-property: color,background-color,border-color,box-shadow;
   transition-duration: 0.1s;
   transition-timing-function: ease-in-out;
-  font-size: 19px;
-  line-height: 24px;
 }
 
 .c6:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #00E8CF;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c6:focus >circle,
@@ -1680,8 +1687,9 @@ exports[`Button kind button with transparent background 1`] = `
 .c6:focus >polygon,
 .c6:focus >polyline,
 .c6:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #00E8CF;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c6:focus ::-moz-focus-inner {
@@ -1689,6 +1697,8 @@ exports[`Button kind button with transparent background 1`] = `
 }
 
 .c6:focus:not(:focus-visible) {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -1700,6 +1710,8 @@ exports[`Button kind button with transparent background 1`] = `
 .c6:focus:not(:focus-visible) >polygon,
 .c6:focus:not(:focus-visible) >polyline,
 .c6:focus:not(:focus-visible) >rect {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -1718,29 +1730,28 @@ exports[`Button kind button with transparent background 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  background-color: #0000000A;
-  color: #555555;
+  background-color: rgba(0, 0, 0, 0.04);
+  color: #2e2e2e;
   border: none;
-  border-radius: 2em;
-  padding: 6px 18px;
-  font-size: 18px;
-  line-height: 24px;
-  background-color: #0000000A;
-  color: #2E2E2E;
-  background-color: rgba(0, 0, 0, 0.0392156862745098);
-  color: #2E2E2E;
-  color: #2E2E2E;
+  border-radius: 9999px;
+  padding: 5px 18px;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: rgba(0, 0, 0, 0.04);
+  color: #2e2e2e;
+  background-color: rgba(0, 0, 0, 0.04);
+  color: #2e2e2e;
+  color: #2e2e2e;
   text-align: center;
   transition-property: color,background-color,border-color,box-shadow;
   transition-duration: 0.1s;
   transition-timing-function: ease-in-out;
-  font-size: 19px;
-  line-height: 24px;
 }
 
 .c7:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #00E8CF;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c7:focus >circle,
@@ -1750,8 +1761,9 @@ exports[`Button kind button with transparent background 1`] = `
 .c7:focus >polygon,
 .c7:focus >polyline,
 .c7:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #00E8CF;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c7:focus ::-moz-focus-inner {
@@ -1759,6 +1771,8 @@ exports[`Button kind button with transparent background 1`] = `
 }
 
 .c7:focus:not(:focus-visible) {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -1770,6 +1784,8 @@ exports[`Button kind button with transparent background 1`] = `
 .c7:focus:not(:focus-visible) >polygon,
 .c7:focus:not(:focus-visible) >polyline,
 .c7:focus:not(:focus-visible) >rect {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -1780,9 +1796,9 @@ exports[`Button kind button with transparent background 1`] = `
 
 .c0 {
   font-family: 'Metric',Arial,sans-serif;
-  font-size: 18px;
-  line-height: 24px;
-  background-color: #FFFFFF;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
   color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
@@ -2033,10 +2049,10 @@ exports[`Button kind disabled with hoverIndicator should not hover 1`] = `
 
 exports[`Button kind disabled with hoverIndicator should not hover 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 drDzQW"
+  class="StyledGrommet-sc-19lkkz7-0 cBoJUe"
 >
   <button
-    class="StyledButtonKind-sc-1vhfpnt-0 dsjgcx"
+    class="StyledButtonKind-sc-1vhfpnt-0 iDZafx"
     disabled=""
     type="button"
   >
@@ -2702,10 +2718,10 @@ exports[`Button kind hover secondary with color and background 1`] = `
 
 exports[`Button kind hover secondary with color and background 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 drDzQW"
+  class="StyledGrommet-sc-19lkkz7-0 cBoJUe"
 >
   <button
-    class="StyledButtonKind-sc-1vhfpnt-0 deYFHq"
+    class="StyledButtonKind-sc-1vhfpnt-0 knkSSa"
     type="button"
   >
     Button
@@ -2804,10 +2820,10 @@ exports[`Button kind hoverIndicator with color and background 1`] = `
 
 exports[`Button kind hoverIndicator with color and background 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 drDzQW"
+  class="StyledGrommet-sc-19lkkz7-0 cBoJUe"
 >
   <button
-    class="StyledButtonKind-sc-1vhfpnt-0 jkYXsh"
+    class="StyledButtonKind-sc-1vhfpnt-0 tTsfx"
     type="button"
   >
     Button
@@ -4137,18 +4153,18 @@ exports[`Button kind mouseOver and mouseOut events 1`] = `
 
 exports[`Button kind mouseOver and mouseOut events 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 drDzQW"
+  class="StyledGrommet-sc-19lkkz7-0 cBoJUe"
 >
   <button
-    class="StyledButtonKind-sc-1vhfpnt-0 cJfHda"
+    class="StyledButtonKind-sc-1vhfpnt-0 eZBXGy"
     type="button"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 aWBwt"
+      class="StyledBox-sc-13pk1d4-0 hhOXrv"
     >
       <svg
         aria-label="Add"
-        class="StyledIcon-sc-ofa7kd-0 oZdTK"
+        class="StyledIcon-sc-ofa7kd-0 kNFeMe"
         viewBox="0 0 24 24"
       >
         <path
@@ -4159,7 +4175,7 @@ exports[`Button kind mouseOver and mouseOut events 2`] = `
         />
       </svg>
       <div
-        class="StyledBox__StyledBoxGap-sc-13pk1d4-1 bdcgyp"
+        class="StyledBox__StyledBoxGap-sc-13pk1d4-1 bljSMt"
       />
       label
     </div>
@@ -5588,6 +5604,236 @@ exports[`Button kind should apply styling according to theme size definitions 1`
     Button
   </button>
 </div>
+`;
+
+exports[`Button kind should render elevation 1`] = `
+<DocumentFragment>
+  .c1 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: none;
+  border-radius: 18px;
+  padding: 4px 22px;
+  font-size: 18px;
+  line-height: 24px;
+  box-shadow: inset 3px 0 red;
+  text-align: center;
+  transition-property: color,background-color,border-color,box-shadow;
+  transition-duration: 0.1s;
+  transition-timing-function: ease-in-out;
+}
+
+.c1:hover {
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.20);
+}
+
+.c1:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus >circle,
+.c1:focus >ellipse,
+.c1:focus >line,
+.c1:focus >path,
+.c1:focus >polygon,
+.c1:focus >polyline,
+.c1:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c1:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible) >circle,
+.c1:focus:not(:focus-visible) >ellipse,
+.c1:focus:not(:focus-visible) >line,
+.c1:focus:not(:focus-visible) >path,
+.c1:focus:not(:focus-visible) >polygon,
+.c1:focus:not(:focus-visible) >polyline,
+.c1:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
+}
+
+.c2 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: none;
+  border-radius: 18px;
+  padding: 4px 22px;
+  font-size: 18px;
+  line-height: 24px;
+  box-shadow: inset 5px 0 blue;
+  text-align: center;
+  transition-property: color,background-color,border-color,box-shadow;
+  transition-duration: 0.1s;
+  transition-timing-function: ease-in-out;
+}
+
+.c2:hover {
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.20);
+}
+
+.c2:hover {
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.20);
+}
+
+.c2:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c2:focus >circle,
+.c2:focus >ellipse,
+.c2:focus >line,
+.c2:focus >path,
+.c2:focus >polygon,
+.c2:focus >polyline,
+.c2:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c2:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c2:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c2:focus:not(:focus-visible) >circle,
+.c2:focus:not(:focus-visible) >ellipse,
+.c2:focus:not(:focus-visible) >line,
+.c2:focus:not(:focus-visible) >path,
+.c2:focus:not(:focus-visible) >polygon,
+.c2:focus:not(:focus-visible) >polyline,
+.c2:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c2:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
+}
+
+.c3 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+  color: inherit;
+}
+
+.c3:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c3:focus >circle,
+.c3:focus >ellipse,
+.c3:focus >line,
+.c3:focus >path,
+.c3:focus >polygon,
+.c3:focus >polyline,
+.c3:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c3:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c3:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c3:focus:not(:focus-visible) >circle,
+.c3:focus:not(:focus-visible) >ellipse,
+.c3:focus:not(:focus-visible) >line,
+.c3:focus:not(:focus-visible) >path,
+.c3:focus:not(:focus-visible) >polygon,
+.c3:focus:not(:focus-visible) >polyline,
+.c3:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c3:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+<div
+    class="c0"
+  >
+    <button
+      class="c1"
+      type="button"
+    >
+      Default
+    </button>
+    <button
+      class="c2"
+      type="button"
+    >
+      Primary
+    </button>
+    <button
+      class="c3"
+      type="button"
+    >
+      Plain
+    </button>
+  </div>
+</DocumentFragment>
 `;
 
 exports[`Button kind should render pad 1`] = `

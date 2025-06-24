@@ -99,7 +99,13 @@ export interface DataTableProps<TRowType = any> {
       pad?: PadType;
     };
   };
-  rowDetails?: (row: TRowType) => React.ReactNode;
+  rowDetails?:
+    | ((row: TRowType) => React.ReactNode)
+    | {
+        render: (row: TRowType) => React.ReactNode;
+        expand?: (string | number)[];
+        onExpand?: (expandedKeys: (string | number)[], datum: TRowType) => void;
+      };
   show?: number | { page?: number };
   size?: 'small' | 'medium' | 'large' | 'xlarge' | string;
 
@@ -152,7 +158,10 @@ export interface DataTableProps<TRowType = any> {
 export interface DataTableExtendedProps<TRowType = any>
   extends DataTableProps<TRowType>,
     Omit<
-      JSX.IntrinsicElements['table'],
+      React.DetailedHTMLProps<
+        React.HTMLAttributes<HTMLTableElement>,
+        HTMLTableElement
+      >,
       'onSelect' | 'placeholder' | 'border'
     > {}
 
