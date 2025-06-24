@@ -77,6 +77,11 @@ export interface GrommetProps {
         total?: string;
         totalSingle?: string;
       };
+      dataTable?: {
+        ascending?: string;
+        descending?: string;
+        searchBy?: string;
+      };
       dataTableColumns?: {
         open?: string;
         order?: string;

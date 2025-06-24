@@ -49,6 +49,11 @@ export interface ColumnConfig<TRowType> {
   aggregate?: 'avg' | 'max' | 'min' | 'sum';
   footer?: React.ReactNode | { aggregate?: boolean };
   header?: string | React.ReactNode | { aggregate?: boolean };
+  messages?: {
+    ascending?: string;
+    descending?: string;
+    searchBy?: string;
+  };
   pin?: boolean;
   plain?: boolean;
   primary?: boolean;

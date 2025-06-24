@@ -55,6 +55,11 @@
     "total": "{total} {items}",
     "totalSingle": "{total} {items}"
   },
+  "dataTable": {
+    "ascending": "ascending",
+    "descending": "descending",
+    "searchBy": "Open search by {property}"
+  },
   "dataTableColumns": {
     "open": "Open column selector",
     "order": "Order columns",

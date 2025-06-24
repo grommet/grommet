@@ -128,6 +128,11 @@ if (process.env.NODE_ENV !== 'production') {
         onSelect: PropTypes.func,
       }),
     ]),
+    messages: PropTypes.shape({
+      ascending: PropType.string,
+      descending: PropType.string,
+      searchBy: PropType.string,
+    }),
     onClickRow: PropTypes.oneOfType([
       PropTypes.func,
       PropTypes.oneOf(['select']),
