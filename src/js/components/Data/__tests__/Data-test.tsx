@@ -168,7 +168,7 @@ describe('Data', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
-  test('view sort', async () => {
+  test('view sort', () => {
     const { container } = render(
       <Grommet>
         <Data
@@ -187,7 +187,7 @@ describe('Data', () => {
       </Grommet>,
     );
 
-    await expectDataSummary('4 items');
+    expectDataSummary('4 items');
     expect(container.firstChild).toMatchSnapshot();
   });
 
