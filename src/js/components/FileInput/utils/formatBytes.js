@@ -12,6 +12,9 @@ const getCurrentOS = () => {
 };
 
 const defaultFormat = (size) => {
+  if (size == null || size === undefined) {
+    return '0 B';
+  }
   const units = ['B', 'KB', 'MB', 'GB', 'TB'];
   const factor = SI_CONVERSION_FACTOR;
   let index = 0;
@@ -24,6 +27,9 @@ const defaultFormat = (size) => {
 };
 
 const windowsFormat = (size) => {
+  if (size == null || size === undefined) {
+    return '0 KB';
+  }
   const num = Math.ceil(size / IEC_CONVERSION_FACTOR);
 
   return `${Intl.NumberFormat().format(num)} KB`;
