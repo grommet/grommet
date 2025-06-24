@@ -41,6 +41,7 @@ var ExpanderControl = function ExpanderControl(_ref) {
   if (onToggle) {
     content = /*#__PURE__*/React.createElement(Button, {
       fill: true,
+      "aria-expanded": expanded ? 'true' : 'false',
       a11yTitle: expanded ? 'collapse' : 'expand',
       hoverIndicator: true,
       onClick: onToggle,

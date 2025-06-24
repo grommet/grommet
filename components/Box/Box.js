@@ -254,7 +254,11 @@ var Box = exports.Box = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, refP
   }
   if (onClick) {
     content = /*#__PURE__*/_react["default"].createElement(_Keyboard.Keyboard, {
-      onEnter: onClick
+      onEnter: onClick,
+      onSpace: function onSpace(e) {
+        e.preventDefault(); // prevent page scroll
+        onClick(e);
+      }
     }, content);
   }
   return content;

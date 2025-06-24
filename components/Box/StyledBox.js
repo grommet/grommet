@@ -218,7 +218,9 @@ var StyledBox = exports.StyledBox = _styledComponents["default"].div.withConfig(
 }, function (props) {
   return props.onClick && interactiveStyle;
 }, function (props) {
-  return props.onClick && props.focus && props.focusIndicator !== false && (0, _utils.focusStyle)();
+  return props.onClick && props.focus && props.focusIndicator !== false && // only show focus styles when using keyboard navigation
+  // but not with mouse
+  (0, _styledComponents.css)(["", " &:focus:not(:focus-visible){", "}"], (0, _utils.focusStyle)(), (0, _utils.unfocusStyle)());
 }, function (props) {
   return props.theme.box && props.theme.box.extend;
 }, function (props) {

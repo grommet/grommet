@@ -249,7 +249,11 @@ var Box = /*#__PURE__*/forwardRef(function (_ref, refProp) {
   }
   if (onClick) {
     content = /*#__PURE__*/React.createElement(Keyboard, {
-      onEnter: onClick
+      onEnter: onClick,
+      onSpace: function onSpace(e) {
+        e.preventDefault(); // prevent page scroll
+        onClick(e);
+      }
     }, content);
   }
   return content;
