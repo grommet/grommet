@@ -100,7 +100,7 @@ const FileInput = forwardRef(
     const [showRemoveConfirmation, setShowRemoveConfirmation] = useState(false);
     const [pendingRemoval, setPendingRemoval] = useState(defaultPendingRemoval);
     const aggregateThreshold = (multiple && multiple.aggregateThreshold) || 10;
-    const max = multiple?.max;
+    const maxFile = multiple?.max;
     const inputRef = useForwardedRef(ref);
     const controlRef = useRef();
     const removeRef = useRef();
@@ -139,15 +139,15 @@ const FileInput = forwardRef(
               return message;
             }
           : '',
-        max
+        maxFile
           ? () => {
               const fileList = [...files];
               let message = '';
-              if (fileList.length > max) {
+              if (fileList.length > maxFile) {
                 message = format({
                   id: 'fileInput.maxFile',
                   messages,
-                  values: { max },
+                  values: { maxFile },
                 });
               }
               return message;
@@ -459,7 +459,7 @@ const FileInput = forwardRef(
               let messageId = '';
               if (maxSize && file.size > maxSize) {
                 messageId = 'fileInput.alert.maxSize';
-              } else if (max && index >= max) {
+              } else if (maxFile && index >= maxFile) {
                 messageId = 'fileInput.alert.maxFile';
               }
               return (
@@ -479,14 +479,14 @@ const FileInput = forwardRef(
                       direction="row"
                     >
                       {((maxSize && file.size > maxSize) ||
-                        (max && index >= max)) && (
+                        (maxFile && index >= maxFile)) && (
                         <CircleAlert
                           tabIndex={0}
                           a11yTitle={format({
                             id: messageId,
                             messages,
                             values: {
-                              max,
+                              maxFile,
                               fileName: file.name,
                               maxSize: formatBytes(maxSize),
                             },
