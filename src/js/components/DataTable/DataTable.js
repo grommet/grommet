@@ -191,7 +191,7 @@ const DataTable = ({
       const rows = format({
         id:
           adjustedData.length === 1 ? 'dataTable.rowsSingle' : 'dataTable.rows',
-        messages: messages?.dataSummary,
+        messages,
       });
       // when less than one page returned, use specific amount
       if (adjustedData.length < limit) {
@@ -204,7 +204,7 @@ const DataTable = ({
       announce(
         format({
           id: messageId,
-          messages: messages?.dataTable,
+          messages,
           values: {
             total: adjustedData.length,
             rows,
