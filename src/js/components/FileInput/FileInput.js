@@ -482,8 +482,6 @@ const FileInput = forwardRef(
                         (max && index >= max)) && (
                         <CircleAlert
                           tabIndex={0}
-                          onClick={() => {}}
-                          hoverIndicator
                           a11yTitle={format({
                             id: messageId,
                             messages,
