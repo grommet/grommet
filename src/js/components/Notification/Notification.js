@@ -89,18 +89,6 @@ const Notification = ({
   const position = useMemo(() => (toast && toast?.position) || 'top', [toast]);
   const announce = useContext(AnnounceContext);
 
-  useEffect(() => {
-    if (
-      visible &&
-      toast &&
-      typeof messageProp === 'string' &&
-      typeof title === 'string'
-    ) {
-      const announceText = `${title}. ${messageProp}`;
-      announce(announceText, status === 'critical' ? 'assertive' : 'polite');
-    }
-  }, [announce, visible, toast, messageProp, status, title]);
-
   const close = useCallback(
     (event) => {
       setVisible(false);
@@ -114,7 +102,7 @@ const Notification = ({
       const announceText =
         typeof messageProp === 'string' ? `${title}. ${messageProp}` : title;
 
-      announce(announceText, status === 'critical' ? 'assertive' : 'polite');
+      announce(announceText, 'polite');
     }
   }, [announce, visible, toast, messageProp, status, title]);
 
@@ -274,8 +262,8 @@ const Notification = ({
     content = visible && (
       <Layer
         {...theme.notification.toast.layer}
-        role={status === 'critical' ? 'alert' : 'status'}
-        aria-live={status === 'critical' ? 'assertive' : 'polite'}
+        role="status"
+        aria-live="polite"
         aria-atomic="true"
         modal={false}
         onEsc={onClose}
