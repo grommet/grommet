@@ -1,9 +1,11 @@
-var _excluded = ["allowSelectAll", "background", "border", "columns", "data", "disabled", "fill", "groupBy", "onClickRow", "onMore", "onSearch", "onSelect", "onSort", "onUpdate", "replace", "pad", "paginate", "pin", "placeholder", "primaryKey", "resizeable", "rowProps", "select", "show", "size", "sort", "sortable", "rowDetails", "step", "verticalAlign"];
+var _excluded = ["allowSelectAll", "background", "border", "columns", "data", "disabled", "fill", "groupBy", "messages", "onClickRow", "onMore", "onSearch", "onSelect", "onSort", "onUpdate", "replace", "pad", "paginate", "pin", "placeholder", "primaryKey", "resizeable", "rowProps", "select", "show", "size", "sort", "sortable", "rowDetails", "step", "verticalAlign"];
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (-1 !== e.indexOf(n)) continue; t[n] = r[n]; } return t; }
 import React, { useCallback, useContext, useEffect, useMemo, useRef, useState, Fragment } from 'react';
 import { useLayoutEffect } from '../../utils/use-isomorphic-layout-effect';
+import { AnnounceContext } from '../../contexts/AnnounceContext';
 import { DataContext } from '../../contexts/DataContext';
+import { MessageContext } from '../../contexts/MessageContext';
 import { Box } from '../Box';
 import { Text } from '../Text';
 import { Header } from './Header';
@@ -53,6 +55,7 @@ var DataTable = function DataTable(_ref) {
     disabled = _ref.disabled,
     fill = _ref.fill,
     groupByProp = _ref.groupBy,
+    messages = _ref.messages,
     onClickRow = _ref.onClickRow,
     onMore = _ref.onMore,
     onSearch = _ref.onSearch,
@@ -173,6 +176,35 @@ var DataTable = function DataTable(_ref) {
   var _useState6 = useState(step),
     limit = _useState6[0],
     setLimit = _useState6[1];
+  var announce = useContext(AnnounceContext);
+  var _useContext2 = useContext(MessageContext),
+    format = _useContext2.format;
+  // only announce number of rows that are rendered
+  // when outside of DataContext, otherwise
+  // Data will make this announcement
+  useEffect(function () {
+    if (dataProp) {
+      var messageId;
+      var rows = format({
+        id: adjustedData.length === 1 ? 'dataTable.rowsSingle' : 'dataTable.rows',
+        messages: messages
+      });
+      // when less than one page returned, use specific amount
+      if (adjustedData.length < limit) {
+        if (adjustedData.length === 1) messageId = 'dataTable.totalSingle';else messageId = 'dataTable.total';
+      } else {
+        messageId = 'dataTable.rowsChanged';
+      }
+      announce(format({
+        id: messageId,
+        messages: messages,
+        values: {
+          total: adjustedData.length,
+          rows: rows
+        }
+      }));
+    }
+  }, [dataProp, adjustedData, announce, format, limit, messages, paginate]);
   var _useState7 = useState(select || onSelect && [] || undefined),
     selected = _useState7[0],
     setSelected = _useState7[1];

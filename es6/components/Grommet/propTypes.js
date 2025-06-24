@@ -79,6 +79,13 @@ if (process.env.NODE_ENV !== 'production') {
           total: PropTypes.string,
           totalSingle: PropTypes.string
         }),
+        dataTable: PropTypes.shape({
+          rows: PropTypes.string,
+          rowsSingle: PropTypes.string,
+          rowsChanged: PropTypes.string,
+          total: PropTypes.string,
+          totalSingle: PropTypes.string
+        }),
         dataTableColumns: PropTypes.shape({
           open: PropTypes.string,
           order: PropTypes.string,

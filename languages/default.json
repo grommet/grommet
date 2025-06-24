@@ -55,6 +55,13 @@
     "total": "{total} {items}",
     "totalSingle": "{total} {items}"
   },
+  "dataTable": {
+    "rows": "rows",
+    "rowsSingle": "row",
+    "rowsChanged": "Number of rows changed",
+    "total": "{total} {rows}",
+    "totalSingle": "{total} {rows}"
+  },
   "dataTableColumns": {
     "open": "Open column selector",
     "order": "Order columns",

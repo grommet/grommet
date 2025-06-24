@@ -84,6 +84,13 @@ if (process.env.NODE_ENV !== 'production') {
           total: _propTypes["default"].string,
           totalSingle: _propTypes["default"].string
         }),
+        dataTable: _propTypes["default"].shape({
+          rows: _propTypes["default"].string,
+          rowsSingle: _propTypes["default"].string,
+          rowsChanged: _propTypes["default"].string,
+          total: _propTypes["default"].string,
+          totalSingle: _propTypes["default"].string
+        }),
         dataTableColumns: _propTypes["default"].shape({
           open: _propTypes["default"].string,
           order: _propTypes["default"].string,
