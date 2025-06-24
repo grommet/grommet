@@ -104,7 +104,7 @@ const Notification = ({
 
       announce(announceText, 'polite');
     }
-  }, [announce, visible, toast, messageProp, status, title]);
+  }, [announce, visible, toast, messageProp, title]);
 
   useEffect(() => {
     if (autoClose) {
