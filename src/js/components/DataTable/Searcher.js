@@ -39,6 +39,7 @@ const Searcher = ({
   });
   return filtering === property ? (
     <Keyboard onEsc={() => onFiltering(undefined)}>
+      {/* TO DO theme object */}
       <Box width={{ min: 'xsmall' }} flex pad={{ horizontal: 'small' }}>
         <TextInput
           name={`search-${property}`}
@@ -55,6 +56,7 @@ const Searcher = ({
       {filters[property] ? (
         <Box
           flex={false}
+          // TO DO theme object
           pad={{ horizontal: 'small' }}
           direction="row"
           align="center"

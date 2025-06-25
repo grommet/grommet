@@ -15,7 +15,9 @@ const Meter = forwardRef(
       direction = 'horizontal',
       max: maxProp,
       messages,
+      // TO DO theme object?
       size = 'medium',
+      // TO DO theme object?
       thickness = 'medium',
       type = 'bar',
       reverse: reverseProp,

@@ -295,6 +295,7 @@ const Header = forwardRef(
               )}
             </StyledDataTableCell>
           )}
+          {/* TO DO theme object? */}
           {rowDetails && <TableCell size="xxsmall" plain pad="none" />}
           {columns.map(
             ({
@@ -392,6 +393,7 @@ const Header = forwardRef(
                     <Box
                       direction="row"
                       align="center"
+                      // TO DO theme object
                       gap="xsmall"
                       justify={align}
                     >

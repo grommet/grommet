@@ -44,6 +44,7 @@ import {
 import { setHoursWithOffset } from '../../utils/dates';
 import { useThemeValue } from '../../utils/useThemeValue';
 
+// TO DO theme object
 const headingPadMap = {
   small: 'xsmall',
   medium: 'small',
@@ -684,6 +685,7 @@ const Calendar = forwardRef(
 
       return (
         <Box direction="row" justify="between" align="center">
+          {/* TO DO theme object */}
           <Header flex pad={{ horizontal: headingPadMap[size] || 'small' }}>
             {theme.calendar[size]?.title ? (
               <Text {...theme.calendar[size].title}>{monthAndYear}</Text>

@@ -440,6 +440,7 @@ const List = React.forwardRef(
                       direction: 'row',
                       align: 'center',
                       justify: 'between',
+                      // TO DO theme object
                       gap: 'medium',
                     };
                   }
@@ -490,6 +491,7 @@ const List = React.forwardRef(
                     direction: 'row',
                     align: secondaryKey ? 'start' : 'center',
                     justify: 'between',
+                    // TO DO theme object
                     gap: 'medium',
                   };
                 }
@@ -681,6 +683,7 @@ const List = React.forwardRef(
                     direction: 'row',
                     align:
                       (defaultItemProps && defaultItemProps.align) || 'center',
+                    // TO DO theme object
                     gap: 'medium',
                   };
                 }
@@ -720,6 +723,7 @@ const List = React.forwardRef(
                     direction: 'row',
                     align:
                       (defaultItemProps && defaultItemProps.align) || 'center',
+                    // TO DO theme object
                     gap: 'medium',
                   };
                   displayPinned = (

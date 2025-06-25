@@ -391,6 +391,7 @@ const TextInput = forwardRef(
                   else if (!theme.button.option)
                     // don't have theme support, need to layout here
                     child = (
+                      // TO DO theme object
                       <Box align="start" pad="small">
                         {renderedLabel}
                       </Box>

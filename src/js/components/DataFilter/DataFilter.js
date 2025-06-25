@@ -190,7 +190,9 @@ export const DataFilter = ({
           min={range[0]}
           max={range[1]}
           step={step}
+          // TO DO theme object
           size="full"
+          // TO DO theme object
           round="small"
         />
       );
@@ -219,6 +221,7 @@ export const DataFilter = ({
           <SelectMultiple
             aria-label={ariaLabel}
             id={id}
+            // TO DO theme object
             dropHeight="medium"
             name={property}
             showSelectedInline

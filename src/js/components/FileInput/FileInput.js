@@ -364,6 +364,7 @@ const FileInput = forwardRef(
                         tabIndex={-1}
                         alignSelf="center"
                         ref={controlRef}
+                        // TO DO theme object
                         margin="small"
                         onClick={() => {
                           inputRef.current.click();
@@ -438,6 +439,7 @@ const FileInput = forwardRef(
                       tabIndex={-1}
                       alignSelf="center"
                       ref={controlRef}
+                      // TO DO theme object
                       margin="small"
                       onClick={() => {
                         inputRef.current.click();
@@ -467,6 +469,7 @@ const FileInput = forwardRef(
                 ) : (
                   <Box
                     {...theme.fileInput.label}
+                    // TO DO theme object
                     gap="xsmall"
                     align="center"
                     direction="row"
@@ -534,6 +537,7 @@ const FileInput = forwardRef(
                           // The focus here is redundant for keyboard users
                           tabIndex={-1}
                           ref={controlRef}
+                          // TO DO theme object
                           margin="small"
                           onClick={() => {
                             inputRef.current.click();
