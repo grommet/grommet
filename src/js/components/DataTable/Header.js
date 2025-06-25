@@ -352,22 +352,26 @@ const Header = forwardRef(
               let ariaSort;
               if (onSort && sortable !== false) {
                 let Icon;
+                let iconAriaLabel;
                 if (onSort && sortable !== false) {
                   if (sort && sort.property === property) {
                     Icon =
                       theme.dataTable.icons[
                         sort.direction !== 'asc' ? 'ascending' : 'descending'
                       ];
-                    if (sort.direction === 'asc')
-                      ariaSort = format({
+                    if (sort.direction === 'asc') {
+                      ariaSort = 'ascending';
+                      iconAriaLabel = format({
                         id: 'dataTable.ascending',
                         messages,
                       });
-                    else if (sort.direction === 'desc')
-                      ariaSort = format({
+                    } else if (sort.direction === 'desc') {
+                      ariaSort = 'descending';
+                      iconAriaLabel = format({
                         id: 'dataTable.descending',
                         messages,
                       });
+                    }
                   } else if (theme.dataTable.icons.sortable) {
                     Icon = theme.dataTable.icons.sortable;
                   }
@@ -392,7 +396,7 @@ const Header = forwardRef(
                       justify={align}
                     >
                       {content}
-                      {Icon && <Icon aria-label={ariaSort} />}
+                      {Icon && <Icon aria-label={iconAriaLabel} />}
                     </Box>
                   </StyledHeaderCellButton>
                 );
