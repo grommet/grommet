@@ -2710,6 +2710,7 @@ exports[`Form uncontrolled reset clears select, checkbox, radiobuttongroup 1`] =
       <label
         class="c2"
         for="test-select"
+        id="test-select__label"
       >
         Select Size
       </label>
@@ -2775,6 +2776,7 @@ exports[`Form uncontrolled reset clears select, checkbox, radiobuttongroup 1`] =
       <label
         class="c2"
         for="test-checkbox"
+        id="test-checkbox__label"
       >
         CheckBox
       </label>
@@ -2821,6 +2823,7 @@ exports[`Form uncontrolled reset clears select, checkbox, radiobuttongroup 1`] =
       <label
         class="c2"
         for="test-radiobuttongroup"
+        id="test-radiobuttongroup__label"
       >
         RadioButtonGroup
       </label>
@@ -2949,6 +2952,7 @@ exports[`Form uncontrolled reset clears select, checkbox, radiobuttongroup 2`] =
       <label
         class="StyledText-sc-1sadyjn-0 glxzPv"
         for="test-select"
+        id="test-select__label"
       >
         Select Size
       </label>
@@ -3014,6 +3018,7 @@ exports[`Form uncontrolled reset clears select, checkbox, radiobuttongroup 2`] =
       <label
         class="StyledText-sc-1sadyjn-0 glxzPv"
         for="test-checkbox"
+        id="test-checkbox__label"
       >
         CheckBox
       </label>
@@ -3049,6 +3054,7 @@ exports[`Form uncontrolled reset clears select, checkbox, radiobuttongroup 2`] =
       <label
         class="StyledText-sc-1sadyjn-0 glxzPv"
         for="test-radiobuttongroup"
+        id="test-radiobuttongroup__label"
       >
         RadioButtonGroup
       </label>
