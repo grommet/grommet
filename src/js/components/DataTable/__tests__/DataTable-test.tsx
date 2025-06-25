@@ -2073,8 +2073,9 @@ describe('DataTable', () => {
 
     expect(container.firstChild).toMatchSnapshot();
 
-    fireEvent.mouseEnter(getByText('alpha'));
-    fireEvent.keyDown(getByText('alpha'), {
+    const row = getByText('alpha').closest('tr');
+    fireEvent.focus(row!);
+    fireEvent.keyDown(row!, {
       code: 'Space',
       keyCode: 32,
     });
