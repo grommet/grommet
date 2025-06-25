@@ -272,8 +272,6 @@ const FormField = forwardRef(
       return readOnly;
     }, [children]);
 
-    // flag to check if Select or Select Multiple exists in children
-    let containsSelect = false;
     const containerFocus = useMemo(() => {
       let focusIndicatorFlag = true;
       Children.forEach(children, (child) => {
@@ -320,25 +318,6 @@ const FormField = forwardRef(
             child.props.plain === undefined &&
             child.props.focusIndicator === undefined
           ) {
-            if (
-              child.type.displayName === 'Select' ||
-              child.type.displayName === 'SelectMultiple'
-            ) {
-              // Adding props to manage aria-labelledby
-              containsSelect = true;
-              return cloneElement(child, {
-                plain: true,
-                focusIndicator: false,
-                pad:
-                  'CheckBox'.indexOf(child.type.displayName) !== -1
-                    ? formFieldTheme?.checkBox?.pad
-                    : undefined,
-                formFieldProps: {
-                  inFormField: true,
-                  labelId: htmlFor && label ? `${htmlFor}__label` : undefined,
-                },
-              });
-            }
             return cloneElement(child, {
               plain: true,
               focusIndicator: !containerFocus,
@@ -668,14 +647,7 @@ const FormField = forwardRef(
         {(label && component !== CheckBox) || help ? (
           <>
             {label && component !== CheckBox && (
-              <Text
-                as="label"
-                // Determine the id based on the presence
-                // of `htmlFor`
-                id={htmlFor && containsSelect ? `${htmlFor}__label` : undefined}
-                htmlFor={htmlFor}
-                {...labelStyle}
-              >
+              <Text as="label" htmlFor={htmlFor} {...labelStyle}>
                 {label}
                 {showRequiredIndicator ? requiredIndicator : undefined}
               </Text>

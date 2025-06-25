@@ -40,6 +40,7 @@ const Select = forwardRef(
     {
       a11yTitle,
       'aria-label': ariaLabel,
+      'aria-labelledby': ariaLabelledByProp,
       alignSelf,
       children,
       clear = false,
@@ -81,7 +82,6 @@ const Select = forwardRef(
       value: valueProp,
       valueKey: valueKeyProp,
       valueLabel,
-      formFieldProps = {},
       ...rest
     },
     ref,
@@ -112,19 +112,6 @@ const Select = forwardRef(
       value: valueProp,
       initialValue: defaultValue || '',
     });
-
-    // inFormField is used to determine if this component is wrapped by
-    // FormField component and has label and htmlFor props defined,
-    // since htmlFor doesn't work as expected in the case of
-    // Select. LabelId is the id referring to label element
-    // defined in FormField Component
-    const { inFormField, labelId } = formFieldProps;
-
-    // ariaLabelledBy determines if this component
-    // is wrapped by FormField component and does not have a
-    // ariaLabel and a11yTitle properties.
-    const ariaLabelledBy =
-      inFormField && id && !ariaLabel && !a11yTitle ? labelId : undefined;
 
     // normalizedValue is the value mapped with any valueKey applied
     // When the options array contains objects, this property indicates how
@@ -298,11 +285,16 @@ const Select = forwardRef(
 
     const iconColor = getIconColor(theme);
 
+    let ariaLabelledBy;
+    if (formContext.useFormField({}).inForm && id && !ariaLabel) {
+      ariaLabelledBy = `${id}__label`;
+    }
+
     return (
       <Keyboard onDown={onRequestOpen} onUp={onRequestOpen}>
         <StyledSelectDropButton
           ref={ref}
-          a11yTitle={`${ariaLabel || a11yTitle || placeholder || 'Open Drop'}${
+          a11yTitle={`${ariaLabel || a11yTitle || placeholder || 'Open drop'}${
             value
               ? format({
                   id: 'select.selected',
@@ -313,8 +305,8 @@ const Select = forwardRef(
                 })
               : ''
           }`}
-          aria-labelledby={ariaLabelledBy}
           aria-expanded={Boolean(open)}
+          aria-labelledby={ariaLabelledByProp || ariaLabelledBy}
           aria-haspopup="listbox"
           id={id}
           disabled={disabled === true || undefined}
