@@ -2061,7 +2061,7 @@ describe('DataTable', () => {
 
   test('row click using space key press', () => {
     const onClickRow = jest.fn();
-    const { container, getByText } = render(
+    const { container } = render(
       <Grommet>
         <DataTable
           columns={[{ property: 'name', header: 'Name' }]}
@@ -2073,7 +2073,7 @@ describe('DataTable', () => {
 
     expect(container.firstChild).toMatchSnapshot();
 
-    const row = getByText('alpha').closest('tr');
+    const row = screen.getByText('alpha').closest('tr');
     fireEvent.focus(row!);
     fireEvent.keyDown(row!, {
       code: 'Space',
