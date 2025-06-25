@@ -2837,14 +2837,14 @@ exports[`Form uncontrolled reset clears select, checkbox, radiobuttongroup 1`] =
         >
           <label
             class="c20"
-            for="one"
+            for="test-radiobuttongroup-one"
           >
             <div
               class="c21 "
             >
               <input
                 class="c22"
-                id="one"
+                id="test-radiobuttongroup-one"
                 name="test-radiobuttongroup"
                 tabindex="-1"
                 type="radio"
@@ -2865,14 +2865,14 @@ exports[`Form uncontrolled reset clears select, checkbox, radiobuttongroup 1`] =
           />
           <label
             class="c20"
-            for="two"
+            for="test-radiobuttongroup-two"
           >
             <div
               class="c21 "
             >
               <input
                 class="c22"
-                id="two"
+                id="test-radiobuttongroup-two"
                 name="test-radiobuttongroup"
                 tabindex="0"
                 type="radio"
@@ -2905,14 +2905,14 @@ exports[`Form uncontrolled reset clears select, checkbox, radiobuttongroup 1`] =
           />
           <label
             class="c20"
-            for="three"
+            for="test-radiobuttongroup-three"
           >
             <div
               class="c21 "
             >
               <input
                 class="c22"
-                id="three"
+                id="test-radiobuttongroup-three"
                 name="test-radiobuttongroup"
                 tabindex="-1"
                 type="radio"
@@ -3068,14 +3068,14 @@ exports[`Form uncontrolled reset clears select, checkbox, radiobuttongroup 2`] =
         >
           <label
             class="StyledRadioButton__StyledRadioButtonContainer-sc-g1f6ld-0 kORknD"
-            for="one"
+            for="test-radiobuttongroup-one"
           >
             <div
               class="StyledBox-sc-13pk1d4-0 iudayb StyledRadioButton-sc-g1f6ld-5 keMHan"
             >
               <input
                 class="StyledRadioButton__StyledRadioButtonInput-sc-g1f6ld-1 jvFKej"
-                id="one"
+                id="test-radiobuttongroup-one"
                 name="test-radiobuttongroup"
                 tabindex="0"
                 type="radio"
@@ -3096,14 +3096,14 @@ exports[`Form uncontrolled reset clears select, checkbox, radiobuttongroup 2`] =
           />
           <label
             class="StyledRadioButton__StyledRadioButtonContainer-sc-g1f6ld-0 kORknD"
-            for="two"
+            for="test-radiobuttongroup-two"
           >
             <div
               class="StyledBox-sc-13pk1d4-0 iudayb StyledRadioButton-sc-g1f6ld-5 keMHan"
             >
               <input
                 class="StyledRadioButton__StyledRadioButtonInput-sc-g1f6ld-1 jvFKej"
-                id="two"
+                id="test-radiobuttongroup-two"
                 name="test-radiobuttongroup"
                 tabindex="-1"
                 type="radio"
@@ -3124,14 +3124,14 @@ exports[`Form uncontrolled reset clears select, checkbox, radiobuttongroup 2`] =
           />
           <label
             class="StyledRadioButton__StyledRadioButtonContainer-sc-g1f6ld-0 kORknD"
-            for="three"
+            for="test-radiobuttongroup-three"
           >
             <div
               class="StyledBox-sc-13pk1d4-0 iudayb StyledRadioButton-sc-g1f6ld-5 keMHan"
             >
               <input
                 class="StyledRadioButton__StyledRadioButtonInput-sc-g1f6ld-1 jvFKej"
-                id="three"
+                id="test-radiobuttongroup-three"
                 name="test-radiobuttongroup"
                 tabindex="-1"
                 type="radio"
