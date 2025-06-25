@@ -13,6 +13,7 @@ import { useThemeValue } from '../../utils/useThemeValue';
 const Searcher = ({ filtering, filters, onFilter, onFiltering, property }) => {
   const { theme } = useThemeValue();
   const inputRef = useRef();
+  const buttonRef = useRef();
   const needsFocus = filtering === property;
 
   useEffect(() => {
@@ -22,7 +23,20 @@ const Searcher = ({ filtering, filters, onFilter, onFiltering, property }) => {
   }, [needsFocus, inputRef]);
 
   return filtering === property ? (
-    <Keyboard onEsc={() => onFiltering(undefined)}>
+    <Keyboard
+      onEsc={() => {
+        onFiltering(undefined);
+        // Focus the button after closing the search
+        // setTimeout with 0 delay pushes the focus operation to the
+        // next round of the event loop, which happens after React has
+        // updated the DOM with the button element
+        setTimeout(() => {
+          if (buttonRef.current) {
+            buttonRef.current.focus();
+          }
+        }, 0);
+      }}
+    >
       <Box width={{ min: 'xsmall' }} flex pad={{ horizontal: 'small' }}>
         <TextInput
           name={`search-${property}`}
@@ -47,6 +61,7 @@ const Searcher = ({ filtering, filters, onFilter, onFiltering, property }) => {
         </Box>
       ) : null}
       <Button
+        ref={buttonRef}
         a11yTitle={`Open search by ${property}`}
         icon={
           <FormSearch
