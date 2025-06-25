@@ -54,6 +54,13 @@ const Row = memo(
           if (rowRef) {
             if (typeof rowRef === 'function') {
               rowRef(element);
+            } else if (
+              rowRef &&
+              typeof rowRef === 'object' &&
+              'current' in rowRef
+            ) {
+              const refObj = rowRef;
+              refObj.current = element;
             }
           }
         }}
@@ -86,7 +93,7 @@ const Row = memo(
             : undefined
         }
         onFocus={() => {
-          if (!isDisabled) {
+          if (onClickRow && !isDisabled) {
             setFocused(index);
             setActive(index);
           }
