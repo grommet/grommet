@@ -32,6 +32,7 @@ import {
   getDisplayLabelKey,
   arrayIncludes,
   inertTrueValue,
+  selectInputId,
 } from '../Select/utils';
 import { DefaultSelectTextInput } from '../Select/DefaultSelectTextInput';
 import { MessageContext } from '../../contexts/MessageContext';
@@ -475,7 +476,7 @@ const SelectMultiple = forwardRef(
                         a11yTitle={ariaLabel || a11yTitle}
                         defaultCursor={disabled === true || undefined}
                         focusIndicator={false}
-                        id={id ? `${id}__input` : undefined}
+                        id={id ? selectInputId(id) : undefined}
                         inert={inertTrueValue}
                         name={name}
                         width="100%"
@@ -508,7 +509,7 @@ const SelectMultiple = forwardRef(
                     <HiddenInput
                       type="text"
                       name={name}
-                      id={id ? `${id}__input` : undefined}
+                      id={id ? selectInputId(id) : undefined}
                       inert={inertTrueValue}
                       value={inputValue}
                       ref={inputRef}
@@ -559,7 +560,7 @@ const SelectMultiple = forwardRef(
                       <HiddenInput
                         type="text"
                         name={name}
-                        id={id ? `${id}__input` : undefined}
+                        id={id ? selectInputId(id) : undefined}
                         inert={inertTrueValue}
                         value={inputValue}
                         ref={inputRef}

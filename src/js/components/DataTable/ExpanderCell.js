@@ -38,6 +38,7 @@ const ExpanderControl = ({ context, expanded, onToggle, pad, ...rest }) => {
     content = (
       <Button
         fill
+        aria-expanded={expanded ? 'true' : 'false'}
         a11yTitle={expanded ? 'collapse' : 'expand'}
         hoverIndicator
         onClick={onToggle}

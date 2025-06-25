@@ -4,6 +4,7 @@ import React, {
   useState,
   useMemo,
   Fragment,
+  useContext,
 } from 'react';
 import styled from 'styled-components';
 
@@ -13,6 +14,7 @@ import { Button } from '../Button';
 import { Layer } from '../Layer';
 import { Paragraph } from '../Paragraph';
 import { Text } from '../Text';
+import { MessageContext } from '../../contexts/MessageContext';
 
 import { NotificationType } from './propTypes';
 import { useThemeValue } from '../../utils/useThemeValue';
@@ -70,6 +72,7 @@ const NotificationAnchor = styled(Anchor)`
 const Notification = ({
   actions: actionsProp,
   message: messageProp,
+  messages,
   onClose,
   id,
   global,
@@ -84,7 +87,7 @@ const Notification = ({
     toast && toast?.autoClose === undefined ? true : toast.autoClose;
   const { theme } = useThemeValue();
   const [visible, setVisible] = useState(true);
-
+  const { format } = useContext(MessageContext);
   const position = useMemo(() => (toast && toast?.position) || 'top', [toast]);
 
   const close = useCallback(
@@ -231,6 +234,10 @@ const Notification = ({
         <Box pad={closeButtonPad}>
           <Box {...theme.notification.textContainer}>
             <Button
+              a11yTitle={format({
+                id: 'notification.close',
+                messages,
+              })}
               icon={
                 <CloseIcon
                   color={closeIconColor}

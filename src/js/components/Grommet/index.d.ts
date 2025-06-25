@@ -77,11 +77,21 @@ export interface GrommetProps {
         total?: string;
         totalSingle?: string;
       };
+      dataTable?: {
+        rows?: string;
+        rowsSingle?: string;
+        rowsChanged?: string;
+        total?: string;
+        totalSingle?: string;
+      };
       dataTableColumns?: {
         open?: string;
         order?: string;
+        pinned?: string;
         select?: string;
         tip?: string;
+        orderAria?: string;
+        selectAria?: string;
       };
       dataTableGroupBy?: {
         clear?: string;
@@ -120,6 +130,9 @@ export interface GrommetProps {
           };
         };
       };
+      list?: {
+        pinned?: string;
+      };
       menu?: {
         openMenu?: string;
         closeMenu?: string;
@@ -141,6 +154,9 @@ export interface GrommetProps {
           singular?: string;
           plural?: string;
         };
+      };
+      notification?: {
+        close?: string;
       };
       pagination?: {
         stepLabel?: string;

@@ -69,12 +69,18 @@ const SelectMultipleContainer = forwardRef(
     ref,
   ) => {
     const { theme } = useThemeValue();
+    // the currently active option based on keyboard navigation
+    // or mouse hover, -1 means no active option
     const [activeIndex, setActiveIndex] = useState(-1);
     const [keyboardNavigation, setKeyboardNavigation] = useState(usingKeyboard);
     const { format } = useContext(MessageContext);
     const searchRef = useRef();
     const optionsRef = useRef();
     const [disabled, setDisabled] = useState(disabledProp);
+    // the node of the currently active option, as activeIndex changes
+    // this is updated too and the useEffect below ensures the
+    // active option remains in keyboard focus since we're
+    // following roving tab index pattern
     const activeRef = useRef();
     const [showA11yLimit, setShowA11yLimit] = useState();
     const clearRef = useRef();
@@ -187,7 +193,10 @@ const SelectMultipleContainer = forwardRef(
       (event) => {
         event.preventDefault();
         const nextActiveIndex = activeIndex + 1;
-        if (nextActiveIndex !== options?.length) {
+        // checking activeIndex > -1 ensures arrow keys don't
+        // move focus when select all/clear all button or search input
+        // are focused
+        if (nextActiveIndex !== options?.length && activeIndex > -1) {
           setActiveIndex(nextActiveIndex);
           setKeyboardNavigation(true);
         }
@@ -200,16 +209,11 @@ const SelectMultipleContainer = forwardRef(
         event.preventDefault();
         const nextActiveIndex = activeIndex - 1;
 
-        if (nextActiveIndex === -1) {
-          const searchInput = searchRef.current;
-          if (searchInput && searchInput.focus) {
-            setActiveIndex(nextActiveIndex);
-            setFocusWithoutScroll(searchInput);
-          }
-        }
-
-        if (nextActiveIndex >= 0) {
-          setActiveIndex(nextActiveIndex);
+        // checking activeIndex > -1 ensures arrow keys don't
+        // move focus when select all/clear all button or search input
+        // are focused
+        if (activeIndex > -1) {
+          setActiveIndex(Math.max(nextActiveIndex, 0));
           setKeyboardNavigation(true);
         }
       },
@@ -423,6 +427,7 @@ const SelectMultipleContainer = forwardRef(
                     setActiveIndex(-1);
                     onSearch(nextSearch);
                   }}
+                  onFocus={() => setActiveIndex(-1)}
                 />
               </Keyboard>
             </Box>
@@ -431,11 +436,10 @@ const SelectMultipleContainer = forwardRef(
           {options?.length > 0 ? (
             <OptionsContainer
               role="listbox"
-              tabIndex="0"
+              tabIndex="-1"
               ref={optionsRef}
               aria-multiselectable
               onMouseMove={() => setKeyboardNavigation(false)}
-              aria-activedescendant={optionsRef?.current?.children[activeIndex]}
               selectMultiple // internal prop
             >
               <InfiniteScroll
@@ -584,13 +588,23 @@ const SelectMultipleContainer = forwardRef(
                         if (optionRef) optionRef.current = node;
                         if (optionActive) activeRef.current = node;
                       }}
-                      tabIndex={optionSelected ? '0' : '-1'}
+                      tabIndex={
+                        optionSelected ||
+                        activeIndex === index ||
+                        // when nothing is selected and entering listbox
+                        // first option should be focused
+                        (value.length === 0 &&
+                          activeIndex === -1 &&
+                          index === 0)
+                          ? '0'
+                          : '-1'
+                      }
                       role="option"
                       id={`option${index}`}
                       aria-setsize={options.length}
                       aria-posinset={index + 1}
                       aria-selected={optionSelected}
-                      focusIndicator={false}
+                      focusIndicator={usingKeyboard}
                       aria-disabled={optionDisabled || undefined}
                       plain={!child ? undefined : true}
                       align="start"
