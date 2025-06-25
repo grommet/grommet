@@ -105,7 +105,7 @@ const RadioButtonGroup = forwardRef(
     const onBlur = () => setFocus(false);
 
     let ariaLabelledBy;
-    if (formContext.useFormField({}).inForm && id && !ariaLabelProp) {
+    if (formContext?.useFormField({})?.inForm && id && !ariaLabelProp) {
       ariaLabelledBy = `${id}__label`;
     }
 
