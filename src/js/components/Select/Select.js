@@ -287,7 +287,7 @@ const Select = forwardRef(
 
     let ariaLabelledBy;
     if (formContext.useFormField({}).inForm && id && !ariaLabel) {
-      ariaLabelledBy = `${id}__label`;
+      ariaLabelledBy = `${id}__input__label`;
     }
 
     return (
