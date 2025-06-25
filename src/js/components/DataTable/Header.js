@@ -2,6 +2,7 @@
 import React, { forwardRef, useCallback, useContext, useRef } from 'react';
 import styled, { css } from 'styled-components';
 import { DataContext } from '../../contexts/DataContext';
+import { MessageContext } from '../../contexts/MessageContext';
 
 import { Box } from '../Box';
 import { Button } from '../Button';
@@ -126,6 +127,7 @@ const Header = forwardRef(
       groupBy,
       groups,
       groupState,
+      messages,
       onFilter,
       onFiltering,
       onResize,
@@ -148,6 +150,7 @@ const Header = forwardRef(
     const { theme, passThemeFlag } = useThemeValue();
     const [layoutProps, textProps] = separateThemeProps(theme);
     const { total: contextTotal } = useContext(DataContext);
+    const { format } = useContext(MessageContext);
 
     const cellWidthsRef = useRef({});
     const timerRef = useRef();
@@ -346,14 +349,29 @@ const Header = forwardRef(
                 );
               }
 
+              let ariaSort;
               if (onSort && sortable !== false) {
                 let Icon;
+                let iconAriaLabel;
                 if (onSort && sortable !== false) {
                   if (sort && sort.property === property) {
                     Icon =
                       theme.dataTable.icons[
                         sort.direction !== 'asc' ? 'ascending' : 'descending'
                       ];
+                    if (sort.direction === 'asc') {
+                      ariaSort = 'ascending';
+                      iconAriaLabel = format({
+                        id: 'dataTable.ascending',
+                        messages,
+                      });
+                    } else if (sort.direction === 'desc') {
+                      ariaSort = 'descending';
+                      iconAriaLabel = format({
+                        id: 'dataTable.descending',
+                        messages,
+                      });
+                    }
                   } else if (theme.dataTable.icons.sortable) {
                     Icon = theme.dataTable.icons.sortable;
                   }
@@ -378,7 +396,7 @@ const Header = forwardRef(
                       justify={align}
                     >
                       {content}
-                      {Icon && <Icon />}
+                      {Icon && <Icon aria-label={iconAriaLabel} />}
                     </Box>
                   </StyledHeaderCellButton>
                 );
@@ -408,6 +426,7 @@ const Header = forwardRef(
                     <Searcher
                       filtering={filtering}
                       filters={filters}
+                      messages={messages}
                       property={property}
                       onFilter={onFilter}
                       onFiltering={onFiltering}
@@ -444,6 +463,7 @@ const Header = forwardRef(
 
               return (
                 <StyledDataTableCell
+                  aria-sort={ariaSort}
                   key={property}
                   align={align}
                   context="header"
