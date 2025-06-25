@@ -32,7 +32,7 @@ const Searcher = ({
     }
   }, [needsFocus, inputRef]);
 
-  // Focus the button after closing the searc
+  // Focus the button after closing the search
   useEffect(() => {
     if (buttonNeedsFocus && buttonRef.current) {
       buttonRef.current.focus();
