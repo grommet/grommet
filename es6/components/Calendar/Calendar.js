@@ -15,7 +15,6 @@ import { StyledCalendar, StyledDay, StyledDayButton, StyledDayContainer, StyledW
 import { addDays, addMonths, betweenDates, daysApart, endOfMonth, handleOffset, sameDayOrAfter, sameDayOrBefore, startOfMonth, subtractDays, subtractMonths, withinDates } from './utils';
 import { setHoursWithOffset } from '../../utils/dates';
 import { useThemeValue } from '../../utils/useThemeValue';
-import { useKeyboard } from '../../utils';
 var headingPadMap = {
   small: 'xsmall',
   medium: 'small',
@@ -95,14 +94,27 @@ var normalizeRange = function normalizeRange(value, activeDate) {
   if (range instanceof Date) range = activeDate === 'start' ? [[undefined, range]] : [[range, undefined]];else if (Array.isArray(range) && !Array.isArray(range[0])) range = [range];
   return range;
 };
-var getReference = function getReference(reference, value) {
+var getReference = function getReference(reference, value, activeDate) {
   var nextReference;
   if (value) {
     if (Array.isArray(value)) {
       if (value[0] instanceof Date) {
-        nextReference = value[0];
+        // if we just selected an end date, active date will be 'start'
+        // and we should set the reference to the end date
+        if (activeDate === 'start' && value[1] instanceof Date) {
+          nextReference = value[1];
+        } else {
+          nextReference = value[0];
+        }
       } else if (Array.isArray(value[0])) {
-        nextReference = value[0][0] ? value[0][0] : value[0][1];
+        // if we just selected an end date, active date will be 'start'
+        // and we should set the reference to the end date
+        if (activeDate === 'start' && value[0][1]) {
+          // eslint-disable-next-line prefer-destructuring
+          nextReference = value[0][1];
+        } else {
+          nextReference = value[0][0] ? value[0][0] : value[0][1];
+        }
       } else {
         nextReference = new Date();
         nextReference.setHours(0, 0, 0, 0);
@@ -129,6 +141,12 @@ var buildDisplayBounds = function buildDisplayBounds(reference, firstDayOfWeek) 
   var end = addDays(start, 7 * 5 + 7); // 5 weeks to end of week
   return [start, end];
 };
+var monthBounds = function monthBounds(reference) {
+  var start = new Date(reference);
+  start.setDate(1); // first of month
+  var end = endOfMonth(start);
+  return [start, end];
+};
 var disabledCalendarPreviousMonthButton = function disabledCalendarPreviousMonthButton(date, reference, bounds) {
   if (!bounds) return false;
   var lastBound = new Date(bounds[1]);
@@ -150,8 +168,11 @@ var _getOutputFormat = function getOutputFormat(dates) {
 };
 export { _getOutputFormat as getOutputFormat };
 var millisecondsPerYear = 31557600000;
-var CalendarDay = function CalendarDay(_ref) {
-  var children = _ref.children,
+var CalendarDay = /*#__PURE__*/forwardRef(function (_ref, ref) {
+  var activeProp = _ref.activeProp,
+    children = _ref.children,
+    day = _ref.day,
+    disabledProp = _ref.disabledProp,
     fill = _ref.fill,
     size = _ref.size,
     isInRange = _ref.isInRange,
@@ -163,9 +184,9 @@ var CalendarDay = function CalendarDay(_ref) {
     responsive = _ref.responsive;
   var _useThemeValue = useThemeValue(),
     passThemeFlag = _useThemeValue.passThemeFlag;
-  var usingKeyboard = useKeyboard();
   return /*#__PURE__*/React.createElement(StyledDayContainer, {
     role: "gridcell",
+    "aria-selected": isSelected,
     inRange: isInRange,
     isSelected: isSelected,
     rangePosition: rangePosition,
@@ -173,19 +194,18 @@ var CalendarDay = function CalendarDay(_ref) {
     fillContainer: fill,
     responsive: responsive
   }, /*#__PURE__*/React.createElement(StyledDayButton, _extends({
+    "aria-disabled": disabledProp,
+    disabledProp: disabledProp,
     fill: fill,
-    tabIndex: -1,
     plain: true,
+    tabIndex: (activeProp == null ? void 0 : activeProp.getTime()) === (day == null ? void 0 : day.getTime()) ? 0 : -1,
     responsive: responsive
-  }, buttonProps), function (_ref2) {
-    var active = _ref2.active,
-      hover = _ref2.hover;
-    return /*#__PURE__*/React.createElement(StyledDay
-    // only apply active styling when using keyboard
-    // otherwise apply hover styling
-    , _extends({
-      active: usingKeyboard ? active : undefined,
-      disabledProp: buttonProps.disabled,
+  }, buttonProps, {
+    ref: (activeProp == null ? void 0 : activeProp.getTime()) === (day == null ? void 0 : day.getTime()) ? ref : undefined
+  }), function (_ref2) {
+    var hover = _ref2.hover;
+    return /*#__PURE__*/React.createElement(StyledDay, _extends({
+      disabledProp: disabledProp,
       hover: hover,
       inRange: isInRange,
       isSelected: isSelected,
@@ -195,15 +215,17 @@ var CalendarDay = function CalendarDay(_ref) {
       responsive: responsive
     }, passThemeFlag), children);
   }));
-};
+});
 var CalendarCustomDay = function CalendarCustomDay(_ref3) {
-  var children = _ref3.children,
+  var ariaSelected = _ref3['aria-selected'],
+    children = _ref3.children,
     fill = _ref3.fill,
     size = _ref3.size,
     buttonProps = _ref3.buttonProps,
     responsive = _ref3.responsive;
   if (!buttonProps) {
     return /*#__PURE__*/React.createElement(StyledDayContainer, {
+      "aria-selected": ariaSelected,
       role: "gridcell",
       sizeProp: size,
       fillContainer: fill,
@@ -211,6 +233,7 @@ var CalendarCustomDay = function CalendarCustomDay(_ref3) {
     }, children);
   }
   return /*#__PURE__*/React.createElement(StyledDayContainer, {
+    "aria-selected": ariaSelected,
     role: "gridcell",
     sizeProp: size,
     fillContainer: fill,
@@ -261,77 +284,57 @@ var Calendar = /*#__PURE__*/forwardRef(function (_ref4, ref) {
   // If fill is true the responsive behavior isn't needed.
   var responsive = responsiveProp && !fill;
 
-  // when mousedown, we don't want to let Calendar set
-  // active date to firstInMonth
-  var _useState = useState(false),
-    mouseDown = _useState[0],
-    setMouseDown = _useState[1];
-  var onMouseDown = function onMouseDown() {
-    return setMouseDown(true);
-  };
-  var onMouseUp = function onMouseUp() {
-    return setMouseDown(false);
-  };
-  useEffect(function () {
-    document.addEventListener('mousedown', onMouseDown);
-    document.addEventListener('mouseup', onMouseUp);
-    return function () {
-      document.removeEventListener('mousedown', onMouseDown);
-      document.removeEventListener('mouseup', onMouseUp);
-    };
-  }, []);
-
   // set activeDate when caller changes it, allows us to change
   // it internally too
-  var _useState2 = useState(dateProp && typeof dateProp === 'string' && range ? 'end' : 'start'),
-    activeDate = _useState2[0],
-    setActiveDate = _useState2[1];
+  var _useState = useState(dateProp && typeof dateProp === 'string' && range ? 'end' : 'start'),
+    activeDate = _useState[0],
+    setActiveDate = _useState[1];
   useEffect(function () {
     if (activeDateProp) setActiveDate(activeDateProp);
   }, [activeDateProp]);
-  var _useState3 = useState(_normalizeInput(dateProp || datesProp)),
-    value = _useState3[0],
-    setValue = _useState3[1];
+  var _useState2 = useState(_normalizeInput(dateProp || datesProp)),
+    value = _useState2[0],
+    setValue = _useState2[1];
   useEffect(function () {
     var val = dateProp || datesProp;
     setValue(_normalizeInput(val));
   }, [dateProp, datesProp]);
-  var _useState4 = useState(getReference(_normalizeInput(referenceProp), value)),
-    reference = _useState4[0],
-    setReference = _useState4[1];
+  var _useState3 = useState(getReference(_normalizeInput(referenceProp), value, activeDate)),
+    reference = _useState3[0],
+    setReference = _useState3[1];
   useEffect(function () {
     if (value) {
-      setReference(getReference(_normalizeInput(referenceProp), value));
+      setReference(getReference(_normalizeInput(referenceProp), value, activeDate));
     }
-  }, [referenceProp, value]);
-  var _useState5 = useState(_getOutputFormat(dateProp || datesProp)),
-    outputFormat = _useState5[0],
-    setOutputFormat = _useState5[1];
+  }, [referenceProp, value, activeDate]);
+  var _useState4 = useState(_getOutputFormat(dateProp || datesProp)),
+    outputFormat = _useState4[0],
+    setOutputFormat = _useState4[1];
   useEffect(function () {
     setOutputFormat(_getOutputFormat(dateProp || datesProp));
   }, [dateProp, datesProp]);
 
   // normalize bounds
-  var _useState6 = useState(boundsProp),
-    bounds = _useState6[0],
-    setBounds = _useState6[1];
+  var _useState5 = useState(boundsProp),
+    bounds = _useState5[0],
+    setBounds = _useState5[1];
   useEffect(function () {
     if (boundsProp) setBounds(boundsProp);else setBounds(undefined);
   }, [boundsProp]);
 
   // calculate the bounds we display based on the reference
-  var _useState7 = useState(buildDisplayBounds(reference, firstDayOfWeek)),
-    displayBounds = _useState7[0],
-    setDisplayBounds = _useState7[1];
+  var _useState6 = useState(buildDisplayBounds(reference, firstDayOfWeek)),
+    displayBounds = _useState6[0],
+    setDisplayBounds = _useState6[1];
+  var _useState7 = useState(),
+    targetDisplayBounds = _useState7[0],
+    setTargetDisplayBounds = _useState7[1];
   var _useState8 = useState(),
-    targetDisplayBounds = _useState8[0],
-    setTargetDisplayBounds = _useState8[1];
+    slide = _useState8[0],
+    setSlide = _useState8[1];
   var _useState9 = useState(),
-    slide = _useState9[0],
-    setSlide = _useState9[1];
-  var _useState0 = useState(),
-    animating = _useState0[0],
-    setAnimating = _useState0[1];
+    animating = _useState9[0],
+    setAnimating = _useState9[1];
 
   // When the reference changes, we need to update the displayBounds.
   // This is easy when we aren't animating. If we are animating,
@@ -423,16 +426,17 @@ var Calendar = /*#__PURE__*/forwardRef(function (_ref4, ref) {
   var nextMonth = useMemo(function () {
     return startOfMonth(addMonths(startOfMonth(reference), 1));
   }, [reference]);
-  var daysRef = useRef();
-  var _useState1 = useState(),
-    focus = _useState1[0],
-    setFocus = _useState1[1];
-  var _useState10 = useState(),
-    active = _useState10[0],
-    setActive = _useState10[1];
+  var initialFocusDate = showAdjacentDays ? new Date(displayBounds[0]) : startOfMonth(reference);
+  var _useState0 = useState(),
+    focus = _useState0[0],
+    setFocus = _useState0[1];
+  var _useState1 = useState(initialFocusDate),
+    active = _useState1[0],
+    setActive = _useState1[1];
+  var focusableDateRef = useRef(undefined);
   useEffect(function () {
-    if (initialFocus === 'days') daysRef.current.focus();
-  }, [initialFocus]);
+    if (focusableDateRef != null && focusableDateRef.current && initialFocus === 'days') focusableDateRef.current.focus();
+  }, [initialFocus, focusableDateRef]);
   var handleReference = useCallback(function (nextReference) {
     setReference(nextReference);
     if (onReference) onReference(nextReference.toISOString());
@@ -442,6 +446,9 @@ var Calendar = /*#__PURE__*/forwardRef(function (_ref4, ref) {
   }, [handleReference, bounds]);
   var changeCalendarMonth = function changeCalendarMonth(messageId, newMonth) {
     handleReference(newMonth);
+    var referenceStartOfMonth = startOfMonth(reference);
+    var firstOfMonth = new Date(newMonth.getFullYear(), newMonth.getMonth(), 1, referenceStartOfMonth.getHours(), referenceStartOfMonth.getMinutes(), referenceStartOfMonth.getSeconds());
+    setActive(firstOfMonth);
     announce(format({
       id: messageId,
       messages: messages,
@@ -516,12 +523,9 @@ var Calendar = /*#__PURE__*/forwardRef(function (_ref4, ref) {
       onSelect(nextValue);
     }
   }, [handleRange, onSelect, outputFormat, range, value]);
-  var _onClick = function onClick(selectedDate) {
+  var onClick = function onClick(selectedDate) {
     selectDate(selectedDate);
     announce("Selected " + getLocaleString(selectedDate, locale), 'assertive');
-    // Chrome moves the focus indicator to this button. Set
-    // the focus to the grid of days instead.
-    daysRef.current.focus();
     setActive(selectedDate);
   };
   var renderCalendarHeader = function renderCalendarHeader() {
@@ -689,25 +693,20 @@ var Calendar = /*#__PURE__*/forwardRef(function (_ref4, ref) {
       } else if (selectedState === 1) {
         inRange = true;
       }
-      var dayDisabled = withinDates(day, _normalizeInput(disabled))[0] || bounds && !betweenDates(day, _normalizeInput(bounds));
+      var dayDisabled = !!(withinDates(day, _normalizeInput(disabled))[0] || bounds && !betweenDates(day, _normalizeInput(bounds)));
       if (!firstDayInMonth && !dayDisabled && day.getMonth() === reference.getMonth()) {
         firstDayInMonth = dateObject;
       }
       if (!children) {
         days.push(/*#__PURE__*/React.createElement(CalendarDay, {
+          activeProp: active,
+          day: day,
           key: day.getTime(),
+          disabledProp: dayDisabled,
           buttonProps: {
             a11yTitle: day.toDateString(),
-            active: active && active.getTime() === day.getTime(),
-            disabled: dayDisabled && !!dayDisabled,
-            onClick: function onClick() {
-              return _onClick(dateObject);
-            },
-            onMouseOver: function onMouseOver() {
-              return setActive(dateObject);
-            },
-            onMouseOut: function onMouseOut() {
-              return setActive(undefined);
+            onClick: dayDisabled ? function () {} : function () {
+              return onClick(dateObject);
             }
           },
           isInRange: inRange,
@@ -716,23 +715,19 @@ var Calendar = /*#__PURE__*/forwardRef(function (_ref4, ref) {
           rangePosition: rangePosition,
           size: size,
           fill: fill,
+          ref: focusableDateRef,
           responsive: responsive
         }, day.getDate()));
       } else {
         days.push(/*#__PURE__*/React.createElement(CalendarCustomDay, {
           key: day.getTime(),
+          "aria-selected": selected,
           buttonProps: onSelect ? {
             a11yTitle: day.toDateString(),
             active: active && active.getTime() === day.getTime(),
-            disabled: dayDisabled && !!dayDisabled,
-            onClick: function onClick() {
-              return _onClick(dateObject);
-            },
-            onMouseOver: function onMouseOver() {
-              return setActive(dateObject);
-            },
-            onMouseOut: function onMouseOut() {
-              return setActive(undefined);
+            disabled: dayDisabled,
+            onClick: dayDisabled ? function () {} : function () {
+              return onClick(dateObject);
             }
           } : null,
           size: size,
@@ -759,6 +754,37 @@ var Calendar = /*#__PURE__*/forwardRef(function (_ref4, ref) {
     key: day.getTime(),
     fillContainer: fill
   }, days));
+
+  // track if we need to focus when element becomes available
+  var _useState10 = useState(false),
+    needsFocus = _useState10[0],
+    setNeedsFocus = _useState10[1];
+  // while the calendar contains focus, and is not animating, set
+  // the focus to the active date
+
+  // Focus management effect
+  useEffect(function () {
+    if (!animating && active && focus) {
+      setNeedsFocus(true);
+    }
+  }, [animating, active, focus]);
+  useEffect(function () {
+    if (needsFocus && focusableDateRef != null && focusableDateRef.current) {
+      focusableDateRef.current.focus();
+      setNeedsFocus(false); // Reset flag after focus
+    }
+  }, [active, reference, displayBounds, needsFocus, focusableDateRef]);
+  useEffect(function () {
+    if (bounds && active) {
+      var normalizedBounds = _normalizeInput(bounds);
+      if (!betweenDates(active, normalizedBounds)) {
+        var diff1 = Math.abs(active.getTime() - normalizedBounds[0].getTime());
+        var diff2 = Math.abs(active.getTime() - normalizedBounds[1].getTime());
+        var closerDate = diff1 < diff2 ? 0 : 1;
+        setActive(normalizedBounds[closerDate]);
+      }
+    }
+  }, [active, bounds]);
   return /*#__PURE__*/React.createElement(StyledCalendar, _extends({
     ref: ref,
     sizeProp: size,
@@ -771,6 +797,7 @@ var Calendar = /*#__PURE__*/forwardRef(function (_ref4, ref) {
     locale: locale,
     onPreviousMonth: function onPreviousMonth() {
       changeReference(previousMonth);
+      setActive(previousMonth);
       announce(format({
         id: 'calendar.previous',
         messages: messages,
@@ -784,6 +811,7 @@ var Calendar = /*#__PURE__*/forwardRef(function (_ref4, ref) {
     },
     onNextMonth: function onNextMonth() {
       changeReference(nextMonth);
+      setActive(nextMonth);
       announce(format({
         id: 'calendar.next',
         messages: messages,
@@ -801,65 +829,60 @@ var Calendar = /*#__PURE__*/forwardRef(function (_ref4, ref) {
     fill: true,
     role: "grid"
   }, daysOfWeek && renderDaysOfWeek(), /*#__PURE__*/React.createElement(Keyboard, {
-    onEnter: function onEnter() {
-      return active !== undefined ? _onClick(active) : undefined;
-    },
-    onSpace: function onSpace(event) {
-      event.preventDefault();
-      if (active !== undefined) {
-        _onClick(active);
-      }
-    },
     onUp: function onUp(event) {
+      var nextActive = addDays(active, -7);
       event.preventDefault();
       event.stopPropagation(); // so the page doesn't scroll
-      setActive(addDays(active, -7));
-      if (!betweenDates(addDays(active, -7), displayBounds)) {
-        changeReference(addDays(active, -7));
+      if (!!betweenDates(nextActive, _normalizeInput(bounds)) || !bounds) {
+        setActive(nextActive);
+        if (!betweenDates(nextActive, displayBounds) || !showAdjacentDays && !betweenDates(nextActive, monthBounds(reference))) {
+          changeReference(nextActive);
+        }
       }
     },
     onDown: function onDown(event) {
+      var nextActive = addDays(active, 7);
       event.preventDefault();
       event.stopPropagation(); // so the page doesn't scroll
-      setActive(addDays(active, 7));
-      if (!betweenDates(addDays(active, 7), displayBounds)) {
-        changeReference(active);
+      if (!!betweenDates(nextActive, _normalizeInput(bounds)) || !bounds) {
+        setActive(nextActive);
+        if (!betweenDates(nextActive, displayBounds) || !showAdjacentDays && !betweenDates(nextActive, monthBounds(reference))) {
+          changeReference(nextActive);
+        }
       }
     },
     onLeft: function onLeft() {
-      setActive(addDays(active, -1));
-      if (!betweenDates(addDays(active, -1), displayBounds)) {
-        changeReference(active);
+      var nextActive = addDays(active, -1);
+      if (!!betweenDates(nextActive, _normalizeInput(bounds)) || !bounds) {
+        setActive(nextActive);
+        if (!betweenDates(nextActive, displayBounds) || !showAdjacentDays && !betweenDates(nextActive, monthBounds(reference))) {
+          changeReference(nextActive);
+        }
       }
     },
     onRight: function onRight() {
-      setActive(addDays(active, 1));
-      if (!betweenDates(addDays(active, 2), displayBounds)) {
-        changeReference(active);
+      var nextActive = addDays(active, 1);
+      if (!!betweenDates(nextActive, _normalizeInput(bounds)) || !bounds) {
+        setActive(nextActive);
+        if (!betweenDates(nextActive, displayBounds) || !showAdjacentDays && !betweenDates(nextActive, monthBounds(reference))) {
+          changeReference(nextActive);
+        }
       }
     }
   }, /*#__PURE__*/React.createElement(StyledWeeksContainer, _extends({
-    tabIndex: 0,
     role: "rowgroup",
     "aria-label": reference.toLocaleDateString(locale, {
       month: 'long',
       year: 'numeric'
     }) + "; " + currentlySelectedString(value, locale),
-    ref: daysRef,
     sizeProp: size,
     fillContainer: fill,
     responsive: responsive,
-    focus: focus,
     onFocus: function onFocus() {
       setFocus(true);
-      // caller focused onto Calendar via keyboard
-      if (!mouseDown) {
-        setActive(new Date(firstDayInMonth));
-      }
     },
     onBlur: function onBlur() {
       setFocus(false);
-      setActive(undefined);
     }
   }, passThemeFlag), /*#__PURE__*/React.createElement(StyledWeeks, _extends({
     slide: slide,

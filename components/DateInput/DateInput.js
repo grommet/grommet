@@ -97,6 +97,7 @@ var DateInput = exports.DateInput = /*#__PURE__*/(0, _react.forwardRef)(function
     }),
     value = _useFormInput[0],
     setValue = _useFormInput[1];
+  var usingKeyboard = (0, _utils.useKeyboard)();
   var _useState = (0, _react.useState)((0, _Calendar3.getOutputFormat)(value)),
     outputFormat = _useState[0],
     setOutputFormat = _useState[1];
@@ -205,12 +206,18 @@ var DateInput = exports.DateInput = /*#__PURE__*/(0, _react.forwardRef)(function
     }));
   }, [announce, formatMessage, messages]);
   var closeCalendar = (0, _react.useCallback)(function () {
+    if (usingKeyboard && !inline && ref != null && ref.current) {
+      setTimeout(function () {
+        var _ref$current2;
+        ref == null || (_ref$current2 = ref.current) == null || _ref$current2.focus();
+      }, 0);
+    }
     setOpen(false);
     announce(formatMessage({
       id: 'dateInput.exitCalendar',
       messages: messages
     }));
-  }, [announce, formatMessage, messages]);
+  }, [announce, formatMessage, messages, usingKeyboard, ref, inline]);
   var dates = (0, _react.useMemo)(function () {
     return range && value != null && value.length ? [value] : undefined;
   }, [range, value]);
@@ -240,10 +247,6 @@ var DateInput = exports.DateInput = /*#__PURE__*/(0, _react.forwardRef)(function
       });
       if (open && !range) {
         closeCalendar();
-        setTimeout(function () {
-          var _ref$current2;
-          return (_ref$current2 = ref.current) == null ? void 0 : _ref$current2.focus();
-        }, 1);
       }
     }
   }, calendarProps));
@@ -364,12 +367,8 @@ var DateInput = exports.DateInput = /*#__PURE__*/(0, _react.forwardRef)(function
     return /*#__PURE__*/_react["default"].createElement(_Box.Box, null, input, calendar);
   }
   if (open && !readOnly) {
-    return [input, /*#__PURE__*/_react["default"].createElement(_Keyboard.Keyboard, {
+    return [input, /*#__PURE__*/_react["default"].createElement(_Drop.Drop, _extends({
       key: "drop",
-      onEsc: function onEsc() {
-        return ref.current.focus();
-      }
-    }, /*#__PURE__*/_react["default"].createElement(_Drop.Drop, _extends({
       overflow: "visible",
       id: id ? id + "__drop" : undefined,
       target: containerRef.current,
@@ -381,7 +380,7 @@ var DateInput = exports.DateInput = /*#__PURE__*/(0, _react.forwardRef)(function
           closeCalendar();
         }
       }
-    }, dropProps), calendar))];
+    }, dropProps), calendar)];
   }
   return input;
 });

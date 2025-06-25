@@ -49,7 +49,6 @@ var Dual = exports.Dual = function Dual() {
         var refDate = new Date(reference);
         var nextDate = new Date(refDate);
         nextDate.setMonth(refDate.getMonth() + 1, 1);
-        setReference1(refDate.toISOString());
         setReference2(nextDate.toISOString());
       },
       header: function header(_ref) {
@@ -86,7 +85,6 @@ var Dual = exports.Dual = function Dual() {
         var priorDate = new Date(refDate);
         priorDate.setMonth(refDate.getMonth() - 1, 1);
         setReference1(priorDate.toISOString());
-        setReference2(refDate.toISOString());
       },
       header: function header(_ref2) {
         var currentDate = _ref2.date,

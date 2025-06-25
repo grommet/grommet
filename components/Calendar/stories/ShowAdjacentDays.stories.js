@@ -19,7 +19,7 @@ var Container = function Container(_ref) {
   }, rest));
 };
 var ShowAdjacent = exports.ShowAdjacent = function ShowAdjacent() {
-  var _useState = (0, _react.useState)(new Date(2020, 6, 15).toDateString()),
+  var _useState = (0, _react.useState)(new Date(2020, 6, 15).toISOString()),
     date = _useState[0],
     setDate = _useState[1];
   var onSelect = function onSelect(nextDate) {

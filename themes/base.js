@@ -658,10 +658,10 @@ var generate = exports.generate = function generate(baseSpacing, scale) {
         // adjacent: {
         //   color: undefined,
         // },
-        // hover: {
-        //   background: undefined,
-        //   color: undefined,
-        // },
+        hover: {
+          background: 'active-background'
+          // color: undefined,
+        },
         selected: {
           // background: undefined,
           // color: undefined,

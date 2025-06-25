@@ -15,7 +15,7 @@ import { DropButton } from '../DropButton';
 import { FormContext } from '../Form';
 import { Keyboard } from '../Keyboard';
 import { MaskedInput } from '../MaskedInput';
-import { useForwardedRef, setHoursWithOffset, disabledStyle } from '../../utils';
+import { useForwardedRef, setHoursWithOffset, disabledStyle, useKeyboard } from '../../utils';
 import { readOnlyStyle } from '../../utils/readOnly';
 import { formatToSchema, schemaToMask, valuesAreEqual, valueToText, textToValue, validateBounds } from './utils';
 import { DateInputPropTypes } from './propTypes';
@@ -91,6 +91,7 @@ var DateInput = /*#__PURE__*/forwardRef(function (_ref, refArg) {
     }),
     value = _useFormInput[0],
     setValue = _useFormInput[1];
+  var usingKeyboard = useKeyboard();
   var _useState = useState(getOutputFormat(value)),
     outputFormat = _useState[0],
     setOutputFormat = _useState[1];
@@ -199,12 +200,18 @@ var DateInput = /*#__PURE__*/forwardRef(function (_ref, refArg) {
     }));
   }, [announce, formatMessage, messages]);
   var closeCalendar = useCallback(function () {
+    if (usingKeyboard && !inline && ref != null && ref.current) {
+      setTimeout(function () {
+        var _ref$current2;
+        ref == null || (_ref$current2 = ref.current) == null || _ref$current2.focus();
+      }, 0);
+    }
     setOpen(false);
     announce(formatMessage({
       id: 'dateInput.exitCalendar',
       messages: messages
     }));
-  }, [announce, formatMessage, messages]);
+  }, [announce, formatMessage, messages, usingKeyboard, ref, inline]);
   var dates = useMemo(function () {
     return range && value != null && value.length ? [value] : undefined;
   }, [range, value]);
@@ -234,10 +241,6 @@ var DateInput = /*#__PURE__*/forwardRef(function (_ref, refArg) {
       });
       if (open && !range) {
         closeCalendar();
-        setTimeout(function () {
-          var _ref$current2;
-          return (_ref$current2 = ref.current) == null ? void 0 : _ref$current2.focus();
-        }, 1);
       }
     }
   }, calendarProps));
@@ -358,12 +361,8 @@ var DateInput = /*#__PURE__*/forwardRef(function (_ref, refArg) {
     return /*#__PURE__*/React.createElement(Box, null, input, calendar);
   }
   if (open && !readOnly) {
-    return [input, /*#__PURE__*/React.createElement(Keyboard, {
+    return [input, /*#__PURE__*/React.createElement(Drop, _extends({
       key: "drop",
-      onEsc: function onEsc() {
-        return ref.current.focus();
-      }
-    }, /*#__PURE__*/React.createElement(Drop, _extends({
       overflow: "visible",
       id: id ? id + "__drop" : undefined,
       target: containerRef.current,
@@ -375,7 +374,7 @@ var DateInput = /*#__PURE__*/forwardRef(function (_ref, refArg) {
           closeCalendar();
         }
       }
-    }, dropProps), calendar))];
+    }, dropProps), calendar)];
   }
   return input;
 });

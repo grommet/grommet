@@ -5,7 +5,6 @@ exports.StyledWeeksContainer = exports.StyledWeeks = exports.StyledWeek = export
 var _styledComponents = _interopRequireWildcard(require("styled-components"));
 var _Button = require("../Button");
 var _utils = require("../../utils");
-var _background = require("../../utils/background");
 var _mixins = require("../../utils/mixins");
 function _interopRequireWildcard(e, t) { if ("function" == typeof WeakMap) var r = new WeakMap(), n = new WeakMap(); return (_interopRequireWildcard = function _interopRequireWildcard(e, t) { if (!t && e && e.__esModule) return e; var o, i, f = { __proto__: null, "default": e }; if (null === e || "object" != typeof e && "function" != typeof e) return f; if (o = t ? n : r) { if (o.has(e)) return o.get(e); o.set(e, f); } for (var _t in e) "default" !== _t && {}.hasOwnProperty.call(e, _t) && ((i = (o = Object.defineProperty) && Object.getOwnPropertyDescriptor(e, _t)) && (i.get || i.set) ? o(f, _t, i) : f[_t] = e[_t]); return f; })(e, t); }
 var responsiveSizeStyle = function responsiveSizeStyle(props) {
@@ -83,7 +82,7 @@ var rangeRoundStyle = function rangeRoundStyle(props) {
       themeObj = rangeStart;
     } else if (props.rangePosition === 'end' && rangeEnd) themeObj = rangeEnd;
   } else themeObj = ((_props$theme$calendar5 = props.theme.calendar) == null || (_props$theme$calendar5 = _props$theme$calendar5[props.sizeProp]) == null || (_props$theme$calendar5 = _props$theme$calendar5.range) == null ? void 0 : _props$theme$calendar5.round) || ((_props$theme$calendar6 = props.theme.calendar) == null || (_props$theme$calendar6 = _props$theme$calendar6.medium) == null || (_props$theme$calendar6 = _props$theme$calendar6.range) == null ? void 0 : _props$theme$calendar6.round);
-  return themeObj && [(0, _utils.roundStyle)(themeObj, props.responsive, props.theme), 'overflow: hidden;'];
+  return themeObj && [(0, _utils.roundStyle)(themeObj, props.responsive, props.theme)];
 };
 var StyledWeeks = exports.StyledWeeks = _styledComponents["default"].div.withConfig(_utils.styledComponentsConfig).withConfig({
   displayName: "StyledCalendar__StyledWeeks",
@@ -130,12 +129,13 @@ var responsiveDayButtonStyle = function responsiveDayButtonStyle(props) {
 
 // when caller opts in to day hover styling, apply all state styles
 // on CalendarDay instead of active state on CalendarDayButton
+// position relative and z-index are added to prevent the focus
+// indicator from getting cut off
 var StyledDayButton = exports.StyledDayButton = (0, _styledComponents["default"])(_Button.Button).withConfig({
   displayName: "StyledCalendar__StyledDayButton",
   componentId: "sc-1y4xhmp-5"
-})(["", " ", ""], function (props) {
-  var _props$theme$calendar8;
-  return ((_props$theme$calendar8 = props.theme.calendar) == null || (_props$theme$calendar8 = _props$theme$calendar8.day) == null || (_props$theme$calendar8 = _props$theme$calendar8.hover) == null ? void 0 : _props$theme$calendar8.background) && 'background: inherit;';
+})(["&:focus{position:relative;z-index:1;}", " ", ""], function (props) {
+  return props.disabledProp && (0, _utils.disabledStyle)(props.theme.button.disabled.opacity);
 }, function (props) {
   return props.responsive && responsiveDayButtonStyle(props);
 });
@@ -154,23 +154,23 @@ var dayStyle = function dayStyle(props) {
   var backgroundObj;
   var colorObj;
   if (props.isSelected) {
-    var _props$theme$calendar9, _props$theme$calendar0;
-    backgroundObj = ((_props$theme$calendar9 = props.theme.calendar.day) == null || (_props$theme$calendar9 = _props$theme$calendar9.selected) == null ? void 0 : _props$theme$calendar9.background) || 'control';
-    colorObj = (_props$theme$calendar0 = props.theme.calendar.day) == null || (_props$theme$calendar0 = _props$theme$calendar0.selected) == null ? void 0 : _props$theme$calendar0.color;
+    var _props$theme$calendar8, _props$theme$calendar9;
+    backgroundObj = ((_props$theme$calendar8 = props.theme.calendar.day) == null || (_props$theme$calendar8 = _props$theme$calendar8.selected) == null ? void 0 : _props$theme$calendar8.background) || 'control';
+    colorObj = (_props$theme$calendar9 = props.theme.calendar.day) == null || (_props$theme$calendar9 = _props$theme$calendar9.selected) == null ? void 0 : _props$theme$calendar9.color;
   } else if (props.inRange) {
-    var _props$theme$calendar1, _props$theme$calendar10, _props$theme$calendar11, _props$theme$calendar12;
+    var _props$theme$calendar0, _props$theme$calendar1, _props$theme$calendar10, _props$theme$calendar11;
     // for backwards compatability, only apply this if caller hasn't specified
     // range specific rounding
     // if they have, background will be applied to StyledDayContainer
-    backgroundObj = !((_props$theme$calendar1 = props.theme.calendar) != null && (_props$theme$calendar1 = _props$theme$calendar1[props.sizeProp]) != null && (_props$theme$calendar1 = _props$theme$calendar1.range) != null && _props$theme$calendar1.round) && !((_props$theme$calendar10 = props.theme.calendar) != null && (_props$theme$calendar10 = _props$theme$calendar10.medium.range) != null && _props$theme$calendar10.round) && (((_props$theme$calendar11 = props.theme.calendar.day) == null || (_props$theme$calendar11 = _props$theme$calendar11.inRange) == null ? void 0 : _props$theme$calendar11.background) || {
+    backgroundObj = !((_props$theme$calendar0 = props.theme.calendar) != null && (_props$theme$calendar0 = _props$theme$calendar0[props.sizeProp]) != null && (_props$theme$calendar0 = _props$theme$calendar0.range) != null && _props$theme$calendar0.round) && !((_props$theme$calendar1 = props.theme.calendar) != null && (_props$theme$calendar1 = _props$theme$calendar1.medium.range) != null && _props$theme$calendar1.round) && (((_props$theme$calendar10 = props.theme.calendar.day) == null || (_props$theme$calendar10 = _props$theme$calendar10.inRange) == null ? void 0 : _props$theme$calendar10.background) || {
       color: 'control',
       opacity: 'weak'
     });
-    colorObj = (_props$theme$calendar12 = props.theme.calendar.day) == null || (_props$theme$calendar12 = _props$theme$calendar12.inRange) == null ? void 0 : _props$theme$calendar12.color;
+    colorObj = (_props$theme$calendar11 = props.theme.calendar.day) == null || (_props$theme$calendar11 = _props$theme$calendar11.inRange) == null ? void 0 : _props$theme$calendar11.color;
   } else {
-    var _props$theme$calendar13, _props$theme$calendar14;
-    backgroundObj = (_props$theme$calendar13 = props.theme.calendar.day) == null ? void 0 : _props$theme$calendar13.background;
-    colorObj = (_props$theme$calendar14 = props.theme.calendar.day) == null ? void 0 : _props$theme$calendar14.color;
+    var _props$theme$calendar12, _props$theme$calendar13;
+    backgroundObj = (_props$theme$calendar12 = props.theme.calendar.day) == null ? void 0 : _props$theme$calendar12.background;
+    colorObj = (_props$theme$calendar13 = props.theme.calendar.day) == null ? void 0 : _props$theme$calendar13.color;
   }
   if (colorObj && !backgroundObj) return "color: " + (0, _utils.normalizeColor)(colorObj, props.theme) + ";";
   return (0, _utils.backgroundStyle)(backgroundObj, props.theme, colorObj);
@@ -179,17 +179,17 @@ var dayHoverStyle = function dayHoverStyle(props) {
   var backgroundObj;
   var colorObj;
   if (props.isSelected) {
-    var _props$theme$calendar15, _props$theme$calendar16;
-    backgroundObj = (_props$theme$calendar15 = props.theme.calendar.day) == null || (_props$theme$calendar15 = _props$theme$calendar15.selected) == null || (_props$theme$calendar15 = _props$theme$calendar15.hover) == null ? void 0 : _props$theme$calendar15.background;
-    colorObj = (_props$theme$calendar16 = props.theme.calendar.day) == null || (_props$theme$calendar16 = _props$theme$calendar16.selected) == null || (_props$theme$calendar16 = _props$theme$calendar16.hover) == null ? void 0 : _props$theme$calendar16.color;
+    var _props$theme$calendar14, _props$theme$calendar15;
+    backgroundObj = (_props$theme$calendar14 = props.theme.calendar.day) == null || (_props$theme$calendar14 = _props$theme$calendar14.selected) == null || (_props$theme$calendar14 = _props$theme$calendar14.hover) == null ? void 0 : _props$theme$calendar14.background;
+    colorObj = (_props$theme$calendar15 = props.theme.calendar.day) == null || (_props$theme$calendar15 = _props$theme$calendar15.selected) == null || (_props$theme$calendar15 = _props$theme$calendar15.hover) == null ? void 0 : _props$theme$calendar15.color;
   } else if (props.inRange) {
-    var _props$theme$calendar17, _props$theme$calendar18;
-    backgroundObj = (_props$theme$calendar17 = props.theme.calendar.day) == null || (_props$theme$calendar17 = _props$theme$calendar17.inRange) == null || (_props$theme$calendar17 = _props$theme$calendar17.hover) == null ? void 0 : _props$theme$calendar17.background;
-    colorObj = (_props$theme$calendar18 = props.theme.calendar.day) == null || (_props$theme$calendar18 = _props$theme$calendar18.inRange) == null || (_props$theme$calendar18 = _props$theme$calendar18.hover) == null ? void 0 : _props$theme$calendar18.color;
+    var _props$theme$calendar16, _props$theme$calendar17;
+    backgroundObj = (_props$theme$calendar16 = props.theme.calendar.day) == null || (_props$theme$calendar16 = _props$theme$calendar16.inRange) == null || (_props$theme$calendar16 = _props$theme$calendar16.hover) == null ? void 0 : _props$theme$calendar16.background;
+    colorObj = (_props$theme$calendar17 = props.theme.calendar.day) == null || (_props$theme$calendar17 = _props$theme$calendar17.inRange) == null || (_props$theme$calendar17 = _props$theme$calendar17.hover) == null ? void 0 : _props$theme$calendar17.color;
   } else {
-    var _props$theme$calendar19, _props$theme$calendar20;
-    backgroundObj = (_props$theme$calendar19 = props.theme.calendar.day) == null || (_props$theme$calendar19 = _props$theme$calendar19.hover) == null ? void 0 : _props$theme$calendar19.background;
-    colorObj = (_props$theme$calendar20 = props.theme.calendar.day) == null || (_props$theme$calendar20 = _props$theme$calendar20.hover) == null ? void 0 : _props$theme$calendar20.color;
+    var _props$theme$calendar18, _props$theme$calendar19;
+    backgroundObj = (_props$theme$calendar18 = props.theme.calendar.day) == null || (_props$theme$calendar18 = _props$theme$calendar18.hover) == null ? void 0 : _props$theme$calendar18.background;
+    colorObj = (_props$theme$calendar19 = props.theme.calendar.day) == null || (_props$theme$calendar19 = _props$theme$calendar19.hover) == null ? void 0 : _props$theme$calendar19.color;
   }
   if (colorObj && !backgroundObj) return "color: " + (0, _utils.normalizeColor)(colorObj, props.theme) + ";";
   return (0, _utils.backgroundStyle)(backgroundObj, props.theme, colorObj);
@@ -197,20 +197,20 @@ var dayHoverStyle = function dayHoverStyle(props) {
 var dayFontStyle = function dayFontStyle(props) {
   var fontWeight;
   if (props.isSelected) {
-    var _props$theme$calendar21;
-    fontWeight = (_props$theme$calendar21 = props.theme.calendar.day) == null || (_props$theme$calendar21 = _props$theme$calendar21.selected) == null || (_props$theme$calendar21 = _props$theme$calendar21.font) == null ? void 0 : _props$theme$calendar21.weight;
+    var _props$theme$calendar20;
+    fontWeight = (_props$theme$calendar20 = props.theme.calendar.day) == null || (_props$theme$calendar20 = _props$theme$calendar20.selected) == null || (_props$theme$calendar20 = _props$theme$calendar20.font) == null ? void 0 : _props$theme$calendar20.weight;
   } else if (props.inRange) {
-    var _props$theme$calendar22;
-    fontWeight = (_props$theme$calendar22 = props.theme.calendar.day) == null || (_props$theme$calendar22 = _props$theme$calendar22.inRange) == null || (_props$theme$calendar22 = _props$theme$calendar22.font) == null ? void 0 : _props$theme$calendar22.weight;
+    var _props$theme$calendar21;
+    fontWeight = (_props$theme$calendar21 = props.theme.calendar.day) == null || (_props$theme$calendar21 = _props$theme$calendar21.inRange) == null || (_props$theme$calendar21 = _props$theme$calendar21.font) == null ? void 0 : _props$theme$calendar21.weight;
   }
   return fontWeight && "font-weight: " + fontWeight + ";";
 };
 var StyledDay = exports.StyledDay = _styledComponents["default"].div.withConfig(_utils.styledComponentsConfig).withConfig({
   displayName: "StyledCalendar__StyledDay",
   componentId: "sc-1y4xhmp-6"
-})(["display:flex;justify-content:center;align-items:center;color:", ";", " ", " ", " ", " ", " ", " ", " ", " ", ""], function (props) {
-  var _props$theme$calendar23;
-  return (0, _utils.normalizeColor)(props.otherMonth ? ((_props$theme$calendar23 = props.theme.calendar) == null || (_props$theme$calendar23 = _props$theme$calendar23.day) == null || (_props$theme$calendar23 = _props$theme$calendar23.adjacent) == null ? void 0 : _props$theme$calendar23.color) || 'text-xweak' : 'text-strong', props.theme);
+})(["display:flex;justify-content:center;align-items:center;color:", ";", " ", " ", " ", " ", " ", " ", " ", ""], function (props) {
+  var _props$theme$calendar22;
+  return (0, _utils.normalizeColor)(props.otherMonth ? ((_props$theme$calendar22 = props.theme.calendar) == null || (_props$theme$calendar22 = _props$theme$calendar22.day) == null || (_props$theme$calendar22 = _props$theme$calendar22.adjacent) == null ? void 0 : _props$theme$calendar22.color) || 'text-xweak' : 'text-strong', props.theme);
 }, function (props) {
   return daySizeStyle(props);
 }, function (props) {
@@ -220,14 +220,12 @@ var StyledDay = exports.StyledDay = _styledComponents["default"].div.withConfig(
 }, function (props) {
   return dayFontStyle(props);
 }, function (props) {
-  var _props$theme$calendar24, _props$theme$calendar25;
+  var _props$theme$calendar23, _props$theme$calendar24;
   // fallback to medium if no size-specific styles
-  var round = ((_props$theme$calendar24 = props.theme.calendar) == null || (_props$theme$calendar24 = _props$theme$calendar24[props.sizeProp]) == null || (_props$theme$calendar24 = _props$theme$calendar24.day) == null ? void 0 : _props$theme$calendar24.round) || ((_props$theme$calendar25 = props.theme.calendar) == null || (_props$theme$calendar25 = _props$theme$calendar25.medium) == null || (_props$theme$calendar25 = _props$theme$calendar25.day) == null ? void 0 : _props$theme$calendar25.round);
+  var round = ((_props$theme$calendar23 = props.theme.calendar) == null || (_props$theme$calendar23 = _props$theme$calendar23[props.sizeProp]) == null || (_props$theme$calendar23 = _props$theme$calendar23.day) == null ? void 0 : _props$theme$calendar23.round) || ((_props$theme$calendar24 = props.theme.calendar) == null || (_props$theme$calendar24 = _props$theme$calendar24.medium) == null || (_props$theme$calendar24 = _props$theme$calendar24.day) == null ? void 0 : _props$theme$calendar24.round);
   return round && (0, _utils.roundStyle)(round, props.responsive, props.theme);
 }, function (props) {
-  return props.active && _background.activeStyle;
-}, function (props) {
-  return props.hover && dayHoverStyle(props);
+  return props.hover && !props.disabledProp && dayHoverStyle(props);
 }, function (props) {
   return (
     // when theme uses kind Buttons, since we use children for Button,

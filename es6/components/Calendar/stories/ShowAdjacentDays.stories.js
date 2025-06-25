@@ -14,7 +14,7 @@ var Container = function Container(_ref) {
   }, rest));
 };
 export var ShowAdjacent = function ShowAdjacent() {
-  var _useState = useState(new Date(2020, 6, 15).toDateString()),
+  var _useState = useState(new Date(2020, 6, 15).toISOString()),
     date = _useState[0],
     setDate = _useState[1];
   var onSelect = function onSelect(nextDate) {
