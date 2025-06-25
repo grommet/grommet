@@ -56,9 +56,12 @@
     "totalSingle": "{total} {items}"
   },
   "dataTable": {
+    "ascending": "ascending",
+    "descending": "descending",
     "rows": "rows",
-    "rowsSingle": "row",
     "rowsChanged": "Number of rows changed",
+    "rowsSingle": "row",
+    "searchBy": "Open search by {property}",
     "total": "{total} {rows}",
     "totalSingle": "{total} {rows}"
   },
