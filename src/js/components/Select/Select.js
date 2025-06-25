@@ -294,7 +294,7 @@ const Select = forwardRef(
       <Keyboard onDown={onRequestOpen} onUp={onRequestOpen}>
         <StyledSelectDropButton
           ref={ref}
-          a11yTitle={`${ariaLabel || a11yTitle || placeholder || 'Open drop'}${
+          a11yTitle={`${ariaLabel || a11yTitle || placeholder || 'Open Drop'}${
             value
               ? format({
                   id: 'select.selected',

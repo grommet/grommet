@@ -892,7 +892,7 @@ exports[`DataSort renders 1`] = `
                 <button
                   aria-expanded="false"
                   aria-haspopup="listbox"
-                  aria-label="Open drop"
+                  aria-label="Open Drop"
                   aria-labelledby="data--sort-property__label"
                   class="c8 "
                   id="data--sort-property"
@@ -1391,7 +1391,7 @@ exports[`DataSort sort when data array is empty 1`] = `
           <button
             aria-expanded="false"
             aria-haspopup="listbox"
-            aria-label="Open drop"
+            aria-label="Open Drop"
             aria-labelledby="test-data--sort-property__label"
             class="c6 "
             id="test-data--sort-property"

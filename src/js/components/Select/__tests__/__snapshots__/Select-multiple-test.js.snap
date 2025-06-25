@@ -459,7 +459,7 @@ exports[`Select Controlled multiple 1`] = `
   <button
     aria-expanded="false"
     aria-haspopup="listbox"
-    aria-label="Open drop; Selected: "
+    aria-label="Open Drop; Selected: "
     class="c1 c2"
     id="test-select"
     type="button"

@@ -8849,7 +8849,7 @@ exports[`Select onChange with valueLabel 1`] = `
   <button
     aria-expanded="false"
     aria-haspopup="listbox"
-    aria-label="Open drop"
+    aria-label="Open Drop"
     class="c1 c2"
     id="test-select"
     type="button"
@@ -13403,7 +13403,7 @@ exports[`Select renders custom icon 1`] = `
   <button
     aria-expanded="false"
     aria-haspopup="listbox"
-    aria-label="Open drop"
+    aria-label="Open Drop"
     class="c1 c2"
     id="test-select"
     type="button"
@@ -14330,7 +14330,7 @@ exports[`Select renders default icon 1`] = `
   <button
     aria-expanded="false"
     aria-haspopup="listbox"
-    aria-label="Open drop"
+    aria-label="Open Drop"
     class="c1 c2"
     id="test-select"
     type="button"
@@ -15397,7 +15397,7 @@ exports[`Select renders without icon 1`] = `
   <button
     aria-expanded="false"
     aria-haspopup="listbox"
-    aria-label="Open drop"
+    aria-label="Open Drop"
     class="c1 c2"
     id="test-select"
     type="button"
@@ -17366,7 +17366,7 @@ exports[`Select select an option with complex options 1`] = `
   <button
     aria-expanded="false"
     aria-haspopup="listbox"
-    aria-label="Open drop; Selected: [object Object]"
+    aria-label="Open Drop; Selected: [object Object]"
     class="c1 "
     id="test-select"
     type="button"
@@ -19494,7 +19494,7 @@ exports[`Select size 1`] = `
   <button
     aria-expanded="false"
     aria-haspopup="listbox"
-    aria-label="Open drop; Selected: "
+    aria-label="Open Drop; Selected: "
     class="c1 c2"
     id="test-select"
     type="button"
@@ -19927,7 +19927,7 @@ exports[`Select valueLabel with value=0 1`] = `
     <button
       aria-expanded="false"
       aria-haspopup="listbox"
-      aria-label="Open drop"
+      aria-label="Open Drop"
       class="c1 c2"
       type="button"
     >

@@ -1960,7 +1960,7 @@ exports[`Layer invokes onEsc when modal={false} 1`] = `
     <button
       aria-expanded="false"
       aria-haspopup="listbox"
-      aria-label="Open drop"
+      aria-label="Open Drop"
       class="c2 c3"
       type="button"
     >
