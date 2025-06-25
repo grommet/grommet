@@ -50,9 +50,12 @@ export interface ColumnConfig<TRowType> {
   footer?: React.ReactNode | { aggregate?: boolean };
   header?: string | React.ReactNode | { aggregate?: boolean };
   messages?: {
+    ascending?: string;
+    descending?: string;
     rows?: string;
-    rowsSingle?: string;
     rowsChanged?: string;
+    rowsSingle?: string;
+    searchBy?: string;
     total?: string;
     totalSingle?: string;
   };
