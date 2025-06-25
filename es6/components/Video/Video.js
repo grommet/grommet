@@ -20,7 +20,7 @@ import { useThemeValue } from '../../utils/useThemeValue';
 // Split the volume control into 6 segments. Empirically determined.
 var VOLUME_STEP = 0.166667;
 var formatTime = function formatTime(time) {
-  var minutes = Math.round(time / 60);
+  var minutes = Math.trunc(time / 60);
   if (minutes < 10) {
     minutes = "0" + minutes;
   }
