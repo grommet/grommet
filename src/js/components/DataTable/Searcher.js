@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useRef } from 'react';
+import React, { useContext, useEffect, useRef, useState } from 'react';
 
 import { FormSearch } from 'grommet-icons/icons/FormSearch';
 
@@ -23,6 +23,7 @@ const Searcher = ({
   const inputRef = useRef();
   const buttonRef = useRef();
   const needsFocus = filtering === property;
+  const [buttonNeedsFocus, setButtonNeedsFocus] = useState(false);
   const { format } = useContext(MessageContext);
 
   useEffect(() => {
@@ -30,6 +31,14 @@ const Searcher = ({
       inputRef.current.focus();
     }
   }, [needsFocus, inputRef]);
+
+  // Focus the button after closing the searc
+  useEffect(() => {
+    if (buttonNeedsFocus && buttonRef.current) {
+      buttonRef.current.focus();
+      setButtonNeedsFocus(false);
+    }
+  }, [buttonNeedsFocus]);
 
   const a11yTitle = format({
     id: 'dataTable.searchBy',
@@ -42,15 +51,7 @@ const Searcher = ({
     <Keyboard
       onEsc={() => {
         onFiltering(undefined);
-        // Focus the button after closing the search
-        // setTimeout with 0 delay pushes the focus operation to the
-        // next round of the event loop, which happens after React has
-        // updated the DOM with the button element
-        setTimeout(() => {
-          if (buttonRef.current) {
-            buttonRef.current.focus();
-          }
-        }, 0);
+        setButtonNeedsFocus(true);
       }}
     >
       <Box width={{ min: 'xsmall' }} flex pad={{ horizontal: 'small' }}>
