@@ -128,6 +128,13 @@ if (process.env.NODE_ENV !== 'production') {
         onSelect: PropTypes.func,
       }),
     ]),
+    messages: PropTypes.shape({
+      rows: PropTypes.string,
+      rowsSingle: PropTypes.string,
+      rowsChanged: PropTypes.string,
+      total: PropTypes.string,
+      totalSingle: PropTypes.string,
+    }),
     onClickRow: PropTypes.oneOfType([
       PropTypes.func,
       PropTypes.oneOf(['select']),
