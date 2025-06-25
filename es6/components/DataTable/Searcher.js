@@ -1,15 +1,17 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useContext, useEffect, useRef } from 'react';
 import { FormSearch } from 'grommet-icons/icons/FormSearch';
 import { Box } from '../Box';
 import { Button } from '../Button';
 import { Keyboard } from '../Keyboard';
 import { Text } from '../Text';
 import { TextInput } from '../TextInput';
+import { MessageContext } from '../../contexts/MessageContext';
 import { normalizeColor } from '../../utils';
 import { useThemeValue } from '../../utils/useThemeValue';
 var Searcher = function Searcher(_ref) {
   var filtering = _ref.filtering,
     filters = _ref.filters,
+    messages = _ref.messages,
     onFilter = _ref.onFilter,
     onFiltering = _ref.onFiltering,
     property = _ref.property;
@@ -17,11 +19,20 @@ var Searcher = function Searcher(_ref) {
     theme = _useThemeValue.theme;
   var inputRef = useRef();
   var needsFocus = filtering === property;
+  var _useContext = useContext(MessageContext),
+    format = _useContext.format;
   useEffect(function () {
     if (inputRef && needsFocus) {
       inputRef.current.focus();
     }
   }, [needsFocus, inputRef]);
+  var a11yTitle = format({
+    id: 'dataTable.searchBy',
+    messages: messages,
+    values: {
+      property: property
+    }
+  });
   return filtering === property ? /*#__PURE__*/React.createElement(Keyboard, {
     onEsc: function onEsc() {
       return onFiltering(undefined);
@@ -36,7 +47,7 @@ var Searcher = function Searcher(_ref) {
     }
   }, /*#__PURE__*/React.createElement(TextInput, {
     name: "search-" + property,
-    a11yTitle: "Search by " + property,
+    a11yTitle: a11yTitle,
     ref: inputRef,
     value: filters[property],
     onChange: function onChange(event) {
@@ -53,7 +64,7 @@ var Searcher = function Searcher(_ref) {
     direction: "row",
     align: "center"
   }, /*#__PURE__*/React.createElement(Text, null, filters[property])) : null, /*#__PURE__*/React.createElement(Button, {
-    a11yTitle: "Open search by " + property,
+    a11yTitle: a11yTitle,
     icon: /*#__PURE__*/React.createElement(FormSearch, {
       color: normalizeColor(filtering === property ? 'brand' : 'border', theme)
     }),

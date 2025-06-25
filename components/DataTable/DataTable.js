@@ -564,6 +564,7 @@ var DataTable = exports.DataTable = function DataTable(_ref) {
     size: size,
     sort: sort,
     widths: widths,
+    messages: messages,
     onFiltering: onFiltering,
     onFilter: onFilter,
     onResize: resizeable ? onResize : undefined,

@@ -78,9 +78,12 @@ if (process.env.NODE_ENV !== 'production') {
       onSelect: _propTypes["default"].func
     })]),
     messages: _propTypes["default"].shape({
+      ascending: PropType.string,
+      descending: PropType.string,
       rows: _propTypes["default"].string,
-      rowsSingle: _propTypes["default"].string,
       rowsChanged: _propTypes["default"].string,
+      rowsSingle: _propTypes["default"].string,
+      searchBy: PropType.string,
       total: _propTypes["default"].string,
       totalSingle: _propTypes["default"].string
     }),

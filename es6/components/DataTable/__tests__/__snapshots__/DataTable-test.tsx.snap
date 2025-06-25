@@ -13977,6 +13977,7 @@ exports[`DataTable onSort 2`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRowHeader-sc-xrlyjm-3 fgxpmX"
       >
         <th
+          aria-sort="ascending"
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 leSjT StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 dvuoDz"
           scope="col"
         >
@@ -14047,7 +14048,7 @@ exports[`DataTable onSort 2`] = `
 }
 
 <svg
-                  aria-label="FormUp"
+                  aria-label="ascending"
                   class="c0"
                   viewBox="0 0 24 24"
                 >
@@ -14401,6 +14402,7 @@ exports[`DataTable onSort external 1`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
       >
         <th
+          aria-sort="ascending"
           class="c3 "
           scope="col"
         >
@@ -14423,7 +14425,7 @@ exports[`DataTable onSort external 1`] = `
                   class="c9"
                 />
                 <svg
-                  aria-label="FormUp"
+                  aria-label="ascending"
                   class="c10"
                   viewBox="0 0 24 24"
                 >
@@ -14578,6 +14580,7 @@ exports[`DataTable onSort external 2`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRowHeader-sc-xrlyjm-3 fgxpmX"
       >
         <th
+          aria-sort="descending"
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 leSjT StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 dvuoDz"
           scope="col"
         >
@@ -14636,7 +14639,7 @@ exports[`DataTable onSort external 2`] = `
 }
 
 <svg
-                  aria-label="FormDown"
+                  aria-label="descending"
                   class="c0"
                   viewBox="0 0 24 24"
                 >
@@ -22175,7 +22178,7 @@ exports[`DataTable search 2`] = `
                 class="c1"
               >
                 <input
-                  aria-label="Search by a"
+                  aria-label="Open search by a"
                   autocomplete="off"
                   class="c2"
                   name="search-a"
@@ -45436,6 +45439,7 @@ exports[`DataTable sort 1`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
       >
         <th
+          aria-sort="ascending"
           class="c3 "
           scope="col"
         >
@@ -45458,7 +45462,7 @@ exports[`DataTable sort 1`] = `
                   class="c9"
                 />
                 <svg
-                  aria-label="FormUp"
+                  aria-label="ascending"
                   class="c10"
                   viewBox="0 0 24 24"
                 >
@@ -45884,6 +45888,7 @@ exports[`DataTable sort controlled 1`] = `
           class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
         >
           <th
+            aria-sort="ascending"
             class="c4 "
             scope="col"
           >
@@ -45906,7 +45911,7 @@ exports[`DataTable sort controlled 1`] = `
                     class="c10"
                   />
                   <svg
-                    aria-label="FormUp"
+                    aria-label="ascending"
                     class="c11"
                     viewBox="0 0 24 24"
                   >
@@ -46333,6 +46338,7 @@ exports[`DataTable sort controlled 2`] = `
           class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
         >
           <th
+            aria-sort="descending"
             class="c4 "
             scope="col"
           >
@@ -46355,7 +46361,7 @@ exports[`DataTable sort controlled 2`] = `
                     class="c10"
                   />
                   <svg
-                    aria-label="FormDown"
+                    aria-label="descending"
                     class="c11"
                     viewBox="0 0 24 24"
                   >
@@ -46710,6 +46716,7 @@ exports[`DataTable sort external 1`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
       >
         <th
+          aria-sort="ascending"
           class="c3 "
           scope="col"
         >
@@ -46732,7 +46739,7 @@ exports[`DataTable sort external 1`] = `
                   class="c9"
                 />
                 <svg
-                  aria-label="FormUp"
+                  aria-label="ascending"
                   class="c10"
                   viewBox="0 0 24 24"
                 >
@@ -47109,6 +47116,7 @@ exports[`DataTable sort nested object 1`] = `
           </div>
         </th>
         <th
+          aria-sort="descending"
           class="c3 "
           scope="col"
         >
@@ -47131,7 +47139,7 @@ exports[`DataTable sort nested object 1`] = `
                   class="c9"
                 />
                 <svg
-                  aria-label="FormDown"
+                  aria-label="descending"
                   class="c10"
                   viewBox="0 0 24 24"
                 >
@@ -47485,6 +47493,7 @@ exports[`DataTable sort nested object with onSort 1`] = `
           </div>
         </th>
         <th
+          aria-sort="descending"
           class="c3 "
           scope="col"
         >
@@ -47507,7 +47516,7 @@ exports[`DataTable sort nested object with onSort 1`] = `
                   class="c9"
                 />
                 <svg
-                  aria-label="FormDown"
+                  aria-label="descending"
                   class="c10"
                   viewBox="0 0 24 24"
                 >
@@ -48101,6 +48110,7 @@ exports[`DataTable sort null data 2`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRowHeader-sc-xrlyjm-3 fgxpmX"
       >
         <th
+          aria-sort="ascending"
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 leSjT StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 dvuoDz"
           scope="col"
         >
@@ -48171,7 +48181,7 @@ exports[`DataTable sort null data 2`] = `
 }
 
 <svg
-                  aria-label="FormUp"
+                  aria-label="ascending"
                   class="c0"
                   viewBox="0 0 24 24"
                 >
@@ -48547,6 +48557,7 @@ exports[`DataTable sort null data 3`] = `
           </div>
         </th>
         <th
+          aria-sort="ascending"
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 leSjT StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 dvuoDz"
           scope="col"
         >
@@ -48617,7 +48628,7 @@ exports[`DataTable sort null data 3`] = `
 }
 
 <svg
-                  aria-label="FormUp"
+                  aria-label="ascending"
                   class="c0"
                   viewBox="0 0 24 24"
                 >
@@ -48970,6 +48981,7 @@ exports[`DataTable sort null data 4`] = `
           </div>
         </th>
         <th
+          aria-sort="ascending"
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 leSjT StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 dvuoDz"
           scope="col"
         >
@@ -49040,7 +49052,7 @@ exports[`DataTable sort null data 4`] = `
 }
 
 <svg
-                  aria-label="FormUp"
+                  aria-label="ascending"
                   class="c0"
                   viewBox="0 0 24 24"
                 >
@@ -49618,6 +49630,7 @@ exports[`DataTable sortable 2`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRowHeader-sc-xrlyjm-3 fgxpmX"
       >
         <th
+          aria-sort="ascending"
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 leSjT StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 dvuoDz"
           scope="col"
         >
@@ -49688,7 +49701,7 @@ exports[`DataTable sortable 2`] = `
 }
 
 <svg
-                  aria-label="FormUp"
+                  aria-label="ascending"
                   class="c0"
                   viewBox="0 0 24 24"
                 >

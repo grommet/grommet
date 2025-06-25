@@ -9,12 +9,14 @@ var _Button = require("../Button");
 var _Keyboard = require("../Keyboard");
 var _Text = require("../Text");
 var _TextInput = require("../TextInput");
+var _MessageContext = require("../../contexts/MessageContext");
 var _utils = require("../../utils");
 var _useThemeValue2 = require("../../utils/useThemeValue");
 function _interopRequireWildcard(e, t) { if ("function" == typeof WeakMap) var r = new WeakMap(), n = new WeakMap(); return (_interopRequireWildcard = function _interopRequireWildcard(e, t) { if (!t && e && e.__esModule) return e; var o, i, f = { __proto__: null, "default": e }; if (null === e || "object" != typeof e && "function" != typeof e) return f; if (o = t ? n : r) { if (o.has(e)) return o.get(e); o.set(e, f); } for (var _t in e) "default" !== _t && {}.hasOwnProperty.call(e, _t) && ((i = (o = Object.defineProperty) && Object.getOwnPropertyDescriptor(e, _t)) && (i.get || i.set) ? o(f, _t, i) : f[_t] = e[_t]); return f; })(e, t); }
 var Searcher = exports.Searcher = function Searcher(_ref) {
   var filtering = _ref.filtering,
     filters = _ref.filters,
+    messages = _ref.messages,
     onFilter = _ref.onFilter,
     onFiltering = _ref.onFiltering,
     property = _ref.property;
@@ -22,11 +24,20 @@ var Searcher = exports.Searcher = function Searcher(_ref) {
     theme = _useThemeValue.theme;
   var inputRef = (0, _react.useRef)();
   var needsFocus = filtering === property;
+  var _useContext = (0, _react.useContext)(_MessageContext.MessageContext),
+    format = _useContext.format;
   (0, _react.useEffect)(function () {
     if (inputRef && needsFocus) {
       inputRef.current.focus();
     }
   }, [needsFocus, inputRef]);
+  var a11yTitle = format({
+    id: 'dataTable.searchBy',
+    messages: messages,
+    values: {
+      property: property
+    }
+  });
   return filtering === property ? /*#__PURE__*/_react["default"].createElement(_Keyboard.Keyboard, {
     onEsc: function onEsc() {
       return onFiltering(undefined);
@@ -41,7 +52,7 @@ var Searcher = exports.Searcher = function Searcher(_ref) {
     }
   }, /*#__PURE__*/_react["default"].createElement(_TextInput.TextInput, {
     name: "search-" + property,
-    a11yTitle: "Search by " + property,
+    a11yTitle: a11yTitle,
     ref: inputRef,
     value: filters[property],
     onChange: function onChange(event) {
@@ -58,7 +69,7 @@ var Searcher = exports.Searcher = function Searcher(_ref) {
     direction: "row",
     align: "center"
   }, /*#__PURE__*/_react["default"].createElement(_Text.Text, null, filters[property])) : null, /*#__PURE__*/_react["default"].createElement(_Button.Button, {
-    a11yTitle: "Open search by " + property,
+    a11yTitle: a11yTitle,
     icon: /*#__PURE__*/_react["default"].createElement(_FormSearch.FormSearch, {
       color: (0, _utils.normalizeColor)(filtering === property ? 'brand' : 'border', theme)
     }),

@@ -5,6 +5,7 @@ exports.Header = void 0;
 var _react = _interopRequireWildcard(require("react"));
 var _styledComponents = _interopRequireWildcard(require("styled-components"));
 var _DataContext = require("../../contexts/DataContext");
+var _MessageContext = require("../../contexts/MessageContext");
 var _Box = require("../Box");
 var _Button = require("../Button");
 var _CheckBox = require("../CheckBox");
@@ -19,7 +20,7 @@ var _styles = require("../../utils/styles");
 var _colors = require("../../utils/colors");
 var _useThemeValue2 = require("../../utils/useThemeValue");
 var _excluded = ["background", "border", "color", "font", "gap", "pad", "units"],
-  _excluded2 = ["allowSelectAll", "cellProps", "columns", "data", "disabled", "fill", "filtering", "filters", "groupBy", "groups", "groupState", "onFilter", "onFiltering", "onResize", "onSelect", "onSort", "onToggle", "onWidths", "pin", "pinnedOffset", "primaryProperty", "selected", "rowDetails", "sort", "widths", "verticalAlign"];
+  _excluded2 = ["allowSelectAll", "cellProps", "columns", "data", "disabled", "fill", "filtering", "filters", "groupBy", "groups", "groupState", "messages", "onFilter", "onFiltering", "onResize", "onSelect", "onSort", "onToggle", "onWidths", "pin", "pinnedOffset", "primaryProperty", "selected", "rowDetails", "sort", "widths", "verticalAlign"];
 /* eslint-disable no-underscore-dangle */
 function _interopRequireWildcard(e, t) { if ("function" == typeof WeakMap) var r = new WeakMap(), n = new WeakMap(); return (_interopRequireWildcard = function _interopRequireWildcard(e, t) { if (!t && e && e.__esModule) return e; var o, i, f = { __proto__: null, "default": e }; if (null === e || "object" != typeof e && "function" != typeof e) return f; if (o = t ? n : r) { if (o.has(e)) return o.get(e); o.set(e, f); } for (var _t in e) "default" !== _t && {}.hasOwnProperty.call(e, _t) && ((i = (o = Object.defineProperty) && Object.getOwnPropertyDescriptor(e, _t)) && (i.get || i.set) ? o(f, _t, i) : f[_t] = e[_t]); return f; })(e, t); }
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
@@ -113,6 +114,7 @@ var Header = exports.Header = /*#__PURE__*/(0, _react.forwardRef)(function (_ref
     groupBy = _ref2.groupBy,
     groups = _ref2.groups,
     groupState = _ref2.groupState,
+    messages = _ref2.messages,
     onFilter = _ref2.onFilter,
     onFiltering = _ref2.onFiltering,
     onResize = _ref2.onResize,
@@ -137,6 +139,8 @@ var Header = exports.Header = /*#__PURE__*/(0, _react.forwardRef)(function (_ref
     textProps = _separateThemeProps2[1];
   var _useContext = (0, _react.useContext)(_DataContext.DataContext),
     contextTotal = _useContext.total;
+  var _useContext2 = (0, _react.useContext)(_MessageContext.MessageContext),
+    format = _useContext2.format;
   var cellWidthsRef = (0, _react.useRef)({});
   var timerRef = (0, _react.useRef)();
   var handleWidths = function handleWidths() {
@@ -275,11 +279,26 @@ var Header = exports.Header = /*#__PURE__*/(0, _react.forwardRef)(function (_ref
         justify: _TableCell.verticalAlignToJustify[vertical]
       }, content);
     }
+    var ariaSort;
     if (onSort && sortable !== false) {
       var Icon;
+      var iconAriaLabel;
       if (onSort && sortable !== false) {
         if (sort && sort.property === property) {
           Icon = theme.dataTable.icons[sort.direction !== 'asc' ? 'ascending' : 'descending'];
+          if (sort.direction === 'asc') {
+            ariaSort = 'ascending';
+            iconAriaLabel = format({
+              id: 'dataTable.ascending',
+              messages: messages
+            });
+          } else if (sort.direction === 'desc') {
+            ariaSort = 'descending';
+            iconAriaLabel = format({
+              id: 'dataTable.descending',
+              messages: messages
+            });
+          }
         } else if (theme.dataTable.icons.sortable) {
           Icon = theme.dataTable.icons.sortable;
         }
@@ -298,7 +317,9 @@ var Header = exports.Header = /*#__PURE__*/(0, _react.forwardRef)(function (_ref
         align: "center",
         gap: "xsmall",
         justify: align
-      }, content, Icon && /*#__PURE__*/_react["default"].createElement(Icon, null)));
+      }, content, Icon && /*#__PURE__*/_react["default"].createElement(Icon, {
+        "aria-label": iconAriaLabel
+      })));
     }
 
     // content should fill any available space in cell
@@ -319,6 +340,7 @@ var Header = exports.Header = /*#__PURE__*/(0, _react.forwardRef)(function (_ref
       var searcher = search && filters ? /*#__PURE__*/_react["default"].createElement(_Searcher.Searcher, {
         filtering: filtering,
         filters: filters,
+        messages: messages,
         property: property,
         onFilter: onFilter,
         onFiltering: onFiltering
@@ -342,6 +364,7 @@ var Header = exports.Header = /*#__PURE__*/(0, _react.forwardRef)(function (_ref
     var cellPin = [].concat(pin);
     if (columnPin) cellPin.push('left');
     return /*#__PURE__*/_react["default"].createElement(_StyledDataTable.StyledDataTableCell, _extends({
+      "aria-sort": ariaSort,
       key: property,
       align: align,
       context: "header",

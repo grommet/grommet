@@ -1,11 +1,12 @@
 var _excluded = ["background", "border", "color", "font", "gap", "pad", "units"],
-  _excluded2 = ["allowSelectAll", "cellProps", "columns", "data", "disabled", "fill", "filtering", "filters", "groupBy", "groups", "groupState", "onFilter", "onFiltering", "onResize", "onSelect", "onSort", "onToggle", "onWidths", "pin", "pinnedOffset", "primaryProperty", "selected", "rowDetails", "sort", "widths", "verticalAlign"];
+  _excluded2 = ["allowSelectAll", "cellProps", "columns", "data", "disabled", "fill", "filtering", "filters", "groupBy", "groups", "groupState", "messages", "onFilter", "onFiltering", "onResize", "onSelect", "onSort", "onToggle", "onWidths", "pin", "pinnedOffset", "primaryProperty", "selected", "rowDetails", "sort", "widths", "verticalAlign"];
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (-1 !== e.indexOf(n)) continue; t[n] = r[n]; } return t; }
 /* eslint-disable no-underscore-dangle */
 import React, { forwardRef, useCallback, useContext, useRef } from 'react';
 import styled, { css } from 'styled-components';
 import { DataContext } from '../../contexts/DataContext';
+import { MessageContext } from '../../contexts/MessageContext';
 import { Box } from '../Box';
 import { Button } from '../Button';
 import { CheckBox } from '../CheckBox';
@@ -109,6 +110,7 @@ var Header = /*#__PURE__*/forwardRef(function (_ref2, ref) {
     groupBy = _ref2.groupBy,
     groups = _ref2.groups,
     groupState = _ref2.groupState,
+    messages = _ref2.messages,
     onFilter = _ref2.onFilter,
     onFiltering = _ref2.onFiltering,
     onResize = _ref2.onResize,
@@ -133,6 +135,8 @@ var Header = /*#__PURE__*/forwardRef(function (_ref2, ref) {
     textProps = _separateThemeProps2[1];
   var _useContext = useContext(DataContext),
     contextTotal = _useContext.total;
+  var _useContext2 = useContext(MessageContext),
+    format = _useContext2.format;
   var cellWidthsRef = useRef({});
   var timerRef = useRef();
   var handleWidths = function handleWidths() {
@@ -271,11 +275,26 @@ var Header = /*#__PURE__*/forwardRef(function (_ref2, ref) {
         justify: verticalAlignToJustify[vertical]
       }, content);
     }
+    var ariaSort;
     if (onSort && sortable !== false) {
       var Icon;
+      var iconAriaLabel;
       if (onSort && sortable !== false) {
         if (sort && sort.property === property) {
           Icon = theme.dataTable.icons[sort.direction !== 'asc' ? 'ascending' : 'descending'];
+          if (sort.direction === 'asc') {
+            ariaSort = 'ascending';
+            iconAriaLabel = format({
+              id: 'dataTable.ascending',
+              messages: messages
+            });
+          } else if (sort.direction === 'desc') {
+            ariaSort = 'descending';
+            iconAriaLabel = format({
+              id: 'dataTable.descending',
+              messages: messages
+            });
+          }
         } else if (theme.dataTable.icons.sortable) {
           Icon = theme.dataTable.icons.sortable;
         }
@@ -294,7 +313,9 @@ var Header = /*#__PURE__*/forwardRef(function (_ref2, ref) {
         align: "center",
         gap: "xsmall",
         justify: align
-      }, content, Icon && /*#__PURE__*/React.createElement(Icon, null)));
+      }, content, Icon && /*#__PURE__*/React.createElement(Icon, {
+        "aria-label": iconAriaLabel
+      })));
     }
 
     // content should fill any available space in cell
@@ -315,6 +336,7 @@ var Header = /*#__PURE__*/forwardRef(function (_ref2, ref) {
       var searcher = search && filters ? /*#__PURE__*/React.createElement(Searcher, {
         filtering: filtering,
         filters: filters,
+        messages: messages,
         property: property,
         onFilter: onFilter,
         onFiltering: onFiltering
@@ -338,6 +360,7 @@ var Header = /*#__PURE__*/forwardRef(function (_ref2, ref) {
     var cellPin = [].concat(pin);
     if (columnPin) cellPin.push('left');
     return /*#__PURE__*/React.createElement(StyledDataTableCell, _extends({
+      "aria-sort": ariaSort,
       key: property,
       align: align,
       context: "header",

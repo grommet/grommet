@@ -73,9 +73,12 @@ if (process.env.NODE_ENV !== 'production') {
       onSelect: PropTypes.func
     })]),
     messages: PropTypes.shape({
+      ascending: PropType.string,
+      descending: PropType.string,
       rows: PropTypes.string,
-      rowsSingle: PropTypes.string,
       rowsChanged: PropTypes.string,
+      rowsSingle: PropTypes.string,
+      searchBy: PropType.string,
       total: PropTypes.string,
       totalSingle: PropTypes.string
     }),
