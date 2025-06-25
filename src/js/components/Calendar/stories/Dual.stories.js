@@ -35,7 +35,6 @@ export const Dual = () => {
           const refDate = new Date(reference);
           const nextDate = new Date(refDate);
           nextDate.setMonth(refDate.getMonth() + 1, 1);
-          setReference1(refDate.toISOString());
           setReference2(nextDate.toISOString());
         }}
         header={({
@@ -73,7 +72,6 @@ export const Dual = () => {
           const priorDate = new Date(refDate);
           priorDate.setMonth(refDate.getMonth() - 1, 1);
           setReference1(priorDate.toISOString());
-          setReference2(refDate.toISOString());
         }}
         header={({ date: currentDate, locale, onNextMonth, nextInBound }) => (
           <Box direction="row" align="center" justify="between">
