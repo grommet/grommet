@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useContext, useEffect, useRef } from 'react';
 
 import { FormSearch } from 'grommet-icons/icons/FormSearch';
 
@@ -7,13 +7,22 @@ import { Button } from '../Button';
 import { Keyboard } from '../Keyboard';
 import { Text } from '../Text';
 import { TextInput } from '../TextInput';
+import { MessageContext } from '../../contexts/MessageContext';
 import { normalizeColor } from '../../utils';
 import { useThemeValue } from '../../utils/useThemeValue';
 
-const Searcher = ({ filtering, filters, onFilter, onFiltering, property }) => {
+const Searcher = ({
+  filtering,
+  filters,
+  messages,
+  onFilter,
+  onFiltering,
+  property,
+}) => {
   const { theme } = useThemeValue();
   const inputRef = useRef();
   const needsFocus = filtering === property;
+  const { format } = useContext(MessageContext);
 
   useEffect(() => {
     if (inputRef && needsFocus) {
@@ -21,12 +30,19 @@ const Searcher = ({ filtering, filters, onFilter, onFiltering, property }) => {
     }
   }, [needsFocus, inputRef]);
 
+  const a11yTitle = format({
+    id: 'dataTable.searchBy',
+    messages,
+    values: {
+      property,
+    },
+  });
   return filtering === property ? (
     <Keyboard onEsc={() => onFiltering(undefined)}>
       <Box width={{ min: 'xsmall' }} flex pad={{ horizontal: 'small' }}>
         <TextInput
           name={`search-${property}`}
-          a11yTitle={`Search by ${property}`}
+          a11yTitle={a11yTitle}
           ref={inputRef}
           value={filters[property]}
           onChange={(event) => onFilter(property, event.target.value)}
@@ -47,7 +63,7 @@ const Searcher = ({ filtering, filters, onFilter, onFiltering, property }) => {
         </Box>
       ) : null}
       <Button
-        a11yTitle={`Open search by ${property}`}
+        a11yTitle={a11yTitle}
         icon={
           <FormSearch
             color={normalizeColor(

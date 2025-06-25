@@ -4161,8 +4161,8 @@ exports[`Data should render property label and return property value to view whe
               >
                 <label
                   class="c6"
-                  for="data-selectMultiple"
-                  id="data-selectMultiple__label"
+                  for="data-selectMultiple__input"
+                  id="data-selectMultiple__input__label"
                 >
                   SelectMultiple Name
                 </label>
@@ -4237,8 +4237,8 @@ exports[`Data should render property label and return property value to view whe
               >
                 <label
                   class="c6"
-                  for="data-selectMultipleSimple"
-                  id="data-selectMultipleSimple__label"
+                  for="data-selectMultipleSimple__input"
+                  id="data-selectMultipleSimple__input__label"
                 >
                   SelectMultiple Simple Name
                 </label>

@@ -5802,6 +5802,7 @@ exports[`DataTable groupBy 0 value 1`] = `
             style="height: 0px;"
           >
             <button
+              aria-expanded="false"
               aria-label="expand"
               class="c5"
               type="button"
@@ -5883,6 +5884,7 @@ exports[`DataTable groupBy 0 value 1`] = `
             style="height: 0px;"
           >
             <button
+              aria-expanded="false"
               aria-label="expand"
               class="c5"
               type="button"
@@ -6326,6 +6328,7 @@ exports[`DataTable groupBy 1`] = `
             style="height: 0px;"
           >
             <button
+              aria-expanded="false"
               aria-label="expand"
               class="c5"
               type="button"
@@ -6393,6 +6396,7 @@ exports[`DataTable groupBy 1`] = `
             style="height: 0px;"
           >
             <button
+              aria-expanded="false"
               aria-label="expand"
               class="c5"
               type="button"
@@ -6449,6 +6453,7 @@ exports[`DataTable groupBy 1`] = `
             style="height: 0px;"
           >
             <button
+              aria-expanded="false"
               aria-label="expand"
               class="c5"
               type="button"
@@ -6520,6 +6525,7 @@ exports[`DataTable groupBy 2`] = `
             style="height: 0px;"
           >
             <button
+              aria-expanded="false"
               aria-label="expand"
               class="StyledButton-sc-323bzc-0 dxVqvw"
               type="button"
@@ -6587,6 +6593,7 @@ exports[`DataTable groupBy 2`] = `
             style="height: 0px;"
           >
             <button
+              aria-expanded="false"
               aria-label="expand"
               class="StyledButton-sc-323bzc-0 dxVqvw"
               type="button"
@@ -6643,6 +6650,7 @@ exports[`DataTable groupBy 2`] = `
             style="height: 0px;"
           >
             <button
+              aria-expanded="false"
               aria-label="expand"
               class="StyledButton-sc-323bzc-0 dxVqvw"
               type="button"
@@ -7011,6 +7019,7 @@ exports[`DataTable groupBy expand 1`] = `
             style="height: 0px;"
           >
             <button
+              aria-expanded="false"
               aria-label="expand"
               class="c5"
               type="button"
@@ -7078,6 +7087,7 @@ exports[`DataTable groupBy expand 1`] = `
             style="height: 0px;"
           >
             <button
+              aria-expanded="true"
               aria-label="collapse"
               class="c5"
               type="button"
@@ -7230,6 +7240,7 @@ exports[`DataTable groupBy expand 1`] = `
             style="height: 0px;"
           >
             <button
+              aria-expanded="false"
               aria-label="expand"
               class="c5"
               type="button"
@@ -7550,6 +7561,7 @@ exports[`DataTable groupBy property 1`] = `
             style="height: 0px;"
           >
             <button
+              aria-expanded="false"
               aria-label="expand"
               class="c5"
               type="button"
@@ -7617,6 +7629,7 @@ exports[`DataTable groupBy property 1`] = `
             style="height: 0px;"
           >
             <button
+              aria-expanded="false"
               aria-label="expand"
               class="c5"
               type="button"
@@ -7673,6 +7686,7 @@ exports[`DataTable groupBy property 1`] = `
             style="height: 0px;"
           >
             <button
+              aria-expanded="false"
               aria-label="expand"
               class="c5"
               type="button"
@@ -7744,6 +7758,7 @@ exports[`DataTable groupBy property 2`] = `
             style="height: 0px;"
           >
             <button
+              aria-expanded="false"
               aria-label="expand"
               class="StyledButton-sc-323bzc-0 dxVqvw"
               type="button"
@@ -7811,6 +7826,7 @@ exports[`DataTable groupBy property 2`] = `
             style="height: 0px;"
           >
             <button
+              aria-expanded="false"
               aria-label="expand"
               class="StyledButton-sc-323bzc-0 dxVqvw"
               type="button"
@@ -7867,6 +7883,7 @@ exports[`DataTable groupBy property 2`] = `
             style="height: 0px;"
           >
             <button
+              aria-expanded="false"
               aria-label="expand"
               class="StyledButton-sc-323bzc-0 dxVqvw"
               type="button"
@@ -8360,6 +8377,7 @@ exports[`DataTable groupBy toggle 2`] = `
             style="height: 0px;"
           >
             <button
+              aria-expanded="false"
               aria-label="expand"
               class="c2"
               type="button"
@@ -8611,6 +8629,7 @@ exports[`DataTable groupBy toggle 2`] = `
             style="height: 0px;"
           >
             <button
+              aria-expanded="false"
               aria-label="expand"
               class="c3"
               type="button"
@@ -8667,6 +8686,7 @@ exports[`DataTable groupBy toggle 2`] = `
             style="height: 0px;"
           >
             <button
+              aria-expanded="false"
               aria-label="expand"
               class="c3"
               type="button"
@@ -9392,6 +9412,7 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
             style="height: 0px;"
           >
             <button
+              aria-expanded="false"
               aria-label="expand"
               class="c5"
               type="button"
@@ -9496,6 +9517,7 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
             style="height: 0px;"
           >
             <button
+              aria-expanded="true"
               aria-label="collapse"
               class="c5"
               type="button"
@@ -9747,6 +9769,7 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
             style="height: 0px;"
           >
             <button
+              aria-expanded="false"
               aria-label="expand"
               class="c5"
               type="button"
@@ -10194,6 +10217,7 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
             style="height: 0px;"
           >
             <button
+              aria-expanded="false"
               aria-label="expand"
               class="c5"
               type="button"
@@ -10298,6 +10322,7 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
             style="height: 0px;"
           >
             <button
+              aria-expanded="false"
               aria-label="expand"
               class="c5"
               type="button"
@@ -10390,6 +10415,7 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
             style="height: 0px;"
           >
             <button
+              aria-expanded="false"
               aria-label="expand"
               class="c5"
               type="button"
@@ -10857,6 +10883,7 @@ exports[`DataTable onSelect + groupBy should select all items within a group 1`]
             style="height: 0px;"
           >
             <button
+              aria-expanded="false"
               aria-label="expand"
               class="c5"
               type="button"
@@ -10961,6 +10988,7 @@ exports[`DataTable onSelect + groupBy should select all items within a group 1`]
             style="height: 0px;"
           >
             <button
+              aria-expanded="false"
               aria-label="expand"
               class="c5"
               type="button"
@@ -11053,6 +11081,7 @@ exports[`DataTable onSelect + groupBy should select all items within a group 1`]
             style="height: 0px;"
           >
             <button
+              aria-expanded="false"
               aria-label="expand"
               class="c5"
               type="button"
@@ -11491,6 +11520,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 1`
             style="height: 0px;"
           >
             <button
+              aria-expanded="false"
               aria-label="expand"
               class="c5"
               type="button"
@@ -11584,6 +11614,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 1`
             style="height: 0px;"
           >
             <button
+              aria-expanded="false"
               aria-label="expand"
               class="c5"
               type="button"
@@ -11665,6 +11696,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 1`
             style="height: 0px;"
           >
             <button
+              aria-expanded="false"
               aria-label="expand"
               class="c5"
               type="button"
@@ -11761,6 +11793,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 2`
             style="height: 0px;"
           >
             <button
+              aria-expanded="false"
               aria-label="expand"
               class="StyledButton-sc-323bzc-0 dxVqvw"
               type="button"
@@ -11889,6 +11922,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 2`
             style="height: 0px;"
           >
             <button
+              aria-expanded="false"
               aria-label="expand"
               class="StyledButton-sc-323bzc-0 dxVqvw"
               type="button"
@@ -12005,6 +12039,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 2`
             style="height: 0px;"
           >
             <button
+              aria-expanded="false"
               aria-label="expand"
               class="StyledButton-sc-323bzc-0 dxVqvw"
               type="button"
@@ -12136,6 +12171,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 3`
             style="height: 0px;"
           >
             <button
+              aria-expanded="false"
               aria-label="expand"
               class="StyledButton-sc-323bzc-0 dxVqvw"
               type="button"
@@ -12229,6 +12265,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 3`
             style="height: 0px;"
           >
             <button
+              aria-expanded="false"
               aria-label="expand"
               class="StyledButton-sc-323bzc-0 dxVqvw"
               type="button"
@@ -12310,6 +12347,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 3`
             style="height: 0px;"
           >
             <button
+              aria-expanded="false"
               aria-label="expand"
               class="StyledButton-sc-323bzc-0 dxVqvw"
               type="button"
@@ -13939,6 +13977,7 @@ exports[`DataTable onSort 2`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRowHeader-sc-xrlyjm-3 fgxpmX"
       >
         <th
+          aria-sort="ascending"
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 leSjT StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 dvuoDz"
           scope="col"
         >
@@ -14009,7 +14048,7 @@ exports[`DataTable onSort 2`] = `
 }
 
 <svg
-                  aria-label="FormUp"
+                  aria-label="ascending"
                   class="c0"
                   viewBox="0 0 24 24"
                 >
@@ -14363,6 +14402,7 @@ exports[`DataTable onSort external 1`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
       >
         <th
+          aria-sort="ascending"
           class="c3 "
           scope="col"
         >
@@ -14385,7 +14425,7 @@ exports[`DataTable onSort external 1`] = `
                   class="c9"
                 />
                 <svg
-                  aria-label="FormUp"
+                  aria-label="ascending"
                   class="c10"
                   viewBox="0 0 24 24"
                 >
@@ -14540,6 +14580,7 @@ exports[`DataTable onSort external 2`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRowHeader-sc-xrlyjm-3 fgxpmX"
       >
         <th
+          aria-sort="descending"
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 leSjT StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 dvuoDz"
           scope="col"
         >
@@ -14598,7 +14639,7 @@ exports[`DataTable onSort external 2`] = `
 }
 
 <svg
-                  aria-label="FormDown"
+                  aria-label="descending"
                   class="c0"
                   viewBox="0 0 24 24"
                 >
@@ -15109,6 +15150,7 @@ exports[`DataTable onUpdate groupBy.onSelect 1`] = `
             style="height: 0px;"
           >
             <button
+              aria-expanded="false"
               aria-label="expand"
               class="c4"
               type="button"
@@ -15227,6 +15269,7 @@ exports[`DataTable onUpdate groupBy.onSelect 1`] = `
             style="height: 0px;"
           >
             <button
+              aria-expanded="false"
               aria-label="expand"
               class="c4"
               type="button"
@@ -15326,6 +15369,7 @@ exports[`DataTable onUpdate groupBy.onSelect 1`] = `
             style="height: 0px;"
           >
             <button
+              aria-expanded="false"
               aria-label="expand"
               class="c4"
               type="button"
@@ -15414,6 +15458,7 @@ exports[`DataTable onUpdate groupBy.onSelect 1`] = `
             style="height: 0px;"
           >
             <button
+              aria-expanded="false"
               aria-label="expand"
               class="c4"
               type="button"
@@ -15502,6 +15547,7 @@ exports[`DataTable onUpdate groupBy.onSelect 1`] = `
             style="height: 0px;"
           >
             <button
+              aria-expanded="false"
               aria-label="expand"
               class="c4"
               type="button"
@@ -20105,6 +20151,7 @@ exports[`DataTable rowDetails 1`] = `
             style="height: 0px;"
           >
             <button
+              aria-expanded="false"
               aria-label="expand"
               class="c10"
               type="button"
@@ -20167,6 +20214,7 @@ exports[`DataTable rowDetails 1`] = `
             style="height: 0px;"
           >
             <button
+              aria-expanded="true"
               aria-label="collapse"
               class="c10"
               type="button"
@@ -20243,6 +20291,7 @@ exports[`DataTable rowDetails 1`] = `
             style="height: 0px;"
           >
             <button
+              aria-expanded="false"
               aria-label="expand"
               class="c10"
               type="button"
@@ -20305,6 +20354,7 @@ exports[`DataTable rowDetails 1`] = `
             style="height: 0px;"
           >
             <button
+              aria-expanded="false"
               aria-label="expand"
               class="c10"
               type="button"
@@ -20670,6 +20720,7 @@ exports[`DataTable rowDetails condtional 1`] = `
             style="height: 0px;"
           >
             <button
+              aria-expanded="false"
               aria-label="expand"
               class="c10"
               type="button"
@@ -20732,6 +20783,7 @@ exports[`DataTable rowDetails condtional 1`] = `
             style="height: 0px;"
           >
             <button
+              aria-expanded="true"
               aria-label="collapse"
               class="c10"
               type="button"
@@ -20811,6 +20863,7 @@ exports[`DataTable rowDetails condtional 1`] = `
             style="height: 0px;"
           >
             <button
+              aria-expanded="false"
               aria-label="expand"
               class="c10"
               type="button"
@@ -20873,6 +20926,7 @@ exports[`DataTable rowDetails condtional 1`] = `
             style="height: 0px;"
           >
             <button
+              aria-expanded="false"
               aria-label="expand"
               class="c10"
               type="button"
@@ -21503,6 +21557,7 @@ exports[`DataTable rowProps on group header rows 1`] = `
             style="height: 0px;"
           >
             <button
+              aria-expanded="false"
               aria-label="expand"
               class="c5"
               type="button"
@@ -21570,6 +21625,7 @@ exports[`DataTable rowProps on group header rows 1`] = `
             style="height: 0px;"
           >
             <button
+              aria-expanded="false"
               aria-label="expand"
               class="c5"
               type="button"
@@ -22122,7 +22178,7 @@ exports[`DataTable search 2`] = `
                 class="c1"
               >
                 <input
-                  aria-label="Search by a"
+                  aria-label="Open search by a"
                   autocomplete="off"
                   class="c2"
                   name="search-a"
@@ -23565,6 +23621,7 @@ exports[`DataTable should apply custom theme for groupHeader 1`] = `
               style="height: 0px;"
             >
               <button
+                aria-expanded="false"
                 aria-label="expand"
                 class="c5"
                 type="button"
@@ -23632,6 +23689,7 @@ exports[`DataTable should apply custom theme for groupHeader 1`] = `
               style="height: 0px;"
             >
               <button
+                aria-expanded="false"
                 aria-label="expand"
                 class="c5"
                 type="button"
@@ -23688,6 +23746,7 @@ exports[`DataTable should apply custom theme for groupHeader 1`] = `
               style="height: 0px;"
             >
               <button
+                aria-expanded="false"
                 aria-label="expand"
                 class="c5"
                 type="button"
@@ -27115,6 +27174,7 @@ exports[`DataTable should apply theme for selected row detail parent only 1`] = 
               style="height: 0px;"
             >
               <button
+                aria-expanded="false"
                 aria-label="expand"
                 class="c18"
                 type="button"
@@ -27224,6 +27284,7 @@ exports[`DataTable should apply theme for selected row detail parent only 1`] = 
               style="height: 0px;"
             >
               <button
+                aria-expanded="true"
                 aria-label="collapse"
                 class="c18"
                 type="button"
@@ -27793,6 +27854,7 @@ exports[`DataTable should apply theme for selected row group 1`] = `
               style="height: 0px;"
             >
               <button
+                aria-expanded="false"
                 aria-label="expand"
                 class="c5"
                 type="button"
@@ -27864,6 +27926,7 @@ exports[`DataTable should apply theme for selected row group 1`] = `
               style="height: 0px;"
             >
               <button
+                aria-expanded="true"
                 aria-label="collapse"
                 class="c5"
                 type="button"
@@ -28157,6 +28220,7 @@ exports[`DataTable should apply theme for selected row group 1`] = `
               style="height: 0px;"
             >
               <button
+                aria-expanded="true"
                 aria-label="collapse"
                 class="c5"
                 type="button"
@@ -28399,6 +28463,7 @@ exports[`DataTable should apply theme for selected row group 1`] = `
               style="height: 0px;"
             >
               <button
+                aria-expanded="false"
                 aria-label="expand"
                 class="c5"
                 type="button"
@@ -45374,6 +45439,7 @@ exports[`DataTable sort 1`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
       >
         <th
+          aria-sort="ascending"
           class="c3 "
           scope="col"
         >
@@ -45396,7 +45462,7 @@ exports[`DataTable sort 1`] = `
                   class="c9"
                 />
                 <svg
-                  aria-label="FormUp"
+                  aria-label="ascending"
                   class="c10"
                   viewBox="0 0 24 24"
                 >
@@ -45822,6 +45888,7 @@ exports[`DataTable sort controlled 1`] = `
           class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
         >
           <th
+            aria-sort="ascending"
             class="c4 "
             scope="col"
           >
@@ -45844,7 +45911,7 @@ exports[`DataTable sort controlled 1`] = `
                     class="c10"
                   />
                   <svg
-                    aria-label="FormUp"
+                    aria-label="ascending"
                     class="c11"
                     viewBox="0 0 24 24"
                   >
@@ -46271,6 +46338,7 @@ exports[`DataTable sort controlled 2`] = `
           class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
         >
           <th
+            aria-sort="descending"
             class="c4 "
             scope="col"
           >
@@ -46293,7 +46361,7 @@ exports[`DataTable sort controlled 2`] = `
                     class="c10"
                   />
                   <svg
-                    aria-label="FormDown"
+                    aria-label="descending"
                     class="c11"
                     viewBox="0 0 24 24"
                   >
@@ -46648,6 +46716,7 @@ exports[`DataTable sort external 1`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
       >
         <th
+          aria-sort="ascending"
           class="c3 "
           scope="col"
         >
@@ -46670,7 +46739,7 @@ exports[`DataTable sort external 1`] = `
                   class="c9"
                 />
                 <svg
-                  aria-label="FormUp"
+                  aria-label="ascending"
                   class="c10"
                   viewBox="0 0 24 24"
                 >
@@ -47047,6 +47116,7 @@ exports[`DataTable sort nested object 1`] = `
           </div>
         </th>
         <th
+          aria-sort="descending"
           class="c3 "
           scope="col"
         >
@@ -47069,7 +47139,7 @@ exports[`DataTable sort nested object 1`] = `
                   class="c9"
                 />
                 <svg
-                  aria-label="FormDown"
+                  aria-label="descending"
                   class="c10"
                   viewBox="0 0 24 24"
                 >
@@ -47423,6 +47493,7 @@ exports[`DataTable sort nested object with onSort 1`] = `
           </div>
         </th>
         <th
+          aria-sort="descending"
           class="c3 "
           scope="col"
         >
@@ -47445,7 +47516,7 @@ exports[`DataTable sort nested object with onSort 1`] = `
                   class="c9"
                 />
                 <svg
-                  aria-label="FormDown"
+                  aria-label="descending"
                   class="c10"
                   viewBox="0 0 24 24"
                 >
@@ -48039,6 +48110,7 @@ exports[`DataTable sort null data 2`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRowHeader-sc-xrlyjm-3 fgxpmX"
       >
         <th
+          aria-sort="ascending"
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 leSjT StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 dvuoDz"
           scope="col"
         >
@@ -48109,7 +48181,7 @@ exports[`DataTable sort null data 2`] = `
 }
 
 <svg
-                  aria-label="FormUp"
+                  aria-label="ascending"
                   class="c0"
                   viewBox="0 0 24 24"
                 >
@@ -48485,6 +48557,7 @@ exports[`DataTable sort null data 3`] = `
           </div>
         </th>
         <th
+          aria-sort="ascending"
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 leSjT StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 dvuoDz"
           scope="col"
         >
@@ -48555,7 +48628,7 @@ exports[`DataTable sort null data 3`] = `
 }
 
 <svg
-                  aria-label="FormUp"
+                  aria-label="ascending"
                   class="c0"
                   viewBox="0 0 24 24"
                 >
@@ -48908,6 +48981,7 @@ exports[`DataTable sort null data 4`] = `
           </div>
         </th>
         <th
+          aria-sort="ascending"
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 leSjT StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 dvuoDz"
           scope="col"
         >
@@ -48978,7 +49052,7 @@ exports[`DataTable sort null data 4`] = `
 }
 
 <svg
-                  aria-label="FormUp"
+                  aria-label="ascending"
                   class="c0"
                   viewBox="0 0 24 24"
                 >
@@ -49556,6 +49630,7 @@ exports[`DataTable sortable 2`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRowHeader-sc-xrlyjm-3 fgxpmX"
       >
         <th
+          aria-sort="ascending"
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 leSjT StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 dvuoDz"
           scope="col"
         >
@@ -49626,7 +49701,7 @@ exports[`DataTable sortable 2`] = `
 }
 
 <svg
-                  aria-label="FormUp"
+                  aria-label="ascending"
                   class="c0"
                   viewBox="0 0 24 24"
                 >

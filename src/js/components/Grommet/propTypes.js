@@ -76,11 +76,24 @@ if (process.env.NODE_ENV !== 'production') {
           total: PropTypes.string,
           totalSingle: PropTypes.string,
         }),
+        dataTable: PropTypes.shape({
+          ascending: PropType.string,
+          descending: PropType.string,
+          rows: PropTypes.string,
+          rowsChanged: PropTypes.string,
+          rowsSingle: PropTypes.string,
+          searchBy: PropType.string,
+          total: PropTypes.string,
+          totalSingle: PropTypes.string,
+        }),
         dataTableColumns: PropTypes.shape({
           open: PropTypes.string,
           order: PropTypes.string,
+          pinned: PropTypes.string,
           select: PropTypes.string,
           tip: PropTypes.string,
+          selectAria: PropTypes.string,
+          orderAria: PropTypes.string,
         }),
         dataTableGroupBy: PropTypes.shape({
           clear: PropTypes.string,
@@ -119,6 +132,9 @@ if (process.env.NODE_ENV !== 'production') {
             }),
           }),
         }),
+        list: PropTypes.shape({
+          pinned: PropTypes.string,
+        }),
         menu: PropTypes.shape({
           openMenu: PropTypes.string,
           closeMenu: PropTypes.string,
@@ -140,6 +156,9 @@ if (process.env.NODE_ENV !== 'production') {
             singular: PropTypes.string,
             plural: PropTypes.string,
           }),
+        }),
+        notifcation: PropTypes.shape({
+          close: PropTypes.string,
         }),
         pagination: PropTypes.shape({
           stepLabel: PropTypes.string,

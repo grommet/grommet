@@ -3059,7 +3059,7 @@ exports[`DataFilters should display all filter options regardless of result set 
   padding-bottom: 12px;
 }
 
-.c20 {
+.c19 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -3210,10 +3210,6 @@ exports[`DataFilters should display all filter options regardless of result set 
   padding: 0;
 }
 
-.c19:focus {
-  outline: none;
-}
-
 @media only screen and (max-width: 768px) {
   .c5 {
     margin-bottom: 6px;
@@ -3272,20 +3268,20 @@ exports[`DataFilters should display all filter options regardless of result set 
 }
 
 @media only screen and (max-width: 768px) {
-  .c20 {
+  .c19 {
     border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   }
 }
 
 @media only screen and (max-width: 768px) {
-  .c20 {
+  .c19 {
     padding-left: 12px;
     padding-right: 12px;
   }
 }
 
 @media only screen and (max-width: 768px) {
-  .c20 {
+  .c19 {
     padding-top: 6px;
     padding-bottom: 6px;
   }
@@ -3457,12 +3453,12 @@ exports[`DataFilters should display all filter options regardless of result set 
         role="list"
       >
         <li
-          class="c18 c19"
+          class="c18 "
         >
           a
         </li>
         <li
-          class="c20 c19"
+          class="c19 "
         >
           b
         </li>
