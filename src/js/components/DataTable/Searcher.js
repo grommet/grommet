@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useRef } from 'react';
+import React, { useContext, useEffect, useRef, useState } from 'react';
 
 import { FormSearch } from 'grommet-icons/icons/FormSearch';
 
@@ -21,7 +21,9 @@ const Searcher = ({
 }) => {
   const { theme } = useThemeValue();
   const inputRef = useRef();
+  const buttonRef = useRef();
   const needsFocus = filtering === property;
+  const [buttonNeedsFocus, setButtonNeedsFocus] = useState(false);
   const { format } = useContext(MessageContext);
 
   useEffect(() => {
@@ -29,6 +31,14 @@ const Searcher = ({
       inputRef.current.focus();
     }
   }, [needsFocus, inputRef]);
+
+  // Focus the button after closing the search
+  useEffect(() => {
+    if (buttonNeedsFocus && buttonRef.current) {
+      buttonRef.current.focus();
+      setButtonNeedsFocus(false);
+    }
+  }, [buttonNeedsFocus]);
 
   const a11yTitle = format({
     id: 'dataTable.searchBy',
@@ -38,7 +48,12 @@ const Searcher = ({
     },
   });
   return filtering === property ? (
-    <Keyboard onEsc={() => onFiltering(undefined)}>
+    <Keyboard
+      onEsc={() => {
+        onFiltering(undefined);
+        setButtonNeedsFocus(true);
+      }}
+    >
       <Box width={{ min: 'xsmall' }} flex pad={{ horizontal: 'small' }}>
         <TextInput
           name={`search-${property}`}
@@ -63,6 +78,7 @@ const Searcher = ({
         </Box>
       ) : null}
       <Button
+        ref={buttonRef}
         a11yTitle={a11yTitle}
         icon={
           <FormSearch
