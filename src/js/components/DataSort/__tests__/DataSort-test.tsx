@@ -105,7 +105,9 @@ describe('DataSort', () => {
       </Grommet>,
     );
 
-    const propButton = screen.getByRole('button', { name: 'Sort by' });
+    const propButton = screen.getByRole('button', {
+      name: 'Sort by Open Drop',
+    });
     fireEvent.click(propButton);
     const drop = await waitFor(() => screen.getByRole('listbox'));
 

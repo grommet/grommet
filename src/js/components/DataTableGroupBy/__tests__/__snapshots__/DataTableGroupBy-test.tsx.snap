@@ -227,7 +227,6 @@ exports[`DataTableGroupBy renders 1`] = `
         aria-expanded="false"
         aria-haspopup="listbox"
         aria-label="Group by"
-        aria-labelledby="data--groupby__input__label"
         class="c3 c4"
         id="data--groupby"
         type="button"

@@ -286,8 +286,13 @@ const Select = forwardRef(
     const iconColor = getIconColor(theme);
 
     let ariaLabelledBy;
-    if (formContext?.useFormField({})?.inForm && id && !ariaLabel) {
-      ariaLabelledBy = `${id}__input__label`;
+    if (
+      formContext?.useFormField({})?.inForm &&
+      id &&
+      !ariaLabel &&
+      !placeholder
+    ) {
+      ariaLabelledBy = `${id}__input__label ${id}`;
     }
 
     return (

@@ -128,9 +128,15 @@ const SelectMultiple = forwardRef(
     });
 
     let ariaLabelledBy;
-    if (formContext?.useFormField({})?.inForm && id && !ariaLabel) {
-      ariaLabelledBy = `${id}__input__label`;
+    if (
+      formContext?.useFormField({})?.inForm &&
+      id &&
+      !ariaLabel &&
+      !placeholder
+    ) {
+      ariaLabelledBy = `${id}__input__label ${id}`;
     }
+
     // normalizedValue is the value mapped with any valueKey applied
     // When the options array contains objects, this property indicates how
     // to retrieve the value of each option.
