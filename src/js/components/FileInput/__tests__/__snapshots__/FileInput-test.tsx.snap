@@ -1531,7 +1531,7 @@ exports[`FileInput disabled with file selected 1`] = `
       <label
         class="c2"
         for="fileInput"
-        id="fileInput__label"
+        id="grommet-fileInput__label"
       >
         File input with max size
       </label>

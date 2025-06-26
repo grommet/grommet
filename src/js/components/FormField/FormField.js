@@ -649,8 +649,8 @@ const FormField = forwardRef(
             {label && component !== CheckBox && (
               <Text
                 as="label"
+                id={htmlFor ? `grommet-${htmlFor}__label` : undefined}
                 htmlFor={htmlFor}
-                id={htmlFor ? `${htmlFor}__label` : undefined}
                 {...labelStyle}
               >
                 {label}

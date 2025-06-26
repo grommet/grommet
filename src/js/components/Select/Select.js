@@ -292,7 +292,7 @@ const Select = forwardRef(
       !ariaLabel &&
       !placeholder
     ) {
-      ariaLabelledBy = `${id}__input__label ${id}`;
+      ariaLabelledBy = `grommet-${id}__input__label ${id}`;
     }
 
     return (

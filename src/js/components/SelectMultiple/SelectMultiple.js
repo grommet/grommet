@@ -134,7 +134,7 @@ const SelectMultiple = forwardRef(
       !ariaLabel &&
       !placeholder
     ) {
-      ariaLabelledBy = `${id}__input__label ${id}`;
+      ariaLabelledBy = `grommet-${id}__input__label ${id}`;
     }
 
     // normalizedValue is the value mapped with any valueKey applied
