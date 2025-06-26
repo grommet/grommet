@@ -40,6 +40,7 @@ const Select = forwardRef(
     {
       a11yTitle,
       'aria-label': ariaLabel,
+      'aria-labelledby': ariaLabelledByProp,
       alignSelf,
       children,
       clear = false,
@@ -284,6 +285,16 @@ const Select = forwardRef(
 
     const iconColor = getIconColor(theme);
 
+    let ariaLabelledBy;
+    if (
+      formContext?.useFormField({})?.inForm &&
+      id &&
+      !ariaLabel &&
+      !placeholder
+    ) {
+      ariaLabelledBy = `grommet-${id}__input__label ${id}`;
+    }
+
     return (
       <Keyboard onDown={onRequestOpen} onUp={onRequestOpen}>
         <StyledSelectDropButton
@@ -300,6 +311,7 @@ const Select = forwardRef(
               : ''
           }`}
           aria-expanded={Boolean(open)}
+          aria-labelledby={ariaLabelledByProp || ariaLabelledBy}
           aria-haspopup="listbox"
           id={id}
           disabled={disabled === true || undefined}

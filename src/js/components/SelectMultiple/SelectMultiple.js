@@ -50,6 +50,7 @@ const SelectMultiple = forwardRef(
     {
       a11yTitle,
       'aria-label': ariaLabel,
+      'aria-labelledby': ariaLabelledByProp,
       alignSelf,
       children,
       defaultValue,
@@ -125,6 +126,16 @@ const SelectMultiple = forwardRef(
       value: valueProp,
       initialValue: defaultValue || '',
     });
+
+    let ariaLabelledBy;
+    if (
+      formContext?.useFormField({})?.inForm &&
+      id &&
+      !ariaLabel &&
+      !placeholder
+    ) {
+      ariaLabelledBy = `grommet-${id}__input__label ${id}`;
+    }
 
     // normalizedValue is the value mapped with any valueKey applied
     // When the options array contains objects, this property indicates how
@@ -546,6 +557,7 @@ const SelectMultiple = forwardRef(
               dropTarget={dropTarget}
               alignSelf={alignSelf}
               tabIndex="0"
+              aria-labelledby={ariaLabelledByProp || ariaLabelledBy}
             >
               <Box
                 align="center"
