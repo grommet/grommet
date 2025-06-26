@@ -70,7 +70,7 @@ const CheckBoxGroup = forwardRef(
 
     let ariaLabelledBy;
     if (formContext?.useFormField({})?.inForm && id && !ariaLabelProp) {
-      ariaLabelledBy = `${id}__label`;
+      ariaLabelledBy = `grommet-${id}__label`;
     }
 
     return (

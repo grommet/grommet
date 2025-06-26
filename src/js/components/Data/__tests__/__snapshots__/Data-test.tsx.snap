@@ -4162,7 +4162,7 @@ exports[`Data should render property label and return property value to view whe
                 <label
                   class="c6"
                   for="data-selectMultiple__input"
-                  id="data-selectMultiple__input__label"
+                  id="grommet-data-selectMultiple__input__label"
                 >
                   SelectMultiple Name
                 </label>
@@ -4238,7 +4238,7 @@ exports[`Data should render property label and return property value to view whe
                 <label
                   class="c6"
                   for="data-selectMultipleSimple__input"
-                  id="data-selectMultipleSimple__input__label"
+                  id="grommet-data-selectMultipleSimple__input__label"
                 >
                   SelectMultiple Simple Name
                 </label>
@@ -4368,7 +4368,7 @@ exports[`Data should render property label and return property value to view whe
                 <label
                   class="c6"
                   for="data-checkBoxGroup"
-                  id="data-checkBoxGroup__label"
+                  id="grommet-data-checkBoxGroup__label"
                 >
                   CheckBoxGroup Name
                 </label>
@@ -4376,7 +4376,7 @@ exports[`Data should render property label and return property value to view whe
                   class="c27 "
                 >
                   <div
-                    aria-labelledby="data-checkBoxGroup__label"
+                    aria-labelledby="grommet-data-checkBoxGroup__label"
                     class="c28 StyledCheckBoxGroup-sc-2nhc5d-0"
                     id="data-checkBoxGroup"
                     role="group"
