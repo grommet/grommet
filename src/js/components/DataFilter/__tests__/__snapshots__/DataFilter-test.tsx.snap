@@ -724,6 +724,7 @@ exports[`DataFilter children 1`] = `
               <label
                 class="c6"
                 for="data-name"
+                id="grommet-data-name__label"
               >
                 name
               </label>
@@ -1057,6 +1058,7 @@ exports[`DataFilter options 1`] = `
               <label
                 class="c6"
                 for="data-name"
+                id="grommet-data-name__label"
               >
                 name
               </label>
@@ -1064,6 +1066,7 @@ exports[`DataFilter options 1`] = `
                 class="c7 "
               >
                 <div
+                  aria-labelledby="grommet-data-name__label"
                   class="c8 StyledCheckBoxGroup-sc-2nhc5d-0"
                   id="data-name"
                   role="group"
@@ -1137,6 +1140,7 @@ exports[`DataFilter options 1`] = `
               <label
                 class="c6"
                 for="data-enabled"
+                id="grommet-data-enabled__label"
               >
                 Enabled
               </label>
@@ -1144,6 +1148,7 @@ exports[`DataFilter options 1`] = `
                 class="c7 "
               >
                 <div
+                  aria-labelledby="grommet-data-enabled__label"
                   class="c8 StyledCheckBoxGroup-sc-2nhc5d-0"
                   id="data-enabled"
                   role="group"
@@ -1196,6 +1201,7 @@ exports[`DataFilter options 1`] = `
               <label
                 class="c6"
                 for="data-type.name"
+                id="grommet-data-type.name__label"
               >
                 Type
               </label>
@@ -1203,6 +1209,7 @@ exports[`DataFilter options 1`] = `
                 class="c7 "
               >
                 <div
+                  aria-labelledby="grommet-data-type.name__label"
                   class="c8 StyledCheckBoxGroup-sc-2nhc5d-0"
                   id="data-type.name"
                   role="group"
@@ -1594,6 +1601,7 @@ exports[`DataFilter range Data 1`] = `
               <label
                 class="c6"
                 for="data-rating"
+                id="grommet-data-rating__label"
               >
                 Rating
               </label>
@@ -2019,6 +2027,7 @@ exports[`DataFilter range prop 1`] = `
               <label
                 class="c6"
                 for="data-rating"
+                id="grommet-data-rating__label"
               >
                 rating
               </label>
@@ -2537,6 +2546,7 @@ exports[`DataFilter renders 1`] = `
               <label
                 class="c6"
                 for="data-name"
+                id="grommet-data-name__label"
               >
                 name
               </label>
@@ -2544,6 +2554,7 @@ exports[`DataFilter renders 1`] = `
                 class="c7 "
               >
                 <div
+                  aria-labelledby="grommet-data-name__label"
                   class="c8 StyledCheckBoxGroup-sc-2nhc5d-0"
                   id="data-name"
                   role="group"
@@ -2617,6 +2628,7 @@ exports[`DataFilter renders 1`] = `
               <label
                 class="c6"
                 for="data-enabled"
+                id="grommet-data-enabled__label"
               >
                 enabled
               </label>
@@ -2624,6 +2636,7 @@ exports[`DataFilter renders 1`] = `
                 class="c7 "
               >
                 <div
+                  aria-labelledby="grommet-data-enabled__label"
                   class="c8 StyledCheckBoxGroup-sc-2nhc5d-0"
                   id="data-enabled"
                   role="group"
@@ -2676,6 +2689,7 @@ exports[`DataFilter renders 1`] = `
               <label
                 class="c6"
                 for="data-rating"
+                id="grommet-data-rating__label"
               >
                 rating
               </label>
