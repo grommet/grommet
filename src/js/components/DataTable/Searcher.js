@@ -14,6 +14,7 @@ import { useThemeValue } from '../../utils/useThemeValue';
 const Searcher = ({
   filtering,
   filters,
+  focusIndicator,
   messages,
   onFilter,
   onFiltering,
@@ -89,6 +90,7 @@ const Searcher = ({
           />
         }
         hoverIndicator
+        focusIndicator={focusIndicator}
         onClick={() =>
           onFiltering(filtering === property ? undefined : property)
         }
