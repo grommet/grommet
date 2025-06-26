@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useRef } from 'react';
+import React, { useContext, useEffect, useRef, useState } from 'react';
 import { FormSearch } from 'grommet-icons/icons/FormSearch';
 import { Box } from '../Box';
 import { Button } from '../Button';
@@ -18,7 +18,11 @@ var Searcher = function Searcher(_ref) {
   var _useThemeValue = useThemeValue(),
     theme = _useThemeValue.theme;
   var inputRef = useRef();
+  var buttonRef = useRef();
   var needsFocus = filtering === property;
+  var _useState = useState(false),
+    buttonNeedsFocus = _useState[0],
+    setButtonNeedsFocus = _useState[1];
   var _useContext = useContext(MessageContext),
     format = _useContext.format;
   useEffect(function () {
@@ -26,6 +30,14 @@ var Searcher = function Searcher(_ref) {
       inputRef.current.focus();
     }
   }, [needsFocus, inputRef]);
+
+  // Focus the button after closing the search
+  useEffect(function () {
+    if (buttonNeedsFocus && buttonRef.current) {
+      buttonRef.current.focus();
+      setButtonNeedsFocus(false);
+    }
+  }, [buttonNeedsFocus]);
   var a11yTitle = format({
     id: 'dataTable.searchBy',
     messages: messages,
@@ -35,7 +47,8 @@ var Searcher = function Searcher(_ref) {
   });
   return filtering === property ? /*#__PURE__*/React.createElement(Keyboard, {
     onEsc: function onEsc() {
-      return onFiltering(undefined);
+      onFiltering(undefined);
+      setButtonNeedsFocus(true);
     }
   }, /*#__PURE__*/React.createElement(Box, {
     width: {
@@ -64,6 +77,7 @@ var Searcher = function Searcher(_ref) {
     direction: "row",
     align: "center"
   }, /*#__PURE__*/React.createElement(Text, null, filters[property])) : null, /*#__PURE__*/React.createElement(Button, {
+    ref: buttonRef,
     a11yTitle: a11yTitle,
     icon: /*#__PURE__*/React.createElement(FormSearch, {
       color: normalizeColor(filtering === property ? 'brand' : 'border', theme)

@@ -23,7 +23,11 @@ var Searcher = exports.Searcher = function Searcher(_ref) {
   var _useThemeValue = (0, _useThemeValue2.useThemeValue)(),
     theme = _useThemeValue.theme;
   var inputRef = (0, _react.useRef)();
+  var buttonRef = (0, _react.useRef)();
   var needsFocus = filtering === property;
+  var _useState = (0, _react.useState)(false),
+    buttonNeedsFocus = _useState[0],
+    setButtonNeedsFocus = _useState[1];
   var _useContext = (0, _react.useContext)(_MessageContext.MessageContext),
     format = _useContext.format;
   (0, _react.useEffect)(function () {
@@ -31,6 +35,14 @@ var Searcher = exports.Searcher = function Searcher(_ref) {
       inputRef.current.focus();
     }
   }, [needsFocus, inputRef]);
+
+  // Focus the button after closing the search
+  (0, _react.useEffect)(function () {
+    if (buttonNeedsFocus && buttonRef.current) {
+      buttonRef.current.focus();
+      setButtonNeedsFocus(false);
+    }
+  }, [buttonNeedsFocus]);
   var a11yTitle = format({
     id: 'dataTable.searchBy',
     messages: messages,
@@ -40,7 +52,8 @@ var Searcher = exports.Searcher = function Searcher(_ref) {
   });
   return filtering === property ? /*#__PURE__*/_react["default"].createElement(_Keyboard.Keyboard, {
     onEsc: function onEsc() {
-      return onFiltering(undefined);
+      onFiltering(undefined);
+      setButtonNeedsFocus(true);
     }
   }, /*#__PURE__*/_react["default"].createElement(_Box.Box, {
     width: {
@@ -69,6 +82,7 @@ var Searcher = exports.Searcher = function Searcher(_ref) {
     direction: "row",
     align: "center"
   }, /*#__PURE__*/_react["default"].createElement(_Text.Text, null, filters[property])) : null, /*#__PURE__*/_react["default"].createElement(_Button.Button, {
+    ref: buttonRef,
     a11yTitle: a11yTitle,
     icon: /*#__PURE__*/_react["default"].createElement(_FormSearch.FormSearch, {
       color: (0, _utils.normalizeColor)(filtering === property ? 'brand' : 'border', theme)
