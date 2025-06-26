@@ -2709,8 +2709,8 @@ exports[`Form uncontrolled reset clears select, checkbox, radiobuttongroup 1`] =
     >
       <label
         class="c2"
-        for="test-select"
-        id="test-select__label"
+        for="test-select__input"
+        id="test-select__input__label"
       >
         Select Size
       </label>
@@ -2951,8 +2951,8 @@ exports[`Form uncontrolled reset clears select, checkbox, radiobuttongroup 2`] =
     >
       <label
         class="StyledText-sc-1sadyjn-0 glxzPv"
-        for="test-select"
-        id="test-select__label"
+        for="test-select__input"
+        id="test-select__input__label"
       >
         Select Size
       </label>
