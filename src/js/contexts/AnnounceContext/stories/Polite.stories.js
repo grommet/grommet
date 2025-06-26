@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 
 import { Announce } from 'grommet-icons';
 
@@ -14,6 +14,47 @@ import {
 
 const message = `Thank you for clicking the Announce Button,
 this announcement is being broadcast on the Button's click.`;
+
+const ScreenReaderOnly = () => {
+  useEffect(() => {
+    if (!document.getElementById('live-region')) {
+      const announcer = document.createElement('div');
+      announcer.setAttribute('id', 'live-region');
+      announcer.setAttribute('aria-live', 'polite');
+      announcer.setAttribute('aria-atomic', 'true');
+      announcer.style.position = 'absolute';
+      announcer.style.left = '-9999px';
+      announcer.style.height = '1px';
+      announcer.style.width = '1px';
+      announcer.style.overflow = 'hidden';
+      document.body.appendChild(announcer);
+    }
+  }, []);
+
+  const handleAnnounce = () => {
+    const announcer = document.getElementById('live-region');
+
+    // Clear message
+    announcer.textContent = '';
+
+    // Force reflow
+    void announcer.offsetWidth;
+
+    // Announce new message
+    announcer.textContent =
+      'This is a test announcement triggered by the button click.';
+
+    console.log(
+      'Announcing: This is a test announcement triggered by the button click.',
+    );
+  };
+
+  return (
+    <div style={{ padding: 50 }}>
+      <button onClick={handleAnnounce}>Announce</button>
+    </div>
+  );
+};
 
 const PageContent = ({ mode }) => {
   const announce = useContext(AnnounceContext);
@@ -32,7 +73,6 @@ const PageContent = ({ mode }) => {
       <Button
         label="Announce"
         icon={<Announce />}
-        a11yTitle="Announce button"
         reverse
         onClick={() => {
           announce(message, mode);
@@ -43,11 +83,12 @@ const PageContent = ({ mode }) => {
 };
 
 export const Polite = () => (
-  <Grommet theme={grommet} full>
-    <Box justify="center" align="center" fill>
-      <PageContent mode="polite" role="log" />
-    </Box>
-  </Grommet>
+  // <Grommet theme={grommet} full>
+  //   <Box justify="center" align="center" fill>
+  //     <PageContent mode="polite" role="log" />
+  //   </Box>
+  // </Grommet>
+  <ScreenReaderOnly />
 );
 
 export default {

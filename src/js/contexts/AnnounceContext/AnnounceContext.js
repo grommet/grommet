@@ -20,24 +20,30 @@ const createAnnouncer = () => {
   return announcer;
 };
 
+let announcer;
+
 export const AnnounceContext = React.createContext(
   (message, mode = 'polite', timeout = 500) => {
-    const announcer =
-      document.body.querySelector('#grommet-announcer') || createAnnouncer();
+    if (!announcer) {
+      announcer =
+        document.body.querySelector('#grommet-announcer') || createAnnouncer();
+    }
+
+    console.log('Announcing:', message);
 
     // Clear any existing announcement
     announcer.textContent = '';
+    announcer.setAttribute('aria-live', 'off');
 
-    // Update aria-live before setting content
-    announcer.setAttribute('aria-live', mode);
+    // Force reflow
+    void announcer.offsetWidth;
 
-    // Use requestAnimationFrame to ensure DOM updates are complete
+    // Restore aria-live and set the message
     requestAnimationFrame(() => {
-      // Set content in next frame
+      announcer.setAttribute('aria-live', mode);
       requestAnimationFrame(() => {
         announcer.textContent = message;
 
-        // Clear after timeout
         if (timeout > 0) {
           setTimeout(() => {
             announcer.textContent = '';
