@@ -481,7 +481,6 @@ const FileInput = forwardRef(
                       {((maxSize && file.size > maxSize) ||
                         (maxFile && index >= maxFile)) && (
                         <CircleAlert
-                          tabIndex={0}
                           a11yTitle={format({
                             id: messageId,
                             messages,
