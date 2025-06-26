@@ -1,4 +1,10 @@
-import React, { forwardRef, useContext, useEffect, useState } from 'react';
+import React, {
+  forwardRef,
+  useContext,
+  useEffect,
+  useRef,
+  useState,
+} from 'react';
 import { createPortal } from 'react-dom';
 
 import { useLayoutEffect } from '../../utils/use-isomorphic-layout-effect';
@@ -8,13 +14,35 @@ import { LayerContainer } from './LayerContainer';
 import { animationDuration } from './StyledLayer';
 import { ContainerTargetContext } from '../../contexts/ContainerTargetContext';
 import { LayerPropTypes } from './propTypes';
+import { Keyboard } from '../Keyboard';
 
 const Layer = forwardRef((props, ref) => {
   const { animate, animation, modal, targetChildPosition } = props;
-  const [originalFocusedElement, setOriginalFocusedElement] = useState();
-  useEffect(() => setOriginalFocusedElement(document.activeElement), []);
   const [layerContainer, setLayerContainer] = useState();
   const containerTarget = useContext(ContainerTargetContext);
+
+  const [originalFocusedElement, setOriginalFocusedElement] = useState();
+
+  const focusWithinLayerRef = useRef(false);
+  const lastInputWasKeyboardRef = useRef(false);
+
+  useEffect(() => {
+    setOriginalFocusedElement(document.activeElement);
+  }, []);
+
+  useEffect(() => {
+    const handleFocusIn = (event) => {
+      if (
+        layerContainer?.contains?.(event.target) &&
+        lastInputWasKeyboardRef.current
+      ) {
+        focusWithinLayerRef.current = true;
+      }
+    };
+    document.addEventListener('focusin', handleFocusIn);
+    return () => document.removeEventListener('focusin', handleFocusIn);
+  }, [layerContainer]);
+
   useEffect(
     () =>
       setLayerContainer(getNewContainer(containerTarget, targetChildPosition)),
@@ -25,7 +53,9 @@ const Layer = forwardRef((props, ref) => {
   useLayoutEffect(
     () => () => {
       if (originalFocusedElement) {
-        if (modal !== false && originalFocusedElement.focus) {
+        const shouldRestoreFocus =
+          modal !== false || (modal === false && focusWithinLayerRef.current);
+        if (shouldRestoreFocus && originalFocusedElement.focus) {
           // wait for the fixed positioning to come back to normal
           // see layer styling for reference
           setTimeout(() => originalFocusedElement.focus(), 0);
@@ -37,7 +67,6 @@ const Layer = forwardRef((props, ref) => {
           originalFocusedElement.parentNode.focus();
         }
       }
-
       if (layerContainer) {
         const activeAnimation = animation !== undefined ? animation : animate;
         if (activeAnimation !== false) {
@@ -80,7 +109,17 @@ const Layer = forwardRef((props, ref) => {
   );
 
   return layerContainer
-    ? createPortal(<LayerContainer ref={ref} {...props} />, layerContainer)
+    ? createPortal(
+        <Keyboard
+          target="document"
+          onKeyDown={() => {
+            lastInputWasKeyboardRef.current = true;
+          }}
+        >
+          <LayerContainer ref={ref} {...props} />
+        </Keyboard>,
+        layerContainer,
+      )
     : null;
 });
 
