@@ -382,6 +382,7 @@ const Header = forwardRef(
                     plain
                     column={property}
                     fill="vertical"
+                    focusIndicator={size ? 'inset' : undefined}
                     onClick={onSort(property)}
                     sort={sort}
                     pad={cellProps.pad}
