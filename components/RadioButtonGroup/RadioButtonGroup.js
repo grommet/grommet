@@ -9,17 +9,21 @@ var _Box = require("../Box");
 var _RadioButton = require("../RadioButton");
 var _propTypes = require("./propTypes");
 var _useThemeValue2 = require("../../utils/useThemeValue");
-var _excluded = ["children", "defaultValue", "disabled", "focusIndicator", "name", "onChange", "options", "value", "gap"],
+var _excluded = ["aria-label", "aria-labelledby", "children", "defaultValue", "disabled", "focusIndicator", "id", "name", "onChange", "options", "value", "gap"],
   _excluded2 = ["disabled", "id", "label", "value"];
 function _interopRequireWildcard(e, t) { if ("function" == typeof WeakMap) var r = new WeakMap(), n = new WeakMap(); return (_interopRequireWildcard = function _interopRequireWildcard(e, t) { if (!t && e && e.__esModule) return e; var o, i, f = { __proto__: null, "default": e }; if (null === e || "object" != typeof e && "function" != typeof e) return f; if (o = t ? n : r) { if (o.has(e)) return o.get(e); o.set(e, f); } for (var _t in e) "default" !== _t && {}.hasOwnProperty.call(e, _t) && ((i = (o = Object.defineProperty) && Object.getOwnPropertyDescriptor(e, _t)) && (i.get || i.set) ? o(f, _t, i) : f[_t] = e[_t]); return f; })(e, t); }
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (-1 !== e.indexOf(n)) continue; t[n] = r[n]; } return t; }
 var RadioButtonGroup = exports.RadioButtonGroup = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
-  var children = _ref.children,
+  var _formContext$useFormF;
+  var ariaLabelProp = _ref['aria-label'],
+    ariaLabelledByProp = _ref['aria-labelledby'],
+    children = _ref.children,
     defaultValue = _ref.defaultValue,
     disabled = _ref.disabled,
     _ref$focusIndicator = _ref.focusIndicator,
     focusIndicator = _ref$focusIndicator === void 0 ? true : _ref$focusIndicator,
+    id = _ref.id,
     name = _ref.name,
     onChange = _ref.onChange,
     optionsProp = _ref.options,
@@ -34,7 +38,7 @@ var RadioButtonGroup = exports.RadioButtonGroup = /*#__PURE__*/(0, _react.forwar
   var options = optionsProp.map(function (o) {
     return typeof o !== 'object' ? {
       disabled: disabled,
-      id: rest.id ? rest.id + "-" + o : "" + o,
+      id: id ? id + "-" + o : "" + o,
       // force string
       label: typeof o !== 'string' ? JSON.stringify(o) : o,
       value: o
@@ -103,6 +107,10 @@ var RadioButtonGroup = exports.RadioButtonGroup = /*#__PURE__*/(0, _react.forwar
   var onBlur = function onBlur() {
     return setFocus(false);
   };
+  var ariaLabelledBy;
+  if (formContext != null && (_formContext$useFormF = formContext.useFormField({})) != null && _formContext$useFormF.inForm && id && !ariaLabelProp) {
+    ariaLabelledBy = "grommet-" + id + "__label";
+  }
   return /*#__PURE__*/_react["default"].createElement(_Keyboard.Keyboard, {
     target: "document",
     onUp: focus ? onPrevious : undefined,
@@ -110,13 +118,16 @@ var RadioButtonGroup = exports.RadioButtonGroup = /*#__PURE__*/(0, _react.forwar
     onLeft: focus ? onPrevious : undefined,
     onRight: focus ? onNext : undefined
   }, /*#__PURE__*/_react["default"].createElement(_Box.Box, _extends({
+    "aria-label": ariaLabelProp,
+    "aria-labelledby": ariaLabelledByProp || ariaLabelledBy,
+    id: id,
     ref: ref,
     role: "radiogroup"
   }, theme.radioButtonGroup.container, {
     gap: gap || (theme.radioButtonGroup.container && theme.radioButtonGroup.container.gap ? theme.radioButtonGroup.container.gap : 'small')
   }, rest), options.map(function (_ref2, index) {
     var optionDisabled = _ref2.disabled,
-      id = _ref2.id,
+      optionId = _ref2.id,
       label = _ref2.label,
       optionValue = _ref2.value,
       optionRest = _objectWithoutPropertiesLoose(_ref2, _excluded2);
@@ -147,7 +158,7 @@ var RadioButtonGroup = exports.RadioButtonGroup = /*#__PURE__*/(0, _react.forwar
       // we will apply the hover treament.
       ,
       focusIndicator: focusIndicator,
-      id: id,
+      id: optionId,
       value: optionValue,
       onFocus: onFocus,
       onBlur: onBlur,

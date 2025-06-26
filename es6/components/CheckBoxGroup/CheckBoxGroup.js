@@ -1,4 +1,4 @@
-var _excluded = ["children", "defaultValue", "value", "disabled", "focusIndicator", "gap", "labelKey", "valueKey", "onChange", "options", "name"],
+var _excluded = ["aria-label", "aria-labelledby", "children", "defaultValue", "value", "disabled", "focusIndicator", "gap", "id", "labelKey", "valueKey", "onChange", "options", "name"],
   _excluded2 = ["value"];
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (-1 !== e.indexOf(n)) continue; t[n] = r[n]; } return t; }
@@ -9,13 +9,17 @@ import { StyledCheckBoxGroup } from './StyledCheckBoxGroup';
 import { CheckBoxGroupPropTypes } from './propTypes';
 import { useThemeValue } from '../../utils/useThemeValue';
 var CheckBoxGroup = /*#__PURE__*/forwardRef(function (_ref, ref) {
-  var children = _ref.children,
+  var _formContext$useFormF;
+  var ariaLabelProp = _ref['aria-label'],
+    ariaLabelledByProp = _ref['aria-labelledby'],
+    children = _ref.children,
     defaultValue = _ref.defaultValue,
     valueProp = _ref.value,
     disabledProp = _ref.disabled,
     _ref$focusIndicator = _ref.focusIndicator,
     focusIndicator = _ref$focusIndicator === void 0 ? true : _ref$focusIndicator,
     gap = _ref.gap,
+    id = _ref.id,
     labelKey = _ref.labelKey,
     valueKey = _ref.valueKey,
     onChange = _ref.onChange,
@@ -63,11 +67,19 @@ var CheckBoxGroup = /*#__PURE__*/forwardRef(function (_ref, ref) {
       onChange(adjustedEvent);
     }
   };
+  var ariaLabelledBy;
+  if (formContext != null && (_formContext$useFormF = formContext.useFormField({})) != null && _formContext$useFormF.inForm && id && !ariaLabelProp) {
+    ariaLabelledBy = "grommet-" + id + "__label";
+  }
   return /*#__PURE__*/React.createElement(StyledCheckBoxGroup, _extends({
     ref: ref,
+    "aria-label": ariaLabelProp,
+    "aria-labelledby": ariaLabelledByProp || ariaLabelledBy,
     role: "group"
   }, theme.checkBoxGroup.container, {
     gap: gap || (theme.checkBoxGroup.container && theme.checkBoxGroup.container.gap ? theme.checkBoxGroup.container.gap : 'small') // consistent with RadioButtonGroup default
+    ,
+    id: id
   }, passThemeFlag, rest), options.map(function (option, index) {
     var optionValue = option.value;
     var label = labelKey ? option[labelKey] : option.label;

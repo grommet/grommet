@@ -444,6 +444,7 @@ var FormField = exports.FormField = /*#__PURE__*/(0, _react.forwardRef)(function
     } : undefined
   }, containerRest, passThemeFlag), label && component !== _CheckBox.CheckBox || help ? /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, label && component !== _CheckBox.CheckBox && /*#__PURE__*/_react["default"].createElement(_Text.Text, _extends({
     as: "label",
+    id: htmlFor ? "grommet-" + htmlFor + "__label" : undefined,
     htmlFor: htmlFor
   }, labelStyle), label, showRequiredIndicator ? requiredIndicator : undefined), /*#__PURE__*/_react["default"].createElement(Message, _extends({
     message: help

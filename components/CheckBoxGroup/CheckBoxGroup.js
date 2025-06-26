@@ -8,19 +8,23 @@ var _FormContext = require("../Form/FormContext");
 var _StyledCheckBoxGroup = require("./StyledCheckBoxGroup");
 var _propTypes = require("./propTypes");
 var _useThemeValue2 = require("../../utils/useThemeValue");
-var _excluded = ["children", "defaultValue", "value", "disabled", "focusIndicator", "gap", "labelKey", "valueKey", "onChange", "options", "name"],
+var _excluded = ["aria-label", "aria-labelledby", "children", "defaultValue", "value", "disabled", "focusIndicator", "gap", "id", "labelKey", "valueKey", "onChange", "options", "name"],
   _excluded2 = ["value"];
 function _interopRequireWildcard(e, t) { if ("function" == typeof WeakMap) var r = new WeakMap(), n = new WeakMap(); return (_interopRequireWildcard = function _interopRequireWildcard(e, t) { if (!t && e && e.__esModule) return e; var o, i, f = { __proto__: null, "default": e }; if (null === e || "object" != typeof e && "function" != typeof e) return f; if (o = t ? n : r) { if (o.has(e)) return o.get(e); o.set(e, f); } for (var _t in e) "default" !== _t && {}.hasOwnProperty.call(e, _t) && ((i = (o = Object.defineProperty) && Object.getOwnPropertyDescriptor(e, _t)) && (i.get || i.set) ? o(f, _t, i) : f[_t] = e[_t]); return f; })(e, t); }
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (-1 !== e.indexOf(n)) continue; t[n] = r[n]; } return t; }
 var CheckBoxGroup = exports.CheckBoxGroup = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
-  var children = _ref.children,
+  var _formContext$useFormF;
+  var ariaLabelProp = _ref['aria-label'],
+    ariaLabelledByProp = _ref['aria-labelledby'],
+    children = _ref.children,
     defaultValue = _ref.defaultValue,
     valueProp = _ref.value,
     disabledProp = _ref.disabled,
     _ref$focusIndicator = _ref.focusIndicator,
     focusIndicator = _ref$focusIndicator === void 0 ? true : _ref$focusIndicator,
     gap = _ref.gap,
+    id = _ref.id,
     labelKey = _ref.labelKey,
     valueKey = _ref.valueKey,
     onChange = _ref.onChange,
@@ -68,11 +72,19 @@ var CheckBoxGroup = exports.CheckBoxGroup = /*#__PURE__*/(0, _react.forwardRef)(
       onChange(adjustedEvent);
     }
   };
+  var ariaLabelledBy;
+  if (formContext != null && (_formContext$useFormF = formContext.useFormField({})) != null && _formContext$useFormF.inForm && id && !ariaLabelProp) {
+    ariaLabelledBy = "grommet-" + id + "__label";
+  }
   return /*#__PURE__*/_react["default"].createElement(_StyledCheckBoxGroup.StyledCheckBoxGroup, _extends({
     ref: ref,
+    "aria-label": ariaLabelProp,
+    "aria-labelledby": ariaLabelledByProp || ariaLabelledBy,
     role: "group"
   }, theme.checkBoxGroup.container, {
     gap: gap || (theme.checkBoxGroup.container && theme.checkBoxGroup.container.gap ? theme.checkBoxGroup.container.gap : 'small') // consistent with RadioButtonGroup default
+    ,
+    id: id
   }, passThemeFlag, rest), options.map(function (option, index) {
     var optionValue = option.value;
     var label = labelKey ? option[labelKey] : option.label;

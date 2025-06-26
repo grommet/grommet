@@ -438,6 +438,7 @@ var FormField = /*#__PURE__*/forwardRef(function (_ref3, ref) {
     } : undefined
   }, containerRest, passThemeFlag), label && component !== CheckBox || help ? /*#__PURE__*/React.createElement(React.Fragment, null, label && component !== CheckBox && /*#__PURE__*/React.createElement(Text, _extends({
     as: "label",
+    id: htmlFor ? "grommet-" + htmlFor + "__label" : undefined,
     htmlFor: htmlFor
   }, labelStyle), label, showRequiredIndicator ? requiredIndicator : undefined), /*#__PURE__*/React.createElement(Message, _extends({
     message: help
