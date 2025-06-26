@@ -80,7 +80,7 @@
     "dropPrompt": "Drop file here or",
     "dropPromptMultiple": "Drop files here or",
     "files": "files",
-    "maxFile": "Attach a maximum of {max} files only.",
+    "maxFile": "Attach a maximum of {maxFile} files only.",
     "maxSizeSingle": "The file is too large. Select a file no larger than {maxSize}.",
     "maxSizeMultiple": {
       "singular": "One file is too large. Select files which are no larger than {maxSize}.",
