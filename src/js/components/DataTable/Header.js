@@ -427,6 +427,7 @@ const Header = forwardRef(
                     <Searcher
                       filtering={filtering}
                       filters={filters}
+                      focusIndicator={size ? 'inset' : undefined}
                       messages={messages}
                       property={property}
                       onFilter={onFilter}
