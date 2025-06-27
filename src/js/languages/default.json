@@ -73,14 +73,14 @@
   },
   "fileInput": {
     "alert": {
-      "maxSize": "Attention, this file {fileName} is too large. Attach files which are no larger than {maxSize} to continue.",
-      "maxFile": "Attention, attach a maximum of {maxFile} files only. File {fileName} is beyond this limit."
+      "maxFile": "Attention, attach a maximum of {max} files only. File {fileName} is beyond this limit.",
+      "maxSize": "Attention, this file {fileName} is too large. Attach files which are no larger than {maxSize} to continue."
     },
     "browse": "browse",
     "dropPrompt": "Drop file here or",
     "dropPromptMultiple": "Drop files here or",
     "files": "files",
-    "maxFile": "Attach a maximum of {maxFile} files only.",
+    "maxFile": "Attach a maximum of {max} files only.",
     "maxSizeSingle": "The file is too large. Select a file no larger than {maxSize}.",
     "maxSizeMultiple": {
       "singular": "One file is too large. Select files which are no larger than {maxSize}.",

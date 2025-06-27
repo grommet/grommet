@@ -94,8 +94,8 @@ if (process.env.NODE_ENV !== 'production') {
         }),
         fileInput: PropTypes.shape({
           alert: PropTypes.shape({
-            maxSize: PropTypes.string,
             maxFile: PropTypes.string,
+            maxSize: PropTypes.string,
           }),
           browse: PropTypes.string,
           dropPrompt: PropTypes.string,

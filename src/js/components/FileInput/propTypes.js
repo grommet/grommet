@@ -9,8 +9,8 @@ if (process.env.NODE_ENV !== 'production') {
     maxSize: PropTypes.number,
     messages: PropTypes.shape({
       alert: PropTypes.shape({
-        maxSize: PropTypes.string,
         maxFile: PropTypes.string,
+        maxSize: PropTypes.string,
       }),
       browse: PropTypes.string,
       dropPrompt: PropTypes.string,
