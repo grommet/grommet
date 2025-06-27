@@ -175,7 +175,12 @@ export const GroupedBody = forwardRef(
             );
 
             return (
-              <StyledDataTableRow ref={rowRef} key={key} size={size}>
+              <StyledDataTableRow
+                ref={rowRef}
+                key={key}
+                size={size}
+                {...passThemeFlag}
+              >
                 <ExpanderCell
                   background={
                     (isSelected && cellProps.selected.background) ||

@@ -655,7 +655,7 @@ exports[`DataTableColumns remove column 1`] = `
   justify-content: center;
 }
 
-.c12 {
+.c13 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -701,7 +701,7 @@ exports[`DataTableColumns remove column 1`] = `
   line-height: 24px;
 }
 
-.c13 {
+.c14 {
   font-size: 18px;
   line-height: 24px;
   font-weight: bold;
@@ -783,7 +783,7 @@ exports[`DataTableColumns remove column 1`] = `
   padding-bottom: 6px;
 }
 
-.c11 {
+.c12 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -805,6 +805,46 @@ exports[`DataTableColumns remove column 1`] = `
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
+}
+
+.c11:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c11:focus >circle,
+.c11:focus >ellipse,
+.c11:focus >line,
+.c11:focus >path,
+.c11:focus >polygon,
+.c11:focus >polyline,
+.c11:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c11:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c11:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c11:focus:not(:focus-visible) >circle,
+.c11:focus:not(:focus-visible) >ellipse,
+.c11:focus:not(:focus-visible) >line,
+.c11:focus:not(:focus-visible) >path,
+.c11:focus:not(:focus-visible) >polygon,
+.c11:focus:not(:focus-visible) >polyline,
+.c11:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c11:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
 }
 
 .c10:focus {
@@ -912,34 +952,34 @@ exports[`DataTableColumns remove column 1`] = `
           class="StyledTable__StyledTableBody-sc-1m3u5g-3 c10"
         >
           <tr
-            class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            class="StyledTable__StyledTableRow-sc-1m3u5g-2 c11"
           >
             <th
-              class="c11 "
+              class="c12 "
               scope="row"
             >
               <div
-                class="c12"
+                class="c13"
               >
                 <span
-                  class="c13"
+                  class="c14"
                 >
                   a
                 </span>
               </div>
             </th>
             <td
-              class="c11 "
+              class="c12 "
             >
               <div
-                class="c12"
+                class="c13"
               />
             </td>
             <td
-              class="c11 "
+              class="c12 "
             >
               <div
-                class="c12"
+                class="c13"
               >
                 <span
                   class="c9"
@@ -950,34 +990,34 @@ exports[`DataTableColumns remove column 1`] = `
             </td>
           </tr>
           <tr
-            class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            class="StyledTable__StyledTableRow-sc-1m3u5g-2 c11"
           >
             <th
-              class="c11 "
+              class="c12 "
               scope="row"
             >
               <div
-                class="c12"
+                class="c13"
               >
                 <span
-                  class="c13"
+                  class="c14"
                 >
                   b
                 </span>
               </div>
             </th>
             <td
-              class="c11 "
+              class="c12 "
             >
               <div
-                class="c12"
+                class="c13"
               />
             </td>
             <td
-              class="c11 "
+              class="c12 "
             >
               <div
-                class="c12"
+                class="c13"
               >
                 <span
                   class="c9"
@@ -1482,7 +1522,7 @@ exports[`DataTableColumns renders 1`] = `
   justify-content: center;
 }
 
-.c16 {
+.c17 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -1528,7 +1568,7 @@ exports[`DataTableColumns renders 1`] = `
   line-height: 24px;
 }
 
-.c17 {
+.c18 {
   font-size: 18px;
   line-height: 24px;
   font-weight: bold;
@@ -1678,7 +1718,7 @@ exports[`DataTableColumns renders 1`] = `
   padding-bottom: 6px;
 }
 
-.c15 {
+.c16 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -1700,6 +1740,46 @@ exports[`DataTableColumns renders 1`] = `
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
+}
+
+.c15:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c15:focus >circle,
+.c15:focus >ellipse,
+.c15:focus >line,
+.c15:focus >path,
+.c15:focus >polygon,
+.c15:focus >polyline,
+.c15:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c15:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c15:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c15:focus:not(:focus-visible) >circle,
+.c15:focus:not(:focus-visible) >ellipse,
+.c15:focus:not(:focus-visible) >line,
+.c15:focus:not(:focus-visible) >path,
+.c15:focus:not(:focus-visible) >polygon,
+.c15:focus:not(:focus-visible) >polyline,
+.c15:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c15:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
 }
 
 .c14:focus {
@@ -1821,27 +1901,27 @@ exports[`DataTableColumns renders 1`] = `
           class="StyledTable__StyledTableBody-sc-1m3u5g-3 c14"
         >
           <tr
-            class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            class="StyledTable__StyledTableRow-sc-1m3u5g-2 c15"
           >
             <th
-              class="c15 "
+              class="c16 "
               scope="row"
             >
               <div
-                class="c16"
+                class="c17"
               >
                 <span
-                  class="c17"
+                  class="c18"
                 >
                   a
                 </span>
               </div>
             </th>
             <td
-              class="c15 "
+              class="c16 "
             >
               <div
-                class="c16"
+                class="c17"
               >
                 <span
                   class="c13"
@@ -1852,27 +1932,27 @@ exports[`DataTableColumns renders 1`] = `
             </td>
           </tr>
           <tr
-            class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            class="StyledTable__StyledTableRow-sc-1m3u5g-2 c15"
           >
             <th
-              class="c15 "
+              class="c16 "
               scope="row"
             >
               <div
-                class="c16"
+                class="c17"
               >
                 <span
-                  class="c17"
+                  class="c18"
                 >
                   b
                 </span>
               </div>
             </th>
             <td
-              class="c15 "
+              class="c16 "
             >
               <div
-                class="c16"
+                class="c17"
               >
                 <span
                   class="c13"
@@ -2790,7 +2870,7 @@ exports[`DataTableColumns search 1`] = `
   justify-content: center;
 }
 
-.c12 {
+.c13 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -2836,7 +2916,7 @@ exports[`DataTableColumns search 1`] = `
   line-height: 24px;
 }
 
-.c13 {
+.c14 {
   font-size: 18px;
   line-height: 24px;
   font-weight: bold;
@@ -2918,7 +2998,7 @@ exports[`DataTableColumns search 1`] = `
   padding-bottom: 6px;
 }
 
-.c11 {
+.c12 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -2940,6 +3020,46 @@ exports[`DataTableColumns search 1`] = `
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
+}
+
+.c11:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c11:focus >circle,
+.c11:focus >ellipse,
+.c11:focus >line,
+.c11:focus >path,
+.c11:focus >polygon,
+.c11:focus >polyline,
+.c11:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c11:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c11:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c11:focus:not(:focus-visible) >circle,
+.c11:focus:not(:focus-visible) >ellipse,
+.c11:focus:not(:focus-visible) >line,
+.c11:focus:not(:focus-visible) >path,
+.c11:focus:not(:focus-visible) >polygon,
+.c11:focus:not(:focus-visible) >polyline,
+.c11:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c11:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
 }
 
 .c10:focus {
@@ -3033,27 +3153,27 @@ exports[`DataTableColumns search 1`] = `
         class="StyledTable__StyledTableBody-sc-1m3u5g-3 c10"
       >
         <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 c11"
         >
           <th
-            class="c11 "
+            class="c12 "
             scope="row"
           >
             <div
-              class="c12"
+              class="c13"
             >
               <span
-                class="c13"
+                class="c14"
               >
                 a
               </span>
             </div>
           </th>
           <td
-            class="c11 "
+            class="c12 "
           >
             <div
-              class="c12"
+              class="c13"
             >
               <span
                 class="c9"
@@ -3064,27 +3184,27 @@ exports[`DataTableColumns search 1`] = `
           </td>
         </tr>
         <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 c11"
         >
           <th
-            class="c11 "
+            class="c12 "
             scope="row"
           >
             <div
-              class="c12"
+              class="c13"
             >
               <span
-                class="c13"
+                class="c14"
               >
                 b
               </span>
             </div>
           </th>
           <td
-            class="c11 "
+            class="c12 "
           >
             <div
-              class="c12"
+              class="c13"
             >
               <span
                 class="c9"

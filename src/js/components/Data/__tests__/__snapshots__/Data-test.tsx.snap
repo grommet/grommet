@@ -118,2659 +118,6 @@ exports[`Data controlled search 1`] = `
   line-height: 24px;
 }
 
-.c18 {
-  font-size: 18px;
-  line-height: 24px;
-  font-weight: bold;
-}
-
-.c10 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  font: inherit;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  color: inherit;
-  outline: none;
-  border: none;
-  padding: 0;
-  text-align: inherit;
-  line-height: 0;
-  padding: 12px;
-}
-
-.c10:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c10:focus >circle,
-.c10:focus >ellipse,
-.c10:focus >line,
-.c10:focus >path,
-.c10:focus >polygon,
-.c10:focus >polyline,
-.c10:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c10:focus ::-moz-focus-inner {
-  border: 0;
-}
-
-.c10:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c10:focus:not(:focus-visible) >circle,
-.c10:focus:not(:focus-visible) >ellipse,
-.c10:focus:not(:focus-visible) >line,
-.c10:focus:not(:focus-visible) >path,
-.c10:focus:not(:focus-visible) >polygon,
-.c10:focus:not(:focus-visible) >polyline,
-.c10:focus:not(:focus-visible) >rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c10:focus:not(:focus-visible) ::-moz-focus-inner {
-  border: 0;
-}
-
-.c8 {
-  box-sizing: border-box;
-  font-size: inherit;
-  font-family: inherit;
-  border: none;
-  -webkit-appearance: none;
-  background: transparent;
-  color: inherit;
-  width: 100%;
-  padding: 11px;
-  font-weight: 600;
-  margin: 0;
-  border: 1px solid rgba(0, 0, 0, 0.33);
-  border-radius: 4px;
-  padding-left: 48px;
-}
-
-.c8:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c8:focus >circle,
-.c8:focus >ellipse,
-.c8:focus >line,
-.c8:focus >path,
-.c8:focus >polygon,
-.c8:focus >polyline,
-.c8:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c8:focus ::-moz-focus-inner {
-  border: 0;
-}
-
-.c8::-webkit-input-placeholder {
-  color: #AAAAAA;
-}
-
-.c8::-moz-placeholder {
-  color: #AAAAAA;
-}
-
-.c8:-ms-input-placeholder {
-  color: #AAAAAA;
-}
-
-.c8 ::-webkit-search-decoration {
-  -webkit-appearance: none;
-}
-
-.c8::-moz-focus-inner {
-  border: none;
-  outline: none;
-}
-
-.c8:-moz-placeholder,
-.c8::-moz-placeholder {
-  opacity: 1;
-}
-
-.c5 {
-  position: relative;
-  width: 100%;
-}
-
-.c6 {
-  position: absolute;
-  display: flex;
-  justify: center;
-  top: 50%;
-  transform: translateY(-50%);
-  pointer-events: none;
-  left: 12px;
-}
-
-.c14 {
-  margin: 0;
-  padding: 0;
-  font-weight: inherit;
-  text-align: inherit;
-  text-align: start;
-  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
-  padding-left: 12px;
-  padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
-}
-
-.c17 {
-  margin: 0;
-  padding: 0;
-  font-weight: inherit;
-  text-align: inherit;
-  text-align: start;
-  padding-left: 12px;
-  padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
-}
-
-.c12 {
-  border-spacing: 0;
-  border-collapse: collapse;
-  width: inherit;
-}
-
-.c13 {
-  position: relative;
-  border-spacing: 0;
-  border-collapse: separate;
-}
-
-.c16:focus {
-  outline: 2px solid #6FFFB0;
-}
-
-.c16:focus:not(:focus-visible) {
-  outline: none;
-}
-
-@media only screen and (max-width: 768px) {
-
-}
-
-@media only screen and (max-width: 768px) {
-
-}
-
-@media only screen and (max-width: 768px) {
-  .c2 {
-    column-gap: 12px;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .c3 {
-    column-gap: 6px;
-  }
-}
-
-<div
-  class="c0"
->
-  <div
-    class="c1"
-    id="data"
-  >
-    <div
-      class="c2"
-    >
-      <div
-        class="c3"
-      >
-        <div
-          class="c4"
-        >
-          <div
-            class="c5"
-          >
-            <div
-              class="c6"
-            >
-              <svg
-                aria-label="Search"
-                class="c7"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  d="m15 15 7 7-7-7zm-5.5 2a7.5 7.5 0 1 0 0-15 7.5 7.5 0 0 0 0 15z"
-                  fill="none"
-                  stroke="#000"
-                  stroke-width="2"
-                />
-              </svg>
-            </div>
-            <input
-              aria-label="Search"
-              autocomplete="off"
-              class="c8"
-              id="data--search"
-              name="_search"
-              type="search"
-              value=""
-            />
-          </div>
-        </div>
-        <div
-          class="c9"
-        >
-          <button
-            aria-label="Open filters"
-            class="c10"
-            id="data--filters-control"
-            type="button"
-          >
-            <svg
-              aria-label="Filter"
-              class="c7"
-              viewBox="0 0 24 24"
-            >
-              <path
-                d="m3 6 7 7v8h4v-8l7-7V3H3z"
-                fill="none"
-                stroke="#000"
-                stroke-width="2"
-              />
-            </svg>
-          </button>
-        </div>
-      </div>
-    </div>
-    <span
-      class="c11"
-    >
-      4 results of undefined items
-    </span>
-    <table
-      class="c12 c13"
-    >
-      <thead
-        class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-5"
-      >
-        <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
-        >
-          <th
-            class="c14 "
-            scope="col"
-          >
-            <div
-              class="c15"
-            />
-          </th>
-        </tr>
-      </thead>
-      <tbody
-        class="StyledTable__StyledTableBody-sc-1m3u5g-3 c16"
-      >
-        <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
-        >
-          <th
-            class="c17 "
-            scope="row"
-          >
-            <div
-              class="c4"
-            >
-              <span
-                class="c18"
-              >
-                aa
-              </span>
-            </div>
-          </th>
-        </tr>
-        <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
-        >
-          <th
-            class="c17 "
-            scope="row"
-          >
-            <div
-              class="c4"
-            >
-              <span
-                class="c18"
-              >
-                bb
-              </span>
-            </div>
-          </th>
-        </tr>
-        <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
-        >
-          <th
-            class="c17 "
-            scope="row"
-          >
-            <div
-              class="c4"
-            >
-              <span
-                class="c18"
-              >
-                cc
-              </span>
-            </div>
-          </th>
-        </tr>
-        <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
-        >
-          <th
-            class="c17 "
-            scope="row"
-          >
-            <div
-              class="c4"
-            >
-              <span
-                class="c18"
-              >
-                dd
-              </span>
-            </div>
-          </th>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-</div>
-`;
-
-exports[`Data controlled search 2`] = `
-<div
-  class="StyledGrommet-sc-19lkkz7-0 cBoJUe"
->
-  <div
-    class="StyledBox-sc-13pk1d4-0 hQoEqW"
-    id="data"
-  >
-    <div
-      class="StyledBox-sc-13pk1d4-0 hDXmSE"
-    >
-      <div
-        class="StyledBox-sc-13pk1d4-0 hDGtNF"
-      >
-        <div
-          class="StyledBox-sc-13pk1d4-0 hKCfLv"
-        >
-          <div
-            class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 ddykB"
-          >
-            <div
-              class="StyledTextInput__StyledIcon-sc-1x30a0s-3 kYyGWZ"
-            >
-              <svg
-                aria-label="Search"
-                class="StyledIcon-sc-ofa7kd-0 jCZnaS"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  d="m15 15 7 7-7-7zm-5.5 2a7.5 7.5 0 1 0 0-15 7.5 7.5 0 0 0 0 15z"
-                  fill="none"
-                  stroke="#000"
-                  stroke-width="2"
-                />
-              </svg>
-            </div>
-            <input
-              aria-label="Search"
-              autocomplete="off"
-              class="StyledTextInput-sc-1x30a0s-0 hCEbuS"
-              id="data--search"
-              name="_search"
-              type="search"
-              value="a"
-            />
-          </div>
-        </div>
-        <div
-          class="StyledBox-sc-13pk1d4-0 dhDkJW"
-        >
-          <button
-            aria-label="Open filters"
-            class="StyledButton-sc-323bzc-0 iGmGqZ"
-            id="data--filters-control"
-            type="button"
-          >
-            <svg
-              aria-label="Filter"
-              class="StyledIcon-sc-ofa7kd-0 jCZnaS"
-              viewBox="0 0 24 24"
-            >
-              <path
-                d="m3 6 7 7v8h4v-8l7-7V3H3z"
-                fill="none"
-                stroke="#000"
-                stroke-width="2"
-              />
-            </svg>
-          </button>
-        </div>
-      </div>
-    </div>
-    <span
-      class="StyledText-sc-1sadyjn-0 NvWBD"
-    >
-      4 results of undefined items
-    </span>
-    <table
-      class="StyledTable-sc-1m3u5g-6 kzIboA StyledDataTable-sc-xrlyjm-0 hPMmXj"
-    >
-      <thead
-        class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-5"
-      >
-        <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRowHeader-sc-xrlyjm-3 fgxpmX"
-        >
-          <th
-            class="StyledTable__StyledTableCell-sc-1m3u5g-0 btvVUL StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 dvuoDz"
-            scope="col"
-          >
-            <div
-              class="StyledBox-sc-13pk1d4-0 jvqrur"
-            />
-          </th>
-        </tr>
-      </thead>
-      <tbody
-        class="StyledTable__StyledTableBody-sc-1m3u5g-3 StyledDataTable__StyledDataTableBody-sc-xrlyjm-4 gQHCrw"
-      >
-        <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 dHFBfo"
-        >
-          <th
-            class="StyledTable__StyledTableCell-sc-1m3u5g-0 fwrJut StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 dvuoDz"
-            scope="row"
-          >
-            <div
-              class="StyledBox-sc-13pk1d4-0 hKCfLv"
-            >
-              <span
-                class="StyledText-sc-1sadyjn-0 cUpCuS"
-              >
-                aa
-              </span>
-            </div>
-          </th>
-        </tr>
-        <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 dHFBfo"
-        >
-          <th
-            class="StyledTable__StyledTableCell-sc-1m3u5g-0 fwrJut StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 dvuoDz"
-            scope="row"
-          >
-            <div
-              class="StyledBox-sc-13pk1d4-0 hKCfLv"
-            >
-              <span
-                class="StyledText-sc-1sadyjn-0 cUpCuS"
-              >
-                bb
-              </span>
-            </div>
-          </th>
-        </tr>
-        <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 dHFBfo"
-        >
-          <th
-            class="StyledTable__StyledTableCell-sc-1m3u5g-0 fwrJut StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 dvuoDz"
-            scope="row"
-          >
-            <div
-              class="StyledBox-sc-13pk1d4-0 hKCfLv"
-            >
-              <span
-                class="StyledText-sc-1sadyjn-0 cUpCuS"
-              >
-                cc
-              </span>
-            </div>
-          </th>
-        </tr>
-        <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 dHFBfo"
-        >
-          <th
-            class="StyledTable__StyledTableCell-sc-1m3u5g-0 fwrJut StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 dvuoDz"
-            scope="row"
-          >
-            <div
-              class="StyledBox-sc-13pk1d4-0 hKCfLv"
-            >
-              <span
-                class="StyledText-sc-1sadyjn-0 cUpCuS"
-              >
-                dd
-              </span>
-            </div>
-          </th>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-</div>
-`;
-
-exports[`Data messages 1`] = `
-.c7 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #666666;
-  stroke: #666666;
-}
-
-.c7 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c7 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c7 *[stroke*='#'],
-.c7 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c7 *[fill-rule],
-.c7 *[FILL-RULE],
-.c7 *[fill*='#'],
-.c7 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
-}
-
-.c0 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
-.c1 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  flex-direction: column;
-  flex: 0 0 auto;
-}
-
-.c4 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  flex-direction: column;
-}
-
-.c9 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  flex-direction: row;
-  flex: 0 0 auto;
-}
-
-.c15 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  flex-direction: column;
-  flex: 1 0 auto;
-  justify-content: center;
-}
-
-.c2 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  align-items: flex-start;
-  min-width: 0;
-  min-height: 0;
-  flex-direction: row;
-  flex: 0 0 auto;
-  flex-wrap: wrap;
-  column-gap: 24px;
-  row-gap: 24px;
-}
-
-.c3 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  align-items: flex-start;
-  min-width: 0;
-  min-height: 0;
-  flex-direction: row;
-  flex: 0 0 auto;
-  flex-wrap: wrap;
-  column-gap: 12px;
-  row-gap: 12px;
-}
-
-.c11 {
-  margin-top: 6px;
-  margin-bottom: 6px;
-  font-size: 18px;
-  line-height: 24px;
-}
-
-.c18 {
-  font-size: 18px;
-  line-height: 24px;
-  font-weight: bold;
-}
-
-.c19 {
-  font-size: 18px;
-  line-height: 24px;
-}
-
-.c10 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  font: inherit;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  color: inherit;
-  outline: none;
-  border: none;
-  padding: 0;
-  text-align: inherit;
-  line-height: 0;
-  padding: 12px;
-}
-
-.c10:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c10:focus >circle,
-.c10:focus >ellipse,
-.c10:focus >line,
-.c10:focus >path,
-.c10:focus >polygon,
-.c10:focus >polyline,
-.c10:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c10:focus ::-moz-focus-inner {
-  border: 0;
-}
-
-.c10:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c10:focus:not(:focus-visible) >circle,
-.c10:focus:not(:focus-visible) >ellipse,
-.c10:focus:not(:focus-visible) >line,
-.c10:focus:not(:focus-visible) >path,
-.c10:focus:not(:focus-visible) >polygon,
-.c10:focus:not(:focus-visible) >polyline,
-.c10:focus:not(:focus-visible) >rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c10:focus:not(:focus-visible) ::-moz-focus-inner {
-  border: 0;
-}
-
-.c8 {
-  box-sizing: border-box;
-  font-size: inherit;
-  font-family: inherit;
-  border: none;
-  -webkit-appearance: none;
-  background: transparent;
-  color: inherit;
-  width: 100%;
-  padding: 11px;
-  font-weight: 600;
-  margin: 0;
-  border: 1px solid rgba(0, 0, 0, 0.33);
-  border-radius: 4px;
-  padding-left: 48px;
-}
-
-.c8:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c8:focus >circle,
-.c8:focus >ellipse,
-.c8:focus >line,
-.c8:focus >path,
-.c8:focus >polygon,
-.c8:focus >polyline,
-.c8:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c8:focus ::-moz-focus-inner {
-  border: 0;
-}
-
-.c8::-webkit-input-placeholder {
-  color: #AAAAAA;
-}
-
-.c8::-moz-placeholder {
-  color: #AAAAAA;
-}
-
-.c8:-ms-input-placeholder {
-  color: #AAAAAA;
-}
-
-.c8 ::-webkit-search-decoration {
-  -webkit-appearance: none;
-}
-
-.c8::-moz-focus-inner {
-  border: none;
-  outline: none;
-}
-
-.c8:-moz-placeholder,
-.c8::-moz-placeholder {
-  opacity: 1;
-}
-
-.c5 {
-  position: relative;
-  width: 100%;
-}
-
-.c6 {
-  position: absolute;
-  display: flex;
-  justify: center;
-  top: 50%;
-  transform: translateY(-50%);
-  pointer-events: none;
-  left: 12px;
-}
-
-.c14 {
-  margin: 0;
-  padding: 0;
-  font-weight: inherit;
-  text-align: inherit;
-  text-align: start;
-  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
-  padding-left: 12px;
-  padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
-}
-
-.c17 {
-  margin: 0;
-  padding: 0;
-  font-weight: inherit;
-  text-align: inherit;
-  text-align: start;
-  padding-left: 12px;
-  padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
-}
-
-.c12 {
-  border-spacing: 0;
-  border-collapse: collapse;
-  width: inherit;
-}
-
-.c13 {
-  position: relative;
-  border-spacing: 0;
-  border-collapse: separate;
-}
-
-.c16:focus {
-  outline: 2px solid #6FFFB0;
-}
-
-.c16:focus:not(:focus-visible) {
-  outline: none;
-}
-
-@media only screen and (max-width: 768px) {
-
-}
-
-@media only screen and (max-width: 768px) {
-
-}
-
-@media only screen and (max-width: 768px) {
-  .c2 {
-    column-gap: 12px;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .c3 {
-    column-gap: 6px;
-  }
-}
-
-<div
-  class="c0"
->
-  <div
-    class="c1"
-    id="data"
-  >
-    <div
-      class="c2"
-    >
-      <div
-        class="c3"
-      >
-        <div
-          class="c4"
-        >
-          <div
-            class="c5"
-          >
-            <div
-              class="c6"
-            >
-              <svg
-                aria-label="Search"
-                class="c7"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  d="m15 15 7 7-7-7zm-5.5 2a7.5 7.5 0 1 0 0-15 7.5 7.5 0 0 0 0 15z"
-                  fill="none"
-                  stroke="#000"
-                  stroke-width="2"
-                />
-              </svg>
-            </div>
-            <input
-              aria-label="Search"
-              autocomplete="off"
-              class="c8"
-              id="data--search"
-              name="_search"
-              type="search"
-              value=""
-            />
-          </div>
-        </div>
-        <div
-          class="c9"
-        >
-          <button
-            aria-label="Open filters"
-            class="c10"
-            id="data--filters-control"
-            type="button"
-          >
-            <svg
-              aria-label="Filter"
-              class="c7"
-              viewBox="0 0 24 24"
-            >
-              <path
-                d="m3 6 7 7v8h4v-8l7-7V3H3z"
-                fill="none"
-                stroke="#000"
-                stroke-width="2"
-              />
-            </svg>
-          </button>
-        </div>
-      </div>
-    </div>
-    <span
-      class="c11"
-    >
-      4 things
-    </span>
-    <table
-      class="c12 c13"
-    >
-      <thead
-        class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-5"
-      >
-        <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
-        >
-          <th
-            class="c14 "
-            scope="col"
-          >
-            <div
-              class="c15"
-            />
-          </th>
-          <th
-            class="c14 "
-            scope="col"
-          >
-            <div
-              class="c15"
-            />
-          </th>
-        </tr>
-      </thead>
-      <tbody
-        class="StyledTable__StyledTableBody-sc-1m3u5g-3 c16"
-      >
-        <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
-        >
-          <th
-            class="c17 "
-            scope="row"
-          >
-            <div
-              class="c4"
-            >
-              <span
-                class="c18"
-              >
-                aa
-              </span>
-            </div>
-          </th>
-          <td
-            class="c17 "
-          >
-            <div
-              class="c4"
-            >
-              <span
-                class="c19"
-              >
-                ZZ
-              </span>
-            </div>
-          </td>
-        </tr>
-        <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
-        >
-          <th
-            class="c17 "
-            scope="row"
-          >
-            <div
-              class="c4"
-            >
-              <span
-                class="c18"
-              >
-                bb
-              </span>
-            </div>
-          </th>
-          <td
-            class="c17 "
-          >
-            <div
-              class="c4"
-            >
-              <span
-                class="c19"
-              >
-                YY
-              </span>
-            </div>
-          </td>
-        </tr>
-        <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
-        >
-          <th
-            class="c17 "
-            scope="row"
-          >
-            <div
-              class="c4"
-            >
-              <span
-                class="c18"
-              >
-                cc
-              </span>
-            </div>
-          </th>
-          <td
-            class="c17 "
-          >
-            <div
-              class="c4"
-            />
-          </td>
-        </tr>
-        <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
-        >
-          <th
-            class="c17 "
-            scope="row"
-          >
-            <div
-              class="c4"
-            >
-              <span
-                class="c18"
-              >
-                dd
-              </span>
-            </div>
-          </th>
-          <td
-            class="c17 "
-          >
-            <div
-              class="c4"
-            />
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-</div>
-`;
-
-exports[`Data onView 1`] = `
-.c0 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
-.c1 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  flex-direction: column;
-  flex: 0 0 auto;
-}
-
-.c3 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  flex-direction: column;
-  height: 100%;
-}
-
-.c4 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  flex-direction: column;
-  flex: 1 1;
-  overflow: auto;
-}
-
-.c5 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  margin-top: 24px;
-  align-items: center;
-  min-width: 0;
-  min-height: 0;
-  flex-direction: row;
-  flex: 0 0 auto;
-  justify-content: space-between;
-}
-
-.c10 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  flex-direction: column;
-  flex: 1 0 auto;
-  justify-content: center;
-}
-
-.c13 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  flex-direction: column;
-}
-
-.c14 {
-  font-size: 18px;
-  line-height: 24px;
-  font-weight: bold;
-}
-
-.c15 {
-  font-size: 18px;
-  line-height: 24px;
-}
-
-.c6 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  font: inherit;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  border: 2px solid #7D4CDB;
-  border-radius: 18px;
-  color: #444444;
-  padding: 4px 22px;
-  font-size: 18px;
-  line-height: 24px;
-  background-color: #7D4CDB;
-  color: #f8f8f8;
-  border-radius: 18px;
-  transition-property: color,background-color,border-color,box-shadow;
-  transition-duration: 0.1s;
-  transition-timing-function: ease-in-out;
-}
-
-.c6:hover {
-  box-shadow: 0px 0px 0px 2px #7D4CDB;
-}
-
-.c6:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c6:focus >circle,
-.c6:focus >ellipse,
-.c6:focus >line,
-.c6:focus >path,
-.c6:focus >polygon,
-.c6:focus >polyline,
-.c6:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c6:focus ::-moz-focus-inner {
-  border: 0;
-}
-
-.c6:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c6:focus:not(:focus-visible) >circle,
-.c6:focus:not(:focus-visible) >ellipse,
-.c6:focus:not(:focus-visible) >line,
-.c6:focus:not(:focus-visible) >path,
-.c6:focus:not(:focus-visible) >polygon,
-.c6:focus:not(:focus-visible) >polyline,
-.c6:focus:not(:focus-visible) >rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c6:focus:not(:focus-visible) ::-moz-focus-inner {
-  border: 0;
-}
-
-.c2 {
-  max-width: 100%;
-}
-
-.c9 {
-  margin: 0;
-  padding: 0;
-  font-weight: inherit;
-  text-align: inherit;
-  text-align: start;
-  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
-  padding-left: 12px;
-  padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
-}
-
-.c12 {
-  margin: 0;
-  padding: 0;
-  font-weight: inherit;
-  text-align: inherit;
-  text-align: start;
-  padding-left: 12px;
-  padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
-}
-
-.c7 {
-  border-spacing: 0;
-  border-collapse: collapse;
-  width: inherit;
-}
-
-.c8 {
-  position: relative;
-  border-spacing: 0;
-  border-collapse: separate;
-}
-
-.c11:focus {
-  outline: 2px solid #6FFFB0;
-}
-
-.c11:focus:not(:focus-visible) {
-  outline: none;
-}
-
-@media only screen and (max-width: 768px) {
-  .c5 {
-    margin-top: 12px;
-  }
-}
-
-<div
-  class="c0"
->
-  <div
-    class="c1"
-    id="data"
-  >
-    <form
-      class="c2"
-    >
-      <div
-        class="c3"
-      >
-        <div
-          class="c4"
-        >
-          <div
-            class="c1"
-          />
-        </div>
-        <footer
-          class="c5"
-        >
-          <button
-            class="c6"
-            type="submit"
-          >
-            Apply filters
-          </button>
-        </footer>
-      </div>
-    </form>
-    <table
-      class="c7 c8"
-    >
-      <thead
-        class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-5"
-      >
-        <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
-        >
-          <th
-            class="c9 "
-            scope="col"
-          >
-            <div
-              class="c10"
-            />
-          </th>
-          <th
-            class="c9 "
-            scope="col"
-          >
-            <div
-              class="c10"
-            />
-          </th>
-          <th
-            class="c9 "
-            scope="col"
-          >
-            <div
-              class="c10"
-            />
-          </th>
-          <th
-            class="c9 "
-            scope="col"
-          >
-            <div
-              class="c10"
-            />
-          </th>
-          <th
-            class="c9 "
-            scope="col"
-          >
-            <div
-              class="c10"
-            />
-          </th>
-        </tr>
-      </thead>
-      <tbody
-        class="StyledTable__StyledTableBody-sc-1m3u5g-3 c11"
-      >
-        <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
-        >
-          <th
-            class="c12 "
-            scope="row"
-          >
-            <div
-              class="c13"
-            >
-              <span
-                class="c14"
-              >
-                aa
-              </span>
-            </div>
-          </th>
-          <td
-            class="c12 "
-          >
-            <div
-              class="c13"
-            />
-          </td>
-          <td
-            class="c12 "
-          >
-            <div
-              class="c13"
-            >
-              <span
-                class="c15"
-              >
-                2.3
-              </span>
-            </div>
-          </td>
-          <td
-            class="c12 "
-          >
-            <div
-              class="c13"
-            />
-          </td>
-          <td
-            class="c12 "
-          >
-            <div
-              class="c13"
-            />
-          </td>
-        </tr>
-        <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
-        >
-          <th
-            class="c12 "
-            scope="row"
-          >
-            <div
-              class="c13"
-            >
-              <span
-                class="c14"
-              >
-                bb
-              </span>
-            </div>
-          </th>
-          <td
-            class="c12 "
-          >
-            <div
-              class="c13"
-            />
-          </td>
-          <td
-            class="c12 "
-          >
-            <div
-              class="c13"
-            >
-              <span
-                class="c15"
-              >
-                4.3
-              </span>
-            </div>
-          </td>
-          <td
-            class="c12 "
-          >
-            <div
-              class="c13"
-            />
-          </td>
-          <td
-            class="c12 "
-          >
-            <div
-              class="c13"
-            />
-          </td>
-        </tr>
-        <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
-        >
-          <th
-            class="c12 "
-            scope="row"
-          >
-            <div
-              class="c13"
-            >
-              <span
-                class="c14"
-              >
-                cc
-              </span>
-            </div>
-          </th>
-          <td
-            class="c12 "
-          >
-            <div
-              class="c13"
-            />
-          </td>
-          <td
-            class="c12 "
-          >
-            <div
-              class="c13"
-            />
-          </td>
-          <td
-            class="c12 "
-          >
-            <div
-              class="c13"
-            />
-          </td>
-          <td
-            class="c12 "
-          >
-            <div
-              class="c13"
-            />
-          </td>
-        </tr>
-        <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
-        >
-          <th
-            class="c12 "
-            scope="row"
-          >
-            <div
-              class="c13"
-            >
-              <span
-                class="c14"
-              >
-                dd
-              </span>
-            </div>
-          </th>
-          <td
-            class="c12 "
-          >
-            <div
-              class="c13"
-            />
-          </td>
-          <td
-            class="c12 "
-          >
-            <div
-              class="c13"
-            />
-          </td>
-          <td
-            class="c12 "
-          >
-            <div
-              class="c13"
-            />
-          </td>
-          <td
-            class="c12 "
-          >
-            <div
-              class="c13"
-            />
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-</div>
-`;
-
-exports[`Data pagination 1`] = `
-.c14 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #000000;
-  stroke: #000000;
-}
-
-.c14 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c14 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c14 *[stroke*='#'],
-.c14 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c14 *[fill-rule],
-.c14 *[FILL-RULE],
-.c14 *[fill*='#'],
-.c14 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
-}
-
-.c0 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
-.c1 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  flex-direction: column;
-  flex: 0 0 auto;
-}
-
-.c5 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  flex-direction: column;
-  flex: 1 0 auto;
-  justify-content: center;
-}
-
-.c8 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  flex-direction: column;
-}
-
-.c10 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  margin: 0px;
-  align-items: center;
-  min-width: 0;
-  min-height: 0;
-  flex-direction: row;
-  padding: 0px;
-  column-gap: 3px;
-}
-
-.c9 {
-  font-size: 18px;
-  line-height: 24px;
-  font-weight: bold;
-}
-
-.c12 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  font: inherit;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  border: none;
-  border-radius: 4px;
-  padding: 4px 4px;
-  font-size: 18px;
-  line-height: 0;
-  color: #000000;
-  text-align: center;
-  transition-property: color,background-color,border-color,box-shadow;
-  transition-duration: 0.1s;
-  transition-timing-function: ease-in-out;
-  width: 100%;
-  height: 100%;
-  max-width: none;
-  flex: 1 0 auto;
-}
-
-.c12 >svg {
-  display: flex;
-  align-self: center;
-  vertical-align: middle;
-}
-
-.c12:hover {
-  background-color: rgba(51, 51, 51, 0.06274509803921569);
-}
-
-.c12:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c12:focus >circle,
-.c12:focus >ellipse,
-.c12:focus >line,
-.c12:focus >path,
-.c12:focus >polygon,
-.c12:focus >polyline,
-.c12:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c12:focus ::-moz-focus-inner {
-  border: 0;
-}
-
-.c12:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c12:focus:not(:focus-visible) >circle,
-.c12:focus:not(:focus-visible) >ellipse,
-.c12:focus:not(:focus-visible) >line,
-.c12:focus:not(:focus-visible) >path,
-.c12:focus:not(:focus-visible) >polygon,
-.c12:focus:not(:focus-visible) >polyline,
-.c12:focus:not(:focus-visible) >rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c12:focus:not(:focus-visible) ::-moz-focus-inner {
-  border: 0;
-}
-
-.c15 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  font: inherit;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  border: none;
-  border-radius: 4px;
-  padding: 4px 4px;
-  font-size: 18px;
-  line-height: 24px;
-  color: #000000;
-  text-align: center;
-  transition-property: color,background-color,border-color,box-shadow;
-  transition-duration: 0.1s;
-  transition-timing-function: ease-in-out;
-  width: 100%;
-  height: 100%;
-  max-width: none;
-  flex: 1 0 auto;
-}
-
-.c15:hover {
-  background-color: rgba(51, 51, 51, 0.06274509803921569);
-}
-
-.c15:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c15:focus >circle,
-.c15:focus >ellipse,
-.c15:focus >line,
-.c15:focus >path,
-.c15:focus >polygon,
-.c15:focus >polyline,
-.c15:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c15:focus ::-moz-focus-inner {
-  border: 0;
-}
-
-.c15:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c15:focus:not(:focus-visible) >circle,
-.c15:focus:not(:focus-visible) >ellipse,
-.c15:focus:not(:focus-visible) >line,
-.c15:focus:not(:focus-visible) >path,
-.c15:focus:not(:focus-visible) >polygon,
-.c15:focus:not(:focus-visible) >polyline,
-.c15:focus:not(:focus-visible) >rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c15:focus:not(:focus-visible) ::-moz-focus-inner {
-  border: 0;
-}
-
-.c4 {
-  margin: 0;
-  padding: 0;
-  font-weight: inherit;
-  text-align: inherit;
-  text-align: start;
-  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
-  padding-left: 12px;
-  padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
-}
-
-.c7 {
-  margin: 0;
-  padding: 0;
-  font-weight: inherit;
-  text-align: inherit;
-  text-align: start;
-  padding-left: 12px;
-  padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
-}
-
-.c2 {
-  border-spacing: 0;
-  border-collapse: collapse;
-  width: inherit;
-}
-
-.c3 {
-  position: relative;
-  border-spacing: 0;
-  border-collapse: separate;
-}
-
-.c6:focus {
-  outline: 2px solid #6FFFB0;
-}
-
-.c6:focus:not(:focus-visible) {
-  outline: none;
-}
-
-.c13 {
-  font-size: 18px;
-  line-height: 0;
-}
-
-.c13 >svg {
-  margin: 0 auto;
-}
-
-.c11 {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  max-width: 100%;
-  height: 36px;
-  min-width: 36px;
-}
-
-@media only screen and (max-width: 768px) {
-  .c10 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .c10 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .c10 {
-    column-gap: 2px;
-  }
-}
-
-<div
-  class="c0"
->
-  <div
-    class="c1"
-    id="data"
-  >
-    <table
-      class="c2 c3"
-    >
-      <thead
-        class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-5"
-      >
-        <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
-        >
-          <th
-            class="c4 "
-            scope="col"
-          >
-            <div
-              class="c5"
-            />
-          </th>
-        </tr>
-      </thead>
-      <tbody
-        class="StyledTable__StyledTableBody-sc-1m3u5g-3 c6"
-      >
-        <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
-        >
-          <th
-            class="c7 "
-            scope="row"
-          >
-            <div
-              class="c8"
-            >
-              <span
-                class="c9"
-              >
-                cc
-              </span>
-            </div>
-          </th>
-        </tr>
-        <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
-        >
-          <th
-            class="c7 "
-            scope="row"
-          >
-            <div
-              class="c8"
-            >
-              <span
-                class="c9"
-              >
-                dd
-              </span>
-            </div>
-          </th>
-        </tr>
-      </tbody>
-    </table>
-    <div
-      class="c1 Pagination__StyledPaginationContainer-sc-rnlw6m-0"
-    >
-      <nav
-        aria-label="Pagination Navigation"
-        class="c1"
-      >
-        <ul
-          class="c10"
-        >
-          <li
-            class="c11"
-          >
-            <button
-              aria-label="Go to previous page"
-              class="c12 c13"
-              type="button"
-            >
-              <svg
-                aria-label="Previous"
-                class="c14"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  d="M17 2 7 12l10 10"
-                  fill="none"
-                  stroke="#000"
-                  stroke-width="2"
-                />
-              </svg>
-            </button>
-          </li>
-          <li
-            class="c11"
-          >
-            <button
-              aria-label="Go to page 1"
-              class="c15 c13"
-              type="button"
-            >
-              1
-            </button>
-          </li>
-          <li
-            class="c11"
-          >
-            <button
-              aria-label="Go to next page"
-              class="c12 c13"
-              type="button"
-            >
-              <svg
-                aria-label="Next"
-                class="c14"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  d="m7 2 10 10L7 22"
-                  fill="none"
-                  stroke="#000"
-                  stroke-width="2"
-                />
-              </svg>
-            </button>
-          </li>
-        </ul>
-      </nav>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Data pagination step 1`] = `
-.c14 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #000000;
-  stroke: #000000;
-}
-
-.c14 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c14 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c14 *[stroke*='#'],
-.c14 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c14 *[fill-rule],
-.c14 *[FILL-RULE],
-.c14 *[fill*='#'],
-.c14 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
-}
-
-.c0 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
-.c1 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  flex-direction: column;
-  flex: 0 0 auto;
-}
-
-.c5 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  flex-direction: column;
-  flex: 1 0 auto;
-  justify-content: center;
-}
-
-.c8 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  flex-direction: column;
-}
-
-.c10 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  margin: 0px;
-  align-items: center;
-  min-width: 0;
-  min-height: 0;
-  flex-direction: row;
-  padding: 0px;
-  column-gap: 3px;
-}
-
-.c9 {
-  font-size: 18px;
-  line-height: 24px;
-  font-weight: bold;
-}
-
-.c12 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  font: inherit;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  border: none;
-  border-radius: 4px;
-  padding: 4px 4px;
-  font-size: 18px;
-  line-height: 0;
-  color: #000000;
-  text-align: center;
-  transition-property: color,background-color,border-color,box-shadow;
-  transition-duration: 0.1s;
-  transition-timing-function: ease-in-out;
-  width: 100%;
-  height: 100%;
-  max-width: none;
-  flex: 1 0 auto;
-}
-
-.c12 >svg {
-  display: flex;
-  align-self: center;
-  vertical-align: middle;
-}
-
-.c12:hover {
-  background-color: rgba(51, 51, 51, 0.06274509803921569);
-}
-
-.c12:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c12:focus >circle,
-.c12:focus >ellipse,
-.c12:focus >line,
-.c12:focus >path,
-.c12:focus >polygon,
-.c12:focus >polyline,
-.c12:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c12:focus ::-moz-focus-inner {
-  border: 0;
-}
-
-.c12:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c12:focus:not(:focus-visible) >circle,
-.c12:focus:not(:focus-visible) >ellipse,
-.c12:focus:not(:focus-visible) >line,
-.c12:focus:not(:focus-visible) >path,
-.c12:focus:not(:focus-visible) >polygon,
-.c12:focus:not(:focus-visible) >polyline,
-.c12:focus:not(:focus-visible) >rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c12:focus:not(:focus-visible) ::-moz-focus-inner {
-  border: 0;
-}
-
-.c15 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  font: inherit;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  border: none;
-  border-radius: 4px;
-  padding: 4px 4px;
-  font-size: 18px;
-  line-height: 24px;
-  color: #000000;
-  text-align: center;
-  transition-property: color,background-color,border-color,box-shadow;
-  transition-duration: 0.1s;
-  transition-timing-function: ease-in-out;
-  width: 100%;
-  height: 100%;
-  max-width: none;
-  flex: 1 0 auto;
-}
-
-.c15:hover {
-  background-color: rgba(51, 51, 51, 0.06274509803921569);
-}
-
-.c15:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c15:focus >circle,
-.c15:focus >ellipse,
-.c15:focus >line,
-.c15:focus >path,
-.c15:focus >polygon,
-.c15:focus >polyline,
-.c15:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c15:focus ::-moz-focus-inner {
-  border: 0;
-}
-
-.c15:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c15:focus:not(:focus-visible) >circle,
-.c15:focus:not(:focus-visible) >ellipse,
-.c15:focus:not(:focus-visible) >line,
-.c15:focus:not(:focus-visible) >path,
-.c15:focus:not(:focus-visible) >polygon,
-.c15:focus:not(:focus-visible) >polyline,
-.c15:focus:not(:focus-visible) >rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c15:focus:not(:focus-visible) ::-moz-focus-inner {
-  border: 0;
-}
-
-.c4 {
-  margin: 0;
-  padding: 0;
-  font-weight: inherit;
-  text-align: inherit;
-  text-align: start;
-  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
-  padding-left: 12px;
-  padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
-}
-
-.c7 {
-  margin: 0;
-  padding: 0;
-  font-weight: inherit;
-  text-align: inherit;
-  text-align: start;
-  padding-left: 12px;
-  padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
-}
-
-.c2 {
-  border-spacing: 0;
-  border-collapse: collapse;
-  width: inherit;
-}
-
-.c3 {
-  position: relative;
-  border-spacing: 0;
-  border-collapse: separate;
-}
-
-.c6:focus {
-  outline: 2px solid #6FFFB0;
-}
-
-.c6:focus:not(:focus-visible) {
-  outline: none;
-}
-
-.c13 {
-  font-size: 18px;
-  line-height: 0;
-}
-
-.c13 >svg {
-  margin: 0 auto;
-}
-
-.c11 {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  max-width: 100%;
-  height: 36px;
-  min-width: 36px;
-}
-
-@media only screen and (max-width: 768px) {
-  .c10 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .c10 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .c10 {
-    column-gap: 2px;
-  }
-}
-
-<div
-  class="c0"
->
-  <div
-    class="c1"
-    id="data"
-  >
-    <table
-      class="c2 c3"
-    >
-      <thead
-        class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-5"
-      >
-        <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
-        >
-          <th
-            class="c4 "
-            scope="col"
-          >
-            <div
-              class="c5"
-            />
-          </th>
-        </tr>
-      </thead>
-      <tbody
-        class="StyledTable__StyledTableBody-sc-1m3u5g-3 c6"
-      >
-        <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
-        >
-          <th
-            class="c7 "
-            scope="row"
-          >
-            <div
-              class="c8"
-            >
-              <span
-                class="c9"
-              >
-                cc
-              </span>
-            </div>
-          </th>
-        </tr>
-        <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
-        >
-          <th
-            class="c7 "
-            scope="row"
-          >
-            <div
-              class="c8"
-            >
-              <span
-                class="c9"
-              >
-                dd
-              </span>
-            </div>
-          </th>
-        </tr>
-      </tbody>
-    </table>
-    <div
-      class="c1 Pagination__StyledPaginationContainer-sc-rnlw6m-0"
-    >
-      <nav
-        aria-label="Pagination Navigation"
-        class="c1"
-      >
-        <ul
-          class="c10"
-        >
-          <li
-            class="c11"
-          >
-            <button
-              aria-label="Go to previous page"
-              class="c12 c13"
-              type="button"
-            >
-              <svg
-                aria-label="Previous"
-                class="c14"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  d="M17 2 7 12l10 10"
-                  fill="none"
-                  stroke="#000"
-                  stroke-width="2"
-                />
-              </svg>
-            </button>
-          </li>
-          <li
-            class="c11"
-          >
-            <button
-              aria-label="Go to page 1"
-              class="c15 c13"
-              type="button"
-            >
-              1
-            </button>
-          </li>
-          <li
-            class="c11"
-          >
-            <button
-              aria-label="Go to next page"
-              class="c12 c13"
-              type="button"
-            >
-              <svg
-                aria-label="Next"
-                class="c14"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  d="m7 2 10 10L7 22"
-                  fill="none"
-                  stroke="#000"
-                  stroke-width="2"
-                />
-              </svg>
-            </button>
-          </li>
-        </ul>
-      </nav>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Data properties when property is an array 1`] = `
-<DocumentFragment>
-  .c7 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #666666;
-  stroke: #666666;
-}
-
-.c7 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c7 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c7 *[stroke*='#'],
-.c7 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c7 *[fill-rule],
-.c7 *[FILL-RULE],
-.c7 *[fill*='#'],
-.c7 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
-}
-
-.c0 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
-.c1 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  flex-direction: column;
-  flex: 0 0 auto;
-}
-
-.c4 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  flex-direction: column;
-}
-
-.c9 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  flex-direction: row;
-  flex: 0 0 auto;
-}
-
-.c15 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  flex-direction: column;
-  flex: 1 0 auto;
-  justify-content: center;
-}
-
-.c2 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  align-items: flex-start;
-  min-width: 0;
-  min-height: 0;
-  flex-direction: row;
-  flex: 0 0 auto;
-  flex-wrap: wrap;
-  column-gap: 24px;
-  row-gap: 24px;
-}
-
-.c3 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  align-items: flex-start;
-  min-width: 0;
-  min-height: 0;
-  flex-direction: row;
-  flex: 0 0 auto;
-  flex-wrap: wrap;
-  column-gap: 12px;
-  row-gap: 12px;
-}
-
-.c11 {
-  margin-top: 6px;
-  margin-bottom: 6px;
-  font-size: 18px;
-  line-height: 24px;
-}
-
-.c16 {
-  font-size: 18px;
-  line-height: 24px;
-}
-
 .c19 {
   font-size: 18px;
   line-height: 24px;
@@ -2952,6 +299,2899 @@ exports[`Data properties when property is an array 1`] = `
 }
 
 .c17:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c17:focus >circle,
+.c17:focus >ellipse,
+.c17:focus >line,
+.c17:focus >path,
+.c17:focus >polygon,
+.c17:focus >polyline,
+.c17:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c17:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c17:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c17:focus:not(:focus-visible) >circle,
+.c17:focus:not(:focus-visible) >ellipse,
+.c17:focus:not(:focus-visible) >line,
+.c17:focus:not(:focus-visible) >path,
+.c17:focus:not(:focus-visible) >polygon,
+.c17:focus:not(:focus-visible) >polyline,
+.c17:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c17:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
+}
+
+.c16:focus {
+  outline: 2px solid #6FFFB0;
+}
+
+.c16:focus:not(:focus-visible) {
+  outline: none;
+}
+
+@media only screen and (max-width: 768px) {
+
+}
+
+@media only screen and (max-width: 768px) {
+
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    column-gap: 12px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c3 {
+    column-gap: 6px;
+  }
+}
+
+<div
+  class="c0"
+>
+  <div
+    class="c1"
+    id="data"
+  >
+    <div
+      class="c2"
+    >
+      <div
+        class="c3"
+      >
+        <div
+          class="c4"
+        >
+          <div
+            class="c5"
+          >
+            <div
+              class="c6"
+            >
+              <svg
+                aria-label="Search"
+                class="c7"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="m15 15 7 7-7-7zm-5.5 2a7.5 7.5 0 1 0 0-15 7.5 7.5 0 0 0 0 15z"
+                  fill="none"
+                  stroke="#000"
+                  stroke-width="2"
+                />
+              </svg>
+            </div>
+            <input
+              aria-label="Search"
+              autocomplete="off"
+              class="c8"
+              id="data--search"
+              name="_search"
+              type="search"
+              value=""
+            />
+          </div>
+        </div>
+        <div
+          class="c9"
+        >
+          <button
+            aria-label="Open filters"
+            class="c10"
+            id="data--filters-control"
+            type="button"
+          >
+            <svg
+              aria-label="Filter"
+              class="c7"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="m3 6 7 7v8h4v-8l7-7V3H3z"
+                fill="none"
+                stroke="#000"
+                stroke-width="2"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+    <span
+      class="c11"
+    >
+      4 results of undefined items
+    </span>
+    <table
+      class="c12 c13"
+    >
+      <thead
+        class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-5"
+      >
+        <tr
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+        >
+          <th
+            class="c14 "
+            scope="col"
+          >
+            <div
+              class="c15"
+            />
+          </th>
+        </tr>
+      </thead>
+      <tbody
+        class="StyledTable__StyledTableBody-sc-1m3u5g-3 c16"
+      >
+        <tr
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 c17"
+        >
+          <th
+            class="c18 "
+            scope="row"
+          >
+            <div
+              class="c4"
+            >
+              <span
+                class="c19"
+              >
+                aa
+              </span>
+            </div>
+          </th>
+        </tr>
+        <tr
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 c17"
+        >
+          <th
+            class="c18 "
+            scope="row"
+          >
+            <div
+              class="c4"
+            >
+              <span
+                class="c19"
+              >
+                bb
+              </span>
+            </div>
+          </th>
+        </tr>
+        <tr
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 c17"
+        >
+          <th
+            class="c18 "
+            scope="row"
+          >
+            <div
+              class="c4"
+            >
+              <span
+                class="c19"
+              >
+                cc
+              </span>
+            </div>
+          </th>
+        </tr>
+        <tr
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 c17"
+        >
+          <th
+            class="c18 "
+            scope="row"
+          >
+            <div
+              class="c4"
+            >
+              <span
+                class="c19"
+              >
+                dd
+              </span>
+            </div>
+          </th>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+`;
+
+exports[`Data controlled search 2`] = `
+<div
+  class="StyledGrommet-sc-19lkkz7-0 cBoJUe"
+>
+  <div
+    class="StyledBox-sc-13pk1d4-0 hQoEqW"
+    id="data"
+  >
+    <div
+      class="StyledBox-sc-13pk1d4-0 hDXmSE"
+    >
+      <div
+        class="StyledBox-sc-13pk1d4-0 hDGtNF"
+      >
+        <div
+          class="StyledBox-sc-13pk1d4-0 hKCfLv"
+        >
+          <div
+            class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 ddykB"
+          >
+            <div
+              class="StyledTextInput__StyledIcon-sc-1x30a0s-3 kYyGWZ"
+            >
+              <svg
+                aria-label="Search"
+                class="StyledIcon-sc-ofa7kd-0 jCZnaS"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="m15 15 7 7-7-7zm-5.5 2a7.5 7.5 0 1 0 0-15 7.5 7.5 0 0 0 0 15z"
+                  fill="none"
+                  stroke="#000"
+                  stroke-width="2"
+                />
+              </svg>
+            </div>
+            <input
+              aria-label="Search"
+              autocomplete="off"
+              class="StyledTextInput-sc-1x30a0s-0 hCEbuS"
+              id="data--search"
+              name="_search"
+              type="search"
+              value="a"
+            />
+          </div>
+        </div>
+        <div
+          class="StyledBox-sc-13pk1d4-0 dhDkJW"
+        >
+          <button
+            aria-label="Open filters"
+            class="StyledButton-sc-323bzc-0 iGmGqZ"
+            id="data--filters-control"
+            type="button"
+          >
+            <svg
+              aria-label="Filter"
+              class="StyledIcon-sc-ofa7kd-0 jCZnaS"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="m3 6 7 7v8h4v-8l7-7V3H3z"
+                fill="none"
+                stroke="#000"
+                stroke-width="2"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+    <span
+      class="StyledText-sc-1sadyjn-0 NvWBD"
+    >
+      4 results of undefined items
+    </span>
+    <table
+      class="StyledTable-sc-1m3u5g-6 kzIboA StyledDataTable-sc-xrlyjm-0 hPMmXj"
+    >
+      <thead
+        class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-5"
+      >
+        <tr
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRowHeader-sc-xrlyjm-3 fgxpmX"
+        >
+          <th
+            class="StyledTable__StyledTableCell-sc-1m3u5g-0 btvVUL StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 dvuoDz"
+            scope="col"
+          >
+            <div
+              class="StyledBox-sc-13pk1d4-0 jvqrur"
+            />
+          </th>
+        </tr>
+      </thead>
+      <tbody
+        class="StyledTable__StyledTableBody-sc-1m3u5g-3 StyledDataTable__StyledDataTableBody-sc-xrlyjm-4 gQHCrw"
+      >
+        <tr
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 faOFTP"
+        >
+          <th
+            class="StyledTable__StyledTableCell-sc-1m3u5g-0 fwrJut StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 dvuoDz"
+            scope="row"
+          >
+            <div
+              class="StyledBox-sc-13pk1d4-0 hKCfLv"
+            >
+              <span
+                class="StyledText-sc-1sadyjn-0 cUpCuS"
+              >
+                aa
+              </span>
+            </div>
+          </th>
+        </tr>
+        <tr
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 faOFTP"
+        >
+          <th
+            class="StyledTable__StyledTableCell-sc-1m3u5g-0 fwrJut StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 dvuoDz"
+            scope="row"
+          >
+            <div
+              class="StyledBox-sc-13pk1d4-0 hKCfLv"
+            >
+              <span
+                class="StyledText-sc-1sadyjn-0 cUpCuS"
+              >
+                bb
+              </span>
+            </div>
+          </th>
+        </tr>
+        <tr
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 faOFTP"
+        >
+          <th
+            class="StyledTable__StyledTableCell-sc-1m3u5g-0 fwrJut StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 dvuoDz"
+            scope="row"
+          >
+            <div
+              class="StyledBox-sc-13pk1d4-0 hKCfLv"
+            >
+              <span
+                class="StyledText-sc-1sadyjn-0 cUpCuS"
+              >
+                cc
+              </span>
+            </div>
+          </th>
+        </tr>
+        <tr
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 faOFTP"
+        >
+          <th
+            class="StyledTable__StyledTableCell-sc-1m3u5g-0 fwrJut StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 dvuoDz"
+            scope="row"
+          >
+            <div
+              class="StyledBox-sc-13pk1d4-0 hKCfLv"
+            >
+              <span
+                class="StyledText-sc-1sadyjn-0 cUpCuS"
+              >
+                dd
+              </span>
+            </div>
+          </th>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+`;
+
+exports[`Data messages 1`] = `
+.c7 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #666666;
+  stroke: #666666;
+}
+
+.c7 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c7 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c7 *[stroke*='#'],
+.c7 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c7 *[fill-rule],
+.c7 *[FILL-RULE],
+.c7 *[fill*='#'],
+.c7 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  flex: 0 0 auto;
+}
+
+.c4 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+}
+
+.c9 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: row;
+  flex: 0 0 auto;
+}
+
+.c15 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  flex: 1 0 auto;
+  justify-content: center;
+}
+
+.c2 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-items: flex-start;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: row;
+  flex: 0 0 auto;
+  flex-wrap: wrap;
+  column-gap: 24px;
+  row-gap: 24px;
+}
+
+.c3 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-items: flex-start;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: row;
+  flex: 0 0 auto;
+  flex-wrap: wrap;
+  column-gap: 12px;
+  row-gap: 12px;
+}
+
+.c11 {
+  margin-top: 6px;
+  margin-bottom: 6px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c19 {
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: bold;
+}
+
+.c20 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c10 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+  line-height: 0;
+  padding: 12px;
+}
+
+.c10:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c10:focus >circle,
+.c10:focus >ellipse,
+.c10:focus >line,
+.c10:focus >path,
+.c10:focus >polygon,
+.c10:focus >polyline,
+.c10:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c10:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c10:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c10:focus:not(:focus-visible) >circle,
+.c10:focus:not(:focus-visible) >ellipse,
+.c10:focus:not(:focus-visible) >line,
+.c10:focus:not(:focus-visible) >path,
+.c10:focus:not(:focus-visible) >polygon,
+.c10:focus:not(:focus-visible) >polyline,
+.c10:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c10:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
+}
+
+.c8 {
+  box-sizing: border-box;
+  font-size: inherit;
+  font-family: inherit;
+  border: none;
+  -webkit-appearance: none;
+  background: transparent;
+  color: inherit;
+  width: 100%;
+  padding: 11px;
+  font-weight: 600;
+  margin: 0;
+  border: 1px solid rgba(0, 0, 0, 0.33);
+  border-radius: 4px;
+  padding-left: 48px;
+}
+
+.c8:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c8:focus >circle,
+.c8:focus >ellipse,
+.c8:focus >line,
+.c8:focus >path,
+.c8:focus >polygon,
+.c8:focus >polyline,
+.c8:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c8:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c8::-webkit-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c8::-moz-placeholder {
+  color: #AAAAAA;
+}
+
+.c8:-ms-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c8 ::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+.c8::-moz-focus-inner {
+  border: none;
+  outline: none;
+}
+
+.c8:-moz-placeholder,
+.c8::-moz-placeholder {
+  opacity: 1;
+}
+
+.c5 {
+  position: relative;
+  width: 100%;
+}
+
+.c6 {
+  position: absolute;
+  display: flex;
+  justify: center;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  left: 12px;
+}
+
+.c14 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  text-align: start;
+  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.c18 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  text-align: start;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.c12 {
+  border-spacing: 0;
+  border-collapse: collapse;
+  width: inherit;
+}
+
+.c13 {
+  position: relative;
+  border-spacing: 0;
+  border-collapse: separate;
+}
+
+.c17:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c17:focus >circle,
+.c17:focus >ellipse,
+.c17:focus >line,
+.c17:focus >path,
+.c17:focus >polygon,
+.c17:focus >polyline,
+.c17:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c17:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c17:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c17:focus:not(:focus-visible) >circle,
+.c17:focus:not(:focus-visible) >ellipse,
+.c17:focus:not(:focus-visible) >line,
+.c17:focus:not(:focus-visible) >path,
+.c17:focus:not(:focus-visible) >polygon,
+.c17:focus:not(:focus-visible) >polyline,
+.c17:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c17:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
+}
+
+.c16:focus {
+  outline: 2px solid #6FFFB0;
+}
+
+.c16:focus:not(:focus-visible) {
+  outline: none;
+}
+
+@media only screen and (max-width: 768px) {
+
+}
+
+@media only screen and (max-width: 768px) {
+
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    column-gap: 12px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c3 {
+    column-gap: 6px;
+  }
+}
+
+<div
+  class="c0"
+>
+  <div
+    class="c1"
+    id="data"
+  >
+    <div
+      class="c2"
+    >
+      <div
+        class="c3"
+      >
+        <div
+          class="c4"
+        >
+          <div
+            class="c5"
+          >
+            <div
+              class="c6"
+            >
+              <svg
+                aria-label="Search"
+                class="c7"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="m15 15 7 7-7-7zm-5.5 2a7.5 7.5 0 1 0 0-15 7.5 7.5 0 0 0 0 15z"
+                  fill="none"
+                  stroke="#000"
+                  stroke-width="2"
+                />
+              </svg>
+            </div>
+            <input
+              aria-label="Search"
+              autocomplete="off"
+              class="c8"
+              id="data--search"
+              name="_search"
+              type="search"
+              value=""
+            />
+          </div>
+        </div>
+        <div
+          class="c9"
+        >
+          <button
+            aria-label="Open filters"
+            class="c10"
+            id="data--filters-control"
+            type="button"
+          >
+            <svg
+              aria-label="Filter"
+              class="c7"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="m3 6 7 7v8h4v-8l7-7V3H3z"
+                fill="none"
+                stroke="#000"
+                stroke-width="2"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+    <span
+      class="c11"
+    >
+      4 things
+    </span>
+    <table
+      class="c12 c13"
+    >
+      <thead
+        class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-5"
+      >
+        <tr
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+        >
+          <th
+            class="c14 "
+            scope="col"
+          >
+            <div
+              class="c15"
+            />
+          </th>
+          <th
+            class="c14 "
+            scope="col"
+          >
+            <div
+              class="c15"
+            />
+          </th>
+        </tr>
+      </thead>
+      <tbody
+        class="StyledTable__StyledTableBody-sc-1m3u5g-3 c16"
+      >
+        <tr
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 c17"
+        >
+          <th
+            class="c18 "
+            scope="row"
+          >
+            <div
+              class="c4"
+            >
+              <span
+                class="c19"
+              >
+                aa
+              </span>
+            </div>
+          </th>
+          <td
+            class="c18 "
+          >
+            <div
+              class="c4"
+            >
+              <span
+                class="c20"
+              >
+                ZZ
+              </span>
+            </div>
+          </td>
+        </tr>
+        <tr
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 c17"
+        >
+          <th
+            class="c18 "
+            scope="row"
+          >
+            <div
+              class="c4"
+            >
+              <span
+                class="c19"
+              >
+                bb
+              </span>
+            </div>
+          </th>
+          <td
+            class="c18 "
+          >
+            <div
+              class="c4"
+            >
+              <span
+                class="c20"
+              >
+                YY
+              </span>
+            </div>
+          </td>
+        </tr>
+        <tr
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 c17"
+        >
+          <th
+            class="c18 "
+            scope="row"
+          >
+            <div
+              class="c4"
+            >
+              <span
+                class="c19"
+              >
+                cc
+              </span>
+            </div>
+          </th>
+          <td
+            class="c18 "
+          >
+            <div
+              class="c4"
+            />
+          </td>
+        </tr>
+        <tr
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 c17"
+        >
+          <th
+            class="c18 "
+            scope="row"
+          >
+            <div
+              class="c4"
+            >
+              <span
+                class="c19"
+              >
+                dd
+              </span>
+            </div>
+          </th>
+          <td
+            class="c18 "
+          >
+            <div
+              class="c4"
+            />
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+`;
+
+exports[`Data onView 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  flex: 0 0 auto;
+}
+
+.c3 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  height: 100%;
+}
+
+.c4 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  flex: 1 1;
+  overflow: auto;
+}
+
+.c5 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin-top: 24px;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: row;
+  flex: 0 0 auto;
+  justify-content: space-between;
+}
+
+.c10 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  flex: 1 0 auto;
+  justify-content: center;
+}
+
+.c14 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+}
+
+.c15 {
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: bold;
+}
+
+.c16 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c6 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: 2px solid #7D4CDB;
+  border-radius: 18px;
+  color: #444444;
+  padding: 4px 22px;
+  font-size: 18px;
+  line-height: 24px;
+  background-color: #7D4CDB;
+  color: #f8f8f8;
+  border-radius: 18px;
+  transition-property: color,background-color,border-color,box-shadow;
+  transition-duration: 0.1s;
+  transition-timing-function: ease-in-out;
+}
+
+.c6:hover {
+  box-shadow: 0px 0px 0px 2px #7D4CDB;
+}
+
+.c6:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c6:focus >circle,
+.c6:focus >ellipse,
+.c6:focus >line,
+.c6:focus >path,
+.c6:focus >polygon,
+.c6:focus >polyline,
+.c6:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c6:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c6:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c6:focus:not(:focus-visible) >circle,
+.c6:focus:not(:focus-visible) >ellipse,
+.c6:focus:not(:focus-visible) >line,
+.c6:focus:not(:focus-visible) >path,
+.c6:focus:not(:focus-visible) >polygon,
+.c6:focus:not(:focus-visible) >polyline,
+.c6:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c6:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
+}
+
+.c2 {
+  max-width: 100%;
+}
+
+.c9 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  text-align: start;
+  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.c13 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  text-align: start;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.c7 {
+  border-spacing: 0;
+  border-collapse: collapse;
+  width: inherit;
+}
+
+.c8 {
+  position: relative;
+  border-spacing: 0;
+  border-collapse: separate;
+}
+
+.c12:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c12:focus >circle,
+.c12:focus >ellipse,
+.c12:focus >line,
+.c12:focus >path,
+.c12:focus >polygon,
+.c12:focus >polyline,
+.c12:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c12:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c12:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c12:focus:not(:focus-visible) >circle,
+.c12:focus:not(:focus-visible) >ellipse,
+.c12:focus:not(:focus-visible) >line,
+.c12:focus:not(:focus-visible) >path,
+.c12:focus:not(:focus-visible) >polygon,
+.c12:focus:not(:focus-visible) >polyline,
+.c12:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c12:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
+}
+
+.c11:focus {
+  outline: 2px solid #6FFFB0;
+}
+
+.c11:focus:not(:focus-visible) {
+  outline: none;
+}
+
+@media only screen and (max-width: 768px) {
+  .c5 {
+    margin-top: 12px;
+  }
+}
+
+<div
+  class="c0"
+>
+  <div
+    class="c1"
+    id="data"
+  >
+    <form
+      class="c2"
+    >
+      <div
+        class="c3"
+      >
+        <div
+          class="c4"
+        >
+          <div
+            class="c1"
+          />
+        </div>
+        <footer
+          class="c5"
+        >
+          <button
+            class="c6"
+            type="submit"
+          >
+            Apply filters
+          </button>
+        </footer>
+      </div>
+    </form>
+    <table
+      class="c7 c8"
+    >
+      <thead
+        class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-5"
+      >
+        <tr
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+        >
+          <th
+            class="c9 "
+            scope="col"
+          >
+            <div
+              class="c10"
+            />
+          </th>
+          <th
+            class="c9 "
+            scope="col"
+          >
+            <div
+              class="c10"
+            />
+          </th>
+          <th
+            class="c9 "
+            scope="col"
+          >
+            <div
+              class="c10"
+            />
+          </th>
+          <th
+            class="c9 "
+            scope="col"
+          >
+            <div
+              class="c10"
+            />
+          </th>
+          <th
+            class="c9 "
+            scope="col"
+          >
+            <div
+              class="c10"
+            />
+          </th>
+        </tr>
+      </thead>
+      <tbody
+        class="StyledTable__StyledTableBody-sc-1m3u5g-3 c11"
+      >
+        <tr
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 c12"
+        >
+          <th
+            class="c13 "
+            scope="row"
+          >
+            <div
+              class="c14"
+            >
+              <span
+                class="c15"
+              >
+                aa
+              </span>
+            </div>
+          </th>
+          <td
+            class="c13 "
+          >
+            <div
+              class="c14"
+            />
+          </td>
+          <td
+            class="c13 "
+          >
+            <div
+              class="c14"
+            >
+              <span
+                class="c16"
+              >
+                2.3
+              </span>
+            </div>
+          </td>
+          <td
+            class="c13 "
+          >
+            <div
+              class="c14"
+            />
+          </td>
+          <td
+            class="c13 "
+          >
+            <div
+              class="c14"
+            />
+          </td>
+        </tr>
+        <tr
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 c12"
+        >
+          <th
+            class="c13 "
+            scope="row"
+          >
+            <div
+              class="c14"
+            >
+              <span
+                class="c15"
+              >
+                bb
+              </span>
+            </div>
+          </th>
+          <td
+            class="c13 "
+          >
+            <div
+              class="c14"
+            />
+          </td>
+          <td
+            class="c13 "
+          >
+            <div
+              class="c14"
+            >
+              <span
+                class="c16"
+              >
+                4.3
+              </span>
+            </div>
+          </td>
+          <td
+            class="c13 "
+          >
+            <div
+              class="c14"
+            />
+          </td>
+          <td
+            class="c13 "
+          >
+            <div
+              class="c14"
+            />
+          </td>
+        </tr>
+        <tr
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 c12"
+        >
+          <th
+            class="c13 "
+            scope="row"
+          >
+            <div
+              class="c14"
+            >
+              <span
+                class="c15"
+              >
+                cc
+              </span>
+            </div>
+          </th>
+          <td
+            class="c13 "
+          >
+            <div
+              class="c14"
+            />
+          </td>
+          <td
+            class="c13 "
+          >
+            <div
+              class="c14"
+            />
+          </td>
+          <td
+            class="c13 "
+          >
+            <div
+              class="c14"
+            />
+          </td>
+          <td
+            class="c13 "
+          >
+            <div
+              class="c14"
+            />
+          </td>
+        </tr>
+        <tr
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 c12"
+        >
+          <th
+            class="c13 "
+            scope="row"
+          >
+            <div
+              class="c14"
+            >
+              <span
+                class="c15"
+              >
+                dd
+              </span>
+            </div>
+          </th>
+          <td
+            class="c13 "
+          >
+            <div
+              class="c14"
+            />
+          </td>
+          <td
+            class="c13 "
+          >
+            <div
+              class="c14"
+            />
+          </td>
+          <td
+            class="c13 "
+          >
+            <div
+              class="c14"
+            />
+          </td>
+          <td
+            class="c13 "
+          >
+            <div
+              class="c14"
+            />
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+`;
+
+exports[`Data pagination 1`] = `
+.c15 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #000000;
+  stroke: #000000;
+}
+
+.c15 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c15 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c15 *[stroke*='#'],
+.c15 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c15 *[fill-rule],
+.c15 *[FILL-RULE],
+.c15 *[fill*='#'],
+.c15 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  flex: 0 0 auto;
+}
+
+.c5 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  flex: 1 0 auto;
+  justify-content: center;
+}
+
+.c9 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+}
+
+.c11 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin: 0px;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: row;
+  padding: 0px;
+  column-gap: 3px;
+}
+
+.c10 {
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: bold;
+}
+
+.c13 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: none;
+  border-radius: 4px;
+  padding: 4px 4px;
+  font-size: 18px;
+  line-height: 0;
+  color: #000000;
+  text-align: center;
+  transition-property: color,background-color,border-color,box-shadow;
+  transition-duration: 0.1s;
+  transition-timing-function: ease-in-out;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  flex: 1 0 auto;
+}
+
+.c13 >svg {
+  display: flex;
+  align-self: center;
+  vertical-align: middle;
+}
+
+.c13:hover {
+  background-color: rgba(51, 51, 51, 0.06274509803921569);
+}
+
+.c13:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c13:focus >circle,
+.c13:focus >ellipse,
+.c13:focus >line,
+.c13:focus >path,
+.c13:focus >polygon,
+.c13:focus >polyline,
+.c13:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c13:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c13:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c13:focus:not(:focus-visible) >circle,
+.c13:focus:not(:focus-visible) >ellipse,
+.c13:focus:not(:focus-visible) >line,
+.c13:focus:not(:focus-visible) >path,
+.c13:focus:not(:focus-visible) >polygon,
+.c13:focus:not(:focus-visible) >polyline,
+.c13:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c13:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
+}
+
+.c16 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: none;
+  border-radius: 4px;
+  padding: 4px 4px;
+  font-size: 18px;
+  line-height: 24px;
+  color: #000000;
+  text-align: center;
+  transition-property: color,background-color,border-color,box-shadow;
+  transition-duration: 0.1s;
+  transition-timing-function: ease-in-out;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  flex: 1 0 auto;
+}
+
+.c16:hover {
+  background-color: rgba(51, 51, 51, 0.06274509803921569);
+}
+
+.c16:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c16:focus >circle,
+.c16:focus >ellipse,
+.c16:focus >line,
+.c16:focus >path,
+.c16:focus >polygon,
+.c16:focus >polyline,
+.c16:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c16:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c16:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c16:focus:not(:focus-visible) >circle,
+.c16:focus:not(:focus-visible) >ellipse,
+.c16:focus:not(:focus-visible) >line,
+.c16:focus:not(:focus-visible) >path,
+.c16:focus:not(:focus-visible) >polygon,
+.c16:focus:not(:focus-visible) >polyline,
+.c16:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c16:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
+}
+
+.c4 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  text-align: start;
+  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.c8 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  text-align: start;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.c2 {
+  border-spacing: 0;
+  border-collapse: collapse;
+  width: inherit;
+}
+
+.c3 {
+  position: relative;
+  border-spacing: 0;
+  border-collapse: separate;
+}
+
+.c7:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c7:focus >circle,
+.c7:focus >ellipse,
+.c7:focus >line,
+.c7:focus >path,
+.c7:focus >polygon,
+.c7:focus >polyline,
+.c7:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c7:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c7:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c7:focus:not(:focus-visible) >circle,
+.c7:focus:not(:focus-visible) >ellipse,
+.c7:focus:not(:focus-visible) >line,
+.c7:focus:not(:focus-visible) >path,
+.c7:focus:not(:focus-visible) >polygon,
+.c7:focus:not(:focus-visible) >polyline,
+.c7:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c7:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
+}
+
+.c6:focus {
+  outline: 2px solid #6FFFB0;
+}
+
+.c6:focus:not(:focus-visible) {
+  outline: none;
+}
+
+.c14 {
+  font-size: 18px;
+  line-height: 0;
+}
+
+.c14 >svg {
+  margin: 0 auto;
+}
+
+.c12 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 100%;
+  height: 36px;
+  min-width: 36px;
+}
+
+@media only screen and (max-width: 768px) {
+  .c11 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c11 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c11 {
+    column-gap: 2px;
+  }
+}
+
+<div
+  class="c0"
+>
+  <div
+    class="c1"
+    id="data"
+  >
+    <table
+      class="c2 c3"
+    >
+      <thead
+        class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-5"
+      >
+        <tr
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+        >
+          <th
+            class="c4 "
+            scope="col"
+          >
+            <div
+              class="c5"
+            />
+          </th>
+        </tr>
+      </thead>
+      <tbody
+        class="StyledTable__StyledTableBody-sc-1m3u5g-3 c6"
+      >
+        <tr
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 c7"
+        >
+          <th
+            class="c8 "
+            scope="row"
+          >
+            <div
+              class="c9"
+            >
+              <span
+                class="c10"
+              >
+                cc
+              </span>
+            </div>
+          </th>
+        </tr>
+        <tr
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 c7"
+        >
+          <th
+            class="c8 "
+            scope="row"
+          >
+            <div
+              class="c9"
+            >
+              <span
+                class="c10"
+              >
+                dd
+              </span>
+            </div>
+          </th>
+        </tr>
+      </tbody>
+    </table>
+    <div
+      class="c1 Pagination__StyledPaginationContainer-sc-rnlw6m-0"
+    >
+      <nav
+        aria-label="Pagination Navigation"
+        class="c1"
+      >
+        <ul
+          class="c11"
+        >
+          <li
+            class="c12"
+          >
+            <button
+              aria-label="Go to previous page"
+              class="c13 c14"
+              type="button"
+            >
+              <svg
+                aria-label="Previous"
+                class="c15"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M17 2 7 12l10 10"
+                  fill="none"
+                  stroke="#000"
+                  stroke-width="2"
+                />
+              </svg>
+            </button>
+          </li>
+          <li
+            class="c12"
+          >
+            <button
+              aria-label="Go to page 1"
+              class="c16 c14"
+              type="button"
+            >
+              1
+            </button>
+          </li>
+          <li
+            class="c12"
+          >
+            <button
+              aria-label="Go to next page"
+              class="c13 c14"
+              type="button"
+            >
+              <svg
+                aria-label="Next"
+                class="c15"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="m7 2 10 10L7 22"
+                  fill="none"
+                  stroke="#000"
+                  stroke-width="2"
+                />
+              </svg>
+            </button>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Data pagination step 1`] = `
+.c15 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #000000;
+  stroke: #000000;
+}
+
+.c15 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c15 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c15 *[stroke*='#'],
+.c15 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c15 *[fill-rule],
+.c15 *[FILL-RULE],
+.c15 *[fill*='#'],
+.c15 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  flex: 0 0 auto;
+}
+
+.c5 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  flex: 1 0 auto;
+  justify-content: center;
+}
+
+.c9 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+}
+
+.c11 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin: 0px;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: row;
+  padding: 0px;
+  column-gap: 3px;
+}
+
+.c10 {
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: bold;
+}
+
+.c13 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: none;
+  border-radius: 4px;
+  padding: 4px 4px;
+  font-size: 18px;
+  line-height: 0;
+  color: #000000;
+  text-align: center;
+  transition-property: color,background-color,border-color,box-shadow;
+  transition-duration: 0.1s;
+  transition-timing-function: ease-in-out;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  flex: 1 0 auto;
+}
+
+.c13 >svg {
+  display: flex;
+  align-self: center;
+  vertical-align: middle;
+}
+
+.c13:hover {
+  background-color: rgba(51, 51, 51, 0.06274509803921569);
+}
+
+.c13:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c13:focus >circle,
+.c13:focus >ellipse,
+.c13:focus >line,
+.c13:focus >path,
+.c13:focus >polygon,
+.c13:focus >polyline,
+.c13:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c13:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c13:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c13:focus:not(:focus-visible) >circle,
+.c13:focus:not(:focus-visible) >ellipse,
+.c13:focus:not(:focus-visible) >line,
+.c13:focus:not(:focus-visible) >path,
+.c13:focus:not(:focus-visible) >polygon,
+.c13:focus:not(:focus-visible) >polyline,
+.c13:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c13:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
+}
+
+.c16 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: none;
+  border-radius: 4px;
+  padding: 4px 4px;
+  font-size: 18px;
+  line-height: 24px;
+  color: #000000;
+  text-align: center;
+  transition-property: color,background-color,border-color,box-shadow;
+  transition-duration: 0.1s;
+  transition-timing-function: ease-in-out;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  flex: 1 0 auto;
+}
+
+.c16:hover {
+  background-color: rgba(51, 51, 51, 0.06274509803921569);
+}
+
+.c16:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c16:focus >circle,
+.c16:focus >ellipse,
+.c16:focus >line,
+.c16:focus >path,
+.c16:focus >polygon,
+.c16:focus >polyline,
+.c16:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c16:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c16:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c16:focus:not(:focus-visible) >circle,
+.c16:focus:not(:focus-visible) >ellipse,
+.c16:focus:not(:focus-visible) >line,
+.c16:focus:not(:focus-visible) >path,
+.c16:focus:not(:focus-visible) >polygon,
+.c16:focus:not(:focus-visible) >polyline,
+.c16:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c16:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
+}
+
+.c4 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  text-align: start;
+  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.c8 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  text-align: start;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.c2 {
+  border-spacing: 0;
+  border-collapse: collapse;
+  width: inherit;
+}
+
+.c3 {
+  position: relative;
+  border-spacing: 0;
+  border-collapse: separate;
+}
+
+.c7:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c7:focus >circle,
+.c7:focus >ellipse,
+.c7:focus >line,
+.c7:focus >path,
+.c7:focus >polygon,
+.c7:focus >polyline,
+.c7:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c7:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c7:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c7:focus:not(:focus-visible) >circle,
+.c7:focus:not(:focus-visible) >ellipse,
+.c7:focus:not(:focus-visible) >line,
+.c7:focus:not(:focus-visible) >path,
+.c7:focus:not(:focus-visible) >polygon,
+.c7:focus:not(:focus-visible) >polyline,
+.c7:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c7:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
+}
+
+.c6:focus {
+  outline: 2px solid #6FFFB0;
+}
+
+.c6:focus:not(:focus-visible) {
+  outline: none;
+}
+
+.c14 {
+  font-size: 18px;
+  line-height: 0;
+}
+
+.c14 >svg {
+  margin: 0 auto;
+}
+
+.c12 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 100%;
+  height: 36px;
+  min-width: 36px;
+}
+
+@media only screen and (max-width: 768px) {
+  .c11 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c11 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c11 {
+    column-gap: 2px;
+  }
+}
+
+<div
+  class="c0"
+>
+  <div
+    class="c1"
+    id="data"
+  >
+    <table
+      class="c2 c3"
+    >
+      <thead
+        class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-5"
+      >
+        <tr
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+        >
+          <th
+            class="c4 "
+            scope="col"
+          >
+            <div
+              class="c5"
+            />
+          </th>
+        </tr>
+      </thead>
+      <tbody
+        class="StyledTable__StyledTableBody-sc-1m3u5g-3 c6"
+      >
+        <tr
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 c7"
+        >
+          <th
+            class="c8 "
+            scope="row"
+          >
+            <div
+              class="c9"
+            >
+              <span
+                class="c10"
+              >
+                cc
+              </span>
+            </div>
+          </th>
+        </tr>
+        <tr
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 c7"
+        >
+          <th
+            class="c8 "
+            scope="row"
+          >
+            <div
+              class="c9"
+            >
+              <span
+                class="c10"
+              >
+                dd
+              </span>
+            </div>
+          </th>
+        </tr>
+      </tbody>
+    </table>
+    <div
+      class="c1 Pagination__StyledPaginationContainer-sc-rnlw6m-0"
+    >
+      <nav
+        aria-label="Pagination Navigation"
+        class="c1"
+      >
+        <ul
+          class="c11"
+        >
+          <li
+            class="c12"
+          >
+            <button
+              aria-label="Go to previous page"
+              class="c13 c14"
+              type="button"
+            >
+              <svg
+                aria-label="Previous"
+                class="c15"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M17 2 7 12l10 10"
+                  fill="none"
+                  stroke="#000"
+                  stroke-width="2"
+                />
+              </svg>
+            </button>
+          </li>
+          <li
+            class="c12"
+          >
+            <button
+              aria-label="Go to page 1"
+              class="c16 c14"
+              type="button"
+            >
+              1
+            </button>
+          </li>
+          <li
+            class="c12"
+          >
+            <button
+              aria-label="Go to next page"
+              class="c13 c14"
+              type="button"
+            >
+              <svg
+                aria-label="Next"
+                class="c15"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="m7 2 10 10L7 22"
+                  fill="none"
+                  stroke="#000"
+                  stroke-width="2"
+                />
+              </svg>
+            </button>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Data properties when property is an array 1`] = `
+<DocumentFragment>
+  .c7 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #666666;
+  stroke: #666666;
+}
+
+.c7 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c7 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c7 *[stroke*='#'],
+.c7 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c7 *[fill-rule],
+.c7 *[FILL-RULE],
+.c7 *[fill*='#'],
+.c7 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  flex: 0 0 auto;
+}
+
+.c4 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+}
+
+.c9 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: row;
+  flex: 0 0 auto;
+}
+
+.c15 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  flex: 1 0 auto;
+  justify-content: center;
+}
+
+.c2 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-items: flex-start;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: row;
+  flex: 0 0 auto;
+  flex-wrap: wrap;
+  column-gap: 24px;
+  row-gap: 24px;
+}
+
+.c3 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-items: flex-start;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: row;
+  flex: 0 0 auto;
+  flex-wrap: wrap;
+  column-gap: 12px;
+  row-gap: 12px;
+}
+
+.c11 {
+  margin-top: 6px;
+  margin-bottom: 6px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c16 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c20 {
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: bold;
+}
+
+.c10 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+  line-height: 0;
+  padding: 12px;
+}
+
+.c10:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c10:focus >circle,
+.c10:focus >ellipse,
+.c10:focus >line,
+.c10:focus >path,
+.c10:focus >polygon,
+.c10:focus >polyline,
+.c10:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c10:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c10:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c10:focus:not(:focus-visible) >circle,
+.c10:focus:not(:focus-visible) >ellipse,
+.c10:focus:not(:focus-visible) >line,
+.c10:focus:not(:focus-visible) >path,
+.c10:focus:not(:focus-visible) >polygon,
+.c10:focus:not(:focus-visible) >polyline,
+.c10:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c10:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
+}
+
+.c8 {
+  box-sizing: border-box;
+  font-size: inherit;
+  font-family: inherit;
+  border: none;
+  -webkit-appearance: none;
+  background: transparent;
+  color: inherit;
+  width: 100%;
+  padding: 11px;
+  font-weight: 600;
+  margin: 0;
+  border: 1px solid rgba(0, 0, 0, 0.33);
+  border-radius: 4px;
+  padding-left: 48px;
+}
+
+.c8:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c8:focus >circle,
+.c8:focus >ellipse,
+.c8:focus >line,
+.c8:focus >path,
+.c8:focus >polygon,
+.c8:focus >polyline,
+.c8:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c8:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c8::-webkit-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c8::-moz-placeholder {
+  color: #AAAAAA;
+}
+
+.c8:-ms-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c8 ::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+.c8::-moz-focus-inner {
+  border: none;
+  outline: none;
+}
+
+.c8:-moz-placeholder,
+.c8::-moz-placeholder {
+  opacity: 1;
+}
+
+.c5 {
+  position: relative;
+  width: 100%;
+}
+
+.c6 {
+  position: absolute;
+  display: flex;
+  justify: center;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  left: 12px;
+}
+
+.c14 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  text-align: start;
+  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.c19 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  text-align: start;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.c12 {
+  border-spacing: 0;
+  border-collapse: collapse;
+  width: inherit;
+}
+
+.c13 {
+  position: relative;
+  border-spacing: 0;
+  border-collapse: separate;
+}
+
+.c18:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c18:focus >circle,
+.c18:focus >ellipse,
+.c18:focus >line,
+.c18:focus >path,
+.c18:focus >polygon,
+.c18:focus >polyline,
+.c18:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c18:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c18:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c18:focus:not(:focus-visible) >circle,
+.c18:focus:not(:focus-visible) >ellipse,
+.c18:focus:not(:focus-visible) >line,
+.c18:focus:not(:focus-visible) >path,
+.c18:focus:not(:focus-visible) >polygon,
+.c18:focus:not(:focus-visible) >polyline,
+.c18:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c18:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
+}
+
+.c17:focus {
   outline: 2px solid #6FFFB0;
 }
 
@@ -3112,24 +3352,24 @@ exports[`Data properties when property is an array 1`] = `
           class="StyledTable__StyledTableBody-sc-1m3u5g-3 c17"
         >
           <tr
-            class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            class="StyledTable__StyledTableRow-sc-1m3u5g-2 c18"
           >
             <th
-              class="c18 "
+              class="c19 "
               scope="row"
             >
               <div
                 class="c4"
               >
                 <span
-                  class="c19"
+                  class="c20"
                 >
                   aa
                 </span>
               </div>
             </th>
             <td
-              class="c18 "
+              class="c19 "
             >
               <div
                 class="c4"
@@ -3142,7 +3382,7 @@ exports[`Data properties when property is an array 1`] = `
               </div>
             </td>
             <td
-              class="c18 "
+              class="c19 "
             >
               <div
                 class="c4"
@@ -3156,24 +3396,24 @@ exports[`Data properties when property is an array 1`] = `
             </td>
           </tr>
           <tr
-            class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            class="StyledTable__StyledTableRow-sc-1m3u5g-2 c18"
           >
             <th
-              class="c18 "
+              class="c19 "
               scope="row"
             >
               <div
                 class="c4"
               >
                 <span
-                  class="c19"
+                  class="c20"
                 >
                   bb
                 </span>
               </div>
             </th>
             <td
-              class="c18 "
+              class="c19 "
             >
               <div
                 class="c4"
@@ -3186,7 +3426,7 @@ exports[`Data properties when property is an array 1`] = `
               </div>
             </td>
             <td
-              class="c18 "
+              class="c19 "
             >
               <div
                 class="c4"
@@ -3200,31 +3440,31 @@ exports[`Data properties when property is an array 1`] = `
             </td>
           </tr>
           <tr
-            class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            class="StyledTable__StyledTableRow-sc-1m3u5g-2 c18"
           >
             <th
-              class="c18 "
+              class="c19 "
               scope="row"
             >
               <div
                 class="c4"
               >
                 <span
-                  class="c19"
+                  class="c20"
                 >
                   cc
                 </span>
               </div>
             </th>
             <td
-              class="c18 "
+              class="c19 "
             >
               <div
                 class="c4"
               />
             </td>
             <td
-              class="c18 "
+              class="c19 "
             >
               <div
                 class="c4"
@@ -3238,31 +3478,31 @@ exports[`Data properties when property is an array 1`] = `
             </td>
           </tr>
           <tr
-            class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            class="StyledTable__StyledTableRow-sc-1m3u5g-2 c18"
           >
             <th
-              class="c18 "
+              class="c19 "
               scope="row"
             >
               <div
                 class="c4"
               >
                 <span
-                  class="c19"
+                  class="c20"
                 >
                   dd
                 </span>
               </div>
             </th>
             <td
-              class="c18 "
+              class="c19 "
             >
               <div
                 class="c4"
               />
             </td>
             <td
-              class="c18 "
+              class="c19 "
             >
               <div
                 class="c4"
@@ -4614,13 +4854,13 @@ exports[`Data toolbar 1`] = `
   line-height: 24px;
 }
 
-.c18 {
+.c19 {
   font-size: 18px;
   line-height: 24px;
   font-weight: bold;
 }
 
-.c19 {
+.c20 {
   font-size: 18px;
   line-height: 24px;
 }
@@ -4775,7 +5015,7 @@ exports[`Data toolbar 1`] = `
   padding-bottom: 6px;
 }
 
-.c17 {
+.c18 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -4797,6 +5037,46 @@ exports[`Data toolbar 1`] = `
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
+}
+
+.c17:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c17:focus >circle,
+.c17:focus >ellipse,
+.c17:focus >line,
+.c17:focus >path,
+.c17:focus >polygon,
+.c17:focus >polyline,
+.c17:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c17:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c17:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c17:focus:not(:focus-visible) >circle,
+.c17:focus:not(:focus-visible) >ellipse,
+.c17:focus:not(:focus-visible) >line,
+.c17:focus:not(:focus-visible) >path,
+.c17:focus:not(:focus-visible) >polygon,
+.c17:focus:not(:focus-visible) >polyline,
+.c17:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c17:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
 }
 
 .c16:focus {
@@ -4934,30 +5214,30 @@ exports[`Data toolbar 1`] = `
         class="StyledTable__StyledTableBody-sc-1m3u5g-3 c16"
       >
         <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 c17"
         >
           <th
-            class="c17 "
+            class="c18 "
             scope="row"
           >
             <div
               class="c4"
             >
               <span
-                class="c18"
+                class="c19"
               >
                 aa
               </span>
             </div>
           </th>
           <td
-            class="c17 "
+            class="c18 "
           >
             <div
               class="c4"
             >
               <span
-                class="c19"
+                class="c20"
               >
                 ZZ
               </span>
@@ -4965,24 +5245,11 @@ exports[`Data toolbar 1`] = `
           </td>
         </tr>
         <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 c17"
         >
           <th
-            class="c17 "
+            class="c18 "
             scope="row"
-          >
-            <div
-              class="c4"
-            >
-              <span
-                class="c18"
-              >
-                bb
-              </span>
-            </div>
-          </th>
-          <td
-            class="c17 "
           >
             <div
               class="c4"
@@ -4990,30 +5257,43 @@ exports[`Data toolbar 1`] = `
               <span
                 class="c19"
               >
+                bb
+              </span>
+            </div>
+          </th>
+          <td
+            class="c18 "
+          >
+            <div
+              class="c4"
+            >
+              <span
+                class="c20"
+              >
                 YY
               </span>
             </div>
           </td>
         </tr>
         <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 c17"
         >
           <th
-            class="c17 "
+            class="c18 "
             scope="row"
           >
             <div
               class="c4"
             >
               <span
-                class="c18"
+                class="c19"
               >
                 cc
               </span>
             </div>
           </th>
           <td
-            class="c17 "
+            class="c18 "
           >
             <div
               class="c4"
@@ -5021,24 +5301,24 @@ exports[`Data toolbar 1`] = `
           </td>
         </tr>
         <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 c17"
         >
           <th
-            class="c17 "
+            class="c18 "
             scope="row"
           >
             <div
               class="c4"
             >
               <span
-                class="c18"
+                class="c19"
               >
                 dd
               </span>
             </div>
           </th>
           <td
-            class="c17 "
+            class="c18 "
           >
             <div
               class="c4"
@@ -5125,7 +5405,7 @@ exports[`Data toolbar filters 1`] = `
   justify-content: center;
 }
 
-.c14 {
+.c15 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -5169,7 +5449,7 @@ exports[`Data toolbar filters 1`] = `
   line-height: 24px;
 }
 
-.c15 {
+.c16 {
   font-size: 18px;
   line-height: 24px;
   font-weight: bold;
@@ -5247,7 +5527,7 @@ exports[`Data toolbar filters 1`] = `
   padding-bottom: 6px;
 }
 
-.c13 {
+.c14 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -5269,6 +5549,46 @@ exports[`Data toolbar filters 1`] = `
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
+}
+
+.c13:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c13:focus >circle,
+.c13:focus >ellipse,
+.c13:focus >line,
+.c13:focus >path,
+.c13:focus >polygon,
+.c13:focus >polyline,
+.c13:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c13:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c13:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c13:focus:not(:focus-visible) >circle,
+.c13:focus:not(:focus-visible) >ellipse,
+.c13:focus:not(:focus-visible) >line,
+.c13:focus:not(:focus-visible) >path,
+.c13:focus:not(:focus-visible) >polygon,
+.c13:focus:not(:focus-visible) >polyline,
+.c13:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c13:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
 }
 
 .c12:focus {
@@ -5365,17 +5685,17 @@ exports[`Data toolbar filters 1`] = `
         class="StyledTable__StyledTableBody-sc-1m3u5g-3 c12"
       >
         <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 c13"
         >
           <th
-            class="c13 "
+            class="c14 "
             scope="row"
           >
             <div
-              class="c14"
+              class="c15"
             >
               <span
-                class="c15"
+                class="c16"
               >
                 aa
               </span>
@@ -5383,17 +5703,17 @@ exports[`Data toolbar filters 1`] = `
           </th>
         </tr>
         <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 c13"
         >
           <th
-            class="c13 "
+            class="c14 "
             scope="row"
           >
             <div
-              class="c14"
+              class="c15"
             >
               <span
-                class="c15"
+                class="c16"
               >
                 bb
               </span>
@@ -5401,17 +5721,17 @@ exports[`Data toolbar filters 1`] = `
           </th>
         </tr>
         <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 c13"
         >
           <th
-            class="c13 "
+            class="c14 "
             scope="row"
           >
             <div
-              class="c14"
+              class="c15"
             >
               <span
-                class="c15"
+                class="c16"
               >
                 cc
               </span>
@@ -5419,17 +5739,17 @@ exports[`Data toolbar filters 1`] = `
           </th>
         </tr>
         <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 c13"
         >
           <th
-            class="c13 "
+            class="c14 "
             scope="row"
           >
             <div
-              class="c14"
+              class="c15"
             >
               <span
-                class="c15"
+                class="c16"
               >
                 dd
               </span>
@@ -5550,7 +5870,7 @@ exports[`Data toolbar search 1`] = `
   line-height: 24px;
 }
 
-.c16 {
+.c17 {
   font-size: 18px;
   line-height: 24px;
   font-weight: bold;
@@ -5647,7 +5967,7 @@ exports[`Data toolbar search 1`] = `
   padding-bottom: 6px;
 }
 
-.c15 {
+.c16 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -5669,6 +5989,46 @@ exports[`Data toolbar search 1`] = `
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
+}
+
+.c15:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c15:focus >circle,
+.c15:focus >ellipse,
+.c15:focus >line,
+.c15:focus >path,
+.c15:focus >polygon,
+.c15:focus >polyline,
+.c15:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c15:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c15:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c15:focus:not(:focus-visible) >circle,
+.c15:focus:not(:focus-visible) >ellipse,
+.c15:focus:not(:focus-visible) >line,
+.c15:focus:not(:focus-visible) >path,
+.c15:focus:not(:focus-visible) >polygon,
+.c15:focus:not(:focus-visible) >polyline,
+.c15:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c15:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
 }
 
 .c14:focus {
@@ -5775,17 +6135,17 @@ exports[`Data toolbar search 1`] = `
         class="StyledTable__StyledTableBody-sc-1m3u5g-3 c14"
       >
         <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 c15"
         >
           <th
-            class="c15 "
+            class="c16 "
             scope="row"
           >
             <div
               class="c4"
             >
               <span
-                class="c16"
+                class="c17"
               >
                 aa
               </span>
@@ -5793,17 +6153,17 @@ exports[`Data toolbar search 1`] = `
           </th>
         </tr>
         <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 c15"
         >
           <th
-            class="c15 "
+            class="c16 "
             scope="row"
           >
             <div
               class="c4"
             >
               <span
-                class="c16"
+                class="c17"
               >
                 bb
               </span>
@@ -5811,17 +6171,17 @@ exports[`Data toolbar search 1`] = `
           </th>
         </tr>
         <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 c15"
         >
           <th
-            class="c15 "
+            class="c16 "
             scope="row"
           >
             <div
               class="c4"
             >
               <span
-                class="c16"
+                class="c17"
               >
                 cc
               </span>
@@ -5829,17 +6189,17 @@ exports[`Data toolbar search 1`] = `
           </th>
         </tr>
         <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 c15"
         >
           <th
-            class="c15 "
+            class="c16 "
             scope="row"
           >
             <div
               class="c4"
             >
               <span
-                class="c16"
+                class="c17"
               >
                 dd
               </span>
@@ -5970,7 +6330,7 @@ exports[`Data uncontrolled search 1`] = `
   line-height: 24px;
 }
 
-.c18 {
+.c19 {
   font-size: 18px;
   line-height: 24px;
   font-weight: bold;
@@ -6126,7 +6486,7 @@ exports[`Data uncontrolled search 1`] = `
   padding-bottom: 6px;
 }
 
-.c17 {
+.c18 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -6148,6 +6508,46 @@ exports[`Data uncontrolled search 1`] = `
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
+}
+
+.c17:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c17:focus >circle,
+.c17:focus >ellipse,
+.c17:focus >line,
+.c17:focus >path,
+.c17:focus >polygon,
+.c17:focus >polyline,
+.c17:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c17:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c17:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c17:focus:not(:focus-visible) >circle,
+.c17:focus:not(:focus-visible) >ellipse,
+.c17:focus:not(:focus-visible) >line,
+.c17:focus:not(:focus-visible) >path,
+.c17:focus:not(:focus-visible) >polygon,
+.c17:focus:not(:focus-visible) >polyline,
+.c17:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c17:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
 }
 
 .c16:focus {
@@ -6277,17 +6677,17 @@ exports[`Data uncontrolled search 1`] = `
         class="StyledTable__StyledTableBody-sc-1m3u5g-3 c16"
       >
         <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 c17"
         >
           <th
-            class="c17 "
+            class="c18 "
             scope="row"
           >
             <div
               class="c4"
             >
               <span
-                class="c18"
+                class="c19"
               >
                 aa
               </span>
@@ -6295,17 +6695,17 @@ exports[`Data uncontrolled search 1`] = `
           </th>
         </tr>
         <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 c17"
         >
           <th
-            class="c17 "
+            class="c18 "
             scope="row"
           >
             <div
               class="c4"
             >
               <span
-                class="c18"
+                class="c19"
               >
                 bb
               </span>
@@ -6313,17 +6713,17 @@ exports[`Data uncontrolled search 1`] = `
           </th>
         </tr>
         <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 c17"
         >
           <th
-            class="c17 "
+            class="c18 "
             scope="row"
           >
             <div
               class="c4"
             >
               <span
-                class="c18"
+                class="c19"
               >
                 cc
               </span>
@@ -6331,17 +6731,17 @@ exports[`Data uncontrolled search 1`] = `
           </th>
         </tr>
         <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 c17"
         >
           <th
-            class="c17 "
+            class="c18 "
             scope="row"
           >
             <div
               class="c4"
             >
               <span
-                class="c18"
+                class="c19"
               >
                 dd
               </span>
@@ -6454,7 +6854,7 @@ exports[`Data uncontrolled search 2`] = `
         class="StyledTable__StyledTableBody-sc-1m3u5g-3 StyledDataTable__StyledDataTableBody-sc-xrlyjm-4 gQHCrw"
       >
         <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 dHFBfo"
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 faOFTP"
         >
           <th
             class="StyledTable__StyledTableCell-sc-1m3u5g-0 fwrJut StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 dvuoDz"
@@ -6510,7 +6910,7 @@ exports[`Data uncontrolled, when paginated, search should return to page 1 1`] =
   stroke: none;
 }
 
-.c24 {
+.c25 {
   display: inline-block;
   flex: 0 0 auto;
   width: 24px;
@@ -6519,25 +6919,25 @@ exports[`Data uncontrolled, when paginated, search should return to page 1 1`] =
   stroke: #000000;
 }
 
-.c24 g {
+.c25 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c24 *:not([stroke])[fill='none'] {
+.c25 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c24 *[stroke*='#'],
-.c24 *[STROKE*='#'] {
+.c25 *[stroke*='#'],
+.c25 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
-.c24 *[fill-rule],
-.c24 *[FILL-RULE],
-.c24 *[fill*='#'],
-.c24 *[FILL*='#'] {
+.c25 *[fill-rule],
+.c25 *[FILL-RULE],
+.c25 *[fill*='#'],
+.c25 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -6592,7 +6992,7 @@ exports[`Data uncontrolled, when paginated, search should return to page 1 1`] =
   justify-content: center;
 }
 
-.c20 {
+.c21 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -6645,7 +7045,7 @@ exports[`Data uncontrolled, when paginated, search should return to page 1 1`] =
   line-height: 24px;
 }
 
-.c19 {
+.c20 {
   font-size: 18px;
   line-height: 24px;
   font-weight: bold;
@@ -6710,7 +7110,7 @@ exports[`Data uncontrolled, when paginated, search should return to page 1 1`] =
   border: 0;
 }
 
-.c27 {
+.c28 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -6737,10 +7137,83 @@ exports[`Data uncontrolled, when paginated, search should return to page 1 1`] =
   flex: 1 0 auto;
 }
 
-.c27 >svg {
+.c28 >svg {
   display: flex;
   align-self: center;
   vertical-align: middle;
+}
+
+.c28:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c28:focus >circle,
+.c28:focus >ellipse,
+.c28:focus >line,
+.c28:focus >path,
+.c28:focus >polygon,
+.c28:focus >polyline,
+.c28:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c28:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c28:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c28:focus:not(:focus-visible) >circle,
+.c28:focus:not(:focus-visible) >ellipse,
+.c28:focus:not(:focus-visible) >line,
+.c28:focus:not(:focus-visible) >path,
+.c28:focus:not(:focus-visible) >polygon,
+.c28:focus:not(:focus-visible) >polyline,
+.c28:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c28:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
+}
+
+.c27 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  background-color: rgba(221, 221, 221, 0.4);
+  color: #000000;
+  border: none;
+  border-radius: 4px;
+  padding: 4px 4px;
+  font-size: 18px;
+  line-height: 24px;
+  background-color: rgba(51, 51, 51, 0.06274509803921569);
+  color: #444444;
+  text-align: center;
+  transition-property: color,background-color,border-color,box-shadow;
+  transition-duration: 0.1s;
+  transition-timing-function: ease-in-out;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  flex: 1 0 auto;
+}
+
+.c27:hover {
+  background-color: rgba(51, 51, 51, 0.06274509803921569);
 }
 
 .c27:focus {
@@ -6793,15 +7266,12 @@ exports[`Data uncontrolled, when paginated, search should return to page 1 1`] =
   background: transparent;
   overflow: visible;
   text-transform: none;
-  background-color: rgba(221, 221, 221, 0.4);
-  color: #000000;
   border: none;
   border-radius: 4px;
   padding: 4px 4px;
   font-size: 18px;
   line-height: 24px;
-  background-color: rgba(51, 51, 51, 0.06274509803921569);
-  color: #444444;
+  color: #000000;
   text-align: center;
   transition-property: color,background-color,border-color,box-shadow;
   transition-duration: 0.1s;
@@ -6856,77 +7326,7 @@ exports[`Data uncontrolled, when paginated, search should return to page 1 1`] =
   border: 0;
 }
 
-.c25 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  font: inherit;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  border: none;
-  border-radius: 4px;
-  padding: 4px 4px;
-  font-size: 18px;
-  line-height: 24px;
-  color: #000000;
-  text-align: center;
-  transition-property: color,background-color,border-color,box-shadow;
-  transition-duration: 0.1s;
-  transition-timing-function: ease-in-out;
-  width: 100%;
-  height: 100%;
-  max-width: none;
-  flex: 1 0 auto;
-}
-
-.c25:hover {
-  background-color: rgba(51, 51, 51, 0.06274509803921569);
-}
-
-.c25:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c25:focus >circle,
-.c25:focus >ellipse,
-.c25:focus >line,
-.c25:focus >path,
-.c25:focus >polygon,
-.c25:focus >polyline,
-.c25:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c25:focus ::-moz-focus-inner {
-  border: 0;
-}
-
-.c25:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c25:focus:not(:focus-visible) >circle,
-.c25:focus:not(:focus-visible) >ellipse,
-.c25:focus:not(:focus-visible) >line,
-.c25:focus:not(:focus-visible) >path,
-.c25:focus:not(:focus-visible) >polygon,
-.c25:focus:not(:focus-visible) >polyline,
-.c25:focus:not(:focus-visible) >rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c25:focus:not(:focus-visible) ::-moz-focus-inner {
-  border: 0;
-}
-
-.c22 {
+.c23 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -6952,53 +7352,53 @@ exports[`Data uncontrolled, when paginated, search should return to page 1 1`] =
   flex: 1 0 auto;
 }
 
-.c22 >svg {
+.c23 >svg {
   display: flex;
   align-self: center;
   vertical-align: middle;
 }
 
-.c22:hover {
+.c23:hover {
   background-color: rgba(51, 51, 51, 0.06274509803921569);
 }
 
-.c22:focus {
+.c23:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c22:focus >circle,
-.c22:focus >ellipse,
-.c22:focus >line,
-.c22:focus >path,
-.c22:focus >polygon,
-.c22:focus >polyline,
-.c22:focus >rect {
+.c23:focus >circle,
+.c23:focus >ellipse,
+.c23:focus >line,
+.c23:focus >path,
+.c23:focus >polygon,
+.c23:focus >polyline,
+.c23:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c22:focus ::-moz-focus-inner {
+.c23:focus ::-moz-focus-inner {
   border: 0;
 }
 
-.c22:focus:not(:focus-visible) {
+.c23:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c22:focus:not(:focus-visible) >circle,
-.c22:focus:not(:focus-visible) >ellipse,
-.c22:focus:not(:focus-visible) >line,
-.c22:focus:not(:focus-visible) >path,
-.c22:focus:not(:focus-visible) >polygon,
-.c22:focus:not(:focus-visible) >polyline,
-.c22:focus:not(:focus-visible) >rect {
+.c23:focus:not(:focus-visible) >circle,
+.c23:focus:not(:focus-visible) >ellipse,
+.c23:focus:not(:focus-visible) >line,
+.c23:focus:not(:focus-visible) >path,
+.c23:focus:not(:focus-visible) >polygon,
+.c23:focus:not(:focus-visible) >polyline,
+.c23:focus:not(:focus-visible) >rect {
   outline: none;
   box-shadow: none;
 }
 
-.c22:focus:not(:focus-visible) ::-moz-focus-inner {
+.c23:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 
@@ -7096,7 +7496,7 @@ exports[`Data uncontrolled, when paginated, search should return to page 1 1`] =
   padding-bottom: 6px;
 }
 
-.c18 {
+.c19 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -7123,6 +7523,46 @@ exports[`Data uncontrolled, when paginated, search should return to page 1 1`] =
   border-collapse: separate;
 }
 
+.c18:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c18:focus >circle,
+.c18:focus >ellipse,
+.c18:focus >line,
+.c18:focus >path,
+.c18:focus >polygon,
+.c18:focus >polyline,
+.c18:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c18:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c18:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c18:focus:not(:focus-visible) >circle,
+.c18:focus:not(:focus-visible) >ellipse,
+.c18:focus:not(:focus-visible) >line,
+.c18:focus:not(:focus-visible) >path,
+.c18:focus:not(:focus-visible) >polygon,
+.c18:focus:not(:focus-visible) >polyline,
+.c18:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c18:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
+}
+
 .c17:focus {
   outline: 2px solid #6FFFB0;
 }
@@ -7131,16 +7571,16 @@ exports[`Data uncontrolled, when paginated, search should return to page 1 1`] =
   outline: none;
 }
 
-.c23 {
+.c24 {
   font-size: 18px;
   line-height: 0;
 }
 
-.c23 >svg {
+.c24 >svg {
   margin: 0 auto;
 }
 
-.c21 {
+.c22 {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -7158,19 +7598,19 @@ exports[`Data uncontrolled, when paginated, search should return to page 1 1`] =
 }
 
 @media only screen and (max-width: 768px) {
-  .c20 {
+  .c21 {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width: 768px) {
-  .c20 {
+  .c21 {
     padding: 0px;
   }
 }
 
 @media only screen and (max-width: 768px) {
-  .c20 {
+  .c21 {
     column-gap: 2px;
   }
 }
@@ -7292,17 +7732,17 @@ exports[`Data uncontrolled, when paginated, search should return to page 1 1`] =
         class="StyledTable__StyledTableBody-sc-1m3u5g-3 c17"
       >
         <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 c18"
         >
           <th
-            class="c18 "
+            class="c19 "
             scope="row"
           >
             <div
               class="c4"
             >
               <span
-                class="c19"
+                class="c20"
               >
                 cc
               </span>
@@ -7310,17 +7750,17 @@ exports[`Data uncontrolled, when paginated, search should return to page 1 1`] =
           </th>
         </tr>
         <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 c18"
         >
           <th
-            class="c18 "
+            class="c19 "
             scope="row"
           >
             <div
               class="c4"
             >
               <span
-                class="c19"
+                class="c20"
               >
                 dd
               </span>
@@ -7337,19 +7777,19 @@ exports[`Data uncontrolled, when paginated, search should return to page 1 1`] =
         class="c1"
       >
         <ul
-          class="c20"
+          class="c21"
         >
           <li
-            class="c21"
+            class="c22"
           >
             <button
               aria-label="Go to previous page"
-              class="c22 c23"
+              class="c23 c24"
               type="button"
             >
               <svg
                 aria-label="Previous"
-                class="c24"
+                class="c25"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -7362,35 +7802,35 @@ exports[`Data uncontrolled, when paginated, search should return to page 1 1`] =
             </button>
           </li>
           <li
-            class="c21"
+            class="c22"
           >
             <button
               aria-label="Go to page 1"
-              class="c25 c23"
+              class="c26 c24"
               type="button"
             >
               1
             </button>
           </li>
           <li
-            class="c21"
+            class="c22"
           >
             <button
               aria-current="page"
               aria-label="Go to page 2"
-              class="c26 c23"
+              class="c27 c24"
               type="button"
             >
               2
             </button>
           </li>
           <li
-            class="c21"
+            class="c22"
           >
             <button
               aria-disabled="true"
               aria-label="Go to next page"
-              class="c27 c23"
+              class="c28 c24"
               disabled=""
               type="button"
             >
@@ -7520,7 +7960,7 @@ exports[`Data uncontrolled, when paginated, search should return to page 1 2`] =
       <tbody
         class="StyledTable__StyledTableBody-sc-1m3u5g-3 StyledDataTable__StyledDataTableBody-sc-xrlyjm-4 gQHCrw"
       >
-        .c1 {
+        .c2 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -7529,13 +7969,13 @@ exports[`Data uncontrolled, when paginated, search should return to page 1 2`] =
   flex-direction: column;
 }
 
-.c2 {
+.c3 {
   font-size: 18px;
   line-height: 24px;
   font-weight: bold;
 }
 
-.c0 {
+.c1 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -7548,6 +7988,46 @@ exports[`Data uncontrolled, when paginated, search should return to page 1 2`] =
   padding-right: 12px;
   padding-top: 6px;
   padding-bottom: 6px;
+}
+
+.c0:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c0:focus >circle,
+.c0:focus >ellipse,
+.c0:focus >line,
+.c0:focus >path,
+.c0:focus >polygon,
+.c0:focus >polyline,
+.c0:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c0:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c0:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c0:focus:not(:focus-visible) >circle,
+.c0:focus:not(:focus-visible) >ellipse,
+.c0:focus:not(:focus-visible) >line,
+.c0:focus:not(:focus-visible) >path,
+.c0:focus:not(:focus-visible) >polygon,
+.c0:focus:not(:focus-visible) >polyline,
+.c0:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c0:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
 }
 
 @media only screen and (max-width: 768px) {
@@ -7579,17 +8059,17 @@ exports[`Data uncontrolled, when paginated, search should return to page 1 2`] =
 }
 
 <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 c0"
         >
           <th
-            class="c0 "
+            class="c1 "
             scope="row"
           >
             <div
-              class="c1"
+              class="c2"
             >
               <span
-                class="c2"
+                class="c3"
               >
                 aa
               </span>
@@ -7841,7 +8321,7 @@ exports[`Data uncontrolled, when paginated, search should return to page 1 3`] =
         class="StyledTable__StyledTableBody-sc-1m3u5g-3 StyledDataTable__StyledDataTableBody-sc-xrlyjm-4 gQHCrw"
       >
         <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 dHFBfo"
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 faOFTP"
         >
           <th
             class="StyledTable__StyledTableCell-sc-1m3u5g-0 hzkQa-D StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 dvuoDz"
@@ -7858,7 +8338,7 @@ exports[`Data uncontrolled, when paginated, search should return to page 1 3`] =
             </div>
           </th>
         </tr>
-        .c1 {
+        .c2 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -7867,13 +8347,13 @@ exports[`Data uncontrolled, when paginated, search should return to page 1 3`] =
   flex-direction: column;
 }
 
-.c2 {
+.c3 {
   font-size: 18px;
   line-height: 24px;
   font-weight: bold;
 }
 
-.c0 {
+.c1 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -7886,6 +8366,46 @@ exports[`Data uncontrolled, when paginated, search should return to page 1 3`] =
   padding-right: 12px;
   padding-top: 6px;
   padding-bottom: 6px;
+}
+
+.c0:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c0:focus >circle,
+.c0:focus >ellipse,
+.c0:focus >line,
+.c0:focus >path,
+.c0:focus >polygon,
+.c0:focus >polyline,
+.c0:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c0:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c0:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c0:focus:not(:focus-visible) >circle,
+.c0:focus:not(:focus-visible) >ellipse,
+.c0:focus:not(:focus-visible) >line,
+.c0:focus:not(:focus-visible) >path,
+.c0:focus:not(:focus-visible) >polygon,
+.c0:focus:not(:focus-visible) >polyline,
+.c0:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c0:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
 }
 
 @media only screen and (max-width: 768px) {
@@ -7917,17 +8437,17 @@ exports[`Data uncontrolled, when paginated, search should return to page 1 3`] =
 }
 
 <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 c0"
         >
           <th
-            class="c0 "
+            class="c1 "
             scope="row"
           >
             <div
-              class="c1"
+              class="c2"
             >
               <span
-                class="c2"
+                class="c3"
               >
                 bb
               </span>
@@ -8208,7 +8728,7 @@ exports[`Data view 1`] = `
   justify-content: center;
 }
 
-.c8 {
+.c9 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -8217,13 +8737,13 @@ exports[`Data view 1`] = `
   flex-direction: column;
 }
 
-.c9 {
+.c10 {
   font-size: 18px;
   line-height: 24px;
   font-weight: bold;
 }
 
-.c10 {
+.c11 {
   font-size: 18px;
   line-height: 24px;
 }
@@ -8241,7 +8761,7 @@ exports[`Data view 1`] = `
   padding-bottom: 6px;
 }
 
-.c7 {
+.c8 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -8263,6 +8783,46 @@ exports[`Data view 1`] = `
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
+}
+
+.c7:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c7:focus >circle,
+.c7:focus >ellipse,
+.c7:focus >line,
+.c7:focus >path,
+.c7:focus >polygon,
+.c7:focus >polyline,
+.c7:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c7:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c7:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c7:focus:not(:focus-visible) >circle,
+.c7:focus:not(:focus-visible) >ellipse,
+.c7:focus:not(:focus-visible) >line,
+.c7:focus:not(:focus-visible) >path,
+.c7:focus:not(:focus-visible) >polygon,
+.c7:focus:not(:focus-visible) >polyline,
+.c7:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c7:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
 }
 
 .c6:focus {
@@ -8311,30 +8871,30 @@ exports[`Data view 1`] = `
         class="StyledTable__StyledTableBody-sc-1m3u5g-3 c6"
       >
         <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 c7"
         >
           <th
-            class="c7 "
+            class="c8 "
             scope="row"
           >
             <div
-              class="c8"
+              class="c9"
             >
               <span
-                class="c9"
+                class="c10"
               >
                 aa
               </span>
             </div>
           </th>
           <td
-            class="c7 "
+            class="c8 "
           >
             <div
-              class="c8"
+              class="c9"
             >
               <span
-                class="c10"
+                class="c11"
               >
                 ZZ
               </span>
@@ -8342,30 +8902,30 @@ exports[`Data view 1`] = `
           </td>
         </tr>
         <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 c7"
         >
           <th
-            class="c7 "
+            class="c8 "
             scope="row"
           >
             <div
-              class="c8"
+              class="c9"
             >
               <span
-                class="c9"
+                class="c10"
               >
                 bb
               </span>
             </div>
           </th>
           <td
-            class="c7 "
+            class="c8 "
           >
             <div
-              class="c8"
+              class="c9"
             >
               <span
-                class="c10"
+                class="c11"
               >
                 YY
               </span>
@@ -8373,52 +8933,52 @@ exports[`Data view 1`] = `
           </td>
         </tr>
         <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 c7"
         >
           <th
-            class="c7 "
+            class="c8 "
             scope="row"
           >
             <div
-              class="c8"
+              class="c9"
             >
               <span
-                class="c9"
+                class="c10"
               >
                 cc
               </span>
             </div>
           </th>
           <td
-            class="c7 "
+            class="c8 "
           >
             <div
-              class="c8"
+              class="c9"
             />
           </td>
         </tr>
         <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 c7"
         >
           <th
-            class="c7 "
+            class="c8 "
             scope="row"
           >
             <div
-              class="c8"
+              class="c9"
             >
               <span
-                class="c9"
+                class="c10"
               >
                 dd
               </span>
             </div>
           </th>
           <td
-            class="c7 "
+            class="c8 "
           >
             <div
-              class="c8"
+              class="c9"
             />
           </td>
         </tr>
@@ -8546,7 +9106,7 @@ exports[`Data view all 1`] = `
   line-height: 24px;
 }
 
-.c18 {
+.c19 {
   font-size: 18px;
   line-height: 24px;
   font-weight: bold;
@@ -8702,7 +9262,7 @@ exports[`Data view all 1`] = `
   padding-bottom: 6px;
 }
 
-.c17 {
+.c18 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -8724,6 +9284,46 @@ exports[`Data view all 1`] = `
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
+}
+
+.c17:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c17:focus >circle,
+.c17:focus >ellipse,
+.c17:focus >line,
+.c17:focus >path,
+.c17:focus >polygon,
+.c17:focus >polyline,
+.c17:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c17:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c17:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c17:focus:not(:focus-visible) >circle,
+.c17:focus:not(:focus-visible) >ellipse,
+.c17:focus:not(:focus-visible) >line,
+.c17:focus:not(:focus-visible) >path,
+.c17:focus:not(:focus-visible) >polygon,
+.c17:focus:not(:focus-visible) >polyline,
+.c17:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c17:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
 }
 
 .c16:focus {
@@ -8853,17 +9453,17 @@ exports[`Data view all 1`] = `
         class="StyledTable__StyledTableBody-sc-1m3u5g-3 c16"
       >
         <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 c17"
         >
           <th
-            class="c17 "
+            class="c18 "
             scope="row"
           >
             <div
               class="c4"
             >
               <span
-                class="c18"
+                class="c19"
               >
                 aa
               </span>
@@ -8994,7 +9594,7 @@ exports[`Data view columns 1`] = `
   line-height: 24px;
 }
 
-.c18 {
+.c19 {
   font-size: 18px;
   line-height: 24px;
   font-weight: bold;
@@ -9150,7 +9750,7 @@ exports[`Data view columns 1`] = `
   padding-bottom: 6px;
 }
 
-.c17 {
+.c18 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -9172,6 +9772,46 @@ exports[`Data view columns 1`] = `
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
+}
+
+.c17:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c17:focus >circle,
+.c17:focus >ellipse,
+.c17:focus >line,
+.c17:focus >path,
+.c17:focus >polygon,
+.c17:focus >polyline,
+.c17:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c17:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c17:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c17:focus:not(:focus-visible) >circle,
+.c17:focus:not(:focus-visible) >ellipse,
+.c17:focus:not(:focus-visible) >line,
+.c17:focus:not(:focus-visible) >path,
+.c17:focus:not(:focus-visible) >polygon,
+.c17:focus:not(:focus-visible) >polyline,
+.c17:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c17:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
 }
 
 .c16:focus {
@@ -9300,17 +9940,17 @@ exports[`Data view columns 1`] = `
         class="StyledTable__StyledTableBody-sc-1m3u5g-3 c16"
       >
         <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 c17"
         >
           <th
-            class="c17 "
+            class="c18 "
             scope="row"
           >
             <div
               class="c4"
             >
               <span
-                class="c18"
+                class="c19"
               >
                 ZZ
               </span>
@@ -9318,17 +9958,17 @@ exports[`Data view columns 1`] = `
           </th>
         </tr>
         <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 c17"
         >
           <th
-            class="c17 "
+            class="c18 "
             scope="row"
           >
             <div
               class="c4"
             >
               <span
-                class="c18"
+                class="c19"
               >
                 YY
               </span>
@@ -9336,10 +9976,10 @@ exports[`Data view columns 1`] = `
           </th>
         </tr>
         <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 c17"
         >
           <th
-            class="c17 "
+            class="c18 "
             scope="row"
           >
             <div
@@ -9348,10 +9988,10 @@ exports[`Data view columns 1`] = `
           </th>
         </tr>
         <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 c17"
         >
           <th
-            class="c17 "
+            class="c18 "
             scope="row"
           >
             <div
@@ -9483,13 +10123,13 @@ exports[`Data view property option 1`] = `
   line-height: 24px;
 }
 
-.c18 {
+.c19 {
   font-size: 18px;
   line-height: 24px;
   font-weight: bold;
 }
 
-.c19 {
+.c20 {
   font-size: 18px;
   line-height: 24px;
 }
@@ -9644,7 +10284,7 @@ exports[`Data view property option 1`] = `
   padding-bottom: 6px;
 }
 
-.c17 {
+.c18 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -9666,6 +10306,46 @@ exports[`Data view property option 1`] = `
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
+}
+
+.c17:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c17:focus >circle,
+.c17:focus >ellipse,
+.c17:focus >line,
+.c17:focus >path,
+.c17:focus >polygon,
+.c17:focus >polyline,
+.c17:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c17:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c17:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c17:focus:not(:focus-visible) >circle,
+.c17:focus:not(:focus-visible) >ellipse,
+.c17:focus:not(:focus-visible) >line,
+.c17:focus:not(:focus-visible) >path,
+.c17:focus:not(:focus-visible) >polygon,
+.c17:focus:not(:focus-visible) >polyline,
+.c17:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c17:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
 }
 
 .c16:focus {
@@ -9802,30 +10482,30 @@ exports[`Data view property option 1`] = `
         class="StyledTable__StyledTableBody-sc-1m3u5g-3 c16"
       >
         <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 c17"
         >
           <th
-            class="c17 "
+            class="c18 "
             scope="row"
           >
             <div
               class="c4"
             >
               <span
-                class="c18"
+                class="c19"
               >
                 aa
               </span>
             </div>
           </th>
           <td
-            class="c17 "
+            class="c18 "
           >
             <div
               class="c4"
             >
               <span
-                class="c19"
+                class="c20"
               >
                 ZZ
               </span>
@@ -9997,13 +10677,13 @@ exports[`Data view property range 1`] = `
   line-height: 24px;
 }
 
-.c25 {
+.c26 {
   font-size: 18px;
   line-height: 24px;
   font-weight: bold;
 }
 
-.c26 {
+.c27 {
   font-size: 18px;
   line-height: 24px;
 }
@@ -10230,7 +10910,7 @@ exports[`Data view property range 1`] = `
   padding-bottom: 6px;
 }
 
-.c24 {
+.c25 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -10252,6 +10932,46 @@ exports[`Data view property range 1`] = `
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
+}
+
+.c24:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c24:focus >circle,
+.c24:focus >ellipse,
+.c24:focus >line,
+.c24:focus >path,
+.c24:focus >polygon,
+.c24:focus >polyline,
+.c24:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c24:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c24:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c24:focus:not(:focus-visible) >circle,
+.c24:focus:not(:focus-visible) >ellipse,
+.c24:focus:not(:focus-visible) >line,
+.c24:focus:not(:focus-visible) >path,
+.c24:focus:not(:focus-visible) >polygon,
+.c24:focus:not(:focus-visible) >polyline,
+.c24:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c24:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
 }
 
 .c23:focus {
@@ -10441,43 +11161,43 @@ exports[`Data view property range 1`] = `
         class="StyledTable__StyledTableBody-sc-1m3u5g-3 c23"
       >
         <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 c24"
         >
           <th
-            class="c24 "
+            class="c25 "
             scope="row"
           >
             <div
               class="c4"
             >
               <span
-                class="c25"
+                class="c26"
               >
                 bb
               </span>
             </div>
           </th>
           <td
-            class="c24 "
+            class="c25 "
           >
             <div
               class="c4"
             >
               <span
-                class="c26"
+                class="c27"
               >
                 YY
               </span>
             </div>
           </td>
           <td
-            class="c24 "
+            class="c25 "
           >
             <div
               class="c4"
             >
               <span
-                class="c26"
+                class="c27"
               >
                 4.3
               </span>
@@ -10608,13 +11328,13 @@ exports[`Data view search 1`] = `
   line-height: 24px;
 }
 
-.c18 {
+.c19 {
   font-size: 18px;
   line-height: 24px;
   font-weight: bold;
 }
 
-.c19 {
+.c20 {
   font-size: 18px;
   line-height: 24px;
 }
@@ -10769,7 +11489,7 @@ exports[`Data view search 1`] = `
   padding-bottom: 6px;
 }
 
-.c17 {
+.c18 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -10791,6 +11511,46 @@ exports[`Data view search 1`] = `
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
+}
+
+.c17:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c17:focus >circle,
+.c17:focus >ellipse,
+.c17:focus >line,
+.c17:focus >path,
+.c17:focus >polygon,
+.c17:focus >polyline,
+.c17:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c17:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c17:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c17:focus:not(:focus-visible) >circle,
+.c17:focus:not(:focus-visible) >ellipse,
+.c17:focus:not(:focus-visible) >line,
+.c17:focus:not(:focus-visible) >path,
+.c17:focus:not(:focus-visible) >polygon,
+.c17:focus:not(:focus-visible) >polyline,
+.c17:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c17:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
 }
 
 .c16:focus {
@@ -10928,30 +11688,30 @@ exports[`Data view search 1`] = `
         class="StyledTable__StyledTableBody-sc-1m3u5g-3 c16"
       >
         <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 c17"
         >
           <th
-            class="c17 "
+            class="c18 "
             scope="row"
           >
             <div
               class="c4"
             >
               <span
-                class="c18"
+                class="c19"
               >
                 aa
               </span>
             </div>
           </th>
           <td
-            class="c17 "
+            class="c18 "
           >
             <div
               class="c4"
             >
               <span
-                class="c19"
+                class="c20"
               >
                 ZZ
               </span>
@@ -11082,13 +11842,13 @@ exports[`Data view sort 1`] = `
   line-height: 24px;
 }
 
-.c18 {
+.c19 {
   font-size: 18px;
   line-height: 24px;
   font-weight: bold;
 }
 
-.c19 {
+.c20 {
   font-size: 18px;
   line-height: 24px;
 }
@@ -11243,7 +12003,7 @@ exports[`Data view sort 1`] = `
   padding-bottom: 6px;
 }
 
-.c17 {
+.c18 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -11265,6 +12025,46 @@ exports[`Data view sort 1`] = `
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
+}
+
+.c17:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c17:focus >circle,
+.c17:focus >ellipse,
+.c17:focus >line,
+.c17:focus >path,
+.c17:focus >polygon,
+.c17:focus >polyline,
+.c17:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c17:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c17:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c17:focus:not(:focus-visible) >circle,
+.c17:focus:not(:focus-visible) >ellipse,
+.c17:focus:not(:focus-visible) >line,
+.c17:focus:not(:focus-visible) >path,
+.c17:focus:not(:focus-visible) >polygon,
+.c17:focus:not(:focus-visible) >polyline,
+.c17:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c17:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
 }
 
 .c16:focus {
@@ -11401,30 +12201,30 @@ exports[`Data view sort 1`] = `
         class="StyledTable__StyledTableBody-sc-1m3u5g-3 c16"
       >
         <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 c17"
         >
           <th
-            class="c17 "
+            class="c18 "
             scope="row"
           >
             <div
               class="c4"
             >
               <span
-                class="c18"
+                class="c19"
               >
                 aa
               </span>
             </div>
           </th>
           <td
-            class="c17 "
+            class="c18 "
           >
             <div
               class="c4"
             >
               <span
-                class="c19"
+                class="c20"
               >
                 ZZ
               </span>
@@ -11432,24 +12232,11 @@ exports[`Data view sort 1`] = `
           </td>
         </tr>
         <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 c17"
         >
           <th
-            class="c17 "
+            class="c18 "
             scope="row"
-          >
-            <div
-              class="c4"
-            >
-              <span
-                class="c18"
-              >
-                bb
-              </span>
-            </div>
-          </th>
-          <td
-            class="c17 "
           >
             <div
               class="c4"
@@ -11457,30 +12244,43 @@ exports[`Data view sort 1`] = `
               <span
                 class="c19"
               >
+                bb
+              </span>
+            </div>
+          </th>
+          <td
+            class="c18 "
+          >
+            <div
+              class="c4"
+            >
+              <span
+                class="c20"
+              >
                 YY
               </span>
             </div>
           </td>
         </tr>
         <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 c17"
         >
           <th
-            class="c17 "
+            class="c18 "
             scope="row"
           >
             <div
               class="c4"
             >
               <span
-                class="c18"
+                class="c19"
               >
                 cc
               </span>
             </div>
           </th>
           <td
-            class="c17 "
+            class="c18 "
           >
             <div
               class="c4"
@@ -11488,24 +12288,24 @@ exports[`Data view sort 1`] = `
           </td>
         </tr>
         <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 c17"
         >
           <th
-            class="c17 "
+            class="c18 "
             scope="row"
           >
             <div
               class="c4"
             >
               <span
-                class="c18"
+                class="c19"
               >
                 dd
               </span>
             </div>
           </th>
           <td
-            class="c17 "
+            class="c18 "
           >
             <div
               class="c4"
