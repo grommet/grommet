@@ -100,7 +100,7 @@ const FileInput = forwardRef(
     const [showRemoveConfirmation, setShowRemoveConfirmation] = useState(false);
     const [pendingRemoval, setPendingRemoval] = useState(defaultPendingRemoval);
     const aggregateThreshold = (multiple && multiple.aggregateThreshold) || 10;
-    const maxFile = multiple?.max;
+    const max = multiple?.max;
     const inputRef = useForwardedRef(ref);
     const controlRef = useRef();
     const removeRef = useRef();
@@ -139,15 +139,15 @@ const FileInput = forwardRef(
               return message;
             }
           : '',
-        maxFile
+        max
           ? () => {
               const fileList = [...files];
               let message = '';
-              if (fileList.length > maxFile) {
+              if (fileList.length > max) {
                 message = format({
                   id: 'fileInput.maxFile',
                   messages,
-                  values: { maxFile },
+                  values: { max },
                 });
               }
               return message;
@@ -458,9 +458,9 @@ const FileInput = forwardRef(
             files.map((file, index) => {
               let messageId = '';
               if (maxSize && file.size > maxSize) {
-                messageId = 'fileInput.alert.maxSize';
-              } else if (maxFile && index >= maxFile) {
-                messageId = 'fileInput.alert.maxFile';
+                messageId = 'fileInput.maxSizeSingle';
+              } else if (max && index >= max) {
+                messageId = 'fileInput.maxFile';
               }
               return (
                 <Box
@@ -479,13 +479,13 @@ const FileInput = forwardRef(
                       direction="row"
                     >
                       {((maxSize && file.size > maxSize) ||
-                        (maxFile && index >= maxFile)) && (
+                        (max && index >= max)) && (
                         <CircleAlert
                           a11yTitle={format({
                             id: messageId,
                             messages,
                             values: {
-                              maxFile,
+                              max,
                               fileName: file.name,
                               maxSize: formatBytes(maxSize),
                             },

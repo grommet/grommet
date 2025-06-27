@@ -72,10 +72,6 @@
     "label": "View"
   },
   "fileInput": {
-    "alert": {
-      "maxFile": "Attention, attach a maximum of {max} files only. File {fileName} is beyond this limit.",
-      "maxSize": "Attention, this file {fileName} is too large. Attach files which are no larger than {maxSize} to continue."
-    },
     "browse": "browse",
     "dropPrompt": "Drop file here or",
     "dropPromptMultiple": "Drop files here or",

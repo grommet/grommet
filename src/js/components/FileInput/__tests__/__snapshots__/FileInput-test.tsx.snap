@@ -1564,7 +1564,7 @@ exports[`FileInput disabled with file selected 1`] = `
               class="c10"
             >
               <button
-                aria-label="remove file: file-size-okay.csv"
+                aria-label="remove file-size-okay.csv"
                 class="c11"
                 disabled=""
                 type="button"
