@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext } from 'react';
 
 import { Announce } from 'grommet-icons';
 
@@ -32,6 +32,7 @@ const PageContent = ({ mode }) => {
       <Button
         label="Announce"
         icon={<Announce />}
+        a11yTitle="Announce button"
         reverse
         onClick={() => {
           announce(message, mode);

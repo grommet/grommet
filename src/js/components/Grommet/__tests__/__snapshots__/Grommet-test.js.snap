@@ -20,23 +20,9 @@ exports[`Grommet announce 1`] = `
 </div>
 `;
 
-exports[`Grommet announce 2`] = `
-<div
-  aria-atomic="true"
-  aria-live="assertive"
-  id="grommet-announcer"
-  style="position: absolute; left: -1px; height: 1px; width: 1px; overflow: hidden; clip-path: rect(1px, 1px, 1px, 1px); white-space: nowrap;"
-/>
-`;
+exports[`Grommet announce 2`] = `null`;
 
-exports[`Grommet announce 3`] = `
-<div
-  aria-atomic="true"
-  aria-live="assertive"
-  id="grommet-announcer"
-  style="position: absolute; left: -1px; height: 1px; width: 1px; overflow: hidden; clip-path: rect(1px, 1px, 1px, 1px); white-space: nowrap;"
-/>
-`;
+exports[`Grommet announce 3`] = `null`;
 
 exports[`Grommet background 1`] = `
 .c0 {

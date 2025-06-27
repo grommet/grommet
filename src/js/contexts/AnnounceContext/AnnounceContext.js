@@ -24,16 +24,13 @@ export const AnnounceContext = React.createContext(
       document.body.querySelector('#grommet-announcer') || createAnnouncer();
 
     // Clear any existing timeout
-    if (announcer._timeoutId) {
-      clearTimeout(announcer._timeoutId);
-      delete announcer._timeoutId;
+    if (announcer.timeoutId) {
+      clearTimeout(announcer.timeoutId);
+      delete announcer.timeoutId;
     }
-
-    // Always set the desired mode, even if it's already set.
-    // This doesn't usually cause issues.
+    // Set the aria-live attribute based on the mode
     announcer.setAttribute('aria-live', mode);
 
-    // 1. Clear the content *first*. This creates a "change" from populated to empty.
     announcer.textContent = '';
 
     // 2. Use a short delay before setting the new message.
@@ -43,9 +40,9 @@ export const AnnounceContext = React.createContext(
       announcer.textContent = message; // Set the new message
 
       if (timeout > 0) {
-        announcer._timeoutId = setTimeout(() => {
+        announcer.timeoutId = setTimeout(() => {
           announcer.textContent = ''; // Clear the message after timeout
-          delete announcer._timeoutId;
+          delete announcer.timeoutId;
         }, timeout);
       }
     }, 75); // Increased delay for better reliability
