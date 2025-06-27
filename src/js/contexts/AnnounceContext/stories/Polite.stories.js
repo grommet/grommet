@@ -34,15 +34,21 @@ const ScreenReaderOnly = () => {
   const handleAnnounce = () => {
     const announcer = document.getElementById('live-region');
 
-    // Clear message
-    announcer.textContent = '';
+    // Step 1: Set to a non-breaking space to truly clear
+    announcer.textContent = '\u00A0';
 
-    // Force reflow
+    // Step 2: Force reflow
     void announcer.offsetWidth;
 
-    // Announce new message
-    announcer.textContent =
-      'This is a test announcement triggered by the button click.';
+    // Step 3: Fully clear after a slight delay
+    setTimeout(() => {
+      announcer.textContent = '';
+      // Step 4: Set the new message after another delay
+      setTimeout(() => {
+        announcer.textContent =
+          'This is a test announcement triggered by the button click.';
+      }, 100);
+    }, 100);
 
     console.log(
       'Announcing: This is a test announcement triggered by the button click.',
@@ -52,6 +58,7 @@ const ScreenReaderOnly = () => {
   return (
     <div style={{ padding: 50 }}>
       <button onClick={handleAnnounce}>Announce</button>
+      <button onClick={() => {}}>Another button</button>
     </div>
   );
 };
