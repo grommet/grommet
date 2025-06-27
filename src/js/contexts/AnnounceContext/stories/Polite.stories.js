@@ -15,54 +15,6 @@ import {
 const message = `Thank you for clicking the Announce Button,
 this announcement is being broadcast on the Button's click.`;
 
-const ScreenReaderOnly = () => {
-  useEffect(() => {
-    if (!document.getElementById('live-region')) {
-      const announcer = document.createElement('div');
-      announcer.setAttribute('id', 'live-region');
-      announcer.setAttribute('aria-live', 'polite');
-      announcer.setAttribute('aria-atomic', 'true');
-      announcer.style.position = 'absolute';
-      announcer.style.left = '-9999px';
-      announcer.style.height = '1px';
-      announcer.style.width = '1px';
-      announcer.style.overflow = 'hidden';
-      document.body.appendChild(announcer);
-    }
-  }, []);
-
-  const handleAnnounce = () => {
-    const announcer = document.getElementById('live-region');
-
-    // Step 1: Set to a non-breaking space to truly clear
-    announcer.textContent = '\u00A0';
-
-    // Step 2: Force reflow
-    void announcer.offsetWidth;
-
-    // Step 3: Fully clear after a slight delay
-    setTimeout(() => {
-      announcer.textContent = '';
-      // Step 4: Set the new message after another delay
-      setTimeout(() => {
-        announcer.textContent =
-          'This is a test announcement triggered by the button click.';
-      }, 100);
-    }, 100);
-
-    console.log(
-      'Announcing: This is a test announcement triggered by the button click.',
-    );
-  };
-
-  return (
-    <div style={{ padding: 50 }}>
-      <button onClick={handleAnnounce}>Announce</button>
-      <button onClick={() => {}}>Another button</button>
-    </div>
-  );
-};
-
 const PageContent = ({ mode }) => {
   const announce = useContext(AnnounceContext);
   return (
@@ -90,12 +42,11 @@ const PageContent = ({ mode }) => {
 };
 
 export const Polite = () => (
-  // <Grommet theme={grommet} full>
-  //   <Box justify="center" align="center" fill>
-  //     <PageContent mode="polite" role="log" />
-  //   </Box>
-  // </Grommet>
-  <ScreenReaderOnly />
+  <Grommet theme={grommet} full>
+    <Box justify="center" align="center" fill>
+      <PageContent mode="polite" role="log" />
+    </Box>
+  </Grommet>
 );
 
 export default {

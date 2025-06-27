@@ -3,54 +3,52 @@ import { AnnounceContextPropTypes } from './propTypes';
 
 const createAnnouncer = () => {
   const announcer = document.createElement('div');
-  announcer.id = 'grommet-announcer';
-  // Add ARIA attributes during creation
+  announcer.setAttribute('id', 'live-region');
   announcer.setAttribute('aria-live', 'polite');
   announcer.setAttribute('aria-atomic', 'true');
-  // Hide visually but keep accessible to screen readers
   announcer.style.position = 'absolute';
-  announcer.style.left = '-1px';
+  announcer.style.left = '-9999px';
   announcer.style.height = '1px';
   announcer.style.width = '1px';
   announcer.style.overflow = 'hidden';
-  announcer.style.clipPath = 'rect(1px, 1px, 1px, 1px)';
-  announcer.style['white-space'] = 'nowrap';
+  document.body.appendChild(announcer);
 
   document.body.insertBefore(announcer, document.body.firstChild);
+
   return announcer;
 };
 
-let announcer;
-
 export const AnnounceContext = React.createContext(
   (message, mode = 'polite', timeout = 500) => {
-    if (!announcer) {
-      announcer =
-        document.body.querySelector('#grommet-announcer') || createAnnouncer();
+    const announcer =
+      document.body.querySelector('#grommet-announcer') || createAnnouncer();
+
+    // Clear any existing timeout
+    if (announcer._timeoutId) {
+      clearTimeout(announcer._timeoutId);
+      delete announcer._timeoutId;
     }
 
-    console.log('Announcing:', message);
+    // Always set the desired mode, even if it's already set.
+    // This doesn't usually cause issues.
+    announcer.setAttribute('aria-live', mode);
 
-    // Clear any existing announcement
+    // 1. Clear the content *first*. This creates a "change" from populated to empty.
     announcer.textContent = '';
-    announcer.setAttribute('aria-live', 'off');
 
-    // Force reflow
-    void announcer.offsetWidth;
+    // 2. Use a short delay before setting the new message.
+    // This allows screen readers to register the empty state.
+    // A 50-100ms delay is often more reliable than 10ms for this.
+    setTimeout(() => {
+      announcer.textContent = message; // Set the new message
 
-    // Restore aria-live and set the message
-    requestAnimationFrame(() => {
-      announcer.setAttribute('aria-live', mode);
-      requestAnimationFrame(() => {
-        announcer.textContent = message;
-
-        if (timeout > 0) {
-          setTimeout(() => {
-            announcer.textContent = '';
-          }, timeout);
-        }
-      });
-    });
+      if (timeout > 0) {
+        announcer._timeoutId = setTimeout(() => {
+          announcer.textContent = ''; // Clear the message after timeout
+          delete announcer._timeoutId;
+        }, timeout);
+      }
+    }, 75); // Increased delay for better reliability
   },
 );
 
