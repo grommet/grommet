@@ -1,5 +1,6 @@
 import React, {
   useCallback,
+  useContext,
   useEffect,
   useState,
   useMemo,
@@ -18,6 +19,7 @@ import { MessageContext } from '../../contexts/MessageContext';
 
 import { NotificationType } from './propTypes';
 import { useThemeValue } from '../../utils/useThemeValue';
+import { AnnounceContext } from '../../contexts/AnnounceContext';
 
 const Message = ({ fill, direction, ...rest }) =>
   direction === 'row' ? (
@@ -83,12 +85,12 @@ const Notification = ({
   time,
   ...rest
 }) => {
-  const autoClose =
-    toast && toast?.autoClose === undefined ? true : toast.autoClose;
+  const autoClose = toast?.autoClose ?? true;
   const { theme } = useThemeValue();
   const [visible, setVisible] = useState(true);
   const { format } = useContext(MessageContext);
   const position = useMemo(() => (toast && toast?.position) || 'top', [toast]);
+  const announce = useContext(AnnounceContext);
 
   const close = useCallback(
     (event) => {
@@ -99,12 +101,20 @@ const Notification = ({
   );
 
   useEffect(() => {
+    if (visible && toast) {
+      const announceText =
+        typeof messageProp === 'string' ? `${title}. ${messageProp}` : title;
+
+      announce(announceText, 'polite');
+    }
+  }, [announce, visible, toast, messageProp, title]);
+
+  useEffect(() => {
     if (autoClose) {
       const timer = setTimeout(
         close,
         time || theme.notification.toast.time || theme.notification.time,
       );
-
       return () => clearTimeout(timer);
     }
     return undefined;
@@ -259,7 +269,9 @@ const Notification = ({
     content = visible && (
       <Layer
         {...theme.notification.toast.layer}
-        role="log"
+        role="status"
+        aria-live="polite"
+        aria-atomic="true"
         modal={false}
         onEsc={onClose}
         id={id}

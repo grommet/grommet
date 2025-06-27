@@ -3,11 +3,15 @@ import { AnnounceContextPropTypes } from './propTypes';
 
 const createAnnouncer = () => {
   const announcer = document.createElement('div');
-  announcer.id = 'grommet-announcer';
-  announcer.style.left = '-100%';
-  announcer.style.right = '100%';
-  announcer.style.position = 'fixed';
-  announcer.style['z-index'] = '-1';
+  announcer.setAttribute('id', 'live-region');
+  announcer.setAttribute('aria-live', 'polite');
+  announcer.setAttribute('aria-atomic', 'true');
+  announcer.style.position = 'absolute';
+  announcer.style.left = '-9999px';
+  announcer.style.height = '1px';
+  announcer.style.width = '1px';
+  announcer.style.overflow = 'hidden';
+  document.body.appendChild(announcer);
 
   document.body.insertBefore(announcer, document.body.firstChild);
 
@@ -16,18 +20,32 @@ const createAnnouncer = () => {
 
 export const AnnounceContext = React.createContext(
   (message, mode = 'polite', timeout = 500) => {
-    // we only create a new container if we don't have one already
-    // we create a separate node so that grommet does not set aria-hidden to it
     const announcer =
-      document.body.querySelector(`#grommet-announcer[aria-live]`) ||
-      createAnnouncer();
+      document.body.querySelector('#grommet-announcer') || createAnnouncer();
 
-    announcer.setAttribute('aria-live', 'off');
-    announcer.innerHTML = message;
+    // Clear any existing timeout
+    if (announcer.timeoutId) {
+      clearTimeout(announcer.timeoutId);
+      delete announcer.timeoutId;
+    }
+    // Set the aria-live attribute based on the mode
     announcer.setAttribute('aria-live', mode);
+
+    announcer.textContent = '';
+
+    // 2. Use a short delay before setting the new message.
+    // This allows screen readers to register the empty state.
+    // A 50-100ms delay is often more reliable than 10ms for this.
     setTimeout(() => {
-      announcer.innerHTML = '';
-    }, timeout);
+      announcer.textContent = message; // Set the new message
+
+      if (timeout > 0) {
+        announcer.timeoutId = setTimeout(() => {
+          announcer.textContent = ''; // Clear the message after timeout
+          delete announcer.timeoutId;
+        }, timeout);
+      }
+    }, 75); // Increased delay for better reliability
   },
 );
 

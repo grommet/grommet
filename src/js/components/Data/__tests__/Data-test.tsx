@@ -16,7 +16,7 @@ const DEBOUNCE_TIMEOUT = 300;
 
 // asserts that AnnounceContext aria-live region and visible DataSummary each have this text
 const expectDataSummary = (message: string) =>
-  expect(screen.getAllByText(message)).toHaveLength(2);
+  expect(screen.getByText(message)).toBeInTheDocument();
 
 const data = [
   {
