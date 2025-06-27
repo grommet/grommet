@@ -92,7 +92,7 @@
       "singular": "One file is too large. Select files which are no larger than {maxSize}.",
       "plural": "{numOfFiles} files are too large. Select files which are no larger than {maxSize}."
     },
-    "remove": "remove",
+    "remove": "remove {fileName}",
     "removeAll": "remove all"
   },
   "form": {
