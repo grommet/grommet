@@ -3951,7 +3951,7 @@ exports[`DataFilters sub objects 1`] = `
   line-height: 24px;
 }
 
-.c36 {
+.c37 {
   font-size: 18px;
   line-height: 24px;
   font-weight: bold;
@@ -4087,7 +4087,7 @@ exports[`DataFilters sub objects 1`] = `
   padding-bottom: 6px;
 }
 
-.c35 {
+.c36 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -4109,6 +4109,46 @@ exports[`DataFilters sub objects 1`] = `
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
+}
+
+.c35:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c35:focus >circle,
+.c35:focus >ellipse,
+.c35:focus >line,
+.c35:focus >path,
+.c35:focus >polygon,
+.c35:focus >polyline,
+.c35:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c35:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c35:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c35:focus:not(:focus-visible) >circle,
+.c35:focus:not(:focus-visible) >ellipse,
+.c35:focus:not(:focus-visible) >line,
+.c35:focus:not(:focus-visible) >path,
+.c35:focus:not(:focus-visible) >polygon,
+.c35:focus:not(:focus-visible) >polyline,
+.c35:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c35:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
 }
 
 .c34:focus {
@@ -4425,24 +4465,24 @@ exports[`DataFilters sub objects 1`] = `
         class="StyledTable__StyledTableBody-sc-1m3u5g-3 c34"
       >
         <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 c35"
         >
           <th
-            class="c35 "
+            class="c36 "
             scope="row"
           >
             <div
               class="c8"
             >
               <span
-                class="c36"
+                class="c37"
               >
                 Paris
               </span>
             </div>
           </th>
           <td
-            class="c35 "
+            class="c36 "
           >
             <div
               class="c8"
