@@ -1,23 +1,17 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Box, Data, List, Pagination } from 'grommet';
 
 // Uses the StarWars API for starships, see https://swapi.dev
 
-const step = 10; // default for https://swapi.dev
+// const step = 10; // default for https://swapi.dev
 
-const fetchData = async (view, signal) => {
-  const params = {};
-  if (view.search) params.search = view.search;
-  if (view.page) params.page = view.page;
-  const url = `https://swapi.dev/api/starships?${Object.keys(params)
-    .map((k) => `${k}=${params[k]}`)
-    .join('&')}`;
+const fetchData = async () => {
+  const url = `https://swapi.info/api/starships`;
   return fetch(url, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
     },
-    signal,
   })
     .then((response) => response.json())
     .catch((err) => {
@@ -29,37 +23,24 @@ const fetchData = async (view, signal) => {
 export const StarWars = () => {
   const [result, setResult] = useState({});
   const [total, setTotal] = useState(0);
-  const [view, setView] = useState({ search: '', step });
-  const abortRef = useRef();
 
   useEffect(() => {
-    // This API is a bit slow, abort any uncompleted requests.
-    abortRef?.current?.abort();
-    abortRef.current = new AbortController();
-    fetchData(view, abortRef.current.signal).then(({ count, results }) => {
+    fetchData().then((results) => {
       if (results) {
         // The API doesn't provide a non-filtered total, so we rely on the
         // first call having no filtering telling us the total.
-        setTotal((prevTotal) => Math.max(prevTotal, count));
-        setResult({ data: results, filteredTotal: count });
-        abortRef.current = undefined;
+        setTotal((prevTotal) => Math.max(prevTotal, results.length));
+        setResult({ data: results, filteredTotal: results.length });
       }
     });
-  }, [view]);
+  }, []);
 
   return (
     // Uncomment <Grommet> lines when using outside of storybook
     // <Grommet theme={...}>
 
     <Box skeleton={!result.data} width="large" pad="large">
-      <Data
-        data={result.data}
-        total={total}
-        filteredTotal={result.filteredTotal}
-        view={view}
-        onView={setView}
-        toolbar="search"
-      >
+      <Data data={result.data} total={total} toolbar="search">
         <List primaryKey="name" secondaryKey="starship_class" />
         <Pagination />
       </Data>
