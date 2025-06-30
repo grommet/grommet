@@ -54,7 +54,7 @@ const Layer = forwardRef((props, ref) => {
     () => () => {
       if (originalFocusedElement) {
         const shouldRestoreFocus =
-          modal !== false || (modal === false && focusWithinLayerRef.current);
+          modal || (!modal && focusWithinLayerRef.current);
         if (shouldRestoreFocus && originalFocusedElement.focus) {
           // wait for the fixed positioning to come back to normal
           // see layer styling for reference
