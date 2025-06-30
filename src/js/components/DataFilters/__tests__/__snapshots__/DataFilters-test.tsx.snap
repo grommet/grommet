@@ -3838,7 +3838,7 @@ exports[`DataFilters sub objects 1`] = `
   overflow: visible;
 }
 
-.c23 {
+.c24 {
   display: flex;
   box-sizing: border-box;
   align-items: center;
@@ -3850,7 +3850,7 @@ exports[`DataFilters sub objects 1`] = `
   justify-content: center;
 }
 
-.c24 {
+.c25 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -3864,7 +3864,7 @@ exports[`DataFilters sub objects 1`] = `
   border-radius: 100%;
 }
 
-.c25 {
+.c26 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -3878,7 +3878,7 @@ exports[`DataFilters sub objects 1`] = `
   border-radius: 12px;
 }
 
-.c27 {
+.c28 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -3891,7 +3891,7 @@ exports[`DataFilters sub objects 1`] = `
   justify-content: space-between;
 }
 
-.c32 {
+.c33 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -3925,25 +3925,25 @@ exports[`DataFilters sub objects 1`] = `
   text-align: right;
 }
 
-.c26 {
+.c27 {
   margin-left: 12px;
   margin-right: 12px;
   font-size: 14px;
   line-height: 20px;
 }
 
-.c33 {
+.c34 {
   font-size: 18px;
   line-height: 24px;
 }
 
-.c36 {
+.c37 {
   font-size: 18px;
   line-height: 24px;
   font-weight: bold;
 }
 
-.c28 {
+.c29 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -3967,47 +3967,47 @@ exports[`DataFilters sub objects 1`] = `
   transition-timing-function: ease-in-out;
 }
 
-.c28:hover {
+.c29:hover {
   box-shadow: 0px 0px 0px 2px #7D4CDB;
 }
 
-.c28:focus {
+.c29:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c28:focus >circle,
-.c28:focus >ellipse,
-.c28:focus >line,
-.c28:focus >path,
-.c28:focus >polygon,
-.c28:focus >polyline,
-.c28:focus >rect {
+.c29:focus >circle,
+.c29:focus >ellipse,
+.c29:focus >line,
+.c29:focus >path,
+.c29:focus >polygon,
+.c29:focus >polyline,
+.c29:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c28:focus ::-moz-focus-inner {
+.c29:focus ::-moz-focus-inner {
   border: 0;
 }
 
-.c28:focus:not(:focus-visible) {
+.c29:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c28:focus:not(:focus-visible) >circle,
-.c28:focus:not(:focus-visible) >ellipse,
-.c28:focus:not(:focus-visible) >line,
-.c28:focus:not(:focus-visible) >path,
-.c28:focus:not(:focus-visible) >polygon,
-.c28:focus:not(:focus-visible) >polyline,
-.c28:focus:not(:focus-visible) >rect {
+.c29:focus:not(:focus-visible) >circle,
+.c29:focus:not(:focus-visible) >ellipse,
+.c29:focus:not(:focus-visible) >line,
+.c29:focus:not(:focus-visible) >path,
+.c29:focus:not(:focus-visible) >polygon,
+.c29:focus:not(:focus-visible) >polyline,
+.c29:focus:not(:focus-visible) >rect {
   outline: none;
   box-shadow: none;
 }
 
-.c28:focus:not(:focus-visible) ::-moz-focus-inner {
+.c29:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 
@@ -4056,11 +4056,21 @@ exports[`DataFilters sub objects 1`] = `
   flex-shrink: 0;
 }
 
+.c23 {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 1px;
+}
+
 .c20 {
   user-select: none;
 }
 
-.c31 {
+.c32 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -4073,7 +4083,7 @@ exports[`DataFilters sub objects 1`] = `
   padding-bottom: 6px;
 }
 
-.c35 {
+.c36 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -4085,23 +4095,23 @@ exports[`DataFilters sub objects 1`] = `
   padding-bottom: 6px;
 }
 
-.c29 {
+.c30 {
   border-spacing: 0;
   border-collapse: collapse;
   width: inherit;
 }
 
-.c30 {
+.c31 {
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
 }
 
-.c34:focus {
+.c35:focus {
   outline: 2px solid #6FFFB0;
 }
 
-.c34:focus:not(:focus-visible) {
+.c35:focus:not(:focus-visible) {
   outline: none;
 }
 
@@ -4158,13 +4168,13 @@ exports[`DataFilters sub objects 1`] = `
 }
 
 @media only screen and (max-width: 768px) {
-  .c25 {
+  .c26 {
     border-radius: 6px;
   }
 }
 
 @media only screen and (max-width: 768px) {
-  .c27 {
+  .c28 {
     margin-top: 12px;
   }
 }
@@ -4299,41 +4309,59 @@ exports[`DataFilters sub objects 1`] = `
                       class="c22"
                       style="flex: 0 0 1px;"
                     >
+                      <input
+                        aria-label="slider control"
+                        class="c23"
+                        max="90"
+                        min="-90"
+                        step="9"
+                        type="range"
+                        value="10"
+                      />
                       <div
                         aria-label="Lower Bounds"
                         aria-valuemax="90"
                         aria-valuemin="-90"
                         aria-valuenow="10"
-                        class="c23"
+                        class="c24"
                         role="slider"
                         style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
-                        tabindex="0"
+                        tabindex="-1"
                       >
                         <div
-                          class="c24 EdgeControl__StyledBox-sc-1xo2yt9-0"
+                          class="c25 EdgeControl__StyledBox-sc-1xo2yt9-1"
                         />
                       </div>
                     </div>
                     <div
-                      class="c25"
+                      class="c26"
                       style="flex: 81 0 0px; cursor: ew-resize;"
                     />
                     <div
                       class="c22"
                       style="flex: 0 0 1px;"
                     >
+                      <input
+                        aria-label="slider control"
+                        class="c23"
+                        max="90"
+                        min="-90"
+                        step="9"
+                        type="range"
+                        value="90"
+                      />
                       <div
                         aria-label="Upper Bounds"
                         aria-valuemax="90"
                         aria-valuemin="-90"
                         aria-valuenow="90"
-                        class="c23"
+                        class="c24"
                         role="slider"
                         style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
-                        tabindex="0"
+                        tabindex="-1"
                       >
                         <div
-                          class="c24 EdgeControl__StyledBox-sc-1xo2yt9-0"
+                          class="c25 EdgeControl__StyledBox-sc-1xo2yt9-1"
                         />
                       </div>
                     </div>
@@ -4343,7 +4371,7 @@ exports[`DataFilters sub objects 1`] = `
                     />
                   </div>
                   <span
-                    class="c26"
+                    class="c27"
                     style="width: 0px;"
                   >
                     90
@@ -4354,10 +4382,10 @@ exports[`DataFilters sub objects 1`] = `
           </div>
         </div>
         <footer
-          class="c27"
+          class="c28"
         >
           <button
-            class="c28"
+            class="c29"
             type="submit"
           >
             Apply filters
@@ -4366,7 +4394,7 @@ exports[`DataFilters sub objects 1`] = `
       </div>
     </form>
     <table
-      class="c29 c30"
+      class="c30 c31"
     >
       <thead
         class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-5"
@@ -4375,28 +4403,28 @@ exports[`DataFilters sub objects 1`] = `
           class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
         >
           <th
-            class="c31 "
+            class="c32 "
             scope="col"
           >
             <div
-              class="c32"
+              class="c33"
             >
               <span
-                class="c33"
+                class="c34"
               >
                 City
               </span>
             </div>
           </th>
           <th
-            class="c31 "
+            class="c32 "
             scope="col"
           >
             <div
-              class="c32"
+              class="c33"
             >
               <span
-                class="c33"
+                class="c34"
               >
                 Latitude
               </span>
@@ -4405,33 +4433,33 @@ exports[`DataFilters sub objects 1`] = `
         </tr>
       </thead>
       <tbody
-        class="StyledTable__StyledTableBody-sc-1m3u5g-3 c34"
+        class="StyledTable__StyledTableBody-sc-1m3u5g-3 c35"
       >
         <tr
           class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
         >
           <th
-            class="c35 "
+            class="c36 "
             scope="row"
           >
             <div
               class="c8"
             >
               <span
-                class="c36"
+                class="c37"
               >
                 Paris
               </span>
             </div>
           </th>
           <td
-            class="c35 "
+            class="c36 "
           >
             <div
               class="c8"
             >
               <span
-                class="c33"
+                class="c34"
               >
                 48
               </span>

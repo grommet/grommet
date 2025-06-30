@@ -6,6 +6,17 @@ import { Keyboard } from '../Keyboard';
 import { focusStyle, normalizeColor, parseMetricToNum } from '../../utils';
 import { useThemeValue } from '../../utils/useThemeValue';
 
+// Add visually hidden input styles
+const VisuallyHiddenInput = styled.input`
+  position: absolute;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 1px;
+`;
+
 const DIRECTION_PROPS = {
   horizontal: {
     cursor: 'col-resize',
@@ -23,7 +34,21 @@ const StyledBox = styled(Box)`
 
 const EdgeControl = forwardRef(
   (
-    { color, direction, edge, onDecrease, onIncrease, thickness, ...rest },
+    {
+      color,
+      direction,
+      edge,
+      onDecrease,
+      onIncrease,
+      thickness,
+      onHiddenInputChange,
+      max,
+      min,
+      value,
+      step,
+
+      ...rest
+    },
     ref,
   ) => {
     const { theme } = useThemeValue();
@@ -56,6 +81,12 @@ const EdgeControl = forwardRef(
         theme.rangeSelector.edge &&
         theme.rangeSelector.edge.type) ||
       'disc';
+
+    // This handler will directly pass the native input's value
+    const handleRangeChange = (event) => {
+      const newValue = Number(event.target.value);
+      onHiddenInputChange(newValue);
+    };
 
     let node;
     const backgroundColor = normalizeColor(color || 'control', theme);
@@ -93,6 +124,19 @@ const EdgeControl = forwardRef(
           justify="center"
           alignSelf="stretch"
         >
+          {/* Add visually hidden range input for Safari VoiceOver */}
+          <VisuallyHiddenInput
+            type="range"
+            min={min}
+            max={max}
+            step={step}
+            value={value}
+            onChange={handleRangeChange}
+            onFocus={() => setFocus(true)}
+            onBlur={() => setFocus(false)}
+            aria-label="slider control"
+          />
+
           <Box
             ref={ref}
             direction={boxDirection}
@@ -107,7 +151,7 @@ const EdgeControl = forwardRef(
               minHeight: size,
               zIndex: 1,
             }}
-            tabIndex={0}
+            tabIndex={-1} // Remove from tab order
             onFocus={() => setFocus(true)}
             onBlur={() => setFocus(false)}
             {...rest}
