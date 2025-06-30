@@ -128,11 +128,11 @@ export var GroupedBody = /*#__PURE__*/forwardRef(function (_ref, ref) {
       onChange = row.onChange,
       primaryValue = row.primaryValue;
     var cellProps = normalizeRowCellProps(rowProps, context === 'groupHeader' ? cellPropsProp.groupHeader : cellPropsProp.body, primaryValue, index);
-    return /*#__PURE__*/React.createElement(StyledDataTableRow, {
+    return /*#__PURE__*/React.createElement(StyledDataTableRow, _extends({
       ref: rowRef,
       key: key,
       size: size
-    }, /*#__PURE__*/React.createElement(ExpanderCell, {
+    }, passThemeFlag), /*#__PURE__*/React.createElement(ExpanderCell, {
       background: isSelected && cellProps.selected.background || cellProps.background,
       border: cellProps.border,
       context: context,

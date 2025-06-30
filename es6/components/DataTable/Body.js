@@ -1,9 +1,9 @@
 var _excluded = ["cellProps", "columns", "data", "disabled", "onMore", "replace", "onClickRow", "onSelect", "pinnedOffset", "primaryProperty", "rowProps", "selected", "rowDetails", "show", "size", "step", "rowExpand", "setRowExpand", "verticalAlign"];
-function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (-1 !== e.indexOf(n)) continue; t[n] = r[n]; } return t; }
+function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 /* eslint-disable no-underscore-dangle */
 import React, { forwardRef, memo, useEffect } from 'react';
-import { useKeyboard, useForwardedRef } from '../../utils';
+import { useForwardedRef } from '../../utils';
 import { CheckBox } from '../CheckBox';
 import { InfiniteScroll } from '../InfiniteScroll';
 import { TableRow } from '../TableRow';
@@ -21,28 +21,49 @@ var Row = /*#__PURE__*/memo(function (_ref) {
     rowRef = _ref.rowRef,
     size = _ref.size,
     active = _ref.active,
+    focused = _ref.focused,
+    lastFocused = _ref.lastFocused,
     onClickRow = _ref.onClickRow,
     datum = _ref.datum,
     selected = _ref.selected,
     onSelect = _ref.onSelect,
+    passThemeFlag = _ref.passThemeFlag,
     isDisabled = _ref.isDisabled,
     isSelected = _ref.isSelected,
     rowDetails = _ref.rowDetails,
     isRowExpanded = _ref.isRowExpanded,
     setActive = _ref.setActive,
+    setFocused = _ref.setFocused,
     setRowExpand = _ref.setRowExpand,
     rowExpand = _ref.rowExpand,
     columns = _ref.columns,
     pinnedOffset = _ref.pinnedOffset,
     primaryProperty = _ref.primaryProperty,
-    verticalAlign = _ref.verticalAlign;
-  return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(StyledDataTableRow, {
-    ref: rowRef,
+    verticalAlign = _ref.verticalAlign,
+    onRowRefChange = _ref.onRowRefChange;
+  return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(StyledDataTableRow, _extends({
+    ref: function ref(element) {
+      // Store the row element in the parent's ref map
+      if (onRowRefChange) {
+        onRowRefChange(index, element);
+      }
+      // Also call the original rowRef if it exists
+      if (rowRef) {
+        if (typeof rowRef === 'function') {
+          rowRef(element);
+        } else if (rowRef && typeof rowRef === 'object' && 'current' in rowRef) {
+          var refObj = rowRef;
+          refObj.current = element;
+        }
+      }
+    },
     size: size,
     active: active,
     "aria-disabled": onClickRow && isDisabled || undefined,
     onClick: onClickRow ? function (event) {
       if (onClickRow && !isDisabled) {
+        setFocused(index);
+        setActive(index);
         if (typeof onClickRow === 'function') {
           // extract from React's synthetic event pool
           event.persist();
@@ -59,13 +80,24 @@ var Row = /*#__PURE__*/memo(function (_ref) {
         }
       }
     } : undefined,
-    onMouseEnter: onClickRow && !isDisabled ? function () {
+    onFocus: function onFocus() {
+      if (onClickRow && !isDisabled) {
+        setFocused(index);
+        setActive(index);
+      }
+    },
+    onMouseOver: onClickRow && !isDisabled ? function () {
       return setActive(index);
     } : undefined,
-    onMouseLeave: onClickRow ? function () {
-      return setActive(undefined);
-    } : undefined
-  }, (selected || onSelect) && /*#__PURE__*/React.createElement(Cell, {
+    tabIndex:
+    // eslint-disable-next-line no-nested-ternary
+    !onClickRow ? undefined :
+    // If this row is focused, it should be focusable
+    // If no row is focused and this is the first row, make it focusable
+    focused !== undefined && focused === index || focused === undefined && lastFocused === index || focused === undefined && index === 0 ? 0 :
+    // Otherwise, not in tab order
+    -1
+  }, passThemeFlag), (selected || onSelect) && /*#__PURE__*/React.createElement(Cell, {
     background: isSelected && cellProps.selected.background || (pinnedOffset == null ? void 0 : pinnedOffset._grommetDataTableSelect) && cellProps.pinned.background || cellProps.background,
     border: cellProps.pinned.border || cellProps.border,
     pinnedOffset: pinnedOffset == null ? void 0 : pinnedOffset._grommetDataTableSelect,
@@ -136,7 +168,6 @@ var Row = /*#__PURE__*/memo(function (_ref) {
   }, rowDetails.render ? rowDetails.render(datum) : rowDetails(datum))));
 });
 var Body = /*#__PURE__*/forwardRef(function (_ref2, ref) {
-  var _ref3;
   var cellPropsProp = _ref2.cellProps,
     columns = _ref2.columns,
     data = _ref2.data,
@@ -161,19 +192,29 @@ var Body = /*#__PURE__*/forwardRef(function (_ref2, ref) {
     theme = _useThemeValue.theme,
     passThemeFlag = _useThemeValue.passThemeFlag;
   var _React$useState = React.useState(),
-    active = _React$useState[0],
-    setActive = _React$useState[1];
+    focused = _React$useState[0],
+    setFocused = _React$useState[1];
   var _React$useState2 = React.useState(),
-    lastActive = _React$useState2[0],
-    setLastActive = _React$useState2[1];
+    lastFocused = _React$useState2[0],
+    setLastFocused = _React$useState2[1];
   var _React$useState3 = React.useState(),
-    scroll = _React$useState3[0],
-    setScroll = _React$useState3[1];
+    active = _React$useState3[0],
+    setActive = _React$useState3[1];
+  var _React$useState4 = React.useState(),
+    scroll = _React$useState4[0],
+    setScroll = _React$useState4[1];
   var containerRef = useForwardedRef(ref);
 
-  // Determine if using a keyboard to cover focus behavior
-  var usingKeyboard = useKeyboard();
-  var onFocusActive = (_ref3 = active != null ? active : lastActive) != null ? _ref3 : usingKeyboard && onClickRow ? 0 : undefined;
+  // Store refs for each row to enable direct focus management
+  var rowRefs = React.useRef(new Map());
+  // Callback to store row references
+  var handleRowRefChange = React.useCallback(function (index, element) {
+    if (element) {
+      rowRefs.current.set(index, element);
+    } else {
+      rowRefs.current["delete"](index);
+    }
+  }, []);
   var activePrimaryValue = active >= 0 ? datumValue(data[active], primaryProperty) : undefined;
   var selectRow = function selectRow() {
     if (activePrimaryValue !== undefined) {
@@ -195,13 +236,23 @@ var Body = /*#__PURE__*/forwardRef(function (_ref2, ref) {
       }
     }
   }, [containerRef]);
+
+  // roving tab index, ensure row (when onClickRow) has DOM focus
+  useEffect(function () {
+    if (focused !== undefined && rowRefs.current.has(focused)) {
+      var focusedRowElement = rowRefs.current.get(focused);
+      if (focusedRowElement && focusedRowElement.focus) {
+        focusedRowElement.focus();
+      }
+    }
+  }, [focused]);
   return /*#__PURE__*/React.createElement(Keyboard, {
     onEnter: clickableRow ? function (event) {
       if (clickableRow) {
         if (typeof onClickRow === 'function') {
           event.persist();
           var adjustedEvent = event;
-          adjustedEvent.datum = data[active];
+          adjustedEvent.datum = data[focused];
           onClickRow(adjustedEvent);
         } else if (onClickRow === 'select') {
           selectRow();
@@ -215,28 +266,38 @@ var Body = /*#__PURE__*/forwardRef(function (_ref2, ref) {
       if (typeof onClickRow === 'function') {
         event.persist();
         var adjustedEvent = event;
-        adjustedEvent.datum = data == null ? void 0 : data[active];
+        adjustedEvent.datum = data == null ? void 0 : data[focused];
         onClickRow(adjustedEvent);
       } else if (onClickRow === 'select') {
         selectRow();
       }
     } : undefined,
-    onUp: onClickRow && active ? function () {
-      return setActive(active - 1);
+    onUp: onClickRow && focused ? function () {
+      var previousIndex = focused - 1;
+      setFocused(previousIndex);
+      setActive(previousIndex);
     } : undefined,
-    onDown: onClickRow && data.length && active < data.length - 1 ? function () {
-      return setActive((active != null ? active : -1) + 1);
+    onDown: onClickRow && data.length && focused < data.length - 1 ? function (event) {
+      event.preventDefault();
+      var nextIndex = (focused != null ? focused : -1) + 1;
+      setFocused(nextIndex);
+      setActive(nextIndex);
     } : undefined
   }, /*#__PURE__*/React.createElement(StyledDataTableBody, _extends({
     ref: containerRef,
     size: size,
-    tabIndex: onClickRow || scroll ? 0 : undefined,
-    onFocus: function onFocus() {
-      return setActive(onFocusActive);
+    tabIndex: !onClickRow && scroll ? 0 : undefined,
+    onMouseOut: function onMouseOut() {
+      return setActive(undefined);
     },
-    onBlur: function onBlur() {
-      setLastActive(active);
-      setActive(undefined);
+    onBlur: function onBlur(event) {
+      // only reset focused if the focus is leaving the table
+      // and not moving to a child element of the table
+      if (containerRef.current && !containerRef.current.contains(event.relatedTarget)) {
+        setLastFocused(focused);
+        setFocused(undefined);
+        setActive(undefined);
+      }
     }
   }, passThemeFlag, rest), /*#__PURE__*/React.createElement(InfiniteScroll, {
     items: data,
@@ -265,7 +326,12 @@ var Body = /*#__PURE__*/forwardRef(function (_ref2, ref) {
       index: index,
       size: size,
       active: active >= 0 ? active === index : undefined,
+      focused: focused,
+      lastFocused: lastFocused,
+      setFocused: setFocused,
+      onRowRefChange: handleRowRefChange,
       onClickRow: onClickRow,
+      passThemeFlag: passThemeFlag,
       datum: datum,
       selected: selected,
       onSelect: onSelect,

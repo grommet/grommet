@@ -40,7 +40,7 @@ var rowStyles = css(["", " ", " ", ""], function (props) {
 var StyledDataTableRow = styled(TableRow).withConfig({
   displayName: "StyledDataTable__StyledDataTableRow",
   componentId: "sc-xrlyjm-2"
-})(["", ";", ""], function (props) {
+})(["&:focus{", "}&:focus:not(:focus-visible){", "}", ";", ""], focusStyle(), unfocusStyle(), function (props) {
   var _props$theme$dataTabl;
   return (_props$theme$dataTabl = props.theme.dataTable) == null || (_props$theme$dataTabl = _props$theme$dataTabl.body) == null || (_props$theme$dataTabl = _props$theme$dataTabl.row) == null ? void 0 : _props$theme$dataTabl.extend;
 }, rowStyles);

@@ -133,11 +133,11 @@ var GroupedBody = exports.GroupedBody = /*#__PURE__*/(0, _react.forwardRef)(func
       onChange = row.onChange,
       primaryValue = row.primaryValue;
     var cellProps = (0, _buildState.normalizeRowCellProps)(rowProps, context === 'groupHeader' ? cellPropsProp.groupHeader : cellPropsProp.body, primaryValue, index);
-    return /*#__PURE__*/_react["default"].createElement(_StyledDataTable.StyledDataTableRow, {
+    return /*#__PURE__*/_react["default"].createElement(_StyledDataTable.StyledDataTableRow, _extends({
       ref: rowRef,
       key: key,
       size: size
-    }, /*#__PURE__*/_react["default"].createElement(_ExpanderCell.ExpanderCell, {
+    }, passThemeFlag), /*#__PURE__*/_react["default"].createElement(_ExpanderCell.ExpanderCell, {
       background: isSelected && cellProps.selected.background || cellProps.background,
       border: cellProps.border,
       context: context,
