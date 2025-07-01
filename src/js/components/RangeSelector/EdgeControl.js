@@ -41,7 +41,6 @@ const EdgeControl = forwardRef(
       onDecrease,
       onIncrease,
       thickness,
-      onHiddenInputChange,
       max,
       min,
       value,
@@ -81,12 +80,6 @@ const EdgeControl = forwardRef(
         theme.rangeSelector.edge &&
         theme.rangeSelector.edge.type) ||
       'disc';
-
-    // This handler will directly pass the native input's value
-    const handleRangeChange = (event) => {
-      const newValue = Number(event.target.value);
-      onHiddenInputChange(newValue);
-    };
 
     let node;
     const backgroundColor = normalizeColor(color || 'control', theme);
@@ -131,10 +124,10 @@ const EdgeControl = forwardRef(
             max={max}
             step={step}
             value={value}
-            onChange={handleRangeChange}
             onFocus={() => setFocus(true)}
             onBlur={() => setFocus(false)}
             aria-label="slider control"
+            readOnly
           />
 
           <Box
