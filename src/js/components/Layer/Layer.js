@@ -39,8 +39,20 @@ const Layer = forwardRef((props, ref) => {
         focusWithinLayerRef.current = true;
       }
     };
+    const handleFocusOut = (event) => {
+      if (
+        layerContainer?.contains?.(event.target) &&
+        !layerContainer.contains(event.relatedTarget)
+      ) {
+        focusWithinLayerRef.current = false;
+      }
+    };
     document.addEventListener('focusin', handleFocusIn);
-    return () => document.removeEventListener('focusin', handleFocusIn);
+    document.addEventListener('focusout', handleFocusOut);
+    return () => {
+      document.removeEventListener('focusin', handleFocusIn);
+      document.removeEventListener('focusout', handleFocusOut);
+    };
   }, [layerContainer]);
 
   useEffect(
