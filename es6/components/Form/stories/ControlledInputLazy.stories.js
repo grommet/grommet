@@ -107,6 +107,7 @@ export var ControlledInputLazy = function ControlledInputLazy() {
         return setSubscribe(event.target.checked);
       }
     })), /*#__PURE__*/React.createElement(FormField, {
+      label: "Time of day",
       htmlFor: "ampm",
       name: "ampm"
     }, /*#__PURE__*/React.createElement(RadioButtonGroup, {

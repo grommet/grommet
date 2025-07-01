@@ -88,6 +88,7 @@ var FieldWithChildren = exports.FieldWithChildren = function FieldWithChildren()
       id: "password",
       type: "password"
     })), /*#__PURE__*/_react["default"].createElement(_grommet.FormField, {
+      label: "Subscription options",
       htmlFor: "subscription",
       name: "subscription"
     }, /*#__PURE__*/_react["default"].createElement(_grommet.CheckBoxGroup, {
@@ -95,6 +96,7 @@ var FieldWithChildren = exports.FieldWithChildren = function FieldWithChildren()
       id: "subscription",
       options: ['subscribe', 'receive email notifications']
     })), /*#__PURE__*/_react["default"].createElement(_grommet.FormField, {
+      label: "Time of day",
       htmlFor: "ampm",
       name: "ampm"
     }, /*#__PURE__*/_react["default"].createElement(_grommet.RadioButtonGroup, {

@@ -83,6 +83,7 @@ export var FieldWithChildren = function FieldWithChildren() {
       id: "password",
       type: "password"
     })), /*#__PURE__*/React.createElement(FormField, {
+      label: "Subscription options",
       htmlFor: "subscription",
       name: "subscription"
     }, /*#__PURE__*/React.createElement(CheckBoxGroup, {
@@ -90,6 +91,7 @@ export var FieldWithChildren = function FieldWithChildren() {
       id: "subscription",
       options: ['subscribe', 'receive email notifications']
     })), /*#__PURE__*/React.createElement(FormField, {
+      label: "Time of day",
       htmlFor: "ampm",
       name: "ampm"
     }, /*#__PURE__*/React.createElement(RadioButtonGroup, {

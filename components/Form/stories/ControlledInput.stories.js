@@ -103,6 +103,7 @@ var ControlledInput = exports.ControlledInput = function ControlledInput() {
         return setSubscribe(event.target.checked);
       }
     })), /*#__PURE__*/_react["default"].createElement(_grommet.FormField, {
+      label: "Time of day",
       htmlFor: "ampm",
       name: "ampm"
     }, /*#__PURE__*/_react["default"].createElement(_grommet.RadioButtonGroup, {

@@ -58,6 +58,7 @@ export var Uncontrolled = function Uncontrolled() {
       name: "subscribe",
       label: "Subscribe?"
     })), /*#__PURE__*/React.createElement(FormField, {
+      label: "Time of day",
       htmlFor: "ampm",
       name: "ampm"
     }, /*#__PURE__*/React.createElement(RadioButtonGroup, {

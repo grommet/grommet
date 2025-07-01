@@ -81,6 +81,7 @@ var Controlled = exports.Controlled = function Controlled() {
       name: "subscribe",
       label: "Subscribe?"
     })), /*#__PURE__*/_react["default"].createElement(_grommet.FormField, {
+      label: "Time of day",
       htmlFor: "ampm",
       name: "ampm"
     }, /*#__PURE__*/_react["default"].createElement(_grommet.RadioButtonGroup, {
