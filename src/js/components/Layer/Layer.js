@@ -65,6 +65,9 @@ const Layer = forwardRef((props, ref) => {
   useLayoutEffect(
     () => () => {
       if (originalFocusedElement) {
+        // Restore focus if:
+        // - modal layer (always restore), or
+        // - non-modal layer that had focus when it closed
         const shouldRestoreFocus =
           modal || (!modal && focusWithinLayerRef.current);
         if (shouldRestoreFocus && originalFocusedElement.focus) {
