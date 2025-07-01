@@ -11,8 +11,6 @@ import {
 
 // Uses the StarWars API for starships, see https://swapi.info
 
-// const step = 10; // default for https://swapi.dev
-
 const fetchData = async () => {
   const url = `https://swapi.info/api/starships`;
   return fetch(url, {

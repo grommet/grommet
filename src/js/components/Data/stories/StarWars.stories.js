@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Box, Data, List, Pagination } from 'grommet';
 
-// Uses the StarWars API for starships, see https://swapi.dev
-
-// const step = 10; // default for https://swapi.dev
+// Uses the StarWars API for starships, see https://swapi.info
 
 const fetchData = async () => {
   const url = `https://swapi.info/api/starships`;
