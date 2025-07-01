@@ -76,7 +76,7 @@ export const ControlledLazy = () => {
           <FormField htmlFor="subscribe" name="subscribe">
             <CheckBox id="subscribe" name="subscribe" label="Subscribe?" />
           </FormField>
-          <FormField htmlFor="ampm" name="ampm">
+          <FormField label="Time of day" htmlFor="ampm" name="ampm">
             <RadioButtonGroup
               id="ampm"
               name="ampm"
