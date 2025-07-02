@@ -104,6 +104,10 @@ export interface GrommetProps {
         label?: string;
       };
       fileInput?: {
+        alert?: {
+          maxFile?: string;
+          maxSize?: string;
+        };
         browse?: string;
         dropPrompt?: string;
         dropPromptMultiple?: string;
