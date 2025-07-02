@@ -3795,6 +3795,7 @@ exports[`DataTable custom theme 1`] = `
 }
 
 .c16 {
+  min-width: 2px;
   cursor: col-resize;
 }
 
@@ -4145,7 +4146,7 @@ exports[`DataTable custom theme 2`] = `
               >
                 <button
                   aria-label="Resize a column"
-                  class="StyledButton-sc-323bzc-0 eNtKJP Resizer__InteractionBox-sc-8l808w-0 cNGCuD"
+                  class="StyledButton-sc-323bzc-0 eNtKJP Resizer__InteractionBox-sc-8l808w-0 ckUBxB"
                   type="button"
                 >
                   <div
@@ -21094,6 +21095,7 @@ exports[`DataTable resizeable 1`] = `
 }
 
 .c13 {
+  min-width: 2px;
   cursor: col-resize;
 }
 

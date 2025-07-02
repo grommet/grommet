@@ -8,6 +8,7 @@ import { Stack } from '../Stack';
 import { useThemeValue } from '../../utils/useThemeValue';
 
 const InteractionBox = styled(Button)`
+  min-width: 2px;
   cursor: col-resize;
   > * {
     opacity: 0;
@@ -85,6 +86,7 @@ const Resizer = ({ onResize, property }) => {
 
   const onKeyDown = useCallback(
     (event) => {
+      event.preventDefault();
       if (!ref.current) return;
       let element = ref.current;
       while (element && element.nodeName !== 'TH') element = element.parentNode;
