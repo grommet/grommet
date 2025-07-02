@@ -94,6 +94,7 @@ const Select = forwardRef(
     // vice versa. https://github.com/grommet/grommet/pull/6299
     const valueKey = valueKeyProp || labelKeyProp;
     const labelKey = labelKeyProp || valueKeyProp;
+    const formFieldData = formContext?.useFormField({});
 
     // Determine if the Select is opened with the keyboard. If so,
     // focus should be set on the first option when the drop opens
@@ -286,12 +287,7 @@ const Select = forwardRef(
     const iconColor = getIconColor(theme);
 
     let ariaLabelledBy;
-    if (
-      formContext?.useFormField({})?.inForm &&
-      id &&
-      !ariaLabel &&
-      !placeholder
-    ) {
+    if (formFieldData?.inForm && id && !ariaLabel && !placeholder) {
       ariaLabelledBy = `grommet-${id}__input__label ${id}`;
     }
 

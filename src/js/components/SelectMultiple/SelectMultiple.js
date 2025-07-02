@@ -104,6 +104,7 @@ const SelectMultiple = forwardRef(
     const selectBoxRef = useRef();
     const dropButtonRef = useForwardedRef(ref);
     const usingKeyboard = useKeyboard();
+    const formFieldData = formContext?.useFormField({});
 
     const dropAlign = useMemo(
       () =>
@@ -128,12 +129,7 @@ const SelectMultiple = forwardRef(
     });
 
     let ariaLabelledBy;
-    if (
-      formContext?.useFormField({})?.inForm &&
-      id &&
-      !ariaLabel &&
-      !placeholder
-    ) {
+    if (formFieldData?.inForm && id && !ariaLabel && !placeholder) {
       ariaLabelledBy = `grommet-${id}__input__label ${id}`;
     }
 
