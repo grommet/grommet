@@ -8,6 +8,10 @@ if (process.env.NODE_ENV !== 'production') {
     id: PropTypes.string,
     maxSize: PropTypes.number,
     messages: PropTypes.shape({
+      alert: PropTypes.shape({
+        maxFile: PropTypes.string,
+        maxSize: PropTypes.string,
+      }),
       browse: PropTypes.string,
       dropPrompt: PropTypes.string,
       dropPromptMultiple: PropTypes.string,

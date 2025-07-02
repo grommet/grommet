@@ -131,6 +131,7 @@ const FileInput = forwardRef(
                   id: messageId,
                   messages,
                   values: {
+                    fileName: fileList.find(({ size }) => size > maxSize)?.name,
                     maxSize: formatBytes(maxSize),
                     numOfFiles: numOfInvalidFiles,
                   },
@@ -458,9 +459,9 @@ const FileInput = forwardRef(
             files.map((file, index) => {
               let messageId = '';
               if (maxSize && file.size > maxSize) {
-                messageId = 'fileInput.maxSizeSingle';
+                messageId = 'fileInput.alert.maxSize';
               } else if (max && index >= max) {
-                messageId = 'fileInput.maxFile';
+                messageId = 'fileInput.alert.maxFile';
               }
               return (
                 <Box
@@ -485,7 +486,7 @@ const FileInput = forwardRef(
                             id: messageId,
                             messages,
                             values: {
-                              max,
+                              maxFile: max,
                               fileName: file.name,
                               maxSize: formatBytes(maxSize),
                             },

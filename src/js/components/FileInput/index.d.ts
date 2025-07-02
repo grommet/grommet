@@ -12,6 +12,10 @@ export interface FileInputProps {
   id?: string;
   maxSize?: number;
   messages?: {
+    alert?: {
+      maxFile?: string;
+      maxSize?: string;
+    };
     browse?: string;
     dropPrompt?: string;
     dropPromptMultiple?: string;
