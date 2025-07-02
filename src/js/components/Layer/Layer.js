@@ -60,7 +60,6 @@ const Layer = forwardRef((props, ref) => {
       setLayerContainer(getNewContainer(containerTarget, targetChildPosition)),
     [containerTarget, targetChildPosition],
   );
-
   // just a few things to clean up when the Layer is unmounted
   useLayoutEffect(
     () => () => {
@@ -122,6 +121,16 @@ const Layer = forwardRef((props, ref) => {
       originalFocusedElement,
     ],
   );
+
+  // Reset keyboard input flag on mouse interactions
+  useEffect(() => {
+    const handleMouseDown = () => {
+      lastInputWasKeyboardRef.current = false;
+    };
+
+    document.addEventListener('mousedown', handleMouseDown);
+    return () => document.removeEventListener('mousedown', handleMouseDown);
+  }, []);
 
   return layerContainer
     ? createPortal(
