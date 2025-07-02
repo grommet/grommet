@@ -399,20 +399,16 @@ const DataTable = ({
     }
   };
 
-  // remember the width this property's column should be
-  const onResize = useCallback(
-    (property, width) => {
-      if (widths[property] !== width) {
-        const nextWidths = { ...widths };
-        nextWidths[property] = width;
-        setWidths(nextWidths);
-      }
-    },
-    [widths],
-  );
+  // Add handler for column resizing
+  const onResize = useCallback((property, width) => {
+    setWidths((prevWidths) => ({
+      ...prevWidths,
+      [property]: width,
+    }));
+  }, []);
 
   if (size && resizeable) {
-    console.warn('DataTable cannot combine "size" and "resizeble".');
+    console.warn('DataTable cannot combine "size" and "resizeable".');
   }
   if (onUpdate && onMore) {
     console.warn('DataTable cannot combine "onUpdate" and "onMore".');
