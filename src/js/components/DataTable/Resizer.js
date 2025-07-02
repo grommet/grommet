@@ -2,10 +2,12 @@ import React, { useCallback, useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
 
 import { Box } from '../Box';
+import { Button } from '../Button';
+import { Keyboard } from '../Keyboard';
 import { Stack } from '../Stack';
 import { useThemeValue } from '../../utils/useThemeValue';
 
-const InteractionBox = styled(Box)`
+const InteractionBox = styled(Button)`
   cursor: col-resize;
   > * {
     opacity: 0;
@@ -81,27 +83,42 @@ const Resizer = ({ onResize, property }) => {
     };
   }
 
+  const onKeyDown = useCallback(
+    (event) => {
+      if (!ref.current) return;
+      let element = ref.current;
+      while (element && element.nodeName !== 'TH') element = element.parentNode;
+      const currentWidth = element.getBoundingClientRect().width;
+      const delta = event.key === 'ArrowLeft' ? -12 : 12;
+      onResize(property, currentWidth + delta);
+    },
+    [onResize, property],
+  );
+
   return (
-    <Stack anchor="right">
+    <Stack anchor="right" interactiveChild="last">
       <Box
         flex={false}
         responsive={false}
         pad={{ vertical: 'small' }}
         {...theme.dataTable.resize}
       />
-      {/* provides a wider, more accessible target to grab resizer */}
-      <InteractionBox
-        active={active}
-        flex={false}
-        pad={{ left: 'xsmall' }}
-        ref={ref}
-        responsive={false}
-        onMouseDown={onMouseDown}
-        onMouseMove={start !== undefined ? onMouseMove : undefined}
-        onMouseUp={start !== undefined ? onMouseUp : undefined}
-      >
-        <Box pad={{ vertical: 'small' }} border={border} />
-      </InteractionBox>
+      <Keyboard onLeft={onKeyDown} onRight={onKeyDown}>
+        {/* provides a wider, more accessible target to grab resizer */}
+        <InteractionBox
+          aria-label={`Resize ${property} column`}
+          active={active}
+          flex={false}
+          pad={{ left: 'xsmall' }}
+          ref={ref}
+          responsive={false}
+          onMouseDown={onMouseDown}
+          onMouseMove={start !== undefined ? onMouseMove : undefined}
+          onMouseUp={start !== undefined ? onMouseUp : undefined}
+        >
+          <Box pad={{ vertical: 'small' }} border={border} />
+        </InteractionBox>
+      </Keyboard>
     </Stack>
   );
 };
