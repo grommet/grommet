@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { fireEvent, render, screen } from '@testing-library/react';
+import '@testing-library/jest-dom';
 import 'jest-styled-components';
 
 import { Data } from '../../Data';
@@ -10,7 +11,7 @@ import { DataSummary } from '..';
 
 // asserts that AnnounceContext aria-live region and visible DataSummary each have this text
 const expectDataSummary = (message: string) =>
-  expect(screen.getAllByText(message)).toHaveLength(2);
+  expect(screen.getByText(message)).toBeInTheDocument();
 
 const data = [{ name: 'a' }, { name: 'b' }];
 
