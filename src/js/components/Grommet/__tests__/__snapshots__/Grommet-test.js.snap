@@ -24,7 +24,7 @@ exports[`Grommet announce 2`] = `
 <div
   aria-atomic="true"
   aria-live="assertive"
-  data-initial-announce-timeout-id="38"
+  data-initial-announce-timeout-id="1000000000000"
   id="grommet-announcer"
   style="position: absolute; left: -9999px; height: 1px; width: 1px; overflow: hidden;"
 >
