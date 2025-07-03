@@ -145,8 +145,6 @@ const EdgeControl = forwardRef(
               zIndex: 1,
             }}
             tabIndex={-1} // Remove from tab order
-            onFocus={() => setFocus(true)}
-            onBlur={() => setFocus(false)}
             {...rest}
           >
             {node}
