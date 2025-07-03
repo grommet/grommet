@@ -7,7 +7,7 @@ import { AnnounceContextPropTypes } from './propTypes';
  */
 const createAnnouncer = () => {
   const announcer = document.createElement('div');
-  announcer.id = 'grommet-announcer';
+  announcer.setAttribute('id', 'grommet-announcer');
   announcer.setAttribute('aria-live', 'polite');
   announcer.setAttribute('aria-atomic', 'true');
 
@@ -19,7 +19,6 @@ const createAnnouncer = () => {
   announcer.style.overflow = 'hidden';
 
   // Add to DOM at the beginning of body for best screen reader support
-  document.body.appendChild(announcer);
   document.body.insertBefore(announcer, document.body.firstChild);
 
   return announcer;
