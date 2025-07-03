@@ -46,9 +46,13 @@ const alignOrder = (value, prevValue, options) =>
     return i1 - i2;
   });
 
+// Conditional Tab Wrapper for Column Selection.
+const ConditionalTab = ({ children, hideTabHeader, ...rest }) =>
+  !hideTabHeader ? <Tab {...rest}>{children}</Tab> : children;
+
 // Content is a separate component since it might be getting its form context
 // from the DataForm rendered inside DataTableColumns.
-const Content = ({ drop, options = [], ...rest }) => {
+const Content = ({ drop, options = [], hideOrder, ...rest }) => {
   const { id: dataId, messages } = useContext(DataContext);
   const { useFormInput } = useContext(FormContext);
   const { format } = useContext(MessageContext);
@@ -106,7 +110,8 @@ const Content = ({ drop, options = [], ...rest }) => {
   return (
     <Box>
       <Tabs {...tabsProps[drop ? 'drop' : 'noDrop']} {...rest}>
-        <Tab
+        <ConditionalTab
+          hideTabHeader={hideOrder}
           id={`${dataId}--select-columns-tab`}
           title={format({
             id: 'dataTableColumns.select',
@@ -138,47 +143,50 @@ const Content = ({ drop, options = [], ...rest }) => {
               }
             />
           </Box>
-        </Tab>
+        </ConditionalTab>
 
-        <Tab
-          id={`${dataId}--order-columns-tab`}
-          aria-label={format({
-            id: 'dataTableColumns.orderAria',
-            messages: messages?.dataTableColumns,
-          })}
-          title={format({
-            id: 'dataTableColumns.order',
-            messages: messages?.dataTableColumns,
-          })}
-        >
-          <Box pad={{ top: 'small' }}>
-            <List
-              id={`${dataId}--order-columns`}
-              aria-labelledby={`${dataId}--order-columns-tab`}
-              // List wants objects if possible to be able to use 'label'
-              data={value.map(
-                (v) =>
-                  (objectOptions && options.find((o) => o.property === v)) || v,
-              )}
-              messages={{
-                pinned: format({
-                  id: 'dataTableColumns.pinned',
-                  messages: messages?.dataTableColumns,
-                }),
-              }}
-              onOrder={(nextData) => setValue(optionsToValue(nextData))}
-              pad="none"
-              primaryKey={(objectOptions && 'label') || undefined}
-              pinned={pinned}
-            />
-          </Box>
-        </Tab>
+        {!hideOrder && (
+          <Tab
+            id={`${dataId}--order-columns-tab`}
+            aria-label={format({
+              id: 'dataTableColumns.orderAria',
+              messages: messages?.dataTableColumns,
+            })}
+            title={format({
+              id: 'dataTableColumns.order',
+              messages: messages?.dataTableColumns,
+            })}
+          >
+            <Box pad={{ top: 'small' }}>
+              <List
+                id={`${dataId}--order-columns`}
+                aria-labelledby={`${dataId}--order-columns-tab`}
+                // List wants objects if possible to be able to use 'label'
+                data={value.map(
+                  (v) =>
+                    (objectOptions && options.find((o) => o.property === v)) ||
+                    v,
+                )}
+                messages={{
+                  pinned: format({
+                    id: 'dataTableColumns.pinned',
+                    messages: messages?.dataTableColumns,
+                  }),
+                }}
+                onOrder={(nextData) => setValue(optionsToValue(nextData))}
+                pad="none"
+                primaryKey={(objectOptions && 'label') || undefined}
+                pinned={pinned}
+              />
+            </Box>
+          </Tab>
+        )}
       </Tabs>
     </Box>
   );
 };
 
-export const DataTableColumns = ({ drop, options, ...rest }) => {
+export const DataTableColumns = ({ drop, options, hideOrder, ...rest }) => {
   const { id: dataId, messages } = useContext(DataContext);
   const { inDataForm } = useContext(DataFormContext);
   const { format } = useContext(MessageContext);
@@ -190,7 +198,7 @@ export const DataTableColumns = ({ drop, options, ...rest }) => {
     messages: messages?.dataTableColumns,
   });
 
-  let content = <Content drop={drop} options={options} />;
+  let content = <Content drop={drop} options={options} hideOrder={hideOrder} />;
   if (!inDataForm)
     content = (
       <DataForm footer={false} updateOn="change">
