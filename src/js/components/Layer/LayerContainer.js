@@ -81,21 +81,35 @@ const LayerContainer = forwardRef(
     }, [sendAnalytics, layerRef, position]);
 
     useEffect(() => {
-      if (position !== 'hidden') {
+      if (position !== 'hidden' && modal) {
         const node = layerRef.current || containerRef.current || ref.current;
         if (node && node.scrollIntoView) node.scrollIntoView();
+
         // Once layer is open we make sure it has focus so that you
         // can start tabbing inside the layer. If the caller put focus
         // on an element already, we honor that. Otherwise, we put
         // the focus within the layer. Look at FocusedContainer.js for
         // more details.
         let element = document.activeElement;
+        let isInLayer = false;
         while (element) {
           if (element === containerRef.current) {
-            // already have focus inside the container
+            isInLayer = true;
             break;
           }
           element = element.parentElement;
+        }
+        if (!isInLayer) {
+          // Try to focus first focusable child inside the layer
+          const focusable = containerRef.current?.querySelector(
+            'button, [href], input, select, textarea, ' +
+              '[tabindex]:not([tabindex="-1"])',
+          );
+          if (focusable) {
+            focusable.focus();
+          } else if (containerRef.current?.focus) {
+            containerRef.current.focus();
+          }
         }
       }
     }, [modal, position, ref]);
