@@ -41,9 +41,13 @@ const alignOrder = (value, prevValue, options) =>
     return i1 - i2;
   });
 
+// Conditional Tab Wrapper for Column Selection.
+const ConditionalTab = ({ children, hideTabHeader, ...rest }) =>
+  !hideTabHeader ? <Tab {...rest}>{children}</Tab> : children;
+
 // Content is a separate component since it might be getting its form context
 // from the DataForm rendered inside DataTableColumns.
-const Content = ({ drop, options = [], ...rest }) => {
+const Content = ({ drop, options = [], hideOrder, ...rest }) => {
   const { id: dataId, messages } = useContext(DataContext);
   const { useFormInput } = useContext(FormContext);
   const { format } = useContext(MessageContext);
@@ -107,7 +111,8 @@ const Content = ({ drop, options = [], ...rest }) => {
   return (
     <Box>
       <Tabs {...tabsProps[drop ? 'drop' : 'noDrop']} {...rest}>
-        <Tab
+        <ConditionalTab
+          hideTabHeader={hideOrder}
           id={`${dataId}--select-columns-tab`}
           title={format({
             id: 'dataTableColumns.select',
@@ -142,7 +147,7 @@ const Content = ({ drop, options = [], ...rest }) => {
               }
             />
           </Box>
-        </Tab>
+        </ConditionalTab>
 
         <Tab
           id={`${dataId}--order-columns-tab`}
@@ -182,7 +187,7 @@ const Content = ({ drop, options = [], ...rest }) => {
   );
 };
 
-export const DataTableColumns = ({ drop, options, ...rest }) => {
+export const DataTableColumns = ({ drop, options, hideOrder, ...rest }) => {
   const { id: dataId, messages } = useContext(DataContext);
   const { inDataForm } = useContext(DataFormContext);
   const { format } = useContext(MessageContext);
@@ -194,7 +199,7 @@ export const DataTableColumns = ({ drop, options, ...rest }) => {
     messages: messages?.dataTableColumns,
   });
 
-  let content = <Content drop={drop} options={options} />;
+  let content = <Content drop={drop} options={options} hideOrder={hideOrder} />;
   if (!inDataForm)
     content = (
       <DataForm footer={false} updateOn="change">
