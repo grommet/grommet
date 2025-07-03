@@ -1,10 +1,10 @@
 import React, {
   useCallback,
+  useContext,
   useEffect,
   useState,
   useMemo,
   Fragment,
-  useContext,
 } from 'react';
 import styled from 'styled-components';
 
@@ -18,6 +18,7 @@ import { MessageContext } from '../../contexts/MessageContext';
 
 import { NotificationType } from './propTypes';
 import { useThemeValue } from '../../utils/useThemeValue';
+import { AnnounceContext } from '../../contexts/AnnounceContext';
 
 const Message = ({ fill, direction, ...rest }) =>
   direction === 'row' ? (
@@ -89,6 +90,7 @@ const Notification = ({
   const [visible, setVisible] = useState(true);
   const { format } = useContext(MessageContext);
   const position = useMemo(() => (toast && toast?.position) || 'top', [toast]);
+  const announce = useContext(AnnounceContext);
 
   const close = useCallback(
     (event) => {
@@ -97,6 +99,15 @@ const Notification = ({
     },
     [onClose],
   );
+
+  useEffect(() => {
+    if (visible && toast) {
+      const announceText =
+        typeof messageProp === 'string' ? `${title}. ${messageProp}` : title;
+
+      announce(announceText, 'polite');
+    }
+  }, [announce, visible, toast, messageProp, title]);
 
   useEffect(() => {
     if (autoClose) {
@@ -259,7 +270,7 @@ const Notification = ({
     content = visible && (
       <Layer
         {...theme.notification.toast.layer}
-        role="log"
+        role="status"
         modal={false}
         onEsc={onClose}
         id={id}
