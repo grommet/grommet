@@ -296,12 +296,15 @@ const RangeSelector = forwardRef(
           aria-valuenow={lower}
           aria-valuemin={min}
           aria-valuemax={max}
-          tabIndex={0}
           ref={ref}
           color={color}
           direction={direction}
           thickness={thickness}
           edge="lower"
+          min={min}
+          max={max}
+          value={lower}
+          step={step}
           onMouseDown={() => setChanging('lower')}
           onTouchStart={() => setChanging('lower')}
           onDecrease={() => change([lower - step, upper])}
@@ -336,11 +339,14 @@ const RangeSelector = forwardRef(
           aria-valuenow={upper}
           aria-valuemin={min}
           aria-valuemax={max}
-          tabIndex={0}
           color={color}
           direction={direction}
           thickness={thickness}
           edge="upper"
+          min={min}
+          max={max}
+          value={upper}
+          step={step}
           onMouseDown={() => setChanging('upper')}
           onTouchStart={() => setChanging('upper')}
           onDecrease={
