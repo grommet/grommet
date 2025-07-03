@@ -35,50 +35,95 @@ const stringToArray = (string) => {
   return undefined;
 };
 
-const getValueAt = (valueObject, pathArg) => {
-  if (valueObject === undefined) return undefined;
-  const path = Array.isArray(pathArg) ? pathArg : pathArg.split('.');
-  if (path.length === 1) return valueObject[path];
-  return getValueAt(valueObject[path.shift()], path);
+/* 
+  Takes a dot path notation string and returns an array of string populated by 
+  dot path segments.
+
+  E.g.
+
+  foo.bar.faz => ['foo', 'bar', 'faz]
+
+  foo[0].bar => ['foo', '0', 'bar]
+*/
+const splitDotPath = (path) => {
+  const segmentRegex = /[^.[\]]+|\[\d+\]/g; // match object key or array index
+  const segments = [];
+
+  let match = segmentRegex.exec(path);
+  while (match !== null) {
+    const part = match[0];
+    if (part.startsWith('[')) {
+      segments.push(part.slice(1, -1)); // remove brackets from array segment
+    } else {
+      segments.push(part);
+    }
+
+    match = segmentRegex.exec(path);
+  }
+
+  return segments;
 };
 
-const setValueAt = (valueObject, pathArg, value) => {
+const getValueAt = (valueObject, path) => {
+  if (valueObject === undefined) {
+    return undefined;
+  }
+
+  const splittedPath = Array.isArray(path) ? path : splitDotPath(path);
+
+  const segment = splittedPath.shift();
+  const key = parseInt(segment, 10) || segment;
+
+  if (splittedPath.length === 0) {
+    return valueObject[key];
+  }
+
+  return getValueAt(valueObject[key], splittedPath);
+};
+
+const setValueAt = (valueObject, path, value) => {
   const object = valueObject;
-  const path = Array.isArray(pathArg) ? pathArg : pathArg.split('.');
-  if (path.length === 1) object[path] = value;
-  else {
-    const key = path.shift();
-    if (!object[key]) object[key] = {};
-    setValueAt(object[key], path, value);
+
+  const splittedPath = Array.isArray(path) ? path : splitDotPath(path);
+
+  if (splittedPath.length === 1) {
+    object[splittedPath[0]] = value;
+  } else {
+    const segment = splittedPath.shift();
+    const key = parseInt(segment, 10) || segment;
+
+    const isNextValueArray = !!parseInt(segment, 10);
+
+    if (!object[key]) {
+      object[key] = isNextValueArray ? [] : {};
+    }
+
+    setValueAt(object[key], splittedPath, value);
   }
 };
 
 const getFieldValue = (name, value) => {
-  const isArrayField = stringToArray(name);
-  if (isArrayField) {
-    const { indexOfArray, arrayName, arrayObjName } = isArrayField;
-    const obj = value[arrayName]?.[indexOfArray];
-    return arrayObjName ? obj?.[arrayObjName] : obj;
+  if (value === undefined) {
+    return undefined;
   }
-  return getValueAt(value, name);
+
+  const splittedPath = Array.isArray(name) ? name : splitDotPath(name);
+
+  const segment = splittedPath.shift();
+  const key = parseInt(segment, 10) || segment;
+
+  if (splittedPath.length === 0) {
+    return value[key];
+  }
+
+  return getValueAt(value[key], splittedPath);
 };
 
 const setFieldValue = (name, componentValue, prevValue) => {
   const nextValue = { ...prevValue };
-  const isArrayField = stringToArray(name);
-  if (isArrayField) {
-    const { indexOfArray, arrayName, arrayObjName } = isArrayField;
-    if (!nextValue[arrayName]) nextValue[arrayName] = [];
-    if (arrayObjName) {
-      if (!nextValue[arrayName][indexOfArray])
-        nextValue[arrayName][indexOfArray] = {
-          [arrayObjName]: componentValue,
-        };
-      nextValue[arrayName][indexOfArray][arrayObjName] = componentValue;
-    } else nextValue[arrayName][indexOfArray] = componentValue;
-  } else {
-    setValueAt(nextValue, name, componentValue);
-  }
+
+  setValueAt(nextValue, name, componentValue);
+
   return nextValue;
 };
 
