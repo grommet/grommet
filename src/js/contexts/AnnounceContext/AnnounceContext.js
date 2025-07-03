@@ -7,7 +7,7 @@ import { AnnounceContextPropTypes } from './propTypes';
  */
 const createAnnouncer = () => {
   const announcer = document.createElement('div');
-  announcer.setAttribute('id', 'grommet-announcer');
+  announcer.id = 'grommet-announcer';
   announcer.setAttribute('aria-live', 'polite');
   announcer.setAttribute('aria-atomic', 'true');
 
