@@ -1328,4 +1328,85 @@ describe('Form controlled', () => {
     );
     expect(onSubmit).toBeCalledTimes(0);
   });
+
+  test('should update complex state with dot path', () => {
+    const onSubmit = jest.fn();
+
+    const Test = () => {
+      const [value, setValue] = useState({
+        foo: {
+          bar: {
+            faz: [
+              {
+                qux: {
+                  quux: [
+                    {
+                      corge: 'a',
+                    },
+                    {
+                      grault: 'a',
+                    },
+                  ],
+                },
+              },
+            ],
+          },
+        },
+      });
+
+      return (
+        <Form value={value} onChange={setValue} onSubmit={onSubmit}>
+          <FormField
+            label="Label 1"
+            htmlFor="foo.bar.faz[0].qux.quux[1].grault"
+            name="foo.bar.faz[0].qux.quux[1].grault"
+          >
+            <TextInput
+              id="foo.bar.faz[0].qux.quux[1].grault"
+              name="foo.bar.faz[0].qux.quux[1].grault"
+            />
+          </FormField>
+          <Button type="submit" primary label="Submit Button" />
+        </Form>
+      );
+    };
+
+    render(
+      <Grommet>
+        <Test />
+      </Grommet>,
+    );
+
+    const input = screen.getByLabelText('Label 1');
+    fireEvent.change(input, { target: { value: 'b' } });
+
+    const submitButton = screen.getByRole('button', {
+      name: 'Submit Button',
+    });
+    fireEvent.click(submitButton);
+
+    expect(onSubmit).toHaveBeenCalled();
+    const submittedData = onSubmit.mock.calls[0][0].value;
+
+    expect(submittedData).toMatchObject({
+      foo: {
+        bar: {
+          faz: [
+            {
+              qux: {
+                quux: [
+                  {
+                    corge: 'a',
+                  },
+                  {
+                    grault: 'b',
+                  },
+                ],
+              },
+            },
+          ],
+        },
+      },
+    });
+  });
 });
