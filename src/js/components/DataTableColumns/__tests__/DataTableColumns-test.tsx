@@ -253,4 +253,62 @@ describe('DataTableColumns', () => {
       }),
     );
   });
+
+  test('hideOrder', () => {
+    jest.useFakeTimers();
+    const onView = jest.fn();
+
+    const App = () => (
+      <Grommet>
+        <Data id="test-data" data={data} onView={onView}>
+          <DataFilters updateOn="change">
+            <DataTableColumns
+              drop
+              hideOrder={true}
+              options={[
+                { property: 'name', label: 'Name', pinned: false },
+                { property: 'size', label: 'Size', pinned: true },
+                { property: 'percent', label: 'Percent' },
+              ]}
+            />
+          </DataFilters>
+          <DataTable
+            columns={[
+              { property: 'name', header: 'Name' },
+              { property: 'size', header: 'Size' },
+              { property: 'percent', header: 'Percent' },
+            ]}
+          />
+        </Data>
+      </Grommet>
+    );
+
+    render(<App />);
+
+    // Open the drop button to reveal the column settings
+    fireEvent.click(
+      screen.getByRole('button', {
+        name: 'Open column selector',
+      }),
+    );
+
+    // advance timers so drop can open
+    act(() => jest.advanceTimersByTime(200));
+
+    expect(screen.getByRole('checkbox', { name: /name/i })).toBeDefined();
+    expect(screen.getByRole('checkbox', { name: /size/i })).toBeDefined();
+    expect(screen.getByRole('checkbox', { name: /percent/i })).toBeDefined();
+
+    expect(
+      screen.queryByRole('tab', {
+        name: 'Reorder the visible columns in the data table',
+      }),
+    ).toBeNull();
+
+    expect(
+      screen.queryByRole('tab', {
+        name: 'Select which columns to show in the data table',
+      }),
+    ).toBeNull();
+  });
 });
