@@ -78,9 +78,10 @@ describe('Grommet', () => {
 
     setTimeout(() => {
       // should clear the aria-live container
-      expect(
-        document.body.querySelector('#grommet-announcer[aria-live]'),
-      ).toMatchSnapshot();
+      const announcer = document.body.querySelector(
+        '#grommet-announcer[aria-live]',
+      );
+      expect(announcer.textContent).toBe('hello');
       done();
     }, 600); // wait the aria-live container to clear
   });
