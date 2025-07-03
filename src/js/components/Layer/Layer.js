@@ -122,10 +122,12 @@ const Layer = forwardRef((props, ref) => {
     ],
   );
 
-  // Reset keyboard input flag on mouse interactions
+  // Reset keyboard input and
+  // layer focus flag on mouse interactions
   useEffect(() => {
     const handleMouseDown = () => {
       lastInputWasKeyboardRef.current = false;
+      focusWithinLayerRef.current = false;
     };
 
     document.addEventListener('mousedown', handleMouseDown);
