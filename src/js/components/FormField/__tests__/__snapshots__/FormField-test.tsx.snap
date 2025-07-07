@@ -1718,6 +1718,7 @@ exports[`FormField disabled with custom label for help and info 1`] = `
       <label
         class="c2"
         for="text-input"
+        id="grommet-text-input__label"
       >
         label
       </label>
@@ -2865,6 +2866,7 @@ exports[`FormField max and threshold validation 1`] = `
       <label
         class="c2"
         for="issue-description"
+        id="grommet-issue-description__label"
       >
         label
       </label>
