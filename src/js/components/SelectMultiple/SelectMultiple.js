@@ -131,13 +131,7 @@ const SelectMultiple = forwardRef(
     const [ariaLabelledBy, setAriaLabelledBy] = useState();
 
     useEffect(() => {
-      if (
-        formFieldData?.inForm &&
-        id &&
-        !ariaLabel &&
-        !placeholder &&
-        typeof document !== 'undefined'
-      ) {
+      if (formFieldData?.inForm && id && !ariaLabel && !placeholder) {
         const labelElement = document.getElementById(
           `grommet-${id}__input__label`,
         );
