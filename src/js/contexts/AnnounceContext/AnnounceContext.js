@@ -51,33 +51,39 @@ export const AnnounceContext = React.createContext(
     announcer.offsetWidth;
 
     // Delay before announcing to ensure screen readers are ready
-    const announceDelay = 100;
+    const announceStartTime = performance.now();
 
-    const initialAnnounceTimeout = setTimeout(() => {
-      // Set the actual message to be announced
-      announcer.textContent = message;
+    const checkAnnounceDelay = () => {
+      const currentTime = performance.now();
+      if (currentTime - announceStartTime >= 100) {
+        // Set the actual message to be announced
+        announcer.textContent = message;
 
-      // Set timeout to clear the message (if timeout > 0)
-      if (timeout > 0) {
-        const clearAnnounceTimeout = setTimeout(() => {
-          announcer.textContent = '';
+        // Set timeout to clear the message (if timeout > 0)
+        if (timeout > 0) {
+          const clearAnnounceTimeout = setTimeout(() => {
+            announcer.textContent = '';
+            delete announcer.dataset.timeoutId;
+          }, timeout);
+
+          // Store timeout ID for potential cleanup
+          announcer.dataset.timeoutId = clearAnnounceTimeout.toString();
+        } else {
+          // No auto-clear if timeout is 0
           delete announcer.dataset.timeoutId;
-        }, timeout);
+        }
 
-        // Store timeout ID for potential cleanup
-        announcer.dataset.timeoutId = clearAnnounceTimeout.toString();
+        // Clean up initial timeout reference
+        delete announcer.dataset.initialAnnounceTimeoutId;
       } else {
-        // No auto-clear if timeout is 0
-        delete announcer.dataset.timeoutId;
+        requestAnimationFrame(checkAnnounceDelay);
       }
+    };
 
-      // Clean up initial timeout reference
-      delete announcer.dataset.initialAnnounceTimeoutId;
-    }, announceDelay);
+    requestAnimationFrame(checkAnnounceDelay);
 
     // helps avoid multiple announcements stacking up
-    announcer.dataset.initialAnnounceTimeoutId =
-      initialAnnounceTimeout.toString();
+    announcer.dataset.initialAnnounceTimeoutId = 'rAF';
   },
 );
 
