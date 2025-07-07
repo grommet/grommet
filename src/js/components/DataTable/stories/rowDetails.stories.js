@@ -75,16 +75,12 @@ export const RowDetails = () => {
   const [expand, setExpand] = useState(['Y-wing']);
 
   useEffect(() => {
-    // This API is a bit slow, abort any uncompleted requests.
-    // abortRef?.current?.abort();
-    // abortRef.current = new AbortController();
-    fetchData(/* view, abortRef.current.signal */).then((results) => {
+    fetchData().then((results) => {
       if (results) {
         // The API doesn't provide a non-filtered total, so we rely on the
         // first call having no filtering telling us the total.
         setTotal((prevTotal) => Math.max(prevTotal, results.length));
         setResult({ data: results });
-        // abortRef.current = undefined;
       }
     });
   }, []);
