@@ -30,9 +30,17 @@ export const AnnounceContext = React.createContext(
     const announcer =
       document.body.querySelector('#grommet-announcer') || createAnnouncer();
 
-    // Clear any existing timeouts to prevent overlapping announcements
+    // Clear any existing timeouts/rAF to prevent overlapping announcements
     if (announcer.dataset.initialAnnounceTimeoutId) {
-      clearTimeout(Number(announcer.dataset.initialAnnounceTimeoutId));
+      if (announcer.dataset.initialAnnounceTimeoutId === 'rAF') {
+        // Cancel the existing rAF using the stored ID
+        if (announcer.dataset.rafId) {
+          window.cancelAnimationFrame(Number(announcer.dataset.rafId));
+          delete announcer.dataset.rafId;
+        }
+      } else {
+        clearTimeout(Number(announcer.dataset.initialAnnounceTimeoutId));
+      }
       delete announcer.dataset.initialAnnounceTimeoutId;
     }
     if (announcer.dataset.timeoutId) {
@@ -69,18 +77,20 @@ export const AnnounceContext = React.createContext(
           // Store timeout ID for potential cleanup
           announcer.dataset.timeoutId = clearAnnounceTimeout.toString();
         } else {
-          // No auto-clear if timeout is 0
           delete announcer.dataset.timeoutId;
         }
 
         // Clean up initial timeout reference
         delete announcer.dataset.initialAnnounceTimeoutId;
+        delete announcer.dataset.rafId;
       } else {
-        requestAnimationFrame(checkAnnounceDelay);
+        const rafId = window.requestAnimationFrame(checkAnnounceDelay);
+        announcer.dataset.rafId = rafId.toString();
       }
     };
 
-    requestAnimationFrame(checkAnnounceDelay);
+    const initialRafId = window.requestAnimationFrame(checkAnnounceDelay);
+    announcer.dataset.rafId = initialRafId.toString();
 
     // helps avoid multiple announcements stacking up
     announcer.dataset.initialAnnounceTimeoutId = 'rAF';
