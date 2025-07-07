@@ -286,10 +286,24 @@ const Select = forwardRef(
 
     const iconColor = getIconColor(theme);
 
-    let ariaLabelledBy;
-    if (formFieldData?.inForm && id && !ariaLabel && !placeholder) {
-      ariaLabelledBy = `grommet-${id}__input__label ${id}`;
-    }
+    const [ariaLabelledBy, setAriaLabelledBy] = useState();
+
+    useEffect(() => {
+      if (
+        formFieldData?.inForm &&
+        id &&
+        !ariaLabel &&
+        !placeholder &&
+        typeof document !== 'undefined'
+      ) {
+        const labelElement = document.getElementById(
+          `grommet-${id}__input__label`,
+        );
+        if (labelElement) {
+          setAriaLabelledBy(`grommet-${id}__input__label ${id}`);
+        }
+      }
+    }, [formFieldData?.inForm, id, ariaLabel, placeholder]);
 
     return (
       <Keyboard onDown={onRequestOpen} onUp={onRequestOpen}>
