@@ -289,12 +289,7 @@ const RangeSelector = forwardRef(
           {...layoutProps}
         />
         <EdgeControl
-          aria-label="lower mouse control"
-          aria-valuemin={min}
-          aria-valuemax={max}
-          aria-valuenow={lower}
           ref={ref}
-          role="slider"
           color={color}
           direction={direction}
           thickness={thickness}
@@ -333,14 +328,9 @@ const RangeSelector = forwardRef(
           }}
         />
         <EdgeControl
-          role="slider"
-          aria-label="upper mouse control"
           color={color}
           direction={direction}
           thickness={thickness}
-          aria-valuemin={min}
-          aria-valuemax={max}
-          aria-valuenow={upper}
           edge="upper"
           min={min}
           max={max}

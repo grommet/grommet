@@ -217,11 +217,14 @@ describe('DataFilter', () => {
     );
 
     const lowerBound = screen.getByRole('slider', {
-      name: 'lower mouse control',
+      name: 'Lower Bounds',
     });
-    fireEvent.mouseDown(lowerBound);
-    fireEvent.mouseMove(lowerBound, { clientX: 31, clientY: 20 });
-    fireEvent.mouseUp(lowerBound);
+    const lowerHandle = lowerBound.parentElement?.querySelector('div');
+    if (lowerHandle) {
+      fireEvent.mouseDown(lowerHandle);
+      fireEvent.mouseMove(lowerHandle, { clientX: 31, clientY: 20 });
+      fireEvent.mouseUp(lowerHandle);
+    }
     expect(lowerBound.getAttribute('aria-valuenow')).toEqual('45');
   });
 
@@ -244,11 +247,14 @@ describe('DataFilter', () => {
     );
 
     const lowerBound = screen.getByRole('slider', {
-      name: 'lower mouse control',
+      name: 'Lower Bounds',
     });
-    fireEvent.mouseDown(lowerBound);
-    fireEvent.mouseMove(lowerBound, { clientX: 31, clientY: 20 });
-    fireEvent.mouseUp(lowerBound);
+    const lowerHandle = lowerBound.parentElement?.querySelector('div');
+    if (lowerHandle) {
+      fireEvent.mouseDown(lowerHandle);
+      fireEvent.mouseMove(lowerHandle, { clientX: 31, clientY: 20 });
+      fireEvent.mouseUp(lowerHandle);
+    }
     expect(lowerBound.getAttribute('aria-valuenow')).toEqual('49');
   });
 
@@ -287,12 +293,18 @@ describe('DataFilter', () => {
     );
 
     const lowerBound = screen.getByRole('slider', {
-      name: 'lower mouse control',
+      name: 'Lower Bounds',
     });
+    const lowerHandle = lowerBound.parentElement?.querySelector('div');
+
     act(() => {
-      lowerBound.focus();
+      if (lowerHandle) {
+        lowerHandle.focus();
+      }
     });
-    fireEvent.keyDown(lowerBound, { key: 'Right', keyCode: 39 });
+    if (lowerHandle) {
+      fireEvent.keyDown(lowerHandle, { key: 'Right', keyCode: 39 });
+    }
     const applyFiltersButton = getByRole('button', { name: 'Apply filters' });
     fireEvent.click(applyFiltersButton);
 

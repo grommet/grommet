@@ -125,17 +125,13 @@ exports[`RangeSelector basic 1`] = `
         max="100"
         min="0"
         readonly=""
+        role="slider"
         step="1"
         type="range"
         value="20"
       />
       <div
-        aria-label="lower mouse control"
-        aria-valuemax="100"
-        aria-valuemin="0"
-        aria-valuenow="20"
         class="c6"
-        role="slider"
         style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
         tabindex="-1"
       >
@@ -161,17 +157,13 @@ exports[`RangeSelector basic 1`] = `
         max="100"
         min="0"
         readonly=""
+        role="slider"
         step="1"
         type="range"
         value="30"
       />
       <div
-        aria-label="upper mouse control"
-        aria-valuemax="100"
-        aria-valuemin="0"
-        aria-valuenow="30"
         class="c6"
-        role="slider"
         style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
         tabindex="-1"
       >
@@ -300,17 +292,13 @@ exports[`RangeSelector basic outside grommet wrapper 1`] = `
       max="100"
       min="0"
       readonly=""
+      role="slider"
       step="1"
       type="range"
       value="20"
     />
     <div
-      aria-label="lower mouse control"
-      aria-valuemax="100"
-      aria-valuemin="0"
-      aria-valuenow="20"
       class="c5"
-      role="slider"
       style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
       tabindex="-1"
     >
@@ -336,17 +324,13 @@ exports[`RangeSelector basic outside grommet wrapper 1`] = `
       max="100"
       min="0"
       readonly=""
+      role="slider"
       step="1"
       type="range"
       value="30"
     />
     <div
-      aria-label="upper mouse control"
-      aria-valuemax="100"
-      aria-valuemin="0"
-      aria-valuenow="30"
       class="c5"
-      role="slider"
       style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
       tabindex="-1"
     >
@@ -487,17 +471,13 @@ exports[`RangeSelector basic with theme edge size 1`] = `
         max="100"
         min="0"
         readonly=""
+        role="slider"
         step="1"
         type="range"
         value="20"
       />
       <div
-        aria-label="lower mouse control"
-        aria-valuemax="100"
-        aria-valuemin="0"
-        aria-valuenow="20"
         class="c6"
-        role="slider"
         style="cursor: col-resize; outline: none; min-width: 24px; min-height: 24px; z-index: 1;"
         tabindex="-1"
       >
@@ -523,17 +503,13 @@ exports[`RangeSelector basic with theme edge size 1`] = `
         max="100"
         min="0"
         readonly=""
+        role="slider"
         step="1"
         type="range"
         value="30"
       />
       <div
-        aria-label="upper mouse control"
-        aria-valuemax="100"
-        aria-valuemin="0"
-        aria-valuenow="30"
         class="c6"
-        role="slider"
         style="cursor: col-resize; outline: none; min-width: 24px; min-height: 24px; z-index: 1;"
         tabindex="-1"
       >
@@ -675,17 +651,13 @@ exports[`RangeSelector color 1`] = `
         max="100"
         min="0"
         readonly=""
+        role="slider"
         step="1"
         type="range"
         value="20"
       />
       <div
-        aria-label="lower mouse control"
-        aria-valuemax="100"
-        aria-valuemin="0"
-        aria-valuenow="20"
         class="c6"
-        role="slider"
         style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
         tabindex="-1"
       >
@@ -711,17 +683,13 @@ exports[`RangeSelector color 1`] = `
         max="100"
         min="0"
         readonly=""
+        role="slider"
         step="1"
         type="range"
         value="30"
       />
       <div
-        aria-label="upper mouse control"
-        aria-valuemax="100"
-        aria-valuemin="0"
-        aria-valuenow="30"
         class="c6"
-        role="slider"
         style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
         tabindex="-1"
       >
@@ -925,17 +893,13 @@ exports[`RangeSelector direction 1`] = `
         max="100"
         min="0"
         readonly=""
+        role="slider"
         step="1"
         type="range"
         value="20"
       />
       <div
-        aria-label="lower mouse control"
-        aria-valuemax="100"
-        aria-valuemin="0"
-        aria-valuenow="20"
         class="c6"
-        role="slider"
         style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
         tabindex="-1"
       >
@@ -961,17 +925,13 @@ exports[`RangeSelector direction 1`] = `
         max="100"
         min="0"
         readonly=""
+        role="slider"
         step="1"
         type="range"
         value="30"
       />
       <div
-        aria-label="upper mouse control"
-        aria-valuemax="100"
-        aria-valuemin="0"
-        aria-valuenow="30"
         class="c6"
-        role="slider"
         style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
         tabindex="-1"
       >
@@ -1006,17 +966,13 @@ exports[`RangeSelector direction 1`] = `
         max="100"
         min="0"
         readonly=""
+        role="slider"
         step="1"
         type="range"
         value="20"
       />
       <div
-        aria-label="lower mouse control"
-        aria-valuemax="100"
-        aria-valuemin="0"
-        aria-valuenow="20"
         class="c12"
-        role="slider"
         style="cursor: row-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
         tabindex="-1"
       >
@@ -1042,17 +998,13 @@ exports[`RangeSelector direction 1`] = `
         max="100"
         min="0"
         readonly=""
+        role="slider"
         step="1"
         type="range"
         value="30"
       />
       <div
-        aria-label="upper mouse control"
-        aria-valuemax="100"
-        aria-valuemin="0"
-        aria-valuenow="30"
         class="c12"
-        role="slider"
         style="cursor: row-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
         tabindex="-1"
       >
@@ -1194,17 +1146,13 @@ exports[`RangeSelector handle keyboard 1`] = `
         max="100"
         min="0"
         readonly=""
+        role="slider"
         step="1"
         type="range"
         value="20"
       />
       <div
-        aria-label="lower mouse control"
-        aria-valuemax="100"
-        aria-valuemin="0"
-        aria-valuenow="20"
         class="c6"
-        role="slider"
         style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
         tabindex="-1"
       >
@@ -1230,17 +1178,13 @@ exports[`RangeSelector handle keyboard 1`] = `
         max="100"
         min="0"
         readonly=""
+        role="slider"
         step="1"
         type="range"
         value="30"
       />
       <div
-        aria-label="upper mouse control"
-        aria-valuemax="100"
-        aria-valuemin="0"
-        aria-valuenow="30"
         class="c6"
-        role="slider"
         style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
         tabindex="-1"
       >
@@ -1382,17 +1326,13 @@ exports[`RangeSelector handle mouse 1`] = `
         max="100"
         min="0"
         readonly=""
+        role="slider"
         step="1"
         type="range"
         value="20"
       />
       <div
-        aria-label="lower mouse control"
-        aria-valuemax="100"
-        aria-valuemin="0"
-        aria-valuenow="20"
         class="c6"
-        role="slider"
         style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
         tabindex="-1"
       >
@@ -1418,17 +1358,13 @@ exports[`RangeSelector handle mouse 1`] = `
         max="100"
         min="0"
         readonly=""
+        role="slider"
         step="1"
         type="range"
         value="30"
       />
       <div
-        aria-label="upper mouse control"
-        aria-valuemax="100"
-        aria-valuemin="0"
-        aria-valuenow="30"
         class="c6"
-        role="slider"
         style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
         tabindex="-1"
       >
@@ -1570,17 +1506,13 @@ exports[`RangeSelector handle touch gestures 1`] = `
         max="100"
         min="0"
         readonly=""
+        role="slider"
         step="1"
         type="range"
         value="10"
       />
       <div
-        aria-label="lower mouse control"
-        aria-valuemax="100"
-        aria-valuemin="0"
-        aria-valuenow="10"
         class="c6"
-        role="slider"
         style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
         tabindex="-1"
       >
@@ -1606,17 +1538,13 @@ exports[`RangeSelector handle touch gestures 1`] = `
         max="100"
         min="0"
         readonly=""
+        role="slider"
         step="1"
         type="range"
         value="20"
       />
       <div
-        aria-label="upper mouse control"
-        aria-valuemax="100"
-        aria-valuemin="0"
-        aria-valuenow="20"
         class="c6"
-        role="slider"
         style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
         tabindex="-1"
       >
@@ -1771,17 +1699,13 @@ exports[`RangeSelector invert 1`] = `
         max="100"
         min="0"
         readonly=""
+        role="slider"
         step="1"
         type="range"
         value="20"
       />
       <div
-        aria-label="lower mouse control"
-        aria-valuemax="100"
-        aria-valuemin="0"
-        aria-valuenow="20"
         class="c6"
-        role="slider"
         style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
         tabindex="-1"
       >
@@ -1807,17 +1731,13 @@ exports[`RangeSelector invert 1`] = `
         max="100"
         min="0"
         readonly=""
+        role="slider"
         step="1"
         type="range"
         value="30"
       />
       <div
-        aria-label="upper mouse control"
-        aria-valuemax="100"
-        aria-valuemin="0"
-        aria-valuenow="30"
         class="c6"
-        role="slider"
         style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
         tabindex="-1"
       >
@@ -1852,17 +1772,13 @@ exports[`RangeSelector invert 1`] = `
         max="100"
         min="0"
         readonly=""
+        role="slider"
         step="1"
         type="range"
         value="20"
       />
       <div
-        aria-label="lower mouse control"
-        aria-valuemax="100"
-        aria-valuemin="0"
-        aria-valuenow="20"
         class="c6"
-        role="slider"
         style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
         tabindex="-1"
       >
@@ -1888,17 +1804,13 @@ exports[`RangeSelector invert 1`] = `
         max="100"
         min="0"
         readonly=""
+        role="slider"
         step="1"
         type="range"
         value="30"
       />
       <div
-        aria-label="upper mouse control"
-        aria-valuemax="100"
-        aria-valuemin="0"
-        aria-valuenow="30"
         class="c6"
-        role="slider"
         style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
         tabindex="-1"
       >
@@ -2076,17 +1988,13 @@ exports[`RangeSelector label 1`] = `
           max="100"
           min="0"
           readonly=""
+          role="slider"
           step="1"
           type="range"
           value="20"
         />
         <div
-          aria-label="lower mouse control"
-          aria-valuemax="100"
-          aria-valuemin="0"
-          aria-valuenow="20"
           class="c8"
-          role="slider"
           style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
           tabindex="-1"
         >
@@ -2112,17 +2020,13 @@ exports[`RangeSelector label 1`] = `
           max="100"
           min="0"
           readonly=""
+          role="slider"
           step="1"
           type="range"
           value="30"
         />
         <div
-          aria-label="upper mouse control"
-          aria-valuemax="100"
-          aria-valuemin="0"
-          aria-valuenow="30"
           class="c8"
-          role="slider"
           style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
           tabindex="-1"
         >
@@ -2173,17 +2077,13 @@ exports[`RangeSelector label 1`] = `
           max="100"
           min="0"
           readonly=""
+          role="slider"
           step="1"
           type="range"
           value="20"
         />
         <div
-          aria-label="lower mouse control"
-          aria-valuemax="100"
-          aria-valuemin="0"
-          aria-valuenow="20"
           class="c8"
-          role="slider"
           style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
           tabindex="-1"
         >
@@ -2209,17 +2109,13 @@ exports[`RangeSelector label 1`] = `
           max="100"
           min="0"
           readonly=""
+          role="slider"
           step="1"
           type="range"
           value="30"
         />
         <div
-          aria-label="upper mouse control"
-          aria-valuemax="100"
-          aria-valuemin="0"
-          aria-valuenow="30"
           class="c8"
-          role="slider"
           style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
           tabindex="-1"
         >
@@ -2368,17 +2264,13 @@ exports[`RangeSelector max 1`] = `
         max="50"
         min="0"
         readonly=""
+        role="slider"
         step="1"
         type="range"
         value="20"
       />
       <div
-        aria-label="lower mouse control"
-        aria-valuemax="50"
-        aria-valuemin="0"
-        aria-valuenow="20"
         class="c6"
-        role="slider"
         style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
         tabindex="-1"
       >
@@ -2404,17 +2296,13 @@ exports[`RangeSelector max 1`] = `
         max="50"
         min="0"
         readonly=""
+        role="slider"
         step="1"
         type="range"
         value="30"
       />
       <div
-        aria-label="upper mouse control"
-        aria-valuemax="50"
-        aria-valuemin="0"
-        aria-valuenow="30"
         class="c6"
-        role="slider"
         style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
         tabindex="-1"
       >
@@ -2556,17 +2444,13 @@ exports[`RangeSelector min 1`] = `
         max="100"
         min="10"
         readonly=""
+        role="slider"
         step="1"
         type="range"
         value="20"
       />
       <div
-        aria-label="lower mouse control"
-        aria-valuemax="100"
-        aria-valuemin="10"
-        aria-valuenow="20"
         class="c6"
-        role="slider"
         style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
         tabindex="-1"
       >
@@ -2592,17 +2476,13 @@ exports[`RangeSelector min 1`] = `
         max="100"
         min="10"
         readonly=""
+        role="slider"
         step="1"
         type="range"
         value="30"
       />
       <div
-        aria-label="upper mouse control"
-        aria-valuemax="100"
-        aria-valuemin="10"
-        aria-valuenow="30"
         class="c6"
-        role="slider"
         style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
         tabindex="-1"
       >
@@ -2769,17 +2649,13 @@ exports[`RangeSelector opacity 1`] = `
         max="100"
         min="0"
         readonly=""
+        role="slider"
         step="1"
         type="range"
         value="20"
       />
       <div
-        aria-label="lower mouse control"
-        aria-valuemax="100"
-        aria-valuemin="0"
-        aria-valuenow="20"
         class="c6"
-        role="slider"
         style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
         tabindex="-1"
       >
@@ -2805,17 +2681,13 @@ exports[`RangeSelector opacity 1`] = `
         max="100"
         min="0"
         readonly=""
+        role="slider"
         step="1"
         type="range"
         value="30"
       />
       <div
-        aria-label="upper mouse control"
-        aria-valuemax="100"
-        aria-valuemin="0"
-        aria-valuenow="30"
         class="c6"
-        role="slider"
         style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
         tabindex="-1"
       >
@@ -2850,17 +2722,13 @@ exports[`RangeSelector opacity 1`] = `
         max="100"
         min="0"
         readonly=""
+        role="slider"
         step="1"
         type="range"
         value="20"
       />
       <div
-        aria-label="lower mouse control"
-        aria-valuemax="100"
-        aria-valuemin="0"
-        aria-valuenow="20"
         class="c6"
-        role="slider"
         style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
         tabindex="-1"
       >
@@ -2886,17 +2754,13 @@ exports[`RangeSelector opacity 1`] = `
         max="100"
         min="0"
         readonly=""
+        role="slider"
         step="1"
         type="range"
         value="30"
       />
       <div
-        aria-label="upper mouse control"
-        aria-valuemax="100"
-        aria-valuemin="0"
-        aria-valuenow="30"
         class="c6"
-        role="slider"
         style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
         tabindex="-1"
       >
@@ -2931,17 +2795,13 @@ exports[`RangeSelector opacity 1`] = `
         max="100"
         min="0"
         readonly=""
+        role="slider"
         step="1"
         type="range"
         value="20"
       />
       <div
-        aria-label="lower mouse control"
-        aria-valuemax="100"
-        aria-valuemin="0"
-        aria-valuenow="20"
         class="c6"
-        role="slider"
         style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
         tabindex="-1"
       >
@@ -2967,17 +2827,13 @@ exports[`RangeSelector opacity 1`] = `
         max="100"
         min="0"
         readonly=""
+        role="slider"
         step="1"
         type="range"
         value="30"
       />
       <div
-        aria-label="upper mouse control"
-        aria-valuemax="100"
-        aria-valuemin="0"
-        aria-valuenow="30"
         class="c6"
-        role="slider"
         style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
         tabindex="-1"
       >
@@ -3119,17 +2975,13 @@ exports[`RangeSelector renders gracefully with invalid edge size 1`] = `
         max="100"
         min="0"
         readonly=""
+        role="slider"
         step="1"
         type="range"
         value="15"
       />
       <div
-        aria-label="lower mouse control"
-        aria-valuemax="100"
-        aria-valuemin="0"
-        aria-valuenow="15"
         class="c6"
-        role="slider"
         style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
         tabindex="-1"
       >
@@ -3155,17 +3007,13 @@ exports[`RangeSelector renders gracefully with invalid edge size 1`] = `
         max="100"
         min="0"
         readonly=""
+        role="slider"
         step="1"
         type="range"
         value="35"
       />
       <div
-        aria-label="upper mouse control"
-        aria-valuemax="100"
-        aria-valuemin="0"
-        aria-valuenow="35"
         class="c6"
-        role="slider"
         style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
         tabindex="-1"
       >
@@ -3307,17 +3155,13 @@ exports[`RangeSelector renders with default edge size when not specified 1`] = `
         max="100"
         min="0"
         readonly=""
+        role="slider"
         step="1"
         type="range"
         value="5"
       />
       <div
-        aria-label="lower mouse control"
-        aria-valuemax="100"
-        aria-valuemin="0"
-        aria-valuenow="5"
         class="c6"
-        role="slider"
         style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
         tabindex="-1"
       >
@@ -3343,17 +3187,13 @@ exports[`RangeSelector renders with default edge size when not specified 1`] = `
         max="100"
         min="0"
         readonly=""
+        role="slider"
         step="1"
         type="range"
         value="25"
       />
       <div
-        aria-label="upper mouse control"
-        aria-valuemax="100"
-        aria-valuemin="0"
-        aria-valuenow="25"
         class="c6"
-        role="slider"
         style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
         tabindex="-1"
       >
@@ -3495,17 +3335,13 @@ exports[`RangeSelector renders with edge size: large 1`] = `
         max="100"
         min="0"
         readonly=""
+        role="slider"
         step="1"
         type="range"
         value="10"
       />
       <div
-        aria-label="lower mouse control"
-        aria-valuemax="100"
-        aria-valuemin="0"
-        aria-valuenow="10"
         class="c6"
-        role="slider"
         style="cursor: col-resize; outline: none; min-width: 48px; min-height: 48px; z-index: 1;"
         tabindex="-1"
       >
@@ -3531,17 +3367,13 @@ exports[`RangeSelector renders with edge size: large 1`] = `
         max="100"
         min="0"
         readonly=""
+        role="slider"
         step="1"
         type="range"
         value="40"
       />
       <div
-        aria-label="upper mouse control"
-        aria-valuemax="100"
-        aria-valuemin="0"
-        aria-valuenow="40"
         class="c6"
-        role="slider"
         style="cursor: col-resize; outline: none; min-width: 48px; min-height: 48px; z-index: 1;"
         tabindex="-1"
       >
@@ -3683,17 +3515,13 @@ exports[`RangeSelector renders with edge size: medium 1`] = `
         max="100"
         min="0"
         readonly=""
+        role="slider"
         step="1"
         type="range"
         value="10"
       />
       <div
-        aria-label="lower mouse control"
-        aria-valuemax="100"
-        aria-valuemin="0"
-        aria-valuenow="10"
         class="c6"
-        role="slider"
         style="cursor: col-resize; outline: none; min-width: 24px; min-height: 24px; z-index: 1;"
         tabindex="-1"
       >
@@ -3719,17 +3547,13 @@ exports[`RangeSelector renders with edge size: medium 1`] = `
         max="100"
         min="0"
         readonly=""
+        role="slider"
         step="1"
         type="range"
         value="40"
       />
       <div
-        aria-label="upper mouse control"
-        aria-valuemax="100"
-        aria-valuemin="0"
-        aria-valuenow="40"
         class="c6"
-        role="slider"
         style="cursor: col-resize; outline: none; min-width: 24px; min-height: 24px; z-index: 1;"
         tabindex="-1"
       >
@@ -3871,17 +3695,13 @@ exports[`RangeSelector renders with edge size: small 1`] = `
         max="100"
         min="0"
         readonly=""
+        role="slider"
         step="1"
         type="range"
         value="10"
       />
       <div
-        aria-label="lower mouse control"
-        aria-valuemax="100"
-        aria-valuemin="0"
-        aria-valuenow="10"
         class="c6"
-        role="slider"
         style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
         tabindex="-1"
       >
@@ -3907,17 +3727,13 @@ exports[`RangeSelector renders with edge size: small 1`] = `
         max="100"
         min="0"
         readonly=""
+        role="slider"
         step="1"
         type="range"
         value="40"
       />
       <div
-        aria-label="upper mouse control"
-        aria-valuemax="100"
-        aria-valuemin="0"
-        aria-valuenow="40"
         class="c6"
-        role="slider"
         style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
         tabindex="-1"
       >
@@ -4059,17 +3875,13 @@ exports[`RangeSelector renders with edge size: xlarge 1`] = `
         max="100"
         min="0"
         readonly=""
+        role="slider"
         step="1"
         type="range"
         value="10"
       />
       <div
-        aria-label="lower mouse control"
-        aria-valuemax="100"
-        aria-valuemin="0"
-        aria-valuenow="10"
         class="c6"
-        role="slider"
         style="cursor: col-resize; outline: none; min-width: 96px; min-height: 96px; z-index: 1;"
         tabindex="-1"
       >
@@ -4095,17 +3907,13 @@ exports[`RangeSelector renders with edge size: xlarge 1`] = `
         max="100"
         min="0"
         readonly=""
+        role="slider"
         step="1"
         type="range"
         value="40"
       />
       <div
-        aria-label="upper mouse control"
-        aria-valuemax="100"
-        aria-valuemin="0"
-        aria-valuenow="40"
         class="c6"
-        role="slider"
         style="cursor: col-resize; outline: none; min-width: 96px; min-height: 96px; z-index: 1;"
         tabindex="-1"
       >
@@ -4401,17 +4209,13 @@ exports[`RangeSelector round 1`] = `
         max="100"
         min="0"
         readonly=""
+        role="slider"
         step="1"
         type="range"
         value="20"
       />
       <div
-        aria-label="lower mouse control"
-        aria-valuemax="100"
-        aria-valuemin="0"
-        aria-valuenow="20"
         class="c6"
-        role="slider"
         style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
         tabindex="-1"
       >
@@ -4437,17 +4241,13 @@ exports[`RangeSelector round 1`] = `
         max="100"
         min="0"
         readonly=""
+        role="slider"
         step="1"
         type="range"
         value="30"
       />
       <div
-        aria-label="upper mouse control"
-        aria-valuemax="100"
-        aria-valuemin="0"
-        aria-valuenow="30"
         class="c6"
-        role="slider"
         style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
         tabindex="-1"
       >
@@ -4482,17 +4282,13 @@ exports[`RangeSelector round 1`] = `
         max="100"
         min="0"
         readonly=""
+        role="slider"
         step="1"
         type="range"
         value="20"
       />
       <div
-        aria-label="lower mouse control"
-        aria-valuemax="100"
-        aria-valuemin="0"
-        aria-valuenow="20"
         class="c6"
-        role="slider"
         style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
         tabindex="-1"
       >
@@ -4518,17 +4314,13 @@ exports[`RangeSelector round 1`] = `
         max="100"
         min="0"
         readonly=""
+        role="slider"
         step="1"
         type="range"
         value="30"
       />
       <div
-        aria-label="upper mouse control"
-        aria-valuemax="100"
-        aria-valuemin="0"
-        aria-valuenow="30"
         class="c6"
-        role="slider"
         style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
         tabindex="-1"
       >
@@ -4563,17 +4355,13 @@ exports[`RangeSelector round 1`] = `
         max="100"
         min="0"
         readonly=""
+        role="slider"
         step="1"
         type="range"
         value="20"
       />
       <div
-        aria-label="lower mouse control"
-        aria-valuemax="100"
-        aria-valuemin="0"
-        aria-valuenow="20"
         class="c6"
-        role="slider"
         style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
         tabindex="-1"
       >
@@ -4599,17 +4387,13 @@ exports[`RangeSelector round 1`] = `
         max="100"
         min="0"
         readonly=""
+        role="slider"
         step="1"
         type="range"
         value="30"
       />
       <div
-        aria-label="upper mouse control"
-        aria-valuemax="100"
-        aria-valuemin="0"
-        aria-valuenow="30"
         class="c6"
-        role="slider"
         style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
         tabindex="-1"
       >
@@ -4644,17 +4428,13 @@ exports[`RangeSelector round 1`] = `
         max="100"
         min="0"
         readonly=""
+        role="slider"
         step="1"
         type="range"
         value="20"
       />
       <div
-        aria-label="lower mouse control"
-        aria-valuemax="100"
-        aria-valuemin="0"
-        aria-valuenow="20"
         class="c6"
-        role="slider"
         style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
         tabindex="-1"
       >
@@ -4680,17 +4460,13 @@ exports[`RangeSelector round 1`] = `
         max="100"
         min="0"
         readonly=""
+        role="slider"
         step="1"
         type="range"
         value="30"
       />
       <div
-        aria-label="upper mouse control"
-        aria-valuemax="100"
-        aria-valuemin="0"
-        aria-valuenow="30"
         class="c6"
-        role="slider"
         style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
         tabindex="-1"
       >
@@ -4725,17 +4501,13 @@ exports[`RangeSelector round 1`] = `
         max="100"
         min="0"
         readonly=""
+        role="slider"
         step="1"
         type="range"
         value="20"
       />
       <div
-        aria-label="lower mouse control"
-        aria-valuemax="100"
-        aria-valuemin="0"
-        aria-valuenow="20"
         class="c6"
-        role="slider"
         style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
         tabindex="-1"
       >
@@ -4761,17 +4533,13 @@ exports[`RangeSelector round 1`] = `
         max="100"
         min="0"
         readonly=""
+        role="slider"
         step="1"
         type="range"
         value="30"
       />
       <div
-        aria-label="upper mouse control"
-        aria-valuemax="100"
-        aria-valuemin="0"
-        aria-valuenow="30"
         class="c6"
-        role="slider"
         style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
         tabindex="-1"
       >
@@ -4913,17 +4681,13 @@ exports[`RangeSelector should not have accessibility violations 1`] = `
         max="100"
         min="0"
         readonly=""
+        role="slider"
         step="1"
         type="range"
         value="20"
       />
       <div
-        aria-label="lower mouse control"
-        aria-valuemax="100"
-        aria-valuemin="0"
-        aria-valuenow="20"
         class="c6"
-        role="slider"
         style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
         tabindex="-1"
       >
@@ -4949,17 +4713,13 @@ exports[`RangeSelector should not have accessibility violations 1`] = `
         max="100"
         min="0"
         readonly=""
+        role="slider"
         step="1"
         type="range"
         value="30"
       />
       <div
-        aria-label="upper mouse control"
-        aria-valuemax="100"
-        aria-valuemin="0"
-        aria-valuenow="30"
         class="c6"
-        role="slider"
         style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
         tabindex="-1"
       >
@@ -5245,17 +5005,13 @@ exports[`RangeSelector size 1`] = `
         max="100"
         min="0"
         readonly=""
+        role="slider"
         step="1"
         type="range"
         value="20"
       />
       <div
-        aria-label="lower mouse control"
-        aria-valuemax="100"
-        aria-valuemin="0"
-        aria-valuenow="20"
         class="c6"
-        role="slider"
         style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
         tabindex="-1"
       >
@@ -5281,17 +5037,13 @@ exports[`RangeSelector size 1`] = `
         max="100"
         min="0"
         readonly=""
+        role="slider"
         step="1"
         type="range"
         value="30"
       />
       <div
-        aria-label="upper mouse control"
-        aria-valuemax="100"
-        aria-valuemin="0"
-        aria-valuenow="30"
         class="c6"
-        role="slider"
         style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
         tabindex="-1"
       >
@@ -5326,17 +5078,13 @@ exports[`RangeSelector size 1`] = `
         max="100"
         min="0"
         readonly=""
+        role="slider"
         step="1"
         type="range"
         value="20"
       />
       <div
-        aria-label="lower mouse control"
-        aria-valuemax="100"
-        aria-valuemin="0"
-        aria-valuenow="20"
         class="c6"
-        role="slider"
         style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
         tabindex="-1"
       >
@@ -5362,17 +5110,13 @@ exports[`RangeSelector size 1`] = `
         max="100"
         min="0"
         readonly=""
+        role="slider"
         step="1"
         type="range"
         value="30"
       />
       <div
-        aria-label="upper mouse control"
-        aria-valuemax="100"
-        aria-valuemin="0"
-        aria-valuenow="30"
         class="c6"
-        role="slider"
         style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
         tabindex="-1"
       >
@@ -5407,17 +5151,13 @@ exports[`RangeSelector size 1`] = `
         max="100"
         min="0"
         readonly=""
+        role="slider"
         step="1"
         type="range"
         value="20"
       />
       <div
-        aria-label="lower mouse control"
-        aria-valuemax="100"
-        aria-valuemin="0"
-        aria-valuenow="20"
         class="c6"
-        role="slider"
         style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
         tabindex="-1"
       >
@@ -5443,17 +5183,13 @@ exports[`RangeSelector size 1`] = `
         max="100"
         min="0"
         readonly=""
+        role="slider"
         step="1"
         type="range"
         value="30"
       />
       <div
-        aria-label="upper mouse control"
-        aria-valuemax="100"
-        aria-valuemin="0"
-        aria-valuenow="30"
         class="c6"
-        role="slider"
         style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
         tabindex="-1"
       >
@@ -5488,17 +5224,13 @@ exports[`RangeSelector size 1`] = `
         max="100"
         min="0"
         readonly=""
+        role="slider"
         step="1"
         type="range"
         value="20"
       />
       <div
-        aria-label="lower mouse control"
-        aria-valuemax="100"
-        aria-valuemin="0"
-        aria-valuenow="20"
         class="c6"
-        role="slider"
         style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
         tabindex="-1"
       >
@@ -5524,17 +5256,13 @@ exports[`RangeSelector size 1`] = `
         max="100"
         min="0"
         readonly=""
+        role="slider"
         step="1"
         type="range"
         value="30"
       />
       <div
-        aria-label="upper mouse control"
-        aria-valuemax="100"
-        aria-valuemin="0"
-        aria-valuenow="30"
         class="c6"
-        role="slider"
         style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
         tabindex="-1"
       >
@@ -5569,17 +5297,13 @@ exports[`RangeSelector size 1`] = `
         max="100"
         min="0"
         readonly=""
+        role="slider"
         step="1"
         type="range"
         value="20"
       />
       <div
-        aria-label="lower mouse control"
-        aria-valuemax="100"
-        aria-valuemin="0"
-        aria-valuenow="20"
         class="c6"
-        role="slider"
         style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
         tabindex="-1"
       >
@@ -5605,17 +5329,13 @@ exports[`RangeSelector size 1`] = `
         max="100"
         min="0"
         readonly=""
+        role="slider"
         step="1"
         type="range"
         value="30"
       />
       <div
-        aria-label="upper mouse control"
-        aria-valuemax="100"
-        aria-valuemin="0"
-        aria-valuenow="30"
         class="c6"
-        role="slider"
         style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
         tabindex="-1"
       >
@@ -5650,17 +5370,13 @@ exports[`RangeSelector size 1`] = `
         max="100"
         min="0"
         readonly=""
+        role="slider"
         step="1"
         type="range"
         value="20"
       />
       <div
-        aria-label="lower mouse control"
-        aria-valuemax="100"
-        aria-valuemin="0"
-        aria-valuenow="20"
         class="c6"
-        role="slider"
         style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
         tabindex="-1"
       >
@@ -5686,17 +5402,13 @@ exports[`RangeSelector size 1`] = `
         max="100"
         min="0"
         readonly=""
+        role="slider"
         step="1"
         type="range"
         value="30"
       />
       <div
-        aria-label="upper mouse control"
-        aria-valuemax="100"
-        aria-valuemin="0"
-        aria-valuenow="30"
         class="c6"
-        role="slider"
         style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
         tabindex="-1"
       >
@@ -5731,17 +5443,13 @@ exports[`RangeSelector size 1`] = `
         max="100"
         min="0"
         readonly=""
+        role="slider"
         step="1"
         type="range"
         value="20"
       />
       <div
-        aria-label="lower mouse control"
-        aria-valuemax="100"
-        aria-valuemin="0"
-        aria-valuenow="20"
         class="c6"
-        role="slider"
         style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
         tabindex="-1"
       >
@@ -5767,17 +5475,13 @@ exports[`RangeSelector size 1`] = `
         max="100"
         min="0"
         readonly=""
+        role="slider"
         step="1"
         type="range"
         value="30"
       />
       <div
-        aria-label="upper mouse control"
-        aria-valuemax="100"
-        aria-valuemin="0"
-        aria-valuenow="30"
         class="c6"
-        role="slider"
         style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
         tabindex="-1"
       >
@@ -5919,17 +5623,13 @@ exports[`RangeSelector step renders correct values 1`] = `
         max="100"
         min="0"
         readonly=""
+        role="slider"
         step="3"
         type="range"
         value="0"
       />
       <div
-        aria-label="lower mouse control"
-        aria-valuemax="100"
-        aria-valuemin="0"
-        aria-valuenow="0"
         class="c6"
-        role="slider"
         style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
         tabindex="-1"
       >
@@ -5955,17 +5655,13 @@ exports[`RangeSelector step renders correct values 1`] = `
         max="100"
         min="0"
         readonly=""
+        role="slider"
         step="3"
         type="range"
         value="100"
       />
       <div
-        aria-label="upper mouse control"
-        aria-valuemax="100"
-        aria-valuemin="0"
-        aria-valuenow="100"
         class="c6"
-        role="slider"
         style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
         tabindex="-1"
       >

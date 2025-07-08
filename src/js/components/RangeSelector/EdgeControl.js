@@ -122,6 +122,7 @@ const EdgeControl = forwardRef(
           {/* Add visually hidden range input for Safari VoiceOver */}
           <VisuallyHiddenInput
             type="range"
+            role="slider"
             min={min}
             max={max}
             step={step}
