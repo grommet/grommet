@@ -97,7 +97,7 @@ exports[`DataFilter !inDataForm 1`] = `
   overflow: visible;
 }
 
-.c17 {
+.c18 {
   display: flex;
   box-sizing: border-box;
   align-items: center;
@@ -109,7 +109,7 @@ exports[`DataFilter !inDataForm 1`] = `
   justify-content: center;
 }
 
-.c18 {
+.c19 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -123,7 +123,7 @@ exports[`DataFilter !inDataForm 1`] = `
   border-radius: 100%;
 }
 
-.c19 {
+.c20 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -165,7 +165,7 @@ exports[`DataFilter !inDataForm 1`] = `
   text-align: right;
 }
 
-.c20 {
+.c21 {
   margin-left: 12px;
   margin-right: 12px;
   font-size: 14px;
@@ -209,6 +209,16 @@ exports[`DataFilter !inDataForm 1`] = `
   flex-shrink: 0;
 }
 
+.c17 {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 1px;
+}
+
 .c14 {
   user-select: none;
 }
@@ -246,7 +256,7 @@ exports[`DataFilter !inDataForm 1`] = `
 }
 
 @media only screen and (max-width: 768px) {
-  .c19 {
+  .c20 {
     border-radius: 6px;
   }
 }
@@ -420,41 +430,57 @@ exports[`DataFilter !inDataForm 1`] = `
               class="c16"
               style="flex: 0 0 1px;"
             >
-              <div
+              <input
                 aria-label="Lower Bounds"
                 aria-valuemax="4.9"
                 aria-valuemin="2.1"
                 aria-valuenow="2.1"
                 class="c17"
-                role="slider"
+                max="4.9"
+                min="2.1"
+                readonly=""
+                step="0.14"
+                type="range"
+                value="2.1"
+              />
+              <div
+                class="c18"
                 style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
-                tabindex="0"
+                tabindex="-1"
               >
                 <div
-                  class="c18 EdgeControl__StyledBox-sc-1xo2yt9-0"
+                  class="c19 EdgeControl__StyledBox-sc-1xo2yt9-1"
                 />
               </div>
             </div>
             <div
-              class="c19"
+              class="c20"
               style="flex: 3.8000000000000003 0 0px; cursor: ew-resize;"
             />
             <div
               class="c16"
               style="flex: 0 0 1px;"
             >
-              <div
+              <input
                 aria-label="Upper Bounds"
                 aria-valuemax="4.9"
                 aria-valuemin="2.1"
                 aria-valuenow="4.9"
                 class="c17"
-                role="slider"
+                max="4.9"
+                min="2.1"
+                readonly=""
+                step="0.14"
+                type="range"
+                value="4.9"
+              />
+              <div
+                class="c18"
                 style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
-                tabindex="0"
+                tabindex="-1"
               >
                 <div
-                  class="c18 EdgeControl__StyledBox-sc-1xo2yt9-0"
+                  class="c19 EdgeControl__StyledBox-sc-1xo2yt9-1"
                 />
               </div>
             </div>
@@ -464,7 +490,7 @@ exports[`DataFilter !inDataForm 1`] = `
             />
           </div>
           <span
-            class="c20"
+            class="c21"
             style="width: 0px;"
           >
             4.9
@@ -1377,7 +1403,7 @@ exports[`DataFilter range Data 1`] = `
   overflow: visible;
 }
 
-.c14 {
+.c15 {
   display: flex;
   box-sizing: border-box;
   align-items: center;
@@ -1389,7 +1415,7 @@ exports[`DataFilter range Data 1`] = `
   justify-content: center;
 }
 
-.c15 {
+.c16 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -1403,7 +1429,7 @@ exports[`DataFilter range Data 1`] = `
   border-radius: 100%;
 }
 
-.c16 {
+.c17 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -1417,7 +1443,7 @@ exports[`DataFilter range Data 1`] = `
   border-radius: 12px;
 }
 
-.c18 {
+.c19 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -1447,14 +1473,14 @@ exports[`DataFilter range Data 1`] = `
   text-align: right;
 }
 
-.c17 {
+.c18 {
   margin-left: 12px;
   margin-right: 12px;
   font-size: 14px;
   line-height: 20px;
 }
 
-.c19 {
+.c20 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -1478,52 +1504,62 @@ exports[`DataFilter range Data 1`] = `
   transition-timing-function: ease-in-out;
 }
 
-.c19:hover {
+.c20:hover {
   box-shadow: 0px 0px 0px 2px #7D4CDB;
 }
 
-.c19:focus {
+.c20:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c19:focus >circle,
-.c19:focus >ellipse,
-.c19:focus >line,
-.c19:focus >path,
-.c19:focus >polygon,
-.c19:focus >polyline,
-.c19:focus >rect {
+.c20:focus >circle,
+.c20:focus >ellipse,
+.c20:focus >line,
+.c20:focus >path,
+.c20:focus >polygon,
+.c20:focus >polyline,
+.c20:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c19:focus ::-moz-focus-inner {
+.c20:focus ::-moz-focus-inner {
   border: 0;
 }
 
-.c19:focus:not(:focus-visible) {
+.c20:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c19:focus:not(:focus-visible) >circle,
-.c19:focus:not(:focus-visible) >ellipse,
-.c19:focus:not(:focus-visible) >line,
-.c19:focus:not(:focus-visible) >path,
-.c19:focus:not(:focus-visible) >polygon,
-.c19:focus:not(:focus-visible) >polyline,
-.c19:focus:not(:focus-visible) >rect {
+.c20:focus:not(:focus-visible) >circle,
+.c20:focus:not(:focus-visible) >ellipse,
+.c20:focus:not(:focus-visible) >line,
+.c20:focus:not(:focus-visible) >path,
+.c20:focus:not(:focus-visible) >polygon,
+.c20:focus:not(:focus-visible) >polyline,
+.c20:focus:not(:focus-visible) >rect {
   outline: none;
   box-shadow: none;
 }
 
-.c19:focus:not(:focus-visible) ::-moz-focus-inner {
+.c20:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 
 .c2 {
   max-width: 100%;
+}
+
+.c14 {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 1px;
 }
 
 .c11 {
@@ -1565,13 +1601,13 @@ exports[`DataFilter range Data 1`] = `
 }
 
 @media only screen and (max-width: 768px) {
-  .c16 {
+  .c17 {
     border-radius: 6px;
   }
 }
 
 @media only screen and (max-width: 768px) {
-  .c18 {
+  .c19 {
     margin-top: 12px;
   }
 }
@@ -1630,41 +1666,57 @@ exports[`DataFilter range Data 1`] = `
                       class="c13"
                       style="flex: 0 0 1px;"
                     >
-                      <div
+                      <input
                         aria-label="Lower Bounds"
                         aria-valuemax="5"
                         aria-valuemin="0"
                         aria-valuenow="0"
                         class="c14"
-                        role="slider"
+                        max="5"
+                        min="0"
+                        readonly=""
+                        step="0.25"
+                        type="range"
+                        value="0"
+                      />
+                      <div
+                        class="c15"
                         style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
-                        tabindex="0"
+                        tabindex="-1"
                       >
                         <div
-                          class="c15 EdgeControl__StyledBox-sc-1xo2yt9-0"
+                          class="c16 EdgeControl__StyledBox-sc-1xo2yt9-1"
                         />
                       </div>
                     </div>
                     <div
-                      class="c16"
+                      class="c17"
                       style="flex: 6 0 0px; cursor: ew-resize;"
                     />
                     <div
                       class="c13"
                       style="flex: 0 0 1px;"
                     >
-                      <div
+                      <input
                         aria-label="Upper Bounds"
                         aria-valuemax="5"
                         aria-valuemin="0"
                         aria-valuenow="5"
                         class="c14"
-                        role="slider"
+                        max="5"
+                        min="0"
+                        readonly=""
+                        step="0.25"
+                        type="range"
+                        value="5"
+                      />
+                      <div
+                        class="c15"
                         style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
-                        tabindex="0"
+                        tabindex="-1"
                       >
                         <div
-                          class="c15 EdgeControl__StyledBox-sc-1xo2yt9-0"
+                          class="c16 EdgeControl__StyledBox-sc-1xo2yt9-1"
                         />
                       </div>
                     </div>
@@ -1674,7 +1726,7 @@ exports[`DataFilter range Data 1`] = `
                     />
                   </div>
                   <span
-                    class="c17"
+                    class="c18"
                     style="width: 0px;"
                   >
                     5
@@ -1685,10 +1737,10 @@ exports[`DataFilter range Data 1`] = `
           </div>
         </div>
         <footer
-          class="c18"
+          class="c19"
         >
           <button
-            class="c19"
+            class="c20"
             type="submit"
           >
             Apply filters
@@ -1803,7 +1855,7 @@ exports[`DataFilter range prop 1`] = `
   overflow: visible;
 }
 
-.c14 {
+.c15 {
   display: flex;
   box-sizing: border-box;
   align-items: center;
@@ -1815,7 +1867,7 @@ exports[`DataFilter range prop 1`] = `
   justify-content: center;
 }
 
-.c15 {
+.c16 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -1829,7 +1881,7 @@ exports[`DataFilter range prop 1`] = `
   border-radius: 100%;
 }
 
-.c16 {
+.c17 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -1843,7 +1895,7 @@ exports[`DataFilter range prop 1`] = `
   border-radius: 12px;
 }
 
-.c18 {
+.c19 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -1873,14 +1925,14 @@ exports[`DataFilter range prop 1`] = `
   text-align: right;
 }
 
-.c17 {
+.c18 {
   margin-left: 12px;
   margin-right: 12px;
   font-size: 14px;
   line-height: 20px;
 }
 
-.c19 {
+.c20 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -1904,52 +1956,62 @@ exports[`DataFilter range prop 1`] = `
   transition-timing-function: ease-in-out;
 }
 
-.c19:hover {
+.c20:hover {
   box-shadow: 0px 0px 0px 2px #7D4CDB;
 }
 
-.c19:focus {
+.c20:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c19:focus >circle,
-.c19:focus >ellipse,
-.c19:focus >line,
-.c19:focus >path,
-.c19:focus >polygon,
-.c19:focus >polyline,
-.c19:focus >rect {
+.c20:focus >circle,
+.c20:focus >ellipse,
+.c20:focus >line,
+.c20:focus >path,
+.c20:focus >polygon,
+.c20:focus >polyline,
+.c20:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c19:focus ::-moz-focus-inner {
+.c20:focus ::-moz-focus-inner {
   border: 0;
 }
 
-.c19:focus:not(:focus-visible) {
+.c20:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c19:focus:not(:focus-visible) >circle,
-.c19:focus:not(:focus-visible) >ellipse,
-.c19:focus:not(:focus-visible) >line,
-.c19:focus:not(:focus-visible) >path,
-.c19:focus:not(:focus-visible) >polygon,
-.c19:focus:not(:focus-visible) >polyline,
-.c19:focus:not(:focus-visible) >rect {
+.c20:focus:not(:focus-visible) >circle,
+.c20:focus:not(:focus-visible) >ellipse,
+.c20:focus:not(:focus-visible) >line,
+.c20:focus:not(:focus-visible) >path,
+.c20:focus:not(:focus-visible) >polygon,
+.c20:focus:not(:focus-visible) >polyline,
+.c20:focus:not(:focus-visible) >rect {
   outline: none;
   box-shadow: none;
 }
 
-.c19:focus:not(:focus-visible) ::-moz-focus-inner {
+.c20:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 
 .c2 {
   max-width: 100%;
+}
+
+.c14 {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 1px;
 }
 
 .c11 {
@@ -1991,13 +2053,13 @@ exports[`DataFilter range prop 1`] = `
 }
 
 @media only screen and (max-width: 768px) {
-  .c16 {
+  .c17 {
     border-radius: 6px;
   }
 }
 
 @media only screen and (max-width: 768px) {
-  .c18 {
+  .c19 {
     margin-top: 12px;
   }
 }
@@ -2056,41 +2118,57 @@ exports[`DataFilter range prop 1`] = `
                       class="c13"
                       style="flex: 0 0 1px;"
                     >
-                      <div
+                      <input
                         aria-label="Lower Bounds"
                         aria-valuemax="5"
                         aria-valuemin="0"
                         aria-valuenow="0"
                         class="c14"
-                        role="slider"
+                        max="5"
+                        min="0"
+                        readonly=""
+                        step="0.25"
+                        type="range"
+                        value="0"
+                      />
+                      <div
+                        class="c15"
                         style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
-                        tabindex="0"
+                        tabindex="-1"
                       >
                         <div
-                          class="c15 EdgeControl__StyledBox-sc-1xo2yt9-0"
+                          class="c16 EdgeControl__StyledBox-sc-1xo2yt9-1"
                         />
                       </div>
                     </div>
                     <div
-                      class="c16"
+                      class="c17"
                       style="flex: 6 0 0px; cursor: ew-resize;"
                     />
                     <div
                       class="c13"
                       style="flex: 0 0 1px;"
                     >
-                      <div
+                      <input
                         aria-label="Upper Bounds"
                         aria-valuemax="5"
                         aria-valuemin="0"
                         aria-valuenow="5"
                         class="c14"
-                        role="slider"
+                        max="5"
+                        min="0"
+                        readonly=""
+                        step="0.25"
+                        type="range"
+                        value="5"
+                      />
+                      <div
+                        class="c15"
                         style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
-                        tabindex="0"
+                        tabindex="-1"
                       >
                         <div
-                          class="c15 EdgeControl__StyledBox-sc-1xo2yt9-0"
+                          class="c16 EdgeControl__StyledBox-sc-1xo2yt9-1"
                         />
                       </div>
                     </div>
@@ -2100,7 +2178,7 @@ exports[`DataFilter range prop 1`] = `
                     />
                   </div>
                   <span
-                    class="c17"
+                    class="c18"
                     style="width: 0px;"
                   >
                     5
@@ -2111,10 +2189,10 @@ exports[`DataFilter range prop 1`] = `
           </div>
         </div>
         <footer
-          class="c18"
+          class="c19"
         >
           <button
-            class="c19"
+            class="c20"
             type="submit"
           >
             Apply filters
@@ -2265,7 +2343,7 @@ exports[`DataFilter renders 1`] = `
   overflow: visible;
 }
 
-.c21 {
+.c22 {
   display: flex;
   box-sizing: border-box;
   align-items: center;
@@ -2277,7 +2355,7 @@ exports[`DataFilter renders 1`] = `
   justify-content: center;
 }
 
-.c22 {
+.c23 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -2291,7 +2369,7 @@ exports[`DataFilter renders 1`] = `
   border-radius: 100%;
 }
 
-.c23 {
+.c24 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -2305,7 +2383,7 @@ exports[`DataFilter renders 1`] = `
   border-radius: 12px;
 }
 
-.c25 {
+.c26 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -2341,14 +2419,14 @@ exports[`DataFilter renders 1`] = `
   text-align: right;
 }
 
-.c24 {
+.c25 {
   margin-left: 12px;
   margin-right: 12px;
   font-size: 14px;
   line-height: 20px;
 }
 
-.c26 {
+.c27 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -2372,47 +2450,47 @@ exports[`DataFilter renders 1`] = `
   transition-timing-function: ease-in-out;
 }
 
-.c26:hover {
+.c27:hover {
   box-shadow: 0px 0px 0px 2px #7D4CDB;
 }
 
-.c26:focus {
+.c27:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c26:focus >circle,
-.c26:focus >ellipse,
-.c26:focus >line,
-.c26:focus >path,
-.c26:focus >polygon,
-.c26:focus >polyline,
-.c26:focus >rect {
+.c27:focus >circle,
+.c27:focus >ellipse,
+.c27:focus >line,
+.c27:focus >path,
+.c27:focus >polygon,
+.c27:focus >polyline,
+.c27:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c26:focus ::-moz-focus-inner {
+.c27:focus ::-moz-focus-inner {
   border: 0;
 }
 
-.c26:focus:not(:focus-visible) {
+.c27:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c26:focus:not(:focus-visible) >circle,
-.c26:focus:not(:focus-visible) >ellipse,
-.c26:focus:not(:focus-visible) >line,
-.c26:focus:not(:focus-visible) >path,
-.c26:focus:not(:focus-visible) >polygon,
-.c26:focus:not(:focus-visible) >polyline,
-.c26:focus:not(:focus-visible) >rect {
+.c27:focus:not(:focus-visible) >circle,
+.c27:focus:not(:focus-visible) >ellipse,
+.c27:focus:not(:focus-visible) >line,
+.c27:focus:not(:focus-visible) >path,
+.c27:focus:not(:focus-visible) >polygon,
+.c27:focus:not(:focus-visible) >polyline,
+.c27:focus:not(:focus-visible) >rect {
   outline: none;
   box-shadow: none;
 }
 
-.c26:focus:not(:focus-visible) ::-moz-focus-inner {
+.c27:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 
@@ -2451,6 +2529,16 @@ exports[`DataFilter renders 1`] = `
 
 .c11 {
   flex-shrink: 0;
+}
+
+.c21 {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 1px;
 }
 
 .c18 {
@@ -2504,13 +2592,13 @@ exports[`DataFilter renders 1`] = `
 }
 
 @media only screen and (max-width: 768px) {
-  .c23 {
+  .c24 {
     border-radius: 6px;
   }
 }
 
 @media only screen and (max-width: 768px) {
-  .c25 {
+  .c26 {
     margin-top: 12px;
   }
 }
@@ -2718,41 +2806,57 @@ exports[`DataFilter renders 1`] = `
                       class="c20"
                       style="flex: 0 0 1px;"
                     >
-                      <div
+                      <input
                         aria-label="Lower Bounds"
                         aria-valuemax="4.9"
                         aria-valuemin="2.1"
                         aria-valuenow="2.1"
                         class="c21"
-                        role="slider"
+                        max="4.9"
+                        min="2.1"
+                        readonly=""
+                        step="0.14"
+                        type="range"
+                        value="2.1"
+                      />
+                      <div
+                        class="c22"
                         style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
-                        tabindex="0"
+                        tabindex="-1"
                       >
                         <div
-                          class="c22 EdgeControl__StyledBox-sc-1xo2yt9-0"
+                          class="c23 EdgeControl__StyledBox-sc-1xo2yt9-1"
                         />
                       </div>
                     </div>
                     <div
-                      class="c23"
+                      class="c24"
                       style="flex: 3.8000000000000003 0 0px; cursor: ew-resize;"
                     />
                     <div
                       class="c20"
                       style="flex: 0 0 1px;"
                     >
-                      <div
+                      <input
                         aria-label="Upper Bounds"
                         aria-valuemax="4.9"
                         aria-valuemin="2.1"
                         aria-valuenow="4.9"
                         class="c21"
-                        role="slider"
+                        max="4.9"
+                        min="2.1"
+                        readonly=""
+                        step="0.14"
+                        type="range"
+                        value="4.9"
+                      />
+                      <div
+                        class="c22"
                         style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
-                        tabindex="0"
+                        tabindex="-1"
                       >
                         <div
-                          class="c22 EdgeControl__StyledBox-sc-1xo2yt9-0"
+                          class="c23 EdgeControl__StyledBox-sc-1xo2yt9-1"
                         />
                       </div>
                     </div>
@@ -2762,7 +2866,7 @@ exports[`DataFilter renders 1`] = `
                     />
                   </div>
                   <span
-                    class="c24"
+                    class="c25"
                     style="width: 0px;"
                   >
                     4.9
@@ -2773,10 +2877,10 @@ exports[`DataFilter renders 1`] = `
           </div>
         </div>
         <footer
-          class="c25"
+          class="c26"
         >
           <button
-            class="c26"
+            class="c27"
             type="submit"
           >
             Apply filters
