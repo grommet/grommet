@@ -99,17 +99,11 @@ const LayerContainer = forwardRef(
           }
           element = element.parentElement;
         }
-        if (!isInLayer) {
-          // Try to focus first focusable child inside the layer
-          const focusable = containerRef.current?.querySelector(
-            'button, [href], input, select, textarea, ' +
-              '[tabindex]:not([tabindex="-1"])',
-          );
-          if (focusable) {
-            focusable.focus();
-          } else if (containerRef.current?.focus) {
-            containerRef.current.focus();
-          }
+
+        // If focus is not already within the Layer, set focus to the container
+        // to ensure keyboard users can start navigating the modal content
+        if (!isInLayer && containerRef.current?.focus) {
+          containerRef.current.focus();
         }
       }
     }, [modal, position, ref]);
@@ -228,6 +222,9 @@ const LayerContainer = forwardRef(
         // portalId is used to determine if click occurred inside
         // or outside of the layer
         data-g-portal-id={portalId}
+        // allows the Layer container programmatically focusable
+        // so it can receive focus on open
+        tabIndex={-1}
       >
         {children}
       </StyledContainer>

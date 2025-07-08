@@ -90,6 +90,7 @@ exports[`Layer animation fadeIn 1`] = `
     class="c2"
     data-g-portal-id="0"
     id="animation-test"
+    tabindex="-1"
   >
     This is a layer
   </div>
@@ -230,6 +231,7 @@ exports[`Layer animation false 1`] = `
     class="c2"
     data-g-portal-id="0"
     id="animation-test"
+    tabindex="-1"
   >
     This is a layer
   </div>
@@ -371,6 +373,7 @@ exports[`Layer animation slide 1`] = `
     class="c2"
     data-g-portal-id="0"
     id="animation-test"
+    tabindex="-1"
   >
     This is a layer
   </div>
@@ -512,6 +515,7 @@ exports[`Layer animation true 1`] = `
     class="c2"
     data-g-portal-id="0"
     id="animation-test"
+    tabindex="-1"
   >
     This is a layer
   </div>
@@ -653,6 +657,7 @@ exports[`Layer custom margin 1`] = `
     class="c2"
     data-g-portal-id="0"
     id="margin-test"
+    tabindex="-1"
   >
     This is a layer
   </div>
@@ -795,6 +800,7 @@ exports[`Layer custom theme 1`] = `
     class="c2"
     data-g-portal-id="0"
     id="custom-theme-test"
+    tabindex="-1"
   >
     This is a layer
   </div>
@@ -922,6 +928,7 @@ exports[`Layer dark context 1`] = `
     class="c1"
     data-g-portal-id="0"
     id="non-modal-test"
+    tabindex="-1"
   >
     This is a non-modal layer
   </div>
@@ -1016,6 +1023,7 @@ exports[`Layer focus on layer 1`] = `
   class="c0"
   data-g-portal-id="0"
   data-testid="focus-layer-test"
+  tabindex="-1"
 >
   <input />
 </div>
@@ -1097,6 +1105,7 @@ exports[`Layer hidden 1`] = `
     class="c2"
     data-g-portal-id="0"
     id="hidden-test"
+    tabindex="-1"
   >
     This is a layer
   </div>
@@ -1142,6 +1151,7 @@ exports[`Layer hidden 3`] = `
     class="StyledLayer__StyledContainer-sc-rmtehz-2 hsEoiT"
     data-g-portal-id="0"
     id="hidden-test"
+    tabindex="-1"
   >
     This is a layer
   </div>
@@ -1268,6 +1278,7 @@ exports[`Layer invoke onClickOutside when modal={false} 1`] = `
     class="c1"
     data-g-portal-id="0"
     id="layer-node"
+    tabindex="-1"
   >
     <div>
       This is a layer
@@ -1391,6 +1402,7 @@ exports[`Layer invoke onClickOutside when modal={false} and layer has target 1`]
     class="c1"
     data-g-portal-id="0"
     id="target-test"
+    tabindex="-1"
   >
     this is a test layer
   </div>
@@ -1512,6 +1524,7 @@ exports[`Layer invoke onClickOutside when modal={true} 1`] = `
     class="c2"
     data-g-portal-id="0"
     id="layer-node"
+    tabindex="-1"
   >
     <div>
       This is a layer
@@ -1649,6 +1662,7 @@ exports[`Layer invoke onClickOutside when modal={true} and layer has target 1`] 
     class="c2"
     data-g-portal-id="0"
     id="target-test"
+    tabindex="-1"
   >
     this is a test layer
   </div>
@@ -1956,6 +1970,7 @@ exports[`Layer invokes onEsc when modal={false} 1`] = `
     class="c1"
     data-g-portal-id="0"
     id="esc-test"
+    tabindex="-1"
   >
     <button
       aria-expanded="false"
@@ -2200,6 +2215,7 @@ exports[`Layer margin large 1`] = `
     class="c2"
     data-g-portal-id="0"
     id="margin-test"
+    tabindex="-1"
   >
     This is a layer
   </div>
@@ -2341,6 +2357,7 @@ exports[`Layer margin medium 1`] = `
     class="c2"
     data-g-portal-id="0"
     id="margin-test"
+    tabindex="-1"
   >
     This is a layer
   </div>
@@ -2482,6 +2499,7 @@ exports[`Layer margin none 1`] = `
     class="c2"
     data-g-portal-id="0"
     id="margin-test"
+    tabindex="-1"
   >
     This is a layer
   </div>
@@ -2623,6 +2641,7 @@ exports[`Layer margin small 1`] = `
     class="c2"
     data-g-portal-id="0"
     id="margin-test"
+    tabindex="-1"
   >
     This is a layer
   </div>
@@ -2764,6 +2783,7 @@ exports[`Layer margin xsmall 1`] = `
     class="c2"
     data-g-portal-id="0"
     id="margin-test"
+    tabindex="-1"
   >
     This is a layer
   </div>
@@ -2891,6 +2911,7 @@ exports[`Layer non-modal 1`] = `
     class="c1"
     data-g-portal-id="0"
     id="non-modal-test"
+    tabindex="-1"
   >
     This is a non-modal layer
   </div>
@@ -2985,6 +3006,7 @@ exports[`Layer not steal focus from an autofocus focusable element 1`] = `
   class="c0"
   data-g-portal-id="0"
   data-testid="focus-layer-input-test"
+  tabindex="-1"
 >
   <input
     data-testid="focus-input"
@@ -3083,6 +3105,7 @@ exports[`Layer plain 1`] = `
     class="c2"
     data-g-portal-id="0"
     id="plain-test"
+    tabindex="-1"
   >
     This is a plain layer
   </div>
@@ -3224,6 +3247,7 @@ exports[`Layer position: bottom - full: false 1`] = `
     class="c2"
     data-g-portal-id="0"
     id="position-full-test"
+    tabindex="-1"
   >
     This is a layer
   </div>
@@ -3366,6 +3390,7 @@ exports[`Layer position: bottom - full: horizontal 1`] = `
     class="c2"
     data-g-portal-id="0"
     id="position-full-test"
+    tabindex="-1"
   >
     This is a layer
   </div>
@@ -3509,6 +3534,7 @@ exports[`Layer position: bottom - full: true 1`] = `
     class="c2"
     data-g-portal-id="0"
     id="position-full-test"
+    tabindex="-1"
   >
     This is a layer
   </div>
@@ -3651,6 +3677,7 @@ exports[`Layer position: bottom - full: vertical 1`] = `
     class="c2"
     data-g-portal-id="0"
     id="position-full-test"
+    tabindex="-1"
   >
     This is a layer
   </div>
@@ -3792,6 +3819,7 @@ exports[`Layer position: bottom-left - full: false 1`] = `
     class="c2"
     data-g-portal-id="0"
     id="position-full-test"
+    tabindex="-1"
   >
     This is a layer
   </div>
@@ -3934,6 +3962,7 @@ exports[`Layer position: bottom-left - full: horizontal 1`] = `
     class="c2"
     data-g-portal-id="0"
     id="position-full-test"
+    tabindex="-1"
   >
     This is a layer
   </div>
@@ -4077,6 +4106,7 @@ exports[`Layer position: bottom-left - full: true 1`] = `
     class="c2"
     data-g-portal-id="0"
     id="position-full-test"
+    tabindex="-1"
   >
     This is a layer
   </div>
@@ -4219,6 +4249,7 @@ exports[`Layer position: bottom-left - full: vertical 1`] = `
     class="c2"
     data-g-portal-id="0"
     id="position-full-test"
+    tabindex="-1"
   >
     This is a layer
   </div>
@@ -4360,6 +4391,7 @@ exports[`Layer position: bottom-right - full: false 1`] = `
     class="c2"
     data-g-portal-id="0"
     id="position-full-test"
+    tabindex="-1"
   >
     This is a layer
   </div>
@@ -4502,6 +4534,7 @@ exports[`Layer position: bottom-right - full: horizontal 1`] = `
     class="c2"
     data-g-portal-id="0"
     id="position-full-test"
+    tabindex="-1"
   >
     This is a layer
   </div>
@@ -4645,6 +4678,7 @@ exports[`Layer position: bottom-right - full: true 1`] = `
     class="c2"
     data-g-portal-id="0"
     id="position-full-test"
+    tabindex="-1"
   >
     This is a layer
   </div>
@@ -4787,6 +4821,7 @@ exports[`Layer position: bottom-right - full: vertical 1`] = `
     class="c2"
     data-g-portal-id="0"
     id="position-full-test"
+    tabindex="-1"
   >
     This is a layer
   </div>
@@ -4928,6 +4963,7 @@ exports[`Layer position: center - full: false 1`] = `
     class="c2"
     data-g-portal-id="0"
     id="position-full-test"
+    tabindex="-1"
   >
     This is a layer
   </div>
@@ -5070,6 +5106,7 @@ exports[`Layer position: center - full: horizontal 1`] = `
     class="c2"
     data-g-portal-id="0"
     id="position-full-test"
+    tabindex="-1"
   >
     This is a layer
   </div>
@@ -5212,6 +5249,7 @@ exports[`Layer position: center - full: true 1`] = `
     class="c2"
     data-g-portal-id="0"
     id="position-full-test"
+    tabindex="-1"
   >
     This is a layer
   </div>
@@ -5354,6 +5392,7 @@ exports[`Layer position: center - full: vertical 1`] = `
     class="c2"
     data-g-portal-id="0"
     id="position-full-test"
+    tabindex="-1"
   >
     This is a layer
   </div>
@@ -5495,6 +5534,7 @@ exports[`Layer position: end - full: false 1`] = `
     class="c2"
     data-g-portal-id="0"
     id="position-full-test"
+    tabindex="-1"
   >
     This is a layer
   </div>
@@ -5637,6 +5677,7 @@ exports[`Layer position: end - full: horizontal 1`] = `
     class="c2"
     data-g-portal-id="0"
     id="position-full-test"
+    tabindex="-1"
   >
     This is a layer
   </div>
@@ -5780,6 +5821,7 @@ exports[`Layer position: end - full: true 1`] = `
     class="c2"
     data-g-portal-id="0"
     id="position-full-test"
+    tabindex="-1"
   >
     This is a layer
   </div>
@@ -5922,6 +5964,7 @@ exports[`Layer position: end - full: vertical 1`] = `
     class="c2"
     data-g-portal-id="0"
     id="position-full-test"
+    tabindex="-1"
   >
     This is a layer
   </div>
@@ -6063,6 +6106,7 @@ exports[`Layer position: left - full: false 1`] = `
     class="c2"
     data-g-portal-id="0"
     id="position-full-test"
+    tabindex="-1"
   >
     This is a layer
   </div>
@@ -6205,6 +6249,7 @@ exports[`Layer position: left - full: horizontal 1`] = `
     class="c2"
     data-g-portal-id="0"
     id="position-full-test"
+    tabindex="-1"
   >
     This is a layer
   </div>
@@ -6348,6 +6393,7 @@ exports[`Layer position: left - full: true 1`] = `
     class="c2"
     data-g-portal-id="0"
     id="position-full-test"
+    tabindex="-1"
   >
     This is a layer
   </div>
@@ -6490,6 +6536,7 @@ exports[`Layer position: left - full: vertical 1`] = `
     class="c2"
     data-g-portal-id="0"
     id="position-full-test"
+    tabindex="-1"
   >
     This is a layer
   </div>
@@ -6631,6 +6678,7 @@ exports[`Layer position: right - full: false 1`] = `
     class="c2"
     data-g-portal-id="0"
     id="position-full-test"
+    tabindex="-1"
   >
     This is a layer
   </div>
@@ -6773,6 +6821,7 @@ exports[`Layer position: right - full: horizontal 1`] = `
     class="c2"
     data-g-portal-id="0"
     id="position-full-test"
+    tabindex="-1"
   >
     This is a layer
   </div>
@@ -6916,6 +6965,7 @@ exports[`Layer position: right - full: true 1`] = `
     class="c2"
     data-g-portal-id="0"
     id="position-full-test"
+    tabindex="-1"
   >
     This is a layer
   </div>
@@ -7058,6 +7108,7 @@ exports[`Layer position: right - full: vertical 1`] = `
     class="c2"
     data-g-portal-id="0"
     id="position-full-test"
+    tabindex="-1"
   >
     This is a layer
   </div>
@@ -7199,6 +7250,7 @@ exports[`Layer position: start - full: false 1`] = `
     class="c2"
     data-g-portal-id="0"
     id="position-full-test"
+    tabindex="-1"
   >
     This is a layer
   </div>
@@ -7341,6 +7393,7 @@ exports[`Layer position: start - full: horizontal 1`] = `
     class="c2"
     data-g-portal-id="0"
     id="position-full-test"
+    tabindex="-1"
   >
     This is a layer
   </div>
@@ -7484,6 +7537,7 @@ exports[`Layer position: start - full: true 1`] = `
     class="c2"
     data-g-portal-id="0"
     id="position-full-test"
+    tabindex="-1"
   >
     This is a layer
   </div>
@@ -7626,6 +7680,7 @@ exports[`Layer position: start - full: vertical 1`] = `
     class="c2"
     data-g-portal-id="0"
     id="position-full-test"
+    tabindex="-1"
   >
     This is a layer
   </div>
@@ -7767,6 +7822,7 @@ exports[`Layer position: top - full: false 1`] = `
     class="c2"
     data-g-portal-id="0"
     id="position-full-test"
+    tabindex="-1"
   >
     This is a layer
   </div>
@@ -7909,6 +7965,7 @@ exports[`Layer position: top - full: horizontal 1`] = `
     class="c2"
     data-g-portal-id="0"
     id="position-full-test"
+    tabindex="-1"
   >
     This is a layer
   </div>
@@ -8052,6 +8109,7 @@ exports[`Layer position: top - full: true 1`] = `
     class="c2"
     data-g-portal-id="0"
     id="position-full-test"
+    tabindex="-1"
   >
     This is a layer
   </div>
@@ -8194,6 +8252,7 @@ exports[`Layer position: top - full: vertical 1`] = `
     class="c2"
     data-g-portal-id="0"
     id="position-full-test"
+    tabindex="-1"
   >
     This is a layer
   </div>
@@ -8335,6 +8394,7 @@ exports[`Layer position: top-left - full: false 1`] = `
     class="c2"
     data-g-portal-id="0"
     id="position-full-test"
+    tabindex="-1"
   >
     This is a layer
   </div>
@@ -8477,6 +8537,7 @@ exports[`Layer position: top-left - full: horizontal 1`] = `
     class="c2"
     data-g-portal-id="0"
     id="position-full-test"
+    tabindex="-1"
   >
     This is a layer
   </div>
@@ -8620,6 +8681,7 @@ exports[`Layer position: top-left - full: true 1`] = `
     class="c2"
     data-g-portal-id="0"
     id="position-full-test"
+    tabindex="-1"
   >
     This is a layer
   </div>
@@ -8762,6 +8824,7 @@ exports[`Layer position: top-left - full: vertical 1`] = `
     class="c2"
     data-g-portal-id="0"
     id="position-full-test"
+    tabindex="-1"
   >
     This is a layer
   </div>
@@ -8903,6 +8966,7 @@ exports[`Layer position: top-right - full: false 1`] = `
     class="c2"
     data-g-portal-id="0"
     id="position-full-test"
+    tabindex="-1"
   >
     This is a layer
   </div>
@@ -9045,6 +9109,7 @@ exports[`Layer position: top-right - full: horizontal 1`] = `
     class="c2"
     data-g-portal-id="0"
     id="position-full-test"
+    tabindex="-1"
   >
     This is a layer
   </div>
@@ -9188,6 +9253,7 @@ exports[`Layer position: top-right - full: true 1`] = `
     class="c2"
     data-g-portal-id="0"
     id="position-full-test"
+    tabindex="-1"
   >
     This is a layer
   </div>
@@ -9330,6 +9396,7 @@ exports[`Layer position: top-right - full: vertical 1`] = `
     class="c2"
     data-g-portal-id="0"
     id="position-full-test"
+    tabindex="-1"
   >
     This is a layer
   </div>
@@ -9471,6 +9538,7 @@ exports[`Layer renders outside grommet wrapper 1`] = `
     class="c2"
     data-g-portal-id="0"
     id="grommet-test"
+    tabindex="-1"
   >
     This is layer
   </div>
@@ -9612,6 +9680,7 @@ exports[`Layer should apply background 1`] = `
     class="c2"
     data-g-portal-id="0"
     id="margin-test"
+    tabindex="-1"
   >
     This is a layer
   </div>
@@ -9752,6 +9821,7 @@ exports[`Layer should only place id on StyledLayer when singleId === true 1`] = 
     class="c2"
     data-g-portal-id="0"
     id="singleId-test__container"
+    tabindex="-1"
   >
     This is a layer
   </div>
@@ -9894,6 +9964,7 @@ exports[`Layer should render correct border radius for position: bottom -
     class="c2"
     data-g-portal-id="0"
     id="border-radius-test"
+    tabindex="-1"
   >
     This is a layer
   </div>
@@ -10038,6 +10109,7 @@ exports[`Layer should render correct border radius for position: bottom -
     class="c2"
     data-g-portal-id="0"
     id="border-radius-test"
+    tabindex="-1"
   >
     This is a layer
   </div>
@@ -10183,6 +10255,7 @@ exports[`Layer should render correct border radius for position: bottom -
     class="c2"
     data-g-portal-id="0"
     id="border-radius-test"
+    tabindex="-1"
   >
     This is a layer
   </div>
@@ -10327,6 +10400,7 @@ exports[`Layer should render correct border radius for position: bottom -
     class="c2"
     data-g-portal-id="0"
     id="border-radius-test"
+    tabindex="-1"
   >
     This is a layer
   </div>
@@ -10470,6 +10544,7 @@ exports[`Layer should render correct border radius for position: bottom-left -
     class="c2"
     data-g-portal-id="0"
     id="border-radius-test"
+    tabindex="-1"
   >
     This is a layer
   </div>
@@ -10614,6 +10689,7 @@ exports[`Layer should render correct border radius for position: bottom-left -
     class="c2"
     data-g-portal-id="0"
     id="border-radius-test"
+    tabindex="-1"
   >
     This is a layer
   </div>
@@ -10759,6 +10835,7 @@ exports[`Layer should render correct border radius for position: bottom-left -
     class="c2"
     data-g-portal-id="0"
     id="border-radius-test"
+    tabindex="-1"
   >
     This is a layer
   </div>
@@ -10903,6 +10980,7 @@ exports[`Layer should render correct border radius for position: bottom-left -
     class="c2"
     data-g-portal-id="0"
     id="border-radius-test"
+    tabindex="-1"
   >
     This is a layer
   </div>
@@ -11046,6 +11124,7 @@ exports[`Layer should render correct border radius for position: bottom-right -
     class="c2"
     data-g-portal-id="0"
     id="border-radius-test"
+    tabindex="-1"
   >
     This is a layer
   </div>
@@ -11190,6 +11269,7 @@ exports[`Layer should render correct border radius for position: bottom-right -
     class="c2"
     data-g-portal-id="0"
     id="border-radius-test"
+    tabindex="-1"
   >
     This is a layer
   </div>
@@ -11335,6 +11415,7 @@ exports[`Layer should render correct border radius for position: bottom-right -
     class="c2"
     data-g-portal-id="0"
     id="border-radius-test"
+    tabindex="-1"
   >
     This is a layer
   </div>
@@ -11479,6 +11560,7 @@ exports[`Layer should render correct border radius for position: bottom-right -
     class="c2"
     data-g-portal-id="0"
     id="border-radius-test"
+    tabindex="-1"
   >
     This is a layer
   </div>
@@ -11622,6 +11704,7 @@ exports[`Layer should render correct border radius for position: center -
     class="c2"
     data-g-portal-id="0"
     id="border-radius-test"
+    tabindex="-1"
   >
     This is a layer
   </div>
@@ -11766,6 +11849,7 @@ exports[`Layer should render correct border radius for position: center -
     class="c2"
     data-g-portal-id="0"
     id="border-radius-test"
+    tabindex="-1"
   >
     This is a layer
   </div>
@@ -11910,6 +11994,7 @@ exports[`Layer should render correct border radius for position: center -
     class="c2"
     data-g-portal-id="0"
     id="border-radius-test"
+    tabindex="-1"
   >
     This is a layer
   </div>
@@ -12054,6 +12139,7 @@ exports[`Layer should render correct border radius for position: center -
     class="c2"
     data-g-portal-id="0"
     id="border-radius-test"
+    tabindex="-1"
   >
     This is a layer
   </div>
@@ -12198,6 +12284,7 @@ exports[`Layer should render correct border radius for position: end -
     class="c2"
     data-g-portal-id="0"
     id="border-radius-test"
+    tabindex="-1"
   >
     This is a layer
   </div>
@@ -12342,6 +12429,7 @@ exports[`Layer should render correct border radius for position: end -
     class="c2"
     data-g-portal-id="0"
     id="border-radius-test"
+    tabindex="-1"
   >
     This is a layer
   </div>
@@ -12487,6 +12575,7 @@ exports[`Layer should render correct border radius for position: end -
     class="c2"
     data-g-portal-id="0"
     id="border-radius-test"
+    tabindex="-1"
   >
     This is a layer
   </div>
@@ -12631,6 +12720,7 @@ exports[`Layer should render correct border radius for position: end -
     class="c2"
     data-g-portal-id="0"
     id="border-radius-test"
+    tabindex="-1"
   >
     This is a layer
   </div>
@@ -12774,6 +12864,7 @@ exports[`Layer should render correct border radius for position: left -
     class="c2"
     data-g-portal-id="0"
     id="border-radius-test"
+    tabindex="-1"
   >
     This is a layer
   </div>
@@ -12918,6 +13009,7 @@ exports[`Layer should render correct border radius for position: left -
     class="c2"
     data-g-portal-id="0"
     id="border-radius-test"
+    tabindex="-1"
   >
     This is a layer
   </div>
@@ -13063,6 +13155,7 @@ exports[`Layer should render correct border radius for position: left -
     class="c2"
     data-g-portal-id="0"
     id="border-radius-test"
+    tabindex="-1"
   >
     This is a layer
   </div>
@@ -13207,6 +13300,7 @@ exports[`Layer should render correct border radius for position: left -
     class="c2"
     data-g-portal-id="0"
     id="border-radius-test"
+    tabindex="-1"
   >
     This is a layer
   </div>
@@ -13350,6 +13444,7 @@ exports[`Layer should render correct border radius for position: right -
     class="c2"
     data-g-portal-id="0"
     id="border-radius-test"
+    tabindex="-1"
   >
     This is a layer
   </div>
@@ -13494,6 +13589,7 @@ exports[`Layer should render correct border radius for position: right -
     class="c2"
     data-g-portal-id="0"
     id="border-radius-test"
+    tabindex="-1"
   >
     This is a layer
   </div>
@@ -13639,6 +13735,7 @@ exports[`Layer should render correct border radius for position: right -
     class="c2"
     data-g-portal-id="0"
     id="border-radius-test"
+    tabindex="-1"
   >
     This is a layer
   </div>
@@ -13783,6 +13880,7 @@ exports[`Layer should render correct border radius for position: right -
     class="c2"
     data-g-portal-id="0"
     id="border-radius-test"
+    tabindex="-1"
   >
     This is a layer
   </div>
@@ -13927,6 +14025,7 @@ exports[`Layer should render correct border radius for position: start -
     class="c2"
     data-g-portal-id="0"
     id="border-radius-test"
+    tabindex="-1"
   >
     This is a layer
   </div>
@@ -14071,6 +14170,7 @@ exports[`Layer should render correct border radius for position: start -
     class="c2"
     data-g-portal-id="0"
     id="border-radius-test"
+    tabindex="-1"
   >
     This is a layer
   </div>
@@ -14216,6 +14316,7 @@ exports[`Layer should render correct border radius for position: start -
     class="c2"
     data-g-portal-id="0"
     id="border-radius-test"
+    tabindex="-1"
   >
     This is a layer
   </div>
@@ -14360,6 +14461,7 @@ exports[`Layer should render correct border radius for position: start -
     class="c2"
     data-g-portal-id="0"
     id="border-radius-test"
+    tabindex="-1"
   >
     This is a layer
   </div>
@@ -14503,6 +14605,7 @@ exports[`Layer should render correct border radius for position: top -
     class="c2"
     data-g-portal-id="0"
     id="border-radius-test"
+    tabindex="-1"
   >
     This is a layer
   </div>
@@ -14647,6 +14750,7 @@ exports[`Layer should render correct border radius for position: top -
     class="c2"
     data-g-portal-id="0"
     id="border-radius-test"
+    tabindex="-1"
   >
     This is a layer
   </div>
@@ -14792,6 +14896,7 @@ exports[`Layer should render correct border radius for position: top -
     class="c2"
     data-g-portal-id="0"
     id="border-radius-test"
+    tabindex="-1"
   >
     This is a layer
   </div>
@@ -14936,6 +15041,7 @@ exports[`Layer should render correct border radius for position: top -
     class="c2"
     data-g-portal-id="0"
     id="border-radius-test"
+    tabindex="-1"
   >
     This is a layer
   </div>
@@ -15079,6 +15185,7 @@ exports[`Layer should render correct border radius for position: top-left -
     class="c2"
     data-g-portal-id="0"
     id="border-radius-test"
+    tabindex="-1"
   >
     This is a layer
   </div>
@@ -15223,6 +15330,7 @@ exports[`Layer should render correct border radius for position: top-left -
     class="c2"
     data-g-portal-id="0"
     id="border-radius-test"
+    tabindex="-1"
   >
     This is a layer
   </div>
@@ -15368,6 +15476,7 @@ exports[`Layer should render correct border radius for position: top-left -
     class="c2"
     data-g-portal-id="0"
     id="border-radius-test"
+    tabindex="-1"
   >
     This is a layer
   </div>
@@ -15512,6 +15621,7 @@ exports[`Layer should render correct border radius for position: top-left -
     class="c2"
     data-g-portal-id="0"
     id="border-radius-test"
+    tabindex="-1"
   >
     This is a layer
   </div>
@@ -15655,6 +15765,7 @@ exports[`Layer should render correct border radius for position: top-right -
     class="c2"
     data-g-portal-id="0"
     id="border-radius-test"
+    tabindex="-1"
   >
     This is a layer
   </div>
@@ -15799,6 +15910,7 @@ exports[`Layer should render correct border radius for position: top-right -
     class="c2"
     data-g-portal-id="0"
     id="border-radius-test"
+    tabindex="-1"
   >
     This is a layer
   </div>
@@ -15944,6 +16056,7 @@ exports[`Layer should render correct border radius for position: top-right -
     class="c2"
     data-g-portal-id="0"
     id="border-radius-test"
+    tabindex="-1"
   >
     This is a layer
   </div>
@@ -16088,6 +16201,7 @@ exports[`Layer should render correct border radius for position: top-right -
     class="c2"
     data-g-portal-id="0"
     id="border-radius-test"
+    tabindex="-1"
   >
     This is a layer
   </div>
@@ -16222,6 +16336,7 @@ exports[`Layer target 1`] = `
     class="c2"
     data-g-portal-id="0"
     id="target-test"
+    tabindex="-1"
   >
     this is a test layer
   </div>
@@ -16322,6 +16437,7 @@ exports[`Layer target not modal 1`] = `
     class="c1"
     data-g-portal-id="0"
     id="target-test"
+    tabindex="-1"
   >
     this is a test layer
   </div>

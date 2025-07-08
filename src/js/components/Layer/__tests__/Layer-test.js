@@ -293,7 +293,7 @@ describe('Layer', () => {
 
     const layerNode = getByTestId(document, 'focus-layer-test');
     expect(layerNode).toMatchSnapshot();
-    expect(document.activeElement.nodeName).toBe('INPUT');
+    expect(document.activeElement.nodeName).toBe('DIV');
   });
 
   test('not steal focus from an autofocus focusable element', () => {
