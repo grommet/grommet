@@ -297,7 +297,9 @@ const StyledButtonKind = styled.button.withConfig({
     props.disabled && disabledStyle(props.theme.button.disabled.opacity)}
 
   &:focus {
-    ${(props) => (!props.plain || props.focusIndicator) && focusStyle()}
+    ${(props) =>
+      (!props.plain || props.focusIndicator) &&
+      focusStyle({ inset: props.focusIndicator === 'inset' })}
   }
 
   &:focus:not(:focus-visible) {

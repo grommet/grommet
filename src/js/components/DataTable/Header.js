@@ -382,6 +382,7 @@ const Header = forwardRef(
                     plain
                     column={property}
                     fill="vertical"
+                    focusIndicator={size ? 'inset' : undefined}
                     onClick={onSort(property)}
                     sort={sort}
                     pad={cellProps.pad}
@@ -426,6 +427,7 @@ const Header = forwardRef(
                     <Searcher
                       filtering={filtering}
                       filters={filters}
+                      focusIndicator={size ? 'inset' : undefined}
                       messages={messages}
                       property={property}
                       onFilter={onFilter}
