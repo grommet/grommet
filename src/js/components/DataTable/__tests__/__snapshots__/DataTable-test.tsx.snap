@@ -6263,8 +6263,8 @@ exports[`DataTable groupBy 0 value 1`] = `
 }
 
 .c5:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: -2px;
+  outline: 2px solid #6FFFB0;
 }
 
 .c5:focus >circle,
@@ -6829,8 +6829,8 @@ exports[`DataTable groupBy 1`] = `
 }
 
 .c5:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: -2px;
+  outline: 2px solid #6FFFB0;
 }
 
 .c5:focus >circle,
@@ -7211,7 +7211,7 @@ exports[`DataTable groupBy 2`] = `
             <button
               aria-expanded="false"
               aria-label="expand"
-              class="StyledButton-sc-323bzc-0 dxVqvw"
+              class="StyledButton-sc-323bzc-0 cuylbq"
               type="button"
             >
               <div
@@ -7279,7 +7279,7 @@ exports[`DataTable groupBy 2`] = `
             <button
               aria-expanded="false"
               aria-label="expand"
-              class="StyledButton-sc-323bzc-0 dxVqvw"
+              class="StyledButton-sc-323bzc-0 cuylbq"
               type="button"
             >
               <div
@@ -7336,7 +7336,7 @@ exports[`DataTable groupBy 2`] = `
             <button
               aria-expanded="false"
               aria-label="expand"
-              class="StyledButton-sc-323bzc-0 dxVqvw"
+              class="StyledButton-sc-323bzc-0 cuylbq"
               type="button"
             >
               <div
@@ -7548,8 +7548,8 @@ exports[`DataTable groupBy expand 1`] = `
 }
 
 .c5:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: -2px;
+  outline: 2px solid #6FFFB0;
 }
 
 .c5:focus >circle,
@@ -8142,8 +8142,8 @@ exports[`DataTable groupBy property 1`] = `
 }
 
 .c5:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: -2px;
+  outline: 2px solid #6FFFB0;
 }
 
 .c5:focus >circle,
@@ -8524,7 +8524,7 @@ exports[`DataTable groupBy property 2`] = `
             <button
               aria-expanded="false"
               aria-label="expand"
-              class="StyledButton-sc-323bzc-0 dxVqvw"
+              class="StyledButton-sc-323bzc-0 cuylbq"
               type="button"
             >
               <div
@@ -8592,7 +8592,7 @@ exports[`DataTable groupBy property 2`] = `
             <button
               aria-expanded="false"
               aria-label="expand"
-              class="StyledButton-sc-323bzc-0 dxVqvw"
+              class="StyledButton-sc-323bzc-0 cuylbq"
               type="button"
             >
               <div
@@ -8649,7 +8649,7 @@ exports[`DataTable groupBy property 2`] = `
             <button
               aria-expanded="false"
               aria-label="expand"
-              class="StyledButton-sc-323bzc-0 dxVqvw"
+              class="StyledButton-sc-323bzc-0 cuylbq"
               type="button"
             >
               <div
@@ -9107,8 +9107,8 @@ exports[`DataTable groupBy toggle 2`] = `
 }
 
 .c2:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: -2px;
+  outline: 2px solid #6FFFB0;
 }
 
 .c2:focus >circle,
@@ -9334,8 +9334,8 @@ exports[`DataTable groupBy toggle 2`] = `
 }
 
 .c4:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: -2px;
+  outline: 2px solid #6FFFB0;
 }
 
 .c4:focus >circle,
@@ -10064,8 +10064,8 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
 }
 
 .c5:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: -2px;
+  outline: 2px solid #6FFFB0;
 }
 
 .c5:focus >circle,
@@ -10927,8 +10927,8 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
 }
 
 .c5:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: -2px;
+  outline: 2px solid #6FFFB0;
 }
 
 .c5:focus >circle,
@@ -11627,8 +11627,8 @@ exports[`DataTable onSelect + groupBy should select all items within a group 1`]
 }
 
 .c5:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: -2px;
+  outline: 2px solid #6FFFB0;
 }
 
 .c5:focus >circle,
@@ -12318,8 +12318,8 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 1`
 }
 
 .c5:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: -2px;
+  outline: 2px solid #6FFFB0;
 }
 
 .c5:focus >circle,
@@ -12839,7 +12839,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 2`
             <button
               aria-expanded="false"
               aria-label="expand"
-              class="StyledButton-sc-323bzc-0 dxVqvw"
+              class="StyledButton-sc-323bzc-0 cuylbq"
               type="button"
             >
               <div
@@ -12968,7 +12968,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 2`
             <button
               aria-expanded="false"
               aria-label="expand"
-              class="StyledButton-sc-323bzc-0 dxVqvw"
+              class="StyledButton-sc-323bzc-0 cuylbq"
               type="button"
             >
               <div
@@ -13085,7 +13085,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 2`
             <button
               aria-expanded="false"
               aria-label="expand"
-              class="StyledButton-sc-323bzc-0 dxVqvw"
+              class="StyledButton-sc-323bzc-0 cuylbq"
               type="button"
             >
               <div
@@ -13217,7 +13217,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 3`
             <button
               aria-expanded="false"
               aria-label="expand"
-              class="StyledButton-sc-323bzc-0 dxVqvw"
+              class="StyledButton-sc-323bzc-0 cuylbq"
               type="button"
             >
               <div
@@ -13311,7 +13311,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 3`
             <button
               aria-expanded="false"
               aria-label="expand"
-              class="StyledButton-sc-323bzc-0 dxVqvw"
+              class="StyledButton-sc-323bzc-0 cuylbq"
               type="button"
             >
               <div
@@ -13393,7 +13393,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 3`
             <button
               aria-expanded="false"
               aria-label="expand"
-              class="StyledButton-sc-323bzc-0 dxVqvw"
+              class="StyledButton-sc-323bzc-0 cuylbq"
               type="button"
             >
               <div
@@ -16103,8 +16103,8 @@ exports[`DataTable onUpdate groupBy.onSelect 1`] = `
 }
 
 .c4:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: -2px;
+  outline: 2px solid #6FFFB0;
 }
 
 .c4:focus >circle,
@@ -21613,8 +21613,8 @@ exports[`DataTable rowDetails 1`] = `
 }
 
 .c11:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: -2px;
+  outline: 2px solid #6FFFB0;
 }
 
 .c11:focus >circle,
@@ -22222,8 +22222,8 @@ exports[`DataTable rowDetails condtional 1`] = `
 }
 
 .c11:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: -2px;
+  outline: 2px solid #6FFFB0;
 }
 
 .c11:focus >circle,
@@ -23152,8 +23152,8 @@ exports[`DataTable rowProps on group header rows 1`] = `
 }
 
 .c5:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: -2px;
+  outline: 2px solid #6FFFB0;
 }
 
 .c5:focus >circle,
@@ -25395,8 +25395,8 @@ exports[`DataTable should apply custom theme for groupHeader 1`] = `
 }
 
 .c5:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: -2px;
+  outline: 2px solid #6FFFB0;
 }
 
 .c5:focus >circle,
@@ -28928,8 +28928,8 @@ exports[`DataTable should apply theme for selected row detail parent only 1`] = 
 }
 
 .c19:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: -2px;
+  outline: 2px solid #6FFFB0;
 }
 
 .c19:focus >circle,
@@ -29696,8 +29696,8 @@ exports[`DataTable should apply theme for selected row group 1`] = `
 }
 
 .c5:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: -2px;
+  outline: 2px solid #6FFFB0;
 }
 
 .c5:focus >circle,

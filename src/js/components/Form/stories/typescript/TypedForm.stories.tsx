@@ -84,7 +84,12 @@ export const TypedForm = () => {
           <FormField name="subscribe" pad>
             <CheckBox label="Subscribe?" name="subscribe" id="subscribe" />
           </FormField>
-          <FormField name="ampm" pad options={['morning', 'evening']}>
+          <FormField
+            label="Time of day"
+            name="ampm"
+            pad
+            options={['morning', 'evening']}
+          >
             <RadioButtonGroup
               name="ampm"
               id="ampm"
