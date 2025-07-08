@@ -225,7 +225,7 @@ describe('RangeSelector', () => {
     const lowerHandle = lowerControl.parentElement?.querySelector('div');
     if (lowerHandle) {
       fireEvent.mouseDown(lowerHandle);
-      fireEvent.mouseMove(document, { clientX: 31, clientY: 20 });
+      fireEvent.mouseMove(lowerHandle, { clientX: 31, clientY: 20 });
       fireEvent.mouseUp(document);
       expect(onChange).toHaveBeenCalled();
       expect(values).toStrictEqual([33, 100]);
