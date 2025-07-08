@@ -9,7 +9,6 @@ import { EdgeControl } from './EdgeControl';
 import { FormContext } from '../Form/FormContext';
 import { Text } from '../Text';
 import { parseMetricToNum } from '../../utils';
-import { MessageContext } from '../../contexts/MessageContext';
 import { RangeSelectorPropTypes } from './propTypes';
 import { DataFormContext } from '../../contexts/DataFormContext';
 import { useThemeValue } from '../../utils/useThemeValue';
@@ -69,8 +68,6 @@ var RangeSelector = /*#__PURE__*/forwardRef(function (_ref, ref) {
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
   var _useThemeValue = useThemeValue(),
     theme = _useThemeValue.theme;
-  var _useContext = useContext(MessageContext),
-    format = _useContext.format;
   var formContext = useContext(FormContext);
   var _useState = useState(),
     changing = _useState[0],
@@ -96,8 +93,8 @@ var RangeSelector = /*#__PURE__*/forwardRef(function (_ref, ref) {
     setValues = _formContext$useFormI[1];
 
   // for DataFilters to know when RangeSelector is set to its min/max
-  var _useContext2 = useContext(DataFormContext),
-    pendingReset = _useContext2.pendingReset;
+  var _useContext = useContext(DataFormContext),
+    pendingReset = _useContext.pendingReset;
   var updatePendingReset = useCallback(function (nextMin, nextMax) {
     var _pendingReset$current;
     if (nextMin === min && nextMax === max) {
@@ -245,20 +242,16 @@ var RangeSelector = /*#__PURE__*/forwardRef(function (_ref, ref) {
       dark: theme.dark
     } : undefined
   }, layoutProps)), /*#__PURE__*/React.createElement(EdgeControl, {
-    a11yTitle: format({
-      id: 'rangeSelector.lower',
-      messages: messages
-    }),
-    role: "slider",
-    "aria-valuenow": lower,
-    "aria-valuemin": min,
-    "aria-valuemax": max,
-    tabIndex: 0,
     ref: ref,
     color: color,
     direction: direction,
     thickness: thickness,
     edge: "lower",
+    min: min,
+    max: max,
+    messages: messages,
+    value: lower,
+    step: step,
     onMouseDown: function onMouseDown() {
       return setChanging('lower');
     },
@@ -293,19 +286,14 @@ var RangeSelector = /*#__PURE__*/forwardRef(function (_ref, ref) {
       setMoveValue(nextMoveValue);
     }
   })), /*#__PURE__*/React.createElement(EdgeControl, {
-    a11yTitle: format({
-      id: 'rangeSelector.upper',
-      messages: messages
-    }),
-    role: "slider",
-    "aria-valuenow": upper,
-    "aria-valuemin": min,
-    "aria-valuemax": max,
-    tabIndex: 0,
     color: color,
     direction: direction,
     thickness: thickness,
     edge: "upper",
+    min: min,
+    max: max,
+    value: upper,
+    step: step,
     onMouseDown: function onMouseDown() {
       return setChanging('upper');
     },

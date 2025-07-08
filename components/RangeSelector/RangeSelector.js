@@ -10,7 +10,6 @@ var _EdgeControl = require("./EdgeControl");
 var _FormContext = require("../Form/FormContext");
 var _Text = require("../Text");
 var _utils = require("../../utils");
-var _MessageContext = require("../../contexts/MessageContext");
 var _propTypes = require("./propTypes");
 var _DataFormContext = require("../../contexts/DataFormContext");
 var _useThemeValue2 = require("../../utils/useThemeValue");
@@ -75,8 +74,6 @@ var RangeSelector = exports.RangeSelector = /*#__PURE__*/(0, _react.forwardRef)(
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
   var _useThemeValue = (0, _useThemeValue2.useThemeValue)(),
     theme = _useThemeValue.theme;
-  var _useContext = (0, _react.useContext)(_MessageContext.MessageContext),
-    format = _useContext.format;
   var formContext = (0, _react.useContext)(_FormContext.FormContext);
   var _useState = (0, _react.useState)(),
     changing = _useState[0],
@@ -102,8 +99,8 @@ var RangeSelector = exports.RangeSelector = /*#__PURE__*/(0, _react.forwardRef)(
     setValues = _formContext$useFormI[1];
 
   // for DataFilters to know when RangeSelector is set to its min/max
-  var _useContext2 = (0, _react.useContext)(_DataFormContext.DataFormContext),
-    pendingReset = _useContext2.pendingReset;
+  var _useContext = (0, _react.useContext)(_DataFormContext.DataFormContext),
+    pendingReset = _useContext.pendingReset;
   var updatePendingReset = (0, _react.useCallback)(function (nextMin, nextMax) {
     var _pendingReset$current;
     if (nextMin === min && nextMax === max) {
@@ -251,20 +248,16 @@ var RangeSelector = exports.RangeSelector = /*#__PURE__*/(0, _react.forwardRef)(
       dark: theme.dark
     } : undefined
   }, layoutProps)), /*#__PURE__*/_react["default"].createElement(_EdgeControl.EdgeControl, {
-    a11yTitle: format({
-      id: 'rangeSelector.lower',
-      messages: messages
-    }),
-    role: "slider",
-    "aria-valuenow": lower,
-    "aria-valuemin": min,
-    "aria-valuemax": max,
-    tabIndex: 0,
     ref: ref,
     color: color,
     direction: direction,
     thickness: thickness,
     edge: "lower",
+    min: min,
+    max: max,
+    messages: messages,
+    value: lower,
+    step: step,
     onMouseDown: function onMouseDown() {
       return setChanging('lower');
     },
@@ -299,19 +292,14 @@ var RangeSelector = exports.RangeSelector = /*#__PURE__*/(0, _react.forwardRef)(
       setMoveValue(nextMoveValue);
     }
   })), /*#__PURE__*/_react["default"].createElement(_EdgeControl.EdgeControl, {
-    a11yTitle: format({
-      id: 'rangeSelector.upper',
-      messages: messages
-    }),
-    role: "slider",
-    "aria-valuenow": upper,
-    "aria-valuemin": min,
-    "aria-valuemax": max,
-    tabIndex: 0,
     color: color,
     direction: direction,
     thickness: thickness,
     edge: "upper",
+    min: min,
+    max: max,
+    value: upper,
+    step: step,
     onMouseDown: function onMouseDown() {
       return setChanging('upper');
     },

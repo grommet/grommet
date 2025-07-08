@@ -48,7 +48,7 @@ exports[`RangeSelector basic 1`] = `
   overflow: visible;
 }
 
-.c5 {
+.c6 {
   display: flex;
   box-sizing: border-box;
   align-items: center;
@@ -60,7 +60,7 @@ exports[`RangeSelector basic 1`] = `
   justify-content: center;
 }
 
-.c6 {
+.c7 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -74,7 +74,7 @@ exports[`RangeSelector basic 1`] = `
   border-radius: 100%;
 }
 
-.c7 {
+.c8 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -85,6 +85,16 @@ exports[`RangeSelector basic 1`] = `
   flex-direction: column;
   height: 24px;
   width: 100%;
+}
+
+.c5 {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 1px;
 }
 
 .c2 {
@@ -106,41 +116,57 @@ exports[`RangeSelector basic 1`] = `
       class="c4"
       style="flex: 0 0 1px;"
     >
-      <div
+      <input
         aria-label="Lower Bounds"
         aria-valuemax="100"
         aria-valuemin="0"
         aria-valuenow="20"
         class="c5"
-        role="slider"
+        max="100"
+        min="0"
+        readonly=""
+        step="1"
+        type="range"
+        value="20"
+      />
+      <div
+        class="c6"
         style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
-        tabindex="0"
+        tabindex="-1"
       >
         <div
-          class="c6 EdgeControl__StyledBox-sc-1xo2yt9-0"
+          class="c7 EdgeControl__StyledBox-sc-1xo2yt9-1"
         />
       </div>
     </div>
     <div
-      class="c7"
+      class="c8"
       style="flex: 11 0 0px; cursor: ew-resize;"
     />
     <div
       class="c4"
       style="flex: 0 0 1px;"
     >
-      <div
+      <input
         aria-label="Upper Bounds"
         aria-valuemax="100"
         aria-valuemin="0"
         aria-valuenow="30"
         class="c5"
-        role="slider"
+        max="100"
+        min="0"
+        readonly=""
+        step="1"
+        type="range"
+        value="30"
+      />
+      <div
+        class="c6"
         style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
-        tabindex="0"
+        tabindex="-1"
       >
         <div
-          class="c6 EdgeControl__StyledBox-sc-1xo2yt9-0"
+          class="c7 EdgeControl__StyledBox-sc-1xo2yt9-1"
         />
       </div>
     </div>
@@ -190,7 +216,7 @@ exports[`RangeSelector basic outside grommet wrapper 1`] = `
   overflow: visible;
 }
 
-.c4 {
+.c5 {
   display: flex;
   box-sizing: border-box;
   align-items: center;
@@ -202,7 +228,7 @@ exports[`RangeSelector basic outside grommet wrapper 1`] = `
   justify-content: center;
 }
 
-.c5 {
+.c6 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -216,7 +242,7 @@ exports[`RangeSelector basic outside grommet wrapper 1`] = `
   border-radius: 100%;
 }
 
-.c6 {
+.c7 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -227,6 +253,16 @@ exports[`RangeSelector basic outside grommet wrapper 1`] = `
   flex-direction: column;
   height: 24px;
   width: 100%;
+}
+
+.c4 {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 1px;
 }
 
 .c1 {
@@ -245,41 +281,57 @@ exports[`RangeSelector basic outside grommet wrapper 1`] = `
     class="c3"
     style="flex: 0 0 1px;"
   >
-    <div
+    <input
       aria-label="Lower Bounds"
       aria-valuemax="100"
       aria-valuemin="0"
       aria-valuenow="20"
       class="c4"
-      role="slider"
+      max="100"
+      min="0"
+      readonly=""
+      step="1"
+      type="range"
+      value="20"
+    />
+    <div
+      class="c5"
       style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
-      tabindex="0"
+      tabindex="-1"
     >
       <div
-        class="c5 EdgeControl__StyledBox-sc-1xo2yt9-0"
+        class="c6 EdgeControl__StyledBox-sc-1xo2yt9-1"
       />
     </div>
   </div>
   <div
-    class="c6"
+    class="c7"
     style="flex: 11 0 0px; cursor: ew-resize;"
   />
   <div
     class="c3"
     style="flex: 0 0 1px;"
   >
-    <div
+    <input
       aria-label="Upper Bounds"
       aria-valuemax="100"
       aria-valuemin="0"
       aria-valuenow="30"
       class="c4"
-      role="slider"
+      max="100"
+      min="0"
+      readonly=""
+      step="1"
+      type="range"
+      value="30"
+    />
+    <div
+      class="c5"
       style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
-      tabindex="0"
+      tabindex="-1"
     >
       <div
-        class="c5 EdgeControl__StyledBox-sc-1xo2yt9-0"
+        class="c6 EdgeControl__StyledBox-sc-1xo2yt9-1"
       />
     </div>
   </div>
@@ -338,7 +390,7 @@ exports[`RangeSelector basic with theme edge size 1`] = `
   overflow: visible;
 }
 
-.c5 {
+.c6 {
   display: flex;
   box-sizing: border-box;
   align-items: center;
@@ -350,7 +402,7 @@ exports[`RangeSelector basic with theme edge size 1`] = `
   justify-content: center;
 }
 
-.c6 {
+.c7 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -364,7 +416,7 @@ exports[`RangeSelector basic with theme edge size 1`] = `
   border-radius: 100%;
 }
 
-.c7 {
+.c8 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -375,6 +427,16 @@ exports[`RangeSelector basic with theme edge size 1`] = `
   flex-direction: column;
   height: 24px;
   width: 100%;
+}
+
+.c5 {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 1px;
 }
 
 .c2 {
@@ -396,41 +458,57 @@ exports[`RangeSelector basic with theme edge size 1`] = `
       class="c4"
       style="flex: 0 0 1px;"
     >
-      <div
+      <input
         aria-label="Lower Bounds"
         aria-valuemax="100"
         aria-valuemin="0"
         aria-valuenow="20"
         class="c5"
-        role="slider"
+        max="100"
+        min="0"
+        readonly=""
+        step="1"
+        type="range"
+        value="20"
+      />
+      <div
+        class="c6"
         style="cursor: col-resize; outline: none; min-width: 24px; min-height: 24px; z-index: 1;"
-        tabindex="0"
+        tabindex="-1"
       >
         <div
-          class="c6 EdgeControl__StyledBox-sc-1xo2yt9-0"
+          class="c7 EdgeControl__StyledBox-sc-1xo2yt9-1"
         />
       </div>
     </div>
     <div
-      class="c7"
+      class="c8"
       style="flex: 11 0 0px; cursor: ew-resize;"
     />
     <div
       class="c4"
       style="flex: 0 0 1px;"
     >
-      <div
+      <input
         aria-label="Upper Bounds"
         aria-valuemax="100"
         aria-valuemin="0"
         aria-valuenow="30"
         class="c5"
-        role="slider"
+        max="100"
+        min="0"
+        readonly=""
+        step="1"
+        type="range"
+        value="30"
+      />
+      <div
+        class="c6"
         style="cursor: col-resize; outline: none; min-width: 24px; min-height: 24px; z-index: 1;"
-        tabindex="0"
+        tabindex="-1"
       >
         <div
-          class="c6 EdgeControl__StyledBox-sc-1xo2yt9-0"
+          class="c7 EdgeControl__StyledBox-sc-1xo2yt9-1"
         />
       </div>
     </div>
@@ -490,7 +568,7 @@ exports[`RangeSelector color 1`] = `
   overflow: visible;
 }
 
-.c5 {
+.c6 {
   display: flex;
   box-sizing: border-box;
   align-items: center;
@@ -502,7 +580,7 @@ exports[`RangeSelector color 1`] = `
   justify-content: center;
 }
 
-.c6 {
+.c7 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -516,7 +594,7 @@ exports[`RangeSelector color 1`] = `
   border-radius: 100%;
 }
 
-.c7 {
+.c8 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -527,6 +605,16 @@ exports[`RangeSelector color 1`] = `
   flex-direction: column;
   height: 24px;
   width: 100%;
+}
+
+.c5 {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 1px;
 }
 
 .c2 {
@@ -548,41 +636,57 @@ exports[`RangeSelector color 1`] = `
       class="c4"
       style="flex: 0 0 1px;"
     >
-      <div
+      <input
         aria-label="Lower Bounds"
         aria-valuemax="100"
         aria-valuemin="0"
         aria-valuenow="20"
         class="c5"
-        role="slider"
+        max="100"
+        min="0"
+        readonly=""
+        step="1"
+        type="range"
+        value="20"
+      />
+      <div
+        class="c6"
         style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
-        tabindex="0"
+        tabindex="-1"
       >
         <div
-          class="c6 EdgeControl__StyledBox-sc-1xo2yt9-0"
+          class="c7 EdgeControl__StyledBox-sc-1xo2yt9-1"
         />
       </div>
     </div>
     <div
-      class="c7"
+      class="c8"
       style="flex: 11 0 0px; cursor: ew-resize;"
     />
     <div
       class="c4"
       style="flex: 0 0 1px;"
     >
-      <div
+      <input
         aria-label="Upper Bounds"
         aria-valuemax="100"
         aria-valuemin="0"
         aria-valuenow="30"
         class="c5"
-        role="slider"
+        max="100"
+        min="0"
+        readonly=""
+        step="1"
+        type="range"
+        value="30"
+      />
+      <div
+        class="c6"
         style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
-        tabindex="0"
+        tabindex="-1"
       >
         <div
-          class="c6 EdgeControl__StyledBox-sc-1xo2yt9-0"
+          class="c7 EdgeControl__StyledBox-sc-1xo2yt9-1"
         />
       </div>
     </div>
@@ -642,7 +746,7 @@ exports[`RangeSelector direction 1`] = `
   overflow: visible;
 }
 
-.c5 {
+.c6 {
   display: flex;
   box-sizing: border-box;
   align-items: center;
@@ -654,7 +758,7 @@ exports[`RangeSelector direction 1`] = `
   justify-content: center;
 }
 
-.c6 {
+.c7 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -668,7 +772,7 @@ exports[`RangeSelector direction 1`] = `
   border-radius: 100%;
 }
 
-.c7 {
+.c8 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -681,7 +785,7 @@ exports[`RangeSelector direction 1`] = `
   width: 100%;
 }
 
-.c8 {
+.c9 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -694,7 +798,7 @@ exports[`RangeSelector direction 1`] = `
   cursor: pointer;
 }
 
-.c9 {
+.c10 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -705,7 +809,7 @@ exports[`RangeSelector direction 1`] = `
   height: 100%;
 }
 
-.c10 {
+.c11 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -718,7 +822,7 @@ exports[`RangeSelector direction 1`] = `
   overflow: visible;
 }
 
-.c11 {
+.c12 {
   display: flex;
   box-sizing: border-box;
   align-items: center;
@@ -730,7 +834,7 @@ exports[`RangeSelector direction 1`] = `
   justify-content: center;
 }
 
-.c12 {
+.c13 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -741,6 +845,16 @@ exports[`RangeSelector direction 1`] = `
   flex-direction: column;
   width: 24px;
   height: 100%;
+}
+
+.c5 {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 1px;
 }
 
 .c2 {
@@ -762,41 +876,57 @@ exports[`RangeSelector direction 1`] = `
       class="c4"
       style="flex: 0 0 1px;"
     >
-      <div
+      <input
         aria-label="Lower Bounds"
         aria-valuemax="100"
         aria-valuemin="0"
         aria-valuenow="20"
         class="c5"
-        role="slider"
+        max="100"
+        min="0"
+        readonly=""
+        step="1"
+        type="range"
+        value="20"
+      />
+      <div
+        class="c6"
         style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
-        tabindex="0"
+        tabindex="-1"
       >
         <div
-          class="c6 EdgeControl__StyledBox-sc-1xo2yt9-0"
+          class="c7 EdgeControl__StyledBox-sc-1xo2yt9-1"
         />
       </div>
     </div>
     <div
-      class="c7"
+      class="c8"
       style="flex: 11 0 0px; cursor: ew-resize;"
     />
     <div
       class="c4"
       style="flex: 0 0 1px;"
     >
-      <div
+      <input
         aria-label="Upper Bounds"
         aria-valuemax="100"
         aria-valuemin="0"
         aria-valuenow="30"
         class="c5"
-        role="slider"
+        max="100"
+        min="0"
+        readonly=""
+        step="1"
+        type="range"
+        value="30"
+      />
+      <div
+        class="c6"
         style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
-        tabindex="0"
+        tabindex="-1"
       >
         <div
-          class="c6 EdgeControl__StyledBox-sc-1xo2yt9-0"
+          class="c7 EdgeControl__StyledBox-sc-1xo2yt9-1"
         />
       </div>
     </div>
@@ -806,57 +936,73 @@ exports[`RangeSelector direction 1`] = `
     />
   </div>
   <div
-    class="c8 c2"
+    class="c9 c2"
     tabindex="-1"
   >
     <div
-      class="c9"
+      class="c10"
       style="flex: 20 0 0px;"
     />
     <div
-      class="c10"
+      class="c11"
       style="flex: 0 0 1px;"
     >
-      <div
+      <input
         aria-label="Lower Bounds"
         aria-valuemax="100"
         aria-valuemin="0"
         aria-valuenow="20"
-        class="c11"
-        role="slider"
+        class="c5"
+        max="100"
+        min="0"
+        readonly=""
+        step="1"
+        type="range"
+        value="20"
+      />
+      <div
+        class="c12"
         style="cursor: row-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
-        tabindex="0"
+        tabindex="-1"
       >
         <div
-          class="c6 EdgeControl__StyledBox-sc-1xo2yt9-0"
+          class="c7 EdgeControl__StyledBox-sc-1xo2yt9-1"
         />
       </div>
     </div>
     <div
-      class="c12"
+      class="c13"
       style="flex: 11 0 0px; cursor: ns-resize;"
     />
     <div
-      class="c10"
+      class="c11"
       style="flex: 0 0 1px;"
     >
-      <div
+      <input
         aria-label="Upper Bounds"
         aria-valuemax="100"
         aria-valuemin="0"
         aria-valuenow="30"
-        class="c11"
-        role="slider"
+        class="c5"
+        max="100"
+        min="0"
+        readonly=""
+        step="1"
+        type="range"
+        value="30"
+      />
+      <div
+        class="c12"
         style="cursor: row-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
-        tabindex="0"
+        tabindex="-1"
       >
         <div
-          class="c6 EdgeControl__StyledBox-sc-1xo2yt9-0"
+          class="c7 EdgeControl__StyledBox-sc-1xo2yt9-1"
         />
       </div>
     </div>
     <div
-      class="c9"
+      class="c10"
       style="flex: 70 0 0px;"
     />
   </div>
@@ -911,7 +1057,7 @@ exports[`RangeSelector handle keyboard 1`] = `
   overflow: visible;
 }
 
-.c5 {
+.c6 {
   display: flex;
   box-sizing: border-box;
   align-items: center;
@@ -923,7 +1069,7 @@ exports[`RangeSelector handle keyboard 1`] = `
   justify-content: center;
 }
 
-.c6 {
+.c7 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -937,7 +1083,7 @@ exports[`RangeSelector handle keyboard 1`] = `
   border-radius: 100%;
 }
 
-.c7 {
+.c8 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -948,6 +1094,16 @@ exports[`RangeSelector handle keyboard 1`] = `
   flex-direction: column;
   height: 24px;
   width: 100%;
+}
+
+.c5 {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 1px;
 }
 
 .c2 {
@@ -969,41 +1125,57 @@ exports[`RangeSelector handle keyboard 1`] = `
       class="c4"
       style="flex: 0 0 1px;"
     >
-      <div
+      <input
         aria-label="Lower Bounds"
         aria-valuemax="100"
         aria-valuemin="0"
         aria-valuenow="20"
         class="c5"
-        role="slider"
+        max="100"
+        min="0"
+        readonly=""
+        step="1"
+        type="range"
+        value="20"
+      />
+      <div
+        class="c6"
         style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
-        tabindex="0"
+        tabindex="-1"
       >
         <div
-          class="c6 EdgeControl__StyledBox-sc-1xo2yt9-0"
+          class="c7 EdgeControl__StyledBox-sc-1xo2yt9-1"
         />
       </div>
     </div>
     <div
-      class="c7"
+      class="c8"
       style="flex: 11 0 0px; cursor: ew-resize;"
     />
     <div
       class="c4"
       style="flex: 0 0 1px;"
     >
-      <div
+      <input
         aria-label="Upper Bounds"
         aria-valuemax="100"
         aria-valuemin="0"
         aria-valuenow="30"
         class="c5"
-        role="slider"
+        max="100"
+        min="0"
+        readonly=""
+        step="1"
+        type="range"
+        value="30"
+      />
+      <div
+        class="c6"
         style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
-        tabindex="0"
+        tabindex="-1"
       >
         <div
-          class="c6 EdgeControl__StyledBox-sc-1xo2yt9-0"
+          class="c7 EdgeControl__StyledBox-sc-1xo2yt9-1"
         />
       </div>
     </div>
@@ -1063,7 +1235,7 @@ exports[`RangeSelector handle mouse 1`] = `
   overflow: visible;
 }
 
-.c5 {
+.c6 {
   display: flex;
   box-sizing: border-box;
   align-items: center;
@@ -1075,7 +1247,7 @@ exports[`RangeSelector handle mouse 1`] = `
   justify-content: center;
 }
 
-.c6 {
+.c7 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -1089,7 +1261,7 @@ exports[`RangeSelector handle mouse 1`] = `
   border-radius: 100%;
 }
 
-.c7 {
+.c8 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -1100,6 +1272,16 @@ exports[`RangeSelector handle mouse 1`] = `
   flex-direction: column;
   height: 24px;
   width: 100%;
+}
+
+.c5 {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 1px;
 }
 
 .c2 {
@@ -1121,41 +1303,57 @@ exports[`RangeSelector handle mouse 1`] = `
       class="c4"
       style="flex: 0 0 1px;"
     >
-      <div
+      <input
         aria-label="Lower Bounds"
         aria-valuemax="100"
         aria-valuemin="0"
         aria-valuenow="20"
         class="c5"
-        role="slider"
+        max="100"
+        min="0"
+        readonly=""
+        step="1"
+        type="range"
+        value="20"
+      />
+      <div
+        class="c6"
         style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
-        tabindex="0"
+        tabindex="-1"
       >
         <div
-          class="c6 EdgeControl__StyledBox-sc-1xo2yt9-0"
+          class="c7 EdgeControl__StyledBox-sc-1xo2yt9-1"
         />
       </div>
     </div>
     <div
-      class="c7"
+      class="c8"
       style="flex: 11 0 0px; cursor: ew-resize;"
     />
     <div
       class="c4"
       style="flex: 0 0 1px;"
     >
-      <div
+      <input
         aria-label="Upper Bounds"
         aria-valuemax="100"
         aria-valuemin="0"
         aria-valuenow="30"
         class="c5"
-        role="slider"
+        max="100"
+        min="0"
+        readonly=""
+        step="1"
+        type="range"
+        value="30"
+      />
+      <div
+        class="c6"
         style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
-        tabindex="0"
+        tabindex="-1"
       >
         <div
-          class="c6 EdgeControl__StyledBox-sc-1xo2yt9-0"
+          class="c7 EdgeControl__StyledBox-sc-1xo2yt9-1"
         />
       </div>
     </div>
@@ -1215,7 +1413,7 @@ exports[`RangeSelector handle touch gestures 1`] = `
   overflow: visible;
 }
 
-.c5 {
+.c6 {
   display: flex;
   box-sizing: border-box;
   align-items: center;
@@ -1227,7 +1425,7 @@ exports[`RangeSelector handle touch gestures 1`] = `
   justify-content: center;
 }
 
-.c6 {
+.c7 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -1241,7 +1439,7 @@ exports[`RangeSelector handle touch gestures 1`] = `
   border-radius: 100%;
 }
 
-.c7 {
+.c8 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -1252,6 +1450,16 @@ exports[`RangeSelector handle touch gestures 1`] = `
   flex-direction: column;
   height: 24px;
   width: 100%;
+}
+
+.c5 {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 1px;
 }
 
 .c2 {
@@ -1273,41 +1481,57 @@ exports[`RangeSelector handle touch gestures 1`] = `
       class="c4"
       style="flex: 0 0 1px;"
     >
-      <div
+      <input
         aria-label="Lower Bounds"
         aria-valuemax="100"
         aria-valuemin="0"
         aria-valuenow="10"
         class="c5"
-        role="slider"
+        max="100"
+        min="0"
+        readonly=""
+        step="1"
+        type="range"
+        value="10"
+      />
+      <div
+        class="c6"
         style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
-        tabindex="0"
+        tabindex="-1"
       >
         <div
-          class="c6 EdgeControl__StyledBox-sc-1xo2yt9-0"
+          class="c7 EdgeControl__StyledBox-sc-1xo2yt9-1"
         />
       </div>
     </div>
     <div
-      class="c7"
+      class="c8"
       style="flex: 11 0 0px; cursor: ew-resize;"
     />
     <div
       class="c4"
       style="flex: 0 0 1px;"
     >
-      <div
+      <input
         aria-label="Upper Bounds"
         aria-valuemax="100"
         aria-valuemin="0"
         aria-valuenow="20"
         class="c5"
-        role="slider"
+        max="100"
+        min="0"
+        readonly=""
+        step="1"
+        type="range"
+        value="20"
+      />
+      <div
+        class="c6"
         style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
-        tabindex="0"
+        tabindex="-1"
       >
         <div
-          class="c6 EdgeControl__StyledBox-sc-1xo2yt9-0"
+          class="c7 EdgeControl__StyledBox-sc-1xo2yt9-1"
         />
       </div>
     </div>
@@ -1369,7 +1593,7 @@ exports[`RangeSelector invert 1`] = `
   overflow: visible;
 }
 
-.c5 {
+.c6 {
   display: flex;
   box-sizing: border-box;
   align-items: center;
@@ -1381,7 +1605,7 @@ exports[`RangeSelector invert 1`] = `
   justify-content: center;
 }
 
-.c6 {
+.c7 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -1395,7 +1619,7 @@ exports[`RangeSelector invert 1`] = `
   border-radius: 100%;
 }
 
-.c7 {
+.c8 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -1406,7 +1630,7 @@ exports[`RangeSelector invert 1`] = `
   width: 100%;
 }
 
-.c8 {
+.c9 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -1417,6 +1641,16 @@ exports[`RangeSelector invert 1`] = `
   flex-direction: column;
   height: 24px;
   width: 100%;
+}
+
+.c5 {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 1px;
 }
 
 .c2 {
@@ -1438,41 +1672,57 @@ exports[`RangeSelector invert 1`] = `
       class="c4"
       style="flex: 0 0 1px;"
     >
-      <div
+      <input
         aria-label="Lower Bounds"
         aria-valuemax="100"
         aria-valuemin="0"
         aria-valuenow="20"
         class="c5"
-        role="slider"
+        max="100"
+        min="0"
+        readonly=""
+        step="1"
+        type="range"
+        value="20"
+      />
+      <div
+        class="c6"
         style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
-        tabindex="0"
+        tabindex="-1"
       >
         <div
-          class="c6 EdgeControl__StyledBox-sc-1xo2yt9-0"
+          class="c7 EdgeControl__StyledBox-sc-1xo2yt9-1"
         />
       </div>
     </div>
     <div
-      class="c7"
+      class="c8"
       style="flex: 11 0 0px; cursor: ew-resize;"
     />
     <div
       class="c4"
       style="flex: 0 0 1px;"
     >
-      <div
+      <input
         aria-label="Upper Bounds"
         aria-valuemax="100"
         aria-valuemin="0"
         aria-valuenow="30"
         class="c5"
-        role="slider"
+        max="100"
+        min="0"
+        readonly=""
+        step="1"
+        type="range"
+        value="30"
+      />
+      <div
+        class="c6"
         style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
-        tabindex="0"
+        tabindex="-1"
       >
         <div
-          class="c6 EdgeControl__StyledBox-sc-1xo2yt9-0"
+          class="c7 EdgeControl__StyledBox-sc-1xo2yt9-1"
         />
       </div>
     </div>
@@ -1486,53 +1736,69 @@ exports[`RangeSelector invert 1`] = `
     tabindex="-1"
   >
     <div
-      class="c7"
+      class="c8"
       style="flex: 20 0 0px;"
     />
     <div
       class="c4"
       style="flex: 0 0 1px;"
     >
-      <div
+      <input
         aria-label="Lower Bounds"
         aria-valuemax="100"
         aria-valuemin="0"
         aria-valuenow="20"
         class="c5"
-        role="slider"
+        max="100"
+        min="0"
+        readonly=""
+        step="1"
+        type="range"
+        value="20"
+      />
+      <div
+        class="c6"
         style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
-        tabindex="0"
+        tabindex="-1"
       >
         <div
-          class="c6 EdgeControl__StyledBox-sc-1xo2yt9-0"
+          class="c7 EdgeControl__StyledBox-sc-1xo2yt9-1"
         />
       </div>
     </div>
     <div
-      class="c8"
+      class="c9"
       style="flex: 11 0 0px; cursor: ew-resize;"
     />
     <div
       class="c4"
       style="flex: 0 0 1px;"
     >
-      <div
+      <input
         aria-label="Upper Bounds"
         aria-valuemax="100"
         aria-valuemin="0"
         aria-valuenow="30"
         class="c5"
-        role="slider"
+        max="100"
+        min="0"
+        readonly=""
+        step="1"
+        type="range"
+        value="30"
+      />
+      <div
+        class="c6"
         style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
-        tabindex="0"
+        tabindex="-1"
       >
         <div
-          class="c6 EdgeControl__StyledBox-sc-1xo2yt9-0"
+          class="c7 EdgeControl__StyledBox-sc-1xo2yt9-1"
         />
       </div>
     </div>
     <div
-      class="c7"
+      class="c8"
       style="flex: 70 0 0px;"
     />
   </div>
@@ -1599,7 +1865,7 @@ exports[`RangeSelector label 1`] = `
   overflow: visible;
 }
 
-.c7 {
+.c8 {
   display: flex;
   box-sizing: border-box;
   align-items: center;
@@ -1611,7 +1877,7 @@ exports[`RangeSelector label 1`] = `
   justify-content: center;
 }
 
-.c8 {
+.c9 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -1625,7 +1891,7 @@ exports[`RangeSelector label 1`] = `
   border-radius: 100%;
 }
 
-.c9 {
+.c10 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -1638,6 +1904,16 @@ exports[`RangeSelector label 1`] = `
   width: 100%;
 }
 
+.c7 {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 1px;
+}
+
 .c2 {
   margin-left: 12px;
   margin-right: 12px;
@@ -1646,7 +1922,7 @@ exports[`RangeSelector label 1`] = `
   text-align: right;
 }
 
-.c10 {
+.c11 {
   margin-left: 12px;
   margin-right: 12px;
   font-size: 14px;
@@ -1681,41 +1957,57 @@ exports[`RangeSelector label 1`] = `
         class="c6"
         style="flex: 0 0 1px;"
       >
-        <div
+        <input
           aria-label="Lower Bounds"
           aria-valuemax="100"
           aria-valuemin="0"
           aria-valuenow="20"
           class="c7"
-          role="slider"
+          max="100"
+          min="0"
+          readonly=""
+          step="1"
+          type="range"
+          value="20"
+        />
+        <div
+          class="c8"
           style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
-          tabindex="0"
+          tabindex="-1"
         >
           <div
-            class="c8 EdgeControl__StyledBox-sc-1xo2yt9-0"
+            class="c9 EdgeControl__StyledBox-sc-1xo2yt9-1"
           />
         </div>
       </div>
       <div
-        class="c9"
+        class="c10"
         style="flex: 11 0 0px; cursor: ew-resize;"
       />
       <div
         class="c6"
         style="flex: 0 0 1px;"
       >
-        <div
+        <input
           aria-label="Upper Bounds"
           aria-valuemax="100"
           aria-valuemin="0"
           aria-valuenow="30"
           class="c7"
-          role="slider"
+          max="100"
+          min="0"
+          readonly=""
+          step="1"
+          type="range"
+          value="30"
+        />
+        <div
+          class="c8"
           style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
-          tabindex="0"
+          tabindex="-1"
         >
           <div
-            class="c8 EdgeControl__StyledBox-sc-1xo2yt9-0"
+            class="c9 EdgeControl__StyledBox-sc-1xo2yt9-1"
           />
         </div>
       </div>
@@ -1725,7 +2017,7 @@ exports[`RangeSelector label 1`] = `
       />
     </div>
     <span
-      class="c10"
+      class="c11"
       style="width: 0px;"
     >
       30
@@ -1752,41 +2044,57 @@ exports[`RangeSelector label 1`] = `
         class="c6"
         style="flex: 0 0 1px;"
       >
-        <div
+        <input
           aria-label="Lower Bounds"
           aria-valuemax="100"
           aria-valuemin="0"
           aria-valuenow="20"
           class="c7"
-          role="slider"
+          max="100"
+          min="0"
+          readonly=""
+          step="1"
+          type="range"
+          value="20"
+        />
+        <div
+          class="c8"
           style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
-          tabindex="0"
+          tabindex="-1"
         >
           <div
-            class="c8 EdgeControl__StyledBox-sc-1xo2yt9-0"
+            class="c9 EdgeControl__StyledBox-sc-1xo2yt9-1"
           />
         </div>
       </div>
       <div
-        class="c9"
+        class="c10"
         style="flex: 11 0 0px; cursor: ew-resize;"
       />
       <div
         class="c6"
         style="flex: 0 0 1px;"
       >
-        <div
+        <input
           aria-label="Upper Bounds"
           aria-valuemax="100"
           aria-valuemin="0"
           aria-valuenow="30"
           class="c7"
-          role="slider"
+          max="100"
+          min="0"
+          readonly=""
+          step="1"
+          type="range"
+          value="30"
+        />
+        <div
+          class="c8"
           style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
-          tabindex="0"
+          tabindex="-1"
         >
           <div
-            class="c8 EdgeControl__StyledBox-sc-1xo2yt9-0"
+            class="c9 EdgeControl__StyledBox-sc-1xo2yt9-1"
           />
         </div>
       </div>
@@ -1796,7 +2104,7 @@ exports[`RangeSelector label 1`] = `
       />
     </div>
     <span
-      class="c10"
+      class="c11"
       style="width: 0px;"
     >
       30%
@@ -1853,7 +2161,7 @@ exports[`RangeSelector max 1`] = `
   overflow: visible;
 }
 
-.c5 {
+.c6 {
   display: flex;
   box-sizing: border-box;
   align-items: center;
@@ -1865,7 +2173,7 @@ exports[`RangeSelector max 1`] = `
   justify-content: center;
 }
 
-.c6 {
+.c7 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -1879,7 +2187,7 @@ exports[`RangeSelector max 1`] = `
   border-radius: 100%;
 }
 
-.c7 {
+.c8 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -1890,6 +2198,16 @@ exports[`RangeSelector max 1`] = `
   flex-direction: column;
   height: 24px;
   width: 100%;
+}
+
+.c5 {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 1px;
 }
 
 .c2 {
@@ -1911,41 +2229,57 @@ exports[`RangeSelector max 1`] = `
       class="c4"
       style="flex: 0 0 1px;"
     >
-      <div
+      <input
         aria-label="Lower Bounds"
         aria-valuemax="50"
         aria-valuemin="0"
         aria-valuenow="20"
         class="c5"
-        role="slider"
+        max="50"
+        min="0"
+        readonly=""
+        step="1"
+        type="range"
+        value="20"
+      />
+      <div
+        class="c6"
         style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
-        tabindex="0"
+        tabindex="-1"
       >
         <div
-          class="c6 EdgeControl__StyledBox-sc-1xo2yt9-0"
+          class="c7 EdgeControl__StyledBox-sc-1xo2yt9-1"
         />
       </div>
     </div>
     <div
-      class="c7"
+      class="c8"
       style="flex: 11 0 0px; cursor: ew-resize;"
     />
     <div
       class="c4"
       style="flex: 0 0 1px;"
     >
-      <div
+      <input
         aria-label="Upper Bounds"
         aria-valuemax="50"
         aria-valuemin="0"
         aria-valuenow="30"
         class="c5"
-        role="slider"
+        max="50"
+        min="0"
+        readonly=""
+        step="1"
+        type="range"
+        value="30"
+      />
+      <div
+        class="c6"
         style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
-        tabindex="0"
+        tabindex="-1"
       >
         <div
-          class="c6 EdgeControl__StyledBox-sc-1xo2yt9-0"
+          class="c7 EdgeControl__StyledBox-sc-1xo2yt9-1"
         />
       </div>
     </div>
@@ -2005,7 +2339,7 @@ exports[`RangeSelector min 1`] = `
   overflow: visible;
 }
 
-.c5 {
+.c6 {
   display: flex;
   box-sizing: border-box;
   align-items: center;
@@ -2017,7 +2351,7 @@ exports[`RangeSelector min 1`] = `
   justify-content: center;
 }
 
-.c6 {
+.c7 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -2031,7 +2365,7 @@ exports[`RangeSelector min 1`] = `
   border-radius: 100%;
 }
 
-.c7 {
+.c8 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -2042,6 +2376,16 @@ exports[`RangeSelector min 1`] = `
   flex-direction: column;
   height: 24px;
   width: 100%;
+}
+
+.c5 {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 1px;
 }
 
 .c2 {
@@ -2063,41 +2407,57 @@ exports[`RangeSelector min 1`] = `
       class="c4"
       style="flex: 0 0 1px;"
     >
-      <div
+      <input
         aria-label="Lower Bounds"
         aria-valuemax="100"
         aria-valuemin="10"
         aria-valuenow="20"
         class="c5"
-        role="slider"
+        max="100"
+        min="10"
+        readonly=""
+        step="1"
+        type="range"
+        value="20"
+      />
+      <div
+        class="c6"
         style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
-        tabindex="0"
+        tabindex="-1"
       >
         <div
-          class="c6 EdgeControl__StyledBox-sc-1xo2yt9-0"
+          class="c7 EdgeControl__StyledBox-sc-1xo2yt9-1"
         />
       </div>
     </div>
     <div
-      class="c7"
+      class="c8"
       style="flex: 11 0 0px; cursor: ew-resize;"
     />
     <div
       class="c4"
       style="flex: 0 0 1px;"
     >
-      <div
+      <input
         aria-label="Upper Bounds"
         aria-valuemax="100"
         aria-valuemin="10"
         aria-valuenow="30"
         class="c5"
-        role="slider"
+        max="100"
+        min="10"
+        readonly=""
+        step="1"
+        type="range"
+        value="30"
+      />
+      <div
+        class="c6"
         style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
-        tabindex="0"
+        tabindex="-1"
       >
         <div
-          class="c6 EdgeControl__StyledBox-sc-1xo2yt9-0"
+          class="c7 EdgeControl__StyledBox-sc-1xo2yt9-1"
         />
       </div>
     </div>
@@ -2157,7 +2517,7 @@ exports[`RangeSelector opacity 1`] = `
   overflow: visible;
 }
 
-.c5 {
+.c6 {
   display: flex;
   box-sizing: border-box;
   align-items: center;
@@ -2169,7 +2529,7 @@ exports[`RangeSelector opacity 1`] = `
   justify-content: center;
 }
 
-.c6 {
+.c7 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -2183,7 +2543,7 @@ exports[`RangeSelector opacity 1`] = `
   border-radius: 100%;
 }
 
-.c7 {
+.c8 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -2195,7 +2555,7 @@ exports[`RangeSelector opacity 1`] = `
   width: 100%;
 }
 
-.c8 {
+.c9 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -2208,7 +2568,7 @@ exports[`RangeSelector opacity 1`] = `
   width: 100%;
 }
 
-.c9 {
+.c10 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -2219,6 +2579,16 @@ exports[`RangeSelector opacity 1`] = `
   flex-direction: column;
   height: 24px;
   width: 100%;
+}
+
+.c5 {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 1px;
 }
 
 .c2 {
@@ -2240,73 +2610,26 @@ exports[`RangeSelector opacity 1`] = `
       class="c4"
       style="flex: 0 0 1px;"
     >
-      <div
+      <input
         aria-label="Lower Bounds"
         aria-valuemax="100"
         aria-valuemin="0"
         aria-valuenow="20"
         class="c5"
-        role="slider"
-        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
-        tabindex="0"
-      >
-        <div
-          class="c6 EdgeControl__StyledBox-sc-1xo2yt9-0"
-        />
-      </div>
-    </div>
-    <div
-      class="c7"
-      style="flex: 11 0 0px; cursor: ew-resize;"
-    />
-    <div
-      class="c4"
-      style="flex: 0 0 1px;"
-    >
+        max="100"
+        min="0"
+        readonly=""
+        step="1"
+        type="range"
+        value="20"
+      />
       <div
-        aria-label="Upper Bounds"
-        aria-valuemax="100"
-        aria-valuemin="0"
-        aria-valuenow="30"
-        class="c5"
-        role="slider"
+        class="c6"
         style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
-        tabindex="0"
+        tabindex="-1"
       >
         <div
-          class="c6 EdgeControl__StyledBox-sc-1xo2yt9-0"
-        />
-      </div>
-    </div>
-    <div
-      class="c3"
-      style="flex: 70 0 0px;"
-    />
-  </div>
-  <div
-    class="c1 c2"
-    tabindex="-1"
-  >
-    <div
-      class="c3"
-      style="flex: 20 0 0px;"
-    />
-    <div
-      class="c4"
-      style="flex: 0 0 1px;"
-    >
-      <div
-        aria-label="Lower Bounds"
-        aria-valuemax="100"
-        aria-valuemin="0"
-        aria-valuenow="20"
-        class="c5"
-        role="slider"
-        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
-        tabindex="0"
-      >
-        <div
-          class="c6 EdgeControl__StyledBox-sc-1xo2yt9-0"
+          class="c7 EdgeControl__StyledBox-sc-1xo2yt9-1"
         />
       </div>
     </div>
@@ -2318,18 +2641,26 @@ exports[`RangeSelector opacity 1`] = `
       class="c4"
       style="flex: 0 0 1px;"
     >
-      <div
+      <input
         aria-label="Upper Bounds"
         aria-valuemax="100"
         aria-valuemin="0"
         aria-valuenow="30"
         class="c5"
-        role="slider"
+        max="100"
+        min="0"
+        readonly=""
+        step="1"
+        type="range"
+        value="30"
+      />
+      <div
+        class="c6"
         style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
-        tabindex="0"
+        tabindex="-1"
       >
         <div
-          class="c6 EdgeControl__StyledBox-sc-1xo2yt9-0"
+          class="c7 EdgeControl__StyledBox-sc-1xo2yt9-1"
         />
       </div>
     </div>
@@ -2350,18 +2681,26 @@ exports[`RangeSelector opacity 1`] = `
       class="c4"
       style="flex: 0 0 1px;"
     >
-      <div
+      <input
         aria-label="Lower Bounds"
         aria-valuemax="100"
         aria-valuemin="0"
         aria-valuenow="20"
         class="c5"
-        role="slider"
+        max="100"
+        min="0"
+        readonly=""
+        step="1"
+        type="range"
+        value="20"
+      />
+      <div
+        class="c6"
         style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
-        tabindex="0"
+        tabindex="-1"
       >
         <div
-          class="c6 EdgeControl__StyledBox-sc-1xo2yt9-0"
+          class="c7 EdgeControl__StyledBox-sc-1xo2yt9-1"
         />
       </div>
     </div>
@@ -2373,18 +2712,97 @@ exports[`RangeSelector opacity 1`] = `
       class="c4"
       style="flex: 0 0 1px;"
     >
-      <div
+      <input
         aria-label="Upper Bounds"
         aria-valuemax="100"
         aria-valuemin="0"
         aria-valuenow="30"
         class="c5"
-        role="slider"
+        max="100"
+        min="0"
+        readonly=""
+        step="1"
+        type="range"
+        value="30"
+      />
+      <div
+        class="c6"
         style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
-        tabindex="0"
+        tabindex="-1"
       >
         <div
-          class="c6 EdgeControl__StyledBox-sc-1xo2yt9-0"
+          class="c7 EdgeControl__StyledBox-sc-1xo2yt9-1"
+        />
+      </div>
+    </div>
+    <div
+      class="c3"
+      style="flex: 70 0 0px;"
+    />
+  </div>
+  <div
+    class="c1 c2"
+    tabindex="-1"
+  >
+    <div
+      class="c3"
+      style="flex: 20 0 0px;"
+    />
+    <div
+      class="c4"
+      style="flex: 0 0 1px;"
+    >
+      <input
+        aria-label="Lower Bounds"
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="20"
+        class="c5"
+        max="100"
+        min="0"
+        readonly=""
+        step="1"
+        type="range"
+        value="20"
+      />
+      <div
+        class="c6"
+        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
+        tabindex="-1"
+      >
+        <div
+          class="c7 EdgeControl__StyledBox-sc-1xo2yt9-1"
+        />
+      </div>
+    </div>
+    <div
+      class="c10"
+      style="flex: 11 0 0px; cursor: ew-resize;"
+    />
+    <div
+      class="c4"
+      style="flex: 0 0 1px;"
+    >
+      <input
+        aria-label="Upper Bounds"
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="30"
+        class="c5"
+        max="100"
+        min="0"
+        readonly=""
+        step="1"
+        type="range"
+        value="30"
+      />
+      <div
+        class="c6"
+        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
+        tabindex="-1"
+      >
+        <div
+          class="c7 EdgeControl__StyledBox-sc-1xo2yt9-1"
         />
       </div>
     </div>
@@ -2444,7 +2862,7 @@ exports[`RangeSelector renders gracefully with invalid edge size 1`] = `
   overflow: visible;
 }
 
-.c5 {
+.c6 {
   display: flex;
   box-sizing: border-box;
   align-items: center;
@@ -2456,7 +2874,7 @@ exports[`RangeSelector renders gracefully with invalid edge size 1`] = `
   justify-content: center;
 }
 
-.c6 {
+.c7 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -2470,7 +2888,7 @@ exports[`RangeSelector renders gracefully with invalid edge size 1`] = `
   border-radius: 100%;
 }
 
-.c7 {
+.c8 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -2481,6 +2899,16 @@ exports[`RangeSelector renders gracefully with invalid edge size 1`] = `
   flex-direction: column;
   height: 24px;
   width: 100%;
+}
+
+.c5 {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 1px;
 }
 
 .c2 {
@@ -2502,41 +2930,57 @@ exports[`RangeSelector renders gracefully with invalid edge size 1`] = `
       class="c4"
       style="flex: 0 0 1px;"
     >
-      <div
+      <input
         aria-label="Lower Bounds"
         aria-valuemax="100"
         aria-valuemin="0"
         aria-valuenow="15"
         class="c5"
-        role="slider"
+        max="100"
+        min="0"
+        readonly=""
+        step="1"
+        type="range"
+        value="15"
+      />
+      <div
+        class="c6"
         style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
-        tabindex="0"
+        tabindex="-1"
       >
         <div
-          class="c6 EdgeControl__StyledBox-sc-1xo2yt9-0"
+          class="c7 EdgeControl__StyledBox-sc-1xo2yt9-1"
         />
       </div>
     </div>
     <div
-      class="c7"
+      class="c8"
       style="flex: 21 0 0px; cursor: ew-resize;"
     />
     <div
       class="c4"
       style="flex: 0 0 1px;"
     >
-      <div
+      <input
         aria-label="Upper Bounds"
         aria-valuemax="100"
         aria-valuemin="0"
         aria-valuenow="35"
         class="c5"
-        role="slider"
+        max="100"
+        min="0"
+        readonly=""
+        step="1"
+        type="range"
+        value="35"
+      />
+      <div
+        class="c6"
         style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
-        tabindex="0"
+        tabindex="-1"
       >
         <div
-          class="c6 EdgeControl__StyledBox-sc-1xo2yt9-0"
+          class="c7 EdgeControl__StyledBox-sc-1xo2yt9-1"
         />
       </div>
     </div>
@@ -2596,7 +3040,7 @@ exports[`RangeSelector renders with default edge size when not specified 1`] = `
   overflow: visible;
 }
 
-.c5 {
+.c6 {
   display: flex;
   box-sizing: border-box;
   align-items: center;
@@ -2608,7 +3052,7 @@ exports[`RangeSelector renders with default edge size when not specified 1`] = `
   justify-content: center;
 }
 
-.c6 {
+.c7 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -2622,7 +3066,7 @@ exports[`RangeSelector renders with default edge size when not specified 1`] = `
   border-radius: 100%;
 }
 
-.c7 {
+.c8 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -2633,6 +3077,16 @@ exports[`RangeSelector renders with default edge size when not specified 1`] = `
   flex-direction: column;
   height: 24px;
   width: 100%;
+}
+
+.c5 {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 1px;
 }
 
 .c2 {
@@ -2654,41 +3108,57 @@ exports[`RangeSelector renders with default edge size when not specified 1`] = `
       class="c4"
       style="flex: 0 0 1px;"
     >
-      <div
+      <input
         aria-label="Lower Bounds"
         aria-valuemax="100"
         aria-valuemin="0"
         aria-valuenow="5"
         class="c5"
-        role="slider"
+        max="100"
+        min="0"
+        readonly=""
+        step="1"
+        type="range"
+        value="5"
+      />
+      <div
+        class="c6"
         style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
-        tabindex="0"
+        tabindex="-1"
       >
         <div
-          class="c6 EdgeControl__StyledBox-sc-1xo2yt9-0"
+          class="c7 EdgeControl__StyledBox-sc-1xo2yt9-1"
         />
       </div>
     </div>
     <div
-      class="c7"
+      class="c8"
       style="flex: 21 0 0px; cursor: ew-resize;"
     />
     <div
       class="c4"
       style="flex: 0 0 1px;"
     >
-      <div
+      <input
         aria-label="Upper Bounds"
         aria-valuemax="100"
         aria-valuemin="0"
         aria-valuenow="25"
         class="c5"
-        role="slider"
+        max="100"
+        min="0"
+        readonly=""
+        step="1"
+        type="range"
+        value="25"
+      />
+      <div
+        class="c6"
         style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
-        tabindex="0"
+        tabindex="-1"
       >
         <div
-          class="c6 EdgeControl__StyledBox-sc-1xo2yt9-0"
+          class="c7 EdgeControl__StyledBox-sc-1xo2yt9-1"
         />
       </div>
     </div>
@@ -2748,7 +3218,7 @@ exports[`RangeSelector renders with edge size: large 1`] = `
   overflow: visible;
 }
 
-.c5 {
+.c6 {
   display: flex;
   box-sizing: border-box;
   align-items: center;
@@ -2760,7 +3230,7 @@ exports[`RangeSelector renders with edge size: large 1`] = `
   justify-content: center;
 }
 
-.c6 {
+.c7 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -2774,7 +3244,7 @@ exports[`RangeSelector renders with edge size: large 1`] = `
   border-radius: 100%;
 }
 
-.c7 {
+.c8 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -2785,6 +3255,16 @@ exports[`RangeSelector renders with edge size: large 1`] = `
   flex-direction: column;
   height: 24px;
   width: 100%;
+}
+
+.c5 {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 1px;
 }
 
 .c2 {
@@ -2806,41 +3286,57 @@ exports[`RangeSelector renders with edge size: large 1`] = `
       class="c4"
       style="flex: 0 0 1px;"
     >
-      <div
+      <input
         aria-label="Lower Bounds"
         aria-valuemax="100"
         aria-valuemin="0"
         aria-valuenow="10"
         class="c5"
-        role="slider"
+        max="100"
+        min="0"
+        readonly=""
+        step="1"
+        type="range"
+        value="10"
+      />
+      <div
+        class="c6"
         style="cursor: col-resize; outline: none; min-width: 48px; min-height: 48px; z-index: 1;"
-        tabindex="0"
+        tabindex="-1"
       >
         <div
-          class="c6 EdgeControl__StyledBox-sc-1xo2yt9-0"
+          class="c7 EdgeControl__StyledBox-sc-1xo2yt9-1"
         />
       </div>
     </div>
     <div
-      class="c7"
+      class="c8"
       style="flex: 31 0 0px; cursor: ew-resize;"
     />
     <div
       class="c4"
       style="flex: 0 0 1px;"
     >
-      <div
+      <input
         aria-label="Upper Bounds"
         aria-valuemax="100"
         aria-valuemin="0"
         aria-valuenow="40"
         class="c5"
-        role="slider"
+        max="100"
+        min="0"
+        readonly=""
+        step="1"
+        type="range"
+        value="40"
+      />
+      <div
+        class="c6"
         style="cursor: col-resize; outline: none; min-width: 48px; min-height: 48px; z-index: 1;"
-        tabindex="0"
+        tabindex="-1"
       >
         <div
-          class="c6 EdgeControl__StyledBox-sc-1xo2yt9-0"
+          class="c7 EdgeControl__StyledBox-sc-1xo2yt9-1"
         />
       </div>
     </div>
@@ -2900,7 +3396,7 @@ exports[`RangeSelector renders with edge size: medium 1`] = `
   overflow: visible;
 }
 
-.c5 {
+.c6 {
   display: flex;
   box-sizing: border-box;
   align-items: center;
@@ -2912,7 +3408,7 @@ exports[`RangeSelector renders with edge size: medium 1`] = `
   justify-content: center;
 }
 
-.c6 {
+.c7 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -2926,7 +3422,7 @@ exports[`RangeSelector renders with edge size: medium 1`] = `
   border-radius: 100%;
 }
 
-.c7 {
+.c8 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -2937,6 +3433,16 @@ exports[`RangeSelector renders with edge size: medium 1`] = `
   flex-direction: column;
   height: 24px;
   width: 100%;
+}
+
+.c5 {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 1px;
 }
 
 .c2 {
@@ -2958,41 +3464,57 @@ exports[`RangeSelector renders with edge size: medium 1`] = `
       class="c4"
       style="flex: 0 0 1px;"
     >
-      <div
+      <input
         aria-label="Lower Bounds"
         aria-valuemax="100"
         aria-valuemin="0"
         aria-valuenow="10"
         class="c5"
-        role="slider"
+        max="100"
+        min="0"
+        readonly=""
+        step="1"
+        type="range"
+        value="10"
+      />
+      <div
+        class="c6"
         style="cursor: col-resize; outline: none; min-width: 24px; min-height: 24px; z-index: 1;"
-        tabindex="0"
+        tabindex="-1"
       >
         <div
-          class="c6 EdgeControl__StyledBox-sc-1xo2yt9-0"
+          class="c7 EdgeControl__StyledBox-sc-1xo2yt9-1"
         />
       </div>
     </div>
     <div
-      class="c7"
+      class="c8"
       style="flex: 31 0 0px; cursor: ew-resize;"
     />
     <div
       class="c4"
       style="flex: 0 0 1px;"
     >
-      <div
+      <input
         aria-label="Upper Bounds"
         aria-valuemax="100"
         aria-valuemin="0"
         aria-valuenow="40"
         class="c5"
-        role="slider"
+        max="100"
+        min="0"
+        readonly=""
+        step="1"
+        type="range"
+        value="40"
+      />
+      <div
+        class="c6"
         style="cursor: col-resize; outline: none; min-width: 24px; min-height: 24px; z-index: 1;"
-        tabindex="0"
+        tabindex="-1"
       >
         <div
-          class="c6 EdgeControl__StyledBox-sc-1xo2yt9-0"
+          class="c7 EdgeControl__StyledBox-sc-1xo2yt9-1"
         />
       </div>
     </div>
@@ -3052,7 +3574,7 @@ exports[`RangeSelector renders with edge size: small 1`] = `
   overflow: visible;
 }
 
-.c5 {
+.c6 {
   display: flex;
   box-sizing: border-box;
   align-items: center;
@@ -3064,7 +3586,7 @@ exports[`RangeSelector renders with edge size: small 1`] = `
   justify-content: center;
 }
 
-.c6 {
+.c7 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -3078,7 +3600,7 @@ exports[`RangeSelector renders with edge size: small 1`] = `
   border-radius: 100%;
 }
 
-.c7 {
+.c8 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -3089,6 +3611,16 @@ exports[`RangeSelector renders with edge size: small 1`] = `
   flex-direction: column;
   height: 24px;
   width: 100%;
+}
+
+.c5 {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 1px;
 }
 
 .c2 {
@@ -3110,41 +3642,57 @@ exports[`RangeSelector renders with edge size: small 1`] = `
       class="c4"
       style="flex: 0 0 1px;"
     >
-      <div
+      <input
         aria-label="Lower Bounds"
         aria-valuemax="100"
         aria-valuemin="0"
         aria-valuenow="10"
         class="c5"
-        role="slider"
+        max="100"
+        min="0"
+        readonly=""
+        step="1"
+        type="range"
+        value="10"
+      />
+      <div
+        class="c6"
         style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
-        tabindex="0"
+        tabindex="-1"
       >
         <div
-          class="c6 EdgeControl__StyledBox-sc-1xo2yt9-0"
+          class="c7 EdgeControl__StyledBox-sc-1xo2yt9-1"
         />
       </div>
     </div>
     <div
-      class="c7"
+      class="c8"
       style="flex: 31 0 0px; cursor: ew-resize;"
     />
     <div
       class="c4"
       style="flex: 0 0 1px;"
     >
-      <div
+      <input
         aria-label="Upper Bounds"
         aria-valuemax="100"
         aria-valuemin="0"
         aria-valuenow="40"
         class="c5"
-        role="slider"
+        max="100"
+        min="0"
+        readonly=""
+        step="1"
+        type="range"
+        value="40"
+      />
+      <div
+        class="c6"
         style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
-        tabindex="0"
+        tabindex="-1"
       >
         <div
-          class="c6 EdgeControl__StyledBox-sc-1xo2yt9-0"
+          class="c7 EdgeControl__StyledBox-sc-1xo2yt9-1"
         />
       </div>
     </div>
@@ -3204,7 +3752,7 @@ exports[`RangeSelector renders with edge size: xlarge 1`] = `
   overflow: visible;
 }
 
-.c5 {
+.c6 {
   display: flex;
   box-sizing: border-box;
   align-items: center;
@@ -3216,7 +3764,7 @@ exports[`RangeSelector renders with edge size: xlarge 1`] = `
   justify-content: center;
 }
 
-.c6 {
+.c7 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -3230,7 +3778,7 @@ exports[`RangeSelector renders with edge size: xlarge 1`] = `
   border-radius: 100%;
 }
 
-.c7 {
+.c8 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -3241,6 +3789,16 @@ exports[`RangeSelector renders with edge size: xlarge 1`] = `
   flex-direction: column;
   height: 24px;
   width: 100%;
+}
+
+.c5 {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 1px;
 }
 
 .c2 {
@@ -3262,41 +3820,57 @@ exports[`RangeSelector renders with edge size: xlarge 1`] = `
       class="c4"
       style="flex: 0 0 1px;"
     >
-      <div
+      <input
         aria-label="Lower Bounds"
         aria-valuemax="100"
         aria-valuemin="0"
         aria-valuenow="10"
         class="c5"
-        role="slider"
+        max="100"
+        min="0"
+        readonly=""
+        step="1"
+        type="range"
+        value="10"
+      />
+      <div
+        class="c6"
         style="cursor: col-resize; outline: none; min-width: 96px; min-height: 96px; z-index: 1;"
-        tabindex="0"
+        tabindex="-1"
       >
         <div
-          class="c6 EdgeControl__StyledBox-sc-1xo2yt9-0"
+          class="c7 EdgeControl__StyledBox-sc-1xo2yt9-1"
         />
       </div>
     </div>
     <div
-      class="c7"
+      class="c8"
       style="flex: 31 0 0px; cursor: ew-resize;"
     />
     <div
       class="c4"
       style="flex: 0 0 1px;"
     >
-      <div
+      <input
         aria-label="Upper Bounds"
         aria-valuemax="100"
         aria-valuemin="0"
         aria-valuenow="40"
         class="c5"
-        role="slider"
+        max="100"
+        min="0"
+        readonly=""
+        step="1"
+        type="range"
+        value="40"
+      />
+      <div
+        class="c6"
         style="cursor: col-resize; outline: none; min-width: 96px; min-height: 96px; z-index: 1;"
-        tabindex="0"
+        tabindex="-1"
       >
         <div
-          class="c6 EdgeControl__StyledBox-sc-1xo2yt9-0"
+          class="c7 EdgeControl__StyledBox-sc-1xo2yt9-1"
         />
       </div>
     </div>
@@ -3357,7 +3931,7 @@ exports[`RangeSelector round 1`] = `
   overflow: visible;
 }
 
-.c5 {
+.c6 {
   display: flex;
   box-sizing: border-box;
   align-items: center;
@@ -3369,7 +3943,7 @@ exports[`RangeSelector round 1`] = `
   justify-content: center;
 }
 
-.c6 {
+.c7 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -3383,7 +3957,7 @@ exports[`RangeSelector round 1`] = `
   border-radius: 100%;
 }
 
-.c7 {
+.c8 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -3397,24 +3971,10 @@ exports[`RangeSelector round 1`] = `
   border-radius: 6px;
 }
 
-.c8 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  flex-direction: column;
-  height: 24px;
-  width: 100%;
-  border-radius: 12px;
-}
-
 .c9 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background-color: rgba(125, 76, 219, 0.4);
-  color: #444444;
   min-width: 0;
   min-height: 0;
   flex-direction: column;
@@ -3427,20 +3987,20 @@ exports[`RangeSelector round 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  background-color: rgba(125, 76, 219, 0.4);
+  color: #444444;
   min-width: 0;
   min-height: 0;
   flex-direction: column;
   height: 24px;
   width: 100%;
-  border-radius: 24px;
+  border-radius: 12px;
 }
 
 .c11 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background-color: rgba(125, 76, 219, 0.4);
-  color: #444444;
   min-width: 0;
   min-height: 0;
   flex-direction: column;
@@ -3453,20 +4013,20 @@ exports[`RangeSelector round 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  background-color: rgba(125, 76, 219, 0.4);
+  color: #444444;
   min-width: 0;
   min-height: 0;
   flex-direction: column;
   height: 24px;
   width: 100%;
-  border-radius: 48px;
+  border-radius: 24px;
 }
 
 .c13 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background-color: rgba(125, 76, 219, 0.4);
-  color: #444444;
   min-width: 0;
   min-height: 0;
   flex-direction: column;
@@ -3479,6 +4039,20 @@ exports[`RangeSelector round 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  background-color: rgba(125, 76, 219, 0.4);
+  color: #444444;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  height: 24px;
+  width: 100%;
+  border-radius: 48px;
+}
+
+.c15 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
   min-width: 0;
   min-height: 0;
   flex-direction: column;
@@ -3487,7 +4061,7 @@ exports[`RangeSelector round 1`] = `
   border-radius: 100%;
 }
 
-.c15 {
+.c16 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -3499,6 +4073,16 @@ exports[`RangeSelector round 1`] = `
   height: 24px;
   width: 100%;
   border-radius: 100%;
+}
+
+.c5 {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 1px;
 }
 
 .c2 {
@@ -3512,14 +4096,8 @@ exports[`RangeSelector round 1`] = `
 }
 
 @media only screen and (max-width: 768px) {
-  .c7 {
-    border-radius: 3px;
-  }
-}
-
-@media only screen and (max-width: 768px) {
   .c8 {
-    border-radius: 6px;
+    border-radius: 3px;
   }
 }
 
@@ -3531,7 +4109,7 @@ exports[`RangeSelector round 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c10 {
-    border-radius: 12px;
+    border-radius: 6px;
   }
 }
 
@@ -3543,12 +4121,18 @@ exports[`RangeSelector round 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c12 {
-    border-radius: 24px;
+    border-radius: 12px;
   }
 }
 
 @media only screen and (max-width: 768px) {
   .c13 {
+    border-radius: 24px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c14 {
     border-radius: 24px;
   }
 }
@@ -3568,41 +4152,57 @@ exports[`RangeSelector round 1`] = `
       class="c4"
       style="flex: 0 0 1px;"
     >
-      <div
+      <input
         aria-label="Lower Bounds"
         aria-valuemax="100"
         aria-valuemin="0"
         aria-valuenow="20"
         class="c5"
-        role="slider"
+        max="100"
+        min="0"
+        readonly=""
+        step="1"
+        type="range"
+        value="20"
+      />
+      <div
+        class="c6"
         style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
-        tabindex="0"
+        tabindex="-1"
       >
         <div
-          class="c6 EdgeControl__StyledBox-sc-1xo2yt9-0"
+          class="c7 EdgeControl__StyledBox-sc-1xo2yt9-1"
         />
       </div>
     </div>
     <div
-      class="c7"
+      class="c8"
       style="flex: 11 0 0px; cursor: ew-resize;"
     />
     <div
       class="c4"
       style="flex: 0 0 1px;"
     >
-      <div
+      <input
         aria-label="Upper Bounds"
         aria-valuemax="100"
         aria-valuemin="0"
         aria-valuenow="30"
         class="c5"
-        role="slider"
+        max="100"
+        min="0"
+        readonly=""
+        step="1"
+        type="range"
+        value="30"
+      />
+      <div
+        class="c6"
         style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
-        tabindex="0"
+        tabindex="-1"
       >
         <div
-          class="c6 EdgeControl__StyledBox-sc-1xo2yt9-0"
+          class="c7 EdgeControl__StyledBox-sc-1xo2yt9-1"
         />
       </div>
     </div>
@@ -3616,53 +4216,69 @@ exports[`RangeSelector round 1`] = `
     tabindex="-1"
   >
     <div
-      class="c8"
+      class="c9"
       style="flex: 20 0 0px;"
     />
     <div
       class="c4"
       style="flex: 0 0 1px;"
     >
-      <div
+      <input
         aria-label="Lower Bounds"
         aria-valuemax="100"
         aria-valuemin="0"
         aria-valuenow="20"
         class="c5"
-        role="slider"
+        max="100"
+        min="0"
+        readonly=""
+        step="1"
+        type="range"
+        value="20"
+      />
+      <div
+        class="c6"
         style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
-        tabindex="0"
+        tabindex="-1"
       >
         <div
-          class="c6 EdgeControl__StyledBox-sc-1xo2yt9-0"
+          class="c7 EdgeControl__StyledBox-sc-1xo2yt9-1"
+        />
+      </div>
+    </div>
+    <div
+      class="c10"
+      style="flex: 11 0 0px; cursor: ew-resize;"
+    />
+    <div
+      class="c4"
+      style="flex: 0 0 1px;"
+    >
+      <input
+        aria-label="Upper Bounds"
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="30"
+        class="c5"
+        max="100"
+        min="0"
+        readonly=""
+        step="1"
+        type="range"
+        value="30"
+      />
+      <div
+        class="c6"
+        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
+        tabindex="-1"
+      >
+        <div
+          class="c7 EdgeControl__StyledBox-sc-1xo2yt9-1"
         />
       </div>
     </div>
     <div
       class="c9"
-      style="flex: 11 0 0px; cursor: ew-resize;"
-    />
-    <div
-      class="c4"
-      style="flex: 0 0 1px;"
-    >
-      <div
-        aria-label="Upper Bounds"
-        aria-valuemax="100"
-        aria-valuemin="0"
-        aria-valuenow="30"
-        class="c5"
-        role="slider"
-        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
-        tabindex="0"
-      >
-        <div
-          class="c6 EdgeControl__StyledBox-sc-1xo2yt9-0"
-        />
-      </div>
-    </div>
-    <div
-      class="c8"
       style="flex: 70 0 0px;"
     />
   </div>
@@ -3671,53 +4287,69 @@ exports[`RangeSelector round 1`] = `
     tabindex="-1"
   >
     <div
-      class="c10"
+      class="c11"
       style="flex: 20 0 0px;"
     />
     <div
       class="c4"
       style="flex: 0 0 1px;"
     >
-      <div
+      <input
         aria-label="Lower Bounds"
         aria-valuemax="100"
         aria-valuemin="0"
         aria-valuenow="20"
         class="c5"
-        role="slider"
+        max="100"
+        min="0"
+        readonly=""
+        step="1"
+        type="range"
+        value="20"
+      />
+      <div
+        class="c6"
         style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
-        tabindex="0"
+        tabindex="-1"
       >
         <div
-          class="c6 EdgeControl__StyledBox-sc-1xo2yt9-0"
+          class="c7 EdgeControl__StyledBox-sc-1xo2yt9-1"
+        />
+      </div>
+    </div>
+    <div
+      class="c12"
+      style="flex: 11 0 0px; cursor: ew-resize;"
+    />
+    <div
+      class="c4"
+      style="flex: 0 0 1px;"
+    >
+      <input
+        aria-label="Upper Bounds"
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="30"
+        class="c5"
+        max="100"
+        min="0"
+        readonly=""
+        step="1"
+        type="range"
+        value="30"
+      />
+      <div
+        class="c6"
+        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
+        tabindex="-1"
+      >
+        <div
+          class="c7 EdgeControl__StyledBox-sc-1xo2yt9-1"
         />
       </div>
     </div>
     <div
       class="c11"
-      style="flex: 11 0 0px; cursor: ew-resize;"
-    />
-    <div
-      class="c4"
-      style="flex: 0 0 1px;"
-    >
-      <div
-        aria-label="Upper Bounds"
-        aria-valuemax="100"
-        aria-valuemin="0"
-        aria-valuenow="30"
-        class="c5"
-        role="slider"
-        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
-        tabindex="0"
-      >
-        <div
-          class="c6 EdgeControl__StyledBox-sc-1xo2yt9-0"
-        />
-      </div>
-    </div>
-    <div
-      class="c10"
       style="flex: 70 0 0px;"
     />
   </div>
@@ -3726,53 +4358,69 @@ exports[`RangeSelector round 1`] = `
     tabindex="-1"
   >
     <div
-      class="c12"
+      class="c13"
       style="flex: 20 0 0px;"
     />
     <div
       class="c4"
       style="flex: 0 0 1px;"
     >
-      <div
+      <input
         aria-label="Lower Bounds"
         aria-valuemax="100"
         aria-valuemin="0"
         aria-valuenow="20"
         class="c5"
-        role="slider"
+        max="100"
+        min="0"
+        readonly=""
+        step="1"
+        type="range"
+        value="20"
+      />
+      <div
+        class="c6"
         style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
-        tabindex="0"
+        tabindex="-1"
       >
         <div
-          class="c6 EdgeControl__StyledBox-sc-1xo2yt9-0"
+          class="c7 EdgeControl__StyledBox-sc-1xo2yt9-1"
+        />
+      </div>
+    </div>
+    <div
+      class="c14"
+      style="flex: 11 0 0px; cursor: ew-resize;"
+    />
+    <div
+      class="c4"
+      style="flex: 0 0 1px;"
+    >
+      <input
+        aria-label="Upper Bounds"
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="30"
+        class="c5"
+        max="100"
+        min="0"
+        readonly=""
+        step="1"
+        type="range"
+        value="30"
+      />
+      <div
+        class="c6"
+        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
+        tabindex="-1"
+      >
+        <div
+          class="c7 EdgeControl__StyledBox-sc-1xo2yt9-1"
         />
       </div>
     </div>
     <div
       class="c13"
-      style="flex: 11 0 0px; cursor: ew-resize;"
-    />
-    <div
-      class="c4"
-      style="flex: 0 0 1px;"
-    >
-      <div
-        aria-label="Upper Bounds"
-        aria-valuemax="100"
-        aria-valuemin="0"
-        aria-valuenow="30"
-        class="c5"
-        role="slider"
-        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
-        tabindex="0"
-      >
-        <div
-          class="c6 EdgeControl__StyledBox-sc-1xo2yt9-0"
-        />
-      </div>
-    </div>
-    <div
-      class="c12"
       style="flex: 70 0 0px;"
     />
   </div>
@@ -3781,53 +4429,69 @@ exports[`RangeSelector round 1`] = `
     tabindex="-1"
   >
     <div
-      class="c14"
+      class="c15"
       style="flex: 20 0 0px;"
     />
     <div
       class="c4"
       style="flex: 0 0 1px;"
     >
-      <div
+      <input
         aria-label="Lower Bounds"
         aria-valuemax="100"
         aria-valuemin="0"
         aria-valuenow="20"
         class="c5"
-        role="slider"
+        max="100"
+        min="0"
+        readonly=""
+        step="1"
+        type="range"
+        value="20"
+      />
+      <div
+        class="c6"
         style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
-        tabindex="0"
+        tabindex="-1"
       >
         <div
-          class="c6 EdgeControl__StyledBox-sc-1xo2yt9-0"
+          class="c7 EdgeControl__StyledBox-sc-1xo2yt9-1"
         />
       </div>
     </div>
     <div
-      class="c15"
+      class="c16"
       style="flex: 11 0 0px; cursor: ew-resize;"
     />
     <div
       class="c4"
       style="flex: 0 0 1px;"
     >
-      <div
+      <input
         aria-label="Upper Bounds"
         aria-valuemax="100"
         aria-valuemin="0"
         aria-valuenow="30"
         class="c5"
-        role="slider"
+        max="100"
+        min="0"
+        readonly=""
+        step="1"
+        type="range"
+        value="30"
+      />
+      <div
+        class="c6"
         style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
-        tabindex="0"
+        tabindex="-1"
       >
         <div
-          class="c6 EdgeControl__StyledBox-sc-1xo2yt9-0"
+          class="c7 EdgeControl__StyledBox-sc-1xo2yt9-1"
         />
       </div>
     </div>
     <div
-      class="c14"
+      class="c15"
       style="flex: 70 0 0px;"
     />
   </div>
@@ -3882,7 +4546,7 @@ exports[`RangeSelector should not have accessibility violations 1`] = `
   overflow: visible;
 }
 
-.c5 {
+.c6 {
   display: flex;
   box-sizing: border-box;
   align-items: center;
@@ -3894,7 +4558,7 @@ exports[`RangeSelector should not have accessibility violations 1`] = `
   justify-content: center;
 }
 
-.c6 {
+.c7 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -3908,7 +4572,7 @@ exports[`RangeSelector should not have accessibility violations 1`] = `
   border-radius: 100%;
 }
 
-.c7 {
+.c8 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -3919,6 +4583,16 @@ exports[`RangeSelector should not have accessibility violations 1`] = `
   flex-direction: column;
   height: 24px;
   width: 100%;
+}
+
+.c5 {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 1px;
 }
 
 .c2 {
@@ -3940,41 +4614,57 @@ exports[`RangeSelector should not have accessibility violations 1`] = `
       class="c4"
       style="flex: 0 0 1px;"
     >
-      <div
+      <input
         aria-label="Lower Bounds"
         aria-valuemax="100"
         aria-valuemin="0"
         aria-valuenow="20"
         class="c5"
-        role="slider"
+        max="100"
+        min="0"
+        readonly=""
+        step="1"
+        type="range"
+        value="20"
+      />
+      <div
+        class="c6"
         style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
-        tabindex="0"
+        tabindex="-1"
       >
         <div
-          class="c6 EdgeControl__StyledBox-sc-1xo2yt9-0"
+          class="c7 EdgeControl__StyledBox-sc-1xo2yt9-1"
         />
       </div>
     </div>
     <div
-      class="c7"
+      class="c8"
       style="flex: 11 0 0px; cursor: ew-resize;"
     />
     <div
       class="c4"
       style="flex: 0 0 1px;"
     >
-      <div
+      <input
         aria-label="Upper Bounds"
         aria-valuemax="100"
         aria-valuemin="0"
         aria-valuenow="30"
         class="c5"
-        role="slider"
+        max="100"
+        min="0"
+        readonly=""
+        step="1"
+        type="range"
+        value="30"
+      />
+      <div
+        class="c6"
         style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
-        tabindex="0"
+        tabindex="-1"
       >
         <div
-          class="c6 EdgeControl__StyledBox-sc-1xo2yt9-0"
+          class="c7 EdgeControl__StyledBox-sc-1xo2yt9-1"
         />
       </div>
     </div>
@@ -4034,7 +4724,7 @@ exports[`RangeSelector size 1`] = `
   overflow: visible;
 }
 
-.c5 {
+.c6 {
   display: flex;
   box-sizing: border-box;
   align-items: center;
@@ -4046,7 +4736,7 @@ exports[`RangeSelector size 1`] = `
   justify-content: center;
 }
 
-.c6 {
+.c7 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -4060,7 +4750,7 @@ exports[`RangeSelector size 1`] = `
   border-radius: 100%;
 }
 
-.c7 {
+.c8 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -4073,23 +4763,10 @@ exports[`RangeSelector size 1`] = `
   width: 100%;
 }
 
-.c8 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  flex-direction: column;
-  height: 6px;
-  width: 100%;
-}
-
 .c9 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background-color: rgba(125, 76, 219, 0.4);
-  color: #444444;
   min-width: 0;
   min-height: 0;
   flex-direction: column;
@@ -4101,10 +4778,12 @@ exports[`RangeSelector size 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  background-color: rgba(125, 76, 219, 0.4);
+  color: #444444;
   min-width: 0;
   min-height: 0;
   flex-direction: column;
-  height: 12px;
+  height: 6px;
   width: 100%;
 }
 
@@ -4112,8 +4791,6 @@ exports[`RangeSelector size 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background-color: rgba(125, 76, 219, 0.4);
-  color: #444444;
   min-width: 0;
   min-height: 0;
   flex-direction: column;
@@ -4125,10 +4802,12 @@ exports[`RangeSelector size 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  background-color: rgba(125, 76, 219, 0.4);
+  color: #444444;
   min-width: 0;
   min-height: 0;
   flex-direction: column;
-  height: 24px;
+  height: 12px;
   width: 100%;
 }
 
@@ -4136,8 +4815,6 @@ exports[`RangeSelector size 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background-color: rgba(125, 76, 219, 0.4);
-  color: #444444;
   min-width: 0;
   min-height: 0;
   flex-direction: column;
@@ -4149,10 +4826,12 @@ exports[`RangeSelector size 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  background-color: rgba(125, 76, 219, 0.4);
+  color: #444444;
   min-width: 0;
   min-height: 0;
   flex-direction: column;
-  height: 48px;
+  height: 24px;
   width: 100%;
 }
 
@@ -4160,8 +4839,6 @@ exports[`RangeSelector size 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background-color: rgba(125, 76, 219, 0.4);
-  color: #444444;
   min-width: 0;
   min-height: 0;
   flex-direction: column;
@@ -4173,10 +4850,12 @@ exports[`RangeSelector size 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  background-color: rgba(125, 76, 219, 0.4);
+  color: #444444;
   min-width: 0;
   min-height: 0;
   flex-direction: column;
-  height: 96px;
+  height: 48px;
   width: 100%;
 }
 
@@ -4184,8 +4863,6 @@ exports[`RangeSelector size 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background-color: rgba(125, 76, 219, 0.4);
-  color: #444444;
   min-width: 0;
   min-height: 0;
   flex-direction: column;
@@ -4197,6 +4874,19 @@ exports[`RangeSelector size 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  background-color: rgba(125, 76, 219, 0.4);
+  color: #444444;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  height: 96px;
+  width: 100%;
+}
+
+.c19 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
   align-self: stretch;
   min-width: 0;
   min-height: 0;
@@ -4204,7 +4894,7 @@ exports[`RangeSelector size 1`] = `
   width: 100%;
 }
 
-.c19 {
+.c20 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -4215,6 +4905,16 @@ exports[`RangeSelector size 1`] = `
   min-height: 0;
   flex-direction: column;
   width: 100%;
+}
+
+.c5 {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 1px;
 }
 
 .c2 {
@@ -4236,41 +4936,57 @@ exports[`RangeSelector size 1`] = `
       class="c4"
       style="flex: 0 0 1px;"
     >
-      <div
+      <input
         aria-label="Lower Bounds"
         aria-valuemax="100"
         aria-valuemin="0"
         aria-valuenow="20"
         class="c5"
-        role="slider"
+        max="100"
+        min="0"
+        readonly=""
+        step="1"
+        type="range"
+        value="20"
+      />
+      <div
+        class="c6"
         style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
-        tabindex="0"
+        tabindex="-1"
       >
         <div
-          class="c6 EdgeControl__StyledBox-sc-1xo2yt9-0"
+          class="c7 EdgeControl__StyledBox-sc-1xo2yt9-1"
         />
       </div>
     </div>
     <div
-      class="c7"
+      class="c8"
       style="flex: 11 0 0px; cursor: ew-resize;"
     />
     <div
       class="c4"
       style="flex: 0 0 1px;"
     >
-      <div
+      <input
         aria-label="Upper Bounds"
         aria-valuemax="100"
         aria-valuemin="0"
         aria-valuenow="30"
         class="c5"
-        role="slider"
+        max="100"
+        min="0"
+        readonly=""
+        step="1"
+        type="range"
+        value="30"
+      />
+      <div
+        class="c6"
         style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
-        tabindex="0"
+        tabindex="-1"
       >
         <div
-          class="c6 EdgeControl__StyledBox-sc-1xo2yt9-0"
+          class="c7 EdgeControl__StyledBox-sc-1xo2yt9-1"
         />
       </div>
     </div>
@@ -4284,53 +5000,69 @@ exports[`RangeSelector size 1`] = `
     tabindex="-1"
   >
     <div
-      class="c8"
+      class="c9"
       style="flex: 20 0 0px;"
     />
     <div
       class="c4"
       style="flex: 0 0 1px;"
     >
-      <div
+      <input
         aria-label="Lower Bounds"
         aria-valuemax="100"
         aria-valuemin="0"
         aria-valuenow="20"
         class="c5"
-        role="slider"
+        max="100"
+        min="0"
+        readonly=""
+        step="1"
+        type="range"
+        value="20"
+      />
+      <div
+        class="c6"
         style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
-        tabindex="0"
+        tabindex="-1"
       >
         <div
-          class="c6 EdgeControl__StyledBox-sc-1xo2yt9-0"
+          class="c7 EdgeControl__StyledBox-sc-1xo2yt9-1"
+        />
+      </div>
+    </div>
+    <div
+      class="c10"
+      style="flex: 11 0 0px; cursor: ew-resize;"
+    />
+    <div
+      class="c4"
+      style="flex: 0 0 1px;"
+    >
+      <input
+        aria-label="Upper Bounds"
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="30"
+        class="c5"
+        max="100"
+        min="0"
+        readonly=""
+        step="1"
+        type="range"
+        value="30"
+      />
+      <div
+        class="c6"
+        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
+        tabindex="-1"
+      >
+        <div
+          class="c7 EdgeControl__StyledBox-sc-1xo2yt9-1"
         />
       </div>
     </div>
     <div
       class="c9"
-      style="flex: 11 0 0px; cursor: ew-resize;"
-    />
-    <div
-      class="c4"
-      style="flex: 0 0 1px;"
-    >
-      <div
-        aria-label="Upper Bounds"
-        aria-valuemax="100"
-        aria-valuemin="0"
-        aria-valuenow="30"
-        class="c5"
-        role="slider"
-        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
-        tabindex="0"
-      >
-        <div
-          class="c6 EdgeControl__StyledBox-sc-1xo2yt9-0"
-        />
-      </div>
-    </div>
-    <div
-      class="c8"
       style="flex: 70 0 0px;"
     />
   </div>
@@ -4339,53 +5071,69 @@ exports[`RangeSelector size 1`] = `
     tabindex="-1"
   >
     <div
-      class="c10"
+      class="c11"
       style="flex: 20 0 0px;"
     />
     <div
       class="c4"
       style="flex: 0 0 1px;"
     >
-      <div
+      <input
         aria-label="Lower Bounds"
         aria-valuemax="100"
         aria-valuemin="0"
         aria-valuenow="20"
         class="c5"
-        role="slider"
+        max="100"
+        min="0"
+        readonly=""
+        step="1"
+        type="range"
+        value="20"
+      />
+      <div
+        class="c6"
         style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
-        tabindex="0"
+        tabindex="-1"
       >
         <div
-          class="c6 EdgeControl__StyledBox-sc-1xo2yt9-0"
+          class="c7 EdgeControl__StyledBox-sc-1xo2yt9-1"
+        />
+      </div>
+    </div>
+    <div
+      class="c12"
+      style="flex: 11 0 0px; cursor: ew-resize;"
+    />
+    <div
+      class="c4"
+      style="flex: 0 0 1px;"
+    >
+      <input
+        aria-label="Upper Bounds"
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="30"
+        class="c5"
+        max="100"
+        min="0"
+        readonly=""
+        step="1"
+        type="range"
+        value="30"
+      />
+      <div
+        class="c6"
+        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
+        tabindex="-1"
+      >
+        <div
+          class="c7 EdgeControl__StyledBox-sc-1xo2yt9-1"
         />
       </div>
     </div>
     <div
       class="c11"
-      style="flex: 11 0 0px; cursor: ew-resize;"
-    />
-    <div
-      class="c4"
-      style="flex: 0 0 1px;"
-    >
-      <div
-        aria-label="Upper Bounds"
-        aria-valuemax="100"
-        aria-valuemin="0"
-        aria-valuenow="30"
-        class="c5"
-        role="slider"
-        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
-        tabindex="0"
-      >
-        <div
-          class="c6 EdgeControl__StyledBox-sc-1xo2yt9-0"
-        />
-      </div>
-    </div>
-    <div
-      class="c10"
       style="flex: 70 0 0px;"
     />
   </div>
@@ -4394,53 +5142,69 @@ exports[`RangeSelector size 1`] = `
     tabindex="-1"
   >
     <div
-      class="c12"
+      class="c13"
       style="flex: 20 0 0px;"
     />
     <div
       class="c4"
       style="flex: 0 0 1px;"
     >
-      <div
+      <input
         aria-label="Lower Bounds"
         aria-valuemax="100"
         aria-valuemin="0"
         aria-valuenow="20"
         class="c5"
-        role="slider"
+        max="100"
+        min="0"
+        readonly=""
+        step="1"
+        type="range"
+        value="20"
+      />
+      <div
+        class="c6"
         style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
-        tabindex="0"
+        tabindex="-1"
       >
         <div
-          class="c6 EdgeControl__StyledBox-sc-1xo2yt9-0"
+          class="c7 EdgeControl__StyledBox-sc-1xo2yt9-1"
+        />
+      </div>
+    </div>
+    <div
+      class="c14"
+      style="flex: 11 0 0px; cursor: ew-resize;"
+    />
+    <div
+      class="c4"
+      style="flex: 0 0 1px;"
+    >
+      <input
+        aria-label="Upper Bounds"
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="30"
+        class="c5"
+        max="100"
+        min="0"
+        readonly=""
+        step="1"
+        type="range"
+        value="30"
+      />
+      <div
+        class="c6"
+        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
+        tabindex="-1"
+      >
+        <div
+          class="c7 EdgeControl__StyledBox-sc-1xo2yt9-1"
         />
       </div>
     </div>
     <div
       class="c13"
-      style="flex: 11 0 0px; cursor: ew-resize;"
-    />
-    <div
-      class="c4"
-      style="flex: 0 0 1px;"
-    >
-      <div
-        aria-label="Upper Bounds"
-        aria-valuemax="100"
-        aria-valuemin="0"
-        aria-valuenow="30"
-        class="c5"
-        role="slider"
-        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
-        tabindex="0"
-      >
-        <div
-          class="c6 EdgeControl__StyledBox-sc-1xo2yt9-0"
-        />
-      </div>
-    </div>
-    <div
-      class="c12"
       style="flex: 70 0 0px;"
     />
   </div>
@@ -4449,53 +5213,69 @@ exports[`RangeSelector size 1`] = `
     tabindex="-1"
   >
     <div
-      class="c14"
+      class="c15"
       style="flex: 20 0 0px;"
     />
     <div
       class="c4"
       style="flex: 0 0 1px;"
     >
-      <div
+      <input
         aria-label="Lower Bounds"
         aria-valuemax="100"
         aria-valuemin="0"
         aria-valuenow="20"
         class="c5"
-        role="slider"
+        max="100"
+        min="0"
+        readonly=""
+        step="1"
+        type="range"
+        value="20"
+      />
+      <div
+        class="c6"
         style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
-        tabindex="0"
+        tabindex="-1"
       >
         <div
-          class="c6 EdgeControl__StyledBox-sc-1xo2yt9-0"
+          class="c7 EdgeControl__StyledBox-sc-1xo2yt9-1"
+        />
+      </div>
+    </div>
+    <div
+      class="c16"
+      style="flex: 11 0 0px; cursor: ew-resize;"
+    />
+    <div
+      class="c4"
+      style="flex: 0 0 1px;"
+    >
+      <input
+        aria-label="Upper Bounds"
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="30"
+        class="c5"
+        max="100"
+        min="0"
+        readonly=""
+        step="1"
+        type="range"
+        value="30"
+      />
+      <div
+        class="c6"
+        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
+        tabindex="-1"
+      >
+        <div
+          class="c7 EdgeControl__StyledBox-sc-1xo2yt9-1"
         />
       </div>
     </div>
     <div
       class="c15"
-      style="flex: 11 0 0px; cursor: ew-resize;"
-    />
-    <div
-      class="c4"
-      style="flex: 0 0 1px;"
-    >
-      <div
-        aria-label="Upper Bounds"
-        aria-valuemax="100"
-        aria-valuemin="0"
-        aria-valuenow="30"
-        class="c5"
-        role="slider"
-        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
-        tabindex="0"
-      >
-        <div
-          class="c6 EdgeControl__StyledBox-sc-1xo2yt9-0"
-        />
-      </div>
-    </div>
-    <div
-      class="c14"
       style="flex: 70 0 0px;"
     />
   </div>
@@ -4504,53 +5284,69 @@ exports[`RangeSelector size 1`] = `
     tabindex="-1"
   >
     <div
-      class="c16"
+      class="c17"
       style="flex: 20 0 0px;"
     />
     <div
       class="c4"
       style="flex: 0 0 1px;"
     >
-      <div
+      <input
         aria-label="Lower Bounds"
         aria-valuemax="100"
         aria-valuemin="0"
         aria-valuenow="20"
         class="c5"
-        role="slider"
+        max="100"
+        min="0"
+        readonly=""
+        step="1"
+        type="range"
+        value="20"
+      />
+      <div
+        class="c6"
         style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
-        tabindex="0"
+        tabindex="-1"
       >
         <div
-          class="c6 EdgeControl__StyledBox-sc-1xo2yt9-0"
+          class="c7 EdgeControl__StyledBox-sc-1xo2yt9-1"
+        />
+      </div>
+    </div>
+    <div
+      class="c18"
+      style="flex: 11 0 0px; cursor: ew-resize;"
+    />
+    <div
+      class="c4"
+      style="flex: 0 0 1px;"
+    >
+      <input
+        aria-label="Upper Bounds"
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="30"
+        class="c5"
+        max="100"
+        min="0"
+        readonly=""
+        step="1"
+        type="range"
+        value="30"
+      />
+      <div
+        class="c6"
+        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
+        tabindex="-1"
+      >
+        <div
+          class="c7 EdgeControl__StyledBox-sc-1xo2yt9-1"
         />
       </div>
     </div>
     <div
       class="c17"
-      style="flex: 11 0 0px; cursor: ew-resize;"
-    />
-    <div
-      class="c4"
-      style="flex: 0 0 1px;"
-    >
-      <div
-        aria-label="Upper Bounds"
-        aria-valuemax="100"
-        aria-valuemin="0"
-        aria-valuenow="30"
-        class="c5"
-        role="slider"
-        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
-        tabindex="0"
-      >
-        <div
-          class="c6 EdgeControl__StyledBox-sc-1xo2yt9-0"
-        />
-      </div>
-    </div>
-    <div
-      class="c16"
       style="flex: 70 0 0px;"
     />
   </div>
@@ -4559,53 +5355,69 @@ exports[`RangeSelector size 1`] = `
     tabindex="-1"
   >
     <div
-      class="c18"
+      class="c19"
       style="flex: 20 0 0px;"
     />
     <div
       class="c4"
       style="flex: 0 0 1px;"
     >
-      <div
+      <input
         aria-label="Lower Bounds"
         aria-valuemax="100"
         aria-valuemin="0"
         aria-valuenow="20"
         class="c5"
-        role="slider"
+        max="100"
+        min="0"
+        readonly=""
+        step="1"
+        type="range"
+        value="20"
+      />
+      <div
+        class="c6"
         style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
-        tabindex="0"
+        tabindex="-1"
       >
         <div
-          class="c6 EdgeControl__StyledBox-sc-1xo2yt9-0"
+          class="c7 EdgeControl__StyledBox-sc-1xo2yt9-1"
         />
       </div>
     </div>
     <div
-      class="c19"
+      class="c20"
       style="flex: 11 0 0px; cursor: ew-resize;"
     />
     <div
       class="c4"
       style="flex: 0 0 1px;"
     >
-      <div
+      <input
         aria-label="Upper Bounds"
         aria-valuemax="100"
         aria-valuemin="0"
         aria-valuenow="30"
         class="c5"
-        role="slider"
+        max="100"
+        min="0"
+        readonly=""
+        step="1"
+        type="range"
+        value="30"
+      />
+      <div
+        class="c6"
         style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
-        tabindex="0"
+        tabindex="-1"
       >
         <div
-          class="c6 EdgeControl__StyledBox-sc-1xo2yt9-0"
+          class="c7 EdgeControl__StyledBox-sc-1xo2yt9-1"
         />
       </div>
     </div>
     <div
-      class="c18"
+      class="c19"
       style="flex: 70 0 0px;"
     />
   </div>
@@ -4660,7 +5472,7 @@ exports[`RangeSelector step renders correct values 1`] = `
   overflow: visible;
 }
 
-.c5 {
+.c6 {
   display: flex;
   box-sizing: border-box;
   align-items: center;
@@ -4672,7 +5484,7 @@ exports[`RangeSelector step renders correct values 1`] = `
   justify-content: center;
 }
 
-.c6 {
+.c7 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -4686,7 +5498,7 @@ exports[`RangeSelector step renders correct values 1`] = `
   border-radius: 100%;
 }
 
-.c7 {
+.c8 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -4697,6 +5509,16 @@ exports[`RangeSelector step renders correct values 1`] = `
   flex-direction: column;
   height: 24px;
   width: 100%;
+}
+
+.c5 {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 1px;
 }
 
 .c2 {
@@ -4718,41 +5540,57 @@ exports[`RangeSelector step renders correct values 1`] = `
       class="c4"
       style="flex: 0 0 1px;"
     >
-      <div
+      <input
         aria-label="Lower Bounds"
         aria-valuemax="100"
         aria-valuemin="0"
         aria-valuenow="0"
         class="c5"
-        role="slider"
+        max="100"
+        min="0"
+        readonly=""
+        step="3"
+        type="range"
+        value="0"
+      />
+      <div
+        class="c6"
         style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
-        tabindex="0"
+        tabindex="-1"
       >
         <div
-          class="c6 EdgeControl__StyledBox-sc-1xo2yt9-0"
+          class="c7 EdgeControl__StyledBox-sc-1xo2yt9-1"
         />
       </div>
     </div>
     <div
-      class="c7"
+      class="c8"
       style="flex: 101 0 0px; cursor: ew-resize;"
     />
     <div
       class="c4"
       style="flex: 0 0 1px;"
     >
-      <div
+      <input
         aria-label="Upper Bounds"
         aria-valuemax="100"
         aria-valuemin="0"
         aria-valuenow="100"
         class="c5"
-        role="slider"
+        max="100"
+        min="0"
+        readonly=""
+        step="3"
+        type="range"
+        value="100"
+      />
+      <div
+        class="c6"
         style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
-        tabindex="0"
+        tabindex="-1"
       >
         <div
-          class="c6 EdgeControl__StyledBox-sc-1xo2yt9-0"
+          class="c7 EdgeControl__StyledBox-sc-1xo2yt9-1"
         />
       </div>
     </div>

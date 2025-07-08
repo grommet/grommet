@@ -1,12 +1,19 @@
-var _excluded = ["color", "direction", "edge", "onDecrease", "onIncrease", "thickness"];
+var _excluded = ["color", "direction", "edge", "onDecrease", "onIncrease", "thickness", "max", "min", "messages", "value", "step"];
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (-1 !== e.indexOf(n)) continue; t[n] = r[n]; } return t; }
-import React, { forwardRef, useState } from 'react';
+import React, { useContext, forwardRef, useState } from 'react';
 import styled from 'styled-components';
 import { Box } from '../Box';
 import { Keyboard } from '../Keyboard';
 import { focusStyle, normalizeColor, parseMetricToNum } from '../../utils';
 import { useThemeValue } from '../../utils/useThemeValue';
+import { MessageContext } from '../../contexts/MessageContext';
+
+// Add visually hidden input styles
+var VisuallyHiddenInput = styled.input.withConfig({
+  displayName: "EdgeControl__VisuallyHiddenInput",
+  componentId: "sc-1xo2yt9-0"
+})(["position:absolute;clip:rect(0 0 0 0);clip-path:inset(50%);height:1px;overflow:hidden;white-space:nowrap;width:1px;"]);
 var DIRECTION_PROPS = {
   horizontal: {
     cursor: 'col-resize',
@@ -19,7 +26,7 @@ var DIRECTION_PROPS = {
 };
 var StyledBox = styled(Box).withConfig({
   displayName: "EdgeControl__StyledBox",
-  componentId: "sc-1xo2yt9-0"
+  componentId: "sc-1xo2yt9-1"
 })(["", ""], function (props) {
   return props.focus && focusStyle();
 });
@@ -31,6 +38,11 @@ var EdgeControl = /*#__PURE__*/forwardRef(function (_ref, ref) {
     onDecrease = _ref.onDecrease,
     onIncrease = _ref.onIncrease,
     thickness = _ref.thickness,
+    max = _ref.max,
+    min = _ref.min,
+    messages = _ref.messages,
+    value = _ref.value,
+    step = _ref.step,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
   var _useThemeValue = useThemeValue(),
     theme = _useThemeValue.theme;
@@ -40,6 +52,8 @@ var EdgeControl = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var _DIRECTION_PROPS$dire = DIRECTION_PROPS[direction],
     cursor = _DIRECTION_PROPS$dire.cursor,
     fill = _DIRECTION_PROPS$dire.fill;
+  var _useContext = useContext(MessageContext),
+    format = _useContext.format;
   var themeEdgeSize = (_theme$rangeSelector = theme.rangeSelector) == null || (_theme$rangeSelector = _theme$rangeSelector.edge) == null ? void 0 : _theme$rangeSelector.size;
   var size;
   if (themeEdgeSize) {
@@ -97,7 +111,27 @@ var EdgeControl = /*#__PURE__*/forwardRef(function (_ref, ref) {
     align: "center",
     justify: "center",
     alignSelf: "stretch"
-  }, /*#__PURE__*/React.createElement(Box, _extends({
+  }, /*#__PURE__*/React.createElement(VisuallyHiddenInput, {
+    type: "range",
+    min: min,
+    max: max,
+    step: step,
+    value: value,
+    onFocus: function onFocus() {
+      return setFocus(true);
+    },
+    onBlur: function onBlur() {
+      return setFocus(false);
+    },
+    "aria-label": format({
+      id: edge === 'lower' ? 'rangeSelector.lower' : 'rangeSelector.upper',
+      messages: messages
+    }),
+    "aria-valuemin": min,
+    "aria-valuemax": max,
+    "aria-valuenow": value,
+    readOnly: true
+  }), /*#__PURE__*/React.createElement(Box, _extends({
     ref: ref,
     direction: boxDirection,
     justify: "center",
@@ -111,13 +145,7 @@ var EdgeControl = /*#__PURE__*/forwardRef(function (_ref, ref) {
       minHeight: size,
       zIndex: 1
     },
-    tabIndex: 0,
-    onFocus: function onFocus() {
-      return setFocus(true);
-    },
-    onBlur: function onBlur() {
-      return setFocus(false);
-    }
+    tabIndex: -1
   }, rest), node)));
 });
 EdgeControl.displayName = 'EdgeControl';
