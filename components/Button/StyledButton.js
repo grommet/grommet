@@ -90,7 +90,9 @@ var StyledButton = exports.StyledButton = _styledComponents["default"].button.wi
 }, function (props) {
   return props.disabled && props.theme.button && props.theme.button.disabled && disabledButtonStyle(props);
 }, function (props) {
-  return (!props.plain || props.focusIndicator) && (0, _utils.focusStyle)();
+  return (!props.plain || props.focusIndicator) && (0, _utils.focusStyle)({
+    inset: props.focusIndicator === 'inset'
+  });
 }, (0, _utils.unfocusStyle)(), function (props) {
   return !props.plain && props.theme.button.transition && "\n    transition-property: " + props.theme.button.transition.properties.join(',') + ";\n    transition-duration: " + props.theme.button.transition.duration + "s;\n    transition-timing-function: " + props.theme.button.transition.timing + ";\n  ";
 }, function (props) {

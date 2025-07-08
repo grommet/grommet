@@ -85,7 +85,9 @@ var StyledButton = styled.button.withConfig(styledComponentsConfig).withConfig({
 }, function (props) {
   return props.disabled && props.theme.button && props.theme.button.disabled && disabledButtonStyle(props);
 }, function (props) {
-  return (!props.plain || props.focusIndicator) && focusStyle();
+  return (!props.plain || props.focusIndicator) && focusStyle({
+    inset: props.focusIndicator === 'inset'
+  });
 }, unfocusStyle(), function (props) {
   return !props.plain && props.theme.button.transition && "\n    transition-property: " + props.theme.button.transition.properties.join(',') + ";\n    transition-duration: " + props.theme.button.transition.duration + "s;\n    transition-timing-function: " + props.theme.button.transition.timing + ";\n  ";
 }, function (props) {

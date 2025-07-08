@@ -43,7 +43,11 @@ var ExpanderControl = function ExpanderControl(_ref) {
       fill: true,
       "aria-expanded": expanded ? 'true' : 'false',
       a11yTitle: expanded ? 'collapse' : 'expand',
-      hoverIndicator: true,
+      hoverIndicator: true
+      // ensure focus is visible since overflow: hidden on TableCell sizeStyle
+      // would otherwise clip it
+      ,
+      focusIndicator: "inset",
       onClick: onToggle,
       plain: true
     }, content);

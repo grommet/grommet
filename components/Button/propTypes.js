@@ -21,7 +21,7 @@ if (process.env.NODE_ENV !== 'production') {
     color: _generalPropTypes.colorPropType,
     disabled: _propTypes["default"].bool,
     fill: _propTypes["default"].oneOfType([_propTypes["default"].oneOf(['horizontal', 'vertical']), _propTypes["default"].bool]),
-    focusIndicator: _propTypes["default"].bool,
+    focusIndicator: _propTypes["default"].oneOfType([_propTypes["default"].bool, _propTypes["default"].oneOf(['inset'])]),
     gap: _propTypes["default"].oneOfType([_propTypes["default"].oneOf(['none', 'xxsmall', 'xsmall', 'small', 'medium', 'large', 'xlarge']), _propTypes["default"].string]),
     hoverIndicator: _generalPropTypes.hoverIndicatorPropType,
     href: _propTypes["default"].string,

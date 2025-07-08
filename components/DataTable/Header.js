@@ -307,6 +307,7 @@ var Header = exports.Header = /*#__PURE__*/(0, _react.forwardRef)(function (_ref
         plain: true,
         column: property,
         fill: "vertical",
+        focusIndicator: size ? 'inset' : undefined,
         onClick: onSort(property),
         sort: sort,
         pad: cellProps.pad,
@@ -340,6 +341,7 @@ var Header = exports.Header = /*#__PURE__*/(0, _react.forwardRef)(function (_ref
       var searcher = search && filters ? /*#__PURE__*/_react["default"].createElement(_Searcher.Searcher, {
         filtering: filtering,
         filters: filters,
+        focusIndicator: size ? 'inset' : undefined,
         messages: messages,
         property: property,
         onFilter: onFilter,

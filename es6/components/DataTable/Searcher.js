@@ -11,6 +11,7 @@ import { useThemeValue } from '../../utils/useThemeValue';
 var Searcher = function Searcher(_ref) {
   var filtering = _ref.filtering,
     filters = _ref.filters,
+    focusIndicator = _ref.focusIndicator,
     messages = _ref.messages,
     onFilter = _ref.onFilter,
     onFiltering = _ref.onFiltering,
@@ -83,6 +84,7 @@ var Searcher = function Searcher(_ref) {
       color: normalizeColor(filtering === property ? 'brand' : 'border', theme)
     }),
     hoverIndicator: true,
+    focusIndicator: focusIndicator,
     onClick: function onClick() {
       return onFiltering(filtering === property ? undefined : property);
     }

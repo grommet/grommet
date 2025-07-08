@@ -200,7 +200,9 @@ var StyledButtonKind = exports.StyledButtonKind = _styledComponents["default"].b
 }, function (props) {
   return props.disabled && (0, _utils.disabledStyle)(props.theme.button.disabled.opacity);
 }, function (props) {
-  return (!props.plain || props.focusIndicator) && (0, _utils.focusStyle)();
+  return (!props.plain || props.focusIndicator) && (0, _utils.focusStyle)({
+    inset: props.focusIndicator === 'inset'
+  });
 }, (0, _utils.unfocusStyle)(), function (props) {
   return !props.plain && props.theme.button.transition && "\n    transition-property: " + props.theme.button.transition.properties.join(',') + ";\n    transition-duration: " + props.theme.button.transition.duration + "s;\n    transition-timing-function: " + props.theme.button.transition.timing + ";\n  ";
 }, function (props) {

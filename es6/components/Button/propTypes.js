@@ -16,7 +16,7 @@ if (process.env.NODE_ENV !== 'production') {
     color: colorPropType,
     disabled: PropTypes.bool,
     fill: PropTypes.oneOfType([PropTypes.oneOf(['horizontal', 'vertical']), PropTypes.bool]),
-    focusIndicator: PropTypes.bool,
+    focusIndicator: PropTypes.oneOfType([PropTypes.bool, PropTypes.oneOf(['inset'])]),
     gap: PropTypes.oneOfType([PropTypes.oneOf(['none', 'xxsmall', 'xsmall', 'small', 'medium', 'large', 'xlarge']), PropTypes.string]),
     hoverIndicator: hoverIndicatorPropType,
     href: PropTypes.string,
