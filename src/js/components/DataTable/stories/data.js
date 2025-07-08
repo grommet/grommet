@@ -14,12 +14,10 @@ export const columns = [
     header: <Text>Name with extra</Text>,
     primary: true,
     footer: 'Total',
-    size: 'small',
   },
   {
     property: 'location',
     header: 'Location',
-    size: 'medium',
   },
   {
     property: 'date',
