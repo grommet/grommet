@@ -24,7 +24,6 @@ const Layer = forwardRef((props, ref) => {
   const [originalFocusedElement, setOriginalFocusedElement] = useState();
 
   const focusWithinLayerRef = useRef(false);
-  const lastInputWasKeyboardRef = useRef(false);
 
   useEffect(() => {
     setOriginalFocusedElement(document.activeElement);
@@ -32,10 +31,7 @@ const Layer = forwardRef((props, ref) => {
 
   useEffect(() => {
     const handleFocusIn = (event) => {
-      if (
-        layerContainer?.contains?.(event.target) &&
-        lastInputWasKeyboardRef.current
-      ) {
+      if (layerContainer?.contains?.(event.target)) {
         focusWithinLayerRef.current = true;
       }
     };
@@ -122,26 +118,9 @@ const Layer = forwardRef((props, ref) => {
     ],
   );
 
-  // Reset keyboard input and
-  // layer focus flag on mouse interactions
-  useEffect(() => {
-    const handleMouseDown = () => {
-      lastInputWasKeyboardRef.current = false;
-      focusWithinLayerRef.current = false;
-    };
-
-    document.addEventListener('mousedown', handleMouseDown);
-    return () => document.removeEventListener('mousedown', handleMouseDown);
-  }, []);
-
   return layerContainer
     ? createPortal(
-        <Keyboard
-          target="document"
-          onKeyDown={() => {
-            lastInputWasKeyboardRef.current = true;
-          }}
-        >
+        <Keyboard target="document">
           <LayerContainer ref={ref} {...props} />
         </Keyboard>,
         layerContainer,
