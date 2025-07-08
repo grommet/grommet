@@ -117,7 +117,10 @@ exports[`RangeSelector basic 1`] = `
       style="flex: 0 0 1px;"
     >
       <input
-        aria-label="slider control"
+        aria-label="Lower Bounds"
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="20"
         class="c5"
         max="100"
         min="0"
@@ -127,7 +130,7 @@ exports[`RangeSelector basic 1`] = `
         value="20"
       />
       <div
-        aria-label="Lower Bounds"
+        aria-label="lower mouse control"
         aria-valuemax="100"
         aria-valuemin="0"
         aria-valuenow="20"
@@ -150,7 +153,10 @@ exports[`RangeSelector basic 1`] = `
       style="flex: 0 0 1px;"
     >
       <input
-        aria-label="slider control"
+        aria-label="Upper Bounds"
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="30"
         class="c5"
         max="100"
         min="0"
@@ -160,7 +166,7 @@ exports[`RangeSelector basic 1`] = `
         value="30"
       />
       <div
-        aria-label="Upper Bounds"
+        aria-label="upper mouse control"
         aria-valuemax="100"
         aria-valuemin="0"
         aria-valuenow="30"
@@ -286,7 +292,10 @@ exports[`RangeSelector basic outside grommet wrapper 1`] = `
     style="flex: 0 0 1px;"
   >
     <input
-      aria-label="slider control"
+      aria-label="Lower Bounds"
+      aria-valuemax="100"
+      aria-valuemin="0"
+      aria-valuenow="20"
       class="c4"
       max="100"
       min="0"
@@ -296,7 +305,7 @@ exports[`RangeSelector basic outside grommet wrapper 1`] = `
       value="20"
     />
     <div
-      aria-label="Lower Bounds"
+      aria-label="lower mouse control"
       aria-valuemax="100"
       aria-valuemin="0"
       aria-valuenow="20"
@@ -319,7 +328,10 @@ exports[`RangeSelector basic outside grommet wrapper 1`] = `
     style="flex: 0 0 1px;"
   >
     <input
-      aria-label="slider control"
+      aria-label="Upper Bounds"
+      aria-valuemax="100"
+      aria-valuemin="0"
+      aria-valuenow="30"
       class="c4"
       max="100"
       min="0"
@@ -329,7 +341,7 @@ exports[`RangeSelector basic outside grommet wrapper 1`] = `
       value="30"
     />
     <div
-      aria-label="Upper Bounds"
+      aria-label="upper mouse control"
       aria-valuemax="100"
       aria-valuemin="0"
       aria-valuenow="30"
@@ -467,7 +479,10 @@ exports[`RangeSelector basic with theme edge size 1`] = `
       style="flex: 0 0 1px;"
     >
       <input
-        aria-label="slider control"
+        aria-label="Lower Bounds"
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="20"
         class="c5"
         max="100"
         min="0"
@@ -477,7 +492,7 @@ exports[`RangeSelector basic with theme edge size 1`] = `
         value="20"
       />
       <div
-        aria-label="Lower Bounds"
+        aria-label="lower mouse control"
         aria-valuemax="100"
         aria-valuemin="0"
         aria-valuenow="20"
@@ -500,7 +515,10 @@ exports[`RangeSelector basic with theme edge size 1`] = `
       style="flex: 0 0 1px;"
     >
       <input
-        aria-label="slider control"
+        aria-label="Upper Bounds"
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="30"
         class="c5"
         max="100"
         min="0"
@@ -510,7 +528,7 @@ exports[`RangeSelector basic with theme edge size 1`] = `
         value="30"
       />
       <div
-        aria-label="Upper Bounds"
+        aria-label="upper mouse control"
         aria-valuemax="100"
         aria-valuemin="0"
         aria-valuenow="30"
@@ -649,7 +667,10 @@ exports[`RangeSelector color 1`] = `
       style="flex: 0 0 1px;"
     >
       <input
-        aria-label="slider control"
+        aria-label="Lower Bounds"
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="20"
         class="c5"
         max="100"
         min="0"
@@ -659,7 +680,7 @@ exports[`RangeSelector color 1`] = `
         value="20"
       />
       <div
-        aria-label="Lower Bounds"
+        aria-label="lower mouse control"
         aria-valuemax="100"
         aria-valuemin="0"
         aria-valuenow="20"
@@ -682,7 +703,10 @@ exports[`RangeSelector color 1`] = `
       style="flex: 0 0 1px;"
     >
       <input
-        aria-label="slider control"
+        aria-label="Upper Bounds"
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="30"
         class="c5"
         max="100"
         min="0"
@@ -692,7 +716,7 @@ exports[`RangeSelector color 1`] = `
         value="30"
       />
       <div
-        aria-label="Upper Bounds"
+        aria-label="upper mouse control"
         aria-valuemax="100"
         aria-valuemin="0"
         aria-valuenow="30"
@@ -893,7 +917,10 @@ exports[`RangeSelector direction 1`] = `
       style="flex: 0 0 1px;"
     >
       <input
-        aria-label="slider control"
+        aria-label="Lower Bounds"
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="20"
         class="c5"
         max="100"
         min="0"
@@ -903,7 +930,7 @@ exports[`RangeSelector direction 1`] = `
         value="20"
       />
       <div
-        aria-label="Lower Bounds"
+        aria-label="lower mouse control"
         aria-valuemax="100"
         aria-valuemin="0"
         aria-valuenow="20"
@@ -926,7 +953,10 @@ exports[`RangeSelector direction 1`] = `
       style="flex: 0 0 1px;"
     >
       <input
-        aria-label="slider control"
+        aria-label="Upper Bounds"
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="30"
         class="c5"
         max="100"
         min="0"
@@ -936,7 +966,7 @@ exports[`RangeSelector direction 1`] = `
         value="30"
       />
       <div
-        aria-label="Upper Bounds"
+        aria-label="upper mouse control"
         aria-valuemax="100"
         aria-valuemin="0"
         aria-valuenow="30"
@@ -968,7 +998,10 @@ exports[`RangeSelector direction 1`] = `
       style="flex: 0 0 1px;"
     >
       <input
-        aria-label="slider control"
+        aria-label="Lower Bounds"
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="20"
         class="c5"
         max="100"
         min="0"
@@ -978,7 +1011,7 @@ exports[`RangeSelector direction 1`] = `
         value="20"
       />
       <div
-        aria-label="Lower Bounds"
+        aria-label="lower mouse control"
         aria-valuemax="100"
         aria-valuemin="0"
         aria-valuenow="20"
@@ -1001,7 +1034,10 @@ exports[`RangeSelector direction 1`] = `
       style="flex: 0 0 1px;"
     >
       <input
-        aria-label="slider control"
+        aria-label="Upper Bounds"
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="30"
         class="c5"
         max="100"
         min="0"
@@ -1011,7 +1047,7 @@ exports[`RangeSelector direction 1`] = `
         value="30"
       />
       <div
-        aria-label="Upper Bounds"
+        aria-label="upper mouse control"
         aria-valuemax="100"
         aria-valuemin="0"
         aria-valuenow="30"
@@ -1150,7 +1186,10 @@ exports[`RangeSelector handle keyboard 1`] = `
       style="flex: 0 0 1px;"
     >
       <input
-        aria-label="slider control"
+        aria-label="Lower Bounds"
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="20"
         class="c5"
         max="100"
         min="0"
@@ -1160,7 +1199,7 @@ exports[`RangeSelector handle keyboard 1`] = `
         value="20"
       />
       <div
-        aria-label="Lower Bounds"
+        aria-label="lower mouse control"
         aria-valuemax="100"
         aria-valuemin="0"
         aria-valuenow="20"
@@ -1183,7 +1222,10 @@ exports[`RangeSelector handle keyboard 1`] = `
       style="flex: 0 0 1px;"
     >
       <input
-        aria-label="slider control"
+        aria-label="Upper Bounds"
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="30"
         class="c5"
         max="100"
         min="0"
@@ -1193,7 +1235,7 @@ exports[`RangeSelector handle keyboard 1`] = `
         value="30"
       />
       <div
-        aria-label="Upper Bounds"
+        aria-label="upper mouse control"
         aria-valuemax="100"
         aria-valuemin="0"
         aria-valuenow="30"
@@ -1332,7 +1374,10 @@ exports[`RangeSelector handle mouse 1`] = `
       style="flex: 0 0 1px;"
     >
       <input
-        aria-label="slider control"
+        aria-label="Lower Bounds"
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="20"
         class="c5"
         max="100"
         min="0"
@@ -1342,7 +1387,7 @@ exports[`RangeSelector handle mouse 1`] = `
         value="20"
       />
       <div
-        aria-label="Lower Bounds"
+        aria-label="lower mouse control"
         aria-valuemax="100"
         aria-valuemin="0"
         aria-valuenow="20"
@@ -1365,7 +1410,10 @@ exports[`RangeSelector handle mouse 1`] = `
       style="flex: 0 0 1px;"
     >
       <input
-        aria-label="slider control"
+        aria-label="Upper Bounds"
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="30"
         class="c5"
         max="100"
         min="0"
@@ -1375,7 +1423,7 @@ exports[`RangeSelector handle mouse 1`] = `
         value="30"
       />
       <div
-        aria-label="Upper Bounds"
+        aria-label="upper mouse control"
         aria-valuemax="100"
         aria-valuemin="0"
         aria-valuenow="30"
@@ -1514,7 +1562,10 @@ exports[`RangeSelector handle touch gestures 1`] = `
       style="flex: 0 0 1px;"
     >
       <input
-        aria-label="slider control"
+        aria-label="Lower Bounds"
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="10"
         class="c5"
         max="100"
         min="0"
@@ -1524,7 +1575,7 @@ exports[`RangeSelector handle touch gestures 1`] = `
         value="10"
       />
       <div
-        aria-label="Lower Bounds"
+        aria-label="lower mouse control"
         aria-valuemax="100"
         aria-valuemin="0"
         aria-valuenow="10"
@@ -1547,7 +1598,10 @@ exports[`RangeSelector handle touch gestures 1`] = `
       style="flex: 0 0 1px;"
     >
       <input
-        aria-label="slider control"
+        aria-label="Upper Bounds"
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="20"
         class="c5"
         max="100"
         min="0"
@@ -1557,7 +1611,7 @@ exports[`RangeSelector handle touch gestures 1`] = `
         value="20"
       />
       <div
-        aria-label="Upper Bounds"
+        aria-label="upper mouse control"
         aria-valuemax="100"
         aria-valuemin="0"
         aria-valuenow="20"
@@ -1709,7 +1763,10 @@ exports[`RangeSelector invert 1`] = `
       style="flex: 0 0 1px;"
     >
       <input
-        aria-label="slider control"
+        aria-label="Lower Bounds"
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="20"
         class="c5"
         max="100"
         min="0"
@@ -1719,7 +1776,7 @@ exports[`RangeSelector invert 1`] = `
         value="20"
       />
       <div
-        aria-label="Lower Bounds"
+        aria-label="lower mouse control"
         aria-valuemax="100"
         aria-valuemin="0"
         aria-valuenow="20"
@@ -1742,7 +1799,10 @@ exports[`RangeSelector invert 1`] = `
       style="flex: 0 0 1px;"
     >
       <input
-        aria-label="slider control"
+        aria-label="Upper Bounds"
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="30"
         class="c5"
         max="100"
         min="0"
@@ -1752,7 +1812,7 @@ exports[`RangeSelector invert 1`] = `
         value="30"
       />
       <div
-        aria-label="Upper Bounds"
+        aria-label="upper mouse control"
         aria-valuemax="100"
         aria-valuemin="0"
         aria-valuenow="30"
@@ -1784,7 +1844,10 @@ exports[`RangeSelector invert 1`] = `
       style="flex: 0 0 1px;"
     >
       <input
-        aria-label="slider control"
+        aria-label="Lower Bounds"
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="20"
         class="c5"
         max="100"
         min="0"
@@ -1794,7 +1857,7 @@ exports[`RangeSelector invert 1`] = `
         value="20"
       />
       <div
-        aria-label="Lower Bounds"
+        aria-label="lower mouse control"
         aria-valuemax="100"
         aria-valuemin="0"
         aria-valuenow="20"
@@ -1817,7 +1880,10 @@ exports[`RangeSelector invert 1`] = `
       style="flex: 0 0 1px;"
     >
       <input
-        aria-label="slider control"
+        aria-label="Upper Bounds"
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="30"
         class="c5"
         max="100"
         min="0"
@@ -1827,7 +1893,7 @@ exports[`RangeSelector invert 1`] = `
         value="30"
       />
       <div
-        aria-label="Upper Bounds"
+        aria-label="upper mouse control"
         aria-valuemax="100"
         aria-valuemin="0"
         aria-valuenow="30"
@@ -2002,7 +2068,10 @@ exports[`RangeSelector label 1`] = `
         style="flex: 0 0 1px;"
       >
         <input
-          aria-label="slider control"
+          aria-label="Lower Bounds"
+          aria-valuemax="100"
+          aria-valuemin="0"
+          aria-valuenow="20"
           class="c7"
           max="100"
           min="0"
@@ -2012,7 +2081,7 @@ exports[`RangeSelector label 1`] = `
           value="20"
         />
         <div
-          aria-label="Lower Bounds"
+          aria-label="lower mouse control"
           aria-valuemax="100"
           aria-valuemin="0"
           aria-valuenow="20"
@@ -2035,7 +2104,10 @@ exports[`RangeSelector label 1`] = `
         style="flex: 0 0 1px;"
       >
         <input
-          aria-label="slider control"
+          aria-label="Upper Bounds"
+          aria-valuemax="100"
+          aria-valuemin="0"
+          aria-valuenow="30"
           class="c7"
           max="100"
           min="0"
@@ -2045,7 +2117,7 @@ exports[`RangeSelector label 1`] = `
           value="30"
         />
         <div
-          aria-label="Upper Bounds"
+          aria-label="upper mouse control"
           aria-valuemax="100"
           aria-valuemin="0"
           aria-valuenow="30"
@@ -2093,7 +2165,10 @@ exports[`RangeSelector label 1`] = `
         style="flex: 0 0 1px;"
       >
         <input
-          aria-label="slider control"
+          aria-label="Lower Bounds"
+          aria-valuemax="100"
+          aria-valuemin="0"
+          aria-valuenow="20"
           class="c7"
           max="100"
           min="0"
@@ -2103,7 +2178,7 @@ exports[`RangeSelector label 1`] = `
           value="20"
         />
         <div
-          aria-label="Lower Bounds"
+          aria-label="lower mouse control"
           aria-valuemax="100"
           aria-valuemin="0"
           aria-valuenow="20"
@@ -2126,7 +2201,10 @@ exports[`RangeSelector label 1`] = `
         style="flex: 0 0 1px;"
       >
         <input
-          aria-label="slider control"
+          aria-label="Upper Bounds"
+          aria-valuemax="100"
+          aria-valuemin="0"
+          aria-valuenow="30"
           class="c7"
           max="100"
           min="0"
@@ -2136,7 +2214,7 @@ exports[`RangeSelector label 1`] = `
           value="30"
         />
         <div
-          aria-label="Upper Bounds"
+          aria-label="upper mouse control"
           aria-valuemax="100"
           aria-valuemin="0"
           aria-valuenow="30"
@@ -2282,7 +2360,10 @@ exports[`RangeSelector max 1`] = `
       style="flex: 0 0 1px;"
     >
       <input
-        aria-label="slider control"
+        aria-label="Lower Bounds"
+        aria-valuemax="50"
+        aria-valuemin="0"
+        aria-valuenow="20"
         class="c5"
         max="50"
         min="0"
@@ -2292,7 +2373,7 @@ exports[`RangeSelector max 1`] = `
         value="20"
       />
       <div
-        aria-label="Lower Bounds"
+        aria-label="lower mouse control"
         aria-valuemax="50"
         aria-valuemin="0"
         aria-valuenow="20"
@@ -2315,7 +2396,10 @@ exports[`RangeSelector max 1`] = `
       style="flex: 0 0 1px;"
     >
       <input
-        aria-label="slider control"
+        aria-label="Upper Bounds"
+        aria-valuemax="50"
+        aria-valuemin="0"
+        aria-valuenow="30"
         class="c5"
         max="50"
         min="0"
@@ -2325,7 +2409,7 @@ exports[`RangeSelector max 1`] = `
         value="30"
       />
       <div
-        aria-label="Upper Bounds"
+        aria-label="upper mouse control"
         aria-valuemax="50"
         aria-valuemin="0"
         aria-valuenow="30"
@@ -2464,7 +2548,10 @@ exports[`RangeSelector min 1`] = `
       style="flex: 0 0 1px;"
     >
       <input
-        aria-label="slider control"
+        aria-label="Lower Bounds"
+        aria-valuemax="100"
+        aria-valuemin="10"
+        aria-valuenow="20"
         class="c5"
         max="100"
         min="10"
@@ -2474,7 +2561,7 @@ exports[`RangeSelector min 1`] = `
         value="20"
       />
       <div
-        aria-label="Lower Bounds"
+        aria-label="lower mouse control"
         aria-valuemax="100"
         aria-valuemin="10"
         aria-valuenow="20"
@@ -2497,7 +2584,10 @@ exports[`RangeSelector min 1`] = `
       style="flex: 0 0 1px;"
     >
       <input
-        aria-label="slider control"
+        aria-label="Upper Bounds"
+        aria-valuemax="100"
+        aria-valuemin="10"
+        aria-valuenow="30"
         class="c5"
         max="100"
         min="10"
@@ -2507,7 +2597,7 @@ exports[`RangeSelector min 1`] = `
         value="30"
       />
       <div
-        aria-label="Upper Bounds"
+        aria-label="upper mouse control"
         aria-valuemax="100"
         aria-valuemin="10"
         aria-valuenow="30"
@@ -2671,7 +2761,10 @@ exports[`RangeSelector opacity 1`] = `
       style="flex: 0 0 1px;"
     >
       <input
-        aria-label="slider control"
+        aria-label="Lower Bounds"
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="20"
         class="c5"
         max="100"
         min="0"
@@ -2681,7 +2774,7 @@ exports[`RangeSelector opacity 1`] = `
         value="20"
       />
       <div
-        aria-label="Lower Bounds"
+        aria-label="lower mouse control"
         aria-valuemax="100"
         aria-valuemin="0"
         aria-valuenow="20"
@@ -2704,7 +2797,10 @@ exports[`RangeSelector opacity 1`] = `
       style="flex: 0 0 1px;"
     >
       <input
-        aria-label="slider control"
+        aria-label="Upper Bounds"
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="30"
         class="c5"
         max="100"
         min="0"
@@ -2714,7 +2810,7 @@ exports[`RangeSelector opacity 1`] = `
         value="30"
       />
       <div
-        aria-label="Upper Bounds"
+        aria-label="upper mouse control"
         aria-valuemax="100"
         aria-valuemin="0"
         aria-valuenow="30"
@@ -2746,7 +2842,10 @@ exports[`RangeSelector opacity 1`] = `
       style="flex: 0 0 1px;"
     >
       <input
-        aria-label="slider control"
+        aria-label="Lower Bounds"
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="20"
         class="c5"
         max="100"
         min="0"
@@ -2756,7 +2855,7 @@ exports[`RangeSelector opacity 1`] = `
         value="20"
       />
       <div
-        aria-label="Lower Bounds"
+        aria-label="lower mouse control"
         aria-valuemax="100"
         aria-valuemin="0"
         aria-valuenow="20"
@@ -2779,7 +2878,10 @@ exports[`RangeSelector opacity 1`] = `
       style="flex: 0 0 1px;"
     >
       <input
-        aria-label="slider control"
+        aria-label="Upper Bounds"
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="30"
         class="c5"
         max="100"
         min="0"
@@ -2789,7 +2891,7 @@ exports[`RangeSelector opacity 1`] = `
         value="30"
       />
       <div
-        aria-label="Upper Bounds"
+        aria-label="upper mouse control"
         aria-valuemax="100"
         aria-valuemin="0"
         aria-valuenow="30"
@@ -2821,7 +2923,10 @@ exports[`RangeSelector opacity 1`] = `
       style="flex: 0 0 1px;"
     >
       <input
-        aria-label="slider control"
+        aria-label="Lower Bounds"
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="20"
         class="c5"
         max="100"
         min="0"
@@ -2831,7 +2936,7 @@ exports[`RangeSelector opacity 1`] = `
         value="20"
       />
       <div
-        aria-label="Lower Bounds"
+        aria-label="lower mouse control"
         aria-valuemax="100"
         aria-valuemin="0"
         aria-valuenow="20"
@@ -2854,7 +2959,10 @@ exports[`RangeSelector opacity 1`] = `
       style="flex: 0 0 1px;"
     >
       <input
-        aria-label="slider control"
+        aria-label="Upper Bounds"
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="30"
         class="c5"
         max="100"
         min="0"
@@ -2864,7 +2972,7 @@ exports[`RangeSelector opacity 1`] = `
         value="30"
       />
       <div
-        aria-label="Upper Bounds"
+        aria-label="upper mouse control"
         aria-valuemax="100"
         aria-valuemin="0"
         aria-valuenow="30"
@@ -3003,7 +3111,10 @@ exports[`RangeSelector renders gracefully with invalid edge size 1`] = `
       style="flex: 0 0 1px;"
     >
       <input
-        aria-label="slider control"
+        aria-label="Lower Bounds"
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="15"
         class="c5"
         max="100"
         min="0"
@@ -3013,7 +3124,7 @@ exports[`RangeSelector renders gracefully with invalid edge size 1`] = `
         value="15"
       />
       <div
-        aria-label="Lower Bounds"
+        aria-label="lower mouse control"
         aria-valuemax="100"
         aria-valuemin="0"
         aria-valuenow="15"
@@ -3036,7 +3147,10 @@ exports[`RangeSelector renders gracefully with invalid edge size 1`] = `
       style="flex: 0 0 1px;"
     >
       <input
-        aria-label="slider control"
+        aria-label="Upper Bounds"
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="35"
         class="c5"
         max="100"
         min="0"
@@ -3046,7 +3160,7 @@ exports[`RangeSelector renders gracefully with invalid edge size 1`] = `
         value="35"
       />
       <div
-        aria-label="Upper Bounds"
+        aria-label="upper mouse control"
         aria-valuemax="100"
         aria-valuemin="0"
         aria-valuenow="35"
@@ -3185,7 +3299,10 @@ exports[`RangeSelector renders with default edge size when not specified 1`] = `
       style="flex: 0 0 1px;"
     >
       <input
-        aria-label="slider control"
+        aria-label="Lower Bounds"
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="5"
         class="c5"
         max="100"
         min="0"
@@ -3195,7 +3312,7 @@ exports[`RangeSelector renders with default edge size when not specified 1`] = `
         value="5"
       />
       <div
-        aria-label="Lower Bounds"
+        aria-label="lower mouse control"
         aria-valuemax="100"
         aria-valuemin="0"
         aria-valuenow="5"
@@ -3218,7 +3335,10 @@ exports[`RangeSelector renders with default edge size when not specified 1`] = `
       style="flex: 0 0 1px;"
     >
       <input
-        aria-label="slider control"
+        aria-label="Upper Bounds"
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="25"
         class="c5"
         max="100"
         min="0"
@@ -3228,7 +3348,7 @@ exports[`RangeSelector renders with default edge size when not specified 1`] = `
         value="25"
       />
       <div
-        aria-label="Upper Bounds"
+        aria-label="upper mouse control"
         aria-valuemax="100"
         aria-valuemin="0"
         aria-valuenow="25"
@@ -3367,7 +3487,10 @@ exports[`RangeSelector renders with edge size: large 1`] = `
       style="flex: 0 0 1px;"
     >
       <input
-        aria-label="slider control"
+        aria-label="Lower Bounds"
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="10"
         class="c5"
         max="100"
         min="0"
@@ -3377,7 +3500,7 @@ exports[`RangeSelector renders with edge size: large 1`] = `
         value="10"
       />
       <div
-        aria-label="Lower Bounds"
+        aria-label="lower mouse control"
         aria-valuemax="100"
         aria-valuemin="0"
         aria-valuenow="10"
@@ -3400,7 +3523,10 @@ exports[`RangeSelector renders with edge size: large 1`] = `
       style="flex: 0 0 1px;"
     >
       <input
-        aria-label="slider control"
+        aria-label="Upper Bounds"
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="40"
         class="c5"
         max="100"
         min="0"
@@ -3410,7 +3536,7 @@ exports[`RangeSelector renders with edge size: large 1`] = `
         value="40"
       />
       <div
-        aria-label="Upper Bounds"
+        aria-label="upper mouse control"
         aria-valuemax="100"
         aria-valuemin="0"
         aria-valuenow="40"
@@ -3549,7 +3675,10 @@ exports[`RangeSelector renders with edge size: medium 1`] = `
       style="flex: 0 0 1px;"
     >
       <input
-        aria-label="slider control"
+        aria-label="Lower Bounds"
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="10"
         class="c5"
         max="100"
         min="0"
@@ -3559,7 +3688,7 @@ exports[`RangeSelector renders with edge size: medium 1`] = `
         value="10"
       />
       <div
-        aria-label="Lower Bounds"
+        aria-label="lower mouse control"
         aria-valuemax="100"
         aria-valuemin="0"
         aria-valuenow="10"
@@ -3582,7 +3711,10 @@ exports[`RangeSelector renders with edge size: medium 1`] = `
       style="flex: 0 0 1px;"
     >
       <input
-        aria-label="slider control"
+        aria-label="Upper Bounds"
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="40"
         class="c5"
         max="100"
         min="0"
@@ -3592,7 +3724,7 @@ exports[`RangeSelector renders with edge size: medium 1`] = `
         value="40"
       />
       <div
-        aria-label="Upper Bounds"
+        aria-label="upper mouse control"
         aria-valuemax="100"
         aria-valuemin="0"
         aria-valuenow="40"
@@ -3731,7 +3863,10 @@ exports[`RangeSelector renders with edge size: small 1`] = `
       style="flex: 0 0 1px;"
     >
       <input
-        aria-label="slider control"
+        aria-label="Lower Bounds"
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="10"
         class="c5"
         max="100"
         min="0"
@@ -3741,7 +3876,7 @@ exports[`RangeSelector renders with edge size: small 1`] = `
         value="10"
       />
       <div
-        aria-label="Lower Bounds"
+        aria-label="lower mouse control"
         aria-valuemax="100"
         aria-valuemin="0"
         aria-valuenow="10"
@@ -3764,7 +3899,10 @@ exports[`RangeSelector renders with edge size: small 1`] = `
       style="flex: 0 0 1px;"
     >
       <input
-        aria-label="slider control"
+        aria-label="Upper Bounds"
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="40"
         class="c5"
         max="100"
         min="0"
@@ -3774,7 +3912,7 @@ exports[`RangeSelector renders with edge size: small 1`] = `
         value="40"
       />
       <div
-        aria-label="Upper Bounds"
+        aria-label="upper mouse control"
         aria-valuemax="100"
         aria-valuemin="0"
         aria-valuenow="40"
@@ -3913,7 +4051,10 @@ exports[`RangeSelector renders with edge size: xlarge 1`] = `
       style="flex: 0 0 1px;"
     >
       <input
-        aria-label="slider control"
+        aria-label="Lower Bounds"
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="10"
         class="c5"
         max="100"
         min="0"
@@ -3923,7 +4064,7 @@ exports[`RangeSelector renders with edge size: xlarge 1`] = `
         value="10"
       />
       <div
-        aria-label="Lower Bounds"
+        aria-label="lower mouse control"
         aria-valuemax="100"
         aria-valuemin="0"
         aria-valuenow="10"
@@ -3946,7 +4087,10 @@ exports[`RangeSelector renders with edge size: xlarge 1`] = `
       style="flex: 0 0 1px;"
     >
       <input
-        aria-label="slider control"
+        aria-label="Upper Bounds"
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="40"
         class="c5"
         max="100"
         min="0"
@@ -3956,7 +4100,7 @@ exports[`RangeSelector renders with edge size: xlarge 1`] = `
         value="40"
       />
       <div
-        aria-label="Upper Bounds"
+        aria-label="upper mouse control"
         aria-valuemax="100"
         aria-valuemin="0"
         aria-valuenow="40"
@@ -4249,7 +4393,10 @@ exports[`RangeSelector round 1`] = `
       style="flex: 0 0 1px;"
     >
       <input
-        aria-label="slider control"
+        aria-label="Lower Bounds"
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="20"
         class="c5"
         max="100"
         min="0"
@@ -4259,7 +4406,7 @@ exports[`RangeSelector round 1`] = `
         value="20"
       />
       <div
-        aria-label="Lower Bounds"
+        aria-label="lower mouse control"
         aria-valuemax="100"
         aria-valuemin="0"
         aria-valuenow="20"
@@ -4282,7 +4429,10 @@ exports[`RangeSelector round 1`] = `
       style="flex: 0 0 1px;"
     >
       <input
-        aria-label="slider control"
+        aria-label="Upper Bounds"
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="30"
         class="c5"
         max="100"
         min="0"
@@ -4292,7 +4442,7 @@ exports[`RangeSelector round 1`] = `
         value="30"
       />
       <div
-        aria-label="Upper Bounds"
+        aria-label="upper mouse control"
         aria-valuemax="100"
         aria-valuemin="0"
         aria-valuenow="30"
@@ -4324,7 +4474,10 @@ exports[`RangeSelector round 1`] = `
       style="flex: 0 0 1px;"
     >
       <input
-        aria-label="slider control"
+        aria-label="Lower Bounds"
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="20"
         class="c5"
         max="100"
         min="0"
@@ -4334,7 +4487,7 @@ exports[`RangeSelector round 1`] = `
         value="20"
       />
       <div
-        aria-label="Lower Bounds"
+        aria-label="lower mouse control"
         aria-valuemax="100"
         aria-valuemin="0"
         aria-valuenow="20"
@@ -4357,7 +4510,10 @@ exports[`RangeSelector round 1`] = `
       style="flex: 0 0 1px;"
     >
       <input
-        aria-label="slider control"
+        aria-label="Upper Bounds"
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="30"
         class="c5"
         max="100"
         min="0"
@@ -4367,7 +4523,7 @@ exports[`RangeSelector round 1`] = `
         value="30"
       />
       <div
-        aria-label="Upper Bounds"
+        aria-label="upper mouse control"
         aria-valuemax="100"
         aria-valuemin="0"
         aria-valuenow="30"
@@ -4399,7 +4555,10 @@ exports[`RangeSelector round 1`] = `
       style="flex: 0 0 1px;"
     >
       <input
-        aria-label="slider control"
+        aria-label="Lower Bounds"
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="20"
         class="c5"
         max="100"
         min="0"
@@ -4409,7 +4568,7 @@ exports[`RangeSelector round 1`] = `
         value="20"
       />
       <div
-        aria-label="Lower Bounds"
+        aria-label="lower mouse control"
         aria-valuemax="100"
         aria-valuemin="0"
         aria-valuenow="20"
@@ -4432,7 +4591,10 @@ exports[`RangeSelector round 1`] = `
       style="flex: 0 0 1px;"
     >
       <input
-        aria-label="slider control"
+        aria-label="Upper Bounds"
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="30"
         class="c5"
         max="100"
         min="0"
@@ -4442,7 +4604,7 @@ exports[`RangeSelector round 1`] = `
         value="30"
       />
       <div
-        aria-label="Upper Bounds"
+        aria-label="upper mouse control"
         aria-valuemax="100"
         aria-valuemin="0"
         aria-valuenow="30"
@@ -4474,7 +4636,10 @@ exports[`RangeSelector round 1`] = `
       style="flex: 0 0 1px;"
     >
       <input
-        aria-label="slider control"
+        aria-label="Lower Bounds"
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="20"
         class="c5"
         max="100"
         min="0"
@@ -4484,7 +4649,7 @@ exports[`RangeSelector round 1`] = `
         value="20"
       />
       <div
-        aria-label="Lower Bounds"
+        aria-label="lower mouse control"
         aria-valuemax="100"
         aria-valuemin="0"
         aria-valuenow="20"
@@ -4507,7 +4672,10 @@ exports[`RangeSelector round 1`] = `
       style="flex: 0 0 1px;"
     >
       <input
-        aria-label="slider control"
+        aria-label="Upper Bounds"
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="30"
         class="c5"
         max="100"
         min="0"
@@ -4517,7 +4685,7 @@ exports[`RangeSelector round 1`] = `
         value="30"
       />
       <div
-        aria-label="Upper Bounds"
+        aria-label="upper mouse control"
         aria-valuemax="100"
         aria-valuemin="0"
         aria-valuenow="30"
@@ -4549,7 +4717,10 @@ exports[`RangeSelector round 1`] = `
       style="flex: 0 0 1px;"
     >
       <input
-        aria-label="slider control"
+        aria-label="Lower Bounds"
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="20"
         class="c5"
         max="100"
         min="0"
@@ -4559,7 +4730,7 @@ exports[`RangeSelector round 1`] = `
         value="20"
       />
       <div
-        aria-label="Lower Bounds"
+        aria-label="lower mouse control"
         aria-valuemax="100"
         aria-valuemin="0"
         aria-valuenow="20"
@@ -4582,7 +4753,10 @@ exports[`RangeSelector round 1`] = `
       style="flex: 0 0 1px;"
     >
       <input
-        aria-label="slider control"
+        aria-label="Upper Bounds"
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="30"
         class="c5"
         max="100"
         min="0"
@@ -4592,7 +4766,7 @@ exports[`RangeSelector round 1`] = `
         value="30"
       />
       <div
-        aria-label="Upper Bounds"
+        aria-label="upper mouse control"
         aria-valuemax="100"
         aria-valuemin="0"
         aria-valuenow="30"
@@ -4731,7 +4905,10 @@ exports[`RangeSelector should not have accessibility violations 1`] = `
       style="flex: 0 0 1px;"
     >
       <input
-        aria-label="slider control"
+        aria-label="Lower Bounds"
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="20"
         class="c5"
         max="100"
         min="0"
@@ -4741,7 +4918,7 @@ exports[`RangeSelector should not have accessibility violations 1`] = `
         value="20"
       />
       <div
-        aria-label="Lower Bounds"
+        aria-label="lower mouse control"
         aria-valuemax="100"
         aria-valuemin="0"
         aria-valuenow="20"
@@ -4764,7 +4941,10 @@ exports[`RangeSelector should not have accessibility violations 1`] = `
       style="flex: 0 0 1px;"
     >
       <input
-        aria-label="slider control"
+        aria-label="Upper Bounds"
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="30"
         class="c5"
         max="100"
         min="0"
@@ -4774,7 +4954,7 @@ exports[`RangeSelector should not have accessibility violations 1`] = `
         value="30"
       />
       <div
-        aria-label="Upper Bounds"
+        aria-label="upper mouse control"
         aria-valuemax="100"
         aria-valuemin="0"
         aria-valuenow="30"
@@ -5057,7 +5237,10 @@ exports[`RangeSelector size 1`] = `
       style="flex: 0 0 1px;"
     >
       <input
-        aria-label="slider control"
+        aria-label="Lower Bounds"
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="20"
         class="c5"
         max="100"
         min="0"
@@ -5067,7 +5250,7 @@ exports[`RangeSelector size 1`] = `
         value="20"
       />
       <div
-        aria-label="Lower Bounds"
+        aria-label="lower mouse control"
         aria-valuemax="100"
         aria-valuemin="0"
         aria-valuenow="20"
@@ -5090,7 +5273,10 @@ exports[`RangeSelector size 1`] = `
       style="flex: 0 0 1px;"
     >
       <input
-        aria-label="slider control"
+        aria-label="Upper Bounds"
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="30"
         class="c5"
         max="100"
         min="0"
@@ -5100,7 +5286,7 @@ exports[`RangeSelector size 1`] = `
         value="30"
       />
       <div
-        aria-label="Upper Bounds"
+        aria-label="upper mouse control"
         aria-valuemax="100"
         aria-valuemin="0"
         aria-valuenow="30"
@@ -5132,7 +5318,10 @@ exports[`RangeSelector size 1`] = `
       style="flex: 0 0 1px;"
     >
       <input
-        aria-label="slider control"
+        aria-label="Lower Bounds"
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="20"
         class="c5"
         max="100"
         min="0"
@@ -5142,7 +5331,7 @@ exports[`RangeSelector size 1`] = `
         value="20"
       />
       <div
-        aria-label="Lower Bounds"
+        aria-label="lower mouse control"
         aria-valuemax="100"
         aria-valuemin="0"
         aria-valuenow="20"
@@ -5165,7 +5354,10 @@ exports[`RangeSelector size 1`] = `
       style="flex: 0 0 1px;"
     >
       <input
-        aria-label="slider control"
+        aria-label="Upper Bounds"
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="30"
         class="c5"
         max="100"
         min="0"
@@ -5175,7 +5367,7 @@ exports[`RangeSelector size 1`] = `
         value="30"
       />
       <div
-        aria-label="Upper Bounds"
+        aria-label="upper mouse control"
         aria-valuemax="100"
         aria-valuemin="0"
         aria-valuenow="30"
@@ -5207,7 +5399,10 @@ exports[`RangeSelector size 1`] = `
       style="flex: 0 0 1px;"
     >
       <input
-        aria-label="slider control"
+        aria-label="Lower Bounds"
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="20"
         class="c5"
         max="100"
         min="0"
@@ -5217,7 +5412,7 @@ exports[`RangeSelector size 1`] = `
         value="20"
       />
       <div
-        aria-label="Lower Bounds"
+        aria-label="lower mouse control"
         aria-valuemax="100"
         aria-valuemin="0"
         aria-valuenow="20"
@@ -5240,7 +5435,10 @@ exports[`RangeSelector size 1`] = `
       style="flex: 0 0 1px;"
     >
       <input
-        aria-label="slider control"
+        aria-label="Upper Bounds"
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="30"
         class="c5"
         max="100"
         min="0"
@@ -5250,7 +5448,7 @@ exports[`RangeSelector size 1`] = `
         value="30"
       />
       <div
-        aria-label="Upper Bounds"
+        aria-label="upper mouse control"
         aria-valuemax="100"
         aria-valuemin="0"
         aria-valuenow="30"
@@ -5282,7 +5480,10 @@ exports[`RangeSelector size 1`] = `
       style="flex: 0 0 1px;"
     >
       <input
-        aria-label="slider control"
+        aria-label="Lower Bounds"
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="20"
         class="c5"
         max="100"
         min="0"
@@ -5292,7 +5493,7 @@ exports[`RangeSelector size 1`] = `
         value="20"
       />
       <div
-        aria-label="Lower Bounds"
+        aria-label="lower mouse control"
         aria-valuemax="100"
         aria-valuemin="0"
         aria-valuenow="20"
@@ -5315,7 +5516,10 @@ exports[`RangeSelector size 1`] = `
       style="flex: 0 0 1px;"
     >
       <input
-        aria-label="slider control"
+        aria-label="Upper Bounds"
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="30"
         class="c5"
         max="100"
         min="0"
@@ -5325,7 +5529,7 @@ exports[`RangeSelector size 1`] = `
         value="30"
       />
       <div
-        aria-label="Upper Bounds"
+        aria-label="upper mouse control"
         aria-valuemax="100"
         aria-valuemin="0"
         aria-valuenow="30"
@@ -5357,7 +5561,10 @@ exports[`RangeSelector size 1`] = `
       style="flex: 0 0 1px;"
     >
       <input
-        aria-label="slider control"
+        aria-label="Lower Bounds"
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="20"
         class="c5"
         max="100"
         min="0"
@@ -5367,7 +5574,7 @@ exports[`RangeSelector size 1`] = `
         value="20"
       />
       <div
-        aria-label="Lower Bounds"
+        aria-label="lower mouse control"
         aria-valuemax="100"
         aria-valuemin="0"
         aria-valuenow="20"
@@ -5390,7 +5597,10 @@ exports[`RangeSelector size 1`] = `
       style="flex: 0 0 1px;"
     >
       <input
-        aria-label="slider control"
+        aria-label="Upper Bounds"
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="30"
         class="c5"
         max="100"
         min="0"
@@ -5400,7 +5610,7 @@ exports[`RangeSelector size 1`] = `
         value="30"
       />
       <div
-        aria-label="Upper Bounds"
+        aria-label="upper mouse control"
         aria-valuemax="100"
         aria-valuemin="0"
         aria-valuenow="30"
@@ -5432,7 +5642,10 @@ exports[`RangeSelector size 1`] = `
       style="flex: 0 0 1px;"
     >
       <input
-        aria-label="slider control"
+        aria-label="Lower Bounds"
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="20"
         class="c5"
         max="100"
         min="0"
@@ -5442,7 +5655,7 @@ exports[`RangeSelector size 1`] = `
         value="20"
       />
       <div
-        aria-label="Lower Bounds"
+        aria-label="lower mouse control"
         aria-valuemax="100"
         aria-valuemin="0"
         aria-valuenow="20"
@@ -5465,7 +5678,10 @@ exports[`RangeSelector size 1`] = `
       style="flex: 0 0 1px;"
     >
       <input
-        aria-label="slider control"
+        aria-label="Upper Bounds"
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="30"
         class="c5"
         max="100"
         min="0"
@@ -5475,7 +5691,7 @@ exports[`RangeSelector size 1`] = `
         value="30"
       />
       <div
-        aria-label="Upper Bounds"
+        aria-label="upper mouse control"
         aria-valuemax="100"
         aria-valuemin="0"
         aria-valuenow="30"
@@ -5507,7 +5723,10 @@ exports[`RangeSelector size 1`] = `
       style="flex: 0 0 1px;"
     >
       <input
-        aria-label="slider control"
+        aria-label="Lower Bounds"
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="20"
         class="c5"
         max="100"
         min="0"
@@ -5517,7 +5736,7 @@ exports[`RangeSelector size 1`] = `
         value="20"
       />
       <div
-        aria-label="Lower Bounds"
+        aria-label="lower mouse control"
         aria-valuemax="100"
         aria-valuemin="0"
         aria-valuenow="20"
@@ -5540,7 +5759,10 @@ exports[`RangeSelector size 1`] = `
       style="flex: 0 0 1px;"
     >
       <input
-        aria-label="slider control"
+        aria-label="Upper Bounds"
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="30"
         class="c5"
         max="100"
         min="0"
@@ -5550,7 +5772,7 @@ exports[`RangeSelector size 1`] = `
         value="30"
       />
       <div
-        aria-label="Upper Bounds"
+        aria-label="upper mouse control"
         aria-valuemax="100"
         aria-valuemin="0"
         aria-valuenow="30"
@@ -5689,7 +5911,10 @@ exports[`RangeSelector step renders correct values 1`] = `
       style="flex: 0 0 1px;"
     >
       <input
-        aria-label="slider control"
+        aria-label="Lower Bounds"
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="0"
         class="c5"
         max="100"
         min="0"
@@ -5699,7 +5924,7 @@ exports[`RangeSelector step renders correct values 1`] = `
         value="0"
       />
       <div
-        aria-label="Lower Bounds"
+        aria-label="lower mouse control"
         aria-valuemax="100"
         aria-valuemin="0"
         aria-valuenow="0"
@@ -5722,7 +5947,10 @@ exports[`RangeSelector step renders correct values 1`] = `
       style="flex: 0 0 1px;"
     >
       <input
-        aria-label="slider control"
+        aria-label="Upper Bounds"
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="100"
         class="c5"
         max="100"
         min="0"
@@ -5732,7 +5960,7 @@ exports[`RangeSelector step renders correct values 1`] = `
         value="100"
       />
       <div
-        aria-label="Upper Bounds"
+        aria-label="upper mouse control"
         aria-valuemax="100"
         aria-valuemin="0"
         aria-valuenow="100"

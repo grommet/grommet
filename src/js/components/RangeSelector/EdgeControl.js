@@ -1,10 +1,11 @@
-import React, { forwardRef, useState } from 'react';
+import React, { useContext, forwardRef, useState } from 'react';
 import styled from 'styled-components';
 
 import { Box } from '../Box';
 import { Keyboard } from '../Keyboard';
 import { focusStyle, normalizeColor, parseMetricToNum } from '../../utils';
 import { useThemeValue } from '../../utils/useThemeValue';
+import { MessageContext } from '../../contexts/MessageContext';
 
 // Add visually hidden input styles
 const VisuallyHiddenInput = styled.input`
@@ -43,9 +44,9 @@ const EdgeControl = forwardRef(
       thickness,
       max,
       min,
+      messages,
       value,
       step,
-
       ...rest
     },
     ref,
@@ -53,6 +54,7 @@ const EdgeControl = forwardRef(
     const { theme } = useThemeValue();
     const [focus, setFocus] = useState(false);
     const { cursor, fill } = DIRECTION_PROPS[direction];
+    const { format } = useContext(MessageContext);
     const themeEdgeSize = theme.rangeSelector?.edge?.size;
     let size;
     if (themeEdgeSize) {
@@ -126,7 +128,16 @@ const EdgeControl = forwardRef(
             value={value}
             onFocus={() => setFocus(true)}
             onBlur={() => setFocus(false)}
-            aria-label="slider control"
+            aria-label={format({
+              id:
+                edge === 'lower'
+                  ? 'rangeSelector.lower'
+                  : 'rangeSelector.upper',
+              messages,
+            })}
+            aria-valuemin={min}
+            aria-valuemax={max}
+            aria-valuenow={value}
             readOnly
           />
 
@@ -144,7 +155,7 @@ const EdgeControl = forwardRef(
               minHeight: size,
               zIndex: 1,
             }}
-            tabIndex={-1} // Remove from tab order
+            tabIndex={-1}
             {...rest}
           >
             {node}

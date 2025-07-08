@@ -216,7 +216,9 @@ describe('DataFilter', () => {
       </Grommet>,
     );
 
-    const lowerBound = screen.getByRole('slider', { name: 'Lower Bounds' });
+    const lowerBound = screen.getByRole('slider', {
+      name: 'lower mouse control',
+    });
     fireEvent.mouseDown(lowerBound);
     fireEvent.mouseMove(lowerBound, { clientX: 31, clientY: 20 });
     fireEvent.mouseUp(lowerBound);
@@ -241,7 +243,9 @@ describe('DataFilter', () => {
       </Grommet>,
     );
 
-    const lowerBound = screen.getByRole('slider', { name: 'Lower Bounds' });
+    const lowerBound = screen.getByRole('slider', {
+      name: 'lower mouse control',
+    });
     fireEvent.mouseDown(lowerBound);
     fireEvent.mouseMove(lowerBound, { clientX: 31, clientY: 20 });
     fireEvent.mouseUp(lowerBound);
@@ -282,7 +286,9 @@ describe('DataFilter', () => {
       </Grommet>,
     );
 
-    const lowerBound = screen.getByRole('slider', { name: 'Lower Bounds' });
+    const lowerBound = screen.getByRole('slider', {
+      name: 'lower mouse control',
+    });
     act(() => {
       lowerBound.focus();
     });

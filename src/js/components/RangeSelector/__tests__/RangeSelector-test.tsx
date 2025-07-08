@@ -220,7 +220,7 @@ describe('RangeSelector', () => {
     );
     expect(container.firstChild).toMatchSnapshot();
 
-    const lowerControl = getByLabelText('Lower Bounds');
+    const lowerControl = getByLabelText('lower mouse control');
     fireEvent.mouseDown(lowerControl);
     // fireEvent.mouseDown(lowerControl);
     fireEvent.mouseMove(document, { clientX: 31, clientY: 20 });
@@ -228,7 +228,7 @@ describe('RangeSelector', () => {
     expect(onChange).toBeCalled();
     expect(values).toStrictEqual([33, 100]);
 
-    const upperControl = getByLabelText('Upper Bounds');
+    const upperControl = getByLabelText('upper mouse control');
     fireEvent.mouseDown(upperControl);
     fireEvent.mouseMove(document, { clientX: 80, clientY: 15 });
     fireEvent.mouseUp(document);
@@ -245,14 +245,14 @@ describe('RangeSelector', () => {
     );
     expect(container.firstChild).toMatchSnapshot();
 
-    const lowerControl = getByLabelText('Lower Bounds');
+    const lowerControl = getByLabelText('lower mouse control');
     fireEvent.keyDown(lowerControl, { key: 'Left', keyCode: 37 });
     expect(onChange).toBeCalled();
 
     fireEvent.keyDown(lowerControl, { key: 'Right', keyCode: 39 });
     expect(onChange).toBeCalled();
 
-    const upperControl = getByLabelText('Upper Bounds');
+    const upperControl = getByLabelText('upper mouse control');
     fireEvent.keyDown(upperControl, { key: 'Right', keyCode: 39 });
     expect(onChange).toBeCalled();
 
@@ -278,13 +278,13 @@ describe('RangeSelector', () => {
       });
       expect(onChange).toBeCalled();
 
-      const lowerControl = getByLabelText('Lower Bounds');
+      const lowerControl = getByLabelText('lower mouse control');
       fireEvent.mouseDown(lowerControl);
       fireEvent.mouseMove(document, { clientX: 0, clientY: 0 });
       fireEvent.mouseUp(document);
       expect(onChange).toBeCalled();
 
-      const upperControl = getByLabelText('Upper Bounds');
+      const upperControl = getByLabelText('upper mouse control');
       fireEvent.mouseDown(upperControl);
       fireEvent.mouseMove(document, { clientX: 0, clientY: 0 });
       fireEvent.mouseUp(document);
@@ -302,7 +302,7 @@ describe('RangeSelector', () => {
     const rangeContainer = container.firstChild?.firstChild;
 
     if (rangeContainer) {
-      const lowerControl = getByLabelText('Lower Bounds');
+      const lowerControl = getByLabelText('lower mouse control');
       fireEvent.touchStart(lowerControl);
       fireEvent.touchMove(rangeContainer, {
         changedTouches: [
@@ -314,7 +314,7 @@ describe('RangeSelector', () => {
       });
       expect(onChange).toBeCalled();
 
-      const upperControl = getByLabelText('Upper Bounds');
+      const upperControl = getByLabelText('upper mouse control');
       fireEvent.touchStart(upperControl);
       fireEvent.touchMove(rangeContainer, {
         changedTouches: [

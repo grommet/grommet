@@ -14,7 +14,6 @@ import { EdgeControl } from './EdgeControl';
 import { FormContext } from '../Form/FormContext';
 import { Text } from '../Text';
 import { parseMetricToNum } from '../../utils';
-import { MessageContext } from '../../contexts/MessageContext';
 import { RangeSelectorPropTypes } from './propTypes';
 import { DataFormContext } from '../../contexts/DataFormContext';
 import { useThemeValue } from '../../utils/useThemeValue';
@@ -72,7 +71,6 @@ const RangeSelector = forwardRef(
     ref,
   ) => {
     const { theme } = useThemeValue();
-    const { format } = useContext(MessageContext);
     const formContext = useContext(FormContext);
     const [changing, setChanging] = useState();
     const [lastChange, setLastChange] = useState();
@@ -291,18 +289,19 @@ const RangeSelector = forwardRef(
           {...layoutProps}
         />
         <EdgeControl
-          a11yTitle={format({ id: 'rangeSelector.lower', messages })}
-          role="slider"
-          aria-valuenow={lower}
+          aria-label="lower mouse control"
           aria-valuemin={min}
           aria-valuemax={max}
+          aria-valuenow={lower}
           ref={ref}
+          role="slider"
           color={color}
           direction={direction}
           thickness={thickness}
           edge="lower"
           min={min}
           max={max}
+          messages={messages}
           value={lower}
           step={step}
           onMouseDown={() => setChanging('lower')}
@@ -334,14 +333,14 @@ const RangeSelector = forwardRef(
           }}
         />
         <EdgeControl
-          a11yTitle={format({ id: 'rangeSelector.upper', messages })}
           role="slider"
-          aria-valuenow={upper}
-          aria-valuemin={min}
-          aria-valuemax={max}
+          aria-label="upper mouse control"
           color={color}
           direction={direction}
           thickness={thickness}
+          aria-valuemin={min}
+          aria-valuemax={max}
+          aria-valuenow={upper}
           edge="upper"
           min={min}
           max={max}

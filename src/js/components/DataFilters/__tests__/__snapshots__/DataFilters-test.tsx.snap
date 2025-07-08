@@ -4367,7 +4367,10 @@ exports[`DataFilters sub objects 1`] = `
                       style="flex: 0 0 1px;"
                     >
                       <input
-                        aria-label="slider control"
+                        aria-label="Lower Bounds"
+                        aria-valuemax="90"
+                        aria-valuemin="-90"
+                        aria-valuenow="10"
                         class="c23"
                         max="90"
                         min="-90"
@@ -4377,7 +4380,7 @@ exports[`DataFilters sub objects 1`] = `
                         value="10"
                       />
                       <div
-                        aria-label="Lower Bounds"
+                        aria-label="lower mouse control"
                         aria-valuemax="90"
                         aria-valuemin="-90"
                         aria-valuenow="10"
@@ -4400,7 +4403,10 @@ exports[`DataFilters sub objects 1`] = `
                       style="flex: 0 0 1px;"
                     >
                       <input
-                        aria-label="slider control"
+                        aria-label="Upper Bounds"
+                        aria-valuemax="90"
+                        aria-valuemin="-90"
+                        aria-valuenow="90"
                         class="c23"
                         max="90"
                         min="-90"
@@ -4410,7 +4416,7 @@ exports[`DataFilters sub objects 1`] = `
                         value="90"
                       />
                       <div
-                        aria-label="Upper Bounds"
+                        aria-label="upper mouse control"
                         aria-valuemax="90"
                         aria-valuemin="-90"
                         aria-valuenow="90"
