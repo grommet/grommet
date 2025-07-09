@@ -2633,6 +2633,7 @@ exports[`FileInput multiple max 1`] = `
     class="c1 c2"
   >
     <input
+      aria-invalid="false"
       class="c3"
       multiple=""
       name="file"

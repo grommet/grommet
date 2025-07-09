@@ -293,6 +293,10 @@ const FileInput = forwardRef(
             multiple={multiple}
             disabled={disabled}
             plain
+            aria-invalid={
+              (maxSize && files.some((f) => f.size > maxSize)) ||
+              (max && files.length > max)
+            }
             rightOffset={rightOffset}
             {...passThemeFlag}
             {...rest}
