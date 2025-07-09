@@ -7,7 +7,7 @@ import { AnnounceContextPropTypes } from './propTypes';
  */
 const createAnnouncer = () => {
   const announcer = document.createElement('div');
-  announcer.setAttribute('id', 'grommet-announcer');
+  announcer.id = 'grommet-announcer';
   announcer.setAttribute('aria-live', 'polite');
   announcer.setAttribute('aria-atomic', 'true');
 
@@ -19,6 +19,7 @@ const createAnnouncer = () => {
   announcer.style.overflow = 'hidden';
 
   // Add to DOM at the beginning of body for best screen reader support
+  document.body.appendChild(announcer);
   document.body.insertBefore(announcer, document.body.firstChild);
 
   return announcer;
@@ -30,17 +31,9 @@ export const AnnounceContext = React.createContext(
     const announcer =
       document.body.querySelector('#grommet-announcer') || createAnnouncer();
 
-    // Clear any existing timeouts/rAF to prevent overlapping announcements
+    // Clear any existing timeouts to prevent overlapping announcements
     if (announcer.dataset.initialAnnounceTimeoutId) {
-      if (announcer.dataset.initialAnnounceTimeoutId === 'rAF') {
-        // Cancel the existing rAF using the stored ID
-        if (announcer.dataset.rafId) {
-          window.cancelAnimationFrame(Number(announcer.dataset.rafId));
-          delete announcer.dataset.rafId;
-        }
-      } else {
-        clearTimeout(Number(announcer.dataset.initialAnnounceTimeoutId));
-      }
+      clearTimeout(Number(announcer.dataset.initialAnnounceTimeoutId));
       delete announcer.dataset.initialAnnounceTimeoutId;
     }
     if (announcer.dataset.timeoutId) {
@@ -59,41 +52,33 @@ export const AnnounceContext = React.createContext(
     announcer.offsetWidth;
 
     // Delay before announcing to ensure screen readers are ready
-    const announceStartTime = performance.now();
+    const announceDelay = 100;
 
-    const checkAnnounceDelay = () => {
-      const currentTime = performance.now();
-      if (currentTime - announceStartTime >= 100) {
-        // Set the actual message to be announced
-        announcer.textContent = message;
+    const initialAnnounceTimeout = setTimeout(() => {
+      // Set the actual message to be announced
+      announcer.textContent = message;
 
-        // Set timeout to clear the message (if timeout > 0)
-        if (timeout > 0) {
-          const clearAnnounceTimeout = setTimeout(() => {
-            announcer.textContent = '';
-            delete announcer.dataset.timeoutId;
-          }, timeout);
-
-          // Store timeout ID for potential cleanup
-          announcer.dataset.timeoutId = clearAnnounceTimeout.toString();
-        } else {
+      // Set timeout to clear the message (if timeout > 0)
+      if (timeout > 0) {
+        const clearAnnounceTimeout = setTimeout(() => {
+          announcer.textContent = '';
           delete announcer.dataset.timeoutId;
-        }
+        }, timeout);
 
-        // Clean up initial timeout reference
-        delete announcer.dataset.initialAnnounceTimeoutId;
-        delete announcer.dataset.rafId;
+        // Store timeout ID for potential cleanup
+        announcer.dataset.timeoutId = clearAnnounceTimeout.toString();
       } else {
-        const rafId = window.requestAnimationFrame(checkAnnounceDelay);
-        announcer.dataset.rafId = rafId.toString();
+        // No auto-clear if timeout is 0
+        delete announcer.dataset.timeoutId;
       }
-    };
 
-    const initialRafId = window.requestAnimationFrame(checkAnnounceDelay);
-    announcer.dataset.rafId = initialRafId.toString();
+      // Clean up initial timeout reference
+      delete announcer.dataset.initialAnnounceTimeoutId;
+    }, announceDelay);
 
     // helps avoid multiple announcements stacking up
-    announcer.dataset.initialAnnounceTimeoutId = 'rAF';
+    announcer.dataset.initialAnnounceTimeoutId =
+      initialAnnounceTimeout.toString();
   },
 );
 

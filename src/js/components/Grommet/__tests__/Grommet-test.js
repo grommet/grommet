@@ -61,7 +61,9 @@ describe('Grommet', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
-  test('announce', (done) => {
+  test('announce', () => {
+    jest.useFakeTimers();
+
     const { container } = render(
       <Grommet>
         <AnnounceContext.Consumer>
@@ -72,18 +74,25 @@ describe('Grommet', () => {
 
     expect(container.firstChild).toMatchSnapshot();
 
-    // no style, no need for expectPortal
-    expect(
-      document.body.querySelector('#grommet-announcer[aria-live]'),
-    ).toMatchSnapshot();
+    // Test announcer element properties
+    const announcer = document.body.querySelector(
+      '#grommet-announcer[aria-live]',
+    );
+    expect(announcer).toBeTruthy();
+    expect(announcer.getAttribute('aria-live')).toBe('assertive');
+    expect(announcer.getAttribute('aria-atomic')).toBe('true');
+    expect(announcer.id).toBe('grommet-announcer');
 
-    setTimeout(() => {
-      // should clear the aria-live container
-      expect(
-        document.body.querySelector('#grommet-announcer[aria-live]'),
-      ).toMatchSnapshot();
-      done();
-    }, 600); // wait the aria-live container to clear
+    jest.advanceTimersByTime(150);
+
+    // Now check that the message is announced
+    expect(announcer.textContent).toBe('hello');
+    jest.advanceTimersByTime(600);
+
+    // Check that content is cleared
+    expect(announcer.textContent).toBe('');
+
+    jest.useRealTimers();
   });
 
   test('messages', () => {

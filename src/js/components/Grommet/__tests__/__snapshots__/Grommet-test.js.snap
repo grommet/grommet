@@ -20,31 +20,6 @@ exports[`Grommet announce 1`] = `
 </div>
 `;
 
-exports[`Grommet announce 2`] = `
-<div
-  aria-atomic="true"
-  aria-live="assertive"
-  data-initial-announce-timeout-id="rAF"
-  data-raf-id="1"
-  id="grommet-announcer"
-  style="position: absolute; left: -9999px; height: 1px; width: 1px; overflow: hidden;"
->
-   
-</div>
-`;
-
-exports[`Grommet announce 3`] = `
-<div
-  aria-atomic="true"
-  aria-live="assertive"
-  data-timeout-id="39"
-  id="grommet-announcer"
-  style="position: absolute; left: -9999px; height: 1px; width: 1px; overflow: hidden;"
->
-  hello
-</div>
-`;
-
 exports[`Grommet background 1`] = `
 .c0 {
   font-size: 18px;
