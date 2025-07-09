@@ -1,5 +1,4 @@
 import styled, { css } from 'styled-components';
-import isPropValid from '@emotion/is-prop-valid';
 
 import {
   alignContentStyle,
@@ -22,7 +21,11 @@ import {
   widthStyle,
 } from '../../utils';
 
-import { roundStyle, styledComponentsConfig } from '../../utils/styles';
+import {
+  roundStyle,
+  shouldForwardProp,
+  styledComponentsConfig,
+} from '../../utils/styles';
 
 import { animationBounds, animationObjectStyle } from '../../utils/animation';
 
@@ -296,7 +299,7 @@ const responsiveContainerStyle = css`
 // to the DOM, added a check to prevent this.
 const StyledBox = styled.div.withConfig({
   shouldForwardProp: (prop) =>
-    isPropValid(prop) && !['selected'].includes(prop),
+    shouldForwardProp(prop) && !['selected'].includes(prop),
 })`
   display: flex;
   box-sizing: border-box;
