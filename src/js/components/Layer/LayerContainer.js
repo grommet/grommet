@@ -91,10 +91,10 @@ const LayerContainer = forwardRef(
         // the focus within the layer. Look at FocusedContainer.js for
         // more details.
         let element = document.activeElement;
-        let isInLayer = false;
+        let focusInLayer = false;
         while (element) {
           if (element === containerRef.current) {
-            isInLayer = true;
+            focusInLayer = true;
             break;
           }
           element = element.parentElement;
@@ -102,7 +102,7 @@ const LayerContainer = forwardRef(
 
         // If focus is not already within the Layer, set focus to the container
         // to ensure keyboard users can start navigating the modal content
-        if (!isInLayer && containerRef.current?.focus) {
+        if (!focusInLayer && containerRef.current?.focus) {
           containerRef.current.focus();
         }
       }
