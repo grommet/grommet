@@ -1,25 +1,18 @@
 import React from 'react';
 import { AnnounceContextPropTypes } from './propTypes';
 
-/**
- * Creates a hidden announcer element for screen reader accessibility
- * This element is used to announce dynamic content changes to screen readers
- */
 const createAnnouncer = () => {
   const announcer = document.createElement('div');
-  announcer.id = 'grommet-announcer';
+  announcer.setAttribute('id', 'grommet-announcer');
   announcer.setAttribute('aria-live', 'polite');
   announcer.setAttribute('aria-atomic', 'true');
-
-  // Position element off-screen to hide it visually
   announcer.style.position = 'absolute';
   announcer.style.left = '-9999px';
   announcer.style.height = '1px';
   announcer.style.width = '1px';
   announcer.style.overflow = 'hidden';
-
-  // Add to DOM at the beginning of body for best screen reader support
   document.body.appendChild(announcer);
+
   document.body.insertBefore(announcer, document.body.firstChild);
 
   return announcer;
@@ -27,56 +20,46 @@ const createAnnouncer = () => {
 
 export const AnnounceContext = React.createContext(
   (message, mode = 'polite', timeout = 500) => {
-    // Get existing announcer or create a new one
     const announcer =
       document.body.querySelector('#grommet-announcer') || createAnnouncer();
 
-    // Clear any existing timeouts to prevent overlapping announcements
-    if (announcer.dataset.initialAnnounceTimeoutId) {
-      clearTimeout(Number(announcer.dataset.initialAnnounceTimeoutId));
-      delete announcer.dataset.initialAnnounceTimeoutId;
-    }
-    if (announcer.dataset.timeoutId) {
-      clearTimeout(Number(announcer.dataset.timeoutId));
-      delete announcer.dataset.timeoutId;
-    }
-
+    // Set aria-live for the upcoming message, in case it changes mode
     announcer.setAttribute('aria-live', mode);
+    announcer.textContent = '';
 
-    // have to reset the content with something different (non breaking space)
-    // to force the screen reader to recognize the change.
     announcer.textContent = '\u00A0';
 
-    // Force DOM reflow to ensure screen readers detect the change
-    // eslint-disable-next-line no-unused-expressions
-    announcer.offsetWidth;
+    // Force a DOM reflow. This makes the browser immediately apply the DOM changes
+    // which can help screen readers detect the change more reliably.
+    void announcer.offsetWidth;
 
-    // Delay before announcing to ensure screen readers are ready
+    // Set a short delay before placing the actual message.
     const announceDelay = 100;
 
     const initialAnnounceTimeout = setTimeout(() => {
-      // Set the actual message to be announced
       announcer.textContent = message;
 
-      // Set timeout to clear the message (if timeout > 0)
+      // 4. Set a timeout to clear the message after the specified duration (if timeout > 0)
       if (timeout > 0) {
         const clearAnnounceTimeout = setTimeout(() => {
-          announcer.textContent = '';
-          delete announcer.dataset.timeoutId;
+          announcer.textContent = ''; // Clear the message after its display duration
+          delete announcer.dataset.timeoutId; // Remove the stored timeout ID
         }, timeout);
 
-        // Store timeout ID for potential cleanup
+        // Store the ID of this *clear* timeout. This allows us to cancel it
+        // if a new announcement comes in before this one is cleared.
         announcer.dataset.timeoutId = clearAnnounceTimeout.toString();
       } else {
-        // No auto-clear if timeout is 0
+        // If timeout is 0, the message should persist indefinitely until
+        // a new announcement occurs. Ensure no stale timeout ID.
         delete announcer.dataset.timeoutId;
       }
-
-      // Clean up initial timeout reference
+      // Clean up the initial timeout ID once the message has been set
       delete announcer.dataset.initialAnnounceTimeoutId;
     }, announceDelay);
 
-    // helps avoid multiple announcements stacking up
+    // Store the ID for the initial announce delay, in case it needs to be cancelled
+    // if a new message is triggered extremely quickly (e.g., within announceDelay).
     announcer.dataset.initialAnnounceTimeoutId =
       initialAnnounceTimeout.toString();
   },
