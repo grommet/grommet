@@ -3652,6 +3652,7 @@ exports[`DataTable custom theme 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
+  margin-top: 6px;
   color: inherit;
   outline: none;
   border: none;
@@ -4146,7 +4147,7 @@ exports[`DataTable custom theme 2`] = `
               >
                 <button
                   aria-label="Resize a column"
-                  class="StyledButton-sc-323bzc-0 eNtKJP Resizer__InteractionBox-sc-8l808w-0 ckUBxB"
+                  class="StyledButton-sc-323bzc-0 eJXFoX Resizer__InteractionBox-sc-8l808w-0 ckUBxB"
                   type="button"
                 >
                   <div
@@ -21016,6 +21017,7 @@ exports[`DataTable resizeable 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
+  margin-top: 6px;
   color: inherit;
   outline: none;
   border: none;

@@ -430,6 +430,7 @@ const Header = forwardRef(
                       onResize(prop, width);
                       updateWidths(prop, width);
                     }}
+                    widths={widths}
                   />
                 ) : null;
                 const searcher =
@@ -495,6 +496,8 @@ const Header = forwardRef(
                       : undefined,
                     boxSizing: onResize ? 'border-box' : undefined,
                   }}
+                  onResize={onResize}
+                  property={property}
                   {...passThemeFlag}
                 >
                   {content}

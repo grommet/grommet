@@ -7,6 +7,9 @@ import { Keyboard } from '../Keyboard';
 import { Stack } from '../Stack';
 import { useThemeValue } from '../../utils/useThemeValue';
 
+// Added a temporary min-width of 2px here so that the element doesn't
+// end up with a width of 0px. This is a placeholder solution until we
+// revisit this in https://github.com/grommet/grommet/issues/7273
 const InteractionBox = styled(Button)`
   min-width: 2px;
   cursor: col-resize;
@@ -24,7 +27,7 @@ const InteractionBox = styled(Button)`
   }
 `;
 
-const Resizer = ({ onResize, property }) => {
+const Resizer = ({ onResize, property, widths }) => {
   const { theme } = useThemeValue();
   const [active, setActive] = useState(false);
   const [start, setStart] = useState();
@@ -91,10 +94,12 @@ const Resizer = ({ onResize, property }) => {
       let element = ref.current;
       while (element && element.nodeName !== 'TH') element = element.parentNode;
       const currentWidth = element.getBoundingClientRect().width;
+      const propertyWidth = widths?.[property];
+      // Used 12 here to align with the value set in onMouseMove
       const delta = event.key === 'ArrowLeft' ? -12 : 12;
-      onResize(property, currentWidth + delta);
+      onResize(property, (propertyWidth || currentWidth) + delta);
     },
-    [onResize, property],
+    [onResize, property, widths],
   );
 
   return (
@@ -112,6 +117,7 @@ const Resizer = ({ onResize, property }) => {
           active={active}
           flex={false}
           pad={{ left: 'xsmall' }}
+          margin={{ top: 'xsmall' }}
           ref={ref}
           responsive={false}
           onMouseDown={onMouseDown}
