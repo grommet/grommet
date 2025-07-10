@@ -28,6 +28,7 @@ export const GroupedBody = forwardRef(
       onUpdate,
       replace,
       rowProps,
+      rowExpandLabel,
       selected,
       size,
       step,
@@ -174,6 +175,15 @@ export const GroupedBody = forwardRef(
               index,
             );
 
+            // Move the expandLabel logic here where context and key are defined
+            let expandLabel;
+            if (context === 'groupHeader' && rowExpandLabel) {
+              expandLabel =
+                typeof rowExpandLabel === 'function'
+                  ? rowExpandLabel(key)
+                  : rowExpandLabel;
+            }
+
             return (
               <StyledDataTableRow ref={rowRef} key={key} size={size}>
                 <ExpanderCell
@@ -189,6 +199,7 @@ export const GroupedBody = forwardRef(
                   }
                   expanded={expanded}
                   verticalAlign={verticalAlign}
+                  rowExpandLabel={expandLabel}
                 />
                 {(selected || onSelect) && (
                   <TableCell

@@ -13,6 +13,8 @@ groupColumns[1] = { ...first };
 groupColumns[0].footer = groupColumns[1].footer;
 delete groupColumns[1].footer;
 
+const rowExpandLabel = (groupKey) => groupKey;
+
 export const ControlledGroupedDataTable = () => {
   const [expandedGroups, setExpandedGroups] = useState([DATA[2].location]);
 
@@ -28,6 +30,7 @@ export const ControlledGroupedDataTable = () => {
         onExpand: setExpandedGroups,
       }}
       sortable
+      rowExpandLabel={rowExpandLabel}
     />
     // </Grommet>
   );

@@ -81,6 +81,7 @@ const DataTable = ({
   primaryKey,
   resizeable,
   rowProps,
+  rowExpandLabel,
   select,
   show: showProp,
   size,
@@ -508,6 +509,7 @@ const DataTable = ({
       onUpdate={onUpdate}
       replace={replace}
       rowProps={rowProps}
+      rowExpandLabel={rowExpandLabel}
       selected={selected}
       size={size}
       step={paginationStep}
@@ -550,6 +552,7 @@ const DataTable = ({
       step={paginationStep}
       rowDetails={rowDetails}
       rowExpand={rowExpand}
+      rowExpandLabel={rowExpandLabel}
       setRowExpand={setRowExpand}
       verticalAlign={
         typeof verticalAlign === 'string' ? verticalAlign : verticalAlign?.body

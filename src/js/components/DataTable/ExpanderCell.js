@@ -9,7 +9,14 @@ import { useThemeValue } from '../../utils/useThemeValue';
 
 // ExpanderControl is separated from ExpanderCell to give TableCell a chance
 // to set the ThemeContext dark context.
-const ExpanderControl = ({ context, expanded, onToggle, pad, ...rest }) => {
+const ExpanderControl = ({
+  context,
+  expanded,
+  onToggle,
+  pad,
+  rowExpandLabel,
+  ...rest
+}) => {
   const { theme } = useThemeValue();
 
   let content;
@@ -35,11 +42,17 @@ const ExpanderControl = ({ context, expanded, onToggle, pad, ...rest }) => {
   );
 
   if (onToggle) {
+    let a11yTitle;
+    if (rowExpandLabel) {
+      a11yTitle = `${expanded ? 'collapse' : 'expand'} ${rowExpandLabel}`;
+    } else {
+      a11yTitle = expanded ? 'collapse' : 'expand';
+    }
     content = (
       <Button
         fill
         aria-expanded={expanded ? 'true' : 'false'}
-        a11yTitle={expanded ? 'collapse' : 'expand'}
+        a11yTitle={a11yTitle}
         hoverIndicator
         onClick={onToggle}
         plain
@@ -52,7 +65,13 @@ const ExpanderControl = ({ context, expanded, onToggle, pad, ...rest }) => {
   return content;
 };
 
-const ExpanderCell = ({ background, border, context, ...rest }) => (
+const ExpanderCell = ({
+  background,
+  border,
+  context,
+  rowExpandLabel,
+  ...rest
+}) => (
   <TableCell
     background={background}
     border={border}
@@ -60,10 +79,13 @@ const ExpanderCell = ({ background, border, context, ...rest }) => (
     plain="noPad"
     verticalAlign={context === 'groupEnd' ? 'bottom' : 'top'}
   >
-    <ExpanderControl context={context} {...rest} />
+    <ExpanderControl
+      context={context}
+      rowExpandLabel={rowExpandLabel}
+      {...rest}
+    />
   </TableCell>
 );
-
 ExpanderCell.displayName = 'ExpanderCell';
 
 export { ExpanderCell };

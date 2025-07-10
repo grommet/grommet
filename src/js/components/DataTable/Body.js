@@ -33,6 +33,7 @@ const Row = memo(
     setActive,
     setRowExpand,
     rowExpand,
+    rowExpandLabel,
     columns,
     pinnedOffset,
     primaryProperty,
@@ -132,6 +133,7 @@ const Row = memo(
             }}
             pad={cellProps.pad}
             verticalAlign={verticalAlign}
+            rowExpandLabel={rowExpandLabel}
           />
         )}
         {columns.map((column) => (
@@ -192,6 +194,7 @@ const Body = forwardRef(
       step,
       rowExpand,
       setRowExpand,
+      rowExpandLabel,
       verticalAlign,
       ...rest
     },
@@ -340,6 +343,7 @@ const Body = forwardRef(
                   columns={columns}
                   primaryProperty={primaryProperty}
                   rowProps={rowProps}
+                  rowExpandLabel={rowExpandLabel}
                   data={data}
                   theme={theme}
                   pinnedOffset={pinnedOffset}
