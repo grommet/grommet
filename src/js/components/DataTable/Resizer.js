@@ -27,7 +27,7 @@ const InteractionBox = styled(Button)`
   }
 `;
 
-const Resizer = ({ onResize, property, widths }) => {
+const Resizer = ({ onResize, property, widths, headerText }) => {
   const { theme } = useThemeValue();
   const [active, setActive] = useState(false);
   const [start, setStart] = useState();
@@ -113,7 +113,7 @@ const Resizer = ({ onResize, property, widths }) => {
       <Keyboard onLeft={onKeyDown} onRight={onKeyDown}>
         {/* provides a wider, more accessible target to grab resizer */}
         <InteractionBox
-          aria-label={`Resize ${property} column`}
+          aria-label={`Resize ${headerText} column`}
           active={active}
           flex={false}
           pad={{ left: 'xsmall' }}

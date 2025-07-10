@@ -3953,7 +3953,7 @@ exports[`DataTable custom theme 1`] = `
                 class="c14"
               >
                 <button
-                  aria-label="Resize a column"
+                  aria-label="Resize A column"
                   class="c15 c16"
                   type="button"
                 >
@@ -4146,7 +4146,7 @@ exports[`DataTable custom theme 2`] = `
                 class="StyledStack__StyledStackLayer-sc-ajspsk-1 jTxOlx"
               >
                 <button
-                  aria-label="Resize a column"
+                  aria-label="Resize A column"
                   class="StyledButton-sc-323bzc-0 eJXFoX Resizer__InteractionBox-sc-8l808w-0 ckUBxB"
                   type="button"
                 >
@@ -21223,7 +21223,7 @@ exports[`DataTable resizeable 1`] = `
                 class="c11"
               >
                 <button
-                  aria-label="Resize a column"
+                  aria-label="Resize A column"
                   class="c12 c13"
                   type="button"
                 >
@@ -21270,7 +21270,7 @@ exports[`DataTable resizeable 1`] = `
                 class="c11"
               >
                 <button
-                  aria-label="Resize b column"
+                  aria-label="Resize B column"
                   class="c12 c13"
                   type="button"
                 >
