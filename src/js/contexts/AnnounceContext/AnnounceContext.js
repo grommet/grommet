@@ -41,7 +41,6 @@ export const AnnounceContext = React.createContext(
       announcer.textContent = message;
 
       // Set a timeout to clear the message after the specified duration
-      // (if timeout > 0)
       if (timeout > 0) {
         const clearAnnounceTimeout = setTimeout(() => {
           announcer.textContent = ''; // Clear the message after display
