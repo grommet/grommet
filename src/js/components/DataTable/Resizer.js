@@ -27,7 +27,7 @@ const InteractionBox = styled(Button)`
   }
 `;
 
-const Resizer = ({ onResize, property, widths, headerText }) => {
+const Resizer = ({ onResize, property, headerText }) => {
   const { theme } = useThemeValue();
   const [active, setActive] = useState(false);
   const [start, setStart] = useState();
@@ -94,12 +94,11 @@ const Resizer = ({ onResize, property, widths, headerText }) => {
       let element = ref.current;
       while (element && element.nodeName !== 'TH') element = element.parentNode;
       const currentWidth = element.getBoundingClientRect().width;
-      const propertyWidth = widths?.[property];
       // Used 12 here to align with the value set in onMouseMove
       const delta = event.key === 'ArrowLeft' ? -12 : 12;
-      onResize(property, (propertyWidth || currentWidth) + delta);
+      onResize(property, currentWidth + delta);
     },
-    [onResize, property, widths],
+    [onResize, property],
   );
 
   return (

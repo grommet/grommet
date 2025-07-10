@@ -430,7 +430,6 @@ const Header = forwardRef(
                       onResize(prop, width);
                       updateWidths(prop, width);
                     }}
-                    widths={widths}
                     headerText={typeof header === 'string' ? header : property}
                   />
                 ) : null;
