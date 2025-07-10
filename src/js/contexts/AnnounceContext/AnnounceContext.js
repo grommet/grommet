@@ -29,9 +29,10 @@ export const AnnounceContext = React.createContext(
 
     announcer.textContent = '\u00A0';
 
-    // Force a DOM reflow. This makes the browser immediately apply the DOM changes
-    // which can help screen readers detect the change more reliably.
-    void announcer.offsetWidth;
+    // Force a DOM reflow. This makes the browser immediately apply the DOM
+    // changes which can help screen readers detect the change more reliably.
+    // eslint-disable-next-line no-unused-expressions
+    announcer.offsetWidth;
 
     // Set a short delay before placing the actual message.
     const announceDelay = 100;
@@ -39,11 +40,12 @@ export const AnnounceContext = React.createContext(
     const initialAnnounceTimeout = setTimeout(() => {
       announcer.textContent = message;
 
-      // 4. Set a timeout to clear the message after the specified duration (if timeout > 0)
+      // Set a timeout to clear the message after the specified duration
+      // (if timeout > 0)
       if (timeout > 0) {
         const clearAnnounceTimeout = setTimeout(() => {
-          announcer.textContent = ''; // Clear the message after its display duration
-          delete announcer.dataset.timeoutId; // Remove the stored timeout ID
+          announcer.textContent = ''; // Clear the message after display
+          delete announcer.dataset.timeoutId; // Remove stored timeout ID
         }, timeout);
 
         // Store the ID of this *clear* timeout. This allows us to cancel it
@@ -58,8 +60,9 @@ export const AnnounceContext = React.createContext(
       delete announcer.dataset.initialAnnounceTimeoutId;
     }, announceDelay);
 
-    // Store the ID for the initial announce delay, in case it needs to be cancelled
-    // if a new message is triggered extremely quickly (e.g., within announceDelay).
+    // Store the ID for the initial announce delay, in case it needs to be
+    // cancelled if a new message is triggered extremely quickly
+    // (e.g., within announceDelay).
     announcer.dataset.initialAnnounceTimeoutId =
       initialAnnounceTimeout.toString();
   },
