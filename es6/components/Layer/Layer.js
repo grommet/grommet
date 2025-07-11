@@ -1,5 +1,5 @@
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
-import React, { forwardRef, useContext, useEffect, useState } from 'react';
+import React, { forwardRef, useContext, useEffect, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { useLayoutEffect } from '../../utils/use-isomorphic-layout-effect';
 import { getNewContainer } from '../../utils';
@@ -10,26 +10,49 @@ import { LayerPropTypes } from './propTypes';
 var Layer = /*#__PURE__*/forwardRef(function (props, ref) {
   var animate = props.animate,
     animation = props.animation,
+    modal = props.modal,
     targetChildPosition = props.targetChildPosition;
   var _useState = useState(),
-    originalFocusedElement = _useState[0],
-    setOriginalFocusedElement = _useState[1];
-  useEffect(function () {
-    return setOriginalFocusedElement(document.activeElement);
-  }, []);
-  var _useState2 = useState(),
-    layerContainer = _useState2[0],
-    setLayerContainer = _useState2[1];
+    layerContainer = _useState[0],
+    setLayerContainer = _useState[1];
   var containerTarget = useContext(ContainerTargetContext);
+  var _useState2 = useState(),
+    originalFocusedElement = _useState2[0],
+    setOriginalFocusedElement = _useState2[1];
+  var focusWithinLayerRef = useRef(false);
+  useEffect(function () {
+    setOriginalFocusedElement(document.activeElement);
+  }, []);
+  useEffect(function () {
+    var handleFocusIn = function handleFocusIn(event) {
+      if (layerContainer != null && layerContainer.contains != null && layerContainer.contains(event.target)) {
+        focusWithinLayerRef.current = true;
+      }
+    };
+    var handleFocusOut = function handleFocusOut(event) {
+      if (layerContainer != null && layerContainer.contains != null && layerContainer.contains(event.target) && !layerContainer.contains(event.relatedTarget)) {
+        focusWithinLayerRef.current = false;
+      }
+    };
+    document.addEventListener('focusin', handleFocusIn);
+    document.addEventListener('focusout', handleFocusOut);
+    return function () {
+      document.removeEventListener('focusin', handleFocusIn);
+      document.removeEventListener('focusout', handleFocusOut);
+    };
+  }, [layerContainer]);
   useEffect(function () {
     return setLayerContainer(getNewContainer(containerTarget, targetChildPosition));
   }, [containerTarget, targetChildPosition]);
-
   // just a few things to clean up when the Layer is unmounted
   useLayoutEffect(function () {
     return function () {
       if (originalFocusedElement) {
-        if (originalFocusedElement.focus) {
+        // Restore focus if:
+        // - modal layer (always restore), or
+        // - non-modal layer that had focus when it closed
+        var shouldRestoreFocus = modal || !modal && focusWithinLayerRef.current;
+        if (shouldRestoreFocus && originalFocusedElement.focus) {
           // wait for the fixed positioning to come back to normal
           // see layer styling for reference
           setTimeout(function () {
@@ -67,7 +90,7 @@ var Layer = /*#__PURE__*/forwardRef(function (props, ref) {
         }
       }
     };
-  }, [animate, animation, containerTarget, layerContainer, originalFocusedElement]);
+  }, [animate, animation, containerTarget, layerContainer, modal, originalFocusedElement]);
   return layerContainer ? /*#__PURE__*/createPortal(/*#__PURE__*/React.createElement(LayerContainer, _extends({
     ref: ref
   }, props)), layerContainer) : null;
