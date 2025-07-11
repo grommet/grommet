@@ -14,7 +14,6 @@ import { LayerContainer } from './LayerContainer';
 import { animationDuration } from './StyledLayer';
 import { ContainerTargetContext } from '../../contexts/ContainerTargetContext';
 import { LayerPropTypes } from './propTypes';
-import { Keyboard } from '../Keyboard';
 
 const Layer = forwardRef((props, ref) => {
   const { animate, animation, modal, targetChildPosition } = props;
@@ -119,12 +118,7 @@ const Layer = forwardRef((props, ref) => {
   );
 
   return layerContainer
-    ? createPortal(
-        <Keyboard target="document">
-          <LayerContainer ref={ref} {...props} />
-        </Keyboard>,
-        layerContainer,
-      )
+    ? createPortal(<LayerContainer ref={ref} {...props} />, layerContainer)
     : null;
 });
 
