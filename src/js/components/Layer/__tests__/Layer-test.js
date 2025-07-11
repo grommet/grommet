@@ -93,7 +93,7 @@ describe('Layer', () => {
         expectPortal('position-full-test').toMatchSnapshot();
       });
 
-      test(`should render correct border radius for position: ${position} - 
+      test(`should render correct border radius for position: ${position} -
       full: ${full}`, () => {
         const theme = {
           layer: {
@@ -293,7 +293,7 @@ describe('Layer', () => {
 
     const layerNode = getByTestId(document, 'focus-layer-test');
     expect(layerNode).toMatchSnapshot();
-    expect(document.activeElement.nodeName).toBe('INPUT');
+    expect(document.activeElement.nodeName).toBe('A');
   });
 
   test('not steal focus from an autofocus focusable element', () => {
