@@ -12,12 +12,7 @@ const getCurrentOS = () => {
 };
 
 const defaultFormat = (size) => {
-  if (
-    size === null ||
-    size === undefined ||
-    size === '' ||
-    Number.isNaN(Number(size))
-  ) {
+  if (size == null || size === '' || Number.isNaN(Number(size))) {
     return '0 B';
   }
   const units = ['B', 'KB', 'MB', 'GB', 'TB'];
@@ -33,12 +28,7 @@ const defaultFormat = (size) => {
 };
 
 const windowsFormat = (size) => {
-  if (
-    size === null ||
-    size === undefined ||
-    size === '' ||
-    Number.isNaN(Number(size))
-  ) {
+  if (size == null || size === '' || Number.isNaN(Number(size))) {
     return '0 KB';
   }
 
