@@ -92,7 +92,7 @@ const LayerContainer = forwardRef(
       };
     }, [sendAnalytics, layerRef, position]);
     useEffect(() => {
-      if (position !== 'hidden') {
+      if (position !== 'hidden' && modal) {
         const node = layerRef.current || containerRef.current || ref.current;
         if (node && node.scrollIntoView) node.scrollIntoView();
         // Once layer is open we make sure it has focus so that you
@@ -113,12 +113,6 @@ const LayerContainer = forwardRef(
       }
     }, [modal, position, ref]);
 
-    useEffect(() => {
-      if (position !== 'hidden') {
-        const node = layerRef.current || containerRef.current || ref.current;
-        if (node && node.scrollIntoView) node.scrollIntoView();
-      }
-    }, [position, ref]);
     useEffect(() => {
       const onClickDocument = (event) => {
         // determine which portal id the target is in, if any
