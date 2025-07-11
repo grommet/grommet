@@ -12,10 +12,14 @@ const getCurrentOS = () => {
 };
 
 const defaultFormat = (size) => {
+  if (size == null || size === '' || Number.isNaN(Number(size))) {
+    return '0 B';
+  }
   const units = ['B', 'KB', 'MB', 'GB', 'TB'];
   const factor = SI_CONVERSION_FACTOR;
+
   let index = 0;
-  let num = size;
+  let num = Number(size);
   while (num >= factor && index < units.length - 1) {
     num /= factor;
     index += 1;
@@ -24,9 +28,13 @@ const defaultFormat = (size) => {
 };
 
 const windowsFormat = (size) => {
-  const num = Math.ceil(size / IEC_CONVERSION_FACTOR);
+  if (size == null || size === '' || Number.isNaN(Number(size))) {
+    return '0 KB';
+  }
 
-  return `${Intl.NumberFormat().format(num)} KB`;
+  const num = Number(size);
+  const rounded = Math.ceil(num / IEC_CONVERSION_FACTOR);
+  return `${Intl.NumberFormat().format(rounded)} KB`;
 };
 
 const makeFormatBytes = (OS) => (size) => {
