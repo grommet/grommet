@@ -51,7 +51,9 @@ export interface ColumnConfig<TRowType> {
   header?: string | React.ReactNode | { aggregate?: boolean };
   messages?: {
     ascending?: string;
+    collapse?: string;
     descending?: string;
+    expand?: string;
     rows?: string;
     rowsChanged?: string;
     rowsSingle?: string;
@@ -116,7 +118,7 @@ export interface DataTableProps<TRowType = any> {
         expand?: (string | number)[];
         onExpand?: (expandedKeys: (string | number)[], datum: TRowType) => void;
       };
-  rowExpandLabel?: string | ((groupKey: any) => string);
+  expandAriaLabel?: string | ((groupKey: any) => string);
   show?: number | { page?: number };
   size?: 'small' | 'medium' | 'large' | 'xlarge' | string;
 

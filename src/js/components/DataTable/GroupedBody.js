@@ -28,7 +28,7 @@ export const GroupedBody = forwardRef(
       onUpdate,
       replace,
       rowProps,
-      rowExpandLabel,
+      expandAriaLabel,
       selected,
       size,
       step,
@@ -177,11 +177,11 @@ export const GroupedBody = forwardRef(
 
             // Move the expandLabel logic here where context and key are defined
             let expandLabel;
-            if (context === 'groupHeader' && rowExpandLabel) {
+            if (context === 'groupHeader' && expandAriaLabel) {
               expandLabel =
-                typeof rowExpandLabel === 'function'
-                  ? rowExpandLabel(key)
-                  : rowExpandLabel;
+                typeof expandAriaLabel === 'function'
+                  ? expandAriaLabel(key)
+                  : expandAriaLabel;
             }
 
             return (
@@ -199,7 +199,7 @@ export const GroupedBody = forwardRef(
                   }
                   expanded={expanded}
                   verticalAlign={verticalAlign}
-                  rowExpandLabel={expandLabel}
+                  expandAriaLabel={expandLabel}
                 />
                 {(selected || onSelect) && (
                   <TableCell

@@ -2154,4 +2154,82 @@ describe('DataTable', () => {
     expect(screen.getByText('Model: BTL Y-wing')).toBeInTheDocument();
     expect(screen.queryByText('Model: T-65 X-wing')).not.toBeInTheDocument();
   });
+
+  test('expandAriaLabel', () => {
+    const { container, getAllByLabelText } = render(
+      <Grommet>
+        <DataTable
+          columns={[
+            { property: 'a', header: 'A' },
+            { property: 'b', header: 'B' },
+          ]}
+          data={[
+            { a: 'one', b: 1.1 },
+            { a: 'one', b: 1.2 },
+            { a: 'two', b: 2.1 },
+            { a: 'two', b: 2.2 },
+          ]}
+          groupBy="a"
+          expandAriaLabel="Group"
+        />
+      </Grommet>,
+    );
+
+    // Check that expand buttons have the custom label
+    const expandButtons = getAllByLabelText('expand Group');
+    expect(expandButtons).toHaveLength(2);
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('expandAriaLabel function', () => {
+    const expandAriaLabel = (groupKey: string) => `${groupKey} items`;
+    const { container } = render(
+      <Grommet>
+        <DataTable
+          columns={[
+            { property: 'a', header: 'A' },
+            { property: 'b', header: 'B' },
+          ]}
+          data={[
+            { a: 'one', b: 1.1 },
+            { a: 'one', b: 1.2 },
+            { a: 'two', b: 2.1 },
+            { a: 'two', b: 2.2 },
+          ]}
+          groupBy="a"
+          expandAriaLabel={expandAriaLabel}
+        />
+      </Grommet>,
+    );
+
+    // Check that expand buttons have the custom labels with group names
+    expect(screen.getByLabelText('expand one items')).toBeInTheDocument();
+    expect(screen.getByLabelText('expand two items')).toBeInTheDocument();
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('expandAriaLabel default', () => {
+    const { container, getAllByLabelText } = render(
+      <Grommet>
+        <DataTable
+          columns={[
+            { property: 'a', header: 'A' },
+            { property: 'b', header: 'B' },
+          ]}
+          data={[
+            { a: 'one', b: 1.1 },
+            { a: 'one', b: 1.2 },
+            { a: 'two', b: 2.1 },
+            { a: 'two', b: 2.2 },
+          ]}
+          groupBy="a"
+        />
+      </Grommet>,
+    );
+
+    // Check that expand buttons have default labels
+    const expandButtons = getAllByLabelText('expand');
+    expect(expandButtons.length).toBeGreaterThanOrEqual(2);
+    expect(container.firstChild).toMatchSnapshot();
+  });
 });

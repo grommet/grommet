@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Blank } from 'grommet-icons/icons/Blank';
 
 import { Box } from '../Box';
 import { Button } from '../Button';
 import { TableCell } from '../TableCell';
+import { MessageContext } from '../../contexts/MessageContext';
 import { normalizeColor } from '../../utils';
 import { useThemeValue } from '../../utils/useThemeValue';
 
@@ -14,10 +15,11 @@ const ExpanderControl = ({
   expanded,
   onToggle,
   pad,
-  rowExpandLabel,
+  expandAriaLabel,
   ...rest
 }) => {
   const { theme } = useThemeValue();
+  const { format } = useContext(MessageContext);
 
   let content;
   if (onToggle) {
@@ -42,12 +44,17 @@ const ExpanderControl = ({
   );
 
   if (onToggle) {
-    let a11yTitle;
-    if (rowExpandLabel) {
-      a11yTitle = `${expanded ? 'collapse' : 'expand'} ${rowExpandLabel}`;
-    } else {
-      a11yTitle = expanded ? 'collapse' : 'expand';
-    }
+    const expandText = format({
+      id: 'dataTable.expand',
+      messages: { 'dataTable.expand': 'expand' },
+    });
+    const collapseText = format({
+      id: 'dataTable.collapse',
+      messages: { 'dataTable.collapse': 'collapse' },
+    });
+
+    let a11yTitle = expanded ? collapseText : expandText;
+    if (expandAriaLabel) a11yTitle = `${a11yTitle} ${expandAriaLabel}`;
     content = (
       <Button
         fill
@@ -69,7 +76,7 @@ const ExpanderCell = ({
   background,
   border,
   context,
-  rowExpandLabel,
+  expandAriaLabel,
   ...rest
 }) => (
   <TableCell
@@ -81,7 +88,7 @@ const ExpanderCell = ({
   >
     <ExpanderControl
       context={context}
-      rowExpandLabel={rowExpandLabel}
+      expandAriaLabel={expandAriaLabel}
       {...rest}
     />
   </TableCell>

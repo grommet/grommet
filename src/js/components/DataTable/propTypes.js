@@ -130,7 +130,9 @@ if (process.env.NODE_ENV !== 'production') {
     ]),
     messages: PropTypes.shape({
       ascending: PropType.string,
+      collapse: PropType.string,
       descending: PropType.string,
+      expand: PropType.string,
       rows: PropTypes.string,
       rowsChanged: PropTypes.string,
       rowsSingle: PropTypes.string,
@@ -173,7 +175,7 @@ if (process.env.NODE_ENV !== 'production') {
     replace: PropTypes.bool,
     resizeable: PropTypes.bool,
     rowProps: PropTypes.shape({}),
-    rowExpandLabel: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
+    expandAriaLabel: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
     select: PropTypes.arrayOf(
       PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
     ),

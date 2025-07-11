@@ -4742,6 +4742,1326 @@ exports[`DataTable empty 1`] = `
 </div>
 `;
 
+exports[`DataTable expandAriaLabel 1`] = `
+.c7 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: rgba(0, 0, 0, 0.33);
+  stroke: rgba(0, 0, 0, 0.33);
+}
+
+.c7 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c7 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c7 *[stroke*='#'],
+.c7 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c7 *[fill-rule],
+.c7 *[FILL-RULE],
+.c7 *[fill*='#'],
+.c7 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c4 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.c6 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.c9 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  flex: 1 0 auto;
+  justify-content: center;
+}
+
+.c14 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+}
+
+.c10 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c5 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  flex: 1 0 auto;
+}
+
+.c5:hover {
+  background-color: rgba(221, 221, 221, 0.4);
+  color: #000000;
+}
+
+.c5:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus >circle,
+.c5:focus >ellipse,
+.c5:focus >line,
+.c5:focus >path,
+.c5:focus >polygon,
+.c5:focus >polyline,
+.c5:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c5:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible) >circle,
+.c5:focus:not(:focus-visible) >ellipse,
+.c5:focus:not(:focus-visible) >line,
+.c5:focus:not(:focus-visible) >path,
+.c5:focus:not(:focus-visible) >polygon,
+.c5:focus:not(:focus-visible) >polyline,
+.c5:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
+}
+
+.c3 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  width: 48px;
+  max-width: 48px;
+  overflow: hidden;
+  vertical-align: top;
+  text-align: start;
+  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
+}
+
+.c8 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  text-align: start;
+  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.c12 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  width: 48px;
+  max-width: 48px;
+  overflow: hidden;
+  vertical-align: top;
+  text-align: start;
+}
+
+.c13 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  text-align: start;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.c1 {
+  border-spacing: 0;
+  border-collapse: collapse;
+  width: inherit;
+}
+
+.c2 {
+  position: relative;
+  border-spacing: 0;
+  border-collapse: separate;
+}
+
+.c11:focus {
+  outline: 2px solid #6FFFB0;
+}
+
+.c11:focus:not(:focus-visible) {
+  outline: none;
+}
+
+@media only screen and (max-width: 768px) {
+  .c6 {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c6 {
+    padding-top: 3px;
+    padding-bottom: 3px;
+  }
+}
+
+<div
+  class="c0"
+>
+  <table
+    class="c1 c2"
+  >
+    <thead
+      class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-5"
+    >
+      <tr
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+      >
+        <td
+          class="c3"
+        >
+          <div
+            class="c4"
+            style="height: 0px;"
+          >
+            <button
+              aria-expanded="false"
+              aria-label="expand"
+              class="c5"
+              type="button"
+            >
+              <div
+                class="c6"
+              >
+                <svg
+                  aria-label="FormDown"
+                  class="c7"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="m18 9-6 6-6-6"
+                    fill="none"
+                    stroke="#000"
+                    stroke-width="2"
+                  />
+                </svg>
+              </div>
+            </button>
+          </div>
+        </td>
+        <th
+          class="c8 "
+          scope="col"
+        >
+          <div
+            class="c9"
+          >
+            <span
+              class="c10"
+            >
+              A
+            </span>
+          </div>
+        </th>
+        <th
+          class="c8 "
+          scope="col"
+        >
+          <div
+            class="c9"
+          >
+            <span
+              class="c10"
+            >
+              B
+            </span>
+          </div>
+        </th>
+      </tr>
+    </thead>
+    <tbody
+      class="StyledTable__StyledTableBody-sc-1m3u5g-3 c11"
+    >
+      <tr
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+      >
+        <td
+          class="c12"
+        >
+          <div
+            class="c4"
+            style="height: 0px;"
+          >
+            <button
+              aria-expanded="false"
+              aria-label="expand Group"
+              class="c5"
+              type="button"
+            >
+              <div
+                class="c6"
+              >
+                <svg
+                  aria-label="FormDown"
+                  class="c7"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="m18 9-6 6-6-6"
+                    fill="none"
+                    stroke="#000"
+                    stroke-width="2"
+                  />
+                </svg>
+              </div>
+            </button>
+          </div>
+        </td>
+        <th
+          class="c13 "
+          scope="row"
+        >
+          <div
+            class="c14"
+          >
+            <span
+              class="c10"
+            >
+              one
+            </span>
+          </div>
+        </th>
+        <td
+          class="c13 "
+        >
+          <div
+            class="c14"
+          />
+        </td>
+      </tr>
+      <tr
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+      >
+        <td
+          class="c12"
+        >
+          <div
+            class="c4"
+            style="height: 0px;"
+          >
+            <button
+              aria-expanded="false"
+              aria-label="expand Group"
+              class="c5"
+              type="button"
+            >
+              <div
+                class="c6"
+              >
+                <svg
+                  aria-label="FormDown"
+                  class="c7"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="m18 9-6 6-6-6"
+                    fill="none"
+                    stroke="#000"
+                    stroke-width="2"
+                  />
+                </svg>
+              </div>
+            </button>
+          </div>
+        </td>
+        <th
+          class="c13 "
+          scope="row"
+        >
+          <div
+            class="c14"
+          >
+            <span
+              class="c10"
+            >
+              two
+            </span>
+          </div>
+        </th>
+        <td
+          class="c13 "
+        >
+          <div
+            class="c14"
+          />
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`DataTable expandAriaLabel default 1`] = `
+.c7 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: rgba(0, 0, 0, 0.33);
+  stroke: rgba(0, 0, 0, 0.33);
+}
+
+.c7 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c7 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c7 *[stroke*='#'],
+.c7 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c7 *[fill-rule],
+.c7 *[FILL-RULE],
+.c7 *[fill*='#'],
+.c7 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c4 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.c6 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.c9 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  flex: 1 0 auto;
+  justify-content: center;
+}
+
+.c14 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+}
+
+.c10 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c5 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  flex: 1 0 auto;
+}
+
+.c5:hover {
+  background-color: rgba(221, 221, 221, 0.4);
+  color: #000000;
+}
+
+.c5:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus >circle,
+.c5:focus >ellipse,
+.c5:focus >line,
+.c5:focus >path,
+.c5:focus >polygon,
+.c5:focus >polyline,
+.c5:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c5:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible) >circle,
+.c5:focus:not(:focus-visible) >ellipse,
+.c5:focus:not(:focus-visible) >line,
+.c5:focus:not(:focus-visible) >path,
+.c5:focus:not(:focus-visible) >polygon,
+.c5:focus:not(:focus-visible) >polyline,
+.c5:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
+}
+
+.c3 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  width: 48px;
+  max-width: 48px;
+  overflow: hidden;
+  vertical-align: top;
+  text-align: start;
+  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
+}
+
+.c8 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  text-align: start;
+  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.c12 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  width: 48px;
+  max-width: 48px;
+  overflow: hidden;
+  vertical-align: top;
+  text-align: start;
+}
+
+.c13 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  text-align: start;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.c1 {
+  border-spacing: 0;
+  border-collapse: collapse;
+  width: inherit;
+}
+
+.c2 {
+  position: relative;
+  border-spacing: 0;
+  border-collapse: separate;
+}
+
+.c11:focus {
+  outline: 2px solid #6FFFB0;
+}
+
+.c11:focus:not(:focus-visible) {
+  outline: none;
+}
+
+@media only screen and (max-width: 768px) {
+  .c6 {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c6 {
+    padding-top: 3px;
+    padding-bottom: 3px;
+  }
+}
+
+<div
+  class="c0"
+>
+  <table
+    class="c1 c2"
+  >
+    <thead
+      class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-5"
+    >
+      <tr
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+      >
+        <td
+          class="c3"
+        >
+          <div
+            class="c4"
+            style="height: 0px;"
+          >
+            <button
+              aria-expanded="false"
+              aria-label="expand"
+              class="c5"
+              type="button"
+            >
+              <div
+                class="c6"
+              >
+                <svg
+                  aria-label="FormDown"
+                  class="c7"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="m18 9-6 6-6-6"
+                    fill="none"
+                    stroke="#000"
+                    stroke-width="2"
+                  />
+                </svg>
+              </div>
+            </button>
+          </div>
+        </td>
+        <th
+          class="c8 "
+          scope="col"
+        >
+          <div
+            class="c9"
+          >
+            <span
+              class="c10"
+            >
+              A
+            </span>
+          </div>
+        </th>
+        <th
+          class="c8 "
+          scope="col"
+        >
+          <div
+            class="c9"
+          >
+            <span
+              class="c10"
+            >
+              B
+            </span>
+          </div>
+        </th>
+      </tr>
+    </thead>
+    <tbody
+      class="StyledTable__StyledTableBody-sc-1m3u5g-3 c11"
+    >
+      <tr
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+      >
+        <td
+          class="c12"
+        >
+          <div
+            class="c4"
+            style="height: 0px;"
+          >
+            <button
+              aria-expanded="false"
+              aria-label="expand"
+              class="c5"
+              type="button"
+            >
+              <div
+                class="c6"
+              >
+                <svg
+                  aria-label="FormDown"
+                  class="c7"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="m18 9-6 6-6-6"
+                    fill="none"
+                    stroke="#000"
+                    stroke-width="2"
+                  />
+                </svg>
+              </div>
+            </button>
+          </div>
+        </td>
+        <th
+          class="c13 "
+          scope="row"
+        >
+          <div
+            class="c14"
+          >
+            <span
+              class="c10"
+            >
+              one
+            </span>
+          </div>
+        </th>
+        <td
+          class="c13 "
+        >
+          <div
+            class="c14"
+          />
+        </td>
+      </tr>
+      <tr
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+      >
+        <td
+          class="c12"
+        >
+          <div
+            class="c4"
+            style="height: 0px;"
+          >
+            <button
+              aria-expanded="false"
+              aria-label="expand"
+              class="c5"
+              type="button"
+            >
+              <div
+                class="c6"
+              >
+                <svg
+                  aria-label="FormDown"
+                  class="c7"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="m18 9-6 6-6-6"
+                    fill="none"
+                    stroke="#000"
+                    stroke-width="2"
+                  />
+                </svg>
+              </div>
+            </button>
+          </div>
+        </td>
+        <th
+          class="c13 "
+          scope="row"
+        >
+          <div
+            class="c14"
+          >
+            <span
+              class="c10"
+            >
+              two
+            </span>
+          </div>
+        </th>
+        <td
+          class="c13 "
+        >
+          <div
+            class="c14"
+          />
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`DataTable expandAriaLabel function 1`] = `
+.c7 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: rgba(0, 0, 0, 0.33);
+  stroke: rgba(0, 0, 0, 0.33);
+}
+
+.c7 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c7 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c7 *[stroke*='#'],
+.c7 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c7 *[fill-rule],
+.c7 *[FILL-RULE],
+.c7 *[fill*='#'],
+.c7 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c4 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.c6 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.c9 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  flex: 1 0 auto;
+  justify-content: center;
+}
+
+.c14 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+}
+
+.c10 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c5 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  flex: 1 0 auto;
+}
+
+.c5:hover {
+  background-color: rgba(221, 221, 221, 0.4);
+  color: #000000;
+}
+
+.c5:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus >circle,
+.c5:focus >ellipse,
+.c5:focus >line,
+.c5:focus >path,
+.c5:focus >polygon,
+.c5:focus >polyline,
+.c5:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c5:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible) >circle,
+.c5:focus:not(:focus-visible) >ellipse,
+.c5:focus:not(:focus-visible) >line,
+.c5:focus:not(:focus-visible) >path,
+.c5:focus:not(:focus-visible) >polygon,
+.c5:focus:not(:focus-visible) >polyline,
+.c5:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
+}
+
+.c3 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  width: 48px;
+  max-width: 48px;
+  overflow: hidden;
+  vertical-align: top;
+  text-align: start;
+  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
+}
+
+.c8 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  text-align: start;
+  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.c12 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  width: 48px;
+  max-width: 48px;
+  overflow: hidden;
+  vertical-align: top;
+  text-align: start;
+}
+
+.c13 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  text-align: start;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.c1 {
+  border-spacing: 0;
+  border-collapse: collapse;
+  width: inherit;
+}
+
+.c2 {
+  position: relative;
+  border-spacing: 0;
+  border-collapse: separate;
+}
+
+.c11:focus {
+  outline: 2px solid #6FFFB0;
+}
+
+.c11:focus:not(:focus-visible) {
+  outline: none;
+}
+
+@media only screen and (max-width: 768px) {
+  .c6 {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c6 {
+    padding-top: 3px;
+    padding-bottom: 3px;
+  }
+}
+
+<div
+  class="c0"
+>
+  <table
+    class="c1 c2"
+  >
+    <thead
+      class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-5"
+    >
+      <tr
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+      >
+        <td
+          class="c3"
+        >
+          <div
+            class="c4"
+            style="height: 0px;"
+          >
+            <button
+              aria-expanded="false"
+              aria-label="expand"
+              class="c5"
+              type="button"
+            >
+              <div
+                class="c6"
+              >
+                <svg
+                  aria-label="FormDown"
+                  class="c7"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="m18 9-6 6-6-6"
+                    fill="none"
+                    stroke="#000"
+                    stroke-width="2"
+                  />
+                </svg>
+              </div>
+            </button>
+          </div>
+        </td>
+        <th
+          class="c8 "
+          scope="col"
+        >
+          <div
+            class="c9"
+          >
+            <span
+              class="c10"
+            >
+              A
+            </span>
+          </div>
+        </th>
+        <th
+          class="c8 "
+          scope="col"
+        >
+          <div
+            class="c9"
+          >
+            <span
+              class="c10"
+            >
+              B
+            </span>
+          </div>
+        </th>
+      </tr>
+    </thead>
+    <tbody
+      class="StyledTable__StyledTableBody-sc-1m3u5g-3 c11"
+    >
+      <tr
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+      >
+        <td
+          class="c12"
+        >
+          <div
+            class="c4"
+            style="height: 0px;"
+          >
+            <button
+              aria-expanded="false"
+              aria-label="expand one items"
+              class="c5"
+              type="button"
+            >
+              <div
+                class="c6"
+              >
+                <svg
+                  aria-label="FormDown"
+                  class="c7"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="m18 9-6 6-6-6"
+                    fill="none"
+                    stroke="#000"
+                    stroke-width="2"
+                  />
+                </svg>
+              </div>
+            </button>
+          </div>
+        </td>
+        <th
+          class="c13 "
+          scope="row"
+        >
+          <div
+            class="c14"
+          >
+            <span
+              class="c10"
+            >
+              one
+            </span>
+          </div>
+        </th>
+        <td
+          class="c13 "
+        >
+          <div
+            class="c14"
+          />
+        </td>
+      </tr>
+      <tr
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+      >
+        <td
+          class="c12"
+        >
+          <div
+            class="c4"
+            style="height: 0px;"
+          >
+            <button
+              aria-expanded="false"
+              aria-label="expand two items"
+              class="c5"
+              type="button"
+            >
+              <div
+                class="c6"
+              >
+                <svg
+                  aria-label="FormDown"
+                  class="c7"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="m18 9-6 6-6-6"
+                    fill="none"
+                    stroke="#000"
+                    stroke-width="2"
+                  />
+                </svg>
+              </div>
+            </button>
+          </div>
+        </td>
+        <th
+          class="c13 "
+          scope="row"
+        >
+          <div
+            class="c14"
+          >
+            <span
+              class="c10"
+            >
+              two
+            </span>
+          </div>
+        </th>
+        <td
+          class="c13 "
+        >
+          <div
+            class="c14"
+          />
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
 exports[`DataTable fill 1`] = `
 .c0 {
   font-size: 18px;
