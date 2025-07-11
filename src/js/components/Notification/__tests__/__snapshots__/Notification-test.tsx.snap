@@ -1966,6 +1966,7 @@ exports[`Notification position bottom 1`] = `
     data-g-portal-id="0"
     id="position-test"
     role="log"
+    tabindex="-1"
   >
     <div
       class="c2"
@@ -2221,6 +2222,7 @@ exports[`Notification position bottom-left 1`] = `
     data-g-portal-id="0"
     id="position-test"
     role="log"
+    tabindex="-1"
   >
     <div
       class="c2"
@@ -2476,6 +2478,7 @@ exports[`Notification position bottom-right 1`] = `
     data-g-portal-id="0"
     id="position-test"
     role="log"
+    tabindex="-1"
   >
     <div
       class="c2"
@@ -2731,6 +2734,7 @@ exports[`Notification position center 1`] = `
     data-g-portal-id="0"
     id="position-test"
     role="log"
+    tabindex="-1"
   >
     <div
       class="c2"
@@ -2986,6 +2990,7 @@ exports[`Notification position end 1`] = `
     data-g-portal-id="0"
     id="position-test"
     role="log"
+    tabindex="-1"
   >
     <div
       class="c2"
@@ -3241,6 +3246,7 @@ exports[`Notification position left 1`] = `
     data-g-portal-id="0"
     id="position-test"
     role="log"
+    tabindex="-1"
   >
     <div
       class="c2"
@@ -3496,6 +3502,7 @@ exports[`Notification position right 1`] = `
     data-g-portal-id="0"
     id="position-test"
     role="log"
+    tabindex="-1"
   >
     <div
       class="c2"
@@ -3751,6 +3758,7 @@ exports[`Notification position start 1`] = `
     data-g-portal-id="0"
     id="position-test"
     role="log"
+    tabindex="-1"
   >
     <div
       class="c2"
@@ -4006,6 +4014,7 @@ exports[`Notification position top 1`] = `
     data-g-portal-id="0"
     id="position-test"
     role="log"
+    tabindex="-1"
   >
     <div
       class="c2"
@@ -4261,6 +4270,7 @@ exports[`Notification position top-left 1`] = `
     data-g-portal-id="0"
     id="position-test"
     role="log"
+    tabindex="-1"
   >
     <div
       class="c2"
@@ -4516,6 +4526,7 @@ exports[`Notification position top-right 1`] = `
     data-g-portal-id="0"
     id="position-test"
     role="log"
+    tabindex="-1"
   >
     <div
       class="c2"

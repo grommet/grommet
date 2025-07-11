@@ -1660,6 +1660,7 @@ exports[`DataFilters layer 2`] = `
     class="c2"
     data-g-portal-id="0"
     id="test-data--filters-layer"
+    tabindex="-1"
   >
     <div
       class="c3"

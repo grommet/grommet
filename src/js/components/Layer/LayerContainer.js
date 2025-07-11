@@ -81,21 +81,29 @@ const LayerContainer = forwardRef(
     }, [sendAnalytics, layerRef, position]);
 
     useEffect(() => {
-      if (position !== 'hidden') {
+      if (position !== 'hidden' && modal) {
         const node = layerRef.current || containerRef.current || ref.current;
         if (node && node.scrollIntoView) node.scrollIntoView();
+
         // Once layer is open we make sure it has focus so that you
         // can start tabbing inside the layer. If the caller put focus
         // on an element already, we honor that. Otherwise, we put
         // the focus within the layer. Look at FocusedContainer.js for
         // more details.
         let element = document.activeElement;
+        let focusInLayer = false;
         while (element) {
           if (element === containerRef.current) {
-            // already have focus inside the container
+            focusInLayer = true;
             break;
           }
           element = element.parentElement;
+        }
+
+        // If focus is not already within the Layer, set focus to the container
+        // to ensure keyboard users can start navigating the modal content
+        if (!focusInLayer && containerRef.current?.focus) {
+          containerRef.current.focus();
         }
       }
     }, [modal, position, ref]);
@@ -214,6 +222,9 @@ const LayerContainer = forwardRef(
         // portalId is used to determine if click occurred inside
         // or outside of the layer
         data-g-portal-id={portalId}
+        // allows the Layer container programmatically focusable
+        // so it can receive focus on open
+        tabIndex={-1}
       >
         {children}
       </StyledContainer>
