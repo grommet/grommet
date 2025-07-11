@@ -171,7 +171,7 @@ const Header = forwardRef(
       (property, width) => {
         if (typeof width !== 'number') return;
         // Only update if width actually changed
-        if (cellWidthsRef.current[property] !== width) {
+        if (cellWidthsRef?.current[property] !== width) {
           cellWidthsRef.current[property] = width;
           if (timerRef.current) clearTimeout(timerRef.current);
           timerRef.current = setTimeout(handleWidths, WIDTH_UPDATE_DELAY);

@@ -1,4 +1,10 @@
-import React, { useCallback, useEffect, useRef, useState } from 'react';
+import React, {
+  useCallback,
+  useContext,
+  useEffect,
+  useRef,
+  useState,
+} from 'react';
 import styled from 'styled-components';
 
 import { Box } from '../Box';
@@ -6,6 +12,7 @@ import { Button } from '../Button';
 import { Keyboard } from '../Keyboard';
 import { Stack } from '../Stack';
 import { useThemeValue } from '../../utils/useThemeValue';
+import { MessageContext } from '../../contexts/MessageContext';
 
 // Added a temporary min-width of 2px here so that the element doesn't
 // end up with a width of 0px. This is a placeholder solution until we
@@ -33,6 +40,7 @@ const Resizer = ({ onResize, property, headerText }) => {
   const [start, setStart] = useState();
   const [width, setWidth] = useState();
   const ref = useRef();
+  const { format } = useContext(MessageContext);
 
   const onMouseDown = useCallback((event) => {
     if (ref.current) {
@@ -112,7 +120,10 @@ const Resizer = ({ onResize, property, headerText }) => {
       <Keyboard onLeft={onKeyDown} onRight={onKeyDown}>
         {/* provides a wider, more accessible target to grab resizer */}
         <InteractionBox
-          aria-label={`Resize ${headerText} column`}
+          aria-label={format({
+            id: 'dataTable.resizerAria',
+            values: { headerText },
+          })}
           active={active}
           flex={false}
           pad={{ left: 'xsmall' }}
