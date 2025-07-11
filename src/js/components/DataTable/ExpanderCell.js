@@ -47,11 +47,11 @@ const ExpanderControl = ({
   if (onToggle) {
     const expandText = format({
       id: 'dataTable.expand',
-      messages: messages?.dataTable,
+      messages,
     });
     const collapseText = format({
       id: 'dataTable.collapse',
-      messages: messages?.dataTable,
+      messages,
     });
 
     let a11yTitle = expanded ? collapseText : expandText;

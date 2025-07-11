@@ -2232,4 +2232,40 @@ describe('DataTable', () => {
     expect(expandButtons.length).toBeGreaterThanOrEqual(2);
     expect(container.firstChild).toMatchSnapshot();
   });
+
+  test('messages prop overrides theme messages', () => {
+    const { container } = render(
+      <Grommet>
+        <DataTable
+          columns={[
+            { property: 'a', header: 'A' },
+            { property: 'b', header: 'B' },
+          ]}
+          data={[
+            { a: 'one', b: 1.1 },
+            { a: 'one', b: 1.2 },
+            { a: 'two', b: 2.1 },
+            { a: 'two', b: 2.2 },
+          ]}
+          groupBy="a"
+          primaryKey="b"
+          messages={{
+            expand: 'expandir',
+            collapse: 'colapsar',
+          }}
+        />
+      </Grommet>,
+    );
+
+    // Check that DataTable messages prop overrides theme messages
+    const expandButtons = screen.getAllByLabelText('expandir');
+    expect(expandButtons).toHaveLength(2);
+    expect(container.firstChild).toMatchSnapshot();
+
+    // Click to expand and check collapse message from prop
+    fireEvent.click(expandButtons[0]);
+    const collapseButton = screen.getByLabelText('colapsar');
+    expect(collapseButton).toBeInTheDocument();
+    expect(container.firstChild).toMatchSnapshot();
+  });
 });

@@ -51,9 +51,7 @@ export interface ColumnConfig<TRowType> {
   header?: string | React.ReactNode | { aggregate?: boolean };
   messages?: {
     ascending?: string;
-    collapse?: string;
     descending?: string;
-    expand?: string;
     rows?: string;
     rowsChanged?: string;
     rowsSingle?: string;
@@ -98,6 +96,10 @@ export interface DataTableProps<TRowType = any> {
   fill?: boolean | 'vertical' | 'horizontal';
   gridArea?: GridAreaType;
   margin?: MarginType;
+  messages?: {
+    collapse?: string;
+    expand?: string;
+  };
   pad?: PadType | Sections<PadType>;
   paginate?: boolean | PaginationType | BoxProps;
   pin?: boolean | 'header' | 'footer';
