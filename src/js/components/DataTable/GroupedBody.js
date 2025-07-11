@@ -20,6 +20,7 @@ export const GroupedBody = forwardRef(
       groupBy,
       groups,
       groupState,
+      messages,
       pinnedOffset,
       primaryProperty,
       onMore,
@@ -193,6 +194,7 @@ export const GroupedBody = forwardRef(
                   }
                   border={cellProps.border}
                   context={context}
+                  messages={messages}
                   pad={cellProps.pad}
                   onToggle={
                     context === 'groupHeader' ? onToggle(key) : undefined

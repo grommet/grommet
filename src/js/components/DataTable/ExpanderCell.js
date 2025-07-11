@@ -14,6 +14,7 @@ const ExpanderControl = ({
   context,
   expanded,
   onToggle,
+  messages,
   pad,
   expandAriaLabel,
   ...rest
@@ -46,11 +47,11 @@ const ExpanderControl = ({
   if (onToggle) {
     const expandText = format({
       id: 'dataTable.expand',
-      messages: { 'dataTable.expand': 'expand' },
+      messages: messages?.dataTable,
     });
     const collapseText = format({
       id: 'dataTable.collapse',
-      messages: { 'dataTable.collapse': 'collapse' },
+      messages: messages?.dataTable,
     });
 
     let a11yTitle = expanded ? collapseText : expandText;
