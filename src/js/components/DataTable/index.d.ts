@@ -52,6 +52,7 @@ export interface ColumnConfig<TRowType> {
   messages?: {
     ascending?: string;
     descending?: string;
+    resizerAria?: string;
     rows?: string;
     rowsChanged?: string;
     rowsSingle?: string;

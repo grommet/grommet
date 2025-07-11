@@ -431,6 +431,7 @@ const Header = forwardRef(
                       updateWidths(prop, width);
                     }}
                     headerText={typeof header === 'string' ? header : property}
+                    messages={messages}
                   />
                 ) : null;
                 const searcher =

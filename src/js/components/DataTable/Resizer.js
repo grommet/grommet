@@ -34,7 +34,7 @@ const InteractionBox = styled(Button)`
   }
 `;
 
-const Resizer = ({ onResize, property, headerText }) => {
+const Resizer = ({ onResize, property, headerText, messages }) => {
   const { theme } = useThemeValue();
   const [active, setActive] = useState(false);
   const [start, setStart] = useState();
@@ -123,6 +123,7 @@ const Resizer = ({ onResize, property, headerText }) => {
           aria-label={format({
             id: 'dataTable.resizerAria',
             values: { headerText },
+            messages,
           })}
           active={active}
           flex={false}
