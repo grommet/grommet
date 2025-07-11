@@ -131,6 +131,7 @@ if (process.env.NODE_ENV !== 'production') {
     messages: PropTypes.shape({
       ascending: PropType.string,
       descending: PropType.string,
+      resizerAria: PropTypes.string,
       rows: PropTypes.string,
       rowsChanged: PropTypes.string,
       rowsSingle: PropTypes.string,

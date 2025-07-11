@@ -33,6 +33,7 @@ const TableCell = forwardRef(
       children,
       className, // so StyledDataTableCell is applied to td/th
       colSpan,
+      onResize, // for DataTable
       onWidth,
       pad,
       plain,
@@ -40,6 +41,7 @@ const TableCell = forwardRef(
       scope,
       size,
       verticalAlign,
+      property, // for DataTable
       ...rest
     },
     ref,
@@ -49,6 +51,19 @@ const TableCell = forwardRef(
     const cellRef = useForwardedRef(ref);
     const containerRef = useRef();
     const widthRef = useRef();
+
+    // if the screen is resized, we need to recalculate the width
+    useLayoutEffect(() => {
+      const handleResize = () => {
+        if (onResize && property && cellRef.current) {
+          const { width } = cellRef.current.getBoundingClientRect();
+          onResize(property, width);
+        }
+      };
+
+      window.addEventListener('resize', handleResize);
+      return () => window.removeEventListener('resize', handleResize);
+    }, [cellRef, onResize, property]);
 
     useLayoutEffect(() => {
       let resizeObserver;
