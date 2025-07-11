@@ -83,7 +83,7 @@ export const ControlledLazy = () => {
               options={['morning', 'evening']}
             />
           </FormField>
-          <FormField label="Size" htmlFor="size__input" name="size">
+          <FormField label="Size" htmlFor="size" name="size">
             <Select
               id="size"
               name="size"
