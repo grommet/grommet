@@ -647,7 +647,12 @@ const FormField = forwardRef(
         {(label && component !== CheckBox) || help ? (
           <>
             {label && component !== CheckBox && (
-              <Text as="label" htmlFor={htmlFor} {...labelStyle}>
+              <Text
+                as="label"
+                id={htmlFor ? `grommet-${htmlFor}__label` : undefined}
+                htmlFor={htmlFor}
+                {...labelStyle}
+              >
                 {label}
                 {showRequiredIndicator ? requiredIndicator : undefined}
               </Text>

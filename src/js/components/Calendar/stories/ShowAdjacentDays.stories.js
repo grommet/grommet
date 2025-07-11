@@ -9,7 +9,7 @@ const Container = ({ ...rest }) => (
 );
 
 export const ShowAdjacent = () => {
-  const [date, setDate] = useState(new Date(2020, 6, 15).toDateString());
+  const [date, setDate] = useState(new Date(2020, 6, 15).toISOString());
 
   const onSelect = (nextDate) => {
     setDate(nextDate !== date ? nextDate : undefined);
