@@ -25,7 +25,9 @@ export const Circle = () => {
       <Meter
         type="circle"
         background="light-2"
-        values={[{ value, color: value > 50 ? 'accent-2' : 'accent-1' }]}
+        values={[
+          { value, color: value > 50 ? 'status-critical' : 'status-ok' },
+        ]}
       />
     </Box>
     // </Grommet>
