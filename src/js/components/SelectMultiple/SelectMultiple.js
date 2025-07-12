@@ -50,6 +50,7 @@ const SelectMultiple = forwardRef(
     {
       a11yTitle,
       'aria-label': ariaLabel,
+      'aria-labelledby': ariaLabelledByProp,
       alignSelf,
       children,
       defaultValue,
@@ -103,6 +104,7 @@ const SelectMultiple = forwardRef(
     const selectBoxRef = useRef();
     const dropButtonRef = useForwardedRef(ref);
     const usingKeyboard = useKeyboard();
+    const formFieldData = formContext?.useFormField({});
 
     const dropAlign = useMemo(
       () =>
@@ -125,6 +127,19 @@ const SelectMultiple = forwardRef(
       value: valueProp,
       initialValue: defaultValue || '',
     });
+
+    const [ariaLabelledBy, setAriaLabelledBy] = useState();
+
+    useEffect(() => {
+      if (formFieldData?.inForm && id && !ariaLabel && !placeholder) {
+        const labelElement = document.getElementById(
+          `grommet-${id}__input__label`,
+        );
+        if (labelElement) {
+          setAriaLabelledBy(`grommet-${id}__input__label ${id}`);
+        }
+      }
+    }, [formFieldData?.inForm, id, ariaLabel, placeholder]);
 
     // normalizedValue is the value mapped with any valueKey applied
     // When the options array contains objects, this property indicates how
@@ -546,6 +561,7 @@ const SelectMultiple = forwardRef(
               dropTarget={dropTarget}
               alignSelf={alignSelf}
               tabIndex="0"
+              aria-labelledby={ariaLabelledByProp || ariaLabelledBy}
             >
               <Box
                 align="center"

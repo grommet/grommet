@@ -40,6 +40,7 @@ const Select = forwardRef(
     {
       a11yTitle,
       'aria-label': ariaLabel,
+      'aria-labelledby': ariaLabelledByProp,
       alignSelf,
       children,
       clear = false,
@@ -93,6 +94,7 @@ const Select = forwardRef(
     // vice versa. https://github.com/grommet/grommet/pull/6299
     const valueKey = valueKeyProp || labelKeyProp;
     const labelKey = labelKeyProp || valueKeyProp;
+    const formFieldData = formContext?.useFormField({});
 
     // Determine if the Select is opened with the keyboard. If so,
     // focus should be set on the first option when the drop opens
@@ -284,6 +286,25 @@ const Select = forwardRef(
 
     const iconColor = getIconColor(theme);
 
+    const [ariaLabelledBy, setAriaLabelledBy] = useState();
+
+    useEffect(() => {
+      if (
+        formFieldData?.inForm &&
+        id &&
+        !ariaLabel &&
+        !placeholder &&
+        typeof document !== 'undefined'
+      ) {
+        const labelElement = document.getElementById(
+          `grommet-${id}__input__label`,
+        );
+        if (labelElement) {
+          setAriaLabelledBy(`grommet-${id}__input__label ${id}`);
+        }
+      }
+    }, [formFieldData?.inForm, id, ariaLabel, placeholder]);
+
     return (
       <Keyboard onDown={onRequestOpen} onUp={onRequestOpen}>
         <StyledSelectDropButton
@@ -300,6 +321,7 @@ const Select = forwardRef(
               : ''
           }`}
           aria-expanded={Boolean(open)}
+          aria-labelledby={ariaLabelledByProp || ariaLabelledBy}
           aria-haspopup="listbox"
           id={id}
           disabled={disabled === true || undefined}
