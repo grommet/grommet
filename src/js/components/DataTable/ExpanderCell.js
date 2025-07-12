@@ -1,16 +1,26 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Blank } from 'grommet-icons/icons/Blank';
 
 import { Box } from '../Box';
 import { Button } from '../Button';
 import { TableCell } from '../TableCell';
+import { MessageContext } from '../../contexts/MessageContext';
 import { normalizeColor } from '../../utils';
 import { useThemeValue } from '../../utils/useThemeValue';
 
 // ExpanderControl is separated from ExpanderCell to give TableCell a chance
 // to set the ThemeContext dark context.
-const ExpanderControl = ({ context, expanded, onToggle, pad, ...rest }) => {
+const ExpanderControl = ({
+  context,
+  expanded,
+  onToggle,
+  messages,
+  pad,
+  expandAriaLabel,
+  ...rest
+}) => {
   const { theme } = useThemeValue();
+  const { format } = useContext(MessageContext);
 
   let content;
   if (onToggle) {
@@ -35,11 +45,22 @@ const ExpanderControl = ({ context, expanded, onToggle, pad, ...rest }) => {
   );
 
   if (onToggle) {
+    const expandText = format({
+      id: 'dataTable.expand',
+      messages,
+    });
+    const collapseText = format({
+      id: 'dataTable.collapse',
+      messages,
+    });
+
+    let a11yTitle = expanded ? collapseText : expandText;
+    if (expandAriaLabel) a11yTitle = `${a11yTitle} ${expandAriaLabel}`;
     content = (
       <Button
         fill
         aria-expanded={expanded ? 'true' : 'false'}
-        a11yTitle={expanded ? 'collapse' : 'expand'}
+        a11yTitle={a11yTitle}
         hoverIndicator
         // ensure focus is visible since overflow: hidden on TableCell sizeStyle
         // would otherwise clip it
@@ -55,7 +76,13 @@ const ExpanderControl = ({ context, expanded, onToggle, pad, ...rest }) => {
   return content;
 };
 
-const ExpanderCell = ({ background, border, context, ...rest }) => (
+const ExpanderCell = ({
+  background,
+  border,
+  context,
+  expandAriaLabel,
+  ...rest
+}) => (
   <TableCell
     background={background}
     border={border}
@@ -63,10 +90,13 @@ const ExpanderCell = ({ background, border, context, ...rest }) => (
     plain="noPad"
     verticalAlign={context === 'groupEnd' ? 'bottom' : 'top'}
   >
-    <ExpanderControl context={context} {...rest} />
+    <ExpanderControl
+      context={context}
+      expandAriaLabel={expandAriaLabel}
+      {...rest}
+    />
   </TableCell>
 );
-
 ExpanderCell.displayName = 'ExpanderCell';
 
 export { ExpanderCell };

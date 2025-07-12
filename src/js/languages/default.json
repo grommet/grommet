@@ -57,6 +57,8 @@
   },
   "dataTable": {
     "ascending": "ascending",
+    "collapse": "collapse",
+    "expand": "expand",
     "descending": "descending",
     "rows": "rows",
     "rowsChanged": "Number of rows changed",

@@ -20,6 +20,7 @@ export const GroupedBody = forwardRef(
       groupBy,
       groups,
       groupState,
+      messages,
       pinnedOffset,
       primaryProperty,
       onMore,
@@ -28,6 +29,7 @@ export const GroupedBody = forwardRef(
       onUpdate,
       replace,
       rowProps,
+      expandAriaLabel,
       selected,
       size,
       step,
@@ -174,6 +176,15 @@ export const GroupedBody = forwardRef(
               index,
             );
 
+            // Move the expandLabel logic here where context and key are defined
+            let expandLabel;
+            if (context === 'groupHeader' && expandAriaLabel) {
+              expandLabel =
+                typeof expandAriaLabel === 'function'
+                  ? expandAriaLabel(key)
+                  : expandAriaLabel;
+            }
+
             return (
               <StyledDataTableRow
                 ref={rowRef}
@@ -188,12 +199,14 @@ export const GroupedBody = forwardRef(
                   }
                   border={cellProps.border}
                   context={context}
+                  messages={messages}
                   pad={cellProps.pad}
                   onToggle={
                     context === 'groupHeader' ? onToggle(key) : undefined
                   }
                   expanded={expanded}
                   verticalAlign={verticalAlign}
+                  expandAriaLabel={expandLabel}
                 />
                 {(selected || onSelect) && (
                   <TableCell

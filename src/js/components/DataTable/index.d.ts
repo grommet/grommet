@@ -96,6 +96,10 @@ export interface DataTableProps<TRowType = any> {
   fill?: boolean | 'vertical' | 'horizontal';
   gridArea?: GridAreaType;
   margin?: MarginType;
+  messages?: {
+    collapse?: string;
+    expand?: string;
+  };
   pad?: PadType | Sections<PadType>;
   paginate?: boolean | PaginationType | BoxProps;
   pin?: boolean | 'header' | 'footer';
@@ -116,6 +120,7 @@ export interface DataTableProps<TRowType = any> {
         expand?: (string | number)[];
         onExpand?: (expandedKeys: (string | number)[], datum: TRowType) => void;
       };
+  expandAriaLabel?: string | ((groupKey: any) => string);
   show?: number | { page?: number };
   size?: 'small' | 'medium' | 'large' | 'xlarge' | string;
 
