@@ -11,17 +11,8 @@ import { strokeProps, defaultColor, fillProps, gapCommands } from './utils';
 import { useThemeValue } from '../../utils/useThemeValue';
 
 const Circle = forwardRef((props, ref) => {
-  const {
-    background,
-    gap,
-    max,
-    round,
-    size,
-    thickness,
-    type,
-    values,
-    ...rest
-  } = props;
+  const { background, max, round, size, thickness, type, values, ...rest } =
+    props;
   const { theme, passThemeFlag } = useThemeValue();
   const width =
     size === 'full' ? 288 : parseMetricToNum(theme.global.size[size] || size);
@@ -29,6 +20,7 @@ const Circle = forwardRef((props, ref) => {
     type === 'pie'
       ? width / 2
       : parseMetricToNum(theme.global.edgeSize[thickness] || thickness);
+  console.log('strokeWidth', strokeWidth);
   const centerX = width / 2;
   const centerY = width / 2;
   const radius = width / 2 - strokeWidth / 2;
@@ -43,16 +35,18 @@ const Circle = forwardRef((props, ref) => {
   //  (type === 'semicircle' ? 180 : 360) / max;
   const someHighlight = (values || []).some((v) => v.highlight);
 
+  const gapTheme = theme.meter?.gap ?? 'xxsmall';
+  const gap = parseMetricToNum(theme.global.edgeSize[gapTheme] || gapTheme);
+
   let startValue = 0;
   let startAngle = type === 'semicircle' ? 270 : 0;
   const paths = [];
   let pathCaps = [];
   const gaps = [];
 
-  const gapStroke = strokeProps('green' /* background */, theme);
   (values || [])
     .filter((v) => v.value > 0)
-    .forEach((valueArg, index) => {
+    .forEach((valueArg, index, { length }) => {
       const { color, highlight, label, onHover, value, ...pathRest } = valueArg;
       const key = `p-${index}`;
       const colorName =
@@ -135,37 +129,30 @@ const Circle = forwardRef((props, ref) => {
       }
       arcCommands(centerX, centerY, radius, startAngle, endAngle);
       
-      if (gap > 0) {
-        if (type === 'pie') { 
-          const pieRadius = Math.round(width / 2 + 1);
-          const gapFill = fillProps(background, theme);
+      if (
+        gap > 0 && length > 1 &&
+        !(type === 'semicircle' && index === length - 1)
+      ) {
+        const pieRadius = Math.round(width / 2);
+        console.log('pieRadius', pieRadius);
+        const gapFill = fillProps(background, theme);
 
-          gaps.push(
-            <path
-              d={gapCommands(
-                centerX,
-                centerY,
-                pieRadius,
-                endAngle,
-                gap,
-              )}
-              {...gapFill}
-              stroke="#000"
-              strokeWidth={0}
-              strokeLinecap="butt"
-            />,
-          );
-        } else {
-          gaps.push(
-            <path
-              d={arcCommands(centerX, centerY, radius, startAngle, endAngle)}
-              fill="none"
-              {...gapStroke}
-              strokeWidth={strokeWidth}
-              strokeLinecap="butt"
-            />, 
-          );
-        }
+        gaps.push(
+          <path
+            d={gapCommands(
+              centerX,
+              centerY,
+              pieRadius,
+              endAngle,
+              gap,
+              type === 'pie' ? 0 : strokeWidth,
+            )}
+            {...gapFill}
+            stroke="#000"
+            strokeWidth={0}
+            strokeLinecap="butt"
+          />,
+        );
       }
       startValue += value;
       startAngle = endAngle;

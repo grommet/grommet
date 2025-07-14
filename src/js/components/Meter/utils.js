@@ -66,17 +66,24 @@ export const defaultColor = (index, theme, valuesLength) => {
   return neutralColors[colorIndex % neutralColors.length];
 };
 
-/**
- * Draws a line from a center point to a point on the circumference of
- * a circle with the given radius. The width of the line will be thickness.
- * The line will have a round cap at the center point and a cap at the end
- * point on the circle that matchs the radius.  
- */
-export const gapCommands = (centerX, centerY, radius, angle, thickness) => {
-  const gapAngleRadians = Math.asin(thickness / (2 * radius));
-  const gapAngle = (gapAngleRadians * 180) / Math.PI;
-  const startAngle = angle - gapAngle;
-  const endAngle = angle + gapAngle;
+const gapPoints = (centerX, centerY, radius, angle, width) => {
+  let startAngle;
+  let endAngle;
+  let distanceFromCenter;
+  if (radius <= 0) {
+    // we just need end points of a line through the center
+    startAngle = angle - 90;
+    endAngle = angle + 90;
+    distanceFromCenter = width / 2;
+  }
+  else {
+    const gapAngleRadians = Math.asin(width / (2 * radius));
+    const gapAngle = (gapAngleRadians * 180) / Math.PI;
+    startAngle = angle - gapAngle;
+    endAngle = angle + gapAngle;
+    distanceFromCenter = radius;
+  }
+
   // handle that we can't draw a complete circle
   let normalizedEndAngle = endAngle;
   /* 
@@ -87,34 +94,72 @@ export const gapCommands = (centerX, centerY, radius, angle, thickness) => {
   if (endAngle > startAngle && endAngle - startAngle >= 360) {
     normalizedEndAngle = startAngle + 359.99;
   }
-  const start = polarToCartesian(centerX, centerY, radius, normalizedEndAngle);
-  const end = polarToCartesian(centerX, centerY, radius, startAngle);
-  const trans = { x: end.x - start.x, y: end.y - start.y };
-  const capRadius = Math.sqrt(trans.x * trans.x + trans.y * trans.y)/2;
+  const start = polarToCartesian(
+    centerX,
+    centerY,
+    distanceFromCenter,
+    normalizedEndAngle,
+  );
+  const end = polarToCartesian(
+    centerX,
+    centerY,
+    distanceFromCenter,
+    startAngle,
+  );
   const arcSweep = normalizedEndAngle - startAngle <= 180 ? '0' : '1';
+  return { start, end, arcSweep };
+};
+
+/**
+ * Draws a line from a center point to a point on the circumference of
+ * a circle with the given radius. The width of the line will be thickness.
+ * The line will have a round cap at the center point and a cap at the end
+ * point on the circle that matchs the radius.  
+ */
+export const gapCommands = (
+  centerX,
+  centerY,
+  radius,
+  angle,
+  width,
+  thickness,
+) => {
+  const outer = gapPoints(centerX, centerY, radius, angle, width);
+  const inner = gapPoints(
+    centerX,
+    centerY,
+    thickness > 0 ? radius - thickness : 0,
+    angle,
+    width,
+  );
+
+  const capRadius = thickness > 0
+    ? radius - thickness
+    : width / 2;
+
   const d = [
     'M',
-    start.x.toFixed(POST_DECIMAL_DIGITS),
-    start.y.toFixed(POST_DECIMAL_DIGITS),
+    outer.start.x.toFixed(POST_DECIMAL_DIGITS),
+    outer.start.y.toFixed(POST_DECIMAL_DIGITS),
     'A',
     radius.toFixed(POST_DECIMAL_DIGITS),
     radius.toFixed(POST_DECIMAL_DIGITS),
     0,
-    arcSweep,
+    outer.arcSweep,
     0,
-    end.x.toFixed(POST_DECIMAL_DIGITS),
-    end.y.toFixed(POST_DECIMAL_DIGITS),
+    outer.end.x.toFixed(POST_DECIMAL_DIGITS),
+    outer.end.y.toFixed(POST_DECIMAL_DIGITS),
     'L',
-    (centerX + trans.x / 2).toFixed(POST_DECIMAL_DIGITS),
-    (centerY + trans.y / 2).toFixed(POST_DECIMAL_DIGITS),
+    (inner.end.x).toFixed(POST_DECIMAL_DIGITS),
+    (inner.end.y).toFixed(POST_DECIMAL_DIGITS),
     'A',
     capRadius.toFixed(POST_DECIMAL_DIGITS),
     capRadius.toFixed(POST_DECIMAL_DIGITS),
     0,
-    arcSweep,
-    0,
-    (centerX - trans.x / 2).toFixed(POST_DECIMAL_DIGITS),
-    (centerY - trans.y / 2).toFixed(POST_DECIMAL_DIGITS),
+    inner.arcSweep,
+    thickness > 0 ? 1 : 0,
+    (inner.start.x).toFixed(POST_DECIMAL_DIGITS),
+    (inner.start.y).toFixed(POST_DECIMAL_DIGITS),
     'Z', // close the path
   ].join(' ');
   return d;

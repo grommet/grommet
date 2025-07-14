@@ -24,6 +24,10 @@ const Bar = forwardRef((props, ref) => {
   const thickness = parseMetricToNum(
     theme.global.edgeSize[thicknessProp] || thicknessProp,
   );
+
+  const gapTheme = theme.meter?.gap ?? 'xxsmall';
+  const gap = parseMetricToNum(theme.global.edgeSize[gapTheme] || gapTheme);
+  
   // account for the round cap, if any
   const capOffset = round ? thickness / 2 : 0;
   const mid = thickness / 2;
@@ -40,7 +44,7 @@ const Bar = forwardRef((props, ref) => {
         const { color, highlight, label, onHover, value, ...pathRest } =
           valueArg;
         const key = `p-${index}`;
-        const delta = (value * (length - 2 * capOffset)) / max;
+        const delta = (value * (length - 2 * (capOffset + gap))) / max;
         const d =
           direction === 'horizontal'
             ? `M ${start},${mid} L ${start + delta},${mid}`
@@ -77,10 +81,18 @@ const Bar = forwardRef((props, ref) => {
         );
 
         acc.push(result);
+        if (gap > 0 && index < values.length - 1) {
+          // add gap between bars
+          if (direction === 'horizontal') {
+            start += gap;
+          } else {
+            start -= gap;
+          }
+        }
       }
       return acc;
     }, [])
-    .reverse(); // reverse so the caps looks right
+    .reverse(); // reverse so the caps look right
 
   let width;
   if (direction === 'horizontal') {
