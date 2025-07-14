@@ -408,6 +408,9 @@ const Header = forwardRef(
               // fill because later if either of these props is true content
               // will be wrapped with an additional Box, preventing this Box
               // from automatically filling the vertical space.
+              // If `onResize` or `search` is true, we also need to set flex
+              // so that the content can grow and use available space and
+              // shrink to avoid overlap.
               content = (
                 <Box
                   flex={onResize || search ? { grow: 1, shrink: 1 } : 'grow'}
