@@ -3461,7 +3461,7 @@ exports[`DataTable custom theme 1`] = `
   min-width: 0;
   min-height: 0;
   flex-direction: column;
-  flex: 1 0 auto;
+  flex: 1 1 auto;
   height: 100%;
   justify-content: center;
 }
@@ -4062,7 +4062,7 @@ exports[`DataTable custom theme 2`] = `
             style="position: relative;"
           >
             <div
-              class="StyledBox-sc-13pk1d4-0 kuLnal"
+              class="StyledBox-sc-13pk1d4-0 doOSIY"
             >
               <button
                 class="StyledButton-sc-323bzc-0 hHREQh Header__StyledHeaderCellButton-sc-1baku5q-0 kFaTHr"
@@ -20880,7 +20880,7 @@ exports[`DataTable resizeable 1`] = `
   min-width: 0;
   min-height: 0;
   flex-direction: column;
-  flex: 1 0 auto;
+  flex: 1 1 auto;
   height: 100%;
   justify-content: center;
 }
@@ -23591,7 +23591,7 @@ exports[`DataTable search 1`] = `
   min-width: 0;
   min-height: 0;
   flex-direction: column;
-  flex: 1 0 auto;
+  flex: 1 1 auto;
   height: 100%;
   justify-content: center;
 }
@@ -23913,7 +23913,7 @@ exports[`DataTable search 2`] = `
             class="StyledBox-sc-13pk1d4-0 bdQsBF"
           >
             <div
-              class="StyledBox-sc-13pk1d4-0 kuLnal"
+              class="StyledBox-sc-13pk1d4-0 doOSIY"
             >
               <span
                 class="StyledText-sc-1sadyjn-0 ldA-DUE"
