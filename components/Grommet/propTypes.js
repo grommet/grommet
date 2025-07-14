@@ -87,6 +87,7 @@ if (process.env.NODE_ENV !== 'production') {
         dataTable: _propTypes["default"].shape({
           ascending: PropType.string,
           descending: PropType.string,
+          resizerAria: _propTypes["default"].string,
           rows: _propTypes["default"].string,
           rowsChanged: _propTypes["default"].string,
           rowsSingle: _propTypes["default"].string,

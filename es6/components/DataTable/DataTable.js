@@ -411,7 +411,7 @@ var DataTable = function DataTable(_ref) {
     }
   }, [widths]);
   if (size && resizeable) {
-    console.warn('DataTable cannot combine "size" and "resizeble".');
+    console.warn('DataTable cannot combine "size" and "resizeable".');
   }
   if (onUpdate && onMore) {
     console.warn('DataTable cannot combine "onUpdate" and "onMore".');

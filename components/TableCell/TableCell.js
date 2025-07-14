@@ -11,7 +11,7 @@ var _TableContext = require("../Table/TableContext");
 var _StyledTable = require("../Table/StyledTable");
 var _propTypes = require("./propTypes");
 var _useThemeValue2 = require("../../utils/useThemeValue");
-var _excluded = ["align", "aria-disabled", "background", "border", "children", "className", "colSpan", "onWidth", "pad", "plain", "rowSpan", "scope", "size", "verticalAlign"];
+var _excluded = ["align", "aria-disabled", "background", "border", "children", "className", "colSpan", "onResize", "onWidth", "pad", "plain", "rowSpan", "scope", "size", "verticalAlign", "property"];
 function _interopRequireWildcard(e, t) { if ("function" == typeof WeakMap) var r = new WeakMap(), n = new WeakMap(); return (_interopRequireWildcard = function _interopRequireWildcard(e, t) { if (!t && e && e.__esModule) return e; var o, i, f = { __proto__: null, "default": e }; if (null === e || "object" != typeof e && "function" != typeof e) return f; if (o = t ? n : r) { if (o.has(e)) return o.get(e); o.set(e, f); } for (var _t in e) "default" !== _t && {}.hasOwnProperty.call(e, _t) && ((i = (o = Object.defineProperty) && Object.getOwnPropertyDescriptor(e, _t)) && (i.get || i.set) ? o(f, _t, i) : f[_t] = e[_t]); return f; })(e, t); }
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (-1 !== e.indexOf(n)) continue; t[n] = r[n]; } return t; }
@@ -28,6 +28,7 @@ var TableCell = exports.TableCell = /*#__PURE__*/(0, _react.forwardRef)(function
     children = _ref.children,
     className = _ref.className,
     colSpan = _ref.colSpan,
+    onResize = _ref.onResize,
     onWidth = _ref.onWidth,
     pad = _ref.pad,
     plain = _ref.plain,
@@ -35,6 +36,7 @@ var TableCell = exports.TableCell = /*#__PURE__*/(0, _react.forwardRef)(function
     scope = _ref.scope,
     size = _ref.size,
     verticalAlign = _ref.verticalAlign,
+    property = _ref.property,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
   var _useThemeValue = (0, _useThemeValue2.useThemeValue)(),
     theme = _useThemeValue.theme,
@@ -43,6 +45,21 @@ var TableCell = exports.TableCell = /*#__PURE__*/(0, _react.forwardRef)(function
   var cellRef = (0, _utils.useForwardedRef)(ref);
   var containerRef = (0, _react.useRef)();
   var widthRef = (0, _react.useRef)();
+
+  // if the screen is resized, we need to recalculate the width
+  (0, _useIsomorphicLayoutEffect.useLayoutEffect)(function () {
+    var handleResize = function handleResize() {
+      if (onResize && property && cellRef.current) {
+        var _cellRef$current$getB = cellRef.current.getBoundingClientRect(),
+          width = _cellRef$current$getB.width;
+        onResize(property, width);
+      }
+    };
+    window.addEventListener('resize', handleResize);
+    return function () {
+      return window.removeEventListener('resize', handleResize);
+    };
+  }, [cellRef, onResize, property]);
   (0, _useIsomorphicLayoutEffect.useLayoutEffect)(function () {
     var resizeObserver;
     var element = cellRef.current;
@@ -61,8 +78,8 @@ var TableCell = exports.TableCell = /*#__PURE__*/(0, _react.forwardRef)(function
         }
       } else {
         // fallback for server side rendering
-        var _cellRef$current$getB = cellRef.current.getBoundingClientRect(),
-          width = _cellRef$current$getB.width;
+        var _cellRef$current$getB2 = cellRef.current.getBoundingClientRect(),
+          width = _cellRef$current$getB2.width;
         if (widthRef.current !== width) {
           widthRef.current = width;
           onWidth(width);

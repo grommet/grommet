@@ -1,4 +1,4 @@
-var _excluded = ["align", "aria-disabled", "background", "border", "children", "className", "colSpan", "onWidth", "pad", "plain", "rowSpan", "scope", "size", "verticalAlign"];
+var _excluded = ["align", "aria-disabled", "background", "border", "children", "className", "colSpan", "onResize", "onWidth", "pad", "plain", "rowSpan", "scope", "size", "verticalAlign", "property"];
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (-1 !== e.indexOf(n)) continue; t[n] = r[n]; } return t; }
 import React, { forwardRef, useContext, useEffect, useMemo, useRef } from 'react';
@@ -23,6 +23,7 @@ var TableCell = /*#__PURE__*/forwardRef(function (_ref, ref) {
     children = _ref.children,
     className = _ref.className,
     colSpan = _ref.colSpan,
+    onResize = _ref.onResize,
     onWidth = _ref.onWidth,
     pad = _ref.pad,
     plain = _ref.plain,
@@ -30,6 +31,7 @@ var TableCell = /*#__PURE__*/forwardRef(function (_ref, ref) {
     scope = _ref.scope,
     size = _ref.size,
     verticalAlign = _ref.verticalAlign,
+    property = _ref.property,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
   var _useThemeValue = useThemeValue(),
     theme = _useThemeValue.theme,
@@ -38,6 +40,21 @@ var TableCell = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var cellRef = useForwardedRef(ref);
   var containerRef = useRef();
   var widthRef = useRef();
+
+  // if the screen is resized, we need to recalculate the width
+  useLayoutEffect(function () {
+    var handleResize = function handleResize() {
+      if (onResize && property && cellRef.current) {
+        var _cellRef$current$getB = cellRef.current.getBoundingClientRect(),
+          width = _cellRef$current$getB.width;
+        onResize(property, width);
+      }
+    };
+    window.addEventListener('resize', handleResize);
+    return function () {
+      return window.removeEventListener('resize', handleResize);
+    };
+  }, [cellRef, onResize, property]);
   useLayoutEffect(function () {
     var resizeObserver;
     var element = cellRef.current;
@@ -56,8 +73,8 @@ var TableCell = /*#__PURE__*/forwardRef(function (_ref, ref) {
         }
       } else {
         // fallback for server side rendering
-        var _cellRef$current$getB = cellRef.current.getBoundingClientRect(),
-          width = _cellRef$current$getB.width;
+        var _cellRef$current$getB2 = cellRef.current.getBoundingClientRect(),
+          width = _cellRef$current$getB2.width;
         if (widthRef.current !== width) {
           widthRef.current = width;
           onWidth(width);

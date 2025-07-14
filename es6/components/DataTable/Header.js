@@ -113,7 +113,7 @@ var Header = /*#__PURE__*/forwardRef(function (_ref2, ref) {
     messages = _ref2.messages,
     onFilter = _ref2.onFilter,
     onFiltering = _ref2.onFiltering,
-    onResize = _ref2.onResize,
+    _onResize = _ref2.onResize,
     onSelect = _ref2.onSelect,
     onSort = _ref2.onSort,
     onToggle = _ref2.onToggle,
@@ -139,7 +139,7 @@ var Header = /*#__PURE__*/forwardRef(function (_ref2, ref) {
     format = _useContext2.format;
   var cellWidthsRef = useRef({});
   var timerRef = useRef();
-  var handleWidths = function handleWidths() {
+  var handleWidths = useCallback(function () {
     var cellWidths = cellWidthsRef.current;
     if (onWidths && cellWidths) {
       var internalColumnWidths = selected || onSelect ? [cellWidths._grommetDataTableSelect] : [];
@@ -148,14 +148,16 @@ var Header = /*#__PURE__*/forwardRef(function (_ref2, ref) {
         return cellWidths[property];
       })));
     }
-  };
-  var updateWidths = function updateWidths(property, width) {
-    var cellWidths = cellWidthsRef.current;
-    // save width for this column. Subtract 1 to avoid gap due to rounding
-    cellWidths[property] = width - 1;
-    if (timerRef.current) clearTimeout(timerRef.current);
-    timerRef.current = setTimeout(handleWidths, WIDTH_UPDATE_DELAY);
-  };
+  }, [columns, onSelect, onWidths, selected]);
+  var updateWidths = useCallback(function (property, width) {
+    if (typeof width !== 'number') return;
+    // Only update if width actually changed
+    if ((cellWidthsRef == null ? void 0 : cellWidthsRef.current[property]) !== width) {
+      cellWidthsRef.current[property] = width;
+      if (timerRef.current) clearTimeout(timerRef.current);
+      timerRef.current = setTimeout(handleWidths, WIDTH_UPDATE_DELAY);
+    }
+  }, [handleWidths]);
   var pin = pinProp ? ['top'] : [];
   var selectPin = pinnedOffset != null && pinnedOffset._grommetDataTableSelect ? [].concat(pin, ['left']) : pin;
   var totalSelectedGroups = groupBy != null && groupBy.select ? Object.keys(groupBy.select).reduce(function (total, cur) {
@@ -326,13 +328,18 @@ var Header = /*#__PURE__*/forwardRef(function (_ref2, ref) {
     // from automatically filling the vertical space.
     content = /*#__PURE__*/React.createElement(Box, {
       flex: "grow",
-      fill: onResize || search ? 'vertical' : false,
+      fill: _onResize || search ? 'vertical' : false,
       justify: !align && 'center' || align
     }, content);
-    if (search || onResize) {
-      var resizer = onResize ? /*#__PURE__*/React.createElement(Resizer, {
+    if (search || _onResize) {
+      var resizer = _onResize ? /*#__PURE__*/React.createElement(Resizer, {
         property: property,
-        onResize: onResize
+        onResize: function onResize(prop, width) {
+          _onResize(prop, width);
+          updateWidths(prop, width);
+        },
+        headerText: typeof header === 'string' ? header : property,
+        messages: messages
       }) : null;
       var searcher = search && filters ? /*#__PURE__*/React.createElement(Searcher, {
         filtering: filtering,
@@ -349,7 +356,7 @@ var Header = /*#__PURE__*/forwardRef(function (_ref2, ref) {
         justify: !align || align === 'start' ? 'between' : align,
         gap: theme.dataTable.header.gap,
         fill: "vertical",
-        style: onResize ? {
+        style: _onResize ? {
           position: 'relative'
         } : undefined
       }, content, searcher && resizer ? /*#__PURE__*/React.createElement(Box, {
@@ -380,9 +387,12 @@ var Header = /*#__PURE__*/forwardRef(function (_ref2, ref) {
       pinnedOffset: pinnedOffset && pinnedOffset[property],
       scope: "col",
       size: widths && widths[property] ? undefined : size,
-      style: widths && widths[property] ? {
-        width: widths[property]
-      } : undefined
+      style: {
+        width: widths != null && widths[property] ? widths[property] + "px" : undefined,
+        boxSizing: _onResize ? 'border-box' : undefined
+      },
+      onResize: _onResize,
+      property: property
     }, passThemeFlag), content);
   })));
 });

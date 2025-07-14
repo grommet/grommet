@@ -1,18 +1,27 @@
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
-import React, { useCallback, useEffect, useRef, useState } from 'react';
+import React, { useCallback, useContext, useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
 import { Box } from '../Box';
+import { Button } from '../Button';
+import { Keyboard } from '../Keyboard';
 import { Stack } from '../Stack';
 import { useThemeValue } from '../../utils/useThemeValue';
-var InteractionBox = styled(Box).withConfig({
+import { MessageContext } from '../../contexts/MessageContext';
+
+// Added a temporary min-width of 2px here so that the element doesn't
+// end up with a width of 0px. This is a placeholder solution until we
+// revisit this in https://github.com/grommet/grommet/issues/7273
+var InteractionBox = styled(Button).withConfig({
   displayName: "Resizer__InteractionBox",
   componentId: "sc-8l808w-0"
-})(["cursor:col-resize;> *{opacity:0;}", " &:hover{> *{opacity:1;}}"], function (props) {
+})(["min-width:2px;cursor:col-resize;> *{opacity:0;}", " &:hover{> *{opacity:1;}}"], function (props) {
   return props.active && '> * { opacity: 1; }';
 });
 var Resizer = function Resizer(_ref) {
   var onResize = _ref.onResize,
-    property = _ref.property;
+    property = _ref.property,
+    headerText = _ref.headerText,
+    messages = _ref.messages;
   var _useThemeValue = useThemeValue(),
     theme = _useThemeValue.theme;
   var _useState = useState(false),
@@ -25,6 +34,8 @@ var Resizer = function Resizer(_ref) {
     width = _useState3[0],
     setWidth = _useState3[1];
   var ref = useRef();
+  var _useContext = useContext(MessageContext),
+    format = _useContext.format;
   var onMouseDown = useCallback(function (event) {
     if (ref.current) {
       var element = ref.current;
@@ -73,19 +84,43 @@ var Resizer = function Resizer(_ref) {
       size: size
     };
   }
+  var onKeyDown = useCallback(function (event) {
+    event.preventDefault();
+    if (!ref.current) return;
+    var element = ref.current;
+    while (element && element.nodeName !== 'TH') element = element.parentNode;
+    var currentWidth = element.getBoundingClientRect().width;
+    // Used 12 here to align with the value set in onMouseMove
+    var delta = event.key === 'ArrowLeft' ? -12 : 12;
+    onResize(property, currentWidth + delta);
+  }, [onResize, property]);
   return /*#__PURE__*/React.createElement(Stack, {
-    anchor: "right"
+    anchor: "right",
+    interactiveChild: "last"
   }, /*#__PURE__*/React.createElement(Box, _extends({
     flex: false,
     responsive: false,
     pad: {
       vertical: 'small'
     }
-  }, theme.dataTable.resize)), /*#__PURE__*/React.createElement(InteractionBox, {
+  }, theme.dataTable.resize)), /*#__PURE__*/React.createElement(Keyboard, {
+    onLeft: onKeyDown,
+    onRight: onKeyDown
+  }, /*#__PURE__*/React.createElement(InteractionBox, {
+    "aria-label": format({
+      id: 'dataTable.resizerAria',
+      values: {
+        headerText: headerText
+      },
+      messages: messages
+    }),
     active: active,
     flex: false,
     pad: {
       left: 'xsmall'
+    },
+    margin: {
+      top: 'xsmall'
     },
     ref: ref,
     responsive: false,
@@ -97,7 +132,7 @@ var Resizer = function Resizer(_ref) {
       vertical: 'small'
     },
     border: border
-  })));
+  }))));
 };
 Resizer.displayName = 'Resizer';
 export { Resizer };
