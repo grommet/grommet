@@ -47,7 +47,7 @@ export interface ButtonProps {
   color?: ColorType;
   disabled?: boolean;
   fill?: FillType;
-  focusIndicator?: boolean;
+  focusIndicator?: boolean | 'inset';
   gap?: GapType;
   hoverIndicator?: HoverIndicatorType;
   href?: string;
