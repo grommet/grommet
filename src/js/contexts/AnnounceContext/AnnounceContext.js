@@ -2,6 +2,7 @@ import React from 'react';
 import { AnnounceContextPropTypes } from './propTypes';
 
 const DEFAULT_MODE = 'polite';
+const invisibleChars = ['\u200B', '\uFEFF', '\u200C', '\u200D'];
 
 const createAnnouncer = () => {
   const announcer = document.createElement('div');
@@ -19,6 +20,7 @@ const createAnnouncer = () => {
 };
 
 let announceCounter = 0; // Counter to ensure unique announcements
+let clearTimeoutId; // Variable to hold the timeout ID for clearing
 
 export const AnnounceContext = React.createContext(
   (message, mode = DEFAULT_MODE, timeout = 500) => {
@@ -29,11 +31,16 @@ export const AnnounceContext = React.createContext(
       createAnnouncer();
 
     announcer.setAttribute('aria-live', mode);
+
+    // Clear any existing timeout before setting a new one
+    if (clearTimeoutId) {
+      clearTimeout(clearTimeoutId);
+    }
+
     if (mode === 'polite') {
       // using setTimeout for polite mode pushes to next event loop tick,
       // giving time for the browser to process the change
       setTimeout(() => {
-        const invisibleChars = ['\u200B', '\uFEFF', '\u200C', '\u200D'];
         const uniqueChar =
           invisibleChars[announceCounter % invisibleChars.length];
         announceCounter += 1; // Increment the counter for the next call
@@ -42,8 +49,9 @@ export const AnnounceContext = React.createContext(
         announcer.textContent = `${message}${uniqueChar}`;
       }, 0);
     } else announcer.textContent = message;
+
     // clear the message after the specified timeout
-    setTimeout(() => {
+    clearTimeoutId = setTimeout(() => {
       announcer.textContent = '';
     }, timeout);
   },
