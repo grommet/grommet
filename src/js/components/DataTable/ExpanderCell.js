@@ -85,7 +85,7 @@ const ExpanderControl = ({
       <Button
         fill
         aria-expanded={expanded ? 'true' : 'false'}
-        aria-label={a11yTitle}
+        a11yTitle={a11yTitle}
         hoverIndicator
         // ensure focus is visible since overflow: hidden on TableCell sizeStyle
         // would otherwise clip it
