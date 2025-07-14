@@ -21223,7 +21223,7 @@ exports[`DataTable resizeable 1`] = `
                 class="c11"
               >
                 <button
-                  aria-label="Resize A column"
+                  aria-label="Change size of A column"
                   class="c12 c13"
                   type="button"
                 >
@@ -21270,7 +21270,7 @@ exports[`DataTable resizeable 1`] = `
                 class="c11"
               >
                 <button
-                  aria-label="Resize B column"
+                  aria-label="Change size of B column"
                   class="c12 c13"
                   type="button"
                 >

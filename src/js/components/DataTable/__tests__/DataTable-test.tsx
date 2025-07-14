@@ -463,6 +463,7 @@ describe('DataTable', () => {
             { a: 'two', b: 2 },
           ]}
           resizeable
+          messages={{ resizerAria: 'Change size of {headerText} column' }}
         />
       </Grommet>,
     );
