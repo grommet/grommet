@@ -42,29 +42,31 @@ const Resizer = ({ onResize, property, headerText, messages }) => {
   const ref = useRef();
   const { format } = useContext(MessageContext);
 
-  const onMouseDown = useCallback((event) => {
+  const onResizeStart = useCallback((event) => {
+    const clientX = event.touches ? event.touches[0].clientX : event.clientX;
     if (ref.current) {
       let element = ref.current;
       // find TH parent
       while (element && element.nodeName !== 'TH') element = element.parentNode;
       const rect = element.getBoundingClientRect();
-      setStart(event.clientX);
+      setStart(clientX);
       setWidth(rect.width);
       setActive(true);
     }
   }, []);
 
-  const onMouseMove = useCallback(
+  const onResizeMove = useCallback(
     (event) => {
+      const clientX = event.touches ? event.touches[0].clientX : event.clientX;
       // We determined 12 empirically as being wide enough to hit but
       // not too wide to cause false hits.
-      const nextWidth = Math.max(12, width + (event.clientX - start));
+      const nextWidth = Math.max(12, width + (clientX - start));
       onResize(property, nextWidth);
     },
     [onResize, property, start, width],
   );
 
-  const onMouseUp = useCallback(() => {
+  const onResizeEnd = useCallback(() => {
     setActive(false);
     setStart(undefined);
     setWidth(undefined);
@@ -72,18 +74,19 @@ const Resizer = ({ onResize, property, headerText, messages }) => {
 
   useEffect(() => {
     const remove = () => {
-      document.removeEventListener('mouseup', onMouseUp);
-      document.removeEventListener('mousemove', onMouseMove);
+      document.removeEventListener('mouseup', onResizeEnd);
+      document.removeEventListener('mousemove', onResizeMove);
     };
 
     if (active) {
-      document.addEventListener('mouseup', onMouseUp);
-      document.addEventListener('mousemove', onMouseMove);
+      document.addEventListener('mouseup', onResizeEnd);
+      document.addEventListener('mousemove', onResizeMove);
+
       return remove;
     }
     remove();
     return undefined;
-  }, [active, onMouseMove, onMouseUp]);
+  }, [active, onResizeMove, onResizeEnd]);
 
   let border;
   if (theme.dataTable.resize.hover && theme.dataTable.resize.hover.border) {
@@ -131,9 +134,12 @@ const Resizer = ({ onResize, property, headerText, messages }) => {
           margin={{ top: 'xsmall' }}
           ref={ref}
           responsive={false}
-          onMouseDown={onMouseDown}
-          onMouseMove={start !== undefined ? onMouseMove : undefined}
-          onMouseUp={start !== undefined ? onMouseUp : undefined}
+          onMouseDown={onResizeStart}
+          onMouseMove={start !== undefined ? onResizeMove : undefined}
+          onMouseUp={start !== undefined ? onResizeEnd : undefined}
+          onTouchStart={onResizeStart}
+          onTouchMove={start !== undefined ? onResizeMove : undefined}
+          onTouchEnd={start !== undefined ? onResizeEnd : undefined}
         >
           <Box pad={{ vertical: 'small' }} border={border} />
         </InteractionBox>
