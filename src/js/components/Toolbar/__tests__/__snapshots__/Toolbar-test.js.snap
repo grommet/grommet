@@ -469,6 +469,7 @@ exports[`DataFilters renders 1`] = `
                 <label
                   class="c12"
                   for="data-name"
+                  id="grommet-data-name__label"
                 >
                   name
                 </label>
@@ -476,6 +477,7 @@ exports[`DataFilters renders 1`] = `
                   class="c13 "
                 >
                   <div
+                    aria-labelledby="grommet-data-name__label"
                     class="c3 StyledCheckBoxGroup-sc-2nhc5d-0"
                     id="data-name"
                     role="group"
@@ -991,6 +993,7 @@ exports[`DataFilters renders outside grommet wrapper 1`] = `
               <label
                 class="c11"
                 for="data-name"
+                id="grommet-data-name__label"
               >
                 name
               </label>
@@ -998,6 +1001,7 @@ exports[`DataFilters renders outside grommet wrapper 1`] = `
                 class="c12 "
               >
                 <div
+                  aria-labelledby="grommet-data-name__label"
                   class="c2 StyledCheckBoxGroup-sc-2nhc5d-0"
                   id="data-name"
                   role="group"

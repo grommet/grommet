@@ -39,7 +39,10 @@ if (process.env.NODE_ENV !== 'production') {
       PropTypes.oneOf(['horizontal', 'vertical']),
       PropTypes.bool,
     ]),
-    focusIndicator: PropTypes.bool,
+    focusIndicator: PropTypes.oneOfType([
+      PropTypes.bool,
+      PropTypes.oneOf(['inset']),
+    ]),
     gap: PropTypes.oneOfType([
       PropTypes.oneOf([
         'none',

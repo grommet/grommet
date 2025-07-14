@@ -10,10 +10,13 @@ import { useThemeValue } from '../../utils/useThemeValue';
 const RadioButtonGroup = forwardRef(
   (
     {
+      'aria-label': ariaLabelProp,
+      'aria-labelledby': ariaLabelledByProp,
       children,
       defaultValue,
       disabled,
       focusIndicator = true,
+      id,
       name,
       onChange,
       options: optionsProp,
@@ -31,7 +34,7 @@ const RadioButtonGroup = forwardRef(
       typeof o !== 'object'
         ? {
             disabled,
-            id: rest.id ? `${rest.id}-${o}` : `${o}`, // force string
+            id: id ? `${id}-${o}` : `${o}`, // force string
             label: typeof o !== 'string' ? JSON.stringify(o) : o,
             value: o,
           }
@@ -101,6 +104,11 @@ const RadioButtonGroup = forwardRef(
 
     const onBlur = () => setFocus(false);
 
+    let ariaLabelledBy;
+    if (formContext?.useFormField({})?.inForm && id && !ariaLabelProp) {
+      ariaLabelledBy = `grommet-${id}__label`;
+    }
+
     return (
       <Keyboard
         target="document"
@@ -110,6 +118,9 @@ const RadioButtonGroup = forwardRef(
         onRight={focus ? onNext : undefined}
       >
         <Box
+          aria-label={ariaLabelProp}
+          aria-labelledby={ariaLabelledByProp || ariaLabelledBy}
+          id={id}
           ref={ref}
           role="radiogroup"
           {...theme.radioButtonGroup.container}
@@ -126,7 +137,7 @@ const RadioButtonGroup = forwardRef(
             (
               {
                 disabled: optionDisabled,
-                id,
+                id: optionId,
                 label,
                 value: optionValue,
                 ...optionRest
@@ -166,7 +177,7 @@ const RadioButtonGroup = forwardRef(
                   // In RadioButton, if focus = true but focusIndicator = false,
                   // we will apply the hover treament.
                   focusIndicator={focusIndicator}
-                  id={id}
+                  id={optionId}
                   value={optionValue}
                   onFocus={onFocus}
                   onBlur={onBlur}

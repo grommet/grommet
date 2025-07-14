@@ -10,16 +10,7 @@ export const GroupedDataTable = () => (
   // Uncomment <Grommet> lines when using outside of storybook
   // <Grommet theme={grommet}>
   <Box align="center" pad="large">
-    <DataTable
-      columns={groupColumns}
-      data={DATA}
-      groupBy="location"
-      sortable
-      messages={{
-        expand: 'expandir',
-        collapse: 'colapsar',
-      }}
-    />
+    <DataTable columns={groupColumns} data={DATA} groupBy="location" sortable />
   </Box>
   // </Grommet>
 );

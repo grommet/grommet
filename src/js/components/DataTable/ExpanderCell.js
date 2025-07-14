@@ -17,6 +17,8 @@ const ExpanderControl = ({
   messages,
   pad,
   expandAriaLabel,
+  row,
+  groupKey,
   ...rest
 }) => {
   const { theme } = useThemeValue();
@@ -45,23 +47,43 @@ const ExpanderControl = ({
   );
 
   if (onToggle) {
-    const expandText = format({
-      id: 'dataTable.expand',
-      messages,
-    });
-    const collapseText = format({
-      id: 'dataTable.collapse',
-      messages,
-    });
+    const expandText =
+      messages?.expand ||
+      format({
+        id: 'dataTable.expand',
+        messages: {
+          'dataTable.expand': 'expand',
+        },
+      });
+
+    const collapseText =
+      messages?.collapse ||
+      format({
+        id: 'dataTable.collapse',
+        messages: {
+          'dataTable.collapse': 'collapse',
+        },
+      });
 
     let a11yTitle = expanded ? collapseText : expandText;
-    if (expandAriaLabel) a11yTitle = `${a11yTitle} ${expandAriaLabel}`;
+
+    if (expandAriaLabel) {
+      const ariaLabel =
+        typeof expandAriaLabel === 'function'
+          ? expandAriaLabel(row, groupKey)
+          : expandAriaLabel;
+      a11yTitle = `${a11yTitle} ${ariaLabel}`;
+    }
+
     content = (
       <Button
         fill
         aria-expanded={expanded ? 'true' : 'false'}
-        a11yTitle={a11yTitle}
+        aria-label={a11yTitle}
         hoverIndicator
+        // ensure focus is visible since overflow: hidden on TableCell sizeStyle
+        // would otherwise clip it
+        focusIndicator="inset"
         onClick={onToggle}
         plain
       >
@@ -78,6 +100,8 @@ const ExpanderCell = ({
   border,
   context,
   expandAriaLabel,
+  groupKey,
+  row,
   ...rest
 }) => (
   <TableCell
@@ -90,6 +114,8 @@ const ExpanderCell = ({
     <ExpanderControl
       context={context}
       expandAriaLabel={expandAriaLabel}
+      row={row}
+      groupKey={groupKey}
       {...rest}
     />
   </TableCell>

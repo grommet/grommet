@@ -883,6 +883,7 @@ exports[`DataSort renders 1`] = `
               <label
                 class="c6"
                 for="data--sort-property__input"
+                id="grommet-data--sort-property__input__label"
               >
                 Sort by
               </label>
@@ -946,6 +947,7 @@ exports[`DataSort renders 1`] = `
               <label
                 class="c6"
                 for="data--sort-direction"
+                id="grommet-data--sort-direction__label"
               >
                 Sort direction
               </label>
@@ -953,6 +955,7 @@ exports[`DataSort renders 1`] = `
                 class="c16 "
               >
                 <div
+                  aria-labelledby="grommet-data--sort-direction__label"
                   class="c17"
                   id="data--sort-direction"
                   role="radiogroup"
@@ -1381,6 +1384,7 @@ exports[`DataSort sort when data array is empty 1`] = `
         <label
           class="c4"
           for="test-data--sort-property__input"
+          id="grommet-test-data--sort-property__input__label"
         >
           Sort by
         </label>
@@ -1444,6 +1448,7 @@ exports[`DataSort sort when data array is empty 1`] = `
         <label
           class="c4"
           for="test-data--sort-direction"
+          id="grommet-test-data--sort-direction__label"
         >
           Sort direction
         </label>
@@ -1451,6 +1456,7 @@ exports[`DataSort sort when data array is empty 1`] = `
           class="c14 "
         >
           <div
+            aria-labelledby="grommet-test-data--sort-direction__label"
             class="c15"
             id="test-data--sort-direction"
             role="radiogroup"
