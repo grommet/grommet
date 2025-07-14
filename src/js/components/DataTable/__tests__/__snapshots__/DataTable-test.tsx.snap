@@ -3489,17 +3489,6 @@ exports[`DataTable custom theme 1`] = `
   padding-bottom: 12px;
 }
 
-.c15 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  flex-direction: column;
-  flex: 0 0 auto;
-  padding-left: 6px;
-}
-
 .c17 {
   display: flex;
   box-sizing: border-box;
@@ -3579,6 +3568,7 @@ exports[`DataTable custom theme 1`] = `
 .c12 {
   position: relative;
   display: block;
+  pointer-events: none;
 }
 
 .c14 {
@@ -3649,6 +3639,64 @@ exports[`DataTable custom theme 1`] = `
 }
 
 .c7:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
+}
+
+.c15 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  margin-top: 6px;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+}
+
+.c15:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c15:focus >circle,
+.c15:focus >ellipse,
+.c15:focus >line,
+.c15:focus >path,
+.c15:focus >polygon,
+.c15:focus >polyline,
+.c15:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c15:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c15:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c15:focus:not(:focus-visible) >circle,
+.c15:focus:not(:focus-visible) >ellipse,
+.c15:focus:not(:focus-visible) >line,
+.c15:focus:not(:focus-visible) >path,
+.c15:focus:not(:focus-visible) >polygon,
+.c15:focus:not(:focus-visible) >polyline,
+.c15:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c15:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 
@@ -3748,6 +3796,7 @@ exports[`DataTable custom theme 1`] = `
 }
 
 .c16 {
+  min-width: 2px;
   cursor: col-resize;
 }
 
@@ -3866,6 +3915,7 @@ exports[`DataTable custom theme 1`] = `
         <th
           class="c4 "
           scope="col"
+          style="box-sizing: border-box;"
         >
           <div
             class="c5"
@@ -3902,13 +3952,15 @@ exports[`DataTable custom theme 1`] = `
               <div
                 class="c14"
               >
-                <div
+                <button
+                  aria-label="Resize A column"
                   class="c15 c16"
+                  type="button"
                 >
                   <div
                     class="c17"
                   />
-                </div>
+                </button>
               </div>
             </div>
           </div>
@@ -4056,6 +4108,7 @@ exports[`DataTable custom theme 2`] = `
         <th
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 wTSic StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 dvuoDz"
           scope="col"
+          style="box-sizing: border-box;"
         >
           <div
             class="StyledBox-sc-13pk1d4-0 bdQsBF"
@@ -4083,7 +4136,7 @@ exports[`DataTable custom theme 2`] = `
               class="StyledStack-sc-ajspsk-0 caUqQj"
             >
               <div
-                class="StyledStack__StyledStackLayer-sc-ajspsk-1 bEKBaS"
+                class="StyledStack__StyledStackLayer-sc-ajspsk-1 jPgguo"
               >
                 <div
                   class="StyledBox-sc-13pk1d4-0 cxzHev"
@@ -4092,13 +4145,15 @@ exports[`DataTable custom theme 2`] = `
               <div
                 class="StyledStack__StyledStackLayer-sc-ajspsk-1 jTxOlx"
               >
-                <div
-                  class="StyledBox-sc-13pk1d4-0 iyjTVx Resizer__InteractionBox-sc-8l808w-0 cNGCuD"
+                <button
+                  aria-label="Resize A column"
+                  class="StyledButton-sc-323bzc-0 eJXFoX Resizer__InteractionBox-sc-8l808w-0 ckUBxB"
+                  type="button"
                 >
                   <div
                     class="StyledBox-sc-13pk1d4-0 kGchhC"
                   />
-                </div>
+                </button>
               </div>
             </div>
           </div>
@@ -5571,7 +5626,7 @@ exports[`DataTable expandAriaLabel default 1`] = `
           >
             <button
               aria-expanded="false"
-              aria-label="expand"
+              aria-label="expand all"
               class="c5"
               type="button"
             >
@@ -6051,7 +6106,7 @@ exports[`DataTable expandAriaLabel function 1`] = `
           >
             <button
               aria-expanded="false"
-              aria-label="expand"
+              aria-label="expand all"
               class="c5"
               type="button"
             >
@@ -7407,7 +7462,7 @@ exports[`DataTable groupBy 0 value 1`] = `
           >
             <button
               aria-expanded="false"
-              aria-label="expand"
+              aria-label="expand all"
               class="c5"
               type="button"
             >
@@ -7973,7 +8028,7 @@ exports[`DataTable groupBy 1`] = `
           >
             <button
               aria-expanded="false"
-              aria-label="expand"
+              aria-label="expand all"
               class="c5"
               type="button"
             >
@@ -8170,7 +8225,7 @@ exports[`DataTable groupBy 2`] = `
           >
             <button
               aria-expanded="false"
-              aria-label="expand"
+              aria-label="expand all"
               class="StyledButton-sc-323bzc-0 cuylbq"
               type="button"
             >
@@ -8704,7 +8759,7 @@ exports[`DataTable groupBy expand 1`] = `
           >
             <button
               aria-expanded="false"
-              aria-label="expand"
+              aria-label="expand all"
               class="c5"
               type="button"
             >
@@ -9286,7 +9341,7 @@ exports[`DataTable groupBy property 1`] = `
           >
             <button
               aria-expanded="false"
-              aria-label="expand"
+              aria-label="expand all"
               class="c5"
               type="button"
             >
@@ -9483,7 +9538,7 @@ exports[`DataTable groupBy property 2`] = `
           >
             <button
               aria-expanded="false"
-              aria-label="expand"
+              aria-label="expand all"
               class="StyledButton-sc-323bzc-0 cuylbq"
               type="button"
             >
@@ -10142,7 +10197,7 @@ exports[`DataTable groupBy toggle 2`] = `
           >
             <button
               aria-expanded="false"
-              aria-label="expand"
+              aria-label="expand all"
               class="c2"
               type="button"
             >
@@ -11114,7 +11169,7 @@ exports[`DataTable messages prop overrides theme messages 1`] = `
           >
             <button
               aria-expanded="false"
-              aria-label="expand"
+              aria-label="expand all"
               class="c5"
               type="button"
             >
@@ -11311,7 +11366,7 @@ exports[`DataTable messages prop overrides theme messages 2`] = `
           >
             <button
               aria-expanded="false"
-              aria-label="expand"
+              aria-label="expand all"
               class="StyledButton-sc-323bzc-0 cuylbq"
               type="button"
             >
@@ -12409,8 +12464,8 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
             style="height: 0px;"
           >
             <button
-              aria-expanded="false"
-              aria-label="expand"
+              aria-expanded="true"
+              aria-label="collapse all"
               class="c5"
               type="button"
             >
@@ -12418,12 +12473,12 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
                 class="c6"
               >
                 <svg
-                  aria-label="FormDown"
+                  aria-label="FormUp"
                   class="c7"
                   viewBox="0 0 24 24"
                 >
                   <path
-                    d="m18 9-6 6-6-6"
+                    d="m18 15-6-6-6 6"
                     fill="none"
                     stroke="#000"
                     stroke-width="2"
@@ -12766,8 +12821,8 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
             style="height: 0px;"
           >
             <button
-              aria-expanded="false"
-              aria-label="expand"
+              aria-expanded="true"
+              aria-label="collapse"
               class="c5"
               type="button"
             >
@@ -12775,12 +12830,12 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
                 class="c6"
               >
                 <svg
-                  aria-label="FormDown"
+                  aria-label="FormUp"
                   class="c7"
                   viewBox="0 0 24 24"
                 >
                   <path
-                    d="m18 9-6 6-6-6"
+                    d="m18 15-6-6-6 6"
                     fill="none"
                     stroke="#000"
                     stroke-width="2"
@@ -12835,6 +12890,152 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
           <div
             class="c24"
           />
+        </td>
+      </tr>
+      <tr
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c20"
+      >
+        <td
+          class="c21"
+        >
+          <div
+            class="c4"
+            style="height: 0px;"
+          >
+            <div
+              class="c6"
+            >
+              <svg
+                aria-hidden="true"
+                class="c25"
+                viewBox="0 0 24 24"
+              />
+            </div>
+          </div>
+        </td>
+        <td
+          class="c22"
+        >
+          <div
+            class="c9"
+            style="height: 0px;"
+          >
+            <label
+              class="c10"
+            >
+              <div
+                class="c11 c12"
+              >
+                <input
+                  aria-label="select 2.1"
+                  class="c13"
+                  type="checkbox"
+                />
+                <div
+                  class="c14 "
+                />
+              </div>
+            </label>
+          </div>
+        </td>
+        <td
+          class="c23 "
+        >
+          <div
+            class="c24"
+          >
+            <span
+              class="c18"
+            >
+              two
+            </span>
+          </div>
+        </td>
+        <td
+          class="c23 "
+        >
+          <div
+            class="c24"
+          >
+            <span
+              class="c18"
+            >
+              2.1
+            </span>
+          </div>
+        </td>
+      </tr>
+      <tr
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c20"
+      >
+        <td
+          class="c26"
+        >
+          <div
+            class="c27"
+            style="height: 0px;"
+          >
+            <div
+              class="c6"
+            >
+              <svg
+                aria-hidden="true"
+                class="c25"
+                viewBox="0 0 24 24"
+              />
+            </div>
+          </div>
+        </td>
+        <td
+          class="c22"
+        >
+          <div
+            class="c9"
+            style="height: 0px;"
+          >
+            <label
+              class="c10"
+            >
+              <div
+                class="c11 c12"
+              >
+                <input
+                  aria-label="select 2.2"
+                  class="c13"
+                  type="checkbox"
+                />
+                <div
+                  class="c14 "
+                />
+              </div>
+            </label>
+          </div>
+        </td>
+        <td
+          class="c23 "
+        >
+          <div
+            class="c24"
+          >
+            <span
+              class="c18"
+            >
+              two
+            </span>
+          </div>
+        </td>
+        <td
+          class="c23 "
+        >
+          <div
+            class="c24"
+          >
+            <span
+              class="c18"
+            >
+              2.2
+            </span>
+          </div>
         </td>
       </tr>
     </tbody>
@@ -13255,7 +13456,7 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
           >
             <button
               aria-expanded="false"
-              aria-label="expand"
+              aria-label="expand all"
               class="c5"
               type="button"
             >
@@ -13961,7 +14162,7 @@ exports[`DataTable onSelect + groupBy should select all items within a group 1`]
           >
             <button
               aria-expanded="false"
-              aria-label="expand"
+              aria-label="expand all"
               class="c5"
               type="button"
             >
@@ -14638,7 +14839,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 1`
           >
             <button
               aria-expanded="false"
-              aria-label="expand"
+              aria-label="expand all"
               class="c5"
               type="button"
             >
@@ -14911,7 +15112,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 2`
           >
             <button
               aria-expanded="false"
-              aria-label="expand"
+              aria-label="expand all"
               class="StyledButton-sc-323bzc-0 cuylbq"
               type="button"
             >
@@ -15289,7 +15490,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 3`
           >
             <button
               aria-expanded="false"
-              aria-label="expand"
+              aria-label="expand all"
               class="StyledButton-sc-323bzc-0 cuylbq"
               type="button"
             >
@@ -18428,7 +18629,7 @@ exports[`DataTable onUpdate groupBy.onSelect 1`] = `
           >
             <button
               aria-expanded="false"
-              aria-label="expand"
+              aria-label="expand all"
               class="c4"
               type="button"
             >
@@ -22971,17 +23172,6 @@ exports[`DataTable resizeable 1`] = `
   padding-bottom: 12px;
 }
 
-.c12 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  flex-direction: column;
-  flex: 0 0 auto;
-  padding-left: 6px;
-}
-
 .c14 {
   display: flex;
   box-sizing: border-box;
@@ -23015,6 +23205,7 @@ exports[`DataTable resizeable 1`] = `
 .c9 {
   position: relative;
   display: block;
+  pointer-events: none;
 }
 
 .c11 {
@@ -23033,6 +23224,64 @@ exports[`DataTable resizeable 1`] = `
   font-size: 18px;
   line-height: 24px;
   font-weight: bold;
+}
+
+.c12 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  margin-top: 6px;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+}
+
+.c12:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c12:focus >circle,
+.c12:focus >ellipse,
+.c12:focus >line,
+.c12:focus >path,
+.c12:focus >polygon,
+.c12:focus >polyline,
+.c12:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c12:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c12:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c12:focus:not(:focus-visible) >circle,
+.c12:focus:not(:focus-visible) >ellipse,
+.c12:focus:not(:focus-visible) >line,
+.c12:focus:not(:focus-visible) >path,
+.c12:focus:not(:focus-visible) >polygon,
+.c12:focus:not(:focus-visible) >polyline,
+.c12:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c12:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
 }
 
 .c3 {
@@ -23067,6 +23316,7 @@ exports[`DataTable resizeable 1`] = `
 }
 
 .c13 {
+  min-width: 2px;
   cursor: col-resize;
 }
 
@@ -23160,6 +23410,7 @@ exports[`DataTable resizeable 1`] = `
         <th
           class="c3 "
           scope="col"
+          style="box-sizing: border-box;"
         >
           <div
             class="c4"
@@ -23190,13 +23441,15 @@ exports[`DataTable resizeable 1`] = `
               <div
                 class="c11"
               >
-                <div
+                <button
+                  aria-label="Change size of A column"
                   class="c12 c13"
+                  type="button"
                 >
                   <div
                     class="c14"
                   />
-                </div>
+                </button>
               </div>
             </div>
           </div>
@@ -23204,6 +23457,7 @@ exports[`DataTable resizeable 1`] = `
         <th
           class="c3 "
           scope="col"
+          style="box-sizing: border-box;"
         >
           <div
             class="c4"
@@ -23234,13 +23488,15 @@ exports[`DataTable resizeable 1`] = `
               <div
                 class="c11"
               >
-                <div
+                <button
+                  aria-label="Change size of B column"
                   class="c12 c13"
+                  type="button"
                 >
                   <div
                     class="c14"
                   />
-                </div>
+                </button>
               </div>
             </div>
           </div>
@@ -25435,7 +25691,7 @@ exports[`DataTable rowProps on group header rows 1`] = `
           >
             <button
               aria-expanded="false"
-              aria-label="expand"
+              aria-label="expand all"
               class="c5"
               type="button"
             >
@@ -27659,7 +27915,7 @@ exports[`DataTable should apply custom theme for groupHeader 1`] = `
             >
               <button
                 aria-expanded="false"
-                aria-label="expand"
+                aria-label="expand all"
                 class="c5"
                 type="button"
               >
@@ -32092,7 +32348,7 @@ exports[`DataTable should apply theme for selected row group 1`] = `
             >
               <button
                 aria-expanded="false"
-                aria-label="expand"
+                aria-label="expand all"
                 class="c5"
                 type="button"
               >

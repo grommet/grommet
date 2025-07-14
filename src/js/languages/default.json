@@ -60,6 +60,7 @@
     "collapse": "collapse",
     "expand": "expand",
     "descending": "descending",
+    "resizerAria": "Resize {headerText} column",
     "rows": "rows",
     "rowsChanged": "Number of rows changed",
     "rowsSingle": "row",

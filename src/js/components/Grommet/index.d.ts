@@ -82,6 +82,7 @@ export interface GrommetProps {
         collapse?: string;
         descending?: string;
         expand?: string;
+        resizerAria?: string;
         rows?: string;
         rowsChanged?: string;
         rowsSingle?: string;

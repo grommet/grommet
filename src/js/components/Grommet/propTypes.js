@@ -81,6 +81,7 @@ if (process.env.NODE_ENV !== 'production') {
           collapse: PropTypes.string,
           descending: PropTypes.string,
           expand: PropTypes.string,
+          resizerAria: PropTypes.string,
           rows: PropTypes.string,
           rowsChanged: PropTypes.string,
           rowsSingle: PropTypes.string,

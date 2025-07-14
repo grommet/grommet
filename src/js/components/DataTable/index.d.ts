@@ -49,16 +49,6 @@ export interface ColumnConfig<TRowType> {
   aggregate?: 'avg' | 'max' | 'min' | 'sum';
   footer?: React.ReactNode | { aggregate?: boolean };
   header?: string | React.ReactNode | { aggregate?: boolean };
-  messages?: {
-    ascending?: string;
-    descending?: string;
-    rows?: string;
-    rowsChanged?: string;
-    rowsSingle?: string;
-    searchBy?: string;
-    total?: string;
-    totalSingle?: string;
-  };
   pin?: boolean;
   plain?: boolean;
   primary?: boolean;
@@ -97,8 +87,17 @@ export interface DataTableProps<TRowType = any> {
   gridArea?: GridAreaType;
   margin?: MarginType;
   messages?: {
+    ascending?: string;
     collapse?: string;
+    descending?: string;
     expand?: string;
+    resizerAria?: string;
+    rows?: string;
+    rowsChanged?: string;
+    rowsSingle?: string;
+    searchBy?: string;
+    total?: string;
+    totalSingle?: string;
   };
   pad?: PadType | Sections<PadType>;
   paginate?: boolean | PaginationType | BoxProps;

@@ -65,14 +65,20 @@ const ExpanderControl = ({
         },
       });
 
-    let a11yTitle = expanded ? collapseText : expandText;
+    let a11yTitle;
 
-    if (expandAriaLabel) {
-      const ariaLabel =
-        typeof expandAriaLabel === 'function'
-          ? expandAriaLabel(row, groupKey)
-          : expandAriaLabel;
-      a11yTitle = `${a11yTitle} ${ariaLabel}`;
+    if (context === 'header') {
+      a11yTitle = expanded ? 'collapse all' : 'expand all';
+    } else {
+      a11yTitle = expanded ? collapseText : expandText;
+
+      if (expandAriaLabel) {
+        const ariaLabel =
+          typeof expandAriaLabel === 'function'
+            ? expandAriaLabel(row, groupKey)
+            : expandAriaLabel;
+        a11yTitle = `${a11yTitle} ${ariaLabel}`;
+      }
     }
 
     content = (

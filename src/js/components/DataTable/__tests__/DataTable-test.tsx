@@ -463,6 +463,7 @@ describe('DataTable', () => {
             { a: 'two', b: 2 },
           ]}
           resizeable
+          messages={{ resizerAria: 'Change size of {headerText} column' }}
         />
       </Grommet>,
     );
@@ -881,7 +882,7 @@ describe('DataTable', () => {
     );
 
     const expandButtons = getAllByLabelText('expand');
-    fireEvent.click(expandButtons[1], {});
+    fireEvent.click(expandButtons[0], {});
 
     expect(onExpand).toBeCalled();
     expect(onExpand.mock.results[0].value).toEqual(['one']);
@@ -1699,7 +1700,7 @@ describe('DataTable', () => {
   test(`onSelect + groupBy should render indeterminate checkbox on table and
   group if subset of group items are selected`, () => {
     const onSelect = jest.fn();
-    const { container, getAllByLabelText, getByLabelText } = render(
+    const { container, getByLabelText } = render(
       <Grommet>
         <DataTable
           columns={[
@@ -1721,8 +1722,9 @@ describe('DataTable', () => {
 
     const groupCheckBox = getByLabelText('select one');
     fireEvent.click(groupCheckBox);
-    const expandButtons = getAllByLabelText('expand');
-    fireEvent.click(expandButtons[1], {});
+
+    const expandButton = getByLabelText('expand all');
+    fireEvent.click(expandButton);
 
     fireEvent.click(getByLabelText('unselect 1.1'));
     expect(container.firstChild).toMatchSnapshot();
