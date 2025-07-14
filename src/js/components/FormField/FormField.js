@@ -609,7 +609,8 @@ const FormField = forwardRef(
             child &&
             child.type &&
             (child.type.displayName === 'Select' ||
-              child.type.displayName === 'SelectMultiple')
+              child.type.displayName === 'SelectMultiple') &&
+            child.props.id === htmlFor
           ) {
             isSelectComponent = true;
           }
