@@ -155,7 +155,7 @@ const Header = forwardRef(
     const cellWidthsRef = useRef({});
     const timerRef = useRef();
 
-    const handleWidths = () => {
+    const handleWidths = useCallback(() => {
       const cellWidths = cellWidthsRef.current;
       if (onWidths && cellWidths) {
         const internalColumnWidths =
@@ -165,15 +165,20 @@ const Header = forwardRef(
           ...columns.map(({ property }) => cellWidths[property]),
         ]);
       }
-    };
+    }, [columns, onSelect, onWidths, selected]);
 
-    const updateWidths = (property, width) => {
-      const cellWidths = cellWidthsRef.current;
-      // save width for this column. Subtract 1 to avoid gap due to rounding
-      cellWidths[property] = width - 1;
-      if (timerRef.current) clearTimeout(timerRef.current);
-      timerRef.current = setTimeout(handleWidths, WIDTH_UPDATE_DELAY);
-    };
+    const updateWidths = useCallback(
+      (property, width) => {
+        if (typeof width !== 'number') return;
+        // Only update if width actually changed
+        if (cellWidthsRef?.current[property] !== width) {
+          cellWidthsRef.current[property] = width;
+          if (timerRef.current) clearTimeout(timerRef.current);
+          timerRef.current = setTimeout(handleWidths, WIDTH_UPDATE_DELAY);
+        }
+      },
+      [handleWidths],
+    );
 
     const pin = pinProp ? ['top'] : [];
     const selectPin = pinnedOffset?._grommetDataTableSelect
@@ -382,6 +387,7 @@ const Header = forwardRef(
                     plain
                     column={property}
                     fill="vertical"
+                    focusIndicator={size ? 'inset' : undefined}
                     onClick={onSort(property)}
                     sort={sort}
                     pad={cellProps.pad}
@@ -419,13 +425,22 @@ const Header = forwardRef(
 
               if (search || onResize) {
                 const resizer = onResize ? (
-                  <Resizer property={property} onResize={onResize} />
+                  <Resizer
+                    property={property}
+                    onResize={(prop, width) => {
+                      onResize(prop, width);
+                      updateWidths(prop, width);
+                    }}
+                    headerText={typeof header === 'string' ? header : property}
+                    messages={messages}
+                  />
                 ) : null;
                 const searcher =
                   search && filters ? (
                     <Searcher
                       filtering={filtering}
                       filters={filters}
+                      focusIndicator={size ? 'inset' : undefined}
                       messages={messages}
                       property={property}
                       onFilter={onFilter}
@@ -478,11 +493,14 @@ const Header = forwardRef(
                   pinnedOffset={pinnedOffset && pinnedOffset[property]}
                   scope="col"
                   size={widths && widths[property] ? undefined : size}
-                  style={
-                    widths && widths[property]
-                      ? { width: widths[property] }
-                      : undefined
-                  }
+                  style={{
+                    width: widths?.[property]
+                      ? `${widths[property]}px`
+                      : undefined,
+                    boxSizing: onResize ? 'border-box' : undefined,
+                  }}
+                  onResize={onResize}
+                  property={property}
                   {...passThemeFlag}
                 >
                   {content}

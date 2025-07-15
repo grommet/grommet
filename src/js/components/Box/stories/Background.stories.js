@@ -81,7 +81,6 @@ export const Background = () => (
   // </Grommet>
 );
 
-
 export default {
   title: 'Layout/Box/Background',
 };
