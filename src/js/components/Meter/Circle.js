@@ -20,7 +20,6 @@ const Circle = forwardRef((props, ref) => {
     type === 'pie'
       ? width / 2
       : parseMetricToNum(theme.global.edgeSize[thickness] || thickness);
-  console.log('strokeWidth', strokeWidth);
   const centerX = width / 2;
   const centerY = width / 2;
   const radius = width / 2 - strokeWidth / 2;
@@ -134,11 +133,11 @@ const Circle = forwardRef((props, ref) => {
         !(type === 'semicircle' && index === length - 1)
       ) {
         const pieRadius = Math.round(width / 2);
-        console.log('pieRadius', pieRadius);
         const gapFill = fillProps(background, theme);
 
         gaps.push(
           <path
+            key={`g-${key}`}
             d={gapCommands(
               centerX,
               centerY,

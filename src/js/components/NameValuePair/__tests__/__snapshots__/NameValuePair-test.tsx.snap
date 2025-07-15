@@ -478,7 +478,7 @@ exports[`NameValuePair should render value when provided as child of type JSX El
             stroke-width="24"
           />
           <path
-            d="M 0,12 L 307.2,12"
+            d="M 0,12 L 302.4,12"
             fill="none"
             stroke="#6FFFB0"
             stroke-linecap="butt"

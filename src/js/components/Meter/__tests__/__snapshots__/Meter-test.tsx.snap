@@ -39,7 +39,7 @@ exports[`Meter background 1`] = `
       stroke-width="24"
     />
     <path
-      d="M 0,12 L 76.8,12"
+      d="M 0,12 L 75.6,12"
       fill="none"
       stroke="#6FFFB0"
       stroke-linecap="butt"
@@ -63,7 +63,7 @@ exports[`Meter background 1`] = `
       stroke-width="24"
     />
     <path
-      d="M 0,12 L 76.8,12"
+      d="M 0,12 L 75.6,12"
       fill="none"
       stroke="#6FFFB0"
       stroke-linecap="butt"
@@ -136,7 +136,7 @@ exports[`Meter background 1`] = `
       stroke-width="24"
     />
     <path
-      d="M 0,12 L 76.8,12"
+      d="M 0,12 L 75.6,12"
       fill="none"
       stroke="#6FFFB0"
       stroke-linecap="butt"
@@ -186,7 +186,7 @@ exports[`Meter basic 1`] = `
       stroke-width="24"
     />
     <path
-      d="M 0,12 L 76.8,12"
+      d="M 0,12 L 75.6,12"
       fill="none"
       stroke="#6FFFB0"
       stroke-linecap="butt"
@@ -223,7 +223,7 @@ exports[`Meter basic renders outside grommet wrapper 1`] = `
     stroke-width="24"
   />
   <path
-    d="M 0,12 L 76.8,12"
+    d="M 0,12 L 75.6,12"
     fill="none"
     stroke="#6FFFB0"
     stroke-linecap="butt"
@@ -317,7 +317,7 @@ exports[`Meter custom message on meter plural 1`] = `
     stroke-width="24"
   />
   <path
-    d="M 0,12 L 57.6,12"
+    d="M 0,12 L 56.7,12"
     fill="none"
     stroke="#6FFFB0"
     stroke-linecap="butt"
@@ -403,14 +403,14 @@ exports[`Meter custom message plural 1`] = `
       stroke-width="24"
     />
     <path
-      d="M 160.45070422535213,12 L 384,12"
+      d="M 160.943661971831,12 L 381,12"
       fill="none"
       stroke="#6FFFB0"
       stroke-linecap="butt"
       stroke-width="24"
     />
     <path
-      d="M 0,12 L 160.45070422535213,12"
+      d="M 0,12 L 157.943661971831,12"
       fill="none"
       stroke="#00873D"
       stroke-linecap="butt"
@@ -589,6 +589,41 @@ exports[`Meter large circle values 1`] = `
       stroke-linecap="butt"
       stroke-width="12"
     />
+    <path
+      d="M 161.1259612870 25.4690907017 A 96.0000000000 96.0000000000 0 0 0 158.8903396562 23.4685917831 L 150.8872273966 32.4123261259 A 84.0000000000 84.0000000000 0 0 1 153.1228490274 34.4128250446 Z"
+      fill="#F2F2F2"
+      stroke="#000"
+      stroke-linecap="butt"
+      stroke-width="0"
+    />
+    <path
+      d="M 188.6232742832 70.7625464625 A 96.0000000000 96.0000000000 0 0 0 187.7894739312 67.8807454679 L 176.2606614660 71.2164122645 A 84.0000000000 84.0000000000 0 0 1 177.0944618180 74.0982132592 Z"
+      fill="#F2F2F2"
+      stroke="#000"
+      stroke-linecap="butt"
+      stroke-width="0"
+    />
+    <path
+      d="M 188.9633916249 119.9542859962 A 96.0000000000 96.0000000000 0 0 0 189.6664793973 117.0378382281 L 177.9990605000 114.2250947078 A 84.0000000000 84.0000000000 0 0 1 177.2959727277 117.1415424760 Z"
+      fill="#F2F2F2"
+      stroke="#000"
+      stroke-linecap="butt"
+      stroke-width="0"
+    />
+    <path
+      d="M 171.4823463298 155.3162321170 A 96.0000000000 96.0000000000 0 0 0 173.2988956817 152.9287337501 L 163.7475696243 145.6615224294 A 84.0000000000 84.0000000000 0 0 1 161.9310202723 148.0490207963 Z"
+      fill="#F2F2F2"
+      stroke="#000"
+      stroke-linecap="butt"
+      stroke-width="0"
+    />
+    <path
+      d="M 97.5000000000 0.0117194653 A 96.0000000000 96.0000000000 0 0 0 94.5000000000 0.0117194653 L 94.5000000000 12.0133939250 A 84.0000000000 84.0000000000 0 0 1 97.5000000000 12.0133939250 Z"
+      fill="#F2F2F2"
+      stroke="#000"
+      stroke-linecap="butt"
+      stroke-width="0"
+    />
   </svg>
 </div>
 `;
@@ -633,56 +668,56 @@ exports[`Meter many values 1`] = `
       stroke-width="24"
     />
     <path
-      d="M 336,12 L 384,12"
+      d="M 351.75,12 L 399,12"
       fill="none"
       stroke="#6FFFB0"
       stroke-linecap="butt"
       stroke-width="24"
     />
     <path
-      d="M 288,12 L 336,12"
+      d="M 301.5,12 L 348.75,12"
       fill="none"
       stroke="#00873D"
       stroke-linecap="butt"
       stroke-width="24"
     />
     <path
-      d="M 240,12 L 288,12"
+      d="M 251.25,12 L 298.5,12"
       fill="none"
       stroke="#3D138D"
       stroke-linecap="butt"
       stroke-width="24"
     />
     <path
-      d="M 192,12 L 240,12"
+      d="M 201,12 L 248.25,12"
       fill="none"
       stroke="#00739D"
       stroke-linecap="butt"
       stroke-width="24"
     />
     <path
-      d="M 144,12 L 192,12"
+      d="M 150.75,12 L 198,12"
       fill="none"
       stroke="#A2423D"
       stroke-linecap="butt"
       stroke-width="24"
     />
     <path
-      d="M 96,12 L 144,12"
+      d="M 100.5,12 L 147.75,12"
       fill="none"
       stroke="#6FFFB0"
       stroke-linecap="butt"
       stroke-width="24"
     />
     <path
-      d="M 48,12 L 96,12"
+      d="M 50.25,12 L 97.5,12"
       fill="none"
       stroke="#00873D"
       stroke-linecap="butt"
       stroke-width="24"
     />
     <path
-      d="M 0,12 L 48,12"
+      d="M 0,12 L 47.25,12"
       fill="none"
       stroke="#3D138D"
       stroke-linecap="butt"
@@ -733,7 +768,7 @@ exports[`Meter reverse 1`] = `
       stroke-width="24"
     />
     <path
-      d="M 0,12 L 76.8,12"
+      d="M 0,12 L 75.6,12"
       fill="none"
       stroke="#6FFFB0"
       stroke-linecap="butt"
@@ -844,7 +879,7 @@ exports[`Meter round 1`] = `
       stroke-width="24"
     />
     <path
-      d="M 12,12 L 84,12"
+      d="M 12,12 L 82.8,12"
       fill="none"
       stroke="#6FFFB0"
       stroke-linecap="round"
@@ -958,7 +993,7 @@ exports[`Meter rtl theme 1`] = `
       stroke-width="24"
     />
     <path
-      d="M 0,12 L 76.8,12"
+      d="M 0,12 L 75.6,12"
       fill="none"
       stroke="#6FFFB0"
       stroke-linecap="butt"
@@ -1008,7 +1043,7 @@ exports[`Meter single 1`] = `
       stroke-width="24"
     />
     <path
-      d="M 0,12 L 96,12"
+      d="M 0,12 L 94.5,12"
       fill="none"
       stroke="#6FFFB0"
       stroke-linecap="butt"
@@ -1058,7 +1093,7 @@ exports[`Meter size 1`] = `
       stroke-width="24"
     />
     <path
-      d="M 0,12 L 19.2,12"
+      d="M 0,12 L 18,12"
       fill="none"
       stroke="#6FFFB0"
       stroke-linecap="butt"
@@ -1082,7 +1117,7 @@ exports[`Meter size 1`] = `
       stroke-width="24"
     />
     <path
-      d="M 0,12 L 38.4,12"
+      d="M 0,12 L 37.2,12"
       fill="none"
       stroke="#6FFFB0"
       stroke-linecap="butt"
@@ -1106,7 +1141,7 @@ exports[`Meter size 1`] = `
       stroke-width="24"
     />
     <path
-      d="M 0,12 L 76.8,12"
+      d="M 0,12 L 75.6,12"
       fill="none"
       stroke="#6FFFB0"
       stroke-linecap="butt"
@@ -1130,7 +1165,7 @@ exports[`Meter size 1`] = `
       stroke-width="24"
     />
     <path
-      d="M 0,12 L 153.6,12"
+      d="M 0,12 L 152.4,12"
       fill="none"
       stroke="#6FFFB0"
       stroke-linecap="butt"
@@ -1154,7 +1189,7 @@ exports[`Meter size 1`] = `
       stroke-width="24"
     />
     <path
-      d="M 0,12 L 230.4,12"
+      d="M 0,12 L 229.2,12"
       fill="none"
       stroke="#6FFFB0"
       stroke-linecap="butt"
@@ -1178,7 +1213,7 @@ exports[`Meter size 1`] = `
       stroke-width="24"
     />
     <path
-      d="M 0,12 L 4.8,12"
+      d="M 0,12 L 3.6,12"
       fill="none"
       stroke="#6FFFB0"
       stroke-linecap="butt"
@@ -1202,7 +1237,7 @@ exports[`Meter size 1`] = `
       stroke-width="24"
     />
     <path
-      d="M 0,12 L 57.6,12"
+      d="M 0,12 L 56.4,12"
       fill="none"
       stroke="#6FFFB0"
       stroke-linecap="butt"
@@ -1763,7 +1798,7 @@ exports[`Meter thickness 1`] = `
       stroke-width="6"
     />
     <path
-      d="M 0,3 L 76.8,3"
+      d="M 0,3 L 75.6,3"
       fill="none"
       stroke="#6FFFB0"
       stroke-linecap="butt"
@@ -1787,7 +1822,7 @@ exports[`Meter thickness 1`] = `
       stroke-width="12"
     />
     <path
-      d="M 0,6 L 76.8,6"
+      d="M 0,6 L 75.6,6"
       fill="none"
       stroke="#6FFFB0"
       stroke-linecap="butt"
@@ -1811,7 +1846,7 @@ exports[`Meter thickness 1`] = `
       stroke-width="24"
     />
     <path
-      d="M 0,12 L 76.8,12"
+      d="M 0,12 L 75.6,12"
       fill="none"
       stroke="#6FFFB0"
       stroke-linecap="butt"
@@ -1835,7 +1870,7 @@ exports[`Meter thickness 1`] = `
       stroke-width="48"
     />
     <path
-      d="M 0,24 L 76.8,24"
+      d="M 0,24 L 75.6,24"
       fill="none"
       stroke="#6FFFB0"
       stroke-linecap="butt"
@@ -1859,7 +1894,7 @@ exports[`Meter thickness 1`] = `
       stroke-width="96"
     />
     <path
-      d="M 0,48 L 76.8,48"
+      d="M 0,48 L 75.6,48"
       fill="none"
       stroke="#6FFFB0"
       stroke-linecap="butt"
@@ -1883,7 +1918,7 @@ exports[`Meter thickness 1`] = `
       stroke-width="55"
     />
     <path
-      d="M 0,27.5 L 76.8,27.5"
+      d="M 0,27.5 L 75.6,27.5"
       fill="none"
       stroke="#6FFFB0"
       stroke-linecap="butt"
@@ -2083,7 +2118,7 @@ exports[`Meter type 1`] = `
       stroke-width="24"
     />
     <path
-      d="M 0,12 L 76.8,12"
+      d="M 0,12 L 75.6,12"
       fill="none"
       stroke="#6FFFB0"
       stroke-linecap="butt"
@@ -2206,7 +2241,7 @@ exports[`Meter vertical 1`] = `
       stroke-width="24"
     />
     <path
-      d="M 12,384 L 12,307.2"
+      d="M 12,384 L 12,308.4"
       fill="none"
       stroke="#6FFFB0"
       stroke-linecap="butt"
