@@ -10,11 +10,12 @@ var _Button = require("../Button");
 var _Layer = require("../Layer");
 var _Paragraph = require("../Paragraph");
 var _Text = require("../Text");
+var _AnnounceContext = require("../../contexts/AnnounceContext/AnnounceContext");
 var _MessageContext = require("../../contexts/MessageContext");
 var _propTypes = require("./propTypes");
 var _useThemeValue2 = require("../../utils/useThemeValue");
 var _excluded = ["fill", "direction"],
-  _excluded2 = ["actions", "message", "messages", "onClose", "id", "global", "status", "title", "toast", "icon", "time"];
+  _excluded2 = ["actions", "message", "messages", "onClose", "id", "global", "status", "title", "toast", "icon", "time"]; // eslint-disable-next-line max-len
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
 function _interopRequireWildcard(e, t) { if ("function" == typeof WeakMap) var r = new WeakMap(), n = new WeakMap(); return (_interopRequireWildcard = function _interopRequireWildcard(e, t) { if (!t && e && e.__esModule) return e; var o, i, f = { __proto__: null, "default": e }; if (null === e || "object" != typeof e && "function" != typeof e) return f; if (o = t ? n : r) { if (o.has(e)) return o.get(e); o.set(e, f); } for (var _t in e) "default" !== _t && {}.hasOwnProperty.call(e, _t) && ((i = (o = Object.defineProperty) && Object.getOwnPropertyDescriptor(e, _t)) && (i.get || i.set) ? o(f, _t, i) : f[_t] = e[_t]); return f; })(e, t); }
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
@@ -98,6 +99,13 @@ var Notification = exports.Notification = function Notification(_ref2) {
   var position = (0, _react.useMemo)(function () {
     return toast && (toast == null ? void 0 : toast.position) || 'top';
   }, [toast]);
+  var announce = (0, _react.useContext)(_AnnounceContext.AnnounceContext);
+  (0, _react.useEffect)(function () {
+    if (visible && toast) {
+      var announceText = typeof messageProp === 'string' ? title + ". " + messageProp : title;
+      announce(announceText, 'polite', time || theme.notification.toast.time || theme.notification.time);
+    }
+  }, [announce, visible, toast, messageProp, title, theme.notification.toast.time, theme.notification.time, time]);
   var close = (0, _react.useCallback)(function (event) {
     setVisible(false);
     if (onClose) onClose(event);
@@ -207,7 +215,7 @@ var Notification = exports.Notification = function Notification(_ref2) {
   }))));
   if (toast) {
     content = visible && /*#__PURE__*/_react["default"].createElement(_Layer.Layer, _extends({}, theme.notification.toast.layer, {
-      role: "log",
+      role: "status",
       modal: false,
       onEsc: onClose,
       id: id,

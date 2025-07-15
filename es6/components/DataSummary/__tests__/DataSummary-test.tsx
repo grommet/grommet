@@ -8,9 +8,10 @@ import { DataTable } from '../../DataTable';
 import { Grommet } from '../../Grommet';
 import { DataSummary } from '..';
 
-// asserts that AnnounceContext aria-live region and visible DataSummary each have this text
+// asserts that DataSummary has text. Previously this was set to 2 to include AnnounceContext
+// but that is no longer the case with improvments to AnnounceContext in "polite" mode.
 const expectDataSummary = (message: string) =>
-  expect(screen.getAllByText(message)).toHaveLength(2);
+  expect(screen.getAllByText(message)).toHaveLength(1);
 
 const data = [{ name: 'a' }, { name: 'b' }];
 

@@ -10,6 +10,8 @@ import { Button } from '../Button';
 import { Layer } from '../Layer';
 import { Paragraph } from '../Paragraph';
 import { Text } from '../Text';
+// eslint-disable-next-line max-len
+import { AnnounceContext } from '../../contexts/AnnounceContext/AnnounceContext';
 import { MessageContext } from '../../contexts/MessageContext';
 import { NotificationType } from './propTypes';
 import { useThemeValue } from '../../utils/useThemeValue';
@@ -92,6 +94,13 @@ var Notification = function Notification(_ref2) {
   var position = useMemo(function () {
     return toast && (toast == null ? void 0 : toast.position) || 'top';
   }, [toast]);
+  var announce = useContext(AnnounceContext);
+  useEffect(function () {
+    if (visible && toast) {
+      var announceText = typeof messageProp === 'string' ? title + ". " + messageProp : title;
+      announce(announceText, 'polite', time || theme.notification.toast.time || theme.notification.time);
+    }
+  }, [announce, visible, toast, messageProp, title, theme.notification.toast.time, theme.notification.time, time]);
   var close = useCallback(function (event) {
     setVisible(false);
     if (onClose) onClose(event);
@@ -201,7 +210,7 @@ var Notification = function Notification(_ref2) {
   }))));
   if (toast) {
     content = visible && /*#__PURE__*/React.createElement(Layer, _extends({}, theme.notification.toast.layer, {
-      role: "log",
+      role: "status",
       modal: false,
       onEsc: onClose,
       id: id,
