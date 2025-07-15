@@ -597,6 +597,32 @@ const FormField = forwardRef(
     if (typeof required === 'object' && required.indicator === false)
       showRequiredIndicator = false;
 
+    // Check if child is Select or SelectMultiple and modify htmlFor if needed
+    let adjustedHtmlFor = htmlFor;
+    if (htmlFor) {
+      let isSelectComponent = false;
+
+      // Check if children contain Select or SelectMultiple
+      if (children) {
+        Children.forEach(children, (child) => {
+          if (
+            child &&
+            child.type &&
+            (child.type.displayName === 'Select' ||
+              child.type.displayName === 'SelectMultiple') &&
+            child.props.id === htmlFor
+          ) {
+            isSelectComponent = true;
+          }
+        });
+      }
+
+      // If it's a Select component and htmlFor doesn't end with __input, add it
+      if (isSelectComponent && !htmlFor.endsWith('__input')) {
+        adjustedHtmlFor = `${htmlFor}__input`;
+      }
+    }
+
     return (
       <FormFieldBox
         ref={formFieldRef}
@@ -649,8 +675,8 @@ const FormField = forwardRef(
             {label && component !== CheckBox && (
               <Text
                 as="label"
-                id={htmlFor ? `grommet-${htmlFor}__label` : undefined}
-                htmlFor={htmlFor}
+                id={htmlFor ? `grommet-${adjustedHtmlFor}__label` : undefined}
+                htmlFor={adjustedHtmlFor}
                 {...labelStyle}
               >
                 {label}
