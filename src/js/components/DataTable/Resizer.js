@@ -1,11 +1,24 @@
-import React, { useCallback, useEffect, useRef, useState } from 'react';
+import React, {
+  useCallback,
+  useContext,
+  useEffect,
+  useRef,
+  useState,
+} from 'react';
 import styled from 'styled-components';
 
 import { Box } from '../Box';
+import { Button } from '../Button';
+import { Keyboard } from '../Keyboard';
 import { Stack } from '../Stack';
 import { useThemeValue } from '../../utils/useThemeValue';
+import { MessageContext } from '../../contexts/MessageContext';
 
-const InteractionBox = styled(Box)`
+// Added a temporary min-width of 2px here so that the element doesn't
+// end up with a width of 0px. This is a placeholder solution until we
+// revisit this in https://github.com/grommet/grommet/issues/7273
+const InteractionBox = styled(Button)`
+  min-width: 2px;
   cursor: col-resize;
   > * {
     opacity: 0;
@@ -21,12 +34,13 @@ const InteractionBox = styled(Box)`
   }
 `;
 
-const Resizer = ({ onResize, property }) => {
+const Resizer = ({ onResize, property, headerText, messages }) => {
   const { theme } = useThemeValue();
   const [active, setActive] = useState(false);
   const [start, setStart] = useState();
   const [width, setWidth] = useState();
   const ref = useRef();
+  const { format } = useContext(MessageContext);
 
   const onMouseDown = useCallback((event) => {
     if (ref.current) {
@@ -81,27 +95,49 @@ const Resizer = ({ onResize, property }) => {
     };
   }
 
+  const onKeyDown = useCallback(
+    (event) => {
+      event.preventDefault();
+      if (!ref.current) return;
+      let element = ref.current;
+      while (element && element.nodeName !== 'TH') element = element.parentNode;
+      const currentWidth = element.getBoundingClientRect().width;
+      // Used 12 here to align with the value set in onMouseMove
+      const delta = event.key === 'ArrowLeft' ? -12 : 12;
+      onResize(property, currentWidth + delta);
+    },
+    [onResize, property],
+  );
+
   return (
-    <Stack anchor="right">
+    <Stack anchor="right" interactiveChild="last">
       <Box
         flex={false}
         responsive={false}
         pad={{ vertical: 'small' }}
         {...theme.dataTable.resize}
       />
-      {/* provides a wider, more accessible target to grab resizer */}
-      <InteractionBox
-        active={active}
-        flex={false}
-        pad={{ left: 'xsmall' }}
-        ref={ref}
-        responsive={false}
-        onMouseDown={onMouseDown}
-        onMouseMove={start !== undefined ? onMouseMove : undefined}
-        onMouseUp={start !== undefined ? onMouseUp : undefined}
-      >
-        <Box pad={{ vertical: 'small' }} border={border} />
-      </InteractionBox>
+      <Keyboard onLeft={onKeyDown} onRight={onKeyDown}>
+        {/* provides a wider, more accessible target to grab resizer */}
+        <InteractionBox
+          aria-label={format({
+            id: 'dataTable.resizerAria',
+            values: { headerText },
+            messages,
+          })}
+          active={active}
+          flex={false}
+          pad={{ left: 'xsmall' }}
+          margin={{ top: 'xsmall' }}
+          ref={ref}
+          responsive={false}
+          onMouseDown={onMouseDown}
+          onMouseMove={start !== undefined ? onMouseMove : undefined}
+          onMouseUp={start !== undefined ? onMouseUp : undefined}
+        >
+          <Box pad={{ vertical: 'small' }} border={border} />
+        </InteractionBox>
+      </Keyboard>
     </Stack>
   );
 };
