@@ -3462,11 +3462,22 @@ exports[`DataTable custom theme 1`] = `
   min-height: 0;
   flex-direction: column;
   flex: 1 1 auto;
+  justify-content: center;
+}
+
+.c7 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  flex: 1 1 auto;
   height: 100%;
   justify-content: center;
 }
 
-.c9 {
+.c10 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -3476,7 +3487,7 @@ exports[`DataTable custom theme 1`] = `
   flex-direction: row;
 }
 
-.c13 {
+.c14 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -3489,7 +3500,7 @@ exports[`DataTable custom theme 1`] = `
   padding-bottom: 12px;
 }
 
-.c17 {
+.c18 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -3501,7 +3512,7 @@ exports[`DataTable custom theme 1`] = `
   padding-bottom: 12px;
 }
 
-.c21 {
+.c22 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -3511,7 +3522,7 @@ exports[`DataTable custom theme 1`] = `
   justify-content: center;
 }
 
-.c23 {
+.c24 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -3522,7 +3533,7 @@ exports[`DataTable custom theme 1`] = `
   justify-content: center;
 }
 
-.c26 {
+.c27 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -3537,7 +3548,7 @@ exports[`DataTable custom theme 1`] = `
   border-radius: 4px;
 }
 
-.c29 {
+.c30 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -3546,7 +3557,7 @@ exports[`DataTable custom theme 1`] = `
   flex-direction: column;
 }
 
-.c30 {
+.c31 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -3561,30 +3572,30 @@ exports[`DataTable custom theme 1`] = `
   border-radius: 4px;
 }
 
-.c11 {
+.c12 {
   position: relative;
 }
 
-.c12 {
+.c13 {
   position: relative;
   display: block;
   pointer-events: none;
 }
 
-.c14 {
+.c15 {
   position: absolute;
   top: 50%;
   right: 0;
   transform: translateY(-50%);
 }
 
-.c10 {
+.c11 {
   font-size: 18px;
   line-height: 24px;
   font-weight: bold;
 }
 
-.c7 {
+.c8 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -3602,47 +3613,47 @@ exports[`DataTable custom theme 1`] = `
   height: 100%;
 }
 
-.c7:focus {
+.c8:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c7:focus >circle,
-.c7:focus >ellipse,
-.c7:focus >line,
-.c7:focus >path,
-.c7:focus >polygon,
-.c7:focus >polyline,
-.c7:focus >rect {
+.c8:focus >circle,
+.c8:focus >ellipse,
+.c8:focus >line,
+.c8:focus >path,
+.c8:focus >polygon,
+.c8:focus >polyline,
+.c8:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c7:focus ::-moz-focus-inner {
+.c8:focus ::-moz-focus-inner {
   border: 0;
 }
 
-.c7:focus:not(:focus-visible) {
+.c8:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c7:focus:not(:focus-visible) >circle,
-.c7:focus:not(:focus-visible) >ellipse,
-.c7:focus:not(:focus-visible) >line,
-.c7:focus:not(:focus-visible) >path,
-.c7:focus:not(:focus-visible) >polygon,
-.c7:focus:not(:focus-visible) >polyline,
-.c7:focus:not(:focus-visible) >rect {
+.c8:focus:not(:focus-visible) >circle,
+.c8:focus:not(:focus-visible) >ellipse,
+.c8:focus:not(:focus-visible) >line,
+.c8:focus:not(:focus-visible) >path,
+.c8:focus:not(:focus-visible) >polygon,
+.c8:focus:not(:focus-visible) >polyline,
+.c8:focus:not(:focus-visible) >rect {
   outline: none;
   box-shadow: none;
 }
 
-.c7:focus:not(:focus-visible) ::-moz-focus-inner {
+.c8:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 
-.c15 {
+.c16 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -3660,47 +3671,47 @@ exports[`DataTable custom theme 1`] = `
   text-align: inherit;
 }
 
-.c15:focus {
+.c16:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c15:focus >circle,
-.c15:focus >ellipse,
-.c15:focus >line,
-.c15:focus >path,
-.c15:focus >polygon,
-.c15:focus >polyline,
-.c15:focus >rect {
+.c16:focus >circle,
+.c16:focus >ellipse,
+.c16:focus >line,
+.c16:focus >path,
+.c16:focus >polygon,
+.c16:focus >polyline,
+.c16:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c15:focus ::-moz-focus-inner {
+.c16:focus ::-moz-focus-inner {
   border: 0;
 }
 
-.c15:focus:not(:focus-visible) {
+.c16:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c15:focus:not(:focus-visible) >circle,
-.c15:focus:not(:focus-visible) >ellipse,
-.c15:focus:not(:focus-visible) >line,
-.c15:focus:not(:focus-visible) >path,
-.c15:focus:not(:focus-visible) >polygon,
-.c15:focus:not(:focus-visible) >polyline,
-.c15:focus:not(:focus-visible) >rect {
+.c16:focus:not(:focus-visible) >circle,
+.c16:focus:not(:focus-visible) >ellipse,
+.c16:focus:not(:focus-visible) >line,
+.c16:focus:not(:focus-visible) >path,
+.c16:focus:not(:focus-visible) >polygon,
+.c16:focus:not(:focus-visible) >polyline,
+.c16:focus:not(:focus-visible) >rect {
   outline: none;
   box-shadow: none;
 }
 
-.c15:focus:not(:focus-visible) ::-moz-focus-inner {
+.c16:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 
-.c27 {
+.c28 {
   box-sizing: border-box;
   stroke-width: 4px;
   stroke: #7D4CDB;
@@ -3708,7 +3719,7 @@ exports[`DataTable custom theme 1`] = `
   height: 24px;
 }
 
-.c22 {
+.c23 {
   display: flex;
   flex-direction: row;
   user-select: none;
@@ -3722,12 +3733,12 @@ exports[`DataTable custom theme 1`] = `
   cursor: default;
 }
 
-.c22:hover input:not([disabled])+div,
-.c22:hover input:not([disabled])+span {
+.c23:hover input:not([disabled])+div,
+.c23:hover input:not([disabled])+span {
   border-color: #000000;
 }
 
-.c25 {
+.c26 {
   opacity: 0;
   -moz-appearance: none;
   width: 0;
@@ -3735,12 +3746,12 @@ exports[`DataTable custom theme 1`] = `
   margin: 0;
 }
 
-.c25:checked+span>span {
+.c26:checked+span>span {
   left: calc( 48px - 24px );
   background: #7D4CDB;
 }
 
-.c24 {
+.c25 {
   flex-shrink: 0;
 }
 
@@ -3767,7 +3778,7 @@ exports[`DataTable custom theme 1`] = `
   padding: 0px;
 }
 
-.c20 {
+.c21 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -3777,7 +3788,7 @@ exports[`DataTable custom theme 1`] = `
   text-align: start;
 }
 
-.c28 {
+.c29 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -3795,16 +3806,16 @@ exports[`DataTable custom theme 1`] = `
   width: inherit;
 }
 
-.c16 {
+.c17 {
   min-width: 2px;
   cursor: col-resize;
 }
 
-.c16 >* {
+.c17 >* {
   opacity: 0;
 }
 
-.c16:hover >* {
+.c17:hover >* {
   opacity: 1;
 }
 
@@ -3814,84 +3825,84 @@ exports[`DataTable custom theme 1`] = `
   border-collapse: separate;
 }
 
-.c19:focus {
+.c20:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c19:focus >circle,
-.c19:focus >ellipse,
-.c19:focus >line,
-.c19:focus >path,
-.c19:focus >polygon,
-.c19:focus >polyline,
-.c19:focus >rect {
+.c20:focus >circle,
+.c20:focus >ellipse,
+.c20:focus >line,
+.c20:focus >path,
+.c20:focus >polygon,
+.c20:focus >polyline,
+.c20:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c19:focus ::-moz-focus-inner {
+.c20:focus ::-moz-focus-inner {
   border: 0;
+}
+
+.c20:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c20:focus:not(:focus-visible) >circle,
+.c20:focus:not(:focus-visible) >ellipse,
+.c20:focus:not(:focus-visible) >line,
+.c20:focus:not(:focus-visible) >path,
+.c20:focus:not(:focus-visible) >polygon,
+.c20:focus:not(:focus-visible) >polyline,
+.c20:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c20:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
+}
+
+.c19:focus {
+  outline: 2px solid #6FFFB0;
 }
 
 .c19:focus:not(:focus-visible) {
   outline: none;
-  box-shadow: none;
 }
 
-.c19:focus:not(:focus-visible) >circle,
-.c19:focus:not(:focus-visible) >ellipse,
-.c19:focus:not(:focus-visible) >line,
-.c19:focus:not(:focus-visible) >path,
-.c19:focus:not(:focus-visible) >polygon,
-.c19:focus:not(:focus-visible) >polyline,
-.c19:focus:not(:focus-visible) >rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c19:focus:not(:focus-visible) ::-moz-focus-inner {
-  border: 0;
-}
-
-.c18:focus {
-  outline: 2px solid #6FFFB0;
-}
-
-.c18:focus:not(:focus-visible) {
-  outline: none;
-}
-
-.c8 {
+.c9 {
   padding: 6px 12px;
 }
 
-.c8:hover {
+.c9:hover {
   background-color: rgba(242, 242, 242, 1);
   color: #444444;
 }
 
 @media only screen and (max-width: 768px) {
-  .c17 {
+  .c18 {
     border-inline-end: solid 1px red;
   }
 }
 
 @media only screen and (max-width: 768px) {
-  .c17 {
+  .c18 {
     padding-top: 6px;
     padding-bottom: 6px;
   }
 }
 
 @media only screen and (max-width: 768px) {
-  .c26 {
+  .c27 {
     border: solid 2px #7D4CDB;
   }
 }
 
 @media only screen and (max-width: 768px) {
-  .c30 {
+  .c31 {
     border: solid 2px rgba(0, 0, 0, 0.15);
   }
 }
@@ -3923,42 +3934,47 @@ exports[`DataTable custom theme 1`] = `
           >
             <div
               class="c6"
-            >
-              <button
-                class="c7 c8"
-                type="button"
-              >
-                <div
-                  class="c9"
-                >
-                  <span
-                    class="c10"
-                  >
-                    A
-                  </span>
-                </div>
-              </button>
-            </div>
-            <div
-              class="c11"
+              style="min-width: 0;"
             >
               <div
-                class="c12"
-              >
-                <div
-                  class="c13"
-                />
-              </div>
-              <div
-                class="c14"
+                class="c7"
               >
                 <button
-                  aria-label="Resize A column"
-                  class="c15 c16"
+                  class="c8 c9"
                   type="button"
                 >
                   <div
-                    class="c17"
+                    class="c10"
+                  >
+                    <span
+                      class="c11"
+                    >
+                      A
+                    </span>
+                  </div>
+                </button>
+              </div>
+            </div>
+            <div
+              class="c12"
+            >
+              <div
+                class="c13"
+              >
+                <div
+                  class="c14"
+                />
+              </div>
+              <div
+                class="c15"
+              >
+                <button
+                  aria-label="Resize A column"
+                  class="c16 c17"
+                  type="button"
+                >
+                  <div
+                    class="c18"
                   />
                 </button>
               </div>
@@ -3968,40 +3984,40 @@ exports[`DataTable custom theme 1`] = `
       </tr>
     </thead>
     <tbody
-      class="StyledTable__StyledTableBody-sc-1m3u5g-3 c18"
+      class="StyledTable__StyledTableBody-sc-1m3u5g-3 c19"
     >
       <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c19"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c20"
       >
         <td
           aria-disabled="true"
-          class="c20 "
+          class="c21 "
         >
           <div
-            class="c21"
+            class="c22"
             style="height: 0px;"
           >
             <label
-              class="c22"
+              class="c23"
               disabled=""
             >
               <div
-                class="c23 c24"
+                class="c24 c25"
                 disabled=""
               >
                 <input
                   aria-label="unselect alpha"
                   checked=""
-                  class="c25"
+                  class="c26"
                   disabled=""
                   type="checkbox"
                 />
                 <div
-                  class="c26 "
+                  class="c27 "
                   disabled=""
                 >
                   <svg
-                    class="c27"
+                    class="c28"
                     disabled=""
                     preserveAspectRatio="xMidYMid meet"
                     viewBox="0 0 24 24"
@@ -4021,14 +4037,14 @@ exports[`DataTable custom theme 1`] = `
           </div>
         </td>
         <th
-          class="c28 "
+          class="c29 "
           scope="row"
         >
           <div
-            class="c29"
+            class="c30"
           >
             <span
-              class="c10"
+              class="c11"
             >
               alpha
             </span>
@@ -4036,32 +4052,32 @@ exports[`DataTable custom theme 1`] = `
         </th>
       </tr>
       <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c19"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c20"
       >
         <td
           aria-disabled="true"
-          class="c20 "
+          class="c21 "
         >
           <div
-            class="c21"
+            class="c22"
             style="height: 0px;"
           >
             <label
-              class="c22"
+              class="c23"
               disabled=""
             >
               <div
-                class="c23 c24"
+                class="c24 c25"
                 disabled=""
               >
                 <input
                   aria-label="select beta"
-                  class="c25"
+                  class="c26"
                   disabled=""
                   type="checkbox"
                 />
                 <div
-                  class="c30 "
+                  class="c31 "
                   disabled=""
                 />
               </div>
@@ -4069,14 +4085,14 @@ exports[`DataTable custom theme 1`] = `
           </div>
         </td>
         <th
-          class="c28 "
+          class="c29 "
           scope="row"
         >
           <div
-            class="c29"
+            class="c30"
           >
             <span
-              class="c10"
+              class="c11"
             >
               beta
             </span>
@@ -4115,22 +4131,27 @@ exports[`DataTable custom theme 2`] = `
             style="position: relative;"
           >
             <div
-              class="StyledBox-sc-13pk1d4-0 doOSIY"
+              class="StyledBox-sc-13pk1d4-0 goGtia"
+              style="min-width: 0;"
             >
-              <button
-                class="StyledButton-sc-323bzc-0 hHREQh Header__StyledHeaderCellButton-sc-1baku5q-0 kFaTHr"
-                type="button"
+              <div
+                class="StyledBox-sc-13pk1d4-0 doOSIY"
               >
-                <div
-                  class="StyledBox-sc-13pk1d4-0 cQdPcb"
+                <button
+                  class="StyledButton-sc-323bzc-0 hHREQh Header__StyledHeaderCellButton-sc-1baku5q-0 kFaTHr"
+                  type="button"
                 >
-                  <span
-                    class="StyledText-sc-1sadyjn-0 cUpCuS"
+                  <div
+                    class="StyledBox-sc-13pk1d4-0 cQdPcb"
                   >
-                    A
-                  </span>
-                </div>
-              </button>
+                    <span
+                      class="StyledText-sc-1sadyjn-0 cUpCuS"
+                    >
+                      A
+                    </span>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="StyledStack-sc-ajspsk-0 caUqQj"
@@ -20936,11 +20957,22 @@ exports[`DataTable resizeable 1`] = `
   min-height: 0;
   flex-direction: column;
   flex: 1 1 auto;
+  justify-content: center;
+}
+
+.c6 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  flex: 1 1 auto;
   height: 100%;
   justify-content: center;
 }
 
-.c10 {
+.c11 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -20953,7 +20985,7 @@ exports[`DataTable resizeable 1`] = `
   padding-bottom: 12px;
 }
 
-.c14 {
+.c15 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -20964,7 +20996,7 @@ exports[`DataTable resizeable 1`] = `
   padding-bottom: 12px;
 }
 
-.c18 {
+.c19 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -20973,41 +21005,41 @@ exports[`DataTable resizeable 1`] = `
   flex-direction: column;
 }
 
-.c7 {
+.c8 {
   flex: 0 0 auto;
   align-self: stretch;
   width: 12px;
 }
 
-.c8 {
+.c9 {
   position: relative;
 }
 
-.c9 {
+.c10 {
   position: relative;
   display: block;
   pointer-events: none;
 }
 
-.c11 {
+.c12 {
   position: absolute;
   top: 50%;
   right: 0;
   transform: translateY(-50%);
 }
 
-.c6 {
+.c7 {
   font-size: 18px;
   line-height: 24px;
 }
 
-.c19 {
+.c20 {
   font-size: 18px;
   line-height: 24px;
   font-weight: bold;
 }
 
-.c12 {
+.c13 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -21025,43 +21057,43 @@ exports[`DataTable resizeable 1`] = `
   text-align: inherit;
 }
 
-.c12:focus {
+.c13:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c12:focus >circle,
-.c12:focus >ellipse,
-.c12:focus >line,
-.c12:focus >path,
-.c12:focus >polygon,
-.c12:focus >polyline,
-.c12:focus >rect {
+.c13:focus >circle,
+.c13:focus >ellipse,
+.c13:focus >line,
+.c13:focus >path,
+.c13:focus >polygon,
+.c13:focus >polyline,
+.c13:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c12:focus ::-moz-focus-inner {
+.c13:focus ::-moz-focus-inner {
   border: 0;
 }
 
-.c12:focus:not(:focus-visible) {
+.c13:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c12:focus:not(:focus-visible) >circle,
-.c12:focus:not(:focus-visible) >ellipse,
-.c12:focus:not(:focus-visible) >line,
-.c12:focus:not(:focus-visible) >path,
-.c12:focus:not(:focus-visible) >polygon,
-.c12:focus:not(:focus-visible) >polyline,
-.c12:focus:not(:focus-visible) >rect {
+.c13:focus:not(:focus-visible) >circle,
+.c13:focus:not(:focus-visible) >ellipse,
+.c13:focus:not(:focus-visible) >line,
+.c13:focus:not(:focus-visible) >path,
+.c13:focus:not(:focus-visible) >polygon,
+.c13:focus:not(:focus-visible) >polyline,
+.c13:focus:not(:focus-visible) >rect {
   outline: none;
   box-shadow: none;
 }
 
-.c12:focus:not(:focus-visible) ::-moz-focus-inner {
+.c13:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 
@@ -21078,7 +21110,7 @@ exports[`DataTable resizeable 1`] = `
   padding-bottom: 6px;
 }
 
-.c17 {
+.c18 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -21096,16 +21128,16 @@ exports[`DataTable resizeable 1`] = `
   width: inherit;
 }
 
-.c13 {
+.c14 {
   min-width: 2px;
   cursor: col-resize;
 }
 
-.c13 >* {
+.c14 >* {
   opacity: 0;
 }
 
-.c13:hover >* {
+.c14:hover >* {
   opacity: 1;
 }
 
@@ -21115,63 +21147,63 @@ exports[`DataTable resizeable 1`] = `
   border-collapse: separate;
 }
 
-.c16:focus {
+.c17:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c16:focus >circle,
-.c16:focus >ellipse,
-.c16:focus >line,
-.c16:focus >path,
-.c16:focus >polygon,
-.c16:focus >polyline,
-.c16:focus >rect {
+.c17:focus >circle,
+.c17:focus >ellipse,
+.c17:focus >line,
+.c17:focus >path,
+.c17:focus >polygon,
+.c17:focus >polyline,
+.c17:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c16:focus ::-moz-focus-inner {
+.c17:focus ::-moz-focus-inner {
   border: 0;
+}
+
+.c17:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c17:focus:not(:focus-visible) >circle,
+.c17:focus:not(:focus-visible) >ellipse,
+.c17:focus:not(:focus-visible) >line,
+.c17:focus:not(:focus-visible) >path,
+.c17:focus:not(:focus-visible) >polygon,
+.c17:focus:not(:focus-visible) >polyline,
+.c17:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c17:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
+}
+
+.c16:focus {
+  outline: 2px solid #6FFFB0;
 }
 
 .c16:focus:not(:focus-visible) {
   outline: none;
-  box-shadow: none;
-}
-
-.c16:focus:not(:focus-visible) >circle,
-.c16:focus:not(:focus-visible) >ellipse,
-.c16:focus:not(:focus-visible) >line,
-.c16:focus:not(:focus-visible) >path,
-.c16:focus:not(:focus-visible) >polygon,
-.c16:focus:not(:focus-visible) >polyline,
-.c16:focus:not(:focus-visible) >rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c16:focus:not(:focus-visible) ::-moz-focus-inner {
-  border: 0;
-}
-
-.c15:focus {
-  outline: 2px solid #6FFFB0;
-}
-
-.c15:focus:not(:focus-visible) {
-  outline: none;
 }
 
 @media only screen and (max-width: 768px) {
-  .c14 {
+  .c15 {
     padding-top: 6px;
     padding-bottom: 6px;
   }
 }
 
 @media only screen and (max-width: 768px) {
-  .c7 {
+  .c8 {
     width: 6px;
   }
 }
@@ -21199,36 +21231,41 @@ exports[`DataTable resizeable 1`] = `
           >
             <div
               class="c5"
-            >
-              <span
-                class="c6"
-              >
-                A
-              </span>
-            </div>
-            <div
-              class="c7"
-            />
-            <div
-              class="c8"
+              style="min-width: 0;"
             >
               <div
-                class="c9"
+                class="c6"
+              >
+                <span
+                  class="c7"
+                >
+                  A
+                </span>
+              </div>
+            </div>
+            <div
+              class="c8"
+            />
+            <div
+              class="c9"
+            >
+              <div
+                class="c10"
               >
                 <div
-                  class="c10"
+                  class="c11"
                 />
               </div>
               <div
-                class="c11"
+                class="c12"
               >
                 <button
                   aria-label="Change size of A column"
-                  class="c12 c13"
+                  class="c13 c14"
                   type="button"
                 >
                   <div
-                    class="c14"
+                    class="c15"
                   />
                 </button>
               </div>
@@ -21246,36 +21283,41 @@ exports[`DataTable resizeable 1`] = `
           >
             <div
               class="c5"
-            >
-              <span
-                class="c6"
-              >
-                B
-              </span>
-            </div>
-            <div
-              class="c7"
-            />
-            <div
-              class="c8"
+              style="min-width: 0;"
             >
               <div
-                class="c9"
+                class="c6"
+              >
+                <span
+                  class="c7"
+                >
+                  B
+                </span>
+              </div>
+            </div>
+            <div
+              class="c8"
+            />
+            <div
+              class="c9"
+            >
+              <div
+                class="c10"
               >
                 <div
-                  class="c10"
+                  class="c11"
                 />
               </div>
               <div
-                class="c11"
+                class="c12"
               >
                 <button
                   aria-label="Change size of B column"
-                  class="c12 c13"
+                  class="c13 c14"
                   type="button"
                 >
                   <div
-                    class="c14"
+                    class="c15"
                   />
                 </button>
               </div>
@@ -21285,33 +21327,33 @@ exports[`DataTable resizeable 1`] = `
       </tr>
     </thead>
     <tbody
-      class="StyledTable__StyledTableBody-sc-1m3u5g-3 c15"
+      class="StyledTable__StyledTableBody-sc-1m3u5g-3 c16"
     >
       <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c16"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c17"
       >
         <th
-          class="c17 "
+          class="c18 "
           scope="row"
         >
           <div
-            class="c18"
+            class="c19"
           >
             <span
-              class="c19"
+              class="c20"
             >
               one
             </span>
           </div>
         </th>
         <td
-          class="c17 "
+          class="c18 "
         >
           <div
-            class="c18"
+            class="c19"
           >
             <span
-              class="c6"
+              class="c7"
             >
               1
             </span>
@@ -21319,30 +21361,30 @@ exports[`DataTable resizeable 1`] = `
         </td>
       </tr>
       <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c16"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c17"
       >
         <th
-          class="c17 "
+          class="c18 "
           scope="row"
         >
           <div
-            class="c18"
+            class="c19"
           >
             <span
-              class="c19"
+              class="c20"
             >
               two
             </span>
           </div>
         </th>
         <td
-          class="c17 "
+          class="c18 "
         >
           <div
-            class="c18"
+            class="c19"
           >
             <span
-              class="c6"
+              class="c7"
             >
               2
             </span>
@@ -23640,7 +23682,7 @@ exports[`DataTable rowProps on group header rows 1`] = `
 `;
 
 exports[`DataTable search 1`] = `
-.c9 {
+.c10 {
   display: inline-block;
   flex: 0 0 auto;
   width: 24px;
@@ -23649,25 +23691,25 @@ exports[`DataTable search 1`] = `
   stroke: rgba(0, 0, 0, 0.33);
 }
 
-.c9 g {
+.c10 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c9 *:not([stroke])[fill='none'] {
+.c10 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c9 *[stroke*='#'],
-.c9 *[STROKE*='#'] {
+.c10 *[stroke*='#'],
+.c10 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
-.c9 *[fill-rule],
-.c9 *[FILL-RULE],
-.c9 *[fill*='#'],
-.c9 *[FILL*='#'] {
+.c10 *[fill-rule],
+.c10 *[FILL-RULE],
+.c10 *[fill*='#'],
+.c10 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -23702,11 +23744,22 @@ exports[`DataTable search 1`] = `
   min-height: 0;
   flex-direction: column;
   flex: 1 1 auto;
+  justify-content: center;
+}
+
+.c6 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  flex: 1 1 auto;
   height: 100%;
   justify-content: center;
 }
 
-.c13 {
+.c14 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -23715,24 +23768,24 @@ exports[`DataTable search 1`] = `
   flex-direction: column;
 }
 
-.c7 {
+.c8 {
   flex: 0 0 auto;
   align-self: stretch;
   width: 12px;
 }
 
-.c6 {
+.c7 {
   font-size: 18px;
   line-height: 24px;
 }
 
-.c14 {
+.c15 {
   font-size: 18px;
   line-height: 24px;
   font-weight: bold;
 }
 
-.c8 {
+.c9 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -23751,48 +23804,48 @@ exports[`DataTable search 1`] = `
   padding: 12px;
 }
 
-.c8:hover {
+.c9:hover {
   background-color: rgba(221, 221, 221, 0.4);
   color: #000000;
 }
 
-.c8:focus {
+.c9:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c8:focus >circle,
-.c8:focus >ellipse,
-.c8:focus >line,
-.c8:focus >path,
-.c8:focus >polygon,
-.c8:focus >polyline,
-.c8:focus >rect {
+.c9:focus >circle,
+.c9:focus >ellipse,
+.c9:focus >line,
+.c9:focus >path,
+.c9:focus >polygon,
+.c9:focus >polyline,
+.c9:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c8:focus ::-moz-focus-inner {
+.c9:focus ::-moz-focus-inner {
   border: 0;
 }
 
-.c8:focus:not(:focus-visible) {
+.c9:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c8:focus:not(:focus-visible) >circle,
-.c8:focus:not(:focus-visible) >ellipse,
-.c8:focus:not(:focus-visible) >line,
-.c8:focus:not(:focus-visible) >path,
-.c8:focus:not(:focus-visible) >polygon,
-.c8:focus:not(:focus-visible) >polyline,
-.c8:focus:not(:focus-visible) >rect {
+.c9:focus:not(:focus-visible) >circle,
+.c9:focus:not(:focus-visible) >ellipse,
+.c9:focus:not(:focus-visible) >line,
+.c9:focus:not(:focus-visible) >path,
+.c9:focus:not(:focus-visible) >polygon,
+.c9:focus:not(:focus-visible) >polyline,
+.c9:focus:not(:focus-visible) >rect {
   outline: none;
   box-shadow: none;
 }
 
-.c8:focus:not(:focus-visible) ::-moz-focus-inner {
+.c9:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 
@@ -23809,7 +23862,7 @@ exports[`DataTable search 1`] = `
   padding-bottom: 6px;
 }
 
-.c12 {
+.c13 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -23833,56 +23886,56 @@ exports[`DataTable search 1`] = `
   border-collapse: separate;
 }
 
-.c11:focus {
+.c12:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c11:focus >circle,
-.c11:focus >ellipse,
-.c11:focus >line,
-.c11:focus >path,
-.c11:focus >polygon,
-.c11:focus >polyline,
-.c11:focus >rect {
+.c12:focus >circle,
+.c12:focus >ellipse,
+.c12:focus >line,
+.c12:focus >path,
+.c12:focus >polygon,
+.c12:focus >polyline,
+.c12:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c11:focus ::-moz-focus-inner {
+.c12:focus ::-moz-focus-inner {
   border: 0;
+}
+
+.c12:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c12:focus:not(:focus-visible) >circle,
+.c12:focus:not(:focus-visible) >ellipse,
+.c12:focus:not(:focus-visible) >line,
+.c12:focus:not(:focus-visible) >path,
+.c12:focus:not(:focus-visible) >polygon,
+.c12:focus:not(:focus-visible) >polyline,
+.c12:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c12:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
+}
+
+.c11:focus {
+  outline: 2px solid #6FFFB0;
 }
 
 .c11:focus:not(:focus-visible) {
   outline: none;
-  box-shadow: none;
-}
-
-.c11:focus:not(:focus-visible) >circle,
-.c11:focus:not(:focus-visible) >ellipse,
-.c11:focus:not(:focus-visible) >line,
-.c11:focus:not(:focus-visible) >path,
-.c11:focus:not(:focus-visible) >polygon,
-.c11:focus:not(:focus-visible) >polyline,
-.c11:focus:not(:focus-visible) >rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c11:focus:not(:focus-visible) ::-moz-focus-inner {
-  border: 0;
-}
-
-.c10:focus {
-  outline: 2px solid #6FFFB0;
-}
-
-.c10:focus:not(:focus-visible) {
-  outline: none;
 }
 
 @media only screen and (max-width: 768px) {
-  .c7 {
+  .c8 {
     width: 6px;
   }
 }
@@ -23908,24 +23961,29 @@ exports[`DataTable search 1`] = `
           >
             <div
               class="c5"
+              style="min-width: 0;"
             >
-              <span
+              <div
                 class="c6"
               >
-                A
-              </span>
+                <span
+                  class="c7"
+                >
+                  A
+                </span>
+              </div>
             </div>
             <div
-              class="c7"
+              class="c8"
             />
             <button
               aria-label="Open search by a"
-              class="c8"
+              class="c9"
               type="button"
             >
               <svg
                 aria-label="FormSearch"
-                class="c9"
+                class="c10"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -23941,20 +23999,20 @@ exports[`DataTable search 1`] = `
       </tr>
     </thead>
     <tbody
-      class="StyledTable__StyledTableBody-sc-1m3u5g-3 c10"
+      class="StyledTable__StyledTableBody-sc-1m3u5g-3 c11"
     >
       <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c11"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c12"
       >
         <th
-          class="c12 "
+          class="c13 "
           scope="row"
         >
           <div
-            class="c13"
+            class="c14"
           >
             <span
-              class="c14"
+              class="c15"
             >
               Alpha
             </span>
@@ -23962,17 +24020,17 @@ exports[`DataTable search 1`] = `
         </th>
       </tr>
       <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c11"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c12"
       >
         <th
-          class="c12 "
+          class="c13 "
           scope="row"
         >
           <div
-            class="c13"
+            class="c14"
           >
             <span
-              class="c14"
+              class="c15"
             >
               beta
             </span>
@@ -23980,17 +24038,17 @@ exports[`DataTable search 1`] = `
         </th>
       </tr>
       <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c11"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c12"
       >
         <th
-          class="c12 "
+          class="c13 "
           scope="row"
         >
           <div
-            class="c13"
+            class="c14"
           >
             <span
-              class="c14"
+              class="c15"
             >
               []
             </span>
@@ -24023,13 +24081,12 @@ exports[`DataTable search 2`] = `
             class="StyledBox-sc-13pk1d4-0 bdQsBF"
           >
             <div
-              class="StyledBox-sc-13pk1d4-0 doOSIY"
+              class="StyledBox-sc-13pk1d4-0 goGtia"
+              style="min-width: 0;"
             >
-              <span
-                class="StyledText-sc-1sadyjn-0 ldA-DUE"
-              >
-                A
-              </span>
+              <div
+                class="StyledBox-sc-13pk1d4-0 doOSIY"
+              />
             </div>
             <div
               class="StyledBox__StyledBoxGap-sc-13pk1d4-1 bcWBJH"

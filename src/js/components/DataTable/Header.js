@@ -313,6 +313,7 @@ const Header = forwardRef(
               size,
               units,
             }) => {
+              const isSearching = filtering === property;
               let content;
               const unitsContent = units ? (
                 <Text {...textProps} {...theme.dataTable.header.units}>
@@ -320,7 +321,9 @@ const Header = forwardRef(
                 </Text>
               ) : undefined;
               if (typeof header === 'string') {
-                content = <Text {...textProps}>{header}</Text>;
+                content = isSearching ? null : (
+                  <Text {...textProps}>{header}</Text>
+                );
                 if (
                   Object.keys(layoutProps).length &&
                   (sortable === false || !onSort)
@@ -334,7 +337,7 @@ const Header = forwardRef(
                     </StyledContentBox>
                   );
                 }
-              } else content = header;
+              } else content = isSearching ? null : header;
 
               if (unitsContent) {
                 content = (
@@ -402,7 +405,9 @@ const Header = forwardRef(
                       justify={align}
                     >
                       {content}
-                      {Icon && <Icon aria-label={iconAriaLabel} />}
+                      {isSearching
+                        ? null
+                        : Icon && <Icon aria-label={iconAriaLabel} />}
                     </Box>
                   </StyledHeaderCellButton>
                 );
@@ -454,21 +459,28 @@ const Header = forwardRef(
                   <Box
                     direction="row"
                     align="center"
-                    justify={!align || align === 'start' ? 'between' : align}
+                    justify="between"
                     gap={theme.dataTable.header.gap}
                     fill="vertical"
                     style={onResize ? { position: 'relative' } : undefined}
                   >
-                    {content}
+                    <Box
+                      style={{ minWidth: 0 }}
+                      flex={{ grow: 1, shrink: 1 }}
+                      justify={(!align && 'center') || align}
+                    >
+                      {content}
+                    </Box>
                     {searcher && resizer ? (
                       <Box
-                        flex="shrink"
+                        flex={{ grow: 0, shrink: 0 }}
+                        style={{ whiteSpace: 'nowrap' }}
+                        // flex="shrink"
                         direction="row"
                         align="center"
                         gap={theme.dataTable.header.gap}
                       >
-                        {searcher}
-                        {resizer}
+                        {searcher} {resizer}
                       </Box>
                     ) : (
                       searcher || resizer
