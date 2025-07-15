@@ -65,10 +65,28 @@ const ExpanderControl = ({
         },
       });
 
+    const expandAllText =
+      messages?.expandAll ||
+      format({
+        id: 'dataTable.expandAll',
+        messages: {
+          'dataTable.expandAll': 'expand all',
+        },
+      });
+
+    const collapseAllText =
+      messages?.collapseAll ||
+      format({
+        id: 'dataTable.collapseAll',
+        messages: {
+          'dataTable.collapseAll': 'collapse all',
+        },
+      });
+
     let a11yTitle;
 
     if (context === 'header') {
-      a11yTitle = expanded ? 'collapse all' : 'expand all';
+      a11yTitle = expanded ? collapseAllText : expandAllText;
     } else {
       a11yTitle = expanded ? collapseText : expandText;
 

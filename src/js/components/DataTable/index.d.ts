@@ -89,8 +89,10 @@ export interface DataTableProps<TRowType = any> {
   messages?: {
     ascending?: string;
     collapse?: string;
+    collapseAll?: string;
     descending?: string;
     expand?: string;
+    expandAll?: string;
     resizerAria?: string;
     rows?: string;
     rowsChanged?: string;

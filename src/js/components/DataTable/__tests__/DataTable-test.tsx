@@ -2236,6 +2236,8 @@ describe('DataTable', () => {
           groupBy="a"
           primaryKey="b"
           messages={{
+            expandAll: 'expandir todo',
+            collapseAll: 'colapsar todo',
             expand: 'expandir',
             collapse: 'colapsar',
           }}

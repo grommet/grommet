@@ -91,6 +91,12 @@ export const SpaceX = () => {
 
   const expandable = useMemo(() => groups.map(({ id }) => id), [groups]);
 
+  const expandAriaLabel = (row, groupKey) => {
+    const rocket = groups.find((group) => group.id === groupKey);
+    const rocketName = rocket?.name || String(groupKey);
+    return `launches for ${rocketName} rocket`;
+  };
+
   useEffect(() => {
     const fetchData = async () => {
       const query = {
@@ -194,6 +200,7 @@ export const SpaceX = () => {
           expand: expanded,
           property: 'rocketId',
         }}
+        expandAriaLabel={expandAriaLabel}
         onUpdate={(opts) => {
           setExpanded(opts.expanded);
           setLimit(opts.count);

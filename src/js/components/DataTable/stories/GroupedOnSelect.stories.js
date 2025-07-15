@@ -12,6 +12,8 @@ groupColumns[1] = { ...first };
 groupColumns[0].footer = groupColumns[1].footer;
 delete groupColumns[1].footer;
 
+const expandAriaLabel = (_row, key) => `${key} location`;
+
 export const GroupedOnSelectDataTable = () => (
   // Uncomment <Grommet> lines when using outside of storybook
   // <Grommet theme={grommet}>
@@ -22,6 +24,7 @@ export const GroupedOnSelectDataTable = () => (
       groupBy="location"
       onSelect={() => {}}
       sortable
+      expandAriaLabel={expandAriaLabel}
     />
   </Box>
   // </Grommet>

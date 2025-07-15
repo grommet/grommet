@@ -58,7 +58,9 @@
   "dataTable": {
     "ascending": "ascending",
     "collapse": "collapse",
+    "collapseAll": "collapse all",
     "expand": "expand",
+    "expandAll": "expand all",
     "descending": "descending",
     "resizerAria": "Resize {headerText} column",
     "rows": "rows",

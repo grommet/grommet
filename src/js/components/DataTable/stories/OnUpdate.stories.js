@@ -230,6 +230,8 @@ export const OnUpdateDataTable = () => {
     [expand, groupSelected, onGroupSelect],
   );
 
+  const expandAriaLabel = (_row, key) => `${key} location`;
+
   return (
     // Uncomment <Grommet> lines when using outside of storybook
     // <Grommet theme={grommet}>
@@ -248,6 +250,7 @@ export const OnUpdateDataTable = () => {
         }}
         select={select}
         step={step}
+        expandAriaLabel={expandAriaLabel}
       />
     </Box>
     // </Grommet>
