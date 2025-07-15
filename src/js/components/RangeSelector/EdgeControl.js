@@ -1,10 +1,22 @@
-import React, { forwardRef, useState } from 'react';
+import React, { useContext, forwardRef, useState } from 'react';
 import styled from 'styled-components';
 
 import { Box } from '../Box';
 import { Keyboard } from '../Keyboard';
 import { focusStyle, normalizeColor, parseMetricToNum } from '../../utils';
 import { useThemeValue } from '../../utils/useThemeValue';
+import { MessageContext } from '../../contexts/MessageContext';
+
+// Add visually hidden input styles
+const VisuallyHiddenInput = styled.input`
+  position: absolute;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 1px;
+`;
 
 const DIRECTION_PROPS = {
   horizontal: {
@@ -23,12 +35,26 @@ const StyledBox = styled(Box)`
 
 const EdgeControl = forwardRef(
   (
-    { color, direction, edge, onDecrease, onIncrease, thickness, ...rest },
+    {
+      color,
+      direction,
+      edge,
+      onDecrease,
+      onIncrease,
+      thickness,
+      max,
+      min,
+      messages,
+      value,
+      step,
+      ...rest
+    },
     ref,
   ) => {
     const { theme } = useThemeValue();
     const [focus, setFocus] = useState(false);
     const { cursor, fill } = DIRECTION_PROPS[direction];
+    const { format } = useContext(MessageContext);
     const themeEdgeSize = theme.rangeSelector?.edge?.size;
     let size;
     if (themeEdgeSize) {
@@ -93,6 +119,28 @@ const EdgeControl = forwardRef(
           justify="center"
           alignSelf="stretch"
         >
+          {/* Add visually hidden range input for Safari VoiceOver */}
+          <VisuallyHiddenInput
+            type="range"
+            min={min}
+            max={max}
+            step={step}
+            value={value}
+            onFocus={() => setFocus(true)}
+            onBlur={() => setFocus(false)}
+            aria-label={format({
+              id:
+                edge === 'lower'
+                  ? 'rangeSelector.lower'
+                  : 'rangeSelector.upper',
+              messages,
+            })}
+            aria-valuemin={min}
+            aria-valuemax={max}
+            aria-valuenow={value}
+            readOnly
+          />
+
           <Box
             ref={ref}
             direction={boxDirection}
@@ -107,9 +155,7 @@ const EdgeControl = forwardRef(
               minHeight: size,
               zIndex: 1,
             }}
-            tabIndex={0}
-            onFocus={() => setFocus(true)}
-            onBlur={() => setFocus(false)}
+            tabIndex={-1}
             {...rest}
           >
             {node}
