@@ -80,6 +80,7 @@ export interface GrommetProps {
       dataTable?: {
         ascending?: string;
         descending?: string;
+        resizerAria?: string;
         rows?: string;
         rowsChanged?: string;
         rowsSingle?: string;

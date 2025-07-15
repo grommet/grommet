@@ -994,7 +994,7 @@ describe('Form controlled', () => {
           <FormField
             label="Multiple"
             name="multiple"
-            htmlFor="multiple"
+            htmlFor="multiple__input"
             required
             validate={[
               (value) => {
