@@ -62,7 +62,7 @@ var ValidateOnBlur = exports.ValidateOnBlur = function ValidateOnBlur() {
     })), /*#__PURE__*/_react["default"].createElement(_grommet.FormField, {
       label: "Size",
       name: "select-size",
-      htmlFor: "select-size__input",
+      htmlFor: "select-size",
       required: true,
       validate: function validate(val) {
         if (val === 'small') {

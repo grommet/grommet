@@ -405,6 +405,26 @@ var FormField = exports.FormField = /*#__PURE__*/(0, _react.forwardRef)(function
     }, "*"), /*#__PURE__*/_react["default"].createElement(ScreenReaderOnly, null, "required"));
   var showRequiredIndicator = required && requiredIndicator;
   if (typeof required === 'object' && required.indicator === false) showRequiredIndicator = false;
+
+  // Check if child is Select or SelectMultiple and modify htmlFor if needed
+  var adjustedHtmlFor = htmlFor;
+  if (htmlFor) {
+    var isSelectComponent = false;
+
+    // Check if children contain Select or SelectMultiple
+    if (children) {
+      _react.Children.forEach(children, function (child) {
+        if (child && child.type && (child.type.displayName === 'Select' || child.type.displayName === 'SelectMultiple') && child.props.id === htmlFor) {
+          isSelectComponent = true;
+        }
+      });
+    }
+
+    // If it's a Select component and htmlFor doesn't end with __input, add it
+    if (isSelectComponent && !htmlFor.endsWith('__input')) {
+      adjustedHtmlFor = htmlFor + "__input";
+    }
+  }
   return /*#__PURE__*/_react["default"].createElement(FormFieldBox, _extends({
     ref: formFieldRef,
     className: className,
@@ -444,8 +464,8 @@ var FormField = exports.FormField = /*#__PURE__*/(0, _react.forwardRef)(function
     } : undefined
   }, containerRest, passThemeFlag), label && component !== _CheckBox.CheckBox || help ? /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, label && component !== _CheckBox.CheckBox && /*#__PURE__*/_react["default"].createElement(_Text.Text, _extends({
     as: "label",
-    id: htmlFor ? "grommet-" + htmlFor + "__label" : undefined,
-    htmlFor: htmlFor
+    id: htmlFor ? "grommet-" + adjustedHtmlFor + "__label" : undefined,
+    htmlFor: adjustedHtmlFor
   }, labelStyle), label, showRequiredIndicator ? requiredIndicator : undefined), /*#__PURE__*/_react["default"].createElement(Message, _extends({
     message: help
   }, themeHelpProps))) : undefined, contents, /*#__PURE__*/_react["default"].createElement(Message, _extends({

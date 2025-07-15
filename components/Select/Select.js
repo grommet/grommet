@@ -14,7 +14,7 @@ var _DefaultSelectTextInput = require("./DefaultSelectTextInput");
 var _MessageContext = require("../../contexts/MessageContext");
 var _propTypes = require("./propTypes");
 var _useThemeValue2 = require("../../utils/useThemeValue");
-var _excluded = ["a11yTitle", "aria-label", "alignSelf", "children", "clear", "closeOnChange", "defaultValue", "disabled", "disabledKey", "dropAlign", "dropHeight", "dropProps", "dropTarget", "emptySearchMessage", "focusIndicator", "gridArea", "id", "icon", "labelKey", "margin", "messages", "multiple", "name", "onBlur", "onChange", "onClick", "onClose", "onFocus", "onKeyDown", "onMore", "onOpen", "onSearch", "open", "options", "placeholder", "plain", "replace", "searchPlaceholder", "selected", "size", "value", "valueKey", "valueLabel"];
+var _excluded = ["a11yTitle", "aria-label", "aria-labelledby", "alignSelf", "children", "clear", "closeOnChange", "defaultValue", "disabled", "disabledKey", "dropAlign", "dropHeight", "dropProps", "dropTarget", "emptySearchMessage", "focusIndicator", "gridArea", "id", "icon", "labelKey", "margin", "messages", "multiple", "name", "onBlur", "onChange", "onClick", "onClose", "onFocus", "onKeyDown", "onMore", "onOpen", "onSearch", "open", "options", "placeholder", "plain", "replace", "searchPlaceholder", "selected", "size", "value", "valueKey", "valueLabel"];
 function _interopRequireWildcard(e, t) { if ("function" == typeof WeakMap) var r = new WeakMap(), n = new WeakMap(); return (_interopRequireWildcard = function _interopRequireWildcard(e, t) { if (!t && e && e.__esModule) return e; var o, i, f = { __proto__: null, "default": e }; if (null === e || "object" != typeof e && "function" != typeof e) return f; if (o = t ? n : r) { if (o.has(e)) return o.get(e); o.set(e, f); } for (var _t in e) "default" !== _t && {}.hasOwnProperty.call(e, _t) && ((i = (o = Object.defineProperty) && Object.getOwnPropertyDescriptor(e, _t)) && (i.get || i.set) ? o(f, _t, i) : f[_t] = e[_t]); return f; })(e, t); }
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (-1 !== e.indexOf(n)) continue; t[n] = r[n]; } return t; }
@@ -25,6 +25,7 @@ var defaultDropAlign = {
 var Select = exports.Select = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
   var a11yTitle = _ref.a11yTitle,
     ariaLabel = _ref['aria-label'],
+    ariaLabelledByProp = _ref['aria-labelledby'],
     alignSelf = _ref.alignSelf,
     children = _ref.children,
     _ref$clear = _ref.clear,
@@ -80,6 +81,7 @@ var Select = exports.Select = /*#__PURE__*/(0, _react.forwardRef)(function (_ref
   // vice versa. https://github.com/grommet/grommet/pull/6299
   var valueKey = valueKeyProp || labelKeyProp;
   var labelKey = labelKeyProp || valueKeyProp;
+  var formFieldData = formContext == null ? void 0 : formContext.useFormField({});
 
   // Determine if the Select is opened with the keyboard. If so,
   // focus should be set on the first option when the drop opens
@@ -256,6 +258,17 @@ var Select = exports.Select = /*#__PURE__*/(0, _react.forwardRef)(function (_ref
     return undefined;
   }, [labelKey, messages, format, optionIndexesInValue, allOptions, selectValue]);
   var iconColor = (0, _utils2.getIconColor)(theme);
+  var _useState4 = (0, _react.useState)(),
+    ariaLabelledBy = _useState4[0],
+    setAriaLabelledBy = _useState4[1];
+  (0, _react.useEffect)(function () {
+    if (formFieldData != null && formFieldData.inForm && id && !ariaLabel && !placeholder && typeof document !== 'undefined') {
+      var labelElement = document.getElementById("grommet-" + id + "__input__label");
+      if (labelElement) {
+        setAriaLabelledBy("grommet-" + id + "__input__label " + id);
+      }
+    }
+  }, [formFieldData == null ? void 0 : formFieldData.inForm, id, ariaLabel, placeholder]);
   return /*#__PURE__*/_react["default"].createElement(_Keyboard.Keyboard, {
     onDown: onRequestOpen,
     onUp: onRequestOpen
@@ -269,6 +282,7 @@ var Select = exports.Select = /*#__PURE__*/(0, _react.forwardRef)(function (_ref
       }
     }) : ''),
     "aria-expanded": Boolean(open),
+    "aria-labelledby": ariaLabelledByProp || ariaLabelledBy,
     "aria-haspopup": "listbox",
     id: id,
     disabled: disabled === true || undefined,

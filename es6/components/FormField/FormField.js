@@ -399,6 +399,26 @@ var FormField = /*#__PURE__*/forwardRef(function (_ref3, ref) {
     }, "*"), /*#__PURE__*/React.createElement(ScreenReaderOnly, null, "required"));
   var showRequiredIndicator = required && requiredIndicator;
   if (typeof required === 'object' && required.indicator === false) showRequiredIndicator = false;
+
+  // Check if child is Select or SelectMultiple and modify htmlFor if needed
+  var adjustedHtmlFor = htmlFor;
+  if (htmlFor) {
+    var isSelectComponent = false;
+
+    // Check if children contain Select or SelectMultiple
+    if (children) {
+      Children.forEach(children, function (child) {
+        if (child && child.type && (child.type.displayName === 'Select' || child.type.displayName === 'SelectMultiple') && child.props.id === htmlFor) {
+          isSelectComponent = true;
+        }
+      });
+    }
+
+    // If it's a Select component and htmlFor doesn't end with __input, add it
+    if (isSelectComponent && !htmlFor.endsWith('__input')) {
+      adjustedHtmlFor = htmlFor + "__input";
+    }
+  }
   return /*#__PURE__*/React.createElement(FormFieldBox, _extends({
     ref: formFieldRef,
     className: className,
@@ -438,8 +458,8 @@ var FormField = /*#__PURE__*/forwardRef(function (_ref3, ref) {
     } : undefined
   }, containerRest, passThemeFlag), label && component !== CheckBox || help ? /*#__PURE__*/React.createElement(React.Fragment, null, label && component !== CheckBox && /*#__PURE__*/React.createElement(Text, _extends({
     as: "label",
-    id: htmlFor ? "grommet-" + htmlFor + "__label" : undefined,
-    htmlFor: htmlFor
+    id: htmlFor ? "grommet-" + adjustedHtmlFor + "__label" : undefined,
+    htmlFor: adjustedHtmlFor
   }, labelStyle), label, showRequiredIndicator ? requiredIndicator : undefined), /*#__PURE__*/React.createElement(Message, _extends({
     message: help
   }, themeHelpProps))) : undefined, contents, /*#__PURE__*/React.createElement(Message, _extends({

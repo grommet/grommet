@@ -17,7 +17,7 @@ var _DefaultSelectTextInput = require("../Select/DefaultSelectTextInput");
 var _MessageContext = require("../../contexts/MessageContext");
 var _propTypes = require("./propTypes");
 var _useThemeValue2 = require("../../utils/useThemeValue");
-var _excluded = ["a11yTitle", "aria-label", "alignSelf", "children", "defaultValue", "disabled", "disabledKey", "dropAlign", "dropHeight", "dropProps", "dropTarget", "emptySearchMessage", "focusIndicator", "gridArea", "help", "id", "icon", "labelKey", "limit", "margin", "messages", "name", "onBlur", "onChange", "onClick", "onClose", "onFocus", "onKeyDown", "onMore", "onOpen", "onSearch", "open", "options", "placeholder", "plain", "replace", "searchPlaceholder", "size", "sortSelectedOnClose", "value", "valueKey", "valueLabel", "showSelectedInline", "width"];
+var _excluded = ["a11yTitle", "aria-label", "aria-labelledby", "alignSelf", "children", "defaultValue", "disabled", "disabledKey", "dropAlign", "dropHeight", "dropProps", "dropTarget", "emptySearchMessage", "focusIndicator", "gridArea", "help", "id", "icon", "labelKey", "limit", "margin", "messages", "name", "onBlur", "onChange", "onClick", "onClose", "onFocus", "onKeyDown", "onMore", "onOpen", "onSearch", "open", "options", "placeholder", "plain", "replace", "searchPlaceholder", "size", "sortSelectedOnClose", "value", "valueKey", "valueLabel", "showSelectedInline", "width"];
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
 function _interopRequireWildcard(e, t) { if ("function" == typeof WeakMap) var r = new WeakMap(), n = new WeakMap(); return (_interopRequireWildcard = function _interopRequireWildcard(e, t) { if (!t && e && e.__esModule) return e; var o, i, f = { __proto__: null, "default": e }; if (null === e || "object" != typeof e && "function" != typeof e) return f; if (o = t ? n : r) { if (o.has(e)) return o.get(e); o.set(e, f); } for (var _t in e) "default" !== _t && {}.hasOwnProperty.call(e, _t) && ((i = (o = Object.defineProperty) && Object.getOwnPropertyDescriptor(e, _t)) && (i.get || i.set) ? o(f, _t, i) : f[_t] = e[_t]); return f; })(e, t); }
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
@@ -37,6 +37,7 @@ var StyledSelectBox = (0, _styledComponents["default"])(_Box.Box).withConfig({
 var SelectMultiple = exports.SelectMultiple = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
   var a11yTitle = _ref.a11yTitle,
     ariaLabel = _ref['aria-label'],
+    ariaLabelledByProp = _ref['aria-labelledby'],
     alignSelf = _ref.alignSelf,
     children = _ref.children,
     defaultValue = _ref.defaultValue,
@@ -92,6 +93,7 @@ var SelectMultiple = exports.SelectMultiple = /*#__PURE__*/(0, _react.forwardRef
   var selectBoxRef = (0, _react.useRef)();
   var dropButtonRef = (0, _utils.useForwardedRef)(ref);
   var usingKeyboard = (0, _utils.useKeyboard)();
+  var formFieldData = formContext == null ? void 0 : formContext.useFormField({});
   var dropAlign = (0, _react.useMemo)(function () {
     return dropAlignProp || (showSelectedInline ? {
       top: 'top',
@@ -117,6 +119,17 @@ var SelectMultiple = exports.SelectMultiple = /*#__PURE__*/(0, _react.forwardRef
     }),
     value = _formContext$useFormI[0],
     setValue = _formContext$useFormI[1];
+  var _useState = (0, _react.useState)(),
+    ariaLabelledBy = _useState[0],
+    setAriaLabelledBy = _useState[1];
+  (0, _react.useEffect)(function () {
+    if (formFieldData != null && formFieldData.inForm && id && !ariaLabel && !placeholder) {
+      var labelElement = document.getElementById("grommet-" + id + "__input__label");
+      if (labelElement) {
+        setAriaLabelledBy("grommet-" + id + "__input__label " + id);
+      }
+    }
+  }, [formFieldData == null ? void 0 : formFieldData.inForm, id, ariaLabel, placeholder]);
 
   // normalizedValue is the value mapped with any valueKey applied
   // When the options array contains objects, this property indicates how
@@ -131,16 +144,16 @@ var SelectMultiple = exports.SelectMultiple = /*#__PURE__*/(0, _react.forwardRef
     return (0, _utils2.getNormalizedValue)(value, valueKey);
   }, [value, valueKey]);
   // search input value
-  var _useState = (0, _react.useState)(),
-    search = _useState[0],
-    setSearch = _useState[1];
+  var _useState2 = (0, _react.useState)(),
+    search = _useState2[0],
+    setSearch = _useState2[1];
   // All select option indices and values
-  var _useState2 = (0, _react.useState)(optionsProp),
-    allOptions = _useState2[0],
-    setAllOptions = _useState2[1];
-  var _useState3 = (0, _react.useState)(),
-    orderedOptions = _useState3[0],
-    setOrderedOptions = _useState3[1];
+  var _useState3 = (0, _react.useState)(optionsProp),
+    allOptions = _useState3[0],
+    setAllOptions = _useState3[1];
+  var _useState4 = (0, _react.useState)(),
+    orderedOptions = _useState4[0],
+    setOrderedOptions = _useState4[1];
   // Track changes to options property, except when options are being
   // updated due to search activity. Allows option's initial index value
   // to be referenced when filtered by search.
@@ -176,9 +189,9 @@ var SelectMultiple = exports.SelectMultiple = /*#__PURE__*/(0, _react.forwardRef
     });
     return result;
   }, [allOptions, valueKey, normalizedValue]);
-  var _useState4 = (0, _react.useState)(openProp),
-    open = _useState4[0],
-    setOpen = _useState4[1];
+  var _useState5 = (0, _react.useState)(openProp),
+    open = _useState5[0],
+    setOpen = _useState5[1];
   (0, _react.useEffect)(function () {
     return setOpen(openProp);
   }, [openProp]);
@@ -454,7 +467,8 @@ var SelectMultiple = exports.SelectMultiple = /*#__PURE__*/(0, _react.forwardRef
     dropAlign: dropAlign,
     dropTarget: dropTarget,
     alignSelf: alignSelf,
-    tabIndex: "0"
+    tabIndex: "0",
+    "aria-labelledby": ariaLabelledByProp || ariaLabelledBy
   }), /*#__PURE__*/_react["default"].createElement(_Box.Box, {
     align: "center",
     direction: "row",

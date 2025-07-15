@@ -57,7 +57,7 @@ export var ValidateOnBlur = function ValidateOnBlur() {
     })), /*#__PURE__*/React.createElement(FormField, {
       label: "Size",
       name: "select-size",
-      htmlFor: "select-size__input",
+      htmlFor: "select-size",
       required: true,
       validate: function validate(val) {
         if (val === 'small') {

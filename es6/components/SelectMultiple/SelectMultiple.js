@@ -1,4 +1,4 @@
-var _excluded = ["a11yTitle", "aria-label", "alignSelf", "children", "defaultValue", "disabled", "disabledKey", "dropAlign", "dropHeight", "dropProps", "dropTarget", "emptySearchMessage", "focusIndicator", "gridArea", "help", "id", "icon", "labelKey", "limit", "margin", "messages", "name", "onBlur", "onChange", "onClick", "onClose", "onFocus", "onKeyDown", "onMore", "onOpen", "onSearch", "open", "options", "placeholder", "plain", "replace", "searchPlaceholder", "size", "sortSelectedOnClose", "value", "valueKey", "valueLabel", "showSelectedInline", "width"];
+var _excluded = ["a11yTitle", "aria-label", "aria-labelledby", "alignSelf", "children", "defaultValue", "disabled", "disabledKey", "dropAlign", "dropHeight", "dropProps", "dropTarget", "emptySearchMessage", "focusIndicator", "gridArea", "help", "id", "icon", "labelKey", "limit", "margin", "messages", "name", "onBlur", "onChange", "onClick", "onClose", "onFocus", "onKeyDown", "onMore", "onOpen", "onSearch", "open", "options", "placeholder", "plain", "replace", "searchPlaceholder", "size", "sortSelectedOnClose", "value", "valueKey", "valueLabel", "showSelectedInline", "width"];
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (-1 !== e.indexOf(n)) continue; t[n] = r[n]; } return t; }
 import React, { forwardRef, isValidElement, useCallback, useContext, useMemo, useState, useRef, useEffect } from 'react';
@@ -31,6 +31,7 @@ var StyledSelectBox = styled(Box).withConfig({
 var SelectMultiple = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var a11yTitle = _ref.a11yTitle,
     ariaLabel = _ref['aria-label'],
+    ariaLabelledByProp = _ref['aria-labelledby'],
     alignSelf = _ref.alignSelf,
     children = _ref.children,
     defaultValue = _ref.defaultValue,
@@ -86,6 +87,7 @@ var SelectMultiple = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var selectBoxRef = useRef();
   var dropButtonRef = useForwardedRef(ref);
   var usingKeyboard = useKeyboard();
+  var formFieldData = formContext == null ? void 0 : formContext.useFormField({});
   var dropAlign = useMemo(function () {
     return dropAlignProp || (showSelectedInline ? {
       top: 'top',
@@ -111,6 +113,17 @@ var SelectMultiple = /*#__PURE__*/forwardRef(function (_ref, ref) {
     }),
     value = _formContext$useFormI[0],
     setValue = _formContext$useFormI[1];
+  var _useState = useState(),
+    ariaLabelledBy = _useState[0],
+    setAriaLabelledBy = _useState[1];
+  useEffect(function () {
+    if (formFieldData != null && formFieldData.inForm && id && !ariaLabel && !placeholder) {
+      var labelElement = document.getElementById("grommet-" + id + "__input__label");
+      if (labelElement) {
+        setAriaLabelledBy("grommet-" + id + "__input__label " + id);
+      }
+    }
+  }, [formFieldData == null ? void 0 : formFieldData.inForm, id, ariaLabel, placeholder]);
 
   // normalizedValue is the value mapped with any valueKey applied
   // When the options array contains objects, this property indicates how
@@ -125,16 +138,16 @@ var SelectMultiple = /*#__PURE__*/forwardRef(function (_ref, ref) {
     return getNormalizedValue(value, valueKey);
   }, [value, valueKey]);
   // search input value
-  var _useState = useState(),
-    search = _useState[0],
-    setSearch = _useState[1];
+  var _useState2 = useState(),
+    search = _useState2[0],
+    setSearch = _useState2[1];
   // All select option indices and values
-  var _useState2 = useState(optionsProp),
-    allOptions = _useState2[0],
-    setAllOptions = _useState2[1];
-  var _useState3 = useState(),
-    orderedOptions = _useState3[0],
-    setOrderedOptions = _useState3[1];
+  var _useState3 = useState(optionsProp),
+    allOptions = _useState3[0],
+    setAllOptions = _useState3[1];
+  var _useState4 = useState(),
+    orderedOptions = _useState4[0],
+    setOrderedOptions = _useState4[1];
   // Track changes to options property, except when options are being
   // updated due to search activity. Allows option's initial index value
   // to be referenced when filtered by search.
@@ -170,9 +183,9 @@ var SelectMultiple = /*#__PURE__*/forwardRef(function (_ref, ref) {
     });
     return result;
   }, [allOptions, valueKey, normalizedValue]);
-  var _useState4 = useState(openProp),
-    open = _useState4[0],
-    setOpen = _useState4[1];
+  var _useState5 = useState(openProp),
+    open = _useState5[0],
+    setOpen = _useState5[1];
   useEffect(function () {
     return setOpen(openProp);
   }, [openProp]);
@@ -448,7 +461,8 @@ var SelectMultiple = /*#__PURE__*/forwardRef(function (_ref, ref) {
     dropAlign: dropAlign,
     dropTarget: dropTarget,
     alignSelf: alignSelf,
-    tabIndex: "0"
+    tabIndex: "0",
+    "aria-labelledby": ariaLabelledByProp || ariaLabelledBy
   }), /*#__PURE__*/React.createElement(Box, {
     align: "center",
     direction: "row",
