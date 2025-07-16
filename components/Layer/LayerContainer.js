@@ -3,7 +3,7 @@
 exports.__esModule = true;
 exports.LayerContainer = void 0;
 var _react = _interopRequireWildcard(require("react"));
-var _styledComponents = require("styled-components");
+var _styledComponents = _interopRequireWildcard(require("styled-components"));
 var _FocusedContainer = require("../FocusedContainer");
 var _Keyboard = require("../Keyboard");
 var _ResponsiveContext = require("../../contexts/ResponsiveContext");
@@ -17,6 +17,14 @@ var _excluded = ["background", "children", "full", "id", "margin", "modal", "onC
 function _interopRequireWildcard(e, t) { if ("function" == typeof WeakMap) var r = new WeakMap(), n = new WeakMap(); return (_interopRequireWildcard = function _interopRequireWildcard(e, t) { if (!t && e && e.__esModule) return e; var o, i, f = { __proto__: null, "default": e }; if (null === e || "object" != typeof e && "function" != typeof e) return f; if (o = t ? n : r) { if (o.has(e)) return o.get(e); o.set(e, f); } for (var _t in e) "default" !== _t && {}.hasOwnProperty.call(e, _t) && ((i = (o = Object.defineProperty) && Object.getOwnPropertyDescriptor(e, _t)) && (i.get || i.set) ? o(f, _t, i) : f[_t] = e[_t]); return f; })(e, t); }
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (-1 !== e.indexOf(n)) continue; t[n] = r[n]; } return t; }
+// The FocusSpan ensures the LayerContainer has focus when
+// it is opened for user to start tabbing inside it.
+// It helps for escaping the LayerContainer using the keyboard.
+// It is hidden visually but still part of the accessibility tree.
+var FocusSpan = _styledComponents["default"].span.withConfig(_utils.styledComponentsConfig).withConfig({
+  displayName: "LayerContainer__FocusSpan",
+  componentId: "sc-1srj14c-0"
+})(["width:0;height:0;overflow:hidden;position:absolute;clip-path:inset(50%);white-space:nowrap;border:0;&:focus{outline:none;}"]);
 var LayerContainer = exports.LayerContainer = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
   var background = _ref.background,
     children = _ref.children,
@@ -45,6 +53,7 @@ var LayerContainer = exports.LayerContainer = /*#__PURE__*/(0, _react.forwardRef
   // should not be supported in v3
   var _useContext = (0, _react.useContext)(_OptionsContext.OptionsContext),
     layerOptions = _useContext.layer;
+  var focusSpanRef = (0, _react.useRef)();
   var containerRef = (0, _react.useRef)();
   var layerRef = (0, _react.useRef)();
   var portalContext = (0, _react.useContext)(_utils.PortalContext);
@@ -82,8 +91,7 @@ var LayerContainer = exports.LayerContainer = /*#__PURE__*/(0, _react.forwardRef
       // Once layer is open we make sure it has focus so that you
       // can start tabbing inside the layer. If the caller put focus
       // on an element already, we honor that. Otherwise, we put
-      // the focus within the layer. Look at FocusedContainer.js for
-      // more details.
+      // the focus on the hidden span.
       var element = document.activeElement;
       while (element) {
         if (element === containerRef.current) {
@@ -92,14 +100,11 @@ var LayerContainer = exports.LayerContainer = /*#__PURE__*/(0, _react.forwardRef
         }
         element = element.parentElement;
       }
+      if (modal && !element && focusSpanRef.current) {
+        focusSpanRef.current.focus();
+      }
     }
   }, [modal, position, ref]);
-  (0, _react.useEffect)(function () {
-    if (position !== 'hidden') {
-      var node = layerRef.current || containerRef.current || ref.current;
-      if (node && node.scrollIntoView) node.scrollIntoView();
-    }
-  }, [position, ref]);
   (0, _react.useEffect)(function () {
     var onClickDocument = function onClickDocument(event) {
       // determine which portal id the target is in, if any
@@ -119,7 +124,6 @@ var LayerContainer = exports.LayerContainer = /*#__PURE__*/(0, _react.forwardRef
         onClickOutside(event);
       }
     };
-
     // if user provides an onClickOutside function, listen for mousedown event
     if (onClickOutside) {
       document.addEventListener('mousedown', onClickDocument);
@@ -129,7 +133,6 @@ var LayerContainer = exports.LayerContainer = /*#__PURE__*/(0, _react.forwardRef
         var windowWidth = window.innerWidth;
         var windowHeight = window.innerHeight;
         var target = (0, _utils.findVisibleParent)(layerTarget);
-
         // affects StyledLayer
         var layer = layerRef.current;
         if (layer && target) {
@@ -138,11 +141,9 @@ var LayerContainer = exports.LayerContainer = /*#__PURE__*/(0, _react.forwardRef
           layer.style.top = '';
           layer.style.bottom = '';
           layer.style.width = '';
-
           // get bounds
           var targetRect = target.getBoundingClientRect();
           var layerRect = layer.getBoundingClientRect();
-
           // ensure that layer moves with the target
           layer.style.left = targetRect.left + "px";
           layer.style.right = windowWidth - targetRect.right + "px";
@@ -191,6 +192,9 @@ var LayerContainer = exports.LayerContainer = /*#__PURE__*/(0, _react.forwardRef
     // or outside of the layer
     ,
     "data-g-portal-id": portalId
+  }), /*#__PURE__*/_react["default"].createElement(FocusSpan, {
+    ref: focusSpanRef,
+    tabIndex: "-1"
   }), children);
   content = /*#__PURE__*/_react["default"].createElement(_StyledLayer.StyledLayer, _extends({
     ref: layerRef,

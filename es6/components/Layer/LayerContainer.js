@@ -2,16 +2,25 @@ var _excluded = ["background", "children", "full", "id", "margin", "modal", "onC
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (-1 !== e.indexOf(n)) continue; t[n] = r[n]; } return t; }
 import React, { forwardRef, useContext, useEffect, useMemo, useRef } from 'react';
-import { ThemeContext } from 'styled-components';
+import styled, { ThemeContext } from 'styled-components';
 import { FocusedContainer } from '../FocusedContainer';
 import { Keyboard } from '../Keyboard';
 import { ResponsiveContext } from '../../contexts/ResponsiveContext';
 import { OptionsContext } from '../../contexts/OptionsContext';
 import { ContainerTargetContext } from '../../contexts/ContainerTargetContext';
 import { useAnalytics } from '../../contexts/AnalyticsContext';
-import { backgroundIsDark, findVisibleParent, PortalContext } from '../../utils';
+import { backgroundIsDark, findVisibleParent, PortalContext, styledComponentsConfig } from '../../utils';
 import { StyledLayer, StyledContainer, StyledOverlay } from './StyledLayer';
 import { useThemeValue } from '../../utils/useThemeValue';
+
+// The FocusSpan ensures the LayerContainer has focus when
+// it is opened for user to start tabbing inside it.
+// It helps for escaping the LayerContainer using the keyboard.
+// It is hidden visually but still part of the accessibility tree.
+var FocusSpan = styled.span.withConfig(styledComponentsConfig).withConfig({
+  displayName: "LayerContainer__FocusSpan",
+  componentId: "sc-1srj14c-0"
+})(["width:0;height:0;overflow:hidden;position:absolute;clip-path:inset(50%);white-space:nowrap;border:0;&:focus{outline:none;}"]);
 var LayerContainer = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var background = _ref.background,
     children = _ref.children,
@@ -40,6 +49,7 @@ var LayerContainer = /*#__PURE__*/forwardRef(function (_ref, ref) {
   // should not be supported in v3
   var _useContext = useContext(OptionsContext),
     layerOptions = _useContext.layer;
+  var focusSpanRef = useRef();
   var containerRef = useRef();
   var layerRef = useRef();
   var portalContext = useContext(PortalContext);
@@ -77,8 +87,7 @@ var LayerContainer = /*#__PURE__*/forwardRef(function (_ref, ref) {
       // Once layer is open we make sure it has focus so that you
       // can start tabbing inside the layer. If the caller put focus
       // on an element already, we honor that. Otherwise, we put
-      // the focus within the layer. Look at FocusedContainer.js for
-      // more details.
+      // the focus on the hidden span.
       var element = document.activeElement;
       while (element) {
         if (element === containerRef.current) {
@@ -87,14 +96,11 @@ var LayerContainer = /*#__PURE__*/forwardRef(function (_ref, ref) {
         }
         element = element.parentElement;
       }
+      if (modal && !element && focusSpanRef.current) {
+        focusSpanRef.current.focus();
+      }
     }
   }, [modal, position, ref]);
-  useEffect(function () {
-    if (position !== 'hidden') {
-      var node = layerRef.current || containerRef.current || ref.current;
-      if (node && node.scrollIntoView) node.scrollIntoView();
-    }
-  }, [position, ref]);
   useEffect(function () {
     var onClickDocument = function onClickDocument(event) {
       // determine which portal id the target is in, if any
@@ -114,7 +120,6 @@ var LayerContainer = /*#__PURE__*/forwardRef(function (_ref, ref) {
         onClickOutside(event);
       }
     };
-
     // if user provides an onClickOutside function, listen for mousedown event
     if (onClickOutside) {
       document.addEventListener('mousedown', onClickDocument);
@@ -124,7 +129,6 @@ var LayerContainer = /*#__PURE__*/forwardRef(function (_ref, ref) {
         var windowWidth = window.innerWidth;
         var windowHeight = window.innerHeight;
         var target = findVisibleParent(layerTarget);
-
         // affects StyledLayer
         var layer = layerRef.current;
         if (layer && target) {
@@ -133,11 +137,9 @@ var LayerContainer = /*#__PURE__*/forwardRef(function (_ref, ref) {
           layer.style.top = '';
           layer.style.bottom = '';
           layer.style.width = '';
-
           // get bounds
           var targetRect = target.getBoundingClientRect();
           var layerRect = layer.getBoundingClientRect();
-
           // ensure that layer moves with the target
           layer.style.left = targetRect.left + "px";
           layer.style.right = windowWidth - targetRect.right + "px";
@@ -186,6 +188,9 @@ var LayerContainer = /*#__PURE__*/forwardRef(function (_ref, ref) {
     // or outside of the layer
     ,
     "data-g-portal-id": portalId
+  }), /*#__PURE__*/React.createElement(FocusSpan, {
+    ref: focusSpanRef,
+    tabIndex: "-1"
   }), children);
   content = /*#__PURE__*/React.createElement(StyledLayer, _extends({
     ref: layerRef,
