@@ -57,7 +57,7 @@ exports[`Layer animation fadeIn 1`] = `
   height: 0;
   overflow: hidden;
   position: absolute;
-  clip: rect(0,0,0,0);
+  clip-path: inset(50%);
   white-space: nowrap;
   border: 0;
 }
@@ -105,7 +105,7 @@ exports[`Layer animation fadeIn 1`] = `
     data-g-portal-id="0"
     id="animation-test"
   >
-    <a
+    <span
       class="c3"
       tabindex="-1"
     />
@@ -215,7 +215,7 @@ exports[`Layer animation false 1`] = `
   height: 0;
   overflow: hidden;
   position: absolute;
-  clip: rect(0,0,0,0);
+  clip-path: inset(50%);
   white-space: nowrap;
   border: 0;
 }
@@ -263,7 +263,7 @@ exports[`Layer animation false 1`] = `
     data-g-portal-id="0"
     id="animation-test"
   >
-    <a
+    <span
       class="c3"
       tabindex="-1"
     />
@@ -374,7 +374,7 @@ exports[`Layer animation slide 1`] = `
   height: 0;
   overflow: hidden;
   position: absolute;
-  clip: rect(0,0,0,0);
+  clip-path: inset(50%);
   white-space: nowrap;
   border: 0;
 }
@@ -422,7 +422,7 @@ exports[`Layer animation slide 1`] = `
     data-g-portal-id="0"
     id="animation-test"
   >
-    <a
+    <span
       class="c3"
       tabindex="-1"
     />
@@ -533,7 +533,7 @@ exports[`Layer animation true 1`] = `
   height: 0;
   overflow: hidden;
   position: absolute;
-  clip: rect(0,0,0,0);
+  clip-path: inset(50%);
   white-space: nowrap;
   border: 0;
 }
@@ -581,7 +581,7 @@ exports[`Layer animation true 1`] = `
     data-g-portal-id="0"
     id="animation-test"
   >
-    <a
+    <span
       class="c3"
       tabindex="-1"
     />
@@ -692,7 +692,7 @@ exports[`Layer custom margin 1`] = `
   height: 0;
   overflow: hidden;
   position: absolute;
-  clip: rect(0,0,0,0);
+  clip-path: inset(50%);
   white-space: nowrap;
   border: 0;
 }
@@ -740,7 +740,7 @@ exports[`Layer custom margin 1`] = `
     data-g-portal-id="0"
     id="margin-test"
   >
-    <a
+    <span
       class="c3"
       tabindex="-1"
     />
@@ -852,7 +852,7 @@ exports[`Layer custom theme 1`] = `
   height: 0;
   overflow: hidden;
   position: absolute;
-  clip: rect(0,0,0,0);
+  clip-path: inset(50%);
   white-space: nowrap;
   border: 0;
 }
@@ -900,7 +900,7 @@ exports[`Layer custom theme 1`] = `
     data-g-portal-id="0"
     id="custom-theme-test"
   >
-    <a
+    <span
       class="c3"
       tabindex="-1"
     />
@@ -1006,7 +1006,7 @@ exports[`Layer dark context 1`] = `
   height: 0;
   overflow: hidden;
   position: absolute;
-  clip: rect(0,0,0,0);
+  clip-path: inset(50%);
   white-space: nowrap;
   border: 0;
 }
@@ -1045,7 +1045,7 @@ exports[`Layer dark context 1`] = `
     data-g-portal-id="0"
     id="non-modal-test"
   >
-    <a
+    <span
       class="c2"
       tabindex="-1"
     />
@@ -1124,7 +1124,7 @@ exports[`Layer focus on layer 1`] = `
   height: 0;
   overflow: hidden;
   position: absolute;
-  clip: rect(0,0,0,0);
+  clip-path: inset(50%);
   white-space: nowrap;
   border: 0;
 }
@@ -1157,7 +1157,7 @@ exports[`Layer focus on layer 1`] = `
   data-g-portal-id="0"
   data-testid="focus-layer-test"
 >
-  <a
+  <span
     class="c1"
     tabindex="-1"
   />
@@ -1217,7 +1217,7 @@ exports[`Layer hidden 1`] = `
   height: 0;
   overflow: hidden;
   position: absolute;
-  clip: rect(0,0,0,0);
+  clip-path: inset(50%);
   white-space: nowrap;
   border: 0;
 }
@@ -1256,7 +1256,7 @@ exports[`Layer hidden 1`] = `
     data-g-portal-id="0"
     id="hidden-test"
   >
-    <a
+    <span
       class="c3"
       tabindex="-1"
     />
@@ -1305,8 +1305,8 @@ exports[`Layer hidden 3`] = `
     data-g-portal-id="0"
     id="hidden-test"
   >
-    <a
-      class="LayerContainer__HiddenAnchor-sc-1srj14c-0 leEOlN"
+    <span
+      class="LayerContainer__FocusAnchor-sc-1srj14c-0 kGYrZG"
       tabindex="-1"
     />
     This is a layer
@@ -1410,7 +1410,7 @@ exports[`Layer invoke onClickOutside when modal={false} 1`] = `
   height: 0;
   overflow: hidden;
   position: absolute;
-  clip: rect(0,0,0,0);
+  clip-path: inset(50%);
   white-space: nowrap;
   border: 0;
 }
@@ -1449,7 +1449,7 @@ exports[`Layer invoke onClickOutside when modal={false} 1`] = `
     data-g-portal-id="0"
     id="layer-node"
   >
-    <a
+    <span
       class="c2"
       tabindex="-1"
     />
@@ -1559,7 +1559,7 @@ exports[`Layer invoke onClickOutside when modal={false} and layer has target 1`]
   height: 0;
   overflow: hidden;
   position: absolute;
-  clip: rect(0,0,0,0);
+  clip-path: inset(50%);
   white-space: nowrap;
   border: 0;
 }
@@ -1590,7 +1590,7 @@ exports[`Layer invoke onClickOutside when modal={false} and layer has target 1`]
     data-g-portal-id="0"
     id="target-test"
   >
-    <a
+    <span
       class="c2"
       tabindex="-1"
     />
@@ -1681,7 +1681,7 @@ exports[`Layer invoke onClickOutside when modal={true} 1`] = `
   height: 0;
   overflow: hidden;
   position: absolute;
-  clip: rect(0,0,0,0);
+  clip-path: inset(50%);
   white-space: nowrap;
   border: 0;
 }
@@ -1729,7 +1729,7 @@ exports[`Layer invoke onClickOutside when modal={true} 1`] = `
     data-g-portal-id="0"
     id="layer-node"
   >
-    <a
+    <span
       class="c3"
       tabindex="-1"
     />
@@ -1844,7 +1844,7 @@ exports[`Layer invoke onClickOutside when modal={true} and layer has target 1`] 
   height: 0;
   overflow: hidden;
   position: absolute;
-  clip: rect(0,0,0,0);
+  clip-path: inset(50%);
   white-space: nowrap;
   border: 0;
 }
@@ -1884,7 +1884,7 @@ exports[`Layer invoke onClickOutside when modal={true} and layer has target 1`] 
     data-g-portal-id="0"
     id="target-test"
   >
-    <a
+    <span
       class="c3"
       tabindex="-1"
     />
@@ -2151,7 +2151,7 @@ exports[`Layer invokes onEsc when modal={false} 1`] = `
   height: 0;
   overflow: hidden;
   position: absolute;
-  clip: rect(0,0,0,0);
+  clip-path: inset(50%);
   white-space: nowrap;
   border: 0;
 }
@@ -2209,7 +2209,7 @@ exports[`Layer invokes onEsc when modal={false} 1`] = `
     data-g-portal-id="0"
     id="esc-test"
   >
-    <a
+    <span
       class="c2"
       tabindex="-1"
     />
@@ -2423,7 +2423,7 @@ exports[`Layer margin large 1`] = `
   height: 0;
   overflow: hidden;
   position: absolute;
-  clip: rect(0,0,0,0);
+  clip-path: inset(50%);
   white-space: nowrap;
   border: 0;
 }
@@ -2471,7 +2471,7 @@ exports[`Layer margin large 1`] = `
     data-g-portal-id="0"
     id="margin-test"
   >
-    <a
+    <span
       class="c3"
       tabindex="-1"
     />
@@ -2582,7 +2582,7 @@ exports[`Layer margin medium 1`] = `
   height: 0;
   overflow: hidden;
   position: absolute;
-  clip: rect(0,0,0,0);
+  clip-path: inset(50%);
   white-space: nowrap;
   border: 0;
 }
@@ -2630,7 +2630,7 @@ exports[`Layer margin medium 1`] = `
     data-g-portal-id="0"
     id="margin-test"
   >
-    <a
+    <span
       class="c3"
       tabindex="-1"
     />
@@ -2741,7 +2741,7 @@ exports[`Layer margin none 1`] = `
   height: 0;
   overflow: hidden;
   position: absolute;
-  clip: rect(0,0,0,0);
+  clip-path: inset(50%);
   white-space: nowrap;
   border: 0;
 }
@@ -2789,7 +2789,7 @@ exports[`Layer margin none 1`] = `
     data-g-portal-id="0"
     id="margin-test"
   >
-    <a
+    <span
       class="c3"
       tabindex="-1"
     />
@@ -2900,7 +2900,7 @@ exports[`Layer margin small 1`] = `
   height: 0;
   overflow: hidden;
   position: absolute;
-  clip: rect(0,0,0,0);
+  clip-path: inset(50%);
   white-space: nowrap;
   border: 0;
 }
@@ -2948,7 +2948,7 @@ exports[`Layer margin small 1`] = `
     data-g-portal-id="0"
     id="margin-test"
   >
-    <a
+    <span
       class="c3"
       tabindex="-1"
     />
@@ -3059,7 +3059,7 @@ exports[`Layer margin xsmall 1`] = `
   height: 0;
   overflow: hidden;
   position: absolute;
-  clip: rect(0,0,0,0);
+  clip-path: inset(50%);
   white-space: nowrap;
   border: 0;
 }
@@ -3107,7 +3107,7 @@ exports[`Layer margin xsmall 1`] = `
     data-g-portal-id="0"
     id="margin-test"
   >
-    <a
+    <span
       class="c3"
       tabindex="-1"
     />
@@ -3213,7 +3213,7 @@ exports[`Layer non-modal 1`] = `
   height: 0;
   overflow: hidden;
   position: absolute;
-  clip: rect(0,0,0,0);
+  clip-path: inset(50%);
   white-space: nowrap;
   border: 0;
 }
@@ -3252,7 +3252,7 @@ exports[`Layer non-modal 1`] = `
     data-g-portal-id="0"
     id="non-modal-test"
   >
-    <a
+    <span
       class="c2"
       tabindex="-1"
     />
@@ -3331,7 +3331,7 @@ exports[`Layer not steal focus from an autofocus focusable element 1`] = `
   height: 0;
   overflow: hidden;
   position: absolute;
-  clip: rect(0,0,0,0);
+  clip-path: inset(50%);
   white-space: nowrap;
   border: 0;
 }
@@ -3364,7 +3364,7 @@ exports[`Layer not steal focus from an autofocus focusable element 1`] = `
   data-g-portal-id="0"
   data-testid="focus-layer-input-test"
 >
-  <a
+  <span
     class="c1"
     tabindex="-1"
   />
@@ -3432,7 +3432,7 @@ exports[`Layer plain 1`] = `
   height: 0;
   overflow: hidden;
   position: absolute;
-  clip: rect(0,0,0,0);
+  clip-path: inset(50%);
   white-space: nowrap;
   border: 0;
 }
@@ -3480,7 +3480,7 @@ exports[`Layer plain 1`] = `
     data-g-portal-id="0"
     id="plain-test"
   >
-    <a
+    <span
       class="c3"
       tabindex="-1"
     />
@@ -3591,7 +3591,7 @@ exports[`Layer position: bottom - full: false 1`] = `
   height: 0;
   overflow: hidden;
   position: absolute;
-  clip: rect(0,0,0,0);
+  clip-path: inset(50%);
   white-space: nowrap;
   border: 0;
 }
@@ -3639,7 +3639,7 @@ exports[`Layer position: bottom - full: false 1`] = `
     data-g-portal-id="0"
     id="position-full-test"
   >
-    <a
+    <span
       class="c3"
       tabindex="-1"
     />
@@ -3751,7 +3751,7 @@ exports[`Layer position: bottom - full: horizontal 1`] = `
   height: 0;
   overflow: hidden;
   position: absolute;
-  clip: rect(0,0,0,0);
+  clip-path: inset(50%);
   white-space: nowrap;
   border: 0;
 }
@@ -3799,7 +3799,7 @@ exports[`Layer position: bottom - full: horizontal 1`] = `
     data-g-portal-id="0"
     id="position-full-test"
   >
-    <a
+    <span
       class="c3"
       tabindex="-1"
     />
@@ -3912,7 +3912,7 @@ exports[`Layer position: bottom - full: true 1`] = `
   height: 0;
   overflow: hidden;
   position: absolute;
-  clip: rect(0,0,0,0);
+  clip-path: inset(50%);
   white-space: nowrap;
   border: 0;
 }
@@ -3960,7 +3960,7 @@ exports[`Layer position: bottom - full: true 1`] = `
     data-g-portal-id="0"
     id="position-full-test"
   >
-    <a
+    <span
       class="c3"
       tabindex="-1"
     />
@@ -4072,7 +4072,7 @@ exports[`Layer position: bottom - full: vertical 1`] = `
   height: 0;
   overflow: hidden;
   position: absolute;
-  clip: rect(0,0,0,0);
+  clip-path: inset(50%);
   white-space: nowrap;
   border: 0;
 }
@@ -4120,7 +4120,7 @@ exports[`Layer position: bottom - full: vertical 1`] = `
     data-g-portal-id="0"
     id="position-full-test"
   >
-    <a
+    <span
       class="c3"
       tabindex="-1"
     />
@@ -4231,7 +4231,7 @@ exports[`Layer position: bottom-left - full: false 1`] = `
   height: 0;
   overflow: hidden;
   position: absolute;
-  clip: rect(0,0,0,0);
+  clip-path: inset(50%);
   white-space: nowrap;
   border: 0;
 }
@@ -4279,7 +4279,7 @@ exports[`Layer position: bottom-left - full: false 1`] = `
     data-g-portal-id="0"
     id="position-full-test"
   >
-    <a
+    <span
       class="c3"
       tabindex="-1"
     />
@@ -4391,7 +4391,7 @@ exports[`Layer position: bottom-left - full: horizontal 1`] = `
   height: 0;
   overflow: hidden;
   position: absolute;
-  clip: rect(0,0,0,0);
+  clip-path: inset(50%);
   white-space: nowrap;
   border: 0;
 }
@@ -4439,7 +4439,7 @@ exports[`Layer position: bottom-left - full: horizontal 1`] = `
     data-g-portal-id="0"
     id="position-full-test"
   >
-    <a
+    <span
       class="c3"
       tabindex="-1"
     />
@@ -4552,7 +4552,7 @@ exports[`Layer position: bottom-left - full: true 1`] = `
   height: 0;
   overflow: hidden;
   position: absolute;
-  clip: rect(0,0,0,0);
+  clip-path: inset(50%);
   white-space: nowrap;
   border: 0;
 }
@@ -4600,7 +4600,7 @@ exports[`Layer position: bottom-left - full: true 1`] = `
     data-g-portal-id="0"
     id="position-full-test"
   >
-    <a
+    <span
       class="c3"
       tabindex="-1"
     />
@@ -4712,7 +4712,7 @@ exports[`Layer position: bottom-left - full: vertical 1`] = `
   height: 0;
   overflow: hidden;
   position: absolute;
-  clip: rect(0,0,0,0);
+  clip-path: inset(50%);
   white-space: nowrap;
   border: 0;
 }
@@ -4760,7 +4760,7 @@ exports[`Layer position: bottom-left - full: vertical 1`] = `
     data-g-portal-id="0"
     id="position-full-test"
   >
-    <a
+    <span
       class="c3"
       tabindex="-1"
     />
@@ -4871,7 +4871,7 @@ exports[`Layer position: bottom-right - full: false 1`] = `
   height: 0;
   overflow: hidden;
   position: absolute;
-  clip: rect(0,0,0,0);
+  clip-path: inset(50%);
   white-space: nowrap;
   border: 0;
 }
@@ -4919,7 +4919,7 @@ exports[`Layer position: bottom-right - full: false 1`] = `
     data-g-portal-id="0"
     id="position-full-test"
   >
-    <a
+    <span
       class="c3"
       tabindex="-1"
     />
@@ -5031,7 +5031,7 @@ exports[`Layer position: bottom-right - full: horizontal 1`] = `
   height: 0;
   overflow: hidden;
   position: absolute;
-  clip: rect(0,0,0,0);
+  clip-path: inset(50%);
   white-space: nowrap;
   border: 0;
 }
@@ -5079,7 +5079,7 @@ exports[`Layer position: bottom-right - full: horizontal 1`] = `
     data-g-portal-id="0"
     id="position-full-test"
   >
-    <a
+    <span
       class="c3"
       tabindex="-1"
     />
@@ -5192,7 +5192,7 @@ exports[`Layer position: bottom-right - full: true 1`] = `
   height: 0;
   overflow: hidden;
   position: absolute;
-  clip: rect(0,0,0,0);
+  clip-path: inset(50%);
   white-space: nowrap;
   border: 0;
 }
@@ -5240,7 +5240,7 @@ exports[`Layer position: bottom-right - full: true 1`] = `
     data-g-portal-id="0"
     id="position-full-test"
   >
-    <a
+    <span
       class="c3"
       tabindex="-1"
     />
@@ -5352,7 +5352,7 @@ exports[`Layer position: bottom-right - full: vertical 1`] = `
   height: 0;
   overflow: hidden;
   position: absolute;
-  clip: rect(0,0,0,0);
+  clip-path: inset(50%);
   white-space: nowrap;
   border: 0;
 }
@@ -5400,7 +5400,7 @@ exports[`Layer position: bottom-right - full: vertical 1`] = `
     data-g-portal-id="0"
     id="position-full-test"
   >
-    <a
+    <span
       class="c3"
       tabindex="-1"
     />
@@ -5511,7 +5511,7 @@ exports[`Layer position: center - full: false 1`] = `
   height: 0;
   overflow: hidden;
   position: absolute;
-  clip: rect(0,0,0,0);
+  clip-path: inset(50%);
   white-space: nowrap;
   border: 0;
 }
@@ -5559,7 +5559,7 @@ exports[`Layer position: center - full: false 1`] = `
     data-g-portal-id="0"
     id="position-full-test"
   >
-    <a
+    <span
       class="c3"
       tabindex="-1"
     />
@@ -5671,7 +5671,7 @@ exports[`Layer position: center - full: horizontal 1`] = `
   height: 0;
   overflow: hidden;
   position: absolute;
-  clip: rect(0,0,0,0);
+  clip-path: inset(50%);
   white-space: nowrap;
   border: 0;
 }
@@ -5719,7 +5719,7 @@ exports[`Layer position: center - full: horizontal 1`] = `
     data-g-portal-id="0"
     id="position-full-test"
   >
-    <a
+    <span
       class="c3"
       tabindex="-1"
     />
@@ -5831,7 +5831,7 @@ exports[`Layer position: center - full: true 1`] = `
   height: 0;
   overflow: hidden;
   position: absolute;
-  clip: rect(0,0,0,0);
+  clip-path: inset(50%);
   white-space: nowrap;
   border: 0;
 }
@@ -5879,7 +5879,7 @@ exports[`Layer position: center - full: true 1`] = `
     data-g-portal-id="0"
     id="position-full-test"
   >
-    <a
+    <span
       class="c3"
       tabindex="-1"
     />
@@ -5991,7 +5991,7 @@ exports[`Layer position: center - full: vertical 1`] = `
   height: 0;
   overflow: hidden;
   position: absolute;
-  clip: rect(0,0,0,0);
+  clip-path: inset(50%);
   white-space: nowrap;
   border: 0;
 }
@@ -6039,7 +6039,7 @@ exports[`Layer position: center - full: vertical 1`] = `
     data-g-portal-id="0"
     id="position-full-test"
   >
-    <a
+    <span
       class="c3"
       tabindex="-1"
     />
@@ -6150,7 +6150,7 @@ exports[`Layer position: end - full: false 1`] = `
   height: 0;
   overflow: hidden;
   position: absolute;
-  clip: rect(0,0,0,0);
+  clip-path: inset(50%);
   white-space: nowrap;
   border: 0;
 }
@@ -6198,7 +6198,7 @@ exports[`Layer position: end - full: false 1`] = `
     data-g-portal-id="0"
     id="position-full-test"
   >
-    <a
+    <span
       class="c3"
       tabindex="-1"
     />
@@ -6310,7 +6310,7 @@ exports[`Layer position: end - full: horizontal 1`] = `
   height: 0;
   overflow: hidden;
   position: absolute;
-  clip: rect(0,0,0,0);
+  clip-path: inset(50%);
   white-space: nowrap;
   border: 0;
 }
@@ -6358,7 +6358,7 @@ exports[`Layer position: end - full: horizontal 1`] = `
     data-g-portal-id="0"
     id="position-full-test"
   >
-    <a
+    <span
       class="c3"
       tabindex="-1"
     />
@@ -6471,7 +6471,7 @@ exports[`Layer position: end - full: true 1`] = `
   height: 0;
   overflow: hidden;
   position: absolute;
-  clip: rect(0,0,0,0);
+  clip-path: inset(50%);
   white-space: nowrap;
   border: 0;
 }
@@ -6519,7 +6519,7 @@ exports[`Layer position: end - full: true 1`] = `
     data-g-portal-id="0"
     id="position-full-test"
   >
-    <a
+    <span
       class="c3"
       tabindex="-1"
     />
@@ -6631,7 +6631,7 @@ exports[`Layer position: end - full: vertical 1`] = `
   height: 0;
   overflow: hidden;
   position: absolute;
-  clip: rect(0,0,0,0);
+  clip-path: inset(50%);
   white-space: nowrap;
   border: 0;
 }
@@ -6679,7 +6679,7 @@ exports[`Layer position: end - full: vertical 1`] = `
     data-g-portal-id="0"
     id="position-full-test"
   >
-    <a
+    <span
       class="c3"
       tabindex="-1"
     />
@@ -6790,7 +6790,7 @@ exports[`Layer position: left - full: false 1`] = `
   height: 0;
   overflow: hidden;
   position: absolute;
-  clip: rect(0,0,0,0);
+  clip-path: inset(50%);
   white-space: nowrap;
   border: 0;
 }
@@ -6838,7 +6838,7 @@ exports[`Layer position: left - full: false 1`] = `
     data-g-portal-id="0"
     id="position-full-test"
   >
-    <a
+    <span
       class="c3"
       tabindex="-1"
     />
@@ -6950,7 +6950,7 @@ exports[`Layer position: left - full: horizontal 1`] = `
   height: 0;
   overflow: hidden;
   position: absolute;
-  clip: rect(0,0,0,0);
+  clip-path: inset(50%);
   white-space: nowrap;
   border: 0;
 }
@@ -6998,7 +6998,7 @@ exports[`Layer position: left - full: horizontal 1`] = `
     data-g-portal-id="0"
     id="position-full-test"
   >
-    <a
+    <span
       class="c3"
       tabindex="-1"
     />
@@ -7111,7 +7111,7 @@ exports[`Layer position: left - full: true 1`] = `
   height: 0;
   overflow: hidden;
   position: absolute;
-  clip: rect(0,0,0,0);
+  clip-path: inset(50%);
   white-space: nowrap;
   border: 0;
 }
@@ -7159,7 +7159,7 @@ exports[`Layer position: left - full: true 1`] = `
     data-g-portal-id="0"
     id="position-full-test"
   >
-    <a
+    <span
       class="c3"
       tabindex="-1"
     />
@@ -7271,7 +7271,7 @@ exports[`Layer position: left - full: vertical 1`] = `
   height: 0;
   overflow: hidden;
   position: absolute;
-  clip: rect(0,0,0,0);
+  clip-path: inset(50%);
   white-space: nowrap;
   border: 0;
 }
@@ -7319,7 +7319,7 @@ exports[`Layer position: left - full: vertical 1`] = `
     data-g-portal-id="0"
     id="position-full-test"
   >
-    <a
+    <span
       class="c3"
       tabindex="-1"
     />
@@ -7430,7 +7430,7 @@ exports[`Layer position: right - full: false 1`] = `
   height: 0;
   overflow: hidden;
   position: absolute;
-  clip: rect(0,0,0,0);
+  clip-path: inset(50%);
   white-space: nowrap;
   border: 0;
 }
@@ -7478,7 +7478,7 @@ exports[`Layer position: right - full: false 1`] = `
     data-g-portal-id="0"
     id="position-full-test"
   >
-    <a
+    <span
       class="c3"
       tabindex="-1"
     />
@@ -7590,7 +7590,7 @@ exports[`Layer position: right - full: horizontal 1`] = `
   height: 0;
   overflow: hidden;
   position: absolute;
-  clip: rect(0,0,0,0);
+  clip-path: inset(50%);
   white-space: nowrap;
   border: 0;
 }
@@ -7638,7 +7638,7 @@ exports[`Layer position: right - full: horizontal 1`] = `
     data-g-portal-id="0"
     id="position-full-test"
   >
-    <a
+    <span
       class="c3"
       tabindex="-1"
     />
@@ -7751,7 +7751,7 @@ exports[`Layer position: right - full: true 1`] = `
   height: 0;
   overflow: hidden;
   position: absolute;
-  clip: rect(0,0,0,0);
+  clip-path: inset(50%);
   white-space: nowrap;
   border: 0;
 }
@@ -7799,7 +7799,7 @@ exports[`Layer position: right - full: true 1`] = `
     data-g-portal-id="0"
     id="position-full-test"
   >
-    <a
+    <span
       class="c3"
       tabindex="-1"
     />
@@ -7911,7 +7911,7 @@ exports[`Layer position: right - full: vertical 1`] = `
   height: 0;
   overflow: hidden;
   position: absolute;
-  clip: rect(0,0,0,0);
+  clip-path: inset(50%);
   white-space: nowrap;
   border: 0;
 }
@@ -7959,7 +7959,7 @@ exports[`Layer position: right - full: vertical 1`] = `
     data-g-portal-id="0"
     id="position-full-test"
   >
-    <a
+    <span
       class="c3"
       tabindex="-1"
     />
@@ -8070,7 +8070,7 @@ exports[`Layer position: start - full: false 1`] = `
   height: 0;
   overflow: hidden;
   position: absolute;
-  clip: rect(0,0,0,0);
+  clip-path: inset(50%);
   white-space: nowrap;
   border: 0;
 }
@@ -8118,7 +8118,7 @@ exports[`Layer position: start - full: false 1`] = `
     data-g-portal-id="0"
     id="position-full-test"
   >
-    <a
+    <span
       class="c3"
       tabindex="-1"
     />
@@ -8230,7 +8230,7 @@ exports[`Layer position: start - full: horizontal 1`] = `
   height: 0;
   overflow: hidden;
   position: absolute;
-  clip: rect(0,0,0,0);
+  clip-path: inset(50%);
   white-space: nowrap;
   border: 0;
 }
@@ -8278,7 +8278,7 @@ exports[`Layer position: start - full: horizontal 1`] = `
     data-g-portal-id="0"
     id="position-full-test"
   >
-    <a
+    <span
       class="c3"
       tabindex="-1"
     />
@@ -8391,7 +8391,7 @@ exports[`Layer position: start - full: true 1`] = `
   height: 0;
   overflow: hidden;
   position: absolute;
-  clip: rect(0,0,0,0);
+  clip-path: inset(50%);
   white-space: nowrap;
   border: 0;
 }
@@ -8439,7 +8439,7 @@ exports[`Layer position: start - full: true 1`] = `
     data-g-portal-id="0"
     id="position-full-test"
   >
-    <a
+    <span
       class="c3"
       tabindex="-1"
     />
@@ -8551,7 +8551,7 @@ exports[`Layer position: start - full: vertical 1`] = `
   height: 0;
   overflow: hidden;
   position: absolute;
-  clip: rect(0,0,0,0);
+  clip-path: inset(50%);
   white-space: nowrap;
   border: 0;
 }
@@ -8599,7 +8599,7 @@ exports[`Layer position: start - full: vertical 1`] = `
     data-g-portal-id="0"
     id="position-full-test"
   >
-    <a
+    <span
       class="c3"
       tabindex="-1"
     />
@@ -8710,7 +8710,7 @@ exports[`Layer position: top - full: false 1`] = `
   height: 0;
   overflow: hidden;
   position: absolute;
-  clip: rect(0,0,0,0);
+  clip-path: inset(50%);
   white-space: nowrap;
   border: 0;
 }
@@ -8758,7 +8758,7 @@ exports[`Layer position: top - full: false 1`] = `
     data-g-portal-id="0"
     id="position-full-test"
   >
-    <a
+    <span
       class="c3"
       tabindex="-1"
     />
@@ -8870,7 +8870,7 @@ exports[`Layer position: top - full: horizontal 1`] = `
   height: 0;
   overflow: hidden;
   position: absolute;
-  clip: rect(0,0,0,0);
+  clip-path: inset(50%);
   white-space: nowrap;
   border: 0;
 }
@@ -8918,7 +8918,7 @@ exports[`Layer position: top - full: horizontal 1`] = `
     data-g-portal-id="0"
     id="position-full-test"
   >
-    <a
+    <span
       class="c3"
       tabindex="-1"
     />
@@ -9031,7 +9031,7 @@ exports[`Layer position: top - full: true 1`] = `
   height: 0;
   overflow: hidden;
   position: absolute;
-  clip: rect(0,0,0,0);
+  clip-path: inset(50%);
   white-space: nowrap;
   border: 0;
 }
@@ -9079,7 +9079,7 @@ exports[`Layer position: top - full: true 1`] = `
     data-g-portal-id="0"
     id="position-full-test"
   >
-    <a
+    <span
       class="c3"
       tabindex="-1"
     />
@@ -9191,7 +9191,7 @@ exports[`Layer position: top - full: vertical 1`] = `
   height: 0;
   overflow: hidden;
   position: absolute;
-  clip: rect(0,0,0,0);
+  clip-path: inset(50%);
   white-space: nowrap;
   border: 0;
 }
@@ -9239,7 +9239,7 @@ exports[`Layer position: top - full: vertical 1`] = `
     data-g-portal-id="0"
     id="position-full-test"
   >
-    <a
+    <span
       class="c3"
       tabindex="-1"
     />
@@ -9350,7 +9350,7 @@ exports[`Layer position: top-left - full: false 1`] = `
   height: 0;
   overflow: hidden;
   position: absolute;
-  clip: rect(0,0,0,0);
+  clip-path: inset(50%);
   white-space: nowrap;
   border: 0;
 }
@@ -9398,7 +9398,7 @@ exports[`Layer position: top-left - full: false 1`] = `
     data-g-portal-id="0"
     id="position-full-test"
   >
-    <a
+    <span
       class="c3"
       tabindex="-1"
     />
@@ -9510,7 +9510,7 @@ exports[`Layer position: top-left - full: horizontal 1`] = `
   height: 0;
   overflow: hidden;
   position: absolute;
-  clip: rect(0,0,0,0);
+  clip-path: inset(50%);
   white-space: nowrap;
   border: 0;
 }
@@ -9558,7 +9558,7 @@ exports[`Layer position: top-left - full: horizontal 1`] = `
     data-g-portal-id="0"
     id="position-full-test"
   >
-    <a
+    <span
       class="c3"
       tabindex="-1"
     />
@@ -9671,7 +9671,7 @@ exports[`Layer position: top-left - full: true 1`] = `
   height: 0;
   overflow: hidden;
   position: absolute;
-  clip: rect(0,0,0,0);
+  clip-path: inset(50%);
   white-space: nowrap;
   border: 0;
 }
@@ -9719,7 +9719,7 @@ exports[`Layer position: top-left - full: true 1`] = `
     data-g-portal-id="0"
     id="position-full-test"
   >
-    <a
+    <span
       class="c3"
       tabindex="-1"
     />
@@ -9831,7 +9831,7 @@ exports[`Layer position: top-left - full: vertical 1`] = `
   height: 0;
   overflow: hidden;
   position: absolute;
-  clip: rect(0,0,0,0);
+  clip-path: inset(50%);
   white-space: nowrap;
   border: 0;
 }
@@ -9879,7 +9879,7 @@ exports[`Layer position: top-left - full: vertical 1`] = `
     data-g-portal-id="0"
     id="position-full-test"
   >
-    <a
+    <span
       class="c3"
       tabindex="-1"
     />
@@ -9990,7 +9990,7 @@ exports[`Layer position: top-right - full: false 1`] = `
   height: 0;
   overflow: hidden;
   position: absolute;
-  clip: rect(0,0,0,0);
+  clip-path: inset(50%);
   white-space: nowrap;
   border: 0;
 }
@@ -10038,7 +10038,7 @@ exports[`Layer position: top-right - full: false 1`] = `
     data-g-portal-id="0"
     id="position-full-test"
   >
-    <a
+    <span
       class="c3"
       tabindex="-1"
     />
@@ -10150,7 +10150,7 @@ exports[`Layer position: top-right - full: horizontal 1`] = `
   height: 0;
   overflow: hidden;
   position: absolute;
-  clip: rect(0,0,0,0);
+  clip-path: inset(50%);
   white-space: nowrap;
   border: 0;
 }
@@ -10198,7 +10198,7 @@ exports[`Layer position: top-right - full: horizontal 1`] = `
     data-g-portal-id="0"
     id="position-full-test"
   >
-    <a
+    <span
       class="c3"
       tabindex="-1"
     />
@@ -10311,7 +10311,7 @@ exports[`Layer position: top-right - full: true 1`] = `
   height: 0;
   overflow: hidden;
   position: absolute;
-  clip: rect(0,0,0,0);
+  clip-path: inset(50%);
   white-space: nowrap;
   border: 0;
 }
@@ -10359,7 +10359,7 @@ exports[`Layer position: top-right - full: true 1`] = `
     data-g-portal-id="0"
     id="position-full-test"
   >
-    <a
+    <span
       class="c3"
       tabindex="-1"
     />
@@ -10471,7 +10471,7 @@ exports[`Layer position: top-right - full: vertical 1`] = `
   height: 0;
   overflow: hidden;
   position: absolute;
-  clip: rect(0,0,0,0);
+  clip-path: inset(50%);
   white-space: nowrap;
   border: 0;
 }
@@ -10519,7 +10519,7 @@ exports[`Layer position: top-right - full: vertical 1`] = `
     data-g-portal-id="0"
     id="position-full-test"
   >
-    <a
+    <span
       class="c3"
       tabindex="-1"
     />
@@ -10630,7 +10630,7 @@ exports[`Layer renders outside grommet wrapper 1`] = `
   height: 0;
   overflow: hidden;
   position: absolute;
-  clip: rect(0,0,0,0);
+  clip-path: inset(50%);
   white-space: nowrap;
   border: 0;
 }
@@ -10678,7 +10678,7 @@ exports[`Layer renders outside grommet wrapper 1`] = `
     data-g-portal-id="0"
     id="grommet-test"
   >
-    <a
+    <span
       class="c3"
       tabindex="-1"
     />
@@ -10789,7 +10789,7 @@ exports[`Layer should apply background 1`] = `
   height: 0;
   overflow: hidden;
   position: absolute;
-  clip: rect(0,0,0,0);
+  clip-path: inset(50%);
   white-space: nowrap;
   border: 0;
 }
@@ -10837,7 +10837,7 @@ exports[`Layer should apply background 1`] = `
     data-g-portal-id="0"
     id="margin-test"
   >
-    <a
+    <span
       class="c3"
       tabindex="-1"
     />
@@ -10947,7 +10947,7 @@ exports[`Layer should only place id on StyledLayer when singleId === true 1`] = 
   height: 0;
   overflow: hidden;
   position: absolute;
-  clip: rect(0,0,0,0);
+  clip-path: inset(50%);
   white-space: nowrap;
   border: 0;
 }
@@ -10995,7 +10995,7 @@ exports[`Layer should only place id on StyledLayer when singleId === true 1`] = 
     data-g-portal-id="0"
     id="singleId-test__container"
   >
-    <a
+    <span
       class="c3"
       tabindex="-1"
     />
@@ -11107,7 +11107,7 @@ exports[`Layer should render correct border radius for position: bottom -
   height: 0;
   overflow: hidden;
   position: absolute;
-  clip: rect(0,0,0,0);
+  clip-path: inset(50%);
   white-space: nowrap;
   border: 0;
 }
@@ -11155,7 +11155,7 @@ exports[`Layer should render correct border radius for position: bottom -
     data-g-portal-id="0"
     id="border-radius-test"
   >
-    <a
+    <span
       class="c3"
       tabindex="-1"
     />
@@ -11269,7 +11269,7 @@ exports[`Layer should render correct border radius for position: bottom -
   height: 0;
   overflow: hidden;
   position: absolute;
-  clip: rect(0,0,0,0);
+  clip-path: inset(50%);
   white-space: nowrap;
   border: 0;
 }
@@ -11317,7 +11317,7 @@ exports[`Layer should render correct border radius for position: bottom -
     data-g-portal-id="0"
     id="border-radius-test"
   >
-    <a
+    <span
       class="c3"
       tabindex="-1"
     />
@@ -11432,7 +11432,7 @@ exports[`Layer should render correct border radius for position: bottom -
   height: 0;
   overflow: hidden;
   position: absolute;
-  clip: rect(0,0,0,0);
+  clip-path: inset(50%);
   white-space: nowrap;
   border: 0;
 }
@@ -11480,7 +11480,7 @@ exports[`Layer should render correct border radius for position: bottom -
     data-g-portal-id="0"
     id="border-radius-test"
   >
-    <a
+    <span
       class="c3"
       tabindex="-1"
     />
@@ -11594,7 +11594,7 @@ exports[`Layer should render correct border radius for position: bottom -
   height: 0;
   overflow: hidden;
   position: absolute;
-  clip: rect(0,0,0,0);
+  clip-path: inset(50%);
   white-space: nowrap;
   border: 0;
 }
@@ -11642,7 +11642,7 @@ exports[`Layer should render correct border radius for position: bottom -
     data-g-portal-id="0"
     id="border-radius-test"
   >
-    <a
+    <span
       class="c3"
       tabindex="-1"
     />
@@ -11755,7 +11755,7 @@ exports[`Layer should render correct border radius for position: bottom-left -
   height: 0;
   overflow: hidden;
   position: absolute;
-  clip: rect(0,0,0,0);
+  clip-path: inset(50%);
   white-space: nowrap;
   border: 0;
 }
@@ -11803,7 +11803,7 @@ exports[`Layer should render correct border radius for position: bottom-left -
     data-g-portal-id="0"
     id="border-radius-test"
   >
-    <a
+    <span
       class="c3"
       tabindex="-1"
     />
@@ -11917,7 +11917,7 @@ exports[`Layer should render correct border radius for position: bottom-left -
   height: 0;
   overflow: hidden;
   position: absolute;
-  clip: rect(0,0,0,0);
+  clip-path: inset(50%);
   white-space: nowrap;
   border: 0;
 }
@@ -11965,7 +11965,7 @@ exports[`Layer should render correct border radius for position: bottom-left -
     data-g-portal-id="0"
     id="border-radius-test"
   >
-    <a
+    <span
       class="c3"
       tabindex="-1"
     />
@@ -12080,7 +12080,7 @@ exports[`Layer should render correct border radius for position: bottom-left -
   height: 0;
   overflow: hidden;
   position: absolute;
-  clip: rect(0,0,0,0);
+  clip-path: inset(50%);
   white-space: nowrap;
   border: 0;
 }
@@ -12128,7 +12128,7 @@ exports[`Layer should render correct border radius for position: bottom-left -
     data-g-portal-id="0"
     id="border-radius-test"
   >
-    <a
+    <span
       class="c3"
       tabindex="-1"
     />
@@ -12242,7 +12242,7 @@ exports[`Layer should render correct border radius for position: bottom-left -
   height: 0;
   overflow: hidden;
   position: absolute;
-  clip: rect(0,0,0,0);
+  clip-path: inset(50%);
   white-space: nowrap;
   border: 0;
 }
@@ -12290,7 +12290,7 @@ exports[`Layer should render correct border radius for position: bottom-left -
     data-g-portal-id="0"
     id="border-radius-test"
   >
-    <a
+    <span
       class="c3"
       tabindex="-1"
     />
@@ -12403,7 +12403,7 @@ exports[`Layer should render correct border radius for position: bottom-right -
   height: 0;
   overflow: hidden;
   position: absolute;
-  clip: rect(0,0,0,0);
+  clip-path: inset(50%);
   white-space: nowrap;
   border: 0;
 }
@@ -12451,7 +12451,7 @@ exports[`Layer should render correct border radius for position: bottom-right -
     data-g-portal-id="0"
     id="border-radius-test"
   >
-    <a
+    <span
       class="c3"
       tabindex="-1"
     />
@@ -12565,7 +12565,7 @@ exports[`Layer should render correct border radius for position: bottom-right -
   height: 0;
   overflow: hidden;
   position: absolute;
-  clip: rect(0,0,0,0);
+  clip-path: inset(50%);
   white-space: nowrap;
   border: 0;
 }
@@ -12613,7 +12613,7 @@ exports[`Layer should render correct border radius for position: bottom-right -
     data-g-portal-id="0"
     id="border-radius-test"
   >
-    <a
+    <span
       class="c3"
       tabindex="-1"
     />
@@ -12728,7 +12728,7 @@ exports[`Layer should render correct border radius for position: bottom-right -
   height: 0;
   overflow: hidden;
   position: absolute;
-  clip: rect(0,0,0,0);
+  clip-path: inset(50%);
   white-space: nowrap;
   border: 0;
 }
@@ -12776,7 +12776,7 @@ exports[`Layer should render correct border radius for position: bottom-right -
     data-g-portal-id="0"
     id="border-radius-test"
   >
-    <a
+    <span
       class="c3"
       tabindex="-1"
     />
@@ -12890,7 +12890,7 @@ exports[`Layer should render correct border radius for position: bottom-right -
   height: 0;
   overflow: hidden;
   position: absolute;
-  clip: rect(0,0,0,0);
+  clip-path: inset(50%);
   white-space: nowrap;
   border: 0;
 }
@@ -12938,7 +12938,7 @@ exports[`Layer should render correct border radius for position: bottom-right -
     data-g-portal-id="0"
     id="border-radius-test"
   >
-    <a
+    <span
       class="c3"
       tabindex="-1"
     />
@@ -13051,7 +13051,7 @@ exports[`Layer should render correct border radius for position: center -
   height: 0;
   overflow: hidden;
   position: absolute;
-  clip: rect(0,0,0,0);
+  clip-path: inset(50%);
   white-space: nowrap;
   border: 0;
 }
@@ -13099,7 +13099,7 @@ exports[`Layer should render correct border radius for position: center -
     data-g-portal-id="0"
     id="border-radius-test"
   >
-    <a
+    <span
       class="c3"
       tabindex="-1"
     />
@@ -13213,7 +13213,7 @@ exports[`Layer should render correct border radius for position: center -
   height: 0;
   overflow: hidden;
   position: absolute;
-  clip: rect(0,0,0,0);
+  clip-path: inset(50%);
   white-space: nowrap;
   border: 0;
 }
@@ -13261,7 +13261,7 @@ exports[`Layer should render correct border radius for position: center -
     data-g-portal-id="0"
     id="border-radius-test"
   >
-    <a
+    <span
       class="c3"
       tabindex="-1"
     />
@@ -13375,7 +13375,7 @@ exports[`Layer should render correct border radius for position: center -
   height: 0;
   overflow: hidden;
   position: absolute;
-  clip: rect(0,0,0,0);
+  clip-path: inset(50%);
   white-space: nowrap;
   border: 0;
 }
@@ -13423,7 +13423,7 @@ exports[`Layer should render correct border radius for position: center -
     data-g-portal-id="0"
     id="border-radius-test"
   >
-    <a
+    <span
       class="c3"
       tabindex="-1"
     />
@@ -13537,7 +13537,7 @@ exports[`Layer should render correct border radius for position: center -
   height: 0;
   overflow: hidden;
   position: absolute;
-  clip: rect(0,0,0,0);
+  clip-path: inset(50%);
   white-space: nowrap;
   border: 0;
 }
@@ -13585,7 +13585,7 @@ exports[`Layer should render correct border radius for position: center -
     data-g-portal-id="0"
     id="border-radius-test"
   >
-    <a
+    <span
       class="c3"
       tabindex="-1"
     />
@@ -13699,7 +13699,7 @@ exports[`Layer should render correct border radius for position: end -
   height: 0;
   overflow: hidden;
   position: absolute;
-  clip: rect(0,0,0,0);
+  clip-path: inset(50%);
   white-space: nowrap;
   border: 0;
 }
@@ -13747,7 +13747,7 @@ exports[`Layer should render correct border radius for position: end -
     data-g-portal-id="0"
     id="border-radius-test"
   >
-    <a
+    <span
       class="c3"
       tabindex="-1"
     />
@@ -13861,7 +13861,7 @@ exports[`Layer should render correct border radius for position: end -
   height: 0;
   overflow: hidden;
   position: absolute;
-  clip: rect(0,0,0,0);
+  clip-path: inset(50%);
   white-space: nowrap;
   border: 0;
 }
@@ -13909,7 +13909,7 @@ exports[`Layer should render correct border radius for position: end -
     data-g-portal-id="0"
     id="border-radius-test"
   >
-    <a
+    <span
       class="c3"
       tabindex="-1"
     />
@@ -14024,7 +14024,7 @@ exports[`Layer should render correct border radius for position: end -
   height: 0;
   overflow: hidden;
   position: absolute;
-  clip: rect(0,0,0,0);
+  clip-path: inset(50%);
   white-space: nowrap;
   border: 0;
 }
@@ -14072,7 +14072,7 @@ exports[`Layer should render correct border radius for position: end -
     data-g-portal-id="0"
     id="border-radius-test"
   >
-    <a
+    <span
       class="c3"
       tabindex="-1"
     />
@@ -14186,7 +14186,7 @@ exports[`Layer should render correct border radius for position: end -
   height: 0;
   overflow: hidden;
   position: absolute;
-  clip: rect(0,0,0,0);
+  clip-path: inset(50%);
   white-space: nowrap;
   border: 0;
 }
@@ -14234,7 +14234,7 @@ exports[`Layer should render correct border radius for position: end -
     data-g-portal-id="0"
     id="border-radius-test"
   >
-    <a
+    <span
       class="c3"
       tabindex="-1"
     />
@@ -14347,7 +14347,7 @@ exports[`Layer should render correct border radius for position: left -
   height: 0;
   overflow: hidden;
   position: absolute;
-  clip: rect(0,0,0,0);
+  clip-path: inset(50%);
   white-space: nowrap;
   border: 0;
 }
@@ -14395,7 +14395,7 @@ exports[`Layer should render correct border radius for position: left -
     data-g-portal-id="0"
     id="border-radius-test"
   >
-    <a
+    <span
       class="c3"
       tabindex="-1"
     />
@@ -14509,7 +14509,7 @@ exports[`Layer should render correct border radius for position: left -
   height: 0;
   overflow: hidden;
   position: absolute;
-  clip: rect(0,0,0,0);
+  clip-path: inset(50%);
   white-space: nowrap;
   border: 0;
 }
@@ -14557,7 +14557,7 @@ exports[`Layer should render correct border radius for position: left -
     data-g-portal-id="0"
     id="border-radius-test"
   >
-    <a
+    <span
       class="c3"
       tabindex="-1"
     />
@@ -14672,7 +14672,7 @@ exports[`Layer should render correct border radius for position: left -
   height: 0;
   overflow: hidden;
   position: absolute;
-  clip: rect(0,0,0,0);
+  clip-path: inset(50%);
   white-space: nowrap;
   border: 0;
 }
@@ -14720,7 +14720,7 @@ exports[`Layer should render correct border radius for position: left -
     data-g-portal-id="0"
     id="border-radius-test"
   >
-    <a
+    <span
       class="c3"
       tabindex="-1"
     />
@@ -14834,7 +14834,7 @@ exports[`Layer should render correct border radius for position: left -
   height: 0;
   overflow: hidden;
   position: absolute;
-  clip: rect(0,0,0,0);
+  clip-path: inset(50%);
   white-space: nowrap;
   border: 0;
 }
@@ -14882,7 +14882,7 @@ exports[`Layer should render correct border radius for position: left -
     data-g-portal-id="0"
     id="border-radius-test"
   >
-    <a
+    <span
       class="c3"
       tabindex="-1"
     />
@@ -14995,7 +14995,7 @@ exports[`Layer should render correct border radius for position: right -
   height: 0;
   overflow: hidden;
   position: absolute;
-  clip: rect(0,0,0,0);
+  clip-path: inset(50%);
   white-space: nowrap;
   border: 0;
 }
@@ -15043,7 +15043,7 @@ exports[`Layer should render correct border radius for position: right -
     data-g-portal-id="0"
     id="border-radius-test"
   >
-    <a
+    <span
       class="c3"
       tabindex="-1"
     />
@@ -15157,7 +15157,7 @@ exports[`Layer should render correct border radius for position: right -
   height: 0;
   overflow: hidden;
   position: absolute;
-  clip: rect(0,0,0,0);
+  clip-path: inset(50%);
   white-space: nowrap;
   border: 0;
 }
@@ -15205,7 +15205,7 @@ exports[`Layer should render correct border radius for position: right -
     data-g-portal-id="0"
     id="border-radius-test"
   >
-    <a
+    <span
       class="c3"
       tabindex="-1"
     />
@@ -15320,7 +15320,7 @@ exports[`Layer should render correct border radius for position: right -
   height: 0;
   overflow: hidden;
   position: absolute;
-  clip: rect(0,0,0,0);
+  clip-path: inset(50%);
   white-space: nowrap;
   border: 0;
 }
@@ -15368,7 +15368,7 @@ exports[`Layer should render correct border radius for position: right -
     data-g-portal-id="0"
     id="border-radius-test"
   >
-    <a
+    <span
       class="c3"
       tabindex="-1"
     />
@@ -15482,7 +15482,7 @@ exports[`Layer should render correct border radius for position: right -
   height: 0;
   overflow: hidden;
   position: absolute;
-  clip: rect(0,0,0,0);
+  clip-path: inset(50%);
   white-space: nowrap;
   border: 0;
 }
@@ -15530,7 +15530,7 @@ exports[`Layer should render correct border radius for position: right -
     data-g-portal-id="0"
     id="border-radius-test"
   >
-    <a
+    <span
       class="c3"
       tabindex="-1"
     />
@@ -15644,7 +15644,7 @@ exports[`Layer should render correct border radius for position: start -
   height: 0;
   overflow: hidden;
   position: absolute;
-  clip: rect(0,0,0,0);
+  clip-path: inset(50%);
   white-space: nowrap;
   border: 0;
 }
@@ -15692,7 +15692,7 @@ exports[`Layer should render correct border radius for position: start -
     data-g-portal-id="0"
     id="border-radius-test"
   >
-    <a
+    <span
       class="c3"
       tabindex="-1"
     />
@@ -15806,7 +15806,7 @@ exports[`Layer should render correct border radius for position: start -
   height: 0;
   overflow: hidden;
   position: absolute;
-  clip: rect(0,0,0,0);
+  clip-path: inset(50%);
   white-space: nowrap;
   border: 0;
 }
@@ -15854,7 +15854,7 @@ exports[`Layer should render correct border radius for position: start -
     data-g-portal-id="0"
     id="border-radius-test"
   >
-    <a
+    <span
       class="c3"
       tabindex="-1"
     />
@@ -15969,7 +15969,7 @@ exports[`Layer should render correct border radius for position: start -
   height: 0;
   overflow: hidden;
   position: absolute;
-  clip: rect(0,0,0,0);
+  clip-path: inset(50%);
   white-space: nowrap;
   border: 0;
 }
@@ -16017,7 +16017,7 @@ exports[`Layer should render correct border radius for position: start -
     data-g-portal-id="0"
     id="border-radius-test"
   >
-    <a
+    <span
       class="c3"
       tabindex="-1"
     />
@@ -16131,7 +16131,7 @@ exports[`Layer should render correct border radius for position: start -
   height: 0;
   overflow: hidden;
   position: absolute;
-  clip: rect(0,0,0,0);
+  clip-path: inset(50%);
   white-space: nowrap;
   border: 0;
 }
@@ -16179,7 +16179,7 @@ exports[`Layer should render correct border radius for position: start -
     data-g-portal-id="0"
     id="border-radius-test"
   >
-    <a
+    <span
       class="c3"
       tabindex="-1"
     />
@@ -16292,7 +16292,7 @@ exports[`Layer should render correct border radius for position: top -
   height: 0;
   overflow: hidden;
   position: absolute;
-  clip: rect(0,0,0,0);
+  clip-path: inset(50%);
   white-space: nowrap;
   border: 0;
 }
@@ -16340,7 +16340,7 @@ exports[`Layer should render correct border radius for position: top -
     data-g-portal-id="0"
     id="border-radius-test"
   >
-    <a
+    <span
       class="c3"
       tabindex="-1"
     />
@@ -16454,7 +16454,7 @@ exports[`Layer should render correct border radius for position: top -
   height: 0;
   overflow: hidden;
   position: absolute;
-  clip: rect(0,0,0,0);
+  clip-path: inset(50%);
   white-space: nowrap;
   border: 0;
 }
@@ -16502,7 +16502,7 @@ exports[`Layer should render correct border radius for position: top -
     data-g-portal-id="0"
     id="border-radius-test"
   >
-    <a
+    <span
       class="c3"
       tabindex="-1"
     />
@@ -16617,7 +16617,7 @@ exports[`Layer should render correct border radius for position: top -
   height: 0;
   overflow: hidden;
   position: absolute;
-  clip: rect(0,0,0,0);
+  clip-path: inset(50%);
   white-space: nowrap;
   border: 0;
 }
@@ -16665,7 +16665,7 @@ exports[`Layer should render correct border radius for position: top -
     data-g-portal-id="0"
     id="border-radius-test"
   >
-    <a
+    <span
       class="c3"
       tabindex="-1"
     />
@@ -16779,7 +16779,7 @@ exports[`Layer should render correct border radius for position: top -
   height: 0;
   overflow: hidden;
   position: absolute;
-  clip: rect(0,0,0,0);
+  clip-path: inset(50%);
   white-space: nowrap;
   border: 0;
 }
@@ -16827,7 +16827,7 @@ exports[`Layer should render correct border radius for position: top -
     data-g-portal-id="0"
     id="border-radius-test"
   >
-    <a
+    <span
       class="c3"
       tabindex="-1"
     />
@@ -16940,7 +16940,7 @@ exports[`Layer should render correct border radius for position: top-left -
   height: 0;
   overflow: hidden;
   position: absolute;
-  clip: rect(0,0,0,0);
+  clip-path: inset(50%);
   white-space: nowrap;
   border: 0;
 }
@@ -16988,7 +16988,7 @@ exports[`Layer should render correct border radius for position: top-left -
     data-g-portal-id="0"
     id="border-radius-test"
   >
-    <a
+    <span
       class="c3"
       tabindex="-1"
     />
@@ -17102,7 +17102,7 @@ exports[`Layer should render correct border radius for position: top-left -
   height: 0;
   overflow: hidden;
   position: absolute;
-  clip: rect(0,0,0,0);
+  clip-path: inset(50%);
   white-space: nowrap;
   border: 0;
 }
@@ -17150,7 +17150,7 @@ exports[`Layer should render correct border radius for position: top-left -
     data-g-portal-id="0"
     id="border-radius-test"
   >
-    <a
+    <span
       class="c3"
       tabindex="-1"
     />
@@ -17265,7 +17265,7 @@ exports[`Layer should render correct border radius for position: top-left -
   height: 0;
   overflow: hidden;
   position: absolute;
-  clip: rect(0,0,0,0);
+  clip-path: inset(50%);
   white-space: nowrap;
   border: 0;
 }
@@ -17313,7 +17313,7 @@ exports[`Layer should render correct border radius for position: top-left -
     data-g-portal-id="0"
     id="border-radius-test"
   >
-    <a
+    <span
       class="c3"
       tabindex="-1"
     />
@@ -17427,7 +17427,7 @@ exports[`Layer should render correct border radius for position: top-left -
   height: 0;
   overflow: hidden;
   position: absolute;
-  clip: rect(0,0,0,0);
+  clip-path: inset(50%);
   white-space: nowrap;
   border: 0;
 }
@@ -17475,7 +17475,7 @@ exports[`Layer should render correct border radius for position: top-left -
     data-g-portal-id="0"
     id="border-radius-test"
   >
-    <a
+    <span
       class="c3"
       tabindex="-1"
     />
@@ -17588,7 +17588,7 @@ exports[`Layer should render correct border radius for position: top-right -
   height: 0;
   overflow: hidden;
   position: absolute;
-  clip: rect(0,0,0,0);
+  clip-path: inset(50%);
   white-space: nowrap;
   border: 0;
 }
@@ -17636,7 +17636,7 @@ exports[`Layer should render correct border radius for position: top-right -
     data-g-portal-id="0"
     id="border-radius-test"
   >
-    <a
+    <span
       class="c3"
       tabindex="-1"
     />
@@ -17750,7 +17750,7 @@ exports[`Layer should render correct border radius for position: top-right -
   height: 0;
   overflow: hidden;
   position: absolute;
-  clip: rect(0,0,0,0);
+  clip-path: inset(50%);
   white-space: nowrap;
   border: 0;
 }
@@ -17798,7 +17798,7 @@ exports[`Layer should render correct border radius for position: top-right -
     data-g-portal-id="0"
     id="border-radius-test"
   >
-    <a
+    <span
       class="c3"
       tabindex="-1"
     />
@@ -17913,7 +17913,7 @@ exports[`Layer should render correct border radius for position: top-right -
   height: 0;
   overflow: hidden;
   position: absolute;
-  clip: rect(0,0,0,0);
+  clip-path: inset(50%);
   white-space: nowrap;
   border: 0;
 }
@@ -17961,7 +17961,7 @@ exports[`Layer should render correct border radius for position: top-right -
     data-g-portal-id="0"
     id="border-radius-test"
   >
-    <a
+    <span
       class="c3"
       tabindex="-1"
     />
@@ -18075,7 +18075,7 @@ exports[`Layer should render correct border radius for position: top-right -
   height: 0;
   overflow: hidden;
   position: absolute;
-  clip: rect(0,0,0,0);
+  clip-path: inset(50%);
   white-space: nowrap;
   border: 0;
 }
@@ -18123,7 +18123,7 @@ exports[`Layer should render correct border radius for position: top-right -
     data-g-portal-id="0"
     id="border-radius-test"
   >
-    <a
+    <span
       class="c3"
       tabindex="-1"
     />
@@ -18235,7 +18235,7 @@ exports[`Layer target 1`] = `
   height: 0;
   overflow: hidden;
   position: absolute;
-  clip: rect(0,0,0,0);
+  clip-path: inset(50%);
   white-space: nowrap;
   border: 0;
 }
@@ -18275,7 +18275,7 @@ exports[`Layer target 1`] = `
     data-g-portal-id="0"
     id="target-test"
   >
-    <a
+    <span
       class="c3"
       tabindex="-1"
     />
@@ -18362,7 +18362,7 @@ exports[`Layer target not modal 1`] = `
   height: 0;
   overflow: hidden;
   position: absolute;
-  clip: rect(0,0,0,0);
+  clip-path: inset(50%);
   white-space: nowrap;
   border: 0;
 }
@@ -18393,7 +18393,7 @@ exports[`Layer target not modal 1`] = `
     data-g-portal-id="0"
     id="target-test"
   >
-    <a
+    <span
       class="c2"
       tabindex="-1"
     />

@@ -1928,7 +1928,7 @@ exports[`Notification position bottom 1`] = `
   height: 0;
   overflow: hidden;
   position: absolute;
-  clip: rect(0,0,0,0);
+  clip-path: inset(50%);
   white-space: nowrap;
   border: 0;
 }
@@ -1981,7 +1981,7 @@ exports[`Notification position bottom 1`] = `
     id="position-test"
     role="log"
   >
-    <a
+    <span
       class="c2"
       tabindex="-1"
     />
@@ -2201,7 +2201,7 @@ exports[`Notification position bottom-left 1`] = `
   height: 0;
   overflow: hidden;
   position: absolute;
-  clip: rect(0,0,0,0);
+  clip-path: inset(50%);
   white-space: nowrap;
   border: 0;
 }
@@ -2254,7 +2254,7 @@ exports[`Notification position bottom-left 1`] = `
     id="position-test"
     role="log"
   >
-    <a
+    <span
       class="c2"
       tabindex="-1"
     />
@@ -2474,7 +2474,7 @@ exports[`Notification position bottom-right 1`] = `
   height: 0;
   overflow: hidden;
   position: absolute;
-  clip: rect(0,0,0,0);
+  clip-path: inset(50%);
   white-space: nowrap;
   border: 0;
 }
@@ -2527,7 +2527,7 @@ exports[`Notification position bottom-right 1`] = `
     id="position-test"
     role="log"
   >
-    <a
+    <span
       class="c2"
       tabindex="-1"
     />
@@ -2747,7 +2747,7 @@ exports[`Notification position center 1`] = `
   height: 0;
   overflow: hidden;
   position: absolute;
-  clip: rect(0,0,0,0);
+  clip-path: inset(50%);
   white-space: nowrap;
   border: 0;
 }
@@ -2800,7 +2800,7 @@ exports[`Notification position center 1`] = `
     id="position-test"
     role="log"
   >
-    <a
+    <span
       class="c2"
       tabindex="-1"
     />
@@ -3020,7 +3020,7 @@ exports[`Notification position end 1`] = `
   height: 0;
   overflow: hidden;
   position: absolute;
-  clip: rect(0,0,0,0);
+  clip-path: inset(50%);
   white-space: nowrap;
   border: 0;
 }
@@ -3073,7 +3073,7 @@ exports[`Notification position end 1`] = `
     id="position-test"
     role="log"
   >
-    <a
+    <span
       class="c2"
       tabindex="-1"
     />
@@ -3293,7 +3293,7 @@ exports[`Notification position left 1`] = `
   height: 0;
   overflow: hidden;
   position: absolute;
-  clip: rect(0,0,0,0);
+  clip-path: inset(50%);
   white-space: nowrap;
   border: 0;
 }
@@ -3346,7 +3346,7 @@ exports[`Notification position left 1`] = `
     id="position-test"
     role="log"
   >
-    <a
+    <span
       class="c2"
       tabindex="-1"
     />
@@ -3566,7 +3566,7 @@ exports[`Notification position right 1`] = `
   height: 0;
   overflow: hidden;
   position: absolute;
-  clip: rect(0,0,0,0);
+  clip-path: inset(50%);
   white-space: nowrap;
   border: 0;
 }
@@ -3619,7 +3619,7 @@ exports[`Notification position right 1`] = `
     id="position-test"
     role="log"
   >
-    <a
+    <span
       class="c2"
       tabindex="-1"
     />
@@ -3839,7 +3839,7 @@ exports[`Notification position start 1`] = `
   height: 0;
   overflow: hidden;
   position: absolute;
-  clip: rect(0,0,0,0);
+  clip-path: inset(50%);
   white-space: nowrap;
   border: 0;
 }
@@ -3892,7 +3892,7 @@ exports[`Notification position start 1`] = `
     id="position-test"
     role="log"
   >
-    <a
+    <span
       class="c2"
       tabindex="-1"
     />
@@ -4112,7 +4112,7 @@ exports[`Notification position top 1`] = `
   height: 0;
   overflow: hidden;
   position: absolute;
-  clip: rect(0,0,0,0);
+  clip-path: inset(50%);
   white-space: nowrap;
   border: 0;
 }
@@ -4165,7 +4165,7 @@ exports[`Notification position top 1`] = `
     id="position-test"
     role="log"
   >
-    <a
+    <span
       class="c2"
       tabindex="-1"
     />
@@ -4385,7 +4385,7 @@ exports[`Notification position top-left 1`] = `
   height: 0;
   overflow: hidden;
   position: absolute;
-  clip: rect(0,0,0,0);
+  clip-path: inset(50%);
   white-space: nowrap;
   border: 0;
 }
@@ -4438,7 +4438,7 @@ exports[`Notification position top-left 1`] = `
     id="position-test"
     role="log"
   >
-    <a
+    <span
       class="c2"
       tabindex="-1"
     />
@@ -4658,7 +4658,7 @@ exports[`Notification position top-right 1`] = `
   height: 0;
   overflow: hidden;
   position: absolute;
-  clip: rect(0,0,0,0);
+  clip-path: inset(50%);
   white-space: nowrap;
   border: 0;
 }
@@ -4711,7 +4711,7 @@ exports[`Notification position top-right 1`] = `
     id="position-test"
     role="log"
   >
-    <a
+    <span
       class="c2"
       tabindex="-1"
     />
