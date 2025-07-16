@@ -11,6 +11,7 @@ exports[`Components loads 1`] = `
       "animate": [Function],
       "children": [Function],
       "gridArea": [Function],
+      "keepMount": [Function],
       "level": [Function],
       "margin": [Function],
       "messages": [Function],
@@ -260,6 +261,7 @@ exports[`Components loads 1`] = `
     "$$typeof": Symbol(react.forward_ref),
     "propTypes": {
       "direction": [Function],
+      "keepMount": undefined,
       "open": [Function],
     },
     "render": [Function],
