@@ -45,60 +45,43 @@ const stringToArray = (string) => {
 
   foo[0].bar => ['foo', '0', 'bar]
 */
-const splitDotPath = (path) => {
-  const segmentRegex = /[^.[\]]+|\[\d+\]/g; // match object key or array index
-  const segments = [];
-
-  let match = segmentRegex.exec(path);
-  while (match !== null) {
-    const part = match[0];
-    if (part.startsWith('[')) {
-      segments.push(part.slice(1, -1)); // remove brackets from array segment
-    } else {
-      segments.push(part);
-    }
-
-    match = segmentRegex.exec(path);
-  }
-
-  return segments;
-};
+const splitPath = (path) =>
+  // First replace numeric array indexes with the literal index.
+  // For example "foo.bar[0].baz" -> "foo.bar.0.baz"
+  // Then split it into the individual segments. e.g. ["foo", "bar", "0", "baz"]
+  path?.replace(/\[(\d+)\]/g, '.$1')?.split('.');
 
 const getValueAt = (valueObject, path) => {
   if (valueObject === undefined) {
     return undefined;
   }
 
-  const splittedPath = Array.isArray(path) ? path : splitDotPath(path);
+  const pathSegments = Array.isArray(path) ? path : splitPath(path);
 
-  const segment = splittedPath.shift();
-  const key = parseInt(segment, 10) || segment;
+  const segment = pathSegments.shift();
 
-  if (splittedPath.length === 0) {
-    return valueObject[key];
+  if (pathSegments.length === 0) {
+    return valueObject[segment];
   }
 
-  return getValueAt(valueObject[key], splittedPath);
+  return getValueAt(valueObject[segment], pathSegments);
 };
 
 const setValueAt = (valueObject, path, value) => {
   const object = valueObject;
 
-  const splittedPath = Array.isArray(path) ? path : splitDotPath(path);
+  const pathSegments = Array.isArray(path) ? path : splitPath(path);
 
-  if (splittedPath.length === 1) {
-    object[splittedPath[0]] = value;
+  if (pathSegments.length === 1) {
+    object[pathSegments[0]] = value;
   } else {
-    const segment = splittedPath.shift();
-    const key = parseInt(segment, 10) || segment;
+    const segment = pathSegments.shift();
 
-    const isNextValueArray = !!parseInt(segment, 10);
-
-    if (!object[key]) {
-      object[key] = isNextValueArray ? [] : {};
+    if (!object[segment]) {
+      object[segment] = !Number.isNaN(parseInt(segment, 10)) ? [] : {};
     }
 
-    setValueAt(object[key], splittedPath, value);
+    setValueAt(object[segment], pathSegments, value);
   }
 };
 
@@ -107,16 +90,15 @@ const getFieldValue = (name, value) => {
     return undefined;
   }
 
-  const splittedPath = Array.isArray(name) ? name : splitDotPath(name);
+  const pathSegments = Array.isArray(name) ? name : splitPath(name);
 
-  const segment = splittedPath.shift();
-  const key = parseInt(segment, 10) || segment;
+  const segment = pathSegments.shift();
 
-  if (splittedPath.length === 0) {
-    return value[key];
+  if (pathSegments.length === 0) {
+    return value[segment];
   }
 
-  return getValueAt(value[key], splittedPath);
+  return getValueAt(value[segment], pathSegments);
 };
 
 const setFieldValue = (name, componentValue, prevValue) => {
