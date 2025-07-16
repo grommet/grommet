@@ -79,7 +79,7 @@ export const FormLayer = () => {
               <FormField
                 label="Size"
                 name="select-size"
-                htmlFor="select-size__input"
+                htmlFor="select-size"
                 required
                 validate={(val) => {
                   if (val === 'small') {

@@ -1,4 +1,10 @@
-import React, { forwardRef, useContext, useEffect, useState } from 'react';
+import React, {
+  forwardRef,
+  useContext,
+  useEffect,
+  useRef,
+  useState,
+} from 'react';
 import { createPortal } from 'react-dom';
 
 import { useLayoutEffect } from '../../utils/use-isomorphic-layout-effect';
@@ -10,22 +16,55 @@ import { ContainerTargetContext } from '../../contexts/ContainerTargetContext';
 import { LayerPropTypes } from './propTypes';
 
 const Layer = forwardRef((props, ref) => {
-  const { animate, animation, targetChildPosition } = props;
-  const [originalFocusedElement, setOriginalFocusedElement] = useState();
-  useEffect(() => setOriginalFocusedElement(document.activeElement), []);
+  const { animate, animation, modal, targetChildPosition } = props;
   const [layerContainer, setLayerContainer] = useState();
   const containerTarget = useContext(ContainerTargetContext);
+
+  const [originalFocusedElement, setOriginalFocusedElement] = useState();
+
+  const focusWithinLayerRef = useRef(false);
+
+  useEffect(() => {
+    setOriginalFocusedElement(document.activeElement);
+  }, []);
+
+  useEffect(() => {
+    const handleFocusIn = (event) => {
+      if (layerContainer?.contains?.(event.target)) {
+        focusWithinLayerRef.current = true;
+      }
+    };
+    const handleFocusOut = (event) => {
+      if (
+        layerContainer?.contains?.(event.target) &&
+        !layerContainer.contains(event.relatedTarget)
+      ) {
+        focusWithinLayerRef.current = false;
+      }
+    };
+    document.addEventListener('focusin', handleFocusIn);
+    document.addEventListener('focusout', handleFocusOut);
+    return () => {
+      document.removeEventListener('focusin', handleFocusIn);
+      document.removeEventListener('focusout', handleFocusOut);
+    };
+  }, [layerContainer]);
+
   useEffect(
     () =>
       setLayerContainer(getNewContainer(containerTarget, targetChildPosition)),
     [containerTarget, targetChildPosition],
   );
-
   // just a few things to clean up when the Layer is unmounted
   useLayoutEffect(
     () => () => {
       if (originalFocusedElement) {
-        if (originalFocusedElement.focus) {
+        // Restore focus if:
+        // - modal layer (always restore), or
+        // - non-modal layer that had focus when it closed
+        const shouldRestoreFocus =
+          modal || (!modal && focusWithinLayerRef.current);
+        if (shouldRestoreFocus && originalFocusedElement.focus) {
           // wait for the fixed positioning to come back to normal
           // see layer styling for reference
           setTimeout(() => originalFocusedElement.focus(), 0);
@@ -37,7 +76,6 @@ const Layer = forwardRef((props, ref) => {
           originalFocusedElement.parentNode.focus();
         }
       }
-
       if (layerContainer) {
         const activeAnimation = animation !== undefined ? animation : animate;
         if (activeAnimation !== false) {
@@ -74,6 +112,7 @@ const Layer = forwardRef((props, ref) => {
       animation,
       containerTarget,
       layerContainer,
+      modal,
       originalFocusedElement,
     ],
   );

@@ -7,7 +7,7 @@ import 'regenerator-runtime/runtime';
 import '@testing-library/jest-dom';
 import { CaretDown, CaretUp, FormDown } from 'grommet-icons';
 import { createPortal, expectPortal } from '../../../utils/portal';
-import { Box, Grommet, FormField } from '../..';
+import { Box, Grommet, FormField, Form } from '../..';
 import { Select } from '..';
 
 describe('Select', () => {
@@ -1888,6 +1888,60 @@ describe('Select', () => {
       jest.advanceTimersByTime(200);
     });
     expectPortal('test-clear-selection__drop').toMatchSnapshot();
+  });
+
+  test('Select wrapped in FormField with label and no placeholder', () => {
+    render(
+      <Grommet>
+        <Form>
+          <FormField label="Size" htmlFor="size__input">
+            <Select
+              id="size"
+              name="size"
+              options={['small', 'medium', 'large']}
+            />
+          </FormField>
+        </Form>
+      </Grommet>,
+    );
+
+    const select = screen.getByRole('button', { name: /Size/i });
+    expect(select).toBeInTheDocument();
+
+    // check that aria-labelledby attribute exists
+    expect(select).toHaveAttribute('aria-labelledby');
+    // check that aria-labelledby attribute is set to the correct value
+    expect(select.getAttribute('aria-labelledby')).toBe(
+      'grommet-size__input__label size',
+    );
+  });
+
+  test(`Select wrapped in FormField with label and no
+    placeholder & no __input`, () => {
+    render(
+      <Grommet>
+        <Form>
+          <FormField label="Size" htmlFor="size">
+            <Select
+              id="size"
+              name="size"
+              options={['small', 'medium', 'large']}
+            />
+          </FormField>
+        </Form>
+      </Grommet>,
+    );
+
+    const select = screen.getByRole('button', { name: /Size/i });
+    expect(select).toBeInTheDocument();
+
+    // First check that aria-labelledby attribute exists
+    expect(select).toHaveAttribute('aria-labelledby');
+    // check that aria-labelledby attribute is set to
+    //  the correct value
+    expect(select.getAttribute('aria-labelledby')).toBe(
+      'grommet-size__input__label size',
+    );
   });
 
   test('renders custom listbox styling', () => {
