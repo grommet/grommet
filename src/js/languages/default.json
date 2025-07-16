@@ -57,7 +57,9 @@
   },
   "dataTable": {
     "ascending": "ascending",
+    "decrease": "Decrease {headerText} column width",
     "descending": "descending",
+    "increase": "Increase {headerText} column width",
     "resizerAria": "Resize {headerText} column",
     "rows": "rows",
     "rowsChanged": "Number of rows changed",
