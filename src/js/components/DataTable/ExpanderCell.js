@@ -92,9 +92,9 @@ const ExpanderControl = ({
         let ariaLabel;
         if (typeof expandAriaLabel === 'function') {
           if (context === 'groupHeader') {
-            ariaLabel = expandAriaLabel(row.datum);
+            ariaLabel = expandAriaLabel({ row: row.datum });
           } else {
-            ariaLabel = expandAriaLabel(row);
+            ariaLabel = expandAriaLabel({ row });
           }
         } else {
           ariaLabel = expandAriaLabel;

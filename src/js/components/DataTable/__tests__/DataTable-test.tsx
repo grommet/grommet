@@ -2167,7 +2167,7 @@ describe('DataTable', () => {
   });
 
   test('expandAriaLabel function', () => {
-    const expandAriaLabel = (row: any) => `${row.a} items`;
+    const expandAriaLabel = ({ row }: { row: any }) => `${row.a} items`;
     const { container } = render(
       <Grommet>
         <DataTable
