@@ -81,6 +81,7 @@ const DataTable = ({
   primaryKey,
   resizeable,
   rowProps,
+  expandAriaLabel,
   select,
   show: showProp,
   size,
@@ -483,6 +484,7 @@ const DataTable = ({
       groupBy={typeof groupBy === 'string' ? { property: groupBy } : groupBy}
       groups={groups}
       groupState={groupState}
+      messages={messages}
       pinnedOffset={pinnedOffset}
       primaryProperty={primaryProperty}
       onMore={
@@ -508,6 +510,7 @@ const DataTable = ({
       onUpdate={onUpdate}
       replace={replace}
       rowProps={rowProps}
+      expandAriaLabel={expandAriaLabel}
       selected={selected}
       size={size}
       step={paginationStep}
@@ -550,6 +553,7 @@ const DataTable = ({
       step={paginationStep}
       rowDetails={rowDetails}
       rowExpand={rowExpand}
+      expandAriaLabel={expandAriaLabel}
       setRowExpand={setRowExpand}
       verticalAlign={
         typeof verticalAlign === 'string' ? verticalAlign : verticalAlign?.body

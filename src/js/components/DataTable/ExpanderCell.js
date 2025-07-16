@@ -1,16 +1,27 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Blank } from 'grommet-icons/icons/Blank';
 
 import { Box } from '../Box';
 import { Button } from '../Button';
 import { TableCell } from '../TableCell';
+import { MessageContext } from '../../contexts/MessageContext';
 import { normalizeColor } from '../../utils';
 import { useThemeValue } from '../../utils/useThemeValue';
 
 // ExpanderControl is separated from ExpanderCell to give TableCell a chance
 // to set the ThemeContext dark context.
-const ExpanderControl = ({ context, expanded, onToggle, pad, ...rest }) => {
+const ExpanderControl = ({
+  context,
+  expanded,
+  onToggle,
+  messages,
+  pad,
+  expandAriaLabel,
+  row,
+  ...rest
+}) => {
   const { theme } = useThemeValue();
+  const { format } = useContext(MessageContext);
 
   let content;
   if (onToggle) {
@@ -35,11 +46,68 @@ const ExpanderControl = ({ context, expanded, onToggle, pad, ...rest }) => {
   );
 
   if (onToggle) {
+    const expandText =
+      messages?.expand ||
+      format({
+        id: 'dataTable.expand',
+        messages: {
+          'dataTable.expand': 'expand',
+        },
+      });
+
+    const collapseText =
+      messages?.collapse ||
+      format({
+        id: 'dataTable.collapse',
+        messages: {
+          'dataTable.collapse': 'collapse',
+        },
+      });
+
+    const expandAllText =
+      messages?.expandAll ||
+      format({
+        id: 'dataTable.expandAll',
+        messages: {
+          'dataTable.expandAll': 'expand all',
+        },
+      });
+
+    const collapseAllText =
+      messages?.collapseAll ||
+      format({
+        id: 'dataTable.collapseAll',
+        messages: {
+          'dataTable.collapseAll': 'collapse all',
+        },
+      });
+
+    let a11yTitle;
+
+    if (context === 'header') {
+      a11yTitle = expanded ? collapseAllText : expandAllText;
+    } else {
+      a11yTitle = expanded ? collapseText : expandText;
+      if (expandAriaLabel) {
+        let ariaLabel;
+        if (typeof expandAriaLabel === 'function') {
+          if (context === 'groupHeader') {
+            ariaLabel = expandAriaLabel(row.datum);
+          } else {
+            ariaLabel = expandAriaLabel(row);
+          }
+        } else {
+          ariaLabel = expandAriaLabel;
+        }
+        a11yTitle = `${a11yTitle} ${ariaLabel}`;
+      }
+    }
+
     content = (
       <Button
         fill
         aria-expanded={expanded ? 'true' : 'false'}
-        a11yTitle={expanded ? 'collapse' : 'expand'}
+        a11yTitle={a11yTitle}
         hoverIndicator
         // ensure focus is visible since overflow: hidden on TableCell sizeStyle
         // would otherwise clip it
@@ -55,7 +123,14 @@ const ExpanderControl = ({ context, expanded, onToggle, pad, ...rest }) => {
   return content;
 };
 
-const ExpanderCell = ({ background, border, context, ...rest }) => (
+const ExpanderCell = ({
+  background,
+  border,
+  context,
+  expandAriaLabel,
+  row,
+  ...rest
+}) => (
   <TableCell
     background={background}
     border={border}
@@ -63,10 +138,14 @@ const ExpanderCell = ({ background, border, context, ...rest }) => (
     plain="noPad"
     verticalAlign={context === 'groupEnd' ? 'bottom' : 'top'}
   >
-    <ExpanderControl context={context} {...rest} />
+    <ExpanderControl
+      context={context}
+      expandAriaLabel={expandAriaLabel}
+      row={row}
+      {...rest}
+    />
   </TableCell>
 );
-
 ExpanderCell.displayName = 'ExpanderCell';
 
 export { ExpanderCell };

@@ -91,6 +91,13 @@ export const SpaceX = () => {
 
   const expandable = useMemo(() => groups.map(({ id }) => id), [groups]);
 
+  const expandAriaLabel = (row) => {
+    if (row && row.name) {
+      return `Show details for ${row.name} starship`;
+    }
+    return undefined;
+  };
+
   useEffect(() => {
     const fetchData = async () => {
       const query = {
@@ -194,6 +201,7 @@ export const SpaceX = () => {
           expand: expanded,
           property: 'rocketId',
         }}
+        expandAriaLabel={expandAriaLabel}
         onUpdate={(opts) => {
           setExpanded(opts.expanded);
           setLimit(opts.count);

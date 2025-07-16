@@ -94,6 +94,13 @@ export const RowDetails = () => {
     [expand],
   );
 
+  const expandAriaLabel = (row) => {
+    if (row && row.name) {
+      return `${row.name}`;
+    }
+    return undefined;
+  };
+
   return (
     // Uncomment <Grommet> lines when using outside of storybook
     // <Grommet theme={...}>
@@ -113,6 +120,7 @@ export const RowDetails = () => {
             },
           ]}
           rowDetails={rowDetails}
+          expandAriaLabel={expandAriaLabel}
         />
         <Pagination />
       </Data>

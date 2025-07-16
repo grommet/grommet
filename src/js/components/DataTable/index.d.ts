@@ -88,7 +88,11 @@ export interface DataTableProps<TRowType = any> {
   margin?: MarginType;
   messages?: {
     ascending?: string;
+    collapse?: string;
+    collapseAll?: string;
     descending?: string;
+    expand?: string;
+    expandAll?: string;
     resizerAria?: string;
     rows?: string;
     rowsChanged?: string;
@@ -117,6 +121,7 @@ export interface DataTableProps<TRowType = any> {
         expand?: (string | number)[];
         onExpand?: (expandedKeys: (string | number)[], datum: TRowType) => void;
       };
+  expandAriaLabel?: (row: TRowType) => string;
   show?: number | { page?: number };
   size?: 'small' | 'medium' | 'large' | 'xlarge' | string;
 
