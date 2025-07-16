@@ -23,11 +23,11 @@ import {
 import { StyledLayer, StyledContainer, StyledOverlay } from './StyledLayer';
 import { useThemeValue } from '../../utils/useThemeValue';
 
-// The FocusAnchor ensures the LayerContainer has focus when
+// The FocusSpan ensures the LayerContainer has focus when
 // it is opened for user to start tabbing inside it.
 // It helps for escaping the LayerContainer using the keyboard.
 // It is hidden visually but still part of the accessibility tree.
-const FocusAnchor = styled.span.withConfig(styledComponentsConfig)`
+const FocusSpan = styled.span.withConfig(styledComponentsConfig)`
   width: 0;
   height: 0;
   overflow: hidden;
@@ -65,7 +65,7 @@ const LayerContainer = forwardRef(
     // layerOptions was created to preserve backwards compatibility but
     // should not be supported in v3
     const { layer: layerOptions } = useContext(OptionsContext);
-    const focusAnchorRef = useRef();
+    const focusSpanRef = useRef();
     const containerRef = useRef();
     const layerRef = useRef();
     const portalContext = useContext(PortalContext);
@@ -111,8 +111,8 @@ const LayerContainer = forwardRef(
           }
           element = element.parentElement;
         }
-        if (modal && !element && focusAnchorRef.current) {
-          focusAnchorRef.current.focus();
+        if (modal && !element && focusSpanRef.current) {
+          focusSpanRef.current.focus();
         }
       }
     }, [modal, position, ref]);
@@ -215,7 +215,7 @@ const LayerContainer = forwardRef(
         // or outside of the layer
         data-g-portal-id={portalId}
       >
-        <FocusAnchor ref={focusAnchorRef} tabIndex="-1" />
+        <FocusSpan ref={focusSpanRef} tabIndex="-1" />
         {children}
       </StyledContainer>
     );

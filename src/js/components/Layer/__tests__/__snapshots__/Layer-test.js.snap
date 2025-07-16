@@ -1306,7 +1306,7 @@ exports[`Layer hidden 3`] = `
     id="hidden-test"
   >
     <span
-      class="LayerContainer__FocusAnchor-sc-1srj14c-0 kGYrZG"
+      class="LayerContainer__FocusSpan-sc-1srj14c-0 fBBWDv"
       tabindex="-1"
     />
     This is a layer
