@@ -2142,8 +2142,7 @@ describe('DataTable', () => {
       onExpand: jest.fn(),
     };
 
-    const expandAriaLabel = ({ row }: { row: Ship }) =>
-      `Show details for ${row.name}`;
+    const expandAriaLabel = (row: Ship) => `Show details for ${row.name}`;
 
     render(
       <Grommet>
@@ -2167,7 +2166,7 @@ describe('DataTable', () => {
   });
 
   test('expandAriaLabel function', () => {
-    const expandAriaLabel = ({ row }: { row: any }) => `${row.a} items`;
+    const expandAriaLabel = (row: any) => `${row.a} items`;
     const { container } = render(
       <Grommet>
         <DataTable

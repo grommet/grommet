@@ -94,7 +94,7 @@ export const RowDetails = () => {
     [expand],
   );
 
-  const expandAriaLabel = ({ row }) => {
+  const expandAriaLabel = (row) => {
     if (row && row.name) {
       return `${row.name}`;
     }

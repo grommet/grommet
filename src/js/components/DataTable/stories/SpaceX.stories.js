@@ -91,7 +91,7 @@ export const SpaceX = () => {
 
   const expandable = useMemo(() => groups.map(({ id }) => id), [groups]);
 
-  const expandAriaLabel = ({ row }) => {
+  const expandAriaLabel = (row) => {
     if (row && row.name) {
       return `Show details for ${row.name} starship`;
     }
