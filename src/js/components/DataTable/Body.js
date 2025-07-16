@@ -178,7 +178,9 @@ const Row = memo(
             pad={cellProps.pad}
             verticalAlign={verticalAlign}
             expandAriaLabel={
-              expandAriaLabel ? expandAriaLabel(datum) : undefined
+              expandAriaLabel
+                ? expandAriaLabel({ row: datum, key: primaryValue || index })
+                : undefined
             }
           />
         )}

@@ -121,7 +121,13 @@ export interface DataTableProps<TRowType = any> {
         expand?: (string | number)[];
         onExpand?: (expandedKeys: (string | number)[], datum: TRowType) => void;
       };
-  expandAriaLabel?: (row: TRowType, groupKey: any) => string;
+  expandAriaLabel?: ({
+    row,
+    key,
+  }: {
+    row: TRowType;
+    key?: any;
+  }) => string | string;
   show?: number | { page?: number };
   size?: 'small' | 'medium' | 'large' | 'xlarge' | string;
 

@@ -89,12 +89,17 @@ const ExpanderControl = ({
       a11yTitle = expanded ? collapseAllText : expandAllText;
     } else {
       a11yTitle = expanded ? collapseText : expandText;
-
       if (expandAriaLabel) {
-        const ariaLabel =
-          typeof expandAriaLabel === 'function'
-            ? expandAriaLabel(row, groupKey)
-            : expandAriaLabel;
+        let ariaLabel;
+        if (typeof expandAriaLabel === 'function') {
+          if (context === 'groupHeader') {
+            ariaLabel = expandAriaLabel({ row: row.datum, key: groupKey });
+          } else {
+            ariaLabel = expandAriaLabel({ row, key: groupKey });
+          }
+        } else {
+          ariaLabel = expandAriaLabel;
+        }
         a11yTitle = `${a11yTitle} ${ariaLabel}`;
       }
     }

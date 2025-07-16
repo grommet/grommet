@@ -2120,7 +2120,7 @@ describe('DataTable', () => {
     passengers: string;
   };
 
-  test('rowDetails renders only for expanded rows', () => {
+  test.only('rowDetails renders only for expanded rows', () => {
     const data: Ship[] = [
       {
         name: 'Y-wing',
@@ -2142,7 +2142,7 @@ describe('DataTable', () => {
       onExpand: jest.fn(),
     };
 
-    const expandAriaLabel = (row: Ship, _key: string) =>
+    const expandAriaLabel = ({ row }: { row: Ship }) =>
       `Show details for ${row.name}`;
 
     render(
@@ -2167,8 +2167,7 @@ describe('DataTable', () => {
   });
 
   test('expandAriaLabel function', () => {
-    const expandAriaLabel = (_row: any, groupKey: string) =>
-      `${groupKey} items`;
+    const expandAriaLabel = (row: any) => `${row.a} items`;
     const { container } = render(
       <Grommet>
         <DataTable

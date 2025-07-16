@@ -91,10 +91,11 @@ export const SpaceX = () => {
 
   const expandable = useMemo(() => groups.map(({ id }) => id), [groups]);
 
-  const expandAriaLabel = (row, groupKey) => {
-    const rocket = groups.find((group) => group.id === groupKey);
-    const rocketName = rocket?.name || String(groupKey);
-    return `launches for ${rocketName} rocket`;
+  const expandAriaLabel = ({ row }) => {
+    if (row && row.name) {
+      return `Show details for ${row.name} starship`;
+    }
+    return undefined;
   };
 
   useEffect(() => {

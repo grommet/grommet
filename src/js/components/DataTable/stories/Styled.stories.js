@@ -7,8 +7,7 @@ import { Box, DataTable } from 'grommet';
 import { groupColumns, DATA } from './data';
 
 export const StyledDataTable = () => {
-  const expandAriaLabel = (_row, groupKey) =>
-    `employees in ${groupKey} location`;
+  const expandAriaLabel = ({ row }) => `${row.location}`;
 
   return (
     // Uncomment <Grommet> lines when using outside of storybook

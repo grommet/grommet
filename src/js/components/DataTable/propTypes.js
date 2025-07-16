@@ -178,7 +178,7 @@ if (process.env.NODE_ENV !== 'production') {
     replace: PropTypes.bool,
     resizeable: PropTypes.bool,
     rowProps: PropTypes.shape({}),
-    expandAriaLabel: PropTypes.func,
+    expandAriaLabel: PropTypes.oneOfType([PropTypes.func, PropTypes.string]),
     select: PropTypes.arrayOf(
       PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
     ),

@@ -176,12 +176,6 @@ export const GroupedBody = forwardRef(
               index,
             );
 
-            // Move the expandLabel logic here where context and key are defined
-            let expandLabel;
-            if (context === 'groupHeader' && expandAriaLabel) {
-              expandLabel = expandAriaLabel;
-            }
-
             return (
               <StyledDataTableRow
                 ref={rowRef}
@@ -203,7 +197,7 @@ export const GroupedBody = forwardRef(
                   }
                   expanded={expanded}
                   verticalAlign={verticalAlign}
-                  expandAriaLabel={expandLabel}
+                  expandAriaLabel={expandAriaLabel}
                   row={row}
                   groupKey={key}
                 />
