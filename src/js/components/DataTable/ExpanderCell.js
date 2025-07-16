@@ -18,7 +18,6 @@ const ExpanderControl = ({
   pad,
   expandAriaLabel,
   row,
-  groupKey,
   ...rest
 }) => {
   const { theme } = useThemeValue();
@@ -93,9 +92,9 @@ const ExpanderControl = ({
         let ariaLabel;
         if (typeof expandAriaLabel === 'function') {
           if (context === 'groupHeader') {
-            ariaLabel = expandAriaLabel({ row: row.datum, key: groupKey });
+            ariaLabel = expandAriaLabel(row.datum);
           } else {
-            ariaLabel = expandAriaLabel({ row, key: groupKey });
+            ariaLabel = expandAriaLabel(row);
           }
         } else {
           ariaLabel = expandAriaLabel;
@@ -129,7 +128,6 @@ const ExpanderCell = ({
   border,
   context,
   expandAriaLabel,
-  groupKey,
   row,
   ...rest
 }) => (
@@ -144,7 +142,6 @@ const ExpanderCell = ({
       context={context}
       expandAriaLabel={expandAriaLabel}
       row={row}
-      groupKey={groupKey}
       {...rest}
     />
   </TableCell>

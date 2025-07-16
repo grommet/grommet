@@ -2120,7 +2120,7 @@ describe('DataTable', () => {
     passengers: string;
   };
 
-  test.only('rowDetails renders only for expanded rows', () => {
+  test('rowDetails renders only for expanded rows', () => {
     const data: Ship[] = [
       {
         name: 'Y-wing',
