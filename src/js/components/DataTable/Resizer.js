@@ -157,6 +157,11 @@ const Resizer = ({ onResize, property, headerText, messages }) => {
           dropContent={
             <Box direction="row" pad="xsmall">
               <Button
+                aria-label={format({
+                  id: 'dataTable.decrease',
+                  values: { headerText },
+                  messages,
+                })}
                 icon={<Subtract />}
                 onClick={() => {
                   if (thRef.current) {
@@ -170,6 +175,11 @@ const Resizer = ({ onResize, property, headerText, messages }) => {
                 autoFocus
               />
               <Button
+                aria-label={format({
+                  id: 'dataTable.increase',
+                  values: { headerText },
+                  messages,
+                })}
                 icon={<Add />}
                 onClick={() => {
                   if (thRef.current) {

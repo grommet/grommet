@@ -88,7 +88,9 @@ export interface DataTableProps<TRowType = any> {
   margin?: MarginType;
   messages?: {
     ascending?: string;
+    decrease?: string;
     descending?: string;
+    increase?: string;
     resizerAria?: string;
     rows?: string;
     rowsChanged?: string;
