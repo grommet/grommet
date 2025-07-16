@@ -102,7 +102,7 @@ const LayerContainer = forwardRef(
         // Once layer is open we make sure it has focus so that you
         // can start tabbing inside the layer. If the caller put focus
         // on an element already, we honor that. Otherwise, we put
-        // the focus in the hidden anchor.
+        // the focus on the hidden span.
         let element = document.activeElement;
         while (element) {
           if (element === containerRef.current) {
