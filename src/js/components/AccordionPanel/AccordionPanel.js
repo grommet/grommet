@@ -12,8 +12,8 @@ import { AccordionPanelPropTypes } from './propTypes';
 import { useThemeValue } from '../../utils/useThemeValue';
 
 const HiddenBox = styled(Box)`
-  max-height: ${({ hidden }) => (hidden ? '0px' : 'initial')};
-  overflow: ${({ hidden }) => (hidden ? 'hidden' : 'visible')};
+  max-height: ${({ hide }) => (hide ? '0px' : 'initial')};
+  overflow: ${({ hide }) => (hide ? 'hidden' : 'visible')};
 `;
 
 const AccordionPanel = forwardRef(
@@ -177,7 +177,7 @@ const AccordionPanel = forwardRef(
             <Collapsible open={active}>{children}</Collapsible>
           )}
           {!animate && keepMount && (
-            <HiddenBox hidden={!active}>{children}</HiddenBox>
+            <HiddenBox hide={!active}>{children}</HiddenBox>
           )}
           {!animate && !keepMount && active && children}
         </Box>

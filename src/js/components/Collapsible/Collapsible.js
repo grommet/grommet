@@ -20,8 +20,8 @@ const AnimatedBox = styled(Box)`
 `;
 
 const HiddenBox = styled(Box)`
-  max-height: ${({ hidden }) => (hidden ? '0px' : 'initial')};
-  overflow: ${({ hidden }) => (hidden ? 'hidden' : 'visible')};
+  max-height: ${({ hide }) => (hide ? '0px' : 'initial')};
+  overflow: ${({ hide }) => (hide ? 'hidden' : 'visible')};
 `;
 
 const Collapsible = forwardRef(
@@ -121,7 +121,7 @@ const Collapsible = forwardRef(
         shouldOpen={!animate && shouldOpen}
       >
         {keepMount && (
-          <HiddenBox hidden={!(shouldOpen || open || animate)}>
+          <HiddenBox hide={!(shouldOpen || open || animate)}>
             {children}
           </HiddenBox>
         )}
