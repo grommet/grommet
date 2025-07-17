@@ -423,18 +423,7 @@ const Header = forwardRef(
                 </Box>
               );
 
-              if (search || onResize) {
-                const resizer = onResize ? (
-                  <Resizer
-                    property={property}
-                    onResize={(prop, width) => {
-                      onResize(prop, width);
-                      updateWidths(prop, width);
-                    }}
-                    headerText={typeof header === 'string' ? header : property}
-                    messages={messages}
-                  />
-                ) : null;
+              if (search) {
                 const searcher =
                   search && filters ? (
                     <Searcher
@@ -457,18 +446,10 @@ const Header = forwardRef(
                     style={onResize ? { position: 'relative' } : undefined}
                   >
                     {content}
-                    {searcher && resizer ? (
-                      <Box
-                        flex="shrink"
-                        direction="row"
-                        align="center"
-                        gap={theme.dataTable.header.gap}
-                      >
-                        {searcher}
-                        {resizer}
-                      </Box>
+                    {searcher && onResize ? (
+                      <Box pad={{ right: 'xsmall' }}>{searcher}</Box>
                     ) : (
-                      searcher || resizer
+                      searcher
                     )}
                   </Box>
                 );
@@ -498,12 +479,27 @@ const Header = forwardRef(
                       ? `${widths[property]}px`
                       : undefined,
                     boxSizing: onResize ? 'border-box' : undefined,
+                    position: onResize ? 'relative' : undefined,
+                    overflow: onResize ? 'visible' : undefined,
                   }}
                   onResize={onResize}
                   property={property}
                   {...passThemeFlag}
                 >
                   {content}
+                  {onResize && (
+                    <Resizer
+                      property={property}
+                      onResize={(prop, width) => {
+                        onResize(prop, width);
+                        updateWidths(prop, width);
+                      }}
+                      headerText={
+                        typeof header === 'string' ? header : property
+                      }
+                      messages={messages}
+                    />
+                  )}
                 </StyledDataTableCell>
               );
             },

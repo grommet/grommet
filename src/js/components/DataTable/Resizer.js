@@ -8,29 +8,28 @@ import React, {
 import styled from 'styled-components';
 
 import { Box } from '../Box';
-import { Button } from '../Button';
 import { Keyboard } from '../Keyboard';
-import { Stack } from '../Stack';
 import { useThemeValue } from '../../utils/useThemeValue';
 import { MessageContext } from '../../contexts/MessageContext';
+import { focusStyle, unfocusStyle } from '../../utils/styles';
 
-// Added a temporary min-width of 2px here so that the element doesn't
-// end up with a width of 0px. This is a placeholder solution until we
-// revisit this in https://github.com/grommet/grommet/issues/7273
-const InteractionBox = styled(Button)`
-  min-width: 2px;
+const StyledResizer = styled(Box)`
+  position: absolute;
+  right: 0;
+  margin-right: -12px;
+  width: 24px;
+  height: 100%;
+  top: 0;
   cursor: col-resize;
-  > * {
-    opacity: 0;
+  z-index: 1;
+  &:focus {
+    ${(props) =>
+      (!props.plain || props.focusIndicator) &&
+      focusStyle({ inset: props.focusIndicator === 'inset' })}
   }
 
-  // when mouse down, we want to continue to display styling
-  ${(props) => props.active && '> * { opacity: 1; }'}
-
-  &:hover {
-    > * {
-      opacity: 1;
-    }
+  &:focus:not(:focus-visible) {
+    ${unfocusStyle()}
   }
 `;
 
@@ -86,9 +85,21 @@ const Resizer = ({ onResize, property, headerText, messages }) => {
   }, [active, onMouseMove, onMouseUp]);
 
   let border;
+  if (
+    theme.dataTable.resize.border.color &&
+    theme.dataTable.resize.border.side
+  ) {
+    const { color, side = 'end' } = theme.dataTable.resize.border;
+    border = {
+      color,
+      side,
+    };
+  }
+
+  let hoverBorder = border;
   if (theme.dataTable.resize.hover && theme.dataTable.resize.hover.border) {
     const { color, side = 'end', size } = theme.dataTable.resize.hover.border;
-    border = {
+    hoverBorder = {
       color,
       side,
       size,
@@ -109,36 +120,32 @@ const Resizer = ({ onResize, property, headerText, messages }) => {
     [onResize, property],
   );
 
+  const [hover, setHover] = useState(false);
+
   return (
-    <Stack anchor="right" interactiveChild="last">
-      <Box
-        flex={false}
-        responsive={false}
-        pad={{ vertical: 'small' }}
-        {...theme.dataTable.resize}
-      />
-      <Keyboard onLeft={onKeyDown} onRight={onKeyDown}>
-        {/* provides a wider, more accessible target to grab resizer */}
-        <InteractionBox
-          aria-label={format({
-            id: 'dataTable.resizerAria',
-            values: { headerText },
-            messages,
-          })}
-          active={active}
-          flex={false}
-          pad={{ left: 'xsmall' }}
-          margin={{ top: 'xsmall' }}
-          ref={ref}
-          responsive={false}
-          onMouseDown={onMouseDown}
-          onMouseMove={start !== undefined ? onMouseMove : undefined}
-          onMouseUp={start !== undefined ? onMouseUp : undefined}
-        >
-          <Box pad={{ vertical: 'small' }} border={border} />
-        </InteractionBox>
-      </Keyboard>
-    </Stack>
+    <Keyboard onLeft={onKeyDown} onRight={onKeyDown}>
+      <StyledResizer
+        tabIndex={0}
+        aria-label={format({
+          id: 'dataTable.resizerAria',
+          values: { headerText },
+          messages,
+        })}
+        onMouseEnter={() => setHover(true)}
+        onMouseLeave={() => setHover(false)}
+        onMouseDown={onMouseDown}
+        onMouseMove={start !== undefined ? onMouseMove : undefined}
+        onMouseUp={start !== undefined ? onMouseUp : undefined}
+        ref={ref}
+        pad={{ vertical: 'xsmall' }}
+      >
+        <Box
+          border={hover ? hoverBorder : border}
+          height="100%"
+          alignSelf="center"
+        />
+      </StyledResizer>
+    </Keyboard>
   );
 };
 
