@@ -1,10 +1,16 @@
 import React, { forwardRef } from 'react';
 
-import { arcCommands, parseMetricToNum, translateEndAngle } from '../../utils';
+import {
+  arcCommands,
+  wedgeCommands,
+  parseMetricToNum,
+  translateEndAngle,
+} from '../../utils';
 
 import { StyledMeter } from './StyledMeter';
-import { strokeProps, defaultColor } from './utils';
+import { strokeProps, defaultColor, fillProps } from './utils';
 import { useThemeValue } from '../../utils/useThemeValue';
+// import { lineCommands } from '../../utils/graphics';
 
 const Circle = forwardRef((props, ref) => {
   const { background, max, round, size, thickness, type, values, ...rest } =
@@ -30,13 +36,17 @@ const Circle = forwardRef((props, ref) => {
   //  (type === 'semicircle' ? 180 : 360) / max;
   const someHighlight = (values || []).some((v) => v.highlight);
 
+  const gapTheme = theme.meter?.gap ?? '0';
+  const gap = parseMetricToNum(theme.global.edgeSize[gapTheme] || gapTheme);
+
   let startValue = 0;
   let startAngle = type === 'semicircle' ? 270 : 0;
   const paths = [];
   let pathCaps = [];
+
   (values || [])
     .filter((v) => v.value > 0)
-    .forEach((valueArg, index) => {
+    .forEach((valueArg, index, { length }) => {
       const { color, highlight, label, onHover, value, ...pathRest } = valueArg;
       const key = `p-${index}`;
       const colorName =
@@ -59,6 +69,11 @@ const Circle = forwardRef((props, ref) => {
         someHighlight && !highlight ? background : colorName,
         theme,
       );
+      const fill = fillProps(
+        someHighlight && !highlight ? background : colorName,
+        theme,
+      );
+
       if (round) {
         const d1 = arcCommands(centerX, centerY, radius, startAngle, endAngle);
         paths.unshift(
@@ -103,20 +118,36 @@ const Circle = forwardRef((props, ref) => {
         }
         pathCaps.unshift(pathCap);
       } else {
-        const d = arcCommands(centerX, centerY, radius, startAngle, endAngle);
+        const outerRadius = width / 2;
+        const innerRadius = type === 'pie' ? 0 : width / 2 - strokeWidth;
+
+        const isSemi = type === 'semicircle';
+        const leftGap = index === 0 && isSemi ? 0 : gap / 2;
+        const rightGap = index === length - 1 && isSemi ? 0 : -gap / 2;
+        const d = wedgeCommands(
+          centerX,
+          centerY,
+          outerRadius,
+          innerRadius,
+          startAngle,
+          endAngle,
+          leftGap,
+          rightGap,
+        );
         paths.push(
           <path
             key={key}
             d={d}
-            fill="none"
+            {...fill}
             {...stroke}
-            strokeWidth={strokeWidth}
+            strokeWidth={0}
             strokeLinecap="butt"
             {...hoverProps}
             {...pathRest}
           />,
         );
       }
+
       startValue += value;
       startAngle = endAngle;
     });
