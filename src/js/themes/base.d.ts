@@ -1274,7 +1274,7 @@ export interface ThemeType {
     color?: ColorType;
     colors?: GraphColorsType;
     extend?: ExtendType;
-    gap?: string;
+    gap?: GapType;
   };
   notification?: {
     actions?: AnchorProps;

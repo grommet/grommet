@@ -25,9 +25,9 @@ const Bar = forwardRef((props, ref) => {
     theme.global.edgeSize[thicknessProp] || thicknessProp,
   );
 
-  const gapTheme = theme.meter?.gap ?? 'xxsmall';
+  const gapTheme = theme.meter?.gap ?? 0;
   const gap = parseMetricToNum(theme.global.edgeSize[gapTheme] || gapTheme);
-  
+
   // account for the round cap, if any
   const capOffset = round ? thickness / 2 : 0;
   const mid = thickness / 2;
