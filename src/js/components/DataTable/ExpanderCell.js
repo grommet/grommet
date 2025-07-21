@@ -53,6 +53,7 @@ const ExpanderControl = ({
         messages: {
           'dataTable.expand': 'expand',
         },
+        values: { label: expandLabel || '' },
       });
 
     const collapseText =
@@ -62,6 +63,7 @@ const ExpanderControl = ({
         messages: {
           'dataTable.collapse': 'collapse',
         },
+        values: { label: expandLabel || '' },
       });
 
     const expandAllText =
@@ -79,13 +81,19 @@ const ExpanderControl = ({
       });
 
     let a11yTitle;
-    if (context === 'header') {
+    if (expandLabel) {
+      a11yTitle = format({
+        id: expanded ? 'dataTable.collapse' : 'dataTable.expand',
+        messages: {
+          'dataTable.expand': 'expand {label}',
+          'dataTable.collapse': 'collapse {label}',
+        },
+        values: { label: expandLabel },
+      });
+    } else if (context === 'header') {
       a11yTitle = expanded ? collapseAllText : expandAllText;
     } else {
       a11yTitle = expanded ? collapseText : expandText;
-    }
-    if (expandLabel) {
-      a11yTitle = expandLabel;
     }
 
     content = (

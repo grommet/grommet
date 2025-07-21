@@ -2157,14 +2157,14 @@ describe('DataTable', () => {
     );
 
     expect(
-      screen.getByLabelText('Show details for X-wing'),
+      screen.getByLabelText('expand Show details for X-wing'),
     ).toBeInTheDocument();
     expect(screen.getByText('Model: BTL Y-wing')).toBeInTheDocument();
     expect(screen.queryByText('Model: T-65 X-wing')).not.toBeInTheDocument();
   });
 
   test('expandLabel function', () => {
-    const expandLabel = (row: any) => `expand ${row.a} items`;
+    const expandLabel = (row: any) => `${row.a} items`;
     const { container } = render(
       <Grommet>
         <DataTable

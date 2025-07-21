@@ -57,10 +57,10 @@
   },
   "dataTable": {
     "ascending": "ascending",
-    "collapse": "collapse",
+    "collapse": "collapse {label}",
     "collapseAll": "collapse all",
     "descending": "descending",
-    "expand": "expand",
+    "expand": "expand {label}",
     "expandAll": "expand all",
     "resizerAria": "Resize {headerText} column",
     "rows": "rows",
