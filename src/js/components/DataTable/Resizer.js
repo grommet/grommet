@@ -16,7 +16,6 @@ import { focusStyle, unfocusStyle } from '../../utils/styles';
 const StyledResizer = styled(Box)`
   position: absolute;
   right: 0;
-  margin-right: -12px;
   width: 24px;
   height: 100%;
   top: 0;
@@ -27,13 +26,12 @@ const StyledResizer = styled(Box)`
       (!props.plain || props.focusIndicator) &&
       focusStyle({ inset: props.focusIndicator === 'inset' })}
   }
-
   &:focus:not(:focus-visible) {
     ${unfocusStyle()}
   }
 `;
 
-const Resizer = ({ onResize, property, headerText, messages }) => {
+const Resizer = ({ onResize, property, headerText, messages, headerId }) => {
   const { theme } = useThemeValue();
   const [active, setActive] = useState(false);
   const [start, setStart] = useState();
@@ -116,21 +114,23 @@ const Resizer = ({ onResize, property, headerText, messages }) => {
       // Used 12 here to align with the value set in onMouseMove
       const delta = event.key === 'ArrowLeft' ? -12 : 12;
       onResize(property, currentWidth + delta);
+      setWidth(currentWidth + delta);
     },
     [onResize, property],
   );
 
   const [hover, setHover] = useState(false);
+  const ariaLabel = format({
+    id: 'dataTable.resizerAria',
+    values: { headerText },
+    messages,
+  });
 
   return (
     <Keyboard onLeft={onKeyDown} onRight={onKeyDown}>
       <StyledResizer
         tabIndex={0}
-        aria-label={format({
-          id: 'dataTable.resizerAria',
-          values: { headerText },
-          messages,
-        })}
+        aria-label={ariaLabel}
         onMouseEnter={() => setHover(true)}
         onMouseLeave={() => setHover(false)}
         onMouseDown={onMouseDown}
@@ -138,6 +138,11 @@ const Resizer = ({ onResize, property, headerText, messages }) => {
         onMouseUp={start !== undefined ? onMouseUp : undefined}
         ref={ref}
         pad={{ vertical: 'xsmall' }}
+        margin={{ right: `-${theme.global.edgeSize.small}` }}
+        role="separator"
+        aria-valuetext={width ? `${ariaLabel} ${width} pixels` : ariaLabel}
+        aria-controls={headerId}
+        aria-orientation="vertical"
       >
         <Box
           border={hover ? hoverBorder : border}
