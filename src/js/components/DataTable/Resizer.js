@@ -31,7 +31,7 @@ const StyledResizer = styled(Box)`
   }
 `;
 
-const Resizer = ({ onResize, property, headerText, messages, headerId }) => {
+const Resizer = ({ onResize, property, headerText, messages }) => {
   const { theme } = useThemeValue();
   const [active, setActive] = useState(false);
   const [start, setStart] = useState();
@@ -130,7 +130,7 @@ const Resizer = ({ onResize, property, headerText, messages, headerId }) => {
     <Keyboard onLeft={onKeyDown} onRight={onKeyDown}>
       <StyledResizer
         tabIndex={0}
-        aria-label={ariaLabel}
+        aria-label={width ? `${ariaLabel} ${width} pixels` : ariaLabel}
         onMouseEnter={() => setHover(true)}
         onMouseLeave={() => setHover(false)}
         onMouseDown={onMouseDown}
@@ -139,10 +139,6 @@ const Resizer = ({ onResize, property, headerText, messages, headerId }) => {
         ref={ref}
         pad={{ vertical: 'xsmall' }}
         margin={{ right: `-${theme.global.edgeSize.small}` }}
-        role="separator"
-        aria-valuetext={width ? `${ariaLabel} ${width} pixels` : ariaLabel}
-        aria-controls={headerId}
-        aria-orientation="vertical"
       >
         <Box
           border={hover ? hoverBorder : border}

@@ -457,8 +457,6 @@ const Header = forwardRef(
               const cellPin = [...pin];
               if (columnPin) cellPin.push('left');
 
-              const headerId = `grommet-data-table-header-${property}`;
-
               return (
                 <StyledDataTableCell
                   aria-sort={ariaSort}
@@ -468,7 +466,6 @@ const Header = forwardRef(
                   verticalAlign={verticalAlign || columnVerticalAlign}
                   background={cellProps.background}
                   border={cellProps.border}
-                  id={headerId}
                   onWidth={(width) => updateWidths(property, width)}
                   // if sortable, pad will be included in the button styling
                   pad={sortable === false || !onSort ? cellProps.pad : 'none'}
@@ -501,7 +498,6 @@ const Header = forwardRef(
                         typeof header === 'string' ? header : property
                       }
                       messages={messages}
-                      id={headerId}
                     />
                   )}
                 </StyledDataTableCell>

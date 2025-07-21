@@ -4459,7 +4459,6 @@ exports[`DataFilters sub objects 1`] = `
         >
           <th
             class="c32 "
-            id="grommet-data-table-header-location.city"
             scope="col"
           >
             <div
@@ -4474,7 +4473,6 @@ exports[`DataFilters sub objects 1`] = `
           </th>
           <th
             class="c32 "
-            id="grommet-data-table-header-location.lat"
             scope="col"
           >
             <div
