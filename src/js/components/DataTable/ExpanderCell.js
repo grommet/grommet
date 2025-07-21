@@ -17,7 +17,6 @@ const ExpanderControl = ({
   messages,
   pad,
   expandLabel,
-  row,
   ...rest
 }) => {
   const { theme } = useThemeValue();
@@ -121,7 +120,6 @@ const ExpanderCell = ({
   border,
   context,
   expandLabel,
-  row,
   ...rest
 }) => (
   <TableCell
@@ -131,12 +129,7 @@ const ExpanderCell = ({
     plain="noPad"
     verticalAlign={context === 'groupEnd' ? 'bottom' : 'top'}
   >
-    <ExpanderControl
-      context={context}
-      expandLabel={expandLabel}
-      row={row}
-      {...rest}
-    />
+    <ExpanderControl context={context} expandLabel={expandLabel} {...rest} />
   </TableCell>
 );
 ExpanderCell.displayName = 'ExpanderCell';

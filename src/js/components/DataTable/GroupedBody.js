@@ -207,8 +207,6 @@ export const GroupedBody = forwardRef(
                   }
                   expanded={expanded}
                   verticalAlign={verticalAlign}
-                  row={row}
-                  groupKey={key}
                 />
                 {(selected || onSelect) && (
                   <TableCell
