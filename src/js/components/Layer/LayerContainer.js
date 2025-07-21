@@ -5,7 +5,7 @@ import React, {
   useMemo,
   useRef,
 } from 'react';
-import { ThemeContext } from 'styled-components';
+import styled, { ThemeContext } from 'styled-components';
 
 import { FocusedContainer } from '../FocusedContainer';
 import { Keyboard } from '../Keyboard';
@@ -13,15 +13,32 @@ import { ResponsiveContext } from '../../contexts/ResponsiveContext';
 import { OptionsContext } from '../../contexts/OptionsContext';
 import { ContainerTargetContext } from '../../contexts/ContainerTargetContext';
 import { useAnalytics } from '../../contexts/AnalyticsContext';
-
 import {
   backgroundIsDark,
   findVisibleParent,
   PortalContext,
+  styledComponentsConfig,
 } from '../../utils';
 
 import { StyledLayer, StyledContainer, StyledOverlay } from './StyledLayer';
 import { useThemeValue } from '../../utils/useThemeValue';
+
+// The FocusSpan ensures the LayerContainer has focus when
+// it is opened for user to start tabbing inside it.
+// It helps for escaping the LayerContainer using the keyboard.
+// It is hidden visually but still part of the accessibility tree.
+const FocusSpan = styled.span.withConfig(styledComponentsConfig)`
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  position: absolute;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+  &:focus {
+    outline: none;
+  }
+`;
 
 const LayerContainer = forwardRef(
   (
@@ -48,6 +65,7 @@ const LayerContainer = forwardRef(
     // layerOptions was created to preserve backwards compatibility but
     // should not be supported in v3
     const { layer: layerOptions } = useContext(OptionsContext);
+    const focusSpanRef = useRef();
     const containerRef = useRef();
     const layerRef = useRef();
     const portalContext = useContext(PortalContext);
@@ -56,9 +74,7 @@ const LayerContainer = forwardRef(
       () => [...portalContext, portalId],
       [portalContext, portalId],
     );
-
     const sendAnalytics = useAnalytics();
-
     useEffect(() => {
       const start = new Date();
       const element = layerRef.current;
@@ -79,7 +95,6 @@ const LayerContainer = forwardRef(
         }
       };
     }, [sendAnalytics, layerRef, position]);
-
     useEffect(() => {
       if (position !== 'hidden') {
         const node = layerRef.current || containerRef.current || ref.current;
@@ -87,8 +102,7 @@ const LayerContainer = forwardRef(
         // Once layer is open we make sure it has focus so that you
         // can start tabbing inside the layer. If the caller put focus
         // on an element already, we honor that. Otherwise, we put
-        // the focus within the layer. Look at FocusedContainer.js for
-        // more details.
+        // the focus on the hidden span.
         let element = document.activeElement;
         while (element) {
           if (element === containerRef.current) {
@@ -97,22 +111,17 @@ const LayerContainer = forwardRef(
           }
           element = element.parentElement;
         }
+        if (modal && !element && focusSpanRef.current) {
+          focusSpanRef.current.focus();
+        }
       }
     }, [modal, position, ref]);
-
-    useEffect(() => {
-      if (position !== 'hidden') {
-        const node = layerRef.current || containerRef.current || ref.current;
-        if (node && node.scrollIntoView) node.scrollIntoView();
-      }
-    }, [position, ref]);
 
     useEffect(() => {
       const onClickDocument = (event) => {
         // determine which portal id the target is in, if any
         let clickedPortalId = null;
         let node = (event.composed && event.composedPath()[0]) || event.target;
-
         while (
           clickedPortalId === null &&
           node &&
@@ -137,32 +146,26 @@ const LayerContainer = forwardRef(
           onClickOutside(event);
         }
       };
-
       // if user provides an onClickOutside function, listen for mousedown event
       if (onClickOutside) {
         document.addEventListener('mousedown', onClickDocument);
       }
-
       if (layerTarget) {
         const updateBounds = () => {
           const windowWidth = window.innerWidth;
           const windowHeight = window.innerHeight;
           const target = findVisibleParent(layerTarget);
-
           // affects StyledLayer
           const layer = layerRef.current;
-
           if (layer && target) {
             // clear prior styling
             layer.style.left = '';
             layer.style.top = '';
             layer.style.bottom = '';
             layer.style.width = '';
-
             // get bounds
             const targetRect = target.getBoundingClientRect();
             const layerRect = layer.getBoundingClientRect();
-
             // ensure that layer moves with the target
             layer.style.left = `${targetRect.left}px`;
             layer.style.right = `${windowWidth - targetRect.right}px`;
@@ -172,11 +175,9 @@ const LayerContainer = forwardRef(
             layer.style.maxWidth = Math.min(layerRect.width, windowWidth);
           }
         };
-
         updateBounds();
         window.addEventListener('resize', updateBounds);
         window.addEventListener('scroll', updateBounds, true);
-
         return () => {
           window.removeEventListener('resize', updateBounds);
           window.removeEventListener('scroll', updateBounds, true);
@@ -191,7 +192,6 @@ const LayerContainer = forwardRef(
         }
       };
     }, [containerTarget, layerTarget, onClickOutside, portalContext, portalId]);
-
     let content = (
       <StyledContainer
         ref={ref || containerRef}
@@ -215,6 +215,7 @@ const LayerContainer = forwardRef(
         // or outside of the layer
         data-g-portal-id={portalId}
       >
+        <FocusSpan ref={focusSpanRef} tabIndex="-1" />
         {children}
       </StyledContainer>
     );
@@ -241,7 +242,6 @@ const LayerContainer = forwardRef(
         {content}
       </StyledLayer>
     );
-
     if (onEsc) {
       content = (
         <Keyboard
@@ -261,12 +261,10 @@ const LayerContainer = forwardRef(
         </Keyboard>
       );
     }
-
     const themeContextValue = useMemo(() => {
       const dark = backgroundIsDark(theme.layer.background, theme);
       return { ...theme, dark };
     }, [theme]);
-
     if (theme.layer.background) {
       const { dark } = themeContextValue;
       if (dark !== undefined && dark !== theme.dark) {
@@ -277,13 +275,11 @@ const LayerContainer = forwardRef(
         );
       }
     }
-
     content = (
       <PortalContext.Provider value={nextPortalContext}>
         {content}
       </PortalContext.Provider>
     );
-
     const hitResponsiveBreakpoint =
       responsive && size === theme.layer.responsiveBreakpoint;
     // if layer is responsive and we've hit the breakpoint,
@@ -308,9 +304,7 @@ const LayerContainer = forwardRef(
         </FocusedContainer>
       );
     }
-
     return content;
   },
 );
-
 export { LayerContainer };
