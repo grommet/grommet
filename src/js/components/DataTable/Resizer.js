@@ -31,13 +31,24 @@ const StyledResizer = styled(Box)`
   }
 `;
 
-const Resizer = ({ onResize, property, headerText, messages }) => {
+const Resizer = ({ onResize, property, headerText, messages, headerId }) => {
   const { theme } = useThemeValue();
   const [active, setActive] = useState(false);
   const [start, setStart] = useState();
   const [width, setWidth] = useState();
   const ref = useRef();
   const { format } = useContext(MessageContext);
+
+  useEffect(() => {
+    if (ref.current) {
+      let element = ref.current;
+      // find TH parent
+      while (element && element.nodeName !== 'TH') element = element.parentNode;
+      const rect = element.getBoundingClientRect();
+      // Set initial width based on the TH element's width
+      setWidth(rect.width);
+    }
+  }, [ref]);
 
   const onMouseDown = useCallback((event) => {
     if (ref.current) {
@@ -139,6 +150,11 @@ const Resizer = ({ onResize, property, headerText, messages }) => {
         ref={ref}
         pad={{ vertical: 'xsmall' }}
         margin={{ right: `-${theme.global.edgeSize.small}` }}
+        role="separator"
+        aria-valuenow={width}
+        aria-valuetext={width ? `${ariaLabel} ${width} pixels` : ariaLabel}
+        aria-controls={headerId}
+        aria-orientation="vertical"
       >
         <Box
           border={hover ? hoverBorder : border}
