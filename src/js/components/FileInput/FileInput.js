@@ -347,6 +347,7 @@ const FileInput = forwardRef(
                       <Button
                         // The focus here is redundant for keyboard users
                         tabIndex={-1}
+                        disabled={disabled}
                         ref={controlRef}
                         kind={theme.fileInput.button}
                         label={format({
@@ -363,6 +364,7 @@ const FileInput = forwardRef(
                         // The focus here is redundant for keyboard users
                         tabIndex={-1}
                         alignSelf="center"
+                        disabled={disabled}
                         ref={controlRef}
                         margin="small"
                         onClick={() => {
@@ -421,6 +423,7 @@ const FileInput = forwardRef(
                     <Button
                       // The focus here is redundant for keyboard users
                       tabIndex={-1}
+                      disabled={disabled}
                       ref={controlRef}
                       kind={theme.fileInput.button}
                       label={format({
@@ -437,6 +440,7 @@ const FileInput = forwardRef(
                       // The focus here is redundant for keyboard users
                       tabIndex={-1}
                       alignSelf="center"
+                      disabled={disabled}
                       ref={controlRef}
                       margin="small"
                       onClick={() => {
@@ -518,6 +522,7 @@ const FileInput = forwardRef(
                         <Button
                           // The focus here is redundant for keyboard users
                           tabIndex={-1}
+                          disabled={disabled}
                           ref={controlRef}
                           kind={theme.fileInput.button}
                           label={format({
@@ -533,6 +538,7 @@ const FileInput = forwardRef(
                         <Anchor
                           // The focus here is redundant for keyboard users
                           tabIndex={-1}
+                          disabled={disabled}
                           ref={controlRef}
                           margin="small"
                           onClick={() => {
