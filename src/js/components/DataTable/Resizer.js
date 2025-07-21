@@ -24,7 +24,7 @@ const STEP = 12; // Used to determine the width change on resize
 // end up with a width of 0px. This is a placeholder solution until we
 // revisit this in https://github.com/grommet/grommet/issues/7273
 const InteractionBox = styled(DropButton)`
-  min-width: 24px;
+  min-width: 2px;
   cursor: col-resize;
   > * {
     opacity: 0;
