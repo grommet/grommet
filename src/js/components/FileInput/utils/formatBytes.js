@@ -12,9 +12,6 @@ const getCurrentOS = () => {
 };
 
 const defaultFormat = (size) => {
-  if (size == null || size === '' || Number.isNaN(Number(size))) {
-    return '0 B';
-  }
   const units = ['B', 'KB', 'MB', 'GB', 'TB'];
   const factor = SI_CONVERSION_FACTOR;
 
@@ -24,14 +21,11 @@ const defaultFormat = (size) => {
     num /= factor;
     index += 1;
   }
+
   return `${num.toFixed(1)} ${units[index]}`;
 };
 
 const windowsFormat = (size) => {
-  if (size == null || size === '' || Number.isNaN(Number(size))) {
-    return '0 KB';
-  }
-
   const num = Number(size);
   const rounded = Math.ceil(num / IEC_CONVERSION_FACTOR);
   return `${Intl.NumberFormat().format(rounded)} KB`;
