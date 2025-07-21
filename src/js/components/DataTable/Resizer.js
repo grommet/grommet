@@ -18,7 +18,7 @@ import { MessageContext } from '../../contexts/MessageContext';
 // end up with a width of 0px. This is a placeholder solution until we
 // revisit this in https://github.com/grommet/grommet/issues/7273
 const InteractionBox = styled(Button)`
-  min-width: 2px;
+  min-width: 24px;
   cursor: col-resize;
   > * {
     opacity: 0;
