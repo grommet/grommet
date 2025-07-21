@@ -6092,8 +6092,6 @@ exports[`DateInput disabled 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
-  opacity: 0.3;
-  cursor: default;
   line-height: 0;
   padding: 12px;
 }
@@ -6144,7 +6142,6 @@ exports[`DateInput disabled 1`] = `
   <button
     aria-label="Open Drop"
     class="c1"
-    disabled=""
     type="button"
   >
     <svg

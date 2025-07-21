@@ -270,7 +270,6 @@ Use the icon prop instead.`,
         <DropButton
           ref={ref}
           id={id}
-          disabled={disabled}
           dropProps={{ align: calendarDropdownAlign, ...dropProps }}
           dropContent={calendar}
           icon={icon || MaskedInputIcon || <CalendarIcon size={iconSize} />}
