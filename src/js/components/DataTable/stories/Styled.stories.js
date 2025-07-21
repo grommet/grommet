@@ -27,7 +27,7 @@ export const StyledDataTable = () => {
         groupBy={{
           property: 'location',
           expand: ['Palo Alto'],
-          expandLabel: expandLabel,
+          expandLabel,
         }}
         rowProps={{
           Eric: { background: ['graph-2', 'graph-3'], pad: 'small' },
