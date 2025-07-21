@@ -49,7 +49,7 @@ const ExpanderControl = ({
       messages?.expand ||
       format({
         id: 'dataTable.expand',
-        messages: messages,
+        messages,
         values: { label: expandLabel || '' },
       });
 
@@ -57,7 +57,7 @@ const ExpanderControl = ({
       messages?.collapse ||
       format({
         id: 'dataTable.collapse',
-        messages: messages,
+        messages,
         values: { label: expandLabel || '' },
       });
 
