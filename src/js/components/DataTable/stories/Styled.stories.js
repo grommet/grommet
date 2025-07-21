@@ -7,7 +7,7 @@ import { Box, DataTable } from 'grommet';
 import { groupColumns, DATA } from './data';
 
 export const StyledDataTable = () => {
-  const expandAriaLabel = (row) => `${row.location}`;
+  const expandLabel = (row) => `expand${row.location}`;
 
   return (
     // Uncomment <Grommet> lines when using outside of storybook
@@ -24,12 +24,15 @@ export const StyledDataTable = () => {
           footer: { color: 'dark-1', opacity: 'strong' },
         }}
         border={{ body: 'bottom' }}
-        groupBy={{ property: 'location', expand: ['Palo Alto'] }}
+        groupBy={{
+          property: 'location',
+          expand: ['Palo Alto'],
+          expandLabel: expandLabel,
+        }}
         rowProps={{
           Eric: { background: ['graph-2', 'graph-3'], pad: 'small' },
           Jet: { background: ['graph-2', 'graph-3'], pad: 'small' },
         }}
-        expandAriaLabel={expandAriaLabel}
       />
     </Box>
     // </Grommet>

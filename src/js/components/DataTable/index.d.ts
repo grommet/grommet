@@ -120,8 +120,8 @@ export interface DataTableProps<TRowType = any> {
         render: (row: TRowType) => React.ReactNode;
         expand?: (string | number)[];
         onExpand?: (expandedKeys: (string | number)[], datum: TRowType) => void;
+        expandLabel?: (datum: TRowType) => string;
       };
-  expandAriaLabel?: (row: TRowType) => string;
   show?: number | { page?: number };
   size?: 'small' | 'medium' | 'large' | 'xlarge' | string;
 
@@ -134,6 +134,7 @@ export interface DataTableProps<TRowType = any> {
         property?: string;
         expand?: Array<string>;
         expandable?: Array<string>;
+        expandLabel?: (datum: TRowType) => string;
         select?: { [key: string]: 'all' | 'some' | 'none' };
         onExpand?: (expandedKeys: string[]) => void;
         onSelect?: (

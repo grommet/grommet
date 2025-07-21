@@ -16,7 +16,7 @@ const ExpanderControl = ({
   onToggle,
   messages,
   pad,
-  expandAriaLabel,
+  expandLabel,
   row,
   ...rest
 }) => {
@@ -68,39 +68,24 @@ const ExpanderControl = ({
       messages?.expandAll ||
       format({
         id: 'dataTable.expandAll',
-        messages: {
-          'dataTable.expandAll': 'expand all',
-        },
+        messages,
       });
 
     const collapseAllText =
       messages?.collapseAll ||
       format({
         id: 'dataTable.collapseAll',
-        messages: {
-          'dataTable.collapseAll': 'collapse all',
-        },
+        messages,
       });
 
     let a11yTitle;
-
     if (context === 'header') {
       a11yTitle = expanded ? collapseAllText : expandAllText;
     } else {
       a11yTitle = expanded ? collapseText : expandText;
-      if (expandAriaLabel) {
-        let ariaLabel;
-        if (typeof expandAriaLabel === 'function') {
-          if (context === 'groupHeader') {
-            ariaLabel = expandAriaLabel(row.datum);
-          } else {
-            ariaLabel = expandAriaLabel(row);
-          }
-        } else {
-          ariaLabel = expandAriaLabel;
-        }
-        a11yTitle = `${a11yTitle} ${ariaLabel}`;
-      }
+    }
+    if (expandLabel) {
+      a11yTitle = expandLabel;
     }
 
     content = (
@@ -127,7 +112,7 @@ const ExpanderCell = ({
   background,
   border,
   context,
-  expandAriaLabel,
+  expandLabel,
   row,
   ...rest
 }) => (
@@ -140,7 +125,7 @@ const ExpanderCell = ({
   >
     <ExpanderControl
       context={context}
-      expandAriaLabel={expandAriaLabel}
+      expandLabel={expandLabel}
       row={row}
       {...rest}
     />

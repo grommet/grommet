@@ -5801,7 +5801,7 @@ exports[`DataTable expandAriaLabel default 1`] = `
 </div>
 `;
 
-exports[`DataTable expandAriaLabel function 1`] = `
+exports[`DataTable expandLabel function 1`] = `
 .c7 {
   display: inline-block;
   flex: 0 0 auto;

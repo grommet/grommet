@@ -123,6 +123,7 @@ if (process.env.NODE_ENV !== 'production') {
         property: PropTypes.string,
         expand: PropTypes.arrayOf(PropTypes.string),
         expandable: PropTypes.arrayOf(PropTypes.string),
+        expandLabel: PropTypes.func,
         select: PropTypes.objectOf(PropTypes.oneOf(['all', 'some', 'none'])),
         onExpand: PropTypes.func,
         onSelect: PropTypes.func,
@@ -154,6 +155,7 @@ if (process.env.NODE_ENV !== 'production') {
         expand: PropTypes.arrayOf(
           PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
         ),
+        expandLabel: PropTypes.func,
         onExpand: PropTypes.func,
       }),
     ]),
@@ -178,7 +180,6 @@ if (process.env.NODE_ENV !== 'production') {
     replace: PropTypes.bool,
     resizeable: PropTypes.bool,
     rowProps: PropTypes.shape({}),
-    expandAriaLabel: PropTypes.func,
     select: PropTypes.arrayOf(
       PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
     ),

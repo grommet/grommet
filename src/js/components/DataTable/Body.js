@@ -16,6 +16,7 @@ import { useThemeValue } from '../../utils/useThemeValue';
 
 const Row = memo(
   ({
+    expandLabel,
     cellProps,
     primaryValue,
     index,
@@ -37,7 +38,6 @@ const Row = memo(
     setFocused,
     setRowExpand,
     rowExpand,
-    expandAriaLabel,
     columns,
     pinnedOffset,
     primaryProperty,
@@ -155,12 +155,12 @@ const Row = memo(
             verticalAlign={verticalAlign}
           />
         )}
-
         {rowDetails && (
           <ExpanderCell
             background={isSelected && cellProps.selected.background}
             context={isRowExpanded ? 'groupHeader' : 'body'}
             expanded={isRowExpanded}
+            expandLabel={expandLabel}
             onToggle={() => {
               let nextRowExpand;
               const rowKey = primaryValue || index;
@@ -177,9 +177,6 @@ const Row = memo(
             }}
             pad={cellProps.pad}
             verticalAlign={verticalAlign}
-            expandAriaLabel={
-              expandAriaLabel ? expandAriaLabel(datum) : undefined
-            }
           />
         )}
         {columns.map((column) => (
@@ -240,7 +237,6 @@ const Body = forwardRef(
       step,
       rowExpand,
       setRowExpand,
-      expandAriaLabel,
       verticalAlign,
       ...rest
     },
@@ -403,8 +399,16 @@ const Body = forwardRef(
                 primaryValue,
                 index,
               );
+              let expandLabel;
+              if (
+                typeof rowDetails === 'object' &&
+                typeof rowDetails.expandLabel === 'function'
+              ) {
+                expandLabel = rowDetails.expandLabel(datum);
+              }
               return (
                 <Row
+                  expandLabel={expandLabel}
                   key={primaryValue ?? index}
                   setActive={setActive}
                   rowRef={rowRef}
@@ -431,7 +435,6 @@ const Body = forwardRef(
                   columns={columns}
                   primaryProperty={primaryProperty}
                   rowProps={rowProps}
-                  expandAriaLabel={expandAriaLabel}
                   data={data}
                   theme={theme}
                   pinnedOffset={pinnedOffset}

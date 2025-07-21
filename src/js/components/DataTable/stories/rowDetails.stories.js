@@ -89,17 +89,11 @@ export const RowDetails = () => {
     () => ({
       render: (row) => <ShipProperties ship={row} />,
       expand,
+      expandLabel: (row) => `Expanding details for ${row.name}`,
       onExpand: (nextExpand /* , datum */) => setExpand(nextExpand),
     }),
     [expand],
   );
-
-  const expandAriaLabel = (row) => {
-    if (row && row.name) {
-      return `${row.name}`;
-    }
-    return undefined;
-  };
 
   return (
     // Uncomment <Grommet> lines when using outside of storybook
@@ -120,7 +114,6 @@ export const RowDetails = () => {
             },
           ]}
           rowDetails={rowDetails}
-          expandAriaLabel={expandAriaLabel}
         />
         <Pagination />
       </Data>

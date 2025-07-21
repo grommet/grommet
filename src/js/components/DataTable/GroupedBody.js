@@ -29,7 +29,6 @@ export const GroupedBody = forwardRef(
       onUpdate,
       replace,
       rowProps,
-      expandAriaLabel,
       selected,
       size,
       step,
@@ -176,6 +175,16 @@ export const GroupedBody = forwardRef(
               index,
             );
 
+            let ariaLabel;
+            if (
+              typeof groupBy === 'object' &&
+              typeof groupBy.expandLabel === 'function'
+            ) {
+              const labelRow =
+                context === 'groupHeader' ? row.datum : row.datum;
+              ariaLabel = groupBy.expandLabel(labelRow);
+            }
+
             return (
               <StyledDataTableRow
                 ref={rowRef}
@@ -188,6 +197,7 @@ export const GroupedBody = forwardRef(
                     (isSelected && cellProps.selected.background) ||
                     cellProps.background
                   }
+                  expandLabel={ariaLabel}
                   border={cellProps.border}
                   context={context}
                   messages={messages}
@@ -197,7 +207,6 @@ export const GroupedBody = forwardRef(
                   }
                   expanded={expanded}
                   verticalAlign={verticalAlign}
-                  expandAriaLabel={expandAriaLabel}
                   row={row}
                   groupKey={key}
                 />

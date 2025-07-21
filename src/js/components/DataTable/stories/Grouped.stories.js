@@ -6,7 +6,7 @@ import { Box, DataTable } from 'grommet';
 // https://github.com/grommet/grommet/blob/master/src/js/components/DataTable/stories/data.js
 import { groupColumns, DATA } from './data';
 
-const expandAriaLabel = (row) => `details for ${row.location}`;
+const expandLabel = (row) => `details for ${row?.location}`;
 
 export const GroupedDataTable = () => (
   // Uncomment <Grommet> lines when using outside of storybook
@@ -15,8 +15,7 @@ export const GroupedDataTable = () => (
     <DataTable
       columns={groupColumns}
       data={DATA}
-      groupBy="location"
-      expandAriaLabel={expandAriaLabel}
+      groupBy={{ property: 'location', expandLabel }}
       sortable
     />
   </Box>

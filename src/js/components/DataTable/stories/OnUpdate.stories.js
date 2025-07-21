@@ -223,14 +223,13 @@ export const OnUpdateDataTable = () => {
     () => ({
       expandable,
       expand,
+      expandLabel: (row) => `${row.location} location`,
       select: groupSelected,
       property: 'location',
       onSelect: onGroupSelect,
     }),
     [expand, groupSelected, onGroupSelect],
   );
-
-  const expandAriaLabel = (row) => `${row.location} location`;
 
   return (
     // Uncomment <Grommet> lines when using outside of storybook
@@ -250,7 +249,6 @@ export const OnUpdateDataTable = () => {
         }}
         select={select}
         step={step}
-        expandAriaLabel={expandAriaLabel}
       />
     </Box>
     // </Grommet>

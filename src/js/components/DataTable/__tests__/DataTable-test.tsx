@@ -2139,10 +2139,9 @@ describe('DataTable', () => {
     const rowDetails = {
       render: (row: Ship) => <Text>Model: {row.model}</Text>,
       expand: ['Y-wing'],
+      expandLabel: (row: Ship) => `Show details for ${row.name}`,
       onExpand: jest.fn(),
     };
-
-    const expandAriaLabel = (row: Ship) => `Show details for ${row.name}`;
 
     render(
       <Grommet>
@@ -2153,20 +2152,19 @@ describe('DataTable', () => {
           ]}
           data={data}
           rowDetails={rowDetails}
-          expandAriaLabel={expandAriaLabel}
         />
       </Grommet>,
     );
 
     expect(
-      screen.getByLabelText('expand Show details for X-wing'),
+      screen.getByLabelText('Show details for X-wing'),
     ).toBeInTheDocument();
     expect(screen.getByText('Model: BTL Y-wing')).toBeInTheDocument();
     expect(screen.queryByText('Model: T-65 X-wing')).not.toBeInTheDocument();
   });
 
-  test('expandAriaLabel function', () => {
-    const expandAriaLabel = (row: any) => `${row.a} items`;
+  test('expandLabel function', () => {
+    const expandLabel = (row: any) => `expand ${row.a} items`;
     const { container } = render(
       <Grommet>
         <DataTable
@@ -2180,8 +2178,7 @@ describe('DataTable', () => {
             { a: 'two', b: 2.1 },
             { a: 'two', b: 2.2 },
           ]}
-          groupBy="a"
-          expandAriaLabel={expandAriaLabel}
+          groupBy={{ property: 'a', expandLabel: expandLabel }}
         />
       </Grommet>,
     );

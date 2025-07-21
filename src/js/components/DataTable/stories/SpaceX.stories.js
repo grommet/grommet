@@ -91,7 +91,7 @@ export const SpaceX = () => {
 
   const expandable = useMemo(() => groups.map(({ id }) => id), [groups]);
 
-  const expandAriaLabel = (row) => {
+  const expandLabel = (row) => {
     if (row && row.name) {
       return `Show details for ${row.name} starship`;
     }
@@ -199,9 +199,9 @@ export const SpaceX = () => {
         groupBy={{
           expandable,
           expand: expanded,
+          expandLabel,
           property: 'rocketId',
         }}
-        expandAriaLabel={expandAriaLabel}
         onUpdate={(opts) => {
           setExpanded(opts.expanded);
           setLimit(opts.count);
