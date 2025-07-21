@@ -6,7 +6,8 @@ import React, {
   useState,
 } from 'react';
 import styled from 'styled-components';
-import { Add, Subtract } from 'grommet-icons';
+import { Add } from 'grommet-icons/icons/Add';
+import { Subtract } from 'grommet-icons/icons/Subtract';
 
 import { Box } from '../Box';
 import { Button } from '../Button';
