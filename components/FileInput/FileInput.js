@@ -321,6 +321,7 @@ var FileInput = exports.FileInput = /*#__PURE__*/(0, _react.forwardRef)(function
   // The focus here is redundant for keyboard users
   , {
     tabIndex: -1,
+    disabled: disabled,
     ref: controlRef,
     kind: theme.fileInput.button,
     label: format({
@@ -336,6 +337,7 @@ var FileInput = exports.FileInput = /*#__PURE__*/(0, _react.forwardRef)(function
   , {
     tabIndex: -1,
     alignSelf: "center",
+    disabled: disabled,
     ref: controlRef,
     margin: "small",
     onClick: function onClick() {
@@ -387,6 +389,7 @@ var FileInput = exports.FileInput = /*#__PURE__*/(0, _react.forwardRef)(function
   // The focus here is redundant for keyboard users
   , {
     tabIndex: -1,
+    disabled: disabled,
     ref: controlRef,
     kind: theme.fileInput.button,
     label: format({
@@ -402,6 +405,7 @@ var FileInput = exports.FileInput = /*#__PURE__*/(0, _react.forwardRef)(function
   , {
     tabIndex: -1,
     alignSelf: "center",
+    disabled: disabled,
     ref: controlRef,
     margin: "small",
     onClick: function onClick() {
@@ -459,6 +463,7 @@ var FileInput = exports.FileInput = /*#__PURE__*/(0, _react.forwardRef)(function
     // The focus here is redundant for keyboard users
     , {
       tabIndex: -1,
+      disabled: disabled,
       ref: controlRef,
       kind: theme.fileInput.button,
       label: format({
@@ -473,6 +478,7 @@ var FileInput = exports.FileInput = /*#__PURE__*/(0, _react.forwardRef)(function
     // The focus here is redundant for keyboard users
     , {
       tabIndex: -1,
+      disabled: disabled,
       ref: controlRef,
       margin: "small",
       onClick: function onClick() {

@@ -315,6 +315,7 @@ var FileInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
   // The focus here is redundant for keyboard users
   , {
     tabIndex: -1,
+    disabled: disabled,
     ref: controlRef,
     kind: theme.fileInput.button,
     label: format({
@@ -330,6 +331,7 @@ var FileInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
   , {
     tabIndex: -1,
     alignSelf: "center",
+    disabled: disabled,
     ref: controlRef,
     margin: "small",
     onClick: function onClick() {
@@ -381,6 +383,7 @@ var FileInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
   // The focus here is redundant for keyboard users
   , {
     tabIndex: -1,
+    disabled: disabled,
     ref: controlRef,
     kind: theme.fileInput.button,
     label: format({
@@ -396,6 +399,7 @@ var FileInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
   , {
     tabIndex: -1,
     alignSelf: "center",
+    disabled: disabled,
     ref: controlRef,
     margin: "small",
     onClick: function onClick() {
@@ -453,6 +457,7 @@ var FileInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
     // The focus here is redundant for keyboard users
     , {
       tabIndex: -1,
+      disabled: disabled,
       ref: controlRef,
       kind: theme.fileInput.button,
       label: format({
@@ -467,6 +472,7 @@ var FileInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
     // The focus here is redundant for keyboard users
     , {
       tabIndex: -1,
+      disabled: disabled,
       ref: controlRef,
       margin: "small",
       onClick: function onClick() {

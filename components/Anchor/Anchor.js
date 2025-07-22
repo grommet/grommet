@@ -27,7 +27,7 @@ var Anchor = exports.Anchor = /*#__PURE__*/(0, _react.forwardRef)(function (_ref
     label = _ref.label,
     _onBlur = _ref.onBlur,
     onClickProp = _ref.onClick,
-    _onFocus = _ref.onFocus,
+    onFocus = _ref.onFocus,
     reverse = _ref.reverse,
     sizeProp = _ref.size,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
@@ -76,10 +76,10 @@ var Anchor = exports.Anchor = /*#__PURE__*/(0, _react.forwardRef)(function (_ref
     reverse: reverse,
     href: !disabled ? href : undefined,
     onClick: !disabled ? onClick : undefined,
-    onFocus: function onFocus(event) {
+    onFocus: !disabled ? function (event) {
       setFocus(true);
-      if (_onFocus) _onFocus(event);
-    },
+      if (onFocus) onFocus(event);
+    } : undefined,
     onBlur: function onBlur(event) {
       setFocus(false);
       if (_onBlur) _onBlur(event);
