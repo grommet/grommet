@@ -290,6 +290,7 @@ Use the icon prop instead.`,
 
     const DateInputButton = readOnlyCopy ? (
       <CopyButton
+        disabled={disabled}
         onBlurCopy={onBlurCopy}
         onClickCopy={onClickCopy}
         readOnlyCopyPrompt={readOnlyCopyPrompt}
