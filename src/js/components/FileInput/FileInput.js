@@ -113,7 +113,7 @@ const FileInput = forwardRef(
       value: valueProp,
       initialValue: [],
       validate: [
-        maxSize
+        typeof maxSize === 'number'
           ? () => {
               const fileList = [...files];
               let message = '';
@@ -483,8 +483,8 @@ const FileInput = forwardRef(
                       align="center"
                       direction="row"
                     >
-                      {((maxSize && file.size > maxSize) ||
-                        (max && index >= max)) && (
+                      {((typeof maxSize === 'number' && file.size > maxSize) ||
+                        (typeof max === 'number' && index >= max)) && (
                         <CircleAlert
                           a11yTitle={format({
                             id: messageId,
@@ -492,7 +492,10 @@ const FileInput = forwardRef(
                             values: {
                               maxFile: max,
                               fileName: file.name,
-                              maxSize: formatBytes(maxSize),
+                              maxSize:
+                                typeof maxSize === 'number'
+                                  ? formatBytes(maxSize)
+                                  : undefined,
                             },
                           })}
                         />
