@@ -17,7 +17,7 @@ var _MessageContext = require("../../contexts/MessageContext");
 var _propTypes = require("./propTypes");
 var _CopyButton = require("./CopyButton");
 var _useThemeValue2 = require("../../utils/useThemeValue");
-var _excluded = ["a11yTitle", "defaultSuggestion", "defaultValue", "dropAlign", "dropHeight", "dropTarget", "dropProps", "focusIndicator", "icon", "id", "messages", "name", "onBlur", "onChange", "onFocus", "onKeyDown", "onSelect", "onSuggestionSelect", "onSuggestionsClose", "onSuggestionsOpen", "placeholder", "plain", "readOnly", "readOnlyCopy", "reverse", "suggestions", "textAlign", "value", "width"];
+var _excluded = ["a11yTitle", "defaultSuggestion", "defaultValue", "disabled", "dropAlign", "dropHeight", "dropTarget", "dropProps", "focusIndicator", "icon", "id", "messages", "name", "onBlur", "onChange", "onFocus", "onKeyDown", "onSelect", "onSuggestionSelect", "onSuggestionsClose", "onSuggestionsOpen", "placeholder", "plain", "readOnly", "readOnlyCopy", "reverse", "suggestions", "textAlign", "value", "width"];
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
 function _interopRequireWildcard(e, t) { if ("function" == typeof WeakMap) var r = new WeakMap(), n = new WeakMap(); return (_interopRequireWildcard = function _interopRequireWildcard(e, t) { if (!t && e && e.__esModule) return e; var o, i, f = { __proto__: null, "default": e }; if (null === e || "object" != typeof e && "function" != typeof e) return f; if (o = t ? n : r) { if (o.has(e)) return o.get(e); o.set(e, f); } for (var _t in e) "default" !== _t && {}.hasOwnProperty.call(e, _t) && ((i = (o = Object.defineProperty) && Object.getOwnPropertyDescriptor(e, _t)) && (i.get || i.set) ? o(f, _t, i) : f[_t] = e[_t]); return f; })(e, t); }
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
@@ -52,6 +52,7 @@ var TextInput = exports.TextInput = /*#__PURE__*/(0, _react.forwardRef)(function
   var a11yTitle = _ref.a11yTitle,
     defaultSuggestion = _ref.defaultSuggestion,
     defaultValue = _ref.defaultValue,
+    disabled = _ref.disabled,
     _ref$dropAlign = _ref.dropAlign,
     dropAlign = _ref$dropAlign === void 0 ? defaultDropAlign : _ref$dropAlign,
     dropHeight = _ref.dropHeight,
@@ -386,6 +387,7 @@ var TextInput = exports.TextInput = /*#__PURE__*/(0, _react.forwardRef)(function
 
   var textInputIcon = (0, _utils.useSizedIcon)(icon, rest.size, theme);
   var ReadOnlyCopyButton = /*#__PURE__*/_react["default"].createElement(_CopyButton.CopyButton, {
+    disabled: disabled,
     onBlurCopy: onBlurCopy,
     onClickCopy: onClickCopy,
     readOnlyCopyPrompt: readOnlyCopyPrompt,
@@ -412,6 +414,7 @@ var TextInput = exports.TextInput = /*#__PURE__*/(0, _react.forwardRef)(function
     id: id,
     name: name,
     autoComplete: "off",
+    disabled: disabled,
     plain: plain,
     placeholder: typeof placeholder === 'string' ? placeholder : undefined,
     icon: !readOnly && icon,

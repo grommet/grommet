@@ -282,6 +282,7 @@ var DateInput = exports.DateInput = /*#__PURE__*/(0, _react.forwardRef)(function
     if (tip === readOnlyCopyValidation) setTip(readOnlyCopyPrompt);
   };
   var DateInputButton = readOnlyCopy ? /*#__PURE__*/_react["default"].createElement(_CopyButton.CopyButton, {
+    disabled: disabled,
     onBlurCopy: onBlurCopy,
     onClickCopy: onClickCopy,
     readOnlyCopyPrompt: readOnlyCopyPrompt,
@@ -289,6 +290,7 @@ var DateInput = exports.DateInput = /*#__PURE__*/(0, _react.forwardRef)(function
     value: value
   }) : /*#__PURE__*/_react["default"].createElement(_Button.Button, {
     onClick: open ? closeCalendar : openCalendar,
+    disabled: disabled,
     plain: true,
     icon: icon || MaskedInputIcon || /*#__PURE__*/_react["default"].createElement(_Calendar.Calendar, {
       size: iconSize

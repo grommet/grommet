@@ -19,7 +19,8 @@ var StyledButton = styled(Button).withConfig({
 });
 export var CopyButton = function CopyButton(_ref) {
   var _theme$global$input$p, _theme$global$input$p2, _theme$global$input$p3;
-  var onClickCopy = _ref.onClickCopy,
+  var disabled = _ref.disabled,
+    onClickCopy = _ref.onClickCopy,
     onBlurCopy = _ref.onBlurCopy,
     readOnlyCopyPrompt = _ref.readOnlyCopyPrompt,
     tip = _ref.tip,
@@ -35,6 +36,7 @@ export var CopyButton = function CopyButton(_ref) {
     },
     content: tip
   }, /*#__PURE__*/React.createElement(StyledButton, _extends({
+    disabled: disabled,
     onClick: onClickCopy,
     icon: /*#__PURE__*/React.createElement(Copy, null),
     pad: {

@@ -6936,6 +6936,8 @@ exports[`DateInput format disabled 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
+  opacity: 0.3;
+  cursor: default;
   line-height: 0;
 }
 
@@ -7088,6 +7090,7 @@ exports[`DateInput format disabled 1`] = `
     </div>
     <button
       class="c5"
+      disabled=""
       type="button"
     >
       <svg

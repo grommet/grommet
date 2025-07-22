@@ -1,4 +1,4 @@
-var _excluded = ["a11yTitle", "defaultSuggestion", "defaultValue", "dropAlign", "dropHeight", "dropTarget", "dropProps", "focusIndicator", "icon", "id", "messages", "name", "onBlur", "onChange", "onFocus", "onKeyDown", "onSelect", "onSuggestionSelect", "onSuggestionsClose", "onSuggestionsOpen", "placeholder", "plain", "readOnly", "readOnlyCopy", "reverse", "suggestions", "textAlign", "value", "width"];
+var _excluded = ["a11yTitle", "defaultSuggestion", "defaultValue", "disabled", "dropAlign", "dropHeight", "dropTarget", "dropProps", "focusIndicator", "icon", "id", "messages", "name", "onBlur", "onChange", "onFocus", "onKeyDown", "onSelect", "onSuggestionSelect", "onSuggestionsClose", "onSuggestionsOpen", "placeholder", "plain", "readOnly", "readOnlyCopy", "reverse", "suggestions", "textAlign", "value", "width"];
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (-1 !== e.indexOf(n)) continue; t[n] = r[n]; } return t; }
 import React, { forwardRef, useCallback, useContext, useEffect, useMemo, useRef, useState } from 'react';
@@ -46,6 +46,7 @@ var TextInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var a11yTitle = _ref.a11yTitle,
     defaultSuggestion = _ref.defaultSuggestion,
     defaultValue = _ref.defaultValue,
+    disabled = _ref.disabled,
     _ref$dropAlign = _ref.dropAlign,
     dropAlign = _ref$dropAlign === void 0 ? defaultDropAlign : _ref$dropAlign,
     dropHeight = _ref.dropHeight,
@@ -380,6 +381,7 @@ var TextInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
 
   var textInputIcon = useSizedIcon(icon, rest.size, theme);
   var ReadOnlyCopyButton = /*#__PURE__*/React.createElement(CopyButton, {
+    disabled: disabled,
     onBlurCopy: onBlurCopy,
     onClickCopy: onClickCopy,
     readOnlyCopyPrompt: readOnlyCopyPrompt,
@@ -406,6 +408,7 @@ var TextInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
     id: id,
     name: name,
     autoComplete: "off",
+    disabled: disabled,
     plain: plain,
     placeholder: typeof placeholder === 'string' ? placeholder : undefined,
     icon: !readOnly && icon,
