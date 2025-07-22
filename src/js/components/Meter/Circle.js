@@ -10,7 +10,7 @@ import {
 import { StyledMeter } from './StyledMeter';
 import { strokeProps, defaultColor, fillProps } from './utils';
 import { useThemeValue } from '../../utils/useThemeValue';
-// import { lineCommands } from '../../utils/graphics';
+import { calcAngle } from '../../utils/graphics';
 
 const Circle = forwardRef((props, ref) => {
   const { background, max, round, size, thickness, type, values, ...rest } =
@@ -89,6 +89,26 @@ const Circle = forwardRef((props, ref) => {
           />,
         );
 
+        if (gap > 0) {
+          paths.unshift(
+            <path
+              key={`${key}-gap`}
+              d={arcCommands(
+                centerX,
+                centerY,
+                radius,
+                endAngle,
+                calcAngle(radius, endAngle, gap),
+              )}
+              fill="none"
+              {...strokeProps(background, theme)}
+              strokeWidth={strokeWidth}
+              strokeLinecap="round"
+              {...hoverProps}
+              {...pathRest}
+            />,
+          );
+        };
         // To handle situations where the last values are small, redraw
         // a dot at the end. Give just a bit of angle to avoid anti-aliasing
         // leakage around the edge.

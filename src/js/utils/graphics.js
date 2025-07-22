@@ -85,7 +85,7 @@ export const arcCommands = (centerX, centerY, radius, startAngle, endAngle) => {
   return d;
 };
 
-const calcAngle = (radius, angle, gap) => {
+export const calcAngle = (radius, angle, gap) => {
   const gapAngleRadians = Math.asin(Math.abs(gap) / radius);
   const gapAngle = (gapAngleRadians * 180) / Math.PI;
   return gap > 0 ? angle + gapAngle : angle - gapAngle;

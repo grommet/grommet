@@ -3,7 +3,7 @@ import React, { forwardRef } from 'react';
 import { parseMetricToNum } from '../../utils';
 
 import { StyledMeter } from './StyledMeter';
-import { strokeProps, defaultColor } from './utils';
+import { strokeProps, defaultColor, fillProps } from './utils';
 import { useThemeValue } from '../../utils/useThemeValue';
 
 const Bar = forwardRef((props, ref) => {
@@ -29,26 +29,60 @@ const Bar = forwardRef((props, ref) => {
   const gap = parseMetricToNum(theme.global.edgeSize[gapTheme] || gapTheme);
 
   // account for the round cap, if any
-  const capOffset = round ? thickness / 2 : 0;
+  const capRadius = round ? thickness / 2 : 0;
   const mid = thickness / 2;
 
   const someHighlight = (values || []).some((v) => v.highlight);
   let start =
     direction === 'horizontal'
-      ? capOffset
-      : (max * (length - 2 * capOffset)) / max;
+      ? capRadius
+      : (max * (length - 2 * capRadius)) / max;
+
+  // Available space for the bar is the length of the meter minus an end cap
+  // on each end, minus the gap between bars.
+  const lengthAvailable = length - 2 * capRadius - (gap * (values.length - 1));
 
   const paths = (values || [])
     .reduce((acc, valueArg, index) => {
       if (valueArg.value > 0) {
         const { color, highlight, label, onHover, value, ...pathRest } =
-          valueArg;
+        valueArg;
         const key = `p-${index}`;
-        const delta = (value * (length - 2 * (capOffset + gap))) / max;
-        const d =
+        const delta = (value * lengthAvailable) / max;
+
+        // add a little bit extra gap for clarity if it's rounded
+        const extraGap = round && index !== 0 ? gap * 1.5 : 0;
+        const initialStart =
+          direction === 'horizontal' ? start + extraGap : start - extraGap;
+        
+        // define the x,y points for the corners of the bar.
+        const points =
           direction === 'horizontal'
-            ? `M ${start},${mid} L ${start + delta},${mid}`
-            : `M ${mid},${start} L ${mid},${start - delta}`;
+            ? [
+                `${initialStart},${thickness}`,
+                `${initialStart},0`,
+                `${start + delta},0`,
+                `${start + delta},${thickness}`,
+              ]
+            : [
+                `${thickness},${initialStart}`,
+                `0,${initialStart}`,
+                `0,${start - delta}`,
+                `${thickness},${start - delta}`,
+              ];
+        
+        // if rounded, the starting cap is an arcs. All but the first bar
+        // will have a gap and a slightly larger radius 
+        const startRadius = index === 0 ? capRadius : capRadius + gap / 2;
+        const startCap = round
+          ? `A ${startRadius},${startRadius} 0 0 ${index === 0 ? 1 : 0} ${
+              points[1]
+            }`
+          : `L ${points[1]}`;
+        const endCap = round
+          ? `A ${capRadius},${capRadius} 0 0 1 ${points[3]}`
+          : `L ${points[3]}`;
+        const d = `M ${points[0]} ${startCap} L ${points[2]} ${endCap} Z`;
         const colorName =
           color || defaultColor(index, theme, values ? values.length : 0);
         let hoverProps;
@@ -58,36 +92,26 @@ const Bar = forwardRef((props, ref) => {
             onMouseLeave: () => onHover(false),
           };
         }
-        if (direction === 'horizontal') {
-          start += delta;
-        } else {
-          start -= delta;
-        }
+        const fill = fillProps(
+          someHighlight && !highlight ? background : colorName,
+          theme,
+        );
 
-        const result = (
+        acc.push(
           <path
             key={key}
             d={d}
-            fill="none"
-            {...strokeProps(
-              someHighlight && !highlight ? background : colorName,
-              theme,
-            )}
-            strokeWidth={direction === 'horizontal' ? thickness : length}
-            strokeLinecap={round ? 'round' : 'butt'}
+            {...fill}
+            strokeWidth={0}
+            stroke="none"
             {...hoverProps}
             {...pathRest}
-          />
-        );
-
-        acc.push(result);
-        if (gap > 0 && index < values.length - 1) {
-          // add gap between bars
-          if (direction === 'horizontal') {
-            start += gap;
-          } else {
-            start -= gap;
-          }
+          />);
+               
+        if (direction === 'horizontal') {
+          start += delta + gap;
+        } else {
+          start -= (delta + gap);
         }
       }
       return acc;
@@ -103,8 +127,8 @@ const Bar = forwardRef((props, ref) => {
 
   const backgroundPath =
     direction === 'horizontal'
-      ? `M ${capOffset},${mid} L ${length - capOffset},${mid}`
-      : `M ${mid},${capOffset} L ${mid},${length - capOffset}`;
+      ? `M ${capRadius},${mid} L ${length - capRadius},${mid}`
+      : `M ${mid},${capRadius} L ${mid},${length - capRadius}`;
 
   return (
     <StyledMeter

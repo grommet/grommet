@@ -39,11 +39,10 @@ exports[`Meter background 1`] = `
       stroke-width="24"
     />
     <path
-      d="M 0,12 L 75.6,12"
-      fill="none"
-      stroke="#6FFFB0"
-      stroke-linecap="butt"
-      stroke-width="24"
+      d="M 0,24 L 0,0 L 76.8,0 L 76.8,24 Z"
+      fill="#6FFFB0"
+      stroke="none"
+      stroke-width="0"
     />
   </svg>
   <svg
@@ -63,11 +62,10 @@ exports[`Meter background 1`] = `
       stroke-width="24"
     />
     <path
-      d="M 0,12 L 75.6,12"
-      fill="none"
-      stroke="#6FFFB0"
-      stroke-linecap="butt"
-      stroke-width="24"
+      d="M 0,24 L 0,0 L 76.8,0 L 76.8,24 Z"
+      fill="#6FFFB0"
+      stroke="none"
+      stroke-width="0"
     />
   </svg>
   <svg
@@ -136,11 +134,10 @@ exports[`Meter background 1`] = `
       stroke-width="24"
     />
     <path
-      d="M 0,12 L 75.6,12"
-      fill="none"
-      stroke="#6FFFB0"
-      stroke-linecap="butt"
-      stroke-width="24"
+      d="M 0,24 L 0,0 L 76.8,0 L 76.8,24 Z"
+      fill="#6FFFB0"
+      stroke="none"
+      stroke-width="0"
     />
   </svg>
 </div>
@@ -186,11 +183,10 @@ exports[`Meter basic 1`] = `
       stroke-width="24"
     />
     <path
-      d="M 0,12 L 75.6,12"
-      fill="none"
-      stroke="#6FFFB0"
-      stroke-linecap="butt"
-      stroke-width="24"
+      d="M 0,24 L 0,0 L 76.8,0 L 76.8,24 Z"
+      fill="#6FFFB0"
+      stroke="none"
+      stroke-width="0"
     />
   </svg>
 </div>
@@ -223,11 +219,10 @@ exports[`Meter basic renders outside grommet wrapper 1`] = `
     stroke-width="24"
   />
   <path
-    d="M 0,12 L 75.6,12"
-    fill="none"
-    stroke="#6FFFB0"
-    stroke-linecap="butt"
-    stroke-width="24"
+    d="M 0,24 L 0,0 L 76.8,0 L 76.8,24 Z"
+    fill="#6FFFB0"
+    stroke="none"
+    stroke-width="0"
   />
 </svg>
 `;
@@ -317,11 +312,10 @@ exports[`Meter custom message on meter plural 1`] = `
     stroke-width="24"
   />
   <path
-    d="M 0,12 L 56.7,12"
-    fill="none"
-    stroke="#6FFFB0"
-    stroke-linecap="butt"
-    stroke-width="24"
+    d="M 0,24 L 0,0 L 57.6,0 L 57.6,24 Z"
+    fill="#6FFFB0"
+    stroke="none"
+    stroke-width="0"
   />
 </svg>
 `;
@@ -403,18 +397,16 @@ exports[`Meter custom message plural 1`] = `
       stroke-width="24"
     />
     <path
-      d="M 160.943661971831,12 L 381,12"
-      fill="none"
-      stroke="#6FFFB0"
-      stroke-linecap="butt"
-      stroke-width="24"
+      d="M 162.19718309859155,24 L 162.19718309859155,0 L 384,0 L 384,24 Z"
+      fill="#6FFFB0"
+      stroke="none"
+      stroke-width="0"
     />
     <path
-      d="M 0,12 L 157.943661971831,12"
-      fill="none"
-      stroke="#00873D"
-      stroke-linecap="butt"
-      stroke-width="24"
+      d="M 0,24 L 0,0 L 159.19718309859155,0 L 159.19718309859155,24 Z"
+      fill="#00873D"
+      stroke="none"
+      stroke-width="0"
     />
   </svg>
 </div>
@@ -633,60 +625,52 @@ exports[`Meter many values 1`] = `
       stroke-width="24"
     />
     <path
-      d="M 351.75,12 L 399,12"
-      fill="none"
-      stroke="#6FFFB0"
-      stroke-linecap="butt"
-      stroke-width="24"
+      d="M 338.625,24 L 338.625,0 L 384,0 L 384,24 Z"
+      fill="#6FFFB0"
+      stroke="none"
+      stroke-width="0"
     />
     <path
-      d="M 301.5,12 L 348.75,12"
-      fill="none"
-      stroke="#00873D"
-      stroke-linecap="butt"
-      stroke-width="24"
+      d="M 290.25,24 L 290.25,0 L 335.625,0 L 335.625,24 Z"
+      fill="#00873D"
+      stroke="none"
+      stroke-width="0"
     />
     <path
-      d="M 251.25,12 L 298.5,12"
-      fill="none"
-      stroke="#3D138D"
-      stroke-linecap="butt"
-      stroke-width="24"
+      d="M 241.875,24 L 241.875,0 L 287.25,0 L 287.25,24 Z"
+      fill="#3D138D"
+      stroke="none"
+      stroke-width="0"
     />
     <path
-      d="M 201,12 L 248.25,12"
-      fill="none"
-      stroke="#00739D"
-      stroke-linecap="butt"
-      stroke-width="24"
+      d="M 193.5,24 L 193.5,0 L 238.875,0 L 238.875,24 Z"
+      fill="#00739D"
+      stroke="none"
+      stroke-width="0"
     />
     <path
-      d="M 150.75,12 L 198,12"
-      fill="none"
-      stroke="#A2423D"
-      stroke-linecap="butt"
-      stroke-width="24"
+      d="M 145.125,24 L 145.125,0 L 190.5,0 L 190.5,24 Z"
+      fill="#A2423D"
+      stroke="none"
+      stroke-width="0"
     />
     <path
-      d="M 100.5,12 L 147.75,12"
-      fill="none"
-      stroke="#6FFFB0"
-      stroke-linecap="butt"
-      stroke-width="24"
+      d="M 96.75,24 L 96.75,0 L 142.125,0 L 142.125,24 Z"
+      fill="#6FFFB0"
+      stroke="none"
+      stroke-width="0"
     />
     <path
-      d="M 50.25,12 L 97.5,12"
-      fill="none"
-      stroke="#00873D"
-      stroke-linecap="butt"
-      stroke-width="24"
+      d="M 48.375,24 L 48.375,0 L 93.75,0 L 93.75,24 Z"
+      fill="#00873D"
+      stroke="none"
+      stroke-width="0"
     />
     <path
-      d="M 0,12 L 47.25,12"
-      fill="none"
-      stroke="#3D138D"
-      stroke-linecap="butt"
-      stroke-width="24"
+      d="M 0,24 L 0,0 L 45.375,0 L 45.375,24 Z"
+      fill="#3D138D"
+      stroke="none"
+      stroke-width="0"
     />
   </svg>
 </div>
@@ -733,11 +717,10 @@ exports[`Meter reverse 1`] = `
       stroke-width="24"
     />
     <path
-      d="M 0,12 L 75.6,12"
-      fill="none"
-      stroke="#6FFFB0"
-      stroke-linecap="butt"
-      stroke-width="24"
+      d="M 0,24 L 0,0 L 76.8,0 L 76.8,24 Z"
+      fill="#6FFFB0"
+      stroke="none"
+      stroke-width="0"
     />
   </svg>
 </div>
@@ -844,11 +827,10 @@ exports[`Meter round 1`] = `
       stroke-width="24"
     />
     <path
-      d="M 12,12 L 82.8,12"
-      fill="none"
-      stroke="#6FFFB0"
-      stroke-linecap="round"
-      stroke-width="24"
+      d="M 12,24 A 12,12 0 0 1 12,0 L 84,0 A 12,12 0 0 1 84,24 Z"
+      fill="#6FFFB0"
+      stroke="none"
+      stroke-width="0"
     />
   </svg>
   <svg
@@ -863,6 +845,14 @@ exports[`Meter round 1`] = `
       cy="192"
       fill="none"
       r="180"
+      stroke="#F2F2F2"
+      stroke-linecap="round"
+      stroke-opacity="0.4"
+      stroke-width="24"
+    />
+    <path
+      d="M 364.0934458520 139.2378365228 A 180.0000000000 180.0000000000 0 0 0 363.1901729331 136.3769410125"
+      fill="none"
       stroke="#F2F2F2"
       stroke-linecap="round"
       stroke-opacity="0.4"
@@ -892,6 +882,14 @@ exports[`Meter round 1`] = `
   >
     <path
       d="M 372.0000000000 192.0000000000 A 180.0000000000 180.0000000000 0 0 0 12.0000000000 192.0000000000"
+      fill="none"
+      stroke="#F2F2F2"
+      stroke-linecap="round"
+      stroke-opacity="0.4"
+      stroke-width="24"
+    />
+    <path
+      d="M 48.1605235990 83.7862992561 A 180.0000000000 180.0000000000 0 0 0 46.3769410125 86.1986545874"
       fill="none"
       stroke="#F2F2F2"
       stroke-linecap="round"
@@ -958,11 +956,10 @@ exports[`Meter rtl theme 1`] = `
       stroke-width="24"
     />
     <path
-      d="M 0,12 L 75.6,12"
-      fill="none"
-      stroke="#6FFFB0"
-      stroke-linecap="butt"
-      stroke-width="24"
+      d="M 0,24 L 0,0 L 76.8,0 L 76.8,24 Z"
+      fill="#6FFFB0"
+      stroke="none"
+      stroke-width="0"
     />
   </svg>
 </div>
@@ -1008,11 +1005,10 @@ exports[`Meter single 1`] = `
       stroke-width="24"
     />
     <path
-      d="M 0,12 L 94.5,12"
-      fill="none"
-      stroke="#6FFFB0"
-      stroke-linecap="butt"
-      stroke-width="24"
+      d="M 0,24 L 0,0 L 96,0 L 96,24 Z"
+      fill="#6FFFB0"
+      stroke="none"
+      stroke-width="0"
     />
   </svg>
 </div>
@@ -1058,11 +1054,10 @@ exports[`Meter size 1`] = `
       stroke-width="24"
     />
     <path
-      d="M 0,12 L 18,12"
-      fill="none"
-      stroke="#6FFFB0"
-      stroke-linecap="butt"
-      stroke-width="24"
+      d="M 0,24 L 0,0 L 19.2,0 L 19.2,24 Z"
+      fill="#6FFFB0"
+      stroke="none"
+      stroke-width="0"
     />
   </svg>
   <svg
@@ -1082,11 +1077,10 @@ exports[`Meter size 1`] = `
       stroke-width="24"
     />
     <path
-      d="M 0,12 L 37.2,12"
-      fill="none"
-      stroke="#6FFFB0"
-      stroke-linecap="butt"
-      stroke-width="24"
+      d="M 0,24 L 0,0 L 38.4,0 L 38.4,24 Z"
+      fill="#6FFFB0"
+      stroke="none"
+      stroke-width="0"
     />
   </svg>
   <svg
@@ -1106,11 +1100,10 @@ exports[`Meter size 1`] = `
       stroke-width="24"
     />
     <path
-      d="M 0,12 L 75.6,12"
-      fill="none"
-      stroke="#6FFFB0"
-      stroke-linecap="butt"
-      stroke-width="24"
+      d="M 0,24 L 0,0 L 76.8,0 L 76.8,24 Z"
+      fill="#6FFFB0"
+      stroke="none"
+      stroke-width="0"
     />
   </svg>
   <svg
@@ -1130,11 +1123,10 @@ exports[`Meter size 1`] = `
       stroke-width="24"
     />
     <path
-      d="M 0,12 L 152.4,12"
-      fill="none"
-      stroke="#6FFFB0"
-      stroke-linecap="butt"
-      stroke-width="24"
+      d="M 0,24 L 0,0 L 153.6,0 L 153.6,24 Z"
+      fill="#6FFFB0"
+      stroke="none"
+      stroke-width="0"
     />
   </svg>
   <svg
@@ -1154,11 +1146,10 @@ exports[`Meter size 1`] = `
       stroke-width="24"
     />
     <path
-      d="M 0,12 L 229.2,12"
-      fill="none"
-      stroke="#6FFFB0"
-      stroke-linecap="butt"
-      stroke-width="24"
+      d="M 0,24 L 0,0 L 230.4,0 L 230.4,24 Z"
+      fill="#6FFFB0"
+      stroke="none"
+      stroke-width="0"
     />
   </svg>
   <svg
@@ -1178,11 +1169,10 @@ exports[`Meter size 1`] = `
       stroke-width="24"
     />
     <path
-      d="M 0,12 L 3.6,12"
-      fill="none"
-      stroke="#6FFFB0"
-      stroke-linecap="butt"
-      stroke-width="24"
+      d="M 0,24 L 0,0 L 4.8,0 L 4.8,24 Z"
+      fill="#6FFFB0"
+      stroke="none"
+      stroke-width="0"
     />
   </svg>
   <svg
@@ -1202,11 +1192,10 @@ exports[`Meter size 1`] = `
       stroke-width="24"
     />
     <path
-      d="M 0,12 L 56.4,12"
-      fill="none"
-      stroke="#6FFFB0"
-      stroke-linecap="butt"
-      stroke-width="24"
+      d="M 0,24 L 0,0 L 57.6,0 L 57.6,24 Z"
+      fill="#6FFFB0"
+      stroke="none"
+      stroke-width="0"
     />
   </svg>
   <svg
@@ -1763,11 +1752,10 @@ exports[`Meter thickness 1`] = `
       stroke-width="6"
     />
     <path
-      d="M 0,3 L 75.6,3"
-      fill="none"
-      stroke="#6FFFB0"
-      stroke-linecap="butt"
-      stroke-width="6"
+      d="M 0,6 L 0,0 L 76.8,0 L 76.8,6 Z"
+      fill="#6FFFB0"
+      stroke="none"
+      stroke-width="0"
     />
   </svg>
   <svg
@@ -1787,11 +1775,10 @@ exports[`Meter thickness 1`] = `
       stroke-width="12"
     />
     <path
-      d="M 0,6 L 75.6,6"
-      fill="none"
-      stroke="#6FFFB0"
-      stroke-linecap="butt"
-      stroke-width="12"
+      d="M 0,12 L 0,0 L 76.8,0 L 76.8,12 Z"
+      fill="#6FFFB0"
+      stroke="none"
+      stroke-width="0"
     />
   </svg>
   <svg
@@ -1811,11 +1798,10 @@ exports[`Meter thickness 1`] = `
       stroke-width="24"
     />
     <path
-      d="M 0,12 L 75.6,12"
-      fill="none"
-      stroke="#6FFFB0"
-      stroke-linecap="butt"
-      stroke-width="24"
+      d="M 0,24 L 0,0 L 76.8,0 L 76.8,24 Z"
+      fill="#6FFFB0"
+      stroke="none"
+      stroke-width="0"
     />
   </svg>
   <svg
@@ -1835,11 +1821,10 @@ exports[`Meter thickness 1`] = `
       stroke-width="48"
     />
     <path
-      d="M 0,24 L 75.6,24"
-      fill="none"
-      stroke="#6FFFB0"
-      stroke-linecap="butt"
-      stroke-width="48"
+      d="M 0,48 L 0,0 L 76.8,0 L 76.8,48 Z"
+      fill="#6FFFB0"
+      stroke="none"
+      stroke-width="0"
     />
   </svg>
   <svg
@@ -1859,11 +1844,10 @@ exports[`Meter thickness 1`] = `
       stroke-width="96"
     />
     <path
-      d="M 0,48 L 75.6,48"
-      fill="none"
-      stroke="#6FFFB0"
-      stroke-linecap="butt"
-      stroke-width="96"
+      d="M 0,96 L 0,0 L 76.8,0 L 76.8,96 Z"
+      fill="#6FFFB0"
+      stroke="none"
+      stroke-width="0"
     />
   </svg>
   <svg
@@ -1883,11 +1867,10 @@ exports[`Meter thickness 1`] = `
       stroke-width="55"
     />
     <path
-      d="M 0,27.5 L 75.6,27.5"
-      fill="none"
-      stroke="#6FFFB0"
-      stroke-linecap="butt"
-      stroke-width="55"
+      d="M 0,55 L 0,0 L 76.8,0 L 76.8,55 Z"
+      fill="#6FFFB0"
+      stroke="none"
+      stroke-width="0"
     />
   </svg>
   <svg
@@ -2083,11 +2066,10 @@ exports[`Meter type 1`] = `
       stroke-width="24"
     />
     <path
-      d="M 0,12 L 75.6,12"
-      fill="none"
-      stroke="#6FFFB0"
-      stroke-linecap="butt"
-      stroke-width="24"
+      d="M 0,24 L 0,0 L 76.8,0 L 76.8,24 Z"
+      fill="#6FFFB0"
+      stroke="none"
+      stroke-width="0"
     />
   </svg>
   <svg
@@ -2206,11 +2188,10 @@ exports[`Meter vertical 1`] = `
       stroke-width="24"
     />
     <path
-      d="M 12,384 L 12,308.4"
-      fill="none"
-      stroke="#6FFFB0"
-      stroke-linecap="butt"
-      stroke-width="384"
+      d="M 24,384 L 0,384 L 0,307.2 L 24,307.2 Z"
+      fill="#6FFFB0"
+      stroke="none"
+      stroke-width="0"
     />
   </svg>
 </div>
