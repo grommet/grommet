@@ -91,11 +91,15 @@ const Resizer = ({ onResize, property, headerText, messages }) => {
     const remove = () => {
       document.removeEventListener('mouseup', onResizeEnd);
       document.removeEventListener('mousemove', onResizeMove);
+      document.removeEventListener('touchend', onResizeEnd);
+      document.removeEventListener('touchmove', onResizeMove);
     };
 
     if (active) {
       document.addEventListener('mouseup', onResizeEnd);
       document.addEventListener('mousemove', onResizeMove);
+      document.addEventListener('touchend', onResizeEnd);
+      document.addEventListener('touchmove', onResizeMove);
 
       return remove;
     }
