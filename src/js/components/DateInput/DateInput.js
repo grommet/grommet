@@ -290,6 +290,7 @@ Use the icon prop instead.`,
 
     const DateInputButton = readOnlyCopy ? (
       <CopyButton
+        disabled={disabled}
         onBlurCopy={onBlurCopy}
         onClickCopy={onClickCopy}
         readOnlyCopyPrompt={readOnlyCopyPrompt}
@@ -299,6 +300,7 @@ Use the icon prop instead.`,
     ) : (
       <Button
         onClick={open ? closeCalendar : openCalendar}
+        disabled={disabled}
         plain
         icon={icon || MaskedInputIcon || <CalendarIcon size={iconSize} />}
         margin={reverse ? { left: 'small' } : { right: 'small' }}
