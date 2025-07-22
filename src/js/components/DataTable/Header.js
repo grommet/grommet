@@ -313,7 +313,6 @@ const Header = forwardRef(
               size,
               units,
             }) => {
-              const isSearching = filtering === property;
               let content;
               const unitsContent = units ? (
                 <Text {...textProps} {...theme.dataTable.header.units}>
@@ -321,9 +320,7 @@ const Header = forwardRef(
                 </Text>
               ) : undefined;
               if (typeof header === 'string') {
-                content = isSearching ? null : (
-                  <Text {...textProps}>{header}</Text>
-                );
+                content = <Text {...textProps}>{header}</Text>;
                 if (
                   Object.keys(layoutProps).length &&
                   (sortable === false || !onSort)
@@ -337,7 +334,7 @@ const Header = forwardRef(
                     </StyledContentBox>
                   );
                 }
-              } else content = isSearching ? null : header;
+              } else content = header;
 
               if (unitsContent) {
                 content = (
@@ -405,9 +402,7 @@ const Header = forwardRef(
                       justify={align}
                     >
                       {content}
-                      {isSearching
-                        ? null
-                        : Icon && <Icon aria-label={iconAriaLabel} />}
+                      {Icon && <Icon aria-label={iconAriaLabel} />}
                     </Box>
                   </StyledHeaderCellButton>
                 );
@@ -418,9 +413,6 @@ const Header = forwardRef(
               // fill because later if either of these props is true content
               // will be wrapped with an additional Box, preventing this Box
               // from automatically filling the vertical space.
-              // If `onResize` or `search` is true, we also need to set flex
-              // so that the content can grow and use available space and
-              // shrink to avoid overlap.
               content = (
                 <Box
                   flex={onResize || search ? { grow: 1, shrink: 1 } : 'grow'}
@@ -431,18 +423,7 @@ const Header = forwardRef(
                 </Box>
               );
 
-              if (search || onResize) {
-                const resizer = onResize ? (
-                  <Resizer
-                    property={property}
-                    onResize={(prop, width) => {
-                      onResize(prop, width);
-                      updateWidths(prop, width);
-                    }}
-                    headerText={typeof header === 'string' ? header : property}
-                    messages={messages}
-                  />
-                ) : null;
+              if (search) {
                 const searcher =
                   search && filters ? (
                     <Searcher
@@ -459,37 +440,37 @@ const Header = forwardRef(
                   <Box
                     direction="row"
                     align="center"
-                    justify="between"
+                    justify={!align || align === 'start' ? 'between' : align}
                     gap={theme.dataTable.header.gap}
                     fill="vertical"
                     style={onResize ? { position: 'relative' } : undefined}
                   >
-                    <Box
-                      style={{ minWidth: 0 }}
-                      flex={{ grow: 1, shrink: 1 }}
-                      justify={(!align && 'center') || align}
-                    >
-                      {content}
-                    </Box>
-                    {searcher && resizer ? (
+                    {content}
+                    {searcher && onResize ? (
                       <Box
-                        flex={{ grow: 0, shrink: 0 }}
-                        style={{ whiteSpace: 'nowrap' }}
-                        // flex="shrink"
-                        direction="row"
-                        align="center"
-                        gap={theme.dataTable.header.gap}
+                        // padding right set to half (12px) of resizer
+                        // width (24px) to gives extra room for resizer control.
+                        pad={{ right: '12px' }}
+                        flex={{
+                          shrink: filtering === property ? 1 : 0,
+                        }}
+                        direction={filtering === property ? 'column' : 'row'}
+                        margin={{
+                          right: 'xsmall',
+                        }}
                       >
-                        {searcher} {resizer}
+                        {searcher}
                       </Box>
                     ) : (
-                      searcher || resizer
+                      searcher
                     )}
                   </Box>
                 );
               }
               const cellPin = [...pin];
               if (columnPin) cellPin.push('left');
+
+              const headerId = `grommet-data-table-header-${property}`;
 
               return (
                 <StyledDataTableCell
@@ -500,6 +481,7 @@ const Header = forwardRef(
                   verticalAlign={verticalAlign || columnVerticalAlign}
                   background={cellProps.background}
                   border={cellProps.border}
+                  id={headerId}
                   onWidth={(width) => updateWidths(property, width)}
                   // if sortable, pad will be included in the button styling
                   pad={sortable === false || !onSort ? cellProps.pad : 'none'}
@@ -513,12 +495,28 @@ const Header = forwardRef(
                       ? `${widths[property]}px`
                       : undefined,
                     boxSizing: onResize ? 'border-box' : undefined,
+                    position: onResize ? 'relative' : undefined,
+                    overflow: onResize ? 'visible' : undefined,
                   }}
                   onResize={onResize}
                   property={property}
                   {...passThemeFlag}
                 >
                   {content}
+                  {onResize && (
+                    <Resizer
+                      property={property}
+                      onResize={(prop, width) => {
+                        onResize(prop, width);
+                        updateWidths(prop, width);
+                      }}
+                      headerText={
+                        typeof header === 'string' ? header : property
+                      }
+                      messages={messages}
+                      headerId={headerId}
+                    />
+                  )}
                 </StyledDataTableCell>
               );
             },
