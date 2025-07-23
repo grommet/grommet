@@ -198,6 +198,7 @@ const Resizer = ({ onResize, property, headerText, messages, headerId }) => {
                   const rect = element.getBoundingClientRect();
                   const currentWidth = rect.width;
                   const nextWidth = Math.max(STEP, currentWidth - STEP);
+                  setWidth(nextWidth);
                   onResize(property, nextWidth);
                 }
               }}
@@ -216,6 +217,7 @@ const Resizer = ({ onResize, property, headerText, messages, headerId }) => {
                   const rect = element.getBoundingClientRect();
                   const currentWidth = rect.width;
                   const nextWidth = Math.max(STEP, currentWidth + STEP);
+                  setWidth(nextWidth);
                   onResize(property, nextWidth);
                 }
               }}
