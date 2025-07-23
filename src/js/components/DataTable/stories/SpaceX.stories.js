@@ -93,7 +93,7 @@ export const SpaceX = () => {
 
   const expandLabel = (row) => {
     if (row && row.name) {
-      return `Show details for ${row.name} starship`;
+      return row.name;
     }
     return undefined;
   };

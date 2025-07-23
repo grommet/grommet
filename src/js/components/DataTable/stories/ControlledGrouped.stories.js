@@ -13,7 +13,7 @@ groupColumns[1] = { ...first };
 groupColumns[0].footer = groupColumns[1].footer;
 delete groupColumns[1].footer;
 
-const expandLabel = (row) => `details for ${row?.location}`;
+const expandLabel = (row) => row?.location;
 
 export const ControlledGroupedDataTable = () => {
   const [expandedGroups, setExpandedGroups] = useState([DATA[2].location]);
