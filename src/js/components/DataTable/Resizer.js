@@ -141,7 +141,9 @@ const Resizer = ({ onResize, property, headerText, messages, headerId }) => {
     <Keyboard onLeft={onKeyDown} onRight={onKeyDown}>
       <StyledResizer
         tabIndex={0}
-        aria-label={width ? `${ariaLabel} ${width} pixels` : ariaLabel}
+        aria-label={
+          width ? `${ariaLabel} ${Math.trunc(width)} pixels` : ariaLabel
+        }
         onMouseEnter={() => setHover(true)}
         onMouseLeave={() => setHover(false)}
         onMouseDown={onMouseDown}
@@ -152,7 +154,9 @@ const Resizer = ({ onResize, property, headerText, messages, headerId }) => {
         margin={{ right: `-${theme.global.edgeSize.small}` }}
         role="separator"
         aria-valuenow={width}
-        aria-valuetext={width ? `${ariaLabel} ${width} pixels` : ariaLabel}
+        aria-valuetext={
+          width ? `${ariaLabel} ${Math.trunc(width)} pixels` : ariaLabel
+        }
         aria-controls={headerId}
         aria-orientation="vertical"
       >
