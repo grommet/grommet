@@ -35,7 +35,7 @@ const Resizer = ({ onResize, property, headerText, messages, headerId }) => {
   const { theme } = useThemeValue();
   const [active, setActive] = useState(false);
   const [start, setStart] = useState();
-  const [width, setWidth] = useState();
+  const [width, setWidth] = useState(0);
   const ref = useRef();
   const { format } = useContext(MessageContext);
 
