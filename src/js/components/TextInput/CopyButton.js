@@ -17,6 +17,7 @@ const StyledButton = styled(Button)`
 `;
 
 export const CopyButton = ({
+  disabled,
   onClickCopy,
   onBlurCopy,
   readOnlyCopyPrompt,
@@ -28,6 +29,7 @@ export const CopyButton = ({
   return (
     <Tip dropProps={{ align: { bottom: 'top' } }} content={tip}>
       <StyledButton
+        disabled={disabled}
         onClick={onClickCopy}
         icon={<Copy />}
         pad={{
