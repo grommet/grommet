@@ -91,6 +91,13 @@ export const SpaceX = () => {
 
   const expandable = useMemo(() => groups.map(({ id }) => id), [groups]);
 
+  const expandLabel = (row) => {
+    if (row && row.name) {
+      return row.name;
+    }
+    return undefined;
+  };
+
   useEffect(() => {
     const fetchData = async () => {
       const query = {
@@ -192,6 +199,7 @@ export const SpaceX = () => {
         groupBy={{
           expandable,
           expand: expanded,
+          expandLabel,
           property: 'rocketId',
         }}
         onUpdate={(opts) => {

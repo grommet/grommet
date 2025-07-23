@@ -16,6 +16,7 @@ import { useThemeValue } from '../../utils/useThemeValue';
 
 const Row = memo(
   ({
+    expandLabel,
     cellProps,
     primaryValue,
     index,
@@ -154,12 +155,12 @@ const Row = memo(
             verticalAlign={verticalAlign}
           />
         )}
-
         {rowDetails && (
           <ExpanderCell
             background={isSelected && cellProps.selected.background}
             context={isRowExpanded ? 'groupHeader' : 'body'}
             expanded={isRowExpanded}
+            expandLabel={expandLabel}
             onToggle={() => {
               let nextRowExpand;
               const rowKey = primaryValue || index;
@@ -398,8 +399,16 @@ const Body = forwardRef(
                 primaryValue,
                 index,
               );
+              let expandLabel;
+              if (
+                typeof rowDetails === 'object' &&
+                typeof rowDetails.expandLabel === 'function'
+              ) {
+                expandLabel = rowDetails.expandLabel(datum);
+              }
               return (
                 <Row
+                  expandLabel={expandLabel}
                   key={primaryValue ?? index}
                   setActive={setActive}
                   rowRef={rowRef}
