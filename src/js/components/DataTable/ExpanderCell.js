@@ -38,8 +38,12 @@ const ExpanderControl = ({ context, expanded, onToggle, pad, ...rest }) => {
     content = (
       <Button
         fill
+        aria-expanded={expanded ? 'true' : 'false'}
         a11yTitle={expanded ? 'collapse' : 'expand'}
         hoverIndicator
+        // ensure focus is visible since overflow: hidden on TableCell sizeStyle
+        // would otherwise clip it
+        focusIndicator="inset"
         onClick={onToggle}
         plain
       >

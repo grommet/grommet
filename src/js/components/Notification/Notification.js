@@ -14,6 +14,8 @@ import { Button } from '../Button';
 import { Layer } from '../Layer';
 import { Paragraph } from '../Paragraph';
 import { Text } from '../Text';
+// eslint-disable-next-line max-len
+import { AnnounceContext } from '../../contexts/AnnounceContext/AnnounceContext';
 import { MessageContext } from '../../contexts/MessageContext';
 
 import { NotificationType } from './propTypes';
@@ -90,6 +92,29 @@ const Notification = ({
   const { format } = useContext(MessageContext);
   const position = useMemo(() => (toast && toast?.position) || 'top', [toast]);
 
+  const announce = useContext(AnnounceContext);
+  useEffect(() => {
+    if (visible && toast) {
+      const announceText =
+        typeof messageProp === 'string' ? `${title}. ${messageProp}` : title;
+
+      announce(
+        announceText,
+        'polite',
+        time || theme.notification.toast.time || theme.notification.time,
+      );
+    }
+  }, [
+    announce,
+    visible,
+    toast,
+    messageProp,
+    title,
+    theme.notification.toast.time,
+    theme.notification.time,
+    time,
+  ]);
+
   const close = useCallback(
     (event) => {
       setVisible(false);
@@ -97,7 +122,6 @@ const Notification = ({
     },
     [onClose],
   );
-
   useEffect(() => {
     if (autoClose) {
       const timer = setTimeout(
@@ -259,7 +283,7 @@ const Notification = ({
     content = visible && (
       <Layer
         {...theme.notification.toast.layer}
-        role="log"
+        role="status"
         modal={false}
         onEsc={onClose}
         id={id}

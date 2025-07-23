@@ -9,12 +9,15 @@ import { useThemeValue } from '../../utils/useThemeValue';
 const CheckBoxGroup = forwardRef(
   (
     {
+      'aria-label': ariaLabelProp,
+      'aria-labelledby': ariaLabelledByProp,
       children,
       defaultValue,
       value: valueProp,
       disabled: disabledProp,
       focusIndicator = true,
       gap,
+      id,
       labelKey,
       valueKey,
       onChange,
@@ -65,9 +68,16 @@ const CheckBoxGroup = forwardRef(
       }
     };
 
+    let ariaLabelledBy;
+    if (formContext?.useFormField({})?.inForm && id && !ariaLabelProp) {
+      ariaLabelledBy = `grommet-${id}__label`;
+    }
+
     return (
       <StyledCheckBoxGroup
         ref={ref}
+        aria-label={ariaLabelProp}
+        aria-labelledby={ariaLabelledByProp || ariaLabelledBy}
         role="group"
         {...theme.checkBoxGroup.container}
         gap={
@@ -76,6 +86,7 @@ const CheckBoxGroup = forwardRef(
             ? theme.checkBoxGroup.container.gap
             : 'small') // consistent with RadioButtonGroup default
         }
+        id={id}
         {...passThemeFlag}
         {...rest}
       >

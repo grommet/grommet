@@ -86,6 +86,17 @@ export interface DataTableProps<TRowType = any> {
   fill?: boolean | 'vertical' | 'horizontal';
   gridArea?: GridAreaType;
   margin?: MarginType;
+  messages?: {
+    ascending?: string;
+    descending?: string;
+    resizerAria?: string;
+    rows?: string;
+    rowsChanged?: string;
+    rowsSingle?: string;
+    searchBy?: string;
+    total?: string;
+    totalSingle?: string;
+  };
   pad?: PadType | Sections<PadType>;
   paginate?: boolean | PaginationType | BoxProps;
   pin?: boolean | 'header' | 'footer';

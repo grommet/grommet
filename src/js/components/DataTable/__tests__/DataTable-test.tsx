@@ -463,6 +463,7 @@ describe('DataTable', () => {
             { a: 'two', b: 2 },
           ]}
           resizeable
+          messages={{ resizerAria: 'Change size of {headerText} column' }}
         />
       </Grommet>,
     );
@@ -2061,7 +2062,7 @@ describe('DataTable', () => {
 
   test('row click using space key press', () => {
     const onClickRow = jest.fn();
-    const { container, getByText } = render(
+    const { container } = render(
       <Grommet>
         <DataTable
           columns={[{ property: 'name', header: 'Name' }]}
@@ -2073,8 +2074,9 @@ describe('DataTable', () => {
 
     expect(container.firstChild).toMatchSnapshot();
 
-    fireEvent.mouseEnter(getByText('alpha'));
-    fireEvent.keyDown(getByText('alpha'), {
+    const row = screen.getByText('alpha').closest('tr');
+    fireEvent.focus(row!);
+    fireEvent.keyDown(row!, {
       code: 'Space',
       keyCode: 32,
     });

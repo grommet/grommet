@@ -283,6 +283,15 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           size: '2px',
         },
         twoColor: undefined,
+        inset: {
+          border: {
+            // remove to only have shadow
+            color: 'focus',
+          },
+          outline: { color: 'focus', size: '2px', offset: '-2px' },
+          shadow: undefined,
+          twoColor: undefined,
+        },
       },
       font: {
         ...fontSizing(0),
@@ -617,10 +626,10 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         // adjacent: {
         //   color: undefined,
         // },
-        // hover: {
-        //   background: undefined,
-        //   color: undefined,
-        // },
+        hover: {
+          background: 'active-background',
+          // color: undefined,
+        },
         selected: {
           // background: undefined,
           // color: undefined,

@@ -739,7 +739,7 @@ describe('Form uncontrolled', () => {
           <FormField
             label="Size"
             name="select-size"
-            htmlFor="select-size"
+            htmlFor="select-size__input"
             required
           >
             <Select
@@ -753,8 +753,8 @@ describe('Form uncontrolled', () => {
       </Grommet>,
     );
 
-    act(() => screen.getByRole('button', { name: /Open Drop/i }).focus());
-    fireEvent.click(screen.getByRole('button', { name: /Open Drop/i }));
+    act(() => screen.getByRole('button', { name: /Size/i }).focus());
+    fireEvent.click(screen.getByRole('button', { name: /Size/i }));
     act(() => screen.getByRole('option', { name: /small/i }).focus());
 
     act(() => jest.advanceTimersByTime(200)); // allow validations to run
@@ -1331,7 +1331,7 @@ describe('Form uncontrolled', () => {
         <Form onReset={onReset}>
           <FormField
             label="Select Size"
-            htmlFor="test-select"
+            htmlFor="test-select__input"
             name="test-select"
           >
             <Select
