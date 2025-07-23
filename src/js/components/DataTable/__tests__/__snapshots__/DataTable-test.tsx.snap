@@ -5282,6 +5282,966 @@ exports[`DataTable empty 1`] = `
 </div>
 `;
 
+exports[`DataTable expandAriaLabel default 1`] = `
+.c7 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: rgba(0, 0, 0, 0.33);
+  stroke: rgba(0, 0, 0, 0.33);
+}
+
+.c7 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c7 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c7 *[stroke*='#'],
+.c7 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c7 *[fill-rule],
+.c7 *[FILL-RULE],
+.c7 *[fill*='#'],
+.c7 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c4 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.c6 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.c9 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  flex: 1 0 auto;
+  justify-content: center;
+}
+
+.c15 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+}
+
+.c10 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c5 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  flex: 1 0 auto;
+}
+
+.c5:hover {
+  background-color: rgba(221, 221, 221, 0.4);
+  color: #000000;
+}
+
+.c5:focus {
+  outline-offset: -2px;
+  outline: 2px solid #6FFFB0;
+}
+
+.c5:focus >circle,
+.c5:focus >ellipse,
+.c5:focus >line,
+.c5:focus >path,
+.c5:focus >polygon,
+.c5:focus >polyline,
+.c5:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c5:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible) >circle,
+.c5:focus:not(:focus-visible) >ellipse,
+.c5:focus:not(:focus-visible) >line,
+.c5:focus:not(:focus-visible) >path,
+.c5:focus:not(:focus-visible) >polygon,
+.c5:focus:not(:focus-visible) >polyline,
+.c5:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
+}
+
+.c3 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  width: 48px;
+  max-width: 48px;
+  overflow: hidden;
+  vertical-align: top;
+  text-align: start;
+  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
+}
+
+.c8 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  text-align: start;
+  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.c13 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  width: 48px;
+  max-width: 48px;
+  overflow: hidden;
+  vertical-align: top;
+  text-align: start;
+}
+
+.c14 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  text-align: start;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.c1 {
+  border-spacing: 0;
+  border-collapse: collapse;
+  width: inherit;
+}
+
+.c2 {
+  position: relative;
+  border-spacing: 0;
+  border-collapse: separate;
+}
+
+.c12:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c12:focus >circle,
+.c12:focus >ellipse,
+.c12:focus >line,
+.c12:focus >path,
+.c12:focus >polygon,
+.c12:focus >polyline,
+.c12:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c12:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c12:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c12:focus:not(:focus-visible) >circle,
+.c12:focus:not(:focus-visible) >ellipse,
+.c12:focus:not(:focus-visible) >line,
+.c12:focus:not(:focus-visible) >path,
+.c12:focus:not(:focus-visible) >polygon,
+.c12:focus:not(:focus-visible) >polyline,
+.c12:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c12:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
+}
+
+.c11:focus {
+  outline: 2px solid #6FFFB0;
+}
+
+.c11:focus:not(:focus-visible) {
+  outline: none;
+}
+
+@media only screen and (max-width: 768px) {
+  .c6 {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c6 {
+    padding-top: 3px;
+    padding-bottom: 3px;
+  }
+}
+
+<div
+  class="c0"
+>
+  <table
+    class="c1 c2"
+  >
+    <thead
+      class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-5"
+    >
+      <tr
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+      >
+        <td
+          class="c3"
+        >
+          <div
+            class="c4"
+            style="height: 0px;"
+          >
+            <button
+              aria-expanded="false"
+              aria-label="expand all"
+              class="c5"
+              type="button"
+            >
+              <div
+                class="c6"
+              >
+                <svg
+                  aria-label="FormDown"
+                  class="c7"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="m18 9-6 6-6-6"
+                    fill="none"
+                    stroke="#000"
+                    stroke-width="2"
+                  />
+                </svg>
+              </div>
+            </button>
+          </div>
+        </td>
+        <th
+          class="c8 "
+          scope="col"
+        >
+          <div
+            class="c9"
+          >
+            <span
+              class="c10"
+            >
+              A
+            </span>
+          </div>
+        </th>
+        <th
+          class="c8 "
+          scope="col"
+        >
+          <div
+            class="c9"
+          >
+            <span
+              class="c10"
+            >
+              B
+            </span>
+          </div>
+        </th>
+      </tr>
+    </thead>
+    <tbody
+      class="StyledTable__StyledTableBody-sc-1m3u5g-3 c11"
+    >
+      <tr
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c12"
+      >
+        <td
+          class="c13"
+        >
+          <div
+            class="c4"
+            style="height: 0px;"
+          >
+            <button
+              aria-expanded="false"
+              aria-label="expand "
+              class="c5"
+              type="button"
+            >
+              <div
+                class="c6"
+              >
+                <svg
+                  aria-label="FormDown"
+                  class="c7"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="m18 9-6 6-6-6"
+                    fill="none"
+                    stroke="#000"
+                    stroke-width="2"
+                  />
+                </svg>
+              </div>
+            </button>
+          </div>
+        </td>
+        <th
+          class="c14 "
+          scope="row"
+        >
+          <div
+            class="c15"
+          >
+            <span
+              class="c10"
+            >
+              one
+            </span>
+          </div>
+        </th>
+        <td
+          class="c14 "
+        >
+          <div
+            class="c15"
+          />
+        </td>
+      </tr>
+      <tr
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c12"
+      >
+        <td
+          class="c13"
+        >
+          <div
+            class="c4"
+            style="height: 0px;"
+          >
+            <button
+              aria-expanded="false"
+              aria-label="expand "
+              class="c5"
+              type="button"
+            >
+              <div
+                class="c6"
+              >
+                <svg
+                  aria-label="FormDown"
+                  class="c7"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="m18 9-6 6-6-6"
+                    fill="none"
+                    stroke="#000"
+                    stroke-width="2"
+                  />
+                </svg>
+              </div>
+            </button>
+          </div>
+        </td>
+        <th
+          class="c14 "
+          scope="row"
+        >
+          <div
+            class="c15"
+          >
+            <span
+              class="c10"
+            >
+              two
+            </span>
+          </div>
+        </th>
+        <td
+          class="c14 "
+        >
+          <div
+            class="c15"
+          />
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`DataTable expandLabel function 1`] = `
+.c7 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: rgba(0, 0, 0, 0.33);
+  stroke: rgba(0, 0, 0, 0.33);
+}
+
+.c7 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c7 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c7 *[stroke*='#'],
+.c7 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c7 *[fill-rule],
+.c7 *[FILL-RULE],
+.c7 *[fill*='#'],
+.c7 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c4 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.c6 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.c9 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  flex: 1 0 auto;
+  justify-content: center;
+}
+
+.c15 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+}
+
+.c10 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c5 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  flex: 1 0 auto;
+}
+
+.c5:hover {
+  background-color: rgba(221, 221, 221, 0.4);
+  color: #000000;
+}
+
+.c5:focus {
+  outline-offset: -2px;
+  outline: 2px solid #6FFFB0;
+}
+
+.c5:focus >circle,
+.c5:focus >ellipse,
+.c5:focus >line,
+.c5:focus >path,
+.c5:focus >polygon,
+.c5:focus >polyline,
+.c5:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c5:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible) >circle,
+.c5:focus:not(:focus-visible) >ellipse,
+.c5:focus:not(:focus-visible) >line,
+.c5:focus:not(:focus-visible) >path,
+.c5:focus:not(:focus-visible) >polygon,
+.c5:focus:not(:focus-visible) >polyline,
+.c5:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
+}
+
+.c3 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  width: 48px;
+  max-width: 48px;
+  overflow: hidden;
+  vertical-align: top;
+  text-align: start;
+  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
+}
+
+.c8 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  text-align: start;
+  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.c13 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  width: 48px;
+  max-width: 48px;
+  overflow: hidden;
+  vertical-align: top;
+  text-align: start;
+}
+
+.c14 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  text-align: start;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.c1 {
+  border-spacing: 0;
+  border-collapse: collapse;
+  width: inherit;
+}
+
+.c2 {
+  position: relative;
+  border-spacing: 0;
+  border-collapse: separate;
+}
+
+.c12:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c12:focus >circle,
+.c12:focus >ellipse,
+.c12:focus >line,
+.c12:focus >path,
+.c12:focus >polygon,
+.c12:focus >polyline,
+.c12:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c12:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c12:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c12:focus:not(:focus-visible) >circle,
+.c12:focus:not(:focus-visible) >ellipse,
+.c12:focus:not(:focus-visible) >line,
+.c12:focus:not(:focus-visible) >path,
+.c12:focus:not(:focus-visible) >polygon,
+.c12:focus:not(:focus-visible) >polyline,
+.c12:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c12:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
+}
+
+.c11:focus {
+  outline: 2px solid #6FFFB0;
+}
+
+.c11:focus:not(:focus-visible) {
+  outline: none;
+}
+
+@media only screen and (max-width: 768px) {
+  .c6 {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c6 {
+    padding-top: 3px;
+    padding-bottom: 3px;
+  }
+}
+
+<div
+  class="c0"
+>
+  <table
+    class="c1 c2"
+  >
+    <thead
+      class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-5"
+    >
+      <tr
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+      >
+        <td
+          class="c3"
+        >
+          <div
+            class="c4"
+            style="height: 0px;"
+          >
+            <button
+              aria-expanded="false"
+              aria-label="expand all"
+              class="c5"
+              type="button"
+            >
+              <div
+                class="c6"
+              >
+                <svg
+                  aria-label="FormDown"
+                  class="c7"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="m18 9-6 6-6-6"
+                    fill="none"
+                    stroke="#000"
+                    stroke-width="2"
+                  />
+                </svg>
+              </div>
+            </button>
+          </div>
+        </td>
+        <th
+          class="c8 "
+          scope="col"
+        >
+          <div
+            class="c9"
+          >
+            <span
+              class="c10"
+            >
+              A
+            </span>
+          </div>
+        </th>
+        <th
+          class="c8 "
+          scope="col"
+        >
+          <div
+            class="c9"
+          >
+            <span
+              class="c10"
+            >
+              B
+            </span>
+          </div>
+        </th>
+      </tr>
+    </thead>
+    <tbody
+      class="StyledTable__StyledTableBody-sc-1m3u5g-3 c11"
+    >
+      <tr
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c12"
+      >
+        <td
+          class="c13"
+        >
+          <div
+            class="c4"
+            style="height: 0px;"
+          >
+            <button
+              aria-expanded="false"
+              aria-label="expand one items"
+              class="c5"
+              type="button"
+            >
+              <div
+                class="c6"
+              >
+                <svg
+                  aria-label="FormDown"
+                  class="c7"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="m18 9-6 6-6-6"
+                    fill="none"
+                    stroke="#000"
+                    stroke-width="2"
+                  />
+                </svg>
+              </div>
+            </button>
+          </div>
+        </td>
+        <th
+          class="c14 "
+          scope="row"
+        >
+          <div
+            class="c15"
+          >
+            <span
+              class="c10"
+            >
+              one
+            </span>
+          </div>
+        </th>
+        <td
+          class="c14 "
+        >
+          <div
+            class="c15"
+          />
+        </td>
+      </tr>
+      <tr
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c12"
+      >
+        <td
+          class="c13"
+        >
+          <div
+            class="c4"
+            style="height: 0px;"
+          >
+            <button
+              aria-expanded="false"
+              aria-label="expand two items"
+              class="c5"
+              type="button"
+            >
+              <div
+                class="c6"
+              >
+                <svg
+                  aria-label="FormDown"
+                  class="c7"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="m18 9-6 6-6-6"
+                    fill="none"
+                    stroke="#000"
+                    stroke-width="2"
+                  />
+                </svg>
+              </div>
+            </button>
+          </div>
+        </td>
+        <th
+          class="c14 "
+          scope="row"
+        >
+          <div
+            class="c15"
+          >
+            <span
+              class="c10"
+            >
+              two
+            </span>
+          </div>
+        </th>
+        <td
+          class="c14 "
+        >
+          <div
+            class="c15"
+          />
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
 exports[`DataTable fill 1`] = `
 .c0 {
   font-size: 18px;
@@ -6471,7 +7431,7 @@ exports[`DataTable groupBy 0 value 1`] = `
           >
             <button
               aria-expanded="false"
-              aria-label="expand"
+              aria-label="expand all"
               class="c5"
               type="button"
             >
@@ -6556,7 +7516,7 @@ exports[`DataTable groupBy 0 value 1`] = `
           >
             <button
               aria-expanded="false"
-              aria-label="expand"
+              aria-label="expand "
               class="c5"
               type="button"
             >
@@ -7040,7 +8000,7 @@ exports[`DataTable groupBy 1`] = `
           >
             <button
               aria-expanded="false"
-              aria-label="expand"
+              aria-label="expand all"
               class="c5"
               type="button"
             >
@@ -7110,7 +8070,7 @@ exports[`DataTable groupBy 1`] = `
           >
             <button
               aria-expanded="false"
-              aria-label="expand"
+              aria-label="expand "
               class="c5"
               type="button"
             >
@@ -7167,7 +8127,7 @@ exports[`DataTable groupBy 1`] = `
           >
             <button
               aria-expanded="false"
-              aria-label="expand"
+              aria-label="expand "
               class="c5"
               type="button"
             >
@@ -7239,7 +8199,7 @@ exports[`DataTable groupBy 2`] = `
           >
             <button
               aria-expanded="false"
-              aria-label="expand"
+              aria-label="expand all"
               class="StyledButton-sc-323bzc-0 cuylbq"
               type="button"
             >
@@ -7309,7 +8269,7 @@ exports[`DataTable groupBy 2`] = `
           >
             <button
               aria-expanded="false"
-              aria-label="expand"
+              aria-label="expand "
               class="StyledButton-sc-323bzc-0 cuylbq"
               type="button"
             >
@@ -7366,7 +8326,7 @@ exports[`DataTable groupBy 2`] = `
           >
             <button
               aria-expanded="false"
-              aria-label="expand"
+              aria-label="expand "
               class="StyledButton-sc-323bzc-0 cuylbq"
               type="button"
             >
@@ -7775,7 +8735,7 @@ exports[`DataTable groupBy expand 1`] = `
           >
             <button
               aria-expanded="false"
-              aria-label="expand"
+              aria-label="expand all"
               class="c5"
               type="button"
             >
@@ -7845,7 +8805,7 @@ exports[`DataTable groupBy expand 1`] = `
           >
             <button
               aria-expanded="true"
-              aria-label="collapse"
+              aria-label="collapse "
               class="c5"
               type="button"
             >
@@ -7998,7 +8958,7 @@ exports[`DataTable groupBy expand 1`] = `
           >
             <button
               aria-expanded="false"
-              aria-label="expand"
+              aria-label="expand "
               class="c5"
               type="button"
             >
@@ -8359,7 +9319,7 @@ exports[`DataTable groupBy property 1`] = `
           >
             <button
               aria-expanded="false"
-              aria-label="expand"
+              aria-label="expand all"
               class="c5"
               type="button"
             >
@@ -8429,7 +9389,7 @@ exports[`DataTable groupBy property 1`] = `
           >
             <button
               aria-expanded="false"
-              aria-label="expand"
+              aria-label="expand "
               class="c5"
               type="button"
             >
@@ -8486,7 +9446,7 @@ exports[`DataTable groupBy property 1`] = `
           >
             <button
               aria-expanded="false"
-              aria-label="expand"
+              aria-label="expand "
               class="c5"
               type="button"
             >
@@ -8558,7 +9518,7 @@ exports[`DataTable groupBy property 2`] = `
           >
             <button
               aria-expanded="false"
-              aria-label="expand"
+              aria-label="expand all"
               class="StyledButton-sc-323bzc-0 cuylbq"
               type="button"
             >
@@ -8628,7 +9588,7 @@ exports[`DataTable groupBy property 2`] = `
           >
             <button
               aria-expanded="false"
-              aria-label="expand"
+              aria-label="expand "
               class="StyledButton-sc-323bzc-0 cuylbq"
               type="button"
             >
@@ -8685,7 +9645,7 @@ exports[`DataTable groupBy property 2`] = `
           >
             <button
               aria-expanded="false"
-              aria-label="expand"
+              aria-label="expand "
               class="StyledButton-sc-323bzc-0 cuylbq"
               type="button"
             >
@@ -9221,7 +10181,7 @@ exports[`DataTable groupBy toggle 2`] = `
           >
             <button
               aria-expanded="false"
-              aria-label="expand"
+              aria-label="expand all"
               class="c2"
               type="button"
             >
@@ -9515,7 +10475,7 @@ exports[`DataTable groupBy toggle 2`] = `
           >
             <button
               aria-expanded="false"
-              aria-label="expand"
+              aria-label="expand "
               class="c4"
               type="button"
             >
@@ -9572,7 +10532,7 @@ exports[`DataTable groupBy toggle 2`] = `
           >
             <button
               aria-expanded="false"
-              aria-label="expand"
+              aria-label="expand "
               class="c4"
               type="button"
             >
@@ -9886,6 +10846,1119 @@ exports[`DataTable groupBy toggle 3`] = `
             </span>
           </div>
         </th>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`DataTable messages prop overrides theme messages 1`] = `
+.c7 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: rgba(0, 0, 0, 0.33);
+  stroke: rgba(0, 0, 0, 0.33);
+}
+
+.c7 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c7 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c7 *[stroke*='#'],
+.c7 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c7 *[fill-rule],
+.c7 *[FILL-RULE],
+.c7 *[fill*='#'],
+.c7 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c4 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.c6 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.c9 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  flex: 1 0 auto;
+  justify-content: center;
+}
+
+.c15 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+}
+
+.c10 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c5 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  flex: 1 0 auto;
+}
+
+.c5:hover {
+  background-color: rgba(221, 221, 221, 0.4);
+  color: #000000;
+}
+
+.c5:focus {
+  outline-offset: -2px;
+  outline: 2px solid #6FFFB0;
+}
+
+.c5:focus >circle,
+.c5:focus >ellipse,
+.c5:focus >line,
+.c5:focus >path,
+.c5:focus >polygon,
+.c5:focus >polyline,
+.c5:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c5:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible) >circle,
+.c5:focus:not(:focus-visible) >ellipse,
+.c5:focus:not(:focus-visible) >line,
+.c5:focus:not(:focus-visible) >path,
+.c5:focus:not(:focus-visible) >polygon,
+.c5:focus:not(:focus-visible) >polyline,
+.c5:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
+}
+
+.c3 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  width: 48px;
+  max-width: 48px;
+  overflow: hidden;
+  vertical-align: top;
+  text-align: start;
+  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
+}
+
+.c8 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  text-align: start;
+  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.c13 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  width: 48px;
+  max-width: 48px;
+  overflow: hidden;
+  vertical-align: top;
+  text-align: start;
+}
+
+.c14 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  text-align: start;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.c1 {
+  border-spacing: 0;
+  border-collapse: collapse;
+  width: inherit;
+}
+
+.c2 {
+  position: relative;
+  border-spacing: 0;
+  border-collapse: separate;
+}
+
+.c12:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c12:focus >circle,
+.c12:focus >ellipse,
+.c12:focus >line,
+.c12:focus >path,
+.c12:focus >polygon,
+.c12:focus >polyline,
+.c12:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c12:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c12:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c12:focus:not(:focus-visible) >circle,
+.c12:focus:not(:focus-visible) >ellipse,
+.c12:focus:not(:focus-visible) >line,
+.c12:focus:not(:focus-visible) >path,
+.c12:focus:not(:focus-visible) >polygon,
+.c12:focus:not(:focus-visible) >polyline,
+.c12:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c12:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
+}
+
+.c11:focus {
+  outline: 2px solid #6FFFB0;
+}
+
+.c11:focus:not(:focus-visible) {
+  outline: none;
+}
+
+@media only screen and (max-width: 768px) {
+  .c6 {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c6 {
+    padding-top: 3px;
+    padding-bottom: 3px;
+  }
+}
+
+<div
+  class="c0"
+>
+  <table
+    class="c1 c2"
+  >
+    <thead
+      class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-5"
+    >
+      <tr
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+      >
+        <td
+          class="c3"
+        >
+          <div
+            class="c4"
+            style="height: 0px;"
+          >
+            <button
+              aria-expanded="false"
+              aria-label="expand all"
+              class="c5"
+              type="button"
+            >
+              <div
+                class="c6"
+              >
+                <svg
+                  aria-label="FormDown"
+                  class="c7"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="m18 9-6 6-6-6"
+                    fill="none"
+                    stroke="#000"
+                    stroke-width="2"
+                  />
+                </svg>
+              </div>
+            </button>
+          </div>
+        </td>
+        <th
+          class="c8 "
+          scope="col"
+        >
+          <div
+            class="c9"
+          >
+            <span
+              class="c10"
+            >
+              A
+            </span>
+          </div>
+        </th>
+        <th
+          class="c8 "
+          scope="col"
+        >
+          <div
+            class="c9"
+          >
+            <span
+              class="c10"
+            >
+              B
+            </span>
+          </div>
+        </th>
+      </tr>
+    </thead>
+    <tbody
+      class="StyledTable__StyledTableBody-sc-1m3u5g-3 c11"
+    >
+      <tr
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c12"
+      >
+        <td
+          class="c13"
+        >
+          <div
+            class="c4"
+            style="height: 0px;"
+          >
+            <button
+              aria-expanded="false"
+              aria-label="expandir"
+              class="c5"
+              type="button"
+            >
+              <div
+                class="c6"
+              >
+                <svg
+                  aria-label="FormDown"
+                  class="c7"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="m18 9-6 6-6-6"
+                    fill="none"
+                    stroke="#000"
+                    stroke-width="2"
+                  />
+                </svg>
+              </div>
+            </button>
+          </div>
+        </td>
+        <th
+          class="c14 "
+          scope="row"
+        >
+          <div
+            class="c15"
+          >
+            <span
+              class="c10"
+            >
+              one
+            </span>
+          </div>
+        </th>
+        <td
+          class="c14 "
+        >
+          <div
+            class="c15"
+          />
+        </td>
+      </tr>
+      <tr
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c12"
+      >
+        <td
+          class="c13"
+        >
+          <div
+            class="c4"
+            style="height: 0px;"
+          >
+            <button
+              aria-expanded="false"
+              aria-label="expandir"
+              class="c5"
+              type="button"
+            >
+              <div
+                class="c6"
+              >
+                <svg
+                  aria-label="FormDown"
+                  class="c7"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="m18 9-6 6-6-6"
+                    fill="none"
+                    stroke="#000"
+                    stroke-width="2"
+                  />
+                </svg>
+              </div>
+            </button>
+          </div>
+        </td>
+        <th
+          class="c14 "
+          scope="row"
+        >
+          <div
+            class="c15"
+          >
+            <span
+              class="c10"
+            >
+              two
+            </span>
+          </div>
+        </th>
+        <td
+          class="c14 "
+        >
+          <div
+            class="c15"
+          />
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`DataTable messages prop overrides theme messages 2`] = `
+<div
+  class="StyledGrommet-sc-19lkkz7-0 cBoJUe"
+>
+  <table
+    class="StyledTable-sc-1m3u5g-6 kzIboA StyledDataTable-sc-xrlyjm-0 hPMmXj"
+  >
+    <thead
+      class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-5"
+    >
+      <tr
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRowHeader-sc-xrlyjm-3 fgxpmX"
+      >
+        <td
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 jtdjVi"
+        >
+          <div
+            class="StyledBox-sc-13pk1d4-0 jhOwSO"
+            style="height: 0px;"
+          >
+            <button
+              aria-expanded="false"
+              aria-label="expand all"
+              class="StyledButton-sc-323bzc-0 cuylbq"
+              type="button"
+            >
+              <div
+                class="StyledBox-sc-13pk1d4-0 kBBfhA"
+              >
+                <svg
+                  aria-label="FormDown"
+                  class="StyledIcon-sc-ofa7kd-0 hbctlq"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="m18 9-6 6-6-6"
+                    fill="none"
+                    stroke="#000"
+                    stroke-width="2"
+                  />
+                </svg>
+              </div>
+            </button>
+          </div>
+        </td>
+        <th
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 btvVUL StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 dvuoDz"
+          scope="col"
+        >
+          <div
+            class="StyledBox-sc-13pk1d4-0 jvqrur"
+          >
+            <span
+              class="StyledText-sc-1sadyjn-0 ldA-DUE"
+            >
+              A
+            </span>
+          </div>
+        </th>
+        <th
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 btvVUL StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 dvuoDz"
+          scope="col"
+        >
+          <div
+            class="StyledBox-sc-13pk1d4-0 jvqrur"
+          >
+            <span
+              class="StyledText-sc-1sadyjn-0 ldA-DUE"
+            >
+              B
+            </span>
+          </div>
+        </th>
+      </tr>
+    </thead>
+    <tbody
+      class="StyledTable__StyledTableBody-sc-1m3u5g-3 StyledDataTable__StyledDataTableBody-sc-xrlyjm-4 gQHCrw"
+    >
+      <tr
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 faOFTP"
+      >
+        <td
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 czbtUs"
+        >
+          <div
+            class="StyledBox-sc-13pk1d4-0 jhOwSO"
+            style="height: 0px;"
+          >
+            <button
+              aria-expanded="true"
+              aria-label="colapsar"
+              class="StyledButton-sc-323bzc-0 cuylbq"
+              type="button"
+            >
+              <div
+                class="StyledBox-sc-13pk1d4-0 kBBfhA"
+              >
+                .c0 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: rgba(0, 0, 0, 0.33);
+  stroke: rgba(0, 0, 0, 0.33);
+}
+
+.c0 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c0 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c0 *[stroke*='#'],
+.c0 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c0 *[fill-rule],
+.c0 *[FILL-RULE],
+.c0 *[fill*='#'],
+.c0 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
+}
+
+@media only screen and (max-width: 768px) {
+
+}
+
+@media only screen and (max-width: 768px) {
+
+}
+
+<svg
+                  aria-label="FormUp"
+                  class="c0"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="m18 15-6-6-6 6"
+                    fill="none"
+                    stroke="#000"
+                    stroke-width="2"
+                  />
+                </svg>
+              </div>
+            </button>
+          </div>
+        </td>
+        <th
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 fwrJut StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 dvuoDz"
+          scope="row"
+        >
+          <div
+            class="StyledBox-sc-13pk1d4-0 hKCfLv"
+          >
+            <span
+              class="StyledText-sc-1sadyjn-0 ldA-DUE"
+            >
+              one
+            </span>
+          </div>
+        </th>
+        <td
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 fwrJut StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 dvuoDz"
+        >
+          <div
+            class="StyledBox-sc-13pk1d4-0 hKCfLv"
+          />
+        </td>
+      </tr>
+      .c4 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #666666;
+  stroke: #666666;
+}
+
+.c4 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c4 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c4 *[stroke*='#'],
+.c4 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c4 *[fill-rule],
+.c4 *[FILL-RULE],
+.c4 *[fill*='#'],
+.c4 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c2 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.c3 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.c6 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+}
+
+.c7 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c1 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  width: 48px;
+  max-width: 48px;
+  overflow: hidden;
+  vertical-align: top;
+  text-align: start;
+}
+
+.c5 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  text-align: start;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.c0:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c0:focus >circle,
+.c0:focus >ellipse,
+.c0:focus >line,
+.c0:focus >path,
+.c0:focus >polygon,
+.c0:focus >polyline,
+.c0:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c0:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c0:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c0:focus:not(:focus-visible) >circle,
+.c0:focus:not(:focus-visible) >ellipse,
+.c0:focus:not(:focus-visible) >line,
+.c0:focus:not(:focus-visible) >path,
+.c0:focus:not(:focus-visible) >polygon,
+.c0:focus:not(:focus-visible) >polyline,
+.c0:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c0:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
+}
+
+@media only screen and (max-width: 768px) {
+  .c3 {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c3 {
+    padding-top: 3px;
+    padding-bottom: 3px;
+  }
+}
+
+<tr
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c0"
+      >
+        <td
+          class="c1"
+        >
+          <div
+            class="c2"
+            style="height: 0px;"
+          >
+            <div
+              class="c3"
+            >
+              <svg
+                aria-hidden="true"
+                class="c4"
+                viewBox="0 0 24 24"
+              />
+            </div>
+          </div>
+        </td>
+        <td
+          class="c5 "
+        >
+          <div
+            class="c6"
+          >
+            <span
+              class="c7"
+            >
+              one
+            </span>
+          </div>
+        </td>
+        <td
+          class="c5 "
+        >
+          <div
+            class="c6"
+          >
+            <span
+              class="c7"
+            >
+              1.1
+            </span>
+          </div>
+        </td>
+      </tr>
+      .c4 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #666666;
+  stroke: #666666;
+}
+
+.c4 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c4 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c4 *[stroke*='#'],
+.c4 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c4 *[fill-rule],
+.c4 *[FILL-RULE],
+.c4 *[fill*='#'],
+.c4 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c3 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.c6 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+}
+
+.c2 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.c7 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c5 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  text-align: start;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.c1 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  width: 48px;
+  max-width: 48px;
+  overflow: hidden;
+  vertical-align: bottom;
+  text-align: start;
+}
+
+.c0:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c0:focus >circle,
+.c0:focus >ellipse,
+.c0:focus >line,
+.c0:focus >path,
+.c0:focus >polygon,
+.c0:focus >polyline,
+.c0:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c0:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c0:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c0:focus:not(:focus-visible) >circle,
+.c0:focus:not(:focus-visible) >ellipse,
+.c0:focus:not(:focus-visible) >line,
+.c0:focus:not(:focus-visible) >path,
+.c0:focus:not(:focus-visible) >polygon,
+.c0:focus:not(:focus-visible) >polyline,
+.c0:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c0:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
+}
+
+@media only screen and (max-width: 768px) {
+  .c3 {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c3 {
+    padding-top: 3px;
+    padding-bottom: 3px;
+  }
+}
+
+<tr
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c0"
+      >
+        <td
+          class="c1"
+        >
+          <div
+            class="c2"
+            style="height: 0px;"
+          >
+            <div
+              class="c3"
+            >
+              <svg
+                aria-hidden="true"
+                class="c4"
+                viewBox="0 0 24 24"
+              />
+            </div>
+          </div>
+        </td>
+        <td
+          class="c5 "
+        >
+          <div
+            class="c6"
+          >
+            <span
+              class="c7"
+            >
+              one
+            </span>
+          </div>
+        </td>
+        <td
+          class="c5 "
+        >
+          <div
+            class="c6"
+          >
+            <span
+              class="c7"
+            >
+              1.2
+            </span>
+          </div>
+        </td>
+      </tr>
+      <tr
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 faOFTP"
+      >
+        <td
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 czbtUs"
+        >
+          <div
+            class="StyledBox-sc-13pk1d4-0 jhOwSO"
+            style="height: 0px;"
+          >
+            <button
+              aria-expanded="false"
+              aria-label="expandir"
+              class="StyledButton-sc-323bzc-0 cuylbq"
+              type="button"
+            >
+              <div
+                class="StyledBox-sc-13pk1d4-0 kBBfhA"
+              >
+                <svg
+                  aria-label="FormDown"
+                  class="StyledIcon-sc-ofa7kd-0 hbctlq"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="m18 9-6 6-6-6"
+                    fill="none"
+                    stroke="#000"
+                    stroke-width="2"
+                  />
+                </svg>
+              </div>
+            </button>
+          </div>
+        </td>
+        <th
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 fwrJut StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 dvuoDz"
+          scope="row"
+        >
+          <div
+            class="StyledBox-sc-13pk1d4-0 hKCfLv"
+          >
+            <span
+              class="StyledText-sc-1sadyjn-0 ldA-DUE"
+            >
+              two
+            </span>
+          </div>
+        </th>
+        <td
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 fwrJut StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 dvuoDz"
+        >
+          <div
+            class="StyledBox-sc-13pk1d4-0 hKCfLv"
+          />
+        </td>
       </tr>
     </tbody>
   </table>
@@ -10379,8 +12452,8 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
             style="height: 0px;"
           >
             <button
-              aria-expanded="false"
-              aria-label="expand"
+              aria-expanded="true"
+              aria-label="collapse all"
               class="c5"
               type="button"
             >
@@ -10388,12 +12461,12 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
                 class="c6"
               >
                 <svg
-                  aria-label="FormDown"
+                  aria-label="FormUp"
                   class="c7"
                   viewBox="0 0 24 24"
                 >
                   <path
-                    d="m18 9-6 6-6-6"
+                    d="m18 15-6-6-6 6"
                     fill="none"
                     stroke="#000"
                     stroke-width="2"
@@ -10487,7 +12560,7 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
           >
             <button
               aria-expanded="true"
-              aria-label="collapse"
+              aria-label="collapse "
               class="c5"
               type="button"
             >
@@ -10738,8 +12811,8 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
             style="height: 0px;"
           >
             <button
-              aria-expanded="false"
-              aria-label="expand"
+              aria-expanded="true"
+              aria-label="collapse "
               class="c5"
               type="button"
             >
@@ -10747,12 +12820,12 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
                 class="c6"
               >
                 <svg
-                  aria-label="FormDown"
+                  aria-label="FormUp"
                   class="c7"
                   viewBox="0 0 24 24"
                 >
                   <path
-                    d="m18 9-6 6-6-6"
+                    d="m18 15-6-6-6 6"
                     fill="none"
                     stroke="#000"
                     stroke-width="2"
@@ -10807,6 +12880,152 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
           <div
             class="c24"
           />
+        </td>
+      </tr>
+      <tr
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c20"
+      >
+        <td
+          class="c21"
+        >
+          <div
+            class="c4"
+            style="height: 0px;"
+          >
+            <div
+              class="c6"
+            >
+              <svg
+                aria-hidden="true"
+                class="c25"
+                viewBox="0 0 24 24"
+              />
+            </div>
+          </div>
+        </td>
+        <td
+          class="c22"
+        >
+          <div
+            class="c9"
+            style="height: 0px;"
+          >
+            <label
+              class="c10"
+            >
+              <div
+                class="c11 c12"
+              >
+                <input
+                  aria-label="select 2.1"
+                  class="c13"
+                  type="checkbox"
+                />
+                <div
+                  class="c14 "
+                />
+              </div>
+            </label>
+          </div>
+        </td>
+        <td
+          class="c23 "
+        >
+          <div
+            class="c24"
+          >
+            <span
+              class="c18"
+            >
+              two
+            </span>
+          </div>
+        </td>
+        <td
+          class="c23 "
+        >
+          <div
+            class="c24"
+          >
+            <span
+              class="c18"
+            >
+              2.1
+            </span>
+          </div>
+        </td>
+      </tr>
+      <tr
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c20"
+      >
+        <td
+          class="c26"
+        >
+          <div
+            class="c27"
+            style="height: 0px;"
+          >
+            <div
+              class="c6"
+            >
+              <svg
+                aria-hidden="true"
+                class="c25"
+                viewBox="0 0 24 24"
+              />
+            </div>
+          </div>
+        </td>
+        <td
+          class="c22"
+        >
+          <div
+            class="c9"
+            style="height: 0px;"
+          >
+            <label
+              class="c10"
+            >
+              <div
+                class="c11 c12"
+              >
+                <input
+                  aria-label="select 2.2"
+                  class="c13"
+                  type="checkbox"
+                />
+                <div
+                  class="c14 "
+                />
+              </div>
+            </label>
+          </div>
+        </td>
+        <td
+          class="c23 "
+        >
+          <div
+            class="c24"
+          >
+            <span
+              class="c18"
+            >
+              two
+            </span>
+          </div>
+        </td>
+        <td
+          class="c23 "
+        >
+          <div
+            class="c24"
+          >
+            <span
+              class="c18"
+            >
+              2.2
+            </span>
+          </div>
         </td>
       </tr>
     </tbody>
@@ -11227,7 +13446,7 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
           >
             <button
               aria-expanded="false"
-              aria-label="expand"
+              aria-label="expand all"
               class="c5"
               type="button"
             >
@@ -11334,7 +13553,7 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
           >
             <button
               aria-expanded="false"
-              aria-label="expand"
+              aria-label="expand "
               class="c5"
               type="button"
             >
@@ -11427,7 +13646,7 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
           >
             <button
               aria-expanded="false"
-              aria-label="expand"
+              aria-label="expand "
               class="c5"
               type="button"
             >
@@ -11935,7 +14154,7 @@ exports[`DataTable onSelect + groupBy should select all items within a group 1`]
           >
             <button
               aria-expanded="false"
-              aria-label="expand"
+              aria-label="expand all"
               class="c5"
               type="button"
             >
@@ -12042,7 +14261,7 @@ exports[`DataTable onSelect + groupBy should select all items within a group 1`]
           >
             <button
               aria-expanded="false"
-              aria-label="expand"
+              aria-label="expand "
               class="c5"
               type="button"
             >
@@ -12135,7 +14354,7 @@ exports[`DataTable onSelect + groupBy should select all items within a group 1`]
           >
             <button
               aria-expanded="false"
-              aria-label="expand"
+              aria-label="expand "
               class="c5"
               type="button"
             >
@@ -12614,7 +14833,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 1`
           >
             <button
               aria-expanded="false"
-              aria-label="expand"
+              aria-label="expand all"
               class="c5"
               type="button"
             >
@@ -12710,7 +14929,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 1`
           >
             <button
               aria-expanded="false"
-              aria-label="expand"
+              aria-label="expand "
               class="c5"
               type="button"
             >
@@ -12792,7 +15011,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 1`
           >
             <button
               aria-expanded="false"
-              aria-label="expand"
+              aria-label="expand "
               class="c5"
               type="button"
             >
@@ -12889,7 +15108,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 2`
           >
             <button
               aria-expanded="false"
-              aria-label="expand"
+              aria-label="expand all"
               class="StyledButton-sc-323bzc-0 cuylbq"
               type="button"
             >
@@ -13020,7 +15239,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 2`
           >
             <button
               aria-expanded="false"
-              aria-label="expand"
+              aria-label="expand "
               class="StyledButton-sc-323bzc-0 cuylbq"
               type="button"
             >
@@ -13137,7 +15356,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 2`
           >
             <button
               aria-expanded="false"
-              aria-label="expand"
+              aria-label="expand "
               class="StyledButton-sc-323bzc-0 cuylbq"
               type="button"
             >
@@ -13269,7 +15488,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 3`
           >
             <button
               aria-expanded="false"
-              aria-label="expand"
+              aria-label="expand all"
               class="StyledButton-sc-323bzc-0 cuylbq"
               type="button"
             >
@@ -13365,7 +15584,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 3`
           >
             <button
               aria-expanded="false"
-              aria-label="expand"
+              aria-label="expand "
               class="StyledButton-sc-323bzc-0 cuylbq"
               type="button"
             >
@@ -13447,7 +15666,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 3`
           >
             <button
               aria-expanded="false"
-              aria-label="expand"
+              aria-label="expand "
               class="StyledButton-sc-323bzc-0 cuylbq"
               type="button"
             >
@@ -16424,7 +18643,7 @@ exports[`DataTable onUpdate groupBy.onSelect 1`] = `
           >
             <button
               aria-expanded="false"
-              aria-label="expand"
+              aria-label="expand all"
               class="c4"
               type="button"
             >
@@ -16546,7 +18765,7 @@ exports[`DataTable onUpdate groupBy.onSelect 1`] = `
           >
             <button
               aria-expanded="false"
-              aria-label="expand"
+              aria-label="expand "
               class="c4"
               type="button"
             >
@@ -16646,7 +18865,7 @@ exports[`DataTable onUpdate groupBy.onSelect 1`] = `
           >
             <button
               aria-expanded="false"
-              aria-label="expand"
+              aria-label="expand "
               class="c4"
               type="button"
             >
@@ -16735,7 +18954,7 @@ exports[`DataTable onUpdate groupBy.onSelect 1`] = `
           >
             <button
               aria-expanded="false"
-              aria-label="expand"
+              aria-label="expand "
               class="c4"
               type="button"
             >
@@ -16824,7 +19043,7 @@ exports[`DataTable onUpdate groupBy.onSelect 1`] = `
           >
             <button
               aria-expanded="false"
-              aria-label="expand"
+              aria-label="expand "
               class="c4"
               type="button"
             >
@@ -21921,7 +24140,7 @@ exports[`DataTable rowDetails 1`] = `
           >
             <button
               aria-expanded="false"
-              aria-label="expand"
+              aria-label="expand "
               class="c11"
               type="button"
             >
@@ -21984,7 +24203,7 @@ exports[`DataTable rowDetails 1`] = `
           >
             <button
               aria-expanded="true"
-              aria-label="collapse"
+              aria-label="collapse "
               class="c11"
               type="button"
             >
@@ -22061,7 +24280,7 @@ exports[`DataTable rowDetails 1`] = `
           >
             <button
               aria-expanded="false"
-              aria-label="expand"
+              aria-label="expand "
               class="c11"
               type="button"
             >
@@ -22124,7 +24343,7 @@ exports[`DataTable rowDetails 1`] = `
           >
             <button
               aria-expanded="false"
-              aria-label="expand"
+              aria-label="expand "
               class="c11"
               type="button"
             >
@@ -22532,7 +24751,7 @@ exports[`DataTable rowDetails condtional 1`] = `
           >
             <button
               aria-expanded="false"
-              aria-label="expand"
+              aria-label="expand "
               class="c11"
               type="button"
             >
@@ -22595,7 +24814,7 @@ exports[`DataTable rowDetails condtional 1`] = `
           >
             <button
               aria-expanded="true"
-              aria-label="collapse"
+              aria-label="collapse "
               class="c11"
               type="button"
             >
@@ -22675,7 +24894,7 @@ exports[`DataTable rowDetails condtional 1`] = `
           >
             <button
               aria-expanded="false"
-              aria-label="expand"
+              aria-label="expand "
               class="c11"
               type="button"
             >
@@ -22738,7 +24957,7 @@ exports[`DataTable rowDetails condtional 1`] = `
           >
             <button
               aria-expanded="false"
-              aria-label="expand"
+              aria-label="expand "
               class="c11"
               type="button"
             >
@@ -23451,7 +25670,7 @@ exports[`DataTable rowProps on group header rows 1`] = `
           >
             <button
               aria-expanded="false"
-              aria-label="expand"
+              aria-label="expand all"
               class="c5"
               type="button"
             >
@@ -23521,7 +25740,7 @@ exports[`DataTable rowProps on group header rows 1`] = `
           >
             <button
               aria-expanded="false"
-              aria-label="expand"
+              aria-label="expand "
               class="c5"
               type="button"
             >
@@ -25683,7 +27902,7 @@ exports[`DataTable should apply custom theme for groupHeader 1`] = `
             >
               <button
                 aria-expanded="false"
-                aria-label="expand"
+                aria-label="expand all"
                 class="c5"
                 type="button"
               >
@@ -25753,7 +27972,7 @@ exports[`DataTable should apply custom theme for groupHeader 1`] = `
             >
               <button
                 aria-expanded="false"
-                aria-label="expand"
+                aria-label="expand "
                 class="c5"
                 type="button"
               >
@@ -25810,7 +28029,7 @@ exports[`DataTable should apply custom theme for groupHeader 1`] = `
             >
               <button
                 aria-expanded="false"
-                aria-label="expand"
+                aria-label="expand "
                 class="c5"
                 type="button"
               >
@@ -29406,7 +31625,7 @@ exports[`DataTable should apply theme for selected row detail parent only 1`] = 
             >
               <button
                 aria-expanded="false"
-                aria-label="expand"
+                aria-label="expand "
                 class="c19"
                 type="button"
               >
@@ -29516,7 +31735,7 @@ exports[`DataTable should apply theme for selected row detail parent only 1`] = 
             >
               <button
                 aria-expanded="true"
-                aria-label="collapse"
+                aria-label="collapse "
                 class="c19"
                 type="button"
               >
@@ -30126,7 +32345,7 @@ exports[`DataTable should apply theme for selected row group 1`] = `
             >
               <button
                 aria-expanded="false"
-                aria-label="expand"
+                aria-label="expand all"
                 class="c5"
                 type="button"
               >
@@ -30200,7 +32419,7 @@ exports[`DataTable should apply theme for selected row group 1`] = `
             >
               <button
                 aria-expanded="true"
-                aria-label="collapse"
+                aria-label="collapse "
                 class="c5"
                 type="button"
               >
@@ -30494,7 +32713,7 @@ exports[`DataTable should apply theme for selected row group 1`] = `
             >
               <button
                 aria-expanded="true"
-                aria-label="collapse"
+                aria-label="collapse "
                 class="c5"
                 type="button"
               >
@@ -30737,7 +32956,7 @@ exports[`DataTable should apply theme for selected row group 1`] = `
             >
               <button
                 aria-expanded="false"
-                aria-label="expand"
+                aria-label="expand "
                 class="c5"
                 type="button"
               >
