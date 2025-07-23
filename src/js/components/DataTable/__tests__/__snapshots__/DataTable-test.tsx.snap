@@ -5612,6 +5612,7 @@ exports[`DataTable expandAriaLabel default 1`] = `
         </td>
         <th
           class="c8 "
+          id="grommet-data-table-header-a"
           scope="col"
         >
           <div
@@ -5626,6 +5627,7 @@ exports[`DataTable expandAriaLabel default 1`] = `
         </th>
         <th
           class="c8 "
+          id="grommet-data-table-header-b"
           scope="col"
         >
           <div
@@ -6092,6 +6094,7 @@ exports[`DataTable expandLabel function 1`] = `
         </td>
         <th
           class="c8 "
+          id="grommet-data-table-header-a"
           scope="col"
         >
           <div
@@ -6106,6 +6109,7 @@ exports[`DataTable expandLabel function 1`] = `
         </th>
         <th
           class="c8 "
+          id="grommet-data-table-header-b"
           scope="col"
         >
           <div
@@ -11182,6 +11186,7 @@ exports[`DataTable messages prop overrides theme messages 1`] = `
         </td>
         <th
           class="c8 "
+          id="grommet-data-table-header-a"
           scope="col"
         >
           <div
@@ -11196,6 +11201,7 @@ exports[`DataTable messages prop overrides theme messages 1`] = `
         </th>
         <th
           class="c8 "
+          id="grommet-data-table-header-b"
           scope="col"
         >
           <div
@@ -11379,6 +11385,7 @@ exports[`DataTable messages prop overrides theme messages 2`] = `
         </td>
         <th
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 btvVUL StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 dvuoDz"
+          id="grommet-data-table-header-a"
           scope="col"
         >
           <div
@@ -11393,6 +11400,7 @@ exports[`DataTable messages prop overrides theme messages 2`] = `
         </th>
         <th
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 btvVUL StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 dvuoDz"
+          id="grommet-data-table-header-b"
           scope="col"
         >
           <div
