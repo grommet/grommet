@@ -79,10 +79,7 @@ const ExpanderControl = ({
     if (expandLabel) {
       a11yTitle = format({
         id: expanded ? 'dataTable.collapse' : 'dataTable.expand',
-        messages: {
-          'dataTable.expand': 'expand {label}',
-          'dataTable.collapse': 'collapse {label}',
-        },
+        messages,
         values: { label: expandLabel },
       });
     } else if (context === 'header') {
