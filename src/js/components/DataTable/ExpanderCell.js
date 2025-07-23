@@ -45,35 +45,27 @@ const ExpanderControl = ({
   );
 
   if (onToggle) {
-    const expandText =
-      messages?.expand ||
-      format({
-        id: 'dataTable.expand',
-        messages,
-        values: { label: expandLabel || '' },
-      });
+    const expandText = format({
+      id: 'dataTable.expand',
+      messages,
+      values: { label: expandLabel || '' },
+    });
 
-    const collapseText =
-      messages?.collapse ||
-      format({
-        id: 'dataTable.collapse',
-        messages,
-        values: { label: expandLabel || '' },
-      });
+    const collapseText = format({
+      id: 'dataTable.collapse',
+      messages,
+      values: { label: expandLabel || '' },
+    });
 
-    const expandAllText =
-      messages?.expandAll ||
-      format({
-        id: 'dataTable.expandAll',
-        messages,
-      });
+    const expandAllText = format({
+      id: 'dataTable.expandAll',
+      messages,
+    });
 
-    const collapseAllText =
-      messages?.collapseAll ||
-      format({
-        id: 'dataTable.collapseAll',
-        messages,
-      });
+    const collapseAllText = format({
+      id: 'dataTable.collapseAll',
+      messages,
+    });
 
     let a11yTitle;
     if (expandLabel) {
