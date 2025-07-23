@@ -135,6 +135,7 @@ exports[`DataTable !primaryKey 1`] = `
       >
         <th
           class="c3 "
+          id="grommet-data-table-header-a"
           scope="col"
         >
           <div
@@ -149,6 +150,7 @@ exports[`DataTable !primaryKey 1`] = `
         </th>
         <th
           class="c3 "
+          id="grommet-data-table-header-b"
           scope="col"
         >
           <div
@@ -409,6 +411,7 @@ exports[`DataTable absoluteColumnSizes 1`] = `
       >
         <th
           class="c3 "
+          id="grommet-data-table-header-a"
           scope="col"
         >
           <div
@@ -423,6 +426,7 @@ exports[`DataTable absoluteColumnSizes 1`] = `
         </th>
         <th
           class="c6 "
+          id="grommet-data-table-header-b"
           scope="col"
         >
           <div
@@ -661,6 +665,7 @@ exports[`DataTable aggregate 1`] = `
       >
         <th
           class="c3 "
+          id="grommet-data-table-header-a"
           scope="col"
         >
           <div
@@ -675,6 +680,7 @@ exports[`DataTable aggregate 1`] = `
         </th>
         <th
           class="c3 "
+          id="grommet-data-table-header-b"
           scope="col"
         >
           <div
@@ -941,6 +947,7 @@ exports[`DataTable aggregate with nested object 1`] = `
       >
         <th
           class="c3 "
+          id="grommet-data-table-header-a"
           scope="col"
         >
           <div
@@ -955,6 +962,7 @@ exports[`DataTable aggregate with nested object 1`] = `
         </th>
         <th
           class="c3 "
+          id="grommet-data-table-header-obj.value"
           scope="col"
         >
           <div
@@ -969,6 +977,7 @@ exports[`DataTable aggregate with nested object 1`] = `
         </th>
         <th
           class="c3 "
+          id="grommet-data-table-header-obj2.value"
           scope="col"
         >
           <div
@@ -1329,6 +1338,7 @@ exports[`DataTable background 1`] = `
       >
         <th
           class="c3 "
+          id="grommet-data-table-header-a"
           scope="col"
         >
           <div
@@ -1343,6 +1353,7 @@ exports[`DataTable background 1`] = `
         </th>
         <th
           class="c3 "
+          id="grommet-data-table-header-b"
           scope="col"
         >
           <div
@@ -1463,6 +1474,7 @@ exports[`DataTable background 1`] = `
       >
         <th
           class="c12 "
+          id="grommet-data-table-header-a"
           scope="col"
         >
           <div
@@ -1477,6 +1489,7 @@ exports[`DataTable background 1`] = `
         </th>
         <th
           class="c12 "
+          id="grommet-data-table-header-b"
           scope="col"
         >
           <div
@@ -1597,6 +1610,7 @@ exports[`DataTable background 1`] = `
       >
         <th
           class="c3 "
+          id="grommet-data-table-header-a"
           scope="col"
         >
           <div
@@ -1611,6 +1625,7 @@ exports[`DataTable background 1`] = `
         </th>
         <th
           class="c3 "
+          id="grommet-data-table-header-b"
           scope="col"
         >
           <div
@@ -1864,6 +1879,7 @@ exports[`DataTable basic 1`] = `
       >
         <th
           class="c3 "
+          id="grommet-data-table-header-a"
           scope="col"
         >
           <div
@@ -1878,6 +1894,7 @@ exports[`DataTable basic 1`] = `
         </th>
         <th
           class="c3 "
+          id="grommet-data-table-header-b"
           scope="col"
         >
           <div
@@ -2117,6 +2134,7 @@ exports[`DataTable border 1`] = `
       >
         <th
           class="c3 "
+          id="grommet-data-table-header-a"
           scope="col"
         >
           <div
@@ -2131,6 +2149,7 @@ exports[`DataTable border 1`] = `
         </th>
         <th
           class="c3 "
+          id="grommet-data-table-header-b"
           scope="col"
         >
           <div
@@ -2251,6 +2270,7 @@ exports[`DataTable border 1`] = `
       >
         <th
           class="c10 "
+          id="grommet-data-table-header-a"
           scope="col"
         >
           <div
@@ -2265,6 +2285,7 @@ exports[`DataTable border 1`] = `
         </th>
         <th
           class="c10 "
+          id="grommet-data-table-header-b"
           scope="col"
         >
           <div
@@ -2385,6 +2406,7 @@ exports[`DataTable border 1`] = `
       >
         <th
           class="c11 "
+          id="grommet-data-table-header-a"
           scope="col"
         >
           <div
@@ -2399,6 +2421,7 @@ exports[`DataTable border 1`] = `
         </th>
         <th
           class="c11 "
+          id="grommet-data-table-header-b"
           scope="col"
         >
           <div
@@ -2519,6 +2542,7 @@ exports[`DataTable border 1`] = `
       >
         <th
           class="c10 "
+          id="grommet-data-table-header-a"
           scope="col"
         >
           <div
@@ -2533,6 +2557,7 @@ exports[`DataTable border 1`] = `
         </th>
         <th
           class="c10 "
+          id="grommet-data-table-header-b"
           scope="col"
         >
           <div
@@ -2890,6 +2915,7 @@ exports[`DataTable border on CheckBox cell 1`] = `
           </th>
           <th
             class="c10 "
+            id="grommet-data-table-header-name"
             scope="col"
           >
             <div
@@ -2904,6 +2930,7 @@ exports[`DataTable border on CheckBox cell 1`] = `
           </th>
           <th
             class="c10 "
+            id="grommet-data-table-header-percent"
             scope="col"
           >
             <div
@@ -3296,6 +3323,7 @@ exports[`DataTable click 1`] = `
       >
         <th
           class="c3 "
+          id="grommet-data-table-header-a"
           scope="col"
         >
           <div
@@ -3371,6 +3399,7 @@ exports[`DataTable click 2`] = `
       >
         <th
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 btvVUL StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 dvuoDz"
+          id="grommet-data-table-header-a"
           scope="col"
         >
           <div
@@ -3446,18 +3475,6 @@ exports[`DataTable custom theme 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  align-items: center;
-  min-width: 0;
-  min-height: 0;
-  flex-direction: row;
-  height: 100%;
-  justify-content: space-between;
-}
-
-.c6 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
   min-width: 0;
   min-height: 0;
   flex-direction: column;
@@ -3466,7 +3483,7 @@ exports[`DataTable custom theme 1`] = `
   justify-content: center;
 }
 
-.c9 {
+.c8 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -3476,32 +3493,31 @@ exports[`DataTable custom theme 1`] = `
   flex-direction: row;
 }
 
-.c13 {
+.c10 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  margin-right: -12px;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.c12 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-self: center;
   border-inline-end: solid 1px rgba(0, 0, 0, 0.33);
   min-width: 0;
   min-height: 0;
   flex-direction: column;
-  flex: 0 0 auto;
-  padding-top: 12px;
-  padding-bottom: 12px;
+  height: 100%;
 }
 
-.c17 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  border-inline-end: solid 1px red;
-  min-width: 0;
-  min-height: 0;
-  flex-direction: column;
-  padding-top: 12px;
-  padding-bottom: 12px;
-}
-
-.c21 {
+.c16 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -3511,7 +3527,7 @@ exports[`DataTable custom theme 1`] = `
   justify-content: center;
 }
 
-.c23 {
+.c18 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -3522,7 +3538,7 @@ exports[`DataTable custom theme 1`] = `
   justify-content: center;
 }
 
-.c26 {
+.c21 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -3537,7 +3553,7 @@ exports[`DataTable custom theme 1`] = `
   border-radius: 4px;
 }
 
-.c29 {
+.c24 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -3546,7 +3562,7 @@ exports[`DataTable custom theme 1`] = `
   flex-direction: column;
 }
 
-.c30 {
+.c25 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -3561,30 +3577,13 @@ exports[`DataTable custom theme 1`] = `
   border-radius: 4px;
 }
 
-.c11 {
-  position: relative;
-}
-
-.c12 {
-  position: relative;
-  display: block;
-  pointer-events: none;
-}
-
-.c14 {
-  position: absolute;
-  top: 50%;
-  right: 0;
-  transform: translateY(-50%);
-}
-
-.c10 {
+.c9 {
   font-size: 18px;
   line-height: 24px;
   font-weight: bold;
 }
 
-.c7 {
+.c6 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -3602,105 +3601,47 @@ exports[`DataTable custom theme 1`] = `
   height: 100%;
 }
 
-.c7:focus {
+.c6:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c7:focus >circle,
-.c7:focus >ellipse,
-.c7:focus >line,
-.c7:focus >path,
-.c7:focus >polygon,
-.c7:focus >polyline,
-.c7:focus >rect {
+.c6:focus >circle,
+.c6:focus >ellipse,
+.c6:focus >line,
+.c6:focus >path,
+.c6:focus >polygon,
+.c6:focus >polyline,
+.c6:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c7:focus ::-moz-focus-inner {
+.c6:focus ::-moz-focus-inner {
   border: 0;
 }
 
-.c7:focus:not(:focus-visible) {
+.c6:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c7:focus:not(:focus-visible) >circle,
-.c7:focus:not(:focus-visible) >ellipse,
-.c7:focus:not(:focus-visible) >line,
-.c7:focus:not(:focus-visible) >path,
-.c7:focus:not(:focus-visible) >polygon,
-.c7:focus:not(:focus-visible) >polyline,
-.c7:focus:not(:focus-visible) >rect {
+.c6:focus:not(:focus-visible) >circle,
+.c6:focus:not(:focus-visible) >ellipse,
+.c6:focus:not(:focus-visible) >line,
+.c6:focus:not(:focus-visible) >path,
+.c6:focus:not(:focus-visible) >polygon,
+.c6:focus:not(:focus-visible) >polyline,
+.c6:focus:not(:focus-visible) >rect {
   outline: none;
   box-shadow: none;
 }
 
-.c7:focus:not(:focus-visible) ::-moz-focus-inner {
+.c6:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 
-.c15 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  font: inherit;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  margin-top: 6px;
-  color: inherit;
-  outline: none;
-  border: none;
-  padding: 0;
-  text-align: inherit;
-}
-
-.c15:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c15:focus >circle,
-.c15:focus >ellipse,
-.c15:focus >line,
-.c15:focus >path,
-.c15:focus >polygon,
-.c15:focus >polyline,
-.c15:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c15:focus ::-moz-focus-inner {
-  border: 0;
-}
-
-.c15:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c15:focus:not(:focus-visible) >circle,
-.c15:focus:not(:focus-visible) >ellipse,
-.c15:focus:not(:focus-visible) >line,
-.c15:focus:not(:focus-visible) >path,
-.c15:focus:not(:focus-visible) >polygon,
-.c15:focus:not(:focus-visible) >polyline,
-.c15:focus:not(:focus-visible) >rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c15:focus:not(:focus-visible) ::-moz-focus-inner {
-  border: 0;
-}
-
-.c27 {
+.c22 {
   box-sizing: border-box;
   stroke-width: 4px;
   stroke: #7D4CDB;
@@ -3708,7 +3649,7 @@ exports[`DataTable custom theme 1`] = `
   height: 24px;
 }
 
-.c22 {
+.c17 {
   display: flex;
   flex-direction: row;
   user-select: none;
@@ -3722,12 +3663,12 @@ exports[`DataTable custom theme 1`] = `
   cursor: default;
 }
 
-.c22:hover input:not([disabled])+div,
-.c22:hover input:not([disabled])+span {
+.c17:hover input:not([disabled])+div,
+.c17:hover input:not([disabled])+span {
   border-color: #000000;
 }
 
-.c25 {
+.c20 {
   opacity: 0;
   -moz-appearance: none;
   width: 0;
@@ -3735,12 +3676,12 @@ exports[`DataTable custom theme 1`] = `
   margin: 0;
 }
 
-.c25:checked+span>span {
+.c20:checked+span>span {
   left: calc( 48px - 24px );
   background: #7D4CDB;
 }
 
-.c24 {
+.c19 {
   flex-shrink: 0;
 }
 
@@ -3767,7 +3708,7 @@ exports[`DataTable custom theme 1`] = `
   padding: 0px;
 }
 
-.c20 {
+.c15 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -3777,7 +3718,7 @@ exports[`DataTable custom theme 1`] = `
   text-align: start;
 }
 
-.c28 {
+.c23 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -3795,17 +3736,54 @@ exports[`DataTable custom theme 1`] = `
   width: inherit;
 }
 
-.c16 {
-  min-width: 2px;
+.c11 {
+  position: absolute;
+  right: 0;
+  width: 24px;
+  height: 100%;
+  top: 0;
   cursor: col-resize;
+  z-index: 1;
 }
 
-.c16 >* {
-  opacity: 0;
+.c11:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c16:hover >* {
-  opacity: 1;
+.c11:focus >circle,
+.c11:focus >ellipse,
+.c11:focus >line,
+.c11:focus >path,
+.c11:focus >polygon,
+.c11:focus >polyline,
+.c11:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c11:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c11:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c11:focus:not(:focus-visible) >circle,
+.c11:focus:not(:focus-visible) >ellipse,
+.c11:focus:not(:focus-visible) >line,
+.c11:focus:not(:focus-visible) >path,
+.c11:focus:not(:focus-visible) >polygon,
+.c11:focus:not(:focus-visible) >polyline,
+.c11:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c11:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
 }
 
 .c2 {
@@ -3814,84 +3792,90 @@ exports[`DataTable custom theme 1`] = `
   border-collapse: separate;
 }
 
-.c19:focus {
+.c14:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c19:focus >circle,
-.c19:focus >ellipse,
-.c19:focus >line,
-.c19:focus >path,
-.c19:focus >polygon,
-.c19:focus >polyline,
-.c19:focus >rect {
+.c14:focus >circle,
+.c14:focus >ellipse,
+.c14:focus >line,
+.c14:focus >path,
+.c14:focus >polygon,
+.c14:focus >polyline,
+.c14:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c19:focus ::-moz-focus-inner {
+.c14:focus ::-moz-focus-inner {
   border: 0;
 }
 
-.c19:focus:not(:focus-visible) {
+.c14:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c19:focus:not(:focus-visible) >circle,
-.c19:focus:not(:focus-visible) >ellipse,
-.c19:focus:not(:focus-visible) >line,
-.c19:focus:not(:focus-visible) >path,
-.c19:focus:not(:focus-visible) >polygon,
-.c19:focus:not(:focus-visible) >polyline,
-.c19:focus:not(:focus-visible) >rect {
+.c14:focus:not(:focus-visible) >circle,
+.c14:focus:not(:focus-visible) >ellipse,
+.c14:focus:not(:focus-visible) >line,
+.c14:focus:not(:focus-visible) >path,
+.c14:focus:not(:focus-visible) >polygon,
+.c14:focus:not(:focus-visible) >polyline,
+.c14:focus:not(:focus-visible) >rect {
   outline: none;
   box-shadow: none;
 }
 
-.c19:focus:not(:focus-visible) ::-moz-focus-inner {
+.c14:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 
-.c18:focus {
+.c13:focus {
   outline: 2px solid #6FFFB0;
 }
 
-.c18:focus:not(:focus-visible) {
+.c13:focus:not(:focus-visible) {
   outline: none;
 }
 
-.c8 {
+.c7 {
   padding: 6px 12px;
 }
 
-.c8:hover {
+.c7:hover {
   background-color: rgba(242, 242, 242, 1);
   color: #444444;
 }
 
 @media only screen and (max-width: 768px) {
-  .c17 {
-    border-inline-end: solid 1px red;
+  .c10 {
+    margin-right: -12px;
   }
 }
 
 @media only screen and (max-width: 768px) {
-  .c17 {
-    padding-top: 6px;
-    padding-bottom: 6px;
+  .c10 {
+    padding-top: 3px;
+    padding-bottom: 3px;
   }
 }
 
 @media only screen and (max-width: 768px) {
-  .c26 {
+  .c12 {
+    border-inline-end: solid 1px rgba(0, 0, 0, 0.33);
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c21 {
     border: solid 2px #7D4CDB;
   }
 }
 
 @media only screen and (max-width: 768px) {
-  .c30 {
+  .c25 {
     border: solid 2px rgba(0, 0, 0, 0.15);
   }
 }
@@ -3914,94 +3898,80 @@ exports[`DataTable custom theme 1`] = `
         />
         <th
           class="c4 "
+          id="grommet-data-table-header-a"
           scope="col"
-          style="box-sizing: border-box;"
+          style="box-sizing: border-box; position: relative; overflow: visible;"
         >
           <div
             class="c5"
-            style="position: relative;"
           >
-            <div
-              class="c6"
+            <button
+              class="c6 c7"
+              type="button"
             >
-              <button
-                class="c7 c8"
-                type="button"
+              <div
+                class="c8"
               >
-                <div
+                <span
                   class="c9"
                 >
-                  <span
-                    class="c10"
-                  >
-                    A
-                  </span>
-                </div>
-              </button>
-            </div>
+                  A
+                </span>
+              </div>
+            </button>
+          </div>
+          <div
+            aria-controls="grommet-data-table-header-a"
+            aria-label="Resize A column"
+            aria-orientation="vertical"
+            aria-valuenow="0"
+            aria-valuetext="Resize A column"
+            class="c10 c11"
+            role="separator"
+            tabindex="0"
+          >
             <div
-              class="c11"
-            >
-              <div
-                class="c12"
-              >
-                <div
-                  class="c13"
-                />
-              </div>
-              <div
-                class="c14"
-              >
-                <button
-                  aria-label="Resize A column"
-                  class="c15 c16"
-                  type="button"
-                >
-                  <div
-                    class="c17"
-                  />
-                </button>
-              </div>
-            </div>
+              class="c12"
+            />
           </div>
         </th>
       </tr>
     </thead>
     <tbody
-      class="StyledTable__StyledTableBody-sc-1m3u5g-3 c18"
+      class="StyledTable__StyledTableBody-sc-1m3u5g-3 c13"
     >
       <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c19"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c14"
       >
         <td
           aria-disabled="true"
-          class="c20 "
+          class="c15 "
         >
           <div
-            class="c21"
+            class="c16"
             style="height: 0px;"
           >
             <label
-              class="c22"
+              class="c17"
               disabled=""
             >
               <div
-                class="c23 c24"
+                class="c18 c19"
                 disabled=""
               >
                 <input
                   aria-label="unselect alpha"
                   checked=""
-                  class="c25"
+                  class="c20"
                   disabled=""
                   type="checkbox"
                 />
                 <div
-                  class="c26 "
+                  class="c21 "
                   disabled=""
                 >
                   <svg
-                    class="c27"
+                    class="c22"
                     disabled=""
                     preserveAspectRatio="xMidYMid meet"
                     viewBox="0 0 24 24"
@@ -4021,14 +3991,14 @@ exports[`DataTable custom theme 1`] = `
           </div>
         </td>
         <th
-          class="c28 "
+          class="c23 "
           scope="row"
         >
           <div
-            class="c29"
+            class="c24"
           >
             <span
-              class="c10"
+              class="c9"
             >
               alpha
             </span>
@@ -4036,32 +4006,32 @@ exports[`DataTable custom theme 1`] = `
         </th>
       </tr>
       <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c19"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c14"
       >
         <td
           aria-disabled="true"
-          class="c20 "
+          class="c15 "
         >
           <div
-            class="c21"
+            class="c16"
             style="height: 0px;"
           >
             <label
-              class="c22"
+              class="c17"
               disabled=""
             >
               <div
-                class="c23 c24"
+                class="c18 c19"
                 disabled=""
               >
                 <input
                   aria-label="select beta"
-                  class="c25"
+                  class="c20"
                   disabled=""
                   type="checkbox"
                 />
                 <div
-                  class="c30 "
+                  class="c25 "
                   disabled=""
                 />
               </div>
@@ -4069,14 +4039,14 @@ exports[`DataTable custom theme 1`] = `
           </div>
         </td>
         <th
-          class="c28 "
+          class="c23 "
           scope="row"
         >
           <div
-            class="c29"
+            class="c24"
           >
             <span
-              class="c10"
+              class="c9"
             >
               beta
             </span>
@@ -4107,55 +4077,41 @@ exports[`DataTable custom theme 2`] = `
         />
         <th
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 wTSic StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 dvuoDz"
+          id="grommet-data-table-header-a"
           scope="col"
-          style="box-sizing: border-box;"
+          style="box-sizing: border-box; position: relative; overflow: visible;"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 bdQsBF"
-            style="position: relative;"
+            class="StyledBox-sc-13pk1d4-0 kuLnal"
+          >
+            <button
+              class="StyledButton-sc-323bzc-0 hHREQh Header__StyledHeaderCellButton-sc-1baku5q-0 kFaTHr"
+              type="button"
+            >
+              <div
+                class="StyledBox-sc-13pk1d4-0 cQdPcb"
+              >
+                <span
+                  class="StyledText-sc-1sadyjn-0 cUpCuS"
+                >
+                  A
+                </span>
+              </div>
+            </button>
+          </div>
+          <div
+            aria-controls="grommet-data-table-header-a"
+            aria-label="Resize A column"
+            aria-orientation="vertical"
+            aria-valuenow="0"
+            aria-valuetext="Resize A column"
+            class="StyledBox-sc-13pk1d4-0 QUorV Resizer__StyledResizer-sc-8l808w-0 iNZnoh"
+            role="separator"
+            tabindex="0"
           >
             <div
-              class="StyledBox-sc-13pk1d4-0 kuLnal"
-            >
-              <button
-                class="StyledButton-sc-323bzc-0 hHREQh Header__StyledHeaderCellButton-sc-1baku5q-0 kFaTHr"
-                type="button"
-              >
-                <div
-                  class="StyledBox-sc-13pk1d4-0 cQdPcb"
-                >
-                  <span
-                    class="StyledText-sc-1sadyjn-0 cUpCuS"
-                  >
-                    A
-                  </span>
-                </div>
-              </button>
-            </div>
-            <div
-              class="StyledStack-sc-ajspsk-0 caUqQj"
-            >
-              <div
-                class="StyledStack__StyledStackLayer-sc-ajspsk-1 jPgguo"
-              >
-                <div
-                  class="StyledBox-sc-13pk1d4-0 cxzHev"
-                />
-              </div>
-              <div
-                class="StyledStack__StyledStackLayer-sc-ajspsk-1 jTxOlx"
-              >
-                <button
-                  aria-label="Resize A column"
-                  class="StyledButton-sc-323bzc-0 eJXFoX Resizer__InteractionBox-sc-8l808w-0 ckUBxB"
-                  type="button"
-                >
-                  <div
-                    class="StyledBox-sc-13pk1d4-0 kGchhC"
-                  />
-                </button>
-              </div>
-            </div>
+              class="StyledBox-sc-13pk1d4-0 eQXQyQ"
+            />
           </div>
         </th>
       </tr>
@@ -4426,6 +4382,7 @@ exports[`DataTable disable row click using space key press 1`] = `
       >
         <th
           class="c3 "
+          id="grommet-data-table-header-name"
           scope="col"
         >
           <div
@@ -4483,6 +4440,7 @@ exports[`DataTable disable row click using space key press 2`] = `
       >
         <th
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 btvVUL StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 dvuoDz"
+          id="grommet-data-table-header-name"
           scope="col"
         >
           <div
@@ -4670,6 +4628,7 @@ exports[`DataTable disabled click 1`] = `
       >
         <th
           class="c3 "
+          id="grommet-data-table-header-a"
           scope="col"
         >
           <div
@@ -4746,6 +4705,7 @@ exports[`DataTable disabled click 2`] = `
       >
         <th
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 btvVUL StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 dvuoDz"
+          id="grommet-data-table-header-a"
           scope="col"
         >
           <div
@@ -5145,6 +5105,7 @@ exports[`DataTable disabled select 1`] = `
         </th>
         <th
           class="c11 "
+          id="grommet-data-table-header-a"
           scope="col"
         >
           <div
@@ -5651,6 +5612,7 @@ exports[`DataTable expandAriaLabel default 1`] = `
         </td>
         <th
           class="c8 "
+          id="grommet-data-table-header-a"
           scope="col"
         >
           <div
@@ -5665,6 +5627,7 @@ exports[`DataTable expandAriaLabel default 1`] = `
         </th>
         <th
           class="c8 "
+          id="grommet-data-table-header-b"
           scope="col"
         >
           <div
@@ -6131,6 +6094,7 @@ exports[`DataTable expandLabel function 1`] = `
         </td>
         <th
           class="c8 "
+          id="grommet-data-table-header-a"
           scope="col"
         >
           <div
@@ -6145,6 +6109,7 @@ exports[`DataTable expandLabel function 1`] = `
         </th>
         <th
           class="c8 "
+          id="grommet-data-table-header-b"
           scope="col"
         >
           <div
@@ -6451,6 +6416,7 @@ exports[`DataTable fill 1`] = `
       >
         <th
           class="c3 "
+          id="grommet-data-table-header-a"
           scope="col"
         >
           <div
@@ -6465,6 +6431,7 @@ exports[`DataTable fill 1`] = `
         </th>
         <th
           class="c3 "
+          id="grommet-data-table-header-b"
           scope="col"
         >
           <div
@@ -6585,6 +6552,7 @@ exports[`DataTable fill 1`] = `
       >
         <th
           class="c3 "
+          id="grommet-data-table-header-a"
           scope="col"
         >
           <div
@@ -6599,6 +6567,7 @@ exports[`DataTable fill 1`] = `
         </th>
         <th
           class="c3 "
+          id="grommet-data-table-header-b"
           scope="col"
         >
           <div
@@ -6719,6 +6688,7 @@ exports[`DataTable fill 1`] = `
       >
         <th
           class="c3 "
+          id="grommet-data-table-header-a"
           scope="col"
         >
           <div
@@ -6733,6 +6703,7 @@ exports[`DataTable fill 1`] = `
         </th>
         <th
           class="c3 "
+          id="grommet-data-table-header-b"
           scope="col"
         >
           <div
@@ -6999,6 +6970,7 @@ exports[`DataTable footer 1`] = `
       >
         <th
           class="c3 "
+          id="grommet-data-table-header-a"
           scope="col"
         >
           <div
@@ -7013,6 +6985,7 @@ exports[`DataTable footer 1`] = `
         </th>
         <th
           class="c3 "
+          id="grommet-data-table-header-b"
           scope="col"
         >
           <div
@@ -7487,6 +7460,7 @@ exports[`DataTable groupBy 0 value 1`] = `
         </td>
         <th
           class="c8 "
+          id="grommet-data-table-header-a"
           scope="col"
         >
           <div
@@ -7501,6 +7475,7 @@ exports[`DataTable groupBy 0 value 1`] = `
         </th>
         <th
           class="c8 "
+          id="grommet-data-table-header-b"
           scope="col"
         >
           <div
@@ -7515,6 +7490,7 @@ exports[`DataTable groupBy 0 value 1`] = `
         </th>
         <th
           class="c8 "
+          id="grommet-data-table-header-c"
           scope="col"
         >
           <div
@@ -8053,6 +8029,7 @@ exports[`DataTable groupBy 1`] = `
         </td>
         <th
           class="c8 "
+          id="grommet-data-table-header-a"
           scope="col"
         >
           <div
@@ -8067,6 +8044,7 @@ exports[`DataTable groupBy 1`] = `
         </th>
         <th
           class="c8 "
+          id="grommet-data-table-header-b"
           scope="col"
         >
           <div
@@ -8250,6 +8228,7 @@ exports[`DataTable groupBy 2`] = `
         </td>
         <th
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 btvVUL StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 dvuoDz"
+          id="grommet-data-table-header-a"
           scope="col"
         >
           <div
@@ -8264,6 +8243,7 @@ exports[`DataTable groupBy 2`] = `
         </th>
         <th
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 btvVUL StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 dvuoDz"
+          id="grommet-data-table-header-b"
           scope="col"
         >
           <div
@@ -8784,6 +8764,7 @@ exports[`DataTable groupBy expand 1`] = `
         </td>
         <th
           class="c8 "
+          id="grommet-data-table-header-a"
           scope="col"
         >
           <div
@@ -8798,6 +8779,7 @@ exports[`DataTable groupBy expand 1`] = `
         </th>
         <th
           class="c8 "
+          id="grommet-data-table-header-b"
           scope="col"
         >
           <div
@@ -9366,6 +9348,7 @@ exports[`DataTable groupBy property 1`] = `
         </td>
         <th
           class="c8 "
+          id="grommet-data-table-header-a"
           scope="col"
         >
           <div
@@ -9380,6 +9363,7 @@ exports[`DataTable groupBy property 1`] = `
         </th>
         <th
           class="c8 "
+          id="grommet-data-table-header-b"
           scope="col"
         >
           <div
@@ -9563,6 +9547,7 @@ exports[`DataTable groupBy property 2`] = `
         </td>
         <th
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 btvVUL StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 dvuoDz"
+          id="grommet-data-table-header-a"
           scope="col"
         >
           <div
@@ -9577,6 +9562,7 @@ exports[`DataTable groupBy property 2`] = `
         </th>
         <th
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 btvVUL StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 dvuoDz"
+          id="grommet-data-table-header-b"
           scope="col"
         >
           <div
@@ -9859,6 +9845,7 @@ exports[`DataTable groupBy toggle 1`] = `
       >
         <th
           class="c3 "
+          id="grommet-data-table-header-a"
           scope="col"
         >
           <div
@@ -9873,6 +9860,7 @@ exports[`DataTable groupBy toggle 1`] = `
         </th>
         <th
           class="c3 "
+          id="grommet-data-table-header-b"
           scope="col"
         >
           <div
@@ -10222,6 +10210,7 @@ exports[`DataTable groupBy toggle 2`] = `
         </td>
         <th
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 btvVUL StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 dvuoDz"
+          id="grommet-data-table-header-a"
           scope="col"
         >
           <div
@@ -10236,6 +10225,7 @@ exports[`DataTable groupBy toggle 2`] = `
         </th>
         <th
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 btvVUL StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 dvuoDz"
+          id="grommet-data-table-header-b"
           scope="col"
         >
           <div
@@ -10616,6 +10606,7 @@ exports[`DataTable groupBy toggle 3`] = `
       >
         <th
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 btvVUL StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 dvuoDz"
+          id="grommet-data-table-header-a"
           scope="col"
         >
           <div
@@ -10630,6 +10621,7 @@ exports[`DataTable groupBy toggle 3`] = `
         </th>
         <th
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 btvVUL StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 dvuoDz"
+          id="grommet-data-table-header-b"
           scope="col"
         >
           <div
@@ -11194,6 +11186,7 @@ exports[`DataTable messages prop overrides theme messages 1`] = `
         </td>
         <th
           class="c8 "
+          id="grommet-data-table-header-a"
           scope="col"
         >
           <div
@@ -11208,6 +11201,7 @@ exports[`DataTable messages prop overrides theme messages 1`] = `
         </th>
         <th
           class="c8 "
+          id="grommet-data-table-header-b"
           scope="col"
         >
           <div
@@ -11391,6 +11385,7 @@ exports[`DataTable messages prop overrides theme messages 2`] = `
         </td>
         <th
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 btvVUL StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 dvuoDz"
+          id="grommet-data-table-header-a"
           scope="col"
         >
           <div
@@ -11405,6 +11400,7 @@ exports[`DataTable messages prop overrides theme messages 2`] = `
         </th>
         <th
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 btvVUL StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 dvuoDz"
+          id="grommet-data-table-header-b"
           scope="col"
         >
           <div
@@ -12527,6 +12523,7 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
         </th>
         <th
           class="c16 "
+          id="grommet-data-table-header-a"
           scope="col"
         >
           <div
@@ -12541,6 +12538,7 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
         </th>
         <th
           class="c16 "
+          id="grommet-data-table-header-b"
           scope="col"
         >
           <div
@@ -13518,6 +13516,7 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
         </th>
         <th
           class="c16 "
+          id="grommet-data-table-header-a"
           scope="col"
         >
           <div
@@ -13532,6 +13531,7 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
         </th>
         <th
           class="c16 "
+          id="grommet-data-table-header-b"
           scope="col"
         >
           <div
@@ -14224,6 +14224,7 @@ exports[`DataTable onSelect + groupBy should select all items within a group 1`]
         </th>
         <th
           class="c16 "
+          id="grommet-data-table-header-a"
           scope="col"
         >
           <div
@@ -14238,6 +14239,7 @@ exports[`DataTable onSelect + groupBy should select all items within a group 1`]
         </th>
         <th
           class="c16 "
+          id="grommet-data-table-header-b"
           scope="col"
         >
           <div
@@ -14890,6 +14892,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 1`
         </th>
         <th
           class="c15 "
+          id="grommet-data-table-header-a"
           scope="col"
         >
           <div
@@ -14904,6 +14907,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 1`
         </th>
         <th
           class="c15 "
+          id="grommet-data-table-header-b"
           scope="col"
         >
           <div
@@ -15198,6 +15202,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 2`
         </th>
         <th
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 btvVUL StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 dvuoDz"
+          id="grommet-data-table-header-a"
           scope="col"
         >
           <div
@@ -15212,6 +15217,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 2`
         </th>
         <th
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 btvVUL StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 dvuoDz"
+          id="grommet-data-table-header-b"
           scope="col"
         >
           <div
@@ -15541,6 +15547,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 3`
         </th>
         <th
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 btvVUL StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 dvuoDz"
+          id="grommet-data-table-header-a"
           scope="col"
         >
           <div
@@ -15555,6 +15562,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 3`
         </th>
         <th
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 btvVUL StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 dvuoDz"
+          id="grommet-data-table-header-b"
           scope="col"
         >
           <div
@@ -16007,6 +16015,7 @@ exports[`DataTable onSelect select/unselect all 1`] = `
         </th>
         <th
           class="c10 "
+          id="grommet-data-table-header-a"
           scope="col"
         >
           <div
@@ -16021,6 +16030,7 @@ exports[`DataTable onSelect select/unselect all 1`] = `
         </th>
         <th
           class="c10 "
+          id="grommet-data-table-header-b"
           scope="col"
         >
           <div
@@ -16335,6 +16345,7 @@ exports[`DataTable onSelect select/unselect all 2`] = `
         </th>
         <th
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 btvVUL StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 dvuoDz"
+          id="grommet-data-table-header-a"
           scope="col"
         >
           <div
@@ -16349,6 +16360,7 @@ exports[`DataTable onSelect select/unselect all 2`] = `
         </th>
         <th
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 btvVUL StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 dvuoDz"
+          id="grommet-data-table-header-b"
           scope="col"
         >
           <div
@@ -16744,6 +16756,7 @@ exports[`DataTable onSelect select/unselect all 3`] = `
         </th>
         <th
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 btvVUL StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 dvuoDz"
+          id="grommet-data-table-header-a"
           scope="col"
         >
           <div
@@ -16758,6 +16771,7 @@ exports[`DataTable onSelect select/unselect all 3`] = `
         </th>
         <th
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 btvVUL StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 dvuoDz"
+          id="grommet-data-table-header-b"
           scope="col"
         >
           <div
@@ -17214,6 +17228,7 @@ exports[`DataTable onSort 1`] = `
       >
         <th
           class="c3 "
+          id="grommet-data-table-header-a"
           scope="col"
         >
           <div
@@ -17237,6 +17252,7 @@ exports[`DataTable onSort 1`] = `
         </th>
         <th
           class="c3 "
+          id="grommet-data-table-header-b"
           scope="col"
         >
           <div
@@ -17377,6 +17393,7 @@ exports[`DataTable onSort 2`] = `
         <th
           aria-sort="ascending"
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 leSjT StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 dvuoDz"
+          id="grommet-data-table-header-a"
           scope="col"
         >
           <div
@@ -17463,6 +17480,7 @@ exports[`DataTable onSort 2`] = `
         </th>
         <th
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 leSjT StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 dvuoDz"
+          id="grommet-data-table-header-b"
           scope="col"
         >
           <div
@@ -17842,6 +17860,7 @@ exports[`DataTable onSort external 1`] = `
         <th
           aria-sort="ascending"
           class="c3 "
+          id="grommet-data-table-header-a"
           scope="col"
         >
           <div
@@ -17880,6 +17899,7 @@ exports[`DataTable onSort external 1`] = `
         </th>
         <th
           class="c3 "
+          id="grommet-data-table-header-b"
           scope="col"
         >
           <div
@@ -18020,6 +18040,7 @@ exports[`DataTable onSort external 2`] = `
         <th
           aria-sort="descending"
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 leSjT StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 dvuoDz"
+          id="grommet-data-table-header-a"
           scope="col"
         >
           <div
@@ -18094,6 +18115,7 @@ exports[`DataTable onSort external 2`] = `
         </th>
         <th
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 leSjT StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 dvuoDz"
+          id="grommet-data-table-header-b"
           scope="col"
         >
           <div
@@ -18691,6 +18713,7 @@ exports[`DataTable onUpdate groupBy.onSelect 1`] = `
         </th>
         <th
           class="c15 "
+          id="grommet-data-table-header-id"
           scope="col"
         >
           <div
@@ -18705,6 +18728,7 @@ exports[`DataTable onUpdate groupBy.onSelect 1`] = `
         </th>
         <th
           class="c15 "
+          id="grommet-data-table-header-b"
           scope="col"
         >
           <div
@@ -18719,6 +18743,7 @@ exports[`DataTable onUpdate groupBy.onSelect 1`] = `
         </th>
         <th
           class="c15 "
+          id="grommet-data-table-header-location"
           scope="col"
         >
           <div
@@ -19315,6 +19340,7 @@ exports[`DataTable pad 1`] = `
       >
         <th
           class="c3 "
+          id="grommet-data-table-header-a"
           scope="col"
         >
           <div
@@ -19329,6 +19355,7 @@ exports[`DataTable pad 1`] = `
         </th>
         <th
           class="c3 "
+          id="grommet-data-table-header-b"
           scope="col"
         >
           <div
@@ -19449,6 +19476,7 @@ exports[`DataTable pad 1`] = `
       >
         <th
           class="c12 "
+          id="grommet-data-table-header-a"
           scope="col"
         >
           <div
@@ -19463,6 +19491,7 @@ exports[`DataTable pad 1`] = `
         </th>
         <th
           class="c12 "
+          id="grommet-data-table-header-b"
           scope="col"
         >
           <div
@@ -19583,6 +19612,7 @@ exports[`DataTable pad 1`] = `
       >
         <th
           class="c3 "
+          id="grommet-data-table-header-a"
           scope="col"
         >
           <div
@@ -19597,6 +19627,7 @@ exports[`DataTable pad 1`] = `
         </th>
         <th
           class="c3 "
+          id="grommet-data-table-header-b"
           scope="col"
         >
           <div
@@ -19850,6 +19881,7 @@ exports[`DataTable paths 1`] = `
       >
         <th
           class="c3 "
+          id="grommet-data-table-header-a"
           scope="col"
         >
           <div
@@ -19864,6 +19896,7 @@ exports[`DataTable paths 1`] = `
         </th>
         <th
           class="c3 "
+          id="grommet-data-table-header-b.c"
           scope="col"
         >
           <div
@@ -20183,6 +20216,7 @@ exports[`DataTable pin + background 1`] = `
       >
         <th
           class="c3 c4"
+          id="grommet-data-table-header-a"
           scope="col"
         >
           <div
@@ -20197,6 +20231,7 @@ exports[`DataTable pin + background 1`] = `
         </th>
         <th
           class="c3 c7"
+          id="grommet-data-table-header-b"
           scope="col"
         >
           <div
@@ -20317,6 +20352,7 @@ exports[`DataTable pin + background 1`] = `
       >
         <th
           class="c3 c4"
+          id="grommet-data-table-header-a"
           scope="col"
         >
           <div
@@ -20331,6 +20367,7 @@ exports[`DataTable pin + background 1`] = `
         </th>
         <th
           class="c3 c7"
+          id="grommet-data-table-header-b"
           scope="col"
         >
           <div
@@ -20451,6 +20488,7 @@ exports[`DataTable pin + background 1`] = `
       >
         <th
           class="c20 c11"
+          id="grommet-data-table-header-a"
           scope="col"
         >
           <div
@@ -20465,6 +20503,7 @@ exports[`DataTable pin + background 1`] = `
         </th>
         <th
           class="c20 "
+          id="grommet-data-table-header-b"
           scope="col"
         >
           <div
@@ -20839,6 +20878,7 @@ exports[`DataTable pin + background context 1`] = `
         >
           <th
             class="c4 c5"
+            id="grommet-data-table-header-a"
             scope="col"
           >
             <div
@@ -20853,6 +20893,7 @@ exports[`DataTable pin + background context 1`] = `
           </th>
           <th
             class="c4 c8"
+            id="grommet-data-table-header-b"
             scope="col"
           >
             <div
@@ -20977,6 +21018,7 @@ exports[`DataTable pin + background context 1`] = `
         >
           <th
             class="c4 c5"
+            id="grommet-data-table-header-a"
             scope="col"
           >
             <div
@@ -20991,6 +21033,7 @@ exports[`DataTable pin + background context 1`] = `
           </th>
           <th
             class="c4 c8"
+            id="grommet-data-table-header-b"
             scope="col"
           >
             <div
@@ -21115,6 +21158,7 @@ exports[`DataTable pin + background context 1`] = `
         >
           <th
             class="c21 c5"
+            id="grommet-data-table-header-a"
             scope="col"
           >
             <div
@@ -21129,6 +21173,7 @@ exports[`DataTable pin + background context 1`] = `
           </th>
           <th
             class="c21 c8"
+            id="grommet-data-table-header-b"
             scope="col"
           >
             <div
@@ -21434,6 +21479,7 @@ exports[`DataTable pin 1`] = `
       >
         <th
           class="c3 c4"
+          id="grommet-data-table-header-a"
           scope="col"
         >
           <div
@@ -21448,6 +21494,7 @@ exports[`DataTable pin 1`] = `
         </th>
         <th
           class="c3 c7"
+          id="grommet-data-table-header-b"
           scope="col"
         >
           <div
@@ -21568,6 +21615,7 @@ exports[`DataTable pin 1`] = `
       >
         <th
           class="c3 c4"
+          id="grommet-data-table-header-a"
           scope="col"
         >
           <div
@@ -21582,6 +21630,7 @@ exports[`DataTable pin 1`] = `
         </th>
         <th
           class="c3 c7"
+          id="grommet-data-table-header-b"
           scope="col"
         >
           <div
@@ -21702,6 +21751,7 @@ exports[`DataTable pin 1`] = `
       >
         <th
           class="c3 c11"
+          id="grommet-data-table-header-a"
           scope="col"
         >
           <div
@@ -21716,6 +21766,7 @@ exports[`DataTable pin 1`] = `
         </th>
         <th
           class="c3 "
+          id="grommet-data-table-header-b"
           scope="col"
         >
           <div
@@ -22004,6 +22055,7 @@ exports[`DataTable placeholder 1`] = `
       >
         <th
           class="c3 "
+          id="grommet-data-table-header-a"
           scope="col"
         >
           <div
@@ -22018,6 +22070,7 @@ exports[`DataTable placeholder 1`] = `
         </th>
         <th
           class="c3 "
+          id="grommet-data-table-header-b"
           scope="col"
         >
           <div
@@ -22151,6 +22204,7 @@ exports[`DataTable placeholder 1`] = `
       >
         <th
           class="c3 "
+          id="grommet-data-table-header-a"
           scope="col"
         >
           <div
@@ -22165,6 +22219,7 @@ exports[`DataTable placeholder 1`] = `
         </th>
         <th
           class="c3 "
+          id="grommet-data-table-header-b"
           scope="col"
         >
           <div
@@ -22266,6 +22321,7 @@ exports[`DataTable placeholder 1`] = `
       >
         <th
           class="c3 "
+          id="grommet-data-table-header-a"
           scope="col"
         >
           <div
@@ -22280,6 +22336,7 @@ exports[`DataTable placeholder 1`] = `
         </th>
         <th
           class="c3 "
+          id="grommet-data-table-header-b"
           scope="col"
         >
           <div
@@ -22452,6 +22509,7 @@ exports[`DataTable primaryKey 1`] = `
       >
         <th
           class="c3 "
+          id="grommet-data-table-header-a"
           scope="col"
         >
           <div
@@ -22466,6 +22524,7 @@ exports[`DataTable primaryKey 1`] = `
         </th>
         <th
           class="c3 "
+          id="grommet-data-table-header-b"
           scope="col"
         >
           <div
@@ -22728,6 +22787,7 @@ exports[`DataTable relativeColumnSizes 1`] = `
       >
         <th
           class="c3 "
+          id="grommet-data-table-header-a"
           scope="col"
         >
           <div
@@ -22742,6 +22802,7 @@ exports[`DataTable relativeColumnSizes 1`] = `
         </th>
         <th
           class="c6 "
+          id="grommet-data-table-header-b"
           scope="col"
         >
           <div
@@ -23015,6 +23076,7 @@ exports[`DataTable replace 1`] = `
       >
         <th
           class="c3 "
+          id="grommet-data-table-header-a"
           scope="col"
         >
           <div
@@ -23029,6 +23091,7 @@ exports[`DataTable replace 1`] = `
         </th>
         <th
           class="c3 "
+          id="grommet-data-table-header-b"
           scope="col"
         >
           <div
@@ -23139,18 +23202,6 @@ exports[`DataTable resizeable 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  align-items: center;
-  min-width: 0;
-  min-height: 0;
-  flex-direction: row;
-  height: 100%;
-  justify-content: space-between;
-}
-
-.c5 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
   min-width: 0;
   min-height: 0;
   flex-direction: column;
@@ -23159,129 +23210,48 @@ exports[`DataTable resizeable 1`] = `
   justify-content: center;
 }
 
-.c10 {
+.c6 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  margin-right: -12px;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.c8 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-self: center;
   border-inline-end: solid 1px rgba(0, 0, 0, 0.33);
   min-width: 0;
   min-height: 0;
   flex-direction: column;
-  flex: 0 0 auto;
-  padding-top: 12px;
-  padding-bottom: 12px;
-}
-
-.c14 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  flex-direction: column;
-  padding-top: 12px;
-  padding-bottom: 12px;
-}
-
-.c18 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  flex-direction: column;
-}
-
-.c7 {
-  flex: 0 0 auto;
-  align-self: stretch;
-  width: 12px;
-}
-
-.c8 {
-  position: relative;
-}
-
-.c9 {
-  position: relative;
-  display: block;
-  pointer-events: none;
-}
-
-.c11 {
-  position: absolute;
-  top: 50%;
-  right: 0;
-  transform: translateY(-50%);
-}
-
-.c6 {
-  font-size: 18px;
-  line-height: 24px;
-}
-
-.c19 {
-  font-size: 18px;
-  line-height: 24px;
-  font-weight: bold;
+  height: 100%;
 }
 
 .c12 {
-  display: inline-block;
+  display: flex;
   box-sizing: border-box;
-  cursor: pointer;
-  font: inherit;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  margin-top: 6px;
-  color: inherit;
-  outline: none;
-  border: none;
-  padding: 0;
-  text-align: inherit;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
 }
 
-.c12:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+.c5 {
+  font-size: 18px;
+  line-height: 24px;
 }
 
-.c12:focus >circle,
-.c12:focus >ellipse,
-.c12:focus >line,
-.c12:focus >path,
-.c12:focus >polygon,
-.c12:focus >polyline,
-.c12:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c12:focus ::-moz-focus-inner {
-  border: 0;
-}
-
-.c12:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c12:focus:not(:focus-visible) >circle,
-.c12:focus:not(:focus-visible) >ellipse,
-.c12:focus:not(:focus-visible) >line,
-.c12:focus:not(:focus-visible) >path,
-.c12:focus:not(:focus-visible) >polygon,
-.c12:focus:not(:focus-visible) >polyline,
-.c12:focus:not(:focus-visible) >rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c12:focus:not(:focus-visible) ::-moz-focus-inner {
-  border: 0;
+.c13 {
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: bold;
 }
 
 .c3 {
@@ -23297,7 +23267,7 @@ exports[`DataTable resizeable 1`] = `
   padding-bottom: 6px;
 }
 
-.c17 {
+.c11 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -23315,17 +23285,54 @@ exports[`DataTable resizeable 1`] = `
   width: inherit;
 }
 
-.c13 {
-  min-width: 2px;
+.c7 {
+  position: absolute;
+  right: 0;
+  width: 24px;
+  height: 100%;
+  top: 0;
   cursor: col-resize;
+  z-index: 1;
 }
 
-.c13 >* {
-  opacity: 0;
+.c7:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c13:hover >* {
-  opacity: 1;
+.c7:focus >circle,
+.c7:focus >ellipse,
+.c7:focus >line,
+.c7:focus >path,
+.c7:focus >polygon,
+.c7:focus >polyline,
+.c7:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c7:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c7:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c7:focus:not(:focus-visible) >circle,
+.c7:focus:not(:focus-visible) >ellipse,
+.c7:focus:not(:focus-visible) >line,
+.c7:focus:not(:focus-visible) >path,
+.c7:focus:not(:focus-visible) >polygon,
+.c7:focus:not(:focus-visible) >polyline,
+.c7:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c7:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
 }
 
 .c2 {
@@ -23334,64 +23341,70 @@ exports[`DataTable resizeable 1`] = `
   border-collapse: separate;
 }
 
-.c16:focus {
+.c10:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c16:focus >circle,
-.c16:focus >ellipse,
-.c16:focus >line,
-.c16:focus >path,
-.c16:focus >polygon,
-.c16:focus >polyline,
-.c16:focus >rect {
+.c10:focus >circle,
+.c10:focus >ellipse,
+.c10:focus >line,
+.c10:focus >path,
+.c10:focus >polygon,
+.c10:focus >polyline,
+.c10:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c16:focus ::-moz-focus-inner {
+.c10:focus ::-moz-focus-inner {
   border: 0;
 }
 
-.c16:focus:not(:focus-visible) {
+.c10:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c16:focus:not(:focus-visible) >circle,
-.c16:focus:not(:focus-visible) >ellipse,
-.c16:focus:not(:focus-visible) >line,
-.c16:focus:not(:focus-visible) >path,
-.c16:focus:not(:focus-visible) >polygon,
-.c16:focus:not(:focus-visible) >polyline,
-.c16:focus:not(:focus-visible) >rect {
+.c10:focus:not(:focus-visible) >circle,
+.c10:focus:not(:focus-visible) >ellipse,
+.c10:focus:not(:focus-visible) >line,
+.c10:focus:not(:focus-visible) >path,
+.c10:focus:not(:focus-visible) >polygon,
+.c10:focus:not(:focus-visible) >polyline,
+.c10:focus:not(:focus-visible) >rect {
   outline: none;
   box-shadow: none;
 }
 
-.c16:focus:not(:focus-visible) ::-moz-focus-inner {
+.c10:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 
-.c15:focus {
+.c9:focus {
   outline: 2px solid #6FFFB0;
 }
 
-.c15:focus:not(:focus-visible) {
+.c9:focus:not(:focus-visible) {
   outline: none;
 }
 
 @media only screen and (max-width: 768px) {
-  .c14 {
-    padding-top: 6px;
-    padding-bottom: 6px;
+  .c6 {
+    margin-right: -12px;
   }
 }
 
 @media only screen and (max-width: 768px) {
-  .c7 {
-    width: 6px;
+  .c6 {
+    padding-top: 3px;
+    padding-bottom: 3px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c8 {
+    border-inline-end: solid 1px rgba(0, 0, 0, 0.33);
   }
 }
 
@@ -23409,128 +23422,94 @@ exports[`DataTable resizeable 1`] = `
       >
         <th
           class="c3 "
+          id="grommet-data-table-header-a"
           scope="col"
-          style="box-sizing: border-box;"
+          style="box-sizing: border-box; position: relative; overflow: visible;"
         >
           <div
             class="c4"
-            style="position: relative;"
           >
-            <div
+            <span
               class="c5"
             >
-              <span
-                class="c6"
-              >
-                A
-              </span>
-            </div>
-            <div
-              class="c7"
-            />
+              A
+            </span>
+          </div>
+          <div
+            aria-controls="grommet-data-table-header-a"
+            aria-label="Change size of A column"
+            aria-orientation="vertical"
+            aria-valuenow="0"
+            aria-valuetext="Change size of A column"
+            class="c6 c7"
+            role="separator"
+            tabindex="0"
+          >
             <div
               class="c8"
-            >
-              <div
-                class="c9"
-              >
-                <div
-                  class="c10"
-                />
-              </div>
-              <div
-                class="c11"
-              >
-                <button
-                  aria-label="Change size of A column"
-                  class="c12 c13"
-                  type="button"
-                >
-                  <div
-                    class="c14"
-                  />
-                </button>
-              </div>
-            </div>
+            />
           </div>
         </th>
         <th
           class="c3 "
+          id="grommet-data-table-header-b"
           scope="col"
-          style="box-sizing: border-box;"
+          style="box-sizing: border-box; position: relative; overflow: visible;"
         >
           <div
             class="c4"
-            style="position: relative;"
           >
-            <div
+            <span
               class="c5"
             >
-              <span
-                class="c6"
-              >
-                B
-              </span>
-            </div>
-            <div
-              class="c7"
-            />
+              B
+            </span>
+          </div>
+          <div
+            aria-controls="grommet-data-table-header-b"
+            aria-label="Change size of B column"
+            aria-orientation="vertical"
+            aria-valuenow="0"
+            aria-valuetext="Change size of B column"
+            class="c6 c7"
+            role="separator"
+            tabindex="0"
+          >
             <div
               class="c8"
-            >
-              <div
-                class="c9"
-              >
-                <div
-                  class="c10"
-                />
-              </div>
-              <div
-                class="c11"
-              >
-                <button
-                  aria-label="Change size of B column"
-                  class="c12 c13"
-                  type="button"
-                >
-                  <div
-                    class="c14"
-                  />
-                </button>
-              </div>
-            </div>
+            />
           </div>
         </th>
       </tr>
     </thead>
     <tbody
-      class="StyledTable__StyledTableBody-sc-1m3u5g-3 c15"
+      class="StyledTable__StyledTableBody-sc-1m3u5g-3 c9"
     >
       <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c16"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c10"
       >
         <th
-          class="c17 "
+          class="c11 "
           scope="row"
         >
           <div
-            class="c18"
+            class="c12"
           >
             <span
-              class="c19"
+              class="c13"
             >
               one
             </span>
           </div>
         </th>
         <td
-          class="c17 "
+          class="c11 "
         >
           <div
-            class="c18"
+            class="c12"
           >
             <span
-              class="c6"
+              class="c5"
             >
               1
             </span>
@@ -23538,30 +23517,30 @@ exports[`DataTable resizeable 1`] = `
         </td>
       </tr>
       <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c16"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c10"
       >
         <th
-          class="c17 "
+          class="c11 "
           scope="row"
         >
           <div
-            class="c18"
+            class="c12"
           >
             <span
-              class="c19"
+              class="c13"
             >
               two
             </span>
           </div>
         </th>
         <td
-          class="c17 "
+          class="c11 "
         >
           <div
-            class="c18"
+            class="c12"
           >
             <span
-              class="c6"
+              class="c5"
             >
               2
             </span>
@@ -23718,6 +23697,7 @@ exports[`DataTable row click using space key press 1`] = `
       >
         <th
           class="c3 "
+          id="grommet-data-table-header-name"
           scope="col"
         >
           <div
@@ -23774,6 +23754,7 @@ exports[`DataTable row click using space key press 2`] = `
       >
         <th
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 btvVUL StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 dvuoDz"
+          id="grommet-data-table-header-name"
           scope="col"
         >
           <div
@@ -24122,6 +24103,7 @@ exports[`DataTable rowDetails 1`] = `
         />
         <th
           class="c4 "
+          id="grommet-data-table-header-a"
           scope="col"
         >
           <div
@@ -24136,6 +24118,7 @@ exports[`DataTable rowDetails 1`] = `
         </th>
         <th
           class="c4 "
+          id="grommet-data-table-header-b"
           scope="col"
         >
           <div
@@ -24731,6 +24714,7 @@ exports[`DataTable rowDetails condtional 1`] = `
         />
         <th
           class="c4 "
+          id="grommet-data-table-header-a"
           scope="col"
         >
           <div
@@ -24745,6 +24729,7 @@ exports[`DataTable rowDetails condtional 1`] = `
         </th>
         <th
           class="c4 "
+          id="grommet-data-table-header-b"
           scope="col"
         >
           <div
@@ -25202,6 +25187,7 @@ exports[`DataTable rowProps 1`] = `
       >
         <th
           class="c3 "
+          id="grommet-data-table-header-a"
           scope="col"
         >
           <div
@@ -25216,6 +25202,7 @@ exports[`DataTable rowProps 1`] = `
         </th>
         <th
           class="c3 "
+          id="grommet-data-table-header-b"
           scope="col"
         >
           <div
@@ -25716,6 +25703,7 @@ exports[`DataTable rowProps on group header rows 1`] = `
         </td>
         <th
           class="c8 "
+          id="grommet-data-table-header-location"
           scope="col"
         >
           <div
@@ -25730,6 +25718,7 @@ exports[`DataTable rowProps on group header rows 1`] = `
         </th>
         <th
           class="c8 "
+          id="grommet-data-table-header-name"
           scope="col"
         >
           <div
@@ -26120,6 +26109,7 @@ exports[`DataTable search 1`] = `
       >
         <th
           class="c3 "
+          id="grommet-data-table-header-a"
           scope="col"
         >
           <div
@@ -26236,6 +26226,7 @@ exports[`DataTable search 2`] = `
       >
         <th
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 btvVUL StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 dvuoDz"
+          id="grommet-data-table-header-a"
           scope="col"
         >
           <div
@@ -26695,6 +26686,7 @@ exports[`DataTable select 1`] = `
         </th>
         <th
           class="c11 "
+          id="grommet-data-table-header-a"
           scope="col"
         >
           <div
@@ -26883,6 +26875,7 @@ exports[`DataTable select 2`] = `
         </th>
         <th
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 btvVUL StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 dvuoDz"
+          id="grommet-data-table-header-a"
           scope="col"
         >
           <div
@@ -27303,6 +27296,7 @@ exports[`DataTable select with allowSelectAll={false} 1`] = `
         />
         <th
           class="c4 "
+          id="grommet-data-table-header-a"
           scope="col"
         >
           <div
@@ -27442,6 +27436,7 @@ exports[`DataTable select with allowSelectAll={false} 2`] = `
         />
         <th
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 btvVUL StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 dvuoDz"
+          id="grommet-data-table-header-a"
           scope="col"
         >
           <div
@@ -27940,6 +27935,7 @@ exports[`DataTable should apply custom theme for groupHeader 1`] = `
           </td>
           <th
             class="c8 "
+            id="grommet-data-table-header-group"
             scope="col"
           >
             <div
@@ -27954,6 +27950,7 @@ exports[`DataTable should apply custom theme for groupHeader 1`] = `
           </th>
           <th
             class="c8 "
+            id="grommet-data-table-header-value"
             scope="col"
           >
             <div
@@ -28694,6 +28691,7 @@ exports[`DataTable should apply pagination styling 1`] = `
           >
             <th
               class="c5 "
+              id="grommet-data-table-header-a"
               scope="col"
             >
               <div
@@ -28708,6 +28706,7 @@ exports[`DataTable should apply pagination styling 1`] = `
             </th>
             <th
               class="c5 "
+              id="grommet-data-table-header-b"
               scope="col"
             >
               <div
@@ -30505,6 +30504,7 @@ exports[`DataTable should apply theme for removing border on the last table row 
         >
           <th
             class="c3 "
+            id="grommet-data-table-header-a"
             scope="col"
           >
             <div
@@ -30519,6 +30519,7 @@ exports[`DataTable should apply theme for removing border on the last table row 
           </th>
           <th
             class="c3 "
+            id="grommet-data-table-header-b"
             scope="col"
           >
             <div
@@ -30902,6 +30903,7 @@ exports[`DataTable should apply theme for selected row 1`] = `
           />
           <th
             class="c4 "
+            id="grommet-data-table-header-a"
             scope="col"
           >
             <div
@@ -30916,6 +30918,7 @@ exports[`DataTable should apply theme for selected row 1`] = `
           </th>
           <th
             class="c4 "
+            id="grommet-data-table-header-b"
             scope="col"
           >
             <div
@@ -31555,6 +31558,7 @@ exports[`DataTable should apply theme for selected row detail parent only 1`] = 
           />
           <th
             class="c5 "
+            id="grommet-data-table-header-a"
             scope="col"
           >
             <div
@@ -31569,6 +31573,7 @@ exports[`DataTable should apply theme for selected row detail parent only 1`] = 
           </th>
           <th
             class="c5 "
+            id="grommet-data-table-header-b"
             scope="col"
           >
             <div
@@ -32377,6 +32382,7 @@ exports[`DataTable should apply theme for selected row group 1`] = `
           />
           <th
             class="c9 "
+            id="grommet-data-table-header-a"
             scope="col"
           >
             <div
@@ -32391,6 +32397,7 @@ exports[`DataTable should apply theme for selected row group 1`] = `
           </th>
           <th
             class="c9 "
+            id="grommet-data-table-header-b"
             scope="col"
           >
             <div
@@ -33199,6 +33206,7 @@ exports[`DataTable should base table body max height on css value 1`] = `
       >
         <th
           class="c4 "
+          id="grommet-data-table-header-a"
           scope="col"
         >
           <div
@@ -33213,6 +33221,7 @@ exports[`DataTable should base table body max height on css value 1`] = `
         </th>
         <th
           class="c4 "
+          id="grommet-data-table-header-b"
           scope="col"
         >
           <div
@@ -33458,6 +33467,7 @@ exports[`DataTable should base table body max height on global size 1`] = `
       >
         <th
           class="c4 "
+          id="grommet-data-table-header-a"
           scope="col"
         >
           <div
@@ -33472,6 +33482,7 @@ exports[`DataTable should base table body max height on global size 1`] = `
         </th>
         <th
           class="c4 "
+          id="grommet-data-table-header-b"
           scope="col"
         >
           <div
@@ -33655,6 +33666,7 @@ exports[`DataTable should not show paginate controls when data is empty array 1`
           >
             <th
               class="c5 "
+              id="grommet-data-table-header-a"
               scope="col"
             >
               <div
@@ -33669,6 +33681,7 @@ exports[`DataTable should not show paginate controls when data is empty array 1`
             </th>
             <th
               class="c5 "
+              id="grommet-data-table-header-b"
               scope="col"
             >
               <div
@@ -33849,6 +33862,7 @@ exports[`DataTable should not show paginate controls when length of data < step 
           >
             <th
               class="c5 "
+              id="grommet-data-table-header-a"
               scope="col"
             >
               <div
@@ -33863,6 +33877,7 @@ exports[`DataTable should not show paginate controls when length of data < step 
             </th>
             <th
               class="c5 "
+              id="grommet-data-table-header-b"
               scope="col"
             >
               <div
@@ -34575,6 +34590,7 @@ exports[`DataTable should paginate 1`] = `
           >
             <th
               class="c5 "
+              id="grommet-data-table-header-a"
               scope="col"
             >
               <div
@@ -34589,6 +34605,7 @@ exports[`DataTable should paginate 1`] = `
             </th>
             <th
               class="c5 "
+              id="grommet-data-table-header-b"
               scope="col"
             >
               <div
@@ -36851,6 +36868,7 @@ exports[`DataTable should pin and paginate 1`] = `
           >
             <th
               class="c5 c6"
+              id="grommet-data-table-header-a"
               scope="col"
             >
               <div
@@ -36865,6 +36883,7 @@ exports[`DataTable should pin and paginate 1`] = `
             </th>
             <th
               class="c5 c6"
+              id="grommet-data-table-header-b"
               scope="col"
             >
               <div
@@ -39119,6 +39138,7 @@ exports[`DataTable should render correct num items per page (step) 1`] = `
           >
             <th
               class="c5 "
+              id="grommet-data-table-header-a"
               scope="col"
             >
               <div
@@ -39133,6 +39153,7 @@ exports[`DataTable should render correct num items per page (step) 1`] = `
             </th>
             <th
               class="c5 "
+              id="grommet-data-table-header-b"
               scope="col"
             >
               <div
@@ -40326,6 +40347,7 @@ exports[`DataTable should render new data when page changes 1`] = `
           >
             <th
               class="c5 "
+              id="grommet-data-table-header-a"
               scope="col"
             >
               <div
@@ -40340,6 +40362,7 @@ exports[`DataTable should render new data when page changes 1`] = `
             </th>
             <th
               class="c5 "
+              id="grommet-data-table-header-b"
               scope="col"
             >
               <div
@@ -42020,6 +42043,7 @@ exports[`DataTable should render new data when page changes 2`] = `
           >
             <th
               class="StyledTable__StyledTableCell-sc-1m3u5g-0 btvVUL StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 dvuoDz"
+              id="grommet-data-table-header-a"
               scope="col"
             >
               <div
@@ -42034,6 +42058,7 @@ exports[`DataTable should render new data when page changes 2`] = `
             </th>
             <th
               class="StyledTable__StyledTableCell-sc-1m3u5g-0 btvVUL StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 dvuoDz"
+              id="grommet-data-table-header-b"
               scope="col"
             >
               <div
@@ -48093,6 +48118,7 @@ exports[`DataTable should show correct item index when "show" is a number 1`] = 
           >
             <th
               class="c5 "
+              id="grommet-data-table-header-a"
               scope="col"
             >
               <div
@@ -48107,6 +48133,7 @@ exports[`DataTable should show correct item index when "show" is a number 1`] = 
             </th>
             <th
               class="c5 "
+              id="grommet-data-table-header-b"
               scope="col"
             >
               <div
@@ -50361,6 +50388,7 @@ exports[`DataTable should show correct page when "show" is { page: # } 1`] = `
           >
             <th
               class="c5 "
+              id="grommet-data-table-header-a"
               scope="col"
             >
               <div
@@ -50375,6 +50403,7 @@ exports[`DataTable should show correct page when "show" is { page: # } 1`] = `
             </th>
             <th
               class="c5 "
+              id="grommet-data-table-header-b"
               scope="col"
             >
               <div
@@ -52134,6 +52163,7 @@ exports[`DataTable sort 1`] = `
         <th
           aria-sort="ascending"
           class="c3 "
+          id="grommet-data-table-header-a"
           scope="col"
         >
           <div
@@ -52172,6 +52202,7 @@ exports[`DataTable sort 1`] = `
         </th>
         <th
           class="c3 "
+          id="grommet-data-table-header-b"
           scope="col"
         >
           <div
@@ -52623,6 +52654,7 @@ exports[`DataTable sort controlled 1`] = `
           <th
             aria-sort="ascending"
             class="c4 "
+            id="grommet-data-table-header-a"
             scope="col"
           >
             <div
@@ -52661,6 +52693,7 @@ exports[`DataTable sort controlled 1`] = `
           </th>
           <th
             class="c4 "
+            id="grommet-data-table-header-b"
             scope="col"
           >
             <div
@@ -53113,6 +53146,7 @@ exports[`DataTable sort controlled 2`] = `
           <th
             aria-sort="descending"
             class="c4 "
+            id="grommet-data-table-header-a"
             scope="col"
           >
             <div
@@ -53151,6 +53185,7 @@ exports[`DataTable sort controlled 2`] = `
           </th>
           <th
             class="c4 "
+            id="grommet-data-table-header-b"
             scope="col"
           >
             <div
@@ -53531,6 +53566,7 @@ exports[`DataTable sort external 1`] = `
         <th
           aria-sort="ascending"
           class="c3 "
+          id="grommet-data-table-header-a"
           scope="col"
         >
           <div
@@ -53569,6 +53605,7 @@ exports[`DataTable sort external 1`] = `
         </th>
         <th
           class="c3 "
+          id="grommet-data-table-header-b"
           scope="col"
         >
           <div
@@ -53947,6 +53984,7 @@ exports[`DataTable sort nested object 1`] = `
       >
         <th
           class="c3 "
+          id="grommet-data-table-header-a"
           scope="col"
         >
           <div
@@ -53971,6 +54009,7 @@ exports[`DataTable sort nested object 1`] = `
         <th
           aria-sort="descending"
           class="c3 "
+          id="grommet-data-table-header-b.value"
           scope="col"
         >
           <div
@@ -54364,6 +54403,7 @@ exports[`DataTable sort nested object with onSort 1`] = `
       >
         <th
           class="c3 "
+          id="grommet-data-table-header-a"
           scope="col"
         >
           <div
@@ -54388,6 +54428,7 @@ exports[`DataTable sort nested object with onSort 1`] = `
         <th
           aria-sort="descending"
           class="c3 "
+          id="grommet-data-table-header-b.value"
           scope="col"
         >
           <div
@@ -54737,6 +54778,7 @@ exports[`DataTable sort null data 1`] = `
       >
         <th
           class="c3 "
+          id="grommet-data-table-header-a"
           scope="col"
         >
           <div
@@ -54760,6 +54802,7 @@ exports[`DataTable sort null data 1`] = `
         </th>
         <th
           class="c3 "
+          id="grommet-data-table-header-b"
           scope="col"
         >
           <div
@@ -54783,6 +54826,7 @@ exports[`DataTable sort null data 1`] = `
         </th>
         <th
           class="c3 "
+          id="grommet-data-table-header-c"
           scope="col"
         >
           <div
@@ -54806,6 +54850,7 @@ exports[`DataTable sort null data 1`] = `
         </th>
         <th
           class="c3 "
+          id="grommet-data-table-header-d"
           scope="col"
         >
           <div
@@ -55045,6 +55090,7 @@ exports[`DataTable sort null data 2`] = `
         <th
           aria-sort="ascending"
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 leSjT StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 dvuoDz"
+          id="grommet-data-table-header-a"
           scope="col"
         >
           <div
@@ -55131,6 +55177,7 @@ exports[`DataTable sort null data 2`] = `
         </th>
         <th
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 leSjT StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 dvuoDz"
+          id="grommet-data-table-header-b"
           scope="col"
         >
           <div
@@ -55154,6 +55201,7 @@ exports[`DataTable sort null data 2`] = `
         </th>
         <th
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 leSjT StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 dvuoDz"
+          id="grommet-data-table-header-c"
           scope="col"
         >
           <div
@@ -55177,6 +55225,7 @@ exports[`DataTable sort null data 2`] = `
         </th>
         <th
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 leSjT StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 dvuoDz"
+          id="grommet-data-table-header-d"
           scope="col"
         >
           <div
@@ -55485,6 +55534,7 @@ exports[`DataTable sort null data 3`] = `
       >
         <th
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 leSjT StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 dvuoDz"
+          id="grommet-data-table-header-a"
           scope="col"
         >
           <div
@@ -55508,6 +55558,7 @@ exports[`DataTable sort null data 3`] = `
         </th>
         <th
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 leSjT StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 dvuoDz"
+          id="grommet-data-table-header-b"
           scope="col"
         >
           <div
@@ -55532,6 +55583,7 @@ exports[`DataTable sort null data 3`] = `
         <th
           aria-sort="ascending"
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 leSjT StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 dvuoDz"
+          id="grommet-data-table-header-c"
           scope="col"
         >
           <div
@@ -55618,6 +55670,7 @@ exports[`DataTable sort null data 3`] = `
         </th>
         <th
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 leSjT StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 dvuoDz"
+          id="grommet-data-table-header-d"
           scope="col"
         >
           <div
@@ -55926,6 +55979,7 @@ exports[`DataTable sort null data 4`] = `
       >
         <th
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 leSjT StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 dvuoDz"
+          id="grommet-data-table-header-a"
           scope="col"
         >
           <div
@@ -55949,6 +56003,7 @@ exports[`DataTable sort null data 4`] = `
         </th>
         <th
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 leSjT StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 dvuoDz"
+          id="grommet-data-table-header-b"
           scope="col"
         >
           <div
@@ -55972,6 +56027,7 @@ exports[`DataTable sort null data 4`] = `
         </th>
         <th
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 leSjT StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 dvuoDz"
+          id="grommet-data-table-header-c"
           scope="col"
         >
           <div
@@ -55996,6 +56052,7 @@ exports[`DataTable sort null data 4`] = `
         <th
           aria-sort="ascending"
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 leSjT StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 dvuoDz"
+          id="grommet-data-table-header-d"
           scope="col"
         >
           <div
@@ -56562,6 +56619,7 @@ exports[`DataTable sortable 1`] = `
       >
         <th
           class="c3 "
+          id="grommet-data-table-header-a"
           scope="col"
         >
           <div
@@ -56585,6 +56643,7 @@ exports[`DataTable sortable 1`] = `
         </th>
         <th
           class="c3 "
+          id="grommet-data-table-header-b"
           scope="col"
         >
           <div
@@ -56725,6 +56784,7 @@ exports[`DataTable sortable 2`] = `
         <th
           aria-sort="ascending"
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 leSjT StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 dvuoDz"
+          id="grommet-data-table-header-a"
           scope="col"
         >
           <div
@@ -56811,6 +56871,7 @@ exports[`DataTable sortable 2`] = `
         </th>
         <th
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 leSjT StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 dvuoDz"
+          id="grommet-data-table-header-b"
           scope="col"
         >
           <div
@@ -57113,6 +57174,7 @@ exports[`DataTable themeColumnSizes 1`] = `
       >
         <th
           class="c3 "
+          id="grommet-data-table-header-a"
           scope="col"
         >
           <div
@@ -57127,6 +57189,7 @@ exports[`DataTable themeColumnSizes 1`] = `
         </th>
         <th
           class="c6 "
+          id="grommet-data-table-header-b"
           scope="col"
         >
           <div
@@ -57382,6 +57445,7 @@ exports[`DataTable units 1`] = `
       >
         <th
           class="c3 "
+          id="grommet-data-table-header-a"
           scope="col"
         >
           <div
@@ -57396,6 +57460,7 @@ exports[`DataTable units 1`] = `
         </th>
         <th
           class="c3 "
+          id="grommet-data-table-header-b"
           scope="col"
         >
           <div
@@ -57762,6 +57827,7 @@ exports[`DataTable verticalAlign 1`] = `
         >
           <th
             class="c3 "
+            id="grommet-data-table-header-a"
             scope="col"
           >
             <div
@@ -57780,6 +57846,7 @@ exports[`DataTable verticalAlign 1`] = `
           </th>
           <th
             class="c3 "
+            id="grommet-data-table-header-b.c"
             scope="col"
           >
             <div
@@ -57876,6 +57943,7 @@ exports[`DataTable verticalAlign 1`] = `
         >
           <th
             class="c12 "
+            id="grommet-data-table-header-This is a long header that wraps"
             scope="col"
           >
             <div
@@ -57894,6 +57962,7 @@ exports[`DataTable verticalAlign 1`] = `
           </th>
           <th
             class="c14 "
+            id="grommet-data-table-header-b.c"
             scope="col"
           >
             <div
