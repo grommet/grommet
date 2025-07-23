@@ -78,9 +78,13 @@ if (process.env.NODE_ENV !== 'production') {
         }),
         dataTable: PropTypes.shape({
           ascending: PropTypes.string,
+          collapse: PropTypes.string,
+          collapseAll: PropTypes.string,
           decrease: PropTypes.string,
           descending: PropTypes.string,
           increase: PropTypes.string,
+          expand: PropTypes.string,
+          expandAll: PropTypes.string,
           resizerAria: PropTypes.string,
           rows: PropTypes.string,
           rowsChanged: PropTypes.string,

@@ -882,7 +882,7 @@ describe('DataTable', () => {
     );
 
     const expandButtons = getAllByLabelText('expand');
-    fireEvent.click(expandButtons[1], {});
+    fireEvent.click(expandButtons[0], {});
 
     expect(onExpand).toBeCalled();
     expect(onExpand.mock.results[0].value).toEqual(['one']);
@@ -1700,7 +1700,7 @@ describe('DataTable', () => {
   test(`onSelect + groupBy should render indeterminate checkbox on table and
   group if subset of group items are selected`, () => {
     const onSelect = jest.fn();
-    const { container, getAllByLabelText, getByLabelText } = render(
+    const { container, getByLabelText } = render(
       <Grommet>
         <DataTable
           columns={[
@@ -1722,8 +1722,9 @@ describe('DataTable', () => {
 
     const groupCheckBox = getByLabelText('select one');
     fireEvent.click(groupCheckBox);
-    const expandButtons = getAllByLabelText('expand');
-    fireEvent.click(expandButtons[1], {});
+
+    const expandButton = getByLabelText('expand all');
+    fireEvent.click(expandButton);
 
     fireEvent.click(getByLabelText('unselect 1.1'));
     expect(container.firstChild).toMatchSnapshot();
@@ -2138,6 +2139,7 @@ describe('DataTable', () => {
     const rowDetails = {
       render: (row: Ship) => <Text>Model: {row.model}</Text>,
       expand: ['Y-wing'],
+      expandLabel: (row: Ship) => `Show details for ${row.name}`,
       onExpand: jest.fn(),
     };
 
@@ -2153,7 +2155,100 @@ describe('DataTable', () => {
         />
       </Grommet>,
     );
+
+    expect(
+      screen.getByLabelText('expand Show details for X-wing'),
+    ).toBeInTheDocument();
     expect(screen.getByText('Model: BTL Y-wing')).toBeInTheDocument();
     expect(screen.queryByText('Model: T-65 X-wing')).not.toBeInTheDocument();
+  });
+
+  test('expandLabel function', () => {
+    const expandLabel = (row: any) => `${row.a} items`;
+    const { container } = render(
+      <Grommet>
+        <DataTable
+          columns={[
+            { property: 'a', header: 'A' },
+            { property: 'b', header: 'B' },
+          ]}
+          data={[
+            { a: 'one', b: 1.1 },
+            { a: 'one', b: 1.2 },
+            { a: 'two', b: 2.1 },
+            { a: 'two', b: 2.2 },
+          ]}
+          groupBy={{ property: 'a', expandLabel: expandLabel }}
+        />
+      </Grommet>,
+    );
+
+    // Check that expand buttons have the custom labels with group names
+    expect(screen.getByLabelText('expand one items')).toBeInTheDocument();
+    expect(screen.getByLabelText('expand two items')).toBeInTheDocument();
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('expandAriaLabel default', () => {
+    const { container, getAllByLabelText } = render(
+      <Grommet>
+        <DataTable
+          columns={[
+            { property: 'a', header: 'A' },
+            { property: 'b', header: 'B' },
+          ]}
+          data={[
+            { a: 'one', b: 1.1 },
+            { a: 'one', b: 1.2 },
+            { a: 'two', b: 2.1 },
+            { a: 'two', b: 2.2 },
+          ]}
+          groupBy="a"
+        />
+      </Grommet>,
+    );
+
+    // Check that expand buttons have default labels
+    const expandButtons = getAllByLabelText('expand');
+    expect(expandButtons.length).toBeGreaterThanOrEqual(2);
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('messages prop overrides theme messages', () => {
+    const { container } = render(
+      <Grommet>
+        <DataTable
+          columns={[
+            { property: 'a', header: 'A' },
+            { property: 'b', header: 'B' },
+          ]}
+          data={[
+            { a: 'one', b: 1.1 },
+            { a: 'one', b: 1.2 },
+            { a: 'two', b: 2.1 },
+            { a: 'two', b: 2.2 },
+          ]}
+          groupBy="a"
+          primaryKey="b"
+          messages={{
+            expandAll: 'expandir todo',
+            collapseAll: 'colapsar todo',
+            expand: 'expandir',
+            collapse: 'colapsar',
+          }}
+        />
+      </Grommet>,
+    );
+
+    // Check that DataTable messages prop overrides theme messages
+    const expandButtons = screen.getAllByLabelText('expandir');
+    expect(expandButtons).toHaveLength(2);
+    expect(container.firstChild).toMatchSnapshot();
+
+    // Click to expand and check collapse message from prop
+    fireEvent.click(expandButtons[0]);
+    const collapseButton = screen.getByLabelText('colapsar');
+    expect(collapseButton).toBeInTheDocument();
+    expect(container.firstChild).toMatchSnapshot();
   });
 });

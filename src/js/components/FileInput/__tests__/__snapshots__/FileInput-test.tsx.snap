@@ -1085,10 +1085,9 @@ exports[`FileInput disabled 1`] = `
   cursor: pointer;
   align-self: center;
   margin: 12px;
-}
-
-.c6:hover {
-  text-decoration: underline;
+  opacity: 0.3;
+  cursor: default;
+  text-decoration: none;
 }
 
 .c5 {
@@ -1207,6 +1206,7 @@ exports[`FileInput disabled 1`] = `
       </span>
       <a
         class="c6"
+        disabled=""
         tabindex="-1"
       >
         browse
@@ -1334,10 +1334,9 @@ exports[`FileInput disabled with file selected 1`] = `
   text-decoration: none;
   cursor: pointer;
   margin: 12px;
-}
-
-.c13:hover {
-  text-decoration: underline;
+  opacity: 0.3;
+  cursor: default;
+  text-decoration: none;
 }
 
 .c2 {
@@ -1585,6 +1584,7 @@ exports[`FileInput disabled with file selected 1`] = `
               </button>
               <a
                 class="c13"
+                disabled=""
                 tabindex="-1"
               >
                 browse

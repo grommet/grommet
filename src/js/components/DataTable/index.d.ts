@@ -88,9 +88,13 @@ export interface DataTableProps<TRowType = any> {
   margin?: MarginType;
   messages?: {
     ascending?: string;
+    collapse?: string;
+    collapseAll?: string;
     decrease?: string;
     descending?: string;
     increase?: string;
+    expand?: string;
+    expandAll?: string;
     resizerAria?: string;
     rows?: string;
     rowsChanged?: string;
@@ -118,6 +122,7 @@ export interface DataTableProps<TRowType = any> {
         render: (row: TRowType) => React.ReactNode;
         expand?: (string | number)[];
         onExpand?: (expandedKeys: (string | number)[], datum: TRowType) => void;
+        expandLabel?: (datum: TRowType) => string;
       };
   show?: number | { page?: number };
   size?: 'small' | 'medium' | 'large' | 'xlarge' | string;
@@ -131,6 +136,7 @@ export interface DataTableProps<TRowType = any> {
         property?: string;
         expand?: Array<string>;
         expandable?: Array<string>;
+        expandLabel?: (datum: TRowType) => string;
         select?: { [key: string]: 'all' | 'some' | 'none' };
         onExpand?: (expandedKeys: string[]) => void;
         onSelect?: (

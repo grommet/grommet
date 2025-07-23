@@ -483,6 +483,7 @@ const DataTable = ({
       groupBy={typeof groupBy === 'string' ? { property: groupBy } : groupBy}
       groups={groups}
       groupState={groupState}
+      messages={messages}
       pinnedOffset={pinnedOffset}
       primaryProperty={primaryProperty}
       onMore={
