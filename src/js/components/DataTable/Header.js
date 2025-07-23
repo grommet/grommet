@@ -447,7 +447,13 @@ const Header = forwardRef(
                   >
                     {content}
                     {searcher && onResize ? (
-                      <Box pad={{ right: 'xsmall' }}>{searcher}</Box>
+                      <Box
+                        // padding right set to half (12px) of resizer
+                        // width (24px) to prevent overlap with resizer control.
+                        pad={{ right: '12px' }}
+                      >
+                        {searcher}
+                      </Box>
                     ) : (
                       searcher
                     )}

@@ -39,6 +39,7 @@ const Resizer = ({ onResize, property, headerText, messages, headerId }) => {
   const ref = useRef();
   const { format } = useContext(MessageContext);
 
+  // Set the initial width based on the TH element's width
   useEffect(() => {
     if (ref.current) {
       let element = ref.current;
