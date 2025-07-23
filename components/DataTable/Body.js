@@ -19,7 +19,8 @@ function _interopRequireWildcard(e, t) { if ("function" == typeof WeakMap) var r
 function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (-1 !== e.indexOf(n)) continue; t[n] = r[n]; } return t; }
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); } /* eslint-disable no-underscore-dangle */
 var Row = /*#__PURE__*/(0, _react.memo)(function (_ref) {
-  var cellProps = _ref.cellProps,
+  var expandLabel = _ref.expandLabel,
+    cellProps = _ref.cellProps,
     primaryValue = _ref.primaryValue,
     index = _ref.index,
     rowRef = _ref.rowRef,
@@ -132,6 +133,7 @@ var Row = /*#__PURE__*/(0, _react.memo)(function (_ref) {
     background: isSelected && cellProps.selected.background,
     context: isRowExpanded ? 'groupHeader' : 'body',
     expanded: isRowExpanded,
+    expandLabel: expandLabel,
     onToggle: function onToggle() {
       var nextRowExpand;
       var rowKey = primaryValue || index;
@@ -318,7 +320,12 @@ var Body = exports.Body = /*#__PURE__*/(0, _react.forwardRef)(function (_ref2, r
     var isDisabled = disabled && disabled.includes(primaryValue);
     var isRowExpanded = rowExpand && rowExpand.includes(primaryValue || index);
     var cellProps = (0, _buildState.normalizeRowCellProps)(rowProps, cellPropsProp, primaryValue, index);
+    var expandLabel;
+    if (typeof rowDetails === 'object' && typeof rowDetails.expandLabel === 'function') {
+      expandLabel = rowDetails.expandLabel(datum);
+    }
     return /*#__PURE__*/_react["default"].createElement(Row, {
+      expandLabel: expandLabel,
       key: primaryValue != null ? primaryValue : index,
       setActive: setActive,
       rowRef: rowRef,

@@ -68,18 +68,23 @@ if (process.env.NODE_ENV !== 'production') {
       property: PropTypes.string,
       expand: PropTypes.arrayOf(PropTypes.string),
       expandable: PropTypes.arrayOf(PropTypes.string),
+      expandLabel: PropTypes.func,
       select: PropTypes.objectOf(PropTypes.oneOf(['all', 'some', 'none'])),
       onExpand: PropTypes.func,
       onSelect: PropTypes.func
     })]),
     messages: PropTypes.shape({
-      ascending: PropType.string,
-      descending: PropType.string,
+      ascending: PropTypes.string,
+      collapse: PropTypes.string,
+      collapseAll: PropTypes.string,
+      descending: PropTypes.string,
+      expand: PropTypes.string,
+      expandAll: PropTypes.string,
       resizerAria: PropTypes.string,
       rows: PropTypes.string,
       rowsChanged: PropTypes.string,
       rowsSingle: PropTypes.string,
-      searchBy: PropType.string,
+      searchBy: PropTypes.string,
       total: PropTypes.string,
       totalSingle: PropTypes.string
     }),
@@ -87,6 +92,7 @@ if (process.env.NODE_ENV !== 'production') {
     rowDetails: PropTypes.oneOfType([PropTypes.func, PropTypes.shape({
       render: PropTypes.func.isRequired,
       expand: PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.string, PropTypes.number])),
+      expandLabel: PropTypes.func,
       onExpand: PropTypes.func
     })]),
     onMore: PropTypes.func,

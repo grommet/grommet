@@ -73,18 +73,23 @@ if (process.env.NODE_ENV !== 'production') {
       property: _propTypes["default"].string,
       expand: _propTypes["default"].arrayOf(_propTypes["default"].string),
       expandable: _propTypes["default"].arrayOf(_propTypes["default"].string),
+      expandLabel: _propTypes["default"].func,
       select: _propTypes["default"].objectOf(_propTypes["default"].oneOf(['all', 'some', 'none'])),
       onExpand: _propTypes["default"].func,
       onSelect: _propTypes["default"].func
     })]),
     messages: _propTypes["default"].shape({
-      ascending: PropType.string,
-      descending: PropType.string,
+      ascending: _propTypes["default"].string,
+      collapse: _propTypes["default"].string,
+      collapseAll: _propTypes["default"].string,
+      descending: _propTypes["default"].string,
+      expand: _propTypes["default"].string,
+      expandAll: _propTypes["default"].string,
       resizerAria: _propTypes["default"].string,
       rows: _propTypes["default"].string,
       rowsChanged: _propTypes["default"].string,
       rowsSingle: _propTypes["default"].string,
-      searchBy: PropType.string,
+      searchBy: _propTypes["default"].string,
       total: _propTypes["default"].string,
       totalSingle: _propTypes["default"].string
     }),
@@ -92,6 +97,7 @@ if (process.env.NODE_ENV !== 'production') {
     rowDetails: _propTypes["default"].oneOfType([_propTypes["default"].func, _propTypes["default"].shape({
       render: _propTypes["default"].func.isRequired,
       expand: _propTypes["default"].arrayOf(_propTypes["default"].oneOfType([_propTypes["default"].string, _propTypes["default"].number])),
+      expandLabel: _propTypes["default"].func,
       onExpand: _propTypes["default"].func
     })]),
     onMore: _propTypes["default"].func,

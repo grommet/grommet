@@ -85,13 +85,17 @@ if (process.env.NODE_ENV !== 'production') {
           totalSingle: _propTypes["default"].string
         }),
         dataTable: _propTypes["default"].shape({
-          ascending: PropType.string,
-          descending: PropType.string,
+          ascending: _propTypes["default"].string,
+          collapse: _propTypes["default"].string,
+          collapseAll: _propTypes["default"].string,
+          descending: _propTypes["default"].string,
+          expand: _propTypes["default"].string,
+          expandAll: _propTypes["default"].string,
           resizerAria: _propTypes["default"].string,
           rows: _propTypes["default"].string,
           rowsChanged: _propTypes["default"].string,
           rowsSingle: _propTypes["default"].string,
-          searchBy: PropType.string,
+          searchBy: _propTypes["default"].string,
           total: _propTypes["default"].string,
           totalSingle: _propTypes["default"].string
         }),

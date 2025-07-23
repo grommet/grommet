@@ -14,6 +14,9 @@ groupColumns[0] = _extends({}, groupColumns[1]);
 groupColumns[1] = _extends({}, first);
 groupColumns[0].footer = groupColumns[1].footer;
 delete groupColumns[1].footer;
+var expandLabel = function expandLabel(row) {
+  return row == null ? void 0 : row.location;
+};
 var ControlledGroupedDataTable = exports.ControlledGroupedDataTable = function ControlledGroupedDataTable() {
   var _useState = (0, _react.useState)([_data.DATA[2].location]),
     expandedGroups = _useState[0],
@@ -28,6 +31,7 @@ var ControlledGroupedDataTable = exports.ControlledGroupedDataTable = function C
       groupBy: {
         property: 'location',
         expand: expandedGroups,
+        expandLabel: expandLabel,
         onExpand: setExpandedGroups
       },
       sortable: true

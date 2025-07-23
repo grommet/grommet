@@ -9,6 +9,9 @@ function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default":
 // Source code for the data can be found here
 // https://github.com/grommet/grommet/blob/master/src/js/components/DataTable/stories/data.js
 
+var expandLabel = function expandLabel(row) {
+  return row == null ? void 0 : row.location;
+};
 var GroupedDataTable = exports.GroupedDataTable = function GroupedDataTable() {
   return (
     /*#__PURE__*/
@@ -20,7 +23,10 @@ var GroupedDataTable = exports.GroupedDataTable = function GroupedDataTable() {
     }, /*#__PURE__*/_react["default"].createElement(_grommet.DataTable, {
       columns: _data.groupColumns,
       data: _data.DATA,
-      groupBy: "location",
+      groupBy: {
+        property: 'location',
+        expandLabel: expandLabel
+      },
       sortable: true
     }))
     // </Grommet>

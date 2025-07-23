@@ -10,6 +10,9 @@ groupColumns[0] = _extends({}, groupColumns[1]);
 groupColumns[1] = _extends({}, first);
 groupColumns[0].footer = groupColumns[1].footer;
 delete groupColumns[1].footer;
+var expandLabel = function expandLabel(row) {
+  return (row == null ? void 0 : row.location) + " location";
+};
 export var GroupedOnSelectDataTable = function GroupedOnSelectDataTable() {
   return (
     /*#__PURE__*/
@@ -21,7 +24,10 @@ export var GroupedOnSelectDataTable = function GroupedOnSelectDataTable() {
     }, /*#__PURE__*/React.createElement(DataTable, {
       columns: groupColumns,
       data: DATA,
-      groupBy: "location",
+      groupBy: {
+        property: 'location',
+        expandLabel: expandLabel
+      },
       onSelect: function onSelect() {},
       sortable: true
     }))

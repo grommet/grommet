@@ -1,4 +1,4 @@
-var _excluded = ["cellProps", "columns", "data", "disabled", "groupBy", "groups", "groupState", "pinnedOffset", "primaryProperty", "onMore", "onSelect", "onToggle", "onUpdate", "replace", "rowProps", "selected", "size", "step", "verticalAlign"];
+var _excluded = ["cellProps", "columns", "data", "disabled", "groupBy", "groups", "groupState", "messages", "pinnedOffset", "primaryProperty", "onMore", "onSelect", "onToggle", "onUpdate", "replace", "rowProps", "selected", "size", "step", "verticalAlign"];
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (-1 !== e.indexOf(n)) continue; t[n] = r[n]; } return t; }
 import React, { forwardRef, useMemo } from 'react';
@@ -19,6 +19,7 @@ export var GroupedBody = /*#__PURE__*/forwardRef(function (_ref, ref) {
     groupBy = _ref.groupBy,
     groups = _ref.groups,
     groupState = _ref.groupState,
+    messages = _ref.messages,
     pinnedOffset = _ref.pinnedOffset,
     primaryProperty = _ref.primaryProperty,
     onMore = _ref.onMore,
@@ -128,14 +129,21 @@ export var GroupedBody = /*#__PURE__*/forwardRef(function (_ref, ref) {
       onChange = row.onChange,
       primaryValue = row.primaryValue;
     var cellProps = normalizeRowCellProps(rowProps, context === 'groupHeader' ? cellPropsProp.groupHeader : cellPropsProp.body, primaryValue, index);
+    var ariaLabel;
+    if (typeof groupBy === 'object' && typeof groupBy.expandLabel === 'function') {
+      var labelRow = context === 'groupHeader' ? row.datum : row.datum;
+      ariaLabel = groupBy.expandLabel(labelRow);
+    }
     return /*#__PURE__*/React.createElement(StyledDataTableRow, _extends({
       ref: rowRef,
       key: key,
       size: size
     }, passThemeFlag), /*#__PURE__*/React.createElement(ExpanderCell, {
       background: isSelected && cellProps.selected.background || cellProps.background,
+      expandLabel: ariaLabel,
       border: cellProps.border,
       context: context,
+      messages: messages,
       pad: cellProps.pad,
       onToggle: context === 'groupHeader' ? onToggle(key) : undefined,
       expanded: expanded,

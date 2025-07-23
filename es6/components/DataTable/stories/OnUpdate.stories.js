@@ -260,6 +260,9 @@ export var OnUpdateDataTable = function OnUpdateDataTable() {
     return {
       expandable: expandable,
       expand: expand,
+      expandLabel: function expandLabel(row) {
+        return row.location + " location";
+      },
       select: groupSelected,
       property: 'location',
       onSelect: onGroupSelect

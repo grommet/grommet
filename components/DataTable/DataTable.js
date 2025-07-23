@@ -481,6 +481,7 @@ var DataTable = exports.DataTable = function DataTable(_ref) {
     } : groupBy,
     groups: groups,
     groupState: groupState,
+    messages: messages,
     pinnedOffset: pinnedOffset,
     primaryProperty: primaryProperty,
     onMore: onUpdate ? function () {

@@ -5,6 +5,9 @@ import { Box, DataTable } from 'grommet';
 // https://github.com/grommet/grommet/blob/master/src/js/components/DataTable/stories/data.js
 import { groupColumns, DATA } from './data';
 export var StyledDataTable = function StyledDataTable() {
+  var expandLabel = function expandLabel(row) {
+    return row.location;
+  };
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -36,7 +39,8 @@ export var StyledDataTable = function StyledDataTable() {
       },
       groupBy: {
         property: 'location',
-        expand: ['Palo Alto']
+        expand: ['Palo Alto'],
+        expandLabel: expandLabel
       },
       rowProps: {
         Eric: {

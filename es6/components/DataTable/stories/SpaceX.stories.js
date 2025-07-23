@@ -112,6 +112,12 @@ export var SpaceX = function SpaceX() {
       return id;
     });
   }, [groups]);
+  var expandLabel = function expandLabel(row) {
+    if (row && row.name) {
+      return row.name;
+    }
+    return undefined;
+  };
   useEffect(function () {
     var fetchData = /*#__PURE__*/function () {
       var _ref5 = _asyncToGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee() {
@@ -233,6 +239,7 @@ export var SpaceX = function SpaceX() {
       groupBy: {
         expandable: expandable,
         expand: expanded,
+        expandLabel: expandLabel,
         property: 'rocketId'
       },
       onUpdate: function onUpdate(opts) {

@@ -1,12 +1,13 @@
-var _excluded = ["context", "expanded", "onToggle", "pad"],
-  _excluded2 = ["background", "border", "context"];
+var _excluded = ["context", "expanded", "onToggle", "messages", "pad", "expandLabel"],
+  _excluded2 = ["background", "border", "context", "expandLabel"];
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (-1 !== e.indexOf(n)) continue; t[n] = r[n]; } return t; }
-import React from 'react';
+import React, { useContext } from 'react';
 import { Blank } from 'grommet-icons/icons/Blank';
 import { Box } from '../Box';
 import { Button } from '../Button';
 import { TableCell } from '../TableCell';
+import { MessageContext } from '../../contexts/MessageContext';
 import { normalizeColor } from '../../utils';
 import { useThemeValue } from '../../utils/useThemeValue';
 
@@ -16,10 +17,14 @@ var ExpanderControl = function ExpanderControl(_ref) {
   var context = _ref.context,
     expanded = _ref.expanded,
     onToggle = _ref.onToggle,
+    messages = _ref.messages,
     pad = _ref.pad,
+    expandLabel = _ref.expandLabel,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
   var _useThemeValue = useThemeValue(),
     theme = _useThemeValue.theme;
+  var _useContext = useContext(MessageContext),
+    format = _useContext.format;
   var content;
   if (onToggle) {
     var ExpandIcon = theme.dataTable.icons[expanded ? 'contract' : 'expand'];
@@ -39,10 +44,46 @@ var ExpanderControl = function ExpanderControl(_ref) {
     pad: pad
   }), content);
   if (onToggle) {
+    var expandText = format({
+      id: 'dataTable.expand',
+      messages: messages,
+      values: {
+        label: expandLabel || ''
+      }
+    });
+    var collapseText = format({
+      id: 'dataTable.collapse',
+      messages: messages,
+      values: {
+        label: expandLabel || ''
+      }
+    });
+    var expandAllText = format({
+      id: 'dataTable.expandAll',
+      messages: messages
+    });
+    var collapseAllText = format({
+      id: 'dataTable.collapseAll',
+      messages: messages
+    });
+    var a11yTitle;
+    if (expandLabel) {
+      a11yTitle = format({
+        id: expanded ? 'dataTable.collapse' : 'dataTable.expand',
+        messages: messages,
+        values: {
+          label: expandLabel
+        }
+      });
+    } else if (context === 'header') {
+      a11yTitle = expanded ? collapseAllText : expandAllText;
+    } else {
+      a11yTitle = expanded ? collapseText : expandText;
+    }
     content = /*#__PURE__*/React.createElement(Button, {
       fill: true,
       "aria-expanded": expanded ? 'true' : 'false',
-      a11yTitle: expanded ? 'collapse' : 'expand',
+      a11yTitle: a11yTitle,
       hoverIndicator: true
       // ensure focus is visible since overflow: hidden on TableCell sizeStyle
       // would otherwise clip it
@@ -58,6 +99,7 @@ var ExpanderCell = function ExpanderCell(_ref2) {
   var background = _ref2.background,
     border = _ref2.border,
     context = _ref2.context,
+    expandLabel = _ref2.expandLabel,
     rest = _objectWithoutPropertiesLoose(_ref2, _excluded2);
   return /*#__PURE__*/React.createElement(TableCell, {
     background: background,
@@ -66,7 +108,8 @@ var ExpanderCell = function ExpanderCell(_ref2) {
     plain: "noPad",
     verticalAlign: context === 'groupEnd' ? 'bottom' : 'top'
   }, /*#__PURE__*/React.createElement(ExpanderControl, _extends({
-    context: context
+    context: context,
+    expandLabel: expandLabel
   }, rest)));
 };
 ExpanderCell.displayName = 'ExpanderCell';

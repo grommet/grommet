@@ -15,7 +15,8 @@ import { StyledDataTableBody, StyledDataTableRow } from './StyledDataTable';
 import { datumValue, normalizeRowCellProps } from './buildState';
 import { useThemeValue } from '../../utils/useThemeValue';
 var Row = /*#__PURE__*/memo(function (_ref) {
-  var cellProps = _ref.cellProps,
+  var expandLabel = _ref.expandLabel,
+    cellProps = _ref.cellProps,
     primaryValue = _ref.primaryValue,
     index = _ref.index,
     rowRef = _ref.rowRef,
@@ -128,6 +129,7 @@ var Row = /*#__PURE__*/memo(function (_ref) {
     background: isSelected && cellProps.selected.background,
     context: isRowExpanded ? 'groupHeader' : 'body',
     expanded: isRowExpanded,
+    expandLabel: expandLabel,
     onToggle: function onToggle() {
       var nextRowExpand;
       var rowKey = primaryValue || index;
@@ -314,7 +316,12 @@ var Body = /*#__PURE__*/forwardRef(function (_ref2, ref) {
     var isDisabled = disabled && disabled.includes(primaryValue);
     var isRowExpanded = rowExpand && rowExpand.includes(primaryValue || index);
     var cellProps = normalizeRowCellProps(rowProps, cellPropsProp, primaryValue, index);
+    var expandLabel;
+    if (typeof rowDetails === 'object' && typeof rowDetails.expandLabel === 'function') {
+      expandLabel = rowDetails.expandLabel(datum);
+    }
     return /*#__PURE__*/React.createElement(Row, {
+      expandLabel: expandLabel,
       key: primaryValue != null ? primaryValue : index,
       setActive: setActive,
       rowRef: rowRef,

@@ -10,6 +10,9 @@ function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default":
 // https://github.com/grommet/grommet/blob/master/src/js/components/DataTable/stories/data.js
 
 var StyledDataTable = exports.StyledDataTable = function StyledDataTable() {
+  var expandLabel = function expandLabel(row) {
+    return row.location;
+  };
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -41,7 +44,8 @@ var StyledDataTable = exports.StyledDataTable = function StyledDataTable() {
       },
       groupBy: {
         property: 'location',
-        expand: ['Palo Alto']
+        expand: ['Palo Alto'],
+        expandLabel: expandLabel
       },
       rowProps: {
         Eric: {

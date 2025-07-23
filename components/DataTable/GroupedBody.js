@@ -12,7 +12,7 @@ var _TableRow = require("../TableRow");
 var _TableCell = require("../TableCell");
 var _buildState = require("./buildState");
 var _useThemeValue2 = require("../../utils/useThemeValue");
-var _excluded = ["cellProps", "columns", "data", "disabled", "groupBy", "groups", "groupState", "pinnedOffset", "primaryProperty", "onMore", "onSelect", "onToggle", "onUpdate", "replace", "rowProps", "selected", "size", "step", "verticalAlign"];
+var _excluded = ["cellProps", "columns", "data", "disabled", "groupBy", "groups", "groupState", "messages", "pinnedOffset", "primaryProperty", "onMore", "onSelect", "onToggle", "onUpdate", "replace", "rowProps", "selected", "size", "step", "verticalAlign"];
 function _interopRequireWildcard(e, t) { if ("function" == typeof WeakMap) var r = new WeakMap(), n = new WeakMap(); return (_interopRequireWildcard = function _interopRequireWildcard(e, t) { if (!t && e && e.__esModule) return e; var o, i, f = { __proto__: null, "default": e }; if (null === e || "object" != typeof e && "function" != typeof e) return f; if (o = t ? n : r) { if (o.has(e)) return o.get(e); o.set(e, f); } for (var _t in e) "default" !== _t && {}.hasOwnProperty.call(e, _t) && ((i = (o = Object.defineProperty) && Object.getOwnPropertyDescriptor(e, _t)) && (i.get || i.set) ? o(f, _t, i) : f[_t] = e[_t]); return f; })(e, t); }
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (-1 !== e.indexOf(n)) continue; t[n] = r[n]; } return t; }
@@ -24,6 +24,7 @@ var GroupedBody = exports.GroupedBody = /*#__PURE__*/(0, _react.forwardRef)(func
     groupBy = _ref.groupBy,
     groups = _ref.groups,
     groupState = _ref.groupState,
+    messages = _ref.messages,
     pinnedOffset = _ref.pinnedOffset,
     primaryProperty = _ref.primaryProperty,
     onMore = _ref.onMore,
@@ -133,14 +134,21 @@ var GroupedBody = exports.GroupedBody = /*#__PURE__*/(0, _react.forwardRef)(func
       onChange = row.onChange,
       primaryValue = row.primaryValue;
     var cellProps = (0, _buildState.normalizeRowCellProps)(rowProps, context === 'groupHeader' ? cellPropsProp.groupHeader : cellPropsProp.body, primaryValue, index);
+    var ariaLabel;
+    if (typeof groupBy === 'object' && typeof groupBy.expandLabel === 'function') {
+      var labelRow = context === 'groupHeader' ? row.datum : row.datum;
+      ariaLabel = groupBy.expandLabel(labelRow);
+    }
     return /*#__PURE__*/_react["default"].createElement(_StyledDataTable.StyledDataTableRow, _extends({
       ref: rowRef,
       key: key,
       size: size
     }, passThemeFlag), /*#__PURE__*/_react["default"].createElement(_ExpanderCell.ExpanderCell, {
       background: isSelected && cellProps.selected.background || cellProps.background,
+      expandLabel: ariaLabel,
       border: cellProps.border,
       context: context,
+      messages: messages,
       pad: cellProps.pad,
       onToggle: context === 'groupHeader' ? onToggle(key) : undefined,
       expanded: expanded,

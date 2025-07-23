@@ -118,6 +118,9 @@ var RowDetails = exports.RowDetails = function RowDetails() {
         });
       },
       expand: expand,
+      expandLabel: function expandLabel(row) {
+        return "details for " + row.name;
+      },
       onExpand: function onExpand(nextExpand /* , datum */) {
         return setExpand(nextExpand);
       }
