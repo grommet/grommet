@@ -13,7 +13,6 @@ import { Box } from '../Box';
 import { Button } from '../Button';
 import { DropButton } from '../DropButton';
 import { Keyboard } from '../Keyboard';
-import { Stack } from '../Stack';
 import { useThemeValue } from '../../utils/useThemeValue';
 import { MessageContext } from '../../contexts/MessageContext';
 
@@ -24,31 +23,41 @@ const STEP = 12; // Used to determine the width change on resize
 // Added a temporary min-width of 2px here so that the element doesn't
 // end up with a width of 0px. This is a placeholder solution until we
 // revisit this in https://github.com/grommet/grommet/issues/7273
-const InteractionBox = styled(DropButton)`
-  min-width: 2px;
+const StyledResizer = styled(DropButton)`
+  display: flex;
+  justify-content: center;
+  padding-top: ${(props) => props.theme.global.edgeSize.xsmall};
+  padding-bottom: ${(props) => props.theme.global.edgeSize.xsmall};
+  margin-right: -${(props) => props.theme.global.edgeSize.small};
+  position: absolute;
+  right: 0;
+  width: 24px;
+  height: 100%;
+  top: 0;
   cursor: col-resize;
-  > * {
-    opacity: 0;
-  }
-
-  // when mouse down, we want to continue to display styling
-  ${(props) => props.active && '> * { opacity: 1; }'}
-
-  &:hover {
-    > * {
-      opacity: 1;
-    }
-  }
+  z-index: 1;
 `;
 
-const Resizer = ({ onResize, property, headerText, messages }) => {
+const Resizer = ({ onResize, property, headerText, messages, headerId }) => {
   const { theme } = useThemeValue();
   const [active, setActive] = useState(false);
   const [start, setStart] = useState();
-  const [width, setWidth] = useState();
+  const [width, setWidth] = useState(0);
   const ref = useRef();
   const thRef = useRef();
   const { format } = useContext(MessageContext);
+
+  // Set the initial width based on the TH element's width
+  useEffect(() => {
+    if (ref.current) {
+      let element = ref.current;
+      // find TH parent
+      while (element && element.nodeName !== 'TH') element = element.parentNode;
+      const rect = element.getBoundingClientRect();
+      // Set initial width based on the TH element's width
+      setWidth(rect.width);
+    }
+  }, [ref]);
 
   useEffect(() => {
     if (ref.current) {
@@ -108,9 +117,21 @@ const Resizer = ({ onResize, property, headerText, messages }) => {
   }, [active, onResizeMove, onResizeEnd]);
 
   let border;
+  if (
+    theme.dataTable.resize.border.color &&
+    theme.dataTable.resize.border.side
+  ) {
+    const { color, side = 'end' } = theme.dataTable.resize.border;
+    border = {
+      color,
+      side,
+    };
+  }
+
+  let hoverBorder = border;
   if (theme.dataTable.resize.hover && theme.dataTable.resize.hover.border) {
     const { color, side = 'end', size } = theme.dataTable.resize.hover.border;
-    border = {
+    hoverBorder = {
       color,
       side,
       size,
@@ -121,89 +142,95 @@ const Resizer = ({ onResize, property, headerText, messages }) => {
     (event) => {
       event.preventDefault();
       if (!ref.current) return;
-      let element = ref.current;
-      while (element && element.nodeName !== 'TH') element = element.parentNode;
-      const currentWidth = element.getBoundingClientRect().width;
-      // Used STEP here to align with the value set in onMouseMove
-      const delta = event.key === 'ArrowLeft' ? -STEP : STEP;
-      onResize(property, currentWidth + delta);
+      if (thRef.current) {
+        const element = thRef.current;
+        const currentWidth = element.getBoundingClientRect().width;
+        // Used STEP here to align with the value set in onMouseMove
+        const delta = event.key === 'ArrowLeft' ? -STEP : STEP;
+        onResize(property, currentWidth + delta);
+        setWidth(currentWidth + delta);
+      }
     },
     [onResize, property],
   );
 
+  const [hover, setHover] = useState(false);
+  const ariaLabel = format({
+    id: 'dataTable.resizerAria',
+    values: { headerText },
+    messages,
+  });
+
   return (
-    <Stack anchor="right" interactiveChild="last">
-      <Box
-        flex={false}
-        responsive={false}
-        pad={{ vertical: 'small' }}
-        {...theme.dataTable.resize}
-      />
-      <Keyboard onLeft={onKeyDown} onRight={onKeyDown}>
-        {/* provides a wider, more accessible target to grab resizer */}
-        <InteractionBox
-          aria-label={format({
-            id: 'dataTable.resizerAria',
-            values: { headerText },
-            messages,
-          })}
-          active={active}
-          flex={false}
-          pad={{ left: 'xsmall' }}
-          margin={{ top: 'xsmall' }}
-          ref={ref}
-          responsive={false}
-          onMouseDown={onResizeStart}
-          onMouseMove={start !== undefined ? onResizeMove : undefined}
-          onMouseUp={start !== undefined ? onResizeEnd : undefined}
-          onTouchStart={onResizeStart}
-          onTouchMove={start !== undefined ? onResizeMove : undefined}
-          onTouchEnd={start !== undefined ? onResizeEnd : undefined}
-          dropContent={
-            <Box direction="row" pad="xsmall">
-              <Button
-                aria-label={format({
-                  id: 'dataTable.decrease',
-                  values: { headerText },
-                  messages,
-                })}
-                icon={<Subtract />}
-                onClick={() => {
-                  if (thRef.current) {
-                    const element = thRef.current;
-                    const rect = element.getBoundingClientRect();
-                    const currentWidth = rect.width;
-                    const nextWidth = Math.max(STEP, currentWidth - STEP);
-                    onResize(property, nextWidth);
-                  }
-                }}
-                autoFocus
-              />
-              <Button
-                aria-label={format({
-                  id: 'dataTable.increase',
-                  values: { headerText },
-                  messages,
-                })}
-                icon={<Add />}
-                onClick={() => {
-                  if (thRef.current) {
-                    const element = thRef.current;
-                    const rect = element.getBoundingClientRect();
-                    const currentWidth = rect.width;
-                    const nextWidth = Math.max(STEP, currentWidth + STEP);
-                    onResize(property, nextWidth);
-                  }
-                }}
-              />
-            </Box>
-          }
-          dropAlign={{ top: 'bottom' }}
-        >
-          <Box pad={{ vertical: 'small' }} border={border} />
-        </InteractionBox>
-      </Keyboard>
-    </Stack>
+    <Keyboard onLeft={onKeyDown} onRight={onKeyDown}>
+      <StyledResizer
+        aria-label={
+          width ? `${ariaLabel} ${Math.trunc(width)} pixels` : ariaLabel
+        }
+        onMouseEnter={() => setHover(true)}
+        onMouseLeave={() => setHover(false)}
+        ref={ref}
+        role="separator"
+        aria-valuenow={width}
+        aria-valuetext={
+          width ? `${ariaLabel} ${Math.trunc(width)} pixels` : ariaLabel
+        }
+        aria-controls={headerId}
+        aria-orientation="vertical"
+        onMouseDown={onResizeStart}
+        onMouseMove={start !== undefined ? onResizeMove : undefined}
+        onMouseUp={start !== undefined ? onResizeEnd : undefined}
+        onTouchStart={onResizeStart}
+        onTouchMove={start !== undefined ? onResizeMove : undefined}
+        onTouchEnd={start !== undefined ? onResizeEnd : undefined}
+        dropContent={
+          <Box direction="row" pad="xsmall">
+            <Button
+              aria-label={format({
+                id: 'dataTable.decrease',
+                values: { headerText },
+                messages,
+              })}
+              icon={<Subtract />}
+              onClick={() => {
+                if (thRef.current) {
+                  const element = thRef.current;
+                  const rect = element.getBoundingClientRect();
+                  const currentWidth = rect.width;
+                  const nextWidth = Math.max(STEP, currentWidth - STEP);
+                  onResize(property, nextWidth);
+                }
+              }}
+              autoFocus
+            />
+            <Button
+              aria-label={format({
+                id: 'dataTable.increase',
+                values: { headerText },
+                messages,
+              })}
+              icon={<Add />}
+              onClick={() => {
+                if (thRef.current) {
+                  const element = thRef.current;
+                  const rect = element.getBoundingClientRect();
+                  const currentWidth = rect.width;
+                  const nextWidth = Math.max(STEP, currentWidth + STEP);
+                  onResize(property, nextWidth);
+                }
+              }}
+            />
+          </Box>
+        }
+        dropAlign={{ top: 'bottom' }}
+      >
+        <Box
+          border={hover || active ? hoverBorder : border}
+          height="100%"
+          alignSelf="center"
+        />
+      </StyledResizer>
+    </Keyboard>
   );
 };
 
