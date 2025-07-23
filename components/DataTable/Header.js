@@ -335,16 +335,7 @@ var Header = exports.Header = /*#__PURE__*/(0, _react.forwardRef)(function (_ref
       fill: _onResize || search ? 'vertical' : false,
       justify: !align && 'center' || align
     }, content);
-    if (search || _onResize) {
-      var resizer = _onResize ? /*#__PURE__*/_react["default"].createElement(_Resizer.Resizer, {
-        property: property,
-        onResize: function onResize(prop, width) {
-          _onResize(prop, width);
-          updateWidths(prop, width);
-        },
-        headerText: typeof header === 'string' ? header : property,
-        messages: messages
-      }) : null;
+    if (search) {
       var searcher = search && filters ? /*#__PURE__*/_react["default"].createElement(_Searcher.Searcher, {
         filtering: filtering,
         filters: filters,
@@ -363,15 +354,18 @@ var Header = exports.Header = /*#__PURE__*/(0, _react.forwardRef)(function (_ref
         style: _onResize ? {
           position: 'relative'
         } : undefined
-      }, content, searcher && resizer ? /*#__PURE__*/_react["default"].createElement(_Box.Box, {
-        flex: "shrink",
-        direction: "row",
-        align: "center",
-        gap: theme.dataTable.header.gap
-      }, searcher, resizer) : searcher || resizer);
+      }, content, searcher && _onResize ? /*#__PURE__*/_react["default"].createElement(_Box.Box
+      // padding right set to half (12px) of resizer
+      // width (24px) to prevent overlap with resizer control.
+      , {
+        pad: {
+          right: '12px'
+        }
+      }, searcher) : searcher);
     }
     var cellPin = [].concat(pin);
     if (columnPin) cellPin.push('left');
+    var headerId = "grommet-data-table-header-" + property;
     return /*#__PURE__*/_react["default"].createElement(_StyledDataTable.StyledDataTableCell, _extends({
       "aria-sort": ariaSort,
       key: property,
@@ -380,6 +374,7 @@ var Header = exports.Header = /*#__PURE__*/(0, _react.forwardRef)(function (_ref
       verticalAlign: verticalAlign || columnVerticalAlign,
       background: cellProps.background,
       border: cellProps.border,
+      id: headerId,
       onWidth: function onWidth(width) {
         return updateWidths(property, width);
       }
@@ -393,11 +388,22 @@ var Header = exports.Header = /*#__PURE__*/(0, _react.forwardRef)(function (_ref
       size: widths && widths[property] ? undefined : size,
       style: {
         width: widths != null && widths[property] ? widths[property] + "px" : undefined,
-        boxSizing: _onResize ? 'border-box' : undefined
+        boxSizing: _onResize ? 'border-box' : undefined,
+        position: _onResize ? 'relative' : undefined,
+        overflow: _onResize ? 'visible' : undefined
       },
       onResize: _onResize,
       property: property
-    }, passThemeFlag), content);
+    }, passThemeFlag), content, _onResize && /*#__PURE__*/_react["default"].createElement(_Resizer.Resizer, {
+      property: property,
+      onResize: function onResize(prop, width) {
+        _onResize(prop, width);
+        updateWidths(prop, width);
+      },
+      headerText: typeof header === 'string' ? header : property,
+      messages: messages,
+      headerId: headerId
+    }));
   })));
 });
 Header.displayName = 'Header';
