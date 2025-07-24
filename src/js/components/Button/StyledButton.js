@@ -220,7 +220,9 @@ const StyledButton = styled.button.withConfig(styledComponentsConfig)`
     disabledButtonStyle(props)}
 
   &:focus {
-    ${(props) => (!props.plain || props.focusIndicator) && focusStyle()}
+    ${(props) =>
+      (!props.plain || props.focusIndicator) &&
+      focusStyle({ inset: props.focusIndicator === 'inset' })}
   }
 
   &:focus:not(:focus-visible) {

@@ -74,6 +74,12 @@ const rowStyles = css`
 `;
 
 const StyledDataTableRow = styled(TableRow)`
+  &:focus {
+    ${focusStyle()}
+  }
+  &:focus:not(:focus-visible) {
+    ${unfocusStyle()}
+  }
   ${(props) => props.theme.dataTable?.body?.row?.extend};
   ${rowStyles}
 `;

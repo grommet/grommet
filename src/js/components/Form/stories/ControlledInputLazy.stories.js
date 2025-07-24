@@ -86,7 +86,7 @@ export const ControlledInputLazy = () => {
               onChange={(event) => setSubscribe(event.target.checked)}
             />
           </FormField>
-          <FormField htmlFor="ampm" name="ampm">
+          <FormField label="Time of day" htmlFor="ampm" name="ampm">
             <RadioButtonGroup
               name="ampm"
               id="ampm"

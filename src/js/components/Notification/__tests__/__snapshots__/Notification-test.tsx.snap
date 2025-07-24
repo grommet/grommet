@@ -1,5 +1,338 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Notification Grommet messages 1`] = `
+<DocumentFragment>
+  .c4 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #919191;
+  stroke: #919191;
+}
+
+.c4 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c4 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c4 *[stroke*='#'],
+.c4 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c4 *[fill-rule],
+.c4 *[FILL-RULE],
+.c4 *[fill*='#'],
+.c4 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c10 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #666666;
+  stroke: #666666;
+}
+
+.c10 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c10 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c10 *[stroke*='#'],
+.c10 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c10 *[fill-rule],
+.c10 *[FILL-RULE],
+.c10 *[fill*='#'],
+.c10 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c1 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  background-color: rgba(145, 145, 145, 0.1);
+  min-width: 0;
+  min-height: 0;
+  flex-direction: row;
+  border-radius: 6px;
+}
+
+.c2 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: row;
+  flex: 1 1;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  padding-left: 12px;
+}
+
+.c3 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  flex: 0 0 auto;
+  padding-right: 12px;
+}
+
+.c5 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+}
+
+.c8 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  padding-right: 12px;
+}
+
+.c7 {
+  flex: 0 0 auto;
+  align-self: stretch;
+  width: 12px;
+}
+
+.c6 {
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: bold;
+}
+
+.c9 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+  line-height: 0;
+}
+
+.c9:hover {
+  background-color: rgba(221, 221, 221, 0.4);
+  color: #000000;
+}
+
+.c9:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c9:focus >circle,
+.c9:focus >ellipse,
+.c9:focus >line,
+.c9:focus >path,
+.c9:focus >polygon,
+.c9:focus >polyline,
+.c9:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c9:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c9:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c9:focus:not(:focus-visible) >circle,
+.c9:focus:not(:focus-visible) >ellipse,
+.c9:focus:not(:focus-visible) >line,
+.c9:focus:not(:focus-visible) >path,
+.c9:focus:not(:focus-visible) >polygon,
+.c9:focus:not(:focus-visible) >polyline,
+.c9:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c9:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+@media only screen and (max-width: 768px) {
+  .c1 {
+    border-radius: 3px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    padding-top: 3px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    padding-bottom: 3px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    padding-left: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c3 {
+    padding-right: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c8 {
+    padding-top: 3px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c8 {
+    padding-bottom: 3px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c8 {
+    padding-right: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c7 {
+    width: 6px;
+  }
+}
+
+<div
+    class="c0"
+  >
+    <div
+      class="c1"
+    >
+      <div
+        class="c2"
+      >
+        <div
+          class="c3"
+        >
+          <svg
+            aria-label="Status is unknown"
+            class="c4"
+            viewBox="0 0 12 12"
+          >
+            <rect
+              fill-rule="evenodd"
+              height="10"
+              rx="1"
+              stroke="#000"
+              width="10"
+              x="1"
+              y="1"
+            />
+          </svg>
+        </div>
+        <div
+          class="c5"
+        >
+          <span
+            class="c6"
+          >
+            Title
+          </span>
+        </div>
+      </div>
+      <div
+        class="c7"
+      />
+      <div
+        class="c8"
+      >
+        <div
+          class="c5"
+        >
+          <button
+            aria-label="Clear notification"
+            class="c9"
+            type="button"
+          >
+            <svg
+              aria-label="FormClose"
+              class="c10"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="m7 7 10 10M7 17 17 7"
+                fill="none"
+                stroke="#000"
+                stroke-width="2"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
 exports[`Notification custom theme 1`] = `
 <DocumentFragment>
   .c4 {
@@ -572,6 +905,339 @@ exports[`Notification global 1`] = `
 </DocumentFragment>
 `;
 
+exports[`Notification messages prop 1`] = `
+<DocumentFragment>
+  .c4 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #919191;
+  stroke: #919191;
+}
+
+.c4 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c4 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c4 *[stroke*='#'],
+.c4 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c4 *[fill-rule],
+.c4 *[FILL-RULE],
+.c4 *[fill*='#'],
+.c4 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c10 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #666666;
+  stroke: #666666;
+}
+
+.c10 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c10 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c10 *[stroke*='#'],
+.c10 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c10 *[fill-rule],
+.c10 *[FILL-RULE],
+.c10 *[fill*='#'],
+.c10 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c1 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  background-color: rgba(145, 145, 145, 0.1);
+  min-width: 0;
+  min-height: 0;
+  flex-direction: row;
+  border-radius: 6px;
+}
+
+.c2 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: row;
+  flex: 1 1;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  padding-left: 12px;
+}
+
+.c3 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  flex: 0 0 auto;
+  padding-right: 12px;
+}
+
+.c5 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+}
+
+.c8 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  padding-right: 12px;
+}
+
+.c7 {
+  flex: 0 0 auto;
+  align-self: stretch;
+  width: 12px;
+}
+
+.c6 {
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: bold;
+}
+
+.c9 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+  line-height: 0;
+}
+
+.c9:hover {
+  background-color: rgba(221, 221, 221, 0.4);
+  color: #000000;
+}
+
+.c9:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c9:focus >circle,
+.c9:focus >ellipse,
+.c9:focus >line,
+.c9:focus >path,
+.c9:focus >polygon,
+.c9:focus >polyline,
+.c9:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c9:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c9:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c9:focus:not(:focus-visible) >circle,
+.c9:focus:not(:focus-visible) >ellipse,
+.c9:focus:not(:focus-visible) >line,
+.c9:focus:not(:focus-visible) >path,
+.c9:focus:not(:focus-visible) >polygon,
+.c9:focus:not(:focus-visible) >polyline,
+.c9:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c9:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+@media only screen and (max-width: 768px) {
+  .c1 {
+    border-radius: 3px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    padding-top: 3px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    padding-bottom: 3px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    padding-left: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c3 {
+    padding-right: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c8 {
+    padding-top: 3px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c8 {
+    padding-bottom: 3px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c8 {
+    padding-right: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c7 {
+    width: 6px;
+  }
+}
+
+<div
+    class="c0"
+  >
+    <div
+      class="c1"
+    >
+      <div
+        class="c2"
+      >
+        <div
+          class="c3"
+        >
+          <svg
+            aria-label="Status is unknown"
+            class="c4"
+            viewBox="0 0 12 12"
+          >
+            <rect
+              fill-rule="evenodd"
+              height="10"
+              rx="1"
+              stroke="#000"
+              width="10"
+              x="1"
+              y="1"
+            />
+          </svg>
+        </div>
+        <div
+          class="c5"
+        >
+          <span
+            class="c6"
+          >
+            Title
+          </span>
+        </div>
+      </div>
+      <div
+        class="c7"
+      />
+      <div
+        class="c8"
+      >
+        <div
+          class="c5"
+        >
+          <button
+            aria-label="Clear notification"
+            class="c9"
+            type="button"
+          >
+            <svg
+              aria-label="FormClose"
+              class="c10"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="m7 7 10 10M7 17 17 7"
+                fill="none"
+                stroke="#000"
+                stroke-width="2"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
 exports[`Notification multi actions 1`] = `
 <DocumentFragment>
   .c4 {
@@ -792,8 +1458,9 @@ exports[`Notification multi actions 1`] = `
 </DocumentFragment>
 `;
 
-exports[`Notification position bottom 1`] = `
-.c5 {
+exports[`Notification onClose 1`] = `
+<DocumentFragment>
+  .c4 {
   display: inline-block;
   flex: 0 0 auto;
   width: 24px;
@@ -802,30 +1469,357 @@ exports[`Notification position bottom 1`] = `
   stroke: #919191;
 }
 
-.c5 g {
+.c4 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c5 *:not([stroke])[fill='none'] {
+.c4 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c5 *[stroke*='#'],
-.c5 *[STROKE*='#'] {
+.c4 *[stroke*='#'],
+.c4 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
-.c5 *[fill-rule],
-.c5 *[FILL-RULE],
-.c5 *[fill*='#'],
-.c5 *[FILL*='#'] {
+.c4 *[fill-rule],
+.c4 *[FILL-RULE],
+.c4 *[fill*='#'],
+.c4 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
 
+.c10 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #666666;
+  stroke: #666666;
+}
+
+.c10 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c10 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c10 *[stroke*='#'],
+.c10 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c10 *[fill-rule],
+.c10 *[FILL-RULE],
+.c10 *[fill*='#'],
+.c10 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c1 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  background-color: rgba(145, 145, 145, 0.1);
+  min-width: 0;
+  min-height: 0;
+  flex-direction: row;
+  border-radius: 6px;
+}
+
 .c2 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: row;
+  flex: 1 1;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  padding-left: 12px;
+}
+
+.c3 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  flex: 0 0 auto;
+  padding-right: 12px;
+}
+
+.c5 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+}
+
+.c8 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  padding-right: 12px;
+}
+
+.c7 {
+  flex: 0 0 auto;
+  align-self: stretch;
+  width: 12px;
+}
+
+.c6 {
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: bold;
+}
+
+.c9 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+  line-height: 0;
+}
+
+.c9:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c9:focus >circle,
+.c9:focus >ellipse,
+.c9:focus >line,
+.c9:focus >path,
+.c9:focus >polygon,
+.c9:focus >polyline,
+.c9:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c9:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c9:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c9:focus:not(:focus-visible) >circle,
+.c9:focus:not(:focus-visible) >ellipse,
+.c9:focus:not(:focus-visible) >line,
+.c9:focus:not(:focus-visible) >path,
+.c9:focus:not(:focus-visible) >polygon,
+.c9:focus:not(:focus-visible) >polyline,
+.c9:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c9:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+@media only screen and (max-width: 768px) {
+  .c1 {
+    border-radius: 3px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    padding-top: 3px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    padding-bottom: 3px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    padding-left: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c3 {
+    padding-right: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c8 {
+    padding-top: 3px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c8 {
+    padding-bottom: 3px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c8 {
+    padding-right: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c7 {
+    width: 6px;
+  }
+}
+
+<div
+    class="c0"
+  >
+    <div
+      class="c1"
+    >
+      <div
+        class="c2"
+      >
+        <div
+          class="c3"
+        >
+          <svg
+            aria-label="Status is unknown"
+            class="c4"
+            viewBox="0 0 12 12"
+          >
+            <rect
+              fill-rule="evenodd"
+              height="10"
+              rx="1"
+              stroke="#000"
+              width="10"
+              x="1"
+              y="1"
+            />
+          </svg>
+        </div>
+        <div
+          class="c5"
+        >
+          <span
+            class="c6"
+          >
+            Title
+          </span>
+        </div>
+      </div>
+      <div
+        class="c7"
+      />
+      <div
+        class="c8"
+      >
+        <div
+          class="c5"
+        >
+          <button
+            aria-label="Dismiss notification"
+            class="c9"
+            type="button"
+          >
+            <svg
+              aria-label="FormClose"
+              class="c10"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="m7 7 10 10M7 17 17 7"
+                fill="none"
+                stroke="#000"
+                stroke-width="2"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Notification position bottom 1`] = `
+.c6 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #919191;
+  stroke: #919191;
+}
+
+.c6 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c6 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c6 *[stroke*='#'],
+.c6 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c6 *[fill-rule],
+.c6 *[FILL-RULE],
+.c6 *[fill*='#'],
+.c6 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c3 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -839,7 +1833,7 @@ exports[`Notification position bottom 1`] = `
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.20);
 }
 
-.c3 {
+.c4 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -853,7 +1847,7 @@ exports[`Notification position bottom 1`] = `
   padding-bottom: 6px;
 }
 
-.c4 {
+.c5 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -864,7 +1858,7 @@ exports[`Notification position bottom 1`] = `
   padding-right: 12px;
 }
 
-.c6 {
+.c7 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -873,13 +1867,13 @@ exports[`Notification position bottom 1`] = `
   flex-direction: column;
 }
 
-.c7 {
+.c8 {
   font-size: 18px;
   line-height: 24px;
   font-weight: bold;
 }
 
-.c9 {
+.c10 {
   margin-right: 6px;
   font-size: 18px;
   line-height: 24px;
@@ -929,7 +1923,21 @@ exports[`Notification position bottom 1`] = `
   animation: fdqiZe 0.2s ease-in-out forwards;
 }
 
-.c8 {
+.c2 {
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  position: absolute;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+.c2:focus {
+  outline: none;
+}
+
+.c9 {
   margin: 0px;
   font-size: 18px;
   line-height: 24px;
@@ -937,27 +1945,27 @@ exports[`Notification position bottom 1`] = `
 }
 
 @media only screen and (max-width: 768px) {
-  .c2 {
+  .c3 {
     border-radius: 3px;
   }
 }
 
 @media only screen and (max-width: 768px) {
-  .c3 {
+  .c4 {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 
 @media only screen and (max-width: 768px) {
-  .c3 {
+  .c4 {
     padding-top: 3px;
     padding-bottom: 3px;
   }
 }
 
 @media only screen and (max-width: 768px) {
-  .c4 {
+  .c5 {
     padding-right: 6px;
   }
 }
@@ -971,20 +1979,24 @@ exports[`Notification position bottom 1`] = `
     class="c1"
     data-g-portal-id="0"
     id="position-test"
-    role="log"
+    role="status"
   >
-    <div
+    <span
       class="c2"
+      tabindex="-1"
+    />
+    <div
+      class="c3"
     >
       <div
-        class="c3"
+        class="c4"
       >
         <div
-          class="c4"
+          class="c5"
         >
           <svg
             aria-label="Status is unknown"
-            class="c5"
+            class="c6"
             viewBox="0 0 12 12"
           >
             <rect
@@ -999,18 +2011,18 @@ exports[`Notification position bottom 1`] = `
           </svg>
         </div>
         <div
-          class="c6"
+          class="c7"
         >
           <span
-            class="c7"
+            class="c8"
           >
             title
           </span>
           <p
-            class="c8"
+            class="c9"
           >
             <span
-              class="c9"
+              class="c10"
             >
               message
             </span>
@@ -1048,7 +2060,7 @@ exports[`Notification position bottom 2`] = `
 `;
 
 exports[`Notification position bottom-left 1`] = `
-.c5 {
+.c6 {
   display: inline-block;
   flex: 0 0 auto;
   width: 24px;
@@ -1057,30 +2069,30 @@ exports[`Notification position bottom-left 1`] = `
   stroke: #919191;
 }
 
-.c5 g {
+.c6 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c5 *:not([stroke])[fill='none'] {
+.c6 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c5 *[stroke*='#'],
-.c5 *[STROKE*='#'] {
+.c6 *[stroke*='#'],
+.c6 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
-.c5 *[fill-rule],
-.c5 *[FILL-RULE],
-.c5 *[fill*='#'],
-.c5 *[FILL*='#'] {
+.c6 *[fill-rule],
+.c6 *[FILL-RULE],
+.c6 *[fill*='#'],
+.c6 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
 
-.c2 {
+.c3 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -1094,7 +2106,7 @@ exports[`Notification position bottom-left 1`] = `
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.20);
 }
 
-.c3 {
+.c4 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -1108,7 +2120,7 @@ exports[`Notification position bottom-left 1`] = `
   padding-bottom: 6px;
 }
 
-.c4 {
+.c5 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -1119,7 +2131,7 @@ exports[`Notification position bottom-left 1`] = `
   padding-right: 12px;
 }
 
-.c6 {
+.c7 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -1128,13 +2140,13 @@ exports[`Notification position bottom-left 1`] = `
   flex-direction: column;
 }
 
-.c7 {
+.c8 {
   font-size: 18px;
   line-height: 24px;
   font-weight: bold;
 }
 
-.c9 {
+.c10 {
   margin-right: 6px;
   font-size: 18px;
   line-height: 24px;
@@ -1184,7 +2196,21 @@ exports[`Notification position bottom-left 1`] = `
   animation: cQwfQi 0.2s ease-in-out forwards;
 }
 
-.c8 {
+.c2 {
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  position: absolute;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+.c2:focus {
+  outline: none;
+}
+
+.c9 {
   margin: 0px;
   font-size: 18px;
   line-height: 24px;
@@ -1192,27 +2218,27 @@ exports[`Notification position bottom-left 1`] = `
 }
 
 @media only screen and (max-width: 768px) {
-  .c2 {
+  .c3 {
     border-radius: 3px;
   }
 }
 
 @media only screen and (max-width: 768px) {
-  .c3 {
+  .c4 {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 
 @media only screen and (max-width: 768px) {
-  .c3 {
+  .c4 {
     padding-top: 3px;
     padding-bottom: 3px;
   }
 }
 
 @media only screen and (max-width: 768px) {
-  .c4 {
+  .c5 {
     padding-right: 6px;
   }
 }
@@ -1226,20 +2252,24 @@ exports[`Notification position bottom-left 1`] = `
     class="c1"
     data-g-portal-id="0"
     id="position-test"
-    role="log"
+    role="status"
   >
-    <div
+    <span
       class="c2"
+      tabindex="-1"
+    />
+    <div
+      class="c3"
     >
       <div
-        class="c3"
+        class="c4"
       >
         <div
-          class="c4"
+          class="c5"
         >
           <svg
             aria-label="Status is unknown"
-            class="c5"
+            class="c6"
             viewBox="0 0 12 12"
           >
             <rect
@@ -1254,18 +2284,18 @@ exports[`Notification position bottom-left 1`] = `
           </svg>
         </div>
         <div
-          class="c6"
+          class="c7"
         >
           <span
-            class="c7"
+            class="c8"
           >
             title
           </span>
           <p
-            class="c8"
+            class="c9"
           >
             <span
-              class="c9"
+              class="c10"
             >
               message
             </span>
@@ -1303,7 +2333,7 @@ exports[`Notification position bottom-left 2`] = `
 `;
 
 exports[`Notification position bottom-right 1`] = `
-.c5 {
+.c6 {
   display: inline-block;
   flex: 0 0 auto;
   width: 24px;
@@ -1312,30 +2342,30 @@ exports[`Notification position bottom-right 1`] = `
   stroke: #919191;
 }
 
-.c5 g {
+.c6 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c5 *:not([stroke])[fill='none'] {
+.c6 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c5 *[stroke*='#'],
-.c5 *[STROKE*='#'] {
+.c6 *[stroke*='#'],
+.c6 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
-.c5 *[fill-rule],
-.c5 *[FILL-RULE],
-.c5 *[fill*='#'],
-.c5 *[FILL*='#'] {
+.c6 *[fill-rule],
+.c6 *[FILL-RULE],
+.c6 *[fill*='#'],
+.c6 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
 
-.c2 {
+.c3 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -1349,7 +2379,7 @@ exports[`Notification position bottom-right 1`] = `
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.20);
 }
 
-.c3 {
+.c4 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -1363,7 +2393,7 @@ exports[`Notification position bottom-right 1`] = `
   padding-bottom: 6px;
 }
 
-.c4 {
+.c5 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -1374,7 +2404,7 @@ exports[`Notification position bottom-right 1`] = `
   padding-right: 12px;
 }
 
-.c6 {
+.c7 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -1383,13 +2413,13 @@ exports[`Notification position bottom-right 1`] = `
   flex-direction: column;
 }
 
-.c7 {
+.c8 {
   font-size: 18px;
   line-height: 24px;
   font-weight: bold;
 }
 
-.c9 {
+.c10 {
   margin-right: 6px;
   font-size: 18px;
   line-height: 24px;
@@ -1439,7 +2469,21 @@ exports[`Notification position bottom-right 1`] = `
   animation: cQwfQi 0.2s ease-in-out forwards;
 }
 
-.c8 {
+.c2 {
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  position: absolute;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+.c2:focus {
+  outline: none;
+}
+
+.c9 {
   margin: 0px;
   font-size: 18px;
   line-height: 24px;
@@ -1447,27 +2491,27 @@ exports[`Notification position bottom-right 1`] = `
 }
 
 @media only screen and (max-width: 768px) {
-  .c2 {
+  .c3 {
     border-radius: 3px;
   }
 }
 
 @media only screen and (max-width: 768px) {
-  .c3 {
+  .c4 {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 
 @media only screen and (max-width: 768px) {
-  .c3 {
+  .c4 {
     padding-top: 3px;
     padding-bottom: 3px;
   }
 }
 
 @media only screen and (max-width: 768px) {
-  .c4 {
+  .c5 {
     padding-right: 6px;
   }
 }
@@ -1481,20 +2525,24 @@ exports[`Notification position bottom-right 1`] = `
     class="c1"
     data-g-portal-id="0"
     id="position-test"
-    role="log"
+    role="status"
   >
-    <div
+    <span
       class="c2"
+      tabindex="-1"
+    />
+    <div
+      class="c3"
     >
       <div
-        class="c3"
+        class="c4"
       >
         <div
-          class="c4"
+          class="c5"
         >
           <svg
             aria-label="Status is unknown"
-            class="c5"
+            class="c6"
             viewBox="0 0 12 12"
           >
             <rect
@@ -1509,18 +2557,18 @@ exports[`Notification position bottom-right 1`] = `
           </svg>
         </div>
         <div
-          class="c6"
+          class="c7"
         >
           <span
-            class="c7"
+            class="c8"
           >
             title
           </span>
           <p
-            class="c8"
+            class="c9"
           >
             <span
-              class="c9"
+              class="c10"
             >
               message
             </span>
@@ -1558,7 +2606,7 @@ exports[`Notification position bottom-right 2`] = `
 `;
 
 exports[`Notification position center 1`] = `
-.c5 {
+.c6 {
   display: inline-block;
   flex: 0 0 auto;
   width: 24px;
@@ -1567,30 +2615,30 @@ exports[`Notification position center 1`] = `
   stroke: #919191;
 }
 
-.c5 g {
+.c6 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c5 *:not([stroke])[fill='none'] {
+.c6 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c5 *[stroke*='#'],
-.c5 *[STROKE*='#'] {
+.c6 *[stroke*='#'],
+.c6 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
-.c5 *[fill-rule],
-.c5 *[FILL-RULE],
-.c5 *[fill*='#'],
-.c5 *[FILL*='#'] {
+.c6 *[fill-rule],
+.c6 *[FILL-RULE],
+.c6 *[fill*='#'],
+.c6 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
 
-.c2 {
+.c3 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -1604,7 +2652,7 @@ exports[`Notification position center 1`] = `
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.20);
 }
 
-.c3 {
+.c4 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -1618,7 +2666,7 @@ exports[`Notification position center 1`] = `
   padding-bottom: 6px;
 }
 
-.c4 {
+.c5 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -1629,7 +2677,7 @@ exports[`Notification position center 1`] = `
   padding-right: 12px;
 }
 
-.c6 {
+.c7 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -1638,13 +2686,13 @@ exports[`Notification position center 1`] = `
   flex-direction: column;
 }
 
-.c7 {
+.c8 {
   font-size: 18px;
   line-height: 24px;
   font-weight: bold;
 }
 
-.c9 {
+.c10 {
   margin-right: 6px;
   font-size: 18px;
   line-height: 24px;
@@ -1694,7 +2742,21 @@ exports[`Notification position center 1`] = `
   animation: hWAzxx 0.2s ease-in-out forwards;
 }
 
-.c8 {
+.c2 {
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  position: absolute;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+.c2:focus {
+  outline: none;
+}
+
+.c9 {
   margin: 0px;
   font-size: 18px;
   line-height: 24px;
@@ -1702,27 +2764,27 @@ exports[`Notification position center 1`] = `
 }
 
 @media only screen and (max-width: 768px) {
-  .c2 {
+  .c3 {
     border-radius: 3px;
   }
 }
 
 @media only screen and (max-width: 768px) {
-  .c3 {
+  .c4 {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 
 @media only screen and (max-width: 768px) {
-  .c3 {
+  .c4 {
     padding-top: 3px;
     padding-bottom: 3px;
   }
 }
 
 @media only screen and (max-width: 768px) {
-  .c4 {
+  .c5 {
     padding-right: 6px;
   }
 }
@@ -1736,20 +2798,24 @@ exports[`Notification position center 1`] = `
     class="c1"
     data-g-portal-id="0"
     id="position-test"
-    role="log"
+    role="status"
   >
-    <div
+    <span
       class="c2"
+      tabindex="-1"
+    />
+    <div
+      class="c3"
     >
       <div
-        class="c3"
+        class="c4"
       >
         <div
-          class="c4"
+          class="c5"
         >
           <svg
             aria-label="Status is unknown"
-            class="c5"
+            class="c6"
             viewBox="0 0 12 12"
           >
             <rect
@@ -1764,18 +2830,18 @@ exports[`Notification position center 1`] = `
           </svg>
         </div>
         <div
-          class="c6"
+          class="c7"
         >
           <span
-            class="c7"
+            class="c8"
           >
             title
           </span>
           <p
-            class="c8"
+            class="c9"
           >
             <span
-              class="c9"
+              class="c10"
             >
               message
             </span>
@@ -1813,7 +2879,7 @@ exports[`Notification position center 2`] = `
 `;
 
 exports[`Notification position end 1`] = `
-.c5 {
+.c6 {
   display: inline-block;
   flex: 0 0 auto;
   width: 24px;
@@ -1822,30 +2888,30 @@ exports[`Notification position end 1`] = `
   stroke: #919191;
 }
 
-.c5 g {
+.c6 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c5 *:not([stroke])[fill='none'] {
+.c6 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c5 *[stroke*='#'],
-.c5 *[STROKE*='#'] {
+.c6 *[stroke*='#'],
+.c6 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
-.c5 *[fill-rule],
-.c5 *[FILL-RULE],
-.c5 *[fill*='#'],
-.c5 *[FILL*='#'] {
+.c6 *[fill-rule],
+.c6 *[FILL-RULE],
+.c6 *[fill*='#'],
+.c6 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
 
-.c2 {
+.c3 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -1859,7 +2925,7 @@ exports[`Notification position end 1`] = `
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.20);
 }
 
-.c3 {
+.c4 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -1873,7 +2939,7 @@ exports[`Notification position end 1`] = `
   padding-bottom: 6px;
 }
 
-.c4 {
+.c5 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -1884,7 +2950,7 @@ exports[`Notification position end 1`] = `
   padding-right: 12px;
 }
 
-.c6 {
+.c7 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -1893,13 +2959,13 @@ exports[`Notification position end 1`] = `
   flex-direction: column;
 }
 
-.c7 {
+.c8 {
   font-size: 18px;
   line-height: 24px;
   font-weight: bold;
 }
 
-.c9 {
+.c10 {
   margin-right: 6px;
   font-size: 18px;
   line-height: 24px;
@@ -1949,7 +3015,21 @@ exports[`Notification position end 1`] = `
   animation: drjPPC 0.2s ease-in-out forwards;
 }
 
-.c8 {
+.c2 {
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  position: absolute;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+.c2:focus {
+  outline: none;
+}
+
+.c9 {
   margin: 0px;
   font-size: 18px;
   line-height: 24px;
@@ -1957,27 +3037,27 @@ exports[`Notification position end 1`] = `
 }
 
 @media only screen and (max-width: 768px) {
-  .c2 {
+  .c3 {
     border-radius: 3px;
   }
 }
 
 @media only screen and (max-width: 768px) {
-  .c3 {
+  .c4 {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 
 @media only screen and (max-width: 768px) {
-  .c3 {
+  .c4 {
     padding-top: 3px;
     padding-bottom: 3px;
   }
 }
 
 @media only screen and (max-width: 768px) {
-  .c4 {
+  .c5 {
     padding-right: 6px;
   }
 }
@@ -1991,20 +3071,24 @@ exports[`Notification position end 1`] = `
     class="c1"
     data-g-portal-id="0"
     id="position-test"
-    role="log"
+    role="status"
   >
-    <div
+    <span
       class="c2"
+      tabindex="-1"
+    />
+    <div
+      class="c3"
     >
       <div
-        class="c3"
+        class="c4"
       >
         <div
-          class="c4"
+          class="c5"
         >
           <svg
             aria-label="Status is unknown"
-            class="c5"
+            class="c6"
             viewBox="0 0 12 12"
           >
             <rect
@@ -2019,18 +3103,18 @@ exports[`Notification position end 1`] = `
           </svg>
         </div>
         <div
-          class="c6"
+          class="c7"
         >
           <span
-            class="c7"
+            class="c8"
           >
             title
           </span>
           <p
-            class="c8"
+            class="c9"
           >
             <span
-              class="c9"
+              class="c10"
             >
               message
             </span>
@@ -2068,7 +3152,7 @@ exports[`Notification position end 2`] = `
 `;
 
 exports[`Notification position left 1`] = `
-.c5 {
+.c6 {
   display: inline-block;
   flex: 0 0 auto;
   width: 24px;
@@ -2077,30 +3161,30 @@ exports[`Notification position left 1`] = `
   stroke: #919191;
 }
 
-.c5 g {
+.c6 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c5 *:not([stroke])[fill='none'] {
+.c6 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c5 *[stroke*='#'],
-.c5 *[STROKE*='#'] {
+.c6 *[stroke*='#'],
+.c6 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
-.c5 *[fill-rule],
-.c5 *[FILL-RULE],
-.c5 *[fill*='#'],
-.c5 *[FILL*='#'] {
+.c6 *[fill-rule],
+.c6 *[FILL-RULE],
+.c6 *[fill*='#'],
+.c6 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
 
-.c2 {
+.c3 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -2114,7 +3198,7 @@ exports[`Notification position left 1`] = `
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.20);
 }
 
-.c3 {
+.c4 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -2128,7 +3212,7 @@ exports[`Notification position left 1`] = `
   padding-bottom: 6px;
 }
 
-.c4 {
+.c5 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -2139,7 +3223,7 @@ exports[`Notification position left 1`] = `
   padding-right: 12px;
 }
 
-.c6 {
+.c7 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -2148,13 +3232,13 @@ exports[`Notification position left 1`] = `
   flex-direction: column;
 }
 
-.c7 {
+.c8 {
   font-size: 18px;
   line-height: 24px;
   font-weight: bold;
 }
 
-.c9 {
+.c10 {
   margin-right: 6px;
   font-size: 18px;
   line-height: 24px;
@@ -2204,7 +3288,21 @@ exports[`Notification position left 1`] = `
   animation: kPYden 0.2s ease-in-out forwards;
 }
 
-.c8 {
+.c2 {
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  position: absolute;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+.c2:focus {
+  outline: none;
+}
+
+.c9 {
   margin: 0px;
   font-size: 18px;
   line-height: 24px;
@@ -2212,27 +3310,27 @@ exports[`Notification position left 1`] = `
 }
 
 @media only screen and (max-width: 768px) {
-  .c2 {
+  .c3 {
     border-radius: 3px;
   }
 }
 
 @media only screen and (max-width: 768px) {
-  .c3 {
+  .c4 {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 
 @media only screen and (max-width: 768px) {
-  .c3 {
+  .c4 {
     padding-top: 3px;
     padding-bottom: 3px;
   }
 }
 
 @media only screen and (max-width: 768px) {
-  .c4 {
+  .c5 {
     padding-right: 6px;
   }
 }
@@ -2246,20 +3344,24 @@ exports[`Notification position left 1`] = `
     class="c1"
     data-g-portal-id="0"
     id="position-test"
-    role="log"
+    role="status"
   >
-    <div
+    <span
       class="c2"
+      tabindex="-1"
+    />
+    <div
+      class="c3"
     >
       <div
-        class="c3"
+        class="c4"
       >
         <div
-          class="c4"
+          class="c5"
         >
           <svg
             aria-label="Status is unknown"
-            class="c5"
+            class="c6"
             viewBox="0 0 12 12"
           >
             <rect
@@ -2274,18 +3376,18 @@ exports[`Notification position left 1`] = `
           </svg>
         </div>
         <div
-          class="c6"
+          class="c7"
         >
           <span
-            class="c7"
+            class="c8"
           >
             title
           </span>
           <p
-            class="c8"
+            class="c9"
           >
             <span
-              class="c9"
+              class="c10"
             >
               message
             </span>
@@ -2323,7 +3425,7 @@ exports[`Notification position left 2`] = `
 `;
 
 exports[`Notification position right 1`] = `
-.c5 {
+.c6 {
   display: inline-block;
   flex: 0 0 auto;
   width: 24px;
@@ -2332,30 +3434,30 @@ exports[`Notification position right 1`] = `
   stroke: #919191;
 }
 
-.c5 g {
+.c6 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c5 *:not([stroke])[fill='none'] {
+.c6 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c5 *[stroke*='#'],
-.c5 *[STROKE*='#'] {
+.c6 *[stroke*='#'],
+.c6 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
-.c5 *[fill-rule],
-.c5 *[FILL-RULE],
-.c5 *[fill*='#'],
-.c5 *[FILL*='#'] {
+.c6 *[fill-rule],
+.c6 *[FILL-RULE],
+.c6 *[fill*='#'],
+.c6 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
 
-.c2 {
+.c3 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -2369,7 +3471,7 @@ exports[`Notification position right 1`] = `
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.20);
 }
 
-.c3 {
+.c4 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -2383,7 +3485,7 @@ exports[`Notification position right 1`] = `
   padding-bottom: 6px;
 }
 
-.c4 {
+.c5 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -2394,7 +3496,7 @@ exports[`Notification position right 1`] = `
   padding-right: 12px;
 }
 
-.c6 {
+.c7 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -2403,13 +3505,13 @@ exports[`Notification position right 1`] = `
   flex-direction: column;
 }
 
-.c7 {
+.c8 {
   font-size: 18px;
   line-height: 24px;
   font-weight: bold;
 }
 
-.c9 {
+.c10 {
   margin-right: 6px;
   font-size: 18px;
   line-height: 24px;
@@ -2459,7 +3561,21 @@ exports[`Notification position right 1`] = `
   animation: drjPPC 0.2s ease-in-out forwards;
 }
 
-.c8 {
+.c2 {
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  position: absolute;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+.c2:focus {
+  outline: none;
+}
+
+.c9 {
   margin: 0px;
   font-size: 18px;
   line-height: 24px;
@@ -2467,27 +3583,27 @@ exports[`Notification position right 1`] = `
 }
 
 @media only screen and (max-width: 768px) {
-  .c2 {
+  .c3 {
     border-radius: 3px;
   }
 }
 
 @media only screen and (max-width: 768px) {
-  .c3 {
+  .c4 {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 
 @media only screen and (max-width: 768px) {
-  .c3 {
+  .c4 {
     padding-top: 3px;
     padding-bottom: 3px;
   }
 }
 
 @media only screen and (max-width: 768px) {
-  .c4 {
+  .c5 {
     padding-right: 6px;
   }
 }
@@ -2501,20 +3617,24 @@ exports[`Notification position right 1`] = `
     class="c1"
     data-g-portal-id="0"
     id="position-test"
-    role="log"
+    role="status"
   >
-    <div
+    <span
       class="c2"
+      tabindex="-1"
+    />
+    <div
+      class="c3"
     >
       <div
-        class="c3"
+        class="c4"
       >
         <div
-          class="c4"
+          class="c5"
         >
           <svg
             aria-label="Status is unknown"
-            class="c5"
+            class="c6"
             viewBox="0 0 12 12"
           >
             <rect
@@ -2529,18 +3649,18 @@ exports[`Notification position right 1`] = `
           </svg>
         </div>
         <div
-          class="c6"
+          class="c7"
         >
           <span
-            class="c7"
+            class="c8"
           >
             title
           </span>
           <p
-            class="c8"
+            class="c9"
           >
             <span
-              class="c9"
+              class="c10"
             >
               message
             </span>
@@ -2578,7 +3698,7 @@ exports[`Notification position right 2`] = `
 `;
 
 exports[`Notification position start 1`] = `
-.c5 {
+.c6 {
   display: inline-block;
   flex: 0 0 auto;
   width: 24px;
@@ -2587,30 +3707,30 @@ exports[`Notification position start 1`] = `
   stroke: #919191;
 }
 
-.c5 g {
+.c6 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c5 *:not([stroke])[fill='none'] {
+.c6 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c5 *[stroke*='#'],
-.c5 *[STROKE*='#'] {
+.c6 *[stroke*='#'],
+.c6 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
-.c5 *[fill-rule],
-.c5 *[FILL-RULE],
-.c5 *[fill*='#'],
-.c5 *[FILL*='#'] {
+.c6 *[fill-rule],
+.c6 *[FILL-RULE],
+.c6 *[fill*='#'],
+.c6 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
 
-.c2 {
+.c3 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -2624,7 +3744,7 @@ exports[`Notification position start 1`] = `
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.20);
 }
 
-.c3 {
+.c4 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -2638,7 +3758,7 @@ exports[`Notification position start 1`] = `
   padding-bottom: 6px;
 }
 
-.c4 {
+.c5 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -2649,7 +3769,7 @@ exports[`Notification position start 1`] = `
   padding-right: 12px;
 }
 
-.c6 {
+.c7 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -2658,13 +3778,13 @@ exports[`Notification position start 1`] = `
   flex-direction: column;
 }
 
-.c7 {
+.c8 {
   font-size: 18px;
   line-height: 24px;
   font-weight: bold;
 }
 
-.c9 {
+.c10 {
   margin-right: 6px;
   font-size: 18px;
   line-height: 24px;
@@ -2714,7 +3834,21 @@ exports[`Notification position start 1`] = `
   animation: kPYden 0.2s ease-in-out forwards;
 }
 
-.c8 {
+.c2 {
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  position: absolute;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+.c2:focus {
+  outline: none;
+}
+
+.c9 {
   margin: 0px;
   font-size: 18px;
   line-height: 24px;
@@ -2722,27 +3856,27 @@ exports[`Notification position start 1`] = `
 }
 
 @media only screen and (max-width: 768px) {
-  .c2 {
+  .c3 {
     border-radius: 3px;
   }
 }
 
 @media only screen and (max-width: 768px) {
-  .c3 {
+  .c4 {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 
 @media only screen and (max-width: 768px) {
-  .c3 {
+  .c4 {
     padding-top: 3px;
     padding-bottom: 3px;
   }
 }
 
 @media only screen and (max-width: 768px) {
-  .c4 {
+  .c5 {
     padding-right: 6px;
   }
 }
@@ -2756,20 +3890,24 @@ exports[`Notification position start 1`] = `
     class="c1"
     data-g-portal-id="0"
     id="position-test"
-    role="log"
+    role="status"
   >
-    <div
+    <span
       class="c2"
+      tabindex="-1"
+    />
+    <div
+      class="c3"
     >
       <div
-        class="c3"
+        class="c4"
       >
         <div
-          class="c4"
+          class="c5"
         >
           <svg
             aria-label="Status is unknown"
-            class="c5"
+            class="c6"
             viewBox="0 0 12 12"
           >
             <rect
@@ -2784,18 +3922,18 @@ exports[`Notification position start 1`] = `
           </svg>
         </div>
         <div
-          class="c6"
+          class="c7"
         >
           <span
-            class="c7"
+            class="c8"
           >
             title
           </span>
           <p
-            class="c8"
+            class="c9"
           >
             <span
-              class="c9"
+              class="c10"
             >
               message
             </span>
@@ -2833,7 +3971,7 @@ exports[`Notification position start 2`] = `
 `;
 
 exports[`Notification position top 1`] = `
-.c5 {
+.c6 {
   display: inline-block;
   flex: 0 0 auto;
   width: 24px;
@@ -2842,30 +3980,30 @@ exports[`Notification position top 1`] = `
   stroke: #919191;
 }
 
-.c5 g {
+.c6 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c5 *:not([stroke])[fill='none'] {
+.c6 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c5 *[stroke*='#'],
-.c5 *[STROKE*='#'] {
+.c6 *[stroke*='#'],
+.c6 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
-.c5 *[fill-rule],
-.c5 *[FILL-RULE],
-.c5 *[fill*='#'],
-.c5 *[FILL*='#'] {
+.c6 *[fill-rule],
+.c6 *[FILL-RULE],
+.c6 *[fill*='#'],
+.c6 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
 
-.c2 {
+.c3 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -2879,7 +4017,7 @@ exports[`Notification position top 1`] = `
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.20);
 }
 
-.c3 {
+.c4 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -2893,7 +4031,7 @@ exports[`Notification position top 1`] = `
   padding-bottom: 6px;
 }
 
-.c4 {
+.c5 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -2904,7 +4042,7 @@ exports[`Notification position top 1`] = `
   padding-right: 12px;
 }
 
-.c6 {
+.c7 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -2913,13 +4051,13 @@ exports[`Notification position top 1`] = `
   flex-direction: column;
 }
 
-.c7 {
+.c8 {
   font-size: 18px;
   line-height: 24px;
   font-weight: bold;
 }
 
-.c9 {
+.c10 {
   margin-right: 6px;
   font-size: 18px;
   line-height: 24px;
@@ -2969,7 +4107,21 @@ exports[`Notification position top 1`] = `
   animation: hnDkLj 0.2s ease-in-out forwards;
 }
 
-.c8 {
+.c2 {
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  position: absolute;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+.c2:focus {
+  outline: none;
+}
+
+.c9 {
   margin: 0px;
   font-size: 18px;
   line-height: 24px;
@@ -2977,27 +4129,27 @@ exports[`Notification position top 1`] = `
 }
 
 @media only screen and (max-width: 768px) {
-  .c2 {
+  .c3 {
     border-radius: 3px;
   }
 }
 
 @media only screen and (max-width: 768px) {
-  .c3 {
+  .c4 {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 
 @media only screen and (max-width: 768px) {
-  .c3 {
+  .c4 {
     padding-top: 3px;
     padding-bottom: 3px;
   }
 }
 
 @media only screen and (max-width: 768px) {
-  .c4 {
+  .c5 {
     padding-right: 6px;
   }
 }
@@ -3011,20 +4163,24 @@ exports[`Notification position top 1`] = `
     class="c1"
     data-g-portal-id="0"
     id="position-test"
-    role="log"
+    role="status"
   >
-    <div
+    <span
       class="c2"
+      tabindex="-1"
+    />
+    <div
+      class="c3"
     >
       <div
-        class="c3"
+        class="c4"
       >
         <div
-          class="c4"
+          class="c5"
         >
           <svg
             aria-label="Status is unknown"
-            class="c5"
+            class="c6"
             viewBox="0 0 12 12"
           >
             <rect
@@ -3039,18 +4195,18 @@ exports[`Notification position top 1`] = `
           </svg>
         </div>
         <div
-          class="c6"
+          class="c7"
         >
           <span
-            class="c7"
+            class="c8"
           >
             title
           </span>
           <p
-            class="c8"
+            class="c9"
           >
             <span
-              class="c9"
+              class="c10"
             >
               message
             </span>
@@ -3088,7 +4244,7 @@ exports[`Notification position top 2`] = `
 `;
 
 exports[`Notification position top-left 1`] = `
-.c5 {
+.c6 {
   display: inline-block;
   flex: 0 0 auto;
   width: 24px;
@@ -3097,30 +4253,30 @@ exports[`Notification position top-left 1`] = `
   stroke: #919191;
 }
 
-.c5 g {
+.c6 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c5 *:not([stroke])[fill='none'] {
+.c6 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c5 *[stroke*='#'],
-.c5 *[STROKE*='#'] {
+.c6 *[stroke*='#'],
+.c6 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
-.c5 *[fill-rule],
-.c5 *[FILL-RULE],
-.c5 *[fill*='#'],
-.c5 *[FILL*='#'] {
+.c6 *[fill-rule],
+.c6 *[FILL-RULE],
+.c6 *[fill*='#'],
+.c6 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
 
-.c2 {
+.c3 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -3134,7 +4290,7 @@ exports[`Notification position top-left 1`] = `
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.20);
 }
 
-.c3 {
+.c4 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -3148,7 +4304,7 @@ exports[`Notification position top-left 1`] = `
   padding-bottom: 6px;
 }
 
-.c4 {
+.c5 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -3159,7 +4315,7 @@ exports[`Notification position top-left 1`] = `
   padding-right: 12px;
 }
 
-.c6 {
+.c7 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -3168,13 +4324,13 @@ exports[`Notification position top-left 1`] = `
   flex-direction: column;
 }
 
-.c7 {
+.c8 {
   font-size: 18px;
   line-height: 24px;
   font-weight: bold;
 }
 
-.c9 {
+.c10 {
   margin-right: 6px;
   font-size: 18px;
   line-height: 24px;
@@ -3224,7 +4380,21 @@ exports[`Notification position top-left 1`] = `
   animation: ffftsv 0.2s ease-in-out forwards;
 }
 
-.c8 {
+.c2 {
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  position: absolute;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+.c2:focus {
+  outline: none;
+}
+
+.c9 {
   margin: 0px;
   font-size: 18px;
   line-height: 24px;
@@ -3232,27 +4402,27 @@ exports[`Notification position top-left 1`] = `
 }
 
 @media only screen and (max-width: 768px) {
-  .c2 {
+  .c3 {
     border-radius: 3px;
   }
 }
 
 @media only screen and (max-width: 768px) {
-  .c3 {
+  .c4 {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 
 @media only screen and (max-width: 768px) {
-  .c3 {
+  .c4 {
     padding-top: 3px;
     padding-bottom: 3px;
   }
 }
 
 @media only screen and (max-width: 768px) {
-  .c4 {
+  .c5 {
     padding-right: 6px;
   }
 }
@@ -3266,20 +4436,24 @@ exports[`Notification position top-left 1`] = `
     class="c1"
     data-g-portal-id="0"
     id="position-test"
-    role="log"
+    role="status"
   >
-    <div
+    <span
       class="c2"
+      tabindex="-1"
+    />
+    <div
+      class="c3"
     >
       <div
-        class="c3"
+        class="c4"
       >
         <div
-          class="c4"
+          class="c5"
         >
           <svg
             aria-label="Status is unknown"
-            class="c5"
+            class="c6"
             viewBox="0 0 12 12"
           >
             <rect
@@ -3294,18 +4468,18 @@ exports[`Notification position top-left 1`] = `
           </svg>
         </div>
         <div
-          class="c6"
+          class="c7"
         >
           <span
-            class="c7"
+            class="c8"
           >
             title
           </span>
           <p
-            class="c8"
+            class="c9"
           >
             <span
-              class="c9"
+              class="c10"
             >
               message
             </span>
@@ -3343,7 +4517,7 @@ exports[`Notification position top-left 2`] = `
 `;
 
 exports[`Notification position top-right 1`] = `
-.c5 {
+.c6 {
   display: inline-block;
   flex: 0 0 auto;
   width: 24px;
@@ -3352,30 +4526,30 @@ exports[`Notification position top-right 1`] = `
   stroke: #919191;
 }
 
-.c5 g {
+.c6 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c5 *:not([stroke])[fill='none'] {
+.c6 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c5 *[stroke*='#'],
-.c5 *[STROKE*='#'] {
+.c6 *[stroke*='#'],
+.c6 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
-.c5 *[fill-rule],
-.c5 *[FILL-RULE],
-.c5 *[fill*='#'],
-.c5 *[FILL*='#'] {
+.c6 *[fill-rule],
+.c6 *[FILL-RULE],
+.c6 *[fill*='#'],
+.c6 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
 
-.c2 {
+.c3 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -3389,7 +4563,7 @@ exports[`Notification position top-right 1`] = `
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.20);
 }
 
-.c3 {
+.c4 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -3403,7 +4577,7 @@ exports[`Notification position top-right 1`] = `
   padding-bottom: 6px;
 }
 
-.c4 {
+.c5 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -3414,7 +4588,7 @@ exports[`Notification position top-right 1`] = `
   padding-right: 12px;
 }
 
-.c6 {
+.c7 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -3423,13 +4597,13 @@ exports[`Notification position top-right 1`] = `
   flex-direction: column;
 }
 
-.c7 {
+.c8 {
   font-size: 18px;
   line-height: 24px;
   font-weight: bold;
 }
 
-.c9 {
+.c10 {
   margin-right: 6px;
   font-size: 18px;
   line-height: 24px;
@@ -3479,7 +4653,21 @@ exports[`Notification position top-right 1`] = `
   animation: ffftsv 0.2s ease-in-out forwards;
 }
 
-.c8 {
+.c2 {
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  position: absolute;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+.c2:focus {
+  outline: none;
+}
+
+.c9 {
   margin: 0px;
   font-size: 18px;
   line-height: 24px;
@@ -3487,27 +4675,27 @@ exports[`Notification position top-right 1`] = `
 }
 
 @media only screen and (max-width: 768px) {
-  .c2 {
+  .c3 {
     border-radius: 3px;
   }
 }
 
 @media only screen and (max-width: 768px) {
-  .c3 {
+  .c4 {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 
 @media only screen and (max-width: 768px) {
-  .c3 {
+  .c4 {
     padding-top: 3px;
     padding-bottom: 3px;
   }
 }
 
 @media only screen and (max-width: 768px) {
-  .c4 {
+  .c5 {
     padding-right: 6px;
   }
 }
@@ -3521,20 +4709,24 @@ exports[`Notification position top-right 1`] = `
     class="c1"
     data-g-portal-id="0"
     id="position-test"
-    role="log"
+    role="status"
   >
-    <div
+    <span
       class="c2"
+      tabindex="-1"
+    />
+    <div
+      class="c3"
     >
       <div
-        class="c3"
+        class="c4"
       >
         <div
-          class="c4"
+          class="c5"
         >
           <svg
             aria-label="Status is unknown"
-            class="c5"
+            class="c6"
             viewBox="0 0 12 12"
           >
             <rect
@@ -3549,18 +4741,18 @@ exports[`Notification position top-right 1`] = `
           </svg>
         </div>
         <div
-          class="c6"
+          class="c7"
         >
           <span
-            class="c7"
+            class="c8"
           >
             title
           </span>
           <p
-            class="c8"
+            class="c9"
           >
             <span
-              class="c9"
+              class="c10"
             >
               message
             </span>

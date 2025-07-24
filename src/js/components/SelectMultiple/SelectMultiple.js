@@ -32,6 +32,7 @@ import {
   getDisplayLabelKey,
   arrayIncludes,
   inertTrueValue,
+  selectInputId,
 } from '../Select/utils';
 import { DefaultSelectTextInput } from '../Select/DefaultSelectTextInput';
 import { MessageContext } from '../../contexts/MessageContext';
@@ -49,6 +50,7 @@ const SelectMultiple = forwardRef(
     {
       a11yTitle,
       'aria-label': ariaLabel,
+      'aria-labelledby': ariaLabelledByProp,
       alignSelf,
       children,
       defaultValue,
@@ -102,6 +104,7 @@ const SelectMultiple = forwardRef(
     const selectBoxRef = useRef();
     const dropButtonRef = useForwardedRef(ref);
     const usingKeyboard = useKeyboard();
+    const formFieldData = formContext?.useFormField({});
 
     const dropAlign = useMemo(
       () =>
@@ -124,6 +127,19 @@ const SelectMultiple = forwardRef(
       value: valueProp,
       initialValue: defaultValue || '',
     });
+
+    const [ariaLabelledBy, setAriaLabelledBy] = useState();
+
+    useEffect(() => {
+      if (formFieldData?.inForm && id && !ariaLabel && !placeholder) {
+        const labelElement = document.getElementById(
+          `grommet-${id}__input__label`,
+        );
+        if (labelElement) {
+          setAriaLabelledBy(`grommet-${id}__input__label ${id}`);
+        }
+      }
+    }, [formFieldData?.inForm, id, ariaLabel, placeholder]);
 
     // normalizedValue is the value mapped with any valueKey applied
     // When the options array contains objects, this property indicates how
@@ -475,7 +491,7 @@ const SelectMultiple = forwardRef(
                         a11yTitle={ariaLabel || a11yTitle}
                         defaultCursor={disabled === true || undefined}
                         focusIndicator={false}
-                        id={id ? `${id}__input` : undefined}
+                        id={id ? selectInputId(id) : undefined}
                         inert={inertTrueValue}
                         name={name}
                         width="100%"
@@ -508,7 +524,7 @@ const SelectMultiple = forwardRef(
                     <HiddenInput
                       type="text"
                       name={name}
-                      id={id ? `${id}__input` : undefined}
+                      id={id ? selectInputId(id) : undefined}
                       inert={inertTrueValue}
                       value={inputValue}
                       ref={inputRef}
@@ -545,6 +561,7 @@ const SelectMultiple = forwardRef(
               dropTarget={dropTarget}
               alignSelf={alignSelf}
               tabIndex="0"
+              aria-labelledby={ariaLabelledByProp || ariaLabelledBy}
             >
               <Box
                 align="center"
@@ -559,7 +576,7 @@ const SelectMultiple = forwardRef(
                       <HiddenInput
                         type="text"
                         name={name}
-                        id={id ? `${id}__input` : undefined}
+                        id={id ? selectInputId(id) : undefined}
                         inert={inertTrueValue}
                         value={inputValue}
                         ref={inputRef}

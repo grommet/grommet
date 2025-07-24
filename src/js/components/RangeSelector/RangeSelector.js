@@ -14,7 +14,6 @@ import { EdgeControl } from './EdgeControl';
 import { FormContext } from '../Form/FormContext';
 import { Text } from '../Text';
 import { parseMetricToNum } from '../../utils';
-import { MessageContext } from '../../contexts/MessageContext';
 import { RangeSelectorPropTypes } from './propTypes';
 import { DataFormContext } from '../../contexts/DataFormContext';
 import { useThemeValue } from '../../utils/useThemeValue';
@@ -72,7 +71,6 @@ const RangeSelector = forwardRef(
     ref,
   ) => {
     const { theme } = useThemeValue();
-    const { format } = useContext(MessageContext);
     const formContext = useContext(FormContext);
     const [changing, setChanging] = useState();
     const [lastChange, setLastChange] = useState();
@@ -291,17 +289,16 @@ const RangeSelector = forwardRef(
           {...layoutProps}
         />
         <EdgeControl
-          a11yTitle={format({ id: 'rangeSelector.lower', messages })}
-          role="slider"
-          aria-valuenow={lower}
-          aria-valuemin={min}
-          aria-valuemax={max}
-          tabIndex={0}
           ref={ref}
           color={color}
           direction={direction}
           thickness={thickness}
           edge="lower"
+          min={min}
+          max={max}
+          messages={messages}
+          value={lower}
+          step={step}
           onMouseDown={() => setChanging('lower')}
           onTouchStart={() => setChanging('lower')}
           onDecrease={() => change([lower - step, upper])}
@@ -331,16 +328,14 @@ const RangeSelector = forwardRef(
           }}
         />
         <EdgeControl
-          a11yTitle={format({ id: 'rangeSelector.upper', messages })}
-          role="slider"
-          aria-valuenow={upper}
-          aria-valuemin={min}
-          aria-valuemax={max}
-          tabIndex={0}
           color={color}
           direction={direction}
           thickness={thickness}
           edge="upper"
+          min={min}
+          max={max}
+          value={upper}
+          step={step}
           onMouseDown={() => setChanging('upper')}
           onTouchStart={() => setChanging('upper')}
           onDecrease={

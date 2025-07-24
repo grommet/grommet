@@ -14,6 +14,7 @@ export const PaginationStep = ({
 }) => {
   const { format: formatMessage } = useContext(MessageContext);
   const { theme } = useThemeValue();
+
   return (
     // TO DO theme object
     <Box direction="row" align="center" gap="xsmall" {...rest}>
@@ -21,6 +22,7 @@ export const PaginationStep = ({
       <Select
         options={options}
         value={step}
+        aria-label={formatMessage({ id: 'pagination.stepLabel', messages })}
         valueLabel={
           <Box {...theme.global.input} pad={theme.global.input.padding}>
             <Text {...theme.global.input.font}>{step}</Text>

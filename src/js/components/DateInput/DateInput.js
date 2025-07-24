@@ -23,6 +23,7 @@ import {
   useForwardedRef,
   setHoursWithOffset,
   disabledStyle,
+  useKeyboard,
 } from '../../utils';
 import { readOnlyStyle } from '../../utils/readOnly';
 import {
@@ -103,6 +104,7 @@ const DateInput = forwardRef(
       value: valueArg,
       initialValue: defaultValue,
     });
+    const usingKeyboard = useKeyboard();
 
     const [outputFormat, setOutputFormat] = useState(getOutputFormat(value));
     useEffect(() => {
@@ -204,9 +206,14 @@ Use the icon prop instead.`,
     }, [announce, formatMessage, messages]);
 
     const closeCalendar = useCallback(() => {
+      if (usingKeyboard && !inline && ref?.current) {
+        setTimeout(() => {
+          ref?.current?.focus();
+        }, 0);
+      }
       setOpen(false);
       announce(formatMessage({ id: 'dateInput.exitCalendar', messages }));
-    }, [announce, formatMessage, messages]);
+    }, [announce, formatMessage, messages, usingKeyboard, ref, inline]);
 
     const dates = useMemo(
       () => (range && value?.length ? [value] : undefined),
@@ -242,7 +249,6 @@ Use the icon prop instead.`,
                 if (onChange) onChange({ value: normalizedValue });
                 if (open && !range) {
                   closeCalendar();
-                  setTimeout(() => ref.current?.focus(), 1);
                 }
               }
         }
@@ -285,6 +291,7 @@ Use the icon prop instead.`,
 
     const DateInputButton = readOnlyCopy ? (
       <CopyButton
+        disabled={disabled}
         onBlurCopy={onBlurCopy}
         onClickCopy={onClickCopy}
         readOnlyCopyPrompt={readOnlyCopyPrompt}
@@ -294,6 +301,7 @@ Use the icon prop instead.`,
     ) : (
       <Button
         onClick={open ? closeCalendar : openCalendar}
+        disabled={disabled}
         plain
         icon={icon || MaskedInputIcon || <CalendarIcon size={iconSize} />}
         // TO DO theme object
@@ -398,26 +406,25 @@ Use the icon prop instead.`,
     if (open && !readOnly) {
       return [
         input,
-        <Keyboard key="drop" onEsc={() => ref.current.focus()}>
-          <Drop
-            overflow="visible"
-            id={id ? `${id}__drop` : undefined}
-            target={containerRef.current}
-            align={{ ...calendarDropdownAlign, ...dropProps }}
-            onEsc={closeCalendar}
-            onClickOutside={({ target }) => {
-              if (
-                target !== containerRef.current &&
-                !containerRef.current.contains(target)
-              ) {
-                closeCalendar();
-              }
-            }}
-            {...dropProps}
-          >
-            {calendar}
-          </Drop>
-        </Keyboard>,
+        <Drop
+          key="drop"
+          overflow="visible"
+          id={id ? `${id}__drop` : undefined}
+          target={containerRef.current}
+          align={{ ...calendarDropdownAlign, ...dropProps }}
+          onEsc={closeCalendar}
+          onClickOutside={({ target }) => {
+            if (
+              target !== containerRef.current &&
+              !containerRef.current.contains(target)
+            ) {
+              closeCalendar();
+            }
+          }}
+          {...dropProps}
+        >
+          {calendar}
+        </Drop>,
       ];
     }
 

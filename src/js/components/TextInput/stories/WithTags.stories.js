@@ -119,6 +119,7 @@ export const WithTags = () => {
     // <Grommet theme={...}>
     <Box pad="small">
       <TagInput
+        id="grommet-tag-input"
         placeholder="Search for aliases..."
         suggestions={suggestions}
         value={selectedTags}

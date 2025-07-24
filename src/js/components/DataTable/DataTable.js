@@ -9,7 +9,9 @@ import React, {
 } from 'react';
 
 import { useLayoutEffect } from '../../utils/use-isomorphic-layout-effect';
+import { AnnounceContext } from '../../contexts/AnnounceContext';
 import { DataContext } from '../../contexts/DataContext';
+import { MessageContext } from '../../contexts/MessageContext';
 import { Box } from '../Box';
 import { Text } from '../Text';
 import { Header } from './Header';
@@ -64,6 +66,7 @@ const DataTable = ({
   disabled,
   fill,
   groupBy: groupByProp,
+  messages,
   onClickRow, // removing unknown DOM attributes
   onMore,
   onSearch, // removing unknown DOM attributes
@@ -177,7 +180,39 @@ const DataTable = ({
   const [groupState, setGroupState] = useGroupState(groups, groupBy);
 
   const [limit, setLimit] = useState(step);
+  const announce = useContext(AnnounceContext);
+  const { format } = useContext(MessageContext);
+  // only announce number of rows that are rendered
+  // when outside of DataContext, otherwise
+  // Data will make this announcement
+  useEffect(() => {
+    if (dataProp) {
+      let messageId;
+      const rows = format({
+        id:
+          adjustedData.length === 1 ? 'dataTable.rowsSingle' : 'dataTable.rows',
+        messages,
+      });
+      // when less than one page returned, use specific amount
+      if (adjustedData.length < limit) {
+        if (adjustedData.length === 1) messageId = 'dataTable.totalSingle';
+        else messageId = 'dataTable.total';
+      } else {
+        messageId = 'dataTable.rowsChanged';
+      }
 
+      announce(
+        format({
+          id: messageId,
+          messages,
+          values: {
+            total: adjustedData.length,
+            rows,
+          },
+        }),
+      );
+    }
+  }, [dataProp, adjustedData, announce, format, limit, messages, paginate]);
   const [selected, setSelected] = useState(
     select || (onSelect && []) || undefined,
   );
@@ -191,7 +226,12 @@ const DataTable = ({
     }
   }, [select, setSelectedDataContext]);
 
-  const [rowExpand, setRowExpand] = useState([]);
+  const [rowExpand, setRowExpand] = useState(rowDetails?.expand || []);
+  useEffect(() => {
+    if (rowDetails?.expand) {
+      setRowExpand(rowDetails.expand);
+    }
+  }, [rowDetails?.expand]);
 
   // any customized column widths
   const [widths, setWidths] = useState({});
@@ -372,7 +412,7 @@ const DataTable = ({
   );
 
   if (size && resizeable) {
-    console.warn('DataTable cannot combine "size" and "resizeble".');
+    console.warn('DataTable cannot combine "size" and "resizeable".');
   }
   if (onUpdate && onMore) {
     console.warn('DataTable cannot combine "onUpdate" and "onMore".');
@@ -443,6 +483,7 @@ const DataTable = ({
       groupBy={typeof groupBy === 'string' ? { property: groupBy } : groupBy}
       groups={groups}
       groupState={groupState}
+      messages={messages}
       pinnedOffset={pinnedOffset}
       primaryProperty={primaryProperty}
       onMore={
@@ -545,6 +586,7 @@ const DataTable = ({
             size={size}
             sort={sort}
             widths={widths}
+            messages={messages}
             onFiltering={onFiltering}
             onFilter={onFilter}
             onResize={resizeable ? onResize : undefined}

@@ -113,6 +113,10 @@ const Content = ({ drop, options = [], ...rest }) => {
             id: 'dataTableColumns.select',
             messages: messages?.dataTableColumns,
           })}
+          aria-label={format({
+            id: 'dataTableColumns.selectAria',
+            messages: messages?.dataTableColumns,
+          })}
         >
           {/* TO DO theme object */}
           <Box pad={{ vertical: 'small' }} gap="xsmall">
@@ -140,6 +144,10 @@ const Content = ({ drop, options = [], ...rest }) => {
 
         <Tab
           id={`${dataId}--order-columns-tab`}
+          aria-label={format({
+            id: 'dataTableColumns.orderAria',
+            messages: messages?.dataTableColumns,
+          })}
           title={format({
             id: 'dataTableColumns.order',
             messages: messages?.dataTableColumns,
@@ -155,6 +163,12 @@ const Content = ({ drop, options = [], ...rest }) => {
                 (v) =>
                   (objectOptions && options.find((o) => o.property === v)) || v,
               )}
+              messages={{
+                pinned: format({
+                  id: 'dataTableColumns.pinned',
+                  messages: messages?.dataTableColumns,
+                }),
+              }}
               onOrder={(nextData) => setValue(optionsToValue(nextData))}
               pad="none"
               primaryKey={(objectOptions && 'label') || undefined}

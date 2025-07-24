@@ -1718,6 +1718,7 @@ exports[`FormField disabled with custom label for help and info 1`] = `
       <label
         class="c2"
         for="text-input"
+        id="grommet-text-input__label"
       >
         label
       </label>
@@ -1835,7 +1836,7 @@ exports[`FormField does not apply focusIndicator when formField.focusIndicator i
   border-radius: 100%;
 }
 
-.c13 {
+.c14 {
   flex: 0 0 auto;
   align-self: stretch;
   height: 12px;
@@ -1909,7 +1910,11 @@ exports[`FormField does not apply focusIndicator when formField.focusIndicator i
   cursor: pointer;
 }
 
-.c14 {
+.c13 {
+  transform: scale(1);
+}
+
+.c15 {
   box-sizing: border-box;
   position: relative;
   -webkit-appearance: none;
@@ -1922,22 +1927,22 @@ exports[`FormField does not apply focusIndicator when formField.focusIndicator i
   margin: 0px;
 }
 
-.c14::-moz-focus-inner {
+.c15::-moz-focus-inner {
   border: none;
 }
 
-.c14::-moz-focus-outer {
+.c15::-moz-focus-outer {
   border: none;
 }
 
-.c14::-webkit-slider-runnable-track {
+.c15::-webkit-slider-runnable-track {
   box-sizing: border-box;
   width: 100%;
   height: 4px;
   background: rgba(0, 0, 0, 0.2);
 }
 
-.c14::-webkit-slider-thumb {
+.c15::-webkit-slider-thumb {
   margin-top: -10px;
   box-sizing: border-box;
   position: relative;
@@ -1951,18 +1956,18 @@ exports[`FormField does not apply focusIndicator when formField.focusIndicator i
   box-shadow: 0px 0px 0px 2px #7D4CDB;
 }
 
-.c14::-webkit-slider-thumb:hover {
+.c15::-webkit-slider-thumb:hover {
   box-shadow: 0px 0px 0px 2px #7D4CDB;
 }
 
-.c14::-moz-range-track {
+.c15::-moz-range-track {
   box-sizing: border-box;
   width: 100%;
   height: 4px;
   background: rgba(0, 0, 0, 0.2);
 }
 
-.c14::-moz-range-thumb {
+.c15::-moz-range-thumb {
   box-sizing: border-box;
   position: relative;
   border-radius: 24px;
@@ -1977,7 +1982,7 @@ exports[`FormField does not apply focusIndicator when formField.focusIndicator i
   width: 24px;
 }
 
-.c14::-ms-thumb {
+.c15::-ms-thumb {
   box-sizing: border-box;
   position: relative;
   border-radius: 24px;
@@ -1992,15 +1997,15 @@ exports[`FormField does not apply focusIndicator when formField.focusIndicator i
   width: 24px;
 }
 
-.c14:hover::-moz-range-thumb {
+.c15:hover::-moz-range-thumb {
   box-shadow: 0px 0px 0px 2px #7D4CDB;
 }
 
-.c14:hover::-ms-thumb {
+.c15:hover::-ms-thumb {
   box-shadow: 0px 0px 0px 2px #7D4CDB;
 }
 
-.c14::-ms-track {
+.c15::-ms-track {
   box-sizing: border-box;
   width: 100%;
   height: 4px;
@@ -2009,21 +2014,21 @@ exports[`FormField does not apply focusIndicator when formField.focusIndicator i
   color: transparent;
 }
 
-.c14::-ms-fill-lower {
+.c15::-ms-fill-lower {
   background: rgba(0, 0, 0, 0.2);
   border-color: transparent;
 }
 
-.c14::-ms-fill-upper {
+.c15::-ms-fill-upper {
   background: rgba(0, 0, 0, 0.2);
   border-color: transparent;
 }
 
-.c14:focus-visible {
+.c15:focus-visible {
   outline: 0;
 }
 
-.c14:focus {
+.c15:focus {
   outline: none;
 }
 
@@ -2080,7 +2085,7 @@ exports[`FormField does not apply focusIndicator when formField.focusIndicator i
 }
 
 @media only screen and (max-width: 768px) {
-  .c13 {
+  .c14 {
     height: 6px;
   }
 }
@@ -2141,7 +2146,7 @@ exports[`FormField does not apply focusIndicator when formField.focusIndicator i
                 value="Option 1"
               />
               <div
-                class="c12 "
+                class="c12 c13"
               />
             </div>
             <span
@@ -2151,7 +2156,7 @@ exports[`FormField does not apply focusIndicator when formField.focusIndicator i
             </span>
           </label>
           <div
-            class="c13"
+            class="c14"
           />
           <label
             class="c9"
@@ -2169,7 +2174,7 @@ exports[`FormField does not apply focusIndicator when formField.focusIndicator i
                 value="Option 2"
               />
               <div
-                class="c12 "
+                class="c12 c13"
               />
             </div>
             <span
@@ -2190,7 +2195,7 @@ exports[`FormField does not apply focusIndicator when formField.focusIndicator i
         <input
           aria-valuemax="100"
           aria-valuemin="0"
-          class="c14"
+          class="c15"
           max="100"
           min="0"
           name="range"
@@ -2861,6 +2866,7 @@ exports[`FormField max and threshold validation 1`] = `
       <label
         class="c2"
         for="issue-description"
+        id="grommet-issue-description__label"
       >
         label
       </label>

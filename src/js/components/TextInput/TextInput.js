@@ -74,6 +74,7 @@ const TextInput = forwardRef(
       a11yTitle,
       defaultSuggestion,
       defaultValue,
+      disabled,
       dropAlign = defaultDropAlign,
       dropHeight,
       dropTarget,
@@ -422,6 +423,7 @@ const TextInput = forwardRef(
                             ? () => setActiveSuggestionIndex(index)
                             : undefined
                         }
+                        keyboard={!mouseMovedSinceLastKey}
                       >
                         {child}
                       </Button>
@@ -480,6 +482,7 @@ const TextInput = forwardRef(
 
     const ReadOnlyCopyButton = (
       <CopyButton
+        disabled={disabled}
         onBlurCopy={onBlurCopy}
         onClickCopy={onClickCopy}
         readOnlyCopyPrompt={readOnlyCopyPrompt}
@@ -494,6 +497,7 @@ const TextInput = forwardRef(
         readOnlyCopy={readOnlyCopy}
         plain={plain}
         border={!plain}
+        onMouseMove={() => setMouseMovedSinceLastKey(true)}
         {...passThemeFlag}
       >
         {reverse && readOnlyCopy && ReadOnlyCopyButton}
@@ -514,6 +518,7 @@ const TextInput = forwardRef(
             id={id}
             name={name}
             autoComplete="off"
+            disabled={disabled}
             plain={plain}
             placeholder={
               typeof placeholder === 'string' ? placeholder : undefined

@@ -12,6 +12,7 @@ export const DateMaskedInput = () => {
     <Box fill align="center" justify="start" pad="large">
       <Box width="medium">
         <MaskedInput
+          id="grommet-date"
           mask={[
             {
               length: [1, 2],

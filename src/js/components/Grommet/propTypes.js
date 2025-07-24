@@ -76,11 +76,29 @@ if (process.env.NODE_ENV !== 'production') {
           total: PropTypes.string,
           totalSingle: PropTypes.string,
         }),
+        dataTable: PropTypes.shape({
+          ascending: PropTypes.string,
+          collapse: PropTypes.string,
+          collapseAll: PropTypes.string,
+          descending: PropTypes.string,
+          expand: PropTypes.string,
+          expandAll: PropTypes.string,
+          resizerAria: PropTypes.string,
+          rows: PropTypes.string,
+          rowsChanged: PropTypes.string,
+          rowsSingle: PropTypes.string,
+          searchBy: PropTypes.string,
+          total: PropTypes.string,
+          totalSingle: PropTypes.string,
+        }),
         dataTableColumns: PropTypes.shape({
           open: PropTypes.string,
           order: PropTypes.string,
+          pinned: PropTypes.string,
           select: PropTypes.string,
           tip: PropTypes.string,
+          selectAria: PropTypes.string,
+          orderAria: PropTypes.string,
         }),
         dataTableGroupBy: PropTypes.shape({
           clear: PropTypes.string,
@@ -90,6 +108,10 @@ if (process.env.NODE_ENV !== 'production') {
           label: PropTypes.string,
         }),
         fileInput: PropTypes.shape({
+          alert: PropTypes.shape({
+            maxFile: PropTypes.string,
+            maxSize: PropTypes.string,
+          }),
           browse: PropTypes.string,
           dropPrompt: PropTypes.string,
           dropPromptMultiple: PropTypes.string,
@@ -119,6 +141,9 @@ if (process.env.NODE_ENV !== 'production') {
             }),
           }),
         }),
+        list: PropTypes.shape({
+          pinned: PropTypes.string,
+        }),
         menu: PropTypes.shape({
           openMenu: PropTypes.string,
           closeMenu: PropTypes.string,
@@ -140,6 +165,14 @@ if (process.env.NODE_ENV !== 'production') {
             singular: PropTypes.string,
             plural: PropTypes.string,
           }),
+        }),
+        notifcation: PropTypes.shape({
+          close: PropTypes.string,
+        }),
+        pagination: PropTypes.shape({
+          stepLabel: PropTypes.string,
+          summary: PropTypes.string,
+          summaryNoItems: PropType.string,
         }),
         rangeSelector: PropTypes.shape({
           lower: PropTypes.string,

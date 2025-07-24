@@ -8,6 +8,7 @@ import { SelectMultiple } from '../SelectMultiple';
 import { DataFilterPropTypes } from './propTypes';
 import { getDecimalCount } from '../RangeSelector/RangeSelector';
 import { DataFormContext } from '../../contexts/DataFormContext';
+import { selectInputId } from '../Select/utils';
 
 // empirical constants for when we change inputs
 const maxCheckBoxGroupOptions = 4;
@@ -149,6 +150,7 @@ export const DataFilter = ({
     ? `${properties?.[property]?.label || property}`
     : undefined;
 
+  let htmlFor = id;
   let content = children;
   if (!content) {
     if (range) {
@@ -234,6 +236,7 @@ export const DataFilter = ({
             valueKey={{ key: 'value', reduce: true }}
           />
         );
+        htmlFor = selectInputId(id);
       }
     }
   }
@@ -250,7 +253,7 @@ export const DataFilter = ({
   else
     content = (
       <FormField
-        htmlFor={id}
+        htmlFor={htmlFor}
         name={property}
         label={properties?.[property]?.label || property}
         {...rest}

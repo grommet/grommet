@@ -10,6 +10,9 @@ export interface NotificationProps {
   global?: boolean;
   title?: string;
   message?: string | React.ReactNode;
+  messages?: {
+    close?: string;
+  };
   status?: StatusType;
   time?: number;
   toast?:

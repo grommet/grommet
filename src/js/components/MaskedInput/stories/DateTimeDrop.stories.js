@@ -32,6 +32,7 @@ const DropContent = ({ date: initialDate, time: initialTime, onClose }) => {
           }}
         >
           <MaskedInput
+            id="grommet-date-time"
             mask={[
               {
                 length: [1, 2],

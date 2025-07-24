@@ -1,7 +1,7 @@
 /* eslint-disable no-underscore-dangle */
 import React, { forwardRef, memo, useEffect } from 'react';
 
-import { useKeyboard, useForwardedRef } from '../../utils';
+import { useForwardedRef } from '../../utils';
 import { CheckBox } from '../CheckBox';
 import { InfiniteScroll } from '../InfiniteScroll';
 import { TableRow } from '../TableRow';
@@ -16,32 +16,55 @@ import { useThemeValue } from '../../utils/useThemeValue';
 
 const Row = memo(
   ({
+    expandLabel,
     cellProps,
     primaryValue,
     index,
     rowRef,
     size,
     active,
+    focused,
+    lastFocused,
     onClickRow,
     datum,
     selected,
     onSelect,
+    passThemeFlag,
     isDisabled,
     isSelected,
     rowDetails,
     isRowExpanded,
     setActive,
+    setFocused,
     setRowExpand,
     rowExpand,
     columns,
     pinnedOffset,
     primaryProperty,
-    data,
     verticalAlign,
+    onRowRefChange,
   }) => (
     <>
       <StyledDataTableRow
-        ref={rowRef}
+        ref={(element) => {
+          // Store the row element in the parent's ref map
+          if (onRowRefChange) {
+            onRowRefChange(index, element);
+          }
+          // Also call the original rowRef if it exists
+          if (rowRef) {
+            if (typeof rowRef === 'function') {
+              rowRef(element);
+            } else if (
+              rowRef &&
+              typeof rowRef === 'object' &&
+              'current' in rowRef
+            ) {
+              const refObj = rowRef;
+              refObj.current = element;
+            }
+          }
+        }}
         size={size}
         active={active}
         aria-disabled={(onClickRow && isDisabled) || undefined}
@@ -49,6 +72,8 @@ const Row = memo(
           onClickRow
             ? (event) => {
                 if (onClickRow && !isDisabled) {
+                  setFocused(index);
+                  setActive(index);
                   if (typeof onClickRow === 'function') {
                     // extract from React's synthetic event pool
                     event.persist();
@@ -68,10 +93,29 @@ const Row = memo(
               }
             : undefined
         }
-        onMouseEnter={
+        onFocus={() => {
+          if (onClickRow && !isDisabled) {
+            setFocused(index);
+            setActive(index);
+          }
+        }}
+        onMouseOver={
           onClickRow && !isDisabled ? () => setActive(index) : undefined
         }
-        onMouseLeave={onClickRow ? () => setActive(undefined) : undefined}
+        tabIndex={
+          // eslint-disable-next-line no-nested-ternary
+          !onClickRow
+            ? undefined
+            : // If this row is focused, it should be focusable
+            // If no row is focused and this is the first row, make it focusable
+            (focused !== undefined && focused === index) ||
+              (focused === undefined && lastFocused === index) ||
+              (focused === undefined && index === 0)
+            ? 0
+            : // Otherwise, not in tab order
+              -1
+        }
+        {...passThemeFlag}
       >
         {(selected || onSelect) && (
           <Cell
@@ -111,17 +155,24 @@ const Row = memo(
             verticalAlign={verticalAlign}
           />
         )}
-
         {rowDetails && (
           <ExpanderCell
             background={isSelected && cellProps.selected.background}
             context={isRowExpanded ? 'groupHeader' : 'body'}
             expanded={isRowExpanded}
+            expandLabel={expandLabel}
             onToggle={() => {
+              let nextRowExpand;
+              const rowKey = primaryValue || index;
               if (isRowExpanded) {
-                setRowExpand(rowExpand.filter((s) => s !== index));
+                nextRowExpand = rowExpand.filter((s) => s !== rowKey);
               } else {
-                setRowExpand([...rowExpand, index]);
+                nextRowExpand = [...rowExpand, rowKey];
+              }
+              if (rowDetails.onExpand) {
+                rowDetails.onExpand(nextRowExpand, datum);
+              } else {
+                setRowExpand(nextRowExpand);
               }
             }}
             pad={cellProps.pad}
@@ -157,7 +208,7 @@ const Row = memo(
         <StyledDataTableRow key={`${index.toString()}_expand`}>
           {(selected || onSelect) && <TableCell />}
           <TableCell colSpan={columns.length + 1}>
-            {rowDetails(data[index])}
+            {rowDetails.render ? rowDetails.render(datum) : rowDetails(datum)}
           </TableCell>
         </StyledDataTableRow>
       )}
@@ -192,16 +243,22 @@ const Body = forwardRef(
     ref,
   ) => {
     const { theme, passThemeFlag } = useThemeValue();
+    const [focused, setFocused] = React.useState();
+    const [lastFocused, setLastFocused] = React.useState();
     const [active, setActive] = React.useState();
-    const [lastActive, setLastActive] = React.useState();
     const [scroll, setScroll] = React.useState();
     const containerRef = useForwardedRef(ref);
 
-    // Determine if using a keyboard to cover focus behavior
-    const usingKeyboard = useKeyboard();
-
-    const onFocusActive =
-      active ?? lastActive ?? (usingKeyboard && onClickRow ? 0 : undefined);
+    // Store refs for each row to enable direct focus management
+    const rowRefs = React.useRef(new Map());
+    // Callback to store row references
+    const handleRowRefChange = React.useCallback((index, element) => {
+      if (element) {
+        rowRefs.current.set(index, element);
+      } else {
+        rowRefs.current.delete(index);
+      }
+    }, []);
 
     const activePrimaryValue =
       active >= 0 ? datumValue(data[active], primaryProperty) : undefined;
@@ -231,6 +288,16 @@ const Body = forwardRef(
       }
     }, [containerRef]);
 
+    // roving tab index, ensure row (when onClickRow) has DOM focus
+    useEffect(() => {
+      if (focused !== undefined && rowRefs.current.has(focused)) {
+        const focusedRowElement = rowRefs.current.get(focused);
+        if (focusedRowElement && focusedRowElement.focus) {
+          focusedRowElement.focus();
+        }
+      }
+    }, [focused]);
+
     return (
       <Keyboard
         onEnter={
@@ -240,7 +307,7 @@ const Body = forwardRef(
                   if (typeof onClickRow === 'function') {
                     event.persist();
                     const adjustedEvent = event;
-                    adjustedEvent.datum = data[active];
+                    adjustedEvent.datum = data[focused];
                     onClickRow(adjustedEvent);
                   } else if (onClickRow === 'select') {
                     selectRow();
@@ -258,7 +325,7 @@ const Body = forwardRef(
                 if (typeof onClickRow === 'function') {
                   event.persist();
                   const adjustedEvent = event;
-                  adjustedEvent.datum = data?.[active];
+                  adjustedEvent.datum = data?.[focused];
                   onClickRow(adjustedEvent);
                 } else if (onClickRow === 'select') {
                   selectRow();
@@ -266,21 +333,42 @@ const Body = forwardRef(
               }
             : undefined
         }
-        onUp={onClickRow && active ? () => setActive(active - 1) : undefined}
+        onUp={
+          onClickRow && focused
+            ? () => {
+                const previousIndex = focused - 1;
+                setFocused(previousIndex);
+                setActive(previousIndex);
+              }
+            : undefined
+        }
         onDown={
-          onClickRow && data.length && active < data.length - 1
-            ? () => setActive((active ?? -1) + 1)
+          onClickRow && data.length && focused < data.length - 1
+            ? (event) => {
+                event.preventDefault();
+                const nextIndex = (focused ?? -1) + 1;
+                setFocused(nextIndex);
+                setActive(nextIndex);
+              }
             : undefined
         }
       >
         <StyledDataTableBody
           ref={containerRef}
           size={size}
-          tabIndex={onClickRow || scroll ? 0 : undefined}
-          onFocus={() => setActive(onFocusActive)}
-          onBlur={() => {
-            setLastActive(active);
-            setActive(undefined);
+          tabIndex={!onClickRow && scroll ? 0 : undefined}
+          onMouseOut={() => setActive(undefined)}
+          onBlur={(event) => {
+            // only reset focused if the focus is leaving the table
+            // and not moving to a child element of the table
+            if (
+              containerRef.current &&
+              !containerRef.current.contains(event.relatedTarget)
+            ) {
+              setLastFocused(focused);
+              setFocused(undefined);
+              setActive(undefined);
+            }
           }}
           {...passThemeFlag}
           {...rest}
@@ -303,15 +391,24 @@ const Body = forwardRef(
                 : undefined;
               const isSelected = selected && selected.includes(primaryValue);
               const isDisabled = disabled && disabled.includes(primaryValue);
-              const isRowExpanded = rowExpand && rowExpand.includes(index);
+              const isRowExpanded =
+                rowExpand && rowExpand.includes(primaryValue || index);
               const cellProps = normalizeRowCellProps(
                 rowProps,
                 cellPropsProp,
                 primaryValue,
                 index,
               );
+              let expandLabel;
+              if (
+                typeof rowDetails === 'object' &&
+                typeof rowDetails.expandLabel === 'function'
+              ) {
+                expandLabel = rowDetails.expandLabel(datum);
+              }
               return (
                 <Row
+                  expandLabel={expandLabel}
                   key={primaryValue ?? index}
                   setActive={setActive}
                   rowRef={rowRef}
@@ -323,7 +420,12 @@ const Body = forwardRef(
                   index={index}
                   size={size}
                   active={active >= 0 ? active === index : undefined}
+                  focused={focused}
+                  lastFocused={lastFocused}
+                  setFocused={setFocused}
+                  onRowRefChange={handleRowRefChange}
                   onClickRow={onClickRow}
+                  passThemeFlag={passThemeFlag}
                   datum={datum}
                   selected={selected}
                   onSelect={onSelect}

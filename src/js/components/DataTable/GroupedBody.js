@@ -20,6 +20,7 @@ export const GroupedBody = forwardRef(
       groupBy,
       groups,
       groupState,
+      messages,
       pinnedOffset,
       primaryProperty,
       onMore,
@@ -174,15 +175,32 @@ export const GroupedBody = forwardRef(
               index,
             );
 
+            let ariaLabel;
+            if (
+              typeof groupBy === 'object' &&
+              typeof groupBy.expandLabel === 'function'
+            ) {
+              const labelRow =
+                context === 'groupHeader' ? row.datum : row.datum;
+              ariaLabel = groupBy.expandLabel(labelRow);
+            }
+
             return (
-              <StyledDataTableRow ref={rowRef} key={key} size={size}>
+              <StyledDataTableRow
+                ref={rowRef}
+                key={key}
+                size={size}
+                {...passThemeFlag}
+              >
                 <ExpanderCell
                   background={
                     (isSelected && cellProps.selected.background) ||
                     cellProps.background
                   }
+                  expandLabel={ariaLabel}
                   border={cellProps.border}
                   context={context}
+                  messages={messages}
                   pad={cellProps.pad}
                   onToggle={
                     context === 'groupHeader' ? onToggle(key) : undefined

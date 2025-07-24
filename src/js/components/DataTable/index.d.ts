@@ -86,6 +86,21 @@ export interface DataTableProps<TRowType = any> {
   fill?: boolean | 'vertical' | 'horizontal';
   gridArea?: GridAreaType;
   margin?: MarginType;
+  messages?: {
+    ascending?: string;
+    collapse?: string;
+    collapseAll?: string;
+    descending?: string;
+    expand?: string;
+    expandAll?: string;
+    resizerAria?: string;
+    rows?: string;
+    rowsChanged?: string;
+    rowsSingle?: string;
+    searchBy?: string;
+    total?: string;
+    totalSingle?: string;
+  };
   pad?: PadType | Sections<PadType>;
   paginate?: boolean | PaginationType | BoxProps;
   pin?: boolean | 'header' | 'footer';
@@ -99,7 +114,14 @@ export interface DataTableProps<TRowType = any> {
       pad?: PadType;
     };
   };
-  rowDetails?: (row: TRowType) => React.ReactNode;
+  rowDetails?:
+    | ((row: TRowType) => React.ReactNode)
+    | {
+        render: (row: TRowType) => React.ReactNode;
+        expand?: (string | number)[];
+        onExpand?: (expandedKeys: (string | number)[], datum: TRowType) => void;
+        expandLabel?: (datum: TRowType) => string;
+      };
   show?: number | { page?: number };
   size?: 'small' | 'medium' | 'large' | 'xlarge' | string;
 
@@ -112,6 +134,7 @@ export interface DataTableProps<TRowType = any> {
         property?: string;
         expand?: Array<string>;
         expandable?: Array<string>;
+        expandLabel?: (datum: TRowType) => string;
         select?: { [key: string]: 'all' | 'some' | 'none' };
         onExpand?: (expandedKeys: string[]) => void;
         onSelect?: (

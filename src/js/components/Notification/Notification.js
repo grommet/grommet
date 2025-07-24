@@ -4,6 +4,7 @@ import React, {
   useState,
   useMemo,
   Fragment,
+  useContext,
 } from 'react';
 import styled from 'styled-components';
 
@@ -13,6 +14,9 @@ import { Button } from '../Button';
 import { Layer } from '../Layer';
 import { Paragraph } from '../Paragraph';
 import { Text } from '../Text';
+// eslint-disable-next-line max-len
+import { AnnounceContext } from '../../contexts/AnnounceContext/AnnounceContext';
+import { MessageContext } from '../../contexts/MessageContext';
 
 import { NotificationType } from './propTypes';
 import { useThemeValue } from '../../utils/useThemeValue';
@@ -70,6 +74,7 @@ const NotificationAnchor = styled(Anchor)`
 const Notification = ({
   actions: actionsProp,
   message: messageProp,
+  messages,
   onClose,
   id,
   global,
@@ -84,8 +89,31 @@ const Notification = ({
     toast && toast?.autoClose === undefined ? true : toast.autoClose;
   const { theme } = useThemeValue();
   const [visible, setVisible] = useState(true);
-
+  const { format } = useContext(MessageContext);
   const position = useMemo(() => (toast && toast?.position) || 'top', [toast]);
+
+  const announce = useContext(AnnounceContext);
+  useEffect(() => {
+    if (visible && toast) {
+      const announceText =
+        typeof messageProp === 'string' ? `${title}. ${messageProp}` : title;
+
+      announce(
+        announceText,
+        'polite',
+        time || theme.notification.toast.time || theme.notification.time,
+      );
+    }
+  }, [
+    announce,
+    visible,
+    toast,
+    messageProp,
+    title,
+    theme.notification.toast.time,
+    theme.notification.time,
+    time,
+  ]);
 
   const close = useCallback(
     (event) => {
@@ -94,7 +122,6 @@ const Notification = ({
     },
     [onClose],
   );
-
   useEffect(() => {
     if (autoClose) {
       const timer = setTimeout(
@@ -234,6 +261,10 @@ const Notification = ({
         <Box pad={closeButtonPad}>
           <Box {...theme.notification.textContainer}>
             <Button
+              a11yTitle={format({
+                id: 'notification.close',
+                messages,
+              })}
               icon={
                 <CloseIcon
                   color={closeIconColor}
@@ -255,7 +286,7 @@ const Notification = ({
     content = visible && (
       <Layer
         {...theme.notification.toast.layer}
-        role="log"
+        role="status"
         modal={false}
         onEsc={onClose}
         id={id}

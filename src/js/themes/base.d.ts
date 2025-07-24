@@ -15,6 +15,7 @@ import {
   ColorType,
   DeepReadonly,
   DirectionType,
+  EdgeSizeType,
   ElevationType,
   GapType,
   GraphColorsType,
@@ -423,6 +424,24 @@ export interface ThemeType {
             blur?: string;
           };
       twoColor?: boolean;
+      inset?: {
+        border?: {
+          color?: ColorType;
+        };
+        outline?: {
+          color?: ColorType;
+          size?: string;
+          offset?: string;
+        };
+        shadow?:
+          | string
+          | {
+              color?: ColorType;
+              size?: string;
+              blur?: string;
+            };
+        twoColor?: boolean;
+      };
     };
     font?: {
       face?: string;
@@ -1672,6 +1691,7 @@ export interface ThemeType {
     };
     edge?: {
       type?: string;
+      size?: EdgeSizeType | string;
     };
   };
   select?: {

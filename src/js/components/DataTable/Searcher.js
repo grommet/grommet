@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useContext, useEffect, useRef, useState } from 'react';
 
 import { FormSearch } from 'grommet-icons/icons/FormSearch';
 
@@ -7,13 +7,25 @@ import { Button } from '../Button';
 import { Keyboard } from '../Keyboard';
 import { Text } from '../Text';
 import { TextInput } from '../TextInput';
+import { MessageContext } from '../../contexts/MessageContext';
 import { normalizeColor } from '../../utils';
 import { useThemeValue } from '../../utils/useThemeValue';
 
-const Searcher = ({ filtering, filters, onFilter, onFiltering, property }) => {
+const Searcher = ({
+  filtering,
+  filters,
+  focusIndicator,
+  messages,
+  onFilter,
+  onFiltering,
+  property,
+}) => {
   const { theme } = useThemeValue();
   const inputRef = useRef();
+  const buttonRef = useRef();
   const needsFocus = filtering === property;
+  const [buttonNeedsFocus, setButtonNeedsFocus] = useState(false);
+  const { format } = useContext(MessageContext);
 
   useEffect(() => {
     if (inputRef && needsFocus) {
@@ -21,13 +33,33 @@ const Searcher = ({ filtering, filters, onFilter, onFiltering, property }) => {
     }
   }, [needsFocus, inputRef]);
 
+  // Focus the button after closing the search
+  useEffect(() => {
+    if (buttonNeedsFocus && buttonRef.current) {
+      buttonRef.current.focus();
+      setButtonNeedsFocus(false);
+    }
+  }, [buttonNeedsFocus]);
+
+  const a11yTitle = format({
+    id: 'dataTable.searchBy',
+    messages,
+    values: {
+      property,
+    },
+  });
   return filtering === property ? (
-    <Keyboard onEsc={() => onFiltering(undefined)}>
-      {/* TO DO theme object */}
+    <Keyboard
+      onEsc={() => {
+        onFiltering(undefined);
+        setButtonNeedsFocus(true);
+      }}
+    >
+      {/* TO DO add theme object */}
       <Box width={{ min: 'xsmall' }} flex pad={{ horizontal: 'small' }}>
         <TextInput
           name={`search-${property}`}
-          a11yTitle={`Search by ${property}`}
+          a11yTitle={a11yTitle}
           ref={inputRef}
           value={filters[property]}
           onChange={(event) => onFilter(property, event.target.value)}
@@ -49,7 +81,8 @@ const Searcher = ({ filtering, filters, onFilter, onFiltering, property }) => {
         </Box>
       ) : null}
       <Button
-        a11yTitle={`Open search by ${property}`}
+        ref={buttonRef}
+        a11yTitle={a11yTitle}
         icon={
           <FormSearch
             color={normalizeColor(
@@ -59,6 +92,7 @@ const Searcher = ({ filtering, filters, onFilter, onFiltering, property }) => {
           />
         }
         hoverIndicator
+        focusIndicator={focusIndicator}
         onClick={() =>
           onFiltering(filtering === property ? undefined : property)
         }

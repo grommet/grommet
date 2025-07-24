@@ -33,7 +33,7 @@ import { useThemeValue } from '../../utils/useThemeValue';
 const VOLUME_STEP = 0.166667;
 
 const formatTime = (time) => {
-  let minutes = Math.round(time / 60);
+  let minutes = Math.trunc(time / 60);
   if (minutes < 10) {
     minutes = `0${minutes}`;
   }
