@@ -20,9 +20,6 @@ import { MessageContext } from '../../contexts/MessageContext';
 // not too wide to cause false hits.
 const STEP = 12; // Used to determine the width change on resize
 
-// Added a temporary min-width of 2px here so that the element doesn't
-// end up with a width of 0px. This is a placeholder solution until we
-// revisit this in https://github.com/grommet/grommet/issues/7273
 const StyledResizer = styled(DropButton)`
   display: flex;
   justify-content: center;
