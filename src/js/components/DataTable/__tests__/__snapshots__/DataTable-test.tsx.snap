@@ -4082,7 +4082,7 @@ exports[`DataTable custom theme 2`] = `
           style="box-sizing: border-box; position: relative; overflow: visible;"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 kuLnal"
+            class="StyledBox-sc-13pk1d4-0 doOSIY"
           >
             <button
               class="StyledButton-sc-323bzc-0 hHREQh Header__StyledHeaderCellButton-sc-1baku5q-0 kFaTHr"
@@ -24884,9 +24884,9 @@ exports[`DataTable rowDetails condtional 1`] = `
             class="c15"
           >
             one
-             :
+             : 
             1.2
-
+             
           </div>
         </td>
       </tr>
