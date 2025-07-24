@@ -47,26 +47,17 @@ const Resizer = ({ onResize, property, headerText, messages, headerId }) => {
   const thRef = useRef();
   const { format } = useContext(MessageContext);
 
-  // Set the initial width based on the TH element's width
+  // Set the initial width based on the TH element's width and
+  // store th element ref
   useEffect(() => {
     if (ref.current) {
       let element = ref.current;
       // find TH parent
       while (element && element.nodeName !== 'TH') element = element.parentNode;
+      thRef.current = element;
       const rect = element.getBoundingClientRect();
       // Set initial width based on the TH element's width
       setWidth(rect.width);
-    }
-  }, [ref]);
-
-  useEffect(() => {
-    if (ref.current) {
-      let element = ref.current;
-      // find TH parent
-      while (element && element.nodeName !== 'TH') {
-        element = element.parentNode;
-      }
-      thRef.current = element;
     }
   }, []);
 
@@ -154,6 +145,28 @@ const Resizer = ({ onResize, property, headerText, messages, headerId }) => {
     [onResize, property],
   );
 
+  const onDecrease = useCallback(() => {
+    if (thRef.current) {
+      const element = thRef.current;
+      const rect = element.getBoundingClientRect();
+      const currentWidth = rect.width;
+      const nextWidth = Math.max(STEP, currentWidth - STEP);
+      setWidth(nextWidth);
+      onResize(property, nextWidth);
+    }
+  }, [onResize, property]);
+
+  const onIncrease = useCallback(() => {
+    if (thRef.current) {
+      const element = thRef.current;
+      const rect = element.getBoundingClientRect();
+      const currentWidth = rect.width;
+      const nextWidth = Math.max(STEP, currentWidth + STEP);
+      setWidth(nextWidth);
+      onResize(property, nextWidth);
+    }
+  }, [onResize, property]);
+
   const [hover, setHover] = useState(false);
   const ariaLabel = format({
     id: 'dataTable.resizerAria',
@@ -192,16 +205,7 @@ const Resizer = ({ onResize, property, headerText, messages, headerId }) => {
                 messages,
               })}
               icon={<Subtract />}
-              onClick={() => {
-                if (thRef.current) {
-                  const element = thRef.current;
-                  const rect = element.getBoundingClientRect();
-                  const currentWidth = rect.width;
-                  const nextWidth = Math.max(STEP, currentWidth - STEP);
-                  setWidth(nextWidth);
-                  onResize(property, nextWidth);
-                }
-              }}
+              onClick={onDecrease}
               autoFocus
             />
             <Button
@@ -211,16 +215,7 @@ const Resizer = ({ onResize, property, headerText, messages, headerId }) => {
                 messages,
               })}
               icon={<Add />}
-              onClick={() => {
-                if (thRef.current) {
-                  const element = thRef.current;
-                  const rect = element.getBoundingClientRect();
-                  const currentWidth = rect.width;
-                  const nextWidth = Math.max(STEP, currentWidth + STEP);
-                  setWidth(nextWidth);
-                  onResize(property, nextWidth);
-                }
-              }}
+              onClick={onIncrease}
             />
           </Box>
         }
