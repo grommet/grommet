@@ -448,15 +448,14 @@ const Header = forwardRef(
                     {content}
                     {searcher && onResize ? (
                       <Box
-                        // padding right set to half (12px) of resizer
-                        // width (24px) to gives extra room for resizer control.
-                        pad={{ right: '12px' }}
                         flex={{
                           shrink: filtering === property ? 1 : 0,
                         }}
                         direction={filtering === property ? 'column' : 'row'}
+                        // 12px right margin for search icon container gives
+                        // an extra space before resizer control.
                         margin={{
-                          right: 'xsmall',
+                          right: '12px',
                         }}
                       >
                         {searcher}
