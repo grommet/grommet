@@ -12,13 +12,22 @@ export interface FileInputProps {
   id?: string;
   maxSize?: number;
   messages?: {
+    alert?: {
+      maxFile?: string;
+      maxSize?: string;
+    };
     browse?: string;
     dropPrompt?: string;
     dropPromptMultiple?: string;
     files?: string;
+    maxFile?: string;
+    maxSizeSingle?: string;
+    maxSizeMultiple?: {
+      singular?: string;
+      plural?: string;
+    };
     remove?: string;
     removeAll?: string;
-    maxFile?: string;
   };
   multiple?: boolean | { aggregateThreshold?: number; max?: number };
   name?: string;

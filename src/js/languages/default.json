@@ -87,6 +87,10 @@
     "label": "View"
   },
   "fileInput": {
+    "alert": {
+      "maxFile": "Error, {fileName} exceeds {maxFile} files limit.",
+      "maxSize": "Error, {fileName} exceeds {maxSize} limit."
+    },
     "browse": "browse",
     "dropPrompt": "Drop file here or",
     "dropPromptMultiple": "Drop files here or",
@@ -94,10 +98,10 @@
     "maxFile": "Attach a maximum of {max} files only.",
     "maxSizeSingle": "The file is too large. Select a file no larger than {maxSize}.",
     "maxSizeMultiple": {
-      "singular": "One file is too large. Select files which are no larger than {maxSize}.",
+      "singular": "{fileName} file is too large. Select files which are no larger than {maxSize}.",
       "plural": "{numOfFiles} files are too large. Select files which are no larger than {maxSize}."
     },
-    "remove": "remove",
+    "remove": "remove {fileName}",
     "removeAll": "remove all"
   },
   "form": {
