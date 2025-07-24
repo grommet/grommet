@@ -452,8 +452,8 @@ const Header = forwardRef(
                           shrink: filtering === property ? 1 : 0,
                         }}
                         direction={filtering === property ? 'column' : 'row'}
-                        // 12px right margin for search icon container gives
-                        // an extra space before resizer control.
+                        // margin right set to half (12px) of resizer width
+                        // (24px) to prevent overlap with resizer control."
                         margin={{
                           right: '12px',
                         }}
