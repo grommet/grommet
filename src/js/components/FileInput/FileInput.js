@@ -113,7 +113,7 @@ const FileInput = forwardRef(
       value: valueProp,
       initialValue: [],
       validate: [
-        maxSize
+        typeof maxSize === 'number'
           ? () => {
               const fileList = [...files];
               let message = '';
@@ -131,6 +131,7 @@ const FileInput = forwardRef(
                   id: messageId,
                   messages,
                   values: {
+                    fileName: fileList.find(({ size }) => size > maxSize)?.name,
                     maxSize: formatBytes(maxSize),
                     numOfFiles: numOfInvalidFiles,
                   },
@@ -292,6 +293,10 @@ const FileInput = forwardRef(
             multiple={multiple}
             disabled={disabled}
             plain
+            aria-invalid={
+              (maxSize && files.some((f) => f.size > maxSize)) ||
+              (max != null && files.length > max)
+            }
             rightOffset={rightOffset}
             {...passThemeFlag}
             {...rest}
@@ -459,103 +464,126 @@ const FileInput = forwardRef(
           )}
           {files.length > 0 &&
             files.length <= aggregateThreshold &&
-            files.map((file, index) => (
-              <Box
-                key={file.name}
-                justify="between"
-                direction="row"
-                align="center"
-              >
-                {renderFile ? (
-                  renderFile(file)
-                ) : (
-                  <Box
-                    {...theme.fileInput.label}
-                    gap="xsmall"
-                    align="center"
-                    direction="row"
-                  >
-                    {((maxSize && file.size > maxSize) ||
-                      (max && index >= max)) && <CircleAlert />}
-                    <Label
-                      weight={
-                        theme.global.input.weight ||
-                        theme.global.input.font.weight
-                      }
-                      truncate
-                      {...passThemeFlag}
+            files.map((file, index) => {
+              let messageId = '';
+              if (maxSize && file.size > maxSize) {
+                messageId = 'fileInput.alert.maxSize';
+              } else if (max && index >= max) {
+                messageId = 'fileInput.alert.maxFile';
+              }
+              return (
+                <Box
+                  key={file.name}
+                  justify="between"
+                  direction="row"
+                  align="center"
+                >
+                  {renderFile ? (
+                    renderFile(file)
+                  ) : (
+                    <Box
+                      {...theme.fileInput.label}
+                      gap="xsmall"
+                      align="center"
+                      direction="row"
                     >
-                      {file.name}
-                    </Label>
-                  </Box>
-                )}
-                <Box flex={false} direction="row" align="center">
-                  <Button
-                    ref={index ? undefined : removeRef}
-                    a11yTitle={`${format({
-                      id: 'fileInput.remove',
-                      messages,
-                    })} ${file.name}`}
-                    icon={<RemoveIcon />}
-                    hoverIndicator
-                    disabled={disabled}
-                    onClick={(event) => {
-                      if (confirmRemove) {
-                        event.persist(); // necessary for when React < v17
-                        setPendingRemoval({ event, index });
-                        setShowRemoveConfirmation(true);
-                      } else removeFile(index);
-                    }}
-                  />
-                  {files.length === 1 && (
-                    <Keyboard
-                      onSpace={(event) => {
-                        if (controlRef.current === event.target)
-                          inputRef.current.click();
-                      }}
-                      onEnter={(event) => {
-                        if (controlRef.current === event.target)
-                          inputRef.current.click();
-                      }}
-                    >
-                      {theme.fileInput.button ? (
-                        <Button
-                          // The focus here is redundant for keyboard users
-                          tabIndex={-1}
-                          disabled={disabled}
-                          ref={controlRef}
-                          kind={theme.fileInput.button}
-                          label={format({
-                            id: 'fileInput.browse',
+                      {((typeof maxSize === 'number' && file.size > maxSize) ||
+                        (typeof max === 'number' && index >= max)) && (
+                        <CircleAlert
+                          a11yTitle={format({
+                            id: messageId,
                             messages,
-                          })}
-                          onClick={() => {
-                            inputRef.current.click();
-                            inputRef.current.focus();
-                          }}
-                        />
-                      ) : (
-                        <Anchor
-                          // The focus here is redundant for keyboard users
-                          tabIndex={-1}
-                          disabled={disabled}
-                          ref={controlRef}
-                          margin="small"
-                          onClick={() => {
-                            inputRef.current.click();
-                            inputRef.current.focus();
-                          }}
-                          label={format({
-                            id: 'fileInput.browse',
-                            messages,
+                            values: {
+                              maxFile: max,
+                              fileName: file.name,
+                              maxSize: formatBytes(maxSize),
+                            },
                           })}
                         />
                       )}
-                    </Keyboard>
+                      <Label
+                        weight={
+                          theme.global.input.weight ||
+                          theme.global.input.font.weight
+                        }
+                        truncate
+                        {...passThemeFlag}
+                      >
+                        {file.name}
+                      </Label>
+                    </Box>
                   )}
+                  <Box flex={false} direction="row" align="center">
+                    <Button
+                      ref={index ? undefined : removeRef}
+                      a11yTitle={format({
+                        id: 'fileInput.remove',
+                        messages,
+                        values: {
+                          fileName: file.name,
+                        },
+                      })}
+                      icon={<RemoveIcon />}
+                      hoverIndicator
+                      disabled={disabled}
+                      onClick={(event) => {
+                        if (confirmRemove) {
+                          event.persist(); // necessary for when React < v17
+                          setPendingRemoval({ event, index });
+                          setShowRemoveConfirmation(true);
+                        } else removeFile(index);
+                      }}
+                    />
+                    {files.length === 1 && (
+                      <Keyboard
+                        onSpace={(event) => {
+                          if (controlRef.current === event.target)
+                            inputRef.current.click();
+                        }}
+                        onEnter={(event) => {
+                          if (controlRef.current === event.target)
+                            inputRef.current.click();
+                        }}
+                      >
+                        {theme.fileInput.button ? (
+                          <Button
+                            // The focus here is redundant for keyboard users
+                            tabIndex={-1}
+                            disabled={disabled}
+                            ref={controlRef}
+                            kind={theme.fileInput.button}
+                            label={format({
+                              id: 'fileInput.browse',
+                              messages,
+                            })}
+                            onClick={() => {
+                              inputRef.current.click();
+                              inputRef.current.focus();
+                            }}
+                          />
+                        ) : (
+                          <Anchor
+                            // The focus here is redundant for keyboard users
+                            tabIndex={-1}
+                            disabled={disabled}
+                            ref={controlRef}
+                            margin="small"
+                            onClick={() => {
+                              inputRef.current.click();
+                              inputRef.current.focus();
+                            }}
+                            label={format({
+                              id: 'fileInput.browse',
+                              messages,
+                            })}
+                          />
+                        )}
+                      </Keyboard>
+                    )}
+                  </Box>
                 </Box>
-              </Box>
-            ))}
+              );
+            })}
         </ContentsBox>
         {showRemoveConfirmation && (
           <ConfirmRemove
