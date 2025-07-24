@@ -89,6 +89,7 @@ export const RowDetails = () => {
     () => ({
       render: (row) => <ShipProperties ship={row} />,
       expand,
+      expandLabel: (row) => `details for ${row.name}`,
       onExpand: (nextExpand /* , datum */) => setExpand(nextExpand),
     }),
     [expand],

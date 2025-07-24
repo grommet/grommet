@@ -79,7 +79,11 @@ export interface GrommetProps {
       };
       dataTable?: {
         ascending?: string;
+        collapse?: string;
+        collapseAll?: string;
         descending?: string;
+        expand?: string;
+        expandAll?: string;
         resizerAria?: string;
         rows?: string;
         rowsChanged?: string;
@@ -105,6 +109,10 @@ export interface GrommetProps {
         label?: string;
       };
       fileInput?: {
+        alert?: {
+          maxFile?: string;
+          maxSize?: string;
+        };
         browse?: string;
         dropPrompt?: string;
         dropPromptMultiple?: string;
