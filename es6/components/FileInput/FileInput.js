@@ -106,7 +106,7 @@ var FileInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
       name: name,
       value: valueProp,
       initialValue: [],
-      validate: [maxSize ? function () {
+      validate: [typeof maxSize === 'number' ? function () {
         var fileList = [].concat(files);
         var message = '';
         var numOfInvalidFiles = fileList.filter(function (_ref2) {
@@ -114,6 +114,7 @@ var FileInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
           return size > maxSize;
         }).length;
         if (numOfInvalidFiles) {
+          var _fileList$find;
           var messageId = 'fileInput.maxSizeSingle';
           if (multiple) {
             messageId = "fileInput.maxSizeMultiple." + (numOfInvalidFiles === 1 ? 'singular' : 'plural');
@@ -122,6 +123,10 @@ var FileInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
             id: messageId,
             messages: messages,
             values: {
+              fileName: (_fileList$find = fileList.find(function (_ref3) {
+                var size = _ref3.size;
+                return size > maxSize;
+              })) == null ? void 0 : _fileList$find.name,
               maxSize: formatBytes(maxSize),
               numOfFiles: numOfInvalidFiles
             }
@@ -262,6 +267,9 @@ var FileInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
     multiple: multiple,
     disabled: disabled,
     plain: true,
+    "aria-invalid": maxSize && files.some(function (f) {
+      return f.size > maxSize;
+    }) || max != null && files.length > max,
     rightOffset: rightOffset
   }, passThemeFlag, rest, {
     onDragOver: function onDragOver() {
@@ -411,6 +419,12 @@ var FileInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
       messages: messages
     })
   })))), files.length > 0 && files.length <= aggregateThreshold && files.map(function (file, index) {
+    var messageId = '';
+    if (maxSize && file.size > maxSize) {
+      messageId = 'fileInput.alert.maxSize';
+    } else if (max && index >= max) {
+      messageId = 'fileInput.alert.maxFile';
+    }
     return /*#__PURE__*/React.createElement(Box, {
       key: file.name,
       justify: "between",
@@ -420,7 +434,17 @@ var FileInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
       gap: "xsmall",
       align: "center",
       direction: "row"
-    }), (maxSize && file.size > maxSize || max && index >= max) && /*#__PURE__*/React.createElement(CircleAlert, null), /*#__PURE__*/React.createElement(Label, _extends({
+    }), (typeof maxSize === 'number' && file.size > maxSize || typeof max === 'number' && index >= max) && /*#__PURE__*/React.createElement(CircleAlert, {
+      a11yTitle: format({
+        id: messageId,
+        messages: messages,
+        values: {
+          maxFile: max,
+          fileName: file.name,
+          maxSize: formatBytes(maxSize)
+        }
+      })
+    }), /*#__PURE__*/React.createElement(Label, _extends({
       weight: theme.global.input.weight || theme.global.input.font.weight,
       truncate: true
     }, passThemeFlag), file.name)), /*#__PURE__*/React.createElement(Box, {
@@ -431,8 +455,11 @@ var FileInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
       ref: index ? undefined : removeRef,
       a11yTitle: format({
         id: 'fileInput.remove',
-        messages: messages
-      }) + " " + file.name,
+        messages: messages,
+        values: {
+          fileName: file.name
+        }
+      }),
       icon: /*#__PURE__*/React.createElement(RemoveIcon, null),
       hoverIndicator: true,
       disabled: disabled,

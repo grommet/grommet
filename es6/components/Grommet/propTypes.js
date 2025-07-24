@@ -111,6 +111,10 @@ if (process.env.NODE_ENV !== 'production') {
           label: PropTypes.string
         }),
         fileInput: PropTypes.shape({
+          alert: PropTypes.shape({
+            maxFile: PropTypes.string,
+            maxSize: PropTypes.string
+          }),
           browse: PropTypes.string,
           dropPrompt: PropTypes.string,
           dropPromptMultiple: PropTypes.string,

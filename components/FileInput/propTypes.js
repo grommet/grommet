@@ -10,11 +10,22 @@ if (process.env.NODE_ENV !== 'production') {
     confirmRemove: _propTypes["default"].func,
     disabled: _propTypes["default"].bool,
     id: _propTypes["default"].string,
+    maxSize: _propTypes["default"].number,
     messages: _propTypes["default"].shape({
+      alert: _propTypes["default"].shape({
+        maxFile: _propTypes["default"].string,
+        maxSize: _propTypes["default"].string
+      }),
       browse: _propTypes["default"].string,
       dropPrompt: _propTypes["default"].string,
       dropPromptMultiple: _propTypes["default"].string,
       files: _propTypes["default"].string,
+      maxFile: _propTypes["default"].string,
+      maxSizeSingle: _propTypes["default"].string,
+      maxSizeMultiple: _propTypes["default"].shape({
+        singular: _propTypes["default"].string,
+        plural: _propTypes["default"].string
+      }),
       remove: _propTypes["default"].string,
       removeAll: _propTypes["default"].string
     }),

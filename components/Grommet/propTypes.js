@@ -116,6 +116,10 @@ if (process.env.NODE_ENV !== 'production') {
           label: _propTypes["default"].string
         }),
         fileInput: _propTypes["default"].shape({
+          alert: _propTypes["default"].shape({
+            maxFile: _propTypes["default"].string,
+            maxSize: _propTypes["default"].string
+          }),
           browse: _propTypes["default"].string,
           dropPrompt: _propTypes["default"].string,
           dropPromptMultiple: _propTypes["default"].string,
