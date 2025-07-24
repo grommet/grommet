@@ -454,6 +454,10 @@ const Header = forwardRef(
                         direction={filtering === property ? 'column' : 'row'}
                         // margin right set to half (12px) of resizer width
                         // (24px) to prevent overlap with resizer control."
+                        // this also creates enough space when search input
+                        // is open. so, padding right is not needed for
+                        // the search input box any longer.
+                        // see Searcher.js
                         margin={{
                           right: '12px',
                         }}

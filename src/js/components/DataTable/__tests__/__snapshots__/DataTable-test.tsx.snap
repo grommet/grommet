@@ -26254,7 +26254,6 @@ exports[`DataTable search 2`] = `
   min-width: 96px;
   flex: 1 1;
   padding-left: 12px;
-  padding-right: 12px;
 }
 
 .c2 {
@@ -26327,7 +26326,6 @@ exports[`DataTable search 2`] = `
 @media only screen and (max-width: 768px) {
   .c0 {
     padding-left: 6px;
-    padding-right: 6px;
   }
 }
 

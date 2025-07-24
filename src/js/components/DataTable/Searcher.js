@@ -55,7 +55,13 @@ const Searcher = ({
         setButtonNeedsFocus(true);
       }}
     >
-      <Box width={{ min: 'xsmall' }} flex pad={{ horizontal: 'small' }}>
+      <Box
+        width={{ min: 'xsmall' }}
+        flex
+        // padding right is not needed any longer. There is margin
+        // right set already on the container, see Header.js
+        pad={{ left: 'small' }}
+      >
         <TextInput
           name={`search-${property}`}
           a11yTitle={a11yTitle}
