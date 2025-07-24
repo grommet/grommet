@@ -10,7 +10,6 @@ import {
 import { StyledMeter } from './StyledMeter';
 import { strokeProps, defaultColor, fillProps } from './utils';
 import { useThemeValue } from '../../utils/useThemeValue';
-import { calcAngle } from '../../utils/graphics';
 
 const Circle = forwardRef((props, ref) => {
   const { background, max, round, size, thickness, type, values, ...rest } =
@@ -33,7 +32,7 @@ const Circle = forwardRef((props, ref) => {
 
   const anglePer =
     Math.floor(((type === 'semicircle' ? 180 : 360) / max) * scale) / scale;
-  //  (type === 'semicircle' ? 180 : 360) / max;
+
   const someHighlight = (values || []).some((v) => v.highlight);
 
   const gapTheme = theme.meter?.gap ?? '0';
@@ -42,7 +41,6 @@ const Circle = forwardRef((props, ref) => {
   let startValue = 0;
   let startAngle = type === 'semicircle' ? 270 : 0;
   const paths = [];
-  let pathCaps = [];
 
   (values || [])
     .filter((v) => v.value > 0)
@@ -74,99 +72,39 @@ const Circle = forwardRef((props, ref) => {
         theme,
       );
 
-      if (round) {
-        const d1 = arcCommands(centerX, centerY, radius, startAngle, endAngle);
-        paths.unshift(
-          <path
-            key={key}
-            d={d1}
-            fill="none"
-            {...stroke}
-            strokeWidth={strokeWidth}
-            strokeLinecap="round"
-            {...hoverProps}
-            {...pathRest}
-          />,
-        );
+      const outerRadius = width / 2;
+      const innerRadius = type === 'pie' ? 0 : width / 2 - strokeWidth;
 
-        if (gap > 0) {
-          paths.unshift(
-            <path
-              key={`${key}-gap`}
-              d={arcCommands(
-                centerX,
-                centerY,
-                radius,
-                endAngle,
-                calcAngle(radius, endAngle, gap),
-              )}
-              fill="none"
-              {...strokeProps(background, theme)}
-              strokeWidth={strokeWidth}
-              strokeLinecap="round"
-              {...hoverProps}
-              {...pathRest}
-            />,
-          );
-        };
-        // To handle situations where the last values are small, redraw
-        // a dot at the end. Give just a bit of angle to avoid anti-aliasing
-        // leakage around the edge.
-        const d2 = arcCommands(
-          centerX,
-          centerY,
-          radius,
-          endAngle - 0.5,
-          endAngle,
-        );
-        const pathCap = (
-          <path
-            key={`${key}-`}
-            d={d2}
-            fill="none"
-            {...stroke}
-            strokeWidth={strokeWidth}
-            strokeLinecap="round"
-            {...hoverProps}
-            {...pathRest}
-          />
-        );
-        // If we are on a large enough path to not need re-drawing previous
-        // ones, clear the pathCaps we've collected already.
-        if (endAngle - startAngle > 2 * anglePer) {
-          pathCaps = [];
-        }
-        pathCaps.unshift(pathCap);
-      } else {
-        const outerRadius = width / 2;
-        const innerRadius = type === 'pie' ? 0 : width / 2 - strokeWidth;
+      const isSemi = type === 'semicircle';
+      const startGap = index === 0 && isSemi ? 0 : gap / 2;
+      const endGap = index === length - 1 && isSemi ? 0 : -gap / 2;
+      const startRound = index === 0 && isSemi ? false : round;
 
-        const isSemi = type === 'semicircle';
-        const leftGap = index === 0 && isSemi ? 0 : gap / 2;
-        const rightGap = index === length - 1 && isSemi ? 0 : -gap / 2;
-        const d = wedgeCommands(
-          centerX,
-          centerY,
-          outerRadius,
-          innerRadius,
-          startAngle,
-          endAngle,
-          leftGap,
-          rightGap,
-        );
-        paths.push(
-          <path
-            key={key}
-            d={d}
-            {...fill}
-            {...stroke}
-            strokeWidth={0}
-            strokeLinecap="butt"
-            {...hoverProps}
-            {...pathRest}
-          />,
-        );
-      }
+      const d = wedgeCommands(
+        centerX,
+        centerY,
+        outerRadius,
+        innerRadius,
+        startAngle,
+        endAngle,
+        startGap,
+        endGap,
+        startRound,
+        round,
+        index === 0 ? 1 : 0,
+      );
+      paths.push(
+        <path
+          key={key}
+          d={d}
+          {...fill}
+          {...stroke}
+          strokeWidth={0}
+          strokeLinecap="butt"
+          {...hoverProps}
+          {...pathRest}
+        />,
+      );
 
       startValue += value;
       startAngle = endAngle;
@@ -211,7 +149,6 @@ const Circle = forwardRef((props, ref) => {
     >
       {track}
       {paths}
-      {pathCaps}
     </StyledMeter>
   );
 });

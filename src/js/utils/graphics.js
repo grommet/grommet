@@ -120,6 +120,9 @@ export const wedgeCommands = (
   endAngle,
   startGap,
   endGap,
+  startRound,
+  endRound,
+  startRoundDirection = 0,
 ) => {
   // handle that we can't draw a complete circle
   let normalizedEndAngle = endAngle;
@@ -131,13 +134,24 @@ export const wedgeCommands = (
   if (endAngle > startAngle && endAngle - startAngle >= 360) {
     normalizedEndAngle = startAngle + 359.99;
   }
+
+  // if we're rounded we need to ajust the start points to
+  // account for a bigger cap radius
+
+  // add a little bit extra to start to allow for larger rounded inset cap
+  // The extra needed can be calculated by the Pythagorean theorem
+  const thickness = outerRadius - innerRadius;
+  const extraGap = startRound
+    ? Math.sqrt((thickness / 2 + startGap / 4) ** 2 - (thickness / 2) ** 2)
+    : 0;
+
   const start = gapPoints(
     centerX,
     centerY,
     outerRadius,
     innerRadius,
     startAngle,
-    startGap,
+    startGap + extraGap,
   );
   const end = gapPoints(
     centerX,
@@ -159,22 +173,54 @@ export const wedgeCommands = (
     // we're doing a pie wedge
     innerArcSweep = arcSweep === '0' ? '1' : '0';
     if (largeAngle) {
-      // for a large pie wedge we need to round the inner corner
+      // for a large pie wedge it has an inner corner rather
+      // than a point. We need to round the inner corner
       innerCapRadius = startGap || endGap || 0;
     } else {
       // for a small pie wedge we'll make a point in the center
       middle = intersection(start.outer, start.inner, end.outer, end.inner);
     }
   }
+  const capRadius = (outerRadius - innerRadius) / 2;
   const startPoint = middle || start.inner;
   const endPoint = middle || end.inner;
+  const startCap = startRound
+    ? [
+        'A',
+        (capRadius + startGap / 2).toFixed(POST_DECIMAL_DIGITS),
+        (capRadius + startGap / 2).toFixed(POST_DECIMAL_DIGITS),
+        0,
+        0,
+        startRoundDirection,
+        start.outer.x.toFixed(POST_DECIMAL_DIGITS),
+        start.outer.y.toFixed(POST_DECIMAL_DIGITS),
+      ]
+    : [
+        'L',
+        start.outer.x.toFixed(POST_DECIMAL_DIGITS),
+        start.outer.y.toFixed(POST_DECIMAL_DIGITS),
+      ];
+  const endCap = endRound
+    ? [
+        'A',
+        capRadius.toFixed(POST_DECIMAL_DIGITS),
+        capRadius.toFixed(POST_DECIMAL_DIGITS),
+        0,
+        0,
+        1,
+        endPoint.x.toFixed(POST_DECIMAL_DIGITS),
+        endPoint.y.toFixed(POST_DECIMAL_DIGITS),
+      ]
+    : [
+        'L',
+        endPoint.x.toFixed(POST_DECIMAL_DIGITS),
+        endPoint.y.toFixed(POST_DECIMAL_DIGITS),
+      ];
   const d = [
     'M',
     startPoint.x.toFixed(POST_DECIMAL_DIGITS),
     startPoint.y.toFixed(POST_DECIMAL_DIGITS),
-    'L',
-    start.outer.x.toFixed(POST_DECIMAL_DIGITS),
-    start.outer.y.toFixed(POST_DECIMAL_DIGITS),
+    ...startCap,
     'A',
     outerRadius.toFixed(POST_DECIMAL_DIGITS),
     outerRadius.toFixed(POST_DECIMAL_DIGITS),
@@ -183,9 +229,7 @@ export const wedgeCommands = (
     1,
     end.outer.x.toFixed(POST_DECIMAL_DIGITS),
     end.outer.y.toFixed(POST_DECIMAL_DIGITS),
-    'L',
-    endPoint.x.toFixed(POST_DECIMAL_DIGITS),
-    endPoint.y.toFixed(POST_DECIMAL_DIGITS),
+    ...endCap,
   ];
   if (innerRadius > 0 || largeAngle) {
     // for a donut or a large pie wedge, draw the inner arc

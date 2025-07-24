@@ -40,21 +40,25 @@ const Bar = forwardRef((props, ref) => {
 
   // Available space for the bar is the length of the meter minus an end cap
   // on each end, minus the gap between bars.
-  const lengthAvailable = length - 2 * capRadius - (gap * (values.length - 1));
+  const lengthAvailable = length - 2 * capRadius - gap * (values.length - 1);
 
   const paths = (values || [])
     .reduce((acc, valueArg, index) => {
       if (valueArg.value > 0) {
         const { color, highlight, label, onHover, value, ...pathRest } =
-        valueArg;
+          valueArg;
         const key = `p-${index}`;
         const delta = (value * lengthAvailable) / max;
 
-        // add a little bit extra gap for clarity if it's rounded
-        const extraGap = round && index !== 0 ? gap * 1.5 : 0;
+        // add a little bit extra to start to allow for larger rounded inset cap
+        // The extra needed can be calculated by the Pythagorean theorem
+        const extraGap =
+          round && index !== 0
+            ? Math.sqrt((thickness / 2 + gap / 4) ** 2 - (thickness / 2) ** 2)
+            : 0;
         const initialStart =
           direction === 'horizontal' ? start + extraGap : start - extraGap;
-        
+
         // define the x,y points for the corners of the bar.
         const points =
           direction === 'horizontal'
@@ -70,9 +74,9 @@ const Bar = forwardRef((props, ref) => {
                 `0,${start - delta}`,
                 `${thickness},${start - delta}`,
               ];
-        
-        // if rounded, the starting cap is an arcs. All but the first bar
-        // will have a gap and a slightly larger radius 
+
+        // if rounded, the starting cap is an arc. All but the first bar
+        // will have a gap and a slightly larger radius
         const startRadius = index === 0 ? capRadius : capRadius + gap / 2;
         const startCap = round
           ? `A ${startRadius},${startRadius} 0 0 ${index === 0 ? 1 : 0} ${
@@ -106,12 +110,13 @@ const Bar = forwardRef((props, ref) => {
             stroke="none"
             {...hoverProps}
             {...pathRest}
-          />);
-               
+          />,
+        );
+
         if (direction === 'horizontal') {
           start += delta + gap;
         } else {
-          start -= (delta + gap);
+          start -= delta + gap;
         }
       }
       return acc;
