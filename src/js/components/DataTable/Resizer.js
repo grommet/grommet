@@ -6,14 +6,26 @@ import React, {
   useState,
 } from 'react';
 import styled from 'styled-components';
+import { Add } from 'grommet-icons/icons/Add';
+import { Subtract } from 'grommet-icons/icons/Subtract';
 
 import { Box } from '../Box';
+import { Button } from '../Button';
+import { DropButton } from '../DropButton';
 import { Keyboard } from '../Keyboard';
 import { useThemeValue } from '../../utils/useThemeValue';
 import { MessageContext } from '../../contexts/MessageContext';
-import { focusStyle, unfocusStyle } from '../../utils/styles';
 
-const StyledResizer = styled(Box)`
+// We determined 12 empirically as being wide enough to hit but
+// not too wide to cause false hits.
+const STEP = 12; // Used to determine the width change on resize
+
+const StyledResizer = styled(DropButton)`
+  display: flex;
+  justify-content: center;
+  padding-top: ${(props) => props.theme.global.edgeSize.xsmall};
+  padding-bottom: ${(props) => props.theme.global.edgeSize.xsmall};
+  margin-right: -${(props) => props.theme.global.edgeSize.small};
   position: absolute;
   right: 0;
   width: 24px;
@@ -21,14 +33,6 @@ const StyledResizer = styled(Box)`
   top: 0;
   cursor: col-resize;
   z-index: 1;
-  &:focus {
-    ${(props) =>
-      (!props.plain || props.focusIndicator) &&
-      focusStyle({ inset: props.focusIndicator === 'inset' })}
-  }
-  &:focus:not(:focus-visible) {
-    ${unfocusStyle()}
-  }
 `;
 
 const Resizer = ({ onResize, property, headerText, messages, headerId }) => {
@@ -37,43 +41,44 @@ const Resizer = ({ onResize, property, headerText, messages, headerId }) => {
   const [start, setStart] = useState();
   const [width, setWidth] = useState(0);
   const ref = useRef();
+  const thRef = useRef();
   const { format } = useContext(MessageContext);
 
-  // Set the initial width based on the TH element's width
+  // Set the initial width based on the TH element's width and
+  // store th element ref
   useEffect(() => {
     if (ref.current) {
       let element = ref.current;
       // find TH parent
       while (element && element.nodeName !== 'TH') element = element.parentNode;
+      thRef.current = element;
       const rect = element.getBoundingClientRect();
       // Set initial width based on the TH element's width
       setWidth(rect.width);
     }
-  }, [ref]);
+  }, []);
 
-  const onMouseDown = useCallback((event) => {
-    if (ref.current) {
-      let element = ref.current;
-      // find TH parent
-      while (element && element.nodeName !== 'TH') element = element.parentNode;
+  const onResizeStart = useCallback((event) => {
+    const clientX = event.touches ? event.touches[0].clientX : event.clientX;
+    if (thRef.current) {
+      const element = thRef.current;
       const rect = element.getBoundingClientRect();
-      setStart(event.clientX);
+      setStart(clientX);
       setWidth(rect.width);
       setActive(true);
     }
   }, []);
 
-  const onMouseMove = useCallback(
+  const onResizeMove = useCallback(
     (event) => {
-      // We determined 12 empirically as being wide enough to hit but
-      // not too wide to cause false hits.
-      const nextWidth = Math.max(12, width + (event.clientX - start));
+      const clientX = event.touches ? event.touches[0].clientX : event.clientX;
+      const nextWidth = Math.max(STEP, width + (clientX - start));
       onResize(property, nextWidth);
     },
     [onResize, property, start, width],
   );
 
-  const onMouseUp = useCallback(() => {
+  const onResizeEnd = useCallback(() => {
     setActive(false);
     setStart(undefined);
     setWidth(undefined);
@@ -81,18 +86,23 @@ const Resizer = ({ onResize, property, headerText, messages, headerId }) => {
 
   useEffect(() => {
     const remove = () => {
-      document.removeEventListener('mouseup', onMouseUp);
-      document.removeEventListener('mousemove', onMouseMove);
+      document.removeEventListener('mouseup', onResizeEnd);
+      document.removeEventListener('mousemove', onResizeMove);
+      document.removeEventListener('touchend', onResizeEnd);
+      document.removeEventListener('touchmove', onResizeMove);
     };
 
     if (active) {
-      document.addEventListener('mouseup', onMouseUp);
-      document.addEventListener('mousemove', onMouseMove);
+      document.addEventListener('mouseup', onResizeEnd);
+      document.addEventListener('mousemove', onResizeMove);
+      document.addEventListener('touchend', onResizeEnd);
+      document.addEventListener('touchmove', onResizeMove);
+
       return remove;
     }
     remove();
     return undefined;
-  }, [active, onMouseMove, onMouseUp]);
+  }, [active, onResizeMove, onResizeEnd]);
 
   let border;
   if (
@@ -120,16 +130,39 @@ const Resizer = ({ onResize, property, headerText, messages, headerId }) => {
     (event) => {
       event.preventDefault();
       if (!ref.current) return;
-      let element = ref.current;
-      while (element && element.nodeName !== 'TH') element = element.parentNode;
-      const currentWidth = element.getBoundingClientRect().width;
-      // Used 12 here to align with the value set in onMouseMove
-      const delta = event.key === 'ArrowLeft' ? -12 : 12;
-      onResize(property, currentWidth + delta);
-      setWidth(currentWidth + delta);
+      if (thRef.current) {
+        const element = thRef.current;
+        const currentWidth = element.getBoundingClientRect().width;
+        // Used STEP here to align with the value set in onMouseMove
+        const delta = event.key === 'ArrowLeft' ? -STEP : STEP;
+        onResize(property, currentWidth + delta);
+        setWidth(currentWidth + delta);
+      }
     },
     [onResize, property],
   );
+
+  const onDecrease = useCallback(() => {
+    if (thRef.current) {
+      const element = thRef.current;
+      const rect = element.getBoundingClientRect();
+      const currentWidth = rect.width;
+      const nextWidth = Math.max(STEP, currentWidth - STEP);
+      setWidth(nextWidth);
+      onResize(property, nextWidth);
+    }
+  }, [onResize, property]);
+
+  const onIncrease = useCallback(() => {
+    if (thRef.current) {
+      const element = thRef.current;
+      const rect = element.getBoundingClientRect();
+      const currentWidth = rect.width;
+      const nextWidth = Math.max(STEP, currentWidth + STEP);
+      setWidth(nextWidth);
+      onResize(property, nextWidth);
+    }
+  }, [onResize, property]);
 
   const [hover, setHover] = useState(false);
   const ariaLabel = format({
@@ -141,18 +174,12 @@ const Resizer = ({ onResize, property, headerText, messages, headerId }) => {
   return (
     <Keyboard onLeft={onKeyDown} onRight={onKeyDown}>
       <StyledResizer
-        tabIndex={0}
         aria-label={
           width ? `${ariaLabel} ${Math.trunc(width)} pixels` : ariaLabel
         }
         onMouseEnter={() => setHover(true)}
         onMouseLeave={() => setHover(false)}
-        onMouseDown={onMouseDown}
-        onMouseMove={start !== undefined ? onMouseMove : undefined}
-        onMouseUp={start !== undefined ? onMouseUp : undefined}
         ref={ref}
-        pad={{ vertical: 'xsmall' }}
-        margin={{ right: `-${theme.global.edgeSize.small}` }}
         role="separator"
         aria-valuenow={width}
         aria-valuetext={
@@ -160,9 +187,39 @@ const Resizer = ({ onResize, property, headerText, messages, headerId }) => {
         }
         aria-controls={headerId}
         aria-orientation="vertical"
+        onMouseDown={onResizeStart}
+        onMouseMove={start !== undefined ? onResizeMove : undefined}
+        onMouseUp={start !== undefined ? onResizeEnd : undefined}
+        onTouchStart={onResizeStart}
+        onTouchMove={start !== undefined ? onResizeMove : undefined}
+        onTouchEnd={start !== undefined ? onResizeEnd : undefined}
+        dropContent={
+          <Box direction="row" pad="xsmall">
+            <Button
+              aria-label={format({
+                id: 'dataTable.decrease',
+                values: { headerText },
+                messages,
+              })}
+              icon={<Subtract />}
+              onClick={onDecrease}
+              autoFocus
+            />
+            <Button
+              aria-label={format({
+                id: 'dataTable.increase',
+                values: { headerText },
+                messages,
+              })}
+              icon={<Add />}
+              onClick={onIncrease}
+            />
+          </Box>
+        }
+        dropAlign={{ top: 'bottom' }}
       >
         <Box
-          border={hover ? hoverBorder : border}
+          border={hover || active ? hoverBorder : border}
           height="100%"
           alignSelf="center"
         />
