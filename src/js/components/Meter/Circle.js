@@ -38,8 +38,12 @@ const Circle = forwardRef((props, ref) => {
   const gapTheme = theme.meter?.gap ?? '0';
   const gap = parseMetricToNum(theme.global.edgeSize[gapTheme] || gapTheme);
 
+  const isSemi = type === 'semicircle';
+  const isFull =
+    values.reduce((total, currentValue) => total + currentValue.value, 0) >=
+    max;
   let startValue = 0;
-  let startAngle = type === 'semicircle' ? 270 : 0;
+  let startAngle = isSemi ? 270 : 0;
   const paths = [];
 
   (values || [])
@@ -52,7 +56,7 @@ const Circle = forwardRef((props, ref) => {
 
       let endAngle;
       if (startValue + value >= max) {
-        endAngle = type === 'semicircle' ? 90 : 360;
+        endAngle = isSemi ? 90 : 360;
       } else {
         endAngle = translateEndAngle(startAngle, anglePer, value);
       }
@@ -75,9 +79,16 @@ const Circle = forwardRef((props, ref) => {
       const outerRadius = width / 2;
       const innerRadius = type === 'pie' ? 0 : width / 2 - strokeWidth;
 
-      const isSemi = type === 'semicircle';
-      const startGap = index === 0 && isSemi ? 0 : gap / 2;
-      const endGap = index === length - 1 && isSemi ? 0 : -gap / 2;
+      // We want a start gap if there's another segment before this one.
+      // A circle's last segment can bump against the first segment if at max.
+      const startGap =
+        index === 0 && (isSemi || length === 1 || (length > 1 && !isFull))
+          ? 0
+          : gap / 2;
+
+      // Similarly, we only need an end gap if there's a segment after this one.
+      const endGap =
+        index === length - 1 && (isSemi || length === 1) ? 0 : -gap / 2;
       const startRound = index === 0 && isSemi ? false : round;
 
       const d = wedgeCommands(

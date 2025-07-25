@@ -33,10 +33,7 @@ const Bar = forwardRef((props, ref) => {
   const mid = thickness / 2;
 
   const someHighlight = (values || []).some((v) => v.highlight);
-  let start =
-    direction === 'horizontal'
-      ? capRadius
-      : (max * (length - 2 * capRadius)) / max;
+  let start = direction === 'horizontal' ? capRadius : length - capRadius;
 
   // Available space for the bar is the length of the meter minus an end cap
   // on each end, minus the gap between bars.

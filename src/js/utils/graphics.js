@@ -131,7 +131,7 @@ export const wedgeCommands = (
    for SemiCircle the endAngle will never be greater then startAngle 
    since it starts with a startAngle of 270.
  */
-  if (endAngle > startAngle && endAngle - startAngle >= 360) {
+  if (endAngle > startAngle && endAngle - startAngle >= 359.99) {
     normalizedEndAngle = startAngle + 359.99;
   }
 
@@ -158,7 +158,7 @@ export const wedgeCommands = (
     centerY,
     outerRadius,
     innerRadius,
-    endAngle,
+    normalizedEndAngle,
     endGap,
   );
 
