@@ -3493,18 +3493,6 @@ exports[`DataTable custom theme 1`] = `
   flex-direction: row;
 }
 
-.c10 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  margin-right: -12px;
-  min-width: 0;
-  min-height: 0;
-  flex-direction: column;
-  padding-top: 6px;
-  padding-bottom: 6px;
-}
-
 .c12 {
   display: flex;
   box-sizing: border-box;
@@ -3641,6 +3629,63 @@ exports[`DataTable custom theme 1`] = `
   border: 0;
 }
 
+.c10 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+}
+
+.c10:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c10:focus >circle,
+.c10:focus >ellipse,
+.c10:focus >line,
+.c10:focus >path,
+.c10:focus >polygon,
+.c10:focus >polyline,
+.c10:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c10:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c10:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c10:focus:not(:focus-visible) >circle,
+.c10:focus:not(:focus-visible) >ellipse,
+.c10:focus:not(:focus-visible) >line,
+.c10:focus:not(:focus-visible) >path,
+.c10:focus:not(:focus-visible) >polygon,
+.c10:focus:not(:focus-visible) >polyline,
+.c10:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c10:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
+}
+
 .c22 {
   box-sizing: border-box;
   stroke-width: 4px;
@@ -3737,6 +3782,11 @@ exports[`DataTable custom theme 1`] = `
 }
 
 .c11 {
+  display: flex;
+  justify-content: center;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  margin-right: -12px;
   position: absolute;
   right: 0;
   width: 24px;
@@ -3744,46 +3794,6 @@ exports[`DataTable custom theme 1`] = `
   top: 0;
   cursor: col-resize;
   z-index: 1;
-}
-
-.c11:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c11:focus >circle,
-.c11:focus >ellipse,
-.c11:focus >line,
-.c11:focus >path,
-.c11:focus >polygon,
-.c11:focus >polyline,
-.c11:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c11:focus ::-moz-focus-inner {
-  border: 0;
-}
-
-.c11:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c11:focus:not(:focus-visible) >circle,
-.c11:focus:not(:focus-visible) >ellipse,
-.c11:focus:not(:focus-visible) >line,
-.c11:focus:not(:focus-visible) >path,
-.c11:focus:not(:focus-visible) >polygon,
-.c11:focus:not(:focus-visible) >polyline,
-.c11:focus:not(:focus-visible) >rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c11:focus:not(:focus-visible) ::-moz-focus-inner {
-  border: 0;
 }
 
 .c2 {
@@ -3850,19 +3860,6 @@ exports[`DataTable custom theme 1`] = `
 }
 
 @media only screen and (max-width: 768px) {
-  .c10 {
-    margin-right: -12px;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .c10 {
-    padding-top: 3px;
-    padding-bottom: 3px;
-  }
-}
-
-@media only screen and (max-width: 768px) {
   .c12 {
     border-inline-end: solid 1px rgba(0, 0, 0, 0.33);
   }
@@ -3920,7 +3917,7 @@ exports[`DataTable custom theme 1`] = `
               </div>
             </button>
           </div>
-          <div
+          <button
             aria-controls="grommet-data-table-header-a"
             aria-label="Resize A column"
             aria-orientation="vertical"
@@ -3928,12 +3925,12 @@ exports[`DataTable custom theme 1`] = `
             aria-valuetext="Resize A column"
             class="c10 c11"
             role="separator"
-            tabindex="0"
+            type="button"
           >
             <div
               class="c12"
             />
-          </div>
+          </button>
         </th>
       </tr>
     </thead>
@@ -4099,20 +4096,20 @@ exports[`DataTable custom theme 2`] = `
               </div>
             </button>
           </div>
-          <div
+          <button
             aria-controls="grommet-data-table-header-a"
             aria-label="Resize A column"
             aria-orientation="vertical"
             aria-valuenow="0"
             aria-valuetext="Resize A column"
-            class="StyledBox-sc-13pk1d4-0 QUorV Resizer__StyledResizer-sc-8l808w-0 iNZnoh"
+            class="StyledButton-sc-323bzc-0 eNtKJP Resizer__StyledResizer-sc-8l808w-0 fbhFqy"
             role="separator"
-            tabindex="0"
+            type="button"
           >
             <div
               class="StyledBox-sc-13pk1d4-0 eQXQyQ"
             />
-          </div>
+          </button>
         </th>
       </tr>
     </thead>
@@ -23210,18 +23207,6 @@ exports[`DataTable resizeable 1`] = `
   justify-content: center;
 }
 
-.c6 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  margin-right: -12px;
-  min-width: 0;
-  min-height: 0;
-  flex-direction: column;
-  padding-top: 6px;
-  padding-bottom: 6px;
-}
-
 .c8 {
   display: flex;
   box-sizing: border-box;
@@ -23252,6 +23237,63 @@ exports[`DataTable resizeable 1`] = `
   font-size: 18px;
   line-height: 24px;
   font-weight: bold;
+}
+
+.c6 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+}
+
+.c6:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c6:focus >circle,
+.c6:focus >ellipse,
+.c6:focus >line,
+.c6:focus >path,
+.c6:focus >polygon,
+.c6:focus >polyline,
+.c6:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c6:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c6:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c6:focus:not(:focus-visible) >circle,
+.c6:focus:not(:focus-visible) >ellipse,
+.c6:focus:not(:focus-visible) >line,
+.c6:focus:not(:focus-visible) >path,
+.c6:focus:not(:focus-visible) >polygon,
+.c6:focus:not(:focus-visible) >polyline,
+.c6:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c6:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
 }
 
 .c3 {
@@ -23286,6 +23328,11 @@ exports[`DataTable resizeable 1`] = `
 }
 
 .c7 {
+  display: flex;
+  justify-content: center;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  margin-right: -12px;
   position: absolute;
   right: 0;
   width: 24px;
@@ -23293,46 +23340,6 @@ exports[`DataTable resizeable 1`] = `
   top: 0;
   cursor: col-resize;
   z-index: 1;
-}
-
-.c7:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c7:focus >circle,
-.c7:focus >ellipse,
-.c7:focus >line,
-.c7:focus >path,
-.c7:focus >polygon,
-.c7:focus >polyline,
-.c7:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c7:focus ::-moz-focus-inner {
-  border: 0;
-}
-
-.c7:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c7:focus:not(:focus-visible) >circle,
-.c7:focus:not(:focus-visible) >ellipse,
-.c7:focus:not(:focus-visible) >line,
-.c7:focus:not(:focus-visible) >path,
-.c7:focus:not(:focus-visible) >polygon,
-.c7:focus:not(:focus-visible) >polyline,
-.c7:focus:not(:focus-visible) >rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c7:focus:not(:focus-visible) ::-moz-focus-inner {
-  border: 0;
 }
 
 .c2 {
@@ -23390,19 +23397,6 @@ exports[`DataTable resizeable 1`] = `
 }
 
 @media only screen and (max-width: 768px) {
-  .c6 {
-    margin-right: -12px;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .c6 {
-    padding-top: 3px;
-    padding-bottom: 3px;
-  }
-}
-
-@media only screen and (max-width: 768px) {
   .c8 {
     border-inline-end: solid 1px rgba(0, 0, 0, 0.33);
   }
@@ -23435,7 +23429,7 @@ exports[`DataTable resizeable 1`] = `
               A
             </span>
           </div>
-          <div
+          <button
             aria-controls="grommet-data-table-header-a"
             aria-label="Change size of A column"
             aria-orientation="vertical"
@@ -23443,12 +23437,12 @@ exports[`DataTable resizeable 1`] = `
             aria-valuetext="Change size of A column"
             class="c6 c7"
             role="separator"
-            tabindex="0"
+            type="button"
           >
             <div
               class="c8"
             />
-          </div>
+          </button>
         </th>
         <th
           class="c3 "
@@ -23465,7 +23459,7 @@ exports[`DataTable resizeable 1`] = `
               B
             </span>
           </div>
-          <div
+          <button
             aria-controls="grommet-data-table-header-b"
             aria-label="Change size of B column"
             aria-orientation="vertical"
@@ -23473,12 +23467,12 @@ exports[`DataTable resizeable 1`] = `
             aria-valuetext="Change size of B column"
             class="c6 c7"
             role="separator"
-            tabindex="0"
+            type="button"
           >
             <div
               class="c8"
             />
-          </div>
+          </button>
         </th>
       </tr>
     </thead>
