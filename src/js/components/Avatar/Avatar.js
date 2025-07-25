@@ -13,9 +13,7 @@ const Avatar = ({
   height, // for warning check and discarding the value
   imageProps,
   justify = 'center',
-  // TO DO theme object
   round = 'full',
-  // TO DO theme object
   size = 'medium',
   src,
   width, // for warning check and discarding the value

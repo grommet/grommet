@@ -940,16 +940,6 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         dropHeight: 'medium',
       },
     },
-    // dataSearch: {
-    //   drop: {
-    //     pad: 'small',
-    //   },
-    // },
-    // dataSort: {
-    //   drop: {
-    //     pad: 'small',
-    //   },
-    // },
     dataSummary: {
       container: {
         margin: { vertical: 'xsmall' },
