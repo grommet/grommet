@@ -862,10 +862,11 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
     },
     checkBoxGroup: {
-      // container: {
-      //   // any box props
-      //   extend: undefined,
-      // },
+      container: {
+        // any box props
+        gap: 'small',
+        // extend: undefined,
+      },
     },
     clock: {
       analog: {
@@ -926,6 +927,36 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       // button: {
       //   kind: undefined,
       // },
+      drop: {
+        pad: 'small',
+      },
+    },
+    dataFilter: {
+      rangeSelector: {
+        size: 'full',
+        round: 'small',
+      },
+      selectMultiple: {
+        dropHeight: 'medium',
+      },
+    },
+    // dataSearch: {
+    //   drop: {
+    //     pad: 'small',
+    //   },
+    // },
+    // dataSort: {
+    //   drop: {
+    //     pad: 'small',
+    //   },
+    // },
+    dataSummary: {
+      container: {
+        margin: { vertical: 'xsmall' },
+      },
+      separator: {
+        margin: { horizontal: 'small' },
+      },
     },
     dateInput: {
       container: {

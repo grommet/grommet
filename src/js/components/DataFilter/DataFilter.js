@@ -1,4 +1,5 @@
 import React, { useContext, useMemo, useState } from 'react';
+import { ThemeContext } from 'styled-components';
 import { DataContext } from '../../contexts/DataContext';
 import { DataForm } from '../Data/DataForm';
 import { FormField } from '../FormField';
@@ -90,6 +91,7 @@ export const DataFilter = ({
   } = useContext(DataContext);
   const { inDataForm } = useContext(DataFormContext);
   const [searchText, setSearchText] = useState('');
+  const theme = useContext(ThemeContext);
 
   const [options, range] = useMemo(() => {
     if (children) return [undefined, undefined]; // caller driving
@@ -182,6 +184,7 @@ export const DataFilter = ({
 
       content = (
         <RangeSelector
+          {...theme.dataFilter?.rangeSelector}
           aria-label={ariaLabel}
           id={id}
           name={`${property}._range`}
@@ -190,10 +193,6 @@ export const DataFilter = ({
           min={range[0]}
           max={range[1]}
           step={step}
-          // TO DO theme object
-          size="full"
-          // TO DO theme object
-          round="small"
         />
       );
     } else if (options) {
@@ -219,10 +218,9 @@ export const DataFilter = ({
       } else {
         content = (
           <SelectMultiple
+            {...theme.dataFilter?.selectMultiple}
             aria-label={ariaLabel}
             id={id}
-            // TO DO theme object
-            dropHeight="medium"
             name={property}
             showSelectedInline
             options={searchedOptions}

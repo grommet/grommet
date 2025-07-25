@@ -80,13 +80,7 @@ const CheckBoxGroup = forwardRef(
         aria-labelledby={ariaLabelledByProp || ariaLabelledBy}
         role="group"
         {...theme.checkBoxGroup.container}
-        gap={
-          gap ||
-          (theme.checkBoxGroup.container && theme.checkBoxGroup.container.gap
-            ? theme.checkBoxGroup.container.gap
-            : // TO DO move to ^^ theme object
-              'small') // consistent with RadioButtonGroup default
-        }
+        gap={gap || theme.checkBoxGroup?.container?.gap}
         id={id}
         {...passThemeFlag}
         {...rest}

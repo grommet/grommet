@@ -678,7 +678,6 @@ const Calendar = forwardRef(
 
       return (
         <Box direction="row" justify="between" align="center">
-          {/* TO DO theme object */}
           <Header flex pad={theme.calendar?.[size]?.heading.container.pad}>
             {theme.calendar[size]?.title ? (
               <Text {...theme.calendar[size].title}>{monthAndYear}</Text>
