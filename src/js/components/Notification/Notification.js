@@ -194,6 +194,7 @@ const Notification = ({
         <NotificationAnchor
           // create space between first anchor and
           // text content and next anchor
+          // TO DO theme object
           margin={{ right: 'xsmall' }}
           {...action}
           {...theme.notification.actions}
@@ -210,6 +211,7 @@ const Notification = ({
           color={messageColor}
           direction={direction}
         >
+          {/* TO DO theme object */}
           <Text margin={{ right: 'xsmall' }}>{message}</Text>
           {/* include actions with message so it wraps with message */}
           {actions}
@@ -230,6 +232,7 @@ const Notification = ({
       // let internal box control pad
       pad={undefined}
       direction="row"
+      // TO DO theme object
       gap="small"
       id={toast ? undefined : id}
       {...rest}

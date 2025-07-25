@@ -168,7 +168,7 @@ const CheckBox = forwardRef(
       <StyledCheckBox
         align="center"
         justify="center"
-        margin={label && { [side]: theme.checkBox.gap || 'small' }}
+        margin={label && { [side]: theme.checkBox.gap }}
         {...themeableProps}
       >
         <StyledCheckBoxInput

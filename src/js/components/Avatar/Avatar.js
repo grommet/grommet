@@ -13,7 +13,9 @@ const Avatar = ({
   height, // for warning check and discarding the value
   imageProps,
   justify = 'center',
+  // TO DO theme object
   round = 'full',
+  // TO DO theme object
   size = 'medium',
   src,
   width, // for warning check and discarding the value
@@ -21,6 +23,7 @@ const Avatar = ({
 }) => {
   const { theme, passThemeFlag } = useThemeValue();
   const avatarSize = theme.avatar.size[size] || size;
+  // TO DO theme object
   const avatarTextSize = theme.avatar.text.size[size] || 'large';
 
   const avatarProps = useMemo(

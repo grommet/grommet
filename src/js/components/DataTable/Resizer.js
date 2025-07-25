@@ -151,7 +151,9 @@ const Resizer = ({ onResize, property, headerText, messages, headerId }) => {
         onMouseMove={start !== undefined ? onMouseMove : undefined}
         onMouseUp={start !== undefined ? onMouseUp : undefined}
         ref={ref}
+        // TO DO add theme object
         pad={{ vertical: 'xsmall' }}
+        // TO DO add theme object
         margin={{ right: `-${theme.global.edgeSize.small}` }}
         role="separator"
         aria-valuenow={width}

@@ -34,6 +34,7 @@ const Footer = forwardRef(
           {groups && (
             <TableCell
               plain
+              // TO DO theme object?
               size="xxsmall"
               pad="none"
               verticalAlign="top"

@@ -208,13 +208,16 @@ const FileInput = forwardRef(
         rightOffset =
           rightOffsetBrowse +
           rightOffsetRemove +
+          // TO DO theme object
           parseMetricToNum(theme.global.edgeSize.small) * 2;
       } else if (rightOffsetBrowse > rightOffsetRemove) {
         rightOffset =
+          // TO DO theme object
           rightOffsetBrowse + parseMetricToNum(theme.global.edgeSize.small) * 2;
       } else rightOffset = rightOffsetRemove;
     } else if (!files.length && controlRef.current) {
       rightOffset =
+        // TO DO theme object
         controlRef.current.getBoundingClientRect().width +
         parseMetricToNum(theme.global.edgeSize.small) * 2;
     }
@@ -371,6 +374,7 @@ const FileInput = forwardRef(
                         alignSelf="center"
                         disabled={disabled}
                         ref={controlRef}
+                        // TO DO theme object
                         margin="small"
                         onClick={() => {
                           inputRef.current.click();
@@ -447,6 +451,7 @@ const FileInput = forwardRef(
                       alignSelf="center"
                       disabled={disabled}
                       ref={controlRef}
+                      // TO DO theme object
                       margin="small"
                       onClick={() => {
                         inputRef.current.click();
@@ -483,6 +488,7 @@ const FileInput = forwardRef(
                   ) : (
                     <Box
                       {...theme.fileInput.label}
+                      // TO DO theme object
                       gap="xsmall"
                       align="center"
                       direction="row"
@@ -567,6 +573,7 @@ const FileInput = forwardRef(
                             tabIndex={-1}
                             disabled={disabled}
                             ref={controlRef}
+                            // TO DO theme object
                             margin="small"
                             onClick={() => {
                               inputRef.current.click();
