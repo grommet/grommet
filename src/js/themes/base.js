@@ -361,6 +361,20 @@ export const generate = (baseSpacing = 24, scale = 6) => {
     //   size: undefined,
     // },
     accordion: {
+      icon: {
+        container: {
+          pad: {
+            horizontal: 'small',
+          },
+        },
+      },
+      label: {
+        container: {
+          pad: {
+            horizontal: 'xsmall',
+          },
+        },
+      },
       panel: {
         // border: {
         //   side: 'bottom',
@@ -465,6 +479,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
             medium: 'small', // 14px
           },
         },
+      },
+      busy: {
+        gap: 'small',
       },
       gap: 'small',
       size: {
@@ -671,6 +688,13 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         //   },
         // },
         // title: {},
+        heading: {
+          container: {
+            pad: {
+              horizontal: 'xsmall',
+            },
+          },
+        },
         fontSize: `${baseFontSize - fontScale}px`,
         lineHeight: 1.375,
         daySize: `${(baseSpacing * 8) / 7}px`,
@@ -690,6 +714,13 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         //   },
         // },
         // title: {},
+        heading: {
+          container: {
+            pad: {
+              horizontal: 'small',
+            },
+          },
+        },
         fontSize: `${baseFontSize}px`,
         lineHeight: 1.45,
         daySize: `${(baseSpacing * 16) / 7}px`,
@@ -709,6 +740,13 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         //   },
         // },
         // title: {},
+        heading: {
+          container: {
+            pad: {
+              horizontal: 'medium',
+            },
+          },
+        },
         fontSize: `${baseFontSize + 3 * fontScale}px`,
         lineHeight: 1.11,
         daySize: `${(baseSpacing * 32) / 7}px`,
@@ -744,6 +782,10 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         // any box props
         gap: 'xsmall',
         // extend: undefined,
+      },
+      grid: {
+        columns: 'small',
+        gap: 'medium',
       },
     },
     carousel: {
@@ -784,7 +826,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
       // color: { dark: undefined, light: undefined },
       // extend: undefined,
-      // gap: undefined
+      gap: 'small',
       hover: {
         border: {
           color: {

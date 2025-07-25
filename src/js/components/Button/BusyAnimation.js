@@ -1,5 +1,5 @@
-import React from 'react';
-import styled, { css, keyframes } from 'styled-components';
+import React, { useContext } from 'react';
+import styled, { css, keyframes, ThemeContext } from 'styled-components';
 import { Checkmark } from 'grommet-icons/icons/Checkmark';
 import { Box } from '../Box';
 import { styledComponentsConfig } from '../../utils/styles';
@@ -26,23 +26,27 @@ const Dot = styled(Box)`
   ${(props) => props.delay && `animation-delay: ${props.delay};`}
 `;
 
-export const EllipsisAnimation = () => (
-  <Box
-    style={{ position: 'absolute' }}
-    fill
-    alignContent="center"
-    justify="center"
-  >
-    {/* TO DO theme object */}
-    <Box alignSelf="center" direction="row" gap="small">
-      {/* A negative delay starts the animation sooner. The first dot
+export const EllipsisAnimation = () => {
+  const theme = useContext(ThemeContext);
+
+  return (
+    <Box
+      style={{ position: 'absolute' }}
+      fill
+      alignContent="center"
+      justify="center"
+    >
+      {/* TO DO theme object */}
+      <Box alignSelf="center" direction="row" gap={theme.button?.busy?.gap}>
+        {/* A negative delay starts the animation sooner. The first dot
       should begin animating before the second and so on. */}
-      <Dot delay="-0.32s" />
-      <Dot delay="-0.16s" />
-      <Dot />
+        <Dot delay="-0.32s" />
+        <Dot delay="-0.16s" />
+        <Dot />
+      </Box>
     </Box>
-  </Box>
-);
+  );
+};
 
 const grow = keyframes`
   0% {
