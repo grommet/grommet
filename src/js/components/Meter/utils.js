@@ -19,6 +19,25 @@ export const strokeProps = (color, theme) => {
   return result;
 };
 
+export const fillProps = (color, theme) => {
+  const result = {};
+  if (color) {
+    if (typeof color === 'object') {
+      result.fill = normalizeColor(color.color, theme);
+      // if (color.opacity) {
+      //   result.strokeOpacity = `${
+      //     color.opacity === true
+      //       ? theme.global.opacity.medium
+      //       : theme.global.opacity[color.opacity] || color.opacity
+      //   }`;
+      // }
+    } else {
+      result.fill = normalizeColor(color, theme);
+    }
+  }
+  return result;
+};
+
 const neutralExp = /^neutral-\d+/;
 
 export const defaultColor = (index, theme, valuesLength) => {
