@@ -415,7 +415,7 @@ const Header = forwardRef(
               // from automatically filling the vertical space.
               content = (
                 <Box
-                  flex="grow"
+                  flex={onResize || search ? { grow: 1, shrink: 1 } : 'grow'}
                   fill={onResize || search ? 'vertical' : false}
                   justify={(!align && 'center') || align}
                 >
@@ -448,9 +448,19 @@ const Header = forwardRef(
                     {content}
                     {searcher && onResize ? (
                       <Box
-                        // padding right set to half (12px) of resizer
-                        // width (24px) to prevent overlap with resizer control.
-                        pad={{ right: '12px' }}
+                        flex={{
+                          shrink: filtering === property ? 1 : 0,
+                        }}
+                        direction={filtering === property ? 'column' : 'row'}
+                        // margin right set to half (12px) of resizer width
+                        // (24px) to prevent overlap with resizer control.
+                        // this also creates enough space when search input
+                        // is open. so, padding right is not needed for
+                        // the search input box any longer.
+                        // see Searcher.js
+                        margin={{
+                          right: '12px',
+                        }}
                       >
                         {searcher}
                       </Box>
