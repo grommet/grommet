@@ -4,21 +4,30 @@ exports.__esModule = true;
 exports.Resizer = void 0;
 var _react = _interopRequireWildcard(require("react"));
 var _styledComponents = _interopRequireDefault(require("styled-components"));
+var _Add = require("grommet-icons/icons/Add");
+var _Subtract = require("grommet-icons/icons/Subtract");
 var _Box = require("../Box");
+var _Button = require("../Button");
+var _DropButton = require("../DropButton");
 var _Keyboard = require("../Keyboard");
 var _useThemeValue2 = require("../../utils/useThemeValue");
 var _MessageContext = require("../../contexts/MessageContext");
-var _styles = require("../../utils/styles");
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
 function _interopRequireWildcard(e, t) { if ("function" == typeof WeakMap) var r = new WeakMap(), n = new WeakMap(); return (_interopRequireWildcard = function _interopRequireWildcard(e, t) { if (!t && e && e.__esModule) return e; var o, i, f = { __proto__: null, "default": e }; if (null === e || "object" != typeof e && "function" != typeof e) return f; if (o = t ? n : r) { if (o.has(e)) return o.get(e); o.set(e, f); } for (var _t in e) "default" !== _t && {}.hasOwnProperty.call(e, _t) && ((i = (o = Object.defineProperty) && Object.getOwnPropertyDescriptor(e, _t)) && (i.get || i.set) ? o(f, _t, i) : f[_t] = e[_t]); return f; })(e, t); }
-var StyledResizer = (0, _styledComponents["default"])(_Box.Box).withConfig({
+// We determined 12 empirically as being wide enough to hit but
+// not too wide to cause false hits.
+var STEP = 12; // Used to determine the width change on resize
+
+var StyledResizer = (0, _styledComponents["default"])(_DropButton.DropButton).withConfig({
   displayName: "Resizer__StyledResizer",
   componentId: "sc-8l808w-0"
-})(["position:absolute;right:0;width:24px;height:100%;top:0;cursor:col-resize;z-index:1;&:focus{", "}&:focus:not(:focus-visible){", "}"], function (props) {
-  return (!props.plain || props.focusIndicator) && (0, _styles.focusStyle)({
-    inset: props.focusIndicator === 'inset'
-  });
-}, (0, _styles.unfocusStyle)());
+})(["display:flex;justify-content:center;padding-top:", ";padding-bottom:", ";margin-right:-", ";position:absolute;right:0;width:24px;height:100%;top:0;cursor:col-resize;z-index:1;"], function (props) {
+  return props.theme.global.edgeSize.xsmall;
+}, function (props) {
+  return props.theme.global.edgeSize.xsmall;
+}, function (props) {
+  return props.theme.global.edgeSize.small;
+});
 var Resizer = exports.Resizer = function Resizer(_ref) {
   var onResize = _ref.onResize,
     property = _ref.property,
@@ -37,55 +46,60 @@ var Resizer = exports.Resizer = function Resizer(_ref) {
     width = _useState3[0],
     setWidth = _useState3[1];
   var ref = (0, _react.useRef)();
+  var thRef = (0, _react.useRef)();
   var _useContext = (0, _react.useContext)(_MessageContext.MessageContext),
     format = _useContext.format;
 
-  // Set the initial width based on the TH element's width
+  // Set the initial width based on the TH element's width and
+  // store th element ref
   (0, _react.useEffect)(function () {
     if (ref.current) {
       var element = ref.current;
       // find TH parent
       while (element && element.nodeName !== 'TH') element = element.parentNode;
+      thRef.current = element;
       var rect = element.getBoundingClientRect();
       // Set initial width based on the TH element's width
       setWidth(rect.width);
     }
-  }, [ref]);
-  var onMouseDown = (0, _react.useCallback)(function (event) {
-    if (ref.current) {
-      var element = ref.current;
-      // find TH parent
-      while (element && element.nodeName !== 'TH') element = element.parentNode;
+  }, []);
+  var onResizeStart = (0, _react.useCallback)(function (event) {
+    var clientX = event.touches ? event.touches[0].clientX : event.clientX;
+    if (thRef.current) {
+      var element = thRef.current;
       var rect = element.getBoundingClientRect();
-      setStart(event.clientX);
+      setStart(clientX);
       setWidth(rect.width);
       setActive(true);
     }
   }, []);
-  var onMouseMove = (0, _react.useCallback)(function (event) {
-    // We determined 12 empirically as being wide enough to hit but
-    // not too wide to cause false hits.
-    var nextWidth = Math.max(12, width + (event.clientX - start));
+  var onResizeMove = (0, _react.useCallback)(function (event) {
+    var clientX = event.touches ? event.touches[0].clientX : event.clientX;
+    var nextWidth = Math.max(STEP, width + (clientX - start));
     onResize(property, nextWidth);
   }, [onResize, property, start, width]);
-  var onMouseUp = (0, _react.useCallback)(function () {
+  var onResizeEnd = (0, _react.useCallback)(function () {
     setActive(false);
     setStart(undefined);
     setWidth(undefined);
   }, []);
   (0, _react.useEffect)(function () {
     var remove = function remove() {
-      document.removeEventListener('mouseup', onMouseUp);
-      document.removeEventListener('mousemove', onMouseMove);
+      document.removeEventListener('mouseup', onResizeEnd);
+      document.removeEventListener('mousemove', onResizeMove);
+      document.removeEventListener('touchend', onResizeEnd);
+      document.removeEventListener('touchmove', onResizeMove);
     };
     if (active) {
-      document.addEventListener('mouseup', onMouseUp);
-      document.addEventListener('mousemove', onMouseMove);
+      document.addEventListener('mouseup', onResizeEnd);
+      document.addEventListener('mousemove', onResizeMove);
+      document.addEventListener('touchend', onResizeEnd);
+      document.addEventListener('touchmove', onResizeMove);
       return remove;
     }
     remove();
     return undefined;
-  }, [active, onMouseMove, onMouseUp]);
+  }, [active, onResizeMove, onResizeEnd]);
   var border;
   if (theme.dataTable.resize.border.color && theme.dataTable.resize.border.side) {
     var _theme$dataTable$resi = theme.dataTable.resize.border,
@@ -113,13 +127,34 @@ var Resizer = exports.Resizer = function Resizer(_ref) {
   var onKeyDown = (0, _react.useCallback)(function (event) {
     event.preventDefault();
     if (!ref.current) return;
-    var element = ref.current;
-    while (element && element.nodeName !== 'TH') element = element.parentNode;
-    var currentWidth = element.getBoundingClientRect().width;
-    // Used 12 here to align with the value set in onMouseMove
-    var delta = event.key === 'ArrowLeft' ? -12 : 12;
-    onResize(property, currentWidth + delta);
-    setWidth(currentWidth + delta);
+    if (thRef.current) {
+      var element = thRef.current;
+      var currentWidth = element.getBoundingClientRect().width;
+      // Used STEP here to align with the value set in onMouseMove
+      var delta = event.key === 'ArrowLeft' ? -STEP : STEP;
+      onResize(property, currentWidth + delta);
+      setWidth(currentWidth + delta);
+    }
+  }, [onResize, property]);
+  var onDecrease = (0, _react.useCallback)(function () {
+    if (thRef.current) {
+      var element = thRef.current;
+      var rect = element.getBoundingClientRect();
+      var currentWidth = rect.width;
+      var nextWidth = Math.max(STEP, currentWidth - STEP);
+      setWidth(nextWidth);
+      onResize(property, nextWidth);
+    }
+  }, [onResize, property]);
+  var onIncrease = (0, _react.useCallback)(function () {
+    if (thRef.current) {
+      var element = thRef.current;
+      var rect = element.getBoundingClientRect();
+      var currentWidth = rect.width;
+      var nextWidth = Math.max(STEP, currentWidth + STEP);
+      setWidth(nextWidth);
+      onResize(property, nextWidth);
+    }
   }, [onResize, property]);
   var _useState4 = (0, _react.useState)(false),
     hover = _useState4[0],
@@ -135,7 +170,6 @@ var Resizer = exports.Resizer = function Resizer(_ref) {
     onLeft: onKeyDown,
     onRight: onKeyDown
   }, /*#__PURE__*/_react["default"].createElement(StyledResizer, {
-    tabIndex: 0,
     "aria-label": width ? ariaLabel + " " + Math.trunc(width) + " pixels" : ariaLabel,
     onMouseEnter: function onMouseEnter() {
       return setHover(true);
@@ -143,23 +177,48 @@ var Resizer = exports.Resizer = function Resizer(_ref) {
     onMouseLeave: function onMouseLeave() {
       return setHover(false);
     },
-    onMouseDown: onMouseDown,
-    onMouseMove: start !== undefined ? onMouseMove : undefined,
-    onMouseUp: start !== undefined ? onMouseUp : undefined,
     ref: ref,
-    pad: {
-      vertical: 'xsmall'
-    },
-    margin: {
-      right: "-" + theme.global.edgeSize.small
-    },
     role: "separator",
     "aria-valuenow": width,
     "aria-valuetext": width ? ariaLabel + " " + Math.trunc(width) + " pixels" : ariaLabel,
     "aria-controls": headerId,
-    "aria-orientation": "vertical"
+    "aria-orientation": "vertical",
+    onMouseDown: onResizeStart,
+    onMouseMove: start !== undefined ? onResizeMove : undefined,
+    onMouseUp: start !== undefined ? onResizeEnd : undefined,
+    onTouchStart: onResizeStart,
+    onTouchMove: start !== undefined ? onResizeMove : undefined,
+    onTouchEnd: start !== undefined ? onResizeEnd : undefined,
+    dropContent: /*#__PURE__*/_react["default"].createElement(_Box.Box, {
+      direction: "row",
+      pad: "xsmall"
+    }, /*#__PURE__*/_react["default"].createElement(_Button.Button, {
+      "aria-label": format({
+        id: 'dataTable.decrease',
+        values: {
+          headerText: headerText
+        },
+        messages: messages
+      }),
+      icon: /*#__PURE__*/_react["default"].createElement(_Subtract.Subtract, null),
+      onClick: onDecrease,
+      autoFocus: true
+    }), /*#__PURE__*/_react["default"].createElement(_Button.Button, {
+      "aria-label": format({
+        id: 'dataTable.increase',
+        values: {
+          headerText: headerText
+        },
+        messages: messages
+      }),
+      icon: /*#__PURE__*/_react["default"].createElement(_Add.Add, null),
+      onClick: onIncrease
+    })),
+    dropAlign: {
+      top: 'bottom'
+    }
   }, /*#__PURE__*/_react["default"].createElement(_Box.Box, {
-    border: hover ? hoverBorder : border,
+    border: hover || active ? hoverBorder : border,
     height: "100%",
     alignSelf: "center"
   })));

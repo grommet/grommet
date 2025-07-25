@@ -90,7 +90,9 @@ export interface DataTableProps<TRowType = any> {
     ascending?: string;
     collapse?: string;
     collapseAll?: string;
+    decrease?: string;
     descending?: string;
+    increase?: string;
     expand?: string;
     expandAll?: string;
     resizerAria?: string;
