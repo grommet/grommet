@@ -21,7 +21,6 @@ const Avatar = ({
 }) => {
   const { theme, passThemeFlag } = useThemeValue();
   const avatarSize = theme.avatar.size[size] || size;
-  // TO DO theme object
   const avatarTextSize = theme.avatar.text.size[size] || 'large';
 
   const avatarProps = useMemo(
