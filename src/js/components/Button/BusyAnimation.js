@@ -1,8 +1,9 @@
-import React, { useContext } from 'react';
-import styled, { css, keyframes, ThemeContext } from 'styled-components';
+import React from 'react';
+import styled, { css, keyframes } from 'styled-components';
 import { Checkmark } from 'grommet-icons/icons/Checkmark';
 import { Box } from '../Box';
 import { styledComponentsConfig } from '../../utils/styles';
+import { useThemeValue } from '../../utils/useThemeValue';
 
 const bounceDelay = keyframes`
   0%, 80%, 100% { 
@@ -27,7 +28,7 @@ const Dot = styled(Box)`
 `;
 
 export const EllipsisAnimation = () => {
-  const theme = useContext(ThemeContext);
+  const { theme } = useThemeValue();
 
   return (
     <Box

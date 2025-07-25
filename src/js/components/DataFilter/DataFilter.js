@@ -1,5 +1,4 @@
 import React, { useContext, useMemo, useState } from 'react';
-import { ThemeContext } from 'styled-components';
 import { DataContext } from '../../contexts/DataContext';
 import { DataForm } from '../Data/DataForm';
 import { FormField } from '../FormField';
@@ -10,6 +9,7 @@ import { DataFilterPropTypes } from './propTypes';
 import { getDecimalCount } from '../RangeSelector/RangeSelector';
 import { DataFormContext } from '../../contexts/DataFormContext';
 import { selectInputId } from '../Select/utils';
+import { useThemeValue } from '../../utils/useThemeValue';
 
 // empirical constants for when we change inputs
 const maxCheckBoxGroupOptions = 4;
@@ -91,7 +91,7 @@ export const DataFilter = ({
   } = useContext(DataContext);
   const { inDataForm } = useContext(DataFormContext);
   const [searchText, setSearchText] = useState('');
-  const theme = useContext(ThemeContext);
+  const { theme } = useThemeValue();
 
   const [options, range] = useMemo(() => {
     if (children) return [undefined, undefined]; // caller driving

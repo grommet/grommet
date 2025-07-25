@@ -1,9 +1,8 @@
 import React, { useContext } from 'react';
-import { ThemeContext } from 'styled-components';
 import { Text } from '../Text';
 import { DataContext } from '../../contexts/DataContext';
 import { MessageContext } from '../../contexts/MessageContext';
-
+import { useThemeValue } from '../../utils/useThemeValue';
 import { DataSummaryPropTypes } from './propTypes';
 
 export const DataSummary = ({ messages, ...rest }) => {
@@ -14,7 +13,7 @@ export const DataSummary = ({ messages, ...rest }) => {
     selected,
     total,
   } = useContext(DataContext);
-  const theme = useContext(ThemeContext);
+  const { theme } = useThemeValue();
 
   let messageId;
   if (total !== filteredTotal) {
