@@ -124,14 +124,7 @@ const RadioButtonGroup = forwardRef(
           ref={ref}
           role="radiogroup"
           {...theme.radioButtonGroup.container}
-          gap={
-            gap ||
-            (theme.radioButtonGroup.container &&
-            theme.radioButtonGroup.container.gap
-              ? theme.radioButtonGroup.container.gap
-              : // TO DO move to theme object
-                'small')
-          }
+          gap={gap || theme.radioButtonGroup.container?.gap}
           {...rest}
         >
           {options.map(

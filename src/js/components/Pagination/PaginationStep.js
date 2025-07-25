@@ -16,8 +16,12 @@ export const PaginationStep = ({
   const { theme } = useThemeValue();
 
   return (
-    // TO DO theme object
-    <Box direction="row" align="center" gap="xsmall" {...rest}>
+    <Box
+      direction="row"
+      align="center"
+      gap={theme.pagination?.step?.container?.gap}
+      {...rest}
+    >
       <Text>{formatMessage({ id: 'pagination.stepLabel', messages })}</Text>
       <Select
         options={options}

@@ -91,10 +91,7 @@ const DateInput = forwardRef(
     const announce = useContext(AnnounceContext);
     const { format: formatMessage } = useContext(MessageContext);
     const iconSize =
-      (theme.icon?.matchSize && rest.size) ||
-      theme.dateInput.icon?.size ||
-      // TO DO move to theme object?
-      'medium';
+      (theme.icon?.matchSize && rest.size) || theme.dateInput.icon?.size;
     const { useFormInput } = useContext(FormContext);
     const ref = useForwardedRef(refArg);
     const containerRef = useRef();

@@ -962,9 +962,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       container: {
         round: 'xxsmall',
       },
-      // icon: {
-      //   size: undefined,
-      // },
+      icon: {
+        size: 'medium',
+      },
     },
     dataTable: {
       // body: {
@@ -1043,6 +1043,12 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         //     size: undefined,
         //   },
         // },
+        pad: {
+          vertical: 'xsmall',
+        },
+        margin: {
+          right: `-${baseSpacing / 2}px`, // equivalent to "small"
+        },
       },
     },
     diagram: {
@@ -1088,6 +1094,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         // extend: undefined,
       },
       // extend: undefined,
+    },
+    footer: {
+      gap: 'medium',
     },
     formField: {
       // [inputname]: {
@@ -1178,6 +1187,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       // extend: undefined
     },
     header: {
+      gap: 'medium',
       sticky: {
         zIndex: '20',
       },
@@ -1389,6 +1399,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         // any text props
         color: 'text',
       },
+    },
+    nav: {
+      gap: 'medium',
     },
     notification: {
       actions: {
@@ -1801,6 +1814,11 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         next: Next,
         previous: Previous,
       },
+      step: {
+        container: {
+          gap: 'xsmall',
+        },
+      },
     },
     paragraph: {
       font: {
@@ -1811,6 +1829,10 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       large: { ...fontSizing(1) },
       xlarge: { ...fontSizing(2) },
       xxlarge: { ...fontSizing(4) },
+      skeleton: {
+        // TO DO should this be "container.gap"?
+        gap: 'xsmall',
+      },
     },
     thumbsRating: {
       // dislike: {
@@ -1885,7 +1907,10 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
     },
     radioButtonGroup: {
-      // container: {}, // any box props
+      container: {
+        // any box props
+        gap: 'small',
+      },
     },
     rangeInput: {
       disabled: {
