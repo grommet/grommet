@@ -1,14 +1,17 @@
 import React from 'react';
 import { Box } from '../Box';
 import { SidebarPropTypes } from './propTypes';
+import { useThemeValue } from '../../utils/useThemeValue';
 
-export const Sidebar = ({ children, footer, header, ...rest }) => (
-  // TO DO theme object
-  <Box pad="small" gap="large" height={{ min: '100%' }} {...rest}>
-    {header}
-    <Box flex>{children}</Box>
-    {footer}
-  </Box>
-);
+export const Sidebar = ({ children, footer, header, ...rest }) => {
+  const { theme } = useThemeValue();
+  return (
+    <Box height={{ min: '100%' }} {...theme.sidebar} {...rest}>
+      {header}
+      <Box flex>{children}</Box>
+      {footer}
+    </Box>
+  );
+};
 
 Sidebar.propTypes = SidebarPropTypes;

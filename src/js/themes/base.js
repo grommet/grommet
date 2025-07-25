@@ -1953,6 +1953,12 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         // type: undefined,
         // size: undefined,
       },
+      label: {
+        margin: {
+          horizontal: 'small',
+        },
+        size: 'small',
+      },
     },
     select: {
       // background: undefined,
@@ -2005,6 +2011,10 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       // listbox: {
       //   extend: () => undefined,
       // },
+    },
+    sidebar: {
+      pad: 'small',
+      gap: 'large',
     },
     skeleton: {
       border: false,
@@ -2072,6 +2082,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           light: 'black',
         },
       },
+      gap: 'small',
       margin: {
         vertical: 'xxsmall',
         horizontal: 'small',
@@ -2282,6 +2293,14 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         color: 'light-4',
         interval: 10,
         // track: { color: undefined }
+        thickness: 'small',
+      },
+      time: {
+        container: {
+          pad: {
+            horizontal: 'small',
+          },
+        },
       },
     },
     worldMap: {

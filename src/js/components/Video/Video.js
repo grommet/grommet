@@ -492,8 +492,7 @@ const Video = forwardRef(
                         : undefined
                     }
                     size="full"
-                    // TO DO theme object
-                    thickness="small"
+                    thickness={theme.video?.scrubber?.thickness}
                     values={[{ value: percentagePlayed || 0 }]}
                   />
                   <StyledVideoScrubber
@@ -517,8 +516,7 @@ const Video = forwardRef(
                   />
                 </Stack>
               </Box>
-              {/* TO DO theme object */}
-              <Box pad={{ horizontal: 'small' }}>
+              <Box pad={theme?.video?.time?.container?.pad}>
                 <Text margin="none">{formattedTime}</Text>
               </Box>
             </Box>
