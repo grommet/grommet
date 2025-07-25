@@ -55,9 +55,12 @@ var Searcher = function Searcher(_ref) {
     width: {
       min: 'xsmall'
     },
-    flex: true,
+    flex: true
+    // padding right is not needed any longer. There is margin
+    // right set already on the container, see Header.js
+    ,
     pad: {
-      horizontal: 'small'
+      left: 'small'
     }
   }, /*#__PURE__*/React.createElement(TextInput, {
     name: "search-" + property,

@@ -327,7 +327,10 @@ var Header = /*#__PURE__*/forwardRef(function (_ref2, ref) {
     // will be wrapped with an additional Box, preventing this Box
     // from automatically filling the vertical space.
     content = /*#__PURE__*/React.createElement(Box, {
-      flex: "grow",
+      flex: _onResize || search ? {
+        grow: 1,
+        shrink: 1
+      } : 'grow',
       fill: _onResize || search ? 'vertical' : false,
       justify: !align && 'center' || align
     }, content);
@@ -350,11 +353,19 @@ var Header = /*#__PURE__*/forwardRef(function (_ref2, ref) {
         style: _onResize ? {
           position: 'relative'
         } : undefined
-      }, content, searcher && _onResize ? /*#__PURE__*/React.createElement(Box
-      // padding right set to half (12px) of resizer
-      // width (24px) to prevent overlap with resizer control.
-      , {
-        pad: {
+      }, content, searcher && _onResize ? /*#__PURE__*/React.createElement(Box, {
+        flex: {
+          shrink: filtering === property ? 1 : 0
+        },
+        direction: filtering === property ? 'column' : 'row'
+        // margin right set to half (12px) of resizer width
+        // (24px) to prevent overlap with resizer control.
+        // this also creates enough space when search input
+        // is open. so, padding right is not needed for
+        // the search input box any longer.
+        // see Searcher.js
+        ,
+        margin: {
           right: '12px'
         }
       }, searcher) : searcher);
