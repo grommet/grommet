@@ -85,19 +85,29 @@ export const arcCommands = (centerX, centerY, radius, startAngle, endAngle) => {
   return d;
 };
 
-export const calcAngle = (radius, angle, gap) => {
+export const calcAngle = (radius, angle, midAngle, gap) => {
   const gapAngleRadians = Math.asin(Math.abs(gap) / radius);
   const gapAngle = (gapAngleRadians * 180) / Math.PI;
-  return gap > 0 ? angle + gapAngle : angle - gapAngle;
+  return gap > 0
+    ? Math.min(angle + gapAngle, midAngle)
+    : Math.max(angle - gapAngle, midAngle);
 };
 
-const gapPoints = (centerX, centerY, outerRadius, innerRadius, angle, gap) => {
-  const outerAngle = calcAngle(outerRadius, angle, gap);
+const gapPoints = (
+  centerX,
+  centerY,
+  outerRadius,
+  innerRadius,
+  angle,
+  midAngle,
+  gap,
+) => {
+  const outerAngle = calcAngle(outerRadius, angle, midAngle, gap);
   const outer = polarToCartesian(centerX, centerY, outerRadius, outerAngle);
 
   let inner;
   if (innerRadius > 0) {
-    const innerAngle = calcAngle(innerRadius, angle, gap);
+    const innerAngle = calcAngle(innerRadius, angle, midAngle, gap);
     inner = polarToCartesian(centerX, centerY, innerRadius, innerAngle);
   } else {
     inner = polarToCartesian(
@@ -145,13 +155,19 @@ export const wedgeCommands = (
     ? Math.sqrt((thickness / 2 + startGap / 4) ** 2 - (thickness / 2) ** 2)
     : 0;
 
+  // define the angle at the center of the wedge. We can't let the gap
+  // go past this angle.
+  const midAngle = (startAngle + normalizedEndAngle) / 2;
+
   const start = gapPoints(
     centerX,
     centerY,
     outerRadius,
     innerRadius,
     startAngle,
+    midAngle,
     startGap + extraGap,
+    startRound,
   );
   const end = gapPoints(
     centerX,
@@ -159,7 +175,9 @@ export const wedgeCommands = (
     outerRadius,
     innerRadius,
     normalizedEndAngle,
+    midAngle,
     endGap,
+    endRound,
   );
 
   const largeAngle = normalizedEndAngle - startAngle > 180;
@@ -182,13 +200,16 @@ export const wedgeCommands = (
     }
   }
   const capRadius = (outerRadius - innerRadius) / 2;
+  const startCapRadius =
+    capRadius + (startRoundDirection === 0 ? startGap / 2 : 0);
+
   const startPoint = middle || start.inner;
   const endPoint = middle || end.inner;
   const startCap = startRound
     ? [
         'A',
-        (capRadius + startGap / 2).toFixed(POST_DECIMAL_DIGITS),
-        (capRadius + startGap / 2).toFixed(POST_DECIMAL_DIGITS),
+        startCapRadius.toFixed(POST_DECIMAL_DIGITS),
+        startCapRadius.toFixed(POST_DECIMAL_DIGITS),
         0,
         0,
         startRoundDirection,
