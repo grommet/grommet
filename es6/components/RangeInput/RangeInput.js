@@ -102,7 +102,7 @@ var RangeInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
     "aria-label": a11yTitle,
     "aria-valuemax": max,
     "aria-valuemin": min,
-    "aria-valuenow": value,
+    "aria-valuenow": value !== '' ? value : undefined,
     ref: rangeInputRef,
     name: name,
     focus: focus,

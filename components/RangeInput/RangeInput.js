@@ -107,7 +107,7 @@ var RangeInput = exports.RangeInput = /*#__PURE__*/(0, _react.forwardRef)(functi
     "aria-label": a11yTitle,
     "aria-valuemax": max,
     "aria-valuemin": min,
-    "aria-valuenow": value,
+    "aria-valuenow": value !== '' ? value : undefined,
     ref: rangeInputRef,
     name: name,
     focus: focus,
