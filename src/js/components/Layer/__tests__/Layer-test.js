@@ -526,4 +526,137 @@ describe('Layer', () => {
     );
     expectPortal('singleId-test').toMatchSnapshot();
   });
+
+  test('restore focus to trigger button after closing with Esc', (done) => {
+    jest.useFakeTimers();
+
+    const TriggerButtonTest = () => {
+      const [showLayer, setShowLayer] = React.useState(false);
+      return (
+        <div>
+          <button
+            type="button"
+            data-testid="trigger-button"
+            onClick={() => setShowLayer(true)}
+          >
+            Open Layer
+          </button>
+          {showLayer && (
+            <Layer
+              data-testid="test-layer"
+              onEsc={() => setShowLayer(false)}
+              animation={false}
+            >
+              <div>
+                <p>Layer content</p>
+                <input data-testid="layer-input" />
+              </div>
+            </Layer>
+          )}
+        </div>
+      );
+    };
+
+    render(
+      <Grommet>
+        <TriggerButtonTest />
+      </Grommet>,
+    );
+
+    const triggerButton = getByTestId(document, 'trigger-button');
+    triggerButton.focus();
+    expect(document.activeElement).toBe(triggerButton);
+    fireEvent.click(triggerButton);
+
+    // Allow React to process the state change and render the layer
+    jest.advanceTimersByTime(0);
+
+    const layerNode = getByTestId(document, 'test-layer');
+    expect(layerNode).toBeTruthy();
+    const layerInput = getByTestId(document, 'layer-input');
+    fireEvent.keyDown(layerInput, { key: 'Esc', keyCode: 27, which: 27 });
+
+    // Allow React to process the layer unmounting
+    jest.advanceTimersByTime(0);
+
+    expect(queryByTestId(document, 'test-layer')).toBeNull();
+
+    // Advance timer to allow focus for restoration
+    jest.advanceTimersByTime(100);
+
+    // Check that focus has been restored to the trigger button
+    expect(document.activeElement).toBe(triggerButton);
+
+    jest.useRealTimers();
+    done();
+  });
+
+  test('restore focus to trigger button after closing with button', (done) => {
+    jest.useFakeTimers();
+
+    const TriggerButtonTest = () => {
+      const [showLayer, setShowLayer] = React.useState(false);
+
+      return (
+        <div>
+          <button
+            type="button"
+            data-testid="trigger-button"
+            onClick={() => setShowLayer(true)}
+          >
+            Open Layer
+          </button>
+          {showLayer && (
+            <Layer data-testid="test-layer" animation={false}>
+              <div>
+                <p>Layer content</p>
+                <input data-testid="layer-input" />
+                <button
+                  type="button"
+                  data-testid="close-button"
+                  onClick={() => setShowLayer(false)}
+                >
+                  Close
+                </button>
+              </div>
+            </Layer>
+          )}
+        </div>
+      );
+    };
+
+    render(
+      <Grommet>
+        <TriggerButtonTest />
+      </Grommet>,
+    );
+
+    const triggerButton = getByTestId(document, 'trigger-button');
+    triggerButton.focus();
+    expect(document.activeElement).toBe(triggerButton);
+    fireEvent.click(triggerButton);
+
+    // Allow React to process the state change and render the layer
+    jest.advanceTimersByTime(0);
+
+    const layerNode = getByTestId(document, 'test-layer');
+    expect(layerNode).toBeTruthy();
+    const closeButton = getByTestId(document, 'close-button');
+    fireEvent.click(closeButton);
+
+    // Allow React to process the layer unmounting
+    jest.advanceTimersByTime(0);
+
+    // Verify layer is closed
+    expect(queryByTestId(document, 'test-layer')).toBeNull();
+
+    // Advance time to allow for focus restoration
+    jest.advanceTimersByTime(100);
+
+    // Check that focus has been restored to the trigger button
+    expect(document.activeElement).toBe(triggerButton);
+
+    jest.useRealTimers();
+    done();
+  });
 });

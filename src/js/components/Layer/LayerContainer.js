@@ -48,7 +48,7 @@ const LayerContainer = forwardRef(
       full = false,
       id,
       margin = 'none',
-      modal = true,
+      modal,
       onClickOutside,
       onEsc,
       plain,

@@ -112,7 +112,10 @@ const Layer = forwardRef((props, ref) => {
   );
 
   return layerContainer
-    ? createPortal(<LayerContainer ref={ref} {...props} />, layerContainer)
+    ? createPortal(
+        <LayerContainer ref={ref} {...props} modal={modal} />,
+        layerContainer,
+      )
     : null;
 });
 
