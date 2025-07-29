@@ -411,6 +411,7 @@ exports[`Components loads 1`] = `
       "confirmRemove": [Function],
       "disabled": [Function],
       "id": [Function],
+      "maxSize": [Function],
       "messages": [Function],
       "multiple": [Function],
       "name": [Function],

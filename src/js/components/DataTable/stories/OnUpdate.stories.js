@@ -223,6 +223,7 @@ export const OnUpdateDataTable = () => {
     () => ({
       expandable,
       expand,
+      expandLabel: (row) => `${row.location} location`,
       select: groupSelected,
       property: 'location',
       onSelect: onGroupSelect,

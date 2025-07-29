@@ -153,6 +153,7 @@ exports[`FileInput accept 1`] = `
   >
     <input
       accept="image/*"
+      aria-invalid="false"
       class="c3"
       name="file"
       type="file"
@@ -330,6 +331,7 @@ exports[`FileInput background 1`] = `
     class="c1 c2"
   >
     <input
+      aria-invalid="false"
       class="c3"
       name="file"
       type="file"
@@ -505,6 +507,7 @@ exports[`FileInput basic 1`] = `
     class="c1 c2"
   >
     <input
+      aria-invalid="false"
       class="c3"
       name="file"
       type="file"
@@ -667,6 +670,7 @@ exports[`FileInput basic outside grommet wrapper 1`] = `
   class="c0 c1"
 >
   <input
+    aria-invalid="false"
     class="c2"
     name="file"
     type="file"
@@ -841,6 +845,7 @@ exports[`FileInput border 1`] = `
     class="c1 c2"
   >
     <input
+      aria-invalid="false"
       class="c3"
       name="file"
       type="file"
@@ -1016,6 +1021,7 @@ exports[`FileInput custom theme input font size 1`] = `
     class="c1 c2"
   >
     <input
+      aria-invalid="false"
       class="c3"
       type="file"
     />
@@ -1085,10 +1091,9 @@ exports[`FileInput disabled 1`] = `
   cursor: pointer;
   align-self: center;
   margin: 12px;
-}
-
-.c6:hover {
-  text-decoration: underline;
+  opacity: 0.3;
+  cursor: default;
+  text-decoration: none;
 }
 
 .c5 {
@@ -1192,6 +1197,7 @@ exports[`FileInput disabled 1`] = `
     disabled=""
   >
     <input
+      aria-invalid="false"
       class="c3"
       disabled=""
       name="file"
@@ -1207,6 +1213,7 @@ exports[`FileInput disabled 1`] = `
       </span>
       <a
         class="c6"
+        disabled=""
         tabindex="-1"
       >
         browse
@@ -1334,10 +1341,9 @@ exports[`FileInput disabled with file selected 1`] = `
   text-decoration: none;
   cursor: pointer;
   margin: 12px;
-}
-
-.c13:hover {
-  text-decoration: underline;
+  opacity: 0.3;
+  cursor: default;
+  text-decoration: none;
 }
 
 .c2 {
@@ -1543,6 +1549,7 @@ exports[`FileInput disabled with file selected 1`] = `
           disabled=""
         >
           <input
+            aria-invalid="false"
             class="c6"
             disabled=""
             id="fileInput"
@@ -1585,6 +1592,7 @@ exports[`FileInput disabled with file selected 1`] = `
               </button>
               <a
                 class="c13"
+                disabled=""
                 tabindex="-1"
               >
                 browse
@@ -1757,6 +1765,7 @@ exports[`FileInput margin 1`] = `
     class="c1 c2"
   >
     <input
+      aria-invalid="false"
       class="c3"
       name="file"
       type="file"
@@ -1932,6 +1941,7 @@ exports[`FileInput maxSize 1`] = `
     class="c1 c2"
   >
     <input
+      aria-invalid="false"
       class="c3"
       name="file"
       type="file"
@@ -2107,6 +2117,7 @@ exports[`FileInput messages 1`] = `
     class="c1 c2"
   >
     <input
+      aria-invalid="false"
       class="c3"
       name="file"
       type="file"
@@ -2282,6 +2293,7 @@ exports[`FileInput multiple 1`] = `
     class="c1 c2"
   >
     <input
+      aria-invalid="false"
       class="c3"
       multiple=""
       name="file"
@@ -2458,6 +2470,7 @@ exports[`FileInput multiple aggregateThreshold 1`] = `
     class="c1 c2"
   >
     <input
+      aria-invalid="false"
       class="c3"
       multiple=""
       name="file"
@@ -2634,6 +2647,7 @@ exports[`FileInput multiple max 1`] = `
     class="c1 c2"
   >
     <input
+      aria-invalid="false"
       class="c3"
       multiple=""
       name="file"
@@ -2817,6 +2831,7 @@ exports[`FileInput pad 1`] = `
     class="c1 c2"
   >
     <input
+      aria-invalid="false"
       class="c3"
       name="file"
       type="file"
