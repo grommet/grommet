@@ -102,7 +102,7 @@ const RangeInput = forwardRef(
         aria-label={a11yTitle}
         aria-valuemax={max}
         aria-valuemin={min}
-        aria-valuenow={value !== undefined && value !== '' ? value : undefined}
+        aria-valuenow={value !== '' ? value : undefined}
         ref={rangeInputRef}
         name={name}
         focus={focus}
