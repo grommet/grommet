@@ -95,10 +95,7 @@ const LayerContainer = forwardRef(
         }
       };
     }, [sendAnalytics, layerRef, position]);
-
     useEffect(() => {
-      const triggerElement = document.activeElement;
-
       if (position !== 'hidden') {
         const node = layerRef.current || containerRef.current || ref.current;
         if (node && node.scrollIntoView) node.scrollIntoView();
@@ -118,18 +115,6 @@ const LayerContainer = forwardRef(
           focusSpanRef.current.focus();
         }
       }
-      return () => {
-        // Restore focus to trigger only if it’s still in the document,
-        // it's focusable, and it's a modal layer.
-        if (
-          modal &&
-          triggerElement &&
-          document.contains(triggerElement) &&
-          triggerElement.focus
-        ) {
-          triggerElement.focus();
-        }
-      };
     }, [modal, position, ref]);
 
     useEffect(() => {
