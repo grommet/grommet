@@ -20,7 +20,9 @@ const Circle = forwardRef((props, ref) => {
   const strokeWidth =
     type === 'pie'
       ? width / 2
-      : parseMetricToNum(theme.global.edgeSize[thickness] || thickness);
+      : Math.min(
+          width / 2 - 8,
+          parseMetricToNum(theme.global.edgeSize[thickness] || thickness));
   const centerX = width / 2;
   const centerY = width / 2;
   const radius = width / 2 - strokeWidth / 2;

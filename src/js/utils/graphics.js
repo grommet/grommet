@@ -86,6 +86,9 @@ export const arcCommands = (centerX, centerY, radius, startAngle, endAngle) => {
 };
 
 export const calcAngle = (radius, angle, midAngle, gap) => {
+  if (gap === 0) {
+    return angle;
+  }
   const gapAngleRadians = Math.asin(Math.abs(gap) / radius);
   const gapAngle = (gapAngleRadians * 180) / Math.PI;
   return gap > 0
@@ -157,7 +160,11 @@ export const wedgeCommands = (
 
   // define the angle at the center of the wedge. We can't let the gap
   // go past this angle.
-  const midAngle = (startAngle + normalizedEndAngle) / 2;
+
+  // calculate the angle span between start and end
+  const angleSpan =
+    (endAngle < startAngle ? endAngle + 360 : endAngle) - startAngle;
+  const midAngle = startAngle + angleSpan / 2;
 
   const start = gapPoints(
     centerX,
@@ -165,7 +172,7 @@ export const wedgeCommands = (
     outerRadius,
     innerRadius,
     startAngle,
-    midAngle,
+    midAngle < startAngle ? midAngle + 360 : midAngle,
     startGap + extraGap,
     startRound,
   );
@@ -175,7 +182,7 @@ export const wedgeCommands = (
     outerRadius,
     innerRadius,
     normalizedEndAngle,
-    midAngle,
+    midAngle > endAngle ? midAngle - 360 : midAngle,
     endGap,
     endRound,
   );
