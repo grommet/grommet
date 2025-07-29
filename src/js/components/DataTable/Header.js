@@ -415,7 +415,7 @@ const Header = forwardRef(
               // from automatically filling the vertical space.
               content = (
                 <Box
-                  flex="grow"
+                  flex={onResize || search ? { grow: 1, shrink: 1 } : 'grow'}
                   fill={onResize || search ? 'vertical' : false}
                   justify={(!align && 'center') || align}
                 >
@@ -423,18 +423,7 @@ const Header = forwardRef(
                 </Box>
               );
 
-              if (search || onResize) {
-                const resizer = onResize ? (
-                  <Resizer
-                    property={property}
-                    onResize={(prop, width) => {
-                      onResize(prop, width);
-                      updateWidths(prop, width);
-                    }}
-                    headerText={typeof header === 'string' ? header : property}
-                    messages={messages}
-                  />
-                ) : null;
+              if (search) {
                 const searcher =
                   search && filters ? (
                     <Searcher
@@ -457,24 +446,34 @@ const Header = forwardRef(
                     style={onResize ? { position: 'relative' } : undefined}
                   >
                     {content}
-                    {searcher && resizer ? (
+                    {searcher && onResize ? (
                       <Box
-                        flex="shrink"
-                        direction="row"
-                        align="center"
-                        gap={theme.dataTable.header.gap}
+                        flex={{
+                          shrink: filtering === property ? 1 : 0,
+                        }}
+                        direction={filtering === property ? 'column' : 'row'}
+                        // margin right set to half (12px) of resizer width
+                        // (24px) to prevent overlap with resizer control.
+                        // this also creates enough space when search input
+                        // is open. so, padding right is not needed for
+                        // the search input box any longer.
+                        // see Searcher.js
+                        margin={{
+                          right: '12px',
+                        }}
                       >
                         {searcher}
-                        {resizer}
                       </Box>
                     ) : (
-                      searcher || resizer
+                      searcher
                     )}
                   </Box>
                 );
               }
               const cellPin = [...pin];
               if (columnPin) cellPin.push('left');
+
+              const headerId = `grommet-data-table-header-${property}`;
 
               return (
                 <StyledDataTableCell
@@ -485,6 +484,7 @@ const Header = forwardRef(
                   verticalAlign={verticalAlign || columnVerticalAlign}
                   background={cellProps.background}
                   border={cellProps.border}
+                  id={headerId}
                   onWidth={(width) => updateWidths(property, width)}
                   // if sortable, pad will be included in the button styling
                   pad={sortable === false || !onSort ? cellProps.pad : 'none'}
@@ -498,12 +498,28 @@ const Header = forwardRef(
                       ? `${widths[property]}px`
                       : undefined,
                     boxSizing: onResize ? 'border-box' : undefined,
+                    position: onResize ? 'relative' : undefined,
+                    overflow: onResize ? 'visible' : undefined,
                   }}
                   onResize={onResize}
                   property={property}
                   {...passThemeFlag}
                 >
                   {content}
+                  {onResize && (
+                    <Resizer
+                      property={property}
+                      onResize={(prop, width) => {
+                        onResize(prop, width);
+                        updateWidths(prop, width);
+                      }}
+                      headerText={
+                        typeof header === 'string' ? header : property
+                      }
+                      messages={messages}
+                      headerId={headerId}
+                    />
+                  )}
                 </StyledDataTableCell>
               );
             },

@@ -74,6 +74,7 @@ const TextInput = forwardRef(
       a11yTitle,
       defaultSuggestion,
       defaultValue,
+      disabled,
       dropAlign = defaultDropAlign,
       dropHeight,
       dropTarget,
@@ -480,6 +481,7 @@ const TextInput = forwardRef(
 
     const ReadOnlyCopyButton = (
       <CopyButton
+        disabled={disabled}
         onBlurCopy={onBlurCopy}
         onClickCopy={onClickCopy}
         readOnlyCopyPrompt={readOnlyCopyPrompt}
@@ -515,6 +517,7 @@ const TextInput = forwardRef(
             id={id}
             name={name}
             autoComplete="off"
+            disabled={disabled}
             plain={plain}
             placeholder={
               typeof placeholder === 'string' ? placeholder : undefined
