@@ -16,16 +16,16 @@ import { ContainerTargetContext } from '../../contexts/ContainerTargetContext';
 import { LayerPropTypes } from './propTypes';
 
 const Layer = forwardRef((props, ref) => {
-  const { animate, animation, modal, targetChildPosition } = props;
+  const { animate, animation, modal = true, targetChildPosition } = props;
   const [layerContainer, setLayerContainer] = useState();
   const containerTarget = useContext(ContainerTargetContext);
 
-  const [originalFocusedElement, setOriginalFocusedElement] = useState();
+  const originalFocusedElementRef = useRef(null);
 
   const focusWithinLayerRef = useRef(false);
 
   useEffect(() => {
-    setOriginalFocusedElement(document.activeElement);
+    originalFocusedElementRef.current = document.activeElement;
   }, []);
 
   useEffect(() => {
@@ -58,6 +58,7 @@ const Layer = forwardRef((props, ref) => {
   // just a few things to clean up when the Layer is unmounted
   useLayoutEffect(
     () => () => {
+      const originalFocusedElement = originalFocusedElementRef.current;
       if (originalFocusedElement) {
         // Restore focus if:
         // - modal layer (always restore), or
@@ -107,18 +108,14 @@ const Layer = forwardRef((props, ref) => {
         }
       }
     },
-    [
-      animate,
-      animation,
-      containerTarget,
-      layerContainer,
-      modal,
-      originalFocusedElement,
-    ],
+    [animate, animation, containerTarget, layerContainer, modal],
   );
 
   return layerContainer
-    ? createPortal(<LayerContainer ref={ref} {...props} />, layerContainer)
+    ? createPortal(
+        <LayerContainer ref={ref} {...props} modal={modal} />,
+        layerContainer,
+      )
     : null;
 });
 
