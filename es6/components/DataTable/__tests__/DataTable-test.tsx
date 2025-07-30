@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import 'jest-styled-components';
-import { render, fireEvent, screen } from '@testing-library/react';
+import { render, fireEvent, screen, waitFor } from '@testing-library/react';
 import '@testing-library/jest-dom';
 
 import { Grommet } from '../../Grommet';
@@ -448,6 +448,41 @@ describe('DataTable', () => {
       target: { value: '[' },
     });
     expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('header search onEsc returns focus to search button', async () => {
+    const { container } = render(
+      <Grommet>
+        <DataTable
+          columns={[{ property: 'a', header: 'A', search: true }]}
+          data={[{ a: 'Alpha' }, { a: 'beta' }, { a: '[]' }]}
+        />
+      </Grommet>,
+    );
+
+    // Open the search input
+    const searchButton = container.querySelector(
+      '[aria-label="Open search by a"]',
+    ) as HTMLButtonElement;
+    fireEvent.click(searchButton);
+
+    // Focus should be on the search input
+    const searchInput = container.querySelector(
+      '[name="search-a"]',
+    ) as HTMLInputElement;
+    expect(document.activeElement).toBe(searchInput);
+
+    // Press Escape key
+    fireEvent.keyDown(searchInput, {
+      key: 'Escape',
+      code: 'Escape',
+      keyCode: 27,
+    });
+
+    await waitFor(() => {
+      const active = document.activeElement;
+      expect(active?.getAttribute('aria-label')).toBe('Open search by a');
+    });
   });
 
   test('resizeable', () => {
