@@ -87,6 +87,7 @@ export const TypedForm = () => {
           <FormField
             label="Time of day"
             name="ampm"
+            htmlFor="ampm"
             pad
             options={['morning', 'evening']}
           >
