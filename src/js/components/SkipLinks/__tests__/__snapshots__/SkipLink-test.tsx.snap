@@ -1,4 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`SkipLink basic 1`] = `
 .c1 {
@@ -78,12 +78,12 @@ exports[`SkipLink basic 1`] = `
 
 exports[`SkipLink basic 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 cBoJUe"
+  class="StyledGrommet-sc-19lkkz7-0 kiEDjE"
 >
   <div>
     <a
       aria-hidden="true"
-      class="StyledAnchor-sc-1rp7lwl-0 dMxHLb SkipLinkTarget__HiddenAnchor-sc-16wjfgk-0 bNRPA-d"
+      class="StyledAnchor-sc-1rp7lwl-0 DlLkd SkipLinkTarget__HiddenAnchor-sc-16wjfgk-0 dLpcjH"
       id="main"
       tabindex="-1"
     />
@@ -96,7 +96,7 @@ exports[`SkipLink basic 2`] = `
   <footer>
     <a
       aria-hidden="true"
-      class="StyledAnchor-sc-1rp7lwl-0 dMxHLb SkipLinkTarget__HiddenAnchor-sc-16wjfgk-0 bNRPA-d"
+      class="StyledAnchor-sc-1rp7lwl-0 DlLkd SkipLinkTarget__HiddenAnchor-sc-16wjfgk-0 dLpcjH"
       id="footer"
       tabindex="-1"
     />
@@ -110,12 +110,12 @@ exports[`SkipLink basic 2`] = `
 
 exports[`SkipLink basic 3`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 cBoJUe"
+  class="StyledGrommet-sc-19lkkz7-0 kiEDjE"
 >
   <div>
     <a
       aria-hidden="true"
-      class="StyledAnchor-sc-1rp7lwl-0 dMxHLb SkipLinkTarget__HiddenAnchor-sc-16wjfgk-0 bNRPA-d"
+      class="StyledAnchor-sc-1rp7lwl-0 DlLkd SkipLinkTarget__HiddenAnchor-sc-16wjfgk-0 dLpcjH"
       id="main"
       tabindex="-1"
     />
@@ -128,7 +128,7 @@ exports[`SkipLink basic 3`] = `
   <footer>
     <a
       aria-hidden="true"
-      class="StyledAnchor-sc-1rp7lwl-0 dMxHLb SkipLinkTarget__HiddenAnchor-sc-16wjfgk-0 bNRPA-d"
+      class="StyledAnchor-sc-1rp7lwl-0 DlLkd SkipLinkTarget__HiddenAnchor-sc-16wjfgk-0 dLpcjH"
       id="footer"
       tabindex="-1"
     />
@@ -208,12 +208,12 @@ exports[`SkipLink should allow for single skip link 1`] = `
 
 exports[`SkipLink should allow for single skip link 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 cBoJUe"
+  class="StyledGrommet-sc-19lkkz7-0 kiEDjE"
 >
   <div>
     <a
       aria-hidden="true"
-      class="StyledAnchor-sc-1rp7lwl-0 dMxHLb SkipLinkTarget__HiddenAnchor-sc-16wjfgk-0 bNRPA-d"
+      class="StyledAnchor-sc-1rp7lwl-0 DlLkd SkipLinkTarget__HiddenAnchor-sc-16wjfgk-0 dLpcjH"
       id="main"
       tabindex="-1"
     />
@@ -234,12 +234,12 @@ exports[`SkipLink should allow for single skip link 2`] = `
 
 exports[`SkipLink should allow for single skip link 3`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 cBoJUe"
+  class="StyledGrommet-sc-19lkkz7-0 kiEDjE"
 >
   <div>
     <a
       aria-hidden="true"
-      class="StyledAnchor-sc-1rp7lwl-0 dMxHLb SkipLinkTarget__HiddenAnchor-sc-16wjfgk-0 bNRPA-d"
+      class="StyledAnchor-sc-1rp7lwl-0 DlLkd SkipLinkTarget__HiddenAnchor-sc-16wjfgk-0 dLpcjH"
       id="main"
       tabindex="-1"
     />

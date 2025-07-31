@@ -28,7 +28,7 @@ describe('utils', () => {
       areNormalizedValuesEquals([{ value: [1] }], [{ test: 'test' }]),
     ).toBeFalsy();
 
-    expect(warnSpy).toBeCalledTimes(6);
+    expect(warnSpy).toHaveBeenCalledTimes(6);
     expect(warnSpy).toHaveBeenCalledWith(
       `This function will be removed in the upcoming releases.
 Please get in touch with us if you have concerns.`,
@@ -81,7 +81,7 @@ Please get in touch with us if you have concerns.`,
 
     expect(areNormalizedBoundsEquals([], [])).toBeFalsy();
 
-    expect(warnSpy).toBeCalledTimes(5);
+    expect(warnSpy).toHaveBeenCalledTimes(5);
     expect(warnSpy).toHaveBeenCalledWith(
       `This function will be removed in the upcoming releases.
 Please get in touch with us if you have concerns.`,

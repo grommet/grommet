@@ -1,4 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`FormField Custom theme TextInput FormField container 1`] = `
 .c1 {
@@ -3556,8 +3556,7 @@ exports[`FormField should render asterisk when requiredIndicator === true 1`] = 
 </div>
 `;
 
-exports[`FormField should render custom indicator when requiredIndicator is
-  element 1`] = `
+exports[`FormField should render custom indicator when requiredIndicator is\\n  element 1`] = `
 .c3 {
   display: inline-block;
   flex: 0 0 auto;
