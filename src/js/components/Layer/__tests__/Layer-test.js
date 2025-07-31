@@ -584,6 +584,23 @@ describe('Layer', () => {
     expect(screen.queryByRole('button', { name: 'Close Layer' })).toBeNull();
     expect(document.activeElement).toBe(triggerButton);
 
+    await act(async () => {
+      fireEvent.click(triggerButton);
+      jest.advanceTimersByTime(0);
+    });
+
+    const closeButton2 = screen.getByRole('button', { name: 'Close Layer' });
+
+    await act(async () => {
+      fireEvent.click(closeButton2);
+      jest.advanceTimersByTime(0);
+      jest.advanceTimersByTime(100);
+    });
+
+    await act(async () => {
+      jest.runOnlyPendingTimers();
+    });
+    expect(document.activeElement).toBe(triggerButton);
     jest.useRealTimers();
   });
 });
