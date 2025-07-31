@@ -1,11 +1,11 @@
 import React from 'react';
 import 'jest-styled-components';
-import { render, fireEvent } from '@testing-library/react';
+import { render, fireEvent, screen, act } from '@testing-library/react';
 import { getByTestId, queryByTestId } from '@testing-library/dom';
 import 'regenerator-runtime/runtime';
 import { createPortal, expectPortal } from '../../../utils/portal';
 
-import { Grommet, Box, Layer, Select } from '../..';
+import { Grommet, Box, Layer, Select, Button } from '../..';
 import { LayerContainer } from '../LayerContainer';
 
 const SimpleLayer = () => {
@@ -525,5 +525,65 @@ describe('Layer', () => {
       </Grommet>,
     );
     expectPortal('singleId-test').toMatchSnapshot();
+  });
+
+  const TriggerButtonTest = () => {
+    const [showLayer, setShowLayer] = React.useState(false);
+    return (
+      <Box>
+        <Button type="button" onClick={() => setShowLayer(true)}>
+          Open Layer
+        </Button>
+        {showLayer && (
+          <Layer onEsc={() => setShowLayer(false)} animation={false}>
+            <Box>
+              <Button label="Close Layer" onClick={() => setShowLayer(false)} />
+            </Box>
+          </Layer>
+        )}
+      </Box>
+    );
+  };
+
+  test('restore focus to trigger button after hitting escape', async () => {
+    jest.useFakeTimers();
+
+    render(
+      <Grommet>
+        <TriggerButtonTest />
+      </Grommet>,
+    );
+
+    const triggerButton = screen.getByRole('button', { name: 'Open Layer' });
+
+    await act(async () => {
+      triggerButton.focus();
+    });
+    expect(document.activeElement).toBe(triggerButton);
+
+    await act(async () => {
+      fireEvent.click(triggerButton);
+      jest.advanceTimersByTime(0);
+    });
+
+    const closeButton = screen.getByRole('button', { name: 'Close Layer' });
+    await act(async () => {
+      fireEvent.keyDown(closeButton, {
+        key: 'Escape',
+        code: 'Escape',
+        keyCode: 27,
+      });
+      jest.advanceTimersByTime(0);
+      jest.advanceTimersByTime(100);
+    });
+
+    await act(async () => {
+      jest.runOnlyPendingTimers();
+    });
+
+    expect(screen.queryByRole('button', { name: 'Close Layer' })).toBeNull();
+    expect(document.activeElement).toBe(triggerButton);
+
+    jest.useRealTimers();
   });
 });
