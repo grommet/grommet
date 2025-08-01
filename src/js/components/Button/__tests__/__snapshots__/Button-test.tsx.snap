@@ -1,4 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`Button a11yTitle 1`] = `
 .c1 {
@@ -1146,8 +1146,7 @@ exports[`Button badge should render custom element 1`] = `
 </div>
 `;
 
-exports[`Button badge should render relative to contents when button has no
-  border or background 1`] = `
+exports[`Button badge should render relative to contents when button has no\\n  border or background 1`] = `
 .c4 {
   display: inline-block;
   flex: 0 0 auto;

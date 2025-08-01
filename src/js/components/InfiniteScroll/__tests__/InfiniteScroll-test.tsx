@@ -401,7 +401,9 @@ describe('show scenarios', () => {
     expect(expectedItem).toMatch(simpleItems(numItems)[showIndex]);
 
     // Check to see that our replace items have been removed from the DOM.
-    expect(container.firstChild).not.toContain('item 7');
+    // @ts-ignore
+    const pageItems = createPageItems(container.firstChild.children);
+    expect(pageItems).not.toContain('item 7');
 
     /* Check to see that we have the total number of items we expect.
      * When replace is true, the expected number of items should be less

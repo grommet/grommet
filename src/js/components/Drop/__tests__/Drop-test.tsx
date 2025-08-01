@@ -263,7 +263,7 @@ describe('Drop', () => {
       document,
       new MouseEvent('mousedown', { bubbles: true, cancelable: true }),
     );
-    expect(onClickOutside).toBeCalled();
+    expect(onClickOutside).toHaveBeenCalled();
   });
 
   test('does not invoke onClickOutside when clicking the target', () => {

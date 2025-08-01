@@ -1,4 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`NameValueList should accept and apply Grid props 1`] = `
 .c0 {
@@ -1058,8 +1058,7 @@ exports[`NameValueList should render correct width of value when value is array 
 </DocumentFragment>
 `;
 
-exports[`NameValueList should render name/value as a column when pairProps = { direction: 
-    'column' } 1`] = `
+exports[`NameValueList should render name/value as a column when pairProps = { direction: \\n    'column' } 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -1334,8 +1333,7 @@ exports[`NameValueList should render pairs in a grid when layout="grid" 1`] = `
 </div>
 `;
 
-exports[`NameValueList should render value above name when pairProps = { direction: 
-    'column-reverse' } 1`] = `
+exports[`NameValueList should render value above name when pairProps = { direction: \\n    'column-reverse' } 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;

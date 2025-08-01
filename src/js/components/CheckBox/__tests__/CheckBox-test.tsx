@@ -140,7 +140,7 @@ describe('CheckBox', () => {
         <CheckBox indeterminate checked />
       </Grommet>,
     );
-    expect(warnSpy).toBeCalledWith(
+    expect(warnSpy).toHaveBeenCalledWith(
       'Checkbox cannot be "checked" and "indeterminate" at the same time.',
     );
 
@@ -155,7 +155,7 @@ describe('CheckBox', () => {
         <CheckBox indeterminate toggle />
       </Grommet>,
     );
-    expect(warnSpy).toBeCalledWith(
+    expect(warnSpy).toHaveBeenCalledWith(
       'Checkbox of type toggle does not have "indeterminate" state.',
     );
 

@@ -175,7 +175,7 @@ describe('Anchor', () => {
     const anchor = getByText('Test');
     fireEvent.click(anchor);
     expect(container.firstChild).toMatchSnapshot();
-    expect(onClick).toBeCalled();
+    expect(onClick).toHaveBeenCalled();
   });
 
   test('renders tag', () => {

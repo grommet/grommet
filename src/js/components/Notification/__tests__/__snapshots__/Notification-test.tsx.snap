@@ -1,4 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`Notification Grommet messages 1`] = `
 <DocumentFragment>
@@ -2036,24 +2036,24 @@ exports[`Notification position bottom 1`] = `
 
 exports[`Notification position bottom 2`] = `
 "@media only screen and (max-width: 768px) {
-  .bLYdy {
+  .kQKxik {
     border-radius: 3px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .iRluGJ {
+  .hidwNH {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .iRluGJ {
+  .hidwNH {
     padding-top: 3px;
     padding-bottom: 3px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .cxZCUj {
+  .gOfGFJ {
     padding-right: 6px;
   }
 }"
@@ -2309,24 +2309,24 @@ exports[`Notification position bottom-left 1`] = `
 
 exports[`Notification position bottom-left 2`] = `
 "@media only screen and (max-width: 768px) {
-  .bLYdy {
+  .kQKxik {
     border-radius: 3px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .iRluGJ {
+  .hidwNH {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .iRluGJ {
+  .hidwNH {
     padding-top: 3px;
     padding-bottom: 3px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .cxZCUj {
+  .gOfGFJ {
     padding-right: 6px;
   }
 }"
@@ -2582,24 +2582,24 @@ exports[`Notification position bottom-right 1`] = `
 
 exports[`Notification position bottom-right 2`] = `
 "@media only screen and (max-width: 768px) {
-  .bLYdy {
+  .kQKxik {
     border-radius: 3px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .iRluGJ {
+  .hidwNH {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .iRluGJ {
+  .hidwNH {
     padding-top: 3px;
     padding-bottom: 3px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .cxZCUj {
+  .gOfGFJ {
     padding-right: 6px;
   }
 }"
@@ -2855,24 +2855,24 @@ exports[`Notification position center 1`] = `
 
 exports[`Notification position center 2`] = `
 "@media only screen and (max-width: 768px) {
-  .bLYdy {
+  .kQKxik {
     border-radius: 3px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .iRluGJ {
+  .hidwNH {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .iRluGJ {
+  .hidwNH {
     padding-top: 3px;
     padding-bottom: 3px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .cxZCUj {
+  .gOfGFJ {
     padding-right: 6px;
   }
 }"
@@ -3128,24 +3128,24 @@ exports[`Notification position end 1`] = `
 
 exports[`Notification position end 2`] = `
 "@media only screen and (max-width: 768px) {
-  .bLYdy {
+  .kQKxik {
     border-radius: 3px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .iRluGJ {
+  .hidwNH {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .iRluGJ {
+  .hidwNH {
     padding-top: 3px;
     padding-bottom: 3px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .cxZCUj {
+  .gOfGFJ {
     padding-right: 6px;
   }
 }"
@@ -3401,24 +3401,24 @@ exports[`Notification position left 1`] = `
 
 exports[`Notification position left 2`] = `
 "@media only screen and (max-width: 768px) {
-  .bLYdy {
+  .kQKxik {
     border-radius: 3px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .iRluGJ {
+  .hidwNH {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .iRluGJ {
+  .hidwNH {
     padding-top: 3px;
     padding-bottom: 3px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .cxZCUj {
+  .gOfGFJ {
     padding-right: 6px;
   }
 }"
@@ -3674,24 +3674,24 @@ exports[`Notification position right 1`] = `
 
 exports[`Notification position right 2`] = `
 "@media only screen and (max-width: 768px) {
-  .bLYdy {
+  .kQKxik {
     border-radius: 3px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .iRluGJ {
+  .hidwNH {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .iRluGJ {
+  .hidwNH {
     padding-top: 3px;
     padding-bottom: 3px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .cxZCUj {
+  .gOfGFJ {
     padding-right: 6px;
   }
 }"
@@ -3947,24 +3947,24 @@ exports[`Notification position start 1`] = `
 
 exports[`Notification position start 2`] = `
 "@media only screen and (max-width: 768px) {
-  .bLYdy {
+  .kQKxik {
     border-radius: 3px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .iRluGJ {
+  .hidwNH {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .iRluGJ {
+  .hidwNH {
     padding-top: 3px;
     padding-bottom: 3px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .cxZCUj {
+  .gOfGFJ {
     padding-right: 6px;
   }
 }"
@@ -4220,24 +4220,24 @@ exports[`Notification position top 1`] = `
 
 exports[`Notification position top 2`] = `
 "@media only screen and (max-width: 768px) {
-  .bLYdy {
+  .kQKxik {
     border-radius: 3px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .iRluGJ {
+  .hidwNH {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .iRluGJ {
+  .hidwNH {
     padding-top: 3px;
     padding-bottom: 3px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .cxZCUj {
+  .gOfGFJ {
     padding-right: 6px;
   }
 }"
@@ -4493,24 +4493,24 @@ exports[`Notification position top-left 1`] = `
 
 exports[`Notification position top-left 2`] = `
 "@media only screen and (max-width: 768px) {
-  .bLYdy {
+  .kQKxik {
     border-radius: 3px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .iRluGJ {
+  .hidwNH {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .iRluGJ {
+  .hidwNH {
     padding-top: 3px;
     padding-bottom: 3px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .cxZCUj {
+  .gOfGFJ {
     padding-right: 6px;
   }
 }"
@@ -4766,24 +4766,24 @@ exports[`Notification position top-right 1`] = `
 
 exports[`Notification position top-right 2`] = `
 "@media only screen and (max-width: 768px) {
-  .bLYdy {
+  .kQKxik {
     border-radius: 3px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .iRluGJ {
+  .hidwNH {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .iRluGJ {
+  .hidwNH {
     padding-top: 3px;
     padding-bottom: 3px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .cxZCUj {
+  .gOfGFJ {
     padding-right: 6px;
   }
 }"

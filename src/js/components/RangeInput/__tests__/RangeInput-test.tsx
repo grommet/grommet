@@ -115,7 +115,7 @@ describe('RangeInput', () => {
         value: '10',
       },
     });
-    expect(onChange).toBeCalledTimes(1);
+    expect(onChange).toHaveBeenCalledTimes(1);
 
     expect(container.firstChild).toMatchSnapshot();
   });
@@ -163,7 +163,7 @@ describe('RangeInput', () => {
         value: '10',
       },
     });
-    expect(onChange).toBeCalledTimes(1);
+    expect(onChange).toHaveBeenCalledTimes(1);
   });
 
   test('onWheel overrides should not call onChange', () => {
@@ -176,6 +176,6 @@ describe('RangeInput', () => {
     );
 
     fireEvent.wheel(getByDisplayValue('5'));
-    expect(onChange).not.toBeCalled();
+    expect(onChange).not.toHaveBeenCalled();
   });
 });

@@ -168,9 +168,9 @@ describe('Button', () => {
       </Grommet>,
     );
 
-    expect(screen.getByRole('button', { name: 'accent-1' })).toHaveStyle({
-      'background-color': 'transparent',
-    });
+    const button = screen.getByRole('button', { name: 'accent-1' });
+    const bg = window.getComputedStyle(button).backgroundColor;
+    expect(bg === 'transparent' || bg === 'rgba(0, 0, 0, 0)').toBe(true);
 
     expect(
       screen.getByRole('button', { name: 'primary accent-1' }),
@@ -421,7 +421,7 @@ describe('Button', () => {
     );
 
     fireEvent.click(screen.getByRole('button'));
-    expect(onClick).toBeCalled();
+    expect(onClick).toHaveBeenCalledTimes(1);
   });
 
   test('size', () => {

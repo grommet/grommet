@@ -100,7 +100,7 @@ describe('List', () => {
     );
     expect(container.firstChild).toMatchSnapshot();
     fireEvent.click(getByText('beta'));
-    expect(onClickItem).toBeCalledWith(
+    expect(onClickItem).toHaveBeenCalledWith(
       expect.objectContaining({ item: { a: 'beta' } }),
     );
     expect(container.firstChild).toMatchSnapshot();
@@ -482,7 +482,7 @@ describe('List events', () => {
     fireEvent.blur(getByText('beta'));
     // Focus on beta while `active` is not on beta
     expect(container.firstChild).toMatchSnapshot();
-    expect(onClickItem).toBeCalledTimes(0);
+    expect(onClickItem).toHaveBeenCalledTimes(0);
   });
 
   test('mouse events', () => {
@@ -494,7 +494,7 @@ describe('List events', () => {
     fireEvent.mouseOut(getByText('beta'));
     // Focus on beta while `active` is not on beta
     expect(container.firstChild).toMatchSnapshot();
-    expect(onClickItem).toBeCalledTimes(0);
+    expect(onClickItem).toHaveBeenCalledTimes(0);
     expect(onActive).toHaveBeenCalledTimes(2);
   });
 
@@ -1093,10 +1093,10 @@ describe('List pinned', () => {
     const iconStyle = window.getComputedStyle(
       screen.getAllByLabelText('Item pinned, order cannot be changed.')[0],
     );
-    expect(locationStyle.color).toBe(pinnedObject.color);
-    expect(numberStyle.color).toBe(pinnedObject.color);
-    expect(iconStyle.stroke).toBe(pinnedObject.color);
-    expect(iconStyle.fill).toBe(pinnedObject.color);
+    expect(locationStyle.color).toBe('rgb(0, 0, 255)');
+    expect(numberStyle.color).toBe('rgb(0, 0, 255)');
+    expect(iconStyle.stroke).toBe('blue');
+    expect(iconStyle.fill).toBe('blue');
   });
 
   test('should apply pinned object styling to items when data are objects', () => {
@@ -1122,10 +1122,10 @@ describe('List pinned', () => {
     const iconStyle = window.getComputedStyle(
       screen.getAllByLabelText('Item pinned, order cannot be changed.')[0],
     );
-    expect(locationStyle.color).toBe(pinnedObject.color);
-    expect(numberStyle.color).toBe(pinnedObject.color);
-    expect(iconStyle.stroke).toBe(pinnedObject.color);
-    expect(iconStyle.fill).toBe(pinnedObject.color);
+    expect(locationStyle.color).toBe('rgb(0, 0, 255)');
+    expect(numberStyle.color).toBe('rgb(0, 0, 255)');
+    expect(iconStyle.stroke).toBe('blue');
+    expect(iconStyle.fill).toBe('blue');
   });
 
   test('should apply pinned.color styling to primaryKey and secondaryKey when they are strings', () => {
@@ -1151,8 +1151,8 @@ describe('List pinned', () => {
       screen.getByText('Colorado'),
     );
 
-    expect(primaryKeyStyle.color).toBe(pinnedObject.color);
-    expect(secondaryKeyStyle.color).toBe(pinnedObject.color);
+    expect(primaryKeyStyle.color).toBe('rgb(0, 0, 255)');
+    expect(secondaryKeyStyle.color).toBe('rgb(0, 0, 255)');
   });
 
   test('should not apply pinned.color to primaryKey and secondaryKey when they are custom render functions', () => {
@@ -1186,8 +1186,8 @@ describe('List pinned', () => {
       screen.getByText('Colorado'),
     );
 
-    expect(primaryKeyStyle.color).toBe('red');
-    expect(secondaryKeyStyle.color).toBe('pink');
+    expect(primaryKeyStyle.color).toBe('rgb(255, 0, 0)');
+    expect(secondaryKeyStyle.color).toBe('rgb(255, 192, 203)');
   });
 
   test('should apply pinned.icon but not pinned.color if icon color prop is specified', () => {

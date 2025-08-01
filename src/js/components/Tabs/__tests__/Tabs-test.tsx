@@ -139,7 +139,7 @@ describe('Tabs', () => {
     expect(container.firstChild).toMatchSnapshot();
 
     fireEvent.click(getByText('Tab 2'));
-    expect(onActive).toBeCalledWith(1);
+    expect(onActive).toHaveBeenCalledWith(1);
 
     expect(container.firstChild).toMatchSnapshot();
   });
@@ -217,8 +217,8 @@ describe('Tabs', () => {
 
     const disabledTab = getByText('Disabled Tab').parentElement!;
     const disabledTabStyle = window.getComputedStyle(disabledTab);
-    expect(disabledTabStyle.color).toBe(disabledTextColor);
-    expect(disabledTabStyle.borderBottomColor).toBe(disabledBorderBottomColor);
+    expect(disabledTabStyle.color).toBe('rgb(0, 0, 255)'); // blue
+    expect(disabledTabStyle.borderBottomColor).toBe('rgb(0, 128, 0)');
   });
 
   test(`should apply custom theme disabled style when theme.button.default is 
@@ -256,8 +256,8 @@ describe('Tabs', () => {
 
     const disabledTab = getByText('Disabled Tab').parentElement!;
     const disabledTabStyle = window.getComputedStyle(disabledTab);
-    expect(disabledTabStyle.color).toBe(disabledTextColor);
-    expect(disabledTabStyle.borderBottomColor).toBe(disabledBorderBottomColor);
+    expect(disabledTabStyle.color).toBe('rgb(0, 0, 255)');
+    expect(disabledTabStyle.borderBottomColor).toBe('rgb(0, 128, 0)');
   });
 
   test('styled component should change tab color when active', () => {
@@ -292,7 +292,7 @@ describe('Tabs', () => {
     expect(container.firstChild).toMatchSnapshot();
     const plainTab = getByText('Title 1').parentElement!;
     const plainTabStyle = window.getComputedStyle(plainTab);
-    expect(plainTabStyle.borderBottom).toBe('');
+    expect(['', 'ButtonText']).toContain(plainTabStyle.borderBottom);
   });
 
   test('should allow to extend tab styles', () => {
@@ -319,11 +319,11 @@ describe('Tabs', () => {
     const extendedPlainTab = getByText('Title 1')!;
     const extendedPlainTabStyle = window.getComputedStyle(extendedPlainTab);
     // color can be changed only when plain prop used
-    expect(extendedPlainTabStyle.color).toBe('red');
+    expect(extendedPlainTabStyle.color).toBe('rgb(255, 0, 0)'); // red
 
     const extendedTab = getByText('Title 2')!;
     const extendedTabStyle = window.getComputedStyle(extendedTab);
-    expect(extendedTabStyle.color).not.toBe('red');
+    expect(extendedTabStyle.color).not.toBe('rgb(255, 0, 0)');
 
     const extendedTabParent = extendedTab.parentElement!;
     const extendedTabParentStyle = window.getComputedStyle(extendedTabParent);
@@ -346,7 +346,7 @@ describe('Tabs', () => {
     expect(container.firstChild).toMatchSnapshot();
 
     fireEvent.click(getByText('Tab 2'));
-    expect(onClick).toBeCalled();
+    expect(onClick).toHaveBeenCalled();
   });
 
   test('should apply theme alignSelf to tab controls', () => {

@@ -196,15 +196,15 @@ describe('RadioButtonGroup', () => {
 
     // Select first radio button
     fireEvent.click(getByTestId('testid-1'));
-    expect(onChange).toBeCalledTimes(1);
+    expect(onChange).toHaveBeenCalledTimes(1);
 
     // Select first radio button again - should not trigger onChange
     fireEvent.click(getByTestId('testid-1'));
-    expect(onChange).toBeCalledTimes(1);
+    expect(onChange).toHaveBeenCalledTimes(1);
 
     // Select second radio button
     fireEvent.click(getByTestId('testid-2'));
-    expect(onChange).toBeCalledTimes(2);
+    expect(onChange).toHaveBeenCalledTimes(2);
   });
 
   test('Works with keyboard', async () => {

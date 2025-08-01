@@ -184,7 +184,7 @@ describe('Form uncontrolled', () => {
     });
     expect(container.firstChild).toMatchSnapshot();
     fireEvent.click(getByText('Submit'));
-    expect(onSubmit).toBeCalledWith(
+    expect(onSubmit).toHaveBeenCalledWith(
       expect.objectContaining({
         value: { test: 'v' },
         touched: { test: true },
@@ -207,7 +207,7 @@ describe('Form uncontrolled', () => {
     );
     expect(container.firstChild).toMatchSnapshot();
     fireEvent.click(getByText('Submit'));
-    expect(onValidate).toBeCalledWith(
+    expect(onValidate).toHaveBeenCalledWith(
       expect.objectContaining({
         errors: { test: 'required' },
         infos: {},
@@ -237,7 +237,7 @@ describe('Form uncontrolled', () => {
     );
     expect(container.firstChild).toMatchSnapshot();
     fireEvent.click(getByText('Submit'));
-    expect(onValidate).toBeCalledWith(
+    expect(onValidate).toHaveBeenCalledWith(
       expect.objectContaining({
         errors: { test: errorMessage },
         infos: {},
@@ -267,7 +267,7 @@ describe('Form uncontrolled', () => {
     );
     expect(container.firstChild).toMatchSnapshot();
     fireEvent.click(getByText('Submit'));
-    expect(onValidate).toBeCalledWith(
+    expect(onValidate).toHaveBeenCalledWith(
       expect.objectContaining({
         errors: {},
         infos: { test: infoMessage },
@@ -308,8 +308,8 @@ describe('Form uncontrolled', () => {
     });
     fireEvent.click(getByText('Submit'));
 
-    expect(validate).toBeCalledWith('v', { test: 'v' });
-    expect(validate2).toBeCalledWith(undefined, { test: 'v' });
+    expect(validate).toHaveBeenCalledWith('v', { test: 'v' });
+    expect(validate2).toHaveBeenCalledWith(undefined, { test: 'v' });
 
     fireEvent.change(getByPlaceholderText('test input'), {
       target: { value: 'value' },
@@ -319,16 +319,16 @@ describe('Form uncontrolled', () => {
     });
 
     fireEvent.click(getByText('Submit'));
-    expect(validate).toBeCalledWith('value', {
+    expect(validate).toHaveBeenCalledWith('value', {
       test: 'value',
       test2: 'value-2',
     });
-    expect(validate2).toBeCalledWith('value-2', {
+    expect(validate2).toHaveBeenCalledWith('value-2', {
       test: 'value',
       test2: 'value-2',
     });
 
-    expect(onSubmit).toBeCalledWith(
+    expect(onSubmit).toHaveBeenCalledWith(
       expect.objectContaining({
         value: { test: 'value', test2: 'value-2' },
         touched: { test: true, test2: true },
@@ -503,7 +503,7 @@ describe('Form uncontrolled', () => {
     );
     fireEvent.click(getByText('Submit'));
     expect(queryByText('required')).toBeNull();
-    expect(onSubmit).toBeCalledWith(
+    expect(onSubmit).toHaveBeenCalledWith(
       expect.objectContaining({
         value: { test: 'Initial value', test2: 'Initial value2' },
         touched: {},
@@ -724,7 +724,7 @@ describe('Form uncontrolled', () => {
     fireEvent.change(getByPlaceholderText('name'), {
       target: { value: 'abc' },
     });
-    expect(onFocus).toBeCalledTimes(6);
+    expect(onFocus).toHaveBeenCalledTimes(6);
     expect(queryByText('required')).toBeTruthy();
     expect(queryByText('must be >1 character')).toBe(null);
   });
@@ -935,7 +935,7 @@ describe('Form uncontrolled', () => {
       'v',
     );
     fireEvent.click(getByText('Submit'));
-    expect(onSubmit).toBeCalledTimes(1);
+    expect(onSubmit).toHaveBeenCalledTimes(1);
   });
 
   test('uncontrolled reset without value', () => {
@@ -959,7 +959,7 @@ describe('Form uncontrolled', () => {
     expect((getByPlaceholderText('test input') as HTMLInputElement).value).toBe(
       'Input has changed',
     );
-    expect(onChange).toBeCalledTimes(1);
+    expect(onChange).toHaveBeenCalledTimes(1);
     fireEvent.click(getByText('Reset'));
     expect(queryByText('Input has changed')).toBeNull();
   });
@@ -983,7 +983,7 @@ describe('Form uncontrolled', () => {
       'v',
     );
     fireEvent.click(getByText('Submit'));
-    expect(onSubmit).not.toBeCalledWith(
+    expect(onSubmit).not.toHaveBeenCalledWith(
       expect.objectContaining({
         value: { test: 'v' },
         touched: { test: true },
@@ -1019,7 +1019,7 @@ describe('Form uncontrolled', () => {
       '1',
     );
     fireEvent.click(getByText('Submit'));
-    expect(onSubmit).toBeCalledTimes(1);
+    expect(onSubmit).toHaveBeenCalledTimes(1);
     expect(getAllByText('invalid')).toMatchSnapshot();
   });
 
@@ -1060,7 +1060,7 @@ describe('Form uncontrolled', () => {
     expect((getByPlaceholderText('Username') as HTMLInputElement).value).toBe(
       'v',
     );
-    expect(onChange).toBeCalledTimes(1);
+    expect(onChange).toHaveBeenCalledTimes(1);
   });
 
   /* The three following tests align with FormField's supported 'validate' types
@@ -1292,7 +1292,7 @@ describe('Form uncontrolled', () => {
     expect(
       (getByPlaceholderText('test input') as HTMLInputElement).value,
     ).toEqual('small');
-    expect(onChange).toBeCalledWith(
+    expect(onChange).toHaveBeenCalledWith(
       expect.objectContaining({ value: 'small' }),
     );
     scrollTo.mockRestore();
@@ -1318,7 +1318,7 @@ describe('Form uncontrolled', () => {
       target: { value: 'Input has changed' },
     });
 
-    expect(onChange).toBeCalledWith(
+    expect(onChange).toHaveBeenCalledWith(
       { test: 'Input has changed' },
       { touched: { test: true } },
     );
@@ -1405,7 +1405,7 @@ describe('Form uncontrolled', () => {
     expect(
       (getByPlaceholderText('test input') as HTMLInputElement).value,
     ).toEqual('small');
-    expect(onChange).toBeCalledWith(
+    expect(onChange).toHaveBeenCalledWith(
       expect.objectContaining({ value: 'small' }),
     );
     scrollTo.mockRestore();
@@ -1629,7 +1629,7 @@ describe('Form uncontrolled', () => {
 
     expect(container.firstChild).toMatchSnapshot();
     fireEvent.click(getByText('Submit'));
-    expect(onSubmit).toBeCalledWith(
+    expect(onSubmit).toHaveBeenCalledWith(
       expect.objectContaining({
         value: { name: 'name', toggle: false },
       }),

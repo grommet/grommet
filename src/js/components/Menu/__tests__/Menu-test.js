@@ -187,7 +187,7 @@ describe('Menu', () => {
 
     fireEvent.click(getByLabelText('Close Menu'));
     expect(document.getElementById('test-menu__drop')).toBeNull();
-    expect(window.scrollTo).toBeCalled();
+    expect(window.scrollTo).toHaveBeenCalled();
   });
 
   test('close by clicking outside', (done) => {
@@ -233,7 +233,7 @@ describe('Menu', () => {
 
     // click in the first menu item
     fireEvent.click(getByTextDOM(document, 'Item 1'));
-    expect(onClick).toBeCalled();
+    expect(onClick).toHaveBeenCalled();
     expect(document.getElementById('test-menu__drop')).toBeNull();
   });
 
@@ -275,7 +275,7 @@ describe('Menu', () => {
       which: 13,
     });
 
-    expect(onClick).toBeCalled();
+    expect(onClick).toHaveBeenCalled();
     expect(document.getElementById('test-menu__drop')).toBeNull();
   });
 

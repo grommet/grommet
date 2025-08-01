@@ -99,7 +99,7 @@ describe('Select Controlled', () => {
     fireEvent.click(
       document.getElementById('test-select__drop').querySelector('button'),
     );
-    expect(onChange).toBeCalledWith(
+    expect(onChange).toHaveBeenCalledWith(
       expect.objectContaining({ value: ['two', 'one'] }),
     );
   });
@@ -126,7 +126,9 @@ describe('Select Controlled', () => {
     fireEvent.click(
       document.getElementById('test-select__drop').querySelector('button'),
     );
-    expect(onChange).toBeCalledWith(expect.objectContaining({ value: [] }));
+    expect(onChange).toHaveBeenCalledWith(
+      expect.objectContaining({ value: [] }),
+    );
   });
 
   test('deselect all options should remove clear selection', async () => {
@@ -193,7 +195,7 @@ describe('Select Controlled', () => {
     expectPortal('test-select__drop').toMatchSnapshot();
 
     fireEvent.click(getByText('Value1'));
-    expect(onChange).toBeCalledWith(
+    expect(onChange).toHaveBeenCalledWith(
       expect.objectContaining({
         value: [
           {
@@ -207,7 +209,7 @@ describe('Select Controlled', () => {
     expectPortal('test-select__drop').toMatchSnapshot();
 
     fireEvent.click(getByText('Value2'));
-    expect(onChange).toBeCalledWith(
+    expect(onChange).toHaveBeenCalledWith(
       expect.objectContaining({
         value: [
           {
@@ -264,7 +266,7 @@ describe('Select Controlled', () => {
     expectPortal('test-select__drop').toMatchSnapshot();
 
     fireEvent.click(getByText('1'));
-    expect(onChange).toBeCalledWith(
+    expect(onChange).toHaveBeenCalledWith(
       expect.objectContaining({
         value: [
           {
@@ -278,7 +280,7 @@ describe('Select Controlled', () => {
     expectPortal('test-select__drop').toMatchSnapshot();
 
     fireEvent.click(getByText('2'));
-    expect(onChange).toBeCalledWith(
+    expect(onChange).toHaveBeenCalledWith(
       expect.objectContaining({
         value: [
           {
@@ -334,7 +336,7 @@ describe('Select Controlled', () => {
     expectPortal('test-select__drop').toMatchSnapshot();
 
     fireEvent.click(getByText('1'));
-    expect(onChange).toBeCalledWith(
+    expect(onChange).toHaveBeenCalledWith(
       expect.objectContaining({
         value: [
           {
@@ -348,7 +350,7 @@ describe('Select Controlled', () => {
     expectPortal('test-select__drop').toMatchSnapshot();
 
     fireEvent.click(getByText('2'));
-    expect(onChange).toBeCalledWith(
+    expect(onChange).toHaveBeenCalledWith(
       expect.objectContaining({
         value: [
           {
@@ -405,7 +407,7 @@ describe('Select Controlled', () => {
     expectPortal('test-select__drop').toMatchSnapshot();
 
     fireEvent.click(getByText('Value1'));
-    expect(onChange).toBeCalledWith(
+    expect(onChange).toHaveBeenCalledWith(
       expect.objectContaining({
         value: [
           {
@@ -454,7 +456,9 @@ describe('Select Controlled', () => {
     expectPortal('test-select__drop').toMatchSnapshot();
 
     fireEvent.click(getByText('Value1'));
-    expect(onChange).toBeCalledWith(expect.objectContaining({ value: [1] }));
+    expect(onChange).toHaveBeenCalledWith(
+      expect.objectContaining({ value: [1] }),
+    );
   });
 
   test('multiple onChange toggle with valueKey reduce', () => {
@@ -494,7 +498,9 @@ describe('Select Controlled', () => {
     expectPortal('test-select__drop').toMatchSnapshot();
 
     fireEvent.click(getByText('Value1'));
-    expect(onChange).toBeCalledWith(expect.objectContaining({ value: [] }));
+    expect(onChange).toHaveBeenCalledWith(
+      expect.objectContaining({ value: [] }),
+    );
   });
 
   test('multiple with empty results', () => {

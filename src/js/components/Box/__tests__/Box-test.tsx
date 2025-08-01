@@ -82,7 +82,7 @@ describe('Box', () => {
 
     fireEvent.click(getByText('test box'));
 
-    expect(onClick).toBeCalled();
+    expect(onClick).toHaveBeenCalledTimes(1);
   });
 
   test('renders a11yTitle and aria-label', () => {

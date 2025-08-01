@@ -91,9 +91,11 @@ describe('DropButton', () => {
 
     fireEvent.click(getByText('Dropper'));
     expect(document.getElementById('drop-contents')).toBeNull();
-    expect(window.scrollTo).toBeCalled();
+    expect(window.scrollTo).toHaveBeenCalled();
 
-    expect(onClose).toBeCalledWith(expect.objectContaining({ type: 'click' }));
+    expect(onClose).toHaveBeenCalledWith(
+      expect.objectContaining({ type: 'click' }),
+    );
   });
 
   test('close by clicking outside', (done) => {
@@ -116,7 +118,9 @@ describe('DropButton', () => {
     fireEvent.click(getByText('Dropper'));
     expectPortal('drop-contents').toMatchSnapshot();
 
-    expect(onOpen).toBeCalledWith(expect.objectContaining({ type: 'click' }));
+    expect(onOpen).toHaveBeenCalledWith(
+      expect.objectContaining({ type: 'click' }),
+    );
     expect(document.getElementById('drop-contents')).not.toBeNull();
 
     fireEvent(
@@ -129,7 +133,7 @@ describe('DropButton', () => {
       done();
     }, 50);
 
-    expect(onClose).toBeCalledWith(
+    expect(onClose).toHaveBeenCalledWith(
       expect.objectContaining({ type: 'mousedown' }),
     );
   });
@@ -180,7 +184,7 @@ describe('DropButton', () => {
       </Grommet>,
     );
     expect(container.firstChild).toMatchSnapshot();
-    expect(ref).toBeCalled();
+    expect(ref).toHaveBeenCalled();
     expectPortal('drop-contents').toMatchSnapshot();
   });
 
