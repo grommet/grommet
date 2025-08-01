@@ -77,12 +77,17 @@ var Layer = /*#__PURE__*/forwardRef(function (props, ref) {
           }
           setTimeout(function () {
             // we add the id and query here so the unit tests work
-            var clone = containerTarget.getRootNode().getElementById('layerClone');
-            if (clone) {
-              if (containerTarget.contains(clone)) {
-                containerTarget.removeChild(clone);
+            var rootNode = containerTarget.getRootNode();
+            // Not all root nodes (ShadowRoot, DocumentFragment)
+            //  have getElementById.
+            if (rootNode && typeof rootNode.getElementById === 'function') {
+              var clone = rootNode.getElementById('layerClone');
+              if (clone) {
+                if (containerTarget.contains(clone)) {
+                  containerTarget.removeChild(clone);
+                }
+                layerContainer.remove();
               }
-              layerContainer.remove();
             }
           }, animationDuration);
         } else if (containerTarget.contains(layerContainer)) {
