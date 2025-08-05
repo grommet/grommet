@@ -362,7 +362,7 @@ describe('SelectMultiple', () => {
     const input = screen.getByRole('searchbox');
     await user.type(input, 'th');
 
-    expect(onSearch).toBeCalledWith(expect.stringMatching(/^th/));
+    expect(onSearch).toHaveBeenCalledWith(expect.stringMatching(/^th/));
   });
 
   test('null value', () => {

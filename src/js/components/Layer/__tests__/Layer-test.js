@@ -247,7 +247,7 @@ describe('Layer', () => {
 
     const inputNode = getByTestId(document, 'test-input');
     fireEvent.keyDown(inputNode, { key: 'Esc', keyCode: 27, which: 27 });
-    expect(onEsc).toBeCalled();
+    expect(onEsc).toHaveBeenCalled();
   });
 
   test('is accessible', (done) => {
@@ -505,14 +505,14 @@ describe('Layer', () => {
     jest.advanceTimersByTime(100);
     expect(queryByText('one')).toBeFalsy();
     // onEsc should not be called on the Layer yet
-    expect(onEsc).toBeCalledTimes(0);
+    expect(onEsc).toHaveBeenCalledTimes(0);
 
     fireEvent.keyDown(document, {
       key: 'Esc',
       keyCode: 27,
       which: 27,
     });
-    expect(onEsc).toBeCalledTimes(1);
+    expect(onEsc).toHaveBeenCalledTimes(1);
     expectPortal('esc-test').toMatchSnapshot();
   });
 

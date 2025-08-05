@@ -64,7 +64,7 @@ describe('ThumbsRating', () => {
     await user.tab();
     await user.keyboard('{arrowdown}');
     fireEvent.click(getByText('submit'));
-    expect(onSubmit).toBeCalledWith(
+    expect(onSubmit).toHaveBeenCalledWith(
       expect.objectContaining({
         value: { test: 'dislike' },
       }),

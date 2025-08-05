@@ -1,4 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`MaskedInput applies custom global.hover theme to options 1`] = `
 .c0 {
@@ -1155,10 +1155,10 @@ exports[`MaskedInput event target props are available option via mouse 3`] = `""
 
 exports[`MaskedInput event target props are available option via mouse 4`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 cBoJUe"
+  class="StyledGrommet-sc-19lkkz7-0 kiEDjE"
 >
   <div
-    class="StyledMaskedInput__StyledMaskedInputContainer-sc-99vkfa-1 fWbzkO"
+    class="StyledMaskedInput__StyledMaskedInputContainer-sc-99vkfa-1 dPNevk"
   >
     <input
       aria-activedescendant="listbox-option--1__item"
@@ -1166,7 +1166,7 @@ exports[`MaskedInput event target props are available option via mouse 4`] = `
       aria-controls="listbox__item"
       aria-expanded="true"
       autocomplete="off"
-      class="StyledMaskedInput-sc-99vkfa-0 dnAGMh"
+      class="StyledMaskedInput-sc-99vkfa-0 dqOIlv"
       data-testid="test-input"
       id="item"
       name="item"
@@ -2228,14 +2228,14 @@ exports[`MaskedInput next and previous without options 1`] = `
 
 exports[`MaskedInput next and previous without options 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 cBoJUe"
+  class="StyledGrommet-sc-19lkkz7-0 kiEDjE"
 >
   <div
-    class="StyledMaskedInput__StyledMaskedInputContainer-sc-99vkfa-1 fWbzkO"
+    class="StyledMaskedInput__StyledMaskedInputContainer-sc-99vkfa-1 dPNevk"
   >
     <input
       autocomplete="off"
-      class="StyledMaskedInput-sc-99vkfa-0 bnaIwg"
+      class="StyledMaskedInput-sc-99vkfa-0 ilRdpu"
       data-testid="test-input"
       id="item"
       name="item"
@@ -2654,10 +2654,10 @@ exports[`MaskedInput option via mouse 3`] = `""`;
 
 exports[`MaskedInput option via mouse 4`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 cBoJUe"
+  class="StyledGrommet-sc-19lkkz7-0 kiEDjE"
 >
   <div
-    class="StyledMaskedInput__StyledMaskedInputContainer-sc-99vkfa-1 fWbzkO"
+    class="StyledMaskedInput__StyledMaskedInputContainer-sc-99vkfa-1 dPNevk"
   >
     <input
       aria-activedescendant="listbox-option--1__item"
@@ -2665,7 +2665,7 @@ exports[`MaskedInput option via mouse 4`] = `
       aria-controls="listbox__item"
       aria-expanded="true"
       autocomplete="off"
-      class="StyledMaskedInput-sc-99vkfa-0 dnAGMh"
+      class="StyledMaskedInput-sc-99vkfa-0 dqOIlv"
       data-testid="test-input"
       id="item"
       name="item"

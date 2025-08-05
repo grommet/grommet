@@ -288,7 +288,7 @@ describe('RangeSelector', () => {
         clientX: 0,
         clientY: 0,
       });
-      expect(onChange).toBeCalled();
+      expect(onChange).toHaveBeenCalled();
 
       const lowerControl = screen.getByRole('slider', {
         name: 'Lower Bounds',
@@ -296,7 +296,7 @@ describe('RangeSelector', () => {
       fireEvent.mouseDown(lowerControl);
       fireEvent.mouseMove(document, { clientX: 0, clientY: 0 });
       fireEvent.mouseUp(document);
-      expect(onChange).toBeCalled();
+      expect(onChange).toHaveBeenCalled();
 
       const upperControl = screen.getByRole('slider', {
         name: 'Upper Bounds',
@@ -304,7 +304,7 @@ describe('RangeSelector', () => {
       fireEvent.mouseDown(upperControl);
       fireEvent.mouseMove(document, { clientX: 0, clientY: 0 });
       fireEvent.mouseUp(document);
-      expect(onChange).toBeCalled();
+      expect(onChange).toHaveBeenCalled();
     }
   });
 

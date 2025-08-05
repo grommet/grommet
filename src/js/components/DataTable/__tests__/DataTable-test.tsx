@@ -233,7 +233,7 @@ describe('DataTable', () => {
 
     const headerCell = getByText('A');
     fireEvent.click(headerCell, {});
-    expect(onSort).toBeCalledWith(
+    expect(onSort).toHaveBeenCalledWith(
       expect.objectContaining({ property: 'a', direction: 'asc' }),
     );
     expect(container.firstChild).toMatchSnapshot();
@@ -262,7 +262,7 @@ describe('DataTable', () => {
 
     const headerCell = getByText('A');
     fireEvent.click(headerCell, {});
-    expect(onSort).toBeCalledWith(
+    expect(onSort).toHaveBeenCalledWith(
       expect.objectContaining({
         property: 'a',
         direction: 'desc',
@@ -394,7 +394,7 @@ describe('DataTable', () => {
 
     fireEvent.click(getByText('Value'));
 
-    expect(onSort).toBeCalledWith(
+    expect(onSort).toHaveBeenCalledWith(
       expect.objectContaining({ property: 'b.value' }),
     );
 
@@ -710,7 +710,7 @@ describe('DataTable', () => {
     );
     expect(container.firstChild).toMatchSnapshot();
     fireEvent.click(getByText('beta'));
-    expect(onClickRow).toBeCalledWith(
+    expect(onClickRow).toHaveBeenCalledWith(
       expect.objectContaining({ datum: { a: 'beta' } }),
     );
     expect(container.firstChild).toMatchSnapshot();
@@ -730,7 +730,7 @@ describe('DataTable', () => {
     );
     expect(container.firstChild).toMatchSnapshot();
     fireEvent.click(getByText('beta'));
-    expect(onClickRow).toBeCalledWith(
+    expect(onClickRow).toHaveBeenCalledWith(
       expect.objectContaining({ datum: { a: 'beta' } }),
     );
     expect(container.firstChild).toMatchSnapshot();
@@ -919,7 +919,7 @@ describe('DataTable', () => {
     const expandButtons = getAllByLabelText('expand');
     fireEvent.click(expandButtons[0], {});
 
-    expect(onExpand).toBeCalled();
+    expect(onExpand).toHaveBeenCalled();
     expect(onExpand.mock.results[0].value).toEqual(['one']);
     expect(onExpand.mock.results[0].value).toMatchSnapshot();
   });
@@ -1138,9 +1138,12 @@ describe('DataTable', () => {
     );
     expect(container.firstChild).toMatchSnapshot();
     fireEvent.click(getByLabelText('select beta'));
-    expect(onSelect).toBeCalledWith(expect.arrayContaining(['alpha', 'beta']), {
-      a: 'beta',
-    });
+    expect(onSelect).toHaveBeenCalledWith(
+      expect.arrayContaining(['alpha', 'beta']),
+      {
+        a: 'beta',
+      },
+    );
     expect(container.firstChild).toMatchSnapshot();
   });
 
@@ -1160,9 +1163,12 @@ describe('DataTable', () => {
     );
     expect(container.firstChild).toMatchSnapshot();
     fireEvent.click(getByLabelText('select beta'));
-    expect(onSelect).toBeCalledWith(expect.arrayContaining(['alpha', 'beta']), {
-      a: 'beta',
-    });
+    expect(onSelect).toHaveBeenCalledWith(
+      expect.arrayContaining(['alpha', 'beta']),
+      {
+        a: 'beta',
+      },
+    );
     expect(container.firstChild).toMatchSnapshot();
   });
 
@@ -1182,7 +1188,7 @@ describe('DataTable', () => {
     );
     expect(container.firstChild).toMatchSnapshot();
     fireEvent.click(getByText('alpha'));
-    expect(onSelect).not.toBeCalled();
+    expect(onSelect).not.toHaveBeenCalled();
   });
 
   test('custom theme', () => {
@@ -1657,14 +1663,14 @@ describe('DataTable', () => {
     let headerCheckBox;
     headerCheckBox = getByLabelText('select all');
     fireEvent.click(headerCheckBox);
-    expect(onSelect).toBeCalledWith([1.1, 1.2, 2.1, 2.2]);
+    expect(onSelect).toHaveBeenCalledWith([1.1, 1.2, 2.1, 2.2]);
     expect(container.firstChild).toMatchSnapshot();
 
     // aria-label should have changed since all entries
     // are selected
     headerCheckBox = getByLabelText('unselect all');
     fireEvent.click(headerCheckBox);
-    expect(onSelect).toBeCalledWith([]);
+    expect(onSelect).toHaveBeenCalledWith([]);
     expect(container.firstChild).toMatchSnapshot();
   });
 
@@ -1725,7 +1731,7 @@ describe('DataTable', () => {
 
     const groupCheckBox = getByLabelText('select one');
     fireEvent.click(groupCheckBox);
-    expect(onSelect).toBeCalledWith(
+    expect(onSelect).toHaveBeenCalledWith(
       expect.arrayContaining([1.1, 1.2]),
       expect.objectContaining({ a: 'one' }),
     );
@@ -1951,7 +1957,10 @@ describe('DataTable', () => {
       </Grommet>,
     );
     fireEvent.click(screen.getByRole('checkbox', { name: 'select Alan' }));
-    expect(onSelect).toBeCalledWith(['Alan'], { name: 'Alan', percent: 20 });
+    expect(onSelect).toHaveBeenCalledWith(['Alan'], {
+      name: 'Alan',
+      percent: 20,
+    });
   });
 
   test('Data + onSelect should display correct selected amount', () => {
