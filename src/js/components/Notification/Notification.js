@@ -194,8 +194,7 @@ const Notification = ({
         <NotificationAnchor
           // create space between first anchor and
           // text content and next anchor
-          // TO DO theme object
-          margin={{ right: 'xsmall' }}
+          margin={theme.notification.actions?.margin}
           {...action}
           {...theme.notification.actions}
           // add a space between anchors to allow for wrapping
@@ -211,9 +210,7 @@ const Notification = ({
           color={messageColor}
           direction={direction}
         >
-          {/* TO DO theme object */}
-          <Text margin={{ right: 'xsmall' }}>{message}</Text>
-          {/* include actions with message so it wraps with message */}
+          <Text margin={theme.notification.message?.margin}>{message}</Text>
           {actions}
         </Message>
       ) : (
@@ -232,8 +229,7 @@ const Notification = ({
       // let internal box control pad
       pad={undefined}
       direction="row"
-      // TO DO theme object
-      gap="small"
+      gap={theme.notification?.gap}
       id={toast ? undefined : id}
       {...rest}
     >

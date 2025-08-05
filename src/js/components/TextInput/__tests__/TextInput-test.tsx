@@ -84,8 +84,8 @@ describe('TextInput', () => {
 
     setTimeout(() => {
       expectPortal('text-input-drop__item').toMatchSnapshot();
-      expect(onChange).toBeCalled();
-      expect(onFocus).toBeCalled();
+      expect(onChange).toHaveBeenCalled();
+      expect(onFocus).toHaveBeenCalled();
 
       fireEvent(
         document,
@@ -172,7 +172,7 @@ describe('TextInput', () => {
         keyCode: 27,
         which: 27,
       });
-      expect(callback).toBeCalled();
+      expect(callback).toHaveBeenCalled();
       done();
     }, 50);
   });
@@ -194,7 +194,7 @@ describe('TextInput', () => {
     fireEvent.focus(getByTestId('test-input'));
     setTimeout(() => {
       expectPortal('text-input-drop__item').toMatchSnapshot();
-      expect(onSuggestionsOpen).toBeCalled();
+      expect(onSuggestionsOpen).toHaveBeenCalled();
       done();
     }, 50);
   });
@@ -225,7 +225,7 @@ describe('TextInput', () => {
       });
       setTimeout(() => {
         expect(document.getElementById('text-input-drop__item')).toBeNull();
-        expect(onSuggestionsClose).toBeCalled();
+        expect(onSuggestionsClose).toHaveBeenCalled();
         expect(container.firstChild).toMatchSnapshot();
         done();
       }, 50);
@@ -258,7 +258,7 @@ describe('TextInput', () => {
       fireEvent.click(getByText(document as unknown as HTMLElement, 'test1'));
       expect(container.firstChild).toMatchSnapshot();
       expect(document.getElementById('text-input-drop__item')).toBeNull();
-      expect(onSelect).toBeCalledWith(
+      expect(onSelect).toHaveBeenCalledWith(
         expect.objectContaining({ suggestion: 'test1' }),
       );
       done();
@@ -287,7 +287,7 @@ describe('TextInput', () => {
     fireEvent.keyDown(input, { keyCode: 40 }); // down
     fireEvent.keyDown(input, { keyCode: 38 }); // up
     fireEvent.keyDown(input, { keyCode: 13 }); // enter
-    expect(onSelect).toBeCalledWith(
+    expect(onSelect).toHaveBeenCalledWith(
       expect.objectContaining({
         suggestion: 'test',
       }),
@@ -316,7 +316,7 @@ describe('TextInput', () => {
     fireEvent.keyDown(input, { keyCode: 40 }); // down
     // pressing enter here will select the second suggestion
     fireEvent.keyDown(input, { keyCode: 13 }); // enter
-    expect(onSelect).toBeCalledWith(
+    expect(onSelect).toHaveBeenCalledWith(
       expect.objectContaining({
         suggestion: suggestions[defaultSuggestionIndex],
       }),
@@ -350,7 +350,7 @@ describe('TextInput', () => {
     // suggestion matches.  Now, when we hit enter, there's no match yet, so
     // the default suggestion should be selected.
     fireEvent.keyDown(input, { keyCode: 13 }); // enter
-    expect(onSelect).toBeCalledWith(
+    expect(onSelect).toHaveBeenCalledWith(
       expect.objectContaining({
         suggestion: 'default',
       }),
@@ -377,7 +377,7 @@ describe('TextInput', () => {
     // pressing enter here closes drop but doesn't select
     fireEvent.keyDown(input, { keyCode: 13 }); // enter
     // if no suggestion had been selected, don't call onSelect
-    expect(onSelect).not.toBeCalled();
+    expect(onSelect).not.toHaveBeenCalled();
 
     // open drop
     fireEvent.keyDown(input, { keyCode: 40 }); // down
@@ -387,7 +387,7 @@ describe('TextInput', () => {
     fireEvent.keyDown(input, { keyCode: 40 }); // down
     // select highlighted
     fireEvent.keyDown(input, { keyCode: 13 }); // enter
-    expect(onSelect).toBeCalledWith(
+    expect(onSelect).toHaveBeenCalledWith(
       expect.objectContaining({
         suggestion: 'test2',
       }),
@@ -416,7 +416,7 @@ describe('TextInput', () => {
     fireEvent.keyDown(input, { keyCode: 40 }); // down
     fireEvent.keyDown(input, { keyCode: 38 }); // up
     fireEvent.keyDown(input, { keyCode: 13 }); // enter
-    expect(onSuggestionSelect).toBeCalledWith(
+    expect(onSuggestionSelect).toHaveBeenCalledWith(
       expect.objectContaining({
         suggestion: 'test',
       }),
@@ -447,7 +447,7 @@ describe('TextInput', () => {
     fireEvent.keyDown(input, { keyCode: 40 }); // down
     fireEvent.keyDown(input, { keyCode: 38 }); // up
     fireEvent.keyDown(input, { keyCode: 13 }); // enter
-    expect(onSuggestionSelect).toBeCalledWith(
+    expect(onSuggestionSelect).toHaveBeenCalledWith(
       expect.objectContaining({
         suggestion: 'test',
       }),
@@ -473,7 +473,7 @@ describe('TextInput', () => {
     fireEvent.keyDown(input, { keyCode: 40 });
     fireEvent.keyDown(input, { keyCode: 38 });
     fireEvent.keyDown(input, { keyCode: 13 }); // enter
-    expect(onSelect).not.toBeCalled();
+    expect(onSelect).not.toHaveBeenCalled();
     expect(container.firstChild).toMatchSnapshot();
   });
 

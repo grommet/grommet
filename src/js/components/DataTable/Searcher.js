@@ -55,8 +55,14 @@ const Searcher = ({
         setButtonNeedsFocus(true);
       }}
     >
-      {/* TO DO add theme object */}
-      <Box width={{ min: 'xsmall' }} flex pad={{ horizontal: 'small' }}>
+      <Box
+        width={theme.dataTable.search.width}
+        flex
+        // padding right is not needed any longer. There is margin
+        // right set already on the container, see Header.js
+        // TO DO theme object
+        pad={theme.dataTable.search.pad}
+      >
         <TextInput
           name={`search-${property}`}
           a11yTitle={a11yTitle}
@@ -72,8 +78,7 @@ const Searcher = ({
       {filters[property] ? (
         <Box
           flex={false}
-          // TO DO theme object
-          pad={{ horizontal: 'small' }}
+          pad={theme.dataTable.search.clearPad}
           direction="row"
           align="center"
         >

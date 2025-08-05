@@ -301,8 +301,7 @@ Use the icon prop instead.`,
         disabled={disabled}
         plain
         icon={icon || MaskedInputIcon || <CalendarIcon size={iconSize} />}
-        // TO DO theme object
-        margin={reverse ? { left: 'small' } : { right: 'small' }}
+        margin={theme.dateInput.button?.margin}
       />
     );
 

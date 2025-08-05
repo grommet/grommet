@@ -104,8 +104,8 @@ describe('MaskedInput', () => {
     await waitFor(() => screen.findByText('aa'));
 
     expectPortal('masked-input-drop__item').toMatchSnapshot();
-    expect(onChange).not.toBeCalled();
-    expect(onFocus).toBeCalled();
+    expect(onChange).not.toHaveBeenCalled();
+    expect(onFocus).toHaveBeenCalled();
   });
 
   test('mask with long fixed', async () => {
@@ -294,7 +294,7 @@ describe('MaskedInput', () => {
       keyCode: 27,
       which: 27,
     });
-    expect(callback).toBeCalled();
+    expect(callback).toHaveBeenCalled();
   });
 
   test('next and previous without options', () => {
@@ -325,7 +325,7 @@ describe('MaskedInput', () => {
     fireEvent.keyDown(input, { keyCode: 40 });
     fireEvent.keyDown(input, { keyCode: 38 });
     fireEvent.keyDown(input, { keyCode: 13 }); // enter
-    expect(onChange).not.toBeCalled();
+    expect(onChange).not.toHaveBeenCalled();
     expect(container.firstChild).toMatchSnapshot();
   });
 
@@ -413,13 +413,13 @@ describe('MaskedInput', () => {
 
     // pressing enter here nothing will happen
     fireEvent.keyDown(input, { keyCode: 13 }); // enter
-    expect(onChangeMock).not.toBeCalled();
+    expect(onChangeMock).not.toHaveBeenCalled();
     fireEvent.keyDown(input, { keyCode: 40 }); // down
     fireEvent.keyDown(input, { keyCode: 40 }); // down
     fireEvent.keyDown(input, { keyCode: 38 }); // up
     fireEvent.keyDown(input, { keyCode: 13 }); // enter
-    expect(onChangeMock).toBeCalled();
-    expect(onChangeMock).toBeCalledTimes(1);
+    expect(onChangeMock).toHaveBeenCalled();
+    expect(onChangeMock).toHaveBeenCalledTimes(1);
     expect(onChangeMock).toHaveReturnedWith(
       expect.objectContaining({
         target: expect.objectContaining({
@@ -497,7 +497,7 @@ describe('MaskedInput', () => {
     fireEvent.change(getByTestId('test-input'), { target: { value: 'aa' } });
 
     expect(onChange).toHaveBeenCalled();
-    expect(onChange).toReturnWith('aa');
+    expect(onChange).toHaveReturnedWith('aa');
   });
 
   test('custom theme', async () => {

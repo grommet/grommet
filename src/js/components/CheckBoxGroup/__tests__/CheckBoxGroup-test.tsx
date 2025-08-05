@@ -91,7 +91,7 @@ describe('CheckBoxGroup', () => {
       </Grommet>,
     );
     fireEvent.click(getByText('first-label'));
-    expect(onChange).toBeCalledTimes(1);
+    expect(onChange).toHaveBeenCalledTimes(1);
     expect(container.firstChild).toMatchSnapshot();
   });
 
@@ -109,10 +109,10 @@ describe('CheckBoxGroup', () => {
       </Grommet>,
     );
     fireEvent.click(getByText('first-label'));
-    expect(onClick).toBeCalledTimes(1);
+    expect(onClick).toHaveBeenCalledTimes(1);
     expect(container.firstChild).toMatchSnapshot();
     fireEvent.click(getByText('first-label'));
-    expect(onClick).toBeCalledTimes(2);
+    expect(onClick).toHaveBeenCalledTimes(2);
     expect(container.firstChild).toMatchSnapshot();
   });
 
@@ -187,7 +187,7 @@ describe('CheckBoxGroup', () => {
       </Grommet>,
     );
 
-    expect(errorSpy).not.toBeCalledWith(
+    expect(errorSpy).not.toHaveBeenCalledWith(
       expect.stringMatching('same key'),
       expect.stringMatching('Yes!'),
       expect.anything(),
@@ -211,7 +211,7 @@ describe('CheckBoxGroup', () => {
       </Grommet>,
     );
 
-    expect(warnSpy).toBeCalled();
+    expect(warnSpy).toHaveBeenCalled();
     warnSpy.mockReset();
     warnSpy.mockRestore();
   });

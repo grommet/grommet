@@ -1,4 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`MaskedInput applies custom global.hover theme to options 1`] = `
 .c0 {
@@ -112,10 +112,6 @@ exports[`MaskedInput applies custom global.hover theme to options 2`] = `
   min-width: 0;
   min-height: 0;
   flex-direction: column;
-  padding-left: 12px;
-  padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
 }
 
 .c0 {
@@ -180,20 +176,6 @@ exports[`MaskedInput applies custom global.hover theme to options 2`] = `
 
 .c0:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
-}
-
-@media only screen and (max-width: 768px) {
-  .c1 {
-    padding-left: 6px;
-    padding-right: 6px;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .c1 {
-    padding-top: 3px;
-    padding-bottom: 3px;
-  }
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
@@ -990,10 +972,6 @@ exports[`MaskedInput event target props are available option via mouse 2`] = `
   min-width: 0;
   min-height: 0;
   flex-direction: column;
-  padding-left: 12px;
-  padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
 }
 
 .c1 {
@@ -1082,20 +1060,6 @@ exports[`MaskedInput event target props are available option via mouse 2`] = `
   max-height: inherit;
 }
 
-@media only screen and (max-width: 768px) {
-  .c6 {
-    padding-left: 6px;
-    padding-right: 6px;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .c6 {
-    padding-top: 3px;
-    padding-bottom: 3px;
-  }
-}
-
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
   .c1 {
     display: flex;
@@ -1155,10 +1119,10 @@ exports[`MaskedInput event target props are available option via mouse 3`] = `""
 
 exports[`MaskedInput event target props are available option via mouse 4`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 cBoJUe"
+  class="StyledGrommet-sc-19lkkz7-0 kiEDjE"
 >
   <div
-    class="StyledMaskedInput__StyledMaskedInputContainer-sc-99vkfa-1 fWbzkO"
+    class="StyledMaskedInput__StyledMaskedInputContainer-sc-99vkfa-1 dPNevk"
   >
     <input
       aria-activedescendant="listbox-option--1__item"
@@ -1166,7 +1130,7 @@ exports[`MaskedInput event target props are available option via mouse 4`] = `
       aria-controls="listbox__item"
       aria-expanded="true"
       autocomplete="off"
-      class="StyledMaskedInput-sc-99vkfa-0 dnAGMh"
+      class="StyledMaskedInput-sc-99vkfa-0 dqOIlv"
       data-testid="test-input"
       id="item"
       name="item"
@@ -1625,10 +1589,6 @@ exports[`MaskedInput mask 2`] = `
   min-width: 0;
   min-height: 0;
   flex-direction: column;
-  padding-left: 12px;
-  padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
 }
 
 .c1 {
@@ -1715,20 +1675,6 @@ exports[`MaskedInput mask 2`] = `
 
 .c3 {
   max-height: inherit;
-}
-
-@media only screen and (max-width: 768px) {
-  .c6 {
-    padding-left: 6px;
-    padding-right: 6px;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .c6 {
-    padding-top: 3px;
-    padding-bottom: 3px;
-  }
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
@@ -2228,14 +2174,14 @@ exports[`MaskedInput next and previous without options 1`] = `
 
 exports[`MaskedInput next and previous without options 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 cBoJUe"
+  class="StyledGrommet-sc-19lkkz7-0 kiEDjE"
 >
   <div
-    class="StyledMaskedInput__StyledMaskedInputContainer-sc-99vkfa-1 fWbzkO"
+    class="StyledMaskedInput__StyledMaskedInputContainer-sc-99vkfa-1 dPNevk"
   >
     <input
       autocomplete="off"
-      class="StyledMaskedInput-sc-99vkfa-0 bnaIwg"
+      class="StyledMaskedInput-sc-99vkfa-0 ilRdpu"
       data-testid="test-input"
       id="item"
       name="item"
@@ -2489,10 +2435,6 @@ exports[`MaskedInput option via mouse 2`] = `
   min-width: 0;
   min-height: 0;
   flex-direction: column;
-  padding-left: 12px;
-  padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
 }
 
 .c1 {
@@ -2581,20 +2523,6 @@ exports[`MaskedInput option via mouse 2`] = `
   max-height: inherit;
 }
 
-@media only screen and (max-width: 768px) {
-  .c6 {
-    padding-left: 6px;
-    padding-right: 6px;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .c6 {
-    padding-top: 3px;
-    padding-bottom: 3px;
-  }
-}
-
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
   .c1 {
     display: flex;
@@ -2654,10 +2582,10 @@ exports[`MaskedInput option via mouse 3`] = `""`;
 
 exports[`MaskedInput option via mouse 4`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 cBoJUe"
+  class="StyledGrommet-sc-19lkkz7-0 kiEDjE"
 >
   <div
-    class="StyledMaskedInput__StyledMaskedInputContainer-sc-99vkfa-1 fWbzkO"
+    class="StyledMaskedInput__StyledMaskedInputContainer-sc-99vkfa-1 dPNevk"
   >
     <input
       aria-activedescendant="listbox-option--1__item"
@@ -2665,7 +2593,7 @@ exports[`MaskedInput option via mouse 4`] = `
       aria-controls="listbox__item"
       aria-expanded="true"
       autocomplete="off"
-      class="StyledMaskedInput-sc-99vkfa-0 dnAGMh"
+      class="StyledMaskedInput-sc-99vkfa-0 dqOIlv"
       data-testid="test-input"
       id="item"
       name="item"

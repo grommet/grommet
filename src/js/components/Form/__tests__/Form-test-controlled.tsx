@@ -44,7 +44,7 @@ describe('Form controlled', () => {
     });
     expect(container.firstChild).toMatchSnapshot();
     fireEvent.click(getByText('Submit'));
-    expect(onSubmit).toBeCalledWith(
+    expect(onSubmit).toHaveBeenCalledWith(
       expect.objectContaining({
         value: { test: 'v' },
         touched: { test: true },
@@ -102,7 +102,7 @@ describe('Form controlled', () => {
 
     expect(container.firstChild).toMatchSnapshot();
     fireEvent.click(getByText('Submit'));
-    expect(onValidate).toBeCalledWith(
+    expect(onValidate).toHaveBeenCalledWith(
       expect.objectContaining({
         errors: { test: 'required' },
         infos: {},
@@ -143,7 +143,7 @@ describe('Form controlled', () => {
 
     expect(container.firstChild).toMatchSnapshot();
     fireEvent.click(getByText('Submit'));
-    expect(onValidate).toBeCalledWith(
+    expect(onValidate).toHaveBeenCalledWith(
       expect.objectContaining({
         errors: { test: errorMessage },
         infos: {},
@@ -184,7 +184,7 @@ describe('Form controlled', () => {
 
     expect(container.firstChild).toMatchSnapshot();
     fireEvent.click(getByText('Submit'));
-    expect(onValidate).toBeCalledWith(
+    expect(onValidate).toHaveBeenCalledWith(
       expect.objectContaining({
         errors: {},
         infos: { test: infoMessage },
@@ -222,7 +222,7 @@ describe('Form controlled', () => {
     });
     expect(container.firstChild).toMatchSnapshot();
     fireEvent.click(getByText('Submit'));
-    expect(onSubmit).toBeCalledWith(
+    expect(onSubmit).toHaveBeenCalledWith(
       expect.objectContaining({
         value: { test: 'v' },
         touched: { test: true },
@@ -264,7 +264,7 @@ describe('Form controlled', () => {
     });
     expect(container.firstChild).toMatchSnapshot();
     fireEvent.click(getByText('Submit'));
-    expect(onSubmit).toBeCalledWith(
+    expect(onSubmit).toHaveBeenCalledWith(
       expect.objectContaining({
         value: { test: 'v' },
         touched: { test: true },
@@ -307,7 +307,7 @@ describe('Form controlled', () => {
     });
     expect(container.firstChild).toMatchSnapshot();
     fireEvent.click(getByText('Submit'));
-    expect(onSubmit).toBeCalledWith(
+    expect(onSubmit).toHaveBeenCalledWith(
       expect.objectContaining({
         value: { test: 'v' },
         touched: { test: true },
@@ -336,7 +336,7 @@ describe('Form controlled', () => {
     expect(container.firstChild).toMatchSnapshot();
     fireEvent.click(getByText('set'));
     fireEvent.click(getByText('submit'));
-    expect(onSubmit).toBeCalledWith(
+    expect(onSubmit).toHaveBeenCalledWith(
       expect.objectContaining({
         value: { test: 'a' },
       }),
@@ -368,7 +368,7 @@ describe('Form controlled', () => {
     fireEvent.change(getByLabelText('test'), { target: { value: 'v' } });
     expect(container.firstChild).toMatchSnapshot();
     fireEvent.click(getByText('Submit'));
-    expect(onSubmit).toBeCalledWith(
+    expect(onSubmit).toHaveBeenCalledWith(
       expect.objectContaining({
         value: { test: 'v' },
         touched: { test: true },
@@ -413,7 +413,7 @@ describe('Form controlled', () => {
       'Input has changed',
     );
     fireEvent.click(getByText('Reset'));
-    expect(onReset).toBeCalledTimes(1);
+    expect(onReset).toHaveBeenCalledTimes(1);
     expect(queryByText('Input has changed')).toBeNull();
   });
 
@@ -441,7 +441,7 @@ describe('Form controlled', () => {
       target: { value: 'Input has changed' },
     });
 
-    expect(onChange).toBeCalledWith(
+    expect(onChange).toHaveBeenCalledWith(
       { test: 'Input has changed' },
       { touched: { test: true } },
     );
@@ -611,7 +611,7 @@ describe('Form controlled', () => {
     });
     expect(container.firstChild).toMatchSnapshot();
     fireEvent.click(getByText('Submit'));
-    expect(onSubmit).toBeCalledWith(
+    expect(onSubmit).toHaveBeenCalledWith(
       expect.objectContaining({
         value: {
           phones: [
@@ -680,7 +680,7 @@ describe('Form controlled', () => {
 
     expect(container.firstChild).toMatchSnapshot();
     fireEvent.click(getByText('Submit'));
-    expect(onValidate).toBeCalledWith(
+    expect(onValidate).toHaveBeenCalledWith(
       expect.objectContaining({
         errors: {
           'phones[0].number': 'required',
@@ -753,7 +753,7 @@ describe('Form controlled', () => {
       target: { value: 'sadasd' },
     });
     fireEvent.click(getByText('Submit'));
-    expect(onValidate).toBeCalledWith(
+    expect(onValidate).toHaveBeenCalledWith(
       expect.objectContaining({
         errors: {
           'phones[1].number': errorMessage,
@@ -1321,11 +1321,11 @@ describe('Form controlled', () => {
     });
     fireEvent.click(submitButton);
 
-    expect(onSubmitLayerForm).toBeCalledWith(
+    expect(onSubmitLayerForm).toHaveBeenCalledWith(
       expect.objectContaining({
         value: { 'input-2': 'test' },
       }),
     );
-    expect(onSubmit).toBeCalledTimes(0);
+    expect(onSubmit).toHaveBeenCalledTimes(0);
   });
 });

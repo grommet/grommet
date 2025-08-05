@@ -1,4 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`DataTableColumns pinned 1`] = `
 .c1 {
@@ -655,7 +655,7 @@ exports[`DataTableColumns remove column 1`] = `
   justify-content: center;
 }
 
-.c13 {
+.c9 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -696,7 +696,7 @@ exports[`DataTableColumns remove column 1`] = `
   stroke: none;
 }
 
-.c9 {
+.c10 {
   font-size: 18px;
   line-height: 24px;
 }
@@ -783,7 +783,7 @@ exports[`DataTableColumns remove column 1`] = `
   padding-bottom: 6px;
 }
 
-.c12 {
+.c13 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -807,51 +807,51 @@ exports[`DataTableColumns remove column 1`] = `
   border-collapse: separate;
 }
 
+.c12:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c12:focus >circle,
+.c12:focus >ellipse,
+.c12:focus >line,
+.c12:focus >path,
+.c12:focus >polygon,
+.c12:focus >polyline,
+.c12:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c12:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c12:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c12:focus:not(:focus-visible) >circle,
+.c12:focus:not(:focus-visible) >ellipse,
+.c12:focus:not(:focus-visible) >line,
+.c12:focus:not(:focus-visible) >path,
+.c12:focus:not(:focus-visible) >polygon,
+.c12:focus:not(:focus-visible) >polyline,
+.c12:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c12:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
+}
+
 .c11:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c11:focus >circle,
-.c11:focus >ellipse,
-.c11:focus >line,
-.c11:focus >path,
-.c11:focus >polygon,
-.c11:focus >polyline,
-.c11:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c11:focus ::-moz-focus-inner {
-  border: 0;
-}
-
-.c11:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c11:focus:not(:focus-visible) >circle,
-.c11:focus:not(:focus-visible) >ellipse,
-.c11:focus:not(:focus-visible) >line,
-.c11:focus:not(:focus-visible) >path,
-.c11:focus:not(:focus-visible) >polygon,
-.c11:focus:not(:focus-visible) >polyline,
-.c11:focus:not(:focus-visible) >rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c11:focus:not(:focus-visible) ::-moz-focus-inner {
-  border: 0;
-}
-
-.c10:focus {
   outline: 2px solid #6FFFB0;
 }
 
-.c10:focus:not(:focus-visible) {
+.c11:focus:not(:focus-visible) {
   outline: none;
 }
 
@@ -912,11 +912,15 @@ exports[`DataTableColumns remove column 1`] = `
               <div
                 class="c8"
               >
-                <span
-                  class="c9"
+                <div
+                  class="c9 Header__StyledContentBox-sc-1baku5q-1"
                 >
-                  Name
-                </span>
+                  <span
+                    class="c10"
+                  >
+                    Name
+                  </span>
+                </div>
               </div>
             </th>
             <th
@@ -927,11 +931,15 @@ exports[`DataTableColumns remove column 1`] = `
               <div
                 class="c8"
               >
-                <span
-                  class="c9"
+                <div
+                  class="c9 Header__StyledContentBox-sc-1baku5q-1"
                 >
-                  Age
-                </span>
+                  <span
+                    class="c10"
+                  >
+                    Age
+                  </span>
+                </div>
               </div>
             </th>
             <th
@@ -942,27 +950,31 @@ exports[`DataTableColumns remove column 1`] = `
               <div
                 class="c8"
               >
-                <span
-                  class="c9"
+                <div
+                  class="c9 Header__StyledContentBox-sc-1baku5q-1"
                 >
-                  Size
-                </span>
+                  <span
+                    class="c10"
+                  >
+                    Size
+                  </span>
+                </div>
               </div>
             </th>
           </tr>
         </thead>
         <tbody
-          class="StyledTable__StyledTableBody-sc-1m3u5g-3 c10"
+          class="StyledTable__StyledTableBody-sc-1m3u5g-3 c11"
         >
           <tr
-            class="StyledTable__StyledTableRow-sc-1m3u5g-2 c11"
+            class="StyledTable__StyledTableRow-sc-1m3u5g-2 c12"
           >
             <th
-              class="c12 "
+              class="c13 "
               scope="row"
             >
               <div
-                class="c13"
+                class="c9"
               >
                 <span
                   class="c14"
@@ -972,20 +984,20 @@ exports[`DataTableColumns remove column 1`] = `
               </div>
             </th>
             <td
-              class="c12 "
+              class="c13 "
             >
               <div
-                class="c13"
+                class="c9"
               />
             </td>
             <td
-              class="c12 "
+              class="c13 "
             >
               <div
-                class="c13"
+                class="c9"
               >
                 <span
-                  class="c9"
+                  class="c10"
                 >
                   s
                 </span>
@@ -993,14 +1005,14 @@ exports[`DataTableColumns remove column 1`] = `
             </td>
           </tr>
           <tr
-            class="StyledTable__StyledTableRow-sc-1m3u5g-2 c11"
+            class="StyledTable__StyledTableRow-sc-1m3u5g-2 c12"
           >
             <th
-              class="c12 "
+              class="c13 "
               scope="row"
             >
               <div
-                class="c13"
+                class="c9"
               >
                 <span
                   class="c14"
@@ -1010,20 +1022,20 @@ exports[`DataTableColumns remove column 1`] = `
               </div>
             </th>
             <td
-              class="c12 "
+              class="c13 "
             >
               <div
-                class="c13"
+                class="c9"
               />
             </td>
             <td
-              class="c12 "
+              class="c13 "
             >
               <div
-                class="c13"
+                class="c9"
               >
                 <span
-                  class="c9"
+                  class="c10"
                 >
                   m
                 </span>
@@ -1525,7 +1537,7 @@ exports[`DataTableColumns renders 1`] = `
   justify-content: center;
 }
 
-.c17 {
+.c13 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -1566,7 +1578,7 @@ exports[`DataTableColumns renders 1`] = `
   stroke: none;
 }
 
-.c13 {
+.c14 {
   font-size: 18px;
   line-height: 24px;
 }
@@ -1721,7 +1733,7 @@ exports[`DataTableColumns renders 1`] = `
   padding-bottom: 6px;
 }
 
-.c16 {
+.c17 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -1745,51 +1757,51 @@ exports[`DataTableColumns renders 1`] = `
   border-collapse: separate;
 }
 
+.c16:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c16:focus >circle,
+.c16:focus >ellipse,
+.c16:focus >line,
+.c16:focus >path,
+.c16:focus >polygon,
+.c16:focus >polyline,
+.c16:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c16:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c16:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c16:focus:not(:focus-visible) >circle,
+.c16:focus:not(:focus-visible) >ellipse,
+.c16:focus:not(:focus-visible) >line,
+.c16:focus:not(:focus-visible) >path,
+.c16:focus:not(:focus-visible) >polygon,
+.c16:focus:not(:focus-visible) >polyline,
+.c16:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c16:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
+}
+
 .c15:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c15:focus >circle,
-.c15:focus >ellipse,
-.c15:focus >line,
-.c15:focus >path,
-.c15:focus >polygon,
-.c15:focus >polyline,
-.c15:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c15:focus ::-moz-focus-inner {
-  border: 0;
-}
-
-.c15:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c15:focus:not(:focus-visible) >circle,
-.c15:focus:not(:focus-visible) >ellipse,
-.c15:focus:not(:focus-visible) >line,
-.c15:focus:not(:focus-visible) >path,
-.c15:focus:not(:focus-visible) >polygon,
-.c15:focus:not(:focus-visible) >polyline,
-.c15:focus:not(:focus-visible) >rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c15:focus:not(:focus-visible) ::-moz-focus-inner {
-  border: 0;
-}
-
-.c14:focus {
   outline: 2px solid #6FFFB0;
 }
 
-.c14:focus:not(:focus-visible) {
+.c15:focus:not(:focus-visible) {
   outline: none;
 }
 
@@ -1878,11 +1890,15 @@ exports[`DataTableColumns renders 1`] = `
               <div
                 class="c12"
               >
-                <span
-                  class="c13"
+                <div
+                  class="c13 Header__StyledContentBox-sc-1baku5q-1"
                 >
-                  Name
-                </span>
+                  <span
+                    class="c14"
+                  >
+                    Name
+                  </span>
+                </div>
               </div>
             </th>
             <th
@@ -1893,27 +1909,31 @@ exports[`DataTableColumns renders 1`] = `
               <div
                 class="c12"
               >
-                <span
-                  class="c13"
+                <div
+                  class="c13 Header__StyledContentBox-sc-1baku5q-1"
                 >
-                  Size
-                </span>
+                  <span
+                    class="c14"
+                  >
+                    Size
+                  </span>
+                </div>
               </div>
             </th>
           </tr>
         </thead>
         <tbody
-          class="StyledTable__StyledTableBody-sc-1m3u5g-3 c14"
+          class="StyledTable__StyledTableBody-sc-1m3u5g-3 c15"
         >
           <tr
-            class="StyledTable__StyledTableRow-sc-1m3u5g-2 c15"
+            class="StyledTable__StyledTableRow-sc-1m3u5g-2 c16"
           >
             <th
-              class="c16 "
+              class="c17 "
               scope="row"
             >
               <div
-                class="c17"
+                class="c13"
               >
                 <span
                   class="c18"
@@ -1923,13 +1943,13 @@ exports[`DataTableColumns renders 1`] = `
               </div>
             </th>
             <td
-              class="c16 "
+              class="c17 "
             >
               <div
-                class="c17"
+                class="c13"
               >
                 <span
-                  class="c13"
+                  class="c14"
                 >
                   s
                 </span>
@@ -1937,14 +1957,14 @@ exports[`DataTableColumns renders 1`] = `
             </td>
           </tr>
           <tr
-            class="StyledTable__StyledTableRow-sc-1m3u5g-2 c15"
+            class="StyledTable__StyledTableRow-sc-1m3u5g-2 c16"
           >
             <th
-              class="c16 "
+              class="c17 "
               scope="row"
             >
               <div
-                class="c17"
+                class="c13"
               >
                 <span
                   class="c18"
@@ -1954,13 +1974,13 @@ exports[`DataTableColumns renders 1`] = `
               </div>
             </th>
             <td
-              class="c16 "
+              class="c17 "
             >
               <div
-                class="c17"
+                class="c13"
               >
                 <span
-                  class="c13"
+                  class="c14"
                 >
                   m
                 </span>
@@ -2379,11 +2399,11 @@ exports[`DataTableColumns renders 2`] = `
 exports[`DataTableColumns renders 3`] = `
 <div
   aria-label="Order columns Tab Contents"
-  class="StyledTabs__StyledTabPanel-sc-a4fwxl-1 nPZgL"
+  class="StyledTabs__StyledTabPanel-sc-a4fwxl-1 kwlwid"
   role="tabpanel"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 fpUHQG"
+    class="StyledBox-sc-13pk1d4-0 cafBSw"
   >
     .c1 {
   display: flex;
@@ -2875,7 +2895,7 @@ exports[`DataTableColumns search 1`] = `
   justify-content: center;
 }
 
-.c13 {
+.c9 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -2916,7 +2936,7 @@ exports[`DataTableColumns search 1`] = `
   stroke: none;
 }
 
-.c9 {
+.c10 {
   font-size: 18px;
   line-height: 24px;
 }
@@ -3003,7 +3023,7 @@ exports[`DataTableColumns search 1`] = `
   padding-bottom: 6px;
 }
 
-.c12 {
+.c13 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -3027,51 +3047,51 @@ exports[`DataTableColumns search 1`] = `
   border-collapse: separate;
 }
 
+.c12:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c12:focus >circle,
+.c12:focus >ellipse,
+.c12:focus >line,
+.c12:focus >path,
+.c12:focus >polygon,
+.c12:focus >polyline,
+.c12:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c12:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c12:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c12:focus:not(:focus-visible) >circle,
+.c12:focus:not(:focus-visible) >ellipse,
+.c12:focus:not(:focus-visible) >line,
+.c12:focus:not(:focus-visible) >path,
+.c12:focus:not(:focus-visible) >polygon,
+.c12:focus:not(:focus-visible) >polyline,
+.c12:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c12:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
+}
+
 .c11:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c11:focus >circle,
-.c11:focus >ellipse,
-.c11:focus >line,
-.c11:focus >path,
-.c11:focus >polygon,
-.c11:focus >polyline,
-.c11:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c11:focus ::-moz-focus-inner {
-  border: 0;
-}
-
-.c11:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c11:focus:not(:focus-visible) >circle,
-.c11:focus:not(:focus-visible) >ellipse,
-.c11:focus:not(:focus-visible) >line,
-.c11:focus:not(:focus-visible) >path,
-.c11:focus:not(:focus-visible) >polygon,
-.c11:focus:not(:focus-visible) >polyline,
-.c11:focus:not(:focus-visible) >rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c11:focus:not(:focus-visible) ::-moz-focus-inner {
-  border: 0;
-}
-
-.c10:focus {
   outline: 2px solid #6FFFB0;
 }
 
-.c10:focus:not(:focus-visible) {
+.c11:focus:not(:focus-visible) {
   outline: none;
 }
 
@@ -3132,11 +3152,15 @@ exports[`DataTableColumns search 1`] = `
             <div
               class="c8"
             >
-              <span
-                class="c9"
+              <div
+                class="c9 Header__StyledContentBox-sc-1baku5q-1"
               >
-                Name
-              </span>
+                <span
+                  class="c10"
+                >
+                  Name
+                </span>
+              </div>
             </div>
           </th>
           <th
@@ -3147,27 +3171,31 @@ exports[`DataTableColumns search 1`] = `
             <div
               class="c8"
             >
-              <span
-                class="c9"
+              <div
+                class="c9 Header__StyledContentBox-sc-1baku5q-1"
               >
-                Size
-              </span>
+                <span
+                  class="c10"
+                >
+                  Size
+                </span>
+              </div>
             </div>
           </th>
         </tr>
       </thead>
       <tbody
-        class="StyledTable__StyledTableBody-sc-1m3u5g-3 c10"
+        class="StyledTable__StyledTableBody-sc-1m3u5g-3 c11"
       >
         <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 c11"
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 c12"
         >
           <th
-            class="c12 "
+            class="c13 "
             scope="row"
           >
             <div
-              class="c13"
+              class="c9"
             >
               <span
                 class="c14"
@@ -3177,13 +3205,13 @@ exports[`DataTableColumns search 1`] = `
             </div>
           </th>
           <td
-            class="c12 "
+            class="c13 "
           >
             <div
-              class="c13"
+              class="c9"
             >
               <span
-                class="c9"
+                class="c10"
               >
                 s
               </span>
@@ -3191,14 +3219,14 @@ exports[`DataTableColumns search 1`] = `
           </td>
         </tr>
         <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 c11"
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 c12"
         >
           <th
-            class="c12 "
+            class="c13 "
             scope="row"
           >
             <div
-              class="c13"
+              class="c9"
             >
               <span
                 class="c14"
@@ -3208,13 +3236,13 @@ exports[`DataTableColumns search 1`] = `
             </div>
           </th>
           <td
-            class="c12 "
+            class="c13 "
           >
             <div
-              class="c13"
+              class="c9"
             >
               <span
-                class="c9"
+                class="c10"
               >
                 m
               </span>
@@ -3628,7 +3656,7 @@ exports[`DataTableColumns search 2`] = `
 exports[`DataTableColumns search 3`] = `
 <button
   aria-label="Open column selector"
-  class="StyledButton-sc-323bzc-0 iGmGqZ"
+  class="StyledButton-sc-323bzc-0 bIZBkf"
   data-g-tabindex="none"
   id="test-data--columns-control"
   tabindex="-1"
@@ -3636,7 +3664,7 @@ exports[`DataTableColumns search 3`] = `
 >
   <svg
     aria-label="Splits"
-    class="StyledIcon-sc-ofa7kd-0 jCZnaS"
+    class="StyledIcon-sc-ofa7kd-0 esCCqY"
     viewBox="0 0 24 24"
   >
     <path
@@ -3651,123 +3679,123 @@ exports[`DataTableColumns search 3`] = `
 
 exports[`DataTableColumns search 4`] = `
 "@media only screen and (max-width: 768px) {
-  .bhBTej {
+  .coNAXt {
     margin-top: 12px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .jVvwXK {
+  .cIAsHI {
     padding: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .fUShjZ {
+  .edndUX {
     margin-left: 6px;
     margin-right: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .fUShjZ {
+  .edndUX {
     margin-top: 2px;
     margin-bottom: 2px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .fUShjZ {
+  .edndUX {
     border-bottom: solid 2px #000000;
   }
 }
 @media only screen and (max-width: 768px) {
-  .fUShjZ {
+  .edndUX {
     padding-bottom: 3px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .kqqNDJ {
+  .bWNHnf {
     margin-left: 6px;
     margin-right: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .kqqNDJ {
+  .bWNHnf {
     margin-top: 2px;
     margin-bottom: 2px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .kqqNDJ {
+  .bWNHnf {
     border-bottom: solid 2px #7d4cdb;
   }
 }
 @media only screen and (max-width: 768px) {
-  .kqqNDJ {
+  .bWNHnf {
     padding-bottom: 3px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .iQzaUp {
+  .dEiZhn {
     padding-top: 6px;
     padding-bottom: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .gCGMUC {
+  .jDgzUY {
     margin-right: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .SUcZR {
+  .fdemor {
     border: solid 2px #7d4cdb;
   }
 }
 @media only screen and (max-width: 768px) {
-  .fpUHQG {
+  .cafBSw {
     padding-top: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .erGkir {
+  .bnRCzl {
     border-top: solid 1px rgba(0, 0, 0, 0.33);
     border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   }
 }
 @media only screen and (max-width: 768px) {
-  .erGkir {
+  .bnRCzl {
     padding: 0px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .brLzyR {
+  .jjCepj {
     border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   }
 }
 @media only screen and (max-width: 768px) {
-  .brLzyR {
+  .jjCepj {
     padding: 0px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .bhppRX {
+  .ffrHHp {
     height: 3px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .oSxZH {
+  .hrJqFx {
     height: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .iGPQzj {
+  .bQlCmd {
     width: 12px;
   }
 }
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-  .dRYfuX {
+  .czxfTR {
     display: flex;
     align-items: stretch;
   }
 }
-.iGmGqZ {
+.bIZBkf {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -3785,38 +3813,38 @@ exports[`DataTableColumns search 4`] = `
   line-height: 0;
   padding: 12px;
 }
-.iGmGqZ:focus {
+.bIZBkf:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6fffb0;
 }
-.iGmGqZ:focus > circle,
-.iGmGqZ:focus > ellipse,
-.iGmGqZ:focus > line,
-.iGmGqZ:focus > path,
-.iGmGqZ:focus > polygon,
-.iGmGqZ:focus > polyline,
-.iGmGqZ:focus > rect {
+.bIZBkf:focus > circle,
+.bIZBkf:focus > ellipse,
+.bIZBkf:focus > line,
+.bIZBkf:focus > path,
+.bIZBkf:focus > polygon,
+.bIZBkf:focus > polyline,
+.bIZBkf:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6fffb0;
 }
-.iGmGqZ:focus ::-moz-focus-inner {
+.bIZBkf:focus ::-moz-focus-inner {
   border: 0;
 }
-.iGmGqZ:focus:not(:focus-visible) {
+.bIZBkf:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
-.iGmGqZ:focus:not(:focus-visible) > circle,
-.iGmGqZ:focus:not(:focus-visible) > ellipse,
-.iGmGqZ:focus:not(:focus-visible) > line,
-.iGmGqZ:focus:not(:focus-visible) > path,
-.iGmGqZ:focus:not(:focus-visible) > polygon,
-.iGmGqZ:focus:not(:focus-visible) > polyline,
-.iGmGqZ:focus:not(:focus-visible) > rect {
+.bIZBkf:focus:not(:focus-visible) > circle,
+.bIZBkf:focus:not(:focus-visible) > ellipse,
+.bIZBkf:focus:not(:focus-visible) > line,
+.bIZBkf:focus:not(:focus-visible) > path,
+.bIZBkf:focus:not(:focus-visible) > polygon,
+.bIZBkf:focus:not(:focus-visible) > polyline,
+.bIZBkf:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
-.iGmGqZ:focus:not(:focus-visible) ::-moz-focus-inner {
+.bIZBkf:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }"
 `;

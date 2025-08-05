@@ -399,8 +399,9 @@ const gapGapStyle = (directionProp, gap, responsive, border, theme) => {
   }
 
   if (border === 'between' || (border && border.side === 'between')) {
-    // TO DO theme object?
-    const borderSize = border.size || 'xsmall';
+    // TO DO theme object? thought box borderSize was a string
+    // naming since we have theme.global.borderSize
+    const borderSize = border.size || theme.box.borderSize;
     const borderMetric = theme.global.borderSize[borderSize] || borderSize;
     const borderOffset = `${
       parseMetricToNum(metric) / 2 - parseMetricToNum(borderMetric) / 2

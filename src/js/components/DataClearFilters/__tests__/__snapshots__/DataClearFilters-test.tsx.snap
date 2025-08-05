@@ -1,4 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`DataClearFilters clear filters should not clear search, sort, or step 1`] = `
 <DocumentFragment>
@@ -263,10 +263,6 @@ exports[`DataClearFilters clear filters should not clear search, sort, or step 1
   .c3 {
     column-gap: 6px;
   }
-}
-
-@media only screen and (max-width: 768px) {
-
 }
 
 @media only screen and (max-width: 768px) {

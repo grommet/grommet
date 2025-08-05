@@ -167,7 +167,7 @@ describe('Select', () => {
     // add content to search box
     fireEvent.change(document.activeElement, { target: { value: 'o' } });
     expect(document.activeElement).toMatchSnapshot();
-    expect(onSearch).toBeCalledWith('o');
+    expect(onSearch).toHaveBeenCalledWith('o');
   });
 
   test('search and select', () => {
@@ -204,10 +204,12 @@ describe('Select', () => {
     // add content to search box
     fireEvent.change(document.activeElement, { target: { value: 't' } });
     expect(document.activeElement).toMatchSnapshot();
-    expect(onSearch).toBeCalledWith('t');
+    expect(onSearch).toHaveBeenCalledWith('t');
 
     fireEvent.click(getByText('two'));
-    expect(onChange).toBeCalledWith(expect.objectContaining({ value: 'two' }));
+    expect(onChange).toHaveBeenCalledWith(
+      expect.objectContaining({ value: 'two' }),
+    );
   });
 
   test('select an option with complex options', () => {
@@ -233,10 +235,10 @@ describe('Select', () => {
     fireEvent.click(
       document.getElementById('test-select__drop').querySelector('button'),
     );
-    expect(onChange).toBeCalledWith(
+    expect(onChange).toHaveBeenCalledWith(
       expect.objectContaining({ value: { test: 'one' } }),
     );
-    expect(window.scrollTo).toBeCalled();
+    expect(window.scrollTo).toHaveBeenCalled();
   });
 
   test('size', () => {
@@ -312,7 +314,7 @@ describe('Select', () => {
     expectPortal('test-select__drop').toMatchSnapshot();
 
     fireEvent.click(getByText('Value1'));
-    expect(onChange).toBeCalledWith(
+    expect(onChange).toHaveBeenCalledWith(
       expect.objectContaining({
         value: {
           id: 1,
@@ -359,7 +361,7 @@ describe('Select', () => {
     expectPortal('test-select__drop').toMatchSnapshot();
 
     fireEvent.click(getByText('1'));
-    expect(onChange).toBeCalledWith(
+    expect(onChange).toHaveBeenCalledWith(
       expect.objectContaining({
         value: {
           id: 1,
@@ -405,7 +407,7 @@ describe('Select', () => {
     expectPortal('test-select__drop').toMatchSnapshot();
 
     fireEvent.click(getByText('1')); // 1 matches first key
-    expect(onChange).toBeCalledWith(
+    expect(onChange).toHaveBeenCalledWith(
       expect.objectContaining({
         value: {
           id: 1,
@@ -453,7 +455,7 @@ describe('Select', () => {
     expectPortal('test-select__drop').toMatchSnapshot();
 
     fireEvent.click(getByText('Value1'));
-    expect(onChange).toBeCalledWith(
+    expect(onChange).toHaveBeenCalledWith(
       expect.objectContaining({
         value: {
           id: 1,
@@ -501,7 +503,7 @@ describe('Select', () => {
     expectPortal('test-select__drop').toMatchSnapshot();
 
     fireEvent.click(getByText('Value1'));
-    expect(onChange).toBeCalledWith(
+    expect(onChange).toHaveBeenCalledWith(
       expect.objectContaining({
         value: 1,
       }),
@@ -594,8 +596,10 @@ describe('Select', () => {
 
     // checks if select has a value assigned to it after option is selected
     expect(select.value).toEqual('one');
-    expect(onChange).toBeCalledWith(expect.objectContaining({ value: 'one' }));
-    expect(window.scrollTo).toBeCalled();
+    expect(onChange).toHaveBeenCalledWith(
+      expect.objectContaining({ value: 'one' }),
+    );
+    expect(window.scrollTo).toHaveBeenCalled();
   });
 
   test('select an option with enter', () => {
@@ -629,8 +633,10 @@ describe('Select', () => {
       keyCode: 13,
       which: 13,
     });
-    expect(onChange).toBeCalledWith(expect.objectContaining({ value: 'one' }));
-    expect(window.scrollTo).toBeCalled();
+    expect(onChange).toHaveBeenCalledWith(
+      expect.objectContaining({ value: 'one' }),
+    );
+    expect(window.scrollTo).toHaveBeenCalled();
   });
 
   test('select an option with keypress', () => {
@@ -659,8 +665,10 @@ describe('Select', () => {
       keyCode: 13,
       which: 13,
     });
-    expect(onChange).toBeCalledWith(expect.objectContaining({ value: 'two' }));
-    expect(window.scrollTo).toBeCalled();
+    expect(onChange).toHaveBeenCalledWith(
+      expect.objectContaining({ value: 'two' }),
+    );
+    expect(window.scrollTo).toHaveBeenCalled();
   });
 
   test('select an object with label key specific with keypress', () => {
@@ -696,12 +704,12 @@ describe('Select', () => {
       keyCode: 13,
       which: 13,
     });
-    expect(onChange).toBeCalledWith(
+    expect(onChange).toHaveBeenCalledWith(
       expect.objectContaining({
         value: { id: 2, name: 'two' },
       }),
     );
-    expect(window.scrollTo).toBeCalled();
+    expect(window.scrollTo).toHaveBeenCalled();
   });
 
   test('select on multiple keydown always picks first enabled option', () => {
@@ -735,12 +743,12 @@ describe('Select', () => {
       keyCode: 13,
       which: 13,
     });
-    expect(onChange).toBeCalledWith(
+    expect(onChange).toHaveBeenCalledWith(
       expect.objectContaining({
         value: 'two',
       }),
     );
-    expect(window.scrollTo).toBeCalled();
+    expect(window.scrollTo).toHaveBeenCalled();
   });
 
   test('disabled', () => {
@@ -1108,7 +1116,7 @@ describe('Select', () => {
 
     const emptySearchMessage = getByText('No matches found').closest('span');
     style = window.getComputedStyle(emptySearchMessage);
-    expect(style.color).toBe('green');
+    expect(style.color).toBe('rgb(0, 128, 0)'); // green color
 
     expect(document.activeElement).toMatchSnapshot();
   });
@@ -1316,7 +1324,7 @@ describe('Select', () => {
     expectPortal('test-select__drop').toMatchSnapshot();
 
     fireEvent.click(getByText('one'));
-    expect(onChange).toBeCalledWith(
+    expect(onChange).toHaveBeenCalledWith(
       expect.objectContaining({
         value: 'one',
         option: 'one',
@@ -1659,7 +1667,9 @@ describe('Select', () => {
       keyCode: 13,
       which: 13,
     });
-    expect(onChange).toBeCalledWith(expect.objectContaining({ value: 'two' }));
+    expect(onChange).toHaveBeenCalledWith(
+      expect.objectContaining({ value: 'two' }),
+    );
     expect(container.firstChild).toMatchSnapshot();
   });
 

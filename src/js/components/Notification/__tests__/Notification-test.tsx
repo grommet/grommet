@@ -5,7 +5,13 @@ import 'regenerator-runtime/runtime';
 import '@testing-library/jest-dom';
 
 import { axe } from 'jest-axe';
-import { render, screen, act } from '@testing-library/react';
+import {
+  render,
+  screen,
+  act,
+  fireEvent,
+  waitFor,
+} from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { Home } from 'grommet-icons';
 import { createPortal, expectPortal } from '../../../utils/portal';
@@ -451,5 +457,62 @@ describe('Notification', () => {
       </Grommet>,
     );
     expect(asFragment()).toMatchSnapshot();
+  });
+
+  test('focus remains on second button after toast notification closes', async () => {
+    jest.useFakeTimers();
+
+    const TestComponent = () => {
+      const [showNotification, setShowNotification] = useState(false);
+      return (
+        <Grommet>
+          <Button
+            label="Show Notification"
+            onClick={() => setShowNotification(true)}
+          />
+          {showNotification && (
+            <Notification
+              toast
+              title="Toast"
+              message="This is a toast notification"
+              onClose={() => setShowNotification(false)}
+              time={500}
+            />
+          )}
+          <Button label="Second Button" data-testid="second-btn" />
+        </Grommet>
+      );
+    };
+
+    const { getByText, getByTestId, queryByText } = render(<TestComponent />);
+
+    // Click to show notification
+    act(() => {
+      fireEvent.click(getByText('Show Notification'));
+    });
+
+    // Focus the second button
+    const secondBtn = getByTestId('second-btn');
+    act(() => {
+      secondBtn.focus();
+    });
+    expect(document.activeElement).toBe(secondBtn);
+
+    // Advance timers to close the notification
+    act(() => {
+      jest.advanceTimersByTime(600);
+    });
+
+    // Wait for notification to close
+    await waitFor(() => {
+      expect(
+        queryByText('This is a toast notification'),
+      ).not.toBeInTheDocument();
+    });
+
+    // Focus should remain on the second button
+    expect(document.activeElement).toBe(secondBtn);
+
+    jest.useRealTimers();
   });
 });
