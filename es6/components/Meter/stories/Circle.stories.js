@@ -1,19 +1,17 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Box, Meter } from 'grommet';
 export var Circle = function Circle() {
   var _useState = useState(20),
     value = _useState[0],
     setValue = _useState[1];
-  var timer = useRef();
-  clearTimeout(timer.current);
-  timer.current = setTimeout(function () {
-    setValue(value < 100 ? value + 8 : 20);
-  }, 2000);
   useEffect(function () {
+    var interval = setInterval(function () {
+      setValue(value < 60 ? value + 8 : 20);
+    }, 2000);
     return function () {
-      clearTimeout(timer.current);
+      return clearInterval(interval);
     };
-  }, []);
+  }, [value]);
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -26,7 +24,7 @@ export var Circle = function Circle() {
       background: "light-2",
       values: [{
         value: value,
-        color: value > 50 ? 'accent-2' : 'accent-1'
+        color: value > 50 ? 'status-critical' : 'status-ok'
       }]
     }))
     // </Grommet>

@@ -13,6 +13,20 @@ export var strokeProps = function strokeProps(color, theme) {
   }
   return result;
 };
+export var fillProps = function fillProps(color, theme) {
+  var result = {};
+  if (color) {
+    if (typeof color === 'object') {
+      result.fill = normalizeColor(color.color, theme);
+      if (color.opacity) {
+        result.fillOpacity = "" + (color.opacity === true ? theme.global.opacity.medium : theme.global.opacity[color.opacity] || color.opacity);
+      }
+    } else {
+      result.fill = normalizeColor(color, theme);
+    }
+  }
+  return result;
+};
 var neutralExp = /^neutral-\d+/;
 export var defaultColor = function defaultColor(index, theme, valuesLength) {
   if (index === valuesLength - 1 && theme.meter.color) {

@@ -13,6 +13,7 @@ function _interopRequireWildcard(e, t) { if ("function" == typeof WeakMap) var r
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (-1 !== e.indexOf(n)) continue; t[n] = r[n]; } return t; }
 var Circle = exports.Circle = /*#__PURE__*/(0, _react.forwardRef)(function (props, ref) {
+  var _theme$meter$gap, _theme$meter;
   var background = props.background,
     max = props.max,
     round = props.round,
@@ -25,7 +26,7 @@ var Circle = exports.Circle = /*#__PURE__*/(0, _react.forwardRef)(function (prop
     theme = _useThemeValue.theme,
     passThemeFlag = _useThemeValue.passThemeFlag;
   var width = size === 'full' ? 288 : (0, _utils.parseMetricToNum)(theme.global.size[size] || size);
-  var strokeWidth = type === 'pie' ? width / 2 : (0, _utils.parseMetricToNum)(theme.global.edgeSize[thickness] || thickness);
+  var strokeWidth = type === 'pie' ? width / 2 : Math.min(width / 2 - 8, (0, _utils.parseMetricToNum)(theme.global.edgeSize[thickness] || thickness));
   var centerX = width / 2;
   var centerY = width / 2;
   var radius = width / 2 - strokeWidth / 2;
@@ -35,17 +36,22 @@ var Circle = exports.Circle = /*#__PURE__*/(0, _react.forwardRef)(function (prop
   var scalePower = Math.max(5, Math.ceil(Math.log10(max)) + 3);
   var scale = Math.pow(10, scalePower);
   var anglePer = Math.floor((type === 'semicircle' ? 180 : 360) / max * scale) / scale;
-  //  (type === 'semicircle' ? 180 : 360) / max;
   var someHighlight = (values || []).some(function (v) {
     return v.highlight;
   });
+  var gapTheme = (_theme$meter$gap = (_theme$meter = theme.meter) == null ? void 0 : _theme$meter.gap) != null ? _theme$meter$gap : '0';
+  var gap = (0, _utils.parseMetricToNum)(theme.global.edgeSize[gapTheme] || gapTheme);
+  var isSemi = type === 'semicircle';
+  var isFull = values.reduce(function (total, currentValue) {
+    return total + currentValue.value;
+  }, 0) >= max;
   var startValue = 0;
-  var startAngle = type === 'semicircle' ? 270 : 0;
+  var startAngle = isSemi ? 270 : 0;
   var paths = [];
-  var pathCaps = [];
   (values || []).filter(function (v) {
     return v.value > 0;
-  }).forEach(function (valueArg, index) {
+  }).forEach(function (valueArg, index, _ref) {
+    var length = _ref.length;
     var color = valueArg.color,
       highlight = valueArg.highlight,
       label = valueArg.label,
@@ -56,7 +62,7 @@ var Circle = exports.Circle = /*#__PURE__*/(0, _react.forwardRef)(function (prop
     var colorName = color || (0, _utils2.defaultColor)(index, theme, values ? values.length : 0);
     var endAngle;
     if (startValue + value >= max) {
-      endAngle = type === 'semicircle' ? 90 : 360;
+      endAngle = isSemi ? 90 : 360;
     } else {
       endAngle = (0, _utils.translateEndAngle)(startAngle, anglePer, value);
     }
@@ -72,46 +78,25 @@ var Circle = exports.Circle = /*#__PURE__*/(0, _react.forwardRef)(function (prop
       };
     }
     var stroke = (0, _utils2.strokeProps)(someHighlight && !highlight ? background : colorName, theme);
-    if (round) {
-      var d1 = (0, _utils.arcCommands)(centerX, centerY, radius, startAngle, endAngle);
-      paths.unshift(/*#__PURE__*/_react["default"].createElement("path", _extends({
-        key: key,
-        d: d1,
-        fill: "none"
-      }, stroke, {
-        strokeWidth: strokeWidth,
-        strokeLinecap: "round"
-      }, hoverProps, pathRest)));
+    var fill = (0, _utils2.fillProps)(someHighlight && !highlight ? background : colorName, theme);
+    var outerRadius = width / 2;
+    var innerRadius = type === 'pie' ? 0 : width / 2 - strokeWidth;
 
-      // To handle situations where the last values are small, redraw
-      // a dot at the end. Give just a bit of angle to avoid anti-aliasing
-      // leakage around the edge.
-      var d2 = (0, _utils.arcCommands)(centerX, centerY, radius, endAngle - 0.5, endAngle);
-      var pathCap = /*#__PURE__*/_react["default"].createElement("path", _extends({
-        key: key + "-",
-        d: d2,
-        fill: "none"
-      }, stroke, {
-        strokeWidth: strokeWidth,
-        strokeLinecap: "round"
-      }, hoverProps, pathRest));
-      // If we are on a large enough path to not need re-drawing previous
-      // ones, clear the pathCaps we've collected already.
-      if (endAngle - startAngle > 2 * anglePer) {
-        pathCaps = [];
-      }
-      pathCaps.unshift(pathCap);
-    } else {
-      var d = (0, _utils.arcCommands)(centerX, centerY, radius, startAngle, endAngle);
-      paths.push(/*#__PURE__*/_react["default"].createElement("path", _extends({
-        key: key,
-        d: d,
-        fill: "none"
-      }, stroke, {
-        strokeWidth: strokeWidth,
-        strokeLinecap: "butt"
-      }, hoverProps, pathRest)));
-    }
+    // We want a start gap if there's another segment before this one.
+    // A circle's last segment can bump against the first segment if at max.
+    var startGap = index === 0 && (isSemi || length === 1 || length > 1 && !isFull) ? 0 : gap / 2;
+
+    // Similarly, we only need an end gap if there's a segment after this one.
+    var endGap = index === length - 1 && (isSemi || length === 1) ? 0 : -gap / 2;
+    var startRound = index === 0 && isSemi ? false : round;
+    var d = (0, _utils.wedgeCommands)(centerX, centerY, outerRadius, innerRadius, startAngle, endAngle, startGap, endGap, startRound, round, index === 0 ? 1 : 0);
+    paths.push(/*#__PURE__*/_react["default"].createElement("path", _extends({
+      key: key,
+      d: d
+    }, fill, stroke, {
+      strokeWidth: 0,
+      strokeLinecap: "butt"
+    }, hoverProps, pathRest)));
     startValue += value;
     startAngle = endAngle;
   });
@@ -142,6 +127,6 @@ var Circle = exports.Circle = /*#__PURE__*/(0, _react.forwardRef)(function (prop
     viewBox: "0 0 " + width + " " + viewBoxHeight,
     width: size === 'full' ? '100%' : width,
     height: size === 'full' ? '100%' : viewBoxHeight
-  }, passThemeFlag, rest), track, paths, pathCaps);
+  }, passThemeFlag, rest), track, paths);
 });
 Circle.displayName = 'Circle';

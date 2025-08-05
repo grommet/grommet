@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.strokeProps = exports.defaultColor = void 0;
+exports.strokeProps = exports.fillProps = exports.defaultColor = void 0;
 var _utils = require("../../utils");
 var strokeProps = exports.strokeProps = function strokeProps(color, theme) {
   var result = {};
@@ -13,6 +13,20 @@ var strokeProps = exports.strokeProps = function strokeProps(color, theme) {
       }
     } else {
       result.stroke = (0, _utils.normalizeColor)(color, theme);
+    }
+  }
+  return result;
+};
+var fillProps = exports.fillProps = function fillProps(color, theme) {
+  var result = {};
+  if (color) {
+    if (typeof color === 'object') {
+      result.fill = (0, _utils.normalizeColor)(color.color, theme);
+      if (color.opacity) {
+        result.fillOpacity = "" + (color.opacity === true ? theme.global.opacity.medium : theme.global.opacity[color.opacity] || color.opacity);
+      }
+    } else {
+      result.fill = (0, _utils.normalizeColor)(color, theme);
     }
   }
   return result;

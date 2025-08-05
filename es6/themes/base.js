@@ -1373,6 +1373,7 @@ export var generate = function generate(baseSpacing, scale) {
       color: 'graph-0'
       // colors: [] || colors: ['graph-0', 'graph-1', 'graph-2', 'graph-3'],
       // extend: undefined,
+      // gap: undefined,
     },
     nameValueList: {
       gap: {
