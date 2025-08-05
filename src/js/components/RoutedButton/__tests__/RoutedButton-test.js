@@ -64,7 +64,7 @@ describe('RoutedButton', () => {
       </Grommet>,
     );
 
-    expect(warnSpy).toBeCalledWith(warning);
+    expect(warnSpy).toHaveBeenCalledWith(warning);
     expect(container.firstChild).toMatchSnapshot();
   });
 
@@ -85,7 +85,7 @@ describe('RoutedButton', () => {
     clickEvent.preventDefault = preventDefault;
     fireEvent(anchor, clickEvent);
 
-    expect(onClick).toBeCalled();
+    expect(onClick).toHaveBeenCalled();
     expect(push).toHaveBeenCalled();
     expect(preventDefault).toHaveBeenCalled();
     expect(warnSpy).toHaveBeenCalledWith(warning);

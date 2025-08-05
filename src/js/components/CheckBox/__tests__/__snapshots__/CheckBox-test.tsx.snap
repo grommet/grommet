@@ -1,4 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`CheckBox checked renders 1`] = `
 .c0 {
@@ -245,24 +245,24 @@ exports[`CheckBox controlled 1`] = `
 
 exports[`CheckBox controlled 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 cBoJUe"
+  class="StyledGrommet-sc-19lkkz7-0 kiEDjE"
 >
   <label
-    class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 hJexaG"
+    class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 fWaykw"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 gCGMUC StyledCheckBox-sc-1dbk5ju-6 kMcDgp"
+      class="StyledBox-sc-13pk1d4-0 jDgzUY StyledCheckBox-sc-1dbk5ju-6 gAgPcH"
     >
       <input
         checked=""
-        class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 eNyPOw"
+        class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 exHNbK"
         type="checkbox"
       />
       <div
-        class="StyledBox-sc-13pk1d4-0 SUcZR StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 cypHTx"
+        class="StyledBox-sc-13pk1d4-0 fdemor StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 cBFYon"
       >
         <svg
-          class="StyledCheckBox__StyledCheckBoxIcon-sc-1dbk5ju-0 gMqahO"
+          class="StyledCheckBox__StyledCheckBoxIcon-sc-1dbk5ju-0 ekvNYc"
           preserveAspectRatio="xMidYMid meet"
           viewBox="0 0 24 24"
         >

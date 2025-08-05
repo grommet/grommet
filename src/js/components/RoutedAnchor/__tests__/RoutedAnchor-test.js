@@ -76,9 +76,9 @@ describe('RoutedAnchor', () => {
     clickEvent.preventDefault = preventDefault;
     fireEvent(anchor, clickEvent);
 
-    expect(onClick).toBeCalledTimes(1);
-    expect(push).toBeCalledTimes(1);
-    expect(preventDefault).toBeCalledTimes(1);
+    expect(onClick).toHaveBeenCalledTimes(1);
+    expect(push).toHaveBeenCalledTimes(1);
+    expect(preventDefault).toHaveBeenCalledTimes(1);
     expect(warnSpy).toHaveBeenCalled();
   });
 
