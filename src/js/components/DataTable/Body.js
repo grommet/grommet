@@ -184,7 +184,8 @@ const Row = memo(
             key={column.property}
             background={
               (isSelected && cellProps.selected.background) ||
-              (column.pin && cellProps.pinned.background) ||
+              (active && cellProps.active?.background) ||
+              (focused && cellProps.focused?.background) ||
               cellProps.background
             }
             border={(column.pin && cellProps.pinned.border) || cellProps.border}
