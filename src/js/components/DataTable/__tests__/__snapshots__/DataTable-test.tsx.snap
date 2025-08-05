@@ -3770,7 +3770,6 @@ exports[`DataTable custom theme 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  margin-right: -12px;
   color: inherit;
   outline: none;
   border: none;
@@ -4234,7 +4233,7 @@ exports[`DataTable custom theme 2`] = `
             aria-orientation="vertical"
             aria-valuenow="0"
             aria-valuetext="Resize A column"
-            class="StyledButton-sc-323bzc-0 fmgbkm Resizer__StyledResizer-sc-8l808w-0 jXjIlQ"
+            class="StyledButton-sc-323bzc-0 jLPXpV Resizer__StyledResizer-sc-8l808w-0 jXjIlQ"
             role="separator"
             type="button"
           >
@@ -23748,7 +23747,6 @@ exports[`DataTable resizeable 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  margin-right: -12px;
   color: inherit;
   outline: none;
   border: none;
@@ -26794,10 +26792,9 @@ exports[`DataTable search 2`] = `
   min-width: 0;
   min-height: 0;
   flex-direction: column;
-  width: 384px;
+  min-width: 96px;
   flex: 1 1;
   padding-left: 12px;
-  padding-right: 12px;
 }
 
 .c2 {
@@ -26870,7 +26867,6 @@ exports[`DataTable search 2`] = `
 @media only screen and (max-width: 768px) {
   .c0 {
     padding-left: 6px;
-    padding-right: 6px;
   }
 }
 

@@ -180,8 +180,6 @@ const Resizer = ({ onResize, property, headerText, messages, headerId }) => {
         onMouseEnter={() => setHover(true)}
         onMouseLeave={() => setHover(false)}
         ref={ref}
-        pad={theme.dataTable?.resize?.pad}
-        margin={theme.dataTable?.resize?.margin}
         role="separator"
         aria-valuenow={width}
         aria-valuetext={

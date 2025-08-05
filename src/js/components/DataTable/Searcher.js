@@ -56,12 +56,12 @@ const Searcher = ({
       }}
     >
       <Box
-        width={theme.dataTable.search.width}
+        width={{ min: 'xsmall' }}
         flex
         // padding right is not needed any longer. There is margin
         // right set already on the container, see Header.js
-        // TO DO theme object
-        pad={theme.dataTable.search.pad}
+        // TODO theme object
+        pad={{ left: 'small' }}
       >
         <TextInput
           name={`search-${property}`}
