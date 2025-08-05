@@ -20039,13 +20039,26 @@ exports[`DataTable pin + background 1`] = `
   font-weight: inherit;
   text-align: inherit;
   text-align: start;
+  background: red;
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
   padding-bottom: 6px;
 }
 
-.c15 {
+.c14 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  text-align: start;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.c16 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -20060,7 +20073,7 @@ exports[`DataTable pin + background 1`] = `
   padding-bottom: 6px;
 }
 
-.c18 {
+.c19 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -20073,7 +20086,7 @@ exports[`DataTable pin + background 1`] = `
   padding-bottom: 6px;
 }
 
-.c19 {
+.c20 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -20146,7 +20159,7 @@ exports[`DataTable pin + background 1`] = `
   outline: none;
 }
 
-.c14 {
+.c15 {
   position: sticky;
   bottom: 0;
   z-index: 1;
@@ -20171,14 +20184,14 @@ exports[`DataTable pin + background 1`] = `
   z-index: 1;
 }
 
-.c16 {
+.c17 {
   position: sticky;
   bottom: 0;
   left: 0;
   z-index: 2;
 }
 
-.c17 {
+.c18 {
   position: sticky;
   bottom: 0;
   z-index: 1;
@@ -20249,7 +20262,7 @@ exports[`DataTable pin + background 1`] = `
           </div>
         </th>
         <td
-          class="c10 "
+          class="c14 "
         >
           <div
             class="c12"
@@ -20280,7 +20293,7 @@ exports[`DataTable pin + background 1`] = `
           </div>
         </th>
         <td
-          class="c10 "
+          class="c14 "
         >
           <div
             class="c12"
@@ -20295,13 +20308,13 @@ exports[`DataTable pin + background 1`] = `
       </tr>
     </tbody>
     <tfoot
-      class="StyledTable__StyledTableFooter-sc-1m3u5g-5 c14"
+      class="StyledTable__StyledTableFooter-sc-1m3u5g-5 c15"
     >
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2"
       >
         <td
-          class="c15 c16"
+          class="c16 c17"
         >
           <div
             class="c12"
@@ -20314,7 +20327,7 @@ exports[`DataTable pin + background 1`] = `
           </div>
         </td>
         <td
-          class="c15 c17"
+          class="c16 c18"
         >
           <div
             class="c12"
@@ -20385,7 +20398,7 @@ exports[`DataTable pin + background 1`] = `
           </div>
         </th>
         <td
-          class="c10 "
+          class="c14 "
         >
           <div
             class="c12"
@@ -20416,7 +20429,7 @@ exports[`DataTable pin + background 1`] = `
           </div>
         </th>
         <td
-          class="c10 "
+          class="c14 "
         >
           <div
             class="c12"
@@ -20437,7 +20450,7 @@ exports[`DataTable pin + background 1`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2"
       >
         <td
-          class="c18 c11"
+          class="c19 c11"
         >
           <div
             class="c12"
@@ -20450,7 +20463,7 @@ exports[`DataTable pin + background 1`] = `
           </div>
         </td>
         <td
-          class="c18 "
+          class="c19 "
         >
           <div
             class="c12"
@@ -20469,7 +20482,7 @@ exports[`DataTable pin + background 1`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
       >
         <th
-          class="c19 c11"
+          class="c20 c11"
           id="grommet-data-table-header-a"
           scope="col"
         >
@@ -20484,7 +20497,7 @@ exports[`DataTable pin + background 1`] = `
           </div>
         </th>
         <th
-          class="c19 "
+          class="c20 "
           id="grommet-data-table-header-b"
           scope="col"
         >
@@ -20521,7 +20534,7 @@ exports[`DataTable pin + background 1`] = `
           </div>
         </th>
         <td
-          class="c10 "
+          class="c14 "
         >
           <div
             class="c12"
@@ -20552,7 +20565,7 @@ exports[`DataTable pin + background 1`] = `
           </div>
         </th>
         <td
-          class="c10 "
+          class="c14 "
         >
           <div
             class="c12"
@@ -20567,13 +20580,13 @@ exports[`DataTable pin + background 1`] = `
       </tr>
     </tbody>
     <tfoot
-      class="StyledTable__StyledTableFooter-sc-1m3u5g-5 c14"
+      class="StyledTable__StyledTableFooter-sc-1m3u5g-5 c15"
     >
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2"
       >
         <td
-          class="c15 c16"
+          class="c16 c17"
         >
           <div
             class="c12"
@@ -20586,7 +20599,7 @@ exports[`DataTable pin + background 1`] = `
           </div>
         </td>
         <td
-          class="c15 c17"
+          class="c16 c18"
         >
           <div
             class="c12"
