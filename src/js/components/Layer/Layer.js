@@ -93,14 +93,17 @@ const Layer = forwardRef((props, ref) => {
           }
           setTimeout(() => {
             // we add the id and query here so the unit tests work
-            const clone = containerTarget
-              .getRootNode()
-              .getElementById('layerClone');
-            if (clone) {
-              if (containerTarget.contains(clone)) {
-                containerTarget.removeChild(clone);
+            const rootNode = containerTarget.getRootNode();
+            // Not all root nodes (ShadowRoot, DocumentFragment)
+            //  have getElementById.
+            if (rootNode && typeof rootNode.getElementById === 'function') {
+              const clone = rootNode.getElementById('layerClone');
+              if (clone) {
+                if (containerTarget.contains(clone)) {
+                  containerTarget.removeChild(clone);
+                }
+                layerContainer.remove();
               }
-              layerContainer.remove();
             }
           }, animationDuration);
         } else if (containerTarget.contains(layerContainer)) {
