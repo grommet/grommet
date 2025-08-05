@@ -1,4 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`TextInput a11yTitle or aria-label 1`] = `
 .c0 {
@@ -477,16 +477,16 @@ exports[`TextInput calls onSuggestionsClose 3`] = `""`;
 
 exports[`TextInput calls onSuggestionsClose 4`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 cBoJUe"
+  class="StyledGrommet-sc-19lkkz7-0 kiEDjE"
 >
   <div
-    class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 ddykB"
+    class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 iogQf"
   >
     <input
       aria-autocomplete="list"
       aria-expanded="false"
       autocomplete="off"
-      class="StyledTextInput-sc-1x30a0s-0 ecDZGE"
+      class="StyledTextInput-sc-1x30a0s-0 cuZJLm"
       data-testid="test-input"
       id="item"
       name="item"
@@ -984,16 +984,16 @@ exports[`TextInput close suggestion drop 3`] = `""`;
 
 exports[`TextInput close suggestion drop 4`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 cBoJUe"
+  class="StyledGrommet-sc-19lkkz7-0 kiEDjE"
 >
   <div
-    class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 ddykB"
+    class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 iogQf"
   >
     <input
       aria-autocomplete="list"
       aria-expanded="false"
       autocomplete="off"
-      class="StyledTextInput-sc-1x30a0s-0 ecDZGE"
+      class="StyledTextInput-sc-1x30a0s-0 cuZJLm"
       data-testid="test-input"
       id="item"
       name="item"
@@ -1566,14 +1566,14 @@ exports[`TextInput handles next and previous without suggestion 1`] = `
 
 exports[`TextInput handles next and previous without suggestion 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 cBoJUe"
+  class="StyledGrommet-sc-19lkkz7-0 kiEDjE"
 >
   <div
-    class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 ddykB"
+    class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 iogQf"
   >
     <input
       autocomplete="off"
-      class="StyledTextInput-sc-1x30a0s-0 ecDZGE"
+      class="StyledTextInput-sc-1x30a0s-0 cuZJLm"
       data-testid="test-input"
       id="item"
       name="item"
@@ -4446,16 +4446,16 @@ exports[`TextInput select suggestion 3`] = `""`;
 
 exports[`TextInput select suggestion 4`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 cBoJUe"
+  class="StyledGrommet-sc-19lkkz7-0 kiEDjE"
 >
   <div
-    class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 ddykB"
+    class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 iogQf"
   >
     <input
       aria-autocomplete="list"
       aria-expanded="false"
       autocomplete="off"
-      class="StyledTextInput-sc-1x30a0s-0 cnGNzR"
+      class="StyledTextInput-sc-1x30a0s-0 bYIaWH"
       data-testid="test-input"
       id="item"
       name="item"
@@ -4946,8 +4946,7 @@ exports[`TextInput should not have padding when plain="full" 1`] = `
 </div>
 `;
 
-exports[`TextInput should only show default placeholder when placeholder is a
-  string 1`] = `
+exports[`TextInput should only show default placeholder when placeholder is a\\n  string 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -5043,17 +5042,16 @@ exports[`TextInput should only show default placeholder when placeholder is a
 </div>
 `;
 
-exports[`TextInput should only show default placeholder when placeholder is a
-  string 2`] = `
+exports[`TextInput should only show default placeholder when placeholder is a\\n  string 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 cBoJUe"
+  class="StyledGrommet-sc-19lkkz7-0 kiEDjE"
 >
   <div
-    class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 ddykB"
+    class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 iogQf"
   >
     <input
       autocomplete="off"
-      class="StyledTextInput-sc-1x30a0s-0 ecDZGE"
+      class="StyledTextInput-sc-1x30a0s-0 cuZJLm"
       data-testid="placeholder"
       id="placeholder"
       name="placeholder"

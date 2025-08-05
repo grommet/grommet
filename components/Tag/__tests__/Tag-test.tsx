@@ -62,7 +62,7 @@ describe('Tag', () => {
     );
 
     await user.click(screen.getByRole('button'));
-    expect(onClick).toBeCalled();
+    expect(onClick).toHaveBeenCalled();
 
     expect(container.firstChild).toMatchSnapshot();
   });
@@ -78,7 +78,7 @@ describe('Tag', () => {
     );
 
     await user.click(screen.getByRole('button'));
-    expect(onRemove).toBeCalled();
+    expect(onRemove).toHaveBeenCalled();
 
     expect(container.firstChild).toMatchSnapshot();
   });

@@ -112,7 +112,7 @@ describe('Accordion', () => {
     expect(asFragment()).toMatchSnapshot();
 
     await user.click(screen.getByRole('button', { name: /Panel 2/i }));
-    expect(onActive).toBeCalled();
+    expect(onActive).toHaveBeenCalledWith([1]);
     expect(asFragment()).toMatchSnapshot();
   });
 
@@ -146,22 +146,22 @@ describe('Accordion', () => {
     expect(asFragment()).toMatchSnapshot();
 
     await user.click(screen.getByRole('button', { name: /Panel 2/i }));
-    expect(onActive).toBeCalledWith([1]);
+    expect(onActive).toHaveBeenCalledWith([1]);
 
     expect(asFragment()).toMatchSnapshot();
 
     await user.click(screen.getByRole('button', { name: /Panel 1/i }));
-    expect(onActive).toBeCalledWith([1, 0]);
+    expect(onActive).toHaveBeenCalledWith([1, 0]);
 
     expect(asFragment()).toMatchSnapshot();
 
     await user.click(screen.getByRole('button', { name: /Panel 2/i }));
-    expect(onActive).toBeCalledWith([0]);
+    expect(onActive).toHaveBeenCalledWith([0]);
 
     expect(asFragment()).toMatchSnapshot();
 
     await user.click(screen.getByRole('button', { name: /Panel 1/i }));
-    expect(onActive).toBeCalledWith([]);
+    expect(onActive).toHaveBeenCalledWith([]);
 
     expect(asFragment()).toMatchSnapshot();
   });
@@ -218,7 +218,7 @@ describe('Accordion', () => {
     expect(asFragment()).toMatchSnapshot();
 
     await user.click(screen.getByRole('button', { name: /Panel 1/i }));
-    expect(onActive).toBeCalledWith([0]);
+    expect(onActive).toHaveBeenCalledWith([0]);
     expect(asFragment()).toMatchSnapshot();
   });
 
@@ -360,7 +360,7 @@ describe('Accordion', () => {
     expect(asFragment()).toMatchSnapshot();
 
     await user.click(screen.getByRole('button', { name: /Panel 1/i }));
-    expect(onActive).toBeCalledWith([0]);
+    expect(onActive).toHaveBeenCalledWith([0]);
     expect(screen.getByText('Panel body 1')).not.toBeNull();
     expect(asFragment()).toMatchSnapshot();
   });

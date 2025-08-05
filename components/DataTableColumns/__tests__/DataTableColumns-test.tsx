@@ -104,12 +104,12 @@ describe('DataTableColumns', () => {
     expect(tabPanel).toMatchSnapshot();
 
     fireEvent.click(getByText('name'));
-    expect(onView).toBeCalledWith(
+    expect(onView).toHaveBeenCalledWith(
       expect.objectContaining({ columns: ['size', 'age'] }),
     );
 
     fireEvent.click(getByText('name'));
-    expect(onView).toBeCalledWith(
+    expect(onView).toHaveBeenCalledWith(
       expect.objectContaining({ columns: ['name', 'size', 'age'] }),
     );
   });
@@ -154,7 +154,7 @@ describe('DataTableColumns', () => {
     expectPortal('test-data--columns-control').toMatchSnapshot();
 
     fireEvent.click(getByText('name'));
-    expect(onView).toBeCalledWith(
+    expect(onView).toHaveBeenCalledWith(
       expect.objectContaining({ columns: ['size'] }),
     );
   });
@@ -219,7 +219,7 @@ describe('DataTableColumns', () => {
     });
     fireEvent.click(bottomMoveUp);
 
-    expect(onView).toBeCalledWith(
+    expect(onView).toHaveBeenCalledWith(
       expect.objectContaining({
         columns: ['percent', 'size', 'name'],
       }),
@@ -247,7 +247,7 @@ describe('DataTableColumns', () => {
     fireEvent.drop(targetElement, { dataTransfer });
     fireEvent.dragEnd(dragElement, { dataTransfer });
 
-    expect(onView).toBeCalledWith(
+    expect(onView).toHaveBeenCalledWith(
       expect.objectContaining({
         columns: ['name', 'size', 'percent'],
       }),
