@@ -444,6 +444,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
     },
     box: {
+      border: {
+        size: 'xsmall',
+      },
       responsiveBreakpoint: 'small', // when we switch rows to columns
       // extend: undefined,
     },
