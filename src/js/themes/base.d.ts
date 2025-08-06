@@ -638,6 +638,13 @@ export interface ThemeType {
       };
       title?: TextProps;
       fontSize?: string;
+      header?: {
+        container?: {
+          pad?: {
+            horizontal?: string;
+          };
+        };
+      };
       lineHeight?: number;
       daySize?: string;
       slideDuration?: string;
@@ -657,6 +664,13 @@ export interface ThemeType {
       };
       title?: TextProps;
       fontSize?: string;
+      header?: {
+        container?: {
+          pad?: {
+            horizontal?: string;
+          };
+        };
+      };
       lineHeight?: number;
       daySize?: string;
       slideDuration?: string;
@@ -676,6 +690,13 @@ export interface ThemeType {
       };
       title?: TextProps;
       fontSize?: string;
+      header?: {
+        container?: {
+          pad?: {
+            horizontal?: string;
+          };
+        };
+      };
       lineHeight?: number;
       daySize?: string;
       slideDuration?: string;
