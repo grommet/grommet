@@ -14,6 +14,27 @@ import { StyledDataTableBody, StyledDataTableRow } from './StyledDataTable';
 import { datumValue, normalizeRowCellProps } from './buildState';
 import { useThemeValue } from '../../utils/useThemeValue';
 
+const getCellBackground = ({
+  isSelected,
+  cellProps,
+  active,
+  focused,
+  column,
+  onClickRow,
+}) => {
+  if (isSelected && cellProps.selected.background)
+    return cellProps.selected.background;
+  if (active && cellProps.active?.background)
+    return cellProps.active.background;
+  if (focused && cellProps.focused?.background)
+    return cellProps.focused.background;
+  if (column.pin) {
+    if (onClickRow) return cellProps.background;
+    return cellProps.pinned.background;
+  }
+  return cellProps.background;
+};
+
 const Row = memo(
   ({
     expandLabel,
@@ -182,13 +203,14 @@ const Row = memo(
         {columns.map((column) => (
           <Cell
             key={column.property}
-            background={
-              (isSelected && cellProps.selected.background) ||
-              (active && cellProps.active?.background) ||
-              (focused && cellProps.focused?.background) ||
-              (column.pin && cellProps.pinned.background) ||
-              cellProps.background
-            }
+            background={getCellBackground({
+              isSelected,
+              cellProps,
+              active,
+              focused,
+              column,
+              onClickRow,
+            })}
             border={(column.pin && cellProps.pinned.border) || cellProps.border}
             context="body"
             column={column}
