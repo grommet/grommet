@@ -885,6 +885,15 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       //   kind: undefined,
       // },
     },
+    dataFilter: {
+      rangeSelector: {
+        size: 'full',
+        round: 'small',
+      },
+      selectMultiple: {
+        dropHeight: 'medium',
+      },
+    },
     dateInput: {
       container: {
         round: 'xxsmall',
