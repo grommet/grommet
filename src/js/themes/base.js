@@ -2185,6 +2185,14 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         color: 'light-4',
         interval: 10,
         // track: { color: undefined }
+        thickness: 'small',
+      },
+      time: {
+        container: {
+          pad: {
+            horizontal: 'small',
+          },
+        },
       },
     },
     worldMap: {

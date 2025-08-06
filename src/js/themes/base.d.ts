@@ -2029,6 +2029,16 @@ export interface ThemeType {
       track?: {
         color?: ColorType;
       };
+      thickness?: string;
+    };
+    time?: {
+      container?: {
+        pad?: PadType;
+      };
+      font?: {
+        size?: string;
+        height?: number;
+      };
     };
   };
   worldMap?: {
