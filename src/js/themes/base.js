@@ -1909,6 +1909,10 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       //   extend: () => undefined,
       // },
     },
+    sideBar: {
+      gap: 'large',
+      pad: 'small',
+    },
     skeleton: {
       border: false,
       colors: {
