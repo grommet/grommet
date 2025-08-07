@@ -1622,7 +1622,9 @@ export interface ThemeType {
     font?: {
       weight?: number | string;
     };
-    labelMarginRight?: string;
+    label?: {
+      margin?: MarginType;
+    };
   };
   nameValueList?: {
     gap?: {

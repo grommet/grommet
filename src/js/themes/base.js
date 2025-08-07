@@ -1811,7 +1811,11 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       container: {
         // extend: undefined
       },
-      labelMarginRight: 'small',
+      label: {
+        margin: {
+          right: 'small',
+        },
+      },
     },
     radioButtonGroup: {
       // any box props
