@@ -1793,6 +1793,7 @@ export interface ThemeType {
       color?: ColorType;
     };
     extend?: ExtendType;
+    gap?: GapType;
     hover?: {
       background?: BackgroundType;
       color?: ColorType;
@@ -1815,6 +1816,9 @@ export interface ThemeType {
         color?: ColorType;
       };
       extend?: ExtendType;
+      overflowNavigation?: {
+        pad: PadType;
+      };
     };
     panel?: {
       extend?: ExtendType;

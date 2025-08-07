@@ -377,7 +377,7 @@ const Tabs = forwardRef(
               tabIndex={-1}
               onClick={() => moveByArrowKey('next')}
             >
-              <Box pad={{ vertical: 'xsmall', horizontal: 'small' }}>
+              <Box pad={theme.tabs.header?.overflowNavigation?.pad}>
                 <Next
                   color={
                     disableRightArrow

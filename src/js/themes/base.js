@@ -1967,6 +1967,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       //   color: undefined,
       // },
       // extend: undefined,
+      gap: 'small',
       hover: {
         // background: undefined,
         // extend: undefined,
@@ -1997,6 +1998,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         //   color: undefined,
         // },
         // extend: undefined,
+        overflowNavigation: {
+          pad: { horizontal: 'small', vertical: 'xsmall' },
+        },
       },
       panel: {
         // extend: undefined,
