@@ -2035,10 +2035,6 @@ export interface ThemeType {
       container?: {
         pad?: PadType;
       };
-      font?: {
-        size?: string;
-        height?: number;
-      };
     };
   };
   worldMap?: {
