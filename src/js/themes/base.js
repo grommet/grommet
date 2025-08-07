@@ -2122,6 +2122,11 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       // disabled: { opacity: undefined },
     },
     textInput: {
+      suggestions: {
+        container: {
+          pad: 'small',
+        },
+      },
       // extend: undefined,
       // disabled: { opacity: undefined },
     },
