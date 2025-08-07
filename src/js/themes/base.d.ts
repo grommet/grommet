@@ -1294,7 +1294,7 @@ export interface ThemeType {
     iconContainer?: BoxProps;
     textContainer?: BoxProps;
     title?: TextProps;
-    message?: TextProps & { fill?: boolean; text?: TextProps };
+    message?: TextProps & { fill?: boolean; text?: { margin?: MarginType } };
     close?: {
       icon?: React.ReactNode | Icon;
       color?: ColorType;

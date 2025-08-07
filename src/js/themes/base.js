@@ -1321,7 +1321,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
     notification: {
       actions: {
         // any anchor props
-        marginRight: 'xsmall',
+        margin: { right: 'xsmall' },
       },
       direction: 'column',
       container: {
@@ -1375,7 +1375,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         margin: 'none',
         // fill: undefined,
         text: {
-          marginRight: 'xsmall',
+          margin: { right: 'xsmall' },
         },
       },
       close: {

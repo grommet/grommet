@@ -194,7 +194,7 @@ const Notification = ({
         <NotificationAnchor
           // create space between first anchor and
           // text content and next anchor
-          margin={{ right: theme.notification.actions?.marginRight }}
+          margin={theme.notification.actions?.margin}
           {...action}
           {...theme.notification.actions}
           // add a space between anchors to allow for wrapping
@@ -210,9 +210,7 @@ const Notification = ({
           color={messageColor}
           direction={direction}
         >
-          <Text
-            margin={{ right: theme.notification.message?.text?.marginRight }}
-          >
+          <Text margin={theme.notification.message?.text?.margin}>
             {message}
           </Text>
           {/* include actions with message so it wraps with message */}
