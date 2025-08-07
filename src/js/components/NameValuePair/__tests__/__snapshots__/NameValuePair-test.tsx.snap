@@ -477,11 +477,10 @@ exports[`NameValuePair should render value when provided as child of type JSX El
             stroke-width="24"
           />
           <path
-            d="M 0,12 L 307.2,12"
-            fill="none"
-            stroke="#6FFFB0"
-            stroke-linecap="butt"
-            stroke-width="24"
+            d="M 0,24 L 0,0 L 307.2,0 L 307.2,24 Z"
+            fill="#6FFFB0"
+            stroke="none"
+            stroke-width="0"
           />
         </svg>
       </dd>

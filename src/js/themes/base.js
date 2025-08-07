@@ -458,7 +458,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
     },
     box: {
-      borderSize: 'small',
+      border: {
+        size: 'xsmall',
+      },
       responsiveBreakpoint: 'small', // when we switch rows to columns
       // extend: undefined,
     },
@@ -874,9 +876,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
     },
     checkBoxGroup: {
       container: {
-        // any box props
+        //   // any box props
+        //   extend: undefined,
         gap: 'small',
-        // extend: undefined,
       },
     },
     clock: {
@@ -1448,6 +1450,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       color: 'graph-0',
       // colors: [] || colors: ['graph-0', 'graph-1', 'graph-2', 'graph-3'],
       // extend: undefined,
+      // gap: undefined,
     },
     nameValueList: {
       gap: {
