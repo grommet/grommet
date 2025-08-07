@@ -365,7 +365,7 @@ const SelectMultipleContainer = forwardRef(
     if (help) {
       if (typeof help === 'string')
         helpContent = (
-          <Box flex={false} pad="xsmall">
+          <Box flex={false} pad={theme.selectMultiple?.helpText?.pad}>
             <Text size="small">{help}</Text>
           </Box>
         );
@@ -404,7 +404,14 @@ const SelectMultipleContainer = forwardRef(
         >
           {summaryContent}
           {onSearch && (
-            <Box pad={!customSearchInput ? 'xsmall' : undefined} flex={false}>
+            <Box
+              pad={
+                !customSearchInput
+                  ? theme.selectMultiple?.search?.pad
+                  : undefined
+              }
+              flex={false}
+            >
               <Keyboard
                 onEnter={(event) => {
                   onNextOption(event);
@@ -492,7 +499,7 @@ const SelectMultipleContainer = forwardRef(
                             {optionLabel}
                           </Box>
                         }
-                        pad="xsmall"
+                        pad={theme.selectMultiple?.option?.pad}
                         tabIndex="-1"
                         checked={optionSelected}
                         disabled={optionDisabled}
@@ -548,7 +555,7 @@ const SelectMultipleContainer = forwardRef(
                               </Text>
                             </Box>
                           }
-                          pad="xsmall"
+                          pad={theme.selectMultiple?.checkBox?.pad}
                           tabIndex="-1"
                           checked={optionSelected}
                           disabled={optionDisabled}

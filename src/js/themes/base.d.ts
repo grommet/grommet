@@ -1752,9 +1752,30 @@ export interface ThemeType {
     step?: number;
   };
   selectMultiple?: {
+    checkBox?: {
+      pad?: PadType;
+    };
+    helpText?: {
+      pad: PadType;
+    };
     maxInline?: number;
     listbox?: {
       extend?: ExtendType;
+    };
+    option?: {
+      pad?: PadType;
+    };
+    search?: {
+      pad?: PadType;
+    };
+    showMore?: {
+      pad?: PadType;
+    };
+    summary?: {
+      pad?: PadType;
+      showSelectedInline?: {
+        pad: PadType;
+      };
     };
   };
   skeleton?: BoxProps & { colors?: SkeletonColorsType; extend?: ExtendType };

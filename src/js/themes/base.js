@@ -1930,10 +1930,42 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       step: 20,
     },
     selectMultiple: {
+      checkBox: {
+        pad: 'xsmall',
+      },
+      helpText: {
+        pad: 'xsmall',
+      },
       maxInline: 5,
       // listbox: {
       //   extend: () => undefined,
       // },
+      option: {
+        pad: 'xsmall',
+      },
+      search: {
+        pad: 'xsmall',
+      },
+      showMore: {
+        pad: {
+          horizontal: 'small',
+          bottom: 'small',
+          top: 'xsmall',
+        },
+      },
+      summary: {
+        gap: 'small',
+        height: {
+          min: 'xxsmall',
+        },
+        pad: 'xsmall',
+        showSelectedInline: {
+          pad: {
+            left: 'xsmall',
+            vertical: 'xsmall',
+          },
+        },
+      },
     },
     skeleton: {
       border: false,
