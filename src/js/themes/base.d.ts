@@ -821,7 +821,9 @@ export interface ThemeType {
     button?: {
       kind?: string;
     };
-    drop?: BoxProps;
+    drop?: {
+      pad?: PadType;
+    };
   };
   dateInput?: {
     container?: {
