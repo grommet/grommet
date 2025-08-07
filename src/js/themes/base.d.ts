@@ -1816,7 +1816,7 @@ export interface ThemeType {
         color?: ColorType;
       };
       extend?: ExtendType;
-      overflowNavigation?: {
+      nextTabButton?: {
         pad: PadType;
       };
     };

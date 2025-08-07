@@ -1998,7 +1998,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         //   color: undefined,
         // },
         // extend: undefined,
-        overflowNavigation: {
+        nextTabButton: {
           pad: { horizontal: 'small', vertical: 'xsmall' },
         },
       },
