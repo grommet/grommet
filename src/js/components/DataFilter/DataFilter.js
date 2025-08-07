@@ -9,6 +9,7 @@ import { DataFilterPropTypes } from './propTypes';
 import { getDecimalCount } from '../RangeSelector/RangeSelector';
 import { DataFormContext } from '../../contexts/DataFormContext';
 import { selectInputId } from '../Select/utils';
+import { useThemeValue } from '../../utils/useThemeValue';
 
 // empirical constants for when we change inputs
 const maxCheckBoxGroupOptions = 4;
@@ -90,6 +91,7 @@ export const DataFilter = ({
   } = useContext(DataContext);
   const { inDataForm } = useContext(DataFormContext);
   const [searchText, setSearchText] = useState('');
+  const { theme } = useThemeValue();
 
   const [options, range] = useMemo(() => {
     if (children) return [undefined, undefined]; // caller driving
@@ -190,8 +192,7 @@ export const DataFilter = ({
           min={range[0]}
           max={range[1]}
           step={step}
-          size="full"
-          round="small"
+          {...theme.dataFilter?.rangeSelector}
         />
       );
     } else if (options) {
@@ -219,7 +220,6 @@ export const DataFilter = ({
           <SelectMultiple
             aria-label={ariaLabel}
             id={id}
-            dropHeight="medium"
             name={property}
             showSelectedInline
             options={searchedOptions}
@@ -231,6 +231,7 @@ export const DataFilter = ({
             onClose={() => setSearchText('')}
             labelKey="label"
             valueKey={{ key: 'value', reduce: true }}
+            {...theme.dataFilter?.selectMultiple}
           />
         );
         htmlFor = selectInputId(id);

@@ -839,6 +839,15 @@ export interface ThemeType {
       kind?: string;
     };
   };
+  dataFilter?: {
+    rangeSelector?: {
+      size?: string;
+      round?: string;
+    };
+    selectMultiple?: {
+      dropHeight?: string;
+    };
+  };
   dateInput?: {
     container?: {
       round?: RoundType;
