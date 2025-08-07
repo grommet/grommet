@@ -1034,6 +1034,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
       // extend: undefined,
     },
+    footer: {
+      gap: 'medium',
+    },
     formField: {
       // [inputname]: {
       //  container: {
