@@ -13,6 +13,7 @@ var _propTypes = require("./propTypes");
 var _RangeSelector2 = require("../RangeSelector/RangeSelector");
 var _DataFormContext = require("../../contexts/DataFormContext");
 var _utils = require("../Select/utils");
+var _useThemeValue2 = require("../../utils/useThemeValue");
 var _excluded = ["children", "options", "property", "range"];
 function _interopRequireWildcard(e, t) { if ("function" == typeof WeakMap) var r = new WeakMap(), n = new WeakMap(); return (_interopRequireWildcard = function _interopRequireWildcard(e, t) { if (!t && e && e.__esModule) return e; var o, i, f = { __proto__: null, "default": e }; if (null === e || "object" != typeof e && "function" != typeof e) return f; if (o = t ? n : r) { if (o.has(e)) return o.get(e); o.set(e, f); } for (var _t in e) "default" !== _t && {}.hasOwnProperty.call(e, _t) && ((i = (o = Object.defineProperty) && Object.getOwnPropertyDescriptor(e, _t)) && (i.get || i.set) ? o(f, _t, i) : f[_t] = e[_t]); return f; })(e, t); }
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
@@ -86,6 +87,8 @@ var DataFilter = exports.DataFilter = function DataFilter(_ref) {
   var _useState = (0, _react.useState)(''),
     searchText = _useState[0],
     setSearchText = _useState[1];
+  var _useThemeValue = (0, _useThemeValue2.useThemeValue)(),
+    theme = _useThemeValue.theme;
   var _useMemo = (0, _react.useMemo)(function () {
       var _properties$property, _properties$property2;
       if (children) return [undefined, undefined]; // caller driving
@@ -138,7 +141,7 @@ var DataFilter = exports.DataFilter = function DataFilter(_ref) {
   var content = children;
   if (!content) {
     if (range) {
-      var _properties$property4;
+      var _properties$property4, _theme$dataFilter;
       var step =
       // from `range` on DataFilter
       (rangeProp == null ? void 0 : rangeProp.step) || (// from range in Data `properties`
@@ -160,7 +163,7 @@ var DataFilter = exports.DataFilter = function DataFilter(_ref) {
           step = multiplier * delta / (multiplier * defaultRangeSteps);
         } else step = delta / defaultRangeSteps;
       }
-      content = /*#__PURE__*/_react["default"].createElement(_RangeSelector.RangeSelector, {
+      content = /*#__PURE__*/_react["default"].createElement(_RangeSelector.RangeSelector, _extends({
         "aria-label": ariaLabel,
         id: id,
         name: property + "._range",
@@ -168,10 +171,8 @@ var DataFilter = exports.DataFilter = function DataFilter(_ref) {
         label: true,
         min: range[0],
         max: range[1],
-        step: step,
-        size: "full",
-        round: "small"
-      });
+        step: step
+      }, (_theme$dataFilter = theme.dataFilter) == null ? void 0 : _theme$dataFilter.rangeSelector));
     } else if (options) {
       if (options.length === 2 && options[1] === true && options[0] === false) {
         // special case boolean properties
@@ -189,10 +190,10 @@ var DataFilter = exports.DataFilter = function DataFilter(_ref) {
           options: options
         });
       } else {
-        content = /*#__PURE__*/_react["default"].createElement(_SelectMultiple.SelectMultiple, {
+        var _theme$dataFilter2;
+        content = /*#__PURE__*/_react["default"].createElement(_SelectMultiple.SelectMultiple, _extends({
           "aria-label": ariaLabel,
           id: id,
-          dropHeight: "medium",
           name: property,
           showSelectedInline: true,
           options: searchedOptions,
@@ -205,7 +206,7 @@ var DataFilter = exports.DataFilter = function DataFilter(_ref) {
             key: 'value',
             reduce: true
           }
-        });
+        }, (_theme$dataFilter2 = theme.dataFilter) == null ? void 0 : _theme$dataFilter2.selectMultiple));
         htmlFor = (0, _utils.selectInputId)(id);
       }
     }

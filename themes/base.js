@@ -968,6 +968,15 @@ var generate = exports.generate = function generate(baseSpacing, scale) {
       //   kind: undefined,
       // },
     },
+    dataFilter: {
+      rangeSelector: {
+        size: 'full',
+        round: 'small'
+      },
+      selectMultiple: {
+        dropHeight: 'medium'
+      }
+    },
     dateInput: {
       container: {
         round: 'xxsmall'

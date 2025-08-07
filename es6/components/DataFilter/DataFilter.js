@@ -12,6 +12,7 @@ import { DataFilterPropTypes } from './propTypes';
 import { getDecimalCount } from '../RangeSelector/RangeSelector';
 import { DataFormContext } from '../../contexts/DataFormContext';
 import { selectInputId } from '../Select/utils';
+import { useThemeValue } from '../../utils/useThemeValue';
 
 // empirical constants for when we change inputs
 var maxCheckBoxGroupOptions = 4;
@@ -82,6 +83,8 @@ export var DataFilter = function DataFilter(_ref) {
   var _useState = useState(''),
     searchText = _useState[0],
     setSearchText = _useState[1];
+  var _useThemeValue = useThemeValue(),
+    theme = _useThemeValue.theme;
   var _useMemo = useMemo(function () {
       var _properties$property, _properties$property2;
       if (children) return [undefined, undefined]; // caller driving
@@ -134,7 +137,7 @@ export var DataFilter = function DataFilter(_ref) {
   var content = children;
   if (!content) {
     if (range) {
-      var _properties$property4;
+      var _properties$property4, _theme$dataFilter;
       var step =
       // from `range` on DataFilter
       (rangeProp == null ? void 0 : rangeProp.step) || (// from range in Data `properties`
@@ -156,7 +159,7 @@ export var DataFilter = function DataFilter(_ref) {
           step = multiplier * delta / (multiplier * defaultRangeSteps);
         } else step = delta / defaultRangeSteps;
       }
-      content = /*#__PURE__*/React.createElement(RangeSelector, {
+      content = /*#__PURE__*/React.createElement(RangeSelector, _extends({
         "aria-label": ariaLabel,
         id: id,
         name: property + "._range",
@@ -164,10 +167,8 @@ export var DataFilter = function DataFilter(_ref) {
         label: true,
         min: range[0],
         max: range[1],
-        step: step,
-        size: "full",
-        round: "small"
-      });
+        step: step
+      }, (_theme$dataFilter = theme.dataFilter) == null ? void 0 : _theme$dataFilter.rangeSelector));
     } else if (options) {
       if (options.length === 2 && options[1] === true && options[0] === false) {
         // special case boolean properties
@@ -185,10 +186,10 @@ export var DataFilter = function DataFilter(_ref) {
           options: options
         });
       } else {
-        content = /*#__PURE__*/React.createElement(SelectMultiple, {
+        var _theme$dataFilter2;
+        content = /*#__PURE__*/React.createElement(SelectMultiple, _extends({
           "aria-label": ariaLabel,
           id: id,
-          dropHeight: "medium",
           name: property,
           showSelectedInline: true,
           options: searchedOptions,
@@ -201,7 +202,7 @@ export var DataFilter = function DataFilter(_ref) {
             key: 'value',
             reduce: true
           }
-        });
+        }, (_theme$dataFilter2 = theme.dataFilter) == null ? void 0 : _theme$dataFilter2.selectMultiple));
         htmlFor = selectInputId(id);
       }
     }
