@@ -904,12 +904,18 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       // },
     },
     dateInput: {
+      button: {
+        margin: {
+          right: 'small',
+          left: 'small',
+        },
+      },
       container: {
         round: 'xxsmall',
       },
-      // icon: {
-      //   size: undefined,
-      // },
+      icon: {
+        size: 'medium',
+      },
     },
     dataTable: {
       // body: {

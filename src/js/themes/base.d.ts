@@ -840,6 +840,9 @@ export interface ThemeType {
     };
   };
   dateInput?: {
+    button?: {
+      margin?: MarginType;
+    };
     container?: {
       round?: RoundType;
     };
