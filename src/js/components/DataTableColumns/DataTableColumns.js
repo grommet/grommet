@@ -21,11 +21,6 @@ const dropProps = {
   align: { top: 'bottom', left: 'left' },
 };
 
-const tabsProps = {
-  drop: { pad: 'small' },
-  noDrop: { justify: 'start' },
-};
-
 // options can either be an array of property names or an array of objects.
 // The form value always uses an array of property names.
 const optionsToValue = (options) =>
@@ -52,6 +47,12 @@ const Content = ({ drop, options = [], ...rest }) => {
   const { id: dataId, messages } = useContext(DataContext);
   const { useFormInput } = useContext(FormContext);
   const { format } = useContext(MessageContext);
+  const { theme } = useThemeValue();
+
+  const tabsProps = {
+    drop: { pad: theme.dataTableColumns.tabs.pad },
+    noDrop: { justify: theme.dataTableColumns.tabs.justify },
+  };
 
   // If the user searches for a particular option, render
   // the filtered list of options.
@@ -117,7 +118,10 @@ const Content = ({ drop, options = [], ...rest }) => {
             messages: messages?.dataTableColumns,
           })}
         >
-          <Box pad={{ vertical: 'small' }} gap="xsmall">
+          <Box
+            pad={theme.dataTableColumns.selectColumns.pad}
+            gap={theme.dataTableColumns.selectColumns.gap}
+          >
             <TextInput
               type="search"
               icon={<Search />}
@@ -151,7 +155,7 @@ const Content = ({ drop, options = [], ...rest }) => {
             messages: messages?.dataTableColumns,
           })}
         >
-          <Box pad={{ top: 'small' }}>
+          <Box pad={theme.dataTableColumns.orderColumns.pad}>
             <List
               id={`${dataId}--order-columns`}
               aria-labelledby={`${dataId}--order-columns-tab`}

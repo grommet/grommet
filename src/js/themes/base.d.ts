@@ -927,6 +927,26 @@ export interface ThemeType {
       weight?: string;
     };
   };
+  dataTableColumns?: {
+    tabs?: {
+      pad?: PadType;
+      justify?:
+        | 'around'
+        | 'between'
+        | 'center'
+        | 'end'
+        | 'evenly'
+        | 'start'
+        | 'stretch';
+    };
+    selectColumns?: {
+      pad?: PadType;
+      gap?: GapType;
+    };
+    orderColumns?: {
+      pad?: PadType;
+    };
+  };
   diagram?: {
     extend?: ExtendType;
     line?: {
