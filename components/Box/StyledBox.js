@@ -249,7 +249,7 @@ var gapGapStyle = function gapGapStyle(directionProp, gap, responsive, border, t
     }
   }
   if (border === 'between' || border && border.side === 'between') {
-    var borderSize = border.size || 'xsmall';
+    var borderSize = border.size || theme.box.border.size;
     var borderMetric = theme.global.borderSize[borderSize] || borderSize;
     var borderOffset = (0, _utils.parseMetricToNum)(metric) / 2 - (0, _utils.parseMetricToNum)(borderMetric) / 2 + "px";
     var responsiveBorderMetric = responsive && breakpoint && (breakpoint.borderSize[borderSize] || borderSize);
