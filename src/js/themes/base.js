@@ -361,6 +361,20 @@ export const generate = (baseSpacing = 24, scale = 6) => {
     //   size: undefined,
     // },
     accordion: {
+      icon: {
+        container: {
+          pad: {
+            horizontal: 'small',
+          },
+        },
+      },
+      label: {
+        container: {
+          pad: {
+            horizontal: 'xsmall',
+          },
+        },
+      },
       panel: {
         // border: {
         //   side: 'bottom',
@@ -444,6 +458,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
     },
     box: {
+      border: {
+        size: 'xsmall',
+      },
       responsiveBreakpoint: 'small', // when we switch rows to columns
       // extend: undefined,
     },
