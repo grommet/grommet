@@ -1580,6 +1580,9 @@ export interface ThemeType {
       height?: string;
       maxWidth?: string;
     };
+    skeleton?: {
+      gap?: GapType;
+    };
   };
   radioButton?: {
     extend?: ExtendType;
