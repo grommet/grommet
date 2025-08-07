@@ -930,14 +930,6 @@ export interface ThemeType {
   dataTableColumns?: {
     tabs?: {
       pad?: PadType;
-      justify?:
-        | 'around'
-        | 'between'
-        | 'center'
-        | 'end'
-        | 'evenly'
-        | 'start'
-        | 'stretch';
     };
     selectColumns?: {
       pad?: PadType;

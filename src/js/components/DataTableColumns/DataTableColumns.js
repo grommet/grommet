@@ -51,7 +51,7 @@ const Content = ({ drop, options = [], ...rest }) => {
 
   const tabsProps = {
     drop: { pad: theme.dataTableColumns.tabs.pad },
-    noDrop: { justify: theme.dataTableColumns.tabs.justify },
+    noDrop: { justify: 'start' },
   };
 
   // If the user searches for a particular option, render

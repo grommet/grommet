@@ -993,7 +993,6 @@ export const generate = (baseSpacing = 24, scale = 6) => {
     dataTableColumns: {
       tabs: {
         pad: 'small',
-        justify: 'start',
       },
       selectColumns: {
         pad: {
