@@ -1297,6 +1297,7 @@ export interface ThemeType {
     actions?: AnchorProps;
     container?: BoxProps;
     direction?: 'column' | 'row';
+    gap?: GapType;
     global?: {
       direction?: 'column' | 'row';
       container?: BoxProps;
@@ -1310,7 +1311,7 @@ export interface ThemeType {
     iconContainer?: BoxProps;
     textContainer?: BoxProps;
     title?: TextProps;
-    message?: TextProps & { fill?: boolean };
+    message?: TextProps & { fill?: boolean; text?: { margin?: MarginType } };
     close?: {
       icon?: React.ReactNode | Icon;
       color?: ColorType;
