@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { Text } from '../Text';
 import { DataContext } from '../../contexts/DataContext';
 import { MessageContext } from '../../contexts/MessageContext';
-
+import { useThemeValue } from '../../utils/useThemeValue';
 import { DataSummaryPropTypes } from './propTypes';
 
 export const DataSummary = ({ messages, ...rest }) => {
@@ -12,7 +12,8 @@ export const DataSummary = ({ messages, ...rest }) => {
     messages: dataMessages,
     selected,
     total,
-  } = useContext(DataContext);
+  } = useContext(DataContext)
+  const { theme } = useThemeValue();
 
   let messageId;
   if (total !== filteredTotal) {
@@ -28,7 +29,7 @@ export const DataSummary = ({ messages, ...rest }) => {
   });
 
   return (
-    <Text margin={{ vertical: 'xsmall' }} {...rest}>
+    <Text margin={theme.dataSummary?.container?.margin} {...rest}>
       {format({
         id: messageId,
         messages: messages || dataMessages?.dataSummary,
@@ -42,7 +43,7 @@ export const DataSummary = ({ messages, ...rest }) => {
         <>
           {/* separator with margin to ensure | is not confused 
           as a 1 in the selected count */}
-          <Text margin={{ horizontal: 'small' }}>|</Text>
+          <Text margin={theme.dataSummary?.separator?.margin}>|</Text>
           <Text>
             {format({
               id: 'dataSummary.selected',

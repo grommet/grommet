@@ -822,6 +822,14 @@ export interface ThemeType {
       kind?: string;
     };
   };
+  dataSummary?: {
+    container?: {
+      margin?: MarginType;
+    };
+    separator?: {
+      margin?: MarginType;
+    };
+  };
   dateInput?: {
     container?: {
       round?: RoundType;

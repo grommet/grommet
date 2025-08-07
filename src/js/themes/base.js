@@ -893,6 +893,14 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       //   size: undefined,
       // },
     },
+    dataSummary: {
+      container: {
+        margin: { vertical: 'xsmall' },
+      },
+      separator: {
+        margin: { horizontal: 'small' },
+      },
+    },
     dataTable: {
       // body: {
       //   extend: undefined,
