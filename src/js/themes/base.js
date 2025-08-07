@@ -483,6 +483,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           },
         },
       },
+      busy: {
+        gap: 'small',
+      },
       gap: 'small',
       size: {
         small: {
@@ -688,6 +691,13 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         //   },
         // },
         // title: {},
+        heading: {
+          container: {
+            pad: {
+              horizontal: 'xsmall',
+            },
+          },
+        },
         fontSize: `${baseFontSize - fontScale}px`,
         lineHeight: 1.375,
         daySize: `${(baseSpacing * 8) / 7}px`,
@@ -707,6 +717,13 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         //   },
         // },
         // title: {},
+        heading: {
+          container: {
+            pad: {
+              horizontal: 'small',
+            },
+          },
+        },
         fontSize: `${baseFontSize}px`,
         lineHeight: 1.45,
         daySize: `${(baseSpacing * 16) / 7}px`,
@@ -726,6 +743,13 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         //   },
         // },
         // title: {},
+        heading: {
+          container: {
+            pad: {
+              horizontal: 'medium',
+            },
+          },
+        },
         fontSize: `${baseFontSize + 3 * fontScale}px`,
         lineHeight: 1.11,
         daySize: `${(baseSpacing * 32) / 7}px`,
@@ -762,6 +786,10 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         gap: 'xsmall',
         // extend: undefined,
       },
+      grid: {
+        columns: 'small',
+        gap: 'medium',
+      },
     },
     carousel: {
       icons: {
@@ -781,6 +809,16 @@ export const generate = (baseSpacing = 24, scale = 6) => {
     },
     chart: {
       color: 'graph-0',
+      height: 'small',
+      thickness: 'medium',
+      width: 'medium',
+      pad: {
+        xlarge: 'large',
+        large: 'medium',
+        medium: 'small',
+        small: 'xsmall',
+        xsmall: 'xxsmall',
+      },
       // extend: undefined,
     },
     checkBox: {
@@ -902,14 +940,59 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       // button: {
       //   kind: undefined,
       // },
+      drop: {
+        pad: 'small',
+      },
+      toolbar: {
+        gap: 'medium',
+      },
+    },
+    dataChart: {
+      gap: 'small',
+      legend: {
+        margin: { vertical: 'small' },
+        gap: 'small',
+        pad: { horizontal: 'small', vertical: 'xsmall' },
+      },
+    },
+    dataFilter: {
+      rangeSelector: {
+        size: 'full',
+        round: 'small',
+      },
+      selectMultiple: {
+        dropHeight: 'medium',
+      },
+    },
+    dataFilters: {
+      content: {
+        width: 'medium',
+      },
+      clearControls: {
+        margin: { start: 'small' },
+      },
+    },
+    dataSummary: {
+      container: {
+        margin: { vertical: 'xsmall' },
+      },
+      separator: {
+        margin: { horizontal: 'small' },
+      },
     },
     dateInput: {
+      button: {
+        margin: {
+          right: 'small',
+          left: 'small',
+        },
+      },
       container: {
         round: 'xxsmall',
       },
-      // icon: {
-      //   size: undefined,
-      // },
+      icon: {
+        size: 'medium',
+      },
     },
     dataTable: {
       // body: {
@@ -938,6 +1021,11 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         gap: 'xsmall',
         // extend: undefined,
       },
+      footer: {
+        pad: 'none',
+        size: 'xsmall',
+        verticalAlign: 'top',
+      },
       groupHeader: {
         // background: undefined,
         // border: undefined,
@@ -955,6 +1043,11 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         //   weight: undefined,
         //   size: undefined,
         // },
+        cell: {
+          size: 'xxsmall',
+          pad: 'none',
+          verticalAlign: 'top',
+        },
         gap: 'small',
         // hover: {
         //   background: undefined,
@@ -988,19 +1081,58 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         //     size: undefined,
         //   },
         // },
+        pad: {
+          vertical: 'xsmall',
+        },
+        margin: {
+          right: `-${baseSpacing / 2}px`, // equivalent to "small"
+        },
+      },
+      search: {
+        width: 'medium',
+        pad: {
+          horizontal: 'small',
+        },
+      },
+      clearPad: {
+        horizontal: 'small',
+      },
+    },
+    dataTableColumns: {
+      tabs: {
+        pad: 'small',
+        justify: 'start',
+      },
+      search: {
+        pad: {
+          vertical: 'small',
+        },
+        gap: 'xsmall',
+      },
+      order: {
+        pad: {
+          top: 'small',
+        },
       },
     },
     diagram: {
-      // extend: undefined,
+      // extend: und`efined,
       line: {
         color: 'graph-0',
       },
+    },
+    distribution: {
+      gap: 'xsmall',
     },
     // drop: {
     //   extend: undefined,
     //   maxHeight: undefined,
     // },
     fileInput: {
+      anchor: {
+        margin: 'small',
+      },
+
       // background: {},
       border: {
         // color: undefined,
@@ -1026,6 +1158,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       // pad: {},
       label: {
         margin: 'small',
+        gap: 'xsmall',
+        align: 'center',
+        direction: 'row',
         // extend: undefined,
       },
       message: {
@@ -1033,6 +1168,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         // extend: undefined,
       },
       // extend: undefined,
+    },
+    footer: {
+      gap: 'medium',
     },
     formField: {
       // [inputname]: {
@@ -1123,6 +1261,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       // extend: undefined
     },
     header: {
+      gap: 'medium',
       sticky: {
         zIndex: '20',
       },
@@ -1230,6 +1369,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       item: {
         // background: undefined,
         border: 'horizontal',
+        gap: 'medium',
         disabled: {
           color: 'status-disabled',
           cursor: 'default',
@@ -1256,6 +1396,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       // extend: undefined,
     },
     maskedInput: {
+      option: {
+        pad: { horizontal: 'small', vertical: 'xsmall' },
+      },
       // container: {
       //   extend: undefined,
       // },
@@ -1294,6 +1437,13 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         down: FormDown,
         // up: undefined,
         // color: { dark: undefined, light: undefined },
+      },
+      item: {
+        pad: 'small',
+      },
+      label: {
+        pad: 'small',
+        gap: 'small',
       },
     },
     meter: {
@@ -1336,9 +1486,13 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         color: 'text',
       },
     },
+    nav: {
+      gap: 'medium',
+    },
     notification: {
       actions: {
         // any anchor props
+        margin: { right: 'xsmall' },
       },
       direction: 'column',
       container: {
@@ -1349,6 +1503,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           color: 'background-front',
         },
       },
+      gap: 'small',
       global: {
         direction: 'row',
         container: {
@@ -1388,7 +1543,8 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
       message: {
         // any text props
-        margin: 'none',
+        // was this already here? where is it defined
+        margin: { right: 'xsmall' },
         // fill: undefined,
       },
       close: {
@@ -1731,10 +1887,17 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           },
         },
       },
-      // container: {
-      //   // any box props,
-      //   extend: undefined,
-      // },
+      container: {
+        // any box props,
+        gap: { column: 'xsmall', row: 'small' },
+        // extend: undefined,
+        controls: {
+          container: {
+            gap: { column: 'xsmall', row: 'small' },
+          },
+        },
+      },
+      // these both seem we can use the same
       controls: {
         align: 'center',
         direction: 'row',
@@ -1747,6 +1910,11 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         next: Next,
         previous: Previous,
       },
+      step: {
+        container: {
+          gap: 'xsmall',
+        },
+      },
     },
     paragraph: {
       font: {
@@ -1757,6 +1925,10 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       large: { ...fontSizing(1) },
       xlarge: { ...fontSizing(2) },
       xxlarge: { ...fontSizing(4) },
+      skeleton: {
+        // TO DO should this be "container.gap"?
+        gap: 'xsmall',
+      },
     },
     thumbsRating: {
       // dislike: {
@@ -1831,7 +2003,10 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
     },
     radioButtonGroup: {
-      // container: {}, // any box props
+      container: {
+        // any box props
+        gap: 'small',
+      },
     },
     rangeInput: {
       disabled: {
@@ -1873,6 +2048,12 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       edge: {
         // type: undefined,
         // size: undefined,
+      },
+      label: {
+        margin: {
+          horizontal: 'small',
+        },
+        size: 'small',
       },
     },
     select: {
@@ -1926,6 +2107,10 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       // listbox: {
       //   extend: () => undefined,
       // },
+    },
+    sidebar: {
+      pad: 'small',
+      gap: 'large',
     },
     skeleton: {
       border: false,
@@ -1993,6 +2178,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           light: 'black',
         },
       },
+      gap: 'small',
       margin: {
         vertical: 'xxsmall',
         horizontal: 'small',
@@ -2015,6 +2201,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         //   color: undefined,
         // },
         // extend: undefined,
+        overflow: {
+          pad: { horizontal: 'small', vertical: 'xsmall' },
+        },
       },
       panel: {
         // extend: undefined,
@@ -2209,6 +2398,14 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         color: 'light-4',
         interval: 10,
         // track: { color: undefined }
+        thickness: 'small',
+      },
+      time: {
+        container: {
+          pad: {
+            horizontal: 'small',
+          },
+        },
       },
     },
     worldMap: {

@@ -10,6 +10,7 @@ import { DataContext } from '../../contexts/DataContext';
 import { DataPropTypes } from './propTypes';
 import { MessageContext } from '../../contexts/MessageContext';
 import { filter } from './filter';
+import { useThemeValue } from '../../utils/useThemeValue';
 
 const defaultDefaultView = { search: '' };
 
@@ -59,6 +60,7 @@ export const Data = ({
 
   const announce = useContext(AnnounceContext);
   const { format } = useContext(MessageContext);
+  const { theme } = useThemeValue();
   // Announce to screen readers when search or filters are
   // applied and affect the underlying result set
   useEffect(() => {
@@ -163,7 +165,7 @@ export const Data = ({
   let toolbarContent;
   if (toolbar) {
     toolbarContent = [
-      <Toolbar key="toolbar" gap="medium">
+      <Toolbar key="toolbar" gap={theme.data?.toolbar?.gap}>
         <Toolbar>
           {(toolbar === true || toolbar === 'search') && <DataSearch />}
           {(toolbar === true || toolbar === 'filters') && <DataFilters layer />}

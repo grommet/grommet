@@ -50,7 +50,7 @@ const Header = React.forwardRef(({ sticky, ...rest }, ref) => {
       direction="row"
       flex={false}
       justify="between"
-      gap="medium"
+      gap={theme.header?.gap}
       ref={headerRef}
       {...rest}
     />

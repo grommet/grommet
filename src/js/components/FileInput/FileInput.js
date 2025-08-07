@@ -208,13 +208,16 @@ const FileInput = forwardRef(
         rightOffset =
           rightOffsetBrowse +
           rightOffsetRemove +
+          // TO DO theme object
           parseMetricToNum(theme.global.edgeSize.small) * 2;
       } else if (rightOffsetBrowse > rightOffsetRemove) {
         rightOffset =
+          // TO DO theme object
           rightOffsetBrowse + parseMetricToNum(theme.global.edgeSize.small) * 2;
       } else rightOffset = rightOffsetRemove;
     } else if (!files.length && controlRef.current) {
       rightOffset =
+        // TO DO theme object
         controlRef.current.getBoundingClientRect().width +
         parseMetricToNum(theme.global.edgeSize.small) * 2;
     }
@@ -371,7 +374,7 @@ const FileInput = forwardRef(
                         alignSelf="center"
                         disabled={disabled}
                         ref={controlRef}
-                        margin="small"
+                        margin={theme.fileInput.anchor.margin}
                         onClick={() => {
                           inputRef.current.click();
                           inputRef.current.focus();
@@ -447,7 +450,7 @@ const FileInput = forwardRef(
                       alignSelf="center"
                       disabled={disabled}
                       ref={controlRef}
-                      margin="small"
+                      margin={theme.fileInput.anchor.margin}
                       onClick={() => {
                         inputRef.current.click();
                         inputRef.current.focus();
@@ -481,12 +484,7 @@ const FileInput = forwardRef(
                   {renderFile ? (
                     renderFile(file)
                   ) : (
-                    <Box
-                      {...theme.fileInput.label}
-                      gap="xsmall"
-                      align="center"
-                      direction="row"
-                    >
+                    <Box {...theme.fileInput.label}>
                       {((typeof maxSize === 'number' && file.size > maxSize) ||
                         (typeof max === 'number' && index >= max)) && (
                         <CircleAlert
@@ -567,7 +565,7 @@ const FileInput = forwardRef(
                             tabIndex={-1}
                             disabled={disabled}
                             ref={controlRef}
-                            margin="small"
+                            margin={theme.fileInput.anchor.margin}
                             onClick={() => {
                               inputRef.current.click();
                               inputRef.current.focus();

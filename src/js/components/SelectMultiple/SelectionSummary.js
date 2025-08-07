@@ -10,6 +10,7 @@ import {
   arrayIncludes,
 } from '../Select/utils';
 import { MessageContext } from '../../contexts/MessageContext';
+import { useThemeValue } from '../../utils/useThemeValue';
 
 const SelectionSummary = ({
   allOptions,
@@ -30,6 +31,7 @@ const SelectionSummary = ({
   valueKey,
 }) => {
   const { format } = useContext(MessageContext);
+  const { theme } = useThemeValue();
   const isDisabled = useDisabled(
     disabled,
     disabledKey,
@@ -117,16 +119,17 @@ const SelectionSummary = ({
 
   return (
     <Box
+      // TO DO theme object
       pad={
         showSelectedInline ? { left: 'xsmall', vertical: 'xsmall' } : 'xsmall'
       }
       direction="row"
       justify="between"
-      gap="small"
+      gap={theme.selectMultiple?.summary?.gap}
       fill="horizontal"
       flex={showSelectedInline}
       align="center"
-      height={{ min: 'xxsmall' }}
+      height={theme.selectMultiple?.summary?.height}
     >
       <Text size="small">{summaryText}</Text>
       {(options.length &&
