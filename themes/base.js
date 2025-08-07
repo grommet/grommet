@@ -378,6 +378,20 @@ var generate = exports.generate = function generate(baseSpacing, scale) {
     //   size: undefined,
     // },
     accordion: {
+      icon: {
+        container: {
+          pad: {
+            horizontal: 'small'
+          }
+        }
+      },
+      label: {
+        container: {
+          pad: {
+            horizontal: 'xsmall'
+          }
+        }
+      },
       panel: {
         // border: {
         //   side: 'bottom',

@@ -16,6 +16,7 @@ function _interopRequireWildcard(e, t) { if ("function" == typeof WeakMap) var r
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (-1 !== e.indexOf(n)) continue; t[n] = r[n]; } return t; }
 var AccordionPanel = exports.AccordionPanel = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
+  var _theme$accordion$labe, _theme$accordion$icon;
   var children = _ref.children,
     header = _ref.header,
     id = _ref.id,
@@ -110,17 +111,13 @@ var AccordionPanel = exports.AccordionPanel = /*#__PURE__*/(0, _react.forwardRef
     justify: "between",
     id: id
   }, rest), typeof label === 'string' ? /*#__PURE__*/_react["default"].createElement(_Box.Box, {
-    pad: {
-      horizontal: 'xsmall'
-    }
+    pad: (_theme$accordion$labe = theme.accordion.label) == null || (_theme$accordion$labe = _theme$accordion$labe.container) == null ? void 0 : _theme$accordion$labe.pad
   }, /*#__PURE__*/_react["default"].createElement(_Heading.Heading, {
     level: level || theme.accordion.heading && theme.accordion.heading.level || 4,
     margin: theme.accordion.heading && theme.accordion.heading.margin || undefined,
     color: hover
   }, label)) : label, AccordionIcon && /*#__PURE__*/_react["default"].createElement(_Box.Box, {
-    pad: {
-      horizontal: 'small'
-    },
+    pad: (_theme$accordion$icon = theme.accordion.icon) == null || (_theme$accordion$icon = _theme$accordion$icon.container) == null ? void 0 : _theme$accordion$icon.pad,
     width: {
       min: 'fit-content'
     }

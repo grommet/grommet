@@ -11,6 +11,7 @@ import { AccordionContext } from '../Accordion/AccordionContext';
 import { AccordionPanelPropTypes } from './propTypes';
 import { useThemeValue } from '../../utils/useThemeValue';
 var AccordionPanel = /*#__PURE__*/forwardRef(function (_ref, ref) {
+  var _theme$accordion$labe, _theme$accordion$icon;
   var children = _ref.children,
     header = _ref.header,
     id = _ref.id,
@@ -105,17 +106,13 @@ var AccordionPanel = /*#__PURE__*/forwardRef(function (_ref, ref) {
     justify: "between",
     id: id
   }, rest), typeof label === 'string' ? /*#__PURE__*/React.createElement(Box, {
-    pad: {
-      horizontal: 'xsmall'
-    }
+    pad: (_theme$accordion$labe = theme.accordion.label) == null || (_theme$accordion$labe = _theme$accordion$labe.container) == null ? void 0 : _theme$accordion$labe.pad
   }, /*#__PURE__*/React.createElement(Heading, {
     level: level || theme.accordion.heading && theme.accordion.heading.level || 4,
     margin: theme.accordion.heading && theme.accordion.heading.margin || undefined,
     color: hover
   }, label)) : label, AccordionIcon && /*#__PURE__*/React.createElement(Box, {
-    pad: {
-      horizontal: 'small'
-    },
+    pad: (_theme$accordion$icon = theme.accordion.icon) == null || (_theme$accordion$icon = _theme$accordion$icon.container) == null ? void 0 : _theme$accordion$icon.pad,
     width: {
       min: 'fit-content'
     }
