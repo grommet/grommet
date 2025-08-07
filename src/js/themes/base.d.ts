@@ -1269,6 +1269,7 @@ export interface ThemeType {
     item?:
       | ButtonType & {
           align?: AlignType;
+          pad?: PadType;
         };
     drop?: DropType;
     extend?: ExtendType;
@@ -1285,6 +1286,10 @@ export interface ThemeType {
       down?: any;
       up?: any;
       color?: ColorType;
+    };
+    label?: {
+      pad?: PadType;
+      gap?: GapType;
     };
   };
   meter?: {

@@ -256,8 +256,8 @@ const Menu = forwardRef((props, ref) => {
         direction="row"
         justify={justifyContent}
         align="center"
-        pad="small"
-        gap={label && icon !== false ? 'small' : undefined}
+        pad={theme.menu.label?.pad}
+        gap={label && icon !== false ? theme.menu.label?.gap : undefined}
       >
         <Text size={size}>{label}</Text>
         {menuIcon}
@@ -309,7 +309,7 @@ const Menu = forwardRef((props, ref) => {
     const child = !theme.button.option ? (
       <Box
         align={theme.menu.item?.align || 'start'}
-        pad="small"
+        pad={theme.menu.item?.pad}
         direction="row"
         gap={item.gap || theme.menu.item?.gap}
         justify={item.justify || theme.menu.item?.justify}
