@@ -508,6 +508,20 @@ export interface ThemeType {
     };
   };
   accordion?: {
+    icon?: {
+      container?: {
+        pad?: {
+          horizontal?: string;
+        };
+      };
+    };
+    label?: {
+      container?: {
+        pad?: {
+          horizontal?: string;
+        };
+      };
+    };
     panel?: {
       border?: BorderType;
     };
