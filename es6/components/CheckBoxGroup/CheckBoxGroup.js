@@ -9,7 +9,7 @@ import { StyledCheckBoxGroup } from './StyledCheckBoxGroup';
 import { CheckBoxGroupPropTypes } from './propTypes';
 import { useThemeValue } from '../../utils/useThemeValue';
 var CheckBoxGroup = /*#__PURE__*/forwardRef(function (_ref, ref) {
-  var _formContext$useFormF;
+  var _formContext$useFormF, _theme$checkBoxGroup;
   var ariaLabelProp = _ref['aria-label'],
     ariaLabelledByProp = _ref['aria-labelledby'],
     children = _ref.children,
@@ -77,8 +77,7 @@ var CheckBoxGroup = /*#__PURE__*/forwardRef(function (_ref, ref) {
     "aria-labelledby": ariaLabelledByProp || ariaLabelledBy,
     role: "group"
   }, theme.checkBoxGroup.container, {
-    gap: gap || (theme.checkBoxGroup.container && theme.checkBoxGroup.container.gap ? theme.checkBoxGroup.container.gap : 'small') // consistent with RadioButtonGroup default
-    ,
+    gap: gap || ((_theme$checkBoxGroup = theme.checkBoxGroup) == null || (_theme$checkBoxGroup = _theme$checkBoxGroup.container) == null ? void 0 : _theme$checkBoxGroup.gap),
     id: id
   }, passThemeFlag, rest), options.map(function (option, index) {
     var optionValue = option.value;

@@ -848,7 +848,7 @@ var generate = exports.generate = function generate(baseSpacing, scale) {
       },
       // color: { dark: undefined, light: undefined },
       // extend: undefined,
-      // gap: undefined
+      gap: 'small',
       hover: {
         border: {
           color: {
@@ -884,10 +884,11 @@ var generate = exports.generate = function generate(baseSpacing, scale) {
       }
     },
     checkBoxGroup: {
-      // container: {
-      //   // any box props
-      //   extend: undefined,
-      // },
+      container: {
+        //   // any box props
+        //   extend: undefined,
+        gap: 'small'
+      }
     },
     clock: {
       analog: {

@@ -134,7 +134,7 @@ var CheckBox = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var checkBoxNode = /*#__PURE__*/React.createElement(StyledCheckBox, _extends({
     align: "center",
     justify: "center",
-    margin: label && (_ref2 = {}, _ref2[side] = theme.checkBox.gap || 'small', _ref2)
+    margin: label && (_ref2 = {}, _ref2[side] = theme.checkBox.gap, _ref2)
   }, themeableProps), /*#__PURE__*/React.createElement(StyledCheckBoxInput, _extends({
     "aria-label": ariaLabel || a11yTitle
   }, passThemeFlag, rest, {

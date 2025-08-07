@@ -139,7 +139,7 @@ var CheckBox = exports.CheckBox = /*#__PURE__*/(0, _react.forwardRef)(function (
   var checkBoxNode = /*#__PURE__*/_react["default"].createElement(_StyledCheckBox.StyledCheckBox, _extends({
     align: "center",
     justify: "center",
-    margin: label && (_ref2 = {}, _ref2[side] = theme.checkBox.gap || 'small', _ref2)
+    margin: label && (_ref2 = {}, _ref2[side] = theme.checkBox.gap, _ref2)
   }, themeableProps), /*#__PURE__*/_react["default"].createElement(_StyledCheckBox.StyledCheckBoxInput, _extends({
     "aria-label": ariaLabel || a11yTitle
   }, passThemeFlag, rest, {

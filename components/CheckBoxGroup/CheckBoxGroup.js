@@ -14,7 +14,7 @@ function _interopRequireWildcard(e, t) { if ("function" == typeof WeakMap) var r
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (-1 !== e.indexOf(n)) continue; t[n] = r[n]; } return t; }
 var CheckBoxGroup = exports.CheckBoxGroup = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
-  var _formContext$useFormF;
+  var _formContext$useFormF, _theme$checkBoxGroup;
   var ariaLabelProp = _ref['aria-label'],
     ariaLabelledByProp = _ref['aria-labelledby'],
     children = _ref.children,
@@ -82,8 +82,7 @@ var CheckBoxGroup = exports.CheckBoxGroup = /*#__PURE__*/(0, _react.forwardRef)(
     "aria-labelledby": ariaLabelledByProp || ariaLabelledBy,
     role: "group"
   }, theme.checkBoxGroup.container, {
-    gap: gap || (theme.checkBoxGroup.container && theme.checkBoxGroup.container.gap ? theme.checkBoxGroup.container.gap : 'small') // consistent with RadioButtonGroup default
-    ,
+    gap: gap || ((_theme$checkBoxGroup = theme.checkBoxGroup) == null || (_theme$checkBoxGroup = _theme$checkBoxGroup.container) == null ? void 0 : _theme$checkBoxGroup.gap),
     id: id
   }, passThemeFlag, rest), options.map(function (option, index) {
     var optionValue = option.value;
