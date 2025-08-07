@@ -19,6 +19,25 @@ export const strokeProps = (color, theme) => {
   return result;
 };
 
+export const fillProps = (color, theme) => {
+  const result = {};
+  if (color) {
+    if (typeof color === 'object') {
+      result.fill = normalizeColor(color.color, theme);
+      if (color.opacity) {
+        result.fillOpacity = `${
+          color.opacity === true
+            ? theme.global.opacity.medium
+            : theme.global.opacity[color.opacity] || color.opacity
+        }`;
+      }
+    } else {
+      result.fill = normalizeColor(color, theme);
+    }
+  }
+  return result;
+};
+
 const neutralExp = /^neutral-\d+/;
 
 export const defaultColor = (index, theme, valuesLength) => {
@@ -32,14 +51,14 @@ export const defaultColor = (index, theme, valuesLength) => {
       theme.meter.colors[theme.dark ? 'dark' : 'light'] || theme.meter.colors;
     return colors[colorIndex % colors.length];
   }
-  const colors = Object.keys(theme.global.colors).filter(n =>
+  const colors = Object.keys(theme.global.colors).filter((n) =>
     n.match(/^graph-[0-9]$/),
   );
   if (colors.length > 0) {
     return colors[colorIndex % colors.length];
   }
   // Deprecate using "neutral-*" color names. Remove eventually.
-  const neutralColors = Object.keys(theme.global.colors).filter(k =>
+  const neutralColors = Object.keys(theme.global.colors).filter((k) =>
     neutralExp.test(k),
   );
   return neutralColors[colorIndex % neutralColors.length];
