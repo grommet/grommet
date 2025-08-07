@@ -597,6 +597,9 @@ export interface ThemeType {
     extend?: ExtendType;
   };
   box?: {
+    border?: {
+      size?: string;
+    };
     extend?: ExtendType;
     responsiveBreakpoint?: string;
   };
