@@ -1276,6 +1276,9 @@ export interface ThemeType {
     extend?: ExtendType;
     gap?: GapType;
   };
+  nav?: {
+    gap?: GapType;
+  };
   notification?: {
     actions?: AnchorProps;
     container?: BoxProps;
