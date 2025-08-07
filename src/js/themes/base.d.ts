@@ -933,6 +933,9 @@ export interface ThemeType {
       color?: ColorType;
     };
   };
+  distribution?: {
+    gap?: GapType;
+  };
   drop?: {
     extend?: ExtendType;
     maxHeight?: string;
