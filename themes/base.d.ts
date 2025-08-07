@@ -962,6 +962,9 @@ export interface ThemeType {
     pad?: PadType;
     round?: RoundType;
   };
+  footer?: {
+    gap?: GapType;
+  };
   formField?: {
     border?: BorderType & {
       error?: {

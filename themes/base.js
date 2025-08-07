@@ -1108,6 +1108,9 @@ var generate = exports.generate = function generate(baseSpacing, scale) {
       }
       // extend: undefined,
     },
+    footer: {
+      gap: 'medium'
+    },
     formField: {
       // [inputname]: {
       //  container: {
