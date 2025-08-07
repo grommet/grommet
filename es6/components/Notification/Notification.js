@@ -68,7 +68,7 @@ var NotificationAnchor = styled(Anchor).withConfig({
   componentId: "sc-1yq09yz-0"
 })(["white-space:nowrap;"]);
 var Notification = function Notification(_ref2) {
-  var _theme$notification6, _theme$notification7, _theme$notification8, _theme$notification9, _theme$notification0;
+  var _theme$notification6, _theme$notification7, _theme$notification8, _theme$notification9, _theme$notification0, _theme$notification1;
   var actionsProp = _ref2.actions,
     messageProp = _ref2.message,
     messages = _ref2.messages,
@@ -149,25 +149,23 @@ var Notification = function Notification(_ref2) {
   var messageColor = getTextColor('message', status, kind, theme);
   var titleColor = getTextColor('title', status, kind, theme);
   if (actionsProp) actions = actionsProp.map(function (action) {
+    var _theme$notification$a;
     return /*#__PURE__*/React.createElement(Fragment, {
       key: action.label
     }, /*#__PURE__*/React.createElement(NotificationAnchor
     // create space between first anchor and
     // text content and next anchor
     , _extends({
-      margin: {
-        right: 'xsmall'
-      }
+      margin: (_theme$notification$a = theme.notification.actions) == null ? void 0 : _theme$notification$a.margin
     }, action, theme.notification.actions)), ' ');
   });
   if (message || actions) {
+    var _theme$notification$m;
     message = typeof message === 'string' ? /*#__PURE__*/React.createElement(Message, _extends({}, theme.notification.message, {
       color: messageColor,
       direction: direction
     }), /*#__PURE__*/React.createElement(Text, {
-      margin: {
-        right: 'xsmall'
-      }
+      margin: (_theme$notification$m = theme.notification.message) == null || (_theme$notification$m = _theme$notification$m.text) == null ? void 0 : _theme$notification$m.margin
     }, message), actions) : message;
   }
   var iconDimension = ((_theme$notification0 = theme.notification) == null || (_theme$notification0 = _theme$notification0.message) == null ? void 0 : _theme$notification0.size) || 'medium';
@@ -177,7 +175,7 @@ var Notification = function Notification(_ref2) {
     ,
     pad: undefined,
     direction: "row",
-    gap: "small",
+    gap: (_theme$notification1 = theme.notification) == null ? void 0 : _theme$notification1.gap,
     id: toast ? undefined : id
   }, rest), /*#__PURE__*/React.createElement(Box, {
     direction: "row",

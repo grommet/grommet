@@ -1430,6 +1430,9 @@ export var generate = function generate(baseSpacing, scale) {
     notification: {
       actions: {
         // any anchor props
+        margin: {
+          right: 'xsmall'
+        }
       },
       direction: 'column',
       container: {
@@ -1443,6 +1446,7 @@ export var generate = function generate(baseSpacing, scale) {
           color: 'background-front'
         }
       },
+      gap: 'small',
       global: {
         direction: 'row',
         container: {
@@ -1484,8 +1488,13 @@ export var generate = function generate(baseSpacing, scale) {
       },
       message: {
         // any text props
-        margin: 'none'
+        margin: 'none',
         // fill: undefined,
+        text: {
+          margin: {
+            right: 'xsmall'
+          }
+        }
       },
       close: {
         icon: FormClose
