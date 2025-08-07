@@ -1234,6 +1234,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           color: 'status-disabled',
           cursor: 'default',
         },
+        gap: 'medium',
         pinned: {
           background: 'background-contrast',
           icon: {

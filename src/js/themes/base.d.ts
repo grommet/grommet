@@ -1238,6 +1238,7 @@ export interface ThemeType {
         color?: ColorType;
         cursor?: string;
       };
+      gap: GapType;
       pinned?: {
         background?: BackgroundType;
         icon?: {
