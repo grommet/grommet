@@ -2023,6 +2023,12 @@ export interface ThemeType {
         }
       | boolean;
   };
+  toolbar?: {
+    small: {
+      gap?: GapType;
+    };
+    gap?: GapType;
+  };
   video?: {
     captions?: {
       background?: BackgroundType;

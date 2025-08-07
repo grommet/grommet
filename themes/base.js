@@ -2351,6 +2351,12 @@ var generate = exports.generate = function generate(baseSpacing, scale) {
         color: 'border'
       }
     },
+    toolbar: {
+      small: {
+        gap: 'small'
+      },
+      gap: 'small'
+    },
     video: {
       captions: {
         background: 'rgba(0, 0, 0, 0.7)'
