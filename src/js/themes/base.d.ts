@@ -508,6 +508,20 @@ export interface ThemeType {
     };
   };
   accordion?: {
+    icon?: {
+      container?: {
+        pad?: {
+          horizontal?: string;
+        };
+      };
+    };
+    label?: {
+      container?: {
+        pad?: {
+          horizontal?: string;
+        };
+      };
+    };
     panel?: {
       border?: BorderType;
     };
@@ -583,6 +597,9 @@ export interface ThemeType {
     extend?: ExtendType;
   };
   box?: {
+    border?: {
+      size?: string;
+    };
     extend?: ExtendType;
     responsiveBreakpoint?: string;
   };
@@ -2006,6 +2023,12 @@ export interface ThemeType {
           color?: ColorType;
         }
       | boolean;
+  };
+  toolbar?: {
+    small: {
+      gap?: GapType;
+    };
+    gap?: GapType;
   };
   video?: {
     captions?: {

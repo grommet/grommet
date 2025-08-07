@@ -361,6 +361,20 @@ export const generate = (baseSpacing = 24, scale = 6) => {
     //   size: undefined,
     // },
     accordion: {
+      icon: {
+        container: {
+          pad: {
+            horizontal: 'small',
+          },
+        },
+      },
+      label: {
+        container: {
+          pad: {
+            horizontal: 'xsmall',
+          },
+        },
+      },
       panel: {
         // border: {
         //   side: 'bottom',
@@ -444,6 +458,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
     },
     box: {
+      border: {
+        size: 'xsmall',
+      },
       responsiveBreakpoint: 'small', // when we switch rows to columns
       // extend: undefined,
     },
@@ -784,7 +801,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
       // color: { dark: undefined, light: undefined },
       // extend: undefined,
-      // gap: undefined
+      gap: 'small',
       hover: {
         border: {
           color: {
@@ -820,10 +837,11 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
     },
     checkBoxGroup: {
-      // container: {
-      //   // any box props
-      //   extend: undefined,
-      // },
+      container: {
+        //   // any box props
+        //   extend: undefined,
+        gap: 'small',
+      },
     },
     clock: {
       analog: {
@@ -2169,6 +2187,12 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       divider: {
         color: 'border',
       },
+    },
+    toolbar: {
+      small: {
+        gap: 'small',
+      },
+      gap: 'small',
     },
     video: {
       captions: {
