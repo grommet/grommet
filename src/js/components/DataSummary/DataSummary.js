@@ -12,7 +12,7 @@ export const DataSummary = ({ messages, ...rest }) => {
     messages: dataMessages,
     selected,
     total,
-  } = useContext(DataContext)
+  } = useContext(DataContext);
   const { theme } = useThemeValue();
 
   let messageId;
