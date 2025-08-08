@@ -856,6 +856,12 @@ export interface ThemeType {
     };
   };
   dateInput?: {
+    button?: {
+      margin?: {
+        left?: string;
+        right?: string;
+      };
+    };
     container?: {
       round?: RoundType;
     };
