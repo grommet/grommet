@@ -1935,6 +1935,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           margin: 'none',
         },
       },
+      search: {
+        pad: 'xsmall',
+      },
       // searchInput: undefined,
       step: 20,
     },
