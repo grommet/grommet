@@ -2396,8 +2396,16 @@ var generate = exports.generate = function generate(baseSpacing, scale) {
       },
       scrubber: {
         color: 'light-4',
-        interval: 10
+        interval: 10,
         // track: { color: undefined }
+        thickness: 'small'
+      },
+      time: {
+        container: {
+          pad: {
+            horizontal: 'small'
+          }
+        }
       }
     },
     worldMap: {

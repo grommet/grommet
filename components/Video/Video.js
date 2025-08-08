@@ -281,7 +281,7 @@ var Video = exports.Video = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, 
   }, [videoRef]);
   var controlsElement;
   if (controls != null && controls.position) {
-    var _controls$items;
+    var _controls$items, _theme$video, _theme$video2;
     var over = controls.position === 'over';
     var background = over ? theme.video.controls && theme.video.controls.background || {
       color: 'background-back',
@@ -462,7 +462,7 @@ var Video = exports.Video = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, 
       }),
       background: over ? theme.video.scrubber && theme.video.scrubber.track && theme.video.scrubber.track.color || 'dark-3' : undefined,
       size: "full",
-      thickness: "small",
+      thickness: (_theme$video = theme.video) == null || (_theme$video = _theme$video.scrubber) == null ? void 0 : _theme$video.thickness,
       values: [{
         value: percentagePlayed || 0
       }]
@@ -484,9 +484,7 @@ var Video = exports.Video = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, 
         return setInteracting(true);
       }
     }, passThemeFlag)))), /*#__PURE__*/_react["default"].createElement(_Box.Box, {
-      pad: {
-        horizontal: 'small'
-      }
+      pad: theme == null || (_theme$video2 = theme.video) == null || (_theme$video2 = _theme$video2.time) == null || (_theme$video2 = _theme$video2.container) == null ? void 0 : _theme$video2.pad
     }, /*#__PURE__*/_react["default"].createElement(_Text.Text, {
       margin: "none"
     }, formattedTime))), /*#__PURE__*/_react["default"].createElement(_Menu.Menu, {
