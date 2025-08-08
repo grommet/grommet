@@ -375,8 +375,7 @@ const RangeSelector = forwardRef(
           <Text
             ref={minRef}
             textAlign="end"
-            // do we need theme for size?
-            size={theme.rangeSelector.label.size}
+            size="small"
             margin={theme.rangeSelector.label.margin}
           >
             {typeof label === 'function' ? label(lower) : lower}
