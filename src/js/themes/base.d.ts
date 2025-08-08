@@ -838,6 +838,9 @@ export interface ThemeType {
     button?: {
       kind?: string;
     };
+    drop?: {
+      pad?: PadType;
+    };
   };
   dataFilter?: {
     rangeSelector?: {
@@ -941,6 +944,9 @@ export interface ThemeType {
     line?: {
       color?: ColorType;
     };
+  };
+  distribution?: {
+    gap?: GapType;
   };
   drop?: {
     extend?: ExtendType;
@@ -1061,6 +1067,7 @@ export interface ThemeType {
     sticky?: {
       zIndex?: string;
     };
+    gap?: GapType;
   };
   heading?: {
     color?: ColorType;
@@ -1250,6 +1257,7 @@ export interface ThemeType {
         color?: ColorType;
         cursor?: string;
       };
+      gap: GapType;
       pinned?: {
         background?: BackgroundType;
         icon?: {
@@ -1303,6 +1311,9 @@ export interface ThemeType {
     color?: ColorType;
     colors?: GraphColorsType;
     extend?: ExtendType;
+    gap?: GapType;
+  };
+  nav?: {
     gap?: GapType;
   };
   notification?: {
@@ -1609,6 +1620,9 @@ export interface ThemeType {
       size?: string;
       height?: string;
       maxWidth?: string;
+    };
+    skeleton?: {
+      gap?: GapType;
     };
   };
   radioButton?: {
@@ -2067,6 +2081,12 @@ export interface ThemeType {
       interval?: number;
       track?: {
         color?: ColorType;
+      };
+      thickness?: string;
+    };
+    time?: {
+      container?: {
+        pad?: PadType;
       };
     };
   };
