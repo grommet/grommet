@@ -1767,7 +1767,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       step: {
         container: {
           gap: 'xsmall',
-        }
+        },
       },
       withControls: {
         gap: { column: 'xsmall', row: 'small' },
