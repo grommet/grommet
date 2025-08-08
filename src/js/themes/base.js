@@ -1858,7 +1858,6 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
       label: {
         margin: { horizontal: 'small' },
-        size: 'small',
       },
     },
     select: {
