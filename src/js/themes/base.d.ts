@@ -838,6 +838,18 @@ export interface ThemeType {
     button?: {
       kind?: string;
     };
+    drop?: {
+      pad?: PadType;
+    };
+  };
+  dataFilter?: {
+    rangeSelector?: {
+      size?: string;
+      round?: string;
+    };
+    selectMultiple?: {
+      dropHeight?: string;
+    };
   };
   dateInput?: {
     container?: {
@@ -964,6 +976,9 @@ export interface ThemeType {
     message?: TextProps & { extend?: ExtendType };
     pad?: PadType;
     round?: RoundType;
+  };
+  footer?: {
+    gap?: GapType;
   };
   formField?: {
     border?: BorderType & {
@@ -1296,6 +1311,9 @@ export interface ThemeType {
     extend?: ExtendType;
     gap?: GapType;
   };
+  nav?: {
+    gap?: GapType;
+  };
   notification?: {
     actions?: AnchorProps;
     container?: BoxProps;
@@ -1600,6 +1618,9 @@ export interface ThemeType {
       size?: string;
       height?: string;
       maxWidth?: string;
+    };
+    skeleton?: {
+      gap?: GapType;
     };
   };
   radioButton?: {
@@ -2055,6 +2076,12 @@ export interface ThemeType {
       interval?: number;
       track?: {
         color?: ColorType;
+      };
+      thickness?: string;
+    };
+    time?: {
+      container?: {
+        pad?: PadType;
       };
     };
   };
