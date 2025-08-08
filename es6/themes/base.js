@@ -1442,6 +1442,9 @@ export var generate = function generate(baseSpacing, scale) {
         color: 'text'
       }
     },
+    nav: {
+      gap: 'medium'
+    },
     notification: {
       actions: {
         // any anchor props
