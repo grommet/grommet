@@ -1288,7 +1288,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
     },
     menu: {
       // background: undefined,
-      // item: undefined,
+      item: {
+        pad: 'small',
+      },
       // extend: undefined,
       drop: {
         align: {
@@ -1318,6 +1320,10 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         down: FormDown,
         // up: undefined,
         // color: { dark: undefined, light: undefined },
+      },
+      label: {
+        pad: 'small',
+        gap: 'small',
       },
     },
     meter: {
