@@ -45,7 +45,7 @@ const DataChart = forwardRef(
       data = [],
       detail,
       direction = 'vertical',
-      gap = 'small',
+      gap,
       guide: guideProp,
       legend,
       offset,
@@ -197,7 +197,9 @@ const DataChart = forwardRef(
         medium,
       };
       const granularity1 = {
-        ...(heightYGranularity[(size && size.height) || 'small'] || {
+        ...(heightYGranularity[
+          (size && size.height) || theme.dataChart.heightYGranularity
+        ] || {
           fine: 5,
           medium: 3,
         }),
@@ -206,7 +208,13 @@ const DataChart = forwardRef(
       return horizontal
         ? { x: granularity1, y: granularity0 }
         : { x: granularity0, y: granularity1 };
-    }, [charts, data.length, horizontal, size]);
+    }, [
+      charts,
+      data.length,
+      horizontal,
+      size,
+      theme.dataChart.heightYGranularity,
+    ]);
 
     // normalize axis to objects, convert granularity to a number
     const axis = useMemo(() => {
@@ -745,7 +753,7 @@ const DataChart = forwardRef(
           { name: 'xAxis', start: [1, 1], end: [1, 1] },
           { name: 'charts', start: [1, 0], end: [1, 0] },
         ]}
-        gap={gap}
+        gap={gap || theme.dataChart?.gap}
         {...rest}
       >
         {xAxisElement}
