@@ -902,6 +902,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       // button: {
       //   kind: undefined,
       // },
+      drop: {
+        pad: 'small',
+      },
     },
     dataFilter: {
       rangeSelector: {

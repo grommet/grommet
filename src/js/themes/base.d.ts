@@ -838,6 +838,9 @@ export interface ThemeType {
     button?: {
       kind?: string;
     };
+    drop?: {
+      pad?: PadType;
+    };
   };
   dataFilter?: {
     rangeSelector?: {
