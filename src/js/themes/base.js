@@ -1864,9 +1864,17 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       container: {
         // extend: undefined
       },
+      label: {
+        margin: {
+          right: 'small',
+        },
+      },
     },
     radioButtonGroup: {
-      // container: {}, // any box props
+      // any box props
+      container: {
+        gap: 'small',
+      },
     },
     rangeInput: {
       disabled: {

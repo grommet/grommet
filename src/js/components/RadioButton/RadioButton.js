@@ -81,9 +81,7 @@ const RadioButton = forwardRef(
       >
         <StyledRadioButton
           flex={false}
-          margin={
-            label ? { right: theme.radioButton.gap || 'small' } : undefined
-          }
+          margin={label ? theme.radioButton.label?.margin : undefined}
           {...passThemeFlag}
         >
           <StyledRadioButtonInput
