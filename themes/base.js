@@ -808,6 +808,10 @@ var generate = exports.generate = function generate(baseSpacing, scale) {
         // any box props
         gap: 'xsmall'
         // extend: undefined,
+      },
+      grid: {
+        columns: 'small',
+        gap: 'medium'
       }
     },
     carousel: {

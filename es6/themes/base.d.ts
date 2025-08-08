@@ -722,6 +722,10 @@ export interface ThemeType {
   };
   cards?: {
     container?: BoxProps;
+    grid?: {
+      columns?: GridColumnsType;
+      gap?: GridGapType;
+    };
   };
   carousel?: {
     animation?: {

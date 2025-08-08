@@ -23,8 +23,7 @@ var Cards = /*#__PURE__*/React.forwardRef(function (_ref, ref) {
     pad = _ref.pad,
     paginate = _ref.paginate,
     showProp = _ref.show,
-    _ref$size = _ref.size,
-    size = _ref$size === void 0 ? 'small' : _ref$size,
+    size = _ref.size,
     _ref$step = _ref.step,
     step = _ref$step === void 0 ? paginate ? 50 : undefined : _ref$step,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
@@ -48,8 +47,8 @@ var Cards = /*#__PURE__*/React.forwardRef(function (_ref, ref) {
   return /*#__PURE__*/React.createElement(Container, containerProps, /*#__PURE__*/React.createElement(Grid, _extends({
     ref: ref,
     as: as,
-    columns: size,
-    gap: "medium",
+    gap: theme.cards.grid.gap,
+    columns: size || theme.cards.grid.columns,
     margin: !paginate && margin || 'none',
     pad: !paginate && pad || 'none'
   }, rest), /*#__PURE__*/React.createElement(InfiniteScroll, {
