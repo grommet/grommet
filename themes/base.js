@@ -1898,7 +1898,10 @@ var generate = exports.generate = function generate(baseSpacing, scale) {
       medium: _extends({}, fontSizing(0)),
       large: _extends({}, fontSizing(1)),
       xlarge: _extends({}, fontSizing(2)),
-      xxlarge: _extends({}, fontSizing(4))
+      xxlarge: _extends({}, fontSizing(4)),
+      skeleton: {
+        gap: 'xsmall'
+      }
     },
     thumbsRating: {
       // dislike: {
