@@ -183,7 +183,7 @@ const Tab = forwardRef(
         direction: 'row',
         align: 'center',
         justify: 'center',
-        gap: 'small',
+        gap: theme.tab?.gap,
       };
     }
 
