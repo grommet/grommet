@@ -6,7 +6,7 @@ import { findScrollParent, useForwardedRef } from '../../utils';
 import { Box } from '../Box';
 import { useThemeValue } from '../../utils/useThemeValue';
 var Header = /*#__PURE__*/React.forwardRef(function (_ref, ref) {
-  var _theme$header2;
+  var _theme$header2, _theme$header3;
   var sticky = _ref.sticky,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
   var _useThemeValue = useThemeValue(),
@@ -52,7 +52,7 @@ var Header = /*#__PURE__*/React.forwardRef(function (_ref, ref) {
     direction: "row",
     flex: false,
     justify: "between",
-    gap: "medium",
+    gap: (_theme$header3 = theme.header) == null ? void 0 : _theme$header3.gap,
     ref: headerRef
   }, rest));
 });

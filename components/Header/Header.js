@@ -11,7 +11,7 @@ function _interopRequireWildcard(e, t) { if ("function" == typeof WeakMap) var r
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (-1 !== e.indexOf(n)) continue; t[n] = r[n]; } return t; }
 var Header = exports.Header = /*#__PURE__*/_react["default"].forwardRef(function (_ref, ref) {
-  var _theme$header2;
+  var _theme$header2, _theme$header3;
   var sticky = _ref.sticky,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
   var _useThemeValue = (0, _useThemeValue2.useThemeValue)(),
@@ -57,7 +57,7 @@ var Header = exports.Header = /*#__PURE__*/_react["default"].forwardRef(function
     direction: "row",
     flex: false,
     justify: "between",
-    gap: "medium",
+    gap: (_theme$header3 = theme.header) == null ? void 0 : _theme$header3.gap,
     ref: headerRef
   }, rest));
 });

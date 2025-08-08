@@ -1067,6 +1067,7 @@ export interface ThemeType {
     sticky?: {
       zIndex?: string;
     };
+    gap?: GapType;
   };
   heading?: {
     color?: ColorType;

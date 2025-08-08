@@ -1226,7 +1226,8 @@ export var generate = function generate(baseSpacing, scale) {
     header: {
       sticky: {
         zIndex: '20'
-      }
+      },
+      gap: 'medium'
     },
     heading: {
       // color: undefined,
