@@ -508,6 +508,20 @@ export interface ThemeType {
     };
   };
   accordion?: {
+    icon?: {
+      container?: {
+        pad?: {
+          horizontal?: string;
+        };
+      };
+    };
+    label?: {
+      container?: {
+        pad?: {
+          horizontal?: string;
+        };
+      };
+    };
     panel?: {
       border?: BorderType;
     };
@@ -583,6 +597,9 @@ export interface ThemeType {
     extend?: ExtendType;
   };
   box?: {
+    border?: {
+      size?: string;
+    };
     extend?: ExtendType;
     responsiveBreakpoint?: string;
   };
@@ -821,6 +838,18 @@ export interface ThemeType {
     button?: {
       kind?: string;
     };
+    drop?: {
+      pad?: PadType;
+    };
+  };
+  dataFilter?: {
+    rangeSelector?: {
+      size?: string;
+      round?: string;
+    };
+    selectMultiple?: {
+      dropHeight?: string;
+    };
   };
   dateInput?: {
     container?: {
@@ -944,6 +973,9 @@ export interface ThemeType {
     message?: TextProps & { extend?: ExtendType };
     pad?: PadType;
     round?: RoundType;
+  };
+  footer?: {
+    gap?: GapType;
   };
   formField?: {
     border?: BorderType & {
@@ -1280,6 +1312,7 @@ export interface ThemeType {
     actions?: AnchorProps;
     container?: BoxProps;
     direction?: 'column' | 'row';
+    gap?: GapType;
     global?: {
       direction?: 'column' | 'row';
       container?: BoxProps;
@@ -1293,7 +1326,7 @@ export interface ThemeType {
     iconContainer?: BoxProps;
     textContainer?: BoxProps;
     title?: TextProps;
-    message?: TextProps & { fill?: boolean };
+    message?: TextProps & { fill?: boolean; text?: { margin?: MarginType } };
     close?: {
       icon?: React.ReactNode | Icon;
       color?: ColorType;
@@ -2009,6 +2042,12 @@ export interface ThemeType {
         }
       | boolean;
   };
+  toolbar?: {
+    small: {
+      gap?: GapType;
+    };
+    gap?: GapType;
+  };
   video?: {
     captions?: {
       background?: BackgroundType;
@@ -2031,6 +2070,12 @@ export interface ThemeType {
       interval?: number;
       track?: {
         color?: ColorType;
+      };
+      thickness?: string;
+    };
+    time?: {
+      container?: {
+        pad?: PadType;
       };
     };
   };
