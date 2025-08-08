@@ -1351,6 +1351,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         color: 'text',
       },
     },
+    nav: {
+      gap: 'medium',
+    },
     notification: {
       actions: {
         // any anchor props
