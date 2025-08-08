@@ -1696,7 +1696,6 @@ export interface ThemeType {
     };
     label?: {
       margin?: MarginType;
-      size?: string;
     };
   };
   select?: {
