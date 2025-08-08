@@ -12,7 +12,7 @@ const ParagraphSkeleton = forwardRef(({ fill, size: sizeProp }, ref) => {
   return (
     <Box
       ref={ref}
-      gap="xsmall"
+      gap={theme.paragraph?.skeleton?.gap}
       width={{ max: fill ? 'none' : data && data.maxWidth }}
     >
       <Skeleton height={height} />
