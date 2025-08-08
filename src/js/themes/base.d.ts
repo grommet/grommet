@@ -855,6 +855,12 @@ export interface ThemeType {
       dropHeight?: string;
     };
   };
+  dataSummary?: {
+    margin?: MarginType;
+    separator?: {
+      margin?: MarginType;
+    };
+  };
   dateInput?: {
     container?: {
       round?: RoundType;
