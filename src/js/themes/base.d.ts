@@ -1736,7 +1736,7 @@ export interface ThemeType {
       extend?: ExtendType;
     };
   };
-  sideBar?: {
+  sidebar?: {
     gap?: GapType;
     pad?: PadType;
   };
