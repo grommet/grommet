@@ -364,6 +364,7 @@ var List = /*#__PURE__*/React.forwardRef(function (_ref, ref) {
         key: "p"
       }, theme.list.primaryKey), primary) : primary;
       if (secondaryKey) {
+        var _theme$list;
         var secondary = getValue(item, index, secondaryKey);
         content = [content, typeof secondary === 'string' || typeof secondary === 'number' ? /*#__PURE__*/React.createElement(Text, {
           color: pinnedColor,
@@ -373,7 +374,7 @@ var List = /*#__PURE__*/React.forwardRef(function (_ref, ref) {
           direction: 'row',
           align: 'center',
           justify: 'between',
-          gap: 'medium'
+          gap: (_theme$list = theme.list) == null || (_theme$list = _theme$list.item) == null ? void 0 : _theme$list.gap
         };
       }
     } else if (typeof item === 'object') {
@@ -411,7 +412,7 @@ var List = /*#__PURE__*/React.forwardRef(function (_ref, ref) {
         direction: 'row',
         align: secondaryKey ? 'start' : 'center',
         justify: 'between',
-        gap: 'medium'
+        gap: theme.list.item.gap
       };
     }
     var adjustedBackground = background || theme.list.item.background;
@@ -564,7 +565,7 @@ var List = /*#__PURE__*/React.forwardRef(function (_ref, ref) {
       boxProps = {
         direction: 'row',
         align: defaultItemProps && defaultItemProps.align || 'center',
-        gap: 'medium'
+        gap: theme.list.item.gap
       };
     }
     var itemAriaProps;
@@ -597,7 +598,7 @@ var List = /*#__PURE__*/React.forwardRef(function (_ref, ref) {
       boxProps = {
         direction: 'row',
         align: defaultItemProps && defaultItemProps.align || 'center',
-        gap: 'medium'
+        gap: theme.list.item.gap
       };
       displayPinned = /*#__PURE__*/React.createElement(Box, {
         direction: "row",

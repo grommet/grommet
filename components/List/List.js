@@ -370,6 +370,7 @@ var List = exports.List = /*#__PURE__*/_react["default"].forwardRef(function (_r
         key: "p"
       }, theme.list.primaryKey), primary) : primary;
       if (secondaryKey) {
+        var _theme$list;
         var secondary = getValue(item, index, secondaryKey);
         content = [content, typeof secondary === 'string' || typeof secondary === 'number' ? /*#__PURE__*/_react["default"].createElement(_Text.Text, {
           color: pinnedColor,
@@ -379,7 +380,7 @@ var List = exports.List = /*#__PURE__*/_react["default"].forwardRef(function (_r
           direction: 'row',
           align: 'center',
           justify: 'between',
-          gap: 'medium'
+          gap: (_theme$list = theme.list) == null || (_theme$list = _theme$list.item) == null ? void 0 : _theme$list.gap
         };
       }
     } else if (typeof item === 'object') {
@@ -417,7 +418,7 @@ var List = exports.List = /*#__PURE__*/_react["default"].forwardRef(function (_r
         direction: 'row',
         align: secondaryKey ? 'start' : 'center',
         justify: 'between',
-        gap: 'medium'
+        gap: theme.list.item.gap
       };
     }
     var adjustedBackground = background || theme.list.item.background;
@@ -570,7 +571,7 @@ var List = exports.List = /*#__PURE__*/_react["default"].forwardRef(function (_r
       boxProps = {
         direction: 'row',
         align: defaultItemProps && defaultItemProps.align || 'center',
-        gap: 'medium'
+        gap: theme.list.item.gap
       };
     }
     var itemAriaProps;
@@ -603,7 +604,7 @@ var List = exports.List = /*#__PURE__*/_react["default"].forwardRef(function (_r
       boxProps = {
         direction: 'row',
         align: defaultItemProps && defaultItemProps.align || 'center',
-        gap: 'medium'
+        gap: theme.list.item.gap
       };
       displayPinned = /*#__PURE__*/_react["default"].createElement(_Box.Box, {
         direction: "row",

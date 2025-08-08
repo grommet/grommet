@@ -1344,6 +1344,7 @@ var generate = exports.generate = function generate(baseSpacing, scale) {
           color: 'status-disabled',
           cursor: 'default'
         },
+        gap: 'medium',
         pinned: {
           background: 'background-contrast',
           icon: {
