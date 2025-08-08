@@ -12,7 +12,6 @@ import { useThemeValue } from '../../utils/useThemeValue';
 const gradientMaskColor = '#ffffff';
 
 // use constants so re-renders don't re-trigger effects
-const defaultSize = { height: 'small', width: 'medium' };
 const defaultValues = [];
 
 const Chart = React.forwardRef(
@@ -34,7 +33,7 @@ const Chart = React.forwardRef(
       point,
       round,
       size: sizeProp,
-      thickness = 'medium',
+      thickness,
       type = 'bar',
       values: valuesProp = defaultValues,
       ...rest
@@ -43,6 +42,8 @@ const Chart = React.forwardRef(
   ) => {
     const containerRef = useForwardedRef(ref);
     const { theme, passThemeFlag } = useThemeValue();
+
+    const thicknessValue = thickness || theme.chart?.thickness.default;
 
     const values = useMemo(() => normalizeValues(valuesProp), [valuesProp]);
 
@@ -55,8 +56,11 @@ const Chart = React.forwardRef(
     );
 
     const strokeWidth = useMemo(
-      () => parseMetricToNum(theme.global.edgeSize[thickness] || thickness),
-      [theme.global.edgeSize, thickness],
+      () =>
+        parseMetricToNum(
+          theme.global.edgeSize[thicknessValue] || thicknessValue,
+        ),
+      [theme.global.edgeSize, thicknessValue],
     );
 
     // inset is { top, left, bottom, right }
@@ -124,6 +128,10 @@ const Chart = React.forwardRef(
 
     // size is { width, height }
     const size = useMemo(() => {
+      const defaultSize = {
+        height: theme.chart?.height,
+        width: theme.chart?.width,
+      };
       const gapWidth = gap
         ? parseMetricToNum(theme.global.edgeSize[gap] || gap)
         : strokeWidth;
@@ -171,6 +179,8 @@ const Chart = React.forwardRef(
       strokeWidth,
       theme.global.edgeSize,
       theme.global.size,
+      theme.chart?.height,
+      theme.chart?.width,
       values,
     ]);
 

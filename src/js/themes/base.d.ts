@@ -742,6 +742,18 @@ export interface ThemeType {
   chart?: {
     color?: ColorType;
     extend?: ExtendType;
+    height?: string;
+    thickness?: {
+      default?: string;
+      pad?: {
+        xlarge?: PadType;
+        large?: PadType;
+        medium?: PadType;
+        small?: PadType;
+        xsmall?: PadType;
+      };
+    };
+    width?: string;
   };
   checkBox?: {
     border?: {
@@ -820,6 +832,23 @@ export interface ThemeType {
         xlarge?: string;
         huge?: string;
       };
+    };
+    dataChart?: {
+      gap?: GapType;
+      detail?: {
+        grid?: {
+          gap?: GridGapType;
+        };
+      };
+      legend?: {
+        margin?: MarginType;
+        gap?: GapType;
+        item?: {
+          gap?: GapType;
+          pad?: PadType;
+        };
+      };
+      heightYGranularity?: string;
     };
     digital?: {
       text?: {
