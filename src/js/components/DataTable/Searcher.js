@@ -5,7 +5,6 @@ import { FormSearch } from 'grommet-icons/icons/FormSearch';
 import { Box } from '../Box';
 import { Button } from '../Button';
 import { Keyboard } from '../Keyboard';
-import { Text } from '../Text';
 import { TextInput } from '../TextInput';
 import { MessageContext } from '../../contexts/MessageContext';
 import { normalizeColor } from '../../utils';
@@ -60,7 +59,7 @@ const Searcher = ({
         flex
         // padding right is not needed any longer. There is margin
         // right set already on the container, see Header.js
-        pad={{ left: 'small' }}
+        pad={theme.dataTable.searcher?.pad}
       >
         <TextInput
           name={`search-${property}`}
@@ -73,35 +72,21 @@ const Searcher = ({
       </Box>
     </Keyboard>
   ) : (
-    <>
-      {filters[property] ? (
-        <Box
-          flex={false}
-          pad={{ horizontal: 'small' }}
-          direction="row"
-          align="center"
-        >
-          <Text>{filters[property]}</Text>
-        </Box>
-      ) : null}
-      <Button
-        ref={buttonRef}
-        a11yTitle={a11yTitle}
-        icon={
-          <FormSearch
-            color={normalizeColor(
-              filtering === property ? 'brand' : 'border',
-              theme,
-            )}
-          />
-        }
-        hoverIndicator
-        focusIndicator={focusIndicator}
-        onClick={() =>
-          onFiltering(filtering === property ? undefined : property)
-        }
-      />
-    </>
+    <Button
+      ref={buttonRef}
+      a11yTitle={a11yTitle}
+      icon={
+        <FormSearch
+          color={normalizeColor(
+            filtering === property ? 'brand' : 'border',
+            theme,
+          )}
+        />
+      }
+      hoverIndicator
+      focusIndicator={focusIndicator}
+      onClick={() => onFiltering(filtering === property ? undefined : property)}
+    />
   );
 };
 

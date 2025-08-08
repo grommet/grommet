@@ -954,6 +954,12 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         gap: 'xsmall',
         // extend: undefined,
       },
+      footer: {
+        groups: {
+          pad: 'none',
+          size: 'xxsmall',
+        },
+      },
       groupHeader: {
         // background: undefined,
         // border: undefined,
@@ -1004,6 +1010,18 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         //     size: undefined,
         //   },
         // },
+      },
+      rowDetails: {
+        pad: 'none',
+        size: 'xxsmall',
+      },
+      searcher: {
+        pad: {
+          left: 'small',
+        },
+      },
+      sorter: {
+        gap: 'xsmall',
       },
     },
     diagram: {
