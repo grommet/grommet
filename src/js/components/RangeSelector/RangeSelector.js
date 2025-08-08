@@ -383,7 +383,7 @@ const RangeSelector = forwardRef(
           {content}
           <Text
             ref={maxRef}
-            size={theme.rangeSelector.label.size}
+            size="small"
             margin={theme.rangeSelector.label.margin}
           >
             {typeof label === 'function' ? label(upper) : upper}
