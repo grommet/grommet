@@ -1144,6 +1144,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       sticky: {
         zIndex: '20',
       },
+      gap: 'medium',
     },
     heading: {
       // color: undefined,
