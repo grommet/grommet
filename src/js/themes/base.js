@@ -906,6 +906,18 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       // button: {
       //   kind: undefined,
       // },
+      drop: {
+        pad: 'small',
+      },
+    },
+    dataFilter: {
+      rangeSelector: {
+        size: 'full',
+        round: 'small',
+      },
+      selectMultiple: {
+        dropHeight: 'medium',
+      },
     },
     dateInput: {
       container: {
@@ -999,6 +1011,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       line: {
         color: 'graph-0',
       },
+    },
+    distribution: {
+      gap: 'xsmall',
     },
     // drop: {
     //   extend: undefined,
@@ -1133,6 +1148,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       sticky: {
         zIndex: '20',
       },
+      gap: 'medium',
     },
     heading: {
       // color: undefined,
@@ -1241,6 +1257,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           color: 'status-disabled',
           cursor: 'default',
         },
+        gap: 'medium',
         pinned: {
           background: 'background-contrast',
           icon: {
@@ -1342,6 +1359,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         // any text props
         color: 'text',
       },
+    },
+    nav: {
+      gap: 'medium',
     },
     notification: {
       actions: {
@@ -1769,6 +1789,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       large: { ...fontSizing(1) },
       xlarge: { ...fontSizing(2) },
       xxlarge: { ...fontSizing(4) },
+      skeleton: {
+        gap: 'xsmall',
+      },
     },
     thumbsRating: {
       // dislike: {
@@ -1929,6 +1952,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         text: {
           margin: 'none',
         },
+      },
+      search: {
+        pad: 'xsmall',
       },
       // searchInput: undefined,
       step: 20,
@@ -2221,6 +2247,14 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         color: 'light-4',
         interval: 10,
         // track: { color: undefined }
+        thickness: 'small',
+      },
+      time: {
+        container: {
+          pad: {
+            horizontal: 'small',
+          },
+        },
       },
     },
     worldMap: {
