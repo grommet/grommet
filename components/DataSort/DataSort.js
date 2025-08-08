@@ -113,7 +113,7 @@ var Content = function Content(_ref) {
   }))];
 };
 var DataSort = exports.DataSort = function DataSort(_ref4) {
-  var _theme$data$button;
+  var _theme$data$button, _theme$data;
   var drop = _ref4.drop,
     options = _ref4.options,
     rest = _objectWithoutPropertiesLoose(_ref4, _excluded);
@@ -149,7 +149,7 @@ var DataSort = exports.DataSort = function DataSort(_ref4) {
     icon: /*#__PURE__*/_react["default"].createElement(_Descend.Descend, null),
     dropProps: dropProps,
     dropContent: /*#__PURE__*/_react["default"].createElement(_Box.Box, {
-      pad: "small"
+      pad: (_theme$data = theme.data) == null || (_theme$data = _theme$data.drop) == null ? void 0 : _theme$data.pad
     }, content),
     open: showContent,
     onOpen: function onOpen() {

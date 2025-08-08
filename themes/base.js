@@ -967,6 +967,9 @@ var generate = exports.generate = function generate(baseSpacing, scale) {
       // button: {
       //   kind: undefined,
       // },
+      drop: {
+        pad: 'small'
+      }
     },
     dataFilter: {
       rangeSelector: {

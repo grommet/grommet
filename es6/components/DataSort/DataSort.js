@@ -108,7 +108,7 @@ var Content = function Content(_ref) {
   }))];
 };
 export var DataSort = function DataSort(_ref4) {
-  var _theme$data$button;
+  var _theme$data$button, _theme$data;
   var drop = _ref4.drop,
     options = _ref4.options,
     rest = _objectWithoutPropertiesLoose(_ref4, _excluded);
@@ -144,7 +144,7 @@ export var DataSort = function DataSort(_ref4) {
     icon: /*#__PURE__*/React.createElement(Descend, null),
     dropProps: dropProps,
     dropContent: /*#__PURE__*/React.createElement(Box, {
-      pad: "small"
+      pad: (_theme$data = theme.data) == null || (_theme$data = _theme$data.drop) == null ? void 0 : _theme$data.pad
     }, content),
     open: showContent,
     onOpen: function onOpen() {

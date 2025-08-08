@@ -32,7 +32,7 @@ var dropProps = {
 // 300ms was chosen empirically as a reasonable default
 var DEBOUNCE_TIMEOUT = 300;
 var DataSearch = exports.DataSearch = function DataSearch(_ref) {
-  var _theme$data$button;
+  var _theme$data$button, _theme$data;
   var drop = _ref.drop,
     idProp = _ref.id,
     responsive = _ref.responsive,
@@ -135,7 +135,7 @@ var DataSearch = exports.DataSearch = function DataSearch(_ref) {
     icon: /*#__PURE__*/_react["default"].createElement(_Search.Search, null),
     dropProps: dropProps,
     dropContent: /*#__PURE__*/_react["default"].createElement(_Box.Box, {
-      pad: "small"
+      pad: (_theme$data = theme.data) == null || (_theme$data = _theme$data.drop) == null ? void 0 : _theme$data.pad
     }, content),
     open: showContent,
     onOpen: function onOpen() {
