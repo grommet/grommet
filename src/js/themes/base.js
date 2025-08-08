@@ -1020,6 +1020,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
     //   maxHeight: undefined,
     // },
     fileInput: {
+      anchor: {
+        margin: 'small',
+      },
       // background: {},
       border: {
         // color: undefined,
@@ -1044,6 +1047,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
       // pad: {},
       label: {
+        gap: 'xsmall',
         margin: 'small',
         // extend: undefined,
       },
@@ -1051,6 +1055,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         margin: 'small',
         // extend: undefined,
       },
+      rightOffset: parseMetricToNum(`${baseSpacing / 2}px`) * 2,
       // extend: undefined,
     },
     footer: {
