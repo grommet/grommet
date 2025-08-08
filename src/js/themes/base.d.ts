@@ -838,6 +838,18 @@ export interface ThemeType {
     button?: {
       kind?: string;
     };
+    drop?: {
+      pad?: PadType;
+    };
+  };
+  dataFilter?: {
+    rangeSelector?: {
+      size?: string;
+      round?: string;
+    };
+    selectMultiple?: {
+      dropHeight?: string;
+    };
   };
   dateInput?: {
     container?: {
@@ -933,6 +945,9 @@ export interface ThemeType {
       color?: ColorType;
     };
   };
+  distribution?: {
+    gap?: GapType;
+  };
   drop?: {
     extend?: ExtendType;
     maxHeight?: string;
@@ -961,6 +976,9 @@ export interface ThemeType {
     message?: TextProps & { extend?: ExtendType };
     pad?: PadType;
     round?: RoundType;
+  };
+  footer?: {
+    gap?: GapType;
   };
   formField?: {
     border?: BorderType & {
@@ -1294,10 +1312,14 @@ export interface ThemeType {
     extend?: ExtendType;
     gap?: GapType;
   };
+  nav?: {
+    gap?: GapType;
+  };
   notification?: {
     actions?: AnchorProps;
     container?: BoxProps;
     direction?: 'column' | 'row';
+    gap?: GapType;
     global?: {
       direction?: 'column' | 'row';
       container?: BoxProps;
@@ -1311,7 +1333,7 @@ export interface ThemeType {
     iconContainer?: BoxProps;
     textContainer?: BoxProps;
     title?: TextProps;
-    message?: TextProps & { fill?: boolean };
+    message?: TextProps & { fill?: boolean; text?: { margin?: MarginType } };
     close?: {
       icon?: React.ReactNode | Icon;
       color?: ColorType;
@@ -1597,6 +1619,9 @@ export interface ThemeType {
       size?: string;
       height?: string;
       maxWidth?: string;
+    };
+    skeleton?: {
+      gap?: GapType;
     };
   };
   radioButton?: {
@@ -2052,6 +2077,12 @@ export interface ThemeType {
       interval?: number;
       track?: {
         color?: ColorType;
+      };
+      thickness?: string;
+    };
+    time?: {
+      container?: {
+        pad?: PadType;
       };
     };
   };
