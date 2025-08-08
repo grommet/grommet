@@ -1283,6 +1283,9 @@ export interface ThemeType {
     disabled?: {
       opacity?: OpacityType;
     };
+    option?: {
+      pad?: PadType;
+    };
   };
   menu?: {
     background?: BackgroundType;
