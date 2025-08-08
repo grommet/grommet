@@ -1273,6 +1273,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       // },
       // extend: undefined,
       // disabled: { opacity: undefined },
+      option: {
+        pad: { horizontal: 'small', vertical: 'xsmall' },
+      },
     },
     menu: {
       // background: undefined,
