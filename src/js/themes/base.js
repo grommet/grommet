@@ -762,6 +762,10 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         gap: 'xsmall',
         // extend: undefined,
       },
+      grid: {
+        columns: 'small',
+        gap: 'medium',
+      },
     },
     carousel: {
       icons: {
