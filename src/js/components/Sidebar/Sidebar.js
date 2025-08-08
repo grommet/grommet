@@ -8,7 +8,7 @@ export const Sidebar = ({ children, footer, header, ...rest }) => {
   return (
     <Box
       height={{ min: '100%' }}
-      gap={theme.sideBar.gap}
+      gap={theme.sidebar.gap}
       pad={theme.sideBar.pad}
       {...rest}
     >
