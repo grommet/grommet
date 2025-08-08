@@ -919,6 +919,15 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         dropHeight: 'medium',
       },
     },
+    dataFilters: {
+      clearControl: {
+        margin: { start: 'small' },
+      },
+      content: {
+        pad: 'medium',
+        width: { min: 'medium' },
+      },
+    },
     dateInput: {
       container: {
         round: 'xxsmall',
