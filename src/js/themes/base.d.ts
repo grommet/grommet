@@ -870,6 +870,12 @@ export interface ThemeType {
       };
     };
     container?: BoxProps;
+    footer?: {
+      cell?: {
+        pad?: PadType;
+        size?: string;
+      };
+    };
     header?: {
       background?: BackgroundType;
       border?: BorderType;
@@ -937,6 +943,16 @@ export interface ThemeType {
     };
     primary?: {
       weight?: string;
+    };
+    rowDetails?: {
+      pad?: PadType;
+      size?: string;
+    };
+    searcher?: {
+      pad?: PadType;
+    };
+    sorter?: {
+      gap?: GapType;
     };
   };
   diagram?: {

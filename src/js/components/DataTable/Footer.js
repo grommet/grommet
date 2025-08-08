@@ -27,6 +27,7 @@ const Footer = forwardRef(
   ) => {
     const pin = pinProp ? ['bottom'] : [];
     const { passThemeFlag } = useThemeValue();
+    const { theme } = useThemeValue();
 
     return (
       <StyledDataTableFooter ref={ref} fillProp={fill} pin={pinProp} {...rest}>
@@ -34,8 +35,8 @@ const Footer = forwardRef(
           {groups && (
             <TableCell
               plain
-              size="xxsmall"
-              pad="none"
+              size={theme.dataTable.footer.cell.size}
+              pad={theme.dataTable.footer.cell.pad}
               verticalAlign="top"
               background={cellProps.background}
               border={cellProps.border}

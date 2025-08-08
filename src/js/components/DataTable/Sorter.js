@@ -33,7 +33,7 @@ const Sorter = ({
       direction="row"
       justify={align}
       align="center"
-      gap="xsmall"
+      gap={theme.dataTable.sorter?.gap}
       fill={fill}
     >
       {children}
