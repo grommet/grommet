@@ -921,9 +921,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       // },
     },
     dataSummary: {
-      container: {
-        margin: { vertical: 'xsmall' },
-      },
+      margin: { vertical: 'xsmall' },
       separator: {
         margin: { horizontal: 'small' },
       },

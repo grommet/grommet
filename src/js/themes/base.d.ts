@@ -849,9 +849,7 @@ export interface ThemeType {
     };
   };
   dataSummary?: {
-    container?: {
-      margin?: MarginType;
-    };
+    margin?: MarginType;
     separator?: {
       margin?: MarginType;
     };
