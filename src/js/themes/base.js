@@ -427,6 +427,12 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       //   },
       // },
       // extend: undefined,
+      popover: {
+        round: 'small',
+        elevation: 'small',
+        background: 'background-back',
+        pad: 'small',
+      },
     },
     avatar: {
       // extend: undefined,
