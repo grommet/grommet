@@ -7,6 +7,7 @@ var _propTypes = _interopRequireDefault(require("prop-types"));
 var _Box = require("../Box");
 var _Text = require("../Text");
 var _propTypes2 = require("./propTypes");
+var _useThemeValue2 = require("../../utils/useThemeValue");
 var _excluded = ["basis", "children", "direction", "fill", "gap", "values"];
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
@@ -38,11 +39,12 @@ var _Distribution = exports.Distribution = function Distribution(_ref2) {
     _ref2$direction = _ref2.direction,
     direction = _ref2$direction === void 0 ? 'row' : _ref2$direction,
     fill = _ref2.fill,
-    _ref2$gap = _ref2.gap,
-    gap = _ref2$gap === void 0 ? 'xsmall' : _ref2$gap,
+    gap = _ref2.gap,
     _ref2$values = _ref2.values,
     values = _ref2$values === void 0 ? defaultValues : _ref2$values,
     rest = _objectWithoutPropertiesLoose(_ref2, _excluded);
+  var _useThemeValue = (0, _useThemeValue2.useThemeValue)(),
+    theme = _useThemeValue.theme;
   if (values.length === 1) {
     var value = values[0];
     return /*#__PURE__*/_react["default"].createElement(Value, {
@@ -51,6 +53,7 @@ var _Distribution = exports.Distribution = function Distribution(_ref2) {
     }, children(value));
   }
   if (values.length > 1) {
+    var _theme$distribution, _theme$distribution2, _theme$distribution3;
     var reducer = function reducer(accumulator, _ref3) {
       var value = _ref3.value;
       return accumulator + (value || 0);
@@ -95,18 +98,18 @@ var _Distribution = exports.Distribution = function Distribution(_ref2) {
       basis: basis,
       flex: basis ? 'shrink' : true,
       overflow: "hidden",
-      gap: gap,
+      gap: gap || ((_theme$distribution = theme.distribution) == null ? void 0 : _theme$distribution.gap),
       fill: fill
     }, rest), /*#__PURE__*/_react["default"].createElement(_Distribution, {
       values: values.slice(0, subIndex),
       basis: childBasis[0],
       direction: direction === 'row' ? 'column' : 'row',
-      gap: gap
+      gap: gap || ((_theme$distribution2 = theme.distribution) == null ? void 0 : _theme$distribution2.gap)
     }, children), /*#__PURE__*/_react["default"].createElement(_Distribution, {
       values: values.slice(subIndex),
       basis: childBasis[1],
       direction: direction === 'row' ? 'column' : 'row',
-      gap: gap
+      gap: gap || ((_theme$distribution3 = theme.distribution) == null ? void 0 : _theme$distribution3.gap)
     }, children));
   }
   return null;

@@ -1078,6 +1078,9 @@ export var generate = function generate(baseSpacing, scale) {
         color: 'graph-0'
       }
     },
+    distribution: {
+      gap: 'xsmall'
+    },
     // drop: {
     //   extend: undefined,
     //   maxHeight: undefined,
