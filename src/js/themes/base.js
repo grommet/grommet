@@ -1777,6 +1777,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       large: { ...fontSizing(1) },
       xlarge: { ...fontSizing(2) },
       xxlarge: { ...fontSizing(4) },
+      skeleton: {
+        gap: 'xsmall',
+      },
     },
     thumbsRating: {
       // dislike: {
