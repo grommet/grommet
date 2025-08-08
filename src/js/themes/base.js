@@ -951,7 +951,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         // extend: undefined,
       },
       footer: {
-        cell: {
+        groups: {
           pad: 'none',
           size: 'xxsmall',
         },
@@ -978,14 +978,6 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         //   background: undefined,
         // },
         // pad: undefined,
-        // searcher: {
-        //   pad: {
-        //     left: 'small',
-        //   },
-        // },
-        // sorter: {
-        //   gap: 'xsmall',
-        // },
         units: {
           color: 'text-xweak',
           margin: { left: 'xsmall' },
@@ -1016,8 +1008,8 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         // },
       },
       rowDetails: {
-        size: 'xxsmall',
         pad: 'none',
+        size: 'xxsmall',
       },
       searcher: {
         pad: {

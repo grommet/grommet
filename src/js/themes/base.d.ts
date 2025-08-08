@@ -871,7 +871,7 @@ export interface ThemeType {
     };
     container?: BoxProps;
     footer?: {
-      cell?: {
+      groups?: {
         pad?: PadType;
         size?: string;
       };
