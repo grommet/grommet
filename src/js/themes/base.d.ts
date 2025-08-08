@@ -1597,6 +1597,14 @@ export interface ThemeType {
       next?: React.ReactNode | Icon;
       previous?: React.ReactNode | Icon;
     };
+    step?: {
+      container?: {
+        gap?: GapType;
+      };
+    };
+    withControls?: {
+      gap?: GapType;
+    };
   };
   paragraph?: {
     extend?: ExtendType;
