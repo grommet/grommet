@@ -206,17 +206,14 @@ const FileInput = forwardRef(
         rightOffset = rightOffsetRemove + parseMetricToNum(rightPad);
       if (files.length === 1 || files.length > aggregateThreshold) {
         rightOffset =
-          rightOffsetBrowse +
-          rightOffsetRemove +
-          parseMetricToNum(theme.global.edgeSize.small) * 2;
+          rightOffsetBrowse + rightOffsetRemove + theme.fileInput.rightOffset;
       } else if (rightOffsetBrowse > rightOffsetRemove) {
-        rightOffset =
-          rightOffsetBrowse + parseMetricToNum(theme.global.edgeSize.small) * 2;
+        rightOffset = rightOffsetBrowse + theme.fileInput.rightOffset;
       } else rightOffset = rightOffsetRemove;
     } else if (!files.length && controlRef.current) {
       rightOffset =
         controlRef.current.getBoundingClientRect().width +
-        parseMetricToNum(theme.global.edgeSize.small) * 2;
+        theme.fileInput.rightOffset;
     }
 
     // Show the number of files when more than one
@@ -371,7 +368,7 @@ const FileInput = forwardRef(
                         alignSelf="center"
                         disabled={disabled}
                         ref={controlRef}
-                        margin="small"
+                        margin={theme.fileInput.anchor.margin}
                         onClick={() => {
                           inputRef.current.click();
                           inputRef.current.focus();
@@ -447,7 +444,7 @@ const FileInput = forwardRef(
                       alignSelf="center"
                       disabled={disabled}
                       ref={controlRef}
-                      margin="small"
+                      margin={theme.fileInput.anchor.margin}
                       onClick={() => {
                         inputRef.current.click();
                         inputRef.current.focus();
@@ -483,7 +480,6 @@ const FileInput = forwardRef(
                   ) : (
                     <Box
                       {...theme.fileInput.label}
-                      gap="xsmall"
                       align="center"
                       direction="row"
                     >
@@ -567,7 +563,7 @@ const FileInput = forwardRef(
                             tabIndex={-1}
                             disabled={disabled}
                             ref={controlRef}
-                            margin="small"
+                            margin={theme.fileInput.anchor.margin}
                             onClick={() => {
                               inputRef.current.click();
                               inputRef.current.focus();

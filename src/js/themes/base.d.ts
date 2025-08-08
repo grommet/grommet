@@ -947,6 +947,9 @@ export interface ThemeType {
     maxHeight?: string;
   };
   fileInput?: {
+    anchor?: {
+      margin?: MarginType;
+    };
     background?: BackgroundType;
     border?: BorderType;
     dragOver?: {
@@ -970,6 +973,7 @@ export interface ThemeType {
     message?: TextProps & { extend?: ExtendType };
     pad?: PadType;
     round?: RoundType;
+    rightOffset?: Number;
   };
   footer?: {
     gap?: GapType;
