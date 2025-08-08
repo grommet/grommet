@@ -76,6 +76,7 @@ var ClearButton = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
   });
 });
 var SelectContainer = exports.SelectContainer = /*#__PURE__*/(0, _react.forwardRef)(function (_ref3, ref) {
+  var _theme$select;
   var clear = _ref3.clear,
     _ref3$children = _ref3.children,
     children = _ref3$children === void 0 ? null : _ref3$children,
@@ -303,7 +304,7 @@ var SelectContainer = exports.SelectContainer = /*#__PURE__*/(0, _react.forwardR
     id: id ? id + "__select-drop" : undefined,
     dropHeight: dropHeight
   }, passThemeFlag), onSearch && /*#__PURE__*/_react["default"].createElement(_Box.Box, {
-    pad: !customSearchInput ? 'xsmall' : undefined,
+    pad: !customSearchInput ? (_theme$select = theme.select) == null || (_theme$select = _theme$select.search) == null ? void 0 : _theme$select.pad : undefined,
     flex: false
   }, /*#__PURE__*/_react["default"].createElement(SelectTextInput, {
     focusIndicator: !customSearchInput,

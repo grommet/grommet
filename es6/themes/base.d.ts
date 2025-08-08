@@ -1770,6 +1770,9 @@ export interface ThemeType {
       container?: PropsOf<typeof Box>;
       text?: PropsOf<typeof Text>;
     };
+    search?: {
+      pad?: PadType;
+    };
     // https://github.com/DefinitelyTyped/DefinitelyTyped/issues/37506
     searchInput?: ReactComponentElement<any>;
     step?: number;

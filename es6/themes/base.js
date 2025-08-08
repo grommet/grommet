@@ -2071,6 +2071,9 @@ export var generate = function generate(baseSpacing, scale) {
           margin: 'none'
         }
       },
+      search: {
+        pad: 'xsmall'
+      },
       // searchInput: undefined,
       step: 20
     },
