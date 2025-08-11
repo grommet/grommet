@@ -1045,7 +1045,6 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         margin: 'small',
         // extend: undefined,
       },
-      rightOffset: parseMetricToNum(`${baseSpacing / 2}px`) * 2,
       // extend: undefined,
     },
     footer: {

@@ -6,7 +6,6 @@ import { MessageContext } from '../../contexts/MessageContext';
 import {
   disabledStyle,
   focusStyle,
-  parseMetricToNum,
   unfocusStyle,
   useForwardedRef,
   useKeyboard,
@@ -182,40 +181,6 @@ const FileInput = forwardRef(
         : result;
     };
 
-    let rightPad;
-    if (mergeTheme('pad')) {
-      const { horizontal, right } = mergeTheme('pad');
-      if (right) {
-        rightPad = theme.global.edgeSize[right] || right;
-      } else if (horizontal) {
-        rightPad = theme.global.edgeSize[horizontal] || horizontal;
-      }
-    }
-
-    // rightPad needs to be included in the rightOffset
-    // otherwise input may cover the RemoveButton, making it
-    // unreachable by mouse click.
-    // If browse anchor or button is greater than remove button then
-    // rightoffset will take the larger width
-    let rightOffset;
-    if (removeRef.current && controlRef.current) {
-      const rightOffsetBrowse =
-        controlRef.current.getBoundingClientRect().width;
-      const rightOffsetRemove = removeRef.current.getBoundingClientRect().width;
-      if (rightPad && typeof rightPad === 'string')
-        rightOffset = rightOffsetRemove + parseMetricToNum(rightPad);
-      if (files.length === 1 || files.length > aggregateThreshold) {
-        rightOffset =
-          rightOffsetBrowse + rightOffsetRemove + theme.fileInput.rightOffset;
-      } else if (rightOffsetBrowse > rightOffsetRemove) {
-        rightOffset = rightOffsetBrowse + theme.fileInput.rightOffset;
-      } else rightOffset = rightOffsetRemove;
-    } else if (!files.length && controlRef.current) {
-      rightOffset =
-        controlRef.current.getBoundingClientRect().width +
-        theme.fileInput.rightOffset;
-    }
-
     // Show the number of files when more than one
 
     let message;
@@ -261,6 +226,66 @@ const FileInput = forwardRef(
       inputRef.current.focus();
     };
 
+    // rightPad needs to be included in the rightOffset
+    // otherwise input may cover the RemoveButton, making it
+    // unreachable by mouse click.
+    let rightPad = '0px';
+    if (mergeTheme('pad')) {
+      const { horizontal, right } = mergeTheme('pad');
+      if (right) {
+        rightPad = theme.global.edgeSize[right] || right;
+      } else if (horizontal) {
+        rightPad = theme.global.edgeSize[horizontal] || horizontal;
+      }
+    }
+
+    const removeWidth = removeRef.current
+      ? removeRef.current.getBoundingClientRect().width
+      : 0;
+
+    let controlWidth = controlRef.current
+      ? controlRef.current.getBoundingClientRect().width
+      : 0;
+
+    if (controlRef.current && theme.fileInput.anchor?.margin) {
+      if (typeof theme.fileInput.anchor.margin === 'string') {
+        controlWidth +=
+          parseInt(
+            theme.global.edgeSize[theme.fileInput.anchor.margin] ||
+              theme.fileInput.anchor.margin,
+            10,
+          ) * 2;
+      } else if (typeof theme.fileInput.anchor.margin === 'object') {
+        if (theme.fileInput.anchor.margin?.horizontal) {
+          controlWidth +=
+            parseInt(
+              theme.global.edgeSize[theme.fileInput.anchor.margin.horizontal] ||
+                theme.fileInput.anchor.margin.horizontal,
+              10,
+            ) * 2;
+        }
+        if (theme.fileInput.anchor.margin?.right) {
+          controlWidth += parseInt(
+            theme.global.edgeSize[theme.fileInput.anchor.margin.right] ||
+              theme.fileInput.anchor.margin.right,
+            10,
+          );
+        }
+        if (theme.fileInput.anchor.margin?.left) {
+          controlWidth += parseInt(
+            theme.global.edgeSize[theme.fileInput.anchor.margin.left] ||
+              theme.fileInput.anchor.margin.left,
+            10,
+          );
+        }
+      }
+    }
+
+    const rightOffset =
+      files.length > 1
+        ? removeWidth + parseInt(rightPad, 10)
+        : removeWidth + controlWidth + parseInt(rightPad, 10);
+
     return (
       <>
         <ContentsBox
@@ -294,7 +319,7 @@ const FileInput = forwardRef(
               (maxSize && files.some((f) => f.size > maxSize)) ||
               (max != null && files.length > max)
             }
-            rightOffset={rightOffset}
+            rightOffset={rightOffset || undefined}
             {...passThemeFlag}
             {...rest}
             onDragOver={() => setDragOver(true)}
