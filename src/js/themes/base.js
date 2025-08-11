@@ -1909,6 +1909,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         // type: undefined,
         // size: undefined,
       },
+      label: {
+        margin: { horizontal: 'small' },
+      },
     },
     select: {
       // background: undefined,
