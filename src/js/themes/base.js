@@ -361,6 +361,20 @@ export const generate = (baseSpacing = 24, scale = 6) => {
     //   size: undefined,
     // },
     accordion: {
+      icon: {
+        container: {
+          pad: {
+            horizontal: 'small',
+          },
+        },
+      },
+      label: {
+        container: {
+          pad: {
+            horizontal: 'xsmall',
+          },
+        },
+      },
       panel: {
         // border: {
         //   side: 'bottom',
@@ -444,6 +458,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
     },
     box: {
+      border: {
+        size: 'xsmall',
+      },
       responsiveBreakpoint: 'small', // when we switch rows to columns
       // extend: undefined,
     },
@@ -745,6 +762,10 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         gap: 'xsmall',
         // extend: undefined,
       },
+      grid: {
+        columns: 'small',
+        gap: 'medium',
+      },
     },
     carousel: {
       icons: {
@@ -784,7 +805,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
       // color: { dark: undefined, light: undefined },
       // extend: undefined,
-      // gap: undefined
+      gap: 'small',
       hover: {
         border: {
           color: {
@@ -820,10 +841,11 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
     },
     checkBoxGroup: {
-      // container: {
-      //   // any box props
-      //   extend: undefined,
-      // },
+      container: {
+        //   // any box props
+        //   extend: undefined,
+        gap: 'small',
+      },
     },
     clock: {
       analog: {
@@ -884,6 +906,18 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       // button: {
       //   kind: undefined,
       // },
+      drop: {
+        pad: 'small',
+      },
+    },
+    dataFilter: {
+      rangeSelector: {
+        size: 'full',
+        round: 'small',
+      },
+      selectMultiple: {
+        dropHeight: 'medium',
+      },
     },
     dateInput: {
       container: {
@@ -978,6 +1012,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         color: 'graph-0',
       },
     },
+    distribution: {
+      gap: 'xsmall',
+    },
     // drop: {
     //   extend: undefined,
     //   maxHeight: undefined,
@@ -1015,6 +1052,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         // extend: undefined,
       },
       // extend: undefined,
+    },
+    footer: {
+      gap: 'medium',
     },
     formField: {
       // [inputname]: {
@@ -1108,6 +1148,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       sticky: {
         zIndex: '20',
       },
+      gap: 'medium',
     },
     heading: {
       // color: undefined,
@@ -1216,6 +1257,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           color: 'status-disabled',
           cursor: 'default',
         },
+        gap: 'medium',
         pinned: {
           background: 'background-contrast',
           icon: {
@@ -1318,9 +1360,13 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         color: 'text',
       },
     },
+    nav: {
+      gap: 'medium',
+    },
     notification: {
       actions: {
         // any anchor props
+        margin: { right: 'xsmall' },
       },
       direction: 'column',
       container: {
@@ -1331,6 +1377,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           color: 'background-front',
         },
       },
+      gap: 'small',
       global: {
         direction: 'row',
         container: {
@@ -1372,6 +1419,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         // any text props
         margin: 'none',
         // fill: undefined,
+        text: {
+          margin: { right: 'xsmall' },
+        },
       },
       close: {
         icon: FormClose,
@@ -1739,6 +1789,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       large: { ...fontSizing(1) },
       xlarge: { ...fontSizing(2) },
       xxlarge: { ...fontSizing(4) },
+      skeleton: {
+        gap: 'xsmall',
+      },
     },
     thumbsRating: {
       // dislike: {
@@ -1902,6 +1955,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         text: {
           margin: 'none',
         },
+      },
+      search: {
+        pad: 'xsmall',
       },
       // searchInput: undefined,
       step: 20,
@@ -2168,6 +2224,12 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         color: 'border',
       },
     },
+    toolbar: {
+      small: {
+        gap: 'small',
+      },
+      gap: 'small',
+    },
     video: {
       captions: {
         background: 'rgba(0, 0, 0, 0.7)',
@@ -2188,6 +2250,14 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         color: 'light-4',
         interval: 10,
         // track: { color: undefined }
+        thickness: 'small',
+      },
+      time: {
+        container: {
+          pad: {
+            horizontal: 'small',
+          },
+        },
       },
     },
     worldMap: {
