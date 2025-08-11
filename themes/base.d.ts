@@ -1742,6 +1742,9 @@ export interface ThemeType {
       type?: string;
       size?: EdgeSizeType | string;
     };
+    label?: {
+      margin?: MarginType;
+    };
   };
   select?: {
     background?: BackgroundType;

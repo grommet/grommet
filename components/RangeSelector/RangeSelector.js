@@ -338,15 +338,11 @@ var RangeSelector = exports.RangeSelector = /*#__PURE__*/(0, _react.forwardRef)(
       ref: minRef,
       textAlign: "end",
       size: "small",
-      margin: {
-        horizontal: 'small'
-      }
+      margin: theme.rangeSelector.label.margin
     }, typeof label === 'function' ? label(lower) : lower), content, /*#__PURE__*/_react["default"].createElement(_Text.Text, {
       ref: maxRef,
       size: "small",
-      margin: {
-        horizontal: 'small'
-      }
+      margin: theme.rangeSelector.label.margin
     }, typeof label === 'function' ? label(upper) : upper));
   }
   return content;

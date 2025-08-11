@@ -2031,6 +2031,11 @@ var generate = exports.generate = function generate(baseSpacing, scale) {
       edge: {
         // type: undefined,
         // size: undefined,
+      },
+      label: {
+        margin: {
+          horizontal: 'small'
+        }
       }
     },
     select: {

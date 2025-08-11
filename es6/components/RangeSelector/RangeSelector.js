@@ -332,15 +332,11 @@ var RangeSelector = /*#__PURE__*/forwardRef(function (_ref, ref) {
       ref: minRef,
       textAlign: "end",
       size: "small",
-      margin: {
-        horizontal: 'small'
-      }
+      margin: theme.rangeSelector.label.margin
     }, typeof label === 'function' ? label(lower) : lower), content, /*#__PURE__*/React.createElement(Text, {
       ref: maxRef,
       size: "small",
-      margin: {
-        horizontal: 'small'
-      }
+      margin: theme.rangeSelector.label.margin
     }, typeof label === 'function' ? label(upper) : upper));
   }
   return content;
