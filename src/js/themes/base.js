@@ -1265,6 +1265,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
     menu: {
       // background: undefined,
       // extend: undefined,
+      // item: undefined,
       drop: {
         align: {
           top: 'top',
