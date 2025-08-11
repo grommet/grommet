@@ -1981,9 +1981,6 @@ export interface ThemeType {
       extend?: ExtendType;
     };
     suggestions?: {
-      container?: {
-        pad?: PadType;
-      };
       extend?: ExtendType;
     };
   };
