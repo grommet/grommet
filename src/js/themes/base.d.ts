@@ -1756,7 +1756,9 @@ export interface ThemeType {
       pad?: PadType;
     };
     helpText?: {
-      pad: PadType;
+      container?: {
+        pad: PadType;
+      };
     };
     maxInline?: number;
     listbox?: {

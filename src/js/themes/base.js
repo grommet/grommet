@@ -1934,7 +1934,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         pad: 'xsmall',
       },
       helpText: {
-        pad: 'xsmall',
+        container: {
+          pad: 'xsmall',
+        },
       },
       maxInline: 5,
       // listbox: {

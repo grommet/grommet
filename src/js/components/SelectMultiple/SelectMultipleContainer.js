@@ -365,7 +365,10 @@ const SelectMultipleContainer = forwardRef(
     if (help) {
       if (typeof help === 'string')
         helpContent = (
-          <Box flex={false} pad={theme.selectMultiple?.helpText?.pad}>
+          <Box
+            flex={false}
+            pad={theme.selectMultiple?.helpText?.container?.pad}
+          >
             <Text size="small">{help}</Text>
           </Box>
         );
