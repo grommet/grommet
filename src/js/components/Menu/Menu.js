@@ -251,13 +251,16 @@ const Menu = forwardRef((props, ref) => {
   if (children) {
     content = children;
   } else if (!theme.button.default) {
+    // we are not going to change pad to a theme object
+    // since this will not be rendered in the hpe theme
+    // since we have theme.button.default
     content = (
       <Box
         direction="row"
         justify={justifyContent}
         align="center"
-        pad={theme.menu.label?.pad}
-        gap={label && icon !== false ? theme.menu.label?.gap : undefined}
+        pad="small"
+        gap={label && icon !== false ? 'small' : undefined}
       >
         <Text size={size}>{label}</Text>
         {menuIcon}
@@ -307,9 +310,12 @@ const Menu = forwardRef((props, ref) => {
     // Determine whether the label is done as a child or
     // as an option Button kind property.
     const child = !theme.button.option ? (
+      // we are not going to change pad to a theme object
+      // since this will not be rendered in the hpe theme
+      // since we have theme.button.default
       <Box
         align={theme.menu.item?.align || 'start'}
-        pad={theme.menu.item?.pad}
+        pad="small"
         direction="row"
         gap={item.gap || theme.menu.item?.gap}
         justify={item.justify || theme.menu.item?.justify}
