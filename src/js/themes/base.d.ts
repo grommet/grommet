@@ -636,15 +636,14 @@ export interface ThemeType {
           round?: RoundType;
         };
       };
-      title?: TextProps;
-      fontSize?: string;
-      header?: {
+      title?: TextProps & {
         container?: {
           pad?: {
             horizontal?: string;
           };
         };
       };
+      fontSize?: string;
       lineHeight?: number;
       daySize?: string;
       slideDuration?: string;
@@ -662,15 +661,14 @@ export interface ThemeType {
           round?: RoundType;
         };
       };
-      title?: TextProps;
-      fontSize?: string;
-      header?: {
+      title?: TextProps & {
         container?: {
           pad?: {
             horizontal?: string;
           };
         };
       };
+      fontSize?: string;
       lineHeight?: number;
       daySize?: string;
       slideDuration?: string;
@@ -688,15 +686,14 @@ export interface ThemeType {
           round?: RoundType;
         };
       };
-      title?: TextProps;
-      fontSize?: string;
-      header?: {
+      title?: TextProps & {
         container?: {
           pad?: {
             horizontal?: string;
           };
         };
       };
+      fontSize?: string;
       lineHeight?: number;
       daySize?: string;
       slideDuration?: string;

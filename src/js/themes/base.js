@@ -672,7 +672,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         // },
         // title: {},
         fontSize: `${baseFontSize - fontScale}px`,
-        header: {
+        title: {
           container: {
             pad: {
               horizontal: 'xsmall',
@@ -698,7 +698,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         // },
         // title: {},
         fontSize: `${baseFontSize}px`,
-        header: {
+        title: {
           container: {
             pad: {
               horizontal: 'small',
@@ -724,7 +724,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         // },
         // title: {},
         fontSize: `${baseFontSize + 3 * fontScale}px`,
-        header: {
+        title: {
           container: {
             pad: {
               horizontal: 'medium',
