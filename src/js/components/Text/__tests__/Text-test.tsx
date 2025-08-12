@@ -159,15 +159,27 @@ test('renders weight', () => {
   expect(container.firstChild).toMatchSnapshot();
 });
 
-test('renders tip', () => {
-  const { container, getByText } = render(
-    <Grommet>
-      <Text tip="tooltip">Default Tip</Text>
-    </Grommet>,
-  );
+describe('Text component with tip', () => {
+  let mathRandomSpy: jest.SpyInstance<number, []>;
 
-  fireEvent.mouseOver(getByText('Default Tip'));
-  expect(container.firstChild).toMatchSnapshot();
+  beforeAll(() => {
+    mathRandomSpy = jest.spyOn(Math, 'random').mockReturnValue(0.123456789);
+  });
+
+  afterAll(() => {
+    mathRandomSpy.mockRestore();
+  });
+
+  test('renders tip', () => {
+    const { container, getByText } = render(
+      <Grommet>
+        <Text tip="tooltip">Default Tip</Text>
+      </Grommet>,
+    );
+
+    fireEvent.mouseOver(getByText('Default Tip'));
+    expect(container.firstChild).toMatchSnapshot();
+  });
 });
 
 test('should apply a11yTitle or aria-label', () => {
