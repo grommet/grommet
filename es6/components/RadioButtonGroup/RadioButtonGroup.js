@@ -10,7 +10,7 @@ import { RadioButton } from '../RadioButton';
 import { RadioButtonGroupPropTypes } from './propTypes';
 import { useThemeValue } from '../../utils/useThemeValue';
 var RadioButtonGroup = /*#__PURE__*/forwardRef(function (_ref, ref) {
-  var _formContext$useFormF;
+  var _formContext$useFormF, _theme$radioButtonGro;
   var ariaLabelProp = _ref['aria-label'],
     ariaLabelledByProp = _ref['aria-labelledby'],
     children = _ref.children,
@@ -119,7 +119,7 @@ var RadioButtonGroup = /*#__PURE__*/forwardRef(function (_ref, ref) {
     ref: ref,
     role: "radiogroup"
   }, theme.radioButtonGroup.container, {
-    gap: gap || (theme.radioButtonGroup.container && theme.radioButtonGroup.container.gap ? theme.radioButtonGroup.container.gap : 'small')
+    gap: gap || ((_theme$radioButtonGro = theme.radioButtonGroup.container) == null ? void 0 : _theme$radioButtonGro.gap)
   }, rest), options.map(function (_ref2, index) {
     var optionDisabled = _ref2.disabled,
       optionId = _ref2.id,

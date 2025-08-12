@@ -74,7 +74,7 @@ var RadioButton = exports.RadioButton = /*#__PURE__*/(0, _react.forwardRef)(func
   }, passThemeFlag), /*#__PURE__*/_react["default"].createElement(_StyledRadioButton.StyledRadioButton, _extends({
     flex: false,
     margin: label ? {
-      right: theme.radioButton.gap || 'small'
+      right: theme.radioButton.gap
     } : undefined
   }, passThemeFlag), /*#__PURE__*/_react["default"].createElement(_StyledRadioButton.StyledRadioButtonInput, _extends({
     "aria-label": a11yTitle

@@ -2011,7 +2011,10 @@ export var generate = function generate(baseSpacing, scale) {
       }
     },
     radioButtonGroup: {
-      // container: {}, // any box props
+      // any box props
+      container: {
+        gap: 'small'
+      }
     },
     rangeInput: {
       disabled: {

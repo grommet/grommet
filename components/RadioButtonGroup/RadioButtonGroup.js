@@ -15,7 +15,7 @@ function _interopRequireWildcard(e, t) { if ("function" == typeof WeakMap) var r
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (-1 !== e.indexOf(n)) continue; t[n] = r[n]; } return t; }
 var RadioButtonGroup = exports.RadioButtonGroup = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
-  var _formContext$useFormF;
+  var _formContext$useFormF, _theme$radioButtonGro;
   var ariaLabelProp = _ref['aria-label'],
     ariaLabelledByProp = _ref['aria-labelledby'],
     children = _ref.children,
@@ -124,7 +124,7 @@ var RadioButtonGroup = exports.RadioButtonGroup = /*#__PURE__*/(0, _react.forwar
     ref: ref,
     role: "radiogroup"
   }, theme.radioButtonGroup.container, {
-    gap: gap || (theme.radioButtonGroup.container && theme.radioButtonGroup.container.gap ? theme.radioButtonGroup.container.gap : 'small')
+    gap: gap || ((_theme$radioButtonGro = theme.radioButtonGroup.container) == null ? void 0 : _theme$radioButtonGro.gap)
   }, rest), options.map(function (_ref2, index) {
     var optionDisabled = _ref2.disabled,
       optionId = _ref2.id,
