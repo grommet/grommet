@@ -310,6 +310,11 @@ var TextInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
         // must be an element rendered by suggestions.label
         child = renderedLabel;else if (!theme.button.option)
         // don't have theme support, need to layout here
+        /*
+        Not adding a theme object now because this code path
+        is not used in the HPE theme, but we may add theme
+        support here in the future.
+        */
         child = /*#__PURE__*/React.createElement(Box, {
           align: "start",
           pad: "small"
