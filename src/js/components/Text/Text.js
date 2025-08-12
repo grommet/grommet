@@ -71,6 +71,17 @@ const Text = forwardRef(
       );
     }
 
+    let tipId;
+    let extraA11yProps = {};
+
+    if (tipProp || textTruncated) {
+      tipId = `tip-${Math.random().toString(36).slice(2, 9)}`;
+      extraA11yProps = {
+        tabIndex: 0,
+        'aria-describedby': tipId,
+      };
+    }
+
     const styledTextResult = (
       <StyledText
         as={!as && tag ? tag : as}
@@ -81,6 +92,7 @@ const Text = forwardRef(
         size={size}
         {...passThemeFlag}
         {...rest}
+        {...extraA11yProps}
         ref={textRef}
       >
         {children !== undefined ? (
@@ -91,9 +103,9 @@ const Text = forwardRef(
       </StyledText>
     );
 
-    const tipProps = tipProp && typeof tipProp === 'object' ? tipProp : {};
-
     if (tipProp || textTruncated) {
+      let tipProps = tipProp && typeof tipProp === 'object' ? tipProp : {};
+      tipProps = { ...tipProps, id: tipId };
       // place the text content in a tip if truncate === 'tip'
       // and the text has been truncated
       if (textTruncated) {
