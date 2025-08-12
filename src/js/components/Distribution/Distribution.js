@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import { Box } from '../Box';
 import { Text } from '../Text';
 import { DistributionPropTypes } from './propTypes';
+import { useThemeValue } from '../../utils/useThemeValue';
 
 const Value = ({ basis, children }) => (
   <Box basis={basis} flex="shrink" overflow="hidden">
@@ -29,10 +30,11 @@ const Distribution = ({
   children = defaultChildrenPropValue,
   direction = 'row',
   fill,
-  gap = 'xsmall',
+  gap,
   values = defaultValues,
   ...rest
 }) => {
+  const { theme } = useThemeValue();
   if (values.length === 1) {
     const value = values[0];
     return (
@@ -89,7 +91,7 @@ const Distribution = ({
         basis={basis}
         flex={basis ? 'shrink' : true}
         overflow="hidden"
-        gap={gap}
+        gap={gap || theme.distribution?.gap}
         fill={fill}
         {...rest}
       >
@@ -97,7 +99,7 @@ const Distribution = ({
           values={values.slice(0, subIndex)}
           basis={childBasis[0]}
           direction={direction === 'row' ? 'column' : 'row'}
-          gap={gap}
+          gap={gap || theme.distribution?.gap}
         >
           {children}
         </Distribution>
@@ -105,7 +107,7 @@ const Distribution = ({
           values={values.slice(subIndex)}
           basis={childBasis[1]}
           direction={direction === 'row' ? 'column' : 'row'}
-          gap={gap}
+          gap={gap || theme.distribution?.gap}
         >
           {children}
         </Distribution>
