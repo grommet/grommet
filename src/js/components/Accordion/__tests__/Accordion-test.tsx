@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import 'jest-styled-components';
 import 'jest-axe/extend-expect';
 import 'regenerator-runtime/runtime';
+import '@testing-library/jest-dom';
 
 import { axe } from 'jest-axe';
-import { render, screen } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import { Accordion, AccordionPanel, Box, Grommet } from '../..';
@@ -407,5 +408,70 @@ describe('Accordion', () => {
     ).toBeTruthy();
 
     expect(asFragment()).toMatchSnapshot();
+  });
+
+  test('should keep mount panels content', () => {
+    const Test = () => {
+      const [activeIndex, setActiveIndex] = useState([0]);
+
+      return (
+        <Accordion
+          level={2}
+          keepMount
+          activeIndex={activeIndex}
+          onActive={setActiveIndex}
+        >
+          <AccordionPanel label="Panel" data-testid="panel">
+            <div data-testid="panel-body">Panel body</div>
+          </AccordionPanel>
+        </Accordion>
+      );
+    };
+
+    render(
+      <Grommet>
+        <Test />
+      </Grommet>,
+    );
+
+    const panelBody = screen.getByTestId('panel-body');
+    expect(panelBody).toBeInTheDocument();
+
+    const accordionPanel = screen.getByTestId('panel');
+    fireEvent.click(accordionPanel);
+    expect(panelBody).toBeInTheDocument();
+  });
+
+  test('should keep mount panels content (animate=false)', () => {
+    const Test = () => {
+      const [activeIndex, setActiveIndex] = useState([0]);
+
+      return (
+        <Accordion
+          level={2}
+          keepMount
+          animate={false}
+          activeIndex={activeIndex}
+          onActive={setActiveIndex}
+        >
+          <AccordionPanel label="Panel" data-testid="panel">
+            <div data-testid="panel-body">Panel body</div>
+          </AccordionPanel>
+        </Accordion>
+      );
+    };
+
+    render(
+      <Grommet>
+        <Test />
+      </Grommet>,
+    );
+
+    const panelBody = screen.getByTestId('panel-body');
+    expect(panelBody).toBeInTheDocument();
+
+    const accordionPanel = screen.getByTestId('panel');
+    fireEvent.click(accordionPanel);
+    expect(panelBody).toBeInTheDocument();
   });
 });
