@@ -485,8 +485,9 @@ const MaskedInput = forwardRef(
                   // Determine whether the label is done as a child or
                   // as an option Button kind property.
                   const child = !theme.button.option ? (
-                    // For now we don't have a theme object for this Box's
-                    // pad since we won't hit this path in the HPE theme.
+                    // Not adding a theme object now because this code path
+                    // is not used in the HPE theme, but we may add theme
+                    // support here in the future.
                     <Box pad={{ horizontal: 'small', vertical: 'xsmall' }}>
                       {option}
                     </Box>
