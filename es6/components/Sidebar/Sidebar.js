@@ -4,17 +4,20 @@ function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t =
 import React from 'react';
 import { Box } from '../Box';
 import { SidebarPropTypes } from './propTypes';
+import { useThemeValue } from '../../utils/useThemeValue';
 export var Sidebar = function Sidebar(_ref) {
   var children = _ref.children,
     footer = _ref.footer,
     header = _ref.header,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
+  var _useThemeValue = useThemeValue(),
+    theme = _useThemeValue.theme;
   return /*#__PURE__*/React.createElement(Box, _extends({
-    pad: "small",
-    gap: "large",
     height: {
       min: '100%'
-    }
+    },
+    gap: theme.sidebar.gap,
+    pad: theme.sidebar.pad
   }, rest), header, /*#__PURE__*/React.createElement(Box, {
     flex: true
   }, children), footer);

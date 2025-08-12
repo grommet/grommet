@@ -1808,6 +1808,10 @@ export interface ThemeType {
       extend?: ExtendType;
     };
   };
+  sidebar?: {
+    gap?: GapType;
+    pad?: PadType;
+  };
   skeleton?: BoxProps & { colors?: SkeletonColorsType; extend?: ExtendType };
   skipLinks?: {
     position?: LayerPositionType;

@@ -2125,6 +2125,10 @@ var generate = exports.generate = function generate(baseSpacing, scale) {
       //   extend: () => undefined,
       // },
     },
+    sidebar: {
+      gap: 'large',
+      pad: 'small'
+    },
     skeleton: {
       border: false,
       colors: {
