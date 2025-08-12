@@ -1993,6 +1993,10 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       //   extend: () => undefined,
       // },
     },
+    sidebar: {
+      gap: 'large',
+      pad: 'small',
+    },
     skeleton: {
       border: false,
       colors: {
