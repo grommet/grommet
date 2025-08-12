@@ -1006,6 +1006,22 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         // },
       },
     },
+    dataTableColumns: {
+      tabs: {
+        pad: 'small',
+      },
+      selectColumns: {
+        pad: {
+          vertical: 'small',
+        },
+        gap: 'xsmall',
+      },
+      orderColumns: {
+        pad: {
+          top: 'small',
+        },
+      },
+    },
     diagram: {
       // extend: undefined,
       line: {
