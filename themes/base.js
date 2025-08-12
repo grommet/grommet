@@ -1409,8 +1409,8 @@ var generate = exports.generate = function generate(baseSpacing, scale) {
     },
     menu: {
       // background: undefined,
-      // item: undefined,
       // extend: undefined,
+      // item: undefined,
       drop: {
         align: {
           top: 'top',

@@ -227,6 +227,11 @@ var Menu = exports.Menu = /*#__PURE__*/(0, _react.forwardRef)(function (props, r
   if (children) {
     content = children;
   } else if (!theme.button["default"]) {
+    /*
+    Not adding a theme object now because this code path
+    is not used in the HPE theme, but we may add theme
+    support here in the future.
+    */
     content = /*#__PURE__*/_react["default"].createElement(_Box.Box, {
       direction: "row",
       justify: justifyContent,
@@ -280,7 +285,14 @@ var Menu = exports.Menu = /*#__PURE__*/(0, _react.forwardRef)(function (props, r
     var _theme$menu$item, _theme$menu$item2, _theme$menu$item3, _theme$menu$item4;
     // Determine whether the label is done as a child or
     // as an option Button kind property.
-    var child = !theme.button.option ? /*#__PURE__*/_react["default"].createElement(_Box.Box, {
+    var child = !theme.button.option ?
+    /*#__PURE__*/
+    /*
+     Not adding a theme object now because this code path
+     is not used in the HPE theme, but we may add theme
+     support here in the future.
+     */
+    _react["default"].createElement(_Box.Box, {
       align: ((_theme$menu$item = theme.menu.item) == null ? void 0 : _theme$menu$item.align) || 'start',
       pad: "small",
       direction: "row",
