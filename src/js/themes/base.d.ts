@@ -853,10 +853,8 @@ export interface ThemeType {
     clearControl?: {
       margin?: MarginType;
     };
-    content?: {
-      pad?: PadType;
-      width?: WidthType;
-    };
+    pad?: PadType;
+    width?: WidthType;
   };
   dateInput?: {
     container?: {

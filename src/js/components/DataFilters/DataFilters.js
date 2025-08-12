@@ -126,9 +126,7 @@ export const DataFilters = ({
 
   content = (
     <DataForm
-      // is this clear enough? this pad is applied
-      // when DataFilters is controlled via drop or layer
-      pad={controlled ? theme.dataFilters?.content?.pad : undefined}
+      pad={controlled ? theme.dataFilters?.pad : undefined}
       onDone={() => setShowContent(false)}
       updateOn={updateOn}
       {...(!controlled ? rest : { fill: 'vertical' })}
@@ -202,7 +200,7 @@ export const DataFilters = ({
           onClickOutside={() => setShowContent(undefined)}
           onEsc={() => setShowContent(undefined)}
         >
-          <Box width={theme.dataFilters?.content?.width}>{content}</Box>
+          <Box width={theme.dataFilters?.width}>{content}</Box>
         </Layer>
       )}
     </Box>

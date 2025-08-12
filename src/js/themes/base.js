@@ -916,10 +916,8 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       clearControl: {
         margin: { start: 'small' },
       },
-      content: {
-        pad: 'medium',
-        width: { min: 'medium' },
-      },
+      pad: 'medium',
+      width: { min: 'medium' },
     },
     dateInput: {
       container: {
