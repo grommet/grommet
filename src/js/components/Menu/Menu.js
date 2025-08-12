@@ -251,9 +251,11 @@ const Menu = forwardRef((props, ref) => {
   if (children) {
     content = children;
   } else if (!theme.button.default) {
-    // we are not going to change pad to a theme object
-    // since this will not be rendered in the hpe theme
-    // since we have theme.button.default
+    /*
+    Not adding a theme object now because this code path
+    is not used in the HPE theme, but we may add theme
+    support here in the future.
+    */
     content = (
       <Box
         direction="row"
@@ -310,9 +312,11 @@ const Menu = forwardRef((props, ref) => {
     // Determine whether the label is done as a child or
     // as an option Button kind property.
     const child = !theme.button.option ? (
-      // we are not going to change pad to a theme object
-      // since this will not be rendered in the hpe theme
-      // since we have theme.button.default
+    /*
+     Not adding a theme object now because this code path
+     is not used in the HPE theme, but we may add theme
+     support here in the future.
+     */
       <Box
         align={theme.menu.item?.align || 'start'}
         pad="small"
