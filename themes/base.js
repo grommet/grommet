@@ -1080,6 +1080,22 @@ var generate = exports.generate = function generate(baseSpacing, scale) {
         // },
       }
     },
+    dataTableColumns: {
+      tabs: {
+        pad: 'small'
+      },
+      selectColumns: {
+        pad: {
+          vertical: 'small'
+        },
+        gap: 'xsmall'
+      },
+      orderColumns: {
+        pad: {
+          top: 'small'
+        }
+      }
+    },
     diagram: {
       // extend: undefined,
       line: {

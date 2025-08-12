@@ -26,14 +26,6 @@ var dropProps = {
     left: 'left'
   }
 };
-var tabsProps = {
-  drop: {
-    pad: 'small'
-  },
-  noDrop: {
-    justify: 'start'
-  }
-};
 
 // options can either be an array of property names or an array of objects.
 // The form value always uses an array of property names.
@@ -81,6 +73,16 @@ var Content = function Content(_ref) {
     useFormInput = _useContext2.useFormInput;
   var _useContext3 = useContext(MessageContext),
     format = _useContext3.format;
+  var _useThemeValue = useThemeValue(),
+    theme = _useThemeValue.theme;
+  var tabsProps = {
+    drop: {
+      pad: theme.dataTableColumns.tabs.pad
+    },
+    noDrop: {
+      justify: 'start'
+    }
+  };
 
   // If the user searches for a particular option, render
   // the filtered list of options.
@@ -142,10 +144,8 @@ var Content = function Content(_ref) {
       messages: messages == null ? void 0 : messages.dataTableColumns
     })
   }, /*#__PURE__*/React.createElement(Box, {
-    pad: {
-      vertical: 'small'
-    },
-    gap: "xsmall"
+    pad: theme.dataTableColumns.selectColumns.pad,
+    gap: theme.dataTableColumns.selectColumns.gap
   }, /*#__PURE__*/React.createElement(TextInput, {
     type: "search",
     icon: /*#__PURE__*/React.createElement(Search, null),
@@ -177,9 +177,7 @@ var Content = function Content(_ref) {
       messages: messages == null ? void 0 : messages.dataTableColumns
     })
   }, /*#__PURE__*/React.createElement(Box, {
-    pad: {
-      top: 'small'
-    }
+    pad: theme.dataTableColumns.orderColumns.pad
   }, /*#__PURE__*/React.createElement(List, {
     id: dataId + "--order-columns",
     "aria-labelledby": dataId + "--order-columns-tab"
@@ -216,8 +214,8 @@ export var DataTableColumns = function DataTableColumns(_ref5) {
     inDataForm = _useContext5.inDataForm;
   var _useContext6 = useContext(MessageContext),
     format = _useContext6.format;
-  var _useThemeValue = useThemeValue(),
-    theme = _useThemeValue.theme;
+  var _useThemeValue2 = useThemeValue(),
+    theme = _useThemeValue2.theme;
   var _useState3 = useState(),
     showContent = _useState3[0],
     setShowContent = _useState3[1];

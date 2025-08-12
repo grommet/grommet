@@ -943,6 +943,18 @@ export interface ThemeType {
       weight?: string;
     };
   };
+  dataTableColumns?: {
+    tabs?: {
+      pad?: PadType;
+    };
+    selectColumns?: {
+      pad?: PadType;
+      gap?: GapType;
+    };
+    orderColumns?: {
+      pad?: PadType;
+    };
+  };
   diagram?: {
     extend?: ExtendType;
     line?: {

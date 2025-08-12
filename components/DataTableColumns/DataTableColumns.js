@@ -19,7 +19,7 @@ var _TextInput = require("../TextInput");
 var _DataContext = require("../../contexts/DataContext");
 var _MessageContext = require("../../contexts/MessageContext");
 var _propTypes = require("./propTypes");
-var _useThemeValue2 = require("../../utils/useThemeValue");
+var _useThemeValue3 = require("../../utils/useThemeValue");
 var _excluded = ["drop", "options"],
   _excluded2 = ["drop", "options"];
 function _interopRequireWildcard(e, t) { if ("function" == typeof WeakMap) var r = new WeakMap(), n = new WeakMap(); return (_interopRequireWildcard = function _interopRequireWildcard(e, t) { if (!t && e && e.__esModule) return e; var o, i, f = { __proto__: null, "default": e }; if (null === e || "object" != typeof e && "function" != typeof e) return f; if (o = t ? n : r) { if (o.has(e)) return o.get(e); o.set(e, f); } for (var _t in e) "default" !== _t && {}.hasOwnProperty.call(e, _t) && ((i = (o = Object.defineProperty) && Object.getOwnPropertyDescriptor(e, _t)) && (i.get || i.set) ? o(f, _t, i) : f[_t] = e[_t]); return f; })(e, t); }
@@ -29,14 +29,6 @@ var dropProps = {
   align: {
     top: 'bottom',
     left: 'left'
-  }
-};
-var tabsProps = {
-  drop: {
-    pad: 'small'
-  },
-  noDrop: {
-    justify: 'start'
   }
 };
 
@@ -86,6 +78,16 @@ var Content = function Content(_ref) {
     useFormInput = _useContext2.useFormInput;
   var _useContext3 = (0, _react.useContext)(_MessageContext.MessageContext),
     format = _useContext3.format;
+  var _useThemeValue = (0, _useThemeValue3.useThemeValue)(),
+    theme = _useThemeValue.theme;
+  var tabsProps = {
+    drop: {
+      pad: theme.dataTableColumns.tabs.pad
+    },
+    noDrop: {
+      justify: 'start'
+    }
+  };
 
   // If the user searches for a particular option, render
   // the filtered list of options.
@@ -147,10 +149,8 @@ var Content = function Content(_ref) {
       messages: messages == null ? void 0 : messages.dataTableColumns
     })
   }, /*#__PURE__*/_react["default"].createElement(_Box.Box, {
-    pad: {
-      vertical: 'small'
-    },
-    gap: "xsmall"
+    pad: theme.dataTableColumns.selectColumns.pad,
+    gap: theme.dataTableColumns.selectColumns.gap
   }, /*#__PURE__*/_react["default"].createElement(_TextInput.TextInput, {
     type: "search",
     icon: /*#__PURE__*/_react["default"].createElement(_Search.Search, null),
@@ -182,9 +182,7 @@ var Content = function Content(_ref) {
       messages: messages == null ? void 0 : messages.dataTableColumns
     })
   }, /*#__PURE__*/_react["default"].createElement(_Box.Box, {
-    pad: {
-      top: 'small'
-    }
+    pad: theme.dataTableColumns.orderColumns.pad
   }, /*#__PURE__*/_react["default"].createElement(_List.List, {
     id: dataId + "--order-columns",
     "aria-labelledby": dataId + "--order-columns-tab"
@@ -221,8 +219,8 @@ var DataTableColumns = exports.DataTableColumns = function DataTableColumns(_ref
     inDataForm = _useContext5.inDataForm;
   var _useContext6 = (0, _react.useContext)(_MessageContext.MessageContext),
     format = _useContext6.format;
-  var _useThemeValue = (0, _useThemeValue2.useThemeValue)(),
-    theme = _useThemeValue.theme;
+  var _useThemeValue2 = (0, _useThemeValue3.useThemeValue)(),
+    theme = _useThemeValue2.theme;
   var _useState3 = (0, _react.useState)(),
     showContent = _useState3[0],
     setShowContent = _useState3[1];
