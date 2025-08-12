@@ -855,6 +855,12 @@ export interface ThemeType {
       dropHeight?: string;
     };
   };
+  dataSummary?: {
+    margin?: MarginType;
+    separator?: {
+      margin?: MarginType;
+    };
+  };
   dateInput?: {
     container?: {
       round?: RoundType;
@@ -941,6 +947,18 @@ export interface ThemeType {
     };
     primary?: {
       weight?: string;
+    };
+  };
+  dataTableColumns?: {
+    tabs?: {
+      pad?: PadType;
+    };
+    selectColumns?: {
+      pad?: PadType;
+      gap?: GapType;
+    };
+    orderColumns?: {
+      pad?: PadType;
     };
   };
   diagram?: {
@@ -1741,6 +1759,9 @@ export interface ThemeType {
     edge?: {
       type?: string;
       size?: EdgeSizeType | string;
+    };
+    label?: {
+      margin?: MarginType;
     };
   };
   select?: {

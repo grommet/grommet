@@ -927,6 +927,12 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       //   size: undefined,
       // },
     },
+    dataSummary: {
+      margin: { vertical: 'xsmall' },
+      separator: {
+        margin: { horizontal: 'small' },
+      },
+    },
     dataTable: {
       // body: {
       //   extend: undefined,
@@ -1004,6 +1010,22 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         //     size: undefined,
         //   },
         // },
+      },
+    },
+    dataTableColumns: {
+      tabs: {
+        pad: 'small',
+      },
+      selectColumns: {
+        pad: {
+          vertical: 'small',
+        },
+        gap: 'xsmall',
+      },
+      orderColumns: {
+        pad: {
+          top: 'small',
+        },
       },
     },
     diagram: {
@@ -1288,8 +1310,8 @@ export const generate = (baseSpacing = 24, scale = 6) => {
     },
     menu: {
       // background: undefined,
-      // item: undefined,
       // extend: undefined,
+      // item: undefined,
       drop: {
         align: {
           top: 'top',
@@ -1866,7 +1888,10 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
     },
     radioButtonGroup: {
-      // container: {}, // any box props
+      // any box props
+      container: {
+        gap: 'small',
+      },
     },
     rangeInput: {
       disabled: {
@@ -1908,6 +1933,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       edge: {
         // type: undefined,
         // size: undefined,
+      },
+      label: {
+        margin: { horizontal: 'small' },
       },
     },
     select: {
