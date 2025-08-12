@@ -165,7 +165,7 @@ const SelectMultipleValue = ({
                   </Box>
                 }
                 key={optionLabel}
-                pad={theme.selectMultiple?.checkBox?.pad}
+                pad={theme.selectMultiple?.option?.pad}
                 tabIndex="-1"
                 checked={optionSelected}
                 inert={inertTrueValue}
@@ -195,7 +195,7 @@ const SelectMultipleValue = ({
       messages,
       onSelectChange,
       theme.selectMultiple.maxInline,
-      theme.selectMultiple?.checkBox?.pad,
+      theme.selectMultiple?.option?.pad,
       value,
       valueKey,
     ],

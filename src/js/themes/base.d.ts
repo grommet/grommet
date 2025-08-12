@@ -1752,10 +1752,7 @@ export interface ThemeType {
     step?: number;
   };
   selectMultiple?: {
-    checkBox?: {
-      pad?: PadType;
-    };
-    helpText?: {
+    help?: {
       container?: {
         pad: PadType;
       };

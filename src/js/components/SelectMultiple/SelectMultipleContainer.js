@@ -365,10 +365,7 @@ const SelectMultipleContainer = forwardRef(
     if (help) {
       if (typeof help === 'string')
         helpContent = (
-          <Box
-            flex={false}
-            pad={theme.selectMultiple?.helpText?.container?.pad}
-          >
+          <Box flex={false} pad={theme.selectMultiple?.help?.container?.pad}>
             <Text size="small">{help}</Text>
           </Box>
         );
@@ -558,7 +555,7 @@ const SelectMultipleContainer = forwardRef(
                               </Text>
                             </Box>
                           }
-                          pad={theme.selectMultiple?.checkBox?.pad}
+                          pad={theme.selectMultiple?.option?.pad}
                           tabIndex="-1"
                           checked={optionSelected}
                           disabled={optionDisabled}

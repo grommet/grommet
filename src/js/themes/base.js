@@ -1930,10 +1930,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       step: 20,
     },
     selectMultiple: {
-      checkBox: {
-        pad: 'xsmall',
-      },
-      helpText: {
+      help: {
         container: {
           pad: 'xsmall',
         },
