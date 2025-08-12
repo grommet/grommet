@@ -1748,10 +1748,11 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           },
         },
       },
-      // container: {
-      //   // any box props,
-      //   extend: undefined,
-      // },
+      container: {
+        gap: { column: 'xsmall', row: 'small' },
+        // any box props,
+        // extend: undefined,
+      },
       controls: {
         align: 'center',
         direction: 'row',
@@ -1768,9 +1769,6 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         container: {
           gap: 'xsmall',
         },
-      },
-      withControls: {
-        gap: { column: 'xsmall', row: 'small' },
       },
     },
     paragraph: {

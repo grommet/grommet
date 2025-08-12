@@ -1587,9 +1587,6 @@ export interface ThemeType {
         gap?: GapType;
       };
     };
-    withControls?: {
-      gap?: GapType;
-    };
   };
   paragraph?: {
     extend?: ExtendType;
