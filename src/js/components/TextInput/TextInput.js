@@ -391,9 +391,9 @@ const TextInput = forwardRef(
                     child = renderedLabel;
                   else if (!theme.button.option)
                     // don't have theme support, need to layout here
-                    // We are not going to add a theme object now since HPE
-                    // theme is not needed, but in the future we may want
-                    // to support a theme prop.
+                    // Not adding a theme object now because this code path
+                   // is not used in the HPE theme, but we may add theme
+                  // support here in the future.
                     child = (
                       <Box align="start" pad="small">
                         {renderedLabel}
