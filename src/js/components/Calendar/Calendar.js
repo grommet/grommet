@@ -44,12 +44,6 @@ import {
 import { setHoursWithOffset } from '../../utils/dates';
 import { useThemeValue } from '../../utils/useThemeValue';
 
-const headingPadMap = {
-  small: 'xsmall',
-  medium: 'small',
-  large: 'medium',
-};
-
 const getLocaleString = (value, locale) =>
   value?.toLocaleDateString(locale, {
     month: 'long',
@@ -682,11 +676,14 @@ const Calendar = forwardRef(
           ((theme.calendar.heading && theme.calendar.heading.level) || 4) - 1;
       }
 
+      const { container: containerTheme, ...textTheme } =
+        theme.calendar[size]?.title || undefined;
+
       return (
         <Box direction="row" justify="between" align="center">
-          <Header flex pad={{ horizontal: headingPadMap[size] || 'small' }}>
-            {theme.calendar[size]?.title ? (
-              <Text {...theme.calendar[size].title}>{monthAndYear}</Text>
+          <Header flex pad={containerTheme.pad}>
+            {Object.keys(textTheme).length !== 0 ? (
+              <Text {...textTheme}>{monthAndYear}</Text>
             ) : (
               <Heading
                 level={headingLevel}
