@@ -992,6 +992,16 @@ var generate = exports.generate = function generate(baseSpacing, scale) {
       //   size: undefined,
       // },
     },
+    dataSummary: {
+      margin: {
+        vertical: 'xsmall'
+      },
+      separator: {
+        margin: {
+          horizontal: 'small'
+        }
+      }
+    },
     dataTable: {
       // body: {
       //   extend: undefined,
