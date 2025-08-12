@@ -16,14 +16,14 @@ const options = columns.map(({ header, property }) => ({
   label: property === 'name' ? 'Name' : header,
 }));
 
-export const HiddenOrder = () => (
+export const SelectColumns = () => (
   // Uncomment <Grommet> lines when using outside of storybook
   // <Grommet theme={...}>
   <Box align="center" justify="start" pad="large" gap="medium">
     <Data data={DATA}>
       <Toolbar>
         <DataSearch />
-        <DataTableColumns drop options={options} hideOrder />
+        <DataTableColumns drop options={options} activePanel="selectColumns" />
       </Toolbar>
       <DataSummary />
       <DataTable columns={columns} primaryKey="name" />
@@ -32,10 +32,10 @@ export const HiddenOrder = () => (
   // </Grommet>
 );
 
-HiddenOrder.args = {
+SelectColumns.args = {
   full: true,
 };
 
 export default {
-  title: 'Data/DataTableColumns/HiddenOrder',
+  title: 'Data/DataTableColumns/SelectColumns',
 };

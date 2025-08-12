@@ -41,13 +41,9 @@ const alignOrder = (value, prevValue, options) =>
     return i1 - i2;
   });
 
-// Conditional Tab Wrapper for Column Selection.
-const ConditionalTab = ({ children, hideTabHeader, ...rest }) =>
-  !hideTabHeader ? <Tab {...rest}>{children}</Tab> : children;
-
 // Content is a separate component since it might be getting its form context
 // from the DataForm rendered inside DataTableColumns.
-const Content = ({ drop, options = [], hideOrder, ...rest }) => {
+const Content = ({ drop, options = [], activePanel, ...rest }) => {
   const { id: dataId, messages } = useContext(DataContext);
   const { useFormInput } = useContext(FormContext);
   const { format } = useContext(MessageContext);
@@ -111,83 +107,100 @@ const Content = ({ drop, options = [], hideOrder, ...rest }) => {
   return (
     <Box>
       <Tabs {...tabsProps[drop ? 'drop' : 'noDrop']} {...rest}>
-        <ConditionalTab
-          hideTabHeader={hideOrder}
-          id={`${dataId}--select-columns-tab`}
-          title={format({
-            id: 'dataTableColumns.select',
-            messages: messages?.dataTableColumns,
-          })}
-          aria-label={format({
-            id: 'dataTableColumns.selectAria',
-            messages: messages?.dataTableColumns,
-          })}
-        >
-          <Box
-            pad={theme.dataTableColumns.selectColumns.pad}
-            gap={theme.dataTableColumns.selectColumns.gap}
-          >
-            <TextInput
-              type="search"
-              icon={<Search />}
-              placeholder="Search"
-              value={search}
-              onChange={(event) => onSearch(event.target.value)}
-            />
-            <CheckBoxGroup
-              id={`${dataId}--select-columns`}
-              name={formColumnsKey}
-              aria-labelledby={`${dataId}--select-columns-tab`}
-              options={filteredOptions}
-              valueKey={(objectOptions && 'property') || undefined}
-              labelKey={(objectOptions && 'label') || undefined}
-              value={value}
-              onChange={({ value: nextValue }) =>
-                setValue(alignOrder(nextValue, value, options))
-              }
-            />
-          </Box>
-        </ConditionalTab>
-
-        <Tab
-          id={`${dataId}--order-columns-tab`}
-          aria-label={format({
-            id: 'dataTableColumns.orderAria',
-            messages: messages?.dataTableColumns,
-          })}
-          title={format({
-            id: 'dataTableColumns.order',
-            messages: messages?.dataTableColumns,
-          })}
-        >
-          <Box pad={theme.dataTableColumns.orderColumns.pad}>
-            <List
-              id={`${dataId}--order-columns`}
-              aria-labelledby={`${dataId}--order-columns-tab`}
-              // List wants objects if possible to be able to use 'label'
-              data={value.map(
-                (v) =>
-                  (objectOptions && options.find((o) => o.property === v)) || v,
-              )}
-              messages={{
-                pinned: format({
-                  id: 'dataTableColumns.pinned',
-                  messages: messages?.dataTableColumns,
-                }),
-              }}
-              onOrder={(nextData) => setValue(optionsToValue(nextData))}
-              pad="none"
-              primaryKey={(objectOptions && 'label') || undefined}
-              pinned={pinned}
-            />
-          </Box>
-        </Tab>
+        {[
+          ...(!activePanel || activePanel === 'selectColumns'
+            ? [
+                <Tab
+                  id={`${dataId}--select-columns-tab`}
+                  key={`${dataId}--select-columns-tab`}
+                  title={format({
+                    id: 'dataTableColumns.select',
+                    messages: messages?.dataTableColumns,
+                  })}
+                  aria-label={format({
+                    id: 'dataTableColumns.selectAria',
+                    messages: messages?.dataTableColumns,
+                  })}
+                >
+                  <Box
+                    pad={theme.dataTableColumns.selectColumns.pad}
+                    gap={theme.dataTableColumns.selectColumns.gap}
+                  >
+                    <TextInput
+                      type="search"
+                      icon={<Search />}
+                      placeholder="Search"
+                      value={search}
+                      onChange={(event) => onSearch(event.target.value)}
+                    />
+                    <CheckBoxGroup
+                      id={`${dataId}--select-columns`}
+                      name={formColumnsKey}
+                      aria-labelledby={`${dataId}--select-columns-tab`}
+                      options={filteredOptions}
+                      valueKey={(objectOptions && 'property') || undefined}
+                      labelKey={(objectOptions && 'label') || undefined}
+                      value={value}
+                      onChange={({ value: nextValue }) =>
+                        setValue(alignOrder(nextValue, value, options))
+                      }
+                    />
+                  </Box>
+                </Tab>,
+              ]
+            : []),
+          ...(!activePanel || activePanel === 'orderColumns'
+            ? [
+                <Tab
+                  id={`${dataId}--order-columns-tab`}
+                  key={`${dataId}--order-columns-tab`}
+                  aria-label={format({
+                    id: 'dataTableColumns.orderAria',
+                    messages: messages?.dataTableColumns,
+                  })}
+                  title={format({
+                    id: 'dataTableColumns.order',
+                    messages: messages?.dataTableColumns,
+                  })}
+                >
+                  <Box
+                    pad={theme.dataTableColumns.orderColumns.pad}
+                    gap={theme.dataTableColumns.orderColumns.gap}
+                    flex={false}
+                  >
+                    <List
+                      id={`${dataId}--order-columns`}
+                      aria-labelledby={`${dataId}--order-columns-tab`}
+                      // List wants objects if possible
+                      // to be able to use 'label'
+                      data={value.map(
+                        (v) =>
+                          (objectOptions &&
+                            options.find((o) => o.property === v)) ||
+                          v,
+                      )}
+                      messages={{
+                        pinned: format({
+                          id: 'dataTableColumns.pinned',
+                          messages: messages?.dataTableColumns,
+                        }),
+                      }}
+                      onOrder={(nextData) => setValue(optionsToValue(nextData))}
+                      pad="none"
+                      primaryKey={(objectOptions && 'label') || undefined}
+                      pinned={pinned}
+                    />
+                  </Box>
+                </Tab>,
+              ]
+            : []),
+        ]}
       </Tabs>
     </Box>
   );
 };
 
-export const DataTableColumns = ({ drop, options, hideOrder, ...rest }) => {
+export const DataTableColumns = ({ drop, options, activePanel, ...rest }) => {
   const { id: dataId, messages } = useContext(DataContext);
   const { inDataForm } = useContext(DataFormContext);
   const { format } = useContext(MessageContext);
@@ -199,7 +212,9 @@ export const DataTableColumns = ({ drop, options, hideOrder, ...rest }) => {
     messages: messages?.dataTableColumns,
   });
 
-  let content = <Content drop={drop} options={options} hideOrder={hideOrder} />;
+  let content = (
+    <Content drop={drop} options={options} activePanel={activePanel} />
+  );
   if (!inDataForm)
     content = (
       <DataForm footer={false} updateOn="change">

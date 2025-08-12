@@ -254,7 +254,7 @@ describe('DataTableColumns', () => {
     );
   });
 
-  test('hideOrder', () => {
+  test('SelectColumns', () => {
     jest.useFakeTimers();
     const onView = jest.fn();
 
@@ -264,7 +264,7 @@ describe('DataTableColumns', () => {
           <DataFilters updateOn="change">
             <DataTableColumns
               drop
-              hideOrder={true}
+              activePanel="selectColumns"
               options={[
                 { property: 'name', label: 'Name', pinned: false },
                 { property: 'size', label: 'Size', pinned: true },
@@ -304,6 +304,60 @@ describe('DataTableColumns', () => {
         name: 'Reorder the visible columns in the data table',
       }),
     ).toBeNull();
+
+    expect(
+      screen.queryByRole('tab', {
+        name: 'Select which columns to show in the data table',
+      }),
+    ).not.toBeNull();
+  });
+
+  test('OrderColumns', () => {
+    jest.useFakeTimers();
+    const onView = jest.fn();
+
+    const App = () => (
+      <Grommet>
+        <Data id="test-data" data={data} onView={onView}>
+          <DataFilters updateOn="change">
+            <DataTableColumns
+              drop
+              activePanel="orderColumns"
+              options={[
+                { property: 'name', label: 'Name', pinned: false },
+                { property: 'size', label: 'Size', pinned: true },
+                { property: 'percent', label: 'Percent' },
+              ]}
+            />
+          </DataFilters>
+          <DataTable
+            columns={[
+              { property: 'name', header: 'Name' },
+              { property: 'size', header: 'Size' },
+              { property: 'percent', header: 'Percent' },
+            ]}
+          />
+        </Data>
+      </Grommet>
+    );
+
+    render(<App />);
+
+    // Open the drop button to reveal the column settings
+    fireEvent.click(
+      screen.getByRole('button', {
+        name: 'Open column selector',
+      }),
+    );
+
+    // advance timers so drop can open
+    act(() => jest.advanceTimersByTime(200));
+
+    expect(
+      screen.queryByRole('tab', {
+        name: 'Reorder the visible columns in the data table',
+      }),
+    ).not.toBeNull();
 
     expect(
       screen.queryByRole('tab', {
