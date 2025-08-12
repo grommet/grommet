@@ -1310,8 +1310,8 @@ export const generate = (baseSpacing = 24, scale = 6) => {
     },
     menu: {
       // background: undefined,
-      // item: undefined,
       // extend: undefined,
+      // item: undefined,
       drop: {
         align: {
           top: 'top',
