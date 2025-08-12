@@ -1,4 +1,5 @@
-var _excluded = ["activeDate", "animate", "bounds", "children", "date", "dates", "daysOfWeek", "disabled", "initialFocus", "fill", "firstDayOfWeek", "header", "level", "locale", "messages", "onReference", "onSelect", "range", "reference", "responsive", "showAdjacentDays", "size", "timestamp"];
+var _excluded = ["activeDate", "animate", "bounds", "children", "date", "dates", "daysOfWeek", "disabled", "initialFocus", "fill", "firstDayOfWeek", "header", "level", "locale", "messages", "onReference", "onSelect", "range", "reference", "responsive", "showAdjacentDays", "size", "timestamp"],
+  _excluded2 = ["container"];
 function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (-1 !== e.indexOf(n)) continue; t[n] = r[n]; } return t; }
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 import React, { forwardRef, useCallback, useContext, useEffect, useMemo, useRef, useState } from 'react';
@@ -15,11 +16,6 @@ import { StyledCalendar, StyledDay, StyledDayButton, StyledDayContainer, StyledW
 import { addDays, addMonths, betweenDates, daysApart, endOfMonth, handleOffset, sameDayOrAfter, sameDayOrBefore, startOfMonth, subtractDays, subtractMonths, withinDates } from './utils';
 import { setHoursWithOffset } from '../../utils/dates';
 import { useThemeValue } from '../../utils/useThemeValue';
-var headingPadMap = {
-  small: 'xsmall',
-  medium: 'small',
-  large: 'medium'
-};
 var getLocaleString = function getLocaleString(value, locale) {
   return value == null ? void 0 : value.toLocaleDateString(locale, {
     month: 'long',
@@ -547,16 +543,17 @@ var Calendar = /*#__PURE__*/forwardRef(function (_ref4, ref) {
     } else {
       headingLevel = (theme.calendar.heading && theme.calendar.heading.level || 4) - 1;
     }
+    var _ref5 = ((_theme$calendar$size = theme.calendar[size]) == null ? void 0 : _theme$calendar$size.title) || undefined,
+      containerTheme = _ref5.container,
+      textTheme = _objectWithoutPropertiesLoose(_ref5, _excluded2);
     return /*#__PURE__*/React.createElement(Box, {
       direction: "row",
       justify: "between",
       align: "center"
     }, /*#__PURE__*/React.createElement(Header, {
       flex: true,
-      pad: {
-        horizontal: headingPadMap[size] || 'small'
-      }
-    }, (_theme$calendar$size = theme.calendar[size]) != null && _theme$calendar$size.title ? /*#__PURE__*/React.createElement(Text, theme.calendar[size].title, monthAndYear) : /*#__PURE__*/React.createElement(Heading, {
+      pad: containerTheme.pad
+    }, Object.keys(textTheme).length !== 0 ? /*#__PURE__*/React.createElement(Text, textTheme, monthAndYear) : /*#__PURE__*/React.createElement(Heading, {
       level: headingLevel,
       size: size,
       margin: "none",

@@ -16,15 +16,11 @@ var _StyledCalendar = require("./StyledCalendar");
 var _utils = require("./utils");
 var _dates = require("../../utils/dates");
 var _useThemeValue3 = require("../../utils/useThemeValue");
-var _excluded = ["activeDate", "animate", "bounds", "children", "date", "dates", "daysOfWeek", "disabled", "initialFocus", "fill", "firstDayOfWeek", "header", "level", "locale", "messages", "onReference", "onSelect", "range", "reference", "responsive", "showAdjacentDays", "size", "timestamp"];
+var _excluded = ["activeDate", "animate", "bounds", "children", "date", "dates", "daysOfWeek", "disabled", "initialFocus", "fill", "firstDayOfWeek", "header", "level", "locale", "messages", "onReference", "onSelect", "range", "reference", "responsive", "showAdjacentDays", "size", "timestamp"],
+  _excluded2 = ["container"];
 function _interopRequireWildcard(e, t) { if ("function" == typeof WeakMap) var r = new WeakMap(), n = new WeakMap(); return (_interopRequireWildcard = function _interopRequireWildcard(e, t) { if (!t && e && e.__esModule) return e; var o, i, f = { __proto__: null, "default": e }; if (null === e || "object" != typeof e && "function" != typeof e) return f; if (o = t ? n : r) { if (o.has(e)) return o.get(e); o.set(e, f); } for (var _t in e) "default" !== _t && {}.hasOwnProperty.call(e, _t) && ((i = (o = Object.defineProperty) && Object.getOwnPropertyDescriptor(e, _t)) && (i.get || i.set) ? o(f, _t, i) : f[_t] = e[_t]); return f; })(e, t); }
 function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (-1 !== e.indexOf(n)) continue; t[n] = r[n]; } return t; }
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
-var headingPadMap = {
-  small: 'xsmall',
-  medium: 'small',
-  large: 'medium'
-};
 var getLocaleString = function getLocaleString(value, locale) {
   return value == null ? void 0 : value.toLocaleDateString(locale, {
     month: 'long',
@@ -551,16 +547,17 @@ var Calendar = exports.Calendar = /*#__PURE__*/(0, _react.forwardRef)(function (
     } else {
       headingLevel = (theme.calendar.heading && theme.calendar.heading.level || 4) - 1;
     }
+    var _ref5 = ((_theme$calendar$size = theme.calendar[size]) == null ? void 0 : _theme$calendar$size.title) || undefined,
+      containerTheme = _ref5.container,
+      textTheme = _objectWithoutPropertiesLoose(_ref5, _excluded2);
     return /*#__PURE__*/_react["default"].createElement(_Box.Box, {
       direction: "row",
       justify: "between",
       align: "center"
     }, /*#__PURE__*/_react["default"].createElement(_Header.Header, {
       flex: true,
-      pad: {
-        horizontal: headingPadMap[size] || 'small'
-      }
-    }, (_theme$calendar$size = theme.calendar[size]) != null && _theme$calendar$size.title ? /*#__PURE__*/_react["default"].createElement(_Text.Text, theme.calendar[size].title, monthAndYear) : /*#__PURE__*/_react["default"].createElement(_Heading.Heading, {
+      pad: containerTheme.pad
+    }, Object.keys(textTheme).length !== 0 ? /*#__PURE__*/_react["default"].createElement(_Text.Text, textTheme, monthAndYear) : /*#__PURE__*/_react["default"].createElement(_Heading.Heading, {
       level: headingLevel,
       size: size,
       margin: "none",

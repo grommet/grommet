@@ -730,6 +730,13 @@ export var generate = function generate(baseSpacing, scale) {
         // },
         // title: {},
         fontSize: baseFontSize - fontScale + "px",
+        title: {
+          container: {
+            pad: {
+              horizontal: 'xsmall'
+            }
+          }
+        },
         lineHeight: 1.375,
         daySize: baseSpacing * 8 / 7 + "px",
         slideDuration: '0.2s'
@@ -749,6 +756,13 @@ export var generate = function generate(baseSpacing, scale) {
         // },
         // title: {},
         fontSize: baseFontSize + "px",
+        title: {
+          container: {
+            pad: {
+              horizontal: 'small'
+            }
+          }
+        },
         lineHeight: 1.45,
         daySize: baseSpacing * 16 / 7 + "px",
         slideDuration: '0.5s'
@@ -768,6 +782,13 @@ export var generate = function generate(baseSpacing, scale) {
         // },
         // title: {},
         fontSize: baseFontSize + 3 * fontScale + "px",
+        title: {
+          container: {
+            pad: {
+              horizontal: 'medium'
+            }
+          }
+        },
         lineHeight: 1.11,
         daySize: baseSpacing * 32 / 7 + "px",
         slideDuration: '0.8s'

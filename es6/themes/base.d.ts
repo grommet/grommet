@@ -653,7 +653,13 @@ export interface ThemeType {
           round?: RoundType;
         };
       };
-      title?: TextProps;
+      title?: TextProps & {
+        container?: {
+          pad?: {
+            horizontal?: string;
+          };
+        };
+      };
       fontSize?: string;
       lineHeight?: number;
       daySize?: string;
@@ -672,7 +678,13 @@ export interface ThemeType {
           round?: RoundType;
         };
       };
-      title?: TextProps;
+      title?: TextProps & {
+        container?: {
+          pad?: {
+            horizontal?: string;
+          };
+        };
+      };
       fontSize?: string;
       lineHeight?: number;
       daySize?: string;
@@ -691,7 +703,13 @@ export interface ThemeType {
           round?: RoundType;
         };
       };
-      title?: TextProps;
+      title?: TextProps & {
+        container?: {
+          pad?: {
+            horizontal?: string;
+          };
+        };
+      };
       fontSize?: string;
       lineHeight?: number;
       daySize?: string;
