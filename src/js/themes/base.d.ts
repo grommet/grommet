@@ -1819,6 +1819,9 @@ export interface ThemeType {
       nextButton?: {
         pad: PadType;
       };
+      previousButton?: {
+        pad: PadType;
+      };
     };
     panel?: {
       extend?: ExtendType;

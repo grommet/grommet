@@ -2001,6 +2001,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         nextButton: {
           pad: { horizontal: 'small', vertical: 'xsmall' },
         },
+        previousButton: {
+          pad: { vertical: 'xsmall', horizontal: 'small' },
+        },
       },
       panel: {
         // extend: undefined,
