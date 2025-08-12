@@ -1888,7 +1888,10 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
     },
     radioButtonGroup: {
-      // container: {}, // any box props
+      // any box props
+      container: {
+        gap: 'small',
+      },
     },
     rangeInput: {
       disabled: {
