@@ -433,7 +433,12 @@ var MaskedInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
   }, passThemeFlag), mask[activeMaskIndex].options.map(function (option, index) {
     // Determine whether the label is done as a child or
     // as an option Button kind property.
-    var child = !theme.button.option ? /*#__PURE__*/React.createElement(Box, {
+    var child = !theme.button.option ?
+    /*#__PURE__*/
+    // Not adding a theme object now because this code path
+    // is not used in the HPE theme, but we may add theme
+    // support here in the future.
+    React.createElement(Box, {
       pad: {
         horizontal: 'small',
         vertical: 'xsmall'
