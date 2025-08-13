@@ -1,6 +1,38 @@
 // Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`Select Controlled deselect an option 1`] = `
+.c9 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 18px;
+  height: 18px;
+  fill: #555555;
+  stroke: #555555;
+}
+
+.c9 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c9 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c9 *[stroke*='#'],
+.c9 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c9 *[fill-rule],
+.c9 *[FILL-RULE],
+.c9 *[fill*='#'],
+.c9 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
+}
+
 .c3 {
   display: flex;
   box-sizing: border-box;
@@ -28,42 +60,12 @@ exports[`Select Controlled deselect an option 1`] = `
   max-width: 100%;
   margin-left: 12px;
   margin-right: 12px;
+  margin-left: 12px;
+  margin-right: 12px;
   min-width: 0;
   min-height: 0;
   flex-direction: column;
   flex: 0 0 auto;
-}
-
-.c9 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
-}
-
-.c9 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c9 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c9 *[stroke*='#'],
-.c9 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c9 *[fill-rule],
-.c9 *[FILL-RULE],
-.c9 *[fill*='#'],
-.c9 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
 }
 
 .c1 {
@@ -76,16 +78,17 @@ exports[`Select Controlled deselect an option 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  color: inherit;
   outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
+  color: inherit;
 }
 
 .c1:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c1:focus >circle,
@@ -95,8 +98,9 @@ exports[`Select Controlled deselect an option 1`] = `
 .c1:focus >polygon,
 .c1:focus >polyline,
 .c1:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c1:focus ::-moz-focus-inner {
@@ -104,6 +108,8 @@ exports[`Select Controlled deselect an option 1`] = `
 }
 
 .c1:focus:not(:focus-visible) {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -115,6 +121,8 @@ exports[`Select Controlled deselect an option 1`] = `
 .c1:focus:not(:focus-visible) >polygon,
 .c1:focus:not(:focus-visible) >polyline,
 .c1:focus:not(:focus-visible) >rect {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -132,26 +140,31 @@ exports[`Select Controlled deselect an option 1`] = `
   background: transparent;
   color: inherit;
   width: 100%;
-  padding: 11px;
-  font-weight: 600;
+  line-height: inherit;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-weight: 400;
   margin: 0;
-  border: 1px solid rgba(0, 0, 0, 0.33);
-  border-radius: 4px;
+  border: 1px solid rgba(0, 0, 0, 0.36);
+  border-radius: 8px;
+  color: #2e2e2e;
   border: none;
   outline: none;
   border: none;
 }
 
 .c6::-webkit-input-placeholder {
-  color: #AAAAAA;
+  color: #676767;
 }
 
 .c6::-moz-placeholder {
-  color: #AAAAAA;
+  color: #676767;
 }
 
 .c6:-ms-input-placeholder {
-  color: #AAAAAA;
+  color: #676767;
 }
 
 .c6 ::-webkit-search-decoration {
@@ -168,9 +181,26 @@ exports[`Select Controlled deselect an option 1`] = `
   opacity: 1;
 }
 
+.c6::-webkit-input-placeholder {
+  font-weight: 400;
+}
+
+.c6::-moz-placeholder {
+  font-weight: 400;
+}
+
+.c6:-ms-input-placeholder {
+  font-weight: 400;
+}
+
 .c5 {
   position: relative;
   width: 100%;
+}
+
+.c5 svg {
+  fill: #2e2e2e;
+  stroke: #2e2e2e;
 }
 
 .c7 {
@@ -178,13 +208,25 @@ exports[`Select Controlled deselect an option 1`] = `
 }
 
 .c2 {
-  border: 1px solid rgba(0, 0, 0, 0.33);
-  border-radius: 4px;
+  border: 1px solid rgba(0, 0, 0, 0.36);
+  border-radius: 8px;
+}
+
+.c2[class*="SelectMultiple"] [role="listbox"] {
+  padding-block: 6px;
+  padding-inline: 6px;
+}
+
+.c2[class*="SelectMultiple"] [role="listbox"] [role='option'] {
+  border-radius: 6px;
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -196,6 +238,18 @@ exports[`Select Controlled deselect an option 1`] = `
   .c8 {
     margin-left: 6px;
     margin-right: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c8 {
+    margin-left: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c8 {
+    margin-right: 12px;
   }
 }
 
@@ -237,12 +291,12 @@ exports[`Select Controlled deselect an option 1`] = `
         style="min-width: auto;"
       >
         <svg
-          aria-label="FormDown"
+          aria-label="Down"
           class="c9"
           viewBox="0 0 24 24"
         >
           <path
-            d="m18 9-6 6-6-6"
+            d="m2 8.35 10.173 9.823L21.997 8"
             fill="none"
             stroke="#000"
             stroke-width="2"
@@ -255,6 +309,38 @@ exports[`Select Controlled deselect an option 1`] = `
 `;
 
 exports[`Select Controlled multiple 1`] = `
+.c9 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 18px;
+  height: 18px;
+  fill: #555555;
+  stroke: #555555;
+}
+
+.c9 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c9 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c9 *[stroke*='#'],
+.c9 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c9 *[fill-rule],
+.c9 *[FILL-RULE],
+.c9 *[fill*='#'],
+.c9 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
+}
+
 .c3 {
   display: flex;
   box-sizing: border-box;
@@ -282,42 +368,12 @@ exports[`Select Controlled multiple 1`] = `
   max-width: 100%;
   margin-left: 12px;
   margin-right: 12px;
+  margin-left: 12px;
+  margin-right: 12px;
   min-width: 0;
   min-height: 0;
   flex-direction: column;
   flex: 0 0 auto;
-}
-
-.c9 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
-}
-
-.c9 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c9 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c9 *[stroke*='#'],
-.c9 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c9 *[fill-rule],
-.c9 *[FILL-RULE],
-.c9 *[fill*='#'],
-.c9 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
 }
 
 .c1 {
@@ -330,16 +386,17 @@ exports[`Select Controlled multiple 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  color: inherit;
   outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
+  color: inherit;
 }
 
 .c1:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c1:focus >circle,
@@ -349,8 +406,9 @@ exports[`Select Controlled multiple 1`] = `
 .c1:focus >polygon,
 .c1:focus >polyline,
 .c1:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c1:focus ::-moz-focus-inner {
@@ -358,6 +416,8 @@ exports[`Select Controlled multiple 1`] = `
 }
 
 .c1:focus:not(:focus-visible) {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -369,6 +429,8 @@ exports[`Select Controlled multiple 1`] = `
 .c1:focus:not(:focus-visible) >polygon,
 .c1:focus:not(:focus-visible) >polyline,
 .c1:focus:not(:focus-visible) >rect {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -386,26 +448,31 @@ exports[`Select Controlled multiple 1`] = `
   background: transparent;
   color: inherit;
   width: 100%;
-  padding: 11px;
-  font-weight: 600;
+  line-height: inherit;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-weight: 400;
   margin: 0;
-  border: 1px solid rgba(0, 0, 0, 0.33);
-  border-radius: 4px;
+  border: 1px solid rgba(0, 0, 0, 0.36);
+  border-radius: 8px;
+  color: #2e2e2e;
   border: none;
   outline: none;
   border: none;
 }
 
 .c6::-webkit-input-placeholder {
-  color: #AAAAAA;
+  color: #676767;
 }
 
 .c6::-moz-placeholder {
-  color: #AAAAAA;
+  color: #676767;
 }
 
 .c6:-ms-input-placeholder {
-  color: #AAAAAA;
+  color: #676767;
 }
 
 .c6 ::-webkit-search-decoration {
@@ -422,9 +489,26 @@ exports[`Select Controlled multiple 1`] = `
   opacity: 1;
 }
 
+.c6::-webkit-input-placeholder {
+  font-weight: 400;
+}
+
+.c6::-moz-placeholder {
+  font-weight: 400;
+}
+
+.c6:-ms-input-placeholder {
+  font-weight: 400;
+}
+
 .c5 {
   position: relative;
   width: 100%;
+}
+
+.c5 svg {
+  fill: #2e2e2e;
+  stroke: #2e2e2e;
 }
 
 .c7 {
@@ -432,13 +516,25 @@ exports[`Select Controlled multiple 1`] = `
 }
 
 .c2 {
-  border: 1px solid rgba(0, 0, 0, 0.33);
-  border-radius: 4px;
+  border: 1px solid rgba(0, 0, 0, 0.36);
+  border-radius: 8px;
+}
+
+.c2[class*="SelectMultiple"] [role="listbox"] {
+  padding-block: 6px;
+  padding-inline: 6px;
+}
+
+.c2[class*="SelectMultiple"] [role="listbox"] [role='option'] {
+  border-radius: 6px;
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -450,6 +546,18 @@ exports[`Select Controlled multiple 1`] = `
   .c8 {
     margin-left: 6px;
     margin-right: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c8 {
+    margin-left: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c8 {
+    margin-right: 12px;
   }
 }
 
@@ -490,12 +598,12 @@ exports[`Select Controlled multiple 1`] = `
         style="min-width: auto;"
       >
         <svg
-          aria-label="FormDown"
+          aria-label="Down"
           class="c9"
           viewBox="0 0 24 24"
         >
           <path
-            d="m18 9-6 6-6-6"
+            d="m2 8.35 10.173 9.823L21.997 8"
             fill="none"
             stroke="#000"
             stroke-width="2"
@@ -508,6 +616,38 @@ exports[`Select Controlled multiple 1`] = `
 `;
 
 exports[`Select Controlled multiple onChange toggle with valueKey reduce 1`] = `
+.c9 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 18px;
+  height: 18px;
+  fill: #555555;
+  stroke: #555555;
+}
+
+.c9 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c9 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c9 *[stroke*='#'],
+.c9 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c9 *[fill-rule],
+.c9 *[FILL-RULE],
+.c9 *[fill*='#'],
+.c9 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
+}
+
 .c3 {
   display: flex;
   box-sizing: border-box;
@@ -535,42 +675,12 @@ exports[`Select Controlled multiple onChange toggle with valueKey reduce 1`] = `
   max-width: 100%;
   margin-left: 12px;
   margin-right: 12px;
+  margin-left: 12px;
+  margin-right: 12px;
   min-width: 0;
   min-height: 0;
   flex-direction: column;
   flex: 0 0 auto;
-}
-
-.c9 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
-}
-
-.c9 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c9 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c9 *[stroke*='#'],
-.c9 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c9 *[fill-rule],
-.c9 *[FILL-RULE],
-.c9 *[fill*='#'],
-.c9 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
 }
 
 .c1 {
@@ -583,16 +693,17 @@ exports[`Select Controlled multiple onChange toggle with valueKey reduce 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  color: inherit;
   outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
+  color: inherit;
 }
 
 .c1:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c1:focus >circle,
@@ -602,8 +713,9 @@ exports[`Select Controlled multiple onChange toggle with valueKey reduce 1`] = `
 .c1:focus >polygon,
 .c1:focus >polyline,
 .c1:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c1:focus ::-moz-focus-inner {
@@ -611,6 +723,8 @@ exports[`Select Controlled multiple onChange toggle with valueKey reduce 1`] = `
 }
 
 .c1:focus:not(:focus-visible) {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -622,6 +736,8 @@ exports[`Select Controlled multiple onChange toggle with valueKey reduce 1`] = `
 .c1:focus:not(:focus-visible) >polygon,
 .c1:focus:not(:focus-visible) >polyline,
 .c1:focus:not(:focus-visible) >rect {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -639,26 +755,31 @@ exports[`Select Controlled multiple onChange toggle with valueKey reduce 1`] = `
   background: transparent;
   color: inherit;
   width: 100%;
-  padding: 11px;
-  font-weight: 600;
+  line-height: inherit;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-weight: 400;
   margin: 0;
-  border: 1px solid rgba(0, 0, 0, 0.33);
-  border-radius: 4px;
+  border: 1px solid rgba(0, 0, 0, 0.36);
+  border-radius: 8px;
+  color: #2e2e2e;
   border: none;
   outline: none;
   border: none;
 }
 
 .c6::-webkit-input-placeholder {
-  color: #AAAAAA;
+  color: #676767;
 }
 
 .c6::-moz-placeholder {
-  color: #AAAAAA;
+  color: #676767;
 }
 
 .c6:-ms-input-placeholder {
-  color: #AAAAAA;
+  color: #676767;
 }
 
 .c6 ::-webkit-search-decoration {
@@ -675,9 +796,26 @@ exports[`Select Controlled multiple onChange toggle with valueKey reduce 1`] = `
   opacity: 1;
 }
 
+.c6::-webkit-input-placeholder {
+  font-weight: 400;
+}
+
+.c6::-moz-placeholder {
+  font-weight: 400;
+}
+
+.c6:-ms-input-placeholder {
+  font-weight: 400;
+}
+
 .c5 {
   position: relative;
   width: 100%;
+}
+
+.c5 svg {
+  fill: #2e2e2e;
+  stroke: #2e2e2e;
 }
 
 .c7 {
@@ -685,13 +823,25 @@ exports[`Select Controlled multiple onChange toggle with valueKey reduce 1`] = `
 }
 
 .c2 {
-  border: 1px solid rgba(0, 0, 0, 0.33);
-  border-radius: 4px;
+  border: 1px solid rgba(0, 0, 0, 0.36);
+  border-radius: 8px;
+}
+
+.c2[class*="SelectMultiple"] [role="listbox"] {
+  padding-block: 6px;
+  padding-inline: 6px;
+}
+
+.c2[class*="SelectMultiple"] [role="listbox"] [role='option'] {
+  border-radius: 6px;
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -703,6 +853,18 @@ exports[`Select Controlled multiple onChange toggle with valueKey reduce 1`] = `
   .c8 {
     margin-left: 6px;
     margin-right: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c8 {
+    margin-left: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c8 {
+    margin-right: 12px;
   }
 }
 
@@ -744,12 +906,12 @@ exports[`Select Controlled multiple onChange toggle with valueKey reduce 1`] = `
         style="min-width: auto;"
       >
         <svg
-          aria-label="FormDown"
+          aria-label="Down"
           class="c9"
           viewBox="0 0 24 24"
         >
           <path
-            d="m18 9-6 6-6-6"
+            d="m2 8.35 10.173 9.823L21.997 8"
             fill="none"
             stroke="#000"
             stroke-width="2"
@@ -770,7 +932,7 @@ exports[`Select Controlled multiple onChange toggle with valueKey reduce 2`] = `
   min-height: 0;
   flex-direction: column;
   overflow: auto;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.20);
+  box-shadow: 0px 6px 12px 0px rgba(0, 0, 0, 0.12);
 }
 
 .c2 {
@@ -782,18 +944,7 @@ exports[`Select Controlled multiple onChange toggle with valueKey reduce 2`] = `
   flex-direction: column;
 }
 
-.c7 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  align-items: flex-start;
-  min-width: 0;
-  min-height: 0;
-  flex-direction: column;
-  padding: 12px;
-}
-
-.c11 {
+.c8 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -805,86 +956,35 @@ exports[`Select Controlled multiple onChange toggle with valueKey reduce 2`] = `
 }
 
 .c1 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  border-radius: 0px;
+  border-radius: 6px;
   position: fixed;
-  z-index: 20;
+  z-index: 110;
   outline: none;
-  background-color: #FFFFFF;
-  color: #444444;
+  background-color: #ffffff;
+  color: #555555;
+  margin-top: 6px;
   opacity: 0;
   transform-origin: top left;
   animation: kPQHBD 0.1s forwards;
   animation-delay: 0.01s;
 }
 
-.c8 {
-  margin: 0px;
-  font-size: 18px;
-  line-height: 24px;
-}
-
-.c9 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  font: inherit;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  color: inherit;
-  outline: none;
-  border: none;
-  padding: 0;
-  text-align: inherit;
-}
-
-.c9:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c9:focus >circle,
-.c9:focus >ellipse,
-.c9:focus >line,
-.c9:focus >path,
-.c9:focus >polygon,
-.c9:focus >polyline,
-.c9:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c9:focus ::-moz-focus-inner {
-  border: 0;
-}
-
-.c9:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c9:focus:not(:focus-visible) >circle,
-.c9:focus:not(:focus-visible) >ellipse,
-.c9:focus:not(:focus-visible) >line,
-.c9:focus:not(:focus-visible) >path,
-.c9:focus:not(:focus-visible) >polygon,
-.c9:focus:not(:focus-visible) >polyline,
-.c9:focus:not(:focus-visible) >rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c9:focus:not(:focus-visible) ::-moz-focus-inner {
-  border: 0;
+.c1 [class*=MaskedInput__ContainerBox] {
+  padding-block: 6px;
+  padding-inline: 6px;
+  gap: 6px;
+  display: flex;
+  flex-direction: column;
 }
 
 .c5 {
@@ -897,16 +997,55 @@ exports[`Select Controlled multiple onChange toggle with valueKey reduce 2`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  color: inherit;
-  outline: none;
   border: none;
-  padding: 0;
-  text-align: inherit;
+  border-radius: 9999px;
+  padding: 5px 12px;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  padding: 5px 12px;
+  color: #555555;
+  border-style: solid;
+  border-width: 1px;
+  border-color: rgba(0, 0, 0, 0);
+  border-radius: 6px;
+  font-weight: 500;
+  padding: 5px 12px;
+  background-color: #d1ffee;
+  color: #2e2e2e;
+  border-color: rgba(0, 0, 0, 0);
+  font-weight: 500;
+  position: relative;
+  text-align: start;
+  transition-property: color,background-color,border-color,box-shadow;
+  transition-duration: 0.1s;
+  transition-timing-function: ease-in-out;
+}
+
+.c5::before {
+  display: block;
+  position: absolute;
+  content: '';
+  width: 6px;
+  border-top-left-radius: 9999px;
+  border-bottom-left-radius: 9999px;
+  top: -1px;
+  bottom: -1px;
+  left: -1px;
+  background: #006750;
+}
+
+.c5:hover {
+  background-color: rgba(0, 0, 0, 0.04);
+  color: #555555;
+  border-color: rgba(0, 0, 0, 0);
+  background: #aafade;
+  color: #2e2e2e;
 }
 
 .c5:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c5:focus >circle,
@@ -916,8 +1055,9 @@ exports[`Select Controlled multiple onChange toggle with valueKey reduce 2`] = `
 .c5:focus >polygon,
 .c5:focus >polyline,
 .c5:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c5:focus ::-moz-focus-inner {
@@ -925,6 +1065,8 @@ exports[`Select Controlled multiple onChange toggle with valueKey reduce 2`] = `
 }
 
 .c5:focus:not(:focus-visible) {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -936,6 +1078,8 @@ exports[`Select Controlled multiple onChange toggle with valueKey reduce 2`] = `
 .c5:focus:not(:focus-visible) >polygon,
 .c5:focus:not(:focus-visible) >polyline,
 .c5:focus:not(:focus-visible) >rect {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -944,8 +1088,106 @@ exports[`Select Controlled multiple onChange toggle with valueKey reduce 2`] = `
   border: 0;
 }
 
+.c7 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: none;
+  border-radius: 9999px;
+  padding: 5px 12px;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  padding: 5px 12px;
+  color: #555555;
+  border-style: solid;
+  border-width: 1px;
+  border-color: rgba(0, 0, 0, 0);
+  border-radius: 6px;
+  font-weight: 500;
+  padding: 5px 12px;
+  text-align: start;
+  transition-property: color,background-color,border-color,box-shadow;
+  transition-duration: 0.1s;
+  transition-timing-function: ease-in-out;
+}
+
+.c7:hover {
+  background-color: rgba(0, 0, 0, 0.04);
+  color: #555555;
+  border-color: rgba(0, 0, 0, 0);
+}
+
+.c7:focus {
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
+}
+
+.c7:focus >circle,
+.c7:focus >ellipse,
+.c7:focus >line,
+.c7:focus >path,
+.c7:focus >polygon,
+.c7:focus >polyline,
+.c7:focus >rect {
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
+}
+
+.c7:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c7:focus:not(:focus-visible) {
+  outline-offset: 0px;
+  outline: none;
+  outline: none;
+  box-shadow: none;
+}
+
+.c7:focus:not(:focus-visible) >circle,
+.c7:focus:not(:focus-visible) >ellipse,
+.c7:focus:not(:focus-visible) >line,
+.c7:focus:not(:focus-visible) >path,
+.c7:focus:not(:focus-visible) >polygon,
+.c7:focus:not(:focus-visible) >polyline,
+.c7:focus:not(:focus-visible) >rect {
+  outline-offset: 0px;
+  outline: none;
+  outline: none;
+  box-shadow: none;
+}
+
+.c7:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
+}
+
 .c3 {
   max-height: inherit;
+}
+
+.c3 div:has(input[type="search"]) {
+  padding-bottom: 0;
+}
+
+.c3 button[aria-label*="Or, press"] {
+  padding-block: 6px;
+  padding-inline: 6px;
+}
+
+.c3 button[aria-label*="Or, press"]:focus {
+  background: transparent;
+}
+
+.c3 button[aria-label*="Or, press"]:focus >div {
+  background: rgba(0, 0, 0, 0.04);
 }
 
 .c4 {
@@ -953,16 +1195,18 @@ exports[`Select Controlled multiple onChange toggle with valueKey reduce 2`] = `
   scroll-behavior: smooth;
   overflow: auto;
   outline: none;
+  padding-top: 6px;
+  padding-inline: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.c4 [role="option"] {
+  border-radius: 6px;
 }
 
 .c6 {
-  background-color: #7D4CDB;
-  color: #FFFFFF;
-  display: block;
-  width: 100%;
-}
-
-.c10 {
   display: block;
   width: 100%;
 }
@@ -972,9 +1216,11 @@ exports[`Select Controlled multiple onChange toggle with valueKey reduce 2`] = `
 }
 
 @media only screen and (max-width: 768px) {
-  .c7 {
-    padding: 6px;
-  }
+
+}
+
+@media only screen and (max-width: 768px) {
+
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
@@ -1016,37 +1262,21 @@ exports[`Select Controlled multiple onChange toggle with valueKey reduce 2`] = `
         tabindex="0"
         type="button"
       >
-        <div
-          class="c7"
-        >
-          <span
-            class="c8"
-          >
-            Value1
-          </span>
-        </div>
+        Value1
       </button>
       <button
         aria-posinset="2"
         aria-selected="false"
         aria-setsize="2"
-        class="c9 c10"
+        class="c7 c6"
         role="option"
         tabindex="-1"
         type="button"
       >
-        <div
-          class="c7"
-        >
-          <span
-            class="c8"
-          >
-            Value2
-          </span>
-        </div>
+        Value2
       </button>
       <div
-        class="c11"
+        class="c8"
       />
     </div>
   </div>
@@ -1055,14 +1285,56 @@ exports[`Select Controlled multiple onChange toggle with valueKey reduce 2`] = `
 
 exports[`Select Controlled multiple onChange toggle with valueKey reduce 3`] = `
 "@media only screen and (max-width: 768px) {
-  .dcgDzS {
+  .peYnb {
     margin-left: 6px;
     margin-right: 6px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .peYnb {
+    margin-left: 6px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .peYnb {
+    margin-right: 12px;
   }
 }"
 `;
 
 exports[`Select Controlled multiple onChange with valueKey reduce 1`] = `
+.c9 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 18px;
+  height: 18px;
+  fill: #555555;
+  stroke: #555555;
+}
+
+.c9 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c9 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c9 *[stroke*='#'],
+.c9 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c9 *[fill-rule],
+.c9 *[FILL-RULE],
+.c9 *[fill*='#'],
+.c9 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
+}
+
 .c3 {
   display: flex;
   box-sizing: border-box;
@@ -1090,42 +1362,12 @@ exports[`Select Controlled multiple onChange with valueKey reduce 1`] = `
   max-width: 100%;
   margin-left: 12px;
   margin-right: 12px;
+  margin-left: 12px;
+  margin-right: 12px;
   min-width: 0;
   min-height: 0;
   flex-direction: column;
   flex: 0 0 auto;
-}
-
-.c9 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
-}
-
-.c9 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c9 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c9 *[stroke*='#'],
-.c9 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c9 *[fill-rule],
-.c9 *[FILL-RULE],
-.c9 *[fill*='#'],
-.c9 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
 }
 
 .c1 {
@@ -1138,16 +1380,17 @@ exports[`Select Controlled multiple onChange with valueKey reduce 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  color: inherit;
   outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
+  color: inherit;
 }
 
 .c1:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c1:focus >circle,
@@ -1157,8 +1400,9 @@ exports[`Select Controlled multiple onChange with valueKey reduce 1`] = `
 .c1:focus >polygon,
 .c1:focus >polyline,
 .c1:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c1:focus ::-moz-focus-inner {
@@ -1166,6 +1410,8 @@ exports[`Select Controlled multiple onChange with valueKey reduce 1`] = `
 }
 
 .c1:focus:not(:focus-visible) {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -1177,6 +1423,8 @@ exports[`Select Controlled multiple onChange with valueKey reduce 1`] = `
 .c1:focus:not(:focus-visible) >polygon,
 .c1:focus:not(:focus-visible) >polyline,
 .c1:focus:not(:focus-visible) >rect {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -1194,26 +1442,31 @@ exports[`Select Controlled multiple onChange with valueKey reduce 1`] = `
   background: transparent;
   color: inherit;
   width: 100%;
-  padding: 11px;
-  font-weight: 600;
+  line-height: inherit;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-weight: 400;
   margin: 0;
-  border: 1px solid rgba(0, 0, 0, 0.33);
-  border-radius: 4px;
+  border: 1px solid rgba(0, 0, 0, 0.36);
+  border-radius: 8px;
+  color: #2e2e2e;
   border: none;
   outline: none;
   border: none;
 }
 
 .c6::-webkit-input-placeholder {
-  color: #AAAAAA;
+  color: #676767;
 }
 
 .c6::-moz-placeholder {
-  color: #AAAAAA;
+  color: #676767;
 }
 
 .c6:-ms-input-placeholder {
-  color: #AAAAAA;
+  color: #676767;
 }
 
 .c6 ::-webkit-search-decoration {
@@ -1230,9 +1483,26 @@ exports[`Select Controlled multiple onChange with valueKey reduce 1`] = `
   opacity: 1;
 }
 
+.c6::-webkit-input-placeholder {
+  font-weight: 400;
+}
+
+.c6::-moz-placeholder {
+  font-weight: 400;
+}
+
+.c6:-ms-input-placeholder {
+  font-weight: 400;
+}
+
 .c5 {
   position: relative;
   width: 100%;
+}
+
+.c5 svg {
+  fill: #2e2e2e;
+  stroke: #2e2e2e;
 }
 
 .c7 {
@@ -1240,13 +1510,25 @@ exports[`Select Controlled multiple onChange with valueKey reduce 1`] = `
 }
 
 .c2 {
-  border: 1px solid rgba(0, 0, 0, 0.33);
-  border-radius: 4px;
+  border: 1px solid rgba(0, 0, 0, 0.36);
+  border-radius: 8px;
+}
+
+.c2[class*="SelectMultiple"] [role="listbox"] {
+  padding-block: 6px;
+  padding-inline: 6px;
+}
+
+.c2[class*="SelectMultiple"] [role="listbox"] [role='option'] {
+  border-radius: 6px;
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1258,6 +1540,18 @@ exports[`Select Controlled multiple onChange with valueKey reduce 1`] = `
   .c8 {
     margin-left: 6px;
     margin-right: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c8 {
+    margin-left: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c8 {
+    margin-right: 12px;
   }
 }
 
@@ -1299,12 +1593,12 @@ exports[`Select Controlled multiple onChange with valueKey reduce 1`] = `
         style="min-width: auto;"
       >
         <svg
-          aria-label="FormDown"
+          aria-label="Down"
           class="c9"
           viewBox="0 0 24 24"
         >
           <path
-            d="m18 9-6 6-6-6"
+            d="m2 8.35 10.173 9.823L21.997 8"
             fill="none"
             stroke="#000"
             stroke-width="2"
@@ -1325,7 +1619,7 @@ exports[`Select Controlled multiple onChange with valueKey reduce 2`] = `
   min-height: 0;
   flex-direction: column;
   overflow: auto;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.20);
+  box-shadow: 0px 6px 12px 0px rgba(0, 0, 0, 0.12);
 }
 
 .c2 {
@@ -1341,17 +1635,6 @@ exports[`Select Controlled multiple onChange with valueKey reduce 2`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  align-items: flex-start;
-  min-width: 0;
-  min-height: 0;
-  flex-direction: column;
-  padding: 12px;
-}
-
-.c9 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
   min-width: 0;
   min-height: 0;
   flex-direction: column;
@@ -1360,29 +1643,35 @@ exports[`Select Controlled multiple onChange with valueKey reduce 2`] = `
 }
 
 .c1 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  border-radius: 0px;
+  border-radius: 6px;
   position: fixed;
-  z-index: 20;
+  z-index: 110;
   outline: none;
-  background-color: #FFFFFF;
-  color: #444444;
+  background-color: #ffffff;
+  color: #555555;
+  margin-top: 6px;
   opacity: 0;
   transform-origin: top left;
   animation: kPQHBD 0.1s forwards;
   animation-delay: 0.01s;
 }
 
-.c8 {
-  margin: 0px;
-  font-size: 18px;
-  line-height: 24px;
+.c1 [class*=MaskedInput__ContainerBox] {
+  padding-block: 6px;
+  padding-inline: 6px;
+  gap: 6px;
+  display: flex;
+  flex-direction: column;
 }
 
 .c5 {
@@ -1395,16 +1684,35 @@ exports[`Select Controlled multiple onChange with valueKey reduce 2`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  color: inherit;
-  outline: none;
   border: none;
-  padding: 0;
-  text-align: inherit;
+  border-radius: 9999px;
+  padding: 5px 12px;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  padding: 5px 12px;
+  color: #555555;
+  border-style: solid;
+  border-width: 1px;
+  border-color: rgba(0, 0, 0, 0);
+  border-radius: 6px;
+  font-weight: 500;
+  padding: 5px 12px;
+  text-align: start;
+  transition-property: color,background-color,border-color,box-shadow;
+  transition-duration: 0.1s;
+  transition-timing-function: ease-in-out;
+}
+
+.c5:hover {
+  background-color: rgba(0, 0, 0, 0.04);
+  color: #555555;
+  border-color: rgba(0, 0, 0, 0);
 }
 
 .c5:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c5:focus >circle,
@@ -1414,8 +1722,9 @@ exports[`Select Controlled multiple onChange with valueKey reduce 2`] = `
 .c5:focus >polygon,
 .c5:focus >polyline,
 .c5:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c5:focus ::-moz-focus-inner {
@@ -1423,6 +1732,8 @@ exports[`Select Controlled multiple onChange with valueKey reduce 2`] = `
 }
 
 .c5:focus:not(:focus-visible) {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -1434,6 +1745,8 @@ exports[`Select Controlled multiple onChange with valueKey reduce 2`] = `
 .c5:focus:not(:focus-visible) >polygon,
 .c5:focus:not(:focus-visible) >polyline,
 .c5:focus:not(:focus-visible) >rect {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -1446,11 +1759,37 @@ exports[`Select Controlled multiple onChange with valueKey reduce 2`] = `
   max-height: inherit;
 }
 
+.c3 div:has(input[type="search"]) {
+  padding-bottom: 0;
+}
+
+.c3 button[aria-label*="Or, press"] {
+  padding-block: 6px;
+  padding-inline: 6px;
+}
+
+.c3 button[aria-label*="Or, press"]:focus {
+  background: transparent;
+}
+
+.c3 button[aria-label*="Or, press"]:focus >div {
+  background: rgba(0, 0, 0, 0.04);
+}
+
 .c4 {
   position: relative;
   scroll-behavior: smooth;
   overflow: auto;
   outline: none;
+  padding-top: 6px;
+  padding-inline: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.c4 [role="option"] {
+  border-radius: 6px;
 }
 
 .c6 {
@@ -1463,9 +1802,11 @@ exports[`Select Controlled multiple onChange with valueKey reduce 2`] = `
 }
 
 @media only screen and (max-width: 768px) {
-  .c7 {
-    padding: 6px;
-  }
+
+}
+
+@media only screen and (max-width: 768px) {
+
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
@@ -1507,15 +1848,7 @@ exports[`Select Controlled multiple onChange with valueKey reduce 2`] = `
         tabindex="0"
         type="button"
       >
-        <div
-          class="c7"
-        >
-          <span
-            class="c8"
-          >
-            Value1
-          </span>
-        </div>
+        Value1
       </button>
       <button
         aria-posinset="2"
@@ -1526,18 +1859,10 @@ exports[`Select Controlled multiple onChange with valueKey reduce 2`] = `
         tabindex="-1"
         type="button"
       >
-        <div
-          class="c7"
-        >
-          <span
-            class="c8"
-          >
-            Value2
-          </span>
-        </div>
+        Value2
       </button>
       <div
-        class="c9"
+        class="c7"
       />
     </div>
   </div>
@@ -1546,14 +1871,56 @@ exports[`Select Controlled multiple onChange with valueKey reduce 2`] = `
 
 exports[`Select Controlled multiple onChange with valueKey reduce 3`] = `
 "@media only screen and (max-width: 768px) {
-  .dcgDzS {
+  .peYnb {
     margin-left: 6px;
     margin-right: 6px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .peYnb {
+    margin-left: 6px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .peYnb {
+    margin-right: 12px;
   }
 }"
 `;
 
 exports[`Select Controlled multiple onChange with valueKey string 1`] = `
+.c9 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 18px;
+  height: 18px;
+  fill: #555555;
+  stroke: #555555;
+}
+
+.c9 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c9 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c9 *[stroke*='#'],
+.c9 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c9 *[fill-rule],
+.c9 *[FILL-RULE],
+.c9 *[fill*='#'],
+.c9 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
+}
+
 .c3 {
   display: flex;
   box-sizing: border-box;
@@ -1581,42 +1948,12 @@ exports[`Select Controlled multiple onChange with valueKey string 1`] = `
   max-width: 100%;
   margin-left: 12px;
   margin-right: 12px;
+  margin-left: 12px;
+  margin-right: 12px;
   min-width: 0;
   min-height: 0;
   flex-direction: column;
   flex: 0 0 auto;
-}
-
-.c9 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
-}
-
-.c9 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c9 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c9 *[stroke*='#'],
-.c9 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c9 *[fill-rule],
-.c9 *[FILL-RULE],
-.c9 *[fill*='#'],
-.c9 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
 }
 
 .c1 {
@@ -1629,16 +1966,17 @@ exports[`Select Controlled multiple onChange with valueKey string 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  color: inherit;
   outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
+  color: inherit;
 }
 
 .c1:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c1:focus >circle,
@@ -1648,8 +1986,9 @@ exports[`Select Controlled multiple onChange with valueKey string 1`] = `
 .c1:focus >polygon,
 .c1:focus >polyline,
 .c1:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c1:focus ::-moz-focus-inner {
@@ -1657,6 +1996,8 @@ exports[`Select Controlled multiple onChange with valueKey string 1`] = `
 }
 
 .c1:focus:not(:focus-visible) {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -1668,6 +2009,8 @@ exports[`Select Controlled multiple onChange with valueKey string 1`] = `
 .c1:focus:not(:focus-visible) >polygon,
 .c1:focus:not(:focus-visible) >polyline,
 .c1:focus:not(:focus-visible) >rect {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -1685,26 +2028,31 @@ exports[`Select Controlled multiple onChange with valueKey string 1`] = `
   background: transparent;
   color: inherit;
   width: 100%;
-  padding: 11px;
-  font-weight: 600;
+  line-height: inherit;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-weight: 400;
   margin: 0;
-  border: 1px solid rgba(0, 0, 0, 0.33);
-  border-radius: 4px;
+  border: 1px solid rgba(0, 0, 0, 0.36);
+  border-radius: 8px;
+  color: #2e2e2e;
   border: none;
   outline: none;
   border: none;
 }
 
 .c6::-webkit-input-placeholder {
-  color: #AAAAAA;
+  color: #676767;
 }
 
 .c6::-moz-placeholder {
-  color: #AAAAAA;
+  color: #676767;
 }
 
 .c6:-ms-input-placeholder {
-  color: #AAAAAA;
+  color: #676767;
 }
 
 .c6 ::-webkit-search-decoration {
@@ -1721,9 +2069,26 @@ exports[`Select Controlled multiple onChange with valueKey string 1`] = `
   opacity: 1;
 }
 
+.c6::-webkit-input-placeholder {
+  font-weight: 400;
+}
+
+.c6::-moz-placeholder {
+  font-weight: 400;
+}
+
+.c6:-ms-input-placeholder {
+  font-weight: 400;
+}
+
 .c5 {
   position: relative;
   width: 100%;
+}
+
+.c5 svg {
+  fill: #2e2e2e;
+  stroke: #2e2e2e;
 }
 
 .c7 {
@@ -1731,13 +2096,25 @@ exports[`Select Controlled multiple onChange with valueKey string 1`] = `
 }
 
 .c2 {
-  border: 1px solid rgba(0, 0, 0, 0.33);
-  border-radius: 4px;
+  border: 1px solid rgba(0, 0, 0, 0.36);
+  border-radius: 8px;
+}
+
+.c2[class*="SelectMultiple"] [role="listbox"] {
+  padding-block: 6px;
+  padding-inline: 6px;
+}
+
+.c2[class*="SelectMultiple"] [role="listbox"] [role='option'] {
+  border-radius: 6px;
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1749,6 +2126,18 @@ exports[`Select Controlled multiple onChange with valueKey string 1`] = `
   .c8 {
     margin-left: 6px;
     margin-right: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c8 {
+    margin-left: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c8 {
+    margin-right: 12px;
   }
 }
 
@@ -1790,12 +2179,12 @@ exports[`Select Controlled multiple onChange with valueKey string 1`] = `
         style="min-width: auto;"
       >
         <svg
-          aria-label="FormDown"
+          aria-label="Down"
           class="c9"
           viewBox="0 0 24 24"
         >
           <path
-            d="m18 9-6 6-6-6"
+            d="m2 8.35 10.173 9.823L21.997 8"
             fill="none"
             stroke="#000"
             stroke-width="2"
@@ -1816,7 +2205,7 @@ exports[`Select Controlled multiple onChange with valueKey string 2`] = `
   min-height: 0;
   flex-direction: column;
   overflow: auto;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.20);
+  box-shadow: 0px 6px 12px 0px rgba(0, 0, 0, 0.12);
 }
 
 .c2 {
@@ -1832,17 +2221,6 @@ exports[`Select Controlled multiple onChange with valueKey string 2`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  align-items: flex-start;
-  min-width: 0;
-  min-height: 0;
-  flex-direction: column;
-  padding: 12px;
-}
-
-.c9 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
   min-width: 0;
   min-height: 0;
   flex-direction: column;
@@ -1851,29 +2229,35 @@ exports[`Select Controlled multiple onChange with valueKey string 2`] = `
 }
 
 .c1 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  border-radius: 0px;
+  border-radius: 6px;
   position: fixed;
-  z-index: 20;
+  z-index: 110;
   outline: none;
-  background-color: #FFFFFF;
-  color: #444444;
+  background-color: #ffffff;
+  color: #555555;
+  margin-top: 6px;
   opacity: 0;
   transform-origin: top left;
   animation: kPQHBD 0.1s forwards;
   animation-delay: 0.01s;
 }
 
-.c8 {
-  margin: 0px;
-  font-size: 18px;
-  line-height: 24px;
+.c1 [class*=MaskedInput__ContainerBox] {
+  padding-block: 6px;
+  padding-inline: 6px;
+  gap: 6px;
+  display: flex;
+  flex-direction: column;
 }
 
 .c5 {
@@ -1886,16 +2270,35 @@ exports[`Select Controlled multiple onChange with valueKey string 2`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  color: inherit;
-  outline: none;
   border: none;
-  padding: 0;
-  text-align: inherit;
+  border-radius: 9999px;
+  padding: 5px 12px;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  padding: 5px 12px;
+  color: #555555;
+  border-style: solid;
+  border-width: 1px;
+  border-color: rgba(0, 0, 0, 0);
+  border-radius: 6px;
+  font-weight: 500;
+  padding: 5px 12px;
+  text-align: start;
+  transition-property: color,background-color,border-color,box-shadow;
+  transition-duration: 0.1s;
+  transition-timing-function: ease-in-out;
+}
+
+.c5:hover {
+  background-color: rgba(0, 0, 0, 0.04);
+  color: #555555;
+  border-color: rgba(0, 0, 0, 0);
 }
 
 .c5:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c5:focus >circle,
@@ -1905,8 +2308,9 @@ exports[`Select Controlled multiple onChange with valueKey string 2`] = `
 .c5:focus >polygon,
 .c5:focus >polyline,
 .c5:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c5:focus ::-moz-focus-inner {
@@ -1914,6 +2318,8 @@ exports[`Select Controlled multiple onChange with valueKey string 2`] = `
 }
 
 .c5:focus:not(:focus-visible) {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -1925,6 +2331,8 @@ exports[`Select Controlled multiple onChange with valueKey string 2`] = `
 .c5:focus:not(:focus-visible) >polygon,
 .c5:focus:not(:focus-visible) >polyline,
 .c5:focus:not(:focus-visible) >rect {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -1937,11 +2345,37 @@ exports[`Select Controlled multiple onChange with valueKey string 2`] = `
   max-height: inherit;
 }
 
+.c3 div:has(input[type="search"]) {
+  padding-bottom: 0;
+}
+
+.c3 button[aria-label*="Or, press"] {
+  padding-block: 6px;
+  padding-inline: 6px;
+}
+
+.c3 button[aria-label*="Or, press"]:focus {
+  background: transparent;
+}
+
+.c3 button[aria-label*="Or, press"]:focus >div {
+  background: rgba(0, 0, 0, 0.04);
+}
+
 .c4 {
   position: relative;
   scroll-behavior: smooth;
   overflow: auto;
   outline: none;
+  padding-top: 6px;
+  padding-inline: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.c4 [role="option"] {
+  border-radius: 6px;
 }
 
 .c6 {
@@ -1954,9 +2388,11 @@ exports[`Select Controlled multiple onChange with valueKey string 2`] = `
 }
 
 @media only screen and (max-width: 768px) {
-  .c7 {
-    padding: 6px;
-  }
+
+}
+
+@media only screen and (max-width: 768px) {
+
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
@@ -1998,15 +2434,7 @@ exports[`Select Controlled multiple onChange with valueKey string 2`] = `
         tabindex="0"
         type="button"
       >
-        <div
-          class="c7"
-        >
-          <span
-            class="c8"
-          >
-            Value1
-          </span>
-        </div>
+        Value1
       </button>
       <button
         aria-posinset="2"
@@ -2017,18 +2445,10 @@ exports[`Select Controlled multiple onChange with valueKey string 2`] = `
         tabindex="-1"
         type="button"
       >
-        <div
-          class="c7"
-        >
-          <span
-            class="c8"
-          >
-            Value2
-          </span>
-        </div>
+        Value2
       </button>
       <div
-        class="c9"
+        class="c7"
       />
     </div>
   </div>
@@ -2037,16 +2457,58 @@ exports[`Select Controlled multiple onChange with valueKey string 2`] = `
 
 exports[`Select Controlled multiple onChange with valueKey string 3`] = `
 "@media only screen and (max-width: 768px) {
-  .dcgDzS {
+  .peYnb {
     margin-left: 6px;
     margin-right: 6px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .peYnb {
+    margin-left: 6px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .peYnb {
+    margin-right: 12px;
   }
 }"
 `;
 
 exports[`Select Controlled multiple onChange without labelKey 1`] = `
 <DocumentFragment>
-  .c3 {
+  .c9 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 18px;
+  height: 18px;
+  fill: #555555;
+  stroke: #555555;
+}
+
+.c9 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c9 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c9 *[stroke*='#'],
+.c9 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c9 *[fill-rule],
+.c9 *[FILL-RULE],
+.c9 *[fill*='#'],
+.c9 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c3 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -2073,42 +2535,12 @@ exports[`Select Controlled multiple onChange without labelKey 1`] = `
   max-width: 100%;
   margin-left: 12px;
   margin-right: 12px;
+  margin-left: 12px;
+  margin-right: 12px;
   min-width: 0;
   min-height: 0;
   flex-direction: column;
   flex: 0 0 auto;
-}
-
-.c9 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
-}
-
-.c9 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c9 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c9 *[stroke*='#'],
-.c9 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c9 *[fill-rule],
-.c9 *[FILL-RULE],
-.c9 *[fill*='#'],
-.c9 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
 }
 
 .c1 {
@@ -2121,16 +2553,17 @@ exports[`Select Controlled multiple onChange without labelKey 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  color: inherit;
   outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
+  color: inherit;
 }
 
 .c1:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c1:focus >circle,
@@ -2140,8 +2573,9 @@ exports[`Select Controlled multiple onChange without labelKey 1`] = `
 .c1:focus >polygon,
 .c1:focus >polyline,
 .c1:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c1:focus ::-moz-focus-inner {
@@ -2149,6 +2583,8 @@ exports[`Select Controlled multiple onChange without labelKey 1`] = `
 }
 
 .c1:focus:not(:focus-visible) {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -2160,6 +2596,8 @@ exports[`Select Controlled multiple onChange without labelKey 1`] = `
 .c1:focus:not(:focus-visible) >polygon,
 .c1:focus:not(:focus-visible) >polyline,
 .c1:focus:not(:focus-visible) >rect {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -2177,26 +2615,31 @@ exports[`Select Controlled multiple onChange without labelKey 1`] = `
   background: transparent;
   color: inherit;
   width: 100%;
-  padding: 11px;
-  font-weight: 600;
+  line-height: inherit;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-weight: 400;
   margin: 0;
-  border: 1px solid rgba(0, 0, 0, 0.33);
-  border-radius: 4px;
+  border: 1px solid rgba(0, 0, 0, 0.36);
+  border-radius: 8px;
+  color: #2e2e2e;
   border: none;
   outline: none;
   border: none;
 }
 
 .c6::-webkit-input-placeholder {
-  color: #AAAAAA;
+  color: #676767;
 }
 
 .c6::-moz-placeholder {
-  color: #AAAAAA;
+  color: #676767;
 }
 
 .c6:-ms-input-placeholder {
-  color: #AAAAAA;
+  color: #676767;
 }
 
 .c6 ::-webkit-search-decoration {
@@ -2213,9 +2656,26 @@ exports[`Select Controlled multiple onChange without labelKey 1`] = `
   opacity: 1;
 }
 
+.c6::-webkit-input-placeholder {
+  font-weight: 400;
+}
+
+.c6::-moz-placeholder {
+  font-weight: 400;
+}
+
+.c6:-ms-input-placeholder {
+  font-weight: 400;
+}
+
 .c5 {
   position: relative;
   width: 100%;
+}
+
+.c5 svg {
+  fill: #2e2e2e;
+  stroke: #2e2e2e;
 }
 
 .c7 {
@@ -2223,13 +2683,25 @@ exports[`Select Controlled multiple onChange without labelKey 1`] = `
 }
 
 .c2 {
-  border: 1px solid rgba(0, 0, 0, 0.33);
-  border-radius: 4px;
+  border: 1px solid rgba(0, 0, 0, 0.36);
+  border-radius: 8px;
+}
+
+.c2[class*="SelectMultiple"] [role="listbox"] {
+  padding-block: 6px;
+  padding-inline: 6px;
+}
+
+.c2[class*="SelectMultiple"] [role="listbox"] [role='option'] {
+  border-radius: 6px;
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -2241,6 +2713,18 @@ exports[`Select Controlled multiple onChange without labelKey 1`] = `
   .c8 {
     margin-left: 6px;
     margin-right: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c8 {
+    margin-left: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c8 {
+    margin-right: 12px;
   }
 }
 
@@ -2282,12 +2766,12 @@ exports[`Select Controlled multiple onChange without labelKey 1`] = `
           style="min-width: auto;"
         >
           <svg
-            aria-label="FormDown"
+            aria-label="Down"
             class="c9"
             viewBox="0 0 24 24"
           >
             <path
-              d="m18 9-6 6-6-6"
+              d="m2 8.35 10.173 9.823L21.997 8"
               fill="none"
               stroke="#000"
               stroke-width="2"
@@ -2309,7 +2793,7 @@ exports[`Select Controlled multiple onChange without labelKey 2`] = `
   min-height: 0;
   flex-direction: column;
   overflow: auto;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.20);
+  box-shadow: 0px 6px 12px 0px rgba(0, 0, 0, 0.12);
 }
 
 .c2 {
@@ -2325,17 +2809,6 @@ exports[`Select Controlled multiple onChange without labelKey 2`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  align-items: flex-start;
-  min-width: 0;
-  min-height: 0;
-  flex-direction: column;
-  padding: 12px;
-}
-
-.c9 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
   min-width: 0;
   min-height: 0;
   flex-direction: column;
@@ -2344,29 +2817,35 @@ exports[`Select Controlled multiple onChange without labelKey 2`] = `
 }
 
 .c1 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  border-radius: 0px;
+  border-radius: 6px;
   position: fixed;
-  z-index: 20;
+  z-index: 110;
   outline: none;
-  background-color: #FFFFFF;
-  color: #444444;
+  background-color: #ffffff;
+  color: #555555;
+  margin-top: 6px;
   opacity: 0;
   transform-origin: top left;
   animation: kPQHBD 0.1s forwards;
   animation-delay: 0.01s;
 }
 
-.c8 {
-  margin: 0px;
-  font-size: 18px;
-  line-height: 24px;
+.c1 [class*=MaskedInput__ContainerBox] {
+  padding-block: 6px;
+  padding-inline: 6px;
+  gap: 6px;
+  display: flex;
+  flex-direction: column;
 }
 
 .c5 {
@@ -2379,16 +2858,35 @@ exports[`Select Controlled multiple onChange without labelKey 2`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  color: inherit;
-  outline: none;
   border: none;
-  padding: 0;
-  text-align: inherit;
+  border-radius: 9999px;
+  padding: 5px 12px;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  padding: 5px 12px;
+  color: #555555;
+  border-style: solid;
+  border-width: 1px;
+  border-color: rgba(0, 0, 0, 0);
+  border-radius: 6px;
+  font-weight: 500;
+  padding: 5px 12px;
+  text-align: start;
+  transition-property: color,background-color,border-color,box-shadow;
+  transition-duration: 0.1s;
+  transition-timing-function: ease-in-out;
+}
+
+.c5:hover {
+  background-color: rgba(0, 0, 0, 0.04);
+  color: #555555;
+  border-color: rgba(0, 0, 0, 0);
 }
 
 .c5:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c5:focus >circle,
@@ -2398,8 +2896,9 @@ exports[`Select Controlled multiple onChange without labelKey 2`] = `
 .c5:focus >polygon,
 .c5:focus >polyline,
 .c5:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c5:focus ::-moz-focus-inner {
@@ -2407,6 +2906,8 @@ exports[`Select Controlled multiple onChange without labelKey 2`] = `
 }
 
 .c5:focus:not(:focus-visible) {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -2418,6 +2919,8 @@ exports[`Select Controlled multiple onChange without labelKey 2`] = `
 .c5:focus:not(:focus-visible) >polygon,
 .c5:focus:not(:focus-visible) >polyline,
 .c5:focus:not(:focus-visible) >rect {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -2430,11 +2933,37 @@ exports[`Select Controlled multiple onChange without labelKey 2`] = `
   max-height: inherit;
 }
 
+.c3 div:has(input[type="search"]) {
+  padding-bottom: 0;
+}
+
+.c3 button[aria-label*="Or, press"] {
+  padding-block: 6px;
+  padding-inline: 6px;
+}
+
+.c3 button[aria-label*="Or, press"]:focus {
+  background: transparent;
+}
+
+.c3 button[aria-label*="Or, press"]:focus >div {
+  background: rgba(0, 0, 0, 0.04);
+}
+
 .c4 {
   position: relative;
   scroll-behavior: smooth;
   overflow: auto;
   outline: none;
+  padding-top: 6px;
+  padding-inline: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.c4 [role="option"] {
+  border-radius: 6px;
 }
 
 .c6 {
@@ -2447,9 +2976,11 @@ exports[`Select Controlled multiple onChange without labelKey 2`] = `
 }
 
 @media only screen and (max-width: 768px) {
-  .c7 {
-    padding: 6px;
-  }
+
+}
+
+@media only screen and (max-width: 768px) {
+
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
@@ -2491,15 +3022,7 @@ exports[`Select Controlled multiple onChange without labelKey 2`] = `
         tabindex="0"
         type="button"
       >
-        <div
-          class="c7"
-        >
-          <span
-            class="c8"
-          >
-            1
-          </span>
-        </div>
+        1
       </button>
       <button
         aria-posinset="2"
@@ -2510,18 +3033,10 @@ exports[`Select Controlled multiple onChange without labelKey 2`] = `
         tabindex="-1"
         type="button"
       >
-        <div
-          class="c7"
-        >
-          <span
-            class="c8"
-          >
-            2
-          </span>
-        </div>
+        2
       </button>
       <div
-        class="c9"
+        class="c7"
       />
     </div>
   </div>
@@ -2530,28 +3045,38 @@ exports[`Select Controlled multiple onChange without labelKey 2`] = `
 
 exports[`Select Controlled multiple onChange without labelKey 3`] = `
 "@media only screen and (max-width: 768px) {
-  .dcgDzS {
+  .peYnb {
     margin-left: 6px;
     margin-right: 6px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .peYnb {
+    margin-left: 6px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .peYnb {
+    margin-right: 12px;
   }
 }"
 `;
 
 exports[`Select Controlled multiple onChange without labelKey 4`] = `
 <div
-  class="StyledBox-sc-13pk1d4-0 bBvhTp StyledDrop-sc-16s5rx8-0 czxfTR"
+  class="StyledBox-sc-13pk1d4-0 iPenqz StyledDrop-sc-16s5rx8-0 bdKJMF"
   data-g-portal-id="0"
   id="test-select__drop"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 fDLUqh StyledSelect__StyledContainer-sc-znp66n-0 dyNSXQ"
+    class="StyledBox-sc-13pk1d4-0 fDLUqh StyledSelect__StyledContainer-sc-znp66n-0 hvEItc"
     id="test-select__select-drop"
   >
     <div
       aria-multiselectable="true"
-      class="StyledSelect__OptionsContainer-sc-znp66n-1 kARYcO"
+      class="StyledSelect__OptionsContainer-sc-znp66n-1 eUCEJD"
       role="listbox"
       tabindex="-1"
     >
@@ -2559,39 +3084,23 @@ exports[`Select Controlled multiple onChange without labelKey 4`] = `
         aria-posinset="1"
         aria-selected="true"
         aria-setsize="2"
-        class="StyledButton-sc-323bzc-0 fdEDEe StyledSelect__SelectOption-sc-znp66n-3 enPret"
+        class="StyledButtonKind-sc-1vhfpnt-0 etRyTp StyledSelect__SelectOption-sc-znp66n-3 lkKTUk"
         role="option"
         tabindex="0"
         type="button"
       >
-        <div
-          class="StyledBox-sc-13pk1d4-0 jfutgd"
-        >
-          <span
-            class="StyledText-sc-1sadyjn-0 gQrfUm"
-          >
-            1
-          </span>
-        </div>
+        1
       </button>
       <button
         aria-posinset="2"
         aria-selected="false"
         aria-setsize="2"
-        class="StyledButton-sc-323bzc-0 jLPXpV StyledSelect__SelectOption-sc-znp66n-3 lkKTUk"
+        class="StyledButtonKind-sc-1vhfpnt-0 fTMnBM StyledSelect__SelectOption-sc-znp66n-3 lkKTUk"
         role="option"
         tabindex="-1"
         type="button"
       >
-        <div
-          class="StyledBox-sc-13pk1d4-0 jfutgd"
-        >
-          <span
-            class="StyledText-sc-1sadyjn-0 gQrfUm"
-          >
-            2
-          </span>
-        </div>
+        2
       </button>
       <div
         class="StyledBox-sc-13pk1d4-0 hylnGi"
@@ -2603,28 +3112,38 @@ exports[`Select Controlled multiple onChange without labelKey 4`] = `
 
 exports[`Select Controlled multiple onChange without labelKey 5`] = `
 "@media only screen and (max-width: 768px) {
-  .dcgDzS {
+  .peYnb {
     margin-left: 6px;
     margin-right: 6px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .peYnb {
+    margin-left: 6px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .peYnb {
+    margin-right: 12px;
   }
 }"
 `;
 
 exports[`Select Controlled multiple onChange without labelKey 6`] = `
 <div
-  class="StyledBox-sc-13pk1d4-0 bBvhTp StyledDrop-sc-16s5rx8-0 czxfTR"
+  class="StyledBox-sc-13pk1d4-0 iPenqz StyledDrop-sc-16s5rx8-0 bdKJMF"
   data-g-portal-id="0"
   id="test-select__drop"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 fDLUqh StyledSelect__StyledContainer-sc-znp66n-0 dyNSXQ"
+    class="StyledBox-sc-13pk1d4-0 fDLUqh StyledSelect__StyledContainer-sc-znp66n-0 hvEItc"
     id="test-select__select-drop"
   >
     <div
       aria-multiselectable="true"
-      class="StyledSelect__OptionsContainer-sc-znp66n-1 kARYcO"
+      class="StyledSelect__OptionsContainer-sc-znp66n-1 eUCEJD"
       role="listbox"
       tabindex="-1"
     >
@@ -2632,39 +3151,23 @@ exports[`Select Controlled multiple onChange without labelKey 6`] = `
         aria-posinset="1"
         aria-selected="true"
         aria-setsize="2"
-        class="StyledButton-sc-323bzc-0 fdEDEe StyledSelect__SelectOption-sc-znp66n-3 enPret"
+        class="StyledButtonKind-sc-1vhfpnt-0 etRyTp StyledSelect__SelectOption-sc-znp66n-3 lkKTUk"
         role="option"
         tabindex="0"
         type="button"
       >
-        <div
-          class="StyledBox-sc-13pk1d4-0 jfutgd"
-        >
-          <span
-            class="StyledText-sc-1sadyjn-0 gQrfUm"
-          >
-            1
-          </span>
-        </div>
+        1
       </button>
       <button
         aria-posinset="2"
         aria-selected="true"
         aria-setsize="2"
-        class="StyledButton-sc-323bzc-0 fdEDEe StyledSelect__SelectOption-sc-znp66n-3 enPret"
+        class="StyledButtonKind-sc-1vhfpnt-0 etRyTp StyledSelect__SelectOption-sc-znp66n-3 lkKTUk"
         role="option"
         tabindex="0"
         type="button"
       >
-        <div
-          class="StyledBox-sc-13pk1d4-0 jfutgd"
-        >
-          <span
-            class="StyledText-sc-1sadyjn-0 gQrfUm"
-          >
-            2
-          </span>
-        </div>
+        2
       </button>
       <div
         class="StyledBox-sc-13pk1d4-0 hylnGi"
@@ -2676,16 +3179,58 @@ exports[`Select Controlled multiple onChange without labelKey 6`] = `
 
 exports[`Select Controlled multiple onChange without labelKey 7`] = `
 "@media only screen and (max-width: 768px) {
-  .dcgDzS {
+  .peYnb {
     margin-left: 6px;
     margin-right: 6px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .peYnb {
+    margin-left: 6px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .peYnb {
+    margin-right: 12px;
   }
 }"
 `;
 
 exports[`Select Controlled multiple onChange without labelKey 8`] = `
 <DocumentFragment>
-  .c3 {
+  .c9 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 18px;
+  height: 18px;
+  fill: #555555;
+  stroke: #555555;
+}
+
+.c9 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c9 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c9 *[stroke*='#'],
+.c9 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c9 *[fill-rule],
+.c9 *[FILL-RULE],
+.c9 *[fill*='#'],
+.c9 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c3 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -2712,42 +3257,12 @@ exports[`Select Controlled multiple onChange without labelKey 8`] = `
   max-width: 100%;
   margin-left: 12px;
   margin-right: 12px;
+  margin-left: 12px;
+  margin-right: 12px;
   min-width: 0;
   min-height: 0;
   flex-direction: column;
   flex: 0 0 auto;
-}
-
-.c9 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
-}
-
-.c9 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c9 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c9 *[stroke*='#'],
-.c9 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c9 *[fill-rule],
-.c9 *[FILL-RULE],
-.c9 *[fill*='#'],
-.c9 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
 }
 
 .c1 {
@@ -2760,16 +3275,17 @@ exports[`Select Controlled multiple onChange without labelKey 8`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  color: inherit;
   outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
+  color: inherit;
 }
 
 .c1:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c1:focus >circle,
@@ -2779,8 +3295,9 @@ exports[`Select Controlled multiple onChange without labelKey 8`] = `
 .c1:focus >polygon,
 .c1:focus >polyline,
 .c1:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c1:focus ::-moz-focus-inner {
@@ -2788,6 +3305,8 @@ exports[`Select Controlled multiple onChange without labelKey 8`] = `
 }
 
 .c1:focus:not(:focus-visible) {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -2799,6 +3318,8 @@ exports[`Select Controlled multiple onChange without labelKey 8`] = `
 .c1:focus:not(:focus-visible) >polygon,
 .c1:focus:not(:focus-visible) >polyline,
 .c1:focus:not(:focus-visible) >rect {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -2816,26 +3337,31 @@ exports[`Select Controlled multiple onChange without labelKey 8`] = `
   background: transparent;
   color: inherit;
   width: 100%;
-  padding: 11px;
-  font-weight: 600;
+  line-height: inherit;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-weight: 400;
   margin: 0;
-  border: 1px solid rgba(0, 0, 0, 0.33);
-  border-radius: 4px;
+  border: 1px solid rgba(0, 0, 0, 0.36);
+  border-radius: 8px;
+  color: #2e2e2e;
   border: none;
   outline: none;
   border: none;
 }
 
 .c6::-webkit-input-placeholder {
-  color: #AAAAAA;
+  color: #676767;
 }
 
 .c6::-moz-placeholder {
-  color: #AAAAAA;
+  color: #676767;
 }
 
 .c6:-ms-input-placeholder {
-  color: #AAAAAA;
+  color: #676767;
 }
 
 .c6 ::-webkit-search-decoration {
@@ -2852,9 +3378,26 @@ exports[`Select Controlled multiple onChange without labelKey 8`] = `
   opacity: 1;
 }
 
+.c6::-webkit-input-placeholder {
+  font-weight: 400;
+}
+
+.c6::-moz-placeholder {
+  font-weight: 400;
+}
+
+.c6:-ms-input-placeholder {
+  font-weight: 400;
+}
+
 .c5 {
   position: relative;
   width: 100%;
+}
+
+.c5 svg {
+  fill: #2e2e2e;
+  stroke: #2e2e2e;
 }
 
 .c7 {
@@ -2862,13 +3405,25 @@ exports[`Select Controlled multiple onChange without labelKey 8`] = `
 }
 
 .c2 {
-  border: 1px solid rgba(0, 0, 0, 0.33);
-  border-radius: 4px;
+  border: 1px solid rgba(0, 0, 0, 0.36);
+  border-radius: 8px;
+}
+
+.c2[class*="SelectMultiple"] [role="listbox"] {
+  padding-block: 6px;
+  padding-inline: 6px;
+}
+
+.c2[class*="SelectMultiple"] [role="listbox"] [role='option'] {
+  border-radius: 6px;
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -2884,7 +3439,15 @@ exports[`Select Controlled multiple onChange without labelKey 8`] = `
 }
 
 @media only screen and (max-width: 768px) {
+  .c8 {
+    margin-left: 6px;
+  }
+}
 
+@media only screen and (max-width: 768px) {
+  .c8 {
+    margin-right: 12px;
+  }
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
@@ -2933,12 +3496,12 @@ exports[`Select Controlled multiple onChange without labelKey 8`] = `
           style="min-width: auto;"
         >
           <svg
-            aria-label="FormDown"
+            aria-label="Up"
             class="c9"
             viewBox="0 0 24 24"
           >
             <path
-              d="m18 9-6 6-6-6"
+              d="m2 15.999 10.173-9.824 9.824 10.173"
               fill="none"
               stroke="#000"
               stroke-width="2"
@@ -2952,6 +3515,38 @@ exports[`Select Controlled multiple onChange without labelKey 8`] = `
 `;
 
 exports[`Select Controlled multiple onChange without valueKey 1`] = `
+.c9 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 18px;
+  height: 18px;
+  fill: #555555;
+  stroke: #555555;
+}
+
+.c9 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c9 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c9 *[stroke*='#'],
+.c9 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c9 *[fill-rule],
+.c9 *[FILL-RULE],
+.c9 *[fill*='#'],
+.c9 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
+}
+
 .c3 {
   display: flex;
   box-sizing: border-box;
@@ -2979,42 +3574,12 @@ exports[`Select Controlled multiple onChange without valueKey 1`] = `
   max-width: 100%;
   margin-left: 12px;
   margin-right: 12px;
+  margin-left: 12px;
+  margin-right: 12px;
   min-width: 0;
   min-height: 0;
   flex-direction: column;
   flex: 0 0 auto;
-}
-
-.c9 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
-}
-
-.c9 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c9 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c9 *[stroke*='#'],
-.c9 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c9 *[fill-rule],
-.c9 *[FILL-RULE],
-.c9 *[fill*='#'],
-.c9 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
 }
 
 .c1 {
@@ -3027,16 +3592,17 @@ exports[`Select Controlled multiple onChange without valueKey 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  color: inherit;
   outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
+  color: inherit;
 }
 
 .c1:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c1:focus >circle,
@@ -3046,8 +3612,9 @@ exports[`Select Controlled multiple onChange without valueKey 1`] = `
 .c1:focus >polygon,
 .c1:focus >polyline,
 .c1:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c1:focus ::-moz-focus-inner {
@@ -3055,6 +3622,8 @@ exports[`Select Controlled multiple onChange without valueKey 1`] = `
 }
 
 .c1:focus:not(:focus-visible) {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -3066,6 +3635,8 @@ exports[`Select Controlled multiple onChange without valueKey 1`] = `
 .c1:focus:not(:focus-visible) >polygon,
 .c1:focus:not(:focus-visible) >polyline,
 .c1:focus:not(:focus-visible) >rect {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -3083,26 +3654,31 @@ exports[`Select Controlled multiple onChange without valueKey 1`] = `
   background: transparent;
   color: inherit;
   width: 100%;
-  padding: 11px;
-  font-weight: 600;
+  line-height: inherit;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-weight: 400;
   margin: 0;
-  border: 1px solid rgba(0, 0, 0, 0.33);
-  border-radius: 4px;
+  border: 1px solid rgba(0, 0, 0, 0.36);
+  border-radius: 8px;
+  color: #2e2e2e;
   border: none;
   outline: none;
   border: none;
 }
 
 .c6::-webkit-input-placeholder {
-  color: #AAAAAA;
+  color: #676767;
 }
 
 .c6::-moz-placeholder {
-  color: #AAAAAA;
+  color: #676767;
 }
 
 .c6:-ms-input-placeholder {
-  color: #AAAAAA;
+  color: #676767;
 }
 
 .c6 ::-webkit-search-decoration {
@@ -3119,9 +3695,26 @@ exports[`Select Controlled multiple onChange without valueKey 1`] = `
   opacity: 1;
 }
 
+.c6::-webkit-input-placeholder {
+  font-weight: 400;
+}
+
+.c6::-moz-placeholder {
+  font-weight: 400;
+}
+
+.c6:-ms-input-placeholder {
+  font-weight: 400;
+}
+
 .c5 {
   position: relative;
   width: 100%;
+}
+
+.c5 svg {
+  fill: #2e2e2e;
+  stroke: #2e2e2e;
 }
 
 .c7 {
@@ -3129,13 +3722,25 @@ exports[`Select Controlled multiple onChange without valueKey 1`] = `
 }
 
 .c2 {
-  border: 1px solid rgba(0, 0, 0, 0.33);
-  border-radius: 4px;
+  border: 1px solid rgba(0, 0, 0, 0.36);
+  border-radius: 8px;
+}
+
+.c2[class*="SelectMultiple"] [role="listbox"] {
+  padding-block: 6px;
+  padding-inline: 6px;
+}
+
+.c2[class*="SelectMultiple"] [role="listbox"] [role='option'] {
+  border-radius: 6px;
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -3147,6 +3752,18 @@ exports[`Select Controlled multiple onChange without valueKey 1`] = `
   .c8 {
     margin-left: 6px;
     margin-right: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c8 {
+    margin-left: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c8 {
+    margin-right: 12px;
   }
 }
 
@@ -3188,12 +3805,12 @@ exports[`Select Controlled multiple onChange without valueKey 1`] = `
         style="min-width: auto;"
       >
         <svg
-          aria-label="FormDown"
+          aria-label="Down"
           class="c9"
           viewBox="0 0 24 24"
         >
           <path
-            d="m18 9-6 6-6-6"
+            d="m2 8.35 10.173 9.823L21.997 8"
             fill="none"
             stroke="#000"
             stroke-width="2"
@@ -3214,7 +3831,7 @@ exports[`Select Controlled multiple onChange without valueKey 2`] = `
   min-height: 0;
   flex-direction: column;
   overflow: auto;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.20);
+  box-shadow: 0px 6px 12px 0px rgba(0, 0, 0, 0.12);
 }
 
 .c2 {
@@ -3230,17 +3847,6 @@ exports[`Select Controlled multiple onChange without valueKey 2`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  align-items: flex-start;
-  min-width: 0;
-  min-height: 0;
-  flex-direction: column;
-  padding: 12px;
-}
-
-.c9 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
   min-width: 0;
   min-height: 0;
   flex-direction: column;
@@ -3249,29 +3855,35 @@ exports[`Select Controlled multiple onChange without valueKey 2`] = `
 }
 
 .c1 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  border-radius: 0px;
+  border-radius: 6px;
   position: fixed;
-  z-index: 20;
+  z-index: 110;
   outline: none;
-  background-color: #FFFFFF;
-  color: #444444;
+  background-color: #ffffff;
+  color: #555555;
+  margin-top: 6px;
   opacity: 0;
   transform-origin: top left;
   animation: kPQHBD 0.1s forwards;
   animation-delay: 0.01s;
 }
 
-.c8 {
-  margin: 0px;
-  font-size: 18px;
-  line-height: 24px;
+.c1 [class*=MaskedInput__ContainerBox] {
+  padding-block: 6px;
+  padding-inline: 6px;
+  gap: 6px;
+  display: flex;
+  flex-direction: column;
 }
 
 .c5 {
@@ -3284,16 +3896,35 @@ exports[`Select Controlled multiple onChange without valueKey 2`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  color: inherit;
-  outline: none;
   border: none;
-  padding: 0;
-  text-align: inherit;
+  border-radius: 9999px;
+  padding: 5px 12px;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  padding: 5px 12px;
+  color: #555555;
+  border-style: solid;
+  border-width: 1px;
+  border-color: rgba(0, 0, 0, 0);
+  border-radius: 6px;
+  font-weight: 500;
+  padding: 5px 12px;
+  text-align: start;
+  transition-property: color,background-color,border-color,box-shadow;
+  transition-duration: 0.1s;
+  transition-timing-function: ease-in-out;
+}
+
+.c5:hover {
+  background-color: rgba(0, 0, 0, 0.04);
+  color: #555555;
+  border-color: rgba(0, 0, 0, 0);
 }
 
 .c5:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c5:focus >circle,
@@ -3303,8 +3934,9 @@ exports[`Select Controlled multiple onChange without valueKey 2`] = `
 .c5:focus >polygon,
 .c5:focus >polyline,
 .c5:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c5:focus ::-moz-focus-inner {
@@ -3312,6 +3944,8 @@ exports[`Select Controlled multiple onChange without valueKey 2`] = `
 }
 
 .c5:focus:not(:focus-visible) {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -3323,6 +3957,8 @@ exports[`Select Controlled multiple onChange without valueKey 2`] = `
 .c5:focus:not(:focus-visible) >polygon,
 .c5:focus:not(:focus-visible) >polyline,
 .c5:focus:not(:focus-visible) >rect {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -3335,11 +3971,37 @@ exports[`Select Controlled multiple onChange without valueKey 2`] = `
   max-height: inherit;
 }
 
+.c3 div:has(input[type="search"]) {
+  padding-bottom: 0;
+}
+
+.c3 button[aria-label*="Or, press"] {
+  padding-block: 6px;
+  padding-inline: 6px;
+}
+
+.c3 button[aria-label*="Or, press"]:focus {
+  background: transparent;
+}
+
+.c3 button[aria-label*="Or, press"]:focus >div {
+  background: rgba(0, 0, 0, 0.04);
+}
+
 .c4 {
   position: relative;
   scroll-behavior: smooth;
   overflow: auto;
   outline: none;
+  padding-top: 6px;
+  padding-inline: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.c4 [role="option"] {
+  border-radius: 6px;
 }
 
 .c6 {
@@ -3352,9 +4014,11 @@ exports[`Select Controlled multiple onChange without valueKey 2`] = `
 }
 
 @media only screen and (max-width: 768px) {
-  .c7 {
-    padding: 6px;
-  }
+
+}
+
+@media only screen and (max-width: 768px) {
+
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
@@ -3396,15 +4060,7 @@ exports[`Select Controlled multiple onChange without valueKey 2`] = `
         tabindex="0"
         type="button"
       >
-        <div
-          class="c7"
-        >
-          <span
-            class="c8"
-          >
-            Value1
-          </span>
-        </div>
+        Value1
       </button>
       <button
         aria-posinset="2"
@@ -3415,18 +4071,10 @@ exports[`Select Controlled multiple onChange without valueKey 2`] = `
         tabindex="-1"
         type="button"
       >
-        <div
-          class="c7"
-        >
-          <span
-            class="c8"
-          >
-            Value2
-          </span>
-        </div>
+        Value2
       </button>
       <div
-        class="c9"
+        class="c7"
       />
     </div>
   </div>
@@ -3435,28 +4083,38 @@ exports[`Select Controlled multiple onChange without valueKey 2`] = `
 
 exports[`Select Controlled multiple onChange without valueKey 3`] = `
 "@media only screen and (max-width: 768px) {
-  .dcgDzS {
+  .peYnb {
     margin-left: 6px;
     margin-right: 6px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .peYnb {
+    margin-left: 6px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .peYnb {
+    margin-right: 12px;
   }
 }"
 `;
 
 exports[`Select Controlled multiple onChange without valueKey 4`] = `
 <div
-  class="StyledBox-sc-13pk1d4-0 bBvhTp StyledDrop-sc-16s5rx8-0 czxfTR"
+  class="StyledBox-sc-13pk1d4-0 iPenqz StyledDrop-sc-16s5rx8-0 bdKJMF"
   data-g-portal-id="0"
   id="test-select__drop"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 fDLUqh StyledSelect__StyledContainer-sc-znp66n-0 dyNSXQ"
+    class="StyledBox-sc-13pk1d4-0 fDLUqh StyledSelect__StyledContainer-sc-znp66n-0 hvEItc"
     id="test-select__select-drop"
   >
     <div
       aria-multiselectable="true"
-      class="StyledSelect__OptionsContainer-sc-znp66n-1 kARYcO"
+      class="StyledSelect__OptionsContainer-sc-znp66n-1 eUCEJD"
       role="listbox"
       tabindex="-1"
     >
@@ -3464,39 +4122,23 @@ exports[`Select Controlled multiple onChange without valueKey 4`] = `
         aria-posinset="1"
         aria-selected="true"
         aria-setsize="2"
-        class="StyledButton-sc-323bzc-0 fdEDEe StyledSelect__SelectOption-sc-znp66n-3 enPret"
+        class="StyledButtonKind-sc-1vhfpnt-0 etRyTp StyledSelect__SelectOption-sc-znp66n-3 lkKTUk"
         role="option"
         tabindex="0"
         type="button"
       >
-        <div
-          class="StyledBox-sc-13pk1d4-0 jfutgd"
-        >
-          <span
-            class="StyledText-sc-1sadyjn-0 gQrfUm"
-          >
-            Value1
-          </span>
-        </div>
+        Value1
       </button>
       <button
         aria-posinset="2"
         aria-selected="false"
         aria-setsize="2"
-        class="StyledButton-sc-323bzc-0 jLPXpV StyledSelect__SelectOption-sc-znp66n-3 lkKTUk"
+        class="StyledButtonKind-sc-1vhfpnt-0 fTMnBM StyledSelect__SelectOption-sc-znp66n-3 lkKTUk"
         role="option"
         tabindex="-1"
         type="button"
       >
-        <div
-          class="StyledBox-sc-13pk1d4-0 jfutgd"
-        >
-          <span
-            class="StyledText-sc-1sadyjn-0 gQrfUm"
-          >
-            Value2
-          </span>
-        </div>
+        Value2
       </button>
       <div
         class="StyledBox-sc-13pk1d4-0 hylnGi"
@@ -3508,28 +4150,38 @@ exports[`Select Controlled multiple onChange without valueKey 4`] = `
 
 exports[`Select Controlled multiple onChange without valueKey 5`] = `
 "@media only screen and (max-width: 768px) {
-  .dcgDzS {
+  .peYnb {
     margin-left: 6px;
     margin-right: 6px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .peYnb {
+    margin-left: 6px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .peYnb {
+    margin-right: 12px;
   }
 }"
 `;
 
 exports[`Select Controlled multiple onChange without valueKey 6`] = `
 <div
-  class="StyledBox-sc-13pk1d4-0 bBvhTp StyledDrop-sc-16s5rx8-0 czxfTR"
+  class="StyledBox-sc-13pk1d4-0 iPenqz StyledDrop-sc-16s5rx8-0 bdKJMF"
   data-g-portal-id="0"
   id="test-select__drop"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 fDLUqh StyledSelect__StyledContainer-sc-znp66n-0 dyNSXQ"
+    class="StyledBox-sc-13pk1d4-0 fDLUqh StyledSelect__StyledContainer-sc-znp66n-0 hvEItc"
     id="test-select__select-drop"
   >
     <div
       aria-multiselectable="true"
-      class="StyledSelect__OptionsContainer-sc-znp66n-1 kARYcO"
+      class="StyledSelect__OptionsContainer-sc-znp66n-1 eUCEJD"
       role="listbox"
       tabindex="-1"
     >
@@ -3537,39 +4189,23 @@ exports[`Select Controlled multiple onChange without valueKey 6`] = `
         aria-posinset="1"
         aria-selected="true"
         aria-setsize="2"
-        class="StyledButton-sc-323bzc-0 fdEDEe StyledSelect__SelectOption-sc-znp66n-3 enPret"
+        class="StyledButtonKind-sc-1vhfpnt-0 etRyTp StyledSelect__SelectOption-sc-znp66n-3 lkKTUk"
         role="option"
         tabindex="0"
         type="button"
       >
-        <div
-          class="StyledBox-sc-13pk1d4-0 jfutgd"
-        >
-          <span
-            class="StyledText-sc-1sadyjn-0 gQrfUm"
-          >
-            Value1
-          </span>
-        </div>
+        Value1
       </button>
       <button
         aria-posinset="2"
         aria-selected="true"
         aria-setsize="2"
-        class="StyledButton-sc-323bzc-0 fdEDEe StyledSelect__SelectOption-sc-znp66n-3 enPret"
+        class="StyledButtonKind-sc-1vhfpnt-0 etRyTp StyledSelect__SelectOption-sc-znp66n-3 lkKTUk"
         role="option"
         tabindex="0"
         type="button"
       >
-        <div
-          class="StyledBox-sc-13pk1d4-0 jfutgd"
-        >
-          <span
-            class="StyledText-sc-1sadyjn-0 gQrfUm"
-          >
-            Value2
-          </span>
-        </div>
+        Value2
       </button>
       <div
         class="StyledBox-sc-13pk1d4-0 hylnGi"
@@ -3581,16 +4217,58 @@ exports[`Select Controlled multiple onChange without valueKey 6`] = `
 
 exports[`Select Controlled multiple onChange without valueKey 7`] = `
 "@media only screen and (max-width: 768px) {
-  .dcgDzS {
+  .peYnb {
     margin-left: 6px;
     margin-right: 6px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .peYnb {
+    margin-left: 6px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .peYnb {
+    margin-right: 12px;
   }
 }"
 `;
 
 exports[`Select Controlled multiple onChange without valueKey 8`] = `
 <DocumentFragment>
-  .c3 {
+  .c9 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 18px;
+  height: 18px;
+  fill: #555555;
+  stroke: #555555;
+}
+
+.c9 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c9 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c9 *[stroke*='#'],
+.c9 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c9 *[fill-rule],
+.c9 *[FILL-RULE],
+.c9 *[fill*='#'],
+.c9 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c3 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -3617,42 +4295,12 @@ exports[`Select Controlled multiple onChange without valueKey 8`] = `
   max-width: 100%;
   margin-left: 12px;
   margin-right: 12px;
+  margin-left: 12px;
+  margin-right: 12px;
   min-width: 0;
   min-height: 0;
   flex-direction: column;
   flex: 0 0 auto;
-}
-
-.c9 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
-}
-
-.c9 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c9 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c9 *[stroke*='#'],
-.c9 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c9 *[fill-rule],
-.c9 *[FILL-RULE],
-.c9 *[fill*='#'],
-.c9 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
 }
 
 .c1 {
@@ -3665,16 +4313,17 @@ exports[`Select Controlled multiple onChange without valueKey 8`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  color: inherit;
   outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
+  color: inherit;
 }
 
 .c1:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c1:focus >circle,
@@ -3684,8 +4333,9 @@ exports[`Select Controlled multiple onChange without valueKey 8`] = `
 .c1:focus >polygon,
 .c1:focus >polyline,
 .c1:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c1:focus ::-moz-focus-inner {
@@ -3693,6 +4343,8 @@ exports[`Select Controlled multiple onChange without valueKey 8`] = `
 }
 
 .c1:focus:not(:focus-visible) {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -3704,6 +4356,8 @@ exports[`Select Controlled multiple onChange without valueKey 8`] = `
 .c1:focus:not(:focus-visible) >polygon,
 .c1:focus:not(:focus-visible) >polyline,
 .c1:focus:not(:focus-visible) >rect {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -3721,26 +4375,31 @@ exports[`Select Controlled multiple onChange without valueKey 8`] = `
   background: transparent;
   color: inherit;
   width: 100%;
-  padding: 11px;
-  font-weight: 600;
+  line-height: inherit;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-weight: 400;
   margin: 0;
-  border: 1px solid rgba(0, 0, 0, 0.33);
-  border-radius: 4px;
+  border: 1px solid rgba(0, 0, 0, 0.36);
+  border-radius: 8px;
+  color: #2e2e2e;
   border: none;
   outline: none;
   border: none;
 }
 
 .c6::-webkit-input-placeholder {
-  color: #AAAAAA;
+  color: #676767;
 }
 
 .c6::-moz-placeholder {
-  color: #AAAAAA;
+  color: #676767;
 }
 
 .c6:-ms-input-placeholder {
-  color: #AAAAAA;
+  color: #676767;
 }
 
 .c6 ::-webkit-search-decoration {
@@ -3757,9 +4416,26 @@ exports[`Select Controlled multiple onChange without valueKey 8`] = `
   opacity: 1;
 }
 
+.c6::-webkit-input-placeholder {
+  font-weight: 400;
+}
+
+.c6::-moz-placeholder {
+  font-weight: 400;
+}
+
+.c6:-ms-input-placeholder {
+  font-weight: 400;
+}
+
 .c5 {
   position: relative;
   width: 100%;
+}
+
+.c5 svg {
+  fill: #2e2e2e;
+  stroke: #2e2e2e;
 }
 
 .c7 {
@@ -3767,13 +4443,25 @@ exports[`Select Controlled multiple onChange without valueKey 8`] = `
 }
 
 .c2 {
-  border: 1px solid rgba(0, 0, 0, 0.33);
-  border-radius: 4px;
+  border: 1px solid rgba(0, 0, 0, 0.36);
+  border-radius: 8px;
+}
+
+.c2[class*="SelectMultiple"] [role="listbox"] {
+  padding-block: 6px;
+  padding-inline: 6px;
+}
+
+.c2[class*="SelectMultiple"] [role="listbox"] [role='option'] {
+  border-radius: 6px;
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -3789,7 +4477,15 @@ exports[`Select Controlled multiple onChange without valueKey 8`] = `
 }
 
 @media only screen and (max-width: 768px) {
+  .c8 {
+    margin-left: 6px;
+  }
+}
 
+@media only screen and (max-width: 768px) {
+  .c8 {
+    margin-right: 12px;
+  }
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
@@ -3838,12 +4534,12 @@ exports[`Select Controlled multiple onChange without valueKey 8`] = `
           style="min-width: auto;"
         >
           <svg
-            aria-label="FormDown"
+            aria-label="Up"
             class="c9"
             viewBox="0 0 24 24"
           >
             <path
-              d="m18 9-6 6-6-6"
+              d="m2 15.999 10.173-9.824 9.824 10.173"
               fill="none"
               stroke="#000"
               stroke-width="2"
@@ -3858,7 +4554,39 @@ exports[`Select Controlled multiple onChange without valueKey 8`] = `
 
 exports[`Select Controlled multiple onChange without valueKey or labelKey 1`] = `
 <DocumentFragment>
-  .c3 {
+  .c9 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 18px;
+  height: 18px;
+  fill: #555555;
+  stroke: #555555;
+}
+
+.c9 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c9 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c9 *[stroke*='#'],
+.c9 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c9 *[fill-rule],
+.c9 *[FILL-RULE],
+.c9 *[fill*='#'],
+.c9 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c3 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -3885,42 +4613,12 @@ exports[`Select Controlled multiple onChange without valueKey or labelKey 1`] = 
   max-width: 100%;
   margin-left: 12px;
   margin-right: 12px;
+  margin-left: 12px;
+  margin-right: 12px;
   min-width: 0;
   min-height: 0;
   flex-direction: column;
   flex: 0 0 auto;
-}
-
-.c9 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
-}
-
-.c9 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c9 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c9 *[stroke*='#'],
-.c9 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c9 *[fill-rule],
-.c9 *[FILL-RULE],
-.c9 *[fill*='#'],
-.c9 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
 }
 
 .c1 {
@@ -3933,16 +4631,17 @@ exports[`Select Controlled multiple onChange without valueKey or labelKey 1`] = 
   background: transparent;
   overflow: visible;
   text-transform: none;
-  color: inherit;
   outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
+  color: inherit;
 }
 
 .c1:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c1:focus >circle,
@@ -3952,8 +4651,9 @@ exports[`Select Controlled multiple onChange without valueKey or labelKey 1`] = 
 .c1:focus >polygon,
 .c1:focus >polyline,
 .c1:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c1:focus ::-moz-focus-inner {
@@ -3961,6 +4661,8 @@ exports[`Select Controlled multiple onChange without valueKey or labelKey 1`] = 
 }
 
 .c1:focus:not(:focus-visible) {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -3972,6 +4674,8 @@ exports[`Select Controlled multiple onChange without valueKey or labelKey 1`] = 
 .c1:focus:not(:focus-visible) >polygon,
 .c1:focus:not(:focus-visible) >polyline,
 .c1:focus:not(:focus-visible) >rect {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -3989,26 +4693,31 @@ exports[`Select Controlled multiple onChange without valueKey or labelKey 1`] = 
   background: transparent;
   color: inherit;
   width: 100%;
-  padding: 11px;
-  font-weight: 600;
+  line-height: inherit;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-weight: 400;
   margin: 0;
-  border: 1px solid rgba(0, 0, 0, 0.33);
-  border-radius: 4px;
+  border: 1px solid rgba(0, 0, 0, 0.36);
+  border-radius: 8px;
+  color: #2e2e2e;
   border: none;
   outline: none;
   border: none;
 }
 
 .c6::-webkit-input-placeholder {
-  color: #AAAAAA;
+  color: #676767;
 }
 
 .c6::-moz-placeholder {
-  color: #AAAAAA;
+  color: #676767;
 }
 
 .c6:-ms-input-placeholder {
-  color: #AAAAAA;
+  color: #676767;
 }
 
 .c6 ::-webkit-search-decoration {
@@ -4025,9 +4734,26 @@ exports[`Select Controlled multiple onChange without valueKey or labelKey 1`] = 
   opacity: 1;
 }
 
+.c6::-webkit-input-placeholder {
+  font-weight: 400;
+}
+
+.c6::-moz-placeholder {
+  font-weight: 400;
+}
+
+.c6:-ms-input-placeholder {
+  font-weight: 400;
+}
+
 .c5 {
   position: relative;
   width: 100%;
+}
+
+.c5 svg {
+  fill: #2e2e2e;
+  stroke: #2e2e2e;
 }
 
 .c7 {
@@ -4035,13 +4761,25 @@ exports[`Select Controlled multiple onChange without valueKey or labelKey 1`] = 
 }
 
 .c2 {
-  border: 1px solid rgba(0, 0, 0, 0.33);
-  border-radius: 4px;
+  border: 1px solid rgba(0, 0, 0, 0.36);
+  border-radius: 8px;
+}
+
+.c2[class*="SelectMultiple"] [role="listbox"] {
+  padding-block: 6px;
+  padding-inline: 6px;
+}
+
+.c2[class*="SelectMultiple"] [role="listbox"] [role='option'] {
+  border-radius: 6px;
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -4053,6 +4791,18 @@ exports[`Select Controlled multiple onChange without valueKey or labelKey 1`] = 
   .c8 {
     margin-left: 6px;
     margin-right: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c8 {
+    margin-left: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c8 {
+    margin-right: 12px;
   }
 }
 
@@ -4094,12 +4844,12 @@ exports[`Select Controlled multiple onChange without valueKey or labelKey 1`] = 
           style="min-width: auto;"
         >
           <svg
-            aria-label="FormDown"
+            aria-label="Down"
             class="c9"
             viewBox="0 0 24 24"
           >
             <path
-              d="m18 9-6 6-6-6"
+              d="m2 8.35 10.173 9.823L21.997 8"
               fill="none"
               stroke="#000"
               stroke-width="2"
@@ -4121,7 +4871,7 @@ exports[`Select Controlled multiple onChange without valueKey or labelKey 2`] = 
   min-height: 0;
   flex-direction: column;
   overflow: auto;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.20);
+  box-shadow: 0px 6px 12px 0px rgba(0, 0, 0, 0.12);
 }
 
 .c2 {
@@ -4137,17 +4887,6 @@ exports[`Select Controlled multiple onChange without valueKey or labelKey 2`] = 
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  align-items: flex-start;
-  min-width: 0;
-  min-height: 0;
-  flex-direction: column;
-  padding: 12px;
-}
-
-.c9 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
   min-width: 0;
   min-height: 0;
   flex-direction: column;
@@ -4156,29 +4895,35 @@ exports[`Select Controlled multiple onChange without valueKey or labelKey 2`] = 
 }
 
 .c1 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  border-radius: 0px;
+  border-radius: 6px;
   position: fixed;
-  z-index: 20;
+  z-index: 110;
   outline: none;
-  background-color: #FFFFFF;
-  color: #444444;
+  background-color: #ffffff;
+  color: #555555;
+  margin-top: 6px;
   opacity: 0;
   transform-origin: top left;
   animation: kPQHBD 0.1s forwards;
   animation-delay: 0.01s;
 }
 
-.c8 {
-  margin: 0px;
-  font-size: 18px;
-  line-height: 24px;
+.c1 [class*=MaskedInput__ContainerBox] {
+  padding-block: 6px;
+  padding-inline: 6px;
+  gap: 6px;
+  display: flex;
+  flex-direction: column;
 }
 
 .c5 {
@@ -4191,16 +4936,35 @@ exports[`Select Controlled multiple onChange without valueKey or labelKey 2`] = 
   background: transparent;
   overflow: visible;
   text-transform: none;
-  color: inherit;
-  outline: none;
   border: none;
-  padding: 0;
-  text-align: inherit;
+  border-radius: 9999px;
+  padding: 5px 12px;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  padding: 5px 12px;
+  color: #555555;
+  border-style: solid;
+  border-width: 1px;
+  border-color: rgba(0, 0, 0, 0);
+  border-radius: 6px;
+  font-weight: 500;
+  padding: 5px 12px;
+  text-align: start;
+  transition-property: color,background-color,border-color,box-shadow;
+  transition-duration: 0.1s;
+  transition-timing-function: ease-in-out;
+}
+
+.c5:hover {
+  background-color: rgba(0, 0, 0, 0.04);
+  color: #555555;
+  border-color: rgba(0, 0, 0, 0);
 }
 
 .c5:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c5:focus >circle,
@@ -4210,8 +4974,9 @@ exports[`Select Controlled multiple onChange without valueKey or labelKey 2`] = 
 .c5:focus >polygon,
 .c5:focus >polyline,
 .c5:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c5:focus ::-moz-focus-inner {
@@ -4219,6 +4984,8 @@ exports[`Select Controlled multiple onChange without valueKey or labelKey 2`] = 
 }
 
 .c5:focus:not(:focus-visible) {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -4230,6 +4997,8 @@ exports[`Select Controlled multiple onChange without valueKey or labelKey 2`] = 
 .c5:focus:not(:focus-visible) >polygon,
 .c5:focus:not(:focus-visible) >polyline,
 .c5:focus:not(:focus-visible) >rect {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -4242,11 +5011,37 @@ exports[`Select Controlled multiple onChange without valueKey or labelKey 2`] = 
   max-height: inherit;
 }
 
+.c3 div:has(input[type="search"]) {
+  padding-bottom: 0;
+}
+
+.c3 button[aria-label*="Or, press"] {
+  padding-block: 6px;
+  padding-inline: 6px;
+}
+
+.c3 button[aria-label*="Or, press"]:focus {
+  background: transparent;
+}
+
+.c3 button[aria-label*="Or, press"]:focus >div {
+  background: rgba(0, 0, 0, 0.04);
+}
+
 .c4 {
   position: relative;
   scroll-behavior: smooth;
   overflow: auto;
   outline: none;
+  padding-top: 6px;
+  padding-inline: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.c4 [role="option"] {
+  border-radius: 6px;
 }
 
 .c6 {
@@ -4259,9 +5054,11 @@ exports[`Select Controlled multiple onChange without valueKey or labelKey 2`] = 
 }
 
 @media only screen and (max-width: 768px) {
-  .c7 {
-    padding: 6px;
-  }
+
+}
+
+@media only screen and (max-width: 768px) {
+
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
@@ -4303,15 +5100,7 @@ exports[`Select Controlled multiple onChange without valueKey or labelKey 2`] = 
         tabindex="0"
         type="button"
       >
-        <div
-          class="c7"
-        >
-          <span
-            class="c8"
-          >
-            1
-          </span>
-        </div>
+        1
       </button>
       <button
         aria-posinset="2"
@@ -4322,18 +5111,10 @@ exports[`Select Controlled multiple onChange without valueKey or labelKey 2`] = 
         tabindex="-1"
         type="button"
       >
-        <div
-          class="c7"
-        >
-          <span
-            class="c8"
-          >
-            2
-          </span>
-        </div>
+        2
       </button>
       <div
-        class="c9"
+        class="c7"
       />
     </div>
   </div>
@@ -4342,66 +5123,60 @@ exports[`Select Controlled multiple onChange without valueKey or labelKey 2`] = 
 
 exports[`Select Controlled multiple onChange without valueKey or labelKey 3`] = `
 "@media only screen and (max-width: 768px) {
-  .dcgDzS {
+  .peYnb {
     margin-left: 6px;
     margin-right: 6px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .peYnb {
+    margin-left: 6px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .peYnb {
+    margin-right: 12px;
   }
 }"
 `;
 
 exports[`Select Controlled multiple onChange without valueKey or labelKey 4`] = `
 <div
-  class="StyledBox-sc-13pk1d4-0 bBvhTp StyledDrop-sc-16s5rx8-0 czxfTR"
+  class="StyledBox-sc-13pk1d4-0 iPenqz StyledDrop-sc-16s5rx8-0 bdKJMF"
   data-g-portal-id="0"
   id="test-select__drop"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 fDLUqh StyledSelect__StyledContainer-sc-znp66n-0 dyNSXQ"
+    class="StyledBox-sc-13pk1d4-0 fDLUqh StyledSelect__StyledContainer-sc-znp66n-0 hvEItc"
     id="test-select__select-drop"
   >
     <div
       aria-multiselectable="true"
-      class="StyledSelect__OptionsContainer-sc-znp66n-1 kARYcO"
+      class="StyledSelect__OptionsContainer-sc-znp66n-1 eUCEJD"
       role="listbox"
       tabindex="-1"
     >
       <button
         aria-posinset="1"
         aria-setsize="2"
-        class="StyledButton-sc-323bzc-0 jLPXpV StyledSelect__SelectOption-sc-znp66n-3 lkKTUk"
+        class="StyledButtonKind-sc-1vhfpnt-0 fTMnBM StyledSelect__SelectOption-sc-znp66n-3 lkKTUk"
         role="option"
         tabindex="-1"
         type="button"
       >
-        <div
-          class="StyledBox-sc-13pk1d4-0 jfutgd"
-        >
-          <span
-            class="StyledText-sc-1sadyjn-0 gQrfUm"
-          >
-            1
-          </span>
-        </div>
+        1
       </button>
       <button
         aria-posinset="2"
         aria-setsize="2"
-        class="StyledButton-sc-323bzc-0 jLPXpV StyledSelect__SelectOption-sc-znp66n-3 lkKTUk"
+        class="StyledButtonKind-sc-1vhfpnt-0 fTMnBM StyledSelect__SelectOption-sc-znp66n-3 lkKTUk"
         role="option"
         tabindex="-1"
         type="button"
       >
-        <div
-          class="StyledBox-sc-13pk1d4-0 jfutgd"
-        >
-          <span
-            class="StyledText-sc-1sadyjn-0 gQrfUm"
-          >
-            2
-          </span>
-        </div>
+        2
       </button>
       <div
         class="StyledBox-sc-13pk1d4-0 hylnGi"
@@ -4413,66 +5188,60 @@ exports[`Select Controlled multiple onChange without valueKey or labelKey 4`] = 
 
 exports[`Select Controlled multiple onChange without valueKey or labelKey 5`] = `
 "@media only screen and (max-width: 768px) {
-  .dcgDzS {
+  .peYnb {
     margin-left: 6px;
     margin-right: 6px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .peYnb {
+    margin-left: 6px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .peYnb {
+    margin-right: 12px;
   }
 }"
 `;
 
 exports[`Select Controlled multiple onChange without valueKey or labelKey 6`] = `
 <div
-  class="StyledBox-sc-13pk1d4-0 bBvhTp StyledDrop-sc-16s5rx8-0 czxfTR"
+  class="StyledBox-sc-13pk1d4-0 iPenqz StyledDrop-sc-16s5rx8-0 bdKJMF"
   data-g-portal-id="0"
   id="test-select__drop"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 fDLUqh StyledSelect__StyledContainer-sc-znp66n-0 dyNSXQ"
+    class="StyledBox-sc-13pk1d4-0 fDLUqh StyledSelect__StyledContainer-sc-znp66n-0 hvEItc"
     id="test-select__select-drop"
   >
     <div
       aria-multiselectable="true"
-      class="StyledSelect__OptionsContainer-sc-znp66n-1 kARYcO"
+      class="StyledSelect__OptionsContainer-sc-znp66n-1 eUCEJD"
       role="listbox"
       tabindex="-1"
     >
       <button
         aria-posinset="1"
         aria-setsize="2"
-        class="StyledButton-sc-323bzc-0 jLPXpV StyledSelect__SelectOption-sc-znp66n-3 lkKTUk"
+        class="StyledButtonKind-sc-1vhfpnt-0 fTMnBM StyledSelect__SelectOption-sc-znp66n-3 lkKTUk"
         role="option"
         tabindex="-1"
         type="button"
       >
-        <div
-          class="StyledBox-sc-13pk1d4-0 jfutgd"
-        >
-          <span
-            class="StyledText-sc-1sadyjn-0 gQrfUm"
-          >
-            1
-          </span>
-        </div>
+        1
       </button>
       <button
         aria-posinset="2"
         aria-setsize="2"
-        class="StyledButton-sc-323bzc-0 jLPXpV StyledSelect__SelectOption-sc-znp66n-3 lkKTUk"
+        class="StyledButtonKind-sc-1vhfpnt-0 fTMnBM StyledSelect__SelectOption-sc-znp66n-3 lkKTUk"
         role="option"
         tabindex="-1"
         type="button"
       >
-        <div
-          class="StyledBox-sc-13pk1d4-0 jfutgd"
-        >
-          <span
-            class="StyledText-sc-1sadyjn-0 gQrfUm"
-          >
-            2
-          </span>
-        </div>
+        2
       </button>
       <div
         class="StyledBox-sc-13pk1d4-0 hylnGi"
@@ -4484,16 +5253,58 @@ exports[`Select Controlled multiple onChange without valueKey or labelKey 6`] = 
 
 exports[`Select Controlled multiple onChange without valueKey or labelKey 7`] = `
 "@media only screen and (max-width: 768px) {
-  .dcgDzS {
+  .peYnb {
     margin-left: 6px;
     margin-right: 6px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .peYnb {
+    margin-left: 6px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .peYnb {
+    margin-right: 12px;
   }
 }"
 `;
 
 exports[`Select Controlled multiple onChange without valueKey or labelKey 8`] = `
 <DocumentFragment>
-  .c3 {
+  .c9 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 18px;
+  height: 18px;
+  fill: #555555;
+  stroke: #555555;
+}
+
+.c9 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c9 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c9 *[stroke*='#'],
+.c9 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c9 *[fill-rule],
+.c9 *[FILL-RULE],
+.c9 *[fill*='#'],
+.c9 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c3 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -4520,42 +5331,12 @@ exports[`Select Controlled multiple onChange without valueKey or labelKey 8`] = 
   max-width: 100%;
   margin-left: 12px;
   margin-right: 12px;
+  margin-left: 12px;
+  margin-right: 12px;
   min-width: 0;
   min-height: 0;
   flex-direction: column;
   flex: 0 0 auto;
-}
-
-.c9 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
-}
-
-.c9 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c9 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c9 *[stroke*='#'],
-.c9 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c9 *[fill-rule],
-.c9 *[FILL-RULE],
-.c9 *[fill*='#'],
-.c9 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
 }
 
 .c1 {
@@ -4568,16 +5349,17 @@ exports[`Select Controlled multiple onChange without valueKey or labelKey 8`] = 
   background: transparent;
   overflow: visible;
   text-transform: none;
-  color: inherit;
   outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
+  color: inherit;
 }
 
 .c1:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c1:focus >circle,
@@ -4587,8 +5369,9 @@ exports[`Select Controlled multiple onChange without valueKey or labelKey 8`] = 
 .c1:focus >polygon,
 .c1:focus >polyline,
 .c1:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c1:focus ::-moz-focus-inner {
@@ -4596,6 +5379,8 @@ exports[`Select Controlled multiple onChange without valueKey or labelKey 8`] = 
 }
 
 .c1:focus:not(:focus-visible) {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -4607,6 +5392,8 @@ exports[`Select Controlled multiple onChange without valueKey or labelKey 8`] = 
 .c1:focus:not(:focus-visible) >polygon,
 .c1:focus:not(:focus-visible) >polyline,
 .c1:focus:not(:focus-visible) >rect {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -4624,26 +5411,31 @@ exports[`Select Controlled multiple onChange without valueKey or labelKey 8`] = 
   background: transparent;
   color: inherit;
   width: 100%;
-  padding: 11px;
-  font-weight: 600;
+  line-height: inherit;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-weight: 400;
   margin: 0;
-  border: 1px solid rgba(0, 0, 0, 0.33);
-  border-radius: 4px;
+  border: 1px solid rgba(0, 0, 0, 0.36);
+  border-radius: 8px;
+  color: #2e2e2e;
   border: none;
   outline: none;
   border: none;
 }
 
 .c6::-webkit-input-placeholder {
-  color: #AAAAAA;
+  color: #676767;
 }
 
 .c6::-moz-placeholder {
-  color: #AAAAAA;
+  color: #676767;
 }
 
 .c6:-ms-input-placeholder {
-  color: #AAAAAA;
+  color: #676767;
 }
 
 .c6 ::-webkit-search-decoration {
@@ -4660,9 +5452,26 @@ exports[`Select Controlled multiple onChange without valueKey or labelKey 8`] = 
   opacity: 1;
 }
 
+.c6::-webkit-input-placeholder {
+  font-weight: 400;
+}
+
+.c6::-moz-placeholder {
+  font-weight: 400;
+}
+
+.c6:-ms-input-placeholder {
+  font-weight: 400;
+}
+
 .c5 {
   position: relative;
   width: 100%;
+}
+
+.c5 svg {
+  fill: #2e2e2e;
+  stroke: #2e2e2e;
 }
 
 .c7 {
@@ -4670,13 +5479,25 @@ exports[`Select Controlled multiple onChange without valueKey or labelKey 8`] = 
 }
 
 .c2 {
-  border: 1px solid rgba(0, 0, 0, 0.33);
-  border-radius: 4px;
+  border: 1px solid rgba(0, 0, 0, 0.36);
+  border-radius: 8px;
+}
+
+.c2[class*="SelectMultiple"] [role="listbox"] {
+  padding-block: 6px;
+  padding-inline: 6px;
+}
+
+.c2[class*="SelectMultiple"] [role="listbox"] [role='option'] {
+  border-radius: 6px;
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -4692,7 +5513,15 @@ exports[`Select Controlled multiple onChange without valueKey or labelKey 8`] = 
 }
 
 @media only screen and (max-width: 768px) {
+  .c8 {
+    margin-left: 6px;
+  }
+}
 
+@media only screen and (max-width: 768px) {
+  .c8 {
+    margin-right: 12px;
+  }
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
@@ -4741,12 +5570,12 @@ exports[`Select Controlled multiple onChange without valueKey or labelKey 8`] = 
           style="min-width: auto;"
         >
           <svg
-            aria-label="FormDown"
+            aria-label="Up"
             class="c9"
             viewBox="0 0 24 24"
           >
             <path
-              d="m18 9-6 6-6-6"
+              d="m2 15.999 10.173-9.824 9.824 10.173"
               fill="none"
               stroke="#000"
               stroke-width="2"
@@ -4760,6 +5589,38 @@ exports[`Select Controlled multiple onChange without valueKey or labelKey 8`] = 
 `;
 
 exports[`Select Controlled multiple values 1`] = `
+.c9 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 18px;
+  height: 18px;
+  fill: #555555;
+  stroke: #555555;
+}
+
+.c9 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c9 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c9 *[stroke*='#'],
+.c9 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c9 *[fill-rule],
+.c9 *[FILL-RULE],
+.c9 *[fill*='#'],
+.c9 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
+}
+
 .c3 {
   display: flex;
   box-sizing: border-box;
@@ -4787,42 +5648,12 @@ exports[`Select Controlled multiple values 1`] = `
   max-width: 100%;
   margin-left: 12px;
   margin-right: 12px;
+  margin-left: 12px;
+  margin-right: 12px;
   min-width: 0;
   min-height: 0;
   flex-direction: column;
   flex: 0 0 auto;
-}
-
-.c9 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
-}
-
-.c9 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c9 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c9 *[stroke*='#'],
-.c9 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c9 *[fill-rule],
-.c9 *[FILL-RULE],
-.c9 *[fill*='#'],
-.c9 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
 }
 
 .c1 {
@@ -4835,16 +5666,17 @@ exports[`Select Controlled multiple values 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  color: inherit;
   outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
+  color: inherit;
 }
 
 .c1:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c1:focus >circle,
@@ -4854,8 +5686,9 @@ exports[`Select Controlled multiple values 1`] = `
 .c1:focus >polygon,
 .c1:focus >polyline,
 .c1:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c1:focus ::-moz-focus-inner {
@@ -4863,6 +5696,8 @@ exports[`Select Controlled multiple values 1`] = `
 }
 
 .c1:focus:not(:focus-visible) {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -4874,6 +5709,8 @@ exports[`Select Controlled multiple values 1`] = `
 .c1:focus:not(:focus-visible) >polygon,
 .c1:focus:not(:focus-visible) >polyline,
 .c1:focus:not(:focus-visible) >rect {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -4891,26 +5728,31 @@ exports[`Select Controlled multiple values 1`] = `
   background: transparent;
   color: inherit;
   width: 100%;
-  padding: 11px;
-  font-weight: 600;
+  line-height: inherit;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-weight: 400;
   margin: 0;
-  border: 1px solid rgba(0, 0, 0, 0.33);
-  border-radius: 4px;
+  border: 1px solid rgba(0, 0, 0, 0.36);
+  border-radius: 8px;
+  color: #2e2e2e;
   border: none;
   outline: none;
   border: none;
 }
 
 .c6::-webkit-input-placeholder {
-  color: #AAAAAA;
+  color: #676767;
 }
 
 .c6::-moz-placeholder {
-  color: #AAAAAA;
+  color: #676767;
 }
 
 .c6:-ms-input-placeholder {
-  color: #AAAAAA;
+  color: #676767;
 }
 
 .c6 ::-webkit-search-decoration {
@@ -4927,9 +5769,26 @@ exports[`Select Controlled multiple values 1`] = `
   opacity: 1;
 }
 
+.c6::-webkit-input-placeholder {
+  font-weight: 400;
+}
+
+.c6::-moz-placeholder {
+  font-weight: 400;
+}
+
+.c6:-ms-input-placeholder {
+  font-weight: 400;
+}
+
 .c5 {
   position: relative;
   width: 100%;
+}
+
+.c5 svg {
+  fill: #2e2e2e;
+  stroke: #2e2e2e;
 }
 
 .c7 {
@@ -4937,13 +5796,25 @@ exports[`Select Controlled multiple values 1`] = `
 }
 
 .c2 {
-  border: 1px solid rgba(0, 0, 0, 0.33);
-  border-radius: 4px;
+  border: 1px solid rgba(0, 0, 0, 0.36);
+  border-radius: 8px;
+}
+
+.c2[class*="SelectMultiple"] [role="listbox"] {
+  padding-block: 6px;
+  padding-inline: 6px;
+}
+
+.c2[class*="SelectMultiple"] [role="listbox"] [role='option'] {
+  border-radius: 6px;
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -4955,6 +5826,18 @@ exports[`Select Controlled multiple values 1`] = `
   .c8 {
     margin-left: 6px;
     margin-right: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c8 {
+    margin-left: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c8 {
+    margin-right: 12px;
   }
 }
 
@@ -4996,12 +5879,12 @@ exports[`Select Controlled multiple values 1`] = `
         style="min-width: auto;"
       >
         <svg
-          aria-label="FormDown"
+          aria-label="Down"
           class="c9"
           viewBox="0 0 24 24"
         >
           <path
-            d="m18 9-6 6-6-6"
+            d="m2 8.35 10.173 9.823L21.997 8"
             fill="none"
             stroke="#000"
             stroke-width="2"
@@ -5015,13 +5898,13 @@ exports[`Select Controlled multiple values 1`] = `
 
 exports[`Select Controlled multiple values 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 kiEDjE"
+  class="StyledGrommet-sc-19lkkz7-0 iRGypN"
 >
   <button
     aria-expanded="true"
     aria-haspopup="listbox"
     aria-label="test select; Selected: one, two"
-    class="StyledButton-sc-323bzc-0 jLPXpV StyledSelect__StyledSelectDropButton-sc-znp66n-5 cKuORg"
+    class="StyledButtonKind-sc-1vhfpnt-0 fvxTu StyledSelect__StyledSelectDropButton-sc-znp66n-5 eOYqUg"
     id="test-select"
     type="button"
   >
@@ -5032,11 +5915,11 @@ exports[`Select Controlled multiple values 2`] = `
         class="StyledBox-sc-13pk1d4-0 nwmdD"
       >
         <div
-          class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 iogQf"
+          class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 bSfyXe"
         >
           <input
             autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 lfLLpA StyledSelect__SelectTextInput-sc-znp66n-4 bGoxrS"
+            class="StyledTextInput-sc-1x30a0s-0 hXkQju StyledSelect__SelectTextInput-sc-znp66n-4 bGoxrS"
             id="test-select__input"
             inert=""
             placeholder="test select"
@@ -5048,16 +5931,68 @@ exports[`Select Controlled multiple values 2`] = `
         </div>
       </div>
       <div
-        class="StyledBox-sc-13pk1d4-0 dcgDzS"
+        class="StyledBox-sc-13pk1d4-0 peYnb"
         style="min-width: auto;"
       >
-        <svg
-          aria-label="FormDown"
-          class="StyledIcon-sc-ofa7kd-0 krSgpg"
+        .c0 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 18px;
+  height: 18px;
+  fill: #555555;
+  stroke: #555555;
+}
+
+.c0 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c0 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c0 *[stroke*='#'],
+.c0 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c0 *[fill-rule],
+.c0 *[FILL-RULE],
+.c0 *[fill*='#'],
+.c0 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
+}
+
+@media only screen and (max-width: 768px) {
+
+}
+
+@media only screen and (max-width: 768px) {
+
+}
+
+@media only screen and (max-width: 768px) {
+
+}
+
+@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
+
+}
+
+@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
+
+}
+
+<svg
+          aria-label="Up"
+          class="c0"
           viewBox="0 0 24 24"
         >
           <path
-            d="m18 9-6 6-6-6"
+            d="m2 15.999 10.173-9.824 9.824 10.173"
             fill="none"
             stroke="#000"
             stroke-width="2"
@@ -5078,7 +6013,7 @@ exports[`Select Controlled multiple values 3`] = `
   min-height: 0;
   flex-direction: column;
   overflow: auto;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.20);
+  box-shadow: 0px 6px 12px 0px rgba(0, 0, 0, 0.12);
 }
 
 .c2 {
@@ -5094,17 +6029,6 @@ exports[`Select Controlled multiple values 3`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  align-items: flex-start;
-  min-width: 0;
-  min-height: 0;
-  flex-direction: column;
-  padding: 12px;
-}
-
-.c9 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
   min-width: 0;
   min-height: 0;
   flex-direction: column;
@@ -5113,29 +6037,35 @@ exports[`Select Controlled multiple values 3`] = `
 }
 
 .c1 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  border-radius: 0px;
+  border-radius: 6px;
   position: fixed;
-  z-index: 20;
+  z-index: 110;
   outline: none;
-  background-color: #FFFFFF;
-  color: #444444;
+  background-color: #ffffff;
+  color: #555555;
+  margin-top: 6px;
   opacity: 0;
   transform-origin: top left;
   animation: kPQHBD 0.1s forwards;
   animation-delay: 0.01s;
 }
 
-.c8 {
-  margin: 0px;
-  font-size: 18px;
-  line-height: 24px;
+.c1 [class*=MaskedInput__ContainerBox] {
+  padding-block: 6px;
+  padding-inline: 6px;
+  gap: 6px;
+  display: flex;
+  flex-direction: column;
 }
 
 .c5 {
@@ -5148,16 +6078,55 @@ exports[`Select Controlled multiple values 3`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  color: inherit;
-  outline: none;
   border: none;
-  padding: 0;
-  text-align: inherit;
+  border-radius: 9999px;
+  padding: 5px 12px;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  padding: 5px 12px;
+  color: #555555;
+  border-style: solid;
+  border-width: 1px;
+  border-color: rgba(0, 0, 0, 0);
+  border-radius: 6px;
+  font-weight: 500;
+  padding: 5px 12px;
+  background-color: #d1ffee;
+  color: #2e2e2e;
+  border-color: rgba(0, 0, 0, 0);
+  font-weight: 500;
+  position: relative;
+  text-align: start;
+  transition-property: color,background-color,border-color,box-shadow;
+  transition-duration: 0.1s;
+  transition-timing-function: ease-in-out;
+}
+
+.c5::before {
+  display: block;
+  position: absolute;
+  content: '';
+  width: 6px;
+  border-top-left-radius: 9999px;
+  border-bottom-left-radius: 9999px;
+  top: -1px;
+  bottom: -1px;
+  left: -1px;
+  background: #006750;
+}
+
+.c5:hover {
+  background-color: rgba(0, 0, 0, 0.04);
+  color: #555555;
+  border-color: rgba(0, 0, 0, 0);
+  background: #aafade;
+  color: #2e2e2e;
 }
 
 .c5:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c5:focus >circle,
@@ -5167,8 +6136,9 @@ exports[`Select Controlled multiple values 3`] = `
 .c5:focus >polygon,
 .c5:focus >polyline,
 .c5:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c5:focus ::-moz-focus-inner {
@@ -5176,6 +6146,8 @@ exports[`Select Controlled multiple values 3`] = `
 }
 
 .c5:focus:not(:focus-visible) {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -5187,6 +6159,8 @@ exports[`Select Controlled multiple values 3`] = `
 .c5:focus:not(:focus-visible) >polygon,
 .c5:focus:not(:focus-visible) >polyline,
 .c5:focus:not(:focus-visible) >rect {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -5199,16 +6173,40 @@ exports[`Select Controlled multiple values 3`] = `
   max-height: inherit;
 }
 
+.c3 div:has(input[type="search"]) {
+  padding-bottom: 0;
+}
+
+.c3 button[aria-label*="Or, press"] {
+  padding-block: 6px;
+  padding-inline: 6px;
+}
+
+.c3 button[aria-label*="Or, press"]:focus {
+  background: transparent;
+}
+
+.c3 button[aria-label*="Or, press"]:focus >div {
+  background: rgba(0, 0, 0, 0.04);
+}
+
 .c4 {
   position: relative;
   scroll-behavior: smooth;
   overflow: auto;
   outline: none;
+  padding-top: 6px;
+  padding-inline: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.c4 [role="option"] {
+  border-radius: 6px;
 }
 
 .c6 {
-  background-color: #7D4CDB;
-  color: #FFFFFF;
   display: block;
   width: 100%;
 }
@@ -5218,9 +6216,11 @@ exports[`Select Controlled multiple values 3`] = `
 }
 
 @media only screen and (max-width: 768px) {
-  .c7 {
-    padding: 6px;
-  }
+
+}
+
+@media only screen and (max-width: 768px) {
+
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
@@ -5262,15 +6262,7 @@ exports[`Select Controlled multiple values 3`] = `
         tabindex="0"
         type="button"
       >
-        <div
-          class="c7"
-        >
-          <span
-            class="c8"
-          >
-            one
-          </span>
-        </div>
+        one
       </button>
       <button
         aria-posinset="2"
@@ -5281,18 +6273,10 @@ exports[`Select Controlled multiple values 3`] = `
         tabindex="0"
         type="button"
       >
-        <div
-          class="c7"
-        >
-          <span
-            class="c8"
-          >
-            two
-          </span>
-        </div>
+        two
       </button>
       <div
-        class="c9"
+        class="c7"
       />
     </div>
   </div>
@@ -5301,14 +6285,56 @@ exports[`Select Controlled multiple values 3`] = `
 
 exports[`Select Controlled multiple values 4`] = `
 "@media only screen and (max-width: 768px) {
-  .dcgDzS {
+  .peYnb {
     margin-left: 6px;
     margin-right: 6px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .peYnb {
+    margin-left: 6px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .peYnb {
+    margin-right: 12px;
   }
 }"
 `;
 
 exports[`Select Controlled multiple with empty results 1`] = `
+.c9 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 18px;
+  height: 18px;
+  fill: #555555;
+  stroke: #555555;
+}
+
+.c9 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c9 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c9 *[stroke*='#'],
+.c9 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c9 *[fill-rule],
+.c9 *[FILL-RULE],
+.c9 *[fill*='#'],
+.c9 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
+}
+
 .c3 {
   display: flex;
   box-sizing: border-box;
@@ -5336,42 +6362,12 @@ exports[`Select Controlled multiple with empty results 1`] = `
   max-width: 100%;
   margin-left: 12px;
   margin-right: 12px;
+  margin-left: 12px;
+  margin-right: 12px;
   min-width: 0;
   min-height: 0;
   flex-direction: column;
   flex: 0 0 auto;
-}
-
-.c9 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
-}
-
-.c9 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c9 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c9 *[stroke*='#'],
-.c9 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c9 *[fill-rule],
-.c9 *[FILL-RULE],
-.c9 *[fill*='#'],
-.c9 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
 }
 
 .c1 {
@@ -5384,16 +6380,17 @@ exports[`Select Controlled multiple with empty results 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  color: inherit;
   outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
+  color: inherit;
 }
 
 .c1:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c1:focus >circle,
@@ -5403,8 +6400,9 @@ exports[`Select Controlled multiple with empty results 1`] = `
 .c1:focus >polygon,
 .c1:focus >polyline,
 .c1:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c1:focus ::-moz-focus-inner {
@@ -5412,6 +6410,8 @@ exports[`Select Controlled multiple with empty results 1`] = `
 }
 
 .c1:focus:not(:focus-visible) {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -5423,6 +6423,8 @@ exports[`Select Controlled multiple with empty results 1`] = `
 .c1:focus:not(:focus-visible) >polygon,
 .c1:focus:not(:focus-visible) >polyline,
 .c1:focus:not(:focus-visible) >rect {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -5440,26 +6442,31 @@ exports[`Select Controlled multiple with empty results 1`] = `
   background: transparent;
   color: inherit;
   width: 100%;
-  padding: 11px;
-  font-weight: 600;
+  line-height: inherit;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-weight: 400;
   margin: 0;
-  border: 1px solid rgba(0, 0, 0, 0.33);
-  border-radius: 4px;
+  border: 1px solid rgba(0, 0, 0, 0.36);
+  border-radius: 8px;
+  color: #2e2e2e;
   border: none;
   outline: none;
   border: none;
 }
 
 .c6::-webkit-input-placeholder {
-  color: #AAAAAA;
+  color: #676767;
 }
 
 .c6::-moz-placeholder {
-  color: #AAAAAA;
+  color: #676767;
 }
 
 .c6:-ms-input-placeholder {
-  color: #AAAAAA;
+  color: #676767;
 }
 
 .c6 ::-webkit-search-decoration {
@@ -5476,9 +6483,26 @@ exports[`Select Controlled multiple with empty results 1`] = `
   opacity: 1;
 }
 
+.c6::-webkit-input-placeholder {
+  font-weight: 400;
+}
+
+.c6::-moz-placeholder {
+  font-weight: 400;
+}
+
+.c6:-ms-input-placeholder {
+  font-weight: 400;
+}
+
 .c5 {
   position: relative;
   width: 100%;
+}
+
+.c5 svg {
+  fill: #2e2e2e;
+  stroke: #2e2e2e;
 }
 
 .c7 {
@@ -5486,13 +6510,25 @@ exports[`Select Controlled multiple with empty results 1`] = `
 }
 
 .c2 {
-  border: 1px solid rgba(0, 0, 0, 0.33);
-  border-radius: 4px;
+  border: 1px solid rgba(0, 0, 0, 0.36);
+  border-radius: 8px;
+}
+
+.c2[class*="SelectMultiple"] [role="listbox"] {
+  padding-block: 6px;
+  padding-inline: 6px;
+}
+
+.c2[class*="SelectMultiple"] [role="listbox"] [role='option'] {
+  border-radius: 6px;
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -5504,6 +6540,18 @@ exports[`Select Controlled multiple with empty results 1`] = `
   .c8 {
     margin-left: 6px;
     margin-right: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c8 {
+    margin-left: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c8 {
+    margin-right: 12px;
   }
 }
 
@@ -5545,12 +6593,12 @@ exports[`Select Controlled multiple with empty results 1`] = `
         style="min-width: auto;"
       >
         <svg
-          aria-label="FormDown"
+          aria-label="Down"
           class="c9"
           viewBox="0 0 24 24"
         >
           <path
-            d="m18 9-6 6-6-6"
+            d="m2 8.35 10.173 9.823L21.997 8"
             fill="none"
             stroke="#000"
             stroke-width="2"
@@ -5571,7 +6619,7 @@ exports[`Select Controlled multiple with empty results 2`] = `
   min-height: 0;
   flex-direction: column;
   overflow: auto;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.20);
+  box-shadow: 0px 6px 12px 0px rgba(0, 0, 0, 0.12);
 }
 
 .c2 {
@@ -5587,17 +6635,6 @@ exports[`Select Controlled multiple with empty results 2`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  align-items: flex-start;
-  min-width: 0;
-  min-height: 0;
-  flex-direction: column;
-  padding: 12px;
-}
-
-.c9 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
   min-width: 0;
   min-height: 0;
   flex-direction: column;
@@ -5606,29 +6643,35 @@ exports[`Select Controlled multiple with empty results 2`] = `
 }
 
 .c1 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  border-radius: 0px;
+  border-radius: 6px;
   position: fixed;
-  z-index: 20;
+  z-index: 110;
   outline: none;
-  background-color: #FFFFFF;
-  color: #444444;
+  background-color: #ffffff;
+  color: #555555;
+  margin-top: 6px;
   opacity: 0;
   transform-origin: top left;
   animation: kPQHBD 0.1s forwards;
   animation-delay: 0.01s;
 }
 
-.c8 {
-  margin: 0px;
-  font-size: 18px;
-  line-height: 24px;
+.c1 [class*=MaskedInput__ContainerBox] {
+  padding-block: 6px;
+  padding-inline: 6px;
+  gap: 6px;
+  display: flex;
+  flex-direction: column;
 }
 
 .c5 {
@@ -5641,16 +6684,35 @@ exports[`Select Controlled multiple with empty results 2`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  color: inherit;
-  outline: none;
   border: none;
-  padding: 0;
-  text-align: inherit;
+  border-radius: 9999px;
+  padding: 5px 12px;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  padding: 5px 12px;
+  color: #555555;
+  border-style: solid;
+  border-width: 1px;
+  border-color: rgba(0, 0, 0, 0);
+  border-radius: 6px;
+  font-weight: 500;
+  padding: 5px 12px;
+  text-align: start;
+  transition-property: color,background-color,border-color,box-shadow;
+  transition-duration: 0.1s;
+  transition-timing-function: ease-in-out;
+}
+
+.c5:hover {
+  background-color: rgba(0, 0, 0, 0.04);
+  color: #555555;
+  border-color: rgba(0, 0, 0, 0);
 }
 
 .c5:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c5:focus >circle,
@@ -5660,8 +6722,9 @@ exports[`Select Controlled multiple with empty results 2`] = `
 .c5:focus >polygon,
 .c5:focus >polyline,
 .c5:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c5:focus ::-moz-focus-inner {
@@ -5669,6 +6732,8 @@ exports[`Select Controlled multiple with empty results 2`] = `
 }
 
 .c5:focus:not(:focus-visible) {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -5680,6 +6745,8 @@ exports[`Select Controlled multiple with empty results 2`] = `
 .c5:focus:not(:focus-visible) >polygon,
 .c5:focus:not(:focus-visible) >polyline,
 .c5:focus:not(:focus-visible) >rect {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -5692,11 +6759,37 @@ exports[`Select Controlled multiple with empty results 2`] = `
   max-height: inherit;
 }
 
+.c3 div:has(input[type="search"]) {
+  padding-bottom: 0;
+}
+
+.c3 button[aria-label*="Or, press"] {
+  padding-block: 6px;
+  padding-inline: 6px;
+}
+
+.c3 button[aria-label*="Or, press"]:focus {
+  background: transparent;
+}
+
+.c3 button[aria-label*="Or, press"]:focus >div {
+  background: rgba(0, 0, 0, 0.04);
+}
+
 .c4 {
   position: relative;
   scroll-behavior: smooth;
   overflow: auto;
   outline: none;
+  padding-top: 6px;
+  padding-inline: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.c4 [role="option"] {
+  border-radius: 6px;
 }
 
 .c6 {
@@ -5709,9 +6802,11 @@ exports[`Select Controlled multiple with empty results 2`] = `
 }
 
 @media only screen and (max-width: 768px) {
-  .c7 {
-    padding: 6px;
-  }
+
+}
+
+@media only screen and (max-width: 768px) {
+
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
@@ -5753,15 +6848,7 @@ exports[`Select Controlled multiple with empty results 2`] = `
         tabindex="0"
         type="button"
       >
-        <div
-          class="c7"
-        >
-          <span
-            class="c8"
-          >
-            one
-          </span>
-        </div>
+        one
       </button>
       <button
         aria-posinset="2"
@@ -5772,18 +6859,10 @@ exports[`Select Controlled multiple with empty results 2`] = `
         tabindex="-1"
         type="button"
       >
-        <div
-          class="c7"
-        >
-          <span
-            class="c8"
-          >
-            two
-          </span>
-        </div>
+        two
       </button>
       <div
-        class="c9"
+        class="c7"
       />
     </div>
   </div>
@@ -5792,14 +6871,56 @@ exports[`Select Controlled multiple with empty results 2`] = `
 
 exports[`Select Controlled multiple with empty results 3`] = `
 "@media only screen and (max-width: 768px) {
-  .dcgDzS {
+  .peYnb {
     margin-left: 6px;
     margin-right: 6px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .peYnb {
+    margin-left: 6px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .peYnb {
+    margin-right: 12px;
   }
 }"
 `;
 
 exports[`Select Controlled select another option 1`] = `
+.c9 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 18px;
+  height: 18px;
+  fill: #555555;
+  stroke: #555555;
+}
+
+.c9 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c9 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c9 *[stroke*='#'],
+.c9 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c9 *[fill-rule],
+.c9 *[FILL-RULE],
+.c9 *[fill*='#'],
+.c9 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
+}
+
 .c3 {
   display: flex;
   box-sizing: border-box;
@@ -5827,42 +6948,12 @@ exports[`Select Controlled select another option 1`] = `
   max-width: 100%;
   margin-left: 12px;
   margin-right: 12px;
+  margin-left: 12px;
+  margin-right: 12px;
   min-width: 0;
   min-height: 0;
   flex-direction: column;
   flex: 0 0 auto;
-}
-
-.c9 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
-}
-
-.c9 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c9 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c9 *[stroke*='#'],
-.c9 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c9 *[fill-rule],
-.c9 *[FILL-RULE],
-.c9 *[fill*='#'],
-.c9 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
 }
 
 .c1 {
@@ -5875,16 +6966,17 @@ exports[`Select Controlled select another option 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  color: inherit;
   outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
+  color: inherit;
 }
 
 .c1:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c1:focus >circle,
@@ -5894,8 +6986,9 @@ exports[`Select Controlled select another option 1`] = `
 .c1:focus >polygon,
 .c1:focus >polyline,
 .c1:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c1:focus ::-moz-focus-inner {
@@ -5903,6 +6996,8 @@ exports[`Select Controlled select another option 1`] = `
 }
 
 .c1:focus:not(:focus-visible) {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -5914,6 +7009,8 @@ exports[`Select Controlled select another option 1`] = `
 .c1:focus:not(:focus-visible) >polygon,
 .c1:focus:not(:focus-visible) >polyline,
 .c1:focus:not(:focus-visible) >rect {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -5931,26 +7028,31 @@ exports[`Select Controlled select another option 1`] = `
   background: transparent;
   color: inherit;
   width: 100%;
-  padding: 11px;
-  font-weight: 600;
+  line-height: inherit;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-weight: 400;
   margin: 0;
-  border: 1px solid rgba(0, 0, 0, 0.33);
-  border-radius: 4px;
+  border: 1px solid rgba(0, 0, 0, 0.36);
+  border-radius: 8px;
+  color: #2e2e2e;
   border: none;
   outline: none;
   border: none;
 }
 
 .c6::-webkit-input-placeholder {
-  color: #AAAAAA;
+  color: #676767;
 }
 
 .c6::-moz-placeholder {
-  color: #AAAAAA;
+  color: #676767;
 }
 
 .c6:-ms-input-placeholder {
-  color: #AAAAAA;
+  color: #676767;
 }
 
 .c6 ::-webkit-search-decoration {
@@ -5967,9 +7069,26 @@ exports[`Select Controlled select another option 1`] = `
   opacity: 1;
 }
 
+.c6::-webkit-input-placeholder {
+  font-weight: 400;
+}
+
+.c6::-moz-placeholder {
+  font-weight: 400;
+}
+
+.c6:-ms-input-placeholder {
+  font-weight: 400;
+}
+
 .c5 {
   position: relative;
   width: 100%;
+}
+
+.c5 svg {
+  fill: #2e2e2e;
+  stroke: #2e2e2e;
 }
 
 .c7 {
@@ -5977,13 +7096,25 @@ exports[`Select Controlled select another option 1`] = `
 }
 
 .c2 {
-  border: 1px solid rgba(0, 0, 0, 0.33);
-  border-radius: 4px;
+  border: 1px solid rgba(0, 0, 0, 0.36);
+  border-radius: 8px;
+}
+
+.c2[class*="SelectMultiple"] [role="listbox"] {
+  padding-block: 6px;
+  padding-inline: 6px;
+}
+
+.c2[class*="SelectMultiple"] [role="listbox"] [role='option'] {
+  border-radius: 6px;
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -5995,6 +7126,18 @@ exports[`Select Controlled select another option 1`] = `
   .c8 {
     margin-left: 6px;
     margin-right: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c8 {
+    margin-left: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c8 {
+    margin-right: 12px;
   }
 }
 
@@ -6036,12 +7179,12 @@ exports[`Select Controlled select another option 1`] = `
         style="min-width: auto;"
       >
         <svg
-          aria-label="FormDown"
+          aria-label="Down"
           class="c9"
           viewBox="0 0 24 24"
         >
           <path
-            d="m18 9-6 6-6-6"
+            d="m2 8.35 10.173 9.823L21.997 8"
             fill="none"
             stroke="#000"
             stroke-width="2"
@@ -6054,6 +7197,38 @@ exports[`Select Controlled select another option 1`] = `
 `;
 
 exports[`Select Controlled should not have accessibility violations 1`] = `
+.c9 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 18px;
+  height: 18px;
+  fill: #555555;
+  stroke: #555555;
+}
+
+.c9 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c9 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c9 *[stroke*='#'],
+.c9 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c9 *[fill-rule],
+.c9 *[FILL-RULE],
+.c9 *[fill*='#'],
+.c9 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
+}
+
 .c3 {
   display: flex;
   box-sizing: border-box;
@@ -6081,42 +7256,12 @@ exports[`Select Controlled should not have accessibility violations 1`] = `
   max-width: 100%;
   margin-left: 12px;
   margin-right: 12px;
+  margin-left: 12px;
+  margin-right: 12px;
   min-width: 0;
   min-height: 0;
   flex-direction: column;
   flex: 0 0 auto;
-}
-
-.c9 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
-}
-
-.c9 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c9 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c9 *[stroke*='#'],
-.c9 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c9 *[fill-rule],
-.c9 *[FILL-RULE],
-.c9 *[fill*='#'],
-.c9 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
 }
 
 .c1 {
@@ -6129,16 +7274,17 @@ exports[`Select Controlled should not have accessibility violations 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  color: inherit;
   outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
+  color: inherit;
 }
 
 .c1:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c1:focus >circle,
@@ -6148,8 +7294,9 @@ exports[`Select Controlled should not have accessibility violations 1`] = `
 .c1:focus >polygon,
 .c1:focus >polyline,
 .c1:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c1:focus ::-moz-focus-inner {
@@ -6157,6 +7304,8 @@ exports[`Select Controlled should not have accessibility violations 1`] = `
 }
 
 .c1:focus:not(:focus-visible) {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -6168,6 +7317,8 @@ exports[`Select Controlled should not have accessibility violations 1`] = `
 .c1:focus:not(:focus-visible) >polygon,
 .c1:focus:not(:focus-visible) >polyline,
 .c1:focus:not(:focus-visible) >rect {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -6185,26 +7336,31 @@ exports[`Select Controlled should not have accessibility violations 1`] = `
   background: transparent;
   color: inherit;
   width: 100%;
-  padding: 11px;
-  font-weight: 600;
+  line-height: inherit;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-weight: 400;
   margin: 0;
-  border: 1px solid rgba(0, 0, 0, 0.33);
-  border-radius: 4px;
+  border: 1px solid rgba(0, 0, 0, 0.36);
+  border-radius: 8px;
+  color: #2e2e2e;
   border: none;
   outline: none;
   border: none;
 }
 
 .c6::-webkit-input-placeholder {
-  color: #AAAAAA;
+  color: #676767;
 }
 
 .c6::-moz-placeholder {
-  color: #AAAAAA;
+  color: #676767;
 }
 
 .c6:-ms-input-placeholder {
-  color: #AAAAAA;
+  color: #676767;
 }
 
 .c6 ::-webkit-search-decoration {
@@ -6221,9 +7377,26 @@ exports[`Select Controlled should not have accessibility violations 1`] = `
   opacity: 1;
 }
 
+.c6::-webkit-input-placeholder {
+  font-weight: 400;
+}
+
+.c6::-moz-placeholder {
+  font-weight: 400;
+}
+
+.c6:-ms-input-placeholder {
+  font-weight: 400;
+}
+
 .c5 {
   position: relative;
   width: 100%;
+}
+
+.c5 svg {
+  fill: #2e2e2e;
+  stroke: #2e2e2e;
 }
 
 .c7 {
@@ -6231,13 +7404,25 @@ exports[`Select Controlled should not have accessibility violations 1`] = `
 }
 
 .c2 {
-  border: 1px solid rgba(0, 0, 0, 0.33);
-  border-radius: 4px;
+  border: 1px solid rgba(0, 0, 0, 0.36);
+  border-radius: 8px;
+}
+
+.c2[class*="SelectMultiple"] [role="listbox"] {
+  padding-block: 6px;
+  padding-inline: 6px;
+}
+
+.c2[class*="SelectMultiple"] [role="listbox"] [role='option'] {
+  border-radius: 6px;
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -6249,6 +7434,18 @@ exports[`Select Controlled should not have accessibility violations 1`] = `
   .c8 {
     margin-left: 6px;
     margin-right: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c8 {
+    margin-left: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c8 {
+    margin-right: 12px;
   }
 }
 
@@ -6288,12 +7485,12 @@ exports[`Select Controlled should not have accessibility violations 1`] = `
         style="min-width: auto;"
       >
         <svg
-          aria-label="FormDown"
+          aria-label="Down"
           class="c9"
           viewBox="0 0 24 24"
         >
           <path
-            d="m18 9-6 6-6-6"
+            d="m2 8.35 10.173 9.823L21.997 8"
             fill="none"
             stroke="#000"
             stroke-width="2"

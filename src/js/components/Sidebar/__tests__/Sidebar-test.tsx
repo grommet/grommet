@@ -1,6 +1,7 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 import 'jest-styled-components';
+import { hpe } from 'grommet-theme-hpe';
 
 import { Avatar } from '../../Avatar';
 import { Grommet } from '../../Grommet';
@@ -11,7 +12,7 @@ const src = 'test.png';
 describe('Sidebar', () => {
   test('renders', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Sidebar id="test id" />
       </Grommet>,
     );
@@ -27,7 +28,7 @@ describe('Sidebar', () => {
 
   test('header', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Sidebar header={<Avatar src={src} />} />
       </Grommet>,
     );
@@ -37,7 +38,7 @@ describe('Sidebar', () => {
 
   test('footer', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Sidebar footer={<Avatar src={src} />} />
       </Grommet>,
     );
@@ -47,7 +48,7 @@ describe('Sidebar', () => {
 
   test('children', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Sidebar>
           <Avatar src={src} />
           children test
@@ -60,7 +61,7 @@ describe('Sidebar', () => {
 
   test('all', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Sidebar
           footer={<Avatar>SY</Avatar>}
           header={<Avatar src={src} />}

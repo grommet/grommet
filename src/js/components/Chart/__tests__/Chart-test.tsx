@@ -4,9 +4,9 @@ import { axe } from 'jest-axe';
 import 'jest-axe/extend-expect';
 import 'regenerator-runtime/runtime';
 import 'jest-styled-components';
-
+import { hpe } from 'grommet-theme-hpe';
 import { Grommet } from '../../Grommet';
-import { Box } from '../../Box';
+// import { Box } from '../../Box';
 import { Chart, calcs, ChartProps } from '..';
 
 type ChartValues = ChartProps['values'];
@@ -42,7 +42,7 @@ const STYLED_VALUES: ChartValues = [
 describe('Chart', () => {
   test('should not have accessibility violations', async () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Chart values={VALUES} />
       </Grommet>,
     );
@@ -53,7 +53,7 @@ describe('Chart', () => {
 
   test('default', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Chart values={VALUES} />
       </Grommet>,
     );
@@ -63,7 +63,7 @@ describe('Chart', () => {
 
   test('opacity', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Chart opacity values={VALUES} />
         <Chart opacity={false} values={VALUES} />
         <Chart opacity="strong" values={VALUES} />
@@ -98,7 +98,7 @@ describe('Chart', () => {
 
   test('type', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Chart type="bar" values={VALUES} />
         <Chart type="line" values={VALUES} />
         <Chart type="area" values={VALUES} />
@@ -111,17 +111,17 @@ describe('Chart', () => {
 
   test('size', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Chart size="xsmall" values={VALUES} />
         <Chart size="small" values={VALUES} />
         <Chart size="medium" values={VALUES} />
         <Chart size="large" values={VALUES} />
         <Chart size="xlarge" values={VALUES} />
-        <Box width="large">
-          <Chart size={{ width: 'full' }} values={VALUES} />
-          <Chart size={{ width: 'fill' }} values={VALUES} />
-          <Chart size={{ width: 'auto' }} values={VALUES} />
-        </Box>
+        {/* <Box width="large"> */}
+        <Chart size={{ width: 'full' }} values={VALUES} />
+        <Chart size={{ width: 'fill' }} values={VALUES} />
+        <Chart size={{ width: 'auto' }} values={VALUES} />
+        {/* </Box> */}
       </Grommet>,
     );
 
@@ -130,7 +130,7 @@ describe('Chart', () => {
 
   test('thickness', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Chart thickness="xsmall" values={VALUES} />
         <Chart thickness="small" values={VALUES} />
         <Chart thickness="medium" values={VALUES} />
@@ -144,7 +144,7 @@ describe('Chart', () => {
 
   test('cap', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Chart round values={VALUES} />
         <Chart type="line" round values={VALUES} />
         <Chart type="area" round values={VALUES} />
@@ -157,12 +157,12 @@ describe('Chart', () => {
 
   test('gap', () => {
     const { container } = render(
-      <Grommet>
-        <Box width="large">
-          <Chart size={{ width: 'auto' }} gap="small" values={VALUES} />
-          <Chart size={{ width: 'auto' }} gap="medium" values={VALUES} />
-          <Chart size={{ width: 'auto' }} gap="large" values={VALUES} />
-        </Box>
+      <Grommet theme={hpe}>
+        {/* <Box width="large"> */}
+        <Chart size={{ width: 'auto' }} gap="small" values={VALUES} />
+        <Chart size={{ width: 'auto' }} gap="medium" values={VALUES} />
+        <Chart size={{ width: 'auto' }} gap="large" values={VALUES} />
+        {/* </Box> */}
       </Grommet>,
     );
 
@@ -171,7 +171,7 @@ describe('Chart', () => {
 
   test('dash', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Chart dash values={VALUES} />
       </Grommet>,
     );
@@ -181,7 +181,7 @@ describe('Chart', () => {
 
   test('color', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Chart color="brand" values={VALUES} />
         <Chart color={{ color: 'brand', opacity: 'strong' }} values={VALUES} />
         <Chart
@@ -199,7 +199,7 @@ describe('Chart', () => {
 
   test('point', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Chart type="point" point="circle" values={VALUES} />
         <Chart type="point" point="diamond" values={VALUES} />
         <Chart type="point" point="square" values={VALUES} />
@@ -214,7 +214,7 @@ describe('Chart', () => {
 
   test('pattern', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Chart type="area" pattern="squares" values={VALUES} />
         <Chart type="area" pattern="circles" values={VALUES} />
         <Chart type="area" pattern="stripesHorizontal" values={VALUES} />
@@ -229,7 +229,7 @@ describe('Chart', () => {
 
   test('value style', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Chart type="point" point="circle" values={STYLED_VALUES} />
         <Chart type="bar" values={STYLED_VALUES} />
       </Grommet>,
@@ -254,7 +254,7 @@ describe('Chart', () => {
 
   test('horizontal', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Chart direction="horizontal" type="bar" values={VALUES} />
         <Chart direction="horizontal" type="line" values={VALUES} />
         <Chart direction="horizontal" type="area" values={VALUES} />
@@ -267,7 +267,7 @@ describe('Chart', () => {
 
   test('animate', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Chart type="bar" values={VALUES} animate />
         <Chart type="line" values={VALUES} animate />
         <Chart type="area" values={VALUES} animate />
@@ -280,7 +280,7 @@ describe('Chart', () => {
 
   test('undefined values', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Chart type="bar" values={UNDEFINED_VALUES} />
         <Chart type="line" values={UNDEFINED_VALUES} />
         <Chart type="area" values={UNDEFINED_VALUES} />
@@ -345,7 +345,7 @@ describe('Chart', () => {
   test('renders a11yTitle and aria-label', () => {
     const LABEL = 'Test Label';
     const { container, getByLabelText } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Chart a11yTitle={LABEL} values={VALUES} />
         <Chart aria-label={`${LABEL}-2`} values={VALUES} />
       </Grommet>,

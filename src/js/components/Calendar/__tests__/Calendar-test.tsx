@@ -5,6 +5,7 @@ import 'jest-axe/extend-expect';
 import 'regenerator-runtime/runtime';
 import '@testing-library/jest-dom';
 import userEvent from '@testing-library/user-event';
+import { hpe } from 'grommet-theme-hpe';
 
 import { axe } from 'jest-axe';
 import { fireEvent, render, act, screen } from '@testing-library/react';
@@ -20,7 +21,7 @@ const DATES = [
 describe('Calendar', () => {
   test('Calendar should have no accessibility violations', async () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Calendar date={DATE} animate={false} />
       </Grommet>,
     );
@@ -38,7 +39,7 @@ describe('Calendar', () => {
   test('date', () => {
     // need to set the date to avoid snapshot drift over time
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Calendar date={DATE} animate={false} />
       </Grommet>,
     );
@@ -49,7 +50,7 @@ describe('Calendar', () => {
   test('date without time specified', () => {
     // correct date displayed if time is not specified in ISOstring
     const { getByLabelText } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Calendar date={DATE.split('T')[0]} animate={false} />
       </Grommet>,
     );
@@ -63,7 +64,7 @@ describe('Calendar', () => {
     const disabledDate = new Date(DATE);
     disabledDate.setDate(disabledDate.getDate() + 1);
     const { asFragment } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Calendar date={DATE} disabled={[disabledDate.toISOString()]} />
       </Grommet>,
     );
@@ -73,7 +74,7 @@ describe('Calendar', () => {
 
   test('dates', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Calendar dates={DATES} animate={false} />
       </Grommet>,
     );
@@ -83,7 +84,7 @@ describe('Calendar', () => {
 
   test('daysOfWeek', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Calendar daysOfWeek dates={DATES} animate={false} />
       </Grommet>,
     );
@@ -93,7 +94,7 @@ describe('Calendar', () => {
 
   test('size', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Calendar size="small" date={DATE} animate={false} />
         <Calendar size="medium" date={DATE} animate={false} />
         <Calendar size="large" date={DATE} animate={false} />
@@ -124,7 +125,7 @@ describe('Calendar', () => {
 
   test('fill', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Calendar fill date={DATE} animate={false} />
       </Grommet>,
     );
@@ -134,7 +135,7 @@ describe('Calendar', () => {
 
   test('firstDayOfWeek', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Calendar firstDayOfWeek={0} date={DATE} animate={false} />
         <Calendar firstDayOfWeek={1} date={DATE} animate={false} />
       </Grommet>,
@@ -145,7 +146,7 @@ describe('Calendar', () => {
 
   test('reference', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Calendar reference={DATE} animate={false} />
       </Grommet>,
     );
@@ -155,7 +156,7 @@ describe('Calendar', () => {
 
   test('showAdjacentDays', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Calendar date={DATE} animate={false} />
         <Calendar date={DATE} animate={false} showAdjacentDays={false} />
         <Calendar date={DATE} animate={false} showAdjacentDays="trim" />
@@ -167,7 +168,7 @@ describe('Calendar', () => {
 
   test('header', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Calendar
           date={DATE}
           onSelect={() => {}}
@@ -212,7 +213,7 @@ describe('Calendar', () => {
 
   test('children', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Calendar date={DATE} fill animate={false}>
           {({ day }) => <Box>{day}</Box>}
         </Calendar>
@@ -225,7 +226,7 @@ describe('Calendar', () => {
   test('select date', () => {
     const onSelect = jest.fn();
     const { getByText, container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Calendar date={DATE} onSelect={onSelect} animate={false} />
       </Grommet>,
     );
@@ -240,7 +241,7 @@ describe('Calendar', () => {
   test('select dates', () => {
     const onSelect = jest.fn();
     const { getByText, container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Calendar dates={DATES} onSelect={onSelect} animate={false} />
       </Grommet>,
     );
@@ -257,7 +258,7 @@ describe('Calendar', () => {
     // and the request of firstDayOfWeek
     // is Monday, we are verifying we are not missing a week, issue 3253.
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Calendar
           firstDayOfWeek={1}
           date="2020-03-01T00:00:00-08:00"
@@ -272,7 +273,7 @@ describe('Calendar', () => {
   test('change months', () => {
     jest.useFakeTimers();
     const { container, getByLabelText } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Calendar date={DATE} />
       </Grommet>,
     );
@@ -294,7 +295,7 @@ describe('Calendar', () => {
   test('select date with range', () => {
     const onSelect = jest.fn();
     const { getByText } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Calendar date={DATE} onSelect={onSelect} range animate={false} />
       </Grommet>,
     );
@@ -313,7 +314,7 @@ describe('Calendar', () => {
 
   test('disabled previous month button when date is before bounds', () => {
     render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Calendar
           date="2019-01-15T00:00:00-08:00"
           onSelect={jest.fn()}
@@ -337,7 +338,7 @@ describe('Calendar', () => {
 
   test('disabled next month button when date is after bounds', () => {
     render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Calendar
           date="2020-02-15T00:00:00-08:00"
           onSelect={jest.fn()}
@@ -362,7 +363,7 @@ describe('Calendar', () => {
   test('change to next month when date is before bounds', () => {
     const onReference = jest.fn();
     render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Calendar
           date="2019-01-15T00:00:00-08:00"
           onReference={onReference}
@@ -387,7 +388,7 @@ describe('Calendar', () => {
   test('change to next month when date is after bounds', () => {
     const onReference = jest.fn();
     render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Calendar
           date="2021-01-15T00:00:00-08:00"
           onReference={onReference}
@@ -412,7 +413,7 @@ describe('Calendar', () => {
   test('select date with range no date set', () => {
     const onSelect = jest.fn();
     const { getByText } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Calendar
           reference="2020-07-01T00:00:00-08:00"
           onSelect={onSelect}
@@ -434,7 +435,7 @@ describe('Calendar', () => {
   test('select date greater and less than', () => {
     const onSelect = jest.fn();
     const { getByLabelText } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Calendar
           dates={[['2020-01-01T00:00:00-08:00', '2020-01-05T00:00:00-08:00']]}
           onSelect={onSelect}
@@ -461,7 +462,7 @@ describe('Calendar', () => {
   test('select date with same start date', () => {
     const onSelect = jest.fn();
     const { getByLabelText } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Calendar
           dates={[['2020-01-01T00:00:00-08:00', '2020-01-03T00:00:00-08:00']]}
           onSelect={onSelect}
@@ -480,7 +481,7 @@ describe('Calendar', () => {
   test('select date with same date twice', () => {
     const onSelect = jest.fn();
     const { getByLabelText } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Calendar
           reference="2020-01-01T00:00:00-08:00"
           onSelect={onSelect}
@@ -500,7 +501,7 @@ describe('Calendar', () => {
   test('select date with same end date', () => {
     const onSelect = jest.fn();
     const { getByLabelText } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Calendar
           dates={[['2020-01-01T00:00:00-08:00', '2020-01-03T00:00:00-08:00']]}
           onSelect={onSelect}
@@ -519,7 +520,7 @@ describe('Calendar', () => {
   test('range as array', () => {
     const onSelect = jest.fn();
     const { getByLabelText } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Calendar
           dates={[['2020-01-01T00:00:00-08:00', '2020-01-05T00:00:00-08:00']]}
           onSelect={onSelect}
@@ -564,7 +565,7 @@ describe('Calendar', () => {
   test('range as array with date', () => {
     const onSelect = jest.fn();
     const { getByLabelText } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Calendar
           date={[['2020-01-01T00:00:00-08:00', '2020-01-05T00:00:00-08:00']]}
           onSelect={onSelect}
@@ -609,7 +610,7 @@ describe('Calendar', () => {
   test('activeDate start', () => {
     const onSelect = jest.fn();
     const { getByLabelText } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Calendar
           activeDate="start"
           dates={[['2020-01-01T00:00:00-08:00', '2020-01-05T00:00:00-08:00']]}
@@ -631,7 +632,7 @@ describe('Calendar', () => {
   test('activeDate end', () => {
     const onSelect = jest.fn();
     const { getByLabelText } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Calendar
           activeDate="end"
           dates={[['2020-01-01T00:00:00-08:00', '2020-01-05T00:00:00-08:00']]}
@@ -653,7 +654,7 @@ describe('Calendar', () => {
   test('daylight savings', () => {
     const onSelect = jest.fn();
     const { getByLabelText } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Calendar
           reference="2022-07-14T08:00:00.000Z"
           onSelect={onSelect}
@@ -816,7 +817,7 @@ describe('Calendar Keyboard events', () => {
         setDate(nextDate);
       };
       return (
-        <Grommet>
+        <Grommet theme={hpe}>
           <Calendar
             bounds={['2020-01-01', '2020-01-31']}
             date={date}

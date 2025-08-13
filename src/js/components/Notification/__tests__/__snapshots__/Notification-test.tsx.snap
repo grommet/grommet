@@ -715,10 +715,12 @@ exports[`Notification global 1`] = `
   .c4 {
   display: inline-block;
   flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #919191;
-  stroke: #919191;
+  width: 18px;
+  height: 18px;
+  fill: #757575;
+  stroke: #757575;
+  padding-top: 3px;
+  padding-bottom: 3px;
 }
 
 .c4 g {
@@ -748,7 +750,8 @@ exports[`Notification global 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background-color: rgba(145, 145, 145, 0.1);
+  background-color: rgba(0, 0, 0, 0.04);
+  color: #555555;
   min-width: 0;
   min-height: 0;
   flex-direction: row;
@@ -790,31 +793,39 @@ exports[`Notification global 1`] = `
 }
 
 .c6 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  font-weight: undefined;
 }
 
 .c7 {
-  font-size: 18px;
-  line-height: 24px;
-  font-weight: bold;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  color: #2e2e2e;
+  font-weight: 500;
 }
 
 .c8 {
   margin: 0px;
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  color: #555555;
+  font-weight: undefined;
 }
 
 .c9 {
   margin-right: 6px;
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  font-weight: undefined;
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -910,10 +921,12 @@ exports[`Notification messages prop 1`] = `
   .c4 {
   display: inline-block;
   flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #919191;
-  stroke: #919191;
+  width: 18px;
+  height: 18px;
+  fill: #757575;
+  stroke: #757575;
+  padding-top: 3px;
+  padding-bottom: 3px;
 }
 
 .c4 g {
@@ -942,10 +955,14 @@ exports[`Notification messages prop 1`] = `
 .c10 {
   display: inline-block;
   flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #666666;
-  stroke: #666666;
+  width: 18px;
+  height: 18px;
+  fill: #555555;
+  stroke: #555555;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  padding-left: 3px;
+  padding-right: 3px;
 }
 
 .c10 g {
@@ -975,7 +992,8 @@ exports[`Notification messages prop 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background-color: rgba(145, 145, 145, 0.1);
+  background-color: rgba(0, 0, 0, 0.04);
+  color: #555555;
   min-width: 0;
   min-height: 0;
   flex-direction: row;
@@ -1034,9 +1052,10 @@ exports[`Notification messages prop 1`] = `
 }
 
 .c6 {
-  font-size: 18px;
-  line-height: 24px;
-  font-weight: bold;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  color: #2e2e2e;
+  font-weight: 500;
 }
 
 .c9 {
@@ -1049,22 +1068,29 @@ exports[`Notification messages prop 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  color: inherit;
   outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
+  color: inherit;
   line-height: 0;
 }
 
+.c9 >svg {
+  display: flex;
+  align-self: center;
+  vertical-align: middle;
+}
+
 .c9:hover {
-  background-color: rgba(221, 221, 221, 0.4);
-  color: #000000;
+  background-color: rgba(0, 0, 0, 0.04);
+  color: #555555;
 }
 
 .c9:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c9:focus >circle,
@@ -1074,8 +1100,9 @@ exports[`Notification messages prop 1`] = `
 .c9:focus >polygon,
 .c9:focus >polyline,
 .c9:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c9:focus ::-moz-focus-inner {
@@ -1083,6 +1110,8 @@ exports[`Notification messages prop 1`] = `
 }
 
 .c9:focus:not(:focus-visible) {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -1094,6 +1123,8 @@ exports[`Notification messages prop 1`] = `
 .c9:focus:not(:focus-visible) >polygon,
 .c9:focus:not(:focus-visible) >polyline,
 .c9:focus:not(:focus-visible) >rect {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -1103,8 +1134,11 @@ exports[`Notification messages prop 1`] = `
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1219,15 +1253,16 @@ exports[`Notification messages prop 1`] = `
             type="button"
           >
             <svg
-              aria-label="FormClose"
+              aria-label="Close"
               class="c10"
               viewBox="0 0 24 24"
             >
               <path
-                d="m7 7 10 10M7 17 17 7"
+                d="m3 3 18 18M3 21 21 3"
                 fill="none"
                 stroke="#000"
                 stroke-width="2"
+                vector-effect="non-scaling-stroke"
               />
             </svg>
           </button>
@@ -1243,10 +1278,12 @@ exports[`Notification multi actions 1`] = `
   .c4 {
   display: inline-block;
   flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #919191;
-  stroke: #919191;
+  width: 18px;
+  height: 18px;
+  fill: #757575;
+  stroke: #757575;
+  padding-top: 3px;
+  padding-bottom: 3px;
 }
 
 .c4 g {
@@ -1276,7 +1313,8 @@ exports[`Notification multi actions 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background-color: rgba(145, 145, 145, 0.1);
+  background-color: rgba(0, 0, 0, 0.04);
+  color: #555555;
   min-width: 0;
   min-height: 0;
   flex-direction: row;
@@ -1318,15 +1356,17 @@ exports[`Notification multi actions 1`] = `
 }
 
 .c6 {
-  font-size: 18px;
-  line-height: 24px;
-  font-weight: bold;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  color: #2e2e2e;
+  font-weight: 500;
 }
 
 .c8 {
   margin-right: 6px;
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  font-weight: undefined;
 }
 
 .c9 {
@@ -1334,20 +1374,24 @@ exports[`Notification multi actions 1`] = `
   display: inline-flex;
   font-size: inherit;
   line-height: inherit;
-  color: #7D4CDB;
-  font-weight: 600;
-  text-decoration: none;
+  color: #006750;
+  font-weight: 500;
+  text-decoration: underline;
   cursor: pointer;
   margin-right: 6px;
 }
 
 .c9:hover {
   text-decoration: underline;
+  color: #074b3b;
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1357,9 +1401,11 @@ exports[`Notification multi actions 1`] = `
 
 .c7 {
   margin: 0px;
-  font-size: 18px;
-  line-height: 24px;
-  max-width: 432px;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  max-width: none;
+  color: #555555;
+  font-weight: undefined;
 }
 
 .c10 {
@@ -1463,10 +1509,12 @@ exports[`Notification onClose 1`] = `
   .c4 {
   display: inline-block;
   flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #919191;
-  stroke: #919191;
+  width: 18px;
+  height: 18px;
+  fill: #757575;
+  stroke: #757575;
+  padding-top: 3px;
+  padding-bottom: 3px;
 }
 
 .c4 g {
@@ -1495,10 +1543,14 @@ exports[`Notification onClose 1`] = `
 .c10 {
   display: inline-block;
   flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #666666;
-  stroke: #666666;
+  width: 18px;
+  height: 18px;
+  fill: #555555;
+  stroke: #555555;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  padding-left: 3px;
+  padding-right: 3px;
 }
 
 .c10 g {
@@ -1528,7 +1580,8 @@ exports[`Notification onClose 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background-color: rgba(145, 145, 145, 0.1);
+  background-color: rgba(0, 0, 0, 0.04);
+  color: #555555;
   min-width: 0;
   min-height: 0;
   flex-direction: row;
@@ -1587,9 +1640,10 @@ exports[`Notification onClose 1`] = `
 }
 
 .c6 {
-  font-size: 18px;
-  line-height: 24px;
-  font-weight: bold;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  color: #2e2e2e;
+  font-weight: 500;
 }
 
 .c9 {
@@ -1602,17 +1656,29 @@ exports[`Notification onClose 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  color: inherit;
   outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
+  color: inherit;
   line-height: 0;
 }
 
+.c9 >svg {
+  display: flex;
+  align-self: center;
+  vertical-align: middle;
+}
+
+.c9:hover {
+  background-color: rgba(0, 0, 0, 0.04);
+  color: #555555;
+}
+
 .c9:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c9:focus >circle,
@@ -1622,8 +1688,9 @@ exports[`Notification onClose 1`] = `
 .c9:focus >polygon,
 .c9:focus >polyline,
 .c9:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c9:focus ::-moz-focus-inner {
@@ -1631,6 +1698,8 @@ exports[`Notification onClose 1`] = `
 }
 
 .c9:focus:not(:focus-visible) {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -1642,6 +1711,8 @@ exports[`Notification onClose 1`] = `
 .c9:focus:not(:focus-visible) >polygon,
 .c9:focus:not(:focus-visible) >polyline,
 .c9:focus:not(:focus-visible) >rect {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -1651,8 +1722,11 @@ exports[`Notification onClose 1`] = `
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1767,15 +1841,16 @@ exports[`Notification onClose 1`] = `
             type="button"
           >
             <svg
-              aria-label="FormClose"
+              aria-label="Close"
               class="c10"
               viewBox="0 0 24 24"
             >
               <path
-                d="m7 7 10 10M7 17 17 7"
+                d="m3 3 18 18M3 21 21 3"
                 fill="none"
                 stroke="#000"
                 stroke-width="2"
+                vector-effect="non-scaling-stroke"
               />
             </svg>
           </button>
@@ -1790,10 +1865,12 @@ exports[`Notification position bottom 1`] = `
 .c6 {
   display: inline-block;
   flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #919191;
-  stroke: #919191;
+  width: 18px;
+  height: 18px;
+  fill: #757575;
+  stroke: #757575;
+  padding-top: 3px;
+  padding-bottom: 3px;
 }
 
 .c6 g {
@@ -1823,14 +1900,14 @@ exports[`Notification position bottom 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background-color: #FFFFFF;
-  color: #444444;
+  background-color: #ffffff;
+  color: #555555;
   min-width: 0;
   min-height: 0;
   flex-direction: row;
   width: 384px;
   border-radius: 6px;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.20);
+  box-shadow: 0px 6px 12px 0px rgba(0, 0, 0, 0.12);
 }
 
 .c4 {
@@ -1868,20 +1945,23 @@ exports[`Notification position bottom 1`] = `
 }
 
 .c8 {
-  font-size: 18px;
-  line-height: 24px;
-  font-weight: bold;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  color: #2e2e2e;
+  font-weight: 500;
 }
 
 .c10 {
   margin-right: 6px;
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  font-weight: undefined;
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1889,7 +1969,7 @@ exports[`Notification position bottom 1`] = `
   -webkit-font-smoothing: antialiased;
   background: transparent;
   position: relative;
-  z-index: 20;
+  z-index: 110;
   pointer-events: none;
   outline: none;
   position: fixed;
@@ -1900,8 +1980,9 @@ exports[`Notification position bottom 1`] = `
 }
 
 .c1 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1939,9 +2020,11 @@ exports[`Notification position bottom 1`] = `
 
 .c9 {
   margin: 0px;
-  font-size: 18px;
-  line-height: 24px;
-  max-width: 432px;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  max-width: none;
+  color: #555555;
+  font-weight: undefined;
 }
 
 @media only screen and (max-width: 768px) {
@@ -2036,7 +2119,7 @@ exports[`Notification position bottom 1`] = `
 
 exports[`Notification position bottom 2`] = `
 "@media only screen and (max-width: 768px) {
-  .kQKxik {
+  .jzhntK {
     border-radius: 3px;
   }
 }
@@ -2063,10 +2146,12 @@ exports[`Notification position bottom-left 1`] = `
 .c6 {
   display: inline-block;
   flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #919191;
-  stroke: #919191;
+  width: 18px;
+  height: 18px;
+  fill: #757575;
+  stroke: #757575;
+  padding-top: 3px;
+  padding-bottom: 3px;
 }
 
 .c6 g {
@@ -2096,14 +2181,14 @@ exports[`Notification position bottom-left 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background-color: #FFFFFF;
-  color: #444444;
+  background-color: #ffffff;
+  color: #555555;
   min-width: 0;
   min-height: 0;
   flex-direction: row;
   width: 384px;
   border-radius: 6px;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.20);
+  box-shadow: 0px 6px 12px 0px rgba(0, 0, 0, 0.12);
 }
 
 .c4 {
@@ -2141,20 +2226,23 @@ exports[`Notification position bottom-left 1`] = `
 }
 
 .c8 {
-  font-size: 18px;
-  line-height: 24px;
-  font-weight: bold;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  color: #2e2e2e;
+  font-weight: 500;
 }
 
 .c10 {
   margin-right: 6px;
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  font-weight: undefined;
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -2162,7 +2250,7 @@ exports[`Notification position bottom-left 1`] = `
   -webkit-font-smoothing: antialiased;
   background: transparent;
   position: relative;
-  z-index: 20;
+  z-index: 110;
   pointer-events: none;
   outline: none;
   position: fixed;
@@ -2173,8 +2261,9 @@ exports[`Notification position bottom-left 1`] = `
 }
 
 .c1 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -2212,9 +2301,11 @@ exports[`Notification position bottom-left 1`] = `
 
 .c9 {
   margin: 0px;
-  font-size: 18px;
-  line-height: 24px;
-  max-width: 432px;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  max-width: none;
+  color: #555555;
+  font-weight: undefined;
 }
 
 @media only screen and (max-width: 768px) {
@@ -2309,7 +2400,7 @@ exports[`Notification position bottom-left 1`] = `
 
 exports[`Notification position bottom-left 2`] = `
 "@media only screen and (max-width: 768px) {
-  .kQKxik {
+  .jzhntK {
     border-radius: 3px;
   }
 }
@@ -2336,10 +2427,12 @@ exports[`Notification position bottom-right 1`] = `
 .c6 {
   display: inline-block;
   flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #919191;
-  stroke: #919191;
+  width: 18px;
+  height: 18px;
+  fill: #757575;
+  stroke: #757575;
+  padding-top: 3px;
+  padding-bottom: 3px;
 }
 
 .c6 g {
@@ -2369,14 +2462,14 @@ exports[`Notification position bottom-right 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background-color: #FFFFFF;
-  color: #444444;
+  background-color: #ffffff;
+  color: #555555;
   min-width: 0;
   min-height: 0;
   flex-direction: row;
   width: 384px;
   border-radius: 6px;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.20);
+  box-shadow: 0px 6px 12px 0px rgba(0, 0, 0, 0.12);
 }
 
 .c4 {
@@ -2414,20 +2507,23 @@ exports[`Notification position bottom-right 1`] = `
 }
 
 .c8 {
-  font-size: 18px;
-  line-height: 24px;
-  font-weight: bold;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  color: #2e2e2e;
+  font-weight: 500;
 }
 
 .c10 {
   margin-right: 6px;
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  font-weight: undefined;
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -2435,7 +2531,7 @@ exports[`Notification position bottom-right 1`] = `
   -webkit-font-smoothing: antialiased;
   background: transparent;
   position: relative;
-  z-index: 20;
+  z-index: 110;
   pointer-events: none;
   outline: none;
   position: fixed;
@@ -2446,8 +2542,9 @@ exports[`Notification position bottom-right 1`] = `
 }
 
 .c1 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -2485,9 +2582,11 @@ exports[`Notification position bottom-right 1`] = `
 
 .c9 {
   margin: 0px;
-  font-size: 18px;
-  line-height: 24px;
-  max-width: 432px;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  max-width: none;
+  color: #555555;
+  font-weight: undefined;
 }
 
 @media only screen and (max-width: 768px) {
@@ -2582,7 +2681,7 @@ exports[`Notification position bottom-right 1`] = `
 
 exports[`Notification position bottom-right 2`] = `
 "@media only screen and (max-width: 768px) {
-  .kQKxik {
+  .jzhntK {
     border-radius: 3px;
   }
 }
@@ -2609,10 +2708,12 @@ exports[`Notification position center 1`] = `
 .c6 {
   display: inline-block;
   flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #919191;
-  stroke: #919191;
+  width: 18px;
+  height: 18px;
+  fill: #757575;
+  stroke: #757575;
+  padding-top: 3px;
+  padding-bottom: 3px;
 }
 
 .c6 g {
@@ -2642,14 +2743,14 @@ exports[`Notification position center 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background-color: #FFFFFF;
-  color: #444444;
+  background-color: #ffffff;
+  color: #555555;
   min-width: 0;
   min-height: 0;
   flex-direction: row;
   width: 384px;
   border-radius: 6px;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.20);
+  box-shadow: 0px 6px 12px 0px rgba(0, 0, 0, 0.12);
 }
 
 .c4 {
@@ -2687,20 +2788,23 @@ exports[`Notification position center 1`] = `
 }
 
 .c8 {
-  font-size: 18px;
-  line-height: 24px;
-  font-weight: bold;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  color: #2e2e2e;
+  font-weight: 500;
 }
 
 .c10 {
   margin-right: 6px;
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  font-weight: undefined;
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -2708,7 +2812,7 @@ exports[`Notification position center 1`] = `
   -webkit-font-smoothing: antialiased;
   background: transparent;
   position: relative;
-  z-index: 20;
+  z-index: 110;
   pointer-events: none;
   outline: none;
   position: fixed;
@@ -2719,8 +2823,9 @@ exports[`Notification position center 1`] = `
 }
 
 .c1 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -2758,9 +2863,11 @@ exports[`Notification position center 1`] = `
 
 .c9 {
   margin: 0px;
-  font-size: 18px;
-  line-height: 24px;
-  max-width: 432px;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  max-width: none;
+  color: #555555;
+  font-weight: undefined;
 }
 
 @media only screen and (max-width: 768px) {
@@ -2855,7 +2962,7 @@ exports[`Notification position center 1`] = `
 
 exports[`Notification position center 2`] = `
 "@media only screen and (max-width: 768px) {
-  .kQKxik {
+  .jzhntK {
     border-radius: 3px;
   }
 }
@@ -2882,10 +2989,12 @@ exports[`Notification position end 1`] = `
 .c6 {
   display: inline-block;
   flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #919191;
-  stroke: #919191;
+  width: 18px;
+  height: 18px;
+  fill: #757575;
+  stroke: #757575;
+  padding-top: 3px;
+  padding-bottom: 3px;
 }
 
 .c6 g {
@@ -2915,14 +3024,14 @@ exports[`Notification position end 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background-color: #FFFFFF;
-  color: #444444;
+  background-color: #ffffff;
+  color: #555555;
   min-width: 0;
   min-height: 0;
   flex-direction: row;
   width: 384px;
   border-radius: 6px;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.20);
+  box-shadow: 0px 6px 12px 0px rgba(0, 0, 0, 0.12);
 }
 
 .c4 {
@@ -2960,20 +3069,23 @@ exports[`Notification position end 1`] = `
 }
 
 .c8 {
-  font-size: 18px;
-  line-height: 24px;
-  font-weight: bold;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  color: #2e2e2e;
+  font-weight: 500;
 }
 
 .c10 {
   margin-right: 6px;
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  font-weight: undefined;
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -2981,7 +3093,7 @@ exports[`Notification position end 1`] = `
   -webkit-font-smoothing: antialiased;
   background: transparent;
   position: relative;
-  z-index: 20;
+  z-index: 110;
   pointer-events: none;
   outline: none;
   position: fixed;
@@ -2992,8 +3104,9 @@ exports[`Notification position end 1`] = `
 }
 
 .c1 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -3031,9 +3144,11 @@ exports[`Notification position end 1`] = `
 
 .c9 {
   margin: 0px;
-  font-size: 18px;
-  line-height: 24px;
-  max-width: 432px;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  max-width: none;
+  color: #555555;
+  font-weight: undefined;
 }
 
 @media only screen and (max-width: 768px) {
@@ -3128,7 +3243,7 @@ exports[`Notification position end 1`] = `
 
 exports[`Notification position end 2`] = `
 "@media only screen and (max-width: 768px) {
-  .kQKxik {
+  .jzhntK {
     border-radius: 3px;
   }
 }
@@ -3155,10 +3270,12 @@ exports[`Notification position left 1`] = `
 .c6 {
   display: inline-block;
   flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #919191;
-  stroke: #919191;
+  width: 18px;
+  height: 18px;
+  fill: #757575;
+  stroke: #757575;
+  padding-top: 3px;
+  padding-bottom: 3px;
 }
 
 .c6 g {
@@ -3188,14 +3305,14 @@ exports[`Notification position left 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background-color: #FFFFFF;
-  color: #444444;
+  background-color: #ffffff;
+  color: #555555;
   min-width: 0;
   min-height: 0;
   flex-direction: row;
   width: 384px;
   border-radius: 6px;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.20);
+  box-shadow: 0px 6px 12px 0px rgba(0, 0, 0, 0.12);
 }
 
 .c4 {
@@ -3233,20 +3350,23 @@ exports[`Notification position left 1`] = `
 }
 
 .c8 {
-  font-size: 18px;
-  line-height: 24px;
-  font-weight: bold;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  color: #2e2e2e;
+  font-weight: 500;
 }
 
 .c10 {
   margin-right: 6px;
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  font-weight: undefined;
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -3254,7 +3374,7 @@ exports[`Notification position left 1`] = `
   -webkit-font-smoothing: antialiased;
   background: transparent;
   position: relative;
-  z-index: 20;
+  z-index: 110;
   pointer-events: none;
   outline: none;
   position: fixed;
@@ -3265,8 +3385,9 @@ exports[`Notification position left 1`] = `
 }
 
 .c1 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -3304,9 +3425,11 @@ exports[`Notification position left 1`] = `
 
 .c9 {
   margin: 0px;
-  font-size: 18px;
-  line-height: 24px;
-  max-width: 432px;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  max-width: none;
+  color: #555555;
+  font-weight: undefined;
 }
 
 @media only screen and (max-width: 768px) {
@@ -3401,7 +3524,7 @@ exports[`Notification position left 1`] = `
 
 exports[`Notification position left 2`] = `
 "@media only screen and (max-width: 768px) {
-  .kQKxik {
+  .jzhntK {
     border-radius: 3px;
   }
 }
@@ -3428,10 +3551,12 @@ exports[`Notification position right 1`] = `
 .c6 {
   display: inline-block;
   flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #919191;
-  stroke: #919191;
+  width: 18px;
+  height: 18px;
+  fill: #757575;
+  stroke: #757575;
+  padding-top: 3px;
+  padding-bottom: 3px;
 }
 
 .c6 g {
@@ -3461,14 +3586,14 @@ exports[`Notification position right 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background-color: #FFFFFF;
-  color: #444444;
+  background-color: #ffffff;
+  color: #555555;
   min-width: 0;
   min-height: 0;
   flex-direction: row;
   width: 384px;
   border-radius: 6px;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.20);
+  box-shadow: 0px 6px 12px 0px rgba(0, 0, 0, 0.12);
 }
 
 .c4 {
@@ -3506,20 +3631,23 @@ exports[`Notification position right 1`] = `
 }
 
 .c8 {
-  font-size: 18px;
-  line-height: 24px;
-  font-weight: bold;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  color: #2e2e2e;
+  font-weight: 500;
 }
 
 .c10 {
   margin-right: 6px;
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  font-weight: undefined;
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -3527,7 +3655,7 @@ exports[`Notification position right 1`] = `
   -webkit-font-smoothing: antialiased;
   background: transparent;
   position: relative;
-  z-index: 20;
+  z-index: 110;
   pointer-events: none;
   outline: none;
   position: fixed;
@@ -3538,8 +3666,9 @@ exports[`Notification position right 1`] = `
 }
 
 .c1 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -3577,9 +3706,11 @@ exports[`Notification position right 1`] = `
 
 .c9 {
   margin: 0px;
-  font-size: 18px;
-  line-height: 24px;
-  max-width: 432px;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  max-width: none;
+  color: #555555;
+  font-weight: undefined;
 }
 
 @media only screen and (max-width: 768px) {
@@ -3674,7 +3805,7 @@ exports[`Notification position right 1`] = `
 
 exports[`Notification position right 2`] = `
 "@media only screen and (max-width: 768px) {
-  .kQKxik {
+  .jzhntK {
     border-radius: 3px;
   }
 }
@@ -3701,10 +3832,12 @@ exports[`Notification position start 1`] = `
 .c6 {
   display: inline-block;
   flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #919191;
-  stroke: #919191;
+  width: 18px;
+  height: 18px;
+  fill: #757575;
+  stroke: #757575;
+  padding-top: 3px;
+  padding-bottom: 3px;
 }
 
 .c6 g {
@@ -3734,14 +3867,14 @@ exports[`Notification position start 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background-color: #FFFFFF;
-  color: #444444;
+  background-color: #ffffff;
+  color: #555555;
   min-width: 0;
   min-height: 0;
   flex-direction: row;
   width: 384px;
   border-radius: 6px;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.20);
+  box-shadow: 0px 6px 12px 0px rgba(0, 0, 0, 0.12);
 }
 
 .c4 {
@@ -3779,20 +3912,23 @@ exports[`Notification position start 1`] = `
 }
 
 .c8 {
-  font-size: 18px;
-  line-height: 24px;
-  font-weight: bold;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  color: #2e2e2e;
+  font-weight: 500;
 }
 
 .c10 {
   margin-right: 6px;
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  font-weight: undefined;
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -3800,7 +3936,7 @@ exports[`Notification position start 1`] = `
   -webkit-font-smoothing: antialiased;
   background: transparent;
   position: relative;
-  z-index: 20;
+  z-index: 110;
   pointer-events: none;
   outline: none;
   position: fixed;
@@ -3811,8 +3947,9 @@ exports[`Notification position start 1`] = `
 }
 
 .c1 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -3850,9 +3987,11 @@ exports[`Notification position start 1`] = `
 
 .c9 {
   margin: 0px;
-  font-size: 18px;
-  line-height: 24px;
-  max-width: 432px;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  max-width: none;
+  color: #555555;
+  font-weight: undefined;
 }
 
 @media only screen and (max-width: 768px) {
@@ -3947,7 +4086,7 @@ exports[`Notification position start 1`] = `
 
 exports[`Notification position start 2`] = `
 "@media only screen and (max-width: 768px) {
-  .kQKxik {
+  .jzhntK {
     border-radius: 3px;
   }
 }
@@ -3974,10 +4113,12 @@ exports[`Notification position top 1`] = `
 .c6 {
   display: inline-block;
   flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #919191;
-  stroke: #919191;
+  width: 18px;
+  height: 18px;
+  fill: #757575;
+  stroke: #757575;
+  padding-top: 3px;
+  padding-bottom: 3px;
 }
 
 .c6 g {
@@ -4007,14 +4148,14 @@ exports[`Notification position top 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background-color: #FFFFFF;
-  color: #444444;
+  background-color: #ffffff;
+  color: #555555;
   min-width: 0;
   min-height: 0;
   flex-direction: row;
   width: 384px;
   border-radius: 6px;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.20);
+  box-shadow: 0px 6px 12px 0px rgba(0, 0, 0, 0.12);
 }
 
 .c4 {
@@ -4052,20 +4193,23 @@ exports[`Notification position top 1`] = `
 }
 
 .c8 {
-  font-size: 18px;
-  line-height: 24px;
-  font-weight: bold;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  color: #2e2e2e;
+  font-weight: 500;
 }
 
 .c10 {
   margin-right: 6px;
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  font-weight: undefined;
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -4073,7 +4217,7 @@ exports[`Notification position top 1`] = `
   -webkit-font-smoothing: antialiased;
   background: transparent;
   position: relative;
-  z-index: 20;
+  z-index: 110;
   pointer-events: none;
   outline: none;
   position: fixed;
@@ -4084,8 +4228,9 @@ exports[`Notification position top 1`] = `
 }
 
 .c1 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -4123,9 +4268,11 @@ exports[`Notification position top 1`] = `
 
 .c9 {
   margin: 0px;
-  font-size: 18px;
-  line-height: 24px;
-  max-width: 432px;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  max-width: none;
+  color: #555555;
+  font-weight: undefined;
 }
 
 @media only screen and (max-width: 768px) {
@@ -4220,7 +4367,7 @@ exports[`Notification position top 1`] = `
 
 exports[`Notification position top 2`] = `
 "@media only screen and (max-width: 768px) {
-  .kQKxik {
+  .jzhntK {
     border-radius: 3px;
   }
 }
@@ -4247,10 +4394,12 @@ exports[`Notification position top-left 1`] = `
 .c6 {
   display: inline-block;
   flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #919191;
-  stroke: #919191;
+  width: 18px;
+  height: 18px;
+  fill: #757575;
+  stroke: #757575;
+  padding-top: 3px;
+  padding-bottom: 3px;
 }
 
 .c6 g {
@@ -4280,14 +4429,14 @@ exports[`Notification position top-left 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background-color: #FFFFFF;
-  color: #444444;
+  background-color: #ffffff;
+  color: #555555;
   min-width: 0;
   min-height: 0;
   flex-direction: row;
   width: 384px;
   border-radius: 6px;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.20);
+  box-shadow: 0px 6px 12px 0px rgba(0, 0, 0, 0.12);
 }
 
 .c4 {
@@ -4325,20 +4474,23 @@ exports[`Notification position top-left 1`] = `
 }
 
 .c8 {
-  font-size: 18px;
-  line-height: 24px;
-  font-weight: bold;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  color: #2e2e2e;
+  font-weight: 500;
 }
 
 .c10 {
   margin-right: 6px;
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  font-weight: undefined;
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -4346,7 +4498,7 @@ exports[`Notification position top-left 1`] = `
   -webkit-font-smoothing: antialiased;
   background: transparent;
   position: relative;
-  z-index: 20;
+  z-index: 110;
   pointer-events: none;
   outline: none;
   position: fixed;
@@ -4357,8 +4509,9 @@ exports[`Notification position top-left 1`] = `
 }
 
 .c1 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -4396,9 +4549,11 @@ exports[`Notification position top-left 1`] = `
 
 .c9 {
   margin: 0px;
-  font-size: 18px;
-  line-height: 24px;
-  max-width: 432px;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  max-width: none;
+  color: #555555;
+  font-weight: undefined;
 }
 
 @media only screen and (max-width: 768px) {
@@ -4493,7 +4648,7 @@ exports[`Notification position top-left 1`] = `
 
 exports[`Notification position top-left 2`] = `
 "@media only screen and (max-width: 768px) {
-  .kQKxik {
+  .jzhntK {
     border-radius: 3px;
   }
 }
@@ -4520,10 +4675,12 @@ exports[`Notification position top-right 1`] = `
 .c6 {
   display: inline-block;
   flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #919191;
-  stroke: #919191;
+  width: 18px;
+  height: 18px;
+  fill: #757575;
+  stroke: #757575;
+  padding-top: 3px;
+  padding-bottom: 3px;
 }
 
 .c6 g {
@@ -4553,14 +4710,14 @@ exports[`Notification position top-right 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background-color: #FFFFFF;
-  color: #444444;
+  background-color: #ffffff;
+  color: #555555;
   min-width: 0;
   min-height: 0;
   flex-direction: row;
   width: 384px;
   border-radius: 6px;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.20);
+  box-shadow: 0px 6px 12px 0px rgba(0, 0, 0, 0.12);
 }
 
 .c4 {
@@ -4598,20 +4755,23 @@ exports[`Notification position top-right 1`] = `
 }
 
 .c8 {
-  font-size: 18px;
-  line-height: 24px;
-  font-weight: bold;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  color: #2e2e2e;
+  font-weight: 500;
 }
 
 .c10 {
   margin-right: 6px;
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  font-weight: undefined;
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -4619,7 +4779,7 @@ exports[`Notification position top-right 1`] = `
   -webkit-font-smoothing: antialiased;
   background: transparent;
   position: relative;
-  z-index: 20;
+  z-index: 110;
   pointer-events: none;
   outline: none;
   position: fixed;
@@ -4630,8 +4790,9 @@ exports[`Notification position top-right 1`] = `
 }
 
 .c1 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -4669,9 +4830,11 @@ exports[`Notification position top-right 1`] = `
 
 .c9 {
   margin: 0px;
-  font-size: 18px;
-  line-height: 24px;
-  max-width: 432px;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  max-width: none;
+  color: #555555;
+  font-weight: undefined;
 }
 
 @media only screen and (max-width: 768px) {
@@ -4766,7 +4929,7 @@ exports[`Notification position top-right 1`] = `
 
 exports[`Notification position top-right 2`] = `
 "@media only screen and (max-width: 768px) {
-  .kQKxik {
+  .jzhntK {
     border-radius: 3px;
   }
 }
@@ -4794,10 +4957,12 @@ exports[`Notification should have no accessibility violations 1`] = `
   .c4 {
   display: inline-block;
   flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #919191;
-  stroke: #919191;
+  width: 18px;
+  height: 18px;
+  fill: #757575;
+  stroke: #757575;
+  padding-top: 3px;
+  padding-bottom: 3px;
 }
 
 .c4 g {
@@ -4827,7 +4992,8 @@ exports[`Notification should have no accessibility violations 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background-color: rgba(145, 145, 145, 0.1);
+  background-color: rgba(0, 0, 0, 0.04);
+  color: #555555;
   min-width: 0;
   min-height: 0;
   flex-direction: row;
@@ -4869,14 +5035,18 @@ exports[`Notification should have no accessibility violations 1`] = `
 }
 
 .c6 {
-  font-size: 18px;
-  line-height: 24px;
-  font-weight: bold;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  color: #2e2e2e;
+  font-weight: 500;
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -4956,8 +5126,11 @@ exports[`Notification should have no accessibility violations 1`] = `
 exports[`Notification should have no accessibility violations for toast 1`] = `
 <DocumentFragment>
   .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -4992,10 +5165,10 @@ exports[`Notification should render custom icon 1`] = `
   .c4 {
   display: inline-block;
   flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #666666;
-  stroke: #666666;
+  width: 18px;
+  height: 18px;
+  fill: #555555;
+  stroke: #555555;
 }
 
 .c4 g {
@@ -5025,7 +5198,8 @@ exports[`Notification should render custom icon 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background-color: rgba(145, 145, 145, 0.1);
+  background-color: rgba(0, 0, 0, 0.04);
+  color: #555555;
   min-width: 0;
   min-height: 0;
   flex-direction: row;
@@ -5067,20 +5241,25 @@ exports[`Notification should render custom icon 1`] = `
 }
 
 .c6 {
-  font-size: 18px;
-  line-height: 24px;
-  font-weight: bold;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  color: #2e2e2e;
+  font-weight: 500;
 }
 
 .c8 {
   margin-right: 6px;
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  font-weight: undefined;
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -5090,9 +5269,11 @@ exports[`Notification should render custom icon 1`] = `
 
 .c7 {
   margin: 0px;
-  font-size: 18px;
-  line-height: 24px;
-  max-width: 432px;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  max-width: none;
+  color: #555555;
+  font-weight: undefined;
 }
 
 @media only screen and (max-width: 768px) {
@@ -5174,10 +5355,12 @@ exports[`Notification should render custom template inside notification 1`] = `
 .c4 {
   display: inline-block;
   flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #919191;
-  stroke: #919191;
+  width: 18px;
+  height: 18px;
+  fill: #757575;
+  stroke: #757575;
+  padding-top: 3px;
+  padding-bottom: 3px;
 }
 
 .c4 g {
@@ -5207,7 +5390,8 @@ exports[`Notification should render custom template inside notification 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background-color: rgba(145, 145, 145, 0.1);
+  background-color: rgba(0, 0, 0, 0.04);
+  color: #555555;
   min-width: 0;
   min-height: 0;
   flex-direction: row;
@@ -5249,19 +5433,24 @@ exports[`Notification should render custom template inside notification 1`] = `
 }
 
 .c6 {
-  font-size: 18px;
-  line-height: 24px;
-  font-weight: bold;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  color: #2e2e2e;
+  font-weight: 500;
 }
 
 .c7 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  font-weight: undefined;
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -6007,10 +6196,12 @@ exports[`Notification status 1`] = `
   .c4 {
   display: inline-block;
   flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #009E67;
-  stroke: #009E67;
+  width: 18px;
+  height: 18px;
+  fill: #009a71;
+  stroke: #009a71;
+  padding-top: 3px;
+  padding-bottom: 3px;
 }
 
 .c4 g {
@@ -6039,10 +6230,12 @@ exports[`Notification status 1`] = `
 .c11 {
   display: inline-block;
   flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #C27B00;
-  stroke: #C27B00;
+  width: 18px;
+  height: 18px;
+  fill: #d36d00;
+  stroke: #d36d00;
+  padding-top: 3px;
+  padding-bottom: 3px;
 }
 
 .c11 g {
@@ -6071,10 +6264,12 @@ exports[`Notification status 1`] = `
 .c13 {
   display: inline-block;
   flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #EB0000;
-  stroke: #EB0000;
+  width: 18px;
+  height: 18px;
+  fill: #ec3331;
+  stroke: #ec3331;
+  padding-top: 3px;
+  padding-bottom: 3px;
 }
 
 .c13 g {
@@ -6104,7 +6299,8 @@ exports[`Notification status 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background-color: rgba(0, 158, 103, 0.1);
+  background-color: #e3fdf4;
+  color: #555555;
   min-width: 0;
   min-height: 0;
   flex-direction: row;
@@ -6149,7 +6345,8 @@ exports[`Notification status 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background-color: rgba(194, 123, 0, 0.1);
+  background-color: #fff3dd;
+  color: #555555;
   min-width: 0;
   min-height: 0;
   flex-direction: row;
@@ -6160,7 +6357,8 @@ exports[`Notification status 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background-color: rgba(235, 0, 0, 0.1);
+  background-color: #ffecec;
+  color: #555555;
   min-width: 0;
   min-height: 0;
   flex-direction: row;
@@ -6168,31 +6366,39 @@ exports[`Notification status 1`] = `
 }
 
 .c6 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  font-weight: undefined;
 }
 
 .c7 {
-  font-size: 18px;
-  line-height: 24px;
-  font-weight: bold;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  color: #2e2e2e;
+  font-weight: 500;
 }
 
 .c8 {
   margin: 0px;
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  color: #555555;
+  font-weight: undefined;
 }
 
 .c9 {
   margin-right: 6px;
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  font-weight: undefined;
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;

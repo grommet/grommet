@@ -5,7 +5,7 @@ import 'jest-styled-components';
 import React from 'react';
 import 'regenerator-runtime/runtime';
 import styled, { css } from 'styled-components';
-
+import { hpe } from 'grommet-theme-hpe';
 import { Alert, New, StatusInfo } from 'grommet-icons';
 import { FormField } from '..';
 import { CheckBox } from '../../CheckBox';
@@ -24,7 +24,7 @@ const CustomFormField = styled(FormField)`
 describe('FormField', () => {
   test(`should have no accessibility violations`, async () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <FormField />
       </Grommet>,
     );
@@ -35,7 +35,7 @@ describe('FormField', () => {
 
   test('default', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <FormField />
         <FormField>
           <TextInput />
@@ -54,7 +54,7 @@ describe('FormField', () => {
 
   test('label', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <FormField label="test label" />
       </Grommet>,
     );
@@ -64,7 +64,7 @@ describe('FormField', () => {
 
   test('help', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <FormField help="test help" />
       </Grommet>,
     );
@@ -74,7 +74,7 @@ describe('FormField', () => {
 
   test('error', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <FormField error="test error" />
       </Grommet>,
     );
@@ -84,7 +84,7 @@ describe('FormField', () => {
 
   test('info', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <FormField info="test info" />
       </Grommet>,
     );
@@ -94,7 +94,7 @@ describe('FormField', () => {
 
   test('htmlFor', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <FormField htmlFor="test-id" />
       </Grommet>,
     );
@@ -114,7 +114,7 @@ describe('FormField', () => {
 
   test('empty margin', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <FormField margin="none" />
       </Grommet>,
     );
@@ -124,7 +124,7 @@ describe('FormField', () => {
 
   test('pad', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <FormField pad />
       </Grommet>,
     );
@@ -248,7 +248,7 @@ describe('FormField', () => {
 
   test('custom formfield', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <CustomFormField htmlFor="test-id" />
       </Grommet>,
     );
@@ -258,7 +258,7 @@ describe('FormField', () => {
 
   test('disabled', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <FormField disabled /> {/* don't use FormField without Form */}
         <Form>
           <FormField disabled />
@@ -271,7 +271,7 @@ describe('FormField', () => {
 
   test('required', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <FormField required /> {/* don't use FormField without Form */}
         <Form>
           <FormField required />
@@ -394,7 +394,7 @@ describe('FormField', () => {
 
   test('contentProps', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Form>
           <FormField
             label="label"
@@ -536,7 +536,7 @@ describe('FormField', () => {
 
   test('max and threshold validation', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Form validate="change">
           <FormField
             label="label"
@@ -559,7 +559,7 @@ describe('FormField', () => {
 
   test('typing something into the input that meets the threshold', () => {
     render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Form validate="change">
           <FormField
             label="label"
@@ -587,7 +587,7 @@ describe('FormField', () => {
 
   test('checks that the "X characters left" message appears', async () => {
     render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Form validate="change">
           <FormField
             label="label"
@@ -618,7 +618,7 @@ describe('FormField', () => {
   // eslint-disable-next-line max-len
   test('checks that the "X characters over limit" message appears.', async () => {
     render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Form validate="change">
           <FormField
             label="label"
@@ -649,7 +649,7 @@ describe('FormField', () => {
   test('Field with autoFocus', () => {
     const mockFocus = jest.fn();
     render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <FormField label="Label" htmlFor="select">
           <TextArea onFocus={mockFocus} autoFocus />
         </FormField>
@@ -660,7 +660,7 @@ describe('FormField', () => {
 
   test('Field with null as child', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <FormField label="Label">
           <TextInput />
           {false && <Text>foobar</Text>}

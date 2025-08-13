@@ -3,6 +3,8 @@ import 'jest-styled-components';
 import { render, fireEvent, screen, act } from '@testing-library/react';
 import { getByTestId, queryByTestId } from '@testing-library/dom';
 import 'regenerator-runtime/runtime';
+import { hpe } from 'grommet-theme-hpe';
+
 import { createPortal, expectPortal } from '../../../utils/portal';
 
 import { Grommet, Box, Layer, Select, Button } from '../..';
@@ -55,7 +57,7 @@ const TargetLayer = (props) => {
     );
   }
   return (
-    <Grommet>
+    <Grommet theme={hpe}>
       <div ref={setTarget} />
       {layer}
     </Grommet>
@@ -84,7 +86,7 @@ describe('Layer', () => {
     fullOptions.forEach((full) => {
       test(`position: ${position} - full: ${full}`, () => {
         render(
-          <Grommet>
+          <Grommet theme={hpe}>
             <Layer id="position-full-test" position={position} full={full}>
               This is a layer
             </Layer>
@@ -130,7 +132,7 @@ describe('Layer', () => {
 
   test(`should apply background`, () => {
     render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Layer id="margin-test" background="brand">
           This is a layer
         </Layer>
@@ -141,7 +143,7 @@ describe('Layer', () => {
 
   test(`custom margin`, () => {
     render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Layer
           id="margin-test"
           margin={{ top: '50px', bottom: '40px', left: '30px', right: '20px' }}
@@ -155,7 +157,7 @@ describe('Layer', () => {
 
   test('hidden', () => {
     const { rerender } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Layer id="hidden-test" position="hidden">
           This is a layer
         </Layer>
@@ -164,7 +166,7 @@ describe('Layer', () => {
     expectPortal('hidden-test').toMatchSnapshot();
 
     rerender(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Layer id="hidden-test" position="center">
           This is a layer
         </Layer>
@@ -200,7 +202,7 @@ describe('Layer', () => {
 
   test('non-modal', () => {
     render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Layer id="non-modal-test" modal={false}>
           This is a non-modal layer
         </Layer>
@@ -211,7 +213,7 @@ describe('Layer', () => {
 
   test('dark context', () => {
     render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Box background="dark-1">
           <Layer id="non-modal-test" modal={false}>
             This is a non-modal layer
@@ -225,7 +227,7 @@ describe('Layer', () => {
   ['slide', 'fadeIn', false, true].forEach((animation) =>
     test(`animation ${animation}`, () => {
       render(
-        <Grommet>
+        <Grommet theme={hpe}>
           <Layer id="animation-test" animation={animation}>
             This is a layer
           </Layer>
@@ -238,7 +240,7 @@ describe('Layer', () => {
   test('invokes onEsc', () => {
     const onEsc = jest.fn();
     render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <LayerContainer onEsc={onEsc}>
           <input data-testid="test-input" />
         </LayerContainer>
@@ -253,7 +255,7 @@ describe('Layer', () => {
   test('is accessible', (done) => {
     /* eslint-disable jsx-a11y/tabindex-no-positive */
     render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <FakeLayer dataTestid="test-layer-node">
           <div data-testid="test-body-node">
             <input />
@@ -283,7 +285,7 @@ describe('Layer', () => {
   test('focus on layer', () => {
     /* eslint-disable jsx-a11y/no-autofocus */
     render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Layer data-testid="focus-layer-test">
           <input />
         </Layer>
@@ -299,7 +301,7 @@ describe('Layer', () => {
   test('not steal focus from an autofocus focusable element', () => {
     /* eslint-disable jsx-a11y/no-autofocus */
     render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Layer data-testid="focus-layer-input-test">
           <input autoFocus data-testid="focus-input" />
           <button type="button">Button</button>
@@ -314,7 +316,7 @@ describe('Layer', () => {
 
   test('target', () => {
     render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <TargetLayer id="target-test">This layer has a target</TargetLayer>
       </Grommet>,
     );
@@ -323,7 +325,7 @@ describe('Layer', () => {
 
   test('target not modal', () => {
     render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <TargetLayer id="target-test" modal={false}>
           This layer has a target
         </TargetLayer>
@@ -334,7 +336,7 @@ describe('Layer', () => {
 
   test('unmounts from dom', () => {
     render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <SimpleLayer />
       </Grommet>,
     );
@@ -345,7 +347,7 @@ describe('Layer', () => {
 
   test('default containerTarget', () => {
     render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Layer data-testid="layer">Test</Layer>
       </Grommet>,
     );
@@ -374,7 +376,7 @@ describe('Layer', () => {
   test('invoke onClickOutside when modal={true}', () => {
     const onClickOutside = jest.fn();
     render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <FakeLayer
           id="layer-node"
           onClickOutside={onClickOutside}
@@ -396,7 +398,7 @@ describe('Layer', () => {
   test('invoke onClickOutside when modal={false}', () => {
     const onClickOutside = jest.fn();
     render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <FakeLayer
           id="layer-node"
           onClickOutside={onClickOutside}
@@ -480,7 +482,7 @@ describe('Layer', () => {
     window.scrollTo = jest.fn();
     const onEsc = jest.fn();
     const { getByText, queryByText } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Layer id="esc-test" onEsc={onEsc} modal={false} animation={false}>
           <Select options={['one', 'two', 'three']} data-testid="test-select" />
         </Layer>
@@ -549,7 +551,7 @@ describe('Layer', () => {
     jest.useFakeTimers();
 
     render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <TriggerButtonTest />
       </Grommet>,
     );

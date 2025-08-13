@@ -1,6 +1,7 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 import 'jest-styled-components';
+import { hpe } from 'grommet-theme-hpe';
 
 import { Grommet } from '../../Grommet';
 import { Anchor } from '../../Anchor';
@@ -14,7 +15,7 @@ const levels = ['1', '2', '3', '4', '5', '6', 1, 2, 3, 4, 5, 6];
 describe('PageHeader', () => {
   test('basic', () => {
     const { asFragment } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <PageHeader
           title="Grommet"
           subtitle={`Grommet helps you build responsive and accessible 
@@ -47,7 +48,7 @@ describe('PageHeader', () => {
   sizes.forEach((size?: any) => {
     test(`size - ${size}`, () => {
       const { asFragment } = render(
-        <Grommet>
+        <Grommet theme={hpe}>
           <PageHeader
             title="Grommet"
             subtitle={`Grommet helps you build responsive and accessible 
@@ -99,7 +100,7 @@ describe('PageHeader', () => {
   levels.forEach((level?: any) => {
     test(`level - ${level}`, () => {
       const { asFragment } = render(
-        <Grommet>
+        <Grommet theme={hpe}>
           <PageHeader
             title="Grommet"
             subtitle={`Grommet helps you build responsive and accessible 

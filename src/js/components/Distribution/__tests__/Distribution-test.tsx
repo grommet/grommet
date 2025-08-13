@@ -1,6 +1,7 @@
 import React from 'react';
 import 'jest-styled-components';
 import { render } from '@testing-library/react';
+import { hpe } from 'grommet-theme-hpe';
 
 import { Grommet } from '../../Grommet';
 import { Distribution } from '..';
@@ -8,7 +9,7 @@ import { Distribution } from '..';
 describe('Distribution', () => {
   test('renders', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Distribution values={[]} />
       </Grommet>,
     );
@@ -22,7 +23,7 @@ describe('Distribution', () => {
 
   test('values renders', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Distribution
           values={[{ value: 20 }, { value: 3 }, { value: 2 }, { value: 1 }]}
         >
@@ -35,7 +36,7 @@ describe('Distribution', () => {
 
   test('undefined value', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Distribution
           values={
             // @ts-ignore

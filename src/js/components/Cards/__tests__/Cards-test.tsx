@@ -4,6 +4,7 @@ import 'jest-axe/extend-expect';
 import 'regenerator-runtime/runtime';
 import '@testing-library/jest-dom';
 import { render } from '@testing-library/react';
+import { hpe } from 'grommet-theme-hpe';
 
 import { axe } from 'jest-axe';
 import { Grommet } from '../../Grommet';
@@ -19,7 +20,7 @@ for (let i = 0; i < 95; i += 1) {
 describe('Cards', () => {
   test('should have no accessibility violations', async () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Cards aria-label="Cards" data={[{ a: 'alpha' }, { a: 'beta' }]} />
       </Grommet>,
     );
@@ -30,7 +31,7 @@ describe('Cards', () => {
 
   test('renders a11yTitle and aria-label', () => {
     const { container, getByLabelText } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Cards a11yTitle="test" data={[{ a: 'alpha' }, { a: 'beta' }]} />
         <Cards aria-label="test-2" data={[{ a: 'alpha' }, { a: 'beta' }]} />
       </Grommet>,
@@ -42,7 +43,7 @@ describe('Cards', () => {
 
   test('empty', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Cards />
       </Grommet>,
     );
@@ -56,7 +57,7 @@ describe('Cards', () => {
 
   test('data strings', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Cards data={['one', 'two']} />
       </Grommet>,
     );
@@ -65,7 +66,7 @@ describe('Cards', () => {
 
   test('data objects', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Cards
           data={[
             { a: 'one', b: 1 },
@@ -79,7 +80,7 @@ describe('Cards', () => {
 
   test('children render', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Cards data={['one', 'two']}>
           {(item, index) => (
             <Card key={item}>

@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import { render } from '@testing-library/react';
 import 'jest-styled-components';
-
+import { hpe } from 'grommet-theme-hpe';
 import { Grommet } from '../../Grommet';
 import { Box } from '../../Box';
 import { Text } from '../../Text';
@@ -26,7 +26,7 @@ describe('DataChart', () => {
 
   test('default', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <DataChart data={data} series="a" />
       </Grommet>,
     );
@@ -41,7 +41,7 @@ describe('DataChart', () => {
 
   test('nothing', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <DataChart data={data} />
         <DataChart data={data} series={[]} />
         <DataChart data={data} series={[{}]} />
@@ -56,7 +56,7 @@ describe('DataChart', () => {
 
   test('single', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <DataChart
           data={[data[0]]}
           series={['d', 'a']}
@@ -97,7 +97,7 @@ describe('DataChart', () => {
 
   test('size', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         {['fill', { width: 'fill' }, { width: 'auto' }].map((size, i) => (
           // eslint-disable-next-line react/no-array-index-key
           <DataChart key={i} data={data} series="a" size={size} />
@@ -118,7 +118,7 @@ describe('DataChart', () => {
       { y: { property: 'a', granularity: 'fine' } },
     ];
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         {values.map((axis, i) => (
           // eslint-disable-next-line react/no-array-index-key
           <DataChart key={i} data={data} series="a" axis={axis} />
@@ -145,7 +145,7 @@ describe('DataChart', () => {
       });
     }
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         {['second', 'minute', 'hour', 'day', 'month', 'year'].map((key) => (
           <Fragment key={key}>
             <DataChart
@@ -170,7 +170,7 @@ describe('DataChart', () => {
       { y: { granularity: 'fine' } },
     ];
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         {values.map((guide, i) => (
           // eslint-disable-next-line react/no-array-index-key
           <DataChart key={i} data={data} series="a" guide={guide} />
@@ -183,7 +183,7 @@ describe('DataChart', () => {
 
   test('legend', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         {[true, false].map((legend, i) => (
           // eslint-disable-next-line react/no-array-index-key
           <DataChart key={i} data={data} series="a" legend={legend} />
@@ -196,7 +196,7 @@ describe('DataChart', () => {
 
   test('detail', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         {[true, false].map((detail, i) => (
           // eslint-disable-next-line react/no-array-index-key
           <DataChart key={i} data={data} series="a" detail={detail} />
@@ -234,7 +234,7 @@ describe('DataChart', () => {
 
   test('axis x granularity', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13].map((count) => (
           <DataChart
             key={count}
@@ -252,7 +252,7 @@ describe('DataChart', () => {
   test('type', () => {
     const values: ChartProps['type'][] = ['bar', 'line', 'area'];
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         {values.map((type) => (
           <DataChart
             key={type}
@@ -269,7 +269,7 @@ describe('DataChart', () => {
 
   test('bars', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <DataChart
           data={data}
           series={['a', 'c']}
@@ -283,7 +283,7 @@ describe('DataChart', () => {
 
   test('bars colors', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <DataChart
           data={data}
           series={['a', 'c']}
@@ -305,7 +305,7 @@ describe('DataChart', () => {
 
   test('bars invalid', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <DataChart
           data={data}
           series={['a']}
@@ -319,7 +319,7 @@ describe('DataChart', () => {
 
   test('bars empty', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <DataChart
           data={data}
           series={['a']}
@@ -333,7 +333,7 @@ describe('DataChart', () => {
 
   test('areas', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <DataChart
           data={data}
           series={['a', 'c']}
@@ -355,7 +355,7 @@ describe('DataChart', () => {
 
   test('lines', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <DataChart
           data={data}
           series={['a', 'c']}
@@ -369,7 +369,7 @@ describe('DataChart', () => {
 
   test('horizontal', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <DataChart
           data={data}
           series={['a', 'c']}
@@ -386,7 +386,7 @@ describe('DataChart', () => {
 
   test('offset', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <DataChart data={data} series={['a', 'c']} offset />
       </Grommet>,
     );
@@ -410,7 +410,7 @@ describe('DataChart', () => {
 
   test('bounds align', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <DataChart data={data} series={['a', 'c']} bounds="align" />
       </Grommet>,
     );
@@ -420,7 +420,7 @@ describe('DataChart', () => {
 
   test('bounds explicit', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <DataChart data={data} series={['a', 'c']} bounds={{ y: [0, 100] }} />
       </Grommet>,
     );
@@ -430,7 +430,7 @@ describe('DataChart', () => {
 
   test('negative values', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         {[undefined, 'coarse', 'medium', 'find'].map((granularity) => (
           <DataChart
             key={granularity || 'u'}
@@ -446,7 +446,7 @@ describe('DataChart', () => {
 
   test('placeholder text', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <DataChart
           data={data.map(({ d }) => ({ d }))} // date only
           series={['d', 'a']}
@@ -461,7 +461,7 @@ describe('DataChart', () => {
 
   test('placeholder node', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <DataChart
           data={data.map(({ d }) => ({ d }))} // date only
           series={['d', 'a']}

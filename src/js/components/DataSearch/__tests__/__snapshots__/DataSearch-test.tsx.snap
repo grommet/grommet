@@ -1,23 +1,13 @@
 // Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`DataSearch drop 1`] = `
-.c1 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  flex-direction: column;
-  flex: 0 0 auto;
-}
-
 .c3 {
   display: inline-block;
   flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #666666;
-  stroke: #666666;
+  width: 18px;
+  height: 18px;
+  fill: #555555;
+  stroke: #555555;
 }
 
 .c3 g {
@@ -43,6 +33,16 @@ exports[`DataSearch drop 1`] = `
   stroke: none;
 }
 
+.c1 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  flex: 0 0 auto;
+}
+
 .c2 {
   display: inline-block;
   box-sizing: border-box;
@@ -53,18 +53,42 @@ exports[`DataSearch drop 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  color: inherit;
-  outline: none;
   border: none;
-  padding: 0;
-  text-align: inherit;
+  border-radius: 9999px;
+  padding: 8px 8px;
+  font-size: 1.125rem;
   line-height: 0;
-  padding: 12px;
+  background-color: rgba(0, 0, 0, 0);
+  color: #555555;
+  border-style: solid;
+  border-width: 1px;
+  border-color: rgba(0, 0, 0, 0);
+  border-radius: 6px;
+  font-weight: 500;
+  padding: 8px 8px;
+  text-align: center;
+  transition-property: color,background-color,border-color,box-shadow;
+  transition-duration: 0.1s;
+  transition-timing-function: ease-in-out;
+}
+
+.c2 >svg {
+  display: flex;
+  align-self: center;
+  vertical-align: middle;
+}
+
+.c2:hover {
+  background-color: rgba(0, 0, 0, 0.04);
+  color: #555555;
+  border-color: rgba(0, 0, 0, 0);
+  font-weight: 500;
 }
 
 .c2:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c2:focus >circle,
@@ -74,8 +98,9 @@ exports[`DataSearch drop 1`] = `
 .c2:focus >polygon,
 .c2:focus >polyline,
 .c2:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c2:focus ::-moz-focus-inner {
@@ -83,6 +108,8 @@ exports[`DataSearch drop 1`] = `
 }
 
 .c2:focus:not(:focus-visible) {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -94,6 +121,8 @@ exports[`DataSearch drop 1`] = `
 .c2:focus:not(:focus-visible) >polygon,
 .c2:focus:not(:focus-visible) >polyline,
 .c2:focus:not(:focus-visible) >rect {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -103,8 +132,11 @@ exports[`DataSearch drop 1`] = `
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -135,6 +167,7 @@ exports[`DataSearch drop 1`] = `
           fill="none"
           stroke="#000"
           stroke-width="2"
+          vector-effect="non-scaling-stroke"
         />
       </svg>
     </button>
@@ -145,7 +178,7 @@ exports[`DataSearch drop 1`] = `
 exports[`DataSearch drop 2`] = `
 <button
   aria-label="Open search"
-  class="StyledButton-sc-323bzc-0 bIZBkf"
+  class="StyledButtonKind-sc-1vhfpnt-0 gmTBeV"
   data-g-tabindex="none"
   id="test-data--search-control"
   tabindex="-1"
@@ -153,7 +186,7 @@ exports[`DataSearch drop 2`] = `
 >
   <svg
     aria-label="Search"
-    class="StyledIcon-sc-ofa7kd-0 esCCqY"
+    class="StyledIcon-sc-ofa7kd-0 iXbCzE"
     viewBox="0 0 24 24"
   >
     <path
@@ -161,6 +194,7 @@ exports[`DataSearch drop 2`] = `
       fill="none"
       stroke="#000"
       stroke-width="2"
+      vector-effect="non-scaling-stroke"
     />
   </svg>
 </button>
@@ -168,13 +202,19 @@ exports[`DataSearch drop 2`] = `
 
 exports[`DataSearch drop 3`] = `
 "@media only screen and (max-width: 768px) {
-  .eEJtXY {
-    margin-bottom: 6px;
+  .kizEOJ {
+    margin-bottom: 0px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .gxnZoW {
-    border-bottom: solid 1px rgba(0, 0, 0, 0.33);
+  .kKSyyE {
+    margin-top: 3px;
+    margin-bottom: 3px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .kKSyyE {
+    border: solid 1px rgba(0, 0, 0, 0.36);
   }
 }
 @media only screen and (max-width: 768px) {
@@ -185,22 +225,13 @@ exports[`DataSearch drop 3`] = `
 `;
 
 exports[`DataSearch no Data 1`] = `
-.c1 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  flex-direction: column;
-}
-
 .c4 {
   display: inline-block;
   flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #666666;
-  stroke: #666666;
+  width: 18px;
+  height: 18px;
+  fill: #555555;
+  stroke: #555555;
 }
 
 .c4 g {
@@ -226,6 +257,15 @@ exports[`DataSearch no Data 1`] = `
   stroke: none;
 }
 
+.c1 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+}
+
 .c5 {
   box-sizing: border-box;
   font-size: inherit;
@@ -235,17 +275,23 @@ exports[`DataSearch no Data 1`] = `
   background: transparent;
   color: inherit;
   width: 100%;
-  padding: 11px;
-  font-weight: 600;
+  line-height: inherit;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-weight: 400;
   margin: 0;
-  border: 1px solid rgba(0, 0, 0, 0.33);
-  border-radius: 4px;
-  padding-left: 48px;
+  border: 1px solid rgba(0, 0, 0, 0.36);
+  border-radius: 8px;
+  color: #2e2e2e;
+  padding-left: 42px;
 }
 
 .c5:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c5:focus >circle,
@@ -255,8 +301,9 @@ exports[`DataSearch no Data 1`] = `
 .c5:focus >polygon,
 .c5:focus >polyline,
 .c5:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c5:focus ::-moz-focus-inner {
@@ -264,15 +311,15 @@ exports[`DataSearch no Data 1`] = `
 }
 
 .c5::-webkit-input-placeholder {
-  color: #AAAAAA;
+  color: #676767;
 }
 
 .c5::-moz-placeholder {
-  color: #AAAAAA;
+  color: #676767;
 }
 
 .c5:-ms-input-placeholder {
-  color: #AAAAAA;
+  color: #676767;
 }
 
 .c5 ::-webkit-search-decoration {
@@ -289,9 +336,26 @@ exports[`DataSearch no Data 1`] = `
   opacity: 1;
 }
 
+.c5::-webkit-input-placeholder {
+  font-weight: 400;
+}
+
+.c5::-moz-placeholder {
+  font-weight: 400;
+}
+
+.c5:-ms-input-placeholder {
+  font-weight: 400;
+}
+
 .c2 {
   position: relative;
   width: 100%;
+}
+
+.c2 svg {
+  fill: #2e2e2e;
+  stroke: #2e2e2e;
 }
 
 .c3 {
@@ -301,12 +365,15 @@ exports[`DataSearch no Data 1`] = `
   top: 50%;
   transform: translateY(-50%);
   pointer-events: none;
-  left: 12px;
+  left: 13px;
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -353,6 +420,38 @@ exports[`DataSearch no Data 1`] = `
 `;
 
 exports[`DataSearch renders 1`] = `
+.c11 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 18px;
+  height: 18px;
+  fill: #555555;
+  stroke: #555555;
+}
+
+.c11 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c11 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c11 *[stroke*='#'],
+.c11 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c11 *[fill-rule],
+.c11 *[FILL-RULE],
+.c11 *[fill*='#'],
+.c11 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
+}
+
 .c1 {
   display: flex;
   box-sizing: border-box;
@@ -388,23 +487,26 @@ exports[`DataSearch renders 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  margin-bottom: 12px;
+  margin-bottom: 0px;
   min-width: 0;
   min-height: 0;
   flex-direction: column;
 }
 
-.c7 {
+.c8 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
+  margin-top: 6px;
+  margin-bottom: 6px;
+  border: solid 1px rgba(0, 0, 0, 0.36);
   min-width: 0;
   min-height: 0;
   flex-direction: column;
+  border-radius: 8px;
 }
 
-.c12 {
+.c13 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -417,48 +519,20 @@ exports[`DataSearch renders 1`] = `
   justify-content: space-between;
 }
 
-.c10 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #666666;
-  stroke: #666666;
-}
-
-.c10 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c10 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c10 *[stroke*='#'],
-.c10 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c10 *[fill-rule],
-.c10 *[FILL-RULE],
-.c10 *[fill*='#'],
-.c10 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
-}
-
-.c6 {
-  margin-left: 12px;
-  margin-right: 12px;
+.c7 {
+  margin-left: 0px;
+  margin-right: 0px;
   margin-top: 6px;
   margin-bottom: 6px;
-  font-size: 18px;
-  line-height: 24px;
+  margin-top: 6px;
+  margin-bottom: 0px;
+  font-size: 0.875rem;
+  line-height: 1rem;
+  color: #2e2e2e;
+  font-weight: 500;
 }
 
-.c13 {
+.c14 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -468,61 +542,75 @@ exports[`DataSearch renders 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  border: 2px solid #7D4CDB;
-  border-radius: 18px;
-  color: #444444;
-  padding: 4px 22px;
-  font-size: 18px;
-  line-height: 24px;
-  background-color: #7D4CDB;
-  color: #f8f8f8;
-  border-radius: 18px;
+  border: none;
+  border-radius: 9999px;
+  padding: 5px 18px;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #008567;
+  color: #ffffff;
+  border-style: solid;
+  border-width: 1px;
+  border-color: rgba(0, 0, 0, 0);
+  border-radius: 9999px;
+  font-weight: 600;
+  padding: 5px 18px;
+  text-align: center;
   transition-property: color,background-color,border-color,box-shadow;
   transition-duration: 0.1s;
   transition-timing-function: ease-in-out;
 }
 
-.c13:hover {
-  box-shadow: 0px 0px 0px 2px #7D4CDB;
+.c14:hover {
+  background-color: rgba(0, 103, 80, 1);
+  color: #ffffff;
+  border-color: rgba(0, 0, 0, 0);
+  font-weight: 600;
 }
 
-.c13:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+.c14:focus {
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
-.c13:focus >circle,
-.c13:focus >ellipse,
-.c13:focus >line,
-.c13:focus >path,
-.c13:focus >polygon,
-.c13:focus >polyline,
-.c13:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+.c14:focus >circle,
+.c14:focus >ellipse,
+.c14:focus >line,
+.c14:focus >path,
+.c14:focus >polygon,
+.c14:focus >polyline,
+.c14:focus >rect {
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
-.c13:focus ::-moz-focus-inner {
+.c14:focus ::-moz-focus-inner {
   border: 0;
 }
 
-.c13:focus:not(:focus-visible) {
+.c14:focus:not(:focus-visible) {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
 
-.c13:focus:not(:focus-visible) >circle,
-.c13:focus:not(:focus-visible) >ellipse,
-.c13:focus:not(:focus-visible) >line,
-.c13:focus:not(:focus-visible) >path,
-.c13:focus:not(:focus-visible) >polygon,
-.c13:focus:not(:focus-visible) >polyline,
-.c13:focus:not(:focus-visible) >rect {
+.c14:focus:not(:focus-visible) >circle,
+.c14:focus:not(:focus-visible) >ellipse,
+.c14:focus:not(:focus-visible) >line,
+.c14:focus:not(:focus-visible) >path,
+.c14:focus:not(:focus-visible) >polygon,
+.c14:focus:not(:focus-visible) >polyline,
+.c14:focus:not(:focus-visible) >rect {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
 
-.c13:focus:not(:focus-visible) ::-moz-focus-inner {
+.c14:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 
@@ -530,7 +618,7 @@ exports[`DataSearch renders 1`] = `
   max-width: 100%;
 }
 
-.c11 {
+.c12 {
   box-sizing: border-box;
   font-size: inherit;
   font-family: inherit;
@@ -539,60 +627,114 @@ exports[`DataSearch renders 1`] = `
   background: transparent;
   color: inherit;
   width: 100%;
-  padding: 11px;
-  font-weight: 600;
+  line-height: inherit;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-weight: 400;
   margin: 0;
-  border: 1px solid rgba(0, 0, 0, 0.33);
-  border-radius: 4px;
+  border: 1px solid rgba(0, 0, 0, 0.36);
+  border-radius: 8px;
+  color: #2e2e2e;
   outline: none;
   border: none;
-  padding-left: 48px;
+  padding-left: 42px;
 }
 
-.c11::-webkit-input-placeholder {
-  color: #AAAAAA;
+.c12::-webkit-input-placeholder {
+  color: #676767;
 }
 
-.c11::-moz-placeholder {
-  color: #AAAAAA;
+.c12::-moz-placeholder {
+  color: #676767;
 }
 
-.c11:-ms-input-placeholder {
-  color: #AAAAAA;
+.c12:-ms-input-placeholder {
+  color: #676767;
 }
 
-.c11 ::-webkit-search-decoration {
+.c12 ::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
-.c11::-moz-focus-inner {
+.c12::-moz-focus-inner {
   border: none;
   outline: none;
 }
 
-.c11:-moz-placeholder,
-.c11::-moz-placeholder {
+.c12:-moz-placeholder,
+.c12::-moz-placeholder {
   opacity: 1;
 }
 
-.c8 {
+.c12::-webkit-input-placeholder {
+  font-weight: 400;
+}
+
+.c12::-moz-placeholder {
+  font-weight: 400;
+}
+
+.c12:-ms-input-placeholder {
+  font-weight: 400;
+}
+
+.c9 {
   position: relative;
   width: 100%;
 }
 
-.c9 {
+.c9 svg {
+  fill: #2e2e2e;
+  stroke: #2e2e2e;
+}
+
+.c10 {
   position: absolute;
   display: flex;
   justify: center;
   top: 50%;
   transform: translateY(-50%);
   pointer-events: none;
-  left: 12px;
+  left: 13px;
+}
+
+.c6 [class*="ContentBox"] label {
+  padding-block: 5px;
+  padding-inline: 8px;
+}
+
+.c6 [class*="ContentBox"] label:hover:not([disabled]) {
+  background: rgba(0, 0, 0, 0);
+}
+
+.c6 [class*="ContentBox"] [role="group"],
+.c6 [class*="ContentBox"] [role="radiogroup"] {
+  gap: 0;
+  padding-block: 0px;
+  padding-inline: none;
+}
+
+.c6 [class*="ContentBox"] [role="group"] label,
+.c6 [class*="ContentBox"] [role="radiogroup"] label {
+  border: 1px solid rgba(0, 0, 0, 0);
+  padding-block: 5px;
+  padding-inline: 8px;
+  border-radius: 6px;
+}
+
+.c6 [class*="ContentBox"] [role="group"] label:hover:not([disabled]),
+.c6 [class*="ContentBox"] [role="radiogroup"] label:hover:not([disabled]) {
+  background: rgba(0, 0, 0, 0.04);
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -602,18 +744,25 @@ exports[`DataSearch renders 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c5 {
-    margin-bottom: 6px;
+    margin-bottom: 0px;
   }
 }
 
 @media only screen and (max-width: 768px) {
-  .c7 {
-    border-bottom: solid 1px rgba(0, 0, 0, 0.33);
+  .c8 {
+    margin-top: 3px;
+    margin-bottom: 3px;
   }
 }
 
 @media only screen and (max-width: 768px) {
-  .c12 {
+  .c8 {
+    border: solid 1px rgba(0, 0, 0, 0.36);
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c13 {
     margin-top: 12px;
   }
 }
@@ -638,27 +787,27 @@ exports[`DataSearch renders 1`] = `
             class="c1"
           >
             <div
-              class="c5 "
+              class="c5 c6"
             >
               <label
-                class="c6"
+                class="c7"
                 for="data--search"
                 id="grommet-data--search__label"
               >
                 Search
               </label>
               <div
-                class="c7 "
+                class="c8 "
               >
                 <div
-                  class="c8"
+                  class="c9"
                 >
                   <div
-                    class="c9"
+                    class="c10"
                   >
                     <svg
                       aria-label="Search"
-                      class="c10"
+                      class="c11"
                       viewBox="0 0 24 24"
                     >
                       <path
@@ -672,7 +821,7 @@ exports[`DataSearch renders 1`] = `
                   <input
                     aria-label="Search"
                     autocomplete="off"
-                    class="c11"
+                    class="c12"
                     id="data--search"
                     name="_search"
                     type="search"
@@ -684,10 +833,10 @@ exports[`DataSearch renders 1`] = `
           </div>
         </div>
         <footer
-          class="c12"
+          class="c13"
         >
           <button
-            class="c13"
+            class="c14"
             type="submit"
           >
             Apply filters

@@ -5,6 +5,7 @@ import 'regenerator-runtime/runtime';
 import 'jest-styled-components';
 import '@testing-library/jest-dom';
 import userEvent from '@testing-library/user-event';
+import { hpe } from 'grommet-theme-hpe';
 
 import { render, fireEvent, screen } from '@testing-library/react';
 
@@ -23,7 +24,7 @@ describe('Pagination', () => {
   test(`should display the correct last page based on items length
   and step`, () => {
     const { container, getByText } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Pagination numberItems={NUM_ITEMS} />
       </Grommet>,
     );
@@ -38,7 +39,7 @@ describe('Pagination', () => {
 
   test('should render correct numberEdgePages', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Pagination numberItems={NUM_ITEMS} numberEdgePages={3} page={10} />
       </Grommet>,
     );
@@ -56,7 +57,7 @@ describe('Pagination', () => {
 
   test('should render correct numberMiddlePages when odd', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Pagination numberItems={NUM_ITEMS} numberMiddlePages={5} page={10} />
       </Grommet>,
     );
@@ -66,7 +67,7 @@ describe('Pagination', () => {
 
   test('should render correct numberMiddlePages when even', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Pagination numberItems={NUM_ITEMS} numberMiddlePages={4} page={10} />
       </Grommet>,
     );
@@ -79,7 +80,7 @@ describe('Pagination', () => {
   test(`should disable previous and next controls when numberItems
   < step`, () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Pagination numberItems={10} step={20} />
       </Grommet>,
     );
@@ -103,7 +104,7 @@ describe('Pagination', () => {
   test(`should disable previous and next controls when numberItems
   === step`, () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Pagination numberItems={20} step={20} />
       </Grommet>,
     );
@@ -127,7 +128,7 @@ describe('Pagination', () => {
   test(`should disable previous and next controls when numberItems
   === 0`, () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Pagination numberItems={0} />
       </Grommet>,
     );
@@ -153,7 +154,7 @@ describe('Pagination', () => {
     const numberItems = 500;
     const step = 50;
     const { container, getByText } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Pagination numberItems={numberItems} step={step} page={700} />
       </Grommet>,
     );
@@ -173,7 +174,7 @@ describe('Pagination', () => {
   onChange`, () => {
     const onChange = jest.fn();
     const { container, getByLabelText } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Pagination numberItems={NUM_ITEMS} page={1} onChange={onChange} />
       </Grommet>,
     );
@@ -193,7 +194,7 @@ describe('Pagination', () => {
   selected`, () => {
     const onChange = jest.fn();
     const { container, getByLabelText } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Pagination numberItems={NUM_ITEMS} onChange={onChange} />
       </Grommet>,
     );
@@ -219,7 +220,7 @@ describe('Pagination', () => {
   selected`, () => {
     const onChange = jest.fn();
     const { container, getByLabelText } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Pagination numberItems={NUM_ITEMS} page={3} onChange={onChange} />
       </Grommet>,
     );
@@ -244,7 +245,7 @@ describe('Pagination', () => {
   test(`should display page 'n' of results when "page n" is
   selected`, () => {
     const { container, getByText } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Pagination numberItems={NUM_ITEMS} />
       </Grommet>,
     );
@@ -261,7 +262,7 @@ describe('Pagination', () => {
 
   test(`should disable previous button if on first page`, () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Pagination numberItems={NUM_ITEMS} />
       </Grommet>,
     );
@@ -279,7 +280,7 @@ describe('Pagination', () => {
   test(`should disable next button if on last page`, () => {
     const lastPage = Math.ceil(NUM_ITEMS / STEP);
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Pagination numberItems={NUM_ITEMS} page={lastPage} />
       </Grommet>,
     );
@@ -297,7 +298,7 @@ describe('Pagination', () => {
   test(`should set numberMiddlePages = 1 if user provides value < 1`, () => {
     console.warn = jest.fn();
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Pagination numberItems={NUM_ITEMS} numberMiddlePages={0} />
       </Grommet>,
     );
@@ -363,7 +364,7 @@ describe('Pagination', () => {
 
   test(`should apply size`, () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Pagination numberItems={NUM_ITEMS} />
         <Pagination numberItems={NUM_ITEMS} size="small" />
         <Pagination numberItems={NUM_ITEMS} size="large" />
@@ -375,7 +376,7 @@ describe('Pagination', () => {
 
   test(`should change the page on prop change`, () => {
     const { container, rerender } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Pagination numberItems={NUM_ITEMS} page={1} />
       </Grommet>,
     );
@@ -386,7 +387,7 @@ describe('Pagination', () => {
     ).toBe('1');
 
     rerender(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Pagination numberItems={NUM_ITEMS} page={2} />
       </Grommet>,
     );
@@ -400,7 +401,7 @@ describe('Pagination', () => {
 
   test(`should apply a11yTitle and aria-label`, () => {
     const { container, getByLabelText } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Pagination a11yTitle="pagination-test" numberItems={NUM_ITEMS} />
         <Pagination aria-label="pagination-test-2" numberItems={NUM_ITEMS} />
       </Grommet>,
@@ -415,7 +416,7 @@ describe('Pagination', () => {
     window.scrollTo = jest.fn();
     const user = userEvent.setup();
     const { asFragment } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Pagination
           border={{ color: 'skyblue', side: 'top' }}
           numberItems={NUM_ITEMS}
@@ -439,7 +440,7 @@ describe('Pagination', () => {
     window.scrollTo = jest.fn();
     const user = userEvent.setup();
     render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Pagination
           numberItems={NUM_ITEMS}
           stepOptions={[10, 20, 30, 40, 50]}
@@ -463,7 +464,7 @@ describe('Pagination', () => {
     const App = () => {
       const [step, setStep] = useState(10);
       return (
-        <Grommet>
+        <Grommet theme={hpe}>
           <Select
             a11yTitle="Controlled select"
             options={[10, 25, 50, 100]}
@@ -499,7 +500,7 @@ describe('Pagination', () => {
 
   test('should apply a text component with summary', () => {
     const { asFragment } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Pagination numberItems={NUM_ITEMS} summary />
       </Grommet>,
     );
@@ -508,7 +509,7 @@ describe('Pagination', () => {
 
   test('should update summary when page changes', () => {
     render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Pagination numberItems={NUM_ITEMS} summary />
       </Grommet>,
     );
@@ -518,7 +519,7 @@ describe('Pagination', () => {
 
   test('should have no items', () => {
     const { asFragment } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Pagination numberItems={0} summary />
       </Grommet>,
     );
@@ -530,7 +531,7 @@ describe('Pagination', () => {
     const [itemPerPage, setItemPerPage] = useState(20); // Initialize itemPerPage state
 
     return (
-      <Grommet>
+      <Grommet theme={hpe}>
         <Select
           options={[10, 20, 50, 100]}
           value={itemPerPage} // Set value of Select to itemPerPage

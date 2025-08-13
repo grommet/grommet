@@ -3,6 +3,7 @@ import 'jest-styled-components';
 import 'jest-axe/extend-expect';
 import 'regenerator-runtime/runtime';
 import '@testing-library/jest-dom';
+import { hpe } from 'grommet-theme-hpe';
 
 import { axe } from 'jest-axe';
 import {
@@ -174,7 +175,7 @@ const TestTrapFocus = () => {
     );
   }
   return (
-    <Grommet>
+    <Grommet theme={hpe}>
       <input ref={inputRef} aria-label="test" />
       {drop}
     </Grommet>

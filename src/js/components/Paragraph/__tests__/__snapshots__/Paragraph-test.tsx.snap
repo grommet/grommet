@@ -1,9 +1,12 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`Paragraph dangerouslySetInnerHTML renders 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -12,9 +15,10 @@ exports[`Paragraph dangerouslySetInnerHTML renders 1`] = `
 }
 
 .c1 {
-  font-size: 18px;
-  line-height: 24px;
-  max-width: 432px;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  max-width: 30em;
+  font-weight: undefined;
 }
 
 <div
@@ -107,8 +111,11 @@ exports[`Paragraph margin renders 1`] = `
 
 exports[`Paragraph maxLines renders 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -121,9 +128,10 @@ exports[`Paragraph maxLines renders 1`] = `
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
-  font-size: 18px;
-  line-height: 24px;
-  max-width: 432px;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  max-width: 30em;
+  font-weight: undefined;
 }
 
 <div
@@ -137,8 +145,11 @@ exports[`Paragraph maxLines renders 1`] = `
 
 exports[`Paragraph renders 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -147,9 +158,10 @@ exports[`Paragraph renders 1`] = `
 }
 
 .c1 {
-  font-size: 18px;
-  line-height: 24px;
-  max-width: 432px;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  max-width: 30em;
+  font-weight: undefined;
 }
 
 <div
@@ -163,8 +175,11 @@ exports[`Paragraph renders 1`] = `
 
 exports[`Paragraph size renders 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -173,44 +188,58 @@ exports[`Paragraph size renders 1`] = `
 }
 
 .c1 {
-  font-size: 14px;
-  line-height: 20px;
-  max-width: 336px;
+  font-size: 1rem;
+  line-height: 1.25rem;
+  max-width: 30em;
+  font-weight: 400;
 }
 
 .c2 {
-  font-size: 18px;
-  line-height: 24px;
-  max-width: 432px;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  max-width: 30em;
+  font-weight: 400;
 }
 
 .c3 {
-  font-size: 22px;
-  line-height: 28px;
-  max-width: 528px;
+  font-size: 1.375rem;
+  line-height: 1.75rem;
+  max-width: 30em;
+  font-weight: 400;
 }
 
 .c4 {
-  font-size: 26px;
-  line-height: 32px;
-  max-width: 624px;
+  font-size: 1.5rem;
+  line-height: 1.875rem;
+  max-width: 30em;
+  font-weight: 400;
 }
 
 .c5 {
-  font-size: 34px;
-  line-height: 40px;
-  max-width: 816px;
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+  max-width: 30em;
+  font-weight: 400;
 }
 
 .c6 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
   max-width: none;
+  font-weight: undefined;
 }
 
 .c7 {
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  max-width: 30em;
+  font-weight: undefined;
+}
+
+.c8 {
   font-size: 10px;
   line-height: normal;
+  font-weight: undefined;
 }
 
 <div
@@ -235,10 +264,10 @@ exports[`Paragraph size renders 1`] = `
     class="c6"
   />
   <p
-    class="c2"
+    class="c7"
   />
   <p
-    class="c7"
+    class="c8"
   />
 </div>
 `;
@@ -257,8 +286,11 @@ exports[`Paragraph size renders outside grommet wrapper 1`] = `
 
 exports[`Paragraph textAlign renders 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -267,31 +299,35 @@ exports[`Paragraph textAlign renders 1`] = `
 }
 
 .c1 {
-  font-size: 18px;
-  line-height: 24px;
-  max-width: 432px;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  max-width: 30em;
   text-align: left;
+  font-weight: undefined;
 }
 
 .c2 {
-  font-size: 18px;
-  line-height: 24px;
-  max-width: 432px;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  max-width: 30em;
   text-align: center;
+  font-weight: undefined;
 }
 
 .c3 {
-  font-size: 18px;
-  line-height: 24px;
-  max-width: 432px;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  max-width: 30em;
   text-align: right;
+  font-weight: undefined;
 }
 
 .c4 {
-  font-size: 18px;
-  line-height: 24px;
-  max-width: 432px;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  max-width: 30em;
   text-align: justify;
+  font-weight: undefined;
 }
 
 <div

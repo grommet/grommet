@@ -1,9 +1,12 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`Heading accepts ref 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -12,17 +15,18 @@ exports[`Heading accepts ref 1`] = `
 }
 
 .c1 {
-  font-size: 50px;
-  line-height: 56px;
+  font-size: 2.25rem;
+  line-height: 2.5rem;
   max-width: 1200px;
-  font-weight: 600;
+  font-weight: 400;
   overflow-wrap: break-word;
+  color: #2e2e2e;
 }
 
 @media only screen and (max-width: 768px) {
   .c1 {
-    font-size: 34px;
-    line-height: 40px;
+    font-size: 1.75rem;
+    line-height: 2rem;
     max-width: 816px;
   }
 }
@@ -38,8 +42,11 @@ exports[`Heading accepts ref 1`] = `
 
 exports[`Heading color renders 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -48,18 +55,18 @@ exports[`Heading color renders 1`] = `
 }
 
 .c1 {
-  font-size: 50px;
-  line-height: 56px;
+  font-size: 2.25rem;
+  line-height: 2.5rem;
   max-width: 1200px;
-  font-weight: 600;
+  font-weight: 400;
   overflow-wrap: break-word;
-  color: #7D4CDB;
+  color: #01a982;
 }
 
 @media only screen and (max-width: 768px) {
   .c1 {
-    font-size: 34px;
-    line-height: 40px;
+    font-size: 1.75rem;
+    line-height: 2rem;
     max-width: 816px;
   }
 }
@@ -75,8 +82,11 @@ exports[`Heading color renders 1`] = `
 
 exports[`Heading fill renders 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -85,17 +95,18 @@ exports[`Heading fill renders 1`] = `
 }
 
 .c1 {
-  font-size: 50px;
-  line-height: 56px;
+  font-size: 2.25rem;
+  line-height: 2.5rem;
   max-width: none;
-  font-weight: 600;
+  font-weight: 400;
   overflow-wrap: break-word;
+  color: #2e2e2e;
 }
 
 @media only screen and (max-width: 768px) {
   .c1 {
-    font-size: 34px;
-    line-height: 40px;
+    font-size: 1.75rem;
+    line-height: 2rem;
     max-width: none;
   }
 }
@@ -111,8 +122,11 @@ exports[`Heading fill renders 1`] = `
 
 exports[`Heading level renders 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -121,65 +135,69 @@ exports[`Heading level renders 1`] = `
 }
 
 .c1 {
-  font-size: 50px;
-  line-height: 56px;
+  font-size: 2.25rem;
+  line-height: 2.5rem;
   max-width: 1200px;
-  font-weight: 600;
+  font-weight: 400;
   overflow-wrap: break-word;
+  color: #2e2e2e;
 }
 
 .c2 {
-  font-size: 34px;
-  line-height: 40px;
+  font-size: 1.75rem;
+  line-height: 2rem;
   max-width: 816px;
-  font-weight: 600;
+  font-weight: 400;
   overflow-wrap: break-word;
+  color: #2e2e2e;
 }
 
 .c3 {
-  font-size: 26px;
-  line-height: 32px;
+  font-size: 1.5rem;
+  line-height: 1.75rem;
   max-width: 624px;
-  font-weight: 600;
+  font-weight: 400;
   overflow-wrap: break-word;
+  color: #2e2e2e;
 }
 
 .c4 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 1.25rem;
+  line-height: 1.5rem;
   max-width: 432px;
-  font-weight: 600;
+  font-weight: 400;
   overflow-wrap: break-word;
+  color: #2e2e2e;
 }
 
 @media only screen and (max-width: 768px) {
   .c1 {
-    font-size: 34px;
-    line-height: 40px;
+    font-size: 1.75rem;
+    line-height: 2rem;
     max-width: 816px;
   }
 }
 
 @media only screen and (max-width: 768px) {
   .c2 {
-    font-size: 26px;
-    line-height: 32px;
+    font-size: 1.5rem;
+    line-height: 1.75rem;
     max-width: 624px;
   }
 }
 
 @media only screen and (max-width: 768px) {
   .c3 {
-    font-size: 18px;
-    line-height: 24px;
+    font-size: 1.25rem;
+    line-height: 1.5rem;
     max-width: 432px;
   }
 }
 
 @media only screen and (max-width: 768px) {
   .c4 {
-    font-size: 16px;
-    line-height: 22px;
+    font-size: 1.125rem;
+    line-height: 1.25rem;
     max-width: 384px;
   }
 }
@@ -216,8 +234,11 @@ exports[`Heading level renders 1`] = `
 
 exports[`Heading margin renders 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -227,74 +248,82 @@ exports[`Heading margin renders 1`] = `
 
 .c1 {
   margin: 12px;
-  font-size: 50px;
-  line-height: 56px;
+  font-size: 2.25rem;
+  line-height: 2.5rem;
   max-width: 1200px;
-  font-weight: 600;
+  font-weight: 400;
   overflow-wrap: break-word;
+  color: #2e2e2e;
 }
 
 .c2 {
   margin: 24px;
-  font-size: 50px;
-  line-height: 56px;
+  font-size: 2.25rem;
+  line-height: 2.5rem;
   max-width: 1200px;
-  font-weight: 600;
+  font-weight: 400;
   overflow-wrap: break-word;
+  color: #2e2e2e;
 }
 
 .c3 {
   margin: 48px;
-  font-size: 50px;
-  line-height: 56px;
+  font-size: 2.25rem;
+  line-height: 2.5rem;
   max-width: 1200px;
-  font-weight: 600;
+  font-weight: 400;
   overflow-wrap: break-word;
+  color: #2e2e2e;
 }
 
 .c4 {
   margin: 0px;
-  font-size: 50px;
-  line-height: 56px;
+  font-size: 2.25rem;
+  line-height: 2.5rem;
   max-width: 1200px;
-  font-weight: 600;
+  font-weight: 400;
   overflow-wrap: break-word;
+  color: #2e2e2e;
 }
 
 .c5 {
   margin-bottom: 12px;
-  font-size: 50px;
-  line-height: 56px;
+  font-size: 2.25rem;
+  line-height: 2.5rem;
   max-width: 1200px;
-  font-weight: 600;
+  font-weight: 400;
   overflow-wrap: break-word;
+  color: #2e2e2e;
 }
 
 .c6 {
   margin-top: 12px;
-  font-size: 50px;
-  line-height: 56px;
+  font-size: 2.25rem;
+  line-height: 2.5rem;
   max-width: 1200px;
-  font-weight: 600;
+  font-weight: 400;
   overflow-wrap: break-word;
+  color: #2e2e2e;
 }
 
 .c7 {
   margin-bottom: 0px;
-  font-size: 50px;
-  line-height: 56px;
+  font-size: 2.25rem;
+  line-height: 2.5rem;
   max-width: 1200px;
-  font-weight: 600;
+  font-weight: 400;
   overflow-wrap: break-word;
+  color: #2e2e2e;
 }
 
 .c8 {
   margin-top: 0px;
-  font-size: 50px;
-  line-height: 56px;
+  font-size: 2.25rem;
+  line-height: 2.5rem;
   max-width: 1200px;
-  font-weight: 600;
+  font-weight: 400;
   overflow-wrap: break-word;
+  color: #2e2e2e;
 }
 
 @media only screen and (max-width: 768px) {
@@ -305,8 +334,8 @@ exports[`Heading margin renders 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c1 {
-    font-size: 34px;
-    line-height: 40px;
+    font-size: 1.75rem;
+    line-height: 2rem;
     max-width: 816px;
   }
 }
@@ -319,8 +348,8 @@ exports[`Heading margin renders 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c2 {
-    font-size: 34px;
-    line-height: 40px;
+    font-size: 1.75rem;
+    line-height: 2rem;
     max-width: 816px;
   }
 }
@@ -333,8 +362,8 @@ exports[`Heading margin renders 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c3 {
-    font-size: 34px;
-    line-height: 40px;
+    font-size: 1.75rem;
+    line-height: 2rem;
     max-width: 816px;
   }
 }
@@ -347,8 +376,8 @@ exports[`Heading margin renders 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c4 {
-    font-size: 34px;
-    line-height: 40px;
+    font-size: 1.75rem;
+    line-height: 2rem;
     max-width: 816px;
   }
 }
@@ -361,8 +390,8 @@ exports[`Heading margin renders 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c5 {
-    font-size: 34px;
-    line-height: 40px;
+    font-size: 1.75rem;
+    line-height: 2rem;
     max-width: 816px;
   }
 }
@@ -375,8 +404,8 @@ exports[`Heading margin renders 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c6 {
-    font-size: 34px;
-    line-height: 40px;
+    font-size: 1.75rem;
+    line-height: 2rem;
     max-width: 816px;
   }
 }
@@ -389,8 +418,8 @@ exports[`Heading margin renders 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c7 {
-    font-size: 34px;
-    line-height: 40px;
+    font-size: 1.75rem;
+    line-height: 2rem;
     max-width: 816px;
   }
 }
@@ -403,8 +432,8 @@ exports[`Heading margin renders 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c8 {
-    font-size: 34px;
-    line-height: 40px;
+    font-size: 1.75rem;
+    line-height: 2rem;
     max-width: 816px;
   }
 }
@@ -441,8 +470,11 @@ exports[`Heading margin renders 1`] = `
 
 exports[`Heading renders 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -451,17 +483,18 @@ exports[`Heading renders 1`] = `
 }
 
 .c1 {
-  font-size: 50px;
-  line-height: 56px;
+  font-size: 2.25rem;
+  line-height: 2.5rem;
   max-width: 1200px;
-  font-weight: 600;
+  font-weight: 400;
   overflow-wrap: break-word;
+  color: #2e2e2e;
 }
 
 @media only screen and (max-width: 768px) {
   .c1 {
-    font-size: 34px;
-    line-height: 40px;
+    font-size: 1.75rem;
+    line-height: 2rem;
     max-width: 816px;
   }
 }
@@ -499,8 +532,11 @@ exports[`Heading renders outside grommet wrapper 1`] = `
 
 exports[`Heading size renders 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -509,185 +545,248 @@ exports[`Heading size renders 1`] = `
 }
 
 .c1 {
-  font-size: 34px;
-  line-height: 40px;
+  font-size: 1.75rem;
+  line-height: 2rem;
   max-width: 816px;
-  font-weight: 600;
+  font-weight: 400;
   overflow-wrap: break-word;
+  color: #2e2e2e;
 }
 
 .c2 {
-  font-size: 50px;
-  line-height: 56px;
+  font-size: 2.25rem;
+  line-height: 2.5rem;
   max-width: 1200px;
-  font-weight: 600;
+  font-weight: 400;
   overflow-wrap: break-word;
+  color: #2e2e2e;
 }
 
 .c3 {
-  font-size: 82px;
-  line-height: 88px;
+  font-size: 3rem;
+  line-height: 3rem;
   max-width: 1968px;
-  font-weight: 600;
+  font-weight: 400;
   overflow-wrap: break-word;
+  color: #2e2e2e;
 }
 
 .c4 {
-  font-size: 114px;
-  line-height: 120px;
+  font-size: 3.75rem;
+  line-height: 3.75rem;
   max-width: 2736px;
-  font-weight: 600;
+  font-weight: 400;
   overflow-wrap: break-word;
+  color: #2e2e2e;
 }
 
 .c5 {
-  font-size: 26px;
-  line-height: 32px;
+  font-size: 1.5rem;
+  line-height: 1.75rem;
   max-width: 624px;
-  font-weight: 600;
+  font-weight: 400;
   overflow-wrap: break-word;
+  color: #2e2e2e;
 }
 
 .c6 {
-  font-size: 66px;
-  line-height: 72px;
+  font-size: 3rem;
+  line-height: 3rem;
   max-width: 1584px;
-  font-weight: 600;
+  font-weight: 400;
   overflow-wrap: break-word;
+  color: #2e2e2e;
 }
 
 .c7 {
-  font-size: 22px;
-  line-height: 28px;
+  font-size: 1.25rem;
+  line-height: 1.5rem;
   max-width: 528px;
-  font-weight: 600;
+  font-weight: 400;
   overflow-wrap: break-word;
+  color: #2e2e2e;
 }
 
 .c8 {
-  font-size: 26px;
-  line-height: 32px;
+  font-size: 1.5rem;
+  line-height: 1.75rem;
   max-width: 624px;
-  font-weight: 600;
+  font-weight: 400;
   overflow-wrap: break-word;
+  color: #2e2e2e;
 }
 
 .c9 {
-  font-size: 34px;
-  line-height: 40px;
+  font-size: 1.75rem;
+  line-height: 2rem;
   max-width: 816px;
-  font-weight: 600;
+  font-weight: 400;
   overflow-wrap: break-word;
+  color: #2e2e2e;
 }
 
 .c10 {
-  font-size: 42px;
-  line-height: 48px;
+  font-size: 2.25rem;
+  line-height: 2.5rem;
   max-width: 1008px;
-  font-weight: 600;
+  font-weight: 400;
   overflow-wrap: break-word;
+  color: #2e2e2e;
 }
 
 .c11 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 1.125rem;
+  line-height: 1.25rem;
   max-width: 432px;
-  font-weight: 600;
+  font-weight: 400;
   overflow-wrap: break-word;
+  color: #2e2e2e;
 }
 
 .c12 {
+  font-size: 1.25rem;
+  line-height: 1.5rem;
+  max-width: 432px;
+  font-weight: 400;
+  overflow-wrap: break-word;
+  color: #2e2e2e;
+}
+
+.c13 {
+  font-size: 1.5rem;
+  line-height: 1.75rem;
+  max-width: 432px;
+  font-weight: 400;
+  overflow-wrap: break-word;
+  color: #2e2e2e;
+}
+
+.c14 {
+  font-size: 1.75rem;
+  line-height: 2rem;
+  max-width: 432px;
+  font-weight: 400;
+  overflow-wrap: break-word;
+  color: #2e2e2e;
+}
+
+.c15 {
   font-size: 77px;
   line-height: normal;
   max-width: 1200px;
-  font-weight: 600;
+  font-weight: 400;
   overflow-wrap: break-word;
+  color: #2e2e2e;
 }
 
 @media only screen and (max-width: 768px) {
   .c1 {
-    font-size: 26px;
-    line-height: 32px;
+    font-size: 1.5rem;
+    line-height: 1.75rem;
     max-width: 624px;
   }
 }
 
 @media only screen and (max-width: 768px) {
   .c2 {
-    font-size: 34px;
-    line-height: 40px;
+    font-size: 1.75rem;
+    line-height: 2rem;
     max-width: 816px;
   }
 }
 
 @media only screen and (max-width: 768px) {
   .c3 {
-    font-size: 50px;
-    line-height: 56px;
+    font-size: 2.25rem;
+    line-height: 2.5rem;
     max-width: 1200px;
   }
 }
 
 @media only screen and (max-width: 768px) {
   .c4 {
-    font-size: 66px;
-    line-height: 72px;
+    font-size: 3rem;
+    line-height: 3rem;
     max-width: 1584px;
   }
 }
 
 @media only screen and (max-width: 768px) {
   .c5 {
-    font-size: 22px;
-    line-height: 28px;
+    font-size: 1.25rem;
+    line-height: 1.5rem;
     max-width: 528px;
   }
 }
 
 @media only screen and (max-width: 768px) {
   .c6 {
-    font-size: 42px;
-    line-height: 48px;
+    font-size: 2.25rem;
+    line-height: 2.5rem;
     max-width: 1008px;
   }
 }
 
 @media only screen and (max-width: 768px) {
   .c7 {
-    font-size: 18px;
-    line-height: 24px;
+    font-size: 1.125rem;
+    line-height: 1.25rem;
     max-width: 432px;
   }
 }
 
 @media only screen and (max-width: 768px) {
   .c8 {
-    font-size: 18px;
-    line-height: 24px;
+    font-size: 1.25rem;
+    line-height: 1.5rem;
     max-width: 432px;
   }
 }
 
 @media only screen and (max-width: 768px) {
   .c9 {
-    font-size: 18px;
-    line-height: 24px;
+    font-size: 1.5rem;
+    line-height: 1.75rem;
     max-width: 432px;
   }
 }
 
 @media only screen and (max-width: 768px) {
   .c10 {
-    font-size: 18px;
-    line-height: 24px;
+    font-size: 1.75rem;
+    line-height: 2rem;
     max-width: 432px;
   }
 }
 
 @media only screen and (max-width: 768px) {
   .c11 {
-    font-size: 16px;
-    line-height: 22px;
+    font-size: 1rem;
+    line-height: 1.125rem;
+    max-width: 384px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c12 {
+    font-size: 1.125rem;
+    line-height: 1.25rem;
+    max-width: 384px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c13 {
+    font-size: 1.25rem;
+    line-height: 1.5rem;
+    max-width: 384px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c14 {
+    font-size: 1.5rem;
+    line-height: 1.75rem;
     max-width: 384px;
   }
 }
@@ -735,24 +834,27 @@ exports[`Heading size renders 1`] = `
     class="c11"
   />
   <h4
-    class="c11"
+    class="c12"
   />
   <h4
-    class="c11"
+    class="c13"
   />
   <h4
-    class="c11"
+    class="c14"
   />
   <h1
-    class="c12"
+    class="c15"
   />
 </div>
 `;
 
 exports[`Heading textAlign renders 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -761,69 +863,73 @@ exports[`Heading textAlign renders 1`] = `
 }
 
 .c1 {
-  font-size: 50px;
-  line-height: 56px;
+  font-size: 2.25rem;
+  line-height: 2.5rem;
   max-width: 1200px;
-  font-weight: 600;
+  font-weight: 400;
   overflow-wrap: break-word;
   text-align: left;
+  color: #2e2e2e;
 }
 
 .c2 {
-  font-size: 50px;
-  line-height: 56px;
+  font-size: 2.25rem;
+  line-height: 2.5rem;
   max-width: 1200px;
-  font-weight: 600;
+  font-weight: 400;
   overflow-wrap: break-word;
   text-align: center;
+  color: #2e2e2e;
 }
 
 .c3 {
-  font-size: 50px;
-  line-height: 56px;
+  font-size: 2.25rem;
+  line-height: 2.5rem;
   max-width: 1200px;
-  font-weight: 600;
+  font-weight: 400;
   overflow-wrap: break-word;
   text-align: right;
+  color: #2e2e2e;
 }
 
 .c4 {
-  font-size: 50px;
-  line-height: 56px;
+  font-size: 2.25rem;
+  line-height: 2.5rem;
   max-width: 1200px;
-  font-weight: 600;
+  font-weight: 400;
   overflow-wrap: break-word;
   text-align: justify;
+  color: #2e2e2e;
 }
 
 @media only screen and (max-width: 768px) {
   .c1 {
-    font-size: 34px;
-    line-height: 40px;
+    font-size: 1.75rem;
+    line-height: 2rem;
     max-width: 816px;
   }
 }
 
 @media only screen and (max-width: 768px) {
   .c2 {
-    font-size: 34px;
-    line-height: 40px;
+    font-size: 1.75rem;
+    line-height: 2rem;
     max-width: 816px;
   }
 }
 
 @media only screen and (max-width: 768px) {
   .c3 {
-    font-size: 34px;
-    line-height: 40px;
+    font-size: 1.75rem;
+    line-height: 2rem;
     max-width: 816px;
   }
 }
 
 @media only screen and (max-width: 768px) {
   .c4 {
-    font-size: 34px;
-    line-height: 40px;
+    font-size: 1.75rem;
+    line-height: 2rem;
     max-width: 816px;
   }
 }
@@ -848,8 +954,11 @@ exports[`Heading textAlign renders 1`] = `
 
 exports[`Heading truncate renders 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -858,36 +967,38 @@ exports[`Heading truncate renders 1`] = `
 }
 
 .c1 {
-  font-size: 50px;
-  line-height: 56px;
+  font-size: 2.25rem;
+  line-height: 2.5rem;
   max-width: 1200px;
-  font-weight: 600;
+  font-weight: 400;
   overflow-wrap: break-word;
+  color: #2e2e2e;
 }
 
 .c2 {
-  font-size: 50px;
-  line-height: 56px;
+  font-size: 2.25rem;
+  line-height: 2.5rem;
   max-width: 1200px;
-  font-weight: 600;
+  font-weight: 400;
   overflow-wrap: break-word;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  color: #2e2e2e;
 }
 
 @media only screen and (max-width: 768px) {
   .c1 {
-    font-size: 34px;
-    line-height: 40px;
+    font-size: 1.75rem;
+    line-height: 2rem;
     max-width: 816px;
   }
 }
 
 @media only screen and (max-width: 768px) {
   .c2 {
-    font-size: 34px;
-    line-height: 40px;
+    font-size: 1.75rem;
+    line-height: 2rem;
     max-width: 816px;
   }
 }
@@ -1197,8 +1308,11 @@ exports[`Theme color renders 1`] = `
 
 exports[`responsive renders 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1207,25 +1321,27 @@ exports[`responsive renders 1`] = `
 }
 
 .c1 {
-  font-size: 50px;
-  line-height: 56px;
+  font-size: 2.25rem;
+  line-height: 2.5rem;
   max-width: 1200px;
-  font-weight: 600;
+  font-weight: 400;
   overflow-wrap: break-word;
+  color: #2e2e2e;
 }
 
 .c2 {
-  font-size: 50px;
-  line-height: 56px;
+  font-size: 2.25rem;
+  line-height: 2.5rem;
   max-width: 1200px;
-  font-weight: 600;
+  font-weight: 400;
   overflow-wrap: break-word;
+  color: #2e2e2e;
 }
 
 @media only screen and (max-width: 768px) {
   .c1 {
-    font-size: 34px;
-    line-height: 40px;
+    font-size: 1.75rem;
+    line-height: 2rem;
     max-width: 816px;
   }
 }
@@ -1245,8 +1361,11 @@ exports[`responsive renders 1`] = `
 exports[`weight renders 1`] = `
 <DocumentFragment>
   .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1255,65 +1374,69 @@ exports[`weight renders 1`] = `
 }
 
 .c1 {
-  font-size: 50px;
-  line-height: 56px;
+  font-size: 2.25rem;
+  line-height: 2.5rem;
   max-width: 1200px;
-  font-weight: 600;
+  font-weight: 400;
   overflow-wrap: break-word;
+  color: #2e2e2e;
 }
 
 .c2 {
-  font-size: 50px;
-  line-height: 56px;
+  font-size: 2.25rem;
+  line-height: 2.5rem;
   max-width: 1200px;
   font-weight: normal;
   overflow-wrap: break-word;
+  color: #2e2e2e;
 }
 
 .c3 {
-  font-size: 50px;
-  line-height: 56px;
+  font-size: 2.25rem;
+  line-height: 2.5rem;
   max-width: 1200px;
   font-weight: bold;
   overflow-wrap: break-word;
+  color: #2e2e2e;
 }
 
 .c4 {
-  font-size: 50px;
-  line-height: 56px;
+  font-size: 2.25rem;
+  line-height: 2.5rem;
   max-width: 1200px;
   font-weight: 700;
   overflow-wrap: break-word;
+  color: #2e2e2e;
 }
 
 @media only screen and (max-width: 768px) {
   .c1 {
-    font-size: 34px;
-    line-height: 40px;
+    font-size: 1.75rem;
+    line-height: 2rem;
     max-width: 816px;
   }
 }
 
 @media only screen and (max-width: 768px) {
   .c2 {
-    font-size: 34px;
-    line-height: 40px;
+    font-size: 1.75rem;
+    line-height: 2rem;
     max-width: 816px;
   }
 }
 
 @media only screen and (max-width: 768px) {
   .c3 {
-    font-size: 34px;
-    line-height: 40px;
+    font-size: 1.75rem;
+    line-height: 2rem;
     max-width: 816px;
   }
 }
 
 @media only screen and (max-width: 768px) {
   .c4 {
-    font-size: 34px;
-    line-height: 40px;
+    font-size: 1.75rem;
+    line-height: 2rem;
     max-width: 816px;
   }
 }

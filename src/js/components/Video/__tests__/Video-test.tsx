@@ -4,6 +4,7 @@ import { render, fireEvent } from '@testing-library/react';
 import { axe } from 'jest-axe';
 import 'jest-axe/extend-expect';
 import 'regenerator-runtime/runtime';
+import { hpe } from 'grommet-theme-hpe';
 
 import { Grommet, Video, VideoExtendedProps } from '../..';
 
@@ -12,7 +13,7 @@ describe('Video', () => {
 
   beforeEach(() => {
     App = ({ ...props }) => (
-      <Grommet>
+      <Grommet theme={hpe}>
         <Video {...props}>
           <source key="source" src="small.mp4" type="video/mp4" />
           <track key="track" />
@@ -23,7 +24,7 @@ describe('Video', () => {
 
   test('should have no accessibility violations', async () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Video />
       </Grommet>,
     );

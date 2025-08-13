@@ -4,13 +4,14 @@ import { axe } from 'jest-axe';
 import 'jest-styled-components';
 import 'jest-axe/extend-expect';
 import 'regenerator-runtime/runtime';
+import { hpe } from 'grommet-theme-hpe';
 
 import { Grommet } from '../../Grommet';
 import { Text } from '..';
 
 test('should have no accessibility violations', async () => {
   const { container } = render(
-    <Grommet>
+    <Grommet theme={hpe}>
       <Text a11yTitle="test"> Example</Text>
     </Grommet>,
   );
@@ -22,7 +23,7 @@ test('should have no accessibility violations', async () => {
 
 test('renders', () => {
   const { container } = render(
-    <Grommet>
+    <Grommet theme={hpe}>
       <Text>text</Text>
     </Grommet>,
   );
@@ -39,7 +40,7 @@ test('renders outside grommet wrapper', () => {
 test('accepts ref', () => {
   const ref = React.createRef<HTMLParagraphElement>();
   const { container } = render(
-    <Grommet>
+    <Grommet theme={hpe}>
       <Text ref={ref}>text</Text>
     </Grommet>,
   );
@@ -50,7 +51,7 @@ test('accepts ref', () => {
 
 test('renders size', () => {
   const { container } = render(
-    <Grommet>
+    <Grommet theme={hpe}>
       <Text size="xsmall" />
       <Text size="small" />
       <Text size="medium" />
@@ -70,7 +71,7 @@ test('renders size', () => {
 
 test('renders textAlign', () => {
   const { container } = render(
-    <Grommet>
+    <Grommet theme={hpe}>
       <Text textAlign="start" />
       <Text textAlign="center" />
       <Text textAlign="end" />
@@ -104,7 +105,7 @@ const LONG = 'a b c d e f g h i j k l m n o p q r s t u v w x y z';
 
 test('renders truncate', () => {
   const { container } = render(
-    <Grommet>
+    <Grommet theme={hpe}>
       <Text truncate={false}>{LONG}</Text>
       <Text truncate>{LONG}</Text>
     </Grommet>,
@@ -115,7 +116,7 @@ test('renders truncate', () => {
 
 test('renders color', () => {
   const { container } = render(
-    <Grommet>
+    <Grommet theme={hpe}>
       <Text color="status-critical" />
     </Grommet>,
   );
@@ -125,7 +126,7 @@ test('renders color', () => {
 
 test('renders tag', () => {
   const { container } = render(
-    <Grommet>
+    <Grommet theme={hpe}>
       <Text as="div" />
     </Grommet>,
   );
@@ -135,12 +136,12 @@ test('renders tag', () => {
 
 test('proxies tag', () => {
   const { container: tagComponent } = render(
-    <Grommet>
+    <Grommet theme={hpe}>
       <Text tag="div" />
     </Grommet>,
   );
   const { container: asComponent } = render(
-    <Grommet>
+    <Grommet theme={hpe}>
       <Text as="div" />
     </Grommet>,
   );
@@ -150,7 +151,7 @@ test('proxies tag', () => {
 
 test('renders weight', () => {
   const { container } = render(
-    <Grommet>
+    <Grommet theme={hpe}>
       <Text weight="normal" />
       <Text weight="bold" />
     </Grommet>,
@@ -161,7 +162,7 @@ test('renders weight', () => {
 
 test('renders tip', () => {
   const { container, getByText } = render(
-    <Grommet>
+    <Grommet theme={hpe}>
       <Text tip="tooltip">Default Tip</Text>
     </Grommet>,
   );
@@ -172,7 +173,7 @@ test('renders tip', () => {
 
 test('should apply a11yTitle or aria-label', () => {
   const { container, getByLabelText } = render(
-    <Grommet>
+    <Grommet theme={hpe}>
       <Text a11yTitle="test"> Example</Text>
       <Text aria-label="test-2">Example</Text>
     </Grommet>,

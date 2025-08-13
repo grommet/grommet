@@ -1,4 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`Page background fill 1`] = `
 <DocumentFragment>
@@ -175,8 +175,11 @@ exports[`Page custom theme 1`] = `
 exports[`Page default kind 1`] = `
 <DocumentFragment>
   .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -203,16 +206,17 @@ exports[`Page default kind 1`] = `
   min-height: 0;
   flex-direction: column;
   max-width: 1536px;
-  min-width: 384px;
+  min-width: 336px;
   width: 100%;
   padding-left: 48px;
   padding-right: 48px;
 }
 
 .c3 {
-  font-size: 18px;
-  line-height: 24px;
-  max-width: 432px;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  max-width: 30em;
+  font-weight: undefined;
 }
 
 @media only screen and (max-width: 768px) {
@@ -249,8 +253,11 @@ exports[`Page default kind 1`] = `
 exports[`Page full 1`] = `
 <DocumentFragment>
   .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -277,16 +284,17 @@ exports[`Page full 1`] = `
   min-height: 0;
   flex-direction: column;
   max-width: 100%;
-  min-width: 384px;
+  min-width: 336px;
   width: 100%;
   padding-left: 48px;
   padding-right: 48px;
 }
 
 .c3 {
-  font-size: 18px;
-  line-height: 24px;
-  max-width: 432px;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  max-width: 30em;
+  font-weight: undefined;
 }
 
 @media only screen and (max-width: 768px) {
@@ -323,8 +331,11 @@ exports[`Page full 1`] = `
 exports[`Page narrow 1`] = `
 <DocumentFragment>
   .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -351,16 +362,17 @@ exports[`Page narrow 1`] = `
   min-height: 0;
   flex-direction: column;
   max-width: 768px;
-  min-width: 384px;
+  min-width: 336px;
   width: 100%;
   padding-left: 48px;
   padding-right: 48px;
 }
 
 .c3 {
-  font-size: 18px;
-  line-height: 24px;
-  max-width: 432px;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  max-width: 30em;
+  font-weight: undefined;
 }
 
 @media only screen and (max-width: 768px) {

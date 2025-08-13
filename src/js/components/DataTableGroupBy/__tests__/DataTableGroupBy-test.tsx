@@ -1,6 +1,7 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 import 'jest-styled-components';
+import { hpe } from 'grommet-theme-hpe';
 
 import { Data } from '../../Data';
 import { Grommet } from '../../Grommet';
@@ -15,7 +16,7 @@ const data = [
 describe('DataTableGroupBy', () => {
   test('renders', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Data data={data}>
           <DataTableGroupBy
             options={[{ property: 'type.name', label: 'Type' }]}

@@ -5,6 +5,7 @@ import { axe } from 'jest-axe';
 import 'jest-styled-components';
 import 'jest-axe/extend-expect';
 import 'regenerator-runtime/runtime';
+import { hpe } from 'grommet-theme-hpe';
 
 import { Grommet } from '../../Grommet';
 import { Image } from '..';
@@ -16,7 +17,7 @@ const SRC =
 
 test('image should have no violations', async () => {
   const { container } = render(
-    <Grommet>
+    <Grommet theme={hpe}>
       <Image src={SRC} a11yTitle="Alt Text" />
     </Grommet>,
   );
@@ -27,7 +28,7 @@ test('image should have no violations', async () => {
 
 test('Image renders', () => {
   const { container } = render(
-    <Grommet>
+    <Grommet theme={hpe}>
       <Image src={SRC} />
     </Grommet>,
   );
@@ -43,7 +44,7 @@ test('Image renders outside grommet wrapper', () => {
 
 test('Image renders with aria-label', () => {
   const { container, getByLabelText } = render(
-    <Grommet>
+    <Grommet theme={hpe}>
       <Image a11yTitle="aria-label-text" src={SRC} />
       <Image aria-label="aria-label-text-2" src={SRC} />
     </Grommet>,
@@ -56,7 +57,7 @@ test('Image renders with aria-label', () => {
 
 test('Image fit renders', () => {
   const { container } = render(
-    <Grommet>
+    <Grommet theme={hpe}>
       <Image fit="cover" src={SRC} />
       <Image fit="contain" src={SRC} />
     </Grommet>,
@@ -68,7 +69,7 @@ test('Image fit renders', () => {
 opacityTypes.forEach((opacity) => {
   test(`Image opacity of ${opacity} renders`, () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Image opacity={opacity} src={SRC} />
       </Grommet>,
     );
@@ -79,7 +80,7 @@ opacityTypes.forEach((opacity) => {
 
 test('Image fillProp renders', () => {
   const { container } = render(
-    <Grommet>
+    <Grommet theme={hpe}>
       <Image fill src={SRC} />
       <Image fill={false} src={SRC} />
       <Image fill="horizontal" src={SRC} />
@@ -93,7 +94,7 @@ test('Image fillProp renders', () => {
 test('Image onError', () => {
   const onError = jest.fn();
   const { getByAltText } = render(
-    <Grommet>
+    <Grommet theme={hpe}>
       <Image src="test.png" alt="test" onError={onError} />
     </Grommet>,
   );
@@ -106,7 +107,7 @@ test('Image onError', () => {
 test('Image onLoad', () => {
   const onLoad = jest.fn();
   render(
-    <Grommet>
+    <Grommet theme={hpe}>
       <Image src="test.png" alt="test" onLoad={onLoad} />
     </Grommet>,
   );
@@ -129,7 +130,7 @@ test('Image fallback', async () => {
   const Test = () => {
     const [imgSrc, setImgSrc] = useState('test.png');
     return (
-      <Grommet>
+      <Grommet theme={hpe}>
         <Image
           fill="horizontal"
           fallback={fallbackImage}

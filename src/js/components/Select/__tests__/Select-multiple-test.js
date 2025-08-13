@@ -6,6 +6,7 @@ import 'jest-axe/extend-expect';
 import 'regenerator-runtime/runtime';
 import 'jest-styled-components';
 import '@testing-library/jest-dom';
+import { hpe } from 'grommet-theme-hpe';
 
 import { createPortal, expectPortal } from '../../../utils/portal';
 
@@ -18,7 +19,7 @@ describe('Select Controlled', () => {
 
   test('should not have accessibility violations', async () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Select options={['one', 'two', 'three']} a11yTitle="test" multiple />
       </Grommet>,
     );
@@ -42,7 +43,7 @@ describe('Select Controlled', () => {
 
   test('multiple', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Select
           id="test-select"
           multiple
@@ -58,7 +59,7 @@ describe('Select Controlled', () => {
 
   test('multiple values', () => {
     const { getByPlaceholderText, container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Select
           id="test-select"
           placeholder="test select"
@@ -80,7 +81,7 @@ describe('Select Controlled', () => {
   test('select another option', () => {
     const onChange = jest.fn();
     const { getByPlaceholderText, container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Select
           id="test-select"
           placeholder="test select"
@@ -107,7 +108,7 @@ describe('Select Controlled', () => {
   test('deselect an option', () => {
     const onChange = jest.fn();
     const { getByPlaceholderText, container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Select
           id="test-select"
           placeholder="test select"
@@ -135,7 +136,7 @@ describe('Select Controlled', () => {
     const user = userEvent.setup();
 
     render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Select
           id="test-select"
           placeholder="test select"
@@ -185,7 +186,7 @@ describe('Select Controlled', () => {
       );
     };
     const { getByPlaceholderText, getByText, container, asFragment } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Test />
       </Grommet>,
     );
@@ -256,7 +257,7 @@ describe('Select Controlled', () => {
       );
     };
     const { getByPlaceholderText, getByText, asFragment } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Test />
       </Grommet>,
     );
@@ -326,7 +327,7 @@ describe('Select Controlled', () => {
       );
     };
     const { getByPlaceholderText, getByText, asFragment } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Test />
       </Grommet>,
     );
@@ -397,7 +398,7 @@ describe('Select Controlled', () => {
       );
     };
     const { getByPlaceholderText, getByText, container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Test />
       </Grommet>,
     );
@@ -446,7 +447,7 @@ describe('Select Controlled', () => {
       );
     };
     const { getByPlaceholderText, getByText, container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Test />
       </Grommet>,
     );
@@ -488,7 +489,7 @@ describe('Select Controlled', () => {
       );
     };
     const { getByPlaceholderText, getByText, container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Test />
       </Grommet>,
     );
@@ -505,7 +506,7 @@ describe('Select Controlled', () => {
 
   test('multiple with empty results', () => {
     const { getByPlaceholderText, container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Select
           id="test-select"
           placeholder="test select"
@@ -577,7 +578,7 @@ describe('Select Controlled', () => {
       );
     };
     const { getByPlaceholderText, getByText } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Test />
       </Grommet>,
     );
@@ -673,7 +674,7 @@ describe('Select Controlled', () => {
       );
     };
     const { getByPlaceholderText, getByText } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Test />
       </Grommet>,
     );
@@ -715,7 +716,7 @@ describe('Select Controlled', () => {
       );
     };
     const { getByPlaceholderText, getByText } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Test />
       </Grommet>,
     );

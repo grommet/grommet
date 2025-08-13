@@ -3,6 +3,7 @@ import 'jest-styled-components';
 import 'jest-axe/extend-expect';
 import 'regenerator-runtime/runtime';
 import '@testing-library/jest-dom';
+import { hpe } from 'grommet-theme-hpe';
 
 import { axe } from 'jest-axe';
 import {
@@ -27,7 +28,7 @@ describe('Notification', () => {
   beforeEach(createPortal);
   test('should have no accessibility violations', async () => {
     const { container, asFragment } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Notification title="title" />
       </Grommet>,
     );
@@ -39,7 +40,7 @@ describe('Notification', () => {
 
   test('should have no accessibility violations for toast', async () => {
     const { container, asFragment } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Notification toast title="title" message="message" />
       </Grommet>,
     );
@@ -61,7 +62,7 @@ describe('Notification', () => {
 
     const onClose = jest.fn();
     const { asFragment } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Notification title="Title" onClose={onClose} />
       </Grommet>,
     );
@@ -92,7 +93,7 @@ describe('Notification', () => {
   test('messages prop', () => {
     const onClose = jest.fn();
     const { asFragment } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Notification
           title="Title"
           onClose={onClose}
@@ -124,7 +125,7 @@ describe('Notification', () => {
   validPositions.forEach((positions) =>
     test(`position ${positions}`, () => {
       render(
-        <Grommet>
+        <Grommet theme={hpe}>
           <Notification
             id="position-test"
             toast={{ position: positions }}
@@ -146,7 +147,7 @@ describe('Notification', () => {
     const Test = () => {
       const [visible, setVisible] = useState(false);
       return (
-        <Grommet>
+        <Grommet theme={hpe}>
           <Button
             label="Show Notification"
             onClick={() => {
@@ -188,7 +189,7 @@ describe('Notification', () => {
     const Test = () => {
       const [visible, setVisible] = useState(false);
       return (
-        <Grommet>
+        <Grommet theme={hpe}>
           <Button
             label="Show Notification"
             onClick={() => {
@@ -230,7 +231,7 @@ describe('Notification', () => {
     const Test = () => {
       const [visible, setVisible] = useState(false);
       return (
-        <Grommet>
+        <Grommet theme={hpe}>
           <Button
             label="Show Notification"
             onClick={() => {
@@ -310,7 +311,7 @@ describe('Notification', () => {
 
   test('actions', () => {
     render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <TestNotification
           actions={[{ href: '/some-link', label: 'Renew Subscription' }]}
         />
@@ -323,7 +324,7 @@ describe('Notification', () => {
 
   test('multi actions', () => {
     const { asFragment } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <TestNotification
           actions={[
             { href: '/some-link', label: 'Renew Subscription' },
@@ -341,7 +342,7 @@ describe('Notification', () => {
 
   test('global', () => {
     const { asFragment } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <TestNotification global />
       </Grommet>,
     );
@@ -351,7 +352,7 @@ describe('Notification', () => {
 
   test('status', () => {
     const { asFragment } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <TestNotification global status="normal" />
         <TestNotification global status="warning" />
         <TestNotification global status="critical" />
@@ -363,7 +364,7 @@ describe('Notification', () => {
 
   test('should render custom template inside notification', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Notification
           title="Test title"
           message={<Text>A sample text message</Text>}
@@ -375,7 +376,7 @@ describe('Notification', () => {
 
   test('should render custom icon', () => {
     const { asFragment } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <TestNotification icon={<Home />} />
       </Grommet>,
     );
@@ -465,7 +466,7 @@ describe('Notification', () => {
     const TestComponent = () => {
       const [showNotification, setShowNotification] = useState(false);
       return (
-        <Grommet>
+        <Grommet theme={hpe}>
           <Button
             label="Show Notification"
             onClick={() => setShowNotification(true)}

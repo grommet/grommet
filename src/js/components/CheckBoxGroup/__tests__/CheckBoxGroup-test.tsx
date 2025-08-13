@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, fireEvent } from '@testing-library/react';
 import { axe } from 'jest-axe';
-
+import { hpe } from 'grommet-theme-hpe';
 import 'jest-axe/extend-expect';
 import 'regenerator-runtime/runtime';
 
@@ -11,7 +11,7 @@ import { CheckBoxGroup } from '..';
 describe('CheckBoxGroup', () => {
   test('should have no accessibility violations', async () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <CheckBoxGroup options={['First', 'Second']} />
       </Grommet>,
     );
@@ -22,7 +22,7 @@ describe('CheckBoxGroup', () => {
 
   test('options renders', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <CheckBoxGroup options={['First', 'Second']} />
       </Grommet>,
     );
@@ -40,7 +40,7 @@ describe('CheckBoxGroup', () => {
 
   test('value renders', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <CheckBoxGroup value={['First']} options={['First', 'Second']} />
       </Grommet>,
     );
@@ -50,7 +50,7 @@ describe('CheckBoxGroup', () => {
 
   test('initial value renders', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <CheckBoxGroup
           value={['Wuhan', 'Jerusalem']}
           options={[
@@ -67,7 +67,7 @@ describe('CheckBoxGroup', () => {
 
   test('disabled renders', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <CheckBoxGroup disabled options={['First', 'Second']} />
         <CheckBoxGroup options={[{ label: 'First', disabled: true }]} />
         <CheckBoxGroup options={[{ label: 'First', disabled: true }]} />
@@ -80,7 +80,7 @@ describe('CheckBoxGroup', () => {
   test('onChange', () => {
     const onChange = jest.fn();
     const { container, getByText } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <CheckBoxGroup
           options={[
             { label: 'first-label', value: 'First' },
@@ -98,7 +98,7 @@ describe('CheckBoxGroup', () => {
   test('onClick for check and uncheck a CheckBox', () => {
     const onClick = jest.fn();
     const { container, getByText } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <CheckBoxGroup
           options={[
             { label: 'first-label', value: 'First' },
@@ -118,7 +118,7 @@ describe('CheckBoxGroup', () => {
 
   test('labelKey', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <CheckBoxGroup
           labelKey="labelKeyTest"
           options={[
@@ -133,7 +133,7 @@ describe('CheckBoxGroup', () => {
 
   test('valueKey', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <CheckBoxGroup
           valueKey="valueKeyTest"
           options={[
@@ -176,7 +176,7 @@ describe('CheckBoxGroup', () => {
     const errorSpy = jest.spyOn(console, 'error').mockImplementation();
 
     render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <CheckBoxGroup
           value={['yes', 'yes-again']}
           options={[
@@ -201,7 +201,7 @@ describe('CheckBoxGroup', () => {
     const warnSpy = jest.spyOn(console, 'warn').mockImplementation();
 
     render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <CheckBoxGroup
           options={[
             { label: 'first-label', value: 'First', checked: true },
@@ -218,7 +218,7 @@ describe('CheckBoxGroup', () => {
 
   test('defaultValue renders', () => {
     const { asFragment } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <CheckBoxGroup options={['First', 'Second']} defaultValue={['First']} />
       </Grommet>,
     );

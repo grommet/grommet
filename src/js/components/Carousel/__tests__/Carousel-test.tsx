@@ -9,7 +9,7 @@ import {
 import userEvent from '@testing-library/user-event';
 import 'jest-styled-components';
 import '@testing-library/jest-dom';
-
+import { hpe } from 'grommet-theme-hpe';
 import { Carousel } from '..';
 import { Grommet } from '../../Grommet';
 
@@ -20,7 +20,7 @@ const getSlideThree = () => screen.getByText('Slide Three');
 describe('Carousel', () => {
   test('basic', () => {
     const { asFragment } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Carousel>
           <div>Slide One</div>
           <div>Slide Two</div>
@@ -46,7 +46,7 @@ describe('Carousel', () => {
 
   test('basic with `initialChild: 1`', () => {
     render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Carousel initialChild={1}>
           <div>Slide One</div>
           <div>Slide Two</div>
@@ -63,7 +63,7 @@ describe('Carousel', () => {
     const user = userEvent.setup({ delay: null });
 
     render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Carousel controls="arrows">
           <div>Slide One</div>
           <div>Slide Two</div>
@@ -91,7 +91,7 @@ describe('Carousel', () => {
     const user = userEvent.setup({ delay: null });
 
     render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Carousel initialChild={1} controls="arrows">
           <div>Slide One</div>
           <div>Slide Two</div>
@@ -121,7 +121,7 @@ describe('Carousel', () => {
     const user = userEvent.setup({ delay: null });
 
     render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Carousel controls="selectors">
           <div>Slide One</div>
           <div>Slide Two</div>
@@ -151,7 +151,7 @@ describe('Carousel', () => {
     const user = userEvent.setup({ delay: null });
 
     render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Carousel initialChild={2} controls="selectors">
           <div>Slide One</div>
           <div>Slide Two</div>
@@ -179,7 +179,7 @@ describe('Carousel', () => {
   test('play', async () => {
     jest.useFakeTimers();
     render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Carousel controls={false} play={500} wrap={false}>
           <div>Slide One</div>
           <div>Slide Two</div>
@@ -199,7 +199,7 @@ describe('Carousel', () => {
 
   test('keyboard: left arrow', async () => {
     render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Carousel initialChild={1} a11yTitle="test-carousel">
           <div>Slide One</div>
           <div>Slide Two</div>
@@ -223,7 +223,7 @@ describe('Carousel', () => {
 
   test('keyboard: right arrow', async () => {
     render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Carousel a11yTitle="test-carousel">
           <div>Slide One</div>
           <div>Slide Two</div>
@@ -247,7 +247,7 @@ describe('Carousel', () => {
 
   test('controlled component', async () => {
     const { asFragment } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Carousel controls="arrows" activeChild={1}>
           <div>Slide One</div>
           <div>Slide Two</div>
@@ -265,7 +265,7 @@ describe('Carousel', () => {
 
     const someFunction = jest.fn();
     render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Carousel>
           <div>
             <span>Click the button below</span>

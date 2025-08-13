@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, fireEvent } from '@testing-library/react';
 import 'jest-styled-components';
-
+import { hpe } from 'grommet-theme-hpe';
 import { Grommet } from '../../Grommet';
 import { Text } from '../../Text';
 import { WorldMap } from '..';
@@ -9,7 +9,7 @@ import { WorldMap } from '..';
 describe('WorldMap', () => {
   test('default', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <WorldMap />
       </Grommet>,
     );
@@ -25,7 +25,7 @@ describe('WorldMap', () => {
 
   test('color', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <WorldMap color="brand" />
       </Grommet>,
     );
@@ -35,7 +35,7 @@ describe('WorldMap', () => {
 
   test('continents', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <WorldMap
           continents={[
             {
@@ -52,7 +52,7 @@ describe('WorldMap', () => {
 
   test('places', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <WorldMap
           places={[
             {
@@ -72,7 +72,7 @@ describe('WorldMap', () => {
     const onClick = jest.fn();
     const onHover = jest.fn();
     const { container, getByLabelText } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <WorldMap
           places={[
             {
@@ -105,7 +105,7 @@ describe('WorldMap', () => {
     const onClick = jest.fn();
     const onHover = jest.fn();
     const { container, getByLabelText } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <WorldMap
           continents={[
             {
@@ -134,7 +134,7 @@ describe('WorldMap', () => {
 
   test('fill', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <WorldMap fill />
         <WorldMap fill={false} />
         <WorldMap fill="horizontal" />
@@ -150,7 +150,7 @@ describe('WorldMap', () => {
     const onContinentClick = jest.fn();
 
     const { getByLabelText } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <WorldMap
           places={[
             {
@@ -184,7 +184,7 @@ describe('WorldMap', () => {
     const onContinentHover = jest.fn();
 
     const { getByLabelText } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <WorldMap
           places={[
             {
@@ -225,7 +225,7 @@ describe('WorldMap', () => {
 
   test('places content', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <WorldMap
           places={[
             {

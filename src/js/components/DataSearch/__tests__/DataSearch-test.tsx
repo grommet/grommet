@@ -1,6 +1,7 @@
 import React from 'react';
 import { act, fireEvent, render } from '@testing-library/react';
 import 'jest-styled-components';
+import { hpe } from 'grommet-theme-hpe';
 
 import { Data } from '../../Data';
 import { DataFilters } from '../../DataFilters';
@@ -16,7 +17,7 @@ describe('DataSearch', () => {
 
   test('renders', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Data data={data}>
           <DataFilters>
             <DataSearch />
@@ -30,7 +31,7 @@ describe('DataSearch', () => {
 
   test('no Data', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <DataSearch />
       </Grommet>,
     );
@@ -42,7 +43,7 @@ describe('DataSearch', () => {
     jest.useFakeTimers();
 
     const { container, getByRole } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Data id="test-data" data={data}>
           <DataSearch drop />
         </Data>
@@ -65,7 +66,7 @@ test('enter', async () => {
   jest.useFakeTimers();
   const onView = jest.fn();
   const { getByRole } = render(
-    <Grommet>
+    <Grommet theme={hpe}>
       <Data data={data} onView={onView}>
         <DataSearch data-testid="input_submit" updateOn="submit" />
       </Data>
@@ -91,7 +92,7 @@ test('change', async () => {
   jest.useFakeTimers();
   const onView = jest.fn();
   const { getByRole } = render(
-    <Grommet>
+    <Grommet theme={hpe}>
       <Data data={data} onView={onView}>
         <DataSearch data-testid="input_change" updateOn="change" />
       </Data>

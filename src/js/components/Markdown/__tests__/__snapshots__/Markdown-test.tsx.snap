@@ -1,9 +1,12 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`Markdown renders 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -12,41 +15,46 @@ exports[`Markdown renders 1`] = `
 }
 
 .c1 {
-  font-size: 50px;
-  line-height: 56px;
+  font-size: 2.25rem;
+  line-height: 2.5rem;
   max-width: 1200px;
-  font-weight: 600;
+  font-weight: 400;
   overflow-wrap: break-word;
+  color: #2e2e2e;
 }
 
 .c3 {
-  font-size: 34px;
-  line-height: 40px;
+  font-size: 1.75rem;
+  line-height: 2rem;
   max-width: 816px;
-  font-weight: 600;
+  font-weight: 400;
   overflow-wrap: break-word;
+  color: #2e2e2e;
 }
 
 .c4 {
-  font-size: 26px;
-  line-height: 32px;
+  font-size: 1.5rem;
+  line-height: 1.75rem;
   max-width: 624px;
-  font-weight: 600;
+  font-weight: 400;
   overflow-wrap: break-word;
+  color: #2e2e2e;
 }
 
 .c5 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 1.25rem;
+  line-height: 1.5rem;
   max-width: 432px;
-  font-weight: 600;
+  font-weight: 400;
   overflow-wrap: break-word;
+  color: #2e2e2e;
 }
 
 .c2 {
-  font-size: 18px;
-  line-height: 24px;
-  max-width: 432px;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  max-width: 30em;
+  font-weight: undefined;
 }
 
 .c9 {
@@ -63,14 +71,15 @@ exports[`Markdown renders 1`] = `
   display: inline-flex;
   font-size: inherit;
   line-height: inherit;
-  color: #7D4CDB;
-  font-weight: 600;
-  text-decoration: none;
+  color: #006750;
+  font-weight: 500;
+  text-decoration: underline;
   cursor: pointer;
 }
 
 .c6:hover {
   text-decoration: underline;
+  color: #074b3b;
 }
 
 .c8 {
@@ -79,11 +88,20 @@ exports[`Markdown renders 1`] = `
   font-weight: inherit;
   text-align: inherit;
   text-align: start;
-  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
+  border-bottom: solid 1px rgba(0, 0, 0, 0.36);
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
   padding-bottom: 6px;
+}
+
+.c8 >div {
+  height: 100%;
+  justify-content: center;
+}
+
+.c8 label {
+  justify-content: center;
 }
 
 .c10 {
@@ -92,10 +110,13 @@ exports[`Markdown renders 1`] = `
   font-weight: inherit;
   text-align: inherit;
   text-align: start;
+  border-bottom: solid 1px rgba(0, 0, 0, 0.12);
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
   padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 11px;
 }
 
 .c7 {
@@ -104,34 +125,42 @@ exports[`Markdown renders 1`] = `
   width: inherit;
 }
 
+.c7 tbody tr:last-child td {
+  border-color: transparent;
+}
+
+.c7 tbody tr:last-child th {
+  border-color: transparent;
+}
+
 @media only screen and (max-width: 768px) {
   .c1 {
-    font-size: 34px;
-    line-height: 40px;
+    font-size: 1.75rem;
+    line-height: 2rem;
     max-width: 816px;
   }
 }
 
 @media only screen and (max-width: 768px) {
   .c3 {
-    font-size: 26px;
-    line-height: 32px;
+    font-size: 1.5rem;
+    line-height: 1.75rem;
     max-width: 624px;
   }
 }
 
 @media only screen and (max-width: 768px) {
   .c4 {
-    font-size: 18px;
-    line-height: 24px;
+    font-size: 1.25rem;
+    line-height: 1.5rem;
     max-width: 432px;
   }
 }
 
 @media only screen and (max-width: 768px) {
   .c5 {
-    font-size: 16px;
-    line-height: 22px;
+    font-size: 1.125rem;
+    line-height: 1.25rem;
     max-width: 384px;
   }
 }
@@ -562,8 +591,11 @@ exports[`Markdown renders without grommet wrapper 1`] = `
 
 exports[`wrapper 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -572,41 +604,46 @@ exports[`wrapper 1`] = `
 }
 
 .c2 {
-  font-size: 50px;
-  line-height: 56px;
+  font-size: 2.25rem;
+  line-height: 2.5rem;
   max-width: 1200px;
-  font-weight: 600;
+  font-weight: 400;
   overflow-wrap: break-word;
+  color: #2e2e2e;
 }
 
 .c5 {
-  font-size: 34px;
-  line-height: 40px;
+  font-size: 1.75rem;
+  line-height: 2rem;
   max-width: 816px;
-  font-weight: 600;
+  font-weight: 400;
   overflow-wrap: break-word;
+  color: #2e2e2e;
 }
 
 .c6 {
-  font-size: 26px;
-  line-height: 32px;
+  font-size: 1.5rem;
+  line-height: 1.75rem;
   max-width: 624px;
-  font-weight: 600;
+  font-weight: 400;
   overflow-wrap: break-word;
+  color: #2e2e2e;
 }
 
 .c7 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 1.25rem;
+  line-height: 1.5rem;
   max-width: 432px;
-  font-weight: 600;
+  font-weight: 400;
   overflow-wrap: break-word;
+  color: #2e2e2e;
 }
 
 .c4 {
-  font-size: 18px;
-  line-height: 24px;
-  max-width: 432px;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  max-width: 30em;
+  font-weight: undefined;
 }
 
 .c1 {
@@ -629,14 +666,15 @@ exports[`wrapper 1`] = `
   display: inline-flex;
   font-size: inherit;
   line-height: inherit;
-  color: #7D4CDB;
-  font-weight: 600;
-  text-decoration: none;
+  color: #006750;
+  font-weight: 500;
+  text-decoration: underline;
   cursor: pointer;
 }
 
 .c8:hover {
   text-decoration: underline;
+  color: #074b3b;
 }
 
 .c10 {
@@ -645,11 +683,20 @@ exports[`wrapper 1`] = `
   font-weight: inherit;
   text-align: inherit;
   text-align: start;
-  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
+  border-bottom: solid 1px rgba(0, 0, 0, 0.36);
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
   padding-bottom: 6px;
+}
+
+.c10 >div {
+  height: 100%;
+  justify-content: center;
+}
+
+.c10 label {
+  justify-content: center;
 }
 
 .c11 {
@@ -658,10 +705,13 @@ exports[`wrapper 1`] = `
   font-weight: inherit;
   text-align: inherit;
   text-align: start;
+  border-bottom: solid 1px rgba(0, 0, 0, 0.12);
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
   padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 11px;
 }
 
 .c9 {
@@ -670,34 +720,42 @@ exports[`wrapper 1`] = `
   width: inherit;
 }
 
+.c9 tbody tr:last-child td {
+  border-color: transparent;
+}
+
+.c9 tbody tr:last-child th {
+  border-color: transparent;
+}
+
 @media only screen and (max-width: 768px) {
   .c2 {
-    font-size: 34px;
-    line-height: 40px;
+    font-size: 1.75rem;
+    line-height: 2rem;
     max-width: 816px;
   }
 }
 
 @media only screen and (max-width: 768px) {
   .c5 {
-    font-size: 26px;
-    line-height: 32px;
+    font-size: 1.5rem;
+    line-height: 1.75rem;
     max-width: 624px;
   }
 }
 
 @media only screen and (max-width: 768px) {
   .c6 {
-    font-size: 18px;
-    line-height: 24px;
+    font-size: 1.25rem;
+    line-height: 1.5rem;
     max-width: 432px;
   }
 }
 
 @media only screen and (max-width: 768px) {
   .c7 {
-    font-size: 16px;
-    line-height: 22px;
+    font-size: 1.125rem;
+    line-height: 1.25rem;
     max-width: 384px;
   }
 }

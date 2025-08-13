@@ -1,10 +1,13 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`Skeleton Box skeleton loaded 1`] = `
 <DocumentFragment>
   .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -22,22 +25,25 @@ exports[`Skeleton Box skeleton loaded 1`] = `
 }
 
 .c3 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  font-weight: undefined;
 }
 
 .c2 {
-  font-size: 50px;
-  line-height: 56px;
+  font-size: 2.25rem;
+  line-height: 2.5rem;
   max-width: 1200px;
-  font-weight: 600;
+  font-weight: 400;
   overflow-wrap: break-word;
+  color: #2e2e2e;
 }
 
 .c4 {
-  font-size: 18px;
-  line-height: 24px;
-  max-width: 432px;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  max-width: 30em;
+  font-weight: undefined;
 }
 
 .c5 {
@@ -50,24 +56,36 @@ exports[`Skeleton Box skeleton loaded 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  border: 2px solid #7D4CDB;
-  border-radius: 18px;
-  color: #444444;
-  padding: 4px 22px;
-  font-size: 18px;
-  line-height: 24px;
+  border: none;
+  border-radius: 9999px;
+  padding: 5px 18px;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: rgba(0, 0, 0, 0);
+  color: #2e2e2e;
+  border-style: solid;
+  border-width: 1px;
+  border-color: rgba(0, 0, 0, 0);
+  border-radius: 9999px;
+  font-weight: 500;
+  padding: 5px 18px;
+  text-align: center;
   transition-property: color,background-color,border-color,box-shadow;
   transition-duration: 0.1s;
   transition-timing-function: ease-in-out;
 }
 
 .c5:hover {
-  box-shadow: 0px 0px 0px 2px #7D4CDB;
+  background-color: rgba(0, 0, 0, 0.04);
+  color: #2e2e2e;
+  border-color: rgba(0, 0, 0, 0);
+  font-weight: 500;
 }
 
 .c5:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c5:focus >circle,
@@ -77,8 +95,9 @@ exports[`Skeleton Box skeleton loaded 1`] = `
 .c5:focus >polygon,
 .c5:focus >polyline,
 .c5:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c5:focus ::-moz-focus-inner {
@@ -86,6 +105,8 @@ exports[`Skeleton Box skeleton loaded 1`] = `
 }
 
 .c5:focus:not(:focus-visible) {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -97,6 +118,8 @@ exports[`Skeleton Box skeleton loaded 1`] = `
 .c5:focus:not(:focus-visible) >polygon,
 .c5:focus:not(:focus-visible) >polyline,
 .c5:focus:not(:focus-visible) >rect {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -107,8 +130,8 @@ exports[`Skeleton Box skeleton loaded 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c2 {
-    font-size: 34px;
-    line-height: 40px;
+    font-size: 1.75rem;
+    line-height: 2rem;
     max-width: 816px;
   }
 }
@@ -150,9 +173,9 @@ exports[`Skeleton Box skeleton loading 1`] = `
   .c3 {
   display: flex;
   box-sizing: border-box;
-  background-color: #EDEDED;
-  color: #444444;
-  height: 56px;
+  background-color: #f7f7f7;
+  color: #555555;
+  height: 2.5rem;
   max-width: 200px;
   min-width: 150px;
 }
@@ -162,9 +185,9 @@ exports[`Skeleton Box skeleton loading 1`] = `
   box-sizing: border-box;
   margin-top: 6px;
   margin-bottom: 6px;
-  background-color: #EDEDED;
-  color: #444444;
-  height: 18px;
+  background-color: #f7f7f7;
+  color: #555555;
+  height: 1.125rem;
   min-width: 100px;
   width: 100px;
 }
@@ -172,37 +195,40 @@ exports[`Skeleton Box skeleton loading 1`] = `
 .c6 {
   display: flex;
   box-sizing: border-box;
-  background-color: #EDEDED;
-  color: #444444;
-  height: 18px;
+  background-color: #f7f7f7;
+  color: #555555;
+  height: 1.125rem;
   width: 100%;
 }
 
 .c8 {
   display: flex;
   box-sizing: border-box;
-  background-color: #EDEDED;
-  color: #444444;
-  height: 18px;
+  background-color: #f7f7f7;
+  color: #555555;
+  height: 1.125rem;
   width: 30%;
 }
 
 .c9 {
   display: flex;
   box-sizing: border-box;
-  background-color: #EDEDED;
-  color: #444444;
-  height: 24px;
+  background-color: #f7f7f7;
+  color: #555555;
+  height: 1.5rem;
   min-width: 100px;
-  padding-left: 22px;
-  padding-right: 22px;
-  padding-top: 4px;
-  padding-bottom: 4px;
+  padding-left: 18px;
+  padding-right: 18px;
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -214,7 +240,8 @@ exports[`Skeleton Box skeleton loading 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background: background;
+  background-color: #ffffff;
+  color: #555555;
   min-width: 0;
   min-height: 0;
   flex-direction: column;
@@ -227,7 +254,7 @@ exports[`Skeleton Box skeleton loading 1`] = `
   min-width: 0;
   min-height: 0;
   flex-direction: column;
-  max-width: 432px;
+  max-width: 30em;
 }
 
 .c7 {
@@ -237,16 +264,17 @@ exports[`Skeleton Box skeleton loading 1`] = `
 }
 
 .c2 {
-  font-size: 50px;
-  line-height: 56px;
+  font-size: 2.25rem;
+  line-height: 2.5rem;
   max-width: 1200px;
-  font-weight: 600;
+  font-weight: 400;
   overflow-wrap: break-word;
+  color: #2e2e2e;
 }
 
 @media only screen and (max-width: 768px) {
   .c3 {
-    height: 40px;
+    height: 2rem;
   }
 }
 
@@ -258,8 +286,8 @@ exports[`Skeleton Box skeleton loading 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c2 {
-    font-size: 34px;
-    line-height: 40px;
+    font-size: 1.75rem;
+    line-height: 2rem;
     max-width: 816px;
   }
 }
@@ -307,6 +335,8 @@ exports[`Skeleton Box skeleton loading 1`] = `
       <div
         aria-hidden="true"
         class="c9"
+        default=""
+        option="[object Object]"
       />
     </div>
   </div>
@@ -318,9 +348,9 @@ exports[`Skeleton Box skeleton sizes loading 1`] = `
   .c3 {
   display: flex;
   box-sizing: border-box;
-  background-color: #EDEDED;
-  color: #444444;
-  height: 32px;
+  background-color: #f7f7f7;
+  color: #555555;
+  height: 1.75rem;
   max-width: 200px;
   min-width: 150px;
 }
@@ -330,9 +360,9 @@ exports[`Skeleton Box skeleton sizes loading 1`] = `
   box-sizing: border-box;
   margin-top: 6px;
   margin-bottom: 6px;
-  background-color: #EDEDED;
-  color: #444444;
-  height: 12px;
+  background-color: #f7f7f7;
+  color: #555555;
+  height: 0.875rem;
   min-width: 100px;
   width: 100px;
 }
@@ -340,37 +370,40 @@ exports[`Skeleton Box skeleton sizes loading 1`] = `
 .c6 {
   display: flex;
   box-sizing: border-box;
-  background-color: #EDEDED;
-  color: #444444;
-  height: 22px;
+  background-color: #f7f7f7;
+  color: #555555;
+  height: 1.375rem;
   width: 100%;
 }
 
 .c8 {
   display: flex;
   box-sizing: border-box;
-  background-color: #EDEDED;
-  color: #444444;
-  height: 22px;
+  background-color: #f7f7f7;
+  color: #555555;
+  height: 1.375rem;
   width: 30%;
 }
 
 .c9 {
   display: flex;
   box-sizing: border-box;
-  background-color: #EDEDED;
-  color: #444444;
-  height: 28px;
+  background-color: #f7f7f7;
+  color: #555555;
+  height: 1.75rem;
   min-width: 100px;
-  padding-left: 32px;
-  padding-right: 32px;
-  padding-top: 8px;
-  padding-bottom: 8px;
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-top: 9px;
+  padding-bottom: 9px;
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -382,7 +415,8 @@ exports[`Skeleton Box skeleton sizes loading 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background: background;
+  background-color: #ffffff;
+  color: #555555;
   min-width: 0;
   min-height: 0;
   flex-direction: column;
@@ -395,7 +429,7 @@ exports[`Skeleton Box skeleton sizes loading 1`] = `
   min-width: 0;
   min-height: 0;
   flex-direction: column;
-  max-width: 528px;
+  max-width: 30em;
 }
 
 .c7 {
@@ -405,16 +439,17 @@ exports[`Skeleton Box skeleton sizes loading 1`] = `
 }
 
 .c2 {
-  font-size: 26px;
-  line-height: 32px;
+  font-size: 1.5rem;
+  line-height: 1.75rem;
   max-width: 624px;
-  font-weight: 600;
+  font-weight: 400;
   overflow-wrap: break-word;
+  color: #2e2e2e;
 }
 
 @media only screen and (max-width: 768px) {
   .c3 {
-    height: 28px;
+    height: 1.5rem;
   }
 }
 
@@ -426,8 +461,8 @@ exports[`Skeleton Box skeleton sizes loading 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c2 {
-    font-size: 22px;
-    line-height: 28px;
+    font-size: 1.25rem;
+    line-height: 1.5rem;
     max-width: 528px;
   }
 }
@@ -475,6 +510,7 @@ exports[`Skeleton Box skeleton sizes loading 1`] = `
       <div
         aria-hidden="true"
         class="c9"
+        default=""
       />
     </div>
   </div>
@@ -488,16 +524,19 @@ exports[`Skeleton Box skeleton with specific dimensions 1`] = `
   box-sizing: border-box;
   margin-top: 6px;
   margin-bottom: 6px;
-  background-color: #EDEDED;
-  color: #444444;
-  height: 18px;
+  background-color: #f7f7f7;
+  color: #555555;
+  height: 1.125rem;
   min-width: 100px;
   width: 100px;
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -509,7 +548,8 @@ exports[`Skeleton Box skeleton with specific dimensions 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background: background;
+  background-color: #ffffff;
+  color: #555555;
   min-width: 0;
   min-height: 0;
   flex-direction: column;
@@ -595,15 +635,18 @@ exports[`Skeleton renders 1`] = `
   .c1 {
   display: flex;
   box-sizing: border-box;
-  background-color: #EDEDED;
-  color: #444444;
-  height: 24px;
+  background-color: #f7f7f7;
+  color: #555555;
+  height: 1.5rem;
   width: 100%;
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;

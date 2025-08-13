@@ -1,6 +1,7 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 import 'jest-styled-components';
+import { hpe } from 'grommet-theme-hpe';
 
 import { Grommet } from '../../Grommet';
 import { Page } from '..';
@@ -10,7 +11,7 @@ import { PageContent } from '../../PageContent';
 describe('Page', () => {
   test('default kind', () => {
     const { asFragment } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Page>
           <PageContent>
             <Paragraph>content</Paragraph>
@@ -36,7 +37,7 @@ describe('Page', () => {
 
   test('narrow', () => {
     const { asFragment } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Page kind="narrow">
           <PageContent>
             <Paragraph>content</Paragraph>
@@ -50,7 +51,7 @@ describe('Page', () => {
 
   test('full', () => {
     const { asFragment } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Page kind="full">
           <PageContent>
             <Paragraph>content</Paragraph>

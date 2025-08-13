@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 import 'jest-styled-components';
-
+import { hpe } from 'grommet-theme-hpe';
 import { Favorite } from 'grommet-icons';
 import { Box } from '../../Box';
 import { Grommet } from '../../Grommet';
@@ -14,7 +14,7 @@ const src = 'test.png';
 describe('Avatar', () => {
   test('renders', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Avatar />
         <Avatar id="test id" />
       </Grommet>,
@@ -30,7 +30,7 @@ describe('Avatar', () => {
 
   test('size', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Avatar size="xsmall" src={src} />
         <Avatar size="small" src={src} />
         <Avatar src={src} />
@@ -57,7 +57,7 @@ describe('Avatar', () => {
 
   test('round renders', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Avatar src={src} round={false} />
         <Avatar src={src} round="xsmall" />
         <Avatar src={src} round="small" />
@@ -72,7 +72,7 @@ describe('Avatar', () => {
 
   test('text renders', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Avatar background="dark-2">
           <Text alignSelf="center" size="xlarge">
             R
@@ -91,7 +91,7 @@ describe('Avatar', () => {
 
   test('icon renders', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Avatar background="accent-4">
           <Favorite color="accent-2" />
         </Avatar>
@@ -149,7 +149,7 @@ describe('Avatar', () => {
 
   test('a11yTitle renders', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Avatar a11yTitle="testing for a11ytitle" src={src} />
       </Grommet>,
     );
@@ -158,7 +158,7 @@ describe('Avatar', () => {
   });
   test('apply imageProps to avatar', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Avatar
           imageProps={{
             'aria-label': 'test image',

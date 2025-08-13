@@ -1,6 +1,7 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 import 'jest-styled-components';
+import { hpe } from 'grommet-theme-hpe';
 
 import {
   Grommet,
@@ -14,7 +15,7 @@ import {
 
 test('Table renders', () => {
   const { container } = render(
-    <Grommet>
+    <Grommet theme={hpe}>
       <Table />
     </Grommet>,
   );
@@ -30,7 +31,7 @@ test('Table renders outside grommet', () => {
 
 test('Table caption renders', () => {
   const { container } = render(
-    <Grommet>
+    <Grommet theme={hpe}>
       <Table caption="Caption" />
     </Grommet>,
   );
@@ -40,7 +41,7 @@ test('Table caption renders', () => {
 
 test('TableHeader renders', () => {
   const { container } = render(
-    <Grommet>
+    <Grommet theme={hpe}>
       <Table>
         <TableHeader />
       </Table>
@@ -52,7 +53,7 @@ test('TableHeader renders', () => {
 
 test('TableFooter renders', () => {
   const { container } = render(
-    <Grommet>
+    <Grommet theme={hpe}>
       <Table>
         <TableFooter />
       </Table>
@@ -64,7 +65,7 @@ test('TableFooter renders', () => {
 
 test('TableBody renders', () => {
   const { container } = render(
-    <Grommet>
+    <Grommet theme={hpe}>
       <Table>
         <TableBody />
       </Table>
@@ -76,7 +77,7 @@ test('TableBody renders', () => {
 
 test('TableRow renders', () => {
   const { container } = render(
-    <Grommet>
+    <Grommet theme={hpe}>
       <Table>
         <TableBody>
           <TableRow />
@@ -90,7 +91,7 @@ test('TableRow renders', () => {
 
 test('TableCell renders', () => {
   const { container } = render(
-    <Grommet>
+    <Grommet theme={hpe}>
       <Table>
         <TableHeader>
           <TableRow>
@@ -116,7 +117,7 @@ test('TableCell renders', () => {
 
 test('TableCell scope renders', () => {
   const { container } = render(
-    <Grommet>
+    <Grommet theme={hpe}>
       <Table>
         <TableHeader>
           <TableRow>
@@ -137,7 +138,7 @@ test('TableCell scope renders', () => {
 
 test('TableCell size renders', () => {
   const { container } = render(
-    <Grommet>
+    <Grommet theme={hpe}>
       <Table>
         <TableBody>
           <TableRow>
@@ -183,7 +184,7 @@ test('TableCell size renders', () => {
 
 test('TableCell verticalAlign renders', () => {
   const { container } = render(
-    <Grommet>
+    <Grommet theme={hpe}>
       <Table>
         <TableHeader>
           <TableRow>
@@ -201,7 +202,7 @@ test('TableCell verticalAlign renders', () => {
 
 test('TableCell plain renders', () => {
   const { container } = render(
-    <Grommet>
+    <Grommet theme={hpe}>
       <Table>
         <TableHeader>
           <TableRow>
@@ -241,7 +242,7 @@ test('TableCell border renders', () => {
 test('Table with ref', () => {
   const ref = React.createRef<HTMLTableElement>();
   render(
-    <Grommet>
+    <Grommet theme={hpe}>
       <Table ref={ref} />
     </Grommet>,
   );

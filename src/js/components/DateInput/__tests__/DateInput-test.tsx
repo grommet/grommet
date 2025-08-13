@@ -7,6 +7,7 @@ import 'jest-axe/extend-expect';
 import 'regenerator-runtime/runtime';
 import '@testing-library/jest-dom';
 import { Calendar as CalendarIcon, Clock as ClockIcon } from 'grommet-icons';
+import { hpe } from 'grommet-theme-hpe';
 
 import { createPortal, expectPortal } from '../../../utils/portal';
 import { Grommet } from '../../Grommet';
@@ -28,7 +29,7 @@ describe('DateInput', () => {
     const Test = () => {
       const [value, setValue] = React.useState(DATE);
       return (
-        <Grommet>
+        <Grommet theme={hpe}>
           <DateInput
             id="item"
             name="item"
@@ -55,7 +56,7 @@ describe('DateInput', () => {
     const Test = () => {
       const [value, setValue] = React.useState(DATES);
       return (
-        <Grommet>
+        <Grommet theme={hpe}>
           <DateInput
             id="item"
             name="item"
@@ -80,7 +81,7 @@ describe('DateInput', () => {
 
   test('should have no accessibility violations', async () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <DateInput format="mm/dd/yyyy" />
       </Grommet>,
     );
@@ -94,7 +95,7 @@ describe('DateInput', () => {
     const TestComponent = () => {
       const [value, setValue] = React.useState([]);
       return (
-        <Grommet>
+        <Grommet theme={hpe}>
           <DateInput
             id="item"
             name="item"
@@ -123,7 +124,7 @@ describe('DateInput', () => {
 
   test('basic', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <DateInput id="item" name="item" value={DATE} />
       </Grommet>,
     );
@@ -139,7 +140,7 @@ describe('DateInput', () => {
 
   test('format', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <DateInput id="item" name="item" format="mm/dd/yyyy" value={DATE} />
       </Grommet>,
     );
@@ -150,7 +151,7 @@ describe('DateInput', () => {
     const user = userEvent.setup();
 
     render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <DateInput
           id="item"
           name="item"
@@ -174,7 +175,7 @@ describe('DateInput', () => {
 
   test('reverse calendar icon', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <DateInput
           id="item"
           name="item"
@@ -189,7 +190,7 @@ describe('DateInput', () => {
 
   test('input props reverse as false', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <DateInput
           id="item"
           name="item"
@@ -204,7 +205,7 @@ describe('DateInput', () => {
 
   test('input props reverse as true', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <DateInput
           id="item"
           name="item"
@@ -219,7 +220,7 @@ describe('DateInput', () => {
 
   test('input props reverse as false with icon', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <DateInput
           id="item"
           name="item"
@@ -235,7 +236,7 @@ describe('DateInput', () => {
 
   test('input props reverse as true with icon', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <DateInput
           id="item"
           name="item"
@@ -251,7 +252,7 @@ describe('DateInput', () => {
 
   test('inline', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <DateInput id="item" name="item" inline value={DATE} />
       </Grommet>,
     );
@@ -260,7 +261,7 @@ describe('DateInput', () => {
 
   test('format inline', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <DateInput
           id="item"
           name="item"
@@ -275,7 +276,7 @@ describe('DateInput', () => {
 
   test('format disabled', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <DateInput
           id="item"
           name="item"
@@ -290,7 +291,7 @@ describe('DateInput', () => {
 
   test('range', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <DateInput id="item" name="item" value={DATES} />
       </Grommet>,
     );
@@ -299,7 +300,7 @@ describe('DateInput', () => {
 
   test('range inline', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <DateInput id="item" name="item" value={DATES} inline />
       </Grommet>,
     );
@@ -308,7 +309,7 @@ describe('DateInput', () => {
 
   test('range format', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <DateInput
           id="item"
           name="item"
@@ -322,7 +323,7 @@ describe('DateInput', () => {
 
   test('range format no value', () => {
     render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <DateInput id="item" name="item" format="mm/dd/yyyy-mm/dd/yyyy" />
       </Grommet>,
     );
@@ -332,7 +333,7 @@ describe('DateInput', () => {
 
   test('range format inline', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <DateInput
           id="item"
           name="item"
@@ -349,7 +350,7 @@ describe('DateInput', () => {
     const user = userEvent.setup();
 
     render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <DateInput
           id="item"
           name="item"
@@ -377,7 +378,7 @@ describe('DateInput', () => {
     const onChange = jest.fn((event) => event.value);
 
     const { getByText } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <DateInput
           id="item"
           name="item"
@@ -401,7 +402,7 @@ describe('DateInput', () => {
   test('focus', () => {
     const onFocus = jest.fn();
     const { container, getByPlaceholderText } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <DateInput
           id="item"
           name="item"
@@ -428,7 +429,7 @@ describe('DateInput', () => {
     const user = userEvent.setup();
 
     const { getByPlaceholderText } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <DateInput
           id="item"
           name="item"
@@ -446,7 +447,7 @@ describe('DateInput', () => {
   test('select inline', () => {
     const onChange = jest.fn((event) => event.value);
     const { container, getByText } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <DateInput
           id="item"
           name="item"
@@ -466,7 +467,7 @@ describe('DateInput', () => {
   test('select inline without timezone', () => {
     const onChange = jest.fn((event) => event.value);
     const { container, getByText } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <DateInput
           id="item"
           name="item"
@@ -486,7 +487,7 @@ describe('DateInput', () => {
   test('select format inline', () => {
     const onChange = jest.fn((event) => event.value);
     const { container, getByText } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <DateInput
           id="item"
           name="item"
@@ -508,7 +509,7 @@ describe('DateInput', () => {
   test('select format inline', () => {
     const onChange = jest.fn((event) => event.value);
     const { asFragment, getByText } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <DateInput
           id="item"
           name="item"
@@ -530,7 +531,7 @@ describe('DateInput', () => {
   test('select format', () => {
     const onChange = jest.fn((event) => event.value);
     const { container, getByPlaceholderText, getByText } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <DateInput
           id="item"
           name="item"
@@ -560,7 +561,7 @@ describe('DateInput', () => {
   test('select format no timezone', () => {
     const onChange = jest.fn((event) => event.value);
     const { asFragment, getByPlaceholderText, getByText } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <DateInput
           id="item"
           name="item"
@@ -590,7 +591,7 @@ describe('DateInput', () => {
   test('type format inline', () => {
     const onChange = jest.fn((event) => event.value);
     const { container, getByPlaceholderText } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <DateInput
           id="item"
           name="item"
@@ -614,7 +615,7 @@ describe('DateInput', () => {
   test('type format inline without timezone', () => {
     const onChange = jest.fn((event) => event.value);
     const { asFragment, getByPlaceholderText } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <DateInput
           id="item"
           name="item"
@@ -638,7 +639,7 @@ describe('DateInput', () => {
   test('type format inline short', () => {
     const onChange = jest.fn((event) => event.value);
     const { container, getByPlaceholderText } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <DateInput
           id="item"
           name="item"
@@ -663,7 +664,7 @@ describe('DateInput', () => {
   test('type format inline short without timezone', () => {
     const onChange = jest.fn((event) => event.value);
     const { asFragment, getByPlaceholderText } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <DateInput
           id="item"
           name="item"
@@ -688,7 +689,7 @@ describe('DateInput', () => {
   test('type format inline partial', () => {
     const onChange = jest.fn((event) => event.value);
     const { container, getByPlaceholderText } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <DateInput
           id="item"
           name="item"
@@ -712,7 +713,7 @@ describe('DateInput', () => {
   test('type format inline partial without timezone', () => {
     const onChange = jest.fn((event) => event.value);
     const { asFragment, getByPlaceholderText } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <DateInput
           id="item"
           name="item"
@@ -736,7 +737,7 @@ describe('DateInput', () => {
   test('select format inline range', () => {
     const onChange = jest.fn((event) => event.value);
     const { container, getByText } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <DateInput
           id="item"
           name="item"
@@ -762,7 +763,7 @@ describe('DateInput', () => {
   test('select format inline range without timezone', () => {
     const onChange = jest.fn((event) => event.value);
     const { asFragment, getByText } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <DateInput
           id="item"
           name="item"
@@ -785,7 +786,7 @@ describe('DateInput', () => {
   test('type format inline range', () => {
     const onChange = jest.fn((event) => event.value);
     const { container, getByPlaceholderText } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <DateInput
           id="item"
           name="item"
@@ -812,7 +813,7 @@ describe('DateInput', () => {
   test('type format inline range without timezone', () => {
     const onChange = jest.fn((event) => event.value);
     const { asFragment, getByPlaceholderText } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <DateInput
           id="item"
           name="item"
@@ -836,7 +837,7 @@ describe('DateInput', () => {
   test('type format inline range partial', () => {
     const onChange = jest.fn((event) => event.value);
     const { container, getByPlaceholderText } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <DateInput
           id="item"
           name="item"
@@ -872,7 +873,7 @@ describe('DateInput', () => {
   test('type format inline range partial without timezone', () => {
     const onChange = jest.fn((event) => event.value);
     const { asFragment, getByPlaceholderText } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <DateInput
           id="item"
           name="item"
@@ -910,7 +911,7 @@ describe('DateInput', () => {
     const Test = () => {
       const [value, setValue] = React.useState(DATE);
       return (
-        <Grommet>
+        <Grommet theme={hpe}>
           <DateInput
             id="item"
             name="item"
@@ -937,7 +938,7 @@ describe('DateInput', () => {
     const Test = () => {
       const [value, setValue] = React.useState(DATE_NOTZ);
       return (
-        <Grommet>
+        <Grommet theme={hpe}>
           <DateInput
             id="item"
             name="item"
@@ -963,7 +964,7 @@ describe('DateInput', () => {
     const Test = () => {
       const [value, setValue] = React.useState<string[] | []>([]);
       return (
-        <Grommet>
+        <Grommet theme={hpe}>
           <DateInput
             id="item"
             name="item"
@@ -990,7 +991,7 @@ describe('DateInput', () => {
     const Test = () => {
       const [value, setValue] = React.useState<string[] | []>([]);
       return (
-        <Grommet>
+        <Grommet theme={hpe}>
           <DateInput
             id="item"
             name="item"
@@ -1016,7 +1017,7 @@ describe('DateInput', () => {
   test(`dropProps should pass props to Drop
   when not inline`, () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <DateInput
           dropProps={{
             plain: true,
@@ -1032,7 +1033,7 @@ describe('DateInput', () => {
   when not inline and no format`, () => {
     window.scrollTo = jest.fn();
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <DateInput
           buttonProps={{
             disabled: true,
@@ -1045,7 +1046,7 @@ describe('DateInput', () => {
 
   test('disabled', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <DateInput disabled />
       </Grommet>,
     );
@@ -1054,7 +1055,7 @@ describe('DateInput', () => {
 
   test('renders size', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <DateInput size="xsmall" />
         <DateInput size="small" />
         <DateInput size="medium" />
@@ -1096,7 +1097,7 @@ describe('DateInput', () => {
 
     const onFocus = jest.fn();
     const { asFragment } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Form>
           <FormField>
             <DateInput format="mm/dd/yyyy" onFocus={onFocus} />
@@ -1113,7 +1114,7 @@ describe('DateInput', () => {
 
   test('icon', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <DateInput icon={<CalendarIcon color="red" />} name="item" />,
       </Grommet>,
     );
@@ -1159,7 +1160,7 @@ describe('DateInput', () => {
     render(
       // onReset e.stopPropagation() is testing to ensure
       // the event won't be lost if caller adds custom reset
-      <Grommet>
+      <Grommet theme={hpe}>
         <Form onReset={(e) => e.stopPropagation()}>
           <DateInput format="mm/dd/yyyy" name="date" />
           <Button label="Reset" type="reset" />
@@ -1178,7 +1179,7 @@ describe('DateInput', () => {
 
   test('read only', () => {
     const { asFragment } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <DateInput
           format="mm/dd/yyyy"
           value="01/01/2024"
@@ -1194,7 +1195,7 @@ describe('DateInput', () => {
     const user = userEvent.setup();
 
     const { asFragment } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <DateInput
           format="mm/dd/yyyy"
           value="01/01/2024"

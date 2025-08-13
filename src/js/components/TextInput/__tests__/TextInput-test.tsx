@@ -7,6 +7,7 @@ import { axe } from 'jest-axe';
 import 'jest-axe/extend-expect';
 import { Search } from 'grommet-icons';
 import userEvent from '@testing-library/user-event';
+import { hpe } from 'grommet-theme-hpe';
 
 import { createPortal, expectPortal } from '../../../utils/portal';
 
@@ -20,7 +21,7 @@ describe('TextInput', () => {
 
   test('should not have accessibility violations', async () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <TextInput a11yTitle="aria-test" name="item" />
       </Grommet>,
     );
@@ -36,7 +37,7 @@ describe('TextInput', () => {
 
   test('a11yTitle or aria-label', () => {
     const { container, getByLabelText } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <TextInput a11yTitle="aria-test" name="item" />
         <TextInput aria-label="aria-test-2" name="item-2" />
       </Grommet>,
@@ -98,7 +99,7 @@ describe('TextInput', () => {
 
   test('complex suggestions', (done) => {
     const { getByTestId, container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <TextInput
           data-testid="test-input"
           id="item"
@@ -126,7 +127,7 @@ describe('TextInput', () => {
 
   test('close suggestion drop', (done) => {
     const { getByTestId, container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <TextInput
           data-testid="test-input"
           id="item"
@@ -158,7 +159,7 @@ describe('TextInput', () => {
   test('let escape events propagage if there are no suggestions', (done) => {
     const callback = jest.fn();
     const { getByTestId } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Keyboard onEsc={callback}>
           <TextInput data-testid="test-input" id="item" name="item" />
         </Keyboard>
@@ -180,7 +181,7 @@ describe('TextInput', () => {
   test('calls onSuggestionsOpen', (done) => {
     const onSuggestionsOpen = jest.fn();
     const { getByTestId } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <TextInput
           data-testid="test-input"
           id="item"
@@ -202,7 +203,7 @@ describe('TextInput', () => {
   test('calls onSuggestionsClose', (done) => {
     const onSuggestionsClose = jest.fn();
     const { getByTestId, container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <TextInput
           data-testid="test-input"
           id="item"
@@ -235,7 +236,7 @@ describe('TextInput', () => {
   test('select suggestion', (done) => {
     const onSelect = jest.fn();
     const { getByTestId, container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <TextInput
           data-testid="test-input"
           plain
@@ -268,7 +269,7 @@ describe('TextInput', () => {
   test('select a suggestion with onSelect', () => {
     const onSelect = jest.fn();
     const { getByTestId, container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <TextInput
           data-testid="test-input"
           id="item"
@@ -299,7 +300,7 @@ describe('TextInput', () => {
     const suggestions = ['test1', 'test2'];
     const defaultSuggestionIndex = 1;
     const { getByTestId } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <TextInput
           data-testid="test-input"
           id="item"
@@ -328,7 +329,7 @@ describe('TextInput', () => {
     const suggestions = ['nodefault1', 'default', 'nodefault2'];
     const defaultSuggestionIndex = 1;
     const { getByTestId } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <TextInput
           data-testid="test-input"
           id="item"
@@ -360,7 +361,7 @@ describe('TextInput', () => {
   test('do not select any suggestion without defaultSuggestion', () => {
     const onSelect = jest.fn();
     const { getByTestId } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <TextInput
           data-testid="test-input"
           id="item"
@@ -397,7 +398,7 @@ describe('TextInput', () => {
   test('select a suggestion with onSuggestionSelect', () => {
     const onSuggestionSelect = jest.fn();
     const { getByTestId, container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <TextInput
           data-testid="test-input"
           id="item"
@@ -427,7 +428,7 @@ describe('TextInput', () => {
     const onSelect = jest.fn();
     const onSuggestionSelect = jest.fn();
     const { getByTestId, container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <TextInput
           data-testid="test-input"
           id="item"
@@ -457,7 +458,7 @@ describe('TextInput', () => {
   test('handles next and previous without suggestion', () => {
     const onSelect = jest.fn();
     const { getByTestId, container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <TextInput
           data-testid="test-input"
           id="item"
@@ -500,7 +501,7 @@ describe('TextInput', () => {
   test('should return focus to input on select', async () => {
     const onSelect = jest.fn();
     const { getByPlaceholderText } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <TextInput
           data-testid="test-input-focus"
           id="input-focus"
@@ -528,7 +529,7 @@ describe('TextInput', () => {
     const inputRef = React.createRef<HTMLInputElement>();
     const onSelect = jest.fn();
     const { getByPlaceholderText } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <TextInput
           ref={inputRef}
           data-testid="test-input-focus"
@@ -555,7 +556,7 @@ describe('TextInput', () => {
 
   test('should not have padding when plain="full"', async () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <TextInput
           plain="full"
           name="name"
@@ -568,7 +569,7 @@ describe('TextInput', () => {
 
   test('should have padding when plain', async () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <TextInput plain name="name" placeholder="should still have padding" />
       </Grommet>,
     );
@@ -577,7 +578,7 @@ describe('TextInput', () => {
 
   test('should show non-string placeholder', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <TextInput
           data-testid="test-styled-placeholder"
           id="styled-placeholder"
@@ -594,7 +595,7 @@ describe('TextInput', () => {
 
   test('should hide non-string placeholder when having a value', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <TextInput
           data-testid="styled-placeholder"
           id="styled-placeholder"
@@ -614,7 +615,7 @@ describe('TextInput', () => {
   test(`should only show default placeholder when placeholder is a
   string`, () => {
     const { container, getByTestId } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <TextInput
           data-testid="placeholder"
           id="placeholder"
@@ -640,7 +641,7 @@ describe('TextInput', () => {
 
   test('textAlign end', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <TextInput value="1234" textAlign="end" />
       </Grommet>,
     );
@@ -659,7 +660,7 @@ describe('TextInput', () => {
 
   test('renders size', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <TextInput size="xsmall" />
         <TextInput size="small" />
         <TextInput size="medium" />
@@ -681,7 +682,7 @@ describe('TextInput', () => {
 
   test('width', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <TextInput value="1234" width="medium" />
         <TextInput value="1234" width={{ width: 'medium', max: '100%' }} />
       </Grommet>,
@@ -709,7 +710,7 @@ describe('TextInput', () => {
 
   test('read only', () => {
     const { asFragment } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <TextInput value="test" readOnly aria-readonly />
       </Grommet>,
     );
@@ -720,7 +721,7 @@ describe('TextInput', () => {
     const user = userEvent.setup();
 
     const { asFragment } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <TextInput value="test" readOnly readOnlyCopy aria-readonly />
       </Grommet>,
     );

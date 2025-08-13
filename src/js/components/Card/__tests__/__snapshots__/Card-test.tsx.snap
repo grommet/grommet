@@ -1,4 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`Card Themed 1`] = `
 .c1 {
@@ -133,12 +133,15 @@ exports[`Card all 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  background-color: #ffffff;
+  color: #555555;
   min-width: 0;
   min-height: 0;
   flex-direction: column;
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.20);
+  box-shadow: none;
+  transition: box-shadow 0.3s ease-in-out;
 }
 
 .c2 {
@@ -151,6 +154,7 @@ exports[`Card all 1`] = `
   flex-direction: row;
   flex: 0 0 auto;
   justify-content: space-between;
+  padding: 24px;
 }
 
 .c3 {
@@ -161,11 +165,31 @@ exports[`Card all 1`] = `
   min-height: 0;
   flex-direction: column;
   flex: 1 1;
+  padding: 24px;
+}
+
+.c4 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: row;
+  flex: 0 0 auto;
+  justify-content: space-between;
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-top: 12px;
+  padding-bottom: 12px;
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -176,6 +200,32 @@ exports[`Card all 1`] = `
 @media only screen and (max-width: 768px) {
   .c1 {
     border-radius: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    padding: 12px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c3 {
+    padding: 12px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c4 {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c4 {
+    padding-top: 6px;
+    padding-bottom: 6px;
   }
 }
 
@@ -196,7 +246,7 @@ exports[`Card all 1`] = `
       body
     </div>
     <footer
-      class="c2"
+      class="c4"
     >
       footer
     </footer>
@@ -209,12 +259,15 @@ exports[`Card children 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  background-color: #ffffff;
+  color: #555555;
   min-width: 0;
   min-height: 0;
   flex-direction: column;
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.20);
+  box-shadow: none;
+  transition: box-shadow 0.3s ease-in-out;
 }
 
 .c2 {
@@ -227,8 +280,11 @@ exports[`Card children 1`] = `
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -237,8 +293,9 @@ exports[`Card children 1`] = `
 }
 
 .c3 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  font-weight: undefined;
 }
 
 @media only screen and (max-width: 768px) {
@@ -271,12 +328,15 @@ exports[`Card footer 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  background-color: #ffffff;
+  color: #555555;
   min-width: 0;
   min-height: 0;
   flex-direction: column;
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.20);
+  box-shadow: none;
+  transition: box-shadow 0.3s ease-in-out;
 }
 
 .c2 {
@@ -289,11 +349,18 @@ exports[`Card footer 1`] = `
   flex-direction: row;
   flex: 0 0 auto;
   justify-content: space-between;
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-top: 12px;
+  padding-bottom: 12px;
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -304,6 +371,20 @@ exports[`Card footer 1`] = `
 @media only screen and (max-width: 768px) {
   .c1 {
     border-radius: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    padding-top: 6px;
+    padding-bottom: 6px;
   }
 }
 
@@ -327,12 +408,15 @@ exports[`Card header 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  background-color: #ffffff;
+  color: #555555;
   min-width: 0;
   min-height: 0;
   flex-direction: column;
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.20);
+  box-shadow: none;
+  transition: box-shadow 0.3s ease-in-out;
 }
 
 .c2 {
@@ -345,11 +429,15 @@ exports[`Card header 1`] = `
   flex-direction: row;
   flex: 0 0 auto;
   justify-content: space-between;
+  padding: 24px;
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -360,6 +448,12 @@ exports[`Card header 1`] = `
 @media only screen and (max-width: 768px) {
   .c1 {
     border-radius: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    padding: 12px;
   }
 }
 
@@ -383,17 +477,23 @@ exports[`Card renders 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  background-color: #ffffff;
+  color: #555555;
   min-width: 0;
   min-height: 0;
   flex-direction: column;
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.20);
+  box-shadow: none;
+  transition: box-shadow 0.3s ease-in-out;
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;

@@ -4,6 +4,7 @@ import 'jest-axe/extend-expect';
 import 'regenerator-runtime/runtime';
 
 import { axe } from 'jest-axe';
+import { hpe } from 'grommet-theme-hpe';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
@@ -21,7 +22,7 @@ const customTheme = {
 describe('Accordion', () => {
   test('should have no accessibility violations', async () => {
     const { container, asFragment } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Accordion>
           <AccordionPanel>Panel body 1</AccordionPanel>
         </Accordion>
@@ -35,7 +36,7 @@ describe('Accordion', () => {
 
   test('no AccordionPanel', () => {
     const { asFragment } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Accordion />
       </Grommet>,
     );
@@ -49,7 +50,7 @@ describe('Accordion', () => {
 
   test('AccordionPanel', () => {
     const { asFragment } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Accordion>
           <AccordionPanel label="Panel 1">Panel body 1</AccordionPanel>
           <AccordionPanel label="Panel 2">Panel body 2</AccordionPanel>
@@ -64,7 +65,7 @@ describe('Accordion', () => {
 
   test('complex title', () => {
     const { asFragment } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Box background="dark-1">
           <Accordion>
             <AccordionPanel label={<div>Panel 1 complex</div>}>
@@ -83,7 +84,7 @@ describe('Accordion', () => {
 
   test('complex header', () => {
     const { asFragment } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Accordion activeIndex={1} animate={false}>
           <AccordionPanel header={<div>Panel 1 header</div>}>
             Panel body 1
@@ -102,7 +103,7 @@ describe('Accordion', () => {
     const user = userEvent.setup();
     const onActive = jest.fn();
     const { asFragment } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Accordion onActive={onActive}>
           <AccordionPanel label="Panel 1">Panel body 1</AccordionPanel>
           <AccordionPanel label="Panel 2">Panel body 2</AccordionPanel>
@@ -119,7 +120,7 @@ describe('Accordion', () => {
   test('change to second Panel without onActive', async () => {
     const user = userEvent.setup();
     const { asFragment } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Accordion animate={false}>
           <AccordionPanel label="Panel 1">Panel body 1</AccordionPanel>
           <AccordionPanel label="Panel 2">Panel body 2</AccordionPanel>
@@ -136,7 +137,7 @@ describe('Accordion', () => {
     const user = userEvent.setup();
     const onActive = jest.fn();
     const { asFragment } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Accordion animate={false} multiple onActive={onActive}>
           <AccordionPanel label="Panel 1">Panel body 1</AccordionPanel>
           <AccordionPanel label="Panel 2">Panel body 2</AccordionPanel>
@@ -208,7 +209,7 @@ describe('Accordion', () => {
     const user = userEvent.setup();
     const onActive = jest.fn();
     const { asFragment } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Accordion animate={false} activeIndex={1} onActive={onActive}>
           <AccordionPanel label="Panel 1">Panel body 1</AccordionPanel>
           <AccordionPanel label="Panel 2">Panel body 2</AccordionPanel>
@@ -315,7 +316,7 @@ describe('Accordion', () => {
     const onMouseOver2 = jest.fn();
     const onMouseOut2 = jest.fn();
     render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Accordion>
           <AccordionPanel
             label="Panel 1"
@@ -350,7 +351,7 @@ describe('Accordion', () => {
     const user = userEvent.setup();
     const onActive = jest.fn();
     const { asFragment } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Accordion animate={false} onActive={onActive}>
           <AccordionPanel label="Panel 1">Panel body 1</AccordionPanel>
           <AccordionPanel label="Panel 2">Panel body 2</AccordionPanel>
@@ -394,7 +395,7 @@ describe('Accordion', () => {
 
   test('should apply level prop to headings', () => {
     const { asFragment } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Accordion level={2}>
           <AccordionPanel label="Panel 1">Panel body 1</AccordionPanel>
           <AccordionPanel label="Panel 2">Panel body 2</AccordionPanel>

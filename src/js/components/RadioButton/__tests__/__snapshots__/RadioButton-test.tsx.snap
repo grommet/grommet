@@ -1,4 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`RadioButton background-color check themed 1`] = `
 .c0 {
@@ -276,8 +276,11 @@ exports[`RadioButton background-color themed symbolic 1`] = `
 
 exports[`RadioButton basic 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -300,7 +303,7 @@ exports[`RadioButton basic 1`] = `
   box-sizing: border-box;
   max-width: 100%;
   align-items: center;
-  border: solid 2px rgba(0, 0, 0, 0.15);
+  border: solid 1px rgba(0, 0, 0, 0.36);
   min-width: 0;
   min-height: 0;
   flex-direction: column;
@@ -317,11 +320,26 @@ exports[`RadioButton basic 1`] = `
   user-select: none;
   width: fit-content;
   cursor: pointer;
+  width: auto;
 }
 
 .c1:hover input:not([disabled])+div,
 .c1:hover input:not([disabled])+span {
-  border-color: #000000;
+  border-color: rgba(0, 0, 0, 0.72);
+}
+
+.c1:hover {
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.c1:has(input[checked]) div:has(> svg[aria-hidden="true"]) {
+  background: #008567;
+  border-color: rgba(0, 0, 0, 0);
+}
+
+.c1:has(input[checked]):hover:not([disabled]) div:has(> svg[aria-hidden="true"]) {
+  background: #006750;
+  border-color: rgba(0, 0, 0, 0);
 }
 
 .c3 {
@@ -339,7 +357,7 @@ exports[`RadioButton basic 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c4 {
-    border: solid 2px rgba(0, 0, 0, 0.15);
+    border: solid 1px rgba(0, 0, 0, 0.36);
   }
 }
 
@@ -464,9 +482,44 @@ exports[`RadioButton basic renders outside grommet wrapper 1`] = `
 `;
 
 exports[`RadioButton checked 1`] = `
+.c6 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 18px;
+  height: 18px;
+  fill: #ffffff;
+  stroke: #ffffff;
+}
+
+.c6 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c6 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c6 *[stroke*='#'],
+.c6 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c6 *[fill-rule],
+.c6 *[FILL-RULE],
+.c6 *[fill*='#'],
+.c6 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
+}
+
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -489,7 +542,7 @@ exports[`RadioButton checked 1`] = `
   box-sizing: border-box;
   max-width: 100%;
   align-items: center;
-  border: solid 2px #7D4CDB;
+  border: solid 1px rgba(0, 0, 0, 0);
   min-width: 0;
   min-height: 0;
   flex-direction: column;
@@ -506,11 +559,26 @@ exports[`RadioButton checked 1`] = `
   user-select: none;
   width: fit-content;
   cursor: pointer;
+  width: auto;
 }
 
 .c1:hover input:not([disabled])+div,
 .c1:hover input:not([disabled])+span {
-  border-color: #000000;
+  border-color: rgba(0, 0, 0, 0.72);
+}
+
+.c1:hover {
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.c1:has(input[checked]) div:has(> svg[aria-hidden="true"]) {
+  background: #008567;
+  border-color: rgba(0, 0, 0, 0);
+}
+
+.c1:has(input[checked]):hover:not([disabled]) div:has(> svg[aria-hidden="true"]) {
+  background: #006750;
+  border-color: rgba(0, 0, 0, 0);
 }
 
 .c3 {
@@ -522,21 +590,14 @@ exports[`RadioButton checked 1`] = `
   cursor: pointer;
 }
 
-.c6 {
-  box-sizing: border-box;
-  width: 24px;
-  height: 24px;
-  fill: #7D4CDB;
-  transform: scale(1);
-}
-
 .c5 {
+  background-color: #008567;
   transform: scale(1);
 }
 
 @media only screen and (max-width: 768px) {
   .c4 {
-    border: solid 2px #7D4CDB;
+    border: solid 1px rgba(0, 0, 0, 0);
   }
 }
 
@@ -560,14 +621,14 @@ exports[`RadioButton checked 1`] = `
         class="c4 c5"
       >
         <svg
+          aria-hidden="true"
           class="c6"
-          preserveAspectRatio="xMidYMid meet"
           viewBox="0 0 24 24"
         >
           <circle
             cx="12"
             cy="12"
-            r="6"
+            r="8"
           />
         </svg>
       </div>
@@ -578,8 +639,11 @@ exports[`RadioButton checked 1`] = `
 
 exports[`RadioButton children 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -601,8 +665,8 @@ exports[`RadioButton children 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background-color: #7D4CDB;
-  color: #f8f8f8;
+  background-color: #008567;
+  color: #ffffff;
   min-width: 0;
   min-height: 0;
   flex-direction: column;
@@ -613,8 +677,7 @@ exports[`RadioButton children 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background-color: #6FFFB0;
-  color: #444444;
+  background: accent-1;
   min-width: 0;
   min-height: 0;
   flex-direction: column;
@@ -628,11 +691,26 @@ exports[`RadioButton children 1`] = `
   user-select: none;
   width: fit-content;
   cursor: pointer;
+  width: auto;
 }
 
 .c1:hover input:not([disabled])+div,
 .c1:hover input:not([disabled])+span {
-  border-color: #000000;
+  border-color: rgba(0, 0, 0, 0.72);
+}
+
+.c1:hover {
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.c1:has(input[checked]) div:has(> svg[aria-hidden="true"]) {
+  background: #008567;
+  border-color: rgba(0, 0, 0, 0);
+}
+
+.c1:has(input[checked]):hover:not([disabled]) div:has(> svg[aria-hidden="true"]) {
+  background: #006750;
+  border-color: rgba(0, 0, 0, 0);
 }
 
 .c3 {
@@ -698,9 +776,44 @@ exports[`RadioButton children 1`] = `
 `;
 
 exports[`RadioButton disabled 1`] = `
+.c8 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 18px;
+  height: 18px;
+  fill: #ffffff;
+  stroke: #ffffff;
+}
+
+.c8 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c8 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c8 *[stroke*='#'],
+.c8 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c8 *[fill-rule],
+.c8 *[FILL-RULE],
+.c8 *[fill*='#'],
+.c8 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
+}
+
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -723,7 +836,7 @@ exports[`RadioButton disabled 1`] = `
   box-sizing: border-box;
   max-width: 100%;
   align-items: center;
-  border: solid 2px rgba(0, 0, 0, 0.15);
+  border: solid 1px rgba(0, 0, 0, 0.36);
   min-width: 0;
   min-height: 0;
   flex-direction: column;
@@ -738,7 +851,7 @@ exports[`RadioButton disabled 1`] = `
   box-sizing: border-box;
   max-width: 100%;
   align-items: center;
-  border: solid 2px #7D4CDB;
+  border: solid 1px rgba(0, 0, 0, 0);
   min-width: 0;
   min-height: 0;
   flex-direction: column;
@@ -756,11 +869,22 @@ exports[`RadioButton disabled 1`] = `
   width: fit-content;
   opacity: 0.5;
   cursor: default;
+  width: auto;
 }
 
 .c1:hover input:not([disabled])+div,
 .c1:hover input:not([disabled])+span {
-  border-color: #000000;
+  border-color: rgba(0, 0, 0, 0.72);
+}
+
+.c1:has(input[checked]) div:has(> svg[aria-hidden="true"]) {
+  background: #008567;
+  border-color: rgba(0, 0, 0, 0);
+}
+
+.c1:has(input[checked]):hover:not([disabled]) div:has(> svg[aria-hidden="true"]) {
+  background: #006750;
+  border-color: rgba(0, 0, 0, 0);
 }
 
 .c3 {
@@ -771,27 +895,24 @@ exports[`RadioButton disabled 1`] = `
   margin: 0;
 }
 
-.c7 {
-  box-sizing: border-box;
-  width: 24px;
-  height: 24px;
-  fill: #7D4CDB;
+.c5 {
   transform: scale(1);
 }
 
-.c5 {
+.c7 {
+  background-color: #008567;
   transform: scale(1);
 }
 
 @media only screen and (max-width: 768px) {
   .c4 {
-    border: solid 2px rgba(0, 0, 0, 0.15);
+    border: solid 1px rgba(0, 0, 0, 0.36);
   }
 }
 
 @media only screen and (max-width: 768px) {
   .c6 {
-    border: solid 2px #7D4CDB;
+    border: solid 1px rgba(0, 0, 0, 0);
   }
 }
 
@@ -833,17 +954,17 @@ exports[`RadioButton disabled 1`] = `
         value="2"
       />
       <div
-        class="c6 c5"
+        class="c6 c7"
       >
         <svg
-          class="c7"
-          preserveAspectRatio="xMidYMid meet"
+          aria-hidden="true"
+          class="c8"
           viewBox="0 0 24 24"
         >
           <circle
             cx="12"
             cy="12"
-            r="6"
+            r="8"
           />
         </svg>
       </div>
@@ -854,8 +975,11 @@ exports[`RadioButton disabled 1`] = `
 
 exports[`RadioButton label 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -879,7 +1003,7 @@ exports[`RadioButton label 1`] = `
   box-sizing: border-box;
   max-width: 100%;
   align-items: center;
-  border: solid 2px rgba(0, 0, 0, 0.15);
+  border: solid 1px rgba(0, 0, 0, 0.36);
   min-width: 0;
   min-height: 0;
   flex-direction: column;
@@ -896,11 +1020,26 @@ exports[`RadioButton label 1`] = `
   user-select: none;
   width: fit-content;
   cursor: pointer;
+  width: auto;
 }
 
 .c1:hover input:not([disabled])+div,
 .c1:hover input:not([disabled])+span {
-  border-color: #000000;
+  border-color: rgba(0, 0, 0, 0.72);
+}
+
+.c1:hover {
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.c1:has(input[checked]) div:has(> svg[aria-hidden="true"]) {
+  background: #008567;
+  border-color: rgba(0, 0, 0, 0);
+}
+
+.c1:has(input[checked]):hover:not([disabled]) div:has(> svg[aria-hidden="true"]) {
+  background: #006750;
+  border-color: rgba(0, 0, 0, 0);
 }
 
 .c3 {
@@ -912,19 +1051,23 @@ exports[`RadioButton label 1`] = `
   cursor: pointer;
 }
 
+.c6 {
+  font-weight: 400;
+}
+
 .c5 {
   transform: scale(1);
 }
 
 @media only screen and (max-width: 768px) {
   .c2 {
-    margin-right: 6px;
+    margin-right: 12px;
   }
 }
 
 @media only screen and (max-width: 768px) {
   .c4 {
-    border: solid 2px rgba(0, 0, 0, 0.15);
+    border: solid 1px rgba(0, 0, 0, 0.36);
   }
 }
 
@@ -948,7 +1091,7 @@ exports[`RadioButton label 1`] = `
       />
     </div>
     <span
-      class="StyledRadioButton__StyledRadioButtonLabel-sc-g1f6ld-2"
+      class="c6"
     >
       test label
     </span>
@@ -1183,8 +1326,11 @@ exports[`RadioButton renders custom circle icon 1`] = `
 
 exports[`RadioButton should apply a11yTitle or aria-label 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1207,7 +1353,7 @@ exports[`RadioButton should apply a11yTitle or aria-label 1`] = `
   box-sizing: border-box;
   max-width: 100%;
   align-items: center;
-  border: solid 2px rgba(0, 0, 0, 0.15);
+  border: solid 1px rgba(0, 0, 0, 0.36);
   min-width: 0;
   min-height: 0;
   flex-direction: column;
@@ -1224,11 +1370,26 @@ exports[`RadioButton should apply a11yTitle or aria-label 1`] = `
   user-select: none;
   width: fit-content;
   cursor: pointer;
+  width: auto;
 }
 
 .c1:hover input:not([disabled])+div,
 .c1:hover input:not([disabled])+span {
-  border-color: #000000;
+  border-color: rgba(0, 0, 0, 0.72);
+}
+
+.c1:hover {
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.c1:has(input[checked]) div:has(> svg[aria-hidden="true"]) {
+  background: #008567;
+  border-color: rgba(0, 0, 0, 0);
+}
+
+.c1:has(input[checked]):hover:not([disabled]) div:has(> svg[aria-hidden="true"]) {
+  background: #006750;
+  border-color: rgba(0, 0, 0, 0);
 }
 
 .c3 {
@@ -1246,7 +1407,7 @@ exports[`RadioButton should apply a11yTitle or aria-label 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c4 {
-    border: solid 2px rgba(0, 0, 0, 0.15);
+    border: solid 1px rgba(0, 0, 0, 0.36);
   }
 }
 
@@ -1292,8 +1453,11 @@ exports[`RadioButton should apply a11yTitle or aria-label 1`] = `
 
 exports[`RadioButton should have no accessibility violations 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1316,7 +1480,7 @@ exports[`RadioButton should have no accessibility violations 1`] = `
   box-sizing: border-box;
   max-width: 100%;
   align-items: center;
-  border: solid 2px rgba(0, 0, 0, 0.15);
+  border: solid 1px rgba(0, 0, 0, 0.36);
   min-width: 0;
   min-height: 0;
   flex-direction: column;
@@ -1333,11 +1497,26 @@ exports[`RadioButton should have no accessibility violations 1`] = `
   user-select: none;
   width: fit-content;
   cursor: pointer;
+  width: auto;
 }
 
 .c1:hover input:not([disabled])+div,
 .c1:hover input:not([disabled])+span {
-  border-color: #000000;
+  border-color: rgba(0, 0, 0, 0.72);
+}
+
+.c1:hover {
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.c1:has(input[checked]) div:has(> svg[aria-hidden="true"]) {
+  background: #008567;
+  border-color: rgba(0, 0, 0, 0);
+}
+
+.c1:has(input[checked]):hover:not([disabled]) div:has(> svg[aria-hidden="true"]) {
+  background: #006750;
+  border-color: rgba(0, 0, 0, 0);
 }
 
 .c3 {
@@ -1355,7 +1534,7 @@ exports[`RadioButton should have no accessibility violations 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c4 {
-    border: solid 2px rgba(0, 0, 0, 0.15);
+    border: solid 1px rgba(0, 0, 0, 0.36);
   }
 }
 

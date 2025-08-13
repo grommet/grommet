@@ -216,8 +216,11 @@ exports[`MaskedInput applies custom global.hover theme to options 2`] = `
 
 exports[`MaskedInput basic 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -234,16 +237,22 @@ exports[`MaskedInput basic 1`] = `
   background: transparent;
   color: inherit;
   width: 100%;
-  padding: 11px;
-  font-weight: 600;
+  line-height: inherit;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-weight: 400;
   margin: 0;
-  border: 1px solid rgba(0, 0, 0, 0.33);
-  border-radius: 4px;
+  border: 1px solid rgba(0, 0, 0, 0.36);
+  border-radius: 8px;
+  color: #2e2e2e;
 }
 
 .c2:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c2:focus >circle,
@@ -253,8 +262,9 @@ exports[`MaskedInput basic 1`] = `
 .c2:focus >polygon,
 .c2:focus >polyline,
 .c2:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c2:focus ::-moz-focus-inner {
@@ -262,15 +272,15 @@ exports[`MaskedInput basic 1`] = `
 }
 
 .c2::-webkit-input-placeholder {
-  color: #AAAAAA;
+  color: #676767;
 }
 
 .c2::-moz-placeholder {
-  color: #AAAAAA;
+  color: #676767;
 }
 
 .c2:-ms-input-placeholder {
-  color: #AAAAAA;
+  color: #676767;
 }
 
 .c2 ::-webkit-search-decoration {
@@ -287,9 +297,26 @@ exports[`MaskedInput basic 1`] = `
   opacity: 1;
 }
 
+.c2::-webkit-input-placeholder {
+  font-weight: 400;
+}
+
+.c2::-moz-placeholder {
+  font-weight: 400;
+}
+
+.c2:-ms-input-placeholder {
+  font-weight: 400;
+}
+
 .c1 {
   position: relative;
   width: 100%;
+}
+
+.c1 svg {
+  fill: #2e2e2e;
+  stroke: #2e2e2e;
 }
 
 <div
@@ -649,8 +676,11 @@ exports[`MaskedInput custom theme input font size 1`] = `
 
 exports[`MaskedInput disabled 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -667,18 +697,24 @@ exports[`MaskedInput disabled 1`] = `
   background: transparent;
   color: inherit;
   width: 100%;
-  padding: 11px;
-  font-weight: 600;
+  line-height: inherit;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-weight: 400;
   margin: 0;
-  border: 1px solid rgba(0, 0, 0, 0.33);
-  border-radius: 4px;
+  border: 1px solid rgba(0, 0, 0, 0.36);
+  border-radius: 8px;
+  color: #2e2e2e;
   opacity: 0.3;
   cursor: default;
 }
 
 .c2:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c2:focus >circle,
@@ -688,8 +724,9 @@ exports[`MaskedInput disabled 1`] = `
 .c2:focus >polygon,
 .c2:focus >polyline,
 .c2:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c2:focus ::-moz-focus-inner {
@@ -697,15 +734,15 @@ exports[`MaskedInput disabled 1`] = `
 }
 
 .c2::-webkit-input-placeholder {
-  color: #AAAAAA;
+  color: #676767;
 }
 
 .c2::-moz-placeholder {
-  color: #AAAAAA;
+  color: #676767;
 }
 
 .c2:-ms-input-placeholder {
-  color: #AAAAAA;
+  color: #676767;
 }
 
 .c2 ::-webkit-search-decoration {
@@ -722,9 +759,26 @@ exports[`MaskedInput disabled 1`] = `
   opacity: 1;
 }
 
+.c2::-webkit-input-placeholder {
+  font-weight: 400;
+}
+
+.c2::-moz-placeholder {
+  font-weight: 400;
+}
+
+.c2:-ms-input-placeholder {
+  font-weight: 400;
+}
+
 .c1 {
   position: relative;
   width: 100%;
+}
+
+.c1 svg {
+  fill: #2e2e2e;
+  stroke: #2e2e2e;
 }
 
 <div
@@ -747,8 +801,11 @@ exports[`MaskedInput disabled 1`] = `
 
 exports[`MaskedInput event target props are available option via keyboard 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -765,18 +822,24 @@ exports[`MaskedInput event target props are available option via keyboard 1`] = 
   background: transparent;
   color: inherit;
   width: 100%;
-  padding: 11px;
-  font-weight: 600;
+  line-height: inherit;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-weight: 400;
   margin: 0;
-  font-size: 18px;
-  line-height: 24px;
-  border: 1px solid rgba(0, 0, 0, 0.33);
-  border-radius: 4px;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  border: 1px solid rgba(0, 0, 0, 0.36);
+  border-radius: 8px;
+  color: #2e2e2e;
 }
 
 .c2:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c2:focus >circle,
@@ -786,8 +849,9 @@ exports[`MaskedInput event target props are available option via keyboard 1`] = 
 .c2:focus >polygon,
 .c2:focus >polyline,
 .c2:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c2:focus ::-moz-focus-inner {
@@ -795,15 +859,15 @@ exports[`MaskedInput event target props are available option via keyboard 1`] = 
 }
 
 .c2::-webkit-input-placeholder {
-  color: #AAAAAA;
+  color: #676767;
 }
 
 .c2::-moz-placeholder {
-  color: #AAAAAA;
+  color: #676767;
 }
 
 .c2:-ms-input-placeholder {
-  color: #AAAAAA;
+  color: #676767;
 }
 
 .c2 ::-webkit-search-decoration {
@@ -820,9 +884,26 @@ exports[`MaskedInput event target props are available option via keyboard 1`] = 
   opacity: 1;
 }
 
+.c2::-webkit-input-placeholder {
+  font-weight: 400;
+}
+
+.c2::-moz-placeholder {
+  font-weight: 400;
+}
+
+.c2:-ms-input-placeholder {
+  font-weight: 400;
+}
+
 .c1 {
   position: relative;
   width: 100%;
+}
+
+.c1 svg {
+  fill: #2e2e2e;
+  stroke: #2e2e2e;
 }
 
 <div
@@ -849,8 +930,11 @@ exports[`MaskedInput event target props are available option via keyboard 1`] = 
 
 exports[`MaskedInput event target props are available option via mouse 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -867,20 +951,26 @@ exports[`MaskedInput event target props are available option via mouse 1`] = `
   background: transparent;
   color: inherit;
   width: 100%;
-  padding: 11px;
-  font-weight: 600;
+  line-height: inherit;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-weight: 400;
   margin: 0;
-  font-size: 22px;
-  line-height: 28px;
-  border: 1px solid rgba(0, 0, 0, 0.33);
-  border-radius: 4px;
+  font-size: 1.375rem;
+  line-height: 1.75rem;
+  border: 1px solid rgba(0, 0, 0, 0.36);
+  border-radius: 8px;
+  color: #2e2e2e;
   outline: none;
   border: none;
 }
 
 .c2:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c2:focus >circle,
@@ -890,8 +980,9 @@ exports[`MaskedInput event target props are available option via mouse 1`] = `
 .c2:focus >polygon,
 .c2:focus >polyline,
 .c2:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c2:focus ::-moz-focus-inner {
@@ -899,15 +990,15 @@ exports[`MaskedInput event target props are available option via mouse 1`] = `
 }
 
 .c2::-webkit-input-placeholder {
-  color: #AAAAAA;
+  color: #676767;
 }
 
 .c2::-moz-placeholder {
-  color: #AAAAAA;
+  color: #676767;
 }
 
 .c2:-ms-input-placeholder {
-  color: #AAAAAA;
+  color: #676767;
 }
 
 .c2 ::-webkit-search-decoration {
@@ -924,9 +1015,26 @@ exports[`MaskedInput event target props are available option via mouse 1`] = `
   opacity: 1;
 }
 
+.c2::-webkit-input-placeholder {
+  font-weight: 400;
+}
+
+.c2::-moz-placeholder {
+  font-weight: 400;
+}
+
+.c2:-ms-input-placeholder {
+  font-weight: 400;
+}
+
 .c1 {
   position: relative;
   width: 100%;
+}
+
+.c1 svg {
+  fill: #2e2e2e;
+  stroke: #2e2e2e;
 }
 
 <div
@@ -960,7 +1068,7 @@ exports[`MaskedInput event target props are available option via mouse 2`] = `
   min-height: 0;
   flex-direction: column;
   overflow: auto;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.20);
+  box-shadow: 0px 6px 12px 0px rgba(0, 0, 0, 0.12);
 }
 
 .c2 {
@@ -983,37 +1091,36 @@ exports[`MaskedInput event target props are available option via mouse 2`] = `
   flex: 0 0 auto;
 }
 
-.c6 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  flex-direction: column;
-  padding-left: 12px;
-  padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
-}
-
 .c1 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  border-radius: 0px;
+  border-radius: 6px;
   position: fixed;
-  z-index: 20;
+  z-index: 110;
   outline: none;
-  background-color: #FFFFFF;
-  color: #444444;
+  background-color: #ffffff;
+  color: #555555;
+  margin-top: 6px;
   opacity: 0;
   transform-origin: top left;
   animation: kPQHBD 0.1s forwards;
   animation-delay: 0.01s;
+}
+
+.c1 [class*=MaskedInput__ContainerBox] {
+  padding-block: 6px;
+  padding-inline: 6px;
+  gap: 6px;
+  display: flex;
+  flex-direction: column;
 }
 
 .c5 {
@@ -1026,21 +1133,35 @@ exports[`MaskedInput event target props are available option via mouse 2`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  color: inherit;
-  outline: none;
   border: none;
-  padding: 0;
-  text-align: inherit;
+  border-radius: 9999px;
+  padding: 5px 12px;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  padding: 5px 12px;
+  color: #555555;
+  border-style: solid;
+  border-width: 1px;
+  border-color: rgba(0, 0, 0, 0);
+  border-radius: 6px;
+  font-weight: 500;
+  padding: 5px 12px;
+  text-align: start;
+  transition-property: color,background-color,border-color,box-shadow;
+  transition-duration: 0.1s;
+  transition-timing-function: ease-in-out;
 }
 
 .c5:hover {
-  background-color: rgba(221, 221, 221, 0.4);
-  color: #000000;
+  background-color: rgba(0, 0, 0, 0.04);
+  color: #555555;
+  border-color: rgba(0, 0, 0, 0);
 }
 
 .c5:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c5:focus >circle,
@@ -1050,8 +1171,9 @@ exports[`MaskedInput event target props are available option via mouse 2`] = `
 .c5:focus >polygon,
 .c5:focus >polyline,
 .c5:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c5:focus ::-moz-focus-inner {
@@ -1059,6 +1181,8 @@ exports[`MaskedInput event target props are available option via mouse 2`] = `
 }
 
 .c5:focus:not(:focus-visible) {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -1070,6 +1194,8 @@ exports[`MaskedInput event target props are available option via mouse 2`] = `
 .c5:focus:not(:focus-visible) >polygon,
 .c5:focus:not(:focus-visible) >polyline,
 .c5:focus:not(:focus-visible) >rect {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -1080,20 +1206,6 @@ exports[`MaskedInput event target props are available option via mouse 2`] = `
 
 .c3 {
   max-height: inherit;
-}
-
-@media only screen and (max-width: 768px) {
-  .c6 {
-    padding-left: 6px;
-    padding-right: 6px;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .c6 {
-    padding-top: 3px;
-    padding-bottom: 3px;
-  }
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
@@ -1124,11 +1236,7 @@ exports[`MaskedInput event target props are available option via mouse 2`] = `
         tabindex="-1"
         type="button"
       >
-        <div
-          class="c6"
-        >
-          aa
-        </div>
+        aa
       </button>
     </div>
     <div
@@ -1140,11 +1248,7 @@ exports[`MaskedInput event target props are available option via mouse 2`] = `
         tabindex="-1"
         type="button"
       >
-        <div
-          class="c6"
-        >
-          bb
-        </div>
+        bb
       </button>
     </div>
   </div>
@@ -1155,10 +1259,10 @@ exports[`MaskedInput event target props are available option via mouse 3`] = `""
 
 exports[`MaskedInput event target props are available option via mouse 4`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 kiEDjE"
+  class="StyledGrommet-sc-19lkkz7-0 iRGypN"
 >
   <div
-    class="StyledMaskedInput__StyledMaskedInputContainer-sc-99vkfa-1 dPNevk"
+    class="StyledMaskedInput__StyledMaskedInputContainer-sc-99vkfa-1 gTmUcZ"
   >
     <input
       aria-activedescendant="listbox-option--1__item"
@@ -1166,7 +1270,7 @@ exports[`MaskedInput event target props are available option via mouse 4`] = `
       aria-controls="listbox__item"
       aria-expanded="true"
       autocomplete="off"
-      class="StyledMaskedInput-sc-99vkfa-0 dqOIlv"
+      class="StyledMaskedInput-sc-99vkfa-0 biiwE"
       data-testid="test-input"
       id="item"
       name="item"
@@ -1182,10 +1286,10 @@ exports[`MaskedInput icon 1`] = `
 .c3 {
   display: inline-block;
   flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #666666;
-  stroke: #666666;
+  width: 18px;
+  height: 18px;
+  fill: #555555;
+  stroke: #555555;
 }
 
 .c3 g {
@@ -1212,8 +1316,11 @@ exports[`MaskedInput icon 1`] = `
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1230,17 +1337,23 @@ exports[`MaskedInput icon 1`] = `
   background: transparent;
   color: inherit;
   width: 100%;
-  padding: 11px;
-  font-weight: 600;
+  line-height: inherit;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-weight: 400;
   margin: 0;
-  border: 1px solid rgba(0, 0, 0, 0.33);
-  border-radius: 4px;
-  padding-left: 48px;
+  border: 1px solid rgba(0, 0, 0, 0.36);
+  border-radius: 8px;
+  color: #2e2e2e;
+  padding-left: 42px;
 }
 
 .c4:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c4:focus >circle,
@@ -1250,8 +1363,9 @@ exports[`MaskedInput icon 1`] = `
 .c4:focus >polygon,
 .c4:focus >polyline,
 .c4:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c4:focus ::-moz-focus-inner {
@@ -1259,15 +1373,15 @@ exports[`MaskedInput icon 1`] = `
 }
 
 .c4::-webkit-input-placeholder {
-  color: #AAAAAA;
+  color: #676767;
 }
 
 .c4::-moz-placeholder {
-  color: #AAAAAA;
+  color: #676767;
 }
 
 .c4:-ms-input-placeholder {
-  color: #AAAAAA;
+  color: #676767;
 }
 
 .c4 ::-webkit-search-decoration {
@@ -1284,9 +1398,26 @@ exports[`MaskedInput icon 1`] = `
   opacity: 1;
 }
 
+.c4::-webkit-input-placeholder {
+  font-weight: 400;
+}
+
+.c4::-moz-placeholder {
+  font-weight: 400;
+}
+
+.c4:-ms-input-placeholder {
+  font-weight: 400;
+}
+
 .c1 {
   position: relative;
   width: 100%;
+}
+
+.c1 svg {
+  fill: #2e2e2e;
+  stroke: #2e2e2e;
 }
 
 .c2 {
@@ -1296,7 +1427,7 @@ exports[`MaskedInput icon 1`] = `
   top: 50%;
   transform: translateY(-50%);
   pointer-events: none;
-  left: 12px;
+  left: 13px;
 }
 
 <div
@@ -1336,10 +1467,10 @@ exports[`MaskedInput icon reverse 1`] = `
 .c3 {
   display: inline-block;
   flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #666666;
-  stroke: #666666;
+  width: 18px;
+  height: 18px;
+  fill: #555555;
+  stroke: #555555;
 }
 
 .c3 g {
@@ -1366,8 +1497,11 @@ exports[`MaskedInput icon reverse 1`] = `
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1384,17 +1518,23 @@ exports[`MaskedInput icon reverse 1`] = `
   background: transparent;
   color: inherit;
   width: 100%;
-  padding: 11px;
-  font-weight: 600;
+  line-height: inherit;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-weight: 400;
   margin: 0;
-  border: 1px solid rgba(0, 0, 0, 0.33);
-  border-radius: 4px;
-  padding-right: 48px;
+  border: 1px solid rgba(0, 0, 0, 0.36);
+  border-radius: 8px;
+  color: #2e2e2e;
+  padding-right: 42px;
 }
 
 .c4:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c4:focus >circle,
@@ -1404,8 +1544,9 @@ exports[`MaskedInput icon reverse 1`] = `
 .c4:focus >polygon,
 .c4:focus >polyline,
 .c4:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c4:focus ::-moz-focus-inner {
@@ -1413,15 +1554,15 @@ exports[`MaskedInput icon reverse 1`] = `
 }
 
 .c4::-webkit-input-placeholder {
-  color: #AAAAAA;
+  color: #676767;
 }
 
 .c4::-moz-placeholder {
-  color: #AAAAAA;
+  color: #676767;
 }
 
 .c4:-ms-input-placeholder {
-  color: #AAAAAA;
+  color: #676767;
 }
 
 .c4 ::-webkit-search-decoration {
@@ -1438,9 +1579,26 @@ exports[`MaskedInput icon reverse 1`] = `
   opacity: 1;
 }
 
+.c4::-webkit-input-placeholder {
+  font-weight: 400;
+}
+
+.c4::-moz-placeholder {
+  font-weight: 400;
+}
+
+.c4:-ms-input-placeholder {
+  font-weight: 400;
+}
+
 .c1 {
   position: relative;
   width: 100%;
+}
+
+.c1 svg {
+  fill: #2e2e2e;
+  stroke: #2e2e2e;
 }
 
 .c2 {
@@ -1450,7 +1608,7 @@ exports[`MaskedInput icon reverse 1`] = `
   top: 50%;
   transform: translateY(-50%);
   pointer-events: none;
-  right: 12px;
+  right: 13px;
 }
 
 <div
@@ -1488,8 +1646,11 @@ exports[`MaskedInput icon reverse 1`] = `
 
 exports[`MaskedInput mask 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1506,16 +1667,22 @@ exports[`MaskedInput mask 1`] = `
   background: transparent;
   color: inherit;
   width: 100%;
-  padding: 11px;
-  font-weight: 600;
+  line-height: inherit;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-weight: 400;
   margin: 0;
-  border: 1px solid rgba(0, 0, 0, 0.33);
-  border-radius: 4px;
+  border: 1px solid rgba(0, 0, 0, 0.36);
+  border-radius: 8px;
+  color: #2e2e2e;
 }
 
 .c2:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c2:focus >circle,
@@ -1525,8 +1692,9 @@ exports[`MaskedInput mask 1`] = `
 .c2:focus >polygon,
 .c2:focus >polyline,
 .c2:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c2:focus ::-moz-focus-inner {
@@ -1534,15 +1702,15 @@ exports[`MaskedInput mask 1`] = `
 }
 
 .c2::-webkit-input-placeholder {
-  color: #AAAAAA;
+  color: #676767;
 }
 
 .c2::-moz-placeholder {
-  color: #AAAAAA;
+  color: #676767;
 }
 
 .c2:-ms-input-placeholder {
-  color: #AAAAAA;
+  color: #676767;
 }
 
 .c2 ::-webkit-search-decoration {
@@ -1559,9 +1727,26 @@ exports[`MaskedInput mask 1`] = `
   opacity: 1;
 }
 
+.c2::-webkit-input-placeholder {
+  font-weight: 400;
+}
+
+.c2::-moz-placeholder {
+  font-weight: 400;
+}
+
+.c2:-ms-input-placeholder {
+  font-weight: 400;
+}
+
 .c1 {
   position: relative;
   width: 100%;
+}
+
+.c1 svg {
+  fill: #2e2e2e;
+  stroke: #2e2e2e;
 }
 
 <div
@@ -1595,7 +1780,7 @@ exports[`MaskedInput mask 2`] = `
   min-height: 0;
   flex-direction: column;
   overflow: auto;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.20);
+  box-shadow: 0px 6px 12px 0px rgba(0, 0, 0, 0.12);
 }
 
 .c2 {
@@ -1618,37 +1803,36 @@ exports[`MaskedInput mask 2`] = `
   flex: 0 0 auto;
 }
 
-.c6 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  flex-direction: column;
-  padding-left: 12px;
-  padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
-}
-
 .c1 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  border-radius: 0px;
+  border-radius: 6px;
   position: fixed;
-  z-index: 20;
+  z-index: 110;
   outline: none;
-  background-color: #FFFFFF;
-  color: #444444;
+  background-color: #ffffff;
+  color: #555555;
+  margin-top: 6px;
   opacity: 0;
   transform-origin: top left;
   animation: kPQHBD 0.1s forwards;
   animation-delay: 0.01s;
+}
+
+.c1 [class*=MaskedInput__ContainerBox] {
+  padding-block: 6px;
+  padding-inline: 6px;
+  gap: 6px;
+  display: flex;
+  flex-direction: column;
 }
 
 .c5 {
@@ -1661,21 +1845,35 @@ exports[`MaskedInput mask 2`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  color: inherit;
-  outline: none;
   border: none;
-  padding: 0;
-  text-align: inherit;
+  border-radius: 9999px;
+  padding: 5px 12px;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  padding: 5px 12px;
+  color: #555555;
+  border-style: solid;
+  border-width: 1px;
+  border-color: rgba(0, 0, 0, 0);
+  border-radius: 6px;
+  font-weight: 500;
+  padding: 5px 12px;
+  text-align: start;
+  transition-property: color,background-color,border-color,box-shadow;
+  transition-duration: 0.1s;
+  transition-timing-function: ease-in-out;
 }
 
 .c5:hover {
-  background-color: rgba(221, 221, 221, 0.4);
-  color: #000000;
+  background-color: rgba(0, 0, 0, 0.04);
+  color: #555555;
+  border-color: rgba(0, 0, 0, 0);
 }
 
 .c5:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c5:focus >circle,
@@ -1685,8 +1883,9 @@ exports[`MaskedInput mask 2`] = `
 .c5:focus >polygon,
 .c5:focus >polyline,
 .c5:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c5:focus ::-moz-focus-inner {
@@ -1694,6 +1893,8 @@ exports[`MaskedInput mask 2`] = `
 }
 
 .c5:focus:not(:focus-visible) {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -1705,6 +1906,8 @@ exports[`MaskedInput mask 2`] = `
 .c5:focus:not(:focus-visible) >polygon,
 .c5:focus:not(:focus-visible) >polyline,
 .c5:focus:not(:focus-visible) >rect {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -1715,20 +1918,6 @@ exports[`MaskedInput mask 2`] = `
 
 .c3 {
   max-height: inherit;
-}
-
-@media only screen and (max-width: 768px) {
-  .c6 {
-    padding-left: 6px;
-    padding-right: 6px;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .c6 {
-    padding-top: 3px;
-    padding-bottom: 3px;
-  }
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
@@ -1759,11 +1948,7 @@ exports[`MaskedInput mask 2`] = `
         tabindex="-1"
         type="button"
       >
-        <div
-          class="c6"
-        >
-          aa
-        </div>
+        aa
       </button>
     </div>
     <div
@@ -1775,11 +1960,7 @@ exports[`MaskedInput mask 2`] = `
         tabindex="-1"
         type="button"
       >
-        <div
-          class="c6"
-        >
-          bb
-        </div>
+        bb
       </button>
     </div>
   </div>
@@ -1790,8 +1971,11 @@ exports[`MaskedInput mask 3`] = `""`;
 
 exports[`MaskedInput mask with long fixed 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1808,16 +1992,22 @@ exports[`MaskedInput mask with long fixed 1`] = `
   background: transparent;
   color: inherit;
   width: 100%;
-  padding: 11px;
-  font-weight: 600;
+  line-height: inherit;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-weight: 400;
   margin: 0;
-  border: 1px solid rgba(0, 0, 0, 0.33);
-  border-radius: 4px;
+  border: 1px solid rgba(0, 0, 0, 0.36);
+  border-radius: 8px;
+  color: #2e2e2e;
 }
 
 .c2:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c2:focus >circle,
@@ -1827,8 +2017,9 @@ exports[`MaskedInput mask with long fixed 1`] = `
 .c2:focus >polygon,
 .c2:focus >polyline,
 .c2:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c2:focus ::-moz-focus-inner {
@@ -1836,15 +2027,15 @@ exports[`MaskedInput mask with long fixed 1`] = `
 }
 
 .c2::-webkit-input-placeholder {
-  color: #AAAAAA;
+  color: #676767;
 }
 
 .c2::-moz-placeholder {
-  color: #AAAAAA;
+  color: #676767;
 }
 
 .c2:-ms-input-placeholder {
-  color: #AAAAAA;
+  color: #676767;
 }
 
 .c2 ::-webkit-search-decoration {
@@ -1861,9 +2052,26 @@ exports[`MaskedInput mask with long fixed 1`] = `
   opacity: 1;
 }
 
+.c2::-webkit-input-placeholder {
+  font-weight: 400;
+}
+
+.c2::-moz-placeholder {
+  font-weight: 400;
+}
+
+.c2:-ms-input-placeholder {
+  font-weight: 400;
+}
+
 .c1 {
   position: relative;
   width: 100%;
+}
+
+.c1 svg {
+  fill: #2e2e2e;
+  stroke: #2e2e2e;
 }
 
 <div
@@ -2131,8 +2339,11 @@ exports[`MaskedInput match icon size to size prop when theme.icon.matchSize is t
 
 exports[`MaskedInput next and previous without options 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -2149,16 +2360,22 @@ exports[`MaskedInput next and previous without options 1`] = `
   background: transparent;
   color: inherit;
   width: 100%;
-  padding: 11px;
-  font-weight: 600;
+  line-height: inherit;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-weight: 400;
   margin: 0;
-  border: 1px solid rgba(0, 0, 0, 0.33);
-  border-radius: 4px;
+  border: 1px solid rgba(0, 0, 0, 0.36);
+  border-radius: 8px;
+  color: #2e2e2e;
 }
 
 .c2:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c2:focus >circle,
@@ -2168,8 +2385,9 @@ exports[`MaskedInput next and previous without options 1`] = `
 .c2:focus >polygon,
 .c2:focus >polyline,
 .c2:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c2:focus ::-moz-focus-inner {
@@ -2177,15 +2395,15 @@ exports[`MaskedInput next and previous without options 1`] = `
 }
 
 .c2::-webkit-input-placeholder {
-  color: #AAAAAA;
+  color: #676767;
 }
 
 .c2::-moz-placeholder {
-  color: #AAAAAA;
+  color: #676767;
 }
 
 .c2:-ms-input-placeholder {
-  color: #AAAAAA;
+  color: #676767;
 }
 
 .c2 ::-webkit-search-decoration {
@@ -2202,9 +2420,26 @@ exports[`MaskedInput next and previous without options 1`] = `
   opacity: 1;
 }
 
+.c2::-webkit-input-placeholder {
+  font-weight: 400;
+}
+
+.c2::-moz-placeholder {
+  font-weight: 400;
+}
+
+.c2:-ms-input-placeholder {
+  font-weight: 400;
+}
+
 .c1 {
   position: relative;
   width: 100%;
+}
+
+.c1 svg {
+  fill: #2e2e2e;
+  stroke: #2e2e2e;
 }
 
 <div
@@ -2228,14 +2463,14 @@ exports[`MaskedInput next and previous without options 1`] = `
 
 exports[`MaskedInput next and previous without options 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 kiEDjE"
+  class="StyledGrommet-sc-19lkkz7-0 iRGypN"
 >
   <div
-    class="StyledMaskedInput__StyledMaskedInputContainer-sc-99vkfa-1 dPNevk"
+    class="StyledMaskedInput__StyledMaskedInputContainer-sc-99vkfa-1 gTmUcZ"
   >
     <input
       autocomplete="off"
-      class="StyledMaskedInput-sc-99vkfa-0 ilRdpu"
+      class="StyledMaskedInput-sc-99vkfa-0 bvQnDA"
       data-testid="test-input"
       id="item"
       name="item"
@@ -2248,8 +2483,11 @@ exports[`MaskedInput next and previous without options 2`] = `
 
 exports[`MaskedInput option via keyboard 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -2266,16 +2504,22 @@ exports[`MaskedInput option via keyboard 1`] = `
   background: transparent;
   color: inherit;
   width: 100%;
-  padding: 11px;
-  font-weight: 600;
+  line-height: inherit;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-weight: 400;
   margin: 0;
-  border: 1px solid rgba(0, 0, 0, 0.33);
-  border-radius: 4px;
+  border: 1px solid rgba(0, 0, 0, 0.36);
+  border-radius: 8px;
+  color: #2e2e2e;
 }
 
 .c2:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c2:focus >circle,
@@ -2285,8 +2529,9 @@ exports[`MaskedInput option via keyboard 1`] = `
 .c2:focus >polygon,
 .c2:focus >polyline,
 .c2:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c2:focus ::-moz-focus-inner {
@@ -2294,15 +2539,15 @@ exports[`MaskedInput option via keyboard 1`] = `
 }
 
 .c2::-webkit-input-placeholder {
-  color: #AAAAAA;
+  color: #676767;
 }
 
 .c2::-moz-placeholder {
-  color: #AAAAAA;
+  color: #676767;
 }
 
 .c2:-ms-input-placeholder {
-  color: #AAAAAA;
+  color: #676767;
 }
 
 .c2 ::-webkit-search-decoration {
@@ -2319,9 +2564,26 @@ exports[`MaskedInput option via keyboard 1`] = `
   opacity: 1;
 }
 
+.c2::-webkit-input-placeholder {
+  font-weight: 400;
+}
+
+.c2::-moz-placeholder {
+  font-weight: 400;
+}
+
+.c2:-ms-input-placeholder {
+  font-weight: 400;
+}
+
 .c1 {
   position: relative;
   width: 100%;
+}
+
+.c1 svg {
+  fill: #2e2e2e;
+  stroke: #2e2e2e;
 }
 
 <div
@@ -2348,8 +2610,11 @@ exports[`MaskedInput option via keyboard 1`] = `
 
 exports[`MaskedInput option via mouse 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -2366,20 +2631,26 @@ exports[`MaskedInput option via mouse 1`] = `
   background: transparent;
   color: inherit;
   width: 100%;
-  padding: 11px;
-  font-weight: 600;
+  line-height: inherit;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-weight: 400;
   margin: 0;
-  font-size: 22px;
-  line-height: 28px;
-  border: 1px solid rgba(0, 0, 0, 0.33);
-  border-radius: 4px;
+  font-size: 1.375rem;
+  line-height: 1.75rem;
+  border: 1px solid rgba(0, 0, 0, 0.36);
+  border-radius: 8px;
+  color: #2e2e2e;
   outline: none;
   border: none;
 }
 
 .c2:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c2:focus >circle,
@@ -2389,8 +2660,9 @@ exports[`MaskedInput option via mouse 1`] = `
 .c2:focus >polygon,
 .c2:focus >polyline,
 .c2:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c2:focus ::-moz-focus-inner {
@@ -2398,15 +2670,15 @@ exports[`MaskedInput option via mouse 1`] = `
 }
 
 .c2::-webkit-input-placeholder {
-  color: #AAAAAA;
+  color: #676767;
 }
 
 .c2::-moz-placeholder {
-  color: #AAAAAA;
+  color: #676767;
 }
 
 .c2:-ms-input-placeholder {
-  color: #AAAAAA;
+  color: #676767;
 }
 
 .c2 ::-webkit-search-decoration {
@@ -2423,9 +2695,26 @@ exports[`MaskedInput option via mouse 1`] = `
   opacity: 1;
 }
 
+.c2::-webkit-input-placeholder {
+  font-weight: 400;
+}
+
+.c2::-moz-placeholder {
+  font-weight: 400;
+}
+
+.c2:-ms-input-placeholder {
+  font-weight: 400;
+}
+
 .c1 {
   position: relative;
   width: 100%;
+}
+
+.c1 svg {
+  fill: #2e2e2e;
+  stroke: #2e2e2e;
 }
 
 <div
@@ -2459,7 +2748,7 @@ exports[`MaskedInput option via mouse 2`] = `
   min-height: 0;
   flex-direction: column;
   overflow: auto;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.20);
+  box-shadow: 0px 6px 12px 0px rgba(0, 0, 0, 0.12);
 }
 
 .c2 {
@@ -2482,37 +2771,36 @@ exports[`MaskedInput option via mouse 2`] = `
   flex: 0 0 auto;
 }
 
-.c6 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  flex-direction: column;
-  padding-left: 12px;
-  padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
-}
-
 .c1 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  border-radius: 0px;
+  border-radius: 6px;
   position: fixed;
-  z-index: 20;
+  z-index: 110;
   outline: none;
-  background-color: #FFFFFF;
-  color: #444444;
+  background-color: #ffffff;
+  color: #555555;
+  margin-top: 6px;
   opacity: 0;
   transform-origin: top left;
   animation: kPQHBD 0.1s forwards;
   animation-delay: 0.01s;
+}
+
+.c1 [class*=MaskedInput__ContainerBox] {
+  padding-block: 6px;
+  padding-inline: 6px;
+  gap: 6px;
+  display: flex;
+  flex-direction: column;
 }
 
 .c5 {
@@ -2525,21 +2813,35 @@ exports[`MaskedInput option via mouse 2`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  color: inherit;
-  outline: none;
   border: none;
-  padding: 0;
-  text-align: inherit;
+  border-radius: 9999px;
+  padding: 5px 12px;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  padding: 5px 12px;
+  color: #555555;
+  border-style: solid;
+  border-width: 1px;
+  border-color: rgba(0, 0, 0, 0);
+  border-radius: 6px;
+  font-weight: 500;
+  padding: 5px 12px;
+  text-align: start;
+  transition-property: color,background-color,border-color,box-shadow;
+  transition-duration: 0.1s;
+  transition-timing-function: ease-in-out;
 }
 
 .c5:hover {
-  background-color: rgba(221, 221, 221, 0.4);
-  color: #000000;
+  background-color: rgba(0, 0, 0, 0.04);
+  color: #555555;
+  border-color: rgba(0, 0, 0, 0);
 }
 
 .c5:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c5:focus >circle,
@@ -2549,8 +2851,9 @@ exports[`MaskedInput option via mouse 2`] = `
 .c5:focus >polygon,
 .c5:focus >polyline,
 .c5:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c5:focus ::-moz-focus-inner {
@@ -2558,6 +2861,8 @@ exports[`MaskedInput option via mouse 2`] = `
 }
 
 .c5:focus:not(:focus-visible) {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -2569,6 +2874,8 @@ exports[`MaskedInput option via mouse 2`] = `
 .c5:focus:not(:focus-visible) >polygon,
 .c5:focus:not(:focus-visible) >polyline,
 .c5:focus:not(:focus-visible) >rect {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -2579,20 +2886,6 @@ exports[`MaskedInput option via mouse 2`] = `
 
 .c3 {
   max-height: inherit;
-}
-
-@media only screen and (max-width: 768px) {
-  .c6 {
-    padding-left: 6px;
-    padding-right: 6px;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .c6 {
-    padding-top: 3px;
-    padding-bottom: 3px;
-  }
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
@@ -2623,11 +2916,7 @@ exports[`MaskedInput option via mouse 2`] = `
         tabindex="-1"
         type="button"
       >
-        <div
-          class="c6"
-        >
-          aa
-        </div>
+        aa
       </button>
     </div>
     <div
@@ -2639,11 +2928,7 @@ exports[`MaskedInput option via mouse 2`] = `
         tabindex="-1"
         type="button"
       >
-        <div
-          class="c6"
-        >
-          bb
-        </div>
+        bb
       </button>
     </div>
   </div>
@@ -2654,10 +2939,10 @@ exports[`MaskedInput option via mouse 3`] = `""`;
 
 exports[`MaskedInput option via mouse 4`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 kiEDjE"
+  class="StyledGrommet-sc-19lkkz7-0 iRGypN"
 >
   <div
-    class="StyledMaskedInput__StyledMaskedInputContainer-sc-99vkfa-1 dPNevk"
+    class="StyledMaskedInput__StyledMaskedInputContainer-sc-99vkfa-1 gTmUcZ"
   >
     <input
       aria-activedescendant="listbox-option--1__item"
@@ -2665,7 +2950,7 @@ exports[`MaskedInput option via mouse 4`] = `
       aria-controls="listbox__item"
       aria-expanded="true"
       autocomplete="off"
-      class="StyledMaskedInput-sc-99vkfa-0 dqOIlv"
+      class="StyledMaskedInput-sc-99vkfa-0 biiwE"
       data-testid="test-input"
       id="item"
       name="item"
@@ -2679,8 +2964,11 @@ exports[`MaskedInput option via mouse 4`] = `
 
 exports[`MaskedInput renders a11yTitle and aria-label 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -2697,16 +2985,22 @@ exports[`MaskedInput renders a11yTitle and aria-label 1`] = `
   background: transparent;
   color: inherit;
   width: 100%;
-  padding: 11px;
-  font-weight: 600;
+  line-height: inherit;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-weight: 400;
   margin: 0;
-  border: 1px solid rgba(0, 0, 0, 0.33);
-  border-radius: 4px;
+  border: 1px solid rgba(0, 0, 0, 0.36);
+  border-radius: 8px;
+  color: #2e2e2e;
 }
 
 .c2:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c2:focus >circle,
@@ -2716,8 +3010,9 @@ exports[`MaskedInput renders a11yTitle and aria-label 1`] = `
 .c2:focus >polygon,
 .c2:focus >polyline,
 .c2:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c2:focus ::-moz-focus-inner {
@@ -2725,15 +3020,15 @@ exports[`MaskedInput renders a11yTitle and aria-label 1`] = `
 }
 
 .c2::-webkit-input-placeholder {
-  color: #AAAAAA;
+  color: #676767;
 }
 
 .c2::-moz-placeholder {
-  color: #AAAAAA;
+  color: #676767;
 }
 
 .c2:-ms-input-placeholder {
-  color: #AAAAAA;
+  color: #676767;
 }
 
 .c2 ::-webkit-search-decoration {
@@ -2750,9 +3045,26 @@ exports[`MaskedInput renders a11yTitle and aria-label 1`] = `
   opacity: 1;
 }
 
+.c2::-webkit-input-placeholder {
+  font-weight: 400;
+}
+
+.c2::-moz-placeholder {
+  font-weight: 400;
+}
+
+.c2:-ms-input-placeholder {
+  font-weight: 400;
+}
+
 .c1 {
   position: relative;
   width: 100%;
+}
+
+.c1 svg {
+  fill: #2e2e2e;
+  stroke: #2e2e2e;
 }
 
 <div
@@ -2788,8 +3100,11 @@ exports[`MaskedInput renders a11yTitle and aria-label 1`] = `
 exports[`MaskedInput renders size 1`] = `
 HTMLCollection [
   .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -2806,18 +3121,24 @@ HTMLCollection [
   background: transparent;
   color: inherit;
   width: 100%;
-  padding: 11px;
-  font-weight: 600;
+  line-height: inherit;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-weight: 400;
   margin: 0;
-  font-size: 12px;
-  line-height: 18px;
-  border: 1px solid rgba(0, 0, 0, 0.33);
-  border-radius: 4px;
+  font-size: 0.875rem;
+  line-height: 1rem;
+  border: 1px solid rgba(0, 0, 0, 0.36);
+  border-radius: 8px;
+  color: #2e2e2e;
 }
 
 .c2:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c2:focus >circle,
@@ -2827,8 +3148,9 @@ HTMLCollection [
 .c2:focus >polygon,
 .c2:focus >polyline,
 .c2:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c2:focus ::-moz-focus-inner {
@@ -2836,15 +3158,15 @@ HTMLCollection [
 }
 
 .c2::-webkit-input-placeholder {
-  color: #AAAAAA;
+  color: #676767;
 }
 
 .c2::-moz-placeholder {
-  color: #AAAAAA;
+  color: #676767;
 }
 
 .c2:-ms-input-placeholder {
-  color: #AAAAAA;
+  color: #676767;
 }
 
 .c2 ::-webkit-search-decoration {
@@ -2861,6 +3183,18 @@ HTMLCollection [
   opacity: 1;
 }
 
+.c2::-webkit-input-placeholder {
+  font-weight: 400;
+}
+
+.c2::-moz-placeholder {
+  font-weight: 400;
+}
+
+.c2:-ms-input-placeholder {
+  font-weight: 400;
+}
+
 .c3 {
   box-sizing: border-box;
   font-size: inherit;
@@ -2870,18 +3204,24 @@ HTMLCollection [
   background: transparent;
   color: inherit;
   width: 100%;
-  padding: 11px;
-  font-weight: 600;
+  line-height: inherit;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-weight: 400;
   margin: 0;
-  font-size: 14px;
-  line-height: 20px;
-  border: 1px solid rgba(0, 0, 0, 0.33);
-  border-radius: 4px;
+  font-size: 1rem;
+  line-height: 1.25rem;
+  border: 1px solid rgba(0, 0, 0, 0.36);
+  border-radius: 8px;
+  color: #2e2e2e;
 }
 
 .c3:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c3:focus >circle,
@@ -2891,8 +3231,9 @@ HTMLCollection [
 .c3:focus >polygon,
 .c3:focus >polyline,
 .c3:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c3:focus ::-moz-focus-inner {
@@ -2900,15 +3241,15 @@ HTMLCollection [
 }
 
 .c3::-webkit-input-placeholder {
-  color: #AAAAAA;
+  color: #676767;
 }
 
 .c3::-moz-placeholder {
-  color: #AAAAAA;
+  color: #676767;
 }
 
 .c3:-ms-input-placeholder {
-  color: #AAAAAA;
+  color: #676767;
 }
 
 .c3 ::-webkit-search-decoration {
@@ -2925,6 +3266,18 @@ HTMLCollection [
   opacity: 1;
 }
 
+.c3::-webkit-input-placeholder {
+  font-weight: 400;
+}
+
+.c3::-moz-placeholder {
+  font-weight: 400;
+}
+
+.c3:-ms-input-placeholder {
+  font-weight: 400;
+}
+
 .c4 {
   box-sizing: border-box;
   font-size: inherit;
@@ -2934,18 +3287,24 @@ HTMLCollection [
   background: transparent;
   color: inherit;
   width: 100%;
-  padding: 11px;
-  font-weight: 600;
+  line-height: inherit;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-weight: 400;
   margin: 0;
-  font-size: 18px;
-  line-height: 24px;
-  border: 1px solid rgba(0, 0, 0, 0.33);
-  border-radius: 4px;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  border: 1px solid rgba(0, 0, 0, 0.36);
+  border-radius: 8px;
+  color: #2e2e2e;
 }
 
 .c4:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c4:focus >circle,
@@ -2955,8 +3314,9 @@ HTMLCollection [
 .c4:focus >polygon,
 .c4:focus >polyline,
 .c4:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c4:focus ::-moz-focus-inner {
@@ -2964,15 +3324,15 @@ HTMLCollection [
 }
 
 .c4::-webkit-input-placeholder {
-  color: #AAAAAA;
+  color: #676767;
 }
 
 .c4::-moz-placeholder {
-  color: #AAAAAA;
+  color: #676767;
 }
 
 .c4:-ms-input-placeholder {
-  color: #AAAAAA;
+  color: #676767;
 }
 
 .c4 ::-webkit-search-decoration {
@@ -2989,6 +3349,18 @@ HTMLCollection [
   opacity: 1;
 }
 
+.c4::-webkit-input-placeholder {
+  font-weight: 400;
+}
+
+.c4::-moz-placeholder {
+  font-weight: 400;
+}
+
+.c4:-ms-input-placeholder {
+  font-weight: 400;
+}
+
 .c5 {
   box-sizing: border-box;
   font-size: inherit;
@@ -2998,18 +3370,24 @@ HTMLCollection [
   background: transparent;
   color: inherit;
   width: 100%;
-  padding: 11px;
-  font-weight: 600;
+  line-height: inherit;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-weight: 400;
   margin: 0;
-  font-size: 22px;
-  line-height: 28px;
-  border: 1px solid rgba(0, 0, 0, 0.33);
-  border-radius: 4px;
+  font-size: 1.375rem;
+  line-height: 1.75rem;
+  border: 1px solid rgba(0, 0, 0, 0.36);
+  border-radius: 8px;
+  color: #2e2e2e;
 }
 
 .c5:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c5:focus >circle,
@@ -3019,8 +3397,9 @@ HTMLCollection [
 .c5:focus >polygon,
 .c5:focus >polyline,
 .c5:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c5:focus ::-moz-focus-inner {
@@ -3028,15 +3407,15 @@ HTMLCollection [
 }
 
 .c5::-webkit-input-placeholder {
-  color: #AAAAAA;
+  color: #676767;
 }
 
 .c5::-moz-placeholder {
-  color: #AAAAAA;
+  color: #676767;
 }
 
 .c5:-ms-input-placeholder {
-  color: #AAAAAA;
+  color: #676767;
 }
 
 .c5 ::-webkit-search-decoration {
@@ -3053,6 +3432,18 @@ HTMLCollection [
   opacity: 1;
 }
 
+.c5::-webkit-input-placeholder {
+  font-weight: 400;
+}
+
+.c5::-moz-placeholder {
+  font-weight: 400;
+}
+
+.c5:-ms-input-placeholder {
+  font-weight: 400;
+}
+
 .c6 {
   box-sizing: border-box;
   font-size: inherit;
@@ -3062,18 +3453,24 @@ HTMLCollection [
   background: transparent;
   color: inherit;
   width: 100%;
-  padding: 11px;
-  font-weight: 600;
+  line-height: inherit;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-weight: 400;
   margin: 0;
-  font-size: 26px;
-  line-height: 32px;
-  border: 1px solid rgba(0, 0, 0, 0.33);
-  border-radius: 4px;
+  font-size: 1.5rem;
+  line-height: 1.875rem;
+  border: 1px solid rgba(0, 0, 0, 0.36);
+  border-radius: 8px;
+  color: #2e2e2e;
 }
 
 .c6:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c6:focus >circle,
@@ -3083,8 +3480,9 @@ HTMLCollection [
 .c6:focus >polygon,
 .c6:focus >polyline,
 .c6:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c6:focus ::-moz-focus-inner {
@@ -3092,15 +3490,15 @@ HTMLCollection [
 }
 
 .c6::-webkit-input-placeholder {
-  color: #AAAAAA;
+  color: #676767;
 }
 
 .c6::-moz-placeholder {
-  color: #AAAAAA;
+  color: #676767;
 }
 
 .c6:-ms-input-placeholder {
-  color: #AAAAAA;
+  color: #676767;
 }
 
 .c6 ::-webkit-search-decoration {
@@ -3117,6 +3515,18 @@ HTMLCollection [
   opacity: 1;
 }
 
+.c6::-webkit-input-placeholder {
+  font-weight: 400;
+}
+
+.c6::-moz-placeholder {
+  font-weight: 400;
+}
+
+.c6:-ms-input-placeholder {
+  font-weight: 400;
+}
+
 .c7 {
   box-sizing: border-box;
   font-size: inherit;
@@ -3126,18 +3536,24 @@ HTMLCollection [
   background: transparent;
   color: inherit;
   width: 100%;
-  padding: 11px;
-  font-weight: 600;
+  line-height: inherit;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-weight: 400;
   margin: 0;
-  font-size: 34px;
-  line-height: 40px;
-  border: 1px solid rgba(0, 0, 0, 0.33);
-  border-radius: 4px;
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+  border: 1px solid rgba(0, 0, 0, 0.36);
+  border-radius: 8px;
+  color: #2e2e2e;
 }
 
 .c7:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c7:focus >circle,
@@ -3147,8 +3563,9 @@ HTMLCollection [
 .c7:focus >polygon,
 .c7:focus >polyline,
 .c7:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c7:focus ::-moz-focus-inner {
@@ -3156,15 +3573,15 @@ HTMLCollection [
 }
 
 .c7::-webkit-input-placeholder {
-  color: #AAAAAA;
+  color: #676767;
 }
 
 .c7::-moz-placeholder {
-  color: #AAAAAA;
+  color: #676767;
 }
 
 .c7:-ms-input-placeholder {
-  color: #AAAAAA;
+  color: #676767;
 }
 
 .c7 ::-webkit-search-decoration {
@@ -3181,6 +3598,18 @@ HTMLCollection [
   opacity: 1;
 }
 
+.c7::-webkit-input-placeholder {
+  font-weight: 400;
+}
+
+.c7::-moz-placeholder {
+  font-weight: 400;
+}
+
+.c7:-ms-input-placeholder {
+  font-weight: 400;
+}
+
 .c8 {
   box-sizing: border-box;
   font-size: inherit;
@@ -3190,18 +3619,24 @@ HTMLCollection [
   background: transparent;
   color: inherit;
   width: 100%;
-  padding: 11px;
-  font-weight: 600;
+  line-height: inherit;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-weight: 400;
   margin: 0;
-  font-size: 42px;
-  line-height: 48px;
-  border: 1px solid rgba(0, 0, 0, 0.33);
-  border-radius: 4px;
+  font-size: 34px;
+  line-height: 40px;
+  border: 1px solid rgba(0, 0, 0, 0.36);
+  border-radius: 8px;
+  color: #2e2e2e;
 }
 
 .c8:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c8:focus >circle,
@@ -3211,8 +3646,9 @@ HTMLCollection [
 .c8:focus >polygon,
 .c8:focus >polyline,
 .c8:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c8:focus ::-moz-focus-inner {
@@ -3220,15 +3656,15 @@ HTMLCollection [
 }
 
 .c8::-webkit-input-placeholder {
-  color: #AAAAAA;
+  color: #676767;
 }
 
 .c8::-moz-placeholder {
-  color: #AAAAAA;
+  color: #676767;
 }
 
 .c8:-ms-input-placeholder {
-  color: #AAAAAA;
+  color: #676767;
 }
 
 .c8 ::-webkit-search-decoration {
@@ -3245,6 +3681,18 @@ HTMLCollection [
   opacity: 1;
 }
 
+.c8::-webkit-input-placeholder {
+  font-weight: 400;
+}
+
+.c8::-moz-placeholder {
+  font-weight: 400;
+}
+
+.c8:-ms-input-placeholder {
+  font-weight: 400;
+}
+
 .c9 {
   box-sizing: border-box;
   font-size: inherit;
@@ -3254,18 +3702,24 @@ HTMLCollection [
   background: transparent;
   color: inherit;
   width: 100%;
-  padding: 11px;
-  font-weight: 600;
+  line-height: inherit;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-weight: 400;
   margin: 0;
-  font-size: 54px;
-  line-height: 60px;
-  border: 1px solid rgba(0, 0, 0, 0.33);
-  border-radius: 4px;
+  font-size: 2.625rem;
+  line-height: 2.875rem;
+  border: 1px solid rgba(0, 0, 0, 0.36);
+  border-radius: 8px;
+  color: #2e2e2e;
 }
 
 .c9:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c9:focus >circle,
@@ -3275,8 +3729,9 @@ HTMLCollection [
 .c9:focus >polygon,
 .c9:focus >polyline,
 .c9:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c9:focus ::-moz-focus-inner {
@@ -3284,15 +3739,15 @@ HTMLCollection [
 }
 
 .c9::-webkit-input-placeholder {
-  color: #AAAAAA;
+  color: #676767;
 }
 
 .c9::-moz-placeholder {
-  color: #AAAAAA;
+  color: #676767;
 }
 
 .c9:-ms-input-placeholder {
-  color: #AAAAAA;
+  color: #676767;
 }
 
 .c9 ::-webkit-search-decoration {
@@ -3309,6 +3764,18 @@ HTMLCollection [
   opacity: 1;
 }
 
+.c9::-webkit-input-placeholder {
+  font-weight: 400;
+}
+
+.c9::-moz-placeholder {
+  font-weight: 400;
+}
+
+.c9:-ms-input-placeholder {
+  font-weight: 400;
+}
+
 .c10 {
   box-sizing: border-box;
   font-size: inherit;
@@ -3318,18 +3785,24 @@ HTMLCollection [
   background: transparent;
   color: inherit;
   width: 100%;
-  padding: 11px;
-  font-weight: 600;
+  line-height: inherit;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-weight: 400;
   margin: 0;
-  font-size: 70px;
-  line-height: 76px;
-  border: 1px solid rgba(0, 0, 0, 0.33);
-  border-radius: 4px;
+  font-size: 3rem;
+  line-height: 3rem;
+  border: 1px solid rgba(0, 0, 0, 0.36);
+  border-radius: 8px;
+  color: #2e2e2e;
 }
 
 .c10:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c10:focus >circle,
@@ -3339,8 +3812,9 @@ HTMLCollection [
 .c10:focus >polygon,
 .c10:focus >polyline,
 .c10:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c10:focus ::-moz-focus-inner {
@@ -3348,15 +3822,15 @@ HTMLCollection [
 }
 
 .c10::-webkit-input-placeholder {
-  color: #AAAAAA;
+  color: #676767;
 }
 
 .c10::-moz-placeholder {
-  color: #AAAAAA;
+  color: #676767;
 }
 
 .c10:-ms-input-placeholder {
-  color: #AAAAAA;
+  color: #676767;
 }
 
 .c10 ::-webkit-search-decoration {
@@ -3373,6 +3847,18 @@ HTMLCollection [
   opacity: 1;
 }
 
+.c10::-webkit-input-placeholder {
+  font-weight: 400;
+}
+
+.c10::-moz-placeholder {
+  font-weight: 400;
+}
+
+.c10:-ms-input-placeholder {
+  font-weight: 400;
+}
+
 .c11 {
   box-sizing: border-box;
   font-size: inherit;
@@ -3382,18 +3868,24 @@ HTMLCollection [
   background: transparent;
   color: inherit;
   width: 100%;
-  padding: 11px;
-  font-weight: 600;
+  line-height: inherit;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-weight: 400;
   margin: 0;
-  font-size: 90px;
-  line-height: 96px;
-  border: 1px solid rgba(0, 0, 0, 0.33);
-  border-radius: 4px;
+  font-size: 4.5rem;
+  line-height: 4.5rem;
+  border: 1px solid rgba(0, 0, 0, 0.36);
+  border-radius: 8px;
+  color: #2e2e2e;
 }
 
 .c11:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c11:focus >circle,
@@ -3403,8 +3895,9 @@ HTMLCollection [
 .c11:focus >polygon,
 .c11:focus >polyline,
 .c11:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c11:focus ::-moz-focus-inner {
@@ -3412,15 +3905,15 @@ HTMLCollection [
 }
 
 .c11::-webkit-input-placeholder {
-  color: #AAAAAA;
+  color: #676767;
 }
 
 .c11::-moz-placeholder {
-  color: #AAAAAA;
+  color: #676767;
 }
 
 .c11:-ms-input-placeholder {
-  color: #AAAAAA;
+  color: #676767;
 }
 
 .c11 ::-webkit-search-decoration {
@@ -3437,6 +3930,18 @@ HTMLCollection [
   opacity: 1;
 }
 
+.c11::-webkit-input-placeholder {
+  font-weight: 400;
+}
+
+.c11::-moz-placeholder {
+  font-weight: 400;
+}
+
+.c11:-ms-input-placeholder {
+  font-weight: 400;
+}
+
 .c12 {
   box-sizing: border-box;
   font-size: inherit;
@@ -3446,17 +3951,23 @@ HTMLCollection [
   background: transparent;
   color: inherit;
   width: 100%;
-  padding: 11px;
-  font-weight: 600;
+  line-height: inherit;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-weight: 400;
   margin: 0;
   font-size: 16px;
-  border: 1px solid rgba(0, 0, 0, 0.33);
-  border-radius: 4px;
+  border: 1px solid rgba(0, 0, 0, 0.36);
+  border-radius: 8px;
+  color: #2e2e2e;
 }
 
 .c12:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c12:focus >circle,
@@ -3466,8 +3977,9 @@ HTMLCollection [
 .c12:focus >polygon,
 .c12:focus >polyline,
 .c12:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c12:focus ::-moz-focus-inner {
@@ -3475,15 +3987,15 @@ HTMLCollection [
 }
 
 .c12::-webkit-input-placeholder {
-  color: #AAAAAA;
+  color: #676767;
 }
 
 .c12::-moz-placeholder {
-  color: #AAAAAA;
+  color: #676767;
 }
 
 .c12:-ms-input-placeholder {
-  color: #AAAAAA;
+  color: #676767;
 }
 
 .c12 ::-webkit-search-decoration {
@@ -3500,6 +4012,18 @@ HTMLCollection [
   opacity: 1;
 }
 
+.c12::-webkit-input-placeholder {
+  font-weight: 400;
+}
+
+.c12::-moz-placeholder {
+  font-weight: 400;
+}
+
+.c12:-ms-input-placeholder {
+  font-weight: 400;
+}
+
 .c13 {
   box-sizing: border-box;
   font-size: inherit;
@@ -3509,17 +4033,23 @@ HTMLCollection [
   background: transparent;
   color: inherit;
   width: 100%;
-  padding: 11px;
-  font-weight: 600;
+  line-height: inherit;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-weight: 400;
   margin: 0;
   font-size: 1rem;
-  border: 1px solid rgba(0, 0, 0, 0.33);
-  border-radius: 4px;
+  border: 1px solid rgba(0, 0, 0, 0.36);
+  border-radius: 8px;
+  color: #2e2e2e;
 }
 
 .c13:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c13:focus >circle,
@@ -3529,8 +4059,9 @@ HTMLCollection [
 .c13:focus >polygon,
 .c13:focus >polyline,
 .c13:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c13:focus ::-moz-focus-inner {
@@ -3538,15 +4069,15 @@ HTMLCollection [
 }
 
 .c13::-webkit-input-placeholder {
-  color: #AAAAAA;
+  color: #676767;
 }
 
 .c13::-moz-placeholder {
-  color: #AAAAAA;
+  color: #676767;
 }
 
 .c13:-ms-input-placeholder {
-  color: #AAAAAA;
+  color: #676767;
 }
 
 .c13 ::-webkit-search-decoration {
@@ -3563,6 +4094,18 @@ HTMLCollection [
   opacity: 1;
 }
 
+.c13::-webkit-input-placeholder {
+  font-weight: 400;
+}
+
+.c13::-moz-placeholder {
+  font-weight: 400;
+}
+
+.c13:-ms-input-placeholder {
+  font-weight: 400;
+}
+
 .c14 {
   box-sizing: border-box;
   font-size: inherit;
@@ -3572,17 +4115,23 @@ HTMLCollection [
   background: transparent;
   color: inherit;
   width: 100%;
-  padding: 11px;
-  font-weight: 600;
+  line-height: inherit;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-weight: 400;
   margin: 0;
   font-size: 100%;
-  border: 1px solid rgba(0, 0, 0, 0.33);
-  border-radius: 4px;
+  border: 1px solid rgba(0, 0, 0, 0.36);
+  border-radius: 8px;
+  color: #2e2e2e;
 }
 
 .c14:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c14:focus >circle,
@@ -3592,8 +4141,9 @@ HTMLCollection [
 .c14:focus >polygon,
 .c14:focus >polyline,
 .c14:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c14:focus ::-moz-focus-inner {
@@ -3601,15 +4151,15 @@ HTMLCollection [
 }
 
 .c14::-webkit-input-placeholder {
-  color: #AAAAAA;
+  color: #676767;
 }
 
 .c14::-moz-placeholder {
-  color: #AAAAAA;
+  color: #676767;
 }
 
 .c14:-ms-input-placeholder {
-  color: #AAAAAA;
+  color: #676767;
 }
 
 .c14 ::-webkit-search-decoration {
@@ -3626,9 +4176,26 @@ HTMLCollection [
   opacity: 1;
 }
 
+.c14::-webkit-input-placeholder {
+  font-weight: 400;
+}
+
+.c14::-moz-placeholder {
+  font-weight: 400;
+}
+
+.c14:-ms-input-placeholder {
+  font-weight: 400;
+}
+
 .c1 {
   position: relative;
   width: 100%;
+}
+
+.c1 svg {
+  fill: #2e2e2e;
+  stroke: #2e2e2e;
 }
 
 <div
@@ -3699,16 +4266,6 @@ HTMLCollection [
     >
       <input
         autocomplete="off"
-        class="c7"
-        placeholder=""
-        value=""
-      />
-    </div>
-    <div
-      class="c1"
-    >
-      <input
-        autocomplete="off"
         class="c8"
         placeholder=""
         value=""
@@ -3730,6 +4287,16 @@ HTMLCollection [
       <input
         autocomplete="off"
         class="c10"
+        placeholder=""
+        value=""
+      />
+    </div>
+    <div
+      class="c1"
+    >
+      <input
+        autocomplete="off"
+        class="c11"
         placeholder=""
         value=""
       />
@@ -3780,8 +4347,11 @@ HTMLCollection [
 
 exports[`MaskedInput textAlign end 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -3798,17 +4368,23 @@ exports[`MaskedInput textAlign end 1`] = `
   background: transparent;
   color: inherit;
   width: 100%;
-  padding: 11px;
-  font-weight: 600;
+  line-height: inherit;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-weight: 400;
   margin: 0;
-  border: 1px solid rgba(0, 0, 0, 0.33);
-  border-radius: 4px;
+  border: 1px solid rgba(0, 0, 0, 0.36);
+  border-radius: 8px;
+  color: #2e2e2e;
   text-align: right;
 }
 
 .c2:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c2:focus >circle,
@@ -3818,8 +4394,9 @@ exports[`MaskedInput textAlign end 1`] = `
 .c2:focus >polygon,
 .c2:focus >polyline,
 .c2:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c2:focus ::-moz-focus-inner {
@@ -3827,15 +4404,15 @@ exports[`MaskedInput textAlign end 1`] = `
 }
 
 .c2::-webkit-input-placeholder {
-  color: #AAAAAA;
+  color: #676767;
 }
 
 .c2::-moz-placeholder {
-  color: #AAAAAA;
+  color: #676767;
 }
 
 .c2:-ms-input-placeholder {
-  color: #AAAAAA;
+  color: #676767;
 }
 
 .c2 ::-webkit-search-decoration {
@@ -3852,9 +4429,26 @@ exports[`MaskedInput textAlign end 1`] = `
   opacity: 1;
 }
 
+.c2::-webkit-input-placeholder {
+  font-weight: 400;
+}
+
+.c2::-moz-placeholder {
+  font-weight: 400;
+}
+
+.c2:-ms-input-placeholder {
+  font-weight: 400;
+}
+
 .c1 {
   position: relative;
   width: 100%;
+}
+
+.c1 svg {
+  fill: #2e2e2e;
+  stroke: #2e2e2e;
 }
 
 <div
@@ -3875,8 +4469,11 @@ exports[`MaskedInput textAlign end 1`] = `
 
 exports[`MaskedInput with no mask 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -3893,20 +4490,26 @@ exports[`MaskedInput with no mask 1`] = `
   background: transparent;
   color: inherit;
   width: 100%;
-  padding: 11px;
-  font-weight: 600;
+  line-height: inherit;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-weight: 400;
   margin: 0;
-  font-size: 22px;
-  line-height: 28px;
-  border: 1px solid rgba(0, 0, 0, 0.33);
-  border-radius: 4px;
+  font-size: 1.375rem;
+  line-height: 1.75rem;
+  border: 1px solid rgba(0, 0, 0, 0.36);
+  border-radius: 8px;
+  color: #2e2e2e;
   outline: none;
   border: none;
 }
 
 .c2:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c2:focus >circle,
@@ -3916,8 +4519,9 @@ exports[`MaskedInput with no mask 1`] = `
 .c2:focus >polygon,
 .c2:focus >polyline,
 .c2:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c2:focus ::-moz-focus-inner {
@@ -3925,15 +4529,15 @@ exports[`MaskedInput with no mask 1`] = `
 }
 
 .c2::-webkit-input-placeholder {
-  color: #AAAAAA;
+  color: #676767;
 }
 
 .c2::-moz-placeholder {
-  color: #AAAAAA;
+  color: #676767;
 }
 
 .c2:-ms-input-placeholder {
-  color: #AAAAAA;
+  color: #676767;
 }
 
 .c2 ::-webkit-search-decoration {
@@ -3950,9 +4554,26 @@ exports[`MaskedInput with no mask 1`] = `
   opacity: 1;
 }
 
+.c2::-webkit-input-placeholder {
+  font-weight: 400;
+}
+
+.c2::-moz-placeholder {
+  font-weight: 400;
+}
+
+.c2:-ms-input-placeholder {
+  font-weight: 400;
+}
+
 .c1 {
   position: relative;
   width: 100%;
+}
+
+.c1 svg {
+  fill: #2e2e2e;
+  stroke: #2e2e2e;
 }
 
 <div

@@ -7,6 +7,7 @@ import { screen } from '@testing-library/dom';
 import { axe } from 'jest-axe';
 import 'jest-axe/extend-expect';
 import userEvent from '@testing-library/user-event';
+import { hpe } from 'grommet-theme-hpe';
 
 import { Search } from 'grommet-icons';
 
@@ -21,7 +22,7 @@ describe('MaskedInput', () => {
 
   test('should have no accessibility violations', async () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <MaskedInput name="item" a11yTitle="axe-test" />
       </Grommet>,
     );
@@ -31,7 +32,7 @@ describe('MaskedInput', () => {
 
   test('basic', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <MaskedInput name="item" />
       </Grommet>,
     );
@@ -45,7 +46,7 @@ describe('MaskedInput', () => {
 
   test('icon', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <MaskedInput icon={<Search />} name="item" />
       </Grommet>,
     );
@@ -54,7 +55,7 @@ describe('MaskedInput', () => {
 
   test('icon reverse', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <MaskedInput icon={<Search />} reverse name="item" />
       </Grommet>,
     );
@@ -63,7 +64,7 @@ describe('MaskedInput', () => {
 
   test('disabled', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <MaskedInput disabled name="item" />
       </Grommet>,
     );
@@ -74,7 +75,7 @@ describe('MaskedInput', () => {
     const onChange = jest.fn();
     const onFocus = jest.fn();
     const { getByTestId, container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <MaskedInput
           data-testid="test-input"
           id="item"
@@ -111,7 +112,7 @@ describe('MaskedInput', () => {
   test('mask with long fixed', async () => {
     const onChange = jest.fn((event) => event.target.value);
     const { getByTestId, container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <MaskedInput
           data-testid="test-input"
           id="item"
@@ -152,7 +153,7 @@ describe('MaskedInput', () => {
   test('option via mouse', async () => {
     const onChange = jest.fn((event) => event.target.value);
     const { getByTestId, container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <MaskedInput
           data-testid="test-input"
           plain
@@ -187,7 +188,7 @@ describe('MaskedInput', () => {
   test('option via keyboard', async () => {
     const onChange = jest.fn((event) => event.target.value);
     const { getByTestId, container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <MaskedInput
           data-testid="test-input"
           id="item"
@@ -226,7 +227,7 @@ describe('MaskedInput', () => {
 
     const onChange = jest.fn((event) => event.target.value);
     render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <MaskedInput
           data-testid="test-input"
           id="item"
@@ -253,7 +254,7 @@ describe('MaskedInput', () => {
 
     const onChange = jest.fn((event) => event.target.value);
     render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <MaskedInput
           data-testid="test-input"
           id="item"
@@ -279,7 +280,7 @@ describe('MaskedInput', () => {
   test('Escape events should propagate if there is no drop', () => {
     const callback = jest.fn();
     const { getByTestId } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Keyboard onEsc={callback}>
           <MaskedInput data-testid="test-input" id="item" name="item" />
         </Keyboard>
@@ -300,7 +301,7 @@ describe('MaskedInput', () => {
   test('next and previous without options', () => {
     const onChange = jest.fn();
     const { getByTestId, container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <MaskedInput
           data-testid="test-input"
           id="item"
@@ -337,7 +338,7 @@ describe('MaskedInput', () => {
       return { target: { id, value, name } };
     });
     const { getByTestId, container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <MaskedInput
           data-testid="test-input"
           plain
@@ -386,7 +387,7 @@ describe('MaskedInput', () => {
       return { target: { id, value, name } };
     });
     const { getByTestId, container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <MaskedInput
           data-testid="test-input"
           id="item"
@@ -482,7 +483,7 @@ describe('MaskedInput', () => {
   test('with no mask', async () => {
     const onChange = jest.fn((event) => event.target.value);
     const { getByTestId, container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <MaskedInput
           data-testid="test-input"
           plain
@@ -525,7 +526,7 @@ describe('MaskedInput', () => {
 
   test('textAlign end', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <MaskedInput value="1234" textAlign="end" />
       </Grommet>,
     );
@@ -544,7 +545,7 @@ describe('MaskedInput', () => {
 
   test('renders size', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <MaskedInput size="xsmall" />
         <MaskedInput size="small" />
         <MaskedInput size="medium" />
@@ -566,7 +567,7 @@ describe('MaskedInput', () => {
 
   test('renders a11yTitle and aria-label', () => {
     const { container, getByLabelText } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <MaskedInput a11yTitle="masked-input-test" name="item" />
         <MaskedInput aria-label="masked-input-test-2" name="item" />
       </Grommet>,

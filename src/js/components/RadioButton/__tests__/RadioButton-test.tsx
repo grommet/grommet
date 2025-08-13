@@ -4,6 +4,7 @@ import { axe } from 'jest-axe';
 import 'jest-styled-components';
 import 'jest-axe/extend-expect';
 import 'regenerator-runtime/runtime';
+import { hpe } from 'grommet-theme-hpe';
 
 import { Grommet } from '../../Grommet';
 import { Box } from '../../Box';
@@ -12,7 +13,7 @@ import { RadioButton } from '..';
 describe('RadioButton', () => {
   test('should have no accessibility violations', async () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <RadioButton name="test" a11yTitle="test" />
       </Grommet>,
     );
@@ -24,7 +25,7 @@ describe('RadioButton', () => {
 
   test('basic', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <RadioButton name="test" value="1" />
         <RadioButton id="test id" name="test" value="2" />
       </Grommet>,
@@ -41,7 +42,7 @@ describe('RadioButton', () => {
 
   test('label', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <RadioButton label="test label" name="test" value="1" />
         <RadioButton label={<div>test label</div>} name="test" value="2" />
       </Grommet>,
@@ -52,7 +53,7 @@ describe('RadioButton', () => {
 
   test('checked', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <RadioButton checked name="test" value="1" onChange={jest.fn()} />
       </Grommet>,
     );
@@ -62,7 +63,7 @@ describe('RadioButton', () => {
 
   test('disabled', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <RadioButton disabled name="test" value="1" />
         <RadioButton disabled checked name="test" value="2" />
       </Grommet>,
@@ -77,7 +78,7 @@ describe('RadioButton', () => {
     );
 
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <RadioButton name="test" value="1">
           {child}
         </RadioButton>
@@ -188,7 +189,7 @@ describe('RadioButton', () => {
 
   test('should apply a11yTitle or aria-label', () => {
     const { container, getByLabelText } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <RadioButton name="test" a11yTitle="test" />
         <RadioButton name="test" aria-label="test-2" />
       </Grommet>,

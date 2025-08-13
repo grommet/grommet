@@ -1,6 +1,7 @@
 import React from 'react';
 import { render, act } from '@testing-library/react';
 import 'jest-styled-components';
+import { hpe } from 'grommet-theme-hpe';
 
 import { Grommet, Image, Box, InfiniteScrollProps } from '../..';
 import { InfiniteScroll } from '..';
@@ -26,7 +27,7 @@ describe('InfiniteScroll', () => {
 
   test('basic', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <InfiniteScroll />
         <InfiniteScroll items={items}>
           {(
@@ -51,7 +52,7 @@ describe('InfiniteScroll', () => {
 
   test('step', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <InfiniteScroll items={items} step={2}>
           {(item: InfiniteScrollItemType, index: number) => (
             <div key={index}>{item}</div>
@@ -64,7 +65,7 @@ describe('InfiniteScroll', () => {
 
   test('show', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <InfiniteScroll items={items} step={2} show={3}>
           {(item: InfiniteScrollItemType, index: number) => (
             <div key={index}>{item}</div>
@@ -77,7 +78,7 @@ describe('InfiniteScroll', () => {
 
   test('renderMarker', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <InfiniteScroll
           items={items}
           step={2}
@@ -94,7 +95,7 @@ describe('InfiniteScroll', () => {
 
   test('replace', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <InfiniteScroll items={items} step={2} replace>
           {(item: InfiniteScrollItemType, index: number) => (
             <div key={index}>{item}</div>
@@ -159,7 +160,7 @@ describe('InfiniteScroll', () => {
       }
     }
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <InfiniteScroll items={mixedItems}>
           {(item: InfiniteScrollItemType, index: number) => (
             <div key={index}>{item}</div>
@@ -176,7 +177,7 @@ describe('Number of Items Rendered', () => {
   step when step < items.length`, () => {
     const step = 50;
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <InfiniteScroll items={simpleItems(1000)} step={step}>
           {(item: InfiniteScrollItemType, index: number) => (
             <Box key={index}>{item}</Box>
@@ -195,7 +196,7 @@ describe('Number of Items Rendered', () => {
   step when step = array.length`, () => {
     const step = 200;
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <InfiniteScroll items={simpleItems(200)} step={step}>
           {(item: InfiniteScrollItemType, index: number) => (
             <Box key={index}>{item}</Box>
@@ -214,7 +215,7 @@ describe('Number of Items Rendered', () => {
   item array when step > array`, () => {
     const numItems = 1000;
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <InfiniteScroll items={simpleItems(numItems)} step={1050}>
           {(item: InfiniteScrollItemType, index: number) => (
             <Box key={index}>{item}</Box>
@@ -233,7 +234,7 @@ describe('Number of Items Rendered', () => {
     const step = 25;
     const numItems = 200;
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <InfiniteScroll items={simpleItems(numItems)} step={step}>
           {(item: InfiniteScrollItemType, index: number) => (
             <Box key={index}>{item}</Box>
@@ -262,7 +263,7 @@ describe('show scenarios', () => {
     // https://github.com/jsdom/jsdom/issues/1695#issuecomment-449931788
     window.HTMLElement.prototype.scrollIntoView = jest.fn();
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <InfiniteScroll items={simpleItems(300)} show={105}>
           {(item: InfiniteScrollItemType, index: number) => (
             <Box key={index}>{item}</Box>
@@ -288,7 +289,7 @@ describe('show scenarios', () => {
     const numItems = 200;
     const showIndex = 67;
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <InfiniteScroll
           items={simpleItems(numItems)}
           show={showIndex}
@@ -318,7 +319,7 @@ describe('show scenarios', () => {
     const numItems = 200;
     const showIndex = 41;
     const { container, getByText } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <InfiniteScroll
           items={simpleItems(numItems)}
           show={showIndex}
@@ -349,7 +350,7 @@ describe('show scenarios', () => {
     const numItems = 200;
     const showIndex = 26;
     const { container, getByText } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <InfiniteScroll
           items={simpleItems(numItems)}
           show={showIndex}
@@ -382,7 +383,7 @@ describe('show scenarios', () => {
     const numItems = 200;
     const showIndex = 88;
     const { container, getByText } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <InfiniteScroll
           items={simpleItems(numItems)}
           replace
@@ -424,7 +425,7 @@ describe('show scenarios', () => {
     const numItems = 200;
     const showIndex = 26;
     const { container, getByText } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <InfiniteScroll
           items={simpleItems(numItems)}
           replace

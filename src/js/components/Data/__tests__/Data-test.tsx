@@ -3,7 +3,7 @@ import range from 'lodash/range';
 import '@testing-library/jest-dom';
 import { act, fireEvent, render, screen } from '@testing-library/react';
 import 'jest-styled-components';
-
+import { hpe } from 'grommet-theme-hpe';
 import { Grommet } from '../../Grommet';
 import { DataFilter } from '../../DataFilter';
 import { DataFilters } from '../../DataFilters';
@@ -44,7 +44,7 @@ describe('Data', () => {
 
   test('renders', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Data data={data} />
       </Grommet>,
     );
@@ -59,7 +59,7 @@ describe('Data', () => {
 
   test('toolbar', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Data
           data={data}
           properties={{
@@ -79,7 +79,7 @@ describe('Data', () => {
 
   test('view', () => {
     const { getByText, container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Data
           data={data}
           properties={{
@@ -99,7 +99,7 @@ describe('Data', () => {
 
   test('view search', () => {
     const { getByText, queryByText, container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Data
           data={data}
           properties={{
@@ -122,7 +122,7 @@ describe('Data', () => {
 
   test('view property option', () => {
     const { getByText, container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Data
           data={data}
           properties={{
@@ -146,7 +146,7 @@ describe('Data', () => {
 
   test('view property range', () => {
     const { getByText, container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Data
           data={data}
           properties={{
@@ -171,7 +171,7 @@ describe('Data', () => {
 
   test('view sort', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Data
           data={data}
           properties={{
@@ -194,7 +194,7 @@ describe('Data', () => {
 
   test('view columns', () => {
     const { getByText, queryByText, container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Data
           data={data}
           properties={{
@@ -219,7 +219,7 @@ describe('Data', () => {
 
   test('view all', () => {
     const { getByText, container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Data
           data={data}
           properties={{
@@ -246,7 +246,7 @@ describe('Data', () => {
 
   test('messages', () => {
     const { getByText, container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Data
           data={data}
           messages={{
@@ -273,7 +273,7 @@ describe('Data', () => {
   test('uncontrolled search', () => {
     jest.useFakeTimers();
     const { getByRole, getByText, queryByText, container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Data
           data={data}
           properties={{ name: { label: 'Name' } }}
@@ -304,7 +304,7 @@ describe('Data', () => {
     jest.useFakeTimers();
     const onView = jest.fn();
     const { getByRole, getByText, container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Data
           data={data}
           properties={{ name: { label: 'Name' } }}
@@ -340,7 +340,7 @@ describe('Data', () => {
 
   test('toolbar search', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Data
           data={data}
           properties={{ name: { label: 'Name' } }}
@@ -361,7 +361,7 @@ describe('Data', () => {
 
   test('toolbar filters', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Data
           data={data}
           properties={{ name: { label: 'Name' } }}
@@ -382,7 +382,7 @@ describe('Data', () => {
 
   test('pagination', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Data
           data={[...data].slice(2, 4)}
           total={data.length}
@@ -401,7 +401,7 @@ describe('Data', () => {
 
   test('pagination step', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Data
           data={[...data].slice(2, 4)}
           total={data.length}
@@ -420,7 +420,7 @@ describe('Data', () => {
   test('onView', () => {
     const onView = jest.fn();
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Data data={data} onView={onView}>
           <DataFilters />
           <DataTable />
@@ -433,7 +433,7 @@ describe('Data', () => {
 
   test('properties when property is an array', () => {
     const { asFragment } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Data
           data={data}
           toolbar
@@ -476,7 +476,7 @@ describe('Data', () => {
 
   test('should include badge based on view', () => {
     render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Data
           data={data}
           view={{
@@ -498,7 +498,7 @@ describe('Data', () => {
 
   test('should not include properties with badge: false in badge count', () => {
     render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Data
           data={data}
           properties={{
@@ -546,7 +546,7 @@ describe('Data', () => {
 
     jest.useFakeTimers();
     const { getByRole, getByText, container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Data data={data} properties={properties} view={view} toolbar>
           <DataTable columns={columns} />
           <Pagination />
@@ -602,7 +602,7 @@ describe('Data', () => {
     jest.useFakeTimers();
     const onView = jest.fn();
     const { getByRole } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Data
           data={data}
           properties={properties}
@@ -663,7 +663,7 @@ describe('Data', () => {
     const onView = jest.fn();
     const App = () => {
       return (
-        <Grommet>
+        <Grommet theme={hpe}>
           <Data
             data={[]}
             properties={{

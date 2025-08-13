@@ -3,7 +3,7 @@ import { fireEvent, render } from '@testing-library/react';
 import 'jest-styled-components';
 import 'jest-axe/extend-expect';
 import 'regenerator-runtime/runtime';
-
+import { hpe } from 'grommet-theme-hpe';
 import { axe } from 'jest-axe';
 
 import { Grommet } from '../../Grommet';
@@ -16,7 +16,7 @@ import { LinkNext } from 'grommet-icons';
 describe('Anchor', () => {
   test('should have no accessibility violations', async () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Anchor>Link</Anchor>
       </Grommet>,
     );
@@ -28,7 +28,7 @@ describe('Anchor', () => {
 
   test('renders', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Anchor />
       </Grommet>,
     );
@@ -42,7 +42,7 @@ describe('Anchor', () => {
 
   test('renders with children', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Anchor href="#">children</Anchor>
       </Grommet>,
     );
@@ -52,7 +52,7 @@ describe('Anchor', () => {
   test('warns about invalid label render', () => {
     const warnSpy = jest.spyOn(console, 'warn').mockImplementation();
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Anchor href="#" label="Test">
           invalid
         </Anchor>
@@ -70,7 +70,7 @@ describe('Anchor', () => {
   test('warns about invalid icon render', () => {
     const warnSpy = jest.spyOn(console, 'warn').mockImplementation();
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Anchor href="#" icon={<svg />}>
           invalid
         </Anchor>
@@ -88,7 +88,7 @@ describe('Anchor', () => {
   test('shows no error for component used in as prop', () => {
     const errorSpy = jest.spyOn(console, 'error').mockImplementation();
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Anchor href="#" as={Box} />
       </Grommet>,
     );
@@ -102,7 +102,7 @@ describe('Anchor', () => {
   test('focus renders', () => {
     const onFocus = jest.fn();
     const { container, getByText } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Anchor href="#" label="Test" onFocus={onFocus} />
       </Grommet>,
     );
@@ -114,7 +114,7 @@ describe('Anchor', () => {
   test('blur renders', () => {
     const onBlur = jest.fn();
     const { container, getByText } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Anchor href="#" label="Test" onBlur={onBlur} />
       </Grommet>,
     );
@@ -125,7 +125,7 @@ describe('Anchor', () => {
 
   test('disabled renders', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Anchor disabled />
       </Grommet>,
     );
@@ -134,7 +134,7 @@ describe('Anchor', () => {
 
   test('icon label renders', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Anchor icon={<svg />} label="Test" onClick={() => {}} />
       </Grommet>,
     );
@@ -143,7 +143,7 @@ describe('Anchor', () => {
 
   test('reverse icon label renders', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Anchor reverse icon={<svg />} label="Test" onClick={() => {}} />
       </Grommet>,
     );
@@ -152,7 +152,7 @@ describe('Anchor', () => {
 
   test('size renders', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Anchor size="xsmall" />
         <Anchor size="small" />
         <Anchor size="medium" />
@@ -168,7 +168,7 @@ describe('Anchor', () => {
   test('is clickable', () => {
     const onClick = jest.fn();
     const { container, getByText } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Anchor href="#" label="Test" onClick={onClick} />
       </Grommet>,
     );
@@ -180,7 +180,7 @@ describe('Anchor', () => {
 
   test('renders tag', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Anchor href="#" label="Test" as="span" />
       </Grommet>,
     );
@@ -189,7 +189,7 @@ describe('Anchor', () => {
 
   test('weight renders', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Anchor href="#" label="Normal" weight="normal" />
         <Anchor href="#" label="Bold" weight="bold" />
         <Anchor href="#" label="Bold" weight={500} />
@@ -219,7 +219,7 @@ describe('Anchor', () => {
 
   test('renders a11yTitle and aria-label', () => {
     const { container, getByLabelText } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Anchor href="#" label="Test" a11yTitle="test" />
         <Anchor href="#" label="Test" aria-label="test-2" />
       </Grommet>,
@@ -324,7 +324,7 @@ describe('Anchor', () => {
           />
           <Anchor label="Anchor using theme" icon={<LinkNext />} />
         </Grommet>
-        <Grommet>
+        <Grommet theme={hpe}>
           <Anchor label="Anchor color" icon={<LinkNext />} />
         </Grommet>
       </>,

@@ -4,6 +4,7 @@ import { axe } from 'jest-axe';
 import 'jest-axe/extend-expect';
 import 'regenerator-runtime/runtime';
 import 'jest-styled-components';
+import { hpe } from 'grommet-theme-hpe';
 
 import { createPortal, expectPortal } from '../../../utils/portal';
 
@@ -15,7 +16,7 @@ describe('DropButton', () => {
 
   test('should have no accessibility violations', async () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <DropButton
           a11yTitle="test"
           dropContent={<div id="drop-contents">drop contents</div>}
@@ -31,7 +32,7 @@ describe('DropButton', () => {
     window.scrollTo = jest.fn();
 
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <DropButton
           label="Dropper"
           dropContent={<div id="drop-contents">drop contents</div>}
@@ -57,7 +58,7 @@ describe('DropButton', () => {
 
   test('opened', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <DropButton
           label="Dropper"
           open
@@ -74,7 +75,7 @@ describe('DropButton', () => {
     const onClose = jest.fn((event) => event.persist());
 
     const { getByText, container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <DropButton
           label="Dropper"
           onClose={onClose}
@@ -103,7 +104,7 @@ describe('DropButton', () => {
     const onOpen = jest.fn((event) => event.persist());
 
     const { getByText, container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <DropButton
           label="Dropper"
           onClose={onClose}
@@ -140,7 +141,7 @@ describe('DropButton', () => {
 
   test('disabled', () => {
     const { getByText, container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <DropButton
           disabled
           label="Dropper"
@@ -158,7 +159,7 @@ describe('DropButton', () => {
   test('opened ref', () => {
     const ref: React.RefObject<HTMLButtonElement | null> = React.createRef();
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <DropButton
           ref={ref}
           open
@@ -174,7 +175,7 @@ describe('DropButton', () => {
   test('ref function', () => {
     const ref: React.Ref<HTMLElement> = jest.fn();
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <DropButton
           ref={ref}
           open
@@ -191,7 +192,7 @@ describe('DropButton', () => {
   test('rendersr a11yTitle and aria-label', () => {
     const LABEL = 'Test Label';
     const { container, getByLabelText } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <DropButton
           label="Dropper"
           aria-label={LABEL}

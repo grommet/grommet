@@ -1,13 +1,45 @@
 // Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`Video Configure Menu Button 1`] = `
+.c6 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 18px;
+  height: 18px;
+  fill: #ffffff;
+  stroke: #ffffff;
+}
+
+.c6 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c6 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c6 *[stroke*='#'],
+.c6 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c6 *[fill-rule],
+.c6 *[FILL-RULE],
+.c6 *[fill*='#'],
+.c6 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
+}
+
 .c4 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   align-items: center;
-  background-color: rgba(51, 51, 51, 0.8);
-  color: #f8f8f8;
+  background-color: rgba(28, 28, 28, 0.8);
+  color: #ffffff;
   min-width: 0;
   min-height: 0;
   flex-direction: row;
@@ -46,50 +78,6 @@ exports[`Video Configure Menu Button 1`] = `
   padding-right: 12px;
 }
 
-.c17 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  align-items: center;
-  min-width: 0;
-  min-height: 0;
-  flex-direction: row;
-  justify-content: flex-start;
-  padding: 12px;
-}
-
-.c6 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #f8f8f8;
-  stroke: #f8f8f8;
-}
-
-.c6 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c6 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c6 *[stroke*='#'],
-.c6 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c6 *[fill-rule],
-.c6 *[FILL-RULE],
-.c6 *[fill*='#'],
-.c6 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
-}
-
 .c9 {
   position: relative;
 }
@@ -109,13 +97,9 @@ exports[`Video Configure Menu Button 1`] = `
 
 .c15 {
   margin: 0px;
-  font-size: 18px;
-  line-height: 24px;
-}
-
-.c18 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  font-weight: undefined;
 }
 
 .c5 {
@@ -128,23 +112,47 @@ exports[`Video Configure Menu Button 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  color: inherit;
-  outline: none;
   border: none;
-  padding: 0;
-  text-align: inherit;
+  border-radius: 9999px;
+  padding: 8px 8px;
+  font-size: 1.125rem;
   line-height: 0;
-  padding: 12px;
+  background-color: rgba(0, 0, 0, 0);
+  color: #ffffff;
+  border-style: solid;
+  border-width: 1px;
+  border-color: rgba(0, 0, 0, 0);
+  border-radius: 9999px;
+  font-weight: 500;
+  padding: 8px 8px;
+  text-align: center;
+  transition-property: color,background-color,border-color,box-shadow;
+  transition-duration: 0.1s;
+  transition-timing-function: ease-in-out;
+}
+
+.c5 >svg {
+  display: flex;
+  align-self: center;
+  vertical-align: middle;
 }
 
 .c5:hover {
-  background-color: rgba(221, 221, 221, 0.4);
-  color: #FFFFFF;
+  background-color: rgba(255, 255, 255, 0.06);
+  color: #ffffff;
+  border-color: rgba(0, 0, 0, 0);
+  font-weight: 500;
+}
+
+.c5:hover {
+  background-color: rgba(255, 255, 255, 0.06);
+  color: #ffffff;
 }
 
 .c5:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c5:focus >circle,
@@ -154,8 +162,9 @@ exports[`Video Configure Menu Button 1`] = `
 .c5:focus >polygon,
 .c5:focus >polyline,
 .c5:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c5:focus ::-moz-focus-inner {
@@ -163,6 +172,8 @@ exports[`Video Configure Menu Button 1`] = `
 }
 
 .c5:focus:not(:focus-visible) {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -174,6 +185,8 @@ exports[`Video Configure Menu Button 1`] = `
 .c5:focus:not(:focus-visible) >polygon,
 .c5:focus:not(:focus-visible) >polyline,
 .c5:focus:not(:focus-visible) >rect {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -192,16 +205,42 @@ exports[`Video Configure Menu Button 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  color: inherit;
-  outline: none;
   border: none;
-  padding: 0;
-  text-align: inherit;
+  border-radius: 9999px;
+  padding: 8px 8px;
+  font-size: 1.125rem;
+  line-height: 0;
+  background-color: rgba(0, 0, 0, 0);
+  color: #ffffff;
+  border-style: solid;
+  border-width: 1px;
+  border-color: rgba(0, 0, 0, 0);
+  border-radius: 9999px;
+  font-weight: 500;
+  padding: 8px 8px;
+  text-align: center;
+  transition-property: color,background-color,border-color,box-shadow;
+  transition-duration: 0.1s;
+  transition-timing-function: ease-in-out;
+}
+
+.c16 >svg {
+  display: flex;
+  align-self: center;
+  vertical-align: middle;
+}
+
+.c16:hover {
+  background-color: rgba(255, 255, 255, 0.06);
+  color: #ffffff;
+  border-color: rgba(0, 0, 0, 0);
+  font-weight: 500;
 }
 
 .c16:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c16:focus >circle,
@@ -211,8 +250,9 @@ exports[`Video Configure Menu Button 1`] = `
 .c16:focus >polygon,
 .c16:focus >polyline,
 .c16:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c16:focus ::-moz-focus-inner {
@@ -220,6 +260,8 @@ exports[`Video Configure Menu Button 1`] = `
 }
 
 .c16:focus:not(:focus-visible) {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -231,6 +273,8 @@ exports[`Video Configure Menu Button 1`] = `
 .c16:focus:not(:focus-visible) >polygon,
 .c16:focus:not(:focus-visible) >polyline,
 .c16:focus:not(:focus-visible) >rect {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -240,8 +284,11 @@ exports[`Video Configure Menu Button 1`] = `
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -276,8 +323,9 @@ exports[`Video Configure Menu Button 1`] = `
 }
 
 .c1:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c1:focus >circle,
@@ -287,8 +335,9 @@ exports[`Video Configure Menu Button 1`] = `
 .c1:focus >polygon,
 .c1:focus >polyline,
 .c1:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c1:focus ::-moz-focus-inner {
@@ -314,8 +363,9 @@ exports[`Video Configure Menu Button 1`] = `
 }
 
 .c13:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c13:focus >circle,
@@ -325,8 +375,9 @@ exports[`Video Configure Menu Button 1`] = `
 .c13:focus >polygon,
 .c13:focus >polyline,
 .c13:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c13:focus ::-moz-focus-inner {
@@ -337,12 +388,6 @@ exports[`Video Configure Menu Button 1`] = `
   .c14 {
     padding-left: 6px;
     padding-right: 6px;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .c17 {
-    padding: 6px;
   }
 }
 
@@ -455,25 +500,18 @@ exports[`Video Configure Menu Button 1`] = `
           class="c16"
           type="button"
         >
-          <div
-            class="c17"
+          <svg
+            aria-label="Actions"
+            class="c6"
+            viewBox="0 0 24 24"
           >
-            <span
-              class="c18"
+            <path
+              d="M12 17.5a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zm0-11V1m0 22v-5.5M1 12h5.5m11 0H23M4.437 4.437l4.125 4.125m6.876 6.876 4.124 4.124m0-15.125-4.125 4.125m-6.874 6.876-4.126 4.124"
+              fill="none"
+              stroke="#000"
+              stroke-width="2"
             />
-            <svg
-              aria-label="Actions"
-              class="c6"
-              viewBox="0 0 24 24"
-            >
-              <path
-                d="M12 17.5a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zm0-11V1m0 22v-5.5M1 12h5.5m11 0H23M4.437 4.437l4.125 4.125m6.876 6.876 4.124 4.124m0-15.125-4.125 4.125m-6.874 6.876-4.126 4.124"
-                fill="none"
-                stroke="#000"
-                stroke-width="2"
-              />
-            </svg>
-          </div>
+          </svg>
         </button>
       </div>
     </div>
@@ -482,13 +520,45 @@ exports[`Video Configure Menu Button 1`] = `
 `;
 
 exports[`Video End event handler 1`] = `
+.c6 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 18px;
+  height: 18px;
+  fill: #ffffff;
+  stroke: #ffffff;
+}
+
+.c6 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c6 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c6 *[stroke*='#'],
+.c6 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c6 *[fill-rule],
+.c6 *[FILL-RULE],
+.c6 *[fill*='#'],
+.c6 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
+}
+
 .c4 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   align-items: center;
-  background-color: rgba(51, 51, 51, 0.8);
-  color: #f8f8f8;
+  background-color: rgba(28, 28, 28, 0.8);
+  color: #ffffff;
   min-width: 0;
   min-height: 0;
   flex-direction: row;
@@ -527,50 +597,6 @@ exports[`Video End event handler 1`] = `
   padding-right: 12px;
 }
 
-.c17 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  align-items: center;
-  min-width: 0;
-  min-height: 0;
-  flex-direction: row;
-  justify-content: flex-start;
-  padding: 12px;
-}
-
-.c6 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #f8f8f8;
-  stroke: #f8f8f8;
-}
-
-.c6 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c6 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c6 *[stroke*='#'],
-.c6 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c6 *[fill-rule],
-.c6 *[FILL-RULE],
-.c6 *[fill*='#'],
-.c6 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
-}
-
 .c9 {
   position: relative;
 }
@@ -590,13 +616,9 @@ exports[`Video End event handler 1`] = `
 
 .c15 {
   margin: 0px;
-  font-size: 18px;
-  line-height: 24px;
-}
-
-.c18 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  font-weight: undefined;
 }
 
 .c5 {
@@ -609,23 +631,47 @@ exports[`Video End event handler 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  color: inherit;
-  outline: none;
   border: none;
-  padding: 0;
-  text-align: inherit;
+  border-radius: 9999px;
+  padding: 8px 8px;
+  font-size: 1.125rem;
   line-height: 0;
-  padding: 12px;
+  background-color: rgba(0, 0, 0, 0);
+  color: #ffffff;
+  border-style: solid;
+  border-width: 1px;
+  border-color: rgba(0, 0, 0, 0);
+  border-radius: 9999px;
+  font-weight: 500;
+  padding: 8px 8px;
+  text-align: center;
+  transition-property: color,background-color,border-color,box-shadow;
+  transition-duration: 0.1s;
+  transition-timing-function: ease-in-out;
+}
+
+.c5 >svg {
+  display: flex;
+  align-self: center;
+  vertical-align: middle;
 }
 
 .c5:hover {
-  background-color: rgba(221, 221, 221, 0.4);
-  color: #FFFFFF;
+  background-color: rgba(255, 255, 255, 0.06);
+  color: #ffffff;
+  border-color: rgba(0, 0, 0, 0);
+  font-weight: 500;
+}
+
+.c5:hover {
+  background-color: rgba(255, 255, 255, 0.06);
+  color: #ffffff;
 }
 
 .c5:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c5:focus >circle,
@@ -635,8 +681,9 @@ exports[`Video End event handler 1`] = `
 .c5:focus >polygon,
 .c5:focus >polyline,
 .c5:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c5:focus ::-moz-focus-inner {
@@ -644,6 +691,8 @@ exports[`Video End event handler 1`] = `
 }
 
 .c5:focus:not(:focus-visible) {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -655,6 +704,8 @@ exports[`Video End event handler 1`] = `
 .c5:focus:not(:focus-visible) >polygon,
 .c5:focus:not(:focus-visible) >polyline,
 .c5:focus:not(:focus-visible) >rect {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -673,16 +724,42 @@ exports[`Video End event handler 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  color: inherit;
-  outline: none;
   border: none;
-  padding: 0;
-  text-align: inherit;
+  border-radius: 9999px;
+  padding: 8px 8px;
+  font-size: 1.125rem;
+  line-height: 0;
+  background-color: rgba(0, 0, 0, 0);
+  color: #ffffff;
+  border-style: solid;
+  border-width: 1px;
+  border-color: rgba(0, 0, 0, 0);
+  border-radius: 9999px;
+  font-weight: 500;
+  padding: 8px 8px;
+  text-align: center;
+  transition-property: color,background-color,border-color,box-shadow;
+  transition-duration: 0.1s;
+  transition-timing-function: ease-in-out;
+}
+
+.c16 >svg {
+  display: flex;
+  align-self: center;
+  vertical-align: middle;
+}
+
+.c16:hover {
+  background-color: rgba(255, 255, 255, 0.06);
+  color: #ffffff;
+  border-color: rgba(0, 0, 0, 0);
+  font-weight: 500;
 }
 
 .c16:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c16:focus >circle,
@@ -692,8 +769,9 @@ exports[`Video End event handler 1`] = `
 .c16:focus >polygon,
 .c16:focus >polyline,
 .c16:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c16:focus ::-moz-focus-inner {
@@ -701,6 +779,8 @@ exports[`Video End event handler 1`] = `
 }
 
 .c16:focus:not(:focus-visible) {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -712,6 +792,8 @@ exports[`Video End event handler 1`] = `
 .c16:focus:not(:focus-visible) >polygon,
 .c16:focus:not(:focus-visible) >polyline,
 .c16:focus:not(:focus-visible) >rect {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -721,8 +803,11 @@ exports[`Video End event handler 1`] = `
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -757,8 +842,9 @@ exports[`Video End event handler 1`] = `
 }
 
 .c1:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c1:focus >circle,
@@ -768,8 +854,9 @@ exports[`Video End event handler 1`] = `
 .c1:focus >polygon,
 .c1:focus >polyline,
 .c1:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c1:focus ::-moz-focus-inner {
@@ -795,8 +882,9 @@ exports[`Video End event handler 1`] = `
 }
 
 .c13:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c13:focus >circle,
@@ -806,8 +894,9 @@ exports[`Video End event handler 1`] = `
 .c13:focus >polygon,
 .c13:focus >polyline,
 .c13:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c13:focus ::-moz-focus-inner {
@@ -818,12 +907,6 @@ exports[`Video End event handler 1`] = `
   .c14 {
     padding-left: 6px;
     padding-right: 6px;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .c17 {
-    padding: 6px;
   }
 }
 
@@ -924,25 +1007,18 @@ exports[`Video End event handler 1`] = `
           class="c16"
           type="button"
         >
-          <div
-            class="c17"
+          <svg
+            aria-label="Actions"
+            class="c6"
+            viewBox="0 0 24 24"
           >
-            <span
-              class="c18"
+            <path
+              d="M12 17.5a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zm0-11V1m0 22v-5.5M1 12h5.5m11 0H23M4.437 4.437l4.125 4.125m6.876 6.876 4.124 4.124m0-15.125-4.125 4.125m-6.874 6.876-4.126 4.124"
+              fill="none"
+              stroke="#000"
+              stroke-width="2"
             />
-            <svg
-              aria-label="Actions"
-              class="c6"
-              viewBox="0 0 24 24"
-            >
-              <path
-                d="M12 17.5a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zm0-11V1m0 22v-5.5M1 12h5.5m11 0H23M4.437 4.437l4.125 4.125m6.876 6.876 4.124 4.124m0-15.125-4.125 4.125m-6.874 6.876-4.126 4.124"
-                fill="none"
-                stroke="#000"
-                stroke-width="2"
-              />
-            </svg>
-          </div>
+          </svg>
         </button>
       </div>
     </div>
@@ -951,13 +1027,45 @@ exports[`Video End event handler 1`] = `
 `;
 
 exports[`Video Play and Pause event handlers 1`] = `
+.c6 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 18px;
+  height: 18px;
+  fill: #ffffff;
+  stroke: #ffffff;
+}
+
+.c6 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c6 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c6 *[stroke*='#'],
+.c6 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c6 *[fill-rule],
+.c6 *[FILL-RULE],
+.c6 *[fill*='#'],
+.c6 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
+}
+
 .c4 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   align-items: center;
-  background-color: rgba(51, 51, 51, 0.8);
-  color: #f8f8f8;
+  background-color: rgba(28, 28, 28, 0.8);
+  color: #ffffff;
   min-width: 0;
   min-height: 0;
   flex-direction: row;
@@ -996,50 +1104,6 @@ exports[`Video Play and Pause event handlers 1`] = `
   padding-right: 12px;
 }
 
-.c17 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  align-items: center;
-  min-width: 0;
-  min-height: 0;
-  flex-direction: row;
-  justify-content: flex-start;
-  padding: 12px;
-}
-
-.c6 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #f8f8f8;
-  stroke: #f8f8f8;
-}
-
-.c6 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c6 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c6 *[stroke*='#'],
-.c6 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c6 *[fill-rule],
-.c6 *[FILL-RULE],
-.c6 *[fill*='#'],
-.c6 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
-}
-
 .c9 {
   position: relative;
 }
@@ -1059,13 +1123,9 @@ exports[`Video Play and Pause event handlers 1`] = `
 
 .c15 {
   margin: 0px;
-  font-size: 18px;
-  line-height: 24px;
-}
-
-.c18 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  font-weight: undefined;
 }
 
 .c5 {
@@ -1078,23 +1138,47 @@ exports[`Video Play and Pause event handlers 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  color: inherit;
-  outline: none;
   border: none;
-  padding: 0;
-  text-align: inherit;
+  border-radius: 9999px;
+  padding: 8px 8px;
+  font-size: 1.125rem;
   line-height: 0;
-  padding: 12px;
+  background-color: rgba(0, 0, 0, 0);
+  color: #ffffff;
+  border-style: solid;
+  border-width: 1px;
+  border-color: rgba(0, 0, 0, 0);
+  border-radius: 9999px;
+  font-weight: 500;
+  padding: 8px 8px;
+  text-align: center;
+  transition-property: color,background-color,border-color,box-shadow;
+  transition-duration: 0.1s;
+  transition-timing-function: ease-in-out;
+}
+
+.c5 >svg {
+  display: flex;
+  align-self: center;
+  vertical-align: middle;
 }
 
 .c5:hover {
-  background-color: rgba(221, 221, 221, 0.4);
-  color: #FFFFFF;
+  background-color: rgba(255, 255, 255, 0.06);
+  color: #ffffff;
+  border-color: rgba(0, 0, 0, 0);
+  font-weight: 500;
+}
+
+.c5:hover {
+  background-color: rgba(255, 255, 255, 0.06);
+  color: #ffffff;
 }
 
 .c5:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c5:focus >circle,
@@ -1104,8 +1188,9 @@ exports[`Video Play and Pause event handlers 1`] = `
 .c5:focus >polygon,
 .c5:focus >polyline,
 .c5:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c5:focus ::-moz-focus-inner {
@@ -1113,6 +1198,8 @@ exports[`Video Play and Pause event handlers 1`] = `
 }
 
 .c5:focus:not(:focus-visible) {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -1124,6 +1211,8 @@ exports[`Video Play and Pause event handlers 1`] = `
 .c5:focus:not(:focus-visible) >polygon,
 .c5:focus:not(:focus-visible) >polyline,
 .c5:focus:not(:focus-visible) >rect {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -1142,16 +1231,42 @@ exports[`Video Play and Pause event handlers 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  color: inherit;
-  outline: none;
   border: none;
-  padding: 0;
-  text-align: inherit;
+  border-radius: 9999px;
+  padding: 8px 8px;
+  font-size: 1.125rem;
+  line-height: 0;
+  background-color: rgba(0, 0, 0, 0);
+  color: #ffffff;
+  border-style: solid;
+  border-width: 1px;
+  border-color: rgba(0, 0, 0, 0);
+  border-radius: 9999px;
+  font-weight: 500;
+  padding: 8px 8px;
+  text-align: center;
+  transition-property: color,background-color,border-color,box-shadow;
+  transition-duration: 0.1s;
+  transition-timing-function: ease-in-out;
+}
+
+.c16 >svg {
+  display: flex;
+  align-self: center;
+  vertical-align: middle;
+}
+
+.c16:hover {
+  background-color: rgba(255, 255, 255, 0.06);
+  color: #ffffff;
+  border-color: rgba(0, 0, 0, 0);
+  font-weight: 500;
 }
 
 .c16:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c16:focus >circle,
@@ -1161,8 +1276,9 @@ exports[`Video Play and Pause event handlers 1`] = `
 .c16:focus >polygon,
 .c16:focus >polyline,
 .c16:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c16:focus ::-moz-focus-inner {
@@ -1170,6 +1286,8 @@ exports[`Video Play and Pause event handlers 1`] = `
 }
 
 .c16:focus:not(:focus-visible) {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -1181,6 +1299,8 @@ exports[`Video Play and Pause event handlers 1`] = `
 .c16:focus:not(:focus-visible) >polygon,
 .c16:focus:not(:focus-visible) >polyline,
 .c16:focus:not(:focus-visible) >rect {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -1190,8 +1310,11 @@ exports[`Video Play and Pause event handlers 1`] = `
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1226,8 +1349,9 @@ exports[`Video Play and Pause event handlers 1`] = `
 }
 
 .c1:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c1:focus >circle,
@@ -1237,8 +1361,9 @@ exports[`Video Play and Pause event handlers 1`] = `
 .c1:focus >polygon,
 .c1:focus >polyline,
 .c1:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c1:focus ::-moz-focus-inner {
@@ -1264,8 +1389,9 @@ exports[`Video Play and Pause event handlers 1`] = `
 }
 
 .c13:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c13:focus >circle,
@@ -1275,8 +1401,9 @@ exports[`Video Play and Pause event handlers 1`] = `
 .c13:focus >polygon,
 .c13:focus >polyline,
 .c13:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c13:focus ::-moz-focus-inner {
@@ -1287,12 +1414,6 @@ exports[`Video Play and Pause event handlers 1`] = `
   .c14 {
     padding-left: 6px;
     padding-right: 6px;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .c17 {
-    padding: 6px;
   }
 }
 
@@ -1393,25 +1514,18 @@ exports[`Video Play and Pause event handlers 1`] = `
           class="c16"
           type="button"
         >
-          <div
-            class="c17"
+          <svg
+            aria-label="Actions"
+            class="c6"
+            viewBox="0 0 24 24"
           >
-            <span
-              class="c18"
+            <path
+              d="M12 17.5a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zm0-11V1m0 22v-5.5M1 12h5.5m11 0H23M4.437 4.437l4.125 4.125m6.876 6.876 4.124 4.124m0-15.125-4.125 4.125m-6.874 6.876-4.126 4.124"
+              fill="none"
+              stroke="#000"
+              stroke-width="2"
             />
-            <svg
-              aria-label="Actions"
-              class="c6"
-              viewBox="0 0 24 24"
-            >
-              <path
-                d="M12 17.5a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zm0-11V1m0 22v-5.5M1 12h5.5m11 0H23M4.437 4.437l4.125 4.125m6.876 6.876 4.124 4.124m0-15.125-4.125 4.125m-6.874 6.876-4.126 4.124"
-                fill="none"
-                stroke="#000"
-                stroke-width="2"
-              />
-            </svg>
-          </div>
+          </svg>
         </button>
       </div>
     </div>
@@ -1421,10 +1535,10 @@ exports[`Video Play and Pause event handlers 1`] = `
 
 exports[`Video Play and Pause event handlers 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 kiEDjE"
+  class="StyledGrommet-sc-19lkkz7-0 iRGypN"
 >
   <div
-    class="StyledVideo__StyledVideoContainer-sc-w4v8h9-1 iwLihr"
+    class="StyledVideo__StyledVideoContainer-sc-w4v8h9-1 hYHLsf"
     tabindex="-1"
   >
     <video
@@ -1440,19 +1554,19 @@ exports[`Video Play and Pause event handlers 2`] = `
       class="StyledVideo__StyledVideoControls-sc-w4v8h9-2 gIwuJn"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 iQpOqy"
+        class="StyledBox-sc-13pk1d4-0 iGhGii"
       >
         <button
-          class="StyledButton-sc-323bzc-0 ctcGGD"
+          class="StyledButtonKind-sc-1vhfpnt-0 bZKdfG"
           type="button"
         >
           .c0 {
   display: inline-block;
   flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #f8f8f8;
-  stroke: #f8f8f8;
+  width: 18px;
+  height: 18px;
+  fill: #ffffff;
+  stroke: #ffffff;
 }
 
 .c0 g {
@@ -1476,10 +1590,6 @@ exports[`Video Play and Pause event handlers 2`] = `
 .c0 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
-}
-
-@media only screen and (max-width: 768px) {
-
 }
 
 @media only screen and (max-width: 768px) {
@@ -1533,7 +1643,7 @@ exports[`Video Play and Pause event handlers 2`] = `
               >
                 <div
                   aria-label="scrubber"
-                  class="StyledVideo__StyledVideoScrubber-sc-w4v8h9-3 ikCDtk"
+                  class="StyledVideo__StyledVideoScrubber-sc-w4v8h9-3 joTMfs"
                   role="button"
                   tabindex="0"
                 />
@@ -1544,7 +1654,7 @@ exports[`Video Play and Pause event handlers 2`] = `
             class="StyledBox-sc-13pk1d4-0 iDdezv"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 gQrfUm"
+              class="StyledText-sc-1sadyjn-0 fbbBQL"
             >
               NaN:NaN
             </span>
@@ -1554,28 +1664,21 @@ exports[`Video Play and Pause event handlers 2`] = `
           aria-expanded="false"
           aria-haspopup="menu"
           aria-label="open menu"
-          class="StyledButton-sc-323bzc-0 jLPXpV"
+          class="StyledButtonKind-sc-1vhfpnt-0 jKdwXf"
           type="button"
         >
-          <div
-            class="StyledBox-sc-13pk1d4-0 kYyYKN"
+          <svg
+            aria-label="Actions"
+            class="StyledIcon-sc-ofa7kd-0 bebVMk"
+            viewBox="0 0 24 24"
           >
-            <span
-              class="StyledText-sc-1sadyjn-0 jTcNpm"
+            <path
+              d="M12 17.5a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zm0-11V1m0 22v-5.5M1 12h5.5m11 0H23M4.437 4.437l4.125 4.125m6.876 6.876 4.124 4.124m0-15.125-4.125 4.125m-6.874 6.876-4.126 4.124"
+              fill="none"
+              stroke="#000"
+              stroke-width="2"
             />
-            <svg
-              aria-label="Actions"
-              class="StyledIcon-sc-ofa7kd-0 fmPtiI"
-              viewBox="0 0 24 24"
-            >
-              <path
-                d="M12 17.5a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zm0-11V1m0 22v-5.5M1 12h5.5m11 0H23M4.437 4.437l4.125 4.125m6.876 6.876 4.124 4.124m0-15.125-4.125 4.125m-6.874 6.876-4.126 4.124"
-                fill="none"
-                stroke="#000"
-                stroke-width="2"
-              />
-            </svg>
-          </div>
+          </svg>
         </button>
       </div>
     </div>
@@ -1584,13 +1687,45 @@ exports[`Video Play and Pause event handlers 2`] = `
 `;
 
 exports[`Video autoPlay renders 1`] = `
+.c6 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 18px;
+  height: 18px;
+  fill: #ffffff;
+  stroke: #ffffff;
+}
+
+.c6 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c6 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c6 *[stroke*='#'],
+.c6 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c6 *[fill-rule],
+.c6 *[FILL-RULE],
+.c6 *[fill*='#'],
+.c6 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
+}
+
 .c4 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   align-items: center;
-  background-color: rgba(51, 51, 51, 0.8);
-  color: #f8f8f8;
+  background-color: rgba(28, 28, 28, 0.8);
+  color: #ffffff;
   min-width: 0;
   min-height: 0;
   flex-direction: row;
@@ -1629,50 +1764,6 @@ exports[`Video autoPlay renders 1`] = `
   padding-right: 12px;
 }
 
-.c17 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  align-items: center;
-  min-width: 0;
-  min-height: 0;
-  flex-direction: row;
-  justify-content: flex-start;
-  padding: 12px;
-}
-
-.c6 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #f8f8f8;
-  stroke: #f8f8f8;
-}
-
-.c6 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c6 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c6 *[stroke*='#'],
-.c6 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c6 *[fill-rule],
-.c6 *[FILL-RULE],
-.c6 *[fill*='#'],
-.c6 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
-}
-
 .c9 {
   position: relative;
 }
@@ -1692,13 +1783,9 @@ exports[`Video autoPlay renders 1`] = `
 
 .c15 {
   margin: 0px;
-  font-size: 18px;
-  line-height: 24px;
-}
-
-.c18 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  font-weight: undefined;
 }
 
 .c5 {
@@ -1711,23 +1798,47 @@ exports[`Video autoPlay renders 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  color: inherit;
-  outline: none;
   border: none;
-  padding: 0;
-  text-align: inherit;
+  border-radius: 9999px;
+  padding: 8px 8px;
+  font-size: 1.125rem;
   line-height: 0;
-  padding: 12px;
+  background-color: rgba(0, 0, 0, 0);
+  color: #ffffff;
+  border-style: solid;
+  border-width: 1px;
+  border-color: rgba(0, 0, 0, 0);
+  border-radius: 9999px;
+  font-weight: 500;
+  padding: 8px 8px;
+  text-align: center;
+  transition-property: color,background-color,border-color,box-shadow;
+  transition-duration: 0.1s;
+  transition-timing-function: ease-in-out;
+}
+
+.c5 >svg {
+  display: flex;
+  align-self: center;
+  vertical-align: middle;
 }
 
 .c5:hover {
-  background-color: rgba(221, 221, 221, 0.4);
-  color: #FFFFFF;
+  background-color: rgba(255, 255, 255, 0.06);
+  color: #ffffff;
+  border-color: rgba(0, 0, 0, 0);
+  font-weight: 500;
+}
+
+.c5:hover {
+  background-color: rgba(255, 255, 255, 0.06);
+  color: #ffffff;
 }
 
 .c5:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c5:focus >circle,
@@ -1737,8 +1848,9 @@ exports[`Video autoPlay renders 1`] = `
 .c5:focus >polygon,
 .c5:focus >polyline,
 .c5:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c5:focus ::-moz-focus-inner {
@@ -1746,6 +1858,8 @@ exports[`Video autoPlay renders 1`] = `
 }
 
 .c5:focus:not(:focus-visible) {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -1757,6 +1871,8 @@ exports[`Video autoPlay renders 1`] = `
 .c5:focus:not(:focus-visible) >polygon,
 .c5:focus:not(:focus-visible) >polyline,
 .c5:focus:not(:focus-visible) >rect {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -1775,16 +1891,42 @@ exports[`Video autoPlay renders 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  color: inherit;
-  outline: none;
   border: none;
-  padding: 0;
-  text-align: inherit;
+  border-radius: 9999px;
+  padding: 8px 8px;
+  font-size: 1.125rem;
+  line-height: 0;
+  background-color: rgba(0, 0, 0, 0);
+  color: #ffffff;
+  border-style: solid;
+  border-width: 1px;
+  border-color: rgba(0, 0, 0, 0);
+  border-radius: 9999px;
+  font-weight: 500;
+  padding: 8px 8px;
+  text-align: center;
+  transition-property: color,background-color,border-color,box-shadow;
+  transition-duration: 0.1s;
+  transition-timing-function: ease-in-out;
+}
+
+.c16 >svg {
+  display: flex;
+  align-self: center;
+  vertical-align: middle;
+}
+
+.c16:hover {
+  background-color: rgba(255, 255, 255, 0.06);
+  color: #ffffff;
+  border-color: rgba(0, 0, 0, 0);
+  font-weight: 500;
 }
 
 .c16:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c16:focus >circle,
@@ -1794,8 +1936,9 @@ exports[`Video autoPlay renders 1`] = `
 .c16:focus >polygon,
 .c16:focus >polyline,
 .c16:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c16:focus ::-moz-focus-inner {
@@ -1803,6 +1946,8 @@ exports[`Video autoPlay renders 1`] = `
 }
 
 .c16:focus:not(:focus-visible) {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -1814,6 +1959,8 @@ exports[`Video autoPlay renders 1`] = `
 .c16:focus:not(:focus-visible) >polygon,
 .c16:focus:not(:focus-visible) >polyline,
 .c16:focus:not(:focus-visible) >rect {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -1823,8 +1970,11 @@ exports[`Video autoPlay renders 1`] = `
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1859,8 +2009,9 @@ exports[`Video autoPlay renders 1`] = `
 }
 
 .c1:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c1:focus >circle,
@@ -1870,8 +2021,9 @@ exports[`Video autoPlay renders 1`] = `
 .c1:focus >polygon,
 .c1:focus >polyline,
 .c1:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c1:focus ::-moz-focus-inner {
@@ -1897,8 +2049,9 @@ exports[`Video autoPlay renders 1`] = `
 }
 
 .c13:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c13:focus >circle,
@@ -1908,8 +2061,9 @@ exports[`Video autoPlay renders 1`] = `
 .c13:focus >polygon,
 .c13:focus >polyline,
 .c13:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c13:focus ::-moz-focus-inner {
@@ -1920,12 +2074,6 @@ exports[`Video autoPlay renders 1`] = `
   .c14 {
     padding-left: 6px;
     padding-right: 6px;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .c17 {
-    padding: 6px;
   }
 }
 
@@ -2027,25 +2175,18 @@ exports[`Video autoPlay renders 1`] = `
           class="c16"
           type="button"
         >
-          <div
-            class="c17"
+          <svg
+            aria-label="Actions"
+            class="c6"
+            viewBox="0 0 24 24"
           >
-            <span
-              class="c18"
+            <path
+              d="M12 17.5a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zm0-11V1m0 22v-5.5M1 12h5.5m11 0H23M4.437 4.437l4.125 4.125m6.876 6.876 4.124 4.124m0-15.125-4.125 4.125m-6.874 6.876-4.126 4.124"
+              fill="none"
+              stroke="#000"
+              stroke-width="2"
             />
-            <svg
-              aria-label="Actions"
-              class="c6"
-              viewBox="0 0 24 24"
-            >
-              <path
-                d="M12 17.5a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zm0-11V1m0 22v-5.5M1 12h5.5m11 0H23M4.437 4.437l4.125 4.125m6.876 6.876 4.124 4.124m0-15.125-4.125 4.125m-6.874 6.876-4.126 4.124"
-                fill="none"
-                stroke="#000"
-                stroke-width="2"
-              />
-            </svg>
-          </div>
+          </svg>
         </button>
       </div>
     </div>
@@ -2054,6 +2195,38 @@ exports[`Video autoPlay renders 1`] = `
 `;
 
 exports[`Video controls below renders 1`] = `
+.c6 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 18px;
+  height: 18px;
+  fill: #2e2e2e;
+  stroke: #2e2e2e;
+}
+
+.c6 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c6 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c6 *[stroke*='#'],
+.c6 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c6 *[fill-rule],
+.c6 *[FILL-RULE],
+.c6 *[fill*='#'],
+.c6 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
+}
+
 .c4 {
   display: flex;
   box-sizing: border-box;
@@ -2097,50 +2270,6 @@ exports[`Video controls below renders 1`] = `
   padding-right: 12px;
 }
 
-.c17 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  align-items: center;
-  min-width: 0;
-  min-height: 0;
-  flex-direction: row;
-  justify-content: flex-start;
-  padding: 12px;
-}
-
-.c6 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #666666;
-  stroke: #666666;
-}
-
-.c6 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c6 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c6 *[stroke*='#'],
-.c6 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c6 *[fill-rule],
-.c6 *[FILL-RULE],
-.c6 *[fill*='#'],
-.c6 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
-}
-
 .c9 {
   position: relative;
 }
@@ -2160,13 +2289,9 @@ exports[`Video controls below renders 1`] = `
 
 .c15 {
   margin: 0px;
-  font-size: 18px;
-  line-height: 24px;
-}
-
-.c18 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  font-weight: undefined;
 }
 
 .c5 {
@@ -2179,23 +2304,47 @@ exports[`Video controls below renders 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  color: inherit;
-  outline: none;
   border: none;
-  padding: 0;
-  text-align: inherit;
+  border-radius: 9999px;
+  padding: 8px 8px;
+  font-size: 1.125rem;
   line-height: 0;
-  padding: 12px;
+  background-color: rgba(0, 0, 0, 0);
+  color: #2e2e2e;
+  border-style: solid;
+  border-width: 1px;
+  border-color: rgba(0, 0, 0, 0);
+  border-radius: 9999px;
+  font-weight: 500;
+  padding: 8px 8px;
+  text-align: center;
+  transition-property: color,background-color,border-color,box-shadow;
+  transition-duration: 0.1s;
+  transition-timing-function: ease-in-out;
+}
+
+.c5 >svg {
+  display: flex;
+  align-self: center;
+  vertical-align: middle;
 }
 
 .c5:hover {
-  background-color: rgba(221, 221, 221, 0.4);
-  color: #000000;
+  background-color: rgba(0, 0, 0, 0.04);
+  color: #2e2e2e;
+  border-color: rgba(0, 0, 0, 0);
+  font-weight: 500;
+}
+
+.c5:hover {
+  background-color: rgba(0, 0, 0, 0.04);
+  color: #555555;
 }
 
 .c5:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c5:focus >circle,
@@ -2205,8 +2354,9 @@ exports[`Video controls below renders 1`] = `
 .c5:focus >polygon,
 .c5:focus >polyline,
 .c5:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c5:focus ::-moz-focus-inner {
@@ -2214,6 +2364,8 @@ exports[`Video controls below renders 1`] = `
 }
 
 .c5:focus:not(:focus-visible) {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -2225,6 +2377,8 @@ exports[`Video controls below renders 1`] = `
 .c5:focus:not(:focus-visible) >polygon,
 .c5:focus:not(:focus-visible) >polyline,
 .c5:focus:not(:focus-visible) >rect {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -2243,16 +2397,42 @@ exports[`Video controls below renders 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  color: inherit;
-  outline: none;
   border: none;
-  padding: 0;
-  text-align: inherit;
+  border-radius: 9999px;
+  padding: 8px 8px;
+  font-size: 1.125rem;
+  line-height: 0;
+  background-color: rgba(0, 0, 0, 0);
+  color: #2e2e2e;
+  border-style: solid;
+  border-width: 1px;
+  border-color: rgba(0, 0, 0, 0);
+  border-radius: 9999px;
+  font-weight: 500;
+  padding: 8px 8px;
+  text-align: center;
+  transition-property: color,background-color,border-color,box-shadow;
+  transition-duration: 0.1s;
+  transition-timing-function: ease-in-out;
+}
+
+.c16 >svg {
+  display: flex;
+  align-self: center;
+  vertical-align: middle;
+}
+
+.c16:hover {
+  background-color: rgba(0, 0, 0, 0.04);
+  color: #2e2e2e;
+  border-color: rgba(0, 0, 0, 0);
+  font-weight: 500;
 }
 
 .c16:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c16:focus >circle,
@@ -2262,8 +2442,9 @@ exports[`Video controls below renders 1`] = `
 .c16:focus >polygon,
 .c16:focus >polyline,
 .c16:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c16:focus ::-moz-focus-inner {
@@ -2271,6 +2452,8 @@ exports[`Video controls below renders 1`] = `
 }
 
 .c16:focus:not(:focus-visible) {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -2282,6 +2465,8 @@ exports[`Video controls below renders 1`] = `
 .c16:focus:not(:focus-visible) >polygon,
 .c16:focus:not(:focus-visible) >polyline,
 .c16:focus:not(:focus-visible) >rect {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -2291,8 +2476,11 @@ exports[`Video controls below renders 1`] = `
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -2327,8 +2515,9 @@ exports[`Video controls below renders 1`] = `
 }
 
 .c1:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c1:focus >circle,
@@ -2338,8 +2527,9 @@ exports[`Video controls below renders 1`] = `
 .c1:focus >polygon,
 .c1:focus >polyline,
 .c1:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c1:focus ::-moz-focus-inner {
@@ -2360,8 +2550,9 @@ exports[`Video controls below renders 1`] = `
 }
 
 .c13:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c13:focus >circle,
@@ -2371,8 +2562,9 @@ exports[`Video controls below renders 1`] = `
 .c13:focus >polygon,
 .c13:focus >polyline,
 .c13:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c13:focus ::-moz-focus-inner {
@@ -2383,12 +2575,6 @@ exports[`Video controls below renders 1`] = `
   .c14 {
     padding-left: 6px;
     padding-right: 6px;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .c17 {
-    padding: 6px;
   }
 }
 
@@ -2490,25 +2676,18 @@ exports[`Video controls below renders 1`] = `
           class="c16"
           type="button"
         >
-          <div
-            class="c17"
+          <svg
+            aria-label="Actions"
+            class="c6"
+            viewBox="0 0 24 24"
           >
-            <span
-              class="c18"
+            <path
+              d="M12 17.5a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zm0-11V1m0 22v-5.5M1 12h5.5m11 0H23M4.437 4.437l4.125 4.125m6.876 6.876 4.124 4.124m0-15.125-4.125 4.125m-6.874 6.876-4.126 4.124"
+              fill="none"
+              stroke="#000"
+              stroke-width="2"
             />
-            <svg
-              aria-label="Actions"
-              class="c6"
-              viewBox="0 0 24 24"
-            >
-              <path
-                d="M12 17.5a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zm0-11V1m0 22v-5.5M1 12h5.5m11 0H23M4.437 4.437l4.125 4.125m6.876 6.876 4.124 4.124m0-15.125-4.125 4.125m-6.874 6.876-4.126 4.124"
-                fill="none"
-                stroke="#000"
-                stroke-width="2"
-              />
-            </svg>
-          </div>
+          </svg>
         </button>
       </div>
     </div>
@@ -2517,13 +2696,45 @@ exports[`Video controls below renders 1`] = `
 `;
 
 exports[`Video controls over renders 1`] = `
+.c6 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 18px;
+  height: 18px;
+  fill: #ffffff;
+  stroke: #ffffff;
+}
+
+.c6 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c6 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c6 *[stroke*='#'],
+.c6 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c6 *[fill-rule],
+.c6 *[FILL-RULE],
+.c6 *[fill*='#'],
+.c6 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
+}
+
 .c4 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   align-items: center;
-  background-color: rgba(51, 51, 51, 0.8);
-  color: #f8f8f8;
+  background-color: rgba(28, 28, 28, 0.8);
+  color: #ffffff;
   min-width: 0;
   min-height: 0;
   flex-direction: row;
@@ -2562,50 +2773,6 @@ exports[`Video controls over renders 1`] = `
   padding-right: 12px;
 }
 
-.c17 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  align-items: center;
-  min-width: 0;
-  min-height: 0;
-  flex-direction: row;
-  justify-content: flex-start;
-  padding: 12px;
-}
-
-.c6 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #f8f8f8;
-  stroke: #f8f8f8;
-}
-
-.c6 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c6 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c6 *[stroke*='#'],
-.c6 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c6 *[fill-rule],
-.c6 *[FILL-RULE],
-.c6 *[fill*='#'],
-.c6 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
-}
-
 .c9 {
   position: relative;
 }
@@ -2625,13 +2792,9 @@ exports[`Video controls over renders 1`] = `
 
 .c15 {
   margin: 0px;
-  font-size: 18px;
-  line-height: 24px;
-}
-
-.c18 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  font-weight: undefined;
 }
 
 .c5 {
@@ -2644,23 +2807,47 @@ exports[`Video controls over renders 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  color: inherit;
-  outline: none;
   border: none;
-  padding: 0;
-  text-align: inherit;
+  border-radius: 9999px;
+  padding: 8px 8px;
+  font-size: 1.125rem;
   line-height: 0;
-  padding: 12px;
+  background-color: rgba(0, 0, 0, 0);
+  color: #ffffff;
+  border-style: solid;
+  border-width: 1px;
+  border-color: rgba(0, 0, 0, 0);
+  border-radius: 9999px;
+  font-weight: 500;
+  padding: 8px 8px;
+  text-align: center;
+  transition-property: color,background-color,border-color,box-shadow;
+  transition-duration: 0.1s;
+  transition-timing-function: ease-in-out;
+}
+
+.c5 >svg {
+  display: flex;
+  align-self: center;
+  vertical-align: middle;
 }
 
 .c5:hover {
-  background-color: rgba(221, 221, 221, 0.4);
-  color: #FFFFFF;
+  background-color: rgba(255, 255, 255, 0.06);
+  color: #ffffff;
+  border-color: rgba(0, 0, 0, 0);
+  font-weight: 500;
+}
+
+.c5:hover {
+  background-color: rgba(255, 255, 255, 0.06);
+  color: #ffffff;
 }
 
 .c5:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c5:focus >circle,
@@ -2670,8 +2857,9 @@ exports[`Video controls over renders 1`] = `
 .c5:focus >polygon,
 .c5:focus >polyline,
 .c5:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c5:focus ::-moz-focus-inner {
@@ -2679,6 +2867,8 @@ exports[`Video controls over renders 1`] = `
 }
 
 .c5:focus:not(:focus-visible) {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -2690,6 +2880,8 @@ exports[`Video controls over renders 1`] = `
 .c5:focus:not(:focus-visible) >polygon,
 .c5:focus:not(:focus-visible) >polyline,
 .c5:focus:not(:focus-visible) >rect {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -2708,16 +2900,42 @@ exports[`Video controls over renders 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  color: inherit;
-  outline: none;
   border: none;
-  padding: 0;
-  text-align: inherit;
+  border-radius: 9999px;
+  padding: 8px 8px;
+  font-size: 1.125rem;
+  line-height: 0;
+  background-color: rgba(0, 0, 0, 0);
+  color: #ffffff;
+  border-style: solid;
+  border-width: 1px;
+  border-color: rgba(0, 0, 0, 0);
+  border-radius: 9999px;
+  font-weight: 500;
+  padding: 8px 8px;
+  text-align: center;
+  transition-property: color,background-color,border-color,box-shadow;
+  transition-duration: 0.1s;
+  transition-timing-function: ease-in-out;
+}
+
+.c16 >svg {
+  display: flex;
+  align-self: center;
+  vertical-align: middle;
+}
+
+.c16:hover {
+  background-color: rgba(255, 255, 255, 0.06);
+  color: #ffffff;
+  border-color: rgba(0, 0, 0, 0);
+  font-weight: 500;
 }
 
 .c16:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c16:focus >circle,
@@ -2727,8 +2945,9 @@ exports[`Video controls over renders 1`] = `
 .c16:focus >polygon,
 .c16:focus >polyline,
 .c16:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c16:focus ::-moz-focus-inner {
@@ -2736,6 +2955,8 @@ exports[`Video controls over renders 1`] = `
 }
 
 .c16:focus:not(:focus-visible) {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -2747,6 +2968,8 @@ exports[`Video controls over renders 1`] = `
 .c16:focus:not(:focus-visible) >polygon,
 .c16:focus:not(:focus-visible) >polyline,
 .c16:focus:not(:focus-visible) >rect {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -2756,8 +2979,11 @@ exports[`Video controls over renders 1`] = `
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -2792,8 +3018,9 @@ exports[`Video controls over renders 1`] = `
 }
 
 .c1:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c1:focus >circle,
@@ -2803,8 +3030,9 @@ exports[`Video controls over renders 1`] = `
 .c1:focus >polygon,
 .c1:focus >polyline,
 .c1:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c1:focus ::-moz-focus-inner {
@@ -2830,8 +3058,9 @@ exports[`Video controls over renders 1`] = `
 }
 
 .c13:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c13:focus >circle,
@@ -2841,8 +3070,9 @@ exports[`Video controls over renders 1`] = `
 .c13:focus >polygon,
 .c13:focus >polyline,
 .c13:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c13:focus ::-moz-focus-inner {
@@ -2853,12 +3083,6 @@ exports[`Video controls over renders 1`] = `
   .c14 {
     padding-left: 6px;
     padding-right: 6px;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .c17 {
-    padding: 6px;
   }
 }
 
@@ -2959,25 +3183,18 @@ exports[`Video controls over renders 1`] = `
           class="c16"
           type="button"
         >
-          <div
-            class="c17"
+          <svg
+            aria-label="Actions"
+            class="c6"
+            viewBox="0 0 24 24"
           >
-            <span
-              class="c18"
+            <path
+              d="M12 17.5a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zm0-11V1m0 22v-5.5M1 12h5.5m11 0H23M4.437 4.437l4.125 4.125m6.876 6.876 4.124 4.124m0-15.125-4.125 4.125m-6.874 6.876-4.126 4.124"
+              fill="none"
+              stroke="#000"
+              stroke-width="2"
             />
-            <svg
-              aria-label="Actions"
-              class="c6"
-              viewBox="0 0 24 24"
-            >
-              <path
-                d="M12 17.5a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zm0-11V1m0 22v-5.5M1 12h5.5m11 0H23M4.437 4.437l4.125 4.125m6.876 6.876 4.124 4.124m0-15.125-4.125 4.125m-6.874 6.876-4.126 4.124"
-                fill="none"
-                stroke="#000"
-                stroke-width="2"
-              />
-            </svg>
-          </div>
+          </svg>
         </button>
       </div>
     </div>
@@ -2986,13 +3203,45 @@ exports[`Video controls over renders 1`] = `
 `;
 
 exports[`Video duration event handler 1`] = `
+.c6 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 18px;
+  height: 18px;
+  fill: #ffffff;
+  stroke: #ffffff;
+}
+
+.c6 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c6 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c6 *[stroke*='#'],
+.c6 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c6 *[fill-rule],
+.c6 *[FILL-RULE],
+.c6 *[fill*='#'],
+.c6 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
+}
+
 .c4 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   align-items: center;
-  background-color: rgba(51, 51, 51, 0.8);
-  color: #f8f8f8;
+  background-color: rgba(28, 28, 28, 0.8);
+  color: #ffffff;
   min-width: 0;
   min-height: 0;
   flex-direction: row;
@@ -3031,50 +3280,6 @@ exports[`Video duration event handler 1`] = `
   padding-right: 12px;
 }
 
-.c17 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  align-items: center;
-  min-width: 0;
-  min-height: 0;
-  flex-direction: row;
-  justify-content: flex-start;
-  padding: 12px;
-}
-
-.c6 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #f8f8f8;
-  stroke: #f8f8f8;
-}
-
-.c6 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c6 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c6 *[stroke*='#'],
-.c6 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c6 *[fill-rule],
-.c6 *[FILL-RULE],
-.c6 *[fill*='#'],
-.c6 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
-}
-
 .c9 {
   position: relative;
 }
@@ -3094,13 +3299,9 @@ exports[`Video duration event handler 1`] = `
 
 .c15 {
   margin: 0px;
-  font-size: 18px;
-  line-height: 24px;
-}
-
-.c18 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  font-weight: undefined;
 }
 
 .c5 {
@@ -3113,23 +3314,47 @@ exports[`Video duration event handler 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  color: inherit;
-  outline: none;
   border: none;
-  padding: 0;
-  text-align: inherit;
+  border-radius: 9999px;
+  padding: 8px 8px;
+  font-size: 1.125rem;
   line-height: 0;
-  padding: 12px;
+  background-color: rgba(0, 0, 0, 0);
+  color: #ffffff;
+  border-style: solid;
+  border-width: 1px;
+  border-color: rgba(0, 0, 0, 0);
+  border-radius: 9999px;
+  font-weight: 500;
+  padding: 8px 8px;
+  text-align: center;
+  transition-property: color,background-color,border-color,box-shadow;
+  transition-duration: 0.1s;
+  transition-timing-function: ease-in-out;
+}
+
+.c5 >svg {
+  display: flex;
+  align-self: center;
+  vertical-align: middle;
 }
 
 .c5:hover {
-  background-color: rgba(221, 221, 221, 0.4);
-  color: #FFFFFF;
+  background-color: rgba(255, 255, 255, 0.06);
+  color: #ffffff;
+  border-color: rgba(0, 0, 0, 0);
+  font-weight: 500;
+}
+
+.c5:hover {
+  background-color: rgba(255, 255, 255, 0.06);
+  color: #ffffff;
 }
 
 .c5:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c5:focus >circle,
@@ -3139,8 +3364,9 @@ exports[`Video duration event handler 1`] = `
 .c5:focus >polygon,
 .c5:focus >polyline,
 .c5:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c5:focus ::-moz-focus-inner {
@@ -3148,6 +3374,8 @@ exports[`Video duration event handler 1`] = `
 }
 
 .c5:focus:not(:focus-visible) {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -3159,6 +3387,8 @@ exports[`Video duration event handler 1`] = `
 .c5:focus:not(:focus-visible) >polygon,
 .c5:focus:not(:focus-visible) >polyline,
 .c5:focus:not(:focus-visible) >rect {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -3177,16 +3407,42 @@ exports[`Video duration event handler 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  color: inherit;
-  outline: none;
   border: none;
-  padding: 0;
-  text-align: inherit;
+  border-radius: 9999px;
+  padding: 8px 8px;
+  font-size: 1.125rem;
+  line-height: 0;
+  background-color: rgba(0, 0, 0, 0);
+  color: #ffffff;
+  border-style: solid;
+  border-width: 1px;
+  border-color: rgba(0, 0, 0, 0);
+  border-radius: 9999px;
+  font-weight: 500;
+  padding: 8px 8px;
+  text-align: center;
+  transition-property: color,background-color,border-color,box-shadow;
+  transition-duration: 0.1s;
+  transition-timing-function: ease-in-out;
+}
+
+.c16 >svg {
+  display: flex;
+  align-self: center;
+  vertical-align: middle;
+}
+
+.c16:hover {
+  background-color: rgba(255, 255, 255, 0.06);
+  color: #ffffff;
+  border-color: rgba(0, 0, 0, 0);
+  font-weight: 500;
 }
 
 .c16:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c16:focus >circle,
@@ -3196,8 +3452,9 @@ exports[`Video duration event handler 1`] = `
 .c16:focus >polygon,
 .c16:focus >polyline,
 .c16:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c16:focus ::-moz-focus-inner {
@@ -3205,6 +3462,8 @@ exports[`Video duration event handler 1`] = `
 }
 
 .c16:focus:not(:focus-visible) {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -3216,6 +3475,8 @@ exports[`Video duration event handler 1`] = `
 .c16:focus:not(:focus-visible) >polygon,
 .c16:focus:not(:focus-visible) >polyline,
 .c16:focus:not(:focus-visible) >rect {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -3225,8 +3486,11 @@ exports[`Video duration event handler 1`] = `
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -3261,8 +3525,9 @@ exports[`Video duration event handler 1`] = `
 }
 
 .c1:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c1:focus >circle,
@@ -3272,8 +3537,9 @@ exports[`Video duration event handler 1`] = `
 .c1:focus >polygon,
 .c1:focus >polyline,
 .c1:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c1:focus ::-moz-focus-inner {
@@ -3299,8 +3565,9 @@ exports[`Video duration event handler 1`] = `
 }
 
 .c13:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c13:focus >circle,
@@ -3310,8 +3577,9 @@ exports[`Video duration event handler 1`] = `
 .c13:focus >polygon,
 .c13:focus >polyline,
 .c13:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c13:focus ::-moz-focus-inner {
@@ -3322,12 +3590,6 @@ exports[`Video duration event handler 1`] = `
   .c14 {
     padding-left: 6px;
     padding-right: 6px;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .c17 {
-    padding: 6px;
   }
 }
 
@@ -3428,25 +3690,18 @@ exports[`Video duration event handler 1`] = `
           class="c16"
           type="button"
         >
-          <div
-            class="c17"
+          <svg
+            aria-label="Actions"
+            class="c6"
+            viewBox="0 0 24 24"
           >
-            <span
-              class="c18"
+            <path
+              d="M12 17.5a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zm0-11V1m0 22v-5.5M1 12h5.5m11 0H23M4.437 4.437l4.125 4.125m6.876 6.876 4.124 4.124m0-15.125-4.125 4.125m-6.874 6.876-4.126 4.124"
+              fill="none"
+              stroke="#000"
+              stroke-width="2"
             />
-            <svg
-              aria-label="Actions"
-              class="c6"
-              viewBox="0 0 24 24"
-            >
-              <path
-                d="M12 17.5a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zm0-11V1m0 22v-5.5M1 12h5.5m11 0H23M4.437 4.437l4.125 4.125m6.876 6.876 4.124 4.124m0-15.125-4.125 4.125m-6.874 6.876-4.126 4.124"
-                fill="none"
-                stroke="#000"
-                stroke-width="2"
-              />
-            </svg>
-          </div>
+          </svg>
         </button>
       </div>
     </div>
@@ -3455,13 +3710,45 @@ exports[`Video duration event handler 1`] = `
 `;
 
 exports[`Video fit  cover renders 1`] = `
+.c6 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 18px;
+  height: 18px;
+  fill: #ffffff;
+  stroke: #ffffff;
+}
+
+.c6 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c6 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c6 *[stroke*='#'],
+.c6 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c6 *[fill-rule],
+.c6 *[FILL-RULE],
+.c6 *[fill*='#'],
+.c6 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
+}
+
 .c4 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   align-items: center;
-  background-color: rgba(51, 51, 51, 0.8);
-  color: #f8f8f8;
+  background-color: rgba(28, 28, 28, 0.8);
+  color: #ffffff;
   min-width: 0;
   min-height: 0;
   flex-direction: row;
@@ -3500,50 +3787,6 @@ exports[`Video fit  cover renders 1`] = `
   padding-right: 12px;
 }
 
-.c17 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  align-items: center;
-  min-width: 0;
-  min-height: 0;
-  flex-direction: row;
-  justify-content: flex-start;
-  padding: 12px;
-}
-
-.c6 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #f8f8f8;
-  stroke: #f8f8f8;
-}
-
-.c6 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c6 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c6 *[stroke*='#'],
-.c6 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c6 *[fill-rule],
-.c6 *[FILL-RULE],
-.c6 *[fill*='#'],
-.c6 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
-}
-
 .c9 {
   position: relative;
 }
@@ -3563,13 +3806,9 @@ exports[`Video fit  cover renders 1`] = `
 
 .c15 {
   margin: 0px;
-  font-size: 18px;
-  line-height: 24px;
-}
-
-.c18 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  font-weight: undefined;
 }
 
 .c5 {
@@ -3582,23 +3821,47 @@ exports[`Video fit  cover renders 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  color: inherit;
-  outline: none;
   border: none;
-  padding: 0;
-  text-align: inherit;
+  border-radius: 9999px;
+  padding: 8px 8px;
+  font-size: 1.125rem;
   line-height: 0;
-  padding: 12px;
+  background-color: rgba(0, 0, 0, 0);
+  color: #ffffff;
+  border-style: solid;
+  border-width: 1px;
+  border-color: rgba(0, 0, 0, 0);
+  border-radius: 9999px;
+  font-weight: 500;
+  padding: 8px 8px;
+  text-align: center;
+  transition-property: color,background-color,border-color,box-shadow;
+  transition-duration: 0.1s;
+  transition-timing-function: ease-in-out;
+}
+
+.c5 >svg {
+  display: flex;
+  align-self: center;
+  vertical-align: middle;
 }
 
 .c5:hover {
-  background-color: rgba(221, 221, 221, 0.4);
-  color: #FFFFFF;
+  background-color: rgba(255, 255, 255, 0.06);
+  color: #ffffff;
+  border-color: rgba(0, 0, 0, 0);
+  font-weight: 500;
+}
+
+.c5:hover {
+  background-color: rgba(255, 255, 255, 0.06);
+  color: #ffffff;
 }
 
 .c5:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c5:focus >circle,
@@ -3608,8 +3871,9 @@ exports[`Video fit  cover renders 1`] = `
 .c5:focus >polygon,
 .c5:focus >polyline,
 .c5:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c5:focus ::-moz-focus-inner {
@@ -3617,6 +3881,8 @@ exports[`Video fit  cover renders 1`] = `
 }
 
 .c5:focus:not(:focus-visible) {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -3628,6 +3894,8 @@ exports[`Video fit  cover renders 1`] = `
 .c5:focus:not(:focus-visible) >polygon,
 .c5:focus:not(:focus-visible) >polyline,
 .c5:focus:not(:focus-visible) >rect {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -3646,16 +3914,42 @@ exports[`Video fit  cover renders 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  color: inherit;
-  outline: none;
   border: none;
-  padding: 0;
-  text-align: inherit;
+  border-radius: 9999px;
+  padding: 8px 8px;
+  font-size: 1.125rem;
+  line-height: 0;
+  background-color: rgba(0, 0, 0, 0);
+  color: #ffffff;
+  border-style: solid;
+  border-width: 1px;
+  border-color: rgba(0, 0, 0, 0);
+  border-radius: 9999px;
+  font-weight: 500;
+  padding: 8px 8px;
+  text-align: center;
+  transition-property: color,background-color,border-color,box-shadow;
+  transition-duration: 0.1s;
+  transition-timing-function: ease-in-out;
+}
+
+.c16 >svg {
+  display: flex;
+  align-self: center;
+  vertical-align: middle;
+}
+
+.c16:hover {
+  background-color: rgba(255, 255, 255, 0.06);
+  color: #ffffff;
+  border-color: rgba(0, 0, 0, 0);
+  font-weight: 500;
 }
 
 .c16:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c16:focus >circle,
@@ -3665,8 +3959,9 @@ exports[`Video fit  cover renders 1`] = `
 .c16:focus >polygon,
 .c16:focus >polyline,
 .c16:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c16:focus ::-moz-focus-inner {
@@ -3674,6 +3969,8 @@ exports[`Video fit  cover renders 1`] = `
 }
 
 .c16:focus:not(:focus-visible) {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -3685,6 +3982,8 @@ exports[`Video fit  cover renders 1`] = `
 .c16:focus:not(:focus-visible) >polygon,
 .c16:focus:not(:focus-visible) >polyline,
 .c16:focus:not(:focus-visible) >rect {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -3694,8 +3993,11 @@ exports[`Video fit  cover renders 1`] = `
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -3733,8 +4035,9 @@ exports[`Video fit  cover renders 1`] = `
 }
 
 .c1:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c1:focus >circle,
@@ -3744,8 +4047,9 @@ exports[`Video fit  cover renders 1`] = `
 .c1:focus >polygon,
 .c1:focus >polyline,
 .c1:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c1:focus ::-moz-focus-inner {
@@ -3771,8 +4075,9 @@ exports[`Video fit  cover renders 1`] = `
 }
 
 .c13:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c13:focus >circle,
@@ -3782,8 +4087,9 @@ exports[`Video fit  cover renders 1`] = `
 .c13:focus >polygon,
 .c13:focus >polyline,
 .c13:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c13:focus ::-moz-focus-inner {
@@ -3794,12 +4100,6 @@ exports[`Video fit  cover renders 1`] = `
   .c14 {
     padding-left: 6px;
     padding-right: 6px;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .c17 {
-    padding: 6px;
   }
 }
 
@@ -3900,25 +4200,18 @@ exports[`Video fit  cover renders 1`] = `
           class="c16"
           type="button"
         >
-          <div
-            class="c17"
+          <svg
+            aria-label="Actions"
+            class="c6"
+            viewBox="0 0 24 24"
           >
-            <span
-              class="c18"
+            <path
+              d="M12 17.5a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zm0-11V1m0 22v-5.5M1 12h5.5m11 0H23M4.437 4.437l4.125 4.125m6.876 6.876 4.124 4.124m0-15.125-4.125 4.125m-6.874 6.876-4.126 4.124"
+              fill="none"
+              stroke="#000"
+              stroke-width="2"
             />
-            <svg
-              aria-label="Actions"
-              class="c6"
-              viewBox="0 0 24 24"
-            >
-              <path
-                d="M12 17.5a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zm0-11V1m0 22v-5.5M1 12h5.5m11 0H23M4.437 4.437l4.125 4.125m6.876 6.876 4.124 4.124m0-15.125-4.125 4.125m-6.874 6.876-4.126 4.124"
-                fill="none"
-                stroke="#000"
-                stroke-width="2"
-              />
-            </svg>
-          </div>
+          </svg>
         </button>
       </div>
     </div>
@@ -3927,13 +4220,45 @@ exports[`Video fit  cover renders 1`] = `
 `;
 
 exports[`Video fit contain renders 1`] = `
+.c6 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 18px;
+  height: 18px;
+  fill: #ffffff;
+  stroke: #ffffff;
+}
+
+.c6 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c6 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c6 *[stroke*='#'],
+.c6 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c6 *[fill-rule],
+.c6 *[FILL-RULE],
+.c6 *[fill*='#'],
+.c6 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
+}
+
 .c4 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   align-items: center;
-  background-color: rgba(51, 51, 51, 0.8);
-  color: #f8f8f8;
+  background-color: rgba(28, 28, 28, 0.8);
+  color: #ffffff;
   min-width: 0;
   min-height: 0;
   flex-direction: row;
@@ -3972,50 +4297,6 @@ exports[`Video fit contain renders 1`] = `
   padding-right: 12px;
 }
 
-.c17 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  align-items: center;
-  min-width: 0;
-  min-height: 0;
-  flex-direction: row;
-  justify-content: flex-start;
-  padding: 12px;
-}
-
-.c6 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #f8f8f8;
-  stroke: #f8f8f8;
-}
-
-.c6 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c6 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c6 *[stroke*='#'],
-.c6 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c6 *[fill-rule],
-.c6 *[FILL-RULE],
-.c6 *[fill*='#'],
-.c6 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
-}
-
 .c9 {
   position: relative;
 }
@@ -4035,13 +4316,9 @@ exports[`Video fit contain renders 1`] = `
 
 .c15 {
   margin: 0px;
-  font-size: 18px;
-  line-height: 24px;
-}
-
-.c18 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  font-weight: undefined;
 }
 
 .c5 {
@@ -4054,23 +4331,47 @@ exports[`Video fit contain renders 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  color: inherit;
-  outline: none;
   border: none;
-  padding: 0;
-  text-align: inherit;
+  border-radius: 9999px;
+  padding: 8px 8px;
+  font-size: 1.125rem;
   line-height: 0;
-  padding: 12px;
+  background-color: rgba(0, 0, 0, 0);
+  color: #ffffff;
+  border-style: solid;
+  border-width: 1px;
+  border-color: rgba(0, 0, 0, 0);
+  border-radius: 9999px;
+  font-weight: 500;
+  padding: 8px 8px;
+  text-align: center;
+  transition-property: color,background-color,border-color,box-shadow;
+  transition-duration: 0.1s;
+  transition-timing-function: ease-in-out;
+}
+
+.c5 >svg {
+  display: flex;
+  align-self: center;
+  vertical-align: middle;
 }
 
 .c5:hover {
-  background-color: rgba(221, 221, 221, 0.4);
-  color: #FFFFFF;
+  background-color: rgba(255, 255, 255, 0.06);
+  color: #ffffff;
+  border-color: rgba(0, 0, 0, 0);
+  font-weight: 500;
+}
+
+.c5:hover {
+  background-color: rgba(255, 255, 255, 0.06);
+  color: #ffffff;
 }
 
 .c5:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c5:focus >circle,
@@ -4080,8 +4381,9 @@ exports[`Video fit contain renders 1`] = `
 .c5:focus >polygon,
 .c5:focus >polyline,
 .c5:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c5:focus ::-moz-focus-inner {
@@ -4089,6 +4391,8 @@ exports[`Video fit contain renders 1`] = `
 }
 
 .c5:focus:not(:focus-visible) {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -4100,6 +4404,8 @@ exports[`Video fit contain renders 1`] = `
 .c5:focus:not(:focus-visible) >polygon,
 .c5:focus:not(:focus-visible) >polyline,
 .c5:focus:not(:focus-visible) >rect {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -4118,16 +4424,42 @@ exports[`Video fit contain renders 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  color: inherit;
-  outline: none;
   border: none;
-  padding: 0;
-  text-align: inherit;
+  border-radius: 9999px;
+  padding: 8px 8px;
+  font-size: 1.125rem;
+  line-height: 0;
+  background-color: rgba(0, 0, 0, 0);
+  color: #ffffff;
+  border-style: solid;
+  border-width: 1px;
+  border-color: rgba(0, 0, 0, 0);
+  border-radius: 9999px;
+  font-weight: 500;
+  padding: 8px 8px;
+  text-align: center;
+  transition-property: color,background-color,border-color,box-shadow;
+  transition-duration: 0.1s;
+  transition-timing-function: ease-in-out;
+}
+
+.c16 >svg {
+  display: flex;
+  align-self: center;
+  vertical-align: middle;
+}
+
+.c16:hover {
+  background-color: rgba(255, 255, 255, 0.06);
+  color: #ffffff;
+  border-color: rgba(0, 0, 0, 0);
+  font-weight: 500;
 }
 
 .c16:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c16:focus >circle,
@@ -4137,8 +4469,9 @@ exports[`Video fit contain renders 1`] = `
 .c16:focus >polygon,
 .c16:focus >polyline,
 .c16:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c16:focus ::-moz-focus-inner {
@@ -4146,6 +4479,8 @@ exports[`Video fit contain renders 1`] = `
 }
 
 .c16:focus:not(:focus-visible) {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -4157,6 +4492,8 @@ exports[`Video fit contain renders 1`] = `
 .c16:focus:not(:focus-visible) >polygon,
 .c16:focus:not(:focus-visible) >polyline,
 .c16:focus:not(:focus-visible) >rect {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -4166,8 +4503,11 @@ exports[`Video fit contain renders 1`] = `
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -4205,8 +4545,9 @@ exports[`Video fit contain renders 1`] = `
 }
 
 .c1:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c1:focus >circle,
@@ -4216,8 +4557,9 @@ exports[`Video fit contain renders 1`] = `
 .c1:focus >polygon,
 .c1:focus >polyline,
 .c1:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c1:focus ::-moz-focus-inner {
@@ -4243,8 +4585,9 @@ exports[`Video fit contain renders 1`] = `
 }
 
 .c13:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c13:focus >circle,
@@ -4254,8 +4597,9 @@ exports[`Video fit contain renders 1`] = `
 .c13:focus >polygon,
 .c13:focus >polyline,
 .c13:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c13:focus ::-moz-focus-inner {
@@ -4266,12 +4610,6 @@ exports[`Video fit contain renders 1`] = `
   .c14 {
     padding-left: 6px;
     padding-right: 6px;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .c17 {
-    padding: 6px;
   }
 }
 
@@ -4372,25 +4710,18 @@ exports[`Video fit contain renders 1`] = `
           class="c16"
           type="button"
         >
-          <div
-            class="c17"
+          <svg
+            aria-label="Actions"
+            class="c6"
+            viewBox="0 0 24 24"
           >
-            <span
-              class="c18"
+            <path
+              d="M12 17.5a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zm0-11V1m0 22v-5.5M1 12h5.5m11 0H23M4.437 4.437l4.125 4.125m6.876 6.876 4.124 4.124m0-15.125-4.125 4.125m-6.874 6.876-4.126 4.124"
+              fill="none"
+              stroke="#000"
+              stroke-width="2"
             />
-            <svg
-              aria-label="Actions"
-              class="c6"
-              viewBox="0 0 24 24"
-            >
-              <path
-                d="M12 17.5a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zm0-11V1m0 22v-5.5M1 12h5.5m11 0H23M4.437 4.437l4.125 4.125m6.876 6.876 4.124 4.124m0-15.125-4.125 4.125m-6.874 6.876-4.126 4.124"
-                fill="none"
-                stroke="#000"
-                stroke-width="2"
-              />
-            </svg>
-          </div>
+          </svg>
         </button>
       </div>
     </div>
@@ -4399,13 +4730,45 @@ exports[`Video fit contain renders 1`] = `
 `;
 
 exports[`Video loop renders 1`] = `
+.c6 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 18px;
+  height: 18px;
+  fill: #ffffff;
+  stroke: #ffffff;
+}
+
+.c6 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c6 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c6 *[stroke*='#'],
+.c6 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c6 *[fill-rule],
+.c6 *[FILL-RULE],
+.c6 *[fill*='#'],
+.c6 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
+}
+
 .c4 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   align-items: center;
-  background-color: rgba(51, 51, 51, 0.8);
-  color: #f8f8f8;
+  background-color: rgba(28, 28, 28, 0.8);
+  color: #ffffff;
   min-width: 0;
   min-height: 0;
   flex-direction: row;
@@ -4444,50 +4807,6 @@ exports[`Video loop renders 1`] = `
   padding-right: 12px;
 }
 
-.c17 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  align-items: center;
-  min-width: 0;
-  min-height: 0;
-  flex-direction: row;
-  justify-content: flex-start;
-  padding: 12px;
-}
-
-.c6 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #f8f8f8;
-  stroke: #f8f8f8;
-}
-
-.c6 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c6 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c6 *[stroke*='#'],
-.c6 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c6 *[fill-rule],
-.c6 *[FILL-RULE],
-.c6 *[fill*='#'],
-.c6 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
-}
-
 .c9 {
   position: relative;
 }
@@ -4507,13 +4826,9 @@ exports[`Video loop renders 1`] = `
 
 .c15 {
   margin: 0px;
-  font-size: 18px;
-  line-height: 24px;
-}
-
-.c18 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  font-weight: undefined;
 }
 
 .c5 {
@@ -4526,23 +4841,47 @@ exports[`Video loop renders 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  color: inherit;
-  outline: none;
   border: none;
-  padding: 0;
-  text-align: inherit;
+  border-radius: 9999px;
+  padding: 8px 8px;
+  font-size: 1.125rem;
   line-height: 0;
-  padding: 12px;
+  background-color: rgba(0, 0, 0, 0);
+  color: #ffffff;
+  border-style: solid;
+  border-width: 1px;
+  border-color: rgba(0, 0, 0, 0);
+  border-radius: 9999px;
+  font-weight: 500;
+  padding: 8px 8px;
+  text-align: center;
+  transition-property: color,background-color,border-color,box-shadow;
+  transition-duration: 0.1s;
+  transition-timing-function: ease-in-out;
+}
+
+.c5 >svg {
+  display: flex;
+  align-self: center;
+  vertical-align: middle;
 }
 
 .c5:hover {
-  background-color: rgba(221, 221, 221, 0.4);
-  color: #FFFFFF;
+  background-color: rgba(255, 255, 255, 0.06);
+  color: #ffffff;
+  border-color: rgba(0, 0, 0, 0);
+  font-weight: 500;
+}
+
+.c5:hover {
+  background-color: rgba(255, 255, 255, 0.06);
+  color: #ffffff;
 }
 
 .c5:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c5:focus >circle,
@@ -4552,8 +4891,9 @@ exports[`Video loop renders 1`] = `
 .c5:focus >polygon,
 .c5:focus >polyline,
 .c5:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c5:focus ::-moz-focus-inner {
@@ -4561,6 +4901,8 @@ exports[`Video loop renders 1`] = `
 }
 
 .c5:focus:not(:focus-visible) {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -4572,6 +4914,8 @@ exports[`Video loop renders 1`] = `
 .c5:focus:not(:focus-visible) >polygon,
 .c5:focus:not(:focus-visible) >polyline,
 .c5:focus:not(:focus-visible) >rect {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -4590,16 +4934,42 @@ exports[`Video loop renders 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  color: inherit;
-  outline: none;
   border: none;
-  padding: 0;
-  text-align: inherit;
+  border-radius: 9999px;
+  padding: 8px 8px;
+  font-size: 1.125rem;
+  line-height: 0;
+  background-color: rgba(0, 0, 0, 0);
+  color: #ffffff;
+  border-style: solid;
+  border-width: 1px;
+  border-color: rgba(0, 0, 0, 0);
+  border-radius: 9999px;
+  font-weight: 500;
+  padding: 8px 8px;
+  text-align: center;
+  transition-property: color,background-color,border-color,box-shadow;
+  transition-duration: 0.1s;
+  transition-timing-function: ease-in-out;
+}
+
+.c16 >svg {
+  display: flex;
+  align-self: center;
+  vertical-align: middle;
+}
+
+.c16:hover {
+  background-color: rgba(255, 255, 255, 0.06);
+  color: #ffffff;
+  border-color: rgba(0, 0, 0, 0);
+  font-weight: 500;
 }
 
 .c16:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c16:focus >circle,
@@ -4609,8 +4979,9 @@ exports[`Video loop renders 1`] = `
 .c16:focus >polygon,
 .c16:focus >polyline,
 .c16:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c16:focus ::-moz-focus-inner {
@@ -4618,6 +4989,8 @@ exports[`Video loop renders 1`] = `
 }
 
 .c16:focus:not(:focus-visible) {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -4629,6 +5002,8 @@ exports[`Video loop renders 1`] = `
 .c16:focus:not(:focus-visible) >polygon,
 .c16:focus:not(:focus-visible) >polyline,
 .c16:focus:not(:focus-visible) >rect {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -4638,8 +5013,11 @@ exports[`Video loop renders 1`] = `
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -4674,8 +5052,9 @@ exports[`Video loop renders 1`] = `
 }
 
 .c1:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c1:focus >circle,
@@ -4685,8 +5064,9 @@ exports[`Video loop renders 1`] = `
 .c1:focus >polygon,
 .c1:focus >polyline,
 .c1:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c1:focus ::-moz-focus-inner {
@@ -4712,8 +5092,9 @@ exports[`Video loop renders 1`] = `
 }
 
 .c13:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c13:focus >circle,
@@ -4723,8 +5104,9 @@ exports[`Video loop renders 1`] = `
 .c13:focus >polygon,
 .c13:focus >polyline,
 .c13:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c13:focus ::-moz-focus-inner {
@@ -4735,12 +5117,6 @@ exports[`Video loop renders 1`] = `
   .c14 {
     padding-left: 6px;
     padding-right: 6px;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .c17 {
-    padding: 6px;
   }
 }
 
@@ -4842,25 +5218,18 @@ exports[`Video loop renders 1`] = `
           class="c16"
           type="button"
         >
-          <div
-            class="c17"
+          <svg
+            aria-label="Actions"
+            class="c6"
+            viewBox="0 0 24 24"
           >
-            <span
-              class="c18"
+            <path
+              d="M12 17.5a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zm0-11V1m0 22v-5.5M1 12h5.5m11 0H23M4.437 4.437l4.125 4.125m6.876 6.876 4.124 4.124m0-15.125-4.125 4.125m-6.874 6.876-4.126 4.124"
+              fill="none"
+              stroke="#000"
+              stroke-width="2"
             />
-            <svg
-              aria-label="Actions"
-              class="c6"
-              viewBox="0 0 24 24"
-            >
-              <path
-                d="M12 17.5a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zm0-11V1m0 22v-5.5M1 12h5.5m11 0H23M4.437 4.437l4.125 4.125m6.876 6.876 4.124 4.124m0-15.125-4.125 4.125m-6.874 6.876-4.126 4.124"
-                fill="none"
-                stroke="#000"
-                stroke-width="2"
-              />
-            </svg>
-          </div>
+          </svg>
         </button>
       </div>
     </div>
@@ -4869,13 +5238,45 @@ exports[`Video loop renders 1`] = `
 `;
 
 exports[`Video mouse events handlers of controls 1`] = `
+.c6 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 18px;
+  height: 18px;
+  fill: #ffffff;
+  stroke: #ffffff;
+}
+
+.c6 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c6 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c6 *[stroke*='#'],
+.c6 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c6 *[fill-rule],
+.c6 *[FILL-RULE],
+.c6 *[fill*='#'],
+.c6 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
+}
+
 .c4 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   align-items: center;
-  background-color: rgba(51, 51, 51, 0.8);
-  color: #f8f8f8;
+  background-color: rgba(28, 28, 28, 0.8);
+  color: #ffffff;
   min-width: 0;
   min-height: 0;
   flex-direction: row;
@@ -4914,50 +5315,6 @@ exports[`Video mouse events handlers of controls 1`] = `
   padding-right: 12px;
 }
 
-.c17 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  align-items: center;
-  min-width: 0;
-  min-height: 0;
-  flex-direction: row;
-  justify-content: flex-start;
-  padding: 12px;
-}
-
-.c6 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #f8f8f8;
-  stroke: #f8f8f8;
-}
-
-.c6 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c6 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c6 *[stroke*='#'],
-.c6 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c6 *[fill-rule],
-.c6 *[FILL-RULE],
-.c6 *[fill*='#'],
-.c6 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
-}
-
 .c9 {
   position: relative;
 }
@@ -4977,13 +5334,9 @@ exports[`Video mouse events handlers of controls 1`] = `
 
 .c15 {
   margin: 0px;
-  font-size: 18px;
-  line-height: 24px;
-}
-
-.c18 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  font-weight: undefined;
 }
 
 .c5 {
@@ -4996,23 +5349,47 @@ exports[`Video mouse events handlers of controls 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  color: inherit;
-  outline: none;
   border: none;
-  padding: 0;
-  text-align: inherit;
+  border-radius: 9999px;
+  padding: 8px 8px;
+  font-size: 1.125rem;
   line-height: 0;
-  padding: 12px;
+  background-color: rgba(0, 0, 0, 0);
+  color: #ffffff;
+  border-style: solid;
+  border-width: 1px;
+  border-color: rgba(0, 0, 0, 0);
+  border-radius: 9999px;
+  font-weight: 500;
+  padding: 8px 8px;
+  text-align: center;
+  transition-property: color,background-color,border-color,box-shadow;
+  transition-duration: 0.1s;
+  transition-timing-function: ease-in-out;
+}
+
+.c5 >svg {
+  display: flex;
+  align-self: center;
+  vertical-align: middle;
 }
 
 .c5:hover {
-  background-color: rgba(221, 221, 221, 0.4);
-  color: #FFFFFF;
+  background-color: rgba(255, 255, 255, 0.06);
+  color: #ffffff;
+  border-color: rgba(0, 0, 0, 0);
+  font-weight: 500;
+}
+
+.c5:hover {
+  background-color: rgba(255, 255, 255, 0.06);
+  color: #ffffff;
 }
 
 .c5:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c5:focus >circle,
@@ -5022,8 +5399,9 @@ exports[`Video mouse events handlers of controls 1`] = `
 .c5:focus >polygon,
 .c5:focus >polyline,
 .c5:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c5:focus ::-moz-focus-inner {
@@ -5031,6 +5409,8 @@ exports[`Video mouse events handlers of controls 1`] = `
 }
 
 .c5:focus:not(:focus-visible) {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -5042,6 +5422,8 @@ exports[`Video mouse events handlers of controls 1`] = `
 .c5:focus:not(:focus-visible) >polygon,
 .c5:focus:not(:focus-visible) >polyline,
 .c5:focus:not(:focus-visible) >rect {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -5060,16 +5442,42 @@ exports[`Video mouse events handlers of controls 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  color: inherit;
-  outline: none;
   border: none;
-  padding: 0;
-  text-align: inherit;
+  border-radius: 9999px;
+  padding: 8px 8px;
+  font-size: 1.125rem;
+  line-height: 0;
+  background-color: rgba(0, 0, 0, 0);
+  color: #ffffff;
+  border-style: solid;
+  border-width: 1px;
+  border-color: rgba(0, 0, 0, 0);
+  border-radius: 9999px;
+  font-weight: 500;
+  padding: 8px 8px;
+  text-align: center;
+  transition-property: color,background-color,border-color,box-shadow;
+  transition-duration: 0.1s;
+  transition-timing-function: ease-in-out;
+}
+
+.c16 >svg {
+  display: flex;
+  align-self: center;
+  vertical-align: middle;
+}
+
+.c16:hover {
+  background-color: rgba(255, 255, 255, 0.06);
+  color: #ffffff;
+  border-color: rgba(0, 0, 0, 0);
+  font-weight: 500;
 }
 
 .c16:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c16:focus >circle,
@@ -5079,8 +5487,9 @@ exports[`Video mouse events handlers of controls 1`] = `
 .c16:focus >polygon,
 .c16:focus >polyline,
 .c16:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c16:focus ::-moz-focus-inner {
@@ -5088,6 +5497,8 @@ exports[`Video mouse events handlers of controls 1`] = `
 }
 
 .c16:focus:not(:focus-visible) {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -5099,6 +5510,8 @@ exports[`Video mouse events handlers of controls 1`] = `
 .c16:focus:not(:focus-visible) >polygon,
 .c16:focus:not(:focus-visible) >polyline,
 .c16:focus:not(:focus-visible) >rect {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -5108,8 +5521,11 @@ exports[`Video mouse events handlers of controls 1`] = `
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -5144,8 +5560,9 @@ exports[`Video mouse events handlers of controls 1`] = `
 }
 
 .c1:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c1:focus >circle,
@@ -5155,8 +5572,9 @@ exports[`Video mouse events handlers of controls 1`] = `
 .c1:focus >polygon,
 .c1:focus >polyline,
 .c1:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c1:focus ::-moz-focus-inner {
@@ -5182,8 +5600,9 @@ exports[`Video mouse events handlers of controls 1`] = `
 }
 
 .c13:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c13:focus >circle,
@@ -5193,8 +5612,9 @@ exports[`Video mouse events handlers of controls 1`] = `
 .c13:focus >polygon,
 .c13:focus >polyline,
 .c13:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c13:focus ::-moz-focus-inner {
@@ -5205,12 +5625,6 @@ exports[`Video mouse events handlers of controls 1`] = `
   .c14 {
     padding-left: 6px;
     padding-right: 6px;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .c17 {
-    padding: 6px;
   }
 }
 
@@ -5311,25 +5725,18 @@ exports[`Video mouse events handlers of controls 1`] = `
           class="c16"
           type="button"
         >
-          <div
-            class="c17"
+          <svg
+            aria-label="Actions"
+            class="c6"
+            viewBox="0 0 24 24"
           >
-            <span
-              class="c18"
+            <path
+              d="M12 17.5a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zm0-11V1m0 22v-5.5M1 12h5.5m11 0H23M4.437 4.437l4.125 4.125m6.876 6.876 4.124 4.124m0-15.125-4.125 4.125m-6.874 6.876-4.126 4.124"
+              fill="none"
+              stroke="#000"
+              stroke-width="2"
             />
-            <svg
-              aria-label="Actions"
-              class="c6"
-              viewBox="0 0 24 24"
-            >
-              <path
-                d="M12 17.5a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zm0-11V1m0 22v-5.5M1 12h5.5m11 0H23M4.437 4.437l4.125 4.125m6.876 6.876 4.124 4.124m0-15.125-4.125 4.125m-6.874 6.876-4.126 4.124"
-                fill="none"
-                stroke="#000"
-                stroke-width="2"
-              />
-            </svg>
-          </div>
+          </svg>
         </button>
       </div>
     </div>
@@ -5339,10 +5746,10 @@ exports[`Video mouse events handlers of controls 1`] = `
 
 exports[`Video mouse events handlers of controls 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 kiEDjE"
+  class="StyledGrommet-sc-19lkkz7-0 iRGypN"
 >
   <div
-    class="StyledVideo__StyledVideoContainer-sc-w4v8h9-1 iwLihr"
+    class="StyledVideo__StyledVideoContainer-sc-w4v8h9-1 hYHLsf"
     tabindex="-1"
   >
     <video
@@ -5358,15 +5765,15 @@ exports[`Video mouse events handlers of controls 2`] = `
       class="StyledVideo__StyledVideoControls-sc-w4v8h9-2 kGZkNT"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 iQpOqy"
+        class="StyledBox-sc-13pk1d4-0 iGhGii"
       >
         <button
-          class="StyledButton-sc-323bzc-0 ctcGGD"
+          class="StyledButtonKind-sc-1vhfpnt-0 bZKdfG"
           type="button"
         >
           <svg
             aria-label="play"
-            class="StyledIcon-sc-ofa7kd-0 fmPtiI"
+            class="StyledIcon-sc-ofa7kd-0 bebVMk"
             viewBox="0 0 24 24"
           >
             <path
@@ -5411,7 +5818,7 @@ exports[`Video mouse events handlers of controls 2`] = `
               >
                 <div
                   aria-label="scrubber"
-                  class="StyledVideo__StyledVideoScrubber-sc-w4v8h9-3 ikCDtk"
+                  class="StyledVideo__StyledVideoScrubber-sc-w4v8h9-3 joTMfs"
                   role="button"
                   tabindex="0"
                 />
@@ -5422,7 +5829,7 @@ exports[`Video mouse events handlers of controls 2`] = `
             class="StyledBox-sc-13pk1d4-0 iDdezv"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 gQrfUm"
+              class="StyledText-sc-1sadyjn-0 fbbBQL"
             >
               NaN:NaN
             </span>
@@ -5432,28 +5839,21 @@ exports[`Video mouse events handlers of controls 2`] = `
           aria-expanded="false"
           aria-haspopup="menu"
           aria-label="open menu"
-          class="StyledButton-sc-323bzc-0 jLPXpV"
+          class="StyledButtonKind-sc-1vhfpnt-0 jKdwXf"
           type="button"
         >
-          <div
-            class="StyledBox-sc-13pk1d4-0 kYyYKN"
+          <svg
+            aria-label="Actions"
+            class="StyledIcon-sc-ofa7kd-0 bebVMk"
+            viewBox="0 0 24 24"
           >
-            <span
-              class="StyledText-sc-1sadyjn-0 jTcNpm"
+            <path
+              d="M12 17.5a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zm0-11V1m0 22v-5.5M1 12h5.5m11 0H23M4.437 4.437l4.125 4.125m6.876 6.876 4.124 4.124m0-15.125-4.125 4.125m-6.874 6.876-4.126 4.124"
+              fill="none"
+              stroke="#000"
+              stroke-width="2"
             />
-            <svg
-              aria-label="Actions"
-              class="StyledIcon-sc-ofa7kd-0 fmPtiI"
-              viewBox="0 0 24 24"
-            >
-              <path
-                d="M12 17.5a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zm0-11V1m0 22v-5.5M1 12h5.5m11 0H23M4.437 4.437l4.125 4.125m6.876 6.876 4.124 4.124m0-15.125-4.125 4.125m-6.874 6.876-4.126 4.124"
-                fill="none"
-                stroke="#000"
-                stroke-width="2"
-              />
-            </svg>
-          </div>
+          </svg>
         </button>
       </div>
     </div>
@@ -5463,10 +5863,10 @@ exports[`Video mouse events handlers of controls 2`] = `
 
 exports[`Video mouse events handlers of controls 3`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 kiEDjE"
+  class="StyledGrommet-sc-19lkkz7-0 iRGypN"
 >
   <div
-    class="StyledVideo__StyledVideoContainer-sc-w4v8h9-1 iwLihr"
+    class="StyledVideo__StyledVideoContainer-sc-w4v8h9-1 hYHLsf"
     tabindex="-1"
   >
     <video
@@ -5482,15 +5882,15 @@ exports[`Video mouse events handlers of controls 3`] = `
       class="StyledVideo__StyledVideoControls-sc-w4v8h9-2 kGZkNT"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 iQpOqy"
+        class="StyledBox-sc-13pk1d4-0 iGhGii"
       >
         <button
-          class="StyledButton-sc-323bzc-0 ctcGGD"
+          class="StyledButtonKind-sc-1vhfpnt-0 bZKdfG"
           type="button"
         >
           <svg
             aria-label="play"
-            class="StyledIcon-sc-ofa7kd-0 fmPtiI"
+            class="StyledIcon-sc-ofa7kd-0 bebVMk"
             viewBox="0 0 24 24"
           >
             <path
@@ -5535,7 +5935,7 @@ exports[`Video mouse events handlers of controls 3`] = `
               >
                 <div
                   aria-label="scrubber"
-                  class="StyledVideo__StyledVideoScrubber-sc-w4v8h9-3 ikCDtk"
+                  class="StyledVideo__StyledVideoScrubber-sc-w4v8h9-3 joTMfs"
                   role="button"
                   tabindex="0"
                 />
@@ -5546,7 +5946,7 @@ exports[`Video mouse events handlers of controls 3`] = `
             class="StyledBox-sc-13pk1d4-0 iDdezv"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 gQrfUm"
+              class="StyledText-sc-1sadyjn-0 fbbBQL"
             >
               NaN:NaN
             </span>
@@ -5556,28 +5956,21 @@ exports[`Video mouse events handlers of controls 3`] = `
           aria-expanded="false"
           aria-haspopup="menu"
           aria-label="open menu"
-          class="StyledButton-sc-323bzc-0 jLPXpV"
+          class="StyledButtonKind-sc-1vhfpnt-0 jKdwXf"
           type="button"
         >
-          <div
-            class="StyledBox-sc-13pk1d4-0 kYyYKN"
+          <svg
+            aria-label="Actions"
+            class="StyledIcon-sc-ofa7kd-0 bebVMk"
+            viewBox="0 0 24 24"
           >
-            <span
-              class="StyledText-sc-1sadyjn-0 jTcNpm"
+            <path
+              d="M12 17.5a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zm0-11V1m0 22v-5.5M1 12h5.5m11 0H23M4.437 4.437l4.125 4.125m6.876 6.876 4.124 4.124m0-15.125-4.125 4.125m-6.874 6.876-4.126 4.124"
+              fill="none"
+              stroke="#000"
+              stroke-width="2"
             />
-            <svg
-              aria-label="Actions"
-              class="StyledIcon-sc-ofa7kd-0 fmPtiI"
-              viewBox="0 0 24 24"
-            >
-              <path
-                d="M12 17.5a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zm0-11V1m0 22v-5.5M1 12h5.5m11 0H23M4.437 4.437l4.125 4.125m6.876 6.876 4.124 4.124m0-15.125-4.125 4.125m-6.874 6.876-4.126 4.124"
-                fill="none"
-                stroke="#000"
-                stroke-width="2"
-              />
-            </svg>
-          </div>
+          </svg>
         </button>
       </div>
     </div>
@@ -5586,13 +5979,45 @@ exports[`Video mouse events handlers of controls 3`] = `
 `;
 
 exports[`Video mute renders 1`] = `
+.c6 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 18px;
+  height: 18px;
+  fill: #ffffff;
+  stroke: #ffffff;
+}
+
+.c6 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c6 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c6 *[stroke*='#'],
+.c6 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c6 *[fill-rule],
+.c6 *[FILL-RULE],
+.c6 *[fill*='#'],
+.c6 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
+}
+
 .c4 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   align-items: center;
-  background-color: rgba(51, 51, 51, 0.8);
-  color: #f8f8f8;
+  background-color: rgba(28, 28, 28, 0.8);
+  color: #ffffff;
   min-width: 0;
   min-height: 0;
   flex-direction: row;
@@ -5631,50 +6056,6 @@ exports[`Video mute renders 1`] = `
   padding-right: 12px;
 }
 
-.c17 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  align-items: center;
-  min-width: 0;
-  min-height: 0;
-  flex-direction: row;
-  justify-content: flex-start;
-  padding: 12px;
-}
-
-.c6 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #f8f8f8;
-  stroke: #f8f8f8;
-}
-
-.c6 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c6 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c6 *[stroke*='#'],
-.c6 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c6 *[fill-rule],
-.c6 *[FILL-RULE],
-.c6 *[fill*='#'],
-.c6 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
-}
-
 .c9 {
   position: relative;
 }
@@ -5694,13 +6075,9 @@ exports[`Video mute renders 1`] = `
 
 .c15 {
   margin: 0px;
-  font-size: 18px;
-  line-height: 24px;
-}
-
-.c18 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  font-weight: undefined;
 }
 
 .c5 {
@@ -5713,23 +6090,47 @@ exports[`Video mute renders 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  color: inherit;
-  outline: none;
   border: none;
-  padding: 0;
-  text-align: inherit;
+  border-radius: 9999px;
+  padding: 8px 8px;
+  font-size: 1.125rem;
   line-height: 0;
-  padding: 12px;
+  background-color: rgba(0, 0, 0, 0);
+  color: #ffffff;
+  border-style: solid;
+  border-width: 1px;
+  border-color: rgba(0, 0, 0, 0);
+  border-radius: 9999px;
+  font-weight: 500;
+  padding: 8px 8px;
+  text-align: center;
+  transition-property: color,background-color,border-color,box-shadow;
+  transition-duration: 0.1s;
+  transition-timing-function: ease-in-out;
+}
+
+.c5 >svg {
+  display: flex;
+  align-self: center;
+  vertical-align: middle;
 }
 
 .c5:hover {
-  background-color: rgba(221, 221, 221, 0.4);
-  color: #FFFFFF;
+  background-color: rgba(255, 255, 255, 0.06);
+  color: #ffffff;
+  border-color: rgba(0, 0, 0, 0);
+  font-weight: 500;
+}
+
+.c5:hover {
+  background-color: rgba(255, 255, 255, 0.06);
+  color: #ffffff;
 }
 
 .c5:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c5:focus >circle,
@@ -5739,8 +6140,9 @@ exports[`Video mute renders 1`] = `
 .c5:focus >polygon,
 .c5:focus >polyline,
 .c5:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c5:focus ::-moz-focus-inner {
@@ -5748,6 +6150,8 @@ exports[`Video mute renders 1`] = `
 }
 
 .c5:focus:not(:focus-visible) {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -5759,6 +6163,8 @@ exports[`Video mute renders 1`] = `
 .c5:focus:not(:focus-visible) >polygon,
 .c5:focus:not(:focus-visible) >polyline,
 .c5:focus:not(:focus-visible) >rect {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -5777,16 +6183,42 @@ exports[`Video mute renders 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  color: inherit;
-  outline: none;
   border: none;
-  padding: 0;
-  text-align: inherit;
+  border-radius: 9999px;
+  padding: 8px 8px;
+  font-size: 1.125rem;
+  line-height: 0;
+  background-color: rgba(0, 0, 0, 0);
+  color: #ffffff;
+  border-style: solid;
+  border-width: 1px;
+  border-color: rgba(0, 0, 0, 0);
+  border-radius: 9999px;
+  font-weight: 500;
+  padding: 8px 8px;
+  text-align: center;
+  transition-property: color,background-color,border-color,box-shadow;
+  transition-duration: 0.1s;
+  transition-timing-function: ease-in-out;
+}
+
+.c16 >svg {
+  display: flex;
+  align-self: center;
+  vertical-align: middle;
+}
+
+.c16:hover {
+  background-color: rgba(255, 255, 255, 0.06);
+  color: #ffffff;
+  border-color: rgba(0, 0, 0, 0);
+  font-weight: 500;
 }
 
 .c16:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c16:focus >circle,
@@ -5796,8 +6228,9 @@ exports[`Video mute renders 1`] = `
 .c16:focus >polygon,
 .c16:focus >polyline,
 .c16:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c16:focus ::-moz-focus-inner {
@@ -5805,6 +6238,8 @@ exports[`Video mute renders 1`] = `
 }
 
 .c16:focus:not(:focus-visible) {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -5816,6 +6251,8 @@ exports[`Video mute renders 1`] = `
 .c16:focus:not(:focus-visible) >polygon,
 .c16:focus:not(:focus-visible) >polyline,
 .c16:focus:not(:focus-visible) >rect {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -5825,8 +6262,11 @@ exports[`Video mute renders 1`] = `
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -5861,8 +6301,9 @@ exports[`Video mute renders 1`] = `
 }
 
 .c1:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c1:focus >circle,
@@ -5872,8 +6313,9 @@ exports[`Video mute renders 1`] = `
 .c1:focus >polygon,
 .c1:focus >polyline,
 .c1:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c1:focus ::-moz-focus-inner {
@@ -5899,8 +6341,9 @@ exports[`Video mute renders 1`] = `
 }
 
 .c13:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c13:focus >circle,
@@ -5910,8 +6353,9 @@ exports[`Video mute renders 1`] = `
 .c13:focus >polygon,
 .c13:focus >polyline,
 .c13:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c13:focus ::-moz-focus-inner {
@@ -5922,12 +6366,6 @@ exports[`Video mute renders 1`] = `
   .c14 {
     padding-left: 6px;
     padding-right: 6px;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .c17 {
-    padding: 6px;
   }
 }
 
@@ -6028,25 +6466,18 @@ exports[`Video mute renders 1`] = `
           class="c16"
           type="button"
         >
-          <div
-            class="c17"
+          <svg
+            aria-label="Actions"
+            class="c6"
+            viewBox="0 0 24 24"
           >
-            <span
-              class="c18"
+            <path
+              d="M12 17.5a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zm0-11V1m0 22v-5.5M1 12h5.5m11 0H23M4.437 4.437l4.125 4.125m6.876 6.876 4.124 4.124m0-15.125-4.125 4.125m-6.874 6.876-4.126 4.124"
+              fill="none"
+              stroke="#000"
+              stroke-width="2"
             />
-            <svg
-              aria-label="Actions"
-              class="c6"
-              viewBox="0 0 24 24"
-            >
-              <path
-                d="M12 17.5a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zm0-11V1m0 22v-5.5M1 12h5.5m11 0H23M4.437 4.437l4.125 4.125m6.876 6.876 4.124 4.124m0-15.125-4.125 4.125m-6.874 6.876-4.126 4.124"
-                fill="none"
-                stroke="#000"
-                stroke-width="2"
-              />
-            </svg>
-          </div>
+          </svg>
         </button>
       </div>
     </div>
@@ -6055,13 +6486,45 @@ exports[`Video mute renders 1`] = `
 `;
 
 exports[`Video renders 1`] = `
+.c6 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 18px;
+  height: 18px;
+  fill: #ffffff;
+  stroke: #ffffff;
+}
+
+.c6 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c6 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c6 *[stroke*='#'],
+.c6 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c6 *[fill-rule],
+.c6 *[FILL-RULE],
+.c6 *[fill*='#'],
+.c6 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
+}
+
 .c4 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   align-items: center;
-  background-color: rgba(51, 51, 51, 0.8);
-  color: #f8f8f8;
+  background-color: rgba(28, 28, 28, 0.8);
+  color: #ffffff;
   min-width: 0;
   min-height: 0;
   flex-direction: row;
@@ -6100,50 +6563,6 @@ exports[`Video renders 1`] = `
   padding-right: 12px;
 }
 
-.c17 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  align-items: center;
-  min-width: 0;
-  min-height: 0;
-  flex-direction: row;
-  justify-content: flex-start;
-  padding: 12px;
-}
-
-.c6 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #f8f8f8;
-  stroke: #f8f8f8;
-}
-
-.c6 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c6 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c6 *[stroke*='#'],
-.c6 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c6 *[fill-rule],
-.c6 *[FILL-RULE],
-.c6 *[fill*='#'],
-.c6 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
-}
-
 .c9 {
   position: relative;
 }
@@ -6163,13 +6582,9 @@ exports[`Video renders 1`] = `
 
 .c15 {
   margin: 0px;
-  font-size: 18px;
-  line-height: 24px;
-}
-
-.c18 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  font-weight: undefined;
 }
 
 .c5 {
@@ -6182,23 +6597,47 @@ exports[`Video renders 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  color: inherit;
-  outline: none;
   border: none;
-  padding: 0;
-  text-align: inherit;
+  border-radius: 9999px;
+  padding: 8px 8px;
+  font-size: 1.125rem;
   line-height: 0;
-  padding: 12px;
+  background-color: rgba(0, 0, 0, 0);
+  color: #ffffff;
+  border-style: solid;
+  border-width: 1px;
+  border-color: rgba(0, 0, 0, 0);
+  border-radius: 9999px;
+  font-weight: 500;
+  padding: 8px 8px;
+  text-align: center;
+  transition-property: color,background-color,border-color,box-shadow;
+  transition-duration: 0.1s;
+  transition-timing-function: ease-in-out;
+}
+
+.c5 >svg {
+  display: flex;
+  align-self: center;
+  vertical-align: middle;
 }
 
 .c5:hover {
-  background-color: rgba(221, 221, 221, 0.4);
-  color: #FFFFFF;
+  background-color: rgba(255, 255, 255, 0.06);
+  color: #ffffff;
+  border-color: rgba(0, 0, 0, 0);
+  font-weight: 500;
+}
+
+.c5:hover {
+  background-color: rgba(255, 255, 255, 0.06);
+  color: #ffffff;
 }
 
 .c5:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c5:focus >circle,
@@ -6208,8 +6647,9 @@ exports[`Video renders 1`] = `
 .c5:focus >polygon,
 .c5:focus >polyline,
 .c5:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c5:focus ::-moz-focus-inner {
@@ -6217,6 +6657,8 @@ exports[`Video renders 1`] = `
 }
 
 .c5:focus:not(:focus-visible) {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -6228,6 +6670,8 @@ exports[`Video renders 1`] = `
 .c5:focus:not(:focus-visible) >polygon,
 .c5:focus:not(:focus-visible) >polyline,
 .c5:focus:not(:focus-visible) >rect {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -6246,16 +6690,42 @@ exports[`Video renders 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  color: inherit;
-  outline: none;
   border: none;
-  padding: 0;
-  text-align: inherit;
+  border-radius: 9999px;
+  padding: 8px 8px;
+  font-size: 1.125rem;
+  line-height: 0;
+  background-color: rgba(0, 0, 0, 0);
+  color: #ffffff;
+  border-style: solid;
+  border-width: 1px;
+  border-color: rgba(0, 0, 0, 0);
+  border-radius: 9999px;
+  font-weight: 500;
+  padding: 8px 8px;
+  text-align: center;
+  transition-property: color,background-color,border-color,box-shadow;
+  transition-duration: 0.1s;
+  transition-timing-function: ease-in-out;
+}
+
+.c16 >svg {
+  display: flex;
+  align-self: center;
+  vertical-align: middle;
+}
+
+.c16:hover {
+  background-color: rgba(255, 255, 255, 0.06);
+  color: #ffffff;
+  border-color: rgba(0, 0, 0, 0);
+  font-weight: 500;
 }
 
 .c16:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c16:focus >circle,
@@ -6265,8 +6735,9 @@ exports[`Video renders 1`] = `
 .c16:focus >polygon,
 .c16:focus >polyline,
 .c16:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c16:focus ::-moz-focus-inner {
@@ -6274,6 +6745,8 @@ exports[`Video renders 1`] = `
 }
 
 .c16:focus:not(:focus-visible) {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -6285,6 +6758,8 @@ exports[`Video renders 1`] = `
 .c16:focus:not(:focus-visible) >polygon,
 .c16:focus:not(:focus-visible) >polyline,
 .c16:focus:not(:focus-visible) >rect {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -6294,8 +6769,11 @@ exports[`Video renders 1`] = `
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -6330,8 +6808,9 @@ exports[`Video renders 1`] = `
 }
 
 .c1:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c1:focus >circle,
@@ -6341,8 +6820,9 @@ exports[`Video renders 1`] = `
 .c1:focus >polygon,
 .c1:focus >polyline,
 .c1:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c1:focus ::-moz-focus-inner {
@@ -6368,8 +6848,9 @@ exports[`Video renders 1`] = `
 }
 
 .c13:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c13:focus >circle,
@@ -6379,8 +6860,9 @@ exports[`Video renders 1`] = `
 .c13:focus >polygon,
 .c13:focus >polyline,
 .c13:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c13:focus ::-moz-focus-inner {
@@ -6391,12 +6873,6 @@ exports[`Video renders 1`] = `
   .c14 {
     padding-left: 6px;
     padding-right: 6px;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .c17 {
-    padding: 6px;
   }
 }
 
@@ -6497,25 +6973,18 @@ exports[`Video renders 1`] = `
           class="c16"
           type="button"
         >
-          <div
-            class="c17"
+          <svg
+            aria-label="Actions"
+            class="c6"
+            viewBox="0 0 24 24"
           >
-            <span
-              class="c18"
+            <path
+              d="M12 17.5a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zm0-11V1m0 22v-5.5M1 12h5.5m11 0H23M4.437 4.437l4.125 4.125m6.876 6.876 4.124 4.124m0-15.125-4.125 4.125m-6.874 6.876-4.126 4.124"
+              fill="none"
+              stroke="#000"
+              stroke-width="2"
             />
-            <svg
-              aria-label="Actions"
-              class="c6"
-              viewBox="0 0 24 24"
-            >
-              <path
-                d="M12 17.5a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zm0-11V1m0 22v-5.5M1 12h5.5m11 0H23M4.437 4.437l4.125 4.125m6.876 6.876 4.124 4.124m0-15.125-4.125 4.125m-6.874 6.876-4.126 4.124"
-                fill="none"
-                stroke="#000"
-                stroke-width="2"
-              />
-            </svg>
-          </div>
+          </svg>
         </button>
       </div>
     </div>
@@ -6524,6 +6993,38 @@ exports[`Video renders 1`] = `
 `;
 
 exports[`Video renders with theme 1`] = `
+.c6 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #f8f8f8;
+  stroke: #f8f8f8;
+}
+
+.c6 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c6 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c6 *[stroke*='#'],
+.c6 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c6 *[fill-rule],
+.c6 *[FILL-RULE],
+.c6 *[fill*='#'],
+.c6 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
+}
+
 .c4 {
   display: flex;
   box-sizing: border-box;
@@ -6579,38 +7080,6 @@ exports[`Video renders with theme 1`] = `
   flex-direction: row;
   justify-content: flex-start;
   padding: 12px;
-}
-
-.c6 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #f8f8f8;
-  stroke: #f8f8f8;
-}
-
-.c6 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c6 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c6 *[stroke*='#'],
-.c6 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c6 *[fill-rule],
-.c6 *[FILL-RULE],
-.c6 *[fill*='#'],
-.c6 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
 }
 
 .c9 {
@@ -6993,13 +7462,45 @@ exports[`Video renders with theme 1`] = `
 `;
 
 exports[`Video scrubber 1`] = `
+.c6 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 18px;
+  height: 18px;
+  fill: #ffffff;
+  stroke: #ffffff;
+}
+
+.c6 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c6 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c6 *[stroke*='#'],
+.c6 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c6 *[fill-rule],
+.c6 *[FILL-RULE],
+.c6 *[fill*='#'],
+.c6 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
+}
+
 .c4 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   align-items: center;
-  background-color: rgba(51, 51, 51, 0.8);
-  color: #f8f8f8;
+  background-color: rgba(28, 28, 28, 0.8);
+  color: #ffffff;
   min-width: 0;
   min-height: 0;
   flex-direction: row;
@@ -7038,50 +7539,6 @@ exports[`Video scrubber 1`] = `
   padding-right: 12px;
 }
 
-.c17 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  align-items: center;
-  min-width: 0;
-  min-height: 0;
-  flex-direction: row;
-  justify-content: flex-start;
-  padding: 12px;
-}
-
-.c6 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #f8f8f8;
-  stroke: #f8f8f8;
-}
-
-.c6 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c6 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c6 *[stroke*='#'],
-.c6 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c6 *[fill-rule],
-.c6 *[FILL-RULE],
-.c6 *[fill*='#'],
-.c6 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
-}
-
 .c9 {
   position: relative;
 }
@@ -7101,13 +7558,9 @@ exports[`Video scrubber 1`] = `
 
 .c15 {
   margin: 0px;
-  font-size: 18px;
-  line-height: 24px;
-}
-
-.c18 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  font-weight: undefined;
 }
 
 .c5 {
@@ -7120,23 +7573,47 @@ exports[`Video scrubber 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  color: inherit;
-  outline: none;
   border: none;
-  padding: 0;
-  text-align: inherit;
+  border-radius: 9999px;
+  padding: 8px 8px;
+  font-size: 1.125rem;
   line-height: 0;
-  padding: 12px;
+  background-color: rgba(0, 0, 0, 0);
+  color: #ffffff;
+  border-style: solid;
+  border-width: 1px;
+  border-color: rgba(0, 0, 0, 0);
+  border-radius: 9999px;
+  font-weight: 500;
+  padding: 8px 8px;
+  text-align: center;
+  transition-property: color,background-color,border-color,box-shadow;
+  transition-duration: 0.1s;
+  transition-timing-function: ease-in-out;
+}
+
+.c5 >svg {
+  display: flex;
+  align-self: center;
+  vertical-align: middle;
 }
 
 .c5:hover {
-  background-color: rgba(221, 221, 221, 0.4);
-  color: #FFFFFF;
+  background-color: rgba(255, 255, 255, 0.06);
+  color: #ffffff;
+  border-color: rgba(0, 0, 0, 0);
+  font-weight: 500;
+}
+
+.c5:hover {
+  background-color: rgba(255, 255, 255, 0.06);
+  color: #ffffff;
 }
 
 .c5:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c5:focus >circle,
@@ -7146,8 +7623,9 @@ exports[`Video scrubber 1`] = `
 .c5:focus >polygon,
 .c5:focus >polyline,
 .c5:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c5:focus ::-moz-focus-inner {
@@ -7155,6 +7633,8 @@ exports[`Video scrubber 1`] = `
 }
 
 .c5:focus:not(:focus-visible) {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -7166,6 +7646,8 @@ exports[`Video scrubber 1`] = `
 .c5:focus:not(:focus-visible) >polygon,
 .c5:focus:not(:focus-visible) >polyline,
 .c5:focus:not(:focus-visible) >rect {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -7184,16 +7666,42 @@ exports[`Video scrubber 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  color: inherit;
-  outline: none;
   border: none;
-  padding: 0;
-  text-align: inherit;
+  border-radius: 9999px;
+  padding: 8px 8px;
+  font-size: 1.125rem;
+  line-height: 0;
+  background-color: rgba(0, 0, 0, 0);
+  color: #ffffff;
+  border-style: solid;
+  border-width: 1px;
+  border-color: rgba(0, 0, 0, 0);
+  border-radius: 9999px;
+  font-weight: 500;
+  padding: 8px 8px;
+  text-align: center;
+  transition-property: color,background-color,border-color,box-shadow;
+  transition-duration: 0.1s;
+  transition-timing-function: ease-in-out;
+}
+
+.c16 >svg {
+  display: flex;
+  align-self: center;
+  vertical-align: middle;
+}
+
+.c16:hover {
+  background-color: rgba(255, 255, 255, 0.06);
+  color: #ffffff;
+  border-color: rgba(0, 0, 0, 0);
+  font-weight: 500;
 }
 
 .c16:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c16:focus >circle,
@@ -7203,8 +7711,9 @@ exports[`Video scrubber 1`] = `
 .c16:focus >polygon,
 .c16:focus >polyline,
 .c16:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c16:focus ::-moz-focus-inner {
@@ -7212,6 +7721,8 @@ exports[`Video scrubber 1`] = `
 }
 
 .c16:focus:not(:focus-visible) {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -7223,6 +7734,8 @@ exports[`Video scrubber 1`] = `
 .c16:focus:not(:focus-visible) >polygon,
 .c16:focus:not(:focus-visible) >polyline,
 .c16:focus:not(:focus-visible) >rect {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -7232,8 +7745,11 @@ exports[`Video scrubber 1`] = `
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -7268,8 +7784,9 @@ exports[`Video scrubber 1`] = `
 }
 
 .c1:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c1:focus >circle,
@@ -7279,8 +7796,9 @@ exports[`Video scrubber 1`] = `
 .c1:focus >polygon,
 .c1:focus >polyline,
 .c1:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c1:focus ::-moz-focus-inner {
@@ -7306,8 +7824,9 @@ exports[`Video scrubber 1`] = `
 }
 
 .c13:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c13:focus >circle,
@@ -7317,8 +7836,9 @@ exports[`Video scrubber 1`] = `
 .c13:focus >polygon,
 .c13:focus >polyline,
 .c13:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c13:focus ::-moz-focus-inner {
@@ -7329,12 +7849,6 @@ exports[`Video scrubber 1`] = `
   .c14 {
     padding-left: 6px;
     padding-right: 6px;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .c17 {
-    padding: 6px;
   }
 }
 
@@ -7435,25 +7949,18 @@ exports[`Video scrubber 1`] = `
           class="c16"
           type="button"
         >
-          <div
-            class="c17"
+          <svg
+            aria-label="Actions"
+            class="c6"
+            viewBox="0 0 24 24"
           >
-            <span
-              class="c18"
+            <path
+              d="M12 17.5a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zm0-11V1m0 22v-5.5M1 12h5.5m11 0H23M4.437 4.437l4.125 4.125m6.876 6.876 4.124 4.124m0-15.125-4.125 4.125m-6.874 6.876-4.126 4.124"
+              fill="none"
+              stroke="#000"
+              stroke-width="2"
             />
-            <svg
-              aria-label="Actions"
-              class="c6"
-              viewBox="0 0 24 24"
-            >
-              <path
-                d="M12 17.5a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zm0-11V1m0 22v-5.5M1 12h5.5m11 0H23M4.437 4.437l4.125 4.125m6.876 6.876 4.124 4.124m0-15.125-4.125 4.125m-6.874 6.876-4.126 4.124"
-                fill="none"
-                stroke="#000"
-                stroke-width="2"
-              />
-            </svg>
-          </div>
+          </svg>
         </button>
       </div>
     </div>
@@ -7463,10 +7970,10 @@ exports[`Video scrubber 1`] = `
 
 exports[`Video scrubber 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 kiEDjE"
+  class="StyledGrommet-sc-19lkkz7-0 iRGypN"
 >
   <div
-    class="StyledVideo__StyledVideoContainer-sc-w4v8h9-1 iwLihr"
+    class="StyledVideo__StyledVideoContainer-sc-w4v8h9-1 hYHLsf"
     tabindex="-1"
   >
     <video
@@ -7482,15 +7989,15 @@ exports[`Video scrubber 2`] = `
       class="StyledVideo__StyledVideoControls-sc-w4v8h9-2 kGZkNT"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 iQpOqy"
+        class="StyledBox-sc-13pk1d4-0 iGhGii"
       >
         <button
-          class="StyledButton-sc-323bzc-0 ctcGGD"
+          class="StyledButtonKind-sc-1vhfpnt-0 bZKdfG"
           type="button"
         >
           <svg
             aria-label="play"
-            class="StyledIcon-sc-ofa7kd-0 fmPtiI"
+            class="StyledIcon-sc-ofa7kd-0 bebVMk"
             viewBox="0 0 24 24"
           >
             <path
@@ -7535,7 +8042,7 @@ exports[`Video scrubber 2`] = `
               >
                 <div
                   aria-label="scrubber"
-                  class="StyledVideo__StyledVideoScrubber-sc-w4v8h9-3 ikCDtk"
+                  class="StyledVideo__StyledVideoScrubber-sc-w4v8h9-3 joTMfs"
                   role="button"
                   tabindex="0"
                 />
@@ -7546,7 +8053,7 @@ exports[`Video scrubber 2`] = `
             class="StyledBox-sc-13pk1d4-0 iDdezv"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 gQrfUm"
+              class="StyledText-sc-1sadyjn-0 fbbBQL"
             >
               NaN:NaN
             </span>
@@ -7556,28 +8063,21 @@ exports[`Video scrubber 2`] = `
           aria-expanded="false"
           aria-haspopup="menu"
           aria-label="open menu"
-          class="StyledButton-sc-323bzc-0 jLPXpV"
+          class="StyledButtonKind-sc-1vhfpnt-0 jKdwXf"
           type="button"
         >
-          <div
-            class="StyledBox-sc-13pk1d4-0 kYyYKN"
+          <svg
+            aria-label="Actions"
+            class="StyledIcon-sc-ofa7kd-0 bebVMk"
+            viewBox="0 0 24 24"
           >
-            <span
-              class="StyledText-sc-1sadyjn-0 jTcNpm"
+            <path
+              d="M12 17.5a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zm0-11V1m0 22v-5.5M1 12h5.5m11 0H23M4.437 4.437l4.125 4.125m6.876 6.876 4.124 4.124m0-15.125-4.125 4.125m-6.874 6.876-4.126 4.124"
+              fill="none"
+              stroke="#000"
+              stroke-width="2"
             />
-            <svg
-              aria-label="Actions"
-              class="StyledIcon-sc-ofa7kd-0 fmPtiI"
-              viewBox="0 0 24 24"
-            >
-              <path
-                d="M12 17.5a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zm0-11V1m0 22v-5.5M1 12h5.5m11 0H23M4.437 4.437l4.125 4.125m6.876 6.876 4.124 4.124m0-15.125-4.125 4.125m-6.874 6.876-4.126 4.124"
-                fill="none"
-                stroke="#000"
-                stroke-width="2"
-              />
-            </svg>
-          </div>
+          </svg>
         </button>
       </div>
     </div>
@@ -7586,6 +8086,38 @@ exports[`Video scrubber 2`] = `
 `;
 
 exports[`Video should render outside grommet wrapper 1`] = `
+.c5 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #f8f8f8;
+  stroke: #f8f8f8;
+}
+
+.c5 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c5 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c5 *[stroke*='#'],
+.c5 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c5 *[fill-rule],
+.c5 *[FILL-RULE],
+.c5 *[fill*='#'],
+.c5 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
+}
+
 .c3 {
   display: flex;
   box-sizing: border-box;
@@ -7641,38 +8173,6 @@ exports[`Video should render outside grommet wrapper 1`] = `
   flex-direction: row;
   justify-content: flex-start;
   padding: 12px;
-}
-
-.c5 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #f8f8f8;
-  stroke: #f8f8f8;
-}
-
-.c5 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c5 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c5 *[stroke*='#'],
-.c5 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c5 *[fill-rule],
-.c5 *[FILL-RULE],
-.c5 *[fill*='#'],
-.c5 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
 }
 
 .c8 {
@@ -8035,13 +8535,45 @@ exports[`Video should render outside grommet wrapper 1`] = `
 `;
 
 exports[`Video timeUpdate event handler 1`] = `
+.c6 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 18px;
+  height: 18px;
+  fill: #ffffff;
+  stroke: #ffffff;
+}
+
+.c6 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c6 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c6 *[stroke*='#'],
+.c6 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c6 *[fill-rule],
+.c6 *[FILL-RULE],
+.c6 *[fill*='#'],
+.c6 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
+}
+
 .c4 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   align-items: center;
-  background-color: rgba(51, 51, 51, 0.8);
-  color: #f8f8f8;
+  background-color: rgba(28, 28, 28, 0.8);
+  color: #ffffff;
   min-width: 0;
   min-height: 0;
   flex-direction: row;
@@ -8080,50 +8612,6 @@ exports[`Video timeUpdate event handler 1`] = `
   padding-right: 12px;
 }
 
-.c17 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  align-items: center;
-  min-width: 0;
-  min-height: 0;
-  flex-direction: row;
-  justify-content: flex-start;
-  padding: 12px;
-}
-
-.c6 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #f8f8f8;
-  stroke: #f8f8f8;
-}
-
-.c6 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c6 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c6 *[stroke*='#'],
-.c6 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c6 *[fill-rule],
-.c6 *[FILL-RULE],
-.c6 *[fill*='#'],
-.c6 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
-}
-
 .c9 {
   position: relative;
 }
@@ -8143,13 +8631,9 @@ exports[`Video timeUpdate event handler 1`] = `
 
 .c15 {
   margin: 0px;
-  font-size: 18px;
-  line-height: 24px;
-}
-
-.c18 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  font-weight: undefined;
 }
 
 .c5 {
@@ -8162,23 +8646,47 @@ exports[`Video timeUpdate event handler 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  color: inherit;
-  outline: none;
   border: none;
-  padding: 0;
-  text-align: inherit;
+  border-radius: 9999px;
+  padding: 8px 8px;
+  font-size: 1.125rem;
   line-height: 0;
-  padding: 12px;
+  background-color: rgba(0, 0, 0, 0);
+  color: #ffffff;
+  border-style: solid;
+  border-width: 1px;
+  border-color: rgba(0, 0, 0, 0);
+  border-radius: 9999px;
+  font-weight: 500;
+  padding: 8px 8px;
+  text-align: center;
+  transition-property: color,background-color,border-color,box-shadow;
+  transition-duration: 0.1s;
+  transition-timing-function: ease-in-out;
+}
+
+.c5 >svg {
+  display: flex;
+  align-self: center;
+  vertical-align: middle;
 }
 
 .c5:hover {
-  background-color: rgba(221, 221, 221, 0.4);
-  color: #FFFFFF;
+  background-color: rgba(255, 255, 255, 0.06);
+  color: #ffffff;
+  border-color: rgba(0, 0, 0, 0);
+  font-weight: 500;
+}
+
+.c5:hover {
+  background-color: rgba(255, 255, 255, 0.06);
+  color: #ffffff;
 }
 
 .c5:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c5:focus >circle,
@@ -8188,8 +8696,9 @@ exports[`Video timeUpdate event handler 1`] = `
 .c5:focus >polygon,
 .c5:focus >polyline,
 .c5:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c5:focus ::-moz-focus-inner {
@@ -8197,6 +8706,8 @@ exports[`Video timeUpdate event handler 1`] = `
 }
 
 .c5:focus:not(:focus-visible) {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -8208,6 +8719,8 @@ exports[`Video timeUpdate event handler 1`] = `
 .c5:focus:not(:focus-visible) >polygon,
 .c5:focus:not(:focus-visible) >polyline,
 .c5:focus:not(:focus-visible) >rect {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -8226,16 +8739,42 @@ exports[`Video timeUpdate event handler 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  color: inherit;
-  outline: none;
   border: none;
-  padding: 0;
-  text-align: inherit;
+  border-radius: 9999px;
+  padding: 8px 8px;
+  font-size: 1.125rem;
+  line-height: 0;
+  background-color: rgba(0, 0, 0, 0);
+  color: #ffffff;
+  border-style: solid;
+  border-width: 1px;
+  border-color: rgba(0, 0, 0, 0);
+  border-radius: 9999px;
+  font-weight: 500;
+  padding: 8px 8px;
+  text-align: center;
+  transition-property: color,background-color,border-color,box-shadow;
+  transition-duration: 0.1s;
+  transition-timing-function: ease-in-out;
+}
+
+.c16 >svg {
+  display: flex;
+  align-self: center;
+  vertical-align: middle;
+}
+
+.c16:hover {
+  background-color: rgba(255, 255, 255, 0.06);
+  color: #ffffff;
+  border-color: rgba(0, 0, 0, 0);
+  font-weight: 500;
 }
 
 .c16:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c16:focus >circle,
@@ -8245,8 +8784,9 @@ exports[`Video timeUpdate event handler 1`] = `
 .c16:focus >polygon,
 .c16:focus >polyline,
 .c16:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c16:focus ::-moz-focus-inner {
@@ -8254,6 +8794,8 @@ exports[`Video timeUpdate event handler 1`] = `
 }
 
 .c16:focus:not(:focus-visible) {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -8265,6 +8807,8 @@ exports[`Video timeUpdate event handler 1`] = `
 .c16:focus:not(:focus-visible) >polygon,
 .c16:focus:not(:focus-visible) >polyline,
 .c16:focus:not(:focus-visible) >rect {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -8274,8 +8818,11 @@ exports[`Video timeUpdate event handler 1`] = `
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -8310,8 +8857,9 @@ exports[`Video timeUpdate event handler 1`] = `
 }
 
 .c1:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c1:focus >circle,
@@ -8321,8 +8869,9 @@ exports[`Video timeUpdate event handler 1`] = `
 .c1:focus >polygon,
 .c1:focus >polyline,
 .c1:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c1:focus ::-moz-focus-inner {
@@ -8348,8 +8897,9 @@ exports[`Video timeUpdate event handler 1`] = `
 }
 
 .c13:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c13:focus >circle,
@@ -8359,8 +8909,9 @@ exports[`Video timeUpdate event handler 1`] = `
 .c13:focus >polygon,
 .c13:focus >polyline,
 .c13:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c13:focus ::-moz-focus-inner {
@@ -8371,12 +8922,6 @@ exports[`Video timeUpdate event handler 1`] = `
   .c14 {
     padding-left: 6px;
     padding-right: 6px;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .c17 {
-    padding: 6px;
   }
 }
 
@@ -8477,25 +9022,18 @@ exports[`Video timeUpdate event handler 1`] = `
           class="c16"
           type="button"
         >
-          <div
-            class="c17"
+          <svg
+            aria-label="Actions"
+            class="c6"
+            viewBox="0 0 24 24"
           >
-            <span
-              class="c18"
+            <path
+              d="M12 17.5a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zm0-11V1m0 22v-5.5M1 12h5.5m11 0H23M4.437 4.437l4.125 4.125m6.876 6.876 4.124 4.124m0-15.125-4.125 4.125m-6.874 6.876-4.126 4.124"
+              fill="none"
+              stroke="#000"
+              stroke-width="2"
             />
-            <svg
-              aria-label="Actions"
-              class="c6"
-              viewBox="0 0 24 24"
-            >
-              <path
-                d="M12 17.5a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zm0-11V1m0 22v-5.5M1 12h5.5m11 0H23M4.437 4.437l4.125 4.125m6.876 6.876 4.124 4.124m0-15.125-4.125 4.125m-6.874 6.876-4.126 4.124"
-                fill="none"
-                stroke="#000"
-                stroke-width="2"
-              />
-            </svg>
-          </div>
+          </svg>
         </button>
       </div>
     </div>

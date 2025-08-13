@@ -1,4 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`Spinner border renders 1`] = `
 .c0 {
@@ -213,8 +213,11 @@ exports[`Spinner border renders 1`] = `
 
 exports[`Spinner color renders 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -226,15 +229,17 @@ exports[`Spinner color renders 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border: solid 1px #33333310;
-  border-top: solid 1px #6FFFB0;
+  border: solid 4px rgba(0, 0, 0, 0);
+  border-right: solid 4px #3c3aa1;
+  border-top: solid 4px #3c3aa1;
+  border-left: solid 4px #3c3aa1;
   min-width: 0;
   min-height: 0;
   flex-direction: column;
-  height: 24px;
-  width: 24px;
+  height: 28px;
+  width: 28px;
   flex: 0 0 auto;
-  padding: 12px;
+  padding: 0px;
   border-radius: 100%;
   transform: rotate(0deg);
   animation: gCPKsF 1s 0s infinite linear;
@@ -244,15 +249,17 @@ exports[`Spinner color renders 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border: solid 1px #33333310;
-  border-top: solid 1px #00873D;
+  border: solid 4px rgba(0, 0, 0, 0);
+  border-right: solid 4px #b0840d;
+  border-top: solid 4px #b0840d;
+  border-left: solid 4px #b0840d;
   min-width: 0;
   min-height: 0;
   flex-direction: column;
-  height: 24px;
-  width: 24px;
+  height: 28px;
+  width: 28px;
   flex: 0 0 auto;
-  padding: 12px;
+  padding: 0px;
   border-radius: 100%;
   transform: rotate(0deg);
   animation: gCPKsF 1s 0s infinite linear;
@@ -262,15 +269,17 @@ exports[`Spinner color renders 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border: solid 1px #33333310;
-  border-top: solid 1px #3D138D;
+  border: solid 4px rgba(0, 0, 0, 0);
+  border-right: solid 4px #a95589;
+  border-top: solid 4px #a95589;
+  border-left: solid 4px #a95589;
   min-width: 0;
   min-height: 0;
   flex-direction: column;
-  height: 24px;
-  width: 24px;
+  height: 28px;
+  width: 28px;
   flex: 0 0 auto;
-  padding: 12px;
+  padding: 0px;
   border-radius: 100%;
   transform: rotate(0deg);
   animation: gCPKsF 1s 0s infinite linear;
@@ -280,15 +289,17 @@ exports[`Spinner color renders 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border: solid 1px #33333310;
-  border-top: solid 1px #00739D;
+  border: solid 4px rgba(0, 0, 0, 0);
+  border-right: solid 4px #2053d9;
+  border-top: solid 4px #2053d9;
+  border-left: solid 4px #2053d9;
   min-width: 0;
   min-height: 0;
   flex-direction: column;
-  height: 24px;
-  width: 24px;
+  height: 28px;
+  width: 28px;
   flex: 0 0 auto;
-  padding: 12px;
+  padding: 0px;
   border-radius: 100%;
   transform: rotate(0deg);
   animation: gCPKsF 1s 0s infinite linear;
@@ -298,15 +309,17 @@ exports[`Spinner color renders 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border: solid 1px #33333310;
-  border-top: solid 1px #A2423D;
+  border: solid 4px rgba(0, 0, 0, 0);
+  border-right: solid 4px #a78972;
+  border-top: solid 4px #a78972;
+  border-left: solid 4px #a78972;
   min-width: 0;
   min-height: 0;
   flex-direction: column;
-  height: 24px;
-  width: 24px;
+  height: 28px;
+  width: 28px;
   flex: 0 0 auto;
-  padding: 12px;
+  padding: 0px;
   border-radius: 100%;
   transform: rotate(0deg);
   animation: gCPKsF 1s 0s infinite linear;
@@ -314,91 +327,151 @@ exports[`Spinner color renders 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c1 {
-    border: solid 1px #33333310;
+    border: solid 4px rgba(0, 0, 0, 0);
   }
 }
 
 @media only screen and (max-width: 768px) {
   .c1 {
-    border-top: solid 1px #6FFFB0;
+    border-right: solid 4px #3c3aa1;
   }
 }
 
 @media only screen and (max-width: 768px) {
   .c1 {
-    padding: 6px;
+    border-top: solid 4px #3c3aa1;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c1 {
+    border-left: solid 4px #3c3aa1;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c1 {
+    padding: 0px;
   }
 }
 
 @media only screen and (max-width: 768px) {
   .c2 {
-    border: solid 1px #33333310;
+    border: solid 4px rgba(0, 0, 0, 0);
   }
 }
 
 @media only screen and (max-width: 768px) {
   .c2 {
-    border-top: solid 1px #00873D;
+    border-right: solid 4px #b0840d;
   }
 }
 
 @media only screen and (max-width: 768px) {
   .c2 {
-    padding: 6px;
+    border-top: solid 4px #b0840d;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    border-left: solid 4px #b0840d;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    padding: 0px;
   }
 }
 
 @media only screen and (max-width: 768px) {
   .c3 {
-    border: solid 1px #33333310;
+    border: solid 4px rgba(0, 0, 0, 0);
   }
 }
 
 @media only screen and (max-width: 768px) {
   .c3 {
-    border-top: solid 1px #3D138D;
+    border-right: solid 4px #a95589;
   }
 }
 
 @media only screen and (max-width: 768px) {
   .c3 {
-    padding: 6px;
+    border-top: solid 4px #a95589;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c3 {
+    border-left: solid 4px #a95589;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c3 {
+    padding: 0px;
   }
 }
 
 @media only screen and (max-width: 768px) {
   .c4 {
-    border: solid 1px #33333310;
+    border: solid 4px rgba(0, 0, 0, 0);
   }
 }
 
 @media only screen and (max-width: 768px) {
   .c4 {
-    border-top: solid 1px #00739D;
+    border-right: solid 4px #2053d9;
   }
 }
 
 @media only screen and (max-width: 768px) {
   .c4 {
-    padding: 6px;
+    border-top: solid 4px #2053d9;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c4 {
+    border-left: solid 4px #2053d9;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c4 {
+    padding: 0px;
   }
 }
 
 @media only screen and (max-width: 768px) {
   .c5 {
-    border: solid 1px #33333310;
+    border: solid 4px rgba(0, 0, 0, 0);
   }
 }
 
 @media only screen and (max-width: 768px) {
   .c5 {
-    border-top: solid 1px #A2423D;
+    border-right: solid 4px #a78972;
   }
 }
 
 @media only screen and (max-width: 768px) {
   .c5 {
-    padding: 6px;
+    border-top: solid 4px #a78972;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c5 {
+    border-left: solid 4px #a78972;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c5 {
+    padding: 0px;
   }
 }
 
@@ -657,8 +730,11 @@ exports[`Spinner round renders 1`] = `
 
 exports[`Spinner should have no accessibility violations 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -670,15 +746,17 @@ exports[`Spinner should have no accessibility violations 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border: solid 1px #33333310;
-  border-top: solid 1px #7D4CDB;
+  border: solid 4px rgba(0, 0, 0, 0);
+  border-right: solid 4px #006750;
+  border-top: solid 4px #006750;
+  border-left: solid 4px #006750;
   min-width: 0;
   min-height: 0;
   flex-direction: column;
-  height: 24px;
-  width: 24px;
+  height: 28px;
+  width: 28px;
   flex: 0 0 auto;
-  padding: 12px;
+  padding: 0px;
   border-radius: 100%;
   transform: rotate(0deg);
   animation: gCPKsF 1s 0s infinite linear;
@@ -686,19 +764,31 @@ exports[`Spinner should have no accessibility violations 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c1 {
-    border: solid 1px #33333310;
+    border: solid 4px rgba(0, 0, 0, 0);
   }
 }
 
 @media only screen and (max-width: 768px) {
   .c1 {
-    border-top: solid 1px #7D4CDB;
+    border-right: solid 4px #006750;
   }
 }
 
 @media only screen and (max-width: 768px) {
   .c1 {
-    padding: 6px;
+    border-top: solid 4px #006750;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c1 {
+    border-left: solid 4px #006750;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c1 {
+    padding: 0px;
   }
 }
 
@@ -713,8 +803,11 @@ exports[`Spinner should have no accessibility violations 1`] = `
 
 exports[`Spinner size renders 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -726,15 +819,17 @@ exports[`Spinner size renders 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border: solid 1px #33333310;
-  border-top: solid 1px #7D4CDB;
+  border: solid 4px rgba(0, 0, 0, 0);
+  border-right: solid 4px #006750;
+  border-top: solid 4px #006750;
+  border-left: solid 4px #006750;
   min-width: 0;
   min-height: 0;
   flex-direction: column;
-  height: 18px;
-  width: 18px;
+  height: 24px;
+  width: 24px;
   flex: 0 0 auto;
-  padding: 12px;
+  padding: 0px;
   border-radius: 100%;
   transform: rotate(0deg);
   animation: gCPKsF 1s 0s infinite linear;
@@ -744,15 +839,17 @@ exports[`Spinner size renders 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border: solid 2px #33333310;
-  border-top: solid 2px #7D4CDB;
+  border: solid 4px rgba(0, 0, 0, 0);
+  border-right: solid 4px #006750;
+  border-top: solid 4px #006750;
+  border-left: solid 4px #006750;
   min-width: 0;
   min-height: 0;
   flex-direction: column;
-  height: 24px;
-  width: 24px;
+  height: 28px;
+  width: 28px;
   flex: 0 0 auto;
-  padding: 12px;
+  padding: 0px;
   border-radius: 100%;
   transform: rotate(0deg);
   animation: gCPKsF 1s 0s infinite linear;
@@ -762,15 +859,17 @@ exports[`Spinner size renders 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border: solid 4px #33333310;
-  border-top: solid 4px #7D4CDB;
+  border: solid 4px rgba(0, 0, 0, 0);
+  border-right: solid 4px #006750;
+  border-top: solid 4px #006750;
+  border-left: solid 4px #006750;
   min-width: 0;
   min-height: 0;
   flex-direction: column;
-  height: 48px;
-  width: 48px;
+  height: 36px;
+  width: 36px;
   flex: 0 0 auto;
-  padding: 12px;
+  padding: 0px;
   border-radius: 100%;
   transform: rotate(0deg);
   animation: gCPKsF 1s 0s infinite linear;
@@ -780,15 +879,17 @@ exports[`Spinner size renders 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border: solid 12px #33333310;
-  border-top: solid 12px #7D4CDB;
+  border: solid 4px rgba(0, 0, 0, 0);
+  border-right: solid 4px #006750;
+  border-top: solid 4px #006750;
+  border-left: solid 4px #006750;
   min-width: 0;
   min-height: 0;
   flex-direction: column;
-  height: 72px;
-  width: 72px;
+  height: 48px;
+  width: 48px;
   flex: 0 0 auto;
-  padding: 12px;
+  padding: 0px;
   border-radius: 100%;
   transform: rotate(0deg);
   animation: gCPKsF 1s 0s infinite linear;
@@ -798,15 +899,17 @@ exports[`Spinner size renders 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border: solid 24px #33333310;
-  border-top: solid 24px #7D4CDB;
+  border: solid 4px rgba(0, 0, 0, 0);
+  border-right: solid 4px #006750;
+  border-top: solid 4px #006750;
+  border-left: solid 4px #006750;
   min-width: 0;
   min-height: 0;
   flex-direction: column;
-  height: 96px;
-  width: 96px;
+  height: 72px;
+  width: 72px;
   flex: 0 0 auto;
-  padding: 12px;
+  padding: 0px;
   border-radius: 100%;
   transform: rotate(0deg);
   animation: gCPKsF 1s 0s infinite linear;
@@ -814,91 +917,151 @@ exports[`Spinner size renders 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c1 {
-    border: solid 1px #33333310;
+    border: solid 4px rgba(0, 0, 0, 0);
   }
 }
 
 @media only screen and (max-width: 768px) {
   .c1 {
-    border-top: solid 1px #7D4CDB;
+    border-right: solid 4px #006750;
   }
 }
 
 @media only screen and (max-width: 768px) {
   .c1 {
-    padding: 6px;
+    border-top: solid 4px #006750;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c1 {
+    border-left: solid 4px #006750;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c1 {
+    padding: 0px;
   }
 }
 
 @media only screen and (max-width: 768px) {
   .c2 {
-    border: solid 2px #33333310;
+    border: solid 4px rgba(0, 0, 0, 0);
   }
 }
 
 @media only screen and (max-width: 768px) {
   .c2 {
-    border-top: solid 2px #7D4CDB;
+    border-right: solid 4px #006750;
   }
 }
 
 @media only screen and (max-width: 768px) {
   .c2 {
-    padding: 6px;
+    border-top: solid 4px #006750;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    border-left: solid 4px #006750;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    padding: 0px;
   }
 }
 
 @media only screen and (max-width: 768px) {
   .c3 {
-    border: solid 4px #33333310;
+    border: solid 4px rgba(0, 0, 0, 0);
   }
 }
 
 @media only screen and (max-width: 768px) {
   .c3 {
-    border-top: solid 4px #7D4CDB;
+    border-right: solid 4px #006750;
   }
 }
 
 @media only screen and (max-width: 768px) {
   .c3 {
-    padding: 6px;
+    border-top: solid 4px #006750;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c3 {
+    border-left: solid 4px #006750;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c3 {
+    padding: 0px;
   }
 }
 
 @media only screen and (max-width: 768px) {
   .c4 {
-    border: solid 6px #33333310;
+    border: solid 4px rgba(0, 0, 0, 0);
   }
 }
 
 @media only screen and (max-width: 768px) {
   .c4 {
-    border-top: solid 6px #7D4CDB;
+    border-right: solid 4px #006750;
   }
 }
 
 @media only screen and (max-width: 768px) {
   .c4 {
-    padding: 6px;
+    border-top: solid 4px #006750;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c4 {
+    border-left: solid 4px #006750;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c4 {
+    padding: 0px;
   }
 }
 
 @media only screen and (max-width: 768px) {
   .c5 {
-    border: solid 12px #33333310;
+    border: solid 4px rgba(0, 0, 0, 0);
   }
 }
 
 @media only screen and (max-width: 768px) {
   .c5 {
-    border-top: solid 12px #7D4CDB;
+    border-right: solid 4px #006750;
   }
 }
 
 @media only screen and (max-width: 768px) {
   .c5 {
-    padding: 6px;
+    border-top: solid 4px #006750;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c5 {
+    border-left: solid 4px #006750;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c5 {
+    padding: 0px;
   }
 }
 

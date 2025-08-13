@@ -1,6 +1,7 @@
 import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
 import 'jest-styled-components';
+import { hpe } from 'grommet-theme-hpe';
 import { Data, View } from '../../Data';
 import { Grommet } from '../../Grommet';
 import { DataClearFilters } from '..';
@@ -64,7 +65,7 @@ const Test = ({ onView }: { onView: (nextView: View) => void }) => {
 describe('DataClearFilters', () => {
   test('renders', () => {
     const { asFragment } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Data data={data}>
           <DataClearFilters />
         </Data>
@@ -76,7 +77,7 @@ describe('DataClearFilters', () => {
 
   test('clears filters when clicked', () => {
     const { asFragment } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Data
           data={data}
           view={{
@@ -98,7 +99,7 @@ describe('DataClearFilters', () => {
 
   test('renders custom message', () => {
     const { asFragment } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Data
           data={data}
           messages={{
@@ -121,7 +122,7 @@ describe('DataClearFilters', () => {
     const onView = jest.fn();
 
     const { asFragment } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Test onView={onView} />
       </Grommet>,
     );

@@ -109,8 +109,11 @@ exports[`NameValueList should accept and apply Grid props 1`] = `
 
 exports[`NameValueList should render 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -137,17 +140,18 @@ exports[`NameValueList should render 1`] = `
 
 .c4 {
   margin: 0px;
-  font-size: 18px;
-  line-height: 24px;
-  color: #444444;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  color: #555555;
+  font-weight: undefined;
 }
 
 .c3 {
   margin-bottom: 3px;
-  font-size: 18px;
-  line-height: 24px;
-  color: #444444;
-  font-weight: bold;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  color: #2e2e2e;
+  font-weight: 500;
 }
 
 @media only screen and (max-width: 768px) {
@@ -214,8 +218,11 @@ exports[`NameValueList should render 1`] = `
 
 exports[`NameValueList should render correct alignment of name 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -242,17 +249,18 @@ exports[`NameValueList should render correct alignment of name 1`] = `
 
 .c4 {
   margin: 0px;
-  font-size: 18px;
-  line-height: 24px;
-  color: #444444;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  color: #555555;
+  font-weight: undefined;
 }
 
 .c3 {
   margin-bottom: 3px;
-  font-size: 18px;
-  line-height: 24px;
-  color: #444444;
-  font-weight: bold;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  color: #2e2e2e;
+  font-weight: 500;
 }
 
 @media only screen and (max-width: 768px) {
@@ -319,8 +327,11 @@ exports[`NameValueList should render correct alignment of name 1`] = `
 
 exports[`NameValueList should render correct alignment of value 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -347,17 +358,18 @@ exports[`NameValueList should render correct alignment of value 1`] = `
 
 .c3 {
   margin-bottom: 3px;
-  font-size: 18px;
-  line-height: 24px;
-  color: #444444;
-  font-weight: bold;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  color: #2e2e2e;
+  font-weight: 500;
 }
 
 .c4 {
   margin: 0px;
-  font-size: 18px;
-  line-height: 24px;
-  color: #444444;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  color: #555555;
+  font-weight: undefined;
 }
 
 @media only screen and (max-width: 768px) {
@@ -1060,8 +1072,11 @@ exports[`NameValueList should render correct width of value when value is array 
 
 exports[`NameValueList should render name/value as a column when pairProps = { direction: \\n    'column' } 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1088,17 +1103,18 @@ exports[`NameValueList should render name/value as a column when pairProps = { d
 
 .c3 {
   margin-bottom: 3px;
-  font-size: 18px;
-  line-height: 24px;
-  color: #444444;
-  font-weight: bold;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  color: #2e2e2e;
+  font-weight: 500;
 }
 
 .c4 {
   margin: 0px;
-  font-size: 18px;
-  line-height: 24px;
-  color: #444444;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  color: #555555;
+  font-weight: undefined;
 }
 
 @media only screen and (max-width: 768px) {
@@ -1230,8 +1246,11 @@ exports[`NameValueList should render outside grommet wrapper 1`] = `
 
 exports[`NameValueList should render pairs in a grid when layout="grid" 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1258,17 +1277,18 @@ exports[`NameValueList should render pairs in a grid when layout="grid" 1`] = `
 
 .c4 {
   margin: 0px;
-  font-size: 18px;
-  line-height: 24px;
-  color: #444444;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  color: #555555;
+  font-weight: undefined;
 }
 
 .c3 {
   margin-bottom: 3px;
-  font-size: 18px;
-  line-height: 24px;
-  color: #444444;
-  font-weight: bold;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  color: #2e2e2e;
+  font-weight: 500;
 }
 
 @media only screen and (max-width: 768px) {
@@ -1335,8 +1355,11 @@ exports[`NameValueList should render pairs in a grid when layout="grid" 1`] = `
 
 exports[`NameValueList should render value above name when pairProps = { direction: \\n    'column-reverse' } 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1363,17 +1386,18 @@ exports[`NameValueList should render value above name when pairProps = { directi
 
 .c3 {
   margin: 0px;
-  font-size: 18px;
-  line-height: 24px;
-  color: #444444;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  color: #555555;
+  font-weight: undefined;
 }
 
 .c4 {
   margin-bottom: 3px;
-  font-size: 18px;
-  line-height: 24px;
-  color: #444444;
-  font-weight: bold;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  color: #2e2e2e;
+  font-weight: 500;
 }
 
 @media only screen and (max-width: 768px) {

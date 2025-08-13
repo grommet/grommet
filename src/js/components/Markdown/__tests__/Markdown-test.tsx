@@ -1,6 +1,7 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 import 'jest-styled-components';
+import { hpe } from 'grommet-theme-hpe';
 
 import { Grommet } from '../../Grommet';
 import { Markdown } from '..';
@@ -33,7 +34,7 @@ const Wrapper = (props: any) => <Box gap="small" {...props} />;
 
 test('Markdown renders', () => {
   const { container } = render(
-    <Grommet>
+    <Grommet theme={hpe}>
       <Markdown>{CONTENT}</Markdown>
     </Grommet>,
   );
@@ -49,7 +50,7 @@ test('Markdown renders without grommet wrapper', () => {
 
 test('wrapper', () => {
   const { container } = render(
-    <Grommet>
+    <Grommet theme={hpe}>
       <Markdown options={{ wrapper: Wrapper }}>{CONTENT}</Markdown>
     </Grommet>,
   );

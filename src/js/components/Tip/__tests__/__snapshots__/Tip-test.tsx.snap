@@ -18,31 +18,35 @@ exports[`Tip dropProps should pass props to Drop 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  margin: 6px;
-  background-color: #33333310;
-  color: #444444;
+  margin: 3px;
+  background-color: #ffffff;
+  color: #555555;
+  border: solid 1px rgba(0, 0, 0, 0.12);
   min-width: 0;
   min-height: 0;
   flex-direction: column;
   padding-left: 12px;
   padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
-  border-radius: 12px;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.20);
+  padding-top: 0px;
+  padding-bottom: 0px;
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12);
 }
 
 .c1 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  border-radius: 0px;
+  border-radius: 6px;
   position: fixed;
-  z-index: 20;
+  z-index: 110;
   outline: none;
   background: none;
   margin: 0px;
@@ -50,6 +54,14 @@ exports[`Tip dropProps should pass props to Drop 1`] = `
   transform-origin: top left;
   animation: kPQHBD 0.1s forwards;
   animation-delay: 0.01s;
+}
+
+.c1 [class*=MaskedInput__ContainerBox] {
+  padding-block: 6px;
+  padding-inline: 6px;
+  gap: 6px;
+  display: flex;
+  flex-direction: column;
 }
 
 @media only screen and (max-width: 768px) {
@@ -60,7 +72,13 @@ exports[`Tip dropProps should pass props to Drop 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c2 {
-    margin: 3px;
+    margin: 2px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    border: solid 1px rgba(0, 0, 0, 0.12);
   }
 }
 
@@ -73,14 +91,14 @@ exports[`Tip dropProps should pass props to Drop 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c2 {
-    padding-top: 3px;
-    padding-bottom: 3px;
+    padding-top: 0px;
+    padding-bottom: 0px;
   }
 }
 
 @media only screen and (max-width: 768px) {
   .c2 {
-    border-radius: 6px;
+    border-radius: 3px;
   }
 }
 
@@ -120,20 +138,36 @@ exports[`Tip focus and blur events on the Tip's child 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  border: 2px solid #7D4CDB;
-  border-radius: 18px;
-  color: #444444;
-  padding: 4px 22px;
-  font-size: 18px;
-  line-height: 24px;
+  border: none;
+  border-radius: 9999px;
+  padding: 5px 18px;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: rgba(0, 0, 0, 0);
+  color: #2e2e2e;
+  border-style: solid;
+  border-width: 1px;
+  border-color: rgba(0, 0, 0, 0);
+  border-radius: 9999px;
+  font-weight: 500;
+  padding: 5px 18px;
+  text-align: center;
   transition-property: color,background-color,border-color,box-shadow;
   transition-duration: 0.1s;
   transition-timing-function: ease-in-out;
 }
 
+.c1:hover {
+  background-color: rgba(0, 0, 0, 0.04);
+  color: #2e2e2e;
+  border-color: rgba(0, 0, 0, 0);
+  font-weight: 500;
+}
+
 .c1:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c1:focus >circle,
@@ -143,8 +177,9 @@ exports[`Tip focus and blur events on the Tip's child 1`] = `
 .c1:focus >polygon,
 .c1:focus >polyline,
 .c1:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c1:focus ::-moz-focus-inner {
@@ -152,6 +187,8 @@ exports[`Tip focus and blur events on the Tip's child 1`] = `
 }
 
 .c1:focus:not(:focus-visible) {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -163,6 +200,8 @@ exports[`Tip focus and blur events on the Tip's child 1`] = `
 .c1:focus:not(:focus-visible) >polygon,
 .c1:focus:not(:focus-visible) >polyline,
 .c1:focus:not(:focus-visible) >rect {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -172,8 +211,11 @@ exports[`Tip focus and blur events on the Tip's child 1`] = `
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -195,10 +237,10 @@ exports[`Tip focus and blur events on the Tip's child 1`] = `
 
 exports[`Tip focus and blur events on the Tip's child 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 kiEDjE"
+  class="StyledGrommet-sc-19lkkz7-0 iRGypN"
 >
   <button
-    class="StyledButton-sc-323bzc-0 eKicYT"
+    class="StyledButtonKind-sc-1vhfpnt-0 hWfVLt"
     type="button"
   >
     Test Events
@@ -224,18 +266,19 @@ exports[`Tip mouseOver and mouseOut events on the Tip's child 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  margin: 6px;
-  background-color: #33333310;
-  color: #444444;
+  margin: 3px;
+  background-color: #ffffff;
+  color: #555555;
+  border: solid 1px rgba(0, 0, 0, 0.12);
   min-width: 0;
   min-height: 0;
   flex-direction: column;
   padding-left: 12px;
   padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
-  border-radius: 12px;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.20);
+  padding-top: 0px;
+  padding-bottom: 0px;
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12);
 }
 
 .c3 {
@@ -248,16 +291,19 @@ exports[`Tip mouseOver and mouseOut events on the Tip's child 1`] = `
 }
 
 .c1 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  border-radius: 0px;
+  border-radius: 6px;
   position: fixed;
-  z-index: 20;
+  z-index: 110;
   outline: none;
   background: none;
   margin: 0px;
@@ -265,6 +311,14 @@ exports[`Tip mouseOver and mouseOut events on the Tip's child 1`] = `
   transform-origin: top left;
   animation: kPQHBD 0.1s forwards;
   animation-delay: 0.01s;
+}
+
+.c1 [class*=MaskedInput__ContainerBox] {
+  padding-block: 6px;
+  padding-inline: 6px;
+  gap: 6px;
+  display: flex;
+  flex-direction: column;
 }
 
 @media only screen and (max-width: 768px) {
@@ -275,7 +329,13 @@ exports[`Tip mouseOver and mouseOut events on the Tip's child 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c2 {
-    margin: 3px;
+    margin: 2px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    border: solid 1px rgba(0, 0, 0, 0.12);
   }
 }
 
@@ -288,14 +348,14 @@ exports[`Tip mouseOver and mouseOut events on the Tip's child 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c2 {
-    padding-top: 3px;
-    padding-bottom: 3px;
+    padding-top: 0px;
+    padding-bottom: 0px;
   }
 }
 
 @media only screen and (max-width: 768px) {
   .c2 {
-    border-radius: 6px;
+    border-radius: 3px;
   }
 }
 
@@ -341,16 +401,19 @@ exports[`Tip plain 1`] = `
 }
 
 .c1 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  border-radius: 0px;
+  border-radius: 6px;
   position: fixed;
-  z-index: 20;
+  z-index: 110;
   outline: none;
   background: none;
   margin: 0px;
@@ -358,6 +421,14 @@ exports[`Tip plain 1`] = `
   transform-origin: top left;
   animation: kPQHBD 0.1s forwards;
   animation-delay: 0.01s;
+}
+
+.c1 [class*=MaskedInput__ContainerBox] {
+  padding-block: 6px;
+  padding-inline: 6px;
+  gap: 6px;
+  display: flex;
+  flex-direction: column;
 }
 
 @media only screen and (max-width: 768px) {
@@ -413,31 +484,35 @@ exports[`Tip should be visible by default 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  margin: 6px;
-  background-color: #33333310;
-  color: #444444;
+  margin: 3px;
+  background-color: #ffffff;
+  color: #555555;
+  border: solid 1px rgba(0, 0, 0, 0.12);
   min-width: 0;
   min-height: 0;
   flex-direction: column;
   padding-left: 12px;
   padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
-  border-radius: 12px;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.20);
+  padding-top: 0px;
+  padding-bottom: 0px;
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12);
 }
 
 .c1 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  border-radius: 0px;
+  border-radius: 6px;
   position: fixed;
-  z-index: 20;
+  z-index: 110;
   outline: none;
   background: none;
   margin: 0px;
@@ -445,6 +520,14 @@ exports[`Tip should be visible by default 1`] = `
   transform-origin: top left;
   animation: kPQHBD 0.1s forwards;
   animation-delay: 0.01s;
+}
+
+.c1 [class*=MaskedInput__ContainerBox] {
+  padding-block: 6px;
+  padding-inline: 6px;
+  gap: 6px;
+  display: flex;
+  flex-direction: column;
 }
 
 @media only screen and (max-width: 768px) {
@@ -455,7 +538,13 @@ exports[`Tip should be visible by default 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c2 {
-    margin: 3px;
+    margin: 2px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    border: solid 1px rgba(0, 0, 0, 0.12);
   }
 }
 
@@ -468,14 +557,14 @@ exports[`Tip should be visible by default 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c2 {
-    padding-top: 3px;
-    padding-bottom: 3px;
+    padding-top: 0px;
+    padding-bottom: 0px;
   }
 }
 
 @media only screen and (max-width: 768px) {
   .c2 {
-    border-radius: 6px;
+    border-radius: 3px;
   }
 }
 
@@ -506,8 +595,11 @@ exports[`Tip should be visible by default 1`] = `
 
 exports[`Tip should have no accessibility violations 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -526,8 +618,11 @@ exports[`Tip should have no accessibility violations 1`] = `
 
 exports[`Tip should work with a child that isn't a React Element 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -546,8 +641,11 @@ exports[`Tip should work with a child that isn't a React Element 1`] = `
 
 exports[`Tip shouldn't crash with no children 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;

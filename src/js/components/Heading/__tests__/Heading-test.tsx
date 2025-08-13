@@ -1,13 +1,14 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 import 'jest-styled-components';
+import { hpe } from 'grommet-theme-hpe';
 
 import { Grommet } from '../../Grommet';
 import { Heading } from '..';
 
 test('Heading renders', () => {
   const { container } = render(
-    <Grommet>
+    <Grommet theme={hpe}>
       <Heading />
     </Grommet>,
   );
@@ -24,7 +25,7 @@ test('Heading renders outside grommet wrapper', () => {
 test('Heading accepts ref', () => {
   const ref = React.createRef<HTMLHeadingElement>();
   const { container } = render(
-    <Grommet>
+    <Grommet theme={hpe}>
       <Heading ref={ref} />
     </Grommet>,
   );
@@ -35,7 +36,7 @@ test('Heading accepts ref', () => {
 
 test('Heading level renders', () => {
   const { container } = render(
-    <Grommet>
+    <Grommet theme={hpe}>
       <Heading level={1} />
       <Heading level={2} />
       <Heading level={3} />
@@ -52,7 +53,7 @@ test('Heading level renders', () => {
 
 test('Heading size renders', () => {
   const { container } = render(
-    <Grommet>
+    <Grommet theme={hpe}>
       <Heading level={1} size="small" />
       <Heading level={1} size="medium" />
       <Heading level={1} size="large" />
@@ -78,7 +79,7 @@ test('Heading size renders', () => {
 
 test('Heading textAlign renders', () => {
   const { container } = render(
-    <Grommet>
+    <Grommet theme={hpe}>
       <Heading textAlign="start" />
       <Heading textAlign="center" />
       <Heading textAlign="end" />
@@ -91,7 +92,7 @@ test('Heading textAlign renders', () => {
 
 test('Heading margin renders', () => {
   const { container } = render(
-    <Grommet>
+    <Grommet theme={hpe}>
       <Heading margin="small" />
       <Heading margin="medium" />
       <Heading margin="large" />
@@ -108,7 +109,7 @@ test('Heading margin renders', () => {
 
 test('Heading color renders', () => {
   const { container } = render(
-    <Grommet>
+    <Grommet theme={hpe}>
       <Heading color="brand" />
     </Grommet>,
   );
@@ -120,7 +121,7 @@ const LONG = 'a b c d e f g h i j k l m n o p q r s t u v w x y z';
 
 test('Heading truncate renders', () => {
   const { container } = render(
-    <Grommet>
+    <Grommet theme={hpe}>
       <Heading truncate={false}>{LONG}</Heading>
       <Heading truncate>{LONG}</Heading>
     </Grommet>,
@@ -131,7 +132,7 @@ test('Heading truncate renders', () => {
 
 test('responsive renders', () => {
   const { container } = render(
-    <Grommet>
+    <Grommet theme={hpe}>
       <Heading responsive />
       <Heading responsive={false} />
     </Grommet>,
@@ -142,7 +143,7 @@ test('responsive renders', () => {
 
 test('weight renders', () => {
   const { asFragment } = render(
-    <Grommet>
+    <Grommet theme={hpe}>
       <Heading>My heading</Heading>
       <Heading weight="normal">My heading</Heading>
       <Heading weight="bold">My heading</Heading>
@@ -266,7 +267,7 @@ test('Throws a warning when heading.level is undefined in the theme.', () => {
 
 test('Heading fill renders', () => {
   const { container } = render(
-    <Grommet>
+    <Grommet theme={hpe}>
       <Heading fill />
     </Grommet>,
   );

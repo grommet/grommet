@@ -1,6 +1,7 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 import 'jest-styled-components';
+import { hpe } from 'grommet-theme-hpe';
 
 import { Data } from '../../Data';
 import { Grommet } from '../../Grommet';
@@ -20,7 +21,7 @@ const views = [
 describe('DataView', () => {
   test('renders', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Data data={data} views={views}>
           <DataView />
         </Data>
@@ -32,7 +33,7 @@ describe('DataView', () => {
 
   test('preset view', () => {
     const { container, getByDisplayValue } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Data data={data} view="top" views={views}>
           <DataView />
         </Data>

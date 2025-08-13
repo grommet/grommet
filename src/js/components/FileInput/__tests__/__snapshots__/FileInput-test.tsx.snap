@@ -1,9 +1,12 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`FileInput accept 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -16,12 +19,14 @@ exports[`FileInput accept 1`] = `
   box-sizing: border-box;
   max-width: 100%;
   align-items: center;
-  border: dashed 2px rgba(0, 0, 0, 0.33);
+  border: solid 1px rgba(0, 0, 0, 0.36);
   min-width: 0;
   min-height: 0;
   flex-direction: column;
   flex: 0 0 auto;
   justify-content: center;
+  padding-left: 6px;
+  padding-right: 6px;
 }
 
 .c4 {
@@ -36,27 +41,89 @@ exports[`FileInput accept 1`] = `
   justify-content: space-between;
 }
 
-.c6 {
-  box-sizing: border-box;
-  display: inline-flex;
-  font-size: inherit;
-  line-height: inherit;
-  color: #7D4CDB;
-  font-weight: 600;
-  text-decoration: none;
-  cursor: pointer;
-  align-self: center;
+.c5 {
   margin: 12px;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  color: #676767;
+  font-weight: undefined;
+}
+
+.c6 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: none;
+  border-radius: 9999px;
+  padding: 4px 22px;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  padding: 5px 18px;
+  background-color: rgba(0, 0, 0, 0.04);
+  color: #006750;
+  border-radius: 9999px;
+  font-weight: 500;
+  text-align: center;
+  transition-property: color,background-color,border-color,box-shadow;
+  transition-duration: 0.1s;
+  transition-timing-function: ease-in-out;
 }
 
 .c6:hover {
-  text-decoration: underline;
+  background-color: rgba(0, 0, 0, 0.08);
+  color: #006750;
 }
 
-.c5 {
-  margin: 12px;
-  font-size: 18px;
-  line-height: 24px;
+.c6:focus {
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
+}
+
+.c6:focus >circle,
+.c6:focus >ellipse,
+.c6:focus >line,
+.c6:focus >path,
+.c6:focus >polygon,
+.c6:focus >polyline,
+.c6:focus >rect {
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
+}
+
+.c6:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c6:focus:not(:focus-visible) {
+  outline-offset: 0px;
+  outline: none;
+  outline: none;
+  box-shadow: none;
+}
+
+.c6:focus:not(:focus-visible) >circle,
+.c6:focus:not(:focus-visible) >ellipse,
+.c6:focus:not(:focus-visible) >line,
+.c6:focus:not(:focus-visible) >path,
+.c6:focus:not(:focus-visible) >polygon,
+.c6:focus:not(:focus-visible) >polyline,
+.c6:focus:not(:focus-visible) >rect {
+  outline-offset: 0px;
+  outline: none;
+  outline: none;
+  box-shadow: none;
+}
+
+.c6:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
 }
 
 .c3 {
@@ -71,11 +138,16 @@ exports[`FileInput accept 1`] = `
   background: transparent;
   color: inherit;
   width: 100%;
-  padding: 11px;
-  font-weight: 600;
+  line-height: inherit;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-weight: 400;
   margin: 0;
-  border: 1px solid rgba(0, 0, 0, 0.33);
-  border-radius: 4px;
+  border: 1px solid rgba(0, 0, 0, 0.36);
+  border-radius: 8px;
+  color: #2e2e2e;
   font-size: 0;
   opacity: 0;
   border: none;
@@ -83,15 +155,15 @@ exports[`FileInput accept 1`] = `
 }
 
 .c3::-webkit-input-placeholder {
-  color: #AAAAAA;
+  color: #676767;
 }
 
 .c3::-moz-placeholder {
-  color: #AAAAAA;
+  color: #676767;
 }
 
 .c3:-ms-input-placeholder {
-  color: #AAAAAA;
+  color: #676767;
 }
 
 .c3 ::-webkit-search-decoration {
@@ -108,6 +180,18 @@ exports[`FileInput accept 1`] = `
   opacity: 1;
 }
 
+.c3::-webkit-input-placeholder {
+  font-weight: 400;
+}
+
+.c3::-moz-placeholder {
+  font-weight: 400;
+}
+
+.c3:-ms-input-placeholder {
+  font-weight: 400;
+}
+
 .c3::-moz-focus-inner {
   border: none;
   outline: none;
@@ -120,6 +204,9 @@ exports[`FileInput accept 1`] = `
 .c2 {
   cursor: pointer;
   position: relative;
+  border-radius: 8px;
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -131,6 +218,8 @@ exports[`FileInput accept 1`] = `
 .c2 >polygon,
 .c2 >polyline,
 .c2 >rect {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -141,7 +230,14 @@ exports[`FileInput accept 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c1 {
-    border: dashed 2px rgba(0, 0, 0, 0.33);
+    border: solid 1px rgba(0, 0, 0, 0.36);
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c1 {
+    padding-left: 3px;
+    padding-right: 3px;
   }
 }
 
@@ -166,12 +262,13 @@ exports[`FileInput accept 1`] = `
       >
         Drop file here or
       </span>
-      <a
+      <button
         class="c6"
         tabindex="-1"
+        type="button"
       >
         browse
-      </a>
+      </button>
     </div>
   </div>
 </div>
@@ -357,8 +454,11 @@ exports[`FileInput background 1`] = `
 
 exports[`FileInput basic 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -371,12 +471,14 @@ exports[`FileInput basic 1`] = `
   box-sizing: border-box;
   max-width: 100%;
   align-items: center;
-  border: dashed 2px rgba(0, 0, 0, 0.33);
+  border: solid 1px rgba(0, 0, 0, 0.36);
   min-width: 0;
   min-height: 0;
   flex-direction: column;
   flex: 0 0 auto;
   justify-content: center;
+  padding-left: 6px;
+  padding-right: 6px;
 }
 
 .c4 {
@@ -391,27 +493,89 @@ exports[`FileInput basic 1`] = `
   justify-content: space-between;
 }
 
-.c6 {
-  box-sizing: border-box;
-  display: inline-flex;
-  font-size: inherit;
-  line-height: inherit;
-  color: #7D4CDB;
-  font-weight: 600;
-  text-decoration: none;
-  cursor: pointer;
-  align-self: center;
+.c5 {
   margin: 12px;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  color: #676767;
+  font-weight: undefined;
+}
+
+.c6 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: none;
+  border-radius: 9999px;
+  padding: 4px 22px;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  padding: 5px 18px;
+  background-color: rgba(0, 0, 0, 0.04);
+  color: #006750;
+  border-radius: 9999px;
+  font-weight: 500;
+  text-align: center;
+  transition-property: color,background-color,border-color,box-shadow;
+  transition-duration: 0.1s;
+  transition-timing-function: ease-in-out;
 }
 
 .c6:hover {
-  text-decoration: underline;
+  background-color: rgba(0, 0, 0, 0.08);
+  color: #006750;
 }
 
-.c5 {
-  margin: 12px;
-  font-size: 18px;
-  line-height: 24px;
+.c6:focus {
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
+}
+
+.c6:focus >circle,
+.c6:focus >ellipse,
+.c6:focus >line,
+.c6:focus >path,
+.c6:focus >polygon,
+.c6:focus >polyline,
+.c6:focus >rect {
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
+}
+
+.c6:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c6:focus:not(:focus-visible) {
+  outline-offset: 0px;
+  outline: none;
+  outline: none;
+  box-shadow: none;
+}
+
+.c6:focus:not(:focus-visible) >circle,
+.c6:focus:not(:focus-visible) >ellipse,
+.c6:focus:not(:focus-visible) >line,
+.c6:focus:not(:focus-visible) >path,
+.c6:focus:not(:focus-visible) >polygon,
+.c6:focus:not(:focus-visible) >polyline,
+.c6:focus:not(:focus-visible) >rect {
+  outline-offset: 0px;
+  outline: none;
+  outline: none;
+  box-shadow: none;
+}
+
+.c6:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
 }
 
 .c3 {
@@ -426,11 +590,16 @@ exports[`FileInput basic 1`] = `
   background: transparent;
   color: inherit;
   width: 100%;
-  padding: 11px;
-  font-weight: 600;
+  line-height: inherit;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-weight: 400;
   margin: 0;
-  border: 1px solid rgba(0, 0, 0, 0.33);
-  border-radius: 4px;
+  border: 1px solid rgba(0, 0, 0, 0.36);
+  border-radius: 8px;
+  color: #2e2e2e;
   font-size: 0;
   opacity: 0;
   border: none;
@@ -438,15 +607,15 @@ exports[`FileInput basic 1`] = `
 }
 
 .c3::-webkit-input-placeholder {
-  color: #AAAAAA;
+  color: #676767;
 }
 
 .c3::-moz-placeholder {
-  color: #AAAAAA;
+  color: #676767;
 }
 
 .c3:-ms-input-placeholder {
-  color: #AAAAAA;
+  color: #676767;
 }
 
 .c3 ::-webkit-search-decoration {
@@ -463,6 +632,18 @@ exports[`FileInput basic 1`] = `
   opacity: 1;
 }
 
+.c3::-webkit-input-placeholder {
+  font-weight: 400;
+}
+
+.c3::-moz-placeholder {
+  font-weight: 400;
+}
+
+.c3:-ms-input-placeholder {
+  font-weight: 400;
+}
+
 .c3::-moz-focus-inner {
   border: none;
   outline: none;
@@ -475,6 +656,9 @@ exports[`FileInput basic 1`] = `
 .c2 {
   cursor: pointer;
   position: relative;
+  border-radius: 8px;
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -486,6 +670,8 @@ exports[`FileInput basic 1`] = `
 .c2 >polygon,
 .c2 >polyline,
 .c2 >rect {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -496,7 +682,14 @@ exports[`FileInput basic 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c1 {
-    border: dashed 2px rgba(0, 0, 0, 0.33);
+    border: solid 1px rgba(0, 0, 0, 0.36);
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c1 {
+    padding-left: 3px;
+    padding-right: 3px;
   }
 }
 
@@ -520,12 +713,13 @@ exports[`FileInput basic 1`] = `
       >
         Drop file here or
       </span>
-      <a
+      <button
         class="c6"
         tabindex="-1"
+        type="button"
       >
         browse
-      </a>
+      </button>
     </div>
   </div>
 </div>
@@ -1046,8 +1240,11 @@ exports[`FileInput custom theme input font size 1`] = `
 
 exports[`FileInput disabled 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1060,12 +1257,14 @@ exports[`FileInput disabled 1`] = `
   box-sizing: border-box;
   max-width: 100%;
   align-items: center;
-  border: dashed 2px rgba(0, 0, 0, 0.33);
+  border: solid 1px rgba(0, 0, 0, 0.36);
   min-width: 0;
   min-height: 0;
   flex-direction: column;
   flex: 0 0 auto;
   justify-content: center;
+  padding-left: 6px;
+  padding-right: 6px;
 }
 
 .c4 {
@@ -1080,26 +1279,81 @@ exports[`FileInput disabled 1`] = `
   justify-content: space-between;
 }
 
-.c6 {
-  box-sizing: border-box;
-  display: inline-flex;
-  font-size: inherit;
-  line-height: inherit;
-  color: #7D4CDB;
-  font-weight: 600;
-  text-decoration: none;
-  cursor: pointer;
-  align-self: center;
-  margin: 12px;
-  opacity: 0.3;
-  cursor: default;
-  text-decoration: none;
-}
-
 .c5 {
   margin: 12px;
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  color: #676767;
+  font-weight: undefined;
+}
+
+.c6 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: none;
+  border-radius: 9999px;
+  padding: 4px 22px;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  text-align: center;
+  opacity: 1;
+  cursor: default;
+  transition-property: color,background-color,border-color,box-shadow;
+  transition-duration: 0.1s;
+  transition-timing-function: ease-in-out;
+}
+
+.c6:focus {
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
+}
+
+.c6:focus >circle,
+.c6:focus >ellipse,
+.c6:focus >line,
+.c6:focus >path,
+.c6:focus >polygon,
+.c6:focus >polyline,
+.c6:focus >rect {
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
+}
+
+.c6:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c6:focus:not(:focus-visible) {
+  outline-offset: 0px;
+  outline: none;
+  outline: none;
+  box-shadow: none;
+}
+
+.c6:focus:not(:focus-visible) >circle,
+.c6:focus:not(:focus-visible) >ellipse,
+.c6:focus:not(:focus-visible) >line,
+.c6:focus:not(:focus-visible) >path,
+.c6:focus:not(:focus-visible) >polygon,
+.c6:focus:not(:focus-visible) >polyline,
+.c6:focus:not(:focus-visible) >rect {
+  outline-offset: 0px;
+  outline: none;
+  outline: none;
+  box-shadow: none;
+}
+
+.c6:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
 }
 
 .c3 {
@@ -1114,26 +1368,31 @@ exports[`FileInput disabled 1`] = `
   background: transparent;
   color: inherit;
   width: 100%;
-  padding: 11px;
-  font-weight: 600;
+  line-height: inherit;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-weight: 400;
   margin: 0;
-  border: 1px solid rgba(0, 0, 0, 0.33);
-  border-radius: 4px;
+  border: 1px solid rgba(0, 0, 0, 0.36);
+  border-radius: 8px;
+  color: #2e2e2e;
   font-size: 0;
   opacity: 0;
   border: none;
 }
 
 .c3::-webkit-input-placeholder {
-  color: #AAAAAA;
+  color: #676767;
 }
 
 .c3::-moz-placeholder {
-  color: #AAAAAA;
+  color: #676767;
 }
 
 .c3:-ms-input-placeholder {
-  color: #AAAAAA;
+  color: #676767;
 }
 
 .c3 ::-webkit-search-decoration {
@@ -1150,6 +1409,18 @@ exports[`FileInput disabled 1`] = `
   opacity: 1;
 }
 
+.c3::-webkit-input-placeholder {
+  font-weight: 400;
+}
+
+.c3::-moz-placeholder {
+  font-weight: 400;
+}
+
+.c3:-ms-input-placeholder {
+  font-weight: 400;
+}
+
 .c3::-moz-focus-inner {
   border: none;
   outline: none;
@@ -1164,6 +1435,9 @@ exports[`FileInput disabled 1`] = `
   position: relative;
   opacity: 0.3;
   cursor: default;
+  border-radius: 8px;
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -1175,6 +1449,8 @@ exports[`FileInput disabled 1`] = `
 .c2 >polygon,
 .c2 >polyline,
 .c2 >rect {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -1185,7 +1461,14 @@ exports[`FileInput disabled 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c1 {
-    border: dashed 2px rgba(0, 0, 0, 0.33);
+    border: solid 1px rgba(0, 0, 0, 0.36);
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c1 {
+    padding-left: 3px;
+    padding-right: 3px;
   }
 }
 
@@ -1211,54 +1494,58 @@ exports[`FileInput disabled 1`] = `
       >
         Drop file here or
       </span>
-      <a
+      <button
         class="c6"
         disabled=""
         tabindex="-1"
+        type="button"
       >
         browse
-      </a>
+      </button>
     </div>
   </div>
 </div>
 `;
 
 exports[`FileInput disabled with file selected 1`] = `
-.c12 {
+.c13 {
   display: inline-block;
   flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #666666;
-  stroke: #666666;
+  width: 18px;
+  height: 18px;
+  fill: rgba(0, 0, 0, 0.24);
+  stroke: rgba(0, 0, 0, 0.24);
 }
 
-.c12 g {
+.c13 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c12 *:not([stroke])[fill='none'] {
+.c13 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c12 *[stroke*='#'],
-.c12 *[STROKE*='#'] {
+.c13 *[stroke*='#'],
+.c13 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
-.c12 *[fill-rule],
-.c12 *[FILL-RULE],
-.c12 *[fill*='#'],
-.c12 *[FILL*='#'] {
+.c13 *[fill-rule],
+.c13 *[FILL-RULE],
+.c13 *[fill*='#'],
+.c13 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1270,17 +1557,7 @@ exports[`FileInput disabled with file selected 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  margin-bottom: 12px;
-  min-width: 0;
-  min-height: 0;
-  flex-direction: column;
-}
-
-.c3 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  border: dashed 2px rgba(0, 0, 0, 0.33);
+  margin-bottom: 0px;
   min-width: 0;
   min-height: 0;
   flex-direction: column;
@@ -1290,15 +1567,30 @@ exports[`FileInput disabled with file selected 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  margin-top: 6px;
+  margin-bottom: 6px;
+  border: solid 1px rgba(0, 0, 0, 0.36);
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  border-radius: 8px;
+}
+
+.c5 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
   align-items: stretch;
   min-width: 0;
   min-height: 0;
   flex-direction: column;
   flex: 0 0 auto;
   justify-content: center;
+  padding-left: 6px;
+  padding-right: 6px;
 }
 
-.c7 {
+.c8 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -1309,7 +1601,7 @@ exports[`FileInput disabled with file selected 1`] = `
   justify-content: space-between;
 }
 
-.c8 {
+.c9 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -1320,7 +1612,7 @@ exports[`FileInput disabled with file selected 1`] = `
   flex-direction: row;
 }
 
-.c10 {
+.c11 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -1331,41 +1623,30 @@ exports[`FileInput disabled with file selected 1`] = `
   flex: 0 0 auto;
 }
 
-.c13 {
-  box-sizing: border-box;
-  display: inline-flex;
-  font-size: inherit;
-  line-height: inherit;
-  color: #7D4CDB;
-  font-weight: 600;
-  text-decoration: none;
-  cursor: pointer;
-  margin: 12px;
-  opacity: 0.3;
-  cursor: default;
-  text-decoration: none;
-}
-
-.c2 {
-  margin-left: 12px;
-  margin-right: 12px;
+.c3 {
+  margin-left: 0px;
+  margin-right: 0px;
   margin-top: 6px;
   margin-bottom: 6px;
-  font-size: 18px;
-  line-height: 24px;
+  margin-top: 6px;
+  margin-bottom: 0px;
+  font-size: 0.875rem;
+  line-height: 1rem;
+  color: #2e2e2e;
+  font-weight: 500;
 }
 
-.c9 {
-  font-size: 18px;
-  line-height: 24px;
+.c10 {
+  font-size: 1.125rem;
+  line-height: 1.5rem;
   white-space: nowrap;
   max-width: 100%;
   overflow: hidden;
   text-overflow: ellipsis;
-  font-weight: 600;
+  font-weight: 400;
 }
 
-.c11 {
+.c12 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -1375,58 +1656,158 @@ exports[`FileInput disabled with file selected 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  color: inherit;
-  outline: none;
   border: none;
-  padding: 0;
-  text-align: inherit;
-  opacity: 0.3;
-  cursor: default;
+  border-radius: 9999px;
+  padding: 8px 8px;
+  font-size: 1.125rem;
   line-height: 0;
-  padding: 12px;
+  background-color: rgba(0, 0, 0, 0);
+  color: #2e2e2e;
+  border-style: solid;
+  border-width: 1px;
+  border-color: rgba(0, 0, 0, 0);
+  border-radius: 9999px;
+  font-weight: 500;
+  padding: 8px 8px;
+  background-color: rgba(0, 0, 0, 0);
+  color: rgba(0, 0, 0, 0.24);
+  border-color: rgba(0, 0, 0, 0);
+  font-weight: 500;
+  opacity: 1;
+  background-color: rgba(0, 0, 0, 0);
+  color: rgba(0, 0, 0, 0.24);
+  border-color: rgba(0, 0, 0, 0);
+  font-weight: 500;
+  text-align: center;
+  opacity: 1;
+  cursor: default;
+  transition-property: color,background-color,border-color,box-shadow;
+  transition-duration: 0.1s;
+  transition-timing-function: ease-in-out;
 }
 
-.c11:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+.c12 >svg {
+  display: flex;
+  align-self: center;
+  vertical-align: middle;
 }
 
-.c11:focus >circle,
-.c11:focus >ellipse,
-.c11:focus >line,
-.c11:focus >path,
-.c11:focus >polygon,
-.c11:focus >polyline,
-.c11:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+.c12:focus {
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
-.c11:focus ::-moz-focus-inner {
+.c12:focus >circle,
+.c12:focus >ellipse,
+.c12:focus >line,
+.c12:focus >path,
+.c12:focus >polygon,
+.c12:focus >polyline,
+.c12:focus >rect {
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
+}
+
+.c12:focus ::-moz-focus-inner {
   border: 0;
 }
 
-.c11:focus:not(:focus-visible) {
+.c12:focus:not(:focus-visible) {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
 
-.c11:focus:not(:focus-visible) >circle,
-.c11:focus:not(:focus-visible) >ellipse,
-.c11:focus:not(:focus-visible) >line,
-.c11:focus:not(:focus-visible) >path,
-.c11:focus:not(:focus-visible) >polygon,
-.c11:focus:not(:focus-visible) >polyline,
-.c11:focus:not(:focus-visible) >rect {
+.c12:focus:not(:focus-visible) >circle,
+.c12:focus:not(:focus-visible) >ellipse,
+.c12:focus:not(:focus-visible) >line,
+.c12:focus:not(:focus-visible) >path,
+.c12:focus:not(:focus-visible) >polygon,
+.c12:focus:not(:focus-visible) >polyline,
+.c12:focus:not(:focus-visible) >rect {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
 
-.c11:focus:not(:focus-visible) ::-moz-focus-inner {
+.c12:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 
-.c6 {
+.c14 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: none;
+  border-radius: 9999px;
+  padding: 4px 22px;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  text-align: center;
+  opacity: 1;
+  cursor: default;
+  transition-property: color,background-color,border-color,box-shadow;
+  transition-duration: 0.1s;
+  transition-timing-function: ease-in-out;
+}
+
+.c14:focus {
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
+}
+
+.c14:focus >circle,
+.c14:focus >ellipse,
+.c14:focus >line,
+.c14:focus >path,
+.c14:focus >polygon,
+.c14:focus >polyline,
+.c14:focus >rect {
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
+}
+
+.c14:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c14:focus:not(:focus-visible) {
+  outline-offset: 0px;
+  outline: none;
+  outline: none;
+  box-shadow: none;
+}
+
+.c14:focus:not(:focus-visible) >circle,
+.c14:focus:not(:focus-visible) >ellipse,
+.c14:focus:not(:focus-visible) >line,
+.c14:focus:not(:focus-visible) >path,
+.c14:focus:not(:focus-visible) >polygon,
+.c14:focus:not(:focus-visible) >polyline,
+.c14:focus:not(:focus-visible) >rect {
+  outline-offset: 0px;
+  outline: none;
+  outline: none;
+  box-shadow: none;
+}
+
+.c14:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
+}
+
+.c7 {
   position: absolute;
   height: 100%;
   width: 100%;
@@ -1438,11 +1819,16 @@ exports[`FileInput disabled with file selected 1`] = `
   background: transparent;
   color: inherit;
   width: 100%;
-  padding: 11px;
-  font-weight: 600;
+  line-height: inherit;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-weight: 400;
   margin: 0;
-  border: 1px solid rgba(0, 0, 0, 0.33);
-  border-radius: 4px;
+  border: 1px solid rgba(0, 0, 0, 0.36);
+  border-radius: 8px;
+  color: #2e2e2e;
   font-size: 0;
   opacity: 0;
   border: none;
@@ -1450,79 +1836,139 @@ exports[`FileInput disabled with file selected 1`] = `
   right: 24px;
 }
 
-.c6::-webkit-input-placeholder {
-  color: #AAAAAA;
+.c7::-webkit-input-placeholder {
+  color: #676767;
 }
 
-.c6::-moz-placeholder {
-  color: #AAAAAA;
+.c7::-moz-placeholder {
+  color: #676767;
 }
 
-.c6:-ms-input-placeholder {
-  color: #AAAAAA;
+.c7:-ms-input-placeholder {
+  color: #676767;
 }
 
-.c6 ::-webkit-search-decoration {
+.c7 ::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
-.c6::-moz-focus-inner {
+.c7::-moz-focus-inner {
   border: none;
   outline: none;
 }
 
-.c6:-moz-placeholder,
-.c6::-moz-placeholder {
+.c7:-moz-placeholder,
+.c7::-moz-placeholder {
   opacity: 1;
 }
 
-.c6::-moz-focus-inner {
+.c7::-webkit-input-placeholder {
+  font-weight: 400;
+}
+
+.c7::-moz-placeholder {
+  font-weight: 400;
+}
+
+.c7:-ms-input-placeholder {
+  font-weight: 400;
+}
+
+.c7::-moz-focus-inner {
   border: none;
   outline: none;
 }
 
-.c6::-webkit-file-upload-button {
+.c7::-webkit-file-upload-button {
   cursor: pointer;
 }
 
-.c5 {
+.c6 {
   cursor: pointer;
   position: relative;
   opacity: 0.3;
   cursor: default;
+  border-radius: 8px;
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
 
-.c5 >circle,
-.c5 >ellipse,
-.c5 >line,
-.c5 >path,
-.c5 >polygon,
-.c5 >polyline,
-.c5 >rect {
+.c6 >circle,
+.c6 >ellipse,
+.c6 >line,
+.c6 >path,
+.c6 >polygon,
+.c6 >polyline,
+.c6 >rect {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
 
-.c5 ::-moz-focus-inner {
+.c6 ::-moz-focus-inner {
   border: 0;
+}
+
+.c2 [class*="ContentBox"] label {
+  padding-block: 5px;
+  padding-inline: 8px;
+}
+
+.c2 [class*="ContentBox"] label:hover:not([disabled]) {
+  background: rgba(0, 0, 0, 0);
+}
+
+.c2 [class*="ContentBox"] [role="group"],
+.c2 [class*="ContentBox"] [role="radiogroup"] {
+  gap: 0;
+  padding-block: 0px;
+  padding-inline: none;
+}
+
+.c2 [class*="ContentBox"] [role="group"] label,
+.c2 [class*="ContentBox"] [role="radiogroup"] label {
+  border: 1px solid rgba(0, 0, 0, 0);
+  padding-block: 5px;
+  padding-inline: 8px;
+  border-radius: 6px;
+}
+
+.c2 [class*="ContentBox"] [role="group"] label:hover:not([disabled]),
+.c2 [class*="ContentBox"] [role="radiogroup"] label:hover:not([disabled]) {
+  background: rgba(0, 0, 0, 0.04);
 }
 
 @media only screen and (max-width: 768px) {
   .c1 {
-    margin-bottom: 6px;
+    margin-bottom: 0px;
   }
 }
 
 @media only screen and (max-width: 768px) {
-  .c3 {
-    border: dashed 2px rgba(0, 0, 0, 0.33);
+  .c4 {
+    margin-top: 3px;
+    margin-bottom: 3px;
   }
 }
 
 @media only screen and (max-width: 768px) {
-  .c8 {
+  .c4 {
+    border: solid 1px rgba(0, 0, 0, 0.36);
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c5 {
+    padding-left: 3px;
+    padding-right: 3px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c9 {
     margin: 6px;
   }
 }
@@ -1532,71 +1978,73 @@ exports[`FileInput disabled with file selected 1`] = `
 >
   <form>
     <div
-      class="c1 "
+      class="c1 c2"
     >
       <label
-        class="c2"
+        class="c3"
         for="fileInput"
         id="grommet-fileInput__label"
       >
         File input with max size
       </label>
       <div
-        class="c3 "
+        class="c4 "
       >
         <div
-          class="c4 c5"
+          class="c5 c6"
           disabled=""
         >
           <input
             aria-invalid="false"
-            class="c6"
+            class="c7"
             disabled=""
             id="fileInput"
             name="fileInput"
             type="file"
           />
           <div
-            class="c7"
+            class="c8"
           >
             <div
-              class="c8"
+              class="c9"
             >
               <span
-                class="c9 "
+                class="c10 "
               >
                 file-size-okay.csv
               </span>
             </div>
             <div
-              class="c10"
+              class="c11"
             >
               <button
                 aria-label="remove file-size-okay.csv"
-                class="c11"
+                class="c12"
                 disabled=""
                 type="button"
               >
                 <svg
-                  aria-label="FormClose"
-                  class="c12"
+                  aria-label="Close"
+                  class="c13"
                   viewBox="0 0 24 24"
                 >
                   <path
-                    d="m7 7 10 10M7 17 17 7"
+                    d="m3 3 18 18M3 21 21 3"
                     fill="none"
                     stroke="#000"
                     stroke-width="2"
+                    vector-effect="non-scaling-stroke"
                   />
                 </svg>
               </button>
-              <a
-                class="c13"
+              <button
+                class="c14"
                 disabled=""
                 tabindex="-1"
+                type="button"
               >
                 browse
-              </a>
+              </button>
             </div>
           </div>
         </div>
@@ -1791,8 +2239,11 @@ exports[`FileInput margin 1`] = `
 
 exports[`FileInput maxSize 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1805,12 +2256,14 @@ exports[`FileInput maxSize 1`] = `
   box-sizing: border-box;
   max-width: 100%;
   align-items: center;
-  border: dashed 2px rgba(0, 0, 0, 0.33);
+  border: solid 1px rgba(0, 0, 0, 0.36);
   min-width: 0;
   min-height: 0;
   flex-direction: column;
   flex: 0 0 auto;
   justify-content: center;
+  padding-left: 6px;
+  padding-right: 6px;
 }
 
 .c4 {
@@ -1825,27 +2278,89 @@ exports[`FileInput maxSize 1`] = `
   justify-content: space-between;
 }
 
-.c6 {
-  box-sizing: border-box;
-  display: inline-flex;
-  font-size: inherit;
-  line-height: inherit;
-  color: #7D4CDB;
-  font-weight: 600;
-  text-decoration: none;
-  cursor: pointer;
-  align-self: center;
+.c5 {
   margin: 12px;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  color: #676767;
+  font-weight: undefined;
+}
+
+.c6 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: none;
+  border-radius: 9999px;
+  padding: 4px 22px;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  padding: 5px 18px;
+  background-color: rgba(0, 0, 0, 0.04);
+  color: #006750;
+  border-radius: 9999px;
+  font-weight: 500;
+  text-align: center;
+  transition-property: color,background-color,border-color,box-shadow;
+  transition-duration: 0.1s;
+  transition-timing-function: ease-in-out;
 }
 
 .c6:hover {
-  text-decoration: underline;
+  background-color: rgba(0, 0, 0, 0.08);
+  color: #006750;
 }
 
-.c5 {
-  margin: 12px;
-  font-size: 18px;
-  line-height: 24px;
+.c6:focus {
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
+}
+
+.c6:focus >circle,
+.c6:focus >ellipse,
+.c6:focus >line,
+.c6:focus >path,
+.c6:focus >polygon,
+.c6:focus >polyline,
+.c6:focus >rect {
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
+}
+
+.c6:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c6:focus:not(:focus-visible) {
+  outline-offset: 0px;
+  outline: none;
+  outline: none;
+  box-shadow: none;
+}
+
+.c6:focus:not(:focus-visible) >circle,
+.c6:focus:not(:focus-visible) >ellipse,
+.c6:focus:not(:focus-visible) >line,
+.c6:focus:not(:focus-visible) >path,
+.c6:focus:not(:focus-visible) >polygon,
+.c6:focus:not(:focus-visible) >polyline,
+.c6:focus:not(:focus-visible) >rect {
+  outline-offset: 0px;
+  outline: none;
+  outline: none;
+  box-shadow: none;
+}
+
+.c6:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
 }
 
 .c3 {
@@ -1860,11 +2375,16 @@ exports[`FileInput maxSize 1`] = `
   background: transparent;
   color: inherit;
   width: 100%;
-  padding: 11px;
-  font-weight: 600;
+  line-height: inherit;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-weight: 400;
   margin: 0;
-  border: 1px solid rgba(0, 0, 0, 0.33);
-  border-radius: 4px;
+  border: 1px solid rgba(0, 0, 0, 0.36);
+  border-radius: 8px;
+  color: #2e2e2e;
   font-size: 0;
   opacity: 0;
   border: none;
@@ -1872,15 +2392,15 @@ exports[`FileInput maxSize 1`] = `
 }
 
 .c3::-webkit-input-placeholder {
-  color: #AAAAAA;
+  color: #676767;
 }
 
 .c3::-moz-placeholder {
-  color: #AAAAAA;
+  color: #676767;
 }
 
 .c3:-ms-input-placeholder {
-  color: #AAAAAA;
+  color: #676767;
 }
 
 .c3 ::-webkit-search-decoration {
@@ -1897,6 +2417,18 @@ exports[`FileInput maxSize 1`] = `
   opacity: 1;
 }
 
+.c3::-webkit-input-placeholder {
+  font-weight: 400;
+}
+
+.c3::-moz-placeholder {
+  font-weight: 400;
+}
+
+.c3:-ms-input-placeholder {
+  font-weight: 400;
+}
+
 .c3::-moz-focus-inner {
   border: none;
   outline: none;
@@ -1909,6 +2441,9 @@ exports[`FileInput maxSize 1`] = `
 .c2 {
   cursor: pointer;
   position: relative;
+  border-radius: 8px;
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -1920,6 +2455,8 @@ exports[`FileInput maxSize 1`] = `
 .c2 >polygon,
 .c2 >polyline,
 .c2 >rect {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -1930,7 +2467,14 @@ exports[`FileInput maxSize 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c1 {
-    border: dashed 2px rgba(0, 0, 0, 0.33);
+    border: solid 1px rgba(0, 0, 0, 0.36);
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c1 {
+    padding-left: 3px;
+    padding-right: 3px;
   }
 }
 
@@ -1954,12 +2498,13 @@ exports[`FileInput maxSize 1`] = `
       >
         Drop file here or
       </span>
-      <a
+      <button
         class="c6"
         tabindex="-1"
+        type="button"
       >
         browse
-      </a>
+      </button>
     </div>
   </div>
 </div>
@@ -1967,8 +2512,11 @@ exports[`FileInput maxSize 1`] = `
 
 exports[`FileInput messages 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1981,12 +2529,14 @@ exports[`FileInput messages 1`] = `
   box-sizing: border-box;
   max-width: 100%;
   align-items: center;
-  border: dashed 2px rgba(0, 0, 0, 0.33);
+  border: solid 1px rgba(0, 0, 0, 0.36);
   min-width: 0;
   min-height: 0;
   flex-direction: column;
   flex: 0 0 auto;
   justify-content: center;
+  padding-left: 6px;
+  padding-right: 6px;
 }
 
 .c4 {
@@ -2001,27 +2551,89 @@ exports[`FileInput messages 1`] = `
   justify-content: space-between;
 }
 
-.c6 {
-  box-sizing: border-box;
-  display: inline-flex;
-  font-size: inherit;
-  line-height: inherit;
-  color: #7D4CDB;
-  font-weight: 600;
-  text-decoration: none;
-  cursor: pointer;
-  align-self: center;
+.c5 {
   margin: 12px;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  color: #676767;
+  font-weight: undefined;
+}
+
+.c6 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: none;
+  border-radius: 9999px;
+  padding: 4px 22px;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  padding: 5px 18px;
+  background-color: rgba(0, 0, 0, 0.04);
+  color: #006750;
+  border-radius: 9999px;
+  font-weight: 500;
+  text-align: center;
+  transition-property: color,background-color,border-color,box-shadow;
+  transition-duration: 0.1s;
+  transition-timing-function: ease-in-out;
 }
 
 .c6:hover {
-  text-decoration: underline;
+  background-color: rgba(0, 0, 0, 0.08);
+  color: #006750;
 }
 
-.c5 {
-  margin: 12px;
-  font-size: 18px;
-  line-height: 24px;
+.c6:focus {
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
+}
+
+.c6:focus >circle,
+.c6:focus >ellipse,
+.c6:focus >line,
+.c6:focus >path,
+.c6:focus >polygon,
+.c6:focus >polyline,
+.c6:focus >rect {
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
+}
+
+.c6:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c6:focus:not(:focus-visible) {
+  outline-offset: 0px;
+  outline: none;
+  outline: none;
+  box-shadow: none;
+}
+
+.c6:focus:not(:focus-visible) >circle,
+.c6:focus:not(:focus-visible) >ellipse,
+.c6:focus:not(:focus-visible) >line,
+.c6:focus:not(:focus-visible) >path,
+.c6:focus:not(:focus-visible) >polygon,
+.c6:focus:not(:focus-visible) >polyline,
+.c6:focus:not(:focus-visible) >rect {
+  outline-offset: 0px;
+  outline: none;
+  outline: none;
+  box-shadow: none;
+}
+
+.c6:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
 }
 
 .c3 {
@@ -2036,11 +2648,16 @@ exports[`FileInput messages 1`] = `
   background: transparent;
   color: inherit;
   width: 100%;
-  padding: 11px;
-  font-weight: 600;
+  line-height: inherit;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-weight: 400;
   margin: 0;
-  border: 1px solid rgba(0, 0, 0, 0.33);
-  border-radius: 4px;
+  border: 1px solid rgba(0, 0, 0, 0.36);
+  border-radius: 8px;
+  color: #2e2e2e;
   font-size: 0;
   opacity: 0;
   border: none;
@@ -2048,15 +2665,15 @@ exports[`FileInput messages 1`] = `
 }
 
 .c3::-webkit-input-placeholder {
-  color: #AAAAAA;
+  color: #676767;
 }
 
 .c3::-moz-placeholder {
-  color: #AAAAAA;
+  color: #676767;
 }
 
 .c3:-ms-input-placeholder {
-  color: #AAAAAA;
+  color: #676767;
 }
 
 .c3 ::-webkit-search-decoration {
@@ -2073,6 +2690,18 @@ exports[`FileInput messages 1`] = `
   opacity: 1;
 }
 
+.c3::-webkit-input-placeholder {
+  font-weight: 400;
+}
+
+.c3::-moz-placeholder {
+  font-weight: 400;
+}
+
+.c3:-ms-input-placeholder {
+  font-weight: 400;
+}
+
 .c3::-moz-focus-inner {
   border: none;
   outline: none;
@@ -2085,6 +2714,9 @@ exports[`FileInput messages 1`] = `
 .c2 {
   cursor: pointer;
   position: relative;
+  border-radius: 8px;
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -2096,6 +2728,8 @@ exports[`FileInput messages 1`] = `
 .c2 >polygon,
 .c2 >polyline,
 .c2 >rect {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -2106,7 +2740,14 @@ exports[`FileInput messages 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c1 {
-    border: dashed 2px rgba(0, 0, 0, 0.33);
+    border: solid 1px rgba(0, 0, 0, 0.36);
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c1 {
+    padding-left: 3px;
+    padding-right: 3px;
   }
 }
 
@@ -2130,12 +2771,13 @@ exports[`FileInput messages 1`] = `
       >
         Drop file here or
       </span>
-      <a
+      <button
         class="c6"
         tabindex="-1"
+        type="button"
       >
         test browse
-      </a>
+      </button>
     </div>
   </div>
 </div>
@@ -2143,8 +2785,11 @@ exports[`FileInput messages 1`] = `
 
 exports[`FileInput multiple 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -2157,12 +2802,14 @@ exports[`FileInput multiple 1`] = `
   box-sizing: border-box;
   max-width: 100%;
   align-items: center;
-  border: dashed 2px rgba(0, 0, 0, 0.33);
+  border: solid 1px rgba(0, 0, 0, 0.36);
   min-width: 0;
   min-height: 0;
   flex-direction: column;
   flex: 0 0 auto;
   justify-content: center;
+  padding-left: 6px;
+  padding-right: 6px;
 }
 
 .c4 {
@@ -2177,27 +2824,89 @@ exports[`FileInput multiple 1`] = `
   justify-content: space-between;
 }
 
-.c6 {
-  box-sizing: border-box;
-  display: inline-flex;
-  font-size: inherit;
-  line-height: inherit;
-  color: #7D4CDB;
-  font-weight: 600;
-  text-decoration: none;
-  cursor: pointer;
-  align-self: center;
+.c5 {
   margin: 12px;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  color: #676767;
+  font-weight: undefined;
+}
+
+.c6 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: none;
+  border-radius: 9999px;
+  padding: 4px 22px;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  padding: 5px 18px;
+  background-color: rgba(0, 0, 0, 0.04);
+  color: #006750;
+  border-radius: 9999px;
+  font-weight: 500;
+  text-align: center;
+  transition-property: color,background-color,border-color,box-shadow;
+  transition-duration: 0.1s;
+  transition-timing-function: ease-in-out;
 }
 
 .c6:hover {
-  text-decoration: underline;
+  background-color: rgba(0, 0, 0, 0.08);
+  color: #006750;
 }
 
-.c5 {
-  margin: 12px;
-  font-size: 18px;
-  line-height: 24px;
+.c6:focus {
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
+}
+
+.c6:focus >circle,
+.c6:focus >ellipse,
+.c6:focus >line,
+.c6:focus >path,
+.c6:focus >polygon,
+.c6:focus >polyline,
+.c6:focus >rect {
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
+}
+
+.c6:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c6:focus:not(:focus-visible) {
+  outline-offset: 0px;
+  outline: none;
+  outline: none;
+  box-shadow: none;
+}
+
+.c6:focus:not(:focus-visible) >circle,
+.c6:focus:not(:focus-visible) >ellipse,
+.c6:focus:not(:focus-visible) >line,
+.c6:focus:not(:focus-visible) >path,
+.c6:focus:not(:focus-visible) >polygon,
+.c6:focus:not(:focus-visible) >polyline,
+.c6:focus:not(:focus-visible) >rect {
+  outline-offset: 0px;
+  outline: none;
+  outline: none;
+  box-shadow: none;
+}
+
+.c6:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
 }
 
 .c3 {
@@ -2212,11 +2921,16 @@ exports[`FileInput multiple 1`] = `
   background: transparent;
   color: inherit;
   width: 100%;
-  padding: 11px;
-  font-weight: 600;
+  line-height: inherit;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-weight: 400;
   margin: 0;
-  border: 1px solid rgba(0, 0, 0, 0.33);
-  border-radius: 4px;
+  border: 1px solid rgba(0, 0, 0, 0.36);
+  border-radius: 8px;
+  color: #2e2e2e;
   font-size: 0;
   opacity: 0;
   border: none;
@@ -2224,15 +2938,15 @@ exports[`FileInput multiple 1`] = `
 }
 
 .c3::-webkit-input-placeholder {
-  color: #AAAAAA;
+  color: #676767;
 }
 
 .c3::-moz-placeholder {
-  color: #AAAAAA;
+  color: #676767;
 }
 
 .c3:-ms-input-placeholder {
-  color: #AAAAAA;
+  color: #676767;
 }
 
 .c3 ::-webkit-search-decoration {
@@ -2249,6 +2963,18 @@ exports[`FileInput multiple 1`] = `
   opacity: 1;
 }
 
+.c3::-webkit-input-placeholder {
+  font-weight: 400;
+}
+
+.c3::-moz-placeholder {
+  font-weight: 400;
+}
+
+.c3:-ms-input-placeholder {
+  font-weight: 400;
+}
+
 .c3::-moz-focus-inner {
   border: none;
   outline: none;
@@ -2261,6 +2987,9 @@ exports[`FileInput multiple 1`] = `
 .c2 {
   cursor: pointer;
   position: relative;
+  border-radius: 8px;
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -2272,6 +3001,8 @@ exports[`FileInput multiple 1`] = `
 .c2 >polygon,
 .c2 >polyline,
 .c2 >rect {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -2282,7 +3013,14 @@ exports[`FileInput multiple 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c1 {
-    border: dashed 2px rgba(0, 0, 0, 0.33);
+    border: solid 1px rgba(0, 0, 0, 0.36);
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c1 {
+    padding-left: 3px;
+    padding-right: 3px;
   }
 }
 
@@ -2307,12 +3045,13 @@ exports[`FileInput multiple 1`] = `
       >
         Drop files here or
       </span>
-      <a
+      <button
         class="c6"
         tabindex="-1"
+        type="button"
       >
         browse
-      </a>
+      </button>
     </div>
   </div>
 </div>
@@ -2320,8 +3059,11 @@ exports[`FileInput multiple 1`] = `
 
 exports[`FileInput multiple aggregateThreshold 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -2334,12 +3076,14 @@ exports[`FileInput multiple aggregateThreshold 1`] = `
   box-sizing: border-box;
   max-width: 100%;
   align-items: center;
-  border: dashed 2px rgba(0, 0, 0, 0.33);
+  border: solid 1px rgba(0, 0, 0, 0.36);
   min-width: 0;
   min-height: 0;
   flex-direction: column;
   flex: 0 0 auto;
   justify-content: center;
+  padding-left: 6px;
+  padding-right: 6px;
 }
 
 .c4 {
@@ -2354,27 +3098,89 @@ exports[`FileInput multiple aggregateThreshold 1`] = `
   justify-content: space-between;
 }
 
-.c6 {
-  box-sizing: border-box;
-  display: inline-flex;
-  font-size: inherit;
-  line-height: inherit;
-  color: #7D4CDB;
-  font-weight: 600;
-  text-decoration: none;
-  cursor: pointer;
-  align-self: center;
+.c5 {
   margin: 12px;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  color: #676767;
+  font-weight: undefined;
+}
+
+.c6 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: none;
+  border-radius: 9999px;
+  padding: 4px 22px;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  padding: 5px 18px;
+  background-color: rgba(0, 0, 0, 0.04);
+  color: #006750;
+  border-radius: 9999px;
+  font-weight: 500;
+  text-align: center;
+  transition-property: color,background-color,border-color,box-shadow;
+  transition-duration: 0.1s;
+  transition-timing-function: ease-in-out;
 }
 
 .c6:hover {
-  text-decoration: underline;
+  background-color: rgba(0, 0, 0, 0.08);
+  color: #006750;
 }
 
-.c5 {
-  margin: 12px;
-  font-size: 18px;
-  line-height: 24px;
+.c6:focus {
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
+}
+
+.c6:focus >circle,
+.c6:focus >ellipse,
+.c6:focus >line,
+.c6:focus >path,
+.c6:focus >polygon,
+.c6:focus >polyline,
+.c6:focus >rect {
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
+}
+
+.c6:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c6:focus:not(:focus-visible) {
+  outline-offset: 0px;
+  outline: none;
+  outline: none;
+  box-shadow: none;
+}
+
+.c6:focus:not(:focus-visible) >circle,
+.c6:focus:not(:focus-visible) >ellipse,
+.c6:focus:not(:focus-visible) >line,
+.c6:focus:not(:focus-visible) >path,
+.c6:focus:not(:focus-visible) >polygon,
+.c6:focus:not(:focus-visible) >polyline,
+.c6:focus:not(:focus-visible) >rect {
+  outline-offset: 0px;
+  outline: none;
+  outline: none;
+  box-shadow: none;
+}
+
+.c6:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
 }
 
 .c3 {
@@ -2389,11 +3195,16 @@ exports[`FileInput multiple aggregateThreshold 1`] = `
   background: transparent;
   color: inherit;
   width: 100%;
-  padding: 11px;
-  font-weight: 600;
+  line-height: inherit;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-weight: 400;
   margin: 0;
-  border: 1px solid rgba(0, 0, 0, 0.33);
-  border-radius: 4px;
+  border: 1px solid rgba(0, 0, 0, 0.36);
+  border-radius: 8px;
+  color: #2e2e2e;
   font-size: 0;
   opacity: 0;
   border: none;
@@ -2401,15 +3212,15 @@ exports[`FileInput multiple aggregateThreshold 1`] = `
 }
 
 .c3::-webkit-input-placeholder {
-  color: #AAAAAA;
+  color: #676767;
 }
 
 .c3::-moz-placeholder {
-  color: #AAAAAA;
+  color: #676767;
 }
 
 .c3:-ms-input-placeholder {
-  color: #AAAAAA;
+  color: #676767;
 }
 
 .c3 ::-webkit-search-decoration {
@@ -2426,6 +3237,18 @@ exports[`FileInput multiple aggregateThreshold 1`] = `
   opacity: 1;
 }
 
+.c3::-webkit-input-placeholder {
+  font-weight: 400;
+}
+
+.c3::-moz-placeholder {
+  font-weight: 400;
+}
+
+.c3:-ms-input-placeholder {
+  font-weight: 400;
+}
+
 .c3::-moz-focus-inner {
   border: none;
   outline: none;
@@ -2438,6 +3261,9 @@ exports[`FileInput multiple aggregateThreshold 1`] = `
 .c2 {
   cursor: pointer;
   position: relative;
+  border-radius: 8px;
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -2449,6 +3275,8 @@ exports[`FileInput multiple aggregateThreshold 1`] = `
 .c2 >polygon,
 .c2 >polyline,
 .c2 >rect {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -2459,7 +3287,14 @@ exports[`FileInput multiple aggregateThreshold 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c1 {
-    border: dashed 2px rgba(0, 0, 0, 0.33);
+    border: solid 1px rgba(0, 0, 0, 0.36);
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c1 {
+    padding-left: 3px;
+    padding-right: 3px;
   }
 }
 
@@ -2484,12 +3319,13 @@ exports[`FileInput multiple aggregateThreshold 1`] = `
       >
         Drop files here or
       </span>
-      <a
+      <button
         class="c6"
         tabindex="-1"
+        type="button"
       >
         browse
-      </a>
+      </button>
     </div>
   </div>
 </div>
@@ -2497,8 +3333,11 @@ exports[`FileInput multiple aggregateThreshold 1`] = `
 
 exports[`FileInput multiple max 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -2511,12 +3350,14 @@ exports[`FileInput multiple max 1`] = `
   box-sizing: border-box;
   max-width: 100%;
   align-items: center;
-  border: dashed 2px rgba(0, 0, 0, 0.33);
+  border: solid 1px rgba(0, 0, 0, 0.36);
   min-width: 0;
   min-height: 0;
   flex-direction: column;
   flex: 0 0 auto;
   justify-content: center;
+  padding-left: 6px;
+  padding-right: 6px;
 }
 
 .c4 {
@@ -2531,27 +3372,89 @@ exports[`FileInput multiple max 1`] = `
   justify-content: space-between;
 }
 
-.c6 {
-  box-sizing: border-box;
-  display: inline-flex;
-  font-size: inherit;
-  line-height: inherit;
-  color: #7D4CDB;
-  font-weight: 600;
-  text-decoration: none;
-  cursor: pointer;
-  align-self: center;
+.c5 {
   margin: 12px;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  color: #676767;
+  font-weight: undefined;
+}
+
+.c6 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: none;
+  border-radius: 9999px;
+  padding: 4px 22px;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  padding: 5px 18px;
+  background-color: rgba(0, 0, 0, 0.04);
+  color: #006750;
+  border-radius: 9999px;
+  font-weight: 500;
+  text-align: center;
+  transition-property: color,background-color,border-color,box-shadow;
+  transition-duration: 0.1s;
+  transition-timing-function: ease-in-out;
 }
 
 .c6:hover {
-  text-decoration: underline;
+  background-color: rgba(0, 0, 0, 0.08);
+  color: #006750;
 }
 
-.c5 {
-  margin: 12px;
-  font-size: 18px;
-  line-height: 24px;
+.c6:focus {
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
+}
+
+.c6:focus >circle,
+.c6:focus >ellipse,
+.c6:focus >line,
+.c6:focus >path,
+.c6:focus >polygon,
+.c6:focus >polyline,
+.c6:focus >rect {
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
+}
+
+.c6:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c6:focus:not(:focus-visible) {
+  outline-offset: 0px;
+  outline: none;
+  outline: none;
+  box-shadow: none;
+}
+
+.c6:focus:not(:focus-visible) >circle,
+.c6:focus:not(:focus-visible) >ellipse,
+.c6:focus:not(:focus-visible) >line,
+.c6:focus:not(:focus-visible) >path,
+.c6:focus:not(:focus-visible) >polygon,
+.c6:focus:not(:focus-visible) >polyline,
+.c6:focus:not(:focus-visible) >rect {
+  outline-offset: 0px;
+  outline: none;
+  outline: none;
+  box-shadow: none;
+}
+
+.c6:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
 }
 
 .c3 {
@@ -2566,11 +3469,16 @@ exports[`FileInput multiple max 1`] = `
   background: transparent;
   color: inherit;
   width: 100%;
-  padding: 11px;
-  font-weight: 600;
+  line-height: inherit;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-weight: 400;
   margin: 0;
-  border: 1px solid rgba(0, 0, 0, 0.33);
-  border-radius: 4px;
+  border: 1px solid rgba(0, 0, 0, 0.36);
+  border-radius: 8px;
+  color: #2e2e2e;
   font-size: 0;
   opacity: 0;
   border: none;
@@ -2578,15 +3486,15 @@ exports[`FileInput multiple max 1`] = `
 }
 
 .c3::-webkit-input-placeholder {
-  color: #AAAAAA;
+  color: #676767;
 }
 
 .c3::-moz-placeholder {
-  color: #AAAAAA;
+  color: #676767;
 }
 
 .c3:-ms-input-placeholder {
-  color: #AAAAAA;
+  color: #676767;
 }
 
 .c3 ::-webkit-search-decoration {
@@ -2603,6 +3511,18 @@ exports[`FileInput multiple max 1`] = `
   opacity: 1;
 }
 
+.c3::-webkit-input-placeholder {
+  font-weight: 400;
+}
+
+.c3::-moz-placeholder {
+  font-weight: 400;
+}
+
+.c3:-ms-input-placeholder {
+  font-weight: 400;
+}
+
 .c3::-moz-focus-inner {
   border: none;
   outline: none;
@@ -2615,6 +3535,9 @@ exports[`FileInput multiple max 1`] = `
 .c2 {
   cursor: pointer;
   position: relative;
+  border-radius: 8px;
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -2626,6 +3549,8 @@ exports[`FileInput multiple max 1`] = `
 .c2 >polygon,
 .c2 >polyline,
 .c2 >rect {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -2636,7 +3561,14 @@ exports[`FileInput multiple max 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c1 {
-    border: dashed 2px rgba(0, 0, 0, 0.33);
+    border: solid 1px rgba(0, 0, 0, 0.36);
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c1 {
+    padding-left: 3px;
+    padding-right: 3px;
   }
 }
 
@@ -2661,12 +3593,13 @@ exports[`FileInput multiple max 1`] = `
       >
         Drop files here or
       </span>
-      <a
+      <button
         class="c6"
         tabindex="-1"
+        type="button"
       >
         browse
-      </a>
+      </button>
     </div>
   </div>
 </div>

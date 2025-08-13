@@ -1,9 +1,12 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`Cards children render 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -15,12 +18,15 @@ exports[`Cards children render 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  background-color: #ffffff;
+  color: #555555;
   min-width: 0;
   min-height: 0;
   flex-direction: column;
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.20);
+  box-shadow: none;
+  transition: box-shadow 0.3s ease-in-out;
 }
 
 .c3 {
@@ -33,6 +39,7 @@ exports[`Cards children render 1`] = `
   flex-direction: row;
   flex: 0 0 auto;
   justify-content: space-between;
+  padding: 24px;
 }
 
 .c4 {
@@ -53,6 +60,12 @@ exports[`Cards children render 1`] = `
 @media only screen and (max-width: 768px) {
   .c2 {
     border-radius: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c3 {
+    padding: 12px;
   }
 }
 
@@ -133,8 +146,11 @@ exports[`Cards children render 1`] = `
 
 exports[`Cards data objects 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -146,12 +162,15 @@ exports[`Cards data objects 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  background-color: #ffffff;
+  color: #555555;
   min-width: 0;
   min-height: 0;
   flex-direction: column;
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.20);
+  box-shadow: none;
+  transition: box-shadow 0.3s ease-in-out;
 }
 
 .c3 {
@@ -162,6 +181,7 @@ exports[`Cards data objects 1`] = `
   min-height: 0;
   flex-direction: column;
   flex: 1 1;
+  padding: 24px;
 }
 
 .c1 {
@@ -176,6 +196,12 @@ exports[`Cards data objects 1`] = `
 @media only screen and (max-width: 768px) {
   .c2 {
     border-radius: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c3 {
+    padding: 12px;
   }
 }
 
@@ -217,8 +243,11 @@ exports[`Cards data objects 1`] = `
 
 exports[`Cards data strings 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -230,12 +259,15 @@ exports[`Cards data strings 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  background-color: #ffffff;
+  color: #555555;
   min-width: 0;
   min-height: 0;
   flex-direction: column;
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.20);
+  box-shadow: none;
+  transition: box-shadow 0.3s ease-in-out;
 }
 
 .c3 {
@@ -246,6 +278,7 @@ exports[`Cards data strings 1`] = `
   min-height: 0;
   flex-direction: column;
   flex: 1 1;
+  padding: 24px;
 }
 
 .c1 {
@@ -260,6 +293,12 @@ exports[`Cards data strings 1`] = `
 @media only screen and (max-width: 768px) {
   .c2 {
     border-radius: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c3 {
+    padding: 12px;
   }
 }
 
@@ -305,8 +344,11 @@ exports[`Cards data strings 1`] = `
 
 exports[`Cards empty 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -729,8 +771,11 @@ exports[`Cards pad string 1`] = `
 
 exports[`Cards renders a11yTitle and aria-label 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -742,12 +787,15 @@ exports[`Cards renders a11yTitle and aria-label 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  background-color: #ffffff;
+  color: #555555;
   min-width: 0;
   min-height: 0;
   flex-direction: column;
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.20);
+  box-shadow: none;
+  transition: box-shadow 0.3s ease-in-out;
 }
 
 .c3 {
@@ -758,6 +806,7 @@ exports[`Cards renders a11yTitle and aria-label 1`] = `
   min-height: 0;
   flex-direction: column;
   flex: 1 1;
+  padding: 24px;
 }
 
 .c1 {
@@ -772,6 +821,12 @@ exports[`Cards renders a11yTitle and aria-label 1`] = `
 @media only screen and (max-width: 768px) {
   .c2 {
     border-radius: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c3 {
+    padding: 12px;
   }
 }
 

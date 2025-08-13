@@ -1,4 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`Table caption renders 1`] = `
 .c2 {
@@ -11,9 +11,20 @@ exports[`Table caption renders 1`] = `
   width: inherit;
 }
 
+.c1 tbody tr:last-child td {
+  border-color: transparent;
+}
+
+.c1 tbody tr:last-child th {
+  border-color: transparent;
+}
+
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -43,9 +54,20 @@ exports[`Table renders 1`] = `
   width: inherit;
 }
 
+.c1 tbody tr:last-child td {
+  border-color: transparent;
+}
+
+.c1 tbody tr:last-child th {
+  border-color: transparent;
+}
+
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -81,9 +103,20 @@ exports[`TableBody renders 1`] = `
   width: inherit;
 }
 
+.c1 tbody tr:last-child td {
+  border-color: transparent;
+}
+
+.c1 tbody tr:last-child th {
+  border-color: transparent;
+}
+
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -195,11 +228,20 @@ exports[`TableCell plain renders 1`] = `
   font-weight: inherit;
   text-align: inherit;
   text-align: start;
-  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
+  border-bottom: solid 1px rgba(0, 0, 0, 0.36);
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
   padding-bottom: 6px;
+}
+
+.c2 >div {
+  height: 100%;
+  justify-content: center;
+}
+
+.c2 label {
+  justify-content: center;
 }
 
 .c1 {
@@ -208,9 +250,20 @@ exports[`TableCell plain renders 1`] = `
   width: inherit;
 }
 
+.c1 tbody tr:last-child td {
+  border-color: transparent;
+}
+
+.c1 tbody tr:last-child th {
+  border-color: transparent;
+}
+
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -240,29 +293,35 @@ exports[`TableCell plain renders 1`] = `
 `;
 
 exports[`TableCell renders 1`] = `
+.c3 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+}
+
 .c2 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
   text-align: inherit;
   text-align: start;
-  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
+  border-bottom: solid 1px rgba(0, 0, 0, 0.36);
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
   padding-bottom: 6px;
 }
 
-.c3 {
-  margin: 0;
-  padding: 0;
-  font-weight: inherit;
-  text-align: inherit;
-  text-align: start;
-  padding-left: 12px;
-  padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+.c2 >div {
+  height: 100%;
+  justify-content: center;
+}
+
+.c2 label {
+  justify-content: center;
 }
 
 .c4 {
@@ -271,11 +330,27 @@ exports[`TableCell renders 1`] = `
   font-weight: inherit;
   text-align: inherit;
   text-align: start;
-  border-top: solid 1px rgba(0, 0, 0, 0.33);
+  border-bottom: solid 1px rgba(0, 0, 0, 0.12);
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
   padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 11px;
+}
+
+.c5 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  text-align: start;
+  border-top: solid 1px rgba(0, 0, 0, 0.36);
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  font-weight: undefined;
 }
 
 .c1 {
@@ -284,9 +359,20 @@ exports[`TableCell renders 1`] = `
   width: inherit;
 }
 
+.c1 tbody tr:last-child td {
+  border-color: transparent;
+}
+
+.c1 tbody tr:last-child th {
+  border-color: transparent;
+}
+
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -308,7 +394,11 @@ exports[`TableCell renders 1`] = `
       >
         <td
           class="c2"
-        />
+        >
+          <div
+            class="c3"
+          />
+        </td>
       </tr>
     </thead>
     <tbody
@@ -318,7 +408,7 @@ exports[`TableCell renders 1`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2"
       >
         <td
-          class="c3"
+          class="c4"
         />
       </tr>
     </tbody>
@@ -329,8 +419,12 @@ exports[`TableCell renders 1`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2"
       >
         <td
-          class="c4"
-        />
+          class="c5"
+        >
+          <div
+            class="c3"
+          />
+        </td>
       </tr>
     </tfoot>
   </table>
@@ -338,29 +432,50 @@ exports[`TableCell renders 1`] = `
 `;
 
 exports[`TableCell scope renders 1`] = `
+.c3 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+}
+
 .c2 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
   text-align: inherit;
   text-align: start;
-  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
+  border-bottom: solid 1px rgba(0, 0, 0, 0.36);
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
   padding-bottom: 6px;
 }
 
-.c3 {
+.c2 >div {
+  height: 100%;
+  justify-content: center;
+}
+
+.c2 label {
+  justify-content: center;
+}
+
+.c4 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
   text-align: inherit;
   text-align: start;
+  border-bottom: solid 1px rgba(0, 0, 0, 0.12);
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
   padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 11px;
 }
 
 .c1 {
@@ -369,9 +484,20 @@ exports[`TableCell scope renders 1`] = `
   width: inherit;
 }
 
+.c1 tbody tr:last-child td {
+  border-color: transparent;
+}
+
+.c1 tbody tr:last-child th {
+  border-color: transparent;
+}
+
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -394,7 +520,11 @@ exports[`TableCell scope renders 1`] = `
         <th
           class="c2"
           scope="col"
-        />
+        >
+          <div
+            class="c3"
+          />
+        </th>
       </tr>
     </thead>
     <tbody
@@ -404,7 +534,7 @@ exports[`TableCell scope renders 1`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2"
       >
         <th
-          class="c3"
+          class="c4"
           scope="row"
         />
       </tr>
@@ -423,10 +553,13 @@ exports[`TableCell size renders 1`] = `
   max-width: 96px;
   overflow: hidden;
   text-align: start;
+  border-bottom: solid 1px rgba(0, 0, 0, 0.12);
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
   padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 11px;
 }
 
 .c3 {
@@ -438,10 +571,13 @@ exports[`TableCell size renders 1`] = `
   max-width: 192px;
   overflow: hidden;
   text-align: start;
+  border-bottom: solid 1px rgba(0, 0, 0, 0.12);
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
   padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 11px;
 }
 
 .c4 {
@@ -453,10 +589,13 @@ exports[`TableCell size renders 1`] = `
   max-width: 384px;
   overflow: hidden;
   text-align: start;
+  border-bottom: solid 1px rgba(0, 0, 0, 0.12);
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
   padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 11px;
 }
 
 .c5 {
@@ -468,10 +607,13 @@ exports[`TableCell size renders 1`] = `
   max-width: 768px;
   overflow: hidden;
   text-align: start;
+  border-bottom: solid 1px rgba(0, 0, 0, 0.12);
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
   padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 11px;
 }
 
 .c6 {
@@ -483,10 +625,13 @@ exports[`TableCell size renders 1`] = `
   max-width: 50%;
   overflow: hidden;
   text-align: start;
+  border-bottom: solid 1px rgba(0, 0, 0, 0.12);
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
   padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 11px;
 }
 
 .c7 {
@@ -498,10 +643,13 @@ exports[`TableCell size renders 1`] = `
   max-width: 33.33%;
   overflow: hidden;
   text-align: start;
+  border-bottom: solid 1px rgba(0, 0, 0, 0.12);
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
   padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 11px;
 }
 
 .c8 {
@@ -513,10 +661,13 @@ exports[`TableCell size renders 1`] = `
   max-width: 66.66%;
   overflow: hidden;
   text-align: start;
+  border-bottom: solid 1px rgba(0, 0, 0, 0.12);
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
   padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 11px;
 }
 
 .c9 {
@@ -528,10 +679,13 @@ exports[`TableCell size renders 1`] = `
   max-width: 25%;
   overflow: hidden;
   text-align: start;
+  border-bottom: solid 1px rgba(0, 0, 0, 0.12);
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
   padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 11px;
 }
 
 .c10 {
@@ -543,10 +697,13 @@ exports[`TableCell size renders 1`] = `
   max-width: 75%;
   overflow: hidden;
   text-align: start;
+  border-bottom: solid 1px rgba(0, 0, 0, 0.12);
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
   padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 11px;
 }
 
 .c1 {
@@ -555,9 +712,20 @@ exports[`TableCell size renders 1`] = `
   width: inherit;
 }
 
+.c1 tbody tr:last-child td {
+  border-color: transparent;
+}
+
+.c1 tbody tr:last-child th {
+  border-color: transparent;
+}
+
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -650,6 +818,36 @@ exports[`TableCell size renders 1`] = `
 `;
 
 exports[`TableCell verticalAlign renders 1`] = `
+.c3 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.c5 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.c7 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
 .c2 {
   margin: 0;
   padding: 0;
@@ -657,25 +855,20 @@ exports[`TableCell verticalAlign renders 1`] = `
   text-align: inherit;
   vertical-align: top;
   text-align: start;
-  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
+  border-bottom: solid 1px rgba(0, 0, 0, 0.36);
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
   padding-bottom: 6px;
 }
 
-.c3 {
-  margin: 0;
-  padding: 0;
-  font-weight: inherit;
-  text-align: inherit;
-  vertical-align: middle;
-  text-align: start;
-  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
-  padding-left: 12px;
-  padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+.c2 >div {
+  height: 100%;
+  justify-content: center;
+}
+
+.c2 label {
+  justify-content: center;
 }
 
 .c4 {
@@ -683,13 +876,45 @@ exports[`TableCell verticalAlign renders 1`] = `
   padding: 0;
   font-weight: inherit;
   text-align: inherit;
-  vertical-align: bottom;
+  vertical-align: middle;
   text-align: start;
-  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
+  border-bottom: solid 1px rgba(0, 0, 0, 0.36);
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
   padding-bottom: 6px;
+}
+
+.c4 >div {
+  height: 100%;
+  justify-content: center;
+}
+
+.c4 label {
+  justify-content: center;
+}
+
+.c6 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  vertical-align: bottom;
+  text-align: start;
+  border-bottom: solid 1px rgba(0, 0, 0, 0.36);
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.c6 >div {
+  height: 100%;
+  justify-content: center;
+}
+
+.c6 label {
+  justify-content: center;
 }
 
 .c1 {
@@ -698,9 +923,20 @@ exports[`TableCell verticalAlign renders 1`] = `
   width: inherit;
 }
 
+.c1 tbody tr:last-child td {
+  border-color: transparent;
+}
+
+.c1 tbody tr:last-child th {
+  border-color: transparent;
+}
+
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -722,13 +958,25 @@ exports[`TableCell verticalAlign renders 1`] = `
       >
         <td
           class="c2"
-        />
-        <td
-          class="c3"
-        />
+        >
+          <div
+            class="c3"
+          />
+        </td>
         <td
           class="c4"
-        />
+        >
+          <div
+            class="c5"
+          />
+        </td>
+        <td
+          class="c6"
+        >
+          <div
+            class="c7"
+          />
+        </td>
       </tr>
     </thead>
   </table>
@@ -742,9 +990,20 @@ exports[`TableFooter renders 1`] = `
   width: inherit;
 }
 
+.c1 tbody tr:last-child td {
+  border-color: transparent;
+}
+
+.c1 tbody tr:last-child th {
+  border-color: transparent;
+}
+
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -772,9 +1031,20 @@ exports[`TableHeader renders 1`] = `
   width: inherit;
 }
 
+.c1 tbody tr:last-child td {
+  border-color: transparent;
+}
+
+.c1 tbody tr:last-child th {
+  border-color: transparent;
+}
+
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -802,9 +1072,20 @@ exports[`TableRow renders 1`] = `
   width: inherit;
 }
 
+.c1 tbody tr:last-child td {
+  border-color: transparent;
+}
+
+.c1 tbody tr:last-child th {
+  border-color: transparent;
+}
+
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;

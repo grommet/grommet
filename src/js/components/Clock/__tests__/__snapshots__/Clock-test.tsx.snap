@@ -2,8 +2,11 @@
 
 exports[`Clock hourLimit 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -190,8 +193,11 @@ exports[`Clock render outside wrapper 1`] = `
 
 exports[`Clock run 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -213,7 +219,7 @@ exports[`Clock run 1`] = `
 
 .c2 {
   stroke-width: 3px;
-  stroke: #6FFFB0;
+  stroke: accent-1;
   transition: stroke 1s ease-out;
 }
 
@@ -414,7 +420,7 @@ exports[`Clock run 1`] = `
 
 exports[`Clock run 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 kiEDjE"
+  class="StyledGrommet-sc-19lkkz7-0 iRGypN"
 >
   <svg
     class="StyledClock__StyledAnalog-sc-y4xw8s-3 ejOPxy"
@@ -425,7 +431,7 @@ exports[`Clock run 2`] = `
     width="96"
   >
     <line
-      class="StyledClock__StyledSecond-sc-y4xw8s-2 iSAfFs"
+      class="StyledClock__StyledSecond-sc-y4xw8s-2 boKCYf"
       stroke="#000000"
       stroke-linecap="round"
       style="transform: rotate(210deg); transform-origin: 48px 48px;"
@@ -464,7 +470,7 @@ exports[`Clock run 2`] = `
     width="96"
   >
     <line
-      class="StyledClock__StyledSecond-sc-y4xw8s-2 iSAfFs"
+      class="StyledClock__StyledSecond-sc-y4xw8s-2 boKCYf"
       stroke="#000000"
       stroke-linecap="round"
       style="transform: rotate(198deg); transform-origin: 48px 48px;"
@@ -645,8 +651,11 @@ exports[`Clock run 2`] = `
 
 exports[`Clock time 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -856,8 +865,11 @@ exports[`Clock time 1`] = `
 
 exports[`Clock type analog precision hours size huge 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -903,8 +915,11 @@ exports[`Clock type analog precision hours size huge 1`] = `
 
 exports[`Clock type analog precision hours size large 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -950,8 +965,11 @@ exports[`Clock type analog precision hours size large 1`] = `
 
 exports[`Clock type analog precision hours size medium 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -997,8 +1015,11 @@ exports[`Clock type analog precision hours size medium 1`] = `
 
 exports[`Clock type analog precision hours size small 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1044,8 +1065,11 @@ exports[`Clock type analog precision hours size small 1`] = `
 
 exports[`Clock type analog precision hours size xlarge 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1091,8 +1115,11 @@ exports[`Clock type analog precision hours size xlarge 1`] = `
 
 exports[`Clock type analog precision hours size xsmall 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1138,8 +1165,11 @@ exports[`Clock type analog precision hours size xsmall 1`] = `
 
 exports[`Clock type analog precision hours size xxlarge 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1185,8 +1215,11 @@ exports[`Clock type analog precision hours size xxlarge 1`] = `
 
 exports[`Clock type analog precision minutes size huge 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1248,8 +1281,11 @@ exports[`Clock type analog precision minutes size huge 1`] = `
 
 exports[`Clock type analog precision minutes size large 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1311,8 +1347,11 @@ exports[`Clock type analog precision minutes size large 1`] = `
 
 exports[`Clock type analog precision minutes size medium 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1374,8 +1413,11 @@ exports[`Clock type analog precision minutes size medium 1`] = `
 
 exports[`Clock type analog precision minutes size small 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1437,8 +1479,11 @@ exports[`Clock type analog precision minutes size small 1`] = `
 
 exports[`Clock type analog precision minutes size xlarge 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1500,8 +1545,11 @@ exports[`Clock type analog precision minutes size xlarge 1`] = `
 
 exports[`Clock type analog precision minutes size xsmall 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1563,8 +1611,11 @@ exports[`Clock type analog precision minutes size xsmall 1`] = `
 
 exports[`Clock type analog precision minutes size xxlarge 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1626,8 +1677,11 @@ exports[`Clock type analog precision minutes size xxlarge 1`] = `
 
 exports[`Clock type analog precision seconds size huge 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1649,7 +1703,7 @@ exports[`Clock type analog precision seconds size huge 1`] = `
 
 .c2 {
   stroke-width: 3px;
-  stroke: #6FFFB0;
+  stroke: accent-1;
   transition: stroke 1s ease-out;
 }
 
@@ -1705,8 +1759,11 @@ exports[`Clock type analog precision seconds size huge 1`] = `
 
 exports[`Clock type analog precision seconds size large 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1728,7 +1785,7 @@ exports[`Clock type analog precision seconds size large 1`] = `
 
 .c2 {
   stroke-width: 3px;
-  stroke: #6FFFB0;
+  stroke: accent-1;
   transition: stroke 1s ease-out;
 }
 
@@ -1784,8 +1841,11 @@ exports[`Clock type analog precision seconds size large 1`] = `
 
 exports[`Clock type analog precision seconds size medium 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1807,7 +1867,7 @@ exports[`Clock type analog precision seconds size medium 1`] = `
 
 .c2 {
   stroke-width: 3px;
-  stroke: #6FFFB0;
+  stroke: accent-1;
   transition: stroke 1s ease-out;
 }
 
@@ -1863,8 +1923,11 @@ exports[`Clock type analog precision seconds size medium 1`] = `
 
 exports[`Clock type analog precision seconds size small 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1886,7 +1949,7 @@ exports[`Clock type analog precision seconds size small 1`] = `
 
 .c2 {
   stroke-width: 3px;
-  stroke: #6FFFB0;
+  stroke: accent-1;
   transition: stroke 1s ease-out;
 }
 
@@ -1942,8 +2005,11 @@ exports[`Clock type analog precision seconds size small 1`] = `
 
 exports[`Clock type analog precision seconds size xlarge 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1965,7 +2031,7 @@ exports[`Clock type analog precision seconds size xlarge 1`] = `
 
 .c2 {
   stroke-width: 3px;
-  stroke: #6FFFB0;
+  stroke: accent-1;
   transition: stroke 1s ease-out;
 }
 
@@ -2021,8 +2087,11 @@ exports[`Clock type analog precision seconds size xlarge 1`] = `
 
 exports[`Clock type analog precision seconds size xsmall 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -2044,7 +2113,7 @@ exports[`Clock type analog precision seconds size xsmall 1`] = `
 
 .c2 {
   stroke-width: 3px;
-  stroke: #6FFFB0;
+  stroke: accent-1;
   transition: stroke 1s ease-out;
 }
 
@@ -2100,8 +2169,11 @@ exports[`Clock type analog precision seconds size xsmall 1`] = `
 
 exports[`Clock type analog precision seconds size xxlarge 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -2123,7 +2195,7 @@ exports[`Clock type analog precision seconds size xxlarge 1`] = `
 
 .c2 {
   stroke-width: 3px;
-  stroke: #6FFFB0;
+  stroke: accent-1;
   transition: stroke 1s ease-out;
 }
 
@@ -2258,8 +2330,11 @@ exports[`Clock type digital custom size 1`] = `
 
 exports[`Clock type digital precision hours size large 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -2307,8 +2382,11 @@ exports[`Clock type digital precision hours size large 1`] = `
 
 exports[`Clock type digital precision hours size medium 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -2356,8 +2434,11 @@ exports[`Clock type digital precision hours size medium 1`] = `
 
 exports[`Clock type digital precision hours size small 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -2405,8 +2486,11 @@ exports[`Clock type digital precision hours size small 1`] = `
 
 exports[`Clock type digital precision hours size xlarge 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -2454,8 +2538,11 @@ exports[`Clock type digital precision hours size xlarge 1`] = `
 
 exports[`Clock type digital precision hours size xsmall 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -2503,8 +2590,11 @@ exports[`Clock type digital precision hours size xsmall 1`] = `
 
 exports[`Clock type digital precision hours size xxlarge 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -2552,8 +2642,11 @@ exports[`Clock type digital precision hours size xxlarge 1`] = `
 
 exports[`Clock type digital precision minutes size large 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -2616,8 +2709,11 @@ exports[`Clock type digital precision minutes size large 1`] = `
 
 exports[`Clock type digital precision minutes size medium 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -2680,8 +2776,11 @@ exports[`Clock type digital precision minutes size medium 1`] = `
 
 exports[`Clock type digital precision minutes size small 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -2744,8 +2843,11 @@ exports[`Clock type digital precision minutes size small 1`] = `
 
 exports[`Clock type digital precision minutes size xlarge 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -2808,8 +2910,11 @@ exports[`Clock type digital precision minutes size xlarge 1`] = `
 
 exports[`Clock type digital precision minutes size xsmall 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -2872,8 +2977,11 @@ exports[`Clock type digital precision minutes size xsmall 1`] = `
 
 exports[`Clock type digital precision minutes size xxlarge 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -2936,8 +3044,11 @@ exports[`Clock type digital precision minutes size xxlarge 1`] = `
 
 exports[`Clock type digital precision seconds size large 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -3015,8 +3126,11 @@ exports[`Clock type digital precision seconds size large 1`] = `
 
 exports[`Clock type digital precision seconds size medium 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -3094,8 +3208,11 @@ exports[`Clock type digital precision seconds size medium 1`] = `
 
 exports[`Clock type digital precision seconds size small 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -3173,8 +3290,11 @@ exports[`Clock type digital precision seconds size small 1`] = `
 
 exports[`Clock type digital precision seconds size xlarge 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -3252,8 +3372,11 @@ exports[`Clock type digital precision seconds size xlarge 1`] = `
 
 exports[`Clock type digital precision seconds size xsmall 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -3331,8 +3454,11 @@ exports[`Clock type digital precision seconds size xsmall 1`] = `
 
 exports[`Clock type digital precision seconds size xxlarge 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;

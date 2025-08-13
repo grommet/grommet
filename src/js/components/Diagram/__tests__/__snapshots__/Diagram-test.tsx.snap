@@ -1,4 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`Diagram anchor 1`] = `
 .c3 {
@@ -44,8 +44,11 @@ exports[`Diagram anchor 1`] = `
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -93,7 +96,7 @@ exports[`Diagram anchor 1`] = `
           <path
             d="M 0,0 Q 0,0 0,0 T 0,0"
             fill="none"
-            stroke="#6FFFB0"
+            stroke="#3c3aa1"
             stroke-linecap="butt"
             stroke-linejoin="miter"
             stroke-width="1"
@@ -101,7 +104,7 @@ exports[`Diagram anchor 1`] = `
           <path
             d="M 0,0 Q 0,0 0,0 T 0,0"
             fill="none"
-            stroke="#6FFFB0"
+            stroke="#3c3aa1"
             stroke-linecap="butt"
             stroke-linejoin="miter"
             stroke-width="1"
@@ -109,7 +112,7 @@ exports[`Diagram anchor 1`] = `
           <path
             d="M 0,0 Q 0,0 0,0 T 0,0"
             fill="none"
-            stroke="#6FFFB0"
+            stroke="#3c3aa1"
             stroke-linecap="butt"
             stroke-linejoin="miter"
             stroke-width="1"
@@ -165,8 +168,11 @@ exports[`Diagram basic 1`] = `
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -214,7 +220,7 @@ exports[`Diagram basic 1`] = `
           <path
             d="M 0,0 Q 0,0 0,0 T 0,0"
             fill="none"
-            stroke="#6FFFB0"
+            stroke="#3c3aa1"
             stroke-linecap="butt"
             stroke-linejoin="miter"
             stroke-width="1"
@@ -270,8 +276,11 @@ exports[`Diagram color 1`] = `
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -319,7 +328,7 @@ exports[`Diagram color 1`] = `
           <path
             d="M 0,0 Q 0,0 0,0 T 0,0"
             fill="none"
-            stroke="#7D4CDB"
+            stroke="#01a982"
             stroke-linecap="butt"
             stroke-linejoin="miter"
             stroke-width="1"
@@ -375,8 +384,11 @@ exports[`Diagram offset 1`] = `
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -424,7 +436,7 @@ exports[`Diagram offset 1`] = `
           <path
             d="M 6,6 Q 6,6 6,6 T 6,6"
             fill="none"
-            stroke="#6FFFB0"
+            stroke="#3c3aa1"
             stroke-linecap="butt"
             stroke-linejoin="miter"
             stroke-width="1"
@@ -432,7 +444,7 @@ exports[`Diagram offset 1`] = `
           <path
             d="M 12,12 Q 12,12 12,12 T 12,12"
             fill="none"
-            stroke="#6FFFB0"
+            stroke="#3c3aa1"
             stroke-linecap="butt"
             stroke-linejoin="miter"
             stroke-width="1"
@@ -440,7 +452,7 @@ exports[`Diagram offset 1`] = `
           <path
             d="M 24,24 Q 24,24 24,24 T 24,24"
             fill="none"
-            stroke="#6FFFB0"
+            stroke="#3c3aa1"
             stroke-linecap="butt"
             stroke-linejoin="miter"
             stroke-width="1"
@@ -496,8 +508,11 @@ exports[`Diagram thickness 1`] = `
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -545,7 +560,7 @@ exports[`Diagram thickness 1`] = `
           <path
             d="M 0,0 Q 0,0 0,0 T 0,0"
             fill="none"
-            stroke="#6FFFB0"
+            stroke="#3c3aa1"
             stroke-linecap="butt"
             stroke-linejoin="miter"
             stroke-width="1"
@@ -553,7 +568,7 @@ exports[`Diagram thickness 1`] = `
           <path
             d="M 0,0 Q 0,0 0,0 T 0,0"
             fill="none"
-            stroke="#6FFFB0"
+            stroke="#3c3aa1"
             stroke-linecap="butt"
             stroke-linejoin="miter"
             stroke-width="3"
@@ -561,7 +576,7 @@ exports[`Diagram thickness 1`] = `
           <path
             d="M 0,0 Q 0,0 0,0 T 0,0"
             fill="none"
-            stroke="#6FFFB0"
+            stroke="#3c3aa1"
             stroke-linecap="butt"
             stroke-linejoin="miter"
             stroke-width="6"
@@ -569,7 +584,7 @@ exports[`Diagram thickness 1`] = `
           <path
             d="M 0,0 Q 0,0 0,0 T 0,0"
             fill="none"
-            stroke="#6FFFB0"
+            stroke="#3c3aa1"
             stroke-linecap="butt"
             stroke-linejoin="miter"
             stroke-width="12"
@@ -577,7 +592,7 @@ exports[`Diagram thickness 1`] = `
           <path
             d="M 0,0 Q 0,0 0,0 T 0,0"
             fill="none"
-            stroke="#6FFFB0"
+            stroke="#3c3aa1"
             stroke-linecap="butt"
             stroke-linejoin="miter"
             stroke-width="24"
@@ -585,7 +600,7 @@ exports[`Diagram thickness 1`] = `
           <path
             d="M 0,0 Q 0,0 0,0 T 0,0"
             fill="none"
-            stroke="#6FFFB0"
+            stroke="#3c3aa1"
             stroke-linecap="butt"
             stroke-linejoin="miter"
             stroke-width="5"
@@ -641,8 +656,11 @@ exports[`Diagram type 1`] = `
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -690,7 +708,7 @@ exports[`Diagram type 1`] = `
           <path
             d="M 0,0 L 0,0"
             fill="none"
-            stroke="#6FFFB0"
+            stroke="#3c3aa1"
             stroke-linecap="butt"
             stroke-linejoin="miter"
             stroke-width="1"
@@ -698,7 +716,7 @@ exports[`Diagram type 1`] = `
           <path
             d="M 0,0 Q 0,0 0,0 T 0,0"
             fill="none"
-            stroke="#6FFFB0"
+            stroke="#3c3aa1"
             stroke-linecap="butt"
             stroke-linejoin="miter"
             stroke-width="1"
@@ -706,7 +724,7 @@ exports[`Diagram type 1`] = `
           <path
             d="M 0,0 L 0,0 L 0,0 L 0,0"
             fill="none"
-            stroke="#6FFFB0"
+            stroke="#3c3aa1"
             stroke-linecap="butt"
             stroke-linejoin="miter"
             stroke-width="1"

@@ -2,6 +2,7 @@ import React from 'react';
 import 'jest-styled-components';
 import 'jest-axe/extend-expect';
 import 'regenerator-runtime/runtime';
+import { hpe } from 'grommet-theme-hpe';
 
 import { render } from '@testing-library/react';
 
@@ -20,7 +21,7 @@ const data = {
 describe('NameValuePair', () => {
   test(`should render name when name is typeof string`, () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <NameValueList>
           {Object.entries(data).map(([name, value]) => (
             <NameValuePair key={name} name={name}>
@@ -76,7 +77,7 @@ describe('NameValuePair', () => {
 
   test(`should render value when provided as child of type JSX Element`, () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <NameValueList nameProps={{ align: 'end' }}>
           {Object.entries(data).map(([name, value]) => {
             let renderedValue: any = value;

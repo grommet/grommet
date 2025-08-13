@@ -1,4 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`Avatar a11yTitle renders 1`] = `
 .c1 {
@@ -9,16 +9,19 @@ exports[`Avatar a11yTitle renders 1`] = `
   min-width: 0;
   min-height: 0;
   flex-direction: column;
-  height: 48px;
-  width: 48px;
+  height: 36px;
+  width: 36px;
   justify-content: center;
   border-radius: 100%;
   overflow: hidden;
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -58,16 +61,19 @@ exports[`Avatar apply imageProps to avatar 1`] = `
   min-width: 0;
   min-height: 0;
   flex-direction: column;
-  height: 48px;
-  width: 48px;
+  height: 36px;
+  width: 36px;
   justify-content: center;
   border-radius: 100%;
   overflow: hidden;
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -103,10 +109,10 @@ exports[`Avatar icon renders 1`] = `
 .c2 {
   display: inline-block;
   flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #FD6FFF;
-  stroke: #FD6FFF;
+  width: 18px;
+  height: 18px;
+  fill: accent-2;
+  stroke: accent-2;
 }
 
 .c2 g {
@@ -137,21 +143,23 @@ exports[`Avatar icon renders 1`] = `
   box-sizing: border-box;
   max-width: 100%;
   align-items: center;
-  background-color: #FFCA58;
-  color: #444444;
+  background: accent-4;
   min-width: 0;
   min-height: 0;
   flex-direction: column;
-  height: 48px;
-  width: 48px;
+  height: 36px;
+  width: 36px;
   justify-content: center;
   border-radius: 100%;
   overflow: hidden;
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -190,16 +198,19 @@ exports[`Avatar renders 1`] = `
   min-width: 0;
   min-height: 0;
   flex-direction: column;
-  height: 48px;
-  width: 48px;
+  height: 36px;
+  width: 36px;
   justify-content: center;
   border-radius: 100%;
   overflow: hidden;
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -250,8 +261,8 @@ exports[`Avatar round renders 1`] = `
   min-width: 0;
   min-height: 0;
   flex-direction: column;
-  height: 48px;
-  width: 48px;
+  height: 36px;
+  width: 36px;
   justify-content: center;
   overflow: hidden;
 }
@@ -264,8 +275,8 @@ exports[`Avatar round renders 1`] = `
   min-width: 0;
   min-height: 0;
   flex-direction: column;
-  height: 48px;
-  width: 48px;
+  height: 36px;
+  width: 36px;
   justify-content: center;
   border-radius: 6px;
   overflow: hidden;
@@ -279,8 +290,8 @@ exports[`Avatar round renders 1`] = `
   min-width: 0;
   min-height: 0;
   flex-direction: column;
-  height: 48px;
-  width: 48px;
+  height: 36px;
+  width: 36px;
   justify-content: center;
   border-radius: 12px;
   overflow: hidden;
@@ -294,8 +305,8 @@ exports[`Avatar round renders 1`] = `
   min-width: 0;
   min-height: 0;
   flex-direction: column;
-  height: 48px;
-  width: 48px;
+  height: 36px;
+  width: 36px;
   justify-content: center;
   border-radius: 24px;
   overflow: hidden;
@@ -309,8 +320,8 @@ exports[`Avatar round renders 1`] = `
   min-width: 0;
   min-height: 0;
   flex-direction: column;
-  height: 48px;
-  width: 48px;
+  height: 36px;
+  width: 36px;
   justify-content: center;
   border-radius: 48px;
   overflow: hidden;
@@ -324,16 +335,19 @@ exports[`Avatar round renders 1`] = `
   min-width: 0;
   min-height: 0;
   flex-direction: column;
-  height: 48px;
-  width: 48px;
+  height: 36px;
+  width: 36px;
   justify-content: center;
   border-radius: 100%;
   overflow: hidden;
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -446,8 +460,8 @@ exports[`Avatar size 1`] = `
   min-width: 0;
   min-height: 0;
   flex-direction: column;
-  height: 18px;
-  width: 18px;
+  height: 24px;
+  width: 24px;
   justify-content: center;
   border-radius: 100%;
   overflow: hidden;
@@ -461,14 +475,29 @@ exports[`Avatar size 1`] = `
   min-width: 0;
   min-height: 0;
   flex-direction: column;
-  height: 24px;
-  width: 24px;
+  height: 28px;
+  width: 28px;
   justify-content: center;
   border-radius: 100%;
   overflow: hidden;
 }
 
 .c4 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  height: 36px;
+  width: 36px;
+  justify-content: center;
+  border-radius: 100%;
+  overflow: hidden;
+}
+
+.c5 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -483,7 +512,7 @@ exports[`Avatar size 1`] = `
   overflow: hidden;
 }
 
-.c5 {
+.c6 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -493,21 +522,6 @@ exports[`Avatar size 1`] = `
   flex-direction: column;
   height: 72px;
   width: 72px;
-  justify-content: center;
-  border-radius: 100%;
-  overflow: hidden;
-}
-
-.c6 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  align-items: center;
-  min-width: 0;
-  min-height: 0;
-  flex-direction: column;
-  height: 96px;
-  width: 96px;
   justify-content: center;
   border-radius: 100%;
   overflow: hidden;
@@ -574,8 +588,11 @@ exports[`Avatar size 1`] = `
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -585,50 +602,51 @@ exports[`Avatar size 1`] = `
 
 .c11 {
   align-self: center;
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 1rem;
+  line-height: 1.25rem;
+  font-weight: 400;
 }
 
 .c12 {
   align-self: center;
-  font-size: 22px;
-  line-height: 28px;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  font-weight: 400;
 }
 
 .c13 {
   align-self: center;
-  font-size: 26px;
-  line-height: 32px;
+  font-size: 1.375rem;
+  line-height: 1.75rem;
+  font-weight: 400;
 }
 
 .c14 {
   align-self: center;
-  font-size: 34px;
-  line-height: 40px;
+  font-size: 1.5rem;
+  line-height: 1.875rem;
+  font-weight: 400;
 }
 
 .c15 {
   align-self: center;
-  font-size: 42px;
-  line-height: 48px;
+  font-size: 2.625rem;
+  line-height: 2.875rem;
+  font-weight: 400;
 }
 
 .c16 {
   align-self: center;
-  font-size: 54px;
-  line-height: 60px;
+  font-size: 3rem;
+  line-height: 3rem;
+  font-weight: 400;
 }
 
 .c17 {
   align-self: center;
-  font-size: 70px;
-  line-height: 76px;
-}
-
-.c18 {
-  align-self: center;
-  font-size: 90px;
-  line-height: 96px;
+  font-size: 4.5rem;
+  line-height: 4.5rem;
+  font-weight: 400;
 }
 
 .c2 {
@@ -797,7 +815,7 @@ exports[`Avatar size 1`] = `
     class="c10 StyledAvatar-sc-1suyamb-1"
   >
     <span
-      class="c18 "
+      class="c17 "
     >
       S
     </span>
@@ -960,12 +978,12 @@ exports[`Avatar text renders 1`] = `
   max-width: 100%;
   align-items: center;
   background-color: #555555;
-  color: #f8f8f8;
+  color: #ffffff;
   min-width: 0;
   min-height: 0;
   flex-direction: column;
-  height: 48px;
-  width: 48px;
+  height: 36px;
+  width: 36px;
   justify-content: center;
   border-radius: 100%;
   overflow: hidden;
@@ -976,21 +994,24 @@ exports[`Avatar text renders 1`] = `
   box-sizing: border-box;
   max-width: 100%;
   align-items: center;
-  background-color: #7D4CDB;
-  color: #f8f8f8;
+  background-color: #01a982;
+  color: #ffffff;
   min-width: 0;
   min-height: 0;
   flex-direction: column;
-  height: 48px;
-  width: 48px;
+  height: 36px;
+  width: 36px;
   justify-content: center;
   border-radius: 100%;
   overflow: hidden;
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1000,8 +1021,9 @@ exports[`Avatar text renders 1`] = `
 
 .c2 {
   align-self: center;
-  font-size: 26px;
-  line-height: 32px;
+  font-size: 1.5rem;
+  line-height: 1.875rem;
+  font-weight: 400;
 }
 
 <div

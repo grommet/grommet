@@ -1,6 +1,7 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 import 'jest-styled-components';
+import { hpe } from 'grommet-theme-hpe';
 
 import { Grommet } from '../../Grommet';
 import { Meter } from '..';
@@ -10,7 +11,7 @@ const VALUES = [{ value: 20, label: 'twenty', onHover: () => {} }];
 describe('Meter', () => {
   test('default', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Meter />
       </Grommet>,
     );
@@ -20,7 +21,7 @@ describe('Meter', () => {
 
   test('single', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Meter value={25} />
       </Grommet>,
     );
@@ -30,7 +31,7 @@ describe('Meter', () => {
 
   test('basic', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Meter values={VALUES} />
       </Grommet>,
     );
@@ -46,7 +47,7 @@ describe('Meter', () => {
 
   test('many values', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Meter
           values={[
             { value: 5 },
@@ -68,7 +69,7 @@ describe('Meter', () => {
   test('boundary values', () => {
     // for https://github.com/grommet/grommet/issues/6190
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Meter
           type="circle"
           values={[{ value: 2.26 }, { value: 8.04 }]}
@@ -83,7 +84,7 @@ describe('Meter', () => {
   test('large circle values', () => {
     // for https://github.com/grommet/grommet/issues/6190
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Meter
           type="circle"
           values={[
@@ -104,7 +105,7 @@ describe('Meter', () => {
 
   test('type', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Meter type="bar" values={VALUES} />
         <Meter type="circle" values={VALUES} />
         <Meter type="pie" values={VALUES} />
@@ -117,7 +118,7 @@ describe('Meter', () => {
 
   test('size', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Meter size="xsmall" values={VALUES} />
         <Meter size="small" values={VALUES} />
         <Meter size="medium" values={VALUES} />
@@ -175,7 +176,7 @@ describe('Meter', () => {
 
   test('round', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Meter round values={VALUES} />
         <Meter type="circle" round values={VALUES} />
         <Meter type="semicircle" round values={VALUES} />
@@ -187,7 +188,7 @@ describe('Meter', () => {
 
   test('background', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Meter background="light-3" values={VALUES} />
         <Meter
           background={{ color: 'light-3', opacity: 'medium' }}
@@ -211,7 +212,7 @@ describe('Meter', () => {
 
   test('vertical', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Meter direction="vertical" values={VALUES} />
       </Grommet>,
     );
@@ -221,7 +222,7 @@ describe('Meter', () => {
 
   test('reverse', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Meter reverse values={VALUES} />
       </Grommet>,
     );
@@ -241,7 +242,7 @@ describe('Meter', () => {
 
   test('reverse circle', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Meter type="circle" background="light-2" reverse values={VALUES} />
       </Grommet>,
     );

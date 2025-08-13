@@ -1,9 +1,12 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`Chart animate 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -47,7 +50,7 @@ exports[`Chart animate 1`] = `
     0
     <g
       fill="none"
-      stroke="#6FFFB0"
+      stroke="#3c3aa1"
       stroke-linecap="butt"
       stroke-linejoin="miter"
       stroke-width="24"
@@ -84,7 +87,7 @@ exports[`Chart animate 1`] = `
     0
     <g
       fill="none"
-      stroke="#6FFFB0"
+      stroke="#3c3aa1"
       stroke-linecap="butt"
       stroke-linejoin="miter"
       stroke-width="24"
@@ -107,8 +110,8 @@ exports[`Chart animate 1`] = `
   >
     0
     <g
-      fill="#6FFFB0"
-      stroke="#6FFFB0"
+      fill="#3c3aa1"
+      stroke="#3c3aa1"
       stroke-linecap="butt"
       stroke-linejoin="miter"
       stroke-width="24"
@@ -129,7 +132,7 @@ exports[`Chart animate 1`] = `
   >
     0
     <g
-      fill="#6FFFB0"
+      fill="#3c3aa1"
       stroke="none"
       stroke-linecap="butt"
       stroke-linejoin="miter"
@@ -409,8 +412,11 @@ exports[`Chart calcs xsmall thickness 1`] = `
 
 exports[`Chart cap 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -437,7 +443,7 @@ exports[`Chart cap 1`] = `
     0
     <g
       fill="none"
-      stroke="#6FFFB0"
+      stroke="#3c3aa1"
       stroke-linecap="round"
       stroke-linejoin="round"
       stroke-width="24"
@@ -474,7 +480,7 @@ exports[`Chart cap 1`] = `
     0
     <g
       fill="none"
-      stroke="#6FFFB0"
+      stroke="#3c3aa1"
       stroke-linecap="round"
       stroke-linejoin="round"
       stroke-width="24"
@@ -497,8 +503,8 @@ exports[`Chart cap 1`] = `
   >
     0
     <g
-      fill="#6FFFB0"
-      stroke="#6FFFB0"
+      fill="#3c3aa1"
+      stroke="#3c3aa1"
       stroke-linecap="round"
       stroke-linejoin="round"
       stroke-width="24"
@@ -519,7 +525,7 @@ exports[`Chart cap 1`] = `
   >
     0
     <g
-      fill="#6FFFB0"
+      fill="#3c3aa1"
       stroke="none"
       stroke-linecap="round"
       stroke-linejoin="round"
@@ -555,8 +561,11 @@ exports[`Chart cap 1`] = `
 
 exports[`Chart color 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -583,7 +592,7 @@ exports[`Chart color 1`] = `
     0
     <g
       fill="none"
-      stroke="#7D4CDB"
+      stroke="#01a982"
       stroke-linecap="butt"
       stroke-linejoin="miter"
       stroke-width="24"
@@ -621,7 +630,7 @@ exports[`Chart color 1`] = `
     <g
       fill="none"
       opacity="0.8"
-      stroke="#7D4CDB"
+      stroke="#01a982"
       stroke-linecap="butt"
       stroke-linejoin="miter"
       stroke-width="24"
@@ -665,11 +674,11 @@ exports[`Chart color 1`] = `
       >
         <stop
           offset="0"
-          stop-color="rgba(0, 0, 0, 0.33)"
+          stop-color="rgba(0, 0, 0, 0.36)"
         />
         <stop
           offset="1"
-          stop-color="#7D4CDB"
+          stop-color="#01a982"
         />
       </lineargradient>
       <mask
@@ -719,8 +728,11 @@ exports[`Chart color 1`] = `
 
 exports[`Chart dash 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -747,7 +759,7 @@ exports[`Chart dash 1`] = `
     0
     <g
       fill="none"
-      stroke="#6FFFB0"
+      stroke="#3c3aa1"
       stroke-linecap="butt"
       stroke-linejoin="miter"
       stroke-width="24"
@@ -781,8 +793,11 @@ exports[`Chart dash 1`] = `
 
 exports[`Chart default 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -809,7 +824,7 @@ exports[`Chart default 1`] = `
     0
     <g
       fill="none"
-      stroke="#6FFFB0"
+      stroke="#3c3aa1"
       stroke-linecap="butt"
       stroke-linejoin="miter"
       stroke-width="24"
@@ -841,8 +856,11 @@ exports[`Chart default 1`] = `
 
 exports[`Chart gap 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -851,16 +869,6 @@ exports[`Chart gap 1`] = `
 }
 
 .c1 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  flex-direction: column;
-  width: 768px;
-}
-
-.c2 {
   display: block;
   max-width: 100%;
   overflow: visible;
@@ -869,128 +877,127 @@ exports[`Chart gap 1`] = `
 <div
   class="c0"
 >
-  <div
+  <svg
     class="c1"
+    height="192"
+    preserveAspectRatio="none"
+    viewBox="-12 -12 84 216"
+    width="60"
   >
-    <svg
-      class="c2"
-      height="192"
-      preserveAspectRatio="none"
-      viewBox="-12 -12 84 216"
-      width="60"
+    0
+    <g
+      fill="none"
+      stroke="#3c3aa1"
+      stroke-linecap="butt"
+      stroke-linejoin="miter"
+      stroke-width="24"
     >
-      0
       <g
         fill="none"
-        stroke="#6FFFB0"
-        stroke-linecap="butt"
-        stroke-linejoin="miter"
-        stroke-width="24"
       >
-        <g
-          fill="none"
-        >
-          <title>
-            sixty
-          </title>
-          <path
-            d="M 60,192 L 60,0"
-          />
-        </g>
-        <g
-          fill="none"
-        >
-          <title>
-            zero
-          </title>
-          <path
-            d="M 0,192 L 0,192"
-          />
-        </g>
+        <title>
+          sixty
+        </title>
+        <path
+          d="M 60,192 L 60,0"
+        />
       </g>
-    </svg>
-    <svg
-      class="c2"
-      height="192"
-      preserveAspectRatio="none"
-      viewBox="-12 -12 96 216"
-      width="72"
-    >
-      0
       <g
         fill="none"
-        stroke="#6FFFB0"
-        stroke-linecap="butt"
-        stroke-linejoin="miter"
-        stroke-width="24"
       >
-        <g
-          fill="none"
-        >
-          <title>
-            sixty
-          </title>
-          <path
-            d="M 72,192 L 72,0"
-          />
-        </g>
-        <g
-          fill="none"
-        >
-          <title>
-            zero
-          </title>
-          <path
-            d="M 0,192 L 0,192"
-          />
-        </g>
+        <title>
+          zero
+        </title>
+        <path
+          d="M 0,192 L 0,192"
+        />
       </g>
-    </svg>
-    <svg
-      class="c2"
-      height="192"
-      preserveAspectRatio="none"
-      viewBox="-12 -12 120 216"
-      width="96"
+    </g>
+  </svg>
+  <svg
+    class="c1"
+    height="192"
+    preserveAspectRatio="none"
+    viewBox="-12 -12 96 216"
+    width="72"
+  >
+    0
+    <g
+      fill="none"
+      stroke="#3c3aa1"
+      stroke-linecap="butt"
+      stroke-linejoin="miter"
+      stroke-width="24"
     >
-      0
       <g
         fill="none"
-        stroke="#6FFFB0"
-        stroke-linecap="butt"
-        stroke-linejoin="miter"
-        stroke-width="24"
       >
-        <g
-          fill="none"
-        >
-          <title>
-            sixty
-          </title>
-          <path
-            d="M 96,192 L 96,0"
-          />
-        </g>
-        <g
-          fill="none"
-        >
-          <title>
-            zero
-          </title>
-          <path
-            d="M 0,192 L 0,192"
-          />
-        </g>
+        <title>
+          sixty
+        </title>
+        <path
+          d="M 72,192 L 72,0"
+        />
       </g>
-    </svg>
-  </div>
+      <g
+        fill="none"
+      >
+        <title>
+          zero
+        </title>
+        <path
+          d="M 0,192 L 0,192"
+        />
+      </g>
+    </g>
+  </svg>
+  <svg
+    class="c1"
+    height="192"
+    preserveAspectRatio="none"
+    viewBox="-12 -12 120 216"
+    width="96"
+  >
+    0
+    <g
+      fill="none"
+      stroke="#3c3aa1"
+      stroke-linecap="butt"
+      stroke-linejoin="miter"
+      stroke-width="24"
+    >
+      <g
+        fill="none"
+      >
+        <title>
+          sixty
+        </title>
+        <path
+          d="M 96,192 L 96,0"
+        />
+      </g>
+      <g
+        fill="none"
+      >
+        <title>
+          zero
+        </title>
+        <path
+          d="M 0,192 L 0,192"
+        />
+      </g>
+    </g>
+  </svg>
 </div>
 `;
 
 exports[`Chart horizontal 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1017,7 +1024,7 @@ exports[`Chart horizontal 1`] = `
     0
     <g
       fill="none"
-      stroke="#6FFFB0"
+      stroke="#3c3aa1"
       stroke-linecap="butt"
       stroke-linejoin="miter"
       stroke-width="24"
@@ -1054,7 +1061,7 @@ exports[`Chart horizontal 1`] = `
     0
     <g
       fill="none"
-      stroke="#6FFFB0"
+      stroke="#3c3aa1"
       stroke-linecap="butt"
       stroke-linejoin="miter"
       stroke-width="24"
@@ -1077,8 +1084,8 @@ exports[`Chart horizontal 1`] = `
   >
     0
     <g
-      fill="#6FFFB0"
-      stroke="#6FFFB0"
+      fill="#3c3aa1"
+      stroke="#3c3aa1"
       stroke-linecap="butt"
       stroke-linejoin="miter"
       stroke-width="24"
@@ -1099,7 +1106,7 @@ exports[`Chart horizontal 1`] = `
   >
     0
     <g
-      fill="#6FFFB0"
+      fill="#3c3aa1"
       stroke="none"
       stroke-linecap="butt"
       stroke-linejoin="miter"
@@ -1131,8 +1138,11 @@ exports[`Chart horizontal 1`] = `
 
 exports[`Chart opacity 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1160,7 +1170,7 @@ exports[`Chart opacity 1`] = `
     <g
       fill="none"
       opacity="0.4"
-      stroke="#6FFFB0"
+      stroke="#3c3aa1"
       stroke-linecap="butt"
       stroke-linejoin="miter"
       stroke-width="24"
@@ -1197,7 +1207,7 @@ exports[`Chart opacity 1`] = `
     0
     <g
       fill="none"
-      stroke="#6FFFB0"
+      stroke="#3c3aa1"
       stroke-linecap="butt"
       stroke-linejoin="miter"
       stroke-width="24"
@@ -1235,7 +1245,7 @@ exports[`Chart opacity 1`] = `
     <g
       fill="none"
       opacity="0.8"
-      stroke="#6FFFB0"
+      stroke="#3c3aa1"
       stroke-linecap="butt"
       stroke-linejoin="miter"
       stroke-width="24"
@@ -1272,7 +1282,7 @@ exports[`Chart opacity 1`] = `
     0
     <g
       fill="none"
-      stroke="#6FFFB0"
+      stroke="#3c3aa1"
       stroke-linecap="butt"
       stroke-linejoin="miter"
       stroke-width="24"
@@ -1353,7 +1363,7 @@ exports[`Chart opacity 1`] = `
   >
     0
     <g
-      fill="#6FFFB0"
+      fill="#3c3aa1"
       stroke="none"
       stroke-linecap="butt"
       stroke-linejoin="miter"
@@ -1539,8 +1549,11 @@ exports[`Chart pad 1`] = `
 
 exports[`Chart pattern 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1572,7 +1585,7 @@ exports[`Chart pattern 1`] = `
         width="48"
       >
         <rect
-          fill="#6FFFB0"
+          fill="#3c3aa1"
           height="24"
           width="24"
           x="12"
@@ -1581,8 +1594,8 @@ exports[`Chart pattern 1`] = `
       </pattern>
     </defs>
     <g
-      fill="#6FFFB0"
-      stroke="#6FFFB0"
+      fill="#3c3aa1"
+      stroke="#3c3aa1"
       stroke-linecap="butt"
       stroke-linejoin="miter"
     >
@@ -1611,14 +1624,14 @@ exports[`Chart pattern 1`] = `
         <circle
           cx="24"
           cy="24"
-          fill="#6FFFB0"
+          fill="#3c3aa1"
           r="12"
         />
       </pattern>
     </defs>
     <g
-      fill="#6FFFB0"
-      stroke="#6FFFB0"
+      fill="#3c3aa1"
+      stroke="#3c3aa1"
       stroke-linecap="butt"
       stroke-linejoin="miter"
     >
@@ -1646,14 +1659,14 @@ exports[`Chart pattern 1`] = `
       >
         <path
           d="M 0 24 L 48 24"
-          stroke="#6FFFB0"
+          stroke="#3c3aa1"
           stroke-width="24"
         />
       </pattern>
     </defs>
     <g
-      fill="#6FFFB0"
-      stroke="#6FFFB0"
+      fill="#3c3aa1"
+      stroke="#3c3aa1"
       stroke-linecap="butt"
       stroke-linejoin="miter"
     >
@@ -1681,14 +1694,14 @@ exports[`Chart pattern 1`] = `
       >
         <path
           d="M 24 0 L 24 48"
-          stroke="#6FFFB0"
+          stroke="#3c3aa1"
           stroke-width="24"
         />
       </pattern>
     </defs>
     <g
-      fill="#6FFFB0"
-      stroke="#6FFFB0"
+      fill="#3c3aa1"
+      stroke="#3c3aa1"
       stroke-linecap="butt"
       stroke-linejoin="miter"
     >
@@ -1717,14 +1730,14 @@ exports[`Chart pattern 1`] = `
         <path
           d="M 16.970562748477143 -16.970562748477143 L 84.8528137423857 50.91168824543143
               M -16.970562748477143 16.970562748477143 L 50.91168824543143 84.8528137423857"
-          stroke="#6FFFB0"
+          stroke="#3c3aa1"
           stroke-width="24"
         />
       </pattern>
     </defs>
     <g
-      fill="#6FFFB0"
-      stroke="#6FFFB0"
+      fill="#3c3aa1"
+      stroke="#3c3aa1"
       stroke-linecap="butt"
       stroke-linejoin="miter"
     >
@@ -1753,14 +1766,14 @@ exports[`Chart pattern 1`] = `
         <path
           d="M -16.970562748477143 50.91168824543143 L 50.91168824543143 -16.970562748477143
               M 16.970562748477143 84.8528137423857 L 84.8528137423857 16.970562748477143"
-          stroke="#6FFFB0"
+          stroke="#3c3aa1"
           stroke-width="24"
         />
       </pattern>
     </defs>
     <g
-      fill="#6FFFB0"
-      stroke="#6FFFB0"
+      fill="#3c3aa1"
+      stroke="#3c3aa1"
       stroke-linecap="butt"
       stroke-linejoin="miter"
     >
@@ -1777,8 +1790,11 @@ exports[`Chart pattern 1`] = `
 
 exports[`Chart point 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1804,7 +1820,7 @@ exports[`Chart point 1`] = `
   >
     0
     <g
-      fill="#6FFFB0"
+      fill="#3c3aa1"
       stroke="none"
       stroke-linecap="butt"
       stroke-linejoin="miter"
@@ -1844,7 +1860,7 @@ exports[`Chart point 1`] = `
   >
     0
     <g
-      fill="#6FFFB0"
+      fill="#3c3aa1"
       stroke="none"
       stroke-linecap="butt"
       stroke-linejoin="miter"
@@ -1880,7 +1896,7 @@ exports[`Chart point 1`] = `
   >
     0
     <g
-      fill="#6FFFB0"
+      fill="#3c3aa1"
       stroke="none"
       stroke-linecap="butt"
       stroke-linejoin="miter"
@@ -1916,7 +1932,7 @@ exports[`Chart point 1`] = `
   >
     0
     <g
-      fill="#6FFFB0"
+      fill="#3c3aa1"
       stroke="none"
       stroke-linecap="butt"
       stroke-linejoin="miter"
@@ -1952,7 +1968,7 @@ exports[`Chart point 1`] = `
   >
     0
     <g
-      fill="#6FFFB0"
+      fill="#3c3aa1"
       stroke="none"
       stroke-linecap="butt"
       stroke-linejoin="miter"
@@ -1988,7 +2004,7 @@ exports[`Chart point 1`] = `
   >
     0
     <g
-      fill="#6FFFB0"
+      fill="#3c3aa1"
       stroke="none"
       stroke-linecap="butt"
       stroke-linejoin="miter"
@@ -2020,8 +2036,11 @@ exports[`Chart point 1`] = `
 
 exports[`Chart renders a11yTitle and aria-label 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -2049,7 +2068,7 @@ exports[`Chart renders a11yTitle and aria-label 1`] = `
     0
     <g
       fill="none"
-      stroke="#6FFFB0"
+      stroke="#3c3aa1"
       stroke-linecap="butt"
       stroke-linejoin="miter"
       stroke-width="24"
@@ -2087,7 +2106,7 @@ exports[`Chart renders a11yTitle and aria-label 1`] = `
     0
     <g
       fill="none"
-      stroke="#6FFFB0"
+      stroke="#3c3aa1"
       stroke-linecap="butt"
       stroke-linejoin="miter"
       stroke-width="24"
@@ -2119,8 +2138,11 @@ exports[`Chart renders a11yTitle and aria-label 1`] = `
 
 exports[`Chart should not have accessibility violations 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -2147,7 +2169,7 @@ exports[`Chart should not have accessibility violations 1`] = `
     0
     <g
       fill="none"
-      stroke="#6FFFB0"
+      stroke="#3c3aa1"
       stroke-linecap="butt"
       stroke-linejoin="miter"
       stroke-width="24"
@@ -2179,23 +2201,16 @@ exports[`Chart should not have accessibility violations 1`] = `
 
 exports[`Chart size 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-}
-
-.c2 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  flex-direction: column;
-  width: 768px;
 }
 
 .c1 {
@@ -2217,7 +2232,7 @@ exports[`Chart size 1`] = `
     0
     <g
       fill="none"
-      stroke="#6FFFB0"
+      stroke="#3c3aa1"
       stroke-linecap="butt"
       stroke-linejoin="miter"
       stroke-width="24"
@@ -2254,7 +2269,7 @@ exports[`Chart size 1`] = `
     0
     <g
       fill="none"
-      stroke="#6FFFB0"
+      stroke="#3c3aa1"
       stroke-linecap="butt"
       stroke-linejoin="miter"
       stroke-width="24"
@@ -2291,7 +2306,7 @@ exports[`Chart size 1`] = `
     0
     <g
       fill="none"
-      stroke="#6FFFB0"
+      stroke="#3c3aa1"
       stroke-linecap="butt"
       stroke-linejoin="miter"
       stroke-width="24"
@@ -2328,7 +2343,7 @@ exports[`Chart size 1`] = `
     0
     <g
       fill="none"
-      stroke="#6FFFB0"
+      stroke="#3c3aa1"
       stroke-linecap="butt"
       stroke-linejoin="miter"
       stroke-width="24"
@@ -2365,7 +2380,7 @@ exports[`Chart size 1`] = `
     0
     <g
       fill="none"
-      stroke="#6FFFB0"
+      stroke="#3c3aa1"
       stroke-linecap="butt"
       stroke-linejoin="miter"
       stroke-width="24"
@@ -2392,128 +2407,127 @@ exports[`Chart size 1`] = `
       </g>
     </g>
   </svg>
-  <div
-    class="c2"
+  <svg
+    class="c1"
+    height="192"
+    preserveAspectRatio="none"
+    viewBox="-12 -12 24 216"
+    width="0"
   >
-    <svg
-      class="c1"
-      height="192"
-      preserveAspectRatio="none"
-      viewBox="-12 -12 24 216"
-      width="0"
+    0
+    <g
+      fill="none"
+      stroke="#3c3aa1"
+      stroke-linecap="butt"
+      stroke-linejoin="miter"
+      stroke-width="24"
     >
-      0
       <g
         fill="none"
-        stroke="#6FFFB0"
-        stroke-linecap="butt"
-        stroke-linejoin="miter"
-        stroke-width="24"
       >
-        <g
-          fill="none"
-        >
-          <title>
-            sixty
-          </title>
-          <path
-            d="M 0,192 L 0,0"
-          />
-        </g>
-        <g
-          fill="none"
-        >
-          <title>
-            zero
-          </title>
-          <path
-            d="M 0,192 L 0,192"
-          />
-        </g>
+        <title>
+          sixty
+        </title>
+        <path
+          d="M 0,192 L 0,0"
+        />
       </g>
-    </svg>
-    <svg
-      class="c1"
-      height="192"
-      preserveAspectRatio="none"
-      viewBox="-12 -12 24 216"
-      width="0"
-    >
-      0
       <g
         fill="none"
-        stroke="#6FFFB0"
-        stroke-linecap="butt"
-        stroke-linejoin="miter"
-        stroke-width="24"
       >
-        <g
-          fill="none"
-        >
-          <title>
-            sixty
-          </title>
-          <path
-            d="M 0,192 L 0,0"
-          />
-        </g>
-        <g
-          fill="none"
-        >
-          <title>
-            zero
-          </title>
-          <path
-            d="M 0,192 L 0,192"
-          />
-        </g>
+        <title>
+          zero
+        </title>
+        <path
+          d="M 0,192 L 0,192"
+        />
       </g>
-    </svg>
-    <svg
-      class="c1"
-      height="192"
-      preserveAspectRatio="none"
-      viewBox="-12 -12 96 216"
-      width="72"
+    </g>
+  </svg>
+  <svg
+    class="c1"
+    height="192"
+    preserveAspectRatio="none"
+    viewBox="-12 -12 24 216"
+    width="0"
+  >
+    0
+    <g
+      fill="none"
+      stroke="#3c3aa1"
+      stroke-linecap="butt"
+      stroke-linejoin="miter"
+      stroke-width="24"
     >
-      0
       <g
         fill="none"
-        stroke="#6FFFB0"
-        stroke-linecap="butt"
-        stroke-linejoin="miter"
-        stroke-width="24"
       >
-        <g
-          fill="none"
-        >
-          <title>
-            sixty
-          </title>
-          <path
-            d="M 72,192 L 72,0"
-          />
-        </g>
-        <g
-          fill="none"
-        >
-          <title>
-            zero
-          </title>
-          <path
-            d="M 0,192 L 0,192"
-          />
-        </g>
+        <title>
+          sixty
+        </title>
+        <path
+          d="M 0,192 L 0,0"
+        />
       </g>
-    </svg>
-  </div>
+      <g
+        fill="none"
+      >
+        <title>
+          zero
+        </title>
+        <path
+          d="M 0,192 L 0,192"
+        />
+      </g>
+    </g>
+  </svg>
+  <svg
+    class="c1"
+    height="192"
+    preserveAspectRatio="none"
+    viewBox="-12 -12 96 216"
+    width="72"
+  >
+    0
+    <g
+      fill="none"
+      stroke="#3c3aa1"
+      stroke-linecap="butt"
+      stroke-linejoin="miter"
+      stroke-width="24"
+    >
+      <g
+        fill="none"
+      >
+        <title>
+          sixty
+        </title>
+        <path
+          d="M 72,192 L 72,0"
+        />
+      </g>
+      <g
+        fill="none"
+      >
+        <title>
+          zero
+        </title>
+        <path
+          d="M 0,192 L 0,192"
+        />
+      </g>
+    </g>
+  </svg>
 </div>
 `;
 
 exports[`Chart thickness 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -2540,7 +2554,7 @@ exports[`Chart thickness 1`] = `
     0
     <g
       fill="none"
-      stroke="#6FFFB0"
+      stroke="#3c3aa1"
       stroke-linecap="butt"
       stroke-linejoin="miter"
       stroke-width="6"
@@ -2577,7 +2591,7 @@ exports[`Chart thickness 1`] = `
     0
     <g
       fill="none"
-      stroke="#6FFFB0"
+      stroke="#3c3aa1"
       stroke-linecap="butt"
       stroke-linejoin="miter"
       stroke-width="12"
@@ -2614,7 +2628,7 @@ exports[`Chart thickness 1`] = `
     0
     <g
       fill="none"
-      stroke="#6FFFB0"
+      stroke="#3c3aa1"
       stroke-linecap="butt"
       stroke-linejoin="miter"
       stroke-width="24"
@@ -2651,7 +2665,7 @@ exports[`Chart thickness 1`] = `
     0
     <g
       fill="none"
-      stroke="#6FFFB0"
+      stroke="#3c3aa1"
       stroke-linecap="butt"
       stroke-linejoin="miter"
       stroke-width="48"
@@ -2688,7 +2702,7 @@ exports[`Chart thickness 1`] = `
     0
     <g
       fill="none"
-      stroke="#6FFFB0"
+      stroke="#3c3aa1"
       stroke-linecap="butt"
       stroke-linejoin="miter"
       stroke-width="96"
@@ -2720,8 +2734,11 @@ exports[`Chart thickness 1`] = `
 
 exports[`Chart type 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -2748,7 +2765,7 @@ exports[`Chart type 1`] = `
     0
     <g
       fill="none"
-      stroke="#6FFFB0"
+      stroke="#3c3aa1"
       stroke-linecap="butt"
       stroke-linejoin="miter"
       stroke-width="24"
@@ -2785,7 +2802,7 @@ exports[`Chart type 1`] = `
     0
     <g
       fill="none"
-      stroke="#6FFFB0"
+      stroke="#3c3aa1"
       stroke-linecap="butt"
       stroke-linejoin="miter"
       stroke-width="24"
@@ -2808,8 +2825,8 @@ exports[`Chart type 1`] = `
   >
     0
     <g
-      fill="#6FFFB0"
-      stroke="#6FFFB0"
+      fill="#3c3aa1"
+      stroke="#3c3aa1"
       stroke-linecap="butt"
       stroke-linejoin="miter"
       stroke-width="24"
@@ -2830,7 +2847,7 @@ exports[`Chart type 1`] = `
   >
     0
     <g
-      fill="#6FFFB0"
+      fill="#3c3aa1"
       stroke="none"
       stroke-linecap="butt"
       stroke-linejoin="miter"
@@ -2862,8 +2879,11 @@ exports[`Chart type 1`] = `
 
 exports[`Chart undefined values 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -2890,7 +2910,7 @@ exports[`Chart undefined values 1`] = `
     0
     <g
       fill="none"
-      stroke="#6FFFB0"
+      stroke="#3c3aa1"
       stroke-linecap="butt"
       stroke-linejoin="miter"
       stroke-width="24"
@@ -2927,7 +2947,7 @@ exports[`Chart undefined values 1`] = `
     0
     <g
       fill="none"
-      stroke="#6FFFB0"
+      stroke="#3c3aa1"
       stroke-linecap="butt"
       stroke-linejoin="miter"
       stroke-width="24"
@@ -2950,8 +2970,8 @@ exports[`Chart undefined values 1`] = `
   >
     0
     <g
-      fill="#6FFFB0"
-      stroke="#6FFFB0"
+      fill="#3c3aa1"
+      stroke="#3c3aa1"
       stroke-linecap="butt"
       stroke-linejoin="miter"
       stroke-width="24"
@@ -2972,7 +2992,7 @@ exports[`Chart undefined values 1`] = `
   >
     0
     <g
-      fill="#6FFFB0"
+      fill="#3c3aa1"
       stroke="none"
       stroke-linecap="butt"
       stroke-linejoin="miter"
@@ -3004,8 +3024,11 @@ exports[`Chart undefined values 1`] = `
 
 exports[`Chart value style 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -3031,13 +3054,13 @@ exports[`Chart value style 1`] = `
   >
     0
     <g
-      fill="#6FFFB0"
+      fill="#3c3aa1"
       stroke="none"
       stroke-linecap="butt"
       stroke-linejoin="miter"
     >
       <g
-        fill="#009E67"
+        fill="#009a71"
         opacity="0.8"
         stroke="none"
       >
@@ -3076,7 +3099,7 @@ exports[`Chart value style 1`] = `
     0
     <g
       fill="none"
-      stroke="#6FFFB0"
+      stroke="#3c3aa1"
       stroke-linecap="butt"
       stroke-linejoin="miter"
       stroke-width="24"
@@ -3084,7 +3107,7 @@ exports[`Chart value style 1`] = `
       <g
         fill="none"
         opacity="0.8"
-        stroke="#009E67"
+        stroke="#009a71"
         stroke-width="12"
       >
         <title>

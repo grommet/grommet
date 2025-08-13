@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-
+import { hpe } from 'grommet-theme-hpe';
 import { Grommet, Header } from '../..';
 
 describe('Header', () => {
@@ -8,7 +8,7 @@ describe('Header', () => {
     const ref = React.createRef<HTMLDivElement>();
 
     render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Header ref={ref}>Hello, World!</Header>
       </Grommet>,
     );

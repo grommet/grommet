@@ -7,20 +7,15 @@ import 'regenerator-runtime/runtime';
 import { axe } from 'jest-axe';
 import { fireEvent, render, screen } from '@testing-library/react';
 import { Add } from 'grommet-icons';
-
 import { hpe } from 'grommet-theme-hpe';
 import { deepMerge } from '../../../utils';
 import { Grommet, Button, Box } from '../..';
-import { buttonKindTheme } from './theme/buttonKindTheme';
+// import { buttonKindTheme } from './theme/buttonKindTheme';
 
 describe('Button kind', () => {
   test('should have no accessibility violations', async () => {
     const { container, getByText } = render(
-      <Grommet
-        theme={{
-          button: { default: {} },
-        }}
-      >
+      <Grommet theme={hpe}>
         <Button a11yTitle="Test button" label="Test" onClick={() => {}} />
       </Grommet>,
     );
@@ -32,7 +27,7 @@ describe('Button kind', () => {
 
   test('default button', () => {
     const { container } = render(
-      <Grommet theme={buttonKindTheme}>
+      <Grommet theme={hpe}>
         <Button />
       </Grommet>,
     );
@@ -41,15 +36,7 @@ describe('Button kind', () => {
 
   test('button with icon and align', () => {
     const { container } = render(
-      <Grommet
-        theme={{
-          button: {
-            default: {
-              color: undefined, // needed use case for the test coverage
-            },
-          },
-        }}
-      >
+      <Grommet theme={hpe}>
         <Button icon={<Add />} align="start" />
       </Grommet>,
     );
@@ -58,21 +45,7 @@ describe('Button kind', () => {
 
   test('button icon colors', () => {
     const { container } = render(
-      <Grommet
-        theme={{
-          button: {
-            default: {
-              background: {
-                color: '#666666',
-              },
-              border: {
-                color: '#666666',
-              },
-              color: undefined, // needed use case for the test coverage
-            },
-          },
-        }}
-      >
+      <Grommet theme={hpe}>
         <Button icon={<Add />} color="#000" />
       </Grommet>,
     );
@@ -81,15 +54,7 @@ describe('Button kind', () => {
 
   test(`mouseOver and mouseOut events`, async () => {
     const { container, getByText } = render(
-      <Grommet
-        theme={{
-          button: {
-            default: {
-              background: '#000',
-            },
-          },
-        }}
-      >
+      <Grommet theme={hpe}>
         <Button label="label" icon={<Add />} />
       </Grommet>,
     );
@@ -102,7 +67,7 @@ describe('Button kind', () => {
 
   test('primary button', () => {
     const { container } = render(
-      <Grommet theme={buttonKindTheme}>
+      <Grommet theme={hpe}>
         <Button primary />
         <Button primary disabled />
       </Grommet>,
@@ -112,7 +77,7 @@ describe('Button kind', () => {
 
   test('secondary button', () => {
     const { container } = render(
-      <Grommet theme={buttonKindTheme}>
+      <Grommet theme={hpe}>
         <Button secondary />
       </Grommet>,
     );
@@ -121,18 +86,7 @@ describe('Button kind', () => {
 
   test('border on default button', () => {
     const { container } = render(
-      <Grommet
-        theme={{
-          button: {
-            default: {
-              border: {
-                color: 'green',
-                width: '2px',
-              },
-            },
-          },
-        }}
-      >
+      <Grommet theme={hpe}>
         <Button label="Test" />
       </Grommet>,
     );
@@ -141,15 +95,7 @@ describe('Button kind', () => {
 
   test('no border on default button', () => {
     const { container } = render(
-      <Grommet
-        theme={{
-          button: {
-            default: {
-              border: false,
-            },
-          },
-        }}
-      >
+      <Grommet theme={hpe}>
         <Button label="Test" />
       </Grommet>,
     );
@@ -158,17 +104,7 @@ describe('Button kind', () => {
 
   test('extend on default button', () => {
     const { container } = render(
-      <Grommet
-        theme={{
-          button: {
-            default: {
-              extend: {
-                color: 'green',
-              },
-            },
-          },
-        }}
-      >
+      <Grommet theme={hpe}>
         <Button label="Test" />
       </Grommet>,
     );
@@ -177,11 +113,7 @@ describe('Button kind', () => {
 
   test('fill', () => {
     const { container } = render(
-      <Grommet
-        theme={{
-          button: { default: {} },
-        }}
-      >
+      <Grommet theme={hpe}>
         <Button label="Test" fill />
         <Button label="Test" fill="vertical" />
         <Button label="Test" fill="horizontal" />
@@ -192,18 +124,7 @@ describe('Button kind', () => {
 
   test('font on button default', () => {
     const { container } = render(
-      <Grommet
-        theme={{
-          button: {
-            default: {
-              font: {
-                weight: 700,
-                height: '20px',
-              },
-            },
-          },
-        }}
-      >
+      <Grommet theme={hpe}>
         <Button label="Test" />
       </Grommet>,
     );
@@ -212,18 +133,7 @@ describe('Button kind', () => {
 
   test('font undefined', () => {
     const { container } = render(
-      <Grommet
-        theme={{
-          button: {
-            default: {
-              font: {
-                weight: undefined,
-                height: undefined,
-              },
-            },
-          },
-        }}
-      >
+      <Grommet theme={hpe}>
         <Button label="Test" />
       </Grommet>,
     );
@@ -232,18 +142,7 @@ describe('Button kind', () => {
 
   test('hover on default button', () => {
     const { container } = render(
-      <Grommet
-        theme={{
-          button: {
-            default: {
-              hover: {
-                color: 'white',
-                background: 'green',
-              },
-            },
-          },
-        }}
-      >
+      <Grommet theme={hpe}>
         <Button label="Test" plain hoverIndicator onClick={() => {}} />
       </Grommet>,
     );
@@ -252,15 +151,7 @@ describe('Button kind', () => {
 
   test('opacity on default button', () => {
     const { container } = render(
-      <Grommet
-        theme={{
-          button: {
-            default: {
-              opacity: true,
-            },
-          },
-        }}
-      >
+      <Grommet theme={hpe}>
         <Button label="Test" />
       </Grommet>,
     );
@@ -269,22 +160,7 @@ describe('Button kind', () => {
 
   test('padding on default button', () => {
     const { container } = render(
-      <Grommet
-        theme={{
-          button: {
-            default: {
-              padding: {
-                horizontal: '12px',
-                vertical: '6px',
-              },
-              background: {
-                color: 'green',
-              },
-              color: 'text',
-            },
-          },
-        }}
-      >
+      <Grommet theme={hpe}>
         <Button label="Test" />
       </Grommet>,
     );
@@ -293,7 +169,7 @@ describe('Button kind', () => {
 
   test('render of children', () => {
     const { container } = render(
-      <Grommet theme={buttonKindTheme}>
+      <Grommet theme={hpe}>
         <Button>Test</Button>
       </Grommet>,
     );
@@ -301,33 +177,33 @@ describe('Button kind', () => {
   });
 
   // Custom theme with intelligentPad set to true
-  const themeWithIntelligentPadTrue = {
-    button: {
-      size: {
-        medium: {
-          pad: {
-            horizontal: '10px',
-            vertical: '10px',
-          },
-        },
-      },
-      default: {},
-      secondary: {
-        border: {
-          color: 'brand',
-          width: '2px',
-        },
-        color: 'text-strong',
-        font: {
-          weight: 600,
-        },
-      },
-    },
-  };
+  // const themeWithIntelligentPadTrue = {
+  //   button: {
+  //     size: {
+  //       medium: {
+  //         pad: {
+  //           horizontal: '10px',
+  //           vertical: '10px',
+  //         },
+  //       },
+  //     },
+  //     default: {},
+  //     secondary: {
+  //       border: {
+  //         color: 'brand',
+  //         width: '2px',
+  //       },
+  //       color: 'text-strong',
+  //       font: {
+  //         weight: 600,
+  //       },
+  //     },
+  //   },
+  // };
 
   test('padding is applied correctly when intelligentPad is true', () => {
     const { container } = render(
-      <Grommet theme={themeWithIntelligentPadTrue}>
+      <Grommet theme={hpe}>
         <Button secondary label="Test" />
       </Grommet>,
     );
@@ -373,19 +249,7 @@ describe('Button kind', () => {
 
   test('no padding on default button', () => {
     const { container } = render(
-      <Grommet
-        theme={{
-          button: {
-            default: {
-              padding: '0px',
-              color: 'text',
-              border: {
-                color: false,
-              },
-            },
-          },
-        }}
-      >
+      <Grommet theme={hpe}>
         <Button label="Test" />
       </Grommet>,
     );
@@ -394,24 +258,7 @@ describe('Button kind', () => {
 
   test('size of default button', () => {
     const { container } = render(
-      <Grommet
-        theme={{
-          button: {
-            size: {
-              small: {
-                border: {
-                  radius: '4px',
-                },
-                pad: {
-                  vertical: '4px',
-                  horizontal: '8px',
-                },
-              },
-            },
-            default: {},
-          },
-        }}
-      >
+      <Grommet theme={hpe}>
         <Button label="Test" size="small" />
       </Grommet>,
     );
@@ -421,11 +268,7 @@ describe('Button kind', () => {
   test(`disabled state cursor should indicate the button cannot be 
   clicked`, () => {
     const { getByText } = render(
-      <Grommet
-        theme={{
-          button: { default: {} },
-        }}
-      >
+      <Grommet theme={hpe}>
         <Button disabled label="Button" />
       </Grommet>,
     );
@@ -439,11 +282,7 @@ describe('Button kind', () => {
 
   test(`disabled with hoverIndicator should not hover`, () => {
     const { container, getByText } = render(
-      <Grommet
-        theme={{
-          button: { default: {} },
-        }}
-      >
+      <Grommet theme={hpe}>
         <Button disabled hoverIndicator label="Button" />
       </Grommet>,
     );
@@ -455,42 +294,7 @@ describe('Button kind', () => {
 
   test(`should apply styling according to theme size definitions`, () => {
     const { container } = render(
-      <Grommet
-        theme={{
-          button: {
-            default: {},
-            size: {
-              small: {
-                border: {
-                  radius: '4px',
-                },
-                pad: {
-                  vertical: '4px',
-                  horizontal: '8px',
-                },
-              },
-              medium: {
-                border: {
-                  radius: '4px',
-                },
-                pad: {
-                  vertical: '6px',
-                  horizontal: '12px',
-                },
-              },
-              large: {
-                border: {
-                  radius: '6px',
-                },
-                pad: {
-                  vertical: '6px',
-                  horizontal: '16px',
-                },
-              },
-            },
-          },
-        }}
-      >
+      <Grommet theme={hpe}>
         <Button label="Button" size="small" />
         {/* button with no size specified should have medium styling applied 
         by default */}
@@ -504,18 +308,7 @@ describe('Button kind', () => {
 
   test(`badge should be offset from top-right corner`, () => {
     const { container } = render(
-      <Grommet
-        theme={{
-          button: {
-            default: {
-              border: {
-                color: 'border',
-                width: '2px',
-              },
-            },
-          },
-        }}
-      >
+      <Grommet theme={hpe}>
         <Button a11yTitle="Button, alert" label="Button" badge />
       </Grommet>,
     );
@@ -525,18 +318,7 @@ describe('Button kind', () => {
 
   test(`badge should display number content`, () => {
     const { container } = render(
-      <Grommet
-        theme={{
-          button: {
-            default: {
-              border: {
-                color: 'border',
-                width: '2px',
-              },
-            },
-          },
-        }}
-      >
+      <Grommet theme={hpe}>
         <Button a11yTitle="Button, 2 unread alerts" label="Button" badge={2} />
       </Grommet>,
     );
@@ -546,18 +328,7 @@ describe('Button kind', () => {
 
   test(`badge should display "+" when number is greater than max`, () => {
     const { container } = render(
-      <Grommet
-        theme={{
-          button: {
-            default: {
-              border: {
-                color: 'border',
-                width: '2px',
-              },
-            },
-          },
-        }}
-      >
+      <Grommet theme={hpe}>
         <Button
           a11yTitle="Button, 100 unread alerts"
           label="Button"
@@ -571,18 +342,7 @@ describe('Button kind', () => {
 
   test(`badge should apply background`, () => {
     const { container } = render(
-      <Grommet
-        theme={{
-          button: {
-            default: {
-              border: {
-                color: 'border',
-                width: '2px',
-              },
-            },
-          },
-        }}
-      >
+      <Grommet theme={hpe}>
         <Button
           a11yTitle="Button, 100 unread alerts"
           label="Button"
@@ -599,18 +359,7 @@ describe('Button kind', () => {
 
   test(`badge should render custom element`, () => {
     const { container } = render(
-      <Grommet
-        theme={{
-          button: {
-            default: {
-              border: {
-                color: 'border',
-                width: '2px',
-              },
-            },
-          },
-        }}
-      >
+      <Grommet theme={hpe}>
         <Button
           a11yTitle="Button, Add user alert"
           label="Button"
@@ -625,11 +374,7 @@ describe('Button kind', () => {
   test(`badge should render relative to contents when button has no 
   border or background`, () => {
     const { container } = render(
-      <Grommet
-        theme={{
-          button: { default: {} },
-        }}
-      >
+      <Grommet theme={hpe}>
         <Button a11yTitle="Button, Add user alert" icon={<Add />} badge />
       </Grommet>,
     );
@@ -639,18 +384,7 @@ describe('Button kind', () => {
 
   test(`badge should align to button container if specified in theme`, () => {
     const { container } = render(
-      <Grommet
-        theme={{
-          button: {
-            badge: {
-              align: 'container',
-            },
-            default: {
-              border: undefined,
-            },
-          },
-        }}
-      >
+      <Grommet theme={hpe}>
         <Button a11yTitle="Button, alert" label="Button" badge={2} />
       </Grommet>,
     );
@@ -660,11 +394,7 @@ describe('Button kind', () => {
 
   test(`hoverIndicator with color and background`, () => {
     const { container, getByText } = render(
-      <Grommet
-        theme={{
-          button: { default: {} },
-        }}
-      >
+      <Grommet theme={hpe}>
         <Button
           hoverIndicator={{
             background: {
@@ -684,27 +414,7 @@ describe('Button kind', () => {
 
   test(`hover secondary with color and background`, () => {
     const { container, getByText } = render(
-      <Grommet
-        theme={{
-          button: {
-            default: {},
-            secondary: {
-              color: 'white',
-              background: {
-                color: 'skyblue',
-              },
-            },
-            hover: {
-              secondary: {
-                color: 'green',
-                background: {
-                  color: 'orange',
-                },
-              },
-            },
-          },
-        }}
-      >
+      <Grommet theme={hpe}>
         <Button secondary label="Button" />
       </Grommet>,
     );
@@ -716,11 +426,7 @@ describe('Button kind', () => {
 
   test(`plain with icon`, () => {
     const { asFragment } = render(
-      <Grommet
-        theme={{
-          button: { default: {} },
-        }}
-      >
+      <Grommet theme={hpe}>
         <Button plain icon={<Add />} />
       </Grommet>,
     );
@@ -729,19 +435,7 @@ describe('Button kind', () => {
 
   test(`should apply kind direction`, () => {
     const { asFragment } = render(
-      <Grommet
-        theme={{
-          button: {
-            default: {},
-            secondary: {
-              direction: 'column',
-              font: {
-                size: 'xsmall',
-              },
-            },
-          },
-        }}
-      >
+      <Grommet theme={hpe}>
         <Button secondary label="Button" icon={<svg />} />
       </Grommet>,
     );
@@ -750,45 +444,7 @@ describe('Button kind', () => {
 
   test('icon only pad should apply when icon but no label', () => {
     const { asFragment } = render(
-      <Grommet
-        theme={{
-          button: {
-            default: {},
-            size: {
-              small: {
-                pad: {
-                  horizontal: '12px',
-                  vertical: '5px',
-                },
-                iconOnly: {
-                  pad: '5px',
-                },
-              },
-              medium: {
-                pad: {
-                  horizontal: '18px',
-                  vertical: '8px',
-                },
-                iconOnly: {
-                  pad: {
-                    vertical: '8px',
-                    horizontal: '12px',
-                  },
-                },
-              },
-              large: {
-                pad: {
-                  horizontal: '24px',
-                  vertical: '18px',
-                },
-                iconOnly: {
-                  pad: '18px',
-                },
-              },
-            },
-          },
-        }}
-      >
+      <Grommet theme={hpe}>
         <Button icon={<Add />} size="small" />
         <Button label="Add" size="small" />
         <Button icon={<Add />} />
@@ -844,17 +500,17 @@ describe('Button kind', () => {
   });
 
   test('match icon size to size prop when theme.icon.matchSize is true', () => {
-    const theme = {
-      icon: {
-        matchSize: true,
-      },
-      button: {
-        default: {},
-      },
-    };
+    // const theme = {
+    //   icon: {
+    //     matchSize: true,
+    //   },
+    //   button: {
+    //     default: {},
+    //   },
+    // };
 
     const { asFragment } = render(
-      <Grommet theme={theme}>
+      <Grommet theme={hpe}>
         <Button size="xsmall" label="Label" icon={<Add />} />
         <Button size="small" label="Label" icon={<Add />} />
         <Button label="Label" icon={<Add />} />
@@ -866,14 +522,14 @@ describe('Button kind', () => {
   });
 
   test('should render pad', () => {
-    const theme = {
-      button: {
-        default: {},
-      },
-    };
+    // const theme = {
+    //   button: {
+    //     default: {},
+    //   },
+    // };
 
     const { asFragment } = render(
-      <Grommet theme={theme}>
+      <Grommet theme={hpe}>
         <Button
           data-testid="string-pad"
           label="String pad"

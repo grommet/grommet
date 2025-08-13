@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { fireEvent, render, screen } from '@testing-library/react';
 import 'jest-styled-components';
+import { hpe } from 'grommet-theme-hpe';
 
 import { Data } from '../../Data';
 import { DataFilters } from '../../DataFilters';
@@ -32,7 +33,7 @@ const Selected = ({ messages }: { messages?: object }) => {
 describe('DataSummary', () => {
   test('renders', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Data data={data}>
           <DataFilters>
             <DataSummary />
@@ -46,7 +47,7 @@ describe('DataSummary', () => {
 
   test('renders total message correctly when only 1 item', () => {
     const { asFragment } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Data data={[{ name: 'a' }]}>
           <DataFilters>
             <DataSummary />
@@ -61,7 +62,7 @@ describe('DataSummary', () => {
 
   test('renders filtered message correctly when 0 results but only 1 item', () => {
     const { asFragment } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Data
           data={[{ name: 'a' }]}
           defaultView={{
@@ -83,7 +84,7 @@ describe('DataSummary', () => {
 
   test('should render DataTable selections message in alignment with selections', () => {
     render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Selected />
       </Grommet>,
     );
@@ -97,7 +98,7 @@ describe('DataSummary', () => {
 
   test('should render messages prop', () => {
     render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Selected
           messages={{
             selected: '{selected} SELECTED!',

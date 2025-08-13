@@ -138,8 +138,11 @@ exports[`NameValuePair should render name when name is typeof string 1`] = `
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -157,17 +160,18 @@ exports[`NameValuePair should render name when name is typeof string 1`] = `
 
 .c4 {
   margin: 0px;
-  font-size: 18px;
-  line-height: 24px;
-  color: #444444;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  color: #555555;
+  font-weight: undefined;
 }
 
 .c3 {
   margin-bottom: 3px;
-  font-size: 18px;
-  line-height: 24px;
-  color: #444444;
-  font-weight: bold;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  color: #2e2e2e;
+  font-weight: 500;
 }
 
 @media only screen and (max-width: 768px) {
@@ -358,8 +362,11 @@ exports[`NameValuePair should render value when provided as child of type JSX El
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -386,17 +393,18 @@ exports[`NameValuePair should render value when provided as child of type JSX El
 
 .c4 {
   margin: 0px;
-  font-size: 18px;
-  line-height: 24px;
-  color: #444444;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  color: #555555;
+  font-weight: undefined;
 }
 
 .c3 {
   margin-bottom: 3px;
-  font-size: 18px;
-  line-height: 24px;
-  color: #444444;
-  font-weight: bold;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  color: #2e2e2e;
+  font-weight: 500;
 }
 
 @media only screen and (max-width: 768px) {
@@ -478,7 +486,7 @@ exports[`NameValuePair should render value when provided as child of type JSX El
           />
           <path
             d="M 0,24 L 0,0 L 307.2,0 L 307.2,24 Z"
-            fill="#6FFFB0"
+            fill="#3c3aa1"
             stroke="none"
             stroke-width="0"
           />

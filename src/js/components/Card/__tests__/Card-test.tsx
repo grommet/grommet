@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 import 'jest-styled-components';
-
+import { hpe } from 'grommet-theme-hpe';
 import { Box } from '../../Box';
 import { Card } from '..';
 import { CardBody } from '../../CardBody';
@@ -42,7 +42,7 @@ const customTheme: ThemeType = {
 describe('Card', () => {
   test('renders', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Card />
       </Grommet>,
     );
@@ -58,7 +58,7 @@ describe('Card', () => {
 
   test('header', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Card>
           <CardHeader>header</CardHeader>
         </Card>
@@ -70,7 +70,7 @@ describe('Card', () => {
 
   test('footer', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Card>
           <CardFooter>footer</CardFooter>
         </Card>
@@ -82,7 +82,7 @@ describe('Card', () => {
 
   test('children', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Card>
           <Box>
             <Text>test</Text>
@@ -96,7 +96,7 @@ describe('Card', () => {
 
   test('all', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Card>
           <CardHeader>header</CardHeader>
           <CardBody>body</CardBody>

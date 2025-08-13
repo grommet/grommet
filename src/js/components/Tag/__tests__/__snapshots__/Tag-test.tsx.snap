@@ -1,4 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`Tag basic 1`] = `
 .c1 {
@@ -6,13 +6,13 @@ exports[`Tag basic 1`] = `
   box-sizing: border-box;
   max-width: 100%;
   align-items: center;
-  border: solid 1px rgba(0, 0, 0, 0.33);
+  border: solid 1px rgba(0, 0, 0, 0.12);
   min-width: 0;
   min-height: 0;
   flex-direction: row;
   min-width: min-content;
   flex: 0 0 auto;
-  border-radius: 48px;
+  border-radius: 6px;
 }
 
 .c2 {
@@ -23,26 +23,30 @@ exports[`Tag basic 1`] = `
   min-height: 0;
   flex-direction: column;
   min-width: min-content;
-  padding-left: 12px;
-  padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
 
 .c3 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  font-weight: 400;
 }
 
 .c4 {
-  font-size: 18px;
-  line-height: 24px;
-  font-weight: 600;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  font-weight: 500;
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -52,27 +56,27 @@ exports[`Tag basic 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c1 {
-    border: solid 1px rgba(0, 0, 0, 0.33);
+    border: solid 1px rgba(0, 0, 0, 0.12);
   }
 }
 
 @media only screen and (max-width: 768px) {
   .c1 {
-    border-radius: 24px;
+    border-radius: 3px;
   }
 }
 
 @media only screen and (max-width: 768px) {
   .c2 {
-    padding-left: 6px;
-    padding-right: 6px;
+    padding-left: 10px;
+    padding-right: 10px;
   }
 }
 
 @media only screen and (max-width: 768px) {
   .c2 {
-    padding-top: 3px;
-    padding-bottom: 3px;
+    padding-top: 5px;
+    padding-bottom: 5px;
   }
 }
 
@@ -215,21 +219,22 @@ exports[`Tag onClick 1`] = `
   min-height: 0;
   flex-direction: column;
   min-width: min-content;
-  padding-left: 12px;
-  padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
 
 .c4 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  font-weight: 400;
 }
 
 .c5 {
-  font-size: 18px;
-  line-height: 24px;
-  font-weight: 600;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  font-weight: 500;
 }
 
 .c1 {
@@ -242,16 +247,22 @@ exports[`Tag onClick 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  color: inherit;
   outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
+  color: inherit;
+}
+
+.c1:hover {
+  background-color: rgba(0, 0, 0, 0.04);
+  color: #555555;
 }
 
 .c1:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c1:focus >circle,
@@ -261,8 +272,9 @@ exports[`Tag onClick 1`] = `
 .c1:focus >polygon,
 .c1:focus >polyline,
 .c1:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c1:focus ::-moz-focus-inner {
@@ -270,6 +282,8 @@ exports[`Tag onClick 1`] = `
 }
 
 .c1:focus:not(:focus-visible) {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -281,6 +295,8 @@ exports[`Tag onClick 1`] = `
 .c1:focus:not(:focus-visible) >polygon,
 .c1:focus:not(:focus-visible) >polyline,
 .c1:focus:not(:focus-visible) >rect {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -290,8 +306,11 @@ exports[`Tag onClick 1`] = `
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -300,33 +319,33 @@ exports[`Tag onClick 1`] = `
 }
 
 .c2 {
-  border: solid 1px rgba(0, 0, 0, 0.33);
-  border-radius: 48px;
+  border: solid 1px rgba(0, 0, 0, 0.12);
+  border-radius: 6px;
 }
 
 @media only screen and (max-width: 768px) {
   .c3 {
-    padding-left: 6px;
-    padding-right: 6px;
+    padding-left: 10px;
+    padding-right: 10px;
   }
 }
 
 @media only screen and (max-width: 768px) {
   .c3 {
-    padding-top: 3px;
-    padding-bottom: 3px;
+    padding-top: 5px;
+    padding-bottom: 5px;
   }
 }
 
 @media only screen and (max-width: 768px) {
   .c2 {
-    border: solid 1px rgba(0, 0, 0, 0.33);
+    border: solid 1px rgba(0, 0, 0, 0.12);
   }
 }
 
 @media only screen and (max-width: 768px) {
   .c2 {
-    border-radius: 24px;
+    border-radius: 3px;
   }
 }
 
@@ -355,41 +374,13 @@ exports[`Tag onClick 1`] = `
 `;
 
 exports[`Tag onRemove 1`] = `
-.c1 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  align-items: center;
-  border: solid 1px rgba(0, 0, 0, 0.33);
-  min-width: 0;
-  min-height: 0;
-  flex-direction: row;
-  min-width: min-content;
-  flex: 0 0 auto;
-  border-radius: 48px;
-}
-
-.c2 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  flex-direction: column;
-  min-width: min-content;
-  padding-left: 12px;
-  padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
-}
-
 .c7 {
   display: inline-block;
   flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #666666;
-  stroke: #666666;
+  width: 16px;
+  height: 16px;
+  fill: #2e2e2e;
+  stroke: #2e2e2e;
 }
 
 .c7 g {
@@ -415,15 +406,44 @@ exports[`Tag onRemove 1`] = `
   stroke: none;
 }
 
+.c1 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-items: center;
+  border: solid 1px rgba(0, 0, 0, 0.12);
+  min-width: 0;
+  min-height: 0;
+  flex-direction: row;
+  min-width: min-content;
+  flex: 0 0 auto;
+  border-radius: 6px;
+}
+
+.c2 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  min-width: min-content;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
 .c3 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  font-weight: 400;
 }
 
 .c4 {
-  font-size: 18px;
-  line-height: 24px;
-  font-weight: 600;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  font-weight: 500;
 }
 
 .c5 {
@@ -436,18 +456,43 @@ exports[`Tag onRemove 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  margin-right: 6px;
-  color: inherit;
-  outline: none;
+  margin-right: 3px;
   border: none;
-  padding: 0;
-  text-align: inherit;
+  border-radius: 9999px;
+  padding: 5px 5px;
+  font-size: 1rem;
   line-height: 0;
+  background-color: rgba(0, 0, 0, 0);
+  color: #2e2e2e;
+  border-style: solid;
+  border-width: 1px;
+  border-color: rgba(0, 0, 0, 0);
+  border-radius: 9999px;
+  font-weight: 500;
+  padding: 5px 5px;
+  text-align: center;
+  transition-property: color,background-color,border-color,box-shadow;
+  transition-duration: 0.1s;
+  transition-timing-function: ease-in-out;
+}
+
+.c5 >svg {
+  display: flex;
+  align-self: center;
+  vertical-align: middle;
+}
+
+.c5:hover {
+  background-color: rgba(0, 0, 0, 0.04);
+  color: #2e2e2e;
+  border-color: rgba(0, 0, 0, 0);
+  font-weight: 500;
 }
 
 .c5:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c5:focus >circle,
@@ -457,8 +502,9 @@ exports[`Tag onRemove 1`] = `
 .c5:focus >polygon,
 .c5:focus >polyline,
 .c5:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c5:focus ::-moz-focus-inner {
@@ -466,6 +512,8 @@ exports[`Tag onRemove 1`] = `
 }
 
 .c5:focus:not(:focus-visible) {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -477,6 +525,8 @@ exports[`Tag onRemove 1`] = `
 .c5:focus:not(:focus-visible) >polygon,
 .c5:focus:not(:focus-visible) >polyline,
 .c5:focus:not(:focus-visible) >rect {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -486,8 +536,11 @@ exports[`Tag onRemove 1`] = `
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -496,38 +549,38 @@ exports[`Tag onRemove 1`] = `
 }
 
 .c6 {
-  border-radius: 48px;
+  border-radius: 6px;
 }
 
 @media only screen and (max-width: 768px) {
   .c1 {
-    border: solid 1px rgba(0, 0, 0, 0.33);
+    border: solid 1px rgba(0, 0, 0, 0.12);
   }
 }
 
 @media only screen and (max-width: 768px) {
   .c1 {
-    border-radius: 24px;
+    border-radius: 3px;
   }
 }
 
 @media only screen and (max-width: 768px) {
   .c2 {
-    padding-left: 6px;
-    padding-right: 6px;
+    padding-left: 10px;
+    padding-right: 10px;
   }
 }
 
 @media only screen and (max-width: 768px) {
   .c2 {
-    padding-top: 3px;
-    padding-bottom: 3px;
+    padding-top: 5px;
+    padding-bottom: 5px;
   }
 }
 
 @media only screen and (max-width: 768px) {
   .c6 {
-    border-radius: 24px;
+    border-radius: 3px;
   }
 }
 
@@ -556,15 +609,16 @@ exports[`Tag onRemove 1`] = `
       type="button"
     >
       <svg
-        aria-label="FormClose"
+        aria-label="Close"
         class="c7"
         viewBox="0 0 24 24"
       >
         <path
-          d="m7 7 10 10M7 17 17 7"
+          d="m3 3 18 18M3 21 21 3"
           fill="none"
           stroke="#000"
           stroke-width="2"
+          vector-effect="non-scaling-stroke"
         />
       </svg>
     </button>
@@ -574,63 +628,7 @@ exports[`Tag onRemove 1`] = `
 
 exports[`Tag renders custom remove button kind and size 1`] = `
 <DocumentFragment>
-  .c1 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  align-items: center;
-  border: solid 1px rgba(0, 0, 0, 0.33);
-  min-width: 0;
-  min-height: 0;
-  flex-direction: row;
-  min-width: min-content;
-  flex: 0 0 auto;
-  border-radius: 48px;
-}
-
-.c2 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  flex-direction: column;
-  min-width: min-content;
-  padding-left: 12px;
-  padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
-}
-
-.c8 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  flex-direction: column;
-  min-width: min-content;
-  padding-left: 16px;
-  padding-right: 16px;
-  padding-top: 6px;
-  padding-bottom: 6px;
-}
-
-.c13 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  flex-direction: column;
-  min-width: min-content;
-  padding-left: 18px;
-  padding-right: 18px;
-  padding-top: 6px;
-  padding-bottom: 6px;
-}
-
-.c7 {
+  .c7 {
   display: inline-block;
   flex: 0 0 auto;
   width: 24px;
@@ -724,6 +722,62 @@ exports[`Tag renders custom remove button kind and size 1`] = `
 .c17 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
+}
+
+.c1 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-items: center;
+  border: solid 1px rgba(0, 0, 0, 0.33);
+  min-width: 0;
+  min-height: 0;
+  flex-direction: row;
+  min-width: min-content;
+  flex: 0 0 auto;
+  border-radius: 48px;
+}
+
+.c2 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  min-width: min-content;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.c8 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  min-width: min-content;
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.c13 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  min-width: min-content;
+  padding-left: 18px;
+  padding-right: 18px;
+  padding-top: 6px;
+  padding-bottom: 6px;
 }
 
 .c3 {
@@ -1373,34 +1427,6 @@ exports[`Tag renders custom remove icon 1`] = `
 `;
 
 exports[`Tag renders default remove icon 1`] = `
-.c0 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  align-items: center;
-  border: solid 1px rgba(0, 0, 0, 0.33);
-  min-width: 0;
-  min-height: 0;
-  flex-direction: row;
-  min-width: min-content;
-  flex: 0 0 auto;
-  border-radius: 48px;
-}
-
-.c1 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  flex-direction: column;
-  min-width: min-content;
-  padding-left: 12px;
-  padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
-}
-
 .c6 {
   display: inline-block;
   flex: 0 0 auto;
@@ -1431,6 +1457,34 @@ exports[`Tag renders default remove icon 1`] = `
 .c6 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
+}
+
+.c0 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-items: center;
+  border: solid 1px rgba(0, 0, 0, 0.33);
+  min-width: 0;
+  min-height: 0;
+  flex-direction: row;
+  min-width: min-content;
+  flex: 0 0 auto;
+  border-radius: 48px;
+}
+
+.c1 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  min-width: min-content;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
 }
 
 .c2 {
@@ -1589,13 +1643,13 @@ exports[`Tag size 1`] = `
   box-sizing: border-box;
   max-width: 100%;
   align-items: center;
-  border: solid 1px rgba(0, 0, 0, 0.33);
+  border: solid 1px rgba(0, 0, 0, 0.12);
   min-width: 0;
   min-height: 0;
   flex-direction: row;
   min-width: min-content;
   flex: 0 0 auto;
-  border-radius: 48px;
+  border-radius: 6px;
 }
 
 .c2 {
@@ -1606,13 +1660,13 @@ exports[`Tag size 1`] = `
   min-height: 0;
   flex-direction: column;
   min-width: min-content;
-  padding-left: 8px;
-  padding-right: 8px;
+  padding-left: 6px;
+  padding-right: 6px;
   padding-top: 3px;
   padding-bottom: 3px;
 }
 
-.c5 {
+.c7 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -1620,41 +1674,13 @@ exports[`Tag size 1`] = `
   min-height: 0;
   flex-direction: column;
   min-width: min-content;
-  padding-left: 9.600000000000001px;
-  padding-right: 9.600000000000001px;
-  padding-top: 3px;
-  padding-bottom: 3px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
 
-.c8 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  flex-direction: column;
-  min-width: min-content;
-  padding-left: 12px;
-  padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
-}
-
-.c11 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  flex-direction: column;
-  min-width: min-content;
-  padding-left: 16px;
-  padding-right: 16px;
-  padding-top: 6px;
-  padding-bottom: 6px;
-}
-
-.c14 {
+.c10 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -1664,68 +1690,90 @@ exports[`Tag size 1`] = `
   min-width: min-content;
   padding-left: 18px;
   padding-right: 18px;
-  padding-top: 6px;
-  padding-bottom: 6px;
-}
-
-.c3 {
-  font-size: 12px;
-  line-height: 18px;
-}
-
-.c4 {
-  font-size: 12px;
-  line-height: 18px;
-  font-weight: 600;
-}
-
-.c6 {
-  font-size: 14px;
-  line-height: 20px;
-}
-
-.c7 {
-  font-size: 14px;
-  line-height: 20px;
-  font-weight: 600;
-}
-
-.c9 {
-  font-size: 18px;
-  line-height: 24px;
-}
-
-.c10 {
-  font-size: 18px;
-  line-height: 24px;
-  font-weight: 600;
-}
-
-.c12 {
-  font-size: 22px;
-  line-height: 28px;
+  padding-top: 9px;
+  padding-bottom: 9px;
 }
 
 .c13 {
-  font-size: 22px;
-  line-height: 28px;
-  font-weight: 600;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  min-width: min-content;
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.c3 {
+  font-size: 0.875rem;
+  line-height: 1rem;
+  font-weight: 400;
+}
+
+.c4 {
+  font-size: 0.875rem;
+  line-height: 1rem;
+  font-weight: 500;
+}
+
+.c5 {
+  font-size: 1rem;
+  line-height: 1.25rem;
+  font-weight: 400;
+}
+
+.c6 {
+  font-size: 1rem;
+  line-height: 1.25rem;
+  font-weight: 500;
+}
+
+.c8 {
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  font-weight: 400;
+}
+
+.c9 {
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  font-weight: 500;
+}
+
+.c11 {
+  font-size: 1.375rem;
+  line-height: 1.75rem;
+  font-weight: 400;
+}
+
+.c12 {
+  font-size: 1.375rem;
+  line-height: 1.75rem;
+  font-weight: 500;
+}
+
+.c14 {
+  font-size: 1.5rem;
+  line-height: 1.875rem;
+  font-weight: 400;
 }
 
 .c15 {
-  font-size: 26px;
-  line-height: 32px;
-}
-
-.c16 {
-  font-size: 26px;
-  line-height: 32px;
-  font-weight: 600;
+  font-size: 1.5rem;
+  line-height: 1.875rem;
+  font-weight: 500;
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1735,83 +1783,69 @@ exports[`Tag size 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c1 {
-    border: solid 1px rgba(0, 0, 0, 0.33);
+    border: solid 1px rgba(0, 0, 0, 0.12);
   }
 }
 
 @media only screen and (max-width: 768px) {
   .c1 {
-    border-radius: 24px;
+    border-radius: 3px;
   }
 }
 
 @media only screen and (max-width: 768px) {
   .c2 {
-    padding-left: 8px;
-    padding-right: 8px;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .c2 {
-    padding-top: 2px;
-    padding-bottom: 2px;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .c5 {
-    padding-left: 9.600000000000001px;
-    padding-right: 9.600000000000001px;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .c5 {
-    padding-top: 2px;
-    padding-bottom: 2px;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .c8 {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 
 @media only screen and (max-width: 768px) {
-  .c8 {
+  .c2 {
     padding-top: 3px;
     padding-bottom: 3px;
   }
 }
 
 @media only screen and (max-width: 768px) {
-  .c11 {
-    padding-left: 16px;
-    padding-right: 16px;
+  .c7 {
+    padding-left: 10px;
+    padding-right: 10px;
   }
 }
 
 @media only screen and (max-width: 768px) {
-  .c11 {
-    padding-top: 3px;
-    padding-bottom: 3px;
+  .c7 {
+    padding-top: 5px;
+    padding-bottom: 5px;
   }
 }
 
 @media only screen and (max-width: 768px) {
-  .c14 {
+  .c10 {
     padding-left: 18px;
     padding-right: 18px;
   }
 }
 
 @media only screen and (max-width: 768px) {
-  .c14 {
-    padding-top: 3px;
-    padding-bottom: 3px;
+  .c10 {
+    padding-top: 9px;
+    padding-bottom: 9px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c13 {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c13 {
+    padding-top: 20px;
+    padding-bottom: 20px;
   }
 }
 
@@ -1850,25 +1884,25 @@ exports[`Tag size 1`] = `
     class="c1"
   >
     <div
-      class="c5"
+      class="c2"
     >
       <span
-        class="c6"
+        class="c5"
       >
+        <span
+          class="c5"
+        >
+           
+          Name
+        </span>
+        <span
+          class="c5"
+        >
+           : 
+        </span>
         <span
           class="c6"
         >
-           
-          Name
-        </span>
-        <span
-          class="c6"
-        >
-           : 
-        </span>
-        <span
-          class="c7"
-        >
           Value
         </span>
       </span>
@@ -1878,24 +1912,52 @@ exports[`Tag size 1`] = `
     class="c1"
   >
     <div
-      class="c8"
+      class="c7"
     >
       <span
-        class="c9"
+        class="c8"
       >
         <span
-          class="c9"
+          class="c8"
         >
            
           Name
+        </span>
+        <span
+          class="c8"
+        >
+           : 
         </span>
         <span
           class="c9"
         >
+          Value
+        </span>
+      </span>
+    </div>
+  </div>
+  <div
+    class="c1"
+  >
+    <div
+      class="c10"
+    >
+      <span
+        class="c11"
+      >
+        <span
+          class="c11"
+        >
+           
+          Name
+        </span>
+        <span
+          class="c11"
+        >
            : 
         </span>
         <span
-          class="c10"
+          class="c12"
         >
           Value
         </span>
@@ -1906,52 +1968,24 @@ exports[`Tag size 1`] = `
     class="c1"
   >
     <div
-      class="c11"
+      class="c13"
     >
       <span
-        class="c12"
+        class="c14"
       >
         <span
-          class="c12"
+          class="c14"
         >
            
           Name
         </span>
         <span
-          class="c12"
+          class="c14"
         >
            : 
         </span>
         <span
-          class="c13"
-        >
-          Value
-        </span>
-      </span>
-    </div>
-  </div>
-  <div
-    class="c1"
-  >
-    <div
-      class="c14"
-    >
-      <span
-        class="c15"
-      >
-        <span
           class="c15"
-        >
-           
-          Name
-        </span>
-        <span
-          class="c15"
-        >
-           : 
-        </span>
-        <span
-          class="c16"
         >
           Value
         </span>

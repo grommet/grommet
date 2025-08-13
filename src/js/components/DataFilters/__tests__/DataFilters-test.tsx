@@ -3,7 +3,7 @@ import { act, render, screen, fireEvent } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import '@testing-library/jest-dom';
 import 'jest-styled-components';
-
+import { hpe } from 'grommet-theme-hpe';
 import { Data } from '../../Data';
 import { DataTable } from '../../DataTable';
 import { Grommet } from '../../Grommet';
@@ -19,7 +19,7 @@ describe('DataFilters', () => {
 
   test('renders', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Data data={data}>
           <DataFilters />
         </Data>
@@ -33,7 +33,7 @@ describe('DataFilters', () => {
     const user = userEvent.setup();
 
     const { container, getByRole } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Data id="test-data" data={data}>
           <DataFilters drop />
         </Data>
@@ -51,7 +51,7 @@ describe('DataFilters', () => {
 
   test('drop badge', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Data data={data} view={{ search: 'a', properties: { name: ['a'] } }}>
           <DataFilters drop />
         </Data>
@@ -65,7 +65,7 @@ describe('DataFilters', () => {
     const user = userEvent.setup();
 
     const { container, getByRole } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Data id="test-data" data={data}>
           <DataFilters layer />
         </Data>
@@ -83,7 +83,7 @@ describe('DataFilters', () => {
 
   test('properties array', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Data data={data} properties={['name']}>
           <DataFilters />
         </Data>
@@ -95,7 +95,7 @@ describe('DataFilters', () => {
 
   test('properties object', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Data data={data} properties={{ name: {} }}>
           <DataFilters />
         </Data>
@@ -108,7 +108,7 @@ describe('DataFilters', () => {
   test('should display all filter options regardless of result set', () => {
     const filters = ['a', 'blue', 'b', 'red'];
     const { asFragment } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Data
           data={[
             { name: filters[0], color: filters[1] },
@@ -157,7 +157,7 @@ describe('DataFilters', () => {
 
   test('clear', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Data data={data} view={{ search: 'a', properties: { name: ['a'] } }}>
           <DataFilters />
         </Data>
@@ -169,7 +169,7 @@ describe('DataFilters', () => {
 
   test('sub objects', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Data
           data={[
             { location: { city: 'Paris', lat: 48 } },
@@ -203,7 +203,7 @@ describe('DataFilters', () => {
   test('sub objects with rangeSelector', () => {
     jest.useFakeTimers();
     const { asFragment } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Data
           data={[{ location: { lat: 48 } }, { location: { lat: -33 } }]}
           properties={{
@@ -271,7 +271,7 @@ describe('DataFilters', () => {
   test('should not badge when RangeSelector returns to min/max', () => {
     jest.useFakeTimers();
     const { asFragment } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Data
           data={[{ location: { lat: 48 } }, { location: { lat: -33 } }]}
           properties={{

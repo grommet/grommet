@@ -6,19 +6,23 @@ exports[`SkipLink basic 1`] = `
   display: inline-flex;
   font-size: inherit;
   line-height: inherit;
-  color: #7D4CDB;
-  font-weight: 600;
-  text-decoration: none;
+  color: #006750;
+  font-weight: 500;
+  text-decoration: underline;
   cursor: pointer;
 }
 
 .c1:hover {
   text-decoration: underline;
+  color: #074b3b;
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -78,12 +82,12 @@ exports[`SkipLink basic 1`] = `
 
 exports[`SkipLink basic 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 kiEDjE"
+  class="StyledGrommet-sc-19lkkz7-0 iRGypN"
 >
   <div>
     <a
       aria-hidden="true"
-      class="StyledAnchor-sc-1rp7lwl-0 DlLkd SkipLinkTarget__HiddenAnchor-sc-16wjfgk-0 dLpcjH"
+      class="StyledAnchor-sc-1rp7lwl-0 gcksWT SkipLinkTarget__HiddenAnchor-sc-16wjfgk-0 dLpcjH"
       id="main"
       tabindex="-1"
     />
@@ -96,7 +100,7 @@ exports[`SkipLink basic 2`] = `
   <footer>
     <a
       aria-hidden="true"
-      class="StyledAnchor-sc-1rp7lwl-0 DlLkd SkipLinkTarget__HiddenAnchor-sc-16wjfgk-0 dLpcjH"
+      class="StyledAnchor-sc-1rp7lwl-0 gcksWT SkipLinkTarget__HiddenAnchor-sc-16wjfgk-0 dLpcjH"
       id="footer"
       tabindex="-1"
     />
@@ -110,12 +114,12 @@ exports[`SkipLink basic 2`] = `
 
 exports[`SkipLink basic 3`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 kiEDjE"
+  class="StyledGrommet-sc-19lkkz7-0 iRGypN"
 >
   <div>
     <a
       aria-hidden="true"
-      class="StyledAnchor-sc-1rp7lwl-0 DlLkd SkipLinkTarget__HiddenAnchor-sc-16wjfgk-0 dLpcjH"
+      class="StyledAnchor-sc-1rp7lwl-0 gcksWT SkipLinkTarget__HiddenAnchor-sc-16wjfgk-0 dLpcjH"
       id="main"
       tabindex="-1"
     />
@@ -128,7 +132,7 @@ exports[`SkipLink basic 3`] = `
   <footer>
     <a
       aria-hidden="true"
-      class="StyledAnchor-sc-1rp7lwl-0 DlLkd SkipLinkTarget__HiddenAnchor-sc-16wjfgk-0 dLpcjH"
+      class="StyledAnchor-sc-1rp7lwl-0 gcksWT SkipLinkTarget__HiddenAnchor-sc-16wjfgk-0 dLpcjH"
       id="footer"
       tabindex="-1"
     />
@@ -146,19 +150,23 @@ exports[`SkipLink should allow for single skip link 1`] = `
   display: inline-flex;
   font-size: inherit;
   line-height: inherit;
-  color: #7D4CDB;
-  font-weight: 600;
-  text-decoration: none;
+  color: #006750;
+  font-weight: 500;
+  text-decoration: underline;
   cursor: pointer;
 }
 
 .c1:hover {
   text-decoration: underline;
+  color: #074b3b;
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -208,12 +216,12 @@ exports[`SkipLink should allow for single skip link 1`] = `
 
 exports[`SkipLink should allow for single skip link 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 kiEDjE"
+  class="StyledGrommet-sc-19lkkz7-0 iRGypN"
 >
   <div>
     <a
       aria-hidden="true"
-      class="StyledAnchor-sc-1rp7lwl-0 DlLkd SkipLinkTarget__HiddenAnchor-sc-16wjfgk-0 dLpcjH"
+      class="StyledAnchor-sc-1rp7lwl-0 gcksWT SkipLinkTarget__HiddenAnchor-sc-16wjfgk-0 dLpcjH"
       id="main"
       tabindex="-1"
     />
@@ -234,12 +242,12 @@ exports[`SkipLink should allow for single skip link 2`] = `
 
 exports[`SkipLink should allow for single skip link 3`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 kiEDjE"
+  class="StyledGrommet-sc-19lkkz7-0 iRGypN"
 >
   <div>
     <a
       aria-hidden="true"
-      class="StyledAnchor-sc-1rp7lwl-0 DlLkd SkipLinkTarget__HiddenAnchor-sc-16wjfgk-0 dLpcjH"
+      class="StyledAnchor-sc-1rp7lwl-0 gcksWT SkipLinkTarget__HiddenAnchor-sc-16wjfgk-0 dLpcjH"
       id="main"
       tabindex="-1"
     />

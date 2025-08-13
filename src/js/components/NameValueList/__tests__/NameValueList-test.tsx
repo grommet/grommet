@@ -3,6 +3,7 @@ import 'jest-styled-components';
 import 'jest-axe/extend-expect';
 import 'regenerator-runtime/runtime';
 import { axe } from 'jest-axe';
+import { hpe } from 'grommet-theme-hpe';
 
 import { render } from '@testing-library/react';
 
@@ -20,7 +21,7 @@ const data = {
 describe('NameValueList', () => {
   test('should have no accessibility violations', async () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <NameValueList>
           {Object.entries(data).map(([name, value]) => (
             <NameValuePair key={name} name={name}>
@@ -37,7 +38,7 @@ describe('NameValueList', () => {
 
   test(`should render`, () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <NameValueList>
           {Object.entries(data).map(([name, value]) => (
             <NameValuePair key={name} name={name}>
@@ -149,7 +150,7 @@ describe('NameValueList', () => {
 
   test(`should render correct alignment of name`, () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <NameValueList nameProps={{ align: 'end' }}>
           {Object.entries(data).map(([name, value]) => (
             <NameValuePair key={name} name={name}>
@@ -165,7 +166,7 @@ describe('NameValueList', () => {
 
   test(`should render correct alignment of value`, () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <NameValueList valueProps={{ align: 'start' }}>
           {Object.entries(data).map(([name, value]) => (
             <NameValuePair key={name} name={name}>
@@ -181,7 +182,7 @@ describe('NameValueList', () => {
 
   test(`should render pairs in a grid when layout="grid"`, () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <NameValueList layout="grid">
           {Object.entries(data).map(([name, value]) => (
             <NameValuePair key={name} name={name}>
@@ -218,7 +219,7 @@ describe('NameValueList', () => {
   test(`should render name/value as a column when pairProps = { direction: 
     'column' }`, () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <NameValueList pairProps={{ direction: 'column' }}>
           {Object.entries(data).map(([name, value]) => (
             <NameValuePair key={name} name={name}>
@@ -235,7 +236,7 @@ describe('NameValueList', () => {
   test(`should render value above name when pairProps = { direction: 
     'column-reverse' }`, () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <NameValueList pairProps={{ direction: 'column-reverse' }}>
           {Object.entries(data).map(([name, value]) => (
             <NameValuePair key={name} name={name}>

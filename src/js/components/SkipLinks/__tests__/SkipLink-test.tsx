@@ -1,6 +1,7 @@
 import React from 'react';
 import 'jest-styled-components';
 import { act, render, fireEvent } from '@testing-library/react';
+import { hpe } from 'grommet-theme-hpe';
 
 import { Grommet, SkipLinks, SkipLink, SkipLinkTarget } from '../..';
 
@@ -8,7 +9,7 @@ describe('SkipLink', () => {
   test('basic', () => {
     jest.useFakeTimers();
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <SkipLinks id="skip-links">
           <SkipLink id="main" label="Main Content" />
           <SkipLink id="footer" label="Footer" />
@@ -45,7 +46,7 @@ describe('SkipLink', () => {
   test('should allow for single skip link', () => {
     jest.useFakeTimers();
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <SkipLinks id="skip-links">
           <SkipLink id="main" label="Main Content" />
         </SkipLinks>
@@ -76,7 +77,7 @@ describe('SkipLink', () => {
   test('should automatically filter out undefined children', () => {
     const showSecondLink = false;
     const result = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <SkipLinks>
           {showSecondLink && <SkipLink id="nav" label="Table of Contents" />}
           <SkipLink id="main" label="Main Content" />

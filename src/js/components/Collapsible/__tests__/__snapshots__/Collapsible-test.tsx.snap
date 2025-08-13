@@ -17,8 +17,11 @@ exports[`Collapsible onClick open default 1`] = `
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -27,8 +30,9 @@ exports[`Collapsible onClick open default 1`] = `
 }
 
 .c3 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  font-weight: undefined;
 }
 
 <div
@@ -50,7 +54,7 @@ exports[`Collapsible onClick open default 1`] = `
 
 exports[`Collapsible onClick open default 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 kiEDjE"
+  class="StyledGrommet-sc-19lkkz7-0 iRGypN"
 >
   <div
     aria-hidden="true"
@@ -58,7 +62,7 @@ exports[`Collapsible onClick open default 2`] = `
     style="max-height: 0px;"
   >
     <span
-      class="StyledText-sc-1sadyjn-0 jTcNpm"
+      class="StyledText-sc-1sadyjn-0 bdhRAP"
     >
       Example
     </span>
@@ -83,8 +87,11 @@ exports[`Collapsible open 1`] = `
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -93,8 +100,9 @@ exports[`Collapsible open 1`] = `
 }
 
 .c3 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  font-weight: undefined;
 }
 
 <div

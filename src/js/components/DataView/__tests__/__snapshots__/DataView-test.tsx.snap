@@ -1,6 +1,38 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`DataView preset view 1`] = `
+.c11 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 18px;
+  height: 18px;
+  fill: #555555;
+  stroke: #555555;
+}
+
+.c11 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c11 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c11 *[stroke*='#'],
+.c11 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c11 *[fill-rule],
+.c11 *[FILL-RULE],
+.c11 *[fill*='#'],
+.c11 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
+}
+
 .c1 {
   display: flex;
   box-sizing: border-box;
@@ -38,42 +70,12 @@ exports[`DataView preset view 1`] = `
   max-width: 100%;
   margin-left: 12px;
   margin-right: 12px;
+  margin-left: 12px;
+  margin-right: 12px;
   min-width: 0;
   min-height: 0;
   flex-direction: column;
   flex: 0 0 auto;
-}
-
-.c11 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
-}
-
-.c11 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c11 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c11 *[stroke*='#'],
-.c11 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c11 *[fill-rule],
-.c11 *[FILL-RULE],
-.c11 *[fill*='#'],
-.c11 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
 }
 
 .c3 {
@@ -86,16 +88,17 @@ exports[`DataView preset view 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  color: inherit;
   outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
+  color: inherit;
 }
 
 .c3:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c3:focus >circle,
@@ -105,8 +108,9 @@ exports[`DataView preset view 1`] = `
 .c3:focus >polygon,
 .c3:focus >polyline,
 .c3:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c3:focus ::-moz-focus-inner {
@@ -114,6 +118,8 @@ exports[`DataView preset view 1`] = `
 }
 
 .c3:focus:not(:focus-visible) {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -125,6 +131,8 @@ exports[`DataView preset view 1`] = `
 .c3:focus:not(:focus-visible) >polygon,
 .c3:focus:not(:focus-visible) >polyline,
 .c3:focus:not(:focus-visible) >rect {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -146,26 +154,31 @@ exports[`DataView preset view 1`] = `
   background: transparent;
   color: inherit;
   width: 100%;
-  padding: 11px;
-  font-weight: 600;
+  line-height: inherit;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-weight: 400;
   margin: 0;
-  border: 1px solid rgba(0, 0, 0, 0.33);
-  border-radius: 4px;
+  border: 1px solid rgba(0, 0, 0, 0.36);
+  border-radius: 8px;
+  color: #2e2e2e;
   border: none;
   outline: none;
   border: none;
 }
 
 .c8::-webkit-input-placeholder {
-  color: #AAAAAA;
+  color: #676767;
 }
 
 .c8::-moz-placeholder {
-  color: #AAAAAA;
+  color: #676767;
 }
 
 .c8:-ms-input-placeholder {
-  color: #AAAAAA;
+  color: #676767;
 }
 
 .c8 ::-webkit-search-decoration {
@@ -182,9 +195,26 @@ exports[`DataView preset view 1`] = `
   opacity: 1;
 }
 
+.c8::-webkit-input-placeholder {
+  font-weight: 400;
+}
+
+.c8::-moz-placeholder {
+  font-weight: 400;
+}
+
+.c8:-ms-input-placeholder {
+  font-weight: 400;
+}
+
 .c7 {
   position: relative;
   width: 100%;
+}
+
+.c7 svg {
+  fill: #2e2e2e;
+  stroke: #2e2e2e;
 }
 
 .c9 {
@@ -192,13 +222,25 @@ exports[`DataView preset view 1`] = `
 }
 
 .c4 {
-  border: 1px solid rgba(0, 0, 0, 0.33);
-  border-radius: 4px;
+  border: 1px solid rgba(0, 0, 0, 0.36);
+  border-radius: 8px;
+}
+
+.c4[class*="SelectMultiple"] [role="listbox"] {
+  padding-block: 6px;
+  padding-inline: 6px;
+}
+
+.c4[class*="SelectMultiple"] [role="listbox"] [role='option'] {
+  border-radius: 6px;
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -210,6 +252,18 @@ exports[`DataView preset view 1`] = `
   .c10 {
     margin-left: 6px;
     margin-right: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c10 {
+    margin-left: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c10 {
+    margin-right: 12px;
   }
 }
 
@@ -259,12 +313,12 @@ exports[`DataView preset view 1`] = `
             style="min-width: auto;"
           >
             <svg
-              aria-label="FormDown"
+              aria-label="Down"
               class="c11"
               viewBox="0 0 24 24"
             >
               <path
-                d="m18 9-6 6-6-6"
+                d="m2 8.35 10.173 9.823L21.997 8"
                 fill="none"
                 stroke="#000"
                 stroke-width="2"
@@ -279,6 +333,38 @@ exports[`DataView preset view 1`] = `
 `;
 
 exports[`DataView renders 1`] = `
+.c11 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 18px;
+  height: 18px;
+  fill: #555555;
+  stroke: #555555;
+}
+
+.c11 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c11 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c11 *[stroke*='#'],
+.c11 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c11 *[fill-rule],
+.c11 *[FILL-RULE],
+.c11 *[fill*='#'],
+.c11 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
+}
+
 .c1 {
   display: flex;
   box-sizing: border-box;
@@ -316,42 +402,12 @@ exports[`DataView renders 1`] = `
   max-width: 100%;
   margin-left: 12px;
   margin-right: 12px;
+  margin-left: 12px;
+  margin-right: 12px;
   min-width: 0;
   min-height: 0;
   flex-direction: column;
   flex: 0 0 auto;
-}
-
-.c11 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
-}
-
-.c11 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c11 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c11 *[stroke*='#'],
-.c11 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c11 *[fill-rule],
-.c11 *[FILL-RULE],
-.c11 *[fill*='#'],
-.c11 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
 }
 
 .c3 {
@@ -364,16 +420,17 @@ exports[`DataView renders 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  color: inherit;
   outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
+  color: inherit;
 }
 
 .c3:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c3:focus >circle,
@@ -383,8 +440,9 @@ exports[`DataView renders 1`] = `
 .c3:focus >polygon,
 .c3:focus >polyline,
 .c3:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c3:focus ::-moz-focus-inner {
@@ -392,6 +450,8 @@ exports[`DataView renders 1`] = `
 }
 
 .c3:focus:not(:focus-visible) {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -403,6 +463,8 @@ exports[`DataView renders 1`] = `
 .c3:focus:not(:focus-visible) >polygon,
 .c3:focus:not(:focus-visible) >polyline,
 .c3:focus:not(:focus-visible) >rect {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -424,26 +486,31 @@ exports[`DataView renders 1`] = `
   background: transparent;
   color: inherit;
   width: 100%;
-  padding: 11px;
-  font-weight: 600;
+  line-height: inherit;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-weight: 400;
   margin: 0;
-  border: 1px solid rgba(0, 0, 0, 0.33);
-  border-radius: 4px;
+  border: 1px solid rgba(0, 0, 0, 0.36);
+  border-radius: 8px;
+  color: #2e2e2e;
   border: none;
   outline: none;
   border: none;
 }
 
 .c8::-webkit-input-placeholder {
-  color: #AAAAAA;
+  color: #676767;
 }
 
 .c8::-moz-placeholder {
-  color: #AAAAAA;
+  color: #676767;
 }
 
 .c8:-ms-input-placeholder {
-  color: #AAAAAA;
+  color: #676767;
 }
 
 .c8 ::-webkit-search-decoration {
@@ -460,9 +527,26 @@ exports[`DataView renders 1`] = `
   opacity: 1;
 }
 
+.c8::-webkit-input-placeholder {
+  font-weight: 400;
+}
+
+.c8::-moz-placeholder {
+  font-weight: 400;
+}
+
+.c8:-ms-input-placeholder {
+  font-weight: 400;
+}
+
 .c7 {
   position: relative;
   width: 100%;
+}
+
+.c7 svg {
+  fill: #2e2e2e;
+  stroke: #2e2e2e;
 }
 
 .c9 {
@@ -470,13 +554,25 @@ exports[`DataView renders 1`] = `
 }
 
 .c4 {
-  border: 1px solid rgba(0, 0, 0, 0.33);
-  border-radius: 4px;
+  border: 1px solid rgba(0, 0, 0, 0.36);
+  border-radius: 8px;
+}
+
+.c4[class*="SelectMultiple"] [role="listbox"] {
+  padding-block: 6px;
+  padding-inline: 6px;
+}
+
+.c4[class*="SelectMultiple"] [role="listbox"] [role='option'] {
+  border-radius: 6px;
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -488,6 +584,18 @@ exports[`DataView renders 1`] = `
   .c10 {
     margin-left: 6px;
     margin-right: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c10 {
+    margin-left: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c10 {
+    margin-right: 12px;
   }
 }
 
@@ -537,12 +645,12 @@ exports[`DataView renders 1`] = `
             style="min-width: auto;"
           >
             <svg
-              aria-label="FormDown"
+              aria-label="Down"
               class="c11"
               viewBox="0 0 24 24"
             >
               <path
-                d="m18 9-6 6-6-6"
+                d="m2 8.35 10.173 9.823L21.997 8"
                 fill="none"
                 stroke="#000"
                 stroke-width="2"

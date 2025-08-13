@@ -1,6 +1,7 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 import 'jest-styled-components';
+import { hpe } from 'grommet-theme-hpe';
 
 import { Data } from '../../Data';
 import { DataFilters } from '../../DataFilters';
@@ -13,7 +14,7 @@ const data = [{ name: 'a' }, { name: 'b' }];
 describe('DataFilters', () => {
   test('renders', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Data data={data}>
           <Toolbar>
             <DataSearch />

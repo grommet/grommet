@@ -4,6 +4,7 @@ import { axe } from 'jest-axe';
 import 'jest-styled-components';
 import 'jest-axe/extend-expect';
 import 'regenerator-runtime/runtime';
+import { hpe } from 'grommet-theme-hpe';
 
 import { Grommet } from '../../Grommet';
 import { TextArea, TextAreaProps } from '..';
@@ -11,7 +12,7 @@ import { TextArea, TextAreaProps } from '..';
 describe('TextArea', () => {
   test('should not have accessibility violations', async () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <TextArea a11yTitle="test" id="item" name="item" />
       </Grommet>,
     );
@@ -21,7 +22,7 @@ describe('TextArea', () => {
 
   test('basic', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <TextArea id="item" name="item" />
       </Grommet>,
     );
@@ -37,7 +38,7 @@ describe('TextArea', () => {
 
   test('placeholder', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <TextArea id="item" name="item" placeholder="placeholder" />
       </Grommet>,
     );
@@ -47,7 +48,7 @@ describe('TextArea', () => {
 
   test('plain', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <TextArea id="item" name="item" plain />
       </Grommet>,
     );
@@ -57,7 +58,7 @@ describe('TextArea', () => {
 
   test('disabled', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <TextArea disabled id="item" name="item" plain />
       </Grommet>,
     );
@@ -67,7 +68,7 @@ describe('TextArea', () => {
 
   test('focusIndicator', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <TextArea id="item" name="item" focusIndicator />
       </Grommet>,
     );
@@ -77,7 +78,7 @@ describe('TextArea', () => {
 
   test('fill', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <TextArea id="item" name="item" fill />
       </Grommet>,
     );
@@ -94,7 +95,7 @@ describe('TextArea', () => {
   resizes.forEach((resize) => {
     test(`resize ${resize}`, () => {
       const { container } = render(
-        <Grommet>
+        <Grommet theme={hpe}>
           <TextArea id="item" name="item" resize={resize} />
         </Grommet>,
       );
@@ -106,7 +107,7 @@ describe('TextArea', () => {
   ['small', 'medium', 'large'].forEach((size) => {
     test(`size ${size}`, () => {
       const { container } = render(
-        <Grommet>
+        <Grommet theme={hpe}>
           <TextArea id="item" name="item" size={size} />
         </Grommet>,
       );
@@ -131,7 +132,7 @@ describe('TextArea', () => {
       };
 
       const component = render(
-        <Grommet>
+        <Grommet theme={hpe}>
           <TextArea
             id="item"
             name="item"
@@ -156,7 +157,7 @@ describe('TextArea', () => {
       };
 
       const component = render(
-        <Grommet>
+        <Grommet theme={hpe}>
           <TextArea
             id="item"
             name="item"
@@ -176,7 +177,7 @@ describe('TextArea', () => {
     test('onFocus', () => {
       const onFocus = jest.fn();
       const { container, getByPlaceholderText } = render(
-        <Grommet>
+        <Grommet theme={hpe}>
           <TextArea name="item" placeholder="item" onFocus={onFocus} />
         </Grommet>,
       );
@@ -188,7 +189,7 @@ describe('TextArea', () => {
     test('onChange', () => {
       const onChange = jest.fn();
       const { getByPlaceholderText } = render(
-        <Grommet>
+        <Grommet theme={hpe}>
           <TextArea name="item" placeholder="item" onChange={onChange} />
         </Grommet>,
       );
@@ -203,7 +204,7 @@ describe('TextArea', () => {
     test('onBlur is being called', () => {
       const onBlur = jest.fn();
       const { getByPlaceholderText } = render(
-        <Grommet>
+        <Grommet theme={hpe}>
           <TextArea name="item" placeholder="item" onBlur={onBlur} />
         </Grommet>,
       );
@@ -213,7 +214,7 @@ describe('TextArea', () => {
 
     test('renders size', () => {
       const { container } = render(
-        <Grommet>
+        <Grommet theme={hpe}>
           <TextArea size="xsmall" />
           <TextArea size="small" />
           <TextArea size="medium" />
@@ -245,7 +246,7 @@ describe('TextArea', () => {
 
   test('should apply a11yTitle or aria-label', () => {
     const { container, getByLabelText } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <TextArea a11yTitle="item" id="item" name="item" />
         <TextArea aria-label="item-2" id="item-2" name="item-2" />
       </Grommet>,

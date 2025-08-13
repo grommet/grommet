@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import 'jest-styled-components';
 import { render, fireEvent, screen, waitFor } from '@testing-library/react';
 import '@testing-library/jest-dom';
+import { hpe } from 'grommet-theme-hpe';
 
 import { Grommet } from '../../Grommet';
 import { Box } from '../../Box';
@@ -30,7 +31,7 @@ for (let i = 0; i < 95; i += 1) {
 describe('DataTable', () => {
   test('empty', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <DataTable />
       </Grommet>,
     );
@@ -44,7 +45,7 @@ describe('DataTable', () => {
 
   test('basic', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <DataTable
           columns={[
             { property: 'a', header: 'A' },
@@ -62,7 +63,7 @@ describe('DataTable', () => {
 
   test('!primaryKey', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <DataTable
           columns={[
             { property: 'a', header: 'A' },
@@ -81,7 +82,7 @@ describe('DataTable', () => {
 
   test('paths', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <DataTable
           columns={[
             { property: 'a', header: 'A' },
@@ -99,7 +100,7 @@ describe('DataTable', () => {
 
   test('primaryKey', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <DataTable
           columns={[
             { property: 'a', header: 'A' },
@@ -118,7 +119,7 @@ describe('DataTable', () => {
 
   test('footer', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <DataTable
           columns={[
             { property: 'a', header: 'A', footer: 'Total' },
@@ -136,7 +137,7 @@ describe('DataTable', () => {
 
   test('footer node', () => {
     const { getByText } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <DataTable
           columns={[
             { property: 'a', header: 'A', footer: <span>Total</span> },
@@ -155,7 +156,7 @@ describe('DataTable', () => {
 
   test('sortable', () => {
     const { container, getByText } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <DataTable
           columns={[
             { property: 'a', header: 'A' },
@@ -179,7 +180,7 @@ describe('DataTable', () => {
 
   test('sort null data', () => {
     const { container, getByText } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <DataTable
           columns={[
             { property: 'a', header: 'A' },
@@ -213,7 +214,7 @@ describe('DataTable', () => {
   test('onSort', () => {
     const onSort = jest.fn();
     const { container, getByText } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <DataTable
           columns={[
             { property: 'a', header: 'A' },
@@ -242,7 +243,7 @@ describe('DataTable', () => {
   test('onSort external', () => {
     const onSort = jest.fn();
     const { container, getByText } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <DataTable
           columns={[
             { property: 'a', header: 'A' },
@@ -274,7 +275,7 @@ describe('DataTable', () => {
 
   test('sort', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <DataTable
           columns={[
             { property: 'a', header: 'A' },
@@ -300,7 +301,7 @@ describe('DataTable', () => {
       });
 
       return (
-        <Grommet>
+        <Grommet theme={hpe}>
           <Button
             label="Sort data"
             onClick={() => setSort({ property: 'a', direction: 'desc' })}
@@ -331,7 +332,7 @@ describe('DataTable', () => {
 
   test('sort nested object', () => {
     const { container, getByText } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <DataTable
           columns={[
             { property: 'a', header: 'A' },
@@ -367,7 +368,7 @@ describe('DataTable', () => {
   test('sort nested object with onSort', () => {
     const onSort = jest.fn();
     const { container, getByText } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <DataTable
           columns={[
             { property: 'a', header: 'A' },
@@ -407,7 +408,7 @@ describe('DataTable', () => {
 
   test('sort external', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <DataTable
           columns={[
             { property: 'a', header: 'A' },
@@ -427,7 +428,7 @@ describe('DataTable', () => {
 
   test('search', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <DataTable
           columns={[{ property: 'a', header: 'A', search: true }]}
           data={[{ a: 'Alpha' }, { a: 'beta' }, { a: '[]' }]}
@@ -452,7 +453,7 @@ describe('DataTable', () => {
 
   test('header search onEsc returns focus to search button', async () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <DataTable
           columns={[{ property: 'a', header: 'A', search: true }]}
           data={[{ a: 'Alpha' }, { a: 'beta' }, { a: '[]' }]}
@@ -487,7 +488,7 @@ describe('DataTable', () => {
 
   test('resizeable', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <DataTable
           columns={[
             { property: 'a', header: 'A' },
@@ -507,7 +508,7 @@ describe('DataTable', () => {
 
   test('aggregate', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <DataTable
           columns={[
             { property: 'a', header: 'A' },
@@ -530,7 +531,7 @@ describe('DataTable', () => {
 
   test('aggregate with nested object', () => {
     const { container, getByText } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <DataTable
           columns={[
             { property: 'a', header: 'A' },
@@ -559,7 +560,7 @@ describe('DataTable', () => {
 
   test('rowDetails', () => {
     const { container, getAllByLabelText } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <DataTable
           columns={[
             { property: 'a', header: 'A' },
@@ -583,7 +584,7 @@ describe('DataTable', () => {
 
   test('rowDetails condtional', () => {
     const { container, getAllByLabelText } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <DataTable
           columns={[
             { property: 'a', header: 'A' },
@@ -616,7 +617,7 @@ describe('DataTable', () => {
 
   test('groupBy', () => {
     const { container, getByText } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <DataTable
           columns={[
             { property: 'a', header: 'A' },
@@ -641,7 +642,7 @@ describe('DataTable', () => {
 
   test('groupBy 0 value', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <DataTable
           columns={[
             { property: 'a', header: 'A' },
@@ -667,7 +668,7 @@ describe('DataTable', () => {
       const toggle = () => setGroupBy(groupBy === undefined ? 'a' : undefined);
 
       return (
-        <Grommet>
+        <Grommet theme={hpe}>
           <button type="button" onClick={toggle}>
             toggle
           </button>
@@ -700,7 +701,7 @@ describe('DataTable', () => {
   test('click', () => {
     const onClickRow = jest.fn();
     const { container, getByText } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <DataTable
           columns={[{ property: 'a', header: 'A' }]}
           data={[{ a: 'alpha' }, { a: 'beta' }]}
@@ -719,7 +720,7 @@ describe('DataTable', () => {
   test('disabled click', () => {
     const onClickRow = jest.fn();
     const { container, getByText } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <DataTable
           columns={[{ property: 'a', header: 'A' }]}
           data={[{ a: 'alpha' }, { a: 'beta' }]}
@@ -747,7 +748,7 @@ describe('DataTable', () => {
       { header: 'accent-1', body: 'accent-2', footer: 'accent-3' },
     ];
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         {backgrounds.map((background) => (
           <DataTable
             key={JSON.stringify(background)}
@@ -850,7 +851,7 @@ describe('DataTable', () => {
 
   test('groupBy property', () => {
     const { container, getByText } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <DataTable
           columns={[
             { property: 'a', header: 'A' },
@@ -875,7 +876,7 @@ describe('DataTable', () => {
 
   test('groupBy expand', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <DataTable
           columns={[
             { property: 'a', header: 'A' },
@@ -898,7 +899,7 @@ describe('DataTable', () => {
   test('groupBy onExpand', () => {
     const onExpand = jest.fn((groupState) => groupState);
     const { getAllByLabelText } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <DataTable
           columns={[
             { property: 'a', header: 'A' },
@@ -926,7 +927,7 @@ describe('DataTable', () => {
 
   test('replace', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <DataTable
           columns={[
             { property: 'a', header: 'A' },
@@ -949,7 +950,7 @@ describe('DataTable', () => {
 
   test('themeColumnSizes', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <DataTable
           columns={[
             { property: 'a', header: 'A', size: 'medium' },
@@ -967,7 +968,7 @@ describe('DataTable', () => {
 
   test('absoluteColumnSizes', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <DataTable
           columns={[
             { property: 'a', header: 'A', size: '400px' },
@@ -985,7 +986,7 @@ describe('DataTable', () => {
 
   test('relativeColumnSizes', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <DataTable
           columns={[
             { property: 'a', header: 'A', size: '2/3' },
@@ -1008,7 +1009,7 @@ describe('DataTable', () => {
       'vertical',
     ];
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         {fills.map((fill) => (
           <DataTable
             key={JSON.stringify(fill)}
@@ -1031,7 +1032,7 @@ describe('DataTable', () => {
   test('pin', () => {
     const pins: (boolean | 'header' | 'footer')[] = [true, 'header', 'footer'];
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         {pins.map((pin) => (
           <DataTable
             key={JSON.stringify(pin)}
@@ -1095,7 +1096,7 @@ describe('DataTable', () => {
 
   test('pin + background context', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         {[
           'background-back',
           'background-front',
@@ -1126,7 +1127,7 @@ describe('DataTable', () => {
   test('select', () => {
     const onSelect = jest.fn();
     const { container, getByLabelText } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <DataTable
           columns={[{ property: 'a', header: 'A' }]}
           data={[{ a: 'alpha' }, { a: 'beta' }]}
@@ -1150,7 +1151,7 @@ describe('DataTable', () => {
   test('select with allowSelectAll={false}', () => {
     const onSelect = jest.fn();
     const { container, getByLabelText } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <DataTable
           columns={[{ property: 'a', header: 'A' }]}
           data={[{ a: 'alpha' }, { a: 'beta' }]}
@@ -1175,7 +1176,7 @@ describe('DataTable', () => {
   test('disabled select', () => {
     const onSelect = jest.fn();
     const { container, getByText } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <DataTable
           columns={[{ property: 'a', header: 'A' }]}
           data={[{ a: 'alpha' }, { a: 'beta' }]}
@@ -1405,7 +1406,7 @@ describe('DataTable', () => {
 
   test('units', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <DataTable
           columns={[
             { property: 'a', header: 'A', footer: 'Total' },
@@ -1423,7 +1424,7 @@ describe('DataTable', () => {
 
   test('placeholder', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <DataTable
           columns={[
             { property: 'a', header: 'A', footer: 'Total' },
@@ -1460,7 +1461,7 @@ describe('DataTable', () => {
 
   test('should paginate', () => {
     const { container, getAllByText } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <DataTable
           columns={[
             { property: 'a', header: 'A' },
@@ -1480,7 +1481,7 @@ describe('DataTable', () => {
 
   test('should pin and paginate', () => {
     const { container, getAllByText } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <DataTable
           columns={[
             { property: 'a', header: 'A' },
@@ -1517,7 +1518,7 @@ describe('DataTable', () => {
   test('should show correct item index when "show" is a number', () => {
     const show = 15;
     const { container, getByText } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <DataTable
           columns={[
             { property: 'a', header: 'A' },
@@ -1538,7 +1539,7 @@ describe('DataTable', () => {
   test('should show correct page when "show" is { page: # }', () => {
     const desiredPage = 2;
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <DataTable
           columns={[
             { property: 'a', header: 'A' },
@@ -1562,7 +1563,7 @@ describe('DataTable', () => {
   test('should render correct num items per page (step)', () => {
     const step = 14;
     const { container, getAllByText } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <DataTable
           columns={[
             { property: 'a', header: 'A' },
@@ -1583,7 +1584,7 @@ describe('DataTable', () => {
 
   test('should render new data when page changes', () => {
     const { container, getByLabelText } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <DataTable
           columns={[
             { property: 'a', header: 'A' },
@@ -1603,7 +1604,7 @@ describe('DataTable', () => {
 
   test('should not show paginate controls when data is empty array', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <DataTable
           columns={[
             { property: 'a', header: 'A' },
@@ -1620,7 +1621,7 @@ describe('DataTable', () => {
 
   test('should not show paginate controls when length of data < step', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <DataTable
           columns={[
             { property: 'a', header: 'A' },
@@ -1642,7 +1643,7 @@ describe('DataTable', () => {
   test('onSelect select/unselect all', () => {
     const onSelect = jest.fn();
     const { container, getByLabelText } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <DataTable
           columns={[
             { property: 'a', header: 'A' },
@@ -1677,7 +1678,7 @@ describe('DataTable', () => {
   test('onSelect + groupBy should select/deselect all when grouped', () => {
     const onSelect = jest.fn();
     const { container, getByLabelText } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <DataTable
           columns={[
             { property: 'a', header: 'A' },
@@ -1711,7 +1712,7 @@ describe('DataTable', () => {
   test('onSelect + groupBy should select all items within a group', () => {
     const onSelect = jest.fn();
     const { container, getByLabelText } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <DataTable
           columns={[
             { property: 'a', header: 'A' },
@@ -1742,7 +1743,7 @@ describe('DataTable', () => {
   group if subset of group items are selected`, () => {
     const onSelect = jest.fn();
     const { container, getByLabelText } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <DataTable
           columns={[
             { property: 'a', header: 'A' },
@@ -1775,7 +1776,7 @@ describe('DataTable', () => {
   group when controlled`, () => {
     const onSelect = jest.fn();
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <DataTable
           columns={[
             { property: 'a', header: 'A' },
@@ -1799,7 +1800,7 @@ describe('DataTable', () => {
 
   test('verticalAlign', () => {
     const { asFragment } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <DataTable
           columns={[
             { property: 'a', header: 'A' },
@@ -1858,7 +1859,7 @@ describe('DataTable', () => {
 
   test('should base table body max height on css value', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <DataTable
           columns={[
             { property: 'a', header: 'A' },
@@ -1877,7 +1878,7 @@ describe('DataTable', () => {
 
   test('rowProps on group header rows', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <DataTable
           columns={[
             {
@@ -1905,7 +1906,7 @@ describe('DataTable', () => {
 
   test('border on CheckBox cell', () => {
     const { asFragment } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <DataTable
           data={[
             { name: 'Alan', percent: 20 },
@@ -1935,7 +1936,7 @@ describe('DataTable', () => {
   test('onSelect datum argument should be defined', () => {
     const onSelect = jest.fn();
     render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <DataTable
           onSelect={onSelect}
           data={[
@@ -1967,7 +1968,7 @@ describe('DataTable', () => {
     const App = () => {
       const [select, setSelect] = useState<(string | number)[]>([]);
       return (
-        <Grommet>
+        <Grommet theme={hpe}>
           <Data data={DATA} toolbar>
             <DataTable
               select={select}
@@ -2108,7 +2109,7 @@ describe('DataTable', () => {
   test('row click using space key press', () => {
     const onClickRow = jest.fn();
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <DataTable
           columns={[{ property: 'name', header: 'Name' }]}
           data={[{ name: 'alpha' }]}
@@ -2135,7 +2136,7 @@ describe('DataTable', () => {
   test('disable row click using space key press', () => {
     const onClickRow = jest.fn();
     const { container, getByText } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <DataTable
           columns={[{ property: 'name', header: 'Name' }]}
           data={[{ name: 'alpha' }]}
@@ -2188,7 +2189,7 @@ describe('DataTable', () => {
     };
 
     render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <DataTable
           columns={[
             { property: 'name', header: 'Name', primary: true },
@@ -2210,7 +2211,7 @@ describe('DataTable', () => {
   test('expandLabel function', () => {
     const expandLabel = (row: any) => `${row.a} items`;
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <DataTable
           columns={[
             { property: 'a', header: 'A' },
@@ -2235,7 +2236,7 @@ describe('DataTable', () => {
 
   test('expandAriaLabel default', () => {
     const { container, getAllByLabelText } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <DataTable
           columns={[
             { property: 'a', header: 'A' },
@@ -2260,7 +2261,7 @@ describe('DataTable', () => {
 
   test('messages prop overrides theme messages', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <DataTable
           columns={[
             { property: 'a', header: 'A' },

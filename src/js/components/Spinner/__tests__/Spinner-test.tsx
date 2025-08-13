@@ -4,6 +4,7 @@ import { axe } from 'jest-axe';
 import 'jest-styled-components';
 import 'regenerator-runtime/runtime';
 import 'jest-axe/extend-expect';
+import { hpe } from 'grommet-theme-hpe';
 
 import { Node } from 'grommet-icons';
 import { Grommet } from '../../Grommet';
@@ -13,7 +14,7 @@ import { ThemeType } from '../../..';
 describe('Spinner', () => {
   test('should have no accessibility violations', async () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Spinner />
       </Grommet>,
     );
@@ -31,7 +32,7 @@ describe('Spinner', () => {
 
   test('size renders', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Spinner size="xsmall" />
         <Spinner size="small" />
         <Spinner size="medium" />
@@ -45,7 +46,7 @@ describe('Spinner', () => {
 
   test('color renders', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Spinner color="graph-0" />
         <Spinner color="graph-1" />
         <Spinner color="graph-2" />

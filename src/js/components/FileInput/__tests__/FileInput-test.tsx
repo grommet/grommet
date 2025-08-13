@@ -1,6 +1,7 @@
 import React from 'react';
 import 'jest-styled-components';
 import { render } from '@testing-library/react';
+import { hpe } from 'grommet-theme-hpe';
 
 import { Grommet } from '../../Grommet';
 import { FileInput } from '..';
@@ -10,7 +11,7 @@ import { FormField } from '../../FormField';
 describe('FileInput', () => {
   test('basic', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <FileInput name="file" />
       </Grommet>,
     );
@@ -24,7 +25,7 @@ describe('FileInput', () => {
 
   test('multiple', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <FileInput name="file" multiple />
       </Grommet>,
     );
@@ -33,7 +34,7 @@ describe('FileInput', () => {
 
   test('multiple aggregateThreshold', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <FileInput name="file" multiple={{ aggregateThreshold: 2 }} />
       </Grommet>,
     );
@@ -42,7 +43,7 @@ describe('FileInput', () => {
 
   test('accept', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <FileInput name="file" accept="image/*" />
       </Grommet>,
     );
@@ -51,7 +52,7 @@ describe('FileInput', () => {
 
   test('disabled', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <FileInput name="file" disabled />
       </Grommet>,
     );
@@ -60,7 +61,7 @@ describe('FileInput', () => {
 
   test('messages', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <FileInput
           name="file"
           messages={{
@@ -145,7 +146,7 @@ describe('FileInput', () => {
   test('maxSize', () => {
     const maxSize = 5000000;
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <FileInput name="file" maxSize={maxSize} />
       </Grommet>,
     );
@@ -154,7 +155,7 @@ describe('FileInput', () => {
 
   test('multiple max', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <FileInput
           name="file"
           multiple={{
@@ -185,7 +186,7 @@ describe('FileInput', () => {
       );
     };
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Test />
       </Grommet>,
     );

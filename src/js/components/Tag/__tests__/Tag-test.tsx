@@ -2,6 +2,7 @@ import React from 'react';
 import { render, screen } from '@testing-library/react';
 import { axe } from 'jest-axe';
 import userEvent from '@testing-library/user-event';
+import { hpe } from 'grommet-theme-hpe';
 
 import 'jest-styled-components';
 import 'jest-axe/extend-expect';
@@ -13,7 +14,7 @@ import { Grommet, Tag } from '../..';
 describe('Tag', () => {
   test('should have no accessibility violations', async () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Tag a11yTitle="Test tag" value="Test" />
       </Grommet>,
     );
@@ -25,7 +26,7 @@ describe('Tag', () => {
   test('passes through the aria-label prop', async () => {
     const TEST_LABEL = 'Test Label';
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Tag aria-label={TEST_LABEL} data-testid="tag" value="Test" />
       </Grommet>,
     );
@@ -37,7 +38,7 @@ describe('Tag', () => {
 
   test('basic', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Tag name="Name" value="Value" />
       </Grommet>,
     );
@@ -56,7 +57,7 @@ describe('Tag', () => {
 
     const onClick = jest.fn();
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Tag value="Test" onClick={onClick} />
       </Grommet>,
     );
@@ -72,7 +73,7 @@ describe('Tag', () => {
 
     const onRemove = jest.fn();
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Tag value="Test" onRemove={onRemove} />
       </Grommet>,
     );
@@ -85,7 +86,7 @@ describe('Tag', () => {
 
   test('size', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Tag size="xsmall" name="Name" value="Value" />
         <Tag size="small" name="Name" value="Value" />
         <Tag size="medium" name="Name" value="Value" />
@@ -178,7 +179,7 @@ describe('Tag', () => {
     };
 
     render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Tag
           name="Category"
           value="Fruits"
@@ -225,7 +226,7 @@ describe('Tag', () => {
     };
 
     render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Tag value="Fruits" onRemove={() => {}} messages={messages} />
       </Grommet>,
     );

@@ -11,6 +11,7 @@ import { DataFilter } from '..';
 import { Toolbar } from '../../Toolbar';
 import { DataTable } from '../../DataTable';
 import { createPortal } from '../../../utils/portal';
+import { hpe } from 'grommet-theme-hpe';
 
 const data = [
   {
@@ -40,7 +41,7 @@ describe('DataFilter', () => {
 
   test('renders', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Data data={data}>
           <DataFilters>
             <DataFilter property="name" />
@@ -58,7 +59,7 @@ describe('DataFilter', () => {
 
   test('options', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Data
           data={data}
           properties={{
@@ -95,7 +96,7 @@ describe('DataFilter', () => {
   test('select multiple options', async () => {
     const user = userEvent.setup();
     const { asFragment } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Data
           data={data}
           properties={{
@@ -143,7 +144,7 @@ describe('DataFilter', () => {
   test('select multiple options search', async () => {
     const user = userEvent.setup();
     const { asFragment } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Data
           id="test-data"
           data={data}
@@ -190,7 +191,7 @@ describe('DataFilter', () => {
 
   test('range prop', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Data data={data}>
           <DataFilters>
             <DataFilter property="rating" range={{ min: 0, max: 5 }} />
@@ -204,7 +205,7 @@ describe('DataFilter', () => {
 
   test('range prop step', async () => {
     render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Data data={data}>
           <DataFilters>
             <DataFilter
@@ -230,7 +231,7 @@ describe('DataFilter', () => {
 
   test('range step Data', () => {
     render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Data
           data={data}
           properties={{
@@ -260,7 +261,7 @@ describe('DataFilter', () => {
 
   test('range Data', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Data
           data={data}
           properties={{
@@ -282,7 +283,7 @@ describe('DataFilter', () => {
 
   test('includes range min and max in filtered results', () => {
     const { getByRole } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Data data={[{ age: 1 }, { age: 2 }, { age: 3 }, { age: 4 }]}>
           <DataFilters>
             <DataFilter range={{ min: 1, max: 4, step: 1 }} property="age" />
@@ -314,7 +315,7 @@ describe('DataFilter', () => {
 
   test('children', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Data data={data}>
           <DataFilters>
             <DataFilter property="name">
@@ -330,7 +331,7 @@ describe('DataFilter', () => {
 
   test('!inDataForm', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Data data={data}>
           <Toolbar>
             <DataFilter property="name" />
@@ -346,7 +347,7 @@ describe('DataFilter', () => {
 
   test('should allow filtering on multiple sub-properties from same parent property', () => {
     const { asFragment } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Data
           data={data}
           properties={{

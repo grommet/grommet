@@ -1,9 +1,12 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`DataChart areas 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -162,8 +165,8 @@ exports[`DataChart areas 1`] = `
         >
           0
           <g
-            fill="#00873D"
-            stroke="#00873D"
+            fill="#b0840d"
+            stroke="#b0840d"
             stroke-linecap="butt"
             stroke-linejoin="miter"
             stroke-width="96"
@@ -188,9 +191,9 @@ exports[`DataChart areas 1`] = `
         >
           0
           <g
-            fill="#6FFFB0"
+            fill="#3c3aa1"
             opacity="0.4"
-            stroke="#6FFFB0"
+            stroke="#3c3aa1"
             stroke-linecap="butt"
             stroke-linejoin="miter"
             stroke-width="1"
@@ -210,8 +213,11 @@ exports[`DataChart areas 1`] = `
 
 exports[`DataChart axis 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -354,7 +360,7 @@ exports[`DataChart axis 1`] = `
           0
           <g
             fill="none"
-            stroke="#6FFFB0"
+            stroke="#3c3aa1"
             stroke-linecap="butt"
             stroke-linejoin="miter"
             stroke-width="96"
@@ -399,7 +405,7 @@ exports[`DataChart axis 1`] = `
           0
           <g
             fill="none"
-            stroke="#6FFFB0"
+            stroke="#3c3aa1"
             stroke-linecap="butt"
             stroke-linejoin="miter"
             stroke-width="96"
@@ -458,7 +464,7 @@ exports[`DataChart axis 1`] = `
           0
           <g
             fill="none"
-            stroke="#6FFFB0"
+            stroke="#3c3aa1"
             stroke-linecap="butt"
             stroke-linejoin="miter"
             stroke-width="96"
@@ -517,7 +523,7 @@ exports[`DataChart axis 1`] = `
           0
           <g
             fill="none"
-            stroke="#6FFFB0"
+            stroke="#3c3aa1"
             stroke-linecap="butt"
             stroke-linejoin="miter"
             stroke-width="96"
@@ -576,7 +582,7 @@ exports[`DataChart axis 1`] = `
           0
           <g
             fill="none"
-            stroke="#6FFFB0"
+            stroke="#3c3aa1"
             stroke-linecap="butt"
             stroke-linejoin="miter"
             stroke-width="96"
@@ -650,7 +656,7 @@ exports[`DataChart axis 1`] = `
           0
           <g
             fill="none"
-            stroke="#6FFFB0"
+            stroke="#3c3aa1"
             stroke-linecap="butt"
             stroke-linejoin="miter"
             stroke-width="96"
@@ -681,8 +687,11 @@ exports[`DataChart axis 1`] = `
 
 exports[`DataChart axis x granularity 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -807,7 +816,7 @@ exports[`DataChart axis x granularity 1`] = `
           0
           <g
             fill="none"
-            stroke="#6FFFB0"
+            stroke="#3c3aa1"
             stroke-linecap="butt"
             stroke-linejoin="miter"
             stroke-width="96"
@@ -844,7 +853,7 @@ exports[`DataChart axis x granularity 1`] = `
           0
           <g
             fill="none"
-            stroke="#6FFFB0"
+            stroke="#3c3aa1"
             stroke-linecap="butt"
             stroke-linejoin="miter"
             stroke-width="96"
@@ -895,7 +904,7 @@ exports[`DataChart axis x granularity 1`] = `
           0
           <g
             fill="none"
-            stroke="#6FFFB0"
+            stroke="#3c3aa1"
             stroke-linecap="butt"
             stroke-linejoin="miter"
             stroke-width="96"
@@ -959,7 +968,7 @@ exports[`DataChart axis x granularity 1`] = `
           0
           <g
             fill="none"
-            stroke="#6FFFB0"
+            stroke="#3c3aa1"
             stroke-linecap="butt"
             stroke-linejoin="miter"
             stroke-width="96"
@@ -1036,7 +1045,7 @@ exports[`DataChart axis x granularity 1`] = `
           0
           <g
             fill="none"
-            stroke="#6FFFB0"
+            stroke="#3c3aa1"
             stroke-linecap="butt"
             stroke-linejoin="miter"
             stroke-width="96"
@@ -1116,7 +1125,7 @@ exports[`DataChart axis x granularity 1`] = `
           0
           <g
             fill="none"
-            stroke="#6FFFB0"
+            stroke="#3c3aa1"
             stroke-linecap="butt"
             stroke-linejoin="miter"
             stroke-width="48"
@@ -1199,7 +1208,7 @@ exports[`DataChart axis x granularity 1`] = `
           0
           <g
             fill="none"
-            stroke="#6FFFB0"
+            stroke="#3c3aa1"
             stroke-linecap="butt"
             stroke-linejoin="miter"
             stroke-width="48"
@@ -1300,7 +1309,7 @@ exports[`DataChart axis x granularity 1`] = `
           0
           <g
             fill="none"
-            stroke="#6FFFB0"
+            stroke="#3c3aa1"
             stroke-linecap="butt"
             stroke-linejoin="miter"
             stroke-width="48"
@@ -1399,7 +1408,7 @@ exports[`DataChart axis x granularity 1`] = `
           0
           <g
             fill="none"
-            stroke="#6FFFB0"
+            stroke="#3c3aa1"
             stroke-linecap="butt"
             stroke-linejoin="miter"
             stroke-width="48"
@@ -1521,7 +1530,7 @@ exports[`DataChart axis x granularity 1`] = `
           0
           <g
             fill="none"
-            stroke="#6FFFB0"
+            stroke="#3c3aa1"
             stroke-linecap="butt"
             stroke-linejoin="miter"
             stroke-width="48"
@@ -1646,7 +1655,7 @@ exports[`DataChart axis x granularity 1`] = `
           0
           <g
             fill="none"
-            stroke="#6FFFB0"
+            stroke="#3c3aa1"
             stroke-linecap="butt"
             stroke-linejoin="miter"
             stroke-width="48"
@@ -1774,7 +1783,7 @@ exports[`DataChart axis x granularity 1`] = `
           0
           <g
             fill="none"
-            stroke="#6FFFB0"
+            stroke="#3c3aa1"
             stroke-linecap="butt"
             stroke-linejoin="miter"
             stroke-width="24"
@@ -1905,7 +1914,7 @@ exports[`DataChart axis x granularity 1`] = `
           0
           <g
             fill="none"
-            stroke="#6FFFB0"
+            stroke="#3c3aa1"
             stroke-linecap="butt"
             stroke-linejoin="miter"
             stroke-width="24"
@@ -2059,7 +2068,7 @@ exports[`DataChart axis x granularity 1`] = `
           0
           <g
             fill="none"
-            stroke="#6FFFB0"
+            stroke="#3c3aa1"
             stroke-linecap="butt"
             stroke-linejoin="miter"
             stroke-width="24"
@@ -2178,8 +2187,11 @@ exports[`DataChart axis x granularity 1`] = `
 
 exports[`DataChart bars 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -2339,7 +2351,7 @@ exports[`DataChart bars 1`] = `
           0
           <g
             fill="none"
-            stroke="#00873D"
+            stroke="#b0840d"
             stroke-linecap="butt"
             stroke-linejoin="miter"
             stroke-width="96"
@@ -2376,7 +2388,7 @@ exports[`DataChart bars 1`] = `
           0
           <g
             fill="none"
-            stroke="#6FFFB0"
+            stroke="#3c3aa1"
             stroke-linecap="butt"
             stroke-linejoin="miter"
             stroke-width="96"
@@ -2407,8 +2419,11 @@ exports[`DataChart bars 1`] = `
 
 exports[`DataChart bars colors 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -2568,7 +2583,7 @@ exports[`DataChart bars colors 1`] = `
           0
           <g
             fill="none"
-            stroke="#00739D"
+            stroke="#2053d9"
             stroke-linecap="butt"
             stroke-linejoin="miter"
             stroke-width="96"
@@ -2605,7 +2620,7 @@ exports[`DataChart bars colors 1`] = `
           0
           <g
             fill="none"
-            stroke="#00873D"
+            stroke="#b0840d"
             stroke-linecap="butt"
             stroke-linejoin="miter"
             stroke-width="96"
@@ -2636,8 +2651,11 @@ exports[`DataChart bars colors 1`] = `
 
 exports[`DataChart bars empty 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -2726,8 +2744,11 @@ exports[`DataChart bars empty 1`] = `
 
 exports[`DataChart bars invalid 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -2887,7 +2908,7 @@ exports[`DataChart bars invalid 1`] = `
           0
           <g
             fill="none"
-            stroke="#3D138D"
+            stroke="#a95589"
             stroke-linecap="butt"
             stroke-linejoin="miter"
             stroke-width="96"
@@ -2907,7 +2928,7 @@ exports[`DataChart bars invalid 1`] = `
           0
           <g
             fill="none"
-            stroke="#00873D"
+            stroke="#b0840d"
             stroke-linecap="butt"
             stroke-linejoin="miter"
             stroke-width="96"
@@ -2927,7 +2948,7 @@ exports[`DataChart bars invalid 1`] = `
           0
           <g
             fill="none"
-            stroke="#6FFFB0"
+            stroke="#3c3aa1"
             stroke-linecap="butt"
             stroke-linejoin="miter"
             stroke-width="96"
@@ -2958,8 +2979,11 @@ exports[`DataChart bars invalid 1`] = `
 
 exports[`DataChart bounds align 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -3102,7 +3126,7 @@ exports[`DataChart bounds align 1`] = `
           0
           <g
             fill="none"
-            stroke="#6FFFB0"
+            stroke="#3c3aa1"
             stroke-linecap="butt"
             stroke-linejoin="miter"
             stroke-width="96"
@@ -3133,8 +3157,11 @@ exports[`DataChart bounds align 1`] = `
 
 exports[`DataChart bounds explicit 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -3277,7 +3304,7 @@ exports[`DataChart bounds explicit 1`] = `
           0
           <g
             fill="none"
-            stroke="#6FFFB0"
+            stroke="#3c3aa1"
             stroke-linecap="butt"
             stroke-linejoin="miter"
             stroke-width="96"
@@ -3308,8 +3335,11 @@ exports[`DataChart bounds explicit 1`] = `
 
 exports[`DataChart dates 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -3383,7 +3413,7 @@ exports[`DataChart dates 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-left: solid 1px rgba(0, 0, 0, 0.33);
+  border-left: solid 1px rgba(0, 0, 0, 0.36);
   min-width: 0;
   min-height: 0;
   flex-direction: column;
@@ -3409,7 +3439,7 @@ exports[`DataChart dates 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-top: solid 1px rgba(0, 0, 0, 0.33);
+  border-top: solid 1px rgba(0, 0, 0, 0.36);
   min-width: 0;
   min-height: 0;
   flex-direction: column;
@@ -3462,13 +3492,13 @@ exports[`DataChart dates 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c9 {
-    border-left: solid 1px rgba(0, 0, 0, 0.33);
+    border-left: solid 1px rgba(0, 0, 0, 0.36);
   }
 }
 
 @media only screen and (max-width: 768px) {
   .c11 {
-    border-top: solid 1px rgba(0, 0, 0, 0.33);
+    border-top: solid 1px rgba(0, 0, 0, 0.36);
   }
 }
 
@@ -3550,7 +3580,7 @@ exports[`DataChart dates 1`] = `
           0
           <g
             fill="none"
-            stroke="#6FFFB0"
+            stroke="#3c3aa1"
             stroke-linecap="butt"
             stroke-linejoin="miter"
             stroke-width="96"
@@ -3667,7 +3697,7 @@ exports[`DataChart dates 1`] = `
           0
           <g
             fill="none"
-            stroke="#6FFFB0"
+            stroke="#3c3aa1"
             stroke-linecap="butt"
             stroke-linejoin="miter"
             stroke-width="96"
@@ -3784,7 +3814,7 @@ exports[`DataChart dates 1`] = `
           0
           <g
             fill="none"
-            stroke="#6FFFB0"
+            stroke="#3c3aa1"
             stroke-linecap="butt"
             stroke-linejoin="miter"
             stroke-width="96"
@@ -3901,7 +3931,7 @@ exports[`DataChart dates 1`] = `
           0
           <g
             fill="none"
-            stroke="#6FFFB0"
+            stroke="#3c3aa1"
             stroke-linecap="butt"
             stroke-linejoin="miter"
             stroke-width="96"
@@ -4018,7 +4048,7 @@ exports[`DataChart dates 1`] = `
           0
           <g
             fill="none"
-            stroke="#6FFFB0"
+            stroke="#3c3aa1"
             stroke-linecap="butt"
             stroke-linejoin="miter"
             stroke-width="96"
@@ -4135,7 +4165,7 @@ exports[`DataChart dates 1`] = `
           0
           <g
             fill="none"
-            stroke="#6FFFB0"
+            stroke="#3c3aa1"
             stroke-linecap="butt"
             stroke-linejoin="miter"
             stroke-width="96"
@@ -4182,8 +4212,11 @@ exports[`DataChart dates 1`] = `
 
 exports[`DataChart default 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -4326,7 +4359,7 @@ exports[`DataChart default 1`] = `
           0
           <g
             fill="none"
-            stroke="#6FFFB0"
+            stroke="#3c3aa1"
             stroke-linecap="butt"
             stroke-linejoin="miter"
             stroke-width="96"
@@ -4518,8 +4551,11 @@ exports[`DataChart default without grommet wrapper 1`] = `
 
 exports[`DataChart detail 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -4643,8 +4679,9 @@ exports[`DataChart detail 1`] = `
 }
 
 .c11:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c11:focus >circle,
@@ -4654,8 +4691,9 @@ exports[`DataChart detail 1`] = `
 .c11:focus >polygon,
 .c11:focus >polyline,
 .c11:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c11:focus ::-moz-focus-inner {
@@ -4663,6 +4701,8 @@ exports[`DataChart detail 1`] = `
 }
 
 .c11:focus:not(:focus-visible) {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -4674,6 +4714,8 @@ exports[`DataChart detail 1`] = `
 .c11:focus:not(:focus-visible) >polygon,
 .c11:focus:not(:focus-visible) >polyline,
 .c11:focus:not(:focus-visible) >rect {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -4744,7 +4786,7 @@ exports[`DataChart detail 1`] = `
           0
           <g
             fill="none"
-            stroke="#6FFFB0"
+            stroke="#3c3aa1"
             stroke-linecap="butt"
             stroke-linejoin="miter"
             stroke-width="96"
@@ -4848,7 +4890,7 @@ exports[`DataChart detail 1`] = `
           0
           <g
             fill="none"
-            stroke="#6FFFB0"
+            stroke="#3c3aa1"
             stroke-linecap="butt"
             stroke-linejoin="miter"
             stroke-width="96"
@@ -6123,8 +6165,11 @@ exports[`DataChart gap 1`] = `
 
 exports[`DataChart guide 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -6198,7 +6243,7 @@ exports[`DataChart guide 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-left: solid 1px rgba(0, 0, 0, 0.33);
+  border-left: solid 1px rgba(0, 0, 0, 0.36);
   min-width: 0;
   min-height: 0;
   flex-direction: column;
@@ -6224,7 +6269,7 @@ exports[`DataChart guide 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-top: solid 1px rgba(0, 0, 0, 0.33);
+  border-top: solid 1px rgba(0, 0, 0, 0.36);
   min-width: 0;
   min-height: 0;
   flex-direction: column;
@@ -6277,13 +6322,13 @@ exports[`DataChart guide 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c9 {
-    border-left: solid 1px rgba(0, 0, 0, 0.33);
+    border-left: solid 1px rgba(0, 0, 0, 0.36);
   }
 }
 
 @media only screen and (max-width: 768px) {
   .c11 {
-    border-top: solid 1px rgba(0, 0, 0, 0.33);
+    border-top: solid 1px rgba(0, 0, 0, 0.36);
   }
 }
 
@@ -6365,7 +6410,7 @@ exports[`DataChart guide 1`] = `
           0
           <g
             fill="none"
-            stroke="#6FFFB0"
+            stroke="#3c3aa1"
             stroke-linecap="butt"
             stroke-linejoin="miter"
             stroke-width="96"
@@ -6438,7 +6483,7 @@ exports[`DataChart guide 1`] = `
           0
           <g
             fill="none"
-            stroke="#6FFFB0"
+            stroke="#3c3aa1"
             stroke-linecap="butt"
             stroke-linejoin="miter"
             stroke-width="96"
@@ -6525,7 +6570,7 @@ exports[`DataChart guide 1`] = `
           0
           <g
             fill="none"
-            stroke="#6FFFB0"
+            stroke="#3c3aa1"
             stroke-linecap="butt"
             stroke-linejoin="miter"
             stroke-width="96"
@@ -6621,7 +6666,7 @@ exports[`DataChart guide 1`] = `
           0
           <g
             fill="none"
-            stroke="#6FFFB0"
+            stroke="#3c3aa1"
             stroke-linecap="butt"
             stroke-linejoin="miter"
             stroke-width="96"
@@ -6652,8 +6697,11 @@ exports[`DataChart guide 1`] = `
 
 exports[`DataChart horizontal 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -6728,7 +6776,7 @@ exports[`DataChart horizontal 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-left: solid 1px rgba(0, 0, 0, 0.33);
+  border-left: solid 1px rgba(0, 0, 0, 0.36);
   min-width: 0;
   min-height: 0;
   flex-direction: column;
@@ -6751,7 +6799,7 @@ exports[`DataChart horizontal 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-top: solid 1px rgba(0, 0, 0, 0.33);
+  border-top: solid 1px rgba(0, 0, 0, 0.36);
   min-width: 0;
   min-height: 0;
   flex-direction: column;
@@ -6811,13 +6859,13 @@ exports[`DataChart horizontal 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c9 {
-    border-left: solid 1px rgba(0, 0, 0, 0.33);
+    border-left: solid 1px rgba(0, 0, 0, 0.36);
   }
 }
 
 @media only screen and (max-width: 768px) {
   .c11 {
-    border-top: solid 1px rgba(0, 0, 0, 0.33);
+    border-top: solid 1px rgba(0, 0, 0, 0.36);
   }
 }
 
@@ -6899,7 +6947,7 @@ exports[`DataChart horizontal 1`] = `
           0
           <g
             fill="none"
-            stroke="#00873D"
+            stroke="#b0840d"
             stroke-linecap="butt"
             stroke-linejoin="miter"
             stroke-width="96"
@@ -6927,7 +6975,7 @@ exports[`DataChart horizontal 1`] = `
           0
           <g
             fill="none"
-            stroke="#6FFFB0"
+            stroke="#3c3aa1"
             stroke-linecap="butt"
             stroke-linejoin="miter"
             stroke-width="96"
@@ -6949,8 +6997,11 @@ exports[`DataChart horizontal 1`] = `
 
 exports[`DataChart legend 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -7048,8 +7099,9 @@ exports[`DataChart legend 1`] = `
 }
 
 .c13 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  font-weight: undefined;
 }
 
 .c9 {
@@ -7168,7 +7220,7 @@ exports[`DataChart legend 1`] = `
             0
             <g
               fill="none"
-              stroke="#6FFFB0"
+              stroke="#3c3aa1"
               stroke-linecap="butt"
               stroke-linejoin="miter"
               stroke-width="96"
@@ -7203,7 +7255,7 @@ exports[`DataChart legend 1`] = `
         <svg
           fill="none"
           height="12"
-          stroke="#6FFFB0"
+          stroke="#3c3aa1"
           viewBox="0 0 96 12"
           width="96"
         >
@@ -7270,7 +7322,7 @@ exports[`DataChart legend 1`] = `
           0
           <g
             fill="none"
-            stroke="#6FFFB0"
+            stroke="#3c3aa1"
             stroke-linecap="butt"
             stroke-linejoin="miter"
             stroke-width="96"
@@ -7301,8 +7353,11 @@ exports[`DataChart legend 1`] = `
 
 exports[`DataChart lines 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -7462,7 +7517,7 @@ exports[`DataChart lines 1`] = `
           0
           <g
             fill="none"
-            stroke="#00873D"
+            stroke="#b0840d"
             stroke-linecap="butt"
             stroke-linejoin="miter"
             stroke-width="96"
@@ -7490,7 +7545,7 @@ exports[`DataChart lines 1`] = `
           0
           <g
             fill="none"
-            stroke="#6FFFB0"
+            stroke="#3c3aa1"
             stroke-linecap="butt"
             stroke-linejoin="miter"
             stroke-width="96"
@@ -7512,8 +7567,11 @@ exports[`DataChart lines 1`] = `
 
 exports[`DataChart negative values 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -7656,7 +7714,7 @@ exports[`DataChart negative values 1`] = `
           0
           <g
             fill="none"
-            stroke="#6FFFB0"
+            stroke="#3c3aa1"
             stroke-linecap="butt"
             stroke-linejoin="miter"
             stroke-width="96"
@@ -7737,7 +7795,7 @@ exports[`DataChart negative values 1`] = `
           0
           <g
             fill="none"
-            stroke="#6FFFB0"
+            stroke="#3c3aa1"
             stroke-linecap="butt"
             stroke-linejoin="miter"
             stroke-width="96"
@@ -7818,7 +7876,7 @@ exports[`DataChart negative values 1`] = `
           0
           <g
             fill="none"
-            stroke="#6FFFB0"
+            stroke="#3c3aa1"
             stroke-linecap="butt"
             stroke-linejoin="miter"
             stroke-width="96"
@@ -7899,7 +7957,7 @@ exports[`DataChart negative values 1`] = `
           0
           <g
             fill="none"
-            stroke="#6FFFB0"
+            stroke="#3c3aa1"
             stroke-linecap="butt"
             stroke-linejoin="miter"
             stroke-width="96"
@@ -7938,8 +7996,11 @@ exports[`DataChart negative values 1`] = `
 
 exports[`DataChart nothing 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -8103,7 +8164,7 @@ exports[`DataChart nothing 1`] = `
           0
           <g
             fill="none"
-            stroke="#6FFFB0"
+            stroke="#3c3aa1"
             stroke-linecap="butt"
             stroke-linejoin="miter"
             stroke-width="96"
@@ -8148,8 +8209,11 @@ exports[`DataChart nothing 1`] = `
 
 exports[`DataChart offset 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -8294,7 +8358,7 @@ exports[`DataChart offset 1`] = `
           0
           <g
             fill="none"
-            stroke="#6FFFB0"
+            stroke="#3c3aa1"
             stroke-linecap="butt"
             stroke-linejoin="miter"
             stroke-width="96"
@@ -8870,8 +8934,11 @@ exports[`DataChart pad 1`] = `
 
 exports[`DataChart placeholder node 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -8933,7 +9000,7 @@ exports[`DataChart placeholder node 1`] = `
   max-width: 100%;
   align-items: center;
   background-color: #EDEDED;
-  color: #444444;
+  color: #555555;
   min-width: 0;
   min-height: 0;
   flex-direction: column;
@@ -8943,8 +9010,9 @@ exports[`DataChart placeholder node 1`] = `
 }
 
 .c11 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  font-weight: undefined;
 }
 
 .c8 {
@@ -9042,7 +9110,7 @@ exports[`DataChart placeholder node 1`] = `
           0
           <g
             fill="none"
-            stroke="#6FFFB0"
+            stroke="#3c3aa1"
             stroke-linecap="butt"
             stroke-linejoin="miter"
             stroke-width="96"
@@ -9069,8 +9137,11 @@ exports[`DataChart placeholder node 1`] = `
 
 exports[`DataChart placeholder text 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -9134,7 +9205,7 @@ exports[`DataChart placeholder text 1`] = `
   margin-right: 48px;
   align-items: center;
   background-color: rgba(255, 255, 255, 0.8);
-  color: #444444;
+  color: #555555;
   min-width: 0;
   min-height: 0;
   flex-direction: column;
@@ -9143,9 +9214,10 @@ exports[`DataChart placeholder text 1`] = `
 }
 
 .c11 {
-  font-size: 18px;
-  line-height: 24px;
-  color: #555555;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  color: #676767;
+  font-weight: undefined;
 }
 
 .c8 {
@@ -9250,7 +9322,7 @@ exports[`DataChart placeholder text 1`] = `
           0
           <g
             fill="none"
-            stroke="#6FFFB0"
+            stroke="#3c3aa1"
             stroke-linecap="butt"
             stroke-linejoin="miter"
             stroke-width="96"
@@ -9277,8 +9349,11 @@ exports[`DataChart placeholder text 1`] = `
 
 exports[`DataChart single 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -9416,7 +9491,7 @@ exports[`DataChart single 1`] = `
           0
           <g
             fill="none"
-            stroke="#6FFFB0"
+            stroke="#3c3aa1"
             stroke-linecap="butt"
             stroke-linejoin="miter"
             stroke-width="96"
@@ -9439,8 +9514,11 @@ exports[`DataChart single 1`] = `
 
 exports[`DataChart size 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -9630,7 +9708,7 @@ exports[`DataChart size 1`] = `
           0
           <g
             fill="none"
-            stroke="#6FFFB0"
+            stroke="#3c3aa1"
             stroke-linecap="butt"
             stroke-linejoin="miter"
             stroke-width="96"
@@ -9703,7 +9781,7 @@ exports[`DataChart size 1`] = `
           0
           <g
             fill="none"
-            stroke="#6FFFB0"
+            stroke="#3c3aa1"
             stroke-linecap="butt"
             stroke-linejoin="miter"
             stroke-width="96"
@@ -9776,7 +9854,7 @@ exports[`DataChart size 1`] = `
           0
           <g
             fill="none"
-            stroke="#6FFFB0"
+            stroke="#3c3aa1"
             stroke-linecap="butt"
             stroke-linejoin="miter"
             stroke-width="96"
@@ -9807,8 +9885,11 @@ exports[`DataChart size 1`] = `
 
 exports[`DataChart type 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -9972,7 +10053,7 @@ exports[`DataChart type 1`] = `
           0
           <g
             fill="none"
-            stroke="#6FFFB0"
+            stroke="#3c3aa1"
             stroke-linecap="butt"
             stroke-linejoin="miter"
             stroke-width="96"
@@ -10045,7 +10126,7 @@ exports[`DataChart type 1`] = `
           0
           <g
             fill="none"
-            stroke="#6FFFB0"
+            stroke="#3c3aa1"
             stroke-linecap="butt"
             stroke-linejoin="miter"
             stroke-width="96"
@@ -10108,8 +10189,8 @@ exports[`DataChart type 1`] = `
         >
           0
           <g
-            fill="#6FFFB0"
-            stroke="#6FFFB0"
+            fill="#3c3aa1"
+            stroke="#3c3aa1"
             stroke-linecap="butt"
             stroke-linejoin="miter"
             stroke-width="96"

@@ -3,6 +3,7 @@ import styled, { css } from 'styled-components';
 import 'jest-styled-components';
 import 'jest-axe/extend-expect';
 import 'regenerator-runtime/runtime';
+import { hpe } from 'grommet-theme-hpe';
 
 import { axe } from 'jest-axe';
 import { render, fireEvent } from '@testing-library/react';
@@ -13,7 +14,7 @@ import { ThemeType } from '../../../themes';
 describe('Tabs', () => {
   test('should have no accessibility violations', async () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Tabs>
           <Tab a11yTitle="test" />
         </Tabs>
@@ -27,7 +28,7 @@ describe('Tabs', () => {
 
   test('no Tab', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Tabs>
           <Tab />
         </Tabs>
@@ -39,7 +40,7 @@ describe('Tabs', () => {
 
   test('no Tabs', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Tab />
       </Grommet>,
     );
@@ -49,7 +50,7 @@ describe('Tabs', () => {
 
   test('Tab', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Tabs>
           <Tab title="Tab 1">Tab body 1</Tab>
           {undefined}
@@ -73,7 +74,7 @@ describe('Tabs', () => {
 
   test('complex title', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Tabs>
           <Tab title={<div>Tab 1</div>}>Tab body 1</Tab>
           {undefined}
@@ -86,7 +87,7 @@ describe('Tabs', () => {
 
   test('with icon + reverse', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Tabs>
           <Tab title="Tab 1" icon={<svg />}>
             Tab body 1
@@ -115,7 +116,7 @@ describe('Tabs', () => {
   test('Custom Tab component', () => {
     const CustomTab = () => <Tab title="Tab 1">Tab body 1</Tab>;
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Tabs>
           <CustomTab />
           <Tab title="Tab 2">Tab body 2</Tab>
@@ -129,7 +130,7 @@ describe('Tabs', () => {
   test('change to second tab', () => {
     const onActive = jest.fn();
     const { getByText, container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Tabs onActive={onActive}>
           <Tab title="Tab 1">Tab body 1</Tab>
           <Tab title="Tab 2">Tab body 2</Tab>
@@ -146,7 +147,7 @@ describe('Tabs', () => {
 
   test('set on hover', () => {
     const { getByText, container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Tabs>
           {/* eslint-disable-next-line jsx-a11y/mouse-events-have-key-events */}
           <Tab title="Tab 1" onMouseOver={() => {}} onMouseOut={() => {}}>
@@ -173,7 +174,7 @@ describe('Tabs', () => {
 
   test('should style as disabled', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Tabs>
           <Tab title="Enabled Tab">This tab is enabled</Tab>
           <Tab title="Disabled Tab" disabled>
@@ -269,7 +270,7 @@ describe('Tabs', () => {
     `;
 
     const { container, getByText } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Tabs>
           <ButtonTab title="About" />
           <ButtonTab title="Activity" />
@@ -283,7 +284,7 @@ describe('Tabs', () => {
 
   test('should have no default styles with plain prop', () => {
     const { container, getByText } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Tabs>
           <Tab title="Title 1" plain />
         </Tabs>
@@ -334,7 +335,7 @@ describe('Tabs', () => {
     const onClick = jest.fn();
 
     const { getByText, container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Tabs>
           <Tab title="Tab 1">Tab body 1</Tab>
           <Tab title="Tab 2" onClick={onClick}>

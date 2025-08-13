@@ -1,8 +1,40 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`DataClearFilters clear filters should not clear search, sort, or step 1`] = `
 <DocumentFragment>
-  .c1 {
+  .c7 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 18px;
+  height: 18px;
+  fill: #555555;
+  stroke: #555555;
+}
+
+.c7 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c7 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c7 *[stroke*='#'],
+.c7 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c7 *[fill-rule],
+.c7 *[FILL-RULE],
+.c7 *[fill*='#'],
+.c7 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c1 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -59,43 +91,12 @@ exports[`DataClearFilters clear filters should not clear search, sort, or step 1
   row-gap: 12px;
 }
 
-.c7 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #666666;
-  stroke: #666666;
-}
-
-.c7 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c7 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c7 *[stroke*='#'],
-.c7 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c7 *[fill-rule],
-.c7 *[FILL-RULE],
-.c7 *[fill*='#'],
-.c7 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
-}
-
 .c11 {
   margin-top: 6px;
   margin-bottom: 6px;
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  font-weight: undefined;
 }
 
 .c10 {
@@ -108,18 +109,42 @@ exports[`DataClearFilters clear filters should not clear search, sort, or step 1
   background: transparent;
   overflow: visible;
   text-transform: none;
-  color: inherit;
-  outline: none;
   border: none;
-  padding: 0;
-  text-align: inherit;
+  border-radius: 9999px;
+  padding: 8px 8px;
+  font-size: 1.125rem;
   line-height: 0;
-  padding: 12px;
+  background-color: rgba(0, 0, 0, 0);
+  color: #555555;
+  border-style: solid;
+  border-width: 1px;
+  border-color: rgba(0, 0, 0, 0);
+  border-radius: 6px;
+  font-weight: 500;
+  padding: 8px 8px;
+  text-align: center;
+  transition-property: color,background-color,border-color,box-shadow;
+  transition-duration: 0.1s;
+  transition-timing-function: ease-in-out;
+}
+
+.c10 >svg {
+  display: flex;
+  align-self: center;
+  vertical-align: middle;
+}
+
+.c10:hover {
+  background-color: rgba(0, 0, 0, 0.04);
+  color: #555555;
+  border-color: rgba(0, 0, 0, 0);
+  font-weight: 500;
 }
 
 .c10:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c10:focus >circle,
@@ -129,8 +154,9 @@ exports[`DataClearFilters clear filters should not clear search, sort, or step 1
 .c10:focus >polygon,
 .c10:focus >polyline,
 .c10:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c10:focus ::-moz-focus-inner {
@@ -138,6 +164,8 @@ exports[`DataClearFilters clear filters should not clear search, sort, or step 1
 }
 
 .c10:focus:not(:focus-visible) {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -149,6 +177,8 @@ exports[`DataClearFilters clear filters should not clear search, sort, or step 1
 .c10:focus:not(:focus-visible) >polygon,
 .c10:focus:not(:focus-visible) >polyline,
 .c10:focus:not(:focus-visible) >rect {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -166,17 +196,23 @@ exports[`DataClearFilters clear filters should not clear search, sort, or step 1
   background: transparent;
   color: inherit;
   width: 100%;
-  padding: 11px;
-  font-weight: 600;
+  line-height: inherit;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-weight: 400;
   margin: 0;
-  border: 1px solid rgba(0, 0, 0, 0.33);
-  border-radius: 4px;
-  padding-left: 48px;
+  border: 1px solid rgba(0, 0, 0, 0.36);
+  border-radius: 8px;
+  color: #2e2e2e;
+  padding-left: 42px;
 }
 
 .c8:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c8:focus >circle,
@@ -186,8 +222,9 @@ exports[`DataClearFilters clear filters should not clear search, sort, or step 1
 .c8:focus >polygon,
 .c8:focus >polyline,
 .c8:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c8:focus ::-moz-focus-inner {
@@ -195,15 +232,15 @@ exports[`DataClearFilters clear filters should not clear search, sort, or step 1
 }
 
 .c8::-webkit-input-placeholder {
-  color: #AAAAAA;
+  color: #676767;
 }
 
 .c8::-moz-placeholder {
-  color: #AAAAAA;
+  color: #676767;
 }
 
 .c8:-ms-input-placeholder {
-  color: #AAAAAA;
+  color: #676767;
 }
 
 .c8 ::-webkit-search-decoration {
@@ -220,9 +257,26 @@ exports[`DataClearFilters clear filters should not clear search, sort, or step 1
   opacity: 1;
 }
 
+.c8::-webkit-input-placeholder {
+  font-weight: 400;
+}
+
+.c8::-moz-placeholder {
+  font-weight: 400;
+}
+
+.c8:-ms-input-placeholder {
+  font-weight: 400;
+}
+
 .c5 {
   position: relative;
   width: 100%;
+}
+
+.c5 svg {
+  fill: #2e2e2e;
+  stroke: #2e2e2e;
 }
 
 .c6 {
@@ -232,12 +286,15 @@ exports[`DataClearFilters clear filters should not clear search, sort, or step 1
   top: 50%;
   transform: translateY(-50%);
   pointer-events: none;
-  left: 12px;
+  left: 13px;
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -263,6 +320,14 @@ exports[`DataClearFilters clear filters should not clear search, sort, or step 1
   .c3 {
     column-gap: 6px;
   }
+}
+
+@media only screen and (max-width: 768px) {
+
+}
+
+@media only screen and (max-width: 768px) {
+
 }
 
 @media only screen and (max-width: 768px) {
@@ -441,8 +506,9 @@ exports[`DataClearFilters clears filters when clicked 1`] = `
 .c2 {
   margin-top: 6px;
   margin-bottom: 6px;
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  font-weight: undefined;
 }
 
 .c3 {
@@ -455,24 +521,36 @@ exports[`DataClearFilters clears filters when clicked 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  border: 2px solid #7D4CDB;
-  border-radius: 18px;
-  color: #444444;
-  padding: 4px 22px;
-  font-size: 18px;
-  line-height: 24px;
+  border: none;
+  border-radius: 9999px;
+  padding: 5px 10px;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: rgba(0, 0, 0, 0);
+  color: #555555;
+  border-style: solid;
+  border-width: 1px;
+  border-color: rgba(0, 0, 0, 0);
+  border-radius: 6px;
+  font-weight: 500;
+  padding: 5px 10px;
+  text-align: center;
   transition-property: color,background-color,border-color,box-shadow;
   transition-duration: 0.1s;
   transition-timing-function: ease-in-out;
 }
 
 .c3:hover {
-  box-shadow: 0px 0px 0px 2px #7D4CDB;
+  background-color: rgba(0, 0, 0, 0.04);
+  color: #555555;
+  border-color: rgba(0, 0, 0, 0);
+  font-weight: 500;
 }
 
 .c3:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c3:focus >circle,
@@ -482,8 +560,9 @@ exports[`DataClearFilters clears filters when clicked 1`] = `
 .c3:focus >polygon,
 .c3:focus >polyline,
 .c3:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c3:focus ::-moz-focus-inner {
@@ -491,6 +570,8 @@ exports[`DataClearFilters clears filters when clicked 1`] = `
 }
 
 .c3:focus:not(:focus-visible) {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -502,6 +583,8 @@ exports[`DataClearFilters clears filters when clicked 1`] = `
 .c3:focus:not(:focus-visible) >polygon,
 .c3:focus:not(:focus-visible) >polyline,
 .c3:focus:not(:focus-visible) >rect {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -511,8 +594,11 @@ exports[`DataClearFilters clears filters when clicked 1`] = `
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -565,24 +651,36 @@ exports[`DataClearFilters renders 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  border: 2px solid #7D4CDB;
-  border-radius: 18px;
-  color: #444444;
-  padding: 4px 22px;
-  font-size: 18px;
-  line-height: 24px;
+  border: none;
+  border-radius: 9999px;
+  padding: 5px 10px;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: rgba(0, 0, 0, 0);
+  color: #555555;
+  border-style: solid;
+  border-width: 1px;
+  border-color: rgba(0, 0, 0, 0);
+  border-radius: 6px;
+  font-weight: 500;
+  padding: 5px 10px;
+  text-align: center;
   transition-property: color,background-color,border-color,box-shadow;
   transition-duration: 0.1s;
   transition-timing-function: ease-in-out;
 }
 
 .c2:hover {
-  box-shadow: 0px 0px 0px 2px #7D4CDB;
+  background-color: rgba(0, 0, 0, 0.04);
+  color: #555555;
+  border-color: rgba(0, 0, 0, 0);
+  font-weight: 500;
 }
 
 .c2:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c2:focus >circle,
@@ -592,8 +690,9 @@ exports[`DataClearFilters renders 1`] = `
 .c2:focus >polygon,
 .c2:focus >polyline,
 .c2:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c2:focus ::-moz-focus-inner {
@@ -601,6 +700,8 @@ exports[`DataClearFilters renders 1`] = `
 }
 
 .c2:focus:not(:focus-visible) {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -612,6 +713,8 @@ exports[`DataClearFilters renders 1`] = `
 .c2:focus:not(:focus-visible) >polygon,
 .c2:focus:not(:focus-visible) >polyline,
 .c2:focus:not(:focus-visible) >rect {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -621,8 +724,11 @@ exports[`DataClearFilters renders 1`] = `
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -650,7 +756,39 @@ exports[`DataClearFilters renders 1`] = `
 
 exports[`DataClearFilters renders custom message 1`] = `
 <DocumentFragment>
-  .c1 {
+  .c7 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 18px;
+  height: 18px;
+  fill: #555555;
+  stroke: #555555;
+}
+
+.c7 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c7 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c7 *[stroke*='#'],
+.c7 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c7 *[fill-rule],
+.c7 *[FILL-RULE],
+.c7 *[fill*='#'],
+.c7 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c1 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -707,43 +845,12 @@ exports[`DataClearFilters renders custom message 1`] = `
   row-gap: 12px;
 }
 
-.c7 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #666666;
-  stroke: #666666;
-}
-
-.c7 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c7 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c7 *[stroke*='#'],
-.c7 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c7 *[fill-rule],
-.c7 *[FILL-RULE],
-.c7 *[fill*='#'],
-.c7 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
-}
-
 .c11 {
   margin-top: 6px;
   margin-bottom: 6px;
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  font-weight: undefined;
 }
 
 .c10 {
@@ -756,18 +863,42 @@ exports[`DataClearFilters renders custom message 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  color: inherit;
-  outline: none;
   border: none;
-  padding: 0;
-  text-align: inherit;
+  border-radius: 9999px;
+  padding: 8px 8px;
+  font-size: 1.125rem;
   line-height: 0;
-  padding: 12px;
+  background-color: rgba(0, 0, 0, 0);
+  color: #555555;
+  border-style: solid;
+  border-width: 1px;
+  border-color: rgba(0, 0, 0, 0);
+  border-radius: 6px;
+  font-weight: 500;
+  padding: 8px 8px;
+  text-align: center;
+  transition-property: color,background-color,border-color,box-shadow;
+  transition-duration: 0.1s;
+  transition-timing-function: ease-in-out;
+}
+
+.c10 >svg {
+  display: flex;
+  align-self: center;
+  vertical-align: middle;
+}
+
+.c10:hover {
+  background-color: rgba(0, 0, 0, 0.04);
+  color: #555555;
+  border-color: rgba(0, 0, 0, 0);
+  font-weight: 500;
 }
 
 .c10:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c10:focus >circle,
@@ -777,8 +908,9 @@ exports[`DataClearFilters renders custom message 1`] = `
 .c10:focus >polygon,
 .c10:focus >polyline,
 .c10:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c10:focus ::-moz-focus-inner {
@@ -786,6 +918,8 @@ exports[`DataClearFilters renders custom message 1`] = `
 }
 
 .c10:focus:not(:focus-visible) {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -797,6 +931,8 @@ exports[`DataClearFilters renders custom message 1`] = `
 .c10:focus:not(:focus-visible) >polygon,
 .c10:focus:not(:focus-visible) >polyline,
 .c10:focus:not(:focus-visible) >rect {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -815,24 +951,36 @@ exports[`DataClearFilters renders custom message 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  border: 2px solid #7D4CDB;
-  border-radius: 18px;
-  color: #444444;
-  padding: 4px 22px;
-  font-size: 18px;
-  line-height: 24px;
+  border: none;
+  border-radius: 9999px;
+  padding: 5px 10px;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: rgba(0, 0, 0, 0);
+  color: #555555;
+  border-style: solid;
+  border-width: 1px;
+  border-color: rgba(0, 0, 0, 0);
+  border-radius: 6px;
+  font-weight: 500;
+  padding: 5px 10px;
+  text-align: center;
   transition-property: color,background-color,border-color,box-shadow;
   transition-duration: 0.1s;
   transition-timing-function: ease-in-out;
 }
 
 .c12:hover {
-  box-shadow: 0px 0px 0px 2px #7D4CDB;
+  background-color: rgba(0, 0, 0, 0.04);
+  color: #555555;
+  border-color: rgba(0, 0, 0, 0);
+  font-weight: 500;
 }
 
 .c12:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c12:focus >circle,
@@ -842,8 +990,9 @@ exports[`DataClearFilters renders custom message 1`] = `
 .c12:focus >polygon,
 .c12:focus >polyline,
 .c12:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c12:focus ::-moz-focus-inner {
@@ -851,6 +1000,8 @@ exports[`DataClearFilters renders custom message 1`] = `
 }
 
 .c12:focus:not(:focus-visible) {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -862,6 +1013,8 @@ exports[`DataClearFilters renders custom message 1`] = `
 .c12:focus:not(:focus-visible) >polygon,
 .c12:focus:not(:focus-visible) >polyline,
 .c12:focus:not(:focus-visible) >rect {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -879,17 +1032,23 @@ exports[`DataClearFilters renders custom message 1`] = `
   background: transparent;
   color: inherit;
   width: 100%;
-  padding: 11px;
-  font-weight: 600;
+  line-height: inherit;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-weight: 400;
   margin: 0;
-  border: 1px solid rgba(0, 0, 0, 0.33);
-  border-radius: 4px;
-  padding-left: 48px;
+  border: 1px solid rgba(0, 0, 0, 0.36);
+  border-radius: 8px;
+  color: #2e2e2e;
+  padding-left: 42px;
 }
 
 .c8:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c8:focus >circle,
@@ -899,8 +1058,9 @@ exports[`DataClearFilters renders custom message 1`] = `
 .c8:focus >polygon,
 .c8:focus >polyline,
 .c8:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c8:focus ::-moz-focus-inner {
@@ -908,15 +1068,15 @@ exports[`DataClearFilters renders custom message 1`] = `
 }
 
 .c8::-webkit-input-placeholder {
-  color: #AAAAAA;
+  color: #676767;
 }
 
 .c8::-moz-placeholder {
-  color: #AAAAAA;
+  color: #676767;
 }
 
 .c8:-ms-input-placeholder {
-  color: #AAAAAA;
+  color: #676767;
 }
 
 .c8 ::-webkit-search-decoration {
@@ -933,9 +1093,26 @@ exports[`DataClearFilters renders custom message 1`] = `
   opacity: 1;
 }
 
+.c8::-webkit-input-placeholder {
+  font-weight: 400;
+}
+
+.c8::-moz-placeholder {
+  font-weight: 400;
+}
+
+.c8:-ms-input-placeholder {
+  font-weight: 400;
+}
+
 .c5 {
   position: relative;
   width: 100%;
+}
+
+.c5 svg {
+  fill: #2e2e2e;
+  stroke: #2e2e2e;
 }
 
 .c6 {
@@ -945,12 +1122,15 @@ exports[`DataClearFilters renders custom message 1`] = `
   top: 50%;
   transform: translateY(-50%);
   pointer-events: none;
-  left: 12px;
+  left: 13px;
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;

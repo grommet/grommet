@@ -1,6 +1,7 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import 'jest-styled-components';
+import { hpe } from 'grommet-theme-hpe';
 
 import { Skeleton } from '..';
 import { Grommet } from '../../Grommet';
@@ -13,7 +14,7 @@ import { Button } from '../../Button';
 describe('Skeleton', () => {
   test('renders', () => {
     const { asFragment } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Skeleton />
       </Grommet>,
     );
@@ -29,7 +30,7 @@ describe('Skeleton', () => {
 
   test('Box skeleton loading', () => {
     const { asFragment } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Box skeleton>
           <Heading>Heading</Heading>
           <Text>Text</Text>
@@ -47,7 +48,7 @@ describe('Skeleton', () => {
 
   test('Box skeleton sizes loading', () => {
     const { asFragment } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Box skeleton>
           <Heading level={2} size="small">
             Heading
@@ -65,7 +66,7 @@ describe('Skeleton', () => {
 
   test('Box skeleton loaded', () => {
     const { asFragment } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Box skeleton={false}>
           <Heading>Heading</Heading>
           <Text>Text</Text>
@@ -83,7 +84,7 @@ describe('Skeleton', () => {
 
   test('Box skeleton with specific dimensions', () => {
     const { asFragment } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Box skeleton height="small" width="medium">
           <Text>text</Text>
         </Box>

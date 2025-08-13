@@ -2,6 +2,7 @@ import React from 'react';
 import { act, fireEvent, render, screen, within } from '@testing-library/react';
 import 'jest-styled-components';
 import '@testing-library/jest-dom';
+import { hpe } from 'grommet-theme-hpe';
 
 import { Data } from '../../Data';
 import { DataFilters } from '../../DataFilters';
@@ -22,7 +23,7 @@ describe('DataTableColumns', () => {
 
   test('renders', () => {
     const { asFragment, getByRole } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Data id="test-data" data={data}>
           <DataFilters>
             <DataTableColumns drop options={['name', 'size']} />
@@ -73,7 +74,7 @@ describe('DataTableColumns', () => {
     jest.useFakeTimers();
     const onView = jest.fn();
     const { asFragment, getByRole, getByText } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Data id="test-data" data={data} onView={onView}>
           <DataFilters updateOn="change">
             <DataTableColumns drop options={['name', 'size', 'age']} />
@@ -118,7 +119,7 @@ describe('DataTableColumns', () => {
     jest.useFakeTimers();
     const onView = jest.fn();
     const { container, getByPlaceholderText, getByRole, getByText } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Data id="test-data" data={data} onView={onView}>
           <DataFilters updateOn="change">
             <DataTableColumns drop options={['name', 'size']} />
@@ -164,7 +165,7 @@ describe('DataTableColumns', () => {
     const onView = jest.fn();
 
     const App = () => (
-      <Grommet>
+      <Grommet theme={hpe}>
         <Data id="test-data" data={data} onView={onView}>
           <DataFilters updateOn="change">
             <DataTableColumns

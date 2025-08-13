@@ -1,4 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`Sidebar all 1`] = `
 .c3 {
@@ -11,8 +11,8 @@ exports[`Sidebar all 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background-color: #7D4CDB;
-  color: #f8f8f8;
+  background-color: #01a982;
+  color: #ffffff;
   min-width: 0;
   min-height: 0;
   flex-direction: column;
@@ -28,8 +28,8 @@ exports[`Sidebar all 1`] = `
   min-width: 0;
   min-height: 0;
   flex-direction: column;
-  height: 48px;
-  width: 48px;
+  height: 36px;
+  width: 36px;
   justify-content: center;
   border-radius: 100%;
   overflow: hidden;
@@ -53,13 +53,17 @@ exports[`Sidebar all 1`] = `
 
 .c6 {
   align-self: center;
-  font-size: 22px;
-  line-height: 28px;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  font-weight: 400;
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -155,16 +159,19 @@ exports[`Sidebar children 1`] = `
   min-width: 0;
   min-height: 0;
   flex-direction: column;
-  height: 48px;
-  width: 48px;
+  height: 36px;
+  width: 36px;
   justify-content: center;
   border-radius: 100%;
   overflow: hidden;
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -239,8 +246,8 @@ exports[`Sidebar footer 1`] = `
   min-width: 0;
   min-height: 0;
   flex-direction: column;
-  height: 48px;
-  width: 48px;
+  height: 36px;
+  width: 36px;
   justify-content: center;
   border-radius: 100%;
   overflow: hidden;
@@ -253,8 +260,11 @@ exports[`Sidebar footer 1`] = `
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -326,8 +336,8 @@ exports[`Sidebar header 1`] = `
   min-width: 0;
   min-height: 0;
   flex-direction: column;
-  height: 48px;
-  width: 48px;
+  height: 36px;
+  width: 36px;
   justify-content: center;
   border-radius: 100%;
   overflow: hidden;
@@ -350,8 +360,11 @@ exports[`Sidebar header 1`] = `
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -420,8 +433,11 @@ exports[`Sidebar renders 1`] = `
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;

@@ -7,6 +7,7 @@ import 'jest-axe/extend-expect';
 import 'regenerator-runtime/runtime';
 import userEvent from '@testing-library/user-event';
 import '@testing-library/jest-dom';
+import { hpe } from 'grommet-theme-hpe';
 
 import { Box } from '../../Box';
 import { Button } from '../../Button';
@@ -16,7 +17,7 @@ import { Tip } from '..';
 describe('Tip', () => {
   test('should have no accessibility violations', async () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Tip content="tooltip content"> Example</Tip>
       </Grommet>,
     );
@@ -33,7 +34,7 @@ describe('Tip', () => {
 
   test(`mouseOver and mouseOut events on the Tip's child`, async () => {
     const { getByText } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Tip
           content={
             <Box id="tooltip-id" data-testid="tooltip">
@@ -57,7 +58,7 @@ describe('Tip', () => {
 
   test(`focus and blur events on the Tip's child`, async () => {
     const { container, getByText } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Tip content="tooltip">
           <Button label="Test Events" />
         </Tip>
@@ -73,7 +74,7 @@ describe('Tip', () => {
 
   test('plain', async () => {
     const { getByText } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Tip plain content="tooltip">
           Example
         </Tip>
@@ -135,7 +136,7 @@ describe('Tip', () => {
 
   test(`dropProps should pass props to Drop`, async () => {
     const { getByText } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Tip
           dropProps={{
             plain: false, // should display box-shadow
@@ -154,7 +155,7 @@ describe('Tip', () => {
 
   test(`should work with a child that isn't a React Element`, () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Tip content="Hello">Not React Element</Tip>
       </Grommet>,
     );
@@ -164,7 +165,7 @@ describe('Tip', () => {
 
   test(`shouldn't crash with no children`, () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Tip />
       </Grommet>,
     );
@@ -176,7 +177,7 @@ describe('Tip', () => {
     console.error = jest.fn();
     expect(() => {
       render(
-        <Grommet>
+        <Grommet theme={hpe}>
           <Tip>
             <Box>1</Box>
             <Box>2</Box>
@@ -192,7 +193,7 @@ describe('Tip', () => {
     console.error = jest.fn();
     expect(() => {
       render(
-        <Grommet>
+        <Grommet theme={hpe}>
           <Tip>123 {false}</Tip>
         </Grommet>,
       );
@@ -208,7 +209,7 @@ describe('Tip', () => {
     const onFocus = jest.fn();
     const onBlur = jest.fn();
     render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Tip content="tip info">
           <Button
             label="Button label"
@@ -232,7 +233,7 @@ describe('Tip', () => {
 
   test(`should be visible by default`, async () => {
     const { getByText } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Tip content="tooltip" defaultVisible>
           Default Visible
         </Tip>
@@ -247,7 +248,7 @@ describe('Tip', () => {
   test('pressing Escape key closes tooltip', async () => {
     const user = userEvent.setup();
     render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Tip content="tooltip text">
           <button>Hover me</button>
         </Tip>

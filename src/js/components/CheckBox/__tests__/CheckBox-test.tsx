@@ -4,14 +4,14 @@ import { axe } from 'jest-axe';
 import 'jest-styled-components';
 import 'jest-axe/extend-expect';
 import 'regenerator-runtime/runtime';
-
+import { hpe } from 'grommet-theme-hpe';
 import { Grommet } from '../../Grommet';
 import { CheckBox } from '..';
 
 describe('CheckBox', () => {
   test('should not have accessibility violations', async () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <CheckBox a11yTitle="test" />
       </Grommet>,
     );
@@ -22,7 +22,7 @@ describe('CheckBox', () => {
 
   test('label should not have accessibility violations', async () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <CheckBox label="test" />
       </Grommet>,
     );
@@ -33,7 +33,7 @@ describe('CheckBox', () => {
 
   test('renders', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <CheckBox />
         <CheckBox id="test id" name="test name" />
       </Grommet>,
@@ -49,7 +49,7 @@ describe('CheckBox', () => {
 
   test('label renders', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <CheckBox label="test label" />
         <CheckBox label={<div>test label</div>} />
       </Grommet>,
@@ -60,7 +60,7 @@ describe('CheckBox', () => {
 
   test('checked renders', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <CheckBox checked />
       </Grommet>,
     );
@@ -70,7 +70,7 @@ describe('CheckBox', () => {
 
   test('defaultChecked', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <CheckBox defaultChecked />
       </Grommet>,
     );
@@ -80,7 +80,7 @@ describe('CheckBox', () => {
 
   test('disabled renders', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <CheckBox disabled />
         <CheckBox disabled checked />
       </Grommet>,
@@ -91,7 +91,7 @@ describe('CheckBox', () => {
 
   test('reverse renders', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <CheckBox reverse label="test label" />
       </Grommet>,
     );
@@ -101,7 +101,7 @@ describe('CheckBox', () => {
 
   test('toggle renders', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <CheckBox toggle />
         <CheckBox toggle checked />
         <CheckBox toggle label="test label" />
@@ -113,7 +113,7 @@ describe('CheckBox', () => {
 
   test('reverse toggle fill', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <CheckBox label="test label" reverse fill toggle />
         <CheckBox fill toggle label="test label" />
       </Grommet>,
@@ -124,7 +124,7 @@ describe('CheckBox', () => {
 
   test('indeterminate renders', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <CheckBox indeterminate />
         <CheckBox indeterminate label="test label" />
       </Grommet>,
@@ -136,7 +136,7 @@ describe('CheckBox', () => {
   test('indeterminate checked warns', () => {
     const warnSpy = jest.spyOn(console, 'warn').mockImplementation();
     render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <CheckBox indeterminate checked />
       </Grommet>,
     );
@@ -151,7 +151,7 @@ describe('CheckBox', () => {
   test('indeterminate toggle warns', () => {
     const warnSpy = jest.spyOn(console, 'warn').mockImplementation();
     render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <CheckBox indeterminate toggle />
       </Grommet>,
     );
@@ -165,7 +165,7 @@ describe('CheckBox', () => {
 
   test('controlled', () => {
     const { container, getByText } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <CheckBox label="test-label" checked />
       </Grommet>,
     );
@@ -214,7 +214,7 @@ describe('CheckBox', () => {
   test('renders a11yTitle and aria-label', async () => {
     const LABEL = 'Label';
     const { container, getByLabelText } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <CheckBox a11yTitle={LABEL} />
         <CheckBox aria-label={`${LABEL}-2`} />
       </Grommet>,

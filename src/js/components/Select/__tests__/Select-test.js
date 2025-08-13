@@ -5,6 +5,8 @@ import 'jest-axe/extend-expect';
 import 'jest-styled-components';
 import 'regenerator-runtime/runtime';
 import '@testing-library/jest-dom';
+import { hpe } from 'grommet-theme-hpe';
+
 import { CaretDown, CaretUp, FormDown } from 'grommet-icons';
 import { createPortal, expectPortal } from '../../../utils/portal';
 import { Box, Grommet, FormField, Form } from '../..';
@@ -17,7 +19,7 @@ describe('Select', () => {
 
   test('should not have accessibility violations', async () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Select options={['one', 'two', 'three']} a11yTitle="test" />
       </Grommet>,
     );
@@ -43,7 +45,7 @@ describe('Select', () => {
 
   test('basic', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Select id="test-select" options={['one', 'two']} a11yTitle="Select" />
       </Grommet>,
     );
@@ -61,7 +63,7 @@ describe('Select', () => {
 
   test('dark', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Box fill background="dark-1" align="center" justify="center">
           <Select placeholder="Select" options={['one', 'two']} />
         </Box>
@@ -100,7 +102,7 @@ describe('Select', () => {
     jest.useFakeTimers();
     const onClose = jest.fn();
     const { getByPlaceholderText, container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Select
           placeholder="test select"
           id="test-select"
@@ -125,7 +127,7 @@ describe('Select', () => {
   [0, null].forEach((value) =>
     test(`${value} value`, () => {
       const { asFragment } = render(
-        <Grommet>
+        <Grommet theme={hpe}>
           <Select
             id="test-select"
             placeholder="test select"
@@ -143,7 +145,7 @@ describe('Select', () => {
     jest.useFakeTimers();
     const onSearch = jest.fn();
     const { getByPlaceholderText, container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Select
           id="test-select"
           placeholder="test select"
@@ -177,7 +179,7 @@ describe('Select', () => {
     const Test = () => {
       const [options, setOptions] = React.useState(['one', 'two']);
       return (
-        <Grommet>
+        <Grommet theme={hpe}>
           <Select
             id="test-select"
             placeholder="test select"
@@ -215,7 +217,7 @@ describe('Select', () => {
   test('select an option with complex options', () => {
     const onChange = jest.fn();
     const { getByText, container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Select
           id="test-select"
           plain
@@ -243,7 +245,7 @@ describe('Select', () => {
 
   test('size', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Select
           id="test-select"
           size="large"
@@ -261,7 +263,7 @@ describe('Select', () => {
   ['small', 'medium', 'large'].forEach((dropHeight) => {
     test(`${dropHeight} drop container height`, () => {
       const { getByPlaceholderText } = render(
-        <Grommet>
+        <Grommet theme={hpe}>
           <Select
             id="test-select"
             size="large"
@@ -304,7 +306,7 @@ describe('Select', () => {
       );
     };
     const { getByPlaceholderText, getByText, container, asFragment } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Test />
       </Grommet>,
     );
@@ -351,7 +353,7 @@ describe('Select', () => {
       );
     };
     const { getByPlaceholderText, getByText, asFragment } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Test />
       </Grommet>,
     );
@@ -397,7 +399,7 @@ describe('Select', () => {
       );
     };
     const { getByPlaceholderText, getByText, container, asFragment } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Test />
       </Grommet>,
     );
@@ -445,7 +447,7 @@ describe('Select', () => {
       );
     };
     const { getByPlaceholderText, getByText, container, asFragment } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Test />
       </Grommet>,
     );
@@ -493,7 +495,7 @@ describe('Select', () => {
       );
     };
     const { getByPlaceholderText, getByText, asFragment } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Test />
       </Grommet>,
     );
@@ -540,7 +542,7 @@ describe('Select', () => {
       );
     };
     const { getByPlaceholderText, container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Test />
       </Grommet>,
     );
@@ -552,7 +554,7 @@ describe('Select', () => {
 
   test('complex options and children', () => {
     const { getByPlaceholderText, container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Select
           id="test-select"
           placeholder="test select"
@@ -576,7 +578,7 @@ describe('Select', () => {
   test('select an option', () => {
     const onChange = jest.fn();
     const { getByPlaceholderText, container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Select
           id="test-select"
           placeholder="test select"
@@ -605,7 +607,7 @@ describe('Select', () => {
   test('select an option with enter', () => {
     const onChange = jest.fn();
     const { getByPlaceholderText, container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Select
           id="test-select"
           placeholder="test select"
@@ -642,7 +644,7 @@ describe('Select', () => {
   test('select an option with keypress', () => {
     const onChange = jest.fn();
     const { getByPlaceholderText, container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Select
           id="test-select"
           placeholder="test select"
@@ -679,7 +681,7 @@ describe('Select', () => {
       { id: 3, name: 'three' },
     ];
     const { getByPlaceholderText, container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Select
           id="test-select"
           placeholder="test select"
@@ -715,7 +717,7 @@ describe('Select', () => {
   test('select on multiple keydown always picks first enabled option', () => {
     const onChange = jest.fn();
     const { getByPlaceholderText, container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Select
           id="test-select"
           placeholder="test select"
@@ -753,7 +755,7 @@ describe('Select', () => {
 
   test('disabled', () => {
     const { getByPlaceholderText, container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Select
           id="test-select"
           placeholder="test select"
@@ -774,7 +776,7 @@ describe('Select', () => {
 
   test('empty results search', () => {
     const { getByPlaceholderText } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Select
           id="test-select"
           placeholder="test select"
@@ -796,7 +798,7 @@ describe('Select', () => {
 
   test('open default state', () => {
     render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Select
           open
           id="test-select"
@@ -811,7 +813,7 @@ describe('Select', () => {
 
   test('renders without icon', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Select id="test-select" options={['one', 'two']} icon={false} />
       </Grommet>,
     );
@@ -821,7 +823,7 @@ describe('Select', () => {
 
   test('renders custom icon', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Select id="test-select" options={['one', 'two']} icon={CaretDown} />
       </Grommet>,
     );
@@ -831,7 +833,7 @@ describe('Select', () => {
 
   test('renders default icon', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Select id="test-select" options={['one', 'two']} icon />
       </Grommet>,
     );
@@ -1186,7 +1188,7 @@ describe('Select', () => {
   test('select an option then select a different option', () => {
     const onChange = jest.fn();
     const { getByPlaceholderText } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Select
           id="test-select"
           placeholder="test select"
@@ -1220,7 +1222,7 @@ describe('Select', () => {
 
   test('keyboard navigation with disabled option', () => {
     const { getByPlaceholderText } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Select
           id="test-select"
           placeholder="test select"
@@ -1265,7 +1267,7 @@ describe('Select', () => {
 
   test('undefined option', () => {
     const { getByPlaceholderText } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Select
           id="test-select"
           placeholder="test select"
@@ -1284,7 +1286,7 @@ describe('Select', () => {
 
   test('valueLabel', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Select
           id="test-select"
           placeholder="test select"
@@ -1314,7 +1316,7 @@ describe('Select', () => {
       );
     };
     const { getByText, container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Test />
       </Grommet>,
     );
@@ -1337,7 +1339,7 @@ describe('Select', () => {
 
   test('selected', () => {
     const { container, getByPlaceholderText } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Select
           options={['one', 'two']}
           placeholder="test select"
@@ -1354,7 +1356,7 @@ describe('Select', () => {
   test('keyboard navigation timeout', () => {
     jest.useFakeTimers();
     const { container, getByPlaceholderText } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Select
           id="test-select"
           placeholder="test select"
@@ -1381,7 +1383,7 @@ describe('Select', () => {
     jest.useFakeTimers();
     const onSearch = jest.fn();
     const { container, getByPlaceholderText } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Select
           id="test-select"
           placeholder="test select"
@@ -1410,7 +1412,7 @@ describe('Select', () => {
   test('disabled option value', () => {
     jest.useFakeTimers();
     const { getByPlaceholderText } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Select
           id="test-select"
           placeholder="test select"
@@ -1437,7 +1439,7 @@ describe('Select', () => {
       );
     };
     render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Test />
       </Grommet>,
     );
@@ -1466,7 +1468,7 @@ describe('Select', () => {
       );
     };
     render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Test />
       </Grommet>,
     );
@@ -1496,7 +1498,7 @@ describe('Select', () => {
       );
     };
     const { getByPlaceholderText } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Test />
       </Grommet>,
     );
@@ -1522,7 +1524,7 @@ describe('Select', () => {
       );
     };
     const { getByPlaceholderText } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Test />
       </Grommet>,
     );
@@ -1548,7 +1550,7 @@ describe('Select', () => {
       );
     };
     const { getByPlaceholderText } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Test />
       </Grommet>,
     );
@@ -1570,7 +1572,7 @@ describe('Select', () => {
 
   test('default value', () => {
     const { container, getByDisplayValue } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Select
           id="test-select"
           placeholder="test select"
@@ -1586,7 +1588,7 @@ describe('Select', () => {
 
   test('default value object options', () => {
     const { container, getByDisplayValue } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Select
           id="test-select"
           placeholder="test select"
@@ -1620,7 +1622,7 @@ describe('Select', () => {
       );
     };
     const { getByDisplayValue } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Test />
       </Grommet>,
     );
@@ -1641,7 +1643,7 @@ describe('Select', () => {
     const onChange = jest.fn();
 
     const { getByPlaceholderText, container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Select
           id="test-select"
           placeholder="test select"
@@ -1675,7 +1677,7 @@ describe('Select', () => {
 
   test('should apply a11yTitle or aria-label', () => {
     const { container, getByRole } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Select options={['one', 'two', 'three']} a11yTitle="test" />
         <Select options={['one', 'two', 'three']} aria-label="test-select" />
       </Grommet>,
@@ -1688,7 +1690,7 @@ describe('Select', () => {
 
   test('object options and null value', () => {
     render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Select
           placeholder="test select"
           valueKey="id"
@@ -1713,7 +1715,7 @@ describe('Select', () => {
 
   test('valueLabel with value=0', () => {
     const { asFragment } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Select
           options={[0, 1, 2]}
           value={0}
@@ -1728,7 +1730,7 @@ describe('Select', () => {
     jest.useFakeTimers();
     const onSearch = jest.fn();
     const { getAllByRole, getByPlaceholderText } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Select
           id="test-select"
           options={['one', 'two']}
@@ -1761,7 +1763,7 @@ describe('Select', () => {
     jest.useFakeTimers();
     const onSearch = jest.fn();
     const { getAllByRole, getByPlaceholderText } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Select
           id="test-select"
           options={['one', 'two']}
@@ -1796,7 +1798,7 @@ describe('Select', () => {
 
   test('focusIndicator is true by default when plain is false', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Select
           id="test-select"
           placeholder="test select"
@@ -1818,7 +1820,7 @@ describe('Select', () => {
 
     // Render Select with JSX elements as options
     const { getByPlaceholderText, getByText, container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Select
           id="test-select"
           placeholder="test select"
@@ -1902,7 +1904,7 @@ describe('Select', () => {
 
   test('Select wrapped in FormField with label and no placeholder', () => {
     render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Form>
           <FormField label="Size" htmlFor="size__input">
             <Select
@@ -1929,7 +1931,7 @@ describe('Select', () => {
   test(`Select wrapped in FormField with label and no
     placeholder & no __input`, () => {
     render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Form>
           <FormField label="Size" htmlFor="size">
             <Select

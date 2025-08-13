@@ -1,8 +1,40 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`Accordion AccordionPanel 1`] = `
 <DocumentFragment>
-  .c1 {
+  .c8 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 18px;
+  height: 18px;
+  fill: #555555;
+  stroke: #555555;
+}
+
+.c8 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c8 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c8 *[stroke*='#'],
+.c8 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c8 *[fill-rule],
+.c8 *[FILL-RULE],
+.c8 *[fill*='#'],
+.c8 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c1 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -15,6 +47,9 @@ exports[`Accordion AccordionPanel 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  margin-bottom: -1px;
+  border-top: solid 1px rgba(0, 0, 0, 0.36);
+  border-bottom: solid 1px rgba(0, 0, 0, 0.36);
   min-width: 0;
   min-height: 0;
   flex-direction: column;
@@ -55,17 +90,269 @@ exports[`Accordion AccordionPanel 1`] = `
   padding-right: 12px;
 }
 
-.c9 {
-  display: flex;
+.c3 {
+  display: inline-block;
   box-sizing: border-box;
-  max-width: 100%;
-  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
-  min-width: 0;
-  min-height: 0;
-  flex-direction: column;
+  cursor: pointer;
+  font: inherit;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+  color: inherit;
 }
 
-.c8 {
+.c3:hover {
+  background-color: rgba(0, 0, 0, 0.04);
+  color: #555555;
+}
+
+.c3:focus {
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
+}
+
+.c3:focus >circle,
+.c3:focus >ellipse,
+.c3:focus >line,
+.c3:focus >path,
+.c3:focus >polygon,
+.c3:focus >polyline,
+.c3:focus >rect {
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
+}
+
+.c3:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c3:focus:not(:focus-visible) {
+  outline-offset: 0px;
+  outline: none;
+  outline: none;
+  box-shadow: none;
+}
+
+.c3:focus:not(:focus-visible) >circle,
+.c3:focus:not(:focus-visible) >ellipse,
+.c3:focus:not(:focus-visible) >line,
+.c3:focus:not(:focus-visible) >path,
+.c3:focus:not(:focus-visible) >polygon,
+.c3:focus:not(:focus-visible) >polyline,
+.c3:focus:not(:focus-visible) >rect {
+  outline-offset: 0px;
+  outline: none;
+  outline: none;
+  box-shadow: none;
+}
+
+.c3:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
+}
+
+.c9 {
+  transition: max-height 200ms,opacity 200ms;
+  opacity: 0;
+  overflow: hidden;
+}
+
+.c6 {
+  margin-left: 6px;
+  margin-right: 6px;
+  margin-top: 24px;
+  margin-bottom: 24px;
+  font-size: 1.5rem;
+  line-height: 1.75rem;
+  max-width: 624px;
+  font-weight: 400;
+  overflow-wrap: break-word;
+  color: #2e2e2e;
+}
+
+.c0 {
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    margin-bottom: -1px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    border-top: solid 1px rgba(0, 0, 0, 0.36);
+    border-bottom: solid 1px rgba(0, 0, 0, 0.36);
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c5 {
+    padding-left: 3px;
+    padding-right: 3px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c7 {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c6 {
+    margin-left: 3px;
+    margin-right: 3px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c6 {
+    margin-top: 12px;
+    margin-bottom: 12px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c6 {
+    font-size: 1.25rem;
+    line-height: 1.5rem;
+    max-width: 432px;
+  }
+}
+
+<div
+    class="c0"
+  >
+    <div
+      class="c1"
+    >
+      <div
+        class="c2"
+      >
+        <button
+          aria-expanded="false"
+          class="c3"
+          id="«r1»"
+          type="button"
+        >
+          <div
+            class="c4"
+          >
+            <div
+              class="c5"
+            >
+              <h3
+                class="c6"
+              >
+                Panel 1
+              </h3>
+            </div>
+            <div
+              class="c7"
+            >
+              <svg
+                aria-label="Down"
+                class="c8"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="m2 8.35 10.173 9.823L21.997 8"
+                  fill="none"
+                  stroke="#000"
+                  stroke-width="2"
+                />
+              </svg>
+            </div>
+          </div>
+        </button>
+        <div
+          aria-labelledby="«r1»"
+          class="c1"
+          role="region"
+        >
+          <div
+            aria-hidden="true"
+            class="c1 c9"
+          />
+        </div>
+      </div>
+      <div
+        class="c2"
+      >
+        <button
+          aria-expanded="false"
+          class="c3"
+          id="«r2»"
+          type="button"
+        >
+          <div
+            class="c4"
+          >
+            <div
+              class="c5"
+            >
+              <h3
+                class="c6"
+              >
+                Panel 2
+              </h3>
+            </div>
+            <div
+              class="c7"
+            >
+              <svg
+                aria-label="Down"
+                class="c8"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="m2 8.35 10.173 9.823L21.997 8"
+                  fill="none"
+                  stroke="#000"
+                  stroke-width="2"
+                />
+              </svg>
+            </div>
+          </div>
+        </button>
+        <div
+          aria-labelledby="«r2»"
+          class="c1"
+          role="region"
+        >
+          <div
+            aria-hidden="true"
+            class="c1 c9"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Accordion accordion border 1`] = `
+<DocumentFragment>
+  .c8 {
   display: inline-block;
   flex: 0 0 auto;
   width: 24px;
@@ -97,229 +384,7 @@ exports[`Accordion AccordionPanel 1`] = `
   stroke: none;
 }
 
-.c3 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  font: inherit;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  color: inherit;
-  outline: none;
-  border: none;
-  padding: 0;
-  text-align: inherit;
-}
-
-.c3:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c3:focus >circle,
-.c3:focus >ellipse,
-.c3:focus >line,
-.c3:focus >path,
-.c3:focus >polygon,
-.c3:focus >polyline,
-.c3:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c3:focus ::-moz-focus-inner {
-  border: 0;
-}
-
-.c3:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c3:focus:not(:focus-visible) >circle,
-.c3:focus:not(:focus-visible) >ellipse,
-.c3:focus:not(:focus-visible) >line,
-.c3:focus:not(:focus-visible) >path,
-.c3:focus:not(:focus-visible) >polygon,
-.c3:focus:not(:focus-visible) >polyline,
-.c3:focus:not(:focus-visible) >rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c3:focus:not(:focus-visible) ::-moz-focus-inner {
-  border: 0;
-}
-
-.c10 {
-  transition: max-height 200ms,opacity 200ms;
-  opacity: 0;
-  overflow: hidden;
-}
-
-.c6 {
-  font-size: 18px;
-  line-height: 24px;
-  max-width: 432px;
-  font-weight: 600;
-  overflow-wrap: break-word;
-}
-
-.c0 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
-@media only screen and (max-width: 768px) {
-  .c5 {
-    padding-left: 3px;
-    padding-right: 3px;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .c7 {
-    padding-left: 6px;
-    padding-right: 6px;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .c9 {
-    border-bottom: solid 1px rgba(0, 0, 0, 0.33);
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .c6 {
-    font-size: 16px;
-    line-height: 22px;
-    max-width: 384px;
-  }
-}
-
-<div
-    class="c0"
-  >
-    <div
-      class="c1"
-    >
-      <div
-        class="c2"
-      >
-        <button
-          aria-expanded="false"
-          class="c3"
-          id="«r1»"
-          type="button"
-        >
-          <div
-            class="c4"
-          >
-            <div
-              class="c5"
-            >
-              <h4
-                class="c6"
-              >
-                Panel 1
-              </h4>
-            </div>
-            <div
-              class="c7"
-            >
-              <svg
-                aria-label="FormDown"
-                class="c8"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  d="m18 9-6 6-6-6"
-                  fill="none"
-                  stroke="#000"
-                  stroke-width="2"
-                />
-              </svg>
-            </div>
-          </div>
-        </button>
-        <div
-          aria-labelledby="«r1»"
-          class="c9"
-          role="region"
-        >
-          <div
-            aria-hidden="true"
-            class="c1 c10"
-          />
-        </div>
-      </div>
-      <div
-        class="c2"
-      >
-        <button
-          aria-expanded="false"
-          class="c3"
-          id="«r2»"
-          type="button"
-        >
-          <div
-            class="c4"
-          >
-            <div
-              class="c5"
-            >
-              <h4
-                class="c6"
-              >
-                Panel 2
-              </h4>
-            </div>
-            <div
-              class="c7"
-            >
-              <svg
-                aria-label="FormDown"
-                class="c8"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  d="m18 9-6 6-6-6"
-                  fill="none"
-                  stroke="#000"
-                  stroke-width="2"
-                />
-              </svg>
-            </div>
-          </div>
-        </button>
-        <div
-          aria-labelledby="«r2»"
-          class="c9"
-          role="region"
-        >
-          <div
-            aria-hidden="true"
-            class="c1 c10"
-          />
-        </div>
-      </div>
-    </div>
-  </div>
-</DocumentFragment>
-`;
-
-exports[`Accordion accordion border 1`] = `
-<DocumentFragment>
-  .c1 {
+.c1 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -373,38 +438,6 @@ exports[`Accordion accordion border 1`] = `
   min-width: fit-content;
   padding-left: 12px;
   padding-right: 12px;
-}
-
-.c8 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
-}
-
-.c8 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c8 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c8 *[stroke*='#'],
-.c8 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c8 *[fill-rule],
-.c8 *[FILL-RULE],
-.c8 *[fill*='#'],
-.c8 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
 }
 
 .c3 {
@@ -586,7 +619,39 @@ exports[`Accordion accordion border 1`] = `
 
 exports[`Accordion backward compatibility of hover.color = undefined 1`] = `
 <DocumentFragment>
-  .c1 {
+  .c8 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #7D4CDB;
+  stroke: #7D4CDB;
+}
+
+.c8 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c8 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c8 *[stroke*='#'],
+.c8 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c8 *[fill-rule],
+.c8 *[FILL-RULE],
+.c8 *[fill*='#'],
+.c8 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c1 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -647,38 +712,6 @@ exports[`Accordion backward compatibility of hover.color = undefined 1`] = `
   min-width: 0;
   min-height: 0;
   flex-direction: column;
-}
-
-.c8 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
-}
-
-.c8 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c8 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c8 *[stroke*='#'],
-.c8 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c8 *[fill-rule],
-.c8 *[FILL-RULE],
-.c8 *[fill*='#'],
-.c8 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
 }
 
 .c3 {
@@ -854,7 +887,39 @@ exports[`Accordion backward compatibility of hover.color = undefined 1`] = `
 
 exports[`Accordion blur styles 1`] = `
 <DocumentFragment>
-  .c1 {
+  .c8 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #7D4CDB;
+  stroke: #7D4CDB;
+}
+
+.c8 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c8 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c8 *[stroke*='#'],
+.c8 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c8 *[fill-rule],
+.c8 *[FILL-RULE],
+.c8 *[fill*='#'],
+.c8 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c1 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -915,38 +980,6 @@ exports[`Accordion blur styles 1`] = `
   min-width: 0;
   min-height: 0;
   flex-direction: column;
-}
-
-.c8 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
-}
-
-.c8 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c8 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c8 *[stroke*='#'],
-.c8 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c8 *[fill-rule],
-.c8 *[FILL-RULE],
-.c8 *[fill*='#'],
-.c8 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
 }
 
 .c3 {
@@ -1127,7 +1160,39 @@ exports[`Accordion blur styles 1`] = `
 
 exports[`Accordion change active index 1`] = `
 <DocumentFragment>
-  .c1 {
+  .c8 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 18px;
+  height: 18px;
+  fill: #555555;
+  stroke: #555555;
+}
+
+.c8 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c8 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c8 *[stroke*='#'],
+.c8 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c8 *[fill-rule],
+.c8 *[FILL-RULE],
+.c8 *[fill*='#'],
+.c8 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c1 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -1140,6 +1205,9 @@ exports[`Accordion change active index 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  margin-bottom: -1px;
+  border-top: solid 1px rgba(0, 0, 0, 0.36);
+  border-bottom: solid 1px rgba(0, 0, 0, 0.36);
   min-width: 0;
   min-height: 0;
   flex-direction: column;
@@ -1180,48 +1248,6 @@ exports[`Accordion change active index 1`] = `
   padding-right: 12px;
 }
 
-.c9 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
-  min-width: 0;
-  min-height: 0;
-  flex-direction: column;
-}
-
-.c8 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
-}
-
-.c8 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c8 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c8 *[stroke*='#'],
-.c8 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c8 *[fill-rule],
-.c8 *[FILL-RULE],
-.c8 *[fill*='#'],
-.c8 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
-}
-
 .c3 {
   display: inline-block;
   box-sizing: border-box;
@@ -1232,16 +1258,22 @@ exports[`Accordion change active index 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  color: inherit;
   outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
+  color: inherit;
+}
+
+.c3:hover {
+  background-color: rgba(0, 0, 0, 0.04);
+  color: #555555;
 }
 
 .c3:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c3:focus >circle,
@@ -1251,8 +1283,9 @@ exports[`Accordion change active index 1`] = `
 .c3:focus >polygon,
 .c3:focus >polyline,
 .c3:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c3:focus ::-moz-focus-inner {
@@ -1260,6 +1293,8 @@ exports[`Accordion change active index 1`] = `
 }
 
 .c3:focus:not(:focus-visible) {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -1271,6 +1306,8 @@ exports[`Accordion change active index 1`] = `
 .c3:focus:not(:focus-visible) >polygon,
 .c3:focus:not(:focus-visible) >polyline,
 .c3:focus:not(:focus-visible) >rect {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -1280,21 +1317,42 @@ exports[`Accordion change active index 1`] = `
 }
 
 .c6 {
-  font-size: 18px;
-  line-height: 24px;
-  max-width: 432px;
-  font-weight: 600;
+  margin-left: 6px;
+  margin-right: 6px;
+  margin-top: 24px;
+  margin-bottom: 24px;
+  font-size: 1.5rem;
+  line-height: 1.75rem;
+  max-width: 624px;
+  font-weight: 400;
   overflow-wrap: break-word;
+  color: #2e2e2e;
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    margin-bottom: -1px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    border-top: solid 1px rgba(0, 0, 0, 0.36);
+    border-bottom: solid 1px rgba(0, 0, 0, 0.36);
+  }
 }
 
 @media only screen and (max-width: 768px) {
@@ -1312,16 +1370,24 @@ exports[`Accordion change active index 1`] = `
 }
 
 @media only screen and (max-width: 768px) {
-  .c9 {
-    border-bottom: solid 1px rgba(0, 0, 0, 0.33);
+  .c6 {
+    margin-left: 3px;
+    margin-right: 3px;
   }
 }
 
 @media only screen and (max-width: 768px) {
   .c6 {
-    font-size: 16px;
-    line-height: 22px;
-    max-width: 384px;
+    margin-top: 12px;
+    margin-bottom: 12px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c6 {
+    font-size: 1.25rem;
+    line-height: 1.5rem;
+    max-width: 432px;
   }
 }
 
@@ -1346,22 +1412,22 @@ exports[`Accordion change active index 1`] = `
             <div
               class="c5"
             >
-              <h4
+              <h3
                 class="c6"
               >
                 Panel 1
-              </h4>
+              </h3>
             </div>
             <div
               class="c7"
             >
               <svg
-                aria-label="FormDown"
+                aria-label="Down"
                 class="c8"
                 viewBox="0 0 24 24"
               >
                 <path
-                  d="m18 9-6 6-6-6"
+                  d="m2 8.35 10.173 9.823L21.997 8"
                   fill="none"
                   stroke="#000"
                   stroke-width="2"
@@ -1372,7 +1438,7 @@ exports[`Accordion change active index 1`] = `
         </button>
         <div
           aria-labelledby="«rf»"
-          class="c9"
+          class="c1"
           role="region"
         />
       </div>
@@ -1391,22 +1457,22 @@ exports[`Accordion change active index 1`] = `
             <div
               class="c5"
             >
-              <h4
+              <h3
                 class="c6"
               >
                 Panel 2
-              </h4>
+              </h3>
             </div>
             <div
               class="c7"
             >
               <svg
-                aria-label="FormUp"
+                aria-label="Up"
                 class="c8"
                 viewBox="0 0 24 24"
               >
                 <path
-                  d="m18 15-6-6-6 6"
+                  d="m2 15.999 10.173-9.824 9.824 10.173"
                   fill="none"
                   stroke="#000"
                   stroke-width="2"
@@ -1417,7 +1483,7 @@ exports[`Accordion change active index 1`] = `
         </button>
         <div
           aria-labelledby="«rg»"
-          class="c9"
+          class="c1"
           role="region"
         >
           Panel body 2
@@ -1430,7 +1496,39 @@ exports[`Accordion change active index 1`] = `
 
 exports[`Accordion change active index 2`] = `
 <DocumentFragment>
-  .c1 {
+  .c8 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 18px;
+  height: 18px;
+  fill: #555555;
+  stroke: #555555;
+}
+
+.c8 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c8 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c8 *[stroke*='#'],
+.c8 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c8 *[fill-rule],
+.c8 *[FILL-RULE],
+.c8 *[fill*='#'],
+.c8 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c1 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -1443,6 +1541,9 @@ exports[`Accordion change active index 2`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  margin-bottom: -1px;
+  border-top: solid 1px rgba(0, 0, 0, 0.36);
+  border-bottom: solid 1px rgba(0, 0, 0, 0.36);
   min-width: 0;
   min-height: 0;
   flex-direction: column;
@@ -1483,105 +1584,6 @@ exports[`Accordion change active index 2`] = `
   padding-right: 12px;
 }
 
-.c9 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
-  min-width: 0;
-  min-height: 0;
-  flex-direction: column;
-}
-
-.c8 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
-}
-
-.c8 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c8 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c8 *[stroke*='#'],
-.c8 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c8 *[fill-rule],
-.c8 *[FILL-RULE],
-.c8 *[fill*='#'],
-.c8 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
-}
-
-.c10 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  font: inherit;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  color: inherit;
-  outline: none;
-  border: none;
-  padding: 0;
-  text-align: inherit;
-}
-
-.c10:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c10:focus >circle,
-.c10:focus >ellipse,
-.c10:focus >line,
-.c10:focus >path,
-.c10:focus >polygon,
-.c10:focus >polyline,
-.c10:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c10:focus ::-moz-focus-inner {
-  border: 0;
-}
-
-.c10:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c10:focus:not(:focus-visible) >circle,
-.c10:focus:not(:focus-visible) >ellipse,
-.c10:focus:not(:focus-visible) >line,
-.c10:focus:not(:focus-visible) >path,
-.c10:focus:not(:focus-visible) >polygon,
-.c10:focus:not(:focus-visible) >polyline,
-.c10:focus:not(:focus-visible) >rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c10:focus:not(:focus-visible) ::-moz-focus-inner {
-  border: 0;
-}
-
 .c3 {
   display: inline-block;
   box-sizing: border-box;
@@ -1592,16 +1594,22 @@ exports[`Accordion change active index 2`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  color: inherit;
   outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
+  color: inherit;
+}
+
+.c3:hover {
+  background-color: rgba(0, 0, 0, 0.04);
+  color: #555555;
 }
 
 .c3:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c3:focus >circle,
@@ -1611,8 +1619,9 @@ exports[`Accordion change active index 2`] = `
 .c3:focus >polygon,
 .c3:focus >polyline,
 .c3:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c3:focus ::-moz-focus-inner {
@@ -1620,6 +1629,8 @@ exports[`Accordion change active index 2`] = `
 }
 
 .c3:focus:not(:focus-visible) {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -1631,6 +1642,8 @@ exports[`Accordion change active index 2`] = `
 .c3:focus:not(:focus-visible) >polygon,
 .c3:focus:not(:focus-visible) >polyline,
 .c3:focus:not(:focus-visible) >rect {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -1639,31 +1652,43 @@ exports[`Accordion change active index 2`] = `
   border: 0;
 }
 
-.c11 {
-  font-size: 18px;
-  line-height: 24px;
-  max-width: 432px;
-  font-weight: 600;
-  overflow-wrap: break-word;
-}
-
 .c6 {
-  font-size: 18px;
-  line-height: 24px;
-  max-width: 432px;
-  font-weight: 600;
+  margin-left: 6px;
+  margin-right: 6px;
+  margin-top: 24px;
+  margin-bottom: 24px;
+  font-size: 1.5rem;
+  line-height: 1.75rem;
+  max-width: 624px;
+  font-weight: 400;
   overflow-wrap: break-word;
-  color: #777777;
+  color: #2e2e2e;
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    margin-bottom: -1px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    border-top: solid 1px rgba(0, 0, 0, 0.36);
+    border-bottom: solid 1px rgba(0, 0, 0, 0.36);
+  }
 }
 
 @media only screen and (max-width: 768px) {
@@ -1681,24 +1706,24 @@ exports[`Accordion change active index 2`] = `
 }
 
 @media only screen and (max-width: 768px) {
-  .c9 {
-    border-bottom: solid 1px rgba(0, 0, 0, 0.33);
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .c11 {
-    font-size: 16px;
-    line-height: 22px;
-    max-width: 384px;
+  .c6 {
+    margin-left: 3px;
+    margin-right: 3px;
   }
 }
 
 @media only screen and (max-width: 768px) {
   .c6 {
-    font-size: 16px;
-    line-height: 22px;
-    max-width: 384px;
+    margin-top: 12px;
+    margin-bottom: 12px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c6 {
+    font-size: 1.25rem;
+    line-height: 1.5rem;
+    max-width: 432px;
   }
 }
 
@@ -1724,22 +1749,22 @@ exports[`Accordion change active index 2`] = `
             <div
               class="c5"
             >
-              <h4
+              <h3
                 class="c6"
               >
                 Panel 1
-              </h4>
+              </h3>
             </div>
             <div
               class="c7"
             >
               <svg
-                aria-label="FormDown"
+                aria-label="Down"
                 class="c8"
                 viewBox="0 0 24 24"
               >
                 <path
-                  d="m18 9-6 6-6-6"
+                  d="m2 8.35 10.173 9.823L21.997 8"
                   fill="none"
                   stroke="#000"
                   stroke-width="2"
@@ -1750,7 +1775,7 @@ exports[`Accordion change active index 2`] = `
         </button>
         <div
           aria-labelledby="«rf»"
-          class="c9"
+          class="c1"
           role="region"
         />
       </div>
@@ -1759,7 +1784,7 @@ exports[`Accordion change active index 2`] = `
       >
         <button
           aria-expanded="true"
-          class="c10"
+          class="c3"
           id="«rg»"
           type="button"
         >
@@ -1769,22 +1794,22 @@ exports[`Accordion change active index 2`] = `
             <div
               class="c5"
             >
-              <h4
-                class="c11"
+              <h3
+                class="c6"
               >
                 Panel 2
-              </h4>
+              </h3>
             </div>
             <div
               class="c7"
             >
               <svg
-                aria-label="FormUp"
+                aria-label="Up"
                 class="c8"
                 viewBox="0 0 24 24"
               >
                 <path
-                  d="m18 15-6-6-6 6"
+                  d="m2 15.999 10.173-9.824 9.824 10.173"
                   fill="none"
                   stroke="#000"
                   stroke-width="2"
@@ -1795,7 +1820,7 @@ exports[`Accordion change active index 2`] = `
         </button>
         <div
           aria-labelledby="«rg»"
-          class="c9"
+          class="c1"
           role="region"
         >
           Panel body 2
@@ -1808,7 +1833,39 @@ exports[`Accordion change active index 2`] = `
 
 exports[`Accordion change to second Panel 1`] = `
 <DocumentFragment>
-  .c1 {
+  .c8 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 18px;
+  height: 18px;
+  fill: #555555;
+  stroke: #555555;
+}
+
+.c8 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c8 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c8 *[stroke*='#'],
+.c8 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c8 *[fill-rule],
+.c8 *[FILL-RULE],
+.c8 *[fill*='#'],
+.c8 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c1 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -1821,6 +1878,9 @@ exports[`Accordion change to second Panel 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  margin-bottom: -1px;
+  border-top: solid 1px rgba(0, 0, 0, 0.36);
+  border-bottom: solid 1px rgba(0, 0, 0, 0.36);
   min-width: 0;
   min-height: 0;
   flex-direction: column;
@@ -1861,48 +1921,6 @@ exports[`Accordion change to second Panel 1`] = `
   padding-right: 12px;
 }
 
-.c9 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
-  min-width: 0;
-  min-height: 0;
-  flex-direction: column;
-}
-
-.c8 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
-}
-
-.c8 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c8 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c8 *[stroke*='#'],
-.c8 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c8 *[fill-rule],
-.c8 *[FILL-RULE],
-.c8 *[fill*='#'],
-.c8 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
-}
-
 .c3 {
   display: inline-block;
   box-sizing: border-box;
@@ -1913,16 +1931,22 @@ exports[`Accordion change to second Panel 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  color: inherit;
   outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
+  color: inherit;
+}
+
+.c3:hover {
+  background-color: rgba(0, 0, 0, 0.04);
+  color: #555555;
 }
 
 .c3:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c3:focus >circle,
@@ -1932,8 +1956,9 @@ exports[`Accordion change to second Panel 1`] = `
 .c3:focus >polygon,
 .c3:focus >polyline,
 .c3:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c3:focus ::-moz-focus-inner {
@@ -1941,6 +1966,8 @@ exports[`Accordion change to second Panel 1`] = `
 }
 
 .c3:focus:not(:focus-visible) {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -1952,6 +1979,8 @@ exports[`Accordion change to second Panel 1`] = `
 .c3:focus:not(:focus-visible) >polygon,
 .c3:focus:not(:focus-visible) >polyline,
 .c3:focus:not(:focus-visible) >rect {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -1960,28 +1989,49 @@ exports[`Accordion change to second Panel 1`] = `
   border: 0;
 }
 
-.c10 {
+.c9 {
   transition: max-height 200ms,opacity 200ms;
   opacity: 0;
   overflow: hidden;
 }
 
 .c6 {
-  font-size: 18px;
-  line-height: 24px;
-  max-width: 432px;
-  font-weight: 600;
+  margin-left: 6px;
+  margin-right: 6px;
+  margin-top: 24px;
+  margin-bottom: 24px;
+  font-size: 1.5rem;
+  line-height: 1.75rem;
+  max-width: 624px;
+  font-weight: 400;
   overflow-wrap: break-word;
+  color: #2e2e2e;
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    margin-bottom: -1px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    border-top: solid 1px rgba(0, 0, 0, 0.36);
+    border-bottom: solid 1px rgba(0, 0, 0, 0.36);
+  }
 }
 
 @media only screen and (max-width: 768px) {
@@ -1999,16 +2049,24 @@ exports[`Accordion change to second Panel 1`] = `
 }
 
 @media only screen and (max-width: 768px) {
-  .c9 {
-    border-bottom: solid 1px rgba(0, 0, 0, 0.33);
+  .c6 {
+    margin-left: 3px;
+    margin-right: 3px;
   }
 }
 
 @media only screen and (max-width: 768px) {
   .c6 {
-    font-size: 16px;
-    line-height: 22px;
-    max-width: 384px;
+    margin-top: 12px;
+    margin-bottom: 12px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c6 {
+    font-size: 1.25rem;
+    line-height: 1.5rem;
+    max-width: 432px;
   }
 }
 
@@ -2033,22 +2091,22 @@ exports[`Accordion change to second Panel 1`] = `
             <div
               class="c5"
             >
-              <h4
+              <h3
                 class="c6"
               >
                 Panel 1
-              </h4>
+              </h3>
             </div>
             <div
               class="c7"
             >
               <svg
-                aria-label="FormDown"
+                aria-label="Down"
                 class="c8"
                 viewBox="0 0 24 24"
               >
                 <path
-                  d="m18 9-6 6-6-6"
+                  d="m2 8.35 10.173 9.823L21.997 8"
                   fill="none"
                   stroke="#000"
                   stroke-width="2"
@@ -2059,12 +2117,12 @@ exports[`Accordion change to second Panel 1`] = `
         </button>
         <div
           aria-labelledby="«r7»"
-          class="c9"
+          class="c1"
           role="region"
         >
           <div
             aria-hidden="true"
-            class="c1 c10"
+            class="c1 c9"
           />
         </div>
       </div>
@@ -2083,22 +2141,22 @@ exports[`Accordion change to second Panel 1`] = `
             <div
               class="c5"
             >
-              <h4
+              <h3
                 class="c6"
               >
                 Panel 2
-              </h4>
+              </h3>
             </div>
             <div
               class="c7"
             >
               <svg
-                aria-label="FormDown"
+                aria-label="Down"
                 class="c8"
                 viewBox="0 0 24 24"
               >
                 <path
-                  d="m18 9-6 6-6-6"
+                  d="m2 8.35 10.173 9.823L21.997 8"
                   fill="none"
                   stroke="#000"
                   stroke-width="2"
@@ -2109,12 +2167,12 @@ exports[`Accordion change to second Panel 1`] = `
         </button>
         <div
           aria-labelledby="«r8»"
-          class="c9"
+          class="c1"
           role="region"
         >
           <div
             aria-hidden="true"
-            class="c1 c10"
+            class="c1 c9"
           />
         </div>
       </div>
@@ -2125,7 +2183,39 @@ exports[`Accordion change to second Panel 1`] = `
 
 exports[`Accordion change to second Panel 2`] = `
 <DocumentFragment>
-  .c1 {
+  .c8 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 18px;
+  height: 18px;
+  fill: #555555;
+  stroke: #555555;
+}
+
+.c8 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c8 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c8 *[stroke*='#'],
+.c8 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c8 *[fill-rule],
+.c8 *[FILL-RULE],
+.c8 *[fill*='#'],
+.c8 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c1 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -2138,6 +2228,9 @@ exports[`Accordion change to second Panel 2`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  margin-bottom: -1px;
+  border-top: solid 1px rgba(0, 0, 0, 0.36);
+  border-bottom: solid 1px rgba(0, 0, 0, 0.36);
   min-width: 0;
   min-height: 0;
   flex-direction: column;
@@ -2178,48 +2271,6 @@ exports[`Accordion change to second Panel 2`] = `
   padding-right: 12px;
 }
 
-.c9 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
-  min-width: 0;
-  min-height: 0;
-  flex-direction: column;
-}
-
-.c8 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
-}
-
-.c8 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c8 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c8 *[stroke*='#'],
-.c8 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c8 *[fill-rule],
-.c8 *[FILL-RULE],
-.c8 *[fill*='#'],
-.c8 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
-}
-
 .c3 {
   display: inline-block;
   box-sizing: border-box;
@@ -2230,16 +2281,22 @@ exports[`Accordion change to second Panel 2`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  color: inherit;
   outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
+  color: inherit;
+}
+
+.c3:hover {
+  background-color: rgba(0, 0, 0, 0.04);
+  color: #555555;
 }
 
 .c3:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c3:focus >circle,
@@ -2249,8 +2306,9 @@ exports[`Accordion change to second Panel 2`] = `
 .c3:focus >polygon,
 .c3:focus >polyline,
 .c3:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c3:focus ::-moz-focus-inner {
@@ -2258,6 +2316,8 @@ exports[`Accordion change to second Panel 2`] = `
 }
 
 .c3:focus:not(:focus-visible) {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -2269,6 +2329,8 @@ exports[`Accordion change to second Panel 2`] = `
 .c3:focus:not(:focus-visible) >polygon,
 .c3:focus:not(:focus-visible) >polyline,
 .c3:focus:not(:focus-visible) >rect {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -2277,100 +2339,55 @@ exports[`Accordion change to second Panel 2`] = `
   border: 0;
 }
 
-.c11 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  font: inherit;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  color: inherit;
-  outline: none;
-  border: none;
-  padding: 0;
-  text-align: inherit;
-}
-
-.c11:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c11:focus >circle,
-.c11:focus >ellipse,
-.c11:focus >line,
-.c11:focus >path,
-.c11:focus >polygon,
-.c11:focus >polyline,
-.c11:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c11:focus ::-moz-focus-inner {
-  border: 0;
-}
-
-.c11:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c11:focus:not(:focus-visible) >circle,
-.c11:focus:not(:focus-visible) >ellipse,
-.c11:focus:not(:focus-visible) >line,
-.c11:focus:not(:focus-visible) >path,
-.c11:focus:not(:focus-visible) >polygon,
-.c11:focus:not(:focus-visible) >polyline,
-.c11:focus:not(:focus-visible) >rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c11:focus:not(:focus-visible) ::-moz-focus-inner {
-  border: 0;
-}
-
-.c10 {
+.c9 {
   transition: max-height 200ms,opacity 200ms;
   opacity: 0;
   overflow: hidden;
 }
 
-.c13 {
+.c10 {
   transition: max-height 200ms,opacity 200ms;
   opacity: 1;
   overflow: hidden;
 }
 
 .c6 {
-  font-size: 18px;
-  line-height: 24px;
-  max-width: 432px;
-  font-weight: 600;
+  margin-left: 6px;
+  margin-right: 6px;
+  margin-top: 24px;
+  margin-bottom: 24px;
+  font-size: 1.5rem;
+  line-height: 1.75rem;
+  max-width: 624px;
+  font-weight: 400;
   overflow-wrap: break-word;
-}
-
-.c12 {
-  font-size: 18px;
-  line-height: 24px;
-  max-width: 432px;
-  font-weight: 600;
-  overflow-wrap: break-word;
-  color: #777777;
+  color: #2e2e2e;
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    margin-bottom: -1px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    border-top: solid 1px rgba(0, 0, 0, 0.36);
+    border-bottom: solid 1px rgba(0, 0, 0, 0.36);
+  }
 }
 
 @media only screen and (max-width: 768px) {
@@ -2388,24 +2405,24 @@ exports[`Accordion change to second Panel 2`] = `
 }
 
 @media only screen and (max-width: 768px) {
-  .c9 {
-    border-bottom: solid 1px rgba(0, 0, 0, 0.33);
+  .c6 {
+    margin-left: 3px;
+    margin-right: 3px;
   }
 }
 
 @media only screen and (max-width: 768px) {
   .c6 {
-    font-size: 16px;
-    line-height: 22px;
-    max-width: 384px;
+    margin-top: 12px;
+    margin-bottom: 12px;
   }
 }
 
 @media only screen and (max-width: 768px) {
-  .c12 {
-    font-size: 16px;
-    line-height: 22px;
-    max-width: 384px;
+  .c6 {
+    font-size: 1.25rem;
+    line-height: 1.5rem;
+    max-width: 432px;
   }
 }
 
@@ -2430,22 +2447,22 @@ exports[`Accordion change to second Panel 2`] = `
             <div
               class="c5"
             >
-              <h4
+              <h3
                 class="c6"
               >
                 Panel 1
-              </h4>
+              </h3>
             </div>
             <div
               class="c7"
             >
               <svg
-                aria-label="FormDown"
+                aria-label="Down"
                 class="c8"
                 viewBox="0 0 24 24"
               >
                 <path
-                  d="m18 9-6 6-6-6"
+                  d="m2 8.35 10.173 9.823L21.997 8"
                   fill="none"
                   stroke="#000"
                   stroke-width="2"
@@ -2456,12 +2473,12 @@ exports[`Accordion change to second Panel 2`] = `
         </button>
         <div
           aria-labelledby="«r7»"
-          class="c9"
+          class="c1"
           role="region"
         >
           <div
             aria-hidden="true"
-            class="c1 c10"
+            class="c1 c9"
           />
         </div>
       </div>
@@ -2470,7 +2487,7 @@ exports[`Accordion change to second Panel 2`] = `
       >
         <button
           aria-expanded="true"
-          class="c11"
+          class="c3"
           id="«r8»"
           style="z-index: 1;"
           type="button"
@@ -2481,22 +2498,22 @@ exports[`Accordion change to second Panel 2`] = `
             <div
               class="c5"
             >
-              <h4
-                class="c12"
+              <h3
+                class="c6"
               >
                 Panel 2
-              </h4>
+              </h3>
             </div>
             <div
               class="c7"
             >
               <svg
-                aria-label="FormUp"
+                aria-label="Up"
                 class="c8"
                 viewBox="0 0 24 24"
               >
                 <path
-                  d="m18 15-6-6-6 6"
+                  d="m2 15.999 10.173-9.824 9.824 10.173"
                   fill="none"
                   stroke="#000"
                   stroke-width="2"
@@ -2507,13 +2524,13 @@ exports[`Accordion change to second Panel 2`] = `
         </button>
         <div
           aria-labelledby="«r8»"
-          class="c9"
+          class="c1"
           role="region"
           style=""
         >
           <div
             aria-hidden="false"
-            class="c1 c13"
+            class="c1 c10"
             open=""
             style="max-height: 0;"
           >
@@ -2528,7 +2545,39 @@ exports[`Accordion change to second Panel 2`] = `
 
 exports[`Accordion change to second Panel without onActive 1`] = `
 <DocumentFragment>
-  .c1 {
+  .c8 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 18px;
+  height: 18px;
+  fill: #555555;
+  stroke: #555555;
+}
+
+.c8 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c8 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c8 *[stroke*='#'],
+.c8 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c8 *[fill-rule],
+.c8 *[FILL-RULE],
+.c8 *[fill*='#'],
+.c8 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c1 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -2541,6 +2590,9 @@ exports[`Accordion change to second Panel without onActive 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  margin-bottom: -1px;
+  border-top: solid 1px rgba(0, 0, 0, 0.36);
+  border-bottom: solid 1px rgba(0, 0, 0, 0.36);
   min-width: 0;
   min-height: 0;
   flex-direction: column;
@@ -2581,48 +2633,6 @@ exports[`Accordion change to second Panel without onActive 1`] = `
   padding-right: 12px;
 }
 
-.c9 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
-  min-width: 0;
-  min-height: 0;
-  flex-direction: column;
-}
-
-.c8 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
-}
-
-.c8 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c8 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c8 *[stroke*='#'],
-.c8 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c8 *[fill-rule],
-.c8 *[FILL-RULE],
-.c8 *[fill*='#'],
-.c8 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
-}
-
 .c3 {
   display: inline-block;
   box-sizing: border-box;
@@ -2633,16 +2643,22 @@ exports[`Accordion change to second Panel without onActive 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  color: inherit;
   outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
+  color: inherit;
+}
+
+.c3:hover {
+  background-color: rgba(0, 0, 0, 0.04);
+  color: #555555;
 }
 
 .c3:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c3:focus >circle,
@@ -2652,8 +2668,9 @@ exports[`Accordion change to second Panel without onActive 1`] = `
 .c3:focus >polygon,
 .c3:focus >polyline,
 .c3:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c3:focus ::-moz-focus-inner {
@@ -2661,6 +2678,8 @@ exports[`Accordion change to second Panel without onActive 1`] = `
 }
 
 .c3:focus:not(:focus-visible) {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -2672,6 +2691,8 @@ exports[`Accordion change to second Panel without onActive 1`] = `
 .c3:focus:not(:focus-visible) >polygon,
 .c3:focus:not(:focus-visible) >polyline,
 .c3:focus:not(:focus-visible) >rect {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -2681,21 +2702,42 @@ exports[`Accordion change to second Panel without onActive 1`] = `
 }
 
 .c6 {
-  font-size: 18px;
-  line-height: 24px;
-  max-width: 432px;
-  font-weight: 600;
+  margin-left: 6px;
+  margin-right: 6px;
+  margin-top: 24px;
+  margin-bottom: 24px;
+  font-size: 1.5rem;
+  line-height: 1.75rem;
+  max-width: 624px;
+  font-weight: 400;
   overflow-wrap: break-word;
+  color: #2e2e2e;
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    margin-bottom: -1px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    border-top: solid 1px rgba(0, 0, 0, 0.36);
+    border-bottom: solid 1px rgba(0, 0, 0, 0.36);
+  }
 }
 
 @media only screen and (max-width: 768px) {
@@ -2713,16 +2755,24 @@ exports[`Accordion change to second Panel without onActive 1`] = `
 }
 
 @media only screen and (max-width: 768px) {
-  .c9 {
-    border-bottom: solid 1px rgba(0, 0, 0, 0.33);
+  .c6 {
+    margin-left: 3px;
+    margin-right: 3px;
   }
 }
 
 @media only screen and (max-width: 768px) {
   .c6 {
-    font-size: 16px;
-    line-height: 22px;
-    max-width: 384px;
+    margin-top: 12px;
+    margin-bottom: 12px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c6 {
+    font-size: 1.25rem;
+    line-height: 1.5rem;
+    max-width: 432px;
   }
 }
 
@@ -2747,22 +2797,22 @@ exports[`Accordion change to second Panel without onActive 1`] = `
             <div
               class="c5"
             >
-              <h4
+              <h3
                 class="c6"
               >
                 Panel 1
-              </h4>
+              </h3>
             </div>
             <div
               class="c7"
             >
               <svg
-                aria-label="FormDown"
+                aria-label="Down"
                 class="c8"
                 viewBox="0 0 24 24"
               >
                 <path
-                  d="m18 9-6 6-6-6"
+                  d="m2 8.35 10.173 9.823L21.997 8"
                   fill="none"
                   stroke="#000"
                   stroke-width="2"
@@ -2773,7 +2823,7 @@ exports[`Accordion change to second Panel without onActive 1`] = `
         </button>
         <div
           aria-labelledby="«r9»"
-          class="c9"
+          class="c1"
           role="region"
         />
       </div>
@@ -2792,22 +2842,22 @@ exports[`Accordion change to second Panel without onActive 1`] = `
             <div
               class="c5"
             >
-              <h4
+              <h3
                 class="c6"
               >
                 Panel 2
-              </h4>
+              </h3>
             </div>
             <div
               class="c7"
             >
               <svg
-                aria-label="FormDown"
+                aria-label="Down"
                 class="c8"
                 viewBox="0 0 24 24"
               >
                 <path
-                  d="m18 9-6 6-6-6"
+                  d="m2 8.35 10.173 9.823L21.997 8"
                   fill="none"
                   stroke="#000"
                   stroke-width="2"
@@ -2818,7 +2868,7 @@ exports[`Accordion change to second Panel without onActive 1`] = `
         </button>
         <div
           aria-labelledby="«ra»"
-          class="c9"
+          class="c1"
           role="region"
         />
       </div>
@@ -2829,7 +2879,39 @@ exports[`Accordion change to second Panel without onActive 1`] = `
 
 exports[`Accordion change to second Panel without onActive 2`] = `
 <DocumentFragment>
-  .c1 {
+  .c8 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 18px;
+  height: 18px;
+  fill: #555555;
+  stroke: #555555;
+}
+
+.c8 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c8 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c8 *[stroke*='#'],
+.c8 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c8 *[fill-rule],
+.c8 *[FILL-RULE],
+.c8 *[fill*='#'],
+.c8 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c1 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -2842,6 +2924,9 @@ exports[`Accordion change to second Panel without onActive 2`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  margin-bottom: -1px;
+  border-top: solid 1px rgba(0, 0, 0, 0.36);
+  border-bottom: solid 1px rgba(0, 0, 0, 0.36);
   min-width: 0;
   min-height: 0;
   flex-direction: column;
@@ -2882,48 +2967,6 @@ exports[`Accordion change to second Panel without onActive 2`] = `
   padding-right: 12px;
 }
 
-.c9 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
-  min-width: 0;
-  min-height: 0;
-  flex-direction: column;
-}
-
-.c8 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
-}
-
-.c8 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c8 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c8 *[stroke*='#'],
-.c8 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c8 *[fill-rule],
-.c8 *[FILL-RULE],
-.c8 *[fill*='#'],
-.c8 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
-}
-
 .c3 {
   display: inline-block;
   box-sizing: border-box;
@@ -2934,16 +2977,22 @@ exports[`Accordion change to second Panel without onActive 2`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  color: inherit;
   outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
+  color: inherit;
+}
+
+.c3:hover {
+  background-color: rgba(0, 0, 0, 0.04);
+  color: #555555;
 }
 
 .c3:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c3:focus >circle,
@@ -2953,8 +3002,9 @@ exports[`Accordion change to second Panel without onActive 2`] = `
 .c3:focus >polygon,
 .c3:focus >polyline,
 .c3:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c3:focus ::-moz-focus-inner {
@@ -2962,6 +3012,8 @@ exports[`Accordion change to second Panel without onActive 2`] = `
 }
 
 .c3:focus:not(:focus-visible) {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -2973,6 +3025,8 @@ exports[`Accordion change to second Panel without onActive 2`] = `
 .c3:focus:not(:focus-visible) >polygon,
 .c3:focus:not(:focus-visible) >polyline,
 .c3:focus:not(:focus-visible) >rect {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -2981,88 +3035,43 @@ exports[`Accordion change to second Panel without onActive 2`] = `
   border: 0;
 }
 
-.c10 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  font: inherit;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  color: inherit;
-  outline: none;
-  border: none;
-  padding: 0;
-  text-align: inherit;
-}
-
-.c10:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c10:focus >circle,
-.c10:focus >ellipse,
-.c10:focus >line,
-.c10:focus >path,
-.c10:focus >polygon,
-.c10:focus >polyline,
-.c10:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c10:focus ::-moz-focus-inner {
-  border: 0;
-}
-
-.c10:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c10:focus:not(:focus-visible) >circle,
-.c10:focus:not(:focus-visible) >ellipse,
-.c10:focus:not(:focus-visible) >line,
-.c10:focus:not(:focus-visible) >path,
-.c10:focus:not(:focus-visible) >polygon,
-.c10:focus:not(:focus-visible) >polyline,
-.c10:focus:not(:focus-visible) >rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c10:focus:not(:focus-visible) ::-moz-focus-inner {
-  border: 0;
-}
-
 .c6 {
-  font-size: 18px;
-  line-height: 24px;
-  max-width: 432px;
-  font-weight: 600;
+  margin-left: 6px;
+  margin-right: 6px;
+  margin-top: 24px;
+  margin-bottom: 24px;
+  font-size: 1.5rem;
+  line-height: 1.75rem;
+  max-width: 624px;
+  font-weight: 400;
   overflow-wrap: break-word;
-}
-
-.c11 {
-  font-size: 18px;
-  line-height: 24px;
-  max-width: 432px;
-  font-weight: 600;
-  overflow-wrap: break-word;
-  color: #777777;
+  color: #2e2e2e;
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    margin-bottom: -1px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    border-top: solid 1px rgba(0, 0, 0, 0.36);
+    border-bottom: solid 1px rgba(0, 0, 0, 0.36);
+  }
 }
 
 @media only screen and (max-width: 768px) {
@@ -3080,24 +3089,24 @@ exports[`Accordion change to second Panel without onActive 2`] = `
 }
 
 @media only screen and (max-width: 768px) {
-  .c9 {
-    border-bottom: solid 1px rgba(0, 0, 0, 0.33);
+  .c6 {
+    margin-left: 3px;
+    margin-right: 3px;
   }
 }
 
 @media only screen and (max-width: 768px) {
   .c6 {
-    font-size: 16px;
-    line-height: 22px;
-    max-width: 384px;
+    margin-top: 12px;
+    margin-bottom: 12px;
   }
 }
 
 @media only screen and (max-width: 768px) {
-  .c11 {
-    font-size: 16px;
-    line-height: 22px;
-    max-width: 384px;
+  .c6 {
+    font-size: 1.25rem;
+    line-height: 1.5rem;
+    max-width: 432px;
   }
 }
 
@@ -3122,22 +3131,22 @@ exports[`Accordion change to second Panel without onActive 2`] = `
             <div
               class="c5"
             >
-              <h4
+              <h3
                 class="c6"
               >
                 Panel 1
-              </h4>
+              </h3>
             </div>
             <div
               class="c7"
             >
               <svg
-                aria-label="FormDown"
+                aria-label="Down"
                 class="c8"
                 viewBox="0 0 24 24"
               >
                 <path
-                  d="m18 9-6 6-6-6"
+                  d="m2 8.35 10.173 9.823L21.997 8"
                   fill="none"
                   stroke="#000"
                   stroke-width="2"
@@ -3148,7 +3157,7 @@ exports[`Accordion change to second Panel without onActive 2`] = `
         </button>
         <div
           aria-labelledby="«r9»"
-          class="c9"
+          class="c1"
           role="region"
         />
       </div>
@@ -3157,7 +3166,7 @@ exports[`Accordion change to second Panel without onActive 2`] = `
       >
         <button
           aria-expanded="true"
-          class="c10"
+          class="c3"
           id="«ra»"
           style="z-index: 1;"
           type="button"
@@ -3168,22 +3177,22 @@ exports[`Accordion change to second Panel without onActive 2`] = `
             <div
               class="c5"
             >
-              <h4
-                class="c11"
+              <h3
+                class="c6"
               >
                 Panel 2
-              </h4>
+              </h3>
             </div>
             <div
               class="c7"
             >
               <svg
-                aria-label="FormUp"
+                aria-label="Up"
                 class="c8"
                 viewBox="0 0 24 24"
               >
                 <path
-                  d="m18 15-6-6-6 6"
+                  d="m2 15.999 10.173-9.824 9.824 10.173"
                   fill="none"
                   stroke="#000"
                   stroke-width="2"
@@ -3194,7 +3203,7 @@ exports[`Accordion change to second Panel without onActive 2`] = `
         </button>
         <div
           aria-labelledby="«ra»"
-          class="c9"
+          class="c1"
           role="region"
         >
           Panel body 2
@@ -3220,20 +3229,13 @@ exports[`Accordion complex header 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  margin-bottom: -1px;
+  border-top: solid 1px rgba(0, 0, 0, 0.36);
+  border-bottom: solid 1px rgba(0, 0, 0, 0.36);
   min-width: 0;
   min-height: 0;
   flex-direction: column;
   flex: 0 0 auto;
-}
-
-.c4 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
-  min-width: 0;
-  min-height: 0;
-  flex-direction: column;
 }
 
 .c3 {
@@ -3246,16 +3248,22 @@ exports[`Accordion complex header 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  color: inherit;
   outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
+  color: inherit;
+}
+
+.c3:hover {
+  background-color: rgba(0, 0, 0, 0.04);
+  color: #555555;
 }
 
 .c3:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c3:focus >circle,
@@ -3265,8 +3273,9 @@ exports[`Accordion complex header 1`] = `
 .c3:focus >polygon,
 .c3:focus >polyline,
 .c3:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c3:focus ::-moz-focus-inner {
@@ -3274,6 +3283,8 @@ exports[`Accordion complex header 1`] = `
 }
 
 .c3:focus:not(:focus-visible) {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -3285,6 +3296,8 @@ exports[`Accordion complex header 1`] = `
 .c3:focus:not(:focus-visible) >polygon,
 .c3:focus:not(:focus-visible) >polyline,
 .c3:focus:not(:focus-visible) >rect {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -3294,8 +3307,11 @@ exports[`Accordion complex header 1`] = `
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -3304,8 +3320,15 @@ exports[`Accordion complex header 1`] = `
 }
 
 @media only screen and (max-width: 768px) {
-  .c4 {
-    border-bottom: solid 1px rgba(0, 0, 0, 0.33);
+  .c2 {
+    margin-bottom: -1px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    border-top: solid 1px rgba(0, 0, 0, 0.36);
+    border-bottom: solid 1px rgba(0, 0, 0, 0.36);
   }
 }
 
@@ -3330,7 +3353,7 @@ exports[`Accordion complex header 1`] = `
         </button>
         <div
           aria-labelledby="«r5»"
-          class="c4"
+          class="c1"
           role="region"
         />
       </div>
@@ -3349,7 +3372,7 @@ exports[`Accordion complex header 1`] = `
         </button>
         <div
           aria-labelledby="«r6»"
-          class="c4"
+          class="c1"
           role="region"
         >
           Panel body 2
@@ -3362,12 +3385,44 @@ exports[`Accordion complex header 1`] = `
 
 exports[`Accordion complex title 1`] = `
 <DocumentFragment>
-  .c1 {
+  .c7 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 18px;
+  height: 18px;
+  fill: #ffffff;
+  stroke: #ffffff;
+}
+
+.c7 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c7 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c7 *[stroke*='#'],
+.c7 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c7 *[fill-rule],
+.c7 *[FILL-RULE],
+.c7 *[fill*='#'],
+.c7 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c1 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   background-color: #333333;
-  color: #f8f8f8;
+  color: #ffffff;
   min-width: 0;
   min-height: 0;
   flex-direction: column;
@@ -3386,6 +3441,9 @@ exports[`Accordion complex title 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  margin-bottom: -1px;
+  border-top: solid 1px rgba(255, 255, 255, 0.36);
+  border-bottom: solid 1px rgba(255, 255, 255, 0.36);
   min-width: 0;
   min-height: 0;
   flex-direction: column;
@@ -3415,48 +3473,6 @@ exports[`Accordion complex title 1`] = `
   padding-right: 12px;
 }
 
-.c8 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  border-bottom: solid 1px rgba(255, 255, 255, 0.33);
-  min-width: 0;
-  min-height: 0;
-  flex-direction: column;
-}
-
-.c7 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #6FFFB0;
-  stroke: #6FFFB0;
-}
-
-.c7 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c7 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c7 *[stroke*='#'],
-.c7 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c7 *[fill-rule],
-.c7 *[FILL-RULE],
-.c7 *[fill*='#'],
-.c7 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
-}
-
 .c4 {
   display: inline-block;
   box-sizing: border-box;
@@ -3467,16 +3483,22 @@ exports[`Accordion complex title 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  color: inherit;
   outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
+  color: inherit;
+}
+
+.c4:hover {
+  background-color: rgba(255, 255, 255, 0.06);
+  color: #ffffff;
 }
 
 .c4:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c4:focus >circle,
@@ -3486,8 +3508,9 @@ exports[`Accordion complex title 1`] = `
 .c4:focus >polygon,
 .c4:focus >polyline,
 .c4:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c4:focus ::-moz-focus-inner {
@@ -3495,6 +3518,8 @@ exports[`Accordion complex title 1`] = `
 }
 
 .c4:focus:not(:focus-visible) {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -3506,6 +3531,8 @@ exports[`Accordion complex title 1`] = `
 .c4:focus:not(:focus-visible) >polygon,
 .c4:focus:not(:focus-visible) >polyline,
 .c4:focus:not(:focus-visible) >rect {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -3514,15 +3541,18 @@ exports[`Accordion complex title 1`] = `
   border: 0;
 }
 
-.c9 {
+.c8 {
   transition: max-height 200ms,opacity 200ms;
   opacity: 0;
   overflow: hidden;
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -3531,15 +3561,22 @@ exports[`Accordion complex title 1`] = `
 }
 
 @media only screen and (max-width: 768px) {
-  .c6 {
-    padding-left: 6px;
-    padding-right: 6px;
+  .c3 {
+    margin-bottom: -1px;
   }
 }
 
 @media only screen and (max-width: 768px) {
-  .c8 {
-    border-bottom: solid 1px rgba(255, 255, 255, 0.33);
+  .c3 {
+    border-top: solid 1px rgba(255, 255, 255, 0.36);
+    border-bottom: solid 1px rgba(255, 255, 255, 0.36);
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c6 {
+    padding-left: 6px;
+    padding-right: 6px;
   }
 }
 
@@ -3571,12 +3608,12 @@ exports[`Accordion complex title 1`] = `
                 class="c6"
               >
                 <svg
-                  aria-label="FormDown"
+                  aria-label="Down"
                   class="c7"
                   viewBox="0 0 24 24"
                 >
                   <path
-                    d="m18 9-6 6-6-6"
+                    d="m2 8.35 10.173 9.823L21.997 8"
                     fill="none"
                     stroke="#000"
                     stroke-width="2"
@@ -3587,12 +3624,12 @@ exports[`Accordion complex title 1`] = `
           </button>
           <div
             aria-labelledby="«r3»"
-            class="c8"
+            class="c2"
             role="region"
           >
             <div
               aria-hidden="true"
-              class="c2 c9"
+              class="c2 c8"
             />
           </div>
         </div>
@@ -3615,12 +3652,12 @@ exports[`Accordion complex title 1`] = `
                 class="c6"
               >
                 <svg
-                  aria-label="FormDown"
+                  aria-label="Down"
                   class="c7"
                   viewBox="0 0 24 24"
                 >
                   <path
-                    d="m18 9-6 6-6-6"
+                    d="m2 8.35 10.173 9.823L21.997 8"
                     fill="none"
                     stroke="#000"
                     stroke-width="2"
@@ -3631,12 +3668,12 @@ exports[`Accordion complex title 1`] = `
           </button>
           <div
             aria-labelledby="«r4»"
-            class="c8"
+            class="c2"
             role="region"
           >
             <div
               aria-hidden="true"
-              class="c2 c9"
+              class="c2 c8"
             />
           </div>
         </div>
@@ -3648,7 +3685,39 @@ exports[`Accordion complex title 1`] = `
 
 exports[`Accordion custom accordion 1`] = `
 <DocumentFragment>
-  .c1 {
+  .c8 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #7D4CDB;
+  stroke: #7D4CDB;
+}
+
+.c8 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c8 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c8 *[stroke*='#'],
+.c8 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c8 *[fill-rule],
+.c8 *[FILL-RULE],
+.c8 *[fill*='#'],
+.c8 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c1 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -3709,38 +3778,6 @@ exports[`Accordion custom accordion 1`] = `
   min-width: 0;
   min-height: 0;
   flex-direction: column;
-}
-
-.c8 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
-}
-
-.c8 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c8 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c8 *[stroke*='#'],
-.c8 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c8 *[fill-rule],
-.c8 *[FILL-RULE],
-.c8 *[fill*='#'],
-.c8 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
 }
 
 .c3 {
@@ -3920,7 +3957,39 @@ exports[`Accordion custom accordion 1`] = `
 
 exports[`Accordion custom accordion 2`] = `
 <DocumentFragment>
-  .c1 {
+  .c8 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #7D4CDB;
+  stroke: #7D4CDB;
+}
+
+.c8 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c8 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c8 *[stroke*='#'],
+.c8 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c8 *[fill-rule],
+.c8 *[FILL-RULE],
+.c8 *[fill*='#'],
+.c8 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c1 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -3981,38 +4050,6 @@ exports[`Accordion custom accordion 2`] = `
   min-width: 0;
   min-height: 0;
   flex-direction: column;
-}
-
-.c8 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
-}
-
-.c8 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c8 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c8 *[stroke*='#'],
-.c8 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c8 *[fill-rule],
-.c8 *[FILL-RULE],
-.c8 *[fill*='#'],
-.c8 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
 }
 
 .c3 {
@@ -4197,7 +4234,39 @@ exports[`Accordion custom accordion 2`] = `
 
 exports[`Accordion focus and hover styles 1`] = `
 <DocumentFragment>
-  .c1 {
+  .c8 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #7D4CDB;
+  stroke: #7D4CDB;
+}
+
+.c8 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c8 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c8 *[stroke*='#'],
+.c8 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c8 *[fill-rule],
+.c8 *[FILL-RULE],
+.c8 *[fill*='#'],
+.c8 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c1 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -4258,38 +4327,6 @@ exports[`Accordion focus and hover styles 1`] = `
   min-width: 0;
   min-height: 0;
   flex-direction: column;
-}
-
-.c8 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
-}
-
-.c8 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c8 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c8 *[stroke*='#'],
-.c8 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c8 *[fill-rule],
-.c8 *[FILL-RULE],
-.c8 *[fill*='#'],
-.c8 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
 }
 
 .c3 {
@@ -4475,7 +4512,39 @@ exports[`Accordion focus and hover styles 1`] = `
 
 exports[`Accordion multiple panels 1`] = `
 <DocumentFragment>
-  .c1 {
+  .c8 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 18px;
+  height: 18px;
+  fill: #555555;
+  stroke: #555555;
+}
+
+.c8 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c8 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c8 *[stroke*='#'],
+.c8 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c8 *[fill-rule],
+.c8 *[FILL-RULE],
+.c8 *[fill*='#'],
+.c8 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c1 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -4488,6 +4557,9 @@ exports[`Accordion multiple panels 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  margin-bottom: -1px;
+  border-top: solid 1px rgba(0, 0, 0, 0.36);
+  border-bottom: solid 1px rgba(0, 0, 0, 0.36);
   min-width: 0;
   min-height: 0;
   flex-direction: column;
@@ -4528,48 +4600,6 @@ exports[`Accordion multiple panels 1`] = `
   padding-right: 12px;
 }
 
-.c9 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
-  min-width: 0;
-  min-height: 0;
-  flex-direction: column;
-}
-
-.c8 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
-}
-
-.c8 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c8 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c8 *[stroke*='#'],
-.c8 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c8 *[fill-rule],
-.c8 *[FILL-RULE],
-.c8 *[fill*='#'],
-.c8 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
-}
-
 .c3 {
   display: inline-block;
   box-sizing: border-box;
@@ -4580,16 +4610,22 @@ exports[`Accordion multiple panels 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  color: inherit;
   outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
+  color: inherit;
+}
+
+.c3:hover {
+  background-color: rgba(0, 0, 0, 0.04);
+  color: #555555;
 }
 
 .c3:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c3:focus >circle,
@@ -4599,8 +4635,9 @@ exports[`Accordion multiple panels 1`] = `
 .c3:focus >polygon,
 .c3:focus >polyline,
 .c3:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c3:focus ::-moz-focus-inner {
@@ -4608,6 +4645,8 @@ exports[`Accordion multiple panels 1`] = `
 }
 
 .c3:focus:not(:focus-visible) {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -4619,6 +4658,8 @@ exports[`Accordion multiple panels 1`] = `
 .c3:focus:not(:focus-visible) >polygon,
 .c3:focus:not(:focus-visible) >polyline,
 .c3:focus:not(:focus-visible) >rect {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -4628,21 +4669,42 @@ exports[`Accordion multiple panels 1`] = `
 }
 
 .c6 {
-  font-size: 18px;
-  line-height: 24px;
-  max-width: 432px;
-  font-weight: 600;
+  margin-left: 6px;
+  margin-right: 6px;
+  margin-top: 24px;
+  margin-bottom: 24px;
+  font-size: 1.5rem;
+  line-height: 1.75rem;
+  max-width: 624px;
+  font-weight: 400;
   overflow-wrap: break-word;
+  color: #2e2e2e;
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    margin-bottom: -1px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    border-top: solid 1px rgba(0, 0, 0, 0.36);
+    border-bottom: solid 1px rgba(0, 0, 0, 0.36);
+  }
 }
 
 @media only screen and (max-width: 768px) {
@@ -4660,16 +4722,24 @@ exports[`Accordion multiple panels 1`] = `
 }
 
 @media only screen and (max-width: 768px) {
-  .c9 {
-    border-bottom: solid 1px rgba(0, 0, 0, 0.33);
+  .c6 {
+    margin-left: 3px;
+    margin-right: 3px;
   }
 }
 
 @media only screen and (max-width: 768px) {
   .c6 {
-    font-size: 16px;
-    line-height: 22px;
-    max-width: 384px;
+    margin-top: 12px;
+    margin-bottom: 12px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c6 {
+    font-size: 1.25rem;
+    line-height: 1.5rem;
+    max-width: 432px;
   }
 }
 
@@ -4694,22 +4764,22 @@ exports[`Accordion multiple panels 1`] = `
             <div
               class="c5"
             >
-              <h4
+              <h3
                 class="c6"
               >
                 Panel 1
-              </h4>
+              </h3>
             </div>
             <div
               class="c7"
             >
               <svg
-                aria-label="FormDown"
+                aria-label="Down"
                 class="c8"
                 viewBox="0 0 24 24"
               >
                 <path
-                  d="m18 9-6 6-6-6"
+                  d="m2 8.35 10.173 9.823L21.997 8"
                   fill="none"
                   stroke="#000"
                   stroke-width="2"
@@ -4720,7 +4790,7 @@ exports[`Accordion multiple panels 1`] = `
         </button>
         <div
           aria-labelledby="«rb»"
-          class="c9"
+          class="c1"
           role="region"
         />
       </div>
@@ -4739,22 +4809,22 @@ exports[`Accordion multiple panels 1`] = `
             <div
               class="c5"
             >
-              <h4
+              <h3
                 class="c6"
               >
                 Panel 2
-              </h4>
+              </h3>
             </div>
             <div
               class="c7"
             >
               <svg
-                aria-label="FormDown"
+                aria-label="Down"
                 class="c8"
                 viewBox="0 0 24 24"
               >
                 <path
-                  d="m18 9-6 6-6-6"
+                  d="m2 8.35 10.173 9.823L21.997 8"
                   fill="none"
                   stroke="#000"
                   stroke-width="2"
@@ -4765,7 +4835,7 @@ exports[`Accordion multiple panels 1`] = `
         </button>
         <div
           aria-labelledby="«rc»"
-          class="c9"
+          class="c1"
           role="region"
         />
       </div>
@@ -4776,7 +4846,39 @@ exports[`Accordion multiple panels 1`] = `
 
 exports[`Accordion multiple panels 2`] = `
 <DocumentFragment>
-  .c1 {
+  .c8 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 18px;
+  height: 18px;
+  fill: #555555;
+  stroke: #555555;
+}
+
+.c8 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c8 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c8 *[stroke*='#'],
+.c8 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c8 *[fill-rule],
+.c8 *[FILL-RULE],
+.c8 *[fill*='#'],
+.c8 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c1 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -4789,6 +4891,9 @@ exports[`Accordion multiple panels 2`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  margin-bottom: -1px;
+  border-top: solid 1px rgba(0, 0, 0, 0.36);
+  border-bottom: solid 1px rgba(0, 0, 0, 0.36);
   min-width: 0;
   min-height: 0;
   flex-direction: column;
@@ -4829,48 +4934,6 @@ exports[`Accordion multiple panels 2`] = `
   padding-right: 12px;
 }
 
-.c9 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
-  min-width: 0;
-  min-height: 0;
-  flex-direction: column;
-}
-
-.c8 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
-}
-
-.c8 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c8 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c8 *[stroke*='#'],
-.c8 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c8 *[fill-rule],
-.c8 *[FILL-RULE],
-.c8 *[fill*='#'],
-.c8 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
-}
-
 .c3 {
   display: inline-block;
   box-sizing: border-box;
@@ -4881,16 +4944,22 @@ exports[`Accordion multiple panels 2`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  color: inherit;
   outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
+  color: inherit;
+}
+
+.c3:hover {
+  background-color: rgba(0, 0, 0, 0.04);
+  color: #555555;
 }
 
 .c3:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c3:focus >circle,
@@ -4900,8 +4969,9 @@ exports[`Accordion multiple panels 2`] = `
 .c3:focus >polygon,
 .c3:focus >polyline,
 .c3:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c3:focus ::-moz-focus-inner {
@@ -4909,6 +4979,8 @@ exports[`Accordion multiple panels 2`] = `
 }
 
 .c3:focus:not(:focus-visible) {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -4920,6 +4992,8 @@ exports[`Accordion multiple panels 2`] = `
 .c3:focus:not(:focus-visible) >polygon,
 .c3:focus:not(:focus-visible) >polyline,
 .c3:focus:not(:focus-visible) >rect {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -4928,88 +5002,43 @@ exports[`Accordion multiple panels 2`] = `
   border: 0;
 }
 
-.c10 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  font: inherit;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  color: inherit;
-  outline: none;
-  border: none;
-  padding: 0;
-  text-align: inherit;
-}
-
-.c10:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c10:focus >circle,
-.c10:focus >ellipse,
-.c10:focus >line,
-.c10:focus >path,
-.c10:focus >polygon,
-.c10:focus >polyline,
-.c10:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c10:focus ::-moz-focus-inner {
-  border: 0;
-}
-
-.c10:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c10:focus:not(:focus-visible) >circle,
-.c10:focus:not(:focus-visible) >ellipse,
-.c10:focus:not(:focus-visible) >line,
-.c10:focus:not(:focus-visible) >path,
-.c10:focus:not(:focus-visible) >polygon,
-.c10:focus:not(:focus-visible) >polyline,
-.c10:focus:not(:focus-visible) >rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c10:focus:not(:focus-visible) ::-moz-focus-inner {
-  border: 0;
-}
-
 .c6 {
-  font-size: 18px;
-  line-height: 24px;
-  max-width: 432px;
-  font-weight: 600;
+  margin-left: 6px;
+  margin-right: 6px;
+  margin-top: 24px;
+  margin-bottom: 24px;
+  font-size: 1.5rem;
+  line-height: 1.75rem;
+  max-width: 624px;
+  font-weight: 400;
   overflow-wrap: break-word;
-}
-
-.c11 {
-  font-size: 18px;
-  line-height: 24px;
-  max-width: 432px;
-  font-weight: 600;
-  overflow-wrap: break-word;
-  color: #777777;
+  color: #2e2e2e;
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    margin-bottom: -1px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    border-top: solid 1px rgba(0, 0, 0, 0.36);
+    border-bottom: solid 1px rgba(0, 0, 0, 0.36);
+  }
 }
 
 @media only screen and (max-width: 768px) {
@@ -5027,24 +5056,24 @@ exports[`Accordion multiple panels 2`] = `
 }
 
 @media only screen and (max-width: 768px) {
-  .c9 {
-    border-bottom: solid 1px rgba(0, 0, 0, 0.33);
+  .c6 {
+    margin-left: 3px;
+    margin-right: 3px;
   }
 }
 
 @media only screen and (max-width: 768px) {
   .c6 {
-    font-size: 16px;
-    line-height: 22px;
-    max-width: 384px;
+    margin-top: 12px;
+    margin-bottom: 12px;
   }
 }
 
 @media only screen and (max-width: 768px) {
-  .c11 {
-    font-size: 16px;
-    line-height: 22px;
-    max-width: 384px;
+  .c6 {
+    font-size: 1.25rem;
+    line-height: 1.5rem;
+    max-width: 432px;
   }
 }
 
@@ -5069,22 +5098,22 @@ exports[`Accordion multiple panels 2`] = `
             <div
               class="c5"
             >
-              <h4
+              <h3
                 class="c6"
               >
                 Panel 1
-              </h4>
+              </h3>
             </div>
             <div
               class="c7"
             >
               <svg
-                aria-label="FormDown"
+                aria-label="Down"
                 class="c8"
                 viewBox="0 0 24 24"
               >
                 <path
-                  d="m18 9-6 6-6-6"
+                  d="m2 8.35 10.173 9.823L21.997 8"
                   fill="none"
                   stroke="#000"
                   stroke-width="2"
@@ -5095,7 +5124,7 @@ exports[`Accordion multiple panels 2`] = `
         </button>
         <div
           aria-labelledby="«rb»"
-          class="c9"
+          class="c1"
           role="region"
         />
       </div>
@@ -5104,7 +5133,7 @@ exports[`Accordion multiple panels 2`] = `
       >
         <button
           aria-expanded="true"
-          class="c10"
+          class="c3"
           id="«rc»"
           style="z-index: 1;"
           type="button"
@@ -5115,22 +5144,22 @@ exports[`Accordion multiple panels 2`] = `
             <div
               class="c5"
             >
-              <h4
-                class="c11"
+              <h3
+                class="c6"
               >
                 Panel 2
-              </h4>
+              </h3>
             </div>
             <div
               class="c7"
             >
               <svg
-                aria-label="FormUp"
+                aria-label="Up"
                 class="c8"
                 viewBox="0 0 24 24"
               >
                 <path
-                  d="m18 15-6-6-6 6"
+                  d="m2 15.999 10.173-9.824 9.824 10.173"
                   fill="none"
                   stroke="#000"
                   stroke-width="2"
@@ -5141,7 +5170,7 @@ exports[`Accordion multiple panels 2`] = `
         </button>
         <div
           aria-labelledby="«rc»"
-          class="c9"
+          class="c1"
           role="region"
         >
           Panel body 2
@@ -5154,7 +5183,39 @@ exports[`Accordion multiple panels 2`] = `
 
 exports[`Accordion multiple panels 3`] = `
 <DocumentFragment>
-  .c1 {
+  .c8 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 18px;
+  height: 18px;
+  fill: #555555;
+  stroke: #555555;
+}
+
+.c8 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c8 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c8 *[stroke*='#'],
+.c8 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c8 *[fill-rule],
+.c8 *[FILL-RULE],
+.c8 *[fill*='#'],
+.c8 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c1 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -5167,6 +5228,9 @@ exports[`Accordion multiple panels 3`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  margin-bottom: -1px;
+  border-top: solid 1px rgba(0, 0, 0, 0.36);
+  border-bottom: solid 1px rgba(0, 0, 0, 0.36);
   min-width: 0;
   min-height: 0;
   flex-direction: column;
@@ -5207,105 +5271,6 @@ exports[`Accordion multiple panels 3`] = `
   padding-right: 12px;
 }
 
-.c9 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
-  min-width: 0;
-  min-height: 0;
-  flex-direction: column;
-}
-
-.c8 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
-}
-
-.c8 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c8 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c8 *[stroke*='#'],
-.c8 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c8 *[fill-rule],
-.c8 *[FILL-RULE],
-.c8 *[fill*='#'],
-.c8 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
-}
-
-.c10 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  font: inherit;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  color: inherit;
-  outline: none;
-  border: none;
-  padding: 0;
-  text-align: inherit;
-}
-
-.c10:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c10:focus >circle,
-.c10:focus >ellipse,
-.c10:focus >line,
-.c10:focus >path,
-.c10:focus >polygon,
-.c10:focus >polyline,
-.c10:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c10:focus ::-moz-focus-inner {
-  border: 0;
-}
-
-.c10:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c10:focus:not(:focus-visible) >circle,
-.c10:focus:not(:focus-visible) >ellipse,
-.c10:focus:not(:focus-visible) >line,
-.c10:focus:not(:focus-visible) >path,
-.c10:focus:not(:focus-visible) >polygon,
-.c10:focus:not(:focus-visible) >polyline,
-.c10:focus:not(:focus-visible) >rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c10:focus:not(:focus-visible) ::-moz-focus-inner {
-  border: 0;
-}
-
 .c3 {
   display: inline-block;
   box-sizing: border-box;
@@ -5316,16 +5281,22 @@ exports[`Accordion multiple panels 3`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  color: inherit;
   outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
+  color: inherit;
+}
+
+.c3:hover {
+  background-color: rgba(0, 0, 0, 0.04);
+  color: #555555;
 }
 
 .c3:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c3:focus >circle,
@@ -5335,8 +5306,9 @@ exports[`Accordion multiple panels 3`] = `
 .c3:focus >polygon,
 .c3:focus >polyline,
 .c3:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c3:focus ::-moz-focus-inner {
@@ -5344,6 +5316,8 @@ exports[`Accordion multiple panels 3`] = `
 }
 
 .c3:focus:not(:focus-visible) {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -5355,6 +5329,8 @@ exports[`Accordion multiple panels 3`] = `
 .c3:focus:not(:focus-visible) >polygon,
 .c3:focus:not(:focus-visible) >polyline,
 .c3:focus:not(:focus-visible) >rect {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -5363,31 +5339,43 @@ exports[`Accordion multiple panels 3`] = `
   border: 0;
 }
 
-.c11 {
-  font-size: 18px;
-  line-height: 24px;
-  max-width: 432px;
-  font-weight: 600;
-  overflow-wrap: break-word;
-}
-
 .c6 {
-  font-size: 18px;
-  line-height: 24px;
-  max-width: 432px;
-  font-weight: 600;
+  margin-left: 6px;
+  margin-right: 6px;
+  margin-top: 24px;
+  margin-bottom: 24px;
+  font-size: 1.5rem;
+  line-height: 1.75rem;
+  max-width: 624px;
+  font-weight: 400;
   overflow-wrap: break-word;
-  color: #777777;
+  color: #2e2e2e;
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    margin-bottom: -1px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    border-top: solid 1px rgba(0, 0, 0, 0.36);
+    border-bottom: solid 1px rgba(0, 0, 0, 0.36);
+  }
 }
 
 @media only screen and (max-width: 768px) {
@@ -5405,24 +5393,24 @@ exports[`Accordion multiple panels 3`] = `
 }
 
 @media only screen and (max-width: 768px) {
-  .c9 {
-    border-bottom: solid 1px rgba(0, 0, 0, 0.33);
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .c11 {
-    font-size: 16px;
-    line-height: 22px;
-    max-width: 384px;
+  .c6 {
+    margin-left: 3px;
+    margin-right: 3px;
   }
 }
 
 @media only screen and (max-width: 768px) {
   .c6 {
-    font-size: 16px;
-    line-height: 22px;
-    max-width: 384px;
+    margin-top: 12px;
+    margin-bottom: 12px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c6 {
+    font-size: 1.25rem;
+    line-height: 1.5rem;
+    max-width: 432px;
   }
 }
 
@@ -5448,22 +5436,22 @@ exports[`Accordion multiple panels 3`] = `
             <div
               class="c5"
             >
-              <h4
+              <h3
                 class="c6"
               >
                 Panel 1
-              </h4>
+              </h3>
             </div>
             <div
               class="c7"
             >
               <svg
-                aria-label="FormUp"
+                aria-label="Up"
                 class="c8"
                 viewBox="0 0 24 24"
               >
                 <path
-                  d="m18 15-6-6-6 6"
+                  d="m2 15.999 10.173-9.824 9.824 10.173"
                   fill="none"
                   stroke="#000"
                   stroke-width="2"
@@ -5474,7 +5462,7 @@ exports[`Accordion multiple panels 3`] = `
         </button>
         <div
           aria-labelledby="«rb»"
-          class="c9"
+          class="c1"
           role="region"
         >
           Panel body 1
@@ -5485,7 +5473,7 @@ exports[`Accordion multiple panels 3`] = `
       >
         <button
           aria-expanded="true"
-          class="c10"
+          class="c3"
           id="«rc»"
           style=""
           type="button"
@@ -5496,22 +5484,22 @@ exports[`Accordion multiple panels 3`] = `
             <div
               class="c5"
             >
-              <h4
-                class="c11"
+              <h3
+                class="c6"
               >
                 Panel 2
-              </h4>
+              </h3>
             </div>
             <div
               class="c7"
             >
               <svg
-                aria-label="FormUp"
+                aria-label="Up"
                 class="c8"
                 viewBox="0 0 24 24"
               >
                 <path
-                  d="m18 15-6-6-6 6"
+                  d="m2 15.999 10.173-9.824 9.824 10.173"
                   fill="none"
                   stroke="#000"
                   stroke-width="2"
@@ -5522,7 +5510,7 @@ exports[`Accordion multiple panels 3`] = `
         </button>
         <div
           aria-labelledby="«rc»"
-          class="c9"
+          class="c1"
           role="region"
         >
           Panel body 2
@@ -5535,7 +5523,39 @@ exports[`Accordion multiple panels 3`] = `
 
 exports[`Accordion multiple panels 4`] = `
 <DocumentFragment>
-  .c1 {
+  .c8 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 18px;
+  height: 18px;
+  fill: #555555;
+  stroke: #555555;
+}
+
+.c8 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c8 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c8 *[stroke*='#'],
+.c8 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c8 *[fill-rule],
+.c8 *[FILL-RULE],
+.c8 *[fill*='#'],
+.c8 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c1 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -5548,6 +5568,9 @@ exports[`Accordion multiple panels 4`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  margin-bottom: -1px;
+  border-top: solid 1px rgba(0, 0, 0, 0.36);
+  border-bottom: solid 1px rgba(0, 0, 0, 0.36);
   min-width: 0;
   min-height: 0;
   flex-direction: column;
@@ -5588,48 +5611,6 @@ exports[`Accordion multiple panels 4`] = `
   padding-right: 12px;
 }
 
-.c9 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
-  min-width: 0;
-  min-height: 0;
-  flex-direction: column;
-}
-
-.c8 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
-}
-
-.c8 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c8 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c8 *[stroke*='#'],
-.c8 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c8 *[fill-rule],
-.c8 *[FILL-RULE],
-.c8 *[fill*='#'],
-.c8 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
-}
-
 .c3 {
   display: inline-block;
   box-sizing: border-box;
@@ -5640,16 +5621,22 @@ exports[`Accordion multiple panels 4`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  color: inherit;
   outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
+  color: inherit;
+}
+
+.c3:hover {
+  background-color: rgba(0, 0, 0, 0.04);
+  color: #555555;
 }
 
 .c3:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c3:focus >circle,
@@ -5659,8 +5646,9 @@ exports[`Accordion multiple panels 4`] = `
 .c3:focus >polygon,
 .c3:focus >polyline,
 .c3:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c3:focus ::-moz-focus-inner {
@@ -5668,6 +5656,8 @@ exports[`Accordion multiple panels 4`] = `
 }
 
 .c3:focus:not(:focus-visible) {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -5679,6 +5669,8 @@ exports[`Accordion multiple panels 4`] = `
 .c3:focus:not(:focus-visible) >polygon,
 .c3:focus:not(:focus-visible) >polyline,
 .c3:focus:not(:focus-visible) >rect {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -5687,88 +5679,43 @@ exports[`Accordion multiple panels 4`] = `
   border: 0;
 }
 
-.c10 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  font: inherit;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  color: inherit;
-  outline: none;
-  border: none;
-  padding: 0;
-  text-align: inherit;
-}
-
-.c10:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c10:focus >circle,
-.c10:focus >ellipse,
-.c10:focus >line,
-.c10:focus >path,
-.c10:focus >polygon,
-.c10:focus >polyline,
-.c10:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c10:focus ::-moz-focus-inner {
-  border: 0;
-}
-
-.c10:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c10:focus:not(:focus-visible) >circle,
-.c10:focus:not(:focus-visible) >ellipse,
-.c10:focus:not(:focus-visible) >line,
-.c10:focus:not(:focus-visible) >path,
-.c10:focus:not(:focus-visible) >polygon,
-.c10:focus:not(:focus-visible) >polyline,
-.c10:focus:not(:focus-visible) >rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c10:focus:not(:focus-visible) ::-moz-focus-inner {
-  border: 0;
-}
-
 .c6 {
-  font-size: 18px;
-  line-height: 24px;
-  max-width: 432px;
-  font-weight: 600;
+  margin-left: 6px;
+  margin-right: 6px;
+  margin-top: 24px;
+  margin-bottom: 24px;
+  font-size: 1.5rem;
+  line-height: 1.75rem;
+  max-width: 624px;
+  font-weight: 400;
   overflow-wrap: break-word;
-}
-
-.c11 {
-  font-size: 18px;
-  line-height: 24px;
-  max-width: 432px;
-  font-weight: 600;
-  overflow-wrap: break-word;
-  color: #777777;
+  color: #2e2e2e;
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    margin-bottom: -1px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    border-top: solid 1px rgba(0, 0, 0, 0.36);
+    border-bottom: solid 1px rgba(0, 0, 0, 0.36);
+  }
 }
 
 @media only screen and (max-width: 768px) {
@@ -5786,24 +5733,24 @@ exports[`Accordion multiple panels 4`] = `
 }
 
 @media only screen and (max-width: 768px) {
-  .c9 {
-    border-bottom: solid 1px rgba(0, 0, 0, 0.33);
+  .c6 {
+    margin-left: 3px;
+    margin-right: 3px;
   }
 }
 
 @media only screen and (max-width: 768px) {
   .c6 {
-    font-size: 16px;
-    line-height: 22px;
-    max-width: 384px;
+    margin-top: 12px;
+    margin-bottom: 12px;
   }
 }
 
 @media only screen and (max-width: 768px) {
-  .c11 {
-    font-size: 16px;
-    line-height: 22px;
-    max-width: 384px;
+  .c6 {
+    font-size: 1.25rem;
+    line-height: 1.5rem;
+    max-width: 432px;
   }
 }
 
@@ -5829,22 +5776,22 @@ exports[`Accordion multiple panels 4`] = `
             <div
               class="c5"
             >
-              <h4
+              <h3
                 class="c6"
               >
                 Panel 1
-              </h4>
+              </h3>
             </div>
             <div
               class="c7"
             >
               <svg
-                aria-label="FormUp"
+                aria-label="Up"
                 class="c8"
                 viewBox="0 0 24 24"
               >
                 <path
-                  d="m18 15-6-6-6 6"
+                  d="m2 15.999 10.173-9.824 9.824 10.173"
                   fill="none"
                   stroke="#000"
                   stroke-width="2"
@@ -5855,7 +5802,7 @@ exports[`Accordion multiple panels 4`] = `
         </button>
         <div
           aria-labelledby="«rb»"
-          class="c9"
+          class="c1"
           role="region"
         >
           Panel body 1
@@ -5866,7 +5813,7 @@ exports[`Accordion multiple panels 4`] = `
       >
         <button
           aria-expanded="false"
-          class="c10"
+          class="c3"
           id="«rc»"
           style="z-index: 1;"
           type="button"
@@ -5877,22 +5824,22 @@ exports[`Accordion multiple panels 4`] = `
             <div
               class="c5"
             >
-              <h4
-                class="c11"
+              <h3
+                class="c6"
               >
                 Panel 2
-              </h4>
+              </h3>
             </div>
             <div
               class="c7"
             >
               <svg
-                aria-label="FormDown"
+                aria-label="Down"
                 class="c8"
                 viewBox="0 0 24 24"
               >
                 <path
-                  d="m18 9-6 6-6-6"
+                  d="m2 8.35 10.173 9.823L21.997 8"
                   fill="none"
                   stroke="#000"
                   stroke-width="2"
@@ -5903,7 +5850,7 @@ exports[`Accordion multiple panels 4`] = `
         </button>
         <div
           aria-labelledby="«rc»"
-          class="c9"
+          class="c1"
           role="region"
         />
       </div>
@@ -5914,7 +5861,39 @@ exports[`Accordion multiple panels 4`] = `
 
 exports[`Accordion multiple panels 5`] = `
 <DocumentFragment>
-  .c1 {
+  .c8 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 18px;
+  height: 18px;
+  fill: #555555;
+  stroke: #555555;
+}
+
+.c8 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c8 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c8 *[stroke*='#'],
+.c8 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c8 *[fill-rule],
+.c8 *[FILL-RULE],
+.c8 *[fill*='#'],
+.c8 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c1 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -5927,6 +5906,9 @@ exports[`Accordion multiple panels 5`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  margin-bottom: -1px;
+  border-top: solid 1px rgba(0, 0, 0, 0.36);
+  border-bottom: solid 1px rgba(0, 0, 0, 0.36);
   min-width: 0;
   min-height: 0;
   flex-direction: column;
@@ -5967,105 +5949,6 @@ exports[`Accordion multiple panels 5`] = `
   padding-right: 12px;
 }
 
-.c9 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
-  min-width: 0;
-  min-height: 0;
-  flex-direction: column;
-}
-
-.c8 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
-}
-
-.c8 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c8 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c8 *[stroke*='#'],
-.c8 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c8 *[fill-rule],
-.c8 *[FILL-RULE],
-.c8 *[fill*='#'],
-.c8 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
-}
-
-.c10 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  font: inherit;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  color: inherit;
-  outline: none;
-  border: none;
-  padding: 0;
-  text-align: inherit;
-}
-
-.c10:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c10:focus >circle,
-.c10:focus >ellipse,
-.c10:focus >line,
-.c10:focus >path,
-.c10:focus >polygon,
-.c10:focus >polyline,
-.c10:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c10:focus ::-moz-focus-inner {
-  border: 0;
-}
-
-.c10:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c10:focus:not(:focus-visible) >circle,
-.c10:focus:not(:focus-visible) >ellipse,
-.c10:focus:not(:focus-visible) >line,
-.c10:focus:not(:focus-visible) >path,
-.c10:focus:not(:focus-visible) >polygon,
-.c10:focus:not(:focus-visible) >polyline,
-.c10:focus:not(:focus-visible) >rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c10:focus:not(:focus-visible) ::-moz-focus-inner {
-  border: 0;
-}
-
 .c3 {
   display: inline-block;
   box-sizing: border-box;
@@ -6076,16 +5959,22 @@ exports[`Accordion multiple panels 5`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  color: inherit;
   outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
+  color: inherit;
+}
+
+.c3:hover {
+  background-color: rgba(0, 0, 0, 0.04);
+  color: #555555;
 }
 
 .c3:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c3:focus >circle,
@@ -6095,8 +5984,9 @@ exports[`Accordion multiple panels 5`] = `
 .c3:focus >polygon,
 .c3:focus >polyline,
 .c3:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c3:focus ::-moz-focus-inner {
@@ -6104,6 +5994,8 @@ exports[`Accordion multiple panels 5`] = `
 }
 
 .c3:focus:not(:focus-visible) {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -6115,6 +6007,8 @@ exports[`Accordion multiple panels 5`] = `
 .c3:focus:not(:focus-visible) >polygon,
 .c3:focus:not(:focus-visible) >polyline,
 .c3:focus:not(:focus-visible) >rect {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -6123,31 +6017,43 @@ exports[`Accordion multiple panels 5`] = `
   border: 0;
 }
 
-.c11 {
-  font-size: 18px;
-  line-height: 24px;
-  max-width: 432px;
-  font-weight: 600;
-  overflow-wrap: break-word;
-}
-
 .c6 {
-  font-size: 18px;
-  line-height: 24px;
-  max-width: 432px;
-  font-weight: 600;
+  margin-left: 6px;
+  margin-right: 6px;
+  margin-top: 24px;
+  margin-bottom: 24px;
+  font-size: 1.5rem;
+  line-height: 1.75rem;
+  max-width: 624px;
+  font-weight: 400;
   overflow-wrap: break-word;
-  color: #777777;
+  color: #2e2e2e;
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    margin-bottom: -1px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    border-top: solid 1px rgba(0, 0, 0, 0.36);
+    border-bottom: solid 1px rgba(0, 0, 0, 0.36);
+  }
 }
 
 @media only screen and (max-width: 768px) {
@@ -6165,24 +6071,24 @@ exports[`Accordion multiple panels 5`] = `
 }
 
 @media only screen and (max-width: 768px) {
-  .c9 {
-    border-bottom: solid 1px rgba(0, 0, 0, 0.33);
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .c11 {
-    font-size: 16px;
-    line-height: 22px;
-    max-width: 384px;
+  .c6 {
+    margin-left: 3px;
+    margin-right: 3px;
   }
 }
 
 @media only screen and (max-width: 768px) {
   .c6 {
-    font-size: 16px;
-    line-height: 22px;
-    max-width: 384px;
+    margin-top: 12px;
+    margin-bottom: 12px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c6 {
+    font-size: 1.25rem;
+    line-height: 1.5rem;
+    max-width: 432px;
   }
 }
 
@@ -6208,22 +6114,22 @@ exports[`Accordion multiple panels 5`] = `
             <div
               class="c5"
             >
-              <h4
+              <h3
                 class="c6"
               >
                 Panel 1
-              </h4>
+              </h3>
             </div>
             <div
               class="c7"
             >
               <svg
-                aria-label="FormDown"
+                aria-label="Down"
                 class="c8"
                 viewBox="0 0 24 24"
               >
                 <path
-                  d="m18 9-6 6-6-6"
+                  d="m2 8.35 10.173 9.823L21.997 8"
                   fill="none"
                   stroke="#000"
                   stroke-width="2"
@@ -6234,7 +6140,7 @@ exports[`Accordion multiple panels 5`] = `
         </button>
         <div
           aria-labelledby="«rb»"
-          class="c9"
+          class="c1"
           role="region"
         />
       </div>
@@ -6243,7 +6149,7 @@ exports[`Accordion multiple panels 5`] = `
       >
         <button
           aria-expanded="false"
-          class="c10"
+          class="c3"
           id="«rc»"
           style=""
           type="button"
@@ -6254,22 +6160,22 @@ exports[`Accordion multiple panels 5`] = `
             <div
               class="c5"
             >
-              <h4
-                class="c11"
+              <h3
+                class="c6"
               >
                 Panel 2
-              </h4>
+              </h3>
             </div>
             <div
               class="c7"
             >
               <svg
-                aria-label="FormDown"
+                aria-label="Down"
                 class="c8"
                 viewBox="0 0 24 24"
               >
                 <path
-                  d="m18 9-6 6-6-6"
+                  d="m2 8.35 10.173 9.823L21.997 8"
                   fill="none"
                   stroke="#000"
                   stroke-width="2"
@@ -6280,7 +6186,7 @@ exports[`Accordion multiple panels 5`] = `
         </button>
         <div
           aria-labelledby="«rc»"
-          class="c9"
+          class="c1"
           role="region"
         />
       </div>
@@ -6301,8 +6207,11 @@ exports[`Accordion no AccordionPanel 1`] = `
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -6339,7 +6248,39 @@ exports[`Accordion render accordion no grommet wrapper 1`] = `
 
 exports[`Accordion should apply level prop to headings 1`] = `
 <DocumentFragment>
-  .c1 {
+  .c8 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 18px;
+  height: 18px;
+  fill: #555555;
+  stroke: #555555;
+}
+
+.c8 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c8 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c8 *[stroke*='#'],
+.c8 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c8 *[fill-rule],
+.c8 *[FILL-RULE],
+.c8 *[fill*='#'],
+.c8 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c1 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -6352,6 +6293,9 @@ exports[`Accordion should apply level prop to headings 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  margin-bottom: -1px;
+  border-top: solid 1px rgba(0, 0, 0, 0.36);
+  border-bottom: solid 1px rgba(0, 0, 0, 0.36);
   min-width: 0;
   min-height: 0;
   flex-direction: column;
@@ -6392,48 +6336,6 @@ exports[`Accordion should apply level prop to headings 1`] = `
   padding-right: 12px;
 }
 
-.c9 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
-  min-width: 0;
-  min-height: 0;
-  flex-direction: column;
-}
-
-.c8 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
-}
-
-.c8 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c8 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c8 *[stroke*='#'],
-.c8 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c8 *[fill-rule],
-.c8 *[FILL-RULE],
-.c8 *[fill*='#'],
-.c8 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
-}
-
 .c3 {
   display: inline-block;
   box-sizing: border-box;
@@ -6444,16 +6346,22 @@ exports[`Accordion should apply level prop to headings 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  color: inherit;
   outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
+  color: inherit;
+}
+
+.c3:hover {
+  background-color: rgba(0, 0, 0, 0.04);
+  color: #555555;
 }
 
 .c3:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c3:focus >circle,
@@ -6463,8 +6371,9 @@ exports[`Accordion should apply level prop to headings 1`] = `
 .c3:focus >polygon,
 .c3:focus >polyline,
 .c3:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c3:focus ::-moz-focus-inner {
@@ -6472,6 +6381,8 @@ exports[`Accordion should apply level prop to headings 1`] = `
 }
 
 .c3:focus:not(:focus-visible) {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -6483,6 +6394,8 @@ exports[`Accordion should apply level prop to headings 1`] = `
 .c3:focus:not(:focus-visible) >polygon,
 .c3:focus:not(:focus-visible) >polyline,
 .c3:focus:not(:focus-visible) >rect {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -6491,28 +6404,49 @@ exports[`Accordion should apply level prop to headings 1`] = `
   border: 0;
 }
 
-.c10 {
+.c9 {
   transition: max-height 200ms,opacity 200ms;
   opacity: 0;
   overflow: hidden;
 }
 
 .c6 {
-  font-size: 34px;
-  line-height: 40px;
+  margin-left: 6px;
+  margin-right: 6px;
+  margin-top: 24px;
+  margin-bottom: 24px;
+  font-size: 1.75rem;
+  line-height: 2rem;
   max-width: 816px;
-  font-weight: 600;
+  font-weight: 400;
   overflow-wrap: break-word;
+  color: #2e2e2e;
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    margin-bottom: -1px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    border-top: solid 1px rgba(0, 0, 0, 0.36);
+    border-bottom: solid 1px rgba(0, 0, 0, 0.36);
+  }
 }
 
 @media only screen and (max-width: 768px) {
@@ -6530,15 +6464,23 @@ exports[`Accordion should apply level prop to headings 1`] = `
 }
 
 @media only screen and (max-width: 768px) {
-  .c9 {
-    border-bottom: solid 1px rgba(0, 0, 0, 0.33);
+  .c6 {
+    margin-left: 3px;
+    margin-right: 3px;
   }
 }
 
 @media only screen and (max-width: 768px) {
   .c6 {
-    font-size: 26px;
-    line-height: 32px;
+    margin-top: 12px;
+    margin-bottom: 12px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c6 {
+    font-size: 1.5rem;
+    line-height: 1.75rem;
     max-width: 624px;
   }
 }
@@ -6574,12 +6516,12 @@ exports[`Accordion should apply level prop to headings 1`] = `
               class="c7"
             >
               <svg
-                aria-label="FormDown"
+                aria-label="Down"
                 class="c8"
                 viewBox="0 0 24 24"
               >
                 <path
-                  d="m18 9-6 6-6-6"
+                  d="m2 8.35 10.173 9.823L21.997 8"
                   fill="none"
                   stroke="#000"
                   stroke-width="2"
@@ -6590,12 +6532,12 @@ exports[`Accordion should apply level prop to headings 1`] = `
         </button>
         <div
           aria-labelledby="«rp»"
-          class="c9"
+          class="c1"
           role="region"
         >
           <div
             aria-hidden="true"
-            class="c1 c10"
+            class="c1 c9"
           />
         </div>
       </div>
@@ -6624,12 +6566,12 @@ exports[`Accordion should apply level prop to headings 1`] = `
               class="c7"
             >
               <svg
-                aria-label="FormDown"
+                aria-label="Down"
                 class="c8"
                 viewBox="0 0 24 24"
               >
                 <path
-                  d="m18 9-6 6-6-6"
+                  d="m2 8.35 10.173 9.823L21.997 8"
                   fill="none"
                   stroke="#000"
                   stroke-width="2"
@@ -6640,12 +6582,12 @@ exports[`Accordion should apply level prop to headings 1`] = `
         </button>
         <div
           aria-labelledby="«rq»"
-          class="c9"
+          class="c1"
           role="region"
         >
           <div
             aria-hidden="true"
-            class="c1 c10"
+            class="c1 c9"
           />
         </div>
       </div>
@@ -6656,7 +6598,39 @@ exports[`Accordion should apply level prop to headings 1`] = `
 
 exports[`Accordion should have no accessibility violations 1`] = `
 <DocumentFragment>
-  .c1 {
+  .c6 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 18px;
+  height: 18px;
+  fill: #555555;
+  stroke: #555555;
+}
+
+.c6 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c6 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c6 *[stroke*='#'],
+.c6 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c6 *[fill-rule],
+.c6 *[FILL-RULE],
+.c6 *[fill*='#'],
+.c6 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c1 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -6669,6 +6643,9 @@ exports[`Accordion should have no accessibility violations 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  margin-bottom: -1px;
+  border-top: solid 1px rgba(0, 0, 0, 0.36);
+  border-bottom: solid 1px rgba(0, 0, 0, 0.36);
   min-width: 0;
   min-height: 0;
   flex-direction: column;
@@ -6698,48 +6675,6 @@ exports[`Accordion should have no accessibility violations 1`] = `
   padding-right: 12px;
 }
 
-.c7 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
-  min-width: 0;
-  min-height: 0;
-  flex-direction: column;
-}
-
-.c6 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
-}
-
-.c6 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c6 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c6 *[stroke*='#'],
-.c6 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c6 *[fill-rule],
-.c6 *[FILL-RULE],
-.c6 *[fill*='#'],
-.c6 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
-}
-
 .c3 {
   display: inline-block;
   box-sizing: border-box;
@@ -6750,16 +6685,22 @@ exports[`Accordion should have no accessibility violations 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  color: inherit;
   outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
+  color: inherit;
+}
+
+.c3:hover {
+  background-color: rgba(0, 0, 0, 0.04);
+  color: #555555;
 }
 
 .c3:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c3:focus >circle,
@@ -6769,8 +6710,9 @@ exports[`Accordion should have no accessibility violations 1`] = `
 .c3:focus >polygon,
 .c3:focus >polyline,
 .c3:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c3:focus ::-moz-focus-inner {
@@ -6778,6 +6720,8 @@ exports[`Accordion should have no accessibility violations 1`] = `
 }
 
 .c3:focus:not(:focus-visible) {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -6789,6 +6733,8 @@ exports[`Accordion should have no accessibility violations 1`] = `
 .c3:focus:not(:focus-visible) >polygon,
 .c3:focus:not(:focus-visible) >polyline,
 .c3:focus:not(:focus-visible) >rect {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -6797,15 +6743,18 @@ exports[`Accordion should have no accessibility violations 1`] = `
   border: 0;
 }
 
-.c8 {
+.c7 {
   transition: max-height 200ms,opacity 200ms;
   opacity: 0;
   overflow: hidden;
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -6814,15 +6763,22 @@ exports[`Accordion should have no accessibility violations 1`] = `
 }
 
 @media only screen and (max-width: 768px) {
-  .c5 {
-    padding-left: 6px;
-    padding-right: 6px;
+  .c2 {
+    margin-bottom: -1px;
   }
 }
 
 @media only screen and (max-width: 768px) {
-  .c7 {
-    border-bottom: solid 1px rgba(0, 0, 0, 0.33);
+  .c2 {
+    border-top: solid 1px rgba(0, 0, 0, 0.36);
+    border-bottom: solid 1px rgba(0, 0, 0, 0.36);
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c5 {
+    padding-left: 6px;
+    padding-right: 6px;
   }
 }
 
@@ -6848,12 +6804,12 @@ exports[`Accordion should have no accessibility violations 1`] = `
               class="c5"
             >
               <svg
-                aria-label="FormDown"
+                aria-label="Down"
                 class="c6"
                 viewBox="0 0 24 24"
               >
                 <path
-                  d="m18 9-6 6-6-6"
+                  d="m2 8.35 10.173 9.823L21.997 8"
                   fill="none"
                   stroke="#000"
                   stroke-width="2"
@@ -6864,12 +6820,12 @@ exports[`Accordion should have no accessibility violations 1`] = `
         </button>
         <div
           aria-labelledby="«r0»"
-          class="c7"
+          class="c1"
           role="region"
         >
           <div
             aria-hidden="true"
-            class="c1 c8"
+            class="c1 c7"
           />
         </div>
       </div>
@@ -6880,7 +6836,39 @@ exports[`Accordion should have no accessibility violations 1`] = `
 
 exports[`Accordion theme hover of hover.heading.color 1`] = `
 <DocumentFragment>
-  .c1 {
+  .c8 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #7D4CDB;
+  stroke: #7D4CDB;
+}
+
+.c8 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c8 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c8 *[stroke*='#'],
+.c8 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c8 *[fill-rule],
+.c8 *[FILL-RULE],
+.c8 *[fill*='#'],
+.c8 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c1 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -6941,38 +6929,6 @@ exports[`Accordion theme hover of hover.heading.color 1`] = `
   min-width: 0;
   min-height: 0;
   flex-direction: column;
-}
-
-.c8 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
-}
-
-.c8 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c8 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c8 *[stroke*='#'],
-.c8 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c8 *[fill-rule],
-.c8 *[FILL-RULE],
-.c8 *[fill*='#'],
-.c8 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
 }
 
 .c3 {
@@ -7153,7 +7109,39 @@ exports[`Accordion theme hover of hover.heading.color 1`] = `
 
 exports[`Accordion wrapped panel 1`] = `
 <DocumentFragment>
-  .c1 {
+  .c8 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 18px;
+  height: 18px;
+  fill: #555555;
+  stroke: #555555;
+}
+
+.c8 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c8 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c8 *[stroke*='#'],
+.c8 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c8 *[fill-rule],
+.c8 *[FILL-RULE],
+.c8 *[fill*='#'],
+.c8 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c1 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -7166,6 +7154,9 @@ exports[`Accordion wrapped panel 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  margin-bottom: -1px;
+  border-top: solid 1px rgba(0, 0, 0, 0.36);
+  border-bottom: solid 1px rgba(0, 0, 0, 0.36);
   min-width: 0;
   min-height: 0;
   flex-direction: column;
@@ -7206,48 +7197,6 @@ exports[`Accordion wrapped panel 1`] = `
   padding-right: 12px;
 }
 
-.c9 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
-  min-width: 0;
-  min-height: 0;
-  flex-direction: column;
-}
-
-.c8 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
-}
-
-.c8 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c8 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c8 *[stroke*='#'],
-.c8 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c8 *[fill-rule],
-.c8 *[FILL-RULE],
-.c8 *[fill*='#'],
-.c8 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
-}
-
 .c3 {
   display: inline-block;
   box-sizing: border-box;
@@ -7258,16 +7207,22 @@ exports[`Accordion wrapped panel 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  color: inherit;
   outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
+  color: inherit;
+}
+
+.c3:hover {
+  background-color: rgba(0, 0, 0, 0.04);
+  color: #555555;
 }
 
 .c3:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c3:focus >circle,
@@ -7277,8 +7232,9 @@ exports[`Accordion wrapped panel 1`] = `
 .c3:focus >polygon,
 .c3:focus >polyline,
 .c3:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c3:focus ::-moz-focus-inner {
@@ -7286,6 +7242,8 @@ exports[`Accordion wrapped panel 1`] = `
 }
 
 .c3:focus:not(:focus-visible) {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -7297,6 +7255,8 @@ exports[`Accordion wrapped panel 1`] = `
 .c3:focus:not(:focus-visible) >polygon,
 .c3:focus:not(:focus-visible) >polyline,
 .c3:focus:not(:focus-visible) >rect {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -7306,21 +7266,42 @@ exports[`Accordion wrapped panel 1`] = `
 }
 
 .c6 {
-  font-size: 18px;
-  line-height: 24px;
-  max-width: 432px;
-  font-weight: 600;
+  margin-left: 6px;
+  margin-right: 6px;
+  margin-top: 24px;
+  margin-bottom: 24px;
+  font-size: 1.5rem;
+  line-height: 1.75rem;
+  max-width: 624px;
+  font-weight: 400;
   overflow-wrap: break-word;
+  color: #2e2e2e;
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    margin-bottom: -1px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    border-top: solid 1px rgba(0, 0, 0, 0.36);
+    border-bottom: solid 1px rgba(0, 0, 0, 0.36);
+  }
 }
 
 @media only screen and (max-width: 768px) {
@@ -7338,16 +7319,24 @@ exports[`Accordion wrapped panel 1`] = `
 }
 
 @media only screen and (max-width: 768px) {
-  .c9 {
-    border-bottom: solid 1px rgba(0, 0, 0, 0.33);
+  .c6 {
+    margin-left: 3px;
+    margin-right: 3px;
   }
 }
 
 @media only screen and (max-width: 768px) {
   .c6 {
-    font-size: 16px;
-    line-height: 22px;
-    max-width: 384px;
+    margin-top: 12px;
+    margin-bottom: 12px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c6 {
+    font-size: 1.25rem;
+    line-height: 1.5rem;
+    max-width: 432px;
   }
 }
 
@@ -7372,22 +7361,22 @@ exports[`Accordion wrapped panel 1`] = `
             <div
               class="c5"
             >
-              <h4
+              <h3
                 class="c6"
               >
                 Panel 1
-              </h4>
+              </h3>
             </div>
             <div
               class="c7"
             >
               <svg
-                aria-label="FormDown"
+                aria-label="Down"
                 class="c8"
                 viewBox="0 0 24 24"
               >
                 <path
-                  d="m18 9-6 6-6-6"
+                  d="m2 8.35 10.173 9.823L21.997 8"
                   fill="none"
                   stroke="#000"
                   stroke-width="2"
@@ -7398,7 +7387,7 @@ exports[`Accordion wrapped panel 1`] = `
         </button>
         <div
           aria-labelledby="«rm»"
-          class="c9"
+          class="c1"
           role="region"
         />
       </div>
@@ -7417,22 +7406,22 @@ exports[`Accordion wrapped panel 1`] = `
             <div
               class="c5"
             >
-              <h4
+              <h3
                 class="c6"
               >
                 Panel 2
-              </h4>
+              </h3>
             </div>
             <div
               class="c7"
             >
               <svg
-                aria-label="FormDown"
+                aria-label="Down"
                 class="c8"
                 viewBox="0 0 24 24"
               >
                 <path
-                  d="m18 9-6 6-6-6"
+                  d="m2 8.35 10.173 9.823L21.997 8"
                   fill="none"
                   stroke="#000"
                   stroke-width="2"
@@ -7443,7 +7432,7 @@ exports[`Accordion wrapped panel 1`] = `
         </button>
         <div
           aria-labelledby="«rn»"
-          class="c9"
+          class="c1"
           role="region"
         />
       </div>
@@ -7454,7 +7443,39 @@ exports[`Accordion wrapped panel 1`] = `
 
 exports[`Accordion wrapped panel 2`] = `
 <DocumentFragment>
-  .c1 {
+  .c8 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 18px;
+  height: 18px;
+  fill: #555555;
+  stroke: #555555;
+}
+
+.c8 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c8 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c8 *[stroke*='#'],
+.c8 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c8 *[fill-rule],
+.c8 *[FILL-RULE],
+.c8 *[fill*='#'],
+.c8 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c1 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -7467,6 +7488,9 @@ exports[`Accordion wrapped panel 2`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  margin-bottom: -1px;
+  border-top: solid 1px rgba(0, 0, 0, 0.36);
+  border-bottom: solid 1px rgba(0, 0, 0, 0.36);
   min-width: 0;
   min-height: 0;
   flex-direction: column;
@@ -7507,105 +7531,6 @@ exports[`Accordion wrapped panel 2`] = `
   padding-right: 12px;
 }
 
-.c9 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
-  min-width: 0;
-  min-height: 0;
-  flex-direction: column;
-}
-
-.c8 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
-}
-
-.c8 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c8 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c8 *[stroke*='#'],
-.c8 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c8 *[fill-rule],
-.c8 *[FILL-RULE],
-.c8 *[fill*='#'],
-.c8 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
-}
-
-.c10 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  font: inherit;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  color: inherit;
-  outline: none;
-  border: none;
-  padding: 0;
-  text-align: inherit;
-}
-
-.c10:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c10:focus >circle,
-.c10:focus >ellipse,
-.c10:focus >line,
-.c10:focus >path,
-.c10:focus >polygon,
-.c10:focus >polyline,
-.c10:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c10:focus ::-moz-focus-inner {
-  border: 0;
-}
-
-.c10:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c10:focus:not(:focus-visible) >circle,
-.c10:focus:not(:focus-visible) >ellipse,
-.c10:focus:not(:focus-visible) >line,
-.c10:focus:not(:focus-visible) >path,
-.c10:focus:not(:focus-visible) >polygon,
-.c10:focus:not(:focus-visible) >polyline,
-.c10:focus:not(:focus-visible) >rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c10:focus:not(:focus-visible) ::-moz-focus-inner {
-  border: 0;
-}
-
 .c3 {
   display: inline-block;
   box-sizing: border-box;
@@ -7616,16 +7541,22 @@ exports[`Accordion wrapped panel 2`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  color: inherit;
   outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
+  color: inherit;
+}
+
+.c3:hover {
+  background-color: rgba(0, 0, 0, 0.04);
+  color: #555555;
 }
 
 .c3:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c3:focus >circle,
@@ -7635,8 +7566,9 @@ exports[`Accordion wrapped panel 2`] = `
 .c3:focus >polygon,
 .c3:focus >polyline,
 .c3:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c3:focus ::-moz-focus-inner {
@@ -7644,6 +7576,8 @@ exports[`Accordion wrapped panel 2`] = `
 }
 
 .c3:focus:not(:focus-visible) {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -7655,6 +7589,8 @@ exports[`Accordion wrapped panel 2`] = `
 .c3:focus:not(:focus-visible) >polygon,
 .c3:focus:not(:focus-visible) >polyline,
 .c3:focus:not(:focus-visible) >rect {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -7663,31 +7599,43 @@ exports[`Accordion wrapped panel 2`] = `
   border: 0;
 }
 
-.c11 {
-  font-size: 18px;
-  line-height: 24px;
-  max-width: 432px;
-  font-weight: 600;
-  overflow-wrap: break-word;
-}
-
 .c6 {
-  font-size: 18px;
-  line-height: 24px;
-  max-width: 432px;
-  font-weight: 600;
+  margin-left: 6px;
+  margin-right: 6px;
+  margin-top: 24px;
+  margin-bottom: 24px;
+  font-size: 1.5rem;
+  line-height: 1.75rem;
+  max-width: 624px;
+  font-weight: 400;
   overflow-wrap: break-word;
-  color: #777777;
+  color: #2e2e2e;
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    margin-bottom: -1px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    border-top: solid 1px rgba(0, 0, 0, 0.36);
+    border-bottom: solid 1px rgba(0, 0, 0, 0.36);
+  }
 }
 
 @media only screen and (max-width: 768px) {
@@ -7705,24 +7653,24 @@ exports[`Accordion wrapped panel 2`] = `
 }
 
 @media only screen and (max-width: 768px) {
-  .c9 {
-    border-bottom: solid 1px rgba(0, 0, 0, 0.33);
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .c11 {
-    font-size: 16px;
-    line-height: 22px;
-    max-width: 384px;
+  .c6 {
+    margin-left: 3px;
+    margin-right: 3px;
   }
 }
 
 @media only screen and (max-width: 768px) {
   .c6 {
-    font-size: 16px;
-    line-height: 22px;
-    max-width: 384px;
+    margin-top: 12px;
+    margin-bottom: 12px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c6 {
+    font-size: 1.25rem;
+    line-height: 1.5rem;
+    max-width: 432px;
   }
 }
 
@@ -7748,22 +7696,22 @@ exports[`Accordion wrapped panel 2`] = `
             <div
               class="c5"
             >
-              <h4
+              <h3
                 class="c6"
               >
                 Panel 1
-              </h4>
+              </h3>
             </div>
             <div
               class="c7"
             >
               <svg
-                aria-label="FormUp"
+                aria-label="Up"
                 class="c8"
                 viewBox="0 0 24 24"
               >
                 <path
-                  d="m18 15-6-6-6 6"
+                  d="m2 15.999 10.173-9.824 9.824 10.173"
                   fill="none"
                   stroke="#000"
                   stroke-width="2"
@@ -7774,7 +7722,7 @@ exports[`Accordion wrapped panel 2`] = `
         </button>
         <div
           aria-labelledby="«rm»"
-          class="c9"
+          class="c1"
           role="region"
         >
           Panel body 1
@@ -7785,7 +7733,7 @@ exports[`Accordion wrapped panel 2`] = `
       >
         <button
           aria-expanded="false"
-          class="c10"
+          class="c3"
           id="«rn»"
           type="button"
         >
@@ -7795,22 +7743,22 @@ exports[`Accordion wrapped panel 2`] = `
             <div
               class="c5"
             >
-              <h4
-                class="c11"
+              <h3
+                class="c6"
               >
                 Panel 2
-              </h4>
+              </h3>
             </div>
             <div
               class="c7"
             >
               <svg
-                aria-label="FormDown"
+                aria-label="Down"
                 class="c8"
                 viewBox="0 0 24 24"
               >
                 <path
-                  d="m18 9-6 6-6-6"
+                  d="m2 8.35 10.173 9.823L21.997 8"
                   fill="none"
                   stroke="#000"
                   stroke-width="2"
@@ -7821,7 +7769,7 @@ exports[`Accordion wrapped panel 2`] = `
         </button>
         <div
           aria-labelledby="«rn»"
-          class="c9"
+          class="c1"
           role="region"
         />
       </div>

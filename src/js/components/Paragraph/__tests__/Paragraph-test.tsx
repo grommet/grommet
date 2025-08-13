@@ -1,13 +1,14 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 import 'jest-styled-components';
+import { hpe } from 'grommet-theme-hpe';
 
 import { Grommet } from '../../Grommet';
 import { Paragraph } from '..';
 
 test('Paragraph renders', () => {
   const { container } = render(
-    <Grommet>
+    <Grommet theme={hpe}>
       <Paragraph />
     </Grommet>,
   );
@@ -17,7 +18,7 @@ test('Paragraph renders', () => {
 
 test('Paragraph size renders', () => {
   const { container } = render(
-    <Grommet>
+    <Grommet theme={hpe}>
       <Paragraph size="small" />
       <Paragraph size="medium" />
       <Paragraph size="large" />
@@ -55,7 +56,7 @@ test('Paragraph margin renders', () => {
 
 test('Paragraph textAlign renders', () => {
   const { container } = render(
-    <Grommet>
+    <Grommet theme={hpe}>
       <Paragraph textAlign="start" />
       <Paragraph textAlign="center" />
       <Paragraph textAlign="end" />
@@ -68,7 +69,7 @@ test('Paragraph textAlign renders', () => {
 
 test('Paragraph maxLines renders', () => {
   const { container } = render(
-    <Grommet>
+    <Grommet theme={hpe}>
       <Paragraph maxLines={3} />
     </Grommet>,
   );
@@ -78,7 +79,7 @@ test('Paragraph maxLines renders', () => {
 
 test('Paragraph dangerouslySetInnerHTML renders', () => {
   const { container } = render(
-    <Grommet>
+    <Grommet theme={hpe}>
       <Paragraph
         dangerouslySetInnerHTML={{
           __html: 'This is a dangerouslySetInnerHTML!',

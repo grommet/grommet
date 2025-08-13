@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, act } from '@testing-library/react';
 import 'jest-styled-components';
-
+import { hpe } from 'grommet-theme-hpe';
 import { Grommet } from '../../Grommet';
 import { Clock, ClockExtendedProps } from '..';
 import { ThemeType } from '../../../themes';
@@ -29,7 +29,7 @@ const SIZES: ClockExtendedProps['size'][] = [
 describe('Clock', () => {
   test('time', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Clock run={false} type="digital" time={DURATION} />
         <Clock run={false} type="digital" time={TIME} />
         <Clock run={false} type="digital" time={TIME2} />
@@ -50,7 +50,7 @@ describe('Clock', () => {
 
   test('hourLimit', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Clock run={false} type="digital" time={DURATION} hourLimit={12} />
         <Clock run={false} type="digital" time={DURATION} hourLimit={24} />
       </Grommet>,
@@ -62,7 +62,7 @@ describe('Clock', () => {
   test('run', () => {
     jest.useFakeTimers();
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Clock type="analog" run="forward" time={DURATION} />
         <Clock type="analog" run="backward" time={DURATION} />
         <Clock type="digital" run="forward" time={DURATION} />
@@ -83,7 +83,7 @@ describe('Clock', () => {
       SIZES.forEach((size) =>
         test(`type ${type} precision ${precision} size ${size}`, () => {
           const { container } = render(
-            <Grommet>
+            <Grommet theme={hpe}>
               <Clock
                 run={false}
                 type={type}
@@ -103,7 +103,7 @@ describe('Clock', () => {
   PRECISIONS.forEach((precision) =>
     test(`type analog precision ${precision} size huge`, () => {
       const { container } = render(
-        <Grommet>
+        <Grommet theme={hpe}>
           <Clock
             run={false}
             type="analog"

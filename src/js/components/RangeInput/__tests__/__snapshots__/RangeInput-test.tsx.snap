@@ -1,9 +1,12 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`RangeInput onBlur 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -36,7 +39,8 @@ exports[`RangeInput onBlur 1`] = `
   box-sizing: border-box;
   width: 100%;
   height: 4px;
-  background: rgba(0, 0, 0, 0.2);
+  background: linear-gradient(       to right,       rgba(0, 133, 103, 1),       rgba(0, 133, 103, 1) 50%,       rgba(224, 224, 224, 1) 50%,       rgba(224, 224, 224, 1)     );
+  border-radius: 9999px;
 }
 
 .c1::-webkit-slider-thumb {
@@ -47,20 +51,22 @@ exports[`RangeInput onBlur 1`] = `
   height: 24px;
   width: 24px;
   overflow: visible;
-  background: #7D4CDB;
+  background: #008567;
   -webkit-appearance: none;
   cursor: pointer;
+  border-color: transparent;
 }
 
 .c1::-webkit-slider-thumb:hover {
-  box-shadow: 0px 0px 0px 2px #7D4CDB;
+  box-shadow: 0px 0px 0px 2px #008567;
 }
 
 .c1::-moz-range-track {
   box-sizing: border-box;
   width: 100%;
   height: 4px;
-  background: rgba(0, 0, 0, 0.2);
+  background: linear-gradient(       to right,       rgba(0, 133, 103, 1),       rgba(0, 133, 103, 1) 50%,       rgba(224, 224, 224, 1) 50%,       rgba(224, 224, 224, 1)     );
+  border-radius: 9999px;
 }
 
 .c1::-moz-range-thumb {
@@ -70,12 +76,14 @@ exports[`RangeInput onBlur 1`] = `
   height: 24px;
   width: 24px;
   overflow: visible;
-  background: #7D4CDB;
+  background: #008567;
   -webkit-appearance: none;
   cursor: pointer;
+  border-color: transparent;
   margin-top: 0px;
   height: 24px;
   width: 24px;
+  border-color: transparent;
 }
 
 .c1::-ms-thumb {
@@ -85,38 +93,41 @@ exports[`RangeInput onBlur 1`] = `
   height: 24px;
   width: 24px;
   overflow: visible;
-  background: #7D4CDB;
+  background: #008567;
   -webkit-appearance: none;
   cursor: pointer;
+  border-color: transparent;
   margin-top: 0px;
   height: 24px;
   width: 24px;
+  border-color: transparent;
 }
 
 .c1:hover::-moz-range-thumb {
-  box-shadow: 0px 0px 0px 2px #7D4CDB;
+  box-shadow: 0px 0px 0px 2px #008567;
 }
 
 .c1:hover::-ms-thumb {
-  box-shadow: 0px 0px 0px 2px #7D4CDB;
+  box-shadow: 0px 0px 0px 2px #008567;
 }
 
 .c1::-ms-track {
   box-sizing: border-box;
   width: 100%;
   height: 4px;
-  background: rgba(0, 0, 0, 0.2);
+  background: linear-gradient(       to right,       rgba(0, 133, 103, 1),       rgba(0, 133, 103, 1) 50%,       rgba(224, 224, 224, 1) 50%,       rgba(224, 224, 224, 1)     );
+  border-radius: 9999px;
   border-color: transparent;
   color: transparent;
 }
 
 .c1::-ms-fill-lower {
-  background: rgba(0, 0, 0, 0.2);
+  background: linear-gradient(       to right,       rgba(0, 133, 103, 1),       rgba(0, 133, 103, 1) 50%,       rgba(224, 224, 224, 1) 50%,       rgba(224, 224, 224, 1)     );
   border-color: transparent;
 }
 
 .c1::-ms-fill-upper {
-  background: rgba(0, 0, 0, 0.2);
+  background: linear-gradient(       to right,       rgba(0, 133, 103, 1),       rgba(0, 133, 103, 1) 50%,       rgba(224, 224, 224, 1) 50%,       rgba(224, 224, 224, 1)     );
   border-color: transparent;
 }
 
@@ -126,6 +137,19 @@ exports[`RangeInput onBlur 1`] = `
 
 .c1:focus {
   outline: none;
+}
+
+.c1::before {
+  display: block;
+  position: absolute;
+  content: '';
+  width: 4px;
+  height: 4px;
+  border-radius: 9999px;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #2e2e2e;
 }
 
 <div
@@ -147,8 +171,11 @@ exports[`RangeInput onBlur 1`] = `
 
 exports[`RangeInput onChange 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -181,7 +208,8 @@ exports[`RangeInput onChange 1`] = `
   box-sizing: border-box;
   width: 100%;
   height: 4px;
-  background: rgba(0, 0, 0, 0.2);
+  background: linear-gradient(       to right,       rgba(0, 133, 103, 1),       rgba(0, 133, 103, 1) 50%,       rgba(224, 224, 224, 1) 50%,       rgba(224, 224, 224, 1)     );
+  border-radius: 9999px;
 }
 
 .c1::-webkit-slider-thumb {
@@ -192,20 +220,22 @@ exports[`RangeInput onChange 1`] = `
   height: 24px;
   width: 24px;
   overflow: visible;
-  background: #7D4CDB;
+  background: #008567;
   -webkit-appearance: none;
   cursor: pointer;
+  border-color: transparent;
 }
 
 .c1::-webkit-slider-thumb:hover {
-  box-shadow: 0px 0px 0px 2px #7D4CDB;
+  box-shadow: 0px 0px 0px 2px #008567;
 }
 
 .c1::-moz-range-track {
   box-sizing: border-box;
   width: 100%;
   height: 4px;
-  background: rgba(0, 0, 0, 0.2);
+  background: linear-gradient(       to right,       rgba(0, 133, 103, 1),       rgba(0, 133, 103, 1) 50%,       rgba(224, 224, 224, 1) 50%,       rgba(224, 224, 224, 1)     );
+  border-radius: 9999px;
 }
 
 .c1::-moz-range-thumb {
@@ -215,12 +245,14 @@ exports[`RangeInput onChange 1`] = `
   height: 24px;
   width: 24px;
   overflow: visible;
-  background: #7D4CDB;
+  background: #008567;
   -webkit-appearance: none;
   cursor: pointer;
+  border-color: transparent;
   margin-top: 0px;
   height: 24px;
   width: 24px;
+  border-color: transparent;
 }
 
 .c1::-ms-thumb {
@@ -230,38 +262,41 @@ exports[`RangeInput onChange 1`] = `
   height: 24px;
   width: 24px;
   overflow: visible;
-  background: #7D4CDB;
+  background: #008567;
   -webkit-appearance: none;
   cursor: pointer;
+  border-color: transparent;
   margin-top: 0px;
   height: 24px;
   width: 24px;
+  border-color: transparent;
 }
 
 .c1:hover::-moz-range-thumb {
-  box-shadow: 0px 0px 0px 2px #7D4CDB;
+  box-shadow: 0px 0px 0px 2px #008567;
 }
 
 .c1:hover::-ms-thumb {
-  box-shadow: 0px 0px 0px 2px #7D4CDB;
+  box-shadow: 0px 0px 0px 2px #008567;
 }
 
 .c1::-ms-track {
   box-sizing: border-box;
   width: 100%;
   height: 4px;
-  background: rgba(0, 0, 0, 0.2);
+  background: linear-gradient(       to right,       rgba(0, 133, 103, 1),       rgba(0, 133, 103, 1) 50%,       rgba(224, 224, 224, 1) 50%,       rgba(224, 224, 224, 1)     );
+  border-radius: 9999px;
   border-color: transparent;
   color: transparent;
 }
 
 .c1::-ms-fill-lower {
-  background: rgba(0, 0, 0, 0.2);
+  background: linear-gradient(       to right,       rgba(0, 133, 103, 1),       rgba(0, 133, 103, 1) 50%,       rgba(224, 224, 224, 1) 50%,       rgba(224, 224, 224, 1)     );
   border-color: transparent;
 }
 
 .c1::-ms-fill-upper {
-  background: rgba(0, 0, 0, 0.2);
+  background: linear-gradient(       to right,       rgba(0, 133, 103, 1),       rgba(0, 133, 103, 1) 50%,       rgba(224, 224, 224, 1) 50%,       rgba(224, 224, 224, 1)     );
   border-color: transparent;
 }
 
@@ -271,6 +306,19 @@ exports[`RangeInput onChange 1`] = `
 
 .c1:focus {
   outline: none;
+}
+
+.c1::before {
+  display: block;
+  position: absolute;
+  content: '';
+  width: 4px;
+  height: 4px;
+  border-radius: 9999px;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #2e2e2e;
 }
 
 <div
@@ -292,8 +340,11 @@ exports[`RangeInput onChange 1`] = `
 
 exports[`RangeInput onFocus 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -326,7 +377,8 @@ exports[`RangeInput onFocus 1`] = `
   box-sizing: border-box;
   width: 100%;
   height: 4px;
-  background: rgba(0, 0, 0, 0.2);
+  background: linear-gradient(       to right,       rgba(0, 133, 103, 1),       rgba(0, 133, 103, 1) 50%,       rgba(224, 224, 224, 1) 50%,       rgba(224, 224, 224, 1)     );
+  border-radius: 9999px;
 }
 
 .c1::-webkit-slider-thumb {
@@ -337,20 +389,22 @@ exports[`RangeInput onFocus 1`] = `
   height: 24px;
   width: 24px;
   overflow: visible;
-  background: #7D4CDB;
+  background: #008567;
   -webkit-appearance: none;
   cursor: pointer;
+  border-color: transparent;
 }
 
 .c1::-webkit-slider-thumb:hover {
-  box-shadow: 0px 0px 0px 2px #7D4CDB;
+  box-shadow: 0px 0px 0px 2px #008567;
 }
 
 .c1::-moz-range-track {
   box-sizing: border-box;
   width: 100%;
   height: 4px;
-  background: rgba(0, 0, 0, 0.2);
+  background: linear-gradient(       to right,       rgba(0, 133, 103, 1),       rgba(0, 133, 103, 1) 50%,       rgba(224, 224, 224, 1) 50%,       rgba(224, 224, 224, 1)     );
+  border-radius: 9999px;
 }
 
 .c1::-moz-range-thumb {
@@ -360,14 +414,17 @@ exports[`RangeInput onFocus 1`] = `
   height: 24px;
   width: 24px;
   overflow: visible;
-  background: #7D4CDB;
+  background: #008567;
   -webkit-appearance: none;
   cursor: pointer;
+  border-color: transparent;
   margin-top: 0px;
   height: 24px;
   width: 24px;
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
+  border-color: transparent;
 }
 
 .c1::-moz-range-thumb >circle,
@@ -377,8 +434,9 @@ exports[`RangeInput onFocus 1`] = `
 .c1::-moz-range-thumb >polygon,
 .c1::-moz-range-thumb >polyline,
 .c1::-moz-range-thumb >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c1::-moz-range-thumb ::-moz-focus-inner {
@@ -392,14 +450,17 @@ exports[`RangeInput onFocus 1`] = `
   height: 24px;
   width: 24px;
   overflow: visible;
-  background: #7D4CDB;
+  background: #008567;
   -webkit-appearance: none;
   cursor: pointer;
+  border-color: transparent;
   margin-top: 0px;
   height: 24px;
   width: 24px;
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
+  border-color: transparent;
 }
 
 .c1::-ms-thumb >circle,
@@ -409,8 +470,9 @@ exports[`RangeInput onFocus 1`] = `
 .c1::-ms-thumb >polygon,
 .c1::-ms-thumb >polyline,
 .c1::-ms-thumb >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c1::-ms-thumb ::-moz-focus-inner {
@@ -418,35 +480,37 @@ exports[`RangeInput onFocus 1`] = `
 }
 
 .c1:hover::-moz-range-thumb {
-  box-shadow: 0px 0px 0px 2px #7D4CDB;
+  box-shadow: 0px 0px 0px 2px #008567;
 }
 
 .c1:hover::-ms-thumb {
-  box-shadow: 0px 0px 0px 2px #7D4CDB;
+  box-shadow: 0px 0px 0px 2px #008567;
 }
 
 .c1::-ms-track {
   box-sizing: border-box;
   width: 100%;
   height: 4px;
-  background: rgba(0, 0, 0, 0.2);
+  background: linear-gradient(       to right,       rgba(0, 133, 103, 1),       rgba(0, 133, 103, 1) 50%,       rgba(224, 224, 224, 1) 50%,       rgba(224, 224, 224, 1)     );
+  border-radius: 9999px;
   border-color: transparent;
   color: transparent;
 }
 
 .c1::-ms-fill-lower {
-  background: rgba(0, 0, 0, 0.2);
+  background: linear-gradient(       to right,       rgba(0, 133, 103, 1),       rgba(0, 133, 103, 1) 50%,       rgba(224, 224, 224, 1) 50%,       rgba(224, 224, 224, 1)     );
   border-color: transparent;
 }
 
 .c1::-ms-fill-upper {
-  background: rgba(0, 0, 0, 0.2);
+  background: linear-gradient(       to right,       rgba(0, 133, 103, 1),       rgba(0, 133, 103, 1) 50%,       rgba(224, 224, 224, 1) 50%,       rgba(224, 224, 224, 1)     );
   border-color: transparent;
 }
 
 .c1:focus::-webkit-slider-thumb {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c1:focus::-webkit-slider-thumb >circle,
@@ -456,8 +520,9 @@ exports[`RangeInput onFocus 1`] = `
 .c1:focus::-webkit-slider-thumb >polygon,
 .c1:focus::-webkit-slider-thumb >polyline,
 .c1:focus::-webkit-slider-thumb >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c1:focus::-webkit-slider-thumb ::-moz-focus-inner {
@@ -470,6 +535,19 @@ exports[`RangeInput onFocus 1`] = `
 
 .c1:focus {
   outline: none;
+}
+
+.c1::before {
+  display: block;
+  position: absolute;
+  content: '';
+  width: 4px;
+  height: 4px;
+  border-radius: 9999px;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #2e2e2e;
 }
 
 <div
@@ -491,8 +569,11 @@ exports[`RangeInput onFocus 1`] = `
 
 exports[`RangeInput renders 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -525,7 +606,8 @@ exports[`RangeInput renders 1`] = `
   box-sizing: border-box;
   width: 100%;
   height: 4px;
-  background: rgba(0, 0, 0, 0.2);
+  background: linear-gradient(       to right,       rgba(0, 133, 103, 1),       rgba(0, 133, 103, 1) 50%,       rgba(224, 224, 224, 1) 50%,       rgba(224, 224, 224, 1)     );
+  border-radius: 9999px;
 }
 
 .c1::-webkit-slider-thumb {
@@ -536,20 +618,22 @@ exports[`RangeInput renders 1`] = `
   height: 24px;
   width: 24px;
   overflow: visible;
-  background: #7D4CDB;
+  background: #008567;
   -webkit-appearance: none;
   cursor: pointer;
+  border-color: transparent;
 }
 
 .c1::-webkit-slider-thumb:hover {
-  box-shadow: 0px 0px 0px 2px #7D4CDB;
+  box-shadow: 0px 0px 0px 2px #008567;
 }
 
 .c1::-moz-range-track {
   box-sizing: border-box;
   width: 100%;
   height: 4px;
-  background: rgba(0, 0, 0, 0.2);
+  background: linear-gradient(       to right,       rgba(0, 133, 103, 1),       rgba(0, 133, 103, 1) 50%,       rgba(224, 224, 224, 1) 50%,       rgba(224, 224, 224, 1)     );
+  border-radius: 9999px;
 }
 
 .c1::-moz-range-thumb {
@@ -559,12 +643,14 @@ exports[`RangeInput renders 1`] = `
   height: 24px;
   width: 24px;
   overflow: visible;
-  background: #7D4CDB;
+  background: #008567;
   -webkit-appearance: none;
   cursor: pointer;
+  border-color: transparent;
   margin-top: 0px;
   height: 24px;
   width: 24px;
+  border-color: transparent;
 }
 
 .c1::-ms-thumb {
@@ -574,38 +660,41 @@ exports[`RangeInput renders 1`] = `
   height: 24px;
   width: 24px;
   overflow: visible;
-  background: #7D4CDB;
+  background: #008567;
   -webkit-appearance: none;
   cursor: pointer;
+  border-color: transparent;
   margin-top: 0px;
   height: 24px;
   width: 24px;
+  border-color: transparent;
 }
 
 .c1:hover::-moz-range-thumb {
-  box-shadow: 0px 0px 0px 2px #7D4CDB;
+  box-shadow: 0px 0px 0px 2px #008567;
 }
 
 .c1:hover::-ms-thumb {
-  box-shadow: 0px 0px 0px 2px #7D4CDB;
+  box-shadow: 0px 0px 0px 2px #008567;
 }
 
 .c1::-ms-track {
   box-sizing: border-box;
   width: 100%;
   height: 4px;
-  background: rgba(0, 0, 0, 0.2);
+  background: linear-gradient(       to right,       rgba(0, 133, 103, 1),       rgba(0, 133, 103, 1) 50%,       rgba(224, 224, 224, 1) 50%,       rgba(224, 224, 224, 1)     );
+  border-radius: 9999px;
   border-color: transparent;
   color: transparent;
 }
 
 .c1::-ms-fill-lower {
-  background: rgba(0, 0, 0, 0.2);
+  background: linear-gradient(       to right,       rgba(0, 133, 103, 1),       rgba(0, 133, 103, 1) 50%,       rgba(224, 224, 224, 1) 50%,       rgba(224, 224, 224, 1)     );
   border-color: transparent;
 }
 
 .c1::-ms-fill-upper {
-  background: rgba(0, 0, 0, 0.2);
+  background: linear-gradient(       to right,       rgba(0, 133, 103, 1),       rgba(0, 133, 103, 1) 50%,       rgba(224, 224, 224, 1) 50%,       rgba(224, 224, 224, 1)     );
   border-color: transparent;
 }
 
@@ -615,6 +704,19 @@ exports[`RangeInput renders 1`] = `
 
 .c1:focus {
   outline: none;
+}
+
+.c1::before {
+  display: block;
+  position: absolute;
+  content: '';
+  width: 4px;
+  height: 4px;
+  border-radius: 9999px;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #2e2e2e;
 }
 
 <div
@@ -636,8 +738,11 @@ exports[`RangeInput renders 1`] = `
 
 exports[`RangeInput renders outside grommet wrapper 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -670,7 +775,8 @@ exports[`RangeInput renders outside grommet wrapper 1`] = `
   box-sizing: border-box;
   width: 100%;
   height: 4px;
-  background: rgba(0, 0, 0, 0.2);
+  background: linear-gradient(       to right,       rgba(0, 133, 103, 1),       rgba(0, 133, 103, 1) 50%,       rgba(224, 224, 224, 1) 50%,       rgba(224, 224, 224, 1)     );
+  border-radius: 9999px;
 }
 
 .c1::-webkit-slider-thumb {
@@ -681,20 +787,22 @@ exports[`RangeInput renders outside grommet wrapper 1`] = `
   height: 24px;
   width: 24px;
   overflow: visible;
-  background: #7D4CDB;
+  background: #008567;
   -webkit-appearance: none;
   cursor: pointer;
+  border-color: transparent;
 }
 
 .c1::-webkit-slider-thumb:hover {
-  box-shadow: 0px 0px 0px 2px #7D4CDB;
+  box-shadow: 0px 0px 0px 2px #008567;
 }
 
 .c1::-moz-range-track {
   box-sizing: border-box;
   width: 100%;
   height: 4px;
-  background: rgba(0, 0, 0, 0.2);
+  background: linear-gradient(       to right,       rgba(0, 133, 103, 1),       rgba(0, 133, 103, 1) 50%,       rgba(224, 224, 224, 1) 50%,       rgba(224, 224, 224, 1)     );
+  border-radius: 9999px;
 }
 
 .c1::-moz-range-thumb {
@@ -704,12 +812,14 @@ exports[`RangeInput renders outside grommet wrapper 1`] = `
   height: 24px;
   width: 24px;
   overflow: visible;
-  background: #7D4CDB;
+  background: #008567;
   -webkit-appearance: none;
   cursor: pointer;
+  border-color: transparent;
   margin-top: 0px;
   height: 24px;
   width: 24px;
+  border-color: transparent;
 }
 
 .c1::-ms-thumb {
@@ -719,38 +829,41 @@ exports[`RangeInput renders outside grommet wrapper 1`] = `
   height: 24px;
   width: 24px;
   overflow: visible;
-  background: #7D4CDB;
+  background: #008567;
   -webkit-appearance: none;
   cursor: pointer;
+  border-color: transparent;
   margin-top: 0px;
   height: 24px;
   width: 24px;
+  border-color: transparent;
 }
 
 .c1:hover::-moz-range-thumb {
-  box-shadow: 0px 0px 0px 2px #7D4CDB;
+  box-shadow: 0px 0px 0px 2px #008567;
 }
 
 .c1:hover::-ms-thumb {
-  box-shadow: 0px 0px 0px 2px #7D4CDB;
+  box-shadow: 0px 0px 0px 2px #008567;
 }
 
 .c1::-ms-track {
   box-sizing: border-box;
   width: 100%;
   height: 4px;
-  background: rgba(0, 0, 0, 0.2);
+  background: linear-gradient(       to right,       rgba(0, 133, 103, 1),       rgba(0, 133, 103, 1) 50%,       rgba(224, 224, 224, 1) 50%,       rgba(224, 224, 224, 1)     );
+  border-radius: 9999px;
   border-color: transparent;
   color: transparent;
 }
 
 .c1::-ms-fill-lower {
-  background: rgba(0, 0, 0, 0.2);
+  background: linear-gradient(       to right,       rgba(0, 133, 103, 1),       rgba(0, 133, 103, 1) 50%,       rgba(224, 224, 224, 1) 50%,       rgba(224, 224, 224, 1)     );
   border-color: transparent;
 }
 
 .c1::-ms-fill-upper {
-  background: rgba(0, 0, 0, 0.2);
+  background: linear-gradient(       to right,       rgba(0, 133, 103, 1),       rgba(0, 133, 103, 1) 50%,       rgba(224, 224, 224, 1) 50%,       rgba(224, 224, 224, 1)     );
   border-color: transparent;
 }
 
@@ -760,6 +873,19 @@ exports[`RangeInput renders outside grommet wrapper 1`] = `
 
 .c1:focus {
   outline: none;
+}
+
+.c1::before {
+  display: block;
+  position: absolute;
+  content: '';
+  width: 4px;
+  height: 4px;
+  border-radius: 9999px;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #2e2e2e;
 }
 
 <div
@@ -781,8 +907,11 @@ exports[`RangeInput renders outside grommet wrapper 1`] = `
 
 exports[`RangeInput should have no accessibility violations 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -815,7 +944,8 @@ exports[`RangeInput should have no accessibility violations 1`] = `
   box-sizing: border-box;
   width: 100%;
   height: 4px;
-  background: rgba(0, 0, 0, 0.2);
+  background: linear-gradient(       to right,       rgba(0, 133, 103, 1),       rgba(0, 133, 103, 1) 50%,       rgba(224, 224, 224, 1) 50%,       rgba(224, 224, 224, 1)     );
+  border-radius: 9999px;
 }
 
 .c1::-webkit-slider-thumb {
@@ -826,20 +956,22 @@ exports[`RangeInput should have no accessibility violations 1`] = `
   height: 24px;
   width: 24px;
   overflow: visible;
-  background: #7D4CDB;
+  background: #008567;
   -webkit-appearance: none;
   cursor: pointer;
+  border-color: transparent;
 }
 
 .c1::-webkit-slider-thumb:hover {
-  box-shadow: 0px 0px 0px 2px #7D4CDB;
+  box-shadow: 0px 0px 0px 2px #008567;
 }
 
 .c1::-moz-range-track {
   box-sizing: border-box;
   width: 100%;
   height: 4px;
-  background: rgba(0, 0, 0, 0.2);
+  background: linear-gradient(       to right,       rgba(0, 133, 103, 1),       rgba(0, 133, 103, 1) 50%,       rgba(224, 224, 224, 1) 50%,       rgba(224, 224, 224, 1)     );
+  border-radius: 9999px;
 }
 
 .c1::-moz-range-thumb {
@@ -849,12 +981,14 @@ exports[`RangeInput should have no accessibility violations 1`] = `
   height: 24px;
   width: 24px;
   overflow: visible;
-  background: #7D4CDB;
+  background: #008567;
   -webkit-appearance: none;
   cursor: pointer;
+  border-color: transparent;
   margin-top: 0px;
   height: 24px;
   width: 24px;
+  border-color: transparent;
 }
 
 .c1::-ms-thumb {
@@ -864,38 +998,41 @@ exports[`RangeInput should have no accessibility violations 1`] = `
   height: 24px;
   width: 24px;
   overflow: visible;
-  background: #7D4CDB;
+  background: #008567;
   -webkit-appearance: none;
   cursor: pointer;
+  border-color: transparent;
   margin-top: 0px;
   height: 24px;
   width: 24px;
+  border-color: transparent;
 }
 
 .c1:hover::-moz-range-thumb {
-  box-shadow: 0px 0px 0px 2px #7D4CDB;
+  box-shadow: 0px 0px 0px 2px #008567;
 }
 
 .c1:hover::-ms-thumb {
-  box-shadow: 0px 0px 0px 2px #7D4CDB;
+  box-shadow: 0px 0px 0px 2px #008567;
 }
 
 .c1::-ms-track {
   box-sizing: border-box;
   width: 100%;
   height: 4px;
-  background: rgba(0, 0, 0, 0.2);
+  background: linear-gradient(       to right,       rgba(0, 133, 103, 1),       rgba(0, 133, 103, 1) 50%,       rgba(224, 224, 224, 1) 50%,       rgba(224, 224, 224, 1)     );
+  border-radius: 9999px;
   border-color: transparent;
   color: transparent;
 }
 
 .c1::-ms-fill-lower {
-  background: rgba(0, 0, 0, 0.2);
+  background: linear-gradient(       to right,       rgba(0, 133, 103, 1),       rgba(0, 133, 103, 1) 50%,       rgba(224, 224, 224, 1) 50%,       rgba(224, 224, 224, 1)     );
   border-color: transparent;
 }
 
 .c1::-ms-fill-upper {
-  background: rgba(0, 0, 0, 0.2);
+  background: linear-gradient(       to right,       rgba(0, 133, 103, 1),       rgba(0, 133, 103, 1) 50%,       rgba(224, 224, 224, 1) 50%,       rgba(224, 224, 224, 1)     );
   border-color: transparent;
 }
 
@@ -905,6 +1042,19 @@ exports[`RangeInput should have no accessibility violations 1`] = `
 
 .c1:focus {
   outline: none;
+}
+
+.c1::before {
+  display: block;
+  position: absolute;
+  content: '';
+  width: 4px;
+  height: 4px;
+  border-radius: 9999px;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #2e2e2e;
 }
 
 <div
@@ -1217,8 +1367,11 @@ exports[`RangeInput track themed with color and opacity 1`] = `
 
 exports[`RangeInput with min and max offset 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1251,7 +1404,8 @@ exports[`RangeInput with min and max offset 1`] = `
   box-sizing: border-box;
   width: 100%;
   height: 4px;
-  background: rgba(0, 0, 0, 0.2);
+  background: linear-gradient(       to right,       rgba(0, 133, 103, 1),       rgba(0, 133, 103, 1) 50%,       rgba(224, 224, 224, 1) 50%,       rgba(224, 224, 224, 1)     );
+  border-radius: 9999px;
 }
 
 .c1::-webkit-slider-thumb {
@@ -1262,20 +1416,22 @@ exports[`RangeInput with min and max offset 1`] = `
   height: 24px;
   width: 24px;
   overflow: visible;
-  background: #7D4CDB;
+  background: #008567;
   -webkit-appearance: none;
   cursor: pointer;
+  border-color: transparent;
 }
 
 .c1::-webkit-slider-thumb:hover {
-  box-shadow: 0px 0px 0px 2px #7D4CDB;
+  box-shadow: 0px 0px 0px 2px #008567;
 }
 
 .c1::-moz-range-track {
   box-sizing: border-box;
   width: 100%;
   height: 4px;
-  background: rgba(0, 0, 0, 0.2);
+  background: linear-gradient(       to right,       rgba(0, 133, 103, 1),       rgba(0, 133, 103, 1) 50%,       rgba(224, 224, 224, 1) 50%,       rgba(224, 224, 224, 1)     );
+  border-radius: 9999px;
 }
 
 .c1::-moz-range-thumb {
@@ -1285,12 +1441,14 @@ exports[`RangeInput with min and max offset 1`] = `
   height: 24px;
   width: 24px;
   overflow: visible;
-  background: #7D4CDB;
+  background: #008567;
   -webkit-appearance: none;
   cursor: pointer;
+  border-color: transparent;
   margin-top: 0px;
   height: 24px;
   width: 24px;
+  border-color: transparent;
 }
 
 .c1::-ms-thumb {
@@ -1300,38 +1458,41 @@ exports[`RangeInput with min and max offset 1`] = `
   height: 24px;
   width: 24px;
   overflow: visible;
-  background: #7D4CDB;
+  background: #008567;
   -webkit-appearance: none;
   cursor: pointer;
+  border-color: transparent;
   margin-top: 0px;
   height: 24px;
   width: 24px;
+  border-color: transparent;
 }
 
 .c1:hover::-moz-range-thumb {
-  box-shadow: 0px 0px 0px 2px #7D4CDB;
+  box-shadow: 0px 0px 0px 2px #008567;
 }
 
 .c1:hover::-ms-thumb {
-  box-shadow: 0px 0px 0px 2px #7D4CDB;
+  box-shadow: 0px 0px 0px 2px #008567;
 }
 
 .c1::-ms-track {
   box-sizing: border-box;
   width: 100%;
   height: 4px;
-  background: rgba(0, 0, 0, 0.2);
+  background: linear-gradient(       to right,       rgba(0, 133, 103, 1),       rgba(0, 133, 103, 1) 50%,       rgba(224, 224, 224, 1) 50%,       rgba(224, 224, 224, 1)     );
+  border-radius: 9999px;
   border-color: transparent;
   color: transparent;
 }
 
 .c1::-ms-fill-lower {
-  background: rgba(0, 0, 0, 0.2);
+  background: linear-gradient(       to right,       rgba(0, 133, 103, 1),       rgba(0, 133, 103, 1) 50%,       rgba(224, 224, 224, 1) 50%,       rgba(224, 224, 224, 1)     );
   border-color: transparent;
 }
 
 .c1::-ms-fill-upper {
-  background: rgba(0, 0, 0, 0.2);
+  background: linear-gradient(       to right,       rgba(0, 133, 103, 1),       rgba(0, 133, 103, 1) 50%,       rgba(224, 224, 224, 1) 50%,       rgba(224, 224, 224, 1)     );
   border-color: transparent;
 }
 
@@ -1341,6 +1502,19 @@ exports[`RangeInput with min and max offset 1`] = `
 
 .c1:focus {
   outline: none;
+}
+
+.c1::before {
+  display: block;
+  position: absolute;
+  content: '';
+  width: 4px;
+  height: 4px;
+  border-radius: 9999px;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #2e2e2e;
 }
 
 <div
@@ -1362,8 +1536,11 @@ exports[`RangeInput with min and max offset 1`] = `
 
 exports[`RangeInput with multi color 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1396,7 +1573,8 @@ exports[`RangeInput with multi color 1`] = `
   box-sizing: border-box;
   width: 100%;
   height: 4px;
-  background: linear-gradient(to right,rgba(255, 0, 0, 0.5) 0%,rgba(255, 0, 0, 0.5) 22.22222222222222%,rgba(255, 255, 0, 1) 22.22222222222222%,rgba(255, 255, 0, 1) 44.44444444444444%,rgba(0, 0, 0, 0.2) 44.44444444444444%, rgba(0, 0, 0, 0.2));
+  background: linear-gradient(to right,rgba(255, 0, 0, 0.5) 0%,rgba(255, 0, 0, 0.5) 22.22222222222222%,rgba(255, 255, 0, 1) 22.22222222222222%,rgba(255, 255, 0, 1) 44.44444444444444%,rgba(224, 224, 224, 1) 44.44444444444444%, rgba(224, 224, 224, 1));
+  border-radius: 9999px;
 }
 
 .c1::-webkit-slider-thumb {
@@ -1407,20 +1585,22 @@ exports[`RangeInput with multi color 1`] = `
   height: 24px;
   width: 24px;
   overflow: visible;
-  background: #7D4CDB;
+  background: #008567;
   -webkit-appearance: none;
   cursor: pointer;
+  border-color: transparent;
 }
 
 .c1::-webkit-slider-thumb:hover {
-  box-shadow: 0px 0px 0px 2px #7D4CDB;
+  box-shadow: 0px 0px 0px 2px #008567;
 }
 
 .c1::-moz-range-track {
   box-sizing: border-box;
   width: 100%;
   height: 4px;
-  background: linear-gradient(to right,rgba(255, 0, 0, 0.5) 0%,rgba(255, 0, 0, 0.5) 22.22222222222222%,rgba(255, 255, 0, 1) 22.22222222222222%,rgba(255, 255, 0, 1) 44.44444444444444%,rgba(0, 0, 0, 0.2) 44.44444444444444%, rgba(0, 0, 0, 0.2));
+  background: linear-gradient(to right,rgba(255, 0, 0, 0.5) 0%,rgba(255, 0, 0, 0.5) 22.22222222222222%,rgba(255, 255, 0, 1) 22.22222222222222%,rgba(255, 255, 0, 1) 44.44444444444444%,rgba(224, 224, 224, 1) 44.44444444444444%, rgba(224, 224, 224, 1));
+  border-radius: 9999px;
 }
 
 .c1::-moz-range-thumb {
@@ -1430,12 +1610,14 @@ exports[`RangeInput with multi color 1`] = `
   height: 24px;
   width: 24px;
   overflow: visible;
-  background: #7D4CDB;
+  background: #008567;
   -webkit-appearance: none;
   cursor: pointer;
+  border-color: transparent;
   margin-top: 0px;
   height: 24px;
   width: 24px;
+  border-color: transparent;
 }
 
 .c1::-ms-thumb {
@@ -1445,38 +1627,41 @@ exports[`RangeInput with multi color 1`] = `
   height: 24px;
   width: 24px;
   overflow: visible;
-  background: #7D4CDB;
+  background: #008567;
   -webkit-appearance: none;
   cursor: pointer;
+  border-color: transparent;
   margin-top: 0px;
   height: 24px;
   width: 24px;
+  border-color: transparent;
 }
 
 .c1:hover::-moz-range-thumb {
-  box-shadow: 0px 0px 0px 2px #7D4CDB;
+  box-shadow: 0px 0px 0px 2px #008567;
 }
 
 .c1:hover::-ms-thumb {
-  box-shadow: 0px 0px 0px 2px #7D4CDB;
+  box-shadow: 0px 0px 0px 2px #008567;
 }
 
 .c1::-ms-track {
   box-sizing: border-box;
   width: 100%;
   height: 4px;
-  background: linear-gradient(to right,rgba(255, 0, 0, 0.5) 0%,rgba(255, 0, 0, 0.5) 22.22222222222222%,rgba(255, 255, 0, 1) 22.22222222222222%,rgba(255, 255, 0, 1) 44.44444444444444%,rgba(0, 0, 0, 0.2) 44.44444444444444%, rgba(0, 0, 0, 0.2));
+  background: linear-gradient(to right,rgba(255, 0, 0, 0.5) 0%,rgba(255, 0, 0, 0.5) 22.22222222222222%,rgba(255, 255, 0, 1) 22.22222222222222%,rgba(255, 255, 0, 1) 44.44444444444444%,rgba(224, 224, 224, 1) 44.44444444444444%, rgba(224, 224, 224, 1));
+  border-radius: 9999px;
   border-color: transparent;
   color: transparent;
 }
 
 .c1::-ms-fill-lower {
-  background: linear-gradient(to right,rgba(255, 0, 0, 0.5) 0%,rgba(255, 0, 0, 0.5) 22.22222222222222%,rgba(255, 255, 0, 1) 22.22222222222222%,rgba(255, 255, 0, 1) 44.44444444444444%,rgba(0, 0, 0, 0.2) 44.44444444444444%, rgba(0, 0, 0, 0.2));
+  background: linear-gradient(to right,rgba(255, 0, 0, 0.5) 0%,rgba(255, 0, 0, 0.5) 22.22222222222222%,rgba(255, 255, 0, 1) 22.22222222222222%,rgba(255, 255, 0, 1) 44.44444444444444%,rgba(224, 224, 224, 1) 44.44444444444444%, rgba(224, 224, 224, 1));
   border-color: transparent;
 }
 
 .c1::-ms-fill-upper {
-  background: linear-gradient(to right,rgba(255, 0, 0, 0.5) 0%,rgba(255, 0, 0, 0.5) 22.22222222222222%,rgba(255, 255, 0, 1) 22.22222222222222%,rgba(255, 255, 0, 1) 44.44444444444444%,rgba(0, 0, 0, 0.2) 44.44444444444444%, rgba(0, 0, 0, 0.2));
+  background: linear-gradient(to right,rgba(255, 0, 0, 0.5) 0%,rgba(255, 0, 0, 0.5) 22.22222222222222%,rgba(255, 255, 0, 1) 22.22222222222222%,rgba(255, 255, 0, 1) 44.44444444444444%,rgba(224, 224, 224, 1) 44.44444444444444%, rgba(224, 224, 224, 1));
   border-color: transparent;
 }
 
@@ -1486,6 +1671,19 @@ exports[`RangeInput with multi color 1`] = `
 
 .c1:focus {
   outline: none;
+}
+
+.c1::before {
+  display: block;
+  position: absolute;
+  content: '';
+  width: 4px;
+  height: 4px;
+  border-radius: 9999px;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #2e2e2e;
 }
 
 <div
@@ -1508,8 +1706,11 @@ exports[`RangeInput with multi color 1`] = `
 
 exports[`RangeInput with single color 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1542,7 +1743,8 @@ exports[`RangeInput with single color 1`] = `
   box-sizing: border-box;
   width: 100%;
   height: 4px;
-  background: linear-gradient(         to right,         #81FCED,         #81FCED 44.44444444444444%,         rgba(0, 0, 0, 0.2) 44.44444444444444%,         rgba(0, 0, 0, 0.2)       );
+  background: linear-gradient(         to right,         accent-3,         accent-3 44.44444444444444%,         rgba(224, 224, 224, 1) 44.44444444444444%,         rgba(224, 224, 224, 1)       );
+  border-radius: 9999px;
 }
 
 .c1::-webkit-slider-thumb {
@@ -1553,20 +1755,22 @@ exports[`RangeInput with single color 1`] = `
   height: 24px;
   width: 24px;
   overflow: visible;
-  background: #7D4CDB;
+  background: #008567;
   -webkit-appearance: none;
   cursor: pointer;
+  border-color: transparent;
 }
 
 .c1::-webkit-slider-thumb:hover {
-  box-shadow: 0px 0px 0px 2px #7D4CDB;
+  box-shadow: 0px 0px 0px 2px #008567;
 }
 
 .c1::-moz-range-track {
   box-sizing: border-box;
   width: 100%;
   height: 4px;
-  background: linear-gradient(         to right,         #81FCED,         #81FCED 44.44444444444444%,         rgba(0, 0, 0, 0.2) 44.44444444444444%,         rgba(0, 0, 0, 0.2)       );
+  background: linear-gradient(         to right,         accent-3,         accent-3 44.44444444444444%,         rgba(224, 224, 224, 1) 44.44444444444444%,         rgba(224, 224, 224, 1)       );
+  border-radius: 9999px;
 }
 
 .c1::-moz-range-thumb {
@@ -1576,12 +1780,14 @@ exports[`RangeInput with single color 1`] = `
   height: 24px;
   width: 24px;
   overflow: visible;
-  background: #7D4CDB;
+  background: #008567;
   -webkit-appearance: none;
   cursor: pointer;
+  border-color: transparent;
   margin-top: 0px;
   height: 24px;
   width: 24px;
+  border-color: transparent;
 }
 
 .c1::-ms-thumb {
@@ -1591,38 +1797,41 @@ exports[`RangeInput with single color 1`] = `
   height: 24px;
   width: 24px;
   overflow: visible;
-  background: #7D4CDB;
+  background: #008567;
   -webkit-appearance: none;
   cursor: pointer;
+  border-color: transparent;
   margin-top: 0px;
   height: 24px;
   width: 24px;
+  border-color: transparent;
 }
 
 .c1:hover::-moz-range-thumb {
-  box-shadow: 0px 0px 0px 2px #7D4CDB;
+  box-shadow: 0px 0px 0px 2px #008567;
 }
 
 .c1:hover::-ms-thumb {
-  box-shadow: 0px 0px 0px 2px #7D4CDB;
+  box-shadow: 0px 0px 0px 2px #008567;
 }
 
 .c1::-ms-track {
   box-sizing: border-box;
   width: 100%;
   height: 4px;
-  background: linear-gradient(         to right,         #81FCED,         #81FCED 44.44444444444444%,         rgba(0, 0, 0, 0.2) 44.44444444444444%,         rgba(0, 0, 0, 0.2)       );
+  background: linear-gradient(         to right,         accent-3,         accent-3 44.44444444444444%,         rgba(224, 224, 224, 1) 44.44444444444444%,         rgba(224, 224, 224, 1)       );
+  border-radius: 9999px;
   border-color: transparent;
   color: transparent;
 }
 
 .c1::-ms-fill-lower {
-  background: linear-gradient(         to right,         #81FCED,         #81FCED 44.44444444444444%,         rgba(0, 0, 0, 0.2) 44.44444444444444%,         rgba(0, 0, 0, 0.2)       );
+  background: linear-gradient(         to right,         accent-3,         accent-3 44.44444444444444%,         rgba(224, 224, 224, 1) 44.44444444444444%,         rgba(224, 224, 224, 1)       );
   border-color: transparent;
 }
 
 .c1::-ms-fill-upper {
-  background: linear-gradient(         to right,         #81FCED,         #81FCED 44.44444444444444%,         rgba(0, 0, 0, 0.2) 44.44444444444444%,         rgba(0, 0, 0, 0.2)       );
+  background: linear-gradient(         to right,         accent-3,         accent-3 44.44444444444444%,         rgba(224, 224, 224, 1) 44.44444444444444%,         rgba(224, 224, 224, 1)       );
   border-color: transparent;
 }
 
@@ -1632,6 +1841,19 @@ exports[`RangeInput with single color 1`] = `
 
 .c1:focus {
   outline: none;
+}
+
+.c1::before {
+  display: block;
+  position: absolute;
+  content: '';
+  width: 4px;
+  height: 4px;
+  border-radius: 9999px;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #2e2e2e;
 }
 
 <div

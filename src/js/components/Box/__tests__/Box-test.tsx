@@ -1,14 +1,14 @@
 import React from 'react';
 import { fireEvent, render } from '@testing-library/react';
 import 'jest-styled-components';
-
+import { hpe } from 'grommet-theme-hpe';
 import { Grommet } from '../../Grommet';
 import { Box } from '..';
 
 describe('Box', () => {
   test('default', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Box />
       </Grommet>,
     );
@@ -23,7 +23,7 @@ describe('Box', () => {
 
   test('as string', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Box as="header" />
       </Grommet>,
     );
@@ -33,7 +33,7 @@ describe('Box', () => {
 
   test('as function', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Box as={(props) => <header className={props.className} />} />
       </Grommet>,
     );
@@ -48,7 +48,7 @@ describe('Box', () => {
       }
     }
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Box as={Header} />
       </Grommet>,
     );
@@ -58,12 +58,12 @@ describe('Box', () => {
 
   test('tag proxied', () => {
     const { container: tagComponent } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Box tag="header" />
       </Grommet>,
     );
     const { container: asComponent } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Box as="header" />
       </Grommet>,
     );
@@ -74,7 +74,7 @@ describe('Box', () => {
   test('onClick', () => {
     const onClick = jest.fn();
     const { getByText, container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Box onClick={onClick}>test box</Box>
       </Grommet>,
     );
@@ -87,7 +87,7 @@ describe('Box', () => {
 
   test('renders a11yTitle and aria-label', () => {
     const { container, getByLabelText } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Box a11yTitle="test" />
         <Box aria-label="test-2" />
       </Grommet>,

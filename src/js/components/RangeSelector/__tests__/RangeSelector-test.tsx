@@ -4,14 +4,14 @@ import { axe } from 'jest-axe';
 import 'jest-styled-components';
 import 'jest-axe/extend-expect';
 import 'regenerator-runtime/runtime';
-
+import { hpe } from 'grommet-theme-hpe';
 import { Grommet } from '../../Grommet';
 import { RangeSelector } from '..';
 
 describe('RangeSelector', () => {
   test('should not have accessibility violations', async () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <RangeSelector values={[20, 30]} />
       </Grommet>,
     );
@@ -86,7 +86,7 @@ describe('RangeSelector', () => {
 
   test('basic', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <RangeSelector values={[20, 30]} />
       </Grommet>,
     );
@@ -102,7 +102,7 @@ describe('RangeSelector', () => {
 
   test('color', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <RangeSelector color="accent-1" values={[20, 30]} />
       </Grommet>,
     );
@@ -112,7 +112,7 @@ describe('RangeSelector', () => {
 
   test('direction', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <RangeSelector direction="horizontal" values={[20, 30]} />
         <RangeSelector direction="vertical" values={[20, 30]} />
       </Grommet>,
@@ -123,7 +123,7 @@ describe('RangeSelector', () => {
 
   test('invert', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <RangeSelector invert values={[20, 30]} />
         <RangeSelector invert={false} values={[20, 30]} />
       </Grommet>,
@@ -134,7 +134,7 @@ describe('RangeSelector', () => {
 
   test('max', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <RangeSelector max={50} values={[20, 30]} />
       </Grommet>,
     );
@@ -144,7 +144,7 @@ describe('RangeSelector', () => {
 
   test('min', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <RangeSelector min={10} values={[20, 30]} />
       </Grommet>,
     );
@@ -154,7 +154,7 @@ describe('RangeSelector', () => {
 
   test('label', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <RangeSelector label values={[20, 30]} />
         <RangeSelector label={(value) => `${value}%`} values={[20, 30]} />
       </Grommet>,
@@ -165,7 +165,7 @@ describe('RangeSelector', () => {
 
   test('opacity', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         {['weak', 'medium', 'strong'].map((opacity) => (
           <RangeSelector key={opacity} opacity={opacity} values={[20, 30]} />
         ))}
@@ -214,7 +214,7 @@ describe('RangeSelector', () => {
     };
     const onChange = jest.fn((nextValues) => setValues(nextValues));
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <RangeSelector values={[0, 100]} step={3} onChange={onChange} />
       </Grommet>,
     );
@@ -247,7 +247,7 @@ describe('RangeSelector', () => {
   test('handle keyboard', () => {
     const onChange = jest.fn();
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <RangeSelector values={[20, 30]} onChange={onChange} />
       </Grommet>,
     );
@@ -275,7 +275,7 @@ describe('RangeSelector', () => {
   test('handle mouse', () => {
     const onChange = jest.fn();
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <RangeSelector values={[20, 30]} onChange={onChange} />
       </Grommet>,
     );
@@ -311,7 +311,7 @@ describe('RangeSelector', () => {
   test('handle touch gestures', () => {
     const onChange = jest.fn();
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <RangeSelector values={[10, 20]} onChange={onChange} />
       </Grommet>,
     );

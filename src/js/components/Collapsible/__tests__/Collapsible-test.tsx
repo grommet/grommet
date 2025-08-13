@@ -4,6 +4,7 @@ import { render } from '@testing-library/react';
 import { axe } from 'jest-axe';
 import 'jest-axe/extend-expect';
 import 'regenerator-runtime/runtime';
+import { hpe } from 'grommet-theme-hpe';
 
 import { Collapsible } from '..';
 import { Grommet } from '../../Grommet';
@@ -12,7 +13,7 @@ import { Text } from '../../Text';
 describe('Collapsible', () => {
   test('no accessibility violations', async () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Collapsible>
           <Text>Example</Text>
         </Collapsible>
@@ -24,7 +25,7 @@ describe('Collapsible', () => {
 
   test('open', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Collapsible open>
           <Text>Example</Text>
         </Collapsible>
@@ -44,7 +45,7 @@ describe('Collapsible', () => {
 
   test('onClick open default', () => {
     const { container, rerender } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Collapsible open>
           <Text>Example</Text>
         </Collapsible>
@@ -52,7 +53,7 @@ describe('Collapsible', () => {
     );
     expect(container.firstChild).toMatchSnapshot();
     rerender(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Collapsible open={false}>
           <Text>Example</Text>
         </Collapsible>

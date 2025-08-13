@@ -1,9 +1,12 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`Anchor blur renders 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -16,14 +19,15 @@ exports[`Anchor blur renders 1`] = `
   display: inline-flex;
   font-size: inherit;
   line-height: inherit;
-  color: #7D4CDB;
-  font-weight: 600;
-  text-decoration: none;
+  color: #006750;
+  font-weight: 500;
+  text-decoration: underline;
   cursor: pointer;
 }
 
 .c1:hover {
   text-decoration: underline;
+  color: #074b3b;
 }
 
 <div
@@ -40,8 +44,11 @@ exports[`Anchor blur renders 1`] = `
 
 exports[`Anchor disabled renders 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -54,9 +61,9 @@ exports[`Anchor disabled renders 1`] = `
   display: inline-flex;
   font-size: inherit;
   line-height: inherit;
-  color: #7D4CDB;
-  font-weight: 600;
-  text-decoration: none;
+  color: #006750;
+  font-weight: 500;
+  text-decoration: underline;
   cursor: pointer;
   opacity: 0.3;
   cursor: default;
@@ -77,8 +84,11 @@ exports[`Anchor disabled renders 1`] = `
 
 exports[`Anchor focus renders 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -91,16 +101,18 @@ exports[`Anchor focus renders 1`] = `
   display: inline-flex;
   font-size: inherit;
   line-height: inherit;
-  color: #7D4CDB;
-  font-weight: 600;
-  text-decoration: none;
+  color: #006750;
+  font-weight: 500;
+  text-decoration: underline;
   cursor: pointer;
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c1:hover {
   text-decoration: underline;
+  color: #074b3b;
 }
 
 .c1 >circle,
@@ -110,8 +122,9 @@ exports[`Anchor focus renders 1`] = `
 .c1 >polygon,
 .c1 >polyline,
 .c1 >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c1 ::-moz-focus-inner {
@@ -286,8 +299,11 @@ exports[`Anchor gap renders 1`] = `
 
 exports[`Anchor icon label renders 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -308,7 +324,7 @@ exports[`Anchor icon label renders 1`] = `
 .c3 {
   flex: 0 0 auto;
   align-self: stretch;
-  width: 12px;
+  width: 6px;
 }
 
 .c1 {
@@ -316,14 +332,15 @@ exports[`Anchor icon label renders 1`] = `
   display: inline-flex;
   font-size: inherit;
   line-height: inherit;
-  color: #7D4CDB;
-  font-weight: 600;
+  color: #006750;
+  font-weight: 500;
   text-decoration: none;
   cursor: pointer;
 }
 
 .c1:hover {
   text-decoration: underline;
+  color: #074b3b;
 }
 
 <div>
@@ -337,7 +354,7 @@ exports[`Anchor icon label renders 1`] = `
         class="c2"
       >
         <svg
-          color="#7D4CDB"
+          color="#006750"
         />
         <span
           class="c3"
@@ -351,8 +368,11 @@ exports[`Anchor icon label renders 1`] = `
 
 exports[`Anchor is clickable 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -365,14 +385,15 @@ exports[`Anchor is clickable 1`] = `
   display: inline-flex;
   font-size: inherit;
   line-height: inherit;
-  color: #7D4CDB;
-  font-weight: 600;
-  text-decoration: none;
+  color: #006750;
+  font-weight: 500;
+  text-decoration: underline;
   cursor: pointer;
 }
 
 .c1:hover {
   text-decoration: underline;
+  color: #074b3b;
 }
 
 <div
@@ -779,8 +800,11 @@ exports[`Anchor matches icon size to size prop when theme.icon.matchSize is true
 
 exports[`Anchor renders 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -793,14 +817,15 @@ exports[`Anchor renders 1`] = `
   display: inline-flex;
   font-size: inherit;
   line-height: inherit;
-  color: #7D4CDB;
-  font-weight: 600;
-  text-decoration: none;
+  color: #006750;
+  font-weight: 500;
+  text-decoration: underline;
   cursor: pointer;
 }
 
 .c1:hover {
   text-decoration: underline;
+  color: #074b3b;
 }
 
 <div>
@@ -816,8 +841,11 @@ exports[`Anchor renders 1`] = `
 
 exports[`Anchor renders a11yTitle and aria-label 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -830,14 +858,15 @@ exports[`Anchor renders a11yTitle and aria-label 1`] = `
   display: inline-flex;
   font-size: inherit;
   line-height: inherit;
-  color: #7D4CDB;
-  font-weight: 600;
-  text-decoration: none;
+  color: #006750;
+  font-weight: 500;
+  text-decoration: underline;
   cursor: pointer;
 }
 
 .c1:hover {
   text-decoration: underline;
+  color: #074b3b;
 }
 
 <div>
@@ -1553,10 +1582,10 @@ exports[`Anchor renders specific icon color 1`] = `
   .c3 {
   display: inline-block;
   flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
+  width: 18px;
+  height: 18px;
+  fill: #006750;
+  stroke: #006750;
 }
 
 .c3 g {
@@ -1583,8 +1612,11 @@ exports[`Anchor renders specific icon color 1`] = `
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1605,7 +1637,7 @@ exports[`Anchor renders specific icon color 1`] = `
 .c4 {
   flex: 0 0 auto;
   align-self: stretch;
-  width: 12px;
+  width: 6px;
 }
 
 .c1 {
@@ -1613,14 +1645,15 @@ exports[`Anchor renders specific icon color 1`] = `
   display: inline-flex;
   font-size: inherit;
   line-height: inherit;
-  color: #7D4CDB;
-  font-weight: 600;
+  color: #006750;
+  font-weight: 500;
   text-decoration: none;
   cursor: pointer;
 }
 
 .c1:hover {
   text-decoration: underline;
+  color: #074b3b;
 }
 
 <div
@@ -1656,8 +1689,11 @@ exports[`Anchor renders specific icon color 1`] = `
 
 exports[`Anchor renders tag 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1670,14 +1706,15 @@ exports[`Anchor renders tag 1`] = `
   display: inline-flex;
   font-size: inherit;
   line-height: inherit;
-  color: #7D4CDB;
-  font-weight: 600;
-  text-decoration: none;
+  color: #006750;
+  font-weight: 500;
+  text-decoration: underline;
   cursor: pointer;
 }
 
 .c1:hover {
   text-decoration: underline;
+  color: #074b3b;
 }
 
 <div>
@@ -1696,8 +1733,11 @@ exports[`Anchor renders tag 1`] = `
 
 exports[`Anchor renders with children 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1710,14 +1750,15 @@ exports[`Anchor renders with children 1`] = `
   display: inline-flex;
   font-size: inherit;
   line-height: inherit;
-  color: #7D4CDB;
-  font-weight: 600;
-  text-decoration: none;
+  color: #006750;
+  font-weight: 500;
+  text-decoration: underline;
   cursor: pointer;
 }
 
 .c1:hover {
   text-decoration: underline;
+  color: #074b3b;
 }
 
 <div
@@ -1734,8 +1775,11 @@ exports[`Anchor renders with children 1`] = `
 
 exports[`Anchor reverse icon label renders 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1756,7 +1800,7 @@ exports[`Anchor reverse icon label renders 1`] = `
 .c3 {
   flex: 0 0 auto;
   align-self: stretch;
-  width: 12px;
+  width: 6px;
 }
 
 .c1 {
@@ -1764,14 +1808,15 @@ exports[`Anchor reverse icon label renders 1`] = `
   display: inline-flex;
   font-size: inherit;
   line-height: inherit;
-  color: #7D4CDB;
-  font-weight: 600;
+  color: #006750;
+  font-weight: 500;
   text-decoration: none;
   cursor: pointer;
 }
 
 .c1:hover {
   text-decoration: underline;
+  color: #074b3b;
 }
 
 <div>
@@ -1789,7 +1834,7 @@ exports[`Anchor reverse icon label renders 1`] = `
           class="c3"
         />
         <svg
-          color="#7D4CDB"
+          color="#006750"
         />
       </span>
     </a>
@@ -1799,8 +1844,11 @@ exports[`Anchor reverse icon label renders 1`] = `
 
 exports[`Anchor should have no accessibility violations 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1813,14 +1861,15 @@ exports[`Anchor should have no accessibility violations 1`] = `
   display: inline-flex;
   font-size: inherit;
   line-height: inherit;
-  color: #7D4CDB;
-  font-weight: 600;
-  text-decoration: none;
+  color: #006750;
+  font-weight: 500;
+  text-decoration: underline;
   cursor: pointer;
 }
 
 .c1:hover {
   text-decoration: underline;
+  color: #074b3b;
 }
 
 <div>
@@ -1838,8 +1887,11 @@ exports[`Anchor should have no accessibility violations 1`] = `
 
 exports[`Anchor shows no error for component used in as prop 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1862,14 +1914,15 @@ exports[`Anchor shows no error for component used in as prop 1`] = `
   display: inline-flex;
   font-size: inherit;
   line-height: inherit;
-  color: #7D4CDB;
-  font-weight: 600;
-  text-decoration: none;
+  color: #006750;
+  font-weight: 500;
+  text-decoration: underline;
   cursor: pointer;
 }
 
 .c2:hover {
   text-decoration: underline;
+  color: #074b3b;
 }
 
 <div
@@ -1885,8 +1938,11 @@ exports[`Anchor shows no error for component used in as prop 1`] = `
 
 exports[`Anchor size renders 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1897,91 +1953,97 @@ exports[`Anchor size renders 1`] = `
 .c1 {
   box-sizing: border-box;
   display: inline-flex;
-  font-size: 12px;
-  line-height: 18px;
-  color: #7D4CDB;
-  font-weight: 600;
-  text-decoration: none;
+  font-size: 0.875rem;
+  line-height: 1rem;
+  color: #006750;
+  font-weight: 500;
+  text-decoration: underline;
   cursor: pointer;
 }
 
 .c1:hover {
   text-decoration: underline;
+  color: #074b3b;
 }
 
 .c2 {
   box-sizing: border-box;
   display: inline-flex;
-  font-size: 14px;
-  line-height: 20px;
-  color: #7D4CDB;
-  font-weight: 600;
-  text-decoration: none;
+  font-size: 1rem;
+  line-height: 1.25rem;
+  color: #006750;
+  font-weight: 500;
+  text-decoration: underline;
   cursor: pointer;
 }
 
 .c2:hover {
   text-decoration: underline;
+  color: #074b3b;
 }
 
 .c3 {
   box-sizing: border-box;
   display: inline-flex;
-  font-size: 18px;
-  line-height: 24px;
-  color: #7D4CDB;
-  font-weight: 600;
-  text-decoration: none;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  color: #006750;
+  font-weight: 500;
+  text-decoration: underline;
   cursor: pointer;
 }
 
 .c3:hover {
   text-decoration: underline;
+  color: #074b3b;
 }
 
 .c4 {
   box-sizing: border-box;
   display: inline-flex;
-  font-size: 22px;
-  line-height: 28px;
-  color: #7D4CDB;
-  font-weight: 600;
-  text-decoration: none;
+  font-size: 1.375rem;
+  line-height: 1.75rem;
+  color: #006750;
+  font-weight: 500;
+  text-decoration: underline;
   cursor: pointer;
 }
 
 .c4:hover {
   text-decoration: underline;
+  color: #074b3b;
 }
 
 .c5 {
   box-sizing: border-box;
   display: inline-flex;
-  font-size: 26px;
-  line-height: 32px;
-  color: #7D4CDB;
-  font-weight: 600;
-  text-decoration: none;
+  font-size: 1.5rem;
+  line-height: 1.875rem;
+  color: #006750;
+  font-weight: 500;
+  text-decoration: underline;
   cursor: pointer;
 }
 
 .c5:hover {
   text-decoration: underline;
+  color: #074b3b;
 }
 
 .c6 {
   box-sizing: border-box;
   display: inline-flex;
-  font-size: 34px;
-  line-height: 40px;
-  color: #7D4CDB;
-  font-weight: 600;
-  text-decoration: none;
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+  color: #006750;
+  font-weight: 500;
+  text-decoration: underline;
   cursor: pointer;
 }
 
 .c6:hover {
   text-decoration: underline;
+  color: #074b3b;
 }
 
 .c7 {
@@ -1989,14 +2051,15 @@ exports[`Anchor size renders 1`] = `
   display: inline-flex;
   font-size: 10px;
   line-height: normal;
-  color: #7D4CDB;
-  font-weight: 600;
-  text-decoration: none;
+  color: #006750;
+  font-weight: 500;
+  text-decoration: underline;
   cursor: pointer;
 }
 
 .c7:hover {
   text-decoration: underline;
+  color: #074b3b;
 }
 
 <div>
@@ -2030,8 +2093,11 @@ exports[`Anchor size renders 1`] = `
 
 exports[`Anchor warns about invalid icon render 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -2044,8 +2110,8 @@ exports[`Anchor warns about invalid icon render 1`] = `
   display: inline-flex;
   font-size: inherit;
   line-height: inherit;
-  color: #7D4CDB;
-  font-weight: 600;
+  color: #006750;
+  font-weight: 500;
   text-decoration: none;
   cursor: pointer;
   padding: 12px;
@@ -2053,6 +2119,7 @@ exports[`Anchor warns about invalid icon render 1`] = `
 
 .c1:hover {
   text-decoration: underline;
+  color: #074b3b;
 }
 
 <div
@@ -2063,7 +2130,7 @@ exports[`Anchor warns about invalid icon render 1`] = `
     href="#"
   >
     <svg
-      color="#7D4CDB"
+      color="#006750"
     />
   </a>
 </div>
@@ -2071,8 +2138,11 @@ exports[`Anchor warns about invalid icon render 1`] = `
 
 exports[`Anchor warns about invalid label render 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -2085,14 +2155,15 @@ exports[`Anchor warns about invalid label render 1`] = `
   display: inline-flex;
   font-size: inherit;
   line-height: inherit;
-  color: #7D4CDB;
-  font-weight: 600;
-  text-decoration: none;
+  color: #006750;
+  font-weight: 500;
+  text-decoration: underline;
   cursor: pointer;
 }
 
 .c1:hover {
   text-decoration: underline;
+  color: #074b3b;
 }
 
 <div
@@ -2109,8 +2180,11 @@ exports[`Anchor warns about invalid label render 1`] = `
 
 exports[`Anchor weight renders 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -2123,14 +2197,15 @@ exports[`Anchor weight renders 1`] = `
   display: inline-flex;
   font-size: inherit;
   line-height: inherit;
-  color: #7D4CDB;
+  color: #006750;
   font-weight: normal;
-  text-decoration: none;
+  text-decoration: underline;
   cursor: pointer;
 }
 
 .c1:hover {
   text-decoration: underline;
+  color: #074b3b;
 }
 
 .c2 {
@@ -2138,14 +2213,15 @@ exports[`Anchor weight renders 1`] = `
   display: inline-flex;
   font-size: inherit;
   line-height: inherit;
-  color: #7D4CDB;
+  color: #006750;
   font-weight: bold;
-  text-decoration: none;
+  text-decoration: underline;
   cursor: pointer;
 }
 
 .c2:hover {
   text-decoration: underline;
+  color: #074b3b;
 }
 
 .c3 {
@@ -2153,14 +2229,15 @@ exports[`Anchor weight renders 1`] = `
   display: inline-flex;
   font-size: inherit;
   line-height: inherit;
-  color: #7D4CDB;
+  color: #006750;
   font-weight: 500;
-  text-decoration: none;
+  text-decoration: underline;
   cursor: pointer;
 }
 
 .c3:hover {
   text-decoration: underline;
+  color: #074b3b;
 }
 
 .c4 {
@@ -2168,14 +2245,15 @@ exports[`Anchor weight renders 1`] = `
   display: inline-flex;
   font-size: inherit;
   line-height: inherit;
-  color: #7D4CDB;
+  color: #006750;
   font-weight: lighter;
-  text-decoration: none;
+  text-decoration: underline;
   cursor: pointer;
 }
 
 .c4:hover {
   text-decoration: underline;
+  color: #074b3b;
 }
 
 .c5 {
@@ -2183,14 +2261,15 @@ exports[`Anchor weight renders 1`] = `
   display: inline-flex;
   font-size: inherit;
   line-height: inherit;
-  color: #7D4CDB;
+  color: #006750;
   font-weight: bolder;
-  text-decoration: none;
+  text-decoration: underline;
   cursor: pointer;
 }
 
 .c5:hover {
   text-decoration: underline;
+  color: #074b3b;
 }
 
 .c6 {
@@ -2198,14 +2277,15 @@ exports[`Anchor weight renders 1`] = `
   display: inline-flex;
   font-size: inherit;
   line-height: inherit;
-  color: #7D4CDB;
+  color: #006750;
   font-weight: inherit;
-  text-decoration: none;
+  text-decoration: underline;
   cursor: pointer;
 }
 
 .c6:hover {
   text-decoration: underline;
+  color: #074b3b;
 }
 
 .c7 {
@@ -2213,14 +2293,15 @@ exports[`Anchor weight renders 1`] = `
   display: inline-flex;
   font-size: inherit;
   line-height: inherit;
-  color: #7D4CDB;
+  color: #006750;
   font-weight: initial;
-  text-decoration: none;
+  text-decoration: underline;
   cursor: pointer;
 }
 
 .c7:hover {
   text-decoration: underline;
+  color: #074b3b;
 }
 
 .c8 {
@@ -2228,14 +2309,15 @@ exports[`Anchor weight renders 1`] = `
   display: inline-flex;
   font-size: inherit;
   line-height: inherit;
-  color: #7D4CDB;
+  color: #006750;
   font-weight: revert;
-  text-decoration: none;
+  text-decoration: underline;
   cursor: pointer;
 }
 
 .c8:hover {
   text-decoration: underline;
+  color: #074b3b;
 }
 
 .c9 {
@@ -2243,14 +2325,15 @@ exports[`Anchor weight renders 1`] = `
   display: inline-flex;
   font-size: inherit;
   line-height: inherit;
-  color: #7D4CDB;
+  color: #006750;
   font-weight: unset;
-  text-decoration: none;
+  text-decoration: underline;
   cursor: pointer;
 }
 
 .c9:hover {
   text-decoration: underline;
+  color: #074b3b;
 }
 
 <div>

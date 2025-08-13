@@ -1,15 +1,17 @@
 import React from 'react';
 import 'jest-styled-components';
 import { render } from '@testing-library/react';
+import { hpe } from 'grommet-theme-hpe';
 
 import { Grommet, Box, Diagram, Stack } from '../..';
 
 interface ContextProps {
+  theme?: object;
   children: React.ReactNode;
 }
 
-const Context = ({ children }: ContextProps) => (
-  <Grommet>
+const Context = ({ children, theme = hpe }: ContextProps) => (
+  <Grommet theme={theme}>
     <Stack>
       <Box direction="row">
         <Box id="1" pad="medium" />
@@ -58,7 +60,7 @@ describe('Diagram', () => {
 
   test('offset', () => {
     const { container } = render(
-      <Context>
+      <Context theme={undefined}>
         <Diagram
           connections={[
             { fromTarget: '1', toTarget: '2', offset: 'xsmall' },
@@ -73,7 +75,7 @@ describe('Diagram', () => {
 
   test('thickness', () => {
     const { container } = render(
-      <Context>
+      <Context theme={undefined}>
         <Diagram
           connections={[
             { fromTarget: '1', toTarget: '2', thickness: 'hair' },
