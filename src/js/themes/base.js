@@ -920,10 +920,13 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       //   selected: undefined,
       // },
       pinned: {
-        // body: {
-        //    background: undefined,
-        //    extend: undefined,
-        // },
+        body: {
+          // hover: {
+          //   background: undefined,
+          // },
+          // background: undefined,
+          //  extend: undefined,
+        },
         header: {
           background: { opacity: 'strong' },
           //  extend: undefined,
