@@ -5,7 +5,7 @@ import 'jest-axe/extend-expect';
 import 'regenerator-runtime/runtime';
 
 import { axe } from 'jest-axe';
-import { render, fireEvent } from '@testing-library/react';
+import { render, fireEvent, screen } from '@testing-library/react';
 
 import { Grommet, Tab, Tabs } from '../..';
 import { ThemeType } from '../../../themes';
@@ -368,5 +368,53 @@ describe('Tabs', () => {
     );
 
     expect(asFragment()).toMatchSnapshot();
+  });
+
+  test('should apply custom theme next/previous button pad when overflow', () => {
+    const customTheme = {
+      tabs: {
+        header: {
+          nextButton: {
+            pad: { horizontal: 'small', vertical: 'xsmall' },
+          },
+          previousButton: {
+            pad: { horizontal: 'medium', vertical: 'small' },
+          },
+        },
+      },
+    };
+
+    const tabTitles = Array.from({ length: 20 }, (_, i) => `Tab ${i + 1}`);
+
+    render(
+      <Grommet theme={customTheme} style={{ width: 300 }}>
+        <Tabs>
+          {tabTitles.map((title) => (
+            <Tab key={title} title={title}>
+              {title} body
+            </Tab>
+          ))}
+        </Tabs>
+      </Grommet>,
+    );
+
+    // Find previous and next tab control buttons by aria-label
+    const previousButton = screen.queryByLabelText('Previous Tab');
+    const nextButton = screen.queryByLabelText('Next Tab');
+
+    // Assert pad values on the Box inside the button
+    if (previousButton) {
+      const previousBox = previousButton.querySelector('div');
+      const previousBoxStyle =
+        previousBox && window.getComputedStyle(previousBox);
+      expect(previousBoxStyle?.paddingLeft).not.toBe('');
+      expect(previousBoxStyle?.paddingTop).not.toBe('');
+    }
+    if (nextButton) {
+      const nextBox = nextButton.querySelector('div');
+      const nextBoxStyle = nextBox && window.getComputedStyle(nextBox);
+      expect(nextBoxStyle?.paddingLeft).not.toBe('');
+      expect(nextBoxStyle?.paddingTop).not.toBe('');
+    }
   });
 });
