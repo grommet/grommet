@@ -873,6 +873,14 @@ export interface ThemeType {
       dropHeight?: string;
     };
   };
+  dataFilters?: {
+    footer?: {
+      actions?: {
+        margin?: MarginType;
+        gap?: GapType;
+      };
+    };
+  };
   dataSummary?: {
     margin?: MarginType;
     separator?: {

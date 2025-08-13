@@ -930,6 +930,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       drop: {
         pad: 'small',
       },
+      toolbar: {
+        gap: 'medium',
+      },
     },
     dataFilter: {
       rangeSelector: {
@@ -938,6 +941,14 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
       selectMultiple: {
         dropHeight: 'medium',
+      },
+    },
+    dataFilters: {
+      footer: {
+        actions: {
+          margin: { top: 'medium' },
+          gap: 'small',
+        },
       },
     },
     dateInput: {
