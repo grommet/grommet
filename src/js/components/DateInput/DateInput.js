@@ -303,8 +303,8 @@ Use the icon prop instead.`,
         icon={icon || MaskedInputIcon || <CalendarIcon size={iconSize} />}
         margin={
           reverse
-            ? { left: theme.dateInput.button?.margin?.left }
-            : { right: theme.dateInput.button?.margin?.right }
+            ? { left: theme.dateInput.button?.margin }
+            : { right: theme.dateInput.button?.margin }
         }
       />
     );
