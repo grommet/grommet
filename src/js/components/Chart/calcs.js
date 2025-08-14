@@ -130,7 +130,7 @@ export const calcBounds = (valuesArg, options = {}) => {
 // object structure. If options.direction is not present, the results are
 // delivered in [x, y] array structure, for backwards compatibility
 export const calcs = (values = [], options = {}) => {
-  const theme = options.theme;
+  const theme = options.theme || {};
   const horizontal = options.direction === 'horizontal';
 
   // the number of steps is one less than the number of labels
@@ -188,11 +188,11 @@ export const calcs = (values = [], options = {}) => {
   }
 
   const thicknessPad = {
-    xlarge: theme.dataChart?.thickness?.pad?.xlarge,
-    large: theme.dataChart?.thickness?.pad?.large,
-    medium: theme.dataChart?.thickness?.pad?.medium,
-    small: theme.dataChart?.thickness?.pad?.small,
-    xsmall: theme.dataChart?.thickness?.pad?.xsmall,
+    xlarge: theme.dataChart?.thickness?.pad?.xlarge || 'large',
+    large: theme.dataChart?.thickness?.pad?.large || 'medium',
+    medium: theme.dataChart?.thickness?.pad?.medium || 'small',
+    small: theme.dataChart?.thickness?.pad?.small || 'xsmall',
+    xsmall: theme.dataChart?.thickness?.pad?.xsmall || 'xxsmall',
   };
 
   let { thickness } = options;
@@ -202,17 +202,17 @@ export const calcs = (values = [], options = {}) => {
     // These values were emirically determined, trying to balance visibility
     // and overlap across resolutions.
     if (values.length < 5) {
-      thickness = theme.dataChart?.thickness?.sparse;
+      thickness = theme.dataChart?.thickness?.sparse || 'xlarge';
     } else if (values.length < 11) {
-      thickness = theme.dataChart?.thickness?.light;
+      thickness = theme.dataChart?.thickness?.light || 'large';
     } else if (values.length < 21) {
-      thickness = theme.dataChart?.thickness?.moderate;
+      thickness = theme.dataChart?.thickness?.moderate || 'medium';
     } else if (values.length < 61) {
-      thickness = theme.dataChart?.thickness?.heavy;
+      thickness = theme.dataChart?.thickness?.heavy || 'small';
     } else if (values.length < 121) {
-      thickness = theme.dataChart?.thickness?.dense;
+      thickness = theme.dataChart?.thickness?.dense || 'xsmall';
     } else {
-      thickness = theme.dataChart?.thickness?.veryDense;
+      thickness = theme.dataChart?.thickness?.veryDense || 'hair';
     }
   }
 
