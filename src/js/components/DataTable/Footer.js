@@ -35,8 +35,8 @@ const Footer = forwardRef(
           {groups && (
             <TableCell
               plain
-              size={theme.dataTable.footer.groups.size}
-              pad={theme.dataTable.footer.groups.pad}
+              size={theme.dataTable.footer.groupBy.size}
+              pad={theme.dataTable.footer.groupBy.pad}
               verticalAlign="top"
               background={cellProps.background}
               border={cellProps.border}
