@@ -1,13 +1,5 @@
 import { calcMinMax, normalizeValues } from './utils';
 
-const thicknessPad = {
-  xlarge: 'large',
-  large: 'medium',
-  medium: 'small',
-  small: 'xsmall',
-  xsmall: 'xxsmall',
-};
-
 export const round = (value, decimals) =>
   Number(`${Math.round(`${value}e${decimals}`)}e-${decimals}`);
 
@@ -138,6 +130,7 @@ export const calcBounds = (valuesArg, options = {}) => {
 // object structure. If options.direction is not present, the results are
 // delivered in [x, y] array structure, for backwards compatibility
 export const calcs = (values = [], options = {}) => {
+  const theme = options.theme;
   const horizontal = options.direction === 'horizontal';
 
   // the number of steps is one less than the number of labels
@@ -194,6 +187,14 @@ export const calcs = (values = [], options = {}) => {
     x += xStepInterval;
   }
 
+  const thicknessPad = {
+    xlarge: theme.dataChart?.thickness?.pad?.xlarge,
+    large: theme.dataChart?.thickness?.pad?.large,
+    medium: theme.dataChart?.thickness?.pad?.medium,
+    small: theme.dataChart?.thickness?.pad?.small,
+    xsmall: theme.dataChart?.thickness?.pad?.xsmall,
+  };
+
   let { thickness } = options;
   if (!thickness) {
     // Set bar thickness based on number of values being rendered.
@@ -201,17 +202,17 @@ export const calcs = (values = [], options = {}) => {
     // These values were emirically determined, trying to balance visibility
     // and overlap across resolutions.
     if (values.length < 5) {
-      thickness = 'xlarge';
+      thickness = theme.dataChart?.thickness?.sparse;
     } else if (values.length < 11) {
-      thickness = 'large';
+      thickness = theme.dataChart?.thickness?.light;
     } else if (values.length < 21) {
-      thickness = 'medium';
+      thickness = theme.dataChart?.thickness?.moderate;
     } else if (values.length < 61) {
-      thickness = 'small';
+      thickness = theme.dataChart?.thickness?.heavy;
     } else if (values.length < 121) {
-      thickness = 'xsmall';
+      thickness = theme.dataChart?.thickness?.dense;
     } else {
-      thickness = 'hair';
+      thickness = theme.dataChart?.thickness?.veryDense;
     }
   }
 

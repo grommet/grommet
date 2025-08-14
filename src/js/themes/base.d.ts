@@ -745,13 +745,6 @@ export interface ThemeType {
     height?: string;
     thickness?: {
       default?: string;
-      pad?: {
-        xlarge?: PadType;
-        large?: PadType;
-        medium?: PadType;
-        small?: PadType;
-        xsmall?: PadType;
-      };
     };
     width?: string;
   };
@@ -848,7 +841,21 @@ export interface ThemeType {
           pad?: PadType;
         };
       };
-      heightYGranularity?: string;
+      thickness?: {
+        veryDense?: 'hair';
+        dense?: 'xsmall';
+        heavy?: 'small';
+        moderate?: 'medium';
+        light?: 'large';
+        sparse?: 'xlarge';
+        pad?: {
+          xlarge?: 'large';
+          large?: 'medium';
+          medium?: 'small';
+          small?: 'xsmall';
+          xsmall?: 'xxsmall';
+        };
+      };
     };
     digital?: {
       text?: {

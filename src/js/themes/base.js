@@ -930,7 +930,21 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           pad: { horizontal: 'small', vertical: 'xsmall' },
         },
       },
-      heightYGranularity: 'small',
+      thickness: {
+        veryDense: 'hair',
+        dense: 'xsmall',
+        heavy: 'small',
+        moderate: 'medium',
+        light: 'large',
+        sparse: 'xlarge',
+        pad: {
+          xlarge: 'large',
+          large: 'medium',
+          medium: 'small',
+          small: 'xsmall',
+          xsmall: 'xxsmall',
+        },
+      },
     },
     dataFilter: {
       rangeSelector: {
