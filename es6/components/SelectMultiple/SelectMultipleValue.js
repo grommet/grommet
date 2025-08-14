@@ -6,6 +6,7 @@ import { SelectOption } from '../Select/StyledSelect';
 import { applyKey, getOptionLabel, useDisabled, arrayIncludes, getOptionIndex, inertTrueValue } from '../Select/utils';
 import { MessageContext } from '../../contexts/MessageContext';
 var SelectMultipleValue = function SelectMultipleValue(_ref) {
+  var _theme$selectMultiple2, _theme$selectMultiple3;
   var allOptions = _ref.allOptions,
     children = _ref.children,
     disabled = _ref.disabled,
@@ -32,6 +33,7 @@ var SelectMultipleValue = function SelectMultipleValue(_ref) {
     var optionDisabled = isDisabled(indexOptions);
     var valueIndex = getOptionIndex(value, optionValue, valueKey || labelKey);
     if (valueIndex < theme.selectMultiple.maxInline) {
+      var _theme$selectMultiple;
       var child;
       if (children) {
         child = children(i, indexOptions, allOptions, {
@@ -98,7 +100,7 @@ var SelectMultipleValue = function SelectMultipleValue(_ref) {
           align: "start"
         }, optionLabel),
         key: optionLabel,
-        pad: "xsmall",
+        pad: (_theme$selectMultiple = theme.selectMultiple) == null || (_theme$selectMultiple = _theme$selectMultiple.option) == null ? void 0 : _theme$selectMultiple.pad,
         tabIndex: "-1",
         checked: optionSelected,
         inert: inertTrueValue,
@@ -116,7 +118,7 @@ var SelectMultipleValue = function SelectMultipleValue(_ref) {
       }));
     }
     return undefined;
-  }, [allOptions, children, dropButtonRef, format, isDisabled, labelKey, messages, onSelectChange, theme.selectMultiple.maxInline, value, valueKey]);
+  }, [allOptions, children, dropButtonRef, format, isDisabled, labelKey, messages, onSelectChange, theme.selectMultiple.maxInline, (_theme$selectMultiple2 = theme.selectMultiple) == null || (_theme$selectMultiple2 = _theme$selectMultiple2.option) == null ? void 0 : _theme$selectMultiple2.pad, value, valueKey]);
 
   // After announcing set showA11yDiv to undefined so it won't
   // be read out again
@@ -148,11 +150,7 @@ var SelectMultipleValue = function SelectMultipleValue(_ref) {
     "aria-live": "assertive",
     role: "alert"
   }, showA11yDiv)), value && value.length > theme.selectMultiple.maxInline && /*#__PURE__*/React.createElement(Box, {
-    pad: {
-      horizontal: 'small',
-      bottom: 'small',
-      top: 'xsmall'
-    },
+    pad: (_theme$selectMultiple3 = theme.selectMultiple) == null || (_theme$selectMultiple3 = _theme$selectMultiple3.showMore) == null ? void 0 : _theme$selectMultiple3.pad,
     alignSelf: "start"
   }, /*#__PURE__*/React.createElement(Button, {
     onClick: onRequestOpen,

@@ -15,6 +15,7 @@ import { EmptySearchOption } from '../Select/EmptySearchOption';
 import { MessageContext } from '../../contexts/MessageContext';
 import { useThemeValue } from '../../utils/useThemeValue';
 var SelectMultipleContainer = /*#__PURE__*/forwardRef(function (_ref, ref) {
+  var _theme$selectMultiple2;
   var allOptions = _ref.allOptions,
     _ref$children = _ref.children,
     children = _ref$children === void 0 ? null : _ref$children,
@@ -270,9 +271,10 @@ var SelectMultipleContainer = /*#__PURE__*/forwardRef(function (_ref, ref) {
   });
   var helpContent;
   if (help) {
+    var _theme$selectMultiple;
     if (typeof help === 'string') helpContent = /*#__PURE__*/React.createElement(Box, {
       flex: false,
-      pad: "xsmall"
+      pad: (_theme$selectMultiple = theme.selectMultiple) == null || (_theme$selectMultiple = _theme$selectMultiple.help) == null || (_theme$selectMultiple = _theme$selectMultiple.container) == null ? void 0 : _theme$selectMultiple.pad
     }, /*#__PURE__*/React.createElement(Text, {
       size: "small"
     }, help));else helpContent = /*#__PURE__*/React.createElement(Box, {
@@ -304,7 +306,7 @@ var SelectMultipleContainer = /*#__PURE__*/forwardRef(function (_ref, ref) {
       messages: messages
     })
   }, summaryContent, onSearch && /*#__PURE__*/React.createElement(Box, {
-    pad: !customSearchInput ? 'xsmall' : undefined,
+    pad: !customSearchInput ? (_theme$selectMultiple2 = theme.selectMultiple) == null || (_theme$selectMultiple2 = _theme$selectMultiple2.search) == null ? void 0 : _theme$selectMultiple2.pad : undefined,
     flex: false
   }, /*#__PURE__*/React.createElement(Keyboard, {
     onEnter: function onEnter(event) {
@@ -363,13 +365,14 @@ var SelectMultipleContainer = /*#__PURE__*/forwardRef(function (_ref, ref) {
       });
       if (typeof child === 'string' || child.props && child.props.children && typeof child.props.children === 'string') textComponent = true;
     } else {
+      var _theme$selectMultiple3;
       child = /*#__PURE__*/React.createElement(CheckBox, {
         label: /*#__PURE__*/React.createElement(Box, {
           alignSelf: "center",
           width: "100%",
           align: "start"
         }, optionLabel),
-        pad: "xsmall",
+        pad: (_theme$selectMultiple3 = theme.selectMultiple) == null || (_theme$selectMultiple3 = _theme$selectMultiple3.option) == null ? void 0 : _theme$selectMultiple3.pad,
         tabIndex: "-1",
         checked: optionSelected,
         disabled: optionDisabled,
@@ -390,6 +393,7 @@ var SelectMultipleContainer = /*#__PURE__*/forwardRef(function (_ref, ref) {
     if (!children && search) {
       var searchText = search.toLowerCase();
       if (typeof optionLabel === 'string' && optionLabel.toLowerCase().indexOf(searchText) >= 0) {
+        var _theme$selectMultiple4;
         // code to bold search term in matching options
         var boldIndex = optionLabel.toLowerCase().indexOf(searchText);
         var childBeginning = optionLabel.substring(0, boldIndex);
@@ -403,7 +407,7 @@ var SelectMultipleContainer = /*#__PURE__*/forwardRef(function (_ref, ref) {
             align: "start",
             direction: "row"
           }, /*#__PURE__*/React.createElement(Text, null, childBeginning, childBold, childEnd)),
-          pad: "xsmall",
+          pad: (_theme$selectMultiple4 = theme.selectMultiple) == null || (_theme$selectMultiple4 = _theme$selectMultiple4.option) == null ? void 0 : _theme$selectMultiple4.pad,
           tabIndex: "-1",
           checked: optionSelected,
           disabled: optionDisabled,

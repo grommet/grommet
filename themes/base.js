@@ -2156,10 +2156,41 @@ var generate = exports.generate = function generate(baseSpacing, scale) {
       step: 20
     },
     selectMultiple: {
-      maxInline: 5
+      help: {
+        container: {
+          pad: 'xsmall'
+        }
+      },
+      maxInline: 5,
       // listbox: {
       //   extend: () => undefined,
       // },
+      option: {
+        pad: 'xsmall'
+      },
+      search: {
+        pad: 'xsmall'
+      },
+      showMore: {
+        pad: {
+          horizontal: 'small',
+          bottom: 'small',
+          top: 'xsmall'
+        }
+      },
+      summary: {
+        gap: 'small',
+        height: {
+          min: 'xxsmall'
+        },
+        pad: 'xsmall',
+        showSelectedInline: {
+          pad: {
+            left: 'xsmall',
+            vertical: 'xsmall'
+          }
+        }
+      }
     },
     sidebar: {
       gap: 'large',

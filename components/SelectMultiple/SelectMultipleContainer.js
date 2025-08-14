@@ -20,6 +20,7 @@ var _useThemeValue2 = require("../../utils/useThemeValue");
 function _interopRequireWildcard(e, t) { if ("function" == typeof WeakMap) var r = new WeakMap(), n = new WeakMap(); return (_interopRequireWildcard = function _interopRequireWildcard(e, t) { if (!t && e && e.__esModule) return e; var o, i, f = { __proto__: null, "default": e }; if (null === e || "object" != typeof e && "function" != typeof e) return f; if (o = t ? n : r) { if (o.has(e)) return o.get(e); o.set(e, f); } for (var _t in e) "default" !== _t && {}.hasOwnProperty.call(e, _t) && ((i = (o = Object.defineProperty) && Object.getOwnPropertyDescriptor(e, _t)) && (i.get || i.set) ? o(f, _t, i) : f[_t] = e[_t]); return f; })(e, t); }
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 var SelectMultipleContainer = exports.SelectMultipleContainer = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
+  var _theme$selectMultiple2;
   var allOptions = _ref.allOptions,
     _ref$children = _ref.children,
     children = _ref$children === void 0 ? null : _ref$children,
@@ -275,9 +276,10 @@ var SelectMultipleContainer = exports.SelectMultipleContainer = /*#__PURE__*/(0,
   });
   var helpContent;
   if (help) {
+    var _theme$selectMultiple;
     if (typeof help === 'string') helpContent = /*#__PURE__*/_react["default"].createElement(_Box.Box, {
       flex: false,
-      pad: "xsmall"
+      pad: (_theme$selectMultiple = theme.selectMultiple) == null || (_theme$selectMultiple = _theme$selectMultiple.help) == null || (_theme$selectMultiple = _theme$selectMultiple.container) == null ? void 0 : _theme$selectMultiple.pad
     }, /*#__PURE__*/_react["default"].createElement(_Text.Text, {
       size: "small"
     }, help));else helpContent = /*#__PURE__*/_react["default"].createElement(_Box.Box, {
@@ -309,7 +311,7 @@ var SelectMultipleContainer = exports.SelectMultipleContainer = /*#__PURE__*/(0,
       messages: messages
     })
   }, summaryContent, onSearch && /*#__PURE__*/_react["default"].createElement(_Box.Box, {
-    pad: !customSearchInput ? 'xsmall' : undefined,
+    pad: !customSearchInput ? (_theme$selectMultiple2 = theme.selectMultiple) == null || (_theme$selectMultiple2 = _theme$selectMultiple2.search) == null ? void 0 : _theme$selectMultiple2.pad : undefined,
     flex: false
   }, /*#__PURE__*/_react["default"].createElement(_Keyboard.Keyboard, {
     onEnter: function onEnter(event) {
@@ -368,13 +370,14 @@ var SelectMultipleContainer = exports.SelectMultipleContainer = /*#__PURE__*/(0,
       });
       if (typeof child === 'string' || child.props && child.props.children && typeof child.props.children === 'string') textComponent = true;
     } else {
+      var _theme$selectMultiple3;
       child = /*#__PURE__*/_react["default"].createElement(_CheckBox.CheckBox, {
         label: /*#__PURE__*/_react["default"].createElement(_Box.Box, {
           alignSelf: "center",
           width: "100%",
           align: "start"
         }, optionLabel),
-        pad: "xsmall",
+        pad: (_theme$selectMultiple3 = theme.selectMultiple) == null || (_theme$selectMultiple3 = _theme$selectMultiple3.option) == null ? void 0 : _theme$selectMultiple3.pad,
         tabIndex: "-1",
         checked: optionSelected,
         disabled: optionDisabled,
@@ -395,6 +398,7 @@ var SelectMultipleContainer = exports.SelectMultipleContainer = /*#__PURE__*/(0,
     if (!children && search) {
       var searchText = search.toLowerCase();
       if (typeof optionLabel === 'string' && optionLabel.toLowerCase().indexOf(searchText) >= 0) {
+        var _theme$selectMultiple4;
         // code to bold search term in matching options
         var boldIndex = optionLabel.toLowerCase().indexOf(searchText);
         var childBeginning = optionLabel.substring(0, boldIndex);
@@ -408,7 +412,7 @@ var SelectMultipleContainer = exports.SelectMultipleContainer = /*#__PURE__*/(0,
             align: "start",
             direction: "row"
           }, /*#__PURE__*/_react["default"].createElement(_Text.Text, null, childBeginning, childBold, childEnd)),
-          pad: "xsmall",
+          pad: (_theme$selectMultiple4 = theme.selectMultiple) == null || (_theme$selectMultiple4 = _theme$selectMultiple4.option) == null ? void 0 : _theme$selectMultiple4.pad,
           tabIndex: "-1",
           checked: optionSelected,
           disabled: optionDisabled,

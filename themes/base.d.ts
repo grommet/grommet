@@ -1832,9 +1832,29 @@ export interface ThemeType {
     step?: number;
   };
   selectMultiple?: {
+    help?: {
+      container?: {
+        pad: PadType;
+      };
+    };
     maxInline?: number;
     listbox?: {
       extend?: ExtendType;
+    };
+    option?: {
+      pad?: PadType;
+    };
+    search?: {
+      pad?: PadType;
+    };
+    showMore?: {
+      pad?: PadType;
+    };
+    summary?: {
+      pad?: PadType;
+      showSelectedInline?: {
+        pad: PadType;
+      };
     };
   };
   sidebar?: {

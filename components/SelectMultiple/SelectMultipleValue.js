@@ -11,6 +11,7 @@ var _utils = require("../Select/utils");
 var _MessageContext = require("../../contexts/MessageContext");
 function _interopRequireWildcard(e, t) { if ("function" == typeof WeakMap) var r = new WeakMap(), n = new WeakMap(); return (_interopRequireWildcard = function _interopRequireWildcard(e, t) { if (!t && e && e.__esModule) return e; var o, i, f = { __proto__: null, "default": e }; if (null === e || "object" != typeof e && "function" != typeof e) return f; if (o = t ? n : r) { if (o.has(e)) return o.get(e); o.set(e, f); } for (var _t in e) "default" !== _t && {}.hasOwnProperty.call(e, _t) && ((i = (o = Object.defineProperty) && Object.getOwnPropertyDescriptor(e, _t)) && (i.get || i.set) ? o(f, _t, i) : f[_t] = e[_t]); return f; })(e, t); }
 var SelectMultipleValue = exports.SelectMultipleValue = function SelectMultipleValue(_ref) {
+  var _theme$selectMultiple2, _theme$selectMultiple3;
   var allOptions = _ref.allOptions,
     children = _ref.children,
     disabled = _ref.disabled,
@@ -37,6 +38,7 @@ var SelectMultipleValue = exports.SelectMultipleValue = function SelectMultipleV
     var optionDisabled = isDisabled(indexOptions);
     var valueIndex = (0, _utils.getOptionIndex)(value, optionValue, valueKey || labelKey);
     if (valueIndex < theme.selectMultiple.maxInline) {
+      var _theme$selectMultiple;
       var child;
       if (children) {
         child = children(i, indexOptions, allOptions, {
@@ -103,7 +105,7 @@ var SelectMultipleValue = exports.SelectMultipleValue = function SelectMultipleV
           align: "start"
         }, optionLabel),
         key: optionLabel,
-        pad: "xsmall",
+        pad: (_theme$selectMultiple = theme.selectMultiple) == null || (_theme$selectMultiple = _theme$selectMultiple.option) == null ? void 0 : _theme$selectMultiple.pad,
         tabIndex: "-1",
         checked: optionSelected,
         inert: _utils.inertTrueValue,
@@ -121,7 +123,7 @@ var SelectMultipleValue = exports.SelectMultipleValue = function SelectMultipleV
       }));
     }
     return undefined;
-  }, [allOptions, children, dropButtonRef, format, isDisabled, labelKey, messages, onSelectChange, theme.selectMultiple.maxInline, value, valueKey]);
+  }, [allOptions, children, dropButtonRef, format, isDisabled, labelKey, messages, onSelectChange, theme.selectMultiple.maxInline, (_theme$selectMultiple2 = theme.selectMultiple) == null || (_theme$selectMultiple2 = _theme$selectMultiple2.option) == null ? void 0 : _theme$selectMultiple2.pad, value, valueKey]);
 
   // After announcing set showA11yDiv to undefined so it won't
   // be read out again
@@ -153,11 +155,7 @@ var SelectMultipleValue = exports.SelectMultipleValue = function SelectMultipleV
     "aria-live": "assertive",
     role: "alert"
   }, showA11yDiv)), value && value.length > theme.selectMultiple.maxInline && /*#__PURE__*/_react["default"].createElement(_Box.Box, {
-    pad: {
-      horizontal: 'small',
-      bottom: 'small',
-      top: 'xsmall'
-    },
+    pad: (_theme$selectMultiple3 = theme.selectMultiple) == null || (_theme$selectMultiple3 = _theme$selectMultiple3.showMore) == null ? void 0 : _theme$selectMultiple3.pad,
     alignSelf: "start"
   }, /*#__PURE__*/_react["default"].createElement(_Button.Button, {
     onClick: onRequestOpen,

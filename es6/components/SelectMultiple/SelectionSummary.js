@@ -4,7 +4,9 @@ import { Button } from '../Button';
 import { Text } from '../Text';
 import { applyKey, getOptionValue, useDisabled, arrayIncludes } from '../Select/utils';
 import { MessageContext } from '../../contexts/MessageContext';
+import { useThemeValue } from '../../utils/useThemeValue';
 var SelectionSummary = function SelectionSummary(_ref) {
+  var _theme$selectMultiple, _theme$selectMultiple2, _theme$selectMultiple3, _theme$selectMultiple4;
   var allOptions = _ref.allOptions,
     clearRef = _ref.clearRef,
     disabled = _ref.disabled,
@@ -23,6 +25,8 @@ var SelectionSummary = function SelectionSummary(_ref) {
     valueKey = _ref.valueKey;
   var _useContext = useContext(MessageContext),
     format = _useContext.format;
+  var _useThemeValue = useThemeValue(),
+    theme = _useThemeValue.theme;
   var isDisabled = useDisabled(disabled, disabledKey, options, valueKey || labelKey);
   var selectedValuesDisabled = useCallback(function () {
     var disabledSelected = 0;
@@ -77,19 +81,14 @@ var SelectionSummary = function SelectionSummary(_ref) {
     if (limit && !showSelectAll) setActiveIndex(0);
   };
   return /*#__PURE__*/React.createElement(Box, {
-    pad: showSelectedInline ? {
-      left: 'xsmall',
-      vertical: 'xsmall'
-    } : 'xsmall',
+    pad: showSelectedInline ? (_theme$selectMultiple = theme.selectMultiple) == null || (_theme$selectMultiple = _theme$selectMultiple.summary) == null || (_theme$selectMultiple = _theme$selectMultiple.showSelectedInline) == null ? void 0 : _theme$selectMultiple.pad : (_theme$selectMultiple2 = theme.selectMultiple) == null || (_theme$selectMultiple2 = _theme$selectMultiple2.summary) == null ? void 0 : _theme$selectMultiple2.pad,
     direction: "row",
     justify: "between",
-    gap: "small",
+    gap: (_theme$selectMultiple3 = theme.selectMultiple) == null || (_theme$selectMultiple3 = _theme$selectMultiple3.summary) == null ? void 0 : _theme$selectMultiple3.gap,
     fill: "horizontal",
     flex: showSelectedInline,
     align: "center",
-    height: {
-      min: 'xxsmall'
-    }
+    height: (_theme$selectMultiple4 = theme.selectMultiple) == null || (_theme$selectMultiple4 = _theme$selectMultiple4.summary) == null ? void 0 : _theme$selectMultiple4.height
   }, /*#__PURE__*/React.createElement(Text, {
     size: "small"
   }, summaryText), (options.length && (!limit || !(!value || (value == null ? void 0 : value.length) === 0 && selectedValuesDisabled()))) > 0 && (!onMore || onMore && (value == null ? void 0 : value.length) !== 0) && /*#__PURE__*/React.createElement(Button, {
