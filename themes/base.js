@@ -1005,6 +1005,17 @@ var generate = exports.generate = function generate(baseSpacing, scale) {
         dropHeight: 'medium'
       }
     },
+    dataFilters: {
+      clearControl: {
+        margin: {
+          start: 'small'
+        }
+      },
+      pad: 'medium',
+      width: {
+        min: 'medium'
+      }
+    },
     dateInput: {
       container: {
         round: 'xxsmall'

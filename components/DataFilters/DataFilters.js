@@ -34,6 +34,7 @@ var layerProps = {
 };
 var defaultTouched = {};
 var DataFilters = exports.DataFilters = function DataFilters(_ref) {
+  var _theme$dataFilters, _theme$dataFilters2, _theme$dataFilters3;
   var drop = _ref.drop,
     children = _ref.children,
     _ref$clearFilters = _ref.clearFilters,
@@ -105,9 +106,7 @@ var DataFilters = exports.DataFilters = function DataFilters(_ref) {
   }, [controlled, touched]);
   var clearControl = badge && clearFilters && /*#__PURE__*/_react["default"].createElement(_Box.Box, {
     flex: false,
-    margin: {
-      start: 'small'
-    }
+    margin: (_theme$dataFilters = theme.dataFilters) == null || (_theme$dataFilters = _theme$dataFilters.clearControl) == null ? void 0 : _theme$dataFilters.margin
   }, /*#__PURE__*/_react["default"].createElement(_DataClearFilters.DataClearFilters, null));
   var content = children;
   if (_react.Children.count(children) === 0) {
@@ -130,7 +129,7 @@ var DataFilters = exports.DataFilters = function DataFilters(_ref) {
     });
   }
   content = /*#__PURE__*/_react["default"].createElement(_DataForm.DataForm, _extends({
-    pad: controlled ? 'medium' : undefined,
+    pad: controlled ? (_theme$dataFilters2 = theme.dataFilters) == null ? void 0 : _theme$dataFilters2.pad : undefined,
     onDone: function onDone() {
       return setShowContent(false);
     },
@@ -204,9 +203,7 @@ var DataFilters = exports.DataFilters = function DataFilters(_ref) {
       return setShowContent(undefined);
     }
   }), /*#__PURE__*/_react["default"].createElement(_Box.Box, {
-    width: {
-      min: 'medium'
-    }
+    width: (_theme$dataFilters3 = theme.dataFilters) == null ? void 0 : _theme$dataFilters3.width
   }, content)));
 };
 DataFilters.propTypes = _propTypes.DataFiltersPropTypes;

@@ -29,6 +29,7 @@ var layerProps = {
 };
 var defaultTouched = {};
 export var DataFilters = function DataFilters(_ref) {
+  var _theme$dataFilters, _theme$dataFilters2, _theme$dataFilters3;
   var drop = _ref.drop,
     children = _ref.children,
     _ref$clearFilters = _ref.clearFilters,
@@ -100,9 +101,7 @@ export var DataFilters = function DataFilters(_ref) {
   }, [controlled, touched]);
   var clearControl = badge && clearFilters && /*#__PURE__*/React.createElement(Box, {
     flex: false,
-    margin: {
-      start: 'small'
-    }
+    margin: (_theme$dataFilters = theme.dataFilters) == null || (_theme$dataFilters = _theme$dataFilters.clearControl) == null ? void 0 : _theme$dataFilters.margin
   }, /*#__PURE__*/React.createElement(DataClearFilters, null));
   var content = children;
   if (Children.count(children) === 0) {
@@ -125,7 +124,7 @@ export var DataFilters = function DataFilters(_ref) {
     });
   }
   content = /*#__PURE__*/React.createElement(DataForm, _extends({
-    pad: controlled ? 'medium' : undefined,
+    pad: controlled ? (_theme$dataFilters2 = theme.dataFilters) == null ? void 0 : _theme$dataFilters2.pad : undefined,
     onDone: function onDone() {
       return setShowContent(false);
     },
@@ -199,9 +198,7 @@ export var DataFilters = function DataFilters(_ref) {
       return setShowContent(undefined);
     }
   }), /*#__PURE__*/React.createElement(Box, {
-    width: {
-      min: 'medium'
-    }
+    width: (_theme$dataFilters3 = theme.dataFilters) == null ? void 0 : _theme$dataFilters3.width
   }, content)));
 };
 DataFilters.propTypes = DataFiltersPropTypes;
