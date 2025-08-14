@@ -301,11 +301,7 @@ const Header = forwardRef(
             </StyledDataTableCell>
           )}
           {rowDetails && (
-            <TableCell
-              size={theme.dataTable.rowDetails?.size}
-              plain
-              pad={theme.dataTable.rowDetails?.pad}
-            />
+            <TableCell size={theme.dataTable.expand?.size} plain pad="none" />
           )}
           {columns.map(
             ({

@@ -870,11 +870,8 @@ export interface ThemeType {
       };
     };
     container?: BoxProps;
-    footer?: {
-      groupBy?: {
-        pad?: PadType;
-        size?: string;
-      };
+    expand?: {
+      size?: string;
     };
     header?: {
       background?: BackgroundType;
@@ -944,11 +941,7 @@ export interface ThemeType {
     primary?: {
       weight?: string;
     };
-    rowDetails?: {
-      pad?: PadType;
-      size?: string;
-    };
-    searcher?: {
+    search?: {
       pad?: PadType;
       text?: {
         pad?: PadType;

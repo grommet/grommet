@@ -931,6 +931,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       //   }
       //   selected: undefined,
       // },
+      expand: {
+        size: 'xxsmall',
+      },
       pinned: {
         // body: {
         //    background: undefined,
@@ -949,12 +952,6 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         // any box props
         gap: 'xsmall',
         // extend: undefined,
-      },
-      footer: {
-        groupBy: {
-          pad: 'none',
-          size: 'xxsmall',
-        },
       },
       groupHeader: {
         // background: undefined,
@@ -1007,11 +1004,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         //   },
         // },
       },
-      rowDetails: {
-        pad: 'none',
-        size: 'xxsmall',
-      },
-      searcher: {
+      search: {
         pad: {
           left: 'small',
         },
