@@ -806,6 +806,18 @@ export const generate = (baseSpacing = 24, scale = 6) => {
     },
     chart: {
       color: 'graph-0',
+      height: 'small',
+      thickness: {
+        default: 'medium',
+        pad: {
+          xlarge: 'large',
+          large: 'medium',
+          medium: 'small',
+          small: 'xsmall',
+          xsmall: 'xxsmall',
+        },
+      },
+      width: 'medium',
       // extend: undefined,
     },
     checkBox: {
@@ -929,6 +941,40 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       // },
       drop: {
         pad: 'small',
+      },
+    },
+    dataChart: {
+      gap: 'small',
+      detail: {
+        grid: {
+          gap: 'xsmall',
+        },
+      },
+      legend: {
+        margin: { top: 'small' },
+        gap: 'small',
+        item: {
+          gap: 'xsmall',
+          pad: { horizontal: 'small', vertical: 'xsmall' },
+        },
+      },
+      size: {
+        height: 'small',
+      },
+      thickness: {
+        veryDense: 'hair',
+        dense: 'xsmall',
+        heavy: 'small',
+        moderate: 'medium',
+        light: 'large',
+        sparse: 'xlarge',
+        pad: {
+          xlarge: 'large',
+          large: 'medium',
+          medium: 'small',
+          small: 'xsmall',
+          xsmall: 'xxsmall',
+        },
       },
     },
     dataFilter: {
