@@ -329,7 +329,6 @@ const DataChart = forwardRef(
 
       return chartValues.map((values, index) => {
         const { thickness, type } = charts[index];
-        const { theme } = useThemeValue();
         const calcValues = stackedChartType[type] ? values[0] : values;
         return calcs(calcValues, {
           bounds: chartBounds[index],
