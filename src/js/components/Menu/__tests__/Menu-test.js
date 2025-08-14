@@ -2,7 +2,7 @@ import React from 'react';
 import { fireEvent, render, screen } from '@testing-library/react';
 import { getByText as getByTextDOM } from '@testing-library/dom';
 import { axe } from 'jest-axe';
-
+import { hpe } from 'grommet-theme-hpe';
 import 'jest-axe/extend-expect';
 import 'regenerator-runtime/runtime';
 import 'jest-styled-components';
@@ -64,7 +64,7 @@ describe('Menu', () => {
 
   test('basic', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Menu
           icon={<svg />}
           label="Test Menu"
@@ -149,7 +149,7 @@ describe('Menu', () => {
   test('gap between icon and label', () => {
     window.scrollTo = jest.fn();
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Menu
           open
           label="actions"

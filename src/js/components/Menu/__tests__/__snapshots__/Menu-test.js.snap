@@ -9,19 +9,13 @@ exports[`Menu basic 1`] = `
   min-width: 0;
   min-height: 0;
   flex-direction: row;
-  justify-content: flex-start;
-  padding: 12px;
-}
-
-.c4 {
-  flex: 0 0 auto;
-  align-self: stretch;
-  width: 12px;
+  justify-content: center;
 }
 
 .c3 {
-  font-size: 18px;
-  line-height: 24px;
+  flex: 0 0 auto;
+  align-self: stretch;
+  width: 6px;
 }
 
 .c1 {
@@ -34,16 +28,42 @@ exports[`Menu basic 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  color: inherit;
-  outline: none;
   border: none;
-  padding: 0;
-  text-align: inherit;
+  border-radius: 9999px;
+  padding: 5px 18px;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: rgba(0, 0, 0, 0);
+  color: #2e2e2e;
+  border-style: solid;
+  border-width: 1px;
+  border-color: rgba(0, 0, 0, 0);
+  border-radius: 9999px;
+  font-weight: 500;
+  padding: 5px 18px;
+  text-align: center;
+  transition-property: color,background-color,border-color,box-shadow;
+  transition-duration: 0.1s;
+  transition-timing-function: ease-in-out;
+}
+
+.c1 >svg {
+  display: flex;
+  align-self: center;
+  vertical-align: middle;
+}
+
+.c1:hover {
+  background-color: rgba(0, 0, 0, 0.04);
+  color: #2e2e2e;
+  border-color: rgba(0, 0, 0, 0);
+  font-weight: 500;
 }
 
 .c1:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c1:focus >circle,
@@ -53,8 +73,9 @@ exports[`Menu basic 1`] = `
 .c1:focus >polygon,
 .c1:focus >polyline,
 .c1:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c1:focus ::-moz-focus-inner {
@@ -62,6 +83,8 @@ exports[`Menu basic 1`] = `
 }
 
 .c1:focus:not(:focus-visible) {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -73,6 +96,8 @@ exports[`Menu basic 1`] = `
 .c1:focus:not(:focus-visible) >polygon,
 .c1:focus:not(:focus-visible) >polyline,
 .c1:focus:not(:focus-visible) >rect {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -82,25 +107,16 @@ exports[`Menu basic 1`] = `
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-}
-
-@media only screen and (max-width: 768px) {
-  .c2 {
-    padding: 6px;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .c4 {
-    width: 6px;
-  }
 }
 
 <div
@@ -117,15 +133,13 @@ exports[`Menu basic 1`] = `
     <div
       class="c2"
     >
-      <span
-        class="c3"
-      >
-        Test Menu
-      </span>
+      Test Menu
       <div
-        class="c4"
+        class="c3"
       />
-      <svg />
+      <svg
+        color="#2e2e2e"
+      />
     </div>
   </button>
 </div>
@@ -249,24 +263,6 @@ exports[`Menu basic outside grommet wrapper 1`] = `
 `;
 
 exports[`Menu close by clicking outside 1`] = `
-.c2 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  align-items: center;
-  min-width: 0;
-  min-height: 0;
-  flex-direction: row;
-  justify-content: flex-start;
-  padding: 12px;
-}
-
-.c4 {
-  flex: 0 0 auto;
-  align-self: stretch;
-  width: 12px;
-}
-
 .c5 {
   display: inline-block;
   flex: 0 0 auto;
@@ -297,6 +293,24 @@ exports[`Menu close by clicking outside 1`] = `
 .c5 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
+}
+
+.c2 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: row;
+  justify-content: flex-start;
+  padding: 12px;
+}
+
+.c4 {
+  flex: 0 0 auto;
+  align-self: stretch;
+  width: 12px;
 }
 
 .c3 {
@@ -423,6 +437,38 @@ exports[`Menu close by clicking outside 1`] = `
 `;
 
 exports[`Menu close by clicking outside 2`] = `
+.c9 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #7D4CDB;
+  stroke: #7D4CDB;
+}
+
+.c9 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c9 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c9 *[stroke*='#'],
+.c9 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c9 *[fill-rule],
+.c9 *[FILL-RULE],
+.c9 *[fill*='#'],
+.c9 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
+}
+
 .c6 {
   display: flex;
   box-sizing: border-box;
@@ -490,38 +536,6 @@ exports[`Menu close by clicking outside 2`] = `
   flex: 0 0 auto;
   align-self: stretch;
   width: 12px;
-}
-
-.c9 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
-}
-
-.c9 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c9 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c9 *[stroke*='#'],
-.c9 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c9 *[fill-rule],
-.c9 *[FILL-RULE],
-.c9 *[fill*='#'],
-.c9 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
 }
 
 .c1 {
@@ -726,24 +740,6 @@ exports[`Menu close by clicking outside 3`] = `
 `;
 
 exports[`Menu close on tab 1`] = `
-.c2 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  align-items: center;
-  min-width: 0;
-  min-height: 0;
-  flex-direction: row;
-  justify-content: flex-start;
-  padding: 12px;
-}
-
-.c4 {
-  flex: 0 0 auto;
-  align-self: stretch;
-  width: 12px;
-}
-
 .c5 {
   display: inline-block;
   flex: 0 0 auto;
@@ -774,6 +770,24 @@ exports[`Menu close on tab 1`] = `
 .c5 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
+}
+
+.c2 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: row;
+  justify-content: flex-start;
+  padding: 12px;
+}
+
+.c4 {
+  flex: 0 0 auto;
+  align-self: stretch;
+  width: 12px;
 }
 
 .c3 {
@@ -900,24 +914,6 @@ exports[`Menu close on tab 1`] = `
 `;
 
 exports[`Menu custom a11yTitle or aria-label 1`] = `
-.c2 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  align-items: center;
-  min-width: 0;
-  min-height: 0;
-  flex-direction: row;
-  justify-content: flex-start;
-  padding: 12px;
-}
-
-.c4 {
-  flex: 0 0 auto;
-  align-self: stretch;
-  width: 12px;
-}
-
 .c5 {
   display: inline-block;
   flex: 0 0 auto;
@@ -948,6 +944,24 @@ exports[`Menu custom a11yTitle or aria-label 1`] = `
 .c5 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
+}
+
+.c2 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: row;
+  justify-content: flex-start;
+  padding: 12px;
+}
+
+.c4 {
+  flex: 0 0 auto;
+  align-self: stretch;
+  width: 12px;
 }
 
 .c3 {
@@ -1107,24 +1121,6 @@ exports[`Menu custom a11yTitle or aria-label 1`] = `
 `;
 
 exports[`Menu custom message 1`] = `
-.c2 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  align-items: center;
-  min-width: 0;
-  min-height: 0;
-  flex-direction: row;
-  justify-content: flex-start;
-  padding: 12px;
-}
-
-.c4 {
-  flex: 0 0 auto;
-  align-self: stretch;
-  width: 12px;
-}
-
 .c5 {
   display: inline-block;
   flex: 0 0 auto;
@@ -1155,6 +1151,24 @@ exports[`Menu custom message 1`] = `
 .c5 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
+}
+
+.c2 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: row;
+  justify-content: flex-start;
+  padding: 12px;
+}
+
+.c4 {
+  flex: 0 0 auto;
+  align-self: stretch;
+  width: 12px;
 }
 
 .c3 {
@@ -1280,24 +1294,6 @@ exports[`Menu custom message 1`] = `
 `;
 
 exports[`Menu custom theme icon alignment 1`] = `
-.c2 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  align-items: center;
-  min-width: 0;
-  min-height: 0;
-  flex-direction: row;
-  justify-content: flex-start;
-  padding: 12px;
-}
-
-.c4 {
-  flex: 0 0 auto;
-  align-self: stretch;
-  width: 12px;
-}
-
 .c5 {
   display: inline-block;
   flex: 0 0 auto;
@@ -1328,6 +1324,24 @@ exports[`Menu custom theme icon alignment 1`] = `
 .c5 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
+}
+
+.c2 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: row;
+  justify-content: flex-start;
+  padding: 12px;
+}
+
+.c4 {
+  flex: 0 0 auto;
+  align-self: stretch;
+  width: 12px;
 }
 
 .c3 {
@@ -1453,24 +1467,6 @@ exports[`Menu custom theme icon alignment 1`] = `
 `;
 
 exports[`Menu custom theme icon color 1`] = `
-.c2 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  align-items: center;
-  min-width: 0;
-  min-height: 0;
-  flex-direction: row;
-  justify-content: flex-start;
-  padding: 12px;
-}
-
-.c4 {
-  flex: 0 0 auto;
-  align-self: stretch;
-  width: 12px;
-}
-
 .c5 {
   display: inline-block;
   flex: 0 0 auto;
@@ -1501,6 +1497,24 @@ exports[`Menu custom theme icon color 1`] = `
 .c5 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
+}
+
+.c2 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: row;
+  justify-content: flex-start;
+  padding: 12px;
+}
+
+.c4 {
+  flex: 0 0 auto;
+  align-self: stretch;
+  width: 12px;
 }
 
 .c3 {
@@ -1626,23 +1640,6 @@ exports[`Menu custom theme icon color 1`] = `
 `;
 
 exports[`Menu custom theme with default button 1`] = `
-.c2 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  align-items: center;
-  min-width: 0;
-  min-height: 0;
-  flex-direction: row;
-  justify-content: center;
-}
-
-.c3 {
-  flex: 0 0 auto;
-  align-self: stretch;
-  width: 12px;
-}
-
 .c4 {
   display: inline-block;
   flex: 0 0 auto;
@@ -1673,6 +1670,23 @@ exports[`Menu custom theme with default button 1`] = `
 .c4 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
+}
+
+.c2 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.c3 {
+  flex: 0 0 auto;
+  align-self: stretch;
+  width: 12px;
 }
 
 .c1 {
@@ -1789,24 +1803,6 @@ exports[`Menu custom theme with default button 1`] = `
 `;
 
 exports[`Menu disabled 1`] = `
-.c2 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  align-items: center;
-  min-width: 0;
-  min-height: 0;
-  flex-direction: row;
-  justify-content: flex-start;
-  padding: 12px;
-}
-
-.c4 {
-  flex: 0 0 auto;
-  align-self: stretch;
-  width: 12px;
-}
-
 .c5 {
   display: inline-block;
   flex: 0 0 auto;
@@ -1837,6 +1833,24 @@ exports[`Menu disabled 1`] = `
 .c5 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
+}
+
+.c2 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: row;
+  justify-content: flex-start;
+  padding: 12px;
+}
+
+.c4 {
+  flex: 0 0 auto;
+  align-self: stretch;
+  width: 12px;
 }
 
 .c3 {
@@ -1966,6 +1980,38 @@ exports[`Menu disabled 1`] = `
 `;
 
 exports[`Menu gap between icon and label 1`] = `
+.c4 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 18px;
+  height: 18px;
+  fill: #2e2e2e;
+  stroke: #2e2e2e;
+}
+
+.c4 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c4 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c4 *[stroke*='#'],
+.c4 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c4 *[fill-rule],
+.c4 *[FILL-RULE],
+.c4 *[fill*='#'],
+.c4 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
+}
+
 .c2 {
   display: flex;
   box-sizing: border-box;
@@ -1974,16 +2020,166 @@ exports[`Menu gap between icon and label 1`] = `
   min-width: 0;
   min-height: 0;
   flex-direction: row;
-  justify-content: flex-start;
-  padding: 12px;
+  justify-content: center;
 }
 
-.c4 {
+.c3 {
   flex: 0 0 auto;
   align-self: stretch;
-  width: 12px;
+  width: 6px;
 }
 
+.c1 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: none;
+  border-radius: 9999px;
+  padding: 5px 18px;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: rgba(0, 0, 0, 0);
+  color: #2e2e2e;
+  border-style: solid;
+  border-width: 1px;
+  border-color: rgba(0, 0, 0, 0);
+  border-radius: 9999px;
+  font-weight: 500;
+  padding: 5px 18px;
+  text-align: center;
+  transition-property: color,background-color,border-color,box-shadow;
+  transition-duration: 0.1s;
+  transition-timing-function: ease-in-out;
+}
+
+.c1 >svg {
+  display: flex;
+  align-self: center;
+  vertical-align: middle;
+}
+
+.c1:hover {
+  background-color: rgba(0, 0, 0, 0.04);
+  color: #2e2e2e;
+  border-color: rgba(0, 0, 0, 0);
+  font-weight: 500;
+}
+
+.c1:focus {
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
+}
+
+.c1:focus >circle,
+.c1:focus >ellipse,
+.c1:focus >line,
+.c1:focus >path,
+.c1:focus >polygon,
+.c1:focus >polyline,
+.c1:focus >rect {
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
+}
+
+.c1:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c1:focus:not(:focus-visible) {
+  outline-offset: 0px;
+  outline: none;
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible) >circle,
+.c1:focus:not(:focus-visible) >ellipse,
+.c1:focus:not(:focus-visible) >line,
+.c1:focus:not(:focus-visible) >path,
+.c1:focus:not(:focus-visible) >polygon,
+.c1:focus:not(:focus-visible) >polyline,
+.c1:focus:not(:focus-visible) >rect {
+  outline-offset: 0px;
+  outline: none;
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
+}
+
+.c0 {
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+@media only screen and (max-width: 768px) {
+
+}
+
+@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
+
+}
+
+@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
+
+}
+
+<div>
+  <div
+    class="c0"
+  >
+    <button
+      aria-expanded="true"
+      aria-haspopup="menu"
+      aria-label="Open Menu"
+      class="c1"
+      type="button"
+    >
+      <div
+        class="c2"
+      >
+        actions
+        <div
+          class="c3"
+        />
+        <svg
+          aria-label="Down"
+          class="c4"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="m2 8.35 10.173 9.823L21.997 8"
+            fill="none"
+            stroke="#000"
+            stroke-width="2"
+            vector-effect="non-scaling-stroke"
+          />
+        </svg>
+      </div>
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Menu justify content 1`] = `
 .c5 {
   display: inline-block;
   flex: 0 0 auto;
@@ -2016,147 +2212,6 @@ exports[`Menu gap between icon and label 1`] = `
   stroke: none;
 }
 
-.c3 {
-  font-size: 18px;
-  line-height: 24px;
-}
-
-.c1 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  font: inherit;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  color: inherit;
-  outline: none;
-  border: none;
-  padding: 0;
-  text-align: inherit;
-}
-
-.c1:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c1:focus >circle,
-.c1:focus >ellipse,
-.c1:focus >line,
-.c1:focus >path,
-.c1:focus >polygon,
-.c1:focus >polyline,
-.c1:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c1:focus ::-moz-focus-inner {
-  border: 0;
-}
-
-.c1:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c1:focus:not(:focus-visible) >circle,
-.c1:focus:not(:focus-visible) >ellipse,
-.c1:focus:not(:focus-visible) >line,
-.c1:focus:not(:focus-visible) >path,
-.c1:focus:not(:focus-visible) >polygon,
-.c1:focus:not(:focus-visible) >polyline,
-.c1:focus:not(:focus-visible) >rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c1:focus:not(:focus-visible) ::-moz-focus-inner {
-  border: 0;
-}
-
-.c0 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
-@media only screen and (max-width: 768px) {
-  .c2 {
-    padding: 6px;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-
-}
-
-@media only screen and (max-width: 768px) {
-  .c4 {
-    width: 6px;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-
-}
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-
-}
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-
-}
-
-<div>
-  <div
-    class="c0"
-  >
-    <button
-      aria-expanded="true"
-      aria-haspopup="menu"
-      aria-label="Open Menu"
-      class="c1"
-      type="button"
-    >
-      <div
-        class="c2"
-      >
-        <span
-          class="c3"
-        >
-          actions
-        </span>
-        <div
-          class="c4"
-        />
-        <svg
-          aria-label="FormDown"
-          class="c5"
-          viewBox="0 0 24 24"
-        >
-          <path
-            d="m18 9-6 6-6-6"
-            fill="none"
-            stroke="#000"
-            stroke-width="2"
-          />
-        </svg>
-      </div>
-    </button>
-  </div>
-</div>
-`;
-
-exports[`Menu justify content 1`] = `
 .c2 {
   display: flex;
   box-sizing: border-box;
@@ -2232,38 +2287,6 @@ exports[`Menu justify content 1`] = `
   flex: 0 0 auto;
   align-self: stretch;
   width: 12px;
-}
-
-.c5 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
-}
-
-.c5 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c5 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c5 *[stroke*='#'],
-.c5 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c5 *[fill-rule],
-.c5 *[FILL-RULE],
-.c5 *[fill*='#'],
-.c5 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
 }
 
 .c3 {
@@ -2668,24 +2691,6 @@ exports[`Menu menu with children when custom theme has default button 1`] = `
 `;
 
 exports[`Menu navigate through suggestions and select 1`] = `
-.c2 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  align-items: center;
-  min-width: 0;
-  min-height: 0;
-  flex-direction: row;
-  justify-content: flex-start;
-  padding: 12px;
-}
-
-.c4 {
-  flex: 0 0 auto;
-  align-self: stretch;
-  width: 12px;
-}
-
 .c5 {
   display: inline-block;
   flex: 0 0 auto;
@@ -2716,6 +2721,24 @@ exports[`Menu navigate through suggestions and select 1`] = `
 .c5 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
+}
+
+.c2 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: row;
+  justify-content: flex-start;
+  padding: 12px;
+}
+
+.c4 {
+  flex: 0 0 auto;
+  align-self: stretch;
+  width: 12px;
 }
 
 .c3 {
@@ -2842,24 +2865,6 @@ exports[`Menu navigate through suggestions and select 1`] = `
 `;
 
 exports[`Menu open and close on click 1`] = `
-.c2 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  align-items: center;
-  min-width: 0;
-  min-height: 0;
-  flex-direction: row;
-  justify-content: flex-start;
-  padding: 12px;
-}
-
-.c4 {
-  flex: 0 0 auto;
-  align-self: stretch;
-  width: 12px;
-}
-
 .c5 {
   display: inline-block;
   flex: 0 0 auto;
@@ -2890,6 +2895,24 @@ exports[`Menu open and close on click 1`] = `
 .c5 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
+}
+
+.c2 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: row;
+  justify-content: flex-start;
+  padding: 12px;
+}
+
+.c4 {
+  flex: 0 0 auto;
+  align-self: stretch;
+  width: 12px;
 }
 
 .c3 {
@@ -3056,6 +3079,38 @@ exports[`Menu open and close on click 2`] = `
 `;
 
 exports[`Menu open and close on click 3`] = `
+.c9 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #7D4CDB;
+  stroke: #7D4CDB;
+}
+
+.c9 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c9 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c9 *[stroke*='#'],
+.c9 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c9 *[fill-rule],
+.c9 *[FILL-RULE],
+.c9 *[fill*='#'],
+.c9 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
+}
+
 .c6 {
   display: flex;
   box-sizing: border-box;
@@ -3123,38 +3178,6 @@ exports[`Menu open and close on click 3`] = `
   flex: 0 0 auto;
   align-self: stretch;
   width: 12px;
-}
-
-.c9 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
-}
-
-.c9 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c9 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c9 *[stroke*='#'],
-.c9 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c9 *[fill-rule],
-.c9 *[FILL-RULE],
-.c9 *[fill*='#'],
-.c9 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
 }
 
 .c1 {
@@ -3375,24 +3398,6 @@ exports[`Menu open and close on click 4`] = `
 `;
 
 exports[`Menu open on down close on esc 1`] = `
-.c2 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  align-items: center;
-  min-width: 0;
-  min-height: 0;
-  flex-direction: row;
-  justify-content: flex-start;
-  padding: 12px;
-}
-
-.c4 {
-  flex: 0 0 auto;
-  align-self: stretch;
-  width: 12px;
-}
-
 .c5 {
   display: inline-block;
   flex: 0 0 auto;
@@ -3423,6 +3428,24 @@ exports[`Menu open on down close on esc 1`] = `
 .c5 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
+}
+
+.c2 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: row;
+  justify-content: flex-start;
+  padding: 12px;
+}
+
+.c4 {
+  flex: 0 0 auto;
+  align-self: stretch;
+  width: 12px;
 }
 
 .c3 {
@@ -3549,24 +3572,6 @@ exports[`Menu open on down close on esc 1`] = `
 `;
 
 exports[`Menu open on up close on esc 1`] = `
-.c2 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  align-items: center;
-  min-width: 0;
-  min-height: 0;
-  flex-direction: row;
-  justify-content: flex-start;
-  padding: 12px;
-}
-
-.c4 {
-  flex: 0 0 auto;
-  align-self: stretch;
-  width: 12px;
-}
-
 .c5 {
   display: inline-block;
   flex: 0 0 auto;
@@ -3597,6 +3602,24 @@ exports[`Menu open on up close on esc 1`] = `
 .c5 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
+}
+
+.c2 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: row;
+  justify-content: flex-start;
+  padding: 12px;
+}
+
+.c4 {
+  flex: 0 0 auto;
+  align-self: stretch;
+  width: 12px;
 }
 
 .c3 {
@@ -3723,6 +3746,38 @@ exports[`Menu open on up close on esc 1`] = `
 `;
 
 exports[`Menu open on up close on esc 2`] = `
+.c9 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #7D4CDB;
+  stroke: #7D4CDB;
+}
+
+.c9 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c9 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c9 *[stroke*='#'],
+.c9 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c9 *[fill-rule],
+.c9 *[FILL-RULE],
+.c9 *[fill*='#'],
+.c9 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
+}
+
 .c6 {
   display: flex;
   box-sizing: border-box;
@@ -3790,38 +3845,6 @@ exports[`Menu open on up close on esc 2`] = `
   flex: 0 0 auto;
   align-self: stretch;
   width: 12px;
-}
-
-.c9 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
-}
-
-.c9 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c9 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c9 *[stroke*='#'],
-.c9 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c9 *[fill-rule],
-.c9 *[FILL-RULE],
-.c9 *[fill*='#'],
-.c9 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
 }
 
 .c1 {
@@ -4026,24 +4049,6 @@ exports[`Menu open on up close on esc 3`] = `
 `;
 
 exports[`Menu reverse icon and label 1`] = `
-.c2 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  align-items: center;
-  min-width: 0;
-  min-height: 0;
-  flex-direction: row;
-  justify-content: flex-start;
-  padding: 12px;
-}
-
-.c4 {
-  flex: 0 0 auto;
-  align-self: stretch;
-  width: 12px;
-}
-
 .c5 {
   display: inline-block;
   flex: 0 0 auto;
@@ -4074,6 +4079,24 @@ exports[`Menu reverse icon and label 1`] = `
 .c5 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
+}
+
+.c2 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: row;
+  justify-content: flex-start;
+  padding: 12px;
+}
+
+.c4 {
+  flex: 0 0 auto;
+  align-self: stretch;
+  width: 12px;
 }
 
 .c3 {
@@ -4213,24 +4236,6 @@ exports[`Menu reverse icon and label 1`] = `
 `;
 
 exports[`Menu select an item 1`] = `
-.c2 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  align-items: center;
-  min-width: 0;
-  min-height: 0;
-  flex-direction: row;
-  justify-content: flex-start;
-  padding: 12px;
-}
-
-.c4 {
-  flex: 0 0 auto;
-  align-self: stretch;
-  width: 12px;
-}
-
 .c5 {
   display: inline-block;
   flex: 0 0 auto;
@@ -4261,6 +4266,24 @@ exports[`Menu select an item 1`] = `
 .c5 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
+}
+
+.c2 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: row;
+  justify-content: flex-start;
+  padding: 12px;
+}
+
+.c4 {
+  flex: 0 0 auto;
+  align-self: stretch;
+  width: 12px;
 }
 
 .c3 {
@@ -4387,24 +4410,6 @@ exports[`Menu select an item 1`] = `
 `;
 
 exports[`Menu shift + tab through menu until it closes 1`] = `
-.c2 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  align-items: center;
-  min-width: 0;
-  min-height: 0;
-  flex-direction: row;
-  justify-content: flex-start;
-  padding: 12px;
-}
-
-.c4 {
-  flex: 0 0 auto;
-  align-self: stretch;
-  width: 12px;
-}
-
 .c5 {
   display: inline-block;
   flex: 0 0 auto;
@@ -4435,6 +4440,24 @@ exports[`Menu shift + tab through menu until it closes 1`] = `
 .c5 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
+}
+
+.c2 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: row;
+  justify-content: flex-start;
+  padding: 12px;
+}
+
+.c4 {
+  flex: 0 0 auto;
+  align-self: stretch;
+  width: 12px;
 }
 
 .c3 {
@@ -4792,24 +4815,6 @@ exports[`Menu should apply theme.menu.container 2`] = `
 `;
 
 exports[`Menu should apply themed drop props 1`] = `
-.c2 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  align-items: center;
-  min-width: 0;
-  min-height: 0;
-  flex-direction: row;
-  justify-content: flex-start;
-  padding: 12px;
-}
-
-.c4 {
-  flex: 0 0 auto;
-  align-self: stretch;
-  width: 12px;
-}
-
 .c5 {
   display: inline-block;
   flex: 0 0 auto;
@@ -4840,6 +4845,24 @@ exports[`Menu should apply themed drop props 1`] = `
 .c5 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
+}
+
+.c2 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: row;
+  justify-content: flex-start;
+  padding: 12px;
+}
+
+.c4 {
+  flex: 0 0 auto;
+  align-self: stretch;
+  width: 12px;
 }
 
 .c3 {
@@ -4985,6 +5008,38 @@ exports[`Menu should apply themed drop props 1`] = `
 `;
 
 exports[`Menu should group items 1`] = `
+.c9 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #7D4CDB;
+  stroke: #7D4CDB;
+}
+
+.c9 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c9 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c9 *[stroke*='#'],
+.c9 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c9 *[fill-rule],
+.c9 *[FILL-RULE],
+.c9 *[fill*='#'],
+.c9 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
+}
+
 .c6 {
   display: flex;
   box-sizing: border-box;
@@ -5084,38 +5139,6 @@ exports[`Menu should group items 1`] = `
   flex: 0 0 auto;
   align-self: stretch;
   width: 12px;
-}
-
-.c9 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
-}
-
-.c9 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c9 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c9 *[stroke*='#'],
-.c9 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c9 *[fill-rule],
-.c9 *[FILL-RULE],
-.c9 *[fill*='#'],
-.c9 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
 }
 
 .c1 {
@@ -5379,18 +5402,6 @@ exports[`Menu should group items 2`] = `
 `;
 
 exports[`Menu should have no accessibility violations 1`] = `
-.c2 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  align-items: center;
-  min-width: 0;
-  min-height: 0;
-  flex-direction: row;
-  justify-content: flex-start;
-  padding: 12px;
-}
-
 .c4 {
   display: inline-block;
   flex: 0 0 auto;
@@ -5421,6 +5432,18 @@ exports[`Menu should have no accessibility violations 1`] = `
 .c4 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
+}
+
+.c2 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: row;
+  justify-content: flex-start;
+  padding: 12px;
 }
 
 .c3 {
@@ -5537,24 +5560,6 @@ exports[`Menu should have no accessibility violations 1`] = `
 `;
 
 exports[`Menu tab through menu until it closes 1`] = `
-.c2 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  align-items: center;
-  min-width: 0;
-  min-height: 0;
-  flex-direction: row;
-  justify-content: flex-start;
-  padding: 12px;
-}
-
-.c4 {
-  flex: 0 0 auto;
-  align-self: stretch;
-  width: 12px;
-}
-
 .c5 {
   display: inline-block;
   flex: 0 0 auto;
@@ -5585,6 +5590,24 @@ exports[`Menu tab through menu until it closes 1`] = `
 .c5 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
+}
+
+.c2 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: row;
+  justify-content: flex-start;
+  padding: 12px;
+}
+
+.c4 {
+  flex: 0 0 auto;
+  align-self: stretch;
+  width: 12px;
 }
 
 .c3 {
@@ -5711,24 +5734,6 @@ exports[`Menu tab through menu until it closes 1`] = `
 `;
 
 exports[`Menu with dropAlign bottom renders 1`] = `
-.c2 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  align-items: center;
-  min-width: 0;
-  min-height: 0;
-  flex-direction: row;
-  justify-content: flex-start;
-  padding: 12px;
-}
-
-.c4 {
-  flex: 0 0 auto;
-  align-self: stretch;
-  width: 12px;
-}
-
 .c5 {
   display: inline-block;
   flex: 0 0 auto;
@@ -5759,6 +5764,24 @@ exports[`Menu with dropAlign bottom renders 1`] = `
 .c5 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
+}
+
+.c2 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: row;
+  justify-content: flex-start;
+  padding: 12px;
+}
+
+.c4 {
+  flex: 0 0 auto;
+  align-self: stretch;
+  width: 12px;
 }
 
 .c3 {
@@ -5885,6 +5908,38 @@ exports[`Menu with dropAlign bottom renders 1`] = `
 `;
 
 exports[`Menu with dropAlign bottom renders 2`] = `
+.c11 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #7D4CDB;
+  stroke: #7D4CDB;
+}
+
+.c11 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c11 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c11 *[stroke*='#'],
+.c11 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c11 *[fill-rule],
+.c11 *[FILL-RULE],
+.c11 *[fill*='#'],
+.c11 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
+}
+
 .c8 {
   display: flex;
   box-sizing: border-box;
@@ -5952,38 +6007,6 @@ exports[`Menu with dropAlign bottom renders 2`] = `
   flex: 0 0 auto;
   align-self: stretch;
   width: 12px;
-}
-
-.c11 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
-}
-
-.c11 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c11 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c11 *[stroke*='#'],
-.c11 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c11 *[fill-rule],
-.c11 *[FILL-RULE],
-.c11 *[fill*='#'],
-.c11 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
 }
 
 .c1 {
@@ -6188,24 +6211,6 @@ exports[`Menu with dropAlign bottom renders 3`] = `
 `;
 
 exports[`Menu with dropAlign top renders 1`] = `
-.c2 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  align-items: center;
-  min-width: 0;
-  min-height: 0;
-  flex-direction: row;
-  justify-content: flex-start;
-  padding: 12px;
-}
-
-.c4 {
-  flex: 0 0 auto;
-  align-self: stretch;
-  width: 12px;
-}
-
 .c5 {
   display: inline-block;
   flex: 0 0 auto;
@@ -6236,6 +6241,24 @@ exports[`Menu with dropAlign top renders 1`] = `
 .c5 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
+}
+
+.c2 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: row;
+  justify-content: flex-start;
+  padding: 12px;
+}
+
+.c4 {
+  flex: 0 0 auto;
+  align-self: stretch;
+  width: 12px;
 }
 
 .c3 {
@@ -6362,6 +6385,38 @@ exports[`Menu with dropAlign top renders 1`] = `
 `;
 
 exports[`Menu with dropAlign top renders 2`] = `
+.c9 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #7D4CDB;
+  stroke: #7D4CDB;
+}
+
+.c9 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c9 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c9 *[stroke*='#'],
+.c9 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c9 *[fill-rule],
+.c9 *[FILL-RULE],
+.c9 *[fill*='#'],
+.c9 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
+}
+
 .c6 {
   display: flex;
   box-sizing: border-box;
@@ -6429,38 +6484,6 @@ exports[`Menu with dropAlign top renders 2`] = `
   flex: 0 0 auto;
   align-self: stretch;
   width: 12px;
-}
-
-.c9 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
-}
-
-.c9 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c9 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c9 *[stroke*='#'],
-.c9 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c9 *[fill-rule],
-.c9 *[FILL-RULE],
-.c9 *[fill*='#'],
-.c9 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
 }
 
 .c1 {
