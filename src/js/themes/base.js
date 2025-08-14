@@ -361,6 +361,20 @@ export const generate = (baseSpacing = 24, scale = 6) => {
     //   size: undefined,
     // },
     accordion: {
+      icon: {
+        container: {
+          pad: {
+            horizontal: 'small',
+          },
+        },
+      },
+      label: {
+        container: {
+          pad: {
+            horizontal: 'xsmall',
+          },
+        },
+      },
       panel: {
         // border: {
         //   side: 'bottom',
@@ -444,6 +458,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
     },
     box: {
+      border: {
+        size: 'xsmall',
+      },
       responsiveBreakpoint: 'small', // when we switch rows to columns
       // extend: undefined,
     },
@@ -672,6 +689,13 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         // },
         // title: {},
         fontSize: `${baseFontSize - fontScale}px`,
+        title: {
+          container: {
+            pad: {
+              horizontal: 'xsmall',
+            },
+          },
+        },
         lineHeight: 1.375,
         daySize: `${(baseSpacing * 8) / 7}px`,
         slideDuration: '0.2s',
@@ -691,6 +715,13 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         // },
         // title: {},
         fontSize: `${baseFontSize}px`,
+        title: {
+          container: {
+            pad: {
+              horizontal: 'small',
+            },
+          },
+        },
         lineHeight: 1.45,
         daySize: `${(baseSpacing * 16) / 7}px`,
         slideDuration: '0.5s',
@@ -710,6 +741,13 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         // },
         // title: {},
         fontSize: `${baseFontSize + 3 * fontScale}px`,
+        title: {
+          container: {
+            pad: {
+              horizontal: 'medium',
+            },
+          },
+        },
         lineHeight: 1.11,
         daySize: `${(baseSpacing * 32) / 7}px`,
         slideDuration: '0.8s',
@@ -744,6 +782,10 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         // any box props
         gap: 'xsmall',
         // extend: undefined,
+      },
+      grid: {
+        columns: 'small',
+        gap: 'medium',
       },
     },
     carousel: {
@@ -784,7 +826,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
       // color: { dark: undefined, light: undefined },
       // extend: undefined,
-      // gap: undefined
+      gap: 'small',
       hover: {
         border: {
           color: {
@@ -820,10 +862,11 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
     },
     checkBoxGroup: {
-      // container: {
-      //   // any box props
-      //   extend: undefined,
-      // },
+      container: {
+        //   // any box props
+        //   extend: undefined,
+        gap: 'small',
+      },
     },
     clock: {
       analog: {
@@ -884,6 +927,18 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       // button: {
       //   kind: undefined,
       // },
+      drop: {
+        pad: 'small',
+      },
+    },
+    dataFilter: {
+      rangeSelector: {
+        size: 'full',
+        round: 'small',
+      },
+      selectMultiple: {
+        dropHeight: 'medium',
+      },
     },
     dateInput: {
       container: {
@@ -892,6 +947,12 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       // icon: {
       //   size: undefined,
       // },
+    },
+    dataSummary: {
+      margin: { vertical: 'xsmall' },
+      separator: {
+        margin: { horizontal: 'small' },
+      },
     },
     dataTable: {
       // body: {
@@ -972,11 +1033,30 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         // },
       },
     },
+    dataTableColumns: {
+      tabs: {
+        pad: 'small',
+      },
+      selectColumns: {
+        pad: {
+          vertical: 'small',
+        },
+        gap: 'xsmall',
+      },
+      orderColumns: {
+        pad: {
+          top: 'small',
+        },
+      },
+    },
     diagram: {
       // extend: undefined,
       line: {
         color: 'graph-0',
       },
+    },
+    distribution: {
+      gap: 'xsmall',
     },
     // drop: {
     //   extend: undefined,
@@ -1015,6 +1095,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         // extend: undefined,
       },
       // extend: undefined,
+    },
+    footer: {
+      gap: 'medium',
     },
     formField: {
       // [inputname]: {
@@ -1108,6 +1191,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       sticky: {
         zIndex: '20',
       },
+      gap: 'medium',
     },
     heading: {
       // color: undefined,
@@ -1216,6 +1300,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           color: 'status-disabled',
           cursor: 'default',
         },
+        gap: 'medium',
         pinned: {
           background: 'background-contrast',
           icon: {
@@ -1246,8 +1331,8 @@ export const generate = (baseSpacing = 24, scale = 6) => {
     },
     menu: {
       // background: undefined,
-      // item: undefined,
       // extend: undefined,
+      // item: undefined,
       drop: {
         align: {
           top: 'top',
@@ -1318,9 +1403,13 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         color: 'text',
       },
     },
+    nav: {
+      gap: 'medium',
+    },
     notification: {
       actions: {
         // any anchor props
+        margin: { right: 'xsmall' },
       },
       direction: 'column',
       container: {
@@ -1331,6 +1420,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           color: 'background-front',
         },
       },
+      gap: 'small',
       global: {
         direction: 'row',
         container: {
@@ -1372,6 +1462,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         // any text props
         margin: 'none',
         // fill: undefined,
+        text: {
+          margin: { right: 'xsmall' },
+        },
       },
       close: {
         icon: FormClose,
@@ -1739,6 +1832,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       large: { ...fontSizing(1) },
       xlarge: { ...fontSizing(2) },
       xxlarge: { ...fontSizing(4) },
+      skeleton: {
+        gap: 'xsmall',
+      },
     },
     thumbsRating: {
       // dislike: {
@@ -1813,7 +1909,10 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
     },
     radioButtonGroup: {
-      // container: {}, // any box props
+      // any box props
+      container: {
+        gap: 'small',
+      },
     },
     rangeInput: {
       disabled: {
@@ -1855,6 +1954,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       edge: {
         // type: undefined,
         // size: undefined,
+      },
+      label: {
+        margin: { horizontal: 'small' },
       },
     },
     select: {
@@ -1900,6 +2002,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           margin: 'none',
         },
       },
+      search: {
+        pad: 'xsmall',
+      },
       // searchInput: undefined,
       step: 20,
     },
@@ -1908,6 +2013,10 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       // listbox: {
       //   extend: () => undefined,
       // },
+    },
+    sidebar: {
+      gap: 'large',
+      pad: 'small',
     },
     skeleton: {
       border: false,
@@ -2172,6 +2281,12 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         color: 'border',
       },
     },
+    toolbar: {
+      small: {
+        gap: 'small',
+      },
+      gap: 'small',
+    },
     video: {
       captions: {
         background: 'rgba(0, 0, 0, 0.7)',
@@ -2192,6 +2307,14 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         color: 'light-4',
         interval: 10,
         // track: { color: undefined }
+        thickness: 'small',
+      },
+      time: {
+        container: {
+          pad: {
+            horizontal: 'small',
+          },
+        },
       },
     },
     worldMap: {
