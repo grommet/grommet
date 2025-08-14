@@ -31,7 +31,7 @@ var getPageIndices = function getPageIndices(begin, end) {
   return indices;
 };
 var Pagination = exports.Pagination = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
-  var _ref2;
+  var _ref2, _theme$pagination$con;
   var a11yTitle = _ref.a11yTitle,
     ariaLabel = _ref['aria-label'],
     numberItems = _ref.numberItems,
@@ -207,14 +207,12 @@ var Pagination = exports.Pagination = /*#__PURE__*/(0, _react.forwardRef)(functi
   // for backwards compatibility
   if (!summary && !stepOptions) return /*#__PURE__*/_react["default"].createElement(StyledPaginationContainer, _extends({
     flex: false
-  }, theme.pagination.container, passThemeFlag, rest), paginationControls);
+  }, _extends({}, theme.pagination.container, {
+    gap: undefined
+  }), passThemeFlag, rest), paginationControls);
   return /*#__PURE__*/_react["default"].createElement(StyledPaginationContainer, _extends({
     direction: "row",
     align: "center",
-    gap: {
-      column: 'xsmall',
-      row: 'small'
-    },
     wrap: true,
     flex: false
   }, theme.pagination.container, passThemeFlag, rest), /*#__PURE__*/_react["default"].createElement(_Box.Box, {
@@ -227,10 +225,7 @@ var Pagination = exports.Pagination = /*#__PURE__*/(0, _react.forwardRef)(functi
   })), /*#__PURE__*/_react["default"].createElement(_Box.Box, {
     align: "center",
     direction: "row",
-    gap: {
-      column: 'xsmall',
-      row: 'small'
-    },
+    gap: (_theme$pagination$con = theme.pagination.container) == null ? void 0 : _theme$pagination$con.gap,
     wrap: true
   }, stepOptions && /*#__PURE__*/_react["default"].createElement(_PaginationStep.PaginationStep, {
     messages: messages,

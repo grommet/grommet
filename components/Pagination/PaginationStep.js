@@ -13,6 +13,7 @@ function _interopRequireWildcard(e, t) { if ("function" == typeof WeakMap) var r
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (-1 !== e.indexOf(n)) continue; t[n] = r[n]; } return t; }
 var PaginationStep = exports.PaginationStep = function PaginationStep(_ref) {
+  var _theme$pagination;
   var messages = _ref.messages,
     onChange = _ref.onChange,
     _ref$options = _ref.options,
@@ -26,7 +27,7 @@ var PaginationStep = exports.PaginationStep = function PaginationStep(_ref) {
   return /*#__PURE__*/_react["default"].createElement(_Box.Box, _extends({
     direction: "row",
     align: "center",
-    gap: "xsmall"
+    gap: (_theme$pagination = theme.pagination) == null || (_theme$pagination = _theme$pagination.step) == null || (_theme$pagination = _theme$pagination.container) == null ? void 0 : _theme$pagination.gap
   }, rest), /*#__PURE__*/_react["default"].createElement(_Text.Text, null, formatMessage({
     id: 'pagination.stepLabel',
     messages: messages

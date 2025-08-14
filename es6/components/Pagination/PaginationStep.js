@@ -8,6 +8,7 @@ import { Text } from '../Text';
 import { MessageContext } from '../../contexts/MessageContext';
 import { useThemeValue } from '../../utils/useThemeValue';
 export var PaginationStep = function PaginationStep(_ref) {
+  var _theme$pagination;
   var messages = _ref.messages,
     onChange = _ref.onChange,
     _ref$options = _ref.options,
@@ -21,7 +22,7 @@ export var PaginationStep = function PaginationStep(_ref) {
   return /*#__PURE__*/React.createElement(Box, _extends({
     direction: "row",
     align: "center",
-    gap: "xsmall"
+    gap: (_theme$pagination = theme.pagination) == null || (_theme$pagination = _theme$pagination.step) == null || (_theme$pagination = _theme$pagination.container) == null ? void 0 : _theme$pagination.gap
   }, rest), /*#__PURE__*/React.createElement(Text, null, formatMessage({
     id: 'pagination.stepLabel',
     messages: messages

@@ -1950,10 +1950,14 @@ var generate = exports.generate = function generate(baseSpacing, scale) {
           }
         }
       },
-      // container: {
-      //   // any box props,
-      //   extend: undefined,
-      // },
+      container: {
+        gap: {
+          column: 'xsmall',
+          row: 'small'
+        }
+        // any box props,
+        // extend: undefined,
+      },
       controls: {
         align: 'center',
         direction: 'row',
@@ -1965,6 +1969,11 @@ var generate = exports.generate = function generate(baseSpacing, scale) {
         // color: undefined,
         next: _Next.Next,
         previous: _Previous.Previous
+      },
+      step: {
+        container: {
+          gap: 'xsmall'
+        }
       }
     },
     paragraph: {
