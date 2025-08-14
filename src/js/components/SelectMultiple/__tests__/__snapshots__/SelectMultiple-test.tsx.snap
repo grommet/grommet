@@ -1,6 +1,38 @@
 // Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`SelectMultiple children 1`] = `
+.c10 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 18px;
+  height: 18px;
+  fill: #555555;
+  stroke: #555555;
+}
+
+.c10 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c10 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c10 *[stroke*='#'],
+.c10 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c10 *[fill-rule],
+.c10 *[FILL-RULE],
+.c10 *[fill*='#'],
+.c10 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
+}
+
 .c1 {
   display: flex;
   box-sizing: border-box;
@@ -38,42 +70,12 @@ exports[`SelectMultiple children 1`] = `
   align-self: center;
   margin-left: 12px;
   margin-right: 12px;
+  margin-left: 12px;
+  margin-right: 12px;
   min-width: 0;
   min-height: 0;
   flex-direction: column;
   min-width: auto;
-}
-
-.c10 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
-}
-
-.c10 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c10 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c10 *[stroke*='#'],
-.c10 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c10 *[fill-rule],
-.c10 *[FILL-RULE],
-.c10 *[fill*='#'],
-.c10 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
 }
 
 .c2 {
@@ -86,16 +88,17 @@ exports[`SelectMultiple children 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  color: inherit;
   outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
+  color: inherit;
 }
 
 .c2:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c2:focus >circle,
@@ -105,8 +108,9 @@ exports[`SelectMultiple children 1`] = `
 .c2:focus >polygon,
 .c2:focus >polyline,
 .c2:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c2:focus ::-moz-focus-inner {
@@ -114,6 +118,8 @@ exports[`SelectMultiple children 1`] = `
 }
 
 .c2:focus:not(:focus-visible) {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -125,6 +131,8 @@ exports[`SelectMultiple children 1`] = `
 .c2:focus:not(:focus-visible) >polygon,
 .c2:focus:not(:focus-visible) >polyline,
 .c2:focus:not(:focus-visible) >rect {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -142,26 +150,31 @@ exports[`SelectMultiple children 1`] = `
   background: transparent;
   color: inherit;
   width: 100%;
-  padding: 11px;
-  font-weight: 600;
+  line-height: inherit;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-weight: 400;
   margin: 0;
-  border: 1px solid rgba(0, 0, 0, 0.33);
-  border-radius: 4px;
+  border: 1px solid rgba(0, 0, 0, 0.36);
+  border-radius: 8px;
+  color: #2e2e2e;
   border: none;
   outline: none;
   border: none;
 }
 
 .c7::-webkit-input-placeholder {
-  color: #AAAAAA;
+  color: #676767;
 }
 
 .c7::-moz-placeholder {
-  color: #AAAAAA;
+  color: #676767;
 }
 
 .c7:-ms-input-placeholder {
-  color: #AAAAAA;
+  color: #676767;
 }
 
 .c7 ::-webkit-search-decoration {
@@ -178,9 +191,26 @@ exports[`SelectMultiple children 1`] = `
   opacity: 1;
 }
 
+.c7::-webkit-input-placeholder {
+  font-weight: 400;
+}
+
+.c7::-moz-placeholder {
+  font-weight: 400;
+}
+
+.c7:-ms-input-placeholder {
+  font-weight: 400;
+}
+
 .c6 {
   position: relative;
   width: 100%;
+}
+
+.c6 svg {
+  fill: #2e2e2e;
+  stroke: #2e2e2e;
 }
 
 .c8 {
@@ -188,13 +218,25 @@ exports[`SelectMultiple children 1`] = `
 }
 
 .c3 {
-  border: 1px solid rgba(0, 0, 0, 0.33);
-  border-radius: 4px;
+  border: 1px solid rgba(0, 0, 0, 0.36);
+  border-radius: 8px;
+}
+
+.c3[class*="SelectMultiple"] [role="listbox"] {
+  padding-block: 6px;
+  padding-inline: 6px;
+}
+
+.c3[class*="SelectMultiple"] [role="listbox"] [role='option'] {
+  border-radius: 6px;
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -206,6 +248,18 @@ exports[`SelectMultiple children 1`] = `
   .c9 {
     margin-left: 6px;
     margin-right: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c9 {
+    margin-left: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c9 {
+    margin-right: 12px;
   }
 }
 
@@ -247,12 +301,12 @@ exports[`SelectMultiple children 1`] = `
           class="c9"
         >
           <svg
-            aria-label="FormDown"
+            aria-label="Down"
             class="c10"
             viewBox="0 0 24 24"
           >
             <path
-              d="m18 9-6 6-6-6"
+              d="m2 8.35 10.173 9.823L21.997 8"
               fill="none"
               stroke="#000"
               stroke-width="2"
@@ -266,6 +320,38 @@ exports[`SelectMultiple children 1`] = `
 `;
 
 exports[`SelectMultiple defaultValue 1`] = `
+.c10 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 18px;
+  height: 18px;
+  fill: #555555;
+  stroke: #555555;
+}
+
+.c10 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c10 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c10 *[stroke*='#'],
+.c10 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c10 *[fill-rule],
+.c10 *[FILL-RULE],
+.c10 *[fill*='#'],
+.c10 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
+}
+
 .c1 {
   display: flex;
   box-sizing: border-box;
@@ -303,42 +389,12 @@ exports[`SelectMultiple defaultValue 1`] = `
   align-self: center;
   margin-left: 12px;
   margin-right: 12px;
+  margin-left: 12px;
+  margin-right: 12px;
   min-width: 0;
   min-height: 0;
   flex-direction: column;
   min-width: auto;
-}
-
-.c10 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
-}
-
-.c10 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c10 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c10 *[stroke*='#'],
-.c10 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c10 *[fill-rule],
-.c10 *[FILL-RULE],
-.c10 *[fill*='#'],
-.c10 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
 }
 
 .c2 {
@@ -351,16 +407,17 @@ exports[`SelectMultiple defaultValue 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  color: inherit;
   outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
+  color: inherit;
 }
 
 .c2:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c2:focus >circle,
@@ -370,8 +427,9 @@ exports[`SelectMultiple defaultValue 1`] = `
 .c2:focus >polygon,
 .c2:focus >polyline,
 .c2:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c2:focus ::-moz-focus-inner {
@@ -379,6 +437,8 @@ exports[`SelectMultiple defaultValue 1`] = `
 }
 
 .c2:focus:not(:focus-visible) {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -390,6 +450,8 @@ exports[`SelectMultiple defaultValue 1`] = `
 .c2:focus:not(:focus-visible) >polygon,
 .c2:focus:not(:focus-visible) >polyline,
 .c2:focus:not(:focus-visible) >rect {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -407,26 +469,31 @@ exports[`SelectMultiple defaultValue 1`] = `
   background: transparent;
   color: inherit;
   width: 100%;
-  padding: 11px;
-  font-weight: 600;
+  line-height: inherit;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-weight: 400;
   margin: 0;
-  border: 1px solid rgba(0, 0, 0, 0.33);
-  border-radius: 4px;
+  border: 1px solid rgba(0, 0, 0, 0.36);
+  border-radius: 8px;
+  color: #2e2e2e;
   border: none;
   outline: none;
   border: none;
 }
 
 .c7::-webkit-input-placeholder {
-  color: #AAAAAA;
+  color: #676767;
 }
 
 .c7::-moz-placeholder {
-  color: #AAAAAA;
+  color: #676767;
 }
 
 .c7:-ms-input-placeholder {
-  color: #AAAAAA;
+  color: #676767;
 }
 
 .c7 ::-webkit-search-decoration {
@@ -443,9 +510,26 @@ exports[`SelectMultiple defaultValue 1`] = `
   opacity: 1;
 }
 
+.c7::-webkit-input-placeholder {
+  font-weight: 400;
+}
+
+.c7::-moz-placeholder {
+  font-weight: 400;
+}
+
+.c7:-ms-input-placeholder {
+  font-weight: 400;
+}
+
 .c6 {
   position: relative;
   width: 100%;
+}
+
+.c6 svg {
+  fill: #2e2e2e;
+  stroke: #2e2e2e;
 }
 
 .c8 {
@@ -453,13 +537,25 @@ exports[`SelectMultiple defaultValue 1`] = `
 }
 
 .c3 {
-  border: 1px solid rgba(0, 0, 0, 0.33);
-  border-radius: 4px;
+  border: 1px solid rgba(0, 0, 0, 0.36);
+  border-radius: 8px;
+}
+
+.c3[class*="SelectMultiple"] [role="listbox"] {
+  padding-block: 6px;
+  padding-inline: 6px;
+}
+
+.c3[class*="SelectMultiple"] [role="listbox"] [role='option'] {
+  border-radius: 6px;
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -471,6 +567,18 @@ exports[`SelectMultiple defaultValue 1`] = `
   .c9 {
     margin-left: 6px;
     margin-right: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c9 {
+    margin-left: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c9 {
+    margin-right: 12px;
   }
 }
 
@@ -512,12 +620,12 @@ exports[`SelectMultiple defaultValue 1`] = `
           class="c9"
         >
           <svg
-            aria-label="FormDown"
+            aria-label="Down"
             class="c10"
             viewBox="0 0 24 24"
           >
             <path
-              d="m18 9-6 6-6-6"
+              d="m2 8.35 10.173 9.823L21.997 8"
               fill="none"
               stroke="#000"
               stroke-width="2"
@@ -532,6 +640,38 @@ exports[`SelectMultiple defaultValue 1`] = `
 `;
 
 exports[`SelectMultiple disabled 1`] = `
+.c10 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 18px;
+  height: 18px;
+  fill: #555555;
+  stroke: #555555;
+}
+
+.c10 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c10 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c10 *[stroke*='#'],
+.c10 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c10 *[fill-rule],
+.c10 *[FILL-RULE],
+.c10 *[fill*='#'],
+.c10 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
+}
+
 .c1 {
   display: flex;
   box-sizing: border-box;
@@ -569,42 +709,12 @@ exports[`SelectMultiple disabled 1`] = `
   align-self: center;
   margin-left: 12px;
   margin-right: 12px;
+  margin-left: 12px;
+  margin-right: 12px;
   min-width: 0;
   min-height: 0;
   flex-direction: column;
   min-width: auto;
-}
-
-.c10 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
-}
-
-.c10 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c10 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c10 *[stroke*='#'],
-.c10 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c10 *[fill-rule],
-.c10 *[FILL-RULE],
-.c10 *[fill*='#'],
-.c10 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
 }
 
 .c2 {
@@ -617,18 +727,19 @@ exports[`SelectMultiple disabled 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  color: inherit;
   outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
-  opacity: 0.3;
+  color: inherit;
+  opacity: 1;
   cursor: default;
 }
 
 .c2:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c2:focus >circle,
@@ -638,8 +749,9 @@ exports[`SelectMultiple disabled 1`] = `
 .c2:focus >polygon,
 .c2:focus >polyline,
 .c2:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c2:focus ::-moz-focus-inner {
@@ -647,6 +759,8 @@ exports[`SelectMultiple disabled 1`] = `
 }
 
 .c2:focus:not(:focus-visible) {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -658,6 +772,8 @@ exports[`SelectMultiple disabled 1`] = `
 .c2:focus:not(:focus-visible) >polygon,
 .c2:focus:not(:focus-visible) >polyline,
 .c2:focus:not(:focus-visible) >rect {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -675,26 +791,31 @@ exports[`SelectMultiple disabled 1`] = `
   background: transparent;
   color: inherit;
   width: 100%;
-  padding: 11px;
-  font-weight: 600;
+  line-height: inherit;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-weight: 400;
   margin: 0;
-  border: 1px solid rgba(0, 0, 0, 0.33);
-  border-radius: 4px;
+  border: 1px solid rgba(0, 0, 0, 0.36);
+  border-radius: 8px;
+  color: #2e2e2e;
   border: none;
   outline: none;
   border: none;
 }
 
 .c7::-webkit-input-placeholder {
-  color: #AAAAAA;
+  color: #676767;
 }
 
 .c7::-moz-placeholder {
-  color: #AAAAAA;
+  color: #676767;
 }
 
 .c7:-ms-input-placeholder {
-  color: #AAAAAA;
+  color: #676767;
 }
 
 .c7 ::-webkit-search-decoration {
@@ -711,9 +832,26 @@ exports[`SelectMultiple disabled 1`] = `
   opacity: 1;
 }
 
+.c7::-webkit-input-placeholder {
+  font-weight: 400;
+}
+
+.c7::-moz-placeholder {
+  font-weight: 400;
+}
+
+.c7:-ms-input-placeholder {
+  font-weight: 400;
+}
+
 .c6 {
   position: relative;
   width: 100%;
+}
+
+.c6 svg {
+  fill: #2e2e2e;
+  stroke: #2e2e2e;
 }
 
 .c8 {
@@ -721,13 +859,30 @@ exports[`SelectMultiple disabled 1`] = `
 }
 
 .c3 {
-  border: 1px solid rgba(0, 0, 0, 0.33);
-  border-radius: 4px;
+  border: 1px solid rgba(0, 0, 0, 0.36);
+  border-radius: 8px;
+  opacity: 0.3;
+}
+
+.c3 input {
+  cursor: default;
+}
+
+.c3[class*="SelectMultiple"] [role="listbox"] {
+  padding-block: 6px;
+  padding-inline: 6px;
+}
+
+.c3[class*="SelectMultiple"] [role="listbox"] [role='option'] {
+  border-radius: 6px;
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -739,6 +894,18 @@ exports[`SelectMultiple disabled 1`] = `
   .c9 {
     margin-left: 6px;
     margin-right: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c9 {
+    margin-left: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c9 {
+    margin-right: 12px;
   }
 }
 
@@ -781,12 +948,12 @@ exports[`SelectMultiple disabled 1`] = `
           class="c9"
         >
           <svg
-            aria-label="FormDown"
+            aria-label="Down"
             class="c10"
             viewBox="0 0 24 24"
           >
             <path
-              d="m18 9-6 6-6-6"
+              d="m2 8.35 10.173 9.823L21.997 8"
               fill="none"
               stroke="#000"
               stroke-width="2"
@@ -800,6 +967,38 @@ exports[`SelectMultiple disabled 1`] = `
 `;
 
 exports[`SelectMultiple keyboard interactions 1`] = `
+.c10 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #7D4CDB;
+  stroke: #7D4CDB;
+}
+
+.c10 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c10 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c10 *[stroke*='#'],
+.c10 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c10 *[fill-rule],
+.c10 *[FILL-RULE],
+.c10 *[fill*='#'],
+.c10 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
+}
+
 .c1 {
   display: flex;
   box-sizing: border-box;
@@ -841,38 +1040,6 @@ exports[`SelectMultiple keyboard interactions 1`] = `
   min-height: 0;
   flex-direction: column;
   min-width: auto;
-}
-
-.c10 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
-}
-
-.c10 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c10 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c10 *[stroke*='#'],
-.c10 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c10 *[fill-rule],
-.c10 *[FILL-RULE],
-.c10 *[fill*='#'],
-.c10 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
 }
 
 .c2 {
@@ -1097,7 +1264,39 @@ exports[`SelectMultiple keyboard interactions 1`] = `
 
 exports[`SelectMultiple null value 1`] = `
 <DocumentFragment>
-  .c1 {
+  .c10 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #7D4CDB;
+  stroke: #7D4CDB;
+}
+
+.c10 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c10 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c10 *[stroke*='#'],
+.c10 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c10 *[fill-rule],
+.c10 *[FILL-RULE],
+.c10 *[fill*='#'],
+.c10 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c1 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -1138,38 +1337,6 @@ exports[`SelectMultiple null value 1`] = `
   min-height: 0;
   flex-direction: column;
   min-width: auto;
-}
-
-.c10 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
-}
-
-.c10 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c10 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c10 *[stroke*='#'],
-.c10 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c10 *[fill-rule],
-.c10 *[FILL-RULE],
-.c10 *[fill*='#'],
-.c10 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
 }
 
 .c2 {
@@ -1363,6 +1530,38 @@ exports[`SelectMultiple null value 1`] = `
 `;
 
 exports[`SelectMultiple placeholder 1`] = `
+.c10 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 18px;
+  height: 18px;
+  fill: #555555;
+  stroke: #555555;
+}
+
+.c10 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c10 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c10 *[stroke*='#'],
+.c10 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c10 *[fill-rule],
+.c10 *[FILL-RULE],
+.c10 *[fill*='#'],
+.c10 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
+}
+
 .c1 {
   display: flex;
   box-sizing: border-box;
@@ -1400,42 +1599,12 @@ exports[`SelectMultiple placeholder 1`] = `
   align-self: center;
   margin-left: 12px;
   margin-right: 12px;
+  margin-left: 12px;
+  margin-right: 12px;
   min-width: 0;
   min-height: 0;
   flex-direction: column;
   min-width: auto;
-}
-
-.c10 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
-}
-
-.c10 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c10 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c10 *[stroke*='#'],
-.c10 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c10 *[fill-rule],
-.c10 *[FILL-RULE],
-.c10 *[fill*='#'],
-.c10 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
 }
 
 .c2 {
@@ -1448,16 +1617,17 @@ exports[`SelectMultiple placeholder 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  color: inherit;
   outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
+  color: inherit;
 }
 
 .c2:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c2:focus >circle,
@@ -1467,8 +1637,9 @@ exports[`SelectMultiple placeholder 1`] = `
 .c2:focus >polygon,
 .c2:focus >polyline,
 .c2:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c2:focus ::-moz-focus-inner {
@@ -1476,6 +1647,8 @@ exports[`SelectMultiple placeholder 1`] = `
 }
 
 .c2:focus:not(:focus-visible) {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -1487,6 +1660,8 @@ exports[`SelectMultiple placeholder 1`] = `
 .c2:focus:not(:focus-visible) >polygon,
 .c2:focus:not(:focus-visible) >polyline,
 .c2:focus:not(:focus-visible) >rect {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -1504,26 +1679,31 @@ exports[`SelectMultiple placeholder 1`] = `
   background: transparent;
   color: inherit;
   width: 100%;
-  padding: 11px;
-  font-weight: 600;
+  line-height: inherit;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-weight: 400;
   margin: 0;
-  border: 1px solid rgba(0, 0, 0, 0.33);
-  border-radius: 4px;
+  border: 1px solid rgba(0, 0, 0, 0.36);
+  border-radius: 8px;
+  color: #2e2e2e;
   border: none;
   outline: none;
   border: none;
 }
 
 .c7::-webkit-input-placeholder {
-  color: #AAAAAA;
+  color: #676767;
 }
 
 .c7::-moz-placeholder {
-  color: #AAAAAA;
+  color: #676767;
 }
 
 .c7:-ms-input-placeholder {
-  color: #AAAAAA;
+  color: #676767;
 }
 
 .c7 ::-webkit-search-decoration {
@@ -1540,9 +1720,26 @@ exports[`SelectMultiple placeholder 1`] = `
   opacity: 1;
 }
 
+.c7::-webkit-input-placeholder {
+  font-weight: 400;
+}
+
+.c7::-moz-placeholder {
+  font-weight: 400;
+}
+
+.c7:-ms-input-placeholder {
+  font-weight: 400;
+}
+
 .c6 {
   position: relative;
   width: 100%;
+}
+
+.c6 svg {
+  fill: #2e2e2e;
+  stroke: #2e2e2e;
 }
 
 .c8 {
@@ -1550,13 +1747,25 @@ exports[`SelectMultiple placeholder 1`] = `
 }
 
 .c3 {
-  border: 1px solid rgba(0, 0, 0, 0.33);
-  border-radius: 4px;
+  border: 1px solid rgba(0, 0, 0, 0.36);
+  border-radius: 8px;
+}
+
+.c3[class*="SelectMultiple"] [role="listbox"] {
+  padding-block: 6px;
+  padding-inline: 6px;
+}
+
+.c3[class*="SelectMultiple"] [role="listbox"] [role='option'] {
+  border-radius: 6px;
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1568,6 +1777,18 @@ exports[`SelectMultiple placeholder 1`] = `
   .c9 {
     margin-left: 6px;
     margin-right: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c9 {
+    margin-left: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c9 {
+    margin-right: 12px;
   }
 }
 
@@ -1610,12 +1831,12 @@ exports[`SelectMultiple placeholder 1`] = `
           class="c9"
         >
           <svg
-            aria-label="FormDown"
+            aria-label="Down"
             class="c10"
             viewBox="0 0 24 24"
           >
             <path
-              d="m18 9-6 6-6-6"
+              d="m2 8.35 10.173 9.823L21.997 8"
               fill="none"
               stroke="#000"
               stroke-width="2"
@@ -1629,6 +1850,38 @@ exports[`SelectMultiple placeholder 1`] = `
 `;
 
 exports[`SelectMultiple renders selectMultiple outside grommet wrapper 1`] = `
+.c9 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #7D4CDB;
+  stroke: #7D4CDB;
+}
+
+.c9 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c9 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c9 *[stroke*='#'],
+.c9 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c9 *[fill-rule],
+.c9 *[FILL-RULE],
+.c9 *[fill*='#'],
+.c9 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
+}
+
 .c0 {
   display: flex;
   box-sizing: border-box;
@@ -1670,38 +1923,6 @@ exports[`SelectMultiple renders selectMultiple outside grommet wrapper 1`] = `
   min-height: 0;
   flex-direction: column;
   min-width: auto;
-}
-
-.c9 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
-}
-
-.c9 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c9 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c9 *[stroke*='#'],
-.c9 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c9 *[fill-rule],
-.c9 *[FILL-RULE],
-.c9 *[fill*='#'],
-.c9 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
 }
 
 .c1 {
@@ -1881,7 +2102,39 @@ exports[`SelectMultiple renders selectMultiple outside grommet wrapper 1`] = `
 
 exports[`SelectMultiple should display custom messages 1`] = `
 <DocumentFragment>
-  .c1 {
+  .c10 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 18px;
+  height: 18px;
+  fill: #555555;
+  stroke: #555555;
+}
+
+.c10 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c10 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c10 *[stroke*='#'],
+.c10 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c10 *[fill-rule],
+.c10 *[FILL-RULE],
+.c10 *[fill*='#'],
+.c10 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c1 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -1918,42 +2171,12 @@ exports[`SelectMultiple should display custom messages 1`] = `
   align-self: center;
   margin-left: 12px;
   margin-right: 12px;
+  margin-left: 12px;
+  margin-right: 12px;
   min-width: 0;
   min-height: 0;
   flex-direction: column;
   min-width: auto;
-}
-
-.c10 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
-}
-
-.c10 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c10 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c10 *[stroke*='#'],
-.c10 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c10 *[fill-rule],
-.c10 *[FILL-RULE],
-.c10 *[fill*='#'],
-.c10 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
 }
 
 .c2 {
@@ -1966,16 +2189,17 @@ exports[`SelectMultiple should display custom messages 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  color: inherit;
   outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
+  color: inherit;
 }
 
 .c2:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c2:focus >circle,
@@ -1985,8 +2209,9 @@ exports[`SelectMultiple should display custom messages 1`] = `
 .c2:focus >polygon,
 .c2:focus >polyline,
 .c2:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c2:focus ::-moz-focus-inner {
@@ -1994,6 +2219,8 @@ exports[`SelectMultiple should display custom messages 1`] = `
 }
 
 .c2:focus:not(:focus-visible) {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -2005,6 +2232,8 @@ exports[`SelectMultiple should display custom messages 1`] = `
 .c2:focus:not(:focus-visible) >polygon,
 .c2:focus:not(:focus-visible) >polyline,
 .c2:focus:not(:focus-visible) >rect {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -2022,26 +2251,31 @@ exports[`SelectMultiple should display custom messages 1`] = `
   background: transparent;
   color: inherit;
   width: 100%;
-  padding: 11px;
-  font-weight: 600;
+  line-height: inherit;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-weight: 400;
   margin: 0;
-  border: 1px solid rgba(0, 0, 0, 0.33);
-  border-radius: 4px;
+  border: 1px solid rgba(0, 0, 0, 0.36);
+  border-radius: 8px;
+  color: #2e2e2e;
   border: none;
   outline: none;
   border: none;
 }
 
 .c7::-webkit-input-placeholder {
-  color: #AAAAAA;
+  color: #676767;
 }
 
 .c7::-moz-placeholder {
-  color: #AAAAAA;
+  color: #676767;
 }
 
 .c7:-ms-input-placeholder {
-  color: #AAAAAA;
+  color: #676767;
 }
 
 .c7 ::-webkit-search-decoration {
@@ -2058,9 +2292,26 @@ exports[`SelectMultiple should display custom messages 1`] = `
   opacity: 1;
 }
 
+.c7::-webkit-input-placeholder {
+  font-weight: 400;
+}
+
+.c7::-moz-placeholder {
+  font-weight: 400;
+}
+
+.c7:-ms-input-placeholder {
+  font-weight: 400;
+}
+
 .c6 {
   position: relative;
   width: 100%;
+}
+
+.c6 svg {
+  fill: #2e2e2e;
+  stroke: #2e2e2e;
 }
 
 .c8 {
@@ -2068,13 +2319,25 @@ exports[`SelectMultiple should display custom messages 1`] = `
 }
 
 .c3 {
-  border: 1px solid rgba(0, 0, 0, 0.33);
-  border-radius: 4px;
+  border: 1px solid rgba(0, 0, 0, 0.36);
+  border-radius: 8px;
+}
+
+.c3[class*="SelectMultiple"] [role="listbox"] {
+  padding-block: 6px;
+  padding-inline: 6px;
+}
+
+.c3[class*="SelectMultiple"] [role="listbox"] [role='option'] {
+  border-radius: 6px;
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -2086,6 +2349,18 @@ exports[`SelectMultiple should display custom messages 1`] = `
   .c9 {
     margin-left: 6px;
     margin-right: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c9 {
+    margin-left: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c9 {
+    margin-right: 12px;
   }
 }
 
@@ -2159,12 +2434,12 @@ exports[`SelectMultiple should display custom messages 1`] = `
             class="c9"
           >
             <svg
-              aria-label="FormDown"
+              aria-label="Up"
               class="c10"
               viewBox="0 0 24 24"
             >
               <path
-                d="m18 9-6 6-6-6"
+                d="m2 15.999 10.173-9.824 9.824 10.173"
                 fill="none"
                 stroke="#000"
                 stroke-width="2"
@@ -2180,7 +2455,39 @@ exports[`SelectMultiple should display custom messages 1`] = `
 
 exports[`SelectMultiple should display custom messages 2`] = `
 <DocumentFragment>
-  .c1 {
+  .c10 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 18px;
+  height: 18px;
+  fill: #555555;
+  stroke: #555555;
+}
+
+.c10 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c10 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c10 *[stroke*='#'],
+.c10 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c10 *[fill-rule],
+.c10 *[FILL-RULE],
+.c10 *[fill*='#'],
+.c10 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c1 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -2217,42 +2524,12 @@ exports[`SelectMultiple should display custom messages 2`] = `
   align-self: center;
   margin-left: 12px;
   margin-right: 12px;
+  margin-left: 12px;
+  margin-right: 12px;
   min-width: 0;
   min-height: 0;
   flex-direction: column;
   min-width: auto;
-}
-
-.c10 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
-}
-
-.c10 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c10 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c10 *[stroke*='#'],
-.c10 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c10 *[fill-rule],
-.c10 *[FILL-RULE],
-.c10 *[fill*='#'],
-.c10 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
 }
 
 .c2 {
@@ -2265,16 +2542,17 @@ exports[`SelectMultiple should display custom messages 2`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  color: inherit;
   outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
+  color: inherit;
 }
 
 .c2:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c2:focus >circle,
@@ -2284,8 +2562,9 @@ exports[`SelectMultiple should display custom messages 2`] = `
 .c2:focus >polygon,
 .c2:focus >polyline,
 .c2:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c2:focus ::-moz-focus-inner {
@@ -2293,6 +2572,8 @@ exports[`SelectMultiple should display custom messages 2`] = `
 }
 
 .c2:focus:not(:focus-visible) {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -2304,6 +2585,8 @@ exports[`SelectMultiple should display custom messages 2`] = `
 .c2:focus:not(:focus-visible) >polygon,
 .c2:focus:not(:focus-visible) >polyline,
 .c2:focus:not(:focus-visible) >rect {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -2321,26 +2604,31 @@ exports[`SelectMultiple should display custom messages 2`] = `
   background: transparent;
   color: inherit;
   width: 100%;
-  padding: 11px;
-  font-weight: 600;
+  line-height: inherit;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-weight: 400;
   margin: 0;
-  border: 1px solid rgba(0, 0, 0, 0.33);
-  border-radius: 4px;
+  border: 1px solid rgba(0, 0, 0, 0.36);
+  border-radius: 8px;
+  color: #2e2e2e;
   border: none;
   outline: none;
   border: none;
 }
 
 .c7::-webkit-input-placeholder {
-  color: #AAAAAA;
+  color: #676767;
 }
 
 .c7::-moz-placeholder {
-  color: #AAAAAA;
+  color: #676767;
 }
 
 .c7:-ms-input-placeholder {
-  color: #AAAAAA;
+  color: #676767;
 }
 
 .c7 ::-webkit-search-decoration {
@@ -2357,9 +2645,26 @@ exports[`SelectMultiple should display custom messages 2`] = `
   opacity: 1;
 }
 
+.c7::-webkit-input-placeholder {
+  font-weight: 400;
+}
+
+.c7::-moz-placeholder {
+  font-weight: 400;
+}
+
+.c7:-ms-input-placeholder {
+  font-weight: 400;
+}
+
 .c6 {
   position: relative;
   width: 100%;
+}
+
+.c6 svg {
+  fill: #2e2e2e;
+  stroke: #2e2e2e;
 }
 
 .c8 {
@@ -2367,13 +2672,25 @@ exports[`SelectMultiple should display custom messages 2`] = `
 }
 
 .c3 {
-  border: 1px solid rgba(0, 0, 0, 0.33);
-  border-radius: 4px;
+  border: 1px solid rgba(0, 0, 0, 0.36);
+  border-radius: 8px;
+}
+
+.c3[class*="SelectMultiple"] [role="listbox"] {
+  padding-block: 6px;
+  padding-inline: 6px;
+}
+
+.c3[class*="SelectMultiple"] [role="listbox"] [role='option'] {
+  border-radius: 6px;
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -2385,6 +2702,18 @@ exports[`SelectMultiple should display custom messages 2`] = `
   .c9 {
     margin-left: 6px;
     margin-right: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c9 {
+    margin-left: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c9 {
+    margin-right: 12px;
   }
 }
 
@@ -2458,12 +2787,12 @@ exports[`SelectMultiple should display custom messages 2`] = `
             class="c9"
           >
             <svg
-              aria-label="FormDown"
+              aria-label="Up"
               class="c10"
               viewBox="0 0 24 24"
             >
               <path
-                d="m18 9-6 6-6-6"
+                d="m2 15.999 10.173-9.824 9.824 10.173"
                 fill="none"
                 stroke="#000"
                 stroke-width="2"
@@ -2479,7 +2808,39 @@ exports[`SelectMultiple should display custom messages 2`] = `
 
 exports[`SelectMultiple should display custom messages 3`] = `
 <DocumentFragment>
-  .c1 {
+  .c10 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 18px;
+  height: 18px;
+  fill: #555555;
+  stroke: #555555;
+}
+
+.c10 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c10 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c10 *[stroke*='#'],
+.c10 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c10 *[fill-rule],
+.c10 *[FILL-RULE],
+.c10 *[fill*='#'],
+.c10 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c1 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -2516,42 +2877,12 @@ exports[`SelectMultiple should display custom messages 3`] = `
   align-self: center;
   margin-left: 12px;
   margin-right: 12px;
+  margin-left: 12px;
+  margin-right: 12px;
   min-width: 0;
   min-height: 0;
   flex-direction: column;
   min-width: auto;
-}
-
-.c10 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
-}
-
-.c10 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c10 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c10 *[stroke*='#'],
-.c10 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c10 *[fill-rule],
-.c10 *[FILL-RULE],
-.c10 *[fill*='#'],
-.c10 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
 }
 
 .c2 {
@@ -2564,16 +2895,17 @@ exports[`SelectMultiple should display custom messages 3`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  color: inherit;
   outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
+  color: inherit;
 }
 
 .c2:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c2:focus >circle,
@@ -2583,8 +2915,9 @@ exports[`SelectMultiple should display custom messages 3`] = `
 .c2:focus >polygon,
 .c2:focus >polyline,
 .c2:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c2:focus ::-moz-focus-inner {
@@ -2592,6 +2925,8 @@ exports[`SelectMultiple should display custom messages 3`] = `
 }
 
 .c2:focus:not(:focus-visible) {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -2603,6 +2938,8 @@ exports[`SelectMultiple should display custom messages 3`] = `
 .c2:focus:not(:focus-visible) >polygon,
 .c2:focus:not(:focus-visible) >polyline,
 .c2:focus:not(:focus-visible) >rect {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -2620,26 +2957,31 @@ exports[`SelectMultiple should display custom messages 3`] = `
   background: transparent;
   color: inherit;
   width: 100%;
-  padding: 11px;
-  font-weight: 600;
+  line-height: inherit;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-weight: 400;
   margin: 0;
-  border: 1px solid rgba(0, 0, 0, 0.33);
-  border-radius: 4px;
+  border: 1px solid rgba(0, 0, 0, 0.36);
+  border-radius: 8px;
+  color: #2e2e2e;
   border: none;
   outline: none;
   border: none;
 }
 
 .c7::-webkit-input-placeholder {
-  color: #AAAAAA;
+  color: #676767;
 }
 
 .c7::-moz-placeholder {
-  color: #AAAAAA;
+  color: #676767;
 }
 
 .c7:-ms-input-placeholder {
-  color: #AAAAAA;
+  color: #676767;
 }
 
 .c7 ::-webkit-search-decoration {
@@ -2656,9 +2998,26 @@ exports[`SelectMultiple should display custom messages 3`] = `
   opacity: 1;
 }
 
+.c7::-webkit-input-placeholder {
+  font-weight: 400;
+}
+
+.c7::-moz-placeholder {
+  font-weight: 400;
+}
+
+.c7:-ms-input-placeholder {
+  font-weight: 400;
+}
+
 .c6 {
   position: relative;
   width: 100%;
+}
+
+.c6 svg {
+  fill: #2e2e2e;
+  stroke: #2e2e2e;
 }
 
 .c8 {
@@ -2666,13 +3025,25 @@ exports[`SelectMultiple should display custom messages 3`] = `
 }
 
 .c3 {
-  border: 1px solid rgba(0, 0, 0, 0.33);
-  border-radius: 4px;
+  border: 1px solid rgba(0, 0, 0, 0.36);
+  border-radius: 8px;
+}
+
+.c3[class*="SelectMultiple"] [role="listbox"] {
+  padding-block: 6px;
+  padding-inline: 6px;
+}
+
+.c3[class*="SelectMultiple"] [role="listbox"] [role='option'] {
+  border-radius: 6px;
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -2684,6 +3055,18 @@ exports[`SelectMultiple should display custom messages 3`] = `
   .c9 {
     margin-left: 6px;
     margin-right: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c9 {
+    margin-left: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c9 {
+    margin-right: 12px;
   }
 }
 
@@ -2757,12 +3140,12 @@ exports[`SelectMultiple should display custom messages 3`] = `
             class="c9"
           >
             <svg
-              aria-label="FormDown"
+              aria-label="Up"
               class="c10"
               viewBox="0 0 24 24"
             >
               <path
-                d="m18 9-6 6-6-6"
+                d="m2 15.999 10.173-9.824 9.824 10.173"
                 fill="none"
                 stroke="#000"
                 stroke-width="2"
@@ -2777,6 +3160,38 @@ exports[`SelectMultiple should display custom messages 3`] = `
 `;
 
 exports[`SelectMultiple should not have accessibility violations 1`] = `
+.c10 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 18px;
+  height: 18px;
+  fill: #555555;
+  stroke: #555555;
+}
+
+.c10 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c10 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c10 *[stroke*='#'],
+.c10 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c10 *[fill-rule],
+.c10 *[FILL-RULE],
+.c10 *[fill*='#'],
+.c10 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
+}
+
 .c1 {
   display: flex;
   box-sizing: border-box;
@@ -2814,42 +3229,12 @@ exports[`SelectMultiple should not have accessibility violations 1`] = `
   align-self: center;
   margin-left: 12px;
   margin-right: 12px;
+  margin-left: 12px;
+  margin-right: 12px;
   min-width: 0;
   min-height: 0;
   flex-direction: column;
   min-width: auto;
-}
-
-.c10 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
-}
-
-.c10 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c10 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c10 *[stroke*='#'],
-.c10 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c10 *[fill-rule],
-.c10 *[FILL-RULE],
-.c10 *[fill*='#'],
-.c10 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
 }
 
 .c2 {
@@ -2862,16 +3247,17 @@ exports[`SelectMultiple should not have accessibility violations 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  color: inherit;
   outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
+  color: inherit;
 }
 
 .c2:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c2:focus >circle,
@@ -2881,8 +3267,9 @@ exports[`SelectMultiple should not have accessibility violations 1`] = `
 .c2:focus >polygon,
 .c2:focus >polyline,
 .c2:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 2px 2px #ffffff;
 }
 
 .c2:focus ::-moz-focus-inner {
@@ -2890,6 +3277,8 @@ exports[`SelectMultiple should not have accessibility violations 1`] = `
 }
 
 .c2:focus:not(:focus-visible) {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -2901,6 +3290,8 @@ exports[`SelectMultiple should not have accessibility violations 1`] = `
 .c2:focus:not(:focus-visible) >polygon,
 .c2:focus:not(:focus-visible) >polyline,
 .c2:focus:not(:focus-visible) >rect {
+  outline-offset: 0px;
+  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -2918,26 +3309,31 @@ exports[`SelectMultiple should not have accessibility violations 1`] = `
   background: transparent;
   color: inherit;
   width: 100%;
-  padding: 11px;
-  font-weight: 600;
+  line-height: inherit;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-weight: 400;
   margin: 0;
-  border: 1px solid rgba(0, 0, 0, 0.33);
-  border-radius: 4px;
+  border: 1px solid rgba(0, 0, 0, 0.36);
+  border-radius: 8px;
+  color: #2e2e2e;
   border: none;
   outline: none;
   border: none;
 }
 
 .c7::-webkit-input-placeholder {
-  color: #AAAAAA;
+  color: #676767;
 }
 
 .c7::-moz-placeholder {
-  color: #AAAAAA;
+  color: #676767;
 }
 
 .c7:-ms-input-placeholder {
-  color: #AAAAAA;
+  color: #676767;
 }
 
 .c7 ::-webkit-search-decoration {
@@ -2954,9 +3350,26 @@ exports[`SelectMultiple should not have accessibility violations 1`] = `
   opacity: 1;
 }
 
+.c7::-webkit-input-placeholder {
+  font-weight: 400;
+}
+
+.c7::-moz-placeholder {
+  font-weight: 400;
+}
+
+.c7:-ms-input-placeholder {
+  font-weight: 400;
+}
+
 .c6 {
   position: relative;
   width: 100%;
+}
+
+.c6 svg {
+  fill: #2e2e2e;
+  stroke: #2e2e2e;
 }
 
 .c8 {
@@ -2964,13 +3377,25 @@ exports[`SelectMultiple should not have accessibility violations 1`] = `
 }
 
 .c3 {
-  border: 1px solid rgba(0, 0, 0, 0.33);
-  border-radius: 4px;
+  border: 1px solid rgba(0, 0, 0, 0.36);
+  border-radius: 8px;
+}
+
+.c3[class*="SelectMultiple"] [role="listbox"] {
+  padding-block: 6px;
+  padding-inline: 6px;
+}
+
+.c3[class*="SelectMultiple"] [role="listbox"] [role='option'] {
+  border-radius: 6px;
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -2982,6 +3407,18 @@ exports[`SelectMultiple should not have accessibility violations 1`] = `
   .c9 {
     margin-left: 6px;
     margin-right: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c9 {
+    margin-left: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c9 {
+    margin-right: 12px;
   }
 }
 
@@ -3024,12 +3461,12 @@ exports[`SelectMultiple should not have accessibility violations 1`] = `
           class="c9"
         >
           <svg
-            aria-label="FormDown"
+            aria-label="Down"
             class="c10"
             viewBox="0 0 24 24"
           >
             <path
-              d="m18 9-6 6-6-6"
+              d="m2 8.35 10.173 9.823L21.997 8"
               fill="none"
               stroke="#000"
               stroke-width="2"
@@ -3043,6 +3480,38 @@ exports[`SelectMultiple should not have accessibility violations 1`] = `
 `;
 
 exports[`SelectMultiple showSelectionInline 1`] = `
+.c10 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #7D4CDB;
+  stroke: #7D4CDB;
+}
+
+.c10 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c10 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c10 *[stroke*='#'],
+.c10 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c10 *[fill-rule],
+.c10 *[FILL-RULE],
+.c10 *[fill*='#'],
+.c10 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
+}
+
 .c1 {
   display: flex;
   box-sizing: border-box;
@@ -3122,38 +3591,6 @@ exports[`SelectMultiple showSelectionInline 1`] = `
   min-width: 0;
   min-height: 0;
   flex-direction: column;
-}
-
-.c10 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
-}
-
-.c10 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c10 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c10 *[stroke*='#'],
-.c10 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c10 *[fill-rule],
-.c10 *[FILL-RULE],
-.c10 *[fill*='#'],
-.c10 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
 }
 
 .c4 {
@@ -3652,6 +4089,38 @@ exports[`SelectMultiple showSelectionInline 1`] = `
 `;
 
 exports[`SelectMultiple showSelectionInline with children 1`] = `
+.c10 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #7D4CDB;
+  stroke: #7D4CDB;
+}
+
+.c10 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c10 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c10 *[stroke*='#'],
+.c10 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c10 *[fill-rule],
+.c10 *[FILL-RULE],
+.c10 *[fill*='#'],
+.c10 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
+}
+
 .c1 {
   display: flex;
   box-sizing: border-box;
@@ -3703,38 +4172,6 @@ exports[`SelectMultiple showSelectionInline with children 1`] = `
   min-height: 0;
   flex-direction: column;
   padding: 12px;
-}
-
-.c10 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
-}
-
-.c10 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c10 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c10 *[stroke*='#'],
-.c10 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c10 *[fill-rule],
-.c10 *[FILL-RULE],
-.c10 *[fill*='#'],
-.c10 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
 }
 
 .c4 {
@@ -4231,6 +4668,38 @@ exports[`SelectMultiple showSelectionInline with children 2`] = `
 `;
 
 exports[`SelectMultiple showSelectionInline with disabled options 1`] = `
+.c10 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #7D4CDB;
+  stroke: #7D4CDB;
+}
+
+.c10 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c10 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c10 *[stroke*='#'],
+.c10 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c10 *[fill-rule],
+.c10 *[FILL-RULE],
+.c10 *[fill*='#'],
+.c10 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
+}
+
 .c1 {
   display: flex;
   box-sizing: border-box;
@@ -4310,38 +4779,6 @@ exports[`SelectMultiple showSelectionInline with disabled options 1`] = `
   min-width: 0;
   min-height: 0;
   flex-direction: column;
-}
-
-.c10 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
-}
-
-.c10 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c10 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c10 *[stroke*='#'],
-.c10 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c10 *[fill-rule],
-.c10 *[FILL-RULE],
-.c10 *[fill*='#'],
-.c10 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
 }
 
 .c4 {
@@ -4728,6 +5165,38 @@ exports[`SelectMultiple showSelectionInline with disabled options 1`] = `
 `;
 
 exports[`SelectMultiple valueKey and labelKey 1`] = `
+.c10 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #7D4CDB;
+  stroke: #7D4CDB;
+}
+
+.c10 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c10 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c10 *[stroke*='#'],
+.c10 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c10 *[fill-rule],
+.c10 *[FILL-RULE],
+.c10 *[fill*='#'],
+.c10 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
+}
+
 .c1 {
   display: flex;
   box-sizing: border-box;
@@ -4807,38 +5276,6 @@ exports[`SelectMultiple valueKey and labelKey 1`] = `
   min-width: 0;
   min-height: 0;
   flex-direction: column;
-}
-
-.c10 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
-}
-
-.c10 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c10 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c10 *[stroke*='#'],
-.c10 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c10 *[fill-rule],
-.c10 *[FILL-RULE],
-.c10 *[fill*='#'],
-.c10 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
 }
 
 .c4 {
@@ -5219,6 +5656,38 @@ exports[`SelectMultiple valueKey and labelKey 1`] = `
 `;
 
 exports[`SelectMultiple with portal disabled option 1`] = `
+.c8 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #7D4CDB;
+  stroke: #7D4CDB;
+}
+
+.c8 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c8 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c8 *[stroke*='#'],
+.c8 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c8 *[fill-rule],
+.c8 *[FILL-RULE],
+.c8 *[fill*='#'],
+.c8 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
+}
+
 .c2 {
   display: flex;
   box-sizing: border-box;
@@ -5251,38 +5720,6 @@ exports[`SelectMultiple with portal disabled option 1`] = `
   min-height: 0;
   flex-direction: column;
   min-width: auto;
-}
-
-.c8 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
-}
-
-.c8 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c8 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c8 *[stroke*='#'],
-.c8 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c8 *[fill-rule],
-.c8 *[FILL-RULE],
-.c8 *[fill*='#'],
-.c8 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
 }
 
 .c0 {
@@ -5488,68 +5925,56 @@ exports[`SelectMultiple with portal disabled option 1`] = `
 
 exports[`SelectMultiple with portal disabled option 2`] = `
 "@media only screen and (max-width: 768px) {
-  .kshAea {
+  .dxGwVz {
     margin-left: 6px;
     margin-right: 6px;
   }
 }
-.jLPXpV {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  font: inherit;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  color: inherit;
-  outline: none;
-  border: none;
-  padding: 0;
-  text-align: inherit;
+@media only screen and (max-width: 768px) {
+  .dxGwVz {
+    margin-left: 6px;
+  }
 }
-.jLPXpV:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6fffb0;
-}
-.jLPXpV:focus > circle,
-.jLPXpV:focus > ellipse,
-.jLPXpV:focus > line,
-.jLPXpV:focus > path,
-.jLPXpV:focus > polygon,
-.jLPXpV:focus > polyline,
-.jLPXpV:focus > rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6fffb0;
-}
-.jLPXpV:focus ::-moz-focus-inner {
-  border: 0;
-}
-.jLPXpV:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-.jLPXpV:focus:not(:focus-visible) > circle,
-.jLPXpV:focus:not(:focus-visible) > ellipse,
-.jLPXpV:focus:not(:focus-visible) > line,
-.jLPXpV:focus:not(:focus-visible) > path,
-.jLPXpV:focus:not(:focus-visible) > polygon,
-.jLPXpV:focus:not(:focus-visible) > polyline,
-.jLPXpV:focus:not(:focus-visible) > rect {
-  outline: none;
-  box-shadow: none;
-}
-.jLPXpV:focus:not(:focus-visible) ::-moz-focus-inner {
-  border: 0;
-}
-.cKuORg {
-  border: 1px solid rgba(0, 0, 0, 0.33);
-  border-radius: 4px;
+@media only screen and (max-width: 768px) {
+  .dxGwVz {
+    margin-right: 12px;
+  }
 }"
 `;
 
 exports[`SelectMultiple with portal empty options 1`] = `
+.c8 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #7D4CDB;
+  stroke: #7D4CDB;
+}
+
+.c8 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c8 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c8 *[stroke*='#'],
+.c8 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c8 *[fill-rule],
+.c8 *[FILL-RULE],
+.c8 *[fill*='#'],
+.c8 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
+}
+
 .c2 {
   display: flex;
   box-sizing: border-box;
@@ -5582,38 +6007,6 @@ exports[`SelectMultiple with portal empty options 1`] = `
   min-height: 0;
   flex-direction: column;
   min-width: auto;
-}
-
-.c8 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
-}
-
-.c8 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c8 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c8 *[stroke*='#'],
-.c8 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c8 *[fill-rule],
-.c8 *[FILL-RULE],
-.c8 *[fill*='#'],
-.c8 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
 }
 
 .c0 {
@@ -5807,68 +6200,56 @@ exports[`SelectMultiple with portal empty options 1`] = `
 
 exports[`SelectMultiple with portal empty options 2`] = `
 "@media only screen and (max-width: 768px) {
-  .kshAea {
+  .dxGwVz {
     margin-left: 6px;
     margin-right: 6px;
   }
 }
-.jLPXpV {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  font: inherit;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  color: inherit;
-  outline: none;
-  border: none;
-  padding: 0;
-  text-align: inherit;
+@media only screen and (max-width: 768px) {
+  .dxGwVz {
+    margin-left: 6px;
+  }
 }
-.jLPXpV:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6fffb0;
-}
-.jLPXpV:focus > circle,
-.jLPXpV:focus > ellipse,
-.jLPXpV:focus > line,
-.jLPXpV:focus > path,
-.jLPXpV:focus > polygon,
-.jLPXpV:focus > polyline,
-.jLPXpV:focus > rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6fffb0;
-}
-.jLPXpV:focus ::-moz-focus-inner {
-  border: 0;
-}
-.jLPXpV:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-.jLPXpV:focus:not(:focus-visible) > circle,
-.jLPXpV:focus:not(:focus-visible) > ellipse,
-.jLPXpV:focus:not(:focus-visible) > line,
-.jLPXpV:focus:not(:focus-visible) > path,
-.jLPXpV:focus:not(:focus-visible) > polygon,
-.jLPXpV:focus:not(:focus-visible) > polyline,
-.jLPXpV:focus:not(:focus-visible) > rect {
-  outline: none;
-  box-shadow: none;
-}
-.jLPXpV:focus:not(:focus-visible) ::-moz-focus-inner {
-  border: 0;
-}
-.cKuORg {
-  border: 1px solid rgba(0, 0, 0, 0.33);
-  border-radius: 4px;
+@media only screen and (max-width: 768px) {
+  .dxGwVz {
+    margin-right: 12px;
+  }
 }"
 `;
 
 exports[`SelectMultiple with portal limit 1`] = `
+.c8 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #7D4CDB;
+  stroke: #7D4CDB;
+}
+
+.c8 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c8 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c8 *[stroke*='#'],
+.c8 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c8 *[fill-rule],
+.c8 *[FILL-RULE],
+.c8 *[fill*='#'],
+.c8 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
+}
+
 .c2 {
   display: flex;
   box-sizing: border-box;
@@ -5901,38 +6282,6 @@ exports[`SelectMultiple with portal limit 1`] = `
   min-height: 0;
   flex-direction: column;
   min-width: auto;
-}
-
-.c8 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
-}
-
-.c8 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c8 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c8 *[stroke*='#'],
-.c8 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c8 *[fill-rule],
-.c8 *[FILL-RULE],
-.c8 *[fill*='#'],
-.c8 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
 }
 
 .c0 {
@@ -6138,64 +6487,20 @@ exports[`SelectMultiple with portal limit 1`] = `
 
 exports[`SelectMultiple with portal limit 2`] = `
 "@media only screen and (max-width: 768px) {
-  .kshAea {
+  .dxGwVz {
     margin-left: 6px;
     margin-right: 6px;
   }
 }
-.jLPXpV {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  font: inherit;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  color: inherit;
-  outline: none;
-  border: none;
-  padding: 0;
-  text-align: inherit;
+@media only screen and (max-width: 768px) {
+  .dxGwVz {
+    margin-left: 6px;
+  }
 }
-.jLPXpV:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6fffb0;
-}
-.jLPXpV:focus > circle,
-.jLPXpV:focus > ellipse,
-.jLPXpV:focus > line,
-.jLPXpV:focus > path,
-.jLPXpV:focus > polygon,
-.jLPXpV:focus > polyline,
-.jLPXpV:focus > rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6fffb0;
-}
-.jLPXpV:focus ::-moz-focus-inner {
-  border: 0;
-}
-.jLPXpV:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-.jLPXpV:focus:not(:focus-visible) > circle,
-.jLPXpV:focus:not(:focus-visible) > ellipse,
-.jLPXpV:focus:not(:focus-visible) > line,
-.jLPXpV:focus:not(:focus-visible) > path,
-.jLPXpV:focus:not(:focus-visible) > polygon,
-.jLPXpV:focus:not(:focus-visible) > polyline,
-.jLPXpV:focus:not(:focus-visible) > rect {
-  outline: none;
-  box-shadow: none;
-}
-.jLPXpV:focus:not(:focus-visible) ::-moz-focus-inner {
-  border: 0;
-}
-.cKuORg {
-  border: 1px solid rgba(0, 0, 0, 0.33);
-  border-radius: 4px;
+@media only screen and (max-width: 768px) {
+  .dxGwVz {
+    margin-right: 12px;
+  }
 }"
 `;
 
@@ -6677,14 +6982,56 @@ exports[`SelectMultiple with portal renders custom listbox styling 1`] = `
 
 exports[`SelectMultiple with portal renders custom listbox styling 2`] = `
 "@media only screen and (max-width: 768px) {
-  .kshAea {
+  .dxGwVz {
     margin-left: 6px;
     margin-right: 6px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .dxGwVz {
+    margin-left: 6px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .dxGwVz {
+    margin-right: 12px;
   }
 }"
 `;
 
 exports[`SelectMultiple with portal select all and clear 1`] = `
+.c8 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #7D4CDB;
+  stroke: #7D4CDB;
+}
+
+.c8 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c8 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c8 *[stroke*='#'],
+.c8 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c8 *[fill-rule],
+.c8 *[FILL-RULE],
+.c8 *[fill*='#'],
+.c8 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
+}
+
 .c2 {
   display: flex;
   box-sizing: border-box;
@@ -6717,38 +7064,6 @@ exports[`SelectMultiple with portal select all and clear 1`] = `
   min-height: 0;
   flex-direction: column;
   min-width: auto;
-}
-
-.c8 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
-}
-
-.c8 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c8 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c8 *[stroke*='#'],
-.c8 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c8 *[fill-rule],
-.c8 *[FILL-RULE],
-.c8 *[fill*='#'],
-.c8 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
 }
 
 .c0 {
@@ -6954,64 +7269,20 @@ exports[`SelectMultiple with portal select all and clear 1`] = `
 
 exports[`SelectMultiple with portal select all and clear 2`] = `
 "@media only screen and (max-width: 768px) {
-  .kshAea {
+  .dxGwVz {
     margin-left: 6px;
     margin-right: 6px;
   }
 }
-.jLPXpV {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  font: inherit;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  color: inherit;
-  outline: none;
-  border: none;
-  padding: 0;
-  text-align: inherit;
+@media only screen and (max-width: 768px) {
+  .dxGwVz {
+    margin-left: 6px;
+  }
 }
-.jLPXpV:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6fffb0;
-}
-.jLPXpV:focus > circle,
-.jLPXpV:focus > ellipse,
-.jLPXpV:focus > line,
-.jLPXpV:focus > path,
-.jLPXpV:focus > polygon,
-.jLPXpV:focus > polyline,
-.jLPXpV:focus > rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6fffb0;
-}
-.jLPXpV:focus ::-moz-focus-inner {
-  border: 0;
-}
-.jLPXpV:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-.jLPXpV:focus:not(:focus-visible) > circle,
-.jLPXpV:focus:not(:focus-visible) > ellipse,
-.jLPXpV:focus:not(:focus-visible) > line,
-.jLPXpV:focus:not(:focus-visible) > path,
-.jLPXpV:focus:not(:focus-visible) > polygon,
-.jLPXpV:focus:not(:focus-visible) > polyline,
-.jLPXpV:focus:not(:focus-visible) > rect {
-  outline: none;
-  box-shadow: none;
-}
-.jLPXpV:focus:not(:focus-visible) ::-moz-focus-inner {
-  border: 0;
-}
-.cKuORg {
-  border: 1px solid rgba(0, 0, 0, 0.33);
-  border-radius: 4px;
+@media only screen and (max-width: 768px) {
+  .dxGwVz {
+    margin-right: 12px;
+  }
 }"
 `;
 
@@ -7068,63 +7339,19 @@ exports[`SelectMultiple with portal select all and clear 3`] = `
 
 exports[`SelectMultiple with portal select all and clear 4`] = `
 "@media only screen and (max-width: 768px) {
-  .kshAea {
+  .dxGwVz {
     margin-left: 6px;
     margin-right: 6px;
   }
 }
-.jLPXpV {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  font: inherit;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  color: inherit;
-  outline: none;
-  border: none;
-  padding: 0;
-  text-align: inherit;
+@media only screen and (max-width: 768px) {
+  .dxGwVz {
+    margin-left: 6px;
+  }
 }
-.jLPXpV:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6fffb0;
-}
-.jLPXpV:focus > circle,
-.jLPXpV:focus > ellipse,
-.jLPXpV:focus > line,
-.jLPXpV:focus > path,
-.jLPXpV:focus > polygon,
-.jLPXpV:focus > polyline,
-.jLPXpV:focus > rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6fffb0;
-}
-.jLPXpV:focus ::-moz-focus-inner {
-  border: 0;
-}
-.jLPXpV:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-.jLPXpV:focus:not(:focus-visible) > circle,
-.jLPXpV:focus:not(:focus-visible) > ellipse,
-.jLPXpV:focus:not(:focus-visible) > line,
-.jLPXpV:focus:not(:focus-visible) > path,
-.jLPXpV:focus:not(:focus-visible) > polygon,
-.jLPXpV:focus:not(:focus-visible) > polyline,
-.jLPXpV:focus:not(:focus-visible) > rect {
-  outline: none;
-  box-shadow: none;
-}
-.jLPXpV:focus:not(:focus-visible) ::-moz-focus-inner {
-  border: 0;
-}
-.cKuORg {
-  border: 1px solid rgba(0, 0, 0, 0.33);
-  border-radius: 4px;
+@media only screen and (max-width: 768px) {
+  .dxGwVz {
+    margin-right: 12px;
+  }
 }"
 `;

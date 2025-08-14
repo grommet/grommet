@@ -7,6 +7,7 @@ import 'regenerator-runtime/runtime';
 import 'jest-styled-components';
 import '@testing-library/jest-dom';
 import { createPortal, expectPortal } from '../../../utils/portal';
+import { hpe } from 'grommet-theme-hpe';
 
 import { Grommet } from '../..';
 import { Box } from '../../Box';
@@ -42,7 +43,7 @@ const TestManyOptions = () => {
   const [options, setOptions] = useState(defaultOptions);
   const [valueMultiple, setValueMultiple] = useState([]);
   return (
-    <Grommet>
+    <Grommet theme={hpe}>
       <SelectMultiple
         options={options}
         value={valueMultiple}
@@ -68,7 +69,7 @@ const TestObj = () => {
     { value: 'tree', label: 'c' },
   ]);
   return (
-    <Grommet>
+    <Grommet theme={hpe}>
       <SelectMultiple
         showSelectedInline
         options={[
@@ -94,7 +95,7 @@ afterEach(() => {
 describe('SelectMultiple', () => {
   test('should not have accessibility violations', async () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <SelectMultiple options={['one', 'two', 'three']} a11yTitle="test" />
       </Grommet>,
     );
@@ -118,7 +119,7 @@ describe('SelectMultiple', () => {
 
   test('defaultValue', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <SelectMultiple options={['one', 'two']} defaultValue={['one']} />,
       </Grommet>,
     );
@@ -133,7 +134,7 @@ describe('SelectMultiple', () => {
 
   test('children', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <SelectMultiple options={[{ test: 'one' }, { test: 'two' }]}>
           {(option) => <span>{option.test}</span>}
         </SelectMultiple>
@@ -145,7 +146,7 @@ describe('SelectMultiple', () => {
 
   test('placeholder', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <SelectMultiple
           help={<Text>help text</Text>}
           options={[{ test: 'one' }, { test: 'two' }]}
@@ -159,7 +160,7 @@ describe('SelectMultiple', () => {
 
   test('disabled', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <SelectMultiple options={[1, 2]} disabled />
       </Grommet>,
     );
@@ -378,7 +379,7 @@ describe('SelectMultiple', () => {
 
   test('object value', () => {
     render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <SelectMultiple
           showSelectedInline
           options={[
@@ -459,7 +460,7 @@ describe('SelectMultiple', () => {
       const [options, setOptions] = useState(defaultOptions);
       const [valueMultiple, setValueMultiple] = useState([]);
       return (
-        <Grommet>
+        <Grommet theme={hpe}>
           <SelectMultiple
             options={options}
             value={valueMultiple}
