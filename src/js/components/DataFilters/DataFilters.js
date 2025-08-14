@@ -100,7 +100,7 @@ export const DataFilters = ({
   );
 
   const clearControl = badge && clearFilters && (
-    <Box flex={false} margin={{ start: 'small' }}>
+    <Box flex={false} margin={theme.dataFilters?.clearControl?.margin}>
       <DataClearFilters />
     </Box>
   );
@@ -126,7 +126,7 @@ export const DataFilters = ({
 
   content = (
     <DataForm
-      pad={controlled ? 'medium' : undefined}
+      pad={controlled ? theme.dataFilters?.pad : undefined}
       onDone={() => setShowContent(false)}
       updateOn={updateOn}
       {...(!controlled ? rest : { fill: 'vertical' })}
@@ -200,7 +200,7 @@ export const DataFilters = ({
           onClickOutside={() => setShowContent(undefined)}
           onEsc={() => setShowContent(undefined)}
         >
-          <Box width={{ min: 'medium' }}>{content}</Box>
+          <Box width={theme.dataFilters?.width}>{content}</Box>
         </Layer>
       )}
     </Box>
