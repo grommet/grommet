@@ -1001,6 +1001,9 @@ export interface ThemeType {
     maxHeight?: string;
   };
   fileInput?: {
+    anchor?: {
+      margin?: MarginType;
+    };
     background?: BackgroundType;
     border?: BorderType;
     dragOver?: {

@@ -1148,6 +1148,9 @@ export var generate = function generate(baseSpacing, scale) {
     //   maxHeight: undefined,
     // },
     fileInput: {
+      anchor: {
+        margin: 'small'
+      },
       // background: {},
       border: {
         // color: undefined,
@@ -1172,6 +1175,7 @@ export var generate = function generate(baseSpacing, scale) {
       },
       // pad: {},
       label: {
+        gap: 'xsmall',
         margin: 'small'
         // extend: undefined,
       },

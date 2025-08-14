@@ -5,7 +5,7 @@ import React, { forwardRef, useContext, useRef, useState } from 'react';
 import styled from 'styled-components';
 import { CircleAlert } from 'grommet-icons/icons/CircleAlert';
 import { MessageContext } from '../../contexts/MessageContext';
-import { disabledStyle, focusStyle, parseMetricToNum, unfocusStyle, useForwardedRef, useKeyboard } from '../../utils';
+import { disabledStyle, focusStyle, unfocusStyle, useForwardedRef, useKeyboard } from '../../utils';
 import { Anchor } from '../Anchor';
 import { Box } from '../Box';
 import { Button } from '../Button';
@@ -56,6 +56,7 @@ var defaultPendingRemoval = {
   index: undefined
 };
 var FileInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
+  var _theme$fileInput$anch;
   var a11yTitle = _ref.a11yTitle,
     background = _ref.background,
     border = _ref.border,
@@ -166,36 +167,6 @@ var FileInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
     } else result = _extends({}, result, dragOverThemeProp);
     return typeof result === 'object' && Object.keys(result).length === 0 ? undefined : result;
   };
-  var rightPad;
-  if (mergeTheme('pad')) {
-    var _mergeTheme = mergeTheme('pad'),
-      horizontal = _mergeTheme.horizontal,
-      right = _mergeTheme.right;
-    if (right) {
-      rightPad = theme.global.edgeSize[right] || right;
-    } else if (horizontal) {
-      rightPad = theme.global.edgeSize[horizontal] || horizontal;
-    }
-  }
-
-  // rightPad needs to be included in the rightOffset
-  // otherwise input may cover the RemoveButton, making it
-  // unreachable by mouse click.
-  // If browse anchor or button is greater than remove button then
-  // rightoffset will take the larger width
-  var rightOffset;
-  if (removeRef.current && controlRef.current) {
-    var rightOffsetBrowse = controlRef.current.getBoundingClientRect().width;
-    var rightOffsetRemove = removeRef.current.getBoundingClientRect().width;
-    if (rightPad && typeof rightPad === 'string') rightOffset = rightOffsetRemove + parseMetricToNum(rightPad);
-    if (files.length === 1 || files.length > aggregateThreshold) {
-      rightOffset = rightOffsetBrowse + rightOffsetRemove + parseMetricToNum(theme.global.edgeSize.small) * 2;
-    } else if (rightOffsetBrowse > rightOffsetRemove) {
-      rightOffset = rightOffsetBrowse + parseMetricToNum(theme.global.edgeSize.small) * 2;
-    } else rightOffset = rightOffsetRemove;
-  } else if (!files.length && controlRef.current) {
-    rightOffset = controlRef.current.getBoundingClientRect().width + parseMetricToNum(theme.global.edgeSize.small) * 2;
-  }
 
   // Show the number of files when more than one
 
@@ -238,6 +209,40 @@ var FileInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
     });
     inputRef.current.focus();
   };
+
+  // rightPad needs to be included in the rightOffset
+  // otherwise input may cover the RemoveButton, making it
+  // unreachable by mouse click.
+  var rightPad = '0px';
+  if (mergeTheme('pad')) {
+    var _mergeTheme = mergeTheme('pad'),
+      horizontal = _mergeTheme.horizontal,
+      right = _mergeTheme.right;
+    if (right) {
+      rightPad = theme.global.edgeSize[right] || right;
+    } else if (horizontal) {
+      rightPad = theme.global.edgeSize[horizontal] || horizontal;
+    }
+  }
+  var removeWidth = removeRef.current ? removeRef.current.getBoundingClientRect().width : 0;
+  var controlWidth = controlRef.current ? controlRef.current.getBoundingClientRect().width : 0;
+  if (controlRef.current && (_theme$fileInput$anch = theme.fileInput.anchor) != null && _theme$fileInput$anch.margin) {
+    if (typeof theme.fileInput.anchor.margin === 'string') {
+      controlWidth += parseInt(theme.global.edgeSize[theme.fileInput.anchor.margin] || theme.fileInput.anchor.margin, 10) * 2;
+    } else if (typeof theme.fileInput.anchor.margin === 'object') {
+      var _theme$fileInput$anch2, _theme$fileInput$anch3, _theme$fileInput$anch4;
+      if ((_theme$fileInput$anch2 = theme.fileInput.anchor.margin) != null && _theme$fileInput$anch2.horizontal) {
+        controlWidth += parseInt(theme.global.edgeSize[theme.fileInput.anchor.margin.horizontal] || theme.fileInput.anchor.margin.horizontal, 10) * 2;
+      }
+      if ((_theme$fileInput$anch3 = theme.fileInput.anchor.margin) != null && _theme$fileInput$anch3.right) {
+        controlWidth += parseInt(theme.global.edgeSize[theme.fileInput.anchor.margin.right] || theme.fileInput.anchor.margin.right, 10);
+      }
+      if ((_theme$fileInput$anch4 = theme.fileInput.anchor.margin) != null && _theme$fileInput$anch4.left) {
+        controlWidth += parseInt(theme.global.edgeSize[theme.fileInput.anchor.margin.left] || theme.fileInput.anchor.margin.left, 10);
+      }
+    }
+  }
+  var rightOffset = files.length > 1 ? removeWidth + parseInt(rightPad, 10) : removeWidth + controlWidth + parseInt(rightPad, 10);
   return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(ContentsBox, _extends({
     theme: theme,
     flex: false,
@@ -270,7 +275,7 @@ var FileInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
     "aria-invalid": maxSize && files.some(function (f) {
       return f.size > maxSize;
     }) || max != null && files.length > max,
-    rightOffset: rightOffset
+    rightOffset: rightOffset || undefined
   }, passThemeFlag, rest, {
     onDragOver: function onDragOver() {
       return setDragOver(true);
@@ -341,7 +346,7 @@ var FileInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
     alignSelf: "center",
     disabled: disabled,
     ref: controlRef,
-    margin: "small",
+    margin: theme.fileInput.anchor.margin,
     onClick: function onClick() {
       inputRef.current.click();
       inputRef.current.focus();
@@ -409,7 +414,7 @@ var FileInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
     alignSelf: "center",
     disabled: disabled,
     ref: controlRef,
-    margin: "small",
+    margin: theme.fileInput.anchor.margin,
     onClick: function onClick() {
       inputRef.current.click();
       inputRef.current.focus();
@@ -431,7 +436,6 @@ var FileInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
       direction: "row",
       align: "center"
     }, renderFile ? renderFile(file) : /*#__PURE__*/React.createElement(Box, _extends({}, theme.fileInput.label, {
-      gap: "xsmall",
       align: "center",
       direction: "row"
     }), (typeof maxSize === 'number' && file.size > maxSize || typeof max === 'number' && index >= max) && /*#__PURE__*/React.createElement(CircleAlert, {
@@ -501,7 +505,7 @@ var FileInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
       tabIndex: -1,
       disabled: disabled,
       ref: controlRef,
-      margin: "small",
+      margin: theme.fileInput.anchor.margin,
       onClick: function onClick() {
         inputRef.current.click();
         inputRef.current.focus();
