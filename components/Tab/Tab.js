@@ -150,11 +150,12 @@ var Tab = exports.Tab = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref)
   var second = reverse ? normalizedIcon : normalizedTitle;
   var withIconStyles;
   if (first && second) {
+    var _theme$tab;
     withIconStyles = {
       direction: 'row',
       align: 'center',
       justify: 'center',
-      gap: 'small'
+      gap: (_theme$tab = theme.tab) == null ? void 0 : _theme$tab.gap
     };
   }
   return /*#__PURE__*/_react["default"].createElement(_Button.Button, _extends({

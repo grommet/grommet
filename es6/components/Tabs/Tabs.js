@@ -16,7 +16,7 @@ import { TabsPropTypes } from './propTypes';
 import { useAnalytics } from '../../contexts/AnalyticsContext/AnalyticsContext';
 import { useThemeValue } from '../../utils/useThemeValue';
 var Tabs = /*#__PURE__*/forwardRef(function (_ref, ref) {
-  var _theme$tabs$header;
+  var _theme$tabs$header, _theme$tabs$header2;
   var alignControls = _ref.alignControls,
     children = _ref.children,
     flex = _ref.flex,
@@ -283,10 +283,7 @@ var Tabs = /*#__PURE__*/forwardRef(function (_ref, ref) {
       return moveByArrowKey('previous');
     }
   }, /*#__PURE__*/React.createElement(Box, {
-    pad: {
-      vertical: 'xsmall',
-      horizontal: 'small'
-    }
+    pad: theme.tabs.header.previousButton.pad
   }, /*#__PURE__*/React.createElement(Previous, {
     color: disableLeftArrow ? theme.button.disabled.color : theme.global.colors.text
   }))), /*#__PURE__*/React.createElement(StyledTabsHeader, _extends({
@@ -311,10 +308,7 @@ var Tabs = /*#__PURE__*/forwardRef(function (_ref, ref) {
       return moveByArrowKey('next');
     }
   }, /*#__PURE__*/React.createElement(Box, {
-    pad: {
-      vertical: 'xsmall',
-      horizontal: 'small'
-    }
+    pad: (_theme$tabs$header2 = theme.tabs.header) == null || (_theme$tabs$header2 = _theme$tabs$header2.nextButton) == null ? void 0 : _theme$tabs$header2.pad
   }, /*#__PURE__*/React.createElement(Next, {
     color: disableRightArrow ? theme.button.disabled.color : theme.global.colors.text
   })))), /*#__PURE__*/React.createElement(StyledTabPanel, _extends({

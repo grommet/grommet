@@ -21,7 +21,7 @@ function _interopRequireWildcard(e, t) { if ("function" == typeof WeakMap) var r
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (-1 !== e.indexOf(n)) continue; t[n] = r[n]; } return t; }
 var Tabs = exports.Tabs = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
-  var _theme$tabs$header;
+  var _theme$tabs$header, _theme$tabs$header2;
   var alignControls = _ref.alignControls,
     children = _ref.children,
     flex = _ref.flex,
@@ -288,10 +288,7 @@ var Tabs = exports.Tabs = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, re
       return moveByArrowKey('previous');
     }
   }, /*#__PURE__*/_react["default"].createElement(_Box.Box, {
-    pad: {
-      vertical: 'xsmall',
-      horizontal: 'small'
-    }
+    pad: theme.tabs.header.previousButton.pad
   }, /*#__PURE__*/_react["default"].createElement(_Previous.Previous, {
     color: disableLeftArrow ? theme.button.disabled.color : theme.global.colors.text
   }))), /*#__PURE__*/_react["default"].createElement(_StyledTabs.StyledTabsHeader, _extends({
@@ -316,10 +313,7 @@ var Tabs = exports.Tabs = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, re
       return moveByArrowKey('next');
     }
   }, /*#__PURE__*/_react["default"].createElement(_Box.Box, {
-    pad: {
-      vertical: 'xsmall',
-      horizontal: 'small'
-    }
+    pad: (_theme$tabs$header2 = theme.tabs.header) == null || (_theme$tabs$header2 = _theme$tabs$header2.nextButton) == null ? void 0 : _theme$tabs$header2.pad
   }, /*#__PURE__*/_react["default"].createElement(_Next.Next, {
     color: disableRightArrow ? theme.button.disabled.color : theme.global.colors.text
   })))), /*#__PURE__*/_react["default"].createElement(_StyledTabs.StyledTabPanel, _extends({

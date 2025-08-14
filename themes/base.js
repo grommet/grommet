@@ -2210,6 +2210,7 @@ var generate = exports.generate = function generate(baseSpacing, scale) {
       //   color: undefined,
       // },
       // extend: undefined,
+      gap: 'small',
       hover: {
         // background: undefined,
         // extend: undefined,
@@ -2240,6 +2241,18 @@ var generate = exports.generate = function generate(baseSpacing, scale) {
         //   color: undefined,
         // },
         // extend: undefined,
+        nextButton: {
+          pad: {
+            horizontal: 'small',
+            vertical: 'xsmall'
+          }
+        },
+        previousButton: {
+          pad: {
+            horizontal: 'small',
+            vertical: 'xsmall'
+          }
+        }
       },
       panel: {
         // extend: undefined,

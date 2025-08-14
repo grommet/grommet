@@ -145,11 +145,12 @@ var Tab = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var second = reverse ? normalizedIcon : normalizedTitle;
   var withIconStyles;
   if (first && second) {
+    var _theme$tab;
     withIconStyles = {
       direction: 'row',
       align: 'center',
       justify: 'center',
-      gap: 'small'
+      gap: (_theme$tab = theme.tab) == null ? void 0 : _theme$tab.gap
     };
   }
   return /*#__PURE__*/React.createElement(Button, _extends({
