@@ -1895,6 +1895,7 @@ export interface ThemeType {
       color?: ColorType;
     };
     extend?: ExtendType;
+    gap?: GapType;
     hover?: {
       background?: BackgroundType;
       color?: ColorType;
@@ -1917,6 +1918,12 @@ export interface ThemeType {
         color?: ColorType;
       };
       extend?: ExtendType;
+      nextButton?: {
+        pad: PadType;
+      };
+      previousButton?: {
+        pad: PadType;
+      };
     };
     panel?: {
       extend?: ExtendType;
