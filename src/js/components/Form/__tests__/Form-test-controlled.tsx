@@ -1,6 +1,6 @@
 import React, { ChangeEvent, useState } from 'react';
 import userEvent from '@testing-library/user-event';
-
+import { hpe } from 'grommet-theme-hpe';
 import 'jest-styled-components';
 
 import { act, render, fireEvent, screen } from '@testing-library/react';
@@ -34,7 +34,7 @@ describe('Form controlled', () => {
       );
     };
     const { getByPlaceholderText, getByText, container } = render(
-      <Grommet>
+      <Grommet theme={hpe}>
         <Test />
       </Grommet>,
     );
