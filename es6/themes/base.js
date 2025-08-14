@@ -1013,12 +1013,15 @@ export var generate = function generate(baseSpacing, scale) {
       }
     },
     dateInput: {
+      button: {
+        margin: 'small'
+      },
       container: {
         round: 'xxsmall'
+      },
+      icon: {
+        size: 'medium'
       }
-      // icon: {
-      //   size: undefined,
-      // },
     },
     dataSummary: {
       margin: {

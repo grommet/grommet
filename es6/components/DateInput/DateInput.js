@@ -49,7 +49,7 @@ var getReference = function getReference(value) {
   return adjustedDate;
 };
 var DateInput = /*#__PURE__*/forwardRef(function (_ref, refArg) {
-  var _theme$icon, _theme$dateInput$icon;
+  var _theme$icon, _theme$dateInput$icon, _theme$dateInput$butt, _theme$dateInput$butt2;
   var buttonProps = _ref.buttonProps,
     calendarProps = _ref.calendarProps,
     defaultValue = _ref.defaultValue,
@@ -78,7 +78,7 @@ var DateInput = /*#__PURE__*/forwardRef(function (_ref, refArg) {
   var announce = useContext(AnnounceContext);
   var _useContext = useContext(MessageContext),
     formatMessage = _useContext.format;
-  var iconSize = ((_theme$icon = theme.icon) == null ? void 0 : _theme$icon.matchSize) && rest.size || ((_theme$dateInput$icon = theme.dateInput.icon) == null ? void 0 : _theme$dateInput$icon.size) || 'medium';
+  var iconSize = ((_theme$icon = theme.icon) == null ? void 0 : _theme$icon.matchSize) && rest.size || ((_theme$dateInput$icon = theme.dateInput.icon) == null ? void 0 : _theme$dateInput$icon.size);
   var _useContext2 = useContext(FormContext),
     useFormInput = _useContext2.useFormInput;
   var ref = useForwardedRef(refArg);
@@ -290,9 +290,9 @@ var DateInput = /*#__PURE__*/forwardRef(function (_ref, refArg) {
       size: iconSize
     }),
     margin: reverse ? {
-      left: 'small'
+      left: (_theme$dateInput$butt = theme.dateInput.button) == null ? void 0 : _theme$dateInput$butt.margin
     } : {
-      right: 'small'
+      right: (_theme$dateInput$butt2 = theme.dateInput.button) == null ? void 0 : _theme$dateInput$butt2.margin
     }
   });
   var input = /*#__PURE__*/React.createElement(FormContext.Provider, {
