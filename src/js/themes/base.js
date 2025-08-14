@@ -930,6 +930,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           pad: { horizontal: 'small', vertical: 'xsmall' },
         },
       },
+      size: {
+        height: 'small',
+      },
       thickness: {
         veryDense: 'hair',
         dense: 'xsmall',
