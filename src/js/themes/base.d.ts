@@ -950,6 +950,9 @@ export interface ThemeType {
     };
     searcher?: {
       pad?: PadType;
+      text?: {
+        pad?: PadType;
+      };
     };
     sorter?: {
       gap?: GapType;

@@ -5,6 +5,7 @@ import { FormSearch } from 'grommet-icons/icons/FormSearch';
 import { Box } from '../Box';
 import { Button } from '../Button';
 import { Keyboard } from '../Keyboard';
+import { Text } from '../Text';
 import { TextInput } from '../TextInput';
 import { MessageContext } from '../../contexts/MessageContext';
 import { normalizeColor } from '../../utils';
@@ -72,21 +73,35 @@ const Searcher = ({
       </Box>
     </Keyboard>
   ) : (
-    <Button
-      ref={buttonRef}
-      a11yTitle={a11yTitle}
-      icon={
-        <FormSearch
-          color={normalizeColor(
-            filtering === property ? 'brand' : 'border',
-            theme,
-          )}
-        />
-      }
-      hoverIndicator
-      focusIndicator={focusIndicator}
-      onClick={() => onFiltering(filtering === property ? undefined : property)}
-    />
+    <>
+      {filters[property] ? (
+        <Box
+          flex={false}
+          pad={theme.dataTable.searcher?.text?.pad}
+          direction="row"
+          align="center"
+        >
+          <Text>{filters[property]}</Text>
+        </Box>
+      ) : null}
+      <Button
+        ref={buttonRef}
+        a11yTitle={a11yTitle}
+        icon={
+          <FormSearch
+            color={normalizeColor(
+              filtering === property ? 'brand' : 'border',
+              theme,
+            )}
+          />
+        }
+        hoverIndicator
+        focusIndicator={focusIndicator}
+        onClick={() =>
+          onFiltering(filtering === property ? undefined : property)
+        }
+      />
+    </>
   );
 };
 

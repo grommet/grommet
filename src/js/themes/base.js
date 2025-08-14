@@ -1015,6 +1015,11 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         pad: {
           left: 'small',
         },
+        text: {
+          pad: {
+            horizontal: 'small',
+          },
+        },
       },
       sorter: {
         gap: 'xsmall',
