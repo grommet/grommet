@@ -948,12 +948,15 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       width: { min: 'medium' },
     },
     dateInput: {
+      button: {
+        margin: 'small',
+      },
       container: {
         round: 'xxsmall',
       },
-      // icon: {
-      //   size: undefined,
-      // },
+      icon: {
+        size: 'medium',
+      },
     },
     dataSummary: {
       margin: { vertical: 'xsmall' },
