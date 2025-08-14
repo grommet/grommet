@@ -880,6 +880,7 @@ export interface ThemeType {
     };
     pad?: PadType;
     width?: WidthType;
+  }
   dataSummary?: {
     margin?: MarginType;
     separator?: {
