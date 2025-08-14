@@ -141,7 +141,7 @@ exports[`Calendar change months 1`] = `
 .c7:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c7:focus >circle,
@@ -153,7 +153,7 @@ exports[`Calendar change months 1`] = `
 .c7:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c7:focus ::-moz-focus-inner {
@@ -204,7 +204,7 @@ exports[`Calendar change months 1`] = `
 .c14:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c14:focus >circle,
@@ -216,7 +216,7 @@ exports[`Calendar change months 1`] = `
 .c14:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c14:focus ::-moz-focus-inner {
@@ -1318,7 +1318,7 @@ exports[`Calendar change months 2`] = `
         >
           <button
             aria-label="Go to December 2019"
-            class="StyledButtonKind-sc-1vhfpnt-0 jDAjjv"
+            class="StyledButtonKind-sc-1vhfpnt-0 bfTcbL"
             type="button"
           >
             <svg
@@ -1337,7 +1337,7 @@ exports[`Calendar change months 2`] = `
           </button>
           <button
             aria-label="Go to February 2020"
-            class="StyledButtonKind-sc-1vhfpnt-0 jDAjjv"
+            class="StyledButtonKind-sc-1vhfpnt-0 bfTcbL"
             type="button"
           >
             <svg
@@ -1380,7 +1380,7 @@ exports[`Calendar change months 2`] = `
                 <button
                   aria-disabled="false"
                   aria-label="Sun Dec 29 2019"
-                  class="StyledButtonKind-sc-1vhfpnt-0 fvxTu StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
+                  class="StyledButtonKind-sc-1vhfpnt-0 eWCPay StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
                   tabindex="-1"
                   type="button"
                 >
@@ -1399,7 +1399,7 @@ exports[`Calendar change months 2`] = `
                 <button
                   aria-disabled="false"
                   aria-label="Mon Dec 30 2019"
-                  class="StyledButtonKind-sc-1vhfpnt-0 fvxTu StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
+                  class="StyledButtonKind-sc-1vhfpnt-0 eWCPay StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
                   tabindex="-1"
                   type="button"
                 >
@@ -1418,7 +1418,7 @@ exports[`Calendar change months 2`] = `
                 <button
                   aria-disabled="false"
                   aria-label="Tue Dec 31 2019"
-                  class="StyledButtonKind-sc-1vhfpnt-0 fvxTu StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
+                  class="StyledButtonKind-sc-1vhfpnt-0 eWCPay StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
                   tabindex="-1"
                   type="button"
                 >
@@ -1437,7 +1437,7 @@ exports[`Calendar change months 2`] = `
                 <button
                   aria-disabled="false"
                   aria-label="Wed Jan 01 2020"
-                  class="StyledButtonKind-sc-1vhfpnt-0 fvxTu StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
+                  class="StyledButtonKind-sc-1vhfpnt-0 eWCPay StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
                   tabindex="0"
                   type="button"
                 >
@@ -1456,7 +1456,7 @@ exports[`Calendar change months 2`] = `
                 <button
                   aria-disabled="false"
                   aria-label="Thu Jan 02 2020"
-                  class="StyledButtonKind-sc-1vhfpnt-0 fvxTu StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
+                  class="StyledButtonKind-sc-1vhfpnt-0 eWCPay StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
                   tabindex="-1"
                   type="button"
                 >
@@ -1475,7 +1475,7 @@ exports[`Calendar change months 2`] = `
                 <button
                   aria-disabled="false"
                   aria-label="Fri Jan 03 2020"
-                  class="StyledButtonKind-sc-1vhfpnt-0 fvxTu StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
+                  class="StyledButtonKind-sc-1vhfpnt-0 eWCPay StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
                   tabindex="-1"
                   type="button"
                 >
@@ -1494,7 +1494,7 @@ exports[`Calendar change months 2`] = `
                 <button
                   aria-disabled="false"
                   aria-label="Sat Jan 04 2020"
-                  class="StyledButtonKind-sc-1vhfpnt-0 fvxTu StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
+                  class="StyledButtonKind-sc-1vhfpnt-0 eWCPay StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
                   tabindex="-1"
                   type="button"
                 >
@@ -1518,7 +1518,7 @@ exports[`Calendar change months 2`] = `
                 <button
                   aria-disabled="false"
                   aria-label="Sun Jan 05 2020"
-                  class="StyledButtonKind-sc-1vhfpnt-0 fvxTu StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
+                  class="StyledButtonKind-sc-1vhfpnt-0 eWCPay StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
                   tabindex="-1"
                   type="button"
                 >
@@ -1537,7 +1537,7 @@ exports[`Calendar change months 2`] = `
                 <button
                   aria-disabled="false"
                   aria-label="Mon Jan 06 2020"
-                  class="StyledButtonKind-sc-1vhfpnt-0 fvxTu StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
+                  class="StyledButtonKind-sc-1vhfpnt-0 eWCPay StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
                   tabindex="-1"
                   type="button"
                 >
@@ -1556,7 +1556,7 @@ exports[`Calendar change months 2`] = `
                 <button
                   aria-disabled="false"
                   aria-label="Tue Jan 07 2020"
-                  class="StyledButtonKind-sc-1vhfpnt-0 fvxTu StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
+                  class="StyledButtonKind-sc-1vhfpnt-0 eWCPay StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
                   tabindex="-1"
                   type="button"
                 >
@@ -1575,7 +1575,7 @@ exports[`Calendar change months 2`] = `
                 <button
                   aria-disabled="false"
                   aria-label="Wed Jan 08 2020"
-                  class="StyledButtonKind-sc-1vhfpnt-0 fvxTu StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
+                  class="StyledButtonKind-sc-1vhfpnt-0 eWCPay StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
                   tabindex="-1"
                   type="button"
                 >
@@ -1594,7 +1594,7 @@ exports[`Calendar change months 2`] = `
                 <button
                   aria-disabled="false"
                   aria-label="Thu Jan 09 2020"
-                  class="StyledButtonKind-sc-1vhfpnt-0 fvxTu StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
+                  class="StyledButtonKind-sc-1vhfpnt-0 eWCPay StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
                   tabindex="-1"
                   type="button"
                 >
@@ -1613,7 +1613,7 @@ exports[`Calendar change months 2`] = `
                 <button
                   aria-disabled="false"
                   aria-label="Fri Jan 10 2020"
-                  class="StyledButtonKind-sc-1vhfpnt-0 fvxTu StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
+                  class="StyledButtonKind-sc-1vhfpnt-0 eWCPay StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
                   tabindex="-1"
                   type="button"
                 >
@@ -1632,7 +1632,7 @@ exports[`Calendar change months 2`] = `
                 <button
                   aria-disabled="false"
                   aria-label="Sat Jan 11 2020"
-                  class="StyledButtonKind-sc-1vhfpnt-0 fvxTu StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
+                  class="StyledButtonKind-sc-1vhfpnt-0 eWCPay StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
                   tabindex="-1"
                   type="button"
                 >
@@ -1664,7 +1664,7 @@ exports[`Calendar change months 2`] = `
 .c2:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c2:focus >circle,
@@ -1676,7 +1676,7 @@ exports[`Calendar change months 2`] = `
 .c2:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c2:focus ::-moz-focus-inner {
@@ -1969,7 +1969,7 @@ exports[`Calendar change months 2`] = `
 .c2:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c2:focus >circle,
@@ -1981,7 +1981,7 @@ exports[`Calendar change months 2`] = `
 .c2:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c2:focus ::-moz-focus-inner {
@@ -2250,7 +2250,7 @@ exports[`Calendar change months 2`] = `
 .c2:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c2:focus >circle,
@@ -2262,7 +2262,7 @@ exports[`Calendar change months 2`] = `
 .c2:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c2:focus ::-moz-focus-inner {
@@ -2546,7 +2546,7 @@ exports[`Calendar change months 2`] = `
 .c2:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c2:focus >circle,
@@ -2558,7 +2558,7 @@ exports[`Calendar change months 2`] = `
 .c2:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c2:focus ::-moz-focus-inner {
@@ -2956,7 +2956,7 @@ exports[`Calendar children 1`] = `
 .c7:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c7:focus >circle,
@@ -2968,7 +2968,7 @@ exports[`Calendar children 1`] = `
 .c7:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c7:focus ::-moz-focus-inner {
@@ -3767,7 +3767,7 @@ exports[`Calendar date 1`] = `
 .c7:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c7:focus >circle,
@@ -3779,7 +3779,7 @@ exports[`Calendar date 1`] = `
 .c7:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c7:focus ::-moz-focus-inner {
@@ -3830,7 +3830,7 @@ exports[`Calendar date 1`] = `
 .c14:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c14:focus >circle,
@@ -3842,7 +3842,7 @@ exports[`Calendar date 1`] = `
 .c14:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c14:focus ::-moz-focus-inner {
@@ -5078,7 +5078,7 @@ exports[`Calendar dates 1`] = `
 .c7:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c7:focus >circle,
@@ -5090,7 +5090,7 @@ exports[`Calendar dates 1`] = `
 .c7:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c7:focus ::-moz-focus-inner {
@@ -5141,7 +5141,7 @@ exports[`Calendar dates 1`] = `
 .c14:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c14:focus >circle,
@@ -5153,7 +5153,7 @@ exports[`Calendar dates 1`] = `
 .c14:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c14:focus ::-moz-focus-inner {
@@ -6457,7 +6457,7 @@ exports[`Calendar daysOfWeek 1`] = `
 .c7:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c7:focus >circle,
@@ -6469,7 +6469,7 @@ exports[`Calendar daysOfWeek 1`] = `
 .c7:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c7:focus ::-moz-focus-inner {
@@ -6520,7 +6520,7 @@ exports[`Calendar daysOfWeek 1`] = `
 .c15:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c15:focus >circle,
@@ -6532,7 +6532,7 @@ exports[`Calendar daysOfWeek 1`] = `
 .c15:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c15:focus ::-moz-focus-inner {
@@ -7912,7 +7912,7 @@ exports[`Calendar disabled 1`] = `
 .c7:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c7:focus >circle,
@@ -7924,7 +7924,7 @@ exports[`Calendar disabled 1`] = `
 .c7:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c7:focus ::-moz-focus-inner {
@@ -7975,7 +7975,7 @@ exports[`Calendar disabled 1`] = `
 .c14:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c14:focus >circle,
@@ -7987,7 +7987,7 @@ exports[`Calendar disabled 1`] = `
 .c14:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c14:focus ::-moz-focus-inner {
@@ -9255,7 +9255,7 @@ exports[`Calendar fill 1`] = `
 .c7:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c7:focus >circle,
@@ -9267,7 +9267,7 @@ exports[`Calendar fill 1`] = `
 .c7:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c7:focus ::-moz-focus-inner {
@@ -9322,7 +9322,7 @@ exports[`Calendar fill 1`] = `
 .c13:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c13:focus >circle,
@@ -9334,7 +9334,7 @@ exports[`Calendar fill 1`] = `
 .c13:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c13:focus ::-moz-focus-inner {
@@ -10512,7 +10512,7 @@ exports[`Calendar first day sunday week monday 1`] = `
 .c7:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c7:focus >circle,
@@ -10524,7 +10524,7 @@ exports[`Calendar first day sunday week monday 1`] = `
 .c7:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c7:focus ::-moz-focus-inner {
@@ -10575,7 +10575,7 @@ exports[`Calendar first day sunday week monday 1`] = `
 .c14:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c14:focus >circle,
@@ -10587,7 +10587,7 @@ exports[`Calendar first day sunday week monday 1`] = `
 .c14:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c14:focus ::-moz-focus-inner {
@@ -11823,7 +11823,7 @@ exports[`Calendar firstDayOfWeek 1`] = `
 .c7:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c7:focus >circle,
@@ -11835,7 +11835,7 @@ exports[`Calendar firstDayOfWeek 1`] = `
 .c7:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c7:focus ::-moz-focus-inner {
@@ -11886,7 +11886,7 @@ exports[`Calendar firstDayOfWeek 1`] = `
 .c14:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c14:focus >circle,
@@ -11898,7 +11898,7 @@ exports[`Calendar firstDayOfWeek 1`] = `
 .c14:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c14:focus ::-moz-focus-inner {
@@ -13989,7 +13989,7 @@ exports[`Calendar header 1`] = `
 .c4:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c4:focus >circle,
@@ -14001,7 +14001,7 @@ exports[`Calendar header 1`] = `
 .c4:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c4:focus ::-moz-focus-inner {
@@ -16574,7 +16574,7 @@ exports[`Calendar reference 1`] = `
 .c7:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c7:focus >circle,
@@ -16586,7 +16586,7 @@ exports[`Calendar reference 1`] = `
 .c7:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c7:focus ::-moz-focus-inner {
@@ -16637,7 +16637,7 @@ exports[`Calendar reference 1`] = `
 .c14:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c14:focus >circle,
@@ -16649,7 +16649,7 @@ exports[`Calendar reference 1`] = `
 .c14:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c14:focus ::-moz-focus-inner {
@@ -19106,7 +19106,7 @@ exports[`Calendar select date 1`] = `
 .c7:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c7:focus >circle,
@@ -19118,7 +19118,7 @@ exports[`Calendar select date 1`] = `
 .c7:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c7:focus ::-moz-focus-inner {
@@ -19169,7 +19169,7 @@ exports[`Calendar select date 1`] = `
 .c14:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c14:focus >circle,
@@ -19181,7 +19181,7 @@ exports[`Calendar select date 1`] = `
 .c14:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c14:focus ::-moz-focus-inner {
@@ -20303,7 +20303,7 @@ exports[`Calendar select date 2`] = `
         >
           <button
             aria-label="Go to December 2019"
-            class="StyledButtonKind-sc-1vhfpnt-0 jDAjjv"
+            class="StyledButtonKind-sc-1vhfpnt-0 bfTcbL"
             type="button"
           >
             <svg
@@ -20322,7 +20322,7 @@ exports[`Calendar select date 2`] = `
           </button>
           <button
             aria-label="Go to February 2020"
-            class="StyledButtonKind-sc-1vhfpnt-0 jDAjjv"
+            class="StyledButtonKind-sc-1vhfpnt-0 bfTcbL"
             type="button"
           >
             <svg
@@ -20365,7 +20365,7 @@ exports[`Calendar select date 2`] = `
                 <button
                   aria-disabled="false"
                   aria-label="Sun Dec 29 2019"
-                  class="StyledButtonKind-sc-1vhfpnt-0 fvxTu StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
+                  class="StyledButtonKind-sc-1vhfpnt-0 eWCPay StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
                   tabindex="-1"
                   type="button"
                 >
@@ -20384,7 +20384,7 @@ exports[`Calendar select date 2`] = `
                 <button
                   aria-disabled="false"
                   aria-label="Mon Dec 30 2019"
-                  class="StyledButtonKind-sc-1vhfpnt-0 fvxTu StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
+                  class="StyledButtonKind-sc-1vhfpnt-0 eWCPay StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
                   tabindex="-1"
                   type="button"
                 >
@@ -20403,7 +20403,7 @@ exports[`Calendar select date 2`] = `
                 <button
                   aria-disabled="false"
                   aria-label="Tue Dec 31 2019"
-                  class="StyledButtonKind-sc-1vhfpnt-0 fvxTu StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
+                  class="StyledButtonKind-sc-1vhfpnt-0 eWCPay StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
                   tabindex="-1"
                   type="button"
                 >
@@ -20422,7 +20422,7 @@ exports[`Calendar select date 2`] = `
                 <button
                   aria-disabled="false"
                   aria-label="Wed Jan 01 2020"
-                  class="StyledButtonKind-sc-1vhfpnt-0 fvxTu StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
+                  class="StyledButtonKind-sc-1vhfpnt-0 eWCPay StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
                   tabindex="-1"
                   type="button"
                 >
@@ -20441,7 +20441,7 @@ exports[`Calendar select date 2`] = `
                 <button
                   aria-disabled="false"
                   aria-label="Thu Jan 02 2020"
-                  class="StyledButtonKind-sc-1vhfpnt-0 fvxTu StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
+                  class="StyledButtonKind-sc-1vhfpnt-0 eWCPay StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
                   tabindex="-1"
                   type="button"
                 >
@@ -20460,7 +20460,7 @@ exports[`Calendar select date 2`] = `
                 <button
                   aria-disabled="false"
                   aria-label="Fri Jan 03 2020"
-                  class="StyledButtonKind-sc-1vhfpnt-0 fvxTu StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
+                  class="StyledButtonKind-sc-1vhfpnt-0 eWCPay StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
                   tabindex="-1"
                   type="button"
                 >
@@ -20479,7 +20479,7 @@ exports[`Calendar select date 2`] = `
                 <button
                   aria-disabled="false"
                   aria-label="Sat Jan 04 2020"
-                  class="StyledButtonKind-sc-1vhfpnt-0 fvxTu StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
+                  class="StyledButtonKind-sc-1vhfpnt-0 eWCPay StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
                   tabindex="-1"
                   type="button"
                 >
@@ -20503,7 +20503,7 @@ exports[`Calendar select date 2`] = `
                 <button
                   aria-disabled="false"
                   aria-label="Sun Jan 05 2020"
-                  class="StyledButtonKind-sc-1vhfpnt-0 fvxTu StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
+                  class="StyledButtonKind-sc-1vhfpnt-0 eWCPay StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
                   tabindex="-1"
                   type="button"
                 >
@@ -20522,7 +20522,7 @@ exports[`Calendar select date 2`] = `
                 <button
                   aria-disabled="false"
                   aria-label="Mon Jan 06 2020"
-                  class="StyledButtonKind-sc-1vhfpnt-0 fvxTu StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
+                  class="StyledButtonKind-sc-1vhfpnt-0 eWCPay StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
                   tabindex="-1"
                   type="button"
                 >
@@ -20541,7 +20541,7 @@ exports[`Calendar select date 2`] = `
                 <button
                   aria-disabled="false"
                   aria-label="Tue Jan 07 2020"
-                  class="StyledButtonKind-sc-1vhfpnt-0 fvxTu StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
+                  class="StyledButtonKind-sc-1vhfpnt-0 eWCPay StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
                   tabindex="-1"
                   type="button"
                 >
@@ -20560,7 +20560,7 @@ exports[`Calendar select date 2`] = `
                 <button
                   aria-disabled="false"
                   aria-label="Wed Jan 08 2020"
-                  class="StyledButtonKind-sc-1vhfpnt-0 fvxTu StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
+                  class="StyledButtonKind-sc-1vhfpnt-0 eWCPay StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
                   tabindex="-1"
                   type="button"
                 >
@@ -20579,7 +20579,7 @@ exports[`Calendar select date 2`] = `
                 <button
                   aria-disabled="false"
                   aria-label="Thu Jan 09 2020"
-                  class="StyledButtonKind-sc-1vhfpnt-0 fvxTu StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
+                  class="StyledButtonKind-sc-1vhfpnt-0 eWCPay StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
                   tabindex="-1"
                   type="button"
                 >
@@ -20598,7 +20598,7 @@ exports[`Calendar select date 2`] = `
                 <button
                   aria-disabled="false"
                   aria-label="Fri Jan 10 2020"
-                  class="StyledButtonKind-sc-1vhfpnt-0 fvxTu StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
+                  class="StyledButtonKind-sc-1vhfpnt-0 eWCPay StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
                   tabindex="-1"
                   type="button"
                 >
@@ -20617,7 +20617,7 @@ exports[`Calendar select date 2`] = `
                 <button
                   aria-disabled="false"
                   aria-label="Sat Jan 11 2020"
-                  class="StyledButtonKind-sc-1vhfpnt-0 fvxTu StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
+                  class="StyledButtonKind-sc-1vhfpnt-0 eWCPay StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
                   tabindex="-1"
                   type="button"
                 >
@@ -20641,7 +20641,7 @@ exports[`Calendar select date 2`] = `
                 <button
                   aria-disabled="false"
                   aria-label="Sun Jan 12 2020"
-                  class="StyledButtonKind-sc-1vhfpnt-0 fvxTu StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
+                  class="StyledButtonKind-sc-1vhfpnt-0 eWCPay StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
                   tabindex="-1"
                   type="button"
                 >
@@ -20660,7 +20660,7 @@ exports[`Calendar select date 2`] = `
                 <button
                   aria-disabled="false"
                   aria-label="Mon Jan 13 2020"
-                  class="StyledButtonKind-sc-1vhfpnt-0 fvxTu StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
+                  class="StyledButtonKind-sc-1vhfpnt-0 eWCPay StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
                   tabindex="-1"
                   type="button"
                 >
@@ -20679,7 +20679,7 @@ exports[`Calendar select date 2`] = `
                 <button
                   aria-disabled="false"
                   aria-label="Tue Jan 14 2020"
-                  class="StyledButtonKind-sc-1vhfpnt-0 fvxTu StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
+                  class="StyledButtonKind-sc-1vhfpnt-0 eWCPay StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
                   tabindex="-1"
                   type="button"
                 >
@@ -20698,7 +20698,7 @@ exports[`Calendar select date 2`] = `
                 <button
                   aria-disabled="false"
                   aria-label="Wed Jan 15 2020"
-                  class="StyledButtonKind-sc-1vhfpnt-0 fvxTu StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
+                  class="StyledButtonKind-sc-1vhfpnt-0 eWCPay StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
                   tabindex="-1"
                   type="button"
                 >
@@ -20717,7 +20717,7 @@ exports[`Calendar select date 2`] = `
                 <button
                   aria-disabled="false"
                   aria-label="Thu Jan 16 2020"
-                  class="StyledButtonKind-sc-1vhfpnt-0 fvxTu StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
+                  class="StyledButtonKind-sc-1vhfpnt-0 eWCPay StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
                   tabindex="-1"
                   type="button"
                 >
@@ -20736,7 +20736,7 @@ exports[`Calendar select date 2`] = `
                 <button
                   aria-disabled="false"
                   aria-label="Fri Jan 17 2020"
-                  class="StyledButtonKind-sc-1vhfpnt-0 fvxTu StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
+                  class="StyledButtonKind-sc-1vhfpnt-0 eWCPay StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
                   tabindex="0"
                   type="button"
                 >
@@ -20755,7 +20755,7 @@ exports[`Calendar select date 2`] = `
                 <button
                   aria-disabled="false"
                   aria-label="Sat Jan 18 2020"
-                  class="StyledButtonKind-sc-1vhfpnt-0 fvxTu StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
+                  class="StyledButtonKind-sc-1vhfpnt-0 eWCPay StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
                   tabindex="-1"
                   type="button"
                 >
@@ -20779,7 +20779,7 @@ exports[`Calendar select date 2`] = `
                 <button
                   aria-disabled="false"
                   aria-label="Sun Jan 19 2020"
-                  class="StyledButtonKind-sc-1vhfpnt-0 fvxTu StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
+                  class="StyledButtonKind-sc-1vhfpnt-0 eWCPay StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
                   tabindex="-1"
                   type="button"
                 >
@@ -20798,7 +20798,7 @@ exports[`Calendar select date 2`] = `
                 <button
                   aria-disabled="false"
                   aria-label="Mon Jan 20 2020"
-                  class="StyledButtonKind-sc-1vhfpnt-0 fvxTu StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
+                  class="StyledButtonKind-sc-1vhfpnt-0 eWCPay StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
                   tabindex="-1"
                   type="button"
                 >
@@ -20817,7 +20817,7 @@ exports[`Calendar select date 2`] = `
                 <button
                   aria-disabled="false"
                   aria-label="Tue Jan 21 2020"
-                  class="StyledButtonKind-sc-1vhfpnt-0 fvxTu StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
+                  class="StyledButtonKind-sc-1vhfpnt-0 eWCPay StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
                   tabindex="-1"
                   type="button"
                 >
@@ -20836,7 +20836,7 @@ exports[`Calendar select date 2`] = `
                 <button
                   aria-disabled="false"
                   aria-label="Wed Jan 22 2020"
-                  class="StyledButtonKind-sc-1vhfpnt-0 fvxTu StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
+                  class="StyledButtonKind-sc-1vhfpnt-0 eWCPay StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
                   tabindex="-1"
                   type="button"
                 >
@@ -20855,7 +20855,7 @@ exports[`Calendar select date 2`] = `
                 <button
                   aria-disabled="false"
                   aria-label="Thu Jan 23 2020"
-                  class="StyledButtonKind-sc-1vhfpnt-0 fvxTu StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
+                  class="StyledButtonKind-sc-1vhfpnt-0 eWCPay StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
                   tabindex="-1"
                   type="button"
                 >
@@ -20874,7 +20874,7 @@ exports[`Calendar select date 2`] = `
                 <button
                   aria-disabled="false"
                   aria-label="Fri Jan 24 2020"
-                  class="StyledButtonKind-sc-1vhfpnt-0 fvxTu StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
+                  class="StyledButtonKind-sc-1vhfpnt-0 eWCPay StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
                   tabindex="-1"
                   type="button"
                 >
@@ -20893,7 +20893,7 @@ exports[`Calendar select date 2`] = `
                 <button
                   aria-disabled="false"
                   aria-label="Sat Jan 25 2020"
-                  class="StyledButtonKind-sc-1vhfpnt-0 fvxTu StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
+                  class="StyledButtonKind-sc-1vhfpnt-0 eWCPay StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
                   tabindex="-1"
                   type="button"
                 >
@@ -20917,7 +20917,7 @@ exports[`Calendar select date 2`] = `
                 <button
                   aria-disabled="false"
                   aria-label="Sun Jan 26 2020"
-                  class="StyledButtonKind-sc-1vhfpnt-0 fvxTu StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
+                  class="StyledButtonKind-sc-1vhfpnt-0 eWCPay StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
                   tabindex="-1"
                   type="button"
                 >
@@ -20936,7 +20936,7 @@ exports[`Calendar select date 2`] = `
                 <button
                   aria-disabled="false"
                   aria-label="Mon Jan 27 2020"
-                  class="StyledButtonKind-sc-1vhfpnt-0 fvxTu StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
+                  class="StyledButtonKind-sc-1vhfpnt-0 eWCPay StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
                   tabindex="-1"
                   type="button"
                 >
@@ -20955,7 +20955,7 @@ exports[`Calendar select date 2`] = `
                 <button
                   aria-disabled="false"
                   aria-label="Tue Jan 28 2020"
-                  class="StyledButtonKind-sc-1vhfpnt-0 fvxTu StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
+                  class="StyledButtonKind-sc-1vhfpnt-0 eWCPay StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
                   tabindex="-1"
                   type="button"
                 >
@@ -20974,7 +20974,7 @@ exports[`Calendar select date 2`] = `
                 <button
                   aria-disabled="false"
                   aria-label="Wed Jan 29 2020"
-                  class="StyledButtonKind-sc-1vhfpnt-0 fvxTu StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
+                  class="StyledButtonKind-sc-1vhfpnt-0 eWCPay StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
                   tabindex="-1"
                   type="button"
                 >
@@ -20993,7 +20993,7 @@ exports[`Calendar select date 2`] = `
                 <button
                   aria-disabled="false"
                   aria-label="Thu Jan 30 2020"
-                  class="StyledButtonKind-sc-1vhfpnt-0 fvxTu StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
+                  class="StyledButtonKind-sc-1vhfpnt-0 eWCPay StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
                   tabindex="-1"
                   type="button"
                 >
@@ -21012,7 +21012,7 @@ exports[`Calendar select date 2`] = `
                 <button
                   aria-disabled="false"
                   aria-label="Fri Jan 31 2020"
-                  class="StyledButtonKind-sc-1vhfpnt-0 fvxTu StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
+                  class="StyledButtonKind-sc-1vhfpnt-0 eWCPay StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
                   tabindex="-1"
                   type="button"
                 >
@@ -21031,7 +21031,7 @@ exports[`Calendar select date 2`] = `
                 <button
                   aria-disabled="false"
                   aria-label="Sat Feb 01 2020"
-                  class="StyledButtonKind-sc-1vhfpnt-0 fvxTu StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
+                  class="StyledButtonKind-sc-1vhfpnt-0 eWCPay StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
                   tabindex="-1"
                   type="button"
                 >
@@ -21055,7 +21055,7 @@ exports[`Calendar select date 2`] = `
                 <button
                   aria-disabled="false"
                   aria-label="Sun Feb 02 2020"
-                  class="StyledButtonKind-sc-1vhfpnt-0 fvxTu StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
+                  class="StyledButtonKind-sc-1vhfpnt-0 eWCPay StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
                   tabindex="-1"
                   type="button"
                 >
@@ -21074,7 +21074,7 @@ exports[`Calendar select date 2`] = `
                 <button
                   aria-disabled="false"
                   aria-label="Mon Feb 03 2020"
-                  class="StyledButtonKind-sc-1vhfpnt-0 fvxTu StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
+                  class="StyledButtonKind-sc-1vhfpnt-0 eWCPay StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
                   tabindex="-1"
                   type="button"
                 >
@@ -21093,7 +21093,7 @@ exports[`Calendar select date 2`] = `
                 <button
                   aria-disabled="false"
                   aria-label="Tue Feb 04 2020"
-                  class="StyledButtonKind-sc-1vhfpnt-0 fvxTu StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
+                  class="StyledButtonKind-sc-1vhfpnt-0 eWCPay StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
                   tabindex="-1"
                   type="button"
                 >
@@ -21112,7 +21112,7 @@ exports[`Calendar select date 2`] = `
                 <button
                   aria-disabled="false"
                   aria-label="Wed Feb 05 2020"
-                  class="StyledButtonKind-sc-1vhfpnt-0 fvxTu StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
+                  class="StyledButtonKind-sc-1vhfpnt-0 eWCPay StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
                   tabindex="-1"
                   type="button"
                 >
@@ -21131,7 +21131,7 @@ exports[`Calendar select date 2`] = `
                 <button
                   aria-disabled="false"
                   aria-label="Thu Feb 06 2020"
-                  class="StyledButtonKind-sc-1vhfpnt-0 fvxTu StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
+                  class="StyledButtonKind-sc-1vhfpnt-0 eWCPay StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
                   tabindex="-1"
                   type="button"
                 >
@@ -21150,7 +21150,7 @@ exports[`Calendar select date 2`] = `
                 <button
                   aria-disabled="false"
                   aria-label="Fri Feb 07 2020"
-                  class="StyledButtonKind-sc-1vhfpnt-0 fvxTu StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
+                  class="StyledButtonKind-sc-1vhfpnt-0 eWCPay StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
                   tabindex="-1"
                   type="button"
                 >
@@ -21169,7 +21169,7 @@ exports[`Calendar select date 2`] = `
                 <button
                   aria-disabled="false"
                   aria-label="Sat Feb 08 2020"
-                  class="StyledButtonKind-sc-1vhfpnt-0 fvxTu StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
+                  class="StyledButtonKind-sc-1vhfpnt-0 eWCPay StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
                   tabindex="-1"
                   type="button"
                 >
@@ -21330,7 +21330,7 @@ exports[`Calendar select dates 1`] = `
 .c7:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c7:focus >circle,
@@ -21342,7 +21342,7 @@ exports[`Calendar select dates 1`] = `
 .c7:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c7:focus ::-moz-focus-inner {
@@ -21393,7 +21393,7 @@ exports[`Calendar select dates 1`] = `
 .c14:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c14:focus >circle,
@@ -21405,7 +21405,7 @@ exports[`Calendar select dates 1`] = `
 .c14:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c14:focus ::-moz-focus-inner {
@@ -22595,7 +22595,7 @@ exports[`Calendar select dates 2`] = `
         >
           <button
             aria-label="Go to December 2019"
-            class="StyledButtonKind-sc-1vhfpnt-0 jDAjjv"
+            class="StyledButtonKind-sc-1vhfpnt-0 bfTcbL"
             type="button"
           >
             <svg
@@ -22614,7 +22614,7 @@ exports[`Calendar select dates 2`] = `
           </button>
           <button
             aria-label="Go to February 2020"
-            class="StyledButtonKind-sc-1vhfpnt-0 jDAjjv"
+            class="StyledButtonKind-sc-1vhfpnt-0 bfTcbL"
             type="button"
           >
             <svg
@@ -22657,7 +22657,7 @@ exports[`Calendar select dates 2`] = `
                 <button
                   aria-disabled="false"
                   aria-label="Sun Dec 29 2019"
-                  class="StyledButtonKind-sc-1vhfpnt-0 fvxTu StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
+                  class="StyledButtonKind-sc-1vhfpnt-0 eWCPay StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
                   tabindex="-1"
                   type="button"
                 >
@@ -22676,7 +22676,7 @@ exports[`Calendar select dates 2`] = `
                 <button
                   aria-disabled="false"
                   aria-label="Mon Dec 30 2019"
-                  class="StyledButtonKind-sc-1vhfpnt-0 fvxTu StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
+                  class="StyledButtonKind-sc-1vhfpnt-0 eWCPay StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
                   tabindex="-1"
                   type="button"
                 >
@@ -22695,7 +22695,7 @@ exports[`Calendar select dates 2`] = `
                 <button
                   aria-disabled="false"
                   aria-label="Tue Dec 31 2019"
-                  class="StyledButtonKind-sc-1vhfpnt-0 fvxTu StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
+                  class="StyledButtonKind-sc-1vhfpnt-0 eWCPay StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
                   tabindex="-1"
                   type="button"
                 >
@@ -22714,7 +22714,7 @@ exports[`Calendar select dates 2`] = `
                 <button
                   aria-disabled="false"
                   aria-label="Wed Jan 01 2020"
-                  class="StyledButtonKind-sc-1vhfpnt-0 fvxTu StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
+                  class="StyledButtonKind-sc-1vhfpnt-0 eWCPay StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
                   tabindex="-1"
                   type="button"
                 >
@@ -22733,7 +22733,7 @@ exports[`Calendar select dates 2`] = `
                 <button
                   aria-disabled="false"
                   aria-label="Thu Jan 02 2020"
-                  class="StyledButtonKind-sc-1vhfpnt-0 fvxTu StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
+                  class="StyledButtonKind-sc-1vhfpnt-0 eWCPay StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
                   tabindex="-1"
                   type="button"
                 >
@@ -22752,7 +22752,7 @@ exports[`Calendar select dates 2`] = `
                 <button
                   aria-disabled="false"
                   aria-label="Fri Jan 03 2020"
-                  class="StyledButtonKind-sc-1vhfpnt-0 fvxTu StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
+                  class="StyledButtonKind-sc-1vhfpnt-0 eWCPay StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
                   tabindex="-1"
                   type="button"
                 >
@@ -22771,7 +22771,7 @@ exports[`Calendar select dates 2`] = `
                 <button
                   aria-disabled="false"
                   aria-label="Sat Jan 04 2020"
-                  class="StyledButtonKind-sc-1vhfpnt-0 fvxTu StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
+                  class="StyledButtonKind-sc-1vhfpnt-0 eWCPay StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
                   tabindex="-1"
                   type="button"
                 >
@@ -22795,7 +22795,7 @@ exports[`Calendar select dates 2`] = `
                 <button
                   aria-disabled="false"
                   aria-label="Sun Jan 05 2020"
-                  class="StyledButtonKind-sc-1vhfpnt-0 fvxTu StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
+                  class="StyledButtonKind-sc-1vhfpnt-0 eWCPay StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
                   tabindex="-1"
                   type="button"
                 >
@@ -22814,7 +22814,7 @@ exports[`Calendar select dates 2`] = `
                 <button
                   aria-disabled="false"
                   aria-label="Mon Jan 06 2020"
-                  class="StyledButtonKind-sc-1vhfpnt-0 fvxTu StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
+                  class="StyledButtonKind-sc-1vhfpnt-0 eWCPay StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
                   tabindex="-1"
                   type="button"
                 >
@@ -22833,7 +22833,7 @@ exports[`Calendar select dates 2`] = `
                 <button
                   aria-disabled="false"
                   aria-label="Tue Jan 07 2020"
-                  class="StyledButtonKind-sc-1vhfpnt-0 fvxTu StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
+                  class="StyledButtonKind-sc-1vhfpnt-0 eWCPay StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
                   tabindex="-1"
                   type="button"
                 >
@@ -22852,7 +22852,7 @@ exports[`Calendar select dates 2`] = `
                 <button
                   aria-disabled="false"
                   aria-label="Wed Jan 08 2020"
-                  class="StyledButtonKind-sc-1vhfpnt-0 fvxTu StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
+                  class="StyledButtonKind-sc-1vhfpnt-0 eWCPay StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
                   tabindex="-1"
                   type="button"
                 >
@@ -22871,7 +22871,7 @@ exports[`Calendar select dates 2`] = `
                 <button
                   aria-disabled="false"
                   aria-label="Thu Jan 09 2020"
-                  class="StyledButtonKind-sc-1vhfpnt-0 fvxTu StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
+                  class="StyledButtonKind-sc-1vhfpnt-0 eWCPay StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
                   tabindex="-1"
                   type="button"
                 >
@@ -22890,7 +22890,7 @@ exports[`Calendar select dates 2`] = `
                 <button
                   aria-disabled="false"
                   aria-label="Fri Jan 10 2020"
-                  class="StyledButtonKind-sc-1vhfpnt-0 fvxTu StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
+                  class="StyledButtonKind-sc-1vhfpnt-0 eWCPay StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
                   tabindex="-1"
                   type="button"
                 >
@@ -22909,7 +22909,7 @@ exports[`Calendar select dates 2`] = `
                 <button
                   aria-disabled="false"
                   aria-label="Sat Jan 11 2020"
-                  class="StyledButtonKind-sc-1vhfpnt-0 fvxTu StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
+                  class="StyledButtonKind-sc-1vhfpnt-0 eWCPay StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
                   tabindex="-1"
                   type="button"
                 >
@@ -22933,7 +22933,7 @@ exports[`Calendar select dates 2`] = `
                 <button
                   aria-disabled="false"
                   aria-label="Sun Jan 12 2020"
-                  class="StyledButtonKind-sc-1vhfpnt-0 fvxTu StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
+                  class="StyledButtonKind-sc-1vhfpnt-0 eWCPay StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
                   tabindex="-1"
                   type="button"
                 >
@@ -22952,7 +22952,7 @@ exports[`Calendar select dates 2`] = `
                 <button
                   aria-disabled="false"
                   aria-label="Mon Jan 13 2020"
-                  class="StyledButtonKind-sc-1vhfpnt-0 fvxTu StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
+                  class="StyledButtonKind-sc-1vhfpnt-0 eWCPay StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
                   tabindex="-1"
                   type="button"
                 >
@@ -22971,7 +22971,7 @@ exports[`Calendar select dates 2`] = `
                 <button
                   aria-disabled="false"
                   aria-label="Tue Jan 14 2020"
-                  class="StyledButtonKind-sc-1vhfpnt-0 fvxTu StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
+                  class="StyledButtonKind-sc-1vhfpnt-0 eWCPay StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
                   tabindex="-1"
                   type="button"
                 >
@@ -22990,7 +22990,7 @@ exports[`Calendar select dates 2`] = `
                 <button
                   aria-disabled="false"
                   aria-label="Wed Jan 15 2020"
-                  class="StyledButtonKind-sc-1vhfpnt-0 fvxTu StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
+                  class="StyledButtonKind-sc-1vhfpnt-0 eWCPay StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
                   tabindex="-1"
                   type="button"
                 >
@@ -23009,7 +23009,7 @@ exports[`Calendar select dates 2`] = `
                 <button
                   aria-disabled="false"
                   aria-label="Thu Jan 16 2020"
-                  class="StyledButtonKind-sc-1vhfpnt-0 fvxTu StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
+                  class="StyledButtonKind-sc-1vhfpnt-0 eWCPay StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
                   tabindex="-1"
                   type="button"
                 >
@@ -23028,7 +23028,7 @@ exports[`Calendar select dates 2`] = `
                 <button
                   aria-disabled="false"
                   aria-label="Fri Jan 17 2020"
-                  class="StyledButtonKind-sc-1vhfpnt-0 fvxTu StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
+                  class="StyledButtonKind-sc-1vhfpnt-0 eWCPay StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
                   tabindex="0"
                   type="button"
                 >
@@ -23047,7 +23047,7 @@ exports[`Calendar select dates 2`] = `
                 <button
                   aria-disabled="false"
                   aria-label="Sat Jan 18 2020"
-                  class="StyledButtonKind-sc-1vhfpnt-0 fvxTu StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
+                  class="StyledButtonKind-sc-1vhfpnt-0 eWCPay StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
                   tabindex="-1"
                   type="button"
                 >
@@ -23071,7 +23071,7 @@ exports[`Calendar select dates 2`] = `
                 <button
                   aria-disabled="false"
                   aria-label="Sun Jan 19 2020"
-                  class="StyledButtonKind-sc-1vhfpnt-0 fvxTu StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
+                  class="StyledButtonKind-sc-1vhfpnt-0 eWCPay StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
                   tabindex="-1"
                   type="button"
                 >
@@ -23090,7 +23090,7 @@ exports[`Calendar select dates 2`] = `
                 <button
                   aria-disabled="false"
                   aria-label="Mon Jan 20 2020"
-                  class="StyledButtonKind-sc-1vhfpnt-0 fvxTu StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
+                  class="StyledButtonKind-sc-1vhfpnt-0 eWCPay StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
                   tabindex="-1"
                   type="button"
                 >
@@ -23109,7 +23109,7 @@ exports[`Calendar select dates 2`] = `
                 <button
                   aria-disabled="false"
                   aria-label="Tue Jan 21 2020"
-                  class="StyledButtonKind-sc-1vhfpnt-0 fvxTu StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
+                  class="StyledButtonKind-sc-1vhfpnt-0 eWCPay StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
                   tabindex="-1"
                   type="button"
                 >
@@ -23128,7 +23128,7 @@ exports[`Calendar select dates 2`] = `
                 <button
                   aria-disabled="false"
                   aria-label="Wed Jan 22 2020"
-                  class="StyledButtonKind-sc-1vhfpnt-0 fvxTu StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
+                  class="StyledButtonKind-sc-1vhfpnt-0 eWCPay StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
                   tabindex="-1"
                   type="button"
                 >
@@ -23147,7 +23147,7 @@ exports[`Calendar select dates 2`] = `
                 <button
                   aria-disabled="false"
                   aria-label="Thu Jan 23 2020"
-                  class="StyledButtonKind-sc-1vhfpnt-0 fvxTu StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
+                  class="StyledButtonKind-sc-1vhfpnt-0 eWCPay StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
                   tabindex="-1"
                   type="button"
                 >
@@ -23166,7 +23166,7 @@ exports[`Calendar select dates 2`] = `
                 <button
                   aria-disabled="false"
                   aria-label="Fri Jan 24 2020"
-                  class="StyledButtonKind-sc-1vhfpnt-0 fvxTu StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
+                  class="StyledButtonKind-sc-1vhfpnt-0 eWCPay StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
                   tabindex="-1"
                   type="button"
                 >
@@ -23185,7 +23185,7 @@ exports[`Calendar select dates 2`] = `
                 <button
                   aria-disabled="false"
                   aria-label="Sat Jan 25 2020"
-                  class="StyledButtonKind-sc-1vhfpnt-0 fvxTu StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
+                  class="StyledButtonKind-sc-1vhfpnt-0 eWCPay StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
                   tabindex="-1"
                   type="button"
                 >
@@ -23209,7 +23209,7 @@ exports[`Calendar select dates 2`] = `
                 <button
                   aria-disabled="false"
                   aria-label="Sun Jan 26 2020"
-                  class="StyledButtonKind-sc-1vhfpnt-0 fvxTu StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
+                  class="StyledButtonKind-sc-1vhfpnt-0 eWCPay StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
                   tabindex="-1"
                   type="button"
                 >
@@ -23228,7 +23228,7 @@ exports[`Calendar select dates 2`] = `
                 <button
                   aria-disabled="false"
                   aria-label="Mon Jan 27 2020"
-                  class="StyledButtonKind-sc-1vhfpnt-0 fvxTu StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
+                  class="StyledButtonKind-sc-1vhfpnt-0 eWCPay StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
                   tabindex="-1"
                   type="button"
                 >
@@ -23247,7 +23247,7 @@ exports[`Calendar select dates 2`] = `
                 <button
                   aria-disabled="false"
                   aria-label="Tue Jan 28 2020"
-                  class="StyledButtonKind-sc-1vhfpnt-0 fvxTu StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
+                  class="StyledButtonKind-sc-1vhfpnt-0 eWCPay StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
                   tabindex="-1"
                   type="button"
                 >
@@ -23266,7 +23266,7 @@ exports[`Calendar select dates 2`] = `
                 <button
                   aria-disabled="false"
                   aria-label="Wed Jan 29 2020"
-                  class="StyledButtonKind-sc-1vhfpnt-0 fvxTu StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
+                  class="StyledButtonKind-sc-1vhfpnt-0 eWCPay StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
                   tabindex="-1"
                   type="button"
                 >
@@ -23285,7 +23285,7 @@ exports[`Calendar select dates 2`] = `
                 <button
                   aria-disabled="false"
                   aria-label="Thu Jan 30 2020"
-                  class="StyledButtonKind-sc-1vhfpnt-0 fvxTu StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
+                  class="StyledButtonKind-sc-1vhfpnt-0 eWCPay StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
                   tabindex="-1"
                   type="button"
                 >
@@ -23304,7 +23304,7 @@ exports[`Calendar select dates 2`] = `
                 <button
                   aria-disabled="false"
                   aria-label="Fri Jan 31 2020"
-                  class="StyledButtonKind-sc-1vhfpnt-0 fvxTu StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
+                  class="StyledButtonKind-sc-1vhfpnt-0 eWCPay StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
                   tabindex="-1"
                   type="button"
                 >
@@ -23323,7 +23323,7 @@ exports[`Calendar select dates 2`] = `
                 <button
                   aria-disabled="false"
                   aria-label="Sat Feb 01 2020"
-                  class="StyledButtonKind-sc-1vhfpnt-0 fvxTu StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
+                  class="StyledButtonKind-sc-1vhfpnt-0 eWCPay StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
                   tabindex="-1"
                   type="button"
                 >
@@ -23347,7 +23347,7 @@ exports[`Calendar select dates 2`] = `
                 <button
                   aria-disabled="false"
                   aria-label="Sun Feb 02 2020"
-                  class="StyledButtonKind-sc-1vhfpnt-0 fvxTu StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
+                  class="StyledButtonKind-sc-1vhfpnt-0 eWCPay StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
                   tabindex="-1"
                   type="button"
                 >
@@ -23366,7 +23366,7 @@ exports[`Calendar select dates 2`] = `
                 <button
                   aria-disabled="false"
                   aria-label="Mon Feb 03 2020"
-                  class="StyledButtonKind-sc-1vhfpnt-0 fvxTu StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
+                  class="StyledButtonKind-sc-1vhfpnt-0 eWCPay StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
                   tabindex="-1"
                   type="button"
                 >
@@ -23385,7 +23385,7 @@ exports[`Calendar select dates 2`] = `
                 <button
                   aria-disabled="false"
                   aria-label="Tue Feb 04 2020"
-                  class="StyledButtonKind-sc-1vhfpnt-0 fvxTu StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
+                  class="StyledButtonKind-sc-1vhfpnt-0 eWCPay StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
                   tabindex="-1"
                   type="button"
                 >
@@ -23404,7 +23404,7 @@ exports[`Calendar select dates 2`] = `
                 <button
                   aria-disabled="false"
                   aria-label="Wed Feb 05 2020"
-                  class="StyledButtonKind-sc-1vhfpnt-0 fvxTu StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
+                  class="StyledButtonKind-sc-1vhfpnt-0 eWCPay StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
                   tabindex="-1"
                   type="button"
                 >
@@ -23423,7 +23423,7 @@ exports[`Calendar select dates 2`] = `
                 <button
                   aria-disabled="false"
                   aria-label="Thu Feb 06 2020"
-                  class="StyledButtonKind-sc-1vhfpnt-0 fvxTu StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
+                  class="StyledButtonKind-sc-1vhfpnt-0 eWCPay StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
                   tabindex="-1"
                   type="button"
                 >
@@ -23442,7 +23442,7 @@ exports[`Calendar select dates 2`] = `
                 <button
                   aria-disabled="false"
                   aria-label="Fri Feb 07 2020"
-                  class="StyledButtonKind-sc-1vhfpnt-0 fvxTu StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
+                  class="StyledButtonKind-sc-1vhfpnt-0 eWCPay StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
                   tabindex="-1"
                   type="button"
                 >
@@ -23461,7 +23461,7 @@ exports[`Calendar select dates 2`] = `
                 <button
                   aria-disabled="false"
                   aria-label="Sat Feb 08 2020"
-                  class="StyledButtonKind-sc-1vhfpnt-0 fvxTu StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
+                  class="StyledButtonKind-sc-1vhfpnt-0 eWCPay StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
                   tabindex="-1"
                   type="button"
                 >
@@ -24979,7 +24979,7 @@ exports[`Calendar showAdjacentDays 1`] = `
 .c7:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c7:focus >circle,
@@ -24991,7 +24991,7 @@ exports[`Calendar showAdjacentDays 1`] = `
 .c7:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c7:focus ::-moz-focus-inner {
@@ -25042,7 +25042,7 @@ exports[`Calendar showAdjacentDays 1`] = `
 .c14:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c14:focus >circle,
@@ -25054,7 +25054,7 @@ exports[`Calendar showAdjacentDays 1`] = `
 .c14:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c14:focus ::-moz-focus-inner {
@@ -27958,7 +27958,7 @@ exports[`Calendar size 1`] = `
 .c7:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c7:focus >circle,
@@ -27970,7 +27970,7 @@ exports[`Calendar size 1`] = `
 .c7:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c7:focus ::-moz-focus-inner {
@@ -28021,7 +28021,7 @@ exports[`Calendar size 1`] = `
 .c14:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c14:focus >circle,
@@ -28033,7 +28033,7 @@ exports[`Calendar size 1`] = `
 .c14:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c14:focus ::-moz-focus-inner {

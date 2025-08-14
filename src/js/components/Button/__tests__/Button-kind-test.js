@@ -529,7 +529,7 @@ describe('Button kind', () => {
     // };
 
     const { asFragment } = render(
-      <Grommet theme={hpe}>
+      <Grommet>
         <Button
           data-testid="string-pad"
           label="String pad"

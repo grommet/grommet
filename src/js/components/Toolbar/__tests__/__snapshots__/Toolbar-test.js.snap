@@ -214,7 +214,7 @@ exports[`DataFilters renders 1`] = `
 .c24:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c24:focus >circle,
@@ -226,7 +226,7 @@ exports[`DataFilters renders 1`] = `
 .c24:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c24:focus ::-moz-focus-inner {
@@ -331,7 +331,7 @@ exports[`DataFilters renders 1`] = `
 .c7:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c7:focus >circle,
@@ -343,7 +343,7 @@ exports[`DataFilters renders 1`] = `
 .c7:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c7:focus ::-moz-focus-inner {

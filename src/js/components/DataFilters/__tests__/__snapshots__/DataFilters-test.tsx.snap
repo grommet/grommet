@@ -174,7 +174,7 @@ exports[`DataFilters clear 1`] = `
 .c22:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c22:focus >circle,
@@ -186,7 +186,7 @@ exports[`DataFilters clear 1`] = `
 .c22:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c22:focus ::-moz-focus-inner {
@@ -620,7 +620,7 @@ exports[`DataFilters drop 1`] = `
 .c3:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c3:focus >circle,
@@ -632,7 +632,7 @@ exports[`DataFilters drop 1`] = `
 .c3:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c3:focus ::-moz-focus-inner {
@@ -713,7 +713,7 @@ exports[`DataFilters drop 1`] = `
 exports[`DataFilters drop 2`] = `
 <button
   aria-label="Open filters"
-  class="StyledButtonKind-sc-1vhfpnt-0 gmTBeV"
+  class="StyledButtonKind-sc-1vhfpnt-0 cRrDhZ"
   data-g-tabindex="none"
   id="test-data--filters-control"
   tabindex="-1"
@@ -929,7 +929,7 @@ exports[`DataFilters drop badge 1`] = `
 .c5:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c5:focus >circle,
@@ -941,7 +941,7 @@ exports[`DataFilters drop badge 1`] = `
 .c5:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c5:focus ::-moz-focus-inner {
@@ -1011,7 +1011,7 @@ exports[`DataFilters drop badge 1`] = `
 .c11:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c11:focus >circle,
@@ -1023,7 +1023,7 @@ exports[`DataFilters drop badge 1`] = `
 .c11:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c11:focus ::-moz-focus-inner {
@@ -1244,7 +1244,7 @@ exports[`DataFilters layer 1`] = `
 .c3:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c3:focus >circle,
@@ -1256,7 +1256,7 @@ exports[`DataFilters layer 1`] = `
 .c3:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c3:focus ::-moz-focus-inner {
@@ -1565,7 +1565,7 @@ exports[`DataFilters layer 2`] = `
 .c12:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c12:focus >circle,
@@ -1577,7 +1577,7 @@ exports[`DataFilters layer 2`] = `
 .c12:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c12:focus ::-moz-focus-inner {
@@ -1647,7 +1647,7 @@ exports[`DataFilters layer 2`] = `
 .c27:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c27:focus >circle,
@@ -1659,7 +1659,7 @@ exports[`DataFilters layer 2`] = `
 .c27:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c27:focus ::-moz-focus-inner {
@@ -2356,7 +2356,7 @@ exports[`DataFilters properties array 1`] = `
 .c18:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c18:focus >circle,
@@ -2368,7 +2368,7 @@ exports[`DataFilters properties array 1`] = `
 .c18:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c18:focus ::-moz-focus-inner {
@@ -2803,7 +2803,7 @@ exports[`DataFilters properties object 1`] = `
 .c18:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c18:focus >circle,
@@ -2815,7 +2815,7 @@ exports[`DataFilters properties object 1`] = `
 .c18:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c18:focus ::-moz-focus-inner {
@@ -3250,7 +3250,7 @@ exports[`DataFilters renders 1`] = `
 .c18:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c18:focus >circle,
@@ -3262,7 +3262,7 @@ exports[`DataFilters renders 1`] = `
 .c18:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c18:focus ::-moz-focus-inner {
@@ -3712,7 +3712,7 @@ exports[`DataFilters should display all filter options regardless of result set 
 .c18:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c18:focus >circle,
@@ -3724,7 +3724,7 @@ exports[`DataFilters should display all filter options regardless of result set 
 .c18:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c18:focus ::-moz-focus-inner {
@@ -4193,7 +4193,7 @@ exports[`DataFilters should not badge when RangeSelector returns to min/max 1`] 
 .c3:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c3:focus >circle,
@@ -4205,7 +4205,7 @@ exports[`DataFilters should not badge when RangeSelector returns to min/max 1`] 
 .c3:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c3:focus ::-moz-focus-inner {
@@ -4674,7 +4674,7 @@ exports[`DataFilters sub objects 1`] = `
 .c33:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c33:focus >circle,
@@ -4686,7 +4686,7 @@ exports[`DataFilters sub objects 1`] = `
 .c33:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c33:focus ::-moz-focus-inner {
@@ -4917,7 +4917,7 @@ exports[`DataFilters sub objects 1`] = `
 .c41:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c41:focus >circle,
@@ -4929,7 +4929,7 @@ exports[`DataFilters sub objects 1`] = `
 .c41:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c41:focus ::-moz-focus-inner {
@@ -4971,7 +4971,7 @@ exports[`DataFilters sub objects 1`] = `
 .c40:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c40:focus:not(:focus-visible) {
@@ -5509,7 +5509,7 @@ exports[`DataFilters sub objects with rangeSelector 1`] = `
 .c5:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c5:focus >circle,
@@ -5521,7 +5521,7 @@ exports[`DataFilters sub objects with rangeSelector 1`] = `
 .c5:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c5:focus ::-moz-focus-inner {
@@ -5591,7 +5591,7 @@ exports[`DataFilters sub objects with rangeSelector 1`] = `
 .c11:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c11:focus >circle,
@@ -5603,7 +5603,7 @@ exports[`DataFilters sub objects with rangeSelector 1`] = `
 .c11:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c11:focus ::-moz-focus-inner {

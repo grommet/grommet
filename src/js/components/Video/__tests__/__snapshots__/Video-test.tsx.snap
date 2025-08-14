@@ -152,7 +152,7 @@ exports[`Video Configure Menu Button 1`] = `
 .c5:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c5:focus >circle,
@@ -164,7 +164,7 @@ exports[`Video Configure Menu Button 1`] = `
 .c5:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c5:focus ::-moz-focus-inner {
@@ -240,7 +240,7 @@ exports[`Video Configure Menu Button 1`] = `
 .c16:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c16:focus >circle,
@@ -252,7 +252,7 @@ exports[`Video Configure Menu Button 1`] = `
 .c16:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c16:focus ::-moz-focus-inner {
@@ -325,7 +325,7 @@ exports[`Video Configure Menu Button 1`] = `
 .c1:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus >circle,
@@ -337,7 +337,7 @@ exports[`Video Configure Menu Button 1`] = `
 .c1:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus ::-moz-focus-inner {
@@ -365,7 +365,7 @@ exports[`Video Configure Menu Button 1`] = `
 .c13:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c13:focus >circle,
@@ -377,7 +377,7 @@ exports[`Video Configure Menu Button 1`] = `
 .c13:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c13:focus ::-moz-focus-inner {
@@ -671,7 +671,7 @@ exports[`Video End event handler 1`] = `
 .c5:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c5:focus >circle,
@@ -683,7 +683,7 @@ exports[`Video End event handler 1`] = `
 .c5:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c5:focus ::-moz-focus-inner {
@@ -759,7 +759,7 @@ exports[`Video End event handler 1`] = `
 .c16:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c16:focus >circle,
@@ -771,7 +771,7 @@ exports[`Video End event handler 1`] = `
 .c16:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c16:focus ::-moz-focus-inner {
@@ -844,7 +844,7 @@ exports[`Video End event handler 1`] = `
 .c1:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus >circle,
@@ -856,7 +856,7 @@ exports[`Video End event handler 1`] = `
 .c1:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus ::-moz-focus-inner {
@@ -884,7 +884,7 @@ exports[`Video End event handler 1`] = `
 .c13:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c13:focus >circle,
@@ -896,7 +896,7 @@ exports[`Video End event handler 1`] = `
 .c13:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c13:focus ::-moz-focus-inner {
@@ -1178,7 +1178,7 @@ exports[`Video Play and Pause event handlers 1`] = `
 .c5:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c5:focus >circle,
@@ -1190,7 +1190,7 @@ exports[`Video Play and Pause event handlers 1`] = `
 .c5:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c5:focus ::-moz-focus-inner {
@@ -1266,7 +1266,7 @@ exports[`Video Play and Pause event handlers 1`] = `
 .c16:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c16:focus >circle,
@@ -1278,7 +1278,7 @@ exports[`Video Play and Pause event handlers 1`] = `
 .c16:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c16:focus ::-moz-focus-inner {
@@ -1351,7 +1351,7 @@ exports[`Video Play and Pause event handlers 1`] = `
 .c1:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus >circle,
@@ -1363,7 +1363,7 @@ exports[`Video Play and Pause event handlers 1`] = `
 .c1:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus ::-moz-focus-inner {
@@ -1391,7 +1391,7 @@ exports[`Video Play and Pause event handlers 1`] = `
 .c13:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c13:focus >circle,
@@ -1403,7 +1403,7 @@ exports[`Video Play and Pause event handlers 1`] = `
 .c13:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c13:focus ::-moz-focus-inner {
@@ -1538,7 +1538,7 @@ exports[`Video Play and Pause event handlers 2`] = `
   class="StyledGrommet-sc-19lkkz7-0 iRGypN"
 >
   <div
-    class="StyledVideo__StyledVideoContainer-sc-w4v8h9-1 hYHLsf"
+    class="StyledVideo__StyledVideoContainer-sc-w4v8h9-1 hwizGT"
     tabindex="-1"
   >
     <video
@@ -1557,7 +1557,7 @@ exports[`Video Play and Pause event handlers 2`] = `
         class="StyledBox-sc-13pk1d4-0 iGhGii"
       >
         <button
-          class="StyledButtonKind-sc-1vhfpnt-0 bZKdfG"
+          class="StyledButtonKind-sc-1vhfpnt-0 bcsvdO"
           type="button"
         >
           .c0 {
@@ -1643,7 +1643,7 @@ exports[`Video Play and Pause event handlers 2`] = `
               >
                 <div
                   aria-label="scrubber"
-                  class="StyledVideo__StyledVideoScrubber-sc-w4v8h9-3 joTMfs"
+                  class="StyledVideo__StyledVideoScrubber-sc-w4v8h9-3 lhLmVQ"
                   role="button"
                   tabindex="0"
                 />
@@ -1664,7 +1664,7 @@ exports[`Video Play and Pause event handlers 2`] = `
           aria-expanded="false"
           aria-haspopup="menu"
           aria-label="open menu"
-          class="StyledButtonKind-sc-1vhfpnt-0 jKdwXf"
+          class="StyledButtonKind-sc-1vhfpnt-0 lcgOKj"
           type="button"
         >
           <svg
@@ -1838,7 +1838,7 @@ exports[`Video autoPlay renders 1`] = `
 .c5:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c5:focus >circle,
@@ -1850,7 +1850,7 @@ exports[`Video autoPlay renders 1`] = `
 .c5:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c5:focus ::-moz-focus-inner {
@@ -1926,7 +1926,7 @@ exports[`Video autoPlay renders 1`] = `
 .c16:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c16:focus >circle,
@@ -1938,7 +1938,7 @@ exports[`Video autoPlay renders 1`] = `
 .c16:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c16:focus ::-moz-focus-inner {
@@ -2011,7 +2011,7 @@ exports[`Video autoPlay renders 1`] = `
 .c1:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus >circle,
@@ -2023,7 +2023,7 @@ exports[`Video autoPlay renders 1`] = `
 .c1:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus ::-moz-focus-inner {
@@ -2051,7 +2051,7 @@ exports[`Video autoPlay renders 1`] = `
 .c13:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c13:focus >circle,
@@ -2063,7 +2063,7 @@ exports[`Video autoPlay renders 1`] = `
 .c13:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c13:focus ::-moz-focus-inner {
@@ -2344,7 +2344,7 @@ exports[`Video controls below renders 1`] = `
 .c5:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c5:focus >circle,
@@ -2356,7 +2356,7 @@ exports[`Video controls below renders 1`] = `
 .c5:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c5:focus ::-moz-focus-inner {
@@ -2432,7 +2432,7 @@ exports[`Video controls below renders 1`] = `
 .c16:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c16:focus >circle,
@@ -2444,7 +2444,7 @@ exports[`Video controls below renders 1`] = `
 .c16:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c16:focus ::-moz-focus-inner {
@@ -2517,7 +2517,7 @@ exports[`Video controls below renders 1`] = `
 .c1:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus >circle,
@@ -2529,7 +2529,7 @@ exports[`Video controls below renders 1`] = `
 .c1:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus ::-moz-focus-inner {
@@ -2552,7 +2552,7 @@ exports[`Video controls below renders 1`] = `
 .c13:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c13:focus >circle,
@@ -2564,7 +2564,7 @@ exports[`Video controls below renders 1`] = `
 .c13:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c13:focus ::-moz-focus-inner {
@@ -2847,7 +2847,7 @@ exports[`Video controls over renders 1`] = `
 .c5:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c5:focus >circle,
@@ -2859,7 +2859,7 @@ exports[`Video controls over renders 1`] = `
 .c5:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c5:focus ::-moz-focus-inner {
@@ -2935,7 +2935,7 @@ exports[`Video controls over renders 1`] = `
 .c16:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c16:focus >circle,
@@ -2947,7 +2947,7 @@ exports[`Video controls over renders 1`] = `
 .c16:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c16:focus ::-moz-focus-inner {
@@ -3020,7 +3020,7 @@ exports[`Video controls over renders 1`] = `
 .c1:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus >circle,
@@ -3032,7 +3032,7 @@ exports[`Video controls over renders 1`] = `
 .c1:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus ::-moz-focus-inner {
@@ -3060,7 +3060,7 @@ exports[`Video controls over renders 1`] = `
 .c13:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c13:focus >circle,
@@ -3072,7 +3072,7 @@ exports[`Video controls over renders 1`] = `
 .c13:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c13:focus ::-moz-focus-inner {
@@ -3354,7 +3354,7 @@ exports[`Video duration event handler 1`] = `
 .c5:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c5:focus >circle,
@@ -3366,7 +3366,7 @@ exports[`Video duration event handler 1`] = `
 .c5:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c5:focus ::-moz-focus-inner {
@@ -3442,7 +3442,7 @@ exports[`Video duration event handler 1`] = `
 .c16:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c16:focus >circle,
@@ -3454,7 +3454,7 @@ exports[`Video duration event handler 1`] = `
 .c16:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c16:focus ::-moz-focus-inner {
@@ -3527,7 +3527,7 @@ exports[`Video duration event handler 1`] = `
 .c1:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus >circle,
@@ -3539,7 +3539,7 @@ exports[`Video duration event handler 1`] = `
 .c1:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus ::-moz-focus-inner {
@@ -3567,7 +3567,7 @@ exports[`Video duration event handler 1`] = `
 .c13:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c13:focus >circle,
@@ -3579,7 +3579,7 @@ exports[`Video duration event handler 1`] = `
 .c13:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c13:focus ::-moz-focus-inner {
@@ -3861,7 +3861,7 @@ exports[`Video fit  cover renders 1`] = `
 .c5:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c5:focus >circle,
@@ -3873,7 +3873,7 @@ exports[`Video fit  cover renders 1`] = `
 .c5:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c5:focus ::-moz-focus-inner {
@@ -3949,7 +3949,7 @@ exports[`Video fit  cover renders 1`] = `
 .c16:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c16:focus >circle,
@@ -3961,7 +3961,7 @@ exports[`Video fit  cover renders 1`] = `
 .c16:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c16:focus ::-moz-focus-inner {
@@ -4037,7 +4037,7 @@ exports[`Video fit  cover renders 1`] = `
 .c1:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus >circle,
@@ -4049,7 +4049,7 @@ exports[`Video fit  cover renders 1`] = `
 .c1:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus ::-moz-focus-inner {
@@ -4077,7 +4077,7 @@ exports[`Video fit  cover renders 1`] = `
 .c13:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c13:focus >circle,
@@ -4089,7 +4089,7 @@ exports[`Video fit  cover renders 1`] = `
 .c13:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c13:focus ::-moz-focus-inner {
@@ -4371,7 +4371,7 @@ exports[`Video fit contain renders 1`] = `
 .c5:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c5:focus >circle,
@@ -4383,7 +4383,7 @@ exports[`Video fit contain renders 1`] = `
 .c5:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c5:focus ::-moz-focus-inner {
@@ -4459,7 +4459,7 @@ exports[`Video fit contain renders 1`] = `
 .c16:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c16:focus >circle,
@@ -4471,7 +4471,7 @@ exports[`Video fit contain renders 1`] = `
 .c16:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c16:focus ::-moz-focus-inner {
@@ -4547,7 +4547,7 @@ exports[`Video fit contain renders 1`] = `
 .c1:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus >circle,
@@ -4559,7 +4559,7 @@ exports[`Video fit contain renders 1`] = `
 .c1:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus ::-moz-focus-inner {
@@ -4587,7 +4587,7 @@ exports[`Video fit contain renders 1`] = `
 .c13:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c13:focus >circle,
@@ -4599,7 +4599,7 @@ exports[`Video fit contain renders 1`] = `
 .c13:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c13:focus ::-moz-focus-inner {
@@ -4881,7 +4881,7 @@ exports[`Video loop renders 1`] = `
 .c5:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c5:focus >circle,
@@ -4893,7 +4893,7 @@ exports[`Video loop renders 1`] = `
 .c5:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c5:focus ::-moz-focus-inner {
@@ -4969,7 +4969,7 @@ exports[`Video loop renders 1`] = `
 .c16:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c16:focus >circle,
@@ -4981,7 +4981,7 @@ exports[`Video loop renders 1`] = `
 .c16:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c16:focus ::-moz-focus-inner {
@@ -5054,7 +5054,7 @@ exports[`Video loop renders 1`] = `
 .c1:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus >circle,
@@ -5066,7 +5066,7 @@ exports[`Video loop renders 1`] = `
 .c1:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus ::-moz-focus-inner {
@@ -5094,7 +5094,7 @@ exports[`Video loop renders 1`] = `
 .c13:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c13:focus >circle,
@@ -5106,7 +5106,7 @@ exports[`Video loop renders 1`] = `
 .c13:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c13:focus ::-moz-focus-inner {
@@ -5389,7 +5389,7 @@ exports[`Video mouse events handlers of controls 1`] = `
 .c5:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c5:focus >circle,
@@ -5401,7 +5401,7 @@ exports[`Video mouse events handlers of controls 1`] = `
 .c5:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c5:focus ::-moz-focus-inner {
@@ -5477,7 +5477,7 @@ exports[`Video mouse events handlers of controls 1`] = `
 .c16:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c16:focus >circle,
@@ -5489,7 +5489,7 @@ exports[`Video mouse events handlers of controls 1`] = `
 .c16:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c16:focus ::-moz-focus-inner {
@@ -5562,7 +5562,7 @@ exports[`Video mouse events handlers of controls 1`] = `
 .c1:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus >circle,
@@ -5574,7 +5574,7 @@ exports[`Video mouse events handlers of controls 1`] = `
 .c1:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus ::-moz-focus-inner {
@@ -5602,7 +5602,7 @@ exports[`Video mouse events handlers of controls 1`] = `
 .c13:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c13:focus >circle,
@@ -5614,7 +5614,7 @@ exports[`Video mouse events handlers of controls 1`] = `
 .c13:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c13:focus ::-moz-focus-inner {
@@ -5749,7 +5749,7 @@ exports[`Video mouse events handlers of controls 2`] = `
   class="StyledGrommet-sc-19lkkz7-0 iRGypN"
 >
   <div
-    class="StyledVideo__StyledVideoContainer-sc-w4v8h9-1 hYHLsf"
+    class="StyledVideo__StyledVideoContainer-sc-w4v8h9-1 hwizGT"
     tabindex="-1"
   >
     <video
@@ -5768,7 +5768,7 @@ exports[`Video mouse events handlers of controls 2`] = `
         class="StyledBox-sc-13pk1d4-0 iGhGii"
       >
         <button
-          class="StyledButtonKind-sc-1vhfpnt-0 bZKdfG"
+          class="StyledButtonKind-sc-1vhfpnt-0 bcsvdO"
           type="button"
         >
           <svg
@@ -5818,7 +5818,7 @@ exports[`Video mouse events handlers of controls 2`] = `
               >
                 <div
                   aria-label="scrubber"
-                  class="StyledVideo__StyledVideoScrubber-sc-w4v8h9-3 joTMfs"
+                  class="StyledVideo__StyledVideoScrubber-sc-w4v8h9-3 lhLmVQ"
                   role="button"
                   tabindex="0"
                 />
@@ -5839,7 +5839,7 @@ exports[`Video mouse events handlers of controls 2`] = `
           aria-expanded="false"
           aria-haspopup="menu"
           aria-label="open menu"
-          class="StyledButtonKind-sc-1vhfpnt-0 jKdwXf"
+          class="StyledButtonKind-sc-1vhfpnt-0 lcgOKj"
           type="button"
         >
           <svg
@@ -5866,7 +5866,7 @@ exports[`Video mouse events handlers of controls 3`] = `
   class="StyledGrommet-sc-19lkkz7-0 iRGypN"
 >
   <div
-    class="StyledVideo__StyledVideoContainer-sc-w4v8h9-1 hYHLsf"
+    class="StyledVideo__StyledVideoContainer-sc-w4v8h9-1 hwizGT"
     tabindex="-1"
   >
     <video
@@ -5885,7 +5885,7 @@ exports[`Video mouse events handlers of controls 3`] = `
         class="StyledBox-sc-13pk1d4-0 iGhGii"
       >
         <button
-          class="StyledButtonKind-sc-1vhfpnt-0 bZKdfG"
+          class="StyledButtonKind-sc-1vhfpnt-0 bcsvdO"
           type="button"
         >
           <svg
@@ -5935,7 +5935,7 @@ exports[`Video mouse events handlers of controls 3`] = `
               >
                 <div
                   aria-label="scrubber"
-                  class="StyledVideo__StyledVideoScrubber-sc-w4v8h9-3 joTMfs"
+                  class="StyledVideo__StyledVideoScrubber-sc-w4v8h9-3 lhLmVQ"
                   role="button"
                   tabindex="0"
                 />
@@ -5956,7 +5956,7 @@ exports[`Video mouse events handlers of controls 3`] = `
           aria-expanded="false"
           aria-haspopup="menu"
           aria-label="open menu"
-          class="StyledButtonKind-sc-1vhfpnt-0 jKdwXf"
+          class="StyledButtonKind-sc-1vhfpnt-0 lcgOKj"
           type="button"
         >
           <svg
@@ -6130,7 +6130,7 @@ exports[`Video mute renders 1`] = `
 .c5:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c5:focus >circle,
@@ -6142,7 +6142,7 @@ exports[`Video mute renders 1`] = `
 .c5:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c5:focus ::-moz-focus-inner {
@@ -6218,7 +6218,7 @@ exports[`Video mute renders 1`] = `
 .c16:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c16:focus >circle,
@@ -6230,7 +6230,7 @@ exports[`Video mute renders 1`] = `
 .c16:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c16:focus ::-moz-focus-inner {
@@ -6303,7 +6303,7 @@ exports[`Video mute renders 1`] = `
 .c1:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus >circle,
@@ -6315,7 +6315,7 @@ exports[`Video mute renders 1`] = `
 .c1:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus ::-moz-focus-inner {
@@ -6343,7 +6343,7 @@ exports[`Video mute renders 1`] = `
 .c13:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c13:focus >circle,
@@ -6355,7 +6355,7 @@ exports[`Video mute renders 1`] = `
 .c13:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c13:focus ::-moz-focus-inner {
@@ -6637,7 +6637,7 @@ exports[`Video renders 1`] = `
 .c5:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c5:focus >circle,
@@ -6649,7 +6649,7 @@ exports[`Video renders 1`] = `
 .c5:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c5:focus ::-moz-focus-inner {
@@ -6725,7 +6725,7 @@ exports[`Video renders 1`] = `
 .c16:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c16:focus >circle,
@@ -6737,7 +6737,7 @@ exports[`Video renders 1`] = `
 .c16:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c16:focus ::-moz-focus-inner {
@@ -6810,7 +6810,7 @@ exports[`Video renders 1`] = `
 .c1:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus >circle,
@@ -6822,7 +6822,7 @@ exports[`Video renders 1`] = `
 .c1:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus ::-moz-focus-inner {
@@ -6850,7 +6850,7 @@ exports[`Video renders 1`] = `
 .c13:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c13:focus >circle,
@@ -6862,7 +6862,7 @@ exports[`Video renders 1`] = `
 .c13:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c13:focus ::-moz-focus-inner {
@@ -7613,7 +7613,7 @@ exports[`Video scrubber 1`] = `
 .c5:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c5:focus >circle,
@@ -7625,7 +7625,7 @@ exports[`Video scrubber 1`] = `
 .c5:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c5:focus ::-moz-focus-inner {
@@ -7701,7 +7701,7 @@ exports[`Video scrubber 1`] = `
 .c16:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c16:focus >circle,
@@ -7713,7 +7713,7 @@ exports[`Video scrubber 1`] = `
 .c16:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c16:focus ::-moz-focus-inner {
@@ -7786,7 +7786,7 @@ exports[`Video scrubber 1`] = `
 .c1:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus >circle,
@@ -7798,7 +7798,7 @@ exports[`Video scrubber 1`] = `
 .c1:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus ::-moz-focus-inner {
@@ -7826,7 +7826,7 @@ exports[`Video scrubber 1`] = `
 .c13:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c13:focus >circle,
@@ -7838,7 +7838,7 @@ exports[`Video scrubber 1`] = `
 .c13:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c13:focus ::-moz-focus-inner {
@@ -7973,7 +7973,7 @@ exports[`Video scrubber 2`] = `
   class="StyledGrommet-sc-19lkkz7-0 iRGypN"
 >
   <div
-    class="StyledVideo__StyledVideoContainer-sc-w4v8h9-1 hYHLsf"
+    class="StyledVideo__StyledVideoContainer-sc-w4v8h9-1 hwizGT"
     tabindex="-1"
   >
     <video
@@ -7992,7 +7992,7 @@ exports[`Video scrubber 2`] = `
         class="StyledBox-sc-13pk1d4-0 iGhGii"
       >
         <button
-          class="StyledButtonKind-sc-1vhfpnt-0 bZKdfG"
+          class="StyledButtonKind-sc-1vhfpnt-0 bcsvdO"
           type="button"
         >
           <svg
@@ -8042,7 +8042,7 @@ exports[`Video scrubber 2`] = `
               >
                 <div
                   aria-label="scrubber"
-                  class="StyledVideo__StyledVideoScrubber-sc-w4v8h9-3 joTMfs"
+                  class="StyledVideo__StyledVideoScrubber-sc-w4v8h9-3 lhLmVQ"
                   role="button"
                   tabindex="0"
                 />
@@ -8063,7 +8063,7 @@ exports[`Video scrubber 2`] = `
           aria-expanded="false"
           aria-haspopup="menu"
           aria-label="open menu"
-          class="StyledButtonKind-sc-1vhfpnt-0 jKdwXf"
+          class="StyledButtonKind-sc-1vhfpnt-0 lcgOKj"
           type="button"
         >
           <svg
@@ -8686,7 +8686,7 @@ exports[`Video timeUpdate event handler 1`] = `
 .c5:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c5:focus >circle,
@@ -8698,7 +8698,7 @@ exports[`Video timeUpdate event handler 1`] = `
 .c5:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c5:focus ::-moz-focus-inner {
@@ -8774,7 +8774,7 @@ exports[`Video timeUpdate event handler 1`] = `
 .c16:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c16:focus >circle,
@@ -8786,7 +8786,7 @@ exports[`Video timeUpdate event handler 1`] = `
 .c16:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c16:focus ::-moz-focus-inner {
@@ -8859,7 +8859,7 @@ exports[`Video timeUpdate event handler 1`] = `
 .c1:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus >circle,
@@ -8871,7 +8871,7 @@ exports[`Video timeUpdate event handler 1`] = `
 .c1:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus ::-moz-focus-inner {
@@ -8899,7 +8899,7 @@ exports[`Video timeUpdate event handler 1`] = `
 .c13:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c13:focus >circle,
@@ -8911,7 +8911,7 @@ exports[`Video timeUpdate event handler 1`] = `
 .c13:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c13:focus ::-moz-focus-inner {

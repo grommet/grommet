@@ -98,7 +98,7 @@ exports[`DataView preset view 1`] = `
 .c3:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c3:focus >circle,
@@ -110,7 +110,7 @@ exports[`DataView preset view 1`] = `
 .c3:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c3:focus ::-moz-focus-inner {
@@ -430,7 +430,7 @@ exports[`DataView renders 1`] = `
 .c3:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c3:focus >circle,
@@ -442,7 +442,7 @@ exports[`DataView renders 1`] = `
 .c3:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c3:focus ::-moz-focus-inner {

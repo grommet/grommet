@@ -423,7 +423,7 @@ exports[`RangeInput onFocus 1`] = `
   width: 24px;
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
   border-color: transparent;
 }
 
@@ -436,7 +436,7 @@ exports[`RangeInput onFocus 1`] = `
 .c1::-moz-range-thumb >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1::-moz-range-thumb ::-moz-focus-inner {
@@ -459,7 +459,7 @@ exports[`RangeInput onFocus 1`] = `
   width: 24px;
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
   border-color: transparent;
 }
 
@@ -472,7 +472,7 @@ exports[`RangeInput onFocus 1`] = `
 .c1::-ms-thumb >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1::-ms-thumb ::-moz-focus-inner {
@@ -510,7 +510,7 @@ exports[`RangeInput onFocus 1`] = `
 .c1:focus::-webkit-slider-thumb {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus::-webkit-slider-thumb >circle,
@@ -522,7 +522,7 @@ exports[`RangeInput onFocus 1`] = `
 .c1:focus::-webkit-slider-thumb >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus::-webkit-slider-thumb ::-moz-focus-inner {

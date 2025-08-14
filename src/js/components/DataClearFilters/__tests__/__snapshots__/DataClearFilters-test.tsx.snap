@@ -144,7 +144,7 @@ exports[`DataClearFilters clear filters should not clear search, sort, or step 1
 .c10:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c10:focus >circle,
@@ -156,7 +156,7 @@ exports[`DataClearFilters clear filters should not clear search, sort, or step 1
 .c10:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c10:focus ::-moz-focus-inner {
@@ -212,7 +212,7 @@ exports[`DataClearFilters clear filters should not clear search, sort, or step 1
 .c8:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c8:focus >circle,
@@ -224,7 +224,7 @@ exports[`DataClearFilters clear filters should not clear search, sort, or step 1
 .c8:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c8:focus ::-moz-focus-inner {
@@ -550,7 +550,7 @@ exports[`DataClearFilters clears filters when clicked 1`] = `
 .c3:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c3:focus >circle,
@@ -562,7 +562,7 @@ exports[`DataClearFilters clears filters when clicked 1`] = `
 .c3:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c3:focus ::-moz-focus-inner {
@@ -680,7 +680,7 @@ exports[`DataClearFilters renders 1`] = `
 .c2:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c2:focus >circle,
@@ -692,7 +692,7 @@ exports[`DataClearFilters renders 1`] = `
 .c2:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c2:focus ::-moz-focus-inner {
@@ -898,7 +898,7 @@ exports[`DataClearFilters renders custom message 1`] = `
 .c10:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c10:focus >circle,
@@ -910,7 +910,7 @@ exports[`DataClearFilters renders custom message 1`] = `
 .c10:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c10:focus ::-moz-focus-inner {
@@ -980,7 +980,7 @@ exports[`DataClearFilters renders custom message 1`] = `
 .c12:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c12:focus >circle,
@@ -992,7 +992,7 @@ exports[`DataClearFilters renders custom message 1`] = `
 .c12:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c12:focus ::-moz-focus-inner {
@@ -1048,7 +1048,7 @@ exports[`DataClearFilters renders custom message 1`] = `
 .c8:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c8:focus >circle,
@@ -1060,7 +1060,7 @@ exports[`DataClearFilters renders custom message 1`] = `
 .c8:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c8:focus ::-moz-focus-inner {

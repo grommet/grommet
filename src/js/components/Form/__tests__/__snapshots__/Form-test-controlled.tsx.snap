@@ -76,7 +76,7 @@ exports[`Form controlled controlled 1`] = `
 .c6:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c6:focus >circle,
@@ -88,7 +88,7 @@ exports[`Form controlled controlled 1`] = `
 .c6:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c6:focus ::-moz-focus-inner {
@@ -296,7 +296,7 @@ exports[`Form controlled controlled 2`] = `
       </div>
     </div>
     <button
-      class="StyledButtonKind-sc-1vhfpnt-0 eyEzUA"
+      class="StyledButtonKind-sc-1vhfpnt-0 lluCjU"
       type="submit"
     >
       Submit
@@ -330,7 +330,7 @@ exports[`Form controlled controlled 3`] = `
       </div>
     </div>
     <button
-      class="StyledButtonKind-sc-1vhfpnt-0 eyEzUA"
+      class="StyledButtonKind-sc-1vhfpnt-0 lluCjU"
       type="submit"
     >
       Submit

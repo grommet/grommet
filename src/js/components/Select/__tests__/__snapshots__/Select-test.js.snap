@@ -89,7 +89,7 @@ exports[`Select 0 value 1`] = `
 .c1:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus >circle,
@@ -101,7 +101,7 @@ exports[`Select 0 value 1`] = `
 .c1:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus ::-moz-focus-inner {
@@ -434,7 +434,7 @@ exports[`Select Clear option renders - bottom 1`] = `
 .c7:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c7:focus >circle,
@@ -446,7 +446,7 @@ exports[`Select Clear option renders - bottom 1`] = `
 .c7:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c7:focus ::-moz-focus-inner {
@@ -535,7 +535,7 @@ exports[`Select Clear option renders - bottom 1`] = `
 .c5:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c5:focus >circle,
@@ -547,7 +547,7 @@ exports[`Select Clear option renders - bottom 1`] = `
 .c5:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c5:focus ::-moz-focus-inner {
@@ -894,7 +894,7 @@ exports[`Select Clear option renders correct label when wrapped in FormField 1`]
 .c5:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c5:focus >circle,
@@ -906,7 +906,7 @@ exports[`Select Clear option renders correct label when wrapped in FormField 1`]
 .c5:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c5:focus ::-moz-focus-inner {
@@ -1183,7 +1183,7 @@ exports[`Select Clear option renders custom label 1`] = `
 .c5:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c5:focus >circle,
@@ -1195,7 +1195,7 @@ exports[`Select Clear option renders custom label 1`] = `
 .c5:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c5:focus ::-moz-focus-inner {
@@ -1482,7 +1482,7 @@ exports[`Select Clear option renders- top 1`] = `
 .c11:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c11:focus >circle,
@@ -1494,7 +1494,7 @@ exports[`Select Clear option renders- top 1`] = `
 .c11:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c11:focus ::-moz-focus-inner {
@@ -1625,7 +1625,7 @@ exports[`Select Clear option renders- top 1`] = `
 .c9:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c9:focus >circle,
@@ -1637,7 +1637,7 @@ exports[`Select Clear option renders- top 1`] = `
 .c9:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c9:focus ::-moz-focus-inner {
@@ -1928,7 +1928,7 @@ exports[`Select Search timeout 1`] = `
 .c1:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus >circle,
@@ -1940,7 +1940,7 @@ exports[`Select Search timeout 1`] = `
 .c1:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus ::-moz-focus-inner {
@@ -2191,7 +2191,7 @@ exports[`Select Search timeout 2`] = `
 .c0:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c0:focus >circle,
@@ -2203,7 +2203,7 @@ exports[`Select Search timeout 2`] = `
 .c0:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c0:focus ::-moz-focus-inner {
@@ -2368,7 +2368,7 @@ exports[`Select Select component handles JSX options correctly 1`] = `
 .c1:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus >circle,
@@ -2380,7 +2380,7 @@ exports[`Select Select component handles JSX options correctly 1`] = `
 .c1:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus ::-moz-focus-inner {
@@ -3059,7 +3059,7 @@ exports[`Select basic 1`] = `
 .c1:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus >circle,
@@ -3071,7 +3071,7 @@ exports[`Select basic 1`] = `
 .c1:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus ::-moz-focus-inner {
@@ -3607,7 +3607,7 @@ exports[`Select complex options and children 1`] = `
 .c1:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus >circle,
@@ -3619,7 +3619,7 @@ exports[`Select complex options and children 1`] = `
 .c1:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus ::-moz-focus-inner {
@@ -3835,7 +3835,7 @@ exports[`Select complex options and children 2`] = `
     aria-expanded="true"
     aria-haspopup="listbox"
     aria-label="test select"
-    class="StyledButtonKind-sc-1vhfpnt-0 fvxTu StyledSelect__StyledSelectDropButton-sc-znp66n-5 eOYqUg"
+    class="StyledButtonKind-sc-1vhfpnt-0 eWCPay StyledSelect__StyledSelectDropButton-sc-znp66n-5 eOYqUg"
     id="test-select"
     type="button"
   >
@@ -4019,7 +4019,7 @@ exports[`Select complex options and children 3`] = `
 .c5:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c5:focus >circle,
@@ -4031,7 +4031,7 @@ exports[`Select complex options and children 3`] = `
 .c5:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c5:focus ::-moz-focus-inner {
@@ -4301,7 +4301,7 @@ exports[`Select dark 1`] = `
 .c2:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c2:focus >circle,
@@ -4313,7 +4313,7 @@ exports[`Select dark 1`] = `
 .c2:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c2:focus ::-moz-focus-inner {
@@ -4611,7 +4611,7 @@ exports[`Select default value 1`] = `
 .c1:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus >circle,
@@ -4623,7 +4623,7 @@ exports[`Select default value 1`] = `
 .c1:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus ::-moz-focus-inner {
@@ -4997,7 +4997,7 @@ exports[`Select default value clear 1`] = `
 .c9:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c9:focus >circle,
@@ -5009,7 +5009,7 @@ exports[`Select default value clear 1`] = `
 .c9:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c9:focus ::-moz-focus-inner {
@@ -5098,7 +5098,7 @@ exports[`Select default value clear 1`] = `
 .c11:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c11:focus >circle,
@@ -5110,7 +5110,7 @@ exports[`Select default value clear 1`] = `
 .c11:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c11:focus ::-moz-focus-inner {
@@ -5401,7 +5401,7 @@ exports[`Select default value object options 1`] = `
 .c1:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus >circle,
@@ -5413,7 +5413,7 @@ exports[`Select default value object options 1`] = `
 .c1:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus ::-moz-focus-inner {
@@ -5711,7 +5711,7 @@ exports[`Select disabled 1`] = `
 .c1:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus >circle,
@@ -5723,7 +5723,7 @@ exports[`Select disabled 1`] = `
 .c1:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus ::-moz-focus-inner {
@@ -5945,7 +5945,7 @@ exports[`Select disabled 2`] = `
     aria-expanded="false"
     aria-haspopup="listbox"
     aria-label="test select"
-    class="StyledButtonKind-sc-1vhfpnt-0 kOOTvn StyledSelect__StyledSelectDropButton-sc-znp66n-5 hUJrDh"
+    class="StyledButtonKind-sc-1vhfpnt-0 gnVSyb StyledSelect__StyledSelectDropButton-sc-znp66n-5 hUJrDh"
     disabled=""
     id="test-select"
     type="button"
@@ -6082,7 +6082,7 @@ exports[`Select disabled key 1`] = `
 .c1:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus >circle,
@@ -6094,7 +6094,7 @@ exports[`Select disabled key 1`] = `
 .c1:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus ::-moz-focus-inner {
@@ -6409,7 +6409,7 @@ exports[`Select disabled key 2`] = `
 .c5:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c5:focus >circle,
@@ -6421,7 +6421,7 @@ exports[`Select disabled key 2`] = `
 .c5:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c5:focus ::-moz-focus-inner {
@@ -6490,7 +6490,7 @@ exports[`Select disabled key 2`] = `
 .c7:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c7:focus >circle,
@@ -6502,7 +6502,7 @@ exports[`Select disabled key 2`] = `
 .c7:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c7:focus ::-moz-focus-inner {
@@ -6780,7 +6780,7 @@ exports[`Select disabled option value 1`] = `
 .c5:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c5:focus >circle,
@@ -6792,7 +6792,7 @@ exports[`Select disabled option value 1`] = `
 .c5:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c5:focus ::-moz-focus-inner {
@@ -6861,7 +6861,7 @@ exports[`Select disabled option value 1`] = `
 .c7:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c7:focus >circle,
@@ -6873,7 +6873,7 @@ exports[`Select disabled option value 1`] = `
 .c7:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c7:focus ::-moz-focus-inner {
@@ -7071,7 +7071,7 @@ exports[`Select empty results search 1`] = `
 .c0:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c0:focus >circle,
@@ -7083,7 +7083,7 @@ exports[`Select empty results search 1`] = `
 .c0:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c0:focus ::-moz-focus-inner {
@@ -7256,7 +7256,7 @@ exports[`Select keyboard navigation timeout 1`] = `
 .c1:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus >circle,
@@ -7268,7 +7268,7 @@ exports[`Select keyboard navigation timeout 1`] = `
 .c1:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus ::-moz-focus-inner {
@@ -7590,7 +7590,7 @@ exports[`Select large drop container height 1`] = `
 .c5:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c5:focus >circle,
@@ -7602,7 +7602,7 @@ exports[`Select large drop container height 1`] = `
 .c5:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c5:focus ::-moz-focus-inner {
@@ -7848,7 +7848,7 @@ exports[`Select medium drop container height 1`] = `
 .c5:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c5:focus >circle,
@@ -7860,7 +7860,7 @@ exports[`Select medium drop container height 1`] = `
 .c5:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c5:focus ::-moz-focus-inner {
@@ -8349,7 +8349,7 @@ exports[`Select null value 1`] = `
 .c1:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus >circle,
@@ -8361,7 +8361,7 @@ exports[`Select null value 1`] = `
 .c1:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus ::-moz-focus-inner {
@@ -8659,7 +8659,7 @@ exports[`Select onChange with valueKey object 1`] = `
 .c1:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus >circle,
@@ -8671,7 +8671,7 @@ exports[`Select onChange with valueKey object 1`] = `
 .c1:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus ::-moz-focus-inner {
@@ -8982,7 +8982,7 @@ exports[`Select onChange with valueKey object 2`] = `
 .c5:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c5:focus >circle,
@@ -8994,7 +8994,7 @@ exports[`Select onChange with valueKey object 2`] = `
 .c5:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c5:focus ::-moz-focus-inner {
@@ -9246,7 +9246,7 @@ exports[`Select onChange with valueKey object 4`] = `
 .c1:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus >circle,
@@ -9258,7 +9258,7 @@ exports[`Select onChange with valueKey object 4`] = `
 .c1:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus ::-moz-focus-inner {
@@ -9563,7 +9563,7 @@ exports[`Select onChange with valueKey string 1`] = `
 .c1:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus >circle,
@@ -9575,7 +9575,7 @@ exports[`Select onChange with valueKey string 1`] = `
 .c1:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus ::-moz-focus-inner {
@@ -9885,7 +9885,7 @@ exports[`Select onChange with valueKey string 2`] = `
 .c5:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c5:focus >circle,
@@ -9897,7 +9897,7 @@ exports[`Select onChange with valueKey string 2`] = `
 .c5:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c5:focus ::-moz-focus-inner {
@@ -10149,7 +10149,7 @@ exports[`Select onChange with valueKey string 4`] = `
 .c1:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus >circle,
@@ -10161,7 +10161,7 @@ exports[`Select onChange with valueKey string 4`] = `
 .c1:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus ::-moz-focus-inner {
@@ -10466,7 +10466,7 @@ exports[`Select onChange with valueLabel 1`] = `
 .c1:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus >circle,
@@ -10478,7 +10478,7 @@ exports[`Select onChange with valueLabel 1`] = `
 .c1:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus ::-moz-focus-inner {
@@ -10711,7 +10711,7 @@ exports[`Select onChange with valueLabel 2`] = `
 .c5:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c5:focus >circle,
@@ -10723,7 +10723,7 @@ exports[`Select onChange with valueLabel 2`] = `
 .c5:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c5:focus ::-moz-focus-inner {
@@ -10975,7 +10975,7 @@ exports[`Select onChange without labelKey 1`] = `
 .c1:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus >circle,
@@ -10987,7 +10987,7 @@ exports[`Select onChange without labelKey 1`] = `
 .c1:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus ::-moz-focus-inner {
@@ -11298,7 +11298,7 @@ exports[`Select onChange without labelKey 2`] = `
 .c5:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c5:focus >circle,
@@ -11310,7 +11310,7 @@ exports[`Select onChange without labelKey 2`] = `
 .c5:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c5:focus ::-moz-focus-inner {
@@ -11562,7 +11562,7 @@ exports[`Select onChange without labelKey 4`] = `
 .c1:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus >circle,
@@ -11574,7 +11574,7 @@ exports[`Select onChange without labelKey 4`] = `
 .c1:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus ::-moz-focus-inner {
@@ -11879,7 +11879,7 @@ exports[`Select onChange without labelKey or valueKey 1`] = `
 .c1:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus >circle,
@@ -11891,7 +11891,7 @@ exports[`Select onChange without labelKey or valueKey 1`] = `
 .c1:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus ::-moz-focus-inner {
@@ -12201,7 +12201,7 @@ exports[`Select onChange without labelKey or valueKey 2`] = `
 .c5:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c5:focus >circle,
@@ -12213,7 +12213,7 @@ exports[`Select onChange without labelKey or valueKey 2`] = `
 .c5:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c5:focus ::-moz-focus-inner {
@@ -12465,7 +12465,7 @@ exports[`Select onChange without labelKey or valueKey 4`] = `
 .c1:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus >circle,
@@ -12477,7 +12477,7 @@ exports[`Select onChange without labelKey or valueKey 4`] = `
 .c1:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus ::-moz-focus-inner {
@@ -12782,7 +12782,7 @@ exports[`Select onChange without valueKey 1`] = `
 .c1:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus >circle,
@@ -12794,7 +12794,7 @@ exports[`Select onChange without valueKey 1`] = `
 .c1:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus ::-moz-focus-inner {
@@ -13104,7 +13104,7 @@ exports[`Select onChange without valueKey 2`] = `
 .c5:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c5:focus >circle,
@@ -13116,7 +13116,7 @@ exports[`Select onChange without valueKey 2`] = `
 .c5:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c5:focus ::-moz-focus-inner {
@@ -13368,7 +13368,7 @@ exports[`Select onChange without valueKey 4`] = `
 .c1:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus >circle,
@@ -13380,7 +13380,7 @@ exports[`Select onChange without valueKey 4`] = `
 .c1:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus ::-moz-focus-inner {
@@ -13685,7 +13685,7 @@ exports[`Select prop: onClose 1`] = `
 .c1:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus >circle,
@@ -13697,7 +13697,7 @@ exports[`Select prop: onClose 1`] = `
 .c1:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus ::-moz-focus-inner {
@@ -14001,7 +14001,7 @@ exports[`Select prop: onClose 2`] = `
 .c1:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus >circle,
@@ -14013,7 +14013,7 @@ exports[`Select prop: onClose 2`] = `
 .c1:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus ::-moz-focus-inner {
@@ -15598,7 +15598,7 @@ exports[`Select renders custom icon 1`] = `
 .c1:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus >circle,
@@ -15610,7 +15610,7 @@ exports[`Select renders custom icon 1`] = `
 .c1:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus ::-moz-focus-inner {
@@ -16589,7 +16589,7 @@ exports[`Select renders default icon 1`] = `
 .c1:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus >circle,
@@ -16601,7 +16601,7 @@ exports[`Select renders default icon 1`] = `
 .c1:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus ::-moz-focus-inner {
@@ -17712,7 +17712,7 @@ exports[`Select renders without icon 1`] = `
 .c1:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus >circle,
@@ -17724,7 +17724,7 @@ exports[`Select renders without icon 1`] = `
 .c1:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus ::-moz-focus-inner {
@@ -17983,7 +17983,7 @@ exports[`Select search 1`] = `
 .c1:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus >circle,
@@ -17995,7 +17995,7 @@ exports[`Select search 1`] = `
 .c1:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus ::-moz-focus-inner {
@@ -18316,7 +18316,7 @@ exports[`Select search 2`] = `
 .c8:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c8:focus >circle,
@@ -18328,7 +18328,7 @@ exports[`Select search 2`] = `
 .c8:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c8:focus ::-moz-focus-inner {
@@ -18417,7 +18417,7 @@ exports[`Select search 2`] = `
 .c10:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c10:focus >circle,
@@ -18429,7 +18429,7 @@ exports[`Select search 2`] = `
 .c10:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c10:focus ::-moz-focus-inner {
@@ -18486,7 +18486,7 @@ exports[`Select search 2`] = `
 .c6:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c6:focus >circle,
@@ -18498,7 +18498,7 @@ exports[`Select search 2`] = `
 .c6:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c6:focus ::-moz-focus-inner {
@@ -18708,7 +18708,7 @@ exports[`Select search 3`] = `
 exports[`Select search 4`] = `
 <input
   autocomplete="off"
-  class="StyledTextInput-sc-1x30a0s-0 dPCHOa"
+  class="StyledTextInput-sc-1x30a0s-0 cOWWNe"
   type="search"
   value=""
 />
@@ -18717,7 +18717,7 @@ exports[`Select search 4`] = `
 exports[`Select search 5`] = `
 <input
   autocomplete="off"
-  class="StyledTextInput-sc-1x30a0s-0 dPCHOa"
+  class="StyledTextInput-sc-1x30a0s-0 cOWWNe"
   type="search"
   value="o"
 />
@@ -18811,7 +18811,7 @@ exports[`Select search and select 1`] = `
 .c1:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus >circle,
@@ -18823,7 +18823,7 @@ exports[`Select search and select 1`] = `
 .c1:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus ::-moz-focus-inner {
@@ -19144,7 +19144,7 @@ exports[`Select search and select 2`] = `
 .c8:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c8:focus >circle,
@@ -19156,7 +19156,7 @@ exports[`Select search and select 2`] = `
 .c8:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c8:focus ::-moz-focus-inner {
@@ -19213,7 +19213,7 @@ exports[`Select search and select 2`] = `
 .c6:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c6:focus >circle,
@@ -19225,7 +19225,7 @@ exports[`Select search and select 2`] = `
 .c6:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c6:focus ::-moz-focus-inner {
@@ -19435,7 +19435,7 @@ exports[`Select search and select 3`] = `
 exports[`Select search and select 4`] = `
 <input
   autocomplete="off"
-  class="StyledTextInput-sc-1x30a0s-0 dPCHOa"
+  class="StyledTextInput-sc-1x30a0s-0 cOWWNe"
   type="search"
   value=""
 />
@@ -19444,7 +19444,7 @@ exports[`Select search and select 4`] = `
 exports[`Select search and select 5`] = `
 <input
   autocomplete="off"
-  class="StyledTextInput-sc-1x30a0s-0 dPCHOa"
+  class="StyledTextInput-sc-1x30a0s-0 cOWWNe"
   type="search"
   value="t"
 />
@@ -19538,7 +19538,7 @@ exports[`Select select an object with label key specific with keypress 1`] = `
 .c1:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus >circle,
@@ -19550,7 +19550,7 @@ exports[`Select select an object with label key specific with keypress 1`] = `
 .c1:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus ::-moz-focus-inner {
@@ -19846,7 +19846,7 @@ exports[`Select select an option 1`] = `
 .c1:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus >circle,
@@ -19858,7 +19858,7 @@ exports[`Select select an option 1`] = `
 .c1:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus ::-moz-focus-inner {
@@ -20154,7 +20154,7 @@ exports[`Select select an option with complex options 1`] = `
 .c1:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus >circle,
@@ -20166,7 +20166,7 @@ exports[`Select select an option with complex options 1`] = `
 .c1:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus ::-moz-focus-inner {
@@ -20380,7 +20380,7 @@ exports[`Select select an option with enter 1`] = `
 .c1:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus >circle,
@@ -20392,7 +20392,7 @@ exports[`Select select an option with enter 1`] = `
 .c1:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus ::-moz-focus-inner {
@@ -20688,7 +20688,7 @@ exports[`Select select an option with keypress 1`] = `
 .c1:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus >circle,
@@ -20700,7 +20700,7 @@ exports[`Select select an option with keypress 1`] = `
 .c1:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus ::-moz-focus-inner {
@@ -20996,7 +20996,7 @@ exports[`Select select on multiple keydown always picks first enabled option 1`]
 .c1:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus >circle,
@@ -21008,7 +21008,7 @@ exports[`Select select on multiple keydown always picks first enabled option 1`]
 .c1:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus ::-moz-focus-inner {
@@ -21304,7 +21304,7 @@ exports[`Select select option by typing should not break if caller passes JSX 1`
 .c1:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus >circle,
@@ -21316,7 +21316,7 @@ exports[`Select select option by typing should not break if caller passes JSX 1`
 .c1:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus ::-moz-focus-inner {
@@ -21532,7 +21532,7 @@ exports[`Select select option by typing should not break if caller passes JSX 2`
     aria-expanded="false"
     aria-haspopup="listbox"
     aria-label="test select; Selected: two"
-    class="StyledButtonKind-sc-1vhfpnt-0 fvxTu StyledSelect__StyledSelectDropButton-sc-znp66n-5 eOYqUg"
+    class="StyledButtonKind-sc-1vhfpnt-0 eWCPay StyledSelect__StyledSelectDropButton-sc-znp66n-5 eOYqUg"
     id="test-select"
     type="button"
   >
@@ -21720,7 +21720,7 @@ exports[`Select selected 1`] = `
 .c1:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus >circle,
@@ -21732,7 +21732,7 @@ exports[`Select selected 1`] = `
 .c1:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus ::-moz-focus-inner {
@@ -22028,7 +22028,7 @@ exports[`Select should apply a11yTitle or aria-label 1`] = `
 .c1:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus >circle,
@@ -22040,7 +22040,7 @@ exports[`Select should apply a11yTitle or aria-label 1`] = `
 .c1:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus ::-moz-focus-inner {
@@ -22381,7 +22381,7 @@ exports[`Select should not have accessibility violations 1`] = `
 .c1:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus >circle,
@@ -22393,7 +22393,7 @@ exports[`Select should not have accessibility violations 1`] = `
 .c1:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus ::-moz-focus-inner {
@@ -22687,7 +22687,7 @@ exports[`Select size 1`] = `
 .c1:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus >circle,
@@ -22699,7 +22699,7 @@ exports[`Select size 1`] = `
 .c1:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus ::-moz-focus-inner {
@@ -23011,7 +23011,7 @@ exports[`Select small drop container height 1`] = `
 .c5:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c5:focus >circle,
@@ -23023,7 +23023,7 @@ exports[`Select small drop container height 1`] = `
 .c5:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c5:focus ::-moz-focus-inner {
@@ -23258,7 +23258,7 @@ exports[`Select valueLabel with value=0 1`] = `
 .c1:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus >circle,
@@ -23270,7 +23270,7 @@ exports[`Select valueLabel with value=0 1`] = `
 .c1:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus ::-moz-focus-inner {

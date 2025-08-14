@@ -63,7 +63,7 @@ exports[`Menu basic 1`] = `
 .c1:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus >circle,
@@ -75,7 +75,7 @@ exports[`Menu basic 1`] = `
 .c1:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus ::-moz-focus-inner {
@@ -2074,7 +2074,7 @@ exports[`Menu gap between icon and label 1`] = `
 .c1:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus >circle,
@@ -2086,7 +2086,7 @@ exports[`Menu gap between icon and label 1`] = `
 .c1:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus ::-moz-focus-inner {

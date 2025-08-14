@@ -109,7 +109,7 @@ exports[`DataTable !primaryKey 1`] = `
 .c8:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c8:focus >circle,
@@ -121,7 +121,7 @@ exports[`DataTable !primaryKey 1`] = `
 .c8:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c8:focus ::-moz-focus-inner {
@@ -163,7 +163,7 @@ exports[`DataTable !primaryKey 1`] = `
 .c7:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c7:focus:not(:focus-visible) {
@@ -451,7 +451,7 @@ exports[`DataTable absoluteColumnSizes 1`] = `
 .c9:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c9:focus >circle,
@@ -463,7 +463,7 @@ exports[`DataTable absoluteColumnSizes 1`] = `
 .c9:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c9:focus ::-moz-focus-inner {
@@ -505,7 +505,7 @@ exports[`DataTable absoluteColumnSizes 1`] = `
 .c8:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c8:focus:not(:focus-visible) {
@@ -760,7 +760,7 @@ exports[`DataTable aggregate 1`] = `
 .c8:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c8:focus >circle,
@@ -772,7 +772,7 @@ exports[`DataTable aggregate 1`] = `
 .c8:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c8:focus ::-moz-focus-inner {
@@ -814,7 +814,7 @@ exports[`DataTable aggregate 1`] = `
 .c7:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c7:focus:not(:focus-visible) {
@@ -1097,7 +1097,7 @@ exports[`DataTable aggregate with nested object 1`] = `
 .c8:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c8:focus >circle,
@@ -1109,7 +1109,7 @@ exports[`DataTable aggregate with nested object 1`] = `
 .c8:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c8:focus ::-moz-focus-inner {
@@ -1151,7 +1151,7 @@ exports[`DataTable aggregate with nested object 1`] = `
 .c7:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c7:focus:not(:focus-visible) {
@@ -1556,7 +1556,7 @@ exports[`DataTable background 1`] = `
 .c8:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c8:focus >circle,
@@ -1568,7 +1568,7 @@ exports[`DataTable background 1`] = `
 .c8:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c8:focus ::-moz-focus-inner {
@@ -1610,7 +1610,7 @@ exports[`DataTable background 1`] = `
 .c7:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c7:focus:not(:focus-visible) {
@@ -2167,7 +2167,7 @@ exports[`DataTable basic 1`] = `
 .c8:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c8:focus >circle,
@@ -2179,7 +2179,7 @@ exports[`DataTable basic 1`] = `
 .c8:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c8:focus ::-moz-focus-inner {
@@ -2221,7 +2221,7 @@ exports[`DataTable basic 1`] = `
 .c7:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c7:focus:not(:focus-visible) {
@@ -3290,7 +3290,7 @@ exports[`DataTable border on CheckBox cell 1`] = `
 .c16:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c16:focus >circle,
@@ -3302,7 +3302,7 @@ exports[`DataTable border on CheckBox cell 1`] = `
 .c16:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c16:focus ::-moz-focus-inner {
@@ -3344,7 +3344,7 @@ exports[`DataTable border on CheckBox cell 1`] = `
 .c15:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c15:focus:not(:focus-visible) {
@@ -3778,7 +3778,7 @@ exports[`DataTable click 1`] = `
 .c8:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c8:focus >circle,
@@ -3790,7 +3790,7 @@ exports[`DataTable click 1`] = `
 .c8:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c8:focus ::-moz-focus-inner {
@@ -3832,7 +3832,7 @@ exports[`DataTable click 1`] = `
 .c7:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c7:focus:not(:focus-visible) {
@@ -3956,10 +3956,10 @@ exports[`DataTable click 2`] = `
       </tr>
     </thead>
     <tbody
-      class="StyledTable__StyledTableBody-sc-1m3u5g-3 StyledDataTable__StyledDataTableBody-sc-xrlyjm-4 kbPtbM"
+      class="StyledTable__StyledTableBody-sc-1m3u5g-3 StyledDataTable__StyledDataTableBody-sc-xrlyjm-4 igIYQG"
     >
       <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 jfuLbH"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 ebvwBj"
         tabindex="-1"
       >
         <th
@@ -3978,7 +3978,7 @@ exports[`DataTable click 2`] = `
         </th>
       </tr>
       <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 kAKMfN"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 cnePZF"
         tabindex="0"
       >
         <th
@@ -4882,7 +4882,7 @@ exports[`DataTable disable row click using space key press 1`] = `
 .c8:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c8:focus >circle,
@@ -4894,7 +4894,7 @@ exports[`DataTable disable row click using space key press 1`] = `
 .c8:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c8:focus ::-moz-focus-inner {
@@ -4936,7 +4936,7 @@ exports[`DataTable disable row click using space key press 1`] = `
 .c7:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c7:focus:not(:focus-visible) {
@@ -5042,11 +5042,11 @@ exports[`DataTable disable row click using space key press 2`] = `
       </tr>
     </thead>
     <tbody
-      class="StyledTable__StyledTableBody-sc-1m3u5g-3 StyledDataTable__StyledDataTableBody-sc-xrlyjm-4 kbPtbM"
+      class="StyledTable__StyledTableBody-sc-1m3u5g-3 StyledDataTable__StyledDataTableBody-sc-xrlyjm-4 igIYQG"
     >
       <tr
         aria-disabled="true"
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 jfuLbH"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 ebvwBj"
         tabindex="0"
       >
         <th
@@ -5176,7 +5176,7 @@ exports[`DataTable disabled click 1`] = `
 .c8:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c8:focus >circle,
@@ -5188,7 +5188,7 @@ exports[`DataTable disabled click 1`] = `
 .c8:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c8:focus ::-moz-focus-inner {
@@ -5230,7 +5230,7 @@ exports[`DataTable disabled click 1`] = `
 .c7:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c7:focus:not(:focus-visible) {
@@ -5355,11 +5355,11 @@ exports[`DataTable disabled click 2`] = `
       </tr>
     </thead>
     <tbody
-      class="StyledTable__StyledTableBody-sc-1m3u5g-3 StyledDataTable__StyledDataTableBody-sc-xrlyjm-4 kbPtbM"
+      class="StyledTable__StyledTableBody-sc-1m3u5g-3 StyledDataTable__StyledDataTableBody-sc-xrlyjm-4 igIYQG"
     >
       <tr
         aria-disabled="true"
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 jfuLbH"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 ebvwBj"
         tabindex="-1"
       >
         <th
@@ -5378,7 +5378,7 @@ exports[`DataTable disabled click 2`] = `
         </th>
       </tr>
       <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 kAKMfN"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 cnePZF"
         tabindex="0"
       >
         <th
@@ -5743,7 +5743,7 @@ exports[`DataTable disabled select 1`] = `
 .c17:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c17:focus >circle,
@@ -5755,7 +5755,7 @@ exports[`DataTable disabled select 1`] = `
 .c17:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c17:focus ::-moz-focus-inner {
@@ -5797,7 +5797,7 @@ exports[`DataTable disabled select 1`] = `
 .c16:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c16:focus:not(:focus-visible) {
@@ -6039,7 +6039,7 @@ exports[`DataTable empty 1`] = `
 .c3:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c3:focus:not(:focus-visible) {
@@ -6223,6 +6223,7 @@ exports[`DataTable expandAriaLabel default 1`] = `
 .c5:focus {
   outline-offset: -2px;
   outline: 2px solid #004233;
+  box-shadow: 0 0 0px 4px #ffffff inset;
 }
 
 .c5:focus >circle,
@@ -6234,7 +6235,7 @@ exports[`DataTable expandAriaLabel default 1`] = `
 .c5:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c5:focus ::-moz-focus-inner {
@@ -6362,7 +6363,7 @@ exports[`DataTable expandAriaLabel default 1`] = `
 .c13:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c13:focus >circle,
@@ -6374,7 +6375,7 @@ exports[`DataTable expandAriaLabel default 1`] = `
 .c13:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c13:focus ::-moz-focus-inner {
@@ -6416,7 +6417,7 @@ exports[`DataTable expandAriaLabel default 1`] = `
 .c12:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c12:focus:not(:focus-visible) {
@@ -6827,6 +6828,7 @@ exports[`DataTable expandLabel function 1`] = `
 .c5:focus {
   outline-offset: -2px;
   outline: 2px solid #004233;
+  box-shadow: 0 0 0px 4px #ffffff inset;
 }
 
 .c5:focus >circle,
@@ -6838,7 +6840,7 @@ exports[`DataTable expandLabel function 1`] = `
 .c5:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c5:focus ::-moz-focus-inner {
@@ -6966,7 +6968,7 @@ exports[`DataTable expandLabel function 1`] = `
 .c13:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c13:focus >circle,
@@ -6978,7 +6980,7 @@ exports[`DataTable expandLabel function 1`] = `
 .c13:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c13:focus ::-moz-focus-inner {
@@ -7020,7 +7022,7 @@ exports[`DataTable expandLabel function 1`] = `
 .c12:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c12:focus:not(:focus-visible) {
@@ -7420,7 +7422,7 @@ exports[`DataTable fill 1`] = `
 .c8:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c8:focus >circle,
@@ -7432,7 +7434,7 @@ exports[`DataTable fill 1`] = `
 .c8:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c8:focus ::-moz-focus-inner {
@@ -7474,7 +7476,7 @@ exports[`DataTable fill 1`] = `
 .c7:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c7:focus:not(:focus-visible) {
@@ -8045,7 +8047,7 @@ exports[`DataTable footer 1`] = `
 .c8:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c8:focus >circle,
@@ -8057,7 +8059,7 @@ exports[`DataTable footer 1`] = `
 .c8:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c8:focus ::-moz-focus-inner {
@@ -8099,7 +8101,7 @@ exports[`DataTable footer 1`] = `
 .c7:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c7:focus:not(:focus-visible) {
@@ -8445,6 +8447,7 @@ exports[`DataTable groupBy 0 value 1`] = `
 .c5:focus {
   outline-offset: -2px;
   outline: 2px solid #004233;
+  box-shadow: 0 0 0px 4px #ffffff inset;
 }
 
 .c5:focus >circle,
@@ -8456,7 +8459,7 @@ exports[`DataTable groupBy 0 value 1`] = `
 .c5:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c5:focus ::-moz-focus-inner {
@@ -8584,7 +8587,7 @@ exports[`DataTable groupBy 0 value 1`] = `
 .c13:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c13:focus >circle,
@@ -8596,7 +8599,7 @@ exports[`DataTable groupBy 0 value 1`] = `
 .c13:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c13:focus ::-moz-focus-inner {
@@ -8638,7 +8641,7 @@ exports[`DataTable groupBy 0 value 1`] = `
 .c12:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c12:focus:not(:focus-visible) {
@@ -9140,6 +9143,7 @@ exports[`DataTable groupBy 1`] = `
 .c5:focus {
   outline-offset: -2px;
   outline: 2px solid #004233;
+  box-shadow: 0 0 0px 4px #ffffff inset;
 }
 
 .c5:focus >circle,
@@ -9151,7 +9155,7 @@ exports[`DataTable groupBy 1`] = `
 .c5:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c5:focus ::-moz-focus-inner {
@@ -9279,7 +9283,7 @@ exports[`DataTable groupBy 1`] = `
 .c13:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c13:focus >circle,
@@ -9291,7 +9295,7 @@ exports[`DataTable groupBy 1`] = `
 .c13:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c13:focus ::-moz-focus-inner {
@@ -9333,7 +9337,7 @@ exports[`DataTable groupBy 1`] = `
 .c12:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c12:focus:not(:focus-visible) {
@@ -9613,7 +9617,7 @@ exports[`DataTable groupBy 2`] = `
             <button
               aria-expanded="false"
               aria-label="expand all"
-              class="StyledButtonKind-sc-1vhfpnt-0 emCIMZ"
+              class="StyledButtonKind-sc-1vhfpnt-0 gcMkfq"
               type="button"
             >
               <div
@@ -9677,10 +9681,10 @@ exports[`DataTable groupBy 2`] = `
       </tr>
     </thead>
     <tbody
-      class="StyledTable__StyledTableBody-sc-1m3u5g-3 StyledDataTable__StyledDataTableBody-sc-xrlyjm-4 kbPtbM"
+      class="StyledTable__StyledTableBody-sc-1m3u5g-3 StyledDataTable__StyledDataTableBody-sc-xrlyjm-4 igIYQG"
     >
       <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 jqMuL"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 jmJzHr"
       >
         <td
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 bnggiP"
@@ -9692,7 +9696,7 @@ exports[`DataTable groupBy 2`] = `
             <button
               aria-expanded="false"
               aria-label="expand "
-              class="StyledButtonKind-sc-1vhfpnt-0 emCIMZ"
+              class="StyledButtonKind-sc-1vhfpnt-0 gcMkfq"
               type="button"
             >
               <div
@@ -9737,7 +9741,7 @@ exports[`DataTable groupBy 2`] = `
         </td>
       </tr>
       <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 jqMuL"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 jmJzHr"
       >
         <td
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 bnggiP"
@@ -9749,7 +9753,7 @@ exports[`DataTable groupBy 2`] = `
             <button
               aria-expanded="false"
               aria-label="expand "
-              class="StyledButtonKind-sc-1vhfpnt-0 emCIMZ"
+              class="StyledButtonKind-sc-1vhfpnt-0 gcMkfq"
               type="button"
             >
               <div
@@ -9994,6 +9998,7 @@ exports[`DataTable groupBy expand 1`] = `
 .c5:focus {
   outline-offset: -2px;
   outline: 2px solid #004233;
+  box-shadow: 0 0 0px 4px #ffffff inset;
 }
 
 .c5:focus >circle,
@@ -10005,7 +10010,7 @@ exports[`DataTable groupBy expand 1`] = `
 .c5:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c5:focus ::-moz-focus-inner {
@@ -10146,7 +10151,7 @@ exports[`DataTable groupBy expand 1`] = `
 .c13:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c13:focus >circle,
@@ -10158,7 +10163,7 @@ exports[`DataTable groupBy expand 1`] = `
 .c13:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c13:focus ::-moz-focus-inner {
@@ -10200,7 +10205,7 @@ exports[`DataTable groupBy expand 1`] = `
 .c12:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c12:focus:not(:focus-visible) {
@@ -10713,6 +10718,7 @@ exports[`DataTable groupBy property 1`] = `
 .c5:focus {
   outline-offset: -2px;
   outline: 2px solid #004233;
+  box-shadow: 0 0 0px 4px #ffffff inset;
 }
 
 .c5:focus >circle,
@@ -10724,7 +10730,7 @@ exports[`DataTable groupBy property 1`] = `
 .c5:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c5:focus ::-moz-focus-inner {
@@ -10852,7 +10858,7 @@ exports[`DataTable groupBy property 1`] = `
 .c13:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c13:focus >circle,
@@ -10864,7 +10870,7 @@ exports[`DataTable groupBy property 1`] = `
 .c13:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c13:focus ::-moz-focus-inner {
@@ -10906,7 +10912,7 @@ exports[`DataTable groupBy property 1`] = `
 .c12:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c12:focus:not(:focus-visible) {
@@ -11186,7 +11192,7 @@ exports[`DataTable groupBy property 2`] = `
             <button
               aria-expanded="false"
               aria-label="expand all"
-              class="StyledButtonKind-sc-1vhfpnt-0 emCIMZ"
+              class="StyledButtonKind-sc-1vhfpnt-0 gcMkfq"
               type="button"
             >
               <div
@@ -11250,10 +11256,10 @@ exports[`DataTable groupBy property 2`] = `
       </tr>
     </thead>
     <tbody
-      class="StyledTable__StyledTableBody-sc-1m3u5g-3 StyledDataTable__StyledDataTableBody-sc-xrlyjm-4 kbPtbM"
+      class="StyledTable__StyledTableBody-sc-1m3u5g-3 StyledDataTable__StyledDataTableBody-sc-xrlyjm-4 igIYQG"
     >
       <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 jqMuL"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 jmJzHr"
       >
         <td
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 bnggiP"
@@ -11265,7 +11271,7 @@ exports[`DataTable groupBy property 2`] = `
             <button
               aria-expanded="false"
               aria-label="expand "
-              class="StyledButtonKind-sc-1vhfpnt-0 emCIMZ"
+              class="StyledButtonKind-sc-1vhfpnt-0 gcMkfq"
               type="button"
             >
               <div
@@ -11310,7 +11316,7 @@ exports[`DataTable groupBy property 2`] = `
         </td>
       </tr>
       <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 jqMuL"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 jmJzHr"
       >
         <td
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 bnggiP"
@@ -11322,7 +11328,7 @@ exports[`DataTable groupBy property 2`] = `
             <button
               aria-expanded="false"
               aria-label="expand "
-              class="StyledButtonKind-sc-1vhfpnt-0 emCIMZ"
+              class="StyledButtonKind-sc-1vhfpnt-0 gcMkfq"
               type="button"
             >
               <div
@@ -11480,7 +11486,7 @@ exports[`DataTable groupBy toggle 1`] = `
 .c8:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c8:focus >circle,
@@ -11492,7 +11498,7 @@ exports[`DataTable groupBy toggle 1`] = `
 .c8:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c8:focus ::-moz-focus-inner {
@@ -11534,7 +11540,7 @@ exports[`DataTable groupBy toggle 1`] = `
 .c7:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c7:focus:not(:focus-visible) {
@@ -11840,6 +11846,7 @@ exports[`DataTable groupBy toggle 2`] = `
 .c2:focus {
   outline-offset: -2px;
   outline: 2px solid #004233;
+  box-shadow: 0 0 0px 4px #ffffff inset;
 }
 
 .c2:focus >circle,
@@ -11851,7 +11858,7 @@ exports[`DataTable groupBy toggle 2`] = `
 .c2:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c2:focus ::-moz-focus-inner {
@@ -12113,6 +12120,7 @@ exports[`DataTable groupBy toggle 2`] = `
 .c4:focus {
   outline-offset: -2px;
   outline: 2px solid #004233;
+  box-shadow: 0 0 0px 4px #ffffff inset;
 }
 
 .c4:focus >circle,
@@ -12124,7 +12132,7 @@ exports[`DataTable groupBy toggle 2`] = `
 .c4:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c4:focus ::-moz-focus-inner {
@@ -12186,7 +12194,7 @@ exports[`DataTable groupBy toggle 2`] = `
 .c1:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus >circle,
@@ -12198,7 +12206,7 @@ exports[`DataTable groupBy toggle 2`] = `
 .c1:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus ::-moz-focus-inner {
@@ -12240,7 +12248,7 @@ exports[`DataTable groupBy toggle 2`] = `
 .c0:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c0:focus:not(:focus-visible) {
@@ -12504,7 +12512,7 @@ exports[`DataTable groupBy toggle 3`] = `
 .c1:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus >circle,
@@ -12516,7 +12524,7 @@ exports[`DataTable groupBy toggle 3`] = `
 .c1:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus ::-moz-focus-inner {
@@ -12558,7 +12566,7 @@ exports[`DataTable groupBy toggle 3`] = `
 .c0:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c0:focus:not(:focus-visible) {
@@ -12878,6 +12886,7 @@ exports[`DataTable messages prop overrides theme messages 1`] = `
 .c5:focus {
   outline-offset: -2px;
   outline: 2px solid #004233;
+  box-shadow: 0 0 0px 4px #ffffff inset;
 }
 
 .c5:focus >circle,
@@ -12889,7 +12898,7 @@ exports[`DataTable messages prop overrides theme messages 1`] = `
 .c5:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c5:focus ::-moz-focus-inner {
@@ -13017,7 +13026,7 @@ exports[`DataTable messages prop overrides theme messages 1`] = `
 .c13:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c13:focus >circle,
@@ -13029,7 +13038,7 @@ exports[`DataTable messages prop overrides theme messages 1`] = `
 .c13:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c13:focus ::-moz-focus-inner {
@@ -13071,7 +13080,7 @@ exports[`DataTable messages prop overrides theme messages 1`] = `
 .c12:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c12:focus:not(:focus-visible) {
@@ -13351,7 +13360,7 @@ exports[`DataTable messages prop overrides theme messages 2`] = `
             <button
               aria-expanded="false"
               aria-label="expand all"
-              class="StyledButtonKind-sc-1vhfpnt-0 emCIMZ"
+              class="StyledButtonKind-sc-1vhfpnt-0 gcMkfq"
               type="button"
             >
               <div
@@ -13415,10 +13424,10 @@ exports[`DataTable messages prop overrides theme messages 2`] = `
       </tr>
     </thead>
     <tbody
-      class="StyledTable__StyledTableBody-sc-1m3u5g-3 StyledDataTable__StyledDataTableBody-sc-xrlyjm-4 kbPtbM"
+      class="StyledTable__StyledTableBody-sc-1m3u5g-3 StyledDataTable__StyledDataTableBody-sc-xrlyjm-4 igIYQG"
     >
       <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 jqMuL"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 jmJzHr"
       >
         <td
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 bnggiP"
@@ -13430,7 +13439,7 @@ exports[`DataTable messages prop overrides theme messages 2`] = `
             <button
               aria-expanded="true"
               aria-label="colapsar"
-              class="StyledButtonKind-sc-1vhfpnt-0 emCIMZ"
+              class="StyledButtonKind-sc-1vhfpnt-0 gcMkfq"
               type="button"
             >
               <div
@@ -13638,7 +13647,7 @@ exports[`DataTable messages prop overrides theme messages 2`] = `
 .c0:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c0:focus >circle,
@@ -13650,7 +13659,7 @@ exports[`DataTable messages prop overrides theme messages 2`] = `
 .c0:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c0:focus ::-moz-focus-inner {
@@ -13877,7 +13886,7 @@ exports[`DataTable messages prop overrides theme messages 2`] = `
 .c0:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c0:focus >circle,
@@ -13889,7 +13898,7 @@ exports[`DataTable messages prop overrides theme messages 2`] = `
 .c0:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c0:focus ::-moz-focus-inner {
@@ -14011,7 +14020,7 @@ exports[`DataTable messages prop overrides theme messages 2`] = `
         </td>
       </tr>
       <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 jqMuL"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 jmJzHr"
       >
         <td
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 bnggiP"
@@ -14023,7 +14032,7 @@ exports[`DataTable messages prop overrides theme messages 2`] = `
             <button
               aria-expanded="false"
               aria-label="expandir"
-              class="StyledButtonKind-sc-1vhfpnt-0 emCIMZ"
+              class="StyledButtonKind-sc-1vhfpnt-0 gcMkfq"
               type="button"
             >
               <div
@@ -14319,6 +14328,7 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
 .c5:focus {
   outline-offset: -2px;
   outline: 2px solid #004233;
+  box-shadow: 0 0 0px 4px #ffffff inset;
 }
 
 .c5:focus >circle,
@@ -14330,7 +14340,7 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
 .c5:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c5:focus ::-moz-focus-inner {
@@ -14662,7 +14672,7 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
 .c22:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c22:focus >circle,
@@ -14674,7 +14684,7 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
 .c22:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c22:focus ::-moz-focus-inner {
@@ -14716,7 +14726,7 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
 .c21:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c21:focus:not(:focus-visible) {
@@ -15578,6 +15588,7 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
 .c5:focus {
   outline-offset: -2px;
   outline: 2px solid #004233;
+  box-shadow: 0 0 0px 4px #ffffff inset;
 }
 
 .c5:focus >circle,
@@ -15589,7 +15600,7 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
 .c5:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c5:focus ::-moz-focus-inner {
@@ -15836,7 +15847,7 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
 .c22:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c22:focus >circle,
@@ -15848,7 +15859,7 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
 .c22:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c22:focus ::-moz-focus-inner {
@@ -15890,7 +15901,7 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
 .c21:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c21:focus:not(:focus-visible) {
@@ -16456,6 +16467,7 @@ exports[`DataTable onSelect + groupBy should select all items within a group 1`]
 .c5:focus {
   outline-offset: -2px;
   outline: 2px solid #004233;
+  box-shadow: 0 0 0px 4px #ffffff inset;
 }
 
 .c5:focus >circle,
@@ -16467,7 +16479,7 @@ exports[`DataTable onSelect + groupBy should select all items within a group 1`]
 .c5:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c5:focus ::-moz-focus-inner {
@@ -16786,7 +16798,7 @@ exports[`DataTable onSelect + groupBy should select all items within a group 1`]
 .c22:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c22:focus >circle,
@@ -16798,7 +16810,7 @@ exports[`DataTable onSelect + groupBy should select all items within a group 1`]
 .c22:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c22:focus ::-moz-focus-inner {
@@ -16840,7 +16852,7 @@ exports[`DataTable onSelect + groupBy should select all items within a group 1`]
 .c21:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c21:focus:not(:focus-visible) {
@@ -17397,6 +17409,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 1`
 .c5:focus {
   outline-offset: -2px;
   outline: 2px solid #004233;
+  box-shadow: 0 0 0px 4px #ffffff inset;
 }
 
 .c5:focus >circle,
@@ -17408,7 +17421,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 1`
 .c5:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c5:focus ::-moz-focus-inner {
@@ -17636,7 +17649,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 1`
 .c21:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c21:focus >circle,
@@ -17648,7 +17661,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 1`
 .c21:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c21:focus ::-moz-focus-inner {
@@ -17690,7 +17703,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 1`
 .c20:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c20:focus:not(:focus-visible) {
@@ -18052,7 +18065,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 2`
             <button
               aria-expanded="false"
               aria-label="expand all"
-              class="StyledButtonKind-sc-1vhfpnt-0 emCIMZ"
+              class="StyledButtonKind-sc-1vhfpnt-0 gcMkfq"
               type="button"
             >
               <div
@@ -18195,10 +18208,10 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 2`
       </tr>
     </thead>
     <tbody
-      class="StyledTable__StyledTableBody-sc-1m3u5g-3 StyledDataTable__StyledDataTableBody-sc-xrlyjm-4 kbPtbM"
+      class="StyledTable__StyledTableBody-sc-1m3u5g-3 StyledDataTable__StyledDataTableBody-sc-xrlyjm-4 igIYQG"
     >
       <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 jqMuL"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 jmJzHr"
       >
         <td
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 hNXxKy"
@@ -18210,7 +18223,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 2`
             <button
               aria-expanded="false"
               aria-label="expand "
-              class="StyledButtonKind-sc-1vhfpnt-0 emCIMZ"
+              class="StyledButtonKind-sc-1vhfpnt-0 gcMkfq"
               type="button"
             >
               <div
@@ -18333,7 +18346,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 2`
         </td>
       </tr>
       <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 jqMuL"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 jmJzHr"
       >
         <td
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 hNXxKy"
@@ -18345,7 +18358,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 2`
             <button
               aria-expanded="false"
               aria-label="expand "
-              class="StyledButtonKind-sc-1vhfpnt-0 emCIMZ"
+              class="StyledButtonKind-sc-1vhfpnt-0 gcMkfq"
               type="button"
             >
               <div
@@ -18495,7 +18508,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 3`
             <button
               aria-expanded="false"
               aria-label="expand all"
-              class="StyledButtonKind-sc-1vhfpnt-0 emCIMZ"
+              class="StyledButtonKind-sc-1vhfpnt-0 gcMkfq"
               type="button"
             >
               <div
@@ -18585,10 +18598,10 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 3`
       </tr>
     </thead>
     <tbody
-      class="StyledTable__StyledTableBody-sc-1m3u5g-3 StyledDataTable__StyledDataTableBody-sc-xrlyjm-4 kbPtbM"
+      class="StyledTable__StyledTableBody-sc-1m3u5g-3 StyledDataTable__StyledDataTableBody-sc-xrlyjm-4 igIYQG"
     >
       <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 jqMuL"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 jmJzHr"
       >
         <td
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 bnggiP"
@@ -18600,7 +18613,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 3`
             <button
               aria-expanded="false"
               aria-label="expand "
-              class="StyledButtonKind-sc-1vhfpnt-0 emCIMZ"
+              class="StyledButtonKind-sc-1vhfpnt-0 gcMkfq"
               type="button"
             >
               <div
@@ -18670,7 +18683,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 3`
         </td>
       </tr>
       <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 jqMuL"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 jmJzHr"
       >
         <td
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 bnggiP"
@@ -18682,7 +18695,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 3`
             <button
               aria-expanded="false"
               aria-label="expand "
-              class="StyledButtonKind-sc-1vhfpnt-0 emCIMZ"
+              class="StyledButtonKind-sc-1vhfpnt-0 gcMkfq"
               type="button"
             >
               <div
@@ -19001,7 +19014,7 @@ exports[`DataTable onSelect select/unselect all 1`] = `
 .c16:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c16:focus >circle,
@@ -19013,7 +19026,7 @@ exports[`DataTable onSelect select/unselect all 1`] = `
 .c16:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c16:focus ::-moz-focus-inner {
@@ -19055,7 +19068,7 @@ exports[`DataTable onSelect select/unselect all 1`] = `
 .c15:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c15:focus:not(:focus-visible) {
@@ -19490,10 +19503,10 @@ exports[`DataTable onSelect select/unselect all 2`] = `
       </tr>
     </thead>
     <tbody
-      class="StyledTable__StyledTableBody-sc-1m3u5g-3 StyledDataTable__StyledDataTableBody-sc-xrlyjm-4 kbPtbM"
+      class="StyledTable__StyledTableBody-sc-1m3u5g-3 StyledDataTable__StyledDataTableBody-sc-xrlyjm-4 igIYQG"
     >
       <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 jqMuL"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 jmJzHr"
       >
         <td
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 jEjBsb StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
@@ -19578,7 +19591,7 @@ exports[`DataTable onSelect select/unselect all 2`] = `
         </th>
       </tr>
       <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 jqMuL"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 jmJzHr"
       >
         <td
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 jEjBsb StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
@@ -19663,7 +19676,7 @@ exports[`DataTable onSelect select/unselect all 2`] = `
         </th>
       </tr>
       <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 jqMuL"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 jmJzHr"
       >
         <td
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 jEjBsb StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
@@ -19748,7 +19761,7 @@ exports[`DataTable onSelect select/unselect all 2`] = `
         </th>
       </tr>
       <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 jqMuL"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 jmJzHr"
       >
         <td
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 jEjBsb StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
@@ -19917,10 +19930,10 @@ exports[`DataTable onSelect select/unselect all 3`] = `
       </tr>
     </thead>
     <tbody
-      class="StyledTable__StyledTableBody-sc-1m3u5g-3 StyledDataTable__StyledDataTableBody-sc-xrlyjm-4 kbPtbM"
+      class="StyledTable__StyledTableBody-sc-1m3u5g-3 StyledDataTable__StyledDataTableBody-sc-xrlyjm-4 igIYQG"
     >
       <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 jqMuL"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 jmJzHr"
       >
         <td
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 dOsAYG StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
@@ -19976,7 +19989,7 @@ exports[`DataTable onSelect select/unselect all 3`] = `
         </th>
       </tr>
       <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 jqMuL"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 jmJzHr"
       >
         <td
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 dOsAYG StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
@@ -20032,7 +20045,7 @@ exports[`DataTable onSelect select/unselect all 3`] = `
         </th>
       </tr>
       <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 jqMuL"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 jmJzHr"
       >
         <td
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 dOsAYG StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
@@ -20088,7 +20101,7 @@ exports[`DataTable onSelect select/unselect all 3`] = `
         </th>
       </tr>
       <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 jqMuL"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 jmJzHr"
       >
         <td
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 dOsAYG StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
@@ -20264,7 +20277,7 @@ exports[`DataTable onSort 1`] = `
 .c5:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c5:focus >circle,
@@ -20276,7 +20289,7 @@ exports[`DataTable onSort 1`] = `
 .c5:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c5:focus ::-moz-focus-inner {
@@ -20366,7 +20379,7 @@ exports[`DataTable onSort 1`] = `
 .c12:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c12:focus >circle,
@@ -20378,7 +20391,7 @@ exports[`DataTable onSort 1`] = `
 .c12:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c12:focus ::-moz-focus-inner {
@@ -20420,7 +20433,7 @@ exports[`DataTable onSort 1`] = `
 .c11:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c11:focus:not(:focus-visible) {
@@ -20674,7 +20687,7 @@ exports[`DataTable onSort 2`] = `
             class="StyledBox-sc-13pk1d4-0 gslZZZ"
           >
             <button
-              class="StyledButtonKind-sc-1vhfpnt-0 dDeKjo Header__StyledHeaderCellButton-sc-1baku5q-0 hgYczf"
+              class="StyledButtonKind-sc-1vhfpnt-0 kPvlAQ Header__StyledHeaderCellButton-sc-1baku5q-0 hgYczf"
               type="button"
             >
               <div
@@ -20749,7 +20762,7 @@ exports[`DataTable onSort 2`] = `
             class="StyledBox-sc-13pk1d4-0 gslZZZ"
           >
             <button
-              class="StyledButtonKind-sc-1vhfpnt-0 dDeKjo Header__StyledHeaderCellButton-sc-1baku5q-0 bDiDHh"
+              class="StyledButtonKind-sc-1vhfpnt-0 kPvlAQ Header__StyledHeaderCellButton-sc-1baku5q-0 bDiDHh"
               type="button"
             >
               <div
@@ -20782,10 +20795,10 @@ exports[`DataTable onSort 2`] = `
       </tr>
     </thead>
     <tbody
-      class="StyledTable__StyledTableBody-sc-1m3u5g-3 StyledDataTable__StyledDataTableBody-sc-xrlyjm-4 kbPtbM"
+      class="StyledTable__StyledTableBody-sc-1m3u5g-3 StyledDataTable__StyledDataTableBody-sc-xrlyjm-4 igIYQG"
     >
       <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 jqMuL"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 jmJzHr"
       >
         <th
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 cuBfrd StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
@@ -20816,7 +20829,7 @@ exports[`DataTable onSort 2`] = `
         </td>
       </tr>
       <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 jqMuL"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 jmJzHr"
       >
         <th
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 cuBfrd StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
@@ -20847,7 +20860,7 @@ exports[`DataTable onSort 2`] = `
         </td>
       </tr>
       <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 jqMuL"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 jmJzHr"
       >
         <th
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 cuBfrd StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
@@ -20998,7 +21011,7 @@ exports[`DataTable onSort external 1`] = `
 .c5:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c5:focus >circle,
@@ -21010,7 +21023,7 @@ exports[`DataTable onSort external 1`] = `
 .c5:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c5:focus ::-moz-focus-inner {
@@ -21100,7 +21113,7 @@ exports[`DataTable onSort external 1`] = `
 .c13:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c13:focus >circle,
@@ -21112,7 +21125,7 @@ exports[`DataTable onSort external 1`] = `
 .c13:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c13:focus ::-moz-focus-inner {
@@ -21154,7 +21167,7 @@ exports[`DataTable onSort external 1`] = `
 .c12:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c12:focus:not(:focus-visible) {
@@ -21424,7 +21437,7 @@ exports[`DataTable onSort external 2`] = `
             class="StyledBox-sc-13pk1d4-0 gslZZZ"
           >
             <button
-              class="StyledButtonKind-sc-1vhfpnt-0 dDeKjo Header__StyledHeaderCellButton-sc-1baku5q-0 hgYczf"
+              class="StyledButtonKind-sc-1vhfpnt-0 kPvlAQ Header__StyledHeaderCellButton-sc-1baku5q-0 hgYczf"
               type="button"
             >
               <div
@@ -21499,7 +21512,7 @@ exports[`DataTable onSort external 2`] = `
             class="StyledBox-sc-13pk1d4-0 gslZZZ"
           >
             <button
-              class="StyledButtonKind-sc-1vhfpnt-0 dDeKjo Header__StyledHeaderCellButton-sc-1baku5q-0 bDiDHh"
+              class="StyledButtonKind-sc-1vhfpnt-0 kPvlAQ Header__StyledHeaderCellButton-sc-1baku5q-0 bDiDHh"
               type="button"
             >
               <div
@@ -21532,10 +21545,10 @@ exports[`DataTable onSort external 2`] = `
       </tr>
     </thead>
     <tbody
-      class="StyledTable__StyledTableBody-sc-1m3u5g-3 StyledDataTable__StyledDataTableBody-sc-xrlyjm-4 kbPtbM"
+      class="StyledTable__StyledTableBody-sc-1m3u5g-3 StyledDataTable__StyledDataTableBody-sc-xrlyjm-4 igIYQG"
     >
       <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 jqMuL"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 jmJzHr"
       >
         <th
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 cuBfrd StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
@@ -21566,7 +21579,7 @@ exports[`DataTable onSort external 2`] = `
         </td>
       </tr>
       <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 jqMuL"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 jmJzHr"
       >
         <th
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 cuBfrd StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
@@ -21597,7 +21610,7 @@ exports[`DataTable onSort external 2`] = `
         </td>
       </tr>
       <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 jqMuL"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 jmJzHr"
       >
         <th
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 cuBfrd StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
@@ -23241,7 +23254,7 @@ exports[`DataTable paths 1`] = `
 .c8:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c8:focus >circle,
@@ -23253,7 +23266,7 @@ exports[`DataTable paths 1`] = `
 .c8:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c8:focus ::-moz-focus-inner {
@@ -23295,7 +23308,7 @@ exports[`DataTable paths 1`] = `
 .c7:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c7:focus:not(:focus-visible) {
@@ -24318,7 +24331,7 @@ exports[`DataTable pin + background context 1`] = `
 .c11:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c11:focus >circle,
@@ -24330,7 +24343,7 @@ exports[`DataTable pin + background context 1`] = `
 .c11:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c11:focus ::-moz-focus-inner {
@@ -24372,7 +24385,7 @@ exports[`DataTable pin + background context 1`] = `
 .c10:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c10:focus:not(:focus-visible) {
@@ -25055,7 +25068,7 @@ exports[`DataTable pin 1`] = `
 .c10:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c10:focus >circle,
@@ -25067,7 +25080,7 @@ exports[`DataTable pin 1`] = `
 .c10:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c10:focus ::-moz-focus-inner {
@@ -25109,7 +25122,7 @@ exports[`DataTable pin 1`] = `
 .c9:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c9:focus:not(:focus-visible) {
@@ -25750,7 +25763,7 @@ exports[`DataTable placeholder 1`] = `
 .c8:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c8:focus >circle,
@@ -25762,7 +25775,7 @@ exports[`DataTable placeholder 1`] = `
 .c8:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c8:focus ::-moz-focus-inner {
@@ -25804,7 +25817,7 @@ exports[`DataTable placeholder 1`] = `
 .c7:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c7:focus:not(:focus-visible) {
@@ -26282,7 +26295,7 @@ exports[`DataTable primaryKey 1`] = `
 .c8:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c8:focus >circle,
@@ -26294,7 +26307,7 @@ exports[`DataTable primaryKey 1`] = `
 .c8:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c8:focus ::-moz-focus-inner {
@@ -26336,7 +26349,7 @@ exports[`DataTable primaryKey 1`] = `
 .c7:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c7:focus:not(:focus-visible) {
@@ -26626,7 +26639,7 @@ exports[`DataTable relativeColumnSizes 1`] = `
 .c9:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c9:focus >circle,
@@ -26638,7 +26651,7 @@ exports[`DataTable relativeColumnSizes 1`] = `
 .c9:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c9:focus ::-moz-focus-inner {
@@ -26680,7 +26693,7 @@ exports[`DataTable relativeColumnSizes 1`] = `
 .c8:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c8:focus:not(:focus-visible) {
@@ -26969,7 +26982,7 @@ exports[`DataTable replace 1`] = `
 .c8:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c8:focus >circle,
@@ -26981,7 +26994,7 @@ exports[`DataTable replace 1`] = `
 .c8:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c8:focus ::-moz-focus-inner {
@@ -27023,7 +27036,7 @@ exports[`DataTable replace 1`] = `
 .c7:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c7:focus:not(:focus-visible) {
@@ -27246,7 +27259,7 @@ exports[`DataTable resizeable 1`] = `
 .c7:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c7:focus >circle,
@@ -27258,7 +27271,7 @@ exports[`DataTable resizeable 1`] = `
 .c7:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c7:focus ::-moz-focus-inner {
@@ -27366,7 +27379,7 @@ exports[`DataTable resizeable 1`] = `
 .c11:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c11:focus >circle,
@@ -27378,7 +27391,7 @@ exports[`DataTable resizeable 1`] = `
 .c11:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c11:focus ::-moz-focus-inner {
@@ -27420,7 +27433,7 @@ exports[`DataTable resizeable 1`] = `
 .c10:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c10:focus:not(:focus-visible) {
@@ -27695,7 +27708,7 @@ exports[`DataTable row click using space key press 1`] = `
 .c8:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c8:focus >circle,
@@ -27707,7 +27720,7 @@ exports[`DataTable row click using space key press 1`] = `
 .c8:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c8:focus ::-moz-focus-inner {
@@ -27749,7 +27762,7 @@ exports[`DataTable row click using space key press 1`] = `
 .c7:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c7:focus:not(:focus-visible) {
@@ -27854,10 +27867,10 @@ exports[`DataTable row click using space key press 2`] = `
       </tr>
     </thead>
     <tbody
-      class="StyledTable__StyledTableBody-sc-1m3u5g-3 StyledDataTable__StyledDataTableBody-sc-xrlyjm-4 kbPtbM"
+      class="StyledTable__StyledTableBody-sc-1m3u5g-3 StyledDataTable__StyledDataTableBody-sc-xrlyjm-4 igIYQG"
     >
       <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 kAKMfN"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 cnePZF"
         tabindex="0"
       >
         <th
@@ -28018,6 +28031,7 @@ exports[`DataTable rowDetails 1`] = `
 .c12:focus {
   outline-offset: -2px;
   outline: 2px solid #004233;
+  box-shadow: 0 0 0px 4px #ffffff inset;
 }
 
 .c12:focus >circle,
@@ -28029,7 +28043,7 @@ exports[`DataTable rowDetails 1`] = `
 .c12:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c12:focus ::-moz-focus-inner {
@@ -28157,7 +28171,7 @@ exports[`DataTable rowDetails 1`] = `
 .c9:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c9:focus >circle,
@@ -28169,7 +28183,7 @@ exports[`DataTable rowDetails 1`] = `
 .c9:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c9:focus ::-moz-focus-inner {
@@ -28211,7 +28225,7 @@ exports[`DataTable rowDetails 1`] = `
 .c8:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c8:focus:not(:focus-visible) {
@@ -28714,6 +28728,7 @@ exports[`DataTable rowDetails condtional 1`] = `
 .c12:focus {
   outline-offset: -2px;
   outline: 2px solid #004233;
+  box-shadow: 0 0 0px 4px #ffffff inset;
 }
 
 .c12:focus >circle,
@@ -28725,7 +28740,7 @@ exports[`DataTable rowDetails condtional 1`] = `
 .c12:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c12:focus ::-moz-focus-inner {
@@ -28853,7 +28868,7 @@ exports[`DataTable rowDetails condtional 1`] = `
 .c9:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c9:focus >circle,
@@ -28865,7 +28880,7 @@ exports[`DataTable rowDetails condtional 1`] = `
 .c9:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c9:focus ::-moz-focus-inner {
@@ -28907,7 +28922,7 @@ exports[`DataTable rowDetails condtional 1`] = `
 .c8:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c8:focus:not(:focus-visible) {
@@ -29755,6 +29770,7 @@ exports[`DataTable rowProps on group header rows 1`] = `
 .c5:focus {
   outline-offset: -2px;
   outline: 2px solid #004233;
+  box-shadow: 0 0 0px 4px #ffffff inset;
 }
 
 .c5:focus >circle,
@@ -29766,7 +29782,7 @@ exports[`DataTable rowProps on group header rows 1`] = `
 .c5:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c5:focus ::-moz-focus-inner {
@@ -29926,7 +29942,7 @@ exports[`DataTable rowProps on group header rows 1`] = `
 .c14:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c14:focus >circle,
@@ -29938,7 +29954,7 @@ exports[`DataTable rowProps on group header rows 1`] = `
 .c14:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c14:focus ::-moz-focus-inner {
@@ -29980,7 +29996,7 @@ exports[`DataTable rowProps on group header rows 1`] = `
 .c13:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c13:focus:not(:focus-visible) {
@@ -30367,7 +30383,7 @@ exports[`DataTable search 1`] = `
 .c9:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c9:focus >circle,
@@ -30379,7 +30395,7 @@ exports[`DataTable search 1`] = `
 .c9:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c9:focus ::-moz-focus-inner {
@@ -30472,7 +30488,7 @@ exports[`DataTable search 1`] = `
 .c12:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c12:focus >circle,
@@ -30484,7 +30500,7 @@ exports[`DataTable search 1`] = `
 .c12:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c12:focus ::-moz-focus-inner {
@@ -30526,7 +30542,7 @@ exports[`DataTable search 1`] = `
 .c11:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c11:focus:not(:focus-visible) {
@@ -30729,7 +30745,7 @@ exports[`DataTable search 2`] = `
 .c2:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c2:focus >circle,
@@ -30741,7 +30757,7 @@ exports[`DataTable search 2`] = `
 .c2:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c2:focus ::-moz-focus-inner {
@@ -30822,10 +30838,10 @@ exports[`DataTable search 2`] = `
       </tr>
     </thead>
     <tbody
-      class="StyledTable__StyledTableBody-sc-1m3u5g-3 StyledDataTable__StyledDataTableBody-sc-xrlyjm-4 kbPtbM"
+      class="StyledTable__StyledTableBody-sc-1m3u5g-3 StyledDataTable__StyledDataTableBody-sc-xrlyjm-4 igIYQG"
     >
       <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 jqMuL"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 jmJzHr"
       >
         <th
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 cuBfrd StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
@@ -31177,7 +31193,7 @@ exports[`DataTable select 1`] = `
 .c17:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c17:focus >circle,
@@ -31189,7 +31205,7 @@ exports[`DataTable select 1`] = `
 .c17:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c17:focus ::-moz-focus-inner {
@@ -31231,7 +31247,7 @@ exports[`DataTable select 1`] = `
 .c16:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c16:focus:not(:focus-visible) {
@@ -31519,10 +31535,10 @@ exports[`DataTable select 2`] = `
       </tr>
     </thead>
     <tbody
-      class="StyledTable__StyledTableBody-sc-1m3u5g-3 StyledDataTable__StyledDataTableBody-sc-xrlyjm-4 kbPtbM"
+      class="StyledTable__StyledTableBody-sc-1m3u5g-3 StyledDataTable__StyledDataTableBody-sc-xrlyjm-4 igIYQG"
     >
       <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 jqMuL"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 jmJzHr"
       >
         <td
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 jEjBsb StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
@@ -31577,7 +31593,7 @@ exports[`DataTable select 2`] = `
         </th>
       </tr>
       <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 jqMuL"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 jmJzHr"
       >
         <td
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 jEjBsb StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
@@ -31963,7 +31979,7 @@ exports[`DataTable select with allowSelectAll={false} 1`] = `
 .c9:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c9:focus >circle,
@@ -31975,7 +31991,7 @@ exports[`DataTable select with allowSelectAll={false} 1`] = `
 .c9:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c9:focus ::-moz-focus-inner {
@@ -32017,7 +32033,7 @@ exports[`DataTable select with allowSelectAll={false} 1`] = `
 .c8:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c8:focus:not(:focus-visible) {
@@ -32221,10 +32237,10 @@ exports[`DataTable select with allowSelectAll={false} 2`] = `
       </tr>
     </thead>
     <tbody
-      class="StyledTable__StyledTableBody-sc-1m3u5g-3 StyledDataTable__StyledDataTableBody-sc-xrlyjm-4 kbPtbM"
+      class="StyledTable__StyledTableBody-sc-1m3u5g-3 StyledDataTable__StyledDataTableBody-sc-xrlyjm-4 igIYQG"
     >
       <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 jqMuL"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 jmJzHr"
       >
         <td
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 jEjBsb StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
@@ -32279,7 +32295,7 @@ exports[`DataTable select with allowSelectAll={false} 2`] = `
         </th>
       </tr>
       <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 jqMuL"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 jmJzHr"
       >
         <td
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 jEjBsb StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
@@ -37931,7 +37947,7 @@ exports[`DataTable should base table body max height on css value 1`] = `
 .c9:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c9:focus >circle,
@@ -37943,7 +37959,7 @@ exports[`DataTable should base table body max height on css value 1`] = `
 .c9:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c9:focus ::-moz-focus-inner {
@@ -37992,7 +38008,7 @@ exports[`DataTable should base table body max height on css value 1`] = `
 .c8:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c8:focus:not(:focus-visible) {
@@ -38490,7 +38506,7 @@ exports[`DataTable should not show paginate controls when data is empty array 1`
 .c8:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c8:focus:not(:focus-visible) {
@@ -38686,7 +38702,7 @@ exports[`DataTable should not show paginate controls when length of data < step 
 .c9:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c9:focus >circle,
@@ -38698,7 +38714,7 @@ exports[`DataTable should not show paginate controls when length of data < step 
 .c9:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c9:focus ::-moz-focus-inner {
@@ -38740,7 +38756,7 @@ exports[`DataTable should not show paginate controls when length of data < step 
 .c8:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c8:focus:not(:focus-visible) {
@@ -39112,7 +39128,7 @@ exports[`DataTable should paginate 1`] = `
 .c17:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c17:focus >circle,
@@ -39124,7 +39140,7 @@ exports[`DataTable should paginate 1`] = `
 .c17:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c17:focus ::-moz-focus-inner {
@@ -39202,7 +39218,7 @@ exports[`DataTable should paginate 1`] = `
 .c20:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c20:focus >circle,
@@ -39214,7 +39230,7 @@ exports[`DataTable should paginate 1`] = `
 .c20:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c20:focus ::-moz-focus-inner {
@@ -39283,7 +39299,7 @@ exports[`DataTable should paginate 1`] = `
 .c21:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c21:focus >circle,
@@ -39295,7 +39311,7 @@ exports[`DataTable should paginate 1`] = `
 .c21:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c21:focus ::-moz-focus-inner {
@@ -39370,7 +39386,7 @@ exports[`DataTable should paginate 1`] = `
 .c22:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c22:focus >circle,
@@ -39382,7 +39398,7 @@ exports[`DataTable should paginate 1`] = `
 .c22:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c22:focus ::-moz-focus-inner {
@@ -39493,7 +39509,7 @@ exports[`DataTable should paginate 1`] = `
 .c9:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c9:focus >circle,
@@ -39505,7 +39521,7 @@ exports[`DataTable should paginate 1`] = `
 .c9:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c9:focus ::-moz-focus-inner {
@@ -39547,7 +39563,7 @@ exports[`DataTable should paginate 1`] = `
 .c8:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c8:focus:not(:focus-visible) {
@@ -41487,7 +41503,7 @@ exports[`DataTable should pin and paginate 1`] = `
 .c18:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c18:focus >circle,
@@ -41499,7 +41515,7 @@ exports[`DataTable should pin and paginate 1`] = `
 .c18:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c18:focus ::-moz-focus-inner {
@@ -41577,7 +41593,7 @@ exports[`DataTable should pin and paginate 1`] = `
 .c21:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c21:focus >circle,
@@ -41589,7 +41605,7 @@ exports[`DataTable should pin and paginate 1`] = `
 .c21:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c21:focus ::-moz-focus-inner {
@@ -41658,7 +41674,7 @@ exports[`DataTable should pin and paginate 1`] = `
 .c22:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c22:focus >circle,
@@ -41670,7 +41686,7 @@ exports[`DataTable should pin and paginate 1`] = `
 .c22:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c22:focus ::-moz-focus-inner {
@@ -41745,7 +41761,7 @@ exports[`DataTable should pin and paginate 1`] = `
 .c23:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c23:focus >circle,
@@ -41757,7 +41773,7 @@ exports[`DataTable should pin and paginate 1`] = `
 .c23:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c23:focus ::-moz-focus-inner {
@@ -41870,7 +41886,7 @@ exports[`DataTable should pin and paginate 1`] = `
 .c10:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c10:focus >circle,
@@ -41882,7 +41898,7 @@ exports[`DataTable should pin and paginate 1`] = `
 .c10:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c10:focus ::-moz-focus-inner {
@@ -41924,7 +41940,7 @@ exports[`DataTable should pin and paginate 1`] = `
 .c9:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c9:focus:not(:focus-visible) {
@@ -43871,7 +43887,7 @@ exports[`DataTable should render correct num items per page (step) 1`] = `
 .c17:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c17:focus >circle,
@@ -43883,7 +43899,7 @@ exports[`DataTable should render correct num items per page (step) 1`] = `
 .c17:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c17:focus ::-moz-focus-inner {
@@ -43961,7 +43977,7 @@ exports[`DataTable should render correct num items per page (step) 1`] = `
 .c20:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c20:focus >circle,
@@ -43973,7 +43989,7 @@ exports[`DataTable should render correct num items per page (step) 1`] = `
 .c20:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c20:focus ::-moz-focus-inner {
@@ -44042,7 +44058,7 @@ exports[`DataTable should render correct num items per page (step) 1`] = `
 .c21:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c21:focus >circle,
@@ -44054,7 +44070,7 @@ exports[`DataTable should render correct num items per page (step) 1`] = `
 .c21:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c21:focus ::-moz-focus-inner {
@@ -44129,7 +44145,7 @@ exports[`DataTable should render correct num items per page (step) 1`] = `
 .c22:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c22:focus >circle,
@@ -44141,7 +44157,7 @@ exports[`DataTable should render correct num items per page (step) 1`] = `
 .c22:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c22:focus ::-moz-focus-inner {
@@ -44252,7 +44268,7 @@ exports[`DataTable should render correct num items per page (step) 1`] = `
 .c9:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c9:focus >circle,
@@ -44264,7 +44280,7 @@ exports[`DataTable should render correct num items per page (step) 1`] = `
 .c9:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c9:focus ::-moz-focus-inner {
@@ -44306,7 +44322,7 @@ exports[`DataTable should render correct num items per page (step) 1`] = `
 .c8:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c8:focus:not(:focus-visible) {
@@ -45185,7 +45201,7 @@ exports[`DataTable should render new data when page changes 1`] = `
 .c17:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c17:focus >circle,
@@ -45197,7 +45213,7 @@ exports[`DataTable should render new data when page changes 1`] = `
 .c17:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c17:focus ::-moz-focus-inner {
@@ -45275,7 +45291,7 @@ exports[`DataTable should render new data when page changes 1`] = `
 .c20:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c20:focus >circle,
@@ -45287,7 +45303,7 @@ exports[`DataTable should render new data when page changes 1`] = `
 .c20:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c20:focus ::-moz-focus-inner {
@@ -45356,7 +45372,7 @@ exports[`DataTable should render new data when page changes 1`] = `
 .c21:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c21:focus >circle,
@@ -45368,7 +45384,7 @@ exports[`DataTable should render new data when page changes 1`] = `
 .c21:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c21:focus ::-moz-focus-inner {
@@ -45443,7 +45459,7 @@ exports[`DataTable should render new data when page changes 1`] = `
 .c22:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c22:focus >circle,
@@ -45455,7 +45471,7 @@ exports[`DataTable should render new data when page changes 1`] = `
 .c22:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c22:focus ::-moz-focus-inner {
@@ -45566,7 +45582,7 @@ exports[`DataTable should render new data when page changes 1`] = `
 .c9:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c9:focus >circle,
@@ -45578,7 +45594,7 @@ exports[`DataTable should render new data when page changes 1`] = `
 .c9:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c9:focus ::-moz-focus-inner {
@@ -45620,7 +45636,7 @@ exports[`DataTable should render new data when page changes 1`] = `
 .c8:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c8:focus:not(:focus-visible) {
@@ -47419,7 +47435,7 @@ exports[`DataTable should render new data when page changes 2`] = `
           </tr>
         </thead>
         <tbody
-          class="StyledTable__StyledTableBody-sc-1m3u5g-3 StyledDataTable__StyledDataTableBody-sc-xrlyjm-4 kbPtbM"
+          class="StyledTable__StyledTableBody-sc-1m3u5g-3 StyledDataTable__StyledDataTableBody-sc-xrlyjm-4 igIYQG"
         >
           .c2 {
   display: flex;
@@ -47461,7 +47477,7 @@ exports[`DataTable should render new data when page changes 2`] = `
 .c0:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c0:focus >circle,
@@ -47473,7 +47489,7 @@ exports[`DataTable should render new data when page changes 2`] = `
 .c0:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c0:focus ::-moz-focus-inner {
@@ -47599,7 +47615,7 @@ exports[`DataTable should render new data when page changes 2`] = `
 .c0:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c0:focus >circle,
@@ -47611,7 +47627,7 @@ exports[`DataTable should render new data when page changes 2`] = `
 .c0:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c0:focus ::-moz-focus-inner {
@@ -47737,7 +47753,7 @@ exports[`DataTable should render new data when page changes 2`] = `
 .c0:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c0:focus >circle,
@@ -47749,7 +47765,7 @@ exports[`DataTable should render new data when page changes 2`] = `
 .c0:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c0:focus ::-moz-focus-inner {
@@ -47875,7 +47891,7 @@ exports[`DataTable should render new data when page changes 2`] = `
 .c0:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c0:focus >circle,
@@ -47887,7 +47903,7 @@ exports[`DataTable should render new data when page changes 2`] = `
 .c0:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c0:focus ::-moz-focus-inner {
@@ -48013,7 +48029,7 @@ exports[`DataTable should render new data when page changes 2`] = `
 .c0:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c0:focus >circle,
@@ -48025,7 +48041,7 @@ exports[`DataTable should render new data when page changes 2`] = `
 .c0:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c0:focus ::-moz-focus-inner {
@@ -48151,7 +48167,7 @@ exports[`DataTable should render new data when page changes 2`] = `
 .c0:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c0:focus >circle,
@@ -48163,7 +48179,7 @@ exports[`DataTable should render new data when page changes 2`] = `
 .c0:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c0:focus ::-moz-focus-inner {
@@ -48289,7 +48305,7 @@ exports[`DataTable should render new data when page changes 2`] = `
 .c0:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c0:focus >circle,
@@ -48301,7 +48317,7 @@ exports[`DataTable should render new data when page changes 2`] = `
 .c0:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c0:focus ::-moz-focus-inner {
@@ -48427,7 +48443,7 @@ exports[`DataTable should render new data when page changes 2`] = `
 .c0:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c0:focus >circle,
@@ -48439,7 +48455,7 @@ exports[`DataTable should render new data when page changes 2`] = `
 .c0:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c0:focus ::-moz-focus-inner {
@@ -48565,7 +48581,7 @@ exports[`DataTable should render new data when page changes 2`] = `
 .c0:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c0:focus >circle,
@@ -48577,7 +48593,7 @@ exports[`DataTable should render new data when page changes 2`] = `
 .c0:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c0:focus ::-moz-focus-inner {
@@ -48703,7 +48719,7 @@ exports[`DataTable should render new data when page changes 2`] = `
 .c0:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c0:focus >circle,
@@ -48715,7 +48731,7 @@ exports[`DataTable should render new data when page changes 2`] = `
 .c0:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c0:focus ::-moz-focus-inner {
@@ -48841,7 +48857,7 @@ exports[`DataTable should render new data when page changes 2`] = `
 .c0:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c0:focus >circle,
@@ -48853,7 +48869,7 @@ exports[`DataTable should render new data when page changes 2`] = `
 .c0:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c0:focus ::-moz-focus-inner {
@@ -48979,7 +48995,7 @@ exports[`DataTable should render new data when page changes 2`] = `
 .c0:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c0:focus >circle,
@@ -48991,7 +49007,7 @@ exports[`DataTable should render new data when page changes 2`] = `
 .c0:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c0:focus ::-moz-focus-inner {
@@ -49117,7 +49133,7 @@ exports[`DataTable should render new data when page changes 2`] = `
 .c0:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c0:focus >circle,
@@ -49129,7 +49145,7 @@ exports[`DataTable should render new data when page changes 2`] = `
 .c0:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c0:focus ::-moz-focus-inner {
@@ -49255,7 +49271,7 @@ exports[`DataTable should render new data when page changes 2`] = `
 .c0:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c0:focus >circle,
@@ -49267,7 +49283,7 @@ exports[`DataTable should render new data when page changes 2`] = `
 .c0:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c0:focus ::-moz-focus-inner {
@@ -49393,7 +49409,7 @@ exports[`DataTable should render new data when page changes 2`] = `
 .c0:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c0:focus >circle,
@@ -49405,7 +49421,7 @@ exports[`DataTable should render new data when page changes 2`] = `
 .c0:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c0:focus ::-moz-focus-inner {
@@ -49531,7 +49547,7 @@ exports[`DataTable should render new data when page changes 2`] = `
 .c0:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c0:focus >circle,
@@ -49543,7 +49559,7 @@ exports[`DataTable should render new data when page changes 2`] = `
 .c0:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c0:focus ::-moz-focus-inner {
@@ -49669,7 +49685,7 @@ exports[`DataTable should render new data when page changes 2`] = `
 .c0:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c0:focus >circle,
@@ -49681,7 +49697,7 @@ exports[`DataTable should render new data when page changes 2`] = `
 .c0:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c0:focus ::-moz-focus-inner {
@@ -49807,7 +49823,7 @@ exports[`DataTable should render new data when page changes 2`] = `
 .c0:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c0:focus >circle,
@@ -49819,7 +49835,7 @@ exports[`DataTable should render new data when page changes 2`] = `
 .c0:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c0:focus ::-moz-focus-inner {
@@ -49945,7 +49961,7 @@ exports[`DataTable should render new data when page changes 2`] = `
 .c0:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c0:focus >circle,
@@ -49957,7 +49973,7 @@ exports[`DataTable should render new data when page changes 2`] = `
 .c0:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c0:focus ::-moz-focus-inner {
@@ -50083,7 +50099,7 @@ exports[`DataTable should render new data when page changes 2`] = `
 .c0:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c0:focus >circle,
@@ -50095,7 +50111,7 @@ exports[`DataTable should render new data when page changes 2`] = `
 .c0:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c0:focus ::-moz-focus-inner {
@@ -50221,7 +50237,7 @@ exports[`DataTable should render new data when page changes 2`] = `
 .c0:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c0:focus >circle,
@@ -50233,7 +50249,7 @@ exports[`DataTable should render new data when page changes 2`] = `
 .c0:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c0:focus ::-moz-focus-inner {
@@ -50359,7 +50375,7 @@ exports[`DataTable should render new data when page changes 2`] = `
 .c0:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c0:focus >circle,
@@ -50371,7 +50387,7 @@ exports[`DataTable should render new data when page changes 2`] = `
 .c0:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c0:focus ::-moz-focus-inner {
@@ -50497,7 +50513,7 @@ exports[`DataTable should render new data when page changes 2`] = `
 .c0:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c0:focus >circle,
@@ -50509,7 +50525,7 @@ exports[`DataTable should render new data when page changes 2`] = `
 .c0:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c0:focus ::-moz-focus-inner {
@@ -50635,7 +50651,7 @@ exports[`DataTable should render new data when page changes 2`] = `
 .c0:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c0:focus >circle,
@@ -50647,7 +50663,7 @@ exports[`DataTable should render new data when page changes 2`] = `
 .c0:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c0:focus ::-moz-focus-inner {
@@ -50773,7 +50789,7 @@ exports[`DataTable should render new data when page changes 2`] = `
 .c0:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c0:focus >circle,
@@ -50785,7 +50801,7 @@ exports[`DataTable should render new data when page changes 2`] = `
 .c0:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c0:focus ::-moz-focus-inner {
@@ -50911,7 +50927,7 @@ exports[`DataTable should render new data when page changes 2`] = `
 .c0:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c0:focus >circle,
@@ -50923,7 +50939,7 @@ exports[`DataTable should render new data when page changes 2`] = `
 .c0:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c0:focus ::-moz-focus-inner {
@@ -51049,7 +51065,7 @@ exports[`DataTable should render new data when page changes 2`] = `
 .c0:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c0:focus >circle,
@@ -51061,7 +51077,7 @@ exports[`DataTable should render new data when page changes 2`] = `
 .c0:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c0:focus ::-moz-focus-inner {
@@ -51187,7 +51203,7 @@ exports[`DataTable should render new data when page changes 2`] = `
 .c0:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c0:focus >circle,
@@ -51199,7 +51215,7 @@ exports[`DataTable should render new data when page changes 2`] = `
 .c0:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c0:focus ::-moz-focus-inner {
@@ -51325,7 +51341,7 @@ exports[`DataTable should render new data when page changes 2`] = `
 .c0:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c0:focus >circle,
@@ -51337,7 +51353,7 @@ exports[`DataTable should render new data when page changes 2`] = `
 .c0:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c0:focus ::-moz-focus-inner {
@@ -51463,7 +51479,7 @@ exports[`DataTable should render new data when page changes 2`] = `
 .c0:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c0:focus >circle,
@@ -51475,7 +51491,7 @@ exports[`DataTable should render new data when page changes 2`] = `
 .c0:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c0:focus ::-moz-focus-inner {
@@ -51601,7 +51617,7 @@ exports[`DataTable should render new data when page changes 2`] = `
 .c0:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c0:focus >circle,
@@ -51613,7 +51629,7 @@ exports[`DataTable should render new data when page changes 2`] = `
 .c0:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c0:focus ::-moz-focus-inner {
@@ -51739,7 +51755,7 @@ exports[`DataTable should render new data when page changes 2`] = `
 .c0:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c0:focus >circle,
@@ -51751,7 +51767,7 @@ exports[`DataTable should render new data when page changes 2`] = `
 .c0:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c0:focus ::-moz-focus-inner {
@@ -51877,7 +51893,7 @@ exports[`DataTable should render new data when page changes 2`] = `
 .c0:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c0:focus >circle,
@@ -51889,7 +51905,7 @@ exports[`DataTable should render new data when page changes 2`] = `
 .c0:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c0:focus ::-moz-focus-inner {
@@ -52015,7 +52031,7 @@ exports[`DataTable should render new data when page changes 2`] = `
 .c0:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c0:focus >circle,
@@ -52027,7 +52043,7 @@ exports[`DataTable should render new data when page changes 2`] = `
 .c0:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c0:focus ::-moz-focus-inner {
@@ -52153,7 +52169,7 @@ exports[`DataTable should render new data when page changes 2`] = `
 .c0:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c0:focus >circle,
@@ -52165,7 +52181,7 @@ exports[`DataTable should render new data when page changes 2`] = `
 .c0:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c0:focus ::-moz-focus-inner {
@@ -52291,7 +52307,7 @@ exports[`DataTable should render new data when page changes 2`] = `
 .c0:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c0:focus >circle,
@@ -52303,7 +52319,7 @@ exports[`DataTable should render new data when page changes 2`] = `
 .c0:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c0:focus ::-moz-focus-inner {
@@ -52429,7 +52445,7 @@ exports[`DataTable should render new data when page changes 2`] = `
 .c0:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c0:focus >circle,
@@ -52441,7 +52457,7 @@ exports[`DataTable should render new data when page changes 2`] = `
 .c0:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c0:focus ::-moz-focus-inner {
@@ -52567,7 +52583,7 @@ exports[`DataTable should render new data when page changes 2`] = `
 .c0:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c0:focus >circle,
@@ -52579,7 +52595,7 @@ exports[`DataTable should render new data when page changes 2`] = `
 .c0:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c0:focus ::-moz-focus-inner {
@@ -52705,7 +52721,7 @@ exports[`DataTable should render new data when page changes 2`] = `
 .c0:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c0:focus >circle,
@@ -52717,7 +52733,7 @@ exports[`DataTable should render new data when page changes 2`] = `
 .c0:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c0:focus ::-moz-focus-inner {
@@ -52843,7 +52859,7 @@ exports[`DataTable should render new data when page changes 2`] = `
 .c0:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c0:focus >circle,
@@ -52855,7 +52871,7 @@ exports[`DataTable should render new data when page changes 2`] = `
 .c0:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c0:focus ::-moz-focus-inner {
@@ -52981,7 +52997,7 @@ exports[`DataTable should render new data when page changes 2`] = `
 .c0:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c0:focus >circle,
@@ -52993,7 +53009,7 @@ exports[`DataTable should render new data when page changes 2`] = `
 .c0:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c0:focus ::-moz-focus-inner {
@@ -53119,7 +53135,7 @@ exports[`DataTable should render new data when page changes 2`] = `
 .c0:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c0:focus >circle,
@@ -53131,7 +53147,7 @@ exports[`DataTable should render new data when page changes 2`] = `
 .c0:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c0:focus ::-moz-focus-inner {
@@ -53257,7 +53273,7 @@ exports[`DataTable should render new data when page changes 2`] = `
 .c0:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c0:focus >circle,
@@ -53269,7 +53285,7 @@ exports[`DataTable should render new data when page changes 2`] = `
 .c0:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c0:focus ::-moz-focus-inner {
@@ -53395,7 +53411,7 @@ exports[`DataTable should render new data when page changes 2`] = `
 .c0:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c0:focus >circle,
@@ -53407,7 +53423,7 @@ exports[`DataTable should render new data when page changes 2`] = `
 .c0:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c0:focus ::-moz-focus-inner {
@@ -53533,7 +53549,7 @@ exports[`DataTable should render new data when page changes 2`] = `
 .c0:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c0:focus >circle,
@@ -53545,7 +53561,7 @@ exports[`DataTable should render new data when page changes 2`] = `
 .c0:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c0:focus ::-moz-focus-inner {
@@ -53652,7 +53668,7 @@ exports[`DataTable should render new data when page changes 2`] = `
           >
             <button
               aria-label="Go to previous page"
-              class="StyledButtonKind-sc-1vhfpnt-0 iWasxR StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 dLEtDA"
+              class="StyledButtonKind-sc-1vhfpnt-0 gDERfd StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 dLEtDA"
               type="button"
             >
               <svg
@@ -53675,7 +53691,7 @@ exports[`DataTable should render new data when page changes 2`] = `
           >
             <button
               aria-label="Go to page 1"
-              class="StyledButtonKind-sc-1vhfpnt-0 fvNhuj StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 dLEtDA"
+              class="StyledButtonKind-sc-1vhfpnt-0 bzbiEX StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 dLEtDA"
               type="button"
             >
               1
@@ -53687,7 +53703,7 @@ exports[`DataTable should render new data when page changes 2`] = `
             <button
               aria-current="page"
               aria-label="Go to page 2"
-              class="StyledButtonKind-sc-1vhfpnt-0 hoDYun StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 dLEtDA"
+              class="StyledButtonKind-sc-1vhfpnt-0 gYkHLP StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 dLEtDA"
               type="button"
             >
               2
@@ -53699,7 +53715,7 @@ exports[`DataTable should render new data when page changes 2`] = `
             <button
               aria-disabled="true"
               aria-label="Go to next page"
-              class="StyledButtonKind-sc-1vhfpnt-0 kicLqT StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 dLEtDA"
+              class="StyledButtonKind-sc-1vhfpnt-0 elArDj StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 dLEtDA"
               disabled=""
               type="button"
             >
@@ -53926,7 +53942,7 @@ exports[`DataTable should show correct item index when "show" is a number 1`] = 
 .c17:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c17:focus >circle,
@@ -53938,7 +53954,7 @@ exports[`DataTable should show correct item index when "show" is a number 1`] = 
 .c17:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c17:focus ::-moz-focus-inner {
@@ -54016,7 +54032,7 @@ exports[`DataTable should show correct item index when "show" is a number 1`] = 
 .c20:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c20:focus >circle,
@@ -54028,7 +54044,7 @@ exports[`DataTable should show correct item index when "show" is a number 1`] = 
 .c20:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c20:focus ::-moz-focus-inner {
@@ -54097,7 +54113,7 @@ exports[`DataTable should show correct item index when "show" is a number 1`] = 
 .c21:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c21:focus >circle,
@@ -54109,7 +54125,7 @@ exports[`DataTable should show correct item index when "show" is a number 1`] = 
 .c21:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c21:focus ::-moz-focus-inner {
@@ -54184,7 +54200,7 @@ exports[`DataTable should show correct item index when "show" is a number 1`] = 
 .c22:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c22:focus >circle,
@@ -54196,7 +54212,7 @@ exports[`DataTable should show correct item index when "show" is a number 1`] = 
 .c22:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c22:focus ::-moz-focus-inner {
@@ -54307,7 +54323,7 @@ exports[`DataTable should show correct item index when "show" is a number 1`] = 
 .c9:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c9:focus >circle,
@@ -54319,7 +54335,7 @@ exports[`DataTable should show correct item index when "show" is a number 1`] = 
 .c9:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c9:focus ::-moz-focus-inner {
@@ -54361,7 +54377,7 @@ exports[`DataTable should show correct item index when "show" is a number 1`] = 
 .c8:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c8:focus:not(:focus-visible) {
@@ -56305,7 +56321,7 @@ exports[`DataTable should show correct page when "show" is { page: # } 1`] = `
 .c17:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c17:focus >circle,
@@ -56317,7 +56333,7 @@ exports[`DataTable should show correct page when "show" is { page: # } 1`] = `
 .c17:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c17:focus ::-moz-focus-inner {
@@ -56386,7 +56402,7 @@ exports[`DataTable should show correct page when "show" is { page: # } 1`] = `
 .c20:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c20:focus >circle,
@@ -56398,7 +56414,7 @@ exports[`DataTable should show correct page when "show" is { page: # } 1`] = `
 .c20:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c20:focus ::-moz-focus-inner {
@@ -56476,7 +56492,7 @@ exports[`DataTable should show correct page when "show" is { page: # } 1`] = `
 .c21:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c21:focus >circle,
@@ -56488,7 +56504,7 @@ exports[`DataTable should show correct page when "show" is { page: # } 1`] = `
 .c21:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c21:focus ::-moz-focus-inner {
@@ -56559,7 +56575,7 @@ exports[`DataTable should show correct page when "show" is { page: # } 1`] = `
 .c22:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c22:focus >circle,
@@ -56571,7 +56587,7 @@ exports[`DataTable should show correct page when "show" is { page: # } 1`] = `
 .c22:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c22:focus ::-moz-focus-inner {
@@ -56682,7 +56698,7 @@ exports[`DataTable should show correct page when "show" is { page: # } 1`] = `
 .c9:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c9:focus >circle,
@@ -56694,7 +56710,7 @@ exports[`DataTable should show correct page when "show" is { page: # } 1`] = `
 .c9:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c9:focus ::-moz-focus-inner {
@@ -56736,7 +56752,7 @@ exports[`DataTable should show correct page when "show" is { page: # } 1`] = `
 .c8:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c8:focus:not(:focus-visible) {
@@ -58436,7 +58452,7 @@ exports[`DataTable sort 1`] = `
 .c5:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c5:focus >circle,
@@ -58448,7 +58464,7 @@ exports[`DataTable sort 1`] = `
 .c5:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c5:focus ::-moz-focus-inner {
@@ -58538,7 +58554,7 @@ exports[`DataTable sort 1`] = `
 .c13:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c13:focus >circle,
@@ -58550,7 +58566,7 @@ exports[`DataTable sort 1`] = `
 .c13:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c13:focus ::-moz-focus-inner {
@@ -58592,7 +58608,7 @@ exports[`DataTable sort 1`] = `
 .c12:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c12:focus:not(:focus-visible) {
@@ -58974,7 +58990,7 @@ exports[`DataTable sort controlled 1`] = `
 .c1:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus >circle,
@@ -58986,7 +59002,7 @@ exports[`DataTable sort controlled 1`] = `
 .c1:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus ::-moz-focus-inner {
@@ -59038,7 +59054,7 @@ exports[`DataTable sort controlled 1`] = `
 .c6:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c6:focus >circle,
@@ -59050,7 +59066,7 @@ exports[`DataTable sort controlled 1`] = `
 .c6:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c6:focus ::-moz-focus-inner {
@@ -59140,7 +59156,7 @@ exports[`DataTable sort controlled 1`] = `
 .c14:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c14:focus >circle,
@@ -59152,7 +59168,7 @@ exports[`DataTable sort controlled 1`] = `
 .c14:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c14:focus ::-moz-focus-inner {
@@ -59194,7 +59210,7 @@ exports[`DataTable sort controlled 1`] = `
 .c13:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c13:focus:not(:focus-visible) {
@@ -59583,7 +59599,7 @@ exports[`DataTable sort controlled 2`] = `
 .c1:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus >circle,
@@ -59595,7 +59611,7 @@ exports[`DataTable sort controlled 2`] = `
 .c1:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus ::-moz-focus-inner {
@@ -59647,7 +59663,7 @@ exports[`DataTable sort controlled 2`] = `
 .c6:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c6:focus >circle,
@@ -59659,7 +59675,7 @@ exports[`DataTable sort controlled 2`] = `
 .c6:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c6:focus ::-moz-focus-inner {
@@ -59749,7 +59765,7 @@ exports[`DataTable sort controlled 2`] = `
 .c14:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c14:focus >circle,
@@ -59761,7 +59777,7 @@ exports[`DataTable sort controlled 2`] = `
 .c14:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c14:focus ::-moz-focus-inner {
@@ -59803,7 +59819,7 @@ exports[`DataTable sort controlled 2`] = `
 .c13:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c13:focus:not(:focus-visible) {
@@ -60173,7 +60189,7 @@ exports[`DataTable sort external 1`] = `
 .c5:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c5:focus >circle,
@@ -60185,7 +60201,7 @@ exports[`DataTable sort external 1`] = `
 .c5:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c5:focus ::-moz-focus-inner {
@@ -60275,7 +60291,7 @@ exports[`DataTable sort external 1`] = `
 .c13:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c13:focus >circle,
@@ -60287,7 +60303,7 @@ exports[`DataTable sort external 1`] = `
 .c13:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c13:focus ::-moz-focus-inner {
@@ -60329,7 +60345,7 @@ exports[`DataTable sort external 1`] = `
 .c12:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c12:focus:not(:focus-visible) {
@@ -60692,7 +60708,7 @@ exports[`DataTable sort nested object 1`] = `
 .c5:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c5:focus >circle,
@@ -60704,7 +60720,7 @@ exports[`DataTable sort nested object 1`] = `
 .c5:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c5:focus ::-moz-focus-inner {
@@ -60794,7 +60810,7 @@ exports[`DataTable sort nested object 1`] = `
 .c13:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c13:focus >circle,
@@ -60806,7 +60822,7 @@ exports[`DataTable sort nested object 1`] = `
 .c13:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c13:focus ::-moz-focus-inner {
@@ -60848,7 +60864,7 @@ exports[`DataTable sort nested object 1`] = `
 .c12:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c12:focus:not(:focus-visible) {
@@ -61211,7 +61227,7 @@ exports[`DataTable sort nested object with onSort 1`] = `
 .c5:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c5:focus >circle,
@@ -61223,7 +61239,7 @@ exports[`DataTable sort nested object with onSort 1`] = `
 .c5:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c5:focus ::-moz-focus-inner {
@@ -61313,7 +61329,7 @@ exports[`DataTable sort nested object with onSort 1`] = `
 .c13:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c13:focus >circle,
@@ -61325,7 +61341,7 @@ exports[`DataTable sort nested object with onSort 1`] = `
 .c13:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c13:focus ::-moz-focus-inner {
@@ -61367,7 +61383,7 @@ exports[`DataTable sort nested object with onSort 1`] = `
 .c12:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c12:focus:not(:focus-visible) {
@@ -61730,7 +61746,7 @@ exports[`DataTable sort null data 1`] = `
 .c5:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c5:focus >circle,
@@ -61742,7 +61758,7 @@ exports[`DataTable sort null data 1`] = `
 .c5:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c5:focus ::-moz-focus-inner {
@@ -61832,7 +61848,7 @@ exports[`DataTable sort null data 1`] = `
 .c12:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c12:focus >circle,
@@ -61844,7 +61860,7 @@ exports[`DataTable sort null data 1`] = `
 .c12:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c12:focus ::-moz-focus-inner {
@@ -61886,7 +61902,7 @@ exports[`DataTable sort null data 1`] = `
 .c11:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c11:focus:not(:focus-visible) {
@@ -62317,7 +62333,7 @@ exports[`DataTable sort null data 2`] = `
             class="StyledBox-sc-13pk1d4-0 gslZZZ"
           >
             <button
-              class="StyledButtonKind-sc-1vhfpnt-0 dDeKjo Header__StyledHeaderCellButton-sc-1baku5q-0 hgYczf"
+              class="StyledButtonKind-sc-1vhfpnt-0 kPvlAQ Header__StyledHeaderCellButton-sc-1baku5q-0 hgYczf"
               type="button"
             >
               <div
@@ -62392,7 +62408,7 @@ exports[`DataTable sort null data 2`] = `
             class="StyledBox-sc-13pk1d4-0 gslZZZ"
           >
             <button
-              class="StyledButtonKind-sc-1vhfpnt-0 dDeKjo Header__StyledHeaderCellButton-sc-1baku5q-0 bDiDHh"
+              class="StyledButtonKind-sc-1vhfpnt-0 kPvlAQ Header__StyledHeaderCellButton-sc-1baku5q-0 bDiDHh"
               type="button"
             >
               <div
@@ -62431,7 +62447,7 @@ exports[`DataTable sort null data 2`] = `
             class="StyledBox-sc-13pk1d4-0 gslZZZ"
           >
             <button
-              class="StyledButtonKind-sc-1vhfpnt-0 dDeKjo Header__StyledHeaderCellButton-sc-1baku5q-0 bDiDHh"
+              class="StyledButtonKind-sc-1vhfpnt-0 kPvlAQ Header__StyledHeaderCellButton-sc-1baku5q-0 bDiDHh"
               type="button"
             >
               <div
@@ -62470,7 +62486,7 @@ exports[`DataTable sort null data 2`] = `
             class="StyledBox-sc-13pk1d4-0 gslZZZ"
           >
             <button
-              class="StyledButtonKind-sc-1vhfpnt-0 dDeKjo Header__StyledHeaderCellButton-sc-1baku5q-0 bDiDHh"
+              class="StyledButtonKind-sc-1vhfpnt-0 kPvlAQ Header__StyledHeaderCellButton-sc-1baku5q-0 bDiDHh"
               type="button"
             >
               <div
@@ -62503,10 +62519,10 @@ exports[`DataTable sort null data 2`] = `
       </tr>
     </thead>
     <tbody
-      class="StyledTable__StyledTableBody-sc-1m3u5g-3 StyledDataTable__StyledDataTableBody-sc-xrlyjm-4 kbPtbM"
+      class="StyledTable__StyledTableBody-sc-1m3u5g-3 StyledDataTable__StyledDataTableBody-sc-xrlyjm-4 igIYQG"
     >
       <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 jqMuL"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 jmJzHr"
       >
         <th
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 cuBfrd StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
@@ -62589,7 +62605,7 @@ exports[`DataTable sort null data 2`] = `
 .c0:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c0:focus >circle,
@@ -62601,7 +62617,7 @@ exports[`DataTable sort null data 2`] = `
 .c0:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c0:focus ::-moz-focus-inner {
@@ -62690,7 +62706,7 @@ exports[`DataTable sort null data 2`] = `
         </td>
       </tr>
       <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 jqMuL"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 jmJzHr"
       >
         <th
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 cuBfrd StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
@@ -62735,7 +62751,7 @@ exports[`DataTable sort null data 2`] = `
         </td>
       </tr>
       <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 jqMuL"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 jmJzHr"
       >
         <th
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 cuBfrd StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
@@ -62812,7 +62828,7 @@ exports[`DataTable sort null data 3`] = `
             class="StyledBox-sc-13pk1d4-0 gslZZZ"
           >
             <button
-              class="StyledButtonKind-sc-1vhfpnt-0 dDeKjo Header__StyledHeaderCellButton-sc-1baku5q-0 bDiDHh"
+              class="StyledButtonKind-sc-1vhfpnt-0 kPvlAQ Header__StyledHeaderCellButton-sc-1baku5q-0 bDiDHh"
               type="button"
             >
               <div
@@ -62887,7 +62903,7 @@ exports[`DataTable sort null data 3`] = `
             class="StyledBox-sc-13pk1d4-0 gslZZZ"
           >
             <button
-              class="StyledButtonKind-sc-1vhfpnt-0 dDeKjo Header__StyledHeaderCellButton-sc-1baku5q-0 bDiDHh"
+              class="StyledButtonKind-sc-1vhfpnt-0 kPvlAQ Header__StyledHeaderCellButton-sc-1baku5q-0 bDiDHh"
               type="button"
             >
               <div
@@ -62927,7 +62943,7 @@ exports[`DataTable sort null data 3`] = `
             class="StyledBox-sc-13pk1d4-0 gslZZZ"
           >
             <button
-              class="StyledButtonKind-sc-1vhfpnt-0 dDeKjo Header__StyledHeaderCellButton-sc-1baku5q-0 hgYczf"
+              class="StyledButtonKind-sc-1vhfpnt-0 kPvlAQ Header__StyledHeaderCellButton-sc-1baku5q-0 hgYczf"
               type="button"
             >
               <div
@@ -63002,7 +63018,7 @@ exports[`DataTable sort null data 3`] = `
             class="StyledBox-sc-13pk1d4-0 gslZZZ"
           >
             <button
-              class="StyledButtonKind-sc-1vhfpnt-0 dDeKjo Header__StyledHeaderCellButton-sc-1baku5q-0 bDiDHh"
+              class="StyledButtonKind-sc-1vhfpnt-0 kPvlAQ Header__StyledHeaderCellButton-sc-1baku5q-0 bDiDHh"
               type="button"
             >
               <div
@@ -63035,10 +63051,10 @@ exports[`DataTable sort null data 3`] = `
       </tr>
     </thead>
     <tbody
-      class="StyledTable__StyledTableBody-sc-1m3u5g-3 StyledDataTable__StyledDataTableBody-sc-xrlyjm-4 kbPtbM"
+      class="StyledTable__StyledTableBody-sc-1m3u5g-3 StyledDataTable__StyledDataTableBody-sc-xrlyjm-4 igIYQG"
     >
       <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 jqMuL"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 jmJzHr"
       >
         <th
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 cuBfrd StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
@@ -63083,7 +63099,7 @@ exports[`DataTable sort null data 3`] = `
         </td>
       </tr>
       <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 jqMuL"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 jmJzHr"
       >
         <th
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 cuBfrd StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
@@ -63160,7 +63176,7 @@ exports[`DataTable sort null data 3`] = `
 .c0:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c0:focus >circle,
@@ -63172,7 +63188,7 @@ exports[`DataTable sort null data 3`] = `
 .c0:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c0:focus ::-moz-focus-inner {
@@ -63267,7 +63283,7 @@ exports[`DataTable sort null data 3`] = `
         </td>
       </tr>
       <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 jqMuL"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 jmJzHr"
       >
         <th
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 cuBfrd StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
@@ -63344,7 +63360,7 @@ exports[`DataTable sort null data 4`] = `
             class="StyledBox-sc-13pk1d4-0 gslZZZ"
           >
             <button
-              class="StyledButtonKind-sc-1vhfpnt-0 dDeKjo Header__StyledHeaderCellButton-sc-1baku5q-0 bDiDHh"
+              class="StyledButtonKind-sc-1vhfpnt-0 kPvlAQ Header__StyledHeaderCellButton-sc-1baku5q-0 bDiDHh"
               type="button"
             >
               <div
@@ -63383,7 +63399,7 @@ exports[`DataTable sort null data 4`] = `
             class="StyledBox-sc-13pk1d4-0 gslZZZ"
           >
             <button
-              class="StyledButtonKind-sc-1vhfpnt-0 dDeKjo Header__StyledHeaderCellButton-sc-1baku5q-0 bDiDHh"
+              class="StyledButtonKind-sc-1vhfpnt-0 kPvlAQ Header__StyledHeaderCellButton-sc-1baku5q-0 bDiDHh"
               type="button"
             >
               <div
@@ -63422,7 +63438,7 @@ exports[`DataTable sort null data 4`] = `
             class="StyledBox-sc-13pk1d4-0 gslZZZ"
           >
             <button
-              class="StyledButtonKind-sc-1vhfpnt-0 dDeKjo Header__StyledHeaderCellButton-sc-1baku5q-0 bDiDHh"
+              class="StyledButtonKind-sc-1vhfpnt-0 kPvlAQ Header__StyledHeaderCellButton-sc-1baku5q-0 bDiDHh"
               type="button"
             >
               <div
@@ -63498,7 +63514,7 @@ exports[`DataTable sort null data 4`] = `
             class="StyledBox-sc-13pk1d4-0 gslZZZ"
           >
             <button
-              class="StyledButtonKind-sc-1vhfpnt-0 dDeKjo Header__StyledHeaderCellButton-sc-1baku5q-0 hgYczf"
+              class="StyledButtonKind-sc-1vhfpnt-0 kPvlAQ Header__StyledHeaderCellButton-sc-1baku5q-0 hgYczf"
               type="button"
             >
               <div
@@ -63567,10 +63583,10 @@ exports[`DataTable sort null data 4`] = `
       </tr>
     </thead>
     <tbody
-      class="StyledTable__StyledTableBody-sc-1m3u5g-3 StyledDataTable__StyledDataTableBody-sc-xrlyjm-4 kbPtbM"
+      class="StyledTable__StyledTableBody-sc-1m3u5g-3 StyledDataTable__StyledDataTableBody-sc-xrlyjm-4 igIYQG"
     >
       <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 jqMuL"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 jmJzHr"
       >
         <th
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 cuBfrd StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
@@ -63615,7 +63631,7 @@ exports[`DataTable sort null data 4`] = `
         </td>
       </tr>
       <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 jqMuL"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 jmJzHr"
       >
         <th
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 cuBfrd StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
@@ -63666,7 +63682,7 @@ exports[`DataTable sort null data 4`] = `
         </td>
       </tr>
       <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 jqMuL"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 jmJzHr"
       >
         <th
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 cuBfrd StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
@@ -63749,7 +63765,7 @@ exports[`DataTable sort null data 4`] = `
 .c0:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c0:focus >circle,
@@ -63761,7 +63777,7 @@ exports[`DataTable sort null data 4`] = `
 .c0:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c0:focus ::-moz-focus-inner {
@@ -63970,7 +63986,7 @@ exports[`DataTable sortable 1`] = `
 .c5:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c5:focus >circle,
@@ -63982,7 +63998,7 @@ exports[`DataTable sortable 1`] = `
 .c5:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c5:focus ::-moz-focus-inner {
@@ -64072,7 +64088,7 @@ exports[`DataTable sortable 1`] = `
 .c12:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c12:focus >circle,
@@ -64084,7 +64100,7 @@ exports[`DataTable sortable 1`] = `
 .c12:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c12:focus ::-moz-focus-inner {
@@ -64126,7 +64142,7 @@ exports[`DataTable sortable 1`] = `
 .c11:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c11:focus:not(:focus-visible) {
@@ -64380,7 +64396,7 @@ exports[`DataTable sortable 2`] = `
             class="StyledBox-sc-13pk1d4-0 gslZZZ"
           >
             <button
-              class="StyledButtonKind-sc-1vhfpnt-0 dDeKjo Header__StyledHeaderCellButton-sc-1baku5q-0 hgYczf"
+              class="StyledButtonKind-sc-1vhfpnt-0 kPvlAQ Header__StyledHeaderCellButton-sc-1baku5q-0 hgYczf"
               type="button"
             >
               <div
@@ -64455,7 +64471,7 @@ exports[`DataTable sortable 2`] = `
             class="StyledBox-sc-13pk1d4-0 gslZZZ"
           >
             <button
-              class="StyledButtonKind-sc-1vhfpnt-0 dDeKjo Header__StyledHeaderCellButton-sc-1baku5q-0 bDiDHh"
+              class="StyledButtonKind-sc-1vhfpnt-0 kPvlAQ Header__StyledHeaderCellButton-sc-1baku5q-0 bDiDHh"
               type="button"
             >
               <div
@@ -64488,10 +64504,10 @@ exports[`DataTable sortable 2`] = `
       </tr>
     </thead>
     <tbody
-      class="StyledTable__StyledTableBody-sc-1m3u5g-3 StyledDataTable__StyledDataTableBody-sc-xrlyjm-4 kbPtbM"
+      class="StyledTable__StyledTableBody-sc-1m3u5g-3 StyledDataTable__StyledDataTableBody-sc-xrlyjm-4 igIYQG"
     >
       <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 jqMuL"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 jmJzHr"
       >
         <th
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 cuBfrd StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
@@ -64522,7 +64538,7 @@ exports[`DataTable sortable 2`] = `
         </td>
       </tr>
       <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 jqMuL"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 jmJzHr"
       >
         <th
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 cuBfrd StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
@@ -64553,7 +64569,7 @@ exports[`DataTable sortable 2`] = `
         </td>
       </tr>
       <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 jqMuL"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 jmJzHr"
       >
         <th
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 cuBfrd StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
@@ -64746,7 +64762,7 @@ exports[`DataTable themeColumnSizes 1`] = `
 .c9:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c9:focus >circle,
@@ -64758,7 +64774,7 @@ exports[`DataTable themeColumnSizes 1`] = `
 .c9:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c9:focus ::-moz-focus-inner {
@@ -64800,7 +64816,7 @@ exports[`DataTable themeColumnSizes 1`] = `
 .c8:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c8:focus:not(:focus-visible) {
@@ -65073,7 +65089,7 @@ exports[`DataTable units 1`] = `
 .c10:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c10:focus >circle,
@@ -65085,7 +65101,7 @@ exports[`DataTable units 1`] = `
 .c10:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c10:focus ::-moz-focus-inner {
@@ -65127,7 +65143,7 @@ exports[`DataTable units 1`] = `
 .c9:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c9:focus:not(:focus-visible) {
@@ -65541,7 +65557,7 @@ exports[`DataTable verticalAlign 1`] = `
 .c9:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c9:focus >circle,
@@ -65553,7 +65569,7 @@ exports[`DataTable verticalAlign 1`] = `
 .c9:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c9:focus ::-moz-focus-inner {
@@ -65595,7 +65611,7 @@ exports[`DataTable verticalAlign 1`] = `
 .c8:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c8:focus:not(:focus-visible) {

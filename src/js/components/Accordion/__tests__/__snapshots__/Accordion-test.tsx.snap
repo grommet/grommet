@@ -115,7 +115,7 @@ exports[`Accordion AccordionPanel 1`] = `
 .c3:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c3:focus >circle,
@@ -127,7 +127,7 @@ exports[`Accordion AccordionPanel 1`] = `
 .c3:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c3:focus ::-moz-focus-inner {
@@ -1273,7 +1273,7 @@ exports[`Accordion change active index 1`] = `
 .c3:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c3:focus >circle,
@@ -1285,7 +1285,7 @@ exports[`Accordion change active index 1`] = `
 .c3:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c3:focus ::-moz-focus-inner {
@@ -1609,7 +1609,7 @@ exports[`Accordion change active index 2`] = `
 .c3:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c3:focus >circle,
@@ -1621,7 +1621,7 @@ exports[`Accordion change active index 2`] = `
 .c3:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c3:focus ::-moz-focus-inner {
@@ -1946,7 +1946,7 @@ exports[`Accordion change to second Panel 1`] = `
 .c3:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c3:focus >circle,
@@ -1958,7 +1958,7 @@ exports[`Accordion change to second Panel 1`] = `
 .c3:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c3:focus ::-moz-focus-inner {
@@ -2296,7 +2296,7 @@ exports[`Accordion change to second Panel 2`] = `
 .c3:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c3:focus >circle,
@@ -2308,7 +2308,7 @@ exports[`Accordion change to second Panel 2`] = `
 .c3:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c3:focus ::-moz-focus-inner {
@@ -2658,7 +2658,7 @@ exports[`Accordion change to second Panel without onActive 1`] = `
 .c3:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c3:focus >circle,
@@ -2670,7 +2670,7 @@ exports[`Accordion change to second Panel without onActive 1`] = `
 .c3:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c3:focus ::-moz-focus-inner {
@@ -2992,7 +2992,7 @@ exports[`Accordion change to second Panel without onActive 2`] = `
 .c3:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c3:focus >circle,
@@ -3004,7 +3004,7 @@ exports[`Accordion change to second Panel without onActive 2`] = `
 .c3:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c3:focus ::-moz-focus-inner {
@@ -3263,7 +3263,7 @@ exports[`Accordion complex header 1`] = `
 .c3:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c3:focus >circle,
@@ -3275,7 +3275,7 @@ exports[`Accordion complex header 1`] = `
 .c3:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c3:focus ::-moz-focus-inner {
@@ -3498,7 +3498,7 @@ exports[`Accordion complex title 1`] = `
 .c4:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c4:focus >circle,
@@ -3510,7 +3510,7 @@ exports[`Accordion complex title 1`] = `
 .c4:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c4:focus ::-moz-focus-inner {
@@ -4625,7 +4625,7 @@ exports[`Accordion multiple panels 1`] = `
 .c3:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c3:focus >circle,
@@ -4637,7 +4637,7 @@ exports[`Accordion multiple panels 1`] = `
 .c3:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c3:focus ::-moz-focus-inner {
@@ -4959,7 +4959,7 @@ exports[`Accordion multiple panels 2`] = `
 .c3:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c3:focus >circle,
@@ -4971,7 +4971,7 @@ exports[`Accordion multiple panels 2`] = `
 .c3:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c3:focus ::-moz-focus-inner {
@@ -5296,7 +5296,7 @@ exports[`Accordion multiple panels 3`] = `
 .c3:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c3:focus >circle,
@@ -5308,7 +5308,7 @@ exports[`Accordion multiple panels 3`] = `
 .c3:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c3:focus ::-moz-focus-inner {
@@ -5636,7 +5636,7 @@ exports[`Accordion multiple panels 4`] = `
 .c3:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c3:focus >circle,
@@ -5648,7 +5648,7 @@ exports[`Accordion multiple panels 4`] = `
 .c3:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c3:focus ::-moz-focus-inner {
@@ -5974,7 +5974,7 @@ exports[`Accordion multiple panels 5`] = `
 .c3:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c3:focus >circle,
@@ -5986,7 +5986,7 @@ exports[`Accordion multiple panels 5`] = `
 .c3:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c3:focus ::-moz-focus-inner {
@@ -6361,7 +6361,7 @@ exports[`Accordion should apply level prop to headings 1`] = `
 .c3:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c3:focus >circle,
@@ -6373,7 +6373,7 @@ exports[`Accordion should apply level prop to headings 1`] = `
 .c3:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c3:focus ::-moz-focus-inner {
@@ -6700,7 +6700,7 @@ exports[`Accordion should have no accessibility violations 1`] = `
 .c3:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c3:focus >circle,
@@ -6712,7 +6712,7 @@ exports[`Accordion should have no accessibility violations 1`] = `
 .c3:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c3:focus ::-moz-focus-inner {
@@ -7222,7 +7222,7 @@ exports[`Accordion wrapped panel 1`] = `
 .c3:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c3:focus >circle,
@@ -7234,7 +7234,7 @@ exports[`Accordion wrapped panel 1`] = `
 .c3:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c3:focus ::-moz-focus-inner {
@@ -7556,7 +7556,7 @@ exports[`Accordion wrapped panel 2`] = `
 .c3:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c3:focus >circle,
@@ -7568,7 +7568,7 @@ exports[`Accordion wrapped panel 2`] = `
 .c3:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c3:focus ::-moz-focus-inner {

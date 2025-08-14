@@ -87,7 +87,7 @@ exports[`Tabs Custom Tab component 1`] = `
 .c5:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c5:focus >circle,
@@ -99,7 +99,7 @@ exports[`Tabs Custom Tab component 1`] = `
 .c5:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c5:focus ::-moz-focus-inner {
@@ -367,7 +367,7 @@ exports[`Tabs Tab 1`] = `
 .c5:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c5:focus >circle,
@@ -379,7 +379,7 @@ exports[`Tabs Tab 1`] = `
 .c5:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c5:focus ::-moz-focus-inner {
@@ -927,7 +927,7 @@ exports[`Tabs change to second tab 1`] = `
 .c5:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c5:focus >circle,
@@ -939,7 +939,7 @@ exports[`Tabs change to second tab 1`] = `
 .c5:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c5:focus ::-moz-focus-inner {
@@ -1137,7 +1137,7 @@ exports[`Tabs change to second tab 2`] = `
         <button
           aria-expanded="false"
           aria-selected="false"
-          class="StyledButtonKind-sc-1vhfpnt-0 fvxTu"
+          class="StyledButtonKind-sc-1vhfpnt-0 eWCPay"
           role="tab"
           type="button"
         >
@@ -1157,7 +1157,7 @@ exports[`Tabs change to second tab 2`] = `
         <button
           aria-expanded="true"
           aria-selected="true"
-          class="StyledButtonKind-sc-1vhfpnt-0 fvxTu"
+          class="StyledButtonKind-sc-1vhfpnt-0 eWCPay"
           role="tab"
           type="button"
         >
@@ -1257,7 +1257,7 @@ exports[`Tabs complex title 1`] = `
 .c5:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c5:focus >circle,
@@ -1269,7 +1269,7 @@ exports[`Tabs complex title 1`] = `
 .c5:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c5:focus ::-moz-focus-inner {
@@ -1516,7 +1516,7 @@ exports[`Tabs no Tab 1`] = `
 .c5:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c5:focus >circle,
@@ -1528,7 +1528,7 @@ exports[`Tabs no Tab 1`] = `
 .c5:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c5:focus ::-moz-focus-inner {
@@ -1717,7 +1717,7 @@ exports[`Tabs no Tabs 1`] = `
 .c1:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus >circle,
@@ -1729,7 +1729,7 @@ exports[`Tabs no Tabs 1`] = `
 .c1:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus ::-moz-focus-inner {
@@ -1921,7 +1921,7 @@ exports[`Tabs onClick 1`] = `
 .c5:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c5:focus >circle,
@@ -1933,7 +1933,7 @@ exports[`Tabs onClick 1`] = `
 .c5:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c5:focus ::-moz-focus-inner {
@@ -2460,7 +2460,7 @@ exports[`Tabs set on hover 1`] = `
 .c5:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c5:focus >circle,
@@ -2472,7 +2472,7 @@ exports[`Tabs set on hover 1`] = `
 .c5:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c5:focus ::-moz-focus-inner {
@@ -2670,7 +2670,7 @@ exports[`Tabs set on hover 2`] = `
         <button
           aria-expanded="true"
           aria-selected="true"
-          class="StyledButtonKind-sc-1vhfpnt-0 fvxTu"
+          class="StyledButtonKind-sc-1vhfpnt-0 eWCPay"
           role="tab"
           type="button"
         >
@@ -2690,7 +2690,7 @@ exports[`Tabs set on hover 2`] = `
         <button
           aria-expanded="false"
           aria-selected="false"
-          class="StyledButtonKind-sc-1vhfpnt-0 fvxTu"
+          class="StyledButtonKind-sc-1vhfpnt-0 eWCPay"
           role="tab"
           type="button"
         >
@@ -2734,7 +2734,7 @@ exports[`Tabs set on hover 3`] = `
         <button
           aria-expanded="true"
           aria-selected="true"
-          class="StyledButtonKind-sc-1vhfpnt-0 fvxTu"
+          class="StyledButtonKind-sc-1vhfpnt-0 eWCPay"
           role="tab"
           type="button"
         >
@@ -2754,7 +2754,7 @@ exports[`Tabs set on hover 3`] = `
         <button
           aria-expanded="false"
           aria-selected="false"
-          class="StyledButtonKind-sc-1vhfpnt-0 fvxTu"
+          class="StyledButtonKind-sc-1vhfpnt-0 eWCPay"
           role="tab"
           type="button"
         >
@@ -2798,7 +2798,7 @@ exports[`Tabs set on hover 4`] = `
         <button
           aria-expanded="true"
           aria-selected="true"
-          class="StyledButtonKind-sc-1vhfpnt-0 fvxTu"
+          class="StyledButtonKind-sc-1vhfpnt-0 eWCPay"
           role="tab"
           type="button"
         >
@@ -2818,7 +2818,7 @@ exports[`Tabs set on hover 4`] = `
         <button
           aria-expanded="false"
           aria-selected="false"
-          class="StyledButtonKind-sc-1vhfpnt-0 fvxTu"
+          class="StyledButtonKind-sc-1vhfpnt-0 eWCPay"
           role="tab"
           type="button"
         >
@@ -2862,7 +2862,7 @@ exports[`Tabs set on hover 5`] = `
         <button
           aria-expanded="true"
           aria-selected="true"
-          class="StyledButtonKind-sc-1vhfpnt-0 fvxTu"
+          class="StyledButtonKind-sc-1vhfpnt-0 eWCPay"
           role="tab"
           type="button"
         >
@@ -2882,7 +2882,7 @@ exports[`Tabs set on hover 5`] = `
         <button
           aria-expanded="false"
           aria-selected="false"
-          class="StyledButtonKind-sc-1vhfpnt-0 fvxTu"
+          class="StyledButtonKind-sc-1vhfpnt-0 eWCPay"
           role="tab"
           type="button"
         >
@@ -4172,7 +4172,7 @@ exports[`Tabs should have no accessibility violations 1`] = `
 .c5:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c5:focus >circle,
@@ -4184,7 +4184,7 @@ exports[`Tabs should have no accessibility violations 1`] = `
 .c5:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c5:focus ::-moz-focus-inner {
@@ -4392,7 +4392,7 @@ exports[`Tabs should have no default styles with plain prop 1`] = `
 .c5:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c5:focus >circle,
@@ -4404,7 +4404,7 @@ exports[`Tabs should have no default styles with plain prop 1`] = `
 .c5:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c5:focus ::-moz-focus-inner {
@@ -4605,7 +4605,7 @@ exports[`Tabs should style as disabled 1`] = `
 .c5:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c5:focus >circle,
@@ -4617,7 +4617,7 @@ exports[`Tabs should style as disabled 1`] = `
 .c5:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c5:focus ::-moz-focus-inner {
@@ -4670,7 +4670,7 @@ exports[`Tabs should style as disabled 1`] = `
 .c10:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c10:focus >circle,
@@ -4682,7 +4682,7 @@ exports[`Tabs should style as disabled 1`] = `
 .c10:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c10:focus ::-moz-focus-inner {
@@ -4960,7 +4960,7 @@ exports[`Tabs styled component should change tab color when active 1`] = `
 .c5:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c5:focus >circle,
@@ -4972,7 +4972,7 @@ exports[`Tabs styled component should change tab color when active 1`] = `
 .c5:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c5:focus ::-moz-focus-inner {
@@ -5274,7 +5274,7 @@ exports[`Tabs with icon + reverse 1`] = `
 .c5:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c5:focus >circle,
@@ -5286,7 +5286,7 @@ exports[`Tabs with icon + reverse 1`] = `
 .c5:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c5:focus ::-moz-focus-inner {

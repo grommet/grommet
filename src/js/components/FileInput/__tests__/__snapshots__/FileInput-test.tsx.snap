@@ -83,7 +83,7 @@ exports[`FileInput accept 1`] = `
 .c6:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c6:focus >circle,
@@ -95,7 +95,7 @@ exports[`FileInput accept 1`] = `
 .c6:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c6:focus ::-moz-focus-inner {
@@ -535,7 +535,7 @@ exports[`FileInput basic 1`] = `
 .c6:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c6:focus >circle,
@@ -547,7 +547,7 @@ exports[`FileInput basic 1`] = `
 .c6:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c6:focus ::-moz-focus-inner {
@@ -1313,7 +1313,7 @@ exports[`FileInput disabled 1`] = `
 .c6:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c6:focus >circle,
@@ -1325,7 +1325,7 @@ exports[`FileInput disabled 1`] = `
 .c6:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c6:focus ::-moz-focus-inner {
@@ -1695,7 +1695,7 @@ exports[`FileInput disabled with file selected 1`] = `
 .c12:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c12:focus >circle,
@@ -1707,7 +1707,7 @@ exports[`FileInput disabled with file selected 1`] = `
 .c12:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c12:focus ::-moz-focus-inner {
@@ -1764,7 +1764,7 @@ exports[`FileInput disabled with file selected 1`] = `
 .c14:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c14:focus >circle,
@@ -1776,7 +1776,7 @@ exports[`FileInput disabled with file selected 1`] = `
 .c14:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c14:focus ::-moz-focus-inner {
@@ -2320,7 +2320,7 @@ exports[`FileInput maxSize 1`] = `
 .c6:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c6:focus >circle,
@@ -2332,7 +2332,7 @@ exports[`FileInput maxSize 1`] = `
 .c6:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c6:focus ::-moz-focus-inner {
@@ -2593,7 +2593,7 @@ exports[`FileInput messages 1`] = `
 .c6:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c6:focus >circle,
@@ -2605,7 +2605,7 @@ exports[`FileInput messages 1`] = `
 .c6:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c6:focus ::-moz-focus-inner {
@@ -2866,7 +2866,7 @@ exports[`FileInput multiple 1`] = `
 .c6:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c6:focus >circle,
@@ -2878,7 +2878,7 @@ exports[`FileInput multiple 1`] = `
 .c6:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c6:focus ::-moz-focus-inner {
@@ -3140,7 +3140,7 @@ exports[`FileInput multiple aggregateThreshold 1`] = `
 .c6:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c6:focus >circle,
@@ -3152,7 +3152,7 @@ exports[`FileInput multiple aggregateThreshold 1`] = `
 .c6:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c6:focus ::-moz-focus-inner {
@@ -3414,7 +3414,7 @@ exports[`FileInput multiple max 1`] = `
 .c6:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c6:focus >circle,
@@ -3426,7 +3426,7 @@ exports[`FileInput multiple max 1`] = `
 .c6:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c6:focus ::-moz-focus-inner {

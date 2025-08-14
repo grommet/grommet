@@ -126,7 +126,7 @@ exports[`PageHeader basic 1`] = `
 .c10:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c10:focus >circle,
@@ -138,7 +138,7 @@ exports[`PageHeader basic 1`] = `
 .c10:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c10:focus ::-moz-focus-inner {
@@ -915,7 +915,7 @@ exports[`PageHeader level - 1 1`] = `
 .c10:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c10:focus >circle,
@@ -927,7 +927,7 @@ exports[`PageHeader level - 1 1`] = `
 .c10:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c10:focus ::-moz-focus-inner {
@@ -1192,7 +1192,7 @@ exports[`PageHeader level - 1 2`] = `
 .c10:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c10:focus >circle,
@@ -1204,7 +1204,7 @@ exports[`PageHeader level - 1 2`] = `
 .c10:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c10:focus ::-moz-focus-inner {
@@ -1469,7 +1469,7 @@ exports[`PageHeader level - 2 1`] = `
 .c10:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c10:focus >circle,
@@ -1481,7 +1481,7 @@ exports[`PageHeader level - 2 1`] = `
 .c10:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c10:focus ::-moz-focus-inner {
@@ -1746,7 +1746,7 @@ exports[`PageHeader level - 2 2`] = `
 .c10:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c10:focus >circle,
@@ -1758,7 +1758,7 @@ exports[`PageHeader level - 2 2`] = `
 .c10:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c10:focus ::-moz-focus-inner {
@@ -2023,7 +2023,7 @@ exports[`PageHeader level - 3 1`] = `
 .c10:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c10:focus >circle,
@@ -2035,7 +2035,7 @@ exports[`PageHeader level - 3 1`] = `
 .c10:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c10:focus ::-moz-focus-inner {
@@ -2300,7 +2300,7 @@ exports[`PageHeader level - 3 2`] = `
 .c10:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c10:focus >circle,
@@ -2312,7 +2312,7 @@ exports[`PageHeader level - 3 2`] = `
 .c10:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c10:focus ::-moz-focus-inner {
@@ -2577,7 +2577,7 @@ exports[`PageHeader level - 4 1`] = `
 .c10:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c10:focus >circle,
@@ -2589,7 +2589,7 @@ exports[`PageHeader level - 4 1`] = `
 .c10:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c10:focus ::-moz-focus-inner {
@@ -2854,7 +2854,7 @@ exports[`PageHeader level - 4 2`] = `
 .c10:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c10:focus >circle,
@@ -2866,7 +2866,7 @@ exports[`PageHeader level - 4 2`] = `
 .c10:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c10:focus ::-moz-focus-inner {
@@ -3131,7 +3131,7 @@ exports[`PageHeader level - 5 1`] = `
 .c10:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c10:focus >circle,
@@ -3143,7 +3143,7 @@ exports[`PageHeader level - 5 1`] = `
 .c10:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c10:focus ::-moz-focus-inner {
@@ -3408,7 +3408,7 @@ exports[`PageHeader level - 5 2`] = `
 .c10:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c10:focus >circle,
@@ -3420,7 +3420,7 @@ exports[`PageHeader level - 5 2`] = `
 .c10:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c10:focus ::-moz-focus-inner {
@@ -3685,7 +3685,7 @@ exports[`PageHeader level - 6 1`] = `
 .c10:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c10:focus >circle,
@@ -3697,7 +3697,7 @@ exports[`PageHeader level - 6 1`] = `
 .c10:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c10:focus ::-moz-focus-inner {
@@ -3962,7 +3962,7 @@ exports[`PageHeader level - 6 2`] = `
 .c10:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c10:focus >circle,
@@ -3974,7 +3974,7 @@ exports[`PageHeader level - 6 2`] = `
 .c10:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c10:focus ::-moz-focus-inner {
@@ -4239,7 +4239,7 @@ exports[`PageHeader size - large 1`] = `
 .c10:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c10:focus >circle,
@@ -4251,7 +4251,7 @@ exports[`PageHeader size - large 1`] = `
 .c10:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c10:focus ::-moz-focus-inner {
@@ -4516,7 +4516,7 @@ exports[`PageHeader size - medium 1`] = `
 .c10:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c10:focus >circle,
@@ -4528,7 +4528,7 @@ exports[`PageHeader size - medium 1`] = `
 .c10:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c10:focus ::-moz-focus-inner {
@@ -4793,7 +4793,7 @@ exports[`PageHeader size - small 1`] = `
 .c10:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c10:focus >circle,
@@ -4805,7 +4805,7 @@ exports[`PageHeader size - small 1`] = `
 .c10:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c10:focus ::-moz-focus-inner {

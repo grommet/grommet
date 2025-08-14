@@ -77,7 +77,7 @@ exports[`Button kind badge should align to button container if specified in them
 .c3:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c3:focus >circle,
@@ -89,7 +89,7 @@ exports[`Button kind badge should align to button container if specified in them
 .c3:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c3:focus ::-moz-focus-inner {
@@ -252,7 +252,7 @@ exports[`Button kind badge should apply background 1`] = `
 .c3:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c3:focus >circle,
@@ -264,7 +264,7 @@ exports[`Button kind badge should apply background 1`] = `
 .c3:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c3:focus ::-moz-focus-inner {
@@ -420,7 +420,7 @@ exports[`Button kind badge should be offset from top-right corner 1`] = `
 .c3:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c3:focus >circle,
@@ -432,7 +432,7 @@ exports[`Button kind badge should be offset from top-right corner 1`] = `
 .c3:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c3:focus ::-moz-focus-inner {
@@ -589,7 +589,7 @@ exports[`Button kind badge should display "+" when number is greater than max 1`
 .c3:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c3:focus >circle,
@@ -601,7 +601,7 @@ exports[`Button kind badge should display "+" when number is greater than max 1`
 .c3:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c3:focus ::-moz-focus-inner {
@@ -764,7 +764,7 @@ exports[`Button kind badge should display number content 1`] = `
 .c3:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c3:focus >circle,
@@ -776,7 +776,7 @@ exports[`Button kind badge should display number content 1`] = `
 .c3:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c3:focus ::-moz-focus-inner {
@@ -958,7 +958,7 @@ exports[`Button kind badge should render custom element 1`] = `
 .c3:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c3:focus >circle,
@@ -970,7 +970,7 @@ exports[`Button kind badge should render custom element 1`] = `
 .c3:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c3:focus ::-moz-focus-inner {
@@ -1164,7 +1164,7 @@ exports[`Button kind badge should render relative to contents when button has no
 .c3:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c3:focus >circle,
@@ -1176,7 +1176,7 @@ exports[`Button kind badge should render relative to contents when button has no
 .c3:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c3:focus ::-moz-focus-inner {
@@ -1308,7 +1308,7 @@ exports[`Button kind border on default button 1`] = `
 .c1:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus >circle,
@@ -1320,7 +1320,7 @@ exports[`Button kind border on default button 1`] = `
 .c1:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus ::-moz-focus-inner {
@@ -1454,7 +1454,7 @@ exports[`Button kind button icon colors 1`] = `
 .c1:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus >circle,
@@ -1466,7 +1466,7 @@ exports[`Button kind button icon colors 1`] = `
 .c1:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus ::-moz-focus-inner {
@@ -1616,7 +1616,7 @@ exports[`Button kind button with icon and align 1`] = `
 .c1:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus >circle,
@@ -1628,7 +1628,7 @@ exports[`Button kind button with icon and align 1`] = `
 .c1:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus ::-moz-focus-inner {
@@ -1754,7 +1754,7 @@ exports[`Button kind button with transparent background 1`] = `
 .c2:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c2:focus >circle,
@@ -1766,7 +1766,7 @@ exports[`Button kind button with transparent background 1`] = `
 .c2:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c2:focus ::-moz-focus-inner {
@@ -1828,7 +1828,7 @@ exports[`Button kind button with transparent background 1`] = `
 .c4:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c4:focus >circle,
@@ -1840,7 +1840,7 @@ exports[`Button kind button with transparent background 1`] = `
 .c4:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c4:focus ::-moz-focus-inner {
@@ -1897,7 +1897,7 @@ exports[`Button kind button with transparent background 1`] = `
 .c6:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c6:focus >circle,
@@ -1909,7 +1909,7 @@ exports[`Button kind button with transparent background 1`] = `
 .c6:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c6:focus ::-moz-focus-inner {
@@ -1971,7 +1971,7 @@ exports[`Button kind button with transparent background 1`] = `
 .c7:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c7:focus >circle,
@@ -1983,7 +1983,7 @@ exports[`Button kind button with transparent background 1`] = `
 .c7:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c7:focus ::-moz-focus-inner {
@@ -2130,7 +2130,7 @@ exports[`Button kind default button 1`] = `
 .c1:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus >circle,
@@ -2142,7 +2142,7 @@ exports[`Button kind default button 1`] = `
 .c1:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus ::-moz-focus-inner {
@@ -2240,7 +2240,7 @@ exports[`Button kind disabled with hoverIndicator should not hover 1`] = `
 .c1:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus >circle,
@@ -2252,7 +2252,7 @@ exports[`Button kind disabled with hoverIndicator should not hover 1`] = `
 .c1:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus ::-moz-focus-inner {
@@ -2314,7 +2314,7 @@ exports[`Button kind disabled with hoverIndicator should not hover 2`] = `
   class="StyledGrommet-sc-19lkkz7-0 iRGypN"
 >
   <button
-    class="StyledButtonKind-sc-1vhfpnt-0 feedpv"
+    class="StyledButtonKind-sc-1vhfpnt-0 bDOpQz"
     disabled=""
     type="button"
   >
@@ -2363,7 +2363,7 @@ exports[`Button kind extend on default button 1`] = `
 .c1:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus >circle,
@@ -2375,7 +2375,7 @@ exports[`Button kind extend on default button 1`] = `
 .c1:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus ::-moz-focus-inner {
@@ -2475,7 +2475,7 @@ exports[`Button kind fill 1`] = `
 .c1:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus >circle,
@@ -2487,7 +2487,7 @@ exports[`Button kind fill 1`] = `
 .c1:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus ::-moz-focus-inner {
@@ -2558,7 +2558,7 @@ exports[`Button kind fill 1`] = `
 .c2:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c2:focus >circle,
@@ -2570,7 +2570,7 @@ exports[`Button kind fill 1`] = `
 .c2:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c2:focus ::-moz-focus-inner {
@@ -2641,7 +2641,7 @@ exports[`Button kind fill 1`] = `
 .c3:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c3:focus >circle,
@@ -2653,7 +2653,7 @@ exports[`Button kind fill 1`] = `
 .c3:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c3:focus ::-moz-focus-inner {
@@ -2761,7 +2761,7 @@ exports[`Button kind font on button default 1`] = `
 .c1:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus >circle,
@@ -2773,7 +2773,7 @@ exports[`Button kind font on button default 1`] = `
 .c1:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus ::-moz-focus-inner {
@@ -2869,7 +2869,7 @@ exports[`Button kind font undefined 1`] = `
 .c1:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus >circle,
@@ -2881,7 +2881,7 @@ exports[`Button kind font undefined 1`] = `
 .c1:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus ::-moz-focus-inner {
@@ -2963,7 +2963,7 @@ exports[`Button kind hover on default button 1`] = `
 .c1:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus >circle,
@@ -2975,7 +2975,7 @@ exports[`Button kind hover on default button 1`] = `
 .c1:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus ::-moz-focus-inner {
@@ -3071,7 +3071,7 @@ exports[`Button kind hover secondary with color and background 1`] = `
 .c1:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus >circle,
@@ -3083,7 +3083,7 @@ exports[`Button kind hover secondary with color and background 1`] = `
 .c1:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus ::-moz-focus-inner {
@@ -3144,7 +3144,7 @@ exports[`Button kind hover secondary with color and background 2`] = `
   class="StyledGrommet-sc-19lkkz7-0 iRGypN"
 >
   <button
-    class="StyledButtonKind-sc-1vhfpnt-0 hnXXVL"
+    class="StyledButtonKind-sc-1vhfpnt-0 iGbpIP"
     type="button"
   >
     Button
@@ -3197,7 +3197,7 @@ exports[`Button kind hoverIndicator with color and background 1`] = `
 .c1:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus >circle,
@@ -3209,7 +3209,7 @@ exports[`Button kind hoverIndicator with color and background 1`] = `
 .c1:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus ::-moz-focus-inner {
@@ -3270,7 +3270,7 @@ exports[`Button kind hoverIndicator with color and background 2`] = `
   class="StyledGrommet-sc-19lkkz7-0 iRGypN"
 >
   <button
-    class="StyledButtonKind-sc-1vhfpnt-0 kgJJDZ"
+    class="StyledButtonKind-sc-1vhfpnt-0 kVLrrd"
     type="button"
   >
     Button
@@ -3421,7 +3421,7 @@ exports[`Button kind icon only pad should apply when icon but no label 1`] = `
 .c1:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus >circle,
@@ -3433,7 +3433,7 @@ exports[`Button kind icon only pad should apply when icon but no label 1`] = `
 .c1:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus ::-moz-focus-inner {
@@ -3503,7 +3503,7 @@ exports[`Button kind icon only pad should apply when icon but no label 1`] = `
 .c3:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c3:focus >circle,
@@ -3515,7 +3515,7 @@ exports[`Button kind icon only pad should apply when icon but no label 1`] = `
 .c3:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c3:focus ::-moz-focus-inner {
@@ -3591,7 +3591,7 @@ exports[`Button kind icon only pad should apply when icon but no label 1`] = `
 .c4:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c4:focus >circle,
@@ -3603,7 +3603,7 @@ exports[`Button kind icon only pad should apply when icon but no label 1`] = `
 .c4:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c4:focus ::-moz-focus-inner {
@@ -3673,7 +3673,7 @@ exports[`Button kind icon only pad should apply when icon but no label 1`] = `
 .c6:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c6:focus >circle,
@@ -3685,7 +3685,7 @@ exports[`Button kind icon only pad should apply when icon but no label 1`] = `
 .c6:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c6:focus ::-moz-focus-inner {
@@ -3761,7 +3761,7 @@ exports[`Button kind icon only pad should apply when icon but no label 1`] = `
 .c7:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c7:focus >circle,
@@ -3773,7 +3773,7 @@ exports[`Button kind icon only pad should apply when icon but no label 1`] = `
 .c7:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c7:focus ::-moz-focus-inner {
@@ -3843,7 +3843,7 @@ exports[`Button kind icon only pad should apply when icon but no label 1`] = `
 .c9:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c9:focus >circle,
@@ -3855,7 +3855,7 @@ exports[`Button kind icon only pad should apply when icon but no label 1`] = `
 .c9:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c9:focus ::-moz-focus-inner {
@@ -4202,7 +4202,7 @@ exports[`Button kind match icon size to size prop when theme.icon.matchSize is t
 .c1:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus >circle,
@@ -4214,7 +4214,7 @@ exports[`Button kind match icon size to size prop when theme.icon.matchSize is t
 .c1:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus ::-moz-focus-inner {
@@ -4290,7 +4290,7 @@ exports[`Button kind match icon size to size prop when theme.icon.matchSize is t
 .c5:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c5:focus >circle,
@@ -4302,7 +4302,7 @@ exports[`Button kind match icon size to size prop when theme.icon.matchSize is t
 .c5:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c5:focus ::-moz-focus-inner {
@@ -4378,7 +4378,7 @@ exports[`Button kind match icon size to size prop when theme.icon.matchSize is t
 .c7:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c7:focus >circle,
@@ -4390,7 +4390,7 @@ exports[`Button kind match icon size to size prop when theme.icon.matchSize is t
 .c7:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c7:focus ::-moz-focus-inner {
@@ -4466,7 +4466,7 @@ exports[`Button kind match icon size to size prop when theme.icon.matchSize is t
 .c9:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c9:focus >circle,
@@ -4478,7 +4478,7 @@ exports[`Button kind match icon size to size prop when theme.icon.matchSize is t
 .c9:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c9:focus ::-moz-focus-inner {
@@ -4554,7 +4554,7 @@ exports[`Button kind match icon size to size prop when theme.icon.matchSize is t
 .c11:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c11:focus >circle,
@@ -4566,7 +4566,7 @@ exports[`Button kind match icon size to size prop when theme.icon.matchSize is t
 .c11:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c11:focus ::-moz-focus-inner {
@@ -4841,7 +4841,7 @@ exports[`Button kind mouseOver and mouseOut events 1`] = `
 .c1:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus >circle,
@@ -4853,7 +4853,7 @@ exports[`Button kind mouseOver and mouseOut events 1`] = `
 .c1:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus ::-moz-focus-inner {
@@ -4934,7 +4934,7 @@ exports[`Button kind mouseOver and mouseOut events 2`] = `
   class="StyledGrommet-sc-19lkkz7-0 iRGypN"
 >
   <button
-    class="StyledButtonKind-sc-1vhfpnt-0 cYvtkb"
+    class="StyledButtonKind-sc-1vhfpnt-0 fQjVBn"
     type="button"
   >
     <div
@@ -5002,7 +5002,7 @@ exports[`Button kind no border on default button 1`] = `
 .c1:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus >circle,
@@ -5014,7 +5014,7 @@ exports[`Button kind no border on default button 1`] = `
 .c1:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus ::-moz-focus-inner {
@@ -5110,7 +5110,7 @@ exports[`Button kind no padding on default button 1`] = `
 .c1:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus >circle,
@@ -5122,7 +5122,7 @@ exports[`Button kind no padding on default button 1`] = `
 .c1:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus ::-moz-focus-inner {
@@ -5218,7 +5218,7 @@ exports[`Button kind opacity on default button 1`] = `
 .c1:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus >circle,
@@ -5230,7 +5230,7 @@ exports[`Button kind opacity on default button 1`] = `
 .c1:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus ::-moz-focus-inner {
@@ -5416,7 +5416,7 @@ exports[`Button kind padding is applied correctly when intelligentPad is true 1`
 .c1:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus >circle,
@@ -5428,7 +5428,7 @@ exports[`Button kind padding is applied correctly when intelligentPad is true 1`
 .c1:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus ::-moz-focus-inner {
@@ -5524,7 +5524,7 @@ exports[`Button kind padding on default button 1`] = `
 .c1:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus >circle,
@@ -5536,7 +5536,7 @@ exports[`Button kind padding on default button 1`] = `
 .c1:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus ::-moz-focus-inner {
@@ -5653,7 +5653,7 @@ exports[`Button kind plain with icon 1`] = `
 .c1:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus >circle,
@@ -5665,7 +5665,7 @@ exports[`Button kind plain with icon 1`] = `
 .c1:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus ::-moz-focus-inner {
@@ -5774,7 +5774,7 @@ exports[`Button kind primary button 1`] = `
 .c1:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus >circle,
@@ -5786,7 +5786,7 @@ exports[`Button kind primary button 1`] = `
 .c1:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus ::-moz-focus-inner {
@@ -5860,7 +5860,7 @@ exports[`Button kind primary button 1`] = `
 .c2:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c2:focus >circle,
@@ -5872,7 +5872,7 @@ exports[`Button kind primary button 1`] = `
 .c2:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c2:focus ::-moz-focus-inner {
@@ -5952,7 +5952,7 @@ exports[`Button kind render of children 1`] = `
 .c1:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus >circle,
@@ -5964,7 +5964,7 @@ exports[`Button kind render of children 1`] = `
 .c1:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus ::-moz-focus-inner {
@@ -6060,7 +6060,7 @@ exports[`Button kind secondary button 1`] = `
 .c1:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus >circle,
@@ -6072,7 +6072,7 @@ exports[`Button kind secondary button 1`] = `
 .c1:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus ::-moz-focus-inner {
@@ -6190,7 +6190,7 @@ exports[`Button kind should apply kind direction 1`] = `
 .c1:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus >circle,
@@ -6202,7 +6202,7 @@ exports[`Button kind should apply kind direction 1`] = `
 .c1:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus ::-moz-focus-inner {
@@ -6309,7 +6309,7 @@ exports[`Button kind should apply styling according to theme size definitions 1`
 .c1:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus >circle,
@@ -6321,7 +6321,7 @@ exports[`Button kind should apply styling according to theme size definitions 1`
 .c1:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus ::-moz-focus-inner {
@@ -6391,7 +6391,7 @@ exports[`Button kind should apply styling according to theme size definitions 1`
 .c2:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c2:focus >circle,
@@ -6403,7 +6403,7 @@ exports[`Button kind should apply styling according to theme size definitions 1`
 .c2:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c2:focus ::-moz-focus-inner {
@@ -6473,7 +6473,7 @@ exports[`Button kind should apply styling according to theme size definitions 1`
 .c3:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c3:focus >circle,
@@ -6485,7 +6485,7 @@ exports[`Button kind should apply styling according to theme size definitions 1`
 .c3:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c3:focus ::-moz-focus-inner {
@@ -6794,10 +6794,10 @@ exports[`Button kind should render pad 1`] = `
   .c3 {
   display: inline-block;
   flex: 0 0 auto;
-  width: 18px;
-  height: 18px;
-  fill: #2e2e2e;
-  stroke: #2e2e2e;
+  width: 24px;
+  height: 24px;
+  fill: #666666;
+  stroke: #666666;
 }
 
 .c3 g {
@@ -6823,38 +6823,6 @@ exports[`Button kind should render pad 1`] = `
   stroke: none;
 }
 
-.c7 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 18px;
-  height: 18px;
-  fill: #555555;
-  stroke: #555555;
-}
-
-.c7 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c7 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c7 *[stroke*='#'],
-.c7 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c7 *[fill-rule],
-.c7 *[FILL-RULE],
-.c7 *[fill*='#'],
-.c7 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
-}
-
 .c2 {
   display: flex;
   box-sizing: border-box;
@@ -6869,7 +6837,7 @@ exports[`Button kind should render pad 1`] = `
 .c4 {
   flex: 0 0 auto;
   align-self: stretch;
-  width: 6px;
+  width: 12px;
 }
 
 .c1 {
@@ -6882,43 +6850,25 @@ exports[`Button kind should render pad 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  border: none;
-  border-radius: 9999px;
-  padding: 5px 18px;
-  font-size: 1.125rem;
-  line-height: 1.5rem;
-  background-color: rgba(0, 0, 0, 0);
-  color: #2e2e2e;
-  border-style: solid;
-  border-width: 1px;
-  border-color: rgba(0, 0, 0, 0);
-  border-radius: 9999px;
-  font-weight: 500;
-  padding: 5px 18px;
-  padding: 96px;
-  text-align: center;
+  border: 2px solid #7D4CDB;
+  border-radius: 18px;
+  color: #444444;
+  padding: 4px 22px;
+  font-size: 18px;
+  line-height: 24px;
   transition-property: color,background-color,border-color,box-shadow;
   transition-duration: 0.1s;
   transition-timing-function: ease-in-out;
-}
-
-.c1 >svg {
-  display: flex;
-  align-self: center;
-  vertical-align: middle;
+  padding: 96px;
 }
 
 .c1:hover {
-  background-color: rgba(0, 0, 0, 0.04);
-  color: #2e2e2e;
-  border-color: rgba(0, 0, 0, 0);
-  font-weight: 500;
+  box-shadow: 0px 0px 0px 2px #7D4CDB;
 }
 
 .c1:focus {
-  outline-offset: 2px;
-  outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
 .c1:focus >circle,
@@ -6928,9 +6878,8 @@ exports[`Button kind should render pad 1`] = `
 .c1:focus >polygon,
 .c1:focus >polyline,
 .c1:focus >rect {
-  outline-offset: 2px;
-  outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
 .c1:focus ::-moz-focus-inner {
@@ -6938,8 +6887,6 @@ exports[`Button kind should render pad 1`] = `
 }
 
 .c1:focus:not(:focus-visible) {
-  outline-offset: 0px;
-  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -6951,8 +6898,6 @@ exports[`Button kind should render pad 1`] = `
 .c1:focus:not(:focus-visible) >polygon,
 .c1:focus:not(:focus-visible) >polyline,
 .c1:focus:not(:focus-visible) >rect {
-  outline-offset: 0px;
-  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -6971,46 +6916,28 @@ exports[`Button kind should render pad 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  border: none;
-  border-radius: 9999px;
-  padding: 5px 18px;
-  font-size: 1.125rem;
-  line-height: 1.5rem;
-  background-color: rgba(0, 0, 0, 0);
-  color: #2e2e2e;
-  border-style: solid;
-  border-width: 1px;
-  border-color: rgba(0, 0, 0, 0);
-  border-radius: 9999px;
-  font-weight: 500;
-  padding: 5px 18px;
+  border: 2px solid #7D4CDB;
+  border-radius: 18px;
+  color: #444444;
+  padding: 4px 22px;
+  font-size: 18px;
+  line-height: 24px;
+  transition-property: color,background-color,border-color,box-shadow;
+  transition-duration: 0.1s;
+  transition-timing-function: ease-in-out;
   padding-left: 18px;
   padding-right: 18px;
   padding-top: 6px;
   padding-bottom: 6px;
-  text-align: center;
-  transition-property: color,background-color,border-color,box-shadow;
-  transition-duration: 0.1s;
-  transition-timing-function: ease-in-out;
-}
-
-.c5 >svg {
-  display: flex;
-  align-self: center;
-  vertical-align: middle;
 }
 
 .c5:hover {
-  background-color: rgba(0, 0, 0, 0.04);
-  color: #2e2e2e;
-  border-color: rgba(0, 0, 0, 0);
-  font-weight: 500;
+  box-shadow: 0px 0px 0px 2px #7D4CDB;
 }
 
 .c5:focus {
-  outline-offset: 2px;
-  outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
 .c5:focus >circle,
@@ -7020,9 +6947,8 @@ exports[`Button kind should render pad 1`] = `
 .c5:focus >polygon,
 .c5:focus >polyline,
 .c5:focus >rect {
-  outline-offset: 2px;
-  outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
 .c5:focus ::-moz-focus-inner {
@@ -7030,8 +6956,6 @@ exports[`Button kind should render pad 1`] = `
 }
 
 .c5:focus:not(:focus-visible) {
-  outline-offset: 0px;
-  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -7043,8 +6967,6 @@ exports[`Button kind should render pad 1`] = `
 .c5:focus:not(:focus-visible) >polygon,
 .c5:focus:not(:focus-visible) >polyline,
 .c5:focus:not(:focus-visible) >rect {
-  outline-offset: 0px;
-  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -7063,17 +6985,16 @@ exports[`Button kind should render pad 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
+  color: inherit;
   outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
-  color: inherit;
 }
 
 .c6:focus {
-  outline-offset: 2px;
-  outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
 .c6:focus >circle,
@@ -7083,9 +7004,8 @@ exports[`Button kind should render pad 1`] = `
 .c6:focus >polygon,
 .c6:focus >polyline,
 .c6:focus >rect {
-  outline-offset: 2px;
-  outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
 .c6:focus ::-moz-focus-inner {
@@ -7093,8 +7013,6 @@ exports[`Button kind should render pad 1`] = `
 }
 
 .c6:focus:not(:focus-visible) {
-  outline-offset: 0px;
-  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -7106,8 +7024,6 @@ exports[`Button kind should render pad 1`] = `
 .c6:focus:not(:focus-visible) >polygon,
 .c6:focus:not(:focus-visible) >polyline,
 .c6:focus:not(:focus-visible) >rect {
-  outline-offset: 0px;
-  outline: none;
   outline: none;
   box-shadow: none;
 }
@@ -7117,11 +7033,8 @@ exports[`Button kind should render pad 1`] = `
 }
 
 .c0 {
-  font-family: 'Metric',Arial,sans-serif;
-  font-size: 1.125rem;
-  line-height: 1.5rem;
-  background-color: #ffffff;
-  color: #555555;
+  font-size: 18px;
+  line-height: 24px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -7150,7 +7063,6 @@ exports[`Button kind should render pad 1`] = `
             fill="none"
             stroke="#000"
             stroke-width="2"
-            vector-effect="non-scaling-stroke"
           />
         </svg>
         <div
@@ -7177,7 +7089,6 @@ exports[`Button kind should render pad 1`] = `
             fill="none"
             stroke="#000"
             stroke-width="2"
-            vector-effect="non-scaling-stroke"
           />
         </svg>
         <div
@@ -7193,7 +7104,7 @@ exports[`Button kind should render pad 1`] = `
     >
       <svg
         aria-label="Add"
-        class="c7"
+        class="c3"
         viewBox="0 0 24 24"
       >
         <path
@@ -7248,7 +7159,7 @@ exports[`Button kind size of default button 1`] = `
 .c1:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus >circle,
@@ -7260,7 +7171,7 @@ exports[`Button kind size of default button 1`] = `
 .c1:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus ::-moz-focus-inner {

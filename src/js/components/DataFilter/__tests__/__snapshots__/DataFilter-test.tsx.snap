@@ -632,7 +632,7 @@ exports[`DataFilter children 1`] = `
 .c12:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c12:focus >circle,
@@ -644,7 +644,7 @@ exports[`DataFilter children 1`] = `
 .c12:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c12:focus ::-moz-focus-inner {
@@ -1036,7 +1036,7 @@ exports[`DataFilter options 1`] = `
 .c18:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c18:focus >circle,
@@ -1048,7 +1048,7 @@ exports[`DataFilter options 1`] = `
 .c18:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c18:focus ::-moz-focus-inner {
@@ -1686,7 +1686,7 @@ exports[`DataFilter range Data 1`] = `
 .c21:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c21:focus >circle,
@@ -1698,7 +1698,7 @@ exports[`DataFilter range Data 1`] = `
 .c21:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c21:focus ::-moz-focus-inner {
@@ -2200,7 +2200,7 @@ exports[`DataFilter range prop 1`] = `
 .c21:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c21:focus >circle,
@@ -2212,7 +2212,7 @@ exports[`DataFilter range prop 1`] = `
 .c21:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c21:focus ::-moz-focus-inner {
@@ -2752,7 +2752,7 @@ exports[`DataFilter renders 1`] = `
 .c29:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c29:focus >circle,
@@ -2764,7 +2764,7 @@ exports[`DataFilter renders 1`] = `
 .c29:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c29:focus ::-moz-focus-inner {
@@ -3392,7 +3392,7 @@ exports[`DataFilter select multiple options 1`] = `
 .c5:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c5:focus >circle,
@@ -3404,7 +3404,7 @@ exports[`DataFilter select multiple options 1`] = `
 .c5:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c5:focus ::-moz-focus-inner {
@@ -3474,7 +3474,7 @@ exports[`DataFilter select multiple options 1`] = `
 .c11:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c11:focus >circle,
@@ -3486,7 +3486,7 @@ exports[`DataFilter select multiple options 1`] = `
 .c11:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c11:focus ::-moz-focus-inner {
@@ -3817,7 +3817,7 @@ exports[`DataFilter select multiple options search 1`] = `
 .c3:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c3:focus >circle,
@@ -3829,7 +3829,7 @@ exports[`DataFilter select multiple options search 1`] = `
 .c3:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c3:focus ::-moz-focus-inner {
@@ -4055,7 +4055,7 @@ exports[`DataFilter should allow filtering on multiple sub-properties from same 
 .c5:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c5:focus >circle,
@@ -4067,7 +4067,7 @@ exports[`DataFilter should allow filtering on multiple sub-properties from same 
 .c5:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c5:focus ::-moz-focus-inner {
@@ -4137,7 +4137,7 @@ exports[`DataFilter should allow filtering on multiple sub-properties from same 
 .c11:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c11:focus >circle,
@@ -4149,7 +4149,7 @@ exports[`DataFilter should allow filtering on multiple sub-properties from same 
 .c11:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c11:focus ::-moz-focus-inner {

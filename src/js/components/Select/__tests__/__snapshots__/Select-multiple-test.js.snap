@@ -88,7 +88,7 @@ exports[`Select Controlled deselect an option 1`] = `
 .c1:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus >circle,
@@ -100,7 +100,7 @@ exports[`Select Controlled deselect an option 1`] = `
 .c1:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus ::-moz-focus-inner {
@@ -396,7 +396,7 @@ exports[`Select Controlled multiple 1`] = `
 .c1:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus >circle,
@@ -408,7 +408,7 @@ exports[`Select Controlled multiple 1`] = `
 .c1:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus ::-moz-focus-inner {
@@ -703,7 +703,7 @@ exports[`Select Controlled multiple onChange toggle with valueKey reduce 1`] = `
 .c1:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus >circle,
@@ -715,7 +715,7 @@ exports[`Select Controlled multiple onChange toggle with valueKey reduce 1`] = `
 .c1:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus ::-moz-focus-inner {
@@ -1045,7 +1045,7 @@ exports[`Select Controlled multiple onChange toggle with valueKey reduce 2`] = `
 .c5:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c5:focus >circle,
@@ -1057,7 +1057,7 @@ exports[`Select Controlled multiple onChange toggle with valueKey reduce 2`] = `
 .c5:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c5:focus ::-moz-focus-inner {
@@ -1126,7 +1126,7 @@ exports[`Select Controlled multiple onChange toggle with valueKey reduce 2`] = `
 .c7:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c7:focus >circle,
@@ -1138,7 +1138,7 @@ exports[`Select Controlled multiple onChange toggle with valueKey reduce 2`] = `
 .c7:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c7:focus ::-moz-focus-inner {
@@ -1390,7 +1390,7 @@ exports[`Select Controlled multiple onChange with valueKey reduce 1`] = `
 .c1:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus >circle,
@@ -1402,7 +1402,7 @@ exports[`Select Controlled multiple onChange with valueKey reduce 1`] = `
 .c1:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus ::-moz-focus-inner {
@@ -1712,7 +1712,7 @@ exports[`Select Controlled multiple onChange with valueKey reduce 2`] = `
 .c5:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c5:focus >circle,
@@ -1724,7 +1724,7 @@ exports[`Select Controlled multiple onChange with valueKey reduce 2`] = `
 .c5:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c5:focus ::-moz-focus-inner {
@@ -1976,7 +1976,7 @@ exports[`Select Controlled multiple onChange with valueKey string 1`] = `
 .c1:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus >circle,
@@ -1988,7 +1988,7 @@ exports[`Select Controlled multiple onChange with valueKey string 1`] = `
 .c1:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus ::-moz-focus-inner {
@@ -2298,7 +2298,7 @@ exports[`Select Controlled multiple onChange with valueKey string 2`] = `
 .c5:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c5:focus >circle,
@@ -2310,7 +2310,7 @@ exports[`Select Controlled multiple onChange with valueKey string 2`] = `
 .c5:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c5:focus ::-moz-focus-inner {
@@ -2563,7 +2563,7 @@ exports[`Select Controlled multiple onChange without labelKey 1`] = `
 .c1:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus >circle,
@@ -2575,7 +2575,7 @@ exports[`Select Controlled multiple onChange without labelKey 1`] = `
 .c1:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus ::-moz-focus-inner {
@@ -2886,7 +2886,7 @@ exports[`Select Controlled multiple onChange without labelKey 2`] = `
 .c5:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c5:focus >circle,
@@ -2898,7 +2898,7 @@ exports[`Select Controlled multiple onChange without labelKey 2`] = `
 .c5:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c5:focus ::-moz-focus-inner {
@@ -3084,7 +3084,7 @@ exports[`Select Controlled multiple onChange without labelKey 4`] = `
         aria-posinset="1"
         aria-selected="true"
         aria-setsize="2"
-        class="StyledButtonKind-sc-1vhfpnt-0 etRyTp StyledSelect__SelectOption-sc-znp66n-3 lkKTUk"
+        class="StyledButtonKind-sc-1vhfpnt-0 YpAWt StyledSelect__SelectOption-sc-znp66n-3 lkKTUk"
         role="option"
         tabindex="0"
         type="button"
@@ -3095,7 +3095,7 @@ exports[`Select Controlled multiple onChange without labelKey 4`] = `
         aria-posinset="2"
         aria-selected="false"
         aria-setsize="2"
-        class="StyledButtonKind-sc-1vhfpnt-0 fTMnBM StyledSelect__SelectOption-sc-znp66n-3 lkKTUk"
+        class="StyledButtonKind-sc-1vhfpnt-0 fUARKY StyledSelect__SelectOption-sc-znp66n-3 lkKTUk"
         role="option"
         tabindex="-1"
         type="button"
@@ -3151,7 +3151,7 @@ exports[`Select Controlled multiple onChange without labelKey 6`] = `
         aria-posinset="1"
         aria-selected="true"
         aria-setsize="2"
-        class="StyledButtonKind-sc-1vhfpnt-0 etRyTp StyledSelect__SelectOption-sc-znp66n-3 lkKTUk"
+        class="StyledButtonKind-sc-1vhfpnt-0 YpAWt StyledSelect__SelectOption-sc-znp66n-3 lkKTUk"
         role="option"
         tabindex="0"
         type="button"
@@ -3162,7 +3162,7 @@ exports[`Select Controlled multiple onChange without labelKey 6`] = `
         aria-posinset="2"
         aria-selected="true"
         aria-setsize="2"
-        class="StyledButtonKind-sc-1vhfpnt-0 etRyTp StyledSelect__SelectOption-sc-znp66n-3 lkKTUk"
+        class="StyledButtonKind-sc-1vhfpnt-0 YpAWt StyledSelect__SelectOption-sc-znp66n-3 lkKTUk"
         role="option"
         tabindex="0"
         type="button"
@@ -3285,7 +3285,7 @@ exports[`Select Controlled multiple onChange without labelKey 8`] = `
 .c1:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus >circle,
@@ -3297,7 +3297,7 @@ exports[`Select Controlled multiple onChange without labelKey 8`] = `
 .c1:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus ::-moz-focus-inner {
@@ -3602,7 +3602,7 @@ exports[`Select Controlled multiple onChange without valueKey 1`] = `
 .c1:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus >circle,
@@ -3614,7 +3614,7 @@ exports[`Select Controlled multiple onChange without valueKey 1`] = `
 .c1:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus ::-moz-focus-inner {
@@ -3924,7 +3924,7 @@ exports[`Select Controlled multiple onChange without valueKey 2`] = `
 .c5:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c5:focus >circle,
@@ -3936,7 +3936,7 @@ exports[`Select Controlled multiple onChange without valueKey 2`] = `
 .c5:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c5:focus ::-moz-focus-inner {
@@ -4122,7 +4122,7 @@ exports[`Select Controlled multiple onChange without valueKey 4`] = `
         aria-posinset="1"
         aria-selected="true"
         aria-setsize="2"
-        class="StyledButtonKind-sc-1vhfpnt-0 etRyTp StyledSelect__SelectOption-sc-znp66n-3 lkKTUk"
+        class="StyledButtonKind-sc-1vhfpnt-0 YpAWt StyledSelect__SelectOption-sc-znp66n-3 lkKTUk"
         role="option"
         tabindex="0"
         type="button"
@@ -4133,7 +4133,7 @@ exports[`Select Controlled multiple onChange without valueKey 4`] = `
         aria-posinset="2"
         aria-selected="false"
         aria-setsize="2"
-        class="StyledButtonKind-sc-1vhfpnt-0 fTMnBM StyledSelect__SelectOption-sc-znp66n-3 lkKTUk"
+        class="StyledButtonKind-sc-1vhfpnt-0 fUARKY StyledSelect__SelectOption-sc-znp66n-3 lkKTUk"
         role="option"
         tabindex="-1"
         type="button"
@@ -4189,7 +4189,7 @@ exports[`Select Controlled multiple onChange without valueKey 6`] = `
         aria-posinset="1"
         aria-selected="true"
         aria-setsize="2"
-        class="StyledButtonKind-sc-1vhfpnt-0 etRyTp StyledSelect__SelectOption-sc-znp66n-3 lkKTUk"
+        class="StyledButtonKind-sc-1vhfpnt-0 YpAWt StyledSelect__SelectOption-sc-znp66n-3 lkKTUk"
         role="option"
         tabindex="0"
         type="button"
@@ -4200,7 +4200,7 @@ exports[`Select Controlled multiple onChange without valueKey 6`] = `
         aria-posinset="2"
         aria-selected="true"
         aria-setsize="2"
-        class="StyledButtonKind-sc-1vhfpnt-0 etRyTp StyledSelect__SelectOption-sc-znp66n-3 lkKTUk"
+        class="StyledButtonKind-sc-1vhfpnt-0 YpAWt StyledSelect__SelectOption-sc-znp66n-3 lkKTUk"
         role="option"
         tabindex="0"
         type="button"
@@ -4323,7 +4323,7 @@ exports[`Select Controlled multiple onChange without valueKey 8`] = `
 .c1:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus >circle,
@@ -4335,7 +4335,7 @@ exports[`Select Controlled multiple onChange without valueKey 8`] = `
 .c1:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus ::-moz-focus-inner {
@@ -4641,7 +4641,7 @@ exports[`Select Controlled multiple onChange without valueKey or labelKey 1`] = 
 .c1:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus >circle,
@@ -4653,7 +4653,7 @@ exports[`Select Controlled multiple onChange without valueKey or labelKey 1`] = 
 .c1:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus ::-moz-focus-inner {
@@ -4964,7 +4964,7 @@ exports[`Select Controlled multiple onChange without valueKey or labelKey 2`] = 
 .c5:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c5:focus >circle,
@@ -4976,7 +4976,7 @@ exports[`Select Controlled multiple onChange without valueKey or labelKey 2`] = 
 .c5:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c5:focus ::-moz-focus-inner {
@@ -5161,7 +5161,7 @@ exports[`Select Controlled multiple onChange without valueKey or labelKey 4`] = 
       <button
         aria-posinset="1"
         aria-setsize="2"
-        class="StyledButtonKind-sc-1vhfpnt-0 fTMnBM StyledSelect__SelectOption-sc-znp66n-3 lkKTUk"
+        class="StyledButtonKind-sc-1vhfpnt-0 fUARKY StyledSelect__SelectOption-sc-znp66n-3 lkKTUk"
         role="option"
         tabindex="-1"
         type="button"
@@ -5171,7 +5171,7 @@ exports[`Select Controlled multiple onChange without valueKey or labelKey 4`] = 
       <button
         aria-posinset="2"
         aria-setsize="2"
-        class="StyledButtonKind-sc-1vhfpnt-0 fTMnBM StyledSelect__SelectOption-sc-znp66n-3 lkKTUk"
+        class="StyledButtonKind-sc-1vhfpnt-0 fUARKY StyledSelect__SelectOption-sc-znp66n-3 lkKTUk"
         role="option"
         tabindex="-1"
         type="button"
@@ -5226,7 +5226,7 @@ exports[`Select Controlled multiple onChange without valueKey or labelKey 6`] = 
       <button
         aria-posinset="1"
         aria-setsize="2"
-        class="StyledButtonKind-sc-1vhfpnt-0 fTMnBM StyledSelect__SelectOption-sc-znp66n-3 lkKTUk"
+        class="StyledButtonKind-sc-1vhfpnt-0 fUARKY StyledSelect__SelectOption-sc-znp66n-3 lkKTUk"
         role="option"
         tabindex="-1"
         type="button"
@@ -5236,7 +5236,7 @@ exports[`Select Controlled multiple onChange without valueKey or labelKey 6`] = 
       <button
         aria-posinset="2"
         aria-setsize="2"
-        class="StyledButtonKind-sc-1vhfpnt-0 fTMnBM StyledSelect__SelectOption-sc-znp66n-3 lkKTUk"
+        class="StyledButtonKind-sc-1vhfpnt-0 fUARKY StyledSelect__SelectOption-sc-znp66n-3 lkKTUk"
         role="option"
         tabindex="-1"
         type="button"
@@ -5359,7 +5359,7 @@ exports[`Select Controlled multiple onChange without valueKey or labelKey 8`] = 
 .c1:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus >circle,
@@ -5371,7 +5371,7 @@ exports[`Select Controlled multiple onChange without valueKey or labelKey 8`] = 
 .c1:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus ::-moz-focus-inner {
@@ -5676,7 +5676,7 @@ exports[`Select Controlled multiple values 1`] = `
 .c1:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus >circle,
@@ -5688,7 +5688,7 @@ exports[`Select Controlled multiple values 1`] = `
 .c1:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus ::-moz-focus-inner {
@@ -5904,7 +5904,7 @@ exports[`Select Controlled multiple values 2`] = `
     aria-expanded="true"
     aria-haspopup="listbox"
     aria-label="test select; Selected: one, two"
-    class="StyledButtonKind-sc-1vhfpnt-0 fvxTu StyledSelect__StyledSelectDropButton-sc-znp66n-5 eOYqUg"
+    class="StyledButtonKind-sc-1vhfpnt-0 eWCPay StyledSelect__StyledSelectDropButton-sc-znp66n-5 eOYqUg"
     id="test-select"
     type="button"
   >
@@ -6126,7 +6126,7 @@ exports[`Select Controlled multiple values 3`] = `
 .c5:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c5:focus >circle,
@@ -6138,7 +6138,7 @@ exports[`Select Controlled multiple values 3`] = `
 .c5:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c5:focus ::-moz-focus-inner {
@@ -6390,7 +6390,7 @@ exports[`Select Controlled multiple with empty results 1`] = `
 .c1:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus >circle,
@@ -6402,7 +6402,7 @@ exports[`Select Controlled multiple with empty results 1`] = `
 .c1:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus ::-moz-focus-inner {
@@ -6712,7 +6712,7 @@ exports[`Select Controlled multiple with empty results 2`] = `
 .c5:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c5:focus >circle,
@@ -6724,7 +6724,7 @@ exports[`Select Controlled multiple with empty results 2`] = `
 .c5:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c5:focus ::-moz-focus-inner {
@@ -6976,7 +6976,7 @@ exports[`Select Controlled select another option 1`] = `
 .c1:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus >circle,
@@ -6988,7 +6988,7 @@ exports[`Select Controlled select another option 1`] = `
 .c1:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus ::-moz-focus-inner {
@@ -7284,7 +7284,7 @@ exports[`Select Controlled should not have accessibility violations 1`] = `
 .c1:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus >circle,
@@ -7296,7 +7296,7 @@ exports[`Select Controlled should not have accessibility violations 1`] = `
 .c1:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c1:focus ::-moz-focus-inner {

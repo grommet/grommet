@@ -122,7 +122,7 @@ exports[`Pagination should allow user to control page via state with page +\\n  
 .c8:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c8:focus >circle,
@@ -134,7 +134,7 @@ exports[`Pagination should allow user to control page via state with page +\\n  
 .c8:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c8:focus ::-moz-focus-inner {
@@ -203,7 +203,7 @@ exports[`Pagination should allow user to control page via state with page +\\n  
 .c7:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c7:focus >circle,
@@ -215,7 +215,7 @@ exports[`Pagination should allow user to control page via state with page +\\n  
 .c7:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c7:focus ::-moz-focus-inner {
@@ -290,7 +290,7 @@ exports[`Pagination should allow user to control page via state with page +\\n  
 .c4:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c4:focus >circle,
@@ -302,7 +302,7 @@ exports[`Pagination should allow user to control page via state with page +\\n  
 .c4:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c4:focus ::-moz-focus-inner {
@@ -782,7 +782,7 @@ exports[`Pagination should apply a select component with default values for step
 .c7:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c7:focus >circle,
@@ -794,7 +794,7 @@ exports[`Pagination should apply a select component with default values for step
 .c7:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c7:focus ::-moz-focus-inner {
@@ -865,7 +865,7 @@ exports[`Pagination should apply a select component with default values for step
 .c19:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c19:focus >circle,
@@ -877,7 +877,7 @@ exports[`Pagination should apply a select component with default values for step
 .c19:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c19:focus ::-moz-focus-inner {
@@ -955,7 +955,7 @@ exports[`Pagination should apply a select component with default values for step
 .c22:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c22:focus >circle,
@@ -967,7 +967,7 @@ exports[`Pagination should apply a select component with default values for step
 .c22:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c22:focus ::-moz-focus-inner {
@@ -1036,7 +1036,7 @@ exports[`Pagination should apply a select component with default values for step
 .c23:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c23:focus >circle,
@@ -1048,7 +1048,7 @@ exports[`Pagination should apply a select component with default values for step
 .c23:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c23:focus ::-moz-focus-inner {
@@ -1123,7 +1123,7 @@ exports[`Pagination should apply a select component with default values for step
 .c24:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c24:focus >circle,
@@ -1135,7 +1135,7 @@ exports[`Pagination should apply a select component with default values for step
 .c24:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c24:focus ::-moz-focus-inner {
@@ -1676,7 +1676,7 @@ exports[`Pagination should apply a text component with summary 1`] = `
 .c9:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c9:focus >circle,
@@ -1688,7 +1688,7 @@ exports[`Pagination should apply a text component with summary 1`] = `
 .c9:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c9:focus ::-moz-focus-inner {
@@ -1766,7 +1766,7 @@ exports[`Pagination should apply a text component with summary 1`] = `
 .c12:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c12:focus >circle,
@@ -1778,7 +1778,7 @@ exports[`Pagination should apply a text component with summary 1`] = `
 .c12:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c12:focus ::-moz-focus-inner {
@@ -1847,7 +1847,7 @@ exports[`Pagination should apply a text component with summary 1`] = `
 .c13:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c13:focus >circle,
@@ -1859,7 +1859,7 @@ exports[`Pagination should apply a text component with summary 1`] = `
 .c13:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c13:focus ::-moz-focus-inner {
@@ -1934,7 +1934,7 @@ exports[`Pagination should apply a text component with summary 1`] = `
 .c16:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c16:focus >circle,
@@ -1946,7 +1946,7 @@ exports[`Pagination should apply a text component with summary 1`] = `
 .c16:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c16:focus ::-moz-focus-inner {
@@ -2339,7 +2339,7 @@ exports[`Pagination should apply a11yTitle and aria-label 1`] = `
 .c4:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c4:focus >circle,
@@ -2351,7 +2351,7 @@ exports[`Pagination should apply a11yTitle and aria-label 1`] = `
 .c4:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c4:focus ::-moz-focus-inner {
@@ -2429,7 +2429,7 @@ exports[`Pagination should apply a11yTitle and aria-label 1`] = `
 .c7:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c7:focus >circle,
@@ -2441,7 +2441,7 @@ exports[`Pagination should apply a11yTitle and aria-label 1`] = `
 .c7:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c7:focus ::-moz-focus-inner {
@@ -2510,7 +2510,7 @@ exports[`Pagination should apply a11yTitle and aria-label 1`] = `
 .c8:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c8:focus >circle,
@@ -2522,7 +2522,7 @@ exports[`Pagination should apply a11yTitle and aria-label 1`] = `
 .c8:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c8:focus ::-moz-focus-inner {
@@ -2597,7 +2597,7 @@ exports[`Pagination should apply a11yTitle and aria-label 1`] = `
 .c11:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c11:focus >circle,
@@ -2609,7 +2609,7 @@ exports[`Pagination should apply a11yTitle and aria-label 1`] = `
 .c11:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c11:focus ::-moz-focus-inner {
@@ -4380,7 +4380,7 @@ exports[`Pagination should apply size 1`] = `
 .c4:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c4:focus >circle,
@@ -4392,7 +4392,7 @@ exports[`Pagination should apply size 1`] = `
 .c4:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c4:focus ::-moz-focus-inner {
@@ -4470,7 +4470,7 @@ exports[`Pagination should apply size 1`] = `
 .c7:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c7:focus >circle,
@@ -4482,7 +4482,7 @@ exports[`Pagination should apply size 1`] = `
 .c7:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c7:focus ::-moz-focus-inner {
@@ -4551,7 +4551,7 @@ exports[`Pagination should apply size 1`] = `
 .c8:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c8:focus >circle,
@@ -4563,7 +4563,7 @@ exports[`Pagination should apply size 1`] = `
 .c8:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c8:focus ::-moz-focus-inner {
@@ -4638,7 +4638,7 @@ exports[`Pagination should apply size 1`] = `
 .c11:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c11:focus >circle,
@@ -4650,7 +4650,7 @@ exports[`Pagination should apply size 1`] = `
 .c11:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c11:focus ::-moz-focus-inner {
@@ -4721,7 +4721,7 @@ exports[`Pagination should apply size 1`] = `
 .c14:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c14:focus >circle,
@@ -4733,7 +4733,7 @@ exports[`Pagination should apply size 1`] = `
 .c14:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c14:focus ::-moz-focus-inner {
@@ -4811,7 +4811,7 @@ exports[`Pagination should apply size 1`] = `
 .c17:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c17:focus >circle,
@@ -4823,7 +4823,7 @@ exports[`Pagination should apply size 1`] = `
 .c17:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c17:focus ::-moz-focus-inner {
@@ -4892,7 +4892,7 @@ exports[`Pagination should apply size 1`] = `
 .c18:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c18:focus >circle,
@@ -4904,7 +4904,7 @@ exports[`Pagination should apply size 1`] = `
 .c18:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c18:focus ::-moz-focus-inner {
@@ -4979,7 +4979,7 @@ exports[`Pagination should apply size 1`] = `
 .c21:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c21:focus >circle,
@@ -4991,7 +4991,7 @@ exports[`Pagination should apply size 1`] = `
 .c21:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c21:focus ::-moz-focus-inner {
@@ -5062,7 +5062,7 @@ exports[`Pagination should apply size 1`] = `
 .c24:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c24:focus >circle,
@@ -5074,7 +5074,7 @@ exports[`Pagination should apply size 1`] = `
 .c24:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c24:focus ::-moz-focus-inner {
@@ -5152,7 +5152,7 @@ exports[`Pagination should apply size 1`] = `
 .c27:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c27:focus >circle,
@@ -5164,7 +5164,7 @@ exports[`Pagination should apply size 1`] = `
 .c27:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c27:focus ::-moz-focus-inner {
@@ -5233,7 +5233,7 @@ exports[`Pagination should apply size 1`] = `
 .c28:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c28:focus >circle,
@@ -5245,7 +5245,7 @@ exports[`Pagination should apply size 1`] = `
 .c28:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c28:focus ::-moz-focus-inner {
@@ -5320,7 +5320,7 @@ exports[`Pagination should apply size 1`] = `
 .c31:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c31:focus >circle,
@@ -5332,7 +5332,7 @@ exports[`Pagination should apply size 1`] = `
 .c31:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c31:focus ::-moz-focus-inner {
@@ -5992,7 +5992,7 @@ exports[`Pagination should change the page on prop change 1`] = `
 .c8:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c8:focus >circle,
@@ -6004,7 +6004,7 @@ exports[`Pagination should change the page on prop change 1`] = `
 .c8:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c8:focus ::-moz-focus-inner {
@@ -6073,7 +6073,7 @@ exports[`Pagination should change the page on prop change 1`] = `
 .c7:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c7:focus >circle,
@@ -6085,7 +6085,7 @@ exports[`Pagination should change the page on prop change 1`] = `
 .c7:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c7:focus ::-moz-focus-inner {
@@ -6160,7 +6160,7 @@ exports[`Pagination should change the page on prop change 1`] = `
 .c4:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c4:focus >circle,
@@ -6172,7 +6172,7 @@ exports[`Pagination should change the page on prop change 1`] = `
 .c4:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c4:focus ::-moz-focus-inner {
@@ -6537,7 +6537,7 @@ exports[`Pagination should disable next button if on last page 1`] = `
 .c4:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c4:focus >circle,
@@ -6549,7 +6549,7 @@ exports[`Pagination should disable next button if on last page 1`] = `
 .c4:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c4:focus ::-moz-focus-inner {
@@ -6618,7 +6618,7 @@ exports[`Pagination should disable next button if on last page 1`] = `
 .c7:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c7:focus >circle,
@@ -6630,7 +6630,7 @@ exports[`Pagination should disable next button if on last page 1`] = `
 .c7:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c7:focus ::-moz-focus-inner {
@@ -6708,7 +6708,7 @@ exports[`Pagination should disable next button if on last page 1`] = `
 .c10:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c10:focus >circle,
@@ -6720,7 +6720,7 @@ exports[`Pagination should disable next button if on last page 1`] = `
 .c10:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c10:focus ::-moz-focus-inner {
@@ -6791,7 +6791,7 @@ exports[`Pagination should disable next button if on last page 1`] = `
 .c11:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c11:focus >circle,
@@ -6803,7 +6803,7 @@ exports[`Pagination should disable next button if on last page 1`] = `
 .c11:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c11:focus ::-moz-focus-inner {
@@ -7128,7 +7128,7 @@ exports[`Pagination should disable previous and next controls when numberItems\\
 .c4:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c4:focus >circle,
@@ -7140,7 +7140,7 @@ exports[`Pagination should disable previous and next controls when numberItems\\
 .c4:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c4:focus ::-moz-focus-inner {
@@ -7218,7 +7218,7 @@ exports[`Pagination should disable previous and next controls when numberItems\\
 .c7:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c7:focus >circle,
@@ -7230,7 +7230,7 @@ exports[`Pagination should disable previous and next controls when numberItems\\
 .c7:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c7:focus ::-moz-focus-inner {
@@ -7487,7 +7487,7 @@ exports[`Pagination should disable previous and next controls when numberItems\\
 .c4:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c4:focus >circle,
@@ -7499,7 +7499,7 @@ exports[`Pagination should disable previous and next controls when numberItems\\
 .c4:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c4:focus ::-moz-focus-inner {
@@ -7743,7 +7743,7 @@ exports[`Pagination should disable previous and next controls when numberItems\\
 .c4:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c4:focus >circle,
@@ -7755,7 +7755,7 @@ exports[`Pagination should disable previous and next controls when numberItems\\
 .c4:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c4:focus ::-moz-focus-inner {
@@ -7833,7 +7833,7 @@ exports[`Pagination should disable previous and next controls when numberItems\\
 .c7:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c7:focus >circle,
@@ -7845,7 +7845,7 @@ exports[`Pagination should disable previous and next controls when numberItems\\
 .c7:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c7:focus ::-moz-focus-inner {
@@ -8140,7 +8140,7 @@ exports[`Pagination should disable previous button if on first page 1`] = `
 .c4:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c4:focus >circle,
@@ -8152,7 +8152,7 @@ exports[`Pagination should disable previous button if on first page 1`] = `
 .c4:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c4:focus ::-moz-focus-inner {
@@ -8230,7 +8230,7 @@ exports[`Pagination should disable previous button if on first page 1`] = `
 .c7:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c7:focus >circle,
@@ -8242,7 +8242,7 @@ exports[`Pagination should disable previous button if on first page 1`] = `
 .c7:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c7:focus ::-moz-focus-inner {
@@ -8311,7 +8311,7 @@ exports[`Pagination should disable previous button if on first page 1`] = `
 .c8:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c8:focus >circle,
@@ -8323,7 +8323,7 @@ exports[`Pagination should disable previous button if on first page 1`] = `
 .c8:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c8:focus ::-moz-focus-inner {
@@ -8398,7 +8398,7 @@ exports[`Pagination should disable previous button if on first page 1`] = `
 .c11:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c11:focus >circle,
@@ -8410,7 +8410,7 @@ exports[`Pagination should disable previous button if on first page 1`] = `
 .c11:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c11:focus ::-moz-focus-inner {
@@ -8748,7 +8748,7 @@ exports[`Pagination should display next page of results when "next" is\\n  selec
 .c8:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c8:focus >circle,
@@ -8760,7 +8760,7 @@ exports[`Pagination should display next page of results when "next" is\\n  selec
 .c8:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c8:focus ::-moz-focus-inner {
@@ -8829,7 +8829,7 @@ exports[`Pagination should display next page of results when "next" is\\n  selec
 .c7:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c7:focus >circle,
@@ -8841,7 +8841,7 @@ exports[`Pagination should display next page of results when "next" is\\n  selec
 .c7:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c7:focus ::-moz-focus-inner {
@@ -8916,7 +8916,7 @@ exports[`Pagination should display next page of results when "next" is\\n  selec
 .c4:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c4:focus >circle,
@@ -8928,7 +8928,7 @@ exports[`Pagination should display next page of results when "next" is\\n  selec
 .c4:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c4:focus ::-moz-focus-inner {
@@ -9161,7 +9161,7 @@ exports[`Pagination should display next page of results when "next" is\\n  selec
         >
           <button
             aria-label="Go to previous page"
-            class="StyledButtonKind-sc-1vhfpnt-0 iWasxR StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 dLEtDA"
+            class="StyledButtonKind-sc-1vhfpnt-0 gDERfd StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 dLEtDA"
             type="button"
           >
             <svg
@@ -9184,7 +9184,7 @@ exports[`Pagination should display next page of results when "next" is\\n  selec
         >
           <button
             aria-label="Go to page 1"
-            class="StyledButtonKind-sc-1vhfpnt-0 fvNhuj StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 dLEtDA"
+            class="StyledButtonKind-sc-1vhfpnt-0 bzbiEX StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 dLEtDA"
             type="button"
           >
             1
@@ -9196,7 +9196,7 @@ exports[`Pagination should display next page of results when "next" is\\n  selec
           <button
             aria-current="page"
             aria-label="Go to page 2"
-            class="StyledButtonKind-sc-1vhfpnt-0 hoDYun StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 dLEtDA"
+            class="StyledButtonKind-sc-1vhfpnt-0 gYkHLP StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 dLEtDA"
             type="button"
           >
             2
@@ -9207,7 +9207,7 @@ exports[`Pagination should display next page of results when "next" is\\n  selec
         >
           <button
             aria-label="Go to page 3"
-            class="StyledButtonKind-sc-1vhfpnt-0 fvNhuj StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 dLEtDA"
+            class="StyledButtonKind-sc-1vhfpnt-0 bzbiEX StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 dLEtDA"
             type="button"
           >
             3
@@ -9218,7 +9218,7 @@ exports[`Pagination should display next page of results when "next" is\\n  selec
         >
           <button
             aria-label="Go to page 4"
-            class="StyledButtonKind-sc-1vhfpnt-0 fvNhuj StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 dLEtDA"
+            class="StyledButtonKind-sc-1vhfpnt-0 bzbiEX StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 dLEtDA"
             type="button"
           >
             4
@@ -9229,7 +9229,7 @@ exports[`Pagination should display next page of results when "next" is\\n  selec
         >
           <button
             aria-label="Go to page 5"
-            class="StyledButtonKind-sc-1vhfpnt-0 fvNhuj StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 dLEtDA"
+            class="StyledButtonKind-sc-1vhfpnt-0 bzbiEX StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 dLEtDA"
             type="button"
           >
             5
@@ -9249,7 +9249,7 @@ exports[`Pagination should display next page of results when "next" is\\n  selec
         >
           <button
             aria-label="Go to page 24"
-            class="StyledButtonKind-sc-1vhfpnt-0 fvNhuj StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 dLEtDA"
+            class="StyledButtonKind-sc-1vhfpnt-0 bzbiEX StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 dLEtDA"
             type="button"
           >
             24
@@ -9260,7 +9260,7 @@ exports[`Pagination should display next page of results when "next" is\\n  selec
         >
           <button
             aria-label="Go to next page"
-            class="StyledButtonKind-sc-1vhfpnt-0 iWasxR StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 dLEtDA"
+            class="StyledButtonKind-sc-1vhfpnt-0 gDERfd StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 dLEtDA"
             type="button"
           >
             <svg
@@ -9406,7 +9406,7 @@ exports[`Pagination should display page 'n' of results when "page n" is\\n  sele
 .c8:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c8:focus >circle,
@@ -9418,7 +9418,7 @@ exports[`Pagination should display page 'n' of results when "page n" is\\n  sele
 .c8:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c8:focus ::-moz-focus-inner {
@@ -9487,7 +9487,7 @@ exports[`Pagination should display page 'n' of results when "page n" is\\n  sele
 .c7:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c7:focus >circle,
@@ -9499,7 +9499,7 @@ exports[`Pagination should display page 'n' of results when "page n" is\\n  sele
 .c7:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c7:focus ::-moz-focus-inner {
@@ -9574,7 +9574,7 @@ exports[`Pagination should display page 'n' of results when "page n" is\\n  sele
 .c4:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c4:focus >circle,
@@ -9586,7 +9586,7 @@ exports[`Pagination should display page 'n' of results when "page n" is\\n  sele
 .c4:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c4:focus ::-moz-focus-inner {
@@ -9919,7 +9919,7 @@ exports[`Pagination should display previous page of results when "previous" is\\
 .c4:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c4:focus >circle,
@@ -9931,7 +9931,7 @@ exports[`Pagination should display previous page of results when "previous" is\\
 .c4:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c4:focus ::-moz-focus-inner {
@@ -10000,7 +10000,7 @@ exports[`Pagination should display previous page of results when "previous" is\\
 .c7:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c7:focus >circle,
@@ -10012,7 +10012,7 @@ exports[`Pagination should display previous page of results when "previous" is\\
 .c7:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c7:focus ::-moz-focus-inner {
@@ -10090,7 +10090,7 @@ exports[`Pagination should display previous page of results when "previous" is\\
 .c8:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c8:focus >circle,
@@ -10102,7 +10102,7 @@ exports[`Pagination should display previous page of results when "previous" is\\
 .c8:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c8:focus ::-moz-focus-inner {
@@ -10335,7 +10335,7 @@ exports[`Pagination should display previous page of results when "previous" is\\
         >
           <button
             aria-label="Go to previous page"
-            class="StyledButtonKind-sc-1vhfpnt-0 iWasxR StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 dLEtDA"
+            class="StyledButtonKind-sc-1vhfpnt-0 gDERfd StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 dLEtDA"
             type="button"
           >
             <svg
@@ -10358,7 +10358,7 @@ exports[`Pagination should display previous page of results when "previous" is\\
         >
           <button
             aria-label="Go to page 1"
-            class="StyledButtonKind-sc-1vhfpnt-0 fvNhuj StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 dLEtDA"
+            class="StyledButtonKind-sc-1vhfpnt-0 bzbiEX StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 dLEtDA"
             type="button"
           >
             1
@@ -10370,7 +10370,7 @@ exports[`Pagination should display previous page of results when "previous" is\\
           <button
             aria-current="page"
             aria-label="Go to page 2"
-            class="StyledButtonKind-sc-1vhfpnt-0 hoDYun StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 dLEtDA"
+            class="StyledButtonKind-sc-1vhfpnt-0 gYkHLP StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 dLEtDA"
             type="button"
           >
             2
@@ -10381,7 +10381,7 @@ exports[`Pagination should display previous page of results when "previous" is\\
         >
           <button
             aria-label="Go to page 3"
-            class="StyledButtonKind-sc-1vhfpnt-0 fvNhuj StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 dLEtDA"
+            class="StyledButtonKind-sc-1vhfpnt-0 bzbiEX StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 dLEtDA"
             type="button"
           >
             3
@@ -10392,7 +10392,7 @@ exports[`Pagination should display previous page of results when "previous" is\\
         >
           <button
             aria-label="Go to page 4"
-            class="StyledButtonKind-sc-1vhfpnt-0 fvNhuj StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 dLEtDA"
+            class="StyledButtonKind-sc-1vhfpnt-0 bzbiEX StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 dLEtDA"
             type="button"
           >
             4
@@ -10403,7 +10403,7 @@ exports[`Pagination should display previous page of results when "previous" is\\
         >
           <button
             aria-label="Go to page 5"
-            class="StyledButtonKind-sc-1vhfpnt-0 fvNhuj StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 dLEtDA"
+            class="StyledButtonKind-sc-1vhfpnt-0 bzbiEX StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 dLEtDA"
             type="button"
           >
             5
@@ -10423,7 +10423,7 @@ exports[`Pagination should display previous page of results when "previous" is\\
         >
           <button
             aria-label="Go to page 24"
-            class="StyledButtonKind-sc-1vhfpnt-0 fvNhuj StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 dLEtDA"
+            class="StyledButtonKind-sc-1vhfpnt-0 bzbiEX StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 dLEtDA"
             type="button"
           >
             24
@@ -10434,7 +10434,7 @@ exports[`Pagination should display previous page of results when "previous" is\\
         >
           <button
             aria-label="Go to next page"
-            class="StyledButtonKind-sc-1vhfpnt-0 iWasxR StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 dLEtDA"
+            class="StyledButtonKind-sc-1vhfpnt-0 gDERfd StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 dLEtDA"
             type="button"
           >
             <svg
@@ -10605,7 +10605,7 @@ exports[`Pagination should display the correct last page based on items length\\
 .c4:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c4:focus >circle,
@@ -10617,7 +10617,7 @@ exports[`Pagination should display the correct last page based on items length\\
 .c4:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c4:focus ::-moz-focus-inner {
@@ -10695,7 +10695,7 @@ exports[`Pagination should display the correct last page based on items length\\
 .c7:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c7:focus >circle,
@@ -10707,7 +10707,7 @@ exports[`Pagination should display the correct last page based on items length\\
 .c7:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c7:focus ::-moz-focus-inner {
@@ -10776,7 +10776,7 @@ exports[`Pagination should display the correct last page based on items length\\
 .c8:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c8:focus >circle,
@@ -10788,7 +10788,7 @@ exports[`Pagination should display the correct last page based on items length\\
 .c8:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c8:focus ::-moz-focus-inner {
@@ -10863,7 +10863,7 @@ exports[`Pagination should display the correct last page based on items length\\
 .c11:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c11:focus >circle,
@@ -10875,7 +10875,7 @@ exports[`Pagination should display the correct last page based on items length\\
 .c11:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c11:focus ::-moz-focus-inner {
@@ -11251,7 +11251,7 @@ exports[`Pagination should have no items 1`] = `
 .c9:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c9:focus >circle,
@@ -11263,7 +11263,7 @@ exports[`Pagination should have no items 1`] = `
 .c9:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c9:focus ::-moz-focus-inner {
@@ -11547,7 +11547,7 @@ exports[`Pagination should render correct numberEdgePages 1`] = `
 .c4:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c4:focus >circle,
@@ -11559,7 +11559,7 @@ exports[`Pagination should render correct numberEdgePages 1`] = `
 .c4:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c4:focus ::-moz-focus-inner {
@@ -11628,7 +11628,7 @@ exports[`Pagination should render correct numberEdgePages 1`] = `
 .c7:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c7:focus >circle,
@@ -11640,7 +11640,7 @@ exports[`Pagination should render correct numberEdgePages 1`] = `
 .c7:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c7:focus ::-moz-focus-inner {
@@ -11718,7 +11718,7 @@ exports[`Pagination should render correct numberEdgePages 1`] = `
 .c10:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c10:focus >circle,
@@ -11730,7 +11730,7 @@ exports[`Pagination should render correct numberEdgePages 1`] = `
 .c10:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c10:focus ::-moz-focus-inner {
@@ -12105,7 +12105,7 @@ exports[`Pagination should render correct numberMiddlePages when even 1`] = `
 .c4:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c4:focus >circle,
@@ -12117,7 +12117,7 @@ exports[`Pagination should render correct numberMiddlePages when even 1`] = `
 .c4:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c4:focus ::-moz-focus-inner {
@@ -12186,7 +12186,7 @@ exports[`Pagination should render correct numberMiddlePages when even 1`] = `
 .c7:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c7:focus >circle,
@@ -12198,7 +12198,7 @@ exports[`Pagination should render correct numberMiddlePages when even 1`] = `
 .c7:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c7:focus ::-moz-focus-inner {
@@ -12276,7 +12276,7 @@ exports[`Pagination should render correct numberMiddlePages when even 1`] = `
 .c10:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c10:focus >circle,
@@ -12288,7 +12288,7 @@ exports[`Pagination should render correct numberMiddlePages when even 1`] = `
 .c10:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c10:focus ::-moz-focus-inner {
@@ -12630,7 +12630,7 @@ exports[`Pagination should render correct numberMiddlePages when odd 1`] = `
 .c4:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c4:focus >circle,
@@ -12642,7 +12642,7 @@ exports[`Pagination should render correct numberMiddlePages when odd 1`] = `
 .c4:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c4:focus ::-moz-focus-inner {
@@ -12711,7 +12711,7 @@ exports[`Pagination should render correct numberMiddlePages when odd 1`] = `
 .c7:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c7:focus >circle,
@@ -12723,7 +12723,7 @@ exports[`Pagination should render correct numberMiddlePages when odd 1`] = `
 .c7:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c7:focus ::-moz-focus-inner {
@@ -12801,7 +12801,7 @@ exports[`Pagination should render correct numberMiddlePages when odd 1`] = `
 .c10:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c10:focus >circle,
@@ -12813,7 +12813,7 @@ exports[`Pagination should render correct numberMiddlePages when odd 1`] = `
 .c10:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c10:focus ::-moz-focus-inner {
@@ -13649,7 +13649,7 @@ exports[`Pagination should set numberMiddlePages = 1 if user provides value < 1 
 .c4:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c4:focus >circle,
@@ -13661,7 +13661,7 @@ exports[`Pagination should set numberMiddlePages = 1 if user provides value < 1 
 .c4:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c4:focus ::-moz-focus-inner {
@@ -13739,7 +13739,7 @@ exports[`Pagination should set numberMiddlePages = 1 if user provides value < 1 
 .c7:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c7:focus >circle,
@@ -13751,7 +13751,7 @@ exports[`Pagination should set numberMiddlePages = 1 if user provides value < 1 
 .c7:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c7:focus ::-moz-focus-inner {
@@ -13820,7 +13820,7 @@ exports[`Pagination should set numberMiddlePages = 1 if user provides value < 1 
 .c8:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c8:focus >circle,
@@ -13832,7 +13832,7 @@ exports[`Pagination should set numberMiddlePages = 1 if user provides value < 1 
 .c8:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c8:focus ::-moz-focus-inner {
@@ -13907,7 +13907,7 @@ exports[`Pagination should set numberMiddlePages = 1 if user provides value < 1 
 .c11:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c11:focus >circle,
@@ -13919,7 +13919,7 @@ exports[`Pagination should set numberMiddlePages = 1 if user provides value < 1 
 .c11:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c11:focus ::-moz-focus-inner {
@@ -14264,7 +14264,7 @@ exports[`Pagination should set page to last page if page prop > total possible\\
 .c4:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c4:focus >circle,
@@ -14276,7 +14276,7 @@ exports[`Pagination should set page to last page if page prop > total possible\\
 .c4:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c4:focus ::-moz-focus-inner {
@@ -14345,7 +14345,7 @@ exports[`Pagination should set page to last page if page prop > total possible\\
 .c7:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c7:focus >circle,
@@ -14357,7 +14357,7 @@ exports[`Pagination should set page to last page if page prop > total possible\\
 .c7:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c7:focus ::-moz-focus-inner {
@@ -14435,7 +14435,7 @@ exports[`Pagination should set page to last page if page prop > total possible\\
 .c10:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c10:focus >circle,
@@ -14447,7 +14447,7 @@ exports[`Pagination should set page to last page if page prop > total possible\\
 .c10:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c10:focus ::-moz-focus-inner {
@@ -14518,7 +14518,7 @@ exports[`Pagination should set page to last page if page prop > total possible\\
 .c11:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c11:focus >circle,
@@ -14530,7 +14530,7 @@ exports[`Pagination should set page to last page if page prop > total possible\\
 .c11:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c11:focus ::-moz-focus-inner {

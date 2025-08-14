@@ -246,7 +246,7 @@ exports[`DataTableColumns pinned 1`] = `
 .c10:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c10:focus >circle,
@@ -258,7 +258,7 @@ exports[`DataTableColumns pinned 1`] = `
 .c10:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c10:focus ::-moz-focus-inner {
@@ -339,7 +339,7 @@ exports[`DataTableColumns pinned 1`] = `
 .c12:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c12:focus >circle,
@@ -351,7 +351,7 @@ exports[`DataTableColumns pinned 1`] = `
 .c12:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c12:focus ::-moz-focus-inner {
@@ -799,7 +799,7 @@ exports[`DataTableColumns remove column 1`] = `
 .c3:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c3:focus >circle,
@@ -811,7 +811,7 @@ exports[`DataTableColumns remove column 1`] = `
 .c3:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c3:focus ::-moz-focus-inner {
@@ -908,7 +908,7 @@ exports[`DataTableColumns remove column 1`] = `
 .c12:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c12:focus >circle,
@@ -920,7 +920,7 @@ exports[`DataTableColumns remove column 1`] = `
 .c12:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c12:focus ::-moz-focus-inner {
@@ -962,7 +962,7 @@ exports[`DataTableColumns remove column 1`] = `
 .c11:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c11:focus:not(:focus-visible) {
@@ -1342,7 +1342,7 @@ exports[`DataTableColumns remove column 2`] = `
 .c5:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c5:focus >circle,
@@ -1354,7 +1354,7 @@ exports[`DataTableColumns remove column 2`] = `
 .c5:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c5:focus ::-moz-focus-inner {
@@ -1783,7 +1783,7 @@ exports[`DataTableColumns renders 1`] = `
 .c5:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c5:focus >circle,
@@ -1795,7 +1795,7 @@ exports[`DataTableColumns renders 1`] = `
 .c5:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c5:focus ::-moz-focus-inner {
@@ -1865,7 +1865,7 @@ exports[`DataTableColumns renders 1`] = `
 .c8:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c8:focus >circle,
@@ -1877,7 +1877,7 @@ exports[`DataTableColumns renders 1`] = `
 .c8:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c8:focus ::-moz-focus-inner {
@@ -1974,7 +1974,7 @@ exports[`DataTableColumns renders 1`] = `
 .c16:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c16:focus >circle,
@@ -1986,7 +1986,7 @@ exports[`DataTableColumns renders 1`] = `
 .c16:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c16:focus ::-moz-focus-inner {
@@ -2028,7 +2028,7 @@ exports[`DataTableColumns renders 1`] = `
 .c15:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c15:focus:not(:focus-visible) {
@@ -2403,7 +2403,7 @@ exports[`DataTableColumns renders 2`] = `
 .c5:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c5:focus >circle,
@@ -2415,7 +2415,7 @@ exports[`DataTableColumns renders 2`] = `
 .c5:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c5:focus ::-moz-focus-inner {
@@ -2829,7 +2829,7 @@ exports[`DataTableColumns renders 3`] = `
 .c7:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c7:focus >circle,
@@ -2841,7 +2841,7 @@ exports[`DataTableColumns renders 3`] = `
 .c7:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c7:focus ::-moz-focus-inner {
@@ -2922,7 +2922,7 @@ exports[`DataTableColumns renders 3`] = `
 .c9:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c9:focus >circle,
@@ -2934,7 +2934,7 @@ exports[`DataTableColumns renders 3`] = `
 .c9:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c9:focus ::-moz-focus-inner {
@@ -3311,7 +3311,7 @@ exports[`DataTableColumns search 1`] = `
 .c3:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c3:focus >circle,
@@ -3323,7 +3323,7 @@ exports[`DataTableColumns search 1`] = `
 .c3:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c3:focus ::-moz-focus-inner {
@@ -3420,7 +3420,7 @@ exports[`DataTableColumns search 1`] = `
 .c12:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c12:focus >circle,
@@ -3432,7 +3432,7 @@ exports[`DataTableColumns search 1`] = `
 .c12:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c12:focus ::-moz-focus-inner {
@@ -3474,7 +3474,7 @@ exports[`DataTableColumns search 1`] = `
 .c11:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c11:focus:not(:focus-visible) {
@@ -3820,7 +3820,7 @@ exports[`DataTableColumns search 2`] = `
 .c5:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c5:focus >circle,
@@ -3832,7 +3832,7 @@ exports[`DataTableColumns search 2`] = `
 .c5:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c5:focus ::-moz-focus-inner {
@@ -4078,7 +4078,7 @@ exports[`DataTableColumns search 2`] = `
 exports[`DataTableColumns search 3`] = `
 <button
   aria-label="Open column selector"
-  class="StyledButtonKind-sc-1vhfpnt-0 gmTBeV"
+  class="StyledButtonKind-sc-1vhfpnt-0 cRrDhZ"
   data-g-tabindex="none"
   id="test-data--columns-control"
   tabindex="-1"
@@ -4188,7 +4188,7 @@ exports[`DataTableColumns search 4`] = `
     align-items: stretch;
   }
 }
-.gmTBeV {
+.cRrDhZ {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -4216,55 +4216,55 @@ exports[`DataTableColumns search 4`] = `
   transition-duration: 0.1s;
   transition-timing-function: ease-in-out;
 }
-.gmTBeV > svg {
+.cRrDhZ > svg {
   display: flex;
   align-self: center;
   vertical-align: middle;
 }
-.gmTBeV:hover {
+.cRrDhZ:hover {
   background-color: rgba(0, 0, 0, 0.04);
   color: #555555;
   border-color: rgba(0, 0, 0, 0);
   font-weight: 500;
 }
-.gmTBeV:focus {
+.cRrDhZ:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
-.gmTBeV:focus > circle,
-.gmTBeV:focus > ellipse,
-.gmTBeV:focus > line,
-.gmTBeV:focus > path,
-.gmTBeV:focus > polygon,
-.gmTBeV:focus > polyline,
-.gmTBeV:focus > rect {
+.cRrDhZ:focus > circle,
+.cRrDhZ:focus > ellipse,
+.cRrDhZ:focus > line,
+.cRrDhZ:focus > path,
+.cRrDhZ:focus > polygon,
+.cRrDhZ:focus > polyline,
+.cRrDhZ:focus > rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
-.gmTBeV:focus ::-moz-focus-inner {
+.cRrDhZ:focus ::-moz-focus-inner {
   border: 0;
 }
-.gmTBeV:focus:not(:focus-visible) {
+.cRrDhZ:focus:not(:focus-visible) {
   outline-offset: 0px;
   outline: none;
   outline: none;
   box-shadow: none;
 }
-.gmTBeV:focus:not(:focus-visible) > circle,
-.gmTBeV:focus:not(:focus-visible) > ellipse,
-.gmTBeV:focus:not(:focus-visible) > line,
-.gmTBeV:focus:not(:focus-visible) > path,
-.gmTBeV:focus:not(:focus-visible) > polygon,
-.gmTBeV:focus:not(:focus-visible) > polyline,
-.gmTBeV:focus:not(:focus-visible) > rect {
+.cRrDhZ:focus:not(:focus-visible) > circle,
+.cRrDhZ:focus:not(:focus-visible) > ellipse,
+.cRrDhZ:focus:not(:focus-visible) > line,
+.cRrDhZ:focus:not(:focus-visible) > path,
+.cRrDhZ:focus:not(:focus-visible) > polygon,
+.cRrDhZ:focus:not(:focus-visible) > polyline,
+.cRrDhZ:focus:not(:focus-visible) > rect {
   outline-offset: 0px;
   outline: none;
   outline: none;
   box-shadow: none;
 }
-.gmTBeV:focus:not(:focus-visible) ::-moz-focus-inner {
+.cRrDhZ:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }"
 `;
