@@ -28,6 +28,7 @@ import {
   SkeletonColorsType,
   AlignSelfType,
   AlignType,
+  WidthType,
 } from '../utils';
 
 import { AnchorProps } from '../components/Anchor/index';
@@ -873,6 +874,13 @@ export interface ThemeType {
       dropHeight?: string;
     };
   };
+  dataFilters?: {
+    clearControl?: {
+      margin?: MarginType;
+    };
+    pad?: PadType;
+    width?: WidthType;
+  }
   dataSummary?: {
     margin?: MarginType;
     separator?: {
