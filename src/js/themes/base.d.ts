@@ -654,7 +654,13 @@ export interface ThemeType {
           round?: RoundType;
         };
       };
-      title?: TextProps;
+      title?: TextProps & {
+        container?: {
+          pad?: {
+            horizontal?: string;
+          };
+        };
+      };
       fontSize?: string;
       lineHeight?: number;
       daySize?: string;
@@ -673,7 +679,13 @@ export interface ThemeType {
           round?: RoundType;
         };
       };
-      title?: TextProps;
+      title?: TextProps & {
+        container?: {
+          pad?: {
+            horizontal?: string;
+          };
+        };
+      };
       fontSize?: string;
       lineHeight?: number;
       daySize?: string;
@@ -692,7 +704,13 @@ export interface ThemeType {
           round?: RoundType;
         };
       };
-      title?: TextProps;
+      title?: TextProps & {
+        container?: {
+          pad?: {
+            horizontal?: string;
+          };
+        };
+      };
       fontSize?: string;
       lineHeight?: number;
       daySize?: string;
@@ -723,6 +741,10 @@ export interface ThemeType {
   };
   cards?: {
     container?: BoxProps;
+    grid?: {
+      columns?: GridColumnsType;
+      gap?: GridGapType;
+    };
   };
   carousel?: {
     animation?: {
@@ -839,6 +861,9 @@ export interface ThemeType {
     button?: {
       kind?: string;
     };
+    drop?: {
+      pad?: PadType;
+    };
   };
   dataFilter?: {
     rangeSelector?: {
@@ -855,6 +880,11 @@ export interface ThemeType {
     };
     pad?: PadType;
     width?: WidthType;
+  dataSummary?: {
+    margin?: MarginType;
+    separator?: {
+      margin?: MarginType;
+    };
   };
   dateInput?: {
     container?: {
@@ -944,11 +974,26 @@ export interface ThemeType {
       weight?: string;
     };
   };
+  dataTableColumns?: {
+    tabs?: {
+      pad?: PadType;
+    };
+    selectColumns?: {
+      pad?: PadType;
+      gap?: GapType;
+    };
+    orderColumns?: {
+      pad?: PadType;
+    };
+  };
   diagram?: {
     extend?: ExtendType;
     line?: {
       color?: ColorType;
     };
+  };
+  distribution?: {
+    gap?: GapType;
   };
   drop?: {
     extend?: ExtendType;
@@ -1069,6 +1114,7 @@ export interface ThemeType {
     sticky?: {
       zIndex?: string;
     };
+    gap?: GapType;
   };
   heading?: {
     color?: ColorType;
@@ -1258,6 +1304,7 @@ export interface ThemeType {
         color?: ColorType;
         cursor?: string;
       };
+      gap: GapType;
       pinned?: {
         background?: BackgroundType;
         icon?: {
@@ -1311,6 +1358,9 @@ export interface ThemeType {
     color?: ColorType;
     colors?: GraphColorsType;
     extend?: ExtendType;
+    gap?: GapType;
+  };
+  nav?: {
     gap?: GapType;
   };
   notification?: {
@@ -1618,6 +1668,9 @@ export interface ThemeType {
       height?: string;
       maxWidth?: string;
     };
+    skeleton?: {
+      gap?: GapType;
+    };
   };
   radioButton?: {
     extend?: ExtendType;
@@ -1732,6 +1785,9 @@ export interface ThemeType {
       type?: string;
       size?: EdgeSizeType | string;
     };
+    label?: {
+      margin?: MarginType;
+    };
   };
   select?: {
     background?: BackgroundType;
@@ -1764,6 +1820,9 @@ export interface ThemeType {
       container?: PropsOf<typeof Box>;
       text?: PropsOf<typeof Text>;
     };
+    search?: {
+      pad?: PadType;
+    };
     // https://github.com/DefinitelyTyped/DefinitelyTyped/issues/37506
     searchInput?: ReactComponentElement<any>;
     step?: number;
@@ -1773,6 +1832,10 @@ export interface ThemeType {
     listbox?: {
       extend?: ExtendType;
     };
+  };
+  sidebar?: {
+    gap?: GapType;
+    pad?: PadType;
   };
   skeleton?: BoxProps & { colors?: SkeletonColorsType; extend?: ExtendType };
   skipLinks?: {
@@ -2072,6 +2135,12 @@ export interface ThemeType {
       interval?: number;
       track?: {
         color?: ColorType;
+      };
+      thickness?: string;
+    };
+    time?: {
+      container?: {
+        pad?: PadType;
       };
     };
   };
