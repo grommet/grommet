@@ -28,6 +28,7 @@ import {
   SkeletonColorsType,
   AlignSelfType,
   AlignType,
+  WidthType,
 } from '../utils';
 
 import { AnchorProps } from '../components/Anchor/index';
@@ -873,6 +874,13 @@ export interface ThemeType {
       dropHeight?: string;
     };
   };
+  dataFilters?: {
+    clearControl?: {
+      margin?: MarginType;
+    };
+    pad?: PadType;
+    width?: WidthType;
+  }
   dataSummary?: {
     margin?: MarginType;
     separator?: {
@@ -880,6 +888,9 @@ export interface ThemeType {
     };
   };
   dateInput?: {
+    button?: {
+      margin?: string;
+    };
     container?: {
       round?: RoundType;
     };
@@ -993,6 +1004,9 @@ export interface ThemeType {
     maxHeight?: string;
   };
   fileInput?: {
+    anchor?: {
+      margin?: MarginType;
+    };
     background?: BackgroundType;
     border?: BorderType;
     dragOver?: {
@@ -1633,6 +1647,11 @@ export interface ThemeType {
       next?: React.ReactNode | Icon;
       previous?: React.ReactNode | Icon;
     };
+    step?: {
+      container?: {
+        gap?: GapType;
+      };
+    };
   };
   paragraph?: {
     extend?: ExtendType;
@@ -1821,9 +1840,29 @@ export interface ThemeType {
     step?: number;
   };
   selectMultiple?: {
+    help?: {
+      container?: {
+        pad: PadType;
+      };
+    };
     maxInline?: number;
     listbox?: {
       extend?: ExtendType;
+    };
+    option?: {
+      pad?: PadType;
+    };
+    search?: {
+      pad?: PadType;
+    };
+    showMore?: {
+      pad?: PadType;
+    };
+    summary?: {
+      pad?: PadType;
+      showSelectedInline?: {
+        pad: PadType;
+      };
     };
   };
   sidebar?: {
@@ -1887,6 +1926,7 @@ export interface ThemeType {
       color?: ColorType;
     };
     extend?: ExtendType;
+    gap?: GapType;
     hover?: {
       background?: BackgroundType;
       color?: ColorType;
@@ -1909,6 +1949,12 @@ export interface ThemeType {
         color?: ColorType;
       };
       extend?: ExtendType;
+      nextButton?: {
+        pad: PadType;
+      };
+      previousButton?: {
+        pad: PadType;
+      };
     };
     panel?: {
       extend?: ExtendType;
