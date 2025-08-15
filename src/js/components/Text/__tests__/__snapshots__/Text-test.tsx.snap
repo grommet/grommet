@@ -1,4 +1,58 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`Text component with tip renders tip 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+@media only screen and (max-width: 768px) {
+
+}
+
+@media only screen and (max-width: 768px) {
+
+}
+
+@media only screen and (max-width: 768px) {
+
+}
+
+@media only screen and (max-width: 768px) {
+
+}
+
+@media only screen and (max-width: 768px) {
+
+}
+
+@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
+
+}
+
+<div
+  class="c0"
+>
+  <span
+    aria-describedby="tip-4fzzzxj"
+    aria-label="tooltip"
+    class="c1"
+    tabindex="0"
+  >
+    Default Tip
+  </span>
+</div>
+`;
 
 exports[`accepts ref 1`] = `
 .c0 {
@@ -377,58 +431,6 @@ exports[`renders textAlign 1`] = `
   <span
     class="c4"
   />
-</div>
-`;
-
-exports[`renders tip 1`] = `
-.c0 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
-.c1 {
-  font-size: 18px;
-  line-height: 24px;
-}
-
-@media only screen and (max-width: 768px) {
-
-}
-
-@media only screen and (max-width: 768px) {
-
-}
-
-@media only screen and (max-width: 768px) {
-
-}
-
-@media only screen and (max-width: 768px) {
-
-}
-
-@media only screen and (max-width: 768px) {
-
-}
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-
-}
-
-<div
-  class="c0"
->
-  <span
-    aria-label="tooltip"
-    class="c1"
-  >
-    Default Tip
-  </span>
 </div>
 `;
 
