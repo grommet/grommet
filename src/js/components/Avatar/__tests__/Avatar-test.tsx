@@ -57,7 +57,7 @@ describe('Avatar', () => {
 
   test('round renders', () => {
     const { container } = render(
-      <Grommet theme={hpe}>
+      <Grommet>
         <Avatar src={src} round={false} />
         <Avatar src={src} round="xsmall" />
         <Avatar src={src} round="small" />

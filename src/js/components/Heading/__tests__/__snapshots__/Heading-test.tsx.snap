@@ -234,11 +234,8 @@ exports[`Heading level renders 1`] = `
 
 exports[`Heading margin renders 1`] = `
 .c0 {
-  font-family: 'Metric',Arial,sans-serif;
-  font-size: 1.125rem;
-  line-height: 1.5rem;
-  background-color: #ffffff;
-  color: #555555;
+  font-size: 18px;
+  line-height: 24px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -248,82 +245,74 @@ exports[`Heading margin renders 1`] = `
 
 .c1 {
   margin: 12px;
-  font-size: 2.25rem;
-  line-height: 2.5rem;
+  font-size: 50px;
+  line-height: 56px;
   max-width: 1200px;
-  font-weight: 400;
+  font-weight: 600;
   overflow-wrap: break-word;
-  color: #2e2e2e;
 }
 
 .c2 {
   margin: 24px;
-  font-size: 2.25rem;
-  line-height: 2.5rem;
+  font-size: 50px;
+  line-height: 56px;
   max-width: 1200px;
-  font-weight: 400;
+  font-weight: 600;
   overflow-wrap: break-word;
-  color: #2e2e2e;
 }
 
 .c3 {
   margin: 48px;
-  font-size: 2.25rem;
-  line-height: 2.5rem;
+  font-size: 50px;
+  line-height: 56px;
   max-width: 1200px;
-  font-weight: 400;
+  font-weight: 600;
   overflow-wrap: break-word;
-  color: #2e2e2e;
 }
 
 .c4 {
   margin: 0px;
-  font-size: 2.25rem;
-  line-height: 2.5rem;
+  font-size: 50px;
+  line-height: 56px;
   max-width: 1200px;
-  font-weight: 400;
+  font-weight: 600;
   overflow-wrap: break-word;
-  color: #2e2e2e;
 }
 
 .c5 {
   margin-bottom: 12px;
-  font-size: 2.25rem;
-  line-height: 2.5rem;
+  font-size: 50px;
+  line-height: 56px;
   max-width: 1200px;
-  font-weight: 400;
+  font-weight: 600;
   overflow-wrap: break-word;
-  color: #2e2e2e;
 }
 
 .c6 {
   margin-top: 12px;
-  font-size: 2.25rem;
-  line-height: 2.5rem;
+  font-size: 50px;
+  line-height: 56px;
   max-width: 1200px;
-  font-weight: 400;
+  font-weight: 600;
   overflow-wrap: break-word;
-  color: #2e2e2e;
 }
 
 .c7 {
   margin-bottom: 0px;
-  font-size: 2.25rem;
-  line-height: 2.5rem;
+  font-size: 50px;
+  line-height: 56px;
   max-width: 1200px;
-  font-weight: 400;
+  font-weight: 600;
   overflow-wrap: break-word;
-  color: #2e2e2e;
 }
 
 .c8 {
   margin-top: 0px;
-  font-size: 2.25rem;
-  line-height: 2.5rem;
+  font-size: 50px;
+  line-height: 56px;
   max-width: 1200px;
-  font-weight: 400;
+  font-weight: 600;
   overflow-wrap: break-word;
-  color: #2e2e2e;
 }
 
 @media only screen and (max-width: 768px) {
@@ -334,8 +323,8 @@ exports[`Heading margin renders 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c1 {
-    font-size: 1.75rem;
-    line-height: 2rem;
+    font-size: 34px;
+    line-height: 40px;
     max-width: 816px;
   }
 }
@@ -348,8 +337,8 @@ exports[`Heading margin renders 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c2 {
-    font-size: 1.75rem;
-    line-height: 2rem;
+    font-size: 34px;
+    line-height: 40px;
     max-width: 816px;
   }
 }
@@ -362,8 +351,8 @@ exports[`Heading margin renders 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c3 {
-    font-size: 1.75rem;
-    line-height: 2rem;
+    font-size: 34px;
+    line-height: 40px;
     max-width: 816px;
   }
 }
@@ -376,8 +365,8 @@ exports[`Heading margin renders 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c4 {
-    font-size: 1.75rem;
-    line-height: 2rem;
+    font-size: 34px;
+    line-height: 40px;
     max-width: 816px;
   }
 }
@@ -390,8 +379,8 @@ exports[`Heading margin renders 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c5 {
-    font-size: 1.75rem;
-    line-height: 2rem;
+    font-size: 34px;
+    line-height: 40px;
     max-width: 816px;
   }
 }
@@ -404,8 +393,8 @@ exports[`Heading margin renders 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c6 {
-    font-size: 1.75rem;
-    line-height: 2rem;
+    font-size: 34px;
+    line-height: 40px;
     max-width: 816px;
   }
 }
@@ -418,8 +407,8 @@ exports[`Heading margin renders 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c7 {
-    font-size: 1.75rem;
-    line-height: 2rem;
+    font-size: 34px;
+    line-height: 40px;
     max-width: 816px;
   }
 }
@@ -432,8 +421,8 @@ exports[`Heading margin renders 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c8 {
-    font-size: 1.75rem;
-    line-height: 2rem;
+    font-size: 34px;
+    line-height: 40px;
     max-width: 816px;
   }
 }
