@@ -9851,17 +9851,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"grommet-theme-hpe@npm:latest":
+"grommet-theme-hpe@https://github.com/grommet/grommet-theme-hpe/tarball/NEXT-stable":
   version: 6.5.0
-  resolution: "grommet-theme-hpe@npm:6.5.0"
+  resolution: "grommet-theme-hpe@https://github.com/grommet/grommet-theme-hpe.git#commit=e878dee5a2b797a3edb974b891715544be08d8df"
   dependencies:
     hpe-design-tokens: "npm:~1.4.0"
   peerDependencies:
-    grommet: ^2.45.1
+    grommet: ^2.47.0
     grommet-icons: ^4.12.4
     react: ^16.13.1 || ^17.0.1 || ^18.0.0 || ^19.0.0
     styled-components: ^5.0.0 || ^6.0.0
-  checksum: 10c0/61d76a8b117f6aa728b831330572baf7ac541607a1573fc70ee381c671ca839e46e3d545af1e20eed1831681815c27576600915c0fc8f8b87faf97367ba8191e
+  checksum: 10c0/2ded4dae5e17a942d7b2a3a3a1413c3df6814f6837b137b767cc8faab5b5a27720c201936dbff56f5dd6d5dd0389c9836168573e9b1bc94dd70bae7037337b8c
   languageName: node
   linkType: hard
 
@@ -9933,7 +9933,7 @@ __metadata:
     fs-extra: "npm:^11.3.0"
     globals: "npm:^16.3.0"
     grommet-icons: "npm:^4.12.4"
-    grommet-theme-hpe: "npm:latest"
+    grommet-theme-hpe: "https://github.com/grommet/grommet-theme-hpe/tarball/NEXT-stable"
     jest: "npm:^30.0.5"
     jest-axe: "npm:^10.0.0"
     jest-cli: "npm:^30.0.5"

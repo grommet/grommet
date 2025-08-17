@@ -199,7 +199,7 @@ exports[`Card all 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c1 {
-    border-radius: 6px;
+    border-radius: 8px;
   }
 }
 
@@ -300,7 +300,7 @@ exports[`Card children 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c1 {
-    border-radius: 6px;
+    border-radius: 8px;
   }
 }
 
@@ -370,7 +370,7 @@ exports[`Card footer 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c1 {
-    border-radius: 6px;
+    border-radius: 8px;
   }
 }
 
@@ -447,7 +447,7 @@ exports[`Card header 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c1 {
-    border-radius: 6px;
+    border-radius: 8px;
   }
 }
 
@@ -503,7 +503,7 @@ exports[`Card renders 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c1 {
-    border-radius: 6px;
+    border-radius: 8px;
   }
 }
 
