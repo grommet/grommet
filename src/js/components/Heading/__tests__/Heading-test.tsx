@@ -92,7 +92,7 @@ test('Heading textAlign renders', () => {
 
 test('Heading margin renders', () => {
   const { container } = render(
-    <Grommet theme={hpe}>
+    <Grommet>
       <Heading margin="small" />
       <Heading margin="medium" />
       <Heading margin="large" />
