@@ -50,7 +50,7 @@ test('Markdown renders without grommet wrapper', () => {
 
 test('wrapper', () => {
   const { container } = render(
-    <Grommet theme={hpe}>
+    <Grommet>
       <Markdown options={{ wrapper: Wrapper }}>{CONTENT}</Markdown>
     </Grommet>,
   );
