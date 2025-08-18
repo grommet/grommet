@@ -22,6 +22,7 @@ export interface AnchorProps {
   icon?: JSX.Element;
   label?: React.ReactNode;
   margin?: MarginType;
+  popover?: React.ReactNode;
   reverse?: boolean;
   size?:
     | 'xsmall'
@@ -39,7 +40,7 @@ type aProps = Omit<
     React.AnchorHTMLAttributes<HTMLAnchorElement>,
     HTMLAnchorElement
   >,
-  'color'
+  'color' | 'popover'
 >;
 
 export interface AnchorExtendedProps extends AnchorProps, aProps {}

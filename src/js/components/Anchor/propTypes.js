@@ -29,6 +29,7 @@ if (process.env.NODE_ENV !== 'production') {
     icon: PropTypes.element,
     label: PropTypes.node,
     onClick: PropTypes.func,
+    popup: PropTypes.node,
     reverse: PropTypes.bool,
     size: PropTypes.oneOfType([
       PropTypes.oneOf([

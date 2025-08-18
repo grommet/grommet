@@ -6,6 +6,8 @@ import {
   normalizeColor,
   styledComponentsConfig,
 } from '../../utils';
+import { edgeStyle, roundStyle } from '../../utils/styles';
+import { backgroundStyle } from '../../utils/background';
 
 const disabledStyle = `
   opacity: 0.3;
@@ -71,12 +73,38 @@ const StyledAnchor = styled.a.withConfig(styledComponentsConfig)`
   ${(props) =>
     props.hasIcon &&
     !props.hasLabel &&
+    !props.popoverTarget
     `
     padding: ${props.theme.global.edgeSize.small};
   `}
   ${(props) => props.disabled && disabledStyle}
   ${(props) => props.focus && focusStyle()}
   ${(props) => props.theme.anchor.extend}
+  ${(props) => props.popoverTarget && `
+    text-decoration: underline dotted;
+    text-underline-offset: 4px;
+    border: none;
+    background: none;
+    font-family: inherit;
+    padding: 0;
+  `}
 `;
 
-export { StyledAnchor };
+const StyledPopover = styled.div`
+    border: none;
+    ${(props) => props.theme.anchor.popover?.round &&
+      roundStyle(props.theme.anchor.popover.round,
+        props.responsive,
+        props.theme)}
+    ${(props) => props.theme.anchor.popover?.background &&
+      backgroundStyle(props.theme.anchor.popover.background, props.theme)}
+    ${(props) => props.theme.anchor.popover?.pad &&
+      edgeStyle(
+        'padding',
+        props.theme.anchor.popover.pad,
+        props.responsive,
+        props.theme.box.responsiveBreakpoint,
+        props.theme,
+      )}
+  `; 
+export { StyledAnchor, StyledPopover };
