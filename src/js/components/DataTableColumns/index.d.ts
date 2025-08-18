@@ -2,7 +2,7 @@ import * as React from 'react';
 
 export interface DataTableColumnsProps {
   drop: boolean;
-  hideOrder?: boolean;
+  activePanel?: string;
   options: (
     | string
     | {

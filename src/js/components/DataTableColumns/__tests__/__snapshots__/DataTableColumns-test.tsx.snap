@@ -8,6 +8,7 @@ exports[`DataTableColumns pinned 1`] = `
   min-width: 0;
   min-height: 0;
   flex-direction: column;
+  flex: 0 0 auto;
   padding-top: 12px;
 }
 
@@ -2383,7 +2384,7 @@ exports[`DataTableColumns renders 3`] = `
   role="tabpanel"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 cafBSw"
+    class="StyledBox-sc-13pk1d4-0 ywrvB"
   >
     .c1 {
   display: flex;
@@ -3721,7 +3722,7 @@ exports[`DataTableColumns search 4`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .cafBSw {
+  .ywrvB {
     padding-top: 6px;
   }
 }

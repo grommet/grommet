@@ -69,16 +69,16 @@ const Content = ({ drop, options = [], activePanel, ...rest }) => {
   const pinned = useMemo(() => {
     const items = objectOptions
       ? options
-        .filter((option) => option.pinned && option.label)
-        .map((option) => option.label)
+          .filter((option) => option.pinned && option.label)
+          .map((option) => option.label)
       : [];
     return items?.length
       ? {
-        background: 'none',
-        color: 'text-weak',
-        icon: <Lock />,
-        items,
-      }
+          background: 'none',
+          color: 'text-weak',
+          icon: <Lock />,
+          items,
+        }
       : undefined;
   }, [options, objectOptions]);
   // 'value' is an array of property names

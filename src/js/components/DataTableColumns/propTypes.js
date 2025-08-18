@@ -4,7 +4,7 @@ let PropType = {};
 if (process.env.NODE_ENV !== 'production') {
   PropType = {
     drop: PropTypes.bool.isRequired,
-    hideOrder: PropTypes.bool,
+    activePanel: PropTypes.oneOf(['orderColumns', 'selectColumns']),
     options: PropTypes.oneOfType([
       PropTypes.arrayOf(PropTypes.string),
       PropTypes.arrayOf(
