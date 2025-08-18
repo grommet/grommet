@@ -84,7 +84,7 @@ describe('Skeleton', () => {
 
   test('Box skeleton with specific dimensions', () => {
     const { asFragment } = render(
-      <Grommet theme={hpe}>
+      <Grommet>
         <Box skeleton height="small" width="medium">
           <Text>text</Text>
         </Box>

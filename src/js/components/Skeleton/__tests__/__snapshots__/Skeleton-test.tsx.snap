@@ -524,19 +524,16 @@ exports[`Skeleton Box skeleton with specific dimensions 1`] = `
   box-sizing: border-box;
   margin-top: 6px;
   margin-bottom: 6px;
-  background-color: #f7f7f7;
-  color: #555555;
-  height: 1.125rem;
+  background-color: #EDEDED;
+  color: #444444;
+  height: 18px;
   min-width: 100px;
   width: 100px;
 }
 
 .c0 {
-  font-family: 'Metric',Arial,sans-serif;
-  font-size: 1.125rem;
-  line-height: 1.5rem;
-  background-color: #ffffff;
-  color: #555555;
+  font-size: 18px;
+  line-height: 24px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -548,8 +545,7 @@ exports[`Skeleton Box skeleton with specific dimensions 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background-color: #ffffff;
-  color: #555555;
+  background: background;
   min-width: 0;
   min-height: 0;
   flex-direction: column;
