@@ -78,7 +78,7 @@ describe('RadioButton', () => {
     );
 
     const { container } = render(
-      <Grommet theme={hpe}>
+      <Grommet>
         <RadioButton name="test" value="1">
           {child}
         </RadioButton>
