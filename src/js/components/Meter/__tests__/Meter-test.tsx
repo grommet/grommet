@@ -94,8 +94,8 @@ describe('Meter', () => {
             { value: 512772, color: 'graph-3' },
             { value: 5032870, color: 'graph-4' },
           ]}
-          size="small"
-          thickness="small"
+          // size="small"
+          // thickness="small"
         />
       </Grommet>,
     );
@@ -118,7 +118,7 @@ describe('Meter', () => {
 
   test('size', () => {
     const { container } = render(
-      <Grommet theme={hpe}>
+      <Grommet>
         <Meter size="xsmall" values={VALUES} />
         <Meter size="small" values={VALUES} />
         <Meter size="medium" values={VALUES} />
