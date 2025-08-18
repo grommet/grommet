@@ -4,7 +4,7 @@ import { useLayoutEffect } from '../../utils/use-isomorphic-layout-effect';
 
 import { StyledText } from './StyledText';
 import { Tip } from '../Tip';
-import { useForwardedRef } from '../../utils';
+import { useForwardedRef, useId } from '../../utils';
 import { TextPropTypes } from './propTypes';
 import { useSkeleton } from '../Skeleton';
 import { TextSkeleton } from './TextSkeleton';
@@ -31,11 +31,11 @@ const Text = forwardRef(
     },
     ref,
   ) => {
-    const { passThemeFlag } = useThemeValue();
-    const textRef = useForwardedRef(ref);
     const [textTruncated, setTextTruncated] = useState(false);
     const textContextValue = useMemo(() => ({ size }), [size]);
-
+    const { passThemeFlag } = useThemeValue();
+    const textRef = useForwardedRef(ref);
+    const tipId = useId();
     const skeleton = useSkeleton();
 
     useLayoutEffect(() => {
@@ -71,11 +71,9 @@ const Text = forwardRef(
       );
     }
 
-    let tipId;
     let extraA11yProps = {};
 
     if (tipProp || textTruncated) {
-      tipId = `tip-${Math.random().toString(36).slice(2, 9)}`;
       extraA11yProps = {
         tabIndex: 0,
         'aria-describedby': tipId,
@@ -104,13 +102,12 @@ const Text = forwardRef(
     );
 
     if (tipProp || textTruncated) {
-      let tipProps = tipProp && typeof tipProp === 'object' ? tipProp : {};
-      tipProps = { ...tipProps, id: tipId };
+      const tipProps = tipProp && typeof tipProp === 'object' ? tipProp : {};
       // place the text content in a tip if truncate === 'tip'
       // and the text has been truncated
       if (textTruncated) {
         return (
-          <Tip content={children} {...tipProps}>
+          <Tip content={children} id={tipId} {...tipProps}>
             {styledTextResult}
           </Tip>
         );
