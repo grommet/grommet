@@ -994,6 +994,9 @@ var generate = exports.generate = function generate(baseSpacing, scale) {
       // },
       drop: {
         pad: 'small'
+      },
+      toolbar: {
+        gap: 'medium'
       }
     },
     dataFilter: {
@@ -1006,6 +1009,14 @@ var generate = exports.generate = function generate(baseSpacing, scale) {
       }
     },
     dataFilters: {
+      footer: {
+        actions: {
+          margin: {
+            top: 'medium'
+          },
+          gap: 'small'
+        }
+      },
       clearControl: {
         margin: {
           start: 'small'

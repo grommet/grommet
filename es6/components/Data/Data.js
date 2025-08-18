@@ -13,6 +13,7 @@ import { DataContext } from '../../contexts/DataContext';
 import { DataPropTypes } from './propTypes';
 import { MessageContext } from '../../contexts/MessageContext';
 import { filter } from './filter';
+import { useThemeValue } from '../../utils/useThemeValue';
 var defaultDefaultView = {
   search: ''
 };
@@ -69,6 +70,8 @@ export var Data = function Data(_ref) {
   var announce = useContext(AnnounceContext);
   var _useContext = useContext(MessageContext),
     format = _useContext.format;
+  var _useThemeValue = useThemeValue(),
+    theme = _useThemeValue.theme;
   // Announce to screen readers when search or filters are
   // applied and affect the underlying result set
   useEffect(function () {
@@ -139,9 +142,10 @@ export var Data = function Data(_ref) {
   }, [id, messages, filtersCleared, onView, properties, result, selected, toolbarKeys, view, views]);
   var toolbarContent;
   if (toolbar) {
+    var _theme$data;
     toolbarContent = [/*#__PURE__*/React.createElement(Toolbar, {
       key: "toolbar",
-      gap: "medium"
+      gap: (_theme$data = theme.data) == null || (_theme$data = _theme$data.toolbar) == null ? void 0 : _theme$data.gap
     }, /*#__PURE__*/React.createElement(Toolbar, null, (toolbar === true || toolbar === 'search') && /*#__PURE__*/React.createElement(DataSearch, null), (toolbar === true || toolbar === 'filters') && /*#__PURE__*/React.createElement(DataFilters, {
       layer: true
     })), (toolbar === true || toolbar === 'view') && /*#__PURE__*/React.createElement(DataView, null)), /*#__PURE__*/React.createElement(DataSummary, {

@@ -875,12 +875,18 @@ export interface ThemeType {
     };
   };
   dataFilters?: {
+    footer?: {
+      actions?: {
+        margin?: MarginType;
+        gap?: GapType;
+      };
+    };
     clearControl?: {
       margin?: MarginType;
     };
     pad?: PadType;
     width?: WidthType;
-  }
+  };
   dataSummary?: {
     margin?: MarginType;
     separator?: {

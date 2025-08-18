@@ -12,6 +12,7 @@ var _DataContext = require("../../contexts/DataContext");
 var _DataFormContext = require("../../contexts/DataFormContext");
 var _MessageContext = require("../../contexts/MessageContext");
 var _useDebounce = require("../../utils/use-debounce");
+var _useThemeValue2 = require("../../utils/useThemeValue");
 var _excluded = ["children", "footer", "onDone", "pad", "updateOn"];
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
 function _interopRequireWildcard(e, t) { if ("function" == typeof WeakMap) var r = new WeakMap(), n = new WeakMap(); return (_interopRequireWildcard = function _interopRequireWildcard(e, t) { if (!t && e && e.__esModule) return e; var o, i, f = { __proto__: null, "default": e }; if (null === e || "object" != typeof e && "function" != typeof e) return f; if (o = t ? n : r) { if (o.has(e)) return o.get(e); o.set(e, f); } for (var _t in e) "default" !== _t && {}.hasOwnProperty.call(e, _t) && ((i = (o = Object.defineProperty) && Object.getOwnPropertyDescriptor(e, _t)) && (i.get || i.set) ? o(f, _t, i) : f[_t] = e[_t]); return f; })(e, t); }
@@ -241,6 +242,8 @@ var DataForm = exports.DataForm = function DataForm(_ref) {
     };
   }, []);
   var debounce = (0, _useDebounce.useDebounce)(DEBOUNCE_TIMEOUT);
+  var _useThemeValue = (0, _useThemeValue2.useThemeValue)(),
+    theme = _useThemeValue.theme;
   var onSubmit = (0, _react.useCallback)(function (_ref2) {
     var value = _ref2.value;
     var nextValue = normalizeValue(value, formValue, views, pendingReset);
@@ -272,6 +275,7 @@ var DataForm = exports.DataForm = function DataForm(_ref) {
   }, [view]);
   var content = children;
   if (footer !== false && updateOn === 'submit' || pad) {
+    var _theme$dataFilters, _theme$dataFilters2;
     content = /*#__PURE__*/_react["default"].createElement(_Box.Box, {
       fill: "vertical"
     }, /*#__PURE__*/_react["default"].createElement(_Box.Box, {
@@ -285,14 +289,12 @@ var DataForm = exports.DataForm = function DataForm(_ref) {
       flex: false
     }, content)), footer !== false && updateOn === 'submit' && /*#__PURE__*/_react["default"].createElement(_Footer.Footer, {
       flex: false,
-      margin: {
-        top: 'medium'
-      },
       pad: {
         horizontal: pad,
         bottom: pad
       },
-      gap: "small"
+      margin: (_theme$dataFilters = theme.dataFilters) == null || (_theme$dataFilters = _theme$dataFilters.footer) == null || (_theme$dataFilters = _theme$dataFilters.actions) == null ? void 0 : _theme$dataFilters.margin,
+      gap: (_theme$dataFilters2 = theme.dataFilters) == null || (_theme$dataFilters2 = _theme$dataFilters2.footer) == null || (_theme$dataFilters2 = _theme$dataFilters2.actions) == null ? void 0 : _theme$dataFilters2.gap
     }, /*#__PURE__*/_react["default"].createElement(_Button.Button, {
       label: format({
         id: 'dataForm.submit',

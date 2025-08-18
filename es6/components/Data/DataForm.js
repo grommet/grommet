@@ -11,6 +11,7 @@ import { DataContext } from '../../contexts/DataContext';
 import { DataFormContext } from '../../contexts/DataFormContext';
 import { MessageContext } from '../../contexts/MessageContext';
 import { useDebounce } from '../../utils/use-debounce';
+import { useThemeValue } from '../../utils/useThemeValue';
 var MaxForm = styled(Form).withConfig({
   displayName: "DataForm__MaxForm",
   componentId: "sc-v64e1r-0"
@@ -235,6 +236,8 @@ export var DataForm = function DataForm(_ref) {
     };
   }, []);
   var debounce = useDebounce(DEBOUNCE_TIMEOUT);
+  var _useThemeValue = useThemeValue(),
+    theme = _useThemeValue.theme;
   var onSubmit = useCallback(function (_ref2) {
     var value = _ref2.value;
     var nextValue = normalizeValue(value, formValue, views, pendingReset);
@@ -266,6 +269,7 @@ export var DataForm = function DataForm(_ref) {
   }, [view]);
   var content = children;
   if (footer !== false && updateOn === 'submit' || pad) {
+    var _theme$dataFilters, _theme$dataFilters2;
     content = /*#__PURE__*/React.createElement(Box, {
       fill: "vertical"
     }, /*#__PURE__*/React.createElement(Box, {
@@ -279,14 +283,12 @@ export var DataForm = function DataForm(_ref) {
       flex: false
     }, content)), footer !== false && updateOn === 'submit' && /*#__PURE__*/React.createElement(Footer, {
       flex: false,
-      margin: {
-        top: 'medium'
-      },
       pad: {
         horizontal: pad,
         bottom: pad
       },
-      gap: "small"
+      margin: (_theme$dataFilters = theme.dataFilters) == null || (_theme$dataFilters = _theme$dataFilters.footer) == null || (_theme$dataFilters = _theme$dataFilters.actions) == null ? void 0 : _theme$dataFilters.margin,
+      gap: (_theme$dataFilters2 = theme.dataFilters) == null || (_theme$dataFilters2 = _theme$dataFilters2.footer) == null || (_theme$dataFilters2 = _theme$dataFilters2.actions) == null ? void 0 : _theme$dataFilters2.gap
     }, /*#__PURE__*/React.createElement(Button, {
       label: format({
         id: 'dataForm.submit',
