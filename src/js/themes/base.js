@@ -981,6 +981,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       //   }
       //   selected: undefined,
       // },
+      expand: {
+        size: 'xxsmall',
+      },
       pinned: {
         // body: {
         //    background: undefined,
@@ -1050,6 +1053,19 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         //     size: undefined,
         //   },
         // },
+      },
+      search: {
+        pad: {
+          left: 'small',
+        },
+        text: {
+          pad: {
+            horizontal: 'small',
+          },
+        },
+      },
+      sort: {
+        gap: 'xsmall',
       },
     },
     dataTableColumns: {
