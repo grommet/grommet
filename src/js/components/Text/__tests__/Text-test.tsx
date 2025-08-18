@@ -160,6 +160,7 @@ test('renders weight', () => {
   expect(container.firstChild).toMatchSnapshot();
 });
 
+//
 describe('Text component with tip', () => {
   test('renders tip on hover', () => {
     jest.spyOn(UseIdModule, 'useId').mockReturnValue('fixed-id-123');
