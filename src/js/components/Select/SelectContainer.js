@@ -399,7 +399,10 @@ const SelectContainer = forwardRef(
           {...passThemeFlag}
         >
           {onSearch && (
-            <Box pad={!customSearchInput ? 'xsmall' : undefined} flex={false}>
+            <Box
+              pad={!customSearchInput ? theme.select?.search?.pad : undefined}
+              flex={false}
+            >
               <SelectTextInput
                 focusIndicator={!customSearchInput}
                 size="small"
