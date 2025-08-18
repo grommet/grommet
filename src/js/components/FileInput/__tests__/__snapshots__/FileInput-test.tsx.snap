@@ -152,6 +152,8 @@ exports[`FileInput accept 1`] = `
   opacity: 0;
   border: none;
   cursor: pointer;
+  width: calc(100% - 6px);
+  right: 6px;
 }
 
 .c3::-webkit-input-placeholder {
@@ -604,6 +606,8 @@ exports[`FileInput basic 1`] = `
   opacity: 0;
   border: none;
   cursor: pointer;
+  width: calc(100% - 6px);
+  right: 6px;
 }
 
 .c3::-webkit-input-placeholder {
@@ -1381,6 +1385,8 @@ exports[`FileInput disabled 1`] = `
   font-size: 0;
   opacity: 0;
   border: none;
+  width: calc(100% - 6px);
+  right: 6px;
 }
 
 .c3::-webkit-input-placeholder {
@@ -1832,8 +1838,8 @@ exports[`FileInput disabled with file selected 1`] = `
   font-size: 0;
   opacity: 0;
   border: none;
-  width: calc(100% - 24px);
-  right: 24px;
+  width: calc(100% - 30px);
+  right: 30px;
 }
 
 .c7::-webkit-input-placeholder {
@@ -2389,6 +2395,8 @@ exports[`FileInput maxSize 1`] = `
   opacity: 0;
   border: none;
   cursor: pointer;
+  width: calc(100% - 6px);
+  right: 6px;
 }
 
 .c3::-webkit-input-placeholder {
@@ -2662,6 +2670,8 @@ exports[`FileInput messages 1`] = `
   opacity: 0;
   border: none;
   cursor: pointer;
+  width: calc(100% - 6px);
+  right: 6px;
 }
 
 .c3::-webkit-input-placeholder {
@@ -2935,6 +2945,8 @@ exports[`FileInput multiple 1`] = `
   opacity: 0;
   border: none;
   cursor: pointer;
+  width: calc(100% - 6px);
+  right: 6px;
 }
 
 .c3::-webkit-input-placeholder {
@@ -3209,6 +3221,8 @@ exports[`FileInput multiple aggregateThreshold 1`] = `
   opacity: 0;
   border: none;
   cursor: pointer;
+  width: calc(100% - 6px);
+  right: 6px;
 }
 
 .c3::-webkit-input-placeholder {
@@ -3483,6 +3497,8 @@ exports[`FileInput multiple max 1`] = `
   opacity: 0;
   border: none;
   cursor: pointer;
+  width: calc(100% - 6px);
+  right: 6px;
 }
 
 .c3::-webkit-input-placeholder {
