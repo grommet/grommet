@@ -374,8 +374,7 @@ const FileInput = forwardRef(
                         alignSelf="center"
                         disabled={disabled}
                         ref={controlRef}
-                        // TO DO theme object
-                        margin="small"
+                        margin={theme.fileInput.anchor.margin}
                         onClick={() => {
                           inputRef.current.click();
                           inputRef.current.focus();
@@ -451,8 +450,7 @@ const FileInput = forwardRef(
                       alignSelf="center"
                       disabled={disabled}
                       ref={controlRef}
-                      // TO DO theme object
-                      margin="small"
+                      margin={theme.fileInput.anchor.margin}
                       onClick={() => {
                         inputRef.current.click();
                         inputRef.current.focus();
@@ -486,13 +484,7 @@ const FileInput = forwardRef(
                   {renderFile ? (
                     renderFile(file)
                   ) : (
-                    <Box
-                      {...theme.fileInput.label}
-                      // TO DO theme object
-                      gap="xsmall"
-                      align="center"
-                      direction="row"
-                    >
+                    <Box {...theme.fileInput.label}>
                       {((typeof maxSize === 'number' && file.size > maxSize) ||
                         (typeof max === 'number' && index >= max)) && (
                         <CircleAlert
@@ -573,8 +565,7 @@ const FileInput = forwardRef(
                             tabIndex={-1}
                             disabled={disabled}
                             ref={controlRef}
-                            // TO DO theme object
-                            margin="small"
+                            margin={theme.fileInput.anchor.margin}
                             onClick={() => {
                               inputRef.current.click();
                               inputRef.current.focus();

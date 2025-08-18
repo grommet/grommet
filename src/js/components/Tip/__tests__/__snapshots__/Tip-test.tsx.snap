@@ -1,4 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`Tip dropProps should pass props to Drop 1`] = `
 .c0 {
@@ -195,10 +195,10 @@ exports[`Tip focus and blur events on the Tip's child 1`] = `
 
 exports[`Tip focus and blur events on the Tip's child 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 cBoJUe"
+  class="StyledGrommet-sc-19lkkz7-0 kiEDjE"
 >
   <button
-    class="StyledButton-sc-323bzc-0 kMYQlF"
+    class="StyledButton-sc-323bzc-0 eKicYT"
     type="button"
   >
     Test Events

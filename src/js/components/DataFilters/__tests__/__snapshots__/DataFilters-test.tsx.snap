@@ -1,4 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`DataFilters clear 1`] = `
 .c1 {
@@ -572,7 +572,7 @@ exports[`DataFilters drop 1`] = `
 exports[`DataFilters drop 2`] = `
 <button
   aria-label="Open filters"
-  class="StyledButton-sc-323bzc-0 iGmGqZ"
+  class="StyledButton-sc-323bzc-0 bIZBkf"
   data-g-tabindex="none"
   id="test-data--filters-control"
   tabindex="-1"
@@ -580,7 +580,7 @@ exports[`DataFilters drop 2`] = `
 >
   <svg
     aria-label="Filter"
-    class="StyledIcon-sc-ofa7kd-0 jCZnaS"
+    class="StyledIcon-sc-ofa7kd-0 esCCqY"
     viewBox="0 0 24 24"
   >
     <path
@@ -595,37 +595,37 @@ exports[`DataFilters drop 2`] = `
 
 exports[`DataFilters drop 3`] = `
 "@media only screen and (max-width: 768px) {
-  .bJKUjK {
+  .eEJtXY {
     margin-bottom: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .dpvfKN {
+  .hEaUqP {
     border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   }
 }
 @media only screen and (max-width: 768px) {
-  .dpvfKN {
+  .hEaUqP {
     padding: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .gCGMUC {
+  .jDgzUY {
     margin-right: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .kFwNfZ {
+  .ldnIiP {
     border: solid 2px rgba(0, 0, 0, 0.15);
   }
 }
 @media only screen and (max-width: 768px) {
-  .bhBTej {
+  .coNAXt {
     margin-top: 12px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .oSxZH {
+  .hrJqFx {
     height: 6px;
   }
 }"
@@ -665,17 +665,6 @@ exports[`DataFilters drop badge 1`] = `
   flex: 0 0 auto;
   justify-content: center;
   border-radius: 24px;
-}
-
-.c10 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  margin-inline-start: 12px;
-  min-width: 0;
-  min-height: 0;
-  flex-direction: column;
-  flex: 0 0 auto;
 }
 
 .c6 {
@@ -791,7 +780,7 @@ exports[`DataFilters drop badge 1`] = `
   border: 0;
 }
 
-.c11 {
+.c10 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -812,47 +801,47 @@ exports[`DataFilters drop badge 1`] = `
   transition-timing-function: ease-in-out;
 }
 
-.c11:hover {
+.c10:hover {
   box-shadow: 0px 0px 0px 2px #7D4CDB;
 }
 
-.c11:focus {
+.c10:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c11:focus >circle,
-.c11:focus >ellipse,
-.c11:focus >line,
-.c11:focus >path,
-.c11:focus >polygon,
-.c11:focus >polyline,
-.c11:focus >rect {
+.c10:focus >circle,
+.c10:focus >ellipse,
+.c10:focus >line,
+.c10:focus >path,
+.c10:focus >polygon,
+.c10:focus >polyline,
+.c10:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c11:focus ::-moz-focus-inner {
+.c10:focus ::-moz-focus-inner {
   border: 0;
 }
 
-.c11:focus:not(:focus-visible) {
+.c10:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c11:focus:not(:focus-visible) >circle,
-.c11:focus:not(:focus-visible) >ellipse,
-.c11:focus:not(:focus-visible) >line,
-.c11:focus:not(:focus-visible) >path,
-.c11:focus:not(:focus-visible) >polygon,
-.c11:focus:not(:focus-visible) >polyline,
-.c11:focus:not(:focus-visible) >rect {
+.c10:focus:not(:focus-visible) >circle,
+.c10:focus:not(:focus-visible) >ellipse,
+.c10:focus:not(:focus-visible) >line,
+.c10:focus:not(:focus-visible) >path,
+.c10:focus:not(:focus-visible) >polygon,
+.c10:focus:not(:focus-visible) >polyline,
+.c10:focus:not(:focus-visible) >rect {
   outline: none;
   box-shadow: none;
 }
 
-.c11:focus:not(:focus-visible) ::-moz-focus-inner {
+.c10:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 
@@ -869,12 +858,6 @@ exports[`DataFilters drop badge 1`] = `
 @media only screen and (max-width: 768px) {
   .c8 {
     border-radius: 12px;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .c10 {
-    margin-inline-start: 6px;
   }
 }
 
@@ -931,10 +914,10 @@ exports[`DataFilters drop badge 1`] = `
         </div>
       </button>
       <div
-        class="c10"
+        class="c1"
       >
         <button
-          class="c11"
+          class="c10"
           type="button"
         >
           Clear filters
@@ -1119,7 +1102,7 @@ exports[`DataFilters layer 2`] = `
   min-width: 0;
   min-height: 0;
   flex-direction: column;
-  min-width: 384px;
+  width: 384px;
 }
 
 .c6 {
@@ -1806,37 +1789,37 @@ exports[`DataFilters layer 2`] = `
 
 exports[`DataFilters layer 3`] = `
 "@media only screen and (max-width: 768px) {
-  .bJKUjK {
+  .eEJtXY {
     margin-bottom: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .dpvfKN {
+  .hEaUqP {
     border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   }
 }
 @media only screen and (max-width: 768px) {
-  .dpvfKN {
+  .hEaUqP {
     padding: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .gCGMUC {
+  .jDgzUY {
     margin-right: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .kFwNfZ {
+  .ldnIiP {
     border: solid 2px rgba(0, 0, 0, 0.15);
   }
 }
 @media only screen and (max-width: 768px) {
-  .bhBTej {
+  .coNAXt {
     margin-top: 12px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .oSxZH {
+  .hrJqFx {
     height: 6px;
   }
 }"
@@ -3677,10 +3660,6 @@ exports[`DataFilters should not badge when RangeSelector returns to min/max 1`] 
 
 }
 
-@media only screen and (max-width: 768px) {
-
-}
-
 <div
     class="c0"
   >
@@ -4483,11 +4462,15 @@ exports[`DataFilters sub objects 1`] = `
             <div
               class="c33"
             >
-              <span
-                class="c34"
+              <div
+                class="c8 Header__StyledContentBox-sc-1baku5q-1"
               >
-                City
-              </span>
+                <span
+                  class="c34"
+                >
+                  City
+                </span>
+              </div>
             </div>
           </th>
           <th
@@ -4498,11 +4481,15 @@ exports[`DataFilters sub objects 1`] = `
             <div
               class="c33"
             >
-              <span
-                class="c34"
+              <div
+                class="c8 Header__StyledContentBox-sc-1baku5q-1"
               >
-                Latitude
-              </span>
+                <span
+                  class="c34"
+                >
+                  Latitude
+                </span>
+              </div>
             </div>
           </th>
         </tr>
@@ -4582,17 +4569,6 @@ exports[`DataFilters sub objects with rangeSelector 1`] = `
   flex: 0 0 auto;
   justify-content: center;
   border-radius: 24px;
-}
-
-.c10 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  margin-inline-start: 12px;
-  min-width: 0;
-  min-height: 0;
-  flex-direction: column;
-  flex: 0 0 auto;
 }
 
 .c6 {
@@ -4708,7 +4684,7 @@ exports[`DataFilters sub objects with rangeSelector 1`] = `
   border: 0;
 }
 
-.c11 {
+.c10 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -4729,47 +4705,47 @@ exports[`DataFilters sub objects with rangeSelector 1`] = `
   transition-timing-function: ease-in-out;
 }
 
-.c11:hover {
+.c10:hover {
   box-shadow: 0px 0px 0px 2px #7D4CDB;
 }
 
-.c11:focus {
+.c10:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c11:focus >circle,
-.c11:focus >ellipse,
-.c11:focus >line,
-.c11:focus >path,
-.c11:focus >polygon,
-.c11:focus >polyline,
-.c11:focus >rect {
+.c10:focus >circle,
+.c10:focus >ellipse,
+.c10:focus >line,
+.c10:focus >path,
+.c10:focus >polygon,
+.c10:focus >polyline,
+.c10:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c11:focus ::-moz-focus-inner {
+.c10:focus ::-moz-focus-inner {
   border: 0;
 }
 
-.c11:focus:not(:focus-visible) {
+.c10:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c11:focus:not(:focus-visible) >circle,
-.c11:focus:not(:focus-visible) >ellipse,
-.c11:focus:not(:focus-visible) >line,
-.c11:focus:not(:focus-visible) >path,
-.c11:focus:not(:focus-visible) >polygon,
-.c11:focus:not(:focus-visible) >polyline,
-.c11:focus:not(:focus-visible) >rect {
+.c10:focus:not(:focus-visible) >circle,
+.c10:focus:not(:focus-visible) >ellipse,
+.c10:focus:not(:focus-visible) >line,
+.c10:focus:not(:focus-visible) >path,
+.c10:focus:not(:focus-visible) >polygon,
+.c10:focus:not(:focus-visible) >polyline,
+.c10:focus:not(:focus-visible) >rect {
   outline: none;
   box-shadow: none;
 }
 
-.c11:focus:not(:focus-visible) ::-moz-focus-inner {
+.c10:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 
@@ -4826,12 +4802,6 @@ exports[`DataFilters sub objects with rangeSelector 1`] = `
 @media only screen and (max-width: 768px) {
   .c8 {
     border-radius: 12px;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .c10 {
-    margin-inline-start: 6px;
   }
 }
 
@@ -4912,10 +4882,10 @@ exports[`DataFilters sub objects with rangeSelector 1`] = `
           </div>
         </button>
         <div
-          class="c10"
+          class="c1"
         >
           <button
-            class="c11"
+            class="c10"
             type="button"
           >
             Clear filters

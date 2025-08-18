@@ -243,8 +243,7 @@ const Pagination = forwardRef(
       <StyledPaginationContainer
         direction="row"
         align="center"
-        // TO DO theme object
-        gap={{ column: 'xsmall', row: 'small' }}
+        gap={theme.pagination.container?.gap}
         wrap
         flex={false}
         {...theme.pagination.container}
@@ -264,8 +263,8 @@ const Pagination = forwardRef(
         <Box
           align="center"
           direction="row"
-          // TO DO theme object
-          gap={{ column: 'xsmall', row: 'small' }}
+          // not sure about naming
+          gap={theme.pagination.controls?.container?.gap}
           wrap
         >
           {stepOptions && (

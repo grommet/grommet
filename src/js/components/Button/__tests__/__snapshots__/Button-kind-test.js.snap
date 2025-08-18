@@ -1,4 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`Button kind badge should align to button container if specified in theme 1`] = `
 .c5 {
@@ -932,8 +932,7 @@ exports[`Button kind badge should render custom element 1`] = `
 </div>
 `;
 
-exports[`Button kind badge should render relative to contents when button has no 
-  border or background 1`] = `
+exports[`Button kind badge should render relative to contents when button has no \\n  border or background 1`] = `
 .c4 {
   display: inline-block;
   flex: 0 0 auto;
@@ -2049,10 +2048,10 @@ exports[`Button kind disabled with hoverIndicator should not hover 1`] = `
 
 exports[`Button kind disabled with hoverIndicator should not hover 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 cBoJUe"
+  class="StyledGrommet-sc-19lkkz7-0 kiEDjE"
 >
   <button
-    class="StyledButtonKind-sc-1vhfpnt-0 iDZafx"
+    class="StyledButtonKind-sc-1vhfpnt-0 cOeMFP"
     disabled=""
     type="button"
   >
@@ -2718,10 +2717,10 @@ exports[`Button kind hover secondary with color and background 1`] = `
 
 exports[`Button kind hover secondary with color and background 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 cBoJUe"
+  class="StyledGrommet-sc-19lkkz7-0 kiEDjE"
 >
   <button
-    class="StyledButtonKind-sc-1vhfpnt-0 knkSSa"
+    class="StyledButtonKind-sc-1vhfpnt-0 cSiwps"
     type="button"
   >
     Button
@@ -2820,10 +2819,10 @@ exports[`Button kind hoverIndicator with color and background 1`] = `
 
 exports[`Button kind hoverIndicator with color and background 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 cBoJUe"
+  class="StyledGrommet-sc-19lkkz7-0 kiEDjE"
 >
   <button
-    class="StyledButtonKind-sc-1vhfpnt-0 tTsfx"
+    class="StyledButtonKind-sc-1vhfpnt-0 hLCOjH"
     type="button"
   >
     Button
@@ -4153,18 +4152,18 @@ exports[`Button kind mouseOver and mouseOut events 1`] = `
 
 exports[`Button kind mouseOver and mouseOut events 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 cBoJUe"
+  class="StyledGrommet-sc-19lkkz7-0 kiEDjE"
 >
   <button
-    class="StyledButtonKind-sc-1vhfpnt-0 eZBXGy"
+    class="StyledButtonKind-sc-1vhfpnt-0 kHEmyg"
     type="button"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 hhOXrv"
+      class="StyledBox-sc-13pk1d4-0 beOXMp"
     >
       <svg
         aria-label="Add"
-        class="StyledIcon-sc-ofa7kd-0 kNFeMe"
+        class="StyledIcon-sc-ofa7kd-0 fmPtiI"
         viewBox="0 0 24 24"
       >
         <path
@@ -4175,7 +4174,7 @@ exports[`Button kind mouseOver and mouseOut events 2`] = `
         />
       </svg>
       <div
-        class="StyledBox__StyledBoxGap-sc-13pk1d4-1 bljSMt"
+        class="StyledBox__StyledBoxGap-sc-13pk1d4-1 jMJtHH"
       />
       label
     </div>

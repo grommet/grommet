@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import 'jest-styled-components';
-import { render, fireEvent, screen } from '@testing-library/react';
+import { render, fireEvent, screen, waitFor } from '@testing-library/react';
 import '@testing-library/jest-dom';
 
 import { Grommet } from '../../Grommet';
@@ -233,7 +233,7 @@ describe('DataTable', () => {
 
     const headerCell = getByText('A');
     fireEvent.click(headerCell, {});
-    expect(onSort).toBeCalledWith(
+    expect(onSort).toHaveBeenCalledWith(
       expect.objectContaining({ property: 'a', direction: 'asc' }),
     );
     expect(container.firstChild).toMatchSnapshot();
@@ -262,7 +262,7 @@ describe('DataTable', () => {
 
     const headerCell = getByText('A');
     fireEvent.click(headerCell, {});
-    expect(onSort).toBeCalledWith(
+    expect(onSort).toHaveBeenCalledWith(
       expect.objectContaining({
         property: 'a',
         direction: 'desc',
@@ -394,7 +394,7 @@ describe('DataTable', () => {
 
     fireEvent.click(getByText('Value'));
 
-    expect(onSort).toBeCalledWith(
+    expect(onSort).toHaveBeenCalledWith(
       expect.objectContaining({ property: 'b.value' }),
     );
 
@@ -448,6 +448,41 @@ describe('DataTable', () => {
       target: { value: '[' },
     });
     expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('header search onEsc returns focus to search button', async () => {
+    const { container } = render(
+      <Grommet>
+        <DataTable
+          columns={[{ property: 'a', header: 'A', search: true }]}
+          data={[{ a: 'Alpha' }, { a: 'beta' }, { a: '[]' }]}
+        />
+      </Grommet>,
+    );
+
+    // Open the search input
+    const searchButton = container.querySelector(
+      '[aria-label="Open search by a"]',
+    ) as HTMLButtonElement;
+    fireEvent.click(searchButton);
+
+    // Focus should be on the search input
+    const searchInput = container.querySelector(
+      '[name="search-a"]',
+    ) as HTMLInputElement;
+    expect(document.activeElement).toBe(searchInput);
+
+    // Press Escape key
+    fireEvent.keyDown(searchInput, {
+      key: 'Escape',
+      code: 'Escape',
+      keyCode: 27,
+    });
+
+    await waitFor(() => {
+      const active = document.activeElement;
+      expect(active?.getAttribute('aria-label')).toBe('Open search by a');
+    });
   });
 
   test('resizeable', () => {
@@ -675,7 +710,7 @@ describe('DataTable', () => {
     );
     expect(container.firstChild).toMatchSnapshot();
     fireEvent.click(getByText('beta'));
-    expect(onClickRow).toBeCalledWith(
+    expect(onClickRow).toHaveBeenCalledWith(
       expect.objectContaining({ datum: { a: 'beta' } }),
     );
     expect(container.firstChild).toMatchSnapshot();
@@ -695,7 +730,7 @@ describe('DataTable', () => {
     );
     expect(container.firstChild).toMatchSnapshot();
     fireEvent.click(getByText('beta'));
-    expect(onClickRow).toBeCalledWith(
+    expect(onClickRow).toHaveBeenCalledWith(
       expect.objectContaining({ datum: { a: 'beta' } }),
     );
     expect(container.firstChild).toMatchSnapshot();
@@ -884,7 +919,7 @@ describe('DataTable', () => {
     const expandButtons = getAllByLabelText('expand');
     fireEvent.click(expandButtons[0], {});
 
-    expect(onExpand).toBeCalled();
+    expect(onExpand).toHaveBeenCalled();
     expect(onExpand.mock.results[0].value).toEqual(['one']);
     expect(onExpand.mock.results[0].value).toMatchSnapshot();
   });
@@ -1103,9 +1138,12 @@ describe('DataTable', () => {
     );
     expect(container.firstChild).toMatchSnapshot();
     fireEvent.click(getByLabelText('select beta'));
-    expect(onSelect).toBeCalledWith(expect.arrayContaining(['alpha', 'beta']), {
-      a: 'beta',
-    });
+    expect(onSelect).toHaveBeenCalledWith(
+      expect.arrayContaining(['alpha', 'beta']),
+      {
+        a: 'beta',
+      },
+    );
     expect(container.firstChild).toMatchSnapshot();
   });
 
@@ -1125,9 +1163,12 @@ describe('DataTable', () => {
     );
     expect(container.firstChild).toMatchSnapshot();
     fireEvent.click(getByLabelText('select beta'));
-    expect(onSelect).toBeCalledWith(expect.arrayContaining(['alpha', 'beta']), {
-      a: 'beta',
-    });
+    expect(onSelect).toHaveBeenCalledWith(
+      expect.arrayContaining(['alpha', 'beta']),
+      {
+        a: 'beta',
+      },
+    );
     expect(container.firstChild).toMatchSnapshot();
   });
 
@@ -1147,7 +1188,7 @@ describe('DataTable', () => {
     );
     expect(container.firstChild).toMatchSnapshot();
     fireEvent.click(getByText('alpha'));
-    expect(onSelect).not.toBeCalled();
+    expect(onSelect).not.toHaveBeenCalled();
   });
 
   test('custom theme', () => {
@@ -1622,14 +1663,14 @@ describe('DataTable', () => {
     let headerCheckBox;
     headerCheckBox = getByLabelText('select all');
     fireEvent.click(headerCheckBox);
-    expect(onSelect).toBeCalledWith([1.1, 1.2, 2.1, 2.2]);
+    expect(onSelect).toHaveBeenCalledWith([1.1, 1.2, 2.1, 2.2]);
     expect(container.firstChild).toMatchSnapshot();
 
     // aria-label should have changed since all entries
     // are selected
     headerCheckBox = getByLabelText('unselect all');
     fireEvent.click(headerCheckBox);
-    expect(onSelect).toBeCalledWith([]);
+    expect(onSelect).toHaveBeenCalledWith([]);
     expect(container.firstChild).toMatchSnapshot();
   });
 
@@ -1690,7 +1731,7 @@ describe('DataTable', () => {
 
     const groupCheckBox = getByLabelText('select one');
     fireEvent.click(groupCheckBox);
-    expect(onSelect).toBeCalledWith(
+    expect(onSelect).toHaveBeenCalledWith(
       expect.arrayContaining([1.1, 1.2]),
       expect.objectContaining({ a: 'one' }),
     );
@@ -1916,7 +1957,10 @@ describe('DataTable', () => {
       </Grommet>,
     );
     fireEvent.click(screen.getByRole('checkbox', { name: 'select Alan' }));
-    expect(onSelect).toBeCalledWith(['Alan'], { name: 'Alan', percent: 20 });
+    expect(onSelect).toHaveBeenCalledWith(['Alan'], {
+      name: 'Alan',
+      percent: 20,
+    });
   });
 
   test('Data + onSelect should display correct selected amount', () => {

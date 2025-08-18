@@ -248,7 +248,7 @@ const StyledButton = styled.button.withConfig(styledComponentsConfig)`
     props.pad === true &&
     props.hasIcon &&
     !props.hasLabel &&
-    // TO DO theme object
+    // TO DO theme object ? theme for padding?
     `
     padding: ${props.theme.global.edgeSize.small};
   `}

@@ -289,10 +289,10 @@ export const DataForm = ({
         {footer !== false && updateOn === 'submit' && (
           <Footer
             flex={false}
-            // TO DO theme object
+            // TO DO theme object thinking..
             margin={{ top: 'medium' }}
             pad={{ horizontal: pad, bottom: pad }}
-            // TO DO theme object
+            // TO DO theme object thinking..
             gap="small"
           >
             <Button

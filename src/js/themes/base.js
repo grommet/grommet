@@ -458,6 +458,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
     },
     box: {
+      border: {
+        size: 'xsmall',
+      },
       responsiveBreakpoint: 'small', // when we switch rows to columns
       // extend: undefined,
     },
@@ -806,6 +809,16 @@ export const generate = (baseSpacing = 24, scale = 6) => {
     },
     chart: {
       color: 'graph-0',
+      height: 'small',
+      thickness: 'medium',
+      width: 'medium',
+      pad: {
+        xlarge: 'large',
+        large: 'medium',
+        medium: 'small',
+        small: 'xsmall',
+        xsmall: 'xxsmall',
+      },
       // extend: undefined,
     },
     checkBox: {
@@ -863,9 +876,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
     },
     checkBoxGroup: {
       container: {
-        // any box props
+        //   // any box props
+        //   extend: undefined,
         gap: 'small',
-        // extend: undefined,
       },
     },
     clock: {
@@ -930,6 +943,17 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       drop: {
         pad: 'small',
       },
+      toolbar: {
+        gap: 'medium',
+      },
+    },
+    dataChart: {
+      gap: 'small',
+      legend: {
+        margin: { vertical: 'small' },
+        gap: 'small',
+        pad: { horizontal: 'small', vertical: 'xsmall' },
+      },
     },
     dataFilter: {
       rangeSelector: {
@@ -938,6 +962,14 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
       selectMultiple: {
         dropHeight: 'medium',
+      },
+    },
+    dataFilters: {
+      content: {
+        width: 'medium',
+      },
+      clearControls: {
+        margin: { start: 'small' },
       },
     },
     dataSummary: {
@@ -949,6 +981,12 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
     },
     dateInput: {
+      button: {
+        margin: {
+          right: 'small',
+          left: 'small',
+        },
+      },
       container: {
         round: 'xxsmall',
       },
@@ -983,6 +1021,11 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         gap: 'xsmall',
         // extend: undefined,
       },
+      footer: {
+        pad: 'none',
+        size: 'xsmall',
+        verticalAlign: 'top',
+      },
       groupHeader: {
         // background: undefined,
         // border: undefined,
@@ -1000,6 +1043,11 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         //   weight: undefined,
         //   size: undefined,
         // },
+        cell: {
+          size: 'xxsmall',
+          pad: 'none',
+          verticalAlign: 'top',
+        },
         gap: 'small',
         // hover: {
         //   background: undefined,
@@ -1040,18 +1088,51 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           right: `-${baseSpacing / 2}px`, // equivalent to "small"
         },
       },
+      search: {
+        width: 'medium',
+        pad: {
+          horizontal: 'small',
+        },
+      },
+      clearPad: {
+        horizontal: 'small',
+      },
+    },
+    dataTableColumns: {
+      tabs: {
+        pad: 'small',
+        justify: 'start',
+      },
+      search: {
+        pad: {
+          vertical: 'small',
+        },
+        gap: 'xsmall',
+      },
+      order: {
+        pad: {
+          top: 'small',
+        },
+      },
     },
     diagram: {
-      // extend: undefined,
+      // extend: und`efined,
       line: {
         color: 'graph-0',
       },
+    },
+    distribution: {
+      gap: 'xsmall',
     },
     // drop: {
     //   extend: undefined,
     //   maxHeight: undefined,
     // },
     fileInput: {
+      anchor: {
+        margin: 'small',
+      },
+
       // background: {},
       border: {
         // color: undefined,
@@ -1077,6 +1158,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       // pad: {},
       label: {
         margin: 'small',
+        gap: 'xsmall',
+        align: 'center',
+        direction: 'row',
         // extend: undefined,
       },
       message: {
@@ -1285,6 +1369,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       item: {
         // background: undefined,
         border: 'horizontal',
+        gap: 'medium',
         disabled: {
           color: 'status-disabled',
           cursor: 'default',
@@ -1311,6 +1396,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       // extend: undefined,
     },
     maskedInput: {
+      option: {
+        pad: { horizontal: 'small', vertical: 'xsmall' },
+      },
       // container: {
       //   extend: undefined,
       // },
@@ -1350,11 +1438,19 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         // up: undefined,
         // color: { dark: undefined, light: undefined },
       },
+      item: {
+        pad: 'small',
+      },
+      label: {
+        pad: 'small',
+        gap: 'small',
+      },
     },
     meter: {
       color: 'graph-0',
       // colors: [] || colors: ['graph-0', 'graph-1', 'graph-2', 'graph-3'],
       // extend: undefined,
+      // gap: undefined,
     },
     nameValueList: {
       gap: {
@@ -1396,6 +1492,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
     notification: {
       actions: {
         // any anchor props
+        margin: { right: 'xsmall' },
       },
       direction: 'column',
       container: {
@@ -1406,6 +1503,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           color: 'background-front',
         },
       },
+      gap: 'small',
       global: {
         direction: 'row',
         container: {
@@ -1445,7 +1543,8 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
       message: {
         // any text props
-        margin: 'none',
+        // was this already here? where is it defined
+        margin: { right: 'xsmall' },
         // fill: undefined,
       },
       close: {
@@ -1788,10 +1887,17 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           },
         },
       },
-      // container: {
-      //   // any box props,
-      //   extend: undefined,
-      // },
+      container: {
+        // any box props,
+        gap: { column: 'xsmall', row: 'small' },
+        // extend: undefined,
+        controls: {
+          container: {
+            gap: { column: 'xsmall', row: 'small' },
+          },
+        },
+      },
+      // these both seem we can use the same
       controls: {
         align: 'center',
         direction: 'row',
@@ -2095,6 +2201,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         //   color: undefined,
         // },
         // extend: undefined,
+        overflow: {
+          pad: { horizontal: 'small', vertical: 'xsmall' },
+        },
       },
       panel: {
         // extend: undefined,
@@ -2262,6 +2371,12 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       divider: {
         color: 'border',
       },
+    },
+    toolbar: {
+      small: {
+        gap: 'small',
+      },
+      gap: 'small',
     },
     video: {
       captions: {

@@ -1,4 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`InfiniteScroll basic 1`] = `
 .c0 {
@@ -117,8 +117,7 @@ exports[`InfiniteScroll replace 1`] = `
 </div>
 `;
 
-exports[`InfiniteScroll should render expected items when supplied
-  assortment of mixed items 1`] = `
+exports[`InfiniteScroll should render expected items when supplied\\n  assortment of mixed items 1`] = `
 .c1 {
   display: flex;
   box-sizing: border-box;
@@ -681,8 +680,7 @@ exports[`Number of Items Rendered Should only contain unique items (i.e no dupli
 </div>
 `;
 
-exports[`show scenarios When show, should only contain unique 
-          items (i.e no duplicates) 1`] = `
+exports[`show scenarios When show, should only contain unique \\n          items (i.e no duplicates) 1`] = `
 .c1 {
   display: flex;
   box-sizing: border-box;

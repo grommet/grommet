@@ -1,4 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`NameValuePair should render name when name is JSX Element 1`] = `
 .c2 {
@@ -232,8 +232,7 @@ exports[`NameValuePair should render name when name is typeof string 1`] = `
 </div>
 `;
 
-exports[`NameValuePair should render value when provided as child of type 
-  string or number 1`] = `
+exports[`NameValuePair should render value when provided as child of type \\n  string or number 1`] = `
 .c2 {
   display: flex;
   box-sizing: border-box;
@@ -478,11 +477,10 @@ exports[`NameValuePair should render value when provided as child of type JSX El
             stroke-width="24"
           />
           <path
-            d="M 0,12 L 307.2,12"
-            fill="none"
-            stroke="#6FFFB0"
-            stroke-linecap="butt"
-            stroke-width="24"
+            d="M 0,24 L 0,0 L 307.2,0 L 307.2,24 Z"
+            fill="#6FFFB0"
+            stroke="none"
+            stroke-width="0"
           />
         </svg>
       </dd>

@@ -440,8 +440,7 @@ const List = React.forwardRef(
                       direction: 'row',
                       align: 'center',
                       justify: 'between',
-                      // TO DO theme object
-                      gap: 'medium',
+                      gap: theme.list?.item?.gap,
                     };
                   }
                 } else if (typeof item === 'object') {
@@ -491,8 +490,7 @@ const List = React.forwardRef(
                     direction: 'row',
                     align: secondaryKey ? 'start' : 'center',
                     justify: 'between',
-                    // TO DO theme object
-                    gap: 'medium',
+                    gap: theme.list.item.gap,
                   };
                 }
 
@@ -683,8 +681,7 @@ const List = React.forwardRef(
                     direction: 'row',
                     align:
                       (defaultItemProps && defaultItemProps.align) || 'center',
-                    // TO DO theme object
-                    gap: 'medium',
+                    gap: theme.list.item.gap,
                   };
                 }
 
@@ -723,8 +720,7 @@ const List = React.forwardRef(
                     direction: 'row',
                     align:
                       (defaultItemProps && defaultItemProps.align) || 'center',
-                    // TO DO theme object
-                    gap: 'medium',
+                    gap: theme.list.item.gap,
                   };
                   displayPinned = (
                     <Box
