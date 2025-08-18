@@ -71,6 +71,7 @@ const StyledAnchor = styled.a.withConfig(styledComponentsConfig)`
   ${(props) =>
     props.hasIcon &&
     !props.hasLabel &&
+    // TO DO theme obj
     `
     padding: ${props.theme.global.edgeSize.small};
   `}

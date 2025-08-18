@@ -66,6 +66,7 @@ const StyledTableCell = styled.td.withConfig(styledComponentsConfig)`
 
 const StyledTableDataCaption = styled.caption.withConfig(
   styledComponentsConfig,
+  // TO DO theme obj
 )`
   margin-bottom: ${(props) => props.theme.global.edgeSize.xxsmall};
 `;
