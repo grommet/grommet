@@ -2453,6 +2453,7 @@ exports[`List disabled Should apply disabled styling to items when data are chil
   font-size: 1.125rem;
   line-height: 1.5rem;
   font-weight: bold;
+  font-weight: 500;
 }
 
 .c1 {
@@ -5156,7 +5157,7 @@ exports[`List events should paginate 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c7 {
-    column-gap: 2px;
+    column-gap: 3px;
   }
 }
 
@@ -6052,7 +6053,7 @@ exports[`List events should render correct num items per page (step) 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c7 {
-    column-gap: 2px;
+    column-gap: 3px;
   }
 }
 
@@ -6823,7 +6824,7 @@ exports[`List events should render new data when page changes 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c7 {
-    column-gap: 2px;
+    column-gap: 3px;
   }
 }
 
@@ -9413,7 +9414,7 @@ exports[`List events should render new data when page changes 2`] = `
         class="StyledBox-sc-13pk1d4-0 fBuFhc"
       >
         <ul
-          class="StyledBox-sc-13pk1d4-0 UJDIX"
+          class="StyledBox-sc-13pk1d4-0 doCASy"
         >
           <li
             class="StyledPageControl__StyledContainer-sc-1vlfaez-1 fVNJEO"
@@ -10027,7 +10028,7 @@ exports[`List events should show correct item index when "show" is a number 1`] 
 
 @media only screen and (max-width: 768px) {
   .c7 {
-    column-gap: 2px;
+    column-gap: 3px;
   }
 }
 
@@ -10923,7 +10924,7 @@ exports[`List events should show correct page when "show" is { page: # } 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c7 {
-    column-gap: 2px;
+    column-gap: 3px;
   }
 }
 
@@ -23775,6 +23776,7 @@ exports[`List pinned Should apply pinned styling to items when data are children
   font-size: 1.125rem;
   line-height: 1.5rem;
   font-weight: bold;
+  font-weight: 500;
 }
 
 .c1 {
