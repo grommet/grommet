@@ -87,11 +87,9 @@ exports[`Sidebar all 1`] = `
   >
     <div
       class="c2 StyledAvatar-sc-1suyamb-1"
-      role="figure"
     >
       <img
         class="c3"
-        role="presentation"
         src="test.png"
       />
     </div>
@@ -110,6 +108,7 @@ exports[`Sidebar all 1`] = `
       class="c2 StyledAvatar-sc-1suyamb-1"
     >
       <span
+        aria-label="Avatar for SY"
         class="c6 "
       >
         SY
@@ -189,11 +188,9 @@ exports[`Sidebar children 1`] = `
     >
       <div
         class="c3 StyledAvatar-sc-1suyamb-1"
-        role="figure"
       >
         <img
           class="c4"
-          role="presentation"
           src="test.png"
         />
       </div>
@@ -288,11 +285,9 @@ exports[`Sidebar footer 1`] = `
     />
     <div
       class="c4 StyledAvatar-sc-1suyamb-1"
-      role="figure"
     >
       <img
         class="c5"
-        role="presentation"
         src="test.png"
       />
     </div>
@@ -379,11 +374,9 @@ exports[`Sidebar header 1`] = `
   >
     <div
       class="c2 StyledAvatar-sc-1suyamb-1"
-      role="figure"
     >
       <img
         class="c3"
-        role="presentation"
         src="test.png"
       />
     </div>
