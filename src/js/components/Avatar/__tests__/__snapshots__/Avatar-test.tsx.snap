@@ -35,12 +35,6 @@ exports[`Avatar a11yTitle renders 1`] = `
   object-fit: contain;
 }
 
-@media only screen and (max-width: 768px) {
-  .c1 {
-    border-radius: 9999px;
-  }
-}
-
 <div
   class="c0"
 >
@@ -92,12 +86,6 @@ exports[`Avatar apply imageProps to avatar 1`] = `
   overflow: hidden;
   object-fit: contain;
   opacity: 0.8;
-}
-
-@media only screen and (max-width: 768px) {
-  .c1 {
-    border-radius: 9999px;
-  }
 }
 
 <div
@@ -179,12 +167,6 @@ exports[`Avatar icon renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width: 768px) {
-  .c1 {
-    border-radius: 9999px;
-  }
-}
-
 <div
   class="c0"
 >
@@ -234,12 +216,6 @@ exports[`Avatar renders 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-}
-
-@media only screen and (max-width: 768px) {
-  .c1 {
-    border-radius: 9999px;
-  }
 }
 
 <div
@@ -676,60 +652,6 @@ exports[`Avatar size 1`] = `
   object-fit: contain;
 }
 
-@media only screen and (max-width: 768px) {
-  .c1 {
-    border-radius: 9999px;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .c3 {
-    border-radius: 9999px;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .c4 {
-    border-radius: 9999px;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .c5 {
-    border-radius: 9999px;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .c6 {
-    border-radius: 9999px;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .c7 {
-    border-radius: 9999px;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .c8 {
-    border-radius: 9999px;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .c9 {
-    border-radius: 9999px;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .c10 {
-    border-radius: 9999px;
-  }
-}
-
 <div
   class="c0"
 >
@@ -1099,18 +1021,6 @@ exports[`Avatar text renders 1`] = `
   font-size: 1.5rem;
   line-height: 1.875rem;
   font-weight: 400;
-}
-
-@media only screen and (max-width: 768px) {
-  .c1 {
-    border-radius: 9999px;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .c3 {
-    border-radius: 9999px;
-  }
 }
 
 <div
