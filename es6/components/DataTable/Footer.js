@@ -8,6 +8,7 @@ import { Cell } from './Cell';
 import { StyledDataTableCell, StyledDataTableFooter } from './StyledDataTable';
 import { useThemeValue } from '../../utils/useThemeValue';
 var Footer = /*#__PURE__*/forwardRef(function (_ref, ref) {
+  var _theme$dataTable$expa;
   var cellProps = _ref.cellProps,
     columns = _ref.columns,
     fill = _ref.fill,
@@ -23,13 +24,15 @@ var Footer = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var pin = pinProp ? ['bottom'] : [];
   var _useThemeValue = useThemeValue(),
     passThemeFlag = _useThemeValue.passThemeFlag;
+  var _useThemeValue2 = useThemeValue(),
+    theme = _useThemeValue2.theme;
   return /*#__PURE__*/React.createElement(StyledDataTableFooter, _extends({
     ref: ref,
     fillProp: fill,
     pin: pinProp
   }, rest), /*#__PURE__*/React.createElement(TableRow, null, groups && /*#__PURE__*/React.createElement(TableCell, {
     plain: true,
-    size: "xxsmall",
+    size: (_theme$dataTable$expa = theme.dataTable.expand) == null ? void 0 : _theme$dataTable$expa.size,
     pad: "none",
     verticalAlign: "top",
     background: cellProps.background,

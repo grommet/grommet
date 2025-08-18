@@ -99,6 +99,7 @@ var StyledContentBox = styled(Box).withConfig({
   return props.extend;
 });
 var Header = /*#__PURE__*/forwardRef(function (_ref2, ref) {
+  var _theme$dataTable$expa;
   var allowSelectAll = _ref2.allowSelectAll,
     cellProps = _ref2.cellProps,
     columns = _ref2.columns,
@@ -240,7 +241,7 @@ var Header = /*#__PURE__*/forwardRef(function (_ref2, ref) {
     onChange: onChangeSelection,
     pad: cellProps.pad
   })), rowDetails && /*#__PURE__*/React.createElement(TableCell, {
-    size: "xxsmall",
+    size: (_theme$dataTable$expa = theme.dataTable.expand) == null ? void 0 : _theme$dataTable$expa.size,
     plain: true,
     pad: "none"
   }), columns.map(function (_ref4) {
@@ -279,6 +280,7 @@ var Header = /*#__PURE__*/forwardRef(function (_ref2, ref) {
     }
     var ariaSort;
     if (onSort && sortable !== false) {
+      var _theme$dataTable$sort;
       var Icon;
       var iconAriaLabel;
       if (onSort && sortable !== false) {
@@ -314,7 +316,7 @@ var Header = /*#__PURE__*/forwardRef(function (_ref2, ref) {
       }, passThemeFlag), /*#__PURE__*/React.createElement(Box, {
         direction: "row",
         align: "center",
-        gap: "xsmall",
+        gap: (_theme$dataTable$sort = theme.dataTable.sort) == null ? void 0 : _theme$dataTable$sort.gap,
         justify: align
       }, content, Icon && /*#__PURE__*/React.createElement(Icon, {
         "aria-label": iconAriaLabel

@@ -1056,6 +1056,9 @@ var generate = exports.generate = function generate(baseSpacing, scale) {
       //   }
       //   selected: undefined,
       // },
+      expand: {
+        size: 'xxsmall'
+      },
       pinned: {
         // body: {
         //    background: undefined,
@@ -1134,6 +1137,19 @@ var generate = exports.generate = function generate(baseSpacing, scale) {
         //     size: undefined,
         //   },
         // },
+      },
+      search: {
+        pad: {
+          left: 'small'
+        },
+        text: {
+          pad: {
+            horizontal: 'small'
+          }
+        }
+      },
+      sort: {
+        gap: 'xsmall'
       }
     },
     dataTableColumns: {

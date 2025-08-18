@@ -9,6 +9,7 @@ import { MessageContext } from '../../contexts/MessageContext';
 import { normalizeColor } from '../../utils';
 import { useThemeValue } from '../../utils/useThemeValue';
 var Searcher = function Searcher(_ref) {
+  var _theme$dataTable$sear, _theme$dataTable$sear2;
   var filtering = _ref.filtering,
     filters = _ref.filters,
     focusIndicator = _ref.focusIndicator,
@@ -59,9 +60,7 @@ var Searcher = function Searcher(_ref) {
     // padding right is not needed any longer. There is margin
     // right set already on the container, see Header.js
     ,
-    pad: {
-      left: 'small'
-    }
+    pad: (_theme$dataTable$sear = theme.dataTable.search) == null ? void 0 : _theme$dataTable$sear.pad
   }, /*#__PURE__*/React.createElement(TextInput, {
     name: "search-" + property,
     a11yTitle: a11yTitle,
@@ -75,9 +74,7 @@ var Searcher = function Searcher(_ref) {
     }
   }))) : /*#__PURE__*/React.createElement(React.Fragment, null, filters[property] ? /*#__PURE__*/React.createElement(Box, {
     flex: false,
-    pad: {
-      horizontal: 'small'
-    },
+    pad: (_theme$dataTable$sear2 = theme.dataTable.search) == null || (_theme$dataTable$sear2 = _theme$dataTable$sear2.text) == null ? void 0 : _theme$dataTable$sear2.pad,
     direction: "row",
     align: "center"
   }, /*#__PURE__*/React.createElement(Text, null, filters[property])) : null, /*#__PURE__*/React.createElement(Button, {

@@ -915,6 +915,9 @@ export interface ThemeType {
       };
     };
     container?: BoxProps;
+    expand?: {
+      size?: string;
+    };
     header?: {
       background?: BackgroundType;
       border?: BorderType;
@@ -982,6 +985,15 @@ export interface ThemeType {
     };
     primary?: {
       weight?: string;
+    };
+    search?: {
+      pad?: PadType;
+      text?: {
+        pad?: PadType;
+      };
+    };
+    sort?: {
+      gap?: GapType;
     };
   };
   dataTableColumns?: {

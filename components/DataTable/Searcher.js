@@ -14,6 +14,7 @@ var _utils = require("../../utils");
 var _useThemeValue2 = require("../../utils/useThemeValue");
 function _interopRequireWildcard(e, t) { if ("function" == typeof WeakMap) var r = new WeakMap(), n = new WeakMap(); return (_interopRequireWildcard = function _interopRequireWildcard(e, t) { if (!t && e && e.__esModule) return e; var o, i, f = { __proto__: null, "default": e }; if (null === e || "object" != typeof e && "function" != typeof e) return f; if (o = t ? n : r) { if (o.has(e)) return o.get(e); o.set(e, f); } for (var _t in e) "default" !== _t && {}.hasOwnProperty.call(e, _t) && ((i = (o = Object.defineProperty) && Object.getOwnPropertyDescriptor(e, _t)) && (i.get || i.set) ? o(f, _t, i) : f[_t] = e[_t]); return f; })(e, t); }
 var Searcher = exports.Searcher = function Searcher(_ref) {
+  var _theme$dataTable$sear, _theme$dataTable$sear2;
   var filtering = _ref.filtering,
     filters = _ref.filters,
     focusIndicator = _ref.focusIndicator,
@@ -64,9 +65,7 @@ var Searcher = exports.Searcher = function Searcher(_ref) {
     // padding right is not needed any longer. There is margin
     // right set already on the container, see Header.js
     ,
-    pad: {
-      left: 'small'
-    }
+    pad: (_theme$dataTable$sear = theme.dataTable.search) == null ? void 0 : _theme$dataTable$sear.pad
   }, /*#__PURE__*/_react["default"].createElement(_TextInput.TextInput, {
     name: "search-" + property,
     a11yTitle: a11yTitle,
@@ -80,9 +79,7 @@ var Searcher = exports.Searcher = function Searcher(_ref) {
     }
   }))) : /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, filters[property] ? /*#__PURE__*/_react["default"].createElement(_Box.Box, {
     flex: false,
-    pad: {
-      horizontal: 'small'
-    },
+    pad: (_theme$dataTable$sear2 = theme.dataTable.search) == null || (_theme$dataTable$sear2 = _theme$dataTable$sear2.text) == null ? void 0 : _theme$dataTable$sear2.pad,
     direction: "row",
     align: "center"
   }, /*#__PURE__*/_react["default"].createElement(_Text.Text, null, filters[property])) : null, /*#__PURE__*/_react["default"].createElement(_Button.Button, {
