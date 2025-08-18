@@ -2078,10 +2078,6 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       gap: 'large',
       pad: 'small',
     },
-    sidebar: {
-      gap: 'large',
-      pad: 'small',
-    },
     skeleton: {
       border: false,
       colors: {
