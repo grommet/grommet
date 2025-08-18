@@ -400,7 +400,7 @@ const Header = forwardRef(
                     <Box
                       direction="row"
                       align="center"
-                      gap={theme.dataTable.sorter?.gap}
+                      gap={theme.dataTable.sort?.gap}
                       justify={align}
                     >
                       {content}

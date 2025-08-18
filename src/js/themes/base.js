@@ -1014,7 +1014,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           },
         },
       },
-      sorter: {
+      sort: {
         gap: 'xsmall',
       },
     },

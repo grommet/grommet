@@ -947,7 +947,7 @@ export interface ThemeType {
         pad?: PadType;
       };
     };
-    sorter?: {
+    sort?: {
       gap?: GapType;
     };
   };
