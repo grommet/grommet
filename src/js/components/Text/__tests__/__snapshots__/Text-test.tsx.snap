@@ -54,6 +54,60 @@ exports[`Text component with tip renders tip 1`] = `
 </div>
 `;
 
+exports[`Text component with tip renders tip on hover 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+@media only screen and (max-width: 768px) {
+
+}
+
+@media only screen and (max-width: 768px) {
+
+}
+
+@media only screen and (max-width: 768px) {
+
+}
+
+@media only screen and (max-width: 768px) {
+
+}
+
+@media only screen and (max-width: 768px) {
+
+}
+
+@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
+
+}
+
+<div
+  class="c0"
+>
+  <span
+    aria-describedby="«r15»"
+    aria-label="tooltip"
+    class="c1"
+    tabindex="0"
+  >
+    Default Tip
+  </span>
+</div>
+`;
+
 exports[`accepts ref 1`] = `
 .c0 {
   font-size: 18px;

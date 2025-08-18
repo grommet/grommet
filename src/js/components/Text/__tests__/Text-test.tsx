@@ -5,6 +5,7 @@ import 'jest-styled-components';
 import 'jest-axe/extend-expect';
 import 'regenerator-runtime/runtime';
 
+import * as UseIdModule from '../../../utils/useId.js';
 import { Grommet } from '../../Grommet';
 import { Text } from '..';
 
@@ -160,17 +161,8 @@ test('renders weight', () => {
 });
 
 describe('Text component with tip', () => {
-  let mathRandomSpy: jest.SpyInstance<number, []>;
-
-  beforeAll(() => {
-    mathRandomSpy = jest.spyOn(Math, 'random').mockReturnValue(0.123456789);
-  });
-
-  afterAll(() => {
-    mathRandomSpy.mockRestore();
-  });
-
-  test('renders tip', () => {
+  test('renders tip on hover', () => {
+    jest.spyOn(UseIdModule, 'useId').mockReturnValue('fixed-id-123');
     const { container, getByText } = render(
       <Grommet>
         <Text tip="tooltip">Default Tip</Text>
@@ -179,6 +171,7 @@ describe('Text component with tip', () => {
 
     fireEvent.mouseOver(getByText('Default Tip'));
     expect(container.firstChild).toMatchSnapshot();
+    (UseIdModule.useId as jest.Mock).mockRestore();
   });
 });
 
