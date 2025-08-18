@@ -104,12 +104,6 @@ exports[`RangeSelector basic 1`] = `
   user-select: none;
 }
 
-@media only screen and (max-width: 768px) {
-  .c7 {
-    border-radius: 9999px;
-  }
-}
-
 <div
   class="c0"
 >
@@ -632,12 +626,6 @@ exports[`RangeSelector color 1`] = `
   user-select: none;
 }
 
-@media only screen and (max-width: 768px) {
-  .c7 {
-    border-radius: 9999px;
-  }
-}
-
 <div
   class="c0"
 >
@@ -879,12 +867,6 @@ exports[`RangeSelector direction 1`] = `
 
 .c2 {
   user-select: none;
-}
-
-@media only screen and (max-width: 768px) {
-  .c7 {
-    border-radius: 9999px;
-  }
 }
 
 <div
@@ -1139,12 +1121,6 @@ exports[`RangeSelector handle keyboard 1`] = `
   user-select: none;
 }
 
-@media only screen and (max-width: 768px) {
-  .c7 {
-    border-radius: 9999px;
-  }
-}
-
 <div
   class="c0"
 >
@@ -1326,12 +1302,6 @@ exports[`RangeSelector handle mouse 1`] = `
   user-select: none;
 }
 
-@media only screen and (max-width: 768px) {
-  .c7 {
-    border-radius: 9999px;
-  }
-}
-
 <div
   class="c0"
 >
@@ -1511,12 +1481,6 @@ exports[`RangeSelector handle touch gestures 1`] = `
 
 .c2 {
   user-select: none;
-}
-
-@media only screen and (max-width: 768px) {
-  .c7 {
-    border-radius: 9999px;
-  }
 }
 
 <div
@@ -1711,12 +1675,6 @@ exports[`RangeSelector invert 1`] = `
 
 .c2 {
   user-select: none;
-}
-
-@media only screen and (max-width: 768px) {
-  .c7 {
-    border-radius: 9999px;
-  }
 }
 
 <div
@@ -1998,12 +1956,6 @@ exports[`RangeSelector label 1`] = `
 
 .c4 {
   user-select: none;
-}
-
-@media only screen and (max-width: 768px) {
-  .c9 {
-    border-radius: 9999px;
-  }
 }
 
 <div
@@ -2290,12 +2242,6 @@ exports[`RangeSelector max 1`] = `
   user-select: none;
 }
 
-@media only screen and (max-width: 768px) {
-  .c7 {
-    border-radius: 9999px;
-  }
-}
-
 <div
   class="c0"
 >
@@ -2475,12 +2421,6 @@ exports[`RangeSelector min 1`] = `
 
 .c2 {
   user-select: none;
-}
-
-@media only screen and (max-width: 768px) {
-  .c7 {
-    border-radius: 9999px;
-  }
 }
 
 <div
@@ -2688,12 +2628,6 @@ exports[`RangeSelector opacity 1`] = `
 
 .c2 {
   user-select: none;
-}
-
-@media only screen and (max-width: 768px) {
-  .c7 {
-    border-radius: 9999px;
-  }
 }
 
 <div
@@ -4703,12 +4637,6 @@ exports[`RangeSelector should not have accessibility violations 1`] = `
   user-select: none;
 }
 
-@media only screen and (max-width: 768px) {
-  .c7 {
-    border-radius: 9999px;
-  }
-}
-
 <div
   class="c0"
 >
@@ -5636,12 +5564,6 @@ exports[`RangeSelector step renders correct values 1`] = `
 
 .c2 {
   user-select: none;
-}
-
-@media only screen and (max-width: 768px) {
-  .c7 {
-    border-radius: 9999px;
-  }
 }
 
 <div
