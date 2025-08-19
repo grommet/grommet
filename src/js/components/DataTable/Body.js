@@ -124,18 +124,11 @@ const Row = memo(
             <Cell
               background={
                 (isSelected && cellProps.selected.background) ||
+                (focused === index && cellProps.background) ||
+                cellProps.background ||
                 (pinnedOffset?._grommetDataTableSelect &&
-                  cellProps.pinned.background) ||
-                cellProps.background
+                  cellProps.pinned.background)
               }
-              // should this background also be the same ??
-              // background={
-              //   (isSelected && cellProps.selected.background) ||
-              //   (focused === index && cellProps.background) ||
-              //   cellProps.background ||
-              //   (pinnedOffset?._grommetDataTableSelect &&
-              //     cellProps.pinned.background)
-              // }
               border={cellProps.pinned.border || cellProps.border}
               pinnedOffset={pinnedOffset?._grommetDataTableSelect}
               aria-disabled={isDisabled || !onSelect || undefined}
