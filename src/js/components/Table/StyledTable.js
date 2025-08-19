@@ -67,7 +67,14 @@ const StyledTableCell = styled.td.withConfig(styledComponentsConfig)`
 const StyledTableDataCaption = styled.caption.withConfig(
   styledComponentsConfig,
 )`
-  margin-bottom: ${(props) => props.theme.global.edgeSize.xxsmall};
+  ${(props) =>
+    edgeStyle(
+      'margin',
+      props.theme.table.caption.margin,
+      props.responsive,
+      props.theme.global.edgeSize.responsiveBreakpoint,
+      props.theme,
+    )}
 `;
 
 const StyledTableRow = styled.tr.withConfig(styledComponentsConfig)``;

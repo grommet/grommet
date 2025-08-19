@@ -1920,6 +1920,9 @@ export interface ThemeType {
     };
   };
   table?: {
+    caption?: {
+      margin?: MarginType;
+    };
     header?: {
       background?: BackgroundType;
       extend?: ExtendType;
