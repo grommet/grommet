@@ -72,7 +72,7 @@ const StyledAnchor = styled.a.withConfig(styledComponentsConfig)`
     props.hasIcon &&
     !props.hasLabel &&
     `
-    padding: ${props.theme.global.edgeSize.small};
+    padding: ${props.theme.anchor.iconOnly.pad};
   `}
   ${(props) => props.disabled && disabledStyle}
   ${(props) => props.focus && focusStyle()}

@@ -416,6 +416,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       // icon: {
       //   color: undefined
       // },
+      iconOnly: {
+        pad: 'small',
+      },
       textDecoration: 'none',
       fontWeight: 600,
       // size: {
