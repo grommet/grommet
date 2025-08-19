@@ -76,7 +76,6 @@ const AccordionPanel = forwardRef(
         bottom: `-${parseMetricToNum(
           // in case border.size defined as a t-shirt size
           // or in case border size is a custom size i.e. '5px'
-          // should this be theme object????
           theme.global.borderSize[panelBorder.size] ||
             panelBorder.size ||
             theme.global.borderSize.xsmall, // '-1px'
