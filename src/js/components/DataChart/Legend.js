@@ -22,7 +22,7 @@ const Legend = ({
     [series, seriesStyles],
   );
   return (
-    <Box Box margin={{ top: 'small' }} direction="row" wrap gap="small">
+    <Box margin={{ top: 'small' }} direction="row" wrap gap="small">
       {series.map(({ property, label }) => {
         const isActive = property === activeProperty;
         const swatchProps = {};
