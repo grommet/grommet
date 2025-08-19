@@ -124,13 +124,18 @@ const Row = memo(
             <Cell
               background={
                 (isSelected && cellProps.selected.background) ||
-                (active &&
-                  columns.pin &&
-                  theme.dataTable?.pinned?.body?.hover?.background) ||
-                (active && cellProps.active?.background) ||
-                (columns.pin && cellProps.pinned.background) ||
+                (pinnedOffset?._grommetDataTableSelect &&
+                  cellProps.pinned.background) ||
                 cellProps.background
               }
+              // should this background also be the same ??
+              // background={
+              //   (isSelected && cellProps.selected.background) ||
+              //   (focused === index && cellProps.background) ||
+              //   cellProps.background ||
+              //   (pinnedOffset?._grommetDataTableSelect &&
+              //     cellProps.pinned.background)
+              // }
               border={cellProps.pinned.border || cellProps.border}
               pinnedOffset={pinnedOffset?._grommetDataTableSelect}
               aria-disabled={isDisabled || !onSelect || undefined}
@@ -185,36 +190,39 @@ const Row = memo(
               verticalAlign={verticalAlign}
             />
           )}
-          {columns.map((column) => (
-            <Cell
-              key={column.property}
-              background={
-                (isSelected && cellProps.selected.background) ||
-                (active &&
-                  column.pin &&
-                  theme.dataTable?.pinned?.body?.hover?.background) ||
-                (active && cellProps.active?.background) ||
-                (column.pin && cellProps.pinned.background) ||
-                cellProps.background
-              }
-              border={
-                (column.pin && cellProps.pinned.border) || cellProps.border
-              }
-              context="body"
-              column={column}
-              datum={datum}
-              isSelected={isSelected}
-              pad={(column.pin && cellProps.pinned.pad) || cellProps.pad}
-              pinnedOffset={pinnedOffset && pinnedOffset[column.property]}
-              primaryProperty={primaryProperty}
-              scope={
-                column.primary || column.property === primaryProperty
-                  ? 'row'
-                  : undefined
-              }
-              verticalAlign={verticalAlign}
-            />
-          ))}
+          {columns.map((column) => {
+            const cellBackground =
+              (isSelected && cellProps.selected.background) ||
+              (isSelected && cellProps.background) ||
+              (active &&
+                column.pin &&
+                theme.dataTable.pinned?.body?.hover?.background) ||
+              (focused === index && cellProps.background) ||
+              (column.pin && cellProps.pinned.background) ||
+              cellProps.background;
+            return (
+              <Cell
+                key={column.property}
+                background={cellBackground}
+                border={
+                  (column.pin && cellProps.pinned.border) || cellProps.border
+                }
+                context="body"
+                column={column}
+                datum={datum}
+                isSelected={isSelected}
+                pad={(column.pin && cellProps.pinned.pad) || cellProps.pad}
+                pinnedOffset={pinnedOffset && pinnedOffset[column.property]}
+                primaryProperty={primaryProperty}
+                scope={
+                  column.primary || column.property === primaryProperty
+                    ? 'row'
+                    : undefined
+                }
+                verticalAlign={verticalAlign}
+              />
+            );
+          })}
         </StyledDataTableRow>
         {rowDetails && isRowExpanded && (
           <StyledDataTableRow key={`${index.toString()}_expand`}>

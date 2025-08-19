@@ -921,10 +921,10 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       // },
       pinned: {
         body: {
-          // hover: {
-          //   background: undefined,
-          // },
-          // background: undefined,
+          hover: {
+            background: '#89CFF0',
+          },
+          background: 'pink',
           //  extend: undefined,
         },
         header: {
