@@ -930,6 +930,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       drop: {
         pad: 'small',
       },
+      toolbar: {
+        gap: 'medium',
+      },
     },
     dataFilter: {
       rangeSelector: {
@@ -940,13 +943,29 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         dropHeight: 'medium',
       },
     },
+    dataFilters: {
+      footer: {
+        actions: {
+          margin: { top: 'medium' },
+          gap: 'small',
+        },
+      },
+      clearControl: {
+        margin: { start: 'small' },
+      },
+      pad: 'medium',
+      width: { min: 'medium' },
+    },
     dateInput: {
+      button: {
+        margin: 'small',
+      },
       container: {
         round: 'xxsmall',
       },
-      // icon: {
-      //   size: undefined,
-      // },
+      icon: {
+        size: 'medium',
+      },
     },
     dataSummary: {
       margin: { vertical: 'xsmall' },
@@ -962,6 +981,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       //   }
       //   selected: undefined,
       // },
+      expand: {
+        size: 'xxsmall',
+      },
       pinned: {
         // body: {
         //    background: undefined,
@@ -1032,6 +1054,19 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         //   },
         // },
       },
+      search: {
+        pad: {
+          left: 'small',
+        },
+        text: {
+          pad: {
+            horizontal: 'small',
+          },
+        },
+      },
+      sort: {
+        gap: 'xsmall',
+      },
     },
     dataTableColumns: {
       tabs: {
@@ -1063,6 +1098,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
     //   maxHeight: undefined,
     // },
     fileInput: {
+      anchor: {
+        margin: 'small',
+      },
       // background: {},
       border: {
         // color: undefined,
@@ -1087,6 +1125,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
       // pad: {},
       label: {
+        gap: 'xsmall',
         margin: 'small',
         // extend: undefined,
       },
@@ -1807,10 +1846,11 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           },
         },
       },
-      // container: {
-      //   // any box props,
-      //   extend: undefined,
-      // },
+      container: {
+        gap: { column: 'xsmall', row: 'small' },
+        // any box props,
+        // extend: undefined,
+      },
       controls: {
         align: 'center',
         direction: 'row',
@@ -1822,6 +1862,11 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         // color: undefined,
         next: Next,
         previous: Previous,
+      },
+      step: {
+        container: {
+          gap: 'xsmall',
+        },
       },
     },
     paragraph: {
@@ -2010,10 +2055,41 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       step: 20,
     },
     selectMultiple: {
+      help: {
+        container: {
+          pad: 'xsmall',
+        },
+      },
       maxInline: 5,
       // listbox: {
       //   extend: () => undefined,
       // },
+      option: {
+        pad: 'xsmall',
+      },
+      search: {
+        pad: 'xsmall',
+      },
+      showMore: {
+        pad: {
+          horizontal: 'small',
+          bottom: 'small',
+          top: 'xsmall',
+        },
+      },
+      summary: {
+        gap: 'small',
+        height: {
+          min: 'xxsmall',
+        },
+        pad: 'xsmall',
+        showSelectedInline: {
+          pad: {
+            left: 'xsmall',
+            vertical: 'xsmall',
+          },
+        },
+      },
     },
     sidebar: {
       gap: 'large',
@@ -2077,6 +2153,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       //   color: undefined,
       // },
       // extend: undefined,
+      gap: 'small',
       hover: {
         // background: undefined,
         // extend: undefined,
@@ -2107,6 +2184,12 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         //   color: undefined,
         // },
         // extend: undefined,
+        nextButton: {
+          pad: { horizontal: 'small', vertical: 'xsmall' },
+        },
+        previousButton: {
+          pad: { horizontal: 'small', vertical: 'xsmall' },
+        },
       },
       panel: {
         // extend: undefined,
