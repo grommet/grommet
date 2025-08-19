@@ -744,13 +744,6 @@ export interface ThemeType {
     extend?: ExtendType;
     height?: string;
     thickness?: PadType;
-    thicknessPad?: {
-      xlarge?: PadType;
-      large?: PadType;
-      medium?: PadType;
-      small?: PadType;
-      xsmall?: PadType;
-    };
     width?: string;
   };
   checkBox?: {
@@ -854,13 +847,13 @@ export interface ThemeType {
         moderate?: string;
         light?: string;
         sparse?: string;
-        pad?: {
-          xlarge?: PadType;
-          large?: PadType;
-          medium?: PadType;
-          small?: PadType;
-          xsmall?: PadType;
-        };
+      };
+      thicknessPad?: {
+        xlarge?: PadType;
+        large?: PadType;
+        medium?: PadType;
+        small?: PadType;
+        xsmall?: PadType;
       };
     };
     digital?: {
