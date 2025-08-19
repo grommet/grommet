@@ -15,6 +15,7 @@ const disabledStyle = `
 
 const sizeStyle = (props) => {
   if (props.size) {
+    // TODO should this be theme object?
     const size = props.size || 'medium';
     const data = props.theme.text[size];
     return css`

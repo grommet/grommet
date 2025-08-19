@@ -1068,7 +1068,18 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         // },
       },
       search: {
+        pad: {
+          left: 'small',
+        },
+        text: {
+          pad: {
+            horizontal: 'small',
+          },
+        },
         width: 'medium',
+      },
+      sort: {
+        gap: 'xsmall',
       },
     },
     dataTableColumns: {
