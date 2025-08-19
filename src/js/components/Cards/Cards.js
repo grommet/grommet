@@ -53,7 +53,7 @@ const Cards = React.forwardRef(
         <Grid
           ref={ref}
           as={as}
-          {...theme.cards.grid}
+          gap={theme.cards.grid.gap}
           columns={size || theme.cards.grid.columns}
           margin={(!paginate && margin) || 'none'}
           pad={(!paginate && pad) || 'none'}

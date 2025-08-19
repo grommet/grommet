@@ -342,7 +342,7 @@ const Tabs = forwardRef(
               tabIndex={-1}
               onClick={() => moveByArrowKey('previous')}
             >
-              <Box pad={{ vertical: 'xsmall', horizontal: 'small' }}>
+              <Box pad={theme.tabs.header.previousButton.pad}>
                 <Previous
                   color={
                     disableLeftArrow
@@ -377,7 +377,7 @@ const Tabs = forwardRef(
               tabIndex={-1}
               onClick={() => moveByArrowKey('next')}
             >
-              <Box pad={theme.tabs.header?.overflow?.pad}>
+              <Box pad={theme.tabs.header?.nextButton?.pad}>
                 <Next
                   color={
                     disableRightArrow

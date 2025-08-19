@@ -301,7 +301,11 @@ Use the icon prop instead.`,
         disabled={disabled}
         plain
         icon={icon || MaskedInputIcon || <CalendarIcon size={iconSize} />}
-        margin={theme.dateInput.button?.margin}
+        margin={
+          reverse
+            ? { left: theme.dateInput.button?.margin }
+            : { right: theme.dateInput.button?.margin }
+        }
       />
     );
 

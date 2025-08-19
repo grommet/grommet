@@ -121,7 +121,9 @@ const SelectionSummary = ({
     <Box
       // TO DO theme object
       pad={
-        showSelectedInline ? { left: 'xsmall', vertical: 'xsmall' } : 'xsmall'
+        showSelectedInline
+          ? theme.selectMultiple?.summary?.showSelectedInline?.pad
+          : theme.selectMultiple?.summary?.pad
       }
       direction="row"
       justify="between"

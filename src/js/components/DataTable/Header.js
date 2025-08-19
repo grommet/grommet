@@ -300,13 +300,8 @@ const Header = forwardRef(
               )}
             </StyledDataTableCell>
           )}
-          {/* TO DO not sure about naming */}
           {rowDetails && (
-            <TableCell
-              size={theme.dataTable.header.cell.size}
-              plain
-              pad={theme.dataTable.header.cell.pad}
-            />
+            <TableCell size={theme.dataTable.expand?.size} plain pad="none" />
           )}
           {columns.map(
             ({
@@ -405,9 +400,8 @@ const Header = forwardRef(
                     <Box
                       direction="row"
                       align="center"
-                      // TO DO theme object
-                      gap={theme.dataTable.header.gap}
-                      justify={theme.dataTable.header.justify}
+                      gap={theme.dataTable.sort?.gap}
+                      justify={align}
                     >
                       {content}
                       {Icon && <Icon aria-label={iconAriaLabel} />}

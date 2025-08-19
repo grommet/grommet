@@ -676,11 +676,14 @@ const Calendar = forwardRef(
           ((theme.calendar.heading && theme.calendar.heading.level) || 4) - 1;
       }
 
+      const { container: containerTheme, ...textTheme } =
+        theme.calendar[size]?.title || undefined;
+
       return (
         <Box direction="row" justify="between" align="center">
-          <Header flex pad={theme.calendar?.[size]?.heading.container.pad}>
-            {theme.calendar[size]?.title ? (
-              <Text {...theme.calendar[size].title}>{monthAndYear}</Text>
+          <Header flex pad={containerTheme.pad}>
+            {Object.keys(textTheme).length !== 0 ? (
+              <Text {...textTheme}>{monthAndYear}</Text>
             ) : (
               <Heading
                 level={headingLevel}

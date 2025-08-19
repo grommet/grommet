@@ -51,7 +51,7 @@ const Content = ({ drop, options = [], ...rest }) => {
 
   const tabsProps = {
     drop: { pad: theme.dataTableColumns.tabs.pad },
-    noDrop: { justify: theme.dataTableColumns.tabs.justify },
+    noDrop: { justify: 'start' },
   };
 
   // If the user searches for a particular option, render
@@ -119,8 +119,8 @@ const Content = ({ drop, options = [], ...rest }) => {
           })}
         >
           <Box
-            pad={theme.dataTableColumns.search.pad}
-            gap={theme.dataTableColumns.search.gap}
+            pad={theme.dataTableColumns.selectColumns.pad}
+            gap={theme.dataTableColumns.selectColumns.gap}
           >
             <TextInput
               type="search"
@@ -155,7 +155,7 @@ const Content = ({ drop, options = [], ...rest }) => {
             messages: messages?.dataTableColumns,
           })}
         >
-          <Box pad={theme.dataTableColumns.order.pad}>
+          <Box pad={theme.dataTableColumns.orderColumns.pad}>
             <List
               id={`${dataId}--order-columns`}
               aria-labelledby={`${dataId}--order-columns-tab`}

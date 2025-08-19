@@ -15,6 +15,7 @@ import { DataContext } from '../../contexts/DataContext';
 import { DataFormContext } from '../../contexts/DataFormContext';
 import { MessageContext } from '../../contexts/MessageContext';
 import { useDebounce } from '../../utils/use-debounce';
+import { useThemeValue } from '../../utils/useThemeValue';
 
 const MaxForm = styled(Form)`
   max-width: 100%;
@@ -248,6 +249,7 @@ export const DataForm = ({
   const pendingReset = useRef(new Set());
   const contextValue = useMemo(() => ({ inDataForm: true, pendingReset }), []);
   const debounce = useDebounce(DEBOUNCE_TIMEOUT);
+  const { theme } = useThemeValue();
 
   const onSubmit = useCallback(
     ({ value }) => {
@@ -289,11 +291,9 @@ export const DataForm = ({
         {footer !== false && updateOn === 'submit' && (
           <Footer
             flex={false}
-            // TO DO theme object thinking..
-            margin={{ top: 'medium' }}
             pad={{ horizontal: pad, bottom: pad }}
-            // TO DO theme object thinking..
-            gap="small"
+            margin={theme.dataFilters?.footer?.actions?.margin}
+            gap={theme.dataFilters?.footer?.actions?.gap}
           >
             <Button
               label={format({

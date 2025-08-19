@@ -372,11 +372,20 @@ const RangeSelector = forwardRef(
           fill
           {...rest}
         >
-          <Text ref={minRef} textAlign="end" {...theme.rangeSelector?.label}>
+          <Text
+            ref={minRef}
+            textAlign="end"
+            size="small"
+            margin={theme.rangeSelector.label.margin}
+          >
             {typeof label === 'function' ? label(lower) : lower}
           </Text>
           {content}
-          <Text ref={maxRef} {...theme.rangeSelector?.label}>
+          <Text
+            ref={maxRef}
+            size="small"
+            margin={theme.rangeSelector.label.margin}
+          >
             {typeof label === 'function' ? label(upper) : upper}
           </Text>
         </Box>

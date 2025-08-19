@@ -29,7 +29,7 @@ export const DataSummary = ({ messages, ...rest }) => {
   });
 
   return (
-    <Text margin={theme.dataSummary?.container?.margin} {...rest}>
+    <Text margin={theme.dataSummary?.margin} {...rest}>
       {format({
         id: messageId,
         messages: messages || dataMessages?.dataSummary,

@@ -193,6 +193,7 @@ export const DataFilter = ({
           min={range[0]}
           max={range[1]}
           step={step}
+          {...theme.dataFilter?.rangeSelector}
         />
       );
     } else if (options) {
@@ -232,6 +233,7 @@ export const DataFilter = ({
             onClose={() => setSearchText('')}
             labelKey="label"
             valueKey={{ key: 'value', reduce: true }}
+            {...theme.dataFilter?.selectMultiple}
           />
         );
         htmlFor = selectInputId(id);

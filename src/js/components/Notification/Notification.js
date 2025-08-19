@@ -210,7 +210,10 @@ const Notification = ({
           color={messageColor}
           direction={direction}
         >
-          <Text margin={theme.notification.message?.margin}>{message}</Text>
+          <Text margin={theme.notification.message?.text?.margin}>
+            {message}
+          </Text>
+          {/* include actions with message so it wraps with message */}
           {actions}
         </Message>
       ) : (

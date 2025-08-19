@@ -231,7 +231,7 @@ const Pagination = forwardRef(
       return (
         <StyledPaginationContainer
           flex={false}
-          {...theme.pagination.container}
+          {...{ ...theme.pagination.container, gap: undefined }}
           {...passThemeFlag}
           {...rest}
         >
@@ -243,7 +243,6 @@ const Pagination = forwardRef(
       <StyledPaginationContainer
         direction="row"
         align="center"
-        gap={theme.pagination.container?.gap}
         wrap
         flex={false}
         {...theme.pagination.container}
@@ -263,8 +262,7 @@ const Pagination = forwardRef(
         <Box
           align="center"
           direction="row"
-          // not sure about naming
-          gap={theme.pagination.controls?.container?.gap}
+          gap={theme.pagination.container?.gap}
           wrap
         >
           {stepOptions && (

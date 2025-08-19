@@ -485,7 +485,12 @@ const MaskedInput = forwardRef(
                   // Determine whether the label is done as a child or
                   // as an option Button kind property.
                   const child = !theme.button.option ? (
-                    <Box pad={theme.maskInput?.option?.pad}>{option}</Box>
+                    // Not adding a theme object now because this code path
+                    // is not used in the HPE theme, but we may add theme
+                    // support here in the future.
+                    <Box pad={{ horizontal: 'small', vertical: 'xsmall' }}>
+                      {option}
+                    </Box>
                   ) : undefined;
                   // if we have a child, turn on plain, and hoverIndicator
 

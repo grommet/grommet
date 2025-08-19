@@ -699,6 +699,13 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           },
         },
         fontSize: `${baseFontSize - fontScale}px`,
+        title: {
+          container: {
+            pad: {
+              horizontal: 'xsmall',
+            },
+          },
+        },
         lineHeight: 1.375,
         daySize: `${(baseSpacing * 8) / 7}px`,
         slideDuration: '0.2s',
@@ -725,6 +732,13 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           },
         },
         fontSize: `${baseFontSize}px`,
+        title: {
+          container: {
+            pad: {
+              horizontal: 'small',
+            },
+          },
+        },
         lineHeight: 1.45,
         daySize: `${(baseSpacing * 16) / 7}px`,
         slideDuration: '0.5s',
@@ -751,6 +765,13 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           },
         },
         fontSize: `${baseFontSize + 3 * fontScale}px`,
+        title: {
+          container: {
+            pad: {
+              horizontal: 'medium',
+            },
+          },
+        },
         lineHeight: 1.11,
         daySize: `${(baseSpacing * 32) / 7}px`,
         slideDuration: '0.8s',
@@ -947,14 +968,6 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         gap: 'medium',
       },
     },
-    dataChart: {
-      gap: 'small',
-      legend: {
-        margin: { vertical: 'small' },
-        gap: 'small',
-        pad: { horizontal: 'small', vertical: 'xsmall' },
-      },
-    },
     dataFilter: {
       rangeSelector: {
         size: 'full',
@@ -965,33 +978,33 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
     },
     dataFilters: {
-      content: {
-        width: 'medium',
+      footer: {
+        actions: {
+          margin: { top: 'medium' },
+          gap: 'small',
+        },
       },
-      clearControls: {
+      clearControl: {
         margin: { start: 'small' },
       },
-    },
-    dataSummary: {
-      container: {
-        margin: { vertical: 'xsmall' },
-      },
-      separator: {
-        margin: { horizontal: 'small' },
-      },
+      pad: 'medium',
+      width: { min: 'medium' },
     },
     dateInput: {
       button: {
-        margin: {
-          right: 'small',
-          left: 'small',
-        },
+        margin: 'small',
       },
       container: {
         round: 'xxsmall',
       },
       icon: {
         size: 'medium',
+      },
+    },
+    dataSummary: {
+      margin: { vertical: 'xsmall' },
+      separator: {
+        margin: { horizontal: 'small' },
       },
     },
     dataTable: {
@@ -1002,6 +1015,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       //   }
       //   selected: undefined,
       // },
+      expand: {
+        size: 'xxsmall',
+      },
       pinned: {
         // body: {
         //    background: undefined,
@@ -1114,6 +1130,35 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           top: 'small',
         },
       },
+      search: {
+        pad: {
+          left: 'small',
+        },
+        text: {
+          pad: {
+            horizontal: 'small',
+          },
+        },
+      },
+      sort: {
+        gap: 'xsmall',
+      },
+    },
+    dataTableColumns: {
+      tabs: {
+        pad: 'small',
+      },
+      selectColumns: {
+        pad: {
+          vertical: 'small',
+        },
+        gap: 'xsmall',
+      },
+      orderColumns: {
+        pad: {
+          top: 'small',
+        },
+      },
     },
     diagram: {
       // extend: und`efined,
@@ -1132,7 +1177,6 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       anchor: {
         margin: 'small',
       },
-
       // background: {},
       border: {
         // color: undefined,
@@ -1157,6 +1201,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
       // pad: {},
       label: {
+        gap: 'xsmall',
         margin: 'small',
         gap: 'xsmall',
         align: 'center',
@@ -1265,6 +1310,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       sticky: {
         zIndex: '20',
       },
+      gap: 'medium',
     },
     heading: {
       // color: undefined,
@@ -1374,6 +1420,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           color: 'status-disabled',
           cursor: 'default',
         },
+        gap: 'medium',
         pinned: {
           background: 'background-contrast',
           icon: {
@@ -1407,8 +1454,8 @@ export const generate = (baseSpacing = 24, scale = 6) => {
     },
     menu: {
       // background: undefined,
-      // item: undefined,
       // extend: undefined,
+      // item: undefined,
       drop: {
         align: {
           top: 'top',
@@ -1546,6 +1593,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         // was this already here? where is it defined
         margin: { right: 'xsmall' },
         // fill: undefined,
+        text: {
+          margin: { right: 'xsmall' },
+        },
       },
       close: {
         icon: FormClose,
@@ -1888,16 +1938,10 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         },
       },
       container: {
-        // any box props,
         gap: { column: 'xsmall', row: 'small' },
+        // any box props,
         // extend: undefined,
-        controls: {
-          container: {
-            gap: { column: 'xsmall', row: 'small' },
-          },
-        },
       },
-      // these both seem we can use the same
       controls: {
         align: 'center',
         direction: 'row',
@@ -1926,7 +1970,6 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       xlarge: { ...fontSizing(2) },
       xxlarge: { ...fontSizing(4) },
       skeleton: {
-        // TO DO should this be "container.gap"?
         gap: 'xsmall',
       },
     },
@@ -2003,8 +2046,8 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
     },
     radioButtonGroup: {
+      // any box props
       container: {
-        // any box props
         gap: 'small',
       },
     },
@@ -2050,10 +2093,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         // size: undefined,
       },
       label: {
-        margin: {
-          horizontal: 'small',
-        },
-        size: 'small',
+        margin: { horizontal: 'small' },
       },
     },
     select: {
@@ -2099,14 +2139,52 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           margin: 'none',
         },
       },
+      search: {
+        pad: 'xsmall',
+      },
       // searchInput: undefined,
       step: 20,
     },
     selectMultiple: {
+      help: {
+        container: {
+          pad: 'xsmall',
+        },
+      },
       maxInline: 5,
       // listbox: {
       //   extend: () => undefined,
       // },
+      option: {
+        pad: 'xsmall',
+      },
+      search: {
+        pad: 'xsmall',
+      },
+      showMore: {
+        pad: {
+          horizontal: 'small',
+          bottom: 'small',
+          top: 'xsmall',
+        },
+      },
+      summary: {
+        gap: 'small',
+        height: {
+          min: 'xxsmall',
+        },
+        pad: 'xsmall',
+        showSelectedInline: {
+          pad: {
+            left: 'xsmall',
+            vertical: 'xsmall',
+          },
+        },
+      },
+    },
+    sidebar: {
+      gap: 'large',
+      pad: 'small',
     },
     sidebar: {
       pad: 'small',
@@ -2170,6 +2248,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       //   color: undefined,
       // },
       // extend: undefined,
+      gap: 'small',
       hover: {
         // background: undefined,
         // extend: undefined,
@@ -2201,7 +2280,10 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         //   color: undefined,
         // },
         // extend: undefined,
-        overflow: {
+        nextButton: {
+          pad: { horizontal: 'small', vertical: 'xsmall' },
+        },
+        previousButton: {
           pad: { horizontal: 'small', vertical: 'xsmall' },
         },
       },
