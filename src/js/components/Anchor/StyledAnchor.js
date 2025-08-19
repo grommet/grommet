@@ -75,7 +75,7 @@ const StyledAnchor = styled.a.withConfig(styledComponentsConfig)`
     edgeStyle(
       'padding',
       props.theme.anchor.iconOnly.pad,
-      props.responsive,
+      false,
       props.theme.global.edgeSize.responsiveBreakpoint,
       props.theme,
     )}
