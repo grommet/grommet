@@ -119,7 +119,6 @@ const SelectionSummary = ({
 
   return (
     <Box
-      // TO DO theme object
       pad={
         showSelectedInline
           ? theme.selectMultiple?.summary?.showSelectedInline?.pad

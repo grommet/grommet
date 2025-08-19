@@ -261,8 +261,8 @@ const Menu = forwardRef((props, ref) => {
         direction="row"
         justify={justifyContent}
         align="center"
-        pad={theme.menu.label?.pad}
-        gap={label && icon !== false ? theme.menu.label?.gap : undefined}
+        pad="small"
+        gap={label && icon !== false ? 'small' : undefined}
       >
         <Text size={size}>{label}</Text>
         {menuIcon}
@@ -312,14 +312,14 @@ const Menu = forwardRef((props, ref) => {
     // Determine whether the label is done as a child or
     // as an option Button kind property.
     const child = !theme.button.option ? (
-    /*
+      /*
      Not adding a theme object now because this code path
      is not used in the HPE theme, but we may add theme
      support here in the future.
      */
       <Box
         align={theme.menu.item?.align || 'start'}
-        pad={theme.menu.item?.pad}
+        pad="small"
         direction="row"
         gap={item.gap || theme.menu.item?.gap}
         justify={item.justify || theme.menu.item?.justify}

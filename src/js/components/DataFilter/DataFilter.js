@@ -184,7 +184,6 @@ export const DataFilter = ({
 
       content = (
         <RangeSelector
-          {...theme.dataFilter?.rangeSelector}
           aria-label={ariaLabel}
           id={id}
           name={`${property}._range`}
@@ -219,7 +218,6 @@ export const DataFilter = ({
       } else {
         content = (
           <SelectMultiple
-            {...theme.dataFilter?.selectMultiple}
             aria-label={ariaLabel}
             id={id}
             name={property}
