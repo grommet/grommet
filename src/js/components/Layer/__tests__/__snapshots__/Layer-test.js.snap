@@ -36,7 +36,7 @@ exports[`Layer animation fadeIn 1`] = `
 .c2 {
   display: flex;
   flex-direction: column;
-  min-height: medium;
+  min-height: 48px;
   background-color: #FFFFFF;
   color: #444444;
   outline: none;
@@ -78,6 +78,12 @@ exports[`Layer animation fadeIn 1`] = `
 @media only screen and (max-width: 768px) {
   .c1 {
     position: relative;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    min-height: 24px;
   }
 }
 
@@ -148,7 +154,12 @@ exports[`Layer animation fadeIn 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .hHaoyV {
+  .bkLEcw {
+    min-height: 24px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .bkLEcw {
     position: relative;
     max-height: none;
     max-width: none;
@@ -195,7 +206,7 @@ exports[`Layer animation false 1`] = `
 .c2 {
   display: flex;
   flex-direction: column;
-  min-height: medium;
+  min-height: 48px;
   background-color: #FFFFFF;
   color: #444444;
   outline: none;
@@ -236,6 +247,12 @@ exports[`Layer animation false 1`] = `
 @media only screen and (max-width: 768px) {
   .c1 {
     position: relative;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    min-height: 24px;
   }
 }
 
@@ -306,7 +323,12 @@ exports[`Layer animation false 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .hHaoyV {
+  .bkLEcw {
+    min-height: 24px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .bkLEcw {
     position: relative;
     max-height: none;
     max-width: none;
@@ -353,7 +375,7 @@ exports[`Layer animation slide 1`] = `
 .c2 {
   display: flex;
   flex-direction: column;
-  min-height: medium;
+  min-height: 48px;
   background-color: #FFFFFF;
   color: #444444;
   outline: none;
@@ -395,6 +417,12 @@ exports[`Layer animation slide 1`] = `
 @media only screen and (max-width: 768px) {
   .c1 {
     position: relative;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    min-height: 24px;
   }
 }
 
@@ -465,7 +493,12 @@ exports[`Layer animation slide 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .hHaoyV {
+  .bkLEcw {
+    min-height: 24px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .bkLEcw {
     position: relative;
     max-height: none;
     max-width: none;
@@ -512,7 +545,7 @@ exports[`Layer animation true 1`] = `
 .c2 {
   display: flex;
   flex-direction: column;
-  min-height: medium;
+  min-height: 48px;
   background-color: #FFFFFF;
   color: #444444;
   outline: none;
@@ -554,6 +587,12 @@ exports[`Layer animation true 1`] = `
 @media only screen and (max-width: 768px) {
   .c1 {
     position: relative;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    min-height: 24px;
   }
 }
 
@@ -624,7 +663,12 @@ exports[`Layer animation true 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .hHaoyV {
+  .bkLEcw {
+    min-height: 24px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .bkLEcw {
     position: relative;
     max-height: none;
     max-width: none;
@@ -671,7 +715,7 @@ exports[`Layer custom margin 1`] = `
 .c2 {
   display: flex;
   flex-direction: column;
-  min-height: medium;
+  min-height: 48px;
   background-color: #FFFFFF;
   color: #444444;
   outline: none;
@@ -713,6 +757,12 @@ exports[`Layer custom margin 1`] = `
 @media only screen and (max-width: 768px) {
   .c1 {
     position: relative;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    min-height: 24px;
   }
 }
 
@@ -783,7 +833,12 @@ exports[`Layer custom margin 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .hHaoyV {
+  .bkLEcw {
+    min-height: 24px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .bkLEcw {
     position: relative;
     max-height: none;
     max-width: none;
@@ -831,7 +886,7 @@ exports[`Layer custom theme 1`] = `
 .c2 {
   display: flex;
   flex-direction: column;
-  min-height: medium;
+  min-height: 48px;
   background-color: #FFFFFF;
   color: #444444;
   outline: none;
@@ -873,6 +928,12 @@ exports[`Layer custom theme 1`] = `
 @media only screen and (max-width: 768px) {
   .c1 {
     position: relative;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    min-height: 24px;
   }
 }
 
@@ -943,7 +1004,12 @@ exports[`Layer custom theme 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .hHaoyV {
+  .bkLEcw {
+    min-height: 24px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .bkLEcw {
     position: relative;
     max-height: none;
     max-width: none;
@@ -985,7 +1051,7 @@ exports[`Layer dark context 1`] = `
   -webkit-font-smoothing: antialiased;
   display: flex;
   flex-direction: column;
-  min-height: medium;
+  min-height: 48px;
   background-color: #000000;
   color: #f8f8f8;
   outline: none;
@@ -1021,6 +1087,12 @@ exports[`Layer dark context 1`] = `
     width: 100%;
     height: 100%;
     min-height: 100vh;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c1 {
+    min-height: 24px;
   }
 }
 
@@ -1088,7 +1160,12 @@ exports[`Layer dark context 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .hHaoyV {
+  .bkLEcw {
+    min-height: 24px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .bkLEcw {
     position: relative;
     max-height: none;
     max-width: none;
@@ -1103,7 +1180,7 @@ exports[`Layer focus on layer 1`] = `
 .c0 {
   display: flex;
   flex-direction: column;
-  min-height: medium;
+  min-height: 48px;
   background-color: #FFFFFF;
   color: #444444;
   outline: none;
@@ -1139,6 +1216,12 @@ exports[`Layer focus on layer 1`] = `
 
 @media only screen and (max-width: 768px) {
 
+}
+
+@media only screen and (max-width: 768px) {
+  .c0 {
+    min-height: 24px;
+  }
 }
 
 @media only screen and (max-width: 768px) {
@@ -1200,7 +1283,7 @@ exports[`Layer hidden 1`] = `
 .c2 {
   display: flex;
   flex-direction: column;
-  min-height: medium;
+  min-height: 48px;
   background-color: #FFFFFF;
   color: #444444;
   outline: none;
@@ -1229,6 +1312,12 @@ exports[`Layer hidden 1`] = `
 @media only screen and (max-width: 768px) {
   .c1 {
     position: relative;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    min-height: 24px;
   }
 }
 
@@ -1280,7 +1369,12 @@ exports[`Layer hidden 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .hHaoyV {
+  .bkLEcw {
+    min-height: 24px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .bkLEcw {
     position: relative;
     max-height: none;
     max-width: none;
@@ -1301,7 +1395,7 @@ exports[`Layer hidden 3`] = `
     class="StyledLayer__StyledOverlay-sc-rmtehz-1 dKbLsG"
   />
   <div
-    class="StyledLayer__StyledContainer-sc-rmtehz-2 hmFhgs"
+    class="StyledLayer__StyledContainer-sc-rmtehz-2 jcdUZV"
     data-g-portal-id="0"
     id="hidden-test"
   >
@@ -1348,7 +1442,12 @@ exports[`Layer hidden 4`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .hHaoyV {
+  .bkLEcw {
+    min-height: 24px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .bkLEcw {
     position: relative;
     max-height: none;
     max-width: none;
@@ -1390,7 +1489,7 @@ exports[`Layer invoke onClickOutside when modal={false} 1`] = `
   -webkit-font-smoothing: antialiased;
   display: flex;
   flex-direction: column;
-  min-height: medium;
+  min-height: 48px;
   background-color: #FFFFFF;
   color: #444444;
   outline: none;
@@ -1425,6 +1524,12 @@ exports[`Layer invoke onClickOutside when modal={false} 1`] = `
     width: 100%;
     height: 100%;
     min-height: 100vh;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c1 {
+    min-height: 24px;
   }
 }
 
@@ -1497,7 +1602,12 @@ exports[`Layer invoke onClickOutside when modal={false} 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .hHaoyV {
+  .bkLEcw {
+    min-height: 24px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .bkLEcw {
     position: relative;
     max-height: none;
     max-width: none;
@@ -1539,7 +1649,7 @@ exports[`Layer invoke onClickOutside when modal={false} and layer has target 1`]
   -webkit-font-smoothing: antialiased;
   display: flex;
   flex-direction: column;
-  min-height: medium;
+  min-height: 48px;
   background-color: #FFFFFF;
   color: #444444;
   outline: none;
@@ -1566,6 +1676,12 @@ exports[`Layer invoke onClickOutside when modal={false} and layer has target 1`]
 
 .c2:focus {
   outline: none;
+}
+
+@media only screen and (max-width: 768px) {
+  .c1 {
+    min-height: 24px;
+  }
 }
 
 @media only screen and (max-width: 768px) {
@@ -1614,7 +1730,12 @@ exports[`Layer invoke onClickOutside when modal={false} and layer has target 2`]
   }
 }
 @media only screen and (max-width: 768px) {
-  .hHaoyV {
+  .bkLEcw {
+    min-height: 24px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .bkLEcw {
     position: relative;
     max-height: none;
     max-width: none;
@@ -1661,7 +1782,7 @@ exports[`Layer invoke onClickOutside when modal={true} 1`] = `
 .c2 {
   display: flex;
   flex-direction: column;
-  min-height: medium;
+  min-height: 48px;
   background-color: #FFFFFF;
   color: #444444;
   outline: none;
@@ -1702,6 +1823,12 @@ exports[`Layer invoke onClickOutside when modal={true} 1`] = `
 @media only screen and (max-width: 768px) {
   .c1 {
     position: relative;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    min-height: 24px;
   }
 }
 
@@ -1777,7 +1904,12 @@ exports[`Layer invoke onClickOutside when modal={true} 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .hHaoyV {
+  .bkLEcw {
+    min-height: 24px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .bkLEcw {
     position: relative;
     max-height: none;
     max-width: none;
@@ -1824,7 +1956,7 @@ exports[`Layer invoke onClickOutside when modal={true} and layer has target 1`] 
 .c2 {
   display: flex;
   flex-direction: column;
-  min-height: medium;
+  min-height: 48px;
   background-color: #FFFFFF;
   color: #444444;
   outline: none;
@@ -1856,6 +1988,12 @@ exports[`Layer invoke onClickOutside when modal={true} and layer has target 1`] 
 @media only screen and (max-width: 768px) {
   .c1 {
     position: relative;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    min-height: 24px;
   }
 }
 
@@ -1908,7 +2046,12 @@ exports[`Layer invoke onClickOutside when modal={true} and layer has target 2`] 
   }
 }
 @media only screen and (max-width: 768px) {
-  .hHaoyV {
+  .bkLEcw {
+    min-height: 24px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .bkLEcw {
     position: relative;
     max-height: none;
     max-width: none;
@@ -2131,7 +2274,7 @@ exports[`Layer invokes onEsc when modal={false} 1`] = `
   -webkit-font-smoothing: antialiased;
   display: flex;
   flex-direction: column;
-  min-height: medium;
+  min-height: 48px;
   background-color: #FFFFFF;
   color: #444444;
   outline: none;
@@ -2185,6 +2328,12 @@ exports[`Layer invokes onEsc when modal={false} 1`] = `
     width: 100%;
     height: 100%;
     min-height: 100vh;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c1 {
+    min-height: 24px;
   }
 }
 
@@ -2298,7 +2447,12 @@ exports[`Layer invokes onEsc when modal={false} 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .hHaoyV {
+  .bkLEcw {
+    min-height: 24px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .bkLEcw {
     position: relative;
     max-height: none;
     max-width: none;
@@ -2322,6 +2476,10 @@ exports[`Layer is accessible 1`] = `
 
 }
 
+@media only screen and (max-width: 768px) {
+
+}
+
 <div
   data-testid="test-body-node"
 >
@@ -2333,6 +2491,10 @@ exports[`Layer is accessible 1`] = `
 `;
 
 exports[`Layer is accessible 2`] = `
+@media only screen and (max-width: 768px) {
+
+}
+
 @media only screen and (max-width: 768px) {
 
 }
@@ -2402,7 +2564,7 @@ exports[`Layer margin large 1`] = `
 .c2 {
   display: flex;
   flex-direction: column;
-  min-height: medium;
+  min-height: 48px;
   background-color: #FFFFFF;
   color: #444444;
   outline: none;
@@ -2444,6 +2606,12 @@ exports[`Layer margin large 1`] = `
 @media only screen and (max-width: 768px) {
   .c1 {
     position: relative;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    min-height: 24px;
   }
 }
 
@@ -2514,7 +2682,12 @@ exports[`Layer margin large 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .hHaoyV {
+  .bkLEcw {
+    min-height: 24px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .bkLEcw {
     position: relative;
     max-height: none;
     max-width: none;
@@ -2561,7 +2734,7 @@ exports[`Layer margin medium 1`] = `
 .c2 {
   display: flex;
   flex-direction: column;
-  min-height: medium;
+  min-height: 48px;
   background-color: #FFFFFF;
   color: #444444;
   outline: none;
@@ -2603,6 +2776,12 @@ exports[`Layer margin medium 1`] = `
 @media only screen and (max-width: 768px) {
   .c1 {
     position: relative;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    min-height: 24px;
   }
 }
 
@@ -2673,7 +2852,12 @@ exports[`Layer margin medium 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .hHaoyV {
+  .bkLEcw {
+    min-height: 24px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .bkLEcw {
     position: relative;
     max-height: none;
     max-width: none;
@@ -2720,7 +2904,7 @@ exports[`Layer margin none 1`] = `
 .c2 {
   display: flex;
   flex-direction: column;
-  min-height: medium;
+  min-height: 48px;
   background-color: #FFFFFF;
   color: #444444;
   outline: none;
@@ -2762,6 +2946,12 @@ exports[`Layer margin none 1`] = `
 @media only screen and (max-width: 768px) {
   .c1 {
     position: relative;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    min-height: 24px;
   }
 }
 
@@ -2832,7 +3022,12 @@ exports[`Layer margin none 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .hHaoyV {
+  .bkLEcw {
+    min-height: 24px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .bkLEcw {
     position: relative;
     max-height: none;
     max-width: none;
@@ -2879,7 +3074,7 @@ exports[`Layer margin small 1`] = `
 .c2 {
   display: flex;
   flex-direction: column;
-  min-height: medium;
+  min-height: 48px;
   background-color: #FFFFFF;
   color: #444444;
   outline: none;
@@ -2921,6 +3116,12 @@ exports[`Layer margin small 1`] = `
 @media only screen and (max-width: 768px) {
   .c1 {
     position: relative;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    min-height: 24px;
   }
 }
 
@@ -2991,7 +3192,12 @@ exports[`Layer margin small 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .hHaoyV {
+  .bkLEcw {
+    min-height: 24px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .bkLEcw {
     position: relative;
     max-height: none;
     max-width: none;
@@ -3038,7 +3244,7 @@ exports[`Layer margin xsmall 1`] = `
 .c2 {
   display: flex;
   flex-direction: column;
-  min-height: medium;
+  min-height: 48px;
   background-color: #FFFFFF;
   color: #444444;
   outline: none;
@@ -3080,6 +3286,12 @@ exports[`Layer margin xsmall 1`] = `
 @media only screen and (max-width: 768px) {
   .c1 {
     position: relative;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    min-height: 24px;
   }
 }
 
@@ -3150,7 +3362,12 @@ exports[`Layer margin xsmall 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .hHaoyV {
+  .bkLEcw {
+    min-height: 24px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .bkLEcw {
     position: relative;
     max-height: none;
     max-width: none;
@@ -3192,7 +3409,7 @@ exports[`Layer non-modal 1`] = `
   -webkit-font-smoothing: antialiased;
   display: flex;
   flex-direction: column;
-  min-height: medium;
+  min-height: 48px;
   background-color: #FFFFFF;
   color: #444444;
   outline: none;
@@ -3228,6 +3445,12 @@ exports[`Layer non-modal 1`] = `
     width: 100%;
     height: 100%;
     min-height: 100vh;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c1 {
+    min-height: 24px;
   }
 }
 
@@ -3295,7 +3518,12 @@ exports[`Layer non-modal 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .hHaoyV {
+  .bkLEcw {
+    min-height: 24px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .bkLEcw {
     position: relative;
     max-height: none;
     max-width: none;
@@ -3310,7 +3538,7 @@ exports[`Layer not steal focus from an autofocus focusable element 1`] = `
 .c0 {
   display: flex;
   flex-direction: column;
-  min-height: medium;
+  min-height: 48px;
   background-color: #FFFFFF;
   color: #444444;
   outline: none;
@@ -3346,6 +3574,12 @@ exports[`Layer not steal focus from an autofocus focusable element 1`] = `
 
 @media only screen and (max-width: 768px) {
 
+}
+
+@media only screen and (max-width: 768px) {
+  .c0 {
+    min-height: 24px;
+  }
 }
 
 @media only screen and (max-width: 768px) {
@@ -3413,7 +3647,7 @@ exports[`Layer plain 1`] = `
 .c2 {
   display: flex;
   flex-direction: column;
-  min-height: medium;
+  min-height: 48px;
   outline: none;
   pointer-events: all;
   z-index: 20;
@@ -3453,6 +3687,12 @@ exports[`Layer plain 1`] = `
 @media only screen and (max-width: 768px) {
   .c1 {
     position: relative;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    min-height: 24px;
   }
 }
 
@@ -3523,7 +3763,12 @@ exports[`Layer plain 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .hHaoyV {
+  .bkLEcw {
+    min-height: 24px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .bkLEcw {
     position: relative;
     max-height: none;
     max-width: none;
@@ -3570,7 +3815,7 @@ exports[`Layer position: bottom - full: false 1`] = `
 .c2 {
   display: flex;
   flex-direction: column;
-  min-height: medium;
+  min-height: 48px;
   background-color: #FFFFFF;
   color: #444444;
   outline: none;
@@ -3612,6 +3857,12 @@ exports[`Layer position: bottom - full: false 1`] = `
 @media only screen and (max-width: 768px) {
   .c1 {
     position: relative;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    min-height: 24px;
   }
 }
 
@@ -3682,7 +3933,12 @@ exports[`Layer position: bottom - full: false 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .hHaoyV {
+  .bkLEcw {
+    min-height: 24px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .bkLEcw {
     position: relative;
     max-height: none;
     max-width: none;
@@ -3729,7 +3985,7 @@ exports[`Layer position: bottom - full: horizontal 1`] = `
 .c2 {
   display: flex;
   flex-direction: column;
-  min-height: medium;
+  min-height: 48px;
   background-color: #FFFFFF;
   color: #444444;
   outline: none;
@@ -3772,6 +4028,12 @@ exports[`Layer position: bottom - full: horizontal 1`] = `
 @media only screen and (max-width: 768px) {
   .c1 {
     position: relative;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    min-height: 24px;
   }
 }
 
@@ -3842,7 +4104,12 @@ exports[`Layer position: bottom - full: horizontal 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .hHaoyV {
+  .bkLEcw {
+    min-height: 24px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .bkLEcw {
     position: relative;
     max-height: none;
     max-width: none;
@@ -3889,7 +4156,7 @@ exports[`Layer position: bottom - full: true 1`] = `
 .c2 {
   display: flex;
   flex-direction: column;
-  min-height: medium;
+  min-height: 48px;
   background-color: #FFFFFF;
   color: #444444;
   outline: none;
@@ -3933,6 +4200,12 @@ exports[`Layer position: bottom - full: true 1`] = `
 @media only screen and (max-width: 768px) {
   .c1 {
     position: relative;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    min-height: 24px;
   }
 }
 
@@ -4003,7 +4276,12 @@ exports[`Layer position: bottom - full: true 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .hHaoyV {
+  .bkLEcw {
+    min-height: 24px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .bkLEcw {
     position: relative;
     max-height: none;
     max-width: none;
@@ -4050,7 +4328,7 @@ exports[`Layer position: bottom - full: vertical 1`] = `
 .c2 {
   display: flex;
   flex-direction: column;
-  min-height: medium;
+  min-height: 48px;
   background-color: #FFFFFF;
   color: #444444;
   outline: none;
@@ -4093,6 +4371,12 @@ exports[`Layer position: bottom - full: vertical 1`] = `
 @media only screen and (max-width: 768px) {
   .c1 {
     position: relative;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    min-height: 24px;
   }
 }
 
@@ -4163,7 +4447,12 @@ exports[`Layer position: bottom - full: vertical 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .hHaoyV {
+  .bkLEcw {
+    min-height: 24px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .bkLEcw {
     position: relative;
     max-height: none;
     max-width: none;
@@ -4210,7 +4499,7 @@ exports[`Layer position: bottom-left - full: false 1`] = `
 .c2 {
   display: flex;
   flex-direction: column;
-  min-height: medium;
+  min-height: 48px;
   background-color: #FFFFFF;
   color: #444444;
   outline: none;
@@ -4252,6 +4541,12 @@ exports[`Layer position: bottom-left - full: false 1`] = `
 @media only screen and (max-width: 768px) {
   .c1 {
     position: relative;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    min-height: 24px;
   }
 }
 
@@ -4322,7 +4617,12 @@ exports[`Layer position: bottom-left - full: false 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .hHaoyV {
+  .bkLEcw {
+    min-height: 24px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .bkLEcw {
     position: relative;
     max-height: none;
     max-width: none;
@@ -4369,7 +4669,7 @@ exports[`Layer position: bottom-left - full: horizontal 1`] = `
 .c2 {
   display: flex;
   flex-direction: column;
-  min-height: medium;
+  min-height: 48px;
   background-color: #FFFFFF;
   color: #444444;
   outline: none;
@@ -4412,6 +4712,12 @@ exports[`Layer position: bottom-left - full: horizontal 1`] = `
 @media only screen and (max-width: 768px) {
   .c1 {
     position: relative;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    min-height: 24px;
   }
 }
 
@@ -4482,7 +4788,12 @@ exports[`Layer position: bottom-left - full: horizontal 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .hHaoyV {
+  .bkLEcw {
+    min-height: 24px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .bkLEcw {
     position: relative;
     max-height: none;
     max-width: none;
@@ -4529,7 +4840,7 @@ exports[`Layer position: bottom-left - full: true 1`] = `
 .c2 {
   display: flex;
   flex-direction: column;
-  min-height: medium;
+  min-height: 48px;
   background-color: #FFFFFF;
   color: #444444;
   outline: none;
@@ -4573,6 +4884,12 @@ exports[`Layer position: bottom-left - full: true 1`] = `
 @media only screen and (max-width: 768px) {
   .c1 {
     position: relative;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    min-height: 24px;
   }
 }
 
@@ -4643,7 +4960,12 @@ exports[`Layer position: bottom-left - full: true 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .hHaoyV {
+  .bkLEcw {
+    min-height: 24px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .bkLEcw {
     position: relative;
     max-height: none;
     max-width: none;
@@ -4690,7 +5012,7 @@ exports[`Layer position: bottom-left - full: vertical 1`] = `
 .c2 {
   display: flex;
   flex-direction: column;
-  min-height: medium;
+  min-height: 48px;
   background-color: #FFFFFF;
   color: #444444;
   outline: none;
@@ -4733,6 +5055,12 @@ exports[`Layer position: bottom-left - full: vertical 1`] = `
 @media only screen and (max-width: 768px) {
   .c1 {
     position: relative;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    min-height: 24px;
   }
 }
 
@@ -4803,7 +5131,12 @@ exports[`Layer position: bottom-left - full: vertical 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .hHaoyV {
+  .bkLEcw {
+    min-height: 24px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .bkLEcw {
     position: relative;
     max-height: none;
     max-width: none;
@@ -4850,7 +5183,7 @@ exports[`Layer position: bottom-right - full: false 1`] = `
 .c2 {
   display: flex;
   flex-direction: column;
-  min-height: medium;
+  min-height: 48px;
   background-color: #FFFFFF;
   color: #444444;
   outline: none;
@@ -4892,6 +5225,12 @@ exports[`Layer position: bottom-right - full: false 1`] = `
 @media only screen and (max-width: 768px) {
   .c1 {
     position: relative;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    min-height: 24px;
   }
 }
 
@@ -4962,7 +5301,12 @@ exports[`Layer position: bottom-right - full: false 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .hHaoyV {
+  .bkLEcw {
+    min-height: 24px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .bkLEcw {
     position: relative;
     max-height: none;
     max-width: none;
@@ -5009,7 +5353,7 @@ exports[`Layer position: bottom-right - full: horizontal 1`] = `
 .c2 {
   display: flex;
   flex-direction: column;
-  min-height: medium;
+  min-height: 48px;
   background-color: #FFFFFF;
   color: #444444;
   outline: none;
@@ -5052,6 +5396,12 @@ exports[`Layer position: bottom-right - full: horizontal 1`] = `
 @media only screen and (max-width: 768px) {
   .c1 {
     position: relative;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    min-height: 24px;
   }
 }
 
@@ -5122,7 +5472,12 @@ exports[`Layer position: bottom-right - full: horizontal 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .hHaoyV {
+  .bkLEcw {
+    min-height: 24px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .bkLEcw {
     position: relative;
     max-height: none;
     max-width: none;
@@ -5169,7 +5524,7 @@ exports[`Layer position: bottom-right - full: true 1`] = `
 .c2 {
   display: flex;
   flex-direction: column;
-  min-height: medium;
+  min-height: 48px;
   background-color: #FFFFFF;
   color: #444444;
   outline: none;
@@ -5213,6 +5568,12 @@ exports[`Layer position: bottom-right - full: true 1`] = `
 @media only screen and (max-width: 768px) {
   .c1 {
     position: relative;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    min-height: 24px;
   }
 }
 
@@ -5283,7 +5644,12 @@ exports[`Layer position: bottom-right - full: true 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .hHaoyV {
+  .bkLEcw {
+    min-height: 24px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .bkLEcw {
     position: relative;
     max-height: none;
     max-width: none;
@@ -5330,7 +5696,7 @@ exports[`Layer position: bottom-right - full: vertical 1`] = `
 .c2 {
   display: flex;
   flex-direction: column;
-  min-height: medium;
+  min-height: 48px;
   background-color: #FFFFFF;
   color: #444444;
   outline: none;
@@ -5373,6 +5739,12 @@ exports[`Layer position: bottom-right - full: vertical 1`] = `
 @media only screen and (max-width: 768px) {
   .c1 {
     position: relative;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    min-height: 24px;
   }
 }
 
@@ -5443,7 +5815,12 @@ exports[`Layer position: bottom-right - full: vertical 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .hHaoyV {
+  .bkLEcw {
+    min-height: 24px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .bkLEcw {
     position: relative;
     max-height: none;
     max-width: none;
@@ -5490,7 +5867,7 @@ exports[`Layer position: center - full: false 1`] = `
 .c2 {
   display: flex;
   flex-direction: column;
-  min-height: medium;
+  min-height: 48px;
   background-color: #FFFFFF;
   color: #444444;
   outline: none;
@@ -5532,6 +5909,12 @@ exports[`Layer position: center - full: false 1`] = `
 @media only screen and (max-width: 768px) {
   .c1 {
     position: relative;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    min-height: 24px;
   }
 }
 
@@ -5602,7 +5985,12 @@ exports[`Layer position: center - full: false 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .hHaoyV {
+  .bkLEcw {
+    min-height: 24px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .bkLEcw {
     position: relative;
     max-height: none;
     max-width: none;
@@ -5649,7 +6037,7 @@ exports[`Layer position: center - full: horizontal 1`] = `
 .c2 {
   display: flex;
   flex-direction: column;
-  min-height: medium;
+  min-height: 48px;
   background-color: #FFFFFF;
   color: #444444;
   outline: none;
@@ -5692,6 +6080,12 @@ exports[`Layer position: center - full: horizontal 1`] = `
 @media only screen and (max-width: 768px) {
   .c1 {
     position: relative;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    min-height: 24px;
   }
 }
 
@@ -5762,7 +6156,12 @@ exports[`Layer position: center - full: horizontal 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .hHaoyV {
+  .bkLEcw {
+    min-height: 24px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .bkLEcw {
     position: relative;
     max-height: none;
     max-width: none;
@@ -5809,7 +6208,7 @@ exports[`Layer position: center - full: true 1`] = `
 .c2 {
   display: flex;
   flex-direction: column;
-  min-height: medium;
+  min-height: 48px;
   background-color: #FFFFFF;
   color: #444444;
   outline: none;
@@ -5852,6 +6251,12 @@ exports[`Layer position: center - full: true 1`] = `
 @media only screen and (max-width: 768px) {
   .c1 {
     position: relative;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    min-height: 24px;
   }
 }
 
@@ -5922,7 +6327,12 @@ exports[`Layer position: center - full: true 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .hHaoyV {
+  .bkLEcw {
+    min-height: 24px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .bkLEcw {
     position: relative;
     max-height: none;
     max-width: none;
@@ -5969,7 +6379,7 @@ exports[`Layer position: center - full: vertical 1`] = `
 .c2 {
   display: flex;
   flex-direction: column;
-  min-height: medium;
+  min-height: 48px;
   background-color: #FFFFFF;
   color: #444444;
   outline: none;
@@ -6012,6 +6422,12 @@ exports[`Layer position: center - full: vertical 1`] = `
 @media only screen and (max-width: 768px) {
   .c1 {
     position: relative;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    min-height: 24px;
   }
 }
 
@@ -6082,7 +6498,12 @@ exports[`Layer position: center - full: vertical 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .hHaoyV {
+  .bkLEcw {
+    min-height: 24px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .bkLEcw {
     position: relative;
     max-height: none;
     max-width: none;
@@ -6129,7 +6550,7 @@ exports[`Layer position: end - full: false 1`] = `
 .c2 {
   display: flex;
   flex-direction: column;
-  min-height: medium;
+  min-height: 48px;
   background-color: #FFFFFF;
   color: #444444;
   outline: none;
@@ -6171,6 +6592,12 @@ exports[`Layer position: end - full: false 1`] = `
 @media only screen and (max-width: 768px) {
   .c1 {
     position: relative;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    min-height: 24px;
   }
 }
 
@@ -6241,7 +6668,12 @@ exports[`Layer position: end - full: false 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .hHaoyV {
+  .bkLEcw {
+    min-height: 24px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .bkLEcw {
     position: relative;
     max-height: none;
     max-width: none;
@@ -6288,7 +6720,7 @@ exports[`Layer position: end - full: horizontal 1`] = `
 .c2 {
   display: flex;
   flex-direction: column;
-  min-height: medium;
+  min-height: 48px;
   background-color: #FFFFFF;
   color: #444444;
   outline: none;
@@ -6331,6 +6763,12 @@ exports[`Layer position: end - full: horizontal 1`] = `
 @media only screen and (max-width: 768px) {
   .c1 {
     position: relative;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    min-height: 24px;
   }
 }
 
@@ -6401,7 +6839,12 @@ exports[`Layer position: end - full: horizontal 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .hHaoyV {
+  .bkLEcw {
+    min-height: 24px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .bkLEcw {
     position: relative;
     max-height: none;
     max-width: none;
@@ -6448,7 +6891,7 @@ exports[`Layer position: end - full: true 1`] = `
 .c2 {
   display: flex;
   flex-direction: column;
-  min-height: medium;
+  min-height: 48px;
   background-color: #FFFFFF;
   color: #444444;
   outline: none;
@@ -6492,6 +6935,12 @@ exports[`Layer position: end - full: true 1`] = `
 @media only screen and (max-width: 768px) {
   .c1 {
     position: relative;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    min-height: 24px;
   }
 }
 
@@ -6562,7 +7011,12 @@ exports[`Layer position: end - full: true 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .hHaoyV {
+  .bkLEcw {
+    min-height: 24px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .bkLEcw {
     position: relative;
     max-height: none;
     max-width: none;
@@ -6609,7 +7063,7 @@ exports[`Layer position: end - full: vertical 1`] = `
 .c2 {
   display: flex;
   flex-direction: column;
-  min-height: medium;
+  min-height: 48px;
   background-color: #FFFFFF;
   color: #444444;
   outline: none;
@@ -6652,6 +7106,12 @@ exports[`Layer position: end - full: vertical 1`] = `
 @media only screen and (max-width: 768px) {
   .c1 {
     position: relative;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    min-height: 24px;
   }
 }
 
@@ -6722,7 +7182,12 @@ exports[`Layer position: end - full: vertical 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .hHaoyV {
+  .bkLEcw {
+    min-height: 24px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .bkLEcw {
     position: relative;
     max-height: none;
     max-width: none;
@@ -6769,7 +7234,7 @@ exports[`Layer position: left - full: false 1`] = `
 .c2 {
   display: flex;
   flex-direction: column;
-  min-height: medium;
+  min-height: 48px;
   background-color: #FFFFFF;
   color: #444444;
   outline: none;
@@ -6811,6 +7276,12 @@ exports[`Layer position: left - full: false 1`] = `
 @media only screen and (max-width: 768px) {
   .c1 {
     position: relative;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    min-height: 24px;
   }
 }
 
@@ -6881,7 +7352,12 @@ exports[`Layer position: left - full: false 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .hHaoyV {
+  .bkLEcw {
+    min-height: 24px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .bkLEcw {
     position: relative;
     max-height: none;
     max-width: none;
@@ -6928,7 +7404,7 @@ exports[`Layer position: left - full: horizontal 1`] = `
 .c2 {
   display: flex;
   flex-direction: column;
-  min-height: medium;
+  min-height: 48px;
   background-color: #FFFFFF;
   color: #444444;
   outline: none;
@@ -6971,6 +7447,12 @@ exports[`Layer position: left - full: horizontal 1`] = `
 @media only screen and (max-width: 768px) {
   .c1 {
     position: relative;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    min-height: 24px;
   }
 }
 
@@ -7041,7 +7523,12 @@ exports[`Layer position: left - full: horizontal 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .hHaoyV {
+  .bkLEcw {
+    min-height: 24px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .bkLEcw {
     position: relative;
     max-height: none;
     max-width: none;
@@ -7088,7 +7575,7 @@ exports[`Layer position: left - full: true 1`] = `
 .c2 {
   display: flex;
   flex-direction: column;
-  min-height: medium;
+  min-height: 48px;
   background-color: #FFFFFF;
   color: #444444;
   outline: none;
@@ -7132,6 +7619,12 @@ exports[`Layer position: left - full: true 1`] = `
 @media only screen and (max-width: 768px) {
   .c1 {
     position: relative;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    min-height: 24px;
   }
 }
 
@@ -7202,7 +7695,12 @@ exports[`Layer position: left - full: true 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .hHaoyV {
+  .bkLEcw {
+    min-height: 24px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .bkLEcw {
     position: relative;
     max-height: none;
     max-width: none;
@@ -7249,7 +7747,7 @@ exports[`Layer position: left - full: vertical 1`] = `
 .c2 {
   display: flex;
   flex-direction: column;
-  min-height: medium;
+  min-height: 48px;
   background-color: #FFFFFF;
   color: #444444;
   outline: none;
@@ -7292,6 +7790,12 @@ exports[`Layer position: left - full: vertical 1`] = `
 @media only screen and (max-width: 768px) {
   .c1 {
     position: relative;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    min-height: 24px;
   }
 }
 
@@ -7362,7 +7866,12 @@ exports[`Layer position: left - full: vertical 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .hHaoyV {
+  .bkLEcw {
+    min-height: 24px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .bkLEcw {
     position: relative;
     max-height: none;
     max-width: none;
@@ -7409,7 +7918,7 @@ exports[`Layer position: right - full: false 1`] = `
 .c2 {
   display: flex;
   flex-direction: column;
-  min-height: medium;
+  min-height: 48px;
   background-color: #FFFFFF;
   color: #444444;
   outline: none;
@@ -7451,6 +7960,12 @@ exports[`Layer position: right - full: false 1`] = `
 @media only screen and (max-width: 768px) {
   .c1 {
     position: relative;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    min-height: 24px;
   }
 }
 
@@ -7521,7 +8036,12 @@ exports[`Layer position: right - full: false 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .hHaoyV {
+  .bkLEcw {
+    min-height: 24px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .bkLEcw {
     position: relative;
     max-height: none;
     max-width: none;
@@ -7568,7 +8088,7 @@ exports[`Layer position: right - full: horizontal 1`] = `
 .c2 {
   display: flex;
   flex-direction: column;
-  min-height: medium;
+  min-height: 48px;
   background-color: #FFFFFF;
   color: #444444;
   outline: none;
@@ -7611,6 +8131,12 @@ exports[`Layer position: right - full: horizontal 1`] = `
 @media only screen and (max-width: 768px) {
   .c1 {
     position: relative;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    min-height: 24px;
   }
 }
 
@@ -7681,7 +8207,12 @@ exports[`Layer position: right - full: horizontal 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .hHaoyV {
+  .bkLEcw {
+    min-height: 24px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .bkLEcw {
     position: relative;
     max-height: none;
     max-width: none;
@@ -7728,7 +8259,7 @@ exports[`Layer position: right - full: true 1`] = `
 .c2 {
   display: flex;
   flex-direction: column;
-  min-height: medium;
+  min-height: 48px;
   background-color: #FFFFFF;
   color: #444444;
   outline: none;
@@ -7772,6 +8303,12 @@ exports[`Layer position: right - full: true 1`] = `
 @media only screen and (max-width: 768px) {
   .c1 {
     position: relative;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    min-height: 24px;
   }
 }
 
@@ -7842,7 +8379,12 @@ exports[`Layer position: right - full: true 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .hHaoyV {
+  .bkLEcw {
+    min-height: 24px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .bkLEcw {
     position: relative;
     max-height: none;
     max-width: none;
@@ -7889,7 +8431,7 @@ exports[`Layer position: right - full: vertical 1`] = `
 .c2 {
   display: flex;
   flex-direction: column;
-  min-height: medium;
+  min-height: 48px;
   background-color: #FFFFFF;
   color: #444444;
   outline: none;
@@ -7932,6 +8474,12 @@ exports[`Layer position: right - full: vertical 1`] = `
 @media only screen and (max-width: 768px) {
   .c1 {
     position: relative;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    min-height: 24px;
   }
 }
 
@@ -8002,7 +8550,12 @@ exports[`Layer position: right - full: vertical 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .hHaoyV {
+  .bkLEcw {
+    min-height: 24px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .bkLEcw {
     position: relative;
     max-height: none;
     max-width: none;
@@ -8049,7 +8602,7 @@ exports[`Layer position: start - full: false 1`] = `
 .c2 {
   display: flex;
   flex-direction: column;
-  min-height: medium;
+  min-height: 48px;
   background-color: #FFFFFF;
   color: #444444;
   outline: none;
@@ -8091,6 +8644,12 @@ exports[`Layer position: start - full: false 1`] = `
 @media only screen and (max-width: 768px) {
   .c1 {
     position: relative;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    min-height: 24px;
   }
 }
 
@@ -8161,7 +8720,12 @@ exports[`Layer position: start - full: false 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .hHaoyV {
+  .bkLEcw {
+    min-height: 24px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .bkLEcw {
     position: relative;
     max-height: none;
     max-width: none;
@@ -8208,7 +8772,7 @@ exports[`Layer position: start - full: horizontal 1`] = `
 .c2 {
   display: flex;
   flex-direction: column;
-  min-height: medium;
+  min-height: 48px;
   background-color: #FFFFFF;
   color: #444444;
   outline: none;
@@ -8251,6 +8815,12 @@ exports[`Layer position: start - full: horizontal 1`] = `
 @media only screen and (max-width: 768px) {
   .c1 {
     position: relative;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    min-height: 24px;
   }
 }
 
@@ -8321,7 +8891,12 @@ exports[`Layer position: start - full: horizontal 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .hHaoyV {
+  .bkLEcw {
+    min-height: 24px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .bkLEcw {
     position: relative;
     max-height: none;
     max-width: none;
@@ -8368,7 +8943,7 @@ exports[`Layer position: start - full: true 1`] = `
 .c2 {
   display: flex;
   flex-direction: column;
-  min-height: medium;
+  min-height: 48px;
   background-color: #FFFFFF;
   color: #444444;
   outline: none;
@@ -8412,6 +8987,12 @@ exports[`Layer position: start - full: true 1`] = `
 @media only screen and (max-width: 768px) {
   .c1 {
     position: relative;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    min-height: 24px;
   }
 }
 
@@ -8482,7 +9063,12 @@ exports[`Layer position: start - full: true 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .hHaoyV {
+  .bkLEcw {
+    min-height: 24px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .bkLEcw {
     position: relative;
     max-height: none;
     max-width: none;
@@ -8529,7 +9115,7 @@ exports[`Layer position: start - full: vertical 1`] = `
 .c2 {
   display: flex;
   flex-direction: column;
-  min-height: medium;
+  min-height: 48px;
   background-color: #FFFFFF;
   color: #444444;
   outline: none;
@@ -8572,6 +9158,12 @@ exports[`Layer position: start - full: vertical 1`] = `
 @media only screen and (max-width: 768px) {
   .c1 {
     position: relative;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    min-height: 24px;
   }
 }
 
@@ -8642,7 +9234,12 @@ exports[`Layer position: start - full: vertical 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .hHaoyV {
+  .bkLEcw {
+    min-height: 24px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .bkLEcw {
     position: relative;
     max-height: none;
     max-width: none;
@@ -8689,7 +9286,7 @@ exports[`Layer position: top - full: false 1`] = `
 .c2 {
   display: flex;
   flex-direction: column;
-  min-height: medium;
+  min-height: 48px;
   background-color: #FFFFFF;
   color: #444444;
   outline: none;
@@ -8731,6 +9328,12 @@ exports[`Layer position: top - full: false 1`] = `
 @media only screen and (max-width: 768px) {
   .c1 {
     position: relative;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    min-height: 24px;
   }
 }
 
@@ -8801,7 +9404,12 @@ exports[`Layer position: top - full: false 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .hHaoyV {
+  .bkLEcw {
+    min-height: 24px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .bkLEcw {
     position: relative;
     max-height: none;
     max-width: none;
@@ -8848,7 +9456,7 @@ exports[`Layer position: top - full: horizontal 1`] = `
 .c2 {
   display: flex;
   flex-direction: column;
-  min-height: medium;
+  min-height: 48px;
   background-color: #FFFFFF;
   color: #444444;
   outline: none;
@@ -8891,6 +9499,12 @@ exports[`Layer position: top - full: horizontal 1`] = `
 @media only screen and (max-width: 768px) {
   .c1 {
     position: relative;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    min-height: 24px;
   }
 }
 
@@ -8961,7 +9575,12 @@ exports[`Layer position: top - full: horizontal 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .hHaoyV {
+  .bkLEcw {
+    min-height: 24px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .bkLEcw {
     position: relative;
     max-height: none;
     max-width: none;
@@ -9008,7 +9627,7 @@ exports[`Layer position: top - full: true 1`] = `
 .c2 {
   display: flex;
   flex-direction: column;
-  min-height: medium;
+  min-height: 48px;
   background-color: #FFFFFF;
   color: #444444;
   outline: none;
@@ -9052,6 +9671,12 @@ exports[`Layer position: top - full: true 1`] = `
 @media only screen and (max-width: 768px) {
   .c1 {
     position: relative;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    min-height: 24px;
   }
 }
 
@@ -9122,7 +9747,12 @@ exports[`Layer position: top - full: true 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .hHaoyV {
+  .bkLEcw {
+    min-height: 24px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .bkLEcw {
     position: relative;
     max-height: none;
     max-width: none;
@@ -9169,7 +9799,7 @@ exports[`Layer position: top - full: vertical 1`] = `
 .c2 {
   display: flex;
   flex-direction: column;
-  min-height: medium;
+  min-height: 48px;
   background-color: #FFFFFF;
   color: #444444;
   outline: none;
@@ -9212,6 +9842,12 @@ exports[`Layer position: top - full: vertical 1`] = `
 @media only screen and (max-width: 768px) {
   .c1 {
     position: relative;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    min-height: 24px;
   }
 }
 
@@ -9282,7 +9918,12 @@ exports[`Layer position: top - full: vertical 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .hHaoyV {
+  .bkLEcw {
+    min-height: 24px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .bkLEcw {
     position: relative;
     max-height: none;
     max-width: none;
@@ -9329,7 +9970,7 @@ exports[`Layer position: top-left - full: false 1`] = `
 .c2 {
   display: flex;
   flex-direction: column;
-  min-height: medium;
+  min-height: 48px;
   background-color: #FFFFFF;
   color: #444444;
   outline: none;
@@ -9371,6 +10012,12 @@ exports[`Layer position: top-left - full: false 1`] = `
 @media only screen and (max-width: 768px) {
   .c1 {
     position: relative;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    min-height: 24px;
   }
 }
 
@@ -9441,7 +10088,12 @@ exports[`Layer position: top-left - full: false 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .hHaoyV {
+  .bkLEcw {
+    min-height: 24px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .bkLEcw {
     position: relative;
     max-height: none;
     max-width: none;
@@ -9488,7 +10140,7 @@ exports[`Layer position: top-left - full: horizontal 1`] = `
 .c2 {
   display: flex;
   flex-direction: column;
-  min-height: medium;
+  min-height: 48px;
   background-color: #FFFFFF;
   color: #444444;
   outline: none;
@@ -9531,6 +10183,12 @@ exports[`Layer position: top-left - full: horizontal 1`] = `
 @media only screen and (max-width: 768px) {
   .c1 {
     position: relative;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    min-height: 24px;
   }
 }
 
@@ -9601,7 +10259,12 @@ exports[`Layer position: top-left - full: horizontal 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .hHaoyV {
+  .bkLEcw {
+    min-height: 24px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .bkLEcw {
     position: relative;
     max-height: none;
     max-width: none;
@@ -9648,7 +10311,7 @@ exports[`Layer position: top-left - full: true 1`] = `
 .c2 {
   display: flex;
   flex-direction: column;
-  min-height: medium;
+  min-height: 48px;
   background-color: #FFFFFF;
   color: #444444;
   outline: none;
@@ -9692,6 +10355,12 @@ exports[`Layer position: top-left - full: true 1`] = `
 @media only screen and (max-width: 768px) {
   .c1 {
     position: relative;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    min-height: 24px;
   }
 }
 
@@ -9762,7 +10431,12 @@ exports[`Layer position: top-left - full: true 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .hHaoyV {
+  .bkLEcw {
+    min-height: 24px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .bkLEcw {
     position: relative;
     max-height: none;
     max-width: none;
@@ -9809,7 +10483,7 @@ exports[`Layer position: top-left - full: vertical 1`] = `
 .c2 {
   display: flex;
   flex-direction: column;
-  min-height: medium;
+  min-height: 48px;
   background-color: #FFFFFF;
   color: #444444;
   outline: none;
@@ -9852,6 +10526,12 @@ exports[`Layer position: top-left - full: vertical 1`] = `
 @media only screen and (max-width: 768px) {
   .c1 {
     position: relative;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    min-height: 24px;
   }
 }
 
@@ -9922,7 +10602,12 @@ exports[`Layer position: top-left - full: vertical 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .hHaoyV {
+  .bkLEcw {
+    min-height: 24px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .bkLEcw {
     position: relative;
     max-height: none;
     max-width: none;
@@ -9969,7 +10654,7 @@ exports[`Layer position: top-right - full: false 1`] = `
 .c2 {
   display: flex;
   flex-direction: column;
-  min-height: medium;
+  min-height: 48px;
   background-color: #FFFFFF;
   color: #444444;
   outline: none;
@@ -10011,6 +10696,12 @@ exports[`Layer position: top-right - full: false 1`] = `
 @media only screen and (max-width: 768px) {
   .c1 {
     position: relative;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    min-height: 24px;
   }
 }
 
@@ -10081,7 +10772,12 @@ exports[`Layer position: top-right - full: false 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .hHaoyV {
+  .bkLEcw {
+    min-height: 24px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .bkLEcw {
     position: relative;
     max-height: none;
     max-width: none;
@@ -10128,7 +10824,7 @@ exports[`Layer position: top-right - full: horizontal 1`] = `
 .c2 {
   display: flex;
   flex-direction: column;
-  min-height: medium;
+  min-height: 48px;
   background-color: #FFFFFF;
   color: #444444;
   outline: none;
@@ -10171,6 +10867,12 @@ exports[`Layer position: top-right - full: horizontal 1`] = `
 @media only screen and (max-width: 768px) {
   .c1 {
     position: relative;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    min-height: 24px;
   }
 }
 
@@ -10241,7 +10943,12 @@ exports[`Layer position: top-right - full: horizontal 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .hHaoyV {
+  .bkLEcw {
+    min-height: 24px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .bkLEcw {
     position: relative;
     max-height: none;
     max-width: none;
@@ -10288,7 +10995,7 @@ exports[`Layer position: top-right - full: true 1`] = `
 .c2 {
   display: flex;
   flex-direction: column;
-  min-height: medium;
+  min-height: 48px;
   background-color: #FFFFFF;
   color: #444444;
   outline: none;
@@ -10332,6 +11039,12 @@ exports[`Layer position: top-right - full: true 1`] = `
 @media only screen and (max-width: 768px) {
   .c1 {
     position: relative;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    min-height: 24px;
   }
 }
 
@@ -10402,7 +11115,12 @@ exports[`Layer position: top-right - full: true 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .hHaoyV {
+  .bkLEcw {
+    min-height: 24px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .bkLEcw {
     position: relative;
     max-height: none;
     max-width: none;
@@ -10449,7 +11167,7 @@ exports[`Layer position: top-right - full: vertical 1`] = `
 .c2 {
   display: flex;
   flex-direction: column;
-  min-height: medium;
+  min-height: 48px;
   background-color: #FFFFFF;
   color: #444444;
   outline: none;
@@ -10492,6 +11210,12 @@ exports[`Layer position: top-right - full: vertical 1`] = `
 @media only screen and (max-width: 768px) {
   .c1 {
     position: relative;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    min-height: 24px;
   }
 }
 
@@ -10562,7 +11286,12 @@ exports[`Layer position: top-right - full: vertical 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .hHaoyV {
+  .bkLEcw {
+    min-height: 24px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .bkLEcw {
     position: relative;
     max-height: none;
     max-width: none;
@@ -10609,7 +11338,7 @@ exports[`Layer renders outside grommet wrapper 1`] = `
 .c2 {
   display: flex;
   flex-direction: column;
-  min-height: medium;
+  min-height: 48px;
   background-color: #FFFFFF;
   color: #444444;
   outline: none;
@@ -10651,6 +11380,12 @@ exports[`Layer renders outside grommet wrapper 1`] = `
 @media only screen and (max-width: 768px) {
   .c1 {
     position: relative;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    min-height: 24px;
   }
 }
 
@@ -10721,7 +11456,12 @@ exports[`Layer renders outside grommet wrapper 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .hHaoyV {
+  .bkLEcw {
+    min-height: 24px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .bkLEcw {
     position: relative;
     max-height: none;
     max-width: none;
@@ -10768,7 +11508,7 @@ exports[`Layer should apply background 1`] = `
 .c2 {
   display: flex;
   flex-direction: column;
-  min-height: medium;
+  min-height: 48px;
   background-color: #7D4CDB;
   color: #f8f8f8;
   outline: none;
@@ -10810,6 +11550,12 @@ exports[`Layer should apply background 1`] = `
 @media only screen and (max-width: 768px) {
   .c1 {
     position: relative;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    min-height: 24px;
   }
 }
 
@@ -10880,7 +11626,12 @@ exports[`Layer should apply background 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .hHaoyV {
+  .bkLEcw {
+    min-height: 24px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .bkLEcw {
     position: relative;
     max-height: none;
     max-width: none;
@@ -10927,7 +11678,7 @@ exports[`Layer should only place id on StyledLayer when singleId === true 1`] = 
 .c2 {
   display: flex;
   flex-direction: column;
-  min-height: medium;
+  min-height: 48px;
   background-color: #FFFFFF;
   color: #444444;
   outline: none;
@@ -10968,6 +11719,12 @@ exports[`Layer should only place id on StyledLayer when singleId === true 1`] = 
 @media only screen and (max-width: 768px) {
   .c1 {
     position: relative;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    min-height: 24px;
   }
 }
 
@@ -11038,7 +11795,12 @@ exports[`Layer should only place id on StyledLayer when singleId === true 2`] = 
   }
 }
 @media only screen and (max-width: 768px) {
-  .hHaoyV {
+  .bkLEcw {
+    min-height: 24px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .bkLEcw {
     position: relative;
     max-height: none;
     max-width: none;
@@ -11085,7 +11847,7 @@ exports[`Layer should render correct border radius for position: bottom -\\n    
 .c2 {
   display: flex;
   flex-direction: column;
-  min-height: medium;
+  min-height: 48px;
   background-color: #FFFFFF;
   color: #444444;
   outline: none;
@@ -11127,6 +11889,12 @@ exports[`Layer should render correct border radius for position: bottom -\\n    
 @media only screen and (max-width: 768px) {
   .c1 {
     position: relative;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    min-height: 24px;
   }
 }
 
@@ -11197,7 +11965,12 @@ exports[`Layer should render correct border radius for position: bottom -\\n    
   }
 }
 @media only screen and (max-width: 768px) {
-  .hHaoyV {
+  .bkLEcw {
+    min-height: 24px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .bkLEcw {
     position: relative;
     max-height: none;
     max-width: none;
@@ -11244,7 +12017,7 @@ exports[`Layer should render correct border radius for position: bottom -\\n    
 .c2 {
   display: flex;
   flex-direction: column;
-  min-height: medium;
+  min-height: 48px;
   background-color: #FFFFFF;
   color: #444444;
   outline: none;
@@ -11287,6 +12060,12 @@ exports[`Layer should render correct border radius for position: bottom -\\n    
 @media only screen and (max-width: 768px) {
   .c1 {
     position: relative;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    min-height: 24px;
   }
 }
 
@@ -11357,7 +12136,12 @@ exports[`Layer should render correct border radius for position: bottom -\\n    
   }
 }
 @media only screen and (max-width: 768px) {
-  .hHaoyV {
+  .bkLEcw {
+    min-height: 24px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .bkLEcw {
     position: relative;
     max-height: none;
     max-width: none;
@@ -11404,7 +12188,7 @@ exports[`Layer should render correct border radius for position: bottom -\\n    
 .c2 {
   display: flex;
   flex-direction: column;
-  min-height: medium;
+  min-height: 48px;
   background-color: #FFFFFF;
   color: #444444;
   outline: none;
@@ -11448,6 +12232,12 @@ exports[`Layer should render correct border radius for position: bottom -\\n    
 @media only screen and (max-width: 768px) {
   .c1 {
     position: relative;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    min-height: 24px;
   }
 }
 
@@ -11518,7 +12308,12 @@ exports[`Layer should render correct border radius for position: bottom -\\n    
   }
 }
 @media only screen and (max-width: 768px) {
-  .hHaoyV {
+  .bkLEcw {
+    min-height: 24px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .bkLEcw {
     position: relative;
     max-height: none;
     max-width: none;
@@ -11565,7 +12360,7 @@ exports[`Layer should render correct border radius for position: bottom -\\n    
 .c2 {
   display: flex;
   flex-direction: column;
-  min-height: medium;
+  min-height: 48px;
   background-color: #FFFFFF;
   color: #444444;
   outline: none;
@@ -11608,6 +12403,12 @@ exports[`Layer should render correct border radius for position: bottom -\\n    
 @media only screen and (max-width: 768px) {
   .c1 {
     position: relative;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    min-height: 24px;
   }
 }
 
@@ -11678,7 +12479,12 @@ exports[`Layer should render correct border radius for position: bottom -\\n    
   }
 }
 @media only screen and (max-width: 768px) {
-  .hHaoyV {
+  .bkLEcw {
+    min-height: 24px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .bkLEcw {
     position: relative;
     max-height: none;
     max-width: none;
@@ -11725,7 +12531,7 @@ exports[`Layer should render correct border radius for position: bottom-left -\\
 .c2 {
   display: flex;
   flex-direction: column;
-  min-height: medium;
+  min-height: 48px;
   background-color: #FFFFFF;
   color: #444444;
   outline: none;
@@ -11767,6 +12573,12 @@ exports[`Layer should render correct border radius for position: bottom-left -\\
 @media only screen and (max-width: 768px) {
   .c1 {
     position: relative;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    min-height: 24px;
   }
 }
 
@@ -11837,7 +12649,12 @@ exports[`Layer should render correct border radius for position: bottom-left -\\
   }
 }
 @media only screen and (max-width: 768px) {
-  .hHaoyV {
+  .bkLEcw {
+    min-height: 24px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .bkLEcw {
     position: relative;
     max-height: none;
     max-width: none;
@@ -11884,7 +12701,7 @@ exports[`Layer should render correct border radius for position: bottom-left -\\
 .c2 {
   display: flex;
   flex-direction: column;
-  min-height: medium;
+  min-height: 48px;
   background-color: #FFFFFF;
   color: #444444;
   outline: none;
@@ -11927,6 +12744,12 @@ exports[`Layer should render correct border radius for position: bottom-left -\\
 @media only screen and (max-width: 768px) {
   .c1 {
     position: relative;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    min-height: 24px;
   }
 }
 
@@ -11997,7 +12820,12 @@ exports[`Layer should render correct border radius for position: bottom-left -\\
   }
 }
 @media only screen and (max-width: 768px) {
-  .hHaoyV {
+  .bkLEcw {
+    min-height: 24px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .bkLEcw {
     position: relative;
     max-height: none;
     max-width: none;
@@ -12044,7 +12872,7 @@ exports[`Layer should render correct border radius for position: bottom-left -\\
 .c2 {
   display: flex;
   flex-direction: column;
-  min-height: medium;
+  min-height: 48px;
   background-color: #FFFFFF;
   color: #444444;
   outline: none;
@@ -12088,6 +12916,12 @@ exports[`Layer should render correct border radius for position: bottom-left -\\
 @media only screen and (max-width: 768px) {
   .c1 {
     position: relative;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    min-height: 24px;
   }
 }
 
@@ -12158,7 +12992,12 @@ exports[`Layer should render correct border radius for position: bottom-left -\\
   }
 }
 @media only screen and (max-width: 768px) {
-  .hHaoyV {
+  .bkLEcw {
+    min-height: 24px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .bkLEcw {
     position: relative;
     max-height: none;
     max-width: none;
@@ -12205,7 +13044,7 @@ exports[`Layer should render correct border radius for position: bottom-left -\\
 .c2 {
   display: flex;
   flex-direction: column;
-  min-height: medium;
+  min-height: 48px;
   background-color: #FFFFFF;
   color: #444444;
   outline: none;
@@ -12248,6 +13087,12 @@ exports[`Layer should render correct border radius for position: bottom-left -\\
 @media only screen and (max-width: 768px) {
   .c1 {
     position: relative;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    min-height: 24px;
   }
 }
 
@@ -12318,7 +13163,12 @@ exports[`Layer should render correct border radius for position: bottom-left -\\
   }
 }
 @media only screen and (max-width: 768px) {
-  .hHaoyV {
+  .bkLEcw {
+    min-height: 24px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .bkLEcw {
     position: relative;
     max-height: none;
     max-width: none;
@@ -12365,7 +13215,7 @@ exports[`Layer should render correct border radius for position: bottom-right -\
 .c2 {
   display: flex;
   flex-direction: column;
-  min-height: medium;
+  min-height: 48px;
   background-color: #FFFFFF;
   color: #444444;
   outline: none;
@@ -12407,6 +13257,12 @@ exports[`Layer should render correct border radius for position: bottom-right -\
 @media only screen and (max-width: 768px) {
   .c1 {
     position: relative;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    min-height: 24px;
   }
 }
 
@@ -12477,7 +13333,12 @@ exports[`Layer should render correct border radius for position: bottom-right -\
   }
 }
 @media only screen and (max-width: 768px) {
-  .hHaoyV {
+  .bkLEcw {
+    min-height: 24px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .bkLEcw {
     position: relative;
     max-height: none;
     max-width: none;
@@ -12524,7 +13385,7 @@ exports[`Layer should render correct border radius for position: bottom-right -\
 .c2 {
   display: flex;
   flex-direction: column;
-  min-height: medium;
+  min-height: 48px;
   background-color: #FFFFFF;
   color: #444444;
   outline: none;
@@ -12567,6 +13428,12 @@ exports[`Layer should render correct border radius for position: bottom-right -\
 @media only screen and (max-width: 768px) {
   .c1 {
     position: relative;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    min-height: 24px;
   }
 }
 
@@ -12637,7 +13504,12 @@ exports[`Layer should render correct border radius for position: bottom-right -\
   }
 }
 @media only screen and (max-width: 768px) {
-  .hHaoyV {
+  .bkLEcw {
+    min-height: 24px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .bkLEcw {
     position: relative;
     max-height: none;
     max-width: none;
@@ -12684,7 +13556,7 @@ exports[`Layer should render correct border radius for position: bottom-right -\
 .c2 {
   display: flex;
   flex-direction: column;
-  min-height: medium;
+  min-height: 48px;
   background-color: #FFFFFF;
   color: #444444;
   outline: none;
@@ -12728,6 +13600,12 @@ exports[`Layer should render correct border radius for position: bottom-right -\
 @media only screen and (max-width: 768px) {
   .c1 {
     position: relative;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    min-height: 24px;
   }
 }
 
@@ -12798,7 +13676,12 @@ exports[`Layer should render correct border radius for position: bottom-right -\
   }
 }
 @media only screen and (max-width: 768px) {
-  .hHaoyV {
+  .bkLEcw {
+    min-height: 24px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .bkLEcw {
     position: relative;
     max-height: none;
     max-width: none;
@@ -12845,7 +13728,7 @@ exports[`Layer should render correct border radius for position: bottom-right -\
 .c2 {
   display: flex;
   flex-direction: column;
-  min-height: medium;
+  min-height: 48px;
   background-color: #FFFFFF;
   color: #444444;
   outline: none;
@@ -12888,6 +13771,12 @@ exports[`Layer should render correct border radius for position: bottom-right -\
 @media only screen and (max-width: 768px) {
   .c1 {
     position: relative;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    min-height: 24px;
   }
 }
 
@@ -12958,7 +13847,12 @@ exports[`Layer should render correct border radius for position: bottom-right -\
   }
 }
 @media only screen and (max-width: 768px) {
-  .hHaoyV {
+  .bkLEcw {
+    min-height: 24px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .bkLEcw {
     position: relative;
     max-height: none;
     max-width: none;
@@ -13005,7 +13899,7 @@ exports[`Layer should render correct border radius for position: center -\\n    
 .c2 {
   display: flex;
   flex-direction: column;
-  min-height: medium;
+  min-height: 48px;
   background-color: #FFFFFF;
   color: #444444;
   outline: none;
@@ -13047,6 +13941,12 @@ exports[`Layer should render correct border radius for position: center -\\n    
 @media only screen and (max-width: 768px) {
   .c1 {
     position: relative;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    min-height: 24px;
   }
 }
 
@@ -13117,7 +14017,12 @@ exports[`Layer should render correct border radius for position: center -\\n    
   }
 }
 @media only screen and (max-width: 768px) {
-  .hHaoyV {
+  .bkLEcw {
+    min-height: 24px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .bkLEcw {
     position: relative;
     max-height: none;
     max-width: none;
@@ -13164,7 +14069,7 @@ exports[`Layer should render correct border radius for position: center -\\n    
 .c2 {
   display: flex;
   flex-direction: column;
-  min-height: medium;
+  min-height: 48px;
   background-color: #FFFFFF;
   color: #444444;
   outline: none;
@@ -13207,6 +14112,12 @@ exports[`Layer should render correct border radius for position: center -\\n    
 @media only screen and (max-width: 768px) {
   .c1 {
     position: relative;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    min-height: 24px;
   }
 }
 
@@ -13277,7 +14188,12 @@ exports[`Layer should render correct border radius for position: center -\\n    
   }
 }
 @media only screen and (max-width: 768px) {
-  .hHaoyV {
+  .bkLEcw {
+    min-height: 24px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .bkLEcw {
     position: relative;
     max-height: none;
     max-width: none;
@@ -13324,7 +14240,7 @@ exports[`Layer should render correct border radius for position: center -\\n    
 .c2 {
   display: flex;
   flex-direction: column;
-  min-height: medium;
+  min-height: 48px;
   background-color: #FFFFFF;
   color: #444444;
   outline: none;
@@ -13367,6 +14283,12 @@ exports[`Layer should render correct border radius for position: center -\\n    
 @media only screen and (max-width: 768px) {
   .c1 {
     position: relative;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    min-height: 24px;
   }
 }
 
@@ -13437,7 +14359,12 @@ exports[`Layer should render correct border radius for position: center -\\n    
   }
 }
 @media only screen and (max-width: 768px) {
-  .hHaoyV {
+  .bkLEcw {
+    min-height: 24px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .bkLEcw {
     position: relative;
     max-height: none;
     max-width: none;
@@ -13484,7 +14411,7 @@ exports[`Layer should render correct border radius for position: center -\\n    
 .c2 {
   display: flex;
   flex-direction: column;
-  min-height: medium;
+  min-height: 48px;
   background-color: #FFFFFF;
   color: #444444;
   outline: none;
@@ -13527,6 +14454,12 @@ exports[`Layer should render correct border radius for position: center -\\n    
 @media only screen and (max-width: 768px) {
   .c1 {
     position: relative;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    min-height: 24px;
   }
 }
 
@@ -13597,7 +14530,12 @@ exports[`Layer should render correct border radius for position: center -\\n    
   }
 }
 @media only screen and (max-width: 768px) {
-  .hHaoyV {
+  .bkLEcw {
+    min-height: 24px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .bkLEcw {
     position: relative;
     max-height: none;
     max-width: none;
@@ -13644,7 +14582,7 @@ exports[`Layer should render correct border radius for position: end -\\n      f
 .c2 {
   display: flex;
   flex-direction: column;
-  min-height: medium;
+  min-height: 48px;
   background-color: #FFFFFF;
   color: #444444;
   outline: none;
@@ -13687,6 +14625,12 @@ exports[`Layer should render correct border radius for position: end -\\n      f
 @media only screen and (max-width: 768px) {
   .c1 {
     position: relative;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    min-height: 24px;
   }
 }
 
@@ -13757,7 +14701,12 @@ exports[`Layer should render correct border radius for position: end -\\n      f
   }
 }
 @media only screen and (max-width: 768px) {
-  .hHaoyV {
+  .bkLEcw {
+    min-height: 24px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .bkLEcw {
     position: relative;
     max-height: none;
     max-width: none;
@@ -13804,7 +14753,7 @@ exports[`Layer should render correct border radius for position: end -\\n      f
 .c2 {
   display: flex;
   flex-direction: column;
-  min-height: medium;
+  min-height: 48px;
   background-color: #FFFFFF;
   color: #444444;
   outline: none;
@@ -13847,6 +14796,12 @@ exports[`Layer should render correct border radius for position: end -\\n      f
 @media only screen and (max-width: 768px) {
   .c1 {
     position: relative;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    min-height: 24px;
   }
 }
 
@@ -13917,7 +14872,12 @@ exports[`Layer should render correct border radius for position: end -\\n      f
   }
 }
 @media only screen and (max-width: 768px) {
-  .hHaoyV {
+  .bkLEcw {
+    min-height: 24px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .bkLEcw {
     position: relative;
     max-height: none;
     max-width: none;
@@ -13964,7 +14924,7 @@ exports[`Layer should render correct border radius for position: end -\\n      f
 .c2 {
   display: flex;
   flex-direction: column;
-  min-height: medium;
+  min-height: 48px;
   background-color: #FFFFFF;
   color: #444444;
   outline: none;
@@ -14008,6 +14968,12 @@ exports[`Layer should render correct border radius for position: end -\\n      f
 @media only screen and (max-width: 768px) {
   .c1 {
     position: relative;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    min-height: 24px;
   }
 }
 
@@ -14078,7 +15044,12 @@ exports[`Layer should render correct border radius for position: end -\\n      f
   }
 }
 @media only screen and (max-width: 768px) {
-  .hHaoyV {
+  .bkLEcw {
+    min-height: 24px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .bkLEcw {
     position: relative;
     max-height: none;
     max-width: none;
@@ -14125,7 +15096,7 @@ exports[`Layer should render correct border radius for position: end -\\n      f
 .c2 {
   display: flex;
   flex-direction: column;
-  min-height: medium;
+  min-height: 48px;
   background-color: #FFFFFF;
   color: #444444;
   outline: none;
@@ -14168,6 +15139,12 @@ exports[`Layer should render correct border radius for position: end -\\n      f
 @media only screen and (max-width: 768px) {
   .c1 {
     position: relative;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    min-height: 24px;
   }
 }
 
@@ -14238,7 +15215,12 @@ exports[`Layer should render correct border radius for position: end -\\n      f
   }
 }
 @media only screen and (max-width: 768px) {
-  .hHaoyV {
+  .bkLEcw {
+    min-height: 24px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .bkLEcw {
     position: relative;
     max-height: none;
     max-width: none;
@@ -14285,7 +15267,7 @@ exports[`Layer should render correct border radius for position: left -\\n      
 .c2 {
   display: flex;
   flex-direction: column;
-  min-height: medium;
+  min-height: 48px;
   background-color: #FFFFFF;
   color: #444444;
   outline: none;
@@ -14327,6 +15309,12 @@ exports[`Layer should render correct border radius for position: left -\\n      
 @media only screen and (max-width: 768px) {
   .c1 {
     position: relative;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    min-height: 24px;
   }
 }
 
@@ -14397,7 +15385,12 @@ exports[`Layer should render correct border radius for position: left -\\n      
   }
 }
 @media only screen and (max-width: 768px) {
-  .hHaoyV {
+  .bkLEcw {
+    min-height: 24px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .bkLEcw {
     position: relative;
     max-height: none;
     max-width: none;
@@ -14444,7 +15437,7 @@ exports[`Layer should render correct border radius for position: left -\\n      
 .c2 {
   display: flex;
   flex-direction: column;
-  min-height: medium;
+  min-height: 48px;
   background-color: #FFFFFF;
   color: #444444;
   outline: none;
@@ -14487,6 +15480,12 @@ exports[`Layer should render correct border radius for position: left -\\n      
 @media only screen and (max-width: 768px) {
   .c1 {
     position: relative;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    min-height: 24px;
   }
 }
 
@@ -14557,7 +15556,12 @@ exports[`Layer should render correct border radius for position: left -\\n      
   }
 }
 @media only screen and (max-width: 768px) {
-  .hHaoyV {
+  .bkLEcw {
+    min-height: 24px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .bkLEcw {
     position: relative;
     max-height: none;
     max-width: none;
@@ -14604,7 +15608,7 @@ exports[`Layer should render correct border radius for position: left -\\n      
 .c2 {
   display: flex;
   flex-direction: column;
-  min-height: medium;
+  min-height: 48px;
   background-color: #FFFFFF;
   color: #444444;
   outline: none;
@@ -14648,6 +15652,12 @@ exports[`Layer should render correct border radius for position: left -\\n      
 @media only screen and (max-width: 768px) {
   .c1 {
     position: relative;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    min-height: 24px;
   }
 }
 
@@ -14718,7 +15728,12 @@ exports[`Layer should render correct border radius for position: left -\\n      
   }
 }
 @media only screen and (max-width: 768px) {
-  .hHaoyV {
+  .bkLEcw {
+    min-height: 24px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .bkLEcw {
     position: relative;
     max-height: none;
     max-width: none;
@@ -14765,7 +15780,7 @@ exports[`Layer should render correct border radius for position: left -\\n      
 .c2 {
   display: flex;
   flex-direction: column;
-  min-height: medium;
+  min-height: 48px;
   background-color: #FFFFFF;
   color: #444444;
   outline: none;
@@ -14808,6 +15823,12 @@ exports[`Layer should render correct border radius for position: left -\\n      
 @media only screen and (max-width: 768px) {
   .c1 {
     position: relative;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    min-height: 24px;
   }
 }
 
@@ -14878,7 +15899,12 @@ exports[`Layer should render correct border radius for position: left -\\n      
   }
 }
 @media only screen and (max-width: 768px) {
-  .hHaoyV {
+  .bkLEcw {
+    min-height: 24px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .bkLEcw {
     position: relative;
     max-height: none;
     max-width: none;
@@ -14925,7 +15951,7 @@ exports[`Layer should render correct border radius for position: right -\\n     
 .c2 {
   display: flex;
   flex-direction: column;
-  min-height: medium;
+  min-height: 48px;
   background-color: #FFFFFF;
   color: #444444;
   outline: none;
@@ -14967,6 +15993,12 @@ exports[`Layer should render correct border radius for position: right -\\n     
 @media only screen and (max-width: 768px) {
   .c1 {
     position: relative;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    min-height: 24px;
   }
 }
 
@@ -15037,7 +16069,12 @@ exports[`Layer should render correct border radius for position: right -\\n     
   }
 }
 @media only screen and (max-width: 768px) {
-  .hHaoyV {
+  .bkLEcw {
+    min-height: 24px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .bkLEcw {
     position: relative;
     max-height: none;
     max-width: none;
@@ -15084,7 +16121,7 @@ exports[`Layer should render correct border radius for position: right -\\n     
 .c2 {
   display: flex;
   flex-direction: column;
-  min-height: medium;
+  min-height: 48px;
   background-color: #FFFFFF;
   color: #444444;
   outline: none;
@@ -15127,6 +16164,12 @@ exports[`Layer should render correct border radius for position: right -\\n     
 @media only screen and (max-width: 768px) {
   .c1 {
     position: relative;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    min-height: 24px;
   }
 }
 
@@ -15197,7 +16240,12 @@ exports[`Layer should render correct border radius for position: right -\\n     
   }
 }
 @media only screen and (max-width: 768px) {
-  .hHaoyV {
+  .bkLEcw {
+    min-height: 24px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .bkLEcw {
     position: relative;
     max-height: none;
     max-width: none;
@@ -15244,7 +16292,7 @@ exports[`Layer should render correct border radius for position: right -\\n     
 .c2 {
   display: flex;
   flex-direction: column;
-  min-height: medium;
+  min-height: 48px;
   background-color: #FFFFFF;
   color: #444444;
   outline: none;
@@ -15288,6 +16336,12 @@ exports[`Layer should render correct border radius for position: right -\\n     
 @media only screen and (max-width: 768px) {
   .c1 {
     position: relative;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    min-height: 24px;
   }
 }
 
@@ -15358,7 +16412,12 @@ exports[`Layer should render correct border radius for position: right -\\n     
   }
 }
 @media only screen and (max-width: 768px) {
-  .hHaoyV {
+  .bkLEcw {
+    min-height: 24px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .bkLEcw {
     position: relative;
     max-height: none;
     max-width: none;
@@ -15405,7 +16464,7 @@ exports[`Layer should render correct border radius for position: right -\\n     
 .c2 {
   display: flex;
   flex-direction: column;
-  min-height: medium;
+  min-height: 48px;
   background-color: #FFFFFF;
   color: #444444;
   outline: none;
@@ -15448,6 +16507,12 @@ exports[`Layer should render correct border radius for position: right -\\n     
 @media only screen and (max-width: 768px) {
   .c1 {
     position: relative;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    min-height: 24px;
   }
 }
 
@@ -15518,7 +16583,12 @@ exports[`Layer should render correct border radius for position: right -\\n     
   }
 }
 @media only screen and (max-width: 768px) {
-  .hHaoyV {
+  .bkLEcw {
+    min-height: 24px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .bkLEcw {
     position: relative;
     max-height: none;
     max-width: none;
@@ -15565,7 +16635,7 @@ exports[`Layer should render correct border radius for position: start -\\n     
 .c2 {
   display: flex;
   flex-direction: column;
-  min-height: medium;
+  min-height: 48px;
   background-color: #FFFFFF;
   color: #444444;
   outline: none;
@@ -15608,6 +16678,12 @@ exports[`Layer should render correct border radius for position: start -\\n     
 @media only screen and (max-width: 768px) {
   .c1 {
     position: relative;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    min-height: 24px;
   }
 }
 
@@ -15678,7 +16754,12 @@ exports[`Layer should render correct border radius for position: start -\\n     
   }
 }
 @media only screen and (max-width: 768px) {
-  .hHaoyV {
+  .bkLEcw {
+    min-height: 24px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .bkLEcw {
     position: relative;
     max-height: none;
     max-width: none;
@@ -15725,7 +16806,7 @@ exports[`Layer should render correct border radius for position: start -\\n     
 .c2 {
   display: flex;
   flex-direction: column;
-  min-height: medium;
+  min-height: 48px;
   background-color: #FFFFFF;
   color: #444444;
   outline: none;
@@ -15768,6 +16849,12 @@ exports[`Layer should render correct border radius for position: start -\\n     
 @media only screen and (max-width: 768px) {
   .c1 {
     position: relative;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    min-height: 24px;
   }
 }
 
@@ -15838,7 +16925,12 @@ exports[`Layer should render correct border radius for position: start -\\n     
   }
 }
 @media only screen and (max-width: 768px) {
-  .hHaoyV {
+  .bkLEcw {
+    min-height: 24px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .bkLEcw {
     position: relative;
     max-height: none;
     max-width: none;
@@ -15885,7 +16977,7 @@ exports[`Layer should render correct border radius for position: start -\\n     
 .c2 {
   display: flex;
   flex-direction: column;
-  min-height: medium;
+  min-height: 48px;
   background-color: #FFFFFF;
   color: #444444;
   outline: none;
@@ -15929,6 +17021,12 @@ exports[`Layer should render correct border radius for position: start -\\n     
 @media only screen and (max-width: 768px) {
   .c1 {
     position: relative;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    min-height: 24px;
   }
 }
 
@@ -15999,7 +17097,12 @@ exports[`Layer should render correct border radius for position: start -\\n     
   }
 }
 @media only screen and (max-width: 768px) {
-  .hHaoyV {
+  .bkLEcw {
+    min-height: 24px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .bkLEcw {
     position: relative;
     max-height: none;
     max-width: none;
@@ -16046,7 +17149,7 @@ exports[`Layer should render correct border radius for position: start -\\n     
 .c2 {
   display: flex;
   flex-direction: column;
-  min-height: medium;
+  min-height: 48px;
   background-color: #FFFFFF;
   color: #444444;
   outline: none;
@@ -16089,6 +17192,12 @@ exports[`Layer should render correct border radius for position: start -\\n     
 @media only screen and (max-width: 768px) {
   .c1 {
     position: relative;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    min-height: 24px;
   }
 }
 
@@ -16159,7 +17268,12 @@ exports[`Layer should render correct border radius for position: start -\\n     
   }
 }
 @media only screen and (max-width: 768px) {
-  .hHaoyV {
+  .bkLEcw {
+    min-height: 24px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .bkLEcw {
     position: relative;
     max-height: none;
     max-width: none;
@@ -16206,7 +17320,7 @@ exports[`Layer should render correct border radius for position: top -\\n      f
 .c2 {
   display: flex;
   flex-direction: column;
-  min-height: medium;
+  min-height: 48px;
   background-color: #FFFFFF;
   color: #444444;
   outline: none;
@@ -16248,6 +17362,12 @@ exports[`Layer should render correct border radius for position: top -\\n      f
 @media only screen and (max-width: 768px) {
   .c1 {
     position: relative;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    min-height: 24px;
   }
 }
 
@@ -16318,7 +17438,12 @@ exports[`Layer should render correct border radius for position: top -\\n      f
   }
 }
 @media only screen and (max-width: 768px) {
-  .hHaoyV {
+  .bkLEcw {
+    min-height: 24px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .bkLEcw {
     position: relative;
     max-height: none;
     max-width: none;
@@ -16365,7 +17490,7 @@ exports[`Layer should render correct border radius for position: top -\\n      f
 .c2 {
   display: flex;
   flex-direction: column;
-  min-height: medium;
+  min-height: 48px;
   background-color: #FFFFFF;
   color: #444444;
   outline: none;
@@ -16408,6 +17533,12 @@ exports[`Layer should render correct border radius for position: top -\\n      f
 @media only screen and (max-width: 768px) {
   .c1 {
     position: relative;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    min-height: 24px;
   }
 }
 
@@ -16478,7 +17609,12 @@ exports[`Layer should render correct border radius for position: top -\\n      f
   }
 }
 @media only screen and (max-width: 768px) {
-  .hHaoyV {
+  .bkLEcw {
+    min-height: 24px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .bkLEcw {
     position: relative;
     max-height: none;
     max-width: none;
@@ -16525,7 +17661,7 @@ exports[`Layer should render correct border radius for position: top -\\n      f
 .c2 {
   display: flex;
   flex-direction: column;
-  min-height: medium;
+  min-height: 48px;
   background-color: #FFFFFF;
   color: #444444;
   outline: none;
@@ -16569,6 +17705,12 @@ exports[`Layer should render correct border radius for position: top -\\n      f
 @media only screen and (max-width: 768px) {
   .c1 {
     position: relative;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    min-height: 24px;
   }
 }
 
@@ -16639,7 +17781,12 @@ exports[`Layer should render correct border radius for position: top -\\n      f
   }
 }
 @media only screen and (max-width: 768px) {
-  .hHaoyV {
+  .bkLEcw {
+    min-height: 24px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .bkLEcw {
     position: relative;
     max-height: none;
     max-width: none;
@@ -16686,7 +17833,7 @@ exports[`Layer should render correct border radius for position: top -\\n      f
 .c2 {
   display: flex;
   flex-direction: column;
-  min-height: medium;
+  min-height: 48px;
   background-color: #FFFFFF;
   color: #444444;
   outline: none;
@@ -16729,6 +17876,12 @@ exports[`Layer should render correct border radius for position: top -\\n      f
 @media only screen and (max-width: 768px) {
   .c1 {
     position: relative;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    min-height: 24px;
   }
 }
 
@@ -16799,7 +17952,12 @@ exports[`Layer should render correct border radius for position: top -\\n      f
   }
 }
 @media only screen and (max-width: 768px) {
-  .hHaoyV {
+  .bkLEcw {
+    min-height: 24px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .bkLEcw {
     position: relative;
     max-height: none;
     max-width: none;
@@ -16846,7 +18004,7 @@ exports[`Layer should render correct border radius for position: top-left -\\n  
 .c2 {
   display: flex;
   flex-direction: column;
-  min-height: medium;
+  min-height: 48px;
   background-color: #FFFFFF;
   color: #444444;
   outline: none;
@@ -16888,6 +18046,12 @@ exports[`Layer should render correct border radius for position: top-left -\\n  
 @media only screen and (max-width: 768px) {
   .c1 {
     position: relative;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    min-height: 24px;
   }
 }
 
@@ -16958,7 +18122,12 @@ exports[`Layer should render correct border radius for position: top-left -\\n  
   }
 }
 @media only screen and (max-width: 768px) {
-  .hHaoyV {
+  .bkLEcw {
+    min-height: 24px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .bkLEcw {
     position: relative;
     max-height: none;
     max-width: none;
@@ -17005,7 +18174,7 @@ exports[`Layer should render correct border radius for position: top-left -\\n  
 .c2 {
   display: flex;
   flex-direction: column;
-  min-height: medium;
+  min-height: 48px;
   background-color: #FFFFFF;
   color: #444444;
   outline: none;
@@ -17048,6 +18217,12 @@ exports[`Layer should render correct border radius for position: top-left -\\n  
 @media only screen and (max-width: 768px) {
   .c1 {
     position: relative;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    min-height: 24px;
   }
 }
 
@@ -17118,7 +18293,12 @@ exports[`Layer should render correct border radius for position: top-left -\\n  
   }
 }
 @media only screen and (max-width: 768px) {
-  .hHaoyV {
+  .bkLEcw {
+    min-height: 24px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .bkLEcw {
     position: relative;
     max-height: none;
     max-width: none;
@@ -17165,7 +18345,7 @@ exports[`Layer should render correct border radius for position: top-left -\\n  
 .c2 {
   display: flex;
   flex-direction: column;
-  min-height: medium;
+  min-height: 48px;
   background-color: #FFFFFF;
   color: #444444;
   outline: none;
@@ -17209,6 +18389,12 @@ exports[`Layer should render correct border radius for position: top-left -\\n  
 @media only screen and (max-width: 768px) {
   .c1 {
     position: relative;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    min-height: 24px;
   }
 }
 
@@ -17279,7 +18465,12 @@ exports[`Layer should render correct border radius for position: top-left -\\n  
   }
 }
 @media only screen and (max-width: 768px) {
-  .hHaoyV {
+  .bkLEcw {
+    min-height: 24px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .bkLEcw {
     position: relative;
     max-height: none;
     max-width: none;
@@ -17326,7 +18517,7 @@ exports[`Layer should render correct border radius for position: top-left -\\n  
 .c2 {
   display: flex;
   flex-direction: column;
-  min-height: medium;
+  min-height: 48px;
   background-color: #FFFFFF;
   color: #444444;
   outline: none;
@@ -17369,6 +18560,12 @@ exports[`Layer should render correct border radius for position: top-left -\\n  
 @media only screen and (max-width: 768px) {
   .c1 {
     position: relative;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    min-height: 24px;
   }
 }
 
@@ -17439,7 +18636,12 @@ exports[`Layer should render correct border radius for position: top-left -\\n  
   }
 }
 @media only screen and (max-width: 768px) {
-  .hHaoyV {
+  .bkLEcw {
+    min-height: 24px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .bkLEcw {
     position: relative;
     max-height: none;
     max-width: none;
@@ -17486,7 +18688,7 @@ exports[`Layer should render correct border radius for position: top-right -\\n 
 .c2 {
   display: flex;
   flex-direction: column;
-  min-height: medium;
+  min-height: 48px;
   background-color: #FFFFFF;
   color: #444444;
   outline: none;
@@ -17528,6 +18730,12 @@ exports[`Layer should render correct border radius for position: top-right -\\n 
 @media only screen and (max-width: 768px) {
   .c1 {
     position: relative;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    min-height: 24px;
   }
 }
 
@@ -17598,7 +18806,12 @@ exports[`Layer should render correct border radius for position: top-right -\\n 
   }
 }
 @media only screen and (max-width: 768px) {
-  .hHaoyV {
+  .bkLEcw {
+    min-height: 24px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .bkLEcw {
     position: relative;
     max-height: none;
     max-width: none;
@@ -17645,7 +18858,7 @@ exports[`Layer should render correct border radius for position: top-right -\\n 
 .c2 {
   display: flex;
   flex-direction: column;
-  min-height: medium;
+  min-height: 48px;
   background-color: #FFFFFF;
   color: #444444;
   outline: none;
@@ -17688,6 +18901,12 @@ exports[`Layer should render correct border radius for position: top-right -\\n 
 @media only screen and (max-width: 768px) {
   .c1 {
     position: relative;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    min-height: 24px;
   }
 }
 
@@ -17758,7 +18977,12 @@ exports[`Layer should render correct border radius for position: top-right -\\n 
   }
 }
 @media only screen and (max-width: 768px) {
-  .hHaoyV {
+  .bkLEcw {
+    min-height: 24px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .bkLEcw {
     position: relative;
     max-height: none;
     max-width: none;
@@ -17805,7 +19029,7 @@ exports[`Layer should render correct border radius for position: top-right -\\n 
 .c2 {
   display: flex;
   flex-direction: column;
-  min-height: medium;
+  min-height: 48px;
   background-color: #FFFFFF;
   color: #444444;
   outline: none;
@@ -17849,6 +19073,12 @@ exports[`Layer should render correct border radius for position: top-right -\\n 
 @media only screen and (max-width: 768px) {
   .c1 {
     position: relative;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    min-height: 24px;
   }
 }
 
@@ -17919,7 +19149,12 @@ exports[`Layer should render correct border radius for position: top-right -\\n 
   }
 }
 @media only screen and (max-width: 768px) {
-  .hHaoyV {
+  .bkLEcw {
+    min-height: 24px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .bkLEcw {
     position: relative;
     max-height: none;
     max-width: none;
@@ -17966,7 +19201,7 @@ exports[`Layer should render correct border radius for position: top-right -\\n 
 .c2 {
   display: flex;
   flex-direction: column;
-  min-height: medium;
+  min-height: 48px;
   background-color: #FFFFFF;
   color: #444444;
   outline: none;
@@ -18009,6 +19244,12 @@ exports[`Layer should render correct border radius for position: top-right -\\n 
 @media only screen and (max-width: 768px) {
   .c1 {
     position: relative;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    min-height: 24px;
   }
 }
 
@@ -18079,7 +19320,12 @@ exports[`Layer should render correct border radius for position: top-right -\\n 
   }
 }
 @media only screen and (max-width: 768px) {
-  .hHaoyV {
+  .bkLEcw {
+    min-height: 24px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .bkLEcw {
     position: relative;
     max-height: none;
     max-width: none;
@@ -18126,7 +19372,7 @@ exports[`Layer target 1`] = `
 .c2 {
   display: flex;
   flex-direction: column;
-  min-height: medium;
+  min-height: 48px;
   background-color: #FFFFFF;
   color: #444444;
   outline: none;
@@ -18159,6 +19405,12 @@ exports[`Layer target 1`] = `
 @media only screen and (max-width: 768px) {
   .c1 {
     position: relative;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    min-height: 24px;
   }
 }
 
@@ -18211,7 +19463,12 @@ exports[`Layer target 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .hHaoyV {
+  .bkLEcw {
+    min-height: 24px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .bkLEcw {
     position: relative;
     max-height: none;
     max-width: none;
@@ -18253,7 +19510,7 @@ exports[`Layer target not modal 1`] = `
   -webkit-font-smoothing: antialiased;
   display: flex;
   flex-direction: column;
-  min-height: medium;
+  min-height: 48px;
   background-color: #FFFFFF;
   color: #444444;
   outline: none;
@@ -18281,6 +19538,12 @@ exports[`Layer target not modal 1`] = `
 
 .c2:focus {
   outline: none;
+}
+
+@media only screen and (max-width: 768px) {
+  .c1 {
+    min-height: 24px;
+  }
 }
 
 @media only screen and (max-width: 768px) {
@@ -18329,7 +19592,12 @@ exports[`Layer target not modal 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .hHaoyV {
+  .bkLEcw {
+    min-height: 24px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .bkLEcw {
     position: relative;
     max-height: none;
     max-width: none;

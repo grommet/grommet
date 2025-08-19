@@ -4,6 +4,7 @@ import {
   baseStyle,
   backgroundStyle,
   breakpointStyle,
+  edgeStyle,
   parseMetricToNum,
   styledComponentsConfig,
 } from '../../utils';
@@ -777,7 +778,14 @@ const StyledContainer = styled.div.withConfig({
   ${(props) => (!props.modal ? baseStyle : '')}
   display: flex;
   flex-direction: column;
-  min-height: ${(props) => props.theme.layer.container.height};
+  ${(props) =>
+    edgeStyle(
+      'min-height',
+      props.theme.layer.container.height,
+      props.responsive,
+      props.theme.global.edgeSize.responsiveBreakpoint,
+      props.theme,
+    )};
   ${(props) =>
     !props.plain &&
     (props.background || props.theme.layer.background) &&

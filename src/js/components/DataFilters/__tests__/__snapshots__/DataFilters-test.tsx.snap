@@ -1493,7 +1493,7 @@ exports[`DataFilters layer 2`] = `
 .c2 {
   display: flex;
   flex-direction: column;
-  min-height: medium;
+  min-height: 48px;
   background-color: #FFFFFF;
   color: #444444;
   outline: none;
@@ -1648,6 +1648,12 @@ exports[`DataFilters layer 2`] = `
 @media only screen and (max-width: 768px) {
   .c1 {
     position: relative;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    min-height: 24px;
   }
 }
 
@@ -3681,6 +3687,10 @@ exports[`DataFilters should not badge when RangeSelector returns to min/max 1`] 
 
 }
 
+@media only screen and (max-width: 768px) {
+
+}
+
 <div
     class="c0"
   >
@@ -4833,6 +4843,10 @@ exports[`DataFilters sub objects with rangeSelector 1`] = `
   .c10 {
     margin-inline-start: 6px;
   }
+}
+
+@media only screen and (max-width: 768px) {
+
 }
 
 @media only screen and (max-width: 768px) {
