@@ -483,6 +483,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           },
         },
       },
+      busy: {
+        gap: 'small',
+      },
       gap: 'small',
       size: {
         small: {
