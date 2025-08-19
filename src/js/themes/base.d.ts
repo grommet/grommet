@@ -743,8 +743,13 @@ export interface ThemeType {
     color?: ColorType;
     extend?: ExtendType;
     height?: string;
-    thickness?: {
-      default?: string;
+    thickness?: PadType;
+    thicknessPad?: {
+      xlarge?: PadType;
+      large?: PadType;
+      medium?: PadType;
+      small?: PadType;
+      xsmall?: PadType;
     };
     width?: string;
   };

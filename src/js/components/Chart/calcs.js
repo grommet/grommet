@@ -188,11 +188,11 @@ export const calcs = (values = [], options = {}) => {
   }
 
   const thicknessPad = {
-    xlarge: theme.dataChart?.thickness?.pad?.xlarge || 'large',
-    large: theme.dataChart?.thickness?.pad?.large || 'medium',
-    medium: theme.dataChart?.thickness?.pad?.medium || 'small',
-    small: theme.dataChart?.thickness?.pad?.small || 'xsmall',
-    xsmall: theme.dataChart?.thickness?.pad?.xsmall || 'xxsmall',
+    xlarge: theme.dataChart?.thicknessPad?.xlarge || 'large',
+    large: theme.dataChart?.thicknessPad?.large || 'medium',
+    medium: theme.dataChart?.thicknessPad?.medium || 'small',
+    small: theme.dataChart?.thicknessPad?.small || 'xsmall',
+    xsmall: theme.dataChart?.thicknessPad?.xsmall || 'xxsmall',
   };
 
   let { thickness } = options;

@@ -782,15 +782,13 @@ export const generate = (baseSpacing = 24, scale = 6) => {
     chart: {
       color: 'graph-0',
       height: 'small',
-      thickness: {
-        default: 'medium',
-        pad: {
-          xlarge: 'large',
-          large: 'medium',
-          medium: 'small',
-          small: 'xsmall',
-          xsmall: 'xxsmall',
-        },
+      thickness: 'medium',
+      thicknessPad: {
+        xlarge: 'large',
+        large: 'medium',
+        medium: 'small',
+        small: 'xsmall',
+        xsmall: 'xxsmall',
       },
       width: 'medium',
       // extend: undefined,

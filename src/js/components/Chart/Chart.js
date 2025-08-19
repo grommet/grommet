@@ -43,7 +43,7 @@ const Chart = React.forwardRef(
     const containerRef = useForwardedRef(ref);
     const { theme, passThemeFlag } = useThemeValue();
 
-    const thicknessValue = thickness || theme.chart?.thickness.default;
+    const thicknessValue = thickness || theme.chart?.thickness;
 
     const values = useMemo(() => normalizeValues(valuesProp), [valuesProp]);
 
