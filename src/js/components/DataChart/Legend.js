@@ -3,7 +3,6 @@ import { Box } from '../Box';
 import { Button } from '../Button';
 import { Text } from '../Text';
 import { Swatch } from './Swatch';
-import { useThemeValue } from '../../utils/useThemeValue';
 
 const Legend = ({
   activeProperty,
@@ -11,7 +10,6 @@ const Legend = ({
   seriesStyles,
   setActiveProperty,
 }) => {
-  const { theme } = useThemeValue();
   const series = useMemo(
     () => seriesProp.filter((s) => seriesStyles[s.property]),
     [seriesProp, seriesStyles],
@@ -24,12 +22,7 @@ const Legend = ({
     [series, seriesStyles],
   );
   return (
-    <Box
-      margin={theme.dataChart.legend.margin}
-      direction="row"
-      wrap
-      gap={theme.dataChart.legend.gap}
-    >
+    <Box Box margin={{ top: 'small' }} direction="row" wrap gap="small">
       {series.map(({ property, label }) => {
         const isActive = property === activeProperty;
         const swatchProps = {};
@@ -47,8 +40,9 @@ const Legend = ({
             key={property}
             direction="row"
             align="center"
-            pad={theme.dataChart?.legend?.pad}
-            gap={theme.dataChart?.legend?.gap}
+            // TO DO theme object
+            pad={{ horizontal: 'small', vertical: 'xsmall' }}
+            gap="xsmall"
           >
             <Swatch {...seriesStyles[property]} {...swatchProps} />
             <Text {...textProps}>{label || property}</Text>

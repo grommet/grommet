@@ -3323,15 +3323,11 @@ exports[`Data properties when property is an array 1`] = `
               <div
                 class="c15"
               >
-                <div
-                  class="c4 Header__StyledContentBox-sc-1baku5q-1"
+                <span
+                  class="c16"
                 >
-                  <span
-                    class="c16"
-                  >
-                    Name
-                  </span>
-                </div>
+                  Name
+                </span>
               </div>
             </th>
             <th
@@ -3342,15 +3338,11 @@ exports[`Data properties when property is an array 1`] = `
               <div
                 class="c15"
               >
-                <div
-                  class="c4 Header__StyledContentBox-sc-1baku5q-1"
+                <span
+                  class="c16"
                 >
-                  <span
-                    class="c16"
-                  >
-                    Note
-                  </span>
-                </div>
+                  Note
+                </span>
               </div>
             </th>
             <th
@@ -3361,15 +3353,11 @@ exports[`Data properties when property is an array 1`] = `
               <div
                 class="c15"
               >
-                <div
-                  class="c4 Header__StyledContentBox-sc-1baku5q-1"
+                <span
+                  class="c16"
                 >
-                  <span
-                    class="c16"
-                  >
-                    Tags
-                  </span>
-                </div>
+                  Tags
+                </span>
               </div>
             </th>
           </tr>
@@ -7752,15 +7740,11 @@ exports[`Data uncontrolled, when paginated, search should return to page 1 1`] =
             <div
               class="c15"
             >
-              <div
-                class="c4 Header__StyledContentBox-sc-1baku5q-1"
+              <span
+                class="c16"
               >
-                <span
-                  class="c16"
-                >
-                  Name
-                </span>
-              </div>
+                Name
+              </span>
             </div>
           </th>
         </tr>
@@ -7986,15 +7970,11 @@ exports[`Data uncontrolled, when paginated, search should return to page 1 2`] =
             <div
               class="StyledBox-sc-13pk1d4-0 gslZZZ"
             >
-              <div
-                class="StyledBox-sc-13pk1d4-0 fDLUqh Header__StyledContentBox-sc-1baku5q-1"
+              <span
+                class="StyledText-sc-1sadyjn-0 jTcNpm"
               >
-                <span
-                  class="StyledText-sc-1sadyjn-0 jTcNpm"
-                >
-                  Name
-                </span>
-              </div>
+                Name
+              </span>
             </div>
           </th>
         </tr>
@@ -8351,15 +8331,11 @@ exports[`Data uncontrolled, when paginated, search should return to page 1 3`] =
             <div
               class="StyledBox-sc-13pk1d4-0 gslZZZ"
             >
-              <div
-                class="StyledBox-sc-13pk1d4-0 fDLUqh Header__StyledContentBox-sc-1baku5q-1"
+              <span
+                class="StyledText-sc-1sadyjn-0 jTcNpm"
               >
-                <span
-                  class="StyledText-sc-1sadyjn-0 jTcNpm"
-                >
-                  Name
-                </span>
-              </div>
+                Name
+              </span>
             </div>
           </th>
         </tr>

@@ -1069,42 +1069,6 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
       search: {
         width: 'medium',
-        pad: {
-          horizontal: 'small',
-        },
-      },
-      clearPad: {
-        horizontal: 'small',
-      },
-    },
-    dataTableColumns: {
-      tabs: {
-        pad: 'small',
-        justify: 'start',
-      },
-      search: {
-        pad: {
-          vertical: 'small',
-        },
-        gap: 'xsmall',
-      },
-      order: {
-        pad: {
-          top: 'small',
-        },
-      },
-      search: {
-        pad: {
-          left: 'small',
-        },
-        text: {
-          pad: {
-            horizontal: 'small',
-          },
-        },
-      },
-      sort: {
-        gap: 'xsmall',
       },
     },
     dataTableColumns: {
@@ -1166,9 +1130,6 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       label: {
         gap: 'xsmall',
         margin: 'small',
-        gap: 'xsmall',
-        align: 'center',
-        direction: 'row',
         // extend: undefined,
       },
       message: {
@@ -1269,7 +1230,6 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       // extend: undefined
     },
     header: {
-      gap: 'medium',
       sticky: {
         zIndex: '20',
       },
@@ -1378,7 +1338,6 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       item: {
         // background: undefined,
         border: 'horizontal',
-        gap: 'medium',
         disabled: {
           color: 'status-disabled',
           cursor: 'default',
@@ -1444,13 +1403,6 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         down: FormDown,
         // up: undefined,
         // color: { dark: undefined, light: undefined },
-      },
-      item: {
-        pad: 'small',
-      },
-      label: {
-        pad: 'small',
-        gap: 'small',
       },
     },
     meter: {
@@ -2212,7 +2164,6 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           light: 'black',
         },
       },
-      gap: 'small',
       margin: {
         vertical: 'xxsmall',
         horizontal: 'small',

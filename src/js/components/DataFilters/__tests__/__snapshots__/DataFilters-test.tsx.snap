@@ -4483,15 +4483,11 @@ exports[`DataFilters sub objects 1`] = `
             <div
               class="c33"
             >
-              <div
-                class="c8 Header__StyledContentBox-sc-1baku5q-1"
+              <span
+                class="c34"
               >
-                <span
-                  class="c34"
-                >
-                  City
-                </span>
-              </div>
+                City
+              </span>
             </div>
           </th>
           <th
@@ -4502,15 +4498,11 @@ exports[`DataFilters sub objects 1`] = `
             <div
               class="c33"
             >
-              <div
-                class="c8 Header__StyledContentBox-sc-1baku5q-1"
+              <span
+                class="c34"
               >
-                <span
-                  class="c34"
-                >
-                  Latitude
-                </span>
-              </div>
+                Latitude
+              </span>
             </div>
           </th>
         </tr>

@@ -1,4 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`DataChart areas 1`] = `
 .c0 {
@@ -7021,7 +7021,6 @@ exports[`DataChart legend 1`] = `
   box-sizing: border-box;
   max-width: 100%;
   margin-top: 12px;
-  margin-bottom: 12px;
   min-width: 0;
   min-height: 0;
   flex-direction: row;
@@ -7045,7 +7044,7 @@ exports[`DataChart legend 1`] = `
 .c12 {
   flex: 0 0 auto;
   align-self: stretch;
-  width: 12px;
+  width: 6px;
 }
 
 .c13 {
@@ -7093,7 +7092,6 @@ exports[`DataChart legend 1`] = `
 @media only screen and (max-width: 768px) {
   .c10 {
     margin-top: 6px;
-    margin-bottom: 6px;
   }
 }
 
@@ -7113,7 +7111,7 @@ exports[`DataChart legend 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c12 {
-    width: 6px;
+    width: 3px;
   }
 }
 

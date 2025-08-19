@@ -421,6 +421,12 @@ exports[`Notification custom theme 1`] = `
 }
 
 .c8 {
+  margin: 0px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c9 {
   margin-right: 6px;
   font-size: 18px;
   line-height: 24px;
@@ -506,7 +512,7 @@ exports[`Notification custom theme 1`] = `
               class="c8"
             >
               <span
-                class="c8"
+                class="c9"
               >
                 message
               </span>
@@ -616,7 +622,7 @@ exports[`Notification custom theme 1`] = `
 }
 
 .c7 {
-  margin-right: 6px;
+  margin: 0px;
   font-size: 18px;
   line-height: 24px;
   max-width: none;
@@ -795,6 +801,12 @@ exports[`Notification global 1`] = `
 }
 
 .c8 {
+  margin: 0px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c9 {
   margin-right: 6px;
   font-size: 18px;
   line-height: 24px;
@@ -880,7 +892,7 @@ exports[`Notification global 1`] = `
               class="c8"
             >
               <span
-                class="c8"
+                class="c9"
               >
                 message
               </span>
@@ -1344,7 +1356,7 @@ exports[`Notification multi actions 1`] = `
 }
 
 .c7 {
-  margin-right: 6px;
+  margin: 0px;
   font-size: 18px;
   line-height: 24px;
   max-width: 432px;
@@ -1926,7 +1938,7 @@ exports[`Notification position bottom 1`] = `
 }
 
 .c9 {
-  margin-right: 6px;
+  margin: 0px;
   font-size: 18px;
   line-height: 24px;
   max-width: 432px;
@@ -2199,7 +2211,7 @@ exports[`Notification position bottom-left 1`] = `
 }
 
 .c9 {
-  margin-right: 6px;
+  margin: 0px;
   font-size: 18px;
   line-height: 24px;
   max-width: 432px;
@@ -2472,7 +2484,7 @@ exports[`Notification position bottom-right 1`] = `
 }
 
 .c9 {
-  margin-right: 6px;
+  margin: 0px;
   font-size: 18px;
   line-height: 24px;
   max-width: 432px;
@@ -2745,7 +2757,7 @@ exports[`Notification position center 1`] = `
 }
 
 .c9 {
-  margin-right: 6px;
+  margin: 0px;
   font-size: 18px;
   line-height: 24px;
   max-width: 432px;
@@ -3018,7 +3030,7 @@ exports[`Notification position end 1`] = `
 }
 
 .c9 {
-  margin-right: 6px;
+  margin: 0px;
   font-size: 18px;
   line-height: 24px;
   max-width: 432px;
@@ -3291,7 +3303,7 @@ exports[`Notification position left 1`] = `
 }
 
 .c9 {
-  margin-right: 6px;
+  margin: 0px;
   font-size: 18px;
   line-height: 24px;
   max-width: 432px;
@@ -3564,7 +3576,7 @@ exports[`Notification position right 1`] = `
 }
 
 .c9 {
-  margin-right: 6px;
+  margin: 0px;
   font-size: 18px;
   line-height: 24px;
   max-width: 432px;
@@ -3837,7 +3849,7 @@ exports[`Notification position start 1`] = `
 }
 
 .c9 {
-  margin-right: 6px;
+  margin: 0px;
   font-size: 18px;
   line-height: 24px;
   max-width: 432px;
@@ -4110,7 +4122,7 @@ exports[`Notification position top 1`] = `
 }
 
 .c9 {
-  margin-right: 6px;
+  margin: 0px;
   font-size: 18px;
   line-height: 24px;
   max-width: 432px;
@@ -4383,7 +4395,7 @@ exports[`Notification position top-left 1`] = `
 }
 
 .c9 {
-  margin-right: 6px;
+  margin: 0px;
   font-size: 18px;
   line-height: 24px;
   max-width: 432px;
@@ -4656,7 +4668,7 @@ exports[`Notification position top-right 1`] = `
 }
 
 .c9 {
-  margin-right: 6px;
+  margin: 0px;
   font-size: 18px;
   line-height: 24px;
   max-width: 432px;
@@ -5077,7 +5089,7 @@ exports[`Notification should render custom icon 1`] = `
 }
 
 .c7 {
-  margin-right: 6px;
+  margin: 0px;
   font-size: 18px;
   line-height: 24px;
   max-width: 432px;
@@ -5424,7 +5436,7 @@ exports[`Notification should render outside grommet wrapper 1`] = `
 }
 
 .c6 {
-  margin-right: 6px;
+  margin: 0px;
   font-size: 18px;
   line-height: 24px;
   max-width: 432px;
@@ -5634,7 +5646,7 @@ exports[`Notification should render status and kind specific message and title c
 }
 
 .c13 {
-  margin-right: 6px;
+  margin: 0px;
   font-size: 18px;
   line-height: 24px;
   color: purple;
@@ -5651,7 +5663,7 @@ exports[`Notification should render status and kind specific message and title c
 }
 
 .c7 {
-  margin-right: 6px;
+  margin: 0px;
   font-size: 18px;
   line-height: 24px;
   max-width: 432px;
@@ -5908,7 +5920,7 @@ exports[`Notification should render the default icon if no icon is passed 1`] = 
 }
 
 .c7 {
-  margin-right: 6px;
+  margin: 0px;
   font-size: 18px;
   line-height: 24px;
   max-width: 432px;
@@ -6024,7 +6036,7 @@ exports[`Notification status 1`] = `
   stroke: none;
 }
 
-.c10 {
+.c11 {
   display: inline-block;
   flex: 0 0 auto;
   width: 24px;
@@ -6033,30 +6045,30 @@ exports[`Notification status 1`] = `
   stroke: #C27B00;
 }
 
-.c10 g {
+.c11 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c10 *:not([stroke])[fill='none'] {
+.c11 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c10 *[stroke*='#'],
-.c10 *[STROKE*='#'] {
+.c11 *[stroke*='#'],
+.c11 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
-.c10 *[fill-rule],
-.c10 *[FILL-RULE],
-.c10 *[fill*='#'],
-.c10 *[FILL*='#'] {
+.c11 *[fill-rule],
+.c11 *[FILL-RULE],
+.c11 *[fill*='#'],
+.c11 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
 
-.c12 {
+.c13 {
   display: inline-block;
   flex: 0 0 auto;
   width: 24px;
@@ -6065,25 +6077,25 @@ exports[`Notification status 1`] = `
   stroke: #EB0000;
 }
 
-.c12 g {
+.c13 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c12 *:not([stroke])[fill='none'] {
+.c13 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c12 *[stroke*='#'],
-.c12 *[STROKE*='#'] {
+.c13 *[stroke*='#'],
+.c13 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
-.c12 *[fill-rule],
-.c12 *[FILL-RULE],
-.c12 *[fill*='#'],
-.c12 *[FILL*='#'] {
+.c13 *[fill-rule],
+.c13 *[FILL-RULE],
+.c13 *[fill*='#'],
+.c13 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -6133,7 +6145,7 @@ exports[`Notification status 1`] = `
   flex-direction: column;
 }
 
-.c9 {
+.c10 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -6144,7 +6156,7 @@ exports[`Notification status 1`] = `
   border-radius: 0px;
 }
 
-.c11 {
+.c12 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -6167,6 +6179,12 @@ exports[`Notification status 1`] = `
 }
 
 .c8 {
+  margin: 0px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c9 {
   margin-right: 6px;
   font-size: 18px;
   line-height: 24px;
@@ -6209,13 +6227,13 @@ exports[`Notification status 1`] = `
 }
 
 @media only screen and (max-width: 768px) {
-  .c9 {
+  .c10 {
     border-radius: 0px;
   }
 }
 
 @media only screen and (max-width: 768px) {
-  .c11 {
+  .c12 {
     border-radius: 0px;
   }
 }
@@ -6262,7 +6280,7 @@ exports[`Notification status 1`] = `
               class="c8"
             >
               <span
-                class="c8"
+                class="c9"
               >
                 message
               </span>
@@ -6272,7 +6290,7 @@ exports[`Notification status 1`] = `
       </div>
     </div>
     <div
-      class="c9"
+      class="c10"
     >
       <div
         class="c2"
@@ -6282,7 +6300,7 @@ exports[`Notification status 1`] = `
         >
           <svg
             aria-label="Status is warning"
-            class="c10"
+            class="c11"
             viewBox="0 0 12 12"
           >
             <path
@@ -6309,7 +6327,7 @@ exports[`Notification status 1`] = `
               class="c8"
             >
               <span
-                class="c8"
+                class="c9"
               >
                 message
               </span>
@@ -6319,7 +6337,7 @@ exports[`Notification status 1`] = `
       </div>
     </div>
     <div
-      class="c11"
+      class="c12"
     >
       <div
         class="c2"
@@ -6329,7 +6347,7 @@ exports[`Notification status 1`] = `
         >
           <svg
             aria-label="Status is critical"
-            class="c12"
+            class="c13"
             viewBox="0 0 12 12"
           >
             <path
@@ -6355,7 +6373,7 @@ exports[`Notification status 1`] = `
               class="c8"
             >
               <span
-                class="c8"
+                class="c9"
               >
                 message
               </span>
