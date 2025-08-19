@@ -691,13 +691,6 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         //   },
         // },
         // title: {},
-        heading: {
-          container: {
-            pad: {
-              horizontal: 'xsmall',
-            },
-          },
-        },
         fontSize: `${baseFontSize - fontScale}px`,
         title: {
           container: {
@@ -724,13 +717,6 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         //   },
         // },
         // title: {},
-        heading: {
-          container: {
-            pad: {
-              horizontal: 'small',
-            },
-          },
-        },
         fontSize: `${baseFontSize}px`,
         title: {
           container: {
@@ -757,13 +743,6 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         //   },
         // },
         // title: {},
-        heading: {
-          container: {
-            pad: {
-              horizontal: 'medium',
-            },
-          },
-        },
         fontSize: `${baseFontSize + 3 * fontScale}px`,
         title: {
           container: {
@@ -1037,11 +1016,6 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         gap: 'xsmall',
         // extend: undefined,
       },
-      footer: {
-        pad: 'none',
-        size: 'xsmall',
-        verticalAlign: 'top',
-      },
       groupHeader: {
         // background: undefined,
         // border: undefined,
@@ -1059,11 +1033,6 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         //   weight: undefined,
         //   size: undefined,
         // },
-        cell: {
-          size: 'xxsmall',
-          pad: 'none',
-          verticalAlign: 'top',
-        },
         gap: 'small',
         // hover: {
         //   background: undefined,
@@ -1097,12 +1066,6 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         //     size: undefined,
         //   },
         // },
-        pad: {
-          vertical: 'xsmall',
-        },
-        margin: {
-          right: `-${baseSpacing / 2}px`, // equivalent to "small"
-        },
       },
       search: {
         width: 'medium',
@@ -1161,7 +1124,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
     },
     diagram: {
-      // extend: und`efined,
+      // extend: undefined,
       line: {
         color: 'graph-0',
       },
@@ -1443,9 +1406,6 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       // extend: undefined,
     },
     maskedInput: {
-      option: {
-        pad: { horizontal: 'small', vertical: 'xsmall' },
-      },
       // container: {
       //   extend: undefined,
       // },
@@ -1590,8 +1550,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
       message: {
         // any text props
-        // was this already here? where is it defined
-        margin: { right: 'xsmall' },
+        margin: 'none',
         // fill: undefined,
         text: {
           margin: { right: 'xsmall' },
@@ -2185,10 +2144,6 @@ export const generate = (baseSpacing = 24, scale = 6) => {
     sidebar: {
       gap: 'large',
       pad: 'small',
-    },
-    sidebar: {
-      pad: 'small',
-      gap: 'large',
     },
     skeleton: {
       border: false,
