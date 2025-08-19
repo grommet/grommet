@@ -916,9 +916,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
     dataChart: {
       gap: 'small',
       detail: {
-        grid: {
-          gap: 'xsmall',
-        },
+        gap: 'xsmall',
       },
       legend: {
         margin: { top: 'small' },
