@@ -1909,7 +1909,7 @@ exports[`Notification position bottom 1`] = `
   -webkit-font-smoothing: antialiased;
   display: flex;
   flex-direction: column;
-  min-height: 48px;
+  min-height: medium;
   outline: none;
   pointer-events: all;
   z-index: 20;
@@ -2182,7 +2182,7 @@ exports[`Notification position bottom-left 1`] = `
   -webkit-font-smoothing: antialiased;
   display: flex;
   flex-direction: column;
-  min-height: 48px;
+  min-height: medium;
   outline: none;
   pointer-events: all;
   z-index: 20;
@@ -2455,7 +2455,7 @@ exports[`Notification position bottom-right 1`] = `
   -webkit-font-smoothing: antialiased;
   display: flex;
   flex-direction: column;
-  min-height: 48px;
+  min-height: medium;
   outline: none;
   pointer-events: all;
   z-index: 20;
@@ -2728,7 +2728,7 @@ exports[`Notification position center 1`] = `
   -webkit-font-smoothing: antialiased;
   display: flex;
   flex-direction: column;
-  min-height: 48px;
+  min-height: medium;
   outline: none;
   pointer-events: all;
   z-index: 20;
@@ -3001,7 +3001,7 @@ exports[`Notification position end 1`] = `
   -webkit-font-smoothing: antialiased;
   display: flex;
   flex-direction: column;
-  min-height: 48px;
+  min-height: medium;
   outline: none;
   pointer-events: all;
   z-index: 20;
@@ -3274,7 +3274,7 @@ exports[`Notification position left 1`] = `
   -webkit-font-smoothing: antialiased;
   display: flex;
   flex-direction: column;
-  min-height: 48px;
+  min-height: medium;
   outline: none;
   pointer-events: all;
   z-index: 20;
@@ -3547,7 +3547,7 @@ exports[`Notification position right 1`] = `
   -webkit-font-smoothing: antialiased;
   display: flex;
   flex-direction: column;
-  min-height: 48px;
+  min-height: medium;
   outline: none;
   pointer-events: all;
   z-index: 20;
@@ -3820,7 +3820,7 @@ exports[`Notification position start 1`] = `
   -webkit-font-smoothing: antialiased;
   display: flex;
   flex-direction: column;
-  min-height: 48px;
+  min-height: medium;
   outline: none;
   pointer-events: all;
   z-index: 20;
@@ -4093,7 +4093,7 @@ exports[`Notification position top 1`] = `
   -webkit-font-smoothing: antialiased;
   display: flex;
   flex-direction: column;
-  min-height: 48px;
+  min-height: medium;
   outline: none;
   pointer-events: all;
   z-index: 20;
@@ -4366,7 +4366,7 @@ exports[`Notification position top-left 1`] = `
   -webkit-font-smoothing: antialiased;
   display: flex;
   flex-direction: column;
-  min-height: 48px;
+  min-height: medium;
   outline: none;
   pointer-events: all;
   z-index: 20;
@@ -4639,7 +4639,7 @@ exports[`Notification position top-right 1`] = `
   -webkit-font-smoothing: antialiased;
   display: flex;
   flex-direction: column;
-  min-height: 48px;
+  min-height: medium;
   outline: none;
   pointer-events: all;
   z-index: 20;

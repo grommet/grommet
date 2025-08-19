@@ -777,7 +777,7 @@ const StyledContainer = styled.div.withConfig({
   ${(props) => (!props.modal ? baseStyle : '')}
   display: flex;
   flex-direction: column;
-  min-height: ${(props) => props.theme.global.size.xxsmall};
+  min-height: ${(props) => props.theme.layer.container.height};
   ${(props) =>
     !props.plain &&
     (props.background || props.theme.layer.background) &&

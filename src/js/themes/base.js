@@ -1278,6 +1278,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       container: {
         // elevation: undefined,
         zIndex: '20',
+        height: 'medium',
       },
       // extend: undefined,
       overlay: {
