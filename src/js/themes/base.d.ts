@@ -833,7 +833,7 @@ export interface ThemeType {
     };
     dataChart?: {
       gap?: GapType;
-      grid?: {
+      detail?: {
         gap?: GridGapType;
       };
       legend?: {
