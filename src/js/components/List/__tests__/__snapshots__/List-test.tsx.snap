@@ -4145,7 +4145,6 @@ exports[`List events should apply pagination styling 1`] = `
   min-height: 0;
   flex-direction: column;
   flex: 0 0 auto;
-  gap: 12px 6px;
 }
 
 .c7 {
@@ -4541,12 +4540,6 @@ exports[`List events should apply pagination styling 1`] = `
 }
 
 @media only screen and (max-width: 768px) {
-  .c6 {
-    gap: 6px 3px;
-  }
-}
-
-@media only screen and (max-width: 768px) {
   .c8 {
     margin: 0px;
   }
@@ -4836,7 +4829,6 @@ exports[`List events should apply pagination styling 1`] = `
     />
     <div
       class="c6 Pagination__StyledPaginationContainer-sc-rnlw6m-0"
-      controls=""
     >
       <nav
         aria-label="Pagination Navigation"
@@ -5173,7 +5165,6 @@ exports[`List events should paginate 1`] = `
   min-height: 0;
   flex-direction: column;
   flex: 0 0 auto;
-  gap: 12px 6px;
 }
 
 .c7 {
@@ -5559,12 +5550,6 @@ exports[`List events should paginate 1`] = `
   .c4 {
     padding-top: 6px;
     padding-bottom: 6px;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .c6 {
-    gap: 6px 3px;
   }
 }
 
@@ -5858,7 +5843,6 @@ exports[`List events should paginate 1`] = `
     />
     <div
       class="c6 Pagination__StyledPaginationContainer-sc-rnlw6m-0"
-      controls=""
     >
       <nav
         aria-label="Pagination Navigation"
@@ -6067,7 +6051,6 @@ exports[`List events should render correct num items per page (step) 1`] = `
   min-height: 0;
   flex-direction: column;
   flex: 0 0 auto;
-  gap: 12px 6px;
 }
 
 .c7 {
@@ -6457,12 +6440,6 @@ exports[`List events should render correct num items per page (step) 1`] = `
 }
 
 @media only screen and (max-width: 768px) {
-  .c6 {
-    gap: 6px 3px;
-  }
-}
-
-@media only screen and (max-width: 768px) {
   .c8 {
     margin: 0px;
   }
@@ -6572,7 +6549,6 @@ exports[`List events should render correct num items per page (step) 1`] = `
     />
     <div
       class="c6 Pagination__StyledPaginationContainer-sc-rnlw6m-0"
-      controls=""
     >
       <nav
         aria-label="Pagination Navigation"
@@ -6836,7 +6812,6 @@ exports[`List events should render new data when page changes 1`] = `
   min-height: 0;
   flex-direction: column;
   flex: 0 0 auto;
-  gap: 12px 6px;
 }
 
 .c7 {
@@ -7226,12 +7201,6 @@ exports[`List events should render new data when page changes 1`] = `
 }
 
 @media only screen and (max-width: 768px) {
-  .c6 {
-    gap: 6px 3px;
-  }
-}
-
-@media only screen and (max-width: 768px) {
   .c8 {
     margin: 0px;
   }
@@ -7521,7 +7490,6 @@ exports[`List events should render new data when page changes 1`] = `
     />
     <div
       class="c6 Pagination__StyledPaginationContainer-sc-rnlw6m-0"
-      controls=""
     >
       <nav
         aria-label="Pagination Navigation"
@@ -7682,10 +7650,6 @@ exports[`List events should render new data when page changes 2`] = `
 
 }
 
-@media only screen and (max-width: 768px) {
-
-}
-
 <li
         class="c0 "
       >
@@ -7736,10 +7700,6 @@ exports[`List events should render new data when page changes 2`] = `
     padding-top: 6px;
     padding-bottom: 6px;
   }
-}
-
-@media only screen and (max-width: 768px) {
-
 }
 
 @media only screen and (max-width: 768px) {
@@ -7826,10 +7786,6 @@ exports[`List events should render new data when page changes 2`] = `
 
 }
 
-@media only screen and (max-width: 768px) {
-
-}
-
 <li
         class="c0 "
       >
@@ -7880,10 +7836,6 @@ exports[`List events should render new data when page changes 2`] = `
     padding-top: 6px;
     padding-bottom: 6px;
   }
-}
-
-@media only screen and (max-width: 768px) {
-
 }
 
 @media only screen and (max-width: 768px) {
@@ -7970,10 +7922,6 @@ exports[`List events should render new data when page changes 2`] = `
 
 }
 
-@media only screen and (max-width: 768px) {
-
-}
-
 <li
         class="c0 "
       >
@@ -8024,10 +7972,6 @@ exports[`List events should render new data when page changes 2`] = `
     padding-top: 6px;
     padding-bottom: 6px;
   }
-}
-
-@media only screen and (max-width: 768px) {
-
 }
 
 @media only screen and (max-width: 768px) {
@@ -8114,10 +8058,6 @@ exports[`List events should render new data when page changes 2`] = `
 
 }
 
-@media only screen and (max-width: 768px) {
-
-}
-
 <li
         class="c0 "
       >
@@ -8168,10 +8108,6 @@ exports[`List events should render new data when page changes 2`] = `
     padding-top: 6px;
     padding-bottom: 6px;
   }
-}
-
-@media only screen and (max-width: 768px) {
-
 }
 
 @media only screen and (max-width: 768px) {
@@ -8258,10 +8194,6 @@ exports[`List events should render new data when page changes 2`] = `
 
 }
 
-@media only screen and (max-width: 768px) {
-
-}
-
 <li
         class="c0 "
       >
@@ -8312,10 +8244,6 @@ exports[`List events should render new data when page changes 2`] = `
     padding-top: 6px;
     padding-bottom: 6px;
   }
-}
-
-@media only screen and (max-width: 768px) {
-
 }
 
 @media only screen and (max-width: 768px) {
@@ -8402,10 +8330,6 @@ exports[`List events should render new data when page changes 2`] = `
 
 }
 
-@media only screen and (max-width: 768px) {
-
-}
-
 <li
         class="c0 "
       >
@@ -8456,10 +8380,6 @@ exports[`List events should render new data when page changes 2`] = `
     padding-top: 6px;
     padding-bottom: 6px;
   }
-}
-
-@media only screen and (max-width: 768px) {
-
 }
 
 @media only screen and (max-width: 768px) {
@@ -8546,10 +8466,6 @@ exports[`List events should render new data when page changes 2`] = `
 
 }
 
-@media only screen and (max-width: 768px) {
-
-}
-
 <li
         class="c0 "
       >
@@ -8600,10 +8516,6 @@ exports[`List events should render new data when page changes 2`] = `
     padding-top: 6px;
     padding-bottom: 6px;
   }
-}
-
-@media only screen and (max-width: 768px) {
-
 }
 
 @media only screen and (max-width: 768px) {
@@ -8690,10 +8602,6 @@ exports[`List events should render new data when page changes 2`] = `
 
 }
 
-@media only screen and (max-width: 768px) {
-
-}
-
 <li
         class="c0 "
       >
@@ -8744,10 +8652,6 @@ exports[`List events should render new data when page changes 2`] = `
     padding-top: 6px;
     padding-bottom: 6px;
   }
-}
-
-@media only screen and (max-width: 768px) {
-
 }
 
 @media only screen and (max-width: 768px) {
@@ -8834,10 +8738,6 @@ exports[`List events should render new data when page changes 2`] = `
 
 }
 
-@media only screen and (max-width: 768px) {
-
-}
-
 <li
         class="c0 "
       >
@@ -8888,10 +8788,6 @@ exports[`List events should render new data when page changes 2`] = `
     padding-top: 6px;
     padding-bottom: 6px;
   }
-}
-
-@media only screen and (max-width: 768px) {
-
 }
 
 @media only screen and (max-width: 768px) {
@@ -8978,10 +8874,6 @@ exports[`List events should render new data when page changes 2`] = `
 
 }
 
-@media only screen and (max-width: 768px) {
-
-}
-
 <li
         class="c0 "
       >
@@ -9032,10 +8924,6 @@ exports[`List events should render new data when page changes 2`] = `
     padding-top: 6px;
     padding-bottom: 6px;
   }
-}
-
-@media only screen and (max-width: 768px) {
-
 }
 
 @media only screen and (max-width: 768px) {
@@ -9122,10 +9010,6 @@ exports[`List events should render new data when page changes 2`] = `
 
 }
 
-@media only screen and (max-width: 768px) {
-
-}
-
 <li
         class="c0 "
       >
@@ -9176,10 +9060,6 @@ exports[`List events should render new data when page changes 2`] = `
     padding-top: 6px;
     padding-bottom: 6px;
   }
-}
-
-@media only screen and (max-width: 768px) {
-
 }
 
 @media only screen and (max-width: 768px) {
@@ -9266,10 +9146,6 @@ exports[`List events should render new data when page changes 2`] = `
 
 }
 
-@media only screen and (max-width: 768px) {
-
-}
-
 <li
         class="c0 "
       >
@@ -9320,10 +9196,6 @@ exports[`List events should render new data when page changes 2`] = `
     padding-top: 6px;
     padding-bottom: 6px;
   }
-}
-
-@media only screen and (max-width: 768px) {
-
 }
 
 @media only screen and (max-width: 768px) {
@@ -9410,10 +9282,6 @@ exports[`List events should render new data when page changes 2`] = `
 
 }
 
-@media only screen and (max-width: 768px) {
-
-}
-
 <li
         class="c0 "
       >
@@ -9464,10 +9332,6 @@ exports[`List events should render new data when page changes 2`] = `
     padding-top: 6px;
     padding-bottom: 6px;
   }
-}
-
-@media only screen and (max-width: 768px) {
-
 }
 
 @media only screen and (max-width: 768px) {
@@ -9554,10 +9418,6 @@ exports[`List events should render new data when page changes 2`] = `
 
 }
 
-@media only screen and (max-width: 768px) {
-
-}
-
 <li
         class="c0 "
       >
@@ -9608,10 +9468,6 @@ exports[`List events should render new data when page changes 2`] = `
     padding-top: 6px;
     padding-bottom: 6px;
   }
-}
-
-@media only screen and (max-width: 768px) {
-
 }
 
 @media only screen and (max-width: 768px) {
@@ -9698,10 +9554,6 @@ exports[`List events should render new data when page changes 2`] = `
 
 }
 
-@media only screen and (max-width: 768px) {
-
-}
-
 <li
         class="c0 "
       >
@@ -9752,10 +9604,6 @@ exports[`List events should render new data when page changes 2`] = `
     padding-top: 6px;
     padding-bottom: 6px;
   }
-}
-
-@media only screen and (max-width: 768px) {
-
 }
 
 @media only screen and (max-width: 768px) {
@@ -9842,10 +9690,6 @@ exports[`List events should render new data when page changes 2`] = `
 
 }
 
-@media only screen and (max-width: 768px) {
-
-}
-
 <li
         class="c0 "
       >
@@ -9896,10 +9740,6 @@ exports[`List events should render new data when page changes 2`] = `
     padding-top: 6px;
     padding-bottom: 6px;
   }
-}
-
-@media only screen and (max-width: 768px) {
-
 }
 
 @media only screen and (max-width: 768px) {
@@ -9986,10 +9826,6 @@ exports[`List events should render new data when page changes 2`] = `
 
 }
 
-@media only screen and (max-width: 768px) {
-
-}
-
 <li
         class="c0 "
       >
@@ -10040,10 +9876,6 @@ exports[`List events should render new data when page changes 2`] = `
     padding-top: 6px;
     padding-bottom: 6px;
   }
-}
-
-@media only screen and (max-width: 768px) {
-
 }
 
 @media only screen and (max-width: 768px) {
@@ -10130,10 +9962,6 @@ exports[`List events should render new data when page changes 2`] = `
 
 }
 
-@media only screen and (max-width: 768px) {
-
-}
-
 <li
         class="c0 "
       >
@@ -10184,10 +10012,6 @@ exports[`List events should render new data when page changes 2`] = `
     padding-top: 6px;
     padding-bottom: 6px;
   }
-}
-
-@media only screen and (max-width: 768px) {
-
 }
 
 @media only screen and (max-width: 768px) {
@@ -10274,10 +10098,6 @@ exports[`List events should render new data when page changes 2`] = `
 
 }
 
-@media only screen and (max-width: 768px) {
-
-}
-
 <li
         class="c0 "
       >
@@ -10328,10 +10148,6 @@ exports[`List events should render new data when page changes 2`] = `
     padding-top: 6px;
     padding-bottom: 6px;
   }
-}
-
-@media only screen and (max-width: 768px) {
-
 }
 
 @media only screen and (max-width: 768px) {
@@ -10418,10 +10234,6 @@ exports[`List events should render new data when page changes 2`] = `
 
 }
 
-@media only screen and (max-width: 768px) {
-
-}
-
 <li
         class="c0 "
       >
@@ -10472,10 +10284,6 @@ exports[`List events should render new data when page changes 2`] = `
     padding-top: 6px;
     padding-bottom: 6px;
   }
-}
-
-@media only screen and (max-width: 768px) {
-
 }
 
 @media only screen and (max-width: 768px) {
@@ -10562,10 +10370,6 @@ exports[`List events should render new data when page changes 2`] = `
 
 }
 
-@media only screen and (max-width: 768px) {
-
-}
-
 <li
         class="c0 "
       >
@@ -10616,10 +10420,6 @@ exports[`List events should render new data when page changes 2`] = `
     padding-top: 6px;
     padding-bottom: 6px;
   }
-}
-
-@media only screen and (max-width: 768px) {
-
 }
 
 @media only screen and (max-width: 768px) {
@@ -10706,10 +10506,6 @@ exports[`List events should render new data when page changes 2`] = `
 
 }
 
-@media only screen and (max-width: 768px) {
-
-}
-
 <li
         class="c0 "
       >
@@ -10760,10 +10556,6 @@ exports[`List events should render new data when page changes 2`] = `
     padding-top: 6px;
     padding-bottom: 6px;
   }
-}
-
-@media only screen and (max-width: 768px) {
-
 }
 
 @media only screen and (max-width: 768px) {
@@ -10850,10 +10642,6 @@ exports[`List events should render new data when page changes 2`] = `
 
 }
 
-@media only screen and (max-width: 768px) {
-
-}
-
 <li
         class="c0 "
       >
@@ -10864,8 +10652,7 @@ exports[`List events should render new data when page changes 2`] = `
       class="StyledBox__StyledBoxGap-sc-13pk1d4-1 ffrHHp"
     />
     <div
-      class="StyledBox-sc-13pk1d4-0 VgFff Pagination__StyledPaginationContainer-sc-rnlw6m-0"
-      controls=""
+      class="StyledBox-sc-13pk1d4-0 eKszzY Pagination__StyledPaginationContainer-sc-rnlw6m-0"
     >
       <nav
         aria-label="Pagination Navigation"
@@ -11074,7 +10861,6 @@ exports[`List events should show correct item index when "show" is a number 1`] 
   min-height: 0;
   flex-direction: column;
   flex: 0 0 auto;
-  gap: 12px 6px;
 }
 
 .c7 {
@@ -11464,12 +11250,6 @@ exports[`List events should show correct item index when "show" is a number 1`] 
 }
 
 @media only screen and (max-width: 768px) {
-  .c6 {
-    gap: 6px 3px;
-  }
-}
-
-@media only screen and (max-width: 768px) {
   .c8 {
     margin: 0px;
   }
@@ -11759,7 +11539,6 @@ exports[`List events should show correct item index when "show" is a number 1`] 
     />
     <div
       class="c6 Pagination__StyledPaginationContainer-sc-rnlw6m-0"
-      controls=""
     >
       <nav
         aria-label="Pagination Navigation"
@@ -11968,7 +11747,6 @@ exports[`List events should show correct page when "show" is { page: # } 1`] = `
   min-height: 0;
   flex-direction: column;
   flex: 0 0 auto;
-  gap: 12px 6px;
 }
 
 .c7 {
@@ -12358,12 +12136,6 @@ exports[`List events should show correct page when "show" is { page: # } 1`] = `
 }
 
 @media only screen and (max-width: 768px) {
-  .c6 {
-    gap: 6px 3px;
-  }
-}
-
-@media only screen and (max-width: 768px) {
   .c8 {
     margin: 0px;
   }
@@ -12628,7 +12400,6 @@ exports[`List events should show correct page when "show" is { page: # } 1`] = `
     />
     <div
       class="c6 Pagination__StyledPaginationContainer-sc-rnlw6m-0"
-      controls=""
     >
       <nav
         aria-label="Pagination Navigation"

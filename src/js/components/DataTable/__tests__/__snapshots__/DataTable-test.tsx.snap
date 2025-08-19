@@ -17764,21 +17764,6 @@ exports[`DataTable onSort 2`] = `
                   A
                 </span>
                 .c0 {
-  flex: 0 0 auto;
-  align-self: stretch;
-  width: 12px;
-}
-
-@media only screen and (max-width: 768px) {
-  .c0 {
-    width: 6px;
-  }
-}
-
-<div
-                  class="c0"
-                />
-                .c0 {
   display: inline-block;
   flex: 0 0 auto;
   width: 24px;
@@ -17808,10 +17793,6 @@ exports[`DataTable onSort 2`] = `
 .c0 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
-}
-
-@media only screen and (max-width: 768px) {
-
 }
 
 <svg
@@ -17958,7 +17939,7 @@ exports[`DataTable onSort 2`] = `
 `;
 
 exports[`DataTable onSort external 1`] = `
-.c10 {
+.c9 {
   display: inline-block;
   flex: 0 0 auto;
   width: 24px;
@@ -17967,25 +17948,25 @@ exports[`DataTable onSort external 1`] = `
   stroke: #666666;
 }
 
-.c10 g {
+.c9 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c10 *:not([stroke])[fill='none'] {
+.c9 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c10 *[stroke*='#'],
-.c10 *[STROKE*='#'] {
+.c9 *[stroke*='#'],
+.c9 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
-.c10 *[fill-rule],
-.c10 *[FILL-RULE],
-.c10 *[fill*='#'],
-.c10 *[FILL*='#'] {
+.c9 *[fill-rule],
+.c9 *[FILL-RULE],
+.c9 *[fill*='#'],
+.c9 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -18021,7 +18002,7 @@ exports[`DataTable onSort external 1`] = `
   flex-direction: row;
 }
 
-.c14 {
+.c13 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -18030,18 +18011,12 @@ exports[`DataTable onSort external 1`] = `
   flex-direction: column;
 }
 
-.c9 {
-  flex: 0 0 auto;
-  align-self: stretch;
-  width: 12px;
-}
-
 .c8 {
   font-size: 18px;
   line-height: 24px;
 }
 
-.c15 {
+.c14 {
   font-size: 18px;
   line-height: 24px;
   font-weight: bold;
@@ -18115,7 +18090,7 @@ exports[`DataTable onSort external 1`] = `
   padding: 0px;
 }
 
-.c13 {
+.c12 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -18139,62 +18114,56 @@ exports[`DataTable onSort external 1`] = `
   border-collapse: separate;
 }
 
-.c12:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c12:focus >circle,
-.c12:focus >ellipse,
-.c12:focus >line,
-.c12:focus >path,
-.c12:focus >polygon,
-.c12:focus >polyline,
-.c12:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c12:focus ::-moz-focus-inner {
-  border: 0;
-}
-
-.c12:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c12:focus:not(:focus-visible) >circle,
-.c12:focus:not(:focus-visible) >ellipse,
-.c12:focus:not(:focus-visible) >line,
-.c12:focus:not(:focus-visible) >path,
-.c12:focus:not(:focus-visible) >polygon,
-.c12:focus:not(:focus-visible) >polyline,
-.c12:focus:not(:focus-visible) >rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c12:focus:not(:focus-visible) ::-moz-focus-inner {
-  border: 0;
-}
-
 .c11:focus {
-  outline: 2px solid #6FFFB0;
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c11:focus >circle,
+.c11:focus >ellipse,
+.c11:focus >line,
+.c11:focus >path,
+.c11:focus >polygon,
+.c11:focus >polyline,
+.c11:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c11:focus ::-moz-focus-inner {
+  border: 0;
 }
 
 .c11:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c11:focus:not(:focus-visible) >circle,
+.c11:focus:not(:focus-visible) >ellipse,
+.c11:focus:not(:focus-visible) >line,
+.c11:focus:not(:focus-visible) >path,
+.c11:focus:not(:focus-visible) >polygon,
+.c11:focus:not(:focus-visible) >polyline,
+.c11:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c11:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
+}
+
+.c10:focus {
+  outline: 2px solid #6FFFB0;
+}
+
+.c10:focus:not(:focus-visible) {
   outline: none;
 }
 
 .c6 {
   padding: 6px 12px;
-}
-
-@media only screen and (max-width: 768px) {
-  .c9 {
-    width: 6px;
-  }
 }
 
 <div
@@ -18230,12 +18199,9 @@ exports[`DataTable onSort external 1`] = `
                 >
                   A
                 </span>
-                <div
-                  class="c9"
-                />
                 <svg
                   aria-label="ascending"
-                  class="c10"
+                  class="c9"
                   viewBox="0 0 24 24"
                 >
                   <path
@@ -18276,30 +18242,30 @@ exports[`DataTable onSort external 1`] = `
       </tr>
     </thead>
     <tbody
-      class="StyledTable__StyledTableBody-sc-1m3u5g-3 c11"
+      class="StyledTable__StyledTableBody-sc-1m3u5g-3 c10"
     >
       <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c12"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c11"
       >
         <th
-          class="c13 "
+          class="c12 "
           scope="row"
         >
           <div
-            class="c14"
+            class="c13"
           >
             <span
-              class="c15"
+              class="c14"
             >
               zero
             </span>
           </div>
         </th>
         <td
-          class="c13 "
+          class="c12 "
         >
           <div
-            class="c14"
+            class="c13"
           >
             <span
               class="c8"
@@ -18310,27 +18276,27 @@ exports[`DataTable onSort external 1`] = `
         </td>
       </tr>
       <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c12"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c11"
       >
         <th
-          class="c13 "
+          class="c12 "
           scope="row"
         >
           <div
-            class="c14"
+            class="c13"
           >
             <span
-              class="c15"
+              class="c14"
             >
               one
             </span>
           </div>
         </th>
         <td
-          class="c13 "
+          class="c12 "
         >
           <div
-            class="c14"
+            class="c13"
           >
             <span
               class="c8"
@@ -18341,27 +18307,27 @@ exports[`DataTable onSort external 1`] = `
         </td>
       </tr>
       <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c12"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c11"
       >
         <th
-          class="c13 "
+          class="c12 "
           scope="row"
         >
           <div
-            class="c14"
+            class="c13"
           >
             <span
-              class="c15"
+              class="c14"
             >
               two
             </span>
           </div>
         </th>
         <td
-          class="c13 "
+          class="c12 "
         >
           <div
-            class="c14"
+            class="c13"
           >
             <span
               class="c8"
@@ -18410,9 +18376,6 @@ exports[`DataTable onSort external 2`] = `
                 >
                   A
                 </span>
-                <div
-                  class="StyledBox__StyledBoxGap-sc-13pk1d4-1 kOnJGZ"
-                />
                 .c0 {
   display: inline-block;
   flex: 0 0 auto;
@@ -18443,10 +18406,6 @@ exports[`DataTable onSort external 2`] = `
 .c0 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
-}
-
-@media only screen and (max-width: 768px) {
-
 }
 
 <svg
@@ -26795,6 +26754,7 @@ exports[`DataTable search 2`] = `
   min-width: 96px;
   flex: 1 1;
   padding-left: 12px;
+  padding-right: 12px;
 }
 
 .c2 {
@@ -26867,6 +26827,7 @@ exports[`DataTable search 2`] = `
 @media only screen and (max-width: 768px) {
   .c0 {
     padding-left: 6px;
+    padding-right: 6px;
   }
 }
 
@@ -28767,7 +28728,6 @@ exports[`DataTable should apply pagination styling 1`] = `
   min-height: 0;
   flex-direction: column;
   flex: 0 0 auto;
-  gap: 12px 6px;
 }
 
 .c14 {
@@ -29208,12 +29168,6 @@ exports[`DataTable should apply pagination styling 1`] = `
 @media only screen and (max-width: 768px) {
   .c13 {
     margin: 24px;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .c13 {
-    gap: 6px 3px;
   }
 }
 
@@ -30860,7 +30814,6 @@ exports[`DataTable should apply pagination styling 1`] = `
     />
     <div
       class="c13 Pagination__StyledPaginationContainer-sc-rnlw6m-0"
-      controls=""
     >
       <nav
         aria-label="Pagination Navigation"
@@ -34752,7 +34705,6 @@ exports[`DataTable should paginate 1`] = `
   min-height: 0;
   flex-direction: column;
   flex: 0 0 auto;
-  gap: 12px 6px;
 }
 
 .c14 {
@@ -35188,12 +35140,6 @@ exports[`DataTable should paginate 1`] = `
 
 .c8:focus:not(:focus-visible) {
   outline: none;
-}
-
-@media only screen and (max-width: 768px) {
-  .c13 {
-    gap: 6px 3px;
-  }
 }
 
 @media only screen and (max-width: 768px) {
@@ -36839,7 +36785,6 @@ exports[`DataTable should paginate 1`] = `
     />
     <div
       class="c13 Pagination__StyledPaginationContainer-sc-rnlw6m-0"
-      controls=""
     >
       <nav
         aria-label="Pagination Navigation"
@@ -37038,7 +36983,6 @@ exports[`DataTable should pin and paginate 1`] = `
   min-height: 0;
   flex-direction: column;
   flex: 0 0 auto;
-  gap: 12px 6px;
 }
 
 .c15 {
@@ -37482,12 +37426,6 @@ exports[`DataTable should pin and paginate 1`] = `
   position: sticky;
   top: 0;
   z-index: 1;
-}
-
-@media only screen and (max-width: 768px) {
-  .c14 {
-    gap: 6px 3px;
-  }
 }
 
 @media only screen and (max-width: 768px) {
@@ -39133,7 +39071,6 @@ exports[`DataTable should pin and paginate 1`] = `
     />
     <div
       class="c14 Pagination__StyledPaginationContainer-sc-rnlw6m-0"
-      controls=""
     >
       <nav
         aria-label="Pagination Navigation"
@@ -39332,7 +39269,6 @@ exports[`DataTable should render correct num items per page (step) 1`] = `
   min-height: 0;
   flex-direction: column;
   flex: 0 0 auto;
-  gap: 12px 6px;
 }
 
 .c14 {
@@ -39768,12 +39704,6 @@ exports[`DataTable should render correct num items per page (step) 1`] = `
 
 .c8:focus:not(:focus-visible) {
   outline: none;
-}
-
-@media only screen and (max-width: 768px) {
-  .c13 {
-    gap: 6px 3px;
-  }
 }
 
 @media only screen and (max-width: 768px) {
@@ -40303,7 +40233,6 @@ exports[`DataTable should render correct num items per page (step) 1`] = `
     />
     <div
       class="c13 Pagination__StyledPaginationContainer-sc-rnlw6m-0"
-      controls=""
     >
       <nav
         aria-label="Pagination Navigation"
@@ -40557,7 +40486,6 @@ exports[`DataTable should render new data when page changes 1`] = `
   min-height: 0;
   flex-direction: column;
   flex: 0 0 auto;
-  gap: 12px 6px;
 }
 
 .c14 {
@@ -40993,12 +40921,6 @@ exports[`DataTable should render new data when page changes 1`] = `
 
 .c8:focus:not(:focus-visible) {
   outline: none;
-}
-
-@media only screen and (max-width: 768px) {
-  .c13 {
-    gap: 6px 3px;
-  }
 }
 
 @media only screen and (max-width: 768px) {
@@ -42644,7 +42566,6 @@ exports[`DataTable should render new data when page changes 1`] = `
     />
     <div
       class="c13 Pagination__StyledPaginationContainer-sc-rnlw6m-0"
-      controls=""
     >
       <nav
         aria-label="Pagination Navigation"
@@ -42879,10 +42800,6 @@ exports[`DataTable should render new data when page changes 2`] = `
 
 }
 
-@media only screen and (max-width: 768px) {
-
-}
-
 <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 c0"
           >
@@ -42984,10 +42901,6 @@ exports[`DataTable should render new data when page changes 2`] = `
 
 .c0:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
-}
-
-@media only screen and (max-width: 768px) {
-
 }
 
 @media only screen and (max-width: 768px) {
@@ -43125,10 +43038,6 @@ exports[`DataTable should render new data when page changes 2`] = `
 
 }
 
-@media only screen and (max-width: 768px) {
-
-}
-
 <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 c0"
           >
@@ -43230,10 +43139,6 @@ exports[`DataTable should render new data when page changes 2`] = `
 
 .c0:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
-}
-
-@media only screen and (max-width: 768px) {
-
 }
 
 @media only screen and (max-width: 768px) {
@@ -43371,10 +43276,6 @@ exports[`DataTable should render new data when page changes 2`] = `
 
 }
 
-@media only screen and (max-width: 768px) {
-
-}
-
 <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 c0"
           >
@@ -43476,10 +43377,6 @@ exports[`DataTable should render new data when page changes 2`] = `
 
 .c0:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
-}
-
-@media only screen and (max-width: 768px) {
-
 }
 
 @media only screen and (max-width: 768px) {
@@ -43617,10 +43514,6 @@ exports[`DataTable should render new data when page changes 2`] = `
 
 }
 
-@media only screen and (max-width: 768px) {
-
-}
-
 <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 c0"
           >
@@ -43722,10 +43615,6 @@ exports[`DataTable should render new data when page changes 2`] = `
 
 .c0:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
-}
-
-@media only screen and (max-width: 768px) {
-
 }
 
 @media only screen and (max-width: 768px) {
@@ -43863,10 +43752,6 @@ exports[`DataTable should render new data when page changes 2`] = `
 
 }
 
-@media only screen and (max-width: 768px) {
-
-}
-
 <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 c0"
           >
@@ -43968,10 +43853,6 @@ exports[`DataTable should render new data when page changes 2`] = `
 
 .c0:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
-}
-
-@media only screen and (max-width: 768px) {
-
 }
 
 @media only screen and (max-width: 768px) {
@@ -44109,10 +43990,6 @@ exports[`DataTable should render new data when page changes 2`] = `
 
 }
 
-@media only screen and (max-width: 768px) {
-
-}
-
 <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 c0"
           >
@@ -44214,10 +44091,6 @@ exports[`DataTable should render new data when page changes 2`] = `
 
 .c0:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
-}
-
-@media only screen and (max-width: 768px) {
-
 }
 
 @media only screen and (max-width: 768px) {
@@ -44355,10 +44228,6 @@ exports[`DataTable should render new data when page changes 2`] = `
 
 }
 
-@media only screen and (max-width: 768px) {
-
-}
-
 <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 c0"
           >
@@ -44460,10 +44329,6 @@ exports[`DataTable should render new data when page changes 2`] = `
 
 .c0:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
-}
-
-@media only screen and (max-width: 768px) {
-
 }
 
 @media only screen and (max-width: 768px) {
@@ -44601,10 +44466,6 @@ exports[`DataTable should render new data when page changes 2`] = `
 
 }
 
-@media only screen and (max-width: 768px) {
-
-}
-
 <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 c0"
           >
@@ -44706,10 +44567,6 @@ exports[`DataTable should render new data when page changes 2`] = `
 
 .c0:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
-}
-
-@media only screen and (max-width: 768px) {
-
 }
 
 @media only screen and (max-width: 768px) {
@@ -44847,10 +44704,6 @@ exports[`DataTable should render new data when page changes 2`] = `
 
 }
 
-@media only screen and (max-width: 768px) {
-
-}
-
 <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 c0"
           >
@@ -44952,10 +44805,6 @@ exports[`DataTable should render new data when page changes 2`] = `
 
 .c0:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
-}
-
-@media only screen and (max-width: 768px) {
-
 }
 
 @media only screen and (max-width: 768px) {
@@ -45093,10 +44942,6 @@ exports[`DataTable should render new data when page changes 2`] = `
 
 }
 
-@media only screen and (max-width: 768px) {
-
-}
-
 <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 c0"
           >
@@ -45198,10 +45043,6 @@ exports[`DataTable should render new data when page changes 2`] = `
 
 .c0:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
-}
-
-@media only screen and (max-width: 768px) {
-
 }
 
 @media only screen and (max-width: 768px) {
@@ -45339,10 +45180,6 @@ exports[`DataTable should render new data when page changes 2`] = `
 
 }
 
-@media only screen and (max-width: 768px) {
-
-}
-
 <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 c0"
           >
@@ -45444,10 +45281,6 @@ exports[`DataTable should render new data when page changes 2`] = `
 
 .c0:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
-}
-
-@media only screen and (max-width: 768px) {
-
 }
 
 @media only screen and (max-width: 768px) {
@@ -45585,10 +45418,6 @@ exports[`DataTable should render new data when page changes 2`] = `
 
 }
 
-@media only screen and (max-width: 768px) {
-
-}
-
 <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 c0"
           >
@@ -45690,10 +45519,6 @@ exports[`DataTable should render new data when page changes 2`] = `
 
 .c0:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
-}
-
-@media only screen and (max-width: 768px) {
-
 }
 
 @media only screen and (max-width: 768px) {
@@ -45831,10 +45656,6 @@ exports[`DataTable should render new data when page changes 2`] = `
 
 }
 
-@media only screen and (max-width: 768px) {
-
-}
-
 <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 c0"
           >
@@ -45936,10 +45757,6 @@ exports[`DataTable should render new data when page changes 2`] = `
 
 .c0:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
-}
-
-@media only screen and (max-width: 768px) {
-
 }
 
 @media only screen and (max-width: 768px) {
@@ -46077,10 +45894,6 @@ exports[`DataTable should render new data when page changes 2`] = `
 
 }
 
-@media only screen and (max-width: 768px) {
-
-}
-
 <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 c0"
           >
@@ -46182,10 +45995,6 @@ exports[`DataTable should render new data when page changes 2`] = `
 
 .c0:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
-}
-
-@media only screen and (max-width: 768px) {
-
 }
 
 @media only screen and (max-width: 768px) {
@@ -46323,10 +46132,6 @@ exports[`DataTable should render new data when page changes 2`] = `
 
 }
 
-@media only screen and (max-width: 768px) {
-
-}
-
 <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 c0"
           >
@@ -46428,10 +46233,6 @@ exports[`DataTable should render new data when page changes 2`] = `
 
 .c0:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
-}
-
-@media only screen and (max-width: 768px) {
-
 }
 
 @media only screen and (max-width: 768px) {
@@ -46569,10 +46370,6 @@ exports[`DataTable should render new data when page changes 2`] = `
 
 }
 
-@media only screen and (max-width: 768px) {
-
-}
-
 <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 c0"
           >
@@ -46674,10 +46471,6 @@ exports[`DataTable should render new data when page changes 2`] = `
 
 .c0:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
-}
-
-@media only screen and (max-width: 768px) {
-
 }
 
 @media only screen and (max-width: 768px) {
@@ -46815,10 +46608,6 @@ exports[`DataTable should render new data when page changes 2`] = `
 
 }
 
-@media only screen and (max-width: 768px) {
-
-}
-
 <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 c0"
           >
@@ -46920,10 +46709,6 @@ exports[`DataTable should render new data when page changes 2`] = `
 
 .c0:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
-}
-
-@media only screen and (max-width: 768px) {
-
 }
 
 @media only screen and (max-width: 768px) {
@@ -47061,10 +46846,6 @@ exports[`DataTable should render new data when page changes 2`] = `
 
 }
 
-@media only screen and (max-width: 768px) {
-
-}
-
 <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 c0"
           >
@@ -47166,10 +46947,6 @@ exports[`DataTable should render new data when page changes 2`] = `
 
 .c0:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
-}
-
-@media only screen and (max-width: 768px) {
-
 }
 
 @media only screen and (max-width: 768px) {
@@ -47307,10 +47084,6 @@ exports[`DataTable should render new data when page changes 2`] = `
 
 }
 
-@media only screen and (max-width: 768px) {
-
-}
-
 <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 c0"
           >
@@ -47412,10 +47185,6 @@ exports[`DataTable should render new data when page changes 2`] = `
 
 .c0:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
-}
-
-@media only screen and (max-width: 768px) {
-
 }
 
 @media only screen and (max-width: 768px) {
@@ -47553,10 +47322,6 @@ exports[`DataTable should render new data when page changes 2`] = `
 
 }
 
-@media only screen and (max-width: 768px) {
-
-}
-
 <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 c0"
           >
@@ -47658,10 +47423,6 @@ exports[`DataTable should render new data when page changes 2`] = `
 
 .c0:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
-}
-
-@media only screen and (max-width: 768px) {
-
 }
 
 @media only screen and (max-width: 768px) {
@@ -47799,10 +47560,6 @@ exports[`DataTable should render new data when page changes 2`] = `
 
 }
 
-@media only screen and (max-width: 768px) {
-
-}
-
 <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 c0"
           >
@@ -47904,10 +47661,6 @@ exports[`DataTable should render new data when page changes 2`] = `
 
 .c0:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
-}
-
-@media only screen and (max-width: 768px) {
-
 }
 
 @media only screen and (max-width: 768px) {
@@ -48045,10 +47798,6 @@ exports[`DataTable should render new data when page changes 2`] = `
 
 }
 
-@media only screen and (max-width: 768px) {
-
-}
-
 <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 c0"
           >
@@ -48150,10 +47899,6 @@ exports[`DataTable should render new data when page changes 2`] = `
 
 .c0:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
-}
-
-@media only screen and (max-width: 768px) {
-
 }
 
 @media only screen and (max-width: 768px) {
@@ -48291,10 +48036,6 @@ exports[`DataTable should render new data when page changes 2`] = `
 
 }
 
-@media only screen and (max-width: 768px) {
-
-}
-
 <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 c0"
           >
@@ -48333,8 +48074,7 @@ exports[`DataTable should render new data when page changes 2`] = `
       class="StyledBox__StyledBoxGap-sc-13pk1d4-1 ffrHHp"
     />
     <div
-      class="StyledBox-sc-13pk1d4-0 VgFff Pagination__StyledPaginationContainer-sc-rnlw6m-0"
-      controls=""
+      class="StyledBox-sc-13pk1d4-0 eKszzY Pagination__StyledPaginationContainer-sc-rnlw6m-0"
     >
       <nav
         aria-label="Pagination Navigation"
@@ -48533,7 +48273,6 @@ exports[`DataTable should show correct item index when "show" is a number 1`] = 
   min-height: 0;
   flex-direction: column;
   flex: 0 0 auto;
-  gap: 12px 6px;
 }
 
 .c14 {
@@ -48969,12 +48708,6 @@ exports[`DataTable should show correct item index when "show" is a number 1`] = 
 
 .c8:focus:not(:focus-visible) {
   outline: none;
-}
-
-@media only screen and (max-width: 768px) {
-  .c13 {
-    gap: 6px 3px;
-  }
 }
 
 @media only screen and (max-width: 768px) {
@@ -50620,7 +50353,6 @@ exports[`DataTable should show correct item index when "show" is a number 1`] = 
     />
     <div
       class="c13 Pagination__StyledPaginationContainer-sc-rnlw6m-0"
-      controls=""
     >
       <nav
         aria-label="Pagination Navigation"
@@ -50819,7 +50551,6 @@ exports[`DataTable should show correct page when "show" is { page: # } 1`] = `
   min-height: 0;
   flex-direction: column;
   flex: 0 0 auto;
-  gap: 12px 6px;
 }
 
 .c14 {
@@ -51258,12 +50989,6 @@ exports[`DataTable should show correct page when "show" is { page: # } 1`] = `
 }
 
 @media only screen and (max-width: 768px) {
-  .c13 {
-    gap: 6px 3px;
-  }
-}
-
-@media only screen and (max-width: 768px) {
   .c15 {
     margin: 0px;
   }
@@ -52751,7 +52476,6 @@ exports[`DataTable should show correct page when "show" is { page: # } 1`] = `
     />
     <div
       class="c13 Pagination__StyledPaginationContainer-sc-rnlw6m-0"
-      controls=""
     >
       <nav
         aria-label="Pagination Navigation"
@@ -52837,7 +52561,7 @@ exports[`DataTable should show correct page when "show" is { page: # } 1`] = `
 `;
 
 exports[`DataTable sort 1`] = `
-.c10 {
+.c9 {
   display: inline-block;
   flex: 0 0 auto;
   width: 24px;
@@ -52846,25 +52570,25 @@ exports[`DataTable sort 1`] = `
   stroke: #666666;
 }
 
-.c10 g {
+.c9 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c10 *:not([stroke])[fill='none'] {
+.c9 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c10 *[stroke*='#'],
-.c10 *[STROKE*='#'] {
+.c9 *[stroke*='#'],
+.c9 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
-.c10 *[fill-rule],
-.c10 *[FILL-RULE],
-.c10 *[fill*='#'],
-.c10 *[FILL*='#'] {
+.c9 *[fill-rule],
+.c9 *[FILL-RULE],
+.c9 *[fill*='#'],
+.c9 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -52900,7 +52624,7 @@ exports[`DataTable sort 1`] = `
   flex-direction: row;
 }
 
-.c14 {
+.c13 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -52909,18 +52633,12 @@ exports[`DataTable sort 1`] = `
   flex-direction: column;
 }
 
-.c9 {
-  flex: 0 0 auto;
-  align-self: stretch;
-  width: 12px;
-}
-
 .c8 {
   font-size: 18px;
   line-height: 24px;
 }
 
-.c15 {
+.c14 {
   font-size: 18px;
   line-height: 24px;
   font-weight: bold;
@@ -52994,7 +52712,7 @@ exports[`DataTable sort 1`] = `
   padding: 0px;
 }
 
-.c13 {
+.c12 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -53018,62 +52736,56 @@ exports[`DataTable sort 1`] = `
   border-collapse: separate;
 }
 
-.c12:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c12:focus >circle,
-.c12:focus >ellipse,
-.c12:focus >line,
-.c12:focus >path,
-.c12:focus >polygon,
-.c12:focus >polyline,
-.c12:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c12:focus ::-moz-focus-inner {
-  border: 0;
-}
-
-.c12:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c12:focus:not(:focus-visible) >circle,
-.c12:focus:not(:focus-visible) >ellipse,
-.c12:focus:not(:focus-visible) >line,
-.c12:focus:not(:focus-visible) >path,
-.c12:focus:not(:focus-visible) >polygon,
-.c12:focus:not(:focus-visible) >polyline,
-.c12:focus:not(:focus-visible) >rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c12:focus:not(:focus-visible) ::-moz-focus-inner {
-  border: 0;
-}
-
 .c11:focus {
-  outline: 2px solid #6FFFB0;
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c11:focus >circle,
+.c11:focus >ellipse,
+.c11:focus >line,
+.c11:focus >path,
+.c11:focus >polygon,
+.c11:focus >polyline,
+.c11:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c11:focus ::-moz-focus-inner {
+  border: 0;
 }
 
 .c11:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c11:focus:not(:focus-visible) >circle,
+.c11:focus:not(:focus-visible) >ellipse,
+.c11:focus:not(:focus-visible) >line,
+.c11:focus:not(:focus-visible) >path,
+.c11:focus:not(:focus-visible) >polygon,
+.c11:focus:not(:focus-visible) >polyline,
+.c11:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c11:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
+}
+
+.c10:focus {
+  outline: 2px solid #6FFFB0;
+}
+
+.c10:focus:not(:focus-visible) {
   outline: none;
 }
 
 .c6 {
   padding: 6px 12px;
-}
-
-@media only screen and (max-width: 768px) {
-  .c9 {
-    width: 6px;
-  }
 }
 
 <div
@@ -53109,12 +52821,9 @@ exports[`DataTable sort 1`] = `
                 >
                   A
                 </span>
-                <div
-                  class="c9"
-                />
                 <svg
                   aria-label="ascending"
-                  class="c10"
+                  class="c9"
                   viewBox="0 0 24 24"
                 >
                   <path
@@ -53155,30 +52864,30 @@ exports[`DataTable sort 1`] = `
       </tr>
     </thead>
     <tbody
-      class="StyledTable__StyledTableBody-sc-1m3u5g-3 c11"
+      class="StyledTable__StyledTableBody-sc-1m3u5g-3 c10"
     >
       <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c12"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c11"
       >
         <th
-          class="c13 "
+          class="c12 "
           scope="row"
         >
           <div
-            class="c14"
+            class="c13"
           >
             <span
-              class="c15"
+              class="c14"
             >
               one
             </span>
           </div>
         </th>
         <td
-          class="c13 "
+          class="c12 "
         >
           <div
-            class="c14"
+            class="c13"
           >
             <span
               class="c8"
@@ -53189,27 +52898,27 @@ exports[`DataTable sort 1`] = `
         </td>
       </tr>
       <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c12"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c11"
       >
         <th
-          class="c13 "
+          class="c12 "
           scope="row"
         >
           <div
-            class="c14"
+            class="c13"
           >
             <span
-              class="c15"
+              class="c14"
             >
               two
             </span>
           </div>
         </th>
         <td
-          class="c13 "
+          class="c12 "
         >
           <div
-            class="c14"
+            class="c13"
           >
             <span
               class="c8"
@@ -53220,27 +52929,27 @@ exports[`DataTable sort 1`] = `
         </td>
       </tr>
       <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c12"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c11"
       >
         <th
-          class="c13 "
+          class="c12 "
           scope="row"
         >
           <div
-            class="c14"
+            class="c13"
           >
             <span
-              class="c15"
+              class="c14"
             >
               zero
             </span>
           </div>
         </th>
         <td
-          class="c13 "
+          class="c12 "
         >
           <div
-            class="c14"
+            class="c13"
           >
             <span
               class="c8"
@@ -53257,7 +52966,7 @@ exports[`DataTable sort 1`] = `
 
 exports[`DataTable sort controlled 1`] = `
 <DocumentFragment>
-  .c11 {
+  .c10 {
   display: inline-block;
   flex: 0 0 auto;
   width: 24px;
@@ -53266,25 +52975,25 @@ exports[`DataTable sort controlled 1`] = `
   stroke: #666666;
 }
 
-.c11 g {
+.c10 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c11 *:not([stroke])[fill='none'] {
+.c10 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c11 *[stroke*='#'],
-.c11 *[STROKE*='#'] {
+.c10 *[stroke*='#'],
+.c10 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
-.c11 *[fill-rule],
-.c11 *[FILL-RULE],
-.c11 *[fill*='#'],
-.c11 *[FILL*='#'] {
+.c10 *[fill-rule],
+.c10 *[FILL-RULE],
+.c10 *[fill*='#'],
+.c10 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -53320,7 +53029,7 @@ exports[`DataTable sort controlled 1`] = `
   flex-direction: row;
 }
 
-.c15 {
+.c14 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -53329,18 +53038,12 @@ exports[`DataTable sort controlled 1`] = `
   flex-direction: column;
 }
 
-.c10 {
-  flex: 0 0 auto;
-  align-self: stretch;
-  width: 12px;
-}
-
 .c9 {
   font-size: 18px;
   line-height: 24px;
 }
 
-.c16 {
+.c15 {
   font-size: 18px;
   line-height: 24px;
   font-weight: bold;
@@ -53479,7 +53182,7 @@ exports[`DataTable sort controlled 1`] = `
   padding: 0px;
 }
 
-.c14 {
+.c13 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -53503,62 +53206,56 @@ exports[`DataTable sort controlled 1`] = `
   border-collapse: separate;
 }
 
-.c13:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c13:focus >circle,
-.c13:focus >ellipse,
-.c13:focus >line,
-.c13:focus >path,
-.c13:focus >polygon,
-.c13:focus >polyline,
-.c13:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c13:focus ::-moz-focus-inner {
-  border: 0;
-}
-
-.c13:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c13:focus:not(:focus-visible) >circle,
-.c13:focus:not(:focus-visible) >ellipse,
-.c13:focus:not(:focus-visible) >line,
-.c13:focus:not(:focus-visible) >path,
-.c13:focus:not(:focus-visible) >polygon,
-.c13:focus:not(:focus-visible) >polyline,
-.c13:focus:not(:focus-visible) >rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c13:focus:not(:focus-visible) ::-moz-focus-inner {
-  border: 0;
-}
-
 .c12:focus {
-  outline: 2px solid #6FFFB0;
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c12:focus >circle,
+.c12:focus >ellipse,
+.c12:focus >line,
+.c12:focus >path,
+.c12:focus >polygon,
+.c12:focus >polyline,
+.c12:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c12:focus ::-moz-focus-inner {
+  border: 0;
 }
 
 .c12:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c12:focus:not(:focus-visible) >circle,
+.c12:focus:not(:focus-visible) >ellipse,
+.c12:focus:not(:focus-visible) >line,
+.c12:focus:not(:focus-visible) >path,
+.c12:focus:not(:focus-visible) >polygon,
+.c12:focus:not(:focus-visible) >polyline,
+.c12:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c12:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
+}
+
+.c11:focus {
+  outline: 2px solid #6FFFB0;
+}
+
+.c11:focus:not(:focus-visible) {
   outline: none;
 }
 
 .c7 {
   padding: 6px 12px;
-}
-
-@media only screen and (max-width: 768px) {
-  .c10 {
-    width: 6px;
-  }
 }
 
 <div
@@ -53600,12 +53297,9 @@ exports[`DataTable sort controlled 1`] = `
                   >
                     A
                   </span>
-                  <div
-                    class="c10"
-                  />
                   <svg
                     aria-label="ascending"
-                    class="c11"
+                    class="c10"
                     viewBox="0 0 24 24"
                   >
                     <path
@@ -53646,30 +53340,30 @@ exports[`DataTable sort controlled 1`] = `
         </tr>
       </thead>
       <tbody
-        class="StyledTable__StyledTableBody-sc-1m3u5g-3 c12"
+        class="StyledTable__StyledTableBody-sc-1m3u5g-3 c11"
       >
         <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 c13"
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 c12"
         >
           <th
-            class="c14 "
+            class="c13 "
             scope="row"
           >
             <div
-              class="c15"
+              class="c14"
             >
               <span
-                class="c16"
+                class="c15"
               >
                 one
               </span>
             </div>
           </th>
           <td
-            class="c14 "
+            class="c13 "
           >
             <div
-              class="c15"
+              class="c14"
             >
               <span
                 class="c9"
@@ -53680,27 +53374,27 @@ exports[`DataTable sort controlled 1`] = `
           </td>
         </tr>
         <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 c13"
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 c12"
         >
           <th
-            class="c14 "
+            class="c13 "
             scope="row"
           >
             <div
-              class="c15"
+              class="c14"
             >
               <span
-                class="c16"
+                class="c15"
               >
                 two
               </span>
             </div>
           </th>
           <td
-            class="c14 "
+            class="c13 "
           >
             <div
-              class="c15"
+              class="c14"
             >
               <span
                 class="c9"
@@ -53711,27 +53405,27 @@ exports[`DataTable sort controlled 1`] = `
           </td>
         </tr>
         <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 c13"
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 c12"
         >
           <th
-            class="c14 "
+            class="c13 "
             scope="row"
           >
             <div
-              class="c15"
+              class="c14"
             >
               <span
-                class="c16"
+                class="c15"
               >
                 zero
               </span>
             </div>
           </th>
           <td
-            class="c14 "
+            class="c13 "
           >
             <div
-              class="c15"
+              class="c14"
             >
               <span
                 class="c9"
@@ -53749,7 +53443,7 @@ exports[`DataTable sort controlled 1`] = `
 
 exports[`DataTable sort controlled 2`] = `
 <DocumentFragment>
-  .c11 {
+  .c10 {
   display: inline-block;
   flex: 0 0 auto;
   width: 24px;
@@ -53758,25 +53452,25 @@ exports[`DataTable sort controlled 2`] = `
   stroke: #666666;
 }
 
-.c11 g {
+.c10 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c11 *:not([stroke])[fill='none'] {
+.c10 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c11 *[stroke*='#'],
-.c11 *[STROKE*='#'] {
+.c10 *[stroke*='#'],
+.c10 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
-.c11 *[fill-rule],
-.c11 *[FILL-RULE],
-.c11 *[fill*='#'],
-.c11 *[FILL*='#'] {
+.c10 *[fill-rule],
+.c10 *[FILL-RULE],
+.c10 *[fill*='#'],
+.c10 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -53812,7 +53506,7 @@ exports[`DataTable sort controlled 2`] = `
   flex-direction: row;
 }
 
-.c15 {
+.c14 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -53821,18 +53515,12 @@ exports[`DataTable sort controlled 2`] = `
   flex-direction: column;
 }
 
-.c10 {
-  flex: 0 0 auto;
-  align-self: stretch;
-  width: 12px;
-}
-
 .c9 {
   font-size: 18px;
   line-height: 24px;
 }
 
-.c16 {
+.c15 {
   font-size: 18px;
   line-height: 24px;
   font-weight: bold;
@@ -53971,7 +53659,7 @@ exports[`DataTable sort controlled 2`] = `
   padding: 0px;
 }
 
-.c14 {
+.c13 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -53995,62 +53683,56 @@ exports[`DataTable sort controlled 2`] = `
   border-collapse: separate;
 }
 
-.c13:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c13:focus >circle,
-.c13:focus >ellipse,
-.c13:focus >line,
-.c13:focus >path,
-.c13:focus >polygon,
-.c13:focus >polyline,
-.c13:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c13:focus ::-moz-focus-inner {
-  border: 0;
-}
-
-.c13:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c13:focus:not(:focus-visible) >circle,
-.c13:focus:not(:focus-visible) >ellipse,
-.c13:focus:not(:focus-visible) >line,
-.c13:focus:not(:focus-visible) >path,
-.c13:focus:not(:focus-visible) >polygon,
-.c13:focus:not(:focus-visible) >polyline,
-.c13:focus:not(:focus-visible) >rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c13:focus:not(:focus-visible) ::-moz-focus-inner {
-  border: 0;
-}
-
 .c12:focus {
-  outline: 2px solid #6FFFB0;
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c12:focus >circle,
+.c12:focus >ellipse,
+.c12:focus >line,
+.c12:focus >path,
+.c12:focus >polygon,
+.c12:focus >polyline,
+.c12:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c12:focus ::-moz-focus-inner {
+  border: 0;
 }
 
 .c12:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c12:focus:not(:focus-visible) >circle,
+.c12:focus:not(:focus-visible) >ellipse,
+.c12:focus:not(:focus-visible) >line,
+.c12:focus:not(:focus-visible) >path,
+.c12:focus:not(:focus-visible) >polygon,
+.c12:focus:not(:focus-visible) >polyline,
+.c12:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c12:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
+}
+
+.c11:focus {
+  outline: 2px solid #6FFFB0;
+}
+
+.c11:focus:not(:focus-visible) {
   outline: none;
 }
 
 .c7 {
   padding: 6px 12px;
-}
-
-@media only screen and (max-width: 768px) {
-  .c10 {
-    width: 6px;
-  }
 }
 
 <div
@@ -54092,12 +53774,9 @@ exports[`DataTable sort controlled 2`] = `
                   >
                     A
                   </span>
-                  <div
-                    class="c10"
-                  />
                   <svg
                     aria-label="descending"
-                    class="c11"
+                    class="c10"
                     viewBox="0 0 24 24"
                   >
                     <path
@@ -54138,30 +53817,30 @@ exports[`DataTable sort controlled 2`] = `
         </tr>
       </thead>
       <tbody
-        class="StyledTable__StyledTableBody-sc-1m3u5g-3 c12"
+        class="StyledTable__StyledTableBody-sc-1m3u5g-3 c11"
       >
         <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 c13"
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 c12"
         >
           <th
-            class="c14 "
+            class="c13 "
             scope="row"
           >
             <div
-              class="c15"
+              class="c14"
             >
               <span
-                class="c16"
+                class="c15"
               >
                 zero
               </span>
             </div>
           </th>
           <td
-            class="c14 "
+            class="c13 "
           >
             <div
-              class="c15"
+              class="c14"
             >
               <span
                 class="c9"
@@ -54172,27 +53851,27 @@ exports[`DataTable sort controlled 2`] = `
           </td>
         </tr>
         <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 c13"
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 c12"
         >
           <th
-            class="c14 "
+            class="c13 "
             scope="row"
           >
             <div
-              class="c15"
+              class="c14"
             >
               <span
-                class="c16"
+                class="c15"
               >
                 two
               </span>
             </div>
           </th>
           <td
-            class="c14 "
+            class="c13 "
           >
             <div
-              class="c15"
+              class="c14"
             >
               <span
                 class="c9"
@@ -54203,27 +53882,27 @@ exports[`DataTable sort controlled 2`] = `
           </td>
         </tr>
         <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 c13"
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 c12"
         >
           <th
-            class="c14 "
+            class="c13 "
             scope="row"
           >
             <div
-              class="c15"
+              class="c14"
             >
               <span
-                class="c16"
+                class="c15"
               >
                 one
               </span>
             </div>
           </th>
           <td
-            class="c14 "
+            class="c13 "
           >
             <div
-              class="c15"
+              class="c14"
             >
               <span
                 class="c9"
@@ -54240,7 +53919,7 @@ exports[`DataTable sort controlled 2`] = `
 `;
 
 exports[`DataTable sort external 1`] = `
-.c10 {
+.c9 {
   display: inline-block;
   flex: 0 0 auto;
   width: 24px;
@@ -54249,25 +53928,25 @@ exports[`DataTable sort external 1`] = `
   stroke: #666666;
 }
 
-.c10 g {
+.c9 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c10 *:not([stroke])[fill='none'] {
+.c9 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c10 *[stroke*='#'],
-.c10 *[STROKE*='#'] {
+.c9 *[stroke*='#'],
+.c9 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
-.c10 *[fill-rule],
-.c10 *[FILL-RULE],
-.c10 *[fill*='#'],
-.c10 *[FILL*='#'] {
+.c9 *[fill-rule],
+.c9 *[FILL-RULE],
+.c9 *[fill*='#'],
+.c9 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -54303,7 +53982,7 @@ exports[`DataTable sort external 1`] = `
   flex-direction: row;
 }
 
-.c14 {
+.c13 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -54312,18 +53991,12 @@ exports[`DataTable sort external 1`] = `
   flex-direction: column;
 }
 
-.c9 {
-  flex: 0 0 auto;
-  align-self: stretch;
-  width: 12px;
-}
-
 .c8 {
   font-size: 18px;
   line-height: 24px;
 }
 
-.c15 {
+.c14 {
   font-size: 18px;
   line-height: 24px;
   font-weight: bold;
@@ -54397,7 +54070,7 @@ exports[`DataTable sort external 1`] = `
   padding: 0px;
 }
 
-.c13 {
+.c12 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -54421,62 +54094,56 @@ exports[`DataTable sort external 1`] = `
   border-collapse: separate;
 }
 
-.c12:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c12:focus >circle,
-.c12:focus >ellipse,
-.c12:focus >line,
-.c12:focus >path,
-.c12:focus >polygon,
-.c12:focus >polyline,
-.c12:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c12:focus ::-moz-focus-inner {
-  border: 0;
-}
-
-.c12:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c12:focus:not(:focus-visible) >circle,
-.c12:focus:not(:focus-visible) >ellipse,
-.c12:focus:not(:focus-visible) >line,
-.c12:focus:not(:focus-visible) >path,
-.c12:focus:not(:focus-visible) >polygon,
-.c12:focus:not(:focus-visible) >polyline,
-.c12:focus:not(:focus-visible) >rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c12:focus:not(:focus-visible) ::-moz-focus-inner {
-  border: 0;
-}
-
 .c11:focus {
-  outline: 2px solid #6FFFB0;
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c11:focus >circle,
+.c11:focus >ellipse,
+.c11:focus >line,
+.c11:focus >path,
+.c11:focus >polygon,
+.c11:focus >polyline,
+.c11:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c11:focus ::-moz-focus-inner {
+  border: 0;
 }
 
 .c11:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c11:focus:not(:focus-visible) >circle,
+.c11:focus:not(:focus-visible) >ellipse,
+.c11:focus:not(:focus-visible) >line,
+.c11:focus:not(:focus-visible) >path,
+.c11:focus:not(:focus-visible) >polygon,
+.c11:focus:not(:focus-visible) >polyline,
+.c11:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c11:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
+}
+
+.c10:focus {
+  outline: 2px solid #6FFFB0;
+}
+
+.c10:focus:not(:focus-visible) {
   outline: none;
 }
 
 .c6 {
   padding: 6px 12px;
-}
-
-@media only screen and (max-width: 768px) {
-  .c9 {
-    width: 6px;
-  }
 }
 
 <div
@@ -54512,12 +54179,9 @@ exports[`DataTable sort external 1`] = `
                 >
                   A
                 </span>
-                <div
-                  class="c9"
-                />
                 <svg
                   aria-label="ascending"
-                  class="c10"
+                  class="c9"
                   viewBox="0 0 24 24"
                 >
                   <path
@@ -54558,30 +54222,30 @@ exports[`DataTable sort external 1`] = `
       </tr>
     </thead>
     <tbody
-      class="StyledTable__StyledTableBody-sc-1m3u5g-3 c11"
+      class="StyledTable__StyledTableBody-sc-1m3u5g-3 c10"
     >
       <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c12"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c11"
       >
         <th
-          class="c13 "
+          class="c12 "
           scope="row"
         >
           <div
-            class="c14"
+            class="c13"
           >
             <span
-              class="c15"
+              class="c14"
             >
               zero
             </span>
           </div>
         </th>
         <td
-          class="c13 "
+          class="c12 "
         >
           <div
-            class="c14"
+            class="c13"
           >
             <span
               class="c8"
@@ -54592,27 +54256,27 @@ exports[`DataTable sort external 1`] = `
         </td>
       </tr>
       <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c12"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c11"
       >
         <th
-          class="c13 "
+          class="c12 "
           scope="row"
         >
           <div
-            class="c14"
+            class="c13"
           >
             <span
-              class="c15"
+              class="c14"
             >
               one
             </span>
           </div>
         </th>
         <td
-          class="c13 "
+          class="c12 "
         >
           <div
-            class="c14"
+            class="c13"
           >
             <span
               class="c8"
@@ -54623,27 +54287,27 @@ exports[`DataTable sort external 1`] = `
         </td>
       </tr>
       <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c12"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c11"
       >
         <th
-          class="c13 "
+          class="c12 "
           scope="row"
         >
           <div
-            class="c14"
+            class="c13"
           >
             <span
-              class="c15"
+              class="c14"
             >
               two
             </span>
           </div>
         </th>
         <td
-          class="c13 "
+          class="c12 "
         >
           <div
-            class="c14"
+            class="c13"
           >
             <span
               class="c8"
@@ -54659,7 +54323,7 @@ exports[`DataTable sort external 1`] = `
 `;
 
 exports[`DataTable sort nested object 1`] = `
-.c10 {
+.c9 {
   display: inline-block;
   flex: 0 0 auto;
   width: 24px;
@@ -54668,25 +54332,25 @@ exports[`DataTable sort nested object 1`] = `
   stroke: #666666;
 }
 
-.c10 g {
+.c9 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c10 *:not([stroke])[fill='none'] {
+.c9 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c10 *[stroke*='#'],
-.c10 *[STROKE*='#'] {
+.c9 *[stroke*='#'],
+.c9 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
-.c10 *[fill-rule],
-.c10 *[FILL-RULE],
-.c10 *[fill*='#'],
-.c10 *[FILL*='#'] {
+.c9 *[fill-rule],
+.c9 *[FILL-RULE],
+.c9 *[fill*='#'],
+.c9 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -54722,7 +54386,7 @@ exports[`DataTable sort nested object 1`] = `
   flex-direction: row;
 }
 
-.c14 {
+.c13 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -54731,18 +54395,12 @@ exports[`DataTable sort nested object 1`] = `
   flex-direction: column;
 }
 
-.c9 {
-  flex: 0 0 auto;
-  align-self: stretch;
-  width: 12px;
-}
-
 .c8 {
   font-size: 18px;
   line-height: 24px;
 }
 
-.c15 {
+.c14 {
   font-size: 18px;
   line-height: 24px;
   font-weight: bold;
@@ -54816,7 +54474,7 @@ exports[`DataTable sort nested object 1`] = `
   padding: 0px;
 }
 
-.c13 {
+.c12 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -54840,62 +54498,56 @@ exports[`DataTable sort nested object 1`] = `
   border-collapse: separate;
 }
 
-.c12:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c12:focus >circle,
-.c12:focus >ellipse,
-.c12:focus >line,
-.c12:focus >path,
-.c12:focus >polygon,
-.c12:focus >polyline,
-.c12:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c12:focus ::-moz-focus-inner {
-  border: 0;
-}
-
-.c12:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c12:focus:not(:focus-visible) >circle,
-.c12:focus:not(:focus-visible) >ellipse,
-.c12:focus:not(:focus-visible) >line,
-.c12:focus:not(:focus-visible) >path,
-.c12:focus:not(:focus-visible) >polygon,
-.c12:focus:not(:focus-visible) >polyline,
-.c12:focus:not(:focus-visible) >rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c12:focus:not(:focus-visible) ::-moz-focus-inner {
-  border: 0;
-}
-
 .c11:focus {
-  outline: 2px solid #6FFFB0;
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c11:focus >circle,
+.c11:focus >ellipse,
+.c11:focus >line,
+.c11:focus >path,
+.c11:focus >polygon,
+.c11:focus >polyline,
+.c11:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c11:focus ::-moz-focus-inner {
+  border: 0;
 }
 
 .c11:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c11:focus:not(:focus-visible) >circle,
+.c11:focus:not(:focus-visible) >ellipse,
+.c11:focus:not(:focus-visible) >line,
+.c11:focus:not(:focus-visible) >path,
+.c11:focus:not(:focus-visible) >polygon,
+.c11:focus:not(:focus-visible) >polyline,
+.c11:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c11:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
+}
+
+.c10:focus {
+  outline: 2px solid #6FFFB0;
+}
+
+.c10:focus:not(:focus-visible) {
   outline: none;
 }
 
 .c6 {
   padding: 6px 12px;
-}
-
-@media only screen and (max-width: 768px) {
-  .c9 {
-    width: 6px;
-  }
 }
 
 <div
@@ -54955,12 +54607,9 @@ exports[`DataTable sort nested object 1`] = `
                 >
                   Value
                 </span>
-                <div
-                  class="c9"
-                />
                 <svg
                   aria-label="descending"
-                  class="c10"
+                  class="c9"
                   viewBox="0 0 24 24"
                 >
                   <path
@@ -54977,30 +54626,30 @@ exports[`DataTable sort nested object 1`] = `
       </tr>
     </thead>
     <tbody
-      class="StyledTable__StyledTableBody-sc-1m3u5g-3 c11"
+      class="StyledTable__StyledTableBody-sc-1m3u5g-3 c10"
     >
       <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c12"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c11"
       >
         <th
-          class="c13 "
+          class="c12 "
           scope="row"
         >
           <div
-            class="c14"
+            class="c13"
           >
             <span
-              class="c15"
+              class="c14"
             >
               two
             </span>
           </div>
         </th>
         <td
-          class="c13 "
+          class="c12 "
         >
           <div
-            class="c14"
+            class="c13"
           >
             <span
               class="c8"
@@ -55011,27 +54660,27 @@ exports[`DataTable sort nested object 1`] = `
         </td>
       </tr>
       <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c12"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c11"
       >
         <th
-          class="c13 "
+          class="c12 "
           scope="row"
         >
           <div
-            class="c14"
+            class="c13"
           >
             <span
-              class="c15"
+              class="c14"
             >
               one
             </span>
           </div>
         </th>
         <td
-          class="c13 "
+          class="c12 "
         >
           <div
-            class="c14"
+            class="c13"
           >
             <span
               class="c8"
@@ -55042,27 +54691,27 @@ exports[`DataTable sort nested object 1`] = `
         </td>
       </tr>
       <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c12"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c11"
       >
         <th
-          class="c13 "
+          class="c12 "
           scope="row"
         >
           <div
-            class="c14"
+            class="c13"
           >
             <span
-              class="c15"
+              class="c14"
             >
               zero
             </span>
           </div>
         </th>
         <td
-          class="c13 "
+          class="c12 "
         >
           <div
-            class="c14"
+            class="c13"
           >
             <span
               class="c8"
@@ -55078,7 +54727,7 @@ exports[`DataTable sort nested object 1`] = `
 `;
 
 exports[`DataTable sort nested object with onSort 1`] = `
-.c10 {
+.c9 {
   display: inline-block;
   flex: 0 0 auto;
   width: 24px;
@@ -55087,25 +54736,25 @@ exports[`DataTable sort nested object with onSort 1`] = `
   stroke: #666666;
 }
 
-.c10 g {
+.c9 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c10 *:not([stroke])[fill='none'] {
+.c9 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c10 *[stroke*='#'],
-.c10 *[STROKE*='#'] {
+.c9 *[stroke*='#'],
+.c9 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
-.c10 *[fill-rule],
-.c10 *[FILL-RULE],
-.c10 *[fill*='#'],
-.c10 *[FILL*='#'] {
+.c9 *[fill-rule],
+.c9 *[FILL-RULE],
+.c9 *[fill*='#'],
+.c9 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -55141,7 +54790,7 @@ exports[`DataTable sort nested object with onSort 1`] = `
   flex-direction: row;
 }
 
-.c14 {
+.c13 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -55150,18 +54799,12 @@ exports[`DataTable sort nested object with onSort 1`] = `
   flex-direction: column;
 }
 
-.c9 {
-  flex: 0 0 auto;
-  align-self: stretch;
-  width: 12px;
-}
-
 .c8 {
   font-size: 18px;
   line-height: 24px;
 }
 
-.c15 {
+.c14 {
   font-size: 18px;
   line-height: 24px;
   font-weight: bold;
@@ -55235,7 +54878,7 @@ exports[`DataTable sort nested object with onSort 1`] = `
   padding: 0px;
 }
 
-.c13 {
+.c12 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -55259,62 +54902,56 @@ exports[`DataTable sort nested object with onSort 1`] = `
   border-collapse: separate;
 }
 
-.c12:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c12:focus >circle,
-.c12:focus >ellipse,
-.c12:focus >line,
-.c12:focus >path,
-.c12:focus >polygon,
-.c12:focus >polyline,
-.c12:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c12:focus ::-moz-focus-inner {
-  border: 0;
-}
-
-.c12:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c12:focus:not(:focus-visible) >circle,
-.c12:focus:not(:focus-visible) >ellipse,
-.c12:focus:not(:focus-visible) >line,
-.c12:focus:not(:focus-visible) >path,
-.c12:focus:not(:focus-visible) >polygon,
-.c12:focus:not(:focus-visible) >polyline,
-.c12:focus:not(:focus-visible) >rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c12:focus:not(:focus-visible) ::-moz-focus-inner {
-  border: 0;
-}
-
 .c11:focus {
-  outline: 2px solid #6FFFB0;
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c11:focus >circle,
+.c11:focus >ellipse,
+.c11:focus >line,
+.c11:focus >path,
+.c11:focus >polygon,
+.c11:focus >polyline,
+.c11:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c11:focus ::-moz-focus-inner {
+  border: 0;
 }
 
 .c11:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c11:focus:not(:focus-visible) >circle,
+.c11:focus:not(:focus-visible) >ellipse,
+.c11:focus:not(:focus-visible) >line,
+.c11:focus:not(:focus-visible) >path,
+.c11:focus:not(:focus-visible) >polygon,
+.c11:focus:not(:focus-visible) >polyline,
+.c11:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c11:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
+}
+
+.c10:focus {
+  outline: 2px solid #6FFFB0;
+}
+
+.c10:focus:not(:focus-visible) {
   outline: none;
 }
 
 .c6 {
   padding: 6px 12px;
-}
-
-@media only screen and (max-width: 768px) {
-  .c9 {
-    width: 6px;
-  }
 }
 
 <div
@@ -55374,12 +55011,9 @@ exports[`DataTable sort nested object with onSort 1`] = `
                 >
                   Value
                 </span>
-                <div
-                  class="c9"
-                />
                 <svg
                   aria-label="descending"
-                  class="c10"
+                  class="c9"
                   viewBox="0 0 24 24"
                 >
                   <path
@@ -55396,30 +55030,30 @@ exports[`DataTable sort nested object with onSort 1`] = `
       </tr>
     </thead>
     <tbody
-      class="StyledTable__StyledTableBody-sc-1m3u5g-3 c11"
+      class="StyledTable__StyledTableBody-sc-1m3u5g-3 c10"
     >
       <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c12"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c11"
       >
         <th
-          class="c13 "
+          class="c12 "
           scope="row"
         >
           <div
-            class="c14"
+            class="c13"
           >
             <span
-              class="c15"
+              class="c14"
             >
               two
             </span>
           </div>
         </th>
         <td
-          class="c13 "
+          class="c12 "
         >
           <div
-            class="c14"
+            class="c13"
           >
             <span
               class="c8"
@@ -55430,27 +55064,27 @@ exports[`DataTable sort nested object with onSort 1`] = `
         </td>
       </tr>
       <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c12"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c11"
       >
         <th
-          class="c13 "
+          class="c12 "
           scope="row"
         >
           <div
-            class="c14"
+            class="c13"
           >
             <span
-              class="c15"
+              class="c14"
             >
               one
             </span>
           </div>
         </th>
         <td
-          class="c13 "
+          class="c12 "
         >
           <div
-            class="c14"
+            class="c13"
           >
             <span
               class="c8"
@@ -55461,27 +55095,27 @@ exports[`DataTable sort nested object with onSort 1`] = `
         </td>
       </tr>
       <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c12"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c11"
       >
         <th
-          class="c13 "
+          class="c12 "
           scope="row"
         >
           <div
-            class="c14"
+            class="c13"
           >
             <span
-              class="c15"
+              class="c14"
             >
               zero
             </span>
           </div>
         </th>
         <td
-          class="c13 "
+          class="c12 "
         >
           <div
-            class="c14"
+            class="c13"
           >
             <span
               class="c8"
@@ -56037,21 +55671,6 @@ exports[`DataTable sort null data 2`] = `
                   A
                 </span>
                 .c0 {
-  flex: 0 0 auto;
-  align-self: stretch;
-  width: 12px;
-}
-
-@media only screen and (max-width: 768px) {
-  .c0 {
-    width: 6px;
-  }
-}
-
-<div
-                  class="c0"
-                />
-                .c0 {
   display: inline-block;
   flex: 0 0 auto;
   width: 24px;
@@ -56081,10 +55700,6 @@ exports[`DataTable sort null data 2`] = `
 .c0 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
-}
-
-@media only screen and (max-width: 768px) {
-
 }
 
 <svg
@@ -56295,10 +55910,6 @@ exports[`DataTable sort null data 2`] = `
 
 .c0:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
-}
-
-@media only screen and (max-width: 768px) {
-
 }
 
 <tr
@@ -56530,21 +56141,6 @@ exports[`DataTable sort null data 3`] = `
                   C
                 </span>
                 .c0 {
-  flex: 0 0 auto;
-  align-self: stretch;
-  width: 12px;
-}
-
-@media only screen and (max-width: 768px) {
-  .c0 {
-    width: 6px;
-  }
-}
-
-<div
-                  class="c0"
-                />
-                .c0 {
   display: inline-block;
   flex: 0 0 auto;
   width: 24px;
@@ -56574,10 +56170,6 @@ exports[`DataTable sort null data 3`] = `
 .c0 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
-}
-
-@media only screen and (max-width: 768px) {
-
 }
 
 <svg
@@ -56779,10 +56371,6 @@ exports[`DataTable sort null data 3`] = `
 
 .c0:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
-}
-
-@media only screen and (max-width: 768px) {
-
 }
 
 <tr
@@ -56999,21 +56587,6 @@ exports[`DataTable sort null data 4`] = `
                   D
                 </span>
                 .c0 {
-  flex: 0 0 auto;
-  align-self: stretch;
-  width: 12px;
-}
-
-@media only screen and (max-width: 768px) {
-  .c0 {
-    width: 6px;
-  }
-}
-
-<div
-                  class="c0"
-                />
-                .c0 {
   display: inline-block;
   flex: 0 0 auto;
   width: 24px;
@@ -57043,10 +56616,6 @@ exports[`DataTable sort null data 4`] = `
 .c0 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
-}
-
-@media only screen and (max-width: 768px) {
-
 }
 
 <svg
@@ -57281,10 +56850,6 @@ exports[`DataTable sort null data 4`] = `
 
 .c0:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
-}
-
-@media only screen and (max-width: 768px) {
-
 }
 
 <tr
@@ -57731,21 +57296,6 @@ exports[`DataTable sortable 2`] = `
                   A
                 </span>
                 .c0 {
-  flex: 0 0 auto;
-  align-self: stretch;
-  width: 12px;
-}
-
-@media only screen and (max-width: 768px) {
-  .c0 {
-    width: 6px;
-  }
-}
-
-<div
-                  class="c0"
-                />
-                .c0 {
   display: inline-block;
   flex: 0 0 auto;
   width: 24px;
@@ -57775,10 +57325,6 @@ exports[`DataTable sortable 2`] = `
 .c0 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
-}
-
-@media only screen and (max-width: 768px) {
-
 }
 
 <svg

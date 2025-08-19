@@ -1,4 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`Box align 1`] = `
 .c0 {
@@ -2373,7 +2373,7 @@ exports[`Box renders border=between and gap=pixel value 1`] = `
   content: '';
   position: absolute;
   width: 100%;
-  top: 5px;
+  top: 5.5px;
   border-top: solid 1px rgba(0, 0, 0, 0.33);
 }
 
@@ -2404,7 +2404,7 @@ exports[`Box renders border=between and gap=pixel value 1`] = `
 @media only screen and (max-width: 768px) {
   .c3:after {
     content: '';
-    top: 5px;
+    top: 5.5px;
   }
 }
 

@@ -1861,7 +1861,7 @@ exports[`Data onView 1`] = `
 `;
 
 exports[`Data pagination 1`] = `
-.c16 {
+.c15 {
   display: inline-block;
   flex: 0 0 auto;
   width: 24px;
@@ -1870,25 +1870,25 @@ exports[`Data pagination 1`] = `
   stroke: #000000;
 }
 
-.c16 g {
+.c15 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c16 *:not([stroke])[fill='none'] {
+.c15 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c16 *[stroke*='#'],
-.c16 *[STROKE*='#'] {
+.c15 *[stroke*='#'],
+.c15 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
-.c16 *[fill-rule],
-.c16 *[FILL-RULE],
-.c16 *[fill*='#'],
-.c16 *[FILL*='#'] {
+.c15 *[fill-rule],
+.c15 *[FILL-RULE],
+.c15 *[fill*='#'],
+.c15 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -1937,17 +1937,6 @@ exports[`Data pagination 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  flex-direction: column;
-  flex: 0 0 auto;
-  gap: 12px 6px;
-}
-
-.c12 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
   margin: 0px;
   align-items: center;
   min-width: 0;
@@ -1963,7 +1952,7 @@ exports[`Data pagination 1`] = `
   font-weight: bold;
 }
 
-.c14 {
+.c13 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -1989,57 +1978,57 @@ exports[`Data pagination 1`] = `
   flex: 1 0 auto;
 }
 
-.c14 >svg {
+.c13 >svg {
   display: flex;
   align-self: center;
   vertical-align: middle;
 }
 
-.c14:hover {
+.c13:hover {
   background-color: rgba(51, 51, 51, 0.06274509803921569);
 }
 
-.c14:focus {
+.c13:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c14:focus >circle,
-.c14:focus >ellipse,
-.c14:focus >line,
-.c14:focus >path,
-.c14:focus >polygon,
-.c14:focus >polyline,
-.c14:focus >rect {
+.c13:focus >circle,
+.c13:focus >ellipse,
+.c13:focus >line,
+.c13:focus >path,
+.c13:focus >polygon,
+.c13:focus >polyline,
+.c13:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c14:focus ::-moz-focus-inner {
+.c13:focus ::-moz-focus-inner {
   border: 0;
 }
 
-.c14:focus:not(:focus-visible) {
+.c13:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c14:focus:not(:focus-visible) >circle,
-.c14:focus:not(:focus-visible) >ellipse,
-.c14:focus:not(:focus-visible) >line,
-.c14:focus:not(:focus-visible) >path,
-.c14:focus:not(:focus-visible) >polygon,
-.c14:focus:not(:focus-visible) >polyline,
-.c14:focus:not(:focus-visible) >rect {
+.c13:focus:not(:focus-visible) >circle,
+.c13:focus:not(:focus-visible) >ellipse,
+.c13:focus:not(:focus-visible) >line,
+.c13:focus:not(:focus-visible) >path,
+.c13:focus:not(:focus-visible) >polygon,
+.c13:focus:not(:focus-visible) >polyline,
+.c13:focus:not(:focus-visible) >rect {
   outline: none;
   box-shadow: none;
 }
 
-.c14:focus:not(:focus-visible) ::-moz-focus-inner {
+.c13:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 
-.c17 {
+.c16 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -2065,47 +2054,47 @@ exports[`Data pagination 1`] = `
   flex: 1 0 auto;
 }
 
-.c17:hover {
+.c16:hover {
   background-color: rgba(51, 51, 51, 0.06274509803921569);
 }
 
-.c17:focus {
+.c16:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c17:focus >circle,
-.c17:focus >ellipse,
-.c17:focus >line,
-.c17:focus >path,
-.c17:focus >polygon,
-.c17:focus >polyline,
-.c17:focus >rect {
+.c16:focus >circle,
+.c16:focus >ellipse,
+.c16:focus >line,
+.c16:focus >path,
+.c16:focus >polygon,
+.c16:focus >polyline,
+.c16:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c17:focus ::-moz-focus-inner {
+.c16:focus ::-moz-focus-inner {
   border: 0;
 }
 
-.c17:focus:not(:focus-visible) {
+.c16:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c17:focus:not(:focus-visible) >circle,
-.c17:focus:not(:focus-visible) >ellipse,
-.c17:focus:not(:focus-visible) >line,
-.c17:focus:not(:focus-visible) >path,
-.c17:focus:not(:focus-visible) >polygon,
-.c17:focus:not(:focus-visible) >polyline,
-.c17:focus:not(:focus-visible) >rect {
+.c16:focus:not(:focus-visible) >circle,
+.c16:focus:not(:focus-visible) >ellipse,
+.c16:focus:not(:focus-visible) >line,
+.c16:focus:not(:focus-visible) >path,
+.c16:focus:not(:focus-visible) >polygon,
+.c16:focus:not(:focus-visible) >polyline,
+.c16:focus:not(:focus-visible) >rect {
   outline: none;
   box-shadow: none;
 }
 
-.c17:focus:not(:focus-visible) ::-moz-focus-inner {
+.c16:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 
@@ -2194,16 +2183,16 @@ exports[`Data pagination 1`] = `
   outline: none;
 }
 
-.c15 {
+.c14 {
   font-size: 18px;
   line-height: 0;
 }
 
-.c15 >svg {
+.c14 >svg {
   margin: 0 auto;
 }
 
-.c13 {
+.c12 {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -2214,24 +2203,18 @@ exports[`Data pagination 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c11 {
-    gap: 6px 3px;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .c12 {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width: 768px) {
-  .c12 {
+  .c11 {
     padding: 0px;
   }
 }
 
 @media only screen and (max-width: 768px) {
-  .c12 {
+  .c11 {
     column-gap: 2px;
   }
 }
@@ -2305,27 +2288,26 @@ exports[`Data pagination 1`] = `
       </tbody>
     </table>
     <div
-      class="c11 Pagination__StyledPaginationContainer-sc-rnlw6m-0"
-      controls=""
+      class="c1 Pagination__StyledPaginationContainer-sc-rnlw6m-0"
     >
       <nav
         aria-label="Pagination Navigation"
         class="c1"
       >
         <ul
-          class="c12"
+          class="c11"
         >
           <li
-            class="c13"
+            class="c12"
           >
             <button
               aria-label="Go to previous page"
-              class="c14 c15"
+              class="c13 c14"
               type="button"
             >
               <svg
                 aria-label="Previous"
-                class="c16"
+                class="c15"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -2338,27 +2320,27 @@ exports[`Data pagination 1`] = `
             </button>
           </li>
           <li
-            class="c13"
+            class="c12"
           >
             <button
               aria-label="Go to page 1"
-              class="c17 c15"
+              class="c16 c14"
               type="button"
             >
               1
             </button>
           </li>
           <li
-            class="c13"
+            class="c12"
           >
             <button
               aria-label="Go to next page"
-              class="c14 c15"
+              class="c13 c14"
               type="button"
             >
               <svg
                 aria-label="Next"
-                class="c16"
+                class="c15"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -2378,7 +2360,7 @@ exports[`Data pagination 1`] = `
 `;
 
 exports[`Data pagination step 1`] = `
-.c16 {
+.c15 {
   display: inline-block;
   flex: 0 0 auto;
   width: 24px;
@@ -2387,25 +2369,25 @@ exports[`Data pagination step 1`] = `
   stroke: #000000;
 }
 
-.c16 g {
+.c15 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c16 *:not([stroke])[fill='none'] {
+.c15 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c16 *[stroke*='#'],
-.c16 *[STROKE*='#'] {
+.c15 *[stroke*='#'],
+.c15 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
-.c16 *[fill-rule],
-.c16 *[FILL-RULE],
-.c16 *[fill*='#'],
-.c16 *[FILL*='#'] {
+.c15 *[fill-rule],
+.c15 *[FILL-RULE],
+.c15 *[fill*='#'],
+.c15 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -2454,17 +2436,6 @@ exports[`Data pagination step 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  flex-direction: column;
-  flex: 0 0 auto;
-  gap: 12px 6px;
-}
-
-.c12 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
   margin: 0px;
   align-items: center;
   min-width: 0;
@@ -2480,7 +2451,7 @@ exports[`Data pagination step 1`] = `
   font-weight: bold;
 }
 
-.c14 {
+.c13 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -2506,57 +2477,57 @@ exports[`Data pagination step 1`] = `
   flex: 1 0 auto;
 }
 
-.c14 >svg {
+.c13 >svg {
   display: flex;
   align-self: center;
   vertical-align: middle;
 }
 
-.c14:hover {
+.c13:hover {
   background-color: rgba(51, 51, 51, 0.06274509803921569);
 }
 
-.c14:focus {
+.c13:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c14:focus >circle,
-.c14:focus >ellipse,
-.c14:focus >line,
-.c14:focus >path,
-.c14:focus >polygon,
-.c14:focus >polyline,
-.c14:focus >rect {
+.c13:focus >circle,
+.c13:focus >ellipse,
+.c13:focus >line,
+.c13:focus >path,
+.c13:focus >polygon,
+.c13:focus >polyline,
+.c13:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c14:focus ::-moz-focus-inner {
+.c13:focus ::-moz-focus-inner {
   border: 0;
 }
 
-.c14:focus:not(:focus-visible) {
+.c13:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c14:focus:not(:focus-visible) >circle,
-.c14:focus:not(:focus-visible) >ellipse,
-.c14:focus:not(:focus-visible) >line,
-.c14:focus:not(:focus-visible) >path,
-.c14:focus:not(:focus-visible) >polygon,
-.c14:focus:not(:focus-visible) >polyline,
-.c14:focus:not(:focus-visible) >rect {
+.c13:focus:not(:focus-visible) >circle,
+.c13:focus:not(:focus-visible) >ellipse,
+.c13:focus:not(:focus-visible) >line,
+.c13:focus:not(:focus-visible) >path,
+.c13:focus:not(:focus-visible) >polygon,
+.c13:focus:not(:focus-visible) >polyline,
+.c13:focus:not(:focus-visible) >rect {
   outline: none;
   box-shadow: none;
 }
 
-.c14:focus:not(:focus-visible) ::-moz-focus-inner {
+.c13:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 
-.c17 {
+.c16 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -2582,47 +2553,47 @@ exports[`Data pagination step 1`] = `
   flex: 1 0 auto;
 }
 
-.c17:hover {
+.c16:hover {
   background-color: rgba(51, 51, 51, 0.06274509803921569);
 }
 
-.c17:focus {
+.c16:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c17:focus >circle,
-.c17:focus >ellipse,
-.c17:focus >line,
-.c17:focus >path,
-.c17:focus >polygon,
-.c17:focus >polyline,
-.c17:focus >rect {
+.c16:focus >circle,
+.c16:focus >ellipse,
+.c16:focus >line,
+.c16:focus >path,
+.c16:focus >polygon,
+.c16:focus >polyline,
+.c16:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c17:focus ::-moz-focus-inner {
+.c16:focus ::-moz-focus-inner {
   border: 0;
 }
 
-.c17:focus:not(:focus-visible) {
+.c16:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c17:focus:not(:focus-visible) >circle,
-.c17:focus:not(:focus-visible) >ellipse,
-.c17:focus:not(:focus-visible) >line,
-.c17:focus:not(:focus-visible) >path,
-.c17:focus:not(:focus-visible) >polygon,
-.c17:focus:not(:focus-visible) >polyline,
-.c17:focus:not(:focus-visible) >rect {
+.c16:focus:not(:focus-visible) >circle,
+.c16:focus:not(:focus-visible) >ellipse,
+.c16:focus:not(:focus-visible) >line,
+.c16:focus:not(:focus-visible) >path,
+.c16:focus:not(:focus-visible) >polygon,
+.c16:focus:not(:focus-visible) >polyline,
+.c16:focus:not(:focus-visible) >rect {
   outline: none;
   box-shadow: none;
 }
 
-.c17:focus:not(:focus-visible) ::-moz-focus-inner {
+.c16:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 
@@ -2711,16 +2682,16 @@ exports[`Data pagination step 1`] = `
   outline: none;
 }
 
-.c15 {
+.c14 {
   font-size: 18px;
   line-height: 0;
 }
 
-.c15 >svg {
+.c14 >svg {
   margin: 0 auto;
 }
 
-.c13 {
+.c12 {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -2731,24 +2702,18 @@ exports[`Data pagination step 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c11 {
-    gap: 6px 3px;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .c12 {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width: 768px) {
-  .c12 {
+  .c11 {
     padding: 0px;
   }
 }
 
 @media only screen and (max-width: 768px) {
-  .c12 {
+  .c11 {
     column-gap: 2px;
   }
 }
@@ -2822,27 +2787,26 @@ exports[`Data pagination step 1`] = `
       </tbody>
     </table>
     <div
-      class="c11 Pagination__StyledPaginationContainer-sc-rnlw6m-0"
-      controls=""
+      class="c1 Pagination__StyledPaginationContainer-sc-rnlw6m-0"
     >
       <nav
         aria-label="Pagination Navigation"
         class="c1"
       >
         <ul
-          class="c12"
+          class="c11"
         >
           <li
-            class="c13"
+            class="c12"
           >
             <button
               aria-label="Go to previous page"
-              class="c14 c15"
+              class="c13 c14"
               type="button"
             >
               <svg
                 aria-label="Previous"
-                class="c16"
+                class="c15"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -2855,27 +2819,27 @@ exports[`Data pagination step 1`] = `
             </button>
           </li>
           <li
-            class="c13"
+            class="c12"
           >
             <button
               aria-label="Go to page 1"
-              class="c17 c15"
+              class="c16 c14"
               type="button"
             >
               1
             </button>
           </li>
           <li
-            class="c13"
+            class="c12"
           >
             <button
               aria-label="Go to next page"
-              class="c14 c15"
+              class="c13 c14"
               type="button"
             >
               <svg
                 aria-label="Next"
-                class="c16"
+                class="c15"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -4425,6 +4389,10 @@ exports[`Data should render property label and return property value to view whe
   .c31 {
     height: 6px;
   }
+}
+
+@media only screen and (max-width: 768px) {
+
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
@@ -6974,7 +6942,7 @@ exports[`Data uncontrolled, when paginated, search should return to page 1 1`] =
   stroke: none;
 }
 
-.c26 {
+.c25 {
   display: inline-block;
   flex: 0 0 auto;
   width: 24px;
@@ -6983,25 +6951,25 @@ exports[`Data uncontrolled, when paginated, search should return to page 1 1`] =
   stroke: #000000;
 }
 
-.c26 g {
+.c25 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c26 *:not([stroke])[fill='none'] {
+.c25 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c26 *[stroke*='#'],
-.c26 *[STROKE*='#'] {
+.c25 *[stroke*='#'],
+.c25 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
-.c26 *[fill-rule],
-.c26 *[FILL-RULE],
-.c26 *[fill*='#'],
-.c26 *[FILL*='#'] {
+.c25 *[fill-rule],
+.c25 *[FILL-RULE],
+.c25 *[fill*='#'],
+.c25 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -7057,17 +7025,6 @@ exports[`Data uncontrolled, when paginated, search should return to page 1 1`] =
 }
 
 .c21 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  flex-direction: column;
-  flex: 0 0 auto;
-  gap: 12px 6px;
-}
-
-.c22 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -7185,7 +7142,7 @@ exports[`Data uncontrolled, when paginated, search should return to page 1 1`] =
   border: 0;
 }
 
-.c29 {
+.c28 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -7212,83 +7169,10 @@ exports[`Data uncontrolled, when paginated, search should return to page 1 1`] =
   flex: 1 0 auto;
 }
 
-.c29 >svg {
+.c28 >svg {
   display: flex;
   align-self: center;
   vertical-align: middle;
-}
-
-.c29:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c29:focus >circle,
-.c29:focus >ellipse,
-.c29:focus >line,
-.c29:focus >path,
-.c29:focus >polygon,
-.c29:focus >polyline,
-.c29:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c29:focus ::-moz-focus-inner {
-  border: 0;
-}
-
-.c29:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c29:focus:not(:focus-visible) >circle,
-.c29:focus:not(:focus-visible) >ellipse,
-.c29:focus:not(:focus-visible) >line,
-.c29:focus:not(:focus-visible) >path,
-.c29:focus:not(:focus-visible) >polygon,
-.c29:focus:not(:focus-visible) >polyline,
-.c29:focus:not(:focus-visible) >rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c29:focus:not(:focus-visible) ::-moz-focus-inner {
-  border: 0;
-}
-
-.c28 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  font: inherit;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  background-color: rgba(221, 221, 221, 0.4);
-  color: #000000;
-  border: none;
-  border-radius: 4px;
-  padding: 4px 4px;
-  font-size: 18px;
-  line-height: 24px;
-  background-color: rgba(51, 51, 51, 0.06274509803921569);
-  color: #444444;
-  text-align: center;
-  transition-property: color,background-color,border-color,box-shadow;
-  transition-duration: 0.1s;
-  transition-timing-function: ease-in-out;
-  width: 100%;
-  height: 100%;
-  max-width: none;
-  flex: 1 0 auto;
-}
-
-.c28:hover {
-  background-color: rgba(51, 51, 51, 0.06274509803921569);
 }
 
 .c28:focus {
@@ -7341,12 +7225,15 @@ exports[`Data uncontrolled, when paginated, search should return to page 1 1`] =
   background: transparent;
   overflow: visible;
   text-transform: none;
+  background-color: rgba(221, 221, 221, 0.4);
+  color: #000000;
   border: none;
   border-radius: 4px;
   padding: 4px 4px;
   font-size: 18px;
   line-height: 24px;
-  color: #000000;
+  background-color: rgba(51, 51, 51, 0.06274509803921569);
+  color: #444444;
   text-align: center;
   transition-property: color,background-color,border-color,box-shadow;
   transition-duration: 0.1s;
@@ -7401,7 +7288,77 @@ exports[`Data uncontrolled, when paginated, search should return to page 1 1`] =
   border: 0;
 }
 
-.c24 {
+.c26 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: none;
+  border-radius: 4px;
+  padding: 4px 4px;
+  font-size: 18px;
+  line-height: 24px;
+  color: #000000;
+  text-align: center;
+  transition-property: color,background-color,border-color,box-shadow;
+  transition-duration: 0.1s;
+  transition-timing-function: ease-in-out;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  flex: 1 0 auto;
+}
+
+.c26:hover {
+  background-color: rgba(51, 51, 51, 0.06274509803921569);
+}
+
+.c26:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c26:focus >circle,
+.c26:focus >ellipse,
+.c26:focus >line,
+.c26:focus >path,
+.c26:focus >polygon,
+.c26:focus >polyline,
+.c26:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c26:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c26:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c26:focus:not(:focus-visible) >circle,
+.c26:focus:not(:focus-visible) >ellipse,
+.c26:focus:not(:focus-visible) >line,
+.c26:focus:not(:focus-visible) >path,
+.c26:focus:not(:focus-visible) >polygon,
+.c26:focus:not(:focus-visible) >polyline,
+.c26:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c26:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
+}
+
+.c23 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -7427,53 +7384,53 @@ exports[`Data uncontrolled, when paginated, search should return to page 1 1`] =
   flex: 1 0 auto;
 }
 
-.c24 >svg {
+.c23 >svg {
   display: flex;
   align-self: center;
   vertical-align: middle;
 }
 
-.c24:hover {
+.c23:hover {
   background-color: rgba(51, 51, 51, 0.06274509803921569);
 }
 
-.c24:focus {
+.c23:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c24:focus >circle,
-.c24:focus >ellipse,
-.c24:focus >line,
-.c24:focus >path,
-.c24:focus >polygon,
-.c24:focus >polyline,
-.c24:focus >rect {
+.c23:focus >circle,
+.c23:focus >ellipse,
+.c23:focus >line,
+.c23:focus >path,
+.c23:focus >polygon,
+.c23:focus >polyline,
+.c23:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c24:focus ::-moz-focus-inner {
+.c23:focus ::-moz-focus-inner {
   border: 0;
 }
 
-.c24:focus:not(:focus-visible) {
+.c23:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c24:focus:not(:focus-visible) >circle,
-.c24:focus:not(:focus-visible) >ellipse,
-.c24:focus:not(:focus-visible) >line,
-.c24:focus:not(:focus-visible) >path,
-.c24:focus:not(:focus-visible) >polygon,
-.c24:focus:not(:focus-visible) >polyline,
-.c24:focus:not(:focus-visible) >rect {
+.c23:focus:not(:focus-visible) >circle,
+.c23:focus:not(:focus-visible) >ellipse,
+.c23:focus:not(:focus-visible) >line,
+.c23:focus:not(:focus-visible) >path,
+.c23:focus:not(:focus-visible) >polygon,
+.c23:focus:not(:focus-visible) >polyline,
+.c23:focus:not(:focus-visible) >rect {
   outline: none;
   box-shadow: none;
 }
 
-.c24:focus:not(:focus-visible) ::-moz-focus-inner {
+.c23:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 
@@ -7646,16 +7603,16 @@ exports[`Data uncontrolled, when paginated, search should return to page 1 1`] =
   outline: none;
 }
 
-.c25 {
+.c24 {
   font-size: 18px;
   line-height: 0;
 }
 
-.c25 >svg {
+.c24 >svg {
   margin: 0 auto;
 }
 
-.c23 {
+.c22 {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -7674,24 +7631,18 @@ exports[`Data uncontrolled, when paginated, search should return to page 1 1`] =
 
 @media only screen and (max-width: 768px) {
   .c21 {
-    gap: 6px 3px;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .c22 {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width: 768px) {
-  .c22 {
+  .c21 {
     padding: 0px;
   }
 }
 
 @media only screen and (max-width: 768px) {
-  .c22 {
+  .c21 {
     column-gap: 2px;
   }
 }
@@ -7856,27 +7807,26 @@ exports[`Data uncontrolled, when paginated, search should return to page 1 1`] =
       </tbody>
     </table>
     <div
-      class="c21 Pagination__StyledPaginationContainer-sc-rnlw6m-0"
-      controls=""
+      class="c1 Pagination__StyledPaginationContainer-sc-rnlw6m-0"
     >
       <nav
         aria-label="Pagination Navigation"
         class="c1"
       >
         <ul
-          class="c22"
+          class="c21"
         >
           <li
-            class="c23"
+            class="c22"
           >
             <button
               aria-label="Go to previous page"
-              class="c24 c25"
+              class="c23 c24"
               type="button"
             >
               <svg
                 aria-label="Previous"
-                class="c26"
+                class="c25"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -7889,35 +7839,35 @@ exports[`Data uncontrolled, when paginated, search should return to page 1 1`] =
             </button>
           </li>
           <li
-            class="c23"
+            class="c22"
           >
             <button
               aria-label="Go to page 1"
-              class="c27 c25"
+              class="c26 c24"
               type="button"
             >
               1
             </button>
           </li>
           <li
-            class="c23"
+            class="c22"
           >
             <button
               aria-current="page"
               aria-label="Go to page 2"
-              class="c28 c25"
+              class="c27 c24"
               type="button"
             >
               2
             </button>
           </li>
           <li
-            class="c23"
+            class="c22"
           >
             <button
               aria-disabled="true"
               aria-label="Go to next page"
-              class="c29 c25"
+              class="c28 c24"
               disabled=""
               type="button"
             >
@@ -8150,10 +8100,6 @@ exports[`Data uncontrolled, when paginated, search should return to page 1 2`] =
 
 }
 
-@media only screen and (max-width: 768px) {
-
-}
-
 <tr
           class="StyledTable__StyledTableRow-sc-1m3u5g-2 c0"
         >
@@ -8175,8 +8121,7 @@ exports[`Data uncontrolled, when paginated, search should return to page 1 2`] =
       </tbody>
     </table>
     <div
-      class="StyledBox-sc-13pk1d4-0 ezfQub Pagination__StyledPaginationContainer-sc-rnlw6m-0"
-      controls=""
+      class="StyledBox-sc-13pk1d4-0 fBuFhc Pagination__StyledPaginationContainer-sc-rnlw6m-0"
     >
       <nav
         aria-label="Pagination Navigation"
@@ -8261,10 +8206,6 @@ exports[`Data uncontrolled, when paginated, search should return to page 1 2`] =
 .c0 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
-}
-
-@media only screen and (max-width: 768px) {
-
 }
 
 @media only screen and (max-width: 768px) {
@@ -8542,10 +8483,6 @@ exports[`Data uncontrolled, when paginated, search should return to page 1 3`] =
 
 }
 
-@media only screen and (max-width: 768px) {
-
-}
-
 <tr
           class="StyledTable__StyledTableRow-sc-1m3u5g-2 c0"
         >
@@ -8567,8 +8504,7 @@ exports[`Data uncontrolled, when paginated, search should return to page 1 3`] =
       </tbody>
     </table>
     <div
-      class="StyledBox-sc-13pk1d4-0 ezfQub Pagination__StyledPaginationContainer-sc-rnlw6m-0"
-      controls=""
+      class="StyledBox-sc-13pk1d4-0 fBuFhc Pagination__StyledPaginationContainer-sc-rnlw6m-0"
     >
       <nav
         aria-label="Pagination Navigation"
@@ -8748,10 +8684,6 @@ exports[`Data uncontrolled, when paginated, search should return to page 1 3`] =
   max-width: 100%;
   height: 36px;
   min-width: 36px;
-}
-
-@media only screen and (max-width: 768px) {
-
 }
 
 @media only screen and (max-width: 768px) {
@@ -10711,7 +10643,7 @@ exports[`Data view property range 1`] = `
   flex: 0 0 auto;
 }
 
-.c21 {
+.c22 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -10765,6 +10697,17 @@ exports[`Data view property range 1`] = `
   border-radius: 24px;
 }
 
+.c16 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin-inline-start: 12px;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  flex: 0 0 auto;
+}
+
 .c11 {
   position: relative;
 }
@@ -10780,20 +10723,20 @@ exports[`Data view property range 1`] = `
   right: 0;
 }
 
-.c17 {
+.c18 {
   margin-top: 6px;
   margin-bottom: 6px;
   font-size: 18px;
   line-height: 24px;
 }
 
-.c25 {
+.c26 {
   font-size: 18px;
   line-height: 24px;
   font-weight: bold;
 }
 
-.c26 {
+.c27 {
   font-size: 18px;
   line-height: 24px;
 }
@@ -10864,7 +10807,7 @@ exports[`Data view property range 1`] = `
   border: 0;
 }
 
-.c16 {
+.c17 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -10885,47 +10828,47 @@ exports[`Data view property range 1`] = `
   transition-timing-function: ease-in-out;
 }
 
-.c16:hover {
+.c17:hover {
   box-shadow: 0px 0px 0px 2px #7D4CDB;
 }
 
-.c16:focus {
+.c17:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c16:focus >circle,
-.c16:focus >ellipse,
-.c16:focus >line,
-.c16:focus >path,
-.c16:focus >polygon,
-.c16:focus >polyline,
-.c16:focus >rect {
+.c17:focus >circle,
+.c17:focus >ellipse,
+.c17:focus >line,
+.c17:focus >path,
+.c17:focus >polygon,
+.c17:focus >polyline,
+.c17:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c16:focus ::-moz-focus-inner {
+.c17:focus ::-moz-focus-inner {
   border: 0;
 }
 
-.c16:focus:not(:focus-visible) {
+.c17:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c16:focus:not(:focus-visible) >circle,
-.c16:focus:not(:focus-visible) >ellipse,
-.c16:focus:not(:focus-visible) >line,
-.c16:focus:not(:focus-visible) >path,
-.c16:focus:not(:focus-visible) >polygon,
-.c16:focus:not(:focus-visible) >polyline,
-.c16:focus:not(:focus-visible) >rect {
+.c17:focus:not(:focus-visible) >circle,
+.c17:focus:not(:focus-visible) >ellipse,
+.c17:focus:not(:focus-visible) >line,
+.c17:focus:not(:focus-visible) >path,
+.c17:focus:not(:focus-visible) >polygon,
+.c17:focus:not(:focus-visible) >polyline,
+.c17:focus:not(:focus-visible) >rect {
   outline: none;
   box-shadow: none;
 }
 
-.c16:focus:not(:focus-visible) ::-moz-focus-inner {
+.c17:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 
@@ -11007,7 +10950,7 @@ exports[`Data view property range 1`] = `
   left: 12px;
 }
 
-.c20 {
+.c21 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -11020,7 +10963,7 @@ exports[`Data view property range 1`] = `
   padding-bottom: 6px;
 }
 
-.c24 {
+.c25 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -11032,63 +10975,63 @@ exports[`Data view property range 1`] = `
   padding-bottom: 6px;
 }
 
-.c18 {
+.c19 {
   border-spacing: 0;
   border-collapse: collapse;
   width: inherit;
 }
 
-.c19 {
+.c20 {
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
 }
 
+.c24:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c24:focus >circle,
+.c24:focus >ellipse,
+.c24:focus >line,
+.c24:focus >path,
+.c24:focus >polygon,
+.c24:focus >polyline,
+.c24:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c24:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c24:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c24:focus:not(:focus-visible) >circle,
+.c24:focus:not(:focus-visible) >ellipse,
+.c24:focus:not(:focus-visible) >line,
+.c24:focus:not(:focus-visible) >path,
+.c24:focus:not(:focus-visible) >polygon,
+.c24:focus:not(:focus-visible) >polyline,
+.c24:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c24:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
+}
+
 .c23:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c23:focus >circle,
-.c23:focus >ellipse,
-.c23:focus >line,
-.c23:focus >path,
-.c23:focus >polygon,
-.c23:focus >polyline,
-.c23:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c23:focus ::-moz-focus-inner {
-  border: 0;
-}
-
-.c23:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c23:focus:not(:focus-visible) >circle,
-.c23:focus:not(:focus-visible) >ellipse,
-.c23:focus:not(:focus-visible) >line,
-.c23:focus:not(:focus-visible) >path,
-.c23:focus:not(:focus-visible) >polygon,
-.c23:focus:not(:focus-visible) >polyline,
-.c23:focus:not(:focus-visible) >rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c23:focus:not(:focus-visible) ::-moz-focus-inner {
-  border: 0;
-}
-
-.c22:focus {
   outline: 2px solid #6FFFB0;
 }
 
-.c22:focus:not(:focus-visible) {
+.c23:focus:not(:focus-visible) {
   outline: none;
 }
 
@@ -11115,6 +11058,12 @@ exports[`Data view property range 1`] = `
 @media only screen and (max-width: 768px) {
   .c14 {
     border-radius: 12px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c16 {
+    margin-inline-start: 6px;
   }
 }
 
@@ -11209,10 +11158,10 @@ exports[`Data view property range 1`] = `
             </div>
           </button>
           <div
-            class="c1"
+            class="c16"
           >
             <button
-              class="c16"
+              class="c17"
               type="button"
             >
               Clear filters
@@ -11222,12 +11171,12 @@ exports[`Data view property range 1`] = `
       </div>
     </div>
     <span
-      class="c17"
+      class="c18"
     >
       1 result of 4 items
     </span>
     <table
-      class="c18 c19"
+      class="c19 c20"
     >
       <thead
         class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-5"
@@ -11236,75 +11185,75 @@ exports[`Data view property range 1`] = `
           class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
         >
           <th
-            class="c20 "
+            class="c21 "
             id="grommet-data-table-header-name"
             scope="col"
           >
             <div
-              class="c21"
+              class="c22"
             />
           </th>
           <th
-            class="c20 "
+            class="c21 "
             id="grommet-data-table-header-sub.note"
             scope="col"
           >
             <div
-              class="c21"
+              class="c22"
             />
           </th>
           <th
-            class="c20 "
+            class="c21 "
             id="grommet-data-table-header-rating"
             scope="col"
           >
             <div
-              class="c21"
+              class="c22"
             />
           </th>
         </tr>
       </thead>
       <tbody
-        class="StyledTable__StyledTableBody-sc-1m3u5g-3 c22"
+        class="StyledTable__StyledTableBody-sc-1m3u5g-3 c23"
       >
         <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 c23"
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 c24"
         >
           <th
-            class="c24 "
+            class="c25 "
             scope="row"
           >
             <div
               class="c4"
             >
               <span
-                class="c25"
+                class="c26"
               >
                 bb
               </span>
             </div>
           </th>
           <td
-            class="c24 "
+            class="c25 "
           >
             <div
               class="c4"
             >
               <span
-                class="c26"
+                class="c27"
               >
                 YY
               </span>
             </div>
           </td>
           <td
-            class="c24 "
+            class="c25 "
           >
             <div
               class="c4"
             >
               <span
-                class="c26"
+                class="c27"
               >
                 4.3
               </span>

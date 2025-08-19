@@ -1,4 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`Box animation 1`] = `
 .c0 {
@@ -977,7 +977,7 @@ exports[`Box border 1`] = `
   content: '';
   position: absolute;
   width: 100%;
-  top: 5px;
+  top: 5.5px;
   border-top: solid 1px rgba(0, 0, 0, 0.33);
 }
 
@@ -1100,7 +1100,7 @@ exports[`Box border 1`] = `
 @media only screen and (max-width: 768px) {
   .c18:after {
     content: '';
-    top: 2px;
+    top: 2.5px;
   }
 }
 

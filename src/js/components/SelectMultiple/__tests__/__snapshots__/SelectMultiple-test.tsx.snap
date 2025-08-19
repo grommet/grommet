@@ -1024,6 +1024,10 @@ exports[`SelectMultiple keyboard interactions 1`] = `
 
 }
 
+@media only screen and (max-width: 768px) {
+
+}
+
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
 
 }
@@ -2101,6 +2105,10 @@ exports[`SelectMultiple should display custom messages 1`] = `
 
 }
 
+@media only screen and (max-width: 768px) {
+
+}
+
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
 
 }
@@ -2396,6 +2404,10 @@ exports[`SelectMultiple should display custom messages 2`] = `
 
 }
 
+@media only screen and (max-width: 768px) {
+
+}
+
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
 
 }
@@ -2673,6 +2685,10 @@ exports[`SelectMultiple should display custom messages 3`] = `
     margin-left: 6px;
     margin-right: 6px;
   }
+}
+
+@media only screen and (max-width: 768px) {
+
 }
 
 @media only screen and (max-width: 768px) {
@@ -3413,6 +3429,10 @@ exports[`SelectMultiple showSelectionInline 1`] = `
   }
 }
 
+@media only screen and (max-width: 768px) {
+
+}
+
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
 
 }
@@ -3939,6 +3959,10 @@ exports[`SelectMultiple showSelectionInline with children 1`] = `
   }
 }
 
+@media only screen and (max-width: 768px) {
+
+}
+
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
 
 }
@@ -4139,6 +4163,10 @@ exports[`SelectMultiple showSelectionInline with children 2`] = `
 
 .c2 {
   cursor: pointer;
+}
+
+@media only screen and (max-width: 768px) {
+
 }
 
 @media only screen and (max-width: 768px) {
@@ -5396,6 +5424,10 @@ exports[`SelectMultiple with portal disabled option 1`] = `
 
 }
 
+@media only screen and (max-width: 768px) {
+
+}
+
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
 
 }
@@ -6042,6 +6074,10 @@ exports[`SelectMultiple with portal limit 1`] = `
 
 }
 
+@media only screen and (max-width: 768px) {
+
+}
+
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
 
 }
@@ -6192,13 +6228,14 @@ exports[`SelectMultiple with portal renders custom listbox styling 1`] = `
   min-width: 0;
   min-height: 0;
   flex-direction: row;
+  min-height: 48px;
   flex: 0 0 auto;
   width: 100%;
   justify-content: space-between;
   padding: 6px;
 }
 
-.c11 {
+.c12 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -6210,7 +6247,7 @@ exports[`SelectMultiple with portal renders custom listbox styling 1`] = `
   justify-content: center;
 }
 
-.c14 {
+.c15 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -6225,7 +6262,7 @@ exports[`SelectMultiple with portal renders custom listbox styling 1`] = `
   border-radius: 4px;
 }
 
-.c15 {
+.c16 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -6237,7 +6274,7 @@ exports[`SelectMultiple with portal renders custom listbox styling 1`] = `
   width: 100%;
 }
 
-.c16 {
+.c17 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -6246,6 +6283,12 @@ exports[`SelectMultiple with portal renders custom listbox styling 1`] = `
   flex-direction: column;
   height: 0px;
   flex: 0 0 auto;
+}
+
+.c6 {
+  flex: 0 0 auto;
+  align-self: stretch;
+  width: 12px;
 }
 
 .c1 {
@@ -6273,7 +6316,7 @@ exports[`SelectMultiple with portal renders custom listbox styling 1`] = `
   line-height: 20px;
 }
 
-.c8 {
+.c9 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -6290,47 +6333,47 @@ exports[`SelectMultiple with portal renders custom listbox styling 1`] = `
   text-align: inherit;
 }
 
-.c8:focus {
+.c9:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c8:focus >circle,
-.c8:focus >ellipse,
-.c8:focus >line,
-.c8:focus >path,
-.c8:focus >polygon,
-.c8:focus >polyline,
-.c8:focus >rect {
+.c9:focus >circle,
+.c9:focus >ellipse,
+.c9:focus >line,
+.c9:focus >path,
+.c9:focus >polygon,
+.c9:focus >polyline,
+.c9:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c8:focus ::-moz-focus-inner {
+.c9:focus ::-moz-focus-inner {
   border: 0;
 }
 
-.c8:focus:not(:focus-visible) {
+.c9:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c8:focus:not(:focus-visible) >circle,
-.c8:focus:not(:focus-visible) >ellipse,
-.c8:focus:not(:focus-visible) >line,
-.c8:focus:not(:focus-visible) >path,
-.c8:focus:not(:focus-visible) >polygon,
-.c8:focus:not(:focus-visible) >polyline,
-.c8:focus:not(:focus-visible) >rect {
+.c9:focus:not(:focus-visible) >circle,
+.c9:focus:not(:focus-visible) >ellipse,
+.c9:focus:not(:focus-visible) >line,
+.c9:focus:not(:focus-visible) >path,
+.c9:focus:not(:focus-visible) >polygon,
+.c9:focus:not(:focus-visible) >polyline,
+.c9:focus:not(:focus-visible) >rect {
   outline: none;
   box-shadow: none;
 }
 
-.c8:focus:not(:focus-visible) ::-moz-focus-inner {
+.c9:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 
-.c6 {
+.c7 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -6351,43 +6394,43 @@ exports[`SelectMultiple with portal renders custom listbox styling 1`] = `
   transition-timing-function: ease-in-out;
 }
 
-.c6:focus {
+.c7:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c6:focus >circle,
-.c6:focus >ellipse,
-.c6:focus >line,
-.c6:focus >path,
-.c6:focus >polygon,
-.c6:focus >polyline,
-.c6:focus >rect {
+.c7:focus >circle,
+.c7:focus >ellipse,
+.c7:focus >line,
+.c7:focus >path,
+.c7:focus >polygon,
+.c7:focus >polyline,
+.c7:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c6:focus ::-moz-focus-inner {
+.c7:focus ::-moz-focus-inner {
   border: 0;
 }
 
-.c6:focus:not(:focus-visible) {
+.c7:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c6:focus:not(:focus-visible) >circle,
-.c6:focus:not(:focus-visible) >ellipse,
-.c6:focus:not(:focus-visible) >line,
-.c6:focus:not(:focus-visible) >path,
-.c6:focus:not(:focus-visible) >polygon,
-.c6:focus:not(:focus-visible) >polyline,
-.c6:focus:not(:focus-visible) >rect {
+.c7:focus:not(:focus-visible) >circle,
+.c7:focus:not(:focus-visible) >ellipse,
+.c7:focus:not(:focus-visible) >line,
+.c7:focus:not(:focus-visible) >path,
+.c7:focus:not(:focus-visible) >polygon,
+.c7:focus:not(:focus-visible) >polyline,
+.c7:focus:not(:focus-visible) >rect {
   outline: none;
   box-shadow: none;
 }
 
-.c6:focus:not(:focus-visible) ::-moz-focus-inner {
+.c7:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 
@@ -6395,7 +6438,7 @@ exports[`SelectMultiple with portal renders custom listbox styling 1`] = `
   max-height: inherit;
 }
 
-.c7 {
+.c8 {
   position: relative;
   scroll-behavior: smooth;
   overflow: auto;
@@ -6403,12 +6446,12 @@ exports[`SelectMultiple with portal renders custom listbox styling 1`] = `
   padding: 24px;
 }
 
-.c9 {
+.c10 {
   display: block;
   width: 100%;
 }
 
-.c10 {
+.c11 {
   display: flex;
   flex-direction: row;
   user-select: none;
@@ -6418,12 +6461,12 @@ exports[`SelectMultiple with portal renders custom listbox styling 1`] = `
   cursor: pointer;
 }
 
-.c10:hover input:not([disabled])+div,
-.c10:hover input:not([disabled])+span {
+.c11:hover input:not([disabled])+div,
+.c11:hover input:not([disabled])+span {
   border-color: #000000;
 }
 
-.c13 {
+.c14 {
   opacity: 0;
   -moz-appearance: none;
   width: 0;
@@ -6432,12 +6475,12 @@ exports[`SelectMultiple with portal renders custom listbox styling 1`] = `
   cursor: pointer;
 }
 
-.c13:checked+span>span {
+.c14:checked+span>span {
   left: calc( 48px - 24px );
   background: #7D4CDB;
 }
 
-.c12 {
+.c13 {
   flex-shrink: 0;
 }
 
@@ -6452,14 +6495,20 @@ exports[`SelectMultiple with portal renders custom listbox styling 1`] = `
 }
 
 @media only screen and (max-width: 768px) {
-  .c11 {
+  .c12 {
     margin-right: 6px;
   }
 }
 
 @media only screen and (max-width: 768px) {
-  .c14 {
+  .c15 {
     border: solid 2px rgba(0, 0, 0, 0.15);
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c6 {
+    width: 6px;
   }
 }
 
@@ -6496,9 +6545,12 @@ exports[`SelectMultiple with portal renders custom listbox styling 1`] = `
       >
         0 selected
       </span>
+      <div
+        class="c6"
+      />
       <button
         aria-label="Select all 3 options"
-        class="c6"
+        class="c7"
         type="button"
       >
         Select All
@@ -6506,7 +6558,7 @@ exports[`SelectMultiple with portal renders custom listbox styling 1`] = `
     </div>
     <div
       aria-multiselectable="true"
-      class="c7"
+      class="c8"
       role="listbox"
       tabindex="-1"
     >
@@ -6515,31 +6567,31 @@ exports[`SelectMultiple with portal renders custom listbox styling 1`] = `
         aria-posinset="1"
         aria-selected="false"
         aria-setsize="3"
-        class="c8 c9"
+        class="c9 c10"
         id="option0"
         role="option"
         tabindex="0"
         type="button"
       >
         <label
-          class="c10"
+          class="c11"
           style="pointer-events: none;"
         >
           <div
-            class="c11 c12"
+            class="c12 c13"
           >
             <input
-              class="c13"
+              class="c14"
               inert=""
               tabindex="-1"
               type="checkbox"
             />
             <div
-              class="c14 "
+              class="c15 "
             />
           </div>
           <div
-            class="c15"
+            class="c16"
           >
             morning
           </div>
@@ -6550,31 +6602,31 @@ exports[`SelectMultiple with portal renders custom listbox styling 1`] = `
         aria-posinset="2"
         aria-selected="false"
         aria-setsize="3"
-        class="c8 c9"
+        class="c9 c10"
         id="option1"
         role="option"
         tabindex="-1"
         type="button"
       >
         <label
-          class="c10"
+          class="c11"
           style="pointer-events: none;"
         >
           <div
-            class="c11 c12"
+            class="c12 c13"
           >
             <input
-              class="c13"
+              class="c14"
               inert=""
               tabindex="-1"
               type="checkbox"
             />
             <div
-              class="c14 "
+              class="c15 "
             />
           </div>
           <div
-            class="c15"
+            class="c16"
           >
             afternoon
           </div>
@@ -6585,38 +6637,38 @@ exports[`SelectMultiple with portal renders custom listbox styling 1`] = `
         aria-posinset="3"
         aria-selected="false"
         aria-setsize="3"
-        class="c8 c9"
+        class="c9 c10"
         id="option2"
         role="option"
         tabindex="-1"
         type="button"
       >
         <label
-          class="c10"
+          class="c11"
           style="pointer-events: none;"
         >
           <div
-            class="c11 c12"
+            class="c12 c13"
           >
             <input
-              class="c13"
+              class="c14"
               inert=""
               tabindex="-1"
               type="checkbox"
             />
             <div
-              class="c14 "
+              class="c15 "
             />
           </div>
           <div
-            class="c15"
+            class="c16"
           >
             evening
           </div>
         </label>
       </button>
       <div
-        class="c16"
+        class="c17"
       />
     </div>
   </div>
@@ -6820,6 +6872,10 @@ exports[`SelectMultiple with portal select all and clear 1`] = `
     margin-left: 6px;
     margin-right: 6px;
   }
+}
+
+@media only screen and (max-width: 768px) {
+
 }
 
 @media only screen and (max-width: 768px) {
