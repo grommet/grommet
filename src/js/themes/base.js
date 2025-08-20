@@ -486,6 +486,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           },
         },
       },
+      busy: {
+        gap: 'small',
+      },
       gap: 'small',
       size: {
         small: {
@@ -1320,6 +1323,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       container: {
         // elevation: undefined,
         zIndex: '20',
+        height: { min: 'xxsmall' },
       },
       // extend: undefined,
       overlay: {
