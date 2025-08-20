@@ -225,8 +225,7 @@ const Detail = ({
           <Box pad="small" background={{ color: 'background-back' }}>
             <Grid
               columns={['auto', 'auto', 'auto']}
-              // TO DO theme object
-              gap="xsmall"
+              gap={theme.dataChart.detail.gap}
               align="center"
             >
               {series

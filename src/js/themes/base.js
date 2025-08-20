@@ -416,6 +416,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       // icon: {
       //   color: undefined
       // },
+      iconOnly: {
+        pad: 'small',
+      },
       textDecoration: 'none',
       fontWeight: 600,
       // size: {
@@ -812,13 +815,6 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       height: 'small',
       thickness: 'medium',
       width: 'medium',
-      pad: {
-        xlarge: 'large',
-        large: 'medium',
-        medium: 'small',
-        small: 'xsmall',
-        xsmall: 'xxsmall',
-      },
       // extend: undefined,
     },
     checkBox: {
@@ -945,6 +941,38 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
       toolbar: {
         gap: 'medium',
+      },
+    },
+    dataChart: {
+      gap: 'small',
+      detail: {
+        gap: 'xsmall',
+      },
+      legend: {
+        margin: { top: 'small' },
+        gap: 'small',
+        item: {
+          gap: 'xsmall',
+          pad: { horizontal: 'small', vertical: 'xsmall' },
+        },
+      },
+      size: {
+        height: 'small',
+      },
+      thickness: {
+        veryDense: 'hair',
+        dense: 'xsmall',
+        heavy: 'small',
+        moderate: 'medium',
+        light: 'large',
+        sparse: 'xlarge',
+      },
+      thicknessPad: {
+        xlarge: 'large',
+        large: 'medium',
+        medium: 'small',
+        small: 'xsmall',
+        xsmall: 'xxsmall',
       },
     },
     dataFilter: {
@@ -1331,6 +1359,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       container: {
         // elevation: undefined,
         zIndex: '20',
+        height: { min: 'xxsmall' },
       },
       // extend: undefined,
       overlay: {
