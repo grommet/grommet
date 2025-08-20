@@ -31,7 +31,7 @@ var StyledAnchor = exports.StyledAnchor = _styledComponents["default"].a.withCon
 }, _utils.genericStyles, function (props) {
   return !props.disabled && props.theme.anchor.hover && (0, _styledComponents.css)(["&:hover{", " ", " ", "}"], props.theme.anchor.hover.textDecoration && "text-decoration: " + props.theme.anchor.hover.textDecoration + ";", props.theme.anchor.hover.fontWeight && "font-weight: " + props.theme.anchor.hover.fontWeight + ";", props.theme.anchor.hover.extend);
 }, function (props) {
-  return props.hasIcon && !props.hasLabel && "\n    padding: " + props.theme.global.edgeSize.small + ";\n  ";
+  return props.hasIcon && !props.hasLabel && (0, _utils.edgeStyle)('padding', props.theme.anchor.iconOnly.pad, false, props.theme.global.edgeSize.responsiveBreakpoint, props.theme);
 }, function (props) {
   return props.disabled && disabledStyle;
 }, function (props) {

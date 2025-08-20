@@ -436,6 +436,9 @@ export var generate = function generate(baseSpacing, scale) {
       // icon: {
       //   color: undefined
       // },
+      iconOnly: {
+        pad: 'small'
+      },
       textDecoration: 'none',
       fontWeight: 600
       // size: {
