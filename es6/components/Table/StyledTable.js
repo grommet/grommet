@@ -41,8 +41,8 @@ var StyledTableCell = styled.td.withConfig(styledComponentsConfig).withConfig({
 var StyledTableDataCaption = styled.caption.withConfig(styledComponentsConfig).withConfig({
   displayName: "StyledTable__StyledTableDataCaption",
   componentId: "sc-1m3u5g-1"
-})(["margin-bottom:", ";"], function (props) {
-  return props.theme.global.edgeSize.xxsmall;
+})(["", ""], function (props) {
+  return edgeStyle('margin', props.theme.table.caption.margin, false, props.theme.global.edgeSize.responsiveBreakpoint, props.theme);
 });
 var StyledTableRow = styled.tr.withConfig(styledComponentsConfig).withConfig({
   displayName: "StyledTable__StyledTableRow",

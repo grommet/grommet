@@ -2398,6 +2398,11 @@ var generate = exports.generate = function generate(baseSpacing, scale) {
       }
     },
     table: {
+      caption: {
+        margin: {
+          bottom: 'xxsmall'
+        }
+      },
       header: {
         align: 'start',
         pad: {

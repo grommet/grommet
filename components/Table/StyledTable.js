@@ -46,8 +46,8 @@ var StyledTableCell = exports.StyledTableCell = _styledComponents["default"].td.
 var StyledTableDataCaption = exports.StyledTableDataCaption = _styledComponents["default"].caption.withConfig(_utils.styledComponentsConfig).withConfig({
   displayName: "StyledTable__StyledTableDataCaption",
   componentId: "sc-1m3u5g-1"
-})(["margin-bottom:", ";"], function (props) {
-  return props.theme.global.edgeSize.xxsmall;
+})(["", ""], function (props) {
+  return (0, _utils.edgeStyle)('margin', props.theme.table.caption.margin, false, props.theme.global.edgeSize.responsiveBreakpoint, props.theme);
 });
 var StyledTableRow = exports.StyledTableRow = _styledComponents["default"].tr.withConfig(_utils.styledComponentsConfig).withConfig({
   displayName: "StyledTable__StyledTableRow",
