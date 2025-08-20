@@ -29,6 +29,7 @@ import {
   AlignSelfType,
   AlignType,
   WidthType,
+  HeightType,
 } from '../utils';
 
 import { AnchorProps } from '../components/Anchor/index';
@@ -183,6 +184,9 @@ interface ButtonType {
         medium?: string;
       };
     };
+  };
+  busy?: {
+    gap?: GapType;
   };
   gap?: GapType;
   background?: BackgroundType;
@@ -556,6 +560,9 @@ export interface ThemeType {
     icon?: {
       color?: ColorType;
     };
+    iconOnly?: {
+      pad?: PadType;
+    };
     textDecoration?: string;
     size?: {
       medium?: {
@@ -765,6 +772,9 @@ export interface ThemeType {
   chart?: {
     color?: ColorType;
     extend?: ExtendType;
+    height?: string;
+    thickness?: PadType;
+    width?: string;
   };
   checkBox?: {
     border?: {
@@ -844,6 +854,38 @@ export interface ThemeType {
         huge?: string;
       };
     };
+    dataChart?: {
+      gap?: GapType;
+      detail?: {
+        gap?: GridGapType;
+      };
+      legend?: {
+        margin?: MarginType;
+        gap?: GapType;
+        item?: {
+          gap?: GapType;
+          pad?: PadType;
+        };
+      };
+      size?: {
+        height?: string;
+      };
+      thickness?: {
+        veryDense?: string;
+        dense?: string;
+        heavy?: string;
+        moderate?: string;
+        light?: string;
+        sparse?: string;
+      };
+      thicknessPad?: {
+        xlarge?: PadType;
+        large?: PadType;
+        medium?: PadType;
+        small?: PadType;
+        xsmall?: PadType;
+      };
+    };
     digital?: {
       text?: {
         [key in DigitalTexts]: {
@@ -875,12 +917,18 @@ export interface ThemeType {
     };
   };
   dataFilters?: {
+    footer?: {
+      actions?: {
+        margin?: MarginType;
+        gap?: GapType;
+      };
+    };
     clearControl?: {
       margin?: MarginType;
     };
     pad?: PadType;
     width?: WidthType;
-  }
+  };
   dataSummary?: {
     margin?: MarginType;
     separator?: {
@@ -909,6 +957,9 @@ export interface ThemeType {
       };
     };
     container?: BoxProps;
+    expand?: {
+      size?: string;
+    };
     header?: {
       background?: BackgroundType;
       border?: BorderType;
@@ -976,6 +1027,15 @@ export interface ThemeType {
     };
     primary?: {
       weight?: string;
+    };
+    search?: {
+      pad?: PadType;
+      text?: {
+        pad?: PadType;
+      };
+    };
+    sort?: {
+      gap?: GapType;
     };
   };
   dataTableColumns?: {
@@ -1290,6 +1350,7 @@ export interface ThemeType {
       intelligentRounding?: boolean;
     };
     container?: {
+      height?: HeightType;
       elevation?: ElevationType;
       extend?: ExtendType;
       zIndex?: string;

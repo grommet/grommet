@@ -60,7 +60,7 @@ const Searcher = ({
         flex
         // padding right is not needed any longer. There is margin
         // right set already on the container, see Header.js
-        pad={{ left: 'small' }}
+        pad={theme.dataTable.search?.pad}
       >
         <TextInput
           name={`search-${property}`}
@@ -77,7 +77,7 @@ const Searcher = ({
       {filters[property] ? (
         <Box
           flex={false}
-          pad={{ horizontal: 'small' }}
+          pad={theme.dataTable.search?.text?.pad}
           direction="row"
           align="center"
         >
