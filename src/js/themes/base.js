@@ -2242,6 +2242,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
     },
     table: {
+      caption: {
+        margin: { bottom: 'xxsmall' },
+      },
       header: {
         align: 'start',
         pad: { horizontal: 'small', vertical: 'xsmall' },
