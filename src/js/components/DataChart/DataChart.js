@@ -196,7 +196,6 @@ const DataChart = forwardRef(
         fine: data.length,
         medium,
       };
-      // TO DO theme object?
       const granularity1 = {
         ...(heightYGranularity[
           (size && size.height) || theme.dataChart.size?.height
