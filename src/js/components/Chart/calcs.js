@@ -201,7 +201,6 @@ export const calcs = (values = [], options = {}) => {
     // Someday, it would be better to include the actual rendered size.
     // These values were emirically determined, trying to balance visibility
     // and overlap across resolutions.
-    // TO DO theme object
     if (values.length < 5) {
       thickness = theme.dataChart?.thickness?.sparse || 'xlarge';
     } else if (values.length < 11) {
