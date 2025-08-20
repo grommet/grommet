@@ -522,8 +522,8 @@ exports[`DataSearch renders 1`] = `
 .c7 {
   margin-left: 0px;
   margin-right: 0px;
-  margin-top: 6px;
-  margin-bottom: 6px;
+  margin-top: 12px;
+  margin-bottom: 12px;
   margin-top: 6px;
   margin-bottom: 0px;
   font-size: 0.875rem;

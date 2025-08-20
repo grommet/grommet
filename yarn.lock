@@ -9853,7 +9853,7 @@ __metadata:
 
 "grommet-theme-hpe@https://github.com/grommet/grommet-theme-hpe/tarball/NEXT-stable":
   version: 6.5.0
-  resolution: "grommet-theme-hpe@https://github.com/grommet/grommet-theme-hpe.git#commit=00e5e2d63f53fc3b0e88bc5d072f18a89b452cde"
+  resolution: "grommet-theme-hpe@https://github.com/grommet/grommet-theme-hpe.git#commit=365fbe8eaebde78a92372dd16a453f36c5d1aac7"
   dependencies:
     hpe-design-tokens: "npm:~1.4.0"
   peerDependencies:
@@ -9861,7 +9861,7 @@ __metadata:
     grommet-icons: ^4.12.4
     react: ^16.13.1 || ^17.0.1 || ^18.0.0 || ^19.0.0
     styled-components: ^5.0.0 || ^6.0.0
-  checksum: 10c0/52f17739c6628b4545c24e0887347d5a3c2d76f922cba1fea527ba37216d232fc4157e2a3c16b0e42662bffab83b7bce911ec8b708ab9ce2aa0a54eff756e4e5
+  checksum: 10c0/eeb95a08bcfd936e6467daa2ab6b74689e8895b1ff005575688fb0bd9854e7cd3292b1f1d35450efd25a83c203cd80f3636be336c07fd3bdcef89067800b8833
   languageName: node
   linkType: hard
 

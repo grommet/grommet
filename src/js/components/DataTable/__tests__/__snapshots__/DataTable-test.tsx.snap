@@ -78,8 +78,8 @@ exports[`DataTable !primaryKey 1`] = `
   border-bottom: solid 1px rgba(0, 0, 0, 0.12);
   padding-left: 12px;
   padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 12px;
   padding-bottom: 11px;
 }
@@ -402,8 +402,8 @@ exports[`DataTable absoluteColumnSizes 1`] = `
   border-bottom: solid 1px rgba(0, 0, 0, 0.12);
   padding-left: 12px;
   padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 12px;
   padding-bottom: 11px;
 }
@@ -420,8 +420,8 @@ exports[`DataTable absoluteColumnSizes 1`] = `
   border-bottom: solid 1px rgba(0, 0, 0, 0.12);
   padding-left: 12px;
   padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 12px;
   padding-bottom: 11px;
 }
@@ -715,8 +715,8 @@ exports[`DataTable aggregate 1`] = `
   border-bottom: solid 1px rgba(0, 0, 0, 0.12);
   padding-left: 12px;
   padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 12px;
   padding-bottom: 11px;
 }
@@ -730,6 +730,8 @@ exports[`DataTable aggregate 1`] = `
   border-top: solid 1px rgba(0, 0, 0, 0.36);
   padding-left: 12px;
   padding-right: 12px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 6px;
   padding-bottom: 6px;
   font-weight: undefined;
@@ -1052,8 +1054,8 @@ exports[`DataTable aggregate with nested object 1`] = `
   border-bottom: solid 1px rgba(0, 0, 0, 0.12);
   padding-left: 12px;
   padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 12px;
   padding-bottom: 11px;
 }
@@ -1067,6 +1069,8 @@ exports[`DataTable aggregate with nested object 1`] = `
   border-top: solid 1px rgba(0, 0, 0, 0.36);
   padding-left: 12px;
   padding-right: 12px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 6px;
   padding-bottom: 6px;
   font-weight: undefined;
@@ -1443,8 +1447,8 @@ exports[`DataTable background 1`] = `
   border-bottom: solid 1px rgba(0, 0, 0, 0.12);
   padding-left: 12px;
   padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 12px;
   padding-bottom: 11px;
 }
@@ -1459,6 +1463,8 @@ exports[`DataTable background 1`] = `
   border-top: solid 1px rgba(0, 0, 0, 0.36);
   padding-left: 12px;
   padding-right: 12px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 6px;
   padding-bottom: 6px;
   font-weight: undefined;
@@ -1496,8 +1502,8 @@ exports[`DataTable background 1`] = `
   border-bottom: solid 1px rgba(0, 0, 0, 0.12);
   padding-left: 12px;
   padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 12px;
   padding-bottom: 11px;
 }
@@ -1511,6 +1517,8 @@ exports[`DataTable background 1`] = `
   border-top: solid 1px rgba(0, 0, 0, 0.36);
   padding-left: 12px;
   padding-right: 12px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 6px;
   padding-bottom: 6px;
   font-weight: undefined;
@@ -1526,6 +1534,8 @@ exports[`DataTable background 1`] = `
   border-top: solid 1px rgba(0, 0, 0, 0.36);
   padding-left: 12px;
   padding-right: 12px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 6px;
   padding-bottom: 6px;
   font-weight: undefined;
@@ -2136,8 +2146,8 @@ exports[`DataTable basic 1`] = `
   border-bottom: solid 1px rgba(0, 0, 0, 0.12);
   padding-left: 12px;
   padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 12px;
   padding-bottom: 11px;
 }
@@ -3156,8 +3166,8 @@ exports[`DataTable border on CheckBox cell 1`] = `
   width: fit-content;
   padding-left: 12px;
   padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 12px;
   padding-bottom: 11px;
   cursor: pointer;
@@ -3259,8 +3269,8 @@ exports[`DataTable border on CheckBox cell 1`] = `
   border-bottom: solid 1px rgba(0, 0, 0, 0.36);
   padding-left: 12px;
   padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 12px;
   padding-bottom: 11px;
 }
@@ -3743,8 +3753,8 @@ exports[`DataTable click 1`] = `
   border-bottom: solid 1px rgba(0, 0, 0, 0.12);
   padding-left: 12px;
   padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 12px;
   padding-bottom: 11px;
 }
@@ -3963,7 +3973,7 @@ exports[`DataTable click 2`] = `
         tabindex="-1"
       >
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 cuBfrd StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 erXGgp StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
           scope="row"
         >
           <div
@@ -3982,7 +3992,7 @@ exports[`DataTable click 2`] = `
         tabindex="0"
       >
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 cuBfrd StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 erXGgp StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
           scope="row"
         >
           <div
@@ -4847,8 +4857,8 @@ exports[`DataTable disable row click using space key press 1`] = `
   border-bottom: solid 1px rgba(0, 0, 0, 0.12);
   padding-left: 12px;
   padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 12px;
   padding-bottom: 11px;
 }
@@ -5050,7 +5060,7 @@ exports[`DataTable disable row click using space key press 2`] = `
         tabindex="0"
       >
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 cuBfrd StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 erXGgp StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
           scope="row"
         >
           <div
@@ -5141,8 +5151,8 @@ exports[`DataTable disabled click 1`] = `
   border-bottom: solid 1px rgba(0, 0, 0, 0.12);
   padding-left: 12px;
   padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 12px;
   padding-bottom: 11px;
 }
@@ -5363,7 +5373,7 @@ exports[`DataTable disabled click 2`] = `
         tabindex="-1"
       >
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 cuBfrd StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 erXGgp StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
           scope="row"
         >
           <div
@@ -5382,7 +5392,7 @@ exports[`DataTable disabled click 2`] = `
         tabindex="0"
       >
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 cuBfrd StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 erXGgp StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
           scope="row"
         >
           <div
@@ -5531,8 +5541,8 @@ exports[`DataTable disabled select 1`] = `
   width: fit-content;
   padding-left: 12px;
   padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 12px;
   padding-bottom: 11px;
   opacity: 0.5;
@@ -5556,8 +5566,8 @@ exports[`DataTable disabled select 1`] = `
   width: fit-content;
   padding-left: 12px;
   padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 12px;
   padding-bottom: 11px;
   cursor: pointer;
@@ -5682,8 +5692,8 @@ exports[`DataTable disabled select 1`] = `
   border-bottom: solid 1px rgba(0, 0, 0, 0.12);
   padding-left: 12px;
   padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 12px;
   padding-bottom: 11px;
 }
@@ -5712,8 +5722,8 @@ exports[`DataTable disabled select 1`] = `
   border-bottom: solid 1px rgba(0, 0, 0, 0.12);
   padding-left: 12px;
   padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 12px;
   padding-bottom: 11px;
 }
@@ -6175,8 +6185,8 @@ exports[`DataTable expandAriaLabel default 1`] = `
   height: 100%;
   padding-left: 12px;
   padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 12px;
   padding-bottom: 11px;
 }
@@ -6271,8 +6281,8 @@ exports[`DataTable expandAriaLabel default 1`] = `
   padding: 0;
   font-weight: inherit;
   text-align: inherit;
-  width: 48px;
-  max-width: 48px;
+  width: 128px;
+  max-width: 128px;
   overflow: hidden;
   vertical-align: top;
   text-align: start;
@@ -6315,8 +6325,8 @@ exports[`DataTable expandAriaLabel default 1`] = `
   padding: 0;
   font-weight: inherit;
   text-align: inherit;
-  width: 48px;
-  max-width: 48px;
+  width: 128px;
+  max-width: 128px;
   overflow: hidden;
   vertical-align: top;
   text-align: start;
@@ -6332,8 +6342,8 @@ exports[`DataTable expandAriaLabel default 1`] = `
   border-bottom: solid 1px rgba(0, 0, 0, 0.12);
   padding-left: 12px;
   padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 12px;
   padding-bottom: 11px;
 }
@@ -6429,8 +6439,8 @@ exports[`DataTable expandAriaLabel default 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c6 {
-    padding-left: 6px;
-    padding-right: 6px;
+    padding-left: 12px;
+    padding-right: 12px;
   }
 }
 
@@ -6450,8 +6460,8 @@ exports[`DataTable expandAriaLabel default 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c15 {
-    padding-top: 3px;
-    padding-bottom: 3px;
+    padding-top: 6px;
+    padding-bottom: 6px;
   }
 }
 
@@ -6780,8 +6790,8 @@ exports[`DataTable expandLabel function 1`] = `
   height: 100%;
   padding-left: 12px;
   padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 12px;
   padding-bottom: 11px;
 }
@@ -6876,8 +6886,8 @@ exports[`DataTable expandLabel function 1`] = `
   padding: 0;
   font-weight: inherit;
   text-align: inherit;
-  width: 48px;
-  max-width: 48px;
+  width: 128px;
+  max-width: 128px;
   overflow: hidden;
   vertical-align: top;
   text-align: start;
@@ -6920,8 +6930,8 @@ exports[`DataTable expandLabel function 1`] = `
   padding: 0;
   font-weight: inherit;
   text-align: inherit;
-  width: 48px;
-  max-width: 48px;
+  width: 128px;
+  max-width: 128px;
   overflow: hidden;
   vertical-align: top;
   text-align: start;
@@ -6937,8 +6947,8 @@ exports[`DataTable expandLabel function 1`] = `
   border-bottom: solid 1px rgba(0, 0, 0, 0.12);
   padding-left: 12px;
   padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 12px;
   padding-bottom: 11px;
 }
@@ -7034,8 +7044,8 @@ exports[`DataTable expandLabel function 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c6 {
-    padding-left: 6px;
-    padding-right: 6px;
+    padding-left: 12px;
+    padding-right: 12px;
   }
 }
 
@@ -7055,8 +7065,8 @@ exports[`DataTable expandLabel function 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c15 {
-    padding-top: 3px;
-    padding-bottom: 3px;
+    padding-top: 6px;
+    padding-bottom: 6px;
   }
 }
 
@@ -7357,8 +7367,8 @@ exports[`DataTable fill 1`] = `
   border-bottom: solid 1px rgba(0, 0, 0, 0.12);
   padding-left: 12px;
   padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 12px;
   padding-bottom: 11px;
 }
@@ -7372,6 +7382,8 @@ exports[`DataTable fill 1`] = `
   border-top: solid 1px rgba(0, 0, 0, 0.36);
   padding-left: 12px;
   padding-right: 12px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 6px;
   padding-bottom: 6px;
   font-weight: undefined;
@@ -8002,8 +8014,8 @@ exports[`DataTable footer 1`] = `
   border-bottom: solid 1px rgba(0, 0, 0, 0.12);
   padding-left: 12px;
   padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 12px;
   padding-bottom: 11px;
 }
@@ -8017,6 +8029,8 @@ exports[`DataTable footer 1`] = `
   border-top: solid 1px rgba(0, 0, 0, 0.36);
   padding-left: 12px;
   padding-right: 12px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 6px;
   padding-bottom: 6px;
   font-weight: undefined;
@@ -8399,8 +8413,8 @@ exports[`DataTable groupBy 0 value 1`] = `
   height: 100%;
   padding-left: 12px;
   padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 12px;
   padding-bottom: 11px;
 }
@@ -8495,8 +8509,8 @@ exports[`DataTable groupBy 0 value 1`] = `
   padding: 0;
   font-weight: inherit;
   text-align: inherit;
-  width: 48px;
-  max-width: 48px;
+  width: 128px;
+  max-width: 128px;
   overflow: hidden;
   vertical-align: top;
   text-align: start;
@@ -8539,8 +8553,8 @@ exports[`DataTable groupBy 0 value 1`] = `
   padding: 0;
   font-weight: inherit;
   text-align: inherit;
-  width: 48px;
-  max-width: 48px;
+  width: 128px;
+  max-width: 128px;
   overflow: hidden;
   vertical-align: top;
   text-align: start;
@@ -8556,8 +8570,8 @@ exports[`DataTable groupBy 0 value 1`] = `
   border-bottom: solid 1px rgba(0, 0, 0, 0.12);
   padding-left: 12px;
   padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 12px;
   padding-bottom: 11px;
 }
@@ -8653,8 +8667,8 @@ exports[`DataTable groupBy 0 value 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c6 {
-    padding-left: 6px;
-    padding-right: 6px;
+    padding-left: 12px;
+    padding-right: 12px;
   }
 }
 
@@ -8674,8 +8688,8 @@ exports[`DataTable groupBy 0 value 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c15 {
-    padding-top: 3px;
-    padding-bottom: 3px;
+    padding-top: 6px;
+    padding-bottom: 6px;
   }
 }
 
@@ -9095,8 +9109,8 @@ exports[`DataTable groupBy 1`] = `
   height: 100%;
   padding-left: 12px;
   padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 12px;
   padding-bottom: 11px;
 }
@@ -9191,8 +9205,8 @@ exports[`DataTable groupBy 1`] = `
   padding: 0;
   font-weight: inherit;
   text-align: inherit;
-  width: 48px;
-  max-width: 48px;
+  width: 128px;
+  max-width: 128px;
   overflow: hidden;
   vertical-align: top;
   text-align: start;
@@ -9235,8 +9249,8 @@ exports[`DataTable groupBy 1`] = `
   padding: 0;
   font-weight: inherit;
   text-align: inherit;
-  width: 48px;
-  max-width: 48px;
+  width: 128px;
+  max-width: 128px;
   overflow: hidden;
   vertical-align: top;
   text-align: start;
@@ -9252,8 +9266,8 @@ exports[`DataTable groupBy 1`] = `
   border-bottom: solid 1px rgba(0, 0, 0, 0.12);
   padding-left: 12px;
   padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 12px;
   padding-bottom: 11px;
 }
@@ -9349,8 +9363,8 @@ exports[`DataTable groupBy 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c6 {
-    padding-left: 6px;
-    padding-right: 6px;
+    padding-left: 12px;
+    padding-right: 12px;
   }
 }
 
@@ -9370,8 +9384,8 @@ exports[`DataTable groupBy 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c15 {
-    padding-top: 3px;
-    padding-bottom: 3px;
+    padding-top: 6px;
+    padding-bottom: 6px;
   }
 }
 
@@ -9608,7 +9622,7 @@ exports[`DataTable groupBy 2`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRowHeader-sc-xrlyjm-3 czyNOp"
       >
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 jOlwJF"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 flzsHh"
         >
           <div
             class="StyledBox-sc-13pk1d4-0 jANoVk"
@@ -9621,7 +9635,7 @@ exports[`DataTable groupBy 2`] = `
               type="button"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 jjeWei"
+                class="StyledBox-sc-13pk1d4-0 bnjLoW"
                 color="text-strong"
               >
                 <svg
@@ -9687,7 +9701,7 @@ exports[`DataTable groupBy 2`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 jmJzHr"
       >
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 bnggiP"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 iGKKQH"
         >
           <div
             class="StyledBox-sc-13pk1d4-0 jANoVk"
@@ -9700,7 +9714,7 @@ exports[`DataTable groupBy 2`] = `
               type="button"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 kFKPru"
+                class="StyledBox-sc-13pk1d4-0 FPGDu"
               >
                 <svg
                   aria-label="Down"
@@ -9719,7 +9733,7 @@ exports[`DataTable groupBy 2`] = `
           </div>
         </td>
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 cuBfrd StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 erXGgp StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
           scope="row"
         >
           <div
@@ -9733,7 +9747,7 @@ exports[`DataTable groupBy 2`] = `
           </div>
         </th>
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 cuBfrd StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 erXGgp StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
         >
           <div
             class="StyledBox-sc-13pk1d4-0 fDLUqh"
@@ -9744,7 +9758,7 @@ exports[`DataTable groupBy 2`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 jmJzHr"
       >
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 bnggiP"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 iGKKQH"
         >
           <div
             class="StyledBox-sc-13pk1d4-0 jANoVk"
@@ -9757,7 +9771,7 @@ exports[`DataTable groupBy 2`] = `
               type="button"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 kFKPru"
+                class="StyledBox-sc-13pk1d4-0 FPGDu"
               >
                 <svg
                   aria-label="Down"
@@ -9776,7 +9790,7 @@ exports[`DataTable groupBy 2`] = `
           </div>
         </td>
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 cuBfrd StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 erXGgp StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
           scope="row"
         >
           <div
@@ -9790,7 +9804,7 @@ exports[`DataTable groupBy 2`] = `
           </div>
         </th>
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 cuBfrd StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 erXGgp StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
         >
           <div
             class="StyledBox-sc-13pk1d4-0 fDLUqh"
@@ -9940,8 +9954,8 @@ exports[`DataTable groupBy expand 1`] = `
   height: 100%;
   padding-left: 12px;
   padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 12px;
   padding-bottom: 11px;
 }
@@ -10046,8 +10060,8 @@ exports[`DataTable groupBy expand 1`] = `
   padding: 0;
   font-weight: inherit;
   text-align: inherit;
-  width: 48px;
-  max-width: 48px;
+  width: 128px;
+  max-width: 128px;
   overflow: hidden;
   vertical-align: top;
   text-align: start;
@@ -10090,8 +10104,8 @@ exports[`DataTable groupBy expand 1`] = `
   padding: 0;
   font-weight: inherit;
   text-align: inherit;
-  width: 48px;
-  max-width: 48px;
+  width: 128px;
+  max-width: 128px;
   overflow: hidden;
   vertical-align: top;
   text-align: start;
@@ -10107,8 +10121,8 @@ exports[`DataTable groupBy expand 1`] = `
   border-bottom: solid 1px rgba(0, 0, 0, 0.12);
   padding-left: 12px;
   padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 12px;
   padding-bottom: 11px;
 }
@@ -10118,8 +10132,8 @@ exports[`DataTable groupBy expand 1`] = `
   padding: 0;
   font-weight: inherit;
   text-align: inherit;
-  width: 48px;
-  max-width: 48px;
+  width: 128px;
+  max-width: 128px;
   overflow: hidden;
   vertical-align: bottom;
   text-align: start;
@@ -10217,8 +10231,8 @@ exports[`DataTable groupBy expand 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c6 {
-    padding-left: 6px;
-    padding-right: 6px;
+    padding-left: 12px;
+    padding-right: 12px;
   }
 }
 
@@ -10238,8 +10252,8 @@ exports[`DataTable groupBy expand 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c15 {
-    padding-top: 3px;
-    padding-bottom: 3px;
+    padding-top: 6px;
+    padding-bottom: 6px;
   }
 }
 
@@ -10670,8 +10684,8 @@ exports[`DataTable groupBy property 1`] = `
   height: 100%;
   padding-left: 12px;
   padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 12px;
   padding-bottom: 11px;
 }
@@ -10766,8 +10780,8 @@ exports[`DataTable groupBy property 1`] = `
   padding: 0;
   font-weight: inherit;
   text-align: inherit;
-  width: 48px;
-  max-width: 48px;
+  width: 128px;
+  max-width: 128px;
   overflow: hidden;
   vertical-align: top;
   text-align: start;
@@ -10810,8 +10824,8 @@ exports[`DataTable groupBy property 1`] = `
   padding: 0;
   font-weight: inherit;
   text-align: inherit;
-  width: 48px;
-  max-width: 48px;
+  width: 128px;
+  max-width: 128px;
   overflow: hidden;
   vertical-align: top;
   text-align: start;
@@ -10827,8 +10841,8 @@ exports[`DataTable groupBy property 1`] = `
   border-bottom: solid 1px rgba(0, 0, 0, 0.12);
   padding-left: 12px;
   padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 12px;
   padding-bottom: 11px;
 }
@@ -10924,8 +10938,8 @@ exports[`DataTable groupBy property 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c6 {
-    padding-left: 6px;
-    padding-right: 6px;
+    padding-left: 12px;
+    padding-right: 12px;
   }
 }
 
@@ -10945,8 +10959,8 @@ exports[`DataTable groupBy property 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c15 {
-    padding-top: 3px;
-    padding-bottom: 3px;
+    padding-top: 6px;
+    padding-bottom: 6px;
   }
 }
 
@@ -11183,7 +11197,7 @@ exports[`DataTable groupBy property 2`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRowHeader-sc-xrlyjm-3 czyNOp"
       >
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 jOlwJF"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 flzsHh"
         >
           <div
             class="StyledBox-sc-13pk1d4-0 jANoVk"
@@ -11196,7 +11210,7 @@ exports[`DataTable groupBy property 2`] = `
               type="button"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 jjeWei"
+                class="StyledBox-sc-13pk1d4-0 bnjLoW"
                 color="text-strong"
               >
                 <svg
@@ -11262,7 +11276,7 @@ exports[`DataTable groupBy property 2`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 jmJzHr"
       >
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 bnggiP"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 iGKKQH"
         >
           <div
             class="StyledBox-sc-13pk1d4-0 jANoVk"
@@ -11275,7 +11289,7 @@ exports[`DataTable groupBy property 2`] = `
               type="button"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 kFKPru"
+                class="StyledBox-sc-13pk1d4-0 FPGDu"
               >
                 <svg
                   aria-label="Down"
@@ -11294,7 +11308,7 @@ exports[`DataTable groupBy property 2`] = `
           </div>
         </td>
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 cuBfrd StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 erXGgp StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
           scope="row"
         >
           <div
@@ -11308,7 +11322,7 @@ exports[`DataTable groupBy property 2`] = `
           </div>
         </th>
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 cuBfrd StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 erXGgp StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
         >
           <div
             class="StyledBox-sc-13pk1d4-0 fDLUqh"
@@ -11319,7 +11333,7 @@ exports[`DataTable groupBy property 2`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 jmJzHr"
       >
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 bnggiP"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 iGKKQH"
         >
           <div
             class="StyledBox-sc-13pk1d4-0 jANoVk"
@@ -11332,7 +11346,7 @@ exports[`DataTable groupBy property 2`] = `
               type="button"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 kFKPru"
+                class="StyledBox-sc-13pk1d4-0 FPGDu"
               >
                 <svg
                   aria-label="Down"
@@ -11351,7 +11365,7 @@ exports[`DataTable groupBy property 2`] = `
           </div>
         </td>
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 cuBfrd StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 erXGgp StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
           scope="row"
         >
           <div
@@ -11365,7 +11379,7 @@ exports[`DataTable groupBy property 2`] = `
           </div>
         </th>
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 cuBfrd StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 erXGgp StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
         >
           <div
             class="StyledBox-sc-13pk1d4-0 fDLUqh"
@@ -11455,8 +11469,8 @@ exports[`DataTable groupBy toggle 1`] = `
   border-bottom: solid 1px rgba(0, 0, 0, 0.12);
   padding-left: 12px;
   padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 12px;
   padding-bottom: 11px;
 }
@@ -11894,8 +11908,8 @@ exports[`DataTable groupBy toggle 2`] = `
   padding: 0;
   font-weight: inherit;
   text-align: inherit;
-  width: 48px;
-  max-width: 48px;
+  width: 128px;
+  max-width: 128px;
   overflow: hidden;
   vertical-align: top;
   text-align: start;
@@ -11913,8 +11927,8 @@ exports[`DataTable groupBy toggle 2`] = `
 
 @media only screen and (max-width: 768px) {
   .c3 {
-    padding-left: 6px;
-    padding-right: 6px;
+    padding-left: 12px;
+    padding-right: 12px;
   }
 }
 
@@ -12079,8 +12093,8 @@ exports[`DataTable groupBy toggle 2`] = `
   height: 100%;
   padding-left: 12px;
   padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 12px;
   padding-bottom: 11px;
 }
@@ -12172,8 +12186,8 @@ exports[`DataTable groupBy toggle 2`] = `
   border-bottom: solid 1px rgba(0, 0, 0, 0.12);
   padding-left: 12px;
   padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 12px;
   padding-bottom: 11px;
 }
@@ -12183,8 +12197,8 @@ exports[`DataTable groupBy toggle 2`] = `
   padding: 0;
   font-weight: inherit;
   text-align: inherit;
-  width: 48px;
-  max-width: 48px;
+  width: 128px;
+  max-width: 128px;
   overflow: hidden;
   vertical-align: top;
   text-align: start;
@@ -12275,8 +12289,8 @@ exports[`DataTable groupBy toggle 2`] = `
 
 @media only screen and (max-width: 768px) {
   .c5 {
-    padding-top: 3px;
-    padding-bottom: 3px;
+    padding-top: 6px;
+    padding-bottom: 6px;
   }
 }
 
@@ -12503,8 +12517,8 @@ exports[`DataTable groupBy toggle 3`] = `
   border-bottom: solid 1px rgba(0, 0, 0, 0.12);
   padding-left: 12px;
   padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 12px;
   padding-bottom: 11px;
 }
@@ -12838,8 +12852,8 @@ exports[`DataTable messages prop overrides theme messages 1`] = `
   height: 100%;
   padding-left: 12px;
   padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 12px;
   padding-bottom: 11px;
 }
@@ -12934,8 +12948,8 @@ exports[`DataTable messages prop overrides theme messages 1`] = `
   padding: 0;
   font-weight: inherit;
   text-align: inherit;
-  width: 48px;
-  max-width: 48px;
+  width: 128px;
+  max-width: 128px;
   overflow: hidden;
   vertical-align: top;
   text-align: start;
@@ -12978,8 +12992,8 @@ exports[`DataTable messages prop overrides theme messages 1`] = `
   padding: 0;
   font-weight: inherit;
   text-align: inherit;
-  width: 48px;
-  max-width: 48px;
+  width: 128px;
+  max-width: 128px;
   overflow: hidden;
   vertical-align: top;
   text-align: start;
@@ -12995,8 +13009,8 @@ exports[`DataTable messages prop overrides theme messages 1`] = `
   border-bottom: solid 1px rgba(0, 0, 0, 0.12);
   padding-left: 12px;
   padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 12px;
   padding-bottom: 11px;
 }
@@ -13092,8 +13106,8 @@ exports[`DataTable messages prop overrides theme messages 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c6 {
-    padding-left: 6px;
-    padding-right: 6px;
+    padding-left: 12px;
+    padding-right: 12px;
   }
 }
 
@@ -13113,8 +13127,8 @@ exports[`DataTable messages prop overrides theme messages 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c15 {
-    padding-top: 3px;
-    padding-bottom: 3px;
+    padding-top: 6px;
+    padding-bottom: 6px;
   }
 }
 
@@ -13351,7 +13365,7 @@ exports[`DataTable messages prop overrides theme messages 2`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRowHeader-sc-xrlyjm-3 czyNOp"
       >
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 jOlwJF"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 flzsHh"
         >
           <div
             class="StyledBox-sc-13pk1d4-0 jANoVk"
@@ -13364,7 +13378,7 @@ exports[`DataTable messages prop overrides theme messages 2`] = `
               type="button"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 jjeWei"
+                class="StyledBox-sc-13pk1d4-0 bnjLoW"
                 color="text-strong"
               >
                 <svg
@@ -13430,7 +13444,7 @@ exports[`DataTable messages prop overrides theme messages 2`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 jmJzHr"
       >
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 bnggiP"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 iGKKQH"
         >
           <div
             class="StyledBox-sc-13pk1d4-0 jANoVk"
@@ -13443,7 +13457,7 @@ exports[`DataTable messages prop overrides theme messages 2`] = `
               type="button"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 kFKPru"
+                class="StyledBox-sc-13pk1d4-0 FPGDu"
               >
                 .c0 {
   display: inline-block;
@@ -13520,7 +13534,7 @@ exports[`DataTable messages prop overrides theme messages 2`] = `
           </div>
         </td>
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 cuBfrd StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 erXGgp StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
           scope="row"
         >
           <div
@@ -13534,7 +13548,7 @@ exports[`DataTable messages prop overrides theme messages 2`] = `
           </div>
         </th>
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 cuBfrd StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 erXGgp StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
         >
           <div
             class="StyledBox-sc-13pk1d4-0 fDLUqh"
@@ -13604,8 +13618,8 @@ exports[`DataTable messages prop overrides theme messages 2`] = `
   height: 100%;
   padding-left: 12px;
   padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 12px;
   padding-bottom: 11px;
 }
@@ -13621,8 +13635,8 @@ exports[`DataTable messages prop overrides theme messages 2`] = `
   padding: 0;
   font-weight: inherit;
   text-align: inherit;
-  width: 48px;
-  max-width: 48px;
+  width: 128px;
+  max-width: 128px;
   overflow: hidden;
   vertical-align: top;
   text-align: start;
@@ -13638,8 +13652,8 @@ exports[`DataTable messages prop overrides theme messages 2`] = `
   border-bottom: solid 1px rgba(0, 0, 0, 0.12);
   padding-left: 12px;
   padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 12px;
   padding-bottom: 11px;
 }
@@ -13715,8 +13729,8 @@ exports[`DataTable messages prop overrides theme messages 2`] = `
 
 @media only screen and (max-width: 768px) {
   .c3 {
-    padding-top: 3px;
-    padding-bottom: 3px;
+    padding-top: 6px;
+    padding-bottom: 6px;
   }
 }
 
@@ -13833,8 +13847,8 @@ exports[`DataTable messages prop overrides theme messages 2`] = `
   height: 100%;
   padding-left: 12px;
   padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 12px;
   padding-bottom: 11px;
 }
@@ -13864,8 +13878,8 @@ exports[`DataTable messages prop overrides theme messages 2`] = `
   border-bottom: solid 1px rgba(0, 0, 0, 0.12);
   padding-left: 12px;
   padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 12px;
   padding-bottom: 11px;
 }
@@ -13875,8 +13889,8 @@ exports[`DataTable messages prop overrides theme messages 2`] = `
   padding: 0;
   font-weight: inherit;
   text-align: inherit;
-  width: 48px;
-  max-width: 48px;
+  width: 128px;
+  max-width: 128px;
   overflow: hidden;
   vertical-align: bottom;
   text-align: start;
@@ -13954,8 +13968,8 @@ exports[`DataTable messages prop overrides theme messages 2`] = `
 
 @media only screen and (max-width: 768px) {
   .c3 {
-    padding-top: 3px;
-    padding-bottom: 3px;
+    padding-top: 6px;
+    padding-bottom: 6px;
   }
 }
 
@@ -14023,7 +14037,7 @@ exports[`DataTable messages prop overrides theme messages 2`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 jmJzHr"
       >
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 bnggiP"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 iGKKQH"
         >
           <div
             class="StyledBox-sc-13pk1d4-0 jANoVk"
@@ -14036,7 +14050,7 @@ exports[`DataTable messages prop overrides theme messages 2`] = `
               type="button"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 kFKPru"
+                class="StyledBox-sc-13pk1d4-0 FPGDu"
               >
                 <svg
                   aria-label="Down"
@@ -14055,7 +14069,7 @@ exports[`DataTable messages prop overrides theme messages 2`] = `
           </div>
         </td>
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 cuBfrd StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 erXGgp StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
           scope="row"
         >
           <div
@@ -14069,7 +14083,7 @@ exports[`DataTable messages prop overrides theme messages 2`] = `
           </div>
         </th>
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 cuBfrd StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 erXGgp StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
         >
           <div
             class="StyledBox-sc-13pk1d4-0 fDLUqh"
@@ -14255,8 +14269,8 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
   height: 100%;
   padding-left: 12px;
   padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 12px;
   padding-bottom: 11px;
 }
@@ -14409,8 +14423,8 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
   width: fit-content;
   padding-left: 12px;
   padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 12px;
   padding-bottom: 11px;
   cursor: pointer;
@@ -14431,8 +14445,8 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
   width: fit-content;
   padding-left: 12px;
   padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 12px;
   padding-bottom: 11px;
   cursor: pointer;
@@ -14491,8 +14505,8 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
   padding: 0;
   font-weight: inherit;
   text-align: inherit;
-  width: 48px;
-  max-width: 48px;
+  width: 128px;
+  max-width: 128px;
   overflow: hidden;
   vertical-align: top;
   text-align: start;
@@ -14555,8 +14569,8 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
   padding: 0;
   font-weight: inherit;
   text-align: inherit;
-  width: 48px;
-  max-width: 48px;
+  width: 128px;
+  max-width: 128px;
   overflow: hidden;
   vertical-align: top;
   text-align: start;
@@ -14583,8 +14597,8 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
   border-bottom: solid 1px rgba(0, 0, 0, 0.12);
   padding-left: 12px;
   padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 12px;
   padding-bottom: 11px;
 }
@@ -14613,8 +14627,8 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
   border-bottom: solid 1px rgba(0, 0, 0, 0.12);
   padding-left: 12px;
   padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 12px;
   padding-bottom: 11px;
 }
@@ -14624,8 +14638,8 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
   padding: 0;
   font-weight: inherit;
   text-align: inherit;
-  width: 48px;
-  max-width: 48px;
+  width: 128px;
+  max-width: 128px;
   overflow: hidden;
   vertical-align: bottom;
   text-align: start;
@@ -14639,8 +14653,8 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
   padding: 0;
   font-weight: inherit;
   text-align: inherit;
-  width: 48px;
-  max-width: 48px;
+  width: 128px;
+  max-width: 128px;
   overflow: hidden;
   vertical-align: bottom;
   text-align: start;
@@ -14738,8 +14752,8 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
 
 @media only screen and (max-width: 768px) {
   .c6 {
-    padding-left: 6px;
-    padding-right: 6px;
+    padding-left: 12px;
+    padding-right: 12px;
   }
 }
 
@@ -14765,8 +14779,8 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
 
 @media only screen and (max-width: 768px) {
   .c24 {
-    padding-top: 3px;
-    padding-bottom: 3px;
+    padding-top: 6px;
+    padding-bottom: 6px;
   }
 }
 
@@ -15540,8 +15554,8 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
   height: 100%;
   padding-left: 12px;
   padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 12px;
   padding-bottom: 11px;
 }
@@ -15669,8 +15683,8 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
   width: fit-content;
   padding-left: 12px;
   padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 12px;
   padding-bottom: 11px;
   cursor: pointer;
@@ -15724,8 +15738,8 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
   padding: 0;
   font-weight: inherit;
   text-align: inherit;
-  width: 48px;
-  max-width: 48px;
+  width: 128px;
+  max-width: 128px;
   overflow: hidden;
   vertical-align: top;
   text-align: start;
@@ -15788,8 +15802,8 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
   padding: 0;
   font-weight: inherit;
   text-align: inherit;
-  width: 48px;
-  max-width: 48px;
+  width: 128px;
+  max-width: 128px;
   overflow: hidden;
   vertical-align: top;
   text-align: start;
@@ -15816,8 +15830,8 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
   border-bottom: solid 1px rgba(0, 0, 0, 0.12);
   padding-left: 12px;
   padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 12px;
   padding-bottom: 11px;
 }
@@ -15913,8 +15927,8 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
 
 @media only screen and (max-width: 768px) {
   .c6 {
-    padding-left: 6px;
-    padding-right: 6px;
+    padding-left: 12px;
+    padding-right: 12px;
   }
 }
 
@@ -15940,8 +15954,8 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
 
 @media only screen and (max-width: 768px) {
   .c24 {
-    padding-top: 3px;
-    padding-bottom: 3px;
+    padding-top: 6px;
+    padding-bottom: 6px;
   }
 }
 
@@ -16404,8 +16418,8 @@ exports[`DataTable onSelect + groupBy should select all items within a group 1`]
   height: 100%;
   padding-left: 12px;
   padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 12px;
   padding-bottom: 11px;
 }
@@ -16548,8 +16562,8 @@ exports[`DataTable onSelect + groupBy should select all items within a group 1`]
   width: fit-content;
   padding-left: 12px;
   padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 12px;
   padding-bottom: 11px;
   cursor: pointer;
@@ -16570,8 +16584,8 @@ exports[`DataTable onSelect + groupBy should select all items within a group 1`]
   width: fit-content;
   padding-left: 12px;
   padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 12px;
   padding-bottom: 11px;
   cursor: pointer;
@@ -16630,8 +16644,8 @@ exports[`DataTable onSelect + groupBy should select all items within a group 1`]
   padding: 0;
   font-weight: inherit;
   text-align: inherit;
-  width: 48px;
-  max-width: 48px;
+  width: 128px;
+  max-width: 128px;
   overflow: hidden;
   vertical-align: top;
   text-align: start;
@@ -16694,8 +16708,8 @@ exports[`DataTable onSelect + groupBy should select all items within a group 1`]
   padding: 0;
   font-weight: inherit;
   text-align: inherit;
-  width: 48px;
-  max-width: 48px;
+  width: 128px;
+  max-width: 128px;
   overflow: hidden;
   vertical-align: top;
   text-align: start;
@@ -16722,8 +16736,8 @@ exports[`DataTable onSelect + groupBy should select all items within a group 1`]
   border-bottom: solid 1px rgba(0, 0, 0, 0.12);
   padding-left: 12px;
   padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 12px;
   padding-bottom: 11px;
 }
@@ -16733,8 +16747,8 @@ exports[`DataTable onSelect + groupBy should select all items within a group 1`]
   padding: 0;
   font-weight: inherit;
   text-align: inherit;
-  width: 48px;
-  max-width: 48px;
+  width: 128px;
+  max-width: 128px;
   overflow: hidden;
   vertical-align: top;
   text-align: start;
@@ -16767,8 +16781,8 @@ exports[`DataTable onSelect + groupBy should select all items within a group 1`]
   border-bottom: solid 1px rgba(0, 0, 0, 0.12);
   padding-left: 12px;
   padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 12px;
   padding-bottom: 11px;
 }
@@ -16864,8 +16878,8 @@ exports[`DataTable onSelect + groupBy should select all items within a group 1`]
 
 @media only screen and (max-width: 768px) {
   .c6 {
-    padding-left: 6px;
-    padding-right: 6px;
+    padding-left: 12px;
+    padding-right: 12px;
   }
 }
 
@@ -16891,8 +16905,8 @@ exports[`DataTable onSelect + groupBy should select all items within a group 1`]
 
 @media only screen and (max-width: 768px) {
   .c24 {
-    padding-top: 3px;
-    padding-bottom: 3px;
+    padding-top: 6px;
+    padding-bottom: 6px;
   }
 }
 
@@ -17361,8 +17375,8 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 1`
   height: 100%;
   padding-left: 12px;
   padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 12px;
   padding-bottom: 11px;
 }
@@ -17480,8 +17494,8 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 1`
   width: fit-content;
   padding-left: 12px;
   padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 12px;
   padding-bottom: 11px;
   cursor: pointer;
@@ -17526,8 +17540,8 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 1`
   padding: 0;
   font-weight: inherit;
   text-align: inherit;
-  width: 48px;
-  max-width: 48px;
+  width: 128px;
+  max-width: 128px;
   overflow: hidden;
   vertical-align: top;
   text-align: start;
@@ -17590,8 +17604,8 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 1`
   padding: 0;
   font-weight: inherit;
   text-align: inherit;
-  width: 48px;
-  max-width: 48px;
+  width: 128px;
+  max-width: 128px;
   overflow: hidden;
   vertical-align: top;
   text-align: start;
@@ -17618,8 +17632,8 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 1`
   border-bottom: solid 1px rgba(0, 0, 0, 0.12);
   padding-left: 12px;
   padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 12px;
   padding-bottom: 11px;
 }
@@ -17715,8 +17729,8 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 1`
 
 @media only screen and (max-width: 768px) {
   .c6 {
-    padding-left: 6px;
-    padding-right: 6px;
+    padding-left: 12px;
+    padding-right: 12px;
   }
 }
 
@@ -17742,8 +17756,8 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 1`
 
 @media only screen and (max-width: 768px) {
   .c23 {
-    padding-top: 3px;
-    padding-bottom: 3px;
+    padding-top: 6px;
+    padding-bottom: 6px;
   }
 }
 
@@ -18056,7 +18070,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 2`
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRowHeader-sc-xrlyjm-3 czyNOp"
       >
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 jOlwJF"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 flzsHh"
         >
           <div
             class="StyledBox-sc-13pk1d4-0 jANoVk"
@@ -18069,7 +18083,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 2`
               type="button"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 jjeWei"
+                class="StyledBox-sc-13pk1d4-0 bnjLoW"
                 color="text-strong"
               >
                 <svg
@@ -18214,7 +18228,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 2`
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 jmJzHr"
       >
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 hNXxKy"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 cyOnGi"
         >
           <div
             class="StyledBox-sc-13pk1d4-0 jANoVk"
@@ -18227,7 +18241,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 2`
               type="button"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 kFKPru"
+                class="StyledBox-sc-13pk1d4-0 FPGDu"
               >
                 <svg
                   aria-label="Down"
@@ -18253,7 +18267,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 2`
             style="height: 0px;"
           >
             <label
-              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 iKNJBy"
+              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 eJXbdy"
             >
               <div
                 class="StyledBox-sc-13pk1d4-0 dRLuVF StyledCheckBox-sc-1dbk5ju-6 gAgPcH"
@@ -18324,7 +18338,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 2`
           </div>
         </td>
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 jGhdbY StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 bjhOrI StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
           scope="row"
         >
           <div
@@ -18338,7 +18352,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 2`
           </div>
         </th>
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 jGhdbY StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 bjhOrI StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
         >
           <div
             class="StyledBox-sc-13pk1d4-0 fDLUqh"
@@ -18349,7 +18363,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 2`
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 jmJzHr"
       >
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 hNXxKy"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 cyOnGi"
         >
           <div
             class="StyledBox-sc-13pk1d4-0 jANoVk"
@@ -18362,7 +18376,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 2`
               type="button"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 kFKPru"
+                class="StyledBox-sc-13pk1d4-0 FPGDu"
               >
                 <svg
                   aria-label="Down"
@@ -18388,7 +18402,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 2`
             style="height: 0px;"
           >
             <label
-              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 iKNJBy"
+              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 eJXbdy"
             >
               <div
                 class="StyledBox-sc-13pk1d4-0 dRLuVF StyledCheckBox-sc-1dbk5ju-6 gAgPcH"
@@ -18459,7 +18473,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 2`
           </div>
         </td>
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 jGhdbY StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 bjhOrI StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
           scope="row"
         >
           <div
@@ -18473,7 +18487,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 2`
           </div>
         </th>
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 jGhdbY StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 bjhOrI StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
         >
           <div
             class="StyledBox-sc-13pk1d4-0 fDLUqh"
@@ -18499,7 +18513,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 3`
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRowHeader-sc-xrlyjm-3 czyNOp"
       >
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 jOlwJF"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 flzsHh"
         >
           <div
             class="StyledBox-sc-13pk1d4-0 jANoVk"
@@ -18512,7 +18526,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 3`
               type="button"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 jjeWei"
+                class="StyledBox-sc-13pk1d4-0 bnjLoW"
                 color="text-strong"
               >
                 <svg
@@ -18604,7 +18618,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 3`
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 jmJzHr"
       >
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 bnggiP"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 iGKKQH"
         >
           <div
             class="StyledBox-sc-13pk1d4-0 jANoVk"
@@ -18617,7 +18631,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 3`
               type="button"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 kFKPru"
+                class="StyledBox-sc-13pk1d4-0 FPGDu"
               >
                 <svg
                   aria-label="Down"
@@ -18643,7 +18657,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 3`
             style="height: 0px;"
           >
             <label
-              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 ixcRwA"
+              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 eWnkCY"
             >
               <div
                 class="StyledBox-sc-13pk1d4-0 dRLuVF StyledCheckBox-sc-1dbk5ju-6 gAgPcH"
@@ -18661,7 +18675,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 3`
           </div>
         </td>
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 cuBfrd StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 erXGgp StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
           scope="row"
         >
           <div
@@ -18675,7 +18689,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 3`
           </div>
         </th>
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 cuBfrd StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 erXGgp StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
         >
           <div
             class="StyledBox-sc-13pk1d4-0 fDLUqh"
@@ -18686,7 +18700,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 3`
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 jmJzHr"
       >
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 bnggiP"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 iGKKQH"
         >
           <div
             class="StyledBox-sc-13pk1d4-0 jANoVk"
@@ -18699,7 +18713,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 3`
               type="button"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 kFKPru"
+                class="StyledBox-sc-13pk1d4-0 FPGDu"
               >
                 <svg
                   aria-label="Down"
@@ -18725,7 +18739,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 3`
             style="height: 0px;"
           >
             <label
-              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 ixcRwA"
+              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 eWnkCY"
             >
               <div
                 class="StyledBox-sc-13pk1d4-0 dRLuVF StyledCheckBox-sc-1dbk5ju-6 gAgPcH"
@@ -18743,7 +18757,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 3`
           </div>
         </td>
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 cuBfrd StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 erXGgp StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
           scope="row"
         >
           <div
@@ -18757,7 +18771,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 3`
           </div>
         </th>
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 cuBfrd StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 erXGgp StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
         >
           <div
             class="StyledBox-sc-13pk1d4-0 fDLUqh"
@@ -18880,8 +18894,8 @@ exports[`DataTable onSelect select/unselect all 1`] = `
   width: fit-content;
   padding-left: 12px;
   padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 12px;
   padding-bottom: 11px;
   cursor: pointer;
@@ -18983,8 +18997,8 @@ exports[`DataTable onSelect select/unselect all 1`] = `
   border-bottom: solid 1px rgba(0, 0, 0, 0.12);
   padding-left: 12px;
   padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 12px;
   padding-bottom: 11px;
 }
@@ -19516,7 +19530,7 @@ exports[`DataTable onSelect select/unselect all 2`] = `
             style="height: 0px;"
           >
             <label
-              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 iKNJBy"
+              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 eJXbdy"
             >
               <div
                 class="StyledBox-sc-13pk1d4-0 dRLuVF StyledCheckBox-sc-1dbk5ju-6 gAgPcH"
@@ -19563,7 +19577,7 @@ exports[`DataTable onSelect select/unselect all 2`] = `
           </div>
         </td>
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 jGhdbY StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 bjhOrI StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
         >
           <div
             class="StyledBox-sc-13pk1d4-0 fDLUqh"
@@ -19576,7 +19590,7 @@ exports[`DataTable onSelect select/unselect all 2`] = `
           </div>
         </td>
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 jGhdbY StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 bjhOrI StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
           scope="row"
         >
           <div
@@ -19601,7 +19615,7 @@ exports[`DataTable onSelect select/unselect all 2`] = `
             style="height: 0px;"
           >
             <label
-              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 iKNJBy"
+              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 eJXbdy"
             >
               <div
                 class="StyledBox-sc-13pk1d4-0 dRLuVF StyledCheckBox-sc-1dbk5ju-6 gAgPcH"
@@ -19648,7 +19662,7 @@ exports[`DataTable onSelect select/unselect all 2`] = `
           </div>
         </td>
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 jGhdbY StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 bjhOrI StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
         >
           <div
             class="StyledBox-sc-13pk1d4-0 fDLUqh"
@@ -19661,7 +19675,7 @@ exports[`DataTable onSelect select/unselect all 2`] = `
           </div>
         </td>
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 jGhdbY StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 bjhOrI StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
           scope="row"
         >
           <div
@@ -19686,7 +19700,7 @@ exports[`DataTable onSelect select/unselect all 2`] = `
             style="height: 0px;"
           >
             <label
-              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 iKNJBy"
+              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 eJXbdy"
             >
               <div
                 class="StyledBox-sc-13pk1d4-0 dRLuVF StyledCheckBox-sc-1dbk5ju-6 gAgPcH"
@@ -19733,7 +19747,7 @@ exports[`DataTable onSelect select/unselect all 2`] = `
           </div>
         </td>
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 jGhdbY StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 bjhOrI StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
         >
           <div
             class="StyledBox-sc-13pk1d4-0 fDLUqh"
@@ -19746,7 +19760,7 @@ exports[`DataTable onSelect select/unselect all 2`] = `
           </div>
         </td>
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 jGhdbY StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 bjhOrI StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
           scope="row"
         >
           <div
@@ -19771,7 +19785,7 @@ exports[`DataTable onSelect select/unselect all 2`] = `
             style="height: 0px;"
           >
             <label
-              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 iKNJBy"
+              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 eJXbdy"
             >
               <div
                 class="StyledBox-sc-13pk1d4-0 dRLuVF StyledCheckBox-sc-1dbk5ju-6 gAgPcH"
@@ -19818,7 +19832,7 @@ exports[`DataTable onSelect select/unselect all 2`] = `
           </div>
         </td>
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 jGhdbY StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 bjhOrI StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
         >
           <div
             class="StyledBox-sc-13pk1d4-0 fDLUqh"
@@ -19831,7 +19845,7 @@ exports[`DataTable onSelect select/unselect all 2`] = `
           </div>
         </td>
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 jGhdbY StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 bjhOrI StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
           scope="row"
         >
           <div
@@ -19943,7 +19957,7 @@ exports[`DataTable onSelect select/unselect all 3`] = `
             style="height: 0px;"
           >
             <label
-              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 ixcRwA"
+              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 eWnkCY"
             >
               <div
                 class="StyledBox-sc-13pk1d4-0 dRLuVF StyledCheckBox-sc-1dbk5ju-6 gAgPcH"
@@ -19961,7 +19975,7 @@ exports[`DataTable onSelect select/unselect all 3`] = `
           </div>
         </td>
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 cuBfrd StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 erXGgp StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
         >
           <div
             class="StyledBox-sc-13pk1d4-0 fDLUqh"
@@ -19974,7 +19988,7 @@ exports[`DataTable onSelect select/unselect all 3`] = `
           </div>
         </td>
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 cuBfrd StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 erXGgp StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
           scope="row"
         >
           <div
@@ -19999,7 +20013,7 @@ exports[`DataTable onSelect select/unselect all 3`] = `
             style="height: 0px;"
           >
             <label
-              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 ixcRwA"
+              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 eWnkCY"
             >
               <div
                 class="StyledBox-sc-13pk1d4-0 dRLuVF StyledCheckBox-sc-1dbk5ju-6 gAgPcH"
@@ -20017,7 +20031,7 @@ exports[`DataTable onSelect select/unselect all 3`] = `
           </div>
         </td>
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 cuBfrd StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 erXGgp StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
         >
           <div
             class="StyledBox-sc-13pk1d4-0 fDLUqh"
@@ -20030,7 +20044,7 @@ exports[`DataTable onSelect select/unselect all 3`] = `
           </div>
         </td>
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 cuBfrd StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 erXGgp StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
           scope="row"
         >
           <div
@@ -20055,7 +20069,7 @@ exports[`DataTable onSelect select/unselect all 3`] = `
             style="height: 0px;"
           >
             <label
-              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 ixcRwA"
+              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 eWnkCY"
             >
               <div
                 class="StyledBox-sc-13pk1d4-0 dRLuVF StyledCheckBox-sc-1dbk5ju-6 gAgPcH"
@@ -20073,7 +20087,7 @@ exports[`DataTable onSelect select/unselect all 3`] = `
           </div>
         </td>
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 cuBfrd StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 erXGgp StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
         >
           <div
             class="StyledBox-sc-13pk1d4-0 fDLUqh"
@@ -20086,7 +20100,7 @@ exports[`DataTable onSelect select/unselect all 3`] = `
           </div>
         </td>
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 cuBfrd StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 erXGgp StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
           scope="row"
         >
           <div
@@ -20111,7 +20125,7 @@ exports[`DataTable onSelect select/unselect all 3`] = `
             style="height: 0px;"
           >
             <label
-              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 ixcRwA"
+              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 eWnkCY"
             >
               <div
                 class="StyledBox-sc-13pk1d4-0 dRLuVF StyledCheckBox-sc-1dbk5ju-6 gAgPcH"
@@ -20129,7 +20143,7 @@ exports[`DataTable onSelect select/unselect all 3`] = `
           </div>
         </td>
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 cuBfrd StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 erXGgp StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
         >
           <div
             class="StyledBox-sc-13pk1d4-0 fDLUqh"
@@ -20142,7 +20156,7 @@ exports[`DataTable onSelect select/unselect all 3`] = `
           </div>
         </td>
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 cuBfrd StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 erXGgp StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
           scope="row"
         >
           <div
@@ -20348,8 +20362,8 @@ exports[`DataTable onSort 1`] = `
   border-bottom: solid 1px rgba(0, 0, 0, 0.12);
   padding-left: 12px;
   padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 12px;
   padding-bottom: 11px;
 }
@@ -20801,7 +20815,7 @@ exports[`DataTable onSort 2`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 jmJzHr"
       >
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 cuBfrd StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 erXGgp StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
           scope="row"
         >
           <div
@@ -20815,7 +20829,7 @@ exports[`DataTable onSort 2`] = `
           </div>
         </th>
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 cuBfrd StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 erXGgp StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
         >
           <div
             class="StyledBox-sc-13pk1d4-0 fDLUqh"
@@ -20832,7 +20846,7 @@ exports[`DataTable onSort 2`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 jmJzHr"
       >
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 cuBfrd StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 erXGgp StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
           scope="row"
         >
           <div
@@ -20846,7 +20860,7 @@ exports[`DataTable onSort 2`] = `
           </div>
         </th>
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 cuBfrd StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 erXGgp StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
         >
           <div
             class="StyledBox-sc-13pk1d4-0 fDLUqh"
@@ -20863,7 +20877,7 @@ exports[`DataTable onSort 2`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 jmJzHr"
       >
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 cuBfrd StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 erXGgp StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
           scope="row"
         >
           <div
@@ -20877,7 +20891,7 @@ exports[`DataTable onSort 2`] = `
           </div>
         </th>
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 cuBfrd StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 erXGgp StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
         >
           <div
             class="StyledBox-sc-13pk1d4-0 fDLUqh"
@@ -21082,8 +21096,8 @@ exports[`DataTable onSort external 1`] = `
   border-bottom: solid 1px rgba(0, 0, 0, 0.12);
   padding-left: 12px;
   padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 12px;
   padding-bottom: 11px;
 }
@@ -21551,7 +21565,7 @@ exports[`DataTable onSort external 2`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 jmJzHr"
       >
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 cuBfrd StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 erXGgp StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
           scope="row"
         >
           <div
@@ -21565,7 +21579,7 @@ exports[`DataTable onSort external 2`] = `
           </div>
         </th>
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 cuBfrd StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 erXGgp StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
         >
           <div
             class="StyledBox-sc-13pk1d4-0 fDLUqh"
@@ -21582,7 +21596,7 @@ exports[`DataTable onSort external 2`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 jmJzHr"
       >
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 cuBfrd StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 erXGgp StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
           scope="row"
         >
           <div
@@ -21596,7 +21610,7 @@ exports[`DataTable onSort external 2`] = `
           </div>
         </th>
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 cuBfrd StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 erXGgp StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
         >
           <div
             class="StyledBox-sc-13pk1d4-0 fDLUqh"
@@ -21613,7 +21627,7 @@ exports[`DataTable onSort external 2`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 jmJzHr"
       >
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 cuBfrd StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 erXGgp StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
           scope="row"
         >
           <div
@@ -21627,7 +21641,7 @@ exports[`DataTable onSort external 2`] = `
           </div>
         </th>
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 cuBfrd StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 erXGgp StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
         >
           <div
             class="StyledBox-sc-13pk1d4-0 fDLUqh"
@@ -23223,8 +23237,8 @@ exports[`DataTable paths 1`] = `
   border-bottom: solid 1px rgba(0, 0, 0, 0.12);
   padding-left: 12px;
   padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 12px;
   padding-bottom: 11px;
 }
@@ -24197,8 +24211,8 @@ exports[`DataTable pin + background context 1`] = `
   border-bottom: solid 1px rgba(0, 0, 0, 0.12);
   padding-left: 12px;
   padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 12px;
   padding-bottom: 11px;
 }
@@ -24212,8 +24226,8 @@ exports[`DataTable pin + background context 1`] = `
   border-bottom: solid 1px rgba(0, 0, 0, 0.12);
   padding-left: 12px;
   padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 12px;
   padding-bottom: 11px;
 }
@@ -24229,6 +24243,8 @@ exports[`DataTable pin + background context 1`] = `
   border-top: solid 1px rgba(0, 0, 0, 0.36);
   padding-left: 12px;
   padding-right: 12px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 6px;
   padding-bottom: 6px;
   font-weight: undefined;
@@ -24269,8 +24285,8 @@ exports[`DataTable pin + background context 1`] = `
   border-bottom: solid 1px rgba(255, 255, 255, 0.12);
   padding-left: 12px;
   padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 12px;
   padding-bottom: 11px;
 }
@@ -24284,8 +24300,8 @@ exports[`DataTable pin + background context 1`] = `
   border-bottom: solid 1px rgba(255, 255, 255, 0.12);
   padding-left: 12px;
   padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 12px;
   padding-bottom: 11px;
 }
@@ -24301,6 +24317,8 @@ exports[`DataTable pin + background context 1`] = `
   border-top: solid 1px rgba(255, 255, 255, 0.36);
   padding-left: 12px;
   padding-right: 12px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 6px;
   padding-bottom: 6px;
   font-weight: undefined;
@@ -24970,8 +24988,8 @@ exports[`DataTable pin 1`] = `
   border-bottom: solid 1px rgba(0, 0, 0, 0.12);
   padding-left: 12px;
   padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 12px;
   padding-bottom: 11px;
 }
@@ -24985,8 +25003,8 @@ exports[`DataTable pin 1`] = `
   border-bottom: solid 1px rgba(0, 0, 0, 0.12);
   padding-left: 12px;
   padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 12px;
   padding-bottom: 11px;
 }
@@ -25002,6 +25020,8 @@ exports[`DataTable pin 1`] = `
   border-top: solid 1px rgba(0, 0, 0, 0.36);
   padding-left: 12px;
   padding-right: 12px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 6px;
   padding-bottom: 6px;
   font-weight: undefined;
@@ -25016,6 +25036,8 @@ exports[`DataTable pin 1`] = `
   border-top: solid 1px rgba(0, 0, 0, 0.36);
   padding-left: 12px;
   padding-right: 12px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 6px;
   padding-bottom: 6px;
   font-weight: undefined;
@@ -25685,6 +25707,7 @@ exports[`DataTable placeholder 1`] = `
   font-size: 1.125rem;
   line-height: 1.5rem;
   font-weight: bold;
+  font-weight: 500;
 }
 
 .c3 {
@@ -25718,8 +25741,8 @@ exports[`DataTable placeholder 1`] = `
   border-bottom: solid 1px rgba(0, 0, 0, 0.12);
   padding-left: 12px;
   padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 12px;
   padding-bottom: 11px;
 }
@@ -25733,6 +25756,8 @@ exports[`DataTable placeholder 1`] = `
   border-top: solid 1px rgba(0, 0, 0, 0.36);
   padding-left: 12px;
   padding-right: 12px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 6px;
   padding-bottom: 6px;
   font-weight: undefined;
@@ -26264,8 +26289,8 @@ exports[`DataTable primaryKey 1`] = `
   border-bottom: solid 1px rgba(0, 0, 0, 0.12);
   padding-left: 12px;
   padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 12px;
   padding-bottom: 11px;
 }
@@ -26590,8 +26615,8 @@ exports[`DataTable relativeColumnSizes 1`] = `
   border-bottom: solid 1px rgba(0, 0, 0, 0.12);
   padding-left: 12px;
   padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 12px;
   padding-bottom: 11px;
 }
@@ -26608,8 +26633,8 @@ exports[`DataTable relativeColumnSizes 1`] = `
   border-bottom: solid 1px rgba(0, 0, 0, 0.12);
   padding-left: 12px;
   padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 12px;
   padding-bottom: 11px;
 }
@@ -26951,8 +26976,8 @@ exports[`DataTable replace 1`] = `
   border-bottom: solid 1px rgba(0, 0, 0, 0.12);
   padding-left: 12px;
   padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 12px;
   padding-bottom: 11px;
 }
@@ -27333,8 +27358,8 @@ exports[`DataTable resizeable 1`] = `
   border-bottom: solid 1px rgba(0, 0, 0, 0.12);
   padding-left: 12px;
   padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 12px;
   padding-bottom: 11px;
 }
@@ -27356,9 +27381,9 @@ exports[`DataTable resizeable 1`] = `
 .c8 {
   display: flex;
   justify-content: center;
-  padding-top: 6px;
-  padding-bottom: 6px;
-  margin-right: -12px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  margin-right: -16px;
   position: absolute;
   right: 0;
   width: 24px;
@@ -27673,8 +27698,8 @@ exports[`DataTable row click using space key press 1`] = `
   border-bottom: solid 1px rgba(0, 0, 0, 0.12);
   padding-left: 12px;
   padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 12px;
   padding-bottom: 11px;
 }
@@ -27874,7 +27899,7 @@ exports[`DataTable row click using space key press 2`] = `
         tabindex="0"
       >
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 cuBfrd StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 erXGgp StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
           scope="row"
         >
           <div
@@ -27983,8 +28008,8 @@ exports[`DataTable rowDetails 1`] = `
   height: 100%;
   padding-left: 12px;
   padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 12px;
   padding-bottom: 11px;
 }
@@ -28123,8 +28148,8 @@ exports[`DataTable rowDetails 1`] = `
   padding: 0;
   font-weight: inherit;
   text-align: inherit;
-  width: 48px;
-  max-width: 48px;
+  width: 128px;
+  max-width: 128px;
   overflow: hidden;
   vertical-align: top;
   text-align: start;
@@ -28140,8 +28165,8 @@ exports[`DataTable rowDetails 1`] = `
   border-bottom: solid 1px rgba(0, 0, 0, 0.12);
   padding-left: 12px;
   padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 12px;
   padding-bottom: 11px;
 }
@@ -28244,8 +28269,8 @@ exports[`DataTable rowDetails 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c13 {
-    padding-top: 3px;
-    padding-bottom: 3px;
+    padding-top: 6px;
+    padding-bottom: 6px;
   }
 }
 
@@ -28680,8 +28705,8 @@ exports[`DataTable rowDetails condtional 1`] = `
   height: 100%;
   padding-left: 12px;
   padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 12px;
   padding-bottom: 11px;
 }
@@ -28820,8 +28845,8 @@ exports[`DataTable rowDetails condtional 1`] = `
   padding: 0;
   font-weight: inherit;
   text-align: inherit;
-  width: 48px;
-  max-width: 48px;
+  width: 128px;
+  max-width: 128px;
   overflow: hidden;
   vertical-align: top;
   text-align: start;
@@ -28837,8 +28862,8 @@ exports[`DataTable rowDetails condtional 1`] = `
   border-bottom: solid 1px rgba(0, 0, 0, 0.12);
   padding-left: 12px;
   padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 12px;
   padding-bottom: 11px;
 }
@@ -28941,8 +28966,8 @@ exports[`DataTable rowDetails condtional 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c13 {
-    padding-top: 3px;
-    padding-bottom: 3px;
+    padding-top: 6px;
+    padding-bottom: 6px;
   }
 }
 
@@ -29722,8 +29747,8 @@ exports[`DataTable rowProps on group header rows 1`] = `
   height: 100%;
   padding-left: 12px;
   padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 12px;
   padding-bottom: 11px;
 }
@@ -29818,8 +29843,8 @@ exports[`DataTable rowProps on group header rows 1`] = `
   padding: 0;
   font-weight: inherit;
   text-align: inherit;
-  width: 48px;
-  max-width: 48px;
+  width: 128px;
+  max-width: 128px;
   overflow: hidden;
   vertical-align: top;
   text-align: start;
@@ -29862,8 +29887,8 @@ exports[`DataTable rowProps on group header rows 1`] = `
   padding: 0;
   font-weight: inherit;
   text-align: inherit;
-  width: 48px;
-  max-width: 48px;
+  width: 128px;
+  max-width: 128px;
   overflow: hidden;
   vertical-align: top;
   text-align: start;
@@ -29883,8 +29908,8 @@ exports[`DataTable rowProps on group header rows 1`] = `
   border-bottom: solid 1px rgba(0, 0, 0, 0.12);
   padding-left: 12px;
   padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 12px;
   padding-bottom: 11px;
 }
@@ -29894,8 +29919,8 @@ exports[`DataTable rowProps on group header rows 1`] = `
   padding: 0;
   font-weight: inherit;
   text-align: inherit;
-  width: 48px;
-  max-width: 48px;
+  width: 128px;
+  max-width: 128px;
   overflow: hidden;
   vertical-align: top;
   text-align: start;
@@ -29911,8 +29936,8 @@ exports[`DataTable rowProps on group header rows 1`] = `
   border-bottom: solid 1px rgba(0, 0, 0, 0.12);
   padding-left: 12px;
   padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 12px;
   padding-bottom: 11px;
 }
@@ -30008,8 +30033,8 @@ exports[`DataTable rowProps on group header rows 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c6 {
-    padding-left: 6px;
-    padding-right: 6px;
+    padding-left: 12px;
+    padding-right: 12px;
   }
 }
 
@@ -30029,8 +30054,8 @@ exports[`DataTable rowProps on group header rows 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c16 {
-    padding-top: 3px;
-    padding-bottom: 3px;
+    padding-top: 6px;
+    padding-bottom: 6px;
   }
 }
 
@@ -30457,8 +30482,8 @@ exports[`DataTable search 1`] = `
   border-bottom: solid 1px rgba(0, 0, 0, 0.12);
   padding-left: 12px;
   padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 12px;
   padding-bottom: 11px;
 }
@@ -30716,7 +30741,7 @@ exports[`DataTable search 2`] = `
   min-width: 0;
   min-height: 0;
   flex-direction: column;
-  min-width: 96px;
+  min-width: 192px;
   flex: 1 1;
   padding-left: 12px;
 }
@@ -30844,7 +30869,7 @@ exports[`DataTable search 2`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 jmJzHr"
       >
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 cuBfrd StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 erXGgp StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
           scope="row"
         >
           <div
@@ -30993,8 +31018,8 @@ exports[`DataTable select 1`] = `
   width: fit-content;
   padding-left: 12px;
   padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 12px;
   padding-bottom: 11px;
   cursor: pointer;
@@ -31020,8 +31045,8 @@ exports[`DataTable select 1`] = `
   width: fit-content;
   padding-left: 12px;
   padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 12px;
   padding-bottom: 11px;
   cursor: pointer;
@@ -31136,8 +31161,8 @@ exports[`DataTable select 1`] = `
   border-bottom: solid 1px rgba(0, 0, 0, 0.12);
   padding-left: 12px;
   padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 12px;
   padding-bottom: 11px;
 }
@@ -31162,8 +31187,8 @@ exports[`DataTable select 1`] = `
   border-bottom: solid 1px rgba(0, 0, 0, 0.12);
   padding-left: 12px;
   padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 12px;
   padding-bottom: 11px;
 }
@@ -31548,7 +31573,7 @@ exports[`DataTable select 2`] = `
             style="height: 0px;"
           >
             <label
-              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 iKNJBy"
+              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 eJXbdy"
             >
               <div
                 class="StyledBox-sc-13pk1d4-0 dRLuVF StyledCheckBox-sc-1dbk5ju-6 gAgPcH"
@@ -31578,7 +31603,7 @@ exports[`DataTable select 2`] = `
           </div>
         </td>
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 jGhdbY StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 bjhOrI StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
           scope="row"
         >
           <div
@@ -31603,7 +31628,7 @@ exports[`DataTable select 2`] = `
             style="height: 0px;"
           >
             <label
-              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 iKNJBy"
+              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 eJXbdy"
             >
               <div
                 class="StyledBox-sc-13pk1d4-0 dRLuVF StyledCheckBox-sc-1dbk5ju-6 gAgPcH"
@@ -31650,7 +31675,7 @@ exports[`DataTable select 2`] = `
           </div>
         </td>
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 jGhdbY StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 bjhOrI StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
           scope="row"
         >
           <div
@@ -31779,8 +31804,8 @@ exports[`DataTable select with allowSelectAll={false} 1`] = `
   width: fit-content;
   padding-left: 12px;
   padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 12px;
   padding-bottom: 11px;
   cursor: pointer;
@@ -31806,8 +31831,8 @@ exports[`DataTable select with allowSelectAll={false} 1`] = `
   width: fit-content;
   padding-left: 12px;
   padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 12px;
   padding-bottom: 11px;
   cursor: pointer;
@@ -31922,8 +31947,8 @@ exports[`DataTable select with allowSelectAll={false} 1`] = `
   border-bottom: solid 1px rgba(0, 0, 0, 0.12);
   padding-left: 12px;
   padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 12px;
   padding-bottom: 11px;
 }
@@ -31948,8 +31973,8 @@ exports[`DataTable select with allowSelectAll={false} 1`] = `
   border-bottom: solid 1px rgba(0, 0, 0, 0.12);
   padding-left: 12px;
   padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 12px;
   padding-bottom: 11px;
 }
@@ -32250,7 +32275,7 @@ exports[`DataTable select with allowSelectAll={false} 2`] = `
             style="height: 0px;"
           >
             <label
-              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 iKNJBy"
+              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 eJXbdy"
             >
               <div
                 class="StyledBox-sc-13pk1d4-0 dRLuVF StyledCheckBox-sc-1dbk5ju-6 gAgPcH"
@@ -32280,7 +32305,7 @@ exports[`DataTable select with allowSelectAll={false} 2`] = `
           </div>
         </td>
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 jGhdbY StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 bjhOrI StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
           scope="row"
         >
           <div
@@ -32305,7 +32330,7 @@ exports[`DataTable select with allowSelectAll={false} 2`] = `
             style="height: 0px;"
           >
             <label
-              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 iKNJBy"
+              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 eJXbdy"
             >
               <div
                 class="StyledBox-sc-13pk1d4-0 dRLuVF StyledCheckBox-sc-1dbk5ju-6 gAgPcH"
@@ -32352,7 +32377,7 @@ exports[`DataTable select with allowSelectAll={false} 2`] = `
           </div>
         </td>
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 jGhdbY StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 bjhOrI StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
           scope="row"
         >
           <div
@@ -37910,8 +37935,8 @@ exports[`DataTable should base table body max height on css value 1`] = `
   border-bottom: solid 1px rgba(0, 0, 0, 0.12);
   padding-left: 12px;
   padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 12px;
   padding-bottom: 11px;
 }
@@ -38671,8 +38696,8 @@ exports[`DataTable should not show paginate controls when length of data < step 
   border-bottom: solid 1px rgba(0, 0, 0, 0.12);
   padding-left: 12px;
   padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 12px;
   padding-bottom: 11px;
 }
@@ -39072,7 +39097,7 @@ exports[`DataTable should paginate 1`] = `
 .c12 {
   flex: 0 0 auto;
   align-self: stretch;
-  height: 6px;
+  height: 12px;
 }
 
 .c7 {
@@ -39478,8 +39503,8 @@ exports[`DataTable should paginate 1`] = `
   border-bottom: solid 1px rgba(0, 0, 0, 0.12);
   padding-left: 12px;
   padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 12px;
   padding-bottom: 11px;
 }
@@ -39587,13 +39612,13 @@ exports[`DataTable should paginate 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c15 {
-    column-gap: 2px;
+    column-gap: 3px;
   }
 }
 
 @media only screen and (max-width: 768px) {
   .c12 {
-    height: 3px;
+    height: 6px;
   }
 }
 
@@ -41447,7 +41472,7 @@ exports[`DataTable should pin and paginate 1`] = `
 .c13 {
   flex: 0 0 auto;
   align-self: stretch;
-  height: 6px;
+  height: 12px;
 }
 
 .c8 {
@@ -41855,8 +41880,8 @@ exports[`DataTable should pin and paginate 1`] = `
   border-bottom: solid 1px rgba(0, 0, 0, 0.12);
   padding-left: 12px;
   padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 12px;
   padding-bottom: 11px;
 }
@@ -41971,13 +41996,13 @@ exports[`DataTable should pin and paginate 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c16 {
-    column-gap: 2px;
+    column-gap: 3px;
   }
 }
 
 @media only screen and (max-width: 768px) {
   .c13 {
-    height: 3px;
+    height: 6px;
   }
 }
 
@@ -43831,7 +43856,7 @@ exports[`DataTable should render correct num items per page (step) 1`] = `
 .c12 {
   flex: 0 0 auto;
   align-self: stretch;
-  height: 6px;
+  height: 12px;
 }
 
 .c7 {
@@ -44237,8 +44262,8 @@ exports[`DataTable should render correct num items per page (step) 1`] = `
   border-bottom: solid 1px rgba(0, 0, 0, 0.12);
   padding-left: 12px;
   padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 12px;
   padding-bottom: 11px;
 }
@@ -44346,13 +44371,13 @@ exports[`DataTable should render correct num items per page (step) 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c15 {
-    column-gap: 2px;
+    column-gap: 3px;
   }
 }
 
 @media only screen and (max-width: 768px) {
   .c12 {
-    height: 3px;
+    height: 6px;
   }
 }
 
@@ -45145,7 +45170,7 @@ exports[`DataTable should render new data when page changes 1`] = `
 .c12 {
   flex: 0 0 auto;
   align-self: stretch;
-  height: 6px;
+  height: 12px;
 }
 
 .c7 {
@@ -45551,8 +45576,8 @@ exports[`DataTable should render new data when page changes 1`] = `
   border-bottom: solid 1px rgba(0, 0, 0, 0.12);
   padding-left: 12px;
   padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 12px;
   padding-bottom: 11px;
 }
@@ -45660,13 +45685,13 @@ exports[`DataTable should render new data when page changes 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c15 {
-    column-gap: 2px;
+    column-gap: 3px;
   }
 }
 
 @media only screen and (max-width: 768px) {
   .c12 {
-    height: 3px;
+    height: 6px;
   }
 }
 
@@ -47468,8 +47493,8 @@ exports[`DataTable should render new data when page changes 2`] = `
   border-bottom: solid 1px rgba(0, 0, 0, 0.12);
   padding-left: 12px;
   padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 12px;
   padding-bottom: 11px;
 }
@@ -47606,8 +47631,8 @@ exports[`DataTable should render new data when page changes 2`] = `
   border-bottom: solid 1px rgba(0, 0, 0, 0.12);
   padding-left: 12px;
   padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 12px;
   padding-bottom: 11px;
 }
@@ -47744,8 +47769,8 @@ exports[`DataTable should render new data when page changes 2`] = `
   border-bottom: solid 1px rgba(0, 0, 0, 0.12);
   padding-left: 12px;
   padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 12px;
   padding-bottom: 11px;
 }
@@ -47882,8 +47907,8 @@ exports[`DataTable should render new data when page changes 2`] = `
   border-bottom: solid 1px rgba(0, 0, 0, 0.12);
   padding-left: 12px;
   padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 12px;
   padding-bottom: 11px;
 }
@@ -48020,8 +48045,8 @@ exports[`DataTable should render new data when page changes 2`] = `
   border-bottom: solid 1px rgba(0, 0, 0, 0.12);
   padding-left: 12px;
   padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 12px;
   padding-bottom: 11px;
 }
@@ -48158,8 +48183,8 @@ exports[`DataTable should render new data when page changes 2`] = `
   border-bottom: solid 1px rgba(0, 0, 0, 0.12);
   padding-left: 12px;
   padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 12px;
   padding-bottom: 11px;
 }
@@ -48296,8 +48321,8 @@ exports[`DataTable should render new data when page changes 2`] = `
   border-bottom: solid 1px rgba(0, 0, 0, 0.12);
   padding-left: 12px;
   padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 12px;
   padding-bottom: 11px;
 }
@@ -48434,8 +48459,8 @@ exports[`DataTable should render new data when page changes 2`] = `
   border-bottom: solid 1px rgba(0, 0, 0, 0.12);
   padding-left: 12px;
   padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 12px;
   padding-bottom: 11px;
 }
@@ -48572,8 +48597,8 @@ exports[`DataTable should render new data when page changes 2`] = `
   border-bottom: solid 1px rgba(0, 0, 0, 0.12);
   padding-left: 12px;
   padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 12px;
   padding-bottom: 11px;
 }
@@ -48710,8 +48735,8 @@ exports[`DataTable should render new data when page changes 2`] = `
   border-bottom: solid 1px rgba(0, 0, 0, 0.12);
   padding-left: 12px;
   padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 12px;
   padding-bottom: 11px;
 }
@@ -48848,8 +48873,8 @@ exports[`DataTable should render new data when page changes 2`] = `
   border-bottom: solid 1px rgba(0, 0, 0, 0.12);
   padding-left: 12px;
   padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 12px;
   padding-bottom: 11px;
 }
@@ -48986,8 +49011,8 @@ exports[`DataTable should render new data when page changes 2`] = `
   border-bottom: solid 1px rgba(0, 0, 0, 0.12);
   padding-left: 12px;
   padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 12px;
   padding-bottom: 11px;
 }
@@ -49124,8 +49149,8 @@ exports[`DataTable should render new data when page changes 2`] = `
   border-bottom: solid 1px rgba(0, 0, 0, 0.12);
   padding-left: 12px;
   padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 12px;
   padding-bottom: 11px;
 }
@@ -49262,8 +49287,8 @@ exports[`DataTable should render new data when page changes 2`] = `
   border-bottom: solid 1px rgba(0, 0, 0, 0.12);
   padding-left: 12px;
   padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 12px;
   padding-bottom: 11px;
 }
@@ -49400,8 +49425,8 @@ exports[`DataTable should render new data when page changes 2`] = `
   border-bottom: solid 1px rgba(0, 0, 0, 0.12);
   padding-left: 12px;
   padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 12px;
   padding-bottom: 11px;
 }
@@ -49538,8 +49563,8 @@ exports[`DataTable should render new data when page changes 2`] = `
   border-bottom: solid 1px rgba(0, 0, 0, 0.12);
   padding-left: 12px;
   padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 12px;
   padding-bottom: 11px;
 }
@@ -49676,8 +49701,8 @@ exports[`DataTable should render new data when page changes 2`] = `
   border-bottom: solid 1px rgba(0, 0, 0, 0.12);
   padding-left: 12px;
   padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 12px;
   padding-bottom: 11px;
 }
@@ -49814,8 +49839,8 @@ exports[`DataTable should render new data when page changes 2`] = `
   border-bottom: solid 1px rgba(0, 0, 0, 0.12);
   padding-left: 12px;
   padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 12px;
   padding-bottom: 11px;
 }
@@ -49952,8 +49977,8 @@ exports[`DataTable should render new data when page changes 2`] = `
   border-bottom: solid 1px rgba(0, 0, 0, 0.12);
   padding-left: 12px;
   padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 12px;
   padding-bottom: 11px;
 }
@@ -50090,8 +50115,8 @@ exports[`DataTable should render new data when page changes 2`] = `
   border-bottom: solid 1px rgba(0, 0, 0, 0.12);
   padding-left: 12px;
   padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 12px;
   padding-bottom: 11px;
 }
@@ -50228,8 +50253,8 @@ exports[`DataTable should render new data when page changes 2`] = `
   border-bottom: solid 1px rgba(0, 0, 0, 0.12);
   padding-left: 12px;
   padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 12px;
   padding-bottom: 11px;
 }
@@ -50366,8 +50391,8 @@ exports[`DataTable should render new data when page changes 2`] = `
   border-bottom: solid 1px rgba(0, 0, 0, 0.12);
   padding-left: 12px;
   padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 12px;
   padding-bottom: 11px;
 }
@@ -50504,8 +50529,8 @@ exports[`DataTable should render new data when page changes 2`] = `
   border-bottom: solid 1px rgba(0, 0, 0, 0.12);
   padding-left: 12px;
   padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 12px;
   padding-bottom: 11px;
 }
@@ -50642,8 +50667,8 @@ exports[`DataTable should render new data when page changes 2`] = `
   border-bottom: solid 1px rgba(0, 0, 0, 0.12);
   padding-left: 12px;
   padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 12px;
   padding-bottom: 11px;
 }
@@ -50780,8 +50805,8 @@ exports[`DataTable should render new data when page changes 2`] = `
   border-bottom: solid 1px rgba(0, 0, 0, 0.12);
   padding-left: 12px;
   padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 12px;
   padding-bottom: 11px;
 }
@@ -50918,8 +50943,8 @@ exports[`DataTable should render new data when page changes 2`] = `
   border-bottom: solid 1px rgba(0, 0, 0, 0.12);
   padding-left: 12px;
   padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 12px;
   padding-bottom: 11px;
 }
@@ -51056,8 +51081,8 @@ exports[`DataTable should render new data when page changes 2`] = `
   border-bottom: solid 1px rgba(0, 0, 0, 0.12);
   padding-left: 12px;
   padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 12px;
   padding-bottom: 11px;
 }
@@ -51194,8 +51219,8 @@ exports[`DataTable should render new data when page changes 2`] = `
   border-bottom: solid 1px rgba(0, 0, 0, 0.12);
   padding-left: 12px;
   padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 12px;
   padding-bottom: 11px;
 }
@@ -51332,8 +51357,8 @@ exports[`DataTable should render new data when page changes 2`] = `
   border-bottom: solid 1px rgba(0, 0, 0, 0.12);
   padding-left: 12px;
   padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 12px;
   padding-bottom: 11px;
 }
@@ -51470,8 +51495,8 @@ exports[`DataTable should render new data when page changes 2`] = `
   border-bottom: solid 1px rgba(0, 0, 0, 0.12);
   padding-left: 12px;
   padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 12px;
   padding-bottom: 11px;
 }
@@ -51608,8 +51633,8 @@ exports[`DataTable should render new data when page changes 2`] = `
   border-bottom: solid 1px rgba(0, 0, 0, 0.12);
   padding-left: 12px;
   padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 12px;
   padding-bottom: 11px;
 }
@@ -51746,8 +51771,8 @@ exports[`DataTable should render new data when page changes 2`] = `
   border-bottom: solid 1px rgba(0, 0, 0, 0.12);
   padding-left: 12px;
   padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 12px;
   padding-bottom: 11px;
 }
@@ -51884,8 +51909,8 @@ exports[`DataTable should render new data when page changes 2`] = `
   border-bottom: solid 1px rgba(0, 0, 0, 0.12);
   padding-left: 12px;
   padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 12px;
   padding-bottom: 11px;
 }
@@ -52022,8 +52047,8 @@ exports[`DataTable should render new data when page changes 2`] = `
   border-bottom: solid 1px rgba(0, 0, 0, 0.12);
   padding-left: 12px;
   padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 12px;
   padding-bottom: 11px;
 }
@@ -52160,8 +52185,8 @@ exports[`DataTable should render new data when page changes 2`] = `
   border-bottom: solid 1px rgba(0, 0, 0, 0.12);
   padding-left: 12px;
   padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 12px;
   padding-bottom: 11px;
 }
@@ -52298,8 +52323,8 @@ exports[`DataTable should render new data when page changes 2`] = `
   border-bottom: solid 1px rgba(0, 0, 0, 0.12);
   padding-left: 12px;
   padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 12px;
   padding-bottom: 11px;
 }
@@ -52436,8 +52461,8 @@ exports[`DataTable should render new data when page changes 2`] = `
   border-bottom: solid 1px rgba(0, 0, 0, 0.12);
   padding-left: 12px;
   padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 12px;
   padding-bottom: 11px;
 }
@@ -52574,8 +52599,8 @@ exports[`DataTable should render new data when page changes 2`] = `
   border-bottom: solid 1px rgba(0, 0, 0, 0.12);
   padding-left: 12px;
   padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 12px;
   padding-bottom: 11px;
 }
@@ -52712,8 +52737,8 @@ exports[`DataTable should render new data when page changes 2`] = `
   border-bottom: solid 1px rgba(0, 0, 0, 0.12);
   padding-left: 12px;
   padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 12px;
   padding-bottom: 11px;
 }
@@ -52850,8 +52875,8 @@ exports[`DataTable should render new data when page changes 2`] = `
   border-bottom: solid 1px rgba(0, 0, 0, 0.12);
   padding-left: 12px;
   padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 12px;
   padding-bottom: 11px;
 }
@@ -52988,8 +53013,8 @@ exports[`DataTable should render new data when page changes 2`] = `
   border-bottom: solid 1px rgba(0, 0, 0, 0.12);
   padding-left: 12px;
   padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 12px;
   padding-bottom: 11px;
 }
@@ -53126,8 +53151,8 @@ exports[`DataTable should render new data when page changes 2`] = `
   border-bottom: solid 1px rgba(0, 0, 0, 0.12);
   padding-left: 12px;
   padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 12px;
   padding-bottom: 11px;
 }
@@ -53264,8 +53289,8 @@ exports[`DataTable should render new data when page changes 2`] = `
   border-bottom: solid 1px rgba(0, 0, 0, 0.12);
   padding-left: 12px;
   padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 12px;
   padding-bottom: 11px;
 }
@@ -53402,8 +53427,8 @@ exports[`DataTable should render new data when page changes 2`] = `
   border-bottom: solid 1px rgba(0, 0, 0, 0.12);
   padding-left: 12px;
   padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 12px;
   padding-bottom: 11px;
 }
@@ -53540,8 +53565,8 @@ exports[`DataTable should render new data when page changes 2`] = `
   border-bottom: solid 1px rgba(0, 0, 0, 0.12);
   padding-left: 12px;
   padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 12px;
   padding-bottom: 11px;
 }
@@ -53651,7 +53676,7 @@ exports[`DataTable should render new data when page changes 2`] = `
       </table>
     </div>
     <div
-      class="StyledBox__StyledBoxGap-sc-13pk1d4-1 ffrHHp"
+      class="StyledBox__StyledBoxGap-sc-13pk1d4-1 hrJqFx"
     />
     <div
       class="StyledBox-sc-13pk1d4-0 eKszzY Pagination__StyledPaginationContainer-sc-rnlw6m-0"
@@ -53661,7 +53686,7 @@ exports[`DataTable should render new data when page changes 2`] = `
         class="StyledBox-sc-13pk1d4-0 fBuFhc"
       >
         <ul
-          class="StyledBox-sc-13pk1d4-0 UJDIX"
+          class="StyledBox-sc-13pk1d4-0 doCASy"
         >
           <li
             class="StyledPageControl__StyledContainer-sc-1vlfaez-1 fVNJEO"
@@ -53886,7 +53911,7 @@ exports[`DataTable should show correct item index when "show" is a number 1`] = 
 .c12 {
   flex: 0 0 auto;
   align-self: stretch;
-  height: 6px;
+  height: 12px;
 }
 
 .c7 {
@@ -54292,8 +54317,8 @@ exports[`DataTable should show correct item index when "show" is a number 1`] = 
   border-bottom: solid 1px rgba(0, 0, 0, 0.12);
   padding-left: 12px;
   padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 12px;
   padding-bottom: 11px;
 }
@@ -54401,13 +54426,13 @@ exports[`DataTable should show correct item index when "show" is a number 1`] = 
 
 @media only screen and (max-width: 768px) {
   .c15 {
-    column-gap: 2px;
+    column-gap: 3px;
   }
 }
 
 @media only screen and (max-width: 768px) {
   .c12 {
-    height: 3px;
+    height: 6px;
   }
 }
 
@@ -56261,7 +56286,7 @@ exports[`DataTable should show correct page when "show" is { page: # } 1`] = `
 .c12 {
   flex: 0 0 auto;
   align-self: stretch;
-  height: 6px;
+  height: 12px;
 }
 
 .c7 {
@@ -56667,8 +56692,8 @@ exports[`DataTable should show correct page when "show" is { page: # } 1`] = `
   border-bottom: solid 1px rgba(0, 0, 0, 0.12);
   padding-left: 12px;
   padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 12px;
   padding-bottom: 11px;
 }
@@ -56776,13 +56801,13 @@ exports[`DataTable should show correct page when "show" is { page: # } 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c15 {
-    column-gap: 2px;
+    column-gap: 3px;
   }
 }
 
 @media only screen and (max-width: 768px) {
   .c12 {
-    height: 3px;
+    height: 6px;
   }
 }
 
@@ -58523,8 +58548,8 @@ exports[`DataTable sort 1`] = `
   border-bottom: solid 1px rgba(0, 0, 0, 0.12);
   padding-left: 12px;
   padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 12px;
   padding-bottom: 11px;
 }
@@ -59125,8 +59150,8 @@ exports[`DataTable sort controlled 1`] = `
   border-bottom: solid 1px rgba(0, 0, 0, 0.12);
   padding-left: 12px;
   padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 12px;
   padding-bottom: 11px;
 }
@@ -59734,8 +59759,8 @@ exports[`DataTable sort controlled 2`] = `
   border-bottom: solid 1px rgba(0, 0, 0, 0.12);
   padding-left: 12px;
   padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 12px;
   padding-bottom: 11px;
 }
@@ -60260,8 +60285,8 @@ exports[`DataTable sort external 1`] = `
   border-bottom: solid 1px rgba(0, 0, 0, 0.12);
   padding-left: 12px;
   padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 12px;
   padding-bottom: 11px;
 }
@@ -60779,8 +60804,8 @@ exports[`DataTable sort nested object 1`] = `
   border-bottom: solid 1px rgba(0, 0, 0, 0.12);
   padding-left: 12px;
   padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 12px;
   padding-bottom: 11px;
 }
@@ -61298,8 +61323,8 @@ exports[`DataTable sort nested object with onSort 1`] = `
   border-bottom: solid 1px rgba(0, 0, 0, 0.12);
   padding-left: 12px;
   padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 12px;
   padding-bottom: 11px;
 }
@@ -61817,8 +61842,8 @@ exports[`DataTable sort null data 1`] = `
   border-bottom: solid 1px rgba(0, 0, 0, 0.12);
   padding-left: 12px;
   padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 12px;
   padding-bottom: 11px;
 }
@@ -62525,7 +62550,7 @@ exports[`DataTable sort null data 2`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 jmJzHr"
       >
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 cuBfrd StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 erXGgp StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
           scope="row"
         >
           <div
@@ -62533,7 +62558,7 @@ exports[`DataTable sort null data 2`] = `
           />
         </th>
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 cuBfrd StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 erXGgp StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
         >
           <div
             class="StyledBox-sc-13pk1d4-0 fDLUqh"
@@ -62546,7 +62571,7 @@ exports[`DataTable sort null data 2`] = `
           </div>
         </td>
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 cuBfrd StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 erXGgp StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
         >
           <div
             class="StyledBox-sc-13pk1d4-0 fDLUqh"
@@ -62559,7 +62584,7 @@ exports[`DataTable sort null data 2`] = `
           </div>
         </td>
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 cuBfrd StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 erXGgp StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
         >
           <div
             class="StyledBox-sc-13pk1d4-0 fDLUqh"
@@ -62596,8 +62621,8 @@ exports[`DataTable sort null data 2`] = `
   border-bottom: solid 1px rgba(0, 0, 0, 0.12);
   padding-left: 12px;
   padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 12px;
   padding-bottom: 11px;
 }
@@ -62709,7 +62734,7 @@ exports[`DataTable sort null data 2`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 jmJzHr"
       >
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 cuBfrd StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 erXGgp StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
           scope="row"
         >
           <div
@@ -62723,7 +62748,7 @@ exports[`DataTable sort null data 2`] = `
           </div>
         </th>
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 cuBfrd StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 erXGgp StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
         >
           <div
             class="StyledBox-sc-13pk1d4-0 fDLUqh"
@@ -62736,14 +62761,14 @@ exports[`DataTable sort null data 2`] = `
           </div>
         </td>
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 cuBfrd StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 erXGgp StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
         >
           <div
             class="StyledBox-sc-13pk1d4-0 fDLUqh"
           />
         </td>
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 cuBfrd StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 erXGgp StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
         >
           <div
             class="StyledBox-sc-13pk1d4-0 fDLUqh"
@@ -62754,7 +62779,7 @@ exports[`DataTable sort null data 2`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 jmJzHr"
       >
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 cuBfrd StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 erXGgp StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
           scope="row"
         >
           <div
@@ -62768,7 +62793,7 @@ exports[`DataTable sort null data 2`] = `
           </div>
         </th>
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 cuBfrd StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 erXGgp StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
         >
           <div
             class="StyledBox-sc-13pk1d4-0 fDLUqh"
@@ -62781,7 +62806,7 @@ exports[`DataTable sort null data 2`] = `
           </div>
         </td>
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 cuBfrd StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 erXGgp StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
         >
           <div
             class="StyledBox-sc-13pk1d4-0 fDLUqh"
@@ -62794,7 +62819,7 @@ exports[`DataTable sort null data 2`] = `
           </div>
         </td>
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 cuBfrd StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 erXGgp StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
         >
           <div
             class="StyledBox-sc-13pk1d4-0 fDLUqh"
@@ -63057,7 +63082,7 @@ exports[`DataTable sort null data 3`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 jmJzHr"
       >
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 cuBfrd StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 erXGgp StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
           scope="row"
         >
           <div
@@ -63071,7 +63096,7 @@ exports[`DataTable sort null data 3`] = `
           </div>
         </th>
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 cuBfrd StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 erXGgp StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
         >
           <div
             class="StyledBox-sc-13pk1d4-0 fDLUqh"
@@ -63084,14 +63109,14 @@ exports[`DataTable sort null data 3`] = `
           </div>
         </td>
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 cuBfrd StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 erXGgp StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
         >
           <div
             class="StyledBox-sc-13pk1d4-0 fDLUqh"
           />
         </td>
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 cuBfrd StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 erXGgp StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
         >
           <div
             class="StyledBox-sc-13pk1d4-0 fDLUqh"
@@ -63102,7 +63127,7 @@ exports[`DataTable sort null data 3`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 jmJzHr"
       >
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 cuBfrd StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 erXGgp StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
           scope="row"
         >
           <div
@@ -63110,7 +63135,7 @@ exports[`DataTable sort null data 3`] = `
           />
         </th>
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 cuBfrd StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 erXGgp StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
         >
           <div
             class="StyledBox-sc-13pk1d4-0 fDLUqh"
@@ -63123,14 +63148,14 @@ exports[`DataTable sort null data 3`] = `
           </div>
         </td>
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 cuBfrd StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 erXGgp StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
         >
           <div
             class="StyledBox-sc-13pk1d4-0 fDLUqh"
           />
         </td>
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 cuBfrd StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 erXGgp StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
         >
           <div
             class="StyledBox-sc-13pk1d4-0 fDLUqh"
@@ -63167,8 +63192,8 @@ exports[`DataTable sort null data 3`] = `
   border-bottom: solid 1px rgba(0, 0, 0, 0.12);
   padding-left: 12px;
   padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 12px;
   padding-bottom: 11px;
 }
@@ -63286,7 +63311,7 @@ exports[`DataTable sort null data 3`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 jmJzHr"
       >
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 cuBfrd StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 erXGgp StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
           scope="row"
         >
           <div
@@ -63300,7 +63325,7 @@ exports[`DataTable sort null data 3`] = `
           </div>
         </th>
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 cuBfrd StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 erXGgp StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
         >
           <div
             class="StyledBox-sc-13pk1d4-0 fDLUqh"
@@ -63313,7 +63338,7 @@ exports[`DataTable sort null data 3`] = `
           </div>
         </td>
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 cuBfrd StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 erXGgp StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
         >
           <div
             class="StyledBox-sc-13pk1d4-0 fDLUqh"
@@ -63326,7 +63351,7 @@ exports[`DataTable sort null data 3`] = `
           </div>
         </td>
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 cuBfrd StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 erXGgp StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
         >
           <div
             class="StyledBox-sc-13pk1d4-0 fDLUqh"
@@ -63589,7 +63614,7 @@ exports[`DataTable sort null data 4`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 jmJzHr"
       >
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 cuBfrd StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 erXGgp StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
           scope="row"
         >
           <div
@@ -63603,7 +63628,7 @@ exports[`DataTable sort null data 4`] = `
           </div>
         </th>
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 cuBfrd StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 erXGgp StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
         >
           <div
             class="StyledBox-sc-13pk1d4-0 fDLUqh"
@@ -63616,14 +63641,14 @@ exports[`DataTable sort null data 4`] = `
           </div>
         </td>
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 cuBfrd StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 erXGgp StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
         >
           <div
             class="StyledBox-sc-13pk1d4-0 fDLUqh"
           />
         </td>
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 cuBfrd StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 erXGgp StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
         >
           <div
             class="StyledBox-sc-13pk1d4-0 fDLUqh"
@@ -63634,7 +63659,7 @@ exports[`DataTable sort null data 4`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 jmJzHr"
       >
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 cuBfrd StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 erXGgp StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
           scope="row"
         >
           <div
@@ -63648,7 +63673,7 @@ exports[`DataTable sort null data 4`] = `
           </div>
         </th>
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 cuBfrd StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 erXGgp StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
         >
           <div
             class="StyledBox-sc-13pk1d4-0 fDLUqh"
@@ -63661,7 +63686,7 @@ exports[`DataTable sort null data 4`] = `
           </div>
         </td>
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 cuBfrd StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 erXGgp StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
         >
           <div
             class="StyledBox-sc-13pk1d4-0 fDLUqh"
@@ -63674,7 +63699,7 @@ exports[`DataTable sort null data 4`] = `
           </div>
         </td>
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 cuBfrd StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 erXGgp StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
         >
           <div
             class="StyledBox-sc-13pk1d4-0 fDLUqh"
@@ -63685,7 +63710,7 @@ exports[`DataTable sort null data 4`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 jmJzHr"
       >
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 cuBfrd StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 erXGgp StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
           scope="row"
         >
           <div
@@ -63693,7 +63718,7 @@ exports[`DataTable sort null data 4`] = `
           />
         </th>
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 cuBfrd StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 erXGgp StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
         >
           <div
             class="StyledBox-sc-13pk1d4-0 fDLUqh"
@@ -63706,7 +63731,7 @@ exports[`DataTable sort null data 4`] = `
           </div>
         </td>
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 cuBfrd StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 erXGgp StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
         >
           <div
             class="StyledBox-sc-13pk1d4-0 fDLUqh"
@@ -63719,7 +63744,7 @@ exports[`DataTable sort null data 4`] = `
           </div>
         </td>
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 cuBfrd StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 erXGgp StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
         >
           <div
             class="StyledBox-sc-13pk1d4-0 fDLUqh"
@@ -63756,8 +63781,8 @@ exports[`DataTable sort null data 4`] = `
   border-bottom: solid 1px rgba(0, 0, 0, 0.12);
   padding-left: 12px;
   padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 12px;
   padding-bottom: 11px;
 }
@@ -64057,8 +64082,8 @@ exports[`DataTable sortable 1`] = `
   border-bottom: solid 1px rgba(0, 0, 0, 0.12);
   padding-left: 12px;
   padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 12px;
   padding-bottom: 11px;
 }
@@ -64510,7 +64535,7 @@ exports[`DataTable sortable 2`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 jmJzHr"
       >
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 cuBfrd StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 erXGgp StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
           scope="row"
         >
           <div
@@ -64524,7 +64549,7 @@ exports[`DataTable sortable 2`] = `
           </div>
         </th>
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 cuBfrd StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 erXGgp StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
         >
           <div
             class="StyledBox-sc-13pk1d4-0 fDLUqh"
@@ -64541,7 +64566,7 @@ exports[`DataTable sortable 2`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 jmJzHr"
       >
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 cuBfrd StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 erXGgp StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
           scope="row"
         >
           <div
@@ -64555,7 +64580,7 @@ exports[`DataTable sortable 2`] = `
           </div>
         </th>
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 cuBfrd StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 erXGgp StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
         >
           <div
             class="StyledBox-sc-13pk1d4-0 fDLUqh"
@@ -64572,7 +64597,7 @@ exports[`DataTable sortable 2`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 jmJzHr"
       >
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 cuBfrd StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 erXGgp StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
           scope="row"
         >
           <div
@@ -64586,7 +64611,7 @@ exports[`DataTable sortable 2`] = `
           </div>
         </th>
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 cuBfrd StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 erXGgp StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
         >
           <div
             class="StyledBox-sc-13pk1d4-0 fDLUqh"
@@ -64681,8 +64706,8 @@ exports[`DataTable themeColumnSizes 1`] = `
   padding: 0;
   font-weight: inherit;
   text-align: inherit;
-  width: 192px;
-  max-width: 192px;
+  width: 256px;
+  max-width: 256px;
   overflow: hidden;
   text-align: start;
   border-bottom: solid 1px rgba(0, 0, 0, 0.36);
@@ -64713,8 +64738,8 @@ exports[`DataTable themeColumnSizes 1`] = `
   border-bottom: solid 1px rgba(0, 0, 0, 0.12);
   padding-left: 12px;
   padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 12px;
   padding-bottom: 11px;
 }
@@ -64724,15 +64749,15 @@ exports[`DataTable themeColumnSizes 1`] = `
   padding: 0;
   font-weight: inherit;
   text-align: inherit;
-  width: 192px;
-  max-width: 192px;
+  width: 256px;
+  max-width: 256px;
   overflow: hidden;
   text-align: start;
   border-bottom: solid 1px rgba(0, 0, 0, 0.12);
   padding-left: 12px;
   padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 12px;
   padding-bottom: 11px;
 }
@@ -65044,8 +65069,8 @@ exports[`DataTable units 1`] = `
   border-bottom: solid 1px rgba(0, 0, 0, 0.12);
   padding-left: 12px;
   padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 12px;
   padding-bottom: 11px;
 }
@@ -65059,6 +65084,8 @@ exports[`DataTable units 1`] = `
   border-top: solid 1px rgba(0, 0, 0, 0.36);
   padding-left: 12px;
   padding-right: 12px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 6px;
   padding-bottom: 6px;
   font-weight: undefined;
@@ -65425,8 +65452,8 @@ exports[`DataTable verticalAlign 1`] = `
   border-bottom: solid 1px rgba(0, 0, 0, 0.12);
   padding-left: 12px;
   padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 12px;
   padding-bottom: 11px;
 }
@@ -65436,8 +65463,8 @@ exports[`DataTable verticalAlign 1`] = `
   padding: 0;
   font-weight: inherit;
   text-align: inherit;
-  width: 96px;
-  max-width: 96px;
+  width: 192px;
+  max-width: 192px;
   overflow: hidden;
   vertical-align: bottom;
   text-align: start;
@@ -65485,16 +65512,16 @@ exports[`DataTable verticalAlign 1`] = `
   padding: 0;
   font-weight: inherit;
   text-align: inherit;
-  width: 96px;
-  max-width: 96px;
+  width: 192px;
+  max-width: 192px;
   overflow: hidden;
   vertical-align: top;
   text-align: start;
   border-bottom: solid 1px rgba(0, 0, 0, 0.12);
   padding-left: 12px;
   padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 12px;
   padding-bottom: 11px;
 }
@@ -65504,14 +65531,16 @@ exports[`DataTable verticalAlign 1`] = `
   padding: 0;
   font-weight: inherit;
   text-align: inherit;
-  width: 96px;
-  max-width: 96px;
+  width: 192px;
+  max-width: 192px;
   overflow: hidden;
   vertical-align: top;
   text-align: start;
   border-top: solid 1px rgba(0, 0, 0, 0.36);
   padding-left: 12px;
   padding-right: 12px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 6px;
   padding-bottom: 6px;
   font-weight: undefined;
@@ -65527,6 +65556,8 @@ exports[`DataTable verticalAlign 1`] = `
   border-top: solid 1px rgba(0, 0, 0, 0.36);
   padding-left: 12px;
   padding-right: 12px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 6px;
   padding-bottom: 6px;
   font-weight: undefined;

@@ -125,8 +125,8 @@ exports[`DataFilters clear 1`] = `
 .c7 {
   margin-left: 0px;
   margin-right: 0px;
-  margin-top: 6px;
-  margin-bottom: 6px;
+  margin-top: 12px;
+  margin-bottom: 12px;
   margin-top: 6px;
   margin-bottom: 0px;
   font-size: 0.875rem;
@@ -848,7 +848,7 @@ exports[`DataFilters drop badge 1`] = `
   flex-direction: column;
   flex: 0 0 auto;
   justify-content: center;
-  border-radius: 24px;
+  border-radius: 12px;
 }
 
 .c10 {
@@ -1069,7 +1069,7 @@ exports[`DataFilters drop badge 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c8 {
-    border-radius: 12px;
+    border-radius: 8px;
   }
 }
 
@@ -1510,8 +1510,8 @@ exports[`DataFilters layer 2`] = `
 .c16 {
   margin-left: 0px;
   margin-right: 0px;
-  margin-top: 6px;
-  margin-bottom: 6px;
+  margin-top: 12px;
+  margin-bottom: 12px;
   margin-top: 6px;
   margin-bottom: 0px;
   font-size: 0.875rem;
@@ -2307,8 +2307,8 @@ exports[`DataFilters properties array 1`] = `
 .c7 {
   margin-left: 0px;
   margin-right: 0px;
-  margin-top: 6px;
-  margin-bottom: 6px;
+  margin-top: 12px;
+  margin-bottom: 12px;
   margin-top: 6px;
   margin-bottom: 0px;
   font-size: 0.875rem;
@@ -2754,8 +2754,8 @@ exports[`DataFilters properties object 1`] = `
 .c7 {
   margin-left: 0px;
   margin-right: 0px;
-  margin-top: 6px;
-  margin-bottom: 6px;
+  margin-top: 12px;
+  margin-bottom: 12px;
   margin-top: 6px;
   margin-bottom: 0px;
   font-size: 0.875rem;
@@ -3201,8 +3201,8 @@ exports[`DataFilters renders 1`] = `
 .c7 {
   margin-left: 0px;
   margin-right: 0px;
-  margin-top: 6px;
-  margin-bottom: 6px;
+  margin-top: 12px;
+  margin-bottom: 12px;
   margin-top: 6px;
   margin-bottom: 0px;
   font-size: 0.875rem;
@@ -3663,8 +3663,8 @@ exports[`DataFilters should display all filter options regardless of result set 
 .c7 {
   margin-left: 0px;
   margin-right: 0px;
-  margin-top: 6px;
-  margin-bottom: 6px;
+  margin-top: 12px;
+  margin-bottom: 12px;
   margin-top: 6px;
   margin-bottom: 0px;
   font-size: 0.875rem;
@@ -4540,8 +4540,8 @@ exports[`DataFilters sub objects 1`] = `
   min-width: 0;
   min-height: 0;
   flex-direction: column;
-  height: 12px;
-  width: 12px;
+  height: 24px;
+  width: 24px;
   border-radius: 100%;
 }
 
@@ -4595,8 +4595,8 @@ exports[`DataFilters sub objects 1`] = `
 .c7 {
   margin-left: 0px;
   margin-right: 0px;
-  margin-top: 6px;
-  margin-bottom: 6px;
+  margin-top: 12px;
+  margin-bottom: 12px;
   margin-top: 6px;
   margin-bottom: 0px;
   font-size: 0.875rem;
@@ -4886,8 +4886,8 @@ exports[`DataFilters sub objects 1`] = `
   border-bottom: solid 1px rgba(0, 0, 0, 0.12);
   padding-left: 12px;
   padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 12px;
   padding-bottom: 11px;
 }
@@ -5051,13 +5051,13 @@ exports[`DataFilters sub objects 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c25 {
-    border-radius: 6px;
+    border-radius: 8px;
   }
 }
 
 @media only screen and (max-width: 768px) {
   .c30 {
-    border-radius: 6px;
+    border-radius: 8px;
   }
 }
 
@@ -5206,7 +5206,7 @@ exports[`DataFilters sub objects 1`] = `
                       />
                       <div
                         class="c28"
-                        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
+                        style="cursor: col-resize; outline: none; min-width: 24px; min-height: 24px; z-index: 1;"
                         tabindex="-1"
                       >
                         <div
@@ -5237,7 +5237,7 @@ exports[`DataFilters sub objects 1`] = `
                       />
                       <div
                         class="c28"
-                        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
+                        style="cursor: col-resize; outline: none; min-width: 24px; min-height: 24px; z-index: 1;"
                         tabindex="-1"
                       >
                         <div
@@ -5428,7 +5428,7 @@ exports[`DataFilters sub objects with rangeSelector 1`] = `
   flex-direction: column;
   flex: 0 0 auto;
   justify-content: center;
-  border-radius: 24px;
+  border-radius: 12px;
 }
 
 .c10 {
@@ -5693,7 +5693,7 @@ exports[`DataFilters sub objects with rangeSelector 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c8 {
-    border-radius: 12px;
+    border-radius: 8px;
   }
 }
 

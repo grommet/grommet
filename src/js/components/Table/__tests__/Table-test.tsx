@@ -138,7 +138,7 @@ test('TableCell scope renders', () => {
 
 test('TableCell size renders', () => {
   const { container } = render(
-    <Grommet theme={hpe}>
+    <Grommet>
       <Table>
         <TableBody>
           <TableRow>

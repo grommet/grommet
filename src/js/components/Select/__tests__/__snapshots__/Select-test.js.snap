@@ -59,8 +59,8 @@ exports[`Select 0 value 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  margin-left: 12px;
-  margin-right: 12px;
+  margin-left: 16px;
+  margin-right: 16px;
   margin-left: 12px;
   margin-right: 12px;
   min-width: 0;
@@ -237,8 +237,8 @@ exports[`Select 0 value 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c8 {
-    margin-left: 6px;
-    margin-right: 6px;
+    margin-left: 8px;
+    margin-right: 8px;
   }
 }
 
@@ -342,19 +342,17 @@ exports[`Select Clear option renders - bottom 1`] = `
   flex: 0 0 auto;
 }
 
-.c11 {
+.c9 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  align-items: center;
+  background-color: rgba(0, 0, 0, 0);
+  color: #555555;
   min-width: 0;
   min-height: 0;
   flex-direction: column;
-  padding-left: 12px;
-  padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
-  border-radius: 6px;
+  flex: 1 0 auto;
+  padding: 6px;
 }
 
 .c1 {
@@ -389,11 +387,10 @@ exports[`Select Clear option renders - bottom 1`] = `
   flex-direction: column;
 }
 
-.c12 {
+.c11 {
   font-size: 1.125rem;
   line-height: 1.5rem;
-  color: #2e2e2e;
-  font-weight: 500;
+  font-weight: undefined;
 }
 
 .c7 {
@@ -578,7 +575,7 @@ exports[`Select Clear option renders - bottom 1`] = `
   border: 0;
 }
 
-.c9 {
+.c10 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -588,35 +585,70 @@ exports[`Select Clear option renders - bottom 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  outline: none;
   border: none;
-  padding: 0;
-  text-align: inherit;
-  color: inherit;
+  border-radius: 6px;
+  padding: 4px 22px;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  padding: 5px 12px;
+  color: #2e2e2e;
+  border-radius: 6px;
+  font-weight: 500;
+  text-align: center;
+  transition-property: color,background-color,border-color,box-shadow;
+  transition-duration: 0.1s;
+  transition-timing-function: ease-in-out;
   width: 100%;
 }
 
-.c9:focus:not(:focus-visible) {
+.c10:hover {
+  background-color: rgba(0, 0, 0, 0.04);
+  color: #2e2e2e;
+}
+
+.c10:focus {
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 0px 2px #ffffff;
+}
+
+.c10:focus >circle,
+.c10:focus >ellipse,
+.c10:focus >line,
+.c10:focus >path,
+.c10:focus >polygon,
+.c10:focus >polyline,
+.c10:focus >rect {
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 0px 2px #ffffff;
+}
+
+.c10:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c10:focus:not(:focus-visible) {
   outline-offset: 0px;
   outline: none;
   outline: none;
   box-shadow: none;
 }
 
-.c9:focus:not(:focus-visible) >circle,
-.c9:focus:not(:focus-visible) >ellipse,
-.c9:focus:not(:focus-visible) >line,
-.c9:focus:not(:focus-visible) >path,
-.c9:focus:not(:focus-visible) >polygon,
-.c9:focus:not(:focus-visible) >polyline,
-.c9:focus:not(:focus-visible) >rect {
+.c10:focus:not(:focus-visible) >circle,
+.c10:focus:not(:focus-visible) >ellipse,
+.c10:focus:not(:focus-visible) >line,
+.c10:focus:not(:focus-visible) >path,
+.c10:focus:not(:focus-visible) >polygon,
+.c10:focus:not(:focus-visible) >polyline,
+.c10:focus:not(:focus-visible) >rect {
   outline-offset: 0px;
   outline: none;
   outline: none;
   box-shadow: none;
 }
 
-.c9:focus:not(:focus-visible) ::-moz-focus-inner {
+.c10:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 
@@ -626,19 +658,6 @@ exports[`Select Clear option renders - bottom 1`] = `
 
 .c3 div:has(input[type="search"]) {
   padding-bottom: 0;
-}
-
-.c3 button[aria-label*="Or, press"] {
-  padding-block: 6px;
-  padding-inline: 6px;
-}
-
-.c3 button[aria-label*="Or, press"]:focus {
-  background: transparent;
-}
-
-.c3 button[aria-label*="Or, press"]:focus >div {
-  background: rgba(0, 0, 0, 0.04);
 }
 
 .c4 {
@@ -662,11 +681,6 @@ exports[`Select Clear option renders - bottom 1`] = `
   width: 100%;
 }
 
-.c10:focus {
-  background-color: rgba(0, 0, 0, 0.04);
-  color: #555555;
-}
-
 @media only screen and (max-width: 768px) {
 
 }
@@ -680,22 +694,8 @@ exports[`Select Clear option renders - bottom 1`] = `
 }
 
 @media only screen and (max-width: 768px) {
-  .c11 {
-    padding-left: 12px;
-    padding-right: 12px;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .c11 {
-    padding-top: 6px;
-    padding-bottom: 6px;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .c11 {
-    border-radius: 3px;
+  .c9 {
+    padding: 6px;
   }
 }
 
@@ -754,39 +754,39 @@ exports[`Select Clear option renders - bottom 1`] = `
         class="c8"
       />
     </div>
-    <button
-      aria-label="Clear selection. Or, press shift tab to move to select options"
-      class="c9 c10"
-      type="button"
+    <div
+      class="c9"
     >
-      <div
-        class="c11"
+      <button
+        aria-label="Clear selection. Or, press shift tab to move to select options"
+        class="c10"
+        type="button"
       >
         <span
-          class="c12"
+          class="c11"
         >
           Clear selection
         </span>
-      </div>
-    </button>
+      </button>
+    </div>
   </div>
 </div>
 `;
 
 exports[`Select Clear option renders - bottom 2`] = `
 "@media only screen and (max-width: 768px) {
-  .peYnb {
-    margin-left: 6px;
-    margin-right: 6px;
+  .fByYbX {
+    margin-left: 8px;
+    margin-right: 8px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .peYnb {
+  .fByYbX {
     margin-left: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .peYnb {
+  .fByYbX {
     margin-right: 12px;
   }
 }"
@@ -945,19 +945,6 @@ exports[`Select Clear option renders correct label when wrapped in FormField 1`]
   padding-bottom: 0;
 }
 
-.c3 button[aria-label*="Or, press"] {
-  padding-block: 6px;
-  padding-inline: 6px;
-}
-
-.c3 button[aria-label*="Or, press"]:focus {
-  background: transparent;
-}
-
-.c3 button[aria-label*="Or, press"]:focus >div {
-  background: rgba(0, 0, 0, 0.04);
-}
-
 .c4 {
   position: relative;
   scroll-behavior: smooth;
@@ -1064,18 +1051,18 @@ exports[`Select Clear option renders correct label when wrapped in FormField 1`]
 
 exports[`Select Clear option renders correct label when wrapped in FormField 2`] = `
 "@media only screen and (max-width: 768px) {
-  .peYnb {
-    margin-left: 6px;
-    margin-right: 6px;
+  .fByYbX {
+    margin-left: 8px;
+    margin-right: 8px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .peYnb {
+  .fByYbX {
     margin-left: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .peYnb {
+  .fByYbX {
     margin-right: 12px;
   }
 }"
@@ -1234,19 +1221,6 @@ exports[`Select Clear option renders custom label 1`] = `
   padding-bottom: 0;
 }
 
-.c3 button[aria-label*="Or, press"] {
-  padding-block: 6px;
-  padding-inline: 6px;
-}
-
-.c3 button[aria-label*="Or, press"]:focus {
-  background: transparent;
-}
-
-.c3 button[aria-label*="Or, press"]:focus >div {
-  background: rgba(0, 0, 0, 0.04);
-}
-
 .c4 {
   position: relative;
   scroll-behavior: smooth;
@@ -1341,18 +1315,18 @@ exports[`Select Clear option renders custom label 1`] = `
 
 exports[`Select Clear option renders custom label 2`] = `
 "@media only screen and (max-width: 768px) {
-  .peYnb {
-    margin-left: 6px;
-    margin-right: 6px;
+  .fByYbX {
+    margin-left: 8px;
+    margin-right: 8px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .peYnb {
+  .fByYbX {
     margin-left: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .peYnb {
+  .fByYbX {
     margin-right: 12px;
   }
 }"
@@ -1379,7 +1353,7 @@ exports[`Select Clear option renders- top 1`] = `
   flex-direction: column;
 }
 
-.c12 {
+.c11 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -1390,19 +1364,17 @@ exports[`Select Clear option renders- top 1`] = `
   flex: 0 0 auto;
 }
 
-.c6 {
+.c4 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  align-items: flex-start;
+  background-color: rgba(0, 0, 0, 0);
+  color: #555555;
   min-width: 0;
   min-height: 0;
   flex-direction: column;
-  padding-left: 12px;
-  padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
-  border-radius: 6px;
+  flex: 1 0 auto;
+  padding: 6px;
 }
 
 .c1 {
@@ -1437,14 +1409,13 @@ exports[`Select Clear option renders- top 1`] = `
   flex-direction: column;
 }
 
-.c7 {
+.c6 {
   font-size: 1.125rem;
   line-height: 1.5rem;
-  color: #2e2e2e;
-  font-weight: 500;
+  font-weight: undefined;
 }
 
-.c11 {
+.c10 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -1473,59 +1444,59 @@ exports[`Select Clear option renders- top 1`] = `
   transition-timing-function: ease-in-out;
 }
 
-.c11:hover {
+.c10:hover {
   background-color: rgba(0, 0, 0, 0.04);
   color: #555555;
   border-color: rgba(0, 0, 0, 0);
 }
 
-.c11:focus {
+.c10:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
   box-shadow: 0 0 0px 2px #ffffff;
 }
 
-.c11:focus >circle,
-.c11:focus >ellipse,
-.c11:focus >line,
-.c11:focus >path,
-.c11:focus >polygon,
-.c11:focus >polyline,
-.c11:focus >rect {
+.c10:focus >circle,
+.c10:focus >ellipse,
+.c10:focus >line,
+.c10:focus >path,
+.c10:focus >polygon,
+.c10:focus >polyline,
+.c10:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
   box-shadow: 0 0 0px 2px #ffffff;
 }
 
-.c11:focus ::-moz-focus-inner {
+.c10:focus ::-moz-focus-inner {
   border: 0;
 }
 
-.c11:focus:not(:focus-visible) {
+.c10:focus:not(:focus-visible) {
   outline-offset: 0px;
   outline: none;
   outline: none;
   box-shadow: none;
 }
 
-.c11:focus:not(:focus-visible) >circle,
-.c11:focus:not(:focus-visible) >ellipse,
-.c11:focus:not(:focus-visible) >line,
-.c11:focus:not(:focus-visible) >path,
-.c11:focus:not(:focus-visible) >polygon,
-.c11:focus:not(:focus-visible) >polyline,
-.c11:focus:not(:focus-visible) >rect {
+.c10:focus:not(:focus-visible) >circle,
+.c10:focus:not(:focus-visible) >ellipse,
+.c10:focus:not(:focus-visible) >line,
+.c10:focus:not(:focus-visible) >path,
+.c10:focus:not(:focus-visible) >polygon,
+.c10:focus:not(:focus-visible) >polyline,
+.c10:focus:not(:focus-visible) >rect {
   outline-offset: 0px;
   outline: none;
   outline: none;
   box-shadow: none;
 }
 
-.c11:focus:not(:focus-visible) ::-moz-focus-inner {
+.c10:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 
-.c4 {
+.c5 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -1535,39 +1506,74 @@ exports[`Select Clear option renders- top 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  outline: none;
   border: none;
-  padding: 0;
-  text-align: inherit;
-  color: inherit;
+  border-radius: 6px;
+  padding: 4px 22px;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  padding: 5px 12px;
+  color: #2e2e2e;
+  border-radius: 6px;
+  font-weight: 500;
+  text-align: start;
+  transition-property: color,background-color,border-color,box-shadow;
+  transition-duration: 0.1s;
+  transition-timing-function: ease-in-out;
   width: 100%;
 }
 
-.c4:focus:not(:focus-visible) {
-  outline-offset: 0px;
-  outline: none;
-  outline: none;
-  box-shadow: none;
+.c5:hover {
+  background-color: rgba(0, 0, 0, 0.04);
+  color: #2e2e2e;
 }
 
-.c4:focus:not(:focus-visible) >circle,
-.c4:focus:not(:focus-visible) >ellipse,
-.c4:focus:not(:focus-visible) >line,
-.c4:focus:not(:focus-visible) >path,
-.c4:focus:not(:focus-visible) >polygon,
-.c4:focus:not(:focus-visible) >polyline,
-.c4:focus:not(:focus-visible) >rect {
-  outline-offset: 0px;
-  outline: none;
-  outline: none;
-  box-shadow: none;
+.c5:focus {
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
-.c4:focus:not(:focus-visible) ::-moz-focus-inner {
+.c5:focus >circle,
+.c5:focus >ellipse,
+.c5:focus >line,
+.c5:focus >path,
+.c5:focus >polygon,
+.c5:focus >polyline,
+.c5:focus >rect {
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 0px 2px #ffffff;
+}
+
+.c5:focus ::-moz-focus-inner {
   border: 0;
 }
 
-.c9 {
+.c5:focus:not(:focus-visible) {
+  outline-offset: 0px;
+  outline: none;
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible) >circle,
+.c5:focus:not(:focus-visible) >ellipse,
+.c5:focus:not(:focus-visible) >line,
+.c5:focus:not(:focus-visible) >path,
+.c5:focus:not(:focus-visible) >polygon,
+.c5:focus:not(:focus-visible) >polyline,
+.c5:focus:not(:focus-visible) >rect {
+  outline-offset: 0px;
+  outline: none;
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
+}
+
+.c8 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -1601,7 +1607,7 @@ exports[`Select Clear option renders- top 1`] = `
   transition-timing-function: ease-in-out;
 }
 
-.c9::before {
+.c8::before {
   display: block;
   position: absolute;
   content: '';
@@ -1614,7 +1620,7 @@ exports[`Select Clear option renders- top 1`] = `
   background: #006750;
 }
 
-.c9:hover {
+.c8:hover {
   background-color: rgba(0, 0, 0, 0.04);
   color: #555555;
   border-color: rgba(0, 0, 0, 0);
@@ -1622,49 +1628,49 @@ exports[`Select Clear option renders- top 1`] = `
   color: #2e2e2e;
 }
 
-.c9:focus {
+.c8:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
   box-shadow: 0 0 0px 2px #ffffff;
 }
 
-.c9:focus >circle,
-.c9:focus >ellipse,
-.c9:focus >line,
-.c9:focus >path,
-.c9:focus >polygon,
-.c9:focus >polyline,
-.c9:focus >rect {
+.c8:focus >circle,
+.c8:focus >ellipse,
+.c8:focus >line,
+.c8:focus >path,
+.c8:focus >polygon,
+.c8:focus >polyline,
+.c8:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
   box-shadow: 0 0 0px 2px #ffffff;
 }
 
-.c9:focus ::-moz-focus-inner {
+.c8:focus ::-moz-focus-inner {
   border: 0;
 }
 
-.c9:focus:not(:focus-visible) {
+.c8:focus:not(:focus-visible) {
   outline-offset: 0px;
   outline: none;
   outline: none;
   box-shadow: none;
 }
 
-.c9:focus:not(:focus-visible) >circle,
-.c9:focus:not(:focus-visible) >ellipse,
-.c9:focus:not(:focus-visible) >line,
-.c9:focus:not(:focus-visible) >path,
-.c9:focus:not(:focus-visible) >polygon,
-.c9:focus:not(:focus-visible) >polyline,
-.c9:focus:not(:focus-visible) >rect {
+.c8:focus:not(:focus-visible) >circle,
+.c8:focus:not(:focus-visible) >ellipse,
+.c8:focus:not(:focus-visible) >line,
+.c8:focus:not(:focus-visible) >path,
+.c8:focus:not(:focus-visible) >polygon,
+.c8:focus:not(:focus-visible) >polyline,
+.c8:focus:not(:focus-visible) >rect {
   outline-offset: 0px;
   outline: none;
   outline: none;
   box-shadow: none;
 }
 
-.c9:focus:not(:focus-visible) ::-moz-focus-inner {
+.c8:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 
@@ -1676,20 +1682,7 @@ exports[`Select Clear option renders- top 1`] = `
   padding-bottom: 0;
 }
 
-.c3 button[aria-label*="Or, press"] {
-  padding-block: 6px;
-  padding-inline: 6px;
-}
-
-.c3 button[aria-label*="Or, press"]:focus {
-  background: transparent;
-}
-
-.c3 button[aria-label*="Or, press"]:focus >div {
-  background: rgba(0, 0, 0, 0.04);
-}
-
-.c8 {
+.c7 {
   position: relative;
   scroll-behavior: smooth;
   overflow: auto;
@@ -1701,20 +1694,15 @@ exports[`Select Clear option renders- top 1`] = `
   gap: 6px;
 }
 
-.c8 [role="option"] {
+.c7 [role="option"] {
   border-radius: 6px;
 }
 
-.c10 {
+.c9 {
   display: block;
   width: 100%;
 }
 
-.c5:focus {
-  background-color: rgba(0, 0, 0, 0.04);
-  color: #555555;
-}
-
 @media only screen and (max-width: 768px) {
 
 }
@@ -1728,22 +1716,8 @@ exports[`Select Clear option renders- top 1`] = `
 }
 
 @media only screen and (max-width: 768px) {
-  .c6 {
-    padding-left: 12px;
-    padding-right: 12px;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .c6 {
-    padding-top: 6px;
-    padding-bottom: 6px;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .c6 {
-    border-radius: 3px;
+  .c4 {
+    padding: 6px;
   }
 }
 
@@ -1771,23 +1745,23 @@ exports[`Select Clear option renders- top 1`] = `
     class="c2 c3"
     id="test-select__select-drop"
   >
-    <button
-      aria-label="Clear selection. Or, press down arrow to move to select options"
-      class="c4 c5"
-      type="button"
+    <div
+      class="c4"
     >
-      <div
-        class="c6"
+      <button
+        aria-label="Clear selection. Or, press down arrow to move to select options"
+        class="c5"
+        type="button"
       >
         <span
-          class="c7"
+          class="c6"
         >
           Clear selection
         </span>
-      </div>
-    </button>
+      </button>
+    </div>
     <div
-      class="c8"
+      class="c7"
       role="listbox"
       tabindex="-1"
     >
@@ -1795,7 +1769,7 @@ exports[`Select Clear option renders- top 1`] = `
         aria-posinset="1"
         aria-selected="true"
         aria-setsize="2"
-        class="c9 c10"
+        class="c8 c9"
         role="option"
         tabindex="0"
         type="button"
@@ -1806,7 +1780,7 @@ exports[`Select Clear option renders- top 1`] = `
         aria-posinset="2"
         aria-selected="false"
         aria-setsize="2"
-        class="c11 c10"
+        class="c10 c9"
         role="option"
         tabindex="-1"
         type="button"
@@ -1814,7 +1788,7 @@ exports[`Select Clear option renders- top 1`] = `
         two
       </button>
       <div
-        class="c12"
+        class="c11"
       />
     </div>
   </div>
@@ -1823,18 +1797,18 @@ exports[`Select Clear option renders- top 1`] = `
 
 exports[`Select Clear option renders- top 2`] = `
 "@media only screen and (max-width: 768px) {
-  .peYnb {
-    margin-left: 6px;
-    margin-right: 6px;
+  .fByYbX {
+    margin-left: 8px;
+    margin-right: 8px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .peYnb {
+  .fByYbX {
     margin-left: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .peYnb {
+  .fByYbX {
     margin-right: 12px;
   }
 }"
@@ -1898,8 +1872,8 @@ exports[`Select Search timeout 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  margin-left: 12px;
-  margin-right: 12px;
+  margin-left: 16px;
+  margin-right: 16px;
   margin-left: 12px;
   margin-right: 12px;
   min-width: 0;
@@ -2076,8 +2050,8 @@ exports[`Select Search timeout 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c8 {
-    margin-left: 6px;
-    margin-right: 6px;
+    margin-left: 8px;
+    margin-right: 8px;
   }
 }
 
@@ -2338,8 +2312,8 @@ exports[`Select Select component handles JSX options correctly 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  margin-left: 12px;
-  margin-right: 12px;
+  margin-left: 16px;
+  margin-right: 16px;
   margin-left: 12px;
   margin-right: 12px;
   min-width: 0;
@@ -2516,8 +2490,8 @@ exports[`Select Select component handles JSX options correctly 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c8 {
-    margin-left: 6px;
-    margin-right: 6px;
+    margin-left: 8px;
+    margin-right: 8px;
   }
 }
 
@@ -3029,8 +3003,8 @@ exports[`Select basic 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  margin-left: 12px;
-  margin-right: 12px;
+  margin-left: 16px;
+  margin-right: 16px;
   margin-left: 12px;
   margin-right: 12px;
   min-width: 0;
@@ -3207,8 +3181,8 @@ exports[`Select basic 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c8 {
-    margin-left: 6px;
-    margin-right: 6px;
+    margin-left: 8px;
+    margin-right: 8px;
   }
 }
 
@@ -3577,8 +3551,8 @@ exports[`Select complex options and children 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  margin-left: 12px;
-  margin-right: 12px;
+  margin-left: 16px;
+  margin-right: 16px;
   margin-left: 12px;
   margin-right: 12px;
   min-width: 0;
@@ -3755,8 +3729,8 @@ exports[`Select complex options and children 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c8 {
-    margin-left: 6px;
-    margin-right: 6px;
+    margin-left: 8px;
+    margin-right: 8px;
   }
 }
 
@@ -3862,7 +3836,7 @@ exports[`Select complex options and children 2`] = `
         </div>
       </div>
       <div
-        class="StyledBox-sc-13pk1d4-0 peYnb"
+        class="StyledBox-sc-13pk1d4-0 fByYbX"
         style="min-width: auto;"
       >
         .c0 {
@@ -4070,19 +4044,6 @@ exports[`Select complex options and children 3`] = `
   padding-bottom: 0;
 }
 
-.c3 button[aria-label*="Or, press"] {
-  padding-block: 6px;
-  padding-inline: 6px;
-}
-
-.c3 button[aria-label*="Or, press"]:focus {
-  background: transparent;
-}
-
-.c3 button[aria-label*="Or, press"]:focus >div {
-  background: rgba(0, 0, 0, 0.04);
-}
-
 .c4 {
   position: relative;
   scroll-behavior: smooth;
@@ -4181,18 +4142,18 @@ exports[`Select complex options and children 3`] = `
 
 exports[`Select complex options and children 4`] = `
 "@media only screen and (max-width: 768px) {
-  .peYnb {
-    margin-left: 6px;
-    margin-right: 6px;
+  .fByYbX {
+    margin-left: 8px;
+    margin-right: 8px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .peYnb {
+  .fByYbX {
     margin-left: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .peYnb {
+  .fByYbX {
     margin-right: 12px;
   }
 }"
@@ -4271,8 +4232,8 @@ exports[`Select dark 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  margin-left: 12px;
-  margin-right: 12px;
+  margin-left: 16px;
+  margin-right: 16px;
   margin-left: 12px;
   margin-right: 12px;
   min-width: 0;
@@ -4449,8 +4410,8 @@ exports[`Select dark 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c9 {
-    margin-left: 6px;
-    margin-right: 6px;
+    margin-left: 8px;
+    margin-right: 8px;
   }
 }
 
@@ -4581,8 +4542,8 @@ exports[`Select default value 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  margin-left: 12px;
-  margin-right: 12px;
+  margin-left: 16px;
+  margin-right: 16px;
   margin-left: 12px;
   margin-right: 12px;
   min-width: 0;
@@ -4759,8 +4720,8 @@ exports[`Select default value 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c8 {
-    margin-left: 6px;
-    margin-right: 6px;
+    margin-left: 8px;
+    margin-right: 8px;
   }
 }
 
@@ -4852,22 +4813,20 @@ exports[`Select default value clear 1`] = `
   flex-direction: column;
 }
 
-.c6 {
+.c4 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  align-items: flex-start;
+  background-color: rgba(0, 0, 0, 0);
+  color: #555555;
   min-width: 0;
   min-height: 0;
   flex-direction: column;
-  padding-left: 12px;
-  padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
-  border-radius: 6px;
+  flex: 1 0 auto;
+  padding: 6px;
 }
 
-.c12 {
+.c11 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -4910,14 +4869,13 @@ exports[`Select default value clear 1`] = `
   flex-direction: column;
 }
 
-.c7 {
+.c6 {
   font-size: 1.125rem;
   line-height: 1.5rem;
-  color: #2e2e2e;
-  font-weight: 500;
+  font-weight: undefined;
 }
 
-.c4 {
+.c5 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -4927,39 +4885,74 @@ exports[`Select default value clear 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  outline: none;
   border: none;
-  padding: 0;
-  text-align: inherit;
-  color: inherit;
+  border-radius: 6px;
+  padding: 4px 22px;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  padding: 5px 12px;
+  color: #2e2e2e;
+  border-radius: 6px;
+  font-weight: 500;
+  text-align: start;
+  transition-property: color,background-color,border-color,box-shadow;
+  transition-duration: 0.1s;
+  transition-timing-function: ease-in-out;
   width: 100%;
 }
 
-.c4:focus:not(:focus-visible) {
-  outline-offset: 0px;
-  outline: none;
-  outline: none;
-  box-shadow: none;
+.c5:hover {
+  background-color: rgba(0, 0, 0, 0.04);
+  color: #2e2e2e;
 }
 
-.c4:focus:not(:focus-visible) >circle,
-.c4:focus:not(:focus-visible) >ellipse,
-.c4:focus:not(:focus-visible) >line,
-.c4:focus:not(:focus-visible) >path,
-.c4:focus:not(:focus-visible) >polygon,
-.c4:focus:not(:focus-visible) >polyline,
-.c4:focus:not(:focus-visible) >rect {
-  outline-offset: 0px;
-  outline: none;
-  outline: none;
-  box-shadow: none;
+.c5:focus {
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
-.c4:focus:not(:focus-visible) ::-moz-focus-inner {
+.c5:focus >circle,
+.c5:focus >ellipse,
+.c5:focus >line,
+.c5:focus >path,
+.c5:focus >polygon,
+.c5:focus >polyline,
+.c5:focus >rect {
+  outline-offset: 2px;
+  outline: 2px solid #004233;
+  box-shadow: 0 0 0px 2px #ffffff;
+}
+
+.c5:focus ::-moz-focus-inner {
   border: 0;
 }
 
-.c9 {
+.c5:focus:not(:focus-visible) {
+  outline-offset: 0px;
+  outline: none;
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible) >circle,
+.c5:focus:not(:focus-visible) >ellipse,
+.c5:focus:not(:focus-visible) >line,
+.c5:focus:not(:focus-visible) >path,
+.c5:focus:not(:focus-visible) >polygon,
+.c5:focus:not(:focus-visible) >polyline,
+.c5:focus:not(:focus-visible) >rect {
+  outline-offset: 0px;
+  outline: none;
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
+}
+
+.c8 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -4988,59 +4981,59 @@ exports[`Select default value clear 1`] = `
   transition-timing-function: ease-in-out;
 }
 
-.c9:hover {
+.c8:hover {
   background-color: rgba(0, 0, 0, 0.04);
   color: #555555;
   border-color: rgba(0, 0, 0, 0);
 }
 
-.c9:focus {
+.c8:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
   box-shadow: 0 0 0px 2px #ffffff;
 }
 
-.c9:focus >circle,
-.c9:focus >ellipse,
-.c9:focus >line,
-.c9:focus >path,
-.c9:focus >polygon,
-.c9:focus >polyline,
-.c9:focus >rect {
+.c8:focus >circle,
+.c8:focus >ellipse,
+.c8:focus >line,
+.c8:focus >path,
+.c8:focus >polygon,
+.c8:focus >polyline,
+.c8:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
   box-shadow: 0 0 0px 2px #ffffff;
 }
 
-.c9:focus ::-moz-focus-inner {
+.c8:focus ::-moz-focus-inner {
   border: 0;
 }
 
-.c9:focus:not(:focus-visible) {
+.c8:focus:not(:focus-visible) {
   outline-offset: 0px;
   outline: none;
   outline: none;
   box-shadow: none;
 }
 
-.c9:focus:not(:focus-visible) >circle,
-.c9:focus:not(:focus-visible) >ellipse,
-.c9:focus:not(:focus-visible) >line,
-.c9:focus:not(:focus-visible) >path,
-.c9:focus:not(:focus-visible) >polygon,
-.c9:focus:not(:focus-visible) >polyline,
-.c9:focus:not(:focus-visible) >rect {
+.c8:focus:not(:focus-visible) >circle,
+.c8:focus:not(:focus-visible) >ellipse,
+.c8:focus:not(:focus-visible) >line,
+.c8:focus:not(:focus-visible) >path,
+.c8:focus:not(:focus-visible) >polygon,
+.c8:focus:not(:focus-visible) >polyline,
+.c8:focus:not(:focus-visible) >rect {
   outline-offset: 0px;
   outline: none;
   outline: none;
   box-shadow: none;
 }
 
-.c9:focus:not(:focus-visible) ::-moz-focus-inner {
+.c8:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 
-.c11 {
+.c10 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -5074,7 +5067,7 @@ exports[`Select default value clear 1`] = `
   transition-timing-function: ease-in-out;
 }
 
-.c11::before {
+.c10::before {
   display: block;
   position: absolute;
   content: '';
@@ -5087,7 +5080,7 @@ exports[`Select default value clear 1`] = `
   background: #006750;
 }
 
-.c11:hover {
+.c10:hover {
   background-color: rgba(0, 0, 0, 0.04);
   color: #555555;
   border-color: rgba(0, 0, 0, 0);
@@ -5095,49 +5088,49 @@ exports[`Select default value clear 1`] = `
   color: #2e2e2e;
 }
 
-.c11:focus {
+.c10:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
   box-shadow: 0 0 0px 2px #ffffff;
 }
 
-.c11:focus >circle,
-.c11:focus >ellipse,
-.c11:focus >line,
-.c11:focus >path,
-.c11:focus >polygon,
-.c11:focus >polyline,
-.c11:focus >rect {
+.c10:focus >circle,
+.c10:focus >ellipse,
+.c10:focus >line,
+.c10:focus >path,
+.c10:focus >polygon,
+.c10:focus >polyline,
+.c10:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
   box-shadow: 0 0 0px 2px #ffffff;
 }
 
-.c11:focus ::-moz-focus-inner {
+.c10:focus ::-moz-focus-inner {
   border: 0;
 }
 
-.c11:focus:not(:focus-visible) {
+.c10:focus:not(:focus-visible) {
   outline-offset: 0px;
   outline: none;
   outline: none;
   box-shadow: none;
 }
 
-.c11:focus:not(:focus-visible) >circle,
-.c11:focus:not(:focus-visible) >ellipse,
-.c11:focus:not(:focus-visible) >line,
-.c11:focus:not(:focus-visible) >path,
-.c11:focus:not(:focus-visible) >polygon,
-.c11:focus:not(:focus-visible) >polyline,
-.c11:focus:not(:focus-visible) >rect {
+.c10:focus:not(:focus-visible) >circle,
+.c10:focus:not(:focus-visible) >ellipse,
+.c10:focus:not(:focus-visible) >line,
+.c10:focus:not(:focus-visible) >path,
+.c10:focus:not(:focus-visible) >polygon,
+.c10:focus:not(:focus-visible) >polyline,
+.c10:focus:not(:focus-visible) >rect {
   outline-offset: 0px;
   outline: none;
   outline: none;
   box-shadow: none;
 }
 
-.c11:focus:not(:focus-visible) ::-moz-focus-inner {
+.c10:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 
@@ -5149,20 +5142,7 @@ exports[`Select default value clear 1`] = `
   padding-bottom: 0;
 }
 
-.c3 button[aria-label*="Or, press"] {
-  padding-block: 6px;
-  padding-inline: 6px;
-}
-
-.c3 button[aria-label*="Or, press"]:focus {
-  background: transparent;
-}
-
-.c3 button[aria-label*="Or, press"]:focus >div {
-  background: rgba(0, 0, 0, 0.04);
-}
-
-.c8 {
+.c7 {
   position: relative;
   scroll-behavior: smooth;
   overflow: auto;
@@ -5174,20 +5154,15 @@ exports[`Select default value clear 1`] = `
   gap: 6px;
 }
 
-.c8 [role="option"] {
+.c7 [role="option"] {
   border-radius: 6px;
 }
 
-.c10 {
+.c9 {
   display: block;
   width: 100%;
 }
 
-.c5:focus {
-  background-color: rgba(0, 0, 0, 0.04);
-  color: #555555;
-}
-
 @media only screen and (max-width: 768px) {
 
 }
@@ -5201,22 +5176,8 @@ exports[`Select default value clear 1`] = `
 }
 
 @media only screen and (max-width: 768px) {
-  .c6 {
-    padding-left: 12px;
-    padding-right: 12px;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .c6 {
-    padding-top: 6px;
-    padding-bottom: 6px;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .c6 {
-    border-radius: 3px;
+  .c4 {
+    padding: 6px;
   }
 }
 
@@ -5244,23 +5205,23 @@ exports[`Select default value clear 1`] = `
     class="c2 c3"
     id="test-select__select-drop"
   >
-    <button
-      aria-label="Clear selection. Or, press down arrow to move to select options"
-      class="c4 c5"
-      type="button"
+    <div
+      class="c4"
     >
-      <div
-        class="c6"
+      <button
+        aria-label="Clear selection. Or, press down arrow to move to select options"
+        class="c5"
+        type="button"
       >
         <span
-          class="c7"
+          class="c6"
         >
           Clear selection
         </span>
-      </div>
-    </button>
+      </button>
+    </div>
     <div
-      class="c8"
+      class="c7"
       role="listbox"
       tabindex="-1"
     >
@@ -5268,7 +5229,7 @@ exports[`Select default value clear 1`] = `
         aria-posinset="1"
         aria-selected="false"
         aria-setsize="2"
-        class="c9 c10"
+        class="c8 c9"
         role="option"
         tabindex="-1"
         type="button"
@@ -5279,7 +5240,7 @@ exports[`Select default value clear 1`] = `
         aria-posinset="2"
         aria-selected="true"
         aria-setsize="2"
-        class="c11 c10"
+        class="c10 c9"
         role="option"
         tabindex="0"
         type="button"
@@ -5287,7 +5248,7 @@ exports[`Select default value clear 1`] = `
         two
       </button>
       <div
-        class="c12"
+        class="c11"
       />
     </div>
   </div>
@@ -5296,18 +5257,18 @@ exports[`Select default value clear 1`] = `
 
 exports[`Select default value clear 2`] = `
 "@media only screen and (max-width: 768px) {
-  .peYnb {
-    margin-left: 6px;
-    margin-right: 6px;
+  .fByYbX {
+    margin-left: 8px;
+    margin-right: 8px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .peYnb {
+  .fByYbX {
     margin-left: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .peYnb {
+  .fByYbX {
     margin-right: 12px;
   }
 }"
@@ -5371,8 +5332,8 @@ exports[`Select default value object options 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  margin-left: 12px;
-  margin-right: 12px;
+  margin-left: 16px;
+  margin-right: 16px;
   margin-left: 12px;
   margin-right: 12px;
   min-width: 0;
@@ -5549,8 +5510,8 @@ exports[`Select default value object options 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c8 {
-    margin-left: 6px;
-    margin-right: 6px;
+    margin-left: 8px;
+    margin-right: 8px;
   }
 }
 
@@ -5679,8 +5640,8 @@ exports[`Select disabled 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  margin-left: 12px;
-  margin-right: 12px;
+  margin-left: 16px;
+  margin-right: 16px;
   margin-left: 12px;
   margin-right: 12px;
   min-width: 0;
@@ -5864,8 +5825,8 @@ exports[`Select disabled 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c8 {
-    margin-left: 6px;
-    margin-right: 6px;
+    margin-left: 8px;
+    margin-right: 8px;
   }
 }
 
@@ -5973,7 +5934,7 @@ exports[`Select disabled 2`] = `
         </div>
       </div>
       <div
-        class="StyledBox-sc-13pk1d4-0 peYnb"
+        class="StyledBox-sc-13pk1d4-0 fByYbX"
         style="min-width: auto;"
       >
         <svg
@@ -6052,8 +6013,8 @@ exports[`Select disabled key 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  margin-left: 12px;
-  margin-right: 12px;
+  margin-left: 16px;
+  margin-right: 16px;
   margin-left: 12px;
   margin-right: 12px;
   min-width: 0;
@@ -6230,8 +6191,8 @@ exports[`Select disabled key 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c8 {
-    margin-left: 6px;
-    margin-right: 6px;
+    margin-left: 8px;
+    margin-right: 8px;
   }
 }
 
@@ -6541,19 +6502,6 @@ exports[`Select disabled key 2`] = `
   padding-bottom: 0;
 }
 
-.c3 button[aria-label*="Or, press"] {
-  padding-block: 6px;
-  padding-inline: 6px;
-}
-
-.c3 button[aria-label*="Or, press"]:focus {
-  background: transparent;
-}
-
-.c3 button[aria-label*="Or, press"]:focus >div {
-  background: rgba(0, 0, 0, 0.04);
-}
-
 .c4 {
   position: relative;
   scroll-behavior: smooth;
@@ -6656,18 +6604,18 @@ exports[`Select disabled key 2`] = `
 
 exports[`Select disabled key 3`] = `
 "@media only screen and (max-width: 768px) {
-  .peYnb {
-    margin-left: 6px;
-    margin-right: 6px;
+  .fByYbX {
+    margin-left: 8px;
+    margin-right: 8px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .peYnb {
+  .fByYbX {
     margin-left: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .peYnb {
+  .fByYbX {
     margin-right: 12px;
   }
 }"
@@ -6912,19 +6860,6 @@ exports[`Select disabled option value 1`] = `
   padding-bottom: 0;
 }
 
-.c3 button[aria-label*="Or, press"] {
-  padding-block: 6px;
-  padding-inline: 6px;
-}
-
-.c3 button[aria-label*="Or, press"]:focus {
-  background: transparent;
-}
-
-.c3 button[aria-label*="Or, press"]:focus >div {
-  background: rgba(0, 0, 0, 0.04);
-}
-
 .c4 {
   position: relative;
   scroll-behavior: smooth;
@@ -7027,18 +6962,18 @@ exports[`Select disabled option value 1`] = `
 
 exports[`Select disabled option value 2`] = `
 "@media only screen and (max-width: 768px) {
-  .peYnb {
-    margin-left: 6px;
-    margin-right: 6px;
+  .fByYbX {
+    margin-left: 8px;
+    margin-right: 8px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .peYnb {
+  .fByYbX {
     margin-left: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .peYnb {
+  .fByYbX {
     margin-right: 12px;
   }
 }"
@@ -7226,8 +7161,8 @@ exports[`Select keyboard navigation timeout 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  margin-left: 12px;
-  margin-right: 12px;
+  margin-left: 16px;
+  margin-right: 16px;
   margin-left: 12px;
   margin-right: 12px;
   min-width: 0;
@@ -7404,8 +7339,8 @@ exports[`Select keyboard navigation timeout 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c8 {
-    margin-left: 6px;
-    margin-right: 6px;
+    margin-left: 8px;
+    margin-right: 8px;
   }
 }
 
@@ -7634,24 +7569,11 @@ exports[`Select large drop container height 1`] = `
 }
 
 .c3 {
-  max-height: 768px;
+  max-height: 512px;
 }
 
 .c3 div:has(input[type="search"]) {
   padding-bottom: 0;
-}
-
-.c3 button[aria-label*="Or, press"] {
-  padding-block: 6px;
-  padding-inline: 6px;
-}
-
-.c3 button[aria-label*="Or, press"]:focus {
-  background: transparent;
-}
-
-.c3 button[aria-label*="Or, press"]:focus >div {
-  background: rgba(0, 0, 0, 0.04);
 }
 
 .c4 {
@@ -7897,19 +7819,6 @@ exports[`Select medium drop container height 1`] = `
 
 .c3 div:has(input[type="search"]) {
   padding-bottom: 0;
-}
-
-.c3 button[aria-label*="Or, press"] {
-  padding-block: 6px;
-  padding-inline: 6px;
-}
-
-.c3 button[aria-label*="Or, press"]:focus {
-  background: transparent;
-}
-
-.c3 button[aria-label*="Or, press"]:focus >div {
-  background: rgba(0, 0, 0, 0.04);
 }
 
 .c4 {
@@ -8319,8 +8228,8 @@ exports[`Select null value 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  margin-left: 12px;
-  margin-right: 12px;
+  margin-left: 16px;
+  margin-right: 16px;
   margin-left: 12px;
   margin-right: 12px;
   min-width: 0;
@@ -8497,8 +8406,8 @@ exports[`Select null value 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c8 {
-    margin-left: 6px;
-    margin-right: 6px;
+    margin-left: 8px;
+    margin-right: 8px;
   }
 }
 
@@ -8629,8 +8538,8 @@ exports[`Select onChange with valueKey object 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  margin-left: 12px;
-  margin-right: 12px;
+  margin-left: 16px;
+  margin-right: 16px;
   margin-left: 12px;
   margin-right: 12px;
   min-width: 0;
@@ -8807,8 +8716,8 @@ exports[`Select onChange with valueKey object 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c8 {
-    margin-left: 6px;
-    margin-right: 6px;
+    margin-left: 8px;
+    margin-right: 8px;
   }
 }
 
@@ -9033,19 +8942,6 @@ exports[`Select onChange with valueKey object 2`] = `
   padding-bottom: 0;
 }
 
-.c3 button[aria-label*="Or, press"] {
-  padding-block: 6px;
-  padding-inline: 6px;
-}
-
-.c3 button[aria-label*="Or, press"]:focus {
-  background: transparent;
-}
-
-.c3 button[aria-label*="Or, press"]:focus >div {
-  background: rgba(0, 0, 0, 0.04);
-}
-
 .c4 {
   position: relative;
   scroll-behavior: smooth;
@@ -9140,18 +9036,18 @@ exports[`Select onChange with valueKey object 2`] = `
 
 exports[`Select onChange with valueKey object 3`] = `
 "@media only screen and (max-width: 768px) {
-  .peYnb {
-    margin-left: 6px;
-    margin-right: 6px;
+  .fByYbX {
+    margin-left: 8px;
+    margin-right: 8px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .peYnb {
+  .fByYbX {
     margin-left: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .peYnb {
+  .fByYbX {
     margin-right: 12px;
   }
 }"
@@ -9216,8 +9112,8 @@ exports[`Select onChange with valueKey object 4`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  margin-left: 12px;
-  margin-right: 12px;
+  margin-left: 16px;
+  margin-right: 16px;
   margin-left: 12px;
   margin-right: 12px;
   min-width: 0;
@@ -9394,8 +9290,8 @@ exports[`Select onChange with valueKey object 4`] = `
 
 @media only screen and (max-width: 768px) {
   .c8 {
-    margin-left: 6px;
-    margin-right: 6px;
+    margin-left: 8px;
+    margin-right: 8px;
   }
 }
 
@@ -9533,8 +9429,8 @@ exports[`Select onChange with valueKey string 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  margin-left: 12px;
-  margin-right: 12px;
+  margin-left: 16px;
+  margin-right: 16px;
   margin-left: 12px;
   margin-right: 12px;
   min-width: 0;
@@ -9711,8 +9607,8 @@ exports[`Select onChange with valueKey string 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c8 {
-    margin-left: 6px;
-    margin-right: 6px;
+    margin-left: 8px;
+    margin-right: 8px;
   }
 }
 
@@ -9936,19 +9832,6 @@ exports[`Select onChange with valueKey string 2`] = `
   padding-bottom: 0;
 }
 
-.c3 button[aria-label*="Or, press"] {
-  padding-block: 6px;
-  padding-inline: 6px;
-}
-
-.c3 button[aria-label*="Or, press"]:focus {
-  background: transparent;
-}
-
-.c3 button[aria-label*="Or, press"]:focus >div {
-  background: rgba(0, 0, 0, 0.04);
-}
-
 .c4 {
   position: relative;
   scroll-behavior: smooth;
@@ -10043,18 +9926,18 @@ exports[`Select onChange with valueKey string 2`] = `
 
 exports[`Select onChange with valueKey string 3`] = `
 "@media only screen and (max-width: 768px) {
-  .peYnb {
-    margin-left: 6px;
-    margin-right: 6px;
+  .fByYbX {
+    margin-left: 8px;
+    margin-right: 8px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .peYnb {
+  .fByYbX {
     margin-left: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .peYnb {
+  .fByYbX {
     margin-right: 12px;
   }
 }"
@@ -10119,8 +10002,8 @@ exports[`Select onChange with valueKey string 4`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  margin-left: 12px;
-  margin-right: 12px;
+  margin-left: 16px;
+  margin-right: 16px;
   margin-left: 12px;
   margin-right: 12px;
   min-width: 0;
@@ -10297,8 +10180,8 @@ exports[`Select onChange with valueKey string 4`] = `
 
 @media only screen and (max-width: 768px) {
   .c8 {
-    margin-left: 6px;
-    margin-right: 6px;
+    margin-left: 8px;
+    margin-right: 8px;
   }
 }
 
@@ -10436,8 +10319,8 @@ exports[`Select onChange with valueLabel 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  margin-left: 12px;
-  margin-right: 12px;
+  margin-left: 16px;
+  margin-right: 16px;
   margin-left: 12px;
   margin-right: 12px;
   min-width: 0;
@@ -10542,8 +10425,8 @@ exports[`Select onChange with valueLabel 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c6 {
-    margin-left: 6px;
-    margin-right: 6px;
+    margin-left: 8px;
+    margin-right: 8px;
   }
 }
 
@@ -10762,19 +10645,6 @@ exports[`Select onChange with valueLabel 2`] = `
   padding-bottom: 0;
 }
 
-.c3 button[aria-label*="Or, press"] {
-  padding-block: 6px;
-  padding-inline: 6px;
-}
-
-.c3 button[aria-label*="Or, press"]:focus {
-  background: transparent;
-}
-
-.c3 button[aria-label*="Or, press"]:focus >div {
-  background: rgba(0, 0, 0, 0.04);
-}
-
 .c4 {
   position: relative;
   scroll-behavior: smooth;
@@ -10869,18 +10739,18 @@ exports[`Select onChange with valueLabel 2`] = `
 
 exports[`Select onChange with valueLabel 3`] = `
 "@media only screen and (max-width: 768px) {
-  .peYnb {
-    margin-left: 6px;
-    margin-right: 6px;
+  .fByYbX {
+    margin-left: 8px;
+    margin-right: 8px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .peYnb {
+  .fByYbX {
     margin-left: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .peYnb {
+  .fByYbX {
     margin-right: 12px;
   }
 }"
@@ -10945,8 +10815,8 @@ exports[`Select onChange without labelKey 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  margin-left: 12px;
-  margin-right: 12px;
+  margin-left: 16px;
+  margin-right: 16px;
   margin-left: 12px;
   margin-right: 12px;
   min-width: 0;
@@ -11123,8 +10993,8 @@ exports[`Select onChange without labelKey 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c8 {
-    margin-left: 6px;
-    margin-right: 6px;
+    margin-left: 8px;
+    margin-right: 8px;
   }
 }
 
@@ -11349,19 +11219,6 @@ exports[`Select onChange without labelKey 2`] = `
   padding-bottom: 0;
 }
 
-.c3 button[aria-label*="Or, press"] {
-  padding-block: 6px;
-  padding-inline: 6px;
-}
-
-.c3 button[aria-label*="Or, press"]:focus {
-  background: transparent;
-}
-
-.c3 button[aria-label*="Or, press"]:focus >div {
-  background: rgba(0, 0, 0, 0.04);
-}
-
 .c4 {
   position: relative;
   scroll-behavior: smooth;
@@ -11456,18 +11313,18 @@ exports[`Select onChange without labelKey 2`] = `
 
 exports[`Select onChange without labelKey 3`] = `
 "@media only screen and (max-width: 768px) {
-  .peYnb {
-    margin-left: 6px;
-    margin-right: 6px;
+  .fByYbX {
+    margin-left: 8px;
+    margin-right: 8px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .peYnb {
+  .fByYbX {
     margin-left: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .peYnb {
+  .fByYbX {
     margin-right: 12px;
   }
 }"
@@ -11532,8 +11389,8 @@ exports[`Select onChange without labelKey 4`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  margin-left: 12px;
-  margin-right: 12px;
+  margin-left: 16px;
+  margin-right: 16px;
   margin-left: 12px;
   margin-right: 12px;
   min-width: 0;
@@ -11710,8 +11567,8 @@ exports[`Select onChange without labelKey 4`] = `
 
 @media only screen and (max-width: 768px) {
   .c8 {
-    margin-left: 6px;
-    margin-right: 6px;
+    margin-left: 8px;
+    margin-right: 8px;
   }
 }
 
@@ -11849,8 +11706,8 @@ exports[`Select onChange without labelKey or valueKey 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  margin-left: 12px;
-  margin-right: 12px;
+  margin-left: 16px;
+  margin-right: 16px;
   margin-left: 12px;
   margin-right: 12px;
   min-width: 0;
@@ -12027,8 +11884,8 @@ exports[`Select onChange without labelKey or valueKey 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c8 {
-    margin-left: 6px;
-    margin-right: 6px;
+    margin-left: 8px;
+    margin-right: 8px;
   }
 }
 
@@ -12252,19 +12109,6 @@ exports[`Select onChange without labelKey or valueKey 2`] = `
   padding-bottom: 0;
 }
 
-.c3 button[aria-label*="Or, press"] {
-  padding-block: 6px;
-  padding-inline: 6px;
-}
-
-.c3 button[aria-label*="Or, press"]:focus {
-  background: transparent;
-}
-
-.c3 button[aria-label*="Or, press"]:focus >div {
-  background: rgba(0, 0, 0, 0.04);
-}
-
 .c4 {
   position: relative;
   scroll-behavior: smooth;
@@ -12359,18 +12203,18 @@ exports[`Select onChange without labelKey or valueKey 2`] = `
 
 exports[`Select onChange without labelKey or valueKey 3`] = `
 "@media only screen and (max-width: 768px) {
-  .peYnb {
-    margin-left: 6px;
-    margin-right: 6px;
+  .fByYbX {
+    margin-left: 8px;
+    margin-right: 8px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .peYnb {
+  .fByYbX {
     margin-left: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .peYnb {
+  .fByYbX {
     margin-right: 12px;
   }
 }"
@@ -12435,8 +12279,8 @@ exports[`Select onChange without labelKey or valueKey 4`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  margin-left: 12px;
-  margin-right: 12px;
+  margin-left: 16px;
+  margin-right: 16px;
   margin-left: 12px;
   margin-right: 12px;
   min-width: 0;
@@ -12613,8 +12457,8 @@ exports[`Select onChange without labelKey or valueKey 4`] = `
 
 @media only screen and (max-width: 768px) {
   .c8 {
-    margin-left: 6px;
-    margin-right: 6px;
+    margin-left: 8px;
+    margin-right: 8px;
   }
 }
 
@@ -12752,8 +12596,8 @@ exports[`Select onChange without valueKey 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  margin-left: 12px;
-  margin-right: 12px;
+  margin-left: 16px;
+  margin-right: 16px;
   margin-left: 12px;
   margin-right: 12px;
   min-width: 0;
@@ -12930,8 +12774,8 @@ exports[`Select onChange without valueKey 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c8 {
-    margin-left: 6px;
-    margin-right: 6px;
+    margin-left: 8px;
+    margin-right: 8px;
   }
 }
 
@@ -13155,19 +12999,6 @@ exports[`Select onChange without valueKey 2`] = `
   padding-bottom: 0;
 }
 
-.c3 button[aria-label*="Or, press"] {
-  padding-block: 6px;
-  padding-inline: 6px;
-}
-
-.c3 button[aria-label*="Or, press"]:focus {
-  background: transparent;
-}
-
-.c3 button[aria-label*="Or, press"]:focus >div {
-  background: rgba(0, 0, 0, 0.04);
-}
-
 .c4 {
   position: relative;
   scroll-behavior: smooth;
@@ -13262,18 +13093,18 @@ exports[`Select onChange without valueKey 2`] = `
 
 exports[`Select onChange without valueKey 3`] = `
 "@media only screen and (max-width: 768px) {
-  .peYnb {
-    margin-left: 6px;
-    margin-right: 6px;
+  .fByYbX {
+    margin-left: 8px;
+    margin-right: 8px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .peYnb {
+  .fByYbX {
     margin-left: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .peYnb {
+  .fByYbX {
     margin-right: 12px;
   }
 }"
@@ -13338,8 +13169,8 @@ exports[`Select onChange without valueKey 4`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  margin-left: 12px;
-  margin-right: 12px;
+  margin-left: 16px;
+  margin-right: 16px;
   margin-left: 12px;
   margin-right: 12px;
   min-width: 0;
@@ -13516,8 +13347,8 @@ exports[`Select onChange without valueKey 4`] = `
 
 @media only screen and (max-width: 768px) {
   .c8 {
-    margin-left: 6px;
-    margin-right: 6px;
+    margin-left: 8px;
+    margin-right: 8px;
   }
 }
 
@@ -13655,8 +13486,8 @@ exports[`Select prop: onClose 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  margin-left: 12px;
-  margin-right: 12px;
+  margin-left: 16px;
+  margin-right: 16px;
   margin-left: 12px;
   margin-right: 12px;
   min-width: 0;
@@ -13833,8 +13664,8 @@ exports[`Select prop: onClose 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c8 {
-    margin-left: 6px;
-    margin-right: 6px;
+    margin-left: 8px;
+    margin-right: 8px;
   }
 }
 
@@ -13971,8 +13802,8 @@ exports[`Select prop: onClose 2`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  margin-left: 12px;
-  margin-right: 12px;
+  margin-left: 16px;
+  margin-right: 16px;
   margin-left: 12px;
   margin-right: 12px;
   min-width: 0;
@@ -14149,8 +13980,8 @@ exports[`Select prop: onClose 2`] = `
 
 @media only screen and (max-width: 768px) {
   .c8 {
-    margin-left: 6px;
-    margin-right: 6px;
+    margin-left: 8px;
+    margin-right: 8px;
   }
 }
 
@@ -14755,18 +14586,18 @@ exports[`Select prop: onOpen 3`] = `
 
 exports[`Select prop: onOpen 4`] = `
 "@media only screen and (max-width: 768px) {
-  .peYnb {
-    margin-left: 6px;
-    margin-right: 6px;
+  .fByYbX {
+    margin-left: 8px;
+    margin-right: 8px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .peYnb {
+  .fByYbX {
     margin-left: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .peYnb {
+  .fByYbX {
     margin-right: 12px;
   }
 }"
@@ -15493,18 +15324,18 @@ exports[`Select renders custom clear selection styling 2`] = `
 
 exports[`Select renders custom clear selection styling 3`] = `
 "@media only screen and (max-width: 768px) {
-  .peYnb {
-    margin-left: 6px;
-    margin-right: 6px;
+  .fByYbX {
+    margin-left: 8px;
+    margin-right: 8px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .peYnb {
+  .fByYbX {
     margin-left: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .peYnb {
+  .fByYbX {
     margin-right: 12px;
   }
 }"
@@ -15568,8 +15399,8 @@ exports[`Select renders custom icon 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  margin-left: 12px;
-  margin-right: 12px;
+  margin-left: 16px;
+  margin-right: 16px;
   margin-left: 12px;
   margin-right: 12px;
   min-width: 0;
@@ -15746,8 +15577,8 @@ exports[`Select renders custom icon 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c8 {
-    margin-left: 6px;
-    margin-right: 6px;
+    margin-left: 8px;
+    margin-right: 8px;
   }
 }
 
@@ -16130,18 +15961,18 @@ exports[`Select renders custom listbox styling 1`] = `
 
 exports[`Select renders custom listbox styling 2`] = `
 "@media only screen and (max-width: 768px) {
-  .peYnb {
-    margin-left: 6px;
-    margin-right: 6px;
+  .fByYbX {
+    margin-left: 8px;
+    margin-right: 8px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .peYnb {
+  .fByYbX {
     margin-left: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .peYnb {
+  .fByYbX {
     margin-right: 12px;
   }
 }"
@@ -16559,8 +16390,8 @@ exports[`Select renders default icon 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  margin-left: 12px;
-  margin-right: 12px;
+  margin-left: 16px;
+  margin-right: 16px;
   margin-left: 12px;
   margin-right: 12px;
   min-width: 0;
@@ -16737,8 +16568,8 @@ exports[`Select renders default icon 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c8 {
-    margin-left: 6px;
-    margin-right: 6px;
+    margin-left: 8px;
+    margin-right: 8px;
   }
 }
 
@@ -17953,8 +17784,8 @@ exports[`Select search 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  margin-left: 12px;
-  margin-right: 12px;
+  margin-left: 16px;
+  margin-right: 16px;
   margin-left: 12px;
   margin-right: 12px;
   min-width: 0;
@@ -18131,8 +17962,8 @@ exports[`Select search 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c8 {
-    margin-left: 6px;
-    margin-right: 6px;
+    margin-left: 8px;
+    margin-right: 8px;
   }
 }
 
@@ -18561,19 +18392,6 @@ exports[`Select search 2`] = `
   padding-bottom: 0;
 }
 
-.c3 button[aria-label*="Or, press"] {
-  padding-block: 6px;
-  padding-inline: 6px;
-}
-
-.c3 button[aria-label*="Or, press"]:focus {
-  background: transparent;
-}
-
-.c3 button[aria-label*="Or, press"]:focus >div {
-  background: rgba(0, 0, 0, 0.04);
-}
-
 .c7 {
   position: relative;
   scroll-behavior: smooth;
@@ -18688,18 +18506,18 @@ exports[`Select search 2`] = `
 
 exports[`Select search 3`] = `
 "@media only screen and (max-width: 768px) {
-  .peYnb {
-    margin-left: 6px;
-    margin-right: 6px;
+  .fByYbX {
+    margin-left: 8px;
+    margin-right: 8px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .peYnb {
+  .fByYbX {
     margin-left: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .peYnb {
+  .fByYbX {
     margin-right: 12px;
   }
 }"
@@ -18781,8 +18599,8 @@ exports[`Select search and select 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  margin-left: 12px;
-  margin-right: 12px;
+  margin-left: 16px;
+  margin-right: 16px;
   margin-left: 12px;
   margin-right: 12px;
   min-width: 0;
@@ -18959,8 +18777,8 @@ exports[`Select search and select 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c8 {
-    margin-left: 6px;
-    margin-right: 6px;
+    margin-left: 8px;
+    margin-right: 8px;
   }
 }
 
@@ -19288,19 +19106,6 @@ exports[`Select search and select 2`] = `
   padding-bottom: 0;
 }
 
-.c3 button[aria-label*="Or, press"] {
-  padding-block: 6px;
-  padding-inline: 6px;
-}
-
-.c3 button[aria-label*="Or, press"]:focus {
-  background: transparent;
-}
-
-.c3 button[aria-label*="Or, press"]:focus >div {
-  background: rgba(0, 0, 0, 0.04);
-}
-
 .c7 {
   position: relative;
   scroll-behavior: smooth;
@@ -19415,18 +19220,18 @@ exports[`Select search and select 2`] = `
 
 exports[`Select search and select 3`] = `
 "@media only screen and (max-width: 768px) {
-  .peYnb {
-    margin-left: 6px;
-    margin-right: 6px;
+  .fByYbX {
+    margin-left: 8px;
+    margin-right: 8px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .peYnb {
+  .fByYbX {
     margin-left: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .peYnb {
+  .fByYbX {
     margin-right: 12px;
   }
 }"
@@ -19508,8 +19313,8 @@ exports[`Select select an object with label key specific with keypress 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  margin-left: 12px;
-  margin-right: 12px;
+  margin-left: 16px;
+  margin-right: 16px;
   margin-left: 12px;
   margin-right: 12px;
   min-width: 0;
@@ -19686,8 +19491,8 @@ exports[`Select select an object with label key specific with keypress 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c8 {
-    margin-left: 6px;
-    margin-right: 6px;
+    margin-left: 8px;
+    margin-right: 8px;
   }
 }
 
@@ -19816,8 +19621,8 @@ exports[`Select select an option 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  margin-left: 12px;
-  margin-right: 12px;
+  margin-left: 16px;
+  margin-right: 16px;
   margin-left: 12px;
   margin-right: 12px;
   min-width: 0;
@@ -19994,8 +19799,8 @@ exports[`Select select an option 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c8 {
-    margin-left: 6px;
-    margin-right: 6px;
+    margin-left: 8px;
+    margin-right: 8px;
   }
 }
 
@@ -20124,8 +19929,8 @@ exports[`Select select an option with complex options 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  margin-left: 12px;
-  margin-right: 12px;
+  margin-left: 16px;
+  margin-right: 16px;
   margin-left: 12px;
   margin-right: 12px;
   min-width: 0;
@@ -20225,8 +20030,8 @@ exports[`Select select an option with complex options 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c6 {
-    margin-left: 6px;
-    margin-right: 6px;
+    margin-left: 8px;
+    margin-right: 8px;
   }
 }
 
@@ -20350,8 +20155,8 @@ exports[`Select select an option with enter 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  margin-left: 12px;
-  margin-right: 12px;
+  margin-left: 16px;
+  margin-right: 16px;
   margin-left: 12px;
   margin-right: 12px;
   min-width: 0;
@@ -20528,8 +20333,8 @@ exports[`Select select an option with enter 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c8 {
-    margin-left: 6px;
-    margin-right: 6px;
+    margin-left: 8px;
+    margin-right: 8px;
   }
 }
 
@@ -20658,8 +20463,8 @@ exports[`Select select an option with keypress 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  margin-left: 12px;
-  margin-right: 12px;
+  margin-left: 16px;
+  margin-right: 16px;
   margin-left: 12px;
   margin-right: 12px;
   min-width: 0;
@@ -20836,8 +20641,8 @@ exports[`Select select an option with keypress 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c8 {
-    margin-left: 6px;
-    margin-right: 6px;
+    margin-left: 8px;
+    margin-right: 8px;
   }
 }
 
@@ -20966,8 +20771,8 @@ exports[`Select select on multiple keydown always picks first enabled option 1`]
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  margin-left: 12px;
-  margin-right: 12px;
+  margin-left: 16px;
+  margin-right: 16px;
   margin-left: 12px;
   margin-right: 12px;
   min-width: 0;
@@ -21144,8 +20949,8 @@ exports[`Select select on multiple keydown always picks first enabled option 1`]
 
 @media only screen and (max-width: 768px) {
   .c8 {
-    margin-left: 6px;
-    margin-right: 6px;
+    margin-left: 8px;
+    margin-right: 8px;
   }
 }
 
@@ -21274,8 +21079,8 @@ exports[`Select select option by typing should not break if caller passes JSX 1`
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  margin-left: 12px;
-  margin-right: 12px;
+  margin-left: 16px;
+  margin-right: 16px;
   margin-left: 12px;
   margin-right: 12px;
   min-width: 0;
@@ -21452,8 +21257,8 @@ exports[`Select select option by typing should not break if caller passes JSX 1`
 
 @media only screen and (max-width: 768px) {
   .c8 {
-    margin-left: 6px;
-    margin-right: 6px;
+    margin-left: 8px;
+    margin-right: 8px;
   }
 }
 
@@ -21559,7 +21364,7 @@ exports[`Select select option by typing should not break if caller passes JSX 2`
         </div>
       </div>
       <div
-        class="StyledBox-sc-13pk1d4-0 peYnb"
+        class="StyledBox-sc-13pk1d4-0 fByYbX"
         style="min-width: auto;"
       >
         .c0 {
@@ -21690,8 +21495,8 @@ exports[`Select selected 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  margin-left: 12px;
-  margin-right: 12px;
+  margin-left: 16px;
+  margin-right: 16px;
   margin-left: 12px;
   margin-right: 12px;
   min-width: 0;
@@ -21868,8 +21673,8 @@ exports[`Select selected 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c8 {
-    margin-left: 6px;
-    margin-right: 6px;
+    margin-left: 8px;
+    margin-right: 8px;
   }
 }
 
@@ -21998,8 +21803,8 @@ exports[`Select should apply a11yTitle or aria-label 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  margin-left: 12px;
-  margin-right: 12px;
+  margin-left: 16px;
+  margin-right: 16px;
   margin-left: 12px;
   margin-right: 12px;
   min-width: 0;
@@ -22176,8 +21981,8 @@ exports[`Select should apply a11yTitle or aria-label 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c8 {
-    margin-left: 6px;
-    margin-right: 6px;
+    margin-left: 8px;
+    margin-right: 8px;
   }
 }
 
@@ -22351,8 +22156,8 @@ exports[`Select should not have accessibility violations 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  margin-left: 12px;
-  margin-right: 12px;
+  margin-left: 16px;
+  margin-right: 16px;
   margin-left: 12px;
   margin-right: 12px;
   min-width: 0;
@@ -22529,8 +22334,8 @@ exports[`Select should not have accessibility violations 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c8 {
-    margin-left: 6px;
-    margin-right: 6px;
+    margin-left: 8px;
+    margin-right: 8px;
   }
 }
 
@@ -22657,8 +22462,8 @@ exports[`Select size 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  margin-left: 12px;
-  margin-right: 12px;
+  margin-left: 16px;
+  margin-right: 16px;
   margin-left: 12px;
   margin-right: 12px;
   min-width: 0;
@@ -22837,8 +22642,8 @@ exports[`Select size 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c8 {
-    margin-left: 6px;
-    margin-right: 6px;
+    margin-left: 8px;
+    margin-right: 8px;
   }
 }
 
@@ -23055,24 +22860,11 @@ exports[`Select small drop container height 1`] = `
 }
 
 .c3 {
-  max-height: 192px;
+  max-height: 256px;
 }
 
 .c3 div:has(input[type="search"]) {
   padding-bottom: 0;
-}
-
-.c3 button[aria-label*="Or, press"] {
-  padding-block: 6px;
-  padding-inline: 6px;
-}
-
-.c3 button[aria-label*="Or, press"]:focus {
-  background: transparent;
-}
-
-.c3 button[aria-label*="Or, press"]:focus >div {
-  background: rgba(0, 0, 0, 0.04);
 }
 
 .c4 {
@@ -23228,8 +23020,8 @@ exports[`Select valueLabel with value=0 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  margin-left: 12px;
-  margin-right: 12px;
+  margin-left: 16px;
+  margin-right: 16px;
   margin-left: 12px;
   margin-right: 12px;
   min-width: 0;
@@ -23334,8 +23126,8 @@ exports[`Select valueLabel with value=0 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c6 {
-    margin-left: 6px;
-    margin-right: 6px;
+    margin-left: 8px;
+    margin-right: 8px;
   }
 }
 

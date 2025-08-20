@@ -350,8 +350,8 @@ exports[`Data controlled search 1`] = `
   border-bottom: solid 1px rgba(0, 0, 0, 0.12);
   padding-left: 12px;
   padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 12px;
   padding-bottom: 11px;
 }
@@ -746,7 +746,7 @@ exports[`Data controlled search 2`] = `
           class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 jmJzHr"
         >
           <th
-            class="StyledTable__StyledTableCell-sc-1m3u5g-0 cuBfrd StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
+            class="StyledTable__StyledTableCell-sc-1m3u5g-0 erXGgp StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
             scope="row"
           >
             <div
@@ -764,7 +764,7 @@ exports[`Data controlled search 2`] = `
           class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 jmJzHr"
         >
           <th
-            class="StyledTable__StyledTableCell-sc-1m3u5g-0 cuBfrd StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
+            class="StyledTable__StyledTableCell-sc-1m3u5g-0 erXGgp StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
             scope="row"
           >
             <div
@@ -782,7 +782,7 @@ exports[`Data controlled search 2`] = `
           class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 jmJzHr"
         >
           <th
-            class="StyledTable__StyledTableCell-sc-1m3u5g-0 cuBfrd StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
+            class="StyledTable__StyledTableCell-sc-1m3u5g-0 erXGgp StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
             scope="row"
           >
             <div
@@ -800,7 +800,7 @@ exports[`Data controlled search 2`] = `
           class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 jmJzHr"
         >
           <th
-            class="StyledTable__StyledTableCell-sc-1m3u5g-0 cuBfrd StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
+            class="StyledTable__StyledTableCell-sc-1m3u5g-0 erXGgp StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
             scope="row"
           >
             <div
@@ -1176,8 +1176,8 @@ exports[`Data messages 1`] = `
   border-bottom: solid 1px rgba(0, 0, 0, 0.12);
   padding-left: 12px;
   padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 12px;
   padding-bottom: 11px;
 }
@@ -1725,8 +1725,8 @@ exports[`Data onView 1`] = `
   border-bottom: solid 1px rgba(0, 0, 0, 0.12);
   padding-left: 12px;
   padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 12px;
   padding-bottom: 11px;
 }
@@ -2414,8 +2414,8 @@ exports[`Data pagination 1`] = `
   border-bottom: solid 1px rgba(0, 0, 0, 0.12);
   padding-left: 12px;
   padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 12px;
   padding-bottom: 11px;
 }
@@ -2541,7 +2541,7 @@ exports[`Data pagination 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c11 {
-    column-gap: 2px;
+    column-gap: 3px;
   }
 }
 
@@ -2982,8 +2982,8 @@ exports[`Data pagination step 1`] = `
   border-bottom: solid 1px rgba(0, 0, 0, 0.12);
   padding-left: 12px;
   padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 12px;
   padding-bottom: 11px;
 }
@@ -3109,7 +3109,7 @@ exports[`Data pagination step 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c11 {
-    column-gap: 2px;
+    column-gap: 3px;
   }
 }
 
@@ -3612,8 +3612,8 @@ exports[`Data properties when property is an array 1`] = `
   border-bottom: solid 1px rgba(0, 0, 0, 0.12);
   padding-left: 12px;
   padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 12px;
   padding-bottom: 11px;
 }
@@ -4462,8 +4462,8 @@ exports[`Data should render property label and return property value to view whe
   box-sizing: border-box;
   max-width: 100%;
   align-self: center;
-  margin-left: 12px;
-  margin-right: 12px;
+  margin-left: 16px;
+  margin-right: 16px;
   margin-left: 12px;
   margin-right: 12px;
   min-width: 0;
@@ -4566,8 +4566,8 @@ exports[`Data should render property label and return property value to view whe
 .c7 {
   margin-left: 0px;
   margin-right: 0px;
-  margin-top: 6px;
-  margin-bottom: 6px;
+  margin-top: 12px;
+  margin-bottom: 12px;
   margin-top: 6px;
   margin-bottom: 0px;
   font-size: 0.875rem;
@@ -5032,8 +5032,8 @@ exports[`Data should render property label and return property value to view whe
 
 @media only screen and (max-width: 768px) {
   .c17 {
-    margin-left: 6px;
-    margin-right: 6px;
+    margin-left: 8px;
+    margin-right: 8px;
   }
 }
 
@@ -5830,8 +5830,8 @@ exports[`Data toolbar 1`] = `
   border-bottom: solid 1px rgba(0, 0, 0, 0.12);
   padding-left: 12px;
   padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 12px;
   padding-bottom: 11px;
 }
@@ -6419,8 +6419,8 @@ exports[`Data toolbar filters 1`] = `
   border-bottom: solid 1px rgba(0, 0, 0, 0.12);
   padding-left: 12px;
   padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 12px;
   padding-bottom: 11px;
 }
@@ -6930,8 +6930,8 @@ exports[`Data toolbar search 1`] = `
   border-bottom: solid 1px rgba(0, 0, 0, 0.12);
   padding-left: 12px;
   padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 12px;
   padding-bottom: 11px;
 }
@@ -7549,8 +7549,8 @@ exports[`Data uncontrolled search 1`] = `
   border-bottom: solid 1px rgba(0, 0, 0, 0.12);
   padding-left: 12px;
   padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 12px;
   padding-bottom: 11px;
 }
@@ -7945,7 +7945,7 @@ exports[`Data uncontrolled search 2`] = `
           class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 jmJzHr"
         >
           <th
-            class="StyledTable__StyledTableCell-sc-1m3u5g-0 cuBfrd StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
+            class="StyledTable__StyledTableCell-sc-1m3u5g-0 erXGgp StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
             scope="row"
           >
             <div
@@ -8707,8 +8707,8 @@ exports[`Data uncontrolled, when paginated, search should return to page 1 1`] =
   padding: 0;
   font-weight: inherit;
   text-align: inherit;
-  width: 192px;
-  max-width: 192px;
+  width: 256px;
+  max-width: 256px;
   overflow: hidden;
   text-align: start;
   border-bottom: solid 1px rgba(0, 0, 0, 0.36);
@@ -8732,15 +8732,15 @@ exports[`Data uncontrolled, when paginated, search should return to page 1 1`] =
   padding: 0;
   font-weight: inherit;
   text-align: inherit;
-  width: 192px;
-  max-width: 192px;
+  width: 256px;
+  max-width: 256px;
   overflow: hidden;
   text-align: start;
   border-bottom: solid 1px rgba(0, 0, 0, 0.12);
   padding-left: 12px;
   padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 12px;
   padding-bottom: 11px;
 }
@@ -8874,7 +8874,7 @@ exports[`Data uncontrolled, when paginated, search should return to page 1 1`] =
 
 @media only screen and (max-width: 768px) {
   .c20 {
-    column-gap: 2px;
+    column-gap: 3px;
   }
 }
 
@@ -9212,7 +9212,7 @@ exports[`Data uncontrolled, when paginated, search should return to page 1 2`] =
           class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRowHeader-sc-xrlyjm-3 czyNOp"
         >
           <th
-            class="StyledTable__StyledTableCell-sc-1m3u5g-0 cFlnBq StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 dOuNZT"
+            class="StyledTable__StyledTableCell-sc-1m3u5g-0 fLzzhG StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 dOuNZT"
             id="grommet-data-table-header-name"
             scope="col"
           >
@@ -9256,15 +9256,15 @@ exports[`Data uncontrolled, when paginated, search should return to page 1 2`] =
   padding: 0;
   font-weight: inherit;
   text-align: inherit;
-  width: 192px;
-  max-width: 192px;
+  width: 256px;
+  max-width: 256px;
   overflow: hidden;
   text-align: start;
   border-bottom: solid 1px rgba(0, 0, 0, 0.12);
   padding-left: 12px;
   padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 12px;
   padding-bottom: 11px;
 }
@@ -9379,7 +9379,7 @@ exports[`Data uncontrolled, when paginated, search should return to page 1 2`] =
         class="StyledBox-sc-13pk1d4-0 fBuFhc"
       >
         <ul
-          class="StyledBox-sc-13pk1d4-0 UJDIX"
+          class="StyledBox-sc-13pk1d4-0 doCASy"
         >
           <li
             class="StyledPageControl__StyledContainer-sc-1vlfaez-1 fVNJEO"
@@ -9597,7 +9597,7 @@ exports[`Data uncontrolled, when paginated, search should return to page 1 3`] =
           class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRowHeader-sc-xrlyjm-3 czyNOp"
         >
           <th
-            class="StyledTable__StyledTableCell-sc-1m3u5g-0 cFlnBq StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 dOuNZT"
+            class="StyledTable__StyledTableCell-sc-1m3u5g-0 fLzzhG StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 dOuNZT"
             id="grommet-data-table-header-name"
             scope="col"
           >
@@ -9624,7 +9624,7 @@ exports[`Data uncontrolled, when paginated, search should return to page 1 3`] =
           class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 jmJzHr"
         >
           <th
-            class="StyledTable__StyledTableCell-sc-1m3u5g-0 hXDyIb StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
+            class="StyledTable__StyledTableCell-sc-1m3u5g-0 fnkELf StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
             scope="row"
           >
             <div
@@ -9659,15 +9659,15 @@ exports[`Data uncontrolled, when paginated, search should return to page 1 3`] =
   padding: 0;
   font-weight: inherit;
   text-align: inherit;
-  width: 192px;
-  max-width: 192px;
+  width: 256px;
+  max-width: 256px;
   overflow: hidden;
   text-align: start;
   border-bottom: solid 1px rgba(0, 0, 0, 0.12);
   padding-left: 12px;
   padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 12px;
   padding-bottom: 11px;
 }
@@ -9782,7 +9782,7 @@ exports[`Data uncontrolled, when paginated, search should return to page 1 3`] =
         class="StyledBox-sc-13pk1d4-0 fBuFhc"
       >
         <ul
-          class="StyledBox-sc-13pk1d4-0 UJDIX"
+          class="StyledBox-sc-13pk1d4-0 doCASy"
         >
           <li
             class="StyledPageControl__StyledContainer-sc-1vlfaez-1 fVNJEO"
@@ -10115,8 +10115,8 @@ exports[`Data view 1`] = `
   border-bottom: solid 1px rgba(0, 0, 0, 0.12);
   padding-left: 12px;
   padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 12px;
   padding-bottom: 11px;
 }
@@ -10717,8 +10717,8 @@ exports[`Data view all 1`] = `
   border-bottom: solid 1px rgba(0, 0, 0, 0.12);
   padding-left: 12px;
   padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 12px;
   padding-bottom: 11px;
 }
@@ -11305,8 +11305,8 @@ exports[`Data view columns 1`] = `
   border-bottom: solid 1px rgba(0, 0, 0, 0.12);
   padding-left: 12px;
   padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 12px;
   padding-bottom: 11px;
 }
@@ -11940,8 +11940,8 @@ exports[`Data view property option 1`] = `
   border-bottom: solid 1px rgba(0, 0, 0, 0.12);
   padding-left: 12px;
   padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 12px;
   padding-bottom: 11px;
 }
@@ -12325,7 +12325,7 @@ exports[`Data view property range 1`] = `
   flex-direction: column;
   flex: 0 0 auto;
   justify-content: center;
-  border-radius: 24px;
+  border-radius: 12px;
 }
 
 .c16 {
@@ -12685,8 +12685,8 @@ exports[`Data view property range 1`] = `
   border-bottom: solid 1px rgba(0, 0, 0, 0.12);
   padding-left: 12px;
   padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 12px;
   padding-bottom: 11px;
 }
@@ -12802,7 +12802,7 @@ exports[`Data view property range 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c14 {
-    border-radius: 12px;
+    border-radius: 8px;
   }
 }
 
@@ -13367,8 +13367,8 @@ exports[`Data view search 1`] = `
   border-bottom: solid 1px rgba(0, 0, 0, 0.12);
   padding-left: 12px;
   padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 12px;
   padding-bottom: 11px;
 }
@@ -13983,8 +13983,8 @@ exports[`Data view sort 1`] = `
   border-bottom: solid 1px rgba(0, 0, 0, 0.12);
   padding-left: 12px;
   padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-top: 12px;
   padding-bottom: 11px;
 }
