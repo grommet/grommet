@@ -29,6 +29,7 @@ import {
   AlignSelfType,
   AlignType,
   WidthType,
+  HeightType,
 } from '../utils';
 
 import { AnchorProps } from '../components/Anchor/index';
@@ -1311,6 +1312,7 @@ export interface ThemeType {
       intelligentRounding?: boolean;
     };
     container?: {
+      height?: HeightType;
       elevation?: ElevationType;
       extend?: ExtendType;
       zIndex?: string;
