@@ -560,6 +560,9 @@ export interface ThemeType {
     icon?: {
       color?: ColorType;
     };
+    iconOnly?: {
+      pad?: PadType;
+    };
     textDecoration?: string;
     size?: {
       medium?: {
