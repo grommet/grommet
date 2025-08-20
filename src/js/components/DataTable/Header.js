@@ -300,7 +300,9 @@ const Header = forwardRef(
               )}
             </StyledDataTableCell>
           )}
-          {rowDetails && <TableCell size="xxsmall" plain pad="none" />}
+          {rowDetails && (
+            <TableCell size={theme.dataTable.expand?.size} plain pad="none" />
+          )}
           {columns.map(
             ({
               property,
@@ -398,7 +400,7 @@ const Header = forwardRef(
                     <Box
                       direction="row"
                       align="center"
-                      gap="xsmall"
+                      gap={theme.dataTable.sort?.gap}
                       justify={align}
                     >
                       {content}
