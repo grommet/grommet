@@ -71,7 +71,7 @@ const StyledTableDataCaption = styled.caption.withConfig(
     edgeStyle(
       'margin',
       props.theme.table.caption.margin,
-      props.responsive,
+      false,
       props.theme.global.edgeSize.responsiveBreakpoint,
       props.theme,
     )}
