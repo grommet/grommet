@@ -451,10 +451,10 @@ var StyledContainer = exports.StyledContainer = _styledComponents["default"].div
 }).withConfig({
   displayName: "StyledLayer__StyledContainer",
   componentId: "sc-rmtehz-2"
-})(["", " display:flex;flex-direction:column;min-height:", ";", " outline:none;pointer-events:all;z-index:", ";", " ", " ", ";", ";"], function (props) {
+})(["", " display:flex;flex-direction:column;", " ", " outline:none;pointer-events:all;z-index:", ";", " ", " ", ";", ";"], function (props) {
   return !props.modal ? _utils.baseStyle : '';
 }, function (props) {
-  return props.theme.global.size.xxsmall;
+  return (0, _utils.heightStyle)(props.theme.layer.container.height, props.theme);
 }, function (props) {
   return !props.plain && (props.background || props.theme.layer.background) && (0, _utils.backgroundStyle)(props.background || props.theme.layer.background, props.theme);
 }, function (props) {

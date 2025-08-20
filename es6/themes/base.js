@@ -1416,7 +1416,10 @@ export var generate = function generate(baseSpacing, scale) {
       },
       container: {
         // elevation: undefined,
-        zIndex: '20'
+        zIndex: '20',
+        height: {
+          min: 'xxsmall'
+        }
       },
       // extend: undefined,
       overlay: {

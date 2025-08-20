@@ -1,6 +1,6 @@
 import styled, { css, keyframes } from 'styled-components';
 import isPropValid from '@emotion/is-prop-valid';
-import { baseStyle, backgroundStyle, breakpointStyle, parseMetricToNum, styledComponentsConfig } from '../../utils';
+import { baseStyle, backgroundStyle, breakpointStyle, heightStyle, parseMetricToNum, styledComponentsConfig } from '../../utils';
 var hiddenPositionStyle = css(["left:-100%;right:100%;z-index:-1;position:fixed;"]);
 var desktopLayerStyle = "\n  position: fixed;\n  top: 0px;\n  left: 0px;\n  right: 0px;\n  bottom: 0px;\n";
 var responsiveLayerStyle = "\n  position: fixed;\n  width: 100%;\n  height: 100%;\n  min-height: 100vh;\n";
@@ -445,10 +445,10 @@ var StyledContainer = styled.div.withConfig({
 }).withConfig({
   displayName: "StyledLayer__StyledContainer",
   componentId: "sc-rmtehz-2"
-})(["", " display:flex;flex-direction:column;min-height:", ";", " outline:none;pointer-events:all;z-index:", ";", " ", " ", ";", ";"], function (props) {
+})(["", " display:flex;flex-direction:column;", " ", " outline:none;pointer-events:all;z-index:", ";", " ", " ", ";", ";"], function (props) {
   return !props.modal ? baseStyle : '';
 }, function (props) {
-  return props.theme.global.size.xxsmall;
+  return heightStyle(props.theme.layer.container.height, props.theme);
 }, function (props) {
   return !props.plain && (props.background || props.theme.layer.background) && backgroundStyle(props.background || props.theme.layer.background, props.theme);
 }, function (props) {
