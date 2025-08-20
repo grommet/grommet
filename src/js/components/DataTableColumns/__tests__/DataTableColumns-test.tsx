@@ -299,17 +299,9 @@ describe('DataTableColumns', () => {
     expect(screen.getByRole('checkbox', { name: /size/i })).toBeDefined();
     expect(screen.getByRole('checkbox', { name: /percent/i })).toBeDefined();
 
-    expect(
-      screen.queryByRole('tab', {
-        name: 'Reorder the visible columns in the data table',
-      }),
-    ).toBeNull();
+    expect(screen.queryByText('Order columns')).toBeNull();
 
-    expect(
-      screen.queryByRole('tab', {
-        name: 'Select which columns to show in the data table',
-      }),
-    ).not.toBeNull();
+    expect(screen.getByText('Select columns')).toBeDefined();
   });
 
   test('OrderColumns', () => {
@@ -353,16 +345,8 @@ describe('DataTableColumns', () => {
     // advance timers so drop can open
     act(() => jest.advanceTimersByTime(200));
 
-    expect(
-      screen.queryByRole('tab', {
-        name: 'Reorder the visible columns in the data table',
-      }),
-    ).not.toBeNull();
+    expect(screen.getByText('Order columns')).toBeDefined();
 
-    expect(
-      screen.queryByRole('tab', {
-        name: 'Select which columns to show in the data table',
-      }),
-    ).toBeNull();
+    expect(screen.queryByText('Select columns')).toBeNull();
   });
 });

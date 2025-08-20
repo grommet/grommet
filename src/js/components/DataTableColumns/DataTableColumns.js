@@ -16,6 +16,7 @@ import { DataContext } from '../../contexts/DataContext';
 import { MessageContext } from '../../contexts/MessageContext';
 import { DataTableColumnsPropTypes } from './propTypes';
 import { useThemeValue } from '../../utils/useThemeValue';
+import { Text } from '../Text';
 
 const dropProps = {
   align: { top: 'bottom', left: 'left' },
@@ -104,99 +105,113 @@ const Content = ({ drop, options = [], activePanel, ...rest }) => {
     [options],
   );
 
-  return (
-    <Box>
-      <Tabs {...tabsProps[drop ? 'drop' : 'noDrop']} {...rest}>
-        {[
-          ...(!activePanel || activePanel === 'selectColumns'
-            ? [
-                <Tab
-                  id={`${dataId}--select-columns-tab`}
-                  key={`${dataId}--select-columns-tab`}
-                  title={format({
-                    id: 'dataTableColumns.select',
-                    messages: messages?.dataTableColumns,
-                  })}
-                  aria-label={format({
-                    id: 'dataTableColumns.selectAria',
-                    messages: messages?.dataTableColumns,
-                  })}
-                >
-                  <Box
-                    pad={theme.dataTableColumns.selectColumns.pad}
-                    gap={theme.dataTableColumns.selectColumns.gap}
-                  >
-                    <TextInput
-                      type="search"
-                      icon={<Search />}
-                      placeholder="Search"
-                      value={search}
-                      onChange={(event) => onSearch(event.target.value)}
-                    />
-                    <CheckBoxGroup
-                      id={`${dataId}--select-columns`}
-                      name={formColumnsKey}
-                      aria-labelledby={`${dataId}--select-columns-tab`}
-                      options={filteredOptions}
-                      valueKey={(objectOptions && 'property') || undefined}
-                      labelKey={(objectOptions && 'label') || undefined}
-                      value={value}
-                      onChange={({ value: nextValue }) =>
-                        setValue(alignOrder(nextValue, value, options))
-                      }
-                    />
-                  </Box>
-                </Tab>,
-              ]
-            : []),
-          ...(!activePanel || activePanel === 'orderColumns'
-            ? [
-                <Tab
-                  id={`${dataId}--order-columns-tab`}
-                  key={`${dataId}--order-columns-tab`}
-                  aria-label={format({
-                    id: 'dataTableColumns.orderAria',
-                    messages: messages?.dataTableColumns,
-                  })}
-                  title={format({
-                    id: 'dataTableColumns.order',
-                    messages: messages?.dataTableColumns,
-                  })}
-                >
-                  <Box
-                    pad={theme.dataTableColumns.orderColumns.pad}
-                    gap={theme.dataTableColumns.orderColumns.gap}
-                    flex={false}
-                  >
-                    <List
-                      id={`${dataId}--order-columns`}
-                      aria-labelledby={`${dataId}--order-columns-tab`}
-                      // List wants objects if possible
-                      // to be able to use 'label'
-                      data={value.map(
-                        (v) =>
-                          (objectOptions &&
-                            options.find((o) => o.property === v)) ||
-                          v,
-                      )}
-                      messages={{
-                        pinned: format({
-                          id: 'dataTableColumns.pinned',
-                          messages: messages?.dataTableColumns,
-                        }),
-                      }}
-                      onOrder={(nextData) => setValue(optionsToValue(nextData))}
-                      pad="none"
-                      primaryKey={(objectOptions && 'label') || undefined}
-                      pinned={pinned}
-                    />
-                  </Box>
-                </Tab>,
-              ]
-            : []),
-        ]}
-      </Tabs>
+  const selectColumnsContent = (
+    <Box
+      pad={theme.dataTableColumns.selectColumns.pad}
+      gap={theme.dataTableColumns.selectColumns.gap}
+    >
+      <TextInput
+        type="search"
+        icon={<Search />}
+        placeholder="Search"
+        value={search}
+        onChange={(event) => onSearch(event.target.value)}
+      />
+      <CheckBoxGroup
+        id={`${dataId}--select-columns`}
+        name={formColumnsKey}
+        aria-labelledby={`${dataId}--select-columns-tab`}
+        options={filteredOptions}
+        valueKey={(objectOptions && 'property') || undefined}
+        labelKey={(objectOptions && 'label') || undefined}
+        value={value}
+        onChange={({ value: nextValue }) =>
+          setValue(alignOrder(nextValue, value, options))
+        }
+      />
     </Box>
+  );
+
+  const orderColumnsContent = (
+    <Box pad={theme.dataTableColumns.orderColumns.pad}>
+      <List
+        id={`${dataId}--order-columns`}
+        aria-labelledby={`${dataId}--order-columns-tab`}
+        // List wants objects if possible to be able to use 'label'
+        data={value.map(
+          (v) => (objectOptions && options.find((o) => o.property === v)) || v,
+        )}
+        messages={{
+          pinned: format({
+            id: 'dataTableColumns.pinned',
+            messages: messages?.dataTableColumns,
+          }),
+        }}
+        onOrder={(nextData) => setValue(optionsToValue(nextData))}
+        pad="none"
+        primaryKey={(objectOptions && 'label') || undefined}
+        pinned={pinned}
+      />
+    </Box>
+  );
+
+  let activeContent;
+  if (activePanel) {
+    if (activePanel === 'selectColumns') activeContent = selectColumnsContent;
+    else if (activePanel === 'orderColumns') {
+      activeContent = orderColumnsContent;
+    }
+    activeContent = (
+      <Box pad={theme.dataTableColumns.tabs.pad}>
+        <Text>
+          {activePanel === 'selectColumns'
+            ? format({
+                id: 'dataTableColumns.select',
+                messages: messages?.dataTableColumns,
+              })
+            : format({
+                id: 'dataTableColumns.order',
+                messages: messages?.dataTableColumns,
+              })}
+        </Text>
+        {activeContent}
+      </Box>
+    );
+  }
+
+  return (
+    activeContent || (
+      <Box>
+        <Tabs {...tabsProps[drop ? 'drop' : 'noDrop']} {...rest}>
+          <Tab
+            id={`${dataId}--select-columns-tab`}
+            title={format({
+              id: 'dataTableColumns.select',
+              messages: messages?.dataTableColumns,
+            })}
+            aria-label={format({
+              id: 'dataTableColumns.selectAria',
+              messages: messages?.dataTableColumns,
+            })}
+          >
+            {selectColumnsContent}
+          </Tab>
+          <Tab
+            id={`${dataId}--order-columns-tab`}
+            aria-label={format({
+              id: 'dataTableColumns.orderAria',
+              messages: messages?.dataTableColumns,
+            })}
+            title={format({
+              id: 'dataTableColumns.order',
+              messages: messages?.dataTableColumns,
+            })}
+          >
+            {orderColumnsContent}
+          </Tab>
+        </Tabs>
+      </Box>
+    )
   );
 };
 
