@@ -185,6 +185,9 @@ interface ButtonType {
       };
     };
   };
+  busy?: {
+    gap?: GapType;
+  };
   gap?: GapType;
   background?: BackgroundType;
   border?: {
