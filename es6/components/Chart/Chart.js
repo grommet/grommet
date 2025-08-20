@@ -13,12 +13,9 @@ import { useThemeValue } from '../../utils/useThemeValue';
 var gradientMaskColor = '#ffffff';
 
 // use constants so re-renders don't re-trigger effects
-var defaultSize = {
-  height: 'small',
-  width: 'medium'
-};
 var defaultValues = [];
 var Chart = /*#__PURE__*/React.forwardRef(function (_ref, ref) {
+  var _theme$chart, _theme$chart4, _theme$chart5;
   var a11yTitle = _ref.a11yTitle,
     boundsProp = _ref.bounds,
     color = _ref.color,
@@ -37,8 +34,7 @@ var Chart = /*#__PURE__*/React.forwardRef(function (_ref, ref) {
     point = _ref.point,
     round = _ref.round,
     sizeProp = _ref.size,
-    _ref$thickness = _ref.thickness,
-    thickness = _ref$thickness === void 0 ? 'medium' : _ref$thickness,
+    thickness = _ref.thickness,
     _ref$type = _ref.type,
     type = _ref$type === void 0 ? 'bar' : _ref$type,
     _ref$values = _ref.values,
@@ -48,6 +44,7 @@ var Chart = /*#__PURE__*/React.forwardRef(function (_ref, ref) {
   var _useThemeValue = useThemeValue(),
     theme = _useThemeValue.theme,
     passThemeFlag = _useThemeValue.passThemeFlag;
+  var thicknessValue = thickness || ((_theme$chart = theme.chart) == null ? void 0 : _theme$chart.thickness);
   var values = useMemo(function () {
     return normalizeValues(valuesProp);
   }, [valuesProp]);
@@ -60,8 +57,8 @@ var Chart = /*#__PURE__*/React.forwardRef(function (_ref, ref) {
     return normalizeBounds(boundsProp, values, direction);
   }, [direction, boundsProp, values]);
   var strokeWidth = useMemo(function () {
-    return parseMetricToNum(theme.global.edgeSize[thickness] || thickness);
-  }, [theme.global.edgeSize, thickness]);
+    return parseMetricToNum(theme.global.edgeSize[thicknessValue] || thicknessValue);
+  }, [theme.global.edgeSize, thicknessValue]);
 
   // inset is { top, left, bottom, right }
   var inset = useMemo(function () {
@@ -117,6 +114,11 @@ var Chart = /*#__PURE__*/React.forwardRef(function (_ref, ref) {
 
   // size is { width, height }
   var size = useMemo(function () {
+    var _theme$chart2, _theme$chart3;
+    var defaultSize = {
+      height: (_theme$chart2 = theme.chart) == null ? void 0 : _theme$chart2.height,
+      width: (_theme$chart3 = theme.chart) == null ? void 0 : _theme$chart3.width
+    };
     var gapWidth = gap ? parseMetricToNum(theme.global.edgeSize[gap] || gap) : strokeWidth;
 
     // autoSize is how wide or tall we'd pefer based on the number of values
@@ -143,7 +145,7 @@ var Chart = /*#__PURE__*/React.forwardRef(function (_ref, ref) {
       width: width,
       height: height
     };
-  }, [containerSize, gap, horizontal, sizeProp, strokeWidth, theme.global.edgeSize, theme.global.size, values]);
+  }, [containerSize, gap, horizontal, sizeProp, strokeWidth, theme.global.edgeSize, theme.global.size, (_theme$chart4 = theme.chart) == null ? void 0 : _theme$chart4.height, (_theme$chart5 = theme.chart) == null ? void 0 : _theme$chart5.width, values]);
 
   // scale is { x, y }
   var scale = useMemo(function () {

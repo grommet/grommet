@@ -33,7 +33,7 @@ var stackedChartType = {
 // normalize and automatically handle whatever the caller didn't specify.
 
 var DataChart = /*#__PURE__*/forwardRef(function (_ref, ref) {
-  var _boundsProp$x, _boundsProp$y;
+  var _boundsProp$x, _boundsProp$y, _theme$dataChart;
   var a11yTitle = _ref.a11yTitle,
     _ref$axis = _ref.axis,
     axisProp = _ref$axis === void 0 ? true : _ref$axis,
@@ -45,8 +45,7 @@ var DataChart = /*#__PURE__*/forwardRef(function (_ref, ref) {
     detail = _ref.detail,
     _ref$direction = _ref.direction,
     direction = _ref$direction === void 0 ? 'vertical' : _ref$direction,
-    _ref$gap = _ref.gap,
-    gap = _ref$gap === void 0 ? 'small' : _ref$gap,
+    gap = _ref.gap,
     guideProp = _ref.guide,
     legend = _ref.legend,
     offset = _ref.offset,
@@ -208,6 +207,7 @@ var DataChart = /*#__PURE__*/forwardRef(function (_ref, ref) {
 
   // map granularities to work well with the number of data points we have
   var granularities = useMemo(function () {
+    var _theme$dataChart$size;
     var medium;
     // determine a good medium granularity that will align well with the
     // length of the data
@@ -219,7 +219,7 @@ var DataChart = /*#__PURE__*/forwardRef(function (_ref, ref) {
       fine: data.length,
       medium: medium
     };
-    var granularity1 = _extends({}, heightYGranularity[size && size.height || 'small'] || {
+    var granularity1 = _extends({}, heightYGranularity[size && size.height || ((_theme$dataChart$size = theme.dataChart.size) == null ? void 0 : _theme$dataChart$size.height)] || {
       fine: 5,
       medium: 3
     }, {
@@ -232,7 +232,7 @@ var DataChart = /*#__PURE__*/forwardRef(function (_ref, ref) {
       x: granularity0,
       y: granularity1
     };
-  }, [charts, data.length, horizontal, size]);
+  }, [charts, data.length, horizontal, size, theme]);
 
   // normalize axis to objects, convert granularity to a number
   var axis = useMemo(function () {
@@ -352,10 +352,11 @@ var DataChart = /*#__PURE__*/forwardRef(function (_ref, ref) {
         bounds: chartBounds[index],
         direction: direction,
         steps: steps,
-        thickness: thickness
+        thickness: thickness,
+        theme: theme
       });
     });
-  }, [axis, boundsProp, charts, chartValues, data, direction, granularities, horizontal]);
+  }, [axis, boundsProp, charts, chartValues, data, direction, granularities, horizontal, theme]);
 
   // normalize how we style data properties for use by Legend and Detail
   var seriesStyles = useMemo(function () {
@@ -698,7 +699,7 @@ var DataChart = /*#__PURE__*/forwardRef(function (_ref, ref) {
       start: [1, 0],
       end: [1, 0]
     }],
-    gap: gap
+    gap: gap || ((_theme$dataChart = theme.dataChart) == null ? void 0 : _theme$dataChart.gap)
   }, rest), xAxisElement, yAxisElement, stackElement);
   if (legendElement) {
     content = /*#__PURE__*/React.createElement(Box, {

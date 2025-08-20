@@ -1,11 +1,4 @@
 import { calcMinMax, normalizeValues } from './utils';
-var thicknessPad = {
-  xlarge: 'large',
-  large: 'medium',
-  medium: 'small',
-  small: 'xsmall',
-  xsmall: 'xxsmall'
-};
 export var round = function round(value, decimals) {
   return Number(Math.round(value + "e" + decimals) + "e-" + decimals);
 };
@@ -156,12 +149,14 @@ export var calcBounds = function calcBounds(valuesArg, options) {
 // object structure. If options.direction is not present, the results are
 // delivered in [x, y] array structure, for backwards compatibility
 export var calcs = function calcs(values, options) {
+  var _theme$dataChart, _theme$dataChart2, _theme$dataChart3, _theme$dataChart4, _theme$dataChart5;
   if (values === void 0) {
     values = [];
   }
   if (options === void 0) {
     options = {};
   }
+  var theme = options.theme || {};
   var horizontal = options.direction === 'horizontal';
 
   // the number of steps is one less than the number of labels
@@ -223,6 +218,13 @@ export var calcs = function calcs(values, options) {
     xAxis.push(round(x, 2));
     x += xStepInterval;
   }
+  var thicknessPad = {
+    xlarge: ((_theme$dataChart = theme.dataChart) == null || (_theme$dataChart = _theme$dataChart.thicknessPad) == null ? void 0 : _theme$dataChart.xlarge) || 'large',
+    large: ((_theme$dataChart2 = theme.dataChart) == null || (_theme$dataChart2 = _theme$dataChart2.thicknessPad) == null ? void 0 : _theme$dataChart2.large) || 'medium',
+    medium: ((_theme$dataChart3 = theme.dataChart) == null || (_theme$dataChart3 = _theme$dataChart3.thicknessPad) == null ? void 0 : _theme$dataChart3.medium) || 'small',
+    small: ((_theme$dataChart4 = theme.dataChart) == null || (_theme$dataChart4 = _theme$dataChart4.thicknessPad) == null ? void 0 : _theme$dataChart4.small) || 'xsmall',
+    xsmall: ((_theme$dataChart5 = theme.dataChart) == null || (_theme$dataChart5 = _theme$dataChart5.thicknessPad) == null ? void 0 : _theme$dataChart5.xsmall) || 'xxsmall'
+  };
   var _options = options,
     thickness = _options.thickness;
   if (!thickness) {
@@ -231,17 +233,23 @@ export var calcs = function calcs(values, options) {
     // These values were emirically determined, trying to balance visibility
     // and overlap across resolutions.
     if (values.length < 5) {
-      thickness = 'xlarge';
+      var _theme$dataChart6;
+      thickness = ((_theme$dataChart6 = theme.dataChart) == null || (_theme$dataChart6 = _theme$dataChart6.thickness) == null ? void 0 : _theme$dataChart6.sparse) || 'xlarge';
     } else if (values.length < 11) {
-      thickness = 'large';
+      var _theme$dataChart7;
+      thickness = ((_theme$dataChart7 = theme.dataChart) == null || (_theme$dataChart7 = _theme$dataChart7.thickness) == null ? void 0 : _theme$dataChart7.light) || 'large';
     } else if (values.length < 21) {
-      thickness = 'medium';
+      var _theme$dataChart8;
+      thickness = ((_theme$dataChart8 = theme.dataChart) == null || (_theme$dataChart8 = _theme$dataChart8.thickness) == null ? void 0 : _theme$dataChart8.moderate) || 'medium';
     } else if (values.length < 61) {
-      thickness = 'small';
+      var _theme$dataChart9;
+      thickness = ((_theme$dataChart9 = theme.dataChart) == null || (_theme$dataChart9 = _theme$dataChart9.thickness) == null ? void 0 : _theme$dataChart9.heavy) || 'small';
     } else if (values.length < 121) {
-      thickness = 'xsmall';
+      var _theme$dataChart0;
+      thickness = ((_theme$dataChart0 = theme.dataChart) == null || (_theme$dataChart0 = _theme$dataChart0.thickness) == null ? void 0 : _theme$dataChart0.dense) || 'xsmall';
     } else {
-      thickness = 'hair';
+      var _theme$dataChart1;
+      thickness = ((_theme$dataChart1 = theme.dataChart) == null || (_theme$dataChart1 = _theme$dataChart1.thickness) == null ? void 0 : _theme$dataChart1.veryDense) || 'hair';
     }
   }
   var pad = thicknessPad[thickness];

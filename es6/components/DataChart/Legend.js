@@ -4,11 +4,14 @@ import { Box } from '../Box';
 import { Button } from '../Button';
 import { Text } from '../Text';
 import { Swatch } from './Swatch';
+import { useThemeValue } from '../../utils/useThemeValue';
 var Legend = function Legend(_ref) {
   var activeProperty = _ref.activeProperty,
     seriesProp = _ref.series,
     seriesStyles = _ref.seriesStyles,
     setActiveProperty = _ref.setActiveProperty;
+  var _useThemeValue = useThemeValue(),
+    theme = _useThemeValue.theme;
   var series = useMemo(function () {
     return seriesProp.filter(function (s) {
       return seriesStyles[s.property];
@@ -23,13 +26,12 @@ var Legend = function Legend(_ref) {
     }).length > 1;
   }, [series, seriesStyles]);
   return /*#__PURE__*/React.createElement(Box, {
-    margin: {
-      top: 'small'
-    },
+    margin: theme.dataChart.legend.margin,
     direction: "row",
     wrap: true,
-    gap: "small"
+    gap: theme.dataChart.legend.gap
   }, series.map(function (_ref3) {
+    var _theme$dataChart, _theme$dataChart2;
     var property = _ref3.property,
       label = _ref3.label;
     var isActive = property === activeProperty;
@@ -47,11 +49,8 @@ var Legend = function Legend(_ref) {
       key: property,
       direction: "row",
       align: "center",
-      pad: {
-        horizontal: 'small',
-        vertical: 'xsmall'
-      },
-      gap: "xsmall"
+      pad: (_theme$dataChart = theme.dataChart) == null || (_theme$dataChart = _theme$dataChart.legend) == null || (_theme$dataChart = _theme$dataChart.item) == null ? void 0 : _theme$dataChart.pad,
+      gap: (_theme$dataChart2 = theme.dataChart) == null || (_theme$dataChart2 = _theme$dataChart2.legend) == null || (_theme$dataChart2 = _theme$dataChart2.item) == null ? void 0 : _theme$dataChart2.gap
     }, /*#__PURE__*/React.createElement(Swatch, _extends({}, seriesStyles[property], swatchProps)), /*#__PURE__*/React.createElement(Text, textProps, label || property));
     if (interactive) {
       content = /*#__PURE__*/React.createElement(Button, {

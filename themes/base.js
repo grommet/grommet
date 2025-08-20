@@ -858,7 +858,10 @@ var generate = exports.generate = function generate(baseSpacing, scale) {
       }
     },
     chart: {
-      color: 'graph-0'
+      color: 'graph-0',
+      height: 'small',
+      thickness: 'medium',
+      width: 'medium'
       // extend: undefined,
     },
     checkBox: {
@@ -1003,6 +1006,43 @@ var generate = exports.generate = function generate(baseSpacing, scale) {
       },
       toolbar: {
         gap: 'medium'
+      }
+    },
+    dataChart: {
+      gap: 'small',
+      detail: {
+        gap: 'xsmall'
+      },
+      legend: {
+        margin: {
+          top: 'small'
+        },
+        gap: 'small',
+        item: {
+          gap: 'xsmall',
+          pad: {
+            horizontal: 'small',
+            vertical: 'xsmall'
+          }
+        }
+      },
+      size: {
+        height: 'small'
+      },
+      thickness: {
+        veryDense: 'hair',
+        dense: 'xsmall',
+        heavy: 'small',
+        moderate: 'medium',
+        light: 'large',
+        sparse: 'xlarge'
+      },
+      thicknessPad: {
+        xlarge: 'large',
+        large: 'medium',
+        medium: 'small',
+        small: 'xsmall',
+        xsmall: 'xxsmall'
       }
     },
     dataFilter: {

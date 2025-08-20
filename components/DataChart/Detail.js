@@ -196,7 +196,7 @@ var Detail = exports.Detail = function Detail(_ref) {
     }
   }, /*#__PURE__*/_react["default"].createElement(_Grid.Grid, {
     columns: ['auto', 'auto', 'auto'],
-    gap: "xsmall",
+    gap: theme.dataChart.detail.gap,
     align: "center"
   }, series.filter(function (_ref3) {
     var _data$detailIndex;
