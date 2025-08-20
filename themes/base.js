@@ -523,6 +523,9 @@ var generate = exports.generate = function generate(baseSpacing, scale) {
           }
         }
       },
+      busy: {
+        gap: 'small'
+      },
       gap: 'small',
       size: {
         small: {

@@ -3,6 +3,7 @@ import styled, { css, keyframes } from 'styled-components';
 import { Checkmark } from 'grommet-icons/icons/Checkmark';
 import { Box } from '../Box';
 import { styledComponentsConfig } from '../../utils/styles';
+import { useThemeValue } from '../../utils/useThemeValue';
 var bounceDelay = keyframes(["0%,80%,100%{transform:scale(0.4);}40%{transform:scale(0.8);}"]);
 var bounceDelayRule = css(["animation:", " 1.4s infinite ease-in-out both;"], bounceDelay);
 var Dot = styled(Box).withConfig({
@@ -12,6 +13,9 @@ var Dot = styled(Box).withConfig({
   return props.delay && "animation-delay: " + props.delay + ";";
 });
 export var EllipsisAnimation = function EllipsisAnimation() {
+  var _theme$button;
+  var _useThemeValue = useThemeValue(),
+    theme = _useThemeValue.theme;
   return /*#__PURE__*/React.createElement(Box, {
     style: {
       position: 'absolute'
@@ -22,7 +26,7 @@ export var EllipsisAnimation = function EllipsisAnimation() {
   }, /*#__PURE__*/React.createElement(Box, {
     alignSelf: "center",
     direction: "row",
-    gap: "small"
+    gap: (_theme$button = theme.button) == null || (_theme$button = _theme$button.busy) == null ? void 0 : _theme$button.gap
   }, /*#__PURE__*/React.createElement(Dot, {
     delay: "-0.32s"
   }), /*#__PURE__*/React.createElement(Dot, {
