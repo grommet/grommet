@@ -29,7 +29,6 @@ const Dot = styled(Box)`
 
 export const EllipsisAnimation = () => {
   const { theme } = useThemeValue();
-
   return (
     <Box
       style={{ position: 'absolute' }}
