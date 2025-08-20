@@ -111,7 +111,7 @@ describe('Chart', () => {
 
   test('size', () => {
     const { container } = render(
-      <Grommet theme={hpe}>
+      <Grommet>
         <Chart size="xsmall" values={VALUES} />
         <Chart size="small" values={VALUES} />
         <Chart size="medium" values={VALUES} />
