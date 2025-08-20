@@ -32,8 +32,8 @@ export const SelectColumns = () => (
   // </Grommet>
 );
 
-SelectColumns.args = {
-  full: true,
+SelectColumns.parameters = {
+  chromatic: { disable: true },
 };
 
 export default {

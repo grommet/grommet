@@ -32,8 +32,8 @@ export const OrderColumns = () => (
   // </Grommet>
 );
 
-OrderColumns.args = {
-  full: true,
+OrderColumns.parameters = {
+  chromatic: { disable: true },
 };
 
 export default {
