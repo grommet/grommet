@@ -165,7 +165,7 @@ const SelectMultipleValue = ({
                   </Box>
                 }
                 key={optionLabel}
-                pad="xsmall"
+                pad={theme.selectMultiple?.option?.pad}
                 tabIndex="-1"
                 checked={optionSelected}
                 inert={inertTrueValue}
@@ -195,6 +195,7 @@ const SelectMultipleValue = ({
       messages,
       onSelectChange,
       theme.selectMultiple.maxInline,
+      theme.selectMultiple?.option?.pad,
       value,
       valueKey,
     ],
@@ -245,10 +246,7 @@ const SelectMultipleValue = ({
         )}
       </Box>
       {value && value.length > theme.selectMultiple.maxInline && (
-        <Box
-          pad={{ horizontal: 'small', bottom: 'small', top: 'xsmall' }}
-          alignSelf="start"
-        >
+        <Box pad={theme.selectMultiple?.showMore?.pad} alignSelf="start">
           <Button
             onClick={onRequestOpen}
             size="small"
