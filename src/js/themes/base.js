@@ -416,6 +416,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       // icon: {
       //   color: undefined
       // },
+      iconOnly: {
+        pad: 'small',
+      },
       textDecoration: 'none',
       fontWeight: 600,
       // size: {
@@ -482,6 +485,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
             medium: 'small', // 14px
           },
         },
+      },
+      busy: {
+        gap: 'small',
       },
       gap: 'small',
       size: {
@@ -806,6 +812,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
     },
     chart: {
       color: 'graph-0',
+      height: 'small',
+      thickness: 'medium',
+      width: 'medium',
       // extend: undefined,
     },
     checkBox: {
@@ -932,6 +941,38 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
       toolbar: {
         gap: 'medium',
+      },
+    },
+    dataChart: {
+      gap: 'small',
+      detail: {
+        gap: 'xsmall',
+      },
+      legend: {
+        margin: { top: 'small' },
+        gap: 'small',
+        item: {
+          gap: 'xsmall',
+          pad: { horizontal: 'small', vertical: 'xsmall' },
+        },
+      },
+      size: {
+        height: 'small',
+      },
+      thickness: {
+        veryDense: 'hair',
+        dense: 'xsmall',
+        heavy: 'small',
+        moderate: 'medium',
+        light: 'large',
+        sparse: 'xlarge',
+      },
+      thicknessPad: {
+        xlarge: 'large',
+        large: 'medium',
+        medium: 'small',
+        small: 'xsmall',
+        xsmall: 'xxsmall',
       },
     },
     dataFilter: {
@@ -1317,6 +1358,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       container: {
         // elevation: undefined,
         zIndex: '20',
+        height: { min: 'xxsmall' },
       },
       // extend: undefined,
       overlay: {
@@ -2200,6 +2242,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
     },
     table: {
+      caption: {
+        margin: { bottom: 'xxsmall' },
+      },
       header: {
         align: 'start',
         pad: { horizontal: 'small', vertical: 'xsmall' },
