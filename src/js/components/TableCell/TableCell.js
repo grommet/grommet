@@ -111,7 +111,7 @@ const TableCell = forwardRef(
 
             // height must match cell height otherwise table will apply some
             // margin around the cell content
-            const borderSizeKey = theme.table.cell?.border?.size;
+            const borderSizeKey = theme.table?.[tableContext]?.border?.size;
             const borderSizeValue =
               theme.global.borderSize[borderSizeKey] || borderSizeKey;
             const borderSizeNum = parseInt(borderSizeValue, 10);
