@@ -2082,6 +2082,7 @@ var generate = exports.generate = function generate(baseSpacing, scale) {
         size: 'small'
       },
       // icon: undefined
+      responsive: true,
       size: {
         xsmall: baseSpacing * 0.75 + "px",
         small: baseSpacing + "px",

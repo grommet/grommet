@@ -12,11 +12,14 @@ var BasicSpinner = function BasicSpinner(_ref) {
   var ref = _ref.ref,
     size = _ref.size,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
+  var _useThemeValue = useThemeValue(),
+    theme = _useThemeValue.theme;
   return /*#__PURE__*/React.createElement(Box, _extends({
     flex: false,
     height: size,
     width: size,
-    ref: ref
+    ref: ref,
+    responsive: theme.spinner.responsive
   }, rest));
 };
 /**
@@ -40,8 +43,8 @@ var Spinner = /*#__PURE__*/forwardRef(function (_ref2, ref) {
     size = _ref2.size,
     message = _ref2.message,
     rest = _objectWithoutPropertiesLoose(_ref2, _excluded2);
-  var _useThemeValue = useThemeValue(),
-    theme = _useThemeValue.theme;
+  var _useThemeValue2 = useThemeValue(),
+    theme = _useThemeValue2.theme;
   var announce = useContext(AnnounceContext);
   useEffect(function () {
     if (message != null && message.start) announce(message.start);else if (typeof message === 'string') announce(message);
