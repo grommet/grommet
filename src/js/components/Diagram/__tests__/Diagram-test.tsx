@@ -60,7 +60,7 @@ describe('Diagram', () => {
 
   test('offset', () => {
     const { container } = render(
-      <Context theme={undefined}>
+      <Context theme={{}}>
         <Diagram
           connections={[
             { fromTarget: '1', toTarget: '2', offset: 'xsmall' },
@@ -75,7 +75,7 @@ describe('Diagram', () => {
 
   test('thickness', () => {
     const { container } = render(
-      <Context theme={undefined}>
+      <Context theme={{}}>
         <Diagram
           connections={[
             { fromTarget: '1', toTarget: '2', thickness: 'hair' },
