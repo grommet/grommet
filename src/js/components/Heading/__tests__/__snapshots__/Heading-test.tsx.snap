@@ -1387,7 +1387,6 @@ exports[`weight renders 1`] = `
   font-weight: bold;
   overflow-wrap: break-word;
   color: #2e2e2e;
-  font-weight: 500;
 }
 
 .c4 {

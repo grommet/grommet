@@ -2453,7 +2453,6 @@ exports[`List disabled Should apply disabled styling to items when data are chil
   font-size: 1.125rem;
   line-height: 1.5rem;
   font-weight: bold;
-  font-weight: 500;
 }
 
 .c1 {
@@ -23776,7 +23775,6 @@ exports[`List pinned Should apply pinned styling to items when data are children
   font-size: 1.125rem;
   line-height: 1.5rem;
   font-weight: bold;
-  font-weight: 500;
 }
 
 .c1 {

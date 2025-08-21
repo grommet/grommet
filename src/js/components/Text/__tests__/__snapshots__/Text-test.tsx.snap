@@ -546,7 +546,6 @@ exports[`renders weight 1`] = `
   font-size: 1.125rem;
   line-height: 1.5rem;
   font-weight: bold;
-  font-weight: 500;
 }
 
 <div
