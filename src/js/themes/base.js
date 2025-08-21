@@ -943,7 +943,6 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         gap: 'medium',
       },
     },
-
     dataChart: {
       gap: 'small',
       detail: {
