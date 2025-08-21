@@ -451,17 +451,17 @@ const DataChart = forwardRef(
       if (padProp !== undefined) return padProp;
       let pad0;
       let pad1;
-
+      const halfPadValues = halfPad(theme);
       charts.forEach(({ type }, index) => {
         const { thickness } = chartProps[index];
-        pad0 = largestSize(pad0, halfPad[thickness]);
+        pad0 = largestSize(pad0, halfPadValues[thickness]);
         if (type && type !== 'bar')
-          pad1 = largestSize(pad1, halfPad[thickness]);
+          pad1 = largestSize(pad1, halfPadValues[thickness]);
       });
       return horizontal
         ? { horizontal: pad1, vertical: pad0 }
         : { horizontal: pad0, vertical: pad1 };
-    }, [chartProps, charts, horizontal, padProp]);
+    }, [chartProps, charts, horizontal, padProp, theme]);
 
     // calculate the thickness in pixels of each chart
     const thicknesses = useMemo(

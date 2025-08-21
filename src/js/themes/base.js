@@ -943,10 +943,26 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         gap: 'medium',
       },
     },
+
     dataChart: {
       gap: 'small',
       detail: {
         gap: 'xsmall',
+        pad: 'small',
+      },
+      doublePad: {
+        large: 'xlarge',
+        medium: 'large',
+        small: 'medium',
+        xsmall: 'small',
+        xxsmall: 'xsmall',
+      },
+      halfPad: {
+        xlarge: 'large',
+        large: 'medium',
+        medium: 'small',
+        small: 'xsmall',
+        xsmall: 'xxsmall',
       },
       legend: {
         margin: { top: 'small' },
