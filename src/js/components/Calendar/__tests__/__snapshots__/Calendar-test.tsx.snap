@@ -14035,7 +14035,7 @@ exports[`Calendar header 1`] = `
 .c1 {
   font-size: 13.6px;
   line-height: 1.375;
-  width: 192px;
+  width: 256px;
 }
 
 .c8 {
@@ -14132,14 +14132,14 @@ exports[`Calendar header 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width: 192px) {
+@media only screen and (max-width: 256px) {
   .c1 {
     width: 100vw;
-    max-width: 192px;
+    max-width: 256px;
   }
 }
 
-@media only screen and (max-width: 192px) {
+@media only screen and (max-width: 256px) {
   .c8 {
     height: auto;
     aspect-ratio: 7/6;
@@ -14152,13 +14152,13 @@ exports[`Calendar header 1`] = `
   }
 }
 
-@media only screen and (max-width: 192px) {
+@media only screen and (max-width: 256px) {
   .c11 {
     width: 14.3%;
   }
 }
 
-@media only screen and (max-width: 192px) {
+@media only screen and (max-width: 256px) {
   .c15 {
     width: 14.3%;
   }
@@ -14170,7 +14170,7 @@ exports[`Calendar header 1`] = `
   }
 }
 
-@media only screen and (max-width: 192px) {
+@media only screen and (max-width: 256px) {
   .c13 {
     width: 100%;
     max-width: 27.43px;
@@ -14179,7 +14179,7 @@ exports[`Calendar header 1`] = `
   }
 }
 
-@media only screen and (max-width: 192px) {
+@media only screen and (max-width: 256px) {
   .c14 {
     width: 100%;
     max-width: 27.43px;
@@ -14188,7 +14188,7 @@ exports[`Calendar header 1`] = `
   }
 }
 
-@media only screen and (max-width: 192px) {
+@media only screen and (max-width: 256px) {
   .c16 {
     width: 100%;
     max-width: 27.43px;
@@ -28067,7 +28067,7 @@ exports[`Calendar size 1`] = `
 .c1 {
   font-size: 13.6px;
   line-height: 1.375;
-  width: 192px;
+  width: 256px;
 }
 
 .c20 {
@@ -28079,7 +28079,7 @@ exports[`Calendar size 1`] = `
 .c29 {
   font-size: 31.2px;
   line-height: 1.11;
-  width: 768px;
+  width: 512px;
 }
 
 .c10 {
@@ -28271,10 +28271,10 @@ exports[`Calendar size 1`] = `
   }
 }
 
-@media only screen and (max-width: 192px) {
+@media only screen and (max-width: 256px) {
   .c1 {
     width: 100vw;
-    max-width: 192px;
+    max-width: 256px;
   }
 }
 
@@ -28285,14 +28285,14 @@ exports[`Calendar size 1`] = `
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 512px) {
   .c29 {
     width: 100vw;
-    max-width: 768px;
+    max-width: 512px;
   }
 }
 
-@media only screen and (max-width: 192px) {
+@media only screen and (max-width: 256px) {
   .c10 {
     height: auto;
     aspect-ratio: 7/6;
@@ -28306,7 +28306,7 @@ exports[`Calendar size 1`] = `
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 512px) {
   .c33 {
     height: auto;
     aspect-ratio: 7/6;
@@ -28319,13 +28319,13 @@ exports[`Calendar size 1`] = `
   }
 }
 
-@media only screen and (max-width: 192px) {
+@media only screen and (max-width: 256px) {
   .c13 {
     width: 14.3%;
   }
 }
 
-@media only screen and (max-width: 192px) {
+@media only screen and (max-width: 256px) {
   .c18 {
     width: 14.3%;
   }
@@ -28355,13 +28355,13 @@ exports[`Calendar size 1`] = `
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 512px) {
   .c34 {
     width: 14.3%;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 512px) {
   .c37 {
     width: 14.3%;
   }
@@ -28373,7 +28373,7 @@ exports[`Calendar size 1`] = `
   }
 }
 
-@media only screen and (max-width: 192px) {
+@media only screen and (max-width: 256px) {
   .c16 {
     width: 100%;
     max-width: 27.43px;
@@ -28382,7 +28382,7 @@ exports[`Calendar size 1`] = `
   }
 }
 
-@media only screen and (max-width: 192px) {
+@media only screen and (max-width: 256px) {
   .c17 {
     width: 100%;
     max-width: 27.43px;
@@ -28391,7 +28391,7 @@ exports[`Calendar size 1`] = `
   }
 }
 
-@media only screen and (max-width: 192px) {
+@media only screen and (max-width: 256px) {
   .c19 {
     width: 100%;
     max-width: 27.43px;
@@ -28427,7 +28427,7 @@ exports[`Calendar size 1`] = `
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 512px) {
   .c35 {
     width: 100%;
     max-width: 109.71px;
@@ -28436,7 +28436,7 @@ exports[`Calendar size 1`] = `
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 512px) {
   .c36 {
     width: 100%;
     max-width: 109.71px;
@@ -28445,7 +28445,7 @@ exports[`Calendar size 1`] = `
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 512px) {
   .c38 {
     width: 100%;
     max-width: 109.71px;

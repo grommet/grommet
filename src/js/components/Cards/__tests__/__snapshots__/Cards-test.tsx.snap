@@ -59,7 +59,7 @@ exports[`Cards children render 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c2 {
-    border-radius: 6px;
+    border-radius: 8px;
   }
 }
 
@@ -195,7 +195,7 @@ exports[`Cards data objects 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c2 {
-    border-radius: 6px;
+    border-radius: 8px;
   }
 }
 
@@ -292,7 +292,7 @@ exports[`Cards data strings 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c2 {
-    border-radius: 6px;
+    border-radius: 8px;
   }
 }
 
@@ -820,7 +820,7 @@ exports[`Cards renders a11yTitle and aria-label 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c2 {
-    border-radius: 6px;
+    border-radius: 8px;
   }
 }
 

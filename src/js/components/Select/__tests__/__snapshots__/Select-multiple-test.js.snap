@@ -58,8 +58,8 @@ exports[`Select Controlled deselect an option 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  margin-left: 12px;
-  margin-right: 12px;
+  margin-left: 16px;
+  margin-right: 16px;
   margin-left: 12px;
   margin-right: 12px;
   min-width: 0;
@@ -236,8 +236,8 @@ exports[`Select Controlled deselect an option 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c8 {
-    margin-left: 6px;
-    margin-right: 6px;
+    margin-left: 8px;
+    margin-right: 8px;
   }
 }
 
@@ -366,8 +366,8 @@ exports[`Select Controlled multiple 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  margin-left: 12px;
-  margin-right: 12px;
+  margin-left: 16px;
+  margin-right: 16px;
   margin-left: 12px;
   margin-right: 12px;
   min-width: 0;
@@ -544,8 +544,8 @@ exports[`Select Controlled multiple 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c8 {
-    margin-left: 6px;
-    margin-right: 6px;
+    margin-left: 8px;
+    margin-right: 8px;
   }
 }
 
@@ -673,8 +673,8 @@ exports[`Select Controlled multiple onChange toggle with valueKey reduce 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  margin-left: 12px;
-  margin-right: 12px;
+  margin-left: 16px;
+  margin-right: 16px;
   margin-left: 12px;
   margin-right: 12px;
   min-width: 0;
@@ -851,8 +851,8 @@ exports[`Select Controlled multiple onChange toggle with valueKey reduce 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c8 {
-    margin-left: 6px;
-    margin-right: 6px;
+    margin-left: 8px;
+    margin-right: 8px;
   }
 }
 
@@ -1177,19 +1177,6 @@ exports[`Select Controlled multiple onChange toggle with valueKey reduce 2`] = `
   padding-bottom: 0;
 }
 
-.c3 button[aria-label*="Or, press"] {
-  padding-block: 6px;
-  padding-inline: 6px;
-}
-
-.c3 button[aria-label*="Or, press"]:focus {
-  background: transparent;
-}
-
-.c3 button[aria-label*="Or, press"]:focus >div {
-  background: rgba(0, 0, 0, 0.04);
-}
-
 .c4 {
   position: relative;
   scroll-behavior: smooth;
@@ -1285,18 +1272,18 @@ exports[`Select Controlled multiple onChange toggle with valueKey reduce 2`] = `
 
 exports[`Select Controlled multiple onChange toggle with valueKey reduce 3`] = `
 "@media only screen and (max-width: 768px) {
-  .peYnb {
-    margin-left: 6px;
-    margin-right: 6px;
+  .fByYbX {
+    margin-left: 8px;
+    margin-right: 8px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .peYnb {
+  .fByYbX {
     margin-left: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .peYnb {
+  .fByYbX {
     margin-right: 12px;
   }
 }"
@@ -1360,8 +1347,8 @@ exports[`Select Controlled multiple onChange with valueKey reduce 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  margin-left: 12px;
-  margin-right: 12px;
+  margin-left: 16px;
+  margin-right: 16px;
   margin-left: 12px;
   margin-right: 12px;
   min-width: 0;
@@ -1538,8 +1525,8 @@ exports[`Select Controlled multiple onChange with valueKey reduce 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c8 {
-    margin-left: 6px;
-    margin-right: 6px;
+    margin-left: 8px;
+    margin-right: 8px;
   }
 }
 
@@ -1763,19 +1750,6 @@ exports[`Select Controlled multiple onChange with valueKey reduce 2`] = `
   padding-bottom: 0;
 }
 
-.c3 button[aria-label*="Or, press"] {
-  padding-block: 6px;
-  padding-inline: 6px;
-}
-
-.c3 button[aria-label*="Or, press"]:focus {
-  background: transparent;
-}
-
-.c3 button[aria-label*="Or, press"]:focus >div {
-  background: rgba(0, 0, 0, 0.04);
-}
-
 .c4 {
   position: relative;
   scroll-behavior: smooth;
@@ -1871,18 +1845,18 @@ exports[`Select Controlled multiple onChange with valueKey reduce 2`] = `
 
 exports[`Select Controlled multiple onChange with valueKey reduce 3`] = `
 "@media only screen and (max-width: 768px) {
-  .peYnb {
-    margin-left: 6px;
-    margin-right: 6px;
+  .fByYbX {
+    margin-left: 8px;
+    margin-right: 8px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .peYnb {
+  .fByYbX {
     margin-left: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .peYnb {
+  .fByYbX {
     margin-right: 12px;
   }
 }"
@@ -1946,8 +1920,8 @@ exports[`Select Controlled multiple onChange with valueKey string 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  margin-left: 12px;
-  margin-right: 12px;
+  margin-left: 16px;
+  margin-right: 16px;
   margin-left: 12px;
   margin-right: 12px;
   min-width: 0;
@@ -2124,8 +2098,8 @@ exports[`Select Controlled multiple onChange with valueKey string 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c8 {
-    margin-left: 6px;
-    margin-right: 6px;
+    margin-left: 8px;
+    margin-right: 8px;
   }
 }
 
@@ -2349,19 +2323,6 @@ exports[`Select Controlled multiple onChange with valueKey string 2`] = `
   padding-bottom: 0;
 }
 
-.c3 button[aria-label*="Or, press"] {
-  padding-block: 6px;
-  padding-inline: 6px;
-}
-
-.c3 button[aria-label*="Or, press"]:focus {
-  background: transparent;
-}
-
-.c3 button[aria-label*="Or, press"]:focus >div {
-  background: rgba(0, 0, 0, 0.04);
-}
-
 .c4 {
   position: relative;
   scroll-behavior: smooth;
@@ -2457,18 +2418,18 @@ exports[`Select Controlled multiple onChange with valueKey string 2`] = `
 
 exports[`Select Controlled multiple onChange with valueKey string 3`] = `
 "@media only screen and (max-width: 768px) {
-  .peYnb {
-    margin-left: 6px;
-    margin-right: 6px;
+  .fByYbX {
+    margin-left: 8px;
+    margin-right: 8px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .peYnb {
+  .fByYbX {
     margin-left: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .peYnb {
+  .fByYbX {
     margin-right: 12px;
   }
 }"
@@ -2533,8 +2494,8 @@ exports[`Select Controlled multiple onChange without labelKey 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  margin-left: 12px;
-  margin-right: 12px;
+  margin-left: 16px;
+  margin-right: 16px;
   margin-left: 12px;
   margin-right: 12px;
   min-width: 0;
@@ -2711,8 +2672,8 @@ exports[`Select Controlled multiple onChange without labelKey 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c8 {
-    margin-left: 6px;
-    margin-right: 6px;
+    margin-left: 8px;
+    margin-right: 8px;
   }
 }
 
@@ -2937,19 +2898,6 @@ exports[`Select Controlled multiple onChange without labelKey 2`] = `
   padding-bottom: 0;
 }
 
-.c3 button[aria-label*="Or, press"] {
-  padding-block: 6px;
-  padding-inline: 6px;
-}
-
-.c3 button[aria-label*="Or, press"]:focus {
-  background: transparent;
-}
-
-.c3 button[aria-label*="Or, press"]:focus >div {
-  background: rgba(0, 0, 0, 0.04);
-}
-
 .c4 {
   position: relative;
   scroll-behavior: smooth;
@@ -3045,18 +2993,18 @@ exports[`Select Controlled multiple onChange without labelKey 2`] = `
 
 exports[`Select Controlled multiple onChange without labelKey 3`] = `
 "@media only screen and (max-width: 768px) {
-  .peYnb {
-    margin-left: 6px;
-    margin-right: 6px;
+  .fByYbX {
+    margin-left: 8px;
+    margin-right: 8px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .peYnb {
+  .fByYbX {
     margin-left: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .peYnb {
+  .fByYbX {
     margin-right: 12px;
   }
 }"
@@ -3071,7 +3019,7 @@ exports[`Select Controlled multiple onChange without labelKey 4`] = `
   tabindex="-1"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 fDLUqh StyledSelect__StyledContainer-sc-znp66n-0 hvEItc"
+    class="StyledBox-sc-13pk1d4-0 fDLUqh StyledSelect__StyledContainer-sc-znp66n-0 gDZSzh"
     id="test-select__select-drop"
   >
     <div
@@ -3112,18 +3060,18 @@ exports[`Select Controlled multiple onChange without labelKey 4`] = `
 
 exports[`Select Controlled multiple onChange without labelKey 5`] = `
 "@media only screen and (max-width: 768px) {
-  .peYnb {
-    margin-left: 6px;
-    margin-right: 6px;
+  .fByYbX {
+    margin-left: 8px;
+    margin-right: 8px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .peYnb {
+  .fByYbX {
     margin-left: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .peYnb {
+  .fByYbX {
     margin-right: 12px;
   }
 }"
@@ -3138,7 +3086,7 @@ exports[`Select Controlled multiple onChange without labelKey 6`] = `
   tabindex="-1"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 fDLUqh StyledSelect__StyledContainer-sc-znp66n-0 hvEItc"
+    class="StyledBox-sc-13pk1d4-0 fDLUqh StyledSelect__StyledContainer-sc-znp66n-0 gDZSzh"
     id="test-select__select-drop"
   >
     <div
@@ -3179,18 +3127,18 @@ exports[`Select Controlled multiple onChange without labelKey 6`] = `
 
 exports[`Select Controlled multiple onChange without labelKey 7`] = `
 "@media only screen and (max-width: 768px) {
-  .peYnb {
-    margin-left: 6px;
-    margin-right: 6px;
+  .fByYbX {
+    margin-left: 8px;
+    margin-right: 8px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .peYnb {
+  .fByYbX {
     margin-left: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .peYnb {
+  .fByYbX {
     margin-right: 12px;
   }
 }"
@@ -3255,8 +3203,8 @@ exports[`Select Controlled multiple onChange without labelKey 8`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  margin-left: 12px;
-  margin-right: 12px;
+  margin-left: 16px;
+  margin-right: 16px;
   margin-left: 12px;
   margin-right: 12px;
   min-width: 0;
@@ -3433,8 +3381,8 @@ exports[`Select Controlled multiple onChange without labelKey 8`] = `
 
 @media only screen and (max-width: 768px) {
   .c8 {
-    margin-left: 6px;
-    margin-right: 6px;
+    margin-left: 8px;
+    margin-right: 8px;
   }
 }
 
@@ -3572,8 +3520,8 @@ exports[`Select Controlled multiple onChange without valueKey 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  margin-left: 12px;
-  margin-right: 12px;
+  margin-left: 16px;
+  margin-right: 16px;
   margin-left: 12px;
   margin-right: 12px;
   min-width: 0;
@@ -3750,8 +3698,8 @@ exports[`Select Controlled multiple onChange without valueKey 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c8 {
-    margin-left: 6px;
-    margin-right: 6px;
+    margin-left: 8px;
+    margin-right: 8px;
   }
 }
 
@@ -3975,19 +3923,6 @@ exports[`Select Controlled multiple onChange without valueKey 2`] = `
   padding-bottom: 0;
 }
 
-.c3 button[aria-label*="Or, press"] {
-  padding-block: 6px;
-  padding-inline: 6px;
-}
-
-.c3 button[aria-label*="Or, press"]:focus {
-  background: transparent;
-}
-
-.c3 button[aria-label*="Or, press"]:focus >div {
-  background: rgba(0, 0, 0, 0.04);
-}
-
 .c4 {
   position: relative;
   scroll-behavior: smooth;
@@ -4083,18 +4018,18 @@ exports[`Select Controlled multiple onChange without valueKey 2`] = `
 
 exports[`Select Controlled multiple onChange without valueKey 3`] = `
 "@media only screen and (max-width: 768px) {
-  .peYnb {
-    margin-left: 6px;
-    margin-right: 6px;
+  .fByYbX {
+    margin-left: 8px;
+    margin-right: 8px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .peYnb {
+  .fByYbX {
     margin-left: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .peYnb {
+  .fByYbX {
     margin-right: 12px;
   }
 }"
@@ -4109,7 +4044,7 @@ exports[`Select Controlled multiple onChange without valueKey 4`] = `
   tabindex="-1"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 fDLUqh StyledSelect__StyledContainer-sc-znp66n-0 hvEItc"
+    class="StyledBox-sc-13pk1d4-0 fDLUqh StyledSelect__StyledContainer-sc-znp66n-0 gDZSzh"
     id="test-select__select-drop"
   >
     <div
@@ -4150,18 +4085,18 @@ exports[`Select Controlled multiple onChange without valueKey 4`] = `
 
 exports[`Select Controlled multiple onChange without valueKey 5`] = `
 "@media only screen and (max-width: 768px) {
-  .peYnb {
-    margin-left: 6px;
-    margin-right: 6px;
+  .fByYbX {
+    margin-left: 8px;
+    margin-right: 8px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .peYnb {
+  .fByYbX {
     margin-left: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .peYnb {
+  .fByYbX {
     margin-right: 12px;
   }
 }"
@@ -4176,7 +4111,7 @@ exports[`Select Controlled multiple onChange without valueKey 6`] = `
   tabindex="-1"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 fDLUqh StyledSelect__StyledContainer-sc-znp66n-0 hvEItc"
+    class="StyledBox-sc-13pk1d4-0 fDLUqh StyledSelect__StyledContainer-sc-znp66n-0 gDZSzh"
     id="test-select__select-drop"
   >
     <div
@@ -4217,18 +4152,18 @@ exports[`Select Controlled multiple onChange without valueKey 6`] = `
 
 exports[`Select Controlled multiple onChange without valueKey 7`] = `
 "@media only screen and (max-width: 768px) {
-  .peYnb {
-    margin-left: 6px;
-    margin-right: 6px;
+  .fByYbX {
+    margin-left: 8px;
+    margin-right: 8px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .peYnb {
+  .fByYbX {
     margin-left: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .peYnb {
+  .fByYbX {
     margin-right: 12px;
   }
 }"
@@ -4293,8 +4228,8 @@ exports[`Select Controlled multiple onChange without valueKey 8`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  margin-left: 12px;
-  margin-right: 12px;
+  margin-left: 16px;
+  margin-right: 16px;
   margin-left: 12px;
   margin-right: 12px;
   min-width: 0;
@@ -4471,8 +4406,8 @@ exports[`Select Controlled multiple onChange without valueKey 8`] = `
 
 @media only screen and (max-width: 768px) {
   .c8 {
-    margin-left: 6px;
-    margin-right: 6px;
+    margin-left: 8px;
+    margin-right: 8px;
   }
 }
 
@@ -4611,8 +4546,8 @@ exports[`Select Controlled multiple onChange without valueKey or labelKey 1`] = 
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  margin-left: 12px;
-  margin-right: 12px;
+  margin-left: 16px;
+  margin-right: 16px;
   margin-left: 12px;
   margin-right: 12px;
   min-width: 0;
@@ -4789,8 +4724,8 @@ exports[`Select Controlled multiple onChange without valueKey or labelKey 1`] = 
 
 @media only screen and (max-width: 768px) {
   .c8 {
-    margin-left: 6px;
-    margin-right: 6px;
+    margin-left: 8px;
+    margin-right: 8px;
   }
 }
 
@@ -5015,19 +4950,6 @@ exports[`Select Controlled multiple onChange without valueKey or labelKey 2`] = 
   padding-bottom: 0;
 }
 
-.c3 button[aria-label*="Or, press"] {
-  padding-block: 6px;
-  padding-inline: 6px;
-}
-
-.c3 button[aria-label*="Or, press"]:focus {
-  background: transparent;
-}
-
-.c3 button[aria-label*="Or, press"]:focus >div {
-  background: rgba(0, 0, 0, 0.04);
-}
-
 .c4 {
   position: relative;
   scroll-behavior: smooth;
@@ -5123,18 +5045,18 @@ exports[`Select Controlled multiple onChange without valueKey or labelKey 2`] = 
 
 exports[`Select Controlled multiple onChange without valueKey or labelKey 3`] = `
 "@media only screen and (max-width: 768px) {
-  .peYnb {
-    margin-left: 6px;
-    margin-right: 6px;
+  .fByYbX {
+    margin-left: 8px;
+    margin-right: 8px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .peYnb {
+  .fByYbX {
     margin-left: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .peYnb {
+  .fByYbX {
     margin-right: 12px;
   }
 }"
@@ -5149,7 +5071,7 @@ exports[`Select Controlled multiple onChange without valueKey or labelKey 4`] = 
   tabindex="-1"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 fDLUqh StyledSelect__StyledContainer-sc-znp66n-0 hvEItc"
+    class="StyledBox-sc-13pk1d4-0 fDLUqh StyledSelect__StyledContainer-sc-znp66n-0 gDZSzh"
     id="test-select__select-drop"
   >
     <div
@@ -5188,18 +5110,18 @@ exports[`Select Controlled multiple onChange without valueKey or labelKey 4`] = 
 
 exports[`Select Controlled multiple onChange without valueKey or labelKey 5`] = `
 "@media only screen and (max-width: 768px) {
-  .peYnb {
-    margin-left: 6px;
-    margin-right: 6px;
+  .fByYbX {
+    margin-left: 8px;
+    margin-right: 8px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .peYnb {
+  .fByYbX {
     margin-left: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .peYnb {
+  .fByYbX {
     margin-right: 12px;
   }
 }"
@@ -5214,7 +5136,7 @@ exports[`Select Controlled multiple onChange without valueKey or labelKey 6`] = 
   tabindex="-1"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 fDLUqh StyledSelect__StyledContainer-sc-znp66n-0 hvEItc"
+    class="StyledBox-sc-13pk1d4-0 fDLUqh StyledSelect__StyledContainer-sc-znp66n-0 gDZSzh"
     id="test-select__select-drop"
   >
     <div
@@ -5253,18 +5175,18 @@ exports[`Select Controlled multiple onChange without valueKey or labelKey 6`] = 
 
 exports[`Select Controlled multiple onChange without valueKey or labelKey 7`] = `
 "@media only screen and (max-width: 768px) {
-  .peYnb {
-    margin-left: 6px;
-    margin-right: 6px;
+  .fByYbX {
+    margin-left: 8px;
+    margin-right: 8px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .peYnb {
+  .fByYbX {
     margin-left: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .peYnb {
+  .fByYbX {
     margin-right: 12px;
   }
 }"
@@ -5329,8 +5251,8 @@ exports[`Select Controlled multiple onChange without valueKey or labelKey 8`] = 
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  margin-left: 12px;
-  margin-right: 12px;
+  margin-left: 16px;
+  margin-right: 16px;
   margin-left: 12px;
   margin-right: 12px;
   min-width: 0;
@@ -5507,8 +5429,8 @@ exports[`Select Controlled multiple onChange without valueKey or labelKey 8`] = 
 
 @media only screen and (max-width: 768px) {
   .c8 {
-    margin-left: 6px;
-    margin-right: 6px;
+    margin-left: 8px;
+    margin-right: 8px;
   }
 }
 
@@ -5646,8 +5568,8 @@ exports[`Select Controlled multiple values 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  margin-left: 12px;
-  margin-right: 12px;
+  margin-left: 16px;
+  margin-right: 16px;
   margin-left: 12px;
   margin-right: 12px;
   min-width: 0;
@@ -5824,8 +5746,8 @@ exports[`Select Controlled multiple values 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c8 {
-    margin-left: 6px;
-    margin-right: 6px;
+    margin-left: 8px;
+    margin-right: 8px;
   }
 }
 
@@ -5931,7 +5853,7 @@ exports[`Select Controlled multiple values 2`] = `
         </div>
       </div>
       <div
-        class="StyledBox-sc-13pk1d4-0 peYnb"
+        class="StyledBox-sc-13pk1d4-0 fByYbX"
         style="min-width: auto;"
       >
         .c0 {
@@ -6177,19 +6099,6 @@ exports[`Select Controlled multiple values 3`] = `
   padding-bottom: 0;
 }
 
-.c3 button[aria-label*="Or, press"] {
-  padding-block: 6px;
-  padding-inline: 6px;
-}
-
-.c3 button[aria-label*="Or, press"]:focus {
-  background: transparent;
-}
-
-.c3 button[aria-label*="Or, press"]:focus >div {
-  background: rgba(0, 0, 0, 0.04);
-}
-
 .c4 {
   position: relative;
   scroll-behavior: smooth;
@@ -6285,18 +6194,18 @@ exports[`Select Controlled multiple values 3`] = `
 
 exports[`Select Controlled multiple values 4`] = `
 "@media only screen and (max-width: 768px) {
-  .peYnb {
-    margin-left: 6px;
-    margin-right: 6px;
+  .fByYbX {
+    margin-left: 8px;
+    margin-right: 8px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .peYnb {
+  .fByYbX {
     margin-left: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .peYnb {
+  .fByYbX {
     margin-right: 12px;
   }
 }"
@@ -6360,8 +6269,8 @@ exports[`Select Controlled multiple with empty results 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  margin-left: 12px;
-  margin-right: 12px;
+  margin-left: 16px;
+  margin-right: 16px;
   margin-left: 12px;
   margin-right: 12px;
   min-width: 0;
@@ -6538,8 +6447,8 @@ exports[`Select Controlled multiple with empty results 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c8 {
-    margin-left: 6px;
-    margin-right: 6px;
+    margin-left: 8px;
+    margin-right: 8px;
   }
 }
 
@@ -6763,19 +6672,6 @@ exports[`Select Controlled multiple with empty results 2`] = `
   padding-bottom: 0;
 }
 
-.c3 button[aria-label*="Or, press"] {
-  padding-block: 6px;
-  padding-inline: 6px;
-}
-
-.c3 button[aria-label*="Or, press"]:focus {
-  background: transparent;
-}
-
-.c3 button[aria-label*="Or, press"]:focus >div {
-  background: rgba(0, 0, 0, 0.04);
-}
-
 .c4 {
   position: relative;
   scroll-behavior: smooth;
@@ -6871,18 +6767,18 @@ exports[`Select Controlled multiple with empty results 2`] = `
 
 exports[`Select Controlled multiple with empty results 3`] = `
 "@media only screen and (max-width: 768px) {
-  .peYnb {
-    margin-left: 6px;
-    margin-right: 6px;
+  .fByYbX {
+    margin-left: 8px;
+    margin-right: 8px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .peYnb {
+  .fByYbX {
     margin-left: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .peYnb {
+  .fByYbX {
     margin-right: 12px;
   }
 }"
@@ -6946,8 +6842,8 @@ exports[`Select Controlled select another option 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  margin-left: 12px;
-  margin-right: 12px;
+  margin-left: 16px;
+  margin-right: 16px;
   margin-left: 12px;
   margin-right: 12px;
   min-width: 0;
@@ -7124,8 +7020,8 @@ exports[`Select Controlled select another option 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c8 {
-    margin-left: 6px;
-    margin-right: 6px;
+    margin-left: 8px;
+    margin-right: 8px;
   }
 }
 
@@ -7254,8 +7150,8 @@ exports[`Select Controlled should not have accessibility violations 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  margin-left: 12px;
-  margin-right: 12px;
+  margin-left: 16px;
+  margin-right: 16px;
   margin-left: 12px;
   margin-right: 12px;
   min-width: 0;
@@ -7432,8 +7328,8 @@ exports[`Select Controlled should not have accessibility violations 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c8 {
-    margin-left: 6px;
-    margin-right: 6px;
+    margin-left: 8px;
+    margin-right: 8px;
   }
 }
 

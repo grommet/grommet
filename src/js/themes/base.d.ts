@@ -1942,6 +1942,7 @@ export interface ThemeType {
       | { color?: ColorType }
       | { size?: 'xsmall' | 'small' | 'medium' | 'large' | 'xlarge' | string };
     icon?: React.ReactNode | Icon;
+    responsive?: boolean;
     size?: {
       xsmall?: string;
       small?: string;

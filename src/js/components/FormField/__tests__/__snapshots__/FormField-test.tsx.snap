@@ -161,8 +161,8 @@ exports[`FormField Field with null as child 1`] = `
 .c3 {
   margin-left: 0px;
   margin-right: 0px;
-  margin-top: 6px;
-  margin-bottom: 6px;
+  margin-top: 12px;
+  margin-bottom: 12px;
   margin-top: 6px;
   margin-bottom: 0px;
   font-size: 0.875rem;
@@ -675,8 +675,8 @@ exports[`FormField contentProps 1`] = `
 .c3 {
   margin-left: 0px;
   margin-right: 0px;
-  margin-top: 6px;
-  margin-bottom: 6px;
+  margin-top: 12px;
+  margin-bottom: 12px;
   margin-top: 6px;
   margin-bottom: 0px;
   font-size: 0.875rem;
@@ -2699,8 +2699,8 @@ exports[`FormField error 1`] = `
 .c8 {
   margin-left: 0px;
   margin-right: 0px;
-  margin-top: 6px;
-  margin-bottom: 6px;
+  margin-top: 12px;
+  margin-bottom: 12px;
   margin-top: 0px;
   margin-bottom: 6px;
   font-size: 0.875rem;
@@ -3052,8 +3052,8 @@ exports[`FormField info 1`] = `
 .c4 {
   margin-left: 0px;
   margin-right: 0px;
-  margin-top: 6px;
-  margin-bottom: 6px;
+  margin-top: 12px;
+  margin-bottom: 12px;
   margin-top: 0px;
   margin-bottom: 6px;
   font-size: 0.875rem;
@@ -3265,8 +3265,8 @@ exports[`FormField label 1`] = `
 .c3 {
   margin-left: 0px;
   margin-right: 0px;
-  margin-top: 6px;
-  margin-bottom: 6px;
+  margin-top: 12px;
+  margin-bottom: 12px;
   margin-top: 6px;
   margin-bottom: 0px;
   font-size: 0.875rem;
@@ -3437,8 +3437,8 @@ exports[`FormField max and threshold validation 1`] = `
 .c3 {
   margin-left: 0px;
   margin-right: 0px;
-  margin-top: 6px;
-  margin-bottom: 6px;
+  margin-top: 12px;
+  margin-bottom: 12px;
   margin-top: 6px;
   margin-bottom: 0px;
   font-size: 0.875rem;

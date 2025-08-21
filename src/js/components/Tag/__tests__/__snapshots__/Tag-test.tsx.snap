@@ -62,7 +62,7 @@ exports[`Tag basic 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c1 {
-    border-radius: 3px;
+    border-radius: 4px;
   }
 }
 
@@ -345,7 +345,7 @@ exports[`Tag onClick 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c2 {
-    border-radius: 3px;
+    border-radius: 4px;
   }
 }
 
@@ -560,7 +560,7 @@ exports[`Tag onRemove 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c1 {
-    border-radius: 3px;
+    border-radius: 4px;
   }
 }
 
@@ -580,7 +580,7 @@ exports[`Tag onRemove 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c6 {
-    border-radius: 3px;
+    border-radius: 4px;
   }
 }
 
@@ -1789,7 +1789,7 @@ exports[`Tag size 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c1 {
-    border-radius: 3px;
+    border-radius: 4px;
   }
 }
 

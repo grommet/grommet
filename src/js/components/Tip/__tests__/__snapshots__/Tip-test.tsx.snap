@@ -18,7 +18,7 @@ exports[`Tip dropProps should pass props to Drop 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  margin: 3px;
+  margin: 6px;
   background-color: #ffffff;
   color: #555555;
   border: solid 1px rgba(0, 0, 0, 0.12);
@@ -72,7 +72,7 @@ exports[`Tip dropProps should pass props to Drop 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c2 {
-    margin: 2px;
+    margin: 3px;
   }
 }
 
@@ -98,7 +98,7 @@ exports[`Tip dropProps should pass props to Drop 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c2 {
-    border-radius: 3px;
+    border-radius: 4px;
   }
 }
 
@@ -266,7 +266,7 @@ exports[`Tip mouseOver and mouseOut events on the Tip's child 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  margin: 3px;
+  margin: 6px;
   background-color: #ffffff;
   color: #555555;
   border: solid 1px rgba(0, 0, 0, 0.12);
@@ -329,7 +329,7 @@ exports[`Tip mouseOver and mouseOut events on the Tip's child 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c2 {
-    margin: 2px;
+    margin: 3px;
   }
 }
 
@@ -355,7 +355,7 @@ exports[`Tip mouseOver and mouseOut events on the Tip's child 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c2 {
-    border-radius: 3px;
+    border-radius: 4px;
   }
 }
 
@@ -484,7 +484,7 @@ exports[`Tip should be visible by default 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  margin: 3px;
+  margin: 6px;
   background-color: #ffffff;
   color: #555555;
   border: solid 1px rgba(0, 0, 0, 0.12);
@@ -538,7 +538,7 @@ exports[`Tip should be visible by default 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c2 {
-    margin: 2px;
+    margin: 3px;
   }
 }
 
@@ -564,7 +564,7 @@ exports[`Tip should be visible by default 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c2 {
-    border-radius: 3px;
+    border-radius: 4px;
   }
 }
 

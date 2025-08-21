@@ -818,7 +818,7 @@ exports[`Meter round 1`] = `
 .c1 {
   max-width: 100%;
   overflow: hidden;
-  border-radius: 24px;
+  border-radius: 12px;
 }
 
 .c1 path {

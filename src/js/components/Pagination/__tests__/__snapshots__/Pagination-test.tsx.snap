@@ -371,7 +371,7 @@ exports[`Pagination should allow user to control page via state with page +\\n  
 
 @media only screen and (max-width: 768px) {
   .c2 {
-    column-gap: 2px;
+    column-gap: 3px;
   }
 }
 
@@ -711,8 +711,8 @@ exports[`Pagination should apply a select component with default values for step
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  margin-left: 12px;
-  margin-right: 12px;
+  margin-left: 16px;
+  margin-right: 16px;
   margin-left: 12px;
   margin-right: 12px;
   min-width: 0;
@@ -1236,8 +1236,8 @@ exports[`Pagination should apply a select component with default values for step
 
 @media only screen and (max-width: 768px) {
   .c14 {
-    margin-left: 6px;
-    margin-right: 6px;
+    margin-left: 8px;
+    margin-right: 8px;
   }
 }
 
@@ -1267,7 +1267,7 @@ exports[`Pagination should apply a select component with default values for step
 
 @media only screen and (max-width: 768px) {
   .c17 {
-    column-gap: 2px;
+    column-gap: 3px;
   }
 }
 
@@ -2027,7 +2027,7 @@ exports[`Pagination should apply a text component with summary 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c7 {
-    column-gap: 2px;
+    column-gap: 3px;
   }
 }
 
@@ -2678,7 +2678,7 @@ exports[`Pagination should apply a11yTitle and aria-label 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c2 {
-    column-gap: 2px;
+    column-gap: 3px;
   }
 }
 
@@ -5449,7 +5449,7 @@ exports[`Pagination should apply size 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c2 {
-    column-gap: 2px;
+    column-gap: 3px;
   }
 }
 
@@ -6241,7 +6241,7 @@ exports[`Pagination should change the page on prop change 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c2 {
-    column-gap: 2px;
+    column-gap: 3px;
   }
 }
 
@@ -6872,7 +6872,7 @@ exports[`Pagination should disable next button if on last page 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c2 {
-    column-gap: 2px;
+    column-gap: 3px;
   }
 }
 
@@ -7293,7 +7293,7 @@ exports[`Pagination should disable previous and next controls when numberItems\\
 
 @media only screen and (max-width: 768px) {
   .c2 {
-    column-gap: 2px;
+    column-gap: 3px;
   }
 }
 
@@ -7562,7 +7562,7 @@ exports[`Pagination should disable previous and next controls when numberItems\\
 
 @media only screen and (max-width: 768px) {
   .c2 {
-    column-gap: 2px;
+    column-gap: 3px;
   }
 }
 
@@ -7908,7 +7908,7 @@ exports[`Pagination should disable previous and next controls when numberItems\\
 
 @media only screen and (max-width: 768px) {
   .c2 {
-    column-gap: 2px;
+    column-gap: 3px;
   }
 }
 
@@ -8479,7 +8479,7 @@ exports[`Pagination should disable previous button if on first page 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c2 {
-    column-gap: 2px;
+    column-gap: 3px;
   }
 }
 
@@ -8997,7 +8997,7 @@ exports[`Pagination should display next page of results when "next" is\\n  selec
 
 @media only screen and (max-width: 768px) {
   .c2 {
-    column-gap: 2px;
+    column-gap: 3px;
   }
 }
 
@@ -9154,7 +9154,7 @@ exports[`Pagination should display next page of results when "next" is\\n  selec
       class="StyledBox-sc-13pk1d4-0 fBuFhc"
     >
       <ul
-        class="StyledBox-sc-13pk1d4-0 UJDIX"
+        class="StyledBox-sc-13pk1d4-0 doCASy"
       >
         <li
           class="StyledPageControl__StyledContainer-sc-1vlfaez-1 fVNJEO"
@@ -9655,7 +9655,7 @@ exports[`Pagination should display page 'n' of results when "page n" is\\n  sele
 
 @media only screen and (max-width: 768px) {
   .c2 {
-    column-gap: 2px;
+    column-gap: 3px;
   }
 }
 
@@ -10171,7 +10171,7 @@ exports[`Pagination should display previous page of results when "previous" is\\
 
 @media only screen and (max-width: 768px) {
   .c2 {
-    column-gap: 2px;
+    column-gap: 3px;
   }
 }
 
@@ -10328,7 +10328,7 @@ exports[`Pagination should display previous page of results when "previous" is\\
       class="StyledBox-sc-13pk1d4-0 fBuFhc"
     >
       <ul
-        class="StyledBox-sc-13pk1d4-0 UJDIX"
+        class="StyledBox-sc-13pk1d4-0 doCASy"
       >
         <li
           class="StyledPageControl__StyledContainer-sc-1vlfaez-1 fVNJEO"
@@ -10944,7 +10944,7 @@ exports[`Pagination should display the correct last page based on items length\\
 
 @media only screen and (max-width: 768px) {
   .c2 {
-    column-gap: 2px;
+    column-gap: 3px;
   }
 }
 
@@ -11338,7 +11338,7 @@ exports[`Pagination should have no items 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c7 {
-    column-gap: 2px;
+    column-gap: 3px;
   }
 }
 
@@ -11799,7 +11799,7 @@ exports[`Pagination should render correct numberEdgePages 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c2 {
-    column-gap: 2px;
+    column-gap: 3px;
   }
 }
 
@@ -12357,7 +12357,7 @@ exports[`Pagination should render correct numberMiddlePages when even 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c2 {
-    column-gap: 2px;
+    column-gap: 3px;
   }
 }
 
@@ -12882,7 +12882,7 @@ exports[`Pagination should render correct numberMiddlePages when odd 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c2 {
-    column-gap: 2px;
+    column-gap: 3px;
   }
 }
 
@@ -13988,7 +13988,7 @@ exports[`Pagination should set numberMiddlePages = 1 if user provides value < 1 
 
 @media only screen and (max-width: 768px) {
   .c2 {
-    column-gap: 2px;
+    column-gap: 3px;
   }
 }
 
@@ -14599,7 +14599,7 @@ exports[`Pagination should set page to last page if page prop > total possible\\
 
 @media only screen and (max-width: 768px) {
   .c2 {
-    column-gap: 2px;
+    column-gap: 3px;
   }
 }
 

@@ -217,6 +217,12 @@ exports[`Tabs Custom Tab component 1`] = `
   }
 }
 
+@media only screen and (max-width: 768px) {
+  .c9 {
+    width: 8px;
+  }
+}
+
 <div
   class="c0"
 >
@@ -494,6 +500,12 @@ exports[`Tabs Tab 1`] = `
 @media only screen and (max-width: 768px) {
   .c6 {
     padding-bottom: 5px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c9 {
+    width: 8px;
   }
 }
 
@@ -1057,6 +1069,12 @@ exports[`Tabs change to second tab 1`] = `
   }
 }
 
+@media only screen and (max-width: 768px) {
+  .c9 {
+    width: 8px;
+  }
+}
+
 <div
   class="c0"
 >
@@ -1152,7 +1170,7 @@ exports[`Tabs change to second tab 2`] = `
           </div>
         </button>
         <div
-          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 kwANgz"
+          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 gQiBjL"
         />
         <button
           aria-expanded="true"
@@ -1384,6 +1402,12 @@ exports[`Tabs complex title 1`] = `
 @media only screen and (max-width: 768px) {
   .c6 {
     padding-bottom: 5px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c8 {
+    width: 8px;
   }
 }
 
@@ -2051,6 +2075,12 @@ exports[`Tabs onClick 1`] = `
   }
 }
 
+@media only screen and (max-width: 768px) {
+  .c9 {
+    width: 8px;
+  }
+}
+
 <div
   class="c0"
 >
@@ -2590,6 +2620,12 @@ exports[`Tabs set on hover 1`] = `
   }
 }
 
+@media only screen and (max-width: 768px) {
+  .c9 {
+    width: 8px;
+  }
+}
+
 <div
   class="c0"
 >
@@ -2685,7 +2721,7 @@ exports[`Tabs set on hover 2`] = `
           </div>
         </button>
         <div
-          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 kwANgz"
+          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 gQiBjL"
         />
         <button
           aria-expanded="false"
@@ -2749,7 +2785,7 @@ exports[`Tabs set on hover 3`] = `
           </div>
         </button>
         <div
-          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 kwANgz"
+          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 gQiBjL"
         />
         <button
           aria-expanded="false"
@@ -2813,7 +2849,7 @@ exports[`Tabs set on hover 4`] = `
           </div>
         </button>
         <div
-          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 kwANgz"
+          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 gQiBjL"
         />
         <button
           aria-expanded="false"
@@ -2877,7 +2913,7 @@ exports[`Tabs set on hover 5`] = `
           </div>
         </button>
         <div
-          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 kwANgz"
+          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 gQiBjL"
         />
         <button
           aria-expanded="false"
@@ -4808,6 +4844,12 @@ exports[`Tabs should style as disabled 1`] = `
   }
 }
 
+@media only screen and (max-width: 768px) {
+  .c9 {
+    width: 8px;
+  }
+}
+
 <div
   class="c0"
 >
@@ -5095,6 +5137,12 @@ exports[`Tabs styled component should change tab color when active 1`] = `
 @media only screen and (max-width: 768px) {
   .c7 {
     padding-bottom: 5px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c10 {
+    width: 8px;
   }
 }
 
@@ -5407,6 +5455,12 @@ exports[`Tabs with icon + reverse 1`] = `
 @media only screen and (max-width: 768px) {
   .c8 {
     width: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c10 {
+    width: 8px;
   }
 }
 
