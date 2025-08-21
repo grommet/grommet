@@ -2028,6 +2028,11 @@ export interface ThemeType {
     };
   };
   table?: {
+    cell?: {
+      border?: {
+        size?: string;
+      };
+    };
     caption?: {
       margin?: MarginType;
     };

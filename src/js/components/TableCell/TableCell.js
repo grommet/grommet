@@ -111,10 +111,15 @@ const TableCell = forwardRef(
 
             // height must match cell height otherwise table will apply some
             // margin around the cell content
+            const borderSizeKey = theme.table.cell?.border?.size;
+            const borderSizeValue =
+              theme.global.borderSize[borderSizeKey] || borderSizeKey;
+            const borderSizeNum = parseInt(borderSizeValue, 10);
+
             container.style.height = `${Math.max(
               cellRect.height -
                 (border || theme.table[tableContext].border
-                  ? theme.global.borderSize.xsmall.replace('px', '')
+                  ? borderSizeNum
                   : 0),
               0,
             )}px`;

@@ -2243,6 +2243,11 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
     },
     table: {
+      cell: {
+        border: {
+          size: 'xsmall',
+        },
+      },
       caption: {
         margin: { bottom: 'xxsmall' },
       },
