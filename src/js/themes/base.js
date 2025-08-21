@@ -1940,6 +1940,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         size: 'small',
       },
       // icon: undefined
+      responsive: true,
       size: {
         xsmall: `${baseSpacing * 0.75}px`,
         small: `${baseSpacing}px`, // default 24
