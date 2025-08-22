@@ -1010,6 +1010,9 @@ var generate = exports.generate = function generate(baseSpacing, scale) {
     },
     dataChart: {
       gap: 'small',
+      // granularity: {
+      //   y: {},
+      // },
       detail: {
         gap: 'xsmall'
       },

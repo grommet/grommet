@@ -33,7 +33,7 @@ var stackedChartType = {
 // normalize and automatically handle whatever the caller didn't specify.
 
 var DataChart = /*#__PURE__*/forwardRef(function (_ref, ref) {
-  var _boundsProp$x, _boundsProp$y, _theme$dataChart;
+  var _boundsProp$x, _boundsProp$y, _theme$dataChart2;
   var a11yTitle = _ref.a11yTitle,
     _ref$axis = _ref.axis,
     axisProp = _ref$axis === void 0 ? true : _ref$axis,
@@ -207,7 +207,7 @@ var DataChart = /*#__PURE__*/forwardRef(function (_ref, ref) {
 
   // map granularities to work well with the number of data points we have
   var granularities = useMemo(function () {
-    var _theme$dataChart$size;
+    var _theme$dataChart, _theme$dataChart$size;
     var medium;
     // determine a good medium granularity that will align well with the
     // length of the data
@@ -219,7 +219,8 @@ var DataChart = /*#__PURE__*/forwardRef(function (_ref, ref) {
       fine: data.length,
       medium: medium
     };
-    var granularity1 = _extends({}, heightYGranularity[size && size.height || ((_theme$dataChart$size = theme.dataChart.size) == null ? void 0 : _theme$dataChart$size.height)] || {
+    var yGranularity = ((_theme$dataChart = theme.dataChart) == null || (_theme$dataChart = _theme$dataChart.granularity) == null ? void 0 : _theme$dataChart.y) || heightYGranularity;
+    var granularity1 = _extends({}, yGranularity[size && size.height || ((_theme$dataChart$size = theme.dataChart.size) == null ? void 0 : _theme$dataChart$size.height)] || {
       fine: 5,
       medium: 3
     }, {
@@ -233,7 +234,6 @@ var DataChart = /*#__PURE__*/forwardRef(function (_ref, ref) {
       y: granularity1
     };
   }, [charts, data.length, horizontal, size, theme]);
-
   // normalize axis to objects, convert granularity to a number
   var axis = useMemo(function () {
     if (!axisProp) return undefined;
@@ -699,7 +699,7 @@ var DataChart = /*#__PURE__*/forwardRef(function (_ref, ref) {
       start: [1, 0],
       end: [1, 0]
     }],
-    gap: gap || ((_theme$dataChart = theme.dataChart) == null ? void 0 : _theme$dataChart.gap)
+    gap: gap || ((_theme$dataChart2 = theme.dataChart) == null ? void 0 : _theme$dataChart2.gap)
   }, rest), xAxisElement, yAxisElement, stackElement);
   if (legendElement) {
     content = /*#__PURE__*/React.createElement(Box, {
