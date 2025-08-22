@@ -950,6 +950,14 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       // },
       detail: {
         gap: 'xsmall',
+        pad: 'small',
+      },
+      halfPad: {
+        xlarge: 'large',
+        large: 'medium',
+        medium: 'small',
+        small: 'xsmall',
+        xsmall: 'xxsmall',
       },
       legend: {
         margin: { top: 'small' },
