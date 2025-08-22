@@ -1,6 +1,7 @@
 import styled, { css } from 'styled-components';
 
 import {
+  edgeStyle,
   focusStyle,
   genericStyles,
   normalizeColor,
@@ -71,9 +72,13 @@ const StyledAnchor = styled.a.withConfig(styledComponentsConfig)`
   ${(props) =>
     props.hasIcon &&
     !props.hasLabel &&
-    `
-    padding: ${props.theme.global.edgeSize.small};
-  `}
+    edgeStyle(
+      'padding',
+      props.theme.anchor.iconOnly.pad,
+      false,
+      props.theme.global.edgeSize.responsiveBreakpoint,
+      props.theme,
+    )}
   ${(props) => props.disabled && disabledStyle}
   ${(props) => props.focus && focusStyle()}
   ${(props) => props.theme.anchor.extend}
