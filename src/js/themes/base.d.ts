@@ -275,6 +275,7 @@ interface ButtonType {
     properties?: string[];
   };
 }
+
 interface FormFieldLabelType extends TextProps {
   requiredIndicator?: boolean | JSX.Element | string;
 }
@@ -1401,10 +1402,9 @@ export interface ThemeType {
   };
   menu?: {
     background?: BackgroundType;
-    item?:
-      | ButtonType & {
-          align?: AlignType;
-        };
+    item?: ButtonType & {
+      align?: AlignType;
+    };
     drop?: DropType;
     extend?: ExtendType;
     container?: BoxProps;
@@ -1925,10 +1925,6 @@ export interface ThemeType {
         pad: PadType;
       };
     };
-  };
-  sidebar?: {
-    gap?: GapType;
-    pad?: PadType;
   };
   sidebar?: {
     gap?: GapType;
