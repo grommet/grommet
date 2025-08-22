@@ -1107,6 +1107,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
             horizontal: 'small',
           },
         },
+        width: 'medium',
       },
       sort: {
         gap: 'xsmall',

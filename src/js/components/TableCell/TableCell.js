@@ -114,7 +114,8 @@ const TableCell = forwardRef(
             container.style.height = `${Math.max(
               cellRect.height -
                 (border || theme.table[tableContext].border
-                  ? theme.global.borderSize.xsmall.replace('px', '')
+                  ? // TO DO theme obj?
+                    theme.global.borderSize.xsmall.replace('px', '')
                   : 0),
               0,
             )}px`;

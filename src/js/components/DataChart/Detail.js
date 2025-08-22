@@ -221,6 +221,7 @@ const Detail = ({
           onMouseLeave={onMouseLeave}
           trapFocus={false}
         >
+          {/* TO DO theme object */}
           <Box pad="small" background={{ color: 'background-back' }}>
             <Grid
               columns={['auto', 'auto', 'auto']}
