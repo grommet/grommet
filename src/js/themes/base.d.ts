@@ -856,6 +856,14 @@ export interface ThemeType {
     };
     dataChart?: {
       gap?: GapType;
+      granularity?: {
+        y?: {
+          [key: string]: {
+            fine: number;
+            medium: number;
+          };
+        };
+      };
       detail?: {
         gap?: GridGapType;
       };
