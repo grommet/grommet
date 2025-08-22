@@ -416,6 +416,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       // icon: {
       //   color: undefined
       // },
+      iconOnly: {
+        pad: 'small',
+      },
       textDecoration: 'none',
       fontWeight: 600,
       // size: {
@@ -482,6 +485,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
             medium: 'small', // 14px
           },
         },
+      },
+      busy: {
+        gap: 'small',
       },
       gap: 'small',
       size: {
@@ -806,6 +812,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
     },
     chart: {
       color: 'graph-0',
+      height: 'small',
+      thickness: 'medium',
+      width: 'medium',
       // extend: undefined,
     },
     checkBox: {
@@ -934,6 +943,38 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         gap: 'medium',
       },
     },
+    dataChart: {
+      gap: 'small',
+      detail: {
+        gap: 'xsmall',
+      },
+      legend: {
+        margin: { top: 'small' },
+        gap: 'small',
+        item: {
+          gap: 'xsmall',
+          pad: { horizontal: 'small', vertical: 'xsmall' },
+        },
+      },
+      size: {
+        height: 'small',
+      },
+      thickness: {
+        veryDense: 'hair',
+        dense: 'xsmall',
+        heavy: 'small',
+        moderate: 'medium',
+        light: 'large',
+        sparse: 'xlarge',
+      },
+      thicknessPad: {
+        xlarge: 'large',
+        large: 'medium',
+        medium: 'small',
+        small: 'xsmall',
+        xsmall: 'xxsmall',
+      },
+    },
     dataFilter: {
       rangeSelector: {
         size: 'full',
@@ -981,6 +1022,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       //   }
       //   selected: undefined,
       // },
+      expand: {
+        size: 'xxsmall',
+      },
       pinned: {
         // body: {
         //    background: undefined,
@@ -1050,6 +1094,19 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         //     size: undefined,
         //   },
         // },
+      },
+      search: {
+        pad: {
+          left: 'small',
+        },
+        text: {
+          pad: {
+            horizontal: 'small',
+          },
+        },
+      },
+      sort: {
+        gap: 'xsmall',
       },
     },
     dataTableColumns: {
@@ -1301,6 +1358,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       container: {
         // elevation: undefined,
         zIndex: '20',
+        height: { min: 'xxsmall' },
       },
       // extend: undefined,
       overlay: {
@@ -1882,6 +1940,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         size: 'small',
       },
       // icon: undefined
+      responsive: true,
       size: {
         xsmall: `${baseSpacing * 0.75}px`,
         small: `${baseSpacing}px`, // default 24
@@ -2184,6 +2243,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
     },
     table: {
+      caption: {
+        margin: { bottom: 'xxsmall' },
+      },
       header: {
         align: 'start',
         pad: { horizontal: 'small', vertical: 'xsmall' },
