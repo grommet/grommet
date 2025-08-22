@@ -196,8 +196,10 @@ const DataChart = forwardRef(
         fine: data.length,
         medium,
       };
+      const yGranularity =
+        theme.dataChart?.granularity?.y || heightYGranularity;
       const granularity1 = {
-        ...(heightYGranularity[
+        ...(yGranularity[
           (size && size.height) || theme.dataChart.size?.height
         ] || {
           fine: 5,
@@ -209,7 +211,6 @@ const DataChart = forwardRef(
         ? { x: granularity1, y: granularity0 }
         : { x: granularity0, y: granularity1 };
     }, [charts, data.length, horizontal, size, theme]);
-
     // normalize axis to objects, convert granularity to a number
     const axis = useMemo(() => {
       if (!axisProp) return undefined;
