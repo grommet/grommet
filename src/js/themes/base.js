@@ -945,6 +945,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
     },
     dataChart: {
       gap: 'small',
+      // granularity: {
+      //   y: {},
+      // },
       detail: {
         gap: 'xsmall',
       },
