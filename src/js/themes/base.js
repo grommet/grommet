@@ -949,13 +949,6 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         gap: 'xsmall',
         pad: 'small',
       },
-      doublePad: {
-        large: 'xlarge',
-        medium: 'large',
-        small: 'medium',
-        xsmall: 'small',
-        xxsmall: 'xsmall',
-      },
       halfPad: {
         xlarge: 'large',
         large: 'medium',
