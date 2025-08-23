@@ -5,6 +5,7 @@ import 'jest-styled-components';
 import 'jest-axe/extend-expect';
 import 'regenerator-runtime/runtime';
 
+import * as UseIdModule from '../../../utils/useId.js';
 import { Grommet } from '../../Grommet';
 import { Text } from '..';
 
@@ -159,15 +160,19 @@ test('renders weight', () => {
   expect(container.firstChild).toMatchSnapshot();
 });
 
-test('renders tip', () => {
-  const { container, getByText } = render(
-    <Grommet>
-      <Text tip="tooltip">Default Tip</Text>
-    </Grommet>,
-  );
+describe('Text component with tip', () => {
+  test('renders tip on hover', () => {
+    jest.spyOn(UseIdModule, 'useId').mockReturnValue('fixed-id-123');
+    const { container, getByText } = render(
+      <Grommet>
+        <Text tip="tooltip">Default Tip</Text>
+      </Grommet>,
+    );
 
-  fireEvent.mouseOver(getByText('Default Tip'));
-  expect(container.firstChild).toMatchSnapshot();
+    fireEvent.mouseOver(getByText('Default Tip'));
+    expect(container.firstChild).toMatchSnapshot();
+    (UseIdModule.useId as jest.Mock).mockRestore();
+  });
 });
 
 test('should apply a11yTitle or aria-label', () => {
