@@ -856,6 +856,14 @@ export interface ThemeType {
     };
     dataChart?: {
       gap?: GapType;
+      granularity?: {
+        y?: {
+          [key: string]: {
+            fine: number;
+            medium: number;
+          };
+        };
+      };
       detail?: {
         gap?: GridGapType;
       };
@@ -867,6 +875,7 @@ export interface ThemeType {
           pad?: PadType;
         };
       };
+      orderedSizes?: string[];
       size?: {
         height?: string;
       };

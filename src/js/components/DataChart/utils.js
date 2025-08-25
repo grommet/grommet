@@ -34,15 +34,16 @@ export const doublePad = (theme) => ({
   xxsmall: theme.dataChart?.doublePad?.xxsmall || 'xsmall',
 });
 
-const orderedSizes = [
-  'xlarge',
-  'large',
-  'medium',
-  'small',
-  'xsmall',
-  'xxsmall',
-  'hair',
-];
+const getOrderedSizes = (theme) =>
+  theme?.dataChart?.orderedSizes || [
+    'xlarge',
+    'large',
+    'medium',
+    'small',
+    'xsmall',
+    'xxsmall',
+    'hair',
+  ];
 
 export const showInUnits = (content, maxValue) => {
   let divideBy;
@@ -60,7 +61,8 @@ export const showInUnits = (content, maxValue) => {
   return newContent;
 };
 
-export const largestSize = (size1, size2) => {
+export const largestSize = (theme, size1, size2) => {
+  const orderedSizes = getOrderedSizes(theme);
   if (size1 && !size2) return size1;
   if (size2 && !size1) return size2;
   if (orderedSizes.indexOf(size1) < orderedSizes.indexOf(size2)) return size1;

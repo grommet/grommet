@@ -1487,7 +1487,7 @@ exports[`Button kind button with transparent background 1`] = `
   min-width: 0;
   min-height: 0;
   flex-direction: column;
-  padding: 48px;
+  padding: 32px;
 }
 
 .c5 {
@@ -1498,7 +1498,7 @@ exports[`Button kind button with transparent background 1`] = `
   min-width: 0;
   min-height: 0;
   flex-direction: column;
-  padding: 48px;
+  padding: 32px;
 }
 
 .c3 {
@@ -1533,7 +1533,7 @@ exports[`Button kind button with transparent background 1`] = `
 .c2:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c2:focus >circle,
@@ -1545,7 +1545,7 @@ exports[`Button kind button with transparent background 1`] = `
 .c2:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c2:focus ::-moz-focus-inner {
@@ -1607,7 +1607,7 @@ exports[`Button kind button with transparent background 1`] = `
 .c4:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c4:focus >circle,
@@ -1619,7 +1619,7 @@ exports[`Button kind button with transparent background 1`] = `
 .c4:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c4:focus ::-moz-focus-inner {
@@ -1676,7 +1676,7 @@ exports[`Button kind button with transparent background 1`] = `
 .c6:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c6:focus >circle,
@@ -1688,7 +1688,7 @@ exports[`Button kind button with transparent background 1`] = `
 .c6:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c6:focus ::-moz-focus-inner {
@@ -1750,7 +1750,7 @@ exports[`Button kind button with transparent background 1`] = `
 .c7:focus {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c7:focus >circle,
@@ -1762,7 +1762,7 @@ exports[`Button kind button with transparent background 1`] = `
 .c7:focus >rect {
   outline-offset: 2px;
   outline: 2px solid #004233;
-  box-shadow: 0 0 2px 2px #ffffff;
+  box-shadow: 0 0 0px 2px #ffffff;
 }
 
 .c7:focus ::-moz-focus-inner {
@@ -1808,13 +1808,13 @@ exports[`Button kind button with transparent background 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c1 {
-    padding: 24px;
+    padding: 16px;
   }
 }
 
 @media only screen and (max-width: 768px) {
   .c5 {
-    padding: 24px;
+    padding: 16px;
   }
 }
 
