@@ -18,21 +18,22 @@ export const heightYGranularity = {
   xlarge: { fine: 11, medium: 5 },
 };
 
-export const halfPad = (theme) => ({
-  xlarge: theme.dataChart?.halfPad?.xlarge || 'large',
-  large: theme.dataChart?.halfPad?.large || 'medium',
-  medium: theme.dataChart?.halfPad?.medium || 'small',
-  small: theme.dataChart?.halfPad?.small || 'xsmall',
-  xsmall: theme.dataChart?.halfPad?.xsmall || 'xxsmall',
-});
+export const halfPad = (theme) =>
+  theme?.dataChart?.halfPad || {
+    xlarge: 'large',
+    large: 'medium',
+    medium: 'small',
+    small: 'xsmall',
+    xsmall: 'xxsmall',
+  };
 
-export const doublePad = (theme) => ({
-  large: theme.dataChart?.doublePad?.large || 'xlarge',
-  medium: theme.dataChart?.doublePad?.medium || 'large',
-  small: theme.dataChart?.doublePad?.small || 'medium',
-  xsmall: theme.dataChart?.doublePad?.xsmall || 'small',
-  xxsmall: theme.dataChart?.doublePad?.xxsmall || 'xsmall',
-});
+export const doublePad = {
+  large: 'xlarge',
+  medium: 'large',
+  small: 'medium',
+  xsmall: 'small',
+  xxsmall: 'xsmall',
+};
 
 const getOrderedSizes = (theme) =>
   theme?.dataChart?.orderedSizes || [
