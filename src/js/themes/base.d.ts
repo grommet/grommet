@@ -867,6 +867,9 @@ export interface ThemeType {
       detail?: {
         gap?: GridGapType;
       };
+      halfPad?: {
+        [key: string]: string;
+      };
       legend?: {
         margin?: MarginType;
         gap?: GapType;
