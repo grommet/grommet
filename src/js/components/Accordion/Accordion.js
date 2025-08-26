@@ -16,7 +16,7 @@ const Accordion = forwardRef(
       level,
       multiple,
       onActive,
-      keepMount,
+      unmount = true,
       ...rest
     },
     ref,
@@ -61,10 +61,10 @@ const Accordion = forwardRef(
           animate,
           level,
           onPanelChange: () => onPanelChange(index),
-          keepMount,
+          unmount,
         };
       },
-      [activeIndexes, animate, keepMount, level, multiple, onActive],
+      [activeIndexes, animate, unmount, level, multiple, onActive],
     );
 
     return (

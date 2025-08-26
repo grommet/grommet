@@ -1,4 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`Components loads 1`] = `
 {
@@ -11,12 +11,12 @@ exports[`Components loads 1`] = `
       "animate": [Function],
       "children": [Function],
       "gridArea": [Function],
-      "keepMount": [Function],
       "level": [Function],
       "margin": [Function],
       "messages": [Function],
       "multiple": [Function],
       "onActive": [Function],
+      "unmount": [Function],
     },
     "render": [Function],
   },
@@ -261,8 +261,8 @@ exports[`Components loads 1`] = `
     "$$typeof": Symbol(react.forward_ref),
     "propTypes": {
       "direction": [Function],
-      "keepMount": undefined,
       "open": [Function],
+      "unmount": undefined,
     },
     "render": [Function],
   },

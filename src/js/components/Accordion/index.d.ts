@@ -9,7 +9,7 @@ export interface AccordionProps {
   onActive?: (activeIndexes: number[]) => void;
   multiple?: boolean;
   messages?: { tabContents?: string };
-  keepMount?: boolean;
+  unmount?: boolean;
 }
 
 export interface AccordionExtendedProps

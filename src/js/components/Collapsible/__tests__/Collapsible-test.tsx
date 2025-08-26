@@ -65,7 +65,7 @@ describe('Collapsible', () => {
   test('should keep mount content', () => {
     render(
       <Grommet>
-        <Collapsible open={false} keepMount>
+        <Collapsible open={false} unmount={false}>
           <Text>Example</Text>
         </Collapsible>
       </Grommet>,

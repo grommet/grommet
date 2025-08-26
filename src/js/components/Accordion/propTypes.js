@@ -17,7 +17,7 @@ if (process.env.NODE_ENV !== 'production') {
     messages: PropTypes.shape({
       tabContents: PropTypes.string,
     }),
-    keepMount: PropTypes.bool,
+    unmount: PropTypes.bool,
   };
 }
 export const AccordionPropTypes = PropType;

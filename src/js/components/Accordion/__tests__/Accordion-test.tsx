@@ -417,7 +417,7 @@ describe('Accordion', () => {
       return (
         <Accordion
           level={2}
-          keepMount
+          unmount={false}
           activeIndex={activeIndex}
           onActive={setActiveIndex}
         >
@@ -449,7 +449,7 @@ describe('Accordion', () => {
       return (
         <Accordion
           level={2}
-          keepMount
+          unmount={false}
           animate={false}
           activeIndex={activeIndex}
           onActive={setActiveIndex}

@@ -34,7 +34,7 @@ const AccordionPanel = forwardRef(
   ) => {
     const panelButtonId = useId();
     const { theme } = useThemeValue();
-    const { active, animate, level, onPanelChange, keepMount } =
+    const { active, animate, level, onPanelChange, unmount } =
       useContext(AccordionContext);
     const [hover, setHover] = useState(undefined);
     const [focus, setFocus] = useState();
@@ -168,18 +168,18 @@ const AccordionPanel = forwardRef(
           border={contentBorder}
           aria-labelledby={panelButtonId}
         >
-          {animate && keepMount && (
-            <Collapsible open={active} keepMount={keepMount}>
+          {animate && !unmount && (
+            <Collapsible open={active} unmount={unmount}>
               {children}
             </Collapsible>
           )}
-          {animate && !keepMount && (
+          {animate && unmount && (
             <Collapsible open={active}>{children}</Collapsible>
           )}
-          {!animate && keepMount && (
+          {!animate && !unmount && (
             <HiddenBox hide={!active}>{children}</HiddenBox>
           )}
-          {!animate && !keepMount && active && children}
+          {!animate && unmount && active && children}
         </Box>
       </Box>
     );

@@ -25,7 +25,7 @@ const HiddenBox = styled(Box)`
 `;
 
 const Collapsible = forwardRef(
-  ({ children, direction, open: openArg, keepMount }, ref) => {
+  ({ children, direction, open: openArg, unmount = true }, ref) => {
     const { theme } = useThemeValue();
     const [open, setOpen] = useState(openArg);
     const [animate, setAnimate] = useState(false);
@@ -120,12 +120,12 @@ const Collapsible = forwardRef(
         // skipped if animation is in progress
         shouldOpen={!animate && shouldOpen}
       >
-        {keepMount && (
+        {!unmount && (
           <HiddenBox hide={!(shouldOpen || open || animate)}>
             {children}
           </HiddenBox>
         )}
-        {!keepMount && (shouldOpen || open || animate) && children}
+        {unmount && (shouldOpen || open || animate) && children}
       </AnimatedBox>
     );
   },
