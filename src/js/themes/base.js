@@ -967,7 +967,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           pad: { horizontal: 'small', vertical: 'xsmall' },
         },
       },
-      // orderedSizes: [undefined],
+      // orderedSizes: undefined,
       size: {
         height: 'small',
       },
