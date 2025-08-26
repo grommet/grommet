@@ -1,4 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`Components loads 1`] = `
 {
@@ -16,6 +16,7 @@ exports[`Components loads 1`] = `
       "messages": [Function],
       "multiple": [Function],
       "onActive": [Function],
+      "unmount": [Function],
     },
     "render": [Function],
   },
@@ -261,6 +262,7 @@ exports[`Components loads 1`] = `
     "propTypes": {
       "direction": [Function],
       "open": [Function],
+      "unmount": undefined,
     },
     "render": [Function],
   },
