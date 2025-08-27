@@ -866,6 +866,10 @@ export interface ThemeType {
       };
       detail?: {
         gap?: GridGapType;
+        pad?: PadType;
+      };
+      halfPad?: {
+        [key: string]: string;
       };
       legend?: {
         margin?: MarginType;
@@ -875,6 +879,7 @@ export interface ThemeType {
           pad?: PadType;
         };
       };
+      orderedSizes?: string[];
       size?: {
         height?: string;
       };
