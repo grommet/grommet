@@ -30,12 +30,15 @@ var heightYGranularity = exports.heightYGranularity = {
     medium: 5
   }
 };
-var halfPad = exports.halfPad = {
-  xlarge: 'large',
-  large: 'medium',
-  medium: 'small',
-  small: 'xsmall',
-  xsmall: 'xxsmall'
+var halfPad = exports.halfPad = function halfPad(theme) {
+  var _theme$dataChart;
+  return (theme == null || (_theme$dataChart = theme.dataChart) == null ? void 0 : _theme$dataChart.halfPad) || {
+    xlarge: 'large',
+    large: 'medium',
+    medium: 'small',
+    small: 'xsmall',
+    xsmall: 'xxsmall'
+  };
 };
 var doublePad = exports.doublePad = {
   large: 'xlarge',
@@ -44,7 +47,10 @@ var doublePad = exports.doublePad = {
   xsmall: 'small',
   xxsmall: 'xsmall'
 };
-var orderedSizes = ['xlarge', 'large', 'medium', 'small', 'xsmall', 'xxsmall', 'hair'];
+var getOrderedSizes = function getOrderedSizes(theme) {
+  var _theme$dataChart2;
+  return (theme == null || (_theme$dataChart2 = theme.dataChart) == null ? void 0 : _theme$dataChart2.orderedSizes) || ['xlarge', 'large', 'medium', 'small', 'xsmall', 'xxsmall', 'hair'];
+};
 var showInUnits = exports.showInUnits = function showInUnits(content, maxValue) {
   var divideBy;
   var unit;
@@ -60,7 +66,8 @@ var showInUnits = exports.showInUnits = function showInUnits(content, maxValue) 
   if (unit) newContent = "" + newContent + unit;
   return newContent;
 };
-var largestSize = exports.largestSize = function largestSize(size1, size2) {
+var largestSize = exports.largestSize = function largestSize(theme, size1, size2) {
+  var orderedSizes = getOrderedSizes(theme);
   if (size1 && !size2) return size1;
   if (size2 && !size1) return size2;
   if (orderedSizes.indexOf(size1) < orderedSizes.indexOf(size2)) return size1;

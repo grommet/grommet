@@ -184,7 +184,7 @@ var Detail = function Detail(_ref) {
     onMouseLeave: onMouseLeave,
     trapFocus: false
   }, /*#__PURE__*/React.createElement(Box, {
-    pad: "small",
+    pad: theme.dataChart.detail.pad,
     background: {
       color: 'background-back'
     }

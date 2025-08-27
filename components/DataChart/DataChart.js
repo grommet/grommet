@@ -453,11 +453,12 @@ var DataChart = exports.DataChart = /*#__PURE__*/(0, _react.forwardRef)(function
     if (padProp !== undefined) return padProp;
     var pad0;
     var pad1;
+    var halfPadValues = (0, _utils2.halfPad)(theme);
     charts.forEach(function (_ref7, index) {
       var type = _ref7.type;
       var thickness = chartProps[index].thickness;
-      pad0 = (0, _utils2.largestSize)(pad0, _utils2.halfPad[thickness]);
-      if (type && type !== 'bar') pad1 = (0, _utils2.largestSize)(pad1, _utils2.halfPad[thickness]);
+      pad0 = (0, _utils2.largestSize)(theme, pad0, halfPadValues[thickness]);
+      if (type && type !== 'bar') pad1 = (0, _utils2.largestSize)(theme, pad1, halfPadValues[thickness]);
     });
     return horizontal ? {
       horizontal: pad1,
@@ -466,7 +467,7 @@ var DataChart = exports.DataChart = /*#__PURE__*/(0, _react.forwardRef)(function
       horizontal: pad0,
       vertical: pad1
     };
-  }, [chartProps, charts, horizontal, padProp]);
+  }, [chartProps, charts, horizontal, padProp, theme]);
 
   // calculate the thickness in pixels of each chart
   var thicknesses = (0, _react.useMemo)(function () {

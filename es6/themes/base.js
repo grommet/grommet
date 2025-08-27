@@ -1010,7 +1010,15 @@ export var generate = function generate(baseSpacing, scale) {
       //   y: {},
       // },
       detail: {
-        gap: 'xsmall'
+        gap: 'xsmall',
+        pad: 'small'
+      },
+      halfPad: {
+        xlarge: 'large',
+        large: 'medium',
+        medium: 'small',
+        small: 'xsmall',
+        xsmall: 'xxsmall'
       },
       legend: {
         margin: {
@@ -1025,6 +1033,7 @@ export var generate = function generate(baseSpacing, scale) {
           }
         }
       },
+      // orderedSizes: undefined,
       size: {
         height: 'small'
       },

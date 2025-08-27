@@ -448,11 +448,12 @@ var DataChart = /*#__PURE__*/forwardRef(function (_ref, ref) {
     if (padProp !== undefined) return padProp;
     var pad0;
     var pad1;
+    var halfPadValues = halfPad(theme);
     charts.forEach(function (_ref7, index) {
       var type = _ref7.type;
       var thickness = chartProps[index].thickness;
-      pad0 = largestSize(pad0, halfPad[thickness]);
-      if (type && type !== 'bar') pad1 = largestSize(pad1, halfPad[thickness]);
+      pad0 = largestSize(theme, pad0, halfPadValues[thickness]);
+      if (type && type !== 'bar') pad1 = largestSize(theme, pad1, halfPadValues[thickness]);
     });
     return horizontal ? {
       horizontal: pad1,
@@ -461,7 +462,7 @@ var DataChart = /*#__PURE__*/forwardRef(function (_ref, ref) {
       horizontal: pad0,
       vertical: pad1
     };
-  }, [chartProps, charts, horizontal, padProp]);
+  }, [chartProps, charts, horizontal, padProp, theme]);
 
   // calculate the thickness in pixels of each chart
   var thicknesses = useMemo(function () {

@@ -190,7 +190,7 @@ var Detail = exports.Detail = function Detail(_ref) {
     onMouseLeave: onMouseLeave,
     trapFocus: false
   }, /*#__PURE__*/_react["default"].createElement(_Box.Box, {
-    pad: "small",
+    pad: theme.dataChart.detail.pad,
     background: {
       color: 'background-back'
     }
