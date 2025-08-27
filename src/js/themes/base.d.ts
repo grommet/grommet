@@ -866,6 +866,7 @@ export interface ThemeType {
       };
       detail?: {
         gap?: GridGapType;
+        pad?: PadType;
       };
       halfPad?: {
         [key: string]: string;
