@@ -91,8 +91,10 @@ exports[`Markdown renders 1`] = `
   border-bottom: solid 1px rgba(0, 0, 0, 0.36);
   padding-left: 12px;
   padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  padding-top: 12px;
+  padding-bottom: 11px;
 }
 
 .c8 >div {

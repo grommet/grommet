@@ -859,8 +859,10 @@ exports[`DataTableColumns remove column 1`] = `
   border-bottom: solid 1px rgba(0, 0, 0, 0.36);
   padding-left: 12px;
   padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  padding-top: 12px;
+  padding-bottom: 11px;
 }
 
 .c7 >div {
@@ -1929,8 +1931,10 @@ exports[`DataTableColumns renders 1`] = `
   border-bottom: solid 1px rgba(0, 0, 0, 0.36);
   padding-left: 12px;
   padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  padding-top: 12px;
+  padding-bottom: 11px;
 }
 
 .c11 >div {
@@ -3383,8 +3387,10 @@ exports[`DataTableColumns search 1`] = `
   border-bottom: solid 1px rgba(0, 0, 0, 0.36);
   padding-left: 12px;
   padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  padding-top: 12px;
+  padding-bottom: 11px;
 }
 
 .c7 >div {

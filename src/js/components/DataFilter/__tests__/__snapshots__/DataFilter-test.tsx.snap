@@ -281,6 +281,12 @@ exports[`DataFilter !inDataForm 1`] = `
 }
 
 @media only screen and (max-width: 768px) {
+  .c19 {
+    border-radius: 9999px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
   .c20 {
     border-radius: 8px;
   }
@@ -1821,6 +1827,12 @@ exports[`DataFilter range Data 1`] = `
 }
 
 @media only screen and (max-width: 768px) {
+  .c17 {
+    border-radius: 9999px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
   .c18 {
     border-radius: 8px;
   }
@@ -2331,6 +2343,12 @@ exports[`DataFilter range prop 1`] = `
 @media only screen and (max-width: 768px) {
   .c13 {
     border-radius: 8px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c17 {
+    border-radius: 9999px;
   }
 }
 
@@ -2956,6 +2974,12 @@ exports[`DataFilter renders 1`] = `
 @media only screen and (max-width: 768px) {
   .c21 {
     border-radius: 8px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c25 {
+    border-radius: 9999px;
   }
 }
 

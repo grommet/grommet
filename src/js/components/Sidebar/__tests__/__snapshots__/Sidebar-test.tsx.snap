@@ -78,6 +78,12 @@ exports[`Sidebar all 1`] = `
 }
 
 @media only screen and (max-width: 768px) {
+  .c2 {
+    border-radius: 9999px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
   .c4 {
     height: 24px;
   }
@@ -185,6 +191,12 @@ exports[`Sidebar children 1`] = `
   }
 }
 
+@media only screen and (max-width: 768px) {
+  .c3 {
+    border-radius: 9999px;
+  }
+}
+
 <div
   class="c0"
 >
@@ -275,6 +287,12 @@ exports[`Sidebar footer 1`] = `
 @media only screen and (max-width: 768px) {
   .c1 {
     padding: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c4 {
+    border-radius: 9999px;
   }
 }
 
@@ -375,6 +393,12 @@ exports[`Sidebar header 1`] = `
 @media only screen and (max-width: 768px) {
   .c1 {
     padding: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    border-radius: 9999px;
   }
 }
 

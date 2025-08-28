@@ -6,7 +6,7 @@ import 'regenerator-runtime/runtime';
 import 'jest-styled-components';
 import { hpe } from 'grommet-theme-hpe';
 import { Grommet } from '../../Grommet';
-// import { Box } from '../../Box';
+import { Box } from '../../Box';
 import { Chart, calcs, ChartProps } from '..';
 
 type ChartValues = ChartProps['values'];
@@ -130,7 +130,7 @@ describe('Chart', () => {
 
   test('thickness', () => {
     const { container } = render(
-      <Grommet theme={hpe}>
+      <Grommet>
         <Chart thickness="xsmall" values={VALUES} />
         <Chart thickness="small" values={VALUES} />
         <Chart thickness="medium" values={VALUES} />
@@ -157,12 +157,12 @@ describe('Chart', () => {
 
   test('gap', () => {
     const { container } = render(
-      <Grommet theme={hpe}>
-        {/* <Box width="large"> */}
-        <Chart size={{ width: 'auto' }} gap="small" values={VALUES} />
-        <Chart size={{ width: 'auto' }} gap="medium" values={VALUES} />
-        <Chart size={{ width: 'auto' }} gap="large" values={VALUES} />
-        {/* </Box> */}
+      <Grommet>
+        <Box width="large">
+          <Chart size={{ width: 'auto' }} gap="small" values={VALUES} />
+          <Chart size={{ width: 'auto' }} gap="medium" values={VALUES} />
+          <Chart size={{ width: 'auto' }} gap="large" values={VALUES} />
+        </Box>
       </Grommet>,
     );
 

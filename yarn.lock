@@ -9852,8 +9852,8 @@ __metadata:
   linkType: hard
 
 "grommet-theme-hpe@https://github.com/grommet/grommet-theme-hpe/tarball/NEXT-stable":
-  version: 6.5.0
-  resolution: "grommet-theme-hpe@https://github.com/grommet/grommet-theme-hpe.git#commit=615ee25707212c6a9ac6a35e9a5fee3361edab06"
+  version: 6.5.1
+  resolution: "grommet-theme-hpe@https://github.com/grommet/grommet-theme-hpe.git#commit=a26e29b9c565af46dc3b7a17a0e50f99f57bb6e1"
   dependencies:
     hpe-design-tokens: "npm:~1.4.0"
   peerDependencies:
@@ -9861,7 +9861,7 @@ __metadata:
     grommet-icons: ^4.12.4
     react: ^16.13.1 || ^17.0.1 || ^18.0.0 || ^19.0.0
     styled-components: ^5.0.0 || ^6.0.0
-  checksum: 10c0/0252a0454a1094c2bfef7f455d9d6fb74efca7aef2f64d259b150e6eba342046c724c4f011fe4b8fd5e4478fe7e6282b176151940ade09ef5805eb798755b34f
+  checksum: 10c0/20359ab63a2f89610ccaf8d387d632d76b3ac8275ba3e51666eefe322e7805b6fe9dc4c96f3db2d039db1297f599e7d15271cffc8ba6494222c6dd181f641bdc
   languageName: node
   linkType: hard
 
@@ -10113,9 +10113,9 @@ __metadata:
   linkType: hard
 
 "hpe-design-tokens@npm:~1.4.0":
-  version: 1.4.0
-  resolution: "hpe-design-tokens@npm:1.4.0"
-  checksum: 10c0/c27e9c76130200fc419b32bedc48a98d0bfacd8c5b537e7f300b9c1be9bf62bb8cafd01ebf0db98b307ba591df931cc08ddaa0c95b6f8966564531b534271b93
+  version: 1.4.1
+  resolution: "hpe-design-tokens@npm:1.4.1"
+  checksum: 10c0/d5dc274fc5b4f99cfc908ddcc64ef860ba3a8b9bb99effdb4677824d1cff6dd2dac8f1196e5bb0bd3ad04c8d9cebccfb769492d8ccc1aed01bc83cf18a4506e9
   languageName: node
   linkType: hard
 
