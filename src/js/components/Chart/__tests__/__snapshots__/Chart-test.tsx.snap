@@ -3072,7 +3072,7 @@ exports[`Chart value style 1`] = `
         <circle
           cx="384"
           cy="0"
-          r="8"
+          r="6"
         />
       </g>
       <g
