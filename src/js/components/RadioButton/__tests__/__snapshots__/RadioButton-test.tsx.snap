@@ -485,8 +485,8 @@ exports[`RadioButton checked 1`] = `
 .c6 {
   display: inline-block;
   flex: 0 0 auto;
-  width: 18px;
-  height: 18px;
+  width: 24px;
+  height: 24px;
   fill: #ffffff;
   stroke: #ffffff;
 }
@@ -623,12 +623,13 @@ exports[`RadioButton checked 1`] = `
         <svg
           aria-hidden="true"
           class="c6"
+          preserveAspectRatio="xMidYMid meet"
           viewBox="0 0 24 24"
         >
           <circle
             cx="12"
             cy="12"
-            r="8"
+            r="6"
           />
         </svg>
       </div>
@@ -762,8 +763,8 @@ exports[`RadioButton disabled 1`] = `
 .c8 {
   display: inline-block;
   flex: 0 0 auto;
-  width: 18px;
-  height: 18px;
+  width: 24px;
+  height: 24px;
   fill: #ffffff;
   stroke: #ffffff;
 }
@@ -942,12 +943,13 @@ exports[`RadioButton disabled 1`] = `
         <svg
           aria-hidden="true"
           class="c8"
+          preserveAspectRatio="xMidYMid meet"
           viewBox="0 0 24 24"
         >
           <circle
             cx="12"
             cy="12"
-            r="8"
+            r="6"
           />
         </svg>
       </div>

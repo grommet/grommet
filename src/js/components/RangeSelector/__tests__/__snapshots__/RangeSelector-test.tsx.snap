@@ -72,8 +72,8 @@ exports[`RangeSelector basic 1`] = `
   min-width: 0;
   min-height: 0;
   flex-direction: column;
-  height: 12px;
-  width: 12px;
+  height: 24px;
+  width: 24px;
   border-radius: 100%;
 }
 
@@ -102,6 +102,12 @@ exports[`RangeSelector basic 1`] = `
 
 .c2 {
   user-select: none;
+}
+
+@media only screen and (max-width: 768px) {
+  .c7 {
+    border-radius: 9999px;
+  }
 }
 
 <div
@@ -134,7 +140,7 @@ exports[`RangeSelector basic 1`] = `
       />
       <div
         class="c6"
-        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
+        style="cursor: col-resize; outline: none; min-width: 24px; min-height: 24px; z-index: 1;"
         tabindex="-1"
       >
         <div
@@ -165,7 +171,7 @@ exports[`RangeSelector basic 1`] = `
       />
       <div
         class="c6"
-        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
+        style="cursor: col-resize; outline: none; min-width: 24px; min-height: 24px; z-index: 1;"
         tabindex="-1"
       >
         <div
@@ -594,8 +600,8 @@ exports[`RangeSelector color 1`] = `
   min-width: 0;
   min-height: 0;
   flex-direction: column;
-  height: 12px;
-  width: 12px;
+  height: 24px;
+  width: 24px;
   border-radius: 100%;
 }
 
@@ -624,6 +630,12 @@ exports[`RangeSelector color 1`] = `
 
 .c2 {
   user-select: none;
+}
+
+@media only screen and (max-width: 768px) {
+  .c7 {
+    border-radius: 9999px;
+  }
 }
 
 <div
@@ -656,7 +668,7 @@ exports[`RangeSelector color 1`] = `
       />
       <div
         class="c6"
-        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
+        style="cursor: col-resize; outline: none; min-width: 24px; min-height: 24px; z-index: 1;"
         tabindex="-1"
       >
         <div
@@ -687,7 +699,7 @@ exports[`RangeSelector color 1`] = `
       />
       <div
         class="c6"
-        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
+        style="cursor: col-resize; outline: none; min-width: 24px; min-height: 24px; z-index: 1;"
         tabindex="-1"
       >
         <div
@@ -775,8 +787,8 @@ exports[`RangeSelector direction 1`] = `
   min-width: 0;
   min-height: 0;
   flex-direction: column;
-  height: 12px;
-  width: 12px;
+  height: 24px;
+  width: 24px;
   border-radius: 100%;
 }
 
@@ -869,6 +881,12 @@ exports[`RangeSelector direction 1`] = `
   user-select: none;
 }
 
+@media only screen and (max-width: 768px) {
+  .c7 {
+    border-radius: 9999px;
+  }
+}
+
 <div
   class="c0"
 >
@@ -899,7 +917,7 @@ exports[`RangeSelector direction 1`] = `
       />
       <div
         class="c6"
-        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
+        style="cursor: col-resize; outline: none; min-width: 24px; min-height: 24px; z-index: 1;"
         tabindex="-1"
       >
         <div
@@ -930,7 +948,7 @@ exports[`RangeSelector direction 1`] = `
       />
       <div
         class="c6"
-        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
+        style="cursor: col-resize; outline: none; min-width: 24px; min-height: 24px; z-index: 1;"
         tabindex="-1"
       >
         <div
@@ -970,7 +988,7 @@ exports[`RangeSelector direction 1`] = `
       />
       <div
         class="c12"
-        style="cursor: row-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
+        style="cursor: row-resize; outline: none; min-width: 24px; min-height: 24px; z-index: 1;"
         tabindex="-1"
       >
         <div
@@ -1001,7 +1019,7 @@ exports[`RangeSelector direction 1`] = `
       />
       <div
         class="c12"
-        style="cursor: row-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
+        style="cursor: row-resize; outline: none; min-width: 24px; min-height: 24px; z-index: 1;"
         tabindex="-1"
       >
         <div
@@ -1089,8 +1107,8 @@ exports[`RangeSelector handle keyboard 1`] = `
   min-width: 0;
   min-height: 0;
   flex-direction: column;
-  height: 12px;
-  width: 12px;
+  height: 24px;
+  width: 24px;
   border-radius: 100%;
 }
 
@@ -1119,6 +1137,12 @@ exports[`RangeSelector handle keyboard 1`] = `
 
 .c2 {
   user-select: none;
+}
+
+@media only screen and (max-width: 768px) {
+  .c7 {
+    border-radius: 9999px;
+  }
 }
 
 <div
@@ -1151,7 +1175,7 @@ exports[`RangeSelector handle keyboard 1`] = `
       />
       <div
         class="c6"
-        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
+        style="cursor: col-resize; outline: none; min-width: 24px; min-height: 24px; z-index: 1;"
         tabindex="-1"
       >
         <div
@@ -1182,7 +1206,7 @@ exports[`RangeSelector handle keyboard 1`] = `
       />
       <div
         class="c6"
-        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
+        style="cursor: col-resize; outline: none; min-width: 24px; min-height: 24px; z-index: 1;"
         tabindex="-1"
       >
         <div
@@ -1270,8 +1294,8 @@ exports[`RangeSelector handle mouse 1`] = `
   min-width: 0;
   min-height: 0;
   flex-direction: column;
-  height: 12px;
-  width: 12px;
+  height: 24px;
+  width: 24px;
   border-radius: 100%;
 }
 
@@ -1300,6 +1324,12 @@ exports[`RangeSelector handle mouse 1`] = `
 
 .c2 {
   user-select: none;
+}
+
+@media only screen and (max-width: 768px) {
+  .c7 {
+    border-radius: 9999px;
+  }
 }
 
 <div
@@ -1332,7 +1362,7 @@ exports[`RangeSelector handle mouse 1`] = `
       />
       <div
         class="c6"
-        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
+        style="cursor: col-resize; outline: none; min-width: 24px; min-height: 24px; z-index: 1;"
         tabindex="-1"
       >
         <div
@@ -1363,7 +1393,7 @@ exports[`RangeSelector handle mouse 1`] = `
       />
       <div
         class="c6"
-        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
+        style="cursor: col-resize; outline: none; min-width: 24px; min-height: 24px; z-index: 1;"
         tabindex="-1"
       >
         <div
@@ -1451,8 +1481,8 @@ exports[`RangeSelector handle touch gestures 1`] = `
   min-width: 0;
   min-height: 0;
   flex-direction: column;
-  height: 12px;
-  width: 12px;
+  height: 24px;
+  width: 24px;
   border-radius: 100%;
 }
 
@@ -1481,6 +1511,12 @@ exports[`RangeSelector handle touch gestures 1`] = `
 
 .c2 {
   user-select: none;
+}
+
+@media only screen and (max-width: 768px) {
+  .c7 {
+    border-radius: 9999px;
+  }
 }
 
 <div
@@ -1513,7 +1549,7 @@ exports[`RangeSelector handle touch gestures 1`] = `
       />
       <div
         class="c6"
-        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
+        style="cursor: col-resize; outline: none; min-width: 24px; min-height: 24px; z-index: 1;"
         tabindex="-1"
       >
         <div
@@ -1544,7 +1580,7 @@ exports[`RangeSelector handle touch gestures 1`] = `
       />
       <div
         class="c6"
-        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
+        style="cursor: col-resize; outline: none; min-width: 24px; min-height: 24px; z-index: 1;"
         tabindex="-1"
       >
         <div
@@ -1634,8 +1670,8 @@ exports[`RangeSelector invert 1`] = `
   min-width: 0;
   min-height: 0;
   flex-direction: column;
-  height: 12px;
-  width: 12px;
+  height: 24px;
+  width: 24px;
   border-radius: 100%;
 }
 
@@ -1677,6 +1713,12 @@ exports[`RangeSelector invert 1`] = `
   user-select: none;
 }
 
+@media only screen and (max-width: 768px) {
+  .c7 {
+    border-radius: 9999px;
+  }
+}
+
 <div
   class="c0"
 >
@@ -1707,7 +1749,7 @@ exports[`RangeSelector invert 1`] = `
       />
       <div
         class="c6"
-        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
+        style="cursor: col-resize; outline: none; min-width: 24px; min-height: 24px; z-index: 1;"
         tabindex="-1"
       >
         <div
@@ -1738,7 +1780,7 @@ exports[`RangeSelector invert 1`] = `
       />
       <div
         class="c6"
-        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
+        style="cursor: col-resize; outline: none; min-width: 24px; min-height: 24px; z-index: 1;"
         tabindex="-1"
       >
         <div
@@ -1778,7 +1820,7 @@ exports[`RangeSelector invert 1`] = `
       />
       <div
         class="c6"
-        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
+        style="cursor: col-resize; outline: none; min-width: 24px; min-height: 24px; z-index: 1;"
         tabindex="-1"
       >
         <div
@@ -1809,7 +1851,7 @@ exports[`RangeSelector invert 1`] = `
       />
       <div
         class="c6"
-        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
+        style="cursor: col-resize; outline: none; min-width: 24px; min-height: 24px; z-index: 1;"
         tabindex="-1"
       >
         <div
@@ -1909,8 +1951,8 @@ exports[`RangeSelector label 1`] = `
   min-width: 0;
   min-height: 0;
   flex-direction: column;
-  height: 12px;
-  width: 12px;
+  height: 24px;
+  width: 24px;
   border-radius: 100%;
 }
 
@@ -1958,6 +2000,12 @@ exports[`RangeSelector label 1`] = `
   user-select: none;
 }
 
+@media only screen and (max-width: 768px) {
+  .c9 {
+    border-radius: 9999px;
+  }
+}
+
 <div
   class="c0"
 >
@@ -1997,7 +2045,7 @@ exports[`RangeSelector label 1`] = `
         />
         <div
           class="c8"
-          style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
+          style="cursor: col-resize; outline: none; min-width: 24px; min-height: 24px; z-index: 1;"
           tabindex="-1"
         >
           <div
@@ -2028,7 +2076,7 @@ exports[`RangeSelector label 1`] = `
         />
         <div
           class="c8"
-          style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
+          style="cursor: col-resize; outline: none; min-width: 24px; min-height: 24px; z-index: 1;"
           tabindex="-1"
         >
           <div
@@ -2084,7 +2132,7 @@ exports[`RangeSelector label 1`] = `
         />
         <div
           class="c8"
-          style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
+          style="cursor: col-resize; outline: none; min-width: 24px; min-height: 24px; z-index: 1;"
           tabindex="-1"
         >
           <div
@@ -2115,7 +2163,7 @@ exports[`RangeSelector label 1`] = `
         />
         <div
           class="c8"
-          style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
+          style="cursor: col-resize; outline: none; min-width: 24px; min-height: 24px; z-index: 1;"
           tabindex="-1"
         >
           <div
@@ -2210,8 +2258,8 @@ exports[`RangeSelector max 1`] = `
   min-width: 0;
   min-height: 0;
   flex-direction: column;
-  height: 12px;
-  width: 12px;
+  height: 24px;
+  width: 24px;
   border-radius: 100%;
 }
 
@@ -2240,6 +2288,12 @@ exports[`RangeSelector max 1`] = `
 
 .c2 {
   user-select: none;
+}
+
+@media only screen and (max-width: 768px) {
+  .c7 {
+    border-radius: 9999px;
+  }
 }
 
 <div
@@ -2272,7 +2326,7 @@ exports[`RangeSelector max 1`] = `
       />
       <div
         class="c6"
-        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
+        style="cursor: col-resize; outline: none; min-width: 24px; min-height: 24px; z-index: 1;"
         tabindex="-1"
       >
         <div
@@ -2303,7 +2357,7 @@ exports[`RangeSelector max 1`] = `
       />
       <div
         class="c6"
-        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
+        style="cursor: col-resize; outline: none; min-width: 24px; min-height: 24px; z-index: 1;"
         tabindex="-1"
       >
         <div
@@ -2391,8 +2445,8 @@ exports[`RangeSelector min 1`] = `
   min-width: 0;
   min-height: 0;
   flex-direction: column;
-  height: 12px;
-  width: 12px;
+  height: 24px;
+  width: 24px;
   border-radius: 100%;
 }
 
@@ -2421,6 +2475,12 @@ exports[`RangeSelector min 1`] = `
 
 .c2 {
   user-select: none;
+}
+
+@media only screen and (max-width: 768px) {
+  .c7 {
+    border-radius: 9999px;
+  }
 }
 
 <div
@@ -2453,7 +2513,7 @@ exports[`RangeSelector min 1`] = `
       />
       <div
         class="c6"
-        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
+        style="cursor: col-resize; outline: none; min-width: 24px; min-height: 24px; z-index: 1;"
         tabindex="-1"
       >
         <div
@@ -2484,7 +2544,7 @@ exports[`RangeSelector min 1`] = `
       />
       <div
         class="c6"
-        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
+        style="cursor: col-resize; outline: none; min-width: 24px; min-height: 24px; z-index: 1;"
         tabindex="-1"
       >
         <div
@@ -2572,8 +2632,8 @@ exports[`RangeSelector opacity 1`] = `
   min-width: 0;
   min-height: 0;
   flex-direction: column;
-  height: 12px;
-  width: 12px;
+  height: 24px;
+  width: 24px;
   border-radius: 100%;
 }
 
@@ -2630,6 +2690,12 @@ exports[`RangeSelector opacity 1`] = `
   user-select: none;
 }
 
+@media only screen and (max-width: 768px) {
+  .c7 {
+    border-radius: 9999px;
+  }
+}
+
 <div
   class="c0"
 >
@@ -2660,7 +2726,7 @@ exports[`RangeSelector opacity 1`] = `
       />
       <div
         class="c6"
-        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
+        style="cursor: col-resize; outline: none; min-width: 24px; min-height: 24px; z-index: 1;"
         tabindex="-1"
       >
         <div
@@ -2691,7 +2757,7 @@ exports[`RangeSelector opacity 1`] = `
       />
       <div
         class="c6"
-        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
+        style="cursor: col-resize; outline: none; min-width: 24px; min-height: 24px; z-index: 1;"
         tabindex="-1"
       >
         <div
@@ -2731,7 +2797,7 @@ exports[`RangeSelector opacity 1`] = `
       />
       <div
         class="c6"
-        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
+        style="cursor: col-resize; outline: none; min-width: 24px; min-height: 24px; z-index: 1;"
         tabindex="-1"
       >
         <div
@@ -2762,7 +2828,7 @@ exports[`RangeSelector opacity 1`] = `
       />
       <div
         class="c6"
-        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
+        style="cursor: col-resize; outline: none; min-width: 24px; min-height: 24px; z-index: 1;"
         tabindex="-1"
       >
         <div
@@ -2802,7 +2868,7 @@ exports[`RangeSelector opacity 1`] = `
       />
       <div
         class="c6"
-        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
+        style="cursor: col-resize; outline: none; min-width: 24px; min-height: 24px; z-index: 1;"
         tabindex="-1"
       >
         <div
@@ -2833,7 +2899,7 @@ exports[`RangeSelector opacity 1`] = `
       />
       <div
         class="c6"
-        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
+        style="cursor: col-resize; outline: none; min-width: 24px; min-height: 24px; z-index: 1;"
         tabindex="-1"
       >
         <div
@@ -4605,8 +4671,8 @@ exports[`RangeSelector should not have accessibility violations 1`] = `
   min-width: 0;
   min-height: 0;
   flex-direction: column;
-  height: 12px;
-  width: 12px;
+  height: 24px;
+  width: 24px;
   border-radius: 100%;
 }
 
@@ -4635,6 +4701,12 @@ exports[`RangeSelector should not have accessibility violations 1`] = `
 
 .c2 {
   user-select: none;
+}
+
+@media only screen and (max-width: 768px) {
+  .c7 {
+    border-radius: 9999px;
+  }
 }
 
 <div
@@ -4667,7 +4739,7 @@ exports[`RangeSelector should not have accessibility violations 1`] = `
       />
       <div
         class="c6"
-        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
+        style="cursor: col-resize; outline: none; min-width: 24px; min-height: 24px; z-index: 1;"
         tabindex="-1"
       >
         <div
@@ -4698,7 +4770,7 @@ exports[`RangeSelector should not have accessibility violations 1`] = `
       />
       <div
         class="c6"
-        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
+        style="cursor: col-resize; outline: none; min-width: 24px; min-height: 24px; z-index: 1;"
         tabindex="-1"
       >
         <div
@@ -5534,8 +5606,8 @@ exports[`RangeSelector step renders correct values 1`] = `
   min-width: 0;
   min-height: 0;
   flex-direction: column;
-  height: 12px;
-  width: 12px;
+  height: 24px;
+  width: 24px;
   border-radius: 100%;
 }
 
@@ -5564,6 +5636,12 @@ exports[`RangeSelector step renders correct values 1`] = `
 
 .c2 {
   user-select: none;
+}
+
+@media only screen and (max-width: 768px) {
+  .c7 {
+    border-radius: 9999px;
+  }
 }
 
 <div
@@ -5596,7 +5674,7 @@ exports[`RangeSelector step renders correct values 1`] = `
       />
       <div
         class="c6"
-        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
+        style="cursor: col-resize; outline: none; min-width: 24px; min-height: 24px; z-index: 1;"
         tabindex="-1"
       >
         <div
@@ -5627,7 +5705,7 @@ exports[`RangeSelector step renders correct values 1`] = `
       />
       <div
         class="c6"
-        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
+        style="cursor: col-resize; outline: none; min-width: 24px; min-height: 24px; z-index: 1;"
         tabindex="-1"
       >
         <div

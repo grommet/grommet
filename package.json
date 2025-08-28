@@ -122,7 +122,7 @@
     "eslint-plugin-testing-library": "^7.6.3",
     "fs-extra": "^11.3.0",
     "globals": "^16.3.0",
-    "grommet-theme-hpe": "latest",
+    "grommet-theme-hpe": "https://github.com/grommet/grommet-theme-hpe/tarball/NEXT-stable",
     "jest": "^30.0.5",
     "jest-axe": "^10.0.0",
     "jest-cli": "^30.0.5",

@@ -13,7 +13,7 @@ exports[`Button kind badge should align to button container if specified in them
   flex-direction: column;
   flex: 0 0 auto;
   justify-content: center;
-  border-radius: 24px;
+  border-radius: 12px;
 }
 
 .c1 {
@@ -135,7 +135,7 @@ exports[`Button kind badge should align to button container if specified in them
 
 @media only screen and (max-width: 768px) {
   .c5 {
-    border-radius: 12px;
+    border-radius: 8px;
   }
 }
 
@@ -188,7 +188,7 @@ exports[`Button kind badge should apply background 1`] = `
   flex-direction: column;
   flex: 0 0 auto;
   justify-content: center;
-  border-radius: 24px;
+  border-radius: 12px;
 }
 
 .c1 {
@@ -310,7 +310,7 @@ exports[`Button kind badge should apply background 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c5 {
-    border-radius: 12px;
+    border-radius: 8px;
   }
 }
 
@@ -363,7 +363,7 @@ exports[`Button kind badge should be offset from top-right corner 1`] = `
   flex-direction: column;
   flex: 0 0 auto;
   justify-content: center;
-  border-radius: 24px;
+  border-radius: 12px;
 }
 
 .c1 {
@@ -478,7 +478,7 @@ exports[`Button kind badge should be offset from top-right corner 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c5 {
-    border-radius: 12px;
+    border-radius: 8px;
   }
 }
 
@@ -525,7 +525,7 @@ exports[`Button kind badge should display "+" when number is greater than max 1`
   flex-direction: column;
   flex: 0 0 auto;
   justify-content: center;
-  border-radius: 24px;
+  border-radius: 12px;
 }
 
 .c1 {
@@ -647,7 +647,7 @@ exports[`Button kind badge should display "+" when number is greater than max 1`
 
 @media only screen and (max-width: 768px) {
   .c5 {
-    border-radius: 12px;
+    border-radius: 8px;
   }
 }
 
@@ -700,7 +700,7 @@ exports[`Button kind badge should display number content 1`] = `
   flex-direction: column;
   flex: 0 0 auto;
   justify-content: center;
-  border-radius: 24px;
+  border-radius: 12px;
 }
 
 .c1 {
@@ -822,7 +822,7 @@ exports[`Button kind badge should display number content 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c5 {
-    border-radius: 12px;
+    border-radius: 8px;
   }
 }
 
@@ -1101,7 +1101,7 @@ exports[`Button kind badge should render relative to contents when button has no
   flex-direction: column;
   flex: 0 0 auto;
   justify-content: center;
-  border-radius: 24px;
+  border-radius: 12px;
 }
 
 .c1 {
@@ -1222,7 +1222,7 @@ exports[`Button kind badge should render relative to contents when button has no
 
 @media only screen and (max-width: 768px) {
   .c6 {
-    border-radius: 12px;
+    border-radius: 8px;
   }
 }
 
@@ -1708,7 +1708,7 @@ exports[`Button kind button with transparent background 1`] = `
   min-width: 0;
   min-height: 0;
   flex-direction: column;
-  padding: 48px;
+  padding: 32px;
 }
 
 .c5 {
@@ -1719,7 +1719,7 @@ exports[`Button kind button with transparent background 1`] = `
   min-width: 0;
   min-height: 0;
   flex-direction: column;
-  padding: 48px;
+  padding: 32px;
 }
 
 .c3 {
@@ -2029,13 +2029,13 @@ exports[`Button kind button with transparent background 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c1 {
-    padding: 24px;
+    padding: 16px;
   }
 }
 
 @media only screen and (max-width: 768px) {
   .c5 {
-    padding: 24px;
+    padding: 16px;
   }
 }
 

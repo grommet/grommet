@@ -1148,7 +1148,7 @@ exports[`Notification messages prop 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c1 {
-    border-radius: 3px;
+    border-radius: 4px;
   }
 }
 
@@ -1414,7 +1414,7 @@ exports[`Notification multi actions 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c1 {
-    border-radius: 3px;
+    border-radius: 4px;
   }
 }
 
@@ -1736,7 +1736,7 @@ exports[`Notification onClose 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c1 {
-    border-radius: 3px;
+    border-radius: 4px;
   }
 }
 
@@ -2029,7 +2029,7 @@ exports[`Notification position bottom 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c3 {
-    border-radius: 3px;
+    border-radius: 4px;
   }
 }
 
@@ -2119,8 +2119,8 @@ exports[`Notification position bottom 1`] = `
 
 exports[`Notification position bottom 2`] = `
 "@media only screen and (max-width: 768px) {
-  .jzhntK {
-    border-radius: 3px;
+  .fFovXt {
+    border-radius: 4px;
   }
 }
 @media only screen and (max-width: 768px) {
@@ -2310,7 +2310,7 @@ exports[`Notification position bottom-left 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c3 {
-    border-radius: 3px;
+    border-radius: 4px;
   }
 }
 
@@ -2400,8 +2400,8 @@ exports[`Notification position bottom-left 1`] = `
 
 exports[`Notification position bottom-left 2`] = `
 "@media only screen and (max-width: 768px) {
-  .jzhntK {
-    border-radius: 3px;
+  .fFovXt {
+    border-radius: 4px;
   }
 }
 @media only screen and (max-width: 768px) {
@@ -2591,7 +2591,7 @@ exports[`Notification position bottom-right 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c3 {
-    border-radius: 3px;
+    border-radius: 4px;
   }
 }
 
@@ -2681,8 +2681,8 @@ exports[`Notification position bottom-right 1`] = `
 
 exports[`Notification position bottom-right 2`] = `
 "@media only screen and (max-width: 768px) {
-  .jzhntK {
-    border-radius: 3px;
+  .fFovXt {
+    border-radius: 4px;
   }
 }
 @media only screen and (max-width: 768px) {
@@ -2872,7 +2872,7 @@ exports[`Notification position center 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c3 {
-    border-radius: 3px;
+    border-radius: 4px;
   }
 }
 
@@ -2962,8 +2962,8 @@ exports[`Notification position center 1`] = `
 
 exports[`Notification position center 2`] = `
 "@media only screen and (max-width: 768px) {
-  .jzhntK {
-    border-radius: 3px;
+  .fFovXt {
+    border-radius: 4px;
   }
 }
 @media only screen and (max-width: 768px) {
@@ -3153,7 +3153,7 @@ exports[`Notification position end 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c3 {
-    border-radius: 3px;
+    border-radius: 4px;
   }
 }
 
@@ -3243,8 +3243,8 @@ exports[`Notification position end 1`] = `
 
 exports[`Notification position end 2`] = `
 "@media only screen and (max-width: 768px) {
-  .jzhntK {
-    border-radius: 3px;
+  .fFovXt {
+    border-radius: 4px;
   }
 }
 @media only screen and (max-width: 768px) {
@@ -3434,7 +3434,7 @@ exports[`Notification position left 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c3 {
-    border-radius: 3px;
+    border-radius: 4px;
   }
 }
 
@@ -3524,8 +3524,8 @@ exports[`Notification position left 1`] = `
 
 exports[`Notification position left 2`] = `
 "@media only screen and (max-width: 768px) {
-  .jzhntK {
-    border-radius: 3px;
+  .fFovXt {
+    border-radius: 4px;
   }
 }
 @media only screen and (max-width: 768px) {
@@ -3715,7 +3715,7 @@ exports[`Notification position right 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c3 {
-    border-radius: 3px;
+    border-radius: 4px;
   }
 }
 
@@ -3805,8 +3805,8 @@ exports[`Notification position right 1`] = `
 
 exports[`Notification position right 2`] = `
 "@media only screen and (max-width: 768px) {
-  .jzhntK {
-    border-radius: 3px;
+  .fFovXt {
+    border-radius: 4px;
   }
 }
 @media only screen and (max-width: 768px) {
@@ -3996,7 +3996,7 @@ exports[`Notification position start 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c3 {
-    border-radius: 3px;
+    border-radius: 4px;
   }
 }
 
@@ -4086,8 +4086,8 @@ exports[`Notification position start 1`] = `
 
 exports[`Notification position start 2`] = `
 "@media only screen and (max-width: 768px) {
-  .jzhntK {
-    border-radius: 3px;
+  .fFovXt {
+    border-radius: 4px;
   }
 }
 @media only screen and (max-width: 768px) {
@@ -4277,7 +4277,7 @@ exports[`Notification position top 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c3 {
-    border-radius: 3px;
+    border-radius: 4px;
   }
 }
 
@@ -4367,8 +4367,8 @@ exports[`Notification position top 1`] = `
 
 exports[`Notification position top 2`] = `
 "@media only screen and (max-width: 768px) {
-  .jzhntK {
-    border-radius: 3px;
+  .fFovXt {
+    border-radius: 4px;
   }
 }
 @media only screen and (max-width: 768px) {
@@ -4558,7 +4558,7 @@ exports[`Notification position top-left 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c3 {
-    border-radius: 3px;
+    border-radius: 4px;
   }
 }
 
@@ -4648,8 +4648,8 @@ exports[`Notification position top-left 1`] = `
 
 exports[`Notification position top-left 2`] = `
 "@media only screen and (max-width: 768px) {
-  .jzhntK {
-    border-radius: 3px;
+  .fFovXt {
+    border-radius: 4px;
   }
 }
 @media only screen and (max-width: 768px) {
@@ -4839,7 +4839,7 @@ exports[`Notification position top-right 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c3 {
-    border-radius: 3px;
+    border-radius: 4px;
   }
 }
 
@@ -4929,8 +4929,8 @@ exports[`Notification position top-right 1`] = `
 
 exports[`Notification position top-right 2`] = `
 "@media only screen and (max-width: 768px) {
-  .jzhntK {
-    border-radius: 3px;
+  .fFovXt {
+    border-radius: 4px;
   }
 }
 @media only screen and (max-width: 768px) {
@@ -5056,7 +5056,7 @@ exports[`Notification should have no accessibility violations 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c1 {
-    border-radius: 3px;
+    border-radius: 4px;
   }
 }
 
@@ -5278,7 +5278,7 @@ exports[`Notification should render custom icon 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c1 {
-    border-radius: 3px;
+    border-radius: 4px;
   }
 }
 
@@ -5460,7 +5460,7 @@ exports[`Notification should render custom template inside notification 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c1 {
-    border-radius: 3px;
+    border-radius: 4px;
   }
 }
 

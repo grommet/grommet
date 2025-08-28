@@ -120,8 +120,8 @@ exports[`DataFilter !inDataForm 1`] = `
   min-width: 0;
   min-height: 0;
   flex-direction: column;
-  height: 12px;
-  width: 12px;
+  height: 24px;
+  width: 24px;
   border-radius: 100%;
 }
 
@@ -276,13 +276,19 @@ exports[`DataFilter !inDataForm 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c15 {
-    border-radius: 6px;
+    border-radius: 8px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c19 {
+    border-radius: 9999px;
   }
 }
 
 @media only screen and (max-width: 768px) {
   .c20 {
-    border-radius: 6px;
+    border-radius: 8px;
   }
 }
 
@@ -455,7 +461,7 @@ exports[`DataFilter !inDataForm 1`] = `
               />
               <div
                 class="c18"
-                style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
+                style="cursor: col-resize; outline: none; min-width: 24px; min-height: 24px; z-index: 1;"
                 tabindex="-1"
               >
                 <div
@@ -486,7 +492,7 @@ exports[`DataFilter !inDataForm 1`] = `
               />
               <div
                 class="c18"
-                style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
+                style="cursor: col-resize; outline: none; min-width: 24px; min-height: 24px; z-index: 1;"
                 tabindex="-1"
               >
                 <div
@@ -583,8 +589,8 @@ exports[`DataFilter children 1`] = `
 .c7 {
   margin-left: 0px;
   margin-right: 0px;
-  margin-top: 6px;
-  margin-bottom: 6px;
+  margin-top: 12px;
+  margin-bottom: 12px;
   margin-top: 6px;
   margin-bottom: 0px;
   font-size: 0.875rem;
@@ -987,8 +993,8 @@ exports[`DataFilter options 1`] = `
 .c7 {
   margin-left: 0px;
   margin-right: 0px;
-  margin-top: 6px;
-  margin-bottom: 6px;
+  margin-top: 12px;
+  margin-bottom: 12px;
   margin-top: 6px;
   margin-bottom: 0px;
   font-size: 0.875rem;
@@ -1585,8 +1591,8 @@ exports[`DataFilter range Data 1`] = `
   min-width: 0;
   min-height: 0;
   flex-direction: column;
-  height: 12px;
-  width: 12px;
+  height: 24px;
+  width: 24px;
   border-radius: 100%;
 }
 
@@ -1620,8 +1626,8 @@ exports[`DataFilter range Data 1`] = `
 .c7 {
   margin-left: 0px;
   margin-right: 0px;
-  margin-top: 6px;
-  margin-bottom: 6px;
+  margin-top: 12px;
+  margin-bottom: 12px;
   margin-top: 6px;
   margin-bottom: 0px;
   font-size: 0.875rem;
@@ -1816,13 +1822,19 @@ exports[`DataFilter range Data 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c13 {
-    border-radius: 6px;
+    border-radius: 8px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c17 {
+    border-radius: 9999px;
   }
 }
 
 @media only screen and (max-width: 768px) {
   .c18 {
-    border-radius: 6px;
+    border-radius: 8px;
   }
 }
 
@@ -1901,7 +1913,7 @@ exports[`DataFilter range Data 1`] = `
                       />
                       <div
                         class="c16"
-                        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
+                        style="cursor: col-resize; outline: none; min-width: 24px; min-height: 24px; z-index: 1;"
                         tabindex="-1"
                       >
                         <div
@@ -1932,7 +1944,7 @@ exports[`DataFilter range Data 1`] = `
                       />
                       <div
                         class="c16"
-                        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
+                        style="cursor: col-resize; outline: none; min-width: 24px; min-height: 24px; z-index: 1;"
                         tabindex="-1"
                       >
                         <div
@@ -2099,8 +2111,8 @@ exports[`DataFilter range prop 1`] = `
   min-width: 0;
   min-height: 0;
   flex-direction: column;
-  height: 12px;
-  width: 12px;
+  height: 24px;
+  width: 24px;
   border-radius: 100%;
 }
 
@@ -2134,8 +2146,8 @@ exports[`DataFilter range prop 1`] = `
 .c7 {
   margin-left: 0px;
   margin-right: 0px;
-  margin-top: 6px;
-  margin-bottom: 6px;
+  margin-top: 12px;
+  margin-bottom: 12px;
   margin-top: 6px;
   margin-bottom: 0px;
   font-size: 0.875rem;
@@ -2330,13 +2342,19 @@ exports[`DataFilter range prop 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c13 {
-    border-radius: 6px;
+    border-radius: 8px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c17 {
+    border-radius: 9999px;
   }
 }
 
 @media only screen and (max-width: 768px) {
   .c18 {
-    border-radius: 6px;
+    border-radius: 8px;
   }
 }
 
@@ -2415,7 +2433,7 @@ exports[`DataFilter range prop 1`] = `
                       />
                       <div
                         class="c16"
-                        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
+                        style="cursor: col-resize; outline: none; min-width: 24px; min-height: 24px; z-index: 1;"
                         tabindex="-1"
                       >
                         <div
@@ -2446,7 +2464,7 @@ exports[`DataFilter range prop 1`] = `
                       />
                       <div
                         class="c16"
-                        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
+                        style="cursor: col-resize; outline: none; min-width: 24px; min-height: 24px; z-index: 1;"
                         tabindex="-1"
                       >
                         <div
@@ -2651,8 +2669,8 @@ exports[`DataFilter renders 1`] = `
   min-width: 0;
   min-height: 0;
   flex-direction: column;
-  height: 12px;
-  width: 12px;
+  height: 24px;
+  width: 24px;
   border-radius: 100%;
 }
 
@@ -2686,8 +2704,8 @@ exports[`DataFilter renders 1`] = `
 .c7 {
   margin-left: 0px;
   margin-right: 0px;
-  margin-top: 6px;
-  margin-bottom: 6px;
+  margin-top: 12px;
+  margin-bottom: 12px;
   margin-top: 6px;
   margin-bottom: 0px;
   font-size: 0.875rem;
@@ -2955,13 +2973,19 @@ exports[`DataFilter renders 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c21 {
-    border-radius: 6px;
+    border-radius: 8px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c25 {
+    border-radius: 9999px;
   }
 }
 
 @media only screen and (max-width: 768px) {
   .c26 {
-    border-radius: 6px;
+    border-radius: 8px;
   }
 }
 
@@ -3174,7 +3198,7 @@ exports[`DataFilter renders 1`] = `
                       />
                       <div
                         class="c24"
-                        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
+                        style="cursor: col-resize; outline: none; min-width: 24px; min-height: 24px; z-index: 1;"
                         tabindex="-1"
                       >
                         <div
@@ -3205,7 +3229,7 @@ exports[`DataFilter renders 1`] = `
                       />
                       <div
                         class="c24"
-                        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
+                        style="cursor: col-resize; outline: none; min-width: 24px; min-height: 24px; z-index: 1;"
                         tabindex="-1"
                       >
                         <div
@@ -3279,7 +3303,7 @@ exports[`DataFilter select multiple options 1`] = `
   flex-direction: column;
   flex: 0 0 auto;
   justify-content: center;
-  border-radius: 24px;
+  border-radius: 12px;
 }
 
 .c10 {
@@ -3620,7 +3644,7 @@ exports[`DataFilter select multiple options 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c8 {
-    border-radius: 12px;
+    border-radius: 8px;
   }
 }
 
@@ -3942,7 +3966,7 @@ exports[`DataFilter should allow filtering on multiple sub-properties from same 
   flex-direction: column;
   flex: 0 0 auto;
   justify-content: center;
-  border-radius: 24px;
+  border-radius: 12px;
 }
 
 .c10 {
@@ -4279,7 +4303,7 @@ exports[`DataFilter should allow filtering on multiple sub-properties from same 
 
 @media only screen and (max-width: 768px) {
   .c8 {
-    border-radius: 12px;
+    border-radius: 8px;
   }
 }
 

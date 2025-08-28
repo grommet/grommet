@@ -68,8 +68,8 @@ exports[`SelectMultiple children 1`] = `
   box-sizing: border-box;
   max-width: 100%;
   align-self: center;
-  margin-left: 12px;
-  margin-right: 12px;
+  margin-left: 16px;
+  margin-right: 16px;
   margin-left: 12px;
   margin-right: 12px;
   min-width: 0;
@@ -246,8 +246,8 @@ exports[`SelectMultiple children 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c9 {
-    margin-left: 6px;
-    margin-right: 6px;
+    margin-left: 8px;
+    margin-right: 8px;
   }
 }
 
@@ -387,8 +387,8 @@ exports[`SelectMultiple defaultValue 1`] = `
   box-sizing: border-box;
   max-width: 100%;
   align-self: center;
-  margin-left: 12px;
-  margin-right: 12px;
+  margin-left: 16px;
+  margin-right: 16px;
   margin-left: 12px;
   margin-right: 12px;
   min-width: 0;
@@ -565,8 +565,8 @@ exports[`SelectMultiple defaultValue 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c9 {
-    margin-left: 6px;
-    margin-right: 6px;
+    margin-left: 8px;
+    margin-right: 8px;
   }
 }
 
@@ -707,8 +707,8 @@ exports[`SelectMultiple disabled 1`] = `
   box-sizing: border-box;
   max-width: 100%;
   align-self: center;
-  margin-left: 12px;
-  margin-right: 12px;
+  margin-left: 16px;
+  margin-right: 16px;
   margin-left: 12px;
   margin-right: 12px;
   min-width: 0;
@@ -892,8 +892,8 @@ exports[`SelectMultiple disabled 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c9 {
-    margin-left: 6px;
-    margin-right: 6px;
+    margin-left: 8px;
+    margin-right: 8px;
   }
 }
 
@@ -1597,8 +1597,8 @@ exports[`SelectMultiple placeholder 1`] = `
   box-sizing: border-box;
   max-width: 100%;
   align-self: center;
-  margin-left: 12px;
-  margin-right: 12px;
+  margin-left: 16px;
+  margin-right: 16px;
   margin-left: 12px;
   margin-right: 12px;
   min-width: 0;
@@ -1775,8 +1775,8 @@ exports[`SelectMultiple placeholder 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c9 {
-    margin-left: 6px;
-    margin-right: 6px;
+    margin-left: 8px;
+    margin-right: 8px;
   }
 }
 
@@ -2169,8 +2169,8 @@ exports[`SelectMultiple should display custom messages 1`] = `
   box-sizing: border-box;
   max-width: 100%;
   align-self: center;
-  margin-left: 12px;
-  margin-right: 12px;
+  margin-left: 16px;
+  margin-right: 16px;
   margin-left: 12px;
   margin-right: 12px;
   min-width: 0;
@@ -2347,8 +2347,8 @@ exports[`SelectMultiple should display custom messages 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c9 {
-    margin-left: 6px;
-    margin-right: 6px;
+    margin-left: 8px;
+    margin-right: 8px;
   }
 }
 
@@ -2522,8 +2522,8 @@ exports[`SelectMultiple should display custom messages 2`] = `
   box-sizing: border-box;
   max-width: 100%;
   align-self: center;
-  margin-left: 12px;
-  margin-right: 12px;
+  margin-left: 16px;
+  margin-right: 16px;
   margin-left: 12px;
   margin-right: 12px;
   min-width: 0;
@@ -2700,8 +2700,8 @@ exports[`SelectMultiple should display custom messages 2`] = `
 
 @media only screen and (max-width: 768px) {
   .c9 {
-    margin-left: 6px;
-    margin-right: 6px;
+    margin-left: 8px;
+    margin-right: 8px;
   }
 }
 
@@ -2875,8 +2875,8 @@ exports[`SelectMultiple should display custom messages 3`] = `
   box-sizing: border-box;
   max-width: 100%;
   align-self: center;
-  margin-left: 12px;
-  margin-right: 12px;
+  margin-left: 16px;
+  margin-right: 16px;
   margin-left: 12px;
   margin-right: 12px;
   min-width: 0;
@@ -3053,8 +3053,8 @@ exports[`SelectMultiple should display custom messages 3`] = `
 
 @media only screen and (max-width: 768px) {
   .c9 {
-    margin-left: 6px;
-    margin-right: 6px;
+    margin-left: 8px;
+    margin-right: 8px;
   }
 }
 
@@ -3227,8 +3227,8 @@ exports[`SelectMultiple should not have accessibility violations 1`] = `
   box-sizing: border-box;
   max-width: 100%;
   align-self: center;
-  margin-left: 12px;
-  margin-right: 12px;
+  margin-left: 16px;
+  margin-right: 16px;
   margin-left: 12px;
   margin-right: 12px;
   min-width: 0;
@@ -3405,8 +3405,8 @@ exports[`SelectMultiple should not have accessibility violations 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c9 {
-    margin-left: 6px;
-    margin-right: 6px;
+    margin-left: 8px;
+    margin-right: 8px;
   }
 }
 
@@ -5925,18 +5925,18 @@ exports[`SelectMultiple with portal disabled option 1`] = `
 
 exports[`SelectMultiple with portal disabled option 2`] = `
 "@media only screen and (max-width: 768px) {
-  .dxGwVz {
-    margin-left: 6px;
-    margin-right: 6px;
+  .fdtOfb {
+    margin-left: 8px;
+    margin-right: 8px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .dxGwVz {
+  .fdtOfb {
     margin-left: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .dxGwVz {
+  .fdtOfb {
     margin-right: 12px;
   }
 }"
@@ -6200,18 +6200,18 @@ exports[`SelectMultiple with portal empty options 1`] = `
 
 exports[`SelectMultiple with portal empty options 2`] = `
 "@media only screen and (max-width: 768px) {
-  .dxGwVz {
-    margin-left: 6px;
-    margin-right: 6px;
+  .fdtOfb {
+    margin-left: 8px;
+    margin-right: 8px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .dxGwVz {
+  .fdtOfb {
     margin-left: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .dxGwVz {
+  .fdtOfb {
     margin-right: 12px;
   }
 }"
@@ -6487,18 +6487,18 @@ exports[`SelectMultiple with portal limit 1`] = `
 
 exports[`SelectMultiple with portal limit 2`] = `
 "@media only screen and (max-width: 768px) {
-  .dxGwVz {
-    margin-left: 6px;
-    margin-right: 6px;
+  .fdtOfb {
+    margin-left: 8px;
+    margin-right: 8px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .dxGwVz {
+  .fdtOfb {
     margin-left: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .dxGwVz {
+  .fdtOfb {
     margin-right: 12px;
   }
 }"
@@ -6982,18 +6982,18 @@ exports[`SelectMultiple with portal renders custom listbox styling 1`] = `
 
 exports[`SelectMultiple with portal renders custom listbox styling 2`] = `
 "@media only screen and (max-width: 768px) {
-  .dxGwVz {
-    margin-left: 6px;
-    margin-right: 6px;
+  .fdtOfb {
+    margin-left: 8px;
+    margin-right: 8px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .dxGwVz {
+  .fdtOfb {
     margin-left: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .dxGwVz {
+  .fdtOfb {
     margin-right: 12px;
   }
 }"
@@ -7269,18 +7269,18 @@ exports[`SelectMultiple with portal select all and clear 1`] = `
 
 exports[`SelectMultiple with portal select all and clear 2`] = `
 "@media only screen and (max-width: 768px) {
-  .dxGwVz {
-    margin-left: 6px;
-    margin-right: 6px;
+  .fdtOfb {
+    margin-left: 8px;
+    margin-right: 8px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .dxGwVz {
+  .fdtOfb {
     margin-left: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .dxGwVz {
+  .fdtOfb {
     margin-right: 12px;
   }
 }"
@@ -7339,18 +7339,18 @@ exports[`SelectMultiple with portal select all and clear 3`] = `
 
 exports[`SelectMultiple with portal select all and clear 4`] = `
 "@media only screen and (max-width: 768px) {
-  .dxGwVz {
-    margin-left: 6px;
-    margin-right: 6px;
+  .fdtOfb {
+    margin-left: 8px;
+    margin-right: 8px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .dxGwVz {
+  .fdtOfb {
     margin-left: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .dxGwVz {
+  .fdtOfb {
     margin-right: 12px;
   }
 }"
