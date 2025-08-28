@@ -3029,11 +3029,8 @@ exports[`Chart undefined values 1`] = `
 
 exports[`Chart value style 1`] = `
 .c0 {
-  font-family: 'Metric',Arial,sans-serif;
-  font-size: 1.125rem;
-  line-height: 1.5rem;
-  background-color: #ffffff;
-  color: #555555;
+  font-size: 18px;
+  line-height: 24px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -3059,13 +3056,13 @@ exports[`Chart value style 1`] = `
   >
     0
     <g
-      fill="#3c3aa1"
+      fill="#6FFFB0"
       stroke="none"
       stroke-linecap="butt"
       stroke-linejoin="miter"
     >
       <g
-        fill="#009a71"
+        fill="#009E67"
         opacity="0.8"
         stroke="none"
       >
@@ -3104,7 +3101,7 @@ exports[`Chart value style 1`] = `
     0
     <g
       fill="none"
-      stroke="#3c3aa1"
+      stroke="#6FFFB0"
       stroke-linecap="butt"
       stroke-linejoin="miter"
       stroke-width="24"
@@ -3112,8 +3109,8 @@ exports[`Chart value style 1`] = `
       <g
         fill="none"
         opacity="0.8"
-        stroke="#009a71"
-        stroke-width="16"
+        stroke="#009E67"
+        stroke-width="12"
       >
         <title>
           sixty
