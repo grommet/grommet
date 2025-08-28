@@ -229,7 +229,7 @@ describe('Chart', () => {
 
   test('value style', () => {
     const { container } = render(
-      <Grommet theme={hpe}>
+      <Grommet>
         <Chart type="point" point="circle" values={STYLED_VALUES} />
         <Chart type="bar" values={STYLED_VALUES} />
       </Grommet>,
