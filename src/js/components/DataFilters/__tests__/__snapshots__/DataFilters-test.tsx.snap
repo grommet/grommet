@@ -4866,6 +4866,8 @@ exports[`DataFilters sub objects 1`] = `
   padding-right: 12px;
   padding-top: 6px;
   padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 11px;
 }
 
 .c36 >div {

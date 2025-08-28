@@ -233,6 +233,8 @@ exports[`TableCell plain renders 1`] = `
   padding-right: 12px;
   padding-top: 6px;
   padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 11px;
 }
 
 .c2 >div {
@@ -313,6 +315,8 @@ exports[`TableCell renders 1`] = `
   padding-right: 12px;
   padding-top: 6px;
   padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 11px;
 }
 
 .c2 >div {
@@ -350,6 +354,8 @@ exports[`TableCell renders 1`] = `
   padding-right: 12px;
   padding-top: 6px;
   padding-bottom: 6px;
+  padding-top: 11px;
+  padding-bottom: 12px;
   font-weight: undefined;
 }
 
@@ -452,6 +458,8 @@ exports[`TableCell scope renders 1`] = `
   padding-right: 12px;
   padding-top: 6px;
   padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 11px;
 }
 
 .c2 >div {
@@ -822,6 +830,8 @@ exports[`TableCell verticalAlign renders 1`] = `
   padding-right: 12px;
   padding-top: 6px;
   padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 11px;
 }
 
 .c2 >div {
@@ -845,6 +855,8 @@ exports[`TableCell verticalAlign renders 1`] = `
   padding-right: 12px;
   padding-top: 6px;
   padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 11px;
 }
 
 .c4 >div {
@@ -868,6 +880,8 @@ exports[`TableCell verticalAlign renders 1`] = `
   padding-right: 12px;
   padding-top: 6px;
   padding-bottom: 6px;
+  padding-top: 12px;
+  padding-bottom: 11px;
 }
 
 .c6 >div {
