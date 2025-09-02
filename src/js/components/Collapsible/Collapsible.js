@@ -19,8 +19,13 @@ const AnimatedBox = styled(Box)`
       overflow: ${props.animate || !props.open ? 'hidden' : 'visible'};`}
 `;
 
+const HiddenBox = styled(Box)`
+  max-height: ${({ hide }) => (hide ? '0px' : 'initial')};
+  overflow: ${({ hide }) => (hide ? 'hidden' : 'visible')};
+`;
+
 const Collapsible = forwardRef(
-  ({ children, direction, open: openArg }, ref) => {
+  ({ children, direction, open: openArg, unmount = true }, ref) => {
     const { theme } = useThemeValue();
     const [open, setOpen] = useState(openArg);
     const [animate, setAnimate] = useState(false);
@@ -115,7 +120,12 @@ const Collapsible = forwardRef(
         // skipped if animation is in progress
         shouldOpen={!animate && shouldOpen}
       >
-        {shouldOpen || open || animate ? children : null}
+        {!unmount && (
+          <HiddenBox hide={!(shouldOpen || open || animate)}>
+            {children}
+          </HiddenBox>
+        )}
+        {unmount && (shouldOpen || open || animate) && children}
       </AnimatedBox>
     );
   },

@@ -1,9 +1,10 @@
 import React from 'react';
 import 'jest-styled-components';
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import { axe } from 'jest-axe';
 import 'jest-axe/extend-expect';
 import 'regenerator-runtime/runtime';
+import '@testing-library/jest-dom';
 
 import { Collapsible } from '..';
 import { Grommet } from '../../Grommet';
@@ -59,5 +60,18 @@ describe('Collapsible', () => {
       </Grommet>,
     );
     expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('should keep mount content', () => {
+    render(
+      <Grommet>
+        <Collapsible open={false} unmount={false}>
+          <Text>Example</Text>
+        </Collapsible>
+      </Grommet>,
+    );
+
+    const collapsibleContent = screen.getByText('Example');
+    expect(collapsibleContent).toBeInTheDocument();
   });
 });
