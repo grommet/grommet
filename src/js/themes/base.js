@@ -2291,6 +2291,10 @@ export const generate = (baseSpacing = 24, scale = 6) => {
     tag: {
       // background: undefined,
       border: true,
+      // hover: {
+      //   background: undefined,
+      //   border: undefined,
+      // },
       round: 'large',
       // name: undefined,
       pad: {
