@@ -2458,6 +2458,10 @@ var generate = exports.generate = function generate(baseSpacing, scale) {
     tag: {
       // background: undefined,
       border: true,
+      // hover: {
+      //   background: undefined,
+      //   border: undefined,
+      // },
       round: 'large',
       // name: undefined,
       pad: {
