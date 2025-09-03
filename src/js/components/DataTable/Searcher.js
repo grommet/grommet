@@ -26,6 +26,7 @@ const Searcher = ({
   const needsFocus = filtering === property;
   const [buttonNeedsFocus, setButtonNeedsFocus] = useState(false);
   const { format } = useContext(MessageContext);
+  const SearchIcon = theme.dataSearch?.icons?.search || FormSearch;
 
   useEffect(() => {
     if (inputRef && needsFocus) {
@@ -88,7 +89,7 @@ const Searcher = ({
         ref={buttonRef}
         a11yTitle={a11yTitle}
         icon={
-          <FormSearch
+          <SearchIcon
             color={normalizeColor(
               filtering === property ? 'brand' : 'border',
               theme,

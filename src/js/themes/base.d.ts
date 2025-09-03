@@ -187,6 +187,9 @@ interface ButtonType {
   };
   busy?: {
     gap?: GapType;
+    icons?: {
+      success?: React.ReactNode | Icon;
+    };
   };
   gap?: GapType;
   background?: BackgroundType;
@@ -921,6 +924,10 @@ export interface ThemeType {
     };
   };
   dataFilter?: {
+    icons?: {
+      close?: React.ReactNode | Icon;
+      filter?: React.ReactNode | Icon;
+    };
     rangeSelector?: {
       size?: string;
       round?: string;
@@ -942,6 +949,16 @@ export interface ThemeType {
     pad?: PadType;
     width?: WidthType;
   };
+  dataSearch?: {
+    icons?: {
+      search?: React.ReactNode | Icon;
+    };
+  };
+  dataSort?: {
+    icons?: {
+      control?: React.ReactNode | Icon;
+    };
+  };
   dataSummary?: {
     margin?: MarginType;
     separator?: {
@@ -956,6 +973,7 @@ export interface ThemeType {
       round?: RoundType;
     };
     icon?: {
+      calendar?: React.ReactNode | Icon;
       size?: string;
     };
   };
@@ -1009,6 +1027,9 @@ export interface ThemeType {
       contract?: any;
       descending?: any;
       expand?: any;
+      resizeDecrease?: React.ReactNode | Icon;
+      resizeIncrease?: React.ReactNode | Icon;
+      search?: React.ReactNode | Icon;
       sortable?: any;
     };
     pinned?: {
@@ -1052,6 +1073,11 @@ export interface ThemeType {
     };
   };
   dataTableColumns?: {
+    icons?: {
+      control?: React.ReactNode | Icon;
+      pinned?: React.ReactNode | Icon;
+      search?: React.ReactNode | Icon;
+    };
     tabs?: {
       pad?: PadType;
     };
@@ -1096,6 +1122,7 @@ export interface ThemeType {
       pad?: PadType;
     };
     icons?: {
+      error?: React.ReactNode | Icon;
       remove?: any;
     };
     label?: TextProps & { extend?: ExtendType };
@@ -1966,10 +1993,20 @@ export interface ThemeType {
   };
   starRating?: {
     color?: ColorType;
+    icons?: {
+      selected?: React.ReactNode | Icon;
+      unselected?: React.ReactNode | Icon;
+    };
   };
   thumbsRating?: {
     dislike?: {
       color?: ColorType;
+    };
+    icons?: {
+      dislike?: React.ReactNode | Icon;
+      dislikeSelected?: React.ReactNode | Icon;
+      like?: React.ReactNode | Icon;
+      likeSelected?: React.ReactNode | Icon;
     };
     like?: {
       color?: ColorType;
@@ -2025,9 +2062,11 @@ export interface ThemeType {
       };
       extend?: ExtendType;
       nextButton?: {
+        icon: React.ReactNode | Icon;
         pad: PadType;
       };
       previousButton?: {
+        icon: React.ReactNode | Icon;
         pad: PadType;
       };
     };
@@ -2198,6 +2237,9 @@ export interface ThemeType {
     disabled?: OpacityType | { opacity: OpacityType };
     container?: {
       extend?: ExtendType;
+    };
+    icons?: {
+      copy?: React.ReactNode | Icon;
     };
     placeholder?: {
       extend?: ExtendType;

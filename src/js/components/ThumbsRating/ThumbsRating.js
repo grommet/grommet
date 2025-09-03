@@ -16,6 +16,11 @@ const StyledThumbsRatingBox = styled(Box)`
 const ThumbsRating = ({ ...rest }) => {
   const { theme } = useThemeValue();
   const usingKeyboard = useKeyboard();
+  const LikeIcon = theme.thumbsRating?.like?.icon || Like;
+  const LikeSelectedIcon = theme.thumbsRating?.like?.icon || LikeFill;
+  const DislikeIcon = theme.thumbsRating?.dislike?.icon || Dislike;
+  const DislikeSelectedIcon = theme.thumbsRating?.dislike?.icon || DislikeFill;
+
   return (
     <RadioButtonGroup direction="row" options={['like', 'dislike']} {...rest}>
       {(option, { checked, focus }) => {
@@ -23,9 +28,9 @@ const ThumbsRating = ({ ...rest }) => {
           return (
             <StyledThumbsRatingBox focus={focus && usingKeyboard}>
               {checked ? (
-                <LikeFill color={theme.thumbsRating?.like?.color} />
+                <LikeSelectedIcon color={theme.thumbsRating?.like?.color} />
               ) : (
-                <Like color={theme.thumbsRating?.like?.color} />
+                <LikeIcon color={theme.thumbsRating?.like?.color} />
               )}
             </StyledThumbsRatingBox>
           );
@@ -33,9 +38,9 @@ const ThumbsRating = ({ ...rest }) => {
         return (
           <StyledThumbsRatingBox focus={focus && usingKeyboard}>
             {checked ? (
-              <DislikeFill color={theme.thumbsRating?.dislike?.color} />
+              <DislikeSelectedIcon color={theme.thumbsRating?.dislike?.color} />
             ) : (
-              <Dislike color={theme.thumbsRating?.dislike?.color} />
+              <DislikeIcon color={theme.thumbsRating?.dislike?.color} />
             )}
           </StyledThumbsRatingBox>
         );
