@@ -127,7 +127,7 @@ export const DataSearch = ({
         messages: messages?.dataSort,
       })}
       kind={theme.data.button?.kind}
-      icon={<Search />}
+      icon={<SearchIcon />}
       dropProps={dropProps}
       dropContent={<Box pad={theme.data?.drop?.pad}>{content}</Box>}
       open={showContent}

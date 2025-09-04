@@ -26,7 +26,7 @@ const Searcher = ({
   const needsFocus = filtering === property;
   const [buttonNeedsFocus, setButtonNeedsFocus] = useState(false);
   const { format } = useContext(MessageContext);
-  const SearchIcon = theme.dataSearch?.icons?.search || FormSearch;
+  const SearchIcon = theme.dataTable?.icons?.search || FormSearch;
 
   useEffect(() => {
     if (inputRef && needsFocus) {

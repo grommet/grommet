@@ -924,10 +924,6 @@ export interface ThemeType {
     };
   };
   dataFilter?: {
-    icons?: {
-      close?: React.ReactNode | Icon;
-      filter?: React.ReactNode | Icon;
-    };
     rangeSelector?: {
       size?: string;
       round?: string;
@@ -937,6 +933,10 @@ export interface ThemeType {
     };
   };
   dataFilters?: {
+    icons?: {
+      close?: React.ReactNode | Icon;
+      filter?: React.ReactNode | Icon;
+    };
     footer?: {
       actions?: {
         margin?: MarginType;
@@ -2062,12 +2062,12 @@ export interface ThemeType {
       };
       extend?: ExtendType;
       nextButton?: {
-        icon: React.ReactNode | Icon;
-        pad: PadType;
+        icon?: React.ReactNode | Icon;
+        pad?: PadType;
       };
       previousButton?: {
-        icon: React.ReactNode | Icon;
-        pad: PadType;
+        icon?: React.ReactNode | Icon;
+        pad?: PadType;
       };
     };
     panel?: {

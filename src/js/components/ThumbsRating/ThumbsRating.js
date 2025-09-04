@@ -16,10 +16,11 @@ const StyledThumbsRatingBox = styled(Box)`
 const ThumbsRating = ({ ...rest }) => {
   const { theme } = useThemeValue();
   const usingKeyboard = useKeyboard();
-  const LikeIcon = theme.thumbsRating?.like?.icon || Like;
-  const LikeSelectedIcon = theme.thumbsRating?.like?.icon || LikeFill;
-  const DislikeIcon = theme.thumbsRating?.dislike?.icon || Dislike;
-  const DislikeSelectedIcon = theme.thumbsRating?.dislike?.icon || DislikeFill;
+  const LikeIcon = theme.thumbsRating?.icons?.like || Like;
+  const LikeSelectedIcon = theme.thumbsRating?.icons?.likeSelected || LikeFill;
+  const DislikeIcon = theme.thumbsRating?.icons?.dislike || Dislike;
+  const DislikeSelectedIcon =
+    theme.thumbsRating?.icons?.dislikeSelected || DislikeFill;
 
   return (
     <RadioButtonGroup direction="row" options={['like', 'dislike']} {...rest}>
