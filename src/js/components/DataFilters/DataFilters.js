@@ -55,6 +55,8 @@ export const DataFilters = ({
   // touched is a map of property to its value based on if user interacts
   // with a filter or a view applies of set of filters
   const [touched, setTouched] = useState(defaultTouched);
+  const CloseIcon = theme.dataFilters?.icons?.close || Close;
+  const FilterIcon = theme.dataFilters.icons?.filter || Filter;
 
   // if filters have been applied by this DataFilters, update
   // the DataContext that filters are not in a "cleared" state
@@ -141,7 +143,10 @@ export const DataFilters = ({
               })}
           </Heading>
           {!controlled && clearControl}
-          <Button icon={<Close />} onClick={() => setShowContent(undefined)} />
+          <Button
+            icon={<CloseIcon />}
+            onClick={() => setShowContent(undefined)}
+          />
         </Header>
       )}
       {content}
@@ -166,7 +171,7 @@ export const DataFilters = ({
         tip={tip}
         aria-label={tip}
         kind={theme.data.button?.kind}
-        icon={<Filter />}
+        icon={<FilterIcon />}
         dropProps={dropProps}
         dropContent={content}
         badge={badge}
@@ -182,7 +187,7 @@ export const DataFilters = ({
         tip={tip}
         aria-label={tip}
         kind={theme.data.button?.kind}
-        icon={<Filter />}
+        icon={<FilterIcon />}
         badge={badge}
         onClick={() => setShowContent(true)}
       />

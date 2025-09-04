@@ -10,12 +10,17 @@ import { Grommet } from '../../Grommet';
 import { List } from '../../List';
 import { DataFilters } from '..';
 import { createPortal, expectPortal } from '../../../utils/portal';
+import { ThemeType } from '../../../themes';
+import { Add, Trash } from 'grommet-icons';
 
 const data = [{ name: 'a' }, { name: 'b' }];
 
 describe('DataFilters', () => {
   window.scrollTo = jest.fn();
   beforeEach(createPortal);
+  afterEach(() => {
+    jest.useRealTimers();
+  });
 
   test('renders', () => {
     const { container } = render(
@@ -325,5 +330,40 @@ describe('DataFilters', () => {
     // filter button should be at original state, no badge
     expect(getByRole('button', { name: 'Open filters' })).toBeTruthy();
     expect(asFragment()).toMatchSnapshot();
+  });
+
+  test('should use theme icons', async () => {
+    const user = userEvent.setup();
+
+    let theme: ThemeType = {
+      dataFilters: {
+        icons: {
+          close: Trash,
+          filter: Add,
+        },
+      },
+    };
+    const { getByRole } = render(
+      <Grommet theme={theme}>
+        <Data
+          data={[{ location: { lat: 48 } }, { location: { lat: -33 } }]}
+          properties={{
+            'location.lat': { label: 'Latitude', range: { min: -90, max: 90 } },
+          }}
+        >
+          <DataFilters layer />
+        </Data>
+      </Grommet>,
+    );
+
+    expect(screen.getByLabelText('Add')).toBeInTheDocument();
+
+    // find open filters button and click open
+    const filterButton = getByRole('button', { name: 'Open filters' });
+    expect(filterButton).toBeTruthy();
+    fireEvent.click(filterButton);
+    await user.click(getByRole('button', { name: 'Open filters' }));
+
+    expect(screen.getAllByLabelText('Trash')[0]).toBeInTheDocument();
   });
 });

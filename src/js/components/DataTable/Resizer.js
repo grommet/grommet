@@ -43,6 +43,8 @@ const Resizer = ({ onResize, property, headerText, messages, headerId }) => {
   const ref = useRef();
   const thRef = useRef();
   const { format } = useContext(MessageContext);
+  const ResizeIncreaseIcon = theme.dataTable.icons?.resizeIncrease || Add;
+  const ResizeDecreaseIcon = theme.dataTable.icons?.resizeDecrease || Subtract;
 
   // Set the initial width based on the TH element's width and
   // store th element ref
@@ -201,7 +203,7 @@ const Resizer = ({ onResize, property, headerText, messages, headerId }) => {
                 values: { headerText },
                 messages,
               })}
-              icon={<Subtract />}
+              icon={<ResizeDecreaseIcon />}
               onClick={onDecrease}
               autoFocus
             />
@@ -211,7 +213,7 @@ const Resizer = ({ onResize, property, headerText, messages, headerId }) => {
                 values: { headerText },
                 messages,
               })}
-              icon={<Add />}
+              icon={<ResizeIncreaseIcon />}
               onClick={onIncrease}
             />
           </Box>

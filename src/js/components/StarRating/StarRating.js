@@ -21,6 +21,8 @@ const StarRating = ({ name, defaultValue, value: valueProp, ...rest }) => {
     value: valueProp,
     initialValue: defaultValue ?? 0,
   });
+  const SelectedIcon = theme.starRating?.icons?.selected || Star;
+  const UnselectedIcon = theme.starRating?.icons?.unselected || StarOutline;
 
   const options = [];
   for (let i = 1; i < 6; i += 1) {
@@ -39,9 +41,9 @@ const StarRating = ({ name, defaultValue, value: valueProp, ...rest }) => {
       {(option, { focus }) => (
         <StyledStarRatingBox focus={focus && usingKeyboard}>
           {option <= value ? (
-            <Star color={theme.starRating?.color} />
+            <SelectedIcon color={theme.starRating?.color} />
           ) : (
-            <StarOutline color={theme.starRating?.color} />
+            <UnselectedIcon color={theme.starRating?.color} />
           )}
         </StyledStarRatingBox>
       )}

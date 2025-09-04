@@ -662,4 +662,24 @@ describe('Button', () => {
 
     expect(asFragment()).toMatchSnapshot();
   });
+
+  test('should render theme icon', () => {
+    const theme: ThemeType = {
+      button: {
+        busy: {
+          icons: {
+            success: Add,
+          },
+        },
+      },
+    };
+
+    render(
+      <Grommet theme={theme}>
+        <Button label="Default" success />
+      </Grommet>,
+    );
+
+    expect(screen.getByLabelText('Add')).toBeInTheDocument();
+  });
 });

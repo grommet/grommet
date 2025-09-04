@@ -105,6 +105,7 @@ const FileInput = forwardRef(
     const removeRef = useRef();
     const ConfirmRemove = confirmRemove;
     const RemoveIcon = theme.fileInput.icons.remove;
+    const ErrorIcon = theme.fileInput?.icons?.error || CircleAlert;
     const usingKeyboard = useKeyboard();
 
     const [files, setFiles] = formContext.useFormInput({
@@ -510,7 +511,7 @@ const FileInput = forwardRef(
                     >
                       {((typeof maxSize === 'number' && file.size > maxSize) ||
                         (typeof max === 'number' && index >= max)) && (
-                        <CircleAlert
+                        <ErrorIcon
                           a11yTitle={format({
                             id: messageId,
                             messages,
