@@ -191,4 +191,22 @@ describe('FileInput', () => {
     );
     expect(container.firstChild).toMatchSnapshot();
   });
+
+  test('theme anchor margin and label gap', () => {
+    const customTheme = {
+      fileInput: {
+        anchor: {
+          margin: 'large',
+        },
+      },
+    };
+
+    const { asFragment } = render(
+      <Grommet theme={customTheme}>
+        <FileInput name="file" />
+      </Grommet>,
+    );
+
+    expect(asFragment()).toMatchSnapshot();
+  });
 });
