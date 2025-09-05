@@ -2295,4 +2295,57 @@ describe('DataTable', () => {
     expect(collapseButton).toBeInTheDocument();
     expect(container.firstChild).toMatchSnapshot();
   });
+
+  test('theme search pad, search text pad, sort gap, and expand size', () => {
+    const customTheme = {
+      dataTable: {
+        search: {
+          pad: {
+            left: 'large',
+          },
+          text: {
+            pad: {
+              horizontal: 'large',
+            },
+          },
+        },
+        sort: {
+          gap: 'large',
+        },
+        expand: {
+          size: 'large',
+        },
+      },
+    };
+
+    const { container } = render(
+      <Grommet theme={customTheme}>
+        <DataTable
+          columns={[
+            { property: 'a', header: 'A', search: true },
+            { property: 'b', header: 'B' },
+          ]}
+          data={[
+            { a: 'one', b: 1.1 },
+            { a: 'one', b: 1.2 },
+            { a: 'two', b: 2.1 },
+            { a: 'two', b: 2.2 },
+          ]}
+          groupBy="a"
+          sortable
+          rowDetails={(row) => <div>Details for {row.a}</div>}
+          primaryKey="b"
+        />
+      </Grommet>,
+    );
+
+    // Open search to show search pad and text pad
+    fireEvent.click(
+      container.querySelector(
+        '[aria-label="Open search by a"]',
+      ) as HTMLButtonElement,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
 });

@@ -4926,3 +4926,418 @@ exports[`DataFilters sub objects with rangeSelector 1`] = `
   </div>
 </DocumentFragment>
 `;
+
+exports[`DataFilters theme footer actions margin and gap 1`] = `
+<DocumentFragment>
+  .c1 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  flex: 0 0 auto;
+}
+
+.c3 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  height: 100%;
+}
+
+.c4 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  flex: 1 1;
+  overflow: auto;
+}
+
+.c5 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin-bottom: 12px;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+}
+
+.c7 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  padding: 12px;
+}
+
+.c8 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+}
+
+.c10 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin-right: 12px;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.c13 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-items: center;
+  border: solid 2px #7D4CDB;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  height: 24px;
+  width: 24px;
+  justify-content: center;
+  border-radius: 4px;
+}
+
+.c16 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-items: center;
+  border: solid 2px rgba(0, 0, 0, 0.15);
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  height: 24px;
+  width: 24px;
+  justify-content: center;
+  border-radius: 4px;
+}
+
+.c17 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin-top: 48px;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: row;
+  flex: 0 0 auto;
+  justify-content: space-between;
+}
+
+.c15 {
+  flex: 0 0 auto;
+  align-self: stretch;
+  height: 12px;
+}
+
+.c6 {
+  margin-left: 12px;
+  margin-right: 12px;
+  margin-top: 6px;
+  margin-bottom: 6px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c18 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: 2px solid #7D4CDB;
+  border-radius: 18px;
+  color: #444444;
+  padding: 4px 22px;
+  font-size: 18px;
+  line-height: 24px;
+  background-color: #7D4CDB;
+  color: #f8f8f8;
+  border-radius: 18px;
+  transition-property: color,background-color,border-color,box-shadow;
+  transition-duration: 0.1s;
+  transition-timing-function: ease-in-out;
+}
+
+.c18:hover {
+  box-shadow: 0px 0px 0px 2px #7D4CDB;
+}
+
+.c18:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c18:focus >circle,
+.c18:focus >ellipse,
+.c18:focus >line,
+.c18:focus >path,
+.c18:focus >polygon,
+.c18:focus >polyline,
+.c18:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c18:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c18:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c18:focus:not(:focus-visible) >circle,
+.c18:focus:not(:focus-visible) >ellipse,
+.c18:focus:not(:focus-visible) >line,
+.c18:focus:not(:focus-visible) >path,
+.c18:focus:not(:focus-visible) >polygon,
+.c18:focus:not(:focus-visible) >polyline,
+.c18:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c18:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
+}
+
+.c2 {
+  max-width: 100%;
+}
+
+.c14 {
+  box-sizing: border-box;
+  stroke-width: 4px;
+  stroke: #7D4CDB;
+  width: 24px;
+  height: 24px;
+}
+
+.c9 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  user-select: none;
+  -webkit-user-select: none;
+  width: fit-content;
+  cursor: pointer;
+}
+
+.c9:hover input:not([disabled])+div,
+.c9:hover input:not([disabled])+span {
+  border-color: #000000;
+}
+
+.c12 {
+  opacity: 0;
+  -moz-appearance: none;
+  width: 0;
+  height: 0;
+  margin: 0;
+  cursor: pointer;
+}
+
+.c12:checked+span>span {
+  left: calc( 48px - 24px );
+  background: #7D4CDB;
+}
+
+.c11 {
+  flex-shrink: 0;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+@media only screen and (max-width: 768px) {
+  .c5 {
+    margin-bottom: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c7 {
+    border-bottom: solid 1px rgba(0, 0, 0, 0.33);
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c7 {
+    padding: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c10 {
+    margin-right: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c13 {
+    border: solid 2px #7D4CDB;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c16 {
+    border: solid 2px rgba(0, 0, 0, 0.15);
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c17 {
+    margin-top: 24px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c15 {
+    height: 6px;
+  }
+}
+
+<div
+    class="c0"
+  >
+    <div
+      class="c1"
+      id="data"
+    >
+      <form
+        class="c2"
+      >
+        <div
+          class="c3"
+        >
+          <div
+            class="c4"
+          >
+            <div
+              class="c1"
+            >
+              <div
+                class="c5 "
+              >
+                <label
+                  class="c6"
+                  for="data-name"
+                  id="grommet-data-name__label"
+                >
+                  name
+                </label>
+                <div
+                  class="c7 "
+                >
+                  <div
+                    aria-labelledby="grommet-data-name__label"
+                    class="c8 StyledCheckBoxGroup-sc-2nhc5d-0"
+                    id="data-name"
+                    role="group"
+                  >
+                    <label
+                      class="c9"
+                    >
+                      <div
+                        class="c10 c11"
+                      >
+                        <input
+                          checked=""
+                          class="c12"
+                          type="checkbox"
+                        />
+                        <div
+                          class="c13 "
+                        >
+                          <svg
+                            class="c14"
+                            preserveAspectRatio="xMidYMid meet"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              d="M6,11.3 L10.3,16 L18,6.2"
+                              fill="none"
+                            />
+                          </svg>
+                        </div>
+                      </div>
+                      <span>
+                        a
+                      </span>
+                    </label>
+                    <div
+                      class="c15"
+                    />
+                    <label
+                      class="c9"
+                    >
+                      <div
+                        class="c10 c11"
+                      >
+                        <input
+                          class="c12"
+                          type="checkbox"
+                        />
+                        <div
+                          class="c16 "
+                        />
+                      </div>
+                      <span>
+                        b
+                      </span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <footer
+            class="c17"
+          >
+            <button
+              class="c18"
+              type="submit"
+            >
+              Apply filters
+            </button>
+          </footer>
+        </div>
+      </form>
+    </div>
+  </div>
+</DocumentFragment>
+`;

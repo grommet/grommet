@@ -1,4 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`RadioButtonGroup adding additional props 1`] = `
 .c0 {
@@ -1910,6 +1910,237 @@ exports[`RadioButtonGroup string options 1`] = `
         class="StyledRadioButton__StyledRadioButtonLabel-sc-g1f6ld-2"
       >
         two
+      </span>
+    </label>
+  </div>
+</div>
+`;
+
+exports[`RadioButtonGroup theme container gap 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+}
+
+.c3 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin-right: 12px;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  flex: 0 0 auto;
+}
+
+.c5 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-items: center;
+  border: solid 2px #7D4CDB;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  height: 24px;
+  width: 24px;
+  justify-content: center;
+  border-radius: 100%;
+}
+
+.c9 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-items: center;
+  border: solid 2px rgba(0, 0, 0, 0.15);
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  height: 24px;
+  width: 24px;
+  justify-content: center;
+  border-radius: 100%;
+}
+
+.c8 {
+  flex: 0 0 auto;
+  align-self: stretch;
+  height: 48px;
+}
+
+.c2 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  user-select: none;
+  width: fit-content;
+  cursor: pointer;
+}
+
+.c2:hover input:not([disabled])+div,
+.c2:hover input:not([disabled])+span {
+  border-color: #000000;
+}
+
+.c4 {
+  opacity: 0;
+  -moz-appearance: none;
+  width: 0;
+  height: 0;
+  margin: 0;
+  cursor: pointer;
+}
+
+.c7 {
+  box-sizing: border-box;
+  width: 24px;
+  height: 24px;
+  fill: #7D4CDB;
+  transform: scale(1);
+}
+
+.c6 {
+  transform: scale(1);
+}
+
+@media only screen and (max-width: 768px) {
+  .c3 {
+    margin-right: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c5 {
+    border: solid 2px #7D4CDB;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c9 {
+    border: solid 2px rgba(0, 0, 0, 0.15);
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c8 {
+    height: 24px;
+  }
+}
+
+<div
+  class="c0"
+>
+  <div
+    class="c1"
+    role="radiogroup"
+  >
+    <label
+      class="c2"
+      for="one"
+    >
+      <div
+        class="c3 "
+      >
+        <input
+          checked=""
+          class="c4"
+          id="one"
+          name="test"
+          tabindex="0"
+          type="radio"
+          value="one"
+        />
+        <div
+          class="c5 c6"
+        >
+          <svg
+            class="c7"
+            preserveAspectRatio="xMidYMid meet"
+            viewBox="0 0 24 24"
+          >
+            <circle
+              cx="12"
+              cy="12"
+              r="6"
+            />
+          </svg>
+        </div>
+      </div>
+      <span
+        class="StyledRadioButton__StyledRadioButtonLabel-sc-g1f6ld-2"
+      >
+        one
+      </span>
+    </label>
+    <div
+      class="c8"
+    />
+    <label
+      class="c2"
+      for="two"
+    >
+      <div
+        class="c3 "
+      >
+        <input
+          class="c4"
+          id="two"
+          name="test"
+          tabindex="-1"
+          type="radio"
+          value="two"
+        />
+        <div
+          class="c9 c6"
+        />
+      </div>
+      <span
+        class="StyledRadioButton__StyledRadioButtonLabel-sc-g1f6ld-2"
+      >
+        two
+      </span>
+    </label>
+    <div
+      class="c8"
+    />
+    <label
+      class="c2"
+      for="three"
+    >
+      <div
+        class="c3 "
+      >
+        <input
+          class="c4"
+          id="three"
+          name="test"
+          tabindex="-1"
+          type="radio"
+          value="three"
+        />
+        <div
+          class="c9 c6"
+        />
+      </div>
+      <span
+        class="StyledRadioButton__StyledRadioButtonLabel-sc-g1f6ld-2"
+      >
+        three
       </span>
     </label>
   </div>

@@ -73,4 +73,25 @@ describe('Sidebar', () => {
 
     expect(container.firstChild).toMatchSnapshot();
   });
+
+  test('theme gap and pad', () => {
+    const customTheme = {
+      sidebar: {
+        gap: 'small',
+        pad: 'small',
+      },
+    };
+
+    const { container } = render(
+      <Grommet theme={customTheme}>
+        <Sidebar header={<Avatar src={src} />} footer={<Avatar>SY</Avatar>}>
+          <div>Sidebar content 1</div>
+          <div>Sidebar content 2</div>
+          <div>Sidebar content 3</div>
+        </Sidebar>
+      </Grommet>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
 });

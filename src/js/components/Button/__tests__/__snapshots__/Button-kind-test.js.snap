@@ -6252,3 +6252,281 @@ exports[`Button kind size of default button 1`] = `
   </button>
 </div>
 `;
+
+exports[`Button kind theme busy gap 1`] = `
+.c12 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #666666;
+  stroke: #666666;
+}
+
+.c12 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c12 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c12 *[stroke*='#'],
+.c12 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c12 *[fill-rule],
+.c12 *[FILL-RULE],
+.c12 *[fill*='#'],
+.c12 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c2 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  flex: 0 0 auto;
+}
+
+.c4 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-content: center;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+}
+
+.c5 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-self: center;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: row;
+}
+
+.c6 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+}
+
+.c8 {
+  flex: 0 0 auto;
+  align-self: stretch;
+  width: 48px;
+}
+
+.c1 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: none;
+  border-radius: 18px;
+  padding: 4px 22px;
+  font-size: 18px;
+  line-height: 24px;
+  text-align: center;
+  transition-property: color,background-color,border-color,box-shadow;
+  transition-duration: 0.1s;
+  transition-timing-function: ease-in-out;
+  cursor: default;
+}
+
+.c1:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus >circle,
+.c1:focus >ellipse,
+.c1:focus >line,
+.c1:focus >path,
+.c1:focus >polygon,
+.c1:focus >polyline,
+.c1:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c1:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible) >circle,
+.c1:focus:not(:focus-visible) >ellipse,
+.c1:focus:not(:focus-visible) >line,
+.c1:focus:not(:focus-visible) >path,
+.c1:focus:not(:focus-visible) >polygon,
+.c1:focus:not(:focus-visible) >polyline,
+.c1:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
+}
+
+.c7 {
+  background-color: currentColor;
+  width: 8px;
+  height: 8px;
+  border-radius: 100%;
+  display: inline-block;
+  animation: jjaoCu 1.4s infinite ease-in-out both;
+  animation-delay: -0.32s;
+}
+
+.c9 {
+  background-color: currentColor;
+  width: 8px;
+  height: 8px;
+  border-radius: 100%;
+  display: inline-block;
+  animation: jjaoCu 1.4s infinite ease-in-out both;
+  animation-delay: -0.16s;
+}
+
+.c10 {
+  background-color: currentColor;
+  width: 8px;
+  height: 8px;
+  border-radius: 100%;
+  display: inline-block;
+  animation: jjaoCu 1.4s infinite ease-in-out both;
+}
+
+.c13 {
+  position: absolute;
+  align-self: center;
+  animation: cqeQpI 0.9s ease-in-out;
+}
+
+.c11 {
+  opacity: 0;
+}
+
+.c3 {
+  position: relative;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+@media only screen and (max-width: 768px) {
+  .c8 {
+    width: 24px;
+  }
+}
+
+<div
+  class="c0"
+>
+  <button
+    class="c1"
+    type="button"
+  >
+    <div
+      class="c2 c3"
+    >
+      <div
+        class="c4"
+        style="position: absolute;"
+      >
+        <div
+          class="c5"
+        >
+          <div
+            class="c6 c7"
+          />
+          <div
+            class="c8"
+          />
+          <div
+            class="c6 c9"
+          />
+          <div
+            class="c8"
+          />
+          <div
+            class="c6 c10"
+          />
+        </div>
+      </div>
+      <div
+        class="c11"
+      >
+        Loading
+      </div>
+    </div>
+  </button>
+  <button
+    class="c1"
+    type="button"
+  >
+    <div
+      class="c2 c3"
+    >
+      <div
+        class="c4"
+        style="position: absolute;"
+      >
+        <svg
+          aria-hidden="true"
+          aria-label="Checkmark"
+          class="c12 c13"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="m2 14 7 6L22 4"
+            fill="none"
+            stroke="#000"
+            stroke-width="2"
+          />
+        </svg>
+      </div>
+      <div
+        class="c11"
+      >
+        Success
+      </div>
+    </div>
+  </button>
+</div>
+`;

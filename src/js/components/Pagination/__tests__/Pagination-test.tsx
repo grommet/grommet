@@ -591,4 +591,27 @@ describe('Pagination', () => {
     expect(updatedSelectButton2).toBeTruthy();
     expect(screen.getByText(`Showing 1-100 of 100`)).toBeTruthy();
   });
+
+  test('theme container gap and step container gap', () => {
+    const customTheme = {
+      pagination: {
+        container: {
+          gap: 'large',
+        },
+        step: {
+          container: {
+            gap: 'large',
+          },
+        },
+      },
+    };
+
+    const { asFragment } = render(
+      <Grommet theme={customTheme}>
+        <Pagination numberItems={NUM_ITEMS} stepOptions summary />
+      </Grommet>,
+    );
+
+    expect(asFragment()).toMatchSnapshot();
+  });
 });

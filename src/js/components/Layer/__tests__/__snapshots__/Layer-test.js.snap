@@ -18339,3 +18339,161 @@ exports[`Layer target not modal 2`] = `
   }
 }"
 `;
+
+exports[`Layer theme container height 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  background: transparent;
+  position: relative;
+  z-index: 20;
+  pointer-events: none;
+  outline: none;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+}
+
+.c1 {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #f8f8f8;
+  pointer-events: all;
+  will-change: transform;
+}
+
+.c2 {
+  display: flex;
+  flex-direction: column;
+  height: 400px;
+  background-color: #FFFFFF;
+  color: #444444;
+  outline: none;
+  pointer-events: all;
+  z-index: 20;
+  position: absolute;
+  max-height: calc(100% - 0px - 0px);
+  max-width: calc(100% - 0px - 0px);
+  border-radius: 4px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+.c3 {
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  position: absolute;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+.c3:focus {
+  outline: none;
+}
+
+@media only screen and (max-width: 768px) {
+  .c0 {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c1 {
+    position: relative;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    position: relative;
+    max-height: none;
+    max-width: none;
+    border-radius: 0;
+    height: 100vh;
+    width: 100vw;
+  }
+}
+
+<div
+  class="c0"
+  id="container-height-test"
+  tabindex="-1"
+>
+  <div
+    class="c1"
+  />
+  <div
+    class="c2"
+    data-g-portal-id="0"
+    id="container-height-test"
+  >
+    <span
+      class="c3"
+      tabindex="-1"
+    />
+    This is a layer with custom height
+  </div>
+</div>
+`;
+
+exports[`Layer theme container height 2`] = `
+".jsyFzj {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  background: transparent;
+  position: relative;
+  z-index: 20;
+  pointer-events: none;
+  outline: none;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+}
+@media only screen and (max-width: 768px) {
+  .jsyFzj {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .dKbLsG {
+    position: relative;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .jqpEns {
+    position: relative;
+    max-height: none;
+    max-width: none;
+    border-radius: 0;
+    height: 100vh;
+    width: 100vw;
+  }
+}"
+`;

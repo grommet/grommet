@@ -351,4 +351,23 @@ describe('Anchor', () => {
     );
     expect(asFragment()).toMatchSnapshot();
   });
+
+  test('theme iconOnly pad', () => {
+    const customTheme = {
+      anchor: {
+        iconOnly: {
+          pad: 'large',
+        },
+      },
+    };
+
+    const { container } = render(
+      <Grommet theme={customTheme}>
+        <Anchor icon={<LinkNext />} />
+        <Anchor icon={<svg />} />
+      </Grommet>,
+    );
+
+    expect(container).toMatchSnapshot();
+  });
 });

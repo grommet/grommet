@@ -603,4 +603,27 @@ describe('Layer', () => {
     expect(document.activeElement).toBe(triggerButton);
     jest.useRealTimers();
   });
+
+  test('theme container height', () => {
+    const customTheme = {
+      layer: {
+        container: {
+          height: '400px',
+        },
+      },
+    };
+
+    render(
+      <Grommet theme={customTheme}>
+        <Layer id="container-height-test" animation={false}>
+          This is a layer with custom height
+        </Layer>
+      </Grommet>,
+    );
+
+    const layerElement = document.getElementById('container-height-test');
+    expect(layerElement).toBeTruthy();
+
+    expectPortal('container-height-test').toMatchSnapshot();
+  });
 });

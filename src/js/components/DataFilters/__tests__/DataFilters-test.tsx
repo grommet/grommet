@@ -326,4 +326,30 @@ describe('DataFilters', () => {
     expect(getByRole('button', { name: 'Open filters' })).toBeTruthy();
     expect(asFragment()).toMatchSnapshot();
   });
+
+  test('theme footer actions margin and gap', () => {
+    const customTheme = {
+      dataFilters: {
+        footer: {
+          actions: {
+            margin: { top: 'large' },
+            gap: 'large',
+          },
+        },
+      },
+    };
+
+    const { asFragment } = render(
+      <Grommet theme={customTheme}>
+        <Data data={data} view={{ search: 'a', properties: { name: ['a'] } }}>
+          <DataFilters />
+        </Data>
+      </Grommet>,
+    );
+
+    // Verify the DataFilters renders with the Apply button in footer
+    expect(screen.getByRole('button', { name: 'Apply filters' })).toBeTruthy();
+
+    expect(asFragment()).toMatchSnapshot();
+  });
 });

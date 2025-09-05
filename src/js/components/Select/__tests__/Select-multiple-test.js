@@ -731,5 +731,60 @@ describe('Select Controlled', () => {
     expect(onChange).toHaveBeenCalledWith(['five', 'one', 'three']);
   });
 
+  test('theme selectMultiple test', () => {
+    const customTheme = {
+      selectMultiple: {
+        option: {
+          pad: 'large',
+        },
+        search: {
+          pad: 'large',
+        },
+        showMore: {
+          pad: {
+            horizontal: 'large',
+            bottom: 'large',
+            top: 'medium',
+          },
+        },
+        summary: {
+          pad: 'large',
+          gap: 'large',
+        },
+      },
+    };
+
+    const { getByPlaceholderText } = render(
+      <Grommet theme={customTheme}>
+        <Select
+          id="test-select-multiple-theme"
+          placeholder="test select multiple"
+          multiple
+          options={[
+            'one',
+            'two',
+            'three',
+            'four',
+            'five',
+            'six',
+            'seven',
+            'eight',
+          ]}
+          onSearch={() => {}}
+          showMore={{ limit: 3 }}
+        />
+      </Grommet>,
+    );
+
+    fireEvent.click(getByPlaceholderText('test select multiple'));
+
+    // advance timers so select can open
+    act(() => {
+      jest.advanceTimersByTime(200);
+    });
+
+    expectPortal('test-select-multiple-theme__drop').toMatchSnapshot();
+  });
+
   window.scrollTo.mockRestore();
 });

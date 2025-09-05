@@ -235,4 +235,26 @@ describe('Tag', () => {
       'Remove Fruits',
     );
   });
+
+  test('theme hover background', async () => {
+    const customTheme = {
+      tag: {
+        hover: {
+          background: 'brand',
+        },
+      },
+    };
+
+    const { container } = render(
+      <Grommet theme={customTheme}>
+        <Tag name="Name" value="Value" onClick={() => {}} />
+      </Grommet>,
+    );
+    // Trigger hover on the first tag
+    const firstTag = screen.getByRole('button', { name: /Name.*Value/i });
+    const user = userEvent.setup();
+    await user.hover(firstTag);
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
 });
