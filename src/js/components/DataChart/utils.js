@@ -27,7 +27,6 @@ export const halfPad = (theme) =>
     xsmall: 'xxsmall',
   };
 
-// TO DO theme object?
 export const doublePad = {
   large: 'xlarge',
   medium: 'large',
