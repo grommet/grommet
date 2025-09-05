@@ -1,4 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`Nav should have no accessibility violations 1`] = `
 .c1 {
@@ -46,4 +46,64 @@ exports[`Nav should render without grommet wrapper 1`] = `
 <nav
   class="c0"
 />
+`;
+
+exports[`Nav theme gap 1`] = `
+<DocumentFragment>
+  .c1 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  flex: 0 0 auto;
+}
+
+.c2 {
+  flex: 0 0 auto;
+  align-self: stretch;
+  height: 48px;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    height: 24px;
+  }
+}
+
+<div
+    class="c0"
+  >
+    <nav
+      class="c1"
+    >
+      <div>
+        Nav Item 1
+      </div>
+      <div
+        class="c2"
+      />
+      <div>
+        Nav Item 2
+      </div>
+      <div
+        class="c2"
+      />
+      <div>
+        Nav Item 3
+      </div>
+    </nav>
+  </div>
+</DocumentFragment>
 `;

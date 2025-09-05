@@ -225,4 +225,21 @@ describe('CheckBoxGroup', () => {
 
     expect(asFragment()).toMatchSnapshot();
   });
+  test('theme container gap', () => {
+    const customTheme = {
+      checkBoxGroup: {
+        container: {
+          gap: 'large',
+        },
+      },
+    };
+
+    const { asFragment } = render(
+      <Grommet theme={customTheme}>
+        <CheckBoxGroup options={['First', 'Second', 'Third']} />
+      </Grommet>,
+    );
+
+    expect(asFragment()).toMatchSnapshot();
+  });
 });

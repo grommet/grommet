@@ -462,4 +462,25 @@ describe('Box', () => {
     );
     expect(container.firstChild).toMatchSnapshot();
   });
+
+  test('theme border size', () => {
+    const customTheme = {
+      box: {
+        border: {
+          size: 'medium',
+        },
+      },
+    };
+
+    const { asFragment } = render(
+      <Grommet theme={customTheme}>
+        <Box border />
+        <Box border="top" />
+        <Box border={{ color: 'brand' }} />
+        <Box border={{ side: 'all' }} />
+      </Grommet>,
+    );
+
+    expect(asFragment()).toMatchSnapshot();
+  });
 });

@@ -1,4 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`Paragraph dangerouslySetInnerHTML renders 1`] = `
 .c0 {
@@ -310,4 +310,199 @@ exports[`Paragraph textAlign renders 1`] = `
     class="c4"
   />
 </div>
+`;
+
+exports[`theme skeleton gap 1`] = `
+<DocumentFragment>
+  .c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c3 {
+  display: flex;
+  box-sizing: border-box;
+  background-color: #EDEDED;
+  color: #444444;
+  height: 18px;
+  width: 100%;
+}
+
+.c5 {
+  display: flex;
+  box-sizing: border-box;
+  background-color: #EDEDED;
+  color: #444444;
+  height: 18px;
+  width: 30%;
+}
+
+.c7 {
+  display: flex;
+  box-sizing: border-box;
+  background-color: #EDEDED;
+  color: #444444;
+  height: 14px;
+  width: 100%;
+}
+
+.c8 {
+  display: flex;
+  box-sizing: border-box;
+  background-color: #EDEDED;
+  color: #444444;
+  height: 14px;
+  width: 30%;
+}
+
+.c10 {
+  display: flex;
+  box-sizing: border-box;
+  background-color: #EDEDED;
+  color: #444444;
+  height: 22px;
+  width: 100%;
+}
+
+.c11 {
+  display: flex;
+  box-sizing: border-box;
+  background-color: #EDEDED;
+  color: #444444;
+  height: 22px;
+  width: 30%;
+}
+
+.c1 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  background: background;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+}
+
+.c2 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  max-width: 432px;
+}
+
+.c6 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  max-width: 336px;
+}
+
+.c9 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  max-width: 528px;
+}
+
+.c4 {
+  flex: 0 0 auto;
+  align-self: stretch;
+  height: 48px;
+}
+
+@media only screen and (max-width: 768px) {
+  .c4 {
+    height: 24px;
+  }
+}
+
+<div
+    class="c0"
+  >
+    <div
+      class="c1"
+    >
+      <div
+        class="c2"
+      >
+        <div
+          aria-hidden="true"
+          class="c3"
+        />
+        <div
+          class="c4"
+        />
+        <div
+          aria-hidden="true"
+          class="c3"
+        />
+        <div
+          class="c4"
+        />
+        <div
+          aria-hidden="true"
+          class="c5"
+        />
+      </div>
+      <div
+        class="c6"
+      >
+        <div
+          aria-hidden="true"
+          class="c7"
+        />
+        <div
+          class="c4"
+        />
+        <div
+          aria-hidden="true"
+          class="c7"
+        />
+        <div
+          class="c4"
+        />
+        <div
+          aria-hidden="true"
+          class="c8"
+        />
+      </div>
+      <div
+        class="c9"
+      >
+        <div
+          aria-hidden="true"
+          class="c10"
+        />
+        <div
+          class="c4"
+        />
+        <div
+          aria-hidden="true"
+          class="c10"
+        />
+        <div
+          class="c4"
+        />
+        <div
+          aria-hidden="true"
+          class="c11"
+        />
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
 `;

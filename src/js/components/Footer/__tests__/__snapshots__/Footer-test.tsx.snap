@@ -1,4 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`Footer default 1`] = `
 .c0 {
@@ -48,4 +48,81 @@ exports[`Footer default outside grommet wrapper 1`] = `
 <footer
   class="c0"
 />
+`;
+
+exports[`Footer theme gap 1`] = `
+<DocumentFragment>
+  .c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: row;
+  flex: 0 0 auto;
+  justify-content: space-between;
+}
+
+.c2 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+}
+
+.c3 {
+  flex: 0 0 auto;
+  align-self: stretch;
+  width: 48px;
+}
+
+@media only screen and (max-width: 768px) {
+  .c3 {
+    width: 24px;
+  }
+}
+
+<div
+    class="c0"
+  >
+    <footer
+      class="c1"
+    >
+      <div
+        class="c2"
+      >
+        Footer Item 1
+      </div>
+      <div
+        class="c3"
+      />
+      <div
+        class="c2"
+      >
+        Footer Item 2
+      </div>
+      <div
+        class="c3"
+      />
+      <div
+        class="c2"
+      >
+        Footer Item 3
+      </div>
+    </footer>
+  </div>
+</DocumentFragment>
 `;

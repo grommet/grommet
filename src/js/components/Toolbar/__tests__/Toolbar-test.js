@@ -37,4 +37,27 @@ describe('DataFilters', () => {
 
     expect(container.firstChild).toMatchSnapshot();
   });
+  test('theme gap', () => {
+    const customTheme = {
+      toolbar: {
+        gap: 'large',
+        small: {
+          gap: 'medium',
+        },
+      },
+    };
+
+    const { asFragment } = render(
+      <Grommet theme={customTheme}>
+        <Data data={data}>
+          <Toolbar>
+            <DataSearch />
+            <DataFilters />
+          </Toolbar>
+        </Data>
+      </Grommet>,
+    );
+
+    expect(asFragment()).toMatchSnapshot();
+  });
 });

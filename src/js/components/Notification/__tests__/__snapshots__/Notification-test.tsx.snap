@@ -6385,3 +6385,276 @@ exports[`Notification status 1`] = `
   </div>
 </DocumentFragment>
 `;
+
+exports[`Notification theme actions margin, gap, and message text margin 1`] = `
+<DocumentFragment>
+  .c4 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #919191;
+  stroke: #919191;
+}
+
+.c4 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c4 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c4 *[stroke*='#'],
+.c4 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c4 *[fill-rule],
+.c4 *[FILL-RULE],
+.c4 *[fill*='#'],
+.c4 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c1 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  background-color: rgba(145, 145, 145, 0.1);
+  min-width: 0;
+  min-height: 0;
+  flex-direction: row;
+  border-radius: 6px;
+}
+
+.c2 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: row;
+  flex: 1 1;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.c3 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  flex: 0 0 auto;
+  padding-right: 12px;
+}
+
+.c5 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+}
+
+.c6 {
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: bold;
+}
+
+.c8 {
+  margin-right: 24px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c9 {
+  box-sizing: border-box;
+  display: inline-flex;
+  font-size: inherit;
+  line-height: inherit;
+  color: #7D4CDB;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  margin-top: 48px;
+  margin-right: 6px;
+}
+
+.c9:hover {
+  text-decoration: underline;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c7 {
+  margin: 0px;
+  font-size: 18px;
+  line-height: 24px;
+  max-width: 432px;
+}
+
+.c10 {
+  white-space: nowrap;
+}
+
+@media only screen and (max-width: 768px) {
+  .c1 {
+    border-radius: 3px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    padding-top: 3px;
+    padding-bottom: 3px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c3 {
+    padding-right: 6px;
+  }
+}
+
+<div
+    class="c0"
+  >
+    <div
+      class="c1"
+    >
+      <div
+        class="c2"
+      >
+        <div
+          class="c3"
+        >
+          <svg
+            aria-label="Status is unknown"
+            class="c4"
+            viewBox="0 0 12 12"
+          >
+            <rect
+              fill-rule="evenodd"
+              height="10"
+              rx="1"
+              stroke="#000"
+              width="10"
+              x="1"
+              y="1"
+            />
+          </svg>
+        </div>
+        <div
+          class="c5"
+        >
+          <span
+            class="c6"
+          >
+            Test Title
+          </span>
+          <p
+            class="c7"
+          >
+            <span
+              class="c8"
+            >
+              This is a test message
+            </span>
+            <a
+              class="c9 c10"
+              href="/link1"
+            >
+              Action 1
+            </a>
+             
+            <a
+              class="c9 c10"
+              href="/link2"
+            >
+              Action 2
+            </a>
+             
+          </p>
+        </div>
+      </div>
+    </div>
+    <div
+      class="c1"
+    >
+      <div
+        class="c2"
+      >
+        <div
+          class="c3"
+        >
+          <svg
+            aria-label="Status is unknown"
+            class="c4"
+            viewBox="0 0 12 12"
+          >
+            <rect
+              fill-rule="evenodd"
+              height="10"
+              rx="1"
+              stroke="#000"
+              width="10"
+              x="1"
+              y="1"
+            />
+          </svg>
+        </div>
+        <div
+          class="c5"
+        >
+          <span
+            class="c6"
+          >
+            Second Notification
+          </span>
+          <p
+            class="c7"
+          >
+            <span
+              class="c8"
+            >
+              Another test message
+            </span>
+            <a
+              class="c9 c10"
+              href="/link3"
+            >
+              Action 3
+            </a>
+             
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

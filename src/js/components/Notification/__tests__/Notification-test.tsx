@@ -515,4 +515,40 @@ describe('Notification', () => {
 
     jest.useRealTimers();
   });
+
+  test('theme actions margin, gap, and message text margin', () => {
+    const customTheme: ThemeType = {
+      notification: {
+        actions: {
+          margin: { top: 'large' },
+        },
+        gap: 'large',
+        message: {
+          text: {
+            margin: { right: 'medium' },
+          },
+        },
+      },
+    };
+
+    const { asFragment } = render(
+      <Grommet theme={customTheme}>
+        <Notification
+          title="Test Title"
+          message="This is a test message"
+          actions={[
+            { href: '/link1', label: 'Action 1' },
+            { href: '/link2', label: 'Action 2' },
+          ]}
+        />
+        <Notification
+          title="Second Notification"
+          message="Another test message"
+          actions={[{ href: '/link3', label: 'Action 3' }]}
+        />
+      </Grommet>,
+    );
+
+    expect(asFragment()).toMatchSnapshot();
+  });
 });

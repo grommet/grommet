@@ -403,4 +403,44 @@ describe('DataFilter', () => {
     // snapshot on selected filter
     expect(asFragment()).toMatchSnapshot();
   });
+
+  test('theme rangeSelector size and round, selectMultiple dropHeight', () => {
+    const customTheme = {
+      dataFilter: {
+        rangeSelector: {
+          size: 'large',
+          round: 'large',
+        },
+        selectMultiple: {
+          dropHeight: 'large',
+        },
+      },
+    };
+
+    const { asFragment } = render(
+      <Grommet theme={customTheme}>
+        <Data
+          data={data}
+          properties={{
+            'type.name': {
+              label: 'Type',
+            },
+          }}
+        >
+          <DataFilters>
+            <DataFilter property="rating" range={{ min: 0, max: 5 }} />
+            <DataFilter
+              property="type.name"
+              options={['ZZ', 'YY', 'aa', 'bb', 'cc']}
+            />
+          </DataFilters>
+        </Data>
+      </Grommet>,
+    );
+
+    expect(screen.getByText('rating')).toBeTruthy();
+    expect(screen.getByLabelText('Type')).toBeTruthy();
+
+    expect(asFragment()).toMatchSnapshot();
+  });
 });

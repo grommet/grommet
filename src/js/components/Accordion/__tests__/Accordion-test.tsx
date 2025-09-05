@@ -408,4 +408,40 @@ describe('Accordion', () => {
 
     expect(asFragment()).toMatchSnapshot();
   });
+
+  test('should apply theme icon and label container padding', () => {
+    const customThemeObject = {
+      accordion: {
+        icon: {
+          container: {
+            pad: {
+              horizontal: 'medium',
+            },
+          },
+        },
+        label: {
+          container: {
+            pad: {
+              horizontal: 'large',
+            },
+          },
+        },
+      },
+    };
+
+    const { asFragment } = render(
+      <Grommet theme={customThemeObject}>
+        <Accordion>
+          <AccordionPanel label="Panel 1">Panel body 1</AccordionPanel>
+        </Accordion>
+      </Grommet>,
+    );
+
+    const panelButton = screen.getByRole('button', { name: /Panel 1/i });
+    expect(panelButton).toBeTruthy();
+    expect(screen.getByText('Panel 1')).toBeTruthy();
+
+    // Capture snapshot to verify theme styling is applied
+    expect(asFragment()).toMatchSnapshot();
+  });
 });
