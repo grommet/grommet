@@ -221,8 +221,10 @@ const Detail = ({
           onMouseLeave={onMouseLeave}
           trapFocus={false}
         >
-          {/* TO DO theme object */}
-          <Box pad="small" background={{ color: 'background-back' }}>
+          <Box
+            pad={theme.dataChart.detail.pad}
+            background={{ color: 'background-back' }}
+          >
             <Grid
               columns={['auto', 'auto', 'auto']}
               gap={theme.dataChart.detail.gap}

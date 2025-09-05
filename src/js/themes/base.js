@@ -945,8 +945,19 @@ export const generate = (baseSpacing = 24, scale = 6) => {
     },
     dataChart: {
       gap: 'small',
+      // granularity: {
+      //   y: {},
+      // },
       detail: {
         gap: 'xsmall',
+        pad: 'small',
+      },
+      halfPad: {
+        xlarge: 'large',
+        large: 'medium',
+        medium: 'small',
+        small: 'xsmall',
+        xsmall: 'xxsmall',
       },
       legend: {
         margin: { top: 'small' },
@@ -956,6 +967,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           pad: { horizontal: 'small', vertical: 'xsmall' },
         },
       },
+      // orderedSizes: undefined,
       size: {
         height: 'small',
       },
@@ -1941,6 +1953,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         size: 'small',
       },
       // icon: undefined
+      responsive: true,
       size: {
         xsmall: `${baseSpacing * 0.75}px`,
         small: `${baseSpacing}px`, // default 24
@@ -2243,6 +2256,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
     },
     table: {
+      caption: {
+        margin: { bottom: 'xxsmall' },
+      },
       header: {
         align: 'start',
         pad: { horizontal: 'small', vertical: 'xsmall' },
@@ -2276,6 +2292,10 @@ export const generate = (baseSpacing = 24, scale = 6) => {
     tag: {
       // background: undefined,
       border: true,
+      // hover: {
+      //   background: undefined,
+      //   border: undefined,
+      // },
       round: 'large',
       // name: undefined,
       pad: {

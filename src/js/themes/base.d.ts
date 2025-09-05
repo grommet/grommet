@@ -856,8 +856,20 @@ export interface ThemeType {
     };
     dataChart?: {
       gap?: GapType;
+      granularity?: {
+        y?: {
+          [key: string]: {
+            fine: number;
+            medium: number;
+          };
+        };
+      };
       detail?: {
         gap?: GridGapType;
+        pad?: PadType;
+      };
+      halfPad?: {
+        [key: string]: string;
       };
       legend?: {
         margin?: MarginType;
@@ -867,6 +879,7 @@ export interface ThemeType {
           pad?: PadType;
         };
       };
+      orderedSizes?: string[];
       size?: {
         height?: string;
       };
@@ -1942,6 +1955,7 @@ export interface ThemeType {
       | { color?: ColorType }
       | { size?: 'xsmall' | 'small' | 'medium' | 'large' | 'xlarge' | string };
     icon?: React.ReactNode | Icon;
+    responsive?: boolean;
     size?: {
       xsmall?: string;
       small?: string;
@@ -2027,6 +2041,9 @@ export interface ThemeType {
     };
   };
   table?: {
+    caption?: {
+      margin?: MarginType;
+    };
     header?: {
       background?: BackgroundType;
       extend?: ExtendType;
@@ -2062,6 +2079,10 @@ export interface ThemeType {
   tag?: {
     background?: BackgroundType;
     border?: BorderType;
+    hover?: {
+      background?: BackgroundType;
+      border?: BorderType;
+    };
     round?: RoundType;
     name?: TextProps;
     pad?: PadType;
