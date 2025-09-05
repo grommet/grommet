@@ -351,4 +351,22 @@ describe('RangeSelector', () => {
       expect(container.firstChild).toMatchSnapshot();
     }
   });
+
+  test('theme label margin', () => {
+    const customTheme = {
+      rangeSelector: {
+        label: {
+          margin: { horizontal: 'large' },
+        },
+      },
+    };
+
+    const { container } = render(
+      <Grommet theme={customTheme}>
+        <RangeSelector label values={[20, 30]} />
+      </Grommet>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
 });

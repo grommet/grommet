@@ -59,6 +59,28 @@ describe('DataSearch', () => {
     // snapshot on drop
     expectPortal('test-data--search-control').toMatchSnapshot();
   });
+
+  test('theme data drop pad', () => {
+    const customTheme = {
+      data: {
+        drop: {
+          pad: 'large',
+        },
+      },
+    };
+
+    const { asFragment } = render(
+      <Grommet theme={customTheme}>
+        <Data data={data}>
+          <DataFilters>
+            <DataSearch drop />
+          </DataFilters>
+        </Data>
+      </Grommet>,
+    );
+
+    expect(asFragment()).toMatchSnapshot();
+  });
 });
 
 test('enter', async () => {
