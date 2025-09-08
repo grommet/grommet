@@ -49,6 +49,8 @@ const Content = ({ drop, options = [], activePanel, ...rest }) => {
   const { useFormInput } = useContext(FormContext);
   const { format } = useContext(MessageContext);
   const { theme } = useThemeValue();
+  const PinnedIcon = theme.dataTableColumns?.icons?.pinned || Lock;
+  const SearchIcon = theme.dataTableColumns?.icons?.search || Search;
 
   const tabsProps = {
     drop: { pad: theme.dataTableColumns.tabs.pad },
@@ -77,7 +79,7 @@ const Content = ({ drop, options = [], activePanel, ...rest }) => {
       ? {
           background: 'none',
           color: 'text-weak',
-          icon: <Lock />,
+          icon: <PinnedIcon />,
           items,
         }
       : undefined;
@@ -112,7 +114,7 @@ const Content = ({ drop, options = [], activePanel, ...rest }) => {
     >
       <TextInput
         type="search"
-        icon={<Search />}
+        icon={<SearchIcon />}
         placeholder="Search"
         value={search}
         onChange={(event) => onSearch(event.target.value)}
@@ -221,6 +223,7 @@ export const DataTableColumns = ({ drop, options, activePanel, ...rest }) => {
   const { format } = useContext(MessageContext);
   const { theme } = useThemeValue();
   const [showContent, setShowContent] = useState();
+  const ControlIcon = theme.dataTableColumns?.icons?.control || Splits;
 
   const tip = format({
     id: 'dataTableColumns.tip',
@@ -247,7 +250,7 @@ export const DataTableColumns = ({ drop, options, activePanel, ...rest }) => {
         messages: messages?.dataTableColumns,
       })}
       kind={theme.data.button?.kind}
-      icon={<Splits />}
+      icon={<ControlIcon />}
       tip={tip}
       dropProps={dropProps}
       dropContent={content}
