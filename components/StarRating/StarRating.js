@@ -23,6 +23,7 @@ var StyledStarRatingBox = (0, _styledComponents["default"])(_Box.Box).withConfig
   return props.focus && (0, _utils.focusStyle)();
 });
 var StarRating = exports.StarRating = function StarRating(_ref) {
+  var _theme$starRating, _theme$starRating2;
   var name = _ref.name,
     defaultValue = _ref.defaultValue,
     valueProp = _ref.value,
@@ -38,6 +39,8 @@ var StarRating = exports.StarRating = function StarRating(_ref) {
     }),
     value = _formContext$useFormI[0],
     setValue = _formContext$useFormI[1];
+  var SelectedIcon = ((_theme$starRating = theme.starRating) == null || (_theme$starRating = _theme$starRating.icons) == null ? void 0 : _theme$starRating.selected) || _Star.Star;
+  var UnselectedIcon = ((_theme$starRating2 = theme.starRating) == null || (_theme$starRating2 = _theme$starRating2.icons) == null ? void 0 : _theme$starRating2.unselected) || _StarOutline.StarOutline;
   var options = [];
   for (var i = 1; i < 6; i += 1) {
     options.push(i);
@@ -50,14 +53,14 @@ var StarRating = exports.StarRating = function StarRating(_ref) {
       setValue(event.value);
     }
   }, rest), function (option, _ref2) {
-    var _theme$starRating, _theme$starRating2;
+    var _theme$starRating3, _theme$starRating4;
     var focus = _ref2.focus;
     return /*#__PURE__*/_react["default"].createElement(StyledStarRatingBox, {
       focus: focus && usingKeyboard
-    }, option <= value ? /*#__PURE__*/_react["default"].createElement(_Star.Star, {
-      color: (_theme$starRating = theme.starRating) == null ? void 0 : _theme$starRating.color
-    }) : /*#__PURE__*/_react["default"].createElement(_StarOutline.StarOutline, {
-      color: (_theme$starRating2 = theme.starRating) == null ? void 0 : _theme$starRating2.color
+    }, option <= value ? /*#__PURE__*/_react["default"].createElement(SelectedIcon, {
+      color: (_theme$starRating3 = theme.starRating) == null ? void 0 : _theme$starRating3.color
+    }) : /*#__PURE__*/_react["default"].createElement(UnselectedIcon, {
+      color: (_theme$starRating4 = theme.starRating) == null ? void 0 : _theme$starRating4.color
     }));
   });
 };

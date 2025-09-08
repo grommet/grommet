@@ -6,7 +6,11 @@ import { axe } from 'jest-axe';
 import 'jest-axe/extend-expect';
 import 'regenerator-runtime/runtime';
 import '@testing-library/jest-dom';
-import { Calendar as CalendarIcon, Clock as ClockIcon } from 'grommet-icons';
+import {
+  Calendar as CalendarIcon,
+  Clock as ClockIcon,
+  Schedule,
+} from 'grommet-icons';
 
 import { createPortal, expectPortal } from '../../../utils/portal';
 import { Grommet } from '../../Grommet';
@@ -86,6 +90,16 @@ describe('DateInput', () => {
     );
     const results = await axe(container);
     expect(results).toHaveNoViolations();
+  });
+
+  test('should use theme icons', () => {
+    render(
+      <Grommet theme={{ dateInput: { icon: { calendar: Schedule } } }}>
+        <DateInput format="mm/dd/yyyy" />
+      </Grommet>,
+    );
+
+    expect(screen.getByLabelText('Schedule')).toBeInTheDocument();
   });
 
   test('should handle typing date and clicking date simultaneously', async () => {

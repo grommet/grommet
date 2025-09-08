@@ -34,7 +34,7 @@ var layerProps = {
 };
 var defaultTouched = {};
 var DataFilters = exports.DataFilters = function DataFilters(_ref) {
-  var _theme$dataFilters, _theme$dataFilters2, _theme$dataFilters3;
+  var _theme$dataFilters, _theme$dataFilters$ic, _theme$dataFilters2, _theme$dataFilters3, _theme$dataFilters4;
   var drop = _ref.drop,
     children = _ref.children,
     _ref$clearFilters = _ref.clearFilters,
@@ -63,6 +63,8 @@ var DataFilters = exports.DataFilters = function DataFilters(_ref) {
   var _useState2 = (0, _react.useState)(defaultTouched),
     touched = _useState2[0],
     setTouched = _useState2[1];
+  var CloseIcon = ((_theme$dataFilters = theme.dataFilters) == null || (_theme$dataFilters = _theme$dataFilters.icons) == null ? void 0 : _theme$dataFilters.close) || _Close.Close;
+  var FilterIcon = ((_theme$dataFilters$ic = theme.dataFilters.icons) == null ? void 0 : _theme$dataFilters$ic.filter) || _Filter.Filter;
 
   // if filters have been applied by this DataFilters, update
   // the DataContext that filters are not in a "cleared" state
@@ -106,7 +108,7 @@ var DataFilters = exports.DataFilters = function DataFilters(_ref) {
   }, [controlled, touched]);
   var clearControl = badge && clearFilters && /*#__PURE__*/_react["default"].createElement(_Box.Box, {
     flex: false,
-    margin: (_theme$dataFilters = theme.dataFilters) == null || (_theme$dataFilters = _theme$dataFilters.clearControl) == null ? void 0 : _theme$dataFilters.margin
+    margin: (_theme$dataFilters2 = theme.dataFilters) == null || (_theme$dataFilters2 = _theme$dataFilters2.clearControl) == null ? void 0 : _theme$dataFilters2.margin
   }, /*#__PURE__*/_react["default"].createElement(_DataClearFilters.DataClearFilters, null));
   var content = children;
   if (_react.Children.count(children) === 0) {
@@ -129,7 +131,7 @@ var DataFilters = exports.DataFilters = function DataFilters(_ref) {
     });
   }
   content = /*#__PURE__*/_react["default"].createElement(_DataForm.DataForm, _extends({
-    pad: controlled ? (_theme$dataFilters2 = theme.dataFilters) == null ? void 0 : _theme$dataFilters2.pad : undefined,
+    pad: controlled ? (_theme$dataFilters3 = theme.dataFilters) == null ? void 0 : _theme$dataFilters3.pad : undefined,
     onDone: function onDone() {
       return setShowContent(false);
     },
@@ -143,7 +145,7 @@ var DataFilters = exports.DataFilters = function DataFilters(_ref) {
     id: 'dataFilters.heading',
     messages: messages == null ? void 0 : messages.dataFilters
   })), !controlled && clearControl, /*#__PURE__*/_react["default"].createElement(_Button.Button, {
-    icon: /*#__PURE__*/_react["default"].createElement(_Close.Close, null),
+    icon: /*#__PURE__*/_react["default"].createElement(CloseIcon, null),
     onClick: function onClick() {
       return setShowContent(undefined);
     }
@@ -164,7 +166,7 @@ var DataFilters = exports.DataFilters = function DataFilters(_ref) {
       tip: tip,
       "aria-label": tip,
       kind: (_theme$data$button = theme.data.button) == null ? void 0 : _theme$data$button.kind,
-      icon: /*#__PURE__*/_react["default"].createElement(_Filter.Filter, null),
+      icon: /*#__PURE__*/_react["default"].createElement(FilterIcon, null),
       dropProps: dropProps,
       dropContent: content,
       badge: badge,
@@ -183,7 +185,7 @@ var DataFilters = exports.DataFilters = function DataFilters(_ref) {
       tip: tip,
       "aria-label": tip,
       kind: (_theme$data$button2 = theme.data.button) == null ? void 0 : _theme$data$button2.kind,
-      icon: /*#__PURE__*/_react["default"].createElement(_Filter.Filter, null),
+      icon: /*#__PURE__*/_react["default"].createElement(FilterIcon, null),
       badge: badge,
       onClick: function onClick() {
         return setShowContent(true);
@@ -203,7 +205,7 @@ var DataFilters = exports.DataFilters = function DataFilters(_ref) {
       return setShowContent(undefined);
     }
   }), /*#__PURE__*/_react["default"].createElement(_Box.Box, {
-    width: (_theme$dataFilters3 = theme.dataFilters) == null ? void 0 : _theme$dataFilters3.width
+    width: (_theme$dataFilters4 = theme.dataFilters) == null ? void 0 : _theme$dataFilters4.width
   }, content)));
 };
 DataFilters.propTypes = _propTypes.DataFiltersPropTypes;

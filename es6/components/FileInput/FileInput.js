@@ -56,7 +56,7 @@ var defaultPendingRemoval = {
   index: undefined
 };
 var FileInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
-  var _theme$fileInput$anch;
+  var _theme$fileInput, _theme$fileInput$anch;
   var a11yTitle = _ref.a11yTitle,
     background = _ref.background,
     border = _ref.border,
@@ -102,6 +102,7 @@ var FileInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var removeRef = useRef();
   var ConfirmRemove = confirmRemove;
   var RemoveIcon = theme.fileInput.icons.remove;
+  var ErrorIcon = ((_theme$fileInput = theme.fileInput) == null || (_theme$fileInput = _theme$fileInput.icons) == null ? void 0 : _theme$fileInput.error) || CircleAlert;
   var usingKeyboard = useKeyboard();
   var _formContext$useFormI = formContext.useFormInput({
       name: name,
@@ -438,7 +439,7 @@ var FileInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
     }, renderFile ? renderFile(file) : /*#__PURE__*/React.createElement(Box, _extends({}, theme.fileInput.label, {
       align: "center",
       direction: "row"
-    }), (typeof maxSize === 'number' && file.size > maxSize || typeof max === 'number' && index >= max) && /*#__PURE__*/React.createElement(CircleAlert, {
+    }), (typeof maxSize === 'number' && file.size > maxSize || typeof max === 'number' && index >= max) && /*#__PURE__*/React.createElement(ErrorIcon, {
       a11yTitle: format({
         id: messageId,
         messages: messages,

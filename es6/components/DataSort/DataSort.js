@@ -108,7 +108,7 @@ var Content = function Content(_ref) {
   }))];
 };
 export var DataSort = function DataSort(_ref4) {
-  var _theme$data$button, _theme$data;
+  var _theme$dataSort, _theme$data$button, _theme$data;
   var drop = _ref4.drop,
     options = _ref4.options,
     rest = _objectWithoutPropertiesLoose(_ref4, _excluded);
@@ -124,6 +124,7 @@ export var DataSort = function DataSort(_ref4) {
   var _useState = useState(),
     showContent = _useState[0],
     setShowContent = _useState[1];
+  var ControlIcon = ((_theme$dataSort = theme.dataSort) == null || (_theme$dataSort = _theme$dataSort.icons) == null ? void 0 : _theme$dataSort.control) || Descend;
   var content = /*#__PURE__*/React.createElement(Content, {
     options: options
   });
@@ -141,7 +142,7 @@ export var DataSort = function DataSort(_ref4) {
     "aria-label": tip,
     tip: tip,
     kind: (_theme$data$button = theme.data.button) == null ? void 0 : _theme$data$button.kind,
-    icon: /*#__PURE__*/React.createElement(Descend, null),
+    icon: /*#__PURE__*/React.createElement(ControlIcon, null),
     dropProps: dropProps,
     dropContent: /*#__PURE__*/React.createElement(Box, {
       pad: (_theme$data = theme.data) == null || (_theme$data = _theme$data.drop) == null ? void 0 : _theme$data.pad

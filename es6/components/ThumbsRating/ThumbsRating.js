@@ -17,33 +17,38 @@ var StyledThumbsRatingBox = styled(Box).withConfig({
   return props.focus && focusStyle();
 });
 var ThumbsRating = function ThumbsRating(_ref) {
+  var _theme$thumbsRating, _theme$thumbsRating2, _theme$thumbsRating3, _theme$thumbsRating4;
   var rest = _extends({}, (_objectDestructuringEmpty(_ref), _ref));
   var _useThemeValue = useThemeValue(),
     theme = _useThemeValue.theme;
   var usingKeyboard = useKeyboard();
+  var LikeIcon = ((_theme$thumbsRating = theme.thumbsRating) == null || (_theme$thumbsRating = _theme$thumbsRating.icons) == null ? void 0 : _theme$thumbsRating.like) || Like;
+  var LikeSelectedIcon = ((_theme$thumbsRating2 = theme.thumbsRating) == null || (_theme$thumbsRating2 = _theme$thumbsRating2.icons) == null ? void 0 : _theme$thumbsRating2.likeSelected) || LikeFill;
+  var DislikeIcon = ((_theme$thumbsRating3 = theme.thumbsRating) == null || (_theme$thumbsRating3 = _theme$thumbsRating3.icons) == null ? void 0 : _theme$thumbsRating3.dislike) || Dislike;
+  var DislikeSelectedIcon = ((_theme$thumbsRating4 = theme.thumbsRating) == null || (_theme$thumbsRating4 = _theme$thumbsRating4.icons) == null ? void 0 : _theme$thumbsRating4.dislikeSelected) || DislikeFill;
   return /*#__PURE__*/React.createElement(RadioButtonGroup, _extends({
     direction: "row",
     options: ['like', 'dislike']
   }, rest), function (option, _ref2) {
-    var _theme$thumbsRating3, _theme$thumbsRating4;
+    var _theme$thumbsRating7, _theme$thumbsRating8;
     var checked = _ref2.checked,
       focus = _ref2.focus;
     if (option === 'like') {
-      var _theme$thumbsRating, _theme$thumbsRating2;
+      var _theme$thumbsRating5, _theme$thumbsRating6;
       return /*#__PURE__*/React.createElement(StyledThumbsRatingBox, {
         focus: focus && usingKeyboard
-      }, checked ? /*#__PURE__*/React.createElement(LikeFill, {
-        color: (_theme$thumbsRating = theme.thumbsRating) == null || (_theme$thumbsRating = _theme$thumbsRating.like) == null ? void 0 : _theme$thumbsRating.color
-      }) : /*#__PURE__*/React.createElement(Like, {
-        color: (_theme$thumbsRating2 = theme.thumbsRating) == null || (_theme$thumbsRating2 = _theme$thumbsRating2.like) == null ? void 0 : _theme$thumbsRating2.color
+      }, checked ? /*#__PURE__*/React.createElement(LikeSelectedIcon, {
+        color: (_theme$thumbsRating5 = theme.thumbsRating) == null || (_theme$thumbsRating5 = _theme$thumbsRating5.like) == null ? void 0 : _theme$thumbsRating5.color
+      }) : /*#__PURE__*/React.createElement(LikeIcon, {
+        color: (_theme$thumbsRating6 = theme.thumbsRating) == null || (_theme$thumbsRating6 = _theme$thumbsRating6.like) == null ? void 0 : _theme$thumbsRating6.color
       }));
     }
     return /*#__PURE__*/React.createElement(StyledThumbsRatingBox, {
       focus: focus && usingKeyboard
-    }, checked ? /*#__PURE__*/React.createElement(DislikeFill, {
-      color: (_theme$thumbsRating3 = theme.thumbsRating) == null || (_theme$thumbsRating3 = _theme$thumbsRating3.dislike) == null ? void 0 : _theme$thumbsRating3.color
-    }) : /*#__PURE__*/React.createElement(Dislike, {
-      color: (_theme$thumbsRating4 = theme.thumbsRating) == null || (_theme$thumbsRating4 = _theme$thumbsRating4.dislike) == null ? void 0 : _theme$thumbsRating4.color
+    }, checked ? /*#__PURE__*/React.createElement(DislikeSelectedIcon, {
+      color: (_theme$thumbsRating7 = theme.thumbsRating) == null || (_theme$thumbsRating7 = _theme$thumbsRating7.dislike) == null ? void 0 : _theme$thumbsRating7.color
+    }) : /*#__PURE__*/React.createElement(DislikeIcon, {
+      color: (_theme$thumbsRating8 = theme.thumbsRating) == null || (_theme$thumbsRating8 = _theme$thumbsRating8.dislike) == null ? void 0 : _theme$thumbsRating8.color
     }));
   });
 };

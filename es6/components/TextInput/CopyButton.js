@@ -18,7 +18,7 @@ var StyledButton = styled(Button).withConfig({
   return !props.theme.button["default"] ? edgeStyle('padding', props.pad, false, undefined, props.theme) : '';
 });
 export var CopyButton = function CopyButton(_ref) {
-  var _theme$global$input$p, _theme$global$input$p2, _theme$global$input$p3;
+  var _theme$textInput, _theme$global$input$p, _theme$global$input$p2, _theme$global$input$p3;
   var disabled = _ref.disabled,
     onClickCopy = _ref.onClickCopy,
     onBlurCopy = _ref.onBlurCopy,
@@ -28,6 +28,7 @@ export var CopyButton = function CopyButton(_ref) {
   var _useThemeValue = useThemeValue(),
     theme = _useThemeValue.theme,
     passThemeFlag = _useThemeValue.passThemeFlag;
+  var CopyIcon = ((_theme$textInput = theme.textInput) == null || (_theme$textInput = _theme$textInput.icons) == null ? void 0 : _theme$textInput.copy) || Copy;
   return /*#__PURE__*/React.createElement(Tip, {
     dropProps: {
       align: {
@@ -38,7 +39,7 @@ export var CopyButton = function CopyButton(_ref) {
   }, /*#__PURE__*/React.createElement(StyledButton, _extends({
     disabled: disabled,
     onClick: onClickCopy,
-    icon: /*#__PURE__*/React.createElement(Copy, null),
+    icon: /*#__PURE__*/React.createElement(CopyIcon, null),
     pad: {
       horizontal: (_theme$global$input$p = theme.global.input.padding) == null ? void 0 : _theme$global$input$p.horizontal,
       left: (_theme$global$input$p2 = theme.global.input.padding) == null ? void 0 : _theme$global$input$p2.left,

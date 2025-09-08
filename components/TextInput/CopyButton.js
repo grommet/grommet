@@ -22,7 +22,7 @@ var StyledButton = (0, _styledComponents["default"])(_Button.Button).withConfig(
   return !props.theme.button["default"] ? (0, _styles.edgeStyle)('padding', props.pad, false, undefined, props.theme) : '';
 });
 var CopyButton = exports.CopyButton = function CopyButton(_ref) {
-  var _theme$global$input$p, _theme$global$input$p2, _theme$global$input$p3;
+  var _theme$textInput, _theme$global$input$p, _theme$global$input$p2, _theme$global$input$p3;
   var disabled = _ref.disabled,
     onClickCopy = _ref.onClickCopy,
     onBlurCopy = _ref.onBlurCopy,
@@ -32,6 +32,7 @@ var CopyButton = exports.CopyButton = function CopyButton(_ref) {
   var _useThemeValue = (0, _useThemeValue2.useThemeValue)(),
     theme = _useThemeValue.theme,
     passThemeFlag = _useThemeValue.passThemeFlag;
+  var CopyIcon = ((_theme$textInput = theme.textInput) == null || (_theme$textInput = _theme$textInput.icons) == null ? void 0 : _theme$textInput.copy) || _Copy.Copy;
   return /*#__PURE__*/_react["default"].createElement(_Tip.Tip, {
     dropProps: {
       align: {
@@ -42,7 +43,7 @@ var CopyButton = exports.CopyButton = function CopyButton(_ref) {
   }, /*#__PURE__*/_react["default"].createElement(StyledButton, _extends({
     disabled: disabled,
     onClick: onClickCopy,
-    icon: /*#__PURE__*/_react["default"].createElement(_Copy.Copy, null),
+    icon: /*#__PURE__*/_react["default"].createElement(CopyIcon, null),
     pad: {
       horizontal: (_theme$global$input$p = theme.global.input.padding) == null ? void 0 : _theme$global$input$p.horizontal,
       left: (_theme$global$input$p2 = theme.global.input.padding) == null ? void 0 : _theme$global$input$p2.left,

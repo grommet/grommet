@@ -9,6 +9,7 @@ import { DataTable } from '../../DataTable';
 import { Grommet } from '../../Grommet';
 import { DataTableColumns } from '..';
 import { createPortal, expectPortal } from '../../../utils/portal';
+import { Actions, Pin, SearchAdvanced } from 'grommet-icons';
 
 const data = [
   { name: 'a', size: 's' },
@@ -62,6 +63,67 @@ describe('DataTableColumns', () => {
     );
 
     // Find the tab panel element using its role and aria-label
+    const secondTabPanel = screen.getByRole('tabpanel', {
+      name: 'Order columns Tab Contents',
+    });
+    // Take a snapshot of the tab panel
+    expect(secondTabPanel).toMatchSnapshot();
+  });
+
+  test('should use theme icons', () => {
+    const { getByRole } = render(
+      <Grommet
+        theme={{
+          dataTableColumns: {
+            icons: { control: Actions, pinned: Pin, search: SearchAdvanced },
+          },
+        }}
+      >
+        <Data id="test-data" data={data}>
+          <DataFilters>
+            <DataTableColumns
+              drop
+              options={[
+                { property: 'name', label: 'name', pinned: true },
+                { property: 'size', label: 'size' },
+              ]}
+            />
+          </DataFilters>
+          <DataTable
+            columns={[
+              { property: 'name', header: 'Name' },
+              { property: 'size', header: 'Size' },
+            ]}
+          />
+        </Data>
+      </Grommet>,
+    );
+
+    expect(screen.getByLabelText('Actions')).toBeInTheDocument();
+    expect(getByRole('button', { name: 'Open column selector' })).toBeTruthy();
+
+    fireEvent.click(
+      screen.getByRole('button', { name: 'Open column selector' }),
+    );
+
+    window.scrollTo = jest.fn();
+
+    // advance timers so drop can open
+    act(() => jest.advanceTimersByTime(200));
+
+    expect(screen.getByLabelText('SearchAdvanced')).toBeInTheDocument();
+
+    // Click on the "Order columns" tab
+    fireEvent.click(
+      screen.getByRole('tab', {
+        name: 'Reorder the visible columns in the data table',
+      }),
+    );
+
+    const pinnedSvg = screen.getByLabelText(
+      'Column locked, order cannot be changed.',
+    );
+    expect(pinnedSvg).toBeInTheDocument();
     const secondTabPanel = screen.getByRole('tabpanel', {
       name: 'Order columns Tab Contents',
     });

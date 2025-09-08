@@ -55,7 +55,7 @@ var getReference = function getReference(value) {
   return adjustedDate;
 };
 var DateInput = exports.DateInput = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, refArg) {
-  var _theme$icon, _theme$dateInput$icon, _theme$dateInput$butt, _theme$dateInput$butt2;
+  var _theme$icon, _theme$dateInput$icon, _theme$dateInput$icon2, _theme$dateInput$butt, _theme$dateInput$butt2;
   var buttonProps = _ref.buttonProps,
     calendarProps = _ref.calendarProps,
     defaultValue = _ref.defaultValue,
@@ -98,6 +98,7 @@ var DateInput = exports.DateInput = /*#__PURE__*/(0, _react.forwardRef)(function
     value = _useFormInput[0],
     setValue = _useFormInput[1];
   var usingKeyboard = (0, _utils.useKeyboard)();
+  var CalendarIcon = ((_theme$dateInput$icon2 = theme.dateInput.icon) == null ? void 0 : _theme$dateInput$icon2.calendar) || _Calendar.Calendar;
   var _useState = (0, _react.useState)((0, _Calendar3.getOutputFormat)(value)),
     outputFormat = _useState[0],
     setOutputFormat = _useState[1];
@@ -268,7 +269,7 @@ var DateInput = exports.DateInput = /*#__PURE__*/(0, _react.forwardRef)(function
         align: calendarDropdownAlign
       }, dropProps),
       dropContent: calendar,
-      icon: icon || MaskedInputIcon || /*#__PURE__*/_react["default"].createElement(_Calendar.Calendar, {
+      icon: icon || MaskedInputIcon || /*#__PURE__*/_react["default"].createElement(CalendarIcon, {
         size: iconSize
       })
     }, buttonProps));
@@ -292,7 +293,7 @@ var DateInput = exports.DateInput = /*#__PURE__*/(0, _react.forwardRef)(function
     onClick: open ? closeCalendar : openCalendar,
     disabled: disabled,
     plain: true,
-    icon: icon || MaskedInputIcon || /*#__PURE__*/_react["default"].createElement(_Calendar.Calendar, {
+    icon: icon || MaskedInputIcon || /*#__PURE__*/_react["default"].createElement(CalendarIcon, {
       size: iconSize
     }),
     margin: reverse ? {

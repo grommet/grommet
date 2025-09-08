@@ -361,6 +361,7 @@ var Button = /*#__PURE__*/forwardRef(function (_ref, ref) {
     }, contents);
   }
   if (busy || success) {
+    var _theme$button3;
     // match what the label will use
     var animationColor;
     if (kind) {
@@ -385,7 +386,8 @@ var Button = /*#__PURE__*/forwardRef(function (_ref, ref) {
       justify: "center"
     }, /*#__PURE__*/React.createElement(GrowCheckmark, {
       color: animationColor,
-      "aria-hidden": true
+      "aria-hidden": true,
+      as: (_theme$button3 = theme.button) == null || (_theme$button3 = _theme$button3.busy) == null || (_theme$button3 = _theme$button3.icons) == null ? void 0 : _theme$button3.success
     })), /*#__PURE__*/React.createElement(StyledBusyContents, {
       animating: busy || success
     }, contents));

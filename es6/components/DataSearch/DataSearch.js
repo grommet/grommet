@@ -27,7 +27,7 @@ var dropProps = {
 // 300ms was chosen empirically as a reasonable default
 var DEBOUNCE_TIMEOUT = 300;
 export var DataSearch = function DataSearch(_ref) {
-  var _theme$data$button, _theme$data;
+  var _theme$dataSearch$ico, _theme$data$button, _theme$data;
   var drop = _ref.drop,
     idProp = _ref.id,
     responsive = _ref.responsive,
@@ -56,6 +56,7 @@ export var DataSearch = function DataSearch(_ref) {
     value = _useState2[0],
     setValue = _useState2[1];
   var id = idProp || dataId + "--search";
+  var SearchIcon = ((_theme$dataSearch$ico = theme.dataSearch.icons) == null ? void 0 : _theme$dataSearch$ico.search) || Search;
   useEffect(function () {
     if (!inDataForm) addToolbarKey('_search');
   }, [addToolbarKey, inDataForm]);
@@ -101,7 +102,7 @@ export var DataSearch = function DataSearch(_ref) {
     }),
     id: id,
     name: "_search",
-    icon: /*#__PURE__*/React.createElement(Search, null),
+    icon: /*#__PURE__*/React.createElement(SearchIcon, null),
     type: "search",
     value: value,
     onChange: onChange
@@ -127,7 +128,7 @@ export var DataSearch = function DataSearch(_ref) {
       messages: messages == null ? void 0 : messages.dataSort
     }),
     kind: (_theme$data$button = theme.data.button) == null ? void 0 : _theme$data$button.kind,
-    icon: /*#__PURE__*/React.createElement(Search, null),
+    icon: /*#__PURE__*/React.createElement(SearchIcon, null),
     dropProps: dropProps,
     dropContent: /*#__PURE__*/React.createElement(Box, {
       pad: (_theme$data = theme.data) == null || (_theme$data = _theme$data.drop) == null ? void 0 : _theme$data.pad

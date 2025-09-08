@@ -16,7 +16,7 @@ import { TabsPropTypes } from './propTypes';
 import { useAnalytics } from '../../contexts/AnalyticsContext/AnalyticsContext';
 import { useThemeValue } from '../../utils/useThemeValue';
 var Tabs = /*#__PURE__*/forwardRef(function (_ref, ref) {
-  var _theme$tabs$header, _theme$tabs$header2;
+  var _theme$tabs$header, _theme$tabs$header2, _theme$tabs$header3, _theme$tabs$header4;
   var alignControls = _ref.alignControls,
     children = _ref.children,
     flex = _ref.flex,
@@ -56,6 +56,8 @@ var Tabs = /*#__PURE__*/forwardRef(function (_ref, ref) {
     setFocusIndex = _useState7[1];
   var headerRef = useRef();
   var size = useContext(ResponsiveContext);
+  var PreviousIcon = ((_theme$tabs$header = theme.tabs.header) == null || (_theme$tabs$header = _theme$tabs$header.previousButton) == null ? void 0 : _theme$tabs$header.icon) || Previous;
+  var NextIcon = ((_theme$tabs$header2 = theme.tabs.header) == null || (_theme$tabs$header2 = _theme$tabs$header2.nextButton) == null ? void 0 : _theme$tabs$header2.icon) || Next;
   var sendAnalytics = useAnalytics();
   if (activeIndex !== propsActiveIndex && propsActiveIndex !== undefined) {
     setActiveIndex(propsActiveIndex);
@@ -270,7 +272,7 @@ var Tabs = /*#__PURE__*/forwardRef(function (_ref, ref) {
   }, passThemeFlag, rest, {
     background: theme.tabs.background
   }), /*#__PURE__*/React.createElement(Box, _extends({
-    alignSelf: alignControls || ((_theme$tabs$header = theme.tabs.header) == null ? void 0 : _theme$tabs$header.alignSelf),
+    alignSelf: alignControls || ((_theme$tabs$header3 = theme.tabs.header) == null ? void 0 : _theme$tabs$header3.alignSelf),
     flex: false,
     direction: overflow ? 'row' : 'column'
   }, tabsHeaderStyles), overflow && /*#__PURE__*/React.createElement(Button, {
@@ -284,7 +286,7 @@ var Tabs = /*#__PURE__*/forwardRef(function (_ref, ref) {
     }
   }, /*#__PURE__*/React.createElement(Box, {
     pad: theme.tabs.header.previousButton.pad
-  }, /*#__PURE__*/React.createElement(Previous, {
+  }, /*#__PURE__*/React.createElement(PreviousIcon, {
     color: disableLeftArrow ? theme.button.disabled.color : theme.global.colors.text
   }))), /*#__PURE__*/React.createElement(StyledTabsHeader, _extends({
     role: "tablist",
@@ -308,8 +310,8 @@ var Tabs = /*#__PURE__*/forwardRef(function (_ref, ref) {
       return moveByArrowKey('next');
     }
   }, /*#__PURE__*/React.createElement(Box, {
-    pad: (_theme$tabs$header2 = theme.tabs.header) == null || (_theme$tabs$header2 = _theme$tabs$header2.nextButton) == null ? void 0 : _theme$tabs$header2.pad
-  }, /*#__PURE__*/React.createElement(Next, {
+    pad: (_theme$tabs$header4 = theme.tabs.header) == null || (_theme$tabs$header4 = _theme$tabs$header4.nextButton) == null ? void 0 : _theme$tabs$header4.pad
+  }, /*#__PURE__*/React.createElement(NextIcon, {
     color: disableRightArrow ? theme.button.disabled.color : theme.global.colors.text
   })))), /*#__PURE__*/React.createElement(StyledTabPanel, _extends({
     flex: flex,

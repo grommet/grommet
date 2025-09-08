@@ -9,7 +9,7 @@ import { MessageContext } from '../../contexts/MessageContext';
 import { normalizeColor } from '../../utils';
 import { useThemeValue } from '../../utils/useThemeValue';
 var Searcher = function Searcher(_ref) {
-  var _theme$dataTable$sear, _theme$dataTable$sear2;
+  var _theme$dataTable, _theme$dataTable$sear, _theme$dataTable$sear2;
   var filtering = _ref.filtering,
     filters = _ref.filters,
     focusIndicator = _ref.focusIndicator,
@@ -27,6 +27,7 @@ var Searcher = function Searcher(_ref) {
     setButtonNeedsFocus = _useState[1];
   var _useContext = useContext(MessageContext),
     format = _useContext.format;
+  var SearchIcon = ((_theme$dataTable = theme.dataTable) == null || (_theme$dataTable = _theme$dataTable.icons) == null ? void 0 : _theme$dataTable.search) || FormSearch;
   useEffect(function () {
     if (inputRef && needsFocus) {
       inputRef.current.focus();
@@ -80,7 +81,7 @@ var Searcher = function Searcher(_ref) {
   }, /*#__PURE__*/React.createElement(Text, null, filters[property])) : null, /*#__PURE__*/React.createElement(Button, {
     ref: buttonRef,
     a11yTitle: a11yTitle,
-    icon: /*#__PURE__*/React.createElement(FormSearch, {
+    icon: /*#__PURE__*/React.createElement(SearchIcon, {
       color: normalizeColor(filtering === property ? 'brand' : 'border', theme)
     }),
     hoverIndicator: true,

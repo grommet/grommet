@@ -524,6 +524,9 @@ export var generate = function generate(baseSpacing, scale) {
       },
       busy: {
         gap: 'small'
+        // icons: {
+        //   success: undefined,
+        // },
       },
       gap: 'small',
       size: {
@@ -1063,6 +1066,10 @@ export var generate = function generate(baseSpacing, scale) {
       }
     },
     dataFilters: {
+      // icons: {
+      //   close: undefined,
+      //   filter: undefined,
+      // }
       footer: {
         actions: {
           margin: {
@@ -1089,8 +1096,19 @@ export var generate = function generate(baseSpacing, scale) {
         round: 'xxsmall'
       },
       icon: {
+        // calendar: undefined,
         size: 'medium'
       }
+    },
+    dataSearch: {
+      // icons: {
+      //   search: undefined,
+      // },
+    },
+    dataSort: {
+      // icons: {
+      //   control: undefined,
+      // },
     },
     dataSummary: {
       margin: {
@@ -1174,6 +1192,9 @@ export var generate = function generate(baseSpacing, scale) {
         contract: FormUp,
         descending: FormUp,
         expand: FormDown
+        // resizeDecrease: undefined,
+        // resizeIncrease: undefined,
+        // search: undefined,
         // sortable: undefined,
       },
       primary: {
@@ -1207,6 +1228,11 @@ export var generate = function generate(baseSpacing, scale) {
       }
     },
     dataTableColumns: {
+      // icons: {
+      //   control: undefined,
+      //   pinned: undefined,
+      //   search: undefined,
+      // }
       tabs: {
         pad: 'small'
       },
@@ -1259,6 +1285,7 @@ export var generate = function generate(baseSpacing, scale) {
         // extend: undefined,
       },
       icons: {
+        // error: undefined,
         remove: FormClose
       },
       // pad: {},
@@ -2077,6 +2104,12 @@ export var generate = function generate(baseSpacing, scale) {
       // dislike: {
       //   color: undefined,
       // },
+      // icons: {
+      //   dislike: undefined,
+      //   dislikeSelected: undefined,
+      //   like: undefined,
+      //   likeSelected: undefined,
+      // }
       // like: {
       //   color: undefined,
       // },
@@ -2317,6 +2350,10 @@ export var generate = function generate(baseSpacing, scale) {
     },
     starRating: {
       // color: undefined,
+      // icons: {
+      //   selected: undefined,
+      //   unselected: undefined,
+      // },
     },
     tab: {
       active: {
@@ -2385,12 +2422,14 @@ export var generate = function generate(baseSpacing, scale) {
         // },
         // extend: undefined,
         nextButton: {
+          // icon: undefined,
           pad: {
             horizontal: 'small',
             vertical: 'xsmall'
           }
         },
         previousButton: {
+          // icon: undefined,
           pad: {
             horizontal: 'small',
             vertical: 'xsmall'
@@ -2570,6 +2609,9 @@ export var generate = function generate(baseSpacing, scale) {
     textInput: {
       // extend: undefined,
       // disabled: { opacity: undefined },
+      // icons: {
+      //   copy: undefined,
+      // },
     },
     tip: {
       content: {

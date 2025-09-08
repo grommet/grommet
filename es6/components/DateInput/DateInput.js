@@ -4,7 +4,7 @@ function _extends() { return _extends = Object.assign ? Object.assign.bind() : f
 function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (-1 !== e.indexOf(n)) continue; t[n] = r[n]; } return t; }
 import React, { useRef, forwardRef, useContext, useEffect, useMemo, useState, useCallback } from 'react';
 import styled from 'styled-components';
-import { Calendar as CalendarIcon } from 'grommet-icons/icons/Calendar';
+import { Calendar as GrommetCalendarIcon } from 'grommet-icons/icons/Calendar';
 import { AnnounceContext } from '../../contexts/AnnounceContext';
 import { MessageContext } from '../../contexts/MessageContext';
 import { Box } from '../Box';
@@ -49,7 +49,7 @@ var getReference = function getReference(value) {
   return adjustedDate;
 };
 var DateInput = /*#__PURE__*/forwardRef(function (_ref, refArg) {
-  var _theme$icon, _theme$dateInput$icon, _theme$dateInput$butt, _theme$dateInput$butt2;
+  var _theme$icon, _theme$dateInput$icon, _theme$dateInput$icon2, _theme$dateInput$butt, _theme$dateInput$butt2;
   var buttonProps = _ref.buttonProps,
     calendarProps = _ref.calendarProps,
     defaultValue = _ref.defaultValue,
@@ -92,6 +92,7 @@ var DateInput = /*#__PURE__*/forwardRef(function (_ref, refArg) {
     value = _useFormInput[0],
     setValue = _useFormInput[1];
   var usingKeyboard = useKeyboard();
+  var CalendarIcon = ((_theme$dateInput$icon2 = theme.dateInput.icon) == null ? void 0 : _theme$dateInput$icon2.calendar) || GrommetCalendarIcon;
   var _useState = useState(getOutputFormat(value)),
     outputFormat = _useState[0],
     setOutputFormat = _useState[1];

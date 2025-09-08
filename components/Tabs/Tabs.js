@@ -21,7 +21,7 @@ function _interopRequireWildcard(e, t) { if ("function" == typeof WeakMap) var r
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (-1 !== e.indexOf(n)) continue; t[n] = r[n]; } return t; }
 var Tabs = exports.Tabs = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
-  var _theme$tabs$header, _theme$tabs$header2;
+  var _theme$tabs$header, _theme$tabs$header2, _theme$tabs$header3, _theme$tabs$header4;
   var alignControls = _ref.alignControls,
     children = _ref.children,
     flex = _ref.flex,
@@ -61,6 +61,8 @@ var Tabs = exports.Tabs = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, re
     setFocusIndex = _useState7[1];
   var headerRef = (0, _react.useRef)();
   var size = (0, _react.useContext)(_ResponsiveContext.ResponsiveContext);
+  var PreviousIcon = ((_theme$tabs$header = theme.tabs.header) == null || (_theme$tabs$header = _theme$tabs$header.previousButton) == null ? void 0 : _theme$tabs$header.icon) || _Previous.Previous;
+  var NextIcon = ((_theme$tabs$header2 = theme.tabs.header) == null || (_theme$tabs$header2 = _theme$tabs$header2.nextButton) == null ? void 0 : _theme$tabs$header2.icon) || _Next.Next;
   var sendAnalytics = (0, _AnalyticsContext.useAnalytics)();
   if (activeIndex !== propsActiveIndex && propsActiveIndex !== undefined) {
     setActiveIndex(propsActiveIndex);
@@ -275,7 +277,7 @@ var Tabs = exports.Tabs = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, re
   }, passThemeFlag, rest, {
     background: theme.tabs.background
   }), /*#__PURE__*/_react["default"].createElement(_Box.Box, _extends({
-    alignSelf: alignControls || ((_theme$tabs$header = theme.tabs.header) == null ? void 0 : _theme$tabs$header.alignSelf),
+    alignSelf: alignControls || ((_theme$tabs$header3 = theme.tabs.header) == null ? void 0 : _theme$tabs$header3.alignSelf),
     flex: false,
     direction: overflow ? 'row' : 'column'
   }, tabsHeaderStyles), overflow && /*#__PURE__*/_react["default"].createElement(_Button.Button, {
@@ -289,7 +291,7 @@ var Tabs = exports.Tabs = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, re
     }
   }, /*#__PURE__*/_react["default"].createElement(_Box.Box, {
     pad: theme.tabs.header.previousButton.pad
-  }, /*#__PURE__*/_react["default"].createElement(_Previous.Previous, {
+  }, /*#__PURE__*/_react["default"].createElement(PreviousIcon, {
     color: disableLeftArrow ? theme.button.disabled.color : theme.global.colors.text
   }))), /*#__PURE__*/_react["default"].createElement(_StyledTabs.StyledTabsHeader, _extends({
     role: "tablist",
@@ -313,8 +315,8 @@ var Tabs = exports.Tabs = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, re
       return moveByArrowKey('next');
     }
   }, /*#__PURE__*/_react["default"].createElement(_Box.Box, {
-    pad: (_theme$tabs$header2 = theme.tabs.header) == null || (_theme$tabs$header2 = _theme$tabs$header2.nextButton) == null ? void 0 : _theme$tabs$header2.pad
-  }, /*#__PURE__*/_react["default"].createElement(_Next.Next, {
+    pad: (_theme$tabs$header4 = theme.tabs.header) == null || (_theme$tabs$header4 = _theme$tabs$header4.nextButton) == null ? void 0 : _theme$tabs$header4.pad
+  }, /*#__PURE__*/_react["default"].createElement(NextIcon, {
     color: disableRightArrow ? theme.button.disabled.color : theme.global.colors.text
   })))), /*#__PURE__*/_react["default"].createElement(_StyledTabs.StyledTabPanel, _extends({
     flex: flex,

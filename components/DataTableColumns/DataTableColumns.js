@@ -67,6 +67,7 @@ var alignOrder = function alignOrder(value, prevValue, options) {
 // Content is a separate component since it might be getting its form context
 // from the DataForm rendered inside DataTableColumns.
 var Content = function Content(_ref) {
+  var _theme$dataTableColum, _theme$dataTableColum2;
   var drop = _ref.drop,
     _ref$options = _ref.options,
     options = _ref$options === void 0 ? [] : _ref$options,
@@ -80,6 +81,8 @@ var Content = function Content(_ref) {
     format = _useContext3.format;
   var _useThemeValue = (0, _useThemeValue3.useThemeValue)(),
     theme = _useThemeValue.theme;
+  var PinnedIcon = ((_theme$dataTableColum = theme.dataTableColumns) == null || (_theme$dataTableColum = _theme$dataTableColum.icons) == null ? void 0 : _theme$dataTableColum.pinned) || _Lock.Lock;
+  var SearchIcon = ((_theme$dataTableColum2 = theme.dataTableColumns) == null || (_theme$dataTableColum2 = _theme$dataTableColum2.icons) == null ? void 0 : _theme$dataTableColum2.search) || _Search.Search;
   var tabsProps = {
     drop: {
       pad: theme.dataTableColumns.tabs.pad
@@ -112,7 +115,7 @@ var Content = function Content(_ref) {
     return items != null && items.length ? {
       background: 'none',
       color: 'text-weak',
-      icon: /*#__PURE__*/_react["default"].createElement(_Lock.Lock, null),
+      icon: /*#__PURE__*/_react["default"].createElement(PinnedIcon, null),
       items: items
     } : undefined;
   }, [options, objectOptions]);
@@ -153,7 +156,7 @@ var Content = function Content(_ref) {
     gap: theme.dataTableColumns.selectColumns.gap
   }, /*#__PURE__*/_react["default"].createElement(_TextInput.TextInput, {
     type: "search",
-    icon: /*#__PURE__*/_react["default"].createElement(_Search.Search, null),
+    icon: /*#__PURE__*/_react["default"].createElement(SearchIcon, null),
     placeholder: "Search",
     value: search,
     onChange: function onChange(event) {
@@ -208,7 +211,7 @@ var Content = function Content(_ref) {
   })))));
 };
 var DataTableColumns = exports.DataTableColumns = function DataTableColumns(_ref5) {
-  var _theme$data$button;
+  var _theme$dataTableColum3, _theme$data$button;
   var drop = _ref5.drop,
     options = _ref5.options,
     rest = _objectWithoutPropertiesLoose(_ref5, _excluded2);
@@ -224,6 +227,7 @@ var DataTableColumns = exports.DataTableColumns = function DataTableColumns(_ref
   var _useState3 = (0, _react.useState)(),
     showContent = _useState3[0],
     setShowContent = _useState3[1];
+  var ControlIcon = ((_theme$dataTableColum3 = theme.dataTableColumns) == null || (_theme$dataTableColum3 = _theme$dataTableColum3.icons) == null ? void 0 : _theme$dataTableColum3.control) || _Splits.Splits;
   var tip = format({
     id: 'dataTableColumns.tip',
     messages: messages == null ? void 0 : messages.dataTableColumns
@@ -244,7 +248,7 @@ var DataTableColumns = exports.DataTableColumns = function DataTableColumns(_ref
       messages: messages == null ? void 0 : messages.dataTableColumns
     }),
     kind: (_theme$data$button = theme.data.button) == null ? void 0 : _theme$data$button.kind,
-    icon: /*#__PURE__*/_react["default"].createElement(_Splits.Splits, null),
+    icon: /*#__PURE__*/_react["default"].createElement(ControlIcon, null),
     tip: tip,
     dropProps: dropProps,
     dropContent: content,

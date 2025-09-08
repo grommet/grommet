@@ -29,6 +29,7 @@ var StyledResizer = (0, _styledComponents["default"])(_DropButton.DropButton).wi
   return props.theme.global.edgeSize.small;
 });
 var Resizer = exports.Resizer = function Resizer(_ref) {
+  var _theme$dataTable$icon, _theme$dataTable$icon2;
   var onResize = _ref.onResize,
     property = _ref.property,
     headerText = _ref.headerText,
@@ -49,6 +50,8 @@ var Resizer = exports.Resizer = function Resizer(_ref) {
   var thRef = (0, _react.useRef)();
   var _useContext = (0, _react.useContext)(_MessageContext.MessageContext),
     format = _useContext.format;
+  var ResizeIncreaseIcon = ((_theme$dataTable$icon = theme.dataTable.icons) == null ? void 0 : _theme$dataTable$icon.resizeIncrease) || _Add.Add;
+  var ResizeDecreaseIcon = ((_theme$dataTable$icon2 = theme.dataTable.icons) == null ? void 0 : _theme$dataTable$icon2.resizeDecrease) || _Subtract.Subtract;
 
   // Set the initial width based on the TH element's width and
   // store th element ref
@@ -200,7 +203,7 @@ var Resizer = exports.Resizer = function Resizer(_ref) {
         },
         messages: messages
       }),
-      icon: /*#__PURE__*/_react["default"].createElement(_Subtract.Subtract, null),
+      icon: /*#__PURE__*/_react["default"].createElement(ResizeDecreaseIcon, null),
       onClick: onDecrease,
       autoFocus: true
     }), /*#__PURE__*/_react["default"].createElement(_Button.Button, {
@@ -211,7 +214,7 @@ var Resizer = exports.Resizer = function Resizer(_ref) {
         },
         messages: messages
       }),
-      icon: /*#__PURE__*/_react["default"].createElement(_Add.Add, null),
+      icon: /*#__PURE__*/_react["default"].createElement(ResizeIncreaseIcon, null),
       onClick: onIncrease
     })),
     dropAlign: {
