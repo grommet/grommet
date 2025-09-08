@@ -7,12 +7,14 @@ import {
   waitFor,
 } from '@testing-library/react';
 import 'jest-styled-components';
+import '@testing-library/jest-dom';
 
 import { Data } from '../../Data';
 import { DataFilters } from '../../DataFilters';
 import { Grommet } from '../../Grommet';
 import { DataSort } from '..';
 import { createPortal, expectPortal } from '../../../utils/portal';
+import { Add } from 'grommet-icons';
 
 const data = [{ name: 'a' }, { name: 'b' }];
 
@@ -54,6 +56,18 @@ describe('DataSort', () => {
 
     // snapshot on drop
     expectPortal('test-data--sort-control').toMatchSnapshot();
+  });
+
+  test('should render theme icon', () => {
+    render(
+      <Grommet theme={{ dataSort: { icons: { control: Add } } }}>
+        <Data id="test-data" data={data}>
+          <DataSort drop />
+        </Data>
+      </Grommet>,
+    );
+
+    expect(screen.getByLabelText('Add')).toBeInTheDocument();
   });
 
   test('sort when data array is empty', () => {

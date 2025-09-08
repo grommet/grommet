@@ -46,6 +46,7 @@ export const DataSearch = ({
   const [showContent, setShowContent] = useState();
   const [value, setValue] = useState(view?.search);
   const id = idProp || `${dataId}--search`;
+  const SearchIcon = theme.dataSearch.icons?.search || Search;
 
   useEffect(() => {
     if (!inDataForm) addToolbarKey('_search');
@@ -88,7 +89,7 @@ export const DataSearch = ({
       })}
       id={id}
       name="_search"
-      icon={<Search />}
+      icon={<SearchIcon />}
       type="search"
       value={value}
       onChange={onChange}
@@ -126,7 +127,7 @@ export const DataSearch = ({
         messages: messages?.dataSort,
       })}
       kind={theme.data.button?.kind}
-      icon={<Search />}
+      icon={<SearchIcon />}
       dropProps={dropProps}
       dropContent={<Box pad={theme.data?.drop?.pad}>{content}</Box>}
       open={showContent}
