@@ -366,4 +366,36 @@ describe('DataFilters', () => {
 
     expect(screen.getAllByLabelText('Trash')[0]).toBeInTheDocument();
   });
+
+  test('should use theme icons svg', async () => {
+    let theme: ThemeType = {
+      dataFilters: {
+        icons: {
+          filter: () => (
+            <svg
+              aria-label="Custom svg"
+              height="100"
+              width="100"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle r="45" cx="50" cy="50" fill="red" />
+            </svg>
+          ),
+        },
+      },
+    };
+    render(
+      <Grommet theme={theme}>
+        <Data
+          data={[{ location: { lat: 48 } }, { location: { lat: -33 } }]}
+          properties={{
+            'location.lat': { label: 'Latitude', range: { min: -90, max: 90 } },
+          }}
+        >
+          <DataFilters layer />
+        </Data>
+      </Grommet>,
+    );
+    expect(screen.getByLabelText('Custom svg')).toBeInTheDocument();
+  });
 });
