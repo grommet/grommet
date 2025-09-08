@@ -489,7 +489,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       busy: {
         gap: 'small',
         // icons: {
-        //   success: Checkmark,
+        //   success: undefined,
         // },
       },
       gap: 'small',
