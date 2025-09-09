@@ -609,7 +609,7 @@ export interface ThemeType {
   };
   box?: {
     border?: {
-      size?: string;
+      offset?: string;
     };
     extend?: ExtendType;
     responsiveBreakpoint?: string;
