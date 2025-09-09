@@ -10,7 +10,7 @@ import { TextInput } from '../../TextInput';
 import { DataFilter } from '..';
 import { Toolbar } from '../../Toolbar';
 import { DataTable } from '../../DataTable';
-import { createPortal } from '../../../utils/portal';
+import { createPortal, expectPortal } from '../../../utils/portal';
 
 const data = [
   {
@@ -430,8 +430,9 @@ describe('DataFilter', () => {
           <DataFilters>
             <DataFilter property="rating" range={{ min: 0, max: 5 }} />
             <DataFilter
+              id="test-data"
               property="type.name"
-              options={['ZZ', 'YY', 'aa', 'bb', 'cc']}
+              options={['ZZ', 'YY', 'aa', 'bb', 'cc', 'dd', 'ee']}
             />
           </DataFilters>
         </Data>
@@ -442,5 +443,10 @@ describe('DataFilter', () => {
     expect(screen.getByLabelText('Type')).toBeTruthy();
 
     expect(asFragment()).toMatchSnapshot();
+
+    const selectInput = screen.getByRole('button', { name: /Open Drop/i });
+    fireEvent.click(selectInput);
+
+    expectPortal('data-type.name__drop').toMatchSnapshot();
   });
 });

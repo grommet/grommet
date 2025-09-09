@@ -1,6 +1,7 @@
 import React from 'react';
 import { render, fireEvent } from '@testing-library/react';
 import { axe } from 'jest-axe';
+import 'jest-styled-components';
 
 import 'jest-axe/extend-expect';
 import 'regenerator-runtime/runtime';
@@ -225,6 +226,7 @@ describe('CheckBoxGroup', () => {
 
     expect(asFragment()).toMatchSnapshot();
   });
+
   test('theme container gap', () => {
     const customTheme = {
       checkBoxGroup: {

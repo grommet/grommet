@@ -69,9 +69,9 @@ describe('DataSearch', () => {
       },
     };
 
-    const { asFragment } = render(
+    const { getByRole } = render(
       <Grommet theme={customTheme}>
-        <Data data={data}>
+        <Data id="test-data" data={data}>
           <DataFilters>
             <DataSearch drop />
           </DataFilters>
@@ -79,7 +79,11 @@ describe('DataSearch', () => {
       </Grommet>,
     );
 
-    expect(asFragment()).toMatchSnapshot();
+    expect(getByRole('button', { name: 'Open search' })).toBeTruthy();
+
+    fireEvent.click(getByRole('button', { name: 'Open search' }));
+
+    expectPortal('test-data--search-control__drop').toMatchSnapshot();
   });
 });
 

@@ -474,10 +474,10 @@ describe('Box', () => {
 
     const { asFragment } = render(
       <Grommet theme={customTheme}>
-        <Box border />
-        <Box border="top" />
-        <Box border={{ color: 'brand' }} />
-        <Box border={{ side: 'all' }} />
+        <Box border="between" gap="small">
+          <Box>Test 1</Box>
+          <Box>Test 2</Box>
+        </Box>
       </Grommet>,
     );
 
