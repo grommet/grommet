@@ -8,7 +8,7 @@ import React, {
   useCallback,
 } from 'react';
 import styled from 'styled-components';
-import { Calendar as CalendarIcon } from 'grommet-icons/icons/Calendar';
+import { Calendar as GrommetCalendarIcon } from 'grommet-icons/icons/Calendar';
 import { AnnounceContext } from '../../contexts/AnnounceContext';
 import { MessageContext } from '../../contexts/MessageContext';
 import { Box } from '../Box';
@@ -102,6 +102,7 @@ const DateInput = forwardRef(
       initialValue: defaultValue,
     });
     const usingKeyboard = useKeyboard();
+    const CalendarIcon = theme.dateInput.icon?.calendar || GrommetCalendarIcon;
 
     const [outputFormat, setOutputFormat] = useState(getOutputFormat(value));
     useEffect(() => {

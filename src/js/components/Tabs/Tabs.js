@@ -47,6 +47,8 @@ const Tabs = forwardRef(
     const [focusIndex, setFocusIndex] = useState(-1);
     const headerRef = useRef();
     const size = useContext(ResponsiveContext);
+    const PreviousIcon = theme.tabs.header?.previousButton?.icon || Previous;
+    const NextIcon = theme.tabs.header?.nextButton?.icon || Next;
 
     const sendAnalytics = useAnalytics();
 
@@ -343,7 +345,7 @@ const Tabs = forwardRef(
               onClick={() => moveByArrowKey('previous')}
             >
               <Box pad={theme.tabs.header.previousButton.pad}>
-                <Previous
+                <PreviousIcon
                   color={
                     disableLeftArrow
                       ? theme.button.disabled.color
@@ -378,7 +380,7 @@ const Tabs = forwardRef(
               onClick={() => moveByArrowKey('next')}
             >
               <Box pad={theme.tabs.header?.nextButton?.pad}>
-                <Next
+                <NextIcon
                   color={
                     disableRightArrow
                       ? theme.button.disabled.color

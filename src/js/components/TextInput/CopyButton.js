@@ -25,13 +25,14 @@ export const CopyButton = ({
   value,
 }) => {
   const { theme, passThemeFlag } = useThemeValue();
+  const CopyIcon = theme.textInput?.icons?.copy || Copy;
 
   return (
     <Tip dropProps={{ align: { bottom: 'top' } }} content={tip}>
       <StyledButton
         disabled={disabled}
         onClick={onClickCopy}
-        icon={<Copy />}
+        icon={<CopyIcon />}
         pad={{
           horizontal: theme.global.input.padding?.horizontal,
           left: theme.global.input.padding?.left,

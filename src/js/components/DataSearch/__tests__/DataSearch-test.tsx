@@ -1,12 +1,14 @@
 import React from 'react';
-import { act, fireEvent, render } from '@testing-library/react';
+import { act, fireEvent, render, screen } from '@testing-library/react';
 import 'jest-styled-components';
+import '@testing-library/jest-dom';
 
 import { Data } from '../../Data';
 import { DataFilters } from '../../DataFilters';
 import { Grommet } from '../../Grommet';
 import { DataSearch } from '..';
 import { createPortal, expectPortal } from '../../../utils/portal';
+import { Add } from 'grommet-icons';
 
 const data = [{ name: 'a' }, { name: 'b' }];
 
@@ -78,12 +80,31 @@ describe('DataSearch', () => {
         </Data>
       </Grommet>,
     );
-
     expect(getByRole('button', { name: 'Open search' })).toBeTruthy();
 
     fireEvent.click(getByRole('button', { name: 'Open search' }));
 
     expectPortal('test-data--search-control__drop').toMatchSnapshot();
+  });
+
+  test('should render theme icon', () => {
+    render(
+      <Grommet
+        theme={{
+          dataSearch: {
+            icons: {
+              search: Add,
+            },
+          },
+        }}
+      >
+        <Data id="test-data" data={data}>
+          <DataSearch drop />
+        </Data>
+      </Grommet>,
+    );
+
+    expect(screen.getByLabelText('Add')).toBeInTheDocument();
   });
 });
 
