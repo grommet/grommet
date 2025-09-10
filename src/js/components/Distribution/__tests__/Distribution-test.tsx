@@ -65,4 +65,23 @@ describe('Distribution', () => {
     );
     expect(container.firstChild).toMatchSnapshot();
   });
+  test('theme gap', () => {
+    const customTheme = {
+      distribution: {
+        gap: 'large',
+      },
+    };
+
+    const { container } = render(
+      <Grommet theme={customTheme}>
+        <Distribution
+          values={[{ value: 20 }, { value: 10 }, { value: 5 }, { value: 3 }]}
+        >
+          {(value) => <span>{value.value}</span>}
+        </Distribution>
+      </Grommet>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
 });

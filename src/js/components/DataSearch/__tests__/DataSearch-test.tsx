@@ -62,6 +62,31 @@ describe('DataSearch', () => {
     expectPortal('test-data--search-control').toMatchSnapshot();
   });
 
+  test('theme data drop pad', () => {
+    const customTheme = {
+      data: {
+        drop: {
+          pad: 'large',
+        },
+      },
+    };
+
+    const { getByRole } = render(
+      <Grommet theme={customTheme}>
+        <Data id="test-data" data={data}>
+          <DataFilters>
+            <DataSearch drop />
+          </DataFilters>
+        </Data>
+      </Grommet>,
+    );
+    expect(getByRole('button', { name: 'Open search' })).toBeTruthy();
+
+    fireEvent.click(getByRole('button', { name: 'Open search' }));
+
+    expectPortal('test-data--search-control__drop').toMatchSnapshot();
+  });
+
   test('should render theme icon', () => {
     render(
       <Grommet

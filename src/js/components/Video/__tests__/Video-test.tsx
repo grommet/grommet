@@ -215,4 +215,32 @@ describe('Video', () => {
     expect(container.firstChild).toMatchSnapshot();
     expect(onDurationChange).toHaveBeenCalled();
   });
+
+  test('theme time container pad and scrubber thickness', () => {
+    const customTheme = {
+      video: {
+        time: {
+          container: {
+            pad: {
+              horizontal: 'large',
+            },
+          },
+        },
+        scrubber: {
+          thickness: 'large',
+        },
+      },
+    };
+
+    const { asFragment } = render(
+      <Grommet theme={customTheme}>
+        <Video controls="below">
+          <source key="source" src="small.mp4" type="video/mp4" />
+          <track key="track" />
+        </Video>
+      </Grommet>,
+    );
+
+    expect(asFragment()).toMatchSnapshot();
+  });
 });
