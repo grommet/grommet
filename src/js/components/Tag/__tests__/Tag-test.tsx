@@ -9,6 +9,9 @@ import 'regenerator-runtime/runtime';
 import '@testing-library/jest-dom';
 
 import { Grommet, Tag } from '../..';
+import { grommet } from '../../../themes/grommet';
+import { deepMerge } from '../../../utils';
+import { ThemeType } from '../../../themes';
 
 describe('Tag', () => {
   test('should have no accessibility violations', async () => {
@@ -234,5 +237,30 @@ describe('Tag', () => {
       'aria-label',
       'Remove Fruits',
     );
+  });
+
+  const customHoverTheme: ThemeType = deepMerge(grommet, {
+    tag: {
+      border: true,
+      hover: {
+        background: 'pink',
+        border: 'green',
+      },
+    },
+  });
+
+  test('theme border and hover background/border', async () => {
+    const user = userEvent.setup();
+
+    const { container } = render(
+      <Grommet theme={customHoverTheme}>
+        <Tag value="Hover me" onClick={() => {}} />
+      </Grommet>,
+    );
+
+    const tagButton = screen.getByRole('button', { name: /Hover me/i });
+    await user.hover(tagButton);
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 });

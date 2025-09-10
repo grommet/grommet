@@ -253,4 +253,65 @@ describe('DataTableColumns', () => {
       }),
     );
   });
+
+  test('theme tabs pad, selectColumns pad and gap, orderColumns pad', () => {
+    const theme = {
+      dataTableColumns: {
+        tabs: {
+          pad: 'small',
+        },
+        selectColumns: {
+          pad: {
+            vertical: 'small',
+          },
+          gap: 'xsmall',
+        },
+        orderColumns: {
+          pad: {
+            top: 'small',
+          },
+        },
+      },
+    };
+
+    const { getByRole } = render(
+      <Grommet theme={theme}>
+        <Data id="test-data" data={data}>
+          <DataFilters>
+            <DataTableColumns drop options={['name', 'size']} />
+          </DataFilters>
+          <DataTable
+            columns={[
+              { property: 'name', header: 'Name' },
+              { property: 'size', header: 'Size' },
+            ]}
+          />
+        </Data>
+      </Grommet>,
+    );
+
+    // open the columns control
+    fireEvent.click(getByRole('button', { name: 'Open column selector' }));
+
+    // let the drop open
+    act(() => jest.advanceTimersByTime(200));
+
+    // snapshot the Select columns tab content (theme.selectColumns pad + gap)
+    const selectTabPanel = screen.getByRole('tabpanel', {
+      name: 'Select columns Tab Contents',
+    });
+    expect(selectTabPanel).toMatchSnapshot();
+
+    // switch to Order columns tab (theme.orderColumns pad)
+    fireEvent.click(
+      screen.getByRole('tab', {
+        name: 'Reorder the visible columns in the data table',
+      }),
+    );
+
+    const orderTabPanel = screen.getByRole('tabpanel', {
+      name: 'Order columns Tab Contents',
+    });
+    expect(orderTabPanel).toMatchSnapshot();
+  });
 });
