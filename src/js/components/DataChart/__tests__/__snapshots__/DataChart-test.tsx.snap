@@ -9805,6 +9805,420 @@ exports[`DataChart size 1`] = `
 </div>
 `;
 
+exports[`DataChart theme overrides 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c2 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  grid-area: xAxis;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-inline-start: 48px;
+  padding-inline-end: 48px;
+}
+
+.c3 {
+  display: flex;
+  box-sizing: border-box;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  flex-basis: 96px;
+  overflow: visible;
+}
+
+.c4 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  grid-area: yAxis;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  flex: 1 1;
+  justify-content: space-between;
+}
+
+.c5 {
+  display: flex;
+  box-sizing: border-box;
+  align-items: flex-end;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  flex-basis: 1px;
+  justify-content: center;
+  overflow: visible;
+}
+
+.c10 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+  justify-content: space-between;
+  padding-left: 48px;
+  padding-right: 48px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+
+.c12 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  width: 96px;
+}
+
+.c13 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  height: 100%;
+}
+
+.c8 {
+  display: block;
+  max-width: 100%;
+  overflow: visible;
+}
+
+.c1 {
+  display: grid;
+  box-sizing: border-box;
+  grid-template-areas: "yAxis charts" ". xAxis";
+  grid-template-columns: auto auto;
+  grid-gap: 12px 12px;
+  grid-template-rows: auto auto;
+}
+
+.c6 {
+  position: relative;
+  grid-area: charts;
+}
+
+.c7 {
+  position: relative;
+  display: block;
+}
+
+.c9 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.c11:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c11:focus >circle,
+.c11:focus >ellipse,
+.c11:focus >line,
+.c11:focus >path,
+.c11:focus >polygon,
+.c11:focus >polyline,
+.c11:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c11:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c11:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c11:focus:not(:focus-visible) >circle,
+.c11:focus:not(:focus-visible) >ellipse,
+.c11:focus:not(:focus-visible) >line,
+.c11:focus:not(:focus-visible) >path,
+.c11:focus:not(:focus-visible) >polygon,
+.c11:focus:not(:focus-visible) >polyline,
+.c11:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c11:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    padding-inline-start: 48px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    padding-inline-end: 48px;
+  }
+}
+
+<div
+  class="c0"
+>
+  <div
+    class="c1"
+  >
+    <div
+      class="c2"
+    >
+      <div
+        class="c3"
+      >
+        0
+      </div>
+      <div
+        class="c3"
+      >
+        1
+      </div>
+    </div>
+    <div
+      class="c4"
+    >
+      <div
+        class="c5"
+      >
+        100
+      </div>
+      <div
+        class="c5"
+      >
+        0
+      </div>
+    </div>
+    <div
+      class="c6"
+    >
+      <div
+        class="c7"
+      >
+        <svg
+          class="c8"
+          height="192"
+          preserveAspectRatio="none"
+          viewBox="0 0 384 192"
+          width="384"
+        >
+          0
+          <g
+            fill="none"
+            stroke="#6FFFB0"
+            stroke-linecap="butt"
+            stroke-linejoin="miter"
+            stroke-width="96"
+          >
+            <g
+              fill="none"
+            >
+              <title />
+              <path
+                d="M 96,192 L 96,99.95029658799302"
+              />
+            </g>
+            <g
+              fill="none"
+            >
+              <title />
+              <path
+                d="M 288,192 L 288,30.437570916883885"
+              />
+            </g>
+          </g>
+        </svg>
+      </div>
+      <div
+        class="c9"
+      >
+        <div
+          aria-label="Data chart"
+          class="c10 c11"
+          role="list"
+          tabindex="0"
+        >
+          <div
+            class="c12"
+            role="listitem"
+          >
+            <div
+              aria-label="percent 47.942553860420304."
+              class="c13"
+              role="img"
+            />
+          </div>
+          <div
+            class="c12"
+            role="listitem"
+          >
+            <div
+              aria-label="percent 84.14709848078965."
+              class="c13"
+              role="img"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`DataChart theme overrides 2`] = `
+.c0 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  overflow: auto;
+}
+
+.c2 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  background-color: rgba(237, 237, 237, 1);
+  color: #444444;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  padding: 48px;
+}
+
+.c4 {
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.c5 {
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: bold;
+}
+
+.c1 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  position: fixed;
+  z-index: 20;
+  outline: none;
+  opacity: 0;
+  transform-origin: top left;
+  animation: kPQHBD 0.1s forwards;
+  animation-delay: 0.01s;
+}
+
+.c3 {
+  display: grid;
+  box-sizing: border-box;
+  align-items: center;
+  grid-template-columns: auto auto auto;
+  grid-gap: 6px 6px;
+}
+
+@media only screen and (max-width: 768px) {
+
+}
+
+@media only screen and (max-width: 768px) {
+
+}
+
+@media only screen and (max-width: 768px) {
+
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    padding: 24px;
+  }
+}
+
+@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
+  .c1 {
+    display: flex;
+    align-items: stretch;
+  }
+}
+
+<div
+  class="c0 c1"
+  data-g-portal-id="0"
+  style="left: 0px; width: 0.1px; top: 0px; max-height: 0px;"
+  tabindex="-1"
+>
+  <div
+    class="c2"
+  >
+    <div
+      class="c3"
+    >
+      <svg
+        fill="none"
+        height="12"
+        stroke="#6FFFB0"
+        viewBox="0 0 96 12"
+        width="96"
+      >
+        <path
+          d="M 48 0 L 48 12"
+          stroke-width="96"
+        />
+      </svg>
+      <span
+        class="c4"
+      >
+        percent
+      </span>
+      <span
+        class="c5"
+      >
+        47.942553860420304
+      </span>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`DataChart type 1`] = `
 .c0 {
   font-size: 18px;
