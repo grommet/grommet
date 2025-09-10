@@ -127,6 +127,14 @@ describe('DataSummary', () => {
           <DataFilters>
             <DataSummary />
           </DataFilters>
+          <DataTable
+            data={[
+              { name: 'Alan', percent: 20 },
+              { name: 'Bryan', percent: 30 },
+            ]}
+            columns={[{ property: 'name' }, { property: 'percent' }]}
+            select={['Alan']}
+          />
         </Data>
       </Grommet>,
     );
