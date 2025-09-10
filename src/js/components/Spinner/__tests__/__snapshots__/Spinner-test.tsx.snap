@@ -1003,36 +1003,6 @@ exports[`Spinner spinner color renders over theme settings 1`] = `
   animation: gCPKsF 1s 0s infinite linear;
 }
 
-@media only screen and (max-width: 768px) {
-  .c1 {
-    border: solid 4px #33333310;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .c1 {
-    border-right: solid 4px #1479FB;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .c1 {
-    border-top: solid 4px #1479FB;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .c1 {
-    border-left: solid 4px #1479FB;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .c1 {
-    padding: 6px;
-  }
-}
-
 <div
   class="c0"
 >

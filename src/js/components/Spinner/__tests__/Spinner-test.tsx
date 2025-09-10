@@ -165,6 +165,7 @@ describe('Spinner', () => {
   test('spinner color renders over theme settings', () => {
     const theme: ThemeType = {
       spinner: {
+        responsive: false,
         container: {
           border: [
             { side: 'all', color: 'background-contrast', size: 'medium' },

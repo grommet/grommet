@@ -553,6 +553,66 @@ exports[`Chart cap 1`] = `
 </div>
 `;
 
+exports[`Chart chart uses theme.chart height, thickness, and width 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: block;
+  max-width: 100%;
+  overflow: visible;
+}
+
+<div
+  class="c0"
+>
+  <svg
+    class="c1"
+    height="768"
+    preserveAspectRatio="none"
+    viewBox="-6 -6 780 780"
+    width="768"
+  >
+    0
+    <g
+      fill="none"
+      stroke="#6FFFB0"
+      stroke-linecap="butt"
+      stroke-linejoin="miter"
+      stroke-width="12"
+    >
+      <g
+        fill="none"
+      >
+        <title>
+          sixty
+        </title>
+        <path
+          d="M 768,768 L 768,0"
+        />
+      </g>
+      <g
+        fill="none"
+      >
+        <title>
+          zero
+        </title>
+        <path
+          d="M 0,768 L 0,768"
+        />
+      </g>
+    </g>
+  </svg>
+</div>
+`;
+
 exports[`Chart color 1`] = `
 .c0 {
   font-size: 18px;
