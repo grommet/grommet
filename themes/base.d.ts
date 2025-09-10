@@ -857,51 +857,6 @@ export interface ThemeType {
         huge?: string;
       };
     };
-    dataChart?: {
-      gap?: GapType;
-      granularity?: {
-        y?: {
-          [key: string]: {
-            fine: number;
-            medium: number;
-          };
-        };
-      };
-      detail?: {
-        gap?: GridGapType;
-        pad?: PadType;
-      };
-      halfPad?: {
-        [key: string]: string;
-      };
-      legend?: {
-        margin?: MarginType;
-        gap?: GapType;
-        item?: {
-          gap?: GapType;
-          pad?: PadType;
-        };
-      };
-      orderedSizes?: string[];
-      size?: {
-        height?: string;
-      };
-      thickness?: {
-        veryDense?: string;
-        dense?: string;
-        heavy?: string;
-        moderate?: string;
-        light?: string;
-        sparse?: string;
-      };
-      thicknessPad?: {
-        xlarge?: PadType;
-        large?: PadType;
-        medium?: PadType;
-        small?: PadType;
-        xsmall?: PadType;
-      };
-    };
     digital?: {
       text?: {
         [key in DigitalTexts]: {
@@ -921,6 +876,51 @@ export interface ThemeType {
     };
     drop?: {
       pad?: PadType;
+    };
+  };
+  dataChart?: {
+    gap?: GapType;
+    granularity?: {
+      y?: {
+        [key: string]: {
+          fine: number;
+          medium: number;
+        };
+      };
+    };
+    detail?: {
+      gap?: GridGapType;
+      pad?: PadType;
+    };
+    halfPad?: {
+      [key: string]: string;
+    };
+    legend?: {
+      margin?: MarginType;
+      gap?: GapType;
+      item?: {
+        gap?: GapType;
+        pad?: PadType;
+      };
+    };
+    orderedSizes?: string[];
+    size?: {
+      height?: string;
+    };
+    thickness?: {
+      veryDense?: string;
+      dense?: string;
+      heavy?: string;
+      moderate?: string;
+      light?: string;
+      sparse?: string;
+    };
+    thicknessPad?: {
+      xlarge?: PadType;
+      large?: PadType;
+      medium?: PadType;
+      small?: PadType;
+      xsmall?: PadType;
     };
   };
   dataFilter?: {
