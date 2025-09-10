@@ -223,4 +223,22 @@ describe('CheckBox', () => {
     expect(getByLabelText(`${LABEL}-2`)).toBeTruthy();
     expect(container.firstChild).toMatchSnapshot();
   });
+
+  test('theme gap', () => {
+    const customTheme = {
+      checkBox: {
+        gap: 'large',
+      },
+    };
+
+    const { asFragment } = render(
+      <Grommet theme={customTheme}>
+        <CheckBox label="test label" />
+        <CheckBox label="test label" reverse />
+        <CheckBox label="test label" toggle />
+      </Grommet>,
+    );
+
+    expect(asFragment()).toMatchSnapshot();
+  });
 });

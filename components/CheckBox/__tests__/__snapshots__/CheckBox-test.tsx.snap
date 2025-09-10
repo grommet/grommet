@@ -1879,6 +1879,198 @@ exports[`CheckBox should not have accessibility violations 1`] = `
 </div>
 `;
 
+exports[`CheckBox theme gap 1`] = `
+<DocumentFragment>
+  .c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c2 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin-right: 48px;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.c5 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-items: center;
+  border: solid 2px rgba(0, 0, 0, 0.15);
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  height: 24px;
+  width: 24px;
+  justify-content: center;
+  border-radius: 4px;
+}
+
+.c6 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin-left: 48px;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.c1 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  user-select: none;
+  -webkit-user-select: none;
+  width: fit-content;
+  cursor: pointer;
+}
+
+.c1:hover input:not([disabled])+div,
+.c1:hover input:not([disabled])+span {
+  border-color: #000000;
+}
+
+.c4 {
+  opacity: 0;
+  -moz-appearance: none;
+  width: 0;
+  height: 0;
+  margin: 0;
+  cursor: pointer;
+}
+
+.c4:checked+span>span {
+  left: calc( 48px - 24px );
+  background: #7D4CDB;
+}
+
+.c7 {
+  box-sizing: border-box;
+  vertical-align: middle;
+  display: inline-block;
+  width: 48px;
+  height: 24px;
+  border: 2px solid;
+  border-color: rgba(0, 0, 0, 0.15);
+  border-radius: 24px;
+  background-color: transparent;
+}
+
+.c8 {
+  box-sizing: border-box;
+  position: relative;
+  display: inherit;
+  top: -2px;
+  left: -2px;
+  transition: all 0.3s;
+  width: 24px;
+  height: 24px;
+  background: #d9d9d9;
+  border-radius: 24px;
+}
+
+.c3 {
+  flex-shrink: 0;
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    margin-right: 24px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c5 {
+    border: solid 2px rgba(0, 0, 0, 0.15);
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c6 {
+    margin-left: 24px;
+  }
+}
+
+<div
+    class="c0"
+  >
+    <label
+      class="c1"
+    >
+      <div
+        class="c2 c3"
+      >
+        <input
+          class="c4"
+          type="checkbox"
+        />
+        <div
+          class="c5 "
+        />
+      </div>
+      <span>
+        test label
+      </span>
+    </label>
+    <label
+      class="c1"
+    >
+      <span>
+        test label
+      </span>
+      <div
+        class="c6 c3"
+      >
+        <input
+          class="c4"
+          type="checkbox"
+        />
+        <div
+          class="c5 "
+        />
+      </div>
+    </label>
+    <label
+      class="c1"
+    >
+      <div
+        class="c2 c3"
+      >
+        <input
+          class="c4"
+          type="checkbox"
+        />
+        <span
+          class="c7"
+        >
+          <span
+            class="c8"
+          />
+        </span>
+      </div>
+      <span>
+        test label
+      </span>
+    </label>
+  </div>
+</DocumentFragment>
+`;
+
 exports[`CheckBox toggle renders 1`] = `
 .c0 {
   font-size: 18px;
