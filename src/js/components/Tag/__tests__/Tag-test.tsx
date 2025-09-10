@@ -9,6 +9,9 @@ import 'regenerator-runtime/runtime';
 import '@testing-library/jest-dom';
 
 import { Grommet, Tag } from '../..';
+import { grommet } from '../../../themes/grommet';
+import { deepMerge } from '../../../utils';
+import { ThemeType } from '../../../themes';
 
 describe('Tag', () => {
   test('should have no accessibility violations', async () => {
@@ -236,24 +239,27 @@ describe('Tag', () => {
     );
   });
 
-  test('theme hover background', async () => {
-    const customTheme = {
-      tag: {
-        hover: {
-          background: 'brand',
-        },
+  const customHoverTheme: ThemeType = deepMerge(grommet, {
+    tag: {
+      border: true,
+      hover: {
+        background: 'pink',
+        border: { color: 'green' },
       },
-    };
+    },
+  });
+
+  test('theme border and hover background/border', async () => {
+    const user = userEvent.setup();
 
     const { container } = render(
-      <Grommet theme={customTheme}>
-        <Tag name="Name" value="Value" onClick={() => {}} />
+      <Grommet theme={customHoverTheme}>
+        <Tag value="Hover me" background="background" onClick={() => {}} />
       </Grommet>,
     );
-    // Trigger hover on the first tag
-    const firstTag = screen.getByRole('button', { name: /Name.*Value/i });
-    const user = userEvent.setup();
-    await user.hover(firstTag);
+
+    const tagButton = screen.getByRole('button', { name: /Hover me/i });
+    await user.hover(tagButton);
 
     expect(container.firstChild).toMatchSnapshot();
   });

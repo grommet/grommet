@@ -19,7 +19,7 @@ export const StyledTagButton = styled(Button)`
       props.border &&
       props.onClick &&
       props.theme?.tag?.hover?.border &&
-      borderStyle(props.theme.tag.hover.border, props.theme)}
+      borderStyle(props.theme.tag.hover.border, true, props.theme)}
   }
 `;
 
