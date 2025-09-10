@@ -20,7 +20,7 @@ var StyledTagButton = exports.StyledTagButton = (0, _styledComponents["default"]
   return props.background && props.onClick && ((_props$theme = props.theme) == null || (_props$theme = _props$theme.tag) == null || (_props$theme = _props$theme.hover) == null ? void 0 : _props$theme.background) && (0, _utils.backgroundStyle)(props.theme.tag.hover.background, props.theme);
 }, function (props) {
   var _props$theme2;
-  return props.border && props.onClick && ((_props$theme2 = props.theme) == null || (_props$theme2 = _props$theme2.tag) == null || (_props$theme2 = _props$theme2.hover) == null ? void 0 : _props$theme2.border) && (0, _utils.borderStyle)(props.theme.tag.hover.border, props.theme);
+  return props.border && props.onClick && ((_props$theme2 = props.theme) == null || (_props$theme2 = _props$theme2.tag) == null || (_props$theme2 = _props$theme2.hover) == null ? void 0 : _props$theme2.border) && (0, _utils.borderStyle)(props.theme.tag.hover.border, true, props.theme);
 });
 var StyledRemoveButton = exports.StyledRemoveButton = (0, _styledComponents["default"])(_Button.Button).withConfig({
   displayName: "StyledTag__StyledRemoveButton",

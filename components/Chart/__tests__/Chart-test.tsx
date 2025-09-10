@@ -354,4 +354,22 @@ describe('Chart', () => {
     expect(getByLabelText(`${LABEL}-2`)).toBeTruthy();
     expect(container.firstChild).toMatchSnapshot();
   });
+
+  test('chart uses theme.chart height, thickness, and width', () => {
+    const customTheme = {
+      chart: {
+        height: 'large',
+        thickness: 'small',
+        width: 'large',
+      },
+    };
+
+    const { container } = render(
+      <Grommet theme={customTheme}>
+        <Chart values={VALUES} />
+      </Grommet>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
 });

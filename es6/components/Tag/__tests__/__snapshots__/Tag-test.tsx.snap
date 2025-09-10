@@ -1961,7 +1961,7 @@ exports[`Tag size 1`] = `
 </div>
 `;
 
-exports[`Tag theme hover background 1`] = `
+exports[`Tag theme border and hover background/border 1`] = `
 .c3 {
   display: flex;
   box-sizing: border-box;
@@ -2050,8 +2050,11 @@ exports[`Tag theme hover background 1`] = `
 }
 
 .c0 {
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Fira Sans","Droid Sans","Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
   font-size: 18px;
   line-height: 24px;
+  background-color: #ffffff;
+  color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -2060,8 +2063,15 @@ exports[`Tag theme hover background 1`] = `
 }
 
 .c2 {
+  background-color: #ffffff;
+  color: #444444;
   border: solid 1px rgba(0, 0, 0, 0.33);
   border-radius: 48px;
+}
+
+.c2:hover {
+  background: pink;
+  border: solid 1px green;
 }
 
 @media only screen and (max-width: 768px) {
@@ -2090,6 +2100,12 @@ exports[`Tag theme hover background 1`] = `
   }
 }
 
+@media only screen and (max-width: 768px) {
+  .c2:hover {
+    border: solid 1px green;
+  }
+}
+
 <div
   class="c0"
 >
@@ -2104,20 +2120,9 @@ exports[`Tag theme hover background 1`] = `
         class="c4"
       >
         <span
-          class="c4"
-        >
-           
-          Name
-        </span>
-        <span
-          class="c4"
-        >
-           : 
-        </span>
-        <span
           class="c5"
         >
-          Value
+          Hover me
         </span>
       </span>
     </div>

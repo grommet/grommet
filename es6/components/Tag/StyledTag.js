@@ -15,7 +15,7 @@ export var StyledTagButton = styled(Button).withConfig({
   return props.background && props.onClick && ((_props$theme = props.theme) == null || (_props$theme = _props$theme.tag) == null || (_props$theme = _props$theme.hover) == null ? void 0 : _props$theme.background) && backgroundStyle(props.theme.tag.hover.background, props.theme);
 }, function (props) {
   var _props$theme2;
-  return props.border && props.onClick && ((_props$theme2 = props.theme) == null || (_props$theme2 = _props$theme2.tag) == null || (_props$theme2 = _props$theme2.hover) == null ? void 0 : _props$theme2.border) && borderStyle(props.theme.tag.hover.border, props.theme);
+  return props.border && props.onClick && ((_props$theme2 = props.theme) == null || (_props$theme2 = _props$theme2.tag) == null || (_props$theme2 = _props$theme2.hover) == null ? void 0 : _props$theme2.border) && borderStyle(props.theme.tag.hover.border, true, props.theme);
 });
 export var StyledRemoveButton = styled(Button).withConfig({
   displayName: "StyledTag__StyledRemoveButton",
