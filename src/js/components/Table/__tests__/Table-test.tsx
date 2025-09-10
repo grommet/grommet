@@ -248,3 +248,21 @@ test('Table with ref', () => {
 
   expect(ref.current).not.toBeNull();
 });
+
+test('theme caption margin', () => {
+  const customTheme = {
+    table: {
+      caption: {
+        margin: 'large',
+      },
+    },
+  };
+
+  const { container } = render(
+    <Grommet theme={customTheme}>
+      <Table caption="Test Caption" />
+    </Grommet>,
+  );
+
+  expect(container.firstChild).toMatchSnapshot();
+});
