@@ -828,3 +828,39 @@ exports[`TableRow renders 1`] = `
   </table>
 </div>
 `;
+
+exports[`theme caption margin 1`] = `
+.c2 {
+  margin: 48px;
+}
+
+.c1 {
+  border-spacing: 0;
+  border-collapse: collapse;
+  width: inherit;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+<div
+  class="c0"
+>
+  <table
+    class="c1"
+  >
+    <caption
+      class="c2"
+    >
+      Test Caption
+    </caption>
+  </table>
+</div>
+`;
