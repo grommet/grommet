@@ -498,7 +498,7 @@ export var generate = function generate(baseSpacing, scale) {
     },
     box: {
       border: {
-        size: 'xsmall'
+        offset: 'xsmall'
       },
       responsiveBreakpoint: 'small' // when we switch rows to columns
       // extend: undefined,
