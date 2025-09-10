@@ -832,3 +832,109 @@ exports[`Cards renders a11yTitle and aria-label 1`] = `
   </div>
 </div>
 `;
+
+exports[`Cards theme grid columns and gap 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c2 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.20);
+}
+
+.c3 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  flex: 1 1;
+}
+
+.c1 {
+  display: grid;
+  box-sizing: border-box;
+  margin: 0px;
+  grid-template-columns: repeat( auto-fill,minmax(min(768px, 100%), 1fr) );
+  grid-gap: 48px 48px;
+  padding: 0px;
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    border-radius: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c1 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c1 {
+    padding: 0px;
+  }
+}
+
+<div
+  class="c0"
+>
+  <ul
+    class="c1"
+  >
+    <li
+      class="c2"
+    >
+      <div
+        class="c3"
+      >
+        one
+      </div>
+    </li>
+    <li
+      class="c2"
+    >
+      <div
+        class="c3"
+      >
+        two
+      </div>
+    </li>
+    <li
+      class="c2"
+    >
+      <div
+        class="c3"
+      >
+        three
+      </div>
+    </li>
+    <li
+      class="c2"
+    >
+      <div
+        class="c3"
+      >
+        four
+      </div>
+    </li>
+  </ul>
+</div>
+`;

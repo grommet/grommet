@@ -4,6 +4,7 @@ import 'jest-styled-components';
 
 import { Grommet } from '../../Grommet';
 import { Paragraph } from '..';
+import { Box } from '../../Box';
 
 test('Paragraph renders', () => {
   const { container } = render(
@@ -88,4 +89,31 @@ test('Paragraph dangerouslySetInnerHTML renders', () => {
   );
 
   expect(container.firstChild).toMatchSnapshot();
+});
+
+test('theme skeleton gap', () => {
+  const customTheme = {
+    paragraph: {
+      skeleton: {
+        gap: 'large',
+      },
+    },
+  };
+
+  const { asFragment } = render(
+    <Grommet theme={customTheme}>
+      <Box skeleton>
+        <Paragraph>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        </Paragraph>
+        <Paragraph size="small">Short paragraph text.</Paragraph>
+        <Paragraph size="large">
+          Longer paragraph with more content to show skeleton gap effect.
+        </Paragraph>
+      </Box>
+    </Grommet>,
+  );
+
+  expect(asFragment()).toMatchSnapshot();
 });

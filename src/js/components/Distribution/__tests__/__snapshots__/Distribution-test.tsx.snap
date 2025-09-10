@@ -315,6 +315,151 @@ exports[`Distribution renders 1`] = `
 
 exports[`Distribution renders outside grommet wrapper 1`] = `null`;
 
+exports[`Distribution theme gap 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: row;
+  flex: 1 1;
+  overflow: hidden;
+}
+
+.c2 {
+  display: flex;
+  box-sizing: border-box;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  flex: 0 1;
+  flex-basis: 50%;
+  overflow: hidden;
+}
+
+.c5 {
+  display: flex;
+  box-sizing: border-box;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: row;
+  flex: 0 1;
+  flex-basis: 50%;
+  overflow: hidden;
+}
+
+.c6 {
+  display: flex;
+  box-sizing: border-box;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  flex: 0 1;
+  flex-basis: 66.66%;
+  overflow: hidden;
+}
+
+.c7 {
+  display: flex;
+  box-sizing: border-box;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  flex: 0 1;
+  flex-basis: 33.33%;
+  overflow: hidden;
+}
+
+.c3 {
+  flex: 0 0 auto;
+  align-self: stretch;
+  width: 48px;
+}
+
+.c4 {
+  flex: 0 0 auto;
+  align-self: stretch;
+  height: 48px;
+}
+
+@media only screen and (max-width: 768px) {
+  .c3 {
+    width: 24px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c4 {
+    height: 24px;
+  }
+}
+
+<div
+  class="c0"
+>
+  <div
+    class="c1"
+  >
+    <div
+      class="c2"
+    >
+      <span>
+        20
+      </span>
+    </div>
+    <div
+      class="c3"
+    />
+    <div
+      class="c2"
+    >
+      <div
+        class="c2"
+      >
+        <span>
+          10
+        </span>
+      </div>
+      <div
+        class="c4"
+      />
+      <div
+        class="c5"
+      >
+        <div
+          class="c6"
+        >
+          <span>
+            5
+          </span>
+        </div>
+        <div
+          class="c3"
+        />
+        <div
+          class="c7"
+        >
+          <span>
+            3
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Distribution undefined value 1`] = `
 .c0 {
   font-size: 18px;

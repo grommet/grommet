@@ -387,6 +387,31 @@ describe('List', () => {
     expect(styles.fontWeight).toBe('500');
     expect(asFragment()).toMatchSnapshot();
   });
+
+  test('theme item gap', () => {
+    const customTheme = {
+      list: {
+        item: {
+          gap: 'large',
+        },
+      },
+    };
+
+    const { asFragment } = render(
+      <Grommet theme={customTheme}>
+        <List
+          data={[
+            { a: 'one', b: 1 },
+            { a: 'two', b: 2 },
+          ]}
+          primaryKey="a"
+          secondaryKey="b"
+        />
+      </Grommet>,
+    );
+
+    expect(asFragment()).toMatchSnapshot();
+  });
 });
 
 describe('List events', () => {

@@ -2608,6 +2608,90 @@ exports[`Box row and column gap 1`] = `
 </DocumentFragment>
 `;
 
+exports[`Box theme border size 1`] = `
+<DocumentFragment>
+  .c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: row;
+}
+
+.c3 {
+  flex: 0 0 auto;
+  align-self: stretch;
+  width: 12px;
+  position: relative;
+}
+
+.c3:after {
+  content: '';
+  position: absolute;
+  height: 100%;
+  left: 4px;
+  border-left: solid 1px rgba(0, 0, 0, 0.33);
+}
+
+.c2 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+@media only screen and (max-width: 768px) {
+  .c3 {
+    width: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c3:after {
+    border-left: solid 1px rgba(0, 0, 0, 0.33);
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c3:after {
+    content: '';
+    left: 1px;
+  }
+}
+
+<div
+    class="c0"
+  >
+    <div
+      class="c1"
+    >
+      <span
+        class="c2"
+      >
+        Default
+      </span>
+      <div
+        class="c3"
+      />
+      <span
+        class="c2"
+      >
+        Between Size
+      </span>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
 exports[`Box width 1`] = `
 .c0 {
   font-size: 18px;
