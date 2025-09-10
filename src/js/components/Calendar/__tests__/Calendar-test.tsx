@@ -804,6 +804,30 @@ describe('Calendar', () => {
     );
     expect(asFragment()).toMatchSnapshot();
   });
+
+  test('theme title container pad', () => {
+    const customTheme = {
+      calendar: {
+        medium: {
+          title: {
+            container: {
+              pad: {
+                horizontal: 'large',
+              },
+            },
+          },
+        },
+      },
+    };
+
+    const { container } = render(
+      <Grommet theme={customTheme}>
+        <Calendar date={DATE} size="medium" animate={false} />
+      </Grommet>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
 });
 
 describe('Calendar Keyboard events', () => {

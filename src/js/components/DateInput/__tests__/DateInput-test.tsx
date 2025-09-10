@@ -1226,4 +1226,26 @@ describe('DateInput', () => {
 
     expect(asFragment()).toMatchSnapshot();
   });
+
+  test('theme button margin and icon size', () => {
+    const customTheme = {
+      dateInput: {
+        button: {
+          margin: 'large',
+        },
+        icon: {
+          size: 'large',
+        },
+      },
+    };
+
+    const { asFragment } = render(
+      <Grommet theme={customTheme}>
+        <DateInput format="mm/dd/yyyy" />
+        <DateInput format="mm/dd/yyyy" icon={<CalendarIcon />} />
+      </Grommet>,
+    );
+
+    expect(asFragment()).toMatchSnapshot();
+  });
 });

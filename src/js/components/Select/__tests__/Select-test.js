@@ -1987,6 +1987,36 @@ describe('Select', () => {
     expect(styles.padding).toBe('24px');
   });
 
+  test('theme search pad', () => {
+    const customTheme = {
+      select: {
+        search: {
+          pad: 'large',
+        },
+      },
+    };
+
+    const { getByPlaceholderText } = render(
+      <Grommet theme={customTheme}>
+        <Select
+          id="test-select"
+          placeholder="test select"
+          options={['one', 'two']}
+          onSearch={() => {}}
+        />
+      </Grommet>,
+    );
+
+    fireEvent.click(getByPlaceholderText('test select'));
+
+    // advance timers so select can open
+    act(() => {
+      jest.advanceTimersByTime(200);
+    });
+
+    expectPortal('test-select__drop').toMatchSnapshot();
+  });
+
   window.scrollTo.mockRestore();
   window.HTMLElement.prototype.scrollIntoView.mockRestore();
 });

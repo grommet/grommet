@@ -956,4 +956,28 @@ describe('Button kind', () => {
 
     expect(asFragment()).toMatchSnapshot();
   });
+
+  test('theme busy gap', () => {
+    const customTheme = {
+      button: {
+        default: {},
+        busy: {
+          gap: 'large',
+        },
+      },
+    };
+
+    const { container, getByText } = render(
+      <Grommet theme={customTheme}>
+        <Button label="Loading" busy />
+        <Button label="Success" success />
+      </Grommet>,
+    );
+
+    // Verify the buttons render with busy states
+    expect(getByText('Loading')).toBeTruthy();
+    expect(getByText('Success')).toBeTruthy();
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
 });

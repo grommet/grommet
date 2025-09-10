@@ -369,4 +369,27 @@ describe('Tabs', () => {
 
     expect(asFragment()).toMatchSnapshot();
   });
+
+  test('theme tab gap', () => {
+    const customTheme = {
+      tab: {
+        gap: 'large',
+      },
+    };
+
+    const { asFragment } = render(
+      <Grommet theme={customTheme}>
+        <Tabs>
+          <Tab title="Tab 1" icon={<svg />}>
+            Tab body 1
+          </Tab>
+          <Tab title="Tab 2" icon={<svg />}>
+            Tab body 2
+          </Tab>
+        </Tabs>
+      </Grommet>,
+    );
+
+    expect(asFragment()).toMatchSnapshot();
+  });
 });
