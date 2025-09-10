@@ -2855,6 +2855,415 @@ exports[`FileInput pad 1`] = `
 </div>
 `;
 
+exports[`FileInput should use theme icons 1`] = `
+.c9 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #666666;
+  stroke: #666666;
+}
+
+.c9 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c9 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c9 *[stroke*='#'],
+.c9 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c9 *[fill-rule],
+.c9 *[FILL-RULE],
+.c9 *[fill*='#'],
+.c9 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin-bottom: 12px;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+}
+
+.c3 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  border: dashed 2px rgba(0, 0, 0, 0.33);
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+}
+
+.c4 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-items: stretch;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  flex: 0 0 auto;
+  justify-content: center;
+}
+
+.c7 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.c8 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin: 12px;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: row;
+}
+
+.c12 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: row;
+  flex: 0 0 auto;
+}
+
+.c10 {
+  flex: 0 0 auto;
+  align-self: stretch;
+  width: 6px;
+}
+
+.c14 {
+  box-sizing: border-box;
+  display: inline-flex;
+  font-size: inherit;
+  line-height: inherit;
+  color: #7D4CDB;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  margin: 12px;
+}
+
+.c14:hover {
+  text-decoration: underline;
+}
+
+.c2 {
+  margin-left: 12px;
+  margin-right: 12px;
+  margin-top: 6px;
+  margin-bottom: 6px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c11 {
+  font-size: 18px;
+  line-height: 24px;
+  white-space: nowrap;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-weight: 600;
+}
+
+.c13 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+  line-height: 0;
+  padding: 12px;
+}
+
+.c13:hover {
+  background-color: rgba(221, 221, 221, 0.4);
+  color: #000000;
+}
+
+.c13:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c13:focus >circle,
+.c13:focus >ellipse,
+.c13:focus >line,
+.c13:focus >path,
+.c13:focus >polygon,
+.c13:focus >polyline,
+.c13:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c13:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c13:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c13:focus:not(:focus-visible) >circle,
+.c13:focus:not(:focus-visible) >ellipse,
+.c13:focus:not(:focus-visible) >line,
+.c13:focus:not(:focus-visible) >path,
+.c13:focus:not(:focus-visible) >polygon,
+.c13:focus:not(:focus-visible) >polyline,
+.c13:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c13:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
+}
+
+.c6 {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+  font-size: inherit;
+  font-family: inherit;
+  border: none;
+  -webkit-appearance: none;
+  background: transparent;
+  color: inherit;
+  width: 100%;
+  padding: 11px;
+  font-weight: 600;
+  margin: 0;
+  border: 1px solid rgba(0, 0, 0, 0.33);
+  border-radius: 4px;
+  font-size: 0;
+  opacity: 0;
+  border: none;
+  cursor: pointer;
+  width: calc(100% - 24px);
+  right: 24px;
+}
+
+.c6::-webkit-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c6::-moz-placeholder {
+  color: #AAAAAA;
+}
+
+.c6:-ms-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c6 ::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+.c6::-moz-focus-inner {
+  border: none;
+  outline: none;
+}
+
+.c6:-moz-placeholder,
+.c6::-moz-placeholder {
+  opacity: 1;
+}
+
+.c6::-moz-focus-inner {
+  border: none;
+  outline: none;
+}
+
+.c6::-webkit-file-upload-button {
+  cursor: pointer;
+}
+
+.c5 {
+  cursor: pointer;
+  position: relative;
+  outline: none;
+  box-shadow: none;
+}
+
+.c5 >circle,
+.c5 >ellipse,
+.c5 >line,
+.c5 >path,
+.c5 >polygon,
+.c5 >polyline,
+.c5 >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5 ::-moz-focus-inner {
+  border: 0;
+}
+
+@media only screen and (max-width: 768px) {
+  .c1 {
+    margin-bottom: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c3 {
+    border: dashed 2px rgba(0, 0, 0, 0.33);
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c8 {
+    margin: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c10 {
+    width: 3px;
+  }
+}
+
+<div
+  class="c0"
+>
+  <form>
+    <div
+      class="c1 "
+    >
+      <label
+        class="c2"
+        for="fileInput"
+        id="grommet-fileInput__label"
+      >
+        File input with max size
+      </label>
+      <div
+        class="c3 "
+      >
+        <div
+          class="c4 c5"
+        >
+          <input
+            aria-invalid="true"
+            class="c6"
+            id="fileInput"
+            name="fileInput"
+            type="file"
+          />
+          <div
+            class="c7"
+          >
+            <div
+              class="c8"
+            >
+              <svg
+                aria-label="Error, file-size-error.csv exceeds 200.0 B limit."
+                class="c9"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M12 17v2m0-9v6m0-13L2 22h20L12 3z"
+                  fill="none"
+                  stroke="#000"
+                  stroke-width="2"
+                />
+              </svg>
+              <div
+                class="c10"
+              />
+              <span
+                class="c11 "
+              >
+                file-size-error.csv
+              </span>
+            </div>
+            <div
+              class="c12"
+            >
+              <button
+                aria-label="remove file-size-error.csv"
+                class="c13"
+                type="button"
+              >
+                <svg
+                  aria-label="FormClose"
+                  class="c9"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="m7 7 10 10M7 17 17 7"
+                    fill="none"
+                    stroke="#000"
+                    stroke-width="2"
+                  />
+                </svg>
+              </button>
+              <a
+                class="c14"
+                tabindex="-1"
+              >
+                browse
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+`;
+
 exports[`FileInput theme anchor margin and label gap 1`] = `
 <DocumentFragment>
   .c0 {

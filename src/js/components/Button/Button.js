@@ -469,7 +469,11 @@ const Button = forwardRef(
               alignContent="center"
               justify="center"
             >
-              <GrowCheckmark color={animationColor} aria-hidden />
+              <GrowCheckmark
+                color={animationColor}
+                aria-hidden
+                as={theme.button?.busy?.icons?.success}
+              />
             </Box>
           )}
           <StyledBusyContents animating={busy || success}>

@@ -5,8 +5,9 @@ import { fireEvent, render, waitFor } from '@testing-library/react';
 import { getByText, screen } from '@testing-library/dom';
 import { axe } from 'jest-axe';
 import 'jest-axe/extend-expect';
-import { Search } from 'grommet-icons';
+import { Add, Search } from 'grommet-icons';
 import userEvent from '@testing-library/user-event';
+import '@testing-library/jest-dom';
 
 import { createPortal, expectPortal } from '../../../utils/portal';
 
@@ -731,5 +732,15 @@ describe('TextInput', () => {
     expect(clipboardText).toBe('test');
 
     expect(asFragment()).toMatchSnapshot();
+  });
+
+  test('read only copy theme icon', async () => {
+    render(
+      <Grommet theme={{ textInput: { icons: { copy: Add } } }}>
+        <TextInput value="test" readOnly readOnlyCopy aria-readonly />
+      </Grommet>,
+    );
+
+    expect(screen.getByLabelText('Add')).toBeInTheDocument();
   });
 });
