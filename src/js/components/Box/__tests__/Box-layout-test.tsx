@@ -4,6 +4,7 @@ import 'jest-styled-components';
 
 import { Grommet } from '../../Grommet';
 import { Box, BoxProps } from '..';
+import { Text } from '../../Text';
 import { ResponsiveContext } from '../../..';
 
 describe('Box', () => {
@@ -467,16 +468,16 @@ describe('Box', () => {
     const customTheme = {
       box: {
         border: {
-          size: 'medium',
+          offset: 'medium',
         },
       },
     };
 
     const { asFragment } = render(
       <Grommet theme={customTheme}>
-        <Box border="between" gap="small">
-          <Box>Test 1</Box>
-          <Box>Test 2</Box>
+        <Box direction="row" gap="small" border={{ side: 'between' }}>
+          <Text>Default</Text>
+          <Text>Between Size</Text>
         </Box>
       </Grommet>,
     );
