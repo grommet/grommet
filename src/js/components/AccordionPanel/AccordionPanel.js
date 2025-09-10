@@ -1,5 +1,6 @@
 import React, { forwardRef, useContext, useMemo, useState } from 'react';
 
+import styled from 'styled-components';
 import { normalizeColor, parseMetricToNum, useId } from '../../utils';
 import { Box } from '../Box';
 import { Button } from '../Button';
@@ -9,6 +10,11 @@ import { Heading } from '../Heading';
 import { AccordionContext } from '../Accordion/AccordionContext';
 import { AccordionPanelPropTypes } from './propTypes';
 import { useThemeValue } from '../../utils/useThemeValue';
+
+const HiddenBox = styled(Box)`
+  max-height: ${({ hide }) => (hide ? '0px' : 'initial')};
+  overflow: ${({ hide }) => (hide ? 'hidden' : 'visible')};
+`;
 
 const AccordionPanel = forwardRef(
   (
@@ -28,7 +34,7 @@ const AccordionPanel = forwardRef(
   ) => {
     const panelButtonId = useId();
     const { theme } = useThemeValue();
-    const { active, animate, level, onPanelChange } =
+    const { active, animate, level, onPanelChange, unmount } =
       useContext(AccordionContext);
     const [hover, setHover] = useState(undefined);
     const [focus, setFocus] = useState();
@@ -162,11 +168,18 @@ const AccordionPanel = forwardRef(
           border={contentBorder}
           aria-labelledby={panelButtonId}
         >
-          {animate ? (
-            <Collapsible open={active}>{children}</Collapsible>
-          ) : (
-            active && children
+          {animate && !unmount && (
+            <Collapsible open={active} unmount={unmount}>
+              {children}
+            </Collapsible>
           )}
+          {animate && unmount && (
+            <Collapsible open={active}>{children}</Collapsible>
+          )}
+          {!animate && !unmount && (
+            <HiddenBox hide={!active}>{children}</HiddenBox>
+          )}
+          {!animate && unmount && active && children}
         </Box>
       </Box>
     );

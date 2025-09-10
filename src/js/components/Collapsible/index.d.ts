@@ -3,6 +3,7 @@ import * as React from 'react';
 export interface CollapsibleProps {
   open?: boolean;
   direction?: 'horizontal' | 'vertical';
+  unmount?: boolean;
 }
 
 type divProps = React.DetailedHTMLProps<
