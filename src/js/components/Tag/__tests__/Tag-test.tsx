@@ -244,7 +244,7 @@ describe('Tag', () => {
       border: true,
       hover: {
         background: 'pink',
-        border: 'green',
+        border: { color: 'green' },
       },
     },
   });
@@ -254,7 +254,7 @@ describe('Tag', () => {
 
     const { container } = render(
       <Grommet theme={customHoverTheme}>
-        <Tag value="Hover me" onClick={() => {}} />
+        <Tag value="Hover me" background="background" onClick={() => {}} />
       </Grommet>,
     );
 
