@@ -260,4 +260,26 @@ describe('RadioButtonGroup', () => {
       }),
     );
   });
+
+  test('theme container gap', () => {
+    const customTheme = {
+      radioButtonGroup: {
+        container: {
+          gap: 'large',
+        },
+      },
+    };
+
+    const { container } = render(
+      <Grommet theme={customTheme}>
+        <RadioButtonGroup
+          name="test"
+          options={['one', 'two', 'three']}
+          value="one"
+        />
+      </Grommet>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
 });

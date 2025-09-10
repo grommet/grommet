@@ -4316,8 +4316,8 @@ exports[`DataTableColumns theme tabs pad, selectColumns pad and gap, orderColumn
   min-width: 0;
   min-height: 0;
   flex-direction: column;
-  padding-top: 12px;
-  padding-bottom: 12px;
+  padding-top: 48px;
+  padding-bottom: 48px;
 }
 
 .c9 {
@@ -4350,7 +4350,7 @@ exports[`DataTableColumns theme tabs pad, selectColumns pad and gap, orderColumn
 .c6 {
   flex: 0 0 auto;
   align-self: stretch;
-  height: 6px;
+  height: 48px;
 }
 
 .c14 {
@@ -4551,13 +4551,9 @@ exports[`DataTableColumns theme tabs pad, selectColumns pad and gap, orderColumn
 }
 
 @media only screen and (max-width: 768px) {
-
-}
-
-@media only screen and (max-width: 768px) {
   .c1 {
-    padding-top: 6px;
-    padding-bottom: 6px;
+    padding-top: 24px;
+    padding-bottom: 24px;
   }
 }
 
@@ -4575,7 +4571,7 @@ exports[`DataTableColumns theme tabs pad, selectColumns pad and gap, orderColumn
 
 @media only screen and (max-width: 768px) {
   .c6 {
-    height: 3px;
+    height: 24px;
   }
 }
 
@@ -4628,9 +4624,9 @@ exports[`DataTableColumns theme tabs pad, selectColumns pad and gap, orderColumn
       class="c6"
     />
     <div
-      aria-labelledby="test-data--select-columns-tab"
+      aria-labelledby="data--select-columns-tab"
       class="c7 StyledCheckBoxGroup-sc-2nhc5d-0"
-      id="test-data--select-columns"
+      id="data--select-columns"
       role="group"
     >
       <label
@@ -4693,7 +4689,40 @@ exports[`DataTableColumns theme tabs pad, selectColumns pad and gap, orderColumn
           </div>
         </div>
         <span>
-          size
+          age
+        </span>
+      </label>
+      <div
+        class="c14"
+      />
+      <label
+        class="c8"
+      >
+        <div
+          class="c9 c10"
+        >
+          <input
+            checked=""
+            class="c11"
+            type="checkbox"
+          />
+          <div
+            class="c12 "
+          >
+            <svg
+              class="c13"
+              preserveAspectRatio="xMidYMid meet"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M6,11.3 L10.3,16 L18,6.2"
+                fill="none"
+              />
+            </svg>
+          </div>
+        </div>
+        <span>
+          location
         </span>
       </label>
     </div>
@@ -4708,7 +4737,7 @@ exports[`DataTableColumns theme tabs pad, selectColumns pad and gap, orderColumn
   role="tabpanel"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 cafBSw"
+    class="StyledBox-sc-13pk1d4-0 hqinuj"
   >
     .c1 {
   display: flex;
@@ -4989,10 +5018,6 @@ exports[`DataTableColumns theme tabs pad, selectColumns pad and gap, orderColumn
 }
 
 @media only screen and (max-width: 768px) {
-
-}
-
-@media only screen and (max-width: 768px) {
   .c1 {
     border-top: solid 1px rgba(0, 0, 0, 0.33);
     border-bottom: solid 1px rgba(0, 0, 0, 0.33);
@@ -5036,9 +5061,9 @@ exports[`DataTableColumns theme tabs pad, selectColumns pad and gap, orderColumn
 }
 
 <ul
-      aria-labelledby="test-data--order-columns-tab"
+      aria-labelledby="data--order-columns-tab"
       class="c0"
-      id="test-data--order-columns"
+      id="data--order-columns"
       role="list"
     >
       <li
@@ -5122,7 +5147,7 @@ exports[`DataTableColumns theme tabs pad, selectColumns pad and gap, orderColumn
         <div
           class="c5"
         >
-          size
+          age
         </div>
         <div
           class="c4"
@@ -5131,9 +5156,9 @@ exports[`DataTableColumns theme tabs pad, selectColumns pad and gap, orderColumn
           class="c6"
         >
           <button
-            aria-label="2 size move up"
+            aria-label="2 age move up"
             class="c9"
-            id="sizeMoveUp"
+            id="ageMoveUp"
             tabindex="-1"
             type="button"
           >
@@ -5151,10 +5176,75 @@ exports[`DataTableColumns theme tabs pad, selectColumns pad and gap, orderColumn
             </svg>
           </button>
           <button
-            aria-label="2 size move down"
+            aria-label="2 age move down"
+            class="c9"
+            id="ageMoveDown"
+            tabindex="-1"
+            type="button"
+          >
+            <svg
+              aria-label="FormDown"
+              class="c8"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="m18 9-6 6-6-6"
+                fill="none"
+                stroke="#000"
+                stroke-width="2"
+              />
+            </svg>
+          </button>
+        </div>
+      </li>
+      <li
+        class="c10 c2"
+        draggable="true"
+      >
+        <span
+          class="c3"
+        >
+          3
+        </span>
+        <div
+          class="c4"
+        />
+        <div
+          class="c5"
+        >
+          location
+        </div>
+        <div
+          class="c4"
+        />
+        <div
+          class="c6"
+        >
+          <button
+            aria-label="3 location move up"
+            class="c9"
+            id="locationMoveUp"
+            tabindex="-1"
+            type="button"
+          >
+            <svg
+              aria-label="FormUp"
+              class="c8"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="m18 15-6-6-6 6"
+                fill="none"
+                stroke="#000"
+                stroke-width="2"
+              />
+            </svg>
+          </button>
+          <button
+            aria-label="3 location move down"
             class="c7"
             disabled=""
-            id="sizeMoveDown"
+            id="locationMoveDown"
             tabindex="-1"
             type="button"
           >

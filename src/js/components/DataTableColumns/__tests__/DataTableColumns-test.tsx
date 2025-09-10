@@ -316,61 +316,69 @@ describe('DataTableColumns', () => {
     );
   });
 
-  test('theme tabs pad, selectColumns pad and gap, orderColumns pad', () => {
-    const theme = {
+  test('theme tabs pad, selectColumns pad and gap, orderColumns pad', async () => {
+    const customTheme = {
       dataTableColumns: {
         tabs: {
-          pad: 'small',
+          pad: 'large',
         },
         selectColumns: {
           pad: {
-            vertical: 'small',
+            vertical: 'large',
           },
-          gap: 'xsmall',
+          gap: 'large',
         },
         orderColumns: {
           pad: {
-            top: 'small',
+            top: 'large',
           },
         },
       },
     };
 
-    const { getByRole } = render(
-      <Grommet theme={theme}>
-        <Data id="test-data" data={data}>
-          <DataFilters>
-            <DataTableColumns drop options={['name', 'size']} />
-          </DataFilters>
-          <DataTable
-            columns={[
-              { property: 'name', header: 'Name' },
-              { property: 'size', header: 'Size' },
-            ]}
-          />
+    const data = [
+      { name: 'Alan', age: 25, location: 'New York' },
+      { name: 'Bryan', age: 30, location: 'San Francisco' },
+    ];
+
+    const columns = [
+      { property: 'name', header: 'Name' },
+      { property: 'age', header: 'Age' },
+      { property: 'location', header: 'Location' },
+    ];
+
+    render(
+      <Grommet theme={customTheme}>
+        <Data data={data}>
+          <DataTableColumns drop options={['name', 'age', 'location']} />
+          <DataTable columns={columns} />
         </Data>
       </Grommet>,
     );
 
-    // open the columns control
-    fireEvent.click(getByRole('button', { name: 'Open column selector' }));
+    // Click to open DataTableColumns drop
+    const columnsButton = screen.getByRole('button', {
+      name: /Open column selector/i,
+    });
+    fireEvent.click(columnsButton);
 
-    // let the drop open
+    // advance timers so drop can open
     act(() => jest.advanceTimersByTime(200));
 
-    // snapshot the Select columns tab content (theme.selectColumns pad + gap)
+    // Take snapshot of Select columns view
     const selectTabPanel = screen.getByRole('tabpanel', {
       name: 'Select columns Tab Contents',
     });
     expect(selectTabPanel).toMatchSnapshot();
 
-    // switch to Order columns tab (theme.orderColumns pad)
+    // Click on "Order columns" tab
     fireEvent.click(
       screen.getByRole('tab', {
         name: 'Reorder the visible columns in the data table',
       }),
     );
 
+    // Take snapshot of Order columns view
     const orderTabPanel = screen.getByRole('tabpanel', {
       name: 'Order columns Tab Contents',
     });
