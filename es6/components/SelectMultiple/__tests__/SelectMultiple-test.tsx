@@ -680,4 +680,57 @@ describe('SelectMultiple with portal', () => {
       'grommet-size__input__label size',
     );
   });
+
+  test('theme selectMultiple test', () => {
+    const customTheme = {
+      selectMultiple: {
+        option: {
+          pad: 'large',
+        },
+        search: {
+          pad: 'large',
+        },
+        showMore: {
+          pad: {
+            horizontal: 'large',
+            bottom: 'large',
+            top: 'medium',
+          },
+        },
+        summary: {
+          pad: 'large',
+          gap: 'large',
+        },
+      },
+    };
+
+    const { asFragment, getByRole } = render(
+      <Grommet theme={customTheme}>
+        <SelectMultiple
+          id="test-select-multiple-theme"
+          options={[
+            'one',
+            'two',
+            'three',
+            'four',
+            'five',
+            'six',
+            'seven',
+            'eight',
+            'nine',
+            'ten',
+            'eleven',
+            'twelve',
+          ]}
+          onSearch={() => {}}
+          showSelectedInline
+          value={['one', 'two', 'three', 'four', 'five', 'six']}
+        />
+      </Grommet>,
+    );
+
+    expect(asFragment()).toMatchSnapshot();
+    fireEvent.click(getByRole('button', { name: /Open Drop/i }));
+    expectPortal('test-select-multiple-theme__drop').toMatchSnapshot();
+  });
 });

@@ -110,4 +110,35 @@ describe('DataSummary', () => {
     expect(screen.getByText('1 SELECTED!')).toBeTruthy();
     expect(screen.getByText('2 items total')).toBeTruthy();
   });
+
+  test('theme separator margin and dataSummary margin', () => {
+    const customTheme = {
+      dataSummary: {
+        margin: { vertical: 'large' },
+        separator: {
+          margin: { horizontal: 'large' },
+        },
+      },
+    };
+
+    const { asFragment } = render(
+      <Grommet theme={customTheme}>
+        <Data data={data}>
+          <DataFilters>
+            <DataSummary />
+          </DataFilters>
+          <DataTable
+            data={[
+              { name: 'Alan', percent: 20 },
+              { name: 'Bryan', percent: 30 },
+            ]}
+            columns={[{ property: 'name' }, { property: 'percent' }]}
+            select={['Alan']}
+          />
+        </Data>
+      </Grommet>,
+    );
+
+    expect(asFragment()).toMatchSnapshot();
+  });
 });
