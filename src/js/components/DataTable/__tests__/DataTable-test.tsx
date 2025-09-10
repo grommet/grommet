@@ -11,6 +11,7 @@ import { Pagination } from '../../Pagination';
 import { Text } from '../../Text';
 import { DataTable, Sections, SortType } from '..';
 import { BackgroundType, BorderType } from '../../../utils';
+import { Add, Next, Previous } from 'grommet-icons';
 
 interface TestDataItem {
   a: string;
@@ -425,15 +426,16 @@ describe('DataTable', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
-  test('search', () => {
+  test('should use theme icons', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={{ dataTable: { icons: { search: Add } } }}>
         <DataTable
           columns={[{ property: 'a', header: 'A', search: true }]}
           data={[{ a: 'Alpha' }, { a: 'beta' }, { a: '[]' }]}
         />
       </Grommet>,
     );
+    expect(screen.getByLabelText('Add')).toBeInTheDocument();
     expect(container.firstChild).toMatchSnapshot();
     fireEvent.click(
       container.querySelector(
@@ -503,6 +505,34 @@ describe('DataTable', () => {
       </Grommet>,
     );
     expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('should render resizeable theme icons', () => {
+    window.scrollTo = jest.fn();
+    render(
+      <Grommet
+        theme={{
+          dataTable: {
+            icons: { resizeIncrease: Previous, resizeDecrease: Next },
+          },
+        }}
+      >
+        <DataTable
+          columns={[
+            { property: 'a', header: 'A' },
+            { property: 'b', header: 'B' },
+          ]}
+          data={[
+            { a: 'one', b: 1 },
+            { a: 'two', b: 2 },
+          ]}
+          resizeable
+        />
+      </Grommet>,
+    );
+    fireEvent.click(screen.getByRole('separator', { name: 'Resize A column' }));
+    expect(screen.getByLabelText('Previous')).toBeInTheDocument();
+    expect(screen.getByLabelText('Next')).toBeInTheDocument();
   });
 
   test('aggregate', () => {

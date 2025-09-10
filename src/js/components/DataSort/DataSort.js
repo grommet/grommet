@@ -103,6 +103,7 @@ export const DataSort = ({ drop, options, ...rest }) => {
   const { format } = useContext(MessageContext);
   const { theme } = useThemeValue();
   const [showContent, setShowContent] = useState();
+  const ControlIcon = theme.dataSort?.icons?.control || Descend;
 
   let content = <Content options={options} />;
 
@@ -126,7 +127,7 @@ export const DataSort = ({ drop, options, ...rest }) => {
       aria-label={tip}
       tip={tip}
       kind={theme.data.button?.kind}
-      icon={<Descend />}
+      icon={<ControlIcon />}
       dropProps={dropProps}
       dropContent={<Box pad={theme.data?.drop?.pad}>{content}</Box>}
       open={showContent}

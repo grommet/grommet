@@ -1,25 +1,137 @@
 // Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`CheckBoxGroup custom theme 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin-top: 12px;
+  margin-bottom: 12px;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+}
+
+.c3 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin-right: 12px;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.c6 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-items: center;
+  border: solid 2px rgba(0, 0, 0, 0.15);
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  height: 24px;
+  width: 24px;
+  justify-content: center;
+  border-radius: 4px;
+}
+
+.c7 {
+  flex: 0 0 auto;
+  align-self: stretch;
+  height: 48px;
+}
+
+.c2 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  user-select: none;
+  -webkit-user-select: none;
+  width: fit-content;
+  cursor: pointer;
+}
+
+.c2:hover input:not([disabled])+div,
+.c2:hover input:not([disabled])+span {
+  border-color: #000000;
+}
+
+.c5 {
+  opacity: 0;
+  -moz-appearance: none;
+  width: 0;
+  height: 0;
+  margin: 0;
+  cursor: pointer;
+}
+
+.c5:checked+span>span {
+  left: calc( 48px - 24px );
+  background: #7D4CDB;
+}
+
+.c4 {
+  flex-shrink: 0;
+}
+
+@media only screen and (max-width: 768px) {
+  .c1 {
+    margin-top: 6px;
+    margin-bottom: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c3 {
+    margin-right: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c6 {
+    border: solid 2px rgba(0, 0, 0, 0.15);
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c7 {
+    height: 24px;
+  }
+}
+
 <div
-  class="StyledGrommet-sc-19lkkz7-0 kiEDjE"
+  class="c0"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 fLpEDL StyledCheckBoxGroup-sc-2nhc5d-0"
+    class="c1 StyledCheckBoxGroup-sc-2nhc5d-0"
     role="group"
   >
     <label
-      class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 fWaykw"
+      class="c2"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 jDgzUY StyledCheckBox-sc-1dbk5ju-6 gAgPcH"
+        class="c3 c4"
       >
         <input
-          class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 exHNbK"
+          class="c5"
           type="checkbox"
         />
         <div
-          class="StyledBox-sc-13pk1d4-0 ldnIiP StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 cBFYon"
+          class="c6 "
         />
       </div>
       <span>
@@ -27,20 +139,20 @@ exports[`CheckBoxGroup custom theme 1`] = `
       </span>
     </label>
     <div
-      class="StyledBox__StyledBoxGap-sc-13pk1d4-1 cYYcla"
+      class="c7"
     />
     <label
-      class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 fWaykw"
+      class="c2"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 jDgzUY StyledCheckBox-sc-1dbk5ju-6 gAgPcH"
+        class="c3 c4"
       >
         <input
-          class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 exHNbK"
+          class="c5"
           type="checkbox"
         />
         <div
-          class="StyledBox-sc-13pk1d4-0 ldnIiP StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 cBFYon"
+          class="c6 "
         />
       </div>
       <span>
@@ -53,29 +165,161 @@ exports[`CheckBoxGroup custom theme 1`] = `
 
 exports[`CheckBoxGroup defaultValue renders 1`] = `
 <DocumentFragment>
-  <div
-    class="StyledGrommet-sc-19lkkz7-0 kiEDjE"
+  .c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+}
+
+.c3 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin-right: 12px;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.c6 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-items: center;
+  border: solid 2px #7D4CDB;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  height: 24px;
+  width: 24px;
+  justify-content: center;
+  border-radius: 4px;
+}
+
+.c9 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-items: center;
+  border: solid 2px rgba(0, 0, 0, 0.15);
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  height: 24px;
+  width: 24px;
+  justify-content: center;
+  border-radius: 4px;
+}
+
+.c8 {
+  flex: 0 0 auto;
+  align-self: stretch;
+  height: 12px;
+}
+
+.c7 {
+  box-sizing: border-box;
+  stroke-width: 4px;
+  stroke: #7D4CDB;
+  width: 24px;
+  height: 24px;
+}
+
+.c2 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  user-select: none;
+  -webkit-user-select: none;
+  width: fit-content;
+  cursor: pointer;
+}
+
+.c2:hover input:not([disabled])+div,
+.c2:hover input:not([disabled])+span {
+  border-color: #000000;
+}
+
+.c5 {
+  opacity: 0;
+  -moz-appearance: none;
+  width: 0;
+  height: 0;
+  margin: 0;
+  cursor: pointer;
+}
+
+.c5:checked+span>span {
+  left: calc( 48px - 24px );
+  background: #7D4CDB;
+}
+
+.c4 {
+  flex-shrink: 0;
+}
+
+@media only screen and (max-width: 768px) {
+  .c3 {
+    margin-right: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c6 {
+    border: solid 2px #7D4CDB;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c9 {
+    border: solid 2px rgba(0, 0, 0, 0.15);
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c8 {
+    height: 6px;
+  }
+}
+
+<div
+    class="c0"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 fDLUqh StyledCheckBoxGroup-sc-2nhc5d-0"
+      class="c1 StyledCheckBoxGroup-sc-2nhc5d-0"
       role="group"
     >
       <label
-        class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 fWaykw"
+        class="c2"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 jDgzUY StyledCheckBox-sc-1dbk5ju-6 gAgPcH"
+          class="c3 c4"
         >
           <input
             checked=""
-            class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 exHNbK"
+            class="c5"
             type="checkbox"
           />
           <div
-            class="StyledBox-sc-13pk1d4-0 fdemor StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 cBFYon"
+            class="c6 "
           >
             <svg
-              class="StyledCheckBox__StyledCheckBoxIcon-sc-1dbk5ju-0 ekvNYc"
+              class="c7"
               preserveAspectRatio="xMidYMid meet"
               viewBox="0 0 24 24"
             >
@@ -91,20 +335,20 @@ exports[`CheckBoxGroup defaultValue renders 1`] = `
         </span>
       </label>
       <div
-        class="StyledBox__StyledBoxGap-sc-13pk1d4-1 hrJqFx"
+        class="c8"
       />
       <label
-        class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 fWaykw"
+        class="c2"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 jDgzUY StyledCheckBox-sc-1dbk5ju-6 gAgPcH"
+          class="c3 c4"
         >
           <input
-            class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 exHNbK"
+            class="c5"
             type="checkbox"
           />
           <div
-            class="StyledBox-sc-13pk1d4-0 ldnIiP StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 cBFYon"
+            class="c9 "
           />
         </div>
         <span>
@@ -117,28 +361,131 @@ exports[`CheckBoxGroup defaultValue renders 1`] = `
 `;
 
 exports[`CheckBoxGroup disabled renders 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+}
+
+.c3 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin-right: 12px;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.c6 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-items: center;
+  border: solid 2px rgba(0, 0, 0, 0.15);
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  height: 24px;
+  width: 24px;
+  justify-content: center;
+  border-radius: 4px;
+}
+
+.c7 {
+  flex: 0 0 auto;
+  align-self: stretch;
+  height: 12px;
+}
+
+.c2 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  user-select: none;
+  -webkit-user-select: none;
+  width: fit-content;
+  opacity: 0.5;
+  cursor: default;
+}
+
+.c2:hover input:not([disabled])+div,
+.c2:hover input:not([disabled])+span {
+  border-color: #000000;
+}
+
+.c5 {
+  opacity: 0;
+  -moz-appearance: none;
+  width: 0;
+  height: 0;
+  margin: 0;
+}
+
+.c5:checked+span>span {
+  left: calc( 48px - 24px );
+  background: #7D4CDB;
+}
+
+.c4 {
+  flex-shrink: 0;
+}
+
+@media only screen and (max-width: 768px) {
+  .c3 {
+    margin-right: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c6 {
+    border: solid 2px rgba(0, 0, 0, 0.15);
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c7 {
+    height: 6px;
+  }
+}
+
 <div
-  class="StyledGrommet-sc-19lkkz7-0 kiEDjE"
+  class="c0"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 fDLUqh StyledCheckBoxGroup-sc-2nhc5d-0"
+    class="c1 StyledCheckBoxGroup-sc-2nhc5d-0"
     role="group"
   >
     <label
-      class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 fSyzrZ"
+      class="c2"
       disabled=""
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 jDgzUY StyledCheckBox-sc-1dbk5ju-6 gAgPcH"
+        class="c3 c4"
         disabled=""
       >
         <input
-          class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 dDhEQq"
+          class="c5"
           disabled=""
           type="checkbox"
         />
         <div
-          class="StyledBox-sc-13pk1d4-0 ldnIiP StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 cBFYon"
+          class="c6 "
           disabled=""
         />
       </div>
@@ -147,23 +494,23 @@ exports[`CheckBoxGroup disabled renders 1`] = `
       </span>
     </label>
     <div
-      class="StyledBox__StyledBoxGap-sc-13pk1d4-1 hrJqFx"
+      class="c7"
     />
     <label
-      class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 fSyzrZ"
+      class="c2"
       disabled=""
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 jDgzUY StyledCheckBox-sc-1dbk5ju-6 gAgPcH"
+        class="c3 c4"
         disabled=""
       >
         <input
-          class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 dDhEQq"
+          class="c5"
           disabled=""
           type="checkbox"
         />
         <div
-          class="StyledBox-sc-13pk1d4-0 ldnIiP StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 cBFYon"
+          class="c6 "
           disabled=""
         />
       </div>
@@ -173,24 +520,24 @@ exports[`CheckBoxGroup disabled renders 1`] = `
     </label>
   </div>
   <div
-    class="StyledBox-sc-13pk1d4-0 fDLUqh StyledCheckBoxGroup-sc-2nhc5d-0"
+    class="c1 StyledCheckBoxGroup-sc-2nhc5d-0"
     role="group"
   >
     <label
-      class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 fSyzrZ"
+      class="c2"
       disabled=""
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 jDgzUY StyledCheckBox-sc-1dbk5ju-6 gAgPcH"
+        class="c3 c4"
         disabled=""
       >
         <input
-          class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 dDhEQq"
+          class="c5"
           disabled=""
           type="checkbox"
         />
         <div
-          class="StyledBox-sc-13pk1d4-0 ldnIiP StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 cBFYon"
+          class="c6 "
           disabled=""
         />
       </div>
@@ -200,24 +547,24 @@ exports[`CheckBoxGroup disabled renders 1`] = `
     </label>
   </div>
   <div
-    class="StyledBox-sc-13pk1d4-0 fDLUqh StyledCheckBoxGroup-sc-2nhc5d-0"
+    class="c1 StyledCheckBoxGroup-sc-2nhc5d-0"
     role="group"
   >
     <label
-      class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 fSyzrZ"
+      class="c2"
       disabled=""
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 jDgzUY StyledCheckBox-sc-1dbk5ju-6 gAgPcH"
+        class="c3 c4"
         disabled=""
       >
         <input
-          class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 dDhEQq"
+          class="c5"
           disabled=""
           type="checkbox"
         />
         <div
-          class="StyledBox-sc-13pk1d4-0 ldnIiP StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 cBFYon"
+          class="c6 "
           disabled=""
         />
       </div>
@@ -230,25 +577,157 @@ exports[`CheckBoxGroup disabled renders 1`] = `
 `;
 
 exports[`CheckBoxGroup initial value renders 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+}
+
+.c3 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin-right: 12px;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.c6 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-items: center;
+  border: solid 2px rgba(0, 0, 0, 0.15);
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  height: 24px;
+  width: 24px;
+  justify-content: center;
+  border-radius: 4px;
+}
+
+.c8 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-items: center;
+  border: solid 2px #7D4CDB;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  height: 24px;
+  width: 24px;
+  justify-content: center;
+  border-radius: 4px;
+}
+
+.c7 {
+  flex: 0 0 auto;
+  align-self: stretch;
+  height: 12px;
+}
+
+.c9 {
+  box-sizing: border-box;
+  stroke-width: 4px;
+  stroke: #7D4CDB;
+  width: 24px;
+  height: 24px;
+}
+
+.c2 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  user-select: none;
+  -webkit-user-select: none;
+  width: fit-content;
+  cursor: pointer;
+}
+
+.c2:hover input:not([disabled])+div,
+.c2:hover input:not([disabled])+span {
+  border-color: #000000;
+}
+
+.c5 {
+  opacity: 0;
+  -moz-appearance: none;
+  width: 0;
+  height: 0;
+  margin: 0;
+  cursor: pointer;
+}
+
+.c5:checked+span>span {
+  left: calc( 48px - 24px );
+  background: #7D4CDB;
+}
+
+.c4 {
+  flex-shrink: 0;
+}
+
+@media only screen and (max-width: 768px) {
+  .c3 {
+    margin-right: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c6 {
+    border: solid 2px rgba(0, 0, 0, 0.15);
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c8 {
+    border: solid 2px #7D4CDB;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c7 {
+    height: 6px;
+  }
+}
+
 <div
-  class="StyledGrommet-sc-19lkkz7-0 kiEDjE"
+  class="c0"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 fDLUqh StyledCheckBoxGroup-sc-2nhc5d-0"
+    class="c1 StyledCheckBoxGroup-sc-2nhc5d-0"
     role="group"
   >
     <label
-      class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 fWaykw"
+      class="c2"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 jDgzUY StyledCheckBox-sc-1dbk5ju-6 gAgPcH"
+        class="c3 c4"
       >
         <input
-          class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 exHNbK"
+          class="c5"
           type="checkbox"
         />
         <div
-          class="StyledBox-sc-13pk1d4-0 ldnIiP StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 cBFYon"
+          class="c6 "
         />
       </div>
       <span>
@@ -256,24 +735,24 @@ exports[`CheckBoxGroup initial value renders 1`] = `
       </span>
     </label>
     <div
-      class="StyledBox__StyledBoxGap-sc-13pk1d4-1 hrJqFx"
+      class="c7"
     />
     <label
-      class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 fWaykw"
+      class="c2"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 jDgzUY StyledCheckBox-sc-1dbk5ju-6 gAgPcH"
+        class="c3 c4"
       >
         <input
           checked=""
-          class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 exHNbK"
+          class="c5"
           type="checkbox"
         />
         <div
-          class="StyledBox-sc-13pk1d4-0 fdemor StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 cBFYon"
+          class="c8 "
         >
           <svg
-            class="StyledCheckBox__StyledCheckBoxIcon-sc-1dbk5ju-0 ekvNYc"
+            class="c9"
             preserveAspectRatio="xMidYMid meet"
             viewBox="0 0 24 24"
           >
@@ -289,24 +768,24 @@ exports[`CheckBoxGroup initial value renders 1`] = `
       </span>
     </label>
     <div
-      class="StyledBox__StyledBoxGap-sc-13pk1d4-1 hrJqFx"
+      class="c7"
     />
     <label
-      class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 fWaykw"
+      class="c2"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 jDgzUY StyledCheckBox-sc-1dbk5ju-6 gAgPcH"
+        class="c3 c4"
       >
         <input
           checked=""
-          class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 exHNbK"
+          class="c5"
           type="checkbox"
         />
         <div
-          class="StyledBox-sc-13pk1d4-0 fdemor StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 cBFYon"
+          class="c8 "
         >
           <svg
-            class="StyledCheckBox__StyledCheckBoxIcon-sc-1dbk5ju-0 ekvNYc"
+            class="c9"
             preserveAspectRatio="xMidYMid meet"
             viewBox="0 0 24 24"
           >
@@ -326,25 +805,128 @@ exports[`CheckBoxGroup initial value renders 1`] = `
 `;
 
 exports[`CheckBoxGroup labelKey 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+}
+
+.c3 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin-right: 12px;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.c6 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-items: center;
+  border: solid 2px rgba(0, 0, 0, 0.15);
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  height: 24px;
+  width: 24px;
+  justify-content: center;
+  border-radius: 4px;
+}
+
+.c7 {
+  flex: 0 0 auto;
+  align-self: stretch;
+  height: 12px;
+}
+
+.c2 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  user-select: none;
+  -webkit-user-select: none;
+  width: fit-content;
+  cursor: pointer;
+}
+
+.c2:hover input:not([disabled])+div,
+.c2:hover input:not([disabled])+span {
+  border-color: #000000;
+}
+
+.c5 {
+  opacity: 0;
+  -moz-appearance: none;
+  width: 0;
+  height: 0;
+  margin: 0;
+  cursor: pointer;
+}
+
+.c5:checked+span>span {
+  left: calc( 48px - 24px );
+  background: #7D4CDB;
+}
+
+.c4 {
+  flex-shrink: 0;
+}
+
+@media only screen and (max-width: 768px) {
+  .c3 {
+    margin-right: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c6 {
+    border: solid 2px rgba(0, 0, 0, 0.15);
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c7 {
+    height: 6px;
+  }
+}
+
 <div
-  class="StyledGrommet-sc-19lkkz7-0 kiEDjE"
+  class="c0"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 fDLUqh StyledCheckBoxGroup-sc-2nhc5d-0"
+    class="c1 StyledCheckBoxGroup-sc-2nhc5d-0"
     role="group"
   >
     <label
-      class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 fWaykw"
+      class="c2"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 jDgzUY StyledCheckBox-sc-1dbk5ju-6 gAgPcH"
+        class="c3 c4"
       >
         <input
-          class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 exHNbK"
+          class="c5"
           type="checkbox"
         />
         <div
-          class="StyledBox-sc-13pk1d4-0 ldnIiP StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 cBFYon"
+          class="c6 "
         />
       </div>
       <span>
@@ -352,20 +934,20 @@ exports[`CheckBoxGroup labelKey 1`] = `
       </span>
     </label>
     <div
-      class="StyledBox__StyledBoxGap-sc-13pk1d4-1 hrJqFx"
+      class="c7"
     />
     <label
-      class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 fWaykw"
+      class="c2"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 jDgzUY StyledCheckBox-sc-1dbk5ju-6 gAgPcH"
+        class="c3 c4"
       >
         <input
-          class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 exHNbK"
+          class="c5"
           type="checkbox"
         />
         <div
-          class="StyledBox-sc-13pk1d4-0 ldnIiP StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 cBFYon"
+          class="c6 "
         />
       </div>
       <span>
@@ -377,28 +959,160 @@ exports[`CheckBoxGroup labelKey 1`] = `
 `;
 
 exports[`CheckBoxGroup onChange 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+}
+
+.c3 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin-right: 12px;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.c9 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-items: center;
+  border: solid 2px rgba(0, 0, 0, 0.15);
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  height: 24px;
+  width: 24px;
+  justify-content: center;
+  border-radius: 4px;
+}
+
+.c6 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-items: center;
+  border: solid 2px #7D4CDB;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  height: 24px;
+  width: 24px;
+  justify-content: center;
+  border-radius: 4px;
+}
+
+.c8 {
+  flex: 0 0 auto;
+  align-self: stretch;
+  height: 12px;
+}
+
+.c7 {
+  box-sizing: border-box;
+  stroke-width: 4px;
+  stroke: #7D4CDB;
+  width: 24px;
+  height: 24px;
+}
+
+.c2 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  user-select: none;
+  -webkit-user-select: none;
+  width: fit-content;
+  cursor: pointer;
+}
+
+.c2:hover input:not([disabled])+div,
+.c2:hover input:not([disabled])+span {
+  border-color: #000000;
+}
+
+.c5 {
+  opacity: 0;
+  -moz-appearance: none;
+  width: 0;
+  height: 0;
+  margin: 0;
+  cursor: pointer;
+}
+
+.c5:checked+span>span {
+  left: calc( 48px - 24px );
+  background: #7D4CDB;
+}
+
+.c4 {
+  flex-shrink: 0;
+}
+
+@media only screen and (max-width: 768px) {
+  .c3 {
+    margin-right: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c9 {
+    border: solid 2px rgba(0, 0, 0, 0.15);
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c6 {
+    border: solid 2px #7D4CDB;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c8 {
+    height: 6px;
+  }
+}
+
 <div
-  class="StyledGrommet-sc-19lkkz7-0 kiEDjE"
+  class="c0"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 fDLUqh StyledCheckBoxGroup-sc-2nhc5d-0"
+    class="c1 StyledCheckBoxGroup-sc-2nhc5d-0"
     role="group"
   >
     <label
-      class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 fWaykw"
+      class="c2"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 jDgzUY StyledCheckBox-sc-1dbk5ju-6 gAgPcH"
+        class="c3 c4"
       >
         <input
-          class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 exHNbK"
+          class="c5"
           type="checkbox"
         />
         <div
-          class="StyledBox-sc-13pk1d4-0 fdemor StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 cBFYon"
+          class="c6 "
         >
           <svg
-            class="StyledCheckBox__StyledCheckBoxIcon-sc-1dbk5ju-0 ekvNYc"
+            class="c7"
             preserveAspectRatio="xMidYMid meet"
             viewBox="0 0 24 24"
           >
@@ -414,20 +1128,20 @@ exports[`CheckBoxGroup onChange 1`] = `
       </span>
     </label>
     <div
-      class="StyledBox__StyledBoxGap-sc-13pk1d4-1 hrJqFx"
+      class="c8"
     />
     <label
-      class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 fWaykw"
+      class="c2"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 jDgzUY StyledCheckBox-sc-1dbk5ju-6 gAgPcH"
+        class="c3 c4"
       >
         <input
-          class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 exHNbK"
+          class="c5"
           type="checkbox"
         />
         <div
-          class="StyledBox-sc-13pk1d4-0 ldnIiP StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 cBFYon"
+          class="c9 "
         />
       </div>
       <span>
@@ -439,29 +1153,162 @@ exports[`CheckBoxGroup onChange 1`] = `
 `;
 
 exports[`CheckBoxGroup onClick for check and uncheck a CheckBox 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.c3 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin-right: 12px;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.c9 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-items: center;
+  border: solid 2px rgba(0, 0, 0, 0.15);
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  height: 24px;
+  width: 24px;
+  justify-content: center;
+  border-radius: 4px;
+}
+
+.c6 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-items: center;
+  border: solid 2px #7D4CDB;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  height: 24px;
+  width: 24px;
+  justify-content: center;
+  border-radius: 4px;
+}
+
+.c8 {
+  flex: 0 0 auto;
+  align-self: stretch;
+  height: 12px;
+}
+
+.c7 {
+  box-sizing: border-box;
+  stroke-width: 4px;
+  stroke: #7D4CDB;
+  width: 24px;
+  height: 24px;
+}
+
+.c2 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  user-select: none;
+  -webkit-user-select: none;
+  width: fit-content;
+  cursor: pointer;
+}
+
+.c2:hover input:not([disabled])+div,
+.c2:hover input:not([disabled])+span {
+  border-color: #000000;
+}
+
+.c5 {
+  opacity: 0;
+  -moz-appearance: none;
+  width: 0;
+  height: 0;
+  margin: 0;
+  cursor: pointer;
+}
+
+.c5:checked+span>span {
+  left: calc( 48px - 24px );
+  background: #7D4CDB;
+}
+
+.c4 {
+  flex-shrink: 0;
+}
+
+@media only screen and (max-width: 768px) {
+  .c3 {
+    margin-right: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c9 {
+    border: solid 2px rgba(0, 0, 0, 0.15);
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c6 {
+    border: solid 2px #7D4CDB;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c8 {
+    height: 6px;
+  }
+}
+
 <div
-  class="StyledGrommet-sc-19lkkz7-0 kiEDjE"
+  class="c0"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 keMKkd StyledCheckBoxGroup-sc-2nhc5d-0"
+    class="c1 StyledCheckBoxGroup-sc-2nhc5d-0"
     role="group"
     tabindex="0"
   >
     <label
-      class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 fWaykw"
+      class="c2"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 jDgzUY StyledCheckBox-sc-1dbk5ju-6 gAgPcH"
+        class="c3 c4"
       >
         <input
-          class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 exHNbK"
+          class="c5"
           type="checkbox"
         />
         <div
-          class="StyledBox-sc-13pk1d4-0 fdemor StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 cBFYon"
+          class="c6 "
         >
           <svg
-            class="StyledCheckBox__StyledCheckBoxIcon-sc-1dbk5ju-0 ekvNYc"
+            class="c7"
             preserveAspectRatio="xMidYMid meet"
             viewBox="0 0 24 24"
           >
@@ -477,20 +1324,20 @@ exports[`CheckBoxGroup onClick for check and uncheck a CheckBox 1`] = `
       </span>
     </label>
     <div
-      class="StyledBox__StyledBoxGap-sc-13pk1d4-1 hrJqFx"
+      class="c8"
     />
     <label
-      class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 fWaykw"
+      class="c2"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 jDgzUY StyledCheckBox-sc-1dbk5ju-6 gAgPcH"
+        class="c3 c4"
       >
         <input
-          class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 exHNbK"
+          class="c5"
           type="checkbox"
         />
         <div
-          class="StyledBox-sc-13pk1d4-0 ldnIiP StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 cBFYon"
+          class="c9 "
         />
       </div>
       <span>
@@ -554,25 +1401,128 @@ exports[`CheckBoxGroup onClick for check and uncheck a CheckBox 2`] = `
 `;
 
 exports[`CheckBoxGroup options renders 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+}
+
+.c3 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin-right: 12px;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.c6 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-items: center;
+  border: solid 2px rgba(0, 0, 0, 0.15);
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  height: 24px;
+  width: 24px;
+  justify-content: center;
+  border-radius: 4px;
+}
+
+.c7 {
+  flex: 0 0 auto;
+  align-self: stretch;
+  height: 12px;
+}
+
+.c2 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  user-select: none;
+  -webkit-user-select: none;
+  width: fit-content;
+  cursor: pointer;
+}
+
+.c2:hover input:not([disabled])+div,
+.c2:hover input:not([disabled])+span {
+  border-color: #000000;
+}
+
+.c5 {
+  opacity: 0;
+  -moz-appearance: none;
+  width: 0;
+  height: 0;
+  margin: 0;
+  cursor: pointer;
+}
+
+.c5:checked+span>span {
+  left: calc( 48px - 24px );
+  background: #7D4CDB;
+}
+
+.c4 {
+  flex-shrink: 0;
+}
+
+@media only screen and (max-width: 768px) {
+  .c3 {
+    margin-right: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c6 {
+    border: solid 2px rgba(0, 0, 0, 0.15);
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c7 {
+    height: 6px;
+  }
+}
+
 <div
-  class="StyledGrommet-sc-19lkkz7-0 kiEDjE"
+  class="c0"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 fDLUqh StyledCheckBoxGroup-sc-2nhc5d-0"
+    class="c1 StyledCheckBoxGroup-sc-2nhc5d-0"
     role="group"
   >
     <label
-      class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 fWaykw"
+      class="c2"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 jDgzUY StyledCheckBox-sc-1dbk5ju-6 gAgPcH"
+        class="c3 c4"
       >
         <input
-          class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 exHNbK"
+          class="c5"
           type="checkbox"
         />
         <div
-          class="StyledBox-sc-13pk1d4-0 ldnIiP StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 cBFYon"
+          class="c6 "
         />
       </div>
       <span>
@@ -580,20 +1530,20 @@ exports[`CheckBoxGroup options renders 1`] = `
       </span>
     </label>
     <div
-      class="StyledBox__StyledBoxGap-sc-13pk1d4-1 hrJqFx"
+      class="c7"
     />
     <label
-      class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 fWaykw"
+      class="c2"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 jDgzUY StyledCheckBox-sc-1dbk5ju-6 gAgPcH"
+        class="c3 c4"
       >
         <input
-          class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 exHNbK"
+          class="c5"
           type="checkbox"
         />
         <div
-          class="StyledBox-sc-13pk1d4-0 ldnIiP StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 cBFYon"
+          class="c6 "
         />
       </div>
       <span>
@@ -605,22 +1555,115 @@ exports[`CheckBoxGroup options renders 1`] = `
 `;
 
 exports[`CheckBoxGroup renders without grommet wrapper 1`] = `
+.c0 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+}
+
+.c2 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin-right: 12px;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.c5 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-items: center;
+  border: solid 2px rgba(0, 0, 0, 0.15);
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  height: 24px;
+  width: 24px;
+  justify-content: center;
+  border-radius: 4px;
+}
+
+.c6 {
+  flex: 0 0 auto;
+  align-self: stretch;
+  height: 12px;
+}
+
+.c1 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  user-select: none;
+  -webkit-user-select: none;
+  width: fit-content;
+  cursor: pointer;
+}
+
+.c1:hover input:not([disabled])+div,
+.c1:hover input:not([disabled])+span {
+  border-color: #000000;
+}
+
+.c4 {
+  opacity: 0;
+  -moz-appearance: none;
+  width: 0;
+  height: 0;
+  margin: 0;
+  cursor: pointer;
+}
+
+.c4:checked+span>span {
+  left: calc( 48px - 24px );
+  background: #7D4CDB;
+}
+
+.c3 {
+  flex-shrink: 0;
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    margin-right: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c5 {
+    border: solid 2px rgba(0, 0, 0, 0.15);
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c6 {
+    height: 6px;
+  }
+}
+
 <div
-  class="StyledBox-sc-13pk1d4-0 fDLUqh StyledCheckBoxGroup-sc-2nhc5d-0"
+  class="c0 StyledCheckBoxGroup-sc-2nhc5d-0"
   role="group"
 >
   <label
-    class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 fWaykw"
+    class="c1"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 jDgzUY StyledCheckBox-sc-1dbk5ju-6 gAgPcH"
+      class="c2 c3"
     >
       <input
-        class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 exHNbK"
+        class="c4"
         type="checkbox"
       />
       <div
-        class="StyledBox-sc-13pk1d4-0 ldnIiP StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 cBFYon"
+        class="c5 "
       />
     </div>
     <span>
@@ -628,20 +1671,20 @@ exports[`CheckBoxGroup renders without grommet wrapper 1`] = `
     </span>
   </label>
   <div
-    class="StyledBox__StyledBoxGap-sc-13pk1d4-1 hrJqFx"
+    class="c6"
   />
   <label
-    class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 fWaykw"
+    class="c1"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 jDgzUY StyledCheckBox-sc-1dbk5ju-6 gAgPcH"
+      class="c2 c3"
     >
       <input
-        class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 exHNbK"
+        class="c4"
         type="checkbox"
       />
       <div
-        class="StyledBox-sc-13pk1d4-0 ldnIiP StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 cBFYon"
+        class="c5 "
       />
     </div>
     <span>
@@ -651,30 +1694,339 @@ exports[`CheckBoxGroup renders without grommet wrapper 1`] = `
 </div>
 `;
 
-exports[`CheckBoxGroup value renders 1`] = `
+exports[`CheckBoxGroup theme container gap 1`] = `
+<DocumentFragment>
+  .c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+}
+
+.c3 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin-right: 12px;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.c6 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-items: center;
+  border: solid 2px rgba(0, 0, 0, 0.15);
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  height: 24px;
+  width: 24px;
+  justify-content: center;
+  border-radius: 4px;
+}
+
+.c7 {
+  flex: 0 0 auto;
+  align-self: stretch;
+  height: 48px;
+}
+
+.c2 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  user-select: none;
+  -webkit-user-select: none;
+  width: fit-content;
+  cursor: pointer;
+}
+
+.c2:hover input:not([disabled])+div,
+.c2:hover input:not([disabled])+span {
+  border-color: #000000;
+}
+
+.c5 {
+  opacity: 0;
+  -moz-appearance: none;
+  width: 0;
+  height: 0;
+  margin: 0;
+  cursor: pointer;
+}
+
+.c5:checked+span>span {
+  left: calc( 48px - 24px );
+  background: #7D4CDB;
+}
+
+.c4 {
+  flex-shrink: 0;
+}
+
+@media only screen and (max-width: 768px) {
+  .c3 {
+    margin-right: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c6 {
+    border: solid 2px rgba(0, 0, 0, 0.15);
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c7 {
+    height: 24px;
+  }
+}
+
 <div
-  class="StyledGrommet-sc-19lkkz7-0 kiEDjE"
+    class="c0"
+  >
+    <div
+      class="c1 StyledCheckBoxGroup-sc-2nhc5d-0"
+      role="group"
+    >
+      <label
+        class="c2"
+      >
+        <div
+          class="c3 c4"
+        >
+          <input
+            class="c5"
+            type="checkbox"
+          />
+          <div
+            class="c6 "
+          />
+        </div>
+        <span>
+          First
+        </span>
+      </label>
+      <div
+        class="c7"
+      />
+      <label
+        class="c2"
+      >
+        <div
+          class="c3 c4"
+        >
+          <input
+            class="c5"
+            type="checkbox"
+          />
+          <div
+            class="c6 "
+          />
+        </div>
+        <span>
+          Second
+        </span>
+      </label>
+      <div
+        class="c7"
+      />
+      <label
+        class="c2"
+      >
+        <div
+          class="c3 c4"
+        >
+          <input
+            class="c5"
+            type="checkbox"
+          />
+          <div
+            class="c6 "
+          />
+        </div>
+        <span>
+          Third
+        </span>
+      </label>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`CheckBoxGroup value renders 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+}
+
+.c3 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin-right: 12px;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.c6 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-items: center;
+  border: solid 2px #7D4CDB;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  height: 24px;
+  width: 24px;
+  justify-content: center;
+  border-radius: 4px;
+}
+
+.c9 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-items: center;
+  border: solid 2px rgba(0, 0, 0, 0.15);
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  height: 24px;
+  width: 24px;
+  justify-content: center;
+  border-radius: 4px;
+}
+
+.c8 {
+  flex: 0 0 auto;
+  align-self: stretch;
+  height: 12px;
+}
+
+.c7 {
+  box-sizing: border-box;
+  stroke-width: 4px;
+  stroke: #7D4CDB;
+  width: 24px;
+  height: 24px;
+}
+
+.c2 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  user-select: none;
+  -webkit-user-select: none;
+  width: fit-content;
+  cursor: pointer;
+}
+
+.c2:hover input:not([disabled])+div,
+.c2:hover input:not([disabled])+span {
+  border-color: #000000;
+}
+
+.c5 {
+  opacity: 0;
+  -moz-appearance: none;
+  width: 0;
+  height: 0;
+  margin: 0;
+  cursor: pointer;
+}
+
+.c5:checked+span>span {
+  left: calc( 48px - 24px );
+  background: #7D4CDB;
+}
+
+.c4 {
+  flex-shrink: 0;
+}
+
+@media only screen and (max-width: 768px) {
+  .c3 {
+    margin-right: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c6 {
+    border: solid 2px #7D4CDB;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c9 {
+    border: solid 2px rgba(0, 0, 0, 0.15);
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c8 {
+    height: 6px;
+  }
+}
+
+<div
+  class="c0"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 fDLUqh StyledCheckBoxGroup-sc-2nhc5d-0"
+    class="c1 StyledCheckBoxGroup-sc-2nhc5d-0"
     role="group"
   >
     <label
-      class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 fWaykw"
+      class="c2"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 jDgzUY StyledCheckBox-sc-1dbk5ju-6 gAgPcH"
+        class="c3 c4"
       >
         <input
           checked=""
-          class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 exHNbK"
+          class="c5"
           type="checkbox"
         />
         <div
-          class="StyledBox-sc-13pk1d4-0 fdemor StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 cBFYon"
+          class="c6 "
         >
           <svg
-            class="StyledCheckBox__StyledCheckBoxIcon-sc-1dbk5ju-0 ekvNYc"
+            class="c7"
             preserveAspectRatio="xMidYMid meet"
             viewBox="0 0 24 24"
           >
@@ -690,20 +2042,20 @@ exports[`CheckBoxGroup value renders 1`] = `
       </span>
     </label>
     <div
-      class="StyledBox__StyledBoxGap-sc-13pk1d4-1 hrJqFx"
+      class="c8"
     />
     <label
-      class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 fWaykw"
+      class="c2"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 jDgzUY StyledCheckBox-sc-1dbk5ju-6 gAgPcH"
+        class="c3 c4"
       >
         <input
-          class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 exHNbK"
+          class="c5"
           type="checkbox"
         />
         <div
-          class="StyledBox-sc-13pk1d4-0 ldnIiP StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 cBFYon"
+          class="c9 "
         />
       </div>
       <span>
@@ -715,25 +2067,128 @@ exports[`CheckBoxGroup value renders 1`] = `
 `;
 
 exports[`CheckBoxGroup valueKey 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+}
+
+.c3 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin-right: 12px;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.c6 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-items: center;
+  border: solid 2px rgba(0, 0, 0, 0.15);
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  height: 24px;
+  width: 24px;
+  justify-content: center;
+  border-radius: 4px;
+}
+
+.c7 {
+  flex: 0 0 auto;
+  align-self: stretch;
+  height: 12px;
+}
+
+.c2 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  user-select: none;
+  -webkit-user-select: none;
+  width: fit-content;
+  cursor: pointer;
+}
+
+.c2:hover input:not([disabled])+div,
+.c2:hover input:not([disabled])+span {
+  border-color: #000000;
+}
+
+.c5 {
+  opacity: 0;
+  -moz-appearance: none;
+  width: 0;
+  height: 0;
+  margin: 0;
+  cursor: pointer;
+}
+
+.c5:checked+span>span {
+  left: calc( 48px - 24px );
+  background: #7D4CDB;
+}
+
+.c4 {
+  flex-shrink: 0;
+}
+
+@media only screen and (max-width: 768px) {
+  .c3 {
+    margin-right: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c6 {
+    border: solid 2px rgba(0, 0, 0, 0.15);
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c7 {
+    height: 6px;
+  }
+}
+
 <div
-  class="StyledGrommet-sc-19lkkz7-0 kiEDjE"
+  class="c0"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 fDLUqh StyledCheckBoxGroup-sc-2nhc5d-0"
+    class="c1 StyledCheckBoxGroup-sc-2nhc5d-0"
     role="group"
   >
     <label
-      class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 fWaykw"
+      class="c2"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 jDgzUY StyledCheckBox-sc-1dbk5ju-6 gAgPcH"
+        class="c3 c4"
       >
         <input
-          class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 exHNbK"
+          class="c5"
           type="checkbox"
         />
         <div
-          class="StyledBox-sc-13pk1d4-0 ldnIiP StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 cBFYon"
+          class="c6 "
         />
       </div>
       <span>
@@ -741,20 +2196,20 @@ exports[`CheckBoxGroup valueKey 1`] = `
       </span>
     </label>
     <div
-      class="StyledBox__StyledBoxGap-sc-13pk1d4-1 hrJqFx"
+      class="c7"
     />
     <label
-      class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 fWaykw"
+      class="c2"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 jDgzUY StyledCheckBox-sc-1dbk5ju-6 gAgPcH"
+        class="c3 c4"
       >
         <input
-          class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 exHNbK"
+          class="c5"
           type="checkbox"
         />
         <div
-          class="StyledBox-sc-13pk1d4-0 ldnIiP StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 cBFYon"
+          class="c6 "
         />
       </div>
       <span>

@@ -4,6 +4,7 @@ import 'jest-styled-components';
 
 import { Grommet } from '../../Grommet';
 import { Box, BoxProps } from '..';
+import { Text } from '../../Text';
 import { ResponsiveContext } from '../../..';
 
 describe('Box', () => {
@@ -461,5 +462,26 @@ describe('Box', () => {
       </Grommet>,
     );
     expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('theme border size', () => {
+    const customTheme = {
+      box: {
+        border: {
+          offset: 'medium',
+        },
+      },
+    };
+
+    const { asFragment } = render(
+      <Grommet theme={customTheme}>
+        <Box direction="row" gap="small" border={{ side: 'between' }}>
+          <Text>Default</Text>
+          <Text>Between Size</Text>
+        </Box>
+      </Grommet>,
+    );
+
+    expect(asFragment()).toMatchSnapshot();
   });
 });
