@@ -1,6 +1,5 @@
-module.exports = {
+export default {
   addons: [
-    '@storybook/addon-toolbars',
     {
       name: '@storybook/addon-storysource',
       options: {
@@ -24,9 +23,6 @@ module.exports = {
     '../src/js/contexts/**/stories/typescript/*.stories.tsx',
     '../src/js/contexts/**/stories/*.stories.@(ts|tsx|js|jsx)',
   ],
-  features: {
-    postcss: false,
-  },
 
   staticDirs: ['./public'],
 
@@ -35,9 +31,5 @@ module.exports = {
     options: {
       strictMode: true,
     },
-  },
-
-  typescript: {
-    reactDocgen: 'react-docgen-typescript',
   },
 };
