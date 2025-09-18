@@ -91,7 +91,7 @@
     "@testing-library/react": "^16.3.0",
     "@testing-library/testcafe": "^5.0.1",
     "@testing-library/user-event": "^14.6.1",
-    "@types/jest": "^29.5.14",
+    "@types/jest": "^30.0.0",
     "@types/jest-axe": "^3.5.9",
     "@types/node": "^24.1.0",
     "@types/react": "^19.1.9",
