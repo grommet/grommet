@@ -1,6 +1,10 @@
-import { create } from '@storybook/theming/create';
+// eslint-disable-next-line import/no-unresolved
+import { create } from 'storybook/theming';
+// import/no-unresolved issue see -
+// https://github.com/storybookjs/storybook/issues/31863
 
-// https://storybook.js.org/docs/configurations/theming/
+// new import destination for storybook theming -
+// https://storybook.js.org/docs/configure/user-interface/theming
 
 export default create({
   base: 'light',
