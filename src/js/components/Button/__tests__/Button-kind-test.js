@@ -878,7 +878,7 @@ describe('Button kind', () => {
           data-testid="string-pad"
           label="String pad"
           icon={<Add />}
-          pad="3xlarge"
+          pad="xlarge"
         />
         <Button
           data-testid="object-pad"
@@ -887,7 +887,7 @@ describe('Button kind', () => {
           pad={{ horizontal: '18px', vertical: '6px' }}
         />
         {/* should not render pad on plain button */}
-        <Button data-testid="child-pad" pad="3xlarge">
+        <Button data-testid="child-pad" pad="xlarge">
           <Add />
         </Button>
       </Grommet>,
