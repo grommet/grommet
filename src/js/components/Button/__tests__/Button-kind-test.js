@@ -418,7 +418,7 @@ describe('Button kind', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
-  test(`disabled state cursor should indicate the button cannot be 
+  test(`disabled state cursor should indicate the button cannot be
   clicked`, () => {
     const { getByText } = render(
       <Grommet
@@ -492,7 +492,7 @@ describe('Button kind', () => {
         }}
       >
         <Button label="Button" size="small" />
-        {/* button with no size specified should have medium styling applied 
+        {/* button with no size specified should have medium styling applied
         by default */}
         <Button label="Button" />
         <Button label="Button" size="medium" />
@@ -622,7 +622,7 @@ describe('Button kind', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
-  test(`badge should render relative to contents when button has no 
+  test(`badge should render relative to contents when button has no
   border or background`, () => {
     const { container } = render(
       <Grommet
@@ -819,7 +819,7 @@ describe('Button kind', () => {
       >
         <Box
           background={{ dark: true, color: 'background' }}
-          pad="large"
+          pad="xlarge"
           gap="medium"
           align="start"
         >
@@ -830,7 +830,7 @@ describe('Button kind', () => {
             active
           />
         </Box>
-        <Box pad="large" gap="medium" align="start">
+        <Box pad="xlarge" gap="medium" align="start">
           <Button label="Test button" kind="background-contrast" />
           <Button
             label="Active Test button"
@@ -878,7 +878,7 @@ describe('Button kind', () => {
           data-testid="string-pad"
           label="String pad"
           icon={<Add />}
-          pad="xlarge"
+          pad="3xlarge"
         />
         <Button
           data-testid="object-pad"
@@ -887,7 +887,7 @@ describe('Button kind', () => {
           pad={{ horizontal: '18px', vertical: '6px' }}
         />
         {/* should not render pad on plain button */}
-        <Button data-testid="child-pad" pad="xlarge">
+        <Button data-testid="child-pad" pad="3xlarge">
           <Add />
         </Button>
       </Grommet>,

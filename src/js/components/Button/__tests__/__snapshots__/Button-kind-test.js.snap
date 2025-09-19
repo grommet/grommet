@@ -932,7 +932,7 @@ exports[`Button kind badge should render custom element 1`] = `
 </div>
 `;
 
-exports[`Button kind badge should render relative to contents when button has no \\n  border or background 1`] = `
+exports[`Button kind badge should render relative to contents when button has no\\n  border or background 1`] = `
 .c4 {
   display: inline-block;
   flex: 0 0 auto;
@@ -1487,7 +1487,7 @@ exports[`Button kind button with transparent background 1`] = `
   min-width: 0;
   min-height: 0;
   flex-direction: column;
-  padding: 32px;
+  padding: 48px;
 }
 
 .c5 {
@@ -1498,7 +1498,7 @@ exports[`Button kind button with transparent background 1`] = `
   min-width: 0;
   min-height: 0;
   flex-direction: column;
-  padding: 32px;
+  padding: 48px;
 }
 
 .c3 {
@@ -1808,13 +1808,13 @@ exports[`Button kind button with transparent background 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c1 {
-    padding: 16px;
+    padding: 24px;
   }
 }
 
 @media only screen and (max-width: 768px) {
   .c5 {
-    padding: 16px;
+    padding: 24px;
   }
 }
 
