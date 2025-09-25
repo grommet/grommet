@@ -54,26 +54,60 @@ const DATA = [
 ];
 
 const columnsResize = [
-  { property: 'location', header: 'Location', size: 'small' },
-  { property: 'date', header: 'Date', size: 'small', align: 'end' },
-  { property: 'percent', header: 'Percent', size: 'xsmall', align: 'end' },
-  { property: 'paid', header: 'Paid', size: 'xsmall', align: 'end' },
+  {
+    property: 'location',
+    header: 'Location',
+    size: 'small',
+    pin: true,
+    search: true,
+  },
+  {
+    property: 'date',
+    header: 'Date',
+    size: 'small',
+    align: 'end',
+    search: true,
+  },
+  {
+    property: 'percent',
+    header: 'Percent',
+    size: 'xsmall',
+    align: 'end',
+  },
+  {
+    property: 'paid',
+    header: 'Paid',
+    size: 'xsmall',
+    align: 'end',
+  },
 ];
 
-export const ResizableDataTable = () => (
-  // Uncomment <Grommet> lines when using outside of storybook
-  // <Grommet theme={grommet}>
-  <Box align="center" pad="large">
-    <Heading level="3">Table with resizable & column sizes</Heading>
-    <DataTable
-      columns={columnsResize}
-      data={DATA}
-      primaryKey={false}
-      resizeable
-    />
-  </Box>
-  // </Grommet>
-);
+export const ResizableDataTable = () => {
+  const [sort, setSort] = React.useState({
+    property: 'location',
+    direction: 'asc',
+  });
+
+  return (
+    // Uncomment <Grommet> lines when using outside of storybook
+    // <Grommet theme={grommet}>
+    <Box align="center" pad="large">
+      <Heading level="3">Table with resizable & column sizes</Heading>
+      <Box overflow="auto" width="medium" height="medium">
+        <DataTable
+          columns={columnsResize}
+          data={DATA}
+          primaryKey={false}
+          resizeable
+          sortable
+          sort={sort}
+          onSort={setSort}
+        />
+      </Box>
+    </Box>
+    // </Grommet>
+  );
+};
 
 ResizableDataTable.storyName = 'Resizable columns';
 
