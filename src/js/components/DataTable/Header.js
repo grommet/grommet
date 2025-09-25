@@ -502,6 +502,7 @@ const Header = forwardRef(
                     boxSizing: onResize ? 'border-box' : undefined,
                     position: onResize && !columnPin ? 'relative' : undefined,
                     overflow: onResize ? 'visible' : undefined,
+                    zIndex: onResize && columnPin ? 2 : undefined,
                   }}
                   onResize={onResize}
                   property={property}
