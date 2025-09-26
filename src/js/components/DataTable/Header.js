@@ -504,7 +504,11 @@ const Header = forwardRef(
                       ? `${widths[property]}px`
                       : undefined,
                     boxSizing: onResize ? 'border-box' : undefined,
-                    position: onResize && !columnPin ? 'relative' : undefined,
+                    // Don't override positioning when DataTable has pin prop
+                    position:
+                      onResize && !columnPin && !pinProp
+                        ? 'relative'
+                        : undefined,
                     overflow: onResize ? 'visible' : undefined,
                     zIndex: onResize && columnPin ? PINNED_ZINDEX : undefined,
                   }}
