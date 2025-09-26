@@ -216,7 +216,7 @@ const columns = [
   },
 ];
 
-export const ResizableDataTable = () => (
+export const ResizablePinnedDataTable = () => (
   <Box align="center" pad="large">
     <Heading level="3">Table with resizable & column sizes</Heading>
     <Box
@@ -238,7 +238,7 @@ export const ResizableDataTable = () => (
   // </Grommet>
 );
 
-ResizableDataTable.storyName = 'Resizable pinned columns';
+ResizablePinnedDataTable.storyName = 'Resizable pinned columns';
 
 export default {
   title: 'Visualizations/DataTable/Resizable pinned columns',
