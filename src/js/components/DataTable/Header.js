@@ -477,10 +477,6 @@ const Header = forwardRef(
 
               const headerId = `grommet-data-table-header-${property}`;
 
-              // Cells and their re-sizers need to scroll beneath pinned cells.
-              // StyledResizer has a z-index of 1.
-              const PINNED_ZINDEX = 2;
-
               return (
                 <StyledDataTableCell
                   aria-sort={ariaSort}
@@ -510,7 +506,6 @@ const Header = forwardRef(
                         ? 'relative'
                         : undefined,
                     overflow: onResize ? 'visible' : undefined,
-                    zIndex: onResize && columnPin ? PINNED_ZINDEX : undefined,
                   }}
                   onResize={onResize}
                   property={property}
