@@ -398,7 +398,8 @@ var Header = /*#__PURE__*/forwardRef(function (_ref2, ref) {
       style: {
         width: widths != null && widths[property] ? widths[property] + "px" : undefined,
         boxSizing: _onResize ? 'border-box' : undefined,
-        position: _onResize ? 'relative' : undefined,
+        // Don't override positioning when DataTable has pin prop
+        position: _onResize && !columnPin && !pinProp ? 'relative' : undefined,
         overflow: _onResize ? 'visible' : undefined
       },
       onResize: _onResize,

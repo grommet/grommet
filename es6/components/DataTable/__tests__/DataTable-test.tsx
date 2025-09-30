@@ -2378,4 +2378,36 @@ describe('DataTable', () => {
 
     expect(container.firstChild).toMatchSnapshot();
   });
+
+  test('pinned column with resizable does not have position relative', () => {
+    const columns = [
+      { property: 'location', header: 'Location', pin: true },
+      { property: 'date', header: 'Date' },
+    ];
+
+    const data = [
+      { location: 'Fort Collins', date: '2018-06-10' },
+      { location: 'Palo Alto', date: '2018-06-09' },
+    ];
+
+    render(
+      <Grommet>
+        <DataTable columns={columns} data={data} resizeable />
+      </Grommet>,
+    );
+
+    // Get the pinned header cell
+    const pinnedHeader = screen.getByRole('columnheader', { name: /Location/ });
+    const pinnedHeaderStyles = window.getComputedStyle(pinnedHeader);
+
+    // Get the non-pinned header cell
+    const nonPinnedHeader = screen.getByRole('columnheader', { name: /Date/ });
+    const nonPinnedHeaderStyles = window.getComputedStyle(nonPinnedHeader);
+
+    // Pinned column should NOT have position: relative
+    expect(pinnedHeaderStyles.position).not.toBe('relative');
+
+    // column SHOULD have position: relative (for resizer positioning)
+    expect(nonPinnedHeaderStyles.position).toBe('relative');
+  });
 });
