@@ -23,9 +23,9 @@ const STEP = 12; // Used to determine the width change on resize
 const StyledResizer = styled(DropButton)`
   display: flex;
   justify-content: center;
-  padding-top: ${(props) => props.theme.global.edgeSize.xsmall};
-  padding-bottom: ${(props) => props.theme.global.edgeSize.xsmall};
-  margin-right: -${(props) => props.theme.global.edgeSize.small};
+  padding-top: 6px;
+  padding-bottom: 6px;
+  margin-right: -12px;
   position: absolute;
   right: 0;
   width: 24px;
