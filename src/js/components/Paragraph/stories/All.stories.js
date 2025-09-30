@@ -17,7 +17,7 @@ export const All = () => (
         {paragraphFiller}
       </Paragraph>
     ))}
-    <Paragraph color="status-critical">This is an error message.</Paragraph>
+    <Paragraph color="status-critical">This is an error.</Paragraph>
     <Paragraph fill>
       This is a full-width paragraph, using the &quot;fill&quot; property:{' '}
       {paragraphFiller}
