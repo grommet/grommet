@@ -2929,8 +2929,8 @@ __metadata:
   linkType: hard
 
 "@chromatic-com/storybook@npm:^3.2.6":
-  version: 3.2.6
-  resolution: "@chromatic-com/storybook@npm:3.2.6"
+  version: 3.2.7
+  resolution: "@chromatic-com/storybook@npm:3.2.7"
   dependencies:
     chromatic: "npm:^11.15.0"
     filesize: "npm:^10.0.12"
@@ -2939,7 +2939,7 @@ __metadata:
     strip-ansi: "npm:^7.1.0"
   peerDependencies:
     storybook: ^8.2.0 || ^8.3.0-0 || ^8.4.0-0 || ^8.5.0-0 || ^8.6.0-0
-  checksum: 10c0/3388de20d12b1003990520726b0b4a20570c81d017292afa72f9ce88ab5146935663db7e5e8e7d58b5e94893c83bc1447d77c3cbc3ddc8c807325f9613d346d8
+  checksum: 10c0/b9f84df1efbf20a91f58a3a25bc37b5c89a207b398096ff943c098f97b904572b331155c440594c384085d5a20cd186f8a8dc529fec02ab6929f2e7f14be8d37
   languageName: node
   linkType: hard
 
@@ -6752,8 +6752,8 @@ __metadata:
   linkType: hard
 
 "chromatic@npm:^13.1.2":
-  version: 13.1.2
-  resolution: "chromatic@npm:13.1.2"
+  version: 13.3.0
+  resolution: "chromatic@npm:13.3.0"
   peerDependencies:
     "@chromatic-com/cypress": ^0.*.* || ^1.0.0
     "@chromatic-com/playwright": ^0.*.* || ^1.0.0
@@ -6766,7 +6766,7 @@ __metadata:
     chroma: dist/bin.js
     chromatic: dist/bin.js
     chromatic-cli: dist/bin.js
-  checksum: 10c0/291456ebf98300efcea0287e2bd1f65429f3fb92233ba3abb6eae29617c6fff76d8825f6a24428d34d2850ba926d80e3b41356a6b754026dc586c5a05a9ba8df
+  checksum: 10c0/496656850cc6498fa101cb17bb8adc9256df70c404f01be1cc6edcdd66fd97ab573a3fe858c581cf45d7279bcab0e170cb054dc3b2e2ef104ac0af9e6df38223
   languageName: node
   linkType: hard
 
@@ -9861,9 +9861,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"grommet-theme-hpe@npm:^7.0.0":
-  version: 7.0.0
-  resolution: "grommet-theme-hpe@npm:7.0.0"
+"grommet-theme-hpe@npm:^7.0.1":
+  version: 7.0.1
+  resolution: "grommet-theme-hpe@npm:7.0.1"
   dependencies:
     hpe-design-tokens: "npm:~1.4.0"
   peerDependencies:
@@ -9871,7 +9871,7 @@ __metadata:
     grommet-icons: ^4.12.4
     react: ^16.13.1 || ^17.0.1 || ^18.0.0 || ^19.0.0
     styled-components: ^5.0.0 || ^6.0.0
-  checksum: 10c0/da42c1b135cb1a84a6c137aad210fb68ac54677380a41915fd96d053dad7934596be7c03885bfa1fb8360f510b5cf8ddb7e02fb88e3f6daf97a28b74833e23b2
+  checksum: 10c0/6371ed8143750e6f61ca6df335edf132025891d88d5ee957fd2aec99e1b2172e49c0e953786a60742d03848b448955aa06a65647b0b5a86b94cc3ab4e991f0fd
   languageName: node
   linkType: hard
 
@@ -9943,7 +9943,7 @@ __metadata:
     fs-extra: "npm:^11.3.0"
     globals: "npm:^16.3.0"
     grommet-icons: "npm:^4.12.4"
-    grommet-theme-hpe: "npm:^7.0.0"
+    grommet-theme-hpe: "npm:^7.0.1"
     jest: "npm:^30.1.3"
     jest-axe: "npm:^10.0.0"
     jest-cli: "npm:^30.1.3"
