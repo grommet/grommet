@@ -2928,9 +2928,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@chromatic-com/storybook@npm:3.2.6":
-  version: 3.2.6
-  resolution: "@chromatic-com/storybook@npm:3.2.6"
+"@chromatic-com/storybook@npm:^3.2.6":
+  version: 3.2.7
+  resolution: "@chromatic-com/storybook@npm:3.2.7"
   dependencies:
     chromatic: "npm:^11.15.0"
     filesize: "npm:^10.0.12"
@@ -2939,7 +2939,7 @@ __metadata:
     strip-ansi: "npm:^7.1.0"
   peerDependencies:
     storybook: ^8.2.0 || ^8.3.0-0 || ^8.4.0-0 || ^8.5.0-0 || ^8.6.0-0
-  checksum: 10c0/3388de20d12b1003990520726b0b4a20570c81d017292afa72f9ce88ab5146935663db7e5e8e7d58b5e94893c83bc1447d77c3cbc3ddc8c807325f9613d346d8
+  checksum: 10c0/b9f84df1efbf20a91f58a3a25bc37b5c89a207b398096ff943c098f97b904572b331155c440594c384085d5a20cd186f8a8dc529fec02ab6929f2e7f14be8d37
   languageName: node
   linkType: hard
 
@@ -4034,7 +4034,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/addon-a11y@npm:8.6.14":
+"@storybook/addon-a11y@npm:^8.6.14":
   version: 8.6.14
   resolution: "@storybook/addon-a11y@npm:8.6.14"
   dependencies:
@@ -4059,7 +4059,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/addon-storysource@npm:8.6.14":
+"@storybook/addon-storysource@npm:^8.6.14":
   version: 8.6.14
   resolution: "@storybook/addon-storysource@npm:8.6.14"
   dependencies:
@@ -4072,7 +4072,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/addon-toolbars@npm:8.6.14":
+"@storybook/addon-toolbars@npm:^8.6.14":
   version: 8.6.14
   resolution: "@storybook/addon-toolbars@npm:8.6.14"
   peerDependencies:
@@ -4191,7 +4191,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/manager-api@npm:8.6.14":
+"@storybook/manager-api@npm:8.6.14, @storybook/manager-api@npm:^8.6.14":
   version: 8.6.14
   resolution: "@storybook/manager-api@npm:8.6.14"
   peerDependencies:
@@ -4264,7 +4264,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/react-webpack5@npm:8.6.14":
+"@storybook/react-webpack5@npm:^8.6.14":
   version: 8.6.14
   resolution: "@storybook/react-webpack5@npm:8.6.14"
   dependencies:
@@ -4283,7 +4283,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/react@npm:8.6.14":
+"@storybook/react@npm:8.6.14, @storybook/react@npm:^8.6.14":
   version: 8.6.14
   resolution: "@storybook/react@npm:8.6.14"
   dependencies:
@@ -4308,7 +4308,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/source-loader@npm:8.6.14":
+"@storybook/source-loader@npm:8.6.14, @storybook/source-loader@npm:^8.6.14":
   version: 8.6.14
   resolution: "@storybook/source-loader@npm:8.6.14"
   dependencies:
@@ -6732,25 +6732,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"chromatic@npm:13.1.2":
-  version: 13.1.2
-  resolution: "chromatic@npm:13.1.2"
-  peerDependencies:
-    "@chromatic-com/cypress": ^0.*.* || ^1.0.0
-    "@chromatic-com/playwright": ^0.*.* || ^1.0.0
-  peerDependenciesMeta:
-    "@chromatic-com/cypress":
-      optional: true
-    "@chromatic-com/playwright":
-      optional: true
-  bin:
-    chroma: dist/bin.js
-    chromatic: dist/bin.js
-    chromatic-cli: dist/bin.js
-  checksum: 10c0/291456ebf98300efcea0287e2bd1f65429f3fb92233ba3abb6eae29617c6fff76d8825f6a24428d34d2850ba926d80e3b41356a6b754026dc586c5a05a9ba8df
-  languageName: node
-  linkType: hard
-
 "chromatic@npm:^11.15.0":
   version: 11.25.2
   resolution: "chromatic@npm:11.25.2"
@@ -6767,6 +6748,25 @@ __metadata:
     chromatic: dist/bin.js
     chromatic-cli: dist/bin.js
   checksum: 10c0/2cb4bb40a062005292a4cd606321f6c9bdaa31e255e66bae12c780bca9b72e883c017ebe48c5a9228db88a010f5977571ef7dfdcdd4195ad0e7b955f9966d7df
+  languageName: node
+  linkType: hard
+
+"chromatic@npm:^13.1.2":
+  version: 13.3.0
+  resolution: "chromatic@npm:13.3.0"
+  peerDependencies:
+    "@chromatic-com/cypress": ^0.*.* || ^1.0.0
+    "@chromatic-com/playwright": ^0.*.* || ^1.0.0
+  peerDependenciesMeta:
+    "@chromatic-com/cypress":
+      optional: true
+    "@chromatic-com/playwright":
+      optional: true
+  bin:
+    chroma: dist/bin.js
+    chromatic: dist/bin.js
+    chromatic-cli: dist/bin.js
+  checksum: 10c0/496656850cc6498fa101cb17bb8adc9256df70c404f01be1cc6edcdd66fd97ab573a3fe858c581cf45d7279bcab0e170cb054dc3b2e2ef104ac0af9e6df38223
   languageName: node
   linkType: hard
 
@@ -9893,19 +9893,19 @@ __metadata:
     "@babel/plugin-transform-optional-chaining": "npm:^7.27.1"
     "@babel/preset-env": "npm:^7.28.0"
     "@babel/preset-react": "npm:^7.27.1"
-    "@chromatic-com/storybook": "npm:3.2.6"
+    "@chromatic-com/storybook": "npm:^3.2.6"
     "@emotion/is-prop-valid": "npm:^1.3.1"
     "@eslint/compat": "npm:^1.2.9"
     "@eslint/eslintrc": "npm:^3.3.1"
     "@eslint/js": "npm:^9.32.0"
-    "@storybook/addon-a11y": "npm:8.6.14"
-    "@storybook/addon-storysource": "npm:8.6.14"
-    "@storybook/addon-toolbars": "npm:8.6.14"
+    "@storybook/addon-a11y": "npm:^8.6.14"
+    "@storybook/addon-storysource": "npm:^8.6.14"
+    "@storybook/addon-toolbars": "npm:^8.6.14"
     "@storybook/addon-webpack5-compiler-babel": "npm:^3.0.6"
-    "@storybook/manager-api": "npm:8.6.14"
-    "@storybook/react": "npm:8.6.14"
-    "@storybook/react-webpack5": "npm:8.6.14"
-    "@storybook/source-loader": "npm:8.6.14"
+    "@storybook/manager-api": "npm:^8.6.14"
+    "@storybook/react": "npm:^8.6.14"
+    "@storybook/react-webpack5": "npm:^8.6.14"
+    "@storybook/source-loader": "npm:^8.6.14"
     "@testing-library/dom": "npm:^10.4.1"
     "@testing-library/jest-dom": "npm:^6.6.4"
     "@testing-library/react": "npm:^16.3.0"
@@ -9923,7 +9923,7 @@ __metadata:
     babel-plugin-styled-components: "npm:^2.1.4"
     babel-plugin-transform-imports: "npm:^2.0.0"
     bundlesize2: "npm:^0.0.35"
-    chromatic: "npm:13.1.2"
+    chromatic: "npm:^13.1.2"
     clean-webpack-plugin: "npm:^4.0.0"
     copy-webpack-plugin: "npm:^12.0.2"
     copyfiles: "npm:^2.4.1"
@@ -9963,7 +9963,7 @@ __metadata:
     react-shadow: "npm:^20.6.0"
     regenerator-runtime: "npm:^0.14.1"
     simple-git: "npm:^3.28.0"
-    storybook: "npm:8.6.14"
+    storybook: "npm:^8.6.14"
     styled-components: "npm:^6.1.19"
     tarball-extract: "npm:^0.0.6"
     testcafe: "npm:^3.7.2"
@@ -15196,7 +15196,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"storybook@npm:8.6.14":
+"storybook@npm:^8.6.14":
   version: 8.6.14
   resolution: "storybook@npm:8.6.14"
   dependencies:
