@@ -41,9 +41,19 @@ const StyledResizer = styled(DropButton)`
       props.theme.global.edgeSize.responsiveBreakpoint,
       props.theme,
     )};
-  margin-right: -${resizerWidth / 2 - 1}px;
+  ${(props) =>
+    props.side === 'start' &&
+    `margin-left: -${
+      resizerWidth / 2 - props.theme.global.borderSize.xsmall.replace('px', '')
+    }px;`}
+  ${(props) => props.side === 'start' && `left: 0;`}
+  ${(props) =>
+    props.side === 'end' &&
+    `margin-right: -${
+      resizerWidth / 2 - props.theme.global.borderSize.xsmall.replace('px', '')
+    }px;`}
+  ${(props) => props.side === 'end' && `right: 0;`}
   position: absolute;
-  right: 0;
   width: ${resizerWidth}px;
   height: 100%;
   top: 0;
@@ -235,6 +245,7 @@ const Resizer = ({ onResize, property, headerText, messages, headerId }) => {
           </Box>
         }
         dropAlign={{ top: 'bottom' }}
+        side={border?.side}
       >
         <Box
           border={hover || active ? hoverBorder : border}

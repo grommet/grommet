@@ -3787,8 +3787,8 @@ exports[`DataTable custom theme 1`] = `
   padding-top: 7px;
   padding-bottom: 7px;
   margin-right: -11px;
-  position: absolute;
   right: 0;
+  position: absolute;
   width: 24px;
   height: 100%;
   top: 0;
@@ -4102,7 +4102,7 @@ exports[`DataTable custom theme 2`] = `
             aria-orientation="vertical"
             aria-valuenow="0"
             aria-valuetext="Resize A column"
-            class="StyledButton-sc-323bzc-0 jLPXpV Resizer__StyledResizer-sc-8l808w-0 bPhCbC"
+            class="StyledButton-sc-323bzc-0 jLPXpV Resizer__StyledResizer-sc-8l808w-0 eEHzjh"
             role="separator"
             type="button"
           >
@@ -23331,8 +23331,8 @@ exports[`DataTable resizeable 1`] = `
   padding-top: 6px;
   padding-bottom: 6px;
   margin-right: -11px;
-  position: absolute;
   right: 0;
+  position: absolute;
   width: 24px;
   height: 100%;
   top: 0;
