@@ -1127,9 +1127,6 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         //     size: undefined,
         //   },
         // },
-        margin: {
-          right: '-11px', // offset 12 px padding + 1px border
-        },
         padding: {
           vertical: 'xsmall',
         },

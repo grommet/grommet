@@ -20,6 +20,7 @@ import { edgeStyle } from '../../utils/styles';
 // We determined 12 empirically as being wide enough to hit but
 // not too wide to cause false hits.
 const STEP = 12; // Used to determine the width change on resize
+const resizerWidth = 24; // minimum width required for WCAG compliance
 
 const StyledResizer = styled(DropButton)`
   display: flex;
@@ -40,17 +41,10 @@ const StyledResizer = styled(DropButton)`
       props.theme.global.edgeSize.responsiveBreakpoint,
       props.theme,
     )};
-  ${(props) =>
-    edgeStyle(
-      'margin-right',
-      props.theme.dataTable?.resize?.margin?.right,
-      false,
-      props.theme.global.edgeSize.responsiveBreakpoint,
-      props.theme,
-    )};
+  margin-right: -${resizerWidth / 2 - 1}px;
   position: absolute;
   right: 0;
-  width: 24px;
+  width: ${resizerWidth}px;
   height: 100%;
   top: 0;
   cursor: col-resize;

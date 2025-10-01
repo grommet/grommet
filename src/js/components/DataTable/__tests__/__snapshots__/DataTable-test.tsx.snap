@@ -3786,7 +3786,7 @@ exports[`DataTable custom theme 1`] = `
   justify-content: center;
   padding-top: 7px;
   padding-bottom: 7px;
-  margin-right: -5px;
+  margin-right: -11px;
   position: absolute;
   right: 0;
   width: 24px;
@@ -4102,7 +4102,7 @@ exports[`DataTable custom theme 2`] = `
             aria-orientation="vertical"
             aria-valuenow="0"
             aria-valuetext="Resize A column"
-            class="StyledButton-sc-323bzc-0 jLPXpV Resizer__StyledResizer-sc-8l808w-0 lifotu"
+            class="StyledButton-sc-323bzc-0 jLPXpV Resizer__StyledResizer-sc-8l808w-0 bPhCbC"
             role="separator"
             type="button"
           >
