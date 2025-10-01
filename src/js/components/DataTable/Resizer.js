@@ -15,6 +15,7 @@ import { DropButton } from '../DropButton';
 import { Keyboard } from '../Keyboard';
 import { useThemeValue } from '../../utils/useThemeValue';
 import { MessageContext } from '../../contexts/MessageContext';
+import { edgeStyle } from '../../utils/styles';
 
 // We determined 12 empirically as being wide enough to hit but
 // not too wide to cause false hits.
@@ -23,9 +24,30 @@ const STEP = 12; // Used to determine the width change on resize
 const StyledResizer = styled(DropButton)`
   display: flex;
   justify-content: center;
-  padding-top: 6px;
-  padding-bottom: 6px;
-  margin-right: -12px;
+  ${(props) =>
+    edgeStyle(
+      'padding-top',
+      props.theme.dataTable?.resize?.padding?.vertical,
+      false,
+      props.theme.global.edgeSize.responsiveBreakpoint,
+      props.theme,
+    )};
+  ${(props) =>
+    edgeStyle(
+      'padding-bottom',
+      props.theme.dataTable?.resize?.padding?.vertical,
+      false,
+      props.theme.global.edgeSize.responsiveBreakpoint,
+      props.theme,
+    )};
+  ${(props) =>
+    edgeStyle(
+      'margin-right',
+      props.theme.dataTable?.resize?.margin?.right,
+      false,
+      props.theme.global.edgeSize.responsiveBreakpoint,
+      props.theme,
+    )};
   position: absolute;
   right: 0;
   width: 24px;
