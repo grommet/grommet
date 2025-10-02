@@ -106,17 +106,21 @@ const ExpanderCell = ({
   context,
   expandLabel,
   ...rest
-}) => (
-  <TableCell
-    background={background}
-    border={border}
-    size="xxsmall"
-    plain="noPad"
-    verticalAlign={context === 'groupEnd' ? 'bottom' : 'top'}
-  >
-    <ExpanderControl context={context} expandLabel={expandLabel} {...rest} />
-  </TableCell>
-);
+}) => {
+  const { theme } = useThemeValue();
+
+  return (
+    <TableCell
+      background={background}
+      border={border}
+      size={theme.dataTable.expand?.size}
+      plain="noPad"
+      verticalAlign={context === 'groupEnd' ? 'bottom' : 'top'}
+    >
+      <ExpanderControl context={context} expandLabel={expandLabel} {...rest} />
+    </TableCell>
+  );
+};
 ExpanderCell.displayName = 'ExpanderCell';
 
 export { ExpanderCell };
