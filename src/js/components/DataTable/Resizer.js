@@ -15,20 +15,46 @@ import { DropButton } from '../DropButton';
 import { Keyboard } from '../Keyboard';
 import { useThemeValue } from '../../utils/useThemeValue';
 import { MessageContext } from '../../contexts/MessageContext';
+import { edgeStyle } from '../../utils/styles';
 
 // We determined 12 empirically as being wide enough to hit but
 // not too wide to cause false hits.
 const STEP = 12; // Used to determine the width change on resize
+const resizerWidth = 24; // minimum width required for WCAG compliance
 
 const StyledResizer = styled(DropButton)`
   display: flex;
   justify-content: center;
-  padding-top: ${(props) => props.theme.global.edgeSize.xsmall};
-  padding-bottom: ${(props) => props.theme.global.edgeSize.xsmall};
-  margin-right: -${(props) => props.theme.global.edgeSize.small};
+  ${(props) =>
+    edgeStyle(
+      'padding-top',
+      props.theme.dataTable?.resize?.padding?.vertical,
+      false,
+      props.theme.global.edgeSize.responsiveBreakpoint,
+      props.theme,
+    )};
+  ${(props) =>
+    edgeStyle(
+      'padding-bottom',
+      props.theme.dataTable?.resize?.padding?.vertical,
+      false,
+      props.theme.global.edgeSize.responsiveBreakpoint,
+      props.theme,
+    )};
+  ${(props) =>
+    props.side === 'start' &&
+    `margin-left: -${
+      resizerWidth / 2 - props.theme.global.borderSize.xsmall.replace('px', '')
+    }px;`}
+  ${(props) => props.side === 'start' && `left: 0;`}
+  ${(props) =>
+    props.side === 'end' &&
+    `margin-right: -${
+      resizerWidth / 2 - props.theme.global.borderSize.xsmall.replace('px', '')
+    }px;`}
+  ${(props) => props.side === 'end' && `right: 0;`}
   position: absolute;
-  right: 0;
-  width: 24px;
+  width: ${resizerWidth}px;
   height: 100%;
   top: 0;
   cursor: col-resize;
@@ -219,6 +245,7 @@ const Resizer = ({ onResize, property, headerText, messages, headerId }) => {
           </Box>
         }
         dropAlign={{ top: 'bottom' }}
+        side={border?.side}
       >
         <Box
           border={hover || active ? hoverBorder : border}

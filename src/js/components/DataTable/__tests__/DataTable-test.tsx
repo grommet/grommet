@@ -1249,6 +1249,9 @@ describe('DataTable', () => {
               size: 'xsmall',
             },
           },
+          padding: {
+            vertical: '7px',
+          },
         },
       },
     };
