@@ -1127,6 +1127,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         //     size: undefined,
         //   },
         // },
+        padding: {
+          vertical: 'xsmall',
+        },
       },
       search: {
         pad: {
