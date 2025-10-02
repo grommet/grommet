@@ -9,7 +9,7 @@ var _Button = require("../Button");
 var _TableCell = require("../TableCell");
 var _MessageContext = require("../../contexts/MessageContext");
 var _utils = require("../../utils");
-var _useThemeValue2 = require("../../utils/useThemeValue");
+var _useThemeValue3 = require("../../utils/useThemeValue");
 var _excluded = ["context", "expanded", "onToggle", "messages", "pad", "expandLabel"],
   _excluded2 = ["background", "border", "context", "expandLabel"];
 function _interopRequireWildcard(e, t) { if ("function" == typeof WeakMap) var r = new WeakMap(), n = new WeakMap(); return (_interopRequireWildcard = function _interopRequireWildcard(e, t) { if (!t && e && e.__esModule) return e; var o, i, f = { __proto__: null, "default": e }; if (null === e || "object" != typeof e && "function" != typeof e) return f; if (o = t ? n : r) { if (o.has(e)) return o.get(e); o.set(e, f); } for (var _t in e) "default" !== _t && {}.hasOwnProperty.call(e, _t) && ((i = (o = Object.defineProperty) && Object.getOwnPropertyDescriptor(e, _t)) && (i.get || i.set) ? o(f, _t, i) : f[_t] = e[_t]); return f; })(e, t); }
@@ -25,7 +25,7 @@ var ExpanderControl = function ExpanderControl(_ref) {
     pad = _ref.pad,
     expandLabel = _ref.expandLabel,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
-  var _useThemeValue = (0, _useThemeValue2.useThemeValue)(),
+  var _useThemeValue = (0, _useThemeValue3.useThemeValue)(),
     theme = _useThemeValue.theme;
   var _useContext = (0, _react.useContext)(_MessageContext.MessageContext),
     format = _useContext.format;
@@ -100,15 +100,18 @@ var ExpanderControl = function ExpanderControl(_ref) {
   return content;
 };
 var ExpanderCell = exports.ExpanderCell = function ExpanderCell(_ref2) {
+  var _theme$dataTable$expa;
   var background = _ref2.background,
     border = _ref2.border,
     context = _ref2.context,
     expandLabel = _ref2.expandLabel,
     rest = _objectWithoutPropertiesLoose(_ref2, _excluded2);
+  var _useThemeValue2 = (0, _useThemeValue3.useThemeValue)(),
+    theme = _useThemeValue2.theme;
   return /*#__PURE__*/_react["default"].createElement(_TableCell.TableCell, {
     background: background,
     border: border,
-    size: "xxsmall",
+    size: (_theme$dataTable$expa = theme.dataTable.expand) == null ? void 0 : _theme$dataTable$expa.size,
     plain: "noPad",
     verticalAlign: context === 'groupEnd' ? 'bottom' : 'top'
   }, /*#__PURE__*/_react["default"].createElement(ExpanderControl, _extends({

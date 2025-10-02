@@ -96,15 +96,18 @@ var ExpanderControl = function ExpanderControl(_ref) {
   return content;
 };
 var ExpanderCell = function ExpanderCell(_ref2) {
+  var _theme$dataTable$expa;
   var background = _ref2.background,
     border = _ref2.border,
     context = _ref2.context,
     expandLabel = _ref2.expandLabel,
     rest = _objectWithoutPropertiesLoose(_ref2, _excluded2);
+  var _useThemeValue2 = useThemeValue(),
+    theme = _useThemeValue2.theme;
   return /*#__PURE__*/React.createElement(TableCell, {
     background: background,
     border: border,
-    size: "xxsmall",
+    size: (_theme$dataTable$expa = theme.dataTable.expand) == null ? void 0 : _theme$dataTable$expa.size,
     plain: "noPad",
     verticalAlign: context === 'groupEnd' ? 'bottom' : 'top'
   }, /*#__PURE__*/React.createElement(ExpanderControl, _extends({

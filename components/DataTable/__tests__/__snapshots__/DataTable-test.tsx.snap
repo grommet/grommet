@@ -57328,8 +57328,8 @@ exports[`DataTable theme search pad, search text pad, sort gap, and expand size 
   padding: 0;
   font-weight: inherit;
   text-align: inherit;
-  width: 48px;
-  max-width: 48px;
+  width: 768px;
+  max-width: 768px;
   overflow: hidden;
   vertical-align: top;
   text-align: start;
@@ -57364,8 +57364,8 @@ exports[`DataTable theme search pad, search text pad, sort gap, and expand size 
   padding: 0;
   font-weight: inherit;
   text-align: inherit;
-  width: 48px;
-  max-width: 48px;
+  width: 768px;
+  max-width: 768px;
   overflow: hidden;
   vertical-align: top;
   text-align: start;
