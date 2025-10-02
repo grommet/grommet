@@ -12,24 +12,34 @@ var _DropButton = require("../DropButton");
 var _Keyboard = require("../Keyboard");
 var _useThemeValue2 = require("../../utils/useThemeValue");
 var _MessageContext = require("../../contexts/MessageContext");
+var _styles = require("../../utils/styles");
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
 function _interopRequireWildcard(e, t) { if ("function" == typeof WeakMap) var r = new WeakMap(), n = new WeakMap(); return (_interopRequireWildcard = function _interopRequireWildcard(e, t) { if (!t && e && e.__esModule) return e; var o, i, f = { __proto__: null, "default": e }; if (null === e || "object" != typeof e && "function" != typeof e) return f; if (o = t ? n : r) { if (o.has(e)) return o.get(e); o.set(e, f); } for (var _t in e) "default" !== _t && {}.hasOwnProperty.call(e, _t) && ((i = (o = Object.defineProperty) && Object.getOwnPropertyDescriptor(e, _t)) && (i.get || i.set) ? o(f, _t, i) : f[_t] = e[_t]); return f; })(e, t); }
 // We determined 12 empirically as being wide enough to hit but
 // not too wide to cause false hits.
 var STEP = 12; // Used to determine the width change on resize
+var resizerWidth = 24; // minimum width required for WCAG compliance
 
 var StyledResizer = (0, _styledComponents["default"])(_DropButton.DropButton).withConfig({
   displayName: "Resizer__StyledResizer",
   componentId: "sc-8l808w-0"
-})(["display:flex;justify-content:center;padding-top:", ";padding-bottom:", ";margin-right:-", ";position:absolute;right:0;width:24px;height:100%;top:0;cursor:col-resize;z-index:1;"], function (props) {
-  return props.theme.global.edgeSize.xsmall;
+})(["display:flex;justify-content:center;", ";", ";", " ", " ", " ", " position:absolute;width:", "px;height:100%;top:0;cursor:col-resize;z-index:1;"], function (props) {
+  var _props$theme$dataTabl;
+  return (0, _styles.edgeStyle)('padding-top', (_props$theme$dataTabl = props.theme.dataTable) == null || (_props$theme$dataTabl = _props$theme$dataTabl.resize) == null || (_props$theme$dataTabl = _props$theme$dataTabl.padding) == null ? void 0 : _props$theme$dataTabl.vertical, false, props.theme.global.edgeSize.responsiveBreakpoint, props.theme);
 }, function (props) {
-  return props.theme.global.edgeSize.xsmall;
+  var _props$theme$dataTabl2;
+  return (0, _styles.edgeStyle)('padding-bottom', (_props$theme$dataTabl2 = props.theme.dataTable) == null || (_props$theme$dataTabl2 = _props$theme$dataTabl2.resize) == null || (_props$theme$dataTabl2 = _props$theme$dataTabl2.padding) == null ? void 0 : _props$theme$dataTabl2.vertical, false, props.theme.global.edgeSize.responsiveBreakpoint, props.theme);
 }, function (props) {
-  return props.theme.global.edgeSize.small;
-});
+  return props.side === 'start' && "margin-left: -" + (resizerWidth / 2 - props.theme.global.borderSize.xsmall.replace('px', '')) + "px;";
+}, function (props) {
+  return props.side === 'start' && "left: 0;";
+}, function (props) {
+  return props.side === 'end' && "margin-right: -" + (resizerWidth / 2 - props.theme.global.borderSize.xsmall.replace('px', '')) + "px;";
+}, function (props) {
+  return props.side === 'end' && "right: 0;";
+}, resizerWidth);
 var Resizer = exports.Resizer = function Resizer(_ref) {
-  var _theme$dataTable$icon, _theme$dataTable$icon2;
+  var _theme$dataTable$icon, _theme$dataTable$icon2, _border;
   var onResize = _ref.onResize,
     property = _ref.property,
     headerText = _ref.headerText,
@@ -219,7 +229,8 @@ var Resizer = exports.Resizer = function Resizer(_ref) {
     })),
     dropAlign: {
       top: 'bottom'
-    }
+    },
+    side: (_border = border) == null ? void 0 : _border.side
   }, /*#__PURE__*/_react["default"].createElement(_Box.Box, {
     border: hover || active ? hoverBorder : border,
     height: "100%",

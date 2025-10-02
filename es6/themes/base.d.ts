@@ -1058,6 +1058,9 @@ export interface ThemeType {
           size: string;
         };
       };
+      padding?: {
+        vertical?: string;
+      };
     };
     primary?: {
       weight?: string;

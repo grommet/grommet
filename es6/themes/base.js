@@ -1204,7 +1204,7 @@ export var generate = function generate(baseSpacing, scale) {
         border: {
           color: 'border',
           side: 'end'
-        }
+        },
         // hover: {
         //   border: {
         //     color: undefined,
@@ -1212,6 +1212,9 @@ export var generate = function generate(baseSpacing, scale) {
         //     size: undefined,
         //   },
         // },
+        padding: {
+          vertical: 'xsmall'
+        }
       },
       search: {
         pad: {
