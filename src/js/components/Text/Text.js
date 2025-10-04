@@ -104,8 +104,8 @@ const Text = forwardRef(
           </Tip>
         );
       }
-      // place the text content in a tip if truncate !== 'tip'
-      // it displays even if the text has not truncated.
+      // place the text content in a tip if truncate !== 'tip'.
+      // it displays even if the text has not truncated
       if (truncate !== 'tip') {
         return <Tip {...tipProps}>{styledTextResult}</Tip>;
       }
