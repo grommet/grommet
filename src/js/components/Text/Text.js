@@ -82,7 +82,7 @@ const Text = forwardRef(
         {...passThemeFlag}
         {...rest}
         ref={textRef}
-        tabIndex={0}
+        tabIndex={rest.onClick || rest.role === 'button' ? 0 : undefined}
       >
         {children !== undefined ? (
           <TextContext.Provider value={textContextValue}>
