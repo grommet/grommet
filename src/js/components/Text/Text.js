@@ -82,6 +82,7 @@ const Text = forwardRef(
         {...passThemeFlag}
         {...rest}
         ref={textRef}
+        tabIndex={0}
       >
         {children !== undefined ? (
           <TextContext.Provider value={textContextValue}>
