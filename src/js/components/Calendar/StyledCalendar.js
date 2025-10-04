@@ -44,6 +44,17 @@ const StyledCalendar = styled.div.withConfig(styledComponentsConfig)`
   ${(props) => sizeStyle(props)}
   ${(props) => props.responsive && responsiveSizeStyle(props)}
   ${(props) => props.theme.calendar && props.theme.calendar.extend}
+
+  ${(props) =>
+    props.disabled &&
+    `
+    opacity: 0.5;
+    cursor: not-allowed;
+    
+    button {
+      pointer-events: none;
+    }
+  `}
 `;
 
 const weeksContainerSizeStyle = (props) => {
