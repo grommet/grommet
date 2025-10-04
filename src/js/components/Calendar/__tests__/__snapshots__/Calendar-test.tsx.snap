@@ -1259,7 +1259,7 @@ exports[`Calendar change months 2`] = `
   class="StyledGrommet-sc-19lkkz7-0 kiEDjE"
 >
   <div
-    class="StyledCalendar-sc-1y4xhmp-0 gmifNp"
+    class="StyledCalendar-sc-1y4xhmp-0 cxtQju"
   >
     <div
       class="StyledBox-sc-13pk1d4-0 fDLUqh"
@@ -19634,7 +19634,7 @@ exports[`Calendar select date 2`] = `
   class="StyledGrommet-sc-19lkkz7-0 kiEDjE"
 >
   <div
-    class="StyledCalendar-sc-1y4xhmp-0 gmifNp"
+    class="StyledCalendar-sc-1y4xhmp-0 cxtQju"
   >
     <div
       class="StyledBox-sc-13pk1d4-0 fDLUqh"
@@ -21832,7 +21832,7 @@ exports[`Calendar select dates 2`] = `
   class="StyledGrommet-sc-19lkkz7-0 kiEDjE"
 >
   <div
-    class="StyledCalendar-sc-1y4xhmp-0 gmifNp"
+    class="StyledCalendar-sc-1y4xhmp-0 cxtQju"
   >
     <div
       class="StyledBox-sc-13pk1d4-0 fDLUqh"
