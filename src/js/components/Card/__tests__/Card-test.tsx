@@ -7,6 +7,7 @@ import { Card } from '..';
 import { CardBody } from '../../CardBody';
 import { CardFooter } from '../../CardFooter';
 import { CardHeader } from '../../CardHeader';
+import { CardImage } from '../../CardImage';
 import { Grommet } from '../../Grommet';
 import { Text } from '../../Text';
 import { ThemeType } from '../../..';
@@ -115,6 +116,56 @@ describe('Card', () => {
           <CardHeader>header</CardHeader>
           <CardBody>body</CardBody>
           <CardFooter>footer</CardFooter>
+        </Card>
+      </Grommet>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('with image', () => {
+    const { container } = render(
+      <Grommet>
+        <Card>
+          <CardImage src="//v2.grommet.io/assets/IMG_4245.jpg" alt="sample" />
+          <CardBody>body</CardBody>
+        </Card>
+      </Grommet>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('image with header and footer', () => {
+    const { container } = render(
+      <Grommet>
+        <Card>
+          <CardImage
+            src="//v2.grommet.io/assets/IMG_4245.jpg"
+            alt="sample"
+            fit="cover"
+          />
+          <CardHeader>header</CardHeader>
+          <CardBody>body</CardBody>
+          <CardFooter>footer</CardFooter>
+        </Card>
+      </Grommet>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('image with custom fit', () => {
+    const { container } = render(
+      <Grommet>
+        <Card>
+          <CardImage
+            src="//v2.grommet.io/assets/IMG_4245.jpg"
+            alt="sample"
+            fit="contain"
+            height="small"
+          />
+          <CardBody>body</CardBody>
         </Card>
       </Grommet>,
     );

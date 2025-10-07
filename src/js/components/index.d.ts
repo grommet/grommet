@@ -9,6 +9,7 @@ export * from './Card';
 export * from './CardBody';
 export * from './CardFooter';
 export * from './CardHeader';
+export * from './CardImage';
 export * from './Cards';
 export * from './Carousel';
 export * from './DataClearFilters';

@@ -160,6 +160,7 @@ exports[`Components loads 1`] = `
   "CardBody": [Function],
   "CardFooter": [Function],
   "CardHeader": [Function],
+  "CardImage": [Function],
   "Cards": {
     "$$typeof": Symbol(react.forward_ref),
     "propTypes": {

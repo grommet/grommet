@@ -10,6 +10,7 @@ export * from './components/Card';
 export * from './components/CardBody';
 export * from './components/CardFooter';
 export * from './components/CardHeader';
+export * from './components/CardImage';
 export * from './components/Cards';
 export * from './components/Chart';
 export * from './components/CheckBox';
