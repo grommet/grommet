@@ -227,6 +227,7 @@ Use the icon prop instead.`,
         // when caller initializes with empty array, dates should be undefined
         // allowing the user to select both begin and end of the range
         dates={dates}
+        disabled={disabled} // <--- THIS IS THE NEW LINE TO ADD
         // places focus on days grid when Calendar opens
         initialFocus={open ? 'days' : undefined}
         onSelect={
