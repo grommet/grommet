@@ -1452,179 +1452,6 @@ exports[`Menu custom theme icon alignment 1`] = `
 </div>
 `;
 
-exports[`Menu custom theme icon color 1`] = `
-.c2 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  align-items: center;
-  min-width: 0;
-  min-height: 0;
-  flex-direction: row;
-  justify-content: flex-start;
-  padding: 12px;
-}
-
-.c4 {
-  flex: 0 0 auto;
-  align-self: stretch;
-  width: 12px;
-}
-
-.c5 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #F08080;
-  stroke: #F08080;
-}
-
-.c5 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c5 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c5 *[stroke*='#'],
-.c5 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c5 *[fill-rule],
-.c5 *[FILL-RULE],
-.c5 *[fill*='#'],
-.c5 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
-}
-
-.c3 {
-  font-size: 18px;
-  line-height: 24px;
-}
-
-.c1 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  font: inherit;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  color: inherit;
-  outline: none;
-  border: none;
-  padding: 0;
-  text-align: inherit;
-}
-
-.c1:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c1:focus >circle,
-.c1:focus >ellipse,
-.c1:focus >line,
-.c1:focus >path,
-.c1:focus >polygon,
-.c1:focus >polyline,
-.c1:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c1:focus ::-moz-focus-inner {
-  border: 0;
-}
-
-.c1:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c1:focus:not(:focus-visible) >circle,
-.c1:focus:not(:focus-visible) >ellipse,
-.c1:focus:not(:focus-visible) >line,
-.c1:focus:not(:focus-visible) >path,
-.c1:focus:not(:focus-visible) >polygon,
-.c1:focus:not(:focus-visible) >polyline,
-.c1:focus:not(:focus-visible) >rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c1:focus:not(:focus-visible) ::-moz-focus-inner {
-  border: 0;
-}
-
-.c0 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
-@media only screen and (max-width: 768px) {
-  .c2 {
-    padding: 6px;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .c4 {
-    width: 6px;
-  }
-}
-
-<div
-  class="c0"
->
-  <button
-    aria-expanded="false"
-    aria-haspopup="menu"
-    aria-label="Open Menu"
-    class="c1"
-    type="button"
-  >
-    <div
-      class="c2"
-    >
-      <span
-        class="c3"
-      >
-        Test Menu
-      </span>
-      <div
-        class="c4"
-      />
-      <svg
-        aria-label="FormDown"
-        class="c5"
-        viewBox="0 0 24 24"
-      >
-        <path
-          d="m18 9-6 6-6-6"
-          fill="none"
-          stroke="#000"
-          stroke-width="2"
-        />
-      </svg>
-    </div>
-  </button>
-</div>
-`;
-
 exports[`Menu custom theme with default button 1`] = `
 .c2 {
   display: flex;
@@ -4049,8 +3876,8 @@ exports[`Menu reverse icon and label 1`] = `
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
+  fill: #F08080;
+  stroke: #F08080;
 }
 
 .c5 g {
@@ -4155,60 +3982,46 @@ exports[`Menu reverse icon and label 1`] = `
 }
 
 @media only screen and (max-width: 768px) {
-
-}
-
-@media only screen and (max-width: 768px) {
   .c4 {
     width: 6px;
   }
 }
 
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-
-}
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-
-}
-
-<div>
-  <div
-    class="c0"
+<div
+  class="c0"
+>
+  <button
+    aria-expanded="false"
+    aria-haspopup="menu"
+    aria-label="Open Menu"
+    class="c1"
+    type="button"
   >
-    <button
-      aria-expanded="true"
-      aria-haspopup="menu"
-      aria-label="Open Menu"
-      class="c1"
-      type="button"
+    <div
+      class="c2"
     >
-      <div
-        class="c2"
+      <span
+        class="c3"
       >
-        <span
-          class="c3"
-        >
-          Test Menu
-        </span>
-        <div
-          class="c4"
+        Test Menu
+      </span>
+      <div
+        class="c4"
+      />
+      <svg
+        aria-label="FormDown"
+        class="c5"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="m18 9-6 6-6-6"
+          fill="none"
+          stroke="#000"
+          stroke-width="2"
         />
-        <svg
-          aria-label="FormDown"
-          class="c5"
-          viewBox="0 0 24 24"
-        >
-          <path
-            d="m18 9-6 6-6-6"
-            fill="none"
-            stroke="#000"
-            stroke-width="2"
-          />
-        </svg>
-      </div>
-    </button>
-  </div>
+      </svg>
+    </div>
+  </button>
 </div>
 `;
 
