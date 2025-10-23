@@ -1,640 +1,5 @@
 // Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
-exports[`Layer animation fadeIn 1`] = `
-.c0 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  background: transparent;
-  position: relative;
-  z-index: 20;
-  pointer-events: none;
-  outline: none;
-  position: fixed;
-  top: 0px;
-  left: 0px;
-  right: 0px;
-  bottom: 0px;
-}
-
-.c1 {
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  right: 0px;
-  bottom: 0px;
-  background-color: rgba(0, 0, 0, 0.5);
-  color: #f8f8f8;
-  pointer-events: all;
-  will-change: transform;
-}
-
-.c2 {
-  display: flex;
-  flex-direction: column;
-  min-height: 48px;
-  background-color: #FFFFFF;
-  color: #444444;
-  outline: none;
-  pointer-events: all;
-  z-index: 20;
-  position: absolute;
-  max-height: calc(100% - 0px - 0px);
-  max-width: calc(100% - 0px - 0px);
-  border-radius: 4px;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%,-50%);
-  animation: RcxFP 0.2s ease-in-out forwards;
-}
-
-.c3 {
-  width: 0;
-  height: 0;
-  overflow: hidden;
-  position: absolute;
-  clip-path: inset(50%);
-  white-space: nowrap;
-  border: 0;
-}
-
-.c3:focus {
-  outline: none;
-}
-
-@media only screen and (max-width: 768px) {
-  .c0 {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    min-height: 100vh;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .c1 {
-    position: relative;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .c2 {
-    position: relative;
-    max-height: none;
-    max-width: none;
-    border-radius: 0;
-    height: 100vh;
-    width: 100vw;
-  }
-}
-
-<div
-  class="c0"
-  id="animation-test"
-  tabindex="-1"
->
-  <div
-    class="c1"
-  />
-  <div
-    class="c2"
-    data-g-portal-id="0"
-    id="animation-test"
-  >
-    <span
-      class="c3"
-      tabindex="-1"
-    />
-    This is a layer
-  </div>
-</div>
-`;
-
-exports[`Layer animation fadeIn 2`] = `
-".jsyFzj {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  background: transparent;
-  position: relative;
-  z-index: 20;
-  pointer-events: none;
-  outline: none;
-  position: fixed;
-  top: 0px;
-  left: 0px;
-  right: 0px;
-  bottom: 0px;
-}
-@media only screen and (max-width: 768px) {
-  .jsyFzj {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    min-height: 100vh;
-  }
-}
-@media only screen and (max-width: 768px) {
-  .dKbLsG {
-    position: relative;
-  }
-}
-@media only screen and (max-width: 768px) {
-  .jqpEns {
-    position: relative;
-    max-height: none;
-    max-width: none;
-    border-radius: 0;
-    height: 100vh;
-    width: 100vw;
-  }
-}"
-`;
-
-exports[`Layer animation false 1`] = `
-.c0 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  background: transparent;
-  position: relative;
-  z-index: 20;
-  pointer-events: none;
-  outline: none;
-  position: fixed;
-  top: 0px;
-  left: 0px;
-  right: 0px;
-  bottom: 0px;
-}
-
-.c1 {
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  right: 0px;
-  bottom: 0px;
-  background-color: rgba(0, 0, 0, 0.5);
-  color: #f8f8f8;
-  pointer-events: all;
-  will-change: transform;
-}
-
-.c2 {
-  display: flex;
-  flex-direction: column;
-  min-height: 48px;
-  background-color: #FFFFFF;
-  color: #444444;
-  outline: none;
-  pointer-events: all;
-  z-index: 20;
-  position: absolute;
-  max-height: calc(100% - 0px - 0px);
-  max-width: calc(100% - 0px - 0px);
-  border-radius: 4px;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%,-50%);
-}
-
-.c3 {
-  width: 0;
-  height: 0;
-  overflow: hidden;
-  position: absolute;
-  clip-path: inset(50%);
-  white-space: nowrap;
-  border: 0;
-}
-
-.c3:focus {
-  outline: none;
-}
-
-@media only screen and (max-width: 768px) {
-  .c0 {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    min-height: 100vh;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .c1 {
-    position: relative;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .c2 {
-    position: relative;
-    max-height: none;
-    max-width: none;
-    border-radius: 0;
-    height: 100vh;
-    width: 100vw;
-  }
-}
-
-<div
-  class="c0"
-  id="animation-test"
-  tabindex="-1"
->
-  <div
-    class="c1"
-  />
-  <div
-    class="c2"
-    data-g-portal-id="0"
-    id="animation-test"
-  >
-    <span
-      class="c3"
-      tabindex="-1"
-    />
-    This is a layer
-  </div>
-</div>
-`;
-
-exports[`Layer animation false 2`] = `
-".jsyFzj {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  background: transparent;
-  position: relative;
-  z-index: 20;
-  pointer-events: none;
-  outline: none;
-  position: fixed;
-  top: 0px;
-  left: 0px;
-  right: 0px;
-  bottom: 0px;
-}
-@media only screen and (max-width: 768px) {
-  .jsyFzj {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    min-height: 100vh;
-  }
-}
-@media only screen and (max-width: 768px) {
-  .dKbLsG {
-    position: relative;
-  }
-}
-@media only screen and (max-width: 768px) {
-  .jqpEns {
-    position: relative;
-    max-height: none;
-    max-width: none;
-    border-radius: 0;
-    height: 100vh;
-    width: 100vw;
-  }
-}"
-`;
-
-exports[`Layer animation slide 1`] = `
-.c0 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  background: transparent;
-  position: relative;
-  z-index: 20;
-  pointer-events: none;
-  outline: none;
-  position: fixed;
-  top: 0px;
-  left: 0px;
-  right: 0px;
-  bottom: 0px;
-}
-
-.c1 {
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  right: 0px;
-  bottom: 0px;
-  background-color: rgba(0, 0, 0, 0.5);
-  color: #f8f8f8;
-  pointer-events: all;
-  will-change: transform;
-}
-
-.c2 {
-  display: flex;
-  flex-direction: column;
-  min-height: 48px;
-  background-color: #FFFFFF;
-  color: #444444;
-  outline: none;
-  pointer-events: all;
-  z-index: 20;
-  position: absolute;
-  max-height: calc(100% - 0px - 0px);
-  max-width: calc(100% - 0px - 0px);
-  border-radius: 4px;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%,-50%);
-  animation: hWAzxx 0.2s ease-in-out forwards;
-}
-
-.c3 {
-  width: 0;
-  height: 0;
-  overflow: hidden;
-  position: absolute;
-  clip-path: inset(50%);
-  white-space: nowrap;
-  border: 0;
-}
-
-.c3:focus {
-  outline: none;
-}
-
-@media only screen and (max-width: 768px) {
-  .c0 {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    min-height: 100vh;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .c1 {
-    position: relative;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .c2 {
-    position: relative;
-    max-height: none;
-    max-width: none;
-    border-radius: 0;
-    height: 100vh;
-    width: 100vw;
-  }
-}
-
-<div
-  class="c0"
-  id="animation-test"
-  tabindex="-1"
->
-  <div
-    class="c1"
-  />
-  <div
-    class="c2"
-    data-g-portal-id="0"
-    id="animation-test"
-  >
-    <span
-      class="c3"
-      tabindex="-1"
-    />
-    This is a layer
-  </div>
-</div>
-`;
-
-exports[`Layer animation slide 2`] = `
-".jsyFzj {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  background: transparent;
-  position: relative;
-  z-index: 20;
-  pointer-events: none;
-  outline: none;
-  position: fixed;
-  top: 0px;
-  left: 0px;
-  right: 0px;
-  bottom: 0px;
-}
-@media only screen and (max-width: 768px) {
-  .jsyFzj {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    min-height: 100vh;
-  }
-}
-@media only screen and (max-width: 768px) {
-  .dKbLsG {
-    position: relative;
-  }
-}
-@media only screen and (max-width: 768px) {
-  .jqpEns {
-    position: relative;
-    max-height: none;
-    max-width: none;
-    border-radius: 0;
-    height: 100vh;
-    width: 100vw;
-  }
-}"
-`;
-
-exports[`Layer animation true 1`] = `
-.c0 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  background: transparent;
-  position: relative;
-  z-index: 20;
-  pointer-events: none;
-  outline: none;
-  position: fixed;
-  top: 0px;
-  left: 0px;
-  right: 0px;
-  bottom: 0px;
-}
-
-.c1 {
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  right: 0px;
-  bottom: 0px;
-  background-color: rgba(0, 0, 0, 0.5);
-  color: #f8f8f8;
-  pointer-events: all;
-  will-change: transform;
-}
-
-.c2 {
-  display: flex;
-  flex-direction: column;
-  min-height: 48px;
-  background-color: #FFFFFF;
-  color: #444444;
-  outline: none;
-  pointer-events: all;
-  z-index: 20;
-  position: absolute;
-  max-height: calc(100% - 0px - 0px);
-  max-width: calc(100% - 0px - 0px);
-  border-radius: 4px;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%,-50%);
-  animation: hWAzxx 0.2s ease-in-out forwards;
-}
-
-.c3 {
-  width: 0;
-  height: 0;
-  overflow: hidden;
-  position: absolute;
-  clip-path: inset(50%);
-  white-space: nowrap;
-  border: 0;
-}
-
-.c3:focus {
-  outline: none;
-}
-
-@media only screen and (max-width: 768px) {
-  .c0 {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    min-height: 100vh;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .c1 {
-    position: relative;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .c2 {
-    position: relative;
-    max-height: none;
-    max-width: none;
-    border-radius: 0;
-    height: 100vh;
-    width: 100vw;
-  }
-}
-
-<div
-  class="c0"
-  id="animation-test"
-  tabindex="-1"
->
-  <div
-    class="c1"
-  />
-  <div
-    class="c2"
-    data-g-portal-id="0"
-    id="animation-test"
-  >
-    <span
-      class="c3"
-      tabindex="-1"
-    />
-    This is a layer
-  </div>
-</div>
-`;
-
-exports[`Layer animation true 2`] = `
-".jsyFzj {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  background: transparent;
-  position: relative;
-  z-index: 20;
-  pointer-events: none;
-  outline: none;
-  position: fixed;
-  top: 0px;
-  left: 0px;
-  right: 0px;
-  bottom: 0px;
-}
-@media only screen and (max-width: 768px) {
-  .jsyFzj {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    min-height: 100vh;
-  }
-}
-@media only screen and (max-width: 768px) {
-  .dKbLsG {
-    position: relative;
-  }
-}
-@media only screen and (max-width: 768px) {
-  .jqpEns {
-    position: relative;
-    max-height: none;
-    max-width: none;
-    border-radius: 0;
-    height: 100vh;
-    width: 100vw;
-  }
-}"
-`;
-
 exports[`Layer custom margin 1`] = `
 .c0 {
   font-size: 18px;
@@ -792,1578 +157,6 @@ exports[`Layer custom margin 2`] = `
     width: 100vw;
   }
 }"
-`;
-
-exports[`Layer custom theme 1`] = `
-.c0 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  background: transparent;
-  position: relative;
-  z-index: 20;
-  pointer-events: none;
-  outline: none;
-  position: fixed;
-  top: 0px;
-  left: 0px;
-  right: 0px;
-  bottom: 0px;
-}
-
-.c1 {
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  right: 0px;
-  bottom: 0px;
-  backdrop-filter: blur(12px);
-  background-color: rgba(0, 0, 0, 0.5);
-  color: #f8f8f8;
-  pointer-events: all;
-  will-change: transform;
-}
-
-.c2 {
-  display: flex;
-  flex-direction: column;
-  min-height: 48px;
-  background-color: #FFFFFF;
-  color: #444444;
-  outline: none;
-  pointer-events: all;
-  z-index: 20;
-  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.20);
-  position: absolute;
-  max-height: calc(100% - 0px - 0px);
-  max-width: calc(100% - 0px - 0px);
-  border-radius: 4px;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%,-50%);
-}
-
-.c3 {
-  width: 0;
-  height: 0;
-  overflow: hidden;
-  position: absolute;
-  clip-path: inset(50%);
-  white-space: nowrap;
-  border: 0;
-}
-
-.c3:focus {
-  outline: none;
-}
-
-@media only screen and (max-width: 768px) {
-  .c0 {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    min-height: 100vh;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .c1 {
-    position: relative;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .c2 {
-    position: relative;
-    max-height: none;
-    max-width: none;
-    border-radius: 0;
-    height: 100vh;
-    width: 100vw;
-  }
-}
-
-<div
-  class="c0"
-  id="custom-theme-test"
-  tabindex="-1"
->
-  <div
-    class="c1"
-  />
-  <div
-    class="c2"
-    data-g-portal-id="0"
-    id="custom-theme-test"
-  >
-    <span
-      class="c3"
-      tabindex="-1"
-    />
-    This is a layer
-  </div>
-</div>
-`;
-
-exports[`Layer custom theme 2`] = `
-".jsyFzj {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  background: transparent;
-  position: relative;
-  z-index: 20;
-  pointer-events: none;
-  outline: none;
-  position: fixed;
-  top: 0px;
-  left: 0px;
-  right: 0px;
-  bottom: 0px;
-}
-@media only screen and (max-width: 768px) {
-  .jsyFzj {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    min-height: 100vh;
-  }
-}
-@media only screen and (max-width: 768px) {
-  .dKbLsG {
-    position: relative;
-  }
-}
-@media only screen and (max-width: 768px) {
-  .jqpEns {
-    position: relative;
-    max-height: none;
-    max-width: none;
-    border-radius: 0;
-    height: 100vh;
-    width: 100vw;
-  }
-}"
-`;
-
-exports[`Layer dark context 1`] = `
-.c0 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  background: transparent;
-  position: relative;
-  z-index: 20;
-  pointer-events: none;
-  outline: none;
-  position: fixed;
-  top: 0px;
-  left: 0px;
-  right: 0px;
-  bottom: 0px;
-}
-
-.c1 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  display: flex;
-  flex-direction: column;
-  min-height: 48px;
-  background-color: #000000;
-  color: #f8f8f8;
-  outline: none;
-  pointer-events: all;
-  z-index: 20;
-  position: fixed;
-  max-height: calc(100% - 0px - 0px);
-  max-width: calc(100% - 0px - 0px);
-  border-radius: 4px;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%,-50%);
-  animation: hWAzxx 0.2s ease-in-out forwards;
-}
-
-.c2 {
-  width: 0;
-  height: 0;
-  overflow: hidden;
-  position: absolute;
-  clip-path: inset(50%);
-  white-space: nowrap;
-  border: 0;
-}
-
-.c2:focus {
-  outline: none;
-}
-
-@media only screen and (max-width: 768px) {
-  .c0 {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    min-height: 100vh;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .c1 {
-    position: relative;
-    max-height: none;
-    max-width: none;
-    border-radius: 0;
-    height: 100vh;
-    width: 100vw;
-  }
-}
-
-<div
-  class="c0"
-  id="non-modal-test"
-  tabindex="-1"
->
-  <div
-    class="c1"
-    data-g-portal-id="0"
-    id="non-modal-test"
-  >
-    <span
-      class="c2"
-      tabindex="-1"
-    />
-    This is a non-modal layer
-  </div>
-</div>
-`;
-
-exports[`Layer dark context 2`] = `
-".jsyFzj {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  background: transparent;
-  position: relative;
-  z-index: 20;
-  pointer-events: none;
-  outline: none;
-  position: fixed;
-  top: 0px;
-  left: 0px;
-  right: 0px;
-  bottom: 0px;
-}
-@media only screen and (max-width: 768px) {
-  .jsyFzj {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    min-height: 100vh;
-  }
-}
-@media only screen and (max-width: 768px) {
-  .dKbLsG {
-    position: relative;
-  }
-}
-@media only screen and (max-width: 768px) {
-  .jqpEns {
-    position: relative;
-    max-height: none;
-    max-width: none;
-    border-radius: 0;
-    height: 100vh;
-    width: 100vw;
-  }
-}"
-`;
-
-exports[`Layer focus on layer 1`] = `
-.c0 {
-  display: flex;
-  flex-direction: column;
-  min-height: 48px;
-  background-color: #FFFFFF;
-  color: #444444;
-  outline: none;
-  pointer-events: all;
-  z-index: 20;
-  position: absolute;
-  max-height: calc(100% - 0px - 0px);
-  max-width: calc(100% - 0px - 0px);
-  border-radius: 4px;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%,-50%);
-  animation: hWAzxx 0.2s ease-in-out forwards;
-}
-
-.c1 {
-  width: 0;
-  height: 0;
-  overflow: hidden;
-  position: absolute;
-  clip-path: inset(50%);
-  white-space: nowrap;
-  border: 0;
-}
-
-.c1:focus {
-  outline: none;
-}
-
-@media only screen and (max-width: 768px) {
-
-}
-
-@media only screen and (max-width: 768px) {
-
-}
-
-@media only screen and (max-width: 768px) {
-  .c0 {
-    position: relative;
-    max-height: none;
-    max-width: none;
-    border-radius: 0;
-    height: 100vh;
-    width: 100vw;
-  }
-}
-
-<div
-  class="c0"
-  data-g-portal-id="0"
-  data-testid="focus-layer-test"
->
-  <span
-    class="c1"
-    tabindex="-1"
-  />
-  <input />
-</div>
-`;
-
-exports[`Layer hidden 1`] = `
-.c0 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  background: transparent;
-  position: relative;
-  z-index: 20;
-  pointer-events: none;
-  outline: none;
-  left: -100%;
-  right: 100%;
-  z-index: -1;
-  position: fixed;
-}
-
-.c1 {
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  right: 0px;
-  bottom: 0px;
-  background-color: rgba(0, 0, 0, 0.5);
-  color: #f8f8f8;
-  pointer-events: all;
-  will-change: transform;
-}
-
-.c2 {
-  display: flex;
-  flex-direction: column;
-  min-height: 48px;
-  background-color: #FFFFFF;
-  color: #444444;
-  outline: none;
-  pointer-events: all;
-  z-index: 20;
-  position: absolute;
-  max-height: calc(100% - 0px - 0px);
-  max-width: calc(100% - 0px - 0px);
-  border-radius: 4px;
-}
-
-.c3 {
-  width: 0;
-  height: 0;
-  overflow: hidden;
-  position: absolute;
-  clip-path: inset(50%);
-  white-space: nowrap;
-  border: 0;
-}
-
-.c3:focus {
-  outline: none;
-}
-
-@media only screen and (max-width: 768px) {
-  .c1 {
-    position: relative;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .c2 {
-    position: relative;
-    max-height: none;
-    max-width: none;
-    border-radius: 0;
-    height: 100vh;
-    width: 100vw;
-  }
-}
-
-<div
-  class="c0"
-  id="hidden-test"
-  tabindex="-1"
->
-  <div
-    class="c1"
-  />
-  <div
-    class="c2"
-    data-g-portal-id="0"
-    id="hidden-test"
-  >
-    <span
-      class="c3"
-      tabindex="-1"
-    />
-    This is a layer
-  </div>
-</div>
-`;
-
-exports[`Layer hidden 2`] = `
-"@media only screen and (max-width: 768px) {
-  .jsyFzj {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    min-height: 100vh;
-  }
-}
-@media only screen and (max-width: 768px) {
-  .dKbLsG {
-    position: relative;
-  }
-}
-@media only screen and (max-width: 768px) {
-  .jqpEns {
-    position: relative;
-    max-height: none;
-    max-width: none;
-    border-radius: 0;
-    height: 100vh;
-    width: 100vw;
-  }
-}"
-`;
-
-exports[`Layer hidden 3`] = `
-<div
-  class="StyledLayer-sc-rmtehz-0 jsyFzj"
-  id="hidden-test"
-  tabindex="-1"
->
-  <div
-    class="StyledLayer__StyledOverlay-sc-rmtehz-1 dKbLsG"
-  />
-  <div
-    class="StyledLayer__StyledContainer-sc-rmtehz-2 fTRXBx"
-    data-g-portal-id="0"
-    id="hidden-test"
-  >
-    <span
-      class="LayerContainer__FocusSpan-sc-1srj14c-0 bTrcwF"
-      tabindex="-1"
-    />
-    This is a layer
-  </div>
-</div>
-`;
-
-exports[`Layer hidden 4`] = `
-".jsyFzj {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  background: transparent;
-  position: relative;
-  z-index: 20;
-  pointer-events: none;
-  outline: none;
-  position: fixed;
-  top: 0px;
-  left: 0px;
-  right: 0px;
-  bottom: 0px;
-}
-@media only screen and (max-width: 768px) {
-  .jsyFzj {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    min-height: 100vh;
-  }
-}
-@media only screen and (max-width: 768px) {
-  .dKbLsG {
-    position: relative;
-  }
-}
-@media only screen and (max-width: 768px) {
-  .jqpEns {
-    position: relative;
-    max-height: none;
-    max-width: none;
-    border-radius: 0;
-    height: 100vh;
-    width: 100vw;
-  }
-}"
-`;
-
-exports[`Layer invoke onClickOutside when modal={false} 1`] = `
-.c0 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  background: transparent;
-  position: relative;
-  z-index: 20;
-  pointer-events: none;
-  outline: none;
-  position: fixed;
-  top: 0px;
-  left: 0px;
-  right: 0px;
-  bottom: 0px;
-}
-
-.c1 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  display: flex;
-  flex-direction: column;
-  min-height: 48px;
-  background-color: #FFFFFF;
-  color: #444444;
-  outline: none;
-  pointer-events: all;
-  z-index: 20;
-  position: fixed;
-  max-height: calc(100% - 0px - 0px);
-  max-width: calc(100% - 0px - 0px);
-  border-radius: 4px;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%,-50%);
-}
-
-.c2 {
-  width: 0;
-  height: 0;
-  overflow: hidden;
-  position: absolute;
-  clip-path: inset(50%);
-  white-space: nowrap;
-  border: 0;
-}
-
-.c2:focus {
-  outline: none;
-}
-
-@media only screen and (max-width: 768px) {
-  .c0 {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    min-height: 100vh;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .c1 {
-    position: relative;
-    max-height: none;
-    max-width: none;
-    border-radius: 0;
-    height: 100vh;
-    width: 100vw;
-  }
-}
-
-<div
-  class="c0"
-  id="layer-node"
-  tabindex="-1"
->
-  <div
-    class="c1"
-    data-g-portal-id="0"
-    id="layer-node"
-  >
-    <span
-      class="c2"
-      tabindex="-1"
-    />
-    <div>
-      This is a layer
-      <input
-        data-testid="test-input"
-      />
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Layer invoke onClickOutside when modal={false} 2`] = `
-".jsyFzj {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  background: transparent;
-  position: relative;
-  z-index: 20;
-  pointer-events: none;
-  outline: none;
-  position: fixed;
-  top: 0px;
-  left: 0px;
-  right: 0px;
-  bottom: 0px;
-}
-@media only screen and (max-width: 768px) {
-  .jsyFzj {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    min-height: 100vh;
-  }
-}
-@media only screen and (max-width: 768px) {
-  .dKbLsG {
-    position: relative;
-  }
-}
-@media only screen and (max-width: 768px) {
-  .jqpEns {
-    position: relative;
-    max-height: none;
-    max-width: none;
-    border-radius: 0;
-    height: 100vh;
-    width: 100vw;
-  }
-}"
-`;
-
-exports[`Layer invoke onClickOutside when modal={false} and layer has target 1`] = `
-.c0 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  background: transparent;
-  position: relative;
-  z-index: 20;
-  pointer-events: none;
-  outline: none;
-  position: fixed;
-  top: 0px;
-  left: 0px;
-  right: 0px;
-  bottom: 0px;
-}
-
-.c1 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  display: flex;
-  flex-direction: column;
-  min-height: 48px;
-  background-color: #FFFFFF;
-  color: #444444;
-  outline: none;
-  pointer-events: all;
-  z-index: 20;
-  position: absolute;
-  max-height: calc(100% - 0px - 0px);
-  max-width: calc(100% - 0px - 0px);
-  border-radius: 4px;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%,-50%);
-}
-
-.c2 {
-  width: 0;
-  height: 0;
-  overflow: hidden;
-  position: absolute;
-  clip-path: inset(50%);
-  white-space: nowrap;
-  border: 0;
-}
-
-.c2:focus {
-  outline: none;
-}
-
-@media only screen and (max-width: 768px) {
-  .c1 {
-    position: relative;
-    max-height: none;
-    max-width: none;
-    border-radius: 0;
-    height: 100%;
-    width: 100%;
-  }
-}
-
-<div
-  class="c0"
-  id="target-test"
-  style="left: 0px; right: 1024px; top: 0px; bottom: 768px; max-height: 0; max-width: 0;"
-  tabindex="-1"
->
-  <div
-    class="c1"
-    data-g-portal-id="0"
-    id="target-test"
-  >
-    <span
-      class="c2"
-      tabindex="-1"
-    />
-    this is a test layer
-  </div>
-</div>
-`;
-
-exports[`Layer invoke onClickOutside when modal={false} and layer has target 2`] = `
-"@media only screen and (max-width: 768px) {
-  .jsyFzj {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    min-height: 100vh;
-  }
-}
-@media only screen and (max-width: 768px) {
-  .dKbLsG {
-    position: relative;
-  }
-}
-@media only screen and (max-width: 768px) {
-  .jqpEns {
-    position: relative;
-    max-height: none;
-    max-width: none;
-    border-radius: 0;
-    height: 100vh;
-    width: 100vw;
-  }
-}"
-`;
-
-exports[`Layer invoke onClickOutside when modal={true} 1`] = `
-.c0 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  background: transparent;
-  position: relative;
-  z-index: 20;
-  pointer-events: none;
-  outline: none;
-  position: fixed;
-  top: 0px;
-  left: 0px;
-  right: 0px;
-  bottom: 0px;
-}
-
-.c1 {
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  right: 0px;
-  bottom: 0px;
-  background-color: rgba(0, 0, 0, 0.5);
-  color: #f8f8f8;
-  pointer-events: all;
-  will-change: transform;
-}
-
-.c2 {
-  display: flex;
-  flex-direction: column;
-  min-height: 48px;
-  background-color: #FFFFFF;
-  color: #444444;
-  outline: none;
-  pointer-events: all;
-  z-index: 20;
-  position: absolute;
-  max-height: calc(100% - 0px - 0px);
-  max-width: calc(100% - 0px - 0px);
-  border-radius: 4px;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%,-50%);
-}
-
-.c3 {
-  width: 0;
-  height: 0;
-  overflow: hidden;
-  position: absolute;
-  clip-path: inset(50%);
-  white-space: nowrap;
-  border: 0;
-}
-
-.c3:focus {
-  outline: none;
-}
-
-@media only screen and (max-width: 768px) {
-  .c0 {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    min-height: 100vh;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .c1 {
-    position: relative;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .c2 {
-    position: relative;
-    max-height: none;
-    max-width: none;
-    border-radius: 0;
-    height: 100vh;
-    width: 100vw;
-  }
-}
-
-<div
-  class="c0"
-  id="layer-node"
-  tabindex="-1"
->
-  <div
-    class="c1"
-  />
-  <div
-    class="c2"
-    data-g-portal-id="0"
-    id="layer-node"
-  >
-    <span
-      class="c3"
-      tabindex="-1"
-    />
-    <div>
-      This is a layer
-      <input
-        data-testid="test-input"
-      />
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Layer invoke onClickOutside when modal={true} 2`] = `
-".jsyFzj {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  background: transparent;
-  position: relative;
-  z-index: 20;
-  pointer-events: none;
-  outline: none;
-  position: fixed;
-  top: 0px;
-  left: 0px;
-  right: 0px;
-  bottom: 0px;
-}
-@media only screen and (max-width: 768px) {
-  .jsyFzj {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    min-height: 100vh;
-  }
-}
-@media only screen and (max-width: 768px) {
-  .dKbLsG {
-    position: relative;
-  }
-}
-@media only screen and (max-width: 768px) {
-  .jqpEns {
-    position: relative;
-    max-height: none;
-    max-width: none;
-    border-radius: 0;
-    height: 100vh;
-    width: 100vw;
-  }
-}"
-`;
-
-exports[`Layer invoke onClickOutside when modal={true} and layer has target 1`] = `
-.c0 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  background: transparent;
-  position: relative;
-  z-index: 20;
-  pointer-events: none;
-  outline: none;
-  position: fixed;
-  top: 0px;
-  left: 0px;
-  right: 0px;
-  bottom: 0px;
-}
-
-.c1 {
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  right: 0px;
-  bottom: 0px;
-  background-color: rgba(0, 0, 0, 0.5);
-  color: #f8f8f8;
-  pointer-events: all;
-  will-change: transform;
-}
-
-.c2 {
-  display: flex;
-  flex-direction: column;
-  min-height: 48px;
-  background-color: #FFFFFF;
-  color: #444444;
-  outline: none;
-  pointer-events: all;
-  z-index: 20;
-  position: absolute;
-  max-height: calc(100% - 0px - 0px);
-  max-width: calc(100% - 0px - 0px);
-  border-radius: 4px;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%,-50%);
-}
-
-.c3 {
-  width: 0;
-  height: 0;
-  overflow: hidden;
-  position: absolute;
-  clip-path: inset(50%);
-  white-space: nowrap;
-  border: 0;
-}
-
-.c3:focus {
-  outline: none;
-}
-
-@media only screen and (max-width: 768px) {
-  .c1 {
-    position: relative;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .c2 {
-    position: relative;
-    max-height: none;
-    max-width: none;
-    border-radius: 0;
-    height: 100%;
-    width: 100%;
-  }
-}
-
-<div
-  class="c0"
-  id="target-test"
-  style="left: 0px; right: 1024px; top: 0px; bottom: 768px; max-height: 0; max-width: 0;"
-  tabindex="-1"
->
-  <div
-    class="c1"
-  />
-  <div
-    class="c2"
-    data-g-portal-id="0"
-    id="target-test"
-  >
-    <span
-      class="c3"
-      tabindex="-1"
-    />
-    this is a test layer
-  </div>
-</div>
-`;
-
-exports[`Layer invoke onClickOutside when modal={true} and layer has target 2`] = `
-"@media only screen and (max-width: 768px) {
-  .jsyFzj {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    min-height: 100vh;
-  }
-}
-@media only screen and (max-width: 768px) {
-  .dKbLsG {
-    position: relative;
-  }
-}
-@media only screen and (max-width: 768px) {
-  .jqpEns {
-    position: relative;
-    max-height: none;
-    max-width: none;
-    border-radius: 0;
-    height: 100vh;
-    width: 100vw;
-  }
-}"
-`;
-
-exports[`Layer invokes onEsc when modal={false} 1`] = `
-.c5 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  align-items: center;
-  min-width: 0;
-  min-height: 0;
-  flex-direction: row;
-  justify-content: space-between;
-}
-
-.c6 {
-  display: flex;
-  box-sizing: border-box;
-  min-width: 0;
-  min-height: 0;
-  flex-direction: row;
-  flex: 1 1;
-  flex-basis: auto;
-}
-
-.c10 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  margin-left: 12px;
-  margin-right: 12px;
-  min-width: 0;
-  min-height: 0;
-  flex-direction: column;
-  flex: 0 0 auto;
-}
-
-.c11 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
-}
-
-.c11 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c11 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c11 *[stroke*='#'],
-.c11 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c11 *[fill-rule],
-.c11 *[FILL-RULE],
-.c11 *[fill*='#'],
-.c11 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
-}
-
-.c3 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  font: inherit;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  color: inherit;
-  outline: none;
-  border: none;
-  padding: 0;
-  text-align: inherit;
-}
-
-.c3:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c3:focus >circle,
-.c3:focus >ellipse,
-.c3:focus >line,
-.c3:focus >path,
-.c3:focus >polygon,
-.c3:focus >polyline,
-.c3:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c3:focus ::-moz-focus-inner {
-  border: 0;
-}
-
-.c3:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c3:focus:not(:focus-visible) >circle,
-.c3:focus:not(:focus-visible) >ellipse,
-.c3:focus:not(:focus-visible) >line,
-.c3:focus:not(:focus-visible) >path,
-.c3:focus:not(:focus-visible) >polygon,
-.c3:focus:not(:focus-visible) >polyline,
-.c3:focus:not(:focus-visible) >rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c3:focus:not(:focus-visible) ::-moz-focus-inner {
-  border: 0;
-}
-
-.c8 {
-  box-sizing: border-box;
-  font-size: inherit;
-  font-family: inherit;
-  border: none;
-  -webkit-appearance: none;
-  background: transparent;
-  color: inherit;
-  width: 100%;
-  padding: 11px;
-  font-weight: 600;
-  margin: 0;
-  border: 1px solid rgba(0, 0, 0, 0.33);
-  border-radius: 4px;
-  border: none;
-  outline: none;
-  border: none;
-}
-
-.c8::-webkit-input-placeholder {
-  color: #AAAAAA;
-}
-
-.c8::-moz-placeholder {
-  color: #AAAAAA;
-}
-
-.c8:-ms-input-placeholder {
-  color: #AAAAAA;
-}
-
-.c8 ::-webkit-search-decoration {
-  -webkit-appearance: none;
-}
-
-.c8::-moz-focus-inner {
-  border: none;
-  outline: none;
-}
-
-.c8:-moz-placeholder,
-.c8::-moz-placeholder {
-  opacity: 1;
-}
-
-.c7 {
-  position: relative;
-  width: 100%;
-}
-
-.c9 {
-  cursor: pointer;
-}
-
-.c4 {
-  border: 1px solid rgba(0, 0, 0, 0.33);
-  border-radius: 4px;
-}
-
-.c0 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  background: transparent;
-  position: relative;
-  z-index: 20;
-  pointer-events: none;
-  outline: none;
-  position: fixed;
-  top: 0px;
-  left: 0px;
-  right: 0px;
-  bottom: 0px;
-}
-
-.c1 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  display: flex;
-  flex-direction: column;
-  min-height: 48px;
-  background-color: #FFFFFF;
-  color: #444444;
-  outline: none;
-  pointer-events: all;
-  z-index: 20;
-  position: fixed;
-  max-height: calc(100% - 0px - 0px);
-  max-width: calc(100% - 0px - 0px);
-  border-radius: 4px;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%,-50%);
-}
-
-.c2 {
-  width: 0;
-  height: 0;
-  overflow: hidden;
-  position: absolute;
-  clip-path: inset(50%);
-  white-space: nowrap;
-  border: 0;
-}
-
-.c2:focus {
-  outline: none;
-}
-
-@media only screen and (max-width: 768px) {
-  .c10 {
-    margin-left: 6px;
-    margin-right: 6px;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-
-}
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-
-}
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-
-}
-
-@media only screen and (max-width: 768px) {
-  .c0 {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    min-height: 100vh;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .c1 {
-    position: relative;
-    max-height: none;
-    max-width: none;
-    border-radius: 0;
-    height: 100vh;
-    width: 100vw;
-  }
-}
-
-<div
-  class="c0"
-  id="esc-test"
-  tabindex="-1"
->
-  <div
-    class="c1"
-    data-g-portal-id="0"
-    id="esc-test"
-  >
-    <span
-      class="c2"
-      tabindex="-1"
-    />
-    <button
-      aria-expanded="false"
-      aria-haspopup="listbox"
-      aria-label="Open Drop"
-      class="c3 c4"
-      type="button"
-    >
-      <div
-        class="c5"
-      >
-        <div
-          class="c6"
-        >
-          <div
-            class="c7"
-          >
-            <input
-              autocomplete="off"
-              class="c8 c9"
-              data-testid="test-select"
-              inert=""
-              readonly=""
-              tabindex="-1"
-              type="text"
-              value=""
-            />
-          </div>
-        </div>
-        <div
-          class="c10"
-          style="min-width: auto;"
-        >
-          <svg
-            aria-label="FormDown"
-            class="c11"
-            viewBox="0 0 24 24"
-          >
-            <path
-              d="m18 9-6 6-6-6"
-              fill="none"
-              stroke="#000"
-              stroke-width="2"
-            />
-          </svg>
-        </div>
-      </div>
-    </button>
-  </div>
-</div>
-`;
-
-exports[`Layer invokes onEsc when modal={false} 2`] = `
-".jsyFzj {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  background: transparent;
-  position: relative;
-  z-index: 20;
-  pointer-events: none;
-  outline: none;
-  position: fixed;
-  top: 0px;
-  left: 0px;
-  right: 0px;
-  bottom: 0px;
-}
-@media only screen and (max-width: 768px) {
-  .jsyFzj {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    min-height: 100vh;
-  }
-}
-@media only screen and (max-width: 768px) {
-  .dKbLsG {
-    position: relative;
-  }
-}
-@media only screen and (max-width: 768px) {
-  .jqpEns {
-    position: relative;
-    max-height: none;
-    max-width: none;
-    border-radius: 0;
-    height: 100vh;
-    width: 100vw;
-  }
-}"
-`;
-
-exports[`Layer is accessible 1`] = `
-@media only screen and (max-width: 768px) {
-
-}
-
-@media only screen and (max-width: 768px) {
-
-}
-
-@media only screen and (max-width: 768px) {
-
-}
-
-<div
-  data-testid="test-body-node"
->
-  <input />
-  <input
-    tabindex="10"
-  />
-</div>
-`;
-
-exports[`Layer is accessible 2`] = `
-@media only screen and (max-width: 768px) {
-
-}
-
-@media only screen and (max-width: 768px) {
-
-}
-
-@media only screen and (max-width: 768px) {
-
-}
-
-<div
-  data-testid="test-layer-node"
->
-  This is a layer
-  <input
-    data-testid="test-input"
-  />
-</div>
-`;
-
-exports[`Layer is accessible 3`] = `
-<div
-  data-testid="test-body-node"
->
-  <input />
-  <input
-    tabindex="10"
-  />
-</div>
 `;
 
 exports[`Layer margin large 1`] = `
@@ -3117,379 +910,6 @@ exports[`Layer margin xsmall 1`] = `
 `;
 
 exports[`Layer margin xsmall 2`] = `
-".jsyFzj {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  background: transparent;
-  position: relative;
-  z-index: 20;
-  pointer-events: none;
-  outline: none;
-  position: fixed;
-  top: 0px;
-  left: 0px;
-  right: 0px;
-  bottom: 0px;
-}
-@media only screen and (max-width: 768px) {
-  .jsyFzj {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    min-height: 100vh;
-  }
-}
-@media only screen and (max-width: 768px) {
-  .dKbLsG {
-    position: relative;
-  }
-}
-@media only screen and (max-width: 768px) {
-  .jqpEns {
-    position: relative;
-    max-height: none;
-    max-width: none;
-    border-radius: 0;
-    height: 100vh;
-    width: 100vw;
-  }
-}"
-`;
-
-exports[`Layer non-modal 1`] = `
-.c0 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  background: transparent;
-  position: relative;
-  z-index: 20;
-  pointer-events: none;
-  outline: none;
-  position: fixed;
-  top: 0px;
-  left: 0px;
-  right: 0px;
-  bottom: 0px;
-}
-
-.c1 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  display: flex;
-  flex-direction: column;
-  min-height: 48px;
-  background-color: #FFFFFF;
-  color: #444444;
-  outline: none;
-  pointer-events: all;
-  z-index: 20;
-  position: fixed;
-  max-height: calc(100% - 0px - 0px);
-  max-width: calc(100% - 0px - 0px);
-  border-radius: 4px;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%,-50%);
-  animation: hWAzxx 0.2s ease-in-out forwards;
-}
-
-.c2 {
-  width: 0;
-  height: 0;
-  overflow: hidden;
-  position: absolute;
-  clip-path: inset(50%);
-  white-space: nowrap;
-  border: 0;
-}
-
-.c2:focus {
-  outline: none;
-}
-
-@media only screen and (max-width: 768px) {
-  .c0 {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    min-height: 100vh;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .c1 {
-    position: relative;
-    max-height: none;
-    max-width: none;
-    border-radius: 0;
-    height: 100vh;
-    width: 100vw;
-  }
-}
-
-<div
-  class="c0"
-  id="non-modal-test"
-  tabindex="-1"
->
-  <div
-    class="c1"
-    data-g-portal-id="0"
-    id="non-modal-test"
-  >
-    <span
-      class="c2"
-      tabindex="-1"
-    />
-    This is a non-modal layer
-  </div>
-</div>
-`;
-
-exports[`Layer non-modal 2`] = `
-".jsyFzj {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  background: transparent;
-  position: relative;
-  z-index: 20;
-  pointer-events: none;
-  outline: none;
-  position: fixed;
-  top: 0px;
-  left: 0px;
-  right: 0px;
-  bottom: 0px;
-}
-@media only screen and (max-width: 768px) {
-  .jsyFzj {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    min-height: 100vh;
-  }
-}
-@media only screen and (max-width: 768px) {
-  .dKbLsG {
-    position: relative;
-  }
-}
-@media only screen and (max-width: 768px) {
-  .jqpEns {
-    position: relative;
-    max-height: none;
-    max-width: none;
-    border-radius: 0;
-    height: 100vh;
-    width: 100vw;
-  }
-}"
-`;
-
-exports[`Layer not steal focus from an autofocus focusable element 1`] = `
-.c0 {
-  display: flex;
-  flex-direction: column;
-  min-height: 48px;
-  background-color: #FFFFFF;
-  color: #444444;
-  outline: none;
-  pointer-events: all;
-  z-index: 20;
-  position: absolute;
-  max-height: calc(100% - 0px - 0px);
-  max-width: calc(100% - 0px - 0px);
-  border-radius: 4px;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%,-50%);
-  animation: hWAzxx 0.2s ease-in-out forwards;
-}
-
-.c1 {
-  width: 0;
-  height: 0;
-  overflow: hidden;
-  position: absolute;
-  clip-path: inset(50%);
-  white-space: nowrap;
-  border: 0;
-}
-
-.c1:focus {
-  outline: none;
-}
-
-@media only screen and (max-width: 768px) {
-
-}
-
-@media only screen and (max-width: 768px) {
-
-}
-
-@media only screen and (max-width: 768px) {
-  .c0 {
-    position: relative;
-    max-height: none;
-    max-width: none;
-    border-radius: 0;
-    height: 100vh;
-    width: 100vw;
-  }
-}
-
-<div
-  class="c0"
-  data-g-portal-id="0"
-  data-testid="focus-layer-input-test"
->
-  <span
-    class="c1"
-    tabindex="-1"
-  />
-  <input
-    data-testid="focus-input"
-  />
-  <button
-    type="button"
-  >
-    Button
-  </button>
-</div>
-`;
-
-exports[`Layer plain 1`] = `
-.c0 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  background: transparent;
-  position: relative;
-  z-index: 20;
-  pointer-events: none;
-  outline: none;
-  position: fixed;
-  top: 0px;
-  left: 0px;
-  right: 0px;
-  bottom: 0px;
-}
-
-.c1 {
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  right: 0px;
-  bottom: 0px;
-  pointer-events: all;
-  will-change: transform;
-}
-
-.c2 {
-  display: flex;
-  flex-direction: column;
-  min-height: 48px;
-  outline: none;
-  pointer-events: all;
-  z-index: 20;
-  position: absolute;
-  max-height: calc(100% - 0px - 0px);
-  max-width: calc(100% - 0px - 0px);
-  border-radius: 0;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%,-50%);
-  animation: hWAzxx 0.2s ease-in-out forwards;
-}
-
-.c3 {
-  width: 0;
-  height: 0;
-  overflow: hidden;
-  position: absolute;
-  clip-path: inset(50%);
-  white-space: nowrap;
-  border: 0;
-}
-
-.c3:focus {
-  outline: none;
-}
-
-@media only screen and (max-width: 768px) {
-  .c0 {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    min-height: 100vh;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .c1 {
-    position: relative;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .c2 {
-    position: relative;
-    max-height: none;
-    max-width: none;
-    border-radius: 0;
-    height: 100vh;
-    width: 100vw;
-  }
-}
-
-<div
-  class="c0"
-  id="plain-test"
-  tabindex="-1"
->
-  <div
-    class="c1"
-  />
-  <div
-    class="c2"
-    data-g-portal-id="0"
-    id="plain-test"
-  >
-    <span
-      class="c3"
-      tabindex="-1"
-    />
-    This is a plain layer
-  </div>
-</div>
-`;
-
-exports[`Layer plain 2`] = `
 ".jsyFzj {
   font-size: 18px;
   line-height: 24px;
@@ -10573,165 +7993,6 @@ exports[`Layer position: top-right - full: vertical 2`] = `
 }"
 `;
 
-exports[`Layer renders outside grommet wrapper 1`] = `
-.c0 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  background: transparent;
-  position: relative;
-  z-index: 20;
-  pointer-events: none;
-  outline: none;
-  position: fixed;
-  top: 0px;
-  left: 0px;
-  right: 0px;
-  bottom: 0px;
-}
-
-.c1 {
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  right: 0px;
-  bottom: 0px;
-  background-color: rgba(0, 0, 0, 0.5);
-  color: #f8f8f8;
-  pointer-events: all;
-  will-change: transform;
-}
-
-.c2 {
-  display: flex;
-  flex-direction: column;
-  min-height: 48px;
-  background-color: #FFFFFF;
-  color: #444444;
-  outline: none;
-  pointer-events: all;
-  z-index: 20;
-  position: absolute;
-  max-height: calc(100% - 0px - 0px);
-  max-width: calc(100% - 0px - 0px);
-  border-radius: 4px;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%,-50%);
-  animation: hWAzxx 0.2s ease-in-out forwards;
-}
-
-.c3 {
-  width: 0;
-  height: 0;
-  overflow: hidden;
-  position: absolute;
-  clip-path: inset(50%);
-  white-space: nowrap;
-  border: 0;
-}
-
-.c3:focus {
-  outline: none;
-}
-
-@media only screen and (max-width: 768px) {
-  .c0 {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    min-height: 100vh;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .c1 {
-    position: relative;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .c2 {
-    position: relative;
-    max-height: none;
-    max-width: none;
-    border-radius: 0;
-    height: 100vh;
-    width: 100vw;
-  }
-}
-
-<div
-  class="c0"
-  id="grommet-test"
-  tabindex="-1"
->
-  <div
-    class="c1"
-  />
-  <div
-    class="c2"
-    data-g-portal-id="0"
-    id="grommet-test"
-  >
-    <span
-      class="c3"
-      tabindex="-1"
-    />
-    This is layer
-  </div>
-</div>
-`;
-
-exports[`Layer renders outside grommet wrapper 2`] = `
-".jsyFzj {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  background: transparent;
-  position: relative;
-  z-index: 20;
-  pointer-events: none;
-  outline: none;
-  position: fixed;
-  top: 0px;
-  left: 0px;
-  right: 0px;
-  bottom: 0px;
-}
-@media only screen and (max-width: 768px) {
-  .jsyFzj {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    min-height: 100vh;
-  }
-}
-@media only screen and (max-width: 768px) {
-  .dKbLsG {
-    position: relative;
-  }
-}
-@media only screen and (max-width: 768px) {
-  .jqpEns {
-    position: relative;
-    max-height: none;
-    max-width: none;
-    border-radius: 0;
-    height: 100vh;
-    width: 100vw;
-  }
-}"
-`;
-
 exports[`Layer should apply background 1`] = `
 .c0 {
   font-size: 18px;
@@ -10891,165 +8152,7 @@ exports[`Layer should apply background 2`] = `
 }"
 `;
 
-exports[`Layer should only place id on StyledLayer when singleId === true 1`] = `
-.c0 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  background: transparent;
-  position: relative;
-  z-index: 20;
-  pointer-events: none;
-  outline: none;
-  position: fixed;
-  top: 0px;
-  left: 0px;
-  right: 0px;
-  bottom: 0px;
-}
-
-.c1 {
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  right: 0px;
-  bottom: 0px;
-  background-color: rgba(0, 0, 0, 0.5);
-  color: #f8f8f8;
-  pointer-events: all;
-  will-change: transform;
-}
-
-.c2 {
-  display: flex;
-  flex-direction: column;
-  min-height: 48px;
-  background-color: #FFFFFF;
-  color: #444444;
-  outline: none;
-  pointer-events: all;
-  z-index: 20;
-  position: absolute;
-  max-height: calc(100% - 0px - 0px);
-  max-width: calc(100% - 0px - 0px);
-  border-radius: 4px;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%,-50%);
-}
-
-.c3 {
-  width: 0;
-  height: 0;
-  overflow: hidden;
-  position: absolute;
-  clip-path: inset(50%);
-  white-space: nowrap;
-  border: 0;
-}
-
-.c3:focus {
-  outline: none;
-}
-
-@media only screen and (max-width: 768px) {
-  .c0 {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    min-height: 100vh;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .c1 {
-    position: relative;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .c2 {
-    position: relative;
-    max-height: none;
-    max-width: none;
-    border-radius: 0;
-    height: 100vh;
-    width: 100vw;
-  }
-}
-
-<div
-  class="c0"
-  id="singleId-test"
-  tabindex="-1"
->
-  <div
-    class="c1"
-  />
-  <div
-    class="c2"
-    data-g-portal-id="0"
-    id="singleId-test__container"
-  >
-    <span
-      class="c3"
-      tabindex="-1"
-    />
-    This is a layer
-  </div>
-</div>
-`;
-
-exports[`Layer should only place id on StyledLayer when singleId === true 2`] = `
-".jsyFzj {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  background: transparent;
-  position: relative;
-  z-index: 20;
-  pointer-events: none;
-  outline: none;
-  position: fixed;
-  top: 0px;
-  left: 0px;
-  right: 0px;
-  bottom: 0px;
-}
-@media only screen and (max-width: 768px) {
-  .jsyFzj {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    min-height: 100vh;
-  }
-}
-@media only screen and (max-width: 768px) {
-  .dKbLsG {
-    position: relative;
-  }
-}
-@media only screen and (max-width: 768px) {
-  .jqpEns {
-    position: relative;
-    max-height: none;
-    max-width: none;
-    border-radius: 0;
-    height: 100vh;
-    width: 100vw;
-  }
-}"
-`;
-
-exports[`Layer should render correct border radius for position: bottom -\\n      full: false 1`] = `
+exports[`Layer should render correct border radius for position: bottom -\\n			full: false 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -11163,7 +8266,7 @@ exports[`Layer should render correct border radius for position: bottom -\\n    
 </div>
 `;
 
-exports[`Layer should render correct border radius for position: bottom -\\n      full: false 2`] = `
+exports[`Layer should render correct border radius for position: bottom -\\n			full: false 2`] = `
 ".jsyFzj {
   font-size: 18px;
   line-height: 24px;
@@ -11208,7 +8311,7 @@ exports[`Layer should render correct border radius for position: bottom -\\n    
 }"
 `;
 
-exports[`Layer should render correct border radius for position: bottom -\\n      full: horizontal 1`] = `
+exports[`Layer should render correct border radius for position: bottom -\\n			full: horizontal 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -11323,7 +8426,7 @@ exports[`Layer should render correct border radius for position: bottom -\\n    
 </div>
 `;
 
-exports[`Layer should render correct border radius for position: bottom -\\n      full: horizontal 2`] = `
+exports[`Layer should render correct border radius for position: bottom -\\n			full: horizontal 2`] = `
 ".jsyFzj {
   font-size: 18px;
   line-height: 24px;
@@ -11368,7 +8471,7 @@ exports[`Layer should render correct border radius for position: bottom -\\n    
 }"
 `;
 
-exports[`Layer should render correct border radius for position: bottom -\\n      full: true 1`] = `
+exports[`Layer should render correct border radius for position: bottom -\\n			full: true 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -11484,7 +8587,7 @@ exports[`Layer should render correct border radius for position: bottom -\\n    
 </div>
 `;
 
-exports[`Layer should render correct border radius for position: bottom -\\n      full: true 2`] = `
+exports[`Layer should render correct border radius for position: bottom -\\n			full: true 2`] = `
 ".jsyFzj {
   font-size: 18px;
   line-height: 24px;
@@ -11529,7 +8632,7 @@ exports[`Layer should render correct border radius for position: bottom -\\n    
 }"
 `;
 
-exports[`Layer should render correct border radius for position: bottom -\\n      full: vertical 1`] = `
+exports[`Layer should render correct border radius for position: bottom -\\n			full: vertical 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -11644,7 +8747,7 @@ exports[`Layer should render correct border radius for position: bottom -\\n    
 </div>
 `;
 
-exports[`Layer should render correct border radius for position: bottom -\\n      full: vertical 2`] = `
+exports[`Layer should render correct border radius for position: bottom -\\n			full: vertical 2`] = `
 ".jsyFzj {
   font-size: 18px;
   line-height: 24px;
@@ -11689,7 +8792,7 @@ exports[`Layer should render correct border radius for position: bottom -\\n    
 }"
 `;
 
-exports[`Layer should render correct border radius for position: bottom-left -\\n      full: false 1`] = `
+exports[`Layer should render correct border radius for position: bottom-left -\\n			full: false 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -11803,7 +8906,7 @@ exports[`Layer should render correct border radius for position: bottom-left -\\
 </div>
 `;
 
-exports[`Layer should render correct border radius for position: bottom-left -\\n      full: false 2`] = `
+exports[`Layer should render correct border radius for position: bottom-left -\\n			full: false 2`] = `
 ".jsyFzj {
   font-size: 18px;
   line-height: 24px;
@@ -11848,7 +8951,7 @@ exports[`Layer should render correct border radius for position: bottom-left -\\
 }"
 `;
 
-exports[`Layer should render correct border radius for position: bottom-left -\\n      full: horizontal 1`] = `
+exports[`Layer should render correct border radius for position: bottom-left -\\n			full: horizontal 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -11963,7 +9066,7 @@ exports[`Layer should render correct border radius for position: bottom-left -\\
 </div>
 `;
 
-exports[`Layer should render correct border radius for position: bottom-left -\\n      full: horizontal 2`] = `
+exports[`Layer should render correct border radius for position: bottom-left -\\n			full: horizontal 2`] = `
 ".jsyFzj {
   font-size: 18px;
   line-height: 24px;
@@ -12008,7 +9111,7 @@ exports[`Layer should render correct border radius for position: bottom-left -\\
 }"
 `;
 
-exports[`Layer should render correct border radius for position: bottom-left -\\n      full: true 1`] = `
+exports[`Layer should render correct border radius for position: bottom-left -\\n			full: true 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -12124,7 +9227,7 @@ exports[`Layer should render correct border radius for position: bottom-left -\\
 </div>
 `;
 
-exports[`Layer should render correct border radius for position: bottom-left -\\n      full: true 2`] = `
+exports[`Layer should render correct border radius for position: bottom-left -\\n			full: true 2`] = `
 ".jsyFzj {
   font-size: 18px;
   line-height: 24px;
@@ -12169,7 +9272,7 @@ exports[`Layer should render correct border radius for position: bottom-left -\\
 }"
 `;
 
-exports[`Layer should render correct border radius for position: bottom-left -\\n      full: vertical 1`] = `
+exports[`Layer should render correct border radius for position: bottom-left -\\n			full: vertical 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -12284,7 +9387,7 @@ exports[`Layer should render correct border radius for position: bottom-left -\\
 </div>
 `;
 
-exports[`Layer should render correct border radius for position: bottom-left -\\n      full: vertical 2`] = `
+exports[`Layer should render correct border radius for position: bottom-left -\\n			full: vertical 2`] = `
 ".jsyFzj {
   font-size: 18px;
   line-height: 24px;
@@ -12329,7 +9432,7 @@ exports[`Layer should render correct border radius for position: bottom-left -\\
 }"
 `;
 
-exports[`Layer should render correct border radius for position: bottom-right -\\n      full: false 1`] = `
+exports[`Layer should render correct border radius for position: bottom-right -\\n			full: false 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -12443,7 +9546,7 @@ exports[`Layer should render correct border radius for position: bottom-right -\
 </div>
 `;
 
-exports[`Layer should render correct border radius for position: bottom-right -\\n      full: false 2`] = `
+exports[`Layer should render correct border radius for position: bottom-right -\\n			full: false 2`] = `
 ".jsyFzj {
   font-size: 18px;
   line-height: 24px;
@@ -12488,7 +9591,7 @@ exports[`Layer should render correct border radius for position: bottom-right -\
 }"
 `;
 
-exports[`Layer should render correct border radius for position: bottom-right -\\n      full: horizontal 1`] = `
+exports[`Layer should render correct border radius for position: bottom-right -\\n			full: horizontal 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -12603,7 +9706,7 @@ exports[`Layer should render correct border radius for position: bottom-right -\
 </div>
 `;
 
-exports[`Layer should render correct border radius for position: bottom-right -\\n      full: horizontal 2`] = `
+exports[`Layer should render correct border radius for position: bottom-right -\\n			full: horizontal 2`] = `
 ".jsyFzj {
   font-size: 18px;
   line-height: 24px;
@@ -12648,7 +9751,7 @@ exports[`Layer should render correct border radius for position: bottom-right -\
 }"
 `;
 
-exports[`Layer should render correct border radius for position: bottom-right -\\n      full: true 1`] = `
+exports[`Layer should render correct border radius for position: bottom-right -\\n			full: true 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -12764,7 +9867,7 @@ exports[`Layer should render correct border radius for position: bottom-right -\
 </div>
 `;
 
-exports[`Layer should render correct border radius for position: bottom-right -\\n      full: true 2`] = `
+exports[`Layer should render correct border radius for position: bottom-right -\\n			full: true 2`] = `
 ".jsyFzj {
   font-size: 18px;
   line-height: 24px;
@@ -12809,7 +9912,7 @@ exports[`Layer should render correct border radius for position: bottom-right -\
 }"
 `;
 
-exports[`Layer should render correct border radius for position: bottom-right -\\n      full: vertical 1`] = `
+exports[`Layer should render correct border radius for position: bottom-right -\\n			full: vertical 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -12924,7 +10027,7 @@ exports[`Layer should render correct border radius for position: bottom-right -\
 </div>
 `;
 
-exports[`Layer should render correct border radius for position: bottom-right -\\n      full: vertical 2`] = `
+exports[`Layer should render correct border radius for position: bottom-right -\\n			full: vertical 2`] = `
 ".jsyFzj {
   font-size: 18px;
   line-height: 24px;
@@ -12969,7 +10072,7 @@ exports[`Layer should render correct border radius for position: bottom-right -\
 }"
 `;
 
-exports[`Layer should render correct border radius for position: center -\\n      full: false 1`] = `
+exports[`Layer should render correct border radius for position: center -\\n			full: false 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -13083,7 +10186,7 @@ exports[`Layer should render correct border radius for position: center -\\n    
 </div>
 `;
 
-exports[`Layer should render correct border radius for position: center -\\n      full: false 2`] = `
+exports[`Layer should render correct border radius for position: center -\\n			full: false 2`] = `
 ".jsyFzj {
   font-size: 18px;
   line-height: 24px;
@@ -13128,7 +10231,7 @@ exports[`Layer should render correct border radius for position: center -\\n    
 }"
 `;
 
-exports[`Layer should render correct border radius for position: center -\\n      full: horizontal 1`] = `
+exports[`Layer should render correct border radius for position: center -\\n			full: horizontal 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -13243,7 +10346,7 @@ exports[`Layer should render correct border radius for position: center -\\n    
 </div>
 `;
 
-exports[`Layer should render correct border radius for position: center -\\n      full: horizontal 2`] = `
+exports[`Layer should render correct border radius for position: center -\\n			full: horizontal 2`] = `
 ".jsyFzj {
   font-size: 18px;
   line-height: 24px;
@@ -13288,7 +10391,7 @@ exports[`Layer should render correct border radius for position: center -\\n    
 }"
 `;
 
-exports[`Layer should render correct border radius for position: center -\\n      full: true 1`] = `
+exports[`Layer should render correct border radius for position: center -\\n			full: true 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -13403,7 +10506,7 @@ exports[`Layer should render correct border radius for position: center -\\n    
 </div>
 `;
 
-exports[`Layer should render correct border radius for position: center -\\n      full: true 2`] = `
+exports[`Layer should render correct border radius for position: center -\\n			full: true 2`] = `
 ".jsyFzj {
   font-size: 18px;
   line-height: 24px;
@@ -13448,7 +10551,7 @@ exports[`Layer should render correct border radius for position: center -\\n    
 }"
 `;
 
-exports[`Layer should render correct border radius for position: center -\\n      full: vertical 1`] = `
+exports[`Layer should render correct border radius for position: center -\\n			full: vertical 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -13563,7 +10666,7 @@ exports[`Layer should render correct border radius for position: center -\\n    
 </div>
 `;
 
-exports[`Layer should render correct border radius for position: center -\\n      full: vertical 2`] = `
+exports[`Layer should render correct border radius for position: center -\\n			full: vertical 2`] = `
 ".jsyFzj {
   font-size: 18px;
   line-height: 24px;
@@ -13608,7 +10711,7 @@ exports[`Layer should render correct border radius for position: center -\\n    
 }"
 `;
 
-exports[`Layer should render correct border radius for position: end -\\n      full: false 1`] = `
+exports[`Layer should render correct border radius for position: end -\\n			full: false 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -13723,7 +10826,7 @@ exports[`Layer should render correct border radius for position: end -\\n      f
 </div>
 `;
 
-exports[`Layer should render correct border radius for position: end -\\n      full: false 2`] = `
+exports[`Layer should render correct border radius for position: end -\\n			full: false 2`] = `
 ".jsyFzj {
   font-size: 18px;
   line-height: 24px;
@@ -13768,7 +10871,7 @@ exports[`Layer should render correct border radius for position: end -\\n      f
 }"
 `;
 
-exports[`Layer should render correct border radius for position: end -\\n      full: horizontal 1`] = `
+exports[`Layer should render correct border radius for position: end -\\n			full: horizontal 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -13883,7 +10986,7 @@ exports[`Layer should render correct border radius for position: end -\\n      f
 </div>
 `;
 
-exports[`Layer should render correct border radius for position: end -\\n      full: horizontal 2`] = `
+exports[`Layer should render correct border radius for position: end -\\n			full: horizontal 2`] = `
 ".jsyFzj {
   font-size: 18px;
   line-height: 24px;
@@ -13928,7 +11031,7 @@ exports[`Layer should render correct border radius for position: end -\\n      f
 }"
 `;
 
-exports[`Layer should render correct border radius for position: end -\\n      full: true 1`] = `
+exports[`Layer should render correct border radius for position: end -\\n			full: true 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -14044,7 +11147,7 @@ exports[`Layer should render correct border radius for position: end -\\n      f
 </div>
 `;
 
-exports[`Layer should render correct border radius for position: end -\\n      full: true 2`] = `
+exports[`Layer should render correct border radius for position: end -\\n			full: true 2`] = `
 ".jsyFzj {
   font-size: 18px;
   line-height: 24px;
@@ -14089,7 +11192,7 @@ exports[`Layer should render correct border radius for position: end -\\n      f
 }"
 `;
 
-exports[`Layer should render correct border radius for position: end -\\n      full: vertical 1`] = `
+exports[`Layer should render correct border radius for position: end -\\n			full: vertical 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -14204,7 +11307,7 @@ exports[`Layer should render correct border radius for position: end -\\n      f
 </div>
 `;
 
-exports[`Layer should render correct border radius for position: end -\\n      full: vertical 2`] = `
+exports[`Layer should render correct border radius for position: end -\\n			full: vertical 2`] = `
 ".jsyFzj {
   font-size: 18px;
   line-height: 24px;
@@ -14249,7 +11352,7 @@ exports[`Layer should render correct border radius for position: end -\\n      f
 }"
 `;
 
-exports[`Layer should render correct border radius for position: left -\\n      full: false 1`] = `
+exports[`Layer should render correct border radius for position: left -\\n			full: false 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -14363,7 +11466,7 @@ exports[`Layer should render correct border radius for position: left -\\n      
 </div>
 `;
 
-exports[`Layer should render correct border radius for position: left -\\n      full: false 2`] = `
+exports[`Layer should render correct border radius for position: left -\\n			full: false 2`] = `
 ".jsyFzj {
   font-size: 18px;
   line-height: 24px;
@@ -14408,7 +11511,7 @@ exports[`Layer should render correct border radius for position: left -\\n      
 }"
 `;
 
-exports[`Layer should render correct border radius for position: left -\\n      full: horizontal 1`] = `
+exports[`Layer should render correct border radius for position: left -\\n			full: horizontal 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -14523,7 +11626,7 @@ exports[`Layer should render correct border radius for position: left -\\n      
 </div>
 `;
 
-exports[`Layer should render correct border radius for position: left -\\n      full: horizontal 2`] = `
+exports[`Layer should render correct border radius for position: left -\\n			full: horizontal 2`] = `
 ".jsyFzj {
   font-size: 18px;
   line-height: 24px;
@@ -14568,7 +11671,7 @@ exports[`Layer should render correct border radius for position: left -\\n      
 }"
 `;
 
-exports[`Layer should render correct border radius for position: left -\\n      full: true 1`] = `
+exports[`Layer should render correct border radius for position: left -\\n			full: true 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -14684,7 +11787,7 @@ exports[`Layer should render correct border radius for position: left -\\n      
 </div>
 `;
 
-exports[`Layer should render correct border radius for position: left -\\n      full: true 2`] = `
+exports[`Layer should render correct border radius for position: left -\\n			full: true 2`] = `
 ".jsyFzj {
   font-size: 18px;
   line-height: 24px;
@@ -14729,7 +11832,7 @@ exports[`Layer should render correct border radius for position: left -\\n      
 }"
 `;
 
-exports[`Layer should render correct border radius for position: left -\\n      full: vertical 1`] = `
+exports[`Layer should render correct border radius for position: left -\\n			full: vertical 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -14844,7 +11947,7 @@ exports[`Layer should render correct border radius for position: left -\\n      
 </div>
 `;
 
-exports[`Layer should render correct border radius for position: left -\\n      full: vertical 2`] = `
+exports[`Layer should render correct border radius for position: left -\\n			full: vertical 2`] = `
 ".jsyFzj {
   font-size: 18px;
   line-height: 24px;
@@ -14889,7 +11992,7 @@ exports[`Layer should render correct border radius for position: left -\\n      
 }"
 `;
 
-exports[`Layer should render correct border radius for position: right -\\n      full: false 1`] = `
+exports[`Layer should render correct border radius for position: right -\\n			full: false 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -15003,7 +12106,7 @@ exports[`Layer should render correct border radius for position: right -\\n     
 </div>
 `;
 
-exports[`Layer should render correct border radius for position: right -\\n      full: false 2`] = `
+exports[`Layer should render correct border radius for position: right -\\n			full: false 2`] = `
 ".jsyFzj {
   font-size: 18px;
   line-height: 24px;
@@ -15048,7 +12151,7 @@ exports[`Layer should render correct border radius for position: right -\\n     
 }"
 `;
 
-exports[`Layer should render correct border radius for position: right -\\n      full: horizontal 1`] = `
+exports[`Layer should render correct border radius for position: right -\\n			full: horizontal 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -15163,7 +12266,7 @@ exports[`Layer should render correct border radius for position: right -\\n     
 </div>
 `;
 
-exports[`Layer should render correct border radius for position: right -\\n      full: horizontal 2`] = `
+exports[`Layer should render correct border radius for position: right -\\n			full: horizontal 2`] = `
 ".jsyFzj {
   font-size: 18px;
   line-height: 24px;
@@ -15208,7 +12311,7 @@ exports[`Layer should render correct border radius for position: right -\\n     
 }"
 `;
 
-exports[`Layer should render correct border radius for position: right -\\n      full: true 1`] = `
+exports[`Layer should render correct border radius for position: right -\\n			full: true 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -15324,7 +12427,7 @@ exports[`Layer should render correct border radius for position: right -\\n     
 </div>
 `;
 
-exports[`Layer should render correct border radius for position: right -\\n      full: true 2`] = `
+exports[`Layer should render correct border radius for position: right -\\n			full: true 2`] = `
 ".jsyFzj {
   font-size: 18px;
   line-height: 24px;
@@ -15369,7 +12472,7 @@ exports[`Layer should render correct border radius for position: right -\\n     
 }"
 `;
 
-exports[`Layer should render correct border radius for position: right -\\n      full: vertical 1`] = `
+exports[`Layer should render correct border radius for position: right -\\n			full: vertical 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -15484,7 +12587,7 @@ exports[`Layer should render correct border radius for position: right -\\n     
 </div>
 `;
 
-exports[`Layer should render correct border radius for position: right -\\n      full: vertical 2`] = `
+exports[`Layer should render correct border radius for position: right -\\n			full: vertical 2`] = `
 ".jsyFzj {
   font-size: 18px;
   line-height: 24px;
@@ -15529,7 +12632,7 @@ exports[`Layer should render correct border radius for position: right -\\n     
 }"
 `;
 
-exports[`Layer should render correct border radius for position: start -\\n      full: false 1`] = `
+exports[`Layer should render correct border radius for position: start -\\n			full: false 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -15644,7 +12747,7 @@ exports[`Layer should render correct border radius for position: start -\\n     
 </div>
 `;
 
-exports[`Layer should render correct border radius for position: start -\\n      full: false 2`] = `
+exports[`Layer should render correct border radius for position: start -\\n			full: false 2`] = `
 ".jsyFzj {
   font-size: 18px;
   line-height: 24px;
@@ -15689,7 +12792,7 @@ exports[`Layer should render correct border radius for position: start -\\n     
 }"
 `;
 
-exports[`Layer should render correct border radius for position: start -\\n      full: horizontal 1`] = `
+exports[`Layer should render correct border radius for position: start -\\n			full: horizontal 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -15804,7 +12907,7 @@ exports[`Layer should render correct border radius for position: start -\\n     
 </div>
 `;
 
-exports[`Layer should render correct border radius for position: start -\\n      full: horizontal 2`] = `
+exports[`Layer should render correct border radius for position: start -\\n			full: horizontal 2`] = `
 ".jsyFzj {
   font-size: 18px;
   line-height: 24px;
@@ -15849,7 +12952,7 @@ exports[`Layer should render correct border radius for position: start -\\n     
 }"
 `;
 
-exports[`Layer should render correct border radius for position: start -\\n      full: true 1`] = `
+exports[`Layer should render correct border radius for position: start -\\n			full: true 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -15965,7 +13068,7 @@ exports[`Layer should render correct border radius for position: start -\\n     
 </div>
 `;
 
-exports[`Layer should render correct border radius for position: start -\\n      full: true 2`] = `
+exports[`Layer should render correct border radius for position: start -\\n			full: true 2`] = `
 ".jsyFzj {
   font-size: 18px;
   line-height: 24px;
@@ -16010,7 +13113,7 @@ exports[`Layer should render correct border radius for position: start -\\n     
 }"
 `;
 
-exports[`Layer should render correct border radius for position: start -\\n      full: vertical 1`] = `
+exports[`Layer should render correct border radius for position: start -\\n			full: vertical 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -16125,7 +13228,7 @@ exports[`Layer should render correct border radius for position: start -\\n     
 </div>
 `;
 
-exports[`Layer should render correct border radius for position: start -\\n      full: vertical 2`] = `
+exports[`Layer should render correct border radius for position: start -\\n			full: vertical 2`] = `
 ".jsyFzj {
   font-size: 18px;
   line-height: 24px;
@@ -16170,7 +13273,7 @@ exports[`Layer should render correct border radius for position: start -\\n     
 }"
 `;
 
-exports[`Layer should render correct border radius for position: top -\\n      full: false 1`] = `
+exports[`Layer should render correct border radius for position: top -\\n			full: false 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -16284,7 +13387,7 @@ exports[`Layer should render correct border radius for position: top -\\n      f
 </div>
 `;
 
-exports[`Layer should render correct border radius for position: top -\\n      full: false 2`] = `
+exports[`Layer should render correct border radius for position: top -\\n			full: false 2`] = `
 ".jsyFzj {
   font-size: 18px;
   line-height: 24px;
@@ -16329,7 +13432,7 @@ exports[`Layer should render correct border radius for position: top -\\n      f
 }"
 `;
 
-exports[`Layer should render correct border radius for position: top -\\n      full: horizontal 1`] = `
+exports[`Layer should render correct border radius for position: top -\\n			full: horizontal 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -16444,7 +13547,7 @@ exports[`Layer should render correct border radius for position: top -\\n      f
 </div>
 `;
 
-exports[`Layer should render correct border radius for position: top -\\n      full: horizontal 2`] = `
+exports[`Layer should render correct border radius for position: top -\\n			full: horizontal 2`] = `
 ".jsyFzj {
   font-size: 18px;
   line-height: 24px;
@@ -16489,7 +13592,7 @@ exports[`Layer should render correct border radius for position: top -\\n      f
 }"
 `;
 
-exports[`Layer should render correct border radius for position: top -\\n      full: true 1`] = `
+exports[`Layer should render correct border radius for position: top -\\n			full: true 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -16605,7 +13708,7 @@ exports[`Layer should render correct border radius for position: top -\\n      f
 </div>
 `;
 
-exports[`Layer should render correct border radius for position: top -\\n      full: true 2`] = `
+exports[`Layer should render correct border radius for position: top -\\n			full: true 2`] = `
 ".jsyFzj {
   font-size: 18px;
   line-height: 24px;
@@ -16650,7 +13753,7 @@ exports[`Layer should render correct border radius for position: top -\\n      f
 }"
 `;
 
-exports[`Layer should render correct border radius for position: top -\\n      full: vertical 1`] = `
+exports[`Layer should render correct border radius for position: top -\\n			full: vertical 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -16765,7 +13868,7 @@ exports[`Layer should render correct border radius for position: top -\\n      f
 </div>
 `;
 
-exports[`Layer should render correct border radius for position: top -\\n      full: vertical 2`] = `
+exports[`Layer should render correct border radius for position: top -\\n			full: vertical 2`] = `
 ".jsyFzj {
   font-size: 18px;
   line-height: 24px;
@@ -16810,7 +13913,7 @@ exports[`Layer should render correct border radius for position: top -\\n      f
 }"
 `;
 
-exports[`Layer should render correct border radius for position: top-left -\\n      full: false 1`] = `
+exports[`Layer should render correct border radius for position: top-left -\\n			full: false 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -16924,7 +14027,7 @@ exports[`Layer should render correct border radius for position: top-left -\\n  
 </div>
 `;
 
-exports[`Layer should render correct border radius for position: top-left -\\n      full: false 2`] = `
+exports[`Layer should render correct border radius for position: top-left -\\n			full: false 2`] = `
 ".jsyFzj {
   font-size: 18px;
   line-height: 24px;
@@ -16969,7 +14072,7 @@ exports[`Layer should render correct border radius for position: top-left -\\n  
 }"
 `;
 
-exports[`Layer should render correct border radius for position: top-left -\\n      full: horizontal 1`] = `
+exports[`Layer should render correct border radius for position: top-left -\\n			full: horizontal 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -17084,7 +14187,7 @@ exports[`Layer should render correct border radius for position: top-left -\\n  
 </div>
 `;
 
-exports[`Layer should render correct border radius for position: top-left -\\n      full: horizontal 2`] = `
+exports[`Layer should render correct border radius for position: top-left -\\n			full: horizontal 2`] = `
 ".jsyFzj {
   font-size: 18px;
   line-height: 24px;
@@ -17129,7 +14232,7 @@ exports[`Layer should render correct border radius for position: top-left -\\n  
 }"
 `;
 
-exports[`Layer should render correct border radius for position: top-left -\\n      full: true 1`] = `
+exports[`Layer should render correct border radius for position: top-left -\\n			full: true 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -17245,7 +14348,7 @@ exports[`Layer should render correct border radius for position: top-left -\\n  
 </div>
 `;
 
-exports[`Layer should render correct border radius for position: top-left -\\n      full: true 2`] = `
+exports[`Layer should render correct border radius for position: top-left -\\n			full: true 2`] = `
 ".jsyFzj {
   font-size: 18px;
   line-height: 24px;
@@ -17290,7 +14393,7 @@ exports[`Layer should render correct border radius for position: top-left -\\n  
 }"
 `;
 
-exports[`Layer should render correct border radius for position: top-left -\\n      full: vertical 1`] = `
+exports[`Layer should render correct border radius for position: top-left -\\n			full: vertical 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -17405,7 +14508,7 @@ exports[`Layer should render correct border radius for position: top-left -\\n  
 </div>
 `;
 
-exports[`Layer should render correct border radius for position: top-left -\\n      full: vertical 2`] = `
+exports[`Layer should render correct border radius for position: top-left -\\n			full: vertical 2`] = `
 ".jsyFzj {
   font-size: 18px;
   line-height: 24px;
@@ -17450,7 +14553,7 @@ exports[`Layer should render correct border radius for position: top-left -\\n  
 }"
 `;
 
-exports[`Layer should render correct border radius for position: top-right -\\n      full: false 1`] = `
+exports[`Layer should render correct border radius for position: top-right -\\n			full: false 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -17564,7 +14667,7 @@ exports[`Layer should render correct border radius for position: top-right -\\n 
 </div>
 `;
 
-exports[`Layer should render correct border radius for position: top-right -\\n      full: false 2`] = `
+exports[`Layer should render correct border radius for position: top-right -\\n			full: false 2`] = `
 ".jsyFzj {
   font-size: 18px;
   line-height: 24px;
@@ -17609,7 +14712,7 @@ exports[`Layer should render correct border radius for position: top-right -\\n 
 }"
 `;
 
-exports[`Layer should render correct border radius for position: top-right -\\n      full: horizontal 1`] = `
+exports[`Layer should render correct border radius for position: top-right -\\n			full: horizontal 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -17724,7 +14827,7 @@ exports[`Layer should render correct border radius for position: top-right -\\n 
 </div>
 `;
 
-exports[`Layer should render correct border radius for position: top-right -\\n      full: horizontal 2`] = `
+exports[`Layer should render correct border radius for position: top-right -\\n			full: horizontal 2`] = `
 ".jsyFzj {
   font-size: 18px;
   line-height: 24px;
@@ -17769,7 +14872,7 @@ exports[`Layer should render correct border radius for position: top-right -\\n 
 }"
 `;
 
-exports[`Layer should render correct border radius for position: top-right -\\n      full: true 1`] = `
+exports[`Layer should render correct border radius for position: top-right -\\n			full: true 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -17885,7 +14988,7 @@ exports[`Layer should render correct border radius for position: top-right -\\n 
 </div>
 `;
 
-exports[`Layer should render correct border radius for position: top-right -\\n      full: true 2`] = `
+exports[`Layer should render correct border radius for position: top-right -\\n			full: true 2`] = `
 ".jsyFzj {
   font-size: 18px;
   line-height: 24px;
@@ -17930,7 +15033,7 @@ exports[`Layer should render correct border radius for position: top-right -\\n 
 }"
 `;
 
-exports[`Layer should render correct border radius for position: top-right -\\n      full: vertical 1`] = `
+exports[`Layer should render correct border radius for position: top-right -\\n			full: vertical 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -18045,415 +15148,7 @@ exports[`Layer should render correct border radius for position: top-right -\\n 
 </div>
 `;
 
-exports[`Layer should render correct border radius for position: top-right -\\n      full: vertical 2`] = `
-".jsyFzj {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  background: transparent;
-  position: relative;
-  z-index: 20;
-  pointer-events: none;
-  outline: none;
-  position: fixed;
-  top: 0px;
-  left: 0px;
-  right: 0px;
-  bottom: 0px;
-}
-@media only screen and (max-width: 768px) {
-  .jsyFzj {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    min-height: 100vh;
-  }
-}
-@media only screen and (max-width: 768px) {
-  .dKbLsG {
-    position: relative;
-  }
-}
-@media only screen and (max-width: 768px) {
-  .jqpEns {
-    position: relative;
-    max-height: none;
-    max-width: none;
-    border-radius: 0;
-    height: 100vh;
-    width: 100vw;
-  }
-}"
-`;
-
-exports[`Layer target 1`] = `
-.c0 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  background: transparent;
-  position: relative;
-  z-index: 20;
-  pointer-events: none;
-  outline: none;
-  position: fixed;
-  top: 0px;
-  left: 0px;
-  right: 0px;
-  bottom: 0px;
-}
-
-.c1 {
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  right: 0px;
-  bottom: 0px;
-  background-color: rgba(0, 0, 0, 0.5);
-  color: #f8f8f8;
-  pointer-events: all;
-  will-change: transform;
-}
-
-.c2 {
-  display: flex;
-  flex-direction: column;
-  min-height: 48px;
-  background-color: #FFFFFF;
-  color: #444444;
-  outline: none;
-  pointer-events: all;
-  z-index: 20;
-  position: absolute;
-  max-height: calc(100% - 0px - 0px);
-  max-width: calc(100% - 0px - 0px);
-  border-radius: 4px;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%,-50%);
-  animation: hWAzxx 0.2s ease-in-out forwards;
-}
-
-.c3 {
-  width: 0;
-  height: 0;
-  overflow: hidden;
-  position: absolute;
-  clip-path: inset(50%);
-  white-space: nowrap;
-  border: 0;
-}
-
-.c3:focus {
-  outline: none;
-}
-
-@media only screen and (max-width: 768px) {
-  .c1 {
-    position: relative;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .c2 {
-    position: relative;
-    max-height: none;
-    max-width: none;
-    border-radius: 0;
-    height: 100%;
-    width: 100%;
-  }
-}
-
-<div
-  class="c0"
-  id="target-test"
-  style="left: 0px; right: 1024px; top: 0px; bottom: 768px; max-height: 0; max-width: 0;"
-  tabindex="-1"
->
-  <div
-    class="c1"
-  />
-  <div
-    class="c2"
-    data-g-portal-id="0"
-    id="target-test"
-  >
-    <span
-      class="c3"
-      tabindex="-1"
-    />
-    this is a test layer
-  </div>
-</div>
-`;
-
-exports[`Layer target 2`] = `
-"@media only screen and (max-width: 768px) {
-  .jsyFzj {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    min-height: 100vh;
-  }
-}
-@media only screen and (max-width: 768px) {
-  .dKbLsG {
-    position: relative;
-  }
-}
-@media only screen and (max-width: 768px) {
-  .jqpEns {
-    position: relative;
-    max-height: none;
-    max-width: none;
-    border-radius: 0;
-    height: 100vh;
-    width: 100vw;
-  }
-}"
-`;
-
-exports[`Layer target not modal 1`] = `
-.c0 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  background: transparent;
-  position: relative;
-  z-index: 20;
-  pointer-events: none;
-  outline: none;
-  position: fixed;
-  top: 0px;
-  left: 0px;
-  right: 0px;
-  bottom: 0px;
-}
-
-.c1 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  display: flex;
-  flex-direction: column;
-  min-height: 48px;
-  background-color: #FFFFFF;
-  color: #444444;
-  outline: none;
-  pointer-events: all;
-  z-index: 20;
-  position: absolute;
-  max-height: calc(100% - 0px - 0px);
-  max-width: calc(100% - 0px - 0px);
-  border-radius: 4px;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%,-50%);
-  animation: hWAzxx 0.2s ease-in-out forwards;
-}
-
-.c2 {
-  width: 0;
-  height: 0;
-  overflow: hidden;
-  position: absolute;
-  clip-path: inset(50%);
-  white-space: nowrap;
-  border: 0;
-}
-
-.c2:focus {
-  outline: none;
-}
-
-@media only screen and (max-width: 768px) {
-  .c1 {
-    position: relative;
-    max-height: none;
-    max-width: none;
-    border-radius: 0;
-    height: 100%;
-    width: 100%;
-  }
-}
-
-<div
-  class="c0"
-  id="target-test"
-  style="left: 0px; right: 1024px; top: 0px; bottom: 768px; max-height: 0; max-width: 0;"
-  tabindex="-1"
->
-  <div
-    class="c1"
-    data-g-portal-id="0"
-    id="target-test"
-  >
-    <span
-      class="c2"
-      tabindex="-1"
-    />
-    this is a test layer
-  </div>
-</div>
-`;
-
-exports[`Layer target not modal 2`] = `
-"@media only screen and (max-width: 768px) {
-  .jsyFzj {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    min-height: 100vh;
-  }
-}
-@media only screen and (max-width: 768px) {
-  .dKbLsG {
-    position: relative;
-  }
-}
-@media only screen and (max-width: 768px) {
-  .jqpEns {
-    position: relative;
-    max-height: none;
-    max-width: none;
-    border-radius: 0;
-    height: 100vh;
-    width: 100vw;
-  }
-}"
-`;
-
-exports[`Layer theme container height 1`] = `
-.c0 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  background: transparent;
-  position: relative;
-  z-index: 20;
-  pointer-events: none;
-  outline: none;
-  position: fixed;
-  top: 0px;
-  left: 0px;
-  right: 0px;
-  bottom: 0px;
-}
-
-.c1 {
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  right: 0px;
-  bottom: 0px;
-  background-color: rgba(0, 0, 0, 0.5);
-  color: #f8f8f8;
-  pointer-events: all;
-  will-change: transform;
-}
-
-.c2 {
-  display: flex;
-  flex-direction: column;
-  height: 400px;
-  background-color: #FFFFFF;
-  color: #444444;
-  outline: none;
-  pointer-events: all;
-  z-index: 20;
-  position: absolute;
-  max-height: calc(100% - 0px - 0px);
-  max-width: calc(100% - 0px - 0px);
-  border-radius: 4px;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%,-50%);
-}
-
-.c3 {
-  width: 0;
-  height: 0;
-  overflow: hidden;
-  position: absolute;
-  clip-path: inset(50%);
-  white-space: nowrap;
-  border: 0;
-}
-
-.c3:focus {
-  outline: none;
-}
-
-@media only screen and (max-width: 768px) {
-  .c0 {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    min-height: 100vh;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .c1 {
-    position: relative;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .c2 {
-    position: relative;
-    max-height: none;
-    max-width: none;
-    border-radius: 0;
-    height: 100vh;
-    width: 100vw;
-  }
-}
-
-<div
-  class="c0"
-  id="container-height-test"
-  tabindex="-1"
->
-  <div
-    class="c1"
-  />
-  <div
-    class="c2"
-    data-g-portal-id="0"
-    id="container-height-test"
-  >
-    <span
-      class="c3"
-      tabindex="-1"
-    />
-    This is a layer with custom height
-  </div>
-</div>
-`;
-
-exports[`Layer theme container height 2`] = `
+exports[`Layer should render correct border radius for position: top-right -\\n			full: vertical 2`] = `
 ".jsyFzj {
   font-size: 18px;
   line-height: 24px;
