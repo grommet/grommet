@@ -225,6 +225,7 @@ describe('Grid', () => {
         <Grid gap={{ column: 'medium' }} />
         <Grid gap={{ column: 'large' }} />
         <Grid gap={{ row: 'small', column: 'medium' }} />
+        {/* @ts-expect-error Testing invalid prop */}
         <Grid gap={{ test: 'test' }} />
       </Grommet>,
     );
