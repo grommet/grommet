@@ -105,7 +105,7 @@
     "bundlesize2": "^0.0.35",
     "chromatic": "^13.3.1",
     "clean-webpack-plugin": "^4.0.0",
-    "copy-webpack-plugin": "^12.0.2",
+    "copy-webpack-plugin": "^13.0.1",
     "copyfiles": "^2.4.1",
     "core-js": "^3.46.0",
     "cross-env": "^10.1.0",
@@ -149,7 +149,7 @@
     "ts-jest": "^29.4.5",
     "ts-loader": "^9.5.4",
     "typescript": "^5.9.3",
-    "webpack": "^5.97.1",
+    "webpack": "^5.102.1",
     "webpack-cli": "^6.0.1",
     "webpack-dev-server": "^5.2.2"
   },
@@ -213,7 +213,7 @@
   "bundlesize": [
     {
       "path": "./dist/grommet.min.js",
-      "maxSize": "184 kB"
+      "maxSize": "192 kB"
     }
   ],
   "keywords": [
