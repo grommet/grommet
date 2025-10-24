@@ -105,7 +105,7 @@
     "bundlesize2": "^0.0.35",
     "chromatic": "^13.1.2",
     "clean-webpack-plugin": "^4.0.0",
-    "copy-webpack-plugin": "^13.0.1",
+    "copy-webpack-plugin": "12.0.2",
     "copyfiles": "^2.4.1",
     "core-js": "^3.44.0",
     "cross-env": "^7.0.3",
