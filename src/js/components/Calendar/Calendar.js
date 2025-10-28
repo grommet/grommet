@@ -876,10 +876,16 @@ const Calendar = forwardRef(
               day={day}
               key={day.getTime()}
               disabledProp={dayDisabled}
-              buttonProps={{
-                a11yTitle: day.toDateString(),
-                onClick: dayDisabled ? () => {} : () => onClick(dateObject),
-              }}
+              buttonProps={
+                onSelect
+                  ? {
+                      a11yTitle: day.toDateString(),
+                      onClick: dayDisabled
+                        ? () => {}
+                        : () => onClick(dateObject),
+                    }
+                  : null
+              }
               isInRange={inRange}
               isSelected={selected}
               otherMonth={day.getMonth() !== reference.getMonth()}
