@@ -622,6 +622,9 @@ const Calendar = forwardRef(
 
     const selectDate = useCallback(
       (selectedDate) => {
+        // If no onSelect prop is provided, the calendar should be read-only
+        if (!onSelect) return;
+
         let nextValue;
 
         if (range || Array.isArray(value?.[0])) {
