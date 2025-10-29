@@ -879,16 +879,13 @@ const Calendar = forwardRef(
               day={day}
               key={day.getTime()}
               disabledProp={dayDisabled}
-              buttonProps={
-                onSelect
-                  ? {
-                      a11yTitle: day.toDateString(),
-                      onClick: dayDisabled
-                        ? () => {}
-                        : () => onClick(dateObject),
-                    }
-                  : null
-              }
+              buttonProps={{
+                a11yTitle: day.toDateString(),
+                onClick:
+                  !dayDisabled && !!onSelect
+                    ? () => onClick(dateObject)
+                    : () => {},
+              }}
               isInRange={inRange}
               isSelected={selected}
               otherMonth={day.getMonth() !== reference.getMonth()}
@@ -906,18 +903,18 @@ const Calendar = forwardRef(
             <CalendarCustomDay
               key={day.getTime()}
               aria-selected={selected}
-              buttonProps={
-                onSelect
+              buttonProps={{
+                a11yTitle: day.toDateString(),
+                ...(onSelect
                   ? {
-                      a11yTitle: day.toDateString(),
                       active: active && active.getTime() === day.getTime(),
                       disabled: dayDisabled,
                       onClick: dayDisabled
                         ? () => {}
                         : () => onClick(dateObject),
                     }
-                  : null
-              }
+                  : {}),
+              }}
               size={size}
               fill={fill}
               responsive={responsive}
