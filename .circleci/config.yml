@@ -1,6 +1,6 @@
 version: 2.1
 orbs:
-  browser-tools: circleci/browser-tools@2.3.2
+  browser-tools: circleci/browser-tools@1.4.8
 defaults: &defaults
   working_directory: ~/grommet-ci
   docker:
@@ -92,7 +92,7 @@ jobs:
       - run: sudo apt-get update
       - browser-tools/install-chrome:
           replace-existing: true
-          chrome-version: 142.0.7444.59
+          chrome-version: 132.0.6834.110
       - browser-tools/install-chromedriver
       - run:
           name: Start project
