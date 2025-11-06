@@ -253,15 +253,17 @@ var List = /*#__PURE__*/React.forwardRef(function (_ref, ref) {
         event.persist();
         updateFocused(nextFocused);
         var adjustedEvent = event;
-        adjustedEvent.item = data[nextFocused];
-        adjustedEvent.index = nextFocused;
+        // When paginated, use 'items'
+        var currentItems = !paginate ? orderingData || data : items;
+        adjustedEvent.item = currentItems[nextFocused];
+        adjustedEvent.index = !paginate ? nextFocused : (paginationProps.page - 1) * step + nextFocused;
         onClickItem(adjustedEvent);
         sendAnalytics({
           type: 'listItemClick',
           element: listRef.current,
           event: adjustedEvent,
-          item: data[nextFocused],
-          index: nextFocused
+          item: adjustedEvent.item,
+          index: adjustedEvent.index
         });
       }
     }
