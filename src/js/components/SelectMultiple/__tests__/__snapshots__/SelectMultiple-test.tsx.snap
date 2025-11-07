@@ -8675,6 +8675,7 @@ exports[`SelectMultiple with portal theme selectMultiple test 2`] = `
           class="c14"
         >
           <svg
+            aria-hidden="true"
             aria-label="Search"
             class="c15"
             viewBox="0 0 24 24"

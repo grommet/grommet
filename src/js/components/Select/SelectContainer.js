@@ -164,7 +164,7 @@ const SelectContainer = forwardRef(
     const clearRef = useRef();
     const activeRef = useRef();
     const { format } = useContext(MessageContext);
-    const searchIcon = theme.select.icons?.search || <Search />;
+    const searchIcon = theme.select.icons?.search || <Search aria-hidden />;
 
     // for keyboard/screenreader, keep the active option in focus
     useEffect(() => {

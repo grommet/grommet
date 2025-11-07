@@ -16084,6 +16084,7 @@ exports[`Select search 2`] = `
           class="c6"
         >
           <svg
+            aria-hidden="true"
             aria-label="Search"
             class="c7"
             viewBox="0 0 24 24"
@@ -16755,6 +16756,7 @@ exports[`Select search and select 2`] = `
           class="c6"
         >
           <svg
+            aria-hidden="true"
             aria-label="Search"
             class="c7"
             viewBox="0 0 24 24"
@@ -20234,6 +20236,7 @@ exports[`Select theme search pad 1`] = `
           class="c6"
         >
           <svg
+            aria-hidden="true"
             aria-label="Search"
             class="c7"
             viewBox="0 0 24 24"

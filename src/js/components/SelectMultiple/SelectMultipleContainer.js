@@ -91,7 +91,7 @@ const SelectMultipleContainer = forwardRef(
       options,
       valueKey || labelKey,
     );
-    const searchIcon = theme.select.icons?.search || <Search />;
+    const searchIcon = theme.select.icons?.search || <Search aria-hidden />;
 
     // for keyboard/screenreader, keep the active option in focus
     useEffect(() => {
