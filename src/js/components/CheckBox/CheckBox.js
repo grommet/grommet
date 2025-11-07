@@ -18,7 +18,7 @@ import { normalizeColor } from '../../utils';
 import { useThemeValue } from '../../utils/useThemeValue';
 
 const stopLabelClick = (event) => {
-  // prevents clicking on the label trigging the event twice
+  // prevents clicking on the label triggering the event twice
   // https://stackoverflow.com/questions/24501497/why-the-onclick-element-will-trigger-twice-for-label-element
   if (event.target.type !== 'checkbox') {
     event.stopPropagation();

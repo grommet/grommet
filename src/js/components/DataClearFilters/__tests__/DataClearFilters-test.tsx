@@ -7,7 +7,7 @@ import { DataClearFilters } from '..';
 import { DataSummary } from '../../DataSummary';
 
 // asserts that DataSummary has text. Previously this was set to 2 to include AnnounceContext
-// but that is no longer the case with improvments to AnnounceContext in "polite" mode.
+// but that is no longer the case with improvements to AnnounceContext in "polite" mode.
 const expectDataSummary = (message: string) =>
   expect(screen.getAllByText(message)).toHaveLength(1);
 
