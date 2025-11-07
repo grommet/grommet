@@ -1235,4 +1235,57 @@ describe('List pinned', () => {
     expect(iconStyle.stroke).toBe('pink');
     expect(iconStyle.fill).toBe('pink');
   });
+
+  test('onClickItem with pagination returns correct item and index', () => {
+    const onClickItem = jest.fn();
+    const paginatedData: string[] = [];
+    for (let i = 0; i < 15; i += 1) {
+      paginatedData.push(`entry-${i}`);
+    }
+
+    const { getByText, getByLabelText } = render(
+      <Grommet>
+        <List
+          data={paginatedData}
+          onClickItem={onClickItem}
+          paginate
+          step={5}
+        />
+      </Grommet>,
+    );
+
+    // Click first item on page 1
+    fireEvent.click(getByText('entry-0'));
+    expect(onClickItem).toHaveBeenCalledWith(
+      expect.objectContaining({
+        item: 'entry-0',
+        index: 0,
+      }),
+    );
+
+    fireEvent.click(getByLabelText('Go to next page'));
+
+    // Click first item on page 2 - should be entry-5, index 5
+    fireEvent.click(getByText('entry-5'));
+    expect(onClickItem).toHaveBeenCalledWith(
+      expect.objectContaining({
+        item: 'entry-5',
+        index: 5,
+      }),
+    );
+
+    // Navigate to page 3 using aria-label
+    fireEvent.click(getByLabelText('Go to next page'));
+
+    // Click first item on page 3 - should be entry-10, index 10
+    fireEvent.click(getByText('entry-10'));
+    expect(onClickItem).toHaveBeenCalledWith(
+      expect.objectContaining({
+        item: 'entry-10',
+        index: 10,
+      }),
+    );
+
+    expect(onClickItem).toHaveBeenCalledTimes(3);
+  });
 });
