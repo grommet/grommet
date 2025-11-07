@@ -6557,6 +6557,7 @@ exports[`SelectMultiple with portal renders custom listbox styling 1`] = `
       </button>
     </div>
     <div
+      aria-label="list of options"
       aria-multiselectable="true"
       class="c8"
       role="listbox"
@@ -7935,7 +7936,7 @@ exports[`SelectMultiple with portal theme selectMultiple test 2`] = `
   min-width: auto;
 }
 
-.c19 {
+.c21 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -7947,7 +7948,7 @@ exports[`SelectMultiple with portal theme selectMultiple test 2`] = `
   justify-content: center;
 }
 
-.c22 {
+.c24 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -8021,7 +8022,7 @@ exports[`SelectMultiple with portal theme selectMultiple test 2`] = `
   padding: 48px;
 }
 
-.c24 {
+.c26 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -8033,7 +8034,7 @@ exports[`SelectMultiple with portal theme selectMultiple test 2`] = `
   width: 100%;
 }
 
-.c26 {
+.c28 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -8048,7 +8049,7 @@ exports[`SelectMultiple with portal theme selectMultiple test 2`] = `
   border-radius: 4px;
 }
 
-.c27 {
+.c29 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -8093,6 +8094,38 @@ exports[`SelectMultiple with portal theme selectMultiple test 2`] = `
 .c11 *[FILL-RULE],
 .c11 *[fill*='#'],
 .c11 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c15 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #666666;
+  stroke: #666666;
+}
+
+.c15 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c15 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c15 *[stroke*='#'],
+.c15 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c15 *[fill-rule],
+.c15 *[FILL-RULE],
+.c15 *[fill*='#'],
+.c15 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -8245,7 +8278,7 @@ exports[`SelectMultiple with portal theme selectMultiple test 2`] = `
   border: 0;
 }
 
-.c16 {
+.c18 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -8260,6 +8293,122 @@ exports[`SelectMultiple with portal theme selectMultiple test 2`] = `
   border: none;
   padding: 0;
   text-align: inherit;
+}
+
+.c18:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c18:focus >circle,
+.c18:focus >ellipse,
+.c18:focus >line,
+.c18:focus >path,
+.c18:focus >polygon,
+.c18:focus >polyline,
+.c18:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c18:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c18:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c18:focus:not(:focus-visible) >circle,
+.c18:focus:not(:focus-visible) >ellipse,
+.c18:focus:not(:focus-visible) >line,
+.c18:focus:not(:focus-visible) >path,
+.c18:focus:not(:focus-visible) >polygon,
+.c18:focus:not(:focus-visible) >polyline,
+.c18:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c18:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
+}
+
+.c27 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+}
+
+.c27:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c27:focus >circle,
+.c27:focus >ellipse,
+.c27:focus >line,
+.c27:focus >path,
+.c27:focus >polygon,
+.c27:focus >polyline,
+.c27:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c27:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c27:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c27:focus:not(:focus-visible) >circle,
+.c27:focus:not(:focus-visible) >ellipse,
+.c27:focus:not(:focus-visible) >line,
+.c27:focus:not(:focus-visible) >path,
+.c27:focus:not(:focus-visible) >polygon,
+.c27:focus:not(:focus-visible) >polyline,
+.c27:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c27:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
+}
+
+.c16 {
+  box-sizing: border-box;
+  font-size: inherit;
+  font-family: inherit;
+  border: none;
+  -webkit-appearance: none;
+  background: transparent;
+  color: inherit;
+  width: 100%;
+  padding: 11px;
+  font-weight: 600;
+  margin: 0;
+  font-size: 14px;
+  line-height: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.33);
+  border-radius: 4px;
+  padding-left: 48px;
 }
 
 .c16:focus {
@@ -8282,144 +8431,29 @@ exports[`SelectMultiple with portal theme selectMultiple test 2`] = `
   border: 0;
 }
 
-.c16:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c16:focus:not(:focus-visible) >circle,
-.c16:focus:not(:focus-visible) >ellipse,
-.c16:focus:not(:focus-visible) >line,
-.c16:focus:not(:focus-visible) >path,
-.c16:focus:not(:focus-visible) >polygon,
-.c16:focus:not(:focus-visible) >polyline,
-.c16:focus:not(:focus-visible) >rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c16:focus:not(:focus-visible) ::-moz-focus-inner {
-  border: 0;
-}
-
-.c25 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  font: inherit;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  color: inherit;
-  outline: none;
-  border: none;
-  padding: 0;
-  text-align: inherit;
-}
-
-.c25:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c25:focus >circle,
-.c25:focus >ellipse,
-.c25:focus >line,
-.c25:focus >path,
-.c25:focus >polygon,
-.c25:focus >polyline,
-.c25:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c25:focus ::-moz-focus-inner {
-  border: 0;
-}
-
-.c25:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c25:focus:not(:focus-visible) >circle,
-.c25:focus:not(:focus-visible) >ellipse,
-.c25:focus:not(:focus-visible) >line,
-.c25:focus:not(:focus-visible) >path,
-.c25:focus:not(:focus-visible) >polygon,
-.c25:focus:not(:focus-visible) >polyline,
-.c25:focus:not(:focus-visible) >rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c25:focus:not(:focus-visible) ::-moz-focus-inner {
-  border: 0;
-}
-
-.c14 {
-  box-sizing: border-box;
-  font-size: inherit;
-  font-family: inherit;
-  border: none;
-  -webkit-appearance: none;
-  background: transparent;
-  color: inherit;
-  width: 100%;
-  padding: 11px;
-  font-weight: 600;
-  margin: 0;
-  font-size: 14px;
-  line-height: 20px;
-  border: 1px solid rgba(0, 0, 0, 0.33);
-  border-radius: 4px;
-}
-
-.c14:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c14:focus >circle,
-.c14:focus >ellipse,
-.c14:focus >line,
-.c14:focus >path,
-.c14:focus >polygon,
-.c14:focus >polyline,
-.c14:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c14:focus ::-moz-focus-inner {
-  border: 0;
-}
-
-.c14::-webkit-input-placeholder {
+.c16::-webkit-input-placeholder {
   color: #AAAAAA;
 }
 
-.c14::-moz-placeholder {
+.c16::-moz-placeholder {
   color: #AAAAAA;
 }
 
-.c14:-ms-input-placeholder {
+.c16:-ms-input-placeholder {
   color: #AAAAAA;
 }
 
-.c14 ::-webkit-search-decoration {
+.c16 ::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
-.c14::-moz-focus-inner {
+.c16::-moz-focus-inner {
   border: none;
   outline: none;
 }
 
-.c14:-moz-placeholder,
-.c14::-moz-placeholder {
+.c16:-moz-placeholder,
+.c16::-moz-placeholder {
   opacity: 1;
 }
 
@@ -8428,23 +8462,33 @@ exports[`SelectMultiple with portal theme selectMultiple test 2`] = `
   width: 100%;
 }
 
+.c14 {
+  position: absolute;
+  display: flex;
+  justify: center;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  left: 12px;
+}
+
 .c3 {
   max-height: inherit;
 }
 
-.c15 {
+.c17 {
   position: relative;
   scroll-behavior: smooth;
   overflow: auto;
   outline: none;
 }
 
-.c17 {
+.c19 {
   display: block;
   width: 100%;
 }
 
-.c23 {
+.c25 {
   box-sizing: border-box;
   stroke-width: 4px;
   stroke: #7D4CDB;
@@ -8452,7 +8496,7 @@ exports[`SelectMultiple with portal theme selectMultiple test 2`] = `
   height: 24px;
 }
 
-.c18 {
+.c20 {
   display: flex;
   flex-direction: row;
   user-select: none;
@@ -8462,12 +8506,12 @@ exports[`SelectMultiple with portal theme selectMultiple test 2`] = `
   cursor: pointer;
 }
 
-.c18:hover input:not([disabled])+div,
-.c18:hover input:not([disabled])+span {
+.c20:hover input:not([disabled])+div,
+.c20:hover input:not([disabled])+span {
   border-color: #000000;
 }
 
-.c21 {
+.c23 {
   opacity: 0;
   -moz-appearance: none;
   width: 0;
@@ -8476,12 +8520,12 @@ exports[`SelectMultiple with portal theme selectMultiple test 2`] = `
   cursor: pointer;
 }
 
-.c21:checked+span>span {
+.c23:checked+span>span {
   left: calc( 48px - 24px );
   background: #7D4CDB;
 }
 
-.c20 {
+.c22 {
   flex-shrink: 0;
 }
 
@@ -8493,13 +8537,13 @@ exports[`SelectMultiple with portal theme selectMultiple test 2`] = `
 }
 
 @media only screen and (max-width: 768px) {
-  .c19 {
+  .c21 {
     margin-right: 6px;
   }
 }
 
 @media only screen and (max-width: 768px) {
-  .c22 {
+  .c24 {
     border: solid 2px #7D4CDB;
   }
 }
@@ -8536,7 +8580,7 @@ exports[`SelectMultiple with portal theme selectMultiple test 2`] = `
 }
 
 @media only screen and (max-width: 768px) {
-  .c26 {
+  .c28 {
     border: solid 2px rgba(0, 0, 0, 0.15);
   }
 }
@@ -8627,18 +8671,35 @@ exports[`SelectMultiple with portal theme selectMultiple test 2`] = `
       <div
         class="c13"
       >
+        <div
+          class="c14"
+        >
+          <svg
+            aria-label="Search"
+            class="c15"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="m15 15 7 7-7-7zm-5.5 2a7.5 7.5 0 1 0 0-15 7.5 7.5 0 0 0 0 15z"
+              fill="none"
+              stroke="#000"
+              stroke-width="2"
+            />
+          </svg>
+        </div>
         <input
           aria-label="Search to filter options"
           autocomplete="off"
-          class="c14"
+          class="c16"
           type="search"
           value=""
         />
       </div>
     </div>
     <div
+      aria-label="list of options"
       aria-multiselectable="true"
-      class="c15"
+      class="c17"
       role="listbox"
       tabindex="-1"
     >
@@ -8647,31 +8708,31 @@ exports[`SelectMultiple with portal theme selectMultiple test 2`] = `
         aria-posinset="1"
         aria-selected="true"
         aria-setsize="12"
-        class="c16 c17"
+        class="c18 c19"
         id="option0"
         role="option"
         tabindex="0"
         type="button"
       >
         <label
-          class="c18"
+          class="c20"
           style="pointer-events: none;"
         >
           <div
-            class="c19 c20"
+            class="c21 c22"
           >
             <input
               checked=""
-              class="c21"
+              class="c23"
               inert=""
               tabindex="-1"
               type="checkbox"
             />
             <div
-              class="c22 "
+              class="c24 "
             >
               <svg
-                class="c23"
+                class="c25"
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -8683,7 +8744,7 @@ exports[`SelectMultiple with portal theme selectMultiple test 2`] = `
             </div>
           </div>
           <div
-            class="c24"
+            class="c26"
           >
             one
           </div>
@@ -8694,31 +8755,31 @@ exports[`SelectMultiple with portal theme selectMultiple test 2`] = `
         aria-posinset="2"
         aria-selected="true"
         aria-setsize="12"
-        class="c16 c17"
+        class="c18 c19"
         id="option1"
         role="option"
         tabindex="0"
         type="button"
       >
         <label
-          class="c18"
+          class="c20"
           style="pointer-events: none;"
         >
           <div
-            class="c19 c20"
+            class="c21 c22"
           >
             <input
               checked=""
-              class="c21"
+              class="c23"
               inert=""
               tabindex="-1"
               type="checkbox"
             />
             <div
-              class="c22 "
+              class="c24 "
             >
               <svg
-                class="c23"
+                class="c25"
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -8730,7 +8791,7 @@ exports[`SelectMultiple with portal theme selectMultiple test 2`] = `
             </div>
           </div>
           <div
-            class="c24"
+            class="c26"
           >
             two
           </div>
@@ -8741,31 +8802,31 @@ exports[`SelectMultiple with portal theme selectMultiple test 2`] = `
         aria-posinset="3"
         aria-selected="true"
         aria-setsize="12"
-        class="c16 c17"
+        class="c18 c19"
         id="option2"
         role="option"
         tabindex="0"
         type="button"
       >
         <label
-          class="c18"
+          class="c20"
           style="pointer-events: none;"
         >
           <div
-            class="c19 c20"
+            class="c21 c22"
           >
             <input
               checked=""
-              class="c21"
+              class="c23"
               inert=""
               tabindex="-1"
               type="checkbox"
             />
             <div
-              class="c22 "
+              class="c24 "
             >
               <svg
-                class="c23"
+                class="c25"
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -8777,7 +8838,7 @@ exports[`SelectMultiple with portal theme selectMultiple test 2`] = `
             </div>
           </div>
           <div
-            class="c24"
+            class="c26"
           >
             three
           </div>
@@ -8788,31 +8849,31 @@ exports[`SelectMultiple with portal theme selectMultiple test 2`] = `
         aria-posinset="4"
         aria-selected="true"
         aria-setsize="12"
-        class="c16 c17"
+        class="c18 c19"
         id="option3"
         role="option"
         tabindex="0"
         type="button"
       >
         <label
-          class="c18"
+          class="c20"
           style="pointer-events: none;"
         >
           <div
-            class="c19 c20"
+            class="c21 c22"
           >
             <input
               checked=""
-              class="c21"
+              class="c23"
               inert=""
               tabindex="-1"
               type="checkbox"
             />
             <div
-              class="c22 "
+              class="c24 "
             >
               <svg
-                class="c23"
+                class="c25"
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -8824,7 +8885,7 @@ exports[`SelectMultiple with portal theme selectMultiple test 2`] = `
             </div>
           </div>
           <div
-            class="c24"
+            class="c26"
           >
             four
           </div>
@@ -8835,31 +8896,31 @@ exports[`SelectMultiple with portal theme selectMultiple test 2`] = `
         aria-posinset="5"
         aria-selected="true"
         aria-setsize="12"
-        class="c16 c17"
+        class="c18 c19"
         id="option4"
         role="option"
         tabindex="0"
         type="button"
       >
         <label
-          class="c18"
+          class="c20"
           style="pointer-events: none;"
         >
           <div
-            class="c19 c20"
+            class="c21 c22"
           >
             <input
               checked=""
-              class="c21"
+              class="c23"
               inert=""
               tabindex="-1"
               type="checkbox"
             />
             <div
-              class="c22 "
+              class="c24 "
             >
               <svg
-                class="c23"
+                class="c25"
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -8871,7 +8932,7 @@ exports[`SelectMultiple with portal theme selectMultiple test 2`] = `
             </div>
           </div>
           <div
-            class="c24"
+            class="c26"
           >
             five
           </div>
@@ -8882,31 +8943,31 @@ exports[`SelectMultiple with portal theme selectMultiple test 2`] = `
         aria-posinset="6"
         aria-selected="true"
         aria-setsize="12"
-        class="c16 c17"
+        class="c18 c19"
         id="option5"
         role="option"
         tabindex="0"
         type="button"
       >
         <label
-          class="c18"
+          class="c20"
           style="pointer-events: none;"
         >
           <div
-            class="c19 c20"
+            class="c21 c22"
           >
             <input
               checked=""
-              class="c21"
+              class="c23"
               inert=""
               tabindex="-1"
               type="checkbox"
             />
             <div
-              class="c22 "
+              class="c24 "
             >
               <svg
-                class="c23"
+                class="c25"
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -8918,7 +8979,7 @@ exports[`SelectMultiple with portal theme selectMultiple test 2`] = `
             </div>
           </div>
           <div
-            class="c24"
+            class="c26"
           >
             six
           </div>
@@ -8929,31 +8990,31 @@ exports[`SelectMultiple with portal theme selectMultiple test 2`] = `
         aria-posinset="7"
         aria-selected="false"
         aria-setsize="12"
-        class="c25 c17"
+        class="c27 c19"
         id="option6"
         role="option"
         tabindex="-1"
         type="button"
       >
         <label
-          class="c18"
+          class="c20"
           style="pointer-events: none;"
         >
           <div
-            class="c19 c20"
+            class="c21 c22"
           >
             <input
-              class="c21"
+              class="c23"
               inert=""
               tabindex="-1"
               type="checkbox"
             />
             <div
-              class="c26 "
+              class="c28 "
             />
           </div>
           <div
-            class="c24"
+            class="c26"
           >
             seven
           </div>
@@ -8964,31 +9025,31 @@ exports[`SelectMultiple with portal theme selectMultiple test 2`] = `
         aria-posinset="8"
         aria-selected="false"
         aria-setsize="12"
-        class="c25 c17"
+        class="c27 c19"
         id="option7"
         role="option"
         tabindex="-1"
         type="button"
       >
         <label
-          class="c18"
+          class="c20"
           style="pointer-events: none;"
         >
           <div
-            class="c19 c20"
+            class="c21 c22"
           >
             <input
-              class="c21"
+              class="c23"
               inert=""
               tabindex="-1"
               type="checkbox"
             />
             <div
-              class="c26 "
+              class="c28 "
             />
           </div>
           <div
-            class="c24"
+            class="c26"
           >
             eight
           </div>
@@ -8999,31 +9060,31 @@ exports[`SelectMultiple with portal theme selectMultiple test 2`] = `
         aria-posinset="9"
         aria-selected="false"
         aria-setsize="12"
-        class="c25 c17"
+        class="c27 c19"
         id="option8"
         role="option"
         tabindex="-1"
         type="button"
       >
         <label
-          class="c18"
+          class="c20"
           style="pointer-events: none;"
         >
           <div
-            class="c19 c20"
+            class="c21 c22"
           >
             <input
-              class="c21"
+              class="c23"
               inert=""
               tabindex="-1"
               type="checkbox"
             />
             <div
-              class="c26 "
+              class="c28 "
             />
           </div>
           <div
-            class="c24"
+            class="c26"
           >
             nine
           </div>
@@ -9034,31 +9095,31 @@ exports[`SelectMultiple with portal theme selectMultiple test 2`] = `
         aria-posinset="10"
         aria-selected="false"
         aria-setsize="12"
-        class="c25 c17"
+        class="c27 c19"
         id="option9"
         role="option"
         tabindex="-1"
         type="button"
       >
         <label
-          class="c18"
+          class="c20"
           style="pointer-events: none;"
         >
           <div
-            class="c19 c20"
+            class="c21 c22"
           >
             <input
-              class="c21"
+              class="c23"
               inert=""
               tabindex="-1"
               type="checkbox"
             />
             <div
-              class="c26 "
+              class="c28 "
             />
           </div>
           <div
-            class="c24"
+            class="c26"
           >
             ten
           </div>
@@ -9069,31 +9130,31 @@ exports[`SelectMultiple with portal theme selectMultiple test 2`] = `
         aria-posinset="11"
         aria-selected="false"
         aria-setsize="12"
-        class="c25 c17"
+        class="c27 c19"
         id="option10"
         role="option"
         tabindex="-1"
         type="button"
       >
         <label
-          class="c18"
+          class="c20"
           style="pointer-events: none;"
         >
           <div
-            class="c19 c20"
+            class="c21 c22"
           >
             <input
-              class="c21"
+              class="c23"
               inert=""
               tabindex="-1"
               type="checkbox"
             />
             <div
-              class="c26 "
+              class="c28 "
             />
           </div>
           <div
-            class="c24"
+            class="c26"
           >
             eleven
           </div>
@@ -9104,38 +9165,38 @@ exports[`SelectMultiple with portal theme selectMultiple test 2`] = `
         aria-posinset="12"
         aria-selected="false"
         aria-setsize="12"
-        class="c25 c17"
+        class="c27 c19"
         id="option11"
         role="option"
         tabindex="-1"
         type="button"
       >
         <label
-          class="c18"
+          class="c20"
           style="pointer-events: none;"
         >
           <div
-            class="c19 c20"
+            class="c21 c22"
           >
             <input
-              class="c21"
+              class="c23"
               inert=""
               tabindex="-1"
               type="checkbox"
             />
             <div
-              class="c26 "
+              class="c28 "
             />
           </div>
           <div
-            class="c24"
+            class="c26"
           >
             twelve
           </div>
         </label>
       </button>
       <div
-        class="c27"
+        class="c29"
       />
     </div>
   </div>
