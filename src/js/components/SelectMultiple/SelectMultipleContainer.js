@@ -6,7 +6,7 @@ import React, {
   useRef,
   useState,
 } from 'react';
-import { Search } from 'grommet-icons';
+import { Search } from 'grommet-icons/icons/Search';
 
 import { setFocusWithoutScroll } from '../../utils';
 

@@ -8,7 +8,7 @@ import React, {
 } from 'react';
 
 import styled from 'styled-components';
-import { Search } from 'grommet-icons';
+import { Search } from 'grommet-icons/icons/Search';
 import {
   setFocusWithoutScroll,
   getHoverIndicatorStyle,
