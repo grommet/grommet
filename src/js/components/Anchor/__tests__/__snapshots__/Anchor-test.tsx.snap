@@ -920,8 +920,8 @@ exports[`Anchor renders size specific theming 1`] = `
 .c20 {
   display: inline-block;
   flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
+  width: 12px;
+  height: 12px;
   fill: #7D4CDB;
   stroke: #7D4CDB;
 }
@@ -945,6 +945,38 @@ exports[`Anchor renders size specific theming 1`] = `
 .c20 *[FILL-RULE],
 .c20 *[fill*='#'],
 .c20 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c22 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 48px;
+  height: 48px;
+  fill: #7D4CDB;
+  stroke: #7D4CDB;
+}
+
+.c22 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c22 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c22 *[stroke*='#'],
+.c22 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c22 *[fill-rule],
+.c22 *[FILL-RULE],
+.c22 *[fill*='#'],
+.c22 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -990,7 +1022,7 @@ exports[`Anchor renders size specific theming 1`] = `
   width: 6px;
 }
 
-.c22 {
+.c23 {
   flex: 0 0 auto;
   align-self: stretch;
   width: 48px;
@@ -1347,7 +1379,7 @@ exports[`Anchor renders size specific theming 1`] = `
       >
         <svg
           aria-label="LinkNext"
-          class="c20"
+          class="c22"
           viewBox="0 0 24 24"
         >
           <path
@@ -1358,7 +1390,7 @@ exports[`Anchor renders size specific theming 1`] = `
           />
         </svg>
         <span
-          class="c22"
+          class="c23"
         />
         Large anchor with icon should receive color on icon
       </span>
