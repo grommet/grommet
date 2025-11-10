@@ -82,6 +82,7 @@ const Text = forwardRef(
         {...passThemeFlag}
         {...rest}
         ref={textRef}
+        tabIndex={rest.onClick || rest.role === 'button' ? 0 : undefined}
       >
         {children !== undefined ? (
           <TextContext.Provider value={textContextValue}>
@@ -103,8 +104,8 @@ const Text = forwardRef(
           </Tip>
         );
       }
-      // place the text content in a tip if truncate !== 'tip'
-      // it displays even if the text has not truncated
+      // place the text content in a tip if truncate !== 'tip'.
+      // it displays even if the text has not truncated.
       if (truncate !== 'tip') {
         return <Tip {...tipProps}>{styledTextResult}</Tip>;
       }
