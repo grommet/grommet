@@ -276,13 +276,13 @@ const DataChart = forwardRef(
       const coarseness = horizontal ? [5, undefined] : [undefined, 5];
       if (axis && axis.x) {
         const { granularity = 'coarse' } = axis.x;
-        steps.x = granularities.x[granularity] - 1;
-      } else steps.x = horizontal ? 1 : data.length - 1;
+        steps.x = Math.max(1, granularities.x[granularity] - 1);
+      } else steps.x = horizontal ? 1 : Math.max(1, data.length - 1);
 
       if (axis && axis.y) {
         const { granularity = 'coarse' } = axis.y;
-        steps.y = granularities.y[granularity] - 1;
-      } else steps.y = horizontal ? data.length - 1 : 1;
+        steps.y = Math.max(1, granularities.y[granularity] - 1);
+      } else steps.y = horizontal ? Math.max(1, data.length - 1) : 1;
 
       let chartBounds = chartValues.map((_, index) => {
         const { type } = charts[index];
@@ -552,9 +552,13 @@ const DataChart = forwardRef(
         if (!property || (!horizontal && y) || (horizontal && !y)) {
           if (render) return render(value);
         } else {
-          const datum = data[axisValue];
-          value = datum[property];
-          if (render) return render(value, datum, property);
+          // Special case: for single data points, only use index 0
+          const dataIndex = data.length === 1 ? 0 : axisValue;
+          const datum = data[dataIndex];
+          if (datum) {
+            value = datum[property];
+            if (render) return render(value, datum, property);
+          }
         }
         if (property) {
           const dateFormat = dateFormats[property];
