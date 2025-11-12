@@ -364,6 +364,7 @@ exports[`DataSort properties 1`] = `
 }
 
 <div
+  aria-label="list of options"
   class="c0"
   role="listbox"
   tabindex="-1"
