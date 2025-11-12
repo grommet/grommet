@@ -301,6 +301,7 @@ var Select = /*#__PURE__*/forwardRef(function (_ref, ref) {
       emptySearchMessage: emptySearchMessage,
       id: id,
       labelKey: labelKey,
+      messages: messages,
       multiple: multiple,
       name: name,
       onChange: onSelectChange,

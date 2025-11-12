@@ -19,7 +19,10 @@ export var genericSelectProps = _extends({}, genericProps, {
   icon: PropTypes.oneOfType([PropTypes.bool, PropTypes.func, PropTypes.node, PropTypes.elementType]),
   labelKey: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
   messages: PropTypes.shape({
-    multiple: PropTypes.string
+    optionsA11y: PropTypes.string,
+    multiple: PropTypes.string,
+    searchA11y: PropTypes.string,
+    selected: PropTypes.string
   }),
   name: PropTypes.string,
   onChange: PropTypes.func,

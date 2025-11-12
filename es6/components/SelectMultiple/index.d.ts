@@ -15,6 +15,7 @@ export interface SelectMultipleProps extends BasicSelectProps {
     open?: string;
     optionNotSelected?: string;
     optionSelected?: string;
+    optionsA11y?: string;
     search?: string;
     selectAll?: string;
     selectAllA11y?: string;

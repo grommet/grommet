@@ -1,5 +1,6 @@
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 import React, { forwardRef, useCallback, useContext, useEffect, useRef, useState } from 'react';
+import { Search } from 'grommet-icons/icons/Search';
 import { setFocusWithoutScroll } from '../../utils';
 import { Box } from '../Box';
 import { Button } from '../Button';
@@ -15,7 +16,7 @@ import { EmptySearchOption } from '../Select/EmptySearchOption';
 import { MessageContext } from '../../contexts/MessageContext';
 import { useThemeValue } from '../../utils/useThemeValue';
 var SelectMultipleContainer = /*#__PURE__*/forwardRef(function (_ref, ref) {
-  var _theme$selectMultiple2;
+  var _theme$select$icons, _theme$selectMultiple2;
   var allOptions = _ref.allOptions,
     _ref$children = _ref.children,
     children = _ref$children === void 0 ? null : _ref$children,
@@ -74,6 +75,9 @@ var SelectMultipleContainer = /*#__PURE__*/forwardRef(function (_ref, ref) {
     setShowA11yLimit = _useState4[1];
   var clearRef = useRef();
   var isDisabled = useDisabled(disabled, disabledKey, options, valueKey || labelKey);
+  var searchIcon = ((_theme$select$icons = theme.select.icons) == null ? void 0 : _theme$select$icons.search) || /*#__PURE__*/React.createElement(Search, {
+    "aria-hidden": true
+  });
 
   // for keyboard/screenreader, keep the active option in focus
   useEffect(function () {
@@ -331,8 +335,13 @@ var SelectMultipleContainer = /*#__PURE__*/forwardRef(function (_ref, ref) {
     },
     onFocus: function onFocus() {
       return setActiveIndex(-1);
-    }
+    },
+    icon: searchIcon
   }))), helpContent, (options == null ? void 0 : options.length) > 0 ? /*#__PURE__*/React.createElement(OptionsContainer, {
+    "aria-label": format({
+      id: 'selectMultiple.optionsA11y',
+      messages: messages
+    }),
     role: "listbox",
     tabIndex: "-1",
     ref: optionsRef,

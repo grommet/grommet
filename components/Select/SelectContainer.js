@@ -4,7 +4,9 @@ exports.__esModule = true;
 exports.SelectContainer = void 0;
 var _react = _interopRequireWildcard(require("react"));
 var _styledComponents = _interopRequireDefault(require("styled-components"));
+var _Search = require("grommet-icons/icons/Search");
 var _utils = require("../../utils");
+var _MessageContext = require("../../contexts/MessageContext");
 var _Box = require("../Box");
 var _Button = require("../Button");
 var _InfiniteScroll = require("../InfiniteScroll");
@@ -76,7 +78,7 @@ var ClearButton = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
   });
 });
 var SelectContainer = exports.SelectContainer = /*#__PURE__*/(0, _react.forwardRef)(function (_ref3, ref) {
-  var _theme$select;
+  var _theme$select$icons, _theme$select;
   var clear = _ref3.clear,
     _ref3$children = _ref3.children,
     children = _ref3$children === void 0 ? null : _ref3$children,
@@ -87,6 +89,7 @@ var SelectContainer = exports.SelectContainer = /*#__PURE__*/(0, _react.forwardR
     emptySearchMessage = _ref3$emptySearchMess === void 0 ? 'No matches found' : _ref3$emptySearchMess,
     id = _ref3.id,
     labelKey = _ref3.labelKey,
+    messages = _ref3.messages,
     multiple = _ref3.multiple,
     name = _ref3.name,
     onChange = _ref3.onChange,
@@ -125,6 +128,11 @@ var SelectContainer = exports.SelectContainer = /*#__PURE__*/(0, _react.forwardR
   var optionsRef = (0, _react.useRef)();
   var clearRef = (0, _react.useRef)();
   var activeRef = (0, _react.useRef)();
+  var _useContext = (0, _react.useContext)(_MessageContext.MessageContext),
+    format = _useContext.format;
+  var searchIcon = ((_theme$select$icons = theme.select.icons) == null ? void 0 : _theme$select$icons.search) || /*#__PURE__*/_react["default"].createElement(_Search.Search, {
+    "aria-hidden": true
+  });
 
   // for keyboard/screenreader, keep the active option in focus
   (0, _react.useEffect)(function () {
@@ -307,6 +315,10 @@ var SelectContainer = exports.SelectContainer = /*#__PURE__*/(0, _react.forwardR
     pad: !customSearchInput ? (_theme$select = theme.select) == null || (_theme$select = _theme$select.search) == null ? void 0 : _theme$select.pad : undefined,
     flex: false
   }, /*#__PURE__*/_react["default"].createElement(SelectTextInput, {
+    "aria-label": format({
+      id: 'select.searchA11y',
+      messages: messages
+    }),
     focusIndicator: !customSearchInput,
     size: "small",
     ref: searchRef,
@@ -321,7 +333,8 @@ var SelectContainer = exports.SelectContainer = /*#__PURE__*/(0, _react.forwardR
     },
     onFocus: function onFocus() {
       return setActiveIndex(-1);
-    }
+    },
+    icon: searchIcon
   })), shouldShowClearButton('top') && /*#__PURE__*/_react["default"].createElement(ClearButton, {
     ref: clearRef,
     clear: clear,
@@ -335,6 +348,10 @@ var SelectContainer = exports.SelectContainer = /*#__PURE__*/(0, _react.forwardR
     },
     theme: theme
   }), options.length > 0 ? /*#__PURE__*/_react["default"].createElement(_StyledSelect.OptionsContainer, {
+    "aria-label": format({
+      id: 'select.optionsA11y',
+      messages: messages
+    }),
     role: "listbox",
     tabIndex: "-1",
     ref: optionsRef,

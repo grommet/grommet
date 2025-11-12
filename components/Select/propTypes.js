@@ -24,7 +24,10 @@ var genericSelectProps = exports.genericSelectProps = _extends({}, _generalPropT
   icon: _propTypes["default"].oneOfType([_propTypes["default"].bool, _propTypes["default"].func, _propTypes["default"].node, _propTypes["default"].elementType]),
   labelKey: _propTypes["default"].oneOfType([_propTypes["default"].string, _propTypes["default"].func]),
   messages: _propTypes["default"].shape({
-    multiple: _propTypes["default"].string
+    optionsA11y: _propTypes["default"].string,
+    multiple: _propTypes["default"].string,
+    searchA11y: _propTypes["default"].string,
+    selected: _propTypes["default"].string
   }),
   name: _propTypes["default"].string,
   onChange: _propTypes["default"].func,

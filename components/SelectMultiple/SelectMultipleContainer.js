@@ -3,6 +3,7 @@
 exports.__esModule = true;
 exports.SelectMultipleContainer = void 0;
 var _react = _interopRequireWildcard(require("react"));
+var _Search = require("grommet-icons/icons/Search");
 var _utils = require("../../utils");
 var _Box = require("../Box");
 var _Button = require("../Button");
@@ -20,7 +21,7 @@ var _useThemeValue2 = require("../../utils/useThemeValue");
 function _interopRequireWildcard(e, t) { if ("function" == typeof WeakMap) var r = new WeakMap(), n = new WeakMap(); return (_interopRequireWildcard = function _interopRequireWildcard(e, t) { if (!t && e && e.__esModule) return e; var o, i, f = { __proto__: null, "default": e }; if (null === e || "object" != typeof e && "function" != typeof e) return f; if (o = t ? n : r) { if (o.has(e)) return o.get(e); o.set(e, f); } for (var _t in e) "default" !== _t && {}.hasOwnProperty.call(e, _t) && ((i = (o = Object.defineProperty) && Object.getOwnPropertyDescriptor(e, _t)) && (i.get || i.set) ? o(f, _t, i) : f[_t] = e[_t]); return f; })(e, t); }
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 var SelectMultipleContainer = exports.SelectMultipleContainer = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
-  var _theme$selectMultiple2;
+  var _theme$select$icons, _theme$selectMultiple2;
   var allOptions = _ref.allOptions,
     _ref$children = _ref.children,
     children = _ref$children === void 0 ? null : _ref$children,
@@ -79,6 +80,9 @@ var SelectMultipleContainer = exports.SelectMultipleContainer = /*#__PURE__*/(0,
     setShowA11yLimit = _useState4[1];
   var clearRef = (0, _react.useRef)();
   var isDisabled = (0, _utils2.useDisabled)(disabled, disabledKey, options, valueKey || labelKey);
+  var searchIcon = ((_theme$select$icons = theme.select.icons) == null ? void 0 : _theme$select$icons.search) || /*#__PURE__*/_react["default"].createElement(_Search.Search, {
+    "aria-hidden": true
+  });
 
   // for keyboard/screenreader, keep the active option in focus
   (0, _react.useEffect)(function () {
@@ -336,8 +340,13 @@ var SelectMultipleContainer = exports.SelectMultipleContainer = /*#__PURE__*/(0,
     },
     onFocus: function onFocus() {
       return setActiveIndex(-1);
-    }
+    },
+    icon: searchIcon
   }))), helpContent, (options == null ? void 0 : options.length) > 0 ? /*#__PURE__*/_react["default"].createElement(_StyledSelect.OptionsContainer, {
+    "aria-label": format({
+      id: 'selectMultiple.optionsA11y',
+      messages: messages
+    }),
     role: "listbox",
     tabIndex: "-1",
     ref: optionsRef,

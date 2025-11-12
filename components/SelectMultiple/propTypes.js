@@ -21,6 +21,7 @@ if (process.env.NODE_ENV !== 'production') {
       open: _propTypes["default"].string,
       optionNotSelected: _propTypes["default"].string,
       optionSelected: _propTypes["default"].string,
+      optionsA11y: _propTypes["default"].string,
       search: _propTypes["default"].string,
       selectAll: _propTypes["default"].string,
       selectAllA11y: _propTypes["default"].string,

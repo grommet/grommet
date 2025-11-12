@@ -189,7 +189,9 @@ if (process.env.NODE_ENV !== 'production') {
           upper: _propTypes["default"].string
         }),
         select: _propTypes["default"].shape({
+          optionsA11y: _propTypes["default"].string,
           multiple: _propTypes["default"].string,
+          searchA11y: _propTypes["default"].string,
           selected: _propTypes["default"].string
         }),
         selectMultiple: _propTypes["default"].shape({
@@ -198,6 +200,7 @@ if (process.env.NODE_ENV !== 'production') {
           open: _propTypes["default"].string,
           optionSelected: _propTypes["default"].string,
           optionNotSelected: _propTypes["default"].string,
+          optionsA11y: _propTypes["default"].string,
           search: _propTypes["default"].string,
           selectAll: _propTypes["default"].string,
           selectAllA11y: _propTypes["default"].string,

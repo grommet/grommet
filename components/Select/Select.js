@@ -306,6 +306,7 @@ var Select = exports.Select = /*#__PURE__*/(0, _react.forwardRef)(function (_ref
       emptySearchMessage: emptySearchMessage,
       id: id,
       labelKey: labelKey,
+      messages: messages,
       multiple: multiple,
       name: name,
       onChange: onSelectChange,
