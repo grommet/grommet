@@ -1002,6 +1002,7 @@ exports[`Select Controlled multiple onChange toggle with valueKey reduce 2`] = `
     id="test-select__select-drop"
   >
     <div
+      aria-label="list of options"
       aria-multiselectable="true"
       class="c4"
       role="listbox"
@@ -1493,6 +1494,7 @@ exports[`Select Controlled multiple onChange with valueKey reduce 2`] = `
     id="test-select__select-drop"
   >
     <div
+      aria-label="list of options"
       aria-multiselectable="true"
       class="c4"
       role="listbox"
@@ -1984,6 +1986,7 @@ exports[`Select Controlled multiple onChange with valueKey string 2`] = `
     id="test-select__select-drop"
   >
     <div
+      aria-label="list of options"
       aria-multiselectable="true"
       class="c4"
       role="listbox"
@@ -2477,6 +2480,7 @@ exports[`Select Controlled multiple onChange without labelKey 2`] = `
     id="test-select__select-drop"
   >
     <div
+      aria-label="list of options"
       aria-multiselectable="true"
       class="c4"
       role="listbox"
@@ -2550,6 +2554,7 @@ exports[`Select Controlled multiple onChange without labelKey 4`] = `
     id="test-select__select-drop"
   >
     <div
+      aria-label="list of options"
       aria-multiselectable="true"
       class="StyledSelect__OptionsContainer-sc-znp66n-1 kARYcO"
       role="listbox"
@@ -2623,6 +2628,7 @@ exports[`Select Controlled multiple onChange without labelKey 6`] = `
     id="test-select__select-drop"
   >
     <div
+      aria-label="list of options"
       aria-multiselectable="true"
       class="StyledSelect__OptionsContainer-sc-znp66n-1 kARYcO"
       role="listbox"
@@ -3382,6 +3388,7 @@ exports[`Select Controlled multiple onChange without valueKey 2`] = `
     id="test-select__select-drop"
   >
     <div
+      aria-label="list of options"
       aria-multiselectable="true"
       class="c4"
       role="listbox"
@@ -3455,6 +3462,7 @@ exports[`Select Controlled multiple onChange without valueKey 4`] = `
     id="test-select__select-drop"
   >
     <div
+      aria-label="list of options"
       aria-multiselectable="true"
       class="StyledSelect__OptionsContainer-sc-znp66n-1 kARYcO"
       role="listbox"
@@ -3528,6 +3536,7 @@ exports[`Select Controlled multiple onChange without valueKey 6`] = `
     id="test-select__select-drop"
   >
     <div
+      aria-label="list of options"
       aria-multiselectable="true"
       class="StyledSelect__OptionsContainer-sc-znp66n-1 kARYcO"
       role="listbox"
@@ -4289,6 +4298,7 @@ exports[`Select Controlled multiple onChange without valueKey or labelKey 2`] = 
     id="test-select__select-drop"
   >
     <div
+      aria-label="list of options"
       aria-multiselectable="true"
       class="c4"
       role="listbox"
@@ -4362,6 +4372,7 @@ exports[`Select Controlled multiple onChange without valueKey or labelKey 4`] = 
     id="test-select__select-drop"
   >
     <div
+      aria-label="list of options"
       aria-multiselectable="true"
       class="StyledSelect__OptionsContainer-sc-znp66n-1 kARYcO"
       role="listbox"
@@ -4433,6 +4444,7 @@ exports[`Select Controlled multiple onChange without valueKey or labelKey 6`] = 
     id="test-select__select-drop"
   >
     <div
+      aria-label="list of options"
       aria-multiselectable="true"
       class="StyledSelect__OptionsContainer-sc-znp66n-1 kARYcO"
       role="listbox"
@@ -5248,6 +5260,7 @@ exports[`Select Controlled multiple values 3`] = `
     id="test-select__select-drop"
   >
     <div
+      aria-label="list of options"
       aria-multiselectable="true"
       class="c4"
       role="listbox"
@@ -5739,6 +5752,7 @@ exports[`Select Controlled multiple with empty results 2`] = `
     id="test-select__select-drop"
   >
     <div
+      aria-label="list of options"
       aria-multiselectable="true"
       class="c4"
       role="listbox"
