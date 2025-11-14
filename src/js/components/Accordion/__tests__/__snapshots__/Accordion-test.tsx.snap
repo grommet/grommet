@@ -3419,7 +3419,7 @@ exports[`Accordion complex title 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-bottom: solid 1px rgba(255, 255, 255, 0.33);
+  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   min-width: 0;
   min-height: 0;
   flex-direction: column;
@@ -3430,8 +3430,8 @@ exports[`Accordion complex title 1`] = `
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
-  fill: #6FFFB0;
-  stroke: #6FFFB0;
+  fill: #7D4CDB;
+  stroke: #7D4CDB;
 }
 
 .c7 g {
@@ -3539,7 +3539,7 @@ exports[`Accordion complex title 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c8 {
-    border-bottom: solid 1px rgba(255, 255, 255, 0.33);
+    border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   }
 }
 

@@ -2990,7 +2990,7 @@ exports[`DataFilter select multiple options 1`] = `
 .c9 {
   font-size: 14px;
   line-height: 20px;
-  color: #FFFFFF;
+  color: #000000;
   font-weight: normal;
 }
 
@@ -3552,7 +3552,7 @@ exports[`DataFilter should allow filtering on multiple sub-properties from same 
 .c9 {
   font-size: 14px;
   line-height: 20px;
-  color: #FFFFFF;
+  color: #000000;
   font-weight: normal;
 }
 

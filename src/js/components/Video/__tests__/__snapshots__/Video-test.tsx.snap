@@ -6,7 +6,7 @@ exports[`Video Configure Menu Button 1`] = `
   box-sizing: border-box;
   max-width: 100%;
   align-items: center;
-  background-color: rgba(51, 51, 51, 0.8);
+  background-color: rgba(237, 237, 237, 0.8);
   color: #f8f8f8;
   min-width: 0;
   min-height: 0;
@@ -63,8 +63,8 @@ exports[`Video Configure Menu Button 1`] = `
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
-  fill: #f8f8f8;
-  stroke: #f8f8f8;
+  fill: #444444;
+  stroke: #444444;
 }
 
 .c6 g {
@@ -139,7 +139,7 @@ exports[`Video Configure Menu Button 1`] = `
 
 .c5:hover {
   background-color: rgba(221, 221, 221, 0.4);
-  color: #FFFFFF;
+  color: #000000;
 }
 
 .c5:focus {
@@ -487,7 +487,7 @@ exports[`Video End event handler 1`] = `
   box-sizing: border-box;
   max-width: 100%;
   align-items: center;
-  background-color: rgba(51, 51, 51, 0.8);
+  background-color: rgba(237, 237, 237, 0.8);
   color: #f8f8f8;
   min-width: 0;
   min-height: 0;
@@ -544,8 +544,8 @@ exports[`Video End event handler 1`] = `
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
-  fill: #f8f8f8;
-  stroke: #f8f8f8;
+  fill: #444444;
+  stroke: #444444;
 }
 
 .c6 g {
@@ -620,7 +620,7 @@ exports[`Video End event handler 1`] = `
 
 .c5:hover {
   background-color: rgba(221, 221, 221, 0.4);
-  color: #FFFFFF;
+  color: #000000;
 }
 
 .c5:focus {
@@ -956,7 +956,7 @@ exports[`Video Play and Pause event handlers 1`] = `
   box-sizing: border-box;
   max-width: 100%;
   align-items: center;
-  background-color: rgba(51, 51, 51, 0.8);
+  background-color: rgba(237, 237, 237, 0.8);
   color: #f8f8f8;
   min-width: 0;
   min-height: 0;
@@ -1013,8 +1013,8 @@ exports[`Video Play and Pause event handlers 1`] = `
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
-  fill: #f8f8f8;
-  stroke: #f8f8f8;
+  fill: #444444;
+  stroke: #444444;
 }
 
 .c6 g {
@@ -1089,7 +1089,7 @@ exports[`Video Play and Pause event handlers 1`] = `
 
 .c5:hover {
   background-color: rgba(221, 221, 221, 0.4);
-  color: #FFFFFF;
+  color: #000000;
 }
 
 .c5:focus {
@@ -1440,10 +1440,10 @@ exports[`Video Play and Pause event handlers 2`] = `
       class="StyledVideo__StyledVideoControls-sc-w4v8h9-2 gIwuJn"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 iQpOqy"
+        class="StyledBox-sc-13pk1d4-0 jLtJmQ"
       >
         <button
-          class="StyledButton-sc-323bzc-0 ctcGGD"
+          class="StyledButton-sc-323bzc-0 eoPstH"
           type="button"
         >
           .c0 {
@@ -1451,8 +1451,8 @@ exports[`Video Play and Pause event handlers 2`] = `
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
-  fill: #f8f8f8;
-  stroke: #f8f8f8;
+  fill: #444444;
+  stroke: #444444;
 }
 
 .c0 g {
@@ -1565,7 +1565,7 @@ exports[`Video Play and Pause event handlers 2`] = `
             />
             <svg
               aria-label="Actions"
-              class="StyledIcon-sc-ofa7kd-0 fmPtiI"
+              class="StyledIcon-sc-ofa7kd-0 jBVTaI"
               viewBox="0 0 24 24"
             >
               <path
@@ -1589,7 +1589,7 @@ exports[`Video autoPlay renders 1`] = `
   box-sizing: border-box;
   max-width: 100%;
   align-items: center;
-  background-color: rgba(51, 51, 51, 0.8);
+  background-color: rgba(237, 237, 237, 0.8);
   color: #f8f8f8;
   min-width: 0;
   min-height: 0;
@@ -1646,8 +1646,8 @@ exports[`Video autoPlay renders 1`] = `
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
-  fill: #f8f8f8;
-  stroke: #f8f8f8;
+  fill: #444444;
+  stroke: #444444;
 }
 
 .c6 g {
@@ -1722,7 +1722,7 @@ exports[`Video autoPlay renders 1`] = `
 
 .c5:hover {
   background-color: rgba(221, 221, 221, 0.4);
-  color: #FFFFFF;
+  color: #000000;
 }
 
 .c5:focus {
@@ -2522,7 +2522,7 @@ exports[`Video controls over renders 1`] = `
   box-sizing: border-box;
   max-width: 100%;
   align-items: center;
-  background-color: rgba(51, 51, 51, 0.8);
+  background-color: rgba(237, 237, 237, 0.8);
   color: #f8f8f8;
   min-width: 0;
   min-height: 0;
@@ -2579,8 +2579,8 @@ exports[`Video controls over renders 1`] = `
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
-  fill: #f8f8f8;
-  stroke: #f8f8f8;
+  fill: #444444;
+  stroke: #444444;
 }
 
 .c6 g {
@@ -2655,7 +2655,7 @@ exports[`Video controls over renders 1`] = `
 
 .c5:hover {
   background-color: rgba(221, 221, 221, 0.4);
-  color: #FFFFFF;
+  color: #000000;
 }
 
 .c5:focus {
@@ -2991,7 +2991,7 @@ exports[`Video duration event handler 1`] = `
   box-sizing: border-box;
   max-width: 100%;
   align-items: center;
-  background-color: rgba(51, 51, 51, 0.8);
+  background-color: rgba(237, 237, 237, 0.8);
   color: #f8f8f8;
   min-width: 0;
   min-height: 0;
@@ -3048,8 +3048,8 @@ exports[`Video duration event handler 1`] = `
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
-  fill: #f8f8f8;
-  stroke: #f8f8f8;
+  fill: #444444;
+  stroke: #444444;
 }
 
 .c6 g {
@@ -3124,7 +3124,7 @@ exports[`Video duration event handler 1`] = `
 
 .c5:hover {
   background-color: rgba(221, 221, 221, 0.4);
-  color: #FFFFFF;
+  color: #000000;
 }
 
 .c5:focus {
@@ -3460,7 +3460,7 @@ exports[`Video fit  cover renders 1`] = `
   box-sizing: border-box;
   max-width: 100%;
   align-items: center;
-  background-color: rgba(51, 51, 51, 0.8);
+  background-color: rgba(237, 237, 237, 0.8);
   color: #f8f8f8;
   min-width: 0;
   min-height: 0;
@@ -3517,8 +3517,8 @@ exports[`Video fit  cover renders 1`] = `
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
-  fill: #f8f8f8;
-  stroke: #f8f8f8;
+  fill: #444444;
+  stroke: #444444;
 }
 
 .c6 g {
@@ -3593,7 +3593,7 @@ exports[`Video fit  cover renders 1`] = `
 
 .c5:hover {
   background-color: rgba(221, 221, 221, 0.4);
-  color: #FFFFFF;
+  color: #000000;
 }
 
 .c5:focus {
@@ -3932,7 +3932,7 @@ exports[`Video fit contain renders 1`] = `
   box-sizing: border-box;
   max-width: 100%;
   align-items: center;
-  background-color: rgba(51, 51, 51, 0.8);
+  background-color: rgba(237, 237, 237, 0.8);
   color: #f8f8f8;
   min-width: 0;
   min-height: 0;
@@ -3989,8 +3989,8 @@ exports[`Video fit contain renders 1`] = `
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
-  fill: #f8f8f8;
-  stroke: #f8f8f8;
+  fill: #444444;
+  stroke: #444444;
 }
 
 .c6 g {
@@ -4065,7 +4065,7 @@ exports[`Video fit contain renders 1`] = `
 
 .c5:hover {
   background-color: rgba(221, 221, 221, 0.4);
-  color: #FFFFFF;
+  color: #000000;
 }
 
 .c5:focus {
@@ -4404,7 +4404,7 @@ exports[`Video loop renders 1`] = `
   box-sizing: border-box;
   max-width: 100%;
   align-items: center;
-  background-color: rgba(51, 51, 51, 0.8);
+  background-color: rgba(237, 237, 237, 0.8);
   color: #f8f8f8;
   min-width: 0;
   min-height: 0;
@@ -4461,8 +4461,8 @@ exports[`Video loop renders 1`] = `
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
-  fill: #f8f8f8;
-  stroke: #f8f8f8;
+  fill: #444444;
+  stroke: #444444;
 }
 
 .c6 g {
@@ -4537,7 +4537,7 @@ exports[`Video loop renders 1`] = `
 
 .c5:hover {
   background-color: rgba(221, 221, 221, 0.4);
-  color: #FFFFFF;
+  color: #000000;
 }
 
 .c5:focus {
@@ -4874,7 +4874,7 @@ exports[`Video mouse events handlers of controls 1`] = `
   box-sizing: border-box;
   max-width: 100%;
   align-items: center;
-  background-color: rgba(51, 51, 51, 0.8);
+  background-color: rgba(237, 237, 237, 0.8);
   color: #f8f8f8;
   min-width: 0;
   min-height: 0;
@@ -4931,8 +4931,8 @@ exports[`Video mouse events handlers of controls 1`] = `
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
-  fill: #f8f8f8;
-  stroke: #f8f8f8;
+  fill: #444444;
+  stroke: #444444;
 }
 
 .c6 g {
@@ -5007,7 +5007,7 @@ exports[`Video mouse events handlers of controls 1`] = `
 
 .c5:hover {
   background-color: rgba(221, 221, 221, 0.4);
-  color: #FFFFFF;
+  color: #000000;
 }
 
 .c5:focus {
@@ -5358,15 +5358,15 @@ exports[`Video mouse events handlers of controls 2`] = `
       class="StyledVideo__StyledVideoControls-sc-w4v8h9-2 kGZkNT"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 iQpOqy"
+        class="StyledBox-sc-13pk1d4-0 jLtJmQ"
       >
         <button
-          class="StyledButton-sc-323bzc-0 ctcGGD"
+          class="StyledButton-sc-323bzc-0 eoPstH"
           type="button"
         >
           <svg
             aria-label="play"
-            class="StyledIcon-sc-ofa7kd-0 fmPtiI"
+            class="StyledIcon-sc-ofa7kd-0 jBVTaI"
             viewBox="0 0 24 24"
           >
             <path
@@ -5443,7 +5443,7 @@ exports[`Video mouse events handlers of controls 2`] = `
             />
             <svg
               aria-label="Actions"
-              class="StyledIcon-sc-ofa7kd-0 fmPtiI"
+              class="StyledIcon-sc-ofa7kd-0 jBVTaI"
               viewBox="0 0 24 24"
             >
               <path
@@ -5482,15 +5482,15 @@ exports[`Video mouse events handlers of controls 3`] = `
       class="StyledVideo__StyledVideoControls-sc-w4v8h9-2 kGZkNT"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 iQpOqy"
+        class="StyledBox-sc-13pk1d4-0 jLtJmQ"
       >
         <button
-          class="StyledButton-sc-323bzc-0 ctcGGD"
+          class="StyledButton-sc-323bzc-0 eoPstH"
           type="button"
         >
           <svg
             aria-label="play"
-            class="StyledIcon-sc-ofa7kd-0 fmPtiI"
+            class="StyledIcon-sc-ofa7kd-0 jBVTaI"
             viewBox="0 0 24 24"
           >
             <path
@@ -5567,7 +5567,7 @@ exports[`Video mouse events handlers of controls 3`] = `
             />
             <svg
               aria-label="Actions"
-              class="StyledIcon-sc-ofa7kd-0 fmPtiI"
+              class="StyledIcon-sc-ofa7kd-0 jBVTaI"
               viewBox="0 0 24 24"
             >
               <path
@@ -5591,7 +5591,7 @@ exports[`Video mute renders 1`] = `
   box-sizing: border-box;
   max-width: 100%;
   align-items: center;
-  background-color: rgba(51, 51, 51, 0.8);
+  background-color: rgba(237, 237, 237, 0.8);
   color: #f8f8f8;
   min-width: 0;
   min-height: 0;
@@ -5648,8 +5648,8 @@ exports[`Video mute renders 1`] = `
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
-  fill: #f8f8f8;
-  stroke: #f8f8f8;
+  fill: #444444;
+  stroke: #444444;
 }
 
 .c6 g {
@@ -5724,7 +5724,7 @@ exports[`Video mute renders 1`] = `
 
 .c5:hover {
   background-color: rgba(221, 221, 221, 0.4);
-  color: #FFFFFF;
+  color: #000000;
 }
 
 .c5:focus {
@@ -6060,7 +6060,7 @@ exports[`Video renders 1`] = `
   box-sizing: border-box;
   max-width: 100%;
   align-items: center;
-  background-color: rgba(51, 51, 51, 0.8);
+  background-color: rgba(237, 237, 237, 0.8);
   color: #f8f8f8;
   min-width: 0;
   min-height: 0;
@@ -6117,8 +6117,8 @@ exports[`Video renders 1`] = `
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
-  fill: #f8f8f8;
-  stroke: #f8f8f8;
+  fill: #444444;
+  stroke: #444444;
 }
 
 .c6 g {
@@ -6193,7 +6193,7 @@ exports[`Video renders 1`] = `
 
 .c5:hover {
   background-color: rgba(221, 221, 221, 0.4);
-  color: #FFFFFF;
+  color: #000000;
 }
 
 .c5:focus {
@@ -6586,8 +6586,8 @@ exports[`Video renders with theme 1`] = `
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
-  fill: #f8f8f8;
-  stroke: #f8f8f8;
+  fill: #444444;
+  stroke: #444444;
 }
 
 .c6 g {
@@ -6662,7 +6662,7 @@ exports[`Video renders with theme 1`] = `
 
 .c5:hover {
   background-color: rgba(221, 221, 221, 0.4);
-  color: #FFFFFF;
+  color: #000000;
 }
 
 .c5:focus {
@@ -6998,7 +6998,7 @@ exports[`Video scrubber 1`] = `
   box-sizing: border-box;
   max-width: 100%;
   align-items: center;
-  background-color: rgba(51, 51, 51, 0.8);
+  background-color: rgba(237, 237, 237, 0.8);
   color: #f8f8f8;
   min-width: 0;
   min-height: 0;
@@ -7055,8 +7055,8 @@ exports[`Video scrubber 1`] = `
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
-  fill: #f8f8f8;
-  stroke: #f8f8f8;
+  fill: #444444;
+  stroke: #444444;
 }
 
 .c6 g {
@@ -7131,7 +7131,7 @@ exports[`Video scrubber 1`] = `
 
 .c5:hover {
   background-color: rgba(221, 221, 221, 0.4);
-  color: #FFFFFF;
+  color: #000000;
 }
 
 .c5:focus {
@@ -7482,15 +7482,15 @@ exports[`Video scrubber 2`] = `
       class="StyledVideo__StyledVideoControls-sc-w4v8h9-2 kGZkNT"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 iQpOqy"
+        class="StyledBox-sc-13pk1d4-0 jLtJmQ"
       >
         <button
-          class="StyledButton-sc-323bzc-0 ctcGGD"
+          class="StyledButton-sc-323bzc-0 eoPstH"
           type="button"
         >
           <svg
             aria-label="play"
-            class="StyledIcon-sc-ofa7kd-0 fmPtiI"
+            class="StyledIcon-sc-ofa7kd-0 jBVTaI"
             viewBox="0 0 24 24"
           >
             <path
@@ -7567,7 +7567,7 @@ exports[`Video scrubber 2`] = `
             />
             <svg
               aria-label="Actions"
-              class="StyledIcon-sc-ofa7kd-0 fmPtiI"
+              class="StyledIcon-sc-ofa7kd-0 jBVTaI"
               viewBox="0 0 24 24"
             >
               <path
@@ -7591,7 +7591,7 @@ exports[`Video should render outside grommet wrapper 1`] = `
   box-sizing: border-box;
   max-width: 100%;
   align-items: center;
-  background-color: rgba(51, 51, 51, 0.8);
+  background-color: rgba(237, 237, 237, 0.8);
   color: #f8f8f8;
   min-width: 0;
   min-height: 0;
@@ -7648,8 +7648,8 @@ exports[`Video should render outside grommet wrapper 1`] = `
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
-  fill: #f8f8f8;
-  stroke: #f8f8f8;
+  fill: #444444;
+  stroke: #444444;
 }
 
 .c5 g {
@@ -7724,7 +7724,7 @@ exports[`Video should render outside grommet wrapper 1`] = `
 
 .c4:hover {
   background-color: rgba(221, 221, 221, 0.4);
-  color: #FFFFFF;
+  color: #000000;
 }
 
 .c4:focus {
@@ -8505,7 +8505,7 @@ exports[`Video timeUpdate event handler 1`] = `
   box-sizing: border-box;
   max-width: 100%;
   align-items: center;
-  background-color: rgba(51, 51, 51, 0.8);
+  background-color: rgba(237, 237, 237, 0.8);
   color: #f8f8f8;
   min-width: 0;
   min-height: 0;
@@ -8562,8 +8562,8 @@ exports[`Video timeUpdate event handler 1`] = `
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
-  fill: #f8f8f8;
-  stroke: #f8f8f8;
+  fill: #444444;
+  stroke: #444444;
 }
 
 .c6 g {
@@ -8638,7 +8638,7 @@ exports[`Video timeUpdate event handler 1`] = `
 
 .c5:hover {
   background-color: rgba(221, 221, 221, 0.4);
-  color: #FFFFFF;
+  color: #000000;
 }
 
 .c5:focus {

@@ -3641,6 +3641,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@hpe-design/icons-grommet@npm:^1.0.1":
+  version: 1.0.1
+  resolution: "@hpe-design/icons-grommet@npm:1.0.1"
+  peerDependencies:
+    react: ^18.0.0 || ^19.0.0
+    styled-components: ^6.0.0
+  checksum: 10c0/d234534f4b1c1bef105e79da80db8008f508ce9a28499a63b249ccec290220eaac22e70c8e0aaf685c9ce20f99650f4011f69a9c98273754d13872a99c092c10
+  languageName: node
+  linkType: hard
+
 "@humanfs/core@npm:^0.19.1":
   version: 0.19.1
   resolution: "@humanfs/core@npm:0.19.1"
@@ -10270,17 +10280,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"grommet-theme-hpe@npm:^7.0.2":
-  version: 7.0.2
-  resolution: "grommet-theme-hpe@npm:7.0.2"
+"grommet-theme-hpe@npm:^8.0.0":
+  version: 8.0.0
+  resolution: "grommet-theme-hpe@npm:8.0.0"
   dependencies:
-    hpe-design-tokens: "npm:~1.4.0"
+    hpe-design-tokens: "npm:^2.1.0"
   peerDependencies:
-    grommet: ^2.49.0
-    grommet-icons: ^4.12.4
+    "@hpe-design/icons-grommet": ^1.0.1
+    grommet: ^2.50.0
     react: ^16.13.1 || ^17.0.1 || ^18.0.0 || ^19.0.0
-    styled-components: ^5.0.0 || ^6.0.0
-  checksum: 10c0/e7f9ec197180109167b93b13912d523dd46a0fb0ba2e25fb0746bc8248da799068eeb2eb90dff99811239c9ccd580a3449a1dea4f3acb419c181ce9a8f110b27
+    styled-components: ^6.0.0
+  checksum: 10c0/60f605ad0dd4e087f1f4e1b673b76d1d5ac2badc5bbb2fbb94a3f248a714b750fff5af5c44959cf79399262ad6d2b03717a1f3375f6f1e33a93d8926363923ea
   languageName: node
   linkType: hard
 
@@ -10307,6 +10317,7 @@ __metadata:
     "@eslint/compat": "npm:^1.4.0"
     "@eslint/eslintrc": "npm:^3.3.1"
     "@eslint/js": "npm:^9.38.0"
+    "@hpe-design/icons-grommet": "npm:^1.0.1"
     "@storybook/addon-a11y": "npm:^8.6.14"
     "@storybook/addon-storysource": "npm:^8.6.14"
     "@storybook/addon-toolbars": "npm:^8.6.14"
@@ -10352,7 +10363,7 @@ __metadata:
     fs-extra: "npm:^11.3.2"
     globals: "npm:^16.4.0"
     grommet-icons: "npm:^4.14.0"
-    grommet-theme-hpe: "npm:^7.0.2"
+    grommet-theme-hpe: "npm:^8.0.0"
     jest: "npm:^30.2.0"
     jest-axe: "npm:^10.0.0"
     jest-cli: "npm:^30.2.0"
@@ -10565,10 +10576,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"hpe-design-tokens@npm:~1.4.0":
-  version: 1.4.1
-  resolution: "hpe-design-tokens@npm:1.4.1"
-  checksum: 10c0/d5dc274fc5b4f99cfc908ddcc64ef860ba3a8b9bb99effdb4677824d1cff6dd2dac8f1196e5bb0bd3ad04c8d9cebccfb769492d8ccc1aed01bc83cf18a4506e9
+"hpe-design-tokens@npm:^2.1.0":
+  version: 2.1.0
+  resolution: "hpe-design-tokens@npm:2.1.0"
+  checksum: 10c0/935bb60208f7325ef5839f7ac33f123b3312da7d8298c324879ca34ef314876e5f2318457672b4fc1a7c8797247fab6e1e4c42bf939e514e375082c0b6cd7597
   languageName: node
   linkType: hard
 

@@ -20668,7 +20668,7 @@ exports[`DataTable pin + background context 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background-color: rgba(51, 51, 51, 0.03137254901960784);
+  background-color: rgba(237, 237, 237, 1);
   color: #f8f8f8;
   min-width: 0;
   min-height: 0;
@@ -20722,36 +20722,6 @@ exports[`DataTable pin + background context 1`] = `
   background-color: rgba(237, 237, 237, 0.8);
   color: #444444;
   border-top: solid 1px rgba(0, 0, 0, 0.33);
-  padding-left: 12px;
-  padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
-}
-
-.c21 {
-  margin: 0;
-  padding: 0;
-  font-weight: inherit;
-  text-align: inherit;
-  text-align: start;
-  background-color: rgba(51, 51, 51, 0.8);
-  color: #f8f8f8;
-  border-bottom: solid 1px rgba(255, 255, 255, 0.33);
-  padding-left: 12px;
-  padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
-}
-
-.c22 {
-  margin: 0;
-  padding: 0;
-  font-weight: inherit;
-  text-align: inherit;
-  text-align: start;
-  background-color: rgba(51, 51, 51, 0.8);
-  color: #f8f8f8;
-  border-top: solid 1px rgba(255, 255, 255, 0.33);
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
@@ -21152,7 +21122,7 @@ exports[`DataTable pin + background context 1`] = `
           class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
         >
           <th
-            class="c21 c5"
+            class="c4 c5"
             id="grommet-data-table-header-a"
             scope="col"
           >
@@ -21167,7 +21137,7 @@ exports[`DataTable pin + background context 1`] = `
             </div>
           </th>
           <th
-            class="c21 c8"
+            class="c4 c8"
             id="grommet-data-table-header-b"
             scope="col"
           >
@@ -21256,7 +21226,7 @@ exports[`DataTable pin + background context 1`] = `
           class="StyledTable__StyledTableRow-sc-1m3u5g-2"
         >
           <td
-            class="c22 c17"
+            class="c16 c17"
           >
             <div
               class="c13"
@@ -21269,7 +21239,7 @@ exports[`DataTable pin + background context 1`] = `
             </div>
           </td>
           <td
-            class="c22 c18"
+            class="c16 c18"
           >
             <div
               class="c13"

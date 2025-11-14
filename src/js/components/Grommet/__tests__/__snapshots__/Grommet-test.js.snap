@@ -200,11 +200,11 @@ exports[`Grommet grommet theme 1`] = `
 
 exports[`Grommet hpe theme 1`] = `
 .c0 {
-  font-family: 'Metric',Arial,sans-serif;
-  font-size: 1.125rem;
+  font-family: 'Graphik',Arial,sans-serif;
+  font-size: 1rem;
   line-height: 1.5rem;
   background-color: #ffffff;
-  color: #555555;
+  color: #3e4550;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
