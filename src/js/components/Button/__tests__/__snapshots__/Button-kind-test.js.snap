@@ -34,7 +34,7 @@ exports[`Button kind badge should align to button container if specified in them
 .c6 {
   font-size: 14px;
   line-height: 20px;
-  color: #FFFFFF;
+  color: #000000;
   font-weight: normal;
 }
 
@@ -185,7 +185,7 @@ exports[`Button kind badge should apply background 1`] = `
 .c6 {
   font-size: 14px;
   line-height: 20px;
-  color: #FFFFFF;
+  color: #000000;
   font-weight: normal;
 }
 
@@ -482,7 +482,7 @@ exports[`Button kind badge should display "+" when number is greater than max 1`
 .c6 {
   font-size: 14px;
   line-height: 20px;
-  color: #FFFFFF;
+  color: #000000;
   font-weight: normal;
 }
 
@@ -637,7 +637,7 @@ exports[`Button kind badge should display number content 1`] = `
 .c6 {
   font-size: 14px;
   line-height: 20px;
-  color: #FFFFFF;
+  color: #000000;
   font-weight: normal;
 }
 
@@ -1482,8 +1482,8 @@ exports[`Button kind button with transparent background 1`] = `
   box-sizing: border-box;
   max-width: 100%;
   align-items: flex-start;
-  background-color: rgba(28, 28, 28, 1);
-  color: #ffffff;
+  background-color: rgba(255, 255, 255, 1);
+  color: #e6e8e9;
   min-width: 0;
   min-height: 0;
   flex-direction: column;
@@ -1520,10 +1520,10 @@ exports[`Button kind button with transparent background 1`] = `
   border: none;
   border-radius: 9999px;
   padding: 5px 18px;
-  font-size: 1.125rem;
+  font-size: 1rem;
   line-height: 1.5rem;
-  background-color: rgba(255, 255, 255, 0.12);
-  color: #ffffff;
+  background-color: rgba(0, 0, 0, 0.04);
+  color: #292d3a;
   text-align: center;
   transition-property: color,background-color,border-color,box-shadow;
   transition-duration: 0.1s;
@@ -1532,8 +1532,7 @@ exports[`Button kind button with transparent background 1`] = `
 
 .c2:focus {
   outline-offset: 2px;
-  outline: 2px solid #004233;
-  box-shadow: 0 0 0px 2px #ffffff;
+  outline: 2px solid #292d3a;
 }
 
 .c2:focus >circle,
@@ -1544,8 +1543,7 @@ exports[`Button kind button with transparent background 1`] = `
 .c2:focus >polyline,
 .c2:focus >rect {
   outline-offset: 2px;
-  outline: 2px solid #004233;
-  box-shadow: 0 0 0px 2px #ffffff;
+  outline: 2px solid #292d3a;
 }
 
 .c2:focus ::-moz-focus-inner {
@@ -1586,18 +1584,18 @@ exports[`Button kind button with transparent background 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  background-color: rgba(255, 255, 255, 0.06);
-  color: #ffffff;
+  background-color: rgba(0, 0, 0, 0.04);
+  color: #292d3a;
   border: none;
   border-radius: 9999px;
   padding: 5px 18px;
-  font-size: 1.125rem;
+  font-size: 1rem;
   line-height: 1.5rem;
-  background-color: rgba(255, 255, 255, 0.12);
-  color: #ffffff;
-  background-color: rgba(255, 255, 255, 0.06);
-  color: #ffffff;
-  color: #ffffff;
+  background-color: rgba(0, 0, 0, 0.04);
+  color: #292d3a;
+  background-color: rgba(0, 0, 0, 0.04);
+  color: #292d3a;
+  color: #292d3a;
   text-align: center;
   transition-property: color,background-color,border-color,box-shadow;
   transition-duration: 0.1s;
@@ -1606,8 +1604,7 @@ exports[`Button kind button with transparent background 1`] = `
 
 .c4:focus {
   outline-offset: 2px;
-  outline: 2px solid #004233;
-  box-shadow: 0 0 0px 2px #ffffff;
+  outline: 2px solid #292d3a;
 }
 
 .c4:focus >circle,
@@ -1618,8 +1615,7 @@ exports[`Button kind button with transparent background 1`] = `
 .c4:focus >polyline,
 .c4:focus >rect {
   outline-offset: 2px;
-  outline: 2px solid #004233;
-  box-shadow: 0 0 0px 2px #ffffff;
+  outline: 2px solid #292d3a;
 }
 
 .c4:focus ::-moz-focus-inner {
@@ -1650,155 +1646,12 @@ exports[`Button kind button with transparent background 1`] = `
   border: 0;
 }
 
-.c6 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  font: inherit;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  border: none;
-  border-radius: 9999px;
-  padding: 5px 18px;
-  font-size: 1.125rem;
-  line-height: 1.5rem;
-  background-color: rgba(0, 0, 0, 0.04);
-  color: #2e2e2e;
-  text-align: center;
-  transition-property: color,background-color,border-color,box-shadow;
-  transition-duration: 0.1s;
-  transition-timing-function: ease-in-out;
-}
-
-.c6:focus {
-  outline-offset: 2px;
-  outline: 2px solid #004233;
-  box-shadow: 0 0 0px 2px #ffffff;
-}
-
-.c6:focus >circle,
-.c6:focus >ellipse,
-.c6:focus >line,
-.c6:focus >path,
-.c6:focus >polygon,
-.c6:focus >polyline,
-.c6:focus >rect {
-  outline-offset: 2px;
-  outline: 2px solid #004233;
-  box-shadow: 0 0 0px 2px #ffffff;
-}
-
-.c6:focus ::-moz-focus-inner {
-  border: 0;
-}
-
-.c6:focus:not(:focus-visible) {
-  outline-offset: 0px;
-  outline: none;
-  outline: none;
-  box-shadow: none;
-}
-
-.c6:focus:not(:focus-visible) >circle,
-.c6:focus:not(:focus-visible) >ellipse,
-.c6:focus:not(:focus-visible) >line,
-.c6:focus:not(:focus-visible) >path,
-.c6:focus:not(:focus-visible) >polygon,
-.c6:focus:not(:focus-visible) >polyline,
-.c6:focus:not(:focus-visible) >rect {
-  outline-offset: 0px;
-  outline: none;
-  outline: none;
-  box-shadow: none;
-}
-
-.c6:focus:not(:focus-visible) ::-moz-focus-inner {
-  border: 0;
-}
-
-.c7 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  font: inherit;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  background-color: rgba(0, 0, 0, 0.04);
-  color: #2e2e2e;
-  border: none;
-  border-radius: 9999px;
-  padding: 5px 18px;
-  font-size: 1.125rem;
-  line-height: 1.5rem;
-  background-color: rgba(0, 0, 0, 0.04);
-  color: #2e2e2e;
-  background-color: rgba(0, 0, 0, 0.04);
-  color: #2e2e2e;
-  color: #2e2e2e;
-  text-align: center;
-  transition-property: color,background-color,border-color,box-shadow;
-  transition-duration: 0.1s;
-  transition-timing-function: ease-in-out;
-}
-
-.c7:focus {
-  outline-offset: 2px;
-  outline: 2px solid #004233;
-  box-shadow: 0 0 0px 2px #ffffff;
-}
-
-.c7:focus >circle,
-.c7:focus >ellipse,
-.c7:focus >line,
-.c7:focus >path,
-.c7:focus >polygon,
-.c7:focus >polyline,
-.c7:focus >rect {
-  outline-offset: 2px;
-  outline: 2px solid #004233;
-  box-shadow: 0 0 0px 2px #ffffff;
-}
-
-.c7:focus ::-moz-focus-inner {
-  border: 0;
-}
-
-.c7:focus:not(:focus-visible) {
-  outline-offset: 0px;
-  outline: none;
-  outline: none;
-  box-shadow: none;
-}
-
-.c7:focus:not(:focus-visible) >circle,
-.c7:focus:not(:focus-visible) >ellipse,
-.c7:focus:not(:focus-visible) >line,
-.c7:focus:not(:focus-visible) >path,
-.c7:focus:not(:focus-visible) >polygon,
-.c7:focus:not(:focus-visible) >polyline,
-.c7:focus:not(:focus-visible) >rect {
-  outline-offset: 0px;
-  outline: none;
-  outline: none;
-  box-shadow: none;
-}
-
-.c7:focus:not(:focus-visible) ::-moz-focus-inner {
-  border: 0;
-}
-
 .c0 {
-  font-family: 'Metric',Arial,sans-serif;
-  font-size: 1.125rem;
+  font-family: 'Graphik',Arial,sans-serif;
+  font-size: 1rem;
   line-height: 1.5rem;
   background-color: #ffffff;
-  color: #555555;
+  color: #3e4550;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1850,7 +1703,7 @@ exports[`Button kind button with transparent background 1`] = `
       class="c5"
     >
       <button
-        class="c6"
+        class="c2"
         type="button"
       >
         Test button
@@ -1859,7 +1712,7 @@ exports[`Button kind button with transparent background 1`] = `
         class="c3"
       />
       <button
-        class="c7"
+        class="c4"
         type="button"
       >
         Active Test button

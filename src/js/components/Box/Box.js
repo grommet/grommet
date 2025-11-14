@@ -229,8 +229,15 @@ const Box = forwardRef(
     const nextTheme = useMemo(() => {
       let result;
       if (background || theme.darkChanged) {
-        const dark = backgroundIsDark(background, theme);
+        // Check if autoTextColor is disabled
+        const autoTextColor = theme.global?.background?.autoTextColor !== false;
+
+        // Only analyze background darkness if autoTextColor is enabled
+        const dark = autoTextColor
+          ? backgroundIsDark(background, theme)
+          : undefined;
         const darkChanged = dark !== undefined && dark !== theme.dark;
+
         if (darkChanged || theme.darkChanged) {
           result = { ...theme };
           result.dark = dark === undefined ? theme.dark : dark;

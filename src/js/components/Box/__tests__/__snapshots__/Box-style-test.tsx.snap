@@ -1281,16 +1281,6 @@ exports[`Box elevation 1`] = `
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.20);
 }
 
-.c8 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  flex-direction: column;
-  box-shadow: 0px 4px 4px rgba(255, 255, 255, 0.40);
-}
-
 <div
   class="c0"
 >
@@ -1316,7 +1306,7 @@ exports[`Box elevation 1`] = `
     class="c7"
   >
     <div
-      class="c8"
+      class="c3"
     />
   </div>
 </div>

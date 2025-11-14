@@ -10720,7 +10720,7 @@ exports[`Data view property range 1`] = `
 .c15 {
   font-size: 14px;
   line-height: 20px;
-  color: #FFFFFF;
+  color: #000000;
   font-weight: normal;
 }
 

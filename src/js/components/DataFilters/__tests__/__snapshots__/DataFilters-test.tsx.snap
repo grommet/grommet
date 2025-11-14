@@ -728,7 +728,7 @@ exports[`DataFilters drop badge 1`] = `
 .c9 {
   font-size: 14px;
   line-height: 20px;
-  color: #FFFFFF;
+  color: #000000;
   font-weight: normal;
 }
 
@@ -4645,7 +4645,7 @@ exports[`DataFilters sub objects with rangeSelector 1`] = `
 .c9 {
   font-size: 14px;
   line-height: 20px;
-  color: #FFFFFF;
+  color: #000000;
   font-weight: normal;
 }
 

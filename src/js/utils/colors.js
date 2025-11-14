@@ -6,29 +6,37 @@ export const normalizeColor = (color, theme, dark) => {
     theme.global && theme.global.colors[color] !== undefined
       ? theme.global.colors[color]
       : color;
-  // If the color has a light or dark object, use that
+
   let result = colorSpec;
-  if (colorSpec) {
-    if (
-      (dark === true || (dark === undefined && theme.dark)) &&
-      colorSpec.dark !== undefined
-    ) {
+  let effectiveDark;
+
+  if (
+    colorSpec &&
+    typeof colorSpec === 'object' &&
+    (colorSpec.light || colorSpec.dark)
+  ) {
+    if (theme.global?.background?.autoTextColor === false) {
+      // ignore smart detection
+      effectiveDark = theme.dark;
+    } else {
+      // Default behavior: use passed dark parameter or fall back to theme.dark
+      effectiveDark = dark !== undefined ? dark : theme.dark;
+    }
+
+    if (effectiveDark && colorSpec.dark !== undefined) {
       result = colorSpec.dark;
-    } else if (
-      (dark === false || !theme.dark) &&
-      colorSpec.light !== undefined
-    ) {
+    } else if (!effectiveDark && colorSpec.light !== undefined) {
       result = colorSpec.light;
     }
   }
+
   // allow one level of indirection in color names
   if (result && theme.global && theme.global.colors[result] !== undefined) {
-    result = normalizeColor(result, theme, dark);
+    result = normalizeColor(result, theme, effectiveDark);
   }
 
   return result;
 };
-
 const parseHexToRGB = (color) =>
   color.length < 7 // 7 is what's needed for '#RRGGBB'
     ? color.match(/[A-Za-z0-9]{1}/g).map((v) => parseInt(`${v}${v}`, 16))

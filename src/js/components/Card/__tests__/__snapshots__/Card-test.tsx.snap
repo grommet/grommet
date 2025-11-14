@@ -48,7 +48,7 @@ exports[`Card Themed 1`] = `
   max-width: 100%;
   align-items: center;
   background-color: #FFFFFF27;
-  color: #f8f8f8;
+  color: #444444;
   min-width: 0;
   min-height: 0;
   flex-direction: row;

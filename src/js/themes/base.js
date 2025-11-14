@@ -144,6 +144,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
 
   const result = deepMerge(iconBase, {
     global: {
+      background: {
+        autoTextColor: false,
+      },
       active: {
         background: {
           color: 'active',
