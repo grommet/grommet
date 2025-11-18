@@ -3,7 +3,7 @@ import React from 'react';
 import { Box, Calendar } from 'grommet';
 
 // When the first day of the month is Sunday, and the request of firstDayOfWeek
-// is Monday, we are verifing we are not missing a week, issue 3253.
+// is Monday, we are verifying we are not missing a week, issue 3253.
 export const SundayFirstDayCalendar = () => (
   // Uncomment <Grommet> lines when using outside of storybook
   // <Grommet theme={...}>
