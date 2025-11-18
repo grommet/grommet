@@ -5105,6 +5105,7 @@ exports[`DataFilter theme rangeSelector size and round, selectMultiple dropHeigh
       </div>
     </div>
     <div
+      aria-label="list of options"
       aria-multiselectable="true"
       class="c12"
       role="listbox"

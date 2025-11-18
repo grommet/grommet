@@ -1928,6 +1928,7 @@ export interface ThemeType {
       down?: React.ReactNode | Icon;
       up?: React.ReactNode | Icon;
       margin?: MarginType;
+      search?: React.ReactNode | Icon;
     };
     listbox?: {
       extend?: ExtendType;
