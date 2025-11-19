@@ -35,50 +35,77 @@ const stringToArray = (string) => {
   return undefined;
 };
 
-const getValueAt = (valueObject, pathArg) => {
-  if (valueObject === undefined) return undefined;
-  const path = Array.isArray(pathArg) ? pathArg : pathArg.split('.');
-  if (path.length === 1) return valueObject[path];
-  return getValueAt(valueObject[path.shift()], path);
+/* 
+  Takes a dot path notation string and returns an array of string populated by 
+  dot path segments.
+
+  E.g.
+
+  foo.bar.faz => ['foo', 'bar', 'faz]
+
+  foo[0].bar => ['foo', '0', 'bar]
+*/
+const splitPath = (path) =>
+  // First replace numeric array indexes with the literal index.
+  // For example "foo.bar[0].baz" -> "foo.bar.0.baz"
+  // Then split it into the individual segments. e.g. ["foo", "bar", "0", "baz"]
+  path?.replace(/\[(\d+)\]/g, '.$1')?.split('.');
+
+const getValueAt = (valueObject, path) => {
+  if (valueObject === undefined) {
+    return undefined;
+  }
+
+  const pathSegments = Array.isArray(path) ? path : splitPath(path);
+
+  const segment = pathSegments.shift();
+
+  if (pathSegments.length === 0) {
+    return valueObject[segment];
+  }
+
+  return getValueAt(valueObject[segment], pathSegments);
 };
 
-const setValueAt = (valueObject, pathArg, value) => {
+const setValueAt = (valueObject, path, value) => {
   const object = valueObject;
-  const path = Array.isArray(pathArg) ? pathArg : pathArg.split('.');
-  if (path.length === 1) object[path] = value;
-  else {
-    const key = path.shift();
-    if (!object[key]) object[key] = {};
-    setValueAt(object[key], path, value);
+
+  const pathSegments = Array.isArray(path) ? path : splitPath(path);
+
+  if (pathSegments.length === 1) {
+    object[pathSegments[0]] = value;
+  } else {
+    const segment = pathSegments.shift();
+
+    if (!object[segment]) {
+      object[segment] = !Number.isNaN(parseInt(segment, 10)) ? [] : {};
+    }
+
+    setValueAt(object[segment], pathSegments, value);
   }
 };
 
 const getFieldValue = (name, value) => {
-  const isArrayField = stringToArray(name);
-  if (isArrayField) {
-    const { indexOfArray, arrayName, arrayObjName } = isArrayField;
-    const obj = value[arrayName]?.[indexOfArray];
-    return arrayObjName ? obj?.[arrayObjName] : obj;
+  if (value === undefined) {
+    return undefined;
   }
-  return getValueAt(value, name);
+
+  const pathSegments = Array.isArray(name) ? name : splitPath(name);
+
+  const segment = pathSegments.shift();
+
+  if (pathSegments.length === 0) {
+    return value[segment];
+  }
+
+  return getValueAt(value[segment], pathSegments);
 };
 
 const setFieldValue = (name, componentValue, prevValue) => {
   const nextValue = { ...prevValue };
-  const isArrayField = stringToArray(name);
-  if (isArrayField) {
-    const { indexOfArray, arrayName, arrayObjName } = isArrayField;
-    if (!nextValue[arrayName]) nextValue[arrayName] = [];
-    if (arrayObjName) {
-      if (!nextValue[arrayName][indexOfArray])
-        nextValue[arrayName][indexOfArray] = {
-          [arrayObjName]: componentValue,
-        };
-      nextValue[arrayName][indexOfArray][arrayObjName] = componentValue;
-    } else nextValue[arrayName][indexOfArray] = componentValue;
-  } else {
-    setValueAt(nextValue, name, componentValue);
-  }
+
+  setValueAt(nextValue, name, componentValue);
+
   return nextValue;
 };
 
