@@ -11,6 +11,7 @@ import { Pagination } from '../../Pagination';
 import { Text } from '../../Text';
 import { DataTable, Sections, SortType } from '..';
 import { BackgroundType, BorderType } from '../../../utils';
+import { Add, Next, Previous } from 'grommet-icons';
 
 interface TestDataItem {
   a: string;
@@ -425,15 +426,16 @@ describe('DataTable', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
-  test('search', () => {
+  test('should use theme icons', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={{ dataTable: { icons: { search: Add } } }}>
         <DataTable
           columns={[{ property: 'a', header: 'A', search: true }]}
           data={[{ a: 'Alpha' }, { a: 'beta' }, { a: '[]' }]}
         />
       </Grommet>,
     );
+    expect(screen.getByLabelText('Add')).toBeInTheDocument();
     expect(container.firstChild).toMatchSnapshot();
     fireEvent.click(
       container.querySelector(
@@ -503,6 +505,34 @@ describe('DataTable', () => {
       </Grommet>,
     );
     expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('should render resizeable theme icons', () => {
+    window.scrollTo = jest.fn();
+    render(
+      <Grommet
+        theme={{
+          dataTable: {
+            icons: { resizeIncrease: Previous, resizeDecrease: Next },
+          },
+        }}
+      >
+        <DataTable
+          columns={[
+            { property: 'a', header: 'A' },
+            { property: 'b', header: 'B' },
+          ]}
+          data={[
+            { a: 'one', b: 1 },
+            { a: 'two', b: 2 },
+          ]}
+          resizeable
+        />
+      </Grommet>,
+    );
+    fireEvent.click(screen.getByRole('separator', { name: 'Resize A column' }));
+    expect(screen.getByLabelText('Previous')).toBeInTheDocument();
+    expect(screen.getByLabelText('Next')).toBeInTheDocument();
   });
 
   test('aggregate', () => {
@@ -1218,6 +1248,9 @@ describe('DataTable', () => {
               side: 'end',
               size: 'xsmall',
             },
+          },
+          padding: {
+            vertical: '7px',
           },
         },
       },
@@ -2294,5 +2327,90 @@ describe('DataTable', () => {
     const collapseButton = screen.getByLabelText('colapsar');
     expect(collapseButton).toBeInTheDocument();
     expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('theme search pad, search text pad, sort gap, and expand size', () => {
+    const customTheme = {
+      dataTable: {
+        search: {
+          pad: {
+            left: 'large',
+          },
+          text: {
+            pad: {
+              horizontal: 'large',
+            },
+          },
+        },
+        sort: {
+          gap: 'large',
+        },
+        expand: {
+          size: 'large',
+        },
+      },
+    };
+
+    const { container } = render(
+      <Grommet theme={customTheme}>
+        <DataTable
+          columns={[
+            { property: 'a', header: 'A', search: true },
+            { property: 'b', header: 'B' },
+          ]}
+          data={[
+            { a: 'one', b: 1.1 },
+            { a: 'one', b: 1.2 },
+            { a: 'two', b: 2.1 },
+            { a: 'two', b: 2.2 },
+          ]}
+          groupBy="a"
+          sortable
+          rowDetails={(row) => <div>Details for {row.a}</div>}
+          primaryKey="b"
+        />
+      </Grommet>,
+    );
+
+    // Open search to show search pad and text pad
+    fireEvent.click(
+      container.querySelector(
+        '[aria-label="Open search by a"]',
+      ) as HTMLButtonElement,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('pinned column with resizable does not have position relative', () => {
+    const columns = [
+      { property: 'location', header: 'Location', pin: true },
+      { property: 'date', header: 'Date' },
+    ];
+
+    const data = [
+      { location: 'Fort Collins', date: '2018-06-10' },
+      { location: 'Palo Alto', date: '2018-06-09' },
+    ];
+
+    render(
+      <Grommet>
+        <DataTable columns={columns} data={data} resizeable />
+      </Grommet>,
+    );
+
+    // Get the pinned header cell
+    const pinnedHeader = screen.getByRole('columnheader', { name: /Location/ });
+    const pinnedHeaderStyles = window.getComputedStyle(pinnedHeader);
+
+    // Get the non-pinned header cell
+    const nonPinnedHeader = screen.getByRole('columnheader', { name: /Date/ });
+    const nonPinnedHeaderStyles = window.getComputedStyle(nonPinnedHeader);
+
+    // Pinned column should NOT have position: relative
+    expect(pinnedHeaderStyles.position).not.toBe('relative');
+
+    // column SHOULD have position: relative (for resizer positioning)
+    expect(nonPinnedHeaderStyles.position).toBe('relative');
   });
 });

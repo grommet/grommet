@@ -565,6 +565,7 @@ exports[`Select Clear option renders - bottom 1`] = `
     id="test-select__select-drop"
   >
     <div
+      aria-label="list of options"
       class="c4"
       role="listbox"
       tabindex="-1"
@@ -824,6 +825,7 @@ exports[`Select Clear option renders correct label when wrapped in FormField 1`]
     id="test-select__select-drop"
   >
     <div
+      aria-label="list of options"
       class="c4"
       role="listbox"
       tabindex="-1"
@@ -1060,6 +1062,7 @@ exports[`Select Clear option renders custom label 1`] = `
     id="test-select__select-drop"
   >
     <div
+      aria-label="list of options"
       class="c4"
       role="listbox"
       tabindex="-1"
@@ -1443,6 +1446,7 @@ exports[`Select Clear option renders- top 1`] = `
       </div>
     </button>
     <div
+      aria-label="list of options"
       class="c8"
       role="listbox"
       tabindex="-1"
@@ -1793,6 +1797,7 @@ exports[`Select Search timeout 2`] = `
   line-height: 20px;
   border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
+  padding-left: 48px;
 }
 
 .c0:focus {
@@ -1862,6 +1867,7 @@ exports[`Select Search timeout 2`] = `
 }
 
 <input
+  aria-label="Search options"
   autocomplete="off"
   class="c0"
   type="search"
@@ -3464,6 +3470,7 @@ exports[`Select complex options and children 3`] = `
     id="test-select__select-drop"
   >
     <div
+      aria-label="list of options"
       class="c4"
       role="listbox"
       tabindex="-1"
@@ -4360,6 +4367,7 @@ exports[`Select default value clear 1`] = `
       </div>
     </button>
     <div
+      aria-label="list of options"
       class="c8"
       role="listbox"
       tabindex="-1"
@@ -5483,6 +5491,7 @@ exports[`Select disabled key 2`] = `
     id="test-select__select-drop"
   >
     <div
+      aria-label="list of options"
       class="c4"
       role="listbox"
       tabindex="-1"
@@ -5786,6 +5795,7 @@ exports[`Select disabled option value 1`] = `
     id="test-select__select-drop"
   >
     <div
+      aria-label="list of options"
       class="c4"
       role="listbox"
       tabindex="-1"
@@ -5864,6 +5874,7 @@ exports[`Select empty results search 1`] = `
   line-height: 20px;
   border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
+  padding-left: 48px;
 }
 
 .c0:focus {
@@ -5933,6 +5944,7 @@ exports[`Select empty results search 1`] = `
 }
 
 <input
+  aria-label="Search options"
   autocomplete="off"
   class="c0"
   type="search"
@@ -6387,6 +6399,7 @@ exports[`Select large drop container height 1`] = `
     id="test-select__select-drop"
   >
     <div
+      aria-label="list of options"
       class="c4"
       role="listbox"
       tabindex="-1"
@@ -6614,6 +6627,7 @@ exports[`Select medium drop container height 1`] = `
     id="test-select__select-drop"
   >
     <div
+      aria-label="list of options"
       class="c4"
       role="listbox"
       tabindex="-1"
@@ -7609,6 +7623,7 @@ exports[`Select onChange with valueKey object 2`] = `
     id="test-select__select-drop"
   >
     <div
+      aria-label="list of options"
       class="c4"
       role="listbox"
       tabindex="-1"
@@ -8367,6 +8382,7 @@ exports[`Select onChange with valueKey string 2`] = `
     id="test-select__select-drop"
   >
     <div
+      aria-label="list of options"
       class="c4"
       role="listbox"
       tabindex="-1"
@@ -9070,6 +9086,7 @@ exports[`Select onChange with valueLabel 2`] = `
     id="test-select__select-drop"
   >
     <div
+      aria-label="list of options"
       class="c4"
       role="listbox"
       tabindex="-1"
@@ -9562,6 +9579,7 @@ exports[`Select onChange without labelKey 2`] = `
     id="test-select__select-drop"
   >
     <div
+      aria-label="list of options"
       class="c4"
       role="listbox"
       tabindex="-1"
@@ -10320,6 +10338,7 @@ exports[`Select onChange without labelKey or valueKey 2`] = `
     id="test-select__select-drop"
   >
     <div
+      aria-label="list of options"
       class="c4"
       role="listbox"
       tabindex="-1"
@@ -11078,6 +11097,7 @@ exports[`Select onChange without valueKey 2`] = `
     id="test-select__select-drop"
   >
     <div
+      aria-label="list of options"
       class="c4"
       role="listbox"
       tabindex="-1"
@@ -12411,6 +12431,7 @@ exports[`Select prop: onOpen 3`] = `
     id="test-select__select-drop"
   >
     <div
+      aria-label="list of options"
       class="c4"
       role="listbox"
       tabindex="-1"
@@ -12472,6 +12493,7 @@ exports[`Select prop: onOpen 4`] = `
 
 exports[`Select prop: onOpen 5`] = `
 <div
+  aria-label="list of options"
   class="StyledSelect__OptionsContainer-sc-znp66n-1 kARYcO"
   role="listbox"
   tabindex="-1"
@@ -13120,6 +13142,7 @@ exports[`Select renders custom clear selection styling 2`] = `
       </div>
     </button>
     <div
+      aria-label="list of options"
       class="c8"
       role="listbox"
       tabindex="-1"
@@ -13693,6 +13716,7 @@ exports[`Select renders custom listbox styling 1`] = `
     id="test-listbox__select-drop"
   >
     <div
+      aria-label="list of options"
       class="c4"
       role="listbox"
       tabindex="-1"
@@ -14395,6 +14419,7 @@ exports[`Select renders empty search with select.emptySearchMessage styling 1`] 
   line-height: 20px;
   border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
+  padding-left: 48px;
 }
 
 .c0:focus {
@@ -14468,6 +14493,7 @@ exports[`Select renders empty search with select.emptySearchMessage styling 1`] 
 }
 
 <input
+  aria-label="Search options"
   autocomplete="off"
   class="c0"
   type="search"
@@ -15680,6 +15706,38 @@ exports[`Select search 1`] = `
 `;
 
 exports[`Select search 2`] = `
+.c7 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #666666;
+  stroke: #666666;
+}
+
+.c7 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c7 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c7 *[stroke*='#'],
+.c7 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c7 *[fill-rule],
+.c7 *[FILL-RULE],
+.c7 *[fill*='#'],
+.c7 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
+}
+
 .c0 {
   display: flex;
   box-sizing: border-box;
@@ -15711,7 +15769,7 @@ exports[`Select search 2`] = `
   padding: 6px;
 }
 
-.c10 {
+.c12 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -15722,7 +15780,7 @@ exports[`Select search 2`] = `
   padding: 12px;
 }
 
-.c14 {
+.c16 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -15753,13 +15811,13 @@ exports[`Select search 2`] = `
   animation-delay: 0.01s;
 }
 
-.c11 {
+.c13 {
   margin: 0px;
   font-size: 18px;
   line-height: 24px;
 }
 
-.c8 {
+.c10 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -15774,6 +15832,122 @@ exports[`Select search 2`] = `
   border: none;
   padding: 0;
   text-align: inherit;
+}
+
+.c10:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c10:focus >circle,
+.c10:focus >ellipse,
+.c10:focus >line,
+.c10:focus >path,
+.c10:focus >polygon,
+.c10:focus >polyline,
+.c10:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c10:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c10:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c10:focus:not(:focus-visible) >circle,
+.c10:focus:not(:focus-visible) >ellipse,
+.c10:focus:not(:focus-visible) >line,
+.c10:focus:not(:focus-visible) >path,
+.c10:focus:not(:focus-visible) >polygon,
+.c10:focus:not(:focus-visible) >polyline,
+.c10:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c10:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
+}
+
+.c14 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+}
+
+.c14:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c14:focus >circle,
+.c14:focus >ellipse,
+.c14:focus >line,
+.c14:focus >path,
+.c14:focus >polygon,
+.c14:focus >polyline,
+.c14:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c14:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c14:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c14:focus:not(:focus-visible) >circle,
+.c14:focus:not(:focus-visible) >ellipse,
+.c14:focus:not(:focus-visible) >line,
+.c14:focus:not(:focus-visible) >path,
+.c14:focus:not(:focus-visible) >polygon,
+.c14:focus:not(:focus-visible) >polyline,
+.c14:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c14:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
+}
+
+.c8 {
+  box-sizing: border-box;
+  font-size: inherit;
+  font-family: inherit;
+  border: none;
+  -webkit-appearance: none;
+  background: transparent;
+  color: inherit;
+  width: 100%;
+  padding: 11px;
+  font-weight: 600;
+  margin: 0;
+  font-size: 14px;
+  line-height: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.33);
+  border-radius: 4px;
+  padding-left: 48px;
 }
 
 .c8:focus {
@@ -15796,144 +15970,29 @@ exports[`Select search 2`] = `
   border: 0;
 }
 
-.c8:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c8:focus:not(:focus-visible) >circle,
-.c8:focus:not(:focus-visible) >ellipse,
-.c8:focus:not(:focus-visible) >line,
-.c8:focus:not(:focus-visible) >path,
-.c8:focus:not(:focus-visible) >polygon,
-.c8:focus:not(:focus-visible) >polyline,
-.c8:focus:not(:focus-visible) >rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c8:focus:not(:focus-visible) ::-moz-focus-inner {
-  border: 0;
-}
-
-.c12 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  font: inherit;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  color: inherit;
-  outline: none;
-  border: none;
-  padding: 0;
-  text-align: inherit;
-}
-
-.c12:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c12:focus >circle,
-.c12:focus >ellipse,
-.c12:focus >line,
-.c12:focus >path,
-.c12:focus >polygon,
-.c12:focus >polyline,
-.c12:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c12:focus ::-moz-focus-inner {
-  border: 0;
-}
-
-.c12:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c12:focus:not(:focus-visible) >circle,
-.c12:focus:not(:focus-visible) >ellipse,
-.c12:focus:not(:focus-visible) >line,
-.c12:focus:not(:focus-visible) >path,
-.c12:focus:not(:focus-visible) >polygon,
-.c12:focus:not(:focus-visible) >polyline,
-.c12:focus:not(:focus-visible) >rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c12:focus:not(:focus-visible) ::-moz-focus-inner {
-  border: 0;
-}
-
-.c6 {
-  box-sizing: border-box;
-  font-size: inherit;
-  font-family: inherit;
-  border: none;
-  -webkit-appearance: none;
-  background: transparent;
-  color: inherit;
-  width: 100%;
-  padding: 11px;
-  font-weight: 600;
-  margin: 0;
-  font-size: 14px;
-  line-height: 20px;
-  border: 1px solid rgba(0, 0, 0, 0.33);
-  border-radius: 4px;
-}
-
-.c6:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c6:focus >circle,
-.c6:focus >ellipse,
-.c6:focus >line,
-.c6:focus >path,
-.c6:focus >polygon,
-.c6:focus >polyline,
-.c6:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c6:focus ::-moz-focus-inner {
-  border: 0;
-}
-
-.c6::-webkit-input-placeholder {
+.c8::-webkit-input-placeholder {
   color: #AAAAAA;
 }
 
-.c6::-moz-placeholder {
+.c8::-moz-placeholder {
   color: #AAAAAA;
 }
 
-.c6:-ms-input-placeholder {
+.c8:-ms-input-placeholder {
   color: #AAAAAA;
 }
 
-.c6 ::-webkit-search-decoration {
+.c8 ::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
-.c6::-moz-focus-inner {
+.c8::-moz-focus-inner {
   border: none;
   outline: none;
 }
 
-.c6:-moz-placeholder,
-.c6::-moz-placeholder {
+.c8:-moz-placeholder,
+.c8::-moz-placeholder {
   opacity: 1;
 }
 
@@ -15942,23 +16001,33 @@ exports[`Select search 2`] = `
   width: 100%;
 }
 
+.c6 {
+  position: absolute;
+  display: flex;
+  justify: center;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  left: 12px;
+}
+
 .c3 {
   max-height: inherit;
 }
 
-.c7 {
+.c9 {
   position: relative;
   scroll-behavior: smooth;
   overflow: auto;
   outline: none;
 }
 
-.c9 {
+.c11 {
   display: block;
   width: 100%;
 }
 
-.c13 {
+.c15 {
   background-color: #7D4CDB;
   color: #FFFFFF;
   display: block;
@@ -15976,7 +16045,7 @@ exports[`Select search 2`] = `
 }
 
 @media only screen and (max-width: 768px) {
-  .c10 {
+  .c12 {
     padding: 6px;
   }
 }
@@ -16011,16 +16080,35 @@ exports[`Select search 2`] = `
       <div
         class="c5"
       >
-        <input
-          autocomplete="off"
+        <div
           class="c6"
+        >
+          <svg
+            aria-hidden="true"
+            aria-label="Search"
+            class="c7"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="m15 15 7 7-7-7zm-5.5 2a7.5 7.5 0 1 0 0-15 7.5 7.5 0 0 0 0 15z"
+              fill="none"
+              stroke="#000"
+              stroke-width="2"
+            />
+          </svg>
+        </div>
+        <input
+          aria-label="Search options"
+          autocomplete="off"
+          class="c8"
           type="search"
           value=""
         />
       </div>
     </div>
     <div
-      class="c7"
+      aria-label="list of options"
+      class="c9"
       role="listbox"
       tabindex="-1"
     >
@@ -16028,16 +16116,16 @@ exports[`Select search 2`] = `
         aria-posinset="1"
         aria-selected="false"
         aria-setsize="2"
-        class="c8 c9"
+        class="c10 c11"
         role="option"
         tabindex="-1"
         type="button"
       >
         <div
-          class="c10"
+          class="c12"
         >
           <span
-            class="c11"
+            class="c13"
           >
             one
           </span>
@@ -16047,23 +16135,23 @@ exports[`Select search 2`] = `
         aria-posinset="2"
         aria-selected="true"
         aria-setsize="2"
-        class="c12 c13"
+        class="c14 c15"
         role="option"
         tabindex="0"
         type="button"
       >
         <div
-          class="c10"
+          class="c12"
         >
           <span
-            class="c11"
+            class="c13"
           >
             two
           </span>
         </div>
       </button>
       <div
-        class="c14"
+        class="c16"
       />
     </div>
   </div>
@@ -16081,8 +16169,9 @@ exports[`Select search 3`] = `
 
 exports[`Select search 4`] = `
 <input
+  aria-label="Search options"
   autocomplete="off"
-  class="StyledTextInput-sc-1x30a0s-0 cFUkVu"
+  class="StyledTextInput-sc-1x30a0s-0 iMibfU"
   type="search"
   value=""
 />
@@ -16090,8 +16179,9 @@ exports[`Select search 4`] = `
 
 exports[`Select search 5`] = `
 <input
+  aria-label="Search options"
   autocomplete="off"
-  class="StyledTextInput-sc-1x30a0s-0 cFUkVu"
+  class="StyledTextInput-sc-1x30a0s-0 iMibfU"
   type="search"
   value="o"
 />
@@ -16352,6 +16442,38 @@ exports[`Select search and select 1`] = `
 `;
 
 exports[`Select search and select 2`] = `
+.c7 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #666666;
+  stroke: #666666;
+}
+
+.c7 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c7 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c7 *[stroke*='#'],
+.c7 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c7 *[fill-rule],
+.c7 *[FILL-RULE],
+.c7 *[fill*='#'],
+.c7 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
+}
+
 .c0 {
   display: flex;
   box-sizing: border-box;
@@ -16383,7 +16505,7 @@ exports[`Select search and select 2`] = `
   padding: 6px;
 }
 
-.c10 {
+.c12 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -16394,7 +16516,7 @@ exports[`Select search and select 2`] = `
   padding: 12px;
 }
 
-.c12 {
+.c14 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -16425,13 +16547,13 @@ exports[`Select search and select 2`] = `
   animation-delay: 0.01s;
 }
 
-.c11 {
+.c13 {
   margin: 0px;
   font-size: 18px;
   line-height: 24px;
 }
 
-.c8 {
+.c10 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -16446,6 +16568,65 @@ exports[`Select search and select 2`] = `
   border: none;
   padding: 0;
   text-align: inherit;
+}
+
+.c10:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c10:focus >circle,
+.c10:focus >ellipse,
+.c10:focus >line,
+.c10:focus >path,
+.c10:focus >polygon,
+.c10:focus >polyline,
+.c10:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c10:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c10:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c10:focus:not(:focus-visible) >circle,
+.c10:focus:not(:focus-visible) >ellipse,
+.c10:focus:not(:focus-visible) >line,
+.c10:focus:not(:focus-visible) >path,
+.c10:focus:not(:focus-visible) >polygon,
+.c10:focus:not(:focus-visible) >polyline,
+.c10:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c10:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
+}
+
+.c8 {
+  box-sizing: border-box;
+  font-size: inherit;
+  font-family: inherit;
+  border: none;
+  -webkit-appearance: none;
+  background: transparent;
+  color: inherit;
+  width: 100%;
+  padding: 11px;
+  font-weight: 600;
+  margin: 0;
+  font-size: 14px;
+  line-height: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.33);
+  border-radius: 4px;
+  padding-left: 48px;
 }
 
 .c8:focus {
@@ -16468,87 +16649,29 @@ exports[`Select search and select 2`] = `
   border: 0;
 }
 
-.c8:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c8:focus:not(:focus-visible) >circle,
-.c8:focus:not(:focus-visible) >ellipse,
-.c8:focus:not(:focus-visible) >line,
-.c8:focus:not(:focus-visible) >path,
-.c8:focus:not(:focus-visible) >polygon,
-.c8:focus:not(:focus-visible) >polyline,
-.c8:focus:not(:focus-visible) >rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c8:focus:not(:focus-visible) ::-moz-focus-inner {
-  border: 0;
-}
-
-.c6 {
-  box-sizing: border-box;
-  font-size: inherit;
-  font-family: inherit;
-  border: none;
-  -webkit-appearance: none;
-  background: transparent;
-  color: inherit;
-  width: 100%;
-  padding: 11px;
-  font-weight: 600;
-  margin: 0;
-  font-size: 14px;
-  line-height: 20px;
-  border: 1px solid rgba(0, 0, 0, 0.33);
-  border-radius: 4px;
-}
-
-.c6:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c6:focus >circle,
-.c6:focus >ellipse,
-.c6:focus >line,
-.c6:focus >path,
-.c6:focus >polygon,
-.c6:focus >polyline,
-.c6:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c6:focus ::-moz-focus-inner {
-  border: 0;
-}
-
-.c6::-webkit-input-placeholder {
+.c8::-webkit-input-placeholder {
   color: #AAAAAA;
 }
 
-.c6::-moz-placeholder {
+.c8::-moz-placeholder {
   color: #AAAAAA;
 }
 
-.c6:-ms-input-placeholder {
+.c8:-ms-input-placeholder {
   color: #AAAAAA;
 }
 
-.c6 ::-webkit-search-decoration {
+.c8 ::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
-.c6::-moz-focus-inner {
+.c8::-moz-focus-inner {
   border: none;
   outline: none;
 }
 
-.c6:-moz-placeholder,
-.c6::-moz-placeholder {
+.c8:-moz-placeholder,
+.c8::-moz-placeholder {
   opacity: 1;
 }
 
@@ -16557,18 +16680,28 @@ exports[`Select search and select 2`] = `
   width: 100%;
 }
 
+.c6 {
+  position: absolute;
+  display: flex;
+  justify: center;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  left: 12px;
+}
+
 .c3 {
   max-height: inherit;
 }
 
-.c7 {
+.c9 {
   position: relative;
   scroll-behavior: smooth;
   overflow: auto;
   outline: none;
 }
 
-.c9 {
+.c11 {
   display: block;
   width: 100%;
 }
@@ -16584,7 +16717,7 @@ exports[`Select search and select 2`] = `
 }
 
 @media only screen and (max-width: 768px) {
-  .c10 {
+  .c12 {
     padding: 6px;
   }
 }
@@ -16619,16 +16752,35 @@ exports[`Select search and select 2`] = `
       <div
         class="c5"
       >
-        <input
-          autocomplete="off"
+        <div
           class="c6"
+        >
+          <svg
+            aria-hidden="true"
+            aria-label="Search"
+            class="c7"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="m15 15 7 7-7-7zm-5.5 2a7.5 7.5 0 1 0 0-15 7.5 7.5 0 0 0 0 15z"
+              fill="none"
+              stroke="#000"
+              stroke-width="2"
+            />
+          </svg>
+        </div>
+        <input
+          aria-label="Search options"
+          autocomplete="off"
+          class="c8"
           type="search"
           value=""
         />
       </div>
     </div>
     <div
-      class="c7"
+      aria-label="list of options"
+      class="c9"
       role="listbox"
       tabindex="-1"
     >
@@ -16636,16 +16788,16 @@ exports[`Select search and select 2`] = `
         aria-posinset="1"
         aria-selected="false"
         aria-setsize="2"
-        class="c8 c9"
+        class="c10 c11"
         role="option"
         tabindex="0"
         type="button"
       >
         <div
-          class="c10"
+          class="c12"
         >
           <span
-            class="c11"
+            class="c13"
           >
             one
           </span>
@@ -16655,23 +16807,23 @@ exports[`Select search and select 2`] = `
         aria-posinset="2"
         aria-selected="false"
         aria-setsize="2"
-        class="c8 c9"
+        class="c10 c11"
         role="option"
         tabindex="-1"
         type="button"
       >
         <div
-          class="c10"
+          class="c12"
         >
           <span
-            class="c11"
+            class="c13"
           >
             two
           </span>
         </div>
       </button>
       <div
-        class="c12"
+        class="c14"
       />
     </div>
   </div>
@@ -16689,8 +16841,9 @@ exports[`Select search and select 3`] = `
 
 exports[`Select search and select 4`] = `
 <input
+  aria-label="Search options"
   autocomplete="off"
-  class="StyledTextInput-sc-1x30a0s-0 cFUkVu"
+  class="StyledTextInput-sc-1x30a0s-0 iMibfU"
   type="search"
   value=""
 />
@@ -16698,8 +16851,9 @@ exports[`Select search and select 4`] = `
 
 exports[`Select search and select 5`] = `
 <input
+  aria-label="Search options"
   autocomplete="off"
-  class="StyledTextInput-sc-1x30a0s-0 cFUkVu"
+  class="StyledTextInput-sc-1x30a0s-0 iMibfU"
   type="search"
   value="t"
 />
@@ -19716,6 +19870,7 @@ exports[`Select small drop container height 1`] = `
     id="test-select__select-drop"
   >
     <div
+      aria-label="list of options"
       class="c4"
       role="listbox"
       tabindex="-1"
@@ -19764,6 +19919,404 @@ exports[`Select small drop container height 1`] = `
     </div>
   </div>
 </div>
+`;
+
+exports[`Select theme search pad 1`] = `
+.c7 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #666666;
+  stroke: #666666;
+}
+
+.c7 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c7 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c7 *[stroke*='#'],
+.c7 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c7 *[fill-rule],
+.c7 *[FILL-RULE],
+.c7 *[fill*='#'],
+.c7 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c0 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  overflow: auto;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.20);
+}
+
+.c2 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+}
+
+.c4 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  flex: 0 0 auto;
+  padding: 48px;
+}
+
+.c12 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-items: flex-start;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  padding: 12px;
+}
+
+.c14 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  height: 0px;
+  flex: 0 0 auto;
+}
+
+.c1 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  border-radius: 0px;
+  position: fixed;
+  z-index: 20;
+  outline: none;
+  background-color: #FFFFFF;
+  color: #444444;
+  opacity: 0;
+  transform-origin: top left;
+  animation: kPQHBD 0.1s forwards;
+  animation-delay: 0.01s;
+}
+
+.c13 {
+  margin: 0px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c10 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+}
+
+.c10:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c10:focus >circle,
+.c10:focus >ellipse,
+.c10:focus >line,
+.c10:focus >path,
+.c10:focus >polygon,
+.c10:focus >polyline,
+.c10:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c10:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c10:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c10:focus:not(:focus-visible) >circle,
+.c10:focus:not(:focus-visible) >ellipse,
+.c10:focus:not(:focus-visible) >line,
+.c10:focus:not(:focus-visible) >path,
+.c10:focus:not(:focus-visible) >polygon,
+.c10:focus:not(:focus-visible) >polyline,
+.c10:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c10:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
+}
+
+.c8 {
+  box-sizing: border-box;
+  font-size: inherit;
+  font-family: inherit;
+  border: none;
+  -webkit-appearance: none;
+  background: transparent;
+  color: inherit;
+  width: 100%;
+  padding: 11px;
+  font-weight: 600;
+  margin: 0;
+  font-size: 14px;
+  line-height: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.33);
+  border-radius: 4px;
+  padding-left: 48px;
+}
+
+.c8:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c8:focus >circle,
+.c8:focus >ellipse,
+.c8:focus >line,
+.c8:focus >path,
+.c8:focus >polygon,
+.c8:focus >polyline,
+.c8:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c8:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c8::-webkit-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c8::-moz-placeholder {
+  color: #AAAAAA;
+}
+
+.c8:-ms-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c8 ::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+.c8::-moz-focus-inner {
+  border: none;
+  outline: none;
+}
+
+.c8:-moz-placeholder,
+.c8::-moz-placeholder {
+  opacity: 1;
+}
+
+.c5 {
+  position: relative;
+  width: 100%;
+}
+
+.c6 {
+  position: absolute;
+  display: flex;
+  justify: center;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  left: 12px;
+}
+
+.c3 {
+  max-height: inherit;
+}
+
+.c9 {
+  position: relative;
+  scroll-behavior: smooth;
+  overflow: auto;
+  outline: none;
+}
+
+.c11 {
+  display: block;
+  width: 100%;
+}
+
+@media only screen and (max-width: 768px) {
+
+}
+
+@media only screen and (max-width: 768px) {
+  .c4 {
+    padding: 24px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c12 {
+    padding: 6px;
+  }
+}
+
+@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
+  .c1 {
+    display: flex;
+    align-items: stretch;
+  }
+}
+
+@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
+  .c3 {
+    width: 100%;
+  }
+}
+
+<div
+  class="c0 c1"
+  data-g-portal-id="0"
+  id="test-select__drop"
+  style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
+  tabindex="-1"
+>
+  <div
+    class="c2 c3"
+    id="test-select__select-drop"
+  >
+    <div
+      class="c4"
+    >
+      <div
+        class="c5"
+      >
+        <div
+          class="c6"
+        >
+          <svg
+            aria-hidden="true"
+            aria-label="Search"
+            class="c7"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="m15 15 7 7-7-7zm-5.5 2a7.5 7.5 0 1 0 0-15 7.5 7.5 0 0 0 0 15z"
+              fill="none"
+              stroke="#000"
+              stroke-width="2"
+            />
+          </svg>
+        </div>
+        <input
+          aria-label="Search options"
+          autocomplete="off"
+          class="c8"
+          type="search"
+          value=""
+        />
+      </div>
+    </div>
+    <div
+      aria-label="list of options"
+      class="c9"
+      role="listbox"
+      tabindex="-1"
+    >
+      <button
+        aria-posinset="1"
+        aria-selected="false"
+        aria-setsize="2"
+        class="c10 c11"
+        role="option"
+        tabindex="0"
+        type="button"
+      >
+        <div
+          class="c12"
+        >
+          <span
+            class="c13"
+          >
+            one
+          </span>
+        </div>
+      </button>
+      <button
+        aria-posinset="2"
+        aria-selected="false"
+        aria-setsize="2"
+        class="c10 c11"
+        role="option"
+        tabindex="-1"
+        type="button"
+      >
+        <div
+          class="c12"
+        >
+          <span
+            class="c13"
+          >
+            two
+          </span>
+        </div>
+      </button>
+      <div
+        class="c14"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Select theme search pad 2`] = `
+"@media only screen and (max-width: 768px) {
+  .dcgDzS {
+    margin-left: 6px;
+    margin-right: 6px;
+  }
+}"
 `;
 
 exports[`Select valueLabel 1`] = `undefined`;

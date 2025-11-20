@@ -10,7 +10,7 @@ import { TextInput } from '../../TextInput';
 import { DataFilter } from '..';
 import { Toolbar } from '../../Toolbar';
 import { DataTable } from '../../DataTable';
-import { createPortal } from '../../../utils/portal';
+import { createPortal, expectPortal } from '../../../utils/portal';
 
 const data = [
   {
@@ -402,5 +402,51 @@ describe('DataFilter', () => {
     expect(updatedFilterButton).toBeTruthy();
     // snapshot on selected filter
     expect(asFragment()).toMatchSnapshot();
+  });
+
+  test('theme rangeSelector size and round, selectMultiple dropHeight', () => {
+    const customTheme = {
+      dataFilter: {
+        rangeSelector: {
+          size: 'large',
+          round: 'large',
+        },
+        selectMultiple: {
+          dropHeight: 'large',
+        },
+      },
+    };
+
+    const { asFragment } = render(
+      <Grommet theme={customTheme}>
+        <Data
+          data={data}
+          properties={{
+            'type.name': {
+              label: 'Type',
+            },
+          }}
+        >
+          <DataFilters>
+            <DataFilter property="rating" range={{ min: 0, max: 5 }} />
+            <DataFilter
+              id="test-data"
+              property="type.name"
+              options={['ZZ', 'YY', 'aa', 'bb', 'cc', 'dd', 'ee']}
+            />
+          </DataFilters>
+        </Data>
+      </Grommet>,
+    );
+
+    expect(screen.getByText('rating')).toBeTruthy();
+    expect(screen.getByLabelText('Type')).toBeTruthy();
+
+    expect(asFragment()).toMatchSnapshot();
+
+    const selectInput = screen.getByRole('button', { name: /Open Drop/i });
+    fireEvent.click(selectInput);
+
+    expectPortal('data-type.name__drop').toMatchSnapshot();
   });
 });

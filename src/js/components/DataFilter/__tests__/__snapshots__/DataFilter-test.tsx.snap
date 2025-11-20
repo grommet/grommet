@@ -1,4 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`DataFilter !inDataForm 1`] = `
 .c1 {
@@ -3844,4 +3844,1570 @@ exports[`DataFilter should allow filtering on multiple sub-properties from same 
     </div>
   </div>
 </DocumentFragment>
+`;
+
+exports[`DataFilter theme rangeSelector size and round, selectMultiple dropHeight 1`] = `
+<DocumentFragment>
+  .c1 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  flex: 0 0 auto;
+}
+
+.c3 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  height: 100%;
+}
+
+.c4 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  flex: 1 1;
+  overflow: auto;
+}
+
+.c5 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin-bottom: 12px;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+}
+
+.c7 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  padding: 12px;
+}
+
+.c8 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+}
+
+.c10 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+.c12 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  height: 48px;
+  width: 100%;
+  border-radius: 48px;
+}
+
+.c13 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-self: stretch;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  justify-content: center;
+  overflow: visible;
+}
+
+.c15 {
+  display: flex;
+  box-sizing: border-box;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  flex-basis: 100%;
+  height: 100%;
+  justify-content: center;
+}
+
+.c16 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  background-color: #7D4CDB;
+  color: #f8f8f8;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  height: 12px;
+  width: 12px;
+  border-radius: 100%;
+}
+
+.c17 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  background-color: rgba(125, 76, 219, 0.4);
+  color: #444444;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  height: 48px;
+  width: 100%;
+  border-radius: 48px;
+}
+
+.c19 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+}
+
+.c20 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-content: flex-start;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: row;
+  flex: 0 0 auto;
+}
+
+.c21 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  width: 100%;
+}
+
+.c23 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: row;
+}
+
+.c27 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-self: center;
+  margin-left: 12px;
+  margin-right: 12px;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  min-width: auto;
+}
+
+.c29 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin-top: 24px;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: row;
+  flex: 0 0 auto;
+  justify-content: space-between;
+}
+
+.c28 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #7D4CDB;
+  stroke: #7D4CDB;
+}
+
+.c28 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c28 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c28 *[stroke*='#'],
+.c28 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c28 *[fill-rule],
+.c28 *[FILL-RULE],
+.c28 *[fill*='#'],
+.c28 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c6 {
+  margin-left: 12px;
+  margin-right: 12px;
+  margin-top: 6px;
+  margin-bottom: 6px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c9 {
+  margin-left: 12px;
+  margin-right: 12px;
+  font-size: 14px;
+  line-height: 20px;
+  text-align: right;
+}
+
+.c18 {
+  margin-left: 12px;
+  margin-right: 12px;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.c22 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  align-self: flex-start;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+  width: 100%;
+}
+
+.c22:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c22:focus:not(:focus-visible) >circle,
+.c22:focus:not(:focus-visible) >ellipse,
+.c22:focus:not(:focus-visible) >line,
+.c22:focus:not(:focus-visible) >path,
+.c22:focus:not(:focus-visible) >polygon,
+.c22:focus:not(:focus-visible) >polyline,
+.c22:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c22:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
+}
+
+.c30 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: 2px solid #7D4CDB;
+  border-radius: 18px;
+  color: #444444;
+  padding: 4px 22px;
+  font-size: 18px;
+  line-height: 24px;
+  background-color: #7D4CDB;
+  color: #f8f8f8;
+  border-radius: 18px;
+  transition-property: color,background-color,border-color,box-shadow;
+  transition-duration: 0.1s;
+  transition-timing-function: ease-in-out;
+}
+
+.c30:hover {
+  box-shadow: 0px 0px 0px 2px #7D4CDB;
+}
+
+.c30:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c30:focus >circle,
+.c30:focus >ellipse,
+.c30:focus >line,
+.c30:focus >path,
+.c30:focus >polygon,
+.c30:focus >polyline,
+.c30:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c30:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c30:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c30:focus:not(:focus-visible) >circle,
+.c30:focus:not(:focus-visible) >ellipse,
+.c30:focus:not(:focus-visible) >line,
+.c30:focus:not(:focus-visible) >path,
+.c30:focus:not(:focus-visible) >polygon,
+.c30:focus:not(:focus-visible) >polyline,
+.c30:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c30:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
+}
+
+.c2 {
+  max-width: 100%;
+}
+
+.c25 {
+  box-sizing: border-box;
+  font-size: inherit;
+  font-family: inherit;
+  border: none;
+  -webkit-appearance: none;
+  background: transparent;
+  color: inherit;
+  width: 100%;
+  padding: 11px;
+  font-weight: 600;
+  margin: 0;
+  border: 1px solid rgba(0, 0, 0, 0.33);
+  border-radius: 4px;
+  border: none;
+  outline: none;
+  border: none;
+}
+
+.c25::-webkit-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c25::-moz-placeholder {
+  color: #AAAAAA;
+}
+
+.c25:-ms-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c25 ::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+.c25::-moz-focus-inner {
+  border: none;
+  outline: none;
+}
+
+.c25:-moz-placeholder,
+.c25::-moz-placeholder {
+  opacity: 1;
+}
+
+.c24 {
+  position: relative;
+  width: 100%;
+}
+
+.c14 {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.c11 {
+  user-select: none;
+}
+
+.c26 {
+  cursor: pointer;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+@media only screen and (max-width: 768px) {
+  .c5 {
+    margin-bottom: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c7 {
+    border-bottom: solid 1px rgba(0, 0, 0, 0.33);
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c7 {
+    padding: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c12 {
+    border-radius: 24px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c17 {
+    border-radius: 24px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c19 {
+    border-bottom: solid 1px rgba(0, 0, 0, 0.33);
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c27 {
+    margin-left: 6px;
+    margin-right: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c29 {
+    margin-top: 12px;
+  }
+}
+
+<div
+    class="c0"
+  >
+    <div
+      class="c1"
+      id="data"
+    >
+      <form
+        class="c2"
+      >
+        <div
+          class="c3"
+        >
+          <div
+            class="c4"
+          >
+            <div
+              class="c1"
+            >
+              <div
+                class="c5 "
+              >
+                <label
+                  class="c6"
+                  for="data-rating"
+                  id="grommet-data-rating__label"
+                >
+                  rating
+                </label>
+                <div
+                  class="c7 "
+                >
+                  <div
+                    class="c8"
+                    id="data-rating"
+                  >
+                    <span
+                      class="c9"
+                      style="width: 0px;"
+                    >
+                      0
+                    </span>
+                    <div
+                      class="c10 c11"
+                      tabindex="-1"
+                    >
+                      <div
+                        class="c12"
+                        style="flex: 0 0 0px;"
+                      />
+                      <div
+                        class="c13"
+                        style="flex: 0 0 1px;"
+                      >
+                        <input
+                          aria-label="Lower Bounds"
+                          aria-valuemax="5"
+                          aria-valuemin="0"
+                          aria-valuenow="0"
+                          class="c14"
+                          max="5"
+                          min="0"
+                          readonly=""
+                          step="0.25"
+                          type="range"
+                          value="0"
+                        />
+                        <div
+                          class="c15"
+                          style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
+                          tabindex="-1"
+                        >
+                          <div
+                            class="c16 EdgeControl__StyledBox-sc-1xo2yt9-1"
+                          />
+                        </div>
+                      </div>
+                      <div
+                        class="c17"
+                        style="flex: 6 0 0px; cursor: ew-resize;"
+                      />
+                      <div
+                        class="c13"
+                        style="flex: 0 0 1px;"
+                      >
+                        <input
+                          aria-label="Upper Bounds"
+                          aria-valuemax="5"
+                          aria-valuemin="0"
+                          aria-valuenow="5"
+                          class="c14"
+                          max="5"
+                          min="0"
+                          readonly=""
+                          step="0.25"
+                          type="range"
+                          value="5"
+                        />
+                        <div
+                          class="c15"
+                          style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
+                          tabindex="-1"
+                        >
+                          <div
+                            class="c16 EdgeControl__StyledBox-sc-1xo2yt9-1"
+                          />
+                        </div>
+                      </div>
+                      <div
+                        class="c12"
+                        style="flex: 0 0 0px;"
+                      />
+                    </div>
+                    <span
+                      class="c18"
+                      style="width: 0px;"
+                    >
+                      5
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="c5 "
+                id="test-data"
+              >
+                <label
+                  class="c6"
+                  for="data-type.name__input"
+                  id="grommet-data-type.name__input__label"
+                >
+                  Type
+                </label>
+                <div
+                  class="c19 "
+                >
+                  <div
+                    class="c20 "
+                  >
+                    <div
+                      class="c21"
+                    >
+                      <button
+                        aria-expanded="false"
+                        aria-haspopup="listbox"
+                        aria-label="Open drop. 0 selected"
+                        class="c22"
+                        id="data-type.name"
+                        type="button"
+                      >
+                        <div
+                          class="c23"
+                        >
+                          <div
+                            class="c24"
+                          >
+                            <input
+                              autocomplete="off"
+                              class="c25 c26"
+                              id="data-type.name__input"
+                              inert=""
+                              name="type.name"
+                              placeholder="Select"
+                              readonly=""
+                              tabindex="-1"
+                              type="text"
+                              value=""
+                            />
+                          </div>
+                          <div
+                            class="c27"
+                          >
+                            <svg
+                              aria-label="FormDown"
+                              class="c28"
+                              viewBox="0 0 24 24"
+                            >
+                              <path
+                                d="m18 9-6 6-6-6"
+                                fill="none"
+                                stroke="#000"
+                                stroke-width="2"
+                              />
+                            </svg>
+                          </div>
+                        </div>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <footer
+            class="c29"
+          >
+            <button
+              class="c30"
+              type="submit"
+            >
+              Apply filters
+            </button>
+          </footer>
+        </div>
+      </form>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`DataFilter theme rangeSelector size and round, selectMultiple dropHeight 2`] = `
+.c10 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-self: center;
+  margin-left: 12px;
+  margin-right: 12px;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  min-width: auto;
+}
+
+.c0 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  overflow: auto;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.20);
+}
+
+.c2 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+}
+
+.c4 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: row;
+  flex: 0 0 auto;
+  justify-content: space-between;
+}
+
+.c5 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: row;
+  min-height: 48px;
+  flex: 1 1;
+  width: 100%;
+  justify-content: space-between;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  padding-left: 6px;
+}
+
+.c16 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin-right: 12px;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.c19 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-items: center;
+  border: solid 2px rgba(0, 0, 0, 0.15);
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  height: 24px;
+  width: 24px;
+  justify-content: center;
+  border-radius: 4px;
+}
+
+.c20 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-self: center;
+  align-items: flex-start;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  width: 100%;
+}
+
+.c21 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  height: 0px;
+  flex: 0 0 auto;
+}
+
+.c7 {
+  flex: 0 0 auto;
+  align-self: stretch;
+  width: 12px;
+}
+
+.c11 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #7D4CDB;
+  stroke: #7D4CDB;
+}
+
+.c11 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c11 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c11 *[stroke*='#'],
+.c11 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c11 *[fill-rule],
+.c11 *[FILL-RULE],
+.c11 *[fill*='#'],
+.c11 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c1 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  border-radius: 0px;
+  position: fixed;
+  z-index: 20;
+  outline: none;
+  background-color: #FFFFFF;
+  color: #444444;
+  opacity: 0;
+  transform-origin: top right;
+  animation: kPQHBD 0.1s forwards;
+  animation-delay: 0.01s;
+}
+
+.c6 {
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.c8 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: 2px solid #7D4CDB;
+  border-radius: 18px;
+  color: #444444;
+  padding: 4px 22px;
+  font-size: 18px;
+  line-height: 24px;
+  transition-property: color,background-color,border-color,box-shadow;
+  transition-duration: 0.1s;
+  transition-timing-function: ease-in-out;
+}
+
+.c8:hover {
+  box-shadow: 0px 0px 0px 2px #7D4CDB;
+}
+
+.c8:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c8:focus >circle,
+.c8:focus >ellipse,
+.c8:focus >line,
+.c8:focus >path,
+.c8:focus >polygon,
+.c8:focus >polyline,
+.c8:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c8:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c8:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c8:focus:not(:focus-visible) >circle,
+.c8:focus:not(:focus-visible) >ellipse,
+.c8:focus:not(:focus-visible) >line,
+.c8:focus:not(:focus-visible) >path,
+.c8:focus:not(:focus-visible) >polygon,
+.c8:focus:not(:focus-visible) >polyline,
+.c8:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c8:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
+}
+
+.c9 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+  height: 100%;
+}
+
+.c9:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c9:focus >circle,
+.c9:focus >ellipse,
+.c9:focus >line,
+.c9:focus >path,
+.c9:focus >polygon,
+.c9:focus >polyline,
+.c9:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c9:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c9:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c9:focus:not(:focus-visible) >circle,
+.c9:focus:not(:focus-visible) >ellipse,
+.c9:focus:not(:focus-visible) >line,
+.c9:focus:not(:focus-visible) >path,
+.c9:focus:not(:focus-visible) >polygon,
+.c9:focus:not(:focus-visible) >polyline,
+.c9:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c9:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
+}
+
+.c13 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+}
+
+.c13:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c13:focus >circle,
+.c13:focus >ellipse,
+.c13:focus >line,
+.c13:focus >path,
+.c13:focus >polygon,
+.c13:focus >polyline,
+.c13:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c13:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c13:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c13:focus:not(:focus-visible) >circle,
+.c13:focus:not(:focus-visible) >ellipse,
+.c13:focus:not(:focus-visible) >line,
+.c13:focus:not(:focus-visible) >path,
+.c13:focus:not(:focus-visible) >polygon,
+.c13:focus:not(:focus-visible) >polyline,
+.c13:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c13:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
+}
+
+.c15 {
+  display: flex;
+  flex-direction: row;
+  user-select: none;
+  -webkit-user-select: none;
+  width: fit-content;
+  padding: 6px;
+  cursor: pointer;
+}
+
+.c15:hover input:not([disabled])+div,
+.c15:hover input:not([disabled])+span {
+  border-color: #000000;
+}
+
+.c18 {
+  opacity: 0;
+  -moz-appearance: none;
+  width: 0;
+  height: 0;
+  margin: 0;
+  cursor: pointer;
+}
+
+.c18:checked+span>span {
+  left: calc( 48px - 24px );
+  background: #7D4CDB;
+}
+
+.c17 {
+  flex-shrink: 0;
+}
+
+.c3 {
+  max-height: 768px;
+}
+
+.c12 {
+  position: relative;
+  scroll-behavior: smooth;
+  overflow: auto;
+  outline: none;
+}
+
+.c14 {
+  display: block;
+  width: 100%;
+}
+
+@media only screen and (max-width: 768px) {
+
+}
+
+@media only screen and (max-width: 768px) {
+
+}
+
+@media only screen and (max-width: 768px) {
+
+}
+
+@media only screen and (max-width: 768px) {
+
+}
+
+@media only screen and (max-width: 768px) {
+
+}
+
+@media only screen and (max-width: 768px) {
+
+}
+
+@media only screen and (max-width: 768px) {
+  .c10 {
+    margin-left: 6px;
+    margin-right: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+
+}
+
+@media only screen and (max-width: 768px) {
+  .c5 {
+    padding-top: 3px;
+    padding-bottom: 3px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c5 {
+    padding-left: 3px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c16 {
+    margin-right: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c19 {
+    border: solid 2px rgba(0, 0, 0, 0.15);
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c7 {
+    width: 6px;
+  }
+}
+
+@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
+  .c1 {
+    display: flex;
+    align-items: stretch;
+  }
+}
+
+@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
+  .c3 {
+    width: 100%;
+  }
+}
+
+<div
+  class="c0 c1"
+  data-g-portal-id="0"
+  id="data-type.name__drop"
+  style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
+  tabindex="-1"
+>
+  <div
+    aria-label="Select dropdown"
+    class="c2 c3"
+    id="data-type.name__select-drop"
+  >
+    <div
+      class="c4"
+    >
+      <div
+        class="c5"
+      >
+        <span
+          class="c6"
+        >
+          0 selected
+        </span>
+        <div
+          class="c7"
+        />
+        <button
+          aria-label="Select all 7 options"
+          class="c8"
+          type="button"
+        >
+          Select All
+        </button>
+      </div>
+      <div
+        class="c2"
+      >
+        <button
+          aria-label="Close Select"
+          class="c9"
+          type="button"
+        >
+          <div
+            class="c10"
+          >
+            <svg
+              aria-label="FormDown"
+              class="c11"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="m18 9-6 6-6-6"
+                fill="none"
+                stroke="#000"
+                stroke-width="2"
+              />
+            </svg>
+          </div>
+        </button>
+      </div>
+    </div>
+    <div
+      aria-label="list of options"
+      aria-multiselectable="true"
+      class="c12"
+      role="listbox"
+      tabindex="-1"
+    >
+      <button
+        aria-label="ZZ not selected"
+        aria-posinset="1"
+        aria-selected="false"
+        aria-setsize="7"
+        class="c13 c14"
+        id="option0"
+        role="option"
+        tabindex="0"
+        type="button"
+      >
+        <label
+          class="c15"
+          style="pointer-events: none;"
+        >
+          <div
+            class="c16 c17"
+          >
+            <input
+              class="c18"
+              inert=""
+              tabindex="-1"
+              type="checkbox"
+            />
+            <div
+              class="c19 "
+            />
+          </div>
+          <div
+            class="c20"
+          >
+            ZZ
+          </div>
+        </label>
+      </button>
+      <button
+        aria-label="YY not selected"
+        aria-posinset="2"
+        aria-selected="false"
+        aria-setsize="7"
+        class="c13 c14"
+        id="option1"
+        role="option"
+        tabindex="-1"
+        type="button"
+      >
+        <label
+          class="c15"
+          style="pointer-events: none;"
+        >
+          <div
+            class="c16 c17"
+          >
+            <input
+              class="c18"
+              inert=""
+              tabindex="-1"
+              type="checkbox"
+            />
+            <div
+              class="c19 "
+            />
+          </div>
+          <div
+            class="c20"
+          >
+            YY
+          </div>
+        </label>
+      </button>
+      <button
+        aria-label="aa not selected"
+        aria-posinset="3"
+        aria-selected="false"
+        aria-setsize="7"
+        class="c13 c14"
+        id="option2"
+        role="option"
+        tabindex="-1"
+        type="button"
+      >
+        <label
+          class="c15"
+          style="pointer-events: none;"
+        >
+          <div
+            class="c16 c17"
+          >
+            <input
+              class="c18"
+              inert=""
+              tabindex="-1"
+              type="checkbox"
+            />
+            <div
+              class="c19 "
+            />
+          </div>
+          <div
+            class="c20"
+          >
+            aa
+          </div>
+        </label>
+      </button>
+      <button
+        aria-label="bb not selected"
+        aria-posinset="4"
+        aria-selected="false"
+        aria-setsize="7"
+        class="c13 c14"
+        id="option3"
+        role="option"
+        tabindex="-1"
+        type="button"
+      >
+        <label
+          class="c15"
+          style="pointer-events: none;"
+        >
+          <div
+            class="c16 c17"
+          >
+            <input
+              class="c18"
+              inert=""
+              tabindex="-1"
+              type="checkbox"
+            />
+            <div
+              class="c19 "
+            />
+          </div>
+          <div
+            class="c20"
+          >
+            bb
+          </div>
+        </label>
+      </button>
+      <button
+        aria-label="cc not selected"
+        aria-posinset="5"
+        aria-selected="false"
+        aria-setsize="7"
+        class="c13 c14"
+        id="option4"
+        role="option"
+        tabindex="-1"
+        type="button"
+      >
+        <label
+          class="c15"
+          style="pointer-events: none;"
+        >
+          <div
+            class="c16 c17"
+          >
+            <input
+              class="c18"
+              inert=""
+              tabindex="-1"
+              type="checkbox"
+            />
+            <div
+              class="c19 "
+            />
+          </div>
+          <div
+            class="c20"
+          >
+            cc
+          </div>
+        </label>
+      </button>
+      <button
+        aria-label="dd not selected"
+        aria-posinset="6"
+        aria-selected="false"
+        aria-setsize="7"
+        class="c13 c14"
+        id="option5"
+        role="option"
+        tabindex="-1"
+        type="button"
+      >
+        <label
+          class="c15"
+          style="pointer-events: none;"
+        >
+          <div
+            class="c16 c17"
+          >
+            <input
+              class="c18"
+              inert=""
+              tabindex="-1"
+              type="checkbox"
+            />
+            <div
+              class="c19 "
+            />
+          </div>
+          <div
+            class="c20"
+          >
+            dd
+          </div>
+        </label>
+      </button>
+      <button
+        aria-label="ee not selected"
+        aria-posinset="7"
+        aria-selected="false"
+        aria-setsize="7"
+        class="c13 c14"
+        id="option6"
+        role="option"
+        tabindex="-1"
+        type="button"
+      >
+        <label
+          class="c15"
+          style="pointer-events: none;"
+        >
+          <div
+            class="c16 c17"
+          >
+            <input
+              class="c18"
+              inert=""
+              tabindex="-1"
+              type="checkbox"
+            />
+            <div
+              class="c19 "
+            />
+          </div>
+          <div
+            class="c20"
+          >
+            ee
+          </div>
+        </label>
+      </button>
+      <div
+        class="c21"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`DataFilter theme rangeSelector size and round, selectMultiple dropHeight 3`] = `
+"@media only screen and (max-width: 768px) {
+  .eEJtXY {
+    margin-bottom: 6px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .hEaUqP {
+    border-bottom: solid 1px rgba(0, 0, 0, 0.33);
+  }
+}
+@media only screen and (max-width: 768px) {
+  .hEaUqP {
+    padding: 6px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .jDgzUY {
+    margin-right: 6px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .ldnIiP {
+    border: solid 2px rgba(0, 0, 0, 0.15);
+  }
+}
+@media only screen and (max-width: 768px) {
+  .gILKAK {
+    border-radius: 6px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .ezpGTS {
+    border-radius: 6px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .coNAXt {
+    margin-top: 12px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .hrJqFx {
+    height: 6px;
+  }
+}"
 `;

@@ -3784,11 +3784,11 @@ exports[`DataTable custom theme 1`] = `
 .c11 {
   display: flex;
   justify-content: center;
-  padding-top: 6px;
-  padding-bottom: 6px;
-  margin-right: -12px;
-  position: absolute;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  margin-right: -11px;
   right: 0;
+  position: absolute;
   width: 24px;
   height: 100%;
   top: 0;
@@ -4102,7 +4102,7 @@ exports[`DataTable custom theme 2`] = `
             aria-orientation="vertical"
             aria-valuenow="0"
             aria-valuetext="Resize A column"
-            class="StyledButton-sc-323bzc-0 jLPXpV Resizer__StyledResizer-sc-8l808w-0 jXjIlQ"
+            class="StyledButton-sc-323bzc-0 jLPXpV Resizer__StyledResizer-sc-8l808w-0 eEHzjh"
             role="separator"
             type="button"
           >
@@ -23330,9 +23330,9 @@ exports[`DataTable resizeable 1`] = `
   justify-content: center;
   padding-top: 6px;
   padding-bottom: 6px;
-  margin-right: -12px;
-  position: absolute;
+  margin-right: -11px;
   right: 0;
+  position: absolute;
   width: 24px;
   height: 100%;
   top: 0;
@@ -25830,537 +25830,6 @@ exports[`DataTable rowProps on group header rows 1`] = `
               class="c10"
             >
               Tracy
-            </span>
-          </div>
-        </th>
-      </tr>
-    </tbody>
-  </table>
-</div>
-`;
-
-exports[`DataTable search 1`] = `
-.c9 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: rgba(0, 0, 0, 0.33);
-  stroke: rgba(0, 0, 0, 0.33);
-}
-
-.c9 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c9 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c9 *[stroke*='#'],
-.c9 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c9 *[fill-rule],
-.c9 *[FILL-RULE],
-.c9 *[fill*='#'],
-.c9 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
-}
-
-.c0 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
-.c4 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  align-items: center;
-  min-width: 0;
-  min-height: 0;
-  flex-direction: row;
-  height: 100%;
-  justify-content: space-between;
-}
-
-.c5 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  flex-direction: column;
-  flex: 1 1 auto;
-  height: 100%;
-  justify-content: center;
-}
-
-.c13 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  flex-direction: column;
-}
-
-.c7 {
-  flex: 0 0 auto;
-  align-self: stretch;
-  width: 12px;
-}
-
-.c6 {
-  font-size: 18px;
-  line-height: 24px;
-}
-
-.c14 {
-  font-size: 18px;
-  line-height: 24px;
-  font-weight: bold;
-}
-
-.c8 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  font: inherit;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  color: inherit;
-  outline: none;
-  border: none;
-  padding: 0;
-  text-align: inherit;
-  line-height: 0;
-  padding: 12px;
-}
-
-.c8:hover {
-  background-color: rgba(221, 221, 221, 0.4);
-  color: #000000;
-}
-
-.c8:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c8:focus >circle,
-.c8:focus >ellipse,
-.c8:focus >line,
-.c8:focus >path,
-.c8:focus >polygon,
-.c8:focus >polyline,
-.c8:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c8:focus ::-moz-focus-inner {
-  border: 0;
-}
-
-.c8:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c8:focus:not(:focus-visible) >circle,
-.c8:focus:not(:focus-visible) >ellipse,
-.c8:focus:not(:focus-visible) >line,
-.c8:focus:not(:focus-visible) >path,
-.c8:focus:not(:focus-visible) >polygon,
-.c8:focus:not(:focus-visible) >polyline,
-.c8:focus:not(:focus-visible) >rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c8:focus:not(:focus-visible) ::-moz-focus-inner {
-  border: 0;
-}
-
-.c3 {
-  margin: 0;
-  padding: 0;
-  font-weight: inherit;
-  text-align: inherit;
-  text-align: start;
-  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
-  padding-left: 12px;
-  padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
-}
-
-.c12 {
-  margin: 0;
-  padding: 0;
-  font-weight: inherit;
-  text-align: inherit;
-  text-align: start;
-  padding-left: 12px;
-  padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
-}
-
-.c1 {
-  border-spacing: 0;
-  border-collapse: collapse;
-  width: inherit;
-}
-
-.c2 {
-  position: relative;
-  border-spacing: 0;
-  border-collapse: separate;
-}
-
-.c11:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c11:focus >circle,
-.c11:focus >ellipse,
-.c11:focus >line,
-.c11:focus >path,
-.c11:focus >polygon,
-.c11:focus >polyline,
-.c11:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c11:focus ::-moz-focus-inner {
-  border: 0;
-}
-
-.c11:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c11:focus:not(:focus-visible) >circle,
-.c11:focus:not(:focus-visible) >ellipse,
-.c11:focus:not(:focus-visible) >line,
-.c11:focus:not(:focus-visible) >path,
-.c11:focus:not(:focus-visible) >polygon,
-.c11:focus:not(:focus-visible) >polyline,
-.c11:focus:not(:focus-visible) >rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c11:focus:not(:focus-visible) ::-moz-focus-inner {
-  border: 0;
-}
-
-.c10:focus {
-  outline: 2px solid #6FFFB0;
-}
-
-.c10:focus:not(:focus-visible) {
-  outline: none;
-}
-
-@media only screen and (max-width: 768px) {
-  .c7 {
-    width: 6px;
-  }
-}
-
-<div
-  class="c0"
->
-  <table
-    class="c1 c2"
-  >
-    <thead
-      class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-5"
-    >
-      <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
-      >
-        <th
-          class="c3 "
-          id="grommet-data-table-header-a"
-          scope="col"
-        >
-          <div
-            class="c4"
-          >
-            <div
-              class="c5"
-            >
-              <span
-                class="c6"
-              >
-                A
-              </span>
-            </div>
-            <div
-              class="c7"
-            />
-            <button
-              aria-label="Open search by a"
-              class="c8"
-              type="button"
-            >
-              <svg
-                aria-label="FormSearch"
-                class="c9"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  d="M13.8 13.8 18 18l-4.2-4.2zM10.5 15a4.5 4.5 0 1 0 0-9 4.5 4.5 0 0 0 0 9z"
-                  fill="none"
-                  stroke="#000"
-                  stroke-width="2"
-                />
-              </svg>
-            </button>
-          </div>
-        </th>
-      </tr>
-    </thead>
-    <tbody
-      class="StyledTable__StyledTableBody-sc-1m3u5g-3 c10"
-    >
-      <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c11"
-      >
-        <th
-          class="c12 "
-          scope="row"
-        >
-          <div
-            class="c13"
-          >
-            <span
-              class="c14"
-            >
-              Alpha
-            </span>
-          </div>
-        </th>
-      </tr>
-      <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c11"
-      >
-        <th
-          class="c12 "
-          scope="row"
-        >
-          <div
-            class="c13"
-          >
-            <span
-              class="c14"
-            >
-              beta
-            </span>
-          </div>
-        </th>
-      </tr>
-      <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c11"
-      >
-        <th
-          class="c12 "
-          scope="row"
-        >
-          <div
-            class="c13"
-          >
-            <span
-              class="c14"
-            >
-              []
-            </span>
-          </div>
-        </th>
-      </tr>
-    </tbody>
-  </table>
-</div>
-`;
-
-exports[`DataTable search 2`] = `
-<div
-  class="StyledGrommet-sc-19lkkz7-0 kiEDjE"
->
-  <table
-    class="StyledTable-sc-1m3u5g-6 jlczSm StyledDataTable-sc-xrlyjm-0 fXGNbp"
-  >
-    <thead
-      class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-5"
-    >
-      <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRowHeader-sc-xrlyjm-3 czyNOp"
-      >
-        <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 kSxzat StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
-          id="grommet-data-table-header-a"
-          scope="col"
-        >
-          <div
-            class="StyledBox-sc-13pk1d4-0 fNiMXH"
-          >
-            <div
-              class="StyledBox-sc-13pk1d4-0 eUMecS"
-            >
-              <span
-                class="StyledText-sc-1sadyjn-0 jTcNpm"
-              >
-                A
-              </span>
-            </div>
-            <div
-              class="StyledBox__StyledBoxGap-sc-13pk1d4-1 kOnJGZ"
-            />
-            .c0 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  flex-direction: column;
-  min-width: 96px;
-  flex: 1 1;
-  padding-left: 12px;
-}
-
-.c2 {
-  box-sizing: border-box;
-  font-size: inherit;
-  font-family: inherit;
-  border: none;
-  -webkit-appearance: none;
-  background: transparent;
-  color: inherit;
-  width: 100%;
-  padding: 11px;
-  font-weight: 600;
-  margin: 0;
-  border: 1px solid rgba(0, 0, 0, 0.33);
-  border-radius: 4px;
-}
-
-.c2:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c2:focus >circle,
-.c2:focus >ellipse,
-.c2:focus >line,
-.c2:focus >path,
-.c2:focus >polygon,
-.c2:focus >polyline,
-.c2:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c2:focus ::-moz-focus-inner {
-  border: 0;
-}
-
-.c2::-webkit-input-placeholder {
-  color: #AAAAAA;
-}
-
-.c2::-moz-placeholder {
-  color: #AAAAAA;
-}
-
-.c2:-ms-input-placeholder {
-  color: #AAAAAA;
-}
-
-.c2 ::-webkit-search-decoration {
-  -webkit-appearance: none;
-}
-
-.c2::-moz-focus-inner {
-  border: none;
-  outline: none;
-}
-
-.c2:-moz-placeholder,
-.c2::-moz-placeholder {
-  opacity: 1;
-}
-
-.c1 {
-  position: relative;
-  width: 100%;
-}
-
-@media only screen and (max-width: 768px) {
-  .c0 {
-    padding-left: 6px;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-
-}
-
-<div
-              class="c0"
-            >
-              <div
-                class="c1"
-              >
-                <input
-                  aria-label="Open search by a"
-                  autocomplete="off"
-                  class="c2"
-                  name="search-a"
-                  value="["
-                />
-              </div>
-            </div>
-          </div>
-        </th>
-      </tr>
-    </thead>
-    <tbody
-      class="StyledTable__StyledTableBody-sc-1m3u5g-3 StyledDataTable__StyledDataTableBody-sc-xrlyjm-4 hkflIS"
-    >
-      <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 iClGkR"
-      >
-        <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 kCLlzz StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
-          scope="row"
-        >
-          <div
-            class="StyledBox-sc-13pk1d4-0 fDLUqh"
-          >
-            <span
-              class="StyledText-sc-1sadyjn-0 hkbTGI"
-            >
-              []
             </span>
           </div>
         </th>
@@ -51898,6 +51367,537 @@ exports[`DataTable should show correct page when "show" is { page: # } 1`] = `
 </div>
 `;
 
+exports[`DataTable should use theme icons 1`] = `
+.c9 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: rgba(0, 0, 0, 0.33);
+  stroke: rgba(0, 0, 0, 0.33);
+}
+
+.c9 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c9 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c9 *[stroke*='#'],
+.c9 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c9 *[fill-rule],
+.c9 *[FILL-RULE],
+.c9 *[fill*='#'],
+.c9 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c4 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: row;
+  height: 100%;
+  justify-content: space-between;
+}
+
+.c5 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  flex: 1 1 auto;
+  height: 100%;
+  justify-content: center;
+}
+
+.c13 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+}
+
+.c7 {
+  flex: 0 0 auto;
+  align-self: stretch;
+  width: 12px;
+}
+
+.c6 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c14 {
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: bold;
+}
+
+.c8 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+  line-height: 0;
+  padding: 12px;
+}
+
+.c8:hover {
+  background-color: rgba(221, 221, 221, 0.4);
+  color: #000000;
+}
+
+.c8:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c8:focus >circle,
+.c8:focus >ellipse,
+.c8:focus >line,
+.c8:focus >path,
+.c8:focus >polygon,
+.c8:focus >polyline,
+.c8:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c8:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c8:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c8:focus:not(:focus-visible) >circle,
+.c8:focus:not(:focus-visible) >ellipse,
+.c8:focus:not(:focus-visible) >line,
+.c8:focus:not(:focus-visible) >path,
+.c8:focus:not(:focus-visible) >polygon,
+.c8:focus:not(:focus-visible) >polyline,
+.c8:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c8:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
+}
+
+.c3 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  text-align: start;
+  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.c12 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  text-align: start;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.c1 {
+  border-spacing: 0;
+  border-collapse: collapse;
+  width: inherit;
+}
+
+.c2 {
+  position: relative;
+  border-spacing: 0;
+  border-collapse: separate;
+}
+
+.c11:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c11:focus >circle,
+.c11:focus >ellipse,
+.c11:focus >line,
+.c11:focus >path,
+.c11:focus >polygon,
+.c11:focus >polyline,
+.c11:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c11:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c11:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c11:focus:not(:focus-visible) >circle,
+.c11:focus:not(:focus-visible) >ellipse,
+.c11:focus:not(:focus-visible) >line,
+.c11:focus:not(:focus-visible) >path,
+.c11:focus:not(:focus-visible) >polygon,
+.c11:focus:not(:focus-visible) >polyline,
+.c11:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c11:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
+}
+
+.c10:focus {
+  outline: 2px solid #6FFFB0;
+}
+
+.c10:focus:not(:focus-visible) {
+  outline: none;
+}
+
+@media only screen and (max-width: 768px) {
+  .c7 {
+    width: 6px;
+  }
+}
+
+<div
+  class="c0"
+>
+  <table
+    class="c1 c2"
+  >
+    <thead
+      class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-5"
+    >
+      <tr
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+      >
+        <th
+          class="c3 "
+          id="grommet-data-table-header-a"
+          scope="col"
+        >
+          <div
+            class="c4"
+          >
+            <div
+              class="c5"
+            >
+              <span
+                class="c6"
+              >
+                A
+              </span>
+            </div>
+            <div
+              class="c7"
+            />
+            <button
+              aria-label="Open search by a"
+              class="c8"
+              type="button"
+            >
+              <svg
+                aria-label="Add"
+                class="c9"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M12 22V2M2 12h20"
+                  fill="none"
+                  stroke="#000"
+                  stroke-width="2"
+                />
+              </svg>
+            </button>
+          </div>
+        </th>
+      </tr>
+    </thead>
+    <tbody
+      class="StyledTable__StyledTableBody-sc-1m3u5g-3 c10"
+    >
+      <tr
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c11"
+      >
+        <th
+          class="c12 "
+          scope="row"
+        >
+          <div
+            class="c13"
+          >
+            <span
+              class="c14"
+            >
+              Alpha
+            </span>
+          </div>
+        </th>
+      </tr>
+      <tr
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c11"
+      >
+        <th
+          class="c12 "
+          scope="row"
+        >
+          <div
+            class="c13"
+          >
+            <span
+              class="c14"
+            >
+              beta
+            </span>
+          </div>
+        </th>
+      </tr>
+      <tr
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c11"
+      >
+        <th
+          class="c12 "
+          scope="row"
+        >
+          <div
+            class="c13"
+          >
+            <span
+              class="c14"
+            >
+              []
+            </span>
+          </div>
+        </th>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`DataTable should use theme icons 2`] = `
+<div
+  class="StyledGrommet-sc-19lkkz7-0 kiEDjE"
+>
+  <table
+    class="StyledTable-sc-1m3u5g-6 jlczSm StyledDataTable-sc-xrlyjm-0 fXGNbp"
+  >
+    <thead
+      class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-5"
+    >
+      <tr
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRowHeader-sc-xrlyjm-3 czyNOp"
+      >
+        <th
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 kSxzat StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
+          id="grommet-data-table-header-a"
+          scope="col"
+        >
+          <div
+            class="StyledBox-sc-13pk1d4-0 fNiMXH"
+          >
+            <div
+              class="StyledBox-sc-13pk1d4-0 eUMecS"
+            >
+              <span
+                class="StyledText-sc-1sadyjn-0 jTcNpm"
+              >
+                A
+              </span>
+            </div>
+            <div
+              class="StyledBox__StyledBoxGap-sc-13pk1d4-1 kOnJGZ"
+            />
+            .c0 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  min-width: 96px;
+  flex: 1 1;
+  padding-left: 12px;
+}
+
+.c2 {
+  box-sizing: border-box;
+  font-size: inherit;
+  font-family: inherit;
+  border: none;
+  -webkit-appearance: none;
+  background: transparent;
+  color: inherit;
+  width: 100%;
+  padding: 11px;
+  font-weight: 600;
+  margin: 0;
+  border: 1px solid rgba(0, 0, 0, 0.33);
+  border-radius: 4px;
+}
+
+.c2:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c2:focus >circle,
+.c2:focus >ellipse,
+.c2:focus >line,
+.c2:focus >path,
+.c2:focus >polygon,
+.c2:focus >polyline,
+.c2:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c2:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c2::-webkit-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c2::-moz-placeholder {
+  color: #AAAAAA;
+}
+
+.c2:-ms-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c2 ::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+.c2::-moz-focus-inner {
+  border: none;
+  outline: none;
+}
+
+.c2:-moz-placeholder,
+.c2::-moz-placeholder {
+  opacity: 1;
+}
+
+.c1 {
+  position: relative;
+  width: 100%;
+}
+
+@media only screen and (max-width: 768px) {
+  .c0 {
+    padding-left: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+
+}
+
+<div
+              class="c0"
+            >
+              <div
+                class="c1"
+              >
+                <input
+                  aria-label="Open search by a"
+                  autocomplete="off"
+                  class="c2"
+                  name="search-a"
+                  value="["
+                />
+              </div>
+            </div>
+          </div>
+        </th>
+      </tr>
+    </thead>
+    <tbody
+      class="StyledTable__StyledTableBody-sc-1m3u5g-3 StyledDataTable__StyledDataTableBody-sc-xrlyjm-4 hkflIS"
+    >
+      <tr
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 iClGkR"
+      >
+        <th
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 kCLlzz StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 yFxdh"
+          scope="row"
+        >
+          <div
+            class="StyledBox-sc-13pk1d4-0 fDLUqh"
+          >
+            <span
+              class="StyledText-sc-1sadyjn-0 hkbTGI"
+            >
+              []
+            </span>
+          </div>
+        </th>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
 exports[`DataTable sort 1`] = `
 .c10 {
   display: inline-block;
@@ -56979,6 +56979,734 @@ exports[`DataTable sortable 2`] = `
               0
             </span>
           </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`DataTable theme search pad, search text pad, sort gap, and expand size 1`] = `
+.c7 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: rgba(0, 0, 0, 0.33);
+  stroke: rgba(0, 0, 0, 0.33);
+}
+
+.c7 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c7 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c7 *[stroke*='#'],
+.c7 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c7 *[fill-rule],
+.c7 *[FILL-RULE],
+.c7 *[fill*='#'],
+.c7 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c4 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.c6 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.c10 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: row;
+  height: 100%;
+  justify-content: space-between;
+}
+
+.c11 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  flex: 1 1 auto;
+  height: 100%;
+  justify-content: center;
+}
+
+.c14 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: row;
+}
+
+.c20 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  flex: 1 0 auto;
+  justify-content: center;
+}
+
+.c25 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+}
+
+.c17 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  min-width: 96px;
+  flex: 1 1;
+  padding-left: 48px;
+}
+
+.c16 {
+  flex: 0 0 auto;
+  align-self: stretch;
+  width: 12px;
+}
+
+.c15 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c5 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  flex: 1 0 auto;
+}
+
+.c5:hover {
+  background-color: rgba(221, 221, 221, 0.4);
+  color: #000000;
+}
+
+.c5:focus {
+  outline-offset: -2px;
+  outline: 2px solid #6FFFB0;
+}
+
+.c5:focus >circle,
+.c5:focus >ellipse,
+.c5:focus >line,
+.c5:focus >path,
+.c5:focus >polygon,
+.c5:focus >polyline,
+.c5:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c5:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible) >circle,
+.c5:focus:not(:focus-visible) >ellipse,
+.c5:focus:not(:focus-visible) >line,
+.c5:focus:not(:focus-visible) >path,
+.c5:focus:not(:focus-visible) >polygon,
+.c5:focus:not(:focus-visible) >polyline,
+.c5:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
+}
+
+.c12 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+  height: 100%;
+}
+
+.c12:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c12:focus >circle,
+.c12:focus >ellipse,
+.c12:focus >line,
+.c12:focus >path,
+.c12:focus >polygon,
+.c12:focus >polyline,
+.c12:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c12:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c12:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c12:focus:not(:focus-visible) >circle,
+.c12:focus:not(:focus-visible) >ellipse,
+.c12:focus:not(:focus-visible) >line,
+.c12:focus:not(:focus-visible) >path,
+.c12:focus:not(:focus-visible) >polygon,
+.c12:focus:not(:focus-visible) >polyline,
+.c12:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c12:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
+}
+
+.c19 {
+  box-sizing: border-box;
+  font-size: inherit;
+  font-family: inherit;
+  border: none;
+  -webkit-appearance: none;
+  background: transparent;
+  color: inherit;
+  width: 100%;
+  padding: 11px;
+  font-weight: 600;
+  margin: 0;
+  border: 1px solid rgba(0, 0, 0, 0.33);
+  border-radius: 4px;
+}
+
+.c19:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c19:focus >circle,
+.c19:focus >ellipse,
+.c19:focus >line,
+.c19:focus >path,
+.c19:focus >polygon,
+.c19:focus >polyline,
+.c19:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c19:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c19::-webkit-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c19::-moz-placeholder {
+  color: #AAAAAA;
+}
+
+.c19:-ms-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c19 ::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+.c19::-moz-focus-inner {
+  border: none;
+  outline: none;
+}
+
+.c19:-moz-placeholder,
+.c19::-moz-placeholder {
+  opacity: 1;
+}
+
+.c18 {
+  position: relative;
+  width: 100%;
+}
+
+.c3 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  width: 768px;
+  max-width: 768px;
+  overflow: hidden;
+  vertical-align: top;
+  text-align: start;
+  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
+}
+
+.c8 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  width: 768px;
+  max-width: 768px;
+  overflow: hidden;
+  text-align: start;
+  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
+  padding: 0px;
+}
+
+.c9 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  text-align: start;
+  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
+  padding: 0px;
+}
+
+.c23 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  width: 768px;
+  max-width: 768px;
+  overflow: hidden;
+  vertical-align: top;
+  text-align: start;
+}
+
+.c24 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  text-align: start;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.c1 {
+  border-spacing: 0;
+  border-collapse: collapse;
+  width: inherit;
+}
+
+.c2 {
+  position: relative;
+  border-spacing: 0;
+  border-collapse: separate;
+}
+
+.c22:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c22:focus >circle,
+.c22:focus >ellipse,
+.c22:focus >line,
+.c22:focus >path,
+.c22:focus >polygon,
+.c22:focus >polyline,
+.c22:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c22:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c22:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c22:focus:not(:focus-visible) >circle,
+.c22:focus:not(:focus-visible) >ellipse,
+.c22:focus:not(:focus-visible) >line,
+.c22:focus:not(:focus-visible) >path,
+.c22:focus:not(:focus-visible) >polygon,
+.c22:focus:not(:focus-visible) >polyline,
+.c22:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c22:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
+}
+
+.c21:focus {
+  outline: 2px solid #6FFFB0;
+}
+
+.c21:focus:not(:focus-visible) {
+  outline: none;
+}
+
+.c13 {
+  padding: 6px 12px;
+}
+
+@media only screen and (max-width: 768px) {
+  .c6 {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c6 {
+    padding-top: 3px;
+    padding-bottom: 3px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c17 {
+    padding-left: 24px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c16 {
+    width: 6px;
+  }
+}
+
+<div
+  class="c0"
+>
+  <table
+    class="c1 c2"
+  >
+    <thead
+      class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-5"
+    >
+      <tr
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+      >
+        <td
+          class="c3"
+        >
+          <div
+            class="c4"
+            style="height: 0px;"
+          >
+            <button
+              aria-expanded="false"
+              aria-label="expand all"
+              class="c5"
+              type="button"
+            >
+              <div
+                class="c6"
+              >
+                <svg
+                  aria-label="FormDown"
+                  class="c7"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="m18 9-6 6-6-6"
+                    fill="none"
+                    stroke="#000"
+                    stroke-width="2"
+                  />
+                </svg>
+              </div>
+            </button>
+          </div>
+        </td>
+        <td
+          class="c8"
+        />
+        <th
+          class="c9 "
+          id="grommet-data-table-header-a"
+          scope="col"
+        >
+          <div
+            class="c10"
+          >
+            <div
+              class="c11"
+            >
+              <button
+                class="c12 c13"
+                type="button"
+              >
+                <div
+                  class="c14"
+                >
+                  <span
+                    class="c15"
+                  >
+                    A
+                  </span>
+                </div>
+              </button>
+            </div>
+            <div
+              class="c16"
+            />
+            <div
+              class="c17"
+            >
+              <div
+                class="c18"
+              >
+                <input
+                  aria-label="Open search by a"
+                  autocomplete="off"
+                  class="c19"
+                  name="search-a"
+                  value=""
+                />
+              </div>
+            </div>
+          </div>
+        </th>
+        <th
+          class="c9 "
+          id="grommet-data-table-header-b"
+          scope="col"
+        >
+          <div
+            class="c20"
+          >
+            <button
+              class="c12 c13"
+              type="button"
+            >
+              <div
+                class="c14"
+              >
+                <span
+                  class="c15"
+                >
+                  B
+                </span>
+              </div>
+            </button>
+          </div>
+        </th>
+      </tr>
+    </thead>
+    <tbody
+      class="StyledTable__StyledTableBody-sc-1m3u5g-3 c21"
+    >
+      <tr
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c22"
+      >
+        <td
+          class="c23"
+        >
+          <div
+            class="c4"
+            style="height: 0px;"
+          >
+            <button
+              aria-expanded="false"
+              aria-label="expand "
+              class="c5"
+              type="button"
+            >
+              <div
+                class="c6"
+              >
+                <svg
+                  aria-label="FormDown"
+                  class="c7"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="m18 9-6 6-6-6"
+                    fill="none"
+                    stroke="#000"
+                    stroke-width="2"
+                  />
+                </svg>
+              </div>
+            </button>
+          </div>
+        </td>
+        <th
+          class="c24 "
+          scope="row"
+        >
+          <div
+            class="c25"
+          >
+            <span
+              class="c15"
+            >
+              one
+            </span>
+          </div>
+        </th>
+        <td
+          class="c24 "
+        >
+          <div
+            class="c25"
+          />
+        </td>
+      </tr>
+      <tr
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c22"
+      >
+        <td
+          class="c23"
+        >
+          <div
+            class="c4"
+            style="height: 0px;"
+          >
+            <button
+              aria-expanded="false"
+              aria-label="expand "
+              class="c5"
+              type="button"
+            >
+              <div
+                class="c6"
+              >
+                <svg
+                  aria-label="FormDown"
+                  class="c7"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="m18 9-6 6-6-6"
+                    fill="none"
+                    stroke="#000"
+                    stroke-width="2"
+                  />
+                </svg>
+              </div>
+            </button>
+          </div>
+        </td>
+        <th
+          class="c24 "
+          scope="row"
+        >
+          <div
+            class="c25"
+          >
+            <span
+              class="c15"
+            >
+              two
+            </span>
+          </div>
+        </th>
+        <td
+          class="c24 "
+        >
+          <div
+            class="c25"
+          />
         </td>
       </tr>
     </tbody>

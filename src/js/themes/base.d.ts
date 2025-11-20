@@ -187,6 +187,9 @@ interface ButtonType {
   };
   busy?: {
     gap?: GapType;
+    icons?: {
+      success?: React.ReactNode | Icon;
+    };
   };
   gap?: GapType;
   background?: BackgroundType;
@@ -606,7 +609,7 @@ export interface ThemeType {
   };
   box?: {
     border?: {
-      size?: string;
+      offset?: string;
     };
     extend?: ExtendType;
     responsiveBreakpoint?: string;
@@ -854,38 +857,6 @@ export interface ThemeType {
         huge?: string;
       };
     };
-    dataChart?: {
-      gap?: GapType;
-      detail?: {
-        gap?: GridGapType;
-      };
-      legend?: {
-        margin?: MarginType;
-        gap?: GapType;
-        item?: {
-          gap?: GapType;
-          pad?: PadType;
-        };
-      };
-      size?: {
-        height?: string;
-      };
-      thickness?: {
-        veryDense?: string;
-        dense?: string;
-        heavy?: string;
-        moderate?: string;
-        light?: string;
-        sparse?: string;
-      };
-      thicknessPad?: {
-        xlarge?: PadType;
-        large?: PadType;
-        medium?: PadType;
-        small?: PadType;
-        xsmall?: PadType;
-      };
-    };
     digital?: {
       text?: {
         [key in DigitalTexts]: {
@@ -907,6 +878,51 @@ export interface ThemeType {
       pad?: PadType;
     };
   };
+  dataChart?: {
+    gap?: GapType;
+    granularity?: {
+      y?: {
+        [key: string]: {
+          fine: number;
+          medium: number;
+        };
+      };
+    };
+    detail?: {
+      gap?: GridGapType;
+      pad?: PadType;
+    };
+    halfPad?: {
+      [key: string]: string;
+    };
+    legend?: {
+      margin?: MarginType;
+      gap?: GapType;
+      item?: {
+        gap?: GapType;
+        pad?: PadType;
+      };
+    };
+    orderedSizes?: string[];
+    size?: {
+      height?: string;
+    };
+    thickness?: {
+      veryDense?: string;
+      dense?: string;
+      heavy?: string;
+      moderate?: string;
+      light?: string;
+      sparse?: string;
+    };
+    thicknessPad?: {
+      xlarge?: PadType;
+      large?: PadType;
+      medium?: PadType;
+      small?: PadType;
+      xsmall?: PadType;
+    };
+  };
   dataFilter?: {
     rangeSelector?: {
       size?: string;
@@ -917,6 +933,10 @@ export interface ThemeType {
     };
   };
   dataFilters?: {
+    icons?: {
+      close?: React.ReactNode | Icon;
+      filter?: React.ReactNode | Icon;
+    };
     footer?: {
       actions?: {
         margin?: MarginType;
@@ -928,6 +948,16 @@ export interface ThemeType {
     };
     pad?: PadType;
     width?: WidthType;
+  };
+  dataSearch?: {
+    icons?: {
+      search?: React.ReactNode | Icon;
+    };
+  };
+  dataSort?: {
+    icons?: {
+      control?: React.ReactNode | Icon;
+    };
   };
   dataSummary?: {
     margin?: MarginType;
@@ -943,6 +973,7 @@ export interface ThemeType {
       round?: RoundType;
     };
     icon?: {
+      calendar?: React.ReactNode | Icon;
       size?: string;
     };
   };
@@ -996,6 +1027,9 @@ export interface ThemeType {
       contract?: any;
       descending?: any;
       expand?: any;
+      resizeDecrease?: React.ReactNode | Icon;
+      resizeIncrease?: React.ReactNode | Icon;
+      search?: React.ReactNode | Icon;
       sortable?: any;
     };
     pinned?: {
@@ -1024,6 +1058,9 @@ export interface ThemeType {
           size: string;
         };
       };
+      padding?: {
+        vertical?: string;
+      };
     };
     primary?: {
       weight?: string;
@@ -1039,6 +1076,11 @@ export interface ThemeType {
     };
   };
   dataTableColumns?: {
+    icons?: {
+      control?: React.ReactNode | Icon;
+      pinned?: React.ReactNode | Icon;
+      search?: React.ReactNode | Icon;
+    };
     tabs?: {
       pad?: PadType;
     };
@@ -1083,6 +1125,7 @@ export interface ThemeType {
       pad?: PadType;
     };
     icons?: {
+      error?: React.ReactNode | Icon;
       remove?: any;
     };
     label?: TextProps & { extend?: ExtendType };
@@ -1885,6 +1928,7 @@ export interface ThemeType {
       down?: React.ReactNode | Icon;
       up?: React.ReactNode | Icon;
       margin?: MarginType;
+      search?: React.ReactNode | Icon;
     };
     listbox?: {
       extend?: ExtendType;
@@ -1953,10 +1997,20 @@ export interface ThemeType {
   };
   starRating?: {
     color?: ColorType;
+    icons?: {
+      selected?: React.ReactNode | Icon;
+      unselected?: React.ReactNode | Icon;
+    };
   };
   thumbsRating?: {
     dislike?: {
       color?: ColorType;
+    };
+    icons?: {
+      dislike?: React.ReactNode | Icon;
+      dislikeSelected?: React.ReactNode | Icon;
+      like?: React.ReactNode | Icon;
+      likeSelected?: React.ReactNode | Icon;
     };
     like?: {
       color?: ColorType;
@@ -2012,10 +2066,12 @@ export interface ThemeType {
       };
       extend?: ExtendType;
       nextButton?: {
-        pad: PadType;
+        icon?: React.ReactNode | Icon;
+        pad?: PadType;
       };
       previousButton?: {
-        pad: PadType;
+        icon?: React.ReactNode | Icon;
+        pad?: PadType;
       };
     };
     panel?: {
@@ -2066,6 +2122,10 @@ export interface ThemeType {
   tag?: {
     background?: BackgroundType;
     border?: BorderType;
+    hover?: {
+      background?: BackgroundType;
+      border?: BorderType;
+    };
     round?: RoundType;
     name?: TextProps;
     pad?: PadType;
@@ -2181,6 +2241,9 @@ export interface ThemeType {
     disabled?: OpacityType | { opacity: OpacityType };
     container?: {
       extend?: ExtendType;
+    };
+    icons?: {
+      copy?: React.ReactNode | Icon;
     };
     placeholder?: {
       extend?: ExtendType;

@@ -3820,3 +3820,1450 @@ exports[`DataTableColumns search 4`] = `
   border: 0;
 }"
 `;
+
+exports[`DataTableColumns should use theme icons 1`] = `
+.c1 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  padding-top: 12px;
+}
+
+.c3 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-items: center;
+  background: none;
+  border-top: solid 1px rgba(0, 0, 0, 0.33);
+  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
+  min-width: 0;
+  min-height: 0;
+  flex-direction: row;
+  flex: 0 0 auto;
+  padding: 0px;
+}
+
+.c6 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  flex: 1 1;
+}
+
+.c8 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: row;
+  justify-content: flex-end;
+  padding: 12px;
+}
+
+.c10 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-items: center;
+  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
+  min-width: 0;
+  min-height: 0;
+  flex-direction: row;
+  flex: 0 0 auto;
+  padding: 0px;
+}
+
+.c14 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.c5 {
+  flex: 0 0 auto;
+  align-self: stretch;
+  width: 24px;
+}
+
+.c16 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #666666;
+  stroke: #666666;
+}
+
+.c16 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c16 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c16 *[stroke*='#'],
+.c16 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c16 *[fill-rule],
+.c16 *[FILL-RULE],
+.c16 *[fill*='#'],
+.c16 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c9 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #555555;
+  stroke: #555555;
+}
+
+.c9 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c9 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c9 *[stroke*='#'],
+.c9 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c9 *[fill-rule],
+.c9 *[FILL-RULE],
+.c9 *[fill*='#'],
+.c9 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c12 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c13 {
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: bold;
+}
+
+.c4 {
+  font-size: 18px;
+  line-height: 24px;
+  color: #555555;
+}
+
+.c7 {
+  font-size: 18px;
+  line-height: 24px;
+  color: #555555;
+  font-weight: bold;
+}
+
+.c15 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+  opacity: 0.3;
+  cursor: default;
+  line-height: 0;
+  padding: 12px;
+}
+
+.c15:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c15:focus >circle,
+.c15:focus >ellipse,
+.c15:focus >line,
+.c15:focus >path,
+.c15:focus >polygon,
+.c15:focus >polyline,
+.c15:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c15:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c15:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c15:focus:not(:focus-visible) >circle,
+.c15:focus:not(:focus-visible) >ellipse,
+.c15:focus:not(:focus-visible) >line,
+.c15:focus:not(:focus-visible) >path,
+.c15:focus:not(:focus-visible) >polygon,
+.c15:focus:not(:focus-visible) >polyline,
+.c15:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c15:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
+}
+
+.c2 {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.c11 {
+  cursor: move;
+}
+
+.c0 {
+  min-height: 0;
+}
+
+@media only screen and (max-width: 768px) {
+
+}
+
+@media only screen and (max-width: 768px) {
+
+}
+
+@media only screen and (max-width: 768px) {
+
+}
+
+@media only screen and (max-width: 768px) {
+
+}
+
+@media only screen and (max-width: 768px) {
+
+}
+
+@media only screen and (max-width: 768px) {
+
+}
+
+@media only screen and (max-width: 768px) {
+
+}
+
+@media only screen and (max-width: 768px) {
+
+}
+
+@media only screen and (max-width: 768px) {
+
+}
+
+@media only screen and (max-width: 768px) {
+
+}
+
+@media only screen and (max-width: 768px) {
+
+}
+
+@media only screen and (max-width: 768px) {
+
+}
+
+@media only screen and (max-width: 768px) {
+
+}
+
+@media only screen and (max-width: 768px) {
+  .c1 {
+    padding-top: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c3 {
+    border-top: solid 1px rgba(0, 0, 0, 0.33);
+    border-bottom: solid 1px rgba(0, 0, 0, 0.33);
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c3 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c8 {
+    padding: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c10 {
+    border-bottom: solid 1px rgba(0, 0, 0, 0.33);
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c10 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+
+}
+
+@media only screen and (max-width: 768px) {
+
+}
+
+@media only screen and (max-width: 768px) {
+  .c5 {
+    width: 12px;
+  }
+}
+
+@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
+
+}
+
+<div
+  aria-label="Order columns Tab Contents"
+  class="c0"
+  role="tabpanel"
+>
+  <div
+    class="c1"
+  >
+    <ul
+      aria-labelledby="test-data--order-columns-tab"
+      class="c2"
+      id="test-data--order-columns"
+      role="list"
+    >
+      <li
+        class="c3 "
+      >
+        <span
+          class="c4"
+        >
+          1
+        </span>
+        <div
+          class="c5"
+        />
+        <div
+          class="c6"
+        >
+          <span
+            class="c7"
+          >
+            name
+          </span>
+        </div>
+        <div
+          class="c5"
+        />
+        <div
+          class="c8"
+        >
+          <svg
+            aria-label="Column locked, order cannot be changed."
+            class="c9"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="m16 3-6 6s-4-1-7 2l10 10c3-3 2-7 2-7l6-6-5-5zM1 23l7-7m6-15 9 9"
+              fill="none"
+              stroke="#000"
+              stroke-width="2"
+            />
+          </svg>
+        </div>
+      </li>
+      <li
+        class="c10 c11"
+        draggable="true"
+      >
+        <span
+          class="c12"
+        >
+          2
+        </span>
+        <div
+          class="c5"
+        />
+        <div
+          class="c6"
+        >
+          <span
+            class="c13"
+          >
+            size
+          </span>
+        </div>
+        <div
+          class="c5"
+        />
+        <div
+          class="c14"
+        >
+          <button
+            aria-label="1 size move up"
+            class="c15"
+            disabled=""
+            id="sizeMoveUp"
+            tabindex="-1"
+            type="button"
+          >
+            <svg
+              aria-label="FormUp"
+              class="c16"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="m18 15-6-6-6 6"
+                fill="none"
+                stroke="#000"
+                stroke-width="2"
+              />
+            </svg>
+          </button>
+          <button
+            aria-label="1 size move down"
+            class="c15"
+            disabled=""
+            id="sizeMoveDown"
+            tabindex="-1"
+            type="button"
+          >
+            <svg
+              aria-label="FormDown"
+              class="c16"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="m18 9-6 6-6-6"
+                fill="none"
+                stroke="#000"
+                stroke-width="2"
+              />
+            </svg>
+          </button>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+`;
+
+exports[`DataTableColumns theme tabs pad, selectColumns pad and gap, orderColumns pad 1`] = `
+.c7 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+}
+
+.c1 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  padding-top: 48px;
+  padding-bottom: 48px;
+}
+
+.c9 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin-right: 12px;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.c12 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-items: center;
+  border: solid 2px #7D4CDB;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  height: 24px;
+  width: 24px;
+  justify-content: center;
+  border-radius: 4px;
+}
+
+.c6 {
+  flex: 0 0 auto;
+  align-self: stretch;
+  height: 48px;
+}
+
+.c14 {
+  flex: 0 0 auto;
+  align-self: stretch;
+  height: 12px;
+}
+
+.c4 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #666666;
+  stroke: #666666;
+}
+
+.c4 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c4 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c4 *[stroke*='#'],
+.c4 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c4 *[fill-rule],
+.c4 *[FILL-RULE],
+.c4 *[fill*='#'],
+.c4 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c13 {
+  box-sizing: border-box;
+  stroke-width: 4px;
+  stroke: #7D4CDB;
+  width: 24px;
+  height: 24px;
+}
+
+.c8 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  user-select: none;
+  -webkit-user-select: none;
+  width: fit-content;
+  cursor: pointer;
+}
+
+.c8:hover input:not([disabled])+div,
+.c8:hover input:not([disabled])+span {
+  border-color: #000000;
+}
+
+.c11 {
+  opacity: 0;
+  -moz-appearance: none;
+  width: 0;
+  height: 0;
+  margin: 0;
+  cursor: pointer;
+}
+
+.c11:checked+span>span {
+  left: calc( 48px - 24px );
+  background: #7D4CDB;
+}
+
+.c10 {
+  flex-shrink: 0;
+}
+
+.c5 {
+  box-sizing: border-box;
+  font-size: inherit;
+  font-family: inherit;
+  border: none;
+  -webkit-appearance: none;
+  background: transparent;
+  color: inherit;
+  width: 100%;
+  padding: 11px;
+  font-weight: 600;
+  margin: 0;
+  border: 1px solid rgba(0, 0, 0, 0.33);
+  border-radius: 4px;
+  padding-left: 48px;
+}
+
+.c5:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus >circle,
+.c5:focus >ellipse,
+.c5:focus >line,
+.c5:focus >path,
+.c5:focus >polygon,
+.c5:focus >polyline,
+.c5:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c5::-webkit-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c5::-moz-placeholder {
+  color: #AAAAAA;
+}
+
+.c5:-ms-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c5 ::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+.c5::-moz-focus-inner {
+  border: none;
+  outline: none;
+}
+
+.c5:-moz-placeholder,
+.c5::-moz-placeholder {
+  opacity: 1;
+}
+
+.c2 {
+  position: relative;
+  width: 100%;
+}
+
+.c3 {
+  position: absolute;
+  display: flex;
+  justify: center;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  left: 12px;
+}
+
+.c0 {
+  min-height: 0;
+}
+
+@media only screen and (max-width: 768px) {
+
+}
+
+@media only screen and (max-width: 768px) {
+
+}
+
+@media only screen and (max-width: 768px) {
+
+}
+
+@media only screen and (max-width: 768px) {
+
+}
+
+@media only screen and (max-width: 768px) {
+
+}
+
+@media only screen and (max-width: 768px) {
+
+}
+
+@media only screen and (max-width: 768px) {
+
+}
+
+@media only screen and (max-width: 768px) {
+
+}
+
+@media only screen and (max-width: 768px) {
+
+}
+
+@media only screen and (max-width: 768px) {
+  .c1 {
+    padding-top: 24px;
+    padding-bottom: 24px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c9 {
+    margin-right: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c12 {
+    border: solid 2px #7D4CDB;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c6 {
+    height: 24px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c14 {
+    height: 6px;
+  }
+}
+
+@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
+
+}
+
+<div
+  aria-label="Select columns Tab Contents"
+  class="c0"
+  role="tabpanel"
+>
+  <div
+    class="c1"
+  >
+    <div
+      class="c2"
+    >
+      <div
+        class="c3"
+      >
+        <svg
+          aria-label="Search"
+          class="c4"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="m15 15 7 7-7-7zm-5.5 2a7.5 7.5 0 1 0 0-15 7.5 7.5 0 0 0 0 15z"
+            fill="none"
+            stroke="#000"
+            stroke-width="2"
+          />
+        </svg>
+      </div>
+      <input
+        autocomplete="off"
+        class="c5"
+        placeholder="Search"
+        type="search"
+        value=""
+      />
+    </div>
+    <div
+      class="c6"
+    />
+    <div
+      aria-labelledby="data--select-columns-tab"
+      class="c7 StyledCheckBoxGroup-sc-2nhc5d-0"
+      id="data--select-columns"
+      role="group"
+    >
+      <label
+        class="c8"
+      >
+        <div
+          class="c9 c10"
+        >
+          <input
+            checked=""
+            class="c11"
+            type="checkbox"
+          />
+          <div
+            class="c12 "
+          >
+            <svg
+              class="c13"
+              preserveAspectRatio="xMidYMid meet"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M6,11.3 L10.3,16 L18,6.2"
+                fill="none"
+              />
+            </svg>
+          </div>
+        </div>
+        <span>
+          name
+        </span>
+      </label>
+      <div
+        class="c14"
+      />
+      <label
+        class="c8"
+      >
+        <div
+          class="c9 c10"
+        >
+          <input
+            checked=""
+            class="c11"
+            type="checkbox"
+          />
+          <div
+            class="c12 "
+          >
+            <svg
+              class="c13"
+              preserveAspectRatio="xMidYMid meet"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M6,11.3 L10.3,16 L18,6.2"
+                fill="none"
+              />
+            </svg>
+          </div>
+        </div>
+        <span>
+          age
+        </span>
+      </label>
+      <div
+        class="c14"
+      />
+      <label
+        class="c8"
+      >
+        <div
+          class="c9 c10"
+        >
+          <input
+            checked=""
+            class="c11"
+            type="checkbox"
+          />
+          <div
+            class="c12 "
+          >
+            <svg
+              class="c13"
+              preserveAspectRatio="xMidYMid meet"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M6,11.3 L10.3,16 L18,6.2"
+                fill="none"
+              />
+            </svg>
+          </div>
+        </div>
+        <span>
+          location
+        </span>
+      </label>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`DataTableColumns theme tabs pad, selectColumns pad and gap, orderColumns pad 2`] = `
+<div
+  aria-label="Order columns Tab Contents"
+  class="StyledTabs__StyledTabPanel-sc-a4fwxl-1 kwlwid"
+  role="tabpanel"
+>
+  <div
+    class="StyledBox-sc-13pk1d4-0 hqinuj"
+  >
+    .c1 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-items: center;
+  border-top: solid 1px rgba(0, 0, 0, 0.33);
+  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
+  min-width: 0;
+  min-height: 0;
+  flex-direction: row;
+  flex: 0 0 auto;
+  padding: 0px;
+}
+
+.c5 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  flex: 1 1;
+}
+
+.c6 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.c10 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-items: center;
+  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
+  min-width: 0;
+  min-height: 0;
+  flex-direction: row;
+  flex: 0 0 auto;
+  padding: 0px;
+}
+
+.c4 {
+  flex: 0 0 auto;
+  align-self: stretch;
+  width: 24px;
+}
+
+.c8 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #666666;
+  stroke: #666666;
+}
+
+.c8 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c8 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c8 *[stroke*='#'],
+.c8 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c8 *[fill-rule],
+.c8 *[FILL-RULE],
+.c8 *[fill*='#'],
+.c8 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c3 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c7 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+  opacity: 0.3;
+  cursor: default;
+  line-height: 0;
+  padding: 12px;
+}
+
+.c7:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c7:focus >circle,
+.c7:focus >ellipse,
+.c7:focus >line,
+.c7:focus >path,
+.c7:focus >polygon,
+.c7:focus >polyline,
+.c7:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c7:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c7:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c7:focus:not(:focus-visible) >circle,
+.c7:focus:not(:focus-visible) >ellipse,
+.c7:focus:not(:focus-visible) >line,
+.c7:focus:not(:focus-visible) >path,
+.c7:focus:not(:focus-visible) >polygon,
+.c7:focus:not(:focus-visible) >polyline,
+.c7:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c7:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
+}
+
+.c9 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+  line-height: 0;
+  padding: 12px;
+}
+
+.c9:hover {
+  background-color: rgba(221, 221, 221, 0.4);
+  color: #000000;
+}
+
+.c9:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c9:focus >circle,
+.c9:focus >ellipse,
+.c9:focus >line,
+.c9:focus >path,
+.c9:focus >polygon,
+.c9:focus >polyline,
+.c9:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c9:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c9:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c9:focus:not(:focus-visible) >circle,
+.c9:focus:not(:focus-visible) >ellipse,
+.c9:focus:not(:focus-visible) >line,
+.c9:focus:not(:focus-visible) >path,
+.c9:focus:not(:focus-visible) >polygon,
+.c9:focus:not(:focus-visible) >polyline,
+.c9:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c9:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
+}
+
+.c0 {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.c2 {
+  cursor: move;
+}
+
+@media only screen and (max-width: 768px) {
+
+}
+
+@media only screen and (max-width: 768px) {
+
+}
+
+@media only screen and (max-width: 768px) {
+
+}
+
+@media only screen and (max-width: 768px) {
+
+}
+
+@media only screen and (max-width: 768px) {
+
+}
+
+@media only screen and (max-width: 768px) {
+
+}
+
+@media only screen and (max-width: 768px) {
+
+}
+
+@media only screen and (max-width: 768px) {
+
+}
+
+@media only screen and (max-width: 768px) {
+
+}
+
+@media only screen and (max-width: 768px) {
+
+}
+
+@media only screen and (max-width: 768px) {
+
+}
+
+@media only screen and (max-width: 768px) {
+
+}
+
+@media only screen and (max-width: 768px) {
+
+}
+
+@media only screen and (max-width: 768px) {
+  .c1 {
+    border-top: solid 1px rgba(0, 0, 0, 0.33);
+    border-bottom: solid 1px rgba(0, 0, 0, 0.33);
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c1 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c10 {
+    border-bottom: solid 1px rgba(0, 0, 0, 0.33);
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c10 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+
+}
+
+@media only screen and (max-width: 768px) {
+
+}
+
+@media only screen and (max-width: 768px) {
+  .c4 {
+    width: 12px;
+  }
+}
+
+@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
+
+}
+
+<ul
+      aria-labelledby="data--order-columns-tab"
+      class="c0"
+      id="data--order-columns"
+      role="list"
+    >
+      <li
+        class="c1 c2"
+        draggable="true"
+      >
+        <span
+          class="c3"
+        >
+          1
+        </span>
+        <div
+          class="c4"
+        />
+        <div
+          class="c5"
+        >
+          name
+        </div>
+        <div
+          class="c4"
+        />
+        <div
+          class="c6"
+        >
+          <button
+            aria-label="1 name move up"
+            class="c7"
+            disabled=""
+            id="nameMoveUp"
+            tabindex="-1"
+            type="button"
+          >
+            <svg
+              aria-label="FormUp"
+              class="c8"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="m18 15-6-6-6 6"
+                fill="none"
+                stroke="#000"
+                stroke-width="2"
+              />
+            </svg>
+          </button>
+          <button
+            aria-label="1 name move down"
+            class="c9"
+            id="nameMoveDown"
+            tabindex="0"
+            type="button"
+          >
+            <svg
+              aria-label="FormDown"
+              class="c8"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="m18 9-6 6-6-6"
+                fill="none"
+                stroke="#000"
+                stroke-width="2"
+              />
+            </svg>
+          </button>
+        </div>
+      </li>
+      <li
+        class="c10 c2"
+        draggable="true"
+      >
+        <span
+          class="c3"
+        >
+          2
+        </span>
+        <div
+          class="c4"
+        />
+        <div
+          class="c5"
+        >
+          age
+        </div>
+        <div
+          class="c4"
+        />
+        <div
+          class="c6"
+        >
+          <button
+            aria-label="2 age move up"
+            class="c9"
+            id="ageMoveUp"
+            tabindex="-1"
+            type="button"
+          >
+            <svg
+              aria-label="FormUp"
+              class="c8"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="m18 15-6-6-6 6"
+                fill="none"
+                stroke="#000"
+                stroke-width="2"
+              />
+            </svg>
+          </button>
+          <button
+            aria-label="2 age move down"
+            class="c9"
+            id="ageMoveDown"
+            tabindex="-1"
+            type="button"
+          >
+            <svg
+              aria-label="FormDown"
+              class="c8"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="m18 9-6 6-6-6"
+                fill="none"
+                stroke="#000"
+                stroke-width="2"
+              />
+            </svg>
+          </button>
+        </div>
+      </li>
+      <li
+        class="c10 c2"
+        draggable="true"
+      >
+        <span
+          class="c3"
+        >
+          3
+        </span>
+        <div
+          class="c4"
+        />
+        <div
+          class="c5"
+        >
+          location
+        </div>
+        <div
+          class="c4"
+        />
+        <div
+          class="c6"
+        >
+          <button
+            aria-label="3 location move up"
+            class="c9"
+            id="locationMoveUp"
+            tabindex="-1"
+            type="button"
+          >
+            <svg
+              aria-label="FormUp"
+              class="c8"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="m18 15-6-6-6 6"
+                fill="none"
+                stroke="#000"
+                stroke-width="2"
+              />
+            </svg>
+          </button>
+          <button
+            aria-label="3 location move down"
+            class="c7"
+            disabled=""
+            id="locationMoveDown"
+            tabindex="-1"
+            type="button"
+          >
+            <svg
+              aria-label="FormDown"
+              class="c8"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="m18 9-6 6-6-6"
+                fill="none"
+                stroke="#000"
+                stroke-width="2"
+              />
+            </svg>
+          </button>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+`;

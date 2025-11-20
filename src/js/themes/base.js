@@ -462,7 +462,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
     },
     box: {
       border: {
-        size: 'xsmall',
+        offset: 'xsmall',
       },
       responsiveBreakpoint: 'small', // when we switch rows to columns
       // extend: undefined,
@@ -488,6 +488,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
       busy: {
         gap: 'small',
+        // icons: {
+        //   success: undefined,
+        // },
       },
       gap: 'small',
       size: {
@@ -945,8 +948,19 @@ export const generate = (baseSpacing = 24, scale = 6) => {
     },
     dataChart: {
       gap: 'small',
+      // granularity: {
+      //   y: {},
+      // },
       detail: {
         gap: 'xsmall',
+        pad: 'small',
+      },
+      halfPad: {
+        xlarge: 'large',
+        large: 'medium',
+        medium: 'small',
+        small: 'xsmall',
+        xsmall: 'xxsmall',
       },
       legend: {
         margin: { top: 'small' },
@@ -956,6 +970,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           pad: { horizontal: 'small', vertical: 'xsmall' },
         },
       },
+      // orderedSizes: undefined,
       size: {
         height: 'small',
       },
@@ -985,6 +1000,10 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
     },
     dataFilters: {
+      // icons: {
+      //   close: undefined,
+      //   filter: undefined,
+      // }
       footer: {
         actions: {
           margin: { top: 'medium' },
@@ -1005,8 +1024,19 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         round: 'xxsmall',
       },
       icon: {
+        // calendar: undefined,
         size: 'medium',
       },
+    },
+    dataSearch: {
+      // icons: {
+      //   search: undefined,
+      // },
+    },
+    dataSort: {
+      // icons: {
+      //   control: undefined,
+      // },
     },
     dataSummary: {
       margin: { vertical: 'xsmall' },
@@ -1077,6 +1107,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         contract: FormUp,
         descending: FormUp,
         expand: FormDown,
+        // resizeDecrease: undefined,
+        // resizeIncrease: undefined,
+        // search: undefined,
         // sortable: undefined,
       },
       primary: {
@@ -1094,6 +1127,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         //     size: undefined,
         //   },
         // },
+        padding: {
+          vertical: 'xsmall',
+        },
       },
       search: {
         pad: {
@@ -1110,6 +1146,11 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
     },
     dataTableColumns: {
+      // icons: {
+      //   control: undefined,
+      //   pinned: undefined,
+      //   search: undefined,
+      // }
       tabs: {
         pad: 'small',
       },
@@ -1162,6 +1203,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         // extend: undefined,
       },
       icons: {
+        // error: undefined,
         remove: FormClose,
       },
       // pad: {},
@@ -1927,6 +1969,12 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       // dislike: {
       //   color: undefined,
       // },
+      // icons: {
+      //   dislike: undefined,
+      //   dislikeSelected: undefined,
+      //   like: undefined,
+      //   likeSelected: undefined,
+      // }
       // like: {
       //   color: undefined,
       // },
@@ -2159,6 +2207,10 @@ export const generate = (baseSpacing = 24, scale = 6) => {
     },
     starRating: {
       // color: undefined,
+      // icons: {
+      //   selected: undefined,
+      //   unselected: undefined,
+      // },
     },
     tab: {
       active: {
@@ -2227,9 +2279,11 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         // },
         // extend: undefined,
         nextButton: {
+          // icon: undefined,
           pad: { horizontal: 'small', vertical: 'xsmall' },
         },
         previousButton: {
+          // icon: undefined,
           pad: { horizontal: 'small', vertical: 'xsmall' },
         },
       },
@@ -2279,6 +2333,10 @@ export const generate = (baseSpacing = 24, scale = 6) => {
     tag: {
       // background: undefined,
       border: true,
+      // hover: {
+      //   background: undefined,
+      //   border: undefined,
+      // },
       round: 'large',
       // name: undefined,
       pad: {
@@ -2362,6 +2420,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
     textInput: {
       // extend: undefined,
       // disabled: { opacity: undefined },
+      // icons: {
+      //   copy: undefined,
+      // },
     },
     tip: {
       content: {
