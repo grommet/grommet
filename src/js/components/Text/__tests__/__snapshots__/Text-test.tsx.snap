@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
-exports[`accepts ref 1`] = `
+exports[`Text accepts ref 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -27,7 +27,7 @@ exports[`accepts ref 1`] = `
 </div>
 `;
 
-exports[`renders 1`] = `
+exports[`Text renders 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -54,7 +54,7 @@ exports[`renders 1`] = `
 </div>
 `;
 
-exports[`renders color 1`] = `
+exports[`Text renders color 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -80,7 +80,7 @@ exports[`renders color 1`] = `
 </div>
 `;
 
-exports[`renders margin 1`] = `
+exports[`Text renders margin 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -189,7 +189,7 @@ exports[`renders margin 1`] = `
 </div>
 `;
 
-exports[`renders outside grommet wrapper 1`] = `
+exports[`Text renders outside grommet wrapper 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -202,7 +202,7 @@ exports[`renders outside grommet wrapper 1`] = `
 </span>
 `;
 
-exports[`renders size 1`] = `
+exports[`Text renders size 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -302,7 +302,7 @@ exports[`renders size 1`] = `
 </div>
 `;
 
-exports[`renders tag 1`] = `
+exports[`Text renders tag 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -327,7 +327,7 @@ exports[`renders tag 1`] = `
 </div>
 `;
 
-exports[`renders textAlign 1`] = `
+exports[`Text renders textAlign 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -380,7 +380,7 @@ exports[`renders textAlign 1`] = `
 </div>
 `;
 
-exports[`renders tip 1`] = `
+exports[`Text renders tip on hover 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -424,15 +424,17 @@ exports[`renders tip 1`] = `
   class="c0"
 >
   <span
+    aria-describedby="_r_15_"
     aria-label="tooltip"
     class="c1"
+    tabindex="0"
   >
     Default Tip
   </span>
 </div>
 `;
 
-exports[`renders truncate 1`] = `
+exports[`Text renders truncate 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -473,7 +475,7 @@ exports[`renders truncate 1`] = `
 </div>
 `;
 
-exports[`renders weight 1`] = `
+exports[`Text renders weight 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -508,7 +510,7 @@ exports[`renders weight 1`] = `
 </div>
 `;
 
-exports[`should apply a11yTitle or aria-label 1`] = `
+exports[`Text should apply a11yTitle or aria-label 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -542,7 +544,7 @@ exports[`should apply a11yTitle or aria-label 1`] = `
 </div>
 `;
 
-exports[`should have no accessibility violations 1`] = `
+exports[`Text should have no accessibility violations 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
