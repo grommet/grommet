@@ -4,7 +4,7 @@ import { useLayoutEffect } from '../../utils/use-isomorphic-layout-effect';
 
 import { StyledText } from './StyledText';
 import { Tip } from '../Tip';
-import { useForwardedRef, useId } from '../../utils';
+import { useForwardedRef, getTextFromReactNode, useId } from '../../utils';
 import { TextPropTypes } from './propTypes';
 import { useSkeleton } from '../Skeleton';
 import { TextSkeleton } from './TextSkeleton';
@@ -21,7 +21,7 @@ const Text = forwardRef(
       tip: tipProp,
       // can't alphabetize a11yTitle before tip is defined
       a11yTitle = (typeof tipProp === 'string' && tipProp) ||
-        tipProp?.content ||
+        (tipProp?.content && getTextFromReactNode(tipProp?.content)) ||
         undefined,
       truncate,
       size,

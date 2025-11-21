@@ -424,7 +424,7 @@ exports[`Text renders tip on hover 1`] = `
   class="c0"
 >
   <span
-    aria-describedby="«r15»"
+    aria-describedby="_r_15_"
     aria-label="tooltip"
     class="c1"
     tabindex="0"
