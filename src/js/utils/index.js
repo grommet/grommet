@@ -6,7 +6,6 @@ export * from './colors';
 export * from './dates';
 export * from './DOM';
 export * from './graphics';
-export * from './getTextFromReactNode';
 export * from './icon';
 export * from './styles';
 export * from './object';
