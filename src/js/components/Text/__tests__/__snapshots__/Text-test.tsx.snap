@@ -424,8 +424,7 @@ exports[`Text renders tip on hover 1`] = `
   class="c0"
 >
   <span
-    aria-describedby="_r_15_"
-    aria-label="tooltip"
+    aria-labelledby="_r_15_-tipId"
     class="c1"
     tabindex="0"
   >
@@ -510,7 +509,7 @@ exports[`Text renders weight 1`] = `
 </div>
 `;
 
-exports[`Text should apply a11yTitle or aria-label 1`] = `
+exports[`Text should apply aria-labelledby 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -530,16 +529,41 @@ exports[`Text should apply a11yTitle or aria-label 1`] = `
   class="c0"
 >
   <span
-    aria-label="test"
+    aria-labelledby="_r_16_-tipId"
     class="c1"
+    tabindex="0"
   >
-     Example
+    Example with tip
   </span>
+</div>
+`;
+
+exports[`Text should apply aria-labelledby with id prop 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+<div
+  class="c0"
+>
   <span
-    aria-label="test-2"
+    aria-labelledby="custom-id-tipId"
     class="c1"
+    id="custom-id"
+    tabindex="0"
   >
-    Example
+    Example with tip
   </span>
 </div>
 `;
@@ -567,7 +591,7 @@ exports[`Text should have no accessibility violations 1`] = `
     aria-label="test"
     class="c1"
   >
-     Example
+    Example
   </span>
 </div>
 `;

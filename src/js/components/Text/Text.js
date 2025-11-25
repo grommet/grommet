@@ -4,7 +4,7 @@ import { useLayoutEffect } from '../../utils/use-isomorphic-layout-effect';
 
 import { StyledText } from './StyledText';
 import { Tip } from '../Tip';
-import { useForwardedRef, getTextFromReactNode, useId } from '../../utils';
+import { useForwardedRef, useId } from '../../utils';
 import { TextPropTypes } from './propTypes';
 import { useSkeleton } from '../Skeleton';
 import { TextSkeleton } from './TextSkeleton';
@@ -19,10 +19,6 @@ const Text = forwardRef(
       tag,
       as,
       tip: tipProp,
-      // can't alphabetize a11yTitle before tip is defined
-      a11yTitle = (typeof tipProp === 'string' && tipProp) ||
-        (tipProp?.content && getTextFromReactNode(tipProp?.content)) ||
-        undefined,
       truncate,
       size,
       skeleton: skeletonProp,
@@ -31,11 +27,12 @@ const Text = forwardRef(
     },
     ref,
   ) => {
-    const [textTruncated, setTextTruncated] = useState(false);
-    const textContextValue = useMemo(() => ({ size }), [size]);
     const { passThemeFlag } = useThemeValue();
     const textRef = useForwardedRef(ref);
-    const tipId = useId();
+    const [textTruncated, setTextTruncated] = useState(false);
+    const textContextValue = useMemo(() => ({ size }), [size]);
+    const generatedId = useId();
+    const tipId = `${rest.id || generatedId}-tipId`;
     const skeleton = useSkeleton();
 
     useLayoutEffect(() => {
@@ -76,7 +73,7 @@ const Text = forwardRef(
     if (tipProp || textTruncated) {
       extraA11yProps = {
         tabIndex: 0,
-        'aria-describedby': tipId,
+        'aria-labelledby': tipId,
       };
     }
 
@@ -84,7 +81,6 @@ const Text = forwardRef(
       <StyledText
         as={!as && tag ? tag : as}
         colorProp={color}
-        aria-label={a11yTitle}
         level={level}
         truncate={truncate}
         size={size}
@@ -104,6 +100,7 @@ const Text = forwardRef(
     if (tipProp || textTruncated) {
       let tipProps = tipProp && typeof tipProp === 'object' ? tipProp : {};
       tipProps = { ...tipProps, id: tipId };
+
       // place the text content in a tip if truncate === 'tip'
       // and the text has been truncated
       if (textTruncated) {

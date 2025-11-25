@@ -13,7 +13,7 @@ describe('Text', () => {
   test('should have no accessibility violations', async () => {
     const { container } = render(
       <Grommet>
-        <Text a11yTitle="test"> Example</Text>
+        <Text aria-label="test">Example</Text>
       </Grommet>,
     );
 
@@ -162,7 +162,6 @@ describe('Text', () => {
   });
 
   test('renders tip on hover', () => {
-    jest.spyOn(UseIdModule, 'useId').mockReturnValue('fixed-id-123');
     const { container, getByText } = render(
       <Grommet>
         <Text tip="tooltip">Default Tip</Text>
@@ -171,19 +170,37 @@ describe('Text', () => {
 
     fireEvent.mouseOver(getByText('Default Tip'));
     expect(container.firstChild).toMatchSnapshot();
-    (UseIdModule.useId as jest.Mock).mockRestore();
   });
 
-  test('should apply a11yTitle or aria-label', () => {
-    const { container, getByLabelText } = render(
+  test('should apply aria-labelledby', () => {
+    const { container, getByText } = render(
       <Grommet>
-        <Text a11yTitle="test"> Example</Text>
-        <Text aria-label="test-2">Example</Text>
+        <Text tip="tooltip description">Example with tip</Text>
       </Grommet>,
     );
 
-    expect(getByLabelText('test')).toBeTruthy();
-    expect(getByLabelText('test-2')).toBeTruthy();
+    const textWithTip = getByText('Example with tip');
+    // expect(textWithTip).toHaveAttribute('aria-labelledby');
+    const ariaLabelledBy = textWithTip.getAttribute('aria-labelledby');
+    expect(ariaLabelledBy).toContain('-tipId');
     expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('should apply aria-labelledby with id prop', () => {
+    jest.spyOn(UseIdModule, 'useId').mockReturnValue('custom-id');
+    const { container, getByText } = render(
+      <Grommet>
+        <Text tip="tooltip description" id="custom-id">
+          Example with tip
+        </Text>
+      </Grommet>,
+    );
+
+    const textWithTip = getByText('Example with tip');
+    // expect(textWithTip).toHaveAttribute('aria-labelledby');
+    const ariaLabelledBy = textWithTip.getAttribute('aria-labelledby');
+    expect(ariaLabelledBy).toMatch('custom-id');
+    expect(container.firstChild).toMatchSnapshot();
+    (UseIdModule.useId as jest.Mock).mockRestore();
   });
 });
