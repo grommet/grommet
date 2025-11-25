@@ -180,7 +180,6 @@ describe('Text', () => {
     );
 
     const textWithTip = getByText('Example with tip');
-    // expect(textWithTip).toHaveAttribute('aria-labelledby');
     const ariaLabelledBy = textWithTip.getAttribute('aria-labelledby');
     expect(ariaLabelledBy).toContain('-tipId');
     expect(container.firstChild).toMatchSnapshot();
@@ -197,7 +196,6 @@ describe('Text', () => {
     );
 
     const textWithTip = getByText('Example with tip');
-    // expect(textWithTip).toHaveAttribute('aria-labelledby');
     const ariaLabelledBy = textWithTip.getAttribute('aria-labelledby');
     expect(ariaLabelledBy).toMatch('custom-id');
     expect(container.firstChild).toMatchSnapshot();
