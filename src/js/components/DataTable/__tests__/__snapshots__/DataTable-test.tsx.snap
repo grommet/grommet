@@ -3406,7 +3406,7 @@ exports[`DataTable click 2`] = `
             class="StyledBox-sc-13pk1d4-0 gslZZZ"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 jTcNpm"
+              class="StyledText-sc-1sadyjn-0 fzDegB"
             >
               A
             </span>
@@ -3429,7 +3429,7 @@ exports[`DataTable click 2`] = `
             class="StyledBox-sc-13pk1d4-0 fDLUqh"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 hkbTGI"
+              class="StyledText-sc-1sadyjn-0 jPJIND"
             >
               alpha
             </span>
@@ -3448,7 +3448,7 @@ exports[`DataTable click 2`] = `
             class="StyledBox-sc-13pk1d4-0 fDLUqh"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 hkbTGI"
+              class="StyledText-sc-1sadyjn-0 jPJIND"
             >
               beta
             </span>
@@ -4089,7 +4089,7 @@ exports[`DataTable custom theme 2`] = `
                 class="StyledBox-sc-13pk1d4-0 hiaLUp"
               >
                 <span
-                  class="StyledText-sc-1sadyjn-0 hkbTGI"
+                  class="StyledText-sc-1sadyjn-0 jPJIND"
                 >
                   A
                 </span>
@@ -4174,7 +4174,7 @@ exports[`DataTable custom theme 2`] = `
             class="StyledBox-sc-13pk1d4-0 fDLUqh"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 hkbTGI"
+              class="StyledText-sc-1sadyjn-0 jPJIND"
             >
               alpha
             </span>
@@ -4222,7 +4222,7 @@ exports[`DataTable custom theme 2`] = `
             class="StyledBox-sc-13pk1d4-0 fDLUqh"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 hkbTGI"
+              class="StyledText-sc-1sadyjn-0 jPJIND"
             >
               beta
             </span>
@@ -4444,7 +4444,7 @@ exports[`DataTable disable row click using space key press 2`] = `
             class="StyledBox-sc-13pk1d4-0 gslZZZ"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 jTcNpm"
+              class="StyledText-sc-1sadyjn-0 fzDegB"
             >
               Name
             </span>
@@ -4468,7 +4468,7 @@ exports[`DataTable disable row click using space key press 2`] = `
             class="StyledBox-sc-13pk1d4-0 fDLUqh"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 hkbTGI"
+              class="StyledText-sc-1sadyjn-0 jPJIND"
             >
               alpha
             </span>
@@ -4709,7 +4709,7 @@ exports[`DataTable disabled click 2`] = `
             class="StyledBox-sc-13pk1d4-0 gslZZZ"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 jTcNpm"
+              class="StyledText-sc-1sadyjn-0 fzDegB"
             >
               A
             </span>
@@ -4733,7 +4733,7 @@ exports[`DataTable disabled click 2`] = `
             class="StyledBox-sc-13pk1d4-0 fDLUqh"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 hkbTGI"
+              class="StyledText-sc-1sadyjn-0 jPJIND"
             >
               alpha
             </span>
@@ -4752,7 +4752,7 @@ exports[`DataTable disabled click 2`] = `
             class="StyledBox-sc-13pk1d4-0 fDLUqh"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 hkbTGI"
+              class="StyledText-sc-1sadyjn-0 jPJIND"
             >
               beta
             </span>
@@ -8232,7 +8232,7 @@ exports[`DataTable groupBy 2`] = `
             class="StyledBox-sc-13pk1d4-0 gslZZZ"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 jTcNpm"
+              class="StyledText-sc-1sadyjn-0 fzDegB"
             >
               A
             </span>
@@ -8247,7 +8247,7 @@ exports[`DataTable groupBy 2`] = `
             class="StyledBox-sc-13pk1d4-0 gslZZZ"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 jTcNpm"
+              class="StyledText-sc-1sadyjn-0 fzDegB"
             >
               B
             </span>
@@ -8301,7 +8301,7 @@ exports[`DataTable groupBy 2`] = `
             class="StyledBox-sc-13pk1d4-0 fDLUqh"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 jTcNpm"
+              class="StyledText-sc-1sadyjn-0 fzDegB"
             >
               one
             </span>
@@ -8358,7 +8358,7 @@ exports[`DataTable groupBy 2`] = `
             class="StyledBox-sc-13pk1d4-0 fDLUqh"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 jTcNpm"
+              class="StyledText-sc-1sadyjn-0 fzDegB"
             >
               two
             </span>
@@ -9551,7 +9551,7 @@ exports[`DataTable groupBy property 2`] = `
             class="StyledBox-sc-13pk1d4-0 gslZZZ"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 jTcNpm"
+              class="StyledText-sc-1sadyjn-0 fzDegB"
             >
               A
             </span>
@@ -9566,7 +9566,7 @@ exports[`DataTable groupBy property 2`] = `
             class="StyledBox-sc-13pk1d4-0 gslZZZ"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 jTcNpm"
+              class="StyledText-sc-1sadyjn-0 fzDegB"
             >
               B
             </span>
@@ -9620,7 +9620,7 @@ exports[`DataTable groupBy property 2`] = `
             class="StyledBox-sc-13pk1d4-0 fDLUqh"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 jTcNpm"
+              class="StyledText-sc-1sadyjn-0 fzDegB"
             >
               one
             </span>
@@ -9677,7 +9677,7 @@ exports[`DataTable groupBy property 2`] = `
             class="StyledBox-sc-13pk1d4-0 fDLUqh"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 jTcNpm"
+              class="StyledText-sc-1sadyjn-0 fzDegB"
             >
               two
             </span>
@@ -10214,7 +10214,7 @@ exports[`DataTable groupBy toggle 2`] = `
             class="StyledBox-sc-13pk1d4-0 gslZZZ"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 jTcNpm"
+              class="StyledText-sc-1sadyjn-0 fzDegB"
             >
               A
             </span>
@@ -10229,7 +10229,7 @@ exports[`DataTable groupBy toggle 2`] = `
             class="StyledBox-sc-13pk1d4-0 gslZZZ"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 jTcNpm"
+              class="StyledText-sc-1sadyjn-0 fzDegB"
             >
               B
             </span>
@@ -10610,7 +10610,7 @@ exports[`DataTable groupBy toggle 3`] = `
             class="StyledBox-sc-13pk1d4-0 gslZZZ"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 jTcNpm"
+              class="StyledText-sc-1sadyjn-0 fzDegB"
             >
               A
             </span>
@@ -10625,7 +10625,7 @@ exports[`DataTable groupBy toggle 3`] = `
             class="StyledBox-sc-13pk1d4-0 gslZZZ"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 jTcNpm"
+              class="StyledText-sc-1sadyjn-0 fzDegB"
             >
               B
             </span>
@@ -11389,7 +11389,7 @@ exports[`DataTable messages prop overrides theme messages 2`] = `
             class="StyledBox-sc-13pk1d4-0 gslZZZ"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 jTcNpm"
+              class="StyledText-sc-1sadyjn-0 fzDegB"
             >
               A
             </span>
@@ -11404,7 +11404,7 @@ exports[`DataTable messages prop overrides theme messages 2`] = `
             class="StyledBox-sc-13pk1d4-0 gslZZZ"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 jTcNpm"
+              class="StyledText-sc-1sadyjn-0 fzDegB"
             >
               B
             </span>
@@ -11498,7 +11498,7 @@ exports[`DataTable messages prop overrides theme messages 2`] = `
             class="StyledBox-sc-13pk1d4-0 fDLUqh"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 jTcNpm"
+              class="StyledText-sc-1sadyjn-0 fzDegB"
             >
               one
             </span>
@@ -11951,7 +11951,7 @@ exports[`DataTable messages prop overrides theme messages 2`] = `
             class="StyledBox-sc-13pk1d4-0 fDLUqh"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 jTcNpm"
+              class="StyledText-sc-1sadyjn-0 fzDegB"
             >
               two
             </span>
@@ -15204,7 +15204,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 2`
             class="StyledBox-sc-13pk1d4-0 gslZZZ"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 jTcNpm"
+              class="StyledText-sc-1sadyjn-0 fzDegB"
             >
               A
             </span>
@@ -15219,7 +15219,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 2`
             class="StyledBox-sc-13pk1d4-0 gslZZZ"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 jTcNpm"
+              class="StyledText-sc-1sadyjn-0 fzDegB"
             >
               B
             </span>
@@ -15333,7 +15333,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 2`
             class="StyledBox-sc-13pk1d4-0 fDLUqh"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 jTcNpm"
+              class="StyledText-sc-1sadyjn-0 fzDegB"
             >
               one
             </span>
@@ -15450,7 +15450,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 2`
             class="StyledBox-sc-13pk1d4-0 fDLUqh"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 jTcNpm"
+              class="StyledText-sc-1sadyjn-0 fzDegB"
             >
               two
             </span>
@@ -15549,7 +15549,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 3`
             class="StyledBox-sc-13pk1d4-0 gslZZZ"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 jTcNpm"
+              class="StyledText-sc-1sadyjn-0 fzDegB"
             >
               A
             </span>
@@ -15564,7 +15564,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 3`
             class="StyledBox-sc-13pk1d4-0 gslZZZ"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 jTcNpm"
+              class="StyledText-sc-1sadyjn-0 fzDegB"
             >
               B
             </span>
@@ -15643,7 +15643,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 3`
             class="StyledBox-sc-13pk1d4-0 fDLUqh"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 jTcNpm"
+              class="StyledText-sc-1sadyjn-0 fzDegB"
             >
               one
             </span>
@@ -15725,7 +15725,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 3`
             class="StyledBox-sc-13pk1d4-0 fDLUqh"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 jTcNpm"
+              class="StyledText-sc-1sadyjn-0 fzDegB"
             >
               two
             </span>
@@ -16347,7 +16347,7 @@ exports[`DataTable onSelect select/unselect all 2`] = `
             class="StyledBox-sc-13pk1d4-0 gslZZZ"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 jTcNpm"
+              class="StyledText-sc-1sadyjn-0 fzDegB"
             >
               A
             </span>
@@ -16362,7 +16362,7 @@ exports[`DataTable onSelect select/unselect all 2`] = `
             class="StyledBox-sc-13pk1d4-0 gslZZZ"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 jTcNpm"
+              class="StyledText-sc-1sadyjn-0 fzDegB"
             >
               B
             </span>
@@ -16435,7 +16435,7 @@ exports[`DataTable onSelect select/unselect all 2`] = `
             class="StyledBox-sc-13pk1d4-0 fDLUqh"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 jTcNpm"
+              class="StyledText-sc-1sadyjn-0 fzDegB"
             >
               one
             </span>
@@ -16449,7 +16449,7 @@ exports[`DataTable onSelect select/unselect all 2`] = `
             class="StyledBox-sc-13pk1d4-0 fDLUqh"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 hkbTGI"
+              class="StyledText-sc-1sadyjn-0 jPJIND"
             >
               1.1
             </span>
@@ -16518,7 +16518,7 @@ exports[`DataTable onSelect select/unselect all 2`] = `
             class="StyledBox-sc-13pk1d4-0 fDLUqh"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 jTcNpm"
+              class="StyledText-sc-1sadyjn-0 fzDegB"
             >
               one
             </span>
@@ -16532,7 +16532,7 @@ exports[`DataTable onSelect select/unselect all 2`] = `
             class="StyledBox-sc-13pk1d4-0 fDLUqh"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 hkbTGI"
+              class="StyledText-sc-1sadyjn-0 jPJIND"
             >
               1.2
             </span>
@@ -16601,7 +16601,7 @@ exports[`DataTable onSelect select/unselect all 2`] = `
             class="StyledBox-sc-13pk1d4-0 fDLUqh"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 jTcNpm"
+              class="StyledText-sc-1sadyjn-0 fzDegB"
             >
               two
             </span>
@@ -16615,7 +16615,7 @@ exports[`DataTable onSelect select/unselect all 2`] = `
             class="StyledBox-sc-13pk1d4-0 fDLUqh"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 hkbTGI"
+              class="StyledText-sc-1sadyjn-0 jPJIND"
             >
               2.1
             </span>
@@ -16684,7 +16684,7 @@ exports[`DataTable onSelect select/unselect all 2`] = `
             class="StyledBox-sc-13pk1d4-0 fDLUqh"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 jTcNpm"
+              class="StyledText-sc-1sadyjn-0 fzDegB"
             >
               two
             </span>
@@ -16698,7 +16698,7 @@ exports[`DataTable onSelect select/unselect all 2`] = `
             class="StyledBox-sc-13pk1d4-0 fDLUqh"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 hkbTGI"
+              class="StyledText-sc-1sadyjn-0 jPJIND"
             >
               2.2
             </span>
@@ -16758,7 +16758,7 @@ exports[`DataTable onSelect select/unselect all 3`] = `
             class="StyledBox-sc-13pk1d4-0 gslZZZ"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 jTcNpm"
+              class="StyledText-sc-1sadyjn-0 fzDegB"
             >
               A
             </span>
@@ -16773,7 +16773,7 @@ exports[`DataTable onSelect select/unselect all 3`] = `
             class="StyledBox-sc-13pk1d4-0 gslZZZ"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 jTcNpm"
+              class="StyledText-sc-1sadyjn-0 fzDegB"
             >
               B
             </span>
@@ -16819,7 +16819,7 @@ exports[`DataTable onSelect select/unselect all 3`] = `
             class="StyledBox-sc-13pk1d4-0 fDLUqh"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 jTcNpm"
+              class="StyledText-sc-1sadyjn-0 fzDegB"
             >
               one
             </span>
@@ -16833,7 +16833,7 @@ exports[`DataTable onSelect select/unselect all 3`] = `
             class="StyledBox-sc-13pk1d4-0 fDLUqh"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 hkbTGI"
+              class="StyledText-sc-1sadyjn-0 jPJIND"
             >
               1.1
             </span>
@@ -16875,7 +16875,7 @@ exports[`DataTable onSelect select/unselect all 3`] = `
             class="StyledBox-sc-13pk1d4-0 fDLUqh"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 jTcNpm"
+              class="StyledText-sc-1sadyjn-0 fzDegB"
             >
               one
             </span>
@@ -16889,7 +16889,7 @@ exports[`DataTable onSelect select/unselect all 3`] = `
             class="StyledBox-sc-13pk1d4-0 fDLUqh"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 hkbTGI"
+              class="StyledText-sc-1sadyjn-0 jPJIND"
             >
               1.2
             </span>
@@ -16931,7 +16931,7 @@ exports[`DataTable onSelect select/unselect all 3`] = `
             class="StyledBox-sc-13pk1d4-0 fDLUqh"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 jTcNpm"
+              class="StyledText-sc-1sadyjn-0 fzDegB"
             >
               two
             </span>
@@ -16945,7 +16945,7 @@ exports[`DataTable onSelect select/unselect all 3`] = `
             class="StyledBox-sc-13pk1d4-0 fDLUqh"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 hkbTGI"
+              class="StyledText-sc-1sadyjn-0 jPJIND"
             >
               2.1
             </span>
@@ -16987,7 +16987,7 @@ exports[`DataTable onSelect select/unselect all 3`] = `
             class="StyledBox-sc-13pk1d4-0 fDLUqh"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 jTcNpm"
+              class="StyledText-sc-1sadyjn-0 fzDegB"
             >
               two
             </span>
@@ -17001,7 +17001,7 @@ exports[`DataTable onSelect select/unselect all 3`] = `
             class="StyledBox-sc-13pk1d4-0 fDLUqh"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 hkbTGI"
+              class="StyledText-sc-1sadyjn-0 jPJIND"
             >
               2.2
             </span>
@@ -17402,7 +17402,7 @@ exports[`DataTable onSort 2`] = `
                 class="StyledBox-sc-13pk1d4-0 hiaLUp"
               >
                 <span
-                  class="StyledText-sc-1sadyjn-0 jTcNpm"
+                  class="StyledText-sc-1sadyjn-0 fzDegB"
                 >
                   A
                 </span>
@@ -17489,7 +17489,7 @@ exports[`DataTable onSort 2`] = `
                 class="StyledBox-sc-13pk1d4-0 hiaLUp"
               >
                 <span
-                  class="StyledText-sc-1sadyjn-0 jTcNpm"
+                  class="StyledText-sc-1sadyjn-0 fzDegB"
                 >
                   B
                 </span>
@@ -17513,7 +17513,7 @@ exports[`DataTable onSort 2`] = `
             class="StyledBox-sc-13pk1d4-0 fDLUqh"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 hkbTGI"
+              class="StyledText-sc-1sadyjn-0 jPJIND"
             >
               one
             </span>
@@ -17526,7 +17526,7 @@ exports[`DataTable onSort 2`] = `
             class="StyledBox-sc-13pk1d4-0 fDLUqh"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 jTcNpm"
+              class="StyledText-sc-1sadyjn-0 fzDegB"
             >
               1
             </span>
@@ -17544,7 +17544,7 @@ exports[`DataTable onSort 2`] = `
             class="StyledBox-sc-13pk1d4-0 fDLUqh"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 hkbTGI"
+              class="StyledText-sc-1sadyjn-0 jPJIND"
             >
               two
             </span>
@@ -17557,7 +17557,7 @@ exports[`DataTable onSort 2`] = `
             class="StyledBox-sc-13pk1d4-0 fDLUqh"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 jTcNpm"
+              class="StyledText-sc-1sadyjn-0 fzDegB"
             >
               2
             </span>
@@ -17575,7 +17575,7 @@ exports[`DataTable onSort 2`] = `
             class="StyledBox-sc-13pk1d4-0 fDLUqh"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 hkbTGI"
+              class="StyledText-sc-1sadyjn-0 jPJIND"
             >
               zero
             </span>
@@ -17588,7 +17588,7 @@ exports[`DataTable onSort 2`] = `
             class="StyledBox-sc-13pk1d4-0 fDLUqh"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 jTcNpm"
+              class="StyledText-sc-1sadyjn-0 fzDegB"
             >
               0
             </span>
@@ -18049,7 +18049,7 @@ exports[`DataTable onSort external 2`] = `
                 class="StyledBox-sc-13pk1d4-0 hiaLUp"
               >
                 <span
-                  class="StyledText-sc-1sadyjn-0 jTcNpm"
+                  class="StyledText-sc-1sadyjn-0 fzDegB"
                 >
                   A
                 </span>
@@ -18124,7 +18124,7 @@ exports[`DataTable onSort external 2`] = `
                 class="StyledBox-sc-13pk1d4-0 hiaLUp"
               >
                 <span
-                  class="StyledText-sc-1sadyjn-0 jTcNpm"
+                  class="StyledText-sc-1sadyjn-0 fzDegB"
                 >
                   B
                 </span>
@@ -18148,7 +18148,7 @@ exports[`DataTable onSort external 2`] = `
             class="StyledBox-sc-13pk1d4-0 fDLUqh"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 hkbTGI"
+              class="StyledText-sc-1sadyjn-0 jPJIND"
             >
               zero
             </span>
@@ -18161,7 +18161,7 @@ exports[`DataTable onSort external 2`] = `
             class="StyledBox-sc-13pk1d4-0 fDLUqh"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 jTcNpm"
+              class="StyledText-sc-1sadyjn-0 fzDegB"
             >
               0
             </span>
@@ -18179,7 +18179,7 @@ exports[`DataTable onSort external 2`] = `
             class="StyledBox-sc-13pk1d4-0 fDLUqh"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 hkbTGI"
+              class="StyledText-sc-1sadyjn-0 jPJIND"
             >
               one
             </span>
@@ -18192,7 +18192,7 @@ exports[`DataTable onSort external 2`] = `
             class="StyledBox-sc-13pk1d4-0 fDLUqh"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 jTcNpm"
+              class="StyledText-sc-1sadyjn-0 fzDegB"
             >
               1
             </span>
@@ -18210,7 +18210,7 @@ exports[`DataTable onSort external 2`] = `
             class="StyledBox-sc-13pk1d4-0 fDLUqh"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 hkbTGI"
+              class="StyledText-sc-1sadyjn-0 jPJIND"
             >
               two
             </span>
@@ -18223,7 +18223,7 @@ exports[`DataTable onSort external 2`] = `
             class="StyledBox-sc-13pk1d4-0 fDLUqh"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 jTcNpm"
+              class="StyledText-sc-1sadyjn-0 fzDegB"
             >
               2
             </span>
@@ -23753,7 +23753,7 @@ exports[`DataTable row click using space key press 2`] = `
             class="StyledBox-sc-13pk1d4-0 gslZZZ"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 jTcNpm"
+              class="StyledText-sc-1sadyjn-0 fzDegB"
             >
               Name
             </span>
@@ -23776,7 +23776,7 @@ exports[`DataTable row click using space key press 2`] = `
             class="StyledBox-sc-13pk1d4-0 fDLUqh"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 hkbTGI"
+              class="StyledText-sc-1sadyjn-0 jPJIND"
             >
               alpha
             </span>
@@ -26341,7 +26341,7 @@ exports[`DataTable select 2`] = `
             class="StyledBox-sc-13pk1d4-0 gslZZZ"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 jTcNpm"
+              class="StyledText-sc-1sadyjn-0 fzDegB"
             >
               A
             </span>
@@ -26400,7 +26400,7 @@ exports[`DataTable select 2`] = `
             class="StyledBox-sc-13pk1d4-0 fDLUqh"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 hkbTGI"
+              class="StyledText-sc-1sadyjn-0 jPJIND"
             >
               alpha
             </span>
@@ -26470,7 +26470,7 @@ exports[`DataTable select 2`] = `
             class="StyledBox-sc-13pk1d4-0 fDLUqh"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 hkbTGI"
+              class="StyledText-sc-1sadyjn-0 jPJIND"
             >
               beta
             </span>
@@ -26902,7 +26902,7 @@ exports[`DataTable select with allowSelectAll={false} 2`] = `
             class="StyledBox-sc-13pk1d4-0 gslZZZ"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 jTcNpm"
+              class="StyledText-sc-1sadyjn-0 fzDegB"
             >
               A
             </span>
@@ -26961,7 +26961,7 @@ exports[`DataTable select with allowSelectAll={false} 2`] = `
             class="StyledBox-sc-13pk1d4-0 fDLUqh"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 hkbTGI"
+              class="StyledText-sc-1sadyjn-0 jPJIND"
             >
               alpha
             </span>
@@ -27031,7 +27031,7 @@ exports[`DataTable select with allowSelectAll={false} 2`] = `
             class="StyledBox-sc-13pk1d4-0 fDLUqh"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 hkbTGI"
+              class="StyledText-sc-1sadyjn-0 jPJIND"
             >
               beta
             </span>
@@ -41509,7 +41509,7 @@ exports[`DataTable should render new data when page changes 2`] = `
                 class="StyledBox-sc-13pk1d4-0 gslZZZ"
               >
                 <span
-                  class="StyledText-sc-1sadyjn-0 jTcNpm"
+                  class="StyledText-sc-1sadyjn-0 fzDegB"
                 >
                   A
                 </span>
@@ -41524,7 +41524,7 @@ exports[`DataTable should render new data when page changes 2`] = `
                 class="StyledBox-sc-13pk1d4-0 gslZZZ"
               >
                 <span
-                  class="StyledText-sc-1sadyjn-0 jTcNpm"
+                  class="StyledText-sc-1sadyjn-0 fzDegB"
                 >
                   B
                 </span>
@@ -51756,7 +51756,7 @@ exports[`DataTable should use theme icons 2`] = `
               class="StyledBox-sc-13pk1d4-0 eUMecS"
             >
               <span
-                class="StyledText-sc-1sadyjn-0 jTcNpm"
+                class="StyledText-sc-1sadyjn-0 fzDegB"
               >
                 A
               </span>
@@ -51886,7 +51886,7 @@ exports[`DataTable should use theme icons 2`] = `
             class="StyledBox-sc-13pk1d4-0 fDLUqh"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 hkbTGI"
+              class="StyledText-sc-1sadyjn-0 jPJIND"
             >
               []
             </span>
@@ -55094,7 +55094,7 @@ exports[`DataTable sort null data 2`] = `
                 class="StyledBox-sc-13pk1d4-0 hiaLUp"
               >
                 <span
-                  class="StyledText-sc-1sadyjn-0 jTcNpm"
+                  class="StyledText-sc-1sadyjn-0 fzDegB"
                 >
                   A
                 </span>
@@ -55181,7 +55181,7 @@ exports[`DataTable sort null data 2`] = `
                 class="StyledBox-sc-13pk1d4-0 hiaLUp"
               >
                 <span
-                  class="StyledText-sc-1sadyjn-0 jTcNpm"
+                  class="StyledText-sc-1sadyjn-0 fzDegB"
                 >
                   B
                 </span>
@@ -55205,7 +55205,7 @@ exports[`DataTable sort null data 2`] = `
                 class="StyledBox-sc-13pk1d4-0 hiaLUp"
               >
                 <span
-                  class="StyledText-sc-1sadyjn-0 jTcNpm"
+                  class="StyledText-sc-1sadyjn-0 fzDegB"
                 >
                   C
                 </span>
@@ -55229,7 +55229,7 @@ exports[`DataTable sort null data 2`] = `
                 class="StyledBox-sc-13pk1d4-0 hiaLUp"
               >
                 <span
-                  class="StyledText-sc-1sadyjn-0 jTcNpm"
+                  class="StyledText-sc-1sadyjn-0 fzDegB"
                 >
                   D
                 </span>
@@ -55260,7 +55260,7 @@ exports[`DataTable sort null data 2`] = `
             class="StyledBox-sc-13pk1d4-0 fDLUqh"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 jTcNpm"
+              class="StyledText-sc-1sadyjn-0 fzDegB"
             >
               0
             </span>
@@ -55273,7 +55273,7 @@ exports[`DataTable sort null data 2`] = `
             class="StyledBox-sc-13pk1d4-0 fDLUqh"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 jTcNpm"
+              class="StyledText-sc-1sadyjn-0 fzDegB"
             >
               first
             </span>
@@ -55286,7 +55286,7 @@ exports[`DataTable sort null data 2`] = `
             class="StyledBox-sc-13pk1d4-0 fDLUqh"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 jTcNpm"
+              class="StyledText-sc-1sadyjn-0 fzDegB"
             >
               y
             </span>
@@ -55419,7 +55419,7 @@ exports[`DataTable sort null data 2`] = `
             class="StyledBox-sc-13pk1d4-0 fDLUqh"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 hkbTGI"
+              class="StyledText-sc-1sadyjn-0 jPJIND"
             >
               one
             </span>
@@ -55432,7 +55432,7 @@ exports[`DataTable sort null data 2`] = `
             class="StyledBox-sc-13pk1d4-0 fDLUqh"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 jTcNpm"
+              class="StyledText-sc-1sadyjn-0 fzDegB"
             >
               1
             </span>
@@ -55464,7 +55464,7 @@ exports[`DataTable sort null data 2`] = `
             class="StyledBox-sc-13pk1d4-0 fDLUqh"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 hkbTGI"
+              class="StyledText-sc-1sadyjn-0 jPJIND"
             >
               two
             </span>
@@ -55477,7 +55477,7 @@ exports[`DataTable sort null data 2`] = `
             class="StyledBox-sc-13pk1d4-0 fDLUqh"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 jTcNpm"
+              class="StyledText-sc-1sadyjn-0 fzDegB"
             >
               2
             </span>
@@ -55490,7 +55490,7 @@ exports[`DataTable sort null data 2`] = `
             class="StyledBox-sc-13pk1d4-0 fDLUqh"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 jTcNpm"
+              class="StyledText-sc-1sadyjn-0 fzDegB"
             >
               second
             </span>
@@ -55538,7 +55538,7 @@ exports[`DataTable sort null data 3`] = `
                 class="StyledBox-sc-13pk1d4-0 hiaLUp"
               >
                 <span
-                  class="StyledText-sc-1sadyjn-0 jTcNpm"
+                  class="StyledText-sc-1sadyjn-0 fzDegB"
                 >
                   A
                 </span>
@@ -55562,7 +55562,7 @@ exports[`DataTable sort null data 3`] = `
                 class="StyledBox-sc-13pk1d4-0 hiaLUp"
               >
                 <span
-                  class="StyledText-sc-1sadyjn-0 jTcNpm"
+                  class="StyledText-sc-1sadyjn-0 fzDegB"
                 >
                   B
                 </span>
@@ -55587,7 +55587,7 @@ exports[`DataTable sort null data 3`] = `
                 class="StyledBox-sc-13pk1d4-0 hiaLUp"
               >
                 <span
-                  class="StyledText-sc-1sadyjn-0 jTcNpm"
+                  class="StyledText-sc-1sadyjn-0 fzDegB"
                 >
                   C
                 </span>
@@ -55674,7 +55674,7 @@ exports[`DataTable sort null data 3`] = `
                 class="StyledBox-sc-13pk1d4-0 hiaLUp"
               >
                 <span
-                  class="StyledText-sc-1sadyjn-0 jTcNpm"
+                  class="StyledText-sc-1sadyjn-0 fzDegB"
                 >
                   D
                 </span>
@@ -55698,7 +55698,7 @@ exports[`DataTable sort null data 3`] = `
             class="StyledBox-sc-13pk1d4-0 fDLUqh"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 hkbTGI"
+              class="StyledText-sc-1sadyjn-0 jPJIND"
             >
               one
             </span>
@@ -55711,7 +55711,7 @@ exports[`DataTable sort null data 3`] = `
             class="StyledBox-sc-13pk1d4-0 fDLUqh"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 jTcNpm"
+              class="StyledText-sc-1sadyjn-0 fzDegB"
             >
               1
             </span>
@@ -55750,7 +55750,7 @@ exports[`DataTable sort null data 3`] = `
             class="StyledBox-sc-13pk1d4-0 fDLUqh"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 jTcNpm"
+              class="StyledText-sc-1sadyjn-0 fzDegB"
             >
               3
             </span>
@@ -55770,7 +55770,7 @@ exports[`DataTable sort null data 3`] = `
             class="StyledBox-sc-13pk1d4-0 fDLUqh"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 jTcNpm"
+              class="StyledText-sc-1sadyjn-0 fzDegB"
             >
               z
             </span>
@@ -55909,7 +55909,7 @@ exports[`DataTable sort null data 3`] = `
             class="StyledBox-sc-13pk1d4-0 fDLUqh"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 hkbTGI"
+              class="StyledText-sc-1sadyjn-0 jPJIND"
             >
               two
             </span>
@@ -55922,7 +55922,7 @@ exports[`DataTable sort null data 3`] = `
             class="StyledBox-sc-13pk1d4-0 fDLUqh"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 jTcNpm"
+              class="StyledText-sc-1sadyjn-0 fzDegB"
             >
               2
             </span>
@@ -55935,7 +55935,7 @@ exports[`DataTable sort null data 3`] = `
             class="StyledBox-sc-13pk1d4-0 fDLUqh"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 jTcNpm"
+              class="StyledText-sc-1sadyjn-0 fzDegB"
             >
               second
             </span>
@@ -55983,7 +55983,7 @@ exports[`DataTable sort null data 4`] = `
                 class="StyledBox-sc-13pk1d4-0 hiaLUp"
               >
                 <span
-                  class="StyledText-sc-1sadyjn-0 jTcNpm"
+                  class="StyledText-sc-1sadyjn-0 fzDegB"
                 >
                   A
                 </span>
@@ -56007,7 +56007,7 @@ exports[`DataTable sort null data 4`] = `
                 class="StyledBox-sc-13pk1d4-0 hiaLUp"
               >
                 <span
-                  class="StyledText-sc-1sadyjn-0 jTcNpm"
+                  class="StyledText-sc-1sadyjn-0 fzDegB"
                 >
                   B
                 </span>
@@ -56031,7 +56031,7 @@ exports[`DataTable sort null data 4`] = `
                 class="StyledBox-sc-13pk1d4-0 hiaLUp"
               >
                 <span
-                  class="StyledText-sc-1sadyjn-0 jTcNpm"
+                  class="StyledText-sc-1sadyjn-0 fzDegB"
                 >
                   C
                 </span>
@@ -56056,7 +56056,7 @@ exports[`DataTable sort null data 4`] = `
                 class="StyledBox-sc-13pk1d4-0 hiaLUp"
               >
                 <span
-                  class="StyledText-sc-1sadyjn-0 jTcNpm"
+                  class="StyledText-sc-1sadyjn-0 fzDegB"
                 >
                   D
                 </span>
@@ -56143,7 +56143,7 @@ exports[`DataTable sort null data 4`] = `
             class="StyledBox-sc-13pk1d4-0 fDLUqh"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 hkbTGI"
+              class="StyledText-sc-1sadyjn-0 jPJIND"
             >
               one
             </span>
@@ -56156,7 +56156,7 @@ exports[`DataTable sort null data 4`] = `
             class="StyledBox-sc-13pk1d4-0 fDLUqh"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 jTcNpm"
+              class="StyledText-sc-1sadyjn-0 fzDegB"
             >
               1
             </span>
@@ -56188,7 +56188,7 @@ exports[`DataTable sort null data 4`] = `
             class="StyledBox-sc-13pk1d4-0 fDLUqh"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 hkbTGI"
+              class="StyledText-sc-1sadyjn-0 jPJIND"
             >
               two
             </span>
@@ -56201,7 +56201,7 @@ exports[`DataTable sort null data 4`] = `
             class="StyledBox-sc-13pk1d4-0 fDLUqh"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 jTcNpm"
+              class="StyledText-sc-1sadyjn-0 fzDegB"
             >
               2
             </span>
@@ -56214,7 +56214,7 @@ exports[`DataTable sort null data 4`] = `
             class="StyledBox-sc-13pk1d4-0 fDLUqh"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 jTcNpm"
+              class="StyledText-sc-1sadyjn-0 fzDegB"
             >
               second
             </span>
@@ -56246,7 +56246,7 @@ exports[`DataTable sort null data 4`] = `
             class="StyledBox-sc-13pk1d4-0 fDLUqh"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 jTcNpm"
+              class="StyledText-sc-1sadyjn-0 fzDegB"
             >
               0
             </span>
@@ -56259,7 +56259,7 @@ exports[`DataTable sort null data 4`] = `
             class="StyledBox-sc-13pk1d4-0 fDLUqh"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 jTcNpm"
+              class="StyledText-sc-1sadyjn-0 fzDegB"
             >
               first
             </span>
@@ -56272,7 +56272,7 @@ exports[`DataTable sort null data 4`] = `
             class="StyledBox-sc-13pk1d4-0 fDLUqh"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 jTcNpm"
+              class="StyledText-sc-1sadyjn-0 fzDegB"
             >
               y
             </span>
@@ -56788,7 +56788,7 @@ exports[`DataTable sortable 2`] = `
                 class="StyledBox-sc-13pk1d4-0 hiaLUp"
               >
                 <span
-                  class="StyledText-sc-1sadyjn-0 jTcNpm"
+                  class="StyledText-sc-1sadyjn-0 fzDegB"
                 >
                   A
                 </span>
@@ -56875,7 +56875,7 @@ exports[`DataTable sortable 2`] = `
                 class="StyledBox-sc-13pk1d4-0 hiaLUp"
               >
                 <span
-                  class="StyledText-sc-1sadyjn-0 jTcNpm"
+                  class="StyledText-sc-1sadyjn-0 fzDegB"
                 >
                   B
                 </span>
@@ -56899,7 +56899,7 @@ exports[`DataTable sortable 2`] = `
             class="StyledBox-sc-13pk1d4-0 fDLUqh"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 hkbTGI"
+              class="StyledText-sc-1sadyjn-0 jPJIND"
             >
               one
             </span>
@@ -56912,7 +56912,7 @@ exports[`DataTable sortable 2`] = `
             class="StyledBox-sc-13pk1d4-0 fDLUqh"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 jTcNpm"
+              class="StyledText-sc-1sadyjn-0 fzDegB"
             >
               1
             </span>
@@ -56930,7 +56930,7 @@ exports[`DataTable sortable 2`] = `
             class="StyledBox-sc-13pk1d4-0 fDLUqh"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 hkbTGI"
+              class="StyledText-sc-1sadyjn-0 jPJIND"
             >
               two
             </span>
@@ -56943,7 +56943,7 @@ exports[`DataTable sortable 2`] = `
             class="StyledBox-sc-13pk1d4-0 fDLUqh"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 jTcNpm"
+              class="StyledText-sc-1sadyjn-0 fzDegB"
             >
               2
             </span>
@@ -56961,7 +56961,7 @@ exports[`DataTable sortable 2`] = `
             class="StyledBox-sc-13pk1d4-0 fDLUqh"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 hkbTGI"
+              class="StyledText-sc-1sadyjn-0 jPJIND"
             >
               zero
             </span>
@@ -56974,7 +56974,7 @@ exports[`DataTable sortable 2`] = `
             class="StyledBox-sc-13pk1d4-0 fDLUqh"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 jTcNpm"
+              class="StyledText-sc-1sadyjn-0 fzDegB"
             >
               0
             </span>

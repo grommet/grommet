@@ -2573,7 +2573,7 @@ exports[`Select Controlled multiple onChange without labelKey 4`] = `
           class="StyledBox-sc-13pk1d4-0 jfutgd"
         >
           <span
-            class="StyledText-sc-1sadyjn-0 gQrfUm"
+            class="StyledText-sc-1sadyjn-0 kllfaF"
           >
             1
           </span>
@@ -2592,7 +2592,7 @@ exports[`Select Controlled multiple onChange without labelKey 4`] = `
           class="StyledBox-sc-13pk1d4-0 jfutgd"
         >
           <span
-            class="StyledText-sc-1sadyjn-0 gQrfUm"
+            class="StyledText-sc-1sadyjn-0 kllfaF"
           >
             2
           </span>
@@ -2647,7 +2647,7 @@ exports[`Select Controlled multiple onChange without labelKey 6`] = `
           class="StyledBox-sc-13pk1d4-0 jfutgd"
         >
           <span
-            class="StyledText-sc-1sadyjn-0 gQrfUm"
+            class="StyledText-sc-1sadyjn-0 kllfaF"
           >
             1
           </span>
@@ -2666,7 +2666,7 @@ exports[`Select Controlled multiple onChange without labelKey 6`] = `
           class="StyledBox-sc-13pk1d4-0 jfutgd"
         >
           <span
-            class="StyledText-sc-1sadyjn-0 gQrfUm"
+            class="StyledText-sc-1sadyjn-0 kllfaF"
           >
             2
           </span>
@@ -3481,7 +3481,7 @@ exports[`Select Controlled multiple onChange without valueKey 4`] = `
           class="StyledBox-sc-13pk1d4-0 jfutgd"
         >
           <span
-            class="StyledText-sc-1sadyjn-0 gQrfUm"
+            class="StyledText-sc-1sadyjn-0 kllfaF"
           >
             Value1
           </span>
@@ -3500,7 +3500,7 @@ exports[`Select Controlled multiple onChange without valueKey 4`] = `
           class="StyledBox-sc-13pk1d4-0 jfutgd"
         >
           <span
-            class="StyledText-sc-1sadyjn-0 gQrfUm"
+            class="StyledText-sc-1sadyjn-0 kllfaF"
           >
             Value2
           </span>
@@ -3555,7 +3555,7 @@ exports[`Select Controlled multiple onChange without valueKey 6`] = `
           class="StyledBox-sc-13pk1d4-0 jfutgd"
         >
           <span
-            class="StyledText-sc-1sadyjn-0 gQrfUm"
+            class="StyledText-sc-1sadyjn-0 kllfaF"
           >
             Value1
           </span>
@@ -3574,7 +3574,7 @@ exports[`Select Controlled multiple onChange without valueKey 6`] = `
           class="StyledBox-sc-13pk1d4-0 jfutgd"
         >
           <span
-            class="StyledText-sc-1sadyjn-0 gQrfUm"
+            class="StyledText-sc-1sadyjn-0 kllfaF"
           >
             Value2
           </span>
@@ -4390,7 +4390,7 @@ exports[`Select Controlled multiple onChange without valueKey or labelKey 4`] = 
           class="StyledBox-sc-13pk1d4-0 jfutgd"
         >
           <span
-            class="StyledText-sc-1sadyjn-0 gQrfUm"
+            class="StyledText-sc-1sadyjn-0 kllfaF"
           >
             1
           </span>
@@ -4408,7 +4408,7 @@ exports[`Select Controlled multiple onChange without valueKey or labelKey 4`] = 
           class="StyledBox-sc-13pk1d4-0 jfutgd"
         >
           <span
-            class="StyledText-sc-1sadyjn-0 gQrfUm"
+            class="StyledText-sc-1sadyjn-0 kllfaF"
           >
             2
           </span>
@@ -4462,7 +4462,7 @@ exports[`Select Controlled multiple onChange without valueKey or labelKey 6`] = 
           class="StyledBox-sc-13pk1d4-0 jfutgd"
         >
           <span
-            class="StyledText-sc-1sadyjn-0 gQrfUm"
+            class="StyledText-sc-1sadyjn-0 kllfaF"
           >
             1
           </span>
@@ -4480,7 +4480,7 @@ exports[`Select Controlled multiple onChange without valueKey or labelKey 6`] = 
           class="StyledBox-sc-13pk1d4-0 jfutgd"
         >
           <span
-            class="StyledText-sc-1sadyjn-0 gQrfUm"
+            class="StyledText-sc-1sadyjn-0 kllfaF"
           >
             2
           </span>

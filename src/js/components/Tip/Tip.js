@@ -107,7 +107,7 @@ const Tip = forwardRef(
             target={componentRef.current}
             trapFocus={false}
             key="tip-drop"
-            id={id || undefined}
+            id={id}
             {...theme.tip.drop}
             {...dropProps}
             onMouseEnter={() => setTooltipOver(true)}

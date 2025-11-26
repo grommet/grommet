@@ -5,8 +5,8 @@ import 'jest-styled-components';
 import 'jest-axe/extend-expect';
 import 'regenerator-runtime/runtime';
 
-import * as UseIdModule from '../../../utils/useId.js';
 import { Grommet } from '../../Grommet';
+import { Box } from '../../Box';
 import { Text } from '..';
 
 describe('Text', () => {
@@ -172,33 +172,87 @@ describe('Text', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
-  test('should apply aria-labelledby', () => {
+  test('should apply aria-label when tip is a string', () => {
     const { container, getByText } = render(
       <Grommet>
-        <Text tip="tooltip description">Example with tip</Text>
+        <Text tip="tooltip description">Example with tip as a string</Text>
       </Grommet>,
     );
 
-    const textWithTip = getByText('Example with tip');
-    const ariaLabelledBy = textWithTip.getAttribute('aria-labelledby');
-    expect(ariaLabelledBy).toContain('-tipId');
+    const textWithTip = getByText('Example with tip as a string');
+    const ariaLabel = textWithTip.getAttribute('aria-label');
+    expect(ariaLabel).toMatch('tooltip description');
     expect(container.firstChild).toMatchSnapshot();
   });
 
-  test('should apply aria-labelledby with id prop', () => {
-    jest.spyOn(UseIdModule, 'useId').mockReturnValue('custom-id');
+  test('should apply aria-labelledby when aria-label is not defined', () => {
     const { container, getByText } = render(
       <Grommet>
-        <Text tip="tooltip description" id="custom-id">
-          Example with tip
+        <Text
+          tip={{
+            plain: true,
+            dropProps: { align: { bottom: 'top' } },
+            content: (
+              <Box
+                pad="xxsmall"
+                elevation="small"
+                background="#EDEDED"
+                round="xsmall"
+                margin="xsmall"
+                overflow="hidden"
+                align="center"
+              >
+                tooltip
+              </Box>
+            ),
+          }}
+        >
+          Example with tip that is not a string
         </Text>
       </Grommet>,
     );
 
-    const textWithTip = getByText('Example with tip');
+    const textWithTip = getByText('Example with tip that is not a string');
     const ariaLabelledBy = textWithTip.getAttribute('aria-labelledby');
-    expect(ariaLabelledBy).toMatch('custom-id');
+    expect(ariaLabelledBy).toBeTruthy();
+    expect(ariaLabelledBy).toMatch(/-tipId$/); // Ends with '-tipId'
     expect(container.firstChild).toMatchSnapshot();
-    (UseIdModule.useId as jest.Mock).mockRestore();
+  });
+
+  test('should apply aria-labelledby with id specified when aria-label is not defined', () => {
+    const { container, getByText } = render(
+      <Grommet>
+        <Text
+          id="custom-id"
+          tip={{
+            plain: true,
+            dropProps: { align: { bottom: 'top' } },
+            content: (
+              <Box
+                pad="xxsmall"
+                elevation="small"
+                background="#EDEDED"
+                round="xsmall"
+                margin="xsmall"
+                overflow="hidden"
+                align="center"
+              >
+                tooltip
+              </Box>
+            ),
+          }}
+        >
+          Example with tip that is not a string with id prop
+        </Text>
+      </Grommet>,
+    );
+
+    const textWithTip = getByText(
+      'Example with tip that is not a string with id prop',
+    );
+    const ariaLabelledBy = textWithTip.getAttribute('aria-labelledby');
+    expect(ariaLabelledBy).toBeTruthy();
+    expect(ariaLabelledBy).toBe('custom-id-tipId');
+    expect(container.firstChild).toMatchSnapshot();
   });
 });

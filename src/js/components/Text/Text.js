@@ -4,7 +4,7 @@ import { useLayoutEffect } from '../../utils/use-isomorphic-layout-effect';
 
 import { StyledText } from './StyledText';
 import { Tip } from '../Tip';
-import { useForwardedRef, useId } from '../../utils';
+import { useForwardedRef, useId, useKeyboard } from '../../utils';
 import { TextPropTypes } from './propTypes';
 import { useSkeleton } from '../Skeleton';
 import { TextSkeleton } from './TextSkeleton';
@@ -19,6 +19,8 @@ const Text = forwardRef(
       tag,
       as,
       tip: tipProp,
+      // can't alphabetize a11yTitle before tip is defined
+      a11yTitle = (typeof tipProp === 'string' && tipProp) || undefined,
       truncate,
       size,
       skeleton: skeletonProp,
@@ -28,11 +30,13 @@ const Text = forwardRef(
     ref,
   ) => {
     const { passThemeFlag } = useThemeValue();
+    const usingKeyboard = useKeyboard();
+    const [focus, setFocus] = useState(false);
     const textRef = useForwardedRef(ref);
     const [textTruncated, setTextTruncated] = useState(false);
     const textContextValue = useMemo(() => ({ size }), [size]);
     const generatedId = useId();
-    const tipId = `${rest.id || generatedId}-tipId`;
+    const tipId = a11yTitle ? undefined : `${rest.id || generatedId}-tipId`;
     const skeleton = useSkeleton();
 
     useLayoutEffect(() => {
@@ -81,12 +85,17 @@ const Text = forwardRef(
       <StyledText
         as={!as && tag ? tag : as}
         colorProp={color}
+        aria-label={a11yTitle}
         level={level}
         truncate={truncate}
         size={size}
+        focus={focus && usingKeyboard}
+        tip={tipProp}
         {...passThemeFlag}
         {...rest}
         {...extraA11yProps}
+        onFocus={() => setFocus(true)}
+        onBlur={() => setFocus(false)}
         ref={textRef}
       >
         {children !== undefined ? (
