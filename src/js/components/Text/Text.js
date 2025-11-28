@@ -89,7 +89,7 @@ const Text = forwardRef(
         level={level}
         truncate={truncate}
         size={size}
-        focus={focus && usingKeyboard}
+        focus={(tipProp || truncate) && focus && usingKeyboard}
         tip={tipProp}
         {...passThemeFlag}
         {...rest}
