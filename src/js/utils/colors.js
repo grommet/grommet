@@ -9,7 +9,12 @@ export const normalizeColor = (color, theme, dark) => {
     theme.global.deprecated?.colors &&
     process.env.NODE_ENV !== 'production'
   ) {
-    const colorKey = typeof color === 'string' ? color : JSON.stringify(color);
+    let colorKey = color;
+    if (typeof color === 'object') {
+      if (dark === true || (dark === undefined && theme.dark))
+        colorKey = color.dark;
+      else colorKey = color.light;
+    }
     if (!warnedColors.has(colorKey)) {
       let deprecatedColor;
       if (typeof color === 'string') {
@@ -23,9 +28,7 @@ export const normalizeColor = (color, theme, dark) => {
       }
       if (deprecatedColor) {
         warnedColors.add(colorKey);
-        console.warn(
-          deprecatedColor.message || `The background ${color} is deprecated.`,
-        );
+        console.warn(deprecatedColor.message || `${color} is deprecated.`);
       }
     }
   }
