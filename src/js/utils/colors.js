@@ -1,7 +1,35 @@
+// Track which deprecated colors have already been warned about
+const warnedColors = new Set();
+
 // Returns the specific color that should be used according to the theme.
 // If 'dark' is supplied, it takes precedence over 'theme.dark'.
 // Can return undefined.
 export const normalizeColor = (color, theme, dark) => {
+  if (
+    theme.global.deprecated?.colors &&
+    process.env.NODE_ENV !== 'production'
+  ) {
+    const colorKey = typeof color === 'string' ? color : JSON.stringify(color);
+    if (!warnedColors.has(colorKey)) {
+      let deprecatedColor;
+      if (typeof color === 'string') {
+        deprecatedColor = theme.global.deprecated.colors.find(
+          (item) => item.name === color,
+        );
+      } else if (typeof color === 'object') {
+        deprecatedColor = theme.global.deprecated.colors.find(
+          (item) => item.name === color.light || item.name === color.dark,
+        );
+      }
+      if (deprecatedColor) {
+        warnedColors.add(colorKey);
+        console.warn(
+          deprecatedColor.message || `The background ${color} is deprecated.`,
+        );
+      }
+    }
+  }
+
   const colorSpec =
     theme.global && theme.global.colors[color] !== undefined
       ? theme.global.colors[color]

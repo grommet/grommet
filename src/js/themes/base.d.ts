@@ -356,6 +356,10 @@ export interface ThemeType {
           }
         | undefined;
     };
+    deprecated?: {
+      backgrounds?: [{ name: string; color: BackgroundType }];
+      colors?: [{ name: string; color: BackgroundType }];
+    };
     deviceBreakpoints?: {
       phone?: string;
       tablet?: string;
