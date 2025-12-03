@@ -28,7 +28,7 @@ export const normalizeColor = (color, theme, dark) => {
       }
       if (deprecatedColor) {
         warnedColors.add(colorKey);
-        console.warn(deprecatedColor.message || `${color} is deprecated.`);
+        console.warn(deprecatedColor.message || `${colorKey} is deprecated.`);
       }
     }
   }

@@ -242,6 +242,14 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       //       message: string,
       //     },
       //   ],
+      //   button: {
+      //     kind: [
+      //       {
+      //         name: string,
+      //         message: string,
+      //       },
+      //     ],
+      //   },
       // },
       drop: {
         // intelligentMargin: undefined,

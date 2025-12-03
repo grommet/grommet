@@ -84,7 +84,7 @@ const Box = forwardRef(
         if (deprecatedBackground) {
           console.warn(
             deprecatedBackground.message ||
-              `The background ${backgroundProp} is deprecated.`,
+              `The background ${deprecatedBackground.name} is deprecated.`,
           );
         }
       }

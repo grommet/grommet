@@ -249,6 +249,16 @@ const Button = forwardRef(
       );
     }
 
+    useEffect(() => {
+      if (theme.global.deprecated?.button.kind && kindArg) {
+        const deprecatedKind = theme.global.deprecated.button.kind.find(
+          (item) => item.name === kindArg,
+        );
+        if (deprecatedKind)
+          console.warn(deprecatedKind.message || `${kindArg} is deprecated.`);
+      }
+    }, [kindArg, theme]);
+
     const skeleton = useSkeleton();
 
     const sendAnalytics = useAnalytics();

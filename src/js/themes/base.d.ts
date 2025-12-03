@@ -357,8 +357,11 @@ export interface ThemeType {
         | undefined;
     };
     deprecated?: {
-      backgrounds?: { name: string; color: BackgroundType }[];
-      colors?: { name: string; color: BackgroundType }[];
+      backgrounds?: { name: string; message?: string }[];
+      colors?: { name: string; message?: string }[];
+      button?: {
+        kind?: { name: string; message?: string }[];
+      };
     };
     deviceBreakpoints?: {
       phone?: string;
