@@ -37,7 +37,10 @@ export const genericSelectProps = {
   ]),
   labelKey: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
   messages: PropTypes.shape({
+    optionsA11y: PropTypes.string,
     multiple: PropTypes.string,
+    searchA11y: PropTypes.string,
+    selected: PropTypes.string,
   }),
   name: PropTypes.string,
   onChange: PropTypes.func,
