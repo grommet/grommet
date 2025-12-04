@@ -40,4 +40,9 @@ module.exports = {
   typescript: {
     reactDocgen: 'react-docgen-typescript',
   },
+
+  // Exclude internal stories only in production builds
+  tags: {
+    exclude: process.env.NODE_ENV === 'production' ? ['internal'] : [],
+  },
 };
