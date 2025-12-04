@@ -250,14 +250,18 @@ const Button = forwardRef(
     }
 
     useEffect(() => {
-      if (theme.global.deprecated?.button.kind && kindArg) {
+      if (
+        process.env.NODE_ENV !== 'production' &&
+        theme.global.deprecated?.button?.kind &&
+        kindArg
+      ) {
         const deprecatedKind = theme.global.deprecated.button.kind.find(
           (item) => item.name === kindArg,
         );
         if (deprecatedKind)
           console.warn(deprecatedKind.message || `${kindArg} is deprecated.`);
       }
-    }, [kindArg, theme]);
+    }, [kindArg, theme.global.deprecated?.button?.kind]);
 
     const skeleton = useSkeleton();
 

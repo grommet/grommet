@@ -67,6 +67,7 @@ const Box = forwardRef(
     useEffect(() => {
       if (
         process.env.NODE_ENV !== 'production' &&
+        backgroundProp &&
         theme.global.deprecated?.backgrounds
       ) {
         let deprecatedBackground;
