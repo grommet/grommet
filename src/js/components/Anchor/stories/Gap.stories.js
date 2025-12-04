@@ -15,6 +15,8 @@ const GapAnchor = () => (
 
 export const Gap = () => <GapAnchor />;
 
+Gap.tags = ['!dev'];
+
 export default {
   title: 'Controls/Anchor/Gap',
 };
