@@ -4,7 +4,7 @@ import { useLayoutEffect } from '../../utils/use-isomorphic-layout-effect';
 
 import { StyledText } from './StyledText';
 import { Tip } from '../Tip';
-import { useForwardedRef, useId, useKeyboard } from '../../utils';
+import { useForwardedRef, useId } from '../../utils';
 import { TextPropTypes } from './propTypes';
 import { useSkeleton } from '../Skeleton';
 import { TextSkeleton } from './TextSkeleton';
@@ -30,7 +30,6 @@ const Text = forwardRef(
     ref,
   ) => {
     const { passThemeFlag } = useThemeValue();
-    const usingKeyboard = useKeyboard();
     const [focus, setFocus] = useState(false);
     const textRef = useForwardedRef(ref);
     const [textTruncated, setTextTruncated] = useState(false);
@@ -89,7 +88,7 @@ const Text = forwardRef(
         level={level}
         truncate={truncate}
         size={size}
-        focus={(tipProp || truncate) && focus && usingKeyboard}
+        focus={(tipProp || truncate) && focus}
         tip={tipProp}
         {...passThemeFlag}
         {...rest}
