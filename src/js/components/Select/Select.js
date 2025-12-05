@@ -346,6 +346,7 @@ const Select = forwardRef(
               emptySearchMessage={emptySearchMessage}
               id={id}
               labelKey={labelKey}
+              messages={messages}
               multiple={multiple}
               name={name}
               onChange={onSelectChange}

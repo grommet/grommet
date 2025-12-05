@@ -23,6 +23,7 @@ if (process.env.NODE_ENV !== 'production') {
       open: PropTypes.string,
       optionNotSelected: PropTypes.string,
       optionSelected: PropTypes.string,
+      optionsA11y: PropTypes.string,
       search: PropTypes.string,
       selectAll: PropTypes.string,
       selectAllA11y: PropTypes.string,

@@ -188,7 +188,9 @@ export interface GrommetProps {
         };
       };
       select?: {
+        optionsA11y?: string;
         multiple?: string;
+        searchA11y?: string;
         selected?: string;
       };
       selectMultiple?: {
@@ -197,6 +199,7 @@ export interface GrommetProps {
         open?: string;
         optionNotSelected?: string;
         optionSelected?: string;
+        optionsA11y?: string;
         search?: string;
         selectAll?: string;
         selectAllA11y?: string;
