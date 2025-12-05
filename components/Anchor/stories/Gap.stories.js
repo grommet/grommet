@@ -27,6 +27,11 @@ var GapAnchor = function GapAnchor() {
     gap: "large"
   }), /*#__PURE__*/_react["default"].createElement(_grommet.Anchor, {
     icon: /*#__PURE__*/_react["default"].createElement(_grommetIcons.Upload, null),
+    label: "xLarge Gap",
+    href: "#",
+    gap: "xlarge"
+  }), /*#__PURE__*/_react["default"].createElement(_grommet.Anchor, {
+    icon: /*#__PURE__*/_react["default"].createElement(_grommetIcons.Upload, null),
     label: "5px Gap",
     href: "#",
     gap: "5px"
@@ -35,6 +40,7 @@ var GapAnchor = function GapAnchor() {
 var Gap = exports.Gap = function Gap() {
   return /*#__PURE__*/_react["default"].createElement(GapAnchor, null);
 };
+Gap.tags = ['internal'];
 var _default = exports["default"] = {
   title: 'Controls/Anchor/Gap'
 };

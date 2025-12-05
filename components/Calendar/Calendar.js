@@ -512,6 +512,8 @@ var Calendar = exports.Calendar = /*#__PURE__*/(0, _react.forwardRef)(function (
     return result;
   }, [activeDate, value, range]);
   var selectDate = (0, _react.useCallback)(function (selectedDate) {
+    // If no onSelect prop is provided, the calendar should be read-only
+    if (!onSelect) return;
     var nextValue;
     if (range || Array.isArray(value == null ? void 0 : value[0])) {
       nextValue = handleRange(selectedDate);
@@ -706,9 +708,9 @@ var Calendar = exports.Calendar = /*#__PURE__*/(0, _react.forwardRef)(function (
           disabledProp: dayDisabled,
           buttonProps: {
             a11yTitle: day.toDateString(),
-            onClick: dayDisabled ? function () {} : function () {
+            onClick: !dayDisabled && !!onSelect ? function () {
               return onClick(dateObject);
-            }
+            } : function () {}
           },
           isInRange: inRange,
           isSelected: selected,
@@ -723,14 +725,15 @@ var Calendar = exports.Calendar = /*#__PURE__*/(0, _react.forwardRef)(function (
         days.push(/*#__PURE__*/_react["default"].createElement(CalendarCustomDay, {
           key: day.getTime(),
           "aria-selected": selected,
-          buttonProps: onSelect ? {
-            a11yTitle: day.toDateString(),
+          buttonProps: _extends({
+            a11yTitle: day.toDateString()
+          }, onSelect ? {
             active: active && active.getTime() === day.getTime(),
             disabled: dayDisabled,
             onClick: dayDisabled ? function () {} : function () {
               return onClick(dateObject);
             }
-          } : null,
+          } : {}),
           size: size,
           fill: fill,
           responsive: responsive

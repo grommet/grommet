@@ -22,6 +22,11 @@ var GapAnchor = function GapAnchor() {
     gap: "large"
   }), /*#__PURE__*/React.createElement(Anchor, {
     icon: /*#__PURE__*/React.createElement(Upload, null),
+    label: "xLarge Gap",
+    href: "#",
+    gap: "xlarge"
+  }), /*#__PURE__*/React.createElement(Anchor, {
+    icon: /*#__PURE__*/React.createElement(Upload, null),
     label: "5px Gap",
     href: "#",
     gap: "5px"
@@ -30,6 +35,7 @@ var GapAnchor = function GapAnchor() {
 export var Gap = function Gap() {
   return /*#__PURE__*/React.createElement(GapAnchor, null);
 };
+Gap.tags = ['internal'];
 export default {
   title: 'Controls/Anchor/Gap'
 };
