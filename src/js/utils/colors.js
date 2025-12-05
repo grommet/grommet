@@ -1,10 +1,7 @@
 // Track which deprecated colors have already been warned about
 const warnedColors = new Set();
 
-// Returns the specific color that should be used according to the theme.
-// If 'dark' is supplied, it takes precedence over 'theme.dark'.
-// Can return undefined.
-export const normalizeColor = (color, theme, dark) => {
+const checkColorDeprecation = (color, theme, dark) => {
   if (
     theme.global.deprecated?.colors &&
     process.env.NODE_ENV !== 'production'
@@ -32,7 +29,13 @@ export const normalizeColor = (color, theme, dark) => {
       }
     }
   }
+};
 
+// Returns the specific color that should be used according to the theme.
+// If 'dark' is supplied, it takes precedence over 'theme.dark'.
+// Can return undefined.
+export const normalizeColor = (color, theme, dark) => {
+  checkColorDeprecation(color, theme, dark);
   const colorSpec =
     theme.global && theme.global.colors[color] !== undefined
       ? theme.global.colors[color]
