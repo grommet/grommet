@@ -9,6 +9,7 @@ const GapAnchor = () => (
     <Anchor icon={<Upload />} label="Small Gap" href="#" gap="small" />
     <Anchor icon={<Upload />} label="Medium Gap" href="#" gap="medium" />
     <Anchor icon={<Upload />} label="Large Gap" href="#" gap="large" />
+    <Anchor icon={<Upload />} label="xLarge Gap" href="#" gap="xlarge" />
     <Anchor icon={<Upload />} label="5px Gap" href="#" gap="5px" />
   </Box>
 );
