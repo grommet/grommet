@@ -587,9 +587,9 @@ exports[`Text should apply aria-labelledby with id specified when aria-label is 
   class="c0"
 >
   <span
-    aria-labelledby="custom-id-tipId"
+    aria-labelledby="tip-id"
     class="c1"
-    id="custom-id"
+    id="tip-id"
     tabindex="0"
   >
     Example with tip that is not a string with id prop

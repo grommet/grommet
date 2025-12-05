@@ -36,7 +36,7 @@ const Text = forwardRef(
     const [textTruncated, setTextTruncated] = useState(false);
     const textContextValue = useMemo(() => ({ size }), [size]);
     const generatedId = useId();
-    const tipId = a11yTitle ? undefined : `${rest.id || generatedId}-tipId`;
+    const tipId = a11yTitle ? undefined : rest.id || `${generatedId}-tipId`;
     const skeleton = useSkeleton();
 
     useLayoutEffect(() => {

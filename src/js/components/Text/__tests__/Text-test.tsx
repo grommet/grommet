@@ -223,7 +223,7 @@ describe('Text', () => {
     const { container, getByText } = render(
       <Grommet>
         <Text
-          id="custom-id"
+          id="tip-id"
           tip={{
             plain: true,
             dropProps: { align: { bottom: 'top' } },
@@ -252,7 +252,7 @@ describe('Text', () => {
     );
     const ariaLabelledBy = textWithTip.getAttribute('aria-labelledby');
     expect(ariaLabelledBy).toBeTruthy();
-    expect(ariaLabelledBy).toBe('custom-id-tipId');
+    expect(ariaLabelledBy).toBe('tip-id');
     expect(container.firstChild).toMatchSnapshot();
   });
 });
