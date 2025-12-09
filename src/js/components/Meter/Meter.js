@@ -28,8 +28,7 @@ const Meter = forwardRef(
     const { theme } = useThemeValue();
     const { format } = useContext(MessageContext);
 
-    const background = backgroundProp ||
-      theme.meter?.background || { color: 'light-2', opacity: 'medium' };
+    const background = backgroundProp || theme.meter?.background;
 
     // normalize values to an array of objects
     const values = useMemo(() => {

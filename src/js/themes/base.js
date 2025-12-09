@@ -1509,8 +1509,8 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
     },
     meter: {
+      background: { color: 'light-2', opacity: 'medium' },
       color: 'graph-0',
-      // background: undefined,
       // colors: [] || colors: ['graph-0', 'graph-1', 'graph-2', 'graph-3'],
       // extend: undefined,
       // gap: undefined,

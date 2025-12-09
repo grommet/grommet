@@ -1473,7 +1473,7 @@ export interface ThemeType {
     };
   };
   meter?: {
-    background?: ColorType;
+    background?: BackgroundType;
     color?: ColorType;
     colors?: GraphColorsType;
     extend?: ExtendType;
