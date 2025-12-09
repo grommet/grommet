@@ -63,7 +63,9 @@ export const FieldCustomStates = () => {
   const inputRef = useRef();
 
   useEffect(() => {
-    inputRef.current.focus();
+    if (inputRef.current) {
+      inputRef.current.focus();
+    }
   }, []);
 
   return (
