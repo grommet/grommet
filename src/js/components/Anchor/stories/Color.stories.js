@@ -4,7 +4,7 @@ import { Add } from 'grommet-icons';
 
 import { Anchor, Box } from 'grommet';
 
-export const Color = () => (
+const ColorAnchor = () => (
   <Box>
     <Box pad="medium" gap="medium">
       <Anchor icon={<Add />} href="#" />
@@ -20,7 +20,8 @@ export const Color = () => (
   </Box>
 );
 
+export const Color = () => <ColorAnchor />;
+
 export default {
   title: 'Controls/Anchor/Color',
-  component: Anchor,
 };
