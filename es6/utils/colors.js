@@ -1,7 +1,36 @@
+// Track which deprecated colors have already been warned about
+var warnedColors = new Set();
+var checkColorDeprecation = function checkColorDeprecation(color, theme, dark) {
+  var _theme$global$depreca;
+  if ((_theme$global$depreca = theme.global.deprecated) != null && _theme$global$depreca.colors && process.env.NODE_ENV !== 'production') {
+    var colorKey = color;
+    if (typeof color === 'object') {
+      if (dark === true || dark === undefined && theme.dark) colorKey = color.dark;else colorKey = color.light;
+    }
+    if (!warnedColors.has(colorKey)) {
+      var deprecatedColor;
+      if (typeof color === 'string') {
+        deprecatedColor = theme.global.deprecated.colors.find(function (item) {
+          return item.name === color;
+        });
+      } else if (typeof color === 'object') {
+        deprecatedColor = theme.global.deprecated.colors.find(function (item) {
+          return item.name === color.light || item.name === color.dark;
+        });
+      }
+      if (deprecatedColor) {
+        warnedColors.add(colorKey);
+        console.warn(deprecatedColor.message || colorKey + " is deprecated.");
+      }
+    }
+  }
+};
+
 // Returns the specific color that should be used according to the theme.
 // If 'dark' is supplied, it takes precedence over 'theme.dark'.
 // Can return undefined.
 var _normalizeColor = function normalizeColor(color, theme, dark) {
+  checkColorDeprecation(color, theme, dark);
   var colorSpec = theme.global && theme.global.colors[color] !== undefined ? theme.global.colors[color] : color;
   // If the color has a light or dark object, use that
   var result = colorSpec;

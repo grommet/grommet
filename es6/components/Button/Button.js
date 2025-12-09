@@ -139,7 +139,7 @@ var getPropertyColor = function getPropertyColor(property, paths, theme, kind, p
   return result;
 };
 var Button = /*#__PURE__*/forwardRef(function (_ref, ref) {
-  var _theme$button$kind, _theme$button2;
+  var _theme$global$depreca2, _theme$button$kind, _theme$button2;
   var active = _ref.active,
     _ref$align = _ref.align,
     align = _ref$align === void 0 ? 'center' : _ref$align,
@@ -206,6 +206,15 @@ var Button = /*#__PURE__*/forwardRef(function (_ref, ref) {
   if ((icon || label) && children) {
     console.warn('Button should not have children if icon or label is provided');
   }
+  useEffect(function () {
+    var _theme$global$depreca;
+    if (process.env.NODE_ENV !== 'production' && (_theme$global$depreca = theme.global.deprecated) != null && (_theme$global$depreca = _theme$global$depreca.button) != null && _theme$global$depreca.kind && kindArg) {
+      var deprecatedKind = theme.global.deprecated.button.kind.find(function (item) {
+        return item.name === kindArg;
+      });
+      if (deprecatedKind) console.warn(deprecatedKind.message || kindArg + " is deprecated.");
+    }
+  }, [kindArg, (_theme$global$depreca2 = theme.global.deprecated) == null || (_theme$global$depreca2 = _theme$global$depreca2.button) == null ? void 0 : _theme$global$depreca2.kind]);
   var skeleton = useSkeleton();
   var sendAnalytics = useAnalytics();
   var onClick = useCallback(function (event) {

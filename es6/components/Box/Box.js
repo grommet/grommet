@@ -16,6 +16,7 @@ import { ResponsiveContainerProvider } from './ResponsiveContainerProvider';
 import { useThemeValue } from '../../utils/useThemeValue';
 import { supportsContainerQueries } from '../../utils/responsive';
 var Box = /*#__PURE__*/forwardRef(function (_ref, refProp) {
+  var _theme$global$depreca2;
   var a11yTitle = _ref.a11yTitle,
     backgroundProp = _ref.background,
     border = _ref.border,
@@ -55,6 +56,24 @@ var Box = /*#__PURE__*/forwardRef(function (_ref, refProp) {
   var responsiveContainer = useContext(ResponsiveContainerContext);
   var responsive = responsiveContainer && responsiveProp ? 'container' : responsiveProp;
   var background = backgroundProp;
+  useEffect(function () {
+    var _theme$global$depreca;
+    if (process.env.NODE_ENV !== 'production' && backgroundProp && (_theme$global$depreca = theme.global.deprecated) != null && _theme$global$depreca.backgrounds) {
+      var deprecatedBackground;
+      if (typeof backgroundProp === 'string') {
+        deprecatedBackground = theme.global.deprecated.backgrounds.find(function (item) {
+          return item.name === backgroundProp;
+        });
+      } else if (typeof backgroundProp === 'object') {
+        deprecatedBackground = theme.global.deprecated.backgrounds.find(function (item) {
+          return item.name === backgroundProp.image || item.name === backgroundProp.color;
+        });
+      }
+      if (deprecatedBackground) {
+        console.warn(deprecatedBackground.message || "The background " + deprecatedBackground.name + " is deprecated.");
+      }
+    }
+  }, [backgroundProp, (_theme$global$depreca2 = theme.global.deprecated) == null ? void 0 : _theme$global$depreca2.backgrounds]);
   var announce = useContext(AnnounceContext);
   var containerRef = useForwardedRef(refProp);
 

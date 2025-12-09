@@ -145,7 +145,7 @@ var getPropertyColor = function getPropertyColor(property, paths, theme, kind, p
   return result;
 };
 var Button = exports.Button = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
-  var _theme$button$kind, _theme$button2;
+  var _theme$global$depreca2, _theme$button$kind, _theme$button2;
   var active = _ref.active,
     _ref$align = _ref.align,
     align = _ref$align === void 0 ? 'center' : _ref$align,
@@ -212,6 +212,15 @@ var Button = exports.Button = /*#__PURE__*/(0, _react.forwardRef)(function (_ref
   if ((icon || label) && children) {
     console.warn('Button should not have children if icon or label is provided');
   }
+  (0, _react.useEffect)(function () {
+    var _theme$global$depreca;
+    if (process.env.NODE_ENV !== 'production' && (_theme$global$depreca = theme.global.deprecated) != null && (_theme$global$depreca = _theme$global$depreca.button) != null && _theme$global$depreca.kind && kindArg) {
+      var deprecatedKind = theme.global.deprecated.button.kind.find(function (item) {
+        return item.name === kindArg;
+      });
+      if (deprecatedKind) console.warn(deprecatedKind.message || kindArg + " is deprecated.");
+    }
+  }, [kindArg, (_theme$global$depreca2 = theme.global.deprecated) == null || (_theme$global$depreca2 = _theme$global$depreca2.button) == null ? void 0 : _theme$global$depreca2.kind]);
   var skeleton = (0, _Skeleton.useSkeleton)();
   var sendAnalytics = (0, _AnalyticsContext.useAnalytics)();
   var onClick = (0, _react.useCallback)(function (event) {

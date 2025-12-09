@@ -21,6 +21,7 @@ function _interopRequireWildcard(e, t) { if ("function" == typeof WeakMap) var r
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (-1 !== e.indexOf(n)) continue; t[n] = r[n]; } return t; }
 var Box = exports.Box = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, refProp) {
+  var _theme$global$depreca2;
   var a11yTitle = _ref.a11yTitle,
     backgroundProp = _ref.background,
     border = _ref.border,
@@ -60,6 +61,24 @@ var Box = exports.Box = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, refP
   var responsiveContainer = (0, _react.useContext)(_contexts.ResponsiveContainerContext);
   var responsive = responsiveContainer && responsiveProp ? 'container' : responsiveProp;
   var background = backgroundProp;
+  (0, _react.useEffect)(function () {
+    var _theme$global$depreca;
+    if (process.env.NODE_ENV !== 'production' && backgroundProp && (_theme$global$depreca = theme.global.deprecated) != null && _theme$global$depreca.backgrounds) {
+      var deprecatedBackground;
+      if (typeof backgroundProp === 'string') {
+        deprecatedBackground = theme.global.deprecated.backgrounds.find(function (item) {
+          return item.name === backgroundProp;
+        });
+      } else if (typeof backgroundProp === 'object') {
+        deprecatedBackground = theme.global.deprecated.backgrounds.find(function (item) {
+          return item.name === backgroundProp.image || item.name === backgroundProp.color;
+        });
+      }
+      if (deprecatedBackground) {
+        console.warn(deprecatedBackground.message || "The background " + deprecatedBackground.name + " is deprecated.");
+      }
+    }
+  }, [backgroundProp, (_theme$global$depreca2 = theme.global.deprecated) == null ? void 0 : _theme$global$depreca2.backgrounds]);
   var announce = (0, _react.useContext)(_AnnounceContext.AnnounceContext);
   var containerRef = (0, _utils.useForwardedRef)(refProp);
 
