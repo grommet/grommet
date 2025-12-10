@@ -8,13 +8,9 @@ import { MeterPropTypes } from './propTypes';
 import { useThemeValue } from '../../utils/useThemeValue';
 import { MessageContext } from '../../contexts/MessageContext';
 var Meter = /*#__PURE__*/forwardRef(function (_ref, ref) {
-  var _messages$meter;
+  var _theme$meter, _messages$meter;
   var ariaLabel = _ref['aria-label'],
-    _ref$background = _ref.background,
-    background = _ref$background === void 0 ? {
-      color: 'light-2',
-      opacity: 'medium'
-    } : _ref$background,
+    backgroundProp = _ref.background,
     color = _ref.color,
     _ref$direction = _ref.direction,
     direction = _ref$direction === void 0 ? 'horizontal' : _ref$direction,
@@ -34,6 +30,7 @@ var Meter = /*#__PURE__*/forwardRef(function (_ref, ref) {
     theme = _useThemeValue.theme;
   var _useContext = useContext(MessageContext),
     format = _useContext.format;
+  var background = backgroundProp || ((_theme$meter = theme.meter) == null ? void 0 : _theme$meter.background);
 
   // normalize values to an array of objects
   var values = useMemo(function () {

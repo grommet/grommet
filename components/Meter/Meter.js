@@ -13,13 +13,9 @@ function _interopRequireWildcard(e, t) { if ("function" == typeof WeakMap) var r
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (-1 !== e.indexOf(n)) continue; t[n] = r[n]; } return t; }
 var Meter = exports.Meter = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
-  var _messages$meter;
+  var _theme$meter, _messages$meter;
   var ariaLabel = _ref['aria-label'],
-    _ref$background = _ref.background,
-    background = _ref$background === void 0 ? {
-      color: 'light-2',
-      opacity: 'medium'
-    } : _ref$background,
+    backgroundProp = _ref.background,
     color = _ref.color,
     _ref$direction = _ref.direction,
     direction = _ref$direction === void 0 ? 'horizontal' : _ref$direction,
@@ -39,6 +35,7 @@ var Meter = exports.Meter = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, 
     theme = _useThemeValue.theme;
   var _useContext = (0, _react.useContext)(_MessageContext.MessageContext),
     format = _useContext.format;
+  var background = backgroundProp || ((_theme$meter = theme.meter) == null ? void 0 : _theme$meter.background);
 
   // normalize values to an array of objects
   var values = (0, _react.useMemo)(function () {
