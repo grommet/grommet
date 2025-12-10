@@ -1,15 +1,17 @@
 module.exports = {
   addons: [
-    '@storybook/addon-toolbars',
+    '@storybook/addon-a11y',
     {
-      name: '@storybook/addon-storysource',
+      name: '@storybook/addon-docs',
       options: {
-        loaderOptions: {
-          injectStoryParameters: false,
+        csfPluginOptions: null,
+        mdxPluginOptions: {
+          mdxCompileOptions: {
+            remarkPlugins: [],
+          },
         },
       },
     },
-    '@storybook/addon-a11y',
     '@storybook/addon-webpack5-compiler-babel',
     '@chromatic-com/storybook',
   ],
@@ -21,12 +23,8 @@ module.exports = {
     '../src/js/components/**/stories/CustomThemed/*.stories.@(ts|tsx|js|jsx)',
     '../src/js/components/**/*stories.js',
     '../src/js/contexts/**/*stories.js',
-    '../src/js/contexts/**/stories/typescript/*.stories.tsx',
     '../src/js/contexts/**/stories/*.stories.@(ts|tsx|js|jsx)',
   ],
-  features: {
-    postcss: false,
-  },
 
   staticDirs: ['./public'],
 
