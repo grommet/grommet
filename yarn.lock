@@ -4373,7 +4373,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/addon-a11y@npm:^9.0.8":
+"@storybook/addon-a11y@npm:^9.1.16":
   version: 9.1.16
   resolution: "@storybook/addon-a11y@npm:9.1.16"
   dependencies:
@@ -4385,7 +4385,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/addon-docs@npm:^9.0.8":
+"@storybook/addon-docs@npm:^9.1.16":
   version: 9.1.16
   resolution: "@storybook/addon-docs@npm:9.1.16"
   dependencies:
@@ -4399,13 +4399,6 @@ __metadata:
   peerDependencies:
     storybook: ^9.1.16
   checksum: 10c0/a508a81275c6cba040b9111ef45c783eb7758bfb2a3086d30321a488d15b4d3af622ab1d4aa37684015a1ddacc6e25ca5c2082752ff1ffabded6dbbc14cd4a95
-  languageName: node
-  linkType: hard
-
-"@storybook/addon-toolbars@npm:^9.0.8":
-  version: 9.0.8
-  resolution: "@storybook/addon-toolbars@npm:9.0.8"
-  checksum: 10c0/9c18a4426ad42b1a7dea6178a5d9305a8ad799920778068b332e56aaea4a2eca8b845fb1d3a8b84f68eafec54949704108e16eb78fd01d8e191f1653e05c9cd5
   languageName: node
   linkType: hard
 
@@ -4540,7 +4533,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/react-webpack5@npm:^9.0.8":
+"@storybook/react-webpack5@npm:^9.1.16":
   version: 9.1.16
   resolution: "@storybook/react-webpack5@npm:9.1.16"
   dependencies:
@@ -4559,7 +4552,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/react@npm:9.1.16, @storybook/react@npm:^9.0.8":
+"@storybook/react@npm:9.1.16, @storybook/react@npm:^9.1.16":
   version: 9.1.16
   resolution: "@storybook/react@npm:9.1.16"
   dependencies:
@@ -10179,12 +10172,11 @@ __metadata:
     "@eslint/compat": "npm:^2.0.0"
     "@eslint/eslintrc": "npm:^3.3.1"
     "@eslint/js": "npm:^9.39.1"
-    "@storybook/addon-a11y": "npm:^9.0.8"
-    "@storybook/addon-docs": "npm:^9.0.8"
-    "@storybook/addon-toolbars": "npm:^9.0.8"
+    "@storybook/addon-a11y": "npm:^9.1.16"
+    "@storybook/addon-docs": "npm:^9.1.16"
     "@storybook/addon-webpack5-compiler-babel": "npm:^3.0.6"
-    "@storybook/react": "npm:^9.0.8"
-    "@storybook/react-webpack5": "npm:^9.0.8"
+    "@storybook/react": "npm:^9.1.16"
+    "@storybook/react-webpack5": "npm:^9.1.16"
     "@testing-library/dom": "npm:^10.4.1"
     "@testing-library/jest-dom": "npm:^6.9.1"
     "@testing-library/react": "npm:^16.3.0"
@@ -10242,7 +10234,7 @@ __metadata:
     react-shadow: "npm:^20.6.0"
     regenerator-runtime: "npm:^0.14.1"
     simple-git: "npm:^3.30.0"
-    storybook: "npm:^9.0.8"
+    storybook: "npm:^9.1.16"
     styled-components: "npm:^6.1.19"
     tarball-extract: "npm:^0.0.6"
     testcafe: "npm:^3.7.2"
@@ -15612,7 +15604,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"storybook@npm:^9.0.8":
+"storybook@npm:^9.1.16":
   version: 9.1.16
   resolution: "storybook@npm:9.1.16"
   dependencies:
