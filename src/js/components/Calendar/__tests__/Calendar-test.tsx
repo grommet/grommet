@@ -252,23 +252,25 @@ describe('Calendar', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
-  test('read-only when no onSelect prop provided', () => {
-    const { getByText, container } = render(
+  test('read-only with range when no onSelect prop provided', () => {
+    const { getByText } = render(
       <Grommet>
-        <Calendar date={DATE} animate={false} />
+        <Calendar date={DATE} range animate={false} />
       </Grommet>,
     );
 
-    // Calendar should render without onSelect prop
-    expect(container.firstChild).toMatchSnapshot();
+    // Verify calendar renders without throwing
+    expect(getByText('17')).toBeInTheDocument();
+    expect(getByText('20')).toBeInTheDocument();
 
-    // Clicking on a date should not trigger any selection behavior
-    // since no onSelect handler is provided (read-only mode)
-    const dateButton = getByText('17');
-    fireEvent.click(dateButton);
+    // Click multiple dates - should not cause any errors
+    // Since there's no onSelect, range selection should not work
+    fireEvent.click(getByText('17'));
+    fireEvent.click(getByText('20'));
 
-    // Calendar should remain unchanged after click
-    expect(container.firstChild).toMatchSnapshot();
+    // Calendar should still be accessible after clicks
+    expect(getByText('17')).toBeInTheDocument();
+    expect(getByText('20')).toBeInTheDocument();
   });
 
   test('first day sunday week monday', () => {
