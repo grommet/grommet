@@ -252,6 +252,25 @@ describe('Calendar', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
+  test('read-only when no onSelect prop provided', () => {
+    const { getByText, container } = render(
+      <Grommet>
+        <Calendar date={DATE} animate={false} />
+      </Grommet>,
+    );
+
+    // Calendar should render without onSelect prop
+    expect(container.firstChild).toMatchSnapshot();
+
+    // Clicking on a date should not trigger any selection behavior
+    // since no onSelect handler is provided (read-only mode)
+    const dateButton = getByText('17');
+    fireEvent.click(dateButton);
+
+    // Calendar should remain unchanged after click
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
   test('first day sunday week monday', () => {
     // When the first day of the month is Sunday,
     // and the request of firstDayOfWeek

@@ -16181,6 +16181,2184 @@ exports[`Calendar heading text font size 1`] = `
 </DocumentFragment>
 `;
 
+exports[`Calendar read-only when no onSelect prop provided 1`] = `
+.c8 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #666666;
+  stroke: #666666;
+}
+
+.c8 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c8 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c8 *[stroke*='#'],
+.c8 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c8 *[fill-rule],
+.c8 *[FILL-RULE],
+.c8 *[fill*='#'],
+.c8 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c2 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+}
+
+.c3 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.c4 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: row;
+  flex: 1 1;
+  justify-content: space-between;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+.c6 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: row;
+  flex: 0 0 auto;
+}
+
+.c9 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+
+.c7 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+  line-height: 0;
+  padding: 12px;
+}
+
+.c7:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c7:focus >circle,
+.c7:focus >ellipse,
+.c7:focus >line,
+.c7:focus >path,
+.c7:focus >polygon,
+.c7:focus >polyline,
+.c7:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c7:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c7:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c7:focus:not(:focus-visible) >circle,
+.c7:focus:not(:focus-visible) >ellipse,
+.c7:focus:not(:focus-visible) >line,
+.c7:focus:not(:focus-visible) >path,
+.c7:focus:not(:focus-visible) >polygon,
+.c7:focus:not(:focus-visible) >polyline,
+.c7:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c7:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
+}
+
+.c14 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+}
+
+.c14:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c14:focus >circle,
+.c14:focus >ellipse,
+.c14:focus >line,
+.c14:focus >path,
+.c14:focus >polygon,
+.c14:focus >polyline,
+.c14:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c14:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c14:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c14:focus:not(:focus-visible) >circle,
+.c14:focus:not(:focus-visible) >ellipse,
+.c14:focus:not(:focus-visible) >line,
+.c14:focus:not(:focus-visible) >path,
+.c14:focus:not(:focus-visible) >polygon,
+.c14:focus:not(:focus-visible) >polyline,
+.c14:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c14:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
+}
+
+.c5 {
+  margin: 0px;
+  font-size: 26px;
+  line-height: 32px;
+  max-width: 624px;
+  font-weight: 600;
+  overflow-wrap: normal;
+}
+
+.c1 {
+  font-size: 18px;
+  line-height: 1.45;
+  width: 384px;
+}
+
+.c10 {
+  overflow: hidden;
+  height: 329.1428571428571px;
+}
+
+.c11 {
+  position: relative;
+}
+
+.c12 {
+  display: flex;
+  justify-content: space-between;
+}
+
+.c13 {
+  flex: 0 1 auto;
+}
+
+.c15:focus {
+  position: relative;
+  z-index: 1;
+}
+
+.c16 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #666666;
+  width: 54.857142857142854px;
+  height: 54.857142857142854px;
+}
+
+.c17 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #000000;
+  width: 54.857142857142854px;
+  height: 54.857142857142854px;
+}
+
+.c18 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #000000;
+  width: 54.857142857142854px;
+  height: 54.857142857142854px;
+  background-color: #7D4CDB;
+  color: #f8f8f8;
+  font-weight: bold;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+@media only screen and (max-width: 768px) {
+  .c4 {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c5 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c5 {
+    font-size: 18px;
+    line-height: 24px;
+    max-width: 432px;
+  }
+}
+
+@media only screen and (max-width: 384px) {
+  .c1 {
+    width: 100vw;
+    max-width: 384px;
+  }
+}
+
+@media only screen and (max-width: 384px) {
+  .c10 {
+    height: auto;
+    aspect-ratio: 7/6;
+  }
+}
+
+@media only screen and (max-width: 384px) {
+  .c13 {
+    width: 14.3%;
+  }
+}
+
+@media only screen {
+  .c15 {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 384px) {
+  .c16 {
+    width: 100%;
+    max-width: 54.857142857142854px;
+    height: auto;
+    aspect-ratio: 1;
+  }
+}
+
+@media only screen and (max-width: 384px) {
+  .c17 {
+    width: 100%;
+    max-width: 54.857142857142854px;
+    height: auto;
+    aspect-ratio: 1;
+  }
+}
+
+@media only screen and (max-width: 384px) {
+  .c18 {
+    width: 100%;
+    max-width: 54.857142857142854px;
+    height: auto;
+    aspect-ratio: 1;
+  }
+}
+
+<div
+  class="c0"
+>
+  <div
+    class="c1"
+  >
+    <div
+      class="c2"
+    >
+      <div
+        class="c3"
+      >
+        <header
+          class="c4"
+        >
+          <h3
+            class="c5"
+          >
+            January 2020
+          </h3>
+        </header>
+        <div
+          class="c6"
+        >
+          <button
+            aria-label="Go to December 2019"
+            class="c7"
+            type="button"
+          >
+            <svg
+              aria-label="Previous"
+              class="c8"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M17 2 7 12l10 10"
+                fill="none"
+                stroke="#000"
+                stroke-width="2"
+              />
+            </svg>
+          </button>
+          <button
+            aria-label="Go to February 2020"
+            class="c7"
+            type="button"
+          >
+            <svg
+              aria-label="Next"
+              class="c8"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="m7 2 10 10L7 22"
+                fill="none"
+                stroke="#000"
+                stroke-width="2"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+      <div
+        class="c9"
+        role="grid"
+      >
+        <div
+          aria-label="January 2020; Currently selected January 15, 2020;"
+          class="c10"
+          role="rowgroup"
+        >
+          <div
+            class="c11"
+          >
+            <div
+              class="c12"
+              role="row"
+            >
+              <div
+                aria-selected="false"
+                class="c13"
+                role="gridcell"
+              >
+                <button
+                  aria-disabled="false"
+                  aria-label="Sun Dec 29 2019"
+                  class="c14 c15"
+                  tabindex="0"
+                  type="button"
+                >
+                  <div
+                    class="c16"
+                  >
+                    29
+                  </div>
+                </button>
+              </div>
+              <div
+                aria-selected="false"
+                class="c13"
+                role="gridcell"
+              >
+                <button
+                  aria-disabled="false"
+                  aria-label="Mon Dec 30 2019"
+                  class="c14 c15"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <div
+                    class="c16"
+                  >
+                    30
+                  </div>
+                </button>
+              </div>
+              <div
+                aria-selected="false"
+                class="c13"
+                role="gridcell"
+              >
+                <button
+                  aria-disabled="false"
+                  aria-label="Tue Dec 31 2019"
+                  class="c14 c15"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <div
+                    class="c16"
+                  >
+                    31
+                  </div>
+                </button>
+              </div>
+              <div
+                aria-selected="false"
+                class="c13"
+                role="gridcell"
+              >
+                <button
+                  aria-disabled="false"
+                  aria-label="Wed Jan 01 2020"
+                  class="c14 c15"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <div
+                    class="c17"
+                  >
+                    1
+                  </div>
+                </button>
+              </div>
+              <div
+                aria-selected="false"
+                class="c13"
+                role="gridcell"
+              >
+                <button
+                  aria-disabled="false"
+                  aria-label="Thu Jan 02 2020"
+                  class="c14 c15"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <div
+                    class="c17"
+                  >
+                    2
+                  </div>
+                </button>
+              </div>
+              <div
+                aria-selected="false"
+                class="c13"
+                role="gridcell"
+              >
+                <button
+                  aria-disabled="false"
+                  aria-label="Fri Jan 03 2020"
+                  class="c14 c15"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <div
+                    class="c17"
+                  >
+                    3
+                  </div>
+                </button>
+              </div>
+              <div
+                aria-selected="false"
+                class="c13"
+                role="gridcell"
+              >
+                <button
+                  aria-disabled="false"
+                  aria-label="Sat Jan 04 2020"
+                  class="c14 c15"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <div
+                    class="c17"
+                  >
+                    4
+                  </div>
+                </button>
+              </div>
+            </div>
+            <div
+              class="c12"
+              role="row"
+            >
+              <div
+                aria-selected="false"
+                class="c13"
+                role="gridcell"
+              >
+                <button
+                  aria-disabled="false"
+                  aria-label="Sun Jan 05 2020"
+                  class="c14 c15"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <div
+                    class="c17"
+                  >
+                    5
+                  </div>
+                </button>
+              </div>
+              <div
+                aria-selected="false"
+                class="c13"
+                role="gridcell"
+              >
+                <button
+                  aria-disabled="false"
+                  aria-label="Mon Jan 06 2020"
+                  class="c14 c15"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <div
+                    class="c17"
+                  >
+                    6
+                  </div>
+                </button>
+              </div>
+              <div
+                aria-selected="false"
+                class="c13"
+                role="gridcell"
+              >
+                <button
+                  aria-disabled="false"
+                  aria-label="Tue Jan 07 2020"
+                  class="c14 c15"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <div
+                    class="c17"
+                  >
+                    7
+                  </div>
+                </button>
+              </div>
+              <div
+                aria-selected="false"
+                class="c13"
+                role="gridcell"
+              >
+                <button
+                  aria-disabled="false"
+                  aria-label="Wed Jan 08 2020"
+                  class="c14 c15"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <div
+                    class="c17"
+                  >
+                    8
+                  </div>
+                </button>
+              </div>
+              <div
+                aria-selected="false"
+                class="c13"
+                role="gridcell"
+              >
+                <button
+                  aria-disabled="false"
+                  aria-label="Thu Jan 09 2020"
+                  class="c14 c15"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <div
+                    class="c17"
+                  >
+                    9
+                  </div>
+                </button>
+              </div>
+              <div
+                aria-selected="false"
+                class="c13"
+                role="gridcell"
+              >
+                <button
+                  aria-disabled="false"
+                  aria-label="Fri Jan 10 2020"
+                  class="c14 c15"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <div
+                    class="c17"
+                  >
+                    10
+                  </div>
+                </button>
+              </div>
+              <div
+                aria-selected="false"
+                class="c13"
+                role="gridcell"
+              >
+                <button
+                  aria-disabled="false"
+                  aria-label="Sat Jan 11 2020"
+                  class="c14 c15"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <div
+                    class="c17"
+                  >
+                    11
+                  </div>
+                </button>
+              </div>
+            </div>
+            <div
+              class="c12"
+              role="row"
+            >
+              <div
+                aria-selected="false"
+                class="c13"
+                role="gridcell"
+              >
+                <button
+                  aria-disabled="false"
+                  aria-label="Sun Jan 12 2020"
+                  class="c14 c15"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <div
+                    class="c17"
+                  >
+                    12
+                  </div>
+                </button>
+              </div>
+              <div
+                aria-selected="false"
+                class="c13"
+                role="gridcell"
+              >
+                <button
+                  aria-disabled="false"
+                  aria-label="Mon Jan 13 2020"
+                  class="c14 c15"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <div
+                    class="c17"
+                  >
+                    13
+                  </div>
+                </button>
+              </div>
+              <div
+                aria-selected="false"
+                class="c13"
+                role="gridcell"
+              >
+                <button
+                  aria-disabled="false"
+                  aria-label="Tue Jan 14 2020"
+                  class="c14 c15"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <div
+                    class="c17"
+                  >
+                    14
+                  </div>
+                </button>
+              </div>
+              <div
+                aria-selected="true"
+                class="c13"
+                role="gridcell"
+              >
+                <button
+                  aria-disabled="false"
+                  aria-label="Wed Jan 15 2020"
+                  class="c14 c15"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <div
+                    class="c18"
+                  >
+                    15
+                  </div>
+                </button>
+              </div>
+              <div
+                aria-selected="false"
+                class="c13"
+                role="gridcell"
+              >
+                <button
+                  aria-disabled="false"
+                  aria-label="Thu Jan 16 2020"
+                  class="c14 c15"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <div
+                    class="c17"
+                  >
+                    16
+                  </div>
+                </button>
+              </div>
+              <div
+                aria-selected="false"
+                class="c13"
+                role="gridcell"
+              >
+                <button
+                  aria-disabled="false"
+                  aria-label="Fri Jan 17 2020"
+                  class="c14 c15"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <div
+                    class="c17"
+                  >
+                    17
+                  </div>
+                </button>
+              </div>
+              <div
+                aria-selected="false"
+                class="c13"
+                role="gridcell"
+              >
+                <button
+                  aria-disabled="false"
+                  aria-label="Sat Jan 18 2020"
+                  class="c14 c15"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <div
+                    class="c17"
+                  >
+                    18
+                  </div>
+                </button>
+              </div>
+            </div>
+            <div
+              class="c12"
+              role="row"
+            >
+              <div
+                aria-selected="false"
+                class="c13"
+                role="gridcell"
+              >
+                <button
+                  aria-disabled="false"
+                  aria-label="Sun Jan 19 2020"
+                  class="c14 c15"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <div
+                    class="c17"
+                  >
+                    19
+                  </div>
+                </button>
+              </div>
+              <div
+                aria-selected="false"
+                class="c13"
+                role="gridcell"
+              >
+                <button
+                  aria-disabled="false"
+                  aria-label="Mon Jan 20 2020"
+                  class="c14 c15"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <div
+                    class="c17"
+                  >
+                    20
+                  </div>
+                </button>
+              </div>
+              <div
+                aria-selected="false"
+                class="c13"
+                role="gridcell"
+              >
+                <button
+                  aria-disabled="false"
+                  aria-label="Tue Jan 21 2020"
+                  class="c14 c15"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <div
+                    class="c17"
+                  >
+                    21
+                  </div>
+                </button>
+              </div>
+              <div
+                aria-selected="false"
+                class="c13"
+                role="gridcell"
+              >
+                <button
+                  aria-disabled="false"
+                  aria-label="Wed Jan 22 2020"
+                  class="c14 c15"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <div
+                    class="c17"
+                  >
+                    22
+                  </div>
+                </button>
+              </div>
+              <div
+                aria-selected="false"
+                class="c13"
+                role="gridcell"
+              >
+                <button
+                  aria-disabled="false"
+                  aria-label="Thu Jan 23 2020"
+                  class="c14 c15"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <div
+                    class="c17"
+                  >
+                    23
+                  </div>
+                </button>
+              </div>
+              <div
+                aria-selected="false"
+                class="c13"
+                role="gridcell"
+              >
+                <button
+                  aria-disabled="false"
+                  aria-label="Fri Jan 24 2020"
+                  class="c14 c15"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <div
+                    class="c17"
+                  >
+                    24
+                  </div>
+                </button>
+              </div>
+              <div
+                aria-selected="false"
+                class="c13"
+                role="gridcell"
+              >
+                <button
+                  aria-disabled="false"
+                  aria-label="Sat Jan 25 2020"
+                  class="c14 c15"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <div
+                    class="c17"
+                  >
+                    25
+                  </div>
+                </button>
+              </div>
+            </div>
+            <div
+              class="c12"
+              role="row"
+            >
+              <div
+                aria-selected="false"
+                class="c13"
+                role="gridcell"
+              >
+                <button
+                  aria-disabled="false"
+                  aria-label="Sun Jan 26 2020"
+                  class="c14 c15"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <div
+                    class="c17"
+                  >
+                    26
+                  </div>
+                </button>
+              </div>
+              <div
+                aria-selected="false"
+                class="c13"
+                role="gridcell"
+              >
+                <button
+                  aria-disabled="false"
+                  aria-label="Mon Jan 27 2020"
+                  class="c14 c15"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <div
+                    class="c17"
+                  >
+                    27
+                  </div>
+                </button>
+              </div>
+              <div
+                aria-selected="false"
+                class="c13"
+                role="gridcell"
+              >
+                <button
+                  aria-disabled="false"
+                  aria-label="Tue Jan 28 2020"
+                  class="c14 c15"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <div
+                    class="c17"
+                  >
+                    28
+                  </div>
+                </button>
+              </div>
+              <div
+                aria-selected="false"
+                class="c13"
+                role="gridcell"
+              >
+                <button
+                  aria-disabled="false"
+                  aria-label="Wed Jan 29 2020"
+                  class="c14 c15"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <div
+                    class="c17"
+                  >
+                    29
+                  </div>
+                </button>
+              </div>
+              <div
+                aria-selected="false"
+                class="c13"
+                role="gridcell"
+              >
+                <button
+                  aria-disabled="false"
+                  aria-label="Thu Jan 30 2020"
+                  class="c14 c15"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <div
+                    class="c17"
+                  >
+                    30
+                  </div>
+                </button>
+              </div>
+              <div
+                aria-selected="false"
+                class="c13"
+                role="gridcell"
+              >
+                <button
+                  aria-disabled="false"
+                  aria-label="Fri Jan 31 2020"
+                  class="c14 c15"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <div
+                    class="c17"
+                  >
+                    31
+                  </div>
+                </button>
+              </div>
+              <div
+                aria-selected="false"
+                class="c13"
+                role="gridcell"
+              >
+                <button
+                  aria-disabled="false"
+                  aria-label="Sat Feb 01 2020"
+                  class="c14 c15"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <div
+                    class="c16"
+                  >
+                    1
+                  </div>
+                </button>
+              </div>
+            </div>
+            <div
+              class="c12"
+              role="row"
+            >
+              <div
+                aria-selected="false"
+                class="c13"
+                role="gridcell"
+              >
+                <button
+                  aria-disabled="false"
+                  aria-label="Sun Feb 02 2020"
+                  class="c14 c15"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <div
+                    class="c16"
+                  >
+                    2
+                  </div>
+                </button>
+              </div>
+              <div
+                aria-selected="false"
+                class="c13"
+                role="gridcell"
+              >
+                <button
+                  aria-disabled="false"
+                  aria-label="Mon Feb 03 2020"
+                  class="c14 c15"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <div
+                    class="c16"
+                  >
+                    3
+                  </div>
+                </button>
+              </div>
+              <div
+                aria-selected="false"
+                class="c13"
+                role="gridcell"
+              >
+                <button
+                  aria-disabled="false"
+                  aria-label="Tue Feb 04 2020"
+                  class="c14 c15"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <div
+                    class="c16"
+                  >
+                    4
+                  </div>
+                </button>
+              </div>
+              <div
+                aria-selected="false"
+                class="c13"
+                role="gridcell"
+              >
+                <button
+                  aria-disabled="false"
+                  aria-label="Wed Feb 05 2020"
+                  class="c14 c15"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <div
+                    class="c16"
+                  >
+                    5
+                  </div>
+                </button>
+              </div>
+              <div
+                aria-selected="false"
+                class="c13"
+                role="gridcell"
+              >
+                <button
+                  aria-disabled="false"
+                  aria-label="Thu Feb 06 2020"
+                  class="c14 c15"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <div
+                    class="c16"
+                  >
+                    6
+                  </div>
+                </button>
+              </div>
+              <div
+                aria-selected="false"
+                class="c13"
+                role="gridcell"
+              >
+                <button
+                  aria-disabled="false"
+                  aria-label="Fri Feb 07 2020"
+                  class="c14 c15"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <div
+                    class="c16"
+                  >
+                    7
+                  </div>
+                </button>
+              </div>
+              <div
+                aria-selected="false"
+                class="c13"
+                role="gridcell"
+              >
+                <button
+                  aria-disabled="false"
+                  aria-label="Sat Feb 08 2020"
+                  class="c14 c15"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <div
+                    class="c16"
+                  >
+                    8
+                  </div>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Calendar read-only when no onSelect prop provided 2`] = `
+<div
+  class="StyledGrommet-sc-19lkkz7-0 kiEDjE"
+>
+  <div
+    class="StyledCalendar-sc-1y4xhmp-0 gmifNp"
+  >
+    <div
+      class="StyledBox-sc-13pk1d4-0 fDLUqh"
+    >
+      <div
+        class="StyledBox-sc-13pk1d4-0 edFWqF"
+      >
+        <header
+          class="StyledBox-sc-13pk1d4-0 frxoZl"
+        >
+          <h3
+            class="StyledHeading-sc-1rdh4aw-0 jxbGSA"
+          >
+            January 2020
+          </h3>
+        </header>
+        <div
+          class="StyledBox-sc-13pk1d4-0 jUSFfA"
+        >
+          <button
+            aria-label="Go to December 2019"
+            class="StyledButton-sc-323bzc-0 bIZBkf"
+            type="button"
+          >
+            <svg
+              aria-label="Previous"
+              class="StyledIcon-sc-ofa7kd-0 esCCqY"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M17 2 7 12l10 10"
+                fill="none"
+                stroke="#000"
+                stroke-width="2"
+              />
+            </svg>
+          </button>
+          <button
+            aria-label="Go to February 2020"
+            class="StyledButton-sc-323bzc-0 bIZBkf"
+            type="button"
+          >
+            <svg
+              aria-label="Next"
+              class="StyledIcon-sc-ofa7kd-0 esCCqY"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="m7 2 10 10L7 22"
+                fill="none"
+                stroke="#000"
+                stroke-width="2"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+      <div
+        class="StyledBox-sc-13pk1d4-0 iUPyKe"
+        role="grid"
+      >
+        <div
+          aria-label="January 2020; Currently selected January 15, 2020;"
+          class="StyledCalendar__StyledWeeksContainer-sc-1y4xhmp-1 bQwkoe"
+          role="rowgroup"
+        >
+          <div
+            class="StyledCalendar__StyledWeeks-sc-1y4xhmp-2 eFkJcK"
+          >
+            <div
+              class="StyledCalendar__StyledWeek-sc-1y4xhmp-3 iZAosM"
+              role="row"
+            >
+              <div
+                aria-selected="false"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 bkAurS"
+                role="gridcell"
+              >
+                <button
+                  aria-disabled="false"
+                  aria-label="Sun Dec 29 2019"
+                  class="StyledButton-sc-323bzc-0 jLPXpV StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
+                  tabindex="0"
+                  type="button"
+                >
+                  <div
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 iaiFcK"
+                  >
+                    29
+                  </div>
+                </button>
+              </div>
+              <div
+                aria-selected="false"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 bkAurS"
+                role="gridcell"
+              >
+                <button
+                  aria-disabled="false"
+                  aria-label="Mon Dec 30 2019"
+                  class="StyledButton-sc-323bzc-0 jLPXpV StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <div
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 iaiFcK"
+                  >
+                    30
+                  </div>
+                </button>
+              </div>
+              <div
+                aria-selected="false"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 bkAurS"
+                role="gridcell"
+              >
+                <button
+                  aria-disabled="false"
+                  aria-label="Tue Dec 31 2019"
+                  class="StyledButton-sc-323bzc-0 jLPXpV StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <div
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 iaiFcK"
+                  >
+                    31
+                  </div>
+                </button>
+              </div>
+              <div
+                aria-selected="false"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 bkAurS"
+                role="gridcell"
+              >
+                <button
+                  aria-disabled="false"
+                  aria-label="Wed Jan 01 2020"
+                  class="StyledButton-sc-323bzc-0 jLPXpV StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <div
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 gCbubi"
+                  >
+                    1
+                  </div>
+                </button>
+              </div>
+              <div
+                aria-selected="false"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 bkAurS"
+                role="gridcell"
+              >
+                <button
+                  aria-disabled="false"
+                  aria-label="Thu Jan 02 2020"
+                  class="StyledButton-sc-323bzc-0 jLPXpV StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <div
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 gCbubi"
+                  >
+                    2
+                  </div>
+                </button>
+              </div>
+              <div
+                aria-selected="false"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 bkAurS"
+                role="gridcell"
+              >
+                <button
+                  aria-disabled="false"
+                  aria-label="Fri Jan 03 2020"
+                  class="StyledButton-sc-323bzc-0 jLPXpV StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <div
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 gCbubi"
+                  >
+                    3
+                  </div>
+                </button>
+              </div>
+              <div
+                aria-selected="false"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 bkAurS"
+                role="gridcell"
+              >
+                <button
+                  aria-disabled="false"
+                  aria-label="Sat Jan 04 2020"
+                  class="StyledButton-sc-323bzc-0 jLPXpV StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <div
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 gCbubi"
+                  >
+                    4
+                  </div>
+                </button>
+              </div>
+            </div>
+            <div
+              class="StyledCalendar__StyledWeek-sc-1y4xhmp-3 iZAosM"
+              role="row"
+            >
+              <div
+                aria-selected="false"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 bkAurS"
+                role="gridcell"
+              >
+                <button
+                  aria-disabled="false"
+                  aria-label="Sun Jan 05 2020"
+                  class="StyledButton-sc-323bzc-0 jLPXpV StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <div
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 gCbubi"
+                  >
+                    5
+                  </div>
+                </button>
+              </div>
+              <div
+                aria-selected="false"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 bkAurS"
+                role="gridcell"
+              >
+                <button
+                  aria-disabled="false"
+                  aria-label="Mon Jan 06 2020"
+                  class="StyledButton-sc-323bzc-0 jLPXpV StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <div
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 gCbubi"
+                  >
+                    6
+                  </div>
+                </button>
+              </div>
+              <div
+                aria-selected="false"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 bkAurS"
+                role="gridcell"
+              >
+                <button
+                  aria-disabled="false"
+                  aria-label="Tue Jan 07 2020"
+                  class="StyledButton-sc-323bzc-0 jLPXpV StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <div
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 gCbubi"
+                  >
+                    7
+                  </div>
+                </button>
+              </div>
+              <div
+                aria-selected="false"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 bkAurS"
+                role="gridcell"
+              >
+                <button
+                  aria-disabled="false"
+                  aria-label="Wed Jan 08 2020"
+                  class="StyledButton-sc-323bzc-0 jLPXpV StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <div
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 gCbubi"
+                  >
+                    8
+                  </div>
+                </button>
+              </div>
+              <div
+                aria-selected="false"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 bkAurS"
+                role="gridcell"
+              >
+                <button
+                  aria-disabled="false"
+                  aria-label="Thu Jan 09 2020"
+                  class="StyledButton-sc-323bzc-0 jLPXpV StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <div
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 gCbubi"
+                  >
+                    9
+                  </div>
+                </button>
+              </div>
+              <div
+                aria-selected="false"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 bkAurS"
+                role="gridcell"
+              >
+                <button
+                  aria-disabled="false"
+                  aria-label="Fri Jan 10 2020"
+                  class="StyledButton-sc-323bzc-0 jLPXpV StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <div
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 gCbubi"
+                  >
+                    10
+                  </div>
+                </button>
+              </div>
+              <div
+                aria-selected="false"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 bkAurS"
+                role="gridcell"
+              >
+                <button
+                  aria-disabled="false"
+                  aria-label="Sat Jan 11 2020"
+                  class="StyledButton-sc-323bzc-0 jLPXpV StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <div
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 gCbubi"
+                  >
+                    11
+                  </div>
+                </button>
+              </div>
+            </div>
+            <div
+              class="StyledCalendar__StyledWeek-sc-1y4xhmp-3 iZAosM"
+              role="row"
+            >
+              <div
+                aria-selected="false"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 bkAurS"
+                role="gridcell"
+              >
+                <button
+                  aria-disabled="false"
+                  aria-label="Sun Jan 12 2020"
+                  class="StyledButton-sc-323bzc-0 jLPXpV StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <div
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 gCbubi"
+                  >
+                    12
+                  </div>
+                </button>
+              </div>
+              <div
+                aria-selected="false"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 bkAurS"
+                role="gridcell"
+              >
+                <button
+                  aria-disabled="false"
+                  aria-label="Mon Jan 13 2020"
+                  class="StyledButton-sc-323bzc-0 jLPXpV StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <div
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 gCbubi"
+                  >
+                    13
+                  </div>
+                </button>
+              </div>
+              <div
+                aria-selected="false"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 bkAurS"
+                role="gridcell"
+              >
+                <button
+                  aria-disabled="false"
+                  aria-label="Tue Jan 14 2020"
+                  class="StyledButton-sc-323bzc-0 jLPXpV StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <div
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 gCbubi"
+                  >
+                    14
+                  </div>
+                </button>
+              </div>
+              <div
+                aria-selected="true"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 bkAurS"
+                role="gridcell"
+              >
+                <button
+                  aria-disabled="false"
+                  aria-label="Wed Jan 15 2020"
+                  class="StyledButton-sc-323bzc-0 jLPXpV StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <div
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 gbwdqj"
+                  >
+                    15
+                  </div>
+                </button>
+              </div>
+              <div
+                aria-selected="false"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 bkAurS"
+                role="gridcell"
+              >
+                <button
+                  aria-disabled="false"
+                  aria-label="Thu Jan 16 2020"
+                  class="StyledButton-sc-323bzc-0 jLPXpV StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <div
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 gCbubi"
+                  >
+                    16
+                  </div>
+                </button>
+              </div>
+              <div
+                aria-selected="false"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 bkAurS"
+                role="gridcell"
+              >
+                <button
+                  aria-disabled="false"
+                  aria-label="Fri Jan 17 2020"
+                  class="StyledButton-sc-323bzc-0 jLPXpV StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <div
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 gCbubi"
+                  >
+                    17
+                  </div>
+                </button>
+              </div>
+              <div
+                aria-selected="false"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 bkAurS"
+                role="gridcell"
+              >
+                <button
+                  aria-disabled="false"
+                  aria-label="Sat Jan 18 2020"
+                  class="StyledButton-sc-323bzc-0 jLPXpV StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <div
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 gCbubi"
+                  >
+                    18
+                  </div>
+                </button>
+              </div>
+            </div>
+            <div
+              class="StyledCalendar__StyledWeek-sc-1y4xhmp-3 iZAosM"
+              role="row"
+            >
+              <div
+                aria-selected="false"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 bkAurS"
+                role="gridcell"
+              >
+                <button
+                  aria-disabled="false"
+                  aria-label="Sun Jan 19 2020"
+                  class="StyledButton-sc-323bzc-0 jLPXpV StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <div
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 gCbubi"
+                  >
+                    19
+                  </div>
+                </button>
+              </div>
+              <div
+                aria-selected="false"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 bkAurS"
+                role="gridcell"
+              >
+                <button
+                  aria-disabled="false"
+                  aria-label="Mon Jan 20 2020"
+                  class="StyledButton-sc-323bzc-0 jLPXpV StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <div
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 gCbubi"
+                  >
+                    20
+                  </div>
+                </button>
+              </div>
+              <div
+                aria-selected="false"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 bkAurS"
+                role="gridcell"
+              >
+                <button
+                  aria-disabled="false"
+                  aria-label="Tue Jan 21 2020"
+                  class="StyledButton-sc-323bzc-0 jLPXpV StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <div
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 gCbubi"
+                  >
+                    21
+                  </div>
+                </button>
+              </div>
+              <div
+                aria-selected="false"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 bkAurS"
+                role="gridcell"
+              >
+                <button
+                  aria-disabled="false"
+                  aria-label="Wed Jan 22 2020"
+                  class="StyledButton-sc-323bzc-0 jLPXpV StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <div
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 gCbubi"
+                  >
+                    22
+                  </div>
+                </button>
+              </div>
+              <div
+                aria-selected="false"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 bkAurS"
+                role="gridcell"
+              >
+                <button
+                  aria-disabled="false"
+                  aria-label="Thu Jan 23 2020"
+                  class="StyledButton-sc-323bzc-0 jLPXpV StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <div
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 gCbubi"
+                  >
+                    23
+                  </div>
+                </button>
+              </div>
+              <div
+                aria-selected="false"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 bkAurS"
+                role="gridcell"
+              >
+                <button
+                  aria-disabled="false"
+                  aria-label="Fri Jan 24 2020"
+                  class="StyledButton-sc-323bzc-0 jLPXpV StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <div
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 gCbubi"
+                  >
+                    24
+                  </div>
+                </button>
+              </div>
+              <div
+                aria-selected="false"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 bkAurS"
+                role="gridcell"
+              >
+                <button
+                  aria-disabled="false"
+                  aria-label="Sat Jan 25 2020"
+                  class="StyledButton-sc-323bzc-0 jLPXpV StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <div
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 gCbubi"
+                  >
+                    25
+                  </div>
+                </button>
+              </div>
+            </div>
+            <div
+              class="StyledCalendar__StyledWeek-sc-1y4xhmp-3 iZAosM"
+              role="row"
+            >
+              <div
+                aria-selected="false"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 bkAurS"
+                role="gridcell"
+              >
+                <button
+                  aria-disabled="false"
+                  aria-label="Sun Jan 26 2020"
+                  class="StyledButton-sc-323bzc-0 jLPXpV StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <div
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 gCbubi"
+                  >
+                    26
+                  </div>
+                </button>
+              </div>
+              <div
+                aria-selected="false"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 bkAurS"
+                role="gridcell"
+              >
+                <button
+                  aria-disabled="false"
+                  aria-label="Mon Jan 27 2020"
+                  class="StyledButton-sc-323bzc-0 jLPXpV StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <div
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 gCbubi"
+                  >
+                    27
+                  </div>
+                </button>
+              </div>
+              <div
+                aria-selected="false"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 bkAurS"
+                role="gridcell"
+              >
+                <button
+                  aria-disabled="false"
+                  aria-label="Tue Jan 28 2020"
+                  class="StyledButton-sc-323bzc-0 jLPXpV StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <div
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 gCbubi"
+                  >
+                    28
+                  </div>
+                </button>
+              </div>
+              <div
+                aria-selected="false"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 bkAurS"
+                role="gridcell"
+              >
+                <button
+                  aria-disabled="false"
+                  aria-label="Wed Jan 29 2020"
+                  class="StyledButton-sc-323bzc-0 jLPXpV StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <div
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 gCbubi"
+                  >
+                    29
+                  </div>
+                </button>
+              </div>
+              <div
+                aria-selected="false"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 bkAurS"
+                role="gridcell"
+              >
+                <button
+                  aria-disabled="false"
+                  aria-label="Thu Jan 30 2020"
+                  class="StyledButton-sc-323bzc-0 jLPXpV StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <div
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 gCbubi"
+                  >
+                    30
+                  </div>
+                </button>
+              </div>
+              <div
+                aria-selected="false"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 bkAurS"
+                role="gridcell"
+              >
+                <button
+                  aria-disabled="false"
+                  aria-label="Fri Jan 31 2020"
+                  class="StyledButton-sc-323bzc-0 jLPXpV StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <div
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 gCbubi"
+                  >
+                    31
+                  </div>
+                </button>
+              </div>
+              <div
+                aria-selected="false"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 bkAurS"
+                role="gridcell"
+              >
+                <button
+                  aria-disabled="false"
+                  aria-label="Sat Feb 01 2020"
+                  class="StyledButton-sc-323bzc-0 jLPXpV StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <div
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 iaiFcK"
+                  >
+                    1
+                  </div>
+                </button>
+              </div>
+            </div>
+            <div
+              class="StyledCalendar__StyledWeek-sc-1y4xhmp-3 iZAosM"
+              role="row"
+            >
+              <div
+                aria-selected="false"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 bkAurS"
+                role="gridcell"
+              >
+                <button
+                  aria-disabled="false"
+                  aria-label="Sun Feb 02 2020"
+                  class="StyledButton-sc-323bzc-0 jLPXpV StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <div
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 iaiFcK"
+                  >
+                    2
+                  </div>
+                </button>
+              </div>
+              <div
+                aria-selected="false"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 bkAurS"
+                role="gridcell"
+              >
+                <button
+                  aria-disabled="false"
+                  aria-label="Mon Feb 03 2020"
+                  class="StyledButton-sc-323bzc-0 jLPXpV StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <div
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 iaiFcK"
+                  >
+                    3
+                  </div>
+                </button>
+              </div>
+              <div
+                aria-selected="false"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 bkAurS"
+                role="gridcell"
+              >
+                <button
+                  aria-disabled="false"
+                  aria-label="Tue Feb 04 2020"
+                  class="StyledButton-sc-323bzc-0 jLPXpV StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <div
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 iaiFcK"
+                  >
+                    4
+                  </div>
+                </button>
+              </div>
+              <div
+                aria-selected="false"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 bkAurS"
+                role="gridcell"
+              >
+                <button
+                  aria-disabled="false"
+                  aria-label="Wed Feb 05 2020"
+                  class="StyledButton-sc-323bzc-0 jLPXpV StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <div
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 iaiFcK"
+                  >
+                    5
+                  </div>
+                </button>
+              </div>
+              <div
+                aria-selected="false"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 bkAurS"
+                role="gridcell"
+              >
+                <button
+                  aria-disabled="false"
+                  aria-label="Thu Feb 06 2020"
+                  class="StyledButton-sc-323bzc-0 jLPXpV StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <div
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 iaiFcK"
+                  >
+                    6
+                  </div>
+                </button>
+              </div>
+              <div
+                aria-selected="false"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 bkAurS"
+                role="gridcell"
+              >
+                <button
+                  aria-disabled="false"
+                  aria-label="Fri Feb 07 2020"
+                  class="StyledButton-sc-323bzc-0 jLPXpV StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <div
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 iaiFcK"
+                  >
+                    7
+                  </div>
+                </button>
+              </div>
+              <div
+                aria-selected="false"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 bkAurS"
+                role="gridcell"
+              >
+                <button
+                  aria-disabled="false"
+                  aria-label="Sat Feb 08 2020"
+                  class="StyledButton-sc-323bzc-0 jLPXpV StyledCalendar__StyledDayButton-sc-1y4xhmp-5 xgwzK"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <div
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-6 iaiFcK"
+                  >
+                    8
+                  </div>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Calendar reference 1`] = `
 .c8 {
   display: inline-block;
