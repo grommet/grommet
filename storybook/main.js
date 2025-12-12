@@ -40,4 +40,11 @@ module.exports = {
   typescript: {
     reactDocgen: 'react-docgen-typescript',
   },
+
+  tags: {
+    exclude:
+      process.env.NODE_ENV === 'production' && !process.env.CHROMATIC
+        ? ['internal']
+        : [],
+  },
 };
