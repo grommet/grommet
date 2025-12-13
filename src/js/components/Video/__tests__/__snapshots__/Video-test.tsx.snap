@@ -1544,7 +1544,7 @@ exports[`Video Play and Pause event handlers 2`] = `
             class="StyledBox-sc-13pk1d4-0 iDdezv"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 gQrfUm"
+              class="StyledText-sc-1sadyjn-0 kllfaF"
             >
               NaN:NaN
             </span>
@@ -1561,7 +1561,7 @@ exports[`Video Play and Pause event handlers 2`] = `
             class="StyledBox-sc-13pk1d4-0 kYyYKN"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 jTcNpm"
+              class="StyledText-sc-1sadyjn-0 fzDegB"
             />
             <svg
               aria-label="Actions"
@@ -5422,7 +5422,7 @@ exports[`Video mouse events handlers of controls 2`] = `
             class="StyledBox-sc-13pk1d4-0 iDdezv"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 gQrfUm"
+              class="StyledText-sc-1sadyjn-0 kllfaF"
             >
               NaN:NaN
             </span>
@@ -5439,7 +5439,7 @@ exports[`Video mouse events handlers of controls 2`] = `
             class="StyledBox-sc-13pk1d4-0 kYyYKN"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 jTcNpm"
+              class="StyledText-sc-1sadyjn-0 fzDegB"
             />
             <svg
               aria-label="Actions"
@@ -5546,7 +5546,7 @@ exports[`Video mouse events handlers of controls 3`] = `
             class="StyledBox-sc-13pk1d4-0 iDdezv"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 gQrfUm"
+              class="StyledText-sc-1sadyjn-0 kllfaF"
             >
               NaN:NaN
             </span>
@@ -5563,7 +5563,7 @@ exports[`Video mouse events handlers of controls 3`] = `
             class="StyledBox-sc-13pk1d4-0 kYyYKN"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 jTcNpm"
+              class="StyledText-sc-1sadyjn-0 fzDegB"
             />
             <svg
               aria-label="Actions"
@@ -7546,7 +7546,7 @@ exports[`Video scrubber 2`] = `
             class="StyledBox-sc-13pk1d4-0 iDdezv"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 gQrfUm"
+              class="StyledText-sc-1sadyjn-0 kllfaF"
             >
               NaN:NaN
             </span>
@@ -7563,7 +7563,7 @@ exports[`Video scrubber 2`] = `
             class="StyledBox-sc-13pk1d4-0 kYyYKN"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 jTcNpm"
+              class="StyledText-sc-1sadyjn-0 fzDegB"
             />
             <svg
               aria-label="Actions"
