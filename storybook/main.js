@@ -1,5 +1,13 @@
 const isDev = process.env.NODE_ENV === 'development';
-const isChromatic = !!process.env.CHROMATIC;
+const isChromatic = !!(
+  process.env.CHROMATIC ||
+  process.env.CHROMATIC_BUILD ||
+  process.env.STORYBOOK_BUILD_CHROMATIC ||
+  // Also check if we're in a Chromatic context by looking for their typical environment
+  (typeof process !== 'undefined' &&
+    process.env.CI &&
+    process.env.CHROMATIC_PROJECT_TOKEN)
+);
 const includeInternal = isDev || isChromatic;
 
 module.exports = {
