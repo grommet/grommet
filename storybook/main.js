@@ -7,12 +7,43 @@ const isChromatic = !!(
   process.env.STORYBOOK_BUILD_CHROMATIC ||
   process.env.CHROMATIC_PROJECT_TOKEN ||
   process.env.CHROMATIC_BRANCH ||
+  process.env.CHROMATIC_SHA ||
+  process.env.CHROMATIC_SLUG ||
   // Chromatic in CI environments
-  (process.env.CI && process.env.CHROMATIC_PROJECT_TOKEN)
+  (process.env.CI && process.env.CHROMATIC_PROJECT_TOKEN) ||
+  // Check if running via Chromatic CLI
+  (typeof process !== 'undefined' &&
+    process.argv &&
+    process.argv.some((arg) => arg.includes('chromatic'))) ||
+  // Fallback: Check if any environment variable contains 'chromatic'
+  Object.keys(process.env).some(
+    (key) => key.toLowerCase().includes('chromatic') && process.env[key],
+  )
 );
 
-// Include internal stories in development OR Chromatic, exclude in production
+// Include internal stories in development OR Chromatic, exclude only for explicit production builds
 const includeInternal = isDev || isChromatic;
+
+// Comprehensive logging for debugging
+console.log('Storybook Configuration Debug:');
+console.log(`   NODE_ENV: ${process.env.NODE_ENV}`);
+console.log(`   isDev: ${isDev}`);
+console.log(`   isChromatic: ${isChromatic}`);
+console.log(`   includeInternal: ${includeInternal}`);
+console.log('   Environment variables:');
+Object.keys(process.env)
+  .filter(
+    (key) =>
+      key.includes('CHROMATIC') || key.includes('CI') || key.includes('BUILD'),
+  )
+  .forEach((key) => {
+    console.log(`     ${key}: ${process.env[key]}`);
+  });
+console.log(`   Command args: ${process.argv.join(' ')}`);
+console.log(
+  `   Internal stories will be: ${includeInternal ? 'INCLUDED' : 'EXCLUDED'}`,
+);
+console.log(''); // Empty line for readability
 
 module.exports = {
   addons: [
