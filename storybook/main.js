@@ -1,3 +1,7 @@
+const isDev = process.env.NODE_ENV === 'development';
+const isChromatic = !!process.env.CHROMATIC;
+const includeInternal = isDev || isChromatic;
+
 module.exports = {
   addons: [
     '@storybook/addon-toolbars',
@@ -13,17 +17,24 @@ module.exports = {
     '@storybook/addon-webpack5-compiler-babel',
     '@chromatic-com/storybook',
   ],
-  stories: [
-    '../src/js/all/**/stories/*.stories.@(ts|tsx|js|jsx)',
-    '../src/js/all/stories/typescript/*.stories.tsx',
-    '../src/js/components/**/stories/typescript/*.stories.tsx',
-    '../src/js/components/**/stories/*.stories.@(ts|tsx|js|jsx)',
-    '../src/js/components/**/stories/CustomThemed/*.stories.@(ts|tsx|js|jsx)',
-    '../src/js/components/**/*stories.js',
-    '../src/js/contexts/**/*stories.js',
-    '../src/js/contexts/**/stories/typescript/*.stories.tsx',
-    '../src/js/contexts/**/stories/*.stories.@(ts|tsx|js|jsx)',
-  ],
+  stories: includeInternal
+    ? [
+        // Development: Include ALL stories including internal
+        '../src/js/components/**/*.stories.@(ts|tsx|js|jsx)',
+        '../src/js/components/**/*stories.js',
+        '../src/js/contexts/**/*stories.js',
+        '../src/js/contexts/**/stories/typescript/*.stories.tsx',
+        '../src/js/contexts/**/stories/*.stories.@(ts|tsx|js|jsx)',
+      ]
+    : [
+        // Production: Include all stories except internal folder
+        '../src/js/components/**/!(internal)/*.stories.@(ts|tsx|js|jsx)',
+        '../src/js/components/**/stories/!(internal)/*.stories.@(ts|tsx|js|jsx)',
+        '../src/js/components/**/stories/CustomThemed/*.stories.@(ts|tsx|js|jsx)',
+        '../src/js/contexts/**/*stories.js',
+        '../src/js/contexts/**/stories/typescript/*.stories.tsx',
+        '../src/js/contexts/**/stories/*.stories.@(ts|tsx|js|jsx)',
+      ],
   features: {
     postcss: false,
   },
