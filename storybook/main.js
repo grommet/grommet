@@ -1,5 +1,3 @@
-const isDev = process.env.NODE_ENV === 'development';
-const isChromatic = !!process.env.CHROMATIC;
 module.exports = {
   addons: [
     '@storybook/addon-toolbars',
@@ -41,11 +39,5 @@ module.exports = {
 
   typescript: {
     reactDocgen: 'react-docgen-typescript',
-  },
-
-  tags: {
-    internal: {
-      defaultFilterSelection: isDev || isChromatic ? 'include' : 'exclude',
-    },
   },
 };
