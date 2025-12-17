@@ -1,3 +1,5 @@
+const isDev = process.env.NODE_ENV === 'development';
+const isChromatic = !!process.env.CHROMATIC;
 module.exports = {
   addons: [
     '@storybook/addon-toolbars',
@@ -42,9 +44,8 @@ module.exports = {
   },
 
   tags: {
-    exclude:
-      process.env.NODE_ENV === 'production' && !process.env.CHROMATIC
-        ? ['internal']
-        : [],
+    internal: {
+      defaultFilterSelection: isDev || isChromatic ? 'include' : 'exclude',
+    },
   },
 };
