@@ -1,13 +1,17 @@
 const isDev = process.env.NODE_ENV === 'development';
+
+// Detect Chromatic environment with comprehensive checks
 const isChromatic = !!(
   process.env.CHROMATIC ||
   process.env.CHROMATIC_BUILD ||
   process.env.STORYBOOK_BUILD_CHROMATIC ||
-  // Also check if we're in a Chromatic context by looking for their typical environment
-  (typeof process !== 'undefined' &&
-    process.env.CI &&
-    process.env.CHROMATIC_PROJECT_TOKEN)
+  process.env.CHROMATIC_PROJECT_TOKEN ||
+  process.env.CHROMATIC_BRANCH ||
+  // Chromatic in CI environments
+  (process.env.CI && process.env.CHROMATIC_PROJECT_TOKEN)
 );
+
+// Include internal stories in development OR Chromatic, exclude in production
 const includeInternal = isDev || isChromatic;
 
 module.exports = {
