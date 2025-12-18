@@ -4,8 +4,13 @@ const isDev = process.env.NODE_ENV === 'development';
 let isChromatic = false;
 try {
   const chromaticCheck = require('chromatic/isChromatic');
-  isChromatic = (chromaticCheck.default || chromaticCheck)();
-} catch (error) {
+  const chromaticFn = chromaticCheck.default || chromaticCheck;
+  if (typeof chromaticFn === 'function') {
+    isChromatic = chromaticFn();
+  }
+} catch (error) {}
+
+if (!isChromatic) {
   isChromatic = !!(
     process.env.CHROMATIC_PROJECT_TOKEN ||
     process.env.CHROMATIC_BUILD ||
