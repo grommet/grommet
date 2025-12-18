@@ -38,7 +38,6 @@ module.exports = {
       : [
           '../src/js/components/**/!(internal)/*.stories.@(ts|tsx|js|jsx)',
           '../src/js/components/**/stories/!(internal)/*.stories.@(ts|tsx|js|jsx)',
-          '../src/js/components/**/stories/CustomThemed/*.stories.@(ts|tsx|js|jsx)',
         ]),
 
     '../src/js/components/**/stories/typescript/*.stories.tsx',
