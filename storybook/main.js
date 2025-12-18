@@ -1,7 +1,7 @@
 const isDev = process.env.NODE_ENV === 'development';
 
 // Detect Chromatic environment with comprehensive checks
-const isChromatic = !!(
+const isChromaticEnv = !!(
   process.env.CHROMATIC ||
   process.env.CHROMATIC_BUILD ||
   process.env.STORYBOOK_BUILD_CHROMATIC ||
@@ -21,8 +21,8 @@ const isChromatic = !!(
   )
 );
 
-// Include internal stories in development OR Chromatic, exclude only for explicit production builds
-const includeInternal = isDev || isChromatic;
+// Only include internal stories in explicit development mode OR Chromatic
+const includeInternal = isDev || isChromaticEnv;
 
 module.exports = {
   addons: [
@@ -39,37 +39,34 @@ module.exports = {
     '@storybook/addon-webpack5-compiler-babel',
     '@chromatic-com/storybook',
   ],
-  stories: [
-    // Component stories (conditional internal inclusion)
-    ...(includeInternal
-      ? ['../src/js/components/**/*.stories.@(ts|tsx|js|jsx)']
-      : [
-          '../src/js/components/**/!(internal)/*.stories.@(ts|tsx|js|jsx)',
-          '../src/js/components/**/stories/!(internal)/*.stories.@(ts|tsx|js|jsx)',
-        ]),
-
-    '../src/js/components/**/*stories.js',
-    // Explicit CustomThemed stories (restored to avoid regression)
-    '../src/js/components/**/stories/CustomThemed/*.stories.@(ts|tsx|js|jsx)',
-    '../src/js/contexts/**/*stories.js',
-    '../src/js/contexts/**/stories/typescript/*.stories.tsx',
-    '../src/js/contexts/**/stories/*.stories.@(ts|tsx|js|jsx)',
-    '../src/js/all/**/stories/*.stories.@(ts|tsx|js|jsx)',
-    '../src/js/all/stories/typescript/*.stories.tsx',
-  ],
+  stories: includeInternal
+    ? [
+        // Development: Include ALL stories including internal
+        '../src/js/components/**/*.stories.@(ts|tsx|js|jsx)',
+        '../src/js/components/**/*stories.js',
+        '../src/js/contexts/**/*stories.js',
+        '../src/js/contexts/**/stories/typescript/*.stories.tsx',
+        '../src/js/contexts/**/stories/*.stories.@(ts|tsx|js|jsx)',
+      ]
+    : [
+        // Production: Include all stories except internal folder
+        '../src/js/components/**/!(internal)/*.stories.@(ts|tsx|js|jsx)',
+        '../src/js/components/**/stories/!(internal)/*.stories.@(ts|tsx|js|jsx)',
+        '../src/js/components/**/stories/CustomThemed/*.stories.@(ts|tsx|js|jsx)',
+        '../src/js/contexts/**/*stories.js',
+        '../src/js/contexts/**/stories/typescript/*.stories.tsx',
+        '../src/js/contexts/**/stories/*.stories.@(ts|tsx|js|jsx)',
+      ],
   features: {
     postcss: false,
   },
-
   staticDirs: ['./public'],
-
   framework: {
     name: '@storybook/react-webpack5',
     options: {
       strictMode: true,
     },
   },
-
   typescript: {
     reactDocgen: 'react-docgen-typescript',
   },
