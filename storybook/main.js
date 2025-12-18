@@ -1,8 +1,20 @@
-const isChromatic = require('chromatic/isChromatic').default;
 const isDev = process.env.NODE_ENV === 'development';
 
+// Detect Chromatic environment
+let isChromatic = false;
+try {
+  const chromaticCheck = require('chromatic/isChromatic');
+  isChromatic = (chromaticCheck.default || chromaticCheck)();
+} catch (error) {
+  isChromatic = !!(
+    process.env.CHROMATIC_PROJECT_TOKEN ||
+    process.env.CHROMATIC_BUILD ||
+    process.env.CHROMATIC
+  );
+}
+
 // Include internal stories in development or Chromatic, exclude in production builds
-const includeInternal = isDev || isChromatic();
+const includeInternal = isDev || isChromatic;
 
 module.exports = {
   addons: [
@@ -29,10 +41,12 @@ module.exports = {
           '../src/js/components/**/stories/CustomThemed/*.stories.@(ts|tsx|js|jsx)',
         ]),
 
-    // Context stories (always included)
+    '../src/js/components/**/stories/typescript/*.stories.tsx',
     '../src/js/contexts/**/*stories.js',
     '../src/js/contexts/**/stories/typescript/*.stories.tsx',
     '../src/js/contexts/**/stories/*.stories.@(ts|tsx|js|jsx)',
+    '../src/js/all/**/stories/*.stories.@(ts|tsx|js|jsx)',
+    '../src/js/all/stories/typescript/*.stories.tsx',
   ],
   features: {
     postcss: false,
