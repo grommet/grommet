@@ -1,24 +1,16 @@
 const isDev = process.env.NODE_ENV === 'development';
 
-// Detect Chromatic environment with comprehensive checks
+// Detect Chromatic environment with essential checks
 const isChromaticEnv = !!(
+  process.env.CHROMATIC_PROJECT_TOKEN ||
   process.env.CHROMATIC ||
   process.env.CHROMATIC_BUILD ||
-  process.env.STORYBOOK_BUILD_CHROMATIC ||
-  process.env.CHROMATIC_PROJECT_TOKEN ||
-  process.env.CHROMATIC_BRANCH ||
-  process.env.CHROMATIC_SHA ||
-  process.env.CHROMATIC_SLUG ||
-  // Chromatic in CI environments
+  // CI environment with Chromatic token
   (process.env.CI && process.env.CHROMATIC_PROJECT_TOKEN) ||
   // Check if running via Chromatic CLI
   (typeof process !== 'undefined' &&
     process.argv &&
-    process.argv.some((arg) => arg.includes('chromatic'))) ||
-  // Fallback: Check if any environment variable contains 'chromatic'
-  Object.keys(process.env).some(
-    (key) => key.toLowerCase().includes('chromatic') && process.env[key],
-  )
+    process.argv.some((arg) => arg.includes('chromatic')))
 );
 
 // Only include internal stories in explicit development mode OR Chromatic
