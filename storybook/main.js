@@ -48,6 +48,7 @@ module.exports = {
           '../src/js/components/**/stories/!(internal)/*.stories.@(ts|tsx|js|jsx)',
         ]),
 
+    '../src/js/components/**/*stories.js',
     // Explicit CustomThemed stories (restored to avoid regression)
     '../src/js/components/**/stories/CustomThemed/*.stories.@(ts|tsx|js|jsx)',
     '../src/js/contexts/**/*stories.js',
