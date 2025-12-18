@@ -1,24 +1,27 @@
 const isDev = process.env.NODE_ENV === 'development';
 
-// Detect Chromatic environment
-let isChromatic = false;
-try {
-  const chromaticCheck = require('chromatic/isChromatic');
-  const chromaticFn = chromaticCheck.default || chromaticCheck;
-  if (typeof chromaticFn === 'function') {
-    isChromatic = chromaticFn();
-  }
-} catch (error) {}
+// Detect Chromatic environment with comprehensive checks
+const isChromatic = !!(
+  process.env.CHROMATIC ||
+  process.env.CHROMATIC_BUILD ||
+  process.env.STORYBOOK_BUILD_CHROMATIC ||
+  process.env.CHROMATIC_PROJECT_TOKEN ||
+  process.env.CHROMATIC_BRANCH ||
+  process.env.CHROMATIC_SHA ||
+  process.env.CHROMATIC_SLUG ||
+  // Chromatic in CI environments
+  (process.env.CI && process.env.CHROMATIC_PROJECT_TOKEN) ||
+  // Check if running via Chromatic CLI
+  (typeof process !== 'undefined' &&
+    process.argv &&
+    process.argv.some((arg) => arg.includes('chromatic'))) ||
+  // Fallback: Check if any environment variable contains 'chromatic'
+  Object.keys(process.env).some(
+    (key) => key.toLowerCase().includes('chromatic') && process.env[key],
+  )
+);
 
-if (!isChromatic) {
-  isChromatic = !!(
-    process.env.CHROMATIC_PROJECT_TOKEN ||
-    process.env.CHROMATIC_BUILD ||
-    process.env.CHROMATIC
-  );
-}
-
-// Include internal stories in development or Chromatic, exclude in production builds
+// Include internal stories in development OR Chromatic, exclude only for explicit production builds
 const includeInternal = isDev || isChromatic;
 
 module.exports = {
