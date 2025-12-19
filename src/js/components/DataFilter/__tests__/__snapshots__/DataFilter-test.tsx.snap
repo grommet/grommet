@@ -2874,6 +2874,109 @@ exports[`DataFilter renders 1`] = `
                 </div>
               </div>
             </div>
+            <div
+              class="c5 "
+            >
+              <label
+                class="c6"
+                for="data-zero"
+                id="grommet-data-zero__label"
+              >
+                zero
+              </label>
+              <div
+                class="c7 "
+              >
+                <div
+                  class="c15"
+                  id="data-zero"
+                >
+                  <span
+                    class="c16"
+                    style="width: 0px;"
+                  >
+                    0
+                  </span>
+                  <div
+                    class="c17 c18"
+                    tabindex="-1"
+                  >
+                    <div
+                      class="c19"
+                      style="flex: 0 0 0px;"
+                    />
+                    <div
+                      class="c20"
+                      style="flex: 0 0 1px;"
+                    >
+                      <input
+                        aria-label="Lower Bounds"
+                        aria-valuemax="0"
+                        aria-valuemin="0"
+                        aria-valuenow="0"
+                        class="c21"
+                        max="0"
+                        min="0"
+                        readonly=""
+                        step="0"
+                        type="range"
+                        value="0"
+                      />
+                      <div
+                        class="c22"
+                        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
+                        tabindex="-1"
+                      >
+                        <div
+                          class="c23 EdgeControl__StyledBox-sc-1xo2yt9-1"
+                        />
+                      </div>
+                    </div>
+                    <div
+                      class="c24"
+                      style="flex: 1 0 0px; cursor: ew-resize;"
+                    />
+                    <div
+                      class="c20"
+                      style="flex: 0 0 1px;"
+                    >
+                      <input
+                        aria-label="Upper Bounds"
+                        aria-valuemax="0"
+                        aria-valuemin="0"
+                        aria-valuenow="0"
+                        class="c21"
+                        max="0"
+                        min="0"
+                        readonly=""
+                        step="0"
+                        type="range"
+                        value="0"
+                      />
+                      <div
+                        class="c22"
+                        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
+                        tabindex="-1"
+                      >
+                        <div
+                          class="c23 EdgeControl__StyledBox-sc-1xo2yt9-1"
+                        />
+                      </div>
+                    </div>
+                    <div
+                      class="c19"
+                      style="flex: 0 0 0px;"
+                    />
+                  </div>
+                  <span
+                    class="c25"
+                    style="width: 0px;"
+                  >
+                    0
+                  </span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
         <footer
