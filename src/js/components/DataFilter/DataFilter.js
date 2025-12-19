@@ -104,8 +104,8 @@ export const DataFilter = ({
 
     // generate options from all values for property
     const uniqueValues = generateOptions(unfilteredData || data, property);
-    // if less than two values, nothing to filter
-    if (uniqueValues.length < 2) return [undefined, undefined];
+    // if no values, nothing to filter
+    if (uniqueValues.length === 0) return [undefined, undefined];
     // if any values aren't numeric, treat as options
     if (uniqueValues.some((v) => v !== undefined && typeof v !== 'number'))
       return [uniqueValues, undefined];
