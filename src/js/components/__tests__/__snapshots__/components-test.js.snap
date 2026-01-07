@@ -815,6 +815,7 @@ exports[`Components loads 1`] = `
     "propTypes": {
       "a11yTitle": [Function],
       "alignSelf": [Function],
+      "autoFocus": [Function],
       "children": [Function],
       "clear": [Function],
       "closeOnChange": [Function],
@@ -858,6 +859,7 @@ exports[`Components loads 1`] = `
     "propTypes": {
       "a11yTitle": [Function],
       "alignSelf": [Function],
+      "autoFocus": [Function],
       "children": [Function],
       "defaultValue": [Function],
       "disabled": [Function],
