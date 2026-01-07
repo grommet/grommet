@@ -449,4 +449,249 @@ describe('DataFilter', () => {
 
     expectPortal('data-type.name__drop').toMatchSnapshot();
   });
+
+  // Test cases for single value and edge case numeric filters (Issue #7852)
+  test('single decimal value [0.1] - renders RangeSelector with matching min/max', () => {
+    const singleDecimalData = [{ price: 0.1 }];
+    const { asFragment } = render(
+      <Grommet>
+        <Data data={singleDecimalData}>
+          <DataFilters>
+            <DataFilter property="price" />
+          </DataFilters>
+        </Data>
+      </Grommet>,
+    );
+
+    const lowerBound = screen.getByRole('slider', {
+      name: 'Lower Bounds',
+    });
+    const upperBound = screen.getByRole('slider', {
+      name: 'Upper Bounds',
+    });
+
+    expect(lowerBound).toBeTruthy();
+    expect(upperBound).toBeTruthy();
+
+    expect(lowerBound.getAttribute('aria-valuenow')).toBe('0.1');
+    expect(upperBound.getAttribute('aria-valuenow')).toBe('0.1');
+
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  test('decimal values [0.1, 0.2] - no artificial range normalization', () => {
+    const decimalData = [{ price: 0.1 }, { price: 0.2 }];
+    const { asFragment } = render(
+      <Grommet>
+        <Data data={decimalData}>
+          <DataFilters>
+            <DataFilter property="price" />
+          </DataFilters>
+        </Data>
+      </Grommet>,
+    );
+
+    const lowerBound = screen.getByRole('slider', {
+      name: 'Lower Bounds',
+    });
+    const upperBound = screen.getByRole('slider', {
+      name: 'Upper Bounds',
+    });
+
+    expect(lowerBound).toBeTruthy();
+    expect(upperBound).toBeTruthy();
+
+    // Should remain [0.1, 0.2]
+    expect(lowerBound.getAttribute('aria-valuemin')).toBe('0.1');
+    expect(upperBound.getAttribute('aria-valuemax')).toBe('0.2');
+
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  test('negative decimal values [-19.99, -4.895] - preserves actual range, caps decimals to 2', () => {
+    const negativeDecimalData = [{ price: -19.99 }, { price: -4.859 }];
+    const { asFragment } = render(
+      <Grommet>
+        <Data data={negativeDecimalData}>
+          <DataFilters>
+            <DataFilter property="price" />
+          </DataFilters>
+        </Data>
+      </Grommet>,
+    );
+
+    const lowerBound = screen.getByRole('slider', {
+      name: 'Lower Bounds',
+    });
+    const upperBound = screen.getByRole('slider', {
+      name: 'Upper Bounds',
+    });
+
+    expect(lowerBound).toBeTruthy();
+    expect(upperBound).toBeTruthy();
+
+    // Should preserve actual values and round to max 2 decimals
+    expect(lowerBound.getAttribute('aria-valuemin')).toBe('-19.99');
+    expect(upperBound.getAttribute('aria-valuemax')).toBe('-4.86');
+
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  test('single zero value [0] - handles zero correctly', () => {
+    const zeroData = [{ quantity: 0 }];
+    const { asFragment } = render(
+      <Grommet>
+        <Data data={zeroData}>
+          <DataFilters>
+            <DataFilter property="quantity" />
+          </DataFilters>
+        </Data>
+      </Grommet>,
+    );
+
+    // Should render (not be hidden)
+    const lowerBound = screen.getByRole('slider', {
+      name: 'Lower Bounds',
+    });
+    const upperBound = screen.getByRole('slider', {
+      name: 'Upper Bounds',
+    });
+
+    expect(lowerBound).toBeTruthy();
+    expect(upperBound).toBeTruthy();
+
+    expect(lowerBound.getAttribute('aria-valuemin')).toBe('0');
+    expect(upperBound.getAttribute('aria-valuemax')).toBe('0');
+
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  test('single negative value [-5] - renders single negative value for max and min', () => {
+    const negativeData = [{ balance: -5 }];
+    const { asFragment } = render(
+      <Grommet>
+        <Data data={negativeData}>
+          <DataFilters>
+            <DataFilter property="balance" />
+          </DataFilters>
+        </Data>
+      </Grommet>,
+    );
+
+    const lowerBound = screen.getByRole('slider', {
+      name: 'Lower Bounds',
+    });
+    const upperBound = screen.getByRole('slider', {
+      name: 'Upper Bounds',
+    });
+
+    expect(lowerBound).toBeTruthy();
+    expect(upperBound).toBeTruthy();
+
+    expect(lowerBound.getAttribute('aria-valuenow')).toBe('-5');
+    expect(upperBound.getAttribute('aria-valuenow')).toBe('-5');
+
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  test('mixed positive and negative decimals - validates step is valid (not 0, not NaN)', () => {
+    const mixedData = [{ value: -2.5 }, { value: 3.75 }];
+    const { asFragment } = render(
+      <Grommet>
+        <Data data={mixedData}>
+          <DataFilters>
+            <DataFilter property="value" />
+          </DataFilters>
+        </Data>
+      </Grommet>,
+    );
+
+    const lowerBound = screen.getByRole('slider', {
+      name: 'Lower Bounds',
+    });
+    const upperBound = screen.getByRole('slider', {
+      name: 'Upper Bounds',
+    });
+
+    expect(lowerBound).toBeTruthy();
+    expect(upperBound).toBeTruthy();
+
+    expect(lowerBound.getAttribute('aria-valuemin')).toBe('-2.5');
+    expect(upperBound.getAttribute('aria-valuemax')).toBe('3.75');
+
+    // CRITICAL: Step should never be 0 or NaN
+    const stepAttr = lowerBound.getAttribute('step');
+    expect(stepAttr).toBeTruthy();
+    const stepValue = parseFloat(stepAttr || '0');
+    expect(stepValue).toBeGreaterThan(0);
+    expect(isNaN(stepValue)).toBe(false);
+
+    // Step should be capped to max 2 decimal places
+    const stepDecimals = (stepAttr?.split('.')[1] || '').length;
+    expect(stepDecimals).toBeLessThanOrEqual(2);
+
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  test('empty dataset - returns null (no filter rendered)', () => {
+    const emptyData: any[] = [];
+    render(
+      <Grommet>
+        <Data data={emptyData}>
+          <DataFilters>
+            <DataFilter property="price" />
+          </DataFilters>
+        </Data>
+      </Grommet>,
+    );
+
+    // Should render nothing - query should fail
+    expect(() => screen.getByRole('slider')).toThrow();
+  });
+
+  test('render filter for single item', () => {
+    const singleValueData = [{ rating: 2.5 }];
+    const { asFragment } = render(
+      <Grommet>
+        <Data data={singleValueData}>
+          <DataFilters>
+            <DataFilter property="rating" />
+          </DataFilters>
+        </Data>
+      </Grommet>,
+    );
+
+    const lowerBound = screen.getByRole('slider', {
+      name: 'Lower Bounds',
+    });
+    expect(lowerBound).toBeTruthy();
+    expect(lowerBound.getAttribute('aria-valuenow')).toBe('2.5');
+
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  test('high precision decimals are rounded to max 2 places', () => {
+    // Test floating-point artifact cleanup
+    const precisionData = [{ value: 1.1234567 }, { value: 2.9876543 }];
+    const { asFragment } = render(
+      <Grommet>
+        <Data data={precisionData}>
+          <DataFilters>
+            <DataFilter property="value" />
+          </DataFilters>
+        </Data>
+      </Grommet>,
+    );
+
+    const lowerBound = screen.getByRole('slider', {
+      name: 'Lower Bounds',
+    });
+    const upperBound = screen.getByRole('slider', {
+      name: 'Upper Bounds',
+    });
+
+    expect(lowerBound.getAttribute('aria-valuemin')).toBe('1.12');
+    expect(upperBound.getAttribute('aria-valuemax')).toBe('2.99');
+    expect(asFragment()).toMatchSnapshot();
+  });
 });
