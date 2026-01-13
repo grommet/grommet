@@ -135,6 +135,9 @@ describe('Select', () => {
     );
 
     expect(container.firstChild).toMatchSnapshot();
+
+    const selectButton = container.querySelector('button');
+    expect(document.activeElement).toBe(selectButton);
   });
 
   [0, null].forEach((value) =>
