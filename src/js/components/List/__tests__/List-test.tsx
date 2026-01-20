@@ -363,9 +363,6 @@ describe('List', () => {
   test('renders custom theme for primaryKey', () => {
     const theme = {
       list: {
-        item: {
-          gap: 'xsmall',
-        },
         primaryKey: {
           color: 'brand',
           weight: 500,
