@@ -1422,7 +1422,7 @@ export interface ThemeType {
         color?: ColorType;
         cursor?: string;
       };
-      gap: GapType;
+      gap?: GapType;
       pinned?: {
         background?: BackgroundType;
         icon?: {
