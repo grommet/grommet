@@ -411,4 +411,73 @@ describe('DataTableColumns', () => {
 
     expect(screen.queryByText('Select columns')).toBeNull();
   });
+
+  test('theme tabs pad, selectColumns pad and gap, orderColumns pad', async () => {
+    const customTheme = {
+      dataTableColumns: {
+        tabs: {
+          pad: 'large',
+        },
+        selectColumns: {
+          pad: {
+            vertical: 'large',
+          },
+          gap: 'large',
+        },
+        orderColumns: {
+          pad: {
+            top: 'large',
+          },
+        },
+      },
+    };
+
+    const data = [
+      { name: 'Alan', age: 25, location: 'New York' },
+      { name: 'Bryan', age: 30, location: 'San Francisco' },
+    ];
+
+    const columns = [
+      { property: 'name', header: 'Name' },
+      { property: 'age', header: 'Age' },
+      { property: 'location', header: 'Location' },
+    ];
+
+    render(
+      <Grommet theme={customTheme}>
+        <Data data={data}>
+          <DataTableColumns drop options={['name', 'age', 'location']} />
+          <DataTable columns={columns} />
+        </Data>
+      </Grommet>,
+    );
+
+    // Click to open DataTableColumns drop
+    const columnsButton = screen.getByRole('button', {
+      name: /Open column selector/i,
+    });
+    fireEvent.click(columnsButton);
+
+    // advance timers so drop can open
+    act(() => jest.advanceTimersByTime(200));
+
+    // Take snapshot of Select columns view
+    const selectTabPanel = screen.getByRole('tabpanel', {
+      name: 'Select columns Tab Contents',
+    });
+    expect(selectTabPanel).toMatchSnapshot();
+
+    // Click on "Order columns" tab
+    fireEvent.click(
+      screen.getByRole('tab', {
+        name: 'Reorder the visible columns in the data table',
+      }),
+    );
+
+    // Take snapshot of Order columns view
+    const orderTabPanel = screen.getByRole('tabpanel', {
+      name: 'Order columns Tab Contents',
+    });
+    expect(orderTabPanel).toMatchSnapshot();
+  });
 });
