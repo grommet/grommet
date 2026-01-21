@@ -494,7 +494,7 @@ const List = React.forwardRef(
                     direction: 'row',
                     align: secondaryKey ? 'start' : 'center',
                     justify: 'between',
-                    gap: theme.list.item.gap,
+                    gap: theme.list?.item?.gap,
                   };
                 }
 
@@ -685,7 +685,7 @@ const List = React.forwardRef(
                     direction: 'row',
                     align:
                       (defaultItemProps && defaultItemProps.align) || 'center',
-                    gap: theme.list.item.gap,
+                    gap: theme.list?.item?.gap,
                   };
                 }
 
@@ -724,7 +724,7 @@ const List = React.forwardRef(
                     direction: 'row',
                     align:
                       (defaultItemProps && defaultItemProps.align) || 'center',
-                    gap: theme.list.item.gap,
+                    gap: theme.list?.item?.gap,
                   };
                   displayPinned = (
                     <Box
