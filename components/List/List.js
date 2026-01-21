@@ -412,6 +412,7 @@ var List = exports.List = /*#__PURE__*/_react["default"].forwardRef(function (_r
       isDisabled = disabledItems == null ? void 0 : disabledItems.includes(key);
     }
     if (action) {
+      var _theme$list2;
       content = [/*#__PURE__*/_react["default"].createElement(_Box.Box, {
         align: "start",
         key: "actionContainer" + index
@@ -420,7 +421,7 @@ var List = exports.List = /*#__PURE__*/_react["default"].forwardRef(function (_r
         direction: 'row',
         align: secondaryKey ? 'start' : 'center',
         justify: 'between',
-        gap: theme.list.item.gap
+        gap: (_theme$list2 = theme.list) == null || (_theme$list2 = _theme$list2.item) == null ? void 0 : _theme$list2.gap
       };
     }
     var adjustedBackground = background || theme.list.item.background;
@@ -475,6 +476,7 @@ var List = exports.List = /*#__PURE__*/_react["default"].forwardRef(function (_r
     var orderProps;
     var orderControls;
     if (onOrder && !isPinned) {
+      var _theme$list3;
       orderProps = {
         draggable: true,
         onDragStart: function onDragStart(event) {
@@ -573,7 +575,7 @@ var List = exports.List = /*#__PURE__*/_react["default"].forwardRef(function (_r
       boxProps = {
         direction: 'row',
         align: defaultItemProps && defaultItemProps.align || 'center',
-        gap: theme.list.item.gap
+        gap: (_theme$list3 = theme.list) == null || (_theme$list3 = _theme$list3.item) == null ? void 0 : _theme$list3.gap
       };
     }
     var itemAriaProps;
@@ -589,7 +591,7 @@ var List = exports.List = /*#__PURE__*/_react["default"].forwardRef(function (_r
     }
     var displayPinned;
     if (isPinned) {
-      var _pinIcon$props;
+      var _pinIcon$props, _theme$list4;
       var pinSize = theme.list.item.pinned.icon.size;
       var pinPad = theme.list.item.pinned.icon.pad;
       var Icon = (pinned == null ? void 0 : pinned.icon) || theme.list.icons.pin;
@@ -606,7 +608,7 @@ var List = exports.List = /*#__PURE__*/_react["default"].forwardRef(function (_r
       boxProps = {
         direction: 'row',
         align: defaultItemProps && defaultItemProps.align || 'center',
-        gap: theme.list.item.gap
+        gap: (_theme$list4 = theme.list) == null || (_theme$list4 = _theme$list4.item) == null ? void 0 : _theme$list4.gap
       };
       displayPinned = /*#__PURE__*/_react["default"].createElement(_Box.Box, {
         direction: "row",
