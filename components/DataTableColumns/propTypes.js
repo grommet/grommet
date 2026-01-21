@@ -8,6 +8,7 @@ var PropType = {};
 if (process.env.NODE_ENV !== 'production') {
   PropType = {
     drop: _propTypes["default"].bool.isRequired,
+    activePanel: _propTypes["default"].oneOf(['orderColumns', 'selectColumns']),
     options: _propTypes["default"].oneOfType([_propTypes["default"].arrayOf(_propTypes["default"].string), _propTypes["default"].arrayOf(_propTypes["default"].shape({
       disabled: _propTypes["default"].bool,
       label: _propTypes["default"].string,

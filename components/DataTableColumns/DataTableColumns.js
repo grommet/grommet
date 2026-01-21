@@ -20,8 +20,9 @@ var _DataContext = require("../../contexts/DataContext");
 var _MessageContext = require("../../contexts/MessageContext");
 var _propTypes = require("./propTypes");
 var _useThemeValue3 = require("../../utils/useThemeValue");
-var _excluded = ["drop", "options"],
-  _excluded2 = ["drop", "options"];
+var _Text = require("../Text");
+var _excluded = ["drop", "options", "activePanel"],
+  _excluded2 = ["drop", "options", "activePanel"];
 function _interopRequireWildcard(e, t) { if ("function" == typeof WeakMap) var r = new WeakMap(), n = new WeakMap(); return (_interopRequireWildcard = function _interopRequireWildcard(e, t) { if (!t && e && e.__esModule) return e; var o, i, f = { __proto__: null, "default": e }; if (null === e || "object" != typeof e && "function" != typeof e) return f; if (o = t ? n : r) { if (o.has(e)) return o.get(e); o.set(e, f); } for (var _t in e) "default" !== _t && {}.hasOwnProperty.call(e, _t) && ((i = (o = Object.defineProperty) && Object.getOwnPropertyDescriptor(e, _t)) && (i.get || i.set) ? o(f, _t, i) : f[_t] = e[_t]); return f; })(e, t); }
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (-1 !== e.indexOf(n)) continue; t[n] = r[n]; } return t; }
@@ -71,6 +72,7 @@ var Content = function Content(_ref) {
   var drop = _ref.drop,
     _ref$options = _ref.options,
     options = _ref$options === void 0 ? [] : _ref$options,
+    activePanel = _ref.activePanel,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
   var _useContext = (0, _react.useContext)(_DataContext.DataContext),
     dataId = _useContext.id,
@@ -141,17 +143,7 @@ var Content = function Content(_ref) {
     setSearch(nextSearch);
     setFilteredOptions(nextFilteredOptions);
   }, [options]);
-  return /*#__PURE__*/_react["default"].createElement(_Box.Box, null, /*#__PURE__*/_react["default"].createElement(_Tabs.Tabs, _extends({}, tabsProps[drop ? 'drop' : 'noDrop'], rest), /*#__PURE__*/_react["default"].createElement(_Tab.Tab, {
-    id: dataId + "--select-columns-tab",
-    title: format({
-      id: 'dataTableColumns.select',
-      messages: messages == null ? void 0 : messages.dataTableColumns
-    }),
-    "aria-label": format({
-      id: 'dataTableColumns.selectAria',
-      messages: messages == null ? void 0 : messages.dataTableColumns
-    })
-  }, /*#__PURE__*/_react["default"].createElement(_Box.Box, {
+  var selectColumnsContent = /*#__PURE__*/_react["default"].createElement(_Box.Box, {
     pad: theme.dataTableColumns.selectColumns.pad,
     gap: theme.dataTableColumns.selectColumns.gap
   }, /*#__PURE__*/_react["default"].createElement(_TextInput.TextInput, {
@@ -174,17 +166,8 @@ var Content = function Content(_ref) {
       var nextValue = _ref4.value;
       return setValue(alignOrder(nextValue, value, options));
     }
-  }))), /*#__PURE__*/_react["default"].createElement(_Tab.Tab, {
-    id: dataId + "--order-columns-tab",
-    "aria-label": format({
-      id: 'dataTableColumns.orderAria',
-      messages: messages == null ? void 0 : messages.dataTableColumns
-    }),
-    title: format({
-      id: 'dataTableColumns.order',
-      messages: messages == null ? void 0 : messages.dataTableColumns
-    })
-  }, /*#__PURE__*/_react["default"].createElement(_Box.Box, {
+  }));
+  var orderColumnsContent = /*#__PURE__*/_react["default"].createElement(_Box.Box, {
     pad: theme.dataTableColumns.orderColumns.pad
   }, /*#__PURE__*/_react["default"].createElement(_List.List, {
     id: dataId + "--order-columns",
@@ -208,12 +191,49 @@ var Content = function Content(_ref) {
     pad: "none",
     primaryKey: objectOptions && 'label' || undefined,
     pinned: pinned
-  })))));
+  }));
+  var activeContent;
+  if (activePanel) {
+    if (activePanel === 'selectColumns') activeContent = selectColumnsContent;else if (activePanel === 'orderColumns') {
+      activeContent = orderColumnsContent;
+    }
+    activeContent = /*#__PURE__*/_react["default"].createElement(_Box.Box, {
+      pad: theme.dataTableColumns.tabs.pad
+    }, /*#__PURE__*/_react["default"].createElement(_Text.Text, null, activePanel === 'selectColumns' ? format({
+      id: 'dataTableColumns.select',
+      messages: messages == null ? void 0 : messages.dataTableColumns
+    }) : format({
+      id: 'dataTableColumns.order',
+      messages: messages == null ? void 0 : messages.dataTableColumns
+    })), activeContent);
+  }
+  return activeContent || /*#__PURE__*/_react["default"].createElement(_Box.Box, null, /*#__PURE__*/_react["default"].createElement(_Tabs.Tabs, _extends({}, tabsProps[drop ? 'drop' : 'noDrop'], rest), /*#__PURE__*/_react["default"].createElement(_Tab.Tab, {
+    id: dataId + "--select-columns-tab",
+    title: format({
+      id: 'dataTableColumns.select',
+      messages: messages == null ? void 0 : messages.dataTableColumns
+    }),
+    "aria-label": format({
+      id: 'dataTableColumns.selectAria',
+      messages: messages == null ? void 0 : messages.dataTableColumns
+    })
+  }, selectColumnsContent), /*#__PURE__*/_react["default"].createElement(_Tab.Tab, {
+    id: dataId + "--order-columns-tab",
+    "aria-label": format({
+      id: 'dataTableColumns.orderAria',
+      messages: messages == null ? void 0 : messages.dataTableColumns
+    }),
+    title: format({
+      id: 'dataTableColumns.order',
+      messages: messages == null ? void 0 : messages.dataTableColumns
+    })
+  }, orderColumnsContent)));
 };
 var DataTableColumns = exports.DataTableColumns = function DataTableColumns(_ref5) {
   var _theme$dataTableColum3, _theme$data$button;
   var drop = _ref5.drop,
     options = _ref5.options,
+    activePanel = _ref5.activePanel,
     rest = _objectWithoutPropertiesLoose(_ref5, _excluded2);
   var _useContext4 = (0, _react.useContext)(_DataContext.DataContext),
     dataId = _useContext4.id,
@@ -234,7 +254,8 @@ var DataTableColumns = exports.DataTableColumns = function DataTableColumns(_ref
   });
   var content = /*#__PURE__*/_react["default"].createElement(Content, {
     drop: drop,
-    options: options
+    options: options,
+    activePanel: activePanel
   });
   if (!inDataForm) content = /*#__PURE__*/_react["default"].createElement(_Data.DataForm, {
     footer: false,
