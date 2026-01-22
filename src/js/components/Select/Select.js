@@ -42,6 +42,7 @@ const Select = forwardRef(
       'aria-label': ariaLabel,
       'aria-labelledby': ariaLabelledByProp,
       alignSelf,
+      autoFocus,
       children,
       clear = false,
       closeOnChange = true,
@@ -324,6 +325,7 @@ const Select = forwardRef(
           aria-labelledby={ariaLabelledByProp || ariaLabelledBy}
           aria-haspopup="listbox"
           id={id}
+          autoFocus={autoFocus}
           disabled={disabled === true || undefined}
           dropAlign={dropAlign}
           dropTarget={dropTarget}
