@@ -223,22 +223,17 @@ exports[`Grommet message format function 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
-  background-color: #0000ff;
-  color: #f8f8f8;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  width: 100vw;
-  height: 100vh;
-  overflow: auto;
 }
 
 <div
   class="c0"
 >
-  Grommet App
+  My Label
 </div>
 `;
 
