@@ -2,6 +2,7 @@ import * as React from 'react';
 
 export interface DataTableColumnsProps {
   drop: boolean;
+  activePanel?: 'orderColumns' | 'selectColumns';
   options: (
     | string
     | {
