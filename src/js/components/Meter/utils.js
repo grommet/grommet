@@ -51,9 +51,12 @@ export const defaultColor = (index, theme, valuesLength) => {
       theme.meter.colors[theme.dark ? 'dark' : 'light'] || theme.meter.colors;
     return colors[colorIndex % colors.length];
   }
-  const colors = Object.keys(theme.global.colors).filter((n) =>
+  let colors = Object.keys(theme.global.colors).filter((n) =>
     n.match(/^graph-[0-9]$/),
   );
+  if (theme.global?.graph?.colors) {
+    colors = theme.global.graph.colors;
+  }
   if (colors.length > 0) {
     return colors[colorIndex % colors.length];
   }

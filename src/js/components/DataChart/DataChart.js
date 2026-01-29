@@ -401,7 +401,14 @@ const DataChart = forwardRef(
       Object.keys(result).forEach((key) => {
         const seriesStyle = result[key];
         if (!seriesStyle.aspect && !seriesStyle.color) {
-          seriesStyle.color = `graph-${colorIndex}`;
+          if (theme.global?.graph?.colors) {
+            seriesStyle.color =
+              theme.global.graph.colors[
+                colorIndex % theme.global.graph.colors.length
+              ];
+          } else {
+            seriesStyle.color = `graph-${colorIndex}`;
+          }
           colorIndex += 1;
         }
         // set opacity if it isn't set and this isn't the active property
@@ -415,7 +422,7 @@ const DataChart = forwardRef(
       });
 
       return result;
-    }, [activeProperty, charts, chartProps]);
+    }, [activeProperty, charts, chartProps, theme.global]);
 
     // normalize guide
     const guide = useMemo(() => {

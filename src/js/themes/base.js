@@ -320,6 +320,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         // face: undefined,
         // family: undefined,
       },
+      // graph: {
+      //   colors: [],
+      // },
       hover: {
         background: {
           color: 'active',

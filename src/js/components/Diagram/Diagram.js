@@ -217,9 +217,12 @@ const Diagram = forwardRef(
             let colorName =
               color || (theme.diagram.line && theme.diagram.line.color);
             if (!colorName) {
-              const colors = Object.keys(theme.global.colors).filter((n) =>
+              let colors = Object.keys(theme.global.colors).filter((n) =>
                 n.match(/^graph-[0-9]$/),
               );
+              if (theme.global?.graph?.colors) {
+                colors = theme.global.graph.colors;
+              }
               colorName = colors[index % colors.length];
             }
 
