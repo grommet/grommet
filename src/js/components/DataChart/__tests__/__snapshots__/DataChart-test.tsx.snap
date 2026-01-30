@@ -108,12 +108,12 @@ exports[`DataChart applies colors from theme.global.graph.colors 1`] = `
       <div
         class="c3"
       >
-        Dec 31
+        0
       </div>
       <div
         class="c3"
       >
-        Jan 2
+        1
       </div>
     </div>
     <div
@@ -122,7 +122,7 @@ exports[`DataChart applies colors from theme.global.graph.colors 1`] = `
       <div
         class="c5"
       >
-        36
+        2
       </div>
       <div
         class="c5"
@@ -156,7 +156,7 @@ exports[`DataChart applies colors from theme.global.graph.colors 1`] = `
             >
               <title />
               <path
-                d="M 48,192 L 48,138.66666666666669"
+                d="M 48,192 L 48,96"
               />
             </g>
             <g
@@ -164,15 +164,7 @@ exports[`DataChart applies colors from theme.global.graph.colors 1`] = `
             >
               <title />
               <path
-                d="M 192,192 L 192,85.33333333333334"
-              />
-            </g>
-            <g
-              fill="none"
-            >
-              <title />
-              <path
-                d="M 336,192 L 336,32"
+                d="M 336,192 L 336,0"
               />
             </g>
           </g>

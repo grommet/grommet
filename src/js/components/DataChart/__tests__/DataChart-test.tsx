@@ -545,14 +545,7 @@ describe('DataChart', () => {
           },
         }}
       >
-        <DataChart
-          data={[
-            { date: '2023-01-01', value: 10 },
-            { date: '2023-01-02', value: 20 },
-            { date: '2023-01-03', value: 30 },
-          ]}
-          series={['date', 'value']}
-        />
+        <DataChart data={data} series="a" />
       </Grommet>,
     );
     expect(container.firstChild).toMatchSnapshot();
