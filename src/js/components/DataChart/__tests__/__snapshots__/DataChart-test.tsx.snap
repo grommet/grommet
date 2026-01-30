@@ -1,5 +1,188 @@
 // Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
+exports[`DataChart applies colors from theme.global.graph.colors 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c2 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  grid-area: xAxis;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-inline-start: 0px;
+  padding-inline-end: 0px;
+}
+
+.c3 {
+  display: flex;
+  box-sizing: border-box;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  flex-basis: 96px;
+  overflow: visible;
+}
+
+.c4 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  grid-area: yAxis;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  flex: 1 1;
+  justify-content: space-between;
+}
+
+.c5 {
+  display: flex;
+  box-sizing: border-box;
+  align-items: flex-end;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  flex-basis: 1px;
+  justify-content: center;
+  overflow: visible;
+}
+
+.c8 {
+  display: block;
+  max-width: 100%;
+  overflow: visible;
+}
+
+.c1 {
+  display: grid;
+  box-sizing: border-box;
+  grid-template-areas: "yAxis charts" ". xAxis";
+  grid-template-columns: auto auto;
+  grid-gap: 12px 12px;
+  grid-template-rows: auto auto;
+}
+
+.c6 {
+  position: relative;
+  grid-area: charts;
+}
+
+.c7 {
+  position: relative;
+  display: block;
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    padding-inline-start: 0px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    padding-inline-end: 0px;
+  }
+}
+
+<div
+  class="c0"
+>
+  <div
+    class="c1"
+  >
+    <div
+      class="c2"
+    >
+      <div
+        class="c3"
+      >
+        Dec 31
+      </div>
+      <div
+        class="c3"
+      >
+        Jan 2
+      </div>
+    </div>
+    <div
+      class="c4"
+    >
+      <div
+        class="c5"
+      >
+        36
+      </div>
+      <div
+        class="c5"
+      >
+        0
+      </div>
+    </div>
+    <div
+      class="c6"
+    >
+      <div
+        class="c7"
+      >
+        <svg
+          class="c8"
+          height="192"
+          preserveAspectRatio="none"
+          viewBox="0 0 384 192"
+          width="384"
+        >
+          0
+          <g
+            fill="none"
+            stroke="#7D4CDB"
+            stroke-linecap="butt"
+            stroke-linejoin="miter"
+            stroke-width="96"
+          >
+            <g
+              fill="none"
+            >
+              <title />
+              <path
+                d="M 48,192 L 48,138.66666666666669"
+              />
+            </g>
+            <g
+              fill="none"
+            >
+              <title />
+              <path
+                d="M 192,192 L 192,85.33333333333334"
+              />
+            </g>
+            <g
+              fill="none"
+            >
+              <title />
+              <path
+                d="M 336,192 L 336,32"
+              />
+            </g>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`DataChart areas 1`] = `
 .c0 {
   font-size: 18px;

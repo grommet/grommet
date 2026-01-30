@@ -1,5 +1,66 @@
 // Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
+exports[`Meter applies colors from theme.global.graph.colors 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.c1 path {
+  transition: stroke 0.3s,stroke-width 0.3s;
+}
+
+<div
+  class="c0"
+>
+  <svg
+    aria-label="Bar meter with values 20, 30, 50 out of 100"
+    class="c1"
+    height="24"
+    preserveAspectRatio="none"
+    viewBox="0 0 384 24"
+    width="384"
+  >
+    <path
+      d="M 0,12 L 384,12"
+      fill="none"
+      stroke="#F2F2F2"
+      stroke-linecap="square"
+      stroke-opacity="0.4"
+      stroke-width="24"
+    />
+    <path
+      d="M 192,24 L 192,0 L 384,0 L 384,24 Z"
+      fill="#6FFFB0"
+      stroke="none"
+      stroke-width="0"
+    />
+    <path
+      d="M 76.8,24 L 76.8,0 L 192,0 L 192,24 Z"
+      fill="#81FCED"
+      stroke="none"
+      stroke-width="0"
+    />
+    <path
+      d="M 0,24 L 0,0 L 76.8,0 L 76.8,24 Z"
+      fill="#FD6FFF"
+      stroke="none"
+      stroke-width="0"
+    />
+  </svg>
+</div>
+`;
+
 exports[`Meter background 1`] = `
 .c0 {
   font-size: 18px;

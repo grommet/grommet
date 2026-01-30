@@ -54,7 +54,7 @@ export const defaultColor = (index, theme, valuesLength) => {
   let colors = Object.keys(theme.global.colors).filter((n) =>
     n.match(/^graph-[0-9]$/),
   );
-  if (theme.global?.graph?.colors) {
+  if (theme.global?.graph?.colors?.length > 0) {
     colors = theme.global.graph.colors;
   }
   if (colors.length > 0) {

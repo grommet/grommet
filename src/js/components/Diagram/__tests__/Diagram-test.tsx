@@ -3,13 +3,15 @@ import 'jest-styled-components';
 import { render } from '@testing-library/react';
 
 import { Grommet, Box, Diagram, Stack } from '../..';
+import { ThemeType } from '../../../themes';
 
 interface ContextProps {
   children: React.ReactNode;
+  theme?: ThemeType;
 }
 
-const Context = ({ children }: ContextProps) => (
-  <Grommet>
+const Context = ({ children, theme }: ContextProps) => (
+  <Grommet theme={theme}>
     <Stack>
       <Box direction="row">
         <Box id="1" pad="medium" />
@@ -99,6 +101,15 @@ describe('Diagram', () => {
             { fromTarget: '1', toTarget: '2', anchor: 'vertical' },
           ]}
         />
+      </Context>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('color', () => {
+    const { container } = render(
+      <Context theme={{ global: { graph: { colors: ['red', 'blue'] } } }}>
+        <Diagram connections={[{ fromTarget: '1', toTarget: '2' }]} />
       </Context>,
     );
     expect(container.firstChild).toMatchSnapshot();

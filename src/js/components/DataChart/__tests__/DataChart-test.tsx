@@ -533,4 +533,28 @@ describe('DataChart', () => {
       document.querySelector('div[data-g-portal-id="0"]'),
     ).toMatchSnapshot();
   });
+
+  it('applies colors from theme.global.graph.colors', () => {
+    const { container } = render(
+      <Grommet
+        theme={{
+          global: {
+            graph: {
+              colors: ['brand', 'accent-3', 'accent-2'],
+            },
+          },
+        }}
+      >
+        <DataChart
+          data={[
+            { date: '2023-01-01', value: 10 },
+            { date: '2023-01-02', value: 20 },
+            { date: '2023-01-03', value: 30 },
+          ]}
+          series={['date', 'value']}
+        />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+  });
 });

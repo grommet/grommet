@@ -401,7 +401,7 @@ const DataChart = forwardRef(
       Object.keys(result).forEach((key) => {
         const seriesStyle = result[key];
         if (!seriesStyle.aspect && !seriesStyle.color) {
-          if (theme.global?.graph?.colors) {
+          if (theme.global?.graph?.colors?.length > 0) {
             seriesStyle.color =
               theme.global.graph.colors[
                 colorIndex % theme.global.graph.colors.length
@@ -422,7 +422,7 @@ const DataChart = forwardRef(
       });
 
       return result;
-    }, [activeProperty, charts, chartProps, theme.global]);
+    }, [activeProperty, charts, chartProps, theme.global?.graph?.colors]);
 
     // normalize guide
     const guide = useMemo(() => {

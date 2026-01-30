@@ -351,4 +351,27 @@ describe('Meter', () => {
     );
     expect(container.firstChild).toMatchSnapshot();
   });
+
+  it('applies colors from theme.global.graph.colors', () => {
+    const { container } = render(
+      <Grommet
+        theme={{
+          global: {
+            graph: {
+              colors: ['brand', 'accent-3', 'accent-2'],
+            },
+          },
+        }}
+      >
+        <Meter
+          values={[
+            { value: 20, label: 'twenty' },
+            { value: 30, label: 'thirty' },
+            { value: 50, label: 'fifty' },
+          ]}
+        />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+  });
 });
