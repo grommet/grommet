@@ -41,7 +41,7 @@ exports[`Meter applies colors from theme.global.graph.colors 1`] = `
     />
     <path
       d="M 192,24 L 192,0 L 384,0 L 384,24 Z"
-      fill="#6FFFB0"
+      fill="#7D4CDB"
       stroke="none"
       stroke-width="0"
     />

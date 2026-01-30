@@ -468,7 +468,7 @@ export interface ThemeType {
       variant?: string;
     };
     graph?: {
-      colors?: GraphColorsType;
+      colors?: string[];
     };
     hover?: {
       background?: BackgroundType;

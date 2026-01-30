@@ -106,9 +106,14 @@ describe('Diagram', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
-  test('color', () => {
+  test('applies colors from theme.global.graph.colors', () => {
     const { container } = render(
-      <Context theme={{ global: { graph: { colors: ['red', 'blue'] } } }}>
+      <Context
+        theme={{
+          global: { graph: { colors: ['red', 'blue'] } },
+          diagram: { line: { color: undefined } },
+        }}
+      >
         <Diagram connections={[{ fromTarget: '1', toTarget: '2' }]} />
       </Context>,
     );

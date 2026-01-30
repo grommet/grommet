@@ -361,6 +361,7 @@ describe('Meter', () => {
               colors: ['brand', 'accent-3', 'accent-2'],
             },
           },
+          meter: { color: undefined },
         }}
       >
         <Meter
