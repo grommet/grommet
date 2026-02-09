@@ -229,6 +229,28 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       // might be too long depending on how fast people type, and 200ms
       // would be an eye blink
       debounceDelay: 500,
+      // deprecated: {
+      //   backgrounds: [
+      //     {
+      //       name: string,
+      //       message: string,
+      //     },
+      //   ],
+      //   colors: [
+      //     {
+      //       name: string,
+      //       message: string,
+      //     },
+      //   ],
+      //   button: {
+      //     kind: [
+      //       {
+      //         name: string,
+      //         message: string,
+      //       },
+      //     ],
+      //   },
+      // },
       drop: {
         // intelligentMargin: undefined,
         background: {
@@ -356,7 +378,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
     },
     // icon: {
-    //   extennd: undefined,
+    //   extend: undefined,
     //   matchSize: undefined,
     //   size: undefined,
     // },
@@ -1487,6 +1509,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
     },
     meter: {
+      background: { color: 'light-2', opacity: 'medium' },
       color: 'graph-0',
       // colors: [] || colors: ['graph-0', 'graph-1', 'graph-2', 'graph-3'],
       // extend: undefined,

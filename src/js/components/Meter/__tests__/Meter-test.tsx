@@ -209,6 +209,38 @@ describe('Meter', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
+  test('theme meter background', () => {
+    const customTheme = {
+      meter: {
+        background: 'accent-2',
+      },
+    };
+
+    const customThemeWithObject = {
+      meter: {
+        background: { color: 'accent-3', opacity: 'medium' as const },
+      },
+    };
+
+    const { container } = render(
+      <Grommet theme={customTheme}>
+        <Meter type="circle" values={VALUES} />
+        <Meter values={VALUES} />
+      </Grommet>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+
+    // Test theme background with object notation
+    const { container: container2 } = render(
+      <Grommet theme={customThemeWithObject}>
+        <Meter type="circle" values={VALUES} />
+      </Grommet>,
+    );
+
+    expect(container2.firstChild).toMatchSnapshot();
+  });
+
   test('vertical', () => {
     const { container } = render(
       <Grommet>

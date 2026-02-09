@@ -356,6 +356,13 @@ export interface ThemeType {
           }
         | undefined;
     };
+    deprecated?: {
+      backgrounds?: { name: string; message?: string }[];
+      colors?: { name: string; message?: string }[];
+      button?: {
+        kind?: { name: string; message?: string }[];
+      };
+    };
     deviceBreakpoints?: {
       phone?: string;
       tablet?: string;
@@ -1415,7 +1422,7 @@ export interface ThemeType {
         color?: ColorType;
         cursor?: string;
       };
-      gap: GapType;
+      gap?: GapType;
       pinned?: {
         background?: BackgroundType;
         icon?: {
@@ -1466,6 +1473,7 @@ export interface ThemeType {
     };
   };
   meter?: {
+    background?: BackgroundType;
     color?: ColorType;
     colors?: GraphColorsType;
     extend?: ExtendType;
