@@ -1110,6 +1110,7 @@ exports[`Components loads 1`] = `
       "content": [Function],
       "defaultVisible": [Function],
       "dropProps": [Function],
+      "id": [Function],
       "plain": [Function],
     },
     "render": [Function],

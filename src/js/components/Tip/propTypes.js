@@ -6,6 +6,7 @@ if (process.env.NODE_ENV !== 'production') {
     content: PropTypes.node,
     dropProps: PropTypes.object,
     plain: PropTypes.bool,
+    id: PropTypes.string,
     defaultVisible: PropTypes.bool,
   };
 }
