@@ -92,7 +92,6 @@ jobs:
       - run: sudo apt-get update
       - browser-tools/install-chrome:
           replace-existing: true
-          chrome-version: 132.0.6834.110
       - browser-tools/install-chromedriver
       - run:
           name: Start project
