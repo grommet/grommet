@@ -90,13 +90,9 @@ jobs:
           at: ~/grommet-ci
       - run: sudo apt-get update
       - browser-tools/install-chrome:
+          chrome-version: 133.0.6835.106
           replace-existing: true
       - browser-tools/install-chromedriver
-      - run:
-          name: Configure Chrome for CI
-          command: |
-            echo 'export CHROME_BIN=/usr/bin/google-chrome' >> $BASH_ENV
-            echo 'export TESTCAFE_BROWSER="chrome:headless --no-sandbox --disable-dev-shm-usage --selector-timeout 20000"' >> $BASH_ENV
       - run:
           name: Start project
           command: yarn start
@@ -114,7 +110,7 @@ jobs:
             done
       - run:
           name: End to end test
-          command: yarn test-e2e-ci --browser "$TESTCAFE_BROWSER"
+          command: yarn test-e2e-ci
       - store_test_results:
           path: /tmp/test-results
   release:
