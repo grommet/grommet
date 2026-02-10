@@ -4,7 +4,7 @@ orbs:
 defaults: &defaults
   working_directory: ~/grommet-ci
   docker:
-    - image: cimg/node:20.19.0-browsers
+    - image: cimg/node:20.20.0-browsers
 jobs:
   checkout:
     <<: *defaults
@@ -84,13 +84,12 @@ jobs:
   test:
     <<: *defaults
     resource_class: medium
-    # Assigned a medium resource class for better Chrome stability
     steps:
       - attach_workspace:
           at: ~/grommet-ci
       - run: sudo apt-get update
       - browser-tools/install-chrome:
-          chrome-version: 133.0.6835.106
+          chrome-version: 135.0.6822.110
           replace-existing: true
       - browser-tools/install-chromedriver
       - run:
