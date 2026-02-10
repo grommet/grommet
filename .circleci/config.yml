@@ -83,9 +83,8 @@ jobs:
           command: yarn test-bundlesize
   test:
     <<: *defaults
-    resource_class: small
-    # Assigned a size small resource class because we currently only have 3 end
-    # to end tests. As we expand our e2e testing we may want to adjust this.
+    resource_class: medium
+    # Assigned a medium resource class for better Chrome stability
     steps:
       - attach_workspace:
           at: ~/grommet-ci
@@ -94,12 +93,28 @@ jobs:
           replace-existing: true
       - browser-tools/install-chromedriver
       - run:
+          name: Configure Chrome for CI
+          command: |
+            echo 'export CHROME_BIN=/usr/bin/google-chrome' >> $BASH_ENV
+            echo 'export TESTCAFE_BROWSER="chrome:headless --no-sandbox --disable-dev-shm-usage --selector-timeout 20000"' >> $BASH_ENV
+      - run:
           name: Start project
           command: yarn start
           background: true
       - run:
+          name: Wait for server to be ready
+          command: |
+            for i in {1..60}; do
+              if curl -f http://localhost:8080 >/dev/null 2>&1; then
+                echo "Server is ready!"
+                break
+              fi
+              echo "Waiting for server... ($i/60)"
+              sleep 1
+            done
+      - run:
           name: End to end test
-          command: yarn test-e2e-ci
+          command: yarn test-e2e-ci --browser "$TESTCAFE_BROWSER"
       - store_test_results:
           path: /tmp/test-results
   release:
