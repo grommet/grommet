@@ -83,8 +83,9 @@ jobs:
           command: yarn test-bundlesize
   test:
     <<: *defaults
-    resource_class: medium
-    # Assigned a medium resource class for better Chrome stability
+    resource_class: small
+    # Assigned a size small resource class because we currently only have 3 end
+    # to end tests. As we expand our e2e testing we may want to adjust this.
     steps:
       - attach_workspace:
           at: ~/grommet-ci
@@ -97,17 +98,6 @@ jobs:
           name: Start project
           command: yarn start
           background: true
-      - run:
-          name: Wait for server to be ready
-          command: |
-            for i in {1..60}; do
-              if curl -f http://localhost:8080 >/dev/null 2>&1; then
-                echo "Server is ready!"
-                break
-              fi
-              echo "Waiting for server... ($i/60)"
-              sleep 1
-            done
       - run:
           name: End to end test
           command: yarn test-e2e-ci
