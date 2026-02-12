@@ -468,6 +468,8 @@ export interface ThemeType {
       variant?: string;
     };
     graph?: {
+      // remove in v3. Should have been removed in
+      // https://github.com/grommet/grommet/pull/3608/
       colors?: GraphColorsType;
     };
     hover?: {
@@ -886,6 +888,7 @@ export interface ThemeType {
     };
   };
   dataChart?: {
+    colors?: string[];
     gap?: GapType;
     granularity?: {
       y?: {
