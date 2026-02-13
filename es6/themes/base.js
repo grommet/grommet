@@ -1030,6 +1030,7 @@ export var generate = function generate(baseSpacing, scale) {
       }
     },
     dataChart: {
+      // colors: [],
       gap: 'small',
       // granularity: {
       //   y: {},

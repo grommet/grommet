@@ -38,7 +38,7 @@ var stackedChartType = {
 // normalize and automatically handle whatever the caller didn't specify.
 
 var DataChart = exports.DataChart = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
-  var _boundsProp$x, _boundsProp$y, _theme$dataChart2;
+  var _theme$dataChart3, _boundsProp$x, _boundsProp$y, _theme$dataChart4;
   var a11yTitle = _ref.a11yTitle,
     _ref$axis = _ref.axis,
     axisProp = _ref$axis === void 0 ? true : _ref$axis,
@@ -404,7 +404,12 @@ var DataChart = exports.DataChart = /*#__PURE__*/(0, _react.forwardRef)(function
     Object.keys(result).forEach(function (key) {
       var seriesStyle = result[key];
       if (!seriesStyle.aspect && !seriesStyle.color) {
-        seriesStyle.color = "graph-" + colorIndex;
+        var _theme$dataChart2;
+        if (((_theme$dataChart2 = theme.dataChart) == null || (_theme$dataChart2 = _theme$dataChart2.colors) == null ? void 0 : _theme$dataChart2.length) > 0) {
+          seriesStyle.color = theme.dataChart.colors[colorIndex % theme.dataChart.colors.length];
+        } else {
+          seriesStyle.color = "graph-" + colorIndex;
+        }
         colorIndex += 1;
       }
       // set opacity if it isn't set and this isn't the active property
@@ -417,7 +422,7 @@ var DataChart = exports.DataChart = /*#__PURE__*/(0, _react.forwardRef)(function
       }
     });
     return result;
-  }, [activeProperty, charts, chartProps]);
+  }, [activeProperty, charts, chartProps, (_theme$dataChart3 = theme.dataChart) == null ? void 0 : _theme$dataChart3.colors]);
 
   // normalize guide
   var guide = (0, _react.useMemo)(function () {
@@ -705,7 +710,7 @@ var DataChart = exports.DataChart = /*#__PURE__*/(0, _react.forwardRef)(function
       start: [1, 0],
       end: [1, 0]
     }],
-    gap: gap || ((_theme$dataChart2 = theme.dataChart) == null ? void 0 : _theme$dataChart2.gap)
+    gap: gap || ((_theme$dataChart4 = theme.dataChart) == null ? void 0 : _theme$dataChart4.gap)
   }, rest), xAxisElement, yAxisElement, stackElement);
   if (legendElement) {
     content = /*#__PURE__*/_react["default"].createElement(_Box.Box, {
