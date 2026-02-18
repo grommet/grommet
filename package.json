@@ -103,7 +103,7 @@
     "babel-plugin-styled-components": "^2.1.4",
     "babel-plugin-transform-imports": "^2.0.0",
     "bundlesize2": "^0.0.35",
-    "chromatic": "^13.3.3",
+    "chromatic": "^15.1.1",
     "clean-webpack-plugin": "^4.0.0",
     "copy-webpack-plugin": "^13.0.1",
     "copyfiles": "^2.4.1",

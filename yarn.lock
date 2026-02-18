@@ -7134,9 +7134,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"chromatic@npm:^13.3.3":
-  version: 13.3.3
-  resolution: "chromatic@npm:13.3.3"
+"chromatic@npm:^15.1.1":
+  version: 15.1.1
+  resolution: "chromatic@npm:15.1.1"
   peerDependencies:
     "@chromatic-com/cypress": ^0.*.* || ^1.0.0
     "@chromatic-com/playwright": ^0.*.* || ^1.0.0
@@ -7149,7 +7149,7 @@ __metadata:
     chroma: dist/bin.js
     chromatic: dist/bin.js
     chromatic-cli: dist/bin.js
-  checksum: 10c0/6fc54df030113d91ef00a2050f5cb13ca182b355dae2c29cdd326fac6cf21d8ddc2cd93dc3f5db04379b7769d4df8e3ea5f18c3642e9e3a48545565f992a838c
+  checksum: 10c0/c7d68fe4d8979c29e7d1f10064c36aa44f2bcd76b01bd3fe7cfb5d4e81e92df22fb8968e19cf4fd6c8ad3049ce748b2dd04b38a4b7f7a5a233b2b10a1005e872
   languageName: node
   linkType: hard
 
@@ -10372,7 +10372,7 @@ __metadata:
     babel-plugin-styled-components: "npm:^2.1.4"
     babel-plugin-transform-imports: "npm:^2.0.0"
     bundlesize2: "npm:^0.0.35"
-    chromatic: "npm:^13.3.3"
+    chromatic: "npm:^15.1.1"
     clean-webpack-plugin: "npm:^4.0.0"
     copy-webpack-plugin: "npm:^13.0.1"
     copyfiles: "npm:^2.4.1"
