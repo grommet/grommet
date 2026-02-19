@@ -7134,9 +7134,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"chromatic@npm:^13.3.3":
-  version: 13.3.3
-  resolution: "chromatic@npm:13.3.3"
+"chromatic@npm:^15.1.1":
+  version: 15.1.1
+  resolution: "chromatic@npm:15.1.1"
   peerDependencies:
     "@chromatic-com/cypress": ^0.*.* || ^1.0.0
     "@chromatic-com/playwright": ^0.*.* || ^1.0.0
@@ -7149,7 +7149,7 @@ __metadata:
     chroma: dist/bin.js
     chromatic: dist/bin.js
     chromatic-cli: dist/bin.js
-  checksum: 10c0/6fc54df030113d91ef00a2050f5cb13ca182b355dae2c29cdd326fac6cf21d8ddc2cd93dc3f5db04379b7769d4df8e3ea5f18c3642e9e3a48545565f992a838c
+  checksum: 10c0/c7d68fe4d8979c29e7d1f10064c36aa44f2bcd76b01bd3fe7cfb5d4e81e92df22fb8968e19cf4fd6c8ad3049ce748b2dd04b38a4b7f7a5a233b2b10a1005e872
   languageName: node
   linkType: hard
 
@@ -8204,10 +8204,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"diff@npm:^4.0.2":
-  version: 4.0.2
-  resolution: "diff@npm:4.0.2"
-  checksum: 10c0/81b91f9d39c4eaca068eb0c1eb0e4afbdc5bb2941d197f513dd596b820b956fef43485876226d65d497bebc15666aa2aa82c679e84f65d5f2bfbf14ee46e32c1
+"diff@npm:^8.0.3":
+  version: 8.0.3
+  resolution: "diff@npm:8.0.3"
+  checksum: 10c0/d29321c70d3545fdcb56c5fdd76028c3f04c012462779e062303d4c3c531af80d2c360c26b871e6e2b9a971d2422d47e1779a859106c4cac4b5d2d143df70e20
   languageName: node
   linkType: hard
 
@@ -10372,7 +10372,7 @@ __metadata:
     babel-plugin-styled-components: "npm:^2.1.4"
     babel-plugin-transform-imports: "npm:^2.0.0"
     bundlesize2: "npm:^0.0.35"
-    chromatic: "npm:^13.3.3"
+    chromatic: "npm:^15.1.1"
     clean-webpack-plugin: "npm:^4.0.0"
     copy-webpack-plugin: "npm:^13.0.1"
     copyfiles: "npm:^2.4.1"
@@ -10415,7 +10415,7 @@ __metadata:
     storybook: "npm:^8.6.14"
     styled-components: "npm:^6.1.19"
     tarball-extract: "npm:^0.0.6"
-    testcafe: "npm:^3.7.2"
+    testcafe: "npm:^3.7.4"
     testcafe-react-selectors: "npm:^5.0.3"
     testcafe-reporter-xunit: "npm:^2.2.3"
     ts-jest: "npm:^29.4.6"
@@ -13713,13 +13713,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"os-tmpdir@npm:~1.0.1":
-  version: 1.0.2
-  resolution: "os-tmpdir@npm:1.0.2"
-  checksum: 10c0/f438450224f8e2687605a8dd318f0db694b6293c5d835ae509a69e97c8de38b6994645337e5577f5001115470414638978cc49da1cdcc25106dad8738dc69990
-  languageName: node
-  linkType: hard
-
 "own-keys@npm:^1.0.1":
   version: 1.0.1
   resolution: "own-keys@npm:1.0.1"
@@ -16294,7 +16287,40 @@ __metadata:
   languageName: node
   linkType: hard
 
-"testcafe-hammerhead@npm:31.7.5, testcafe-hammerhead@npm:>=19.4.0":
+"testcafe-hammerhead@npm:31.7.7":
+  version: 31.7.7
+  resolution: "testcafe-hammerhead@npm:31.7.7"
+  dependencies:
+    "@adobe/css-tools": "npm:^4.3.0-rc.1"
+    "@electron/asar": "npm:^3.2.3"
+    acorn-hammerhead: "npm:0.6.2"
+    bowser: "npm:1.6.0"
+    crypto-md5: "npm:^1.0.0"
+    debug: "npm:4.3.1"
+    esotope-hammerhead: "npm:0.6.9"
+    http-cache-semantics: "npm:^4.1.0"
+    httpntlm: "npm:^1.8.10"
+    iconv-lite: "npm:0.5.1"
+    lodash: "npm:^4.17.21"
+    lru-cache: "npm:11.0.2"
+    match-url-wildcard: "npm:0.0.4"
+    merge-stream: "npm:^1.0.1"
+    mime: "npm:~1.4.1"
+    mustache: "npm:^2.1.1"
+    nanoid: "npm:^3.1.12"
+    os-family: "npm:^1.0.0"
+    parse5: "npm:^7.1.2"
+    pinkie: "npm:2.0.4"
+    read-file-relative: "npm:^1.2.0"
+    semver: "npm:7.5.3"
+    tough-cookie: "npm:4.1.3"
+    tunnel-agent: "npm:0.6.0"
+    ws: "npm:^7.4.6"
+  checksum: 10c0/b409b21fae5277487e8779b904dcbd0c1080322099693e91652b608e9c0e9d1c5062bd7a3bcdadcbe657dce4a38da411d9df6a703454aef58411ac18f270124e
+  languageName: node
+  linkType: hard
+
+"testcafe-hammerhead@npm:>=19.4.0":
   version: 31.7.5
   resolution: "testcafe-hammerhead@npm:31.7.5"
   dependencies:
@@ -16399,9 +16425,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"testcafe@npm:^3.7.2":
-  version: 3.7.2
-  resolution: "testcafe@npm:3.7.2"
+"testcafe@npm:^3.7.4":
+  version: 3.7.4
+  resolution: "testcafe@npm:3.7.4"
   dependencies:
     "@babel/core": "npm:^7.23.2"
     "@babel/plugin-proposal-decorators": "npm:^7.23.2"
@@ -16439,7 +16465,7 @@ __metadata:
     del: "npm:^3.0.0"
     device-specs: "npm:^1.0.0"
     devtools-protocol: "npm:0.0.1109433"
-    diff: "npm:^4.0.2"
+    diff: "npm:^8.0.3"
     elegant-spinner: "npm:^1.0.1"
     email-validator: "npm:^2.0.4"
     emittery: "npm:^0.4.1"
@@ -16486,7 +16512,7 @@ __metadata:
     source-map-support: "npm:^0.5.16"
     strip-bom: "npm:^2.0.0"
     testcafe-browser-tools: "npm:2.0.26"
-    testcafe-hammerhead: "npm:31.7.5"
+    testcafe-hammerhead: "npm:31.7.7"
     testcafe-legacy-api: "npm:5.1.8"
     testcafe-reporter-json: "npm:^2.1.0"
     testcafe-reporter-list: "npm:^2.2.0"
@@ -16495,14 +16521,14 @@ __metadata:
     testcafe-reporter-xunit: "npm:^2.2.1"
     testcafe-selector-generator: "npm:^0.1.0"
     time-limit-promise: "npm:^1.0.2"
-    tmp: "npm:0.0.28"
+    tmp: "npm:0.2.5"
     tree-kill: "npm:^1.2.2"
     typescript: "npm:4.7.4"
     unquote: "npm:^1.1.1"
     url-to-options: "npm:^2.0.0"
   bin:
     testcafe: bin/testcafe-with-v8-flag-filter.js
-  checksum: 10c0/dd0128b2419dcd4697011ac66429ebf9762e2fff00b0307772f9e383fa32898245a55a4af658f9a1a0aecc8f18abdcd32c74641823b96ddffcb4cf317f5c6184
+  checksum: 10c0/0b8e96777a227b2a23cd1891a960872d3ea380ae645fdfdd23eb263edb257171c5d8d3ba4772c1c9575dd3c7621d2dcfb0f515b875c15bff59957ce20f0e5bd2
   languageName: node
   linkType: hard
 
@@ -16620,12 +16646,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tmp@npm:0.0.28":
-  version: 0.0.28
-  resolution: "tmp@npm:0.0.28"
-  dependencies:
-    os-tmpdir: "npm:~1.0.1"
-  checksum: 10c0/2be352b43206411d4f7c29d09afa03c94e93386fdd87d9973aecd2b6569b8fda1e7a96ed613ac9b2dc30038a9a3ec762b9f4b910d311e565124653750a991dac
+"tmp@npm:0.2.5":
+  version: 0.2.5
+  resolution: "tmp@npm:0.2.5"
+  checksum: 10c0/cee5bb7d674bb4ba3ab3f3841c2ca7e46daeb2109eec395c1ec7329a91d52fcb21032b79ac25161a37b2565c4858fefab927af9735926a113ef7bac9091a6e0e
   languageName: node
   linkType: hard
 
