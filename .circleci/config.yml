@@ -53,7 +53,6 @@ jobs:
           command: yarn chromatic -t $CHROMATIC_TOKEN --exit-zero-on-changes
   chromatic-accept:
     <<: *defaults
-    resource_class: large
     steps:
       - attach_workspace:
           at: ~/grommet-ci
