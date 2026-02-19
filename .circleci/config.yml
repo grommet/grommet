@@ -4,7 +4,7 @@ orbs:
 defaults: &defaults
   working_directory: ~/grommet-ci
   docker:
-    - image: cimg/node:25.6.1-browsers
+    - image: cimg/node:20.19.0-browsers
 jobs:
   checkout:
     <<: *defaults
@@ -53,6 +53,7 @@ jobs:
           command: yarn chromatic -t $CHROMATIC_TOKEN --exit-zero-on-changes
   chromatic-accept:
     <<: *defaults
+    resource_class: large
     steps:
       - attach_workspace:
           at: ~/grommet-ci
@@ -61,7 +62,7 @@ jobs:
           command: yarn chromatic -t $CHROMATIC_TOKEN --exit-zero-on-changes --auto-accept-changes
   build:
     <<: *defaults
-    resource_class: medium+
+    resource_class: medium
     steps:
       - attach_workspace:
           at: ~/grommet-ci
