@@ -61,7 +61,7 @@ jobs:
           command: yarn chromatic -t $CHROMATIC_TOKEN --exit-zero-on-changes --auto-accept-changes
   build:
     <<: *defaults
-    resource_class: medium
+    resource_class: medium+
     steps:
       - attach_workspace:
           at: ~/grommet-ci
