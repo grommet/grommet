@@ -4,7 +4,7 @@ orbs:
 defaults: &defaults
   working_directory: ~/grommet-ci
   docker:
-    - image: cimg/node:24.3.1-browsers
+    - image: cimg/node:24.13.1-browsers
 jobs:
   checkout:
     <<: *defaults
