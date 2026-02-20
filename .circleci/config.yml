@@ -44,21 +44,22 @@ jobs:
           command: yarn test
   chromatic:
     <<: *defaults
-    resource_class: large
+    resource_class: xlarge
     steps:
       - attach_workspace:
           at: ~/grommet-ci
       - run:
           name: Running chromatic test
-          command: yarn chromatic -t $CHROMATIC_TOKEN --exit-zero-on-changes
+          command: NODE_OPTIONS='--max-old-space-size=8192' yarn chromatic -t $CHROMATIC_TOKEN --exit-zero-on-changes
   chromatic-accept:
     <<: *defaults
+    resource_class: xlarge
     steps:
       - attach_workspace:
           at: ~/grommet-ci
       - run:
           name: Running chromatic test
-          command: yarn chromatic -t $CHROMATIC_TOKEN --exit-zero-on-changes --auto-accept-changes
+          command: NODE_OPTIONS='--max-old-space-size=8192' yarn chromatic -t $CHROMATIC_TOKEN --exit-zero-on-changes --auto-accept-changes
   build:
     <<: *defaults
     resource_class: medium+
