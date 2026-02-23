@@ -352,6 +352,20 @@ describe('Anchor', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
+  test('respects icon size prop when provided', () => {
+    const { container } = render(
+      <Grommet>
+        <Anchor
+          label="Anchor with icon prop should respect icon size prop"
+          icon={<LinkNext size="large" />}
+          size="small"
+        />
+      </Grommet>,
+    );
+
+    expect(container).toMatchSnapshot();
+  });
+
   test('theme iconOnly pad', () => {
     const customTheme = {
       anchor: {
