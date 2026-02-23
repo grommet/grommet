@@ -173,18 +173,32 @@ export const calcs = (values = [], options = {}) => {
   // To deal with javascript math limitations, round the step with 4 decimal
   // places and then push the values with 2 decimal places
   const yStepInterval = round(height / stepsY, 4);
-  while (round(y, 2) >= minY) {
-    yAxis.push(round(y, 2));
-    y -= yStepInterval;
+
+  // Special case: if we have only one data point, create a range
+  if (minY === maxY) {
+    yAxis.push(round(maxY, 2));
+    yAxis.push(round(minY, 2));
+  } else {
+    while (round(y, 2) >= minY) {
+      yAxis.push(round(y, 2));
+      y -= yStepInterval;
+    }
   }
   if (horizontal) yAxis.reverse();
 
   const xAxis = [];
   let x = minX;
   const xStepInterval = round(width / stepsX, 4);
-  while (round(x, 2) <= maxX) {
-    xAxis.push(round(x, 2));
-    x += xStepInterval;
+
+  // Special case: if we have only one data point, create a range
+  if (minX === maxX) {
+    xAxis.push(round(minX, 2));
+    xAxis.push(round(maxX, 2));
+  } else {
+    while (round(x, 2) <= maxX) {
+      xAxis.push(round(x, 2));
+      x += xStepInterval;
+    }
   }
 
   const thicknessPad = {
