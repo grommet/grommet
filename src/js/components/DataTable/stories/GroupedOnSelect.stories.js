@@ -14,20 +14,34 @@ delete groupColumns[1].footer;
 
 const expandLabel = (row) => `${row?.location} location`;
 
-export const GroupedOnSelectDataTable = () => (
-  // Uncomment <Grommet> lines when using outside of storybook
-  // <Grommet theme={grommet}>
-  <Box align="center" pad="large">
-    <DataTable
-      columns={groupColumns}
-      data={DATA}
-      groupBy={{ property: 'location', expandLabel }}
-      onSelect={() => {}}
-      sortable
-    />
-  </Box>
-  // </Grommet>
-);
+export const GroupedOnSelectDataTable = () => {
+  const [selected, setSelected] = React.useState([]);
+
+  return (
+    // Uncomment <Grommet> lines when using outside of storybook
+    // <Grommet theme={grommet}>
+    <Box align="center" pad="large">
+      <DataTable
+        columns={groupColumns}
+        data={DATA}
+        selected={selected}
+        onSelect={setSelected}
+        rowProps={
+          selected.length
+            ? Object.fromEntries(
+                selected.map((key) => [
+                  key,
+                  { background: 'blue', selected: { background: 'blue' } },
+                ]),
+              )
+            : {}
+        }
+        sortable
+      />
+    </Box>
+    // </Grommet>
+  );
+};
 
 GroupedOnSelectDataTable.storyName = 'Grouped and onSelect';
 
