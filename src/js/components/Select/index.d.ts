@@ -11,6 +11,7 @@ import {
 export interface BasicSelectProps {
   a11yTitle?: A11yTitleType;
   alignSelf?: AlignSelfType;
+  autoFocus?: boolean;
   gridArea?: GridAreaType;
   children?: (...args: any[]) => any;
   disabled?: boolean | (number | string | object)[];

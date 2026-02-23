@@ -3,6 +3,7 @@ import { genericProps } from '../../utils/general-prop-types';
 
 export const genericSelectProps = {
   ...genericProps,
+  autoFocus: PropTypes.bool,
   children: PropTypes.func,
   disabled: PropTypes.oneOfType([
     PropTypes.bool,
