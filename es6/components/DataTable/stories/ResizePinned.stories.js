@@ -308,7 +308,7 @@ export var ResizablePinnedDataTable = function ResizablePinnedDataTable() {
     resizeable: true
   })))
   // </Grommet>
-  ;
+;
 };
 ResizablePinnedDataTable.storyName = 'Resizable pinned columns';
 export default {

@@ -22,7 +22,7 @@ var Sticky = exports.Sticky = function Sticky() {
     var value = _ref.value,
       touched = _ref.touched;
   } // Your submission logic here
-  ;
+;
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
