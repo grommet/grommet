@@ -10737,7 +10737,7 @@ __metadata:
     jest-environment-jsdom: "npm:^30.2.0"
     jest-styled-components: "npm:7.0.5"
     jsdom: "npm:^27.4.0"
-    markdown-to-jsx: "npm:7.7.17"
+    markdown-to-jsx: "npm:7.4.4"
     postcss: "npm:^8.5.6"
     pre-commit: "npm:^1.2.2"
     prettier: "npm:^2.8.8"
@@ -13235,15 +13235,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"markdown-to-jsx@npm:7.7.17":
-  version: 7.7.17
-  resolution: "markdown-to-jsx@npm:7.7.17"
+"markdown-to-jsx@npm:7.4.4":
+  version: 7.4.4
+  resolution: "markdown-to-jsx@npm:7.4.4"
   peerDependencies:
     react: ">= 0.14.0"
-  peerDependenciesMeta:
-    react:
-      optional: true
-  checksum: 10c0/581c5ee1b3c79445f9f8369dc2882d0289507e702b2fcf2bc276b163a984cdcca2d8463a609c9bf310a31dcbf10c3210721c42c9173d4f12da675d3b56243736
+  checksum: 10c0/e57f5378b0483e8b028fc46b22a4e8b1c6180e99b666a7b35a4eff70b98c5e773948e56a808663e77f6b9fb90978c4f2f4027cacb5d4e2f0904f123550696fdc
   languageName: node
   linkType: hard
 
