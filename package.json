@@ -141,7 +141,7 @@
     "regenerator-runtime": "^0.14.1",
     "simple-git": "^3.32.2",
     "storybook": "^8.6.17",
-    "styled-components": "^6.3.11",
+    "styled-components": "6.1.19",
     "tarball-extract": "^0.0.6",
     "testcafe": "^3.7.4",
     "testcafe-react-selectors": "^5.0.3",
