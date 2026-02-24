@@ -1,6 +1,5 @@
 import prettier from 'eslint-plugin-prettier';
 import reactHooks from 'eslint-plugin-react-hooks';
-import testingLibrary from 'eslint-plugin-testing-library';
 import { fixupPluginRules } from '@eslint/compat';
 import globals from 'globals';
 import babelParser from '@babel/eslint-parser';
@@ -26,7 +25,6 @@ export default [
     plugins: {
       prettier,
       'react-hooks': fixupPluginRules(reactHooks),
-      'testing-library': testingLibrary,
     },
 
     languageOptions: {
