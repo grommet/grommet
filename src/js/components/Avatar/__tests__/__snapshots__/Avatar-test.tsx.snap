@@ -38,11 +38,9 @@ exports[`Avatar a11yTitle renders 1`] = `
   <div
     aria-label="testing for a11ytitle"
     class="c1 StyledAvatar-sc-1suyamb-1"
-    role="figure"
   >
     <img
       class="c2"
-      role="presentation"
       src="test.png"
     />
   </div>
@@ -376,61 +374,49 @@ exports[`Avatar round renders 1`] = `
 >
   <div
     class="c1 StyledAvatar-sc-1suyamb-1"
-    role="figure"
   >
     <img
       class="c2"
-      role="presentation"
       src="test.png"
     />
   </div>
   <div
     class="c3 StyledAvatar-sc-1suyamb-1"
-    role="figure"
   >
     <img
       class="c2"
-      role="presentation"
       src="test.png"
     />
   </div>
   <div
     class="c4 StyledAvatar-sc-1suyamb-1"
-    role="figure"
   >
     <img
       class="c2"
-      role="presentation"
       src="test.png"
     />
   </div>
   <div
     class="c5 StyledAvatar-sc-1suyamb-1"
-    role="figure"
   >
     <img
       class="c2"
-      role="presentation"
       src="test.png"
     />
   </div>
   <div
     class="c6 StyledAvatar-sc-1suyamb-1"
-    role="figure"
   >
     <img
       class="c2"
-      role="presentation"
       src="test.png"
     />
   </div>
   <div
     class="c7 StyledAvatar-sc-1suyamb-1"
-    role="figure"
   >
     <img
       class="c2"
-      role="presentation"
       src="test.png"
     />
   </div>
@@ -642,91 +628,73 @@ exports[`Avatar size 1`] = `
 >
   <div
     class="c1 StyledAvatar-sc-1suyamb-1"
-    role="figure"
   >
     <img
       class="c2"
-      role="presentation"
       src="test.png"
     />
   </div>
   <div
     class="c3 StyledAvatar-sc-1suyamb-1"
-    role="figure"
   >
     <img
       class="c2"
-      role="presentation"
       src="test.png"
     />
   </div>
   <div
     class="c4 StyledAvatar-sc-1suyamb-1"
-    role="figure"
   >
     <img
       class="c2"
-      role="presentation"
       src="test.png"
     />
   </div>
   <div
     class="c5 StyledAvatar-sc-1suyamb-1"
-    role="figure"
   >
     <img
       class="c2"
-      role="presentation"
       src="test.png"
     />
   </div>
   <div
     class="c6 StyledAvatar-sc-1suyamb-1"
-    role="figure"
   >
     <img
       class="c2"
-      role="presentation"
       src="test.png"
     />
   </div>
   <div
     class="c7 StyledAvatar-sc-1suyamb-1"
-    role="figure"
   >
     <img
       class="c2"
-      role="presentation"
       src="test.png"
     />
   </div>
   <div
     class="c8 StyledAvatar-sc-1suyamb-1"
-    role="figure"
   >
     <img
       class="c2"
-      role="presentation"
       src="test.png"
     />
   </div>
   <div
     class="c9 StyledAvatar-sc-1suyamb-1"
-    role="figure"
   >
     <img
       class="c2"
-      role="presentation"
       src="test.png"
     />
   </div>
   <div
     class="c10 StyledAvatar-sc-1suyamb-1"
-    role="figure"
   >
     <img
       class="c2"
-      role="presentation"
       src="test.png"
     />
   </div>
@@ -734,6 +702,7 @@ exports[`Avatar size 1`] = `
     class="c3 StyledAvatar-sc-1suyamb-1"
   >
     <span
+      aria-label="Avatar for S"
       class="c11 "
     >
       S
@@ -743,6 +712,7 @@ exports[`Avatar size 1`] = `
     class="c4 StyledAvatar-sc-1suyamb-1"
   >
     <span
+      aria-label="Avatar for S"
       class="c12 "
     >
       S
@@ -752,6 +722,7 @@ exports[`Avatar size 1`] = `
     class="c5 StyledAvatar-sc-1suyamb-1"
   >
     <span
+      aria-label="Avatar for S"
       class="c13 "
     >
       S
@@ -761,6 +732,7 @@ exports[`Avatar size 1`] = `
     class="c6 StyledAvatar-sc-1suyamb-1"
   >
     <span
+      aria-label="Avatar for S"
       class="c14 "
     >
       S
@@ -770,6 +742,7 @@ exports[`Avatar size 1`] = `
     class="c7 StyledAvatar-sc-1suyamb-1"
   >
     <span
+      aria-label="Avatar for S"
       class="c15 "
     >
       S
@@ -779,6 +752,7 @@ exports[`Avatar size 1`] = `
     class="c8 StyledAvatar-sc-1suyamb-1"
   >
     <span
+      aria-label="Avatar for S"
       class="c16 "
     >
       S
@@ -788,6 +762,7 @@ exports[`Avatar size 1`] = `
     class="c9 StyledAvatar-sc-1suyamb-1"
   >
     <span
+      aria-label="Avatar for S"
       class="c17 "
     >
       S
@@ -797,6 +772,7 @@ exports[`Avatar size 1`] = `
     class="c10 StyledAvatar-sc-1suyamb-1"
   >
     <span
+      aria-label="Avatar for S"
       class="c18 "
     >
       S
@@ -918,11 +894,9 @@ exports[`Avatar stack renders 1`] = `
         >
           <div
             class="c5 StyledAvatar-sc-1suyamb-1"
-            role="figure"
           >
             <img
               class="c6"
-              role="presentation"
               src="test.png"
             />
           </div>
@@ -940,11 +914,9 @@ exports[`Avatar stack renders 1`] = `
     >
       <div
         class="c9 StyledAvatar-sc-1suyamb-1"
-        role="figure"
       >
         <img
           class="c6"
-          role="presentation"
           src="test.png"
         />
       </div>
@@ -1142,6 +1114,7 @@ exports[`Avatar text size changes according to theme 1`] = `
       class="c2 StyledAvatar-sc-1suyamb-1"
     >
       <span
+        aria-label="Avatar for T1"
         class="c3 "
       >
         T1
@@ -1151,6 +1124,7 @@ exports[`Avatar text size changes according to theme 1`] = `
       class="c4 StyledAvatar-sc-1suyamb-1"
     >
       <span
+        aria-label="Avatar for T2"
         class="c5 "
       >
         T2
@@ -1160,6 +1134,7 @@ exports[`Avatar text size changes according to theme 1`] = `
       class="c6 StyledAvatar-sc-1suyamb-1"
     >
       <span
+        aria-label="Avatar for T3"
         class="c7 "
       >
         T3
@@ -1169,6 +1144,7 @@ exports[`Avatar text size changes according to theme 1`] = `
       class="c8 StyledAvatar-sc-1suyamb-1"
     >
       <span
+        aria-label="Avatar for T4"
         class="c9 "
       >
         T4

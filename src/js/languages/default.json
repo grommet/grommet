@@ -1,4 +1,7 @@
 {
+  "avatar": {
+    "label": "Avatar for {name}"
+  },
   "button": {
     "busy": "button is in a busy state",
     "success": "button action succeeded"
