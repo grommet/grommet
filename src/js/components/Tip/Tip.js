@@ -32,7 +32,10 @@ const getReactNodeRef = (element) => {
 };
 
 const Tip = forwardRef(
-  ({ children, content, defaultVisible = false, dropProps, plain }, tipRef) => {
+  (
+    { children, content, defaultVisible = false, dropProps, plain, id },
+    tipRef,
+  ) => {
     const { theme } = useThemeValue();
     const [over, setOver] = useState(false);
     const [tooltipOver, setTooltipOver] = useState(false);
@@ -104,6 +107,7 @@ const Tip = forwardRef(
             target={componentRef.current}
             trapFocus={false}
             key="tip-drop"
+            id={id}
             {...theme.tip.drop}
             {...dropProps}
             onMouseEnter={() => setTooltipOver(true)}

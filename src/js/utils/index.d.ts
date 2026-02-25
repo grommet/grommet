@@ -398,3 +398,5 @@ export type SkeletonType =
       depth?: number;
       message?: string | { start?: string; end?: string };
     };
+
+export function useId(): string;

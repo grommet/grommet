@@ -1,6 +1,7 @@
 import styled, { css } from 'styled-components';
 
 import {
+  focusStyle,
   genericStyles,
   normalizeColor,
   textAlignStyle,
@@ -57,6 +58,6 @@ const StyledText = styled('span').withConfig(styledComponentsConfig)`
     props.theme.text.font && props.theme.text.font.family && fontFamily}
 
   ${(props) => props.theme.text && props.theme.text.extend}
+  ${(props) => props.focus && focusStyle()};
 `;
-
 export { StyledText };
