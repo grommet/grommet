@@ -416,7 +416,7 @@ exports[`DataFilter !inDataForm 1`] = `
             class="c12"
             style="width: 0px;"
           >
-            2.1
+            2.3
           </span>
           <div
             class="c13 c14"
@@ -432,16 +432,16 @@ exports[`DataFilter !inDataForm 1`] = `
             >
               <input
                 aria-label="Lower Bounds"
-                aria-valuemax="4.9"
-                aria-valuemin="2.1"
-                aria-valuenow="2.1"
+                aria-valuemax="4.3"
+                aria-valuemin="2.3"
+                aria-valuenow="2.3"
                 class="c17"
-                max="4.9"
-                min="2.1"
+                max="4.3"
+                min="2.3"
                 readonly=""
-                step="0.14"
+                step="0.1"
                 type="range"
-                value="2.1"
+                value="2.3"
               />
               <div
                 class="c18"
@@ -455,7 +455,7 @@ exports[`DataFilter !inDataForm 1`] = `
             </div>
             <div
               class="c20"
-              style="flex: 3.8000000000000003 0 0px; cursor: ew-resize;"
+              style="flex: 3 0 0px; cursor: ew-resize;"
             />
             <div
               class="c16"
@@ -463,16 +463,16 @@ exports[`DataFilter !inDataForm 1`] = `
             >
               <input
                 aria-label="Upper Bounds"
-                aria-valuemax="4.9"
-                aria-valuemin="2.1"
-                aria-valuenow="4.9"
+                aria-valuemax="4.3"
+                aria-valuemin="2.3"
+                aria-valuenow="4.3"
                 class="c17"
-                max="4.9"
-                min="2.1"
+                max="4.3"
+                min="2.3"
                 readonly=""
-                step="0.14"
+                step="0.1"
                 type="range"
-                value="4.9"
+                value="4.3"
               />
               <div
                 class="c18"
@@ -493,7 +493,7 @@ exports[`DataFilter !inDataForm 1`] = `
             class="c21"
             style="width: 0px;"
           >
-            4.9
+            4.3
           </span>
         </div>
       </form>
@@ -783,6 +783,1822 @@ exports[`DataFilter children 1`] = `
     </form>
   </div>
 </div>
+`;
+
+exports[`DataFilter decimal values [0.1, 0.2] - no artificial range normalization 1`] = `
+<DocumentFragment>
+  .c1 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  flex: 0 0 auto;
+}
+
+.c3 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  height: 100%;
+}
+
+.c4 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  flex: 1 1;
+  overflow: auto;
+}
+
+.c5 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin-bottom: 12px;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+}
+
+.c7 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  padding: 12px;
+}
+
+.c8 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+}
+
+.c10 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+.c12 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-self: stretch;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  width: 100%;
+  border-radius: 12px;
+}
+
+.c13 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-self: stretch;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  justify-content: center;
+  overflow: visible;
+}
+
+.c15 {
+  display: flex;
+  box-sizing: border-box;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  flex-basis: 100%;
+  height: 100%;
+  justify-content: center;
+}
+
+.c16 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  background-color: #7D4CDB;
+  color: #f8f8f8;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  height: 12px;
+  width: 12px;
+  border-radius: 100%;
+}
+
+.c17 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-self: stretch;
+  background-color: rgba(125, 76, 219, 0.4);
+  color: #444444;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  width: 100%;
+  border-radius: 12px;
+}
+
+.c19 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin-top: 24px;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: row;
+  flex: 0 0 auto;
+  justify-content: space-between;
+}
+
+.c6 {
+  margin-left: 12px;
+  margin-right: 12px;
+  margin-top: 6px;
+  margin-bottom: 6px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c9 {
+  margin-left: 12px;
+  margin-right: 12px;
+  font-size: 14px;
+  line-height: 20px;
+  text-align: right;
+}
+
+.c18 {
+  margin-left: 12px;
+  margin-right: 12px;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.c20 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: 2px solid #7D4CDB;
+  border-radius: 18px;
+  color: #444444;
+  padding: 4px 22px;
+  font-size: 18px;
+  line-height: 24px;
+  background-color: #7D4CDB;
+  color: #f8f8f8;
+  border-radius: 18px;
+  transition-property: color,background-color,border-color,box-shadow;
+  transition-duration: 0.1s;
+  transition-timing-function: ease-in-out;
+}
+
+.c20:hover {
+  box-shadow: 0px 0px 0px 2px #7D4CDB;
+}
+
+.c20:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c20:focus >circle,
+.c20:focus >ellipse,
+.c20:focus >line,
+.c20:focus >path,
+.c20:focus >polygon,
+.c20:focus >polyline,
+.c20:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c20:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c20:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c20:focus:not(:focus-visible) >circle,
+.c20:focus:not(:focus-visible) >ellipse,
+.c20:focus:not(:focus-visible) >line,
+.c20:focus:not(:focus-visible) >path,
+.c20:focus:not(:focus-visible) >polygon,
+.c20:focus:not(:focus-visible) >polyline,
+.c20:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c20:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
+}
+
+.c2 {
+  max-width: 100%;
+}
+
+.c14 {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.c11 {
+  user-select: none;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+@media only screen and (max-width: 768px) {
+  .c5 {
+    margin-bottom: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c7 {
+    border-bottom: solid 1px rgba(0, 0, 0, 0.33);
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c7 {
+    padding: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c12 {
+    border-radius: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c17 {
+    border-radius: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c19 {
+    margin-top: 12px;
+  }
+}
+
+<div
+    class="c0"
+  >
+    <div
+      class="c1"
+      id="data"
+    >
+      <form
+        class="c2"
+      >
+        <div
+          class="c3"
+        >
+          <div
+            class="c4"
+          >
+            <div
+              class="c1"
+            >
+              <div
+                class="c5 "
+              >
+                <label
+                  class="c6"
+                  for="data-price"
+                  id="grommet-data-price__label"
+                >
+                  price
+                </label>
+                <div
+                  class="c7 "
+                >
+                  <div
+                    class="c8"
+                    id="data-price"
+                  >
+                    <span
+                      class="c9"
+                      style="width: 0px;"
+                    >
+                      0.1
+                    </span>
+                    <div
+                      class="c10 c11"
+                      tabindex="-1"
+                    >
+                      <div
+                        class="c12"
+                        style="flex: 0 0 0px;"
+                      />
+                      <div
+                        class="c13"
+                        style="flex: 0 0 1px;"
+                      >
+                        <input
+                          aria-label="Lower Bounds"
+                          aria-valuemax="0.2"
+                          aria-valuemin="0.1"
+                          aria-valuenow="0.1"
+                          class="c14"
+                          max="0.2"
+                          min="0.1"
+                          readonly=""
+                          step="0.01"
+                          type="range"
+                          value="0.1"
+                        />
+                        <div
+                          class="c15"
+                          style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
+                          tabindex="-1"
+                        >
+                          <div
+                            class="c16 EdgeControl__StyledBox-sc-1xo2yt9-1"
+                          />
+                        </div>
+                      </div>
+                      <div
+                        class="c17"
+                        style="flex: 1.1 0 0px; cursor: ew-resize;"
+                      />
+                      <div
+                        class="c13"
+                        style="flex: 0 0 1px;"
+                      >
+                        <input
+                          aria-label="Upper Bounds"
+                          aria-valuemax="0.2"
+                          aria-valuemin="0.1"
+                          aria-valuenow="0.2"
+                          class="c14"
+                          max="0.2"
+                          min="0.1"
+                          readonly=""
+                          step="0.01"
+                          type="range"
+                          value="0.2"
+                        />
+                        <div
+                          class="c15"
+                          style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
+                          tabindex="-1"
+                        >
+                          <div
+                            class="c16 EdgeControl__StyledBox-sc-1xo2yt9-1"
+                          />
+                        </div>
+                      </div>
+                      <div
+                        class="c12"
+                        style="flex: 0 0 0px;"
+                      />
+                    </div>
+                    <span
+                      class="c18"
+                      style="width: 0px;"
+                    >
+                      0.2
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <footer
+            class="c19"
+          >
+            <button
+              class="c20"
+              type="submit"
+            >
+              Apply filters
+            </button>
+          </footer>
+        </div>
+      </form>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`DataFilter high precision decimals are rounded to max 2 places 1`] = `
+<DocumentFragment>
+  .c1 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  flex: 0 0 auto;
+}
+
+.c3 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  height: 100%;
+}
+
+.c4 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  flex: 1 1;
+  overflow: auto;
+}
+
+.c5 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin-bottom: 12px;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+}
+
+.c7 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  padding: 12px;
+}
+
+.c8 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+}
+
+.c10 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+.c12 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-self: stretch;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  width: 100%;
+  border-radius: 12px;
+}
+
+.c13 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-self: stretch;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  justify-content: center;
+  overflow: visible;
+}
+
+.c15 {
+  display: flex;
+  box-sizing: border-box;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  flex-basis: 100%;
+  height: 100%;
+  justify-content: center;
+}
+
+.c16 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  background-color: #7D4CDB;
+  color: #f8f8f8;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  height: 12px;
+  width: 12px;
+  border-radius: 100%;
+}
+
+.c17 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-self: stretch;
+  background-color: rgba(125, 76, 219, 0.4);
+  color: #444444;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  width: 100%;
+  border-radius: 12px;
+}
+
+.c19 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin-top: 24px;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: row;
+  flex: 0 0 auto;
+  justify-content: space-between;
+}
+
+.c6 {
+  margin-left: 12px;
+  margin-right: 12px;
+  margin-top: 6px;
+  margin-bottom: 6px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c9 {
+  margin-left: 12px;
+  margin-right: 12px;
+  font-size: 14px;
+  line-height: 20px;
+  text-align: right;
+}
+
+.c18 {
+  margin-left: 12px;
+  margin-right: 12px;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.c20 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: 2px solid #7D4CDB;
+  border-radius: 18px;
+  color: #444444;
+  padding: 4px 22px;
+  font-size: 18px;
+  line-height: 24px;
+  background-color: #7D4CDB;
+  color: #f8f8f8;
+  border-radius: 18px;
+  transition-property: color,background-color,border-color,box-shadow;
+  transition-duration: 0.1s;
+  transition-timing-function: ease-in-out;
+}
+
+.c20:hover {
+  box-shadow: 0px 0px 0px 2px #7D4CDB;
+}
+
+.c20:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c20:focus >circle,
+.c20:focus >ellipse,
+.c20:focus >line,
+.c20:focus >path,
+.c20:focus >polygon,
+.c20:focus >polyline,
+.c20:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c20:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c20:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c20:focus:not(:focus-visible) >circle,
+.c20:focus:not(:focus-visible) >ellipse,
+.c20:focus:not(:focus-visible) >line,
+.c20:focus:not(:focus-visible) >path,
+.c20:focus:not(:focus-visible) >polygon,
+.c20:focus:not(:focus-visible) >polyline,
+.c20:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c20:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
+}
+
+.c2 {
+  max-width: 100%;
+}
+
+.c14 {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.c11 {
+  user-select: none;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+@media only screen and (max-width: 768px) {
+  .c5 {
+    margin-bottom: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c7 {
+    border-bottom: solid 1px rgba(0, 0, 0, 0.33);
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c7 {
+    padding: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c12 {
+    border-radius: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c17 {
+    border-radius: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c19 {
+    margin-top: 12px;
+  }
+}
+
+<div
+    class="c0"
+  >
+    <div
+      class="c1"
+      id="data"
+    >
+      <form
+        class="c2"
+      >
+        <div
+          class="c3"
+        >
+          <div
+            class="c4"
+          >
+            <div
+              class="c1"
+            >
+              <div
+                class="c5 "
+              >
+                <label
+                  class="c6"
+                  for="data-value"
+                  id="grommet-data-value__label"
+                >
+                  value
+                </label>
+                <div
+                  class="c7 "
+                >
+                  <div
+                    class="c8"
+                    id="data-value"
+                  >
+                    <span
+                      class="c9"
+                      style="width: 0px;"
+                    >
+                      1.12
+                    </span>
+                    <div
+                      class="c10 c11"
+                      tabindex="-1"
+                    >
+                      <div
+                        class="c12"
+                        style="flex: 0 0 0px;"
+                      />
+                      <div
+                        class="c13"
+                        style="flex: 0 0 1px;"
+                      >
+                        <input
+                          aria-label="Lower Bounds"
+                          aria-valuemax="2.99"
+                          aria-valuemin="1.12"
+                          aria-valuenow="1.12"
+                          class="c14"
+                          max="2.99"
+                          min="1.12"
+                          readonly=""
+                          step="0.09"
+                          type="range"
+                          value="1.12"
+                        />
+                        <div
+                          class="c15"
+                          style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
+                          tabindex="-1"
+                        >
+                          <div
+                            class="c16 EdgeControl__StyledBox-sc-1xo2yt9-1"
+                          />
+                        </div>
+                      </div>
+                      <div
+                        class="c17"
+                        style="flex: 2.87 0 0px; cursor: ew-resize;"
+                      />
+                      <div
+                        class="c13"
+                        style="flex: 0 0 1px;"
+                      >
+                        <input
+                          aria-label="Upper Bounds"
+                          aria-valuemax="2.99"
+                          aria-valuemin="1.12"
+                          aria-valuenow="2.99"
+                          class="c14"
+                          max="2.99"
+                          min="1.12"
+                          readonly=""
+                          step="0.09"
+                          type="range"
+                          value="2.99"
+                        />
+                        <div
+                          class="c15"
+                          style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
+                          tabindex="-1"
+                        >
+                          <div
+                            class="c16 EdgeControl__StyledBox-sc-1xo2yt9-1"
+                          />
+                        </div>
+                      </div>
+                      <div
+                        class="c12"
+                        style="flex: 0 0 0px;"
+                      />
+                    </div>
+                    <span
+                      class="c18"
+                      style="width: 0px;"
+                    >
+                      2.99
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <footer
+            class="c19"
+          >
+            <button
+              class="c20"
+              type="submit"
+            >
+              Apply filters
+            </button>
+          </footer>
+        </div>
+      </form>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`DataFilter mixed positive and negative decimals - validates step is valid (not 0, not NaN) 1`] = `
+<DocumentFragment>
+  .c1 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  flex: 0 0 auto;
+}
+
+.c3 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  height: 100%;
+}
+
+.c4 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  flex: 1 1;
+  overflow: auto;
+}
+
+.c5 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin-bottom: 12px;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+}
+
+.c7 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  padding: 12px;
+}
+
+.c8 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+}
+
+.c10 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+.c12 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-self: stretch;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  width: 100%;
+  border-radius: 12px;
+}
+
+.c13 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-self: stretch;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  justify-content: center;
+  overflow: visible;
+}
+
+.c15 {
+  display: flex;
+  box-sizing: border-box;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  flex-basis: 100%;
+  height: 100%;
+  justify-content: center;
+}
+
+.c16 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  background-color: #7D4CDB;
+  color: #f8f8f8;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  height: 12px;
+  width: 12px;
+  border-radius: 100%;
+}
+
+.c17 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-self: stretch;
+  background-color: rgba(125, 76, 219, 0.4);
+  color: #444444;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  width: 100%;
+  border-radius: 12px;
+}
+
+.c19 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin-top: 24px;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: row;
+  flex: 0 0 auto;
+  justify-content: space-between;
+}
+
+.c6 {
+  margin-left: 12px;
+  margin-right: 12px;
+  margin-top: 6px;
+  margin-bottom: 6px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c9 {
+  margin-left: 12px;
+  margin-right: 12px;
+  font-size: 14px;
+  line-height: 20px;
+  text-align: right;
+}
+
+.c18 {
+  margin-left: 12px;
+  margin-right: 12px;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.c20 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: 2px solid #7D4CDB;
+  border-radius: 18px;
+  color: #444444;
+  padding: 4px 22px;
+  font-size: 18px;
+  line-height: 24px;
+  background-color: #7D4CDB;
+  color: #f8f8f8;
+  border-radius: 18px;
+  transition-property: color,background-color,border-color,box-shadow;
+  transition-duration: 0.1s;
+  transition-timing-function: ease-in-out;
+}
+
+.c20:hover {
+  box-shadow: 0px 0px 0px 2px #7D4CDB;
+}
+
+.c20:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c20:focus >circle,
+.c20:focus >ellipse,
+.c20:focus >line,
+.c20:focus >path,
+.c20:focus >polygon,
+.c20:focus >polyline,
+.c20:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c20:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c20:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c20:focus:not(:focus-visible) >circle,
+.c20:focus:not(:focus-visible) >ellipse,
+.c20:focus:not(:focus-visible) >line,
+.c20:focus:not(:focus-visible) >path,
+.c20:focus:not(:focus-visible) >polygon,
+.c20:focus:not(:focus-visible) >polyline,
+.c20:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c20:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
+}
+
+.c2 {
+  max-width: 100%;
+}
+
+.c14 {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.c11 {
+  user-select: none;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+@media only screen and (max-width: 768px) {
+  .c5 {
+    margin-bottom: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c7 {
+    border-bottom: solid 1px rgba(0, 0, 0, 0.33);
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c7 {
+    padding: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c12 {
+    border-radius: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c17 {
+    border-radius: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c19 {
+    margin-top: 12px;
+  }
+}
+
+<div
+    class="c0"
+  >
+    <div
+      class="c1"
+      id="data"
+    >
+      <form
+        class="c2"
+      >
+        <div
+          class="c3"
+        >
+          <div
+            class="c4"
+          >
+            <div
+              class="c1"
+            >
+              <div
+                class="c5 "
+              >
+                <label
+                  class="c6"
+                  for="data-value"
+                  id="grommet-data-value__label"
+                >
+                  value
+                </label>
+                <div
+                  class="c7 "
+                >
+                  <div
+                    class="c8"
+                    id="data-value"
+                  >
+                    <span
+                      class="c9"
+                      style="width: 0px;"
+                    >
+                      -2.5
+                    </span>
+                    <div
+                      class="c10 c11"
+                      tabindex="-1"
+                    >
+                      <div
+                        class="c12"
+                        style="flex: 0 0 0px;"
+                      />
+                      <div
+                        class="c13"
+                        style="flex: 0 0 1px;"
+                      >
+                        <input
+                          aria-label="Lower Bounds"
+                          aria-valuemax="3.75"
+                          aria-valuemin="-2.5"
+                          aria-valuenow="-2.5"
+                          class="c14"
+                          max="3.75"
+                          min="-2.5"
+                          readonly=""
+                          step="0.31"
+                          type="range"
+                          value="-2.5"
+                        />
+                        <div
+                          class="c15"
+                          style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
+                          tabindex="-1"
+                        >
+                          <div
+                            class="c16 EdgeControl__StyledBox-sc-1xo2yt9-1"
+                          />
+                        </div>
+                      </div>
+                      <div
+                        class="c17"
+                        style="flex: 7.25 0 0px; cursor: ew-resize;"
+                      />
+                      <div
+                        class="c13"
+                        style="flex: 0 0 1px;"
+                      >
+                        <input
+                          aria-label="Upper Bounds"
+                          aria-valuemax="3.75"
+                          aria-valuemin="-2.5"
+                          aria-valuenow="3.75"
+                          class="c14"
+                          max="3.75"
+                          min="-2.5"
+                          readonly=""
+                          step="0.31"
+                          type="range"
+                          value="3.75"
+                        />
+                        <div
+                          class="c15"
+                          style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
+                          tabindex="-1"
+                        >
+                          <div
+                            class="c16 EdgeControl__StyledBox-sc-1xo2yt9-1"
+                          />
+                        </div>
+                      </div>
+                      <div
+                        class="c12"
+                        style="flex: 0 0 0px;"
+                      />
+                    </div>
+                    <span
+                      class="c18"
+                      style="width: 0px;"
+                    >
+                      3.75
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <footer
+            class="c19"
+          >
+            <button
+              class="c20"
+              type="submit"
+            >
+              Apply filters
+            </button>
+          </footer>
+        </div>
+      </form>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`DataFilter negative decimal values [-19.99, -4.895] - preserves actual range, caps decimals to 2 1`] = `
+<DocumentFragment>
+  .c1 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  flex: 0 0 auto;
+}
+
+.c3 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  height: 100%;
+}
+
+.c4 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  flex: 1 1;
+  overflow: auto;
+}
+
+.c5 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin-bottom: 12px;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+}
+
+.c7 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  padding: 12px;
+}
+
+.c8 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+}
+
+.c10 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+.c12 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-self: stretch;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  width: 100%;
+  border-radius: 12px;
+}
+
+.c13 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-self: stretch;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  justify-content: center;
+  overflow: visible;
+}
+
+.c15 {
+  display: flex;
+  box-sizing: border-box;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  flex-basis: 100%;
+  height: 100%;
+  justify-content: center;
+}
+
+.c16 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  background-color: #7D4CDB;
+  color: #f8f8f8;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  height: 12px;
+  width: 12px;
+  border-radius: 100%;
+}
+
+.c17 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-self: stretch;
+  background-color: rgba(125, 76, 219, 0.4);
+  color: #444444;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  width: 100%;
+  border-radius: 12px;
+}
+
+.c19 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin-top: 24px;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: row;
+  flex: 0 0 auto;
+  justify-content: space-between;
+}
+
+.c6 {
+  margin-left: 12px;
+  margin-right: 12px;
+  margin-top: 6px;
+  margin-bottom: 6px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c9 {
+  margin-left: 12px;
+  margin-right: 12px;
+  font-size: 14px;
+  line-height: 20px;
+  text-align: right;
+}
+
+.c18 {
+  margin-left: 12px;
+  margin-right: 12px;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.c20 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: 2px solid #7D4CDB;
+  border-radius: 18px;
+  color: #444444;
+  padding: 4px 22px;
+  font-size: 18px;
+  line-height: 24px;
+  background-color: #7D4CDB;
+  color: #f8f8f8;
+  border-radius: 18px;
+  transition-property: color,background-color,border-color,box-shadow;
+  transition-duration: 0.1s;
+  transition-timing-function: ease-in-out;
+}
+
+.c20:hover {
+  box-shadow: 0px 0px 0px 2px #7D4CDB;
+}
+
+.c20:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c20:focus >circle,
+.c20:focus >ellipse,
+.c20:focus >line,
+.c20:focus >path,
+.c20:focus >polygon,
+.c20:focus >polyline,
+.c20:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c20:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c20:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c20:focus:not(:focus-visible) >circle,
+.c20:focus:not(:focus-visible) >ellipse,
+.c20:focus:not(:focus-visible) >line,
+.c20:focus:not(:focus-visible) >path,
+.c20:focus:not(:focus-visible) >polygon,
+.c20:focus:not(:focus-visible) >polyline,
+.c20:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c20:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
+}
+
+.c2 {
+  max-width: 100%;
+}
+
+.c14 {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.c11 {
+  user-select: none;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+@media only screen and (max-width: 768px) {
+  .c5 {
+    margin-bottom: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c7 {
+    border-bottom: solid 1px rgba(0, 0, 0, 0.33);
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c7 {
+    padding: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c12 {
+    border-radius: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c17 {
+    border-radius: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c19 {
+    margin-top: 12px;
+  }
+}
+
+<div
+    class="c0"
+  >
+    <div
+      class="c1"
+      id="data"
+    >
+      <form
+        class="c2"
+      >
+        <div
+          class="c3"
+        >
+          <div
+            class="c4"
+          >
+            <div
+              class="c1"
+            >
+              <div
+                class="c5 "
+              >
+                <label
+                  class="c6"
+                  for="data-price"
+                  id="grommet-data-price__label"
+                >
+                  price
+                </label>
+                <div
+                  class="c7 "
+                >
+                  <div
+                    class="c8"
+                    id="data-price"
+                  >
+                    <span
+                      class="c9"
+                      style="width: 0px;"
+                    >
+                      -19.99
+                    </span>
+                    <div
+                      class="c10 c11"
+                      tabindex="-1"
+                    >
+                      <div
+                        class="c12"
+                        style="flex: 0 0 0px;"
+                      />
+                      <div
+                        class="c13"
+                        style="flex: 0 0 1px;"
+                      >
+                        <input
+                          aria-label="Lower Bounds"
+                          aria-valuemax="-4.86"
+                          aria-valuemin="-19.99"
+                          aria-valuenow="-19.99"
+                          class="c14"
+                          max="-4.86"
+                          min="-19.99"
+                          readonly=""
+                          step="0.76"
+                          type="range"
+                          value="-19.99"
+                        />
+                        <div
+                          class="c15"
+                          style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
+                          tabindex="-1"
+                        >
+                          <div
+                            class="c16 EdgeControl__StyledBox-sc-1xo2yt9-1"
+                          />
+                        </div>
+                      </div>
+                      <div
+                        class="c17"
+                        style="flex: 16.13 0 0px; cursor: ew-resize;"
+                      />
+                      <div
+                        class="c13"
+                        style="flex: 0 0 1px;"
+                      >
+                        <input
+                          aria-label="Upper Bounds"
+                          aria-valuemax="-4.86"
+                          aria-valuemin="-19.99"
+                          aria-valuenow="-4.86"
+                          class="c14"
+                          max="-4.86"
+                          min="-19.99"
+                          readonly=""
+                          step="0.76"
+                          type="range"
+                          value="-4.86"
+                        />
+                        <div
+                          class="c15"
+                          style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
+                          tabindex="-1"
+                        >
+                          <div
+                            class="c16 EdgeControl__StyledBox-sc-1xo2yt9-1"
+                          />
+                        </div>
+                      </div>
+                      <div
+                        class="c12"
+                        style="flex: 0 0 0px;"
+                      />
+                    </div>
+                    <span
+                      class="c18"
+                      style="width: 0px;"
+                    >
+                      -4.86
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <footer
+            class="c19"
+          >
+            <button
+              class="c20"
+              type="submit"
+            >
+              Apply filters
+            </button>
+          </footer>
+        </div>
+      </form>
+    </div>
+  </div>
+</DocumentFragment>
 `;
 
 exports[`DataFilter options 1`] = `
@@ -2204,6 +4020,460 @@ exports[`DataFilter range prop 1`] = `
 </div>
 `;
 
+exports[`DataFilter render filter for single item 1`] = `
+<DocumentFragment>
+  .c1 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  flex: 0 0 auto;
+}
+
+.c3 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  height: 100%;
+}
+
+.c4 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  flex: 1 1;
+  overflow: auto;
+}
+
+.c5 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin-bottom: 12px;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+}
+
+.c7 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  padding: 12px;
+}
+
+.c8 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+}
+
+.c10 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+.c12 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-self: stretch;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  width: 100%;
+  border-radius: 12px;
+}
+
+.c13 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-self: stretch;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  justify-content: center;
+  overflow: visible;
+}
+
+.c15 {
+  display: flex;
+  box-sizing: border-box;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  flex-basis: 100%;
+  height: 100%;
+  justify-content: center;
+}
+
+.c16 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  background-color: #7D4CDB;
+  color: #f8f8f8;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  height: 12px;
+  width: 12px;
+  border-radius: 100%;
+}
+
+.c17 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-self: stretch;
+  background-color: rgba(125, 76, 219, 0.4);
+  color: #444444;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  width: 100%;
+  border-radius: 12px;
+}
+
+.c19 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin-top: 24px;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: row;
+  flex: 0 0 auto;
+  justify-content: space-between;
+}
+
+.c6 {
+  margin-left: 12px;
+  margin-right: 12px;
+  margin-top: 6px;
+  margin-bottom: 6px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c9 {
+  margin-left: 12px;
+  margin-right: 12px;
+  font-size: 14px;
+  line-height: 20px;
+  text-align: right;
+}
+
+.c18 {
+  margin-left: 12px;
+  margin-right: 12px;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.c20 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: 2px solid #7D4CDB;
+  border-radius: 18px;
+  color: #444444;
+  padding: 4px 22px;
+  font-size: 18px;
+  line-height: 24px;
+  background-color: #7D4CDB;
+  color: #f8f8f8;
+  border-radius: 18px;
+  transition-property: color,background-color,border-color,box-shadow;
+  transition-duration: 0.1s;
+  transition-timing-function: ease-in-out;
+}
+
+.c20:hover {
+  box-shadow: 0px 0px 0px 2px #7D4CDB;
+}
+
+.c20:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c20:focus >circle,
+.c20:focus >ellipse,
+.c20:focus >line,
+.c20:focus >path,
+.c20:focus >polygon,
+.c20:focus >polyline,
+.c20:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c20:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c20:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c20:focus:not(:focus-visible) >circle,
+.c20:focus:not(:focus-visible) >ellipse,
+.c20:focus:not(:focus-visible) >line,
+.c20:focus:not(:focus-visible) >path,
+.c20:focus:not(:focus-visible) >polygon,
+.c20:focus:not(:focus-visible) >polyline,
+.c20:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c20:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
+}
+
+.c2 {
+  max-width: 100%;
+}
+
+.c14 {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.c11 {
+  user-select: none;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+@media only screen and (max-width: 768px) {
+  .c5 {
+    margin-bottom: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c7 {
+    border-bottom: solid 1px rgba(0, 0, 0, 0.33);
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c7 {
+    padding: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c12 {
+    border-radius: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c17 {
+    border-radius: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c19 {
+    margin-top: 12px;
+  }
+}
+
+<div
+    class="c0"
+  >
+    <div
+      class="c1"
+      id="data"
+    >
+      <form
+        class="c2"
+      >
+        <div
+          class="c3"
+        >
+          <div
+            class="c4"
+          >
+            <div
+              class="c1"
+            >
+              <div
+                class="c5 "
+              >
+                <label
+                  class="c6"
+                  for="data-rating"
+                  id="grommet-data-rating__label"
+                >
+                  rating
+                </label>
+                <div
+                  class="c7 "
+                >
+                  <div
+                    class="c8"
+                    id="data-rating"
+                  >
+                    <span
+                      class="c9"
+                      style="width: 0px;"
+                    >
+                      2.5
+                    </span>
+                    <div
+                      class="c10 c11"
+                      tabindex="-1"
+                    >
+                      <div
+                        class="c12"
+                        style="flex: 0 0 0px;"
+                      />
+                      <div
+                        class="c13"
+                        style="flex: 0 0 1px;"
+                      >
+                        <input
+                          aria-label="Lower Bounds"
+                          aria-valuemax="2.5"
+                          aria-valuemin="2.5"
+                          aria-valuenow="2.5"
+                          class="c14"
+                          max="2.5"
+                          min="2.5"
+                          readonly=""
+                          step="0.1"
+                          type="range"
+                          value="2.5"
+                        />
+                        <div
+                          class="c15"
+                          style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
+                          tabindex="-1"
+                        >
+                          <div
+                            class="c16 EdgeControl__StyledBox-sc-1xo2yt9-1"
+                          />
+                        </div>
+                      </div>
+                      <div
+                        class="c17"
+                        style="flex: 1 0 0px; cursor: ew-resize;"
+                      />
+                      <div
+                        class="c13"
+                        style="flex: 0 0 1px;"
+                      >
+                        <input
+                          aria-label="Upper Bounds"
+                          aria-valuemax="2.5"
+                          aria-valuemin="2.5"
+                          aria-valuenow="2.5"
+                          class="c14"
+                          max="2.5"
+                          min="2.5"
+                          readonly=""
+                          step="0.1"
+                          type="range"
+                          value="2.5"
+                        />
+                        <div
+                          class="c15"
+                          style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
+                          tabindex="-1"
+                        >
+                          <div
+                            class="c16 EdgeControl__StyledBox-sc-1xo2yt9-1"
+                          />
+                        </div>
+                      </div>
+                      <div
+                        class="c12"
+                        style="flex: 0 0 0px;"
+                      />
+                    </div>
+                    <span
+                      class="c18"
+                      style="width: 0px;"
+                    >
+                      2.5
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <footer
+            class="c19"
+          >
+            <button
+              class="c20"
+              type="submit"
+            >
+              Apply filters
+            </button>
+          </footer>
+        </div>
+      </form>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
 exports[`DataFilter renders 1`] = `
 .c1 {
   display: flex;
@@ -2792,7 +5062,7 @@ exports[`DataFilter renders 1`] = `
                     class="c16"
                     style="width: 0px;"
                   >
-                    2.1
+                    2.3
                   </span>
                   <div
                     class="c17 c18"
@@ -2808,16 +5078,16 @@ exports[`DataFilter renders 1`] = `
                     >
                       <input
                         aria-label="Lower Bounds"
-                        aria-valuemax="4.9"
-                        aria-valuemin="2.1"
-                        aria-valuenow="2.1"
+                        aria-valuemax="4.3"
+                        aria-valuemin="2.3"
+                        aria-valuenow="2.3"
                         class="c21"
-                        max="4.9"
-                        min="2.1"
+                        max="4.3"
+                        min="2.3"
                         readonly=""
-                        step="0.14"
+                        step="0.1"
                         type="range"
-                        value="2.1"
+                        value="2.3"
                       />
                       <div
                         class="c22"
@@ -2831,7 +5101,7 @@ exports[`DataFilter renders 1`] = `
                     </div>
                     <div
                       class="c24"
-                      style="flex: 3.8000000000000003 0 0px; cursor: ew-resize;"
+                      style="flex: 3 0 0px; cursor: ew-resize;"
                     />
                     <div
                       class="c20"
@@ -2839,16 +5109,16 @@ exports[`DataFilter renders 1`] = `
                     >
                       <input
                         aria-label="Upper Bounds"
-                        aria-valuemax="4.9"
-                        aria-valuemin="2.1"
-                        aria-valuenow="4.9"
+                        aria-valuemax="4.3"
+                        aria-valuemin="2.3"
+                        aria-valuenow="4.3"
                         class="c21"
-                        max="4.9"
-                        min="2.1"
+                        max="4.3"
+                        min="2.3"
                         readonly=""
-                        step="0.14"
+                        step="0.1"
                         type="range"
-                        value="4.9"
+                        value="4.3"
                       />
                       <div
                         class="c22"
@@ -2869,7 +5139,110 @@ exports[`DataFilter renders 1`] = `
                     class="c25"
                     style="width: 0px;"
                   >
-                    4.9
+                    4.3
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div
+              class="c5 "
+            >
+              <label
+                class="c6"
+                for="data-zero"
+                id="grommet-data-zero__label"
+              >
+                zero
+              </label>
+              <div
+                class="c7 "
+              >
+                <div
+                  class="c15"
+                  id="data-zero"
+                >
+                  <span
+                    class="c16"
+                    style="width: 0px;"
+                  >
+                    0
+                  </span>
+                  <div
+                    class="c17 c18"
+                    tabindex="-1"
+                  >
+                    <div
+                      class="c19"
+                      style="flex: 0 0 0px;"
+                    />
+                    <div
+                      class="c20"
+                      style="flex: 0 0 1px;"
+                    >
+                      <input
+                        aria-label="Lower Bounds"
+                        aria-valuemax="0"
+                        aria-valuemin="0"
+                        aria-valuenow="0"
+                        class="c21"
+                        max="0"
+                        min="0"
+                        readonly=""
+                        step="0.1"
+                        type="range"
+                        value="0"
+                      />
+                      <div
+                        class="c22"
+                        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
+                        tabindex="-1"
+                      >
+                        <div
+                          class="c23 EdgeControl__StyledBox-sc-1xo2yt9-1"
+                        />
+                      </div>
+                    </div>
+                    <div
+                      class="c24"
+                      style="flex: 1 0 0px; cursor: ew-resize;"
+                    />
+                    <div
+                      class="c20"
+                      style="flex: 0 0 1px;"
+                    >
+                      <input
+                        aria-label="Upper Bounds"
+                        aria-valuemax="0"
+                        aria-valuemin="0"
+                        aria-valuenow="0"
+                        class="c21"
+                        max="0"
+                        min="0"
+                        readonly=""
+                        step="0.1"
+                        type="range"
+                        value="0"
+                      />
+                      <div
+                        class="c22"
+                        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
+                        tabindex="-1"
+                      >
+                        <div
+                          class="c23 EdgeControl__StyledBox-sc-1xo2yt9-1"
+                        />
+                      </div>
+                    </div>
+                    <div
+                      class="c19"
+                      style="flex: 0 0 0px;"
+                    />
+                  </div>
+                  <span
+                    class="c25"
+                    style="width: 0px;"
+                  >
+                    0
                   </span>
                 </div>
               </div>
@@ -3841,6 +6214,1368 @@ exports[`DataFilter should allow filtering on multiple sub-properties from same 
           </button>
         </div>
       </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`DataFilter single decimal value [0.1] - renders RangeSelector with matching min/max 1`] = `
+<DocumentFragment>
+  .c1 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  flex: 0 0 auto;
+}
+
+.c3 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  height: 100%;
+}
+
+.c4 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  flex: 1 1;
+  overflow: auto;
+}
+
+.c5 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin-bottom: 12px;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+}
+
+.c7 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  padding: 12px;
+}
+
+.c8 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+}
+
+.c10 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+.c12 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-self: stretch;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  width: 100%;
+  border-radius: 12px;
+}
+
+.c13 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-self: stretch;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  justify-content: center;
+  overflow: visible;
+}
+
+.c15 {
+  display: flex;
+  box-sizing: border-box;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  flex-basis: 100%;
+  height: 100%;
+  justify-content: center;
+}
+
+.c16 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  background-color: #7D4CDB;
+  color: #f8f8f8;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  height: 12px;
+  width: 12px;
+  border-radius: 100%;
+}
+
+.c17 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-self: stretch;
+  background-color: rgba(125, 76, 219, 0.4);
+  color: #444444;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  width: 100%;
+  border-radius: 12px;
+}
+
+.c19 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin-top: 24px;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: row;
+  flex: 0 0 auto;
+  justify-content: space-between;
+}
+
+.c6 {
+  margin-left: 12px;
+  margin-right: 12px;
+  margin-top: 6px;
+  margin-bottom: 6px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c9 {
+  margin-left: 12px;
+  margin-right: 12px;
+  font-size: 14px;
+  line-height: 20px;
+  text-align: right;
+}
+
+.c18 {
+  margin-left: 12px;
+  margin-right: 12px;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.c20 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: 2px solid #7D4CDB;
+  border-radius: 18px;
+  color: #444444;
+  padding: 4px 22px;
+  font-size: 18px;
+  line-height: 24px;
+  background-color: #7D4CDB;
+  color: #f8f8f8;
+  border-radius: 18px;
+  transition-property: color,background-color,border-color,box-shadow;
+  transition-duration: 0.1s;
+  transition-timing-function: ease-in-out;
+}
+
+.c20:hover {
+  box-shadow: 0px 0px 0px 2px #7D4CDB;
+}
+
+.c20:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c20:focus >circle,
+.c20:focus >ellipse,
+.c20:focus >line,
+.c20:focus >path,
+.c20:focus >polygon,
+.c20:focus >polyline,
+.c20:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c20:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c20:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c20:focus:not(:focus-visible) >circle,
+.c20:focus:not(:focus-visible) >ellipse,
+.c20:focus:not(:focus-visible) >line,
+.c20:focus:not(:focus-visible) >path,
+.c20:focus:not(:focus-visible) >polygon,
+.c20:focus:not(:focus-visible) >polyline,
+.c20:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c20:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
+}
+
+.c2 {
+  max-width: 100%;
+}
+
+.c14 {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.c11 {
+  user-select: none;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+@media only screen and (max-width: 768px) {
+  .c5 {
+    margin-bottom: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c7 {
+    border-bottom: solid 1px rgba(0, 0, 0, 0.33);
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c7 {
+    padding: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c12 {
+    border-radius: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c17 {
+    border-radius: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c19 {
+    margin-top: 12px;
+  }
+}
+
+<div
+    class="c0"
+  >
+    <div
+      class="c1"
+      id="data"
+    >
+      <form
+        class="c2"
+      >
+        <div
+          class="c3"
+        >
+          <div
+            class="c4"
+          >
+            <div
+              class="c1"
+            >
+              <div
+                class="c5 "
+              >
+                <label
+                  class="c6"
+                  for="data-price"
+                  id="grommet-data-price__label"
+                >
+                  price
+                </label>
+                <div
+                  class="c7 "
+                >
+                  <div
+                    class="c8"
+                    id="data-price"
+                  >
+                    <span
+                      class="c9"
+                      style="width: 0px;"
+                    >
+                      0.1
+                    </span>
+                    <div
+                      class="c10 c11"
+                      tabindex="-1"
+                    >
+                      <div
+                        class="c12"
+                        style="flex: 0 0 0px;"
+                      />
+                      <div
+                        class="c13"
+                        style="flex: 0 0 1px;"
+                      >
+                        <input
+                          aria-label="Lower Bounds"
+                          aria-valuemax="0.1"
+                          aria-valuemin="0.1"
+                          aria-valuenow="0.1"
+                          class="c14"
+                          max="0.1"
+                          min="0.1"
+                          readonly=""
+                          step="0.1"
+                          type="range"
+                          value="0.1"
+                        />
+                        <div
+                          class="c15"
+                          style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
+                          tabindex="-1"
+                        >
+                          <div
+                            class="c16 EdgeControl__StyledBox-sc-1xo2yt9-1"
+                          />
+                        </div>
+                      </div>
+                      <div
+                        class="c17"
+                        style="flex: 1 0 0px; cursor: ew-resize;"
+                      />
+                      <div
+                        class="c13"
+                        style="flex: 0 0 1px;"
+                      >
+                        <input
+                          aria-label="Upper Bounds"
+                          aria-valuemax="0.1"
+                          aria-valuemin="0.1"
+                          aria-valuenow="0.1"
+                          class="c14"
+                          max="0.1"
+                          min="0.1"
+                          readonly=""
+                          step="0.1"
+                          type="range"
+                          value="0.1"
+                        />
+                        <div
+                          class="c15"
+                          style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
+                          tabindex="-1"
+                        >
+                          <div
+                            class="c16 EdgeControl__StyledBox-sc-1xo2yt9-1"
+                          />
+                        </div>
+                      </div>
+                      <div
+                        class="c12"
+                        style="flex: 0 0 0px;"
+                      />
+                    </div>
+                    <span
+                      class="c18"
+                      style="width: 0px;"
+                    >
+                      0.1
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <footer
+            class="c19"
+          >
+            <button
+              class="c20"
+              type="submit"
+            >
+              Apply filters
+            </button>
+          </footer>
+        </div>
+      </form>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`DataFilter single negative value [-5] - renders single negative value for max and min 1`] = `
+<DocumentFragment>
+  .c1 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  flex: 0 0 auto;
+}
+
+.c3 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  height: 100%;
+}
+
+.c4 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  flex: 1 1;
+  overflow: auto;
+}
+
+.c5 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin-bottom: 12px;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+}
+
+.c7 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  padding: 12px;
+}
+
+.c8 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+}
+
+.c10 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+.c12 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-self: stretch;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  width: 100%;
+  border-radius: 12px;
+}
+
+.c13 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-self: stretch;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  justify-content: center;
+  overflow: visible;
+}
+
+.c15 {
+  display: flex;
+  box-sizing: border-box;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  flex-basis: 100%;
+  height: 100%;
+  justify-content: center;
+}
+
+.c16 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  background-color: #7D4CDB;
+  color: #f8f8f8;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  height: 12px;
+  width: 12px;
+  border-radius: 100%;
+}
+
+.c17 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-self: stretch;
+  background-color: rgba(125, 76, 219, 0.4);
+  color: #444444;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  width: 100%;
+  border-radius: 12px;
+}
+
+.c19 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin-top: 24px;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: row;
+  flex: 0 0 auto;
+  justify-content: space-between;
+}
+
+.c6 {
+  margin-left: 12px;
+  margin-right: 12px;
+  margin-top: 6px;
+  margin-bottom: 6px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c9 {
+  margin-left: 12px;
+  margin-right: 12px;
+  font-size: 14px;
+  line-height: 20px;
+  text-align: right;
+}
+
+.c18 {
+  margin-left: 12px;
+  margin-right: 12px;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.c20 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: 2px solid #7D4CDB;
+  border-radius: 18px;
+  color: #444444;
+  padding: 4px 22px;
+  font-size: 18px;
+  line-height: 24px;
+  background-color: #7D4CDB;
+  color: #f8f8f8;
+  border-radius: 18px;
+  transition-property: color,background-color,border-color,box-shadow;
+  transition-duration: 0.1s;
+  transition-timing-function: ease-in-out;
+}
+
+.c20:hover {
+  box-shadow: 0px 0px 0px 2px #7D4CDB;
+}
+
+.c20:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c20:focus >circle,
+.c20:focus >ellipse,
+.c20:focus >line,
+.c20:focus >path,
+.c20:focus >polygon,
+.c20:focus >polyline,
+.c20:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c20:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c20:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c20:focus:not(:focus-visible) >circle,
+.c20:focus:not(:focus-visible) >ellipse,
+.c20:focus:not(:focus-visible) >line,
+.c20:focus:not(:focus-visible) >path,
+.c20:focus:not(:focus-visible) >polygon,
+.c20:focus:not(:focus-visible) >polyline,
+.c20:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c20:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
+}
+
+.c2 {
+  max-width: 100%;
+}
+
+.c14 {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.c11 {
+  user-select: none;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+@media only screen and (max-width: 768px) {
+  .c5 {
+    margin-bottom: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c7 {
+    border-bottom: solid 1px rgba(0, 0, 0, 0.33);
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c7 {
+    padding: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c12 {
+    border-radius: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c17 {
+    border-radius: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c19 {
+    margin-top: 12px;
+  }
+}
+
+<div
+    class="c0"
+  >
+    <div
+      class="c1"
+      id="data"
+    >
+      <form
+        class="c2"
+      >
+        <div
+          class="c3"
+        >
+          <div
+            class="c4"
+          >
+            <div
+              class="c1"
+            >
+              <div
+                class="c5 "
+              >
+                <label
+                  class="c6"
+                  for="data-balance"
+                  id="grommet-data-balance__label"
+                >
+                  balance
+                </label>
+                <div
+                  class="c7 "
+                >
+                  <div
+                    class="c8"
+                    id="data-balance"
+                  >
+                    <span
+                      class="c9"
+                      style="width: 0px;"
+                    >
+                      -5
+                    </span>
+                    <div
+                      class="c10 c11"
+                      tabindex="-1"
+                    >
+                      <div
+                        class="c12"
+                        style="flex: 0 0 0px;"
+                      />
+                      <div
+                        class="c13"
+                        style="flex: 0 0 1px;"
+                      >
+                        <input
+                          aria-label="Lower Bounds"
+                          aria-valuemax="-5"
+                          aria-valuemin="-5"
+                          aria-valuenow="-5"
+                          class="c14"
+                          max="-5"
+                          min="-5"
+                          readonly=""
+                          step="0.1"
+                          type="range"
+                          value="-5"
+                        />
+                        <div
+                          class="c15"
+                          style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
+                          tabindex="-1"
+                        >
+                          <div
+                            class="c16 EdgeControl__StyledBox-sc-1xo2yt9-1"
+                          />
+                        </div>
+                      </div>
+                      <div
+                        class="c17"
+                        style="flex: 1 0 0px; cursor: ew-resize;"
+                      />
+                      <div
+                        class="c13"
+                        style="flex: 0 0 1px;"
+                      >
+                        <input
+                          aria-label="Upper Bounds"
+                          aria-valuemax="-5"
+                          aria-valuemin="-5"
+                          aria-valuenow="-5"
+                          class="c14"
+                          max="-5"
+                          min="-5"
+                          readonly=""
+                          step="0.1"
+                          type="range"
+                          value="-5"
+                        />
+                        <div
+                          class="c15"
+                          style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
+                          tabindex="-1"
+                        >
+                          <div
+                            class="c16 EdgeControl__StyledBox-sc-1xo2yt9-1"
+                          />
+                        </div>
+                      </div>
+                      <div
+                        class="c12"
+                        style="flex: 0 0 0px;"
+                      />
+                    </div>
+                    <span
+                      class="c18"
+                      style="width: 0px;"
+                    >
+                      -5
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <footer
+            class="c19"
+          >
+            <button
+              class="c20"
+              type="submit"
+            >
+              Apply filters
+            </button>
+          </footer>
+        </div>
+      </form>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`DataFilter single zero value [0] - handles zero correctly 1`] = `
+<DocumentFragment>
+  .c1 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  flex: 0 0 auto;
+}
+
+.c3 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  height: 100%;
+}
+
+.c4 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  flex: 1 1;
+  overflow: auto;
+}
+
+.c5 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin-bottom: 12px;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+}
+
+.c7 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  padding: 12px;
+}
+
+.c8 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+}
+
+.c10 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+.c12 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-self: stretch;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  width: 100%;
+  border-radius: 12px;
+}
+
+.c13 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-self: stretch;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  justify-content: center;
+  overflow: visible;
+}
+
+.c15 {
+  display: flex;
+  box-sizing: border-box;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  flex-basis: 100%;
+  height: 100%;
+  justify-content: center;
+}
+
+.c16 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  background-color: #7D4CDB;
+  color: #f8f8f8;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  height: 12px;
+  width: 12px;
+  border-radius: 100%;
+}
+
+.c17 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-self: stretch;
+  background-color: rgba(125, 76, 219, 0.4);
+  color: #444444;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  width: 100%;
+  border-radius: 12px;
+}
+
+.c19 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin-top: 24px;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: row;
+  flex: 0 0 auto;
+  justify-content: space-between;
+}
+
+.c6 {
+  margin-left: 12px;
+  margin-right: 12px;
+  margin-top: 6px;
+  margin-bottom: 6px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c9 {
+  margin-left: 12px;
+  margin-right: 12px;
+  font-size: 14px;
+  line-height: 20px;
+  text-align: right;
+}
+
+.c18 {
+  margin-left: 12px;
+  margin-right: 12px;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.c20 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: 2px solid #7D4CDB;
+  border-radius: 18px;
+  color: #444444;
+  padding: 4px 22px;
+  font-size: 18px;
+  line-height: 24px;
+  background-color: #7D4CDB;
+  color: #f8f8f8;
+  border-radius: 18px;
+  transition-property: color,background-color,border-color,box-shadow;
+  transition-duration: 0.1s;
+  transition-timing-function: ease-in-out;
+}
+
+.c20:hover {
+  box-shadow: 0px 0px 0px 2px #7D4CDB;
+}
+
+.c20:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c20:focus >circle,
+.c20:focus >ellipse,
+.c20:focus >line,
+.c20:focus >path,
+.c20:focus >polygon,
+.c20:focus >polyline,
+.c20:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c20:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c20:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c20:focus:not(:focus-visible) >circle,
+.c20:focus:not(:focus-visible) >ellipse,
+.c20:focus:not(:focus-visible) >line,
+.c20:focus:not(:focus-visible) >path,
+.c20:focus:not(:focus-visible) >polygon,
+.c20:focus:not(:focus-visible) >polyline,
+.c20:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c20:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
+}
+
+.c2 {
+  max-width: 100%;
+}
+
+.c14 {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.c11 {
+  user-select: none;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+@media only screen and (max-width: 768px) {
+  .c5 {
+    margin-bottom: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c7 {
+    border-bottom: solid 1px rgba(0, 0, 0, 0.33);
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c7 {
+    padding: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c12 {
+    border-radius: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c17 {
+    border-radius: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c19 {
+    margin-top: 12px;
+  }
+}
+
+<div
+    class="c0"
+  >
+    <div
+      class="c1"
+      id="data"
+    >
+      <form
+        class="c2"
+      >
+        <div
+          class="c3"
+        >
+          <div
+            class="c4"
+          >
+            <div
+              class="c1"
+            >
+              <div
+                class="c5 "
+              >
+                <label
+                  class="c6"
+                  for="data-quantity"
+                  id="grommet-data-quantity__label"
+                >
+                  quantity
+                </label>
+                <div
+                  class="c7 "
+                >
+                  <div
+                    class="c8"
+                    id="data-quantity"
+                  >
+                    <span
+                      class="c9"
+                      style="width: 0px;"
+                    >
+                      0
+                    </span>
+                    <div
+                      class="c10 c11"
+                      tabindex="-1"
+                    >
+                      <div
+                        class="c12"
+                        style="flex: 0 0 0px;"
+                      />
+                      <div
+                        class="c13"
+                        style="flex: 0 0 1px;"
+                      >
+                        <input
+                          aria-label="Lower Bounds"
+                          aria-valuemax="0"
+                          aria-valuemin="0"
+                          aria-valuenow="0"
+                          class="c14"
+                          max="0"
+                          min="0"
+                          readonly=""
+                          step="0.1"
+                          type="range"
+                          value="0"
+                        />
+                        <div
+                          class="c15"
+                          style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
+                          tabindex="-1"
+                        >
+                          <div
+                            class="c16 EdgeControl__StyledBox-sc-1xo2yt9-1"
+                          />
+                        </div>
+                      </div>
+                      <div
+                        class="c17"
+                        style="flex: 1 0 0px; cursor: ew-resize;"
+                      />
+                      <div
+                        class="c13"
+                        style="flex: 0 0 1px;"
+                      >
+                        <input
+                          aria-label="Upper Bounds"
+                          aria-valuemax="0"
+                          aria-valuemin="0"
+                          aria-valuenow="0"
+                          class="c14"
+                          max="0"
+                          min="0"
+                          readonly=""
+                          step="0.1"
+                          type="range"
+                          value="0"
+                        />
+                        <div
+                          class="c15"
+                          style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
+                          tabindex="-1"
+                        >
+                          <div
+                            class="c16 EdgeControl__StyledBox-sc-1xo2yt9-1"
+                          />
+                        </div>
+                      </div>
+                      <div
+                        class="c12"
+                        style="flex: 0 0 0px;"
+                      />
+                    </div>
+                    <span
+                      class="c18"
+                      style="width: 0px;"
+                    >
+                      0
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <footer
+            class="c19"
+          >
+            <button
+              class="c20"
+              type="submit"
+            >
+              Apply filters
+            </button>
+          </footer>
+        </div>
+      </form>
     </div>
   </div>
 </DocumentFragment>
