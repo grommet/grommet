@@ -44,7 +44,7 @@
     "start": "webpack serve --config ./e2e/webpack.config.js --mode development",
     "test-e2e": "testcafe chrome:headless e2e/tests",
     "test-e2e-ci": "testcafe chrome --headless=new e2e/tests -r xunit:/tmp/test-results/testcafe/results.xml",
-    "build-storybook": "storybook build -c storybook -o storybook-static",
+    "build-storybook": "cross-env NODE_ENV=production storybook build -c storybook -o storybook-static",
     "prettier": "pretty-quick --staged",
     "chromatic": "chromatic"
   },
