@@ -83,6 +83,10 @@ const Menu = forwardRef((props, ref) => {
   const { theme, passThemeFlag } = useThemeValue();
   const { format } = useContext(MessageContext);
   const iconColor = normalizeColor(theme.menu.icons.color || 'control', theme);
+  const iconDisabledOpacity = normalizeColor(
+    theme.menu.icons.disabled?.opacity || 'control',
+    theme,
+  );
   // need to destructure the align otherwise it will get passed through
   // to DropButton and override prop values
   const { align: themeDropAlign, ...themeDropProps } = theme.menu.drop;
@@ -243,7 +247,13 @@ const Menu = forwardRef((props, ref) => {
 
   const menuIcon =
     icon !== false
-      ? (icon !== true && icon) || <MenuIcon color={iconColor} size={size} />
+      ? (icon !== true && icon) || (
+          <MenuIcon
+            color={iconColor}
+            size={size}
+            opacity={disabled ? iconDisabledOpacity : undefined}
+          />
+        )
       : null;
 
   let buttonProps = { plain, size };
@@ -312,7 +322,7 @@ const Menu = forwardRef((props, ref) => {
     // Determine whether the label is done as a child or
     // as an option Button kind property.
     const child = !theme.button.option ? (
-    /*
+      /*
      Not adding a theme object now because this code path
      is not used in the HPE theme, but we may add theme
      support here in the future.
