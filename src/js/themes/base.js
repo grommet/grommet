@@ -1507,10 +1507,12 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         down: FormDown,
         // up: undefined,
         // color: { dark: undefined, light: undefined },
-        // disabled: {
-        //   opacity: undefined,
-        // },
       },
+      // disabled: {
+      //   icons: {
+      //     color: undefined,
+      //   },
+      // },
     },
     meter: {
       background: { color: 'light-2', opacity: 'medium' },
