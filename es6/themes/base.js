@@ -1616,6 +1616,11 @@ export var generate = function generate(baseSpacing, scale) {
         // up: undefined,
         // color: { dark: undefined, light: undefined },
       }
+      // disabled: {
+      //   icons: {
+      //     color: undefined,
+      //   },
+      // },
     },
     meter: {
       background: {

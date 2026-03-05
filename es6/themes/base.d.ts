@@ -1474,6 +1474,11 @@ export interface ThemeType {
       up?: any;
       color?: ColorType;
     };
+    disabled?: {
+      icons?: {
+        color?: ColorType;
+      };
+    };
   };
   meter?: {
     background?: BackgroundType;

@@ -43,6 +43,7 @@ To make a selection:
 
 var defaultItems = [];
 var Menu = /*#__PURE__*/forwardRef(function (props, ref) {
+  var _theme$menu$disabled;
   var a11yTitle = props.a11yTitle,
     ariaLabel = props['aria-label'],
     children = props.children,
@@ -69,6 +70,7 @@ var Menu = /*#__PURE__*/forwardRef(function (props, ref) {
   var _useContext = useContext(MessageContext),
     format = _useContext.format;
   var iconColor = normalizeColor(theme.menu.icons.color || 'control', theme);
+  var iconDisabledColor = normalizeColor(((_theme$menu$disabled = theme.menu.disabled) == null || (_theme$menu$disabled = _theme$menu$disabled.icons) == null ? void 0 : _theme$menu$disabled.color) || theme.menu.icons.color || 'control', theme);
   // need to destructure the align otherwise it will get passed through
   // to DropButton and override prop values
   var _theme$menu$drop = theme.menu.drop,
@@ -210,7 +212,7 @@ var Menu = /*#__PURE__*/forwardRef(function (props, ref) {
     }
   };
   var menuIcon = icon !== false ? icon !== true && icon || /*#__PURE__*/React.createElement(MenuIcon, {
-    color: iconColor,
+    color: disabled ? iconDisabledColor : iconColor,
     size: size
   }) : null;
   var buttonProps = {
@@ -282,10 +284,10 @@ var Menu = /*#__PURE__*/forwardRef(function (props, ref) {
     var child = !theme.button.option ?
     /*#__PURE__*/
     /*
-     Not adding a theme object now because this code path
-     is not used in the HPE theme, but we may add theme
-     support here in the future.
-     */
+    Not adding a theme object now because this code path
+    is not used in the HPE theme, but we may add theme
+    support here in the future.
+    */
     React.createElement(Box, {
       align: ((_theme$menu$item = theme.menu.item) == null ? void 0 : _theme$menu$item.align) || 'start',
       pad: "small",
