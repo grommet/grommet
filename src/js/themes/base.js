@@ -1508,6 +1508,11 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         // up: undefined,
         // color: { dark: undefined, light: undefined },
       },
+      // disabled: {
+      //   icons: {
+      //     color: undefined,
+      //   },
+      // },
     },
     meter: {
       background: { color: 'light-2', opacity: 'medium' },
