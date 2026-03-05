@@ -84,7 +84,7 @@ const Menu = forwardRef((props, ref) => {
   const { format } = useContext(MessageContext);
   const iconColor = normalizeColor(theme.menu.icons.color || 'control', theme);
   const iconDisabledColor = normalizeColor(
-    theme.menu.disabled?.icons?.color || 'control',
+    theme.menu.disabled?.icons?.color || theme.menu.icons.color || 'control',
     theme,
   );
   // need to destructure the align otherwise it will get passed through
