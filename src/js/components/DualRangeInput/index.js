@@ -1,0 +1,1 @@
+export { DualRangeInput } from './DualRangeInput';
