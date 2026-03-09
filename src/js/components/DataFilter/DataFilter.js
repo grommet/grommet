@@ -39,38 +39,6 @@ const generateOptions = (data, property) =>
       return 0;
     });
 
-// ensure floating point calculations are in integers
-const alignMax = (value, interval) => {
-  const multiplier =
-    10 ** Math.max(getDecimalCount(value), getDecimalCount(interval));
-  const integerValue = value * multiplier;
-  const integerInterval = interval * multiplier;
-  if (value > 0)
-    return (
-      (integerValue - (integerValue % integerInterval) + integerInterval) /
-      multiplier
-    );
-  if (value < 0)
-    return (integerValue + (integerValue % integerInterval)) / multiplier;
-  return value;
-};
-
-// ensure floating point calculations are in integers
-const alignMin = (value, interval) => {
-  const multiplier =
-    10 ** Math.max(getDecimalCount(value), getDecimalCount(interval));
-  const integerValue = value * multiplier;
-  const integerInterval = interval * multiplier;
-  if (value > 0)
-    return (integerValue - (integerValue % integerInterval)) / multiplier;
-  if (value < 0)
-    return (
-      (integerValue - (integerValue % integerInterval) - integerInterval) /
-      multiplier
-    );
-  return value;
-};
-
 const booleanOptions = [
   { label: 'true', value: true },
   { label: 'false', value: false },
@@ -104,22 +72,27 @@ export const DataFilter = ({
 
     // generate options from all values for property
     const uniqueValues = generateOptions(unfilteredData || data, property);
-    // if less than two values, nothing to filter
-    if (uniqueValues.length < 2) return [undefined, undefined];
+    // if no values, nothing to filter
+    // uniqueValues.length === 0 allows single item/value filters to render
+    if (uniqueValues.length === 0) return [undefined, undefined];
     // if any values aren't numeric, treat as options
     if (uniqueValues.some((v) => v !== undefined && typeof v !== 'number'))
       return [uniqueValues, undefined];
     // all values are numeric, treat as range
-    const delta = uniqueValues[uniqueValues.length - 1] - uniqueValues[0];
-    const interval = Number.parseFloat((delta / 3).toPrecision(1));
     let min = uniqueValues[0];
     let max = uniqueValues[uniqueValues.length - 1];
-    // normalize to make it friendler, so [1.3, 4.895] becomes [1, 5]
-    if (getDecimalCount(min) > 0 || getDecimalCount(max) > 0) {
-      min = alignMin(min, interval);
-      max = alignMax(max, interval);
-    }
 
+    // Clean up floating-point precision artifacts
+    // Round to maximum 2 decimal places
+    const maxDecimalPlaces = Math.max(
+      getDecimalCount(uniqueValues[0]),
+      getDecimalCount(uniqueValues[uniqueValues.length - 1]),
+    );
+    if (maxDecimalPlaces > 0) {
+      const multiplier = 10 ** Math.min(maxDecimalPlaces, 2);
+      min = Math.round(min * multiplier) / multiplier;
+      max = Math.round(max * multiplier) / multiplier;
+    }
     return [undefined, [min, max]];
   }, [
     children,
@@ -180,6 +153,21 @@ export const DataFilter = ({
           const multiplier = 10 ** decimalCount;
           step = (multiplier * delta) / (multiplier * defaultRangeSteps);
         } else step = delta / defaultRangeSteps;
+
+        // Cap step to maximum 2 decimal places to avoid long
+        // precision artifacts
+        const stepMultiplier = 10 ** 2;
+        step = Math.round(step * stepMultiplier) / stepMultiplier;
+
+        // Ensure step is never 0 or negative (required for RangeSelector)
+        if (step <= 0) {
+          step =
+            10 **
+            -(
+              Math.max(getDecimalCount(range[0]), getDecimalCount(range[1])) ||
+              1
+            );
+        }
       }
 
       content = (
