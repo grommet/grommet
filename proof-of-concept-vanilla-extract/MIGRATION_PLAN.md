@@ -3,7 +3,7 @@
 **Date**: March 11, 2026  
 **Branch**: `copilot-help-vanilla-extract`  
 **Status**: Approved — ready for execution  
-**Version target**: Major version bump (breaking change release)
+**Version target**: v3.0.0 (major version bump — breaking change release)
 
 ---
 
@@ -38,7 +38,7 @@ Runtime (Option A — Phase 1):
   - VE CSS              →  static, pre-compiled from generate(24, 6)
   - theme.X.extend      →  degraded shim via inline style + dev warning
 
-Long-term target (Option B — Post Phase 1):
+Long-term target (Option B — Future major version):
   - All tokens           →  CSS custom properties via createTheme()
   - Dark/light mode      →  CSS class swap on root element
   - normalizeColor()     →  removed from runtime bundle
@@ -93,6 +93,10 @@ export default defineConfig({
 - [ ] Verify tree-shaking with a sample consumer app
 - [ ] Update `package.json` `main`, `module`, `exports` fields
 
+> **Rollback**: If VE + Vite cannot be made to work, fall back to
+> `@vanilla-extract/rollup-plugin` with the existing Rollup config as a
+> lower-risk alternative.
+
 ---
 
 ### 0.2 `GrommetThemeContext` — Custom React Context
@@ -104,6 +108,7 @@ Replace styled-components' `ThemeContext` with Grommet's own `React.createContex
 ```javascript
 // src/js/contexts/ThemeContext/index.js
 import React from 'react';
+import { deepMerge } from '../../utils/deepMerge';
 
 const GrommetThemeContext = React.createContext({});
 
@@ -192,7 +197,7 @@ export const vars = createThemeContract({
 import { createTheme } from '@vanilla-extract/css';
 import { vars } from './theme.contract.css';
 
-export const grometTheme = createTheme(vars, {
+export const grommetTheme = createTheme(vars, {
   color: {
     brand: '#7D4CDB',
     background: '#FFFFFF',
@@ -262,7 +267,97 @@ individual component can be fully migrated.
 
 ---
 
-### 0.5 Test Infrastructure
+### 0.5 Shared Internal Utilities
+
+New utilities added during Phase 0 to support all component migrations.
+
+**`cx` — class name helper** (replaces `clsx` — no new dependency):
+
+```javascript
+// src/js/utils/classes.js
+
+// Merges two or more class name strings, filtering out falsy values.
+// Used by all migrated components to combine VE recipe output with
+// consumer-supplied className props.
+// No external dependency — grommet does not use clsx or classnames.
+export const cx = (...args) => args.filter(Boolean).join(' ');
+```
+
+**`resolveExtend` — backward-compat shim for `theme.X.extend`:**
+
+```javascript
+// src/js/utils/extend.js
+
+export function resolveExtend(extend, props) {
+  if (!extend) return undefined;
+
+  const resolved =
+    typeof extend === 'function'
+      ? extend(props)
+      : Array.isArray(extend)
+      ? extend.map((p) => (typeof p === 'function' ? p(props) : p)).join('')
+      : String(extend);
+
+  // Detect and warn about rules that cannot be expressed via the style prop.
+  if (process.env.NODE_ENV !== 'production') {
+    const hasPseudo = /&[\w\s:[\]()>+~*,]+\s*\{/.test(resolved);
+    const hasAtRule = /@[\w-]+/.test(resolved);
+    const detected = [
+      ...(hasPseudo ? ['pseudo-selectors'] : []),
+      ...(hasAtRule ? ['@-rules'] : []),
+    ];
+
+    if (detected.length > 0) {
+      console.warn(
+        `[grommet] theme.X.extend contains ${detected.join(' and ')} ` +
+          `which cannot be applied via the style prop shim and have been dropped. ` +
+          `Migrate to the className prop instead. ` +
+          `See the migration guide: [link]`,
+      );
+    } else {
+      console.warn(
+        `[grommet] theme.X.extend is deprecated. ` +
+          `Use the className prop instead. ` +
+          `See the migration guide: [link]`,
+      );
+    }
+  }
+
+  return parseCssStringToObject(resolved);
+}
+
+// Parses flat CSS declarations (property: value pairs).
+// Does NOT support nested rules, pseudo-selectors, or @-rules —
+// those are detected and warned about above before this is called.
+// Values containing colons (e.g. rgb(), url()) are handled correctly.
+function parseCssStringToObject(cssString) {
+  if (!cssString) return undefined;
+  return cssString
+    .split(';')
+    .filter(Boolean)
+    .reduce((acc, declaration) => {
+      const [prop, ...valueParts] = declaration.split(':');
+      if (prop && valueParts.length) {
+        const camelProp = prop
+          .trim()
+          .replace(/-([a-z])/g, (_, c) => c.toUpperCase());
+        acc[camelProp] = valueParts.join(':').trim();
+      }
+      return acc;
+    }, {});
+}
+```
+
+**Checklist:**
+
+- [ ] Add `src/js/utils/classes.js` with `cx` helper
+- [ ] Add `src/js/utils/extend.js` with `resolveExtend` helper
+- [ ] Unit test `cx` — falsy filtering, multiple args, undefined className
+- [ ] Unit test `resolveExtend` — string, function, array, pseudo-selector detection
+
+---
+
+### 0.6 Test Infrastructure
 
 **Checklist:**
 
@@ -336,71 +431,26 @@ export const textRecipe = recipe({
 
 ```jsx
 // src/js/components/Text/Text.js
-import { clsx } from 'clsx';
 import { useContext } from 'react';
 import { ThemeContext } from '../../contexts/ThemeContext';
+import { cx } from '../../utils/classes';
 import { resolveExtend } from '../../utils/extend';
 import { textRecipe } from './text.css';
 
 const Text = ({ size, weight, truncate, className, ...rest }) => {
   const theme = useContext(ThemeContext);
 
-  // Degraded backward-compat shim — emits dev warning
+  // Backward-compat shim — emits dev warning if extend is used
   const extendStyle = resolveExtend(theme.text?.extend, { size, theme });
 
   return (
     <span
-      className={clsx(textRecipe({ size, weight, truncate }), className)}
+      className={cx(textRecipe({ size, weight, truncate }), className)}
       style={extendStyle}
       {...rest}
     />
   );
 };
-```
-
-**`resolveExtend` helper:**
-
-```javascript
-// src/js/utils/extend.js
-export function resolveExtend(extend, props) {
-  if (!extend) return undefined;
-
-  if (process.env.NODE_ENV !== 'production') {
-    console.warn(
-      `[grommet] theme.X.extend is deprecated. ` +
-        `Use the className prop instead. ` +
-        `Note: pseudo-selectors and media queries in extend are not supported.`,
-    );
-  }
-
-  const resolved =
-    typeof extend === 'function'
-      ? extend(props)
-      : Array.isArray(extend)
-      ? extend.map((p) => (typeof p === 'function' ? p(props) : p)).join('')
-      : String(extend);
-
-  return parseCssStringToObject(resolved);
-}
-
-// Parses simple "prop: value; prop: value;" strings only.
-// Pseudo-selectors and media queries are silently dropped.
-function parseCssStringToObject(cssString) {
-  if (!cssString) return undefined;
-  return cssString
-    .split(';')
-    .filter(Boolean)
-    .reduce((acc, declaration) => {
-      const [prop, ...valueParts] = declaration.split(':');
-      if (prop && valueParts.length) {
-        const camelProp = prop
-          .trim()
-          .replace(/-([a-z])/g, (_, c) => c.toUpperCase());
-        acc[camelProp] = valueParts.join(':').trim();
-      }
-      return acc;
-    }, {});
-}
 ```
 
 **Phase 1 checklist:**
@@ -414,13 +464,14 @@ function parseCssStringToObject(cssString) {
 - [ ] Spinner
 - [ ] SkipLink
 - [ ] Anchor
-- [ ] Nav
-- [ ] Header
-- [ ] Footer
-- [ ] Main
-- [ ] Sidebar
+- [ ] Nav / Header / Footer / Main / Sidebar
 - [ ] Card / CardBody / CardFooter / CardHeader
 - [ ] Page / PageContent
+
+> **Escape hatch**: Unmigrated components can continue to use their existing
+> `StyledX.js` files updated to import from the new `GrommetThemeContext` instead
+> of styled-components' context. This allows a partial migration to ship if
+> any component stalls.
 
 ---
 
@@ -431,26 +482,28 @@ function parseCssStringToObject(cssString) {
 | Group        | Components                                                     |
 | ------------ | -------------------------------------------------------------- |
 | Interaction  | Button _(use POC directly)_, CheckBox, RadioButton, RangeInput |
-| Layout       | Box _(largest — see note)_, Grid, Stack, Collapsible           |
+| Layout       | Box _(see note)_, Grid, Stack, Collapsible                     |
 | Navigation   | Tabs, Tab, Pagination                                          |
 | Data display | List, Meter, Notification, Tip                                 |
 | Charts       | Chart, Diagram                                                 |
 | Other        | Accordion, WorldMap _(begin Option B path)_                    |
 
-> **Box note**: Box is the largest migration in the entire codebase.
+> **Box — high risk item**: Box is the largest migration in the codebase.
 > It has 25+ interpolation functions, dynamic background resolution,
 > responsive breakpoints, gap handling, and animation support.
-> Allocate at least 3 days dedicated to Box alone.
+> Allocate at least 3 days dedicated to Box alone and treat it as a
+> formal risk item — if it overruns, defer to Phase 3 and ship Phase 2
+> without it.
 
 **Button:**
 
-The POC `Button.vanilla.tsx` is production-ready. Use it directly as the Phase 2
-starting point — no re-work required.
+The POC `Button.vanilla.tsx` is production-ready. Promote it directly as the
+Phase 2 starting point — no re-work required.
 
 **Phase 2 checklist:**
 
 - [ ] Button _(promote POC)_
-- [ ] Box
+- [ ] Box _(high risk — see note)_
 - [ ] Grid
 - [ ] Stack
 - [ ] Collapsible
@@ -486,9 +539,9 @@ starting point — no re-work required.
 
 **Special cases:**
 
-**Layer / Drop**: These re-provide the theme context with `dark` toggled when
+**Layer / Drop**: These re-provide the theme context with `dark` toggled when the
 background changes. The `GrommetThemeContext.Provider` re-wrap pattern must be
-verified for correctness.
+verified for correctness before starting these components.
 
 ```jsx
 // Pattern for Layer dark-region re-provision
@@ -497,10 +550,10 @@ verified for correctness.
 </ThemeContext.Provider>
 ```
 
-**SVG/canvas components (Option B migration)**:
+**SVG/canvas components (Option B migration start)**:
 
 For `Chart`, `Diagram`, `WorldMap`, `DataChart`, `Distribution` — begin replacing
-explicit `fill` / `stroke` hex attribute values with `currentColor` and CSS custom
+explicit `fill`/`stroke` hex attribute values with `currentColor` and CSS custom
 property references where the SVG rendering engine allows it.
 
 ```jsx
@@ -509,8 +562,6 @@ property references where the SVG rendering engine allows it.
 
 // After (Option B target):
 <circle fill="currentColor" style={{ color: vars.color.brand }} />
-// or, where SVG supports it:
-<circle fill={`var(${vars.color.brand})`} />
 ```
 
 **Phase 3 checklist:**
@@ -526,6 +577,7 @@ property references where the SVG rendering engine allows it.
 - [ ] DataChart / Distribution
 - [ ] Carousel / Video
 - [ ] Skeleton
+- [ ] Box _(if deferred from Phase 2)_
 
 ---
 
@@ -537,59 +589,91 @@ property references where the SVG rendering engine allows it.
 // package.json changes
 {
   "peerDependencies": {
-    // REMOVE: "styled-components": ">=5"
     "react": ">=18",
     "react-dom": ">=18"
+    // REMOVED: "styled-components": ">=5"
   },
   "devDependencies": {
-    // REMOVE: "jest-styled-components"
-    // REMOVE: "babel-plugin-styled-components"
+    // REMOVED: "jest-styled-components"
+    // REMOVED: "babel-plugin-styled-components"
   },
   "dependencies": {
-    // REMOVE: "@emotion/is-prop-valid"
-    // REMOVE: "styled-components" (if present as direct dep)
+    // REMOVED: "@emotion/is-prop-valid"
   }
 }
 ```
 
 **Checklist:**
 
+- [ ] Confirm major version number — replace all `v3.0.0` references if changed
 - [ ] Remove `styled-components` from `peerDependencies`
 - [ ] Remove `@emotion/is-prop-valid`
 - [ ] Remove `babel-plugin-styled-components`
 - [ ] Remove `jest-styled-components`
-- [ ] Remove `externals: { 'styled-components': 'styled' }` from any remaining config
 - [ ] Verify `styled-components` is not imported anywhere in `src/`
 - [ ] Full test suite green
 - [ ] Bundle size audit — confirm ~35–40kB reduction
 - [ ] Consumer app smoke test
 
+### Storybook Audit
+
+Storybook is tightly coupled to styled-components across many stories
+(SC decorators, `withTheme`, theme knobs). This requires a dedicated audit
+pass — it is not a single line change.
+
+**Checklist:**
+
+- [ ] Audit all stories for SC decorator usage
+- [ ] Remove SC global decorator from `.storybook/preview.js`
+- [ ] Update theme knob stories to use new `GrommetThemeContext` directly
+- [ ] Verify Storybook builds cleanly with no SC dependency
+- [ ] Update `parameters.docs.source.code` story source fields
+
 ### Documentation
+
+**Checklist:**
 
 - [ ] Write `MIGRATION_GUIDE.md` (see template below)
 - [ ] Update `README.md` — remove SC references
-- [ ] Update Storybook — remove SC decorator
 - [ ] Changelog entry
+- [ ] Announce to known ecosystem consumers (HPE Aries etc.) before stable release
 
-### Release
+### Release Sequence
 
-- [ ] Major version bump
-- [ ] Beta release tag
-- [ ] Announce to known ecosystem consumers (HPE Aries etc.)
-- [ ] Stable release after 2-week beta soak
+- [ ] Major version bump to `v3.0.0`
+- [ ] Beta release tag — `v3.0.0-beta.1`
+- [ ] 2-week beta soak period
+- [ ] Stable release — `v3.0.0`
 
 ---
 
-## Breaking Changes Reference
+## Rollback / Escape Hatches
 
-| Change                                                                  | Affected consumers                                 | Mitigation                                                  |
-| ----------------------------------------------------------------------- | -------------------------------------------------- | ----------------------------------------------------------- |
-| `styled-components` no longer a peer dependency                         | All consumers                                      | Remove from app's dependencies — see migration guide        |
-| `theme.X.extend` pseudo-selectors / media queries silently ignored      | Consumers using complex `extend`                   | Dev warning emitted; use `className` prop instead           |
-| `theme.X.extend` deprecated                                             | All consumers using `extend`                       | Dev warning points to `className` prop migration            |
-| `generate(customBaseSpacing, customScale)` no longer affects CSS output | Ecosystem forks (HPE Aries etc.)                   | Dev warning; JS object still returned for context overrides |
-| `ThemeContext` no longer re-exports styled-components' context          | Consumers using SC-specific APIs on `ThemeContext` | Document in release notes                                   |
-| `passThemeFlag` pattern eliminated                                      | Internal only                                      | No consumer impact                                          |
+| Scenario                                     | Mitigation                                                                                            |
+| -------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
+| VE + Vite build failure                      | Fall back to `@vanilla-extract/rollup-plugin` with existing Rollup config                             |
+| Component migration stalls mid-phase         | Continue using `StyledX.js` updated to import from `GrommetThemeContext` — partial migration can ship |
+| Box overruns Phase 2 timeline                | Defer Box to Phase 3 — ship Phase 2 without it                                                        |
+| Critical consumer regression found post-beta | `ThemeContext.Extend` and `generate()` shims can be hardened without a new major version bump         |
+
+---
+
+## Breaking Changes
+
+| Change                                                                  | Affected consumers                                 | Mitigation                                                          |
+| ----------------------------------------------------------------------- | -------------------------------------------------- | ------------------------------------------------------------------- |
+| `styled-components` no longer a peer dependency                         | All consumers                                      | Remove from app — see migration guide                               |
+| `theme.X.extend` pseudo-selectors / media queries silently ignored      | Consumers using complex `extend`                   | Dev warning identifies dropped rules; migrate to `className` prop   |
+| `theme.X.extend` deprecated                                             | All consumers using `extend`                       | Dev warning points to `className` migration guide                   |
+| `generate(customBaseSpacing, customScale)` no longer affects CSS output | Ecosystem forks (HPE Aries etc.)                   | Dev warning emitted; JS object still returned for context overrides |
+| `ThemeContext` no longer re-exports styled-components' context          | Consumers using SC-specific APIs on `ThemeContext` | Documented in release notes                                         |
+
+### Internal Changes (no consumer impact)
+
+| Change                             | Notes                            |
+| ---------------------------------- | -------------------------------- |
+| `passThemeFlag` pattern eliminated | Internal only — not a public API |
+| `StyledX.js` files removed         | Internal implementation detail   |
 
 ---
 
@@ -598,26 +682,24 @@ property references where the SVG rendering engine allows it.
 ### What works unchanged (~90% of consumers)
 
 - `import { ThemeContext } from 'grommet/contexts'` — same shape, new implementation
-- `<ThemeContext.Extend value={...}>` — re-implemented, identical API
-- `generate()` called with defaults — still exported, still callable, still returns
-  merge-able JS object
+- `<ThemeContext.Extend value={...}>` — re-implemented, identical public API
+- `generate()` with default args — still exported, callable, returns merge-able JS object
 - `deepMerge(grommet, customTokens)` theme overrides — still work via runtime context
 - All component props — unchanged
-- `theme.X.extend` simple string values — shim applies as inline style
+- `theme.X.extend` simple flat string values — shim applies as inline style
 
 ### What breaks (~10% of consumers)
 
-- `theme.X.extend` with pseudo-selectors or media queries — silently ignored
-  _(shim limitation — `style` prop cannot express these)_
-- Direct use of styled-components APIs on `ThemeContext` — SC context no longer underlies it
-- Apps listing `styled-components` as a peer requirement
+- `theme.X.extend` with pseudo-selectors or media queries — dropped by shim
+- Direct use of styled-components APIs on `ThemeContext`
+- Apps listing `styled-components` as a peer or direct dependency
 
 ---
 
-## Consumer Migration Guide Template
+## Consumer Migration Guide
 
 ```markdown
-# Migrating to Grommet vX.0.0
+# Migrating to Grommet v3.0.0
 
 ## 1. Remove styled-components
 
@@ -633,9 +715,9 @@ Before:
 \`\`\`js
 const theme = {
 button: {
-extend: `     font-weight: bold;
+extend: `      font-weight: bold;
       &:hover { background: cadetblue; }
-  `
+   `
 }
 }
 \`\`\`
@@ -647,28 +729,27 @@ import { style } from '@vanilla-extract/css';
 
 export const myButton = style({
 fontWeight: 'bold',
-selectors: { '&:hover': { background: 'cadetblue' } },
+selectors: {
+'&:hover': { background: 'cadetblue' },
+},
 });
 \`\`\`
 
 \`\`\`tsx
-// Usage
 <Button className={myButton} label="Save" />
 \`\`\`
 
 ## 3. generate() with custom arguments
 
-If you called generate(baseSpacing, scale) with custom arguments,
-the returned JS object can still be passed via deepMerge for runtime
-overrides, but it no longer affects the pre-compiled CSS output.
+generate(baseSpacing, scale) with custom arguments no longer affects CSS output.
+The returned JS object can still be passed via deepMerge for runtime overrides.
 
 \`\`\`js
-// Still works for JS-resolved values (colors, etc.):
+// Still works for JS-resolved values:
 const myTheme = deepMerge(grommet, generate(20, 5));
 <Grommet theme={myTheme}>
 
 // CSS spacing/sizing tokens will NOT reflect custom generate() args.
-// See: [link to code-gen script — Phase 2 deliverable]
 \`\`\`
 ```
 
@@ -676,19 +757,18 @@ const myTheme = deepMerge(grommet, generate(20, 5));
 
 ## Performance Expectations
 
-| Metric               | Option A (Phase 1)                                | Option B (Long-term)                 |
-| -------------------- | ------------------------------------------------- | ------------------------------------ |
-| Consumer bundle      | ~35–40kB smaller (SC removed)                     | ~55–65kB smaller (+ base.js removed) |
-| Grommet own bundle   | ~20–30% smaller                                   | ~45–55% smaller                      |
-| Per-render CPU       | Significant reduction                             | Maximum reduction                    |
-| Initial paint        | Moderate improvement                              | Large improvement                    |
-| Memory               | Moderate reduction                                | Large reduction                      |
-| Re-render speed      | Large improvement (class lookup vs. 25 functions) | Maximum improvement                  |
-| SSR / RSC compatible | No (React context)                                | Yes (no context required)            |
+| Metric               | Option A (Phase 1)            | Option B (Future)   |
+| -------------------- | ----------------------------- | ------------------- |
+| Consumer bundle      | ~35–40kB smaller (SC removed) | ~55–65kB smaller    |
+| Grommet own bundle   | ~20–30% smaller               | ~45–55% smaller     |
+| Per-render CPU       | Significant reduction         | Maximum reduction   |
+| Initial paint        | Moderate improvement          | Large improvement   |
+| Re-render speed      | Large improvement             | Maximum improvement |
+| SSR / RSC compatible | No (React context required)   | Yes                 |
 
 > Option A delivers meaningful real-world improvements immediately.
-> Option B numbers assume SVG components fully migrated to `currentColor` + CSS vars,
-> and `normalizeColor` removed from runtime bundle.
+> Option B numbers assume SVG components fully migrated to `currentColor` + CSS vars
+> and `normalizeColor` removed from the runtime bundle entirely.
 
 ---
 
@@ -698,8 +778,5 @@ const myTheme = deepMerge(grommet, generate(20, 5));
 - [POC Theme Contract](./theme.contract.css.ts)
 - [POC Theme Implementation](./grommet.theme.css.ts)
 - [POC Migrated Button Component](./Button.vanilla.tsx)
-- [Build Config Notes](./BUILD_CONFIG.md)
-- [Architecture Comparison](./COMPARISON.md)
-- [Original POC Summary](./SUMMARY.md)
 - [Plan Review Summary](./PLAN_REVIEW_SUMMARY.md)
 - [Vanilla Extract Docs](https://vanilla-extract.style/)
