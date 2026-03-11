@@ -64,6 +64,33 @@ const Box = forwardRef(
 
     let background = backgroundProp;
 
+    useEffect(() => {
+      if (
+        process.env.NODE_ENV !== 'production' &&
+        backgroundProp &&
+        theme.global.deprecated?.backgrounds
+      ) {
+        let deprecatedBackground;
+        if (typeof backgroundProp === 'string') {
+          deprecatedBackground = theme.global.deprecated.backgrounds.find(
+            (item) => item.name === backgroundProp,
+          );
+        } else if (typeof backgroundProp === 'object') {
+          deprecatedBackground = theme.global.deprecated.backgrounds.find(
+            (item) =>
+              item.name === backgroundProp.image ||
+              item.name === backgroundProp.color,
+          );
+        }
+        if (deprecatedBackground) {
+          console.warn(
+            deprecatedBackground.message ||
+              `The background ${deprecatedBackground.name} is deprecated.`,
+          );
+        }
+      }
+    }, [backgroundProp, theme.global.deprecated?.backgrounds]);
+
     const announce = useContext(AnnounceContext);
 
     const containerRef = useForwardedRef(refProp);

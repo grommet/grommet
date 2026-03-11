@@ -252,6 +252,34 @@ describe('Calendar', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
+  test('read-only with range when no onSelect prop provided', () => {
+    const initialRange = [
+      ['2020-01-03T00:00:00-08:00', '2020-01-08T00:00:00-08:00'],
+    ];
+    const { getByLabelText } = render(
+      <Grommet>
+        <Calendar date={initialRange} range />
+      </Grommet>,
+    );
+
+    // Verify initial range is set (dates 3-8 should be selected)
+    const date3 = getByLabelText('Fri Jan 03 2020').closest('div');
+    const date8 = getByLabelText('Wed Jan 08 2020').closest('div');
+    const date10 = getByLabelText('Fri Jan 10 2020').closest('div');
+
+    expect(date3).toHaveAttribute('aria-selected', 'true');
+    expect(date8).toHaveAttribute('aria-selected', 'true');
+    expect(date10).toHaveAttribute('aria-selected', 'false');
+
+    // Click on date outside the range
+    fireEvent.click(getByLabelText('Fri Jan 10 2020'));
+
+    // Verify range hasn't changed after click
+    expect(date3).toHaveAttribute('aria-selected', 'true');
+    expect(date8).toHaveAttribute('aria-selected', 'true');
+    expect(date10).toHaveAttribute('aria-selected', 'false');
+  });
+
   test('first day sunday week monday', () => {
     // When the first day of the month is Sunday,
     // and the request of firstDayOfWeek

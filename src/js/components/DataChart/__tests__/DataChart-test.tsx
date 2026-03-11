@@ -533,4 +533,19 @@ describe('DataChart', () => {
       document.querySelector('div[data-g-portal-id="0"]'),
     ).toMatchSnapshot();
   });
+
+  test('applies colors from theme.dataChart.colors', () => {
+    const { container } = render(
+      <Grommet
+        theme={{
+          dataChart: {
+            colors: ['brand', 'accent-3', 'accent-2'],
+          },
+        }}
+      >
+        <DataChart data={data} series="a" />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+  });
 });

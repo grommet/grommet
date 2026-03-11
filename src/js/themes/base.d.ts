@@ -356,6 +356,13 @@ export interface ThemeType {
           }
         | undefined;
     };
+    deprecated?: {
+      backgrounds?: { name: string; message?: string }[];
+      colors?: { name: string; message?: string }[];
+      button?: {
+        kind?: { name: string; message?: string }[];
+      };
+    };
     deviceBreakpoints?: {
       phone?: string;
       tablet?: string;
@@ -461,6 +468,8 @@ export interface ThemeType {
       variant?: string;
     };
     graph?: {
+      // remove in v3. Should have been removed in
+      // https://github.com/grommet/grommet/pull/3608/
       colors?: GraphColorsType;
     };
     hover?: {
@@ -879,6 +888,7 @@ export interface ThemeType {
     };
   };
   dataChart?: {
+    colors?: string[];
     gap?: GapType;
     granularity?: {
       y?: {
@@ -1415,7 +1425,7 @@ export interface ThemeType {
         color?: ColorType;
         cursor?: string;
       };
-      gap: GapType;
+      gap?: GapType;
       pinned?: {
         background?: BackgroundType;
         icon?: {
@@ -1464,8 +1474,14 @@ export interface ThemeType {
       up?: any;
       color?: ColorType;
     };
+    disabled?: {
+      icons?: {
+        color?: ColorType;
+      };
+    };
   };
   meter?: {
+    background?: BackgroundType;
     color?: ColorType;
     colors?: GraphColorsType;
     extend?: ExtendType;
@@ -1928,6 +1944,7 @@ export interface ThemeType {
       down?: React.ReactNode | Icon;
       up?: React.ReactNode | Icon;
       margin?: MarginType;
+      search?: React.ReactNode | Icon;
     };
     listbox?: {
       extend?: ExtendType;

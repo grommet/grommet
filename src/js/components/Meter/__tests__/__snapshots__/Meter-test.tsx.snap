@@ -1682,6 +1682,129 @@ exports[`Meter size 1`] = `
 </div>
 `;
 
+exports[`Meter theme meter background 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.c1 path {
+  transition: stroke 0.3s,stroke-width 0.3s;
+}
+
+<div
+  class="c0"
+>
+  <svg
+    aria-label="Circle meter with value 20 out of 100"
+    class="c1"
+    height="384"
+    viewBox="0 0 384 384"
+    width="384"
+  >
+    <circle
+      cx="192"
+      cy="192"
+      fill="none"
+      r="180"
+      stroke="#FD6FFF"
+      stroke-linecap="square"
+      stroke-width="24"
+    />
+    <path
+      d="M 192.0000000000 24.0000000000 L 192.0000000000 0.0000000000 A 192.0000000000 192.0000000000 0 0 1 374.6028511287 132.6687370800 L 351.7774947376 140.0851449450 A 168.0000000000 168.0000000000 0 0 0 192.0000000000 24.0000000000 Z"
+      fill="#6FFFB0"
+      stroke="#6FFFB0"
+      stroke-linecap="butt"
+      stroke-width="0"
+    />
+  </svg>
+  <svg
+    aria-label="Bar meter with value 20 out of 100"
+    class="c1"
+    height="24"
+    preserveAspectRatio="none"
+    viewBox="0 0 384 24"
+    width="384"
+  >
+    <path
+      d="M 0,12 L 384,12"
+      fill="none"
+      stroke="#FD6FFF"
+      stroke-linecap="square"
+      stroke-width="24"
+    />
+    <path
+      d="M 0,24 L 0,0 L 76.8,0 L 76.8,24 Z"
+      fill="#6FFFB0"
+      stroke="none"
+      stroke-width="0"
+    />
+  </svg>
+</div>
+`;
+
+exports[`Meter theme meter background 2`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.c1 path {
+  transition: stroke 0.3s,stroke-width 0.3s;
+}
+
+<div
+  class="c0"
+>
+  <svg
+    aria-label="Circle meter with value 20 out of 100"
+    class="c1"
+    height="384"
+    viewBox="0 0 384 384"
+    width="384"
+  >
+    <circle
+      cx="192"
+      cy="192"
+      fill="none"
+      r="180"
+      stroke="#81FCED"
+      stroke-linecap="square"
+      stroke-opacity="0.4"
+      stroke-width="24"
+    />
+    <path
+      d="M 192.0000000000 24.0000000000 L 192.0000000000 0.0000000000 A 192.0000000000 192.0000000000 0 0 1 374.6028511287 132.6687370800 L 351.7774947376 140.0851449450 A 168.0000000000 168.0000000000 0 0 0 192.0000000000 24.0000000000 Z"
+      fill="#6FFFB0"
+      stroke="#6FFFB0"
+      stroke-linecap="butt"
+      stroke-width="0"
+    />
+  </svg>
+</div>
+`;
+
 exports[`Meter thickness 1`] = `
 .c0 {
   font-size: 18px;

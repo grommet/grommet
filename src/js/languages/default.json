@@ -166,7 +166,9 @@
     "upper": "Upper Bounds"
   },
   "select": {
+    "optionsA11y": "list of options",
     "multiple": "multiple",
+    "searchA11y": "Search options",
     "selected": "; Selected: {currentSelectedValue}"
   },
   "selectMultiple": {
@@ -174,6 +176,7 @@
     "clearAllA11y": "{selected} options selected. Clear all?",
     "open": "Open drop",
     "optionNotSelected": "{optionLabel} not selected",
+    "optionsA11y": "list of options",
     "optionSelected": "{optionLabel} selected",
     "search": "Search to filter options",
     "selectAll": "Select All",

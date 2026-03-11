@@ -31,6 +31,11 @@ const customTheme = {
     item: {
       align: 'center',
     },
+    disabled: {
+      icons: {
+        color: '#F08080',
+      },
+    },
   },
 };
 
@@ -557,6 +562,20 @@ describe('Menu', () => {
     const { container } = render(
       <Grommet theme={customTheme}>
         <Menu
+          label="Test Menu"
+          items={[{ label: 'Item 1' }, { label: 'Item 2' }]}
+        />
+      </Grommet>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('custom theme disabled icon color', () => {
+    const { container } = render(
+      <Grommet theme={customTheme}>
+        <Menu
+          disabled
           label="Test Menu"
           items={[{ label: 'Item 1' }, { label: 'Item 2' }]}
         />

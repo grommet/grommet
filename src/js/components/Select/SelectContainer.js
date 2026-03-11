@@ -4,14 +4,17 @@ import React, {
   useEffect,
   useRef,
   useState,
+  useContext,
 } from 'react';
 
 import styled from 'styled-components';
+import { Search } from 'grommet-icons/icons/Search';
 import {
   setFocusWithoutScroll,
   getHoverIndicatorStyle,
   containsFocus,
 } from '../../utils';
+import { MessageContext } from '../../contexts/MessageContext';
 
 import { Box } from '../Box';
 import { Button } from '../Button';
@@ -110,6 +113,7 @@ const SelectContainer = forwardRef(
       emptySearchMessage = 'No matches found',
       id,
       labelKey,
+      messages,
       multiple,
       name,
       onChange,
@@ -159,6 +163,8 @@ const SelectContainer = forwardRef(
     const optionsRef = useRef();
     const clearRef = useRef();
     const activeRef = useRef();
+    const { format } = useContext(MessageContext);
+    const searchIcon = theme.select.icons?.search || <Search aria-hidden />;
 
     // for keyboard/screenreader, keep the active option in focus
     useEffect(() => {
@@ -404,6 +410,10 @@ const SelectContainer = forwardRef(
               flex={false}
             >
               <SelectTextInput
+                aria-label={format({
+                  id: 'select.searchA11y',
+                  messages,
+                })}
                 focusIndicator={!customSearchInput}
                 size="small"
                 ref={searchRef}
@@ -417,6 +427,7 @@ const SelectContainer = forwardRef(
                   onSearch(nextSearch);
                 }}
                 onFocus={() => setActiveIndex(-1)}
+                icon={searchIcon}
               />
             </Box>
           )}
@@ -433,6 +444,10 @@ const SelectContainer = forwardRef(
           )}
           {options.length > 0 ? (
             <OptionsContainer
+              aria-label={format({
+                id: 'select.optionsA11y',
+                messages,
+              })}
               role="listbox"
               tabIndex="-1"
               ref={optionsRef}

@@ -6,6 +6,7 @@ import React, {
   useRef,
   useState,
 } from 'react';
+import { Search } from 'grommet-icons/icons/Search';
 
 import { setFocusWithoutScroll } from '../../utils';
 
@@ -90,6 +91,7 @@ const SelectMultipleContainer = forwardRef(
       options,
       valueKey || labelKey,
     );
+    const searchIcon = theme.select.icons?.search || <Search aria-hidden />;
 
     // for keyboard/screenreader, keep the active option in focus
     useEffect(() => {
@@ -435,6 +437,7 @@ const SelectMultipleContainer = forwardRef(
                     onSearch(nextSearch);
                   }}
                   onFocus={() => setActiveIndex(-1)}
+                  icon={searchIcon}
                 />
               </Keyboard>
             </Box>
@@ -442,6 +445,10 @@ const SelectMultipleContainer = forwardRef(
           {helpContent}
           {options?.length > 0 ? (
             <OptionsContainer
+              aria-label={format({
+                id: 'selectMultiple.optionsA11y',
+                messages,
+              })}
               role="listbox"
               tabIndex="-1"
               ref={optionsRef}

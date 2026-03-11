@@ -281,15 +281,19 @@ const List = React.forwardRef(
           event.persist();
           updateFocused(nextFocused);
           const adjustedEvent = event;
-          adjustedEvent.item = data[nextFocused];
-          adjustedEvent.index = nextFocused;
+          // When paginated, use 'items'
+          const currentItems = !paginate ? orderingData || data : items;
+          adjustedEvent.item = currentItems[nextFocused];
+          adjustedEvent.index = !paginate
+            ? nextFocused
+            : (paginationProps.page - 1) * step + nextFocused;
           onClickItem(adjustedEvent);
           sendAnalytics({
             type: 'listItemClick',
             element: listRef.current,
             event: adjustedEvent,
-            item: data[nextFocused],
-            index: nextFocused,
+            item: adjustedEvent.item,
+            index: adjustedEvent.index,
           });
         }
       }
@@ -490,7 +494,7 @@ const List = React.forwardRef(
                     direction: 'row',
                     align: secondaryKey ? 'start' : 'center',
                     justify: 'between',
-                    gap: theme.list.item.gap,
+                    gap: theme.list?.item?.gap,
                   };
                 }
 
@@ -681,7 +685,7 @@ const List = React.forwardRef(
                     direction: 'row',
                     align:
                       (defaultItemProps && defaultItemProps.align) || 'center',
-                    gap: theme.list.item.gap,
+                    gap: theme.list?.item?.gap,
                   };
                 }
 
@@ -720,7 +724,7 @@ const List = React.forwardRef(
                     direction: 'row',
                     align:
                       (defaultItemProps && defaultItemProps.align) || 'center',
-                    gap: theme.list.item.gap,
+                    gap: theme.list?.item?.gap,
                   };
                   displayPinned = (
                     <Box

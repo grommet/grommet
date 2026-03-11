@@ -88,6 +88,12 @@ export const decorators = [
 
 export const parameters = {
   layout: 'fullscreen',
+  tags: {
+    exclude:
+      process.env.NODE_ENV === 'production' && !isChromatic()
+        ? ['internal']
+        : [],
+  },
   options: {
     storySort: (first, second) => {
       /**

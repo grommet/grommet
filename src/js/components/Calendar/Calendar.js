@@ -622,6 +622,9 @@ const Calendar = forwardRef(
 
     const selectDate = useCallback(
       (selectedDate) => {
+        // If no onSelect prop is provided, the calendar should be read-only
+        if (!onSelect) return;
+
         let nextValue;
 
         if (range || Array.isArray(value?.[0])) {
@@ -878,7 +881,10 @@ const Calendar = forwardRef(
               disabledProp={dayDisabled}
               buttonProps={{
                 a11yTitle: day.toDateString(),
-                onClick: dayDisabled ? () => {} : () => onClick(dateObject),
+                onClick:
+                  !dayDisabled && !!onSelect
+                    ? () => onClick(dateObject)
+                    : () => {},
               }}
               isInRange={inRange}
               isSelected={selected}
@@ -897,18 +903,18 @@ const Calendar = forwardRef(
             <CalendarCustomDay
               key={day.getTime()}
               aria-selected={selected}
-              buttonProps={
-                onSelect
+              buttonProps={{
+                a11yTitle: day.toDateString(),
+                ...(onSelect
                   ? {
-                      a11yTitle: day.toDateString(),
                       active: active && active.getTime() === day.getTime(),
                       disabled: dayDisabled,
                       onClick: dayDisabled
                         ? () => {}
                         : () => onClick(dateObject),
                     }
-                  : null
-              }
+                  : {}),
+              }}
               size={size}
               fill={fill}
               responsive={responsive}

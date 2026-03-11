@@ -316,6 +316,102 @@ describe('DataTableColumns', () => {
     );
   });
 
+  test('SelectColumns', () => {
+    jest.useFakeTimers();
+    const onView = jest.fn();
+
+    const App = () => (
+      <Grommet>
+        <Data id="test-data" data={data} onView={onView}>
+          <DataFilters updateOn="change">
+            <DataTableColumns
+              drop
+              activePanel="selectColumns"
+              options={[
+                { property: 'name', label: 'Name', pinned: false },
+                { property: 'size', label: 'Size', pinned: true },
+                { property: 'percent', label: 'Percent' },
+              ]}
+            />
+          </DataFilters>
+          <DataTable
+            columns={[
+              { property: 'name', header: 'Name' },
+              { property: 'size', header: 'Size' },
+              { property: 'percent', header: 'Percent' },
+            ]}
+          />
+        </Data>
+      </Grommet>
+    );
+
+    render(<App />);
+
+    // Open the drop button to reveal the column settings
+    fireEvent.click(
+      screen.getByRole('button', {
+        name: 'Open column selector',
+      }),
+    );
+
+    // advance timers so drop can open
+    act(() => jest.advanceTimersByTime(200));
+
+    expect(screen.getByRole('checkbox', { name: /name/i })).toBeDefined();
+    expect(screen.getByRole('checkbox', { name: /size/i })).toBeDefined();
+    expect(screen.getByRole('checkbox', { name: /percent/i })).toBeDefined();
+
+    expect(screen.queryByText('Order columns')).toBeNull();
+
+    expect(screen.getByText('Select columns')).toBeDefined();
+  });
+
+  test('OrderColumns', () => {
+    jest.useFakeTimers();
+    const onView = jest.fn();
+
+    const App = () => (
+      <Grommet>
+        <Data id="test-data" data={data} onView={onView}>
+          <DataFilters updateOn="change">
+            <DataTableColumns
+              drop
+              activePanel="orderColumns"
+              options={[
+                { property: 'name', label: 'Name', pinned: false },
+                { property: 'size', label: 'Size', pinned: true },
+                { property: 'percent', label: 'Percent' },
+              ]}
+            />
+          </DataFilters>
+          <DataTable
+            columns={[
+              { property: 'name', header: 'Name' },
+              { property: 'size', header: 'Size' },
+              { property: 'percent', header: 'Percent' },
+            ]}
+          />
+        </Data>
+      </Grommet>
+    );
+
+    render(<App />);
+
+    // Open the drop button to reveal the column settings
+    fireEvent.click(
+      screen.getByRole('button', {
+        name: 'Open column selector',
+      }),
+    );
+
+    // advance timers so drop can open
+    act(() => jest.advanceTimersByTime(200));
+
+    expect(screen.getByText('Order columns')).toBeDefined();
+
+    expect(screen.queryByText('Select columns')).toBeNull();
+  });
+
   test('theme tabs pad, selectColumns pad and gap, orderColumns pad', async () => {
     const customTheme = {
       dataTableColumns: {
