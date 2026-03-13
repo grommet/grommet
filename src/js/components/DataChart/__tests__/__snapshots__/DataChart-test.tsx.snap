@@ -878,7 +878,7 @@ exports[`DataChart axis x granularity 1`] = `
   padding-inline-end: 0px;
 }
 
-.c6 {
+.c3 {
   display: flex;
   box-sizing: border-box;
   align-items: center;
@@ -920,7 +920,7 @@ exports[`DataChart axis x granularity 1`] = `
   flex-direction: column;
 }
 
-.c5 {
+.c6 {
   display: block;
   max-width: 100%;
   overflow: visible;
@@ -935,12 +935,12 @@ exports[`DataChart axis x granularity 1`] = `
   grid-template-rows: auto auto;
 }
 
-.c3 {
+.c4 {
   position: relative;
   grid-area: charts;
 }
 
-.c4 {
+.c5 {
   position: relative;
   display: block;
 }
@@ -965,15 +965,26 @@ exports[`DataChart axis x granularity 1`] = `
   >
     <div
       class="c2"
-    />
-    <div
-      class="c3"
     >
       <div
-        class="c4"
+        class="c3"
+      >
+        NaN
+      </div>
+      <div
+        class="c3"
+      >
+        NaN
+      </div>
+    </div>
+    <div
+      class="c4"
+    >
+      <div
+        class="c5"
       >
         <svg
-          class="c5"
+          class="c6"
           height="192"
           preserveAspectRatio="none"
           viewBox="0 0 384 192"
@@ -998,19 +1009,24 @@ exports[`DataChart axis x granularity 1`] = `
       class="c2"
     >
       <div
-        class="c6"
+        class="c3"
       >
         0
       </div>
+      <div
+        class="c3"
+      >
+        1
+      </div>
     </div>
     <div
-      class="c3"
+      class="c4"
     >
       <div
-        class="c4"
+        class="c5"
       >
         <svg
-          class="c5"
+          class="c6"
           height="192"
           preserveAspectRatio="none"
           viewBox="0 0 384 192"
@@ -1044,24 +1060,24 @@ exports[`DataChart axis x granularity 1`] = `
       class="c2"
     >
       <div
-        class="c6"
+        class="c3"
       >
         0
       </div>
       <div
-        class="c6"
+        class="c3"
       >
         1
       </div>
     </div>
     <div
-      class="c3"
+      class="c4"
     >
       <div
-        class="c4"
+        class="c5"
       >
         <svg
-          class="c5"
+          class="c6"
           height="192"
           preserveAspectRatio="none"
           viewBox="0 0 384 192"
@@ -1103,29 +1119,29 @@ exports[`DataChart axis x granularity 1`] = `
       class="c2"
     >
       <div
-        class="c6"
+        class="c3"
       >
         0
       </div>
       <div
-        class="c6"
+        class="c3"
       >
         1
       </div>
       <div
-        class="c6"
+        class="c3"
       >
         2
       </div>
     </div>
     <div
-      class="c3"
+      class="c4"
     >
       <div
-        class="c4"
+        class="c5"
       >
         <svg
-          class="c5"
+          class="c6"
           height="192"
           preserveAspectRatio="none"
           viewBox="0 0 384 192"
@@ -1175,34 +1191,34 @@ exports[`DataChart axis x granularity 1`] = `
       class="c2"
     >
       <div
-        class="c6"
+        class="c3"
       >
         0
       </div>
       <div
-        class="c6"
+        class="c3"
       >
         1
       </div>
       <div
-        class="c6"
+        class="c3"
       >
         2
       </div>
       <div
-        class="c6"
+        class="c3"
       >
         3
       </div>
     </div>
     <div
-      class="c3"
+      class="c4"
     >
       <div
-        class="c4"
+        class="c5"
       >
         <svg
-          class="c5"
+          class="c6"
           height="192"
           preserveAspectRatio="none"
           viewBox="0 0 384 192"
@@ -1276,13 +1292,13 @@ exports[`DataChart axis x granularity 1`] = `
       </div>
     </div>
     <div
-      class="c3"
+      class="c4"
     >
       <div
-        class="c4"
+        class="c5"
       >
         <svg
-          class="c5"
+          class="c6"
           height="192"
           preserveAspectRatio="none"
           viewBox="0 0 384 192"
@@ -1359,13 +1375,13 @@ exports[`DataChart axis x granularity 1`] = `
       </div>
     </div>
     <div
-      class="c3"
+      class="c4"
     >
       <div
-        class="c4"
+        class="c5"
       >
         <svg
-          class="c5"
+          class="c6"
           height="192"
           preserveAspectRatio="none"
           viewBox="0 0 384 192"
@@ -1460,13 +1476,13 @@ exports[`DataChart axis x granularity 1`] = `
       </div>
     </div>
     <div
-      class="c3"
+      class="c4"
     >
       <div
-        class="c4"
+        class="c5"
       >
         <svg
-          class="c5"
+          class="c6"
           height="192"
           preserveAspectRatio="none"
           viewBox="0 0 384 192"
@@ -1559,13 +1575,13 @@ exports[`DataChart axis x granularity 1`] = `
       </div>
     </div>
     <div
-      class="c3"
+      class="c4"
     >
       <div
-        class="c4"
+        class="c5"
       >
         <svg
-          class="c5"
+          class="c6"
           height="192"
           preserveAspectRatio="none"
           viewBox="0 0 384 192"
@@ -1681,13 +1697,13 @@ exports[`DataChart axis x granularity 1`] = `
       </div>
     </div>
     <div
-      class="c3"
+      class="c4"
     >
       <div
-        class="c4"
+        class="c5"
       >
         <svg
-          class="c5"
+          class="c6"
           height="192"
           preserveAspectRatio="none"
           viewBox="0 0 384 192"
@@ -1806,13 +1822,13 @@ exports[`DataChart axis x granularity 1`] = `
       </div>
     </div>
     <div
-      class="c3"
+      class="c4"
     >
       <div
-        class="c4"
+        class="c5"
       >
         <svg
-          class="c5"
+          class="c6"
           height="192"
           preserveAspectRatio="none"
           viewBox="0 0 384 192"
@@ -1934,13 +1950,13 @@ exports[`DataChart axis x granularity 1`] = `
       </div>
     </div>
     <div
-      class="c3"
+      class="c4"
     >
       <div
-        class="c4"
+        class="c5"
       >
         <svg
-          class="c5"
+          class="c6"
           height="192"
           preserveAspectRatio="none"
           viewBox="0 0 384 192"
@@ -2065,13 +2081,13 @@ exports[`DataChart axis x granularity 1`] = `
       </div>
     </div>
     <div
-      class="c3"
+      class="c4"
     >
       <div
-        class="c4"
+        class="c5"
       >
         <svg
-          class="c5"
+          class="c6"
           height="192"
           preserveAspectRatio="none"
           viewBox="0 0 384 192"
@@ -2219,13 +2235,13 @@ exports[`DataChart axis x granularity 1`] = `
       </div>
     </div>
     <div
-      class="c3"
+      class="c4"
     >
       <div
-        class="c4"
+        class="c5"
       >
         <svg
-          class="c5"
+          class="c6"
           height="192"
           preserveAspectRatio="none"
           viewBox="0 0 384 192"
@@ -2836,6 +2852,17 @@ exports[`DataChart bars empty 1`] = `
 .c3 {
   display: flex;
   box-sizing: border-box;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  flex-basis: 96px;
+  overflow: visible;
+}
+
+.c4 {
+  display: flex;
+  box-sizing: border-box;
   max-width: 100%;
   grid-area: yAxis;
   min-width: 0;
@@ -2847,6 +2874,18 @@ exports[`DataChart bars empty 1`] = `
   padding-bottom: 48px;
 }
 
+.c5 {
+  display: flex;
+  box-sizing: border-box;
+  align-items: flex-end;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  flex-basis: 1px;
+  justify-content: center;
+  overflow: visible;
+}
+
 .c1 {
   display: grid;
   box-sizing: border-box;
@@ -2856,7 +2895,7 @@ exports[`DataChart bars empty 1`] = `
   grid-template-rows: auto auto;
 }
 
-.c4 {
+.c6 {
   position: relative;
   grid-area: charts;
 }
@@ -2874,7 +2913,7 @@ exports[`DataChart bars empty 1`] = `
 }
 
 @media only screen and (max-width: 768px) {
-  .c3 {
+  .c4 {
     padding-top: 24px;
     padding-bottom: 24px;
   }
@@ -2888,12 +2927,34 @@ exports[`DataChart bars empty 1`] = `
   >
     <div
       class="c2"
-    />
-    <div
-      class="c3"
-    />
+    >
+      <div
+        class="c3"
+      >
+        NaN
+      </div>
+      <div
+        class="c3"
+      >
+        NaN
+      </div>
+    </div>
     <div
       class="c4"
+    >
+      <div
+        class="c5"
+      >
+        NaN
+      </div>
+      <div
+        class="c5"
+      >
+        NaN
+      </div>
+    </div>
+    <div
+      class="c6"
     />
   </div>
 </div>
@@ -9555,6 +9616,11 @@ exports[`DataChart single 1`] = `
     <div
       class="c2"
     >
+      <div
+        class="c3"
+      >
+        2020-06-24
+      </div>
       <div
         class="c3"
       >
