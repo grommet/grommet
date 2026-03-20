@@ -1,1 +1,0 @@
-Please review this document for clarity and comprehension. Do you have any questions or recommendations?
