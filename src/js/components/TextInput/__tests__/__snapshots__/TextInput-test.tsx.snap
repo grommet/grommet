@@ -1,4 +1,4 @@
-// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+// Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`TextInput a11yTitle or aria-label 1`] = `
 .c0 {
@@ -23,7 +23,7 @@ exports[`TextInput a11yTitle or aria-label 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid rgba(0, 0, 0, 0.33);
+  border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
 }
 
@@ -32,18 +32,18 @@ exports[`TextInput a11yTitle or aria-label 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c2:focus >circle,
-.c2:focus >ellipse,
-.c2:focus >line,
-.c2:focus >path,
-.c2:focus >polygon,
-.c2:focus >polyline,
-.c2:focus >rect {
+.c2:focus > circle,
+.c2:focus > ellipse,
+.c2:focus > line,
+.c2:focus > path,
+.c2:focus > polygon,
+.c2:focus > polyline,
+.c2:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c2:focus ::-moz-focus-inner {
+.c2:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -59,7 +59,7 @@ exports[`TextInput a11yTitle or aria-label 1`] = `
   color: #AAAAAA;
 }
 
-.c2 ::-webkit-search-decoration {
+.c2::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -89,6 +89,7 @@ exports[`TextInput a11yTitle or aria-label 1`] = `
       autocomplete="off"
       class="c2"
       name="item"
+      value=""
     />
   </div>
   <div
@@ -99,6 +100,7 @@ exports[`TextInput a11yTitle or aria-label 1`] = `
       autocomplete="off"
       class="c2"
       name="item-2"
+      value=""
     />
   </div>
 </div>
@@ -117,7 +119,7 @@ exports[`TextInput basic 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid rgba(0, 0, 0, 0.33);
+  border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
 }
 
@@ -126,18 +128,18 @@ exports[`TextInput basic 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus >circle,
-.c1:focus >ellipse,
-.c1:focus >line,
-.c1:focus >path,
-.c1:focus >polygon,
-.c1:focus >polyline,
-.c1:focus >rect {
+.c1:focus > circle,
+.c1:focus > ellipse,
+.c1:focus > line,
+.c1:focus > path,
+.c1:focus > polygon,
+.c1:focus > polyline,
+.c1:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus ::-moz-focus-inner {
+.c1:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -153,7 +155,7 @@ exports[`TextInput basic 1`] = `
   color: #AAAAAA;
 }
 
-.c1 ::-webkit-search-decoration {
+.c1::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -179,6 +181,7 @@ exports[`TextInput basic 1`] = `
     autocomplete="off"
     class="c1"
     name="item"
+    value=""
   />
 </div>
 `;
@@ -206,7 +209,7 @@ exports[`TextInput calls onSuggestionsClose 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid rgba(0, 0, 0, 0.33);
+  border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
 }
 
@@ -215,18 +218,18 @@ exports[`TextInput calls onSuggestionsClose 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c2:focus >circle,
-.c2:focus >ellipse,
-.c2:focus >line,
-.c2:focus >path,
-.c2:focus >polygon,
-.c2:focus >polyline,
-.c2:focus >rect {
+.c2:focus > circle,
+.c2:focus > ellipse,
+.c2:focus > line,
+.c2:focus > path,
+.c2:focus > polygon,
+.c2:focus > polyline,
+.c2:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c2:focus ::-moz-focus-inner {
+.c2:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -242,7 +245,7 @@ exports[`TextInput calls onSuggestionsClose 1`] = `
   color: #AAAAAA;
 }
 
-.c2 ::-webkit-search-decoration {
+.c2::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -276,6 +279,7 @@ exports[`TextInput calls onSuggestionsClose 1`] = `
       id="item"
       name="item"
       role="combobox"
+      value=""
     />
   </div>
 </div>
@@ -283,33 +287,51 @@ exports[`TextInput calls onSuggestionsClose 1`] = `
 
 exports[`TextInput calls onSuggestionsClose 2`] = `
 .c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   overflow: auto;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.20);
+  box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
 }
 
 .c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   overflow: auto;
 }
 
 .c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
   align-items: flex-start;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   padding: 12px;
 }
@@ -329,8 +351,12 @@ exports[`TextInput calls onSuggestionsClose 2`] = `
   background-color: #FFFFFF;
   color: #444444;
   opacity: 0;
+  -webkit-transform-origin: top left;
+  -ms-transform-origin: top left;
   transform-origin: top left;
+  -webkit-animation: kPQHBD 0.1s forwards;
   animation: kPQHBD 0.1s forwards;
+  -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
 }
 
@@ -339,6 +365,7 @@ exports[`TextInput calls onSuggestionsClose 2`] = `
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
+  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -357,18 +384,18 @@ exports[`TextInput calls onSuggestionsClose 2`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c5:focus >circle,
-.c5:focus >ellipse,
-.c5:focus >line,
-.c5:focus >path,
-.c5:focus >polygon,
-.c5:focus >polyline,
-.c5:focus >rect {
+.c5:focus > circle,
+.c5:focus > ellipse,
+.c5:focus > line,
+.c5:focus > path,
+.c5:focus > polygon,
+.c5:focus > polyline,
+.c5:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c5:focus ::-moz-focus-inner {
+.c5:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -377,18 +404,18 @@ exports[`TextInput calls onSuggestionsClose 2`] = `
   box-shadow: none;
 }
 
-.c5:focus:not(:focus-visible) >circle,
-.c5:focus:not(:focus-visible) >ellipse,
-.c5:focus:not(:focus-visible) >line,
-.c5:focus:not(:focus-visible) >path,
-.c5:focus:not(:focus-visible) >polygon,
-.c5:focus:not(:focus-visible) >polyline,
-.c5:focus:not(:focus-visible) >rect {
+.c5:focus:not(:focus-visible) > circle,
+.c5:focus:not(:focus-visible) > ellipse,
+.c5:focus:not(:focus-visible) > line,
+.c5:focus:not(:focus-visible) > path,
+.c5:focus:not(:focus-visible) > polygon,
+.c5:focus:not(:focus-visible) > polyline,
+.c5:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c5:focus:not(:focus-visible) ::-moz-focus-inner {
+.c5:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -404,7 +431,7 @@ exports[`TextInput calls onSuggestionsClose 2`] = `
   max-height: inherit;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c6 {
     padding: 6px;
   }
@@ -412,7 +439,13 @@ exports[`TextInput calls onSuggestionsClose 2`] = `
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
   .c1 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-align-items: stretch;
+    -webkit-box-align: stretch;
+    -ms-flex-align: stretch;
     align-items: stretch;
   }
 }
@@ -477,20 +510,21 @@ exports[`TextInput calls onSuggestionsClose 3`] = `""`;
 
 exports[`TextInput calls onSuggestionsClose 4`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 iQmOCy"
+  class="StyledGrommet-sc-19lkkz7-0 gIiCYk"
 >
   <div
-    class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 cWqzrJ"
+    class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 vweqL"
   >
     <input
       aria-autocomplete="list"
       aria-expanded="false"
       autocomplete="off"
-      class="StyledTextInput-sc-1x30a0s-0 kPNQeA"
+      class="StyledTextInput-sc-1x30a0s-0 hmScCY"
       data-testid="test-input"
       id="item"
       name="item"
       role="combobox"
+      value=""
     />
   </div>
 </div>
@@ -498,33 +532,51 @@ exports[`TextInput calls onSuggestionsClose 4`] = `
 
 exports[`TextInput calls onSuggestionsOpen 1`] = `
 .c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   overflow: auto;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.20);
+  box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
 }
 
 .c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   overflow: auto;
 }
 
 .c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
   align-items: flex-start;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   padding: 12px;
 }
@@ -544,8 +596,12 @@ exports[`TextInput calls onSuggestionsOpen 1`] = `
   background-color: #FFFFFF;
   color: #444444;
   opacity: 0;
+  -webkit-transform-origin: top left;
+  -ms-transform-origin: top left;
   transform-origin: top left;
+  -webkit-animation: kPQHBD 0.1s forwards;
   animation: kPQHBD 0.1s forwards;
+  -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
 }
 
@@ -554,6 +610,7 @@ exports[`TextInput calls onSuggestionsOpen 1`] = `
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
+  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -572,18 +629,18 @@ exports[`TextInput calls onSuggestionsOpen 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c5:focus >circle,
-.c5:focus >ellipse,
-.c5:focus >line,
-.c5:focus >path,
-.c5:focus >polygon,
-.c5:focus >polyline,
-.c5:focus >rect {
+.c5:focus > circle,
+.c5:focus > ellipse,
+.c5:focus > line,
+.c5:focus > path,
+.c5:focus > polygon,
+.c5:focus > polyline,
+.c5:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c5:focus ::-moz-focus-inner {
+.c5:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -592,18 +649,18 @@ exports[`TextInput calls onSuggestionsOpen 1`] = `
   box-shadow: none;
 }
 
-.c5:focus:not(:focus-visible) >circle,
-.c5:focus:not(:focus-visible) >ellipse,
-.c5:focus:not(:focus-visible) >line,
-.c5:focus:not(:focus-visible) >path,
-.c5:focus:not(:focus-visible) >polygon,
-.c5:focus:not(:focus-visible) >polyline,
-.c5:focus:not(:focus-visible) >rect {
+.c5:focus:not(:focus-visible) > circle,
+.c5:focus:not(:focus-visible) > ellipse,
+.c5:focus:not(:focus-visible) > line,
+.c5:focus:not(:focus-visible) > path,
+.c5:focus:not(:focus-visible) > polygon,
+.c5:focus:not(:focus-visible) > polyline,
+.c5:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c5:focus:not(:focus-visible) ::-moz-focus-inner {
+.c5:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -619,7 +676,7 @@ exports[`TextInput calls onSuggestionsOpen 1`] = `
   max-height: inherit;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c6 {
     padding: 6px;
   }
@@ -627,7 +684,13 @@ exports[`TextInput calls onSuggestionsOpen 1`] = `
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
   .c1 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-align-items: stretch;
+    -webkit-box-align: stretch;
+    -ms-flex-align: stretch;
     align-items: stretch;
   }
 }
@@ -713,7 +776,7 @@ exports[`TextInput close suggestion drop 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid rgba(0, 0, 0, 0.33);
+  border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
 }
 
@@ -722,18 +785,18 @@ exports[`TextInput close suggestion drop 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c2:focus >circle,
-.c2:focus >ellipse,
-.c2:focus >line,
-.c2:focus >path,
-.c2:focus >polygon,
-.c2:focus >polyline,
-.c2:focus >rect {
+.c2:focus > circle,
+.c2:focus > ellipse,
+.c2:focus > line,
+.c2:focus > path,
+.c2:focus > polygon,
+.c2:focus > polyline,
+.c2:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c2:focus ::-moz-focus-inner {
+.c2:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -749,7 +812,7 @@ exports[`TextInput close suggestion drop 1`] = `
   color: #AAAAAA;
 }
 
-.c2 ::-webkit-search-decoration {
+.c2::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -783,6 +846,7 @@ exports[`TextInput close suggestion drop 1`] = `
       id="item"
       name="item"
       role="combobox"
+      value=""
     />
   </div>
 </div>
@@ -790,33 +854,51 @@ exports[`TextInput close suggestion drop 1`] = `
 
 exports[`TextInput close suggestion drop 2`] = `
 .c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   overflow: auto;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.20);
+  box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
 }
 
 .c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   overflow: auto;
 }
 
 .c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
   align-items: flex-start;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   padding: 12px;
 }
@@ -836,8 +918,12 @@ exports[`TextInput close suggestion drop 2`] = `
   background-color: #FFFFFF;
   color: #444444;
   opacity: 0;
+  -webkit-transform-origin: top left;
+  -ms-transform-origin: top left;
   transform-origin: top left;
+  -webkit-animation: kPQHBD 0.1s forwards;
   animation: kPQHBD 0.1s forwards;
+  -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
 }
 
@@ -846,6 +932,7 @@ exports[`TextInput close suggestion drop 2`] = `
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
+  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -864,18 +951,18 @@ exports[`TextInput close suggestion drop 2`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c5:focus >circle,
-.c5:focus >ellipse,
-.c5:focus >line,
-.c5:focus >path,
-.c5:focus >polygon,
-.c5:focus >polyline,
-.c5:focus >rect {
+.c5:focus > circle,
+.c5:focus > ellipse,
+.c5:focus > line,
+.c5:focus > path,
+.c5:focus > polygon,
+.c5:focus > polyline,
+.c5:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c5:focus ::-moz-focus-inner {
+.c5:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -884,18 +971,18 @@ exports[`TextInput close suggestion drop 2`] = `
   box-shadow: none;
 }
 
-.c5:focus:not(:focus-visible) >circle,
-.c5:focus:not(:focus-visible) >ellipse,
-.c5:focus:not(:focus-visible) >line,
-.c5:focus:not(:focus-visible) >path,
-.c5:focus:not(:focus-visible) >polygon,
-.c5:focus:not(:focus-visible) >polyline,
-.c5:focus:not(:focus-visible) >rect {
+.c5:focus:not(:focus-visible) > circle,
+.c5:focus:not(:focus-visible) > ellipse,
+.c5:focus:not(:focus-visible) > line,
+.c5:focus:not(:focus-visible) > path,
+.c5:focus:not(:focus-visible) > polygon,
+.c5:focus:not(:focus-visible) > polyline,
+.c5:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c5:focus:not(:focus-visible) ::-moz-focus-inner {
+.c5:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -911,7 +998,7 @@ exports[`TextInput close suggestion drop 2`] = `
   max-height: inherit;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c6 {
     padding: 6px;
   }
@@ -919,7 +1006,13 @@ exports[`TextInput close suggestion drop 2`] = `
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
   .c1 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-align-items: stretch;
+    -webkit-box-align: stretch;
+    -ms-flex-align: stretch;
     align-items: stretch;
   }
 }
@@ -984,20 +1077,21 @@ exports[`TextInput close suggestion drop 3`] = `""`;
 
 exports[`TextInput close suggestion drop 4`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 iQmOCy"
+  class="StyledGrommet-sc-19lkkz7-0 gIiCYk"
 >
   <div
-    class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 cWqzrJ"
+    class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 vweqL"
   >
     <input
       aria-autocomplete="list"
       aria-expanded="false"
       autocomplete="off"
-      class="StyledTextInput-sc-1x30a0s-0 kPNQeA"
+      class="StyledTextInput-sc-1x30a0s-0 hmScCY"
       data-testid="test-input"
       id="item"
       name="item"
       role="combobox"
+      value=""
     />
   </div>
 </div>
@@ -1026,7 +1120,7 @@ exports[`TextInput complex suggestions 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid rgba(0, 0, 0, 0.33);
+  border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
 }
 
@@ -1035,18 +1129,18 @@ exports[`TextInput complex suggestions 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c2:focus >circle,
-.c2:focus >ellipse,
-.c2:focus >line,
-.c2:focus >path,
-.c2:focus >polygon,
-.c2:focus >polyline,
-.c2:focus >rect {
+.c2:focus > circle,
+.c2:focus > ellipse,
+.c2:focus > line,
+.c2:focus > path,
+.c2:focus > polygon,
+.c2:focus > polyline,
+.c2:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c2:focus ::-moz-focus-inner {
+.c2:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -1062,7 +1156,7 @@ exports[`TextInput complex suggestions 1`] = `
   color: #AAAAAA;
 }
 
-.c2 ::-webkit-search-decoration {
+.c2::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -1096,6 +1190,7 @@ exports[`TextInput complex suggestions 1`] = `
       id="item"
       name="item"
       role="combobox"
+      value=""
     />
   </div>
 </div>
@@ -1103,33 +1198,51 @@ exports[`TextInput complex suggestions 1`] = `
 
 exports[`TextInput complex suggestions 2`] = `
 .c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   overflow: auto;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.20);
+  box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
 }
 
 .c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   overflow: auto;
 }
 
 .c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
   align-items: flex-start;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   padding: 12px;
 }
@@ -1149,8 +1262,12 @@ exports[`TextInput complex suggestions 2`] = `
   background-color: #FFFFFF;
   color: #444444;
   opacity: 0;
+  -webkit-transform-origin: top left;
+  -ms-transform-origin: top left;
   transform-origin: top left;
+  -webkit-animation: kPQHBD 0.1s forwards;
   animation: kPQHBD 0.1s forwards;
+  -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
 }
 
@@ -1159,6 +1276,7 @@ exports[`TextInput complex suggestions 2`] = `
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
+  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -1177,18 +1295,18 @@ exports[`TextInput complex suggestions 2`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c5:focus >circle,
-.c5:focus >ellipse,
-.c5:focus >line,
-.c5:focus >path,
-.c5:focus >polygon,
-.c5:focus >polyline,
-.c5:focus >rect {
+.c5:focus > circle,
+.c5:focus > ellipse,
+.c5:focus > line,
+.c5:focus > path,
+.c5:focus > polygon,
+.c5:focus > polyline,
+.c5:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c5:focus ::-moz-focus-inner {
+.c5:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -1197,18 +1315,18 @@ exports[`TextInput complex suggestions 2`] = `
   box-shadow: none;
 }
 
-.c5:focus:not(:focus-visible) >circle,
-.c5:focus:not(:focus-visible) >ellipse,
-.c5:focus:not(:focus-visible) >line,
-.c5:focus:not(:focus-visible) >path,
-.c5:focus:not(:focus-visible) >polygon,
-.c5:focus:not(:focus-visible) >polyline,
-.c5:focus:not(:focus-visible) >rect {
+.c5:focus:not(:focus-visible) > circle,
+.c5:focus:not(:focus-visible) > ellipse,
+.c5:focus:not(:focus-visible) > line,
+.c5:focus:not(:focus-visible) > path,
+.c5:focus:not(:focus-visible) > polygon,
+.c5:focus:not(:focus-visible) > polyline,
+.c5:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c5:focus:not(:focus-visible) ::-moz-focus-inner {
+.c5:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -1224,7 +1342,7 @@ exports[`TextInput complex suggestions 2`] = `
   max-height: inherit;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c6 {
     padding: 6px;
   }
@@ -1232,7 +1350,13 @@ exports[`TextInput complex suggestions 2`] = `
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
   .c1 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-align-items: stretch;
+    -webkit-box-align: stretch;
+    -ms-flex-align: stretch;
     align-items: stretch;
   }
 }
@@ -1318,7 +1442,7 @@ exports[`TextInput custom theme input font size 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid rgba(0, 0, 0, 0.33);
+  border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
 }
 
@@ -1327,18 +1451,18 @@ exports[`TextInput custom theme input font size 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c2:focus >circle,
-.c2:focus >ellipse,
-.c2:focus >line,
-.c2:focus >path,
-.c2:focus >polygon,
-.c2:focus >polyline,
-.c2:focus >rect {
+.c2:focus > circle,
+.c2:focus > ellipse,
+.c2:focus > line,
+.c2:focus > path,
+.c2:focus > polygon,
+.c2:focus > polyline,
+.c2:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c2:focus ::-moz-focus-inner {
+.c2:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -1354,7 +1478,7 @@ exports[`TextInput custom theme input font size 1`] = `
   color: #AAAAAA;
 }
 
-.c2 ::-webkit-search-decoration {
+.c2::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -1382,6 +1506,7 @@ exports[`TextInput custom theme input font size 1`] = `
     <input
       autocomplete="off"
       class="c2"
+      value=""
     />
   </div>
 </div>
@@ -1400,7 +1525,7 @@ exports[`TextInput disabled 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid rgba(0, 0, 0, 0.33);
+  border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
   opacity: 0.3;
   cursor: default;
@@ -1411,18 +1536,18 @@ exports[`TextInput disabled 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus >circle,
-.c1:focus >ellipse,
-.c1:focus >line,
-.c1:focus >path,
-.c1:focus >polygon,
-.c1:focus >polyline,
-.c1:focus >rect {
+.c1:focus > circle,
+.c1:focus > ellipse,
+.c1:focus > line,
+.c1:focus > path,
+.c1:focus > polygon,
+.c1:focus > polyline,
+.c1:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus ::-moz-focus-inner {
+.c1:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -1438,7 +1563,7 @@ exports[`TextInput disabled 1`] = `
   color: #AAAAAA;
 }
 
-.c1 ::-webkit-search-decoration {
+.c1::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -1465,6 +1590,7 @@ exports[`TextInput disabled 1`] = `
     class="c1"
     disabled=""
     name="item"
+    value=""
   />
 </div>
 `;
@@ -1492,7 +1618,7 @@ exports[`TextInput handles next and previous without suggestion 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid rgba(0, 0, 0, 0.33);
+  border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
 }
 
@@ -1501,18 +1627,18 @@ exports[`TextInput handles next and previous without suggestion 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c2:focus >circle,
-.c2:focus >ellipse,
-.c2:focus >line,
-.c2:focus >path,
-.c2:focus >polygon,
-.c2:focus >polyline,
-.c2:focus >rect {
+.c2:focus > circle,
+.c2:focus > ellipse,
+.c2:focus > line,
+.c2:focus > path,
+.c2:focus > polygon,
+.c2:focus > polyline,
+.c2:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c2:focus ::-moz-focus-inner {
+.c2:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -1528,7 +1654,7 @@ exports[`TextInput handles next and previous without suggestion 1`] = `
   color: #AAAAAA;
 }
 
-.c2 ::-webkit-search-decoration {
+.c2::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -1559,6 +1685,7 @@ exports[`TextInput handles next and previous without suggestion 1`] = `
       data-testid="test-input"
       id="item"
       name="item"
+      value=""
     />
   </div>
 </div>
@@ -1566,17 +1693,18 @@ exports[`TextInput handles next and previous without suggestion 1`] = `
 
 exports[`TextInput handles next and previous without suggestion 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 iQmOCy"
+  class="StyledGrommet-sc-19lkkz7-0 gIiCYk"
 >
   <div
-    class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 cWqzrJ"
+    class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 vweqL"
   >
     <input
       autocomplete="off"
-      class="StyledTextInput-sc-1x30a0s-0 kPNQeA"
+      class="StyledTextInput-sc-1x30a0s-0 hmScCY"
       data-testid="test-input"
       id="item"
       name="item"
+      value=""
     />
   </div>
 </div>
@@ -1585,6 +1713,8 @@ exports[`TextInput handles next and previous without suggestion 2`] = `
 exports[`TextInput icon 1`] = `
 .c2 {
   display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
@@ -1627,7 +1757,7 @@ exports[`TextInput icon 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid rgba(0, 0, 0, 0.33);
+  border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
   padding-left: 48px;
 }
@@ -1637,18 +1767,18 @@ exports[`TextInput icon 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus >circle,
-.c3:focus >ellipse,
-.c3:focus >line,
-.c3:focus >path,
-.c3:focus >polygon,
-.c3:focus >polyline,
-.c3:focus >rect {
+.c3:focus > circle,
+.c3:focus > ellipse,
+.c3:focus > line,
+.c3:focus > path,
+.c3:focus > polygon,
+.c3:focus > polyline,
+.c3:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus ::-moz-focus-inner {
+.c3:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -1664,7 +1794,7 @@ exports[`TextInput icon 1`] = `
   color: #AAAAAA;
 }
 
-.c3 ::-webkit-search-decoration {
+.c3::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -1685,9 +1815,17 @@ exports[`TextInput icon 1`] = `
 
 .c1 {
   position: absolute;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-packjustify: center;
+  -webkit-justify: center;
+  -ms-flex-packjustify: center;
   justify: center;
   top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
   transform: translateY(-50%);
   pointer-events: none;
   left: 12px;
@@ -1716,6 +1854,7 @@ exports[`TextInput icon 1`] = `
     autocomplete="off"
     class="c3"
     name="item"
+    value=""
   />
 </div>
 `;
@@ -1723,6 +1862,8 @@ exports[`TextInput icon 1`] = `
 exports[`TextInput icon reverse 1`] = `
 .c2 {
   display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
@@ -1765,7 +1906,7 @@ exports[`TextInput icon reverse 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid rgba(0, 0, 0, 0.33);
+  border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
   padding-right: 48px;
 }
@@ -1775,18 +1916,18 @@ exports[`TextInput icon reverse 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus >circle,
-.c3:focus >ellipse,
-.c3:focus >line,
-.c3:focus >path,
-.c3:focus >polygon,
-.c3:focus >polyline,
-.c3:focus >rect {
+.c3:focus > circle,
+.c3:focus > ellipse,
+.c3:focus > line,
+.c3:focus > path,
+.c3:focus > polygon,
+.c3:focus > polyline,
+.c3:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus ::-moz-focus-inner {
+.c3:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -1802,7 +1943,7 @@ exports[`TextInput icon reverse 1`] = `
   color: #AAAAAA;
 }
 
-.c3 ::-webkit-search-decoration {
+.c3::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -1823,9 +1964,17 @@ exports[`TextInput icon reverse 1`] = `
 
 .c1 {
   position: absolute;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-packjustify: center;
+  -webkit-justify: center;
+  -ms-flex-packjustify: center;
   justify: center;
   top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
   transform: translateY(-50%);
   pointer-events: none;
   right: 12px;
@@ -1854,39 +2003,58 @@ exports[`TextInput icon reverse 1`] = `
     autocomplete="off"
     class="c3"
     name="item"
+    value=""
   />
 </div>
 `;
 
 exports[`TextInput large drop height 1`] = `
 .c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   overflow: auto;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.20);
+  box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
 }
 
 .c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   overflow: auto;
 }
 
 .c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
   align-items: flex-start;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   padding: 12px;
 }
@@ -1906,8 +2074,12 @@ exports[`TextInput large drop height 1`] = `
   background-color: #FFFFFF;
   color: #444444;
   opacity: 0;
+  -webkit-transform-origin: top left;
+  -ms-transform-origin: top left;
   transform-origin: top left;
+  -webkit-animation: kPQHBD 0.1s forwards;
   animation: kPQHBD 0.1s forwards;
+  -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
 }
 
@@ -1916,6 +2088,7 @@ exports[`TextInput large drop height 1`] = `
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
+  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -1934,18 +2107,18 @@ exports[`TextInput large drop height 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c5:focus >circle,
-.c5:focus >ellipse,
-.c5:focus >line,
-.c5:focus >path,
-.c5:focus >polygon,
-.c5:focus >polyline,
-.c5:focus >rect {
+.c5:focus > circle,
+.c5:focus > ellipse,
+.c5:focus > line,
+.c5:focus > path,
+.c5:focus > polygon,
+.c5:focus > polyline,
+.c5:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c5:focus ::-moz-focus-inner {
+.c5:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -1954,18 +2127,18 @@ exports[`TextInput large drop height 1`] = `
   box-shadow: none;
 }
 
-.c5:focus:not(:focus-visible) >circle,
-.c5:focus:not(:focus-visible) >ellipse,
-.c5:focus:not(:focus-visible) >line,
-.c5:focus:not(:focus-visible) >path,
-.c5:focus:not(:focus-visible) >polygon,
-.c5:focus:not(:focus-visible) >polyline,
-.c5:focus:not(:focus-visible) >rect {
+.c5:focus:not(:focus-visible) > circle,
+.c5:focus:not(:focus-visible) > ellipse,
+.c5:focus:not(:focus-visible) > line,
+.c5:focus:not(:focus-visible) > path,
+.c5:focus:not(:focus-visible) > polygon,
+.c5:focus:not(:focus-visible) > polyline,
+.c5:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c5:focus:not(:focus-visible) ::-moz-focus-inner {
+.c5:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -1981,7 +2154,7 @@ exports[`TextInput large drop height 1`] = `
   max-height: 768px;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c6 {
     padding: 6px;
   }
@@ -1989,7 +2162,13 @@ exports[`TextInput large drop height 1`] = `
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
   .c1 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-align-items: stretch;
+    -webkit-box-align: stretch;
+    -ms-flex-align: stretch;
     align-items: stretch;
   }
 }
@@ -2056,6 +2235,8 @@ exports[`TextInput matches icon size to size prop when theme.icon.matchSize is t
 <DocumentFragment>
   .c3 {
   display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   width: 12px;
   height: 12px;
@@ -2088,6 +2269,8 @@ exports[`TextInput matches icon size to size prop when theme.icon.matchSize is t
 
 .c5 {
   display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
@@ -2120,6 +2303,8 @@ exports[`TextInput matches icon size to size prop when theme.icon.matchSize is t
 
 .c7 {
   display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   width: 48px;
   height: 48px;
@@ -2174,7 +2359,7 @@ exports[`TextInput matches icon size to size prop when theme.icon.matchSize is t
   margin: 0;
   font-size: 14px;
   line-height: 20px;
-  border: 1px solid rgba(0, 0, 0, 0.33);
+  border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
   padding-left: 36px;
 }
@@ -2184,18 +2369,18 @@ exports[`TextInput matches icon size to size prop when theme.icon.matchSize is t
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c4:focus >circle,
-.c4:focus >ellipse,
-.c4:focus >line,
-.c4:focus >path,
-.c4:focus >polygon,
-.c4:focus >polyline,
-.c4:focus >rect {
+.c4:focus > circle,
+.c4:focus > ellipse,
+.c4:focus > line,
+.c4:focus > path,
+.c4:focus > polygon,
+.c4:focus > polyline,
+.c4:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c4:focus ::-moz-focus-inner {
+.c4:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -2211,7 +2396,7 @@ exports[`TextInput matches icon size to size prop when theme.icon.matchSize is t
   color: #AAAAAA;
 }
 
-.c4 ::-webkit-search-decoration {
+.c4::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -2239,7 +2424,7 @@ exports[`TextInput matches icon size to size prop when theme.icon.matchSize is t
   margin: 0;
   font-size: 18px;
   line-height: 24px;
-  border: 1px solid rgba(0, 0, 0, 0.33);
+  border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
   padding-left: 48px;
 }
@@ -2249,18 +2434,18 @@ exports[`TextInput matches icon size to size prop when theme.icon.matchSize is t
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c6:focus >circle,
-.c6:focus >ellipse,
-.c6:focus >line,
-.c6:focus >path,
-.c6:focus >polygon,
-.c6:focus >polyline,
-.c6:focus >rect {
+.c6:focus > circle,
+.c6:focus > ellipse,
+.c6:focus > line,
+.c6:focus > path,
+.c6:focus > polygon,
+.c6:focus > polyline,
+.c6:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c6:focus ::-moz-focus-inner {
+.c6:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -2276,7 +2461,7 @@ exports[`TextInput matches icon size to size prop when theme.icon.matchSize is t
   color: #AAAAAA;
 }
 
-.c6 ::-webkit-search-decoration {
+.c6::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -2304,7 +2489,7 @@ exports[`TextInput matches icon size to size prop when theme.icon.matchSize is t
   margin: 0;
   font-size: 22px;
   line-height: 28px;
-  border: 1px solid rgba(0, 0, 0, 0.33);
+  border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
   padding-left: 72px;
 }
@@ -2314,18 +2499,18 @@ exports[`TextInput matches icon size to size prop when theme.icon.matchSize is t
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c8:focus >circle,
-.c8:focus >ellipse,
-.c8:focus >line,
-.c8:focus >path,
-.c8:focus >polygon,
-.c8:focus >polyline,
-.c8:focus >rect {
+.c8:focus > circle,
+.c8:focus > ellipse,
+.c8:focus > line,
+.c8:focus > path,
+.c8:focus > polygon,
+.c8:focus > polyline,
+.c8:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c8:focus ::-moz-focus-inner {
+.c8:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -2341,7 +2526,7 @@ exports[`TextInput matches icon size to size prop when theme.icon.matchSize is t
   color: #AAAAAA;
 }
 
-.c8 ::-webkit-search-decoration {
+.c8::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -2362,9 +2547,17 @@ exports[`TextInput matches icon size to size prop when theme.icon.matchSize is t
 
 .c2 {
   position: absolute;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-packjustify: center;
+  -webkit-justify: center;
+  -ms-flex-packjustify: center;
   justify: center;
   top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
   transform: translateY(-50%);
   pointer-events: none;
   left: 12px;
@@ -2395,6 +2588,7 @@ exports[`TextInput matches icon size to size prop when theme.icon.matchSize is t
       <input
         autocomplete="off"
         class="c4"
+        value=""
       />
     </div>
     <div
@@ -2419,6 +2613,7 @@ exports[`TextInput matches icon size to size prop when theme.icon.matchSize is t
       <input
         autocomplete="off"
         class="c6"
+        value=""
       />
     </div>
     <div
@@ -2443,6 +2638,7 @@ exports[`TextInput matches icon size to size prop when theme.icon.matchSize is t
       <input
         autocomplete="off"
         class="c8"
+        value=""
       />
     </div>
   </div>
@@ -2451,33 +2647,51 @@ exports[`TextInput matches icon size to size prop when theme.icon.matchSize is t
 
 exports[`TextInput medium drop height 1`] = `
 .c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   overflow: auto;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.20);
+  box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
 }
 
 .c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   overflow: auto;
 }
 
 .c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
   align-items: flex-start;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   padding: 12px;
 }
@@ -2497,8 +2711,12 @@ exports[`TextInput medium drop height 1`] = `
   background-color: #FFFFFF;
   color: #444444;
   opacity: 0;
+  -webkit-transform-origin: top left;
+  -ms-transform-origin: top left;
   transform-origin: top left;
+  -webkit-animation: kPQHBD 0.1s forwards;
   animation: kPQHBD 0.1s forwards;
+  -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
 }
 
@@ -2507,6 +2725,7 @@ exports[`TextInput medium drop height 1`] = `
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
+  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -2525,18 +2744,18 @@ exports[`TextInput medium drop height 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c5:focus >circle,
-.c5:focus >ellipse,
-.c5:focus >line,
-.c5:focus >path,
-.c5:focus >polygon,
-.c5:focus >polyline,
-.c5:focus >rect {
+.c5:focus > circle,
+.c5:focus > ellipse,
+.c5:focus > line,
+.c5:focus > path,
+.c5:focus > polygon,
+.c5:focus > polyline,
+.c5:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c5:focus ::-moz-focus-inner {
+.c5:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -2545,18 +2764,18 @@ exports[`TextInput medium drop height 1`] = `
   box-shadow: none;
 }
 
-.c5:focus:not(:focus-visible) >circle,
-.c5:focus:not(:focus-visible) >ellipse,
-.c5:focus:not(:focus-visible) >line,
-.c5:focus:not(:focus-visible) >path,
-.c5:focus:not(:focus-visible) >polygon,
-.c5:focus:not(:focus-visible) >polyline,
-.c5:focus:not(:focus-visible) >rect {
+.c5:focus:not(:focus-visible) > circle,
+.c5:focus:not(:focus-visible) > ellipse,
+.c5:focus:not(:focus-visible) > line,
+.c5:focus:not(:focus-visible) > path,
+.c5:focus:not(:focus-visible) > polygon,
+.c5:focus:not(:focus-visible) > polyline,
+.c5:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c5:focus:not(:focus-visible) ::-moz-focus-inner {
+.c5:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -2572,7 +2791,7 @@ exports[`TextInput medium drop height 1`] = `
   max-height: 384px;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c6 {
     padding: 6px;
   }
@@ -2580,7 +2799,13 @@ exports[`TextInput medium drop height 1`] = `
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
   .c1 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-align-items: stretch;
+    -webkit-box-align: stretch;
+    -ms-flex-align: stretch;
     align-items: stretch;
   }
 }
@@ -2667,7 +2892,7 @@ exports[`TextInput read only 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid rgba(0, 0, 0, 0.33);
+  border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
   border: none;
 }
@@ -2677,18 +2902,18 @@ exports[`TextInput read only 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c2:focus >circle,
-.c2:focus >ellipse,
-.c2:focus >line,
-.c2:focus >path,
-.c2:focus >polygon,
-.c2:focus >polyline,
-.c2:focus >rect {
+.c2:focus > circle,
+.c2:focus > ellipse,
+.c2:focus > line,
+.c2:focus > path,
+.c2:focus > polygon,
+.c2:focus > polyline,
+.c2:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c2:focus ::-moz-focus-inner {
+.c2:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -2704,7 +2929,7 @@ exports[`TextInput read only 1`] = `
   color: #AAAAAA;
 }
 
-.c2 ::-webkit-search-decoration {
+.c2::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -2721,7 +2946,7 @@ exports[`TextInput read only 1`] = `
 .c1 {
   position: relative;
   width: 100%;
-  border: 1px solid rgba(0, 0, 0, 0.33);
+  border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
 }
 
@@ -2747,6 +2972,8 @@ exports[`TextInput read only copy 1`] = `
 <DocumentFragment>
   .c5 {
   display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
@@ -2792,6 +3019,7 @@ exports[`TextInput read only copy 1`] = `
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
+  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -2802,6 +3030,8 @@ exports[`TextInput read only copy 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
+  min-width: 24px;
+  min-height: 24px;
   line-height: 0;
 }
 
@@ -2810,18 +3040,18 @@ exports[`TextInput read only copy 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus >circle,
-.c3:focus >ellipse,
-.c3:focus >line,
-.c3:focus >path,
-.c3:focus >polygon,
-.c3:focus >polyline,
-.c3:focus >rect {
+.c3:focus > circle,
+.c3:focus > ellipse,
+.c3:focus > line,
+.c3:focus > path,
+.c3:focus > polygon,
+.c3:focus > polyline,
+.c3:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus ::-moz-focus-inner {
+.c3:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -2830,18 +3060,18 @@ exports[`TextInput read only copy 1`] = `
   box-shadow: none;
 }
 
-.c3:focus:not(:focus-visible) >circle,
-.c3:focus:not(:focus-visible) >ellipse,
-.c3:focus:not(:focus-visible) >line,
-.c3:focus:not(:focus-visible) >path,
-.c3:focus:not(:focus-visible) >polygon,
-.c3:focus:not(:focus-visible) >polyline,
-.c3:focus:not(:focus-visible) >rect {
+.c3:focus:not(:focus-visible) > circle,
+.c3:focus:not(:focus-visible) > ellipse,
+.c3:focus:not(:focus-visible) > line,
+.c3:focus:not(:focus-visible) > path,
+.c3:focus:not(:focus-visible) > polygon,
+.c3:focus:not(:focus-visible) > polyline,
+.c3:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c3:focus:not(:focus-visible) ::-moz-focus-inner {
+.c3:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -2857,7 +3087,7 @@ exports[`TextInput read only copy 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid rgba(0, 0, 0, 0.33);
+  border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
   padding-right: 0px;
   border: none;
@@ -2868,18 +3098,18 @@ exports[`TextInput read only copy 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c2:focus >circle,
-.c2:focus >ellipse,
-.c2:focus >line,
-.c2:focus >path,
-.c2:focus >polygon,
-.c2:focus >polyline,
-.c2:focus >rect {
+.c2:focus > circle,
+.c2:focus > ellipse,
+.c2:focus > line,
+.c2:focus > path,
+.c2:focus > polygon,
+.c2:focus > polyline,
+.c2:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c2:focus ::-moz-focus-inner {
+.c2:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -2895,7 +3125,7 @@ exports[`TextInput read only copy 1`] = `
   color: #AAAAAA;
 }
 
-.c2 ::-webkit-search-decoration {
+.c2::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -2912,10 +3142,15 @@ exports[`TextInput read only copy 1`] = `
 .c1 {
   position: relative;
   width: 100%;
-  border: 1px solid rgba(0, 0, 0, 0.33);
+  border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
   box-sizing: border-box;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
   flex-direction: row;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
 }
 
@@ -2927,23 +3162,23 @@ exports[`TextInput read only copy 1`] = `
   padding-bottom: 0;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
 
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
 
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
 
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
 
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
 
 }
 
@@ -3013,7 +3248,7 @@ HTMLCollection [
   margin: 0;
   font-size: 12px;
   line-height: 18px;
-  border: 1px solid rgba(0, 0, 0, 0.33);
+  border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
 }
 
@@ -3022,18 +3257,18 @@ HTMLCollection [
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c2:focus >circle,
-.c2:focus >ellipse,
-.c2:focus >line,
-.c2:focus >path,
-.c2:focus >polygon,
-.c2:focus >polyline,
-.c2:focus >rect {
+.c2:focus > circle,
+.c2:focus > ellipse,
+.c2:focus > line,
+.c2:focus > path,
+.c2:focus > polygon,
+.c2:focus > polyline,
+.c2:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c2:focus ::-moz-focus-inner {
+.c2:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -3049,7 +3284,7 @@ HTMLCollection [
   color: #AAAAAA;
 }
 
-.c2 ::-webkit-search-decoration {
+.c2::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -3077,7 +3312,7 @@ HTMLCollection [
   margin: 0;
   font-size: 14px;
   line-height: 20px;
-  border: 1px solid rgba(0, 0, 0, 0.33);
+  border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
 }
 
@@ -3086,18 +3321,18 @@ HTMLCollection [
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus >circle,
-.c3:focus >ellipse,
-.c3:focus >line,
-.c3:focus >path,
-.c3:focus >polygon,
-.c3:focus >polyline,
-.c3:focus >rect {
+.c3:focus > circle,
+.c3:focus > ellipse,
+.c3:focus > line,
+.c3:focus > path,
+.c3:focus > polygon,
+.c3:focus > polyline,
+.c3:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus ::-moz-focus-inner {
+.c3:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -3113,7 +3348,7 @@ HTMLCollection [
   color: #AAAAAA;
 }
 
-.c3 ::-webkit-search-decoration {
+.c3::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -3141,7 +3376,7 @@ HTMLCollection [
   margin: 0;
   font-size: 18px;
   line-height: 24px;
-  border: 1px solid rgba(0, 0, 0, 0.33);
+  border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
 }
 
@@ -3150,18 +3385,18 @@ HTMLCollection [
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c4:focus >circle,
-.c4:focus >ellipse,
-.c4:focus >line,
-.c4:focus >path,
-.c4:focus >polygon,
-.c4:focus >polyline,
-.c4:focus >rect {
+.c4:focus > circle,
+.c4:focus > ellipse,
+.c4:focus > line,
+.c4:focus > path,
+.c4:focus > polygon,
+.c4:focus > polyline,
+.c4:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c4:focus ::-moz-focus-inner {
+.c4:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -3177,7 +3412,7 @@ HTMLCollection [
   color: #AAAAAA;
 }
 
-.c4 ::-webkit-search-decoration {
+.c4::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -3205,7 +3440,7 @@ HTMLCollection [
   margin: 0;
   font-size: 22px;
   line-height: 28px;
-  border: 1px solid rgba(0, 0, 0, 0.33);
+  border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
 }
 
@@ -3214,18 +3449,18 @@ HTMLCollection [
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c5:focus >circle,
-.c5:focus >ellipse,
-.c5:focus >line,
-.c5:focus >path,
-.c5:focus >polygon,
-.c5:focus >polyline,
-.c5:focus >rect {
+.c5:focus > circle,
+.c5:focus > ellipse,
+.c5:focus > line,
+.c5:focus > path,
+.c5:focus > polygon,
+.c5:focus > polyline,
+.c5:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c5:focus ::-moz-focus-inner {
+.c5:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -3241,7 +3476,7 @@ HTMLCollection [
   color: #AAAAAA;
 }
 
-.c5 ::-webkit-search-decoration {
+.c5::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -3269,7 +3504,7 @@ HTMLCollection [
   margin: 0;
   font-size: 26px;
   line-height: 32px;
-  border: 1px solid rgba(0, 0, 0, 0.33);
+  border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
 }
 
@@ -3278,18 +3513,18 @@ HTMLCollection [
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c6:focus >circle,
-.c6:focus >ellipse,
-.c6:focus >line,
-.c6:focus >path,
-.c6:focus >polygon,
-.c6:focus >polyline,
-.c6:focus >rect {
+.c6:focus > circle,
+.c6:focus > ellipse,
+.c6:focus > line,
+.c6:focus > path,
+.c6:focus > polygon,
+.c6:focus > polyline,
+.c6:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c6:focus ::-moz-focus-inner {
+.c6:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -3305,7 +3540,7 @@ HTMLCollection [
   color: #AAAAAA;
 }
 
-.c6 ::-webkit-search-decoration {
+.c6::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -3333,7 +3568,7 @@ HTMLCollection [
   margin: 0;
   font-size: 34px;
   line-height: 40px;
-  border: 1px solid rgba(0, 0, 0, 0.33);
+  border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
 }
 
@@ -3342,18 +3577,18 @@ HTMLCollection [
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c7:focus >circle,
-.c7:focus >ellipse,
-.c7:focus >line,
-.c7:focus >path,
-.c7:focus >polygon,
-.c7:focus >polyline,
-.c7:focus >rect {
+.c7:focus > circle,
+.c7:focus > ellipse,
+.c7:focus > line,
+.c7:focus > path,
+.c7:focus > polygon,
+.c7:focus > polyline,
+.c7:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c7:focus ::-moz-focus-inner {
+.c7:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -3369,7 +3604,7 @@ HTMLCollection [
   color: #AAAAAA;
 }
 
-.c7 ::-webkit-search-decoration {
+.c7::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -3397,7 +3632,7 @@ HTMLCollection [
   margin: 0;
   font-size: 42px;
   line-height: 48px;
-  border: 1px solid rgba(0, 0, 0, 0.33);
+  border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
 }
 
@@ -3406,18 +3641,18 @@ HTMLCollection [
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c8:focus >circle,
-.c8:focus >ellipse,
-.c8:focus >line,
-.c8:focus >path,
-.c8:focus >polygon,
-.c8:focus >polyline,
-.c8:focus >rect {
+.c8:focus > circle,
+.c8:focus > ellipse,
+.c8:focus > line,
+.c8:focus > path,
+.c8:focus > polygon,
+.c8:focus > polyline,
+.c8:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c8:focus ::-moz-focus-inner {
+.c8:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -3433,7 +3668,7 @@ HTMLCollection [
   color: #AAAAAA;
 }
 
-.c8 ::-webkit-search-decoration {
+.c8::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -3461,7 +3696,7 @@ HTMLCollection [
   margin: 0;
   font-size: 54px;
   line-height: 60px;
-  border: 1px solid rgba(0, 0, 0, 0.33);
+  border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
 }
 
@@ -3470,18 +3705,18 @@ HTMLCollection [
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c9:focus >circle,
-.c9:focus >ellipse,
-.c9:focus >line,
-.c9:focus >path,
-.c9:focus >polygon,
-.c9:focus >polyline,
-.c9:focus >rect {
+.c9:focus > circle,
+.c9:focus > ellipse,
+.c9:focus > line,
+.c9:focus > path,
+.c9:focus > polygon,
+.c9:focus > polyline,
+.c9:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c9:focus ::-moz-focus-inner {
+.c9:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -3497,7 +3732,7 @@ HTMLCollection [
   color: #AAAAAA;
 }
 
-.c9 ::-webkit-search-decoration {
+.c9::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -3525,7 +3760,7 @@ HTMLCollection [
   margin: 0;
   font-size: 70px;
   line-height: 76px;
-  border: 1px solid rgba(0, 0, 0, 0.33);
+  border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
 }
 
@@ -3534,18 +3769,18 @@ HTMLCollection [
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c10:focus >circle,
-.c10:focus >ellipse,
-.c10:focus >line,
-.c10:focus >path,
-.c10:focus >polygon,
-.c10:focus >polyline,
-.c10:focus >rect {
+.c10:focus > circle,
+.c10:focus > ellipse,
+.c10:focus > line,
+.c10:focus > path,
+.c10:focus > polygon,
+.c10:focus > polyline,
+.c10:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c10:focus ::-moz-focus-inner {
+.c10:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -3561,7 +3796,7 @@ HTMLCollection [
   color: #AAAAAA;
 }
 
-.c10 ::-webkit-search-decoration {
+.c10::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -3589,7 +3824,7 @@ HTMLCollection [
   margin: 0;
   font-size: 90px;
   line-height: 96px;
-  border: 1px solid rgba(0, 0, 0, 0.33);
+  border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
 }
 
@@ -3598,18 +3833,18 @@ HTMLCollection [
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c11:focus >circle,
-.c11:focus >ellipse,
-.c11:focus >line,
-.c11:focus >path,
-.c11:focus >polygon,
-.c11:focus >polyline,
-.c11:focus >rect {
+.c11:focus > circle,
+.c11:focus > ellipse,
+.c11:focus > line,
+.c11:focus > path,
+.c11:focus > polygon,
+.c11:focus > polyline,
+.c11:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c11:focus ::-moz-focus-inner {
+.c11:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -3625,7 +3860,7 @@ HTMLCollection [
   color: #AAAAAA;
 }
 
-.c11 ::-webkit-search-decoration {
+.c11::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -3652,7 +3887,7 @@ HTMLCollection [
   font-weight: 600;
   margin: 0;
   font-size: 16px;
-  border: 1px solid rgba(0, 0, 0, 0.33);
+  border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
 }
 
@@ -3661,18 +3896,18 @@ HTMLCollection [
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c12:focus >circle,
-.c12:focus >ellipse,
-.c12:focus >line,
-.c12:focus >path,
-.c12:focus >polygon,
-.c12:focus >polyline,
-.c12:focus >rect {
+.c12:focus > circle,
+.c12:focus > ellipse,
+.c12:focus > line,
+.c12:focus > path,
+.c12:focus > polygon,
+.c12:focus > polyline,
+.c12:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c12:focus ::-moz-focus-inner {
+.c12:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -3688,7 +3923,7 @@ HTMLCollection [
   color: #AAAAAA;
 }
 
-.c12 ::-webkit-search-decoration {
+.c12::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -3715,7 +3950,7 @@ HTMLCollection [
   font-weight: 600;
   margin: 0;
   font-size: 1rem;
-  border: 1px solid rgba(0, 0, 0, 0.33);
+  border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
 }
 
@@ -3724,18 +3959,18 @@ HTMLCollection [
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c13:focus >circle,
-.c13:focus >ellipse,
-.c13:focus >line,
-.c13:focus >path,
-.c13:focus >polygon,
-.c13:focus >polyline,
-.c13:focus >rect {
+.c13:focus > circle,
+.c13:focus > ellipse,
+.c13:focus > line,
+.c13:focus > path,
+.c13:focus > polygon,
+.c13:focus > polyline,
+.c13:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c13:focus ::-moz-focus-inner {
+.c13:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -3751,7 +3986,7 @@ HTMLCollection [
   color: #AAAAAA;
 }
 
-.c13 ::-webkit-search-decoration {
+.c13::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -3778,7 +4013,7 @@ HTMLCollection [
   font-weight: 600;
   margin: 0;
   font-size: 100%;
-  border: 1px solid rgba(0, 0, 0, 0.33);
+  border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
 }
 
@@ -3787,18 +4022,18 @@ HTMLCollection [
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c14:focus >circle,
-.c14:focus >ellipse,
-.c14:focus >line,
-.c14:focus >path,
-.c14:focus >polygon,
-.c14:focus >polyline,
-.c14:focus >rect {
+.c14:focus > circle,
+.c14:focus > ellipse,
+.c14:focus > line,
+.c14:focus > path,
+.c14:focus > polygon,
+.c14:focus > polyline,
+.c14:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c14:focus ::-moz-focus-inner {
+.c14:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -3814,7 +4049,7 @@ HTMLCollection [
   color: #AAAAAA;
 }
 
-.c14 ::-webkit-search-decoration {
+.c14::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -3842,6 +4077,7 @@ HTMLCollection [
       <input
         autocomplete="off"
         class="c2"
+        value=""
       />
     </div>
     <div
@@ -3850,6 +4086,7 @@ HTMLCollection [
       <input
         autocomplete="off"
         class="c3"
+        value=""
       />
     </div>
     <div
@@ -3858,6 +4095,7 @@ HTMLCollection [
       <input
         autocomplete="off"
         class="c4"
+        value=""
       />
     </div>
     <div
@@ -3866,6 +4104,7 @@ HTMLCollection [
       <input
         autocomplete="off"
         class="c5"
+        value=""
       />
     </div>
     <div
@@ -3874,6 +4113,7 @@ HTMLCollection [
       <input
         autocomplete="off"
         class="c6"
+        value=""
       />
     </div>
     <div
@@ -3882,6 +4122,7 @@ HTMLCollection [
       <input
         autocomplete="off"
         class="c7"
+        value=""
       />
     </div>
     <div
@@ -3890,6 +4131,7 @@ HTMLCollection [
       <input
         autocomplete="off"
         class="c7"
+        value=""
       />
     </div>
     <div
@@ -3898,6 +4140,7 @@ HTMLCollection [
       <input
         autocomplete="off"
         class="c8"
+        value=""
       />
     </div>
     <div
@@ -3906,6 +4149,7 @@ HTMLCollection [
       <input
         autocomplete="off"
         class="c9"
+        value=""
       />
     </div>
     <div
@@ -3914,6 +4158,7 @@ HTMLCollection [
       <input
         autocomplete="off"
         class="c10"
+        value=""
       />
     </div>
     <div
@@ -3922,6 +4167,7 @@ HTMLCollection [
       <input
         autocomplete="off"
         class="c11"
+        value=""
       />
     </div>
     <div
@@ -3930,6 +4176,7 @@ HTMLCollection [
       <input
         autocomplete="off"
         class="c12"
+        value=""
       />
     </div>
     <div
@@ -3938,6 +4185,7 @@ HTMLCollection [
       <input
         autocomplete="off"
         class="c13"
+        value=""
       />
     </div>
     <div
@@ -3946,6 +4194,7 @@ HTMLCollection [
       <input
         autocomplete="off"
         class="c14"
+        value=""
       />
     </div>
   </div>,
@@ -3975,7 +4224,7 @@ exports[`TextInput select a suggestion with onSelect 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid rgba(0, 0, 0, 0.33);
+  border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
 }
 
@@ -3984,18 +4233,18 @@ exports[`TextInput select a suggestion with onSelect 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c2:focus >circle,
-.c2:focus >ellipse,
-.c2:focus >line,
-.c2:focus >path,
-.c2:focus >polygon,
-.c2:focus >polyline,
-.c2:focus >rect {
+.c2:focus > circle,
+.c2:focus > ellipse,
+.c2:focus > line,
+.c2:focus > path,
+.c2:focus > polygon,
+.c2:focus > polyline,
+.c2:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c2:focus ::-moz-focus-inner {
+.c2:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -4011,7 +4260,7 @@ exports[`TextInput select a suggestion with onSelect 1`] = `
   color: #AAAAAA;
 }
 
-.c2 ::-webkit-search-decoration {
+.c2::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -4045,6 +4294,7 @@ exports[`TextInput select a suggestion with onSelect 1`] = `
       id="item"
       name="item"
       role="combobox"
+      value=""
     />
   </div>
 </div>
@@ -4073,7 +4323,7 @@ exports[`TextInput select a suggestion with onSuggestionSelect 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid rgba(0, 0, 0, 0.33);
+  border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
 }
 
@@ -4082,18 +4332,18 @@ exports[`TextInput select a suggestion with onSuggestionSelect 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c2:focus >circle,
-.c2:focus >ellipse,
-.c2:focus >line,
-.c2:focus >path,
-.c2:focus >polygon,
-.c2:focus >polyline,
-.c2:focus >rect {
+.c2:focus > circle,
+.c2:focus > ellipse,
+.c2:focus > line,
+.c2:focus > path,
+.c2:focus > polygon,
+.c2:focus > polyline,
+.c2:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c2:focus ::-moz-focus-inner {
+.c2:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -4109,7 +4359,7 @@ exports[`TextInput select a suggestion with onSuggestionSelect 1`] = `
   color: #AAAAAA;
 }
 
-.c2 ::-webkit-search-decoration {
+.c2::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -4143,6 +4393,7 @@ exports[`TextInput select a suggestion with onSuggestionSelect 1`] = `
       id="item"
       name="item"
       role="combobox"
+      value=""
     />
   </div>
 </div>
@@ -4173,7 +4424,7 @@ exports[`TextInput select suggestion 1`] = `
   margin: 0;
   font-size: 22px;
   line-height: 28px;
-  border: 1px solid rgba(0, 0, 0, 0.33);
+  border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
   outline: none;
   border: none;
@@ -4184,18 +4435,18 @@ exports[`TextInput select suggestion 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c2:focus >circle,
-.c2:focus >ellipse,
-.c2:focus >line,
-.c2:focus >path,
-.c2:focus >polygon,
-.c2:focus >polyline,
-.c2:focus >rect {
+.c2:focus > circle,
+.c2:focus > ellipse,
+.c2:focus > line,
+.c2:focus > path,
+.c2:focus > polygon,
+.c2:focus > polyline,
+.c2:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c2:focus ::-moz-focus-inner {
+.c2:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -4211,7 +4462,7 @@ exports[`TextInput select suggestion 1`] = `
   color: #AAAAAA;
 }
 
-.c2 ::-webkit-search-decoration {
+.c2::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -4245,6 +4496,7 @@ exports[`TextInput select suggestion 1`] = `
       id="item"
       name="item"
       role="combobox"
+      value=""
     />
   </div>
 </div>
@@ -4252,33 +4504,51 @@ exports[`TextInput select suggestion 1`] = `
 
 exports[`TextInput select suggestion 2`] = `
 .c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   overflow: auto;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.20);
+  box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
 }
 
 .c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   overflow: auto;
 }
 
 .c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
   align-items: flex-start;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   padding: 12px;
 }
@@ -4298,8 +4568,12 @@ exports[`TextInput select suggestion 2`] = `
   background-color: #FFFFFF;
   color: #444444;
   opacity: 0;
+  -webkit-transform-origin: top left;
+  -ms-transform-origin: top left;
   transform-origin: top left;
+  -webkit-animation: kPQHBD 0.1s forwards;
   animation: kPQHBD 0.1s forwards;
+  -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
 }
 
@@ -4308,6 +4582,7 @@ exports[`TextInput select suggestion 2`] = `
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
+  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -4326,18 +4601,18 @@ exports[`TextInput select suggestion 2`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c5:focus >circle,
-.c5:focus >ellipse,
-.c5:focus >line,
-.c5:focus >path,
-.c5:focus >polygon,
-.c5:focus >polyline,
-.c5:focus >rect {
+.c5:focus > circle,
+.c5:focus > ellipse,
+.c5:focus > line,
+.c5:focus > path,
+.c5:focus > polygon,
+.c5:focus > polyline,
+.c5:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c5:focus ::-moz-focus-inner {
+.c5:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -4346,18 +4621,18 @@ exports[`TextInput select suggestion 2`] = `
   box-shadow: none;
 }
 
-.c5:focus:not(:focus-visible) >circle,
-.c5:focus:not(:focus-visible) >ellipse,
-.c5:focus:not(:focus-visible) >line,
-.c5:focus:not(:focus-visible) >path,
-.c5:focus:not(:focus-visible) >polygon,
-.c5:focus:not(:focus-visible) >polyline,
-.c5:focus:not(:focus-visible) >rect {
+.c5:focus:not(:focus-visible) > circle,
+.c5:focus:not(:focus-visible) > ellipse,
+.c5:focus:not(:focus-visible) > line,
+.c5:focus:not(:focus-visible) > path,
+.c5:focus:not(:focus-visible) > polygon,
+.c5:focus:not(:focus-visible) > polyline,
+.c5:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c5:focus:not(:focus-visible) ::-moz-focus-inner {
+.c5:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -4373,7 +4648,7 @@ exports[`TextInput select suggestion 2`] = `
   max-height: inherit;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c6 {
     padding: 6px;
   }
@@ -4381,7 +4656,13 @@ exports[`TextInput select suggestion 2`] = `
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
   .c1 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-align-items: stretch;
+    -webkit-box-align: stretch;
+    -ms-flex-align: stretch;
     align-items: stretch;
   }
 }
@@ -4446,20 +4727,21 @@ exports[`TextInput select suggestion 3`] = `""`;
 
 exports[`TextInput select suggestion 4`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 iQmOCy"
+  class="StyledGrommet-sc-19lkkz7-0 gIiCYk"
 >
   <div
-    class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 cWqzrJ"
+    class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 vweqL"
   >
     <input
       aria-autocomplete="list"
       aria-expanded="false"
       autocomplete="off"
-      class="StyledTextInput-sc-1x30a0s-0 dyjCId"
+      class="StyledTextInput-sc-1x30a0s-0 uwePV"
       data-testid="test-input"
       id="item"
       name="item"
       role="combobox"
+      value=""
     />
   </div>
 </div>
@@ -4488,7 +4770,7 @@ exports[`TextInput select with onSuggestionSelect when onSelect is present 1`] =
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid rgba(0, 0, 0, 0.33);
+  border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
 }
 
@@ -4497,18 +4779,18 @@ exports[`TextInput select with onSuggestionSelect when onSelect is present 1`] =
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c2:focus >circle,
-.c2:focus >ellipse,
-.c2:focus >line,
-.c2:focus >path,
-.c2:focus >polygon,
-.c2:focus >polyline,
-.c2:focus >rect {
+.c2:focus > circle,
+.c2:focus > ellipse,
+.c2:focus > line,
+.c2:focus > path,
+.c2:focus > polygon,
+.c2:focus > polyline,
+.c2:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c2:focus ::-moz-focus-inner {
+.c2:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -4524,7 +4806,7 @@ exports[`TextInput select with onSuggestionSelect when onSelect is present 1`] =
   color: #AAAAAA;
 }
 
-.c2 ::-webkit-search-decoration {
+.c2::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -4558,6 +4840,7 @@ exports[`TextInput select with onSuggestionSelect when onSelect is present 1`] =
       id="item"
       name="item"
       role="combobox"
+      value=""
     />
   </div>
 </div>
@@ -4586,7 +4869,7 @@ exports[`TextInput should have padding when plain 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid rgba(0, 0, 0, 0.33);
+  border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
   outline: none;
   border: none;
@@ -4597,18 +4880,18 @@ exports[`TextInput should have padding when plain 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c2:focus >circle,
-.c2:focus >ellipse,
-.c2:focus >line,
-.c2:focus >path,
-.c2:focus >polygon,
-.c2:focus >polyline,
-.c2:focus >rect {
+.c2:focus > circle,
+.c2:focus > ellipse,
+.c2:focus > line,
+.c2:focus > path,
+.c2:focus > polygon,
+.c2:focus > polyline,
+.c2:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c2:focus ::-moz-focus-inner {
+.c2:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -4624,7 +4907,7 @@ exports[`TextInput should have padding when plain 1`] = `
   color: #AAAAAA;
 }
 
-.c2 ::-webkit-search-decoration {
+.c2::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -4654,6 +4937,7 @@ exports[`TextInput should have padding when plain 1`] = `
       class="c2"
       name="name"
       placeholder="should still have padding"
+      value=""
     />
   </div>
 </div>
@@ -4682,7 +4966,7 @@ exports[`TextInput should hide non-string placeholder when having a value 1`] = 
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid rgba(0, 0, 0, 0.33);
+  border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
 }
 
@@ -4691,18 +4975,18 @@ exports[`TextInput should hide non-string placeholder when having a value 1`] = 
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c2:focus >circle,
-.c2:focus >ellipse,
-.c2:focus >line,
-.c2:focus >path,
-.c2:focus >polygon,
-.c2:focus >polyline,
-.c2:focus >rect {
+.c2:focus > circle,
+.c2:focus > ellipse,
+.c2:focus > line,
+.c2:focus > path,
+.c2:focus > polygon,
+.c2:focus > polyline,
+.c2:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c2:focus ::-moz-focus-inner {
+.c2:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -4718,7 +5002,7 @@ exports[`TextInput should hide non-string placeholder when having a value 1`] = 
   color: #AAAAAA;
 }
 
-.c2 ::-webkit-search-decoration {
+.c2::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -4778,7 +5062,7 @@ exports[`TextInput should not have accessibility violations 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid rgba(0, 0, 0, 0.33);
+  border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
 }
 
@@ -4787,18 +5071,18 @@ exports[`TextInput should not have accessibility violations 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c2:focus >circle,
-.c2:focus >ellipse,
-.c2:focus >line,
-.c2:focus >path,
-.c2:focus >polygon,
-.c2:focus >polyline,
-.c2:focus >rect {
+.c2:focus > circle,
+.c2:focus > ellipse,
+.c2:focus > line,
+.c2:focus > path,
+.c2:focus > polygon,
+.c2:focus > polyline,
+.c2:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c2:focus ::-moz-focus-inner {
+.c2:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -4814,7 +5098,7 @@ exports[`TextInput should not have accessibility violations 1`] = `
   color: #AAAAAA;
 }
 
-.c2 ::-webkit-search-decoration {
+.c2::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -4844,6 +5128,7 @@ exports[`TextInput should not have accessibility violations 1`] = `
       autocomplete="off"
       class="c2"
       name="item"
+      value=""
     />
   </div>
 </div>
@@ -4872,7 +5157,7 @@ exports[`TextInput should not have padding when plain="full" 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid rgba(0, 0, 0, 0.33);
+  border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
   outline: none;
   border: none;
@@ -4884,18 +5169,18 @@ exports[`TextInput should not have padding when plain="full" 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c2:focus >circle,
-.c2:focus >ellipse,
-.c2:focus >line,
-.c2:focus >path,
-.c2:focus >polygon,
-.c2:focus >polyline,
-.c2:focus >rect {
+.c2:focus > circle,
+.c2:focus > ellipse,
+.c2:focus > line,
+.c2:focus > path,
+.c2:focus > polygon,
+.c2:focus > polyline,
+.c2:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c2:focus ::-moz-focus-inner {
+.c2:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -4911,7 +5196,7 @@ exports[`TextInput should not have padding when plain="full" 1`] = `
   color: #AAAAAA;
 }
 
-.c2 ::-webkit-search-decoration {
+.c2::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -4941,12 +5226,14 @@ exports[`TextInput should not have padding when plain="full" 1`] = `
       class="c2"
       name="name"
       placeholder="should not have padding"
+      value=""
     />
   </div>
 </div>
 `;
 
-exports[`TextInput should only show default placeholder when placeholder is a\\n  string 1`] = `
+exports[`TextInput should only show default placeholder when placeholder is a
+  string 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -4969,7 +5256,7 @@ exports[`TextInput should only show default placeholder when placeholder is a\\n
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid rgba(0, 0, 0, 0.33);
+  border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
 }
 
@@ -4978,18 +5265,18 @@ exports[`TextInput should only show default placeholder when placeholder is a\\n
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c2:focus >circle,
-.c2:focus >ellipse,
-.c2:focus >line,
-.c2:focus >path,
-.c2:focus >polygon,
-.c2:focus >polyline,
-.c2:focus >rect {
+.c2:focus > circle,
+.c2:focus > ellipse,
+.c2:focus > line,
+.c2:focus > path,
+.c2:focus > polygon,
+.c2:focus > polyline,
+.c2:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c2:focus ::-moz-focus-inner {
+.c2:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -5005,7 +5292,7 @@ exports[`TextInput should only show default placeholder when placeholder is a\\n
   color: #AAAAAA;
 }
 
-.c2 ::-webkit-search-decoration {
+.c2::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -5037,25 +5324,28 @@ exports[`TextInput should only show default placeholder when placeholder is a\\n
       id="placeholder"
       name="placeholder"
       placeholder="placeholder text"
+      value=""
     />
   </div>
 </div>
 `;
 
-exports[`TextInput should only show default placeholder when placeholder is a\\n  string 2`] = `
+exports[`TextInput should only show default placeholder when placeholder is a
+  string 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 iQmOCy"
+  class="StyledGrommet-sc-19lkkz7-0 gIiCYk"
 >
   <div
-    class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 cWqzrJ"
+    class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 vweqL"
   >
     <input
       autocomplete="off"
-      class="StyledTextInput-sc-1x30a0s-0 kPNQeA"
+      class="StyledTextInput-sc-1x30a0s-0 hmScCY"
       data-testid="placeholder"
       id="placeholder"
       name="placeholder"
       placeholder="placeholder text"
+      value=""
     />
   </div>
 </div>
@@ -5089,7 +5379,7 @@ exports[`TextInput should show non-string placeholder 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid rgba(0, 0, 0, 0.33);
+  border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
 }
 
@@ -5098,18 +5388,18 @@ exports[`TextInput should show non-string placeholder 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c4:focus >circle,
-.c4:focus >ellipse,
-.c4:focus >line,
-.c4:focus >path,
-.c4:focus >polygon,
-.c4:focus >polyline,
-.c4:focus >rect {
+.c4:focus > circle,
+.c4:focus > ellipse,
+.c4:focus > line,
+.c4:focus > path,
+.c4:focus > polygon,
+.c4:focus > polyline,
+.c4:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c4:focus ::-moz-focus-inner {
+.c4:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -5125,7 +5415,7 @@ exports[`TextInput should show non-string placeholder 1`] = `
   color: #AAAAAA;
 }
 
-.c4 ::-webkit-search-decoration {
+.c4::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -5148,8 +5438,16 @@ exports[`TextInput should show non-string placeholder 1`] = `
   position: absolute;
   left: 11px;
   top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
   transform: translateY(-50%);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
   pointer-events: none;
 }
@@ -5175,6 +5473,7 @@ exports[`TextInput should show non-string placeholder 1`] = `
       data-testid="test-styled-placeholder"
       id="styled-placeholder"
       name="styled-placeholder"
+      value=""
     />
   </div>
 </div>
@@ -5182,33 +5481,51 @@ exports[`TextInput should show non-string placeholder 1`] = `
 
 exports[`TextInput small drop height 1`] = `
 .c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   overflow: auto;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.20);
+  box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
 }
 
 .c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   overflow: auto;
 }
 
 .c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
   align-items: flex-start;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   padding: 12px;
 }
@@ -5228,8 +5545,12 @@ exports[`TextInput small drop height 1`] = `
   background-color: #FFFFFF;
   color: #444444;
   opacity: 0;
+  -webkit-transform-origin: top left;
+  -ms-transform-origin: top left;
   transform-origin: top left;
+  -webkit-animation: kPQHBD 0.1s forwards;
   animation: kPQHBD 0.1s forwards;
+  -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
 }
 
@@ -5238,6 +5559,7 @@ exports[`TextInput small drop height 1`] = `
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
+  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -5256,18 +5578,18 @@ exports[`TextInput small drop height 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c5:focus >circle,
-.c5:focus >ellipse,
-.c5:focus >line,
-.c5:focus >path,
-.c5:focus >polygon,
-.c5:focus >polyline,
-.c5:focus >rect {
+.c5:focus > circle,
+.c5:focus > ellipse,
+.c5:focus > line,
+.c5:focus > path,
+.c5:focus > polygon,
+.c5:focus > polyline,
+.c5:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c5:focus ::-moz-focus-inner {
+.c5:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -5276,18 +5598,18 @@ exports[`TextInput small drop height 1`] = `
   box-shadow: none;
 }
 
-.c5:focus:not(:focus-visible) >circle,
-.c5:focus:not(:focus-visible) >ellipse,
-.c5:focus:not(:focus-visible) >line,
-.c5:focus:not(:focus-visible) >path,
-.c5:focus:not(:focus-visible) >polygon,
-.c5:focus:not(:focus-visible) >polyline,
-.c5:focus:not(:focus-visible) >rect {
+.c5:focus:not(:focus-visible) > circle,
+.c5:focus:not(:focus-visible) > ellipse,
+.c5:focus:not(:focus-visible) > line,
+.c5:focus:not(:focus-visible) > path,
+.c5:focus:not(:focus-visible) > polygon,
+.c5:focus:not(:focus-visible) > polyline,
+.c5:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c5:focus:not(:focus-visible) ::-moz-focus-inner {
+.c5:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -5303,7 +5625,7 @@ exports[`TextInput small drop height 1`] = `
   max-height: 192px;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c6 {
     padding: 6px;
   }
@@ -5311,7 +5633,13 @@ exports[`TextInput small drop height 1`] = `
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
   .c1 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-align-items: stretch;
+    -webkit-box-align: stretch;
+    -ms-flex-align: stretch;
     align-items: stretch;
   }
 }
@@ -5387,7 +5715,7 @@ exports[`TextInput suggestions 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid rgba(0, 0, 0, 0.33);
+  border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
 }
 
@@ -5396,18 +5724,18 @@ exports[`TextInput suggestions 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus >circle,
-.c1:focus >ellipse,
-.c1:focus >line,
-.c1:focus >path,
-.c1:focus >polygon,
-.c1:focus >polyline,
-.c1:focus >rect {
+.c1:focus > circle,
+.c1:focus > ellipse,
+.c1:focus > line,
+.c1:focus > path,
+.c1:focus > polygon,
+.c1:focus > polyline,
+.c1:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus ::-moz-focus-inner {
+.c1:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -5423,7 +5751,7 @@ exports[`TextInput suggestions 1`] = `
   color: #AAAAAA;
 }
 
-.c1 ::-webkit-search-decoration {
+.c1::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -5454,39 +5782,58 @@ exports[`TextInput suggestions 1`] = `
     id="item"
     name="item"
     role="combobox"
+    value=""
   />
 </div>
 `;
 
 exports[`TextInput suggestions 2`] = `
 .c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   overflow: auto;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.20);
+  box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
 }
 
 .c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   overflow: auto;
 }
 
 .c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
   align-items: flex-start;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   padding: 12px;
 }
@@ -5506,8 +5853,12 @@ exports[`TextInput suggestions 2`] = `
   background-color: #FFFFFF;
   color: #444444;
   opacity: 0;
+  -webkit-transform-origin: top left;
+  -ms-transform-origin: top left;
   transform-origin: top left;
+  -webkit-animation: kPQHBD 0.1s forwards;
   animation: kPQHBD 0.1s forwards;
+  -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
 }
 
@@ -5516,6 +5867,7 @@ exports[`TextInput suggestions 2`] = `
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
+  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -5534,18 +5886,18 @@ exports[`TextInput suggestions 2`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c5:focus >circle,
-.c5:focus >ellipse,
-.c5:focus >line,
-.c5:focus >path,
-.c5:focus >polygon,
-.c5:focus >polyline,
-.c5:focus >rect {
+.c5:focus > circle,
+.c5:focus > ellipse,
+.c5:focus > line,
+.c5:focus > path,
+.c5:focus > polygon,
+.c5:focus > polyline,
+.c5:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c5:focus ::-moz-focus-inner {
+.c5:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -5554,18 +5906,18 @@ exports[`TextInput suggestions 2`] = `
   box-shadow: none;
 }
 
-.c5:focus:not(:focus-visible) >circle,
-.c5:focus:not(:focus-visible) >ellipse,
-.c5:focus:not(:focus-visible) >line,
-.c5:focus:not(:focus-visible) >path,
-.c5:focus:not(:focus-visible) >polygon,
-.c5:focus:not(:focus-visible) >polyline,
-.c5:focus:not(:focus-visible) >rect {
+.c5:focus:not(:focus-visible) > circle,
+.c5:focus:not(:focus-visible) > ellipse,
+.c5:focus:not(:focus-visible) > line,
+.c5:focus:not(:focus-visible) > path,
+.c5:focus:not(:focus-visible) > polygon,
+.c5:focus:not(:focus-visible) > polyline,
+.c5:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c5:focus:not(:focus-visible) ::-moz-focus-inner {
+.c5:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -5581,7 +5933,7 @@ exports[`TextInput suggestions 2`] = `
   max-height: inherit;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c6 {
     padding: 6px;
   }
@@ -5589,7 +5941,13 @@ exports[`TextInput suggestions 2`] = `
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
   .c1 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-align-items: stretch;
+    -webkit-box-align: stretch;
+    -ms-flex-align: stretch;
     align-items: stretch;
   }
 }
@@ -5675,7 +6033,7 @@ exports[`TextInput textAlign end 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid rgba(0, 0, 0, 0.33);
+  border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
   text-align: right;
 }
@@ -5685,18 +6043,18 @@ exports[`TextInput textAlign end 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c2:focus >circle,
-.c2:focus >ellipse,
-.c2:focus >line,
-.c2:focus >path,
-.c2:focus >polygon,
-.c2:focus >polyline,
-.c2:focus >rect {
+.c2:focus > circle,
+.c2:focus > ellipse,
+.c2:focus > line,
+.c2:focus > path,
+.c2:focus > polygon,
+.c2:focus > polyline,
+.c2:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c2:focus ::-moz-focus-inner {
+.c2:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -5712,7 +6070,7 @@ exports[`TextInput textAlign end 1`] = `
   color: #AAAAAA;
 }
 
-.c2 ::-webkit-search-decoration {
+.c2::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -5769,7 +6127,7 @@ exports[`TextInput width 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid rgba(0, 0, 0, 0.33);
+  border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
   width: 384px;
 }
@@ -5779,18 +6137,18 @@ exports[`TextInput width 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c2:focus >circle,
-.c2:focus >ellipse,
-.c2:focus >line,
-.c2:focus >path,
-.c2:focus >polygon,
-.c2:focus >polyline,
-.c2:focus >rect {
+.c2:focus > circle,
+.c2:focus > ellipse,
+.c2:focus > line,
+.c2:focus > path,
+.c2:focus > polygon,
+.c2:focus > polyline,
+.c2:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c2:focus ::-moz-focus-inner {
+.c2:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -5806,7 +6164,7 @@ exports[`TextInput width 1`] = `
   color: #AAAAAA;
 }
 
-.c2 ::-webkit-search-decoration {
+.c2::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -5832,7 +6190,7 @@ exports[`TextInput width 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid rgba(0, 0, 0, 0.33);
+  border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
   max-width: 100%;
   width: 384px;
@@ -5843,18 +6201,18 @@ exports[`TextInput width 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus >circle,
-.c3:focus >ellipse,
-.c3:focus >line,
-.c3:focus >path,
-.c3:focus >polygon,
-.c3:focus >polyline,
-.c3:focus >rect {
+.c3:focus > circle,
+.c3:focus > ellipse,
+.c3:focus > line,
+.c3:focus > path,
+.c3:focus > polygon,
+.c3:focus > polyline,
+.c3:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus ::-moz-focus-inner {
+.c3:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -5870,7 +6228,7 @@ exports[`TextInput width 1`] = `
   color: #AAAAAA;
 }
 
-.c3 ::-webkit-search-decoration {
+.c3::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 

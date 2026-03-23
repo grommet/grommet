@@ -1,58 +1,91 @@
-// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+// Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Carousel basic 1`] = `
 <DocumentFragment>
   .c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
 }
 
 .c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   height: 100%;
 }
 
 .c9 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   width: 100%;
 }
 
 .c11 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
   justify-content: flex-end;
 }
 
 .c12 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
   flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
 }
 
 .c6 {
   display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
@@ -85,6 +118,8 @@ exports[`Carousel basic 1`] = `
 
 .c14 {
   display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
@@ -120,6 +155,7 @@ exports[`Carousel basic 1`] = `
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
+  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -130,6 +166,8 @@ exports[`Carousel basic 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
+  min-width: 24px;
+  min-height: 24px;
   opacity: 0.3;
   cursor: default;
   height: 100%;
@@ -141,18 +179,18 @@ exports[`Carousel basic 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c5:focus >circle,
-.c5:focus >ellipse,
-.c5:focus >line,
-.c5:focus >path,
-.c5:focus >polygon,
-.c5:focus >polyline,
-.c5:focus >rect {
+.c5:focus > circle,
+.c5:focus > ellipse,
+.c5:focus > line,
+.c5:focus > path,
+.c5:focus > polygon,
+.c5:focus > polyline,
+.c5:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c5:focus ::-moz-focus-inner {
+.c5:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -161,18 +199,18 @@ exports[`Carousel basic 1`] = `
   box-shadow: none;
 }
 
-.c5:focus:not(:focus-visible) >circle,
-.c5:focus:not(:focus-visible) >ellipse,
-.c5:focus:not(:focus-visible) >line,
-.c5:focus:not(:focus-visible) >path,
-.c5:focus:not(:focus-visible) >polygon,
-.c5:focus:not(:focus-visible) >polyline,
-.c5:focus:not(:focus-visible) >rect {
+.c5:focus:not(:focus-visible) > circle,
+.c5:focus:not(:focus-visible) > ellipse,
+.c5:focus:not(:focus-visible) > line,
+.c5:focus:not(:focus-visible) > path,
+.c5:focus:not(:focus-visible) > polygon,
+.c5:focus:not(:focus-visible) > polyline,
+.c5:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c5:focus:not(:focus-visible) ::-moz-focus-inner {
+.c5:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -181,6 +219,7 @@ exports[`Carousel basic 1`] = `
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
+  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -191,6 +230,8 @@ exports[`Carousel basic 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
+  min-width: 24px;
+  min-height: 24px;
   line-height: 0;
   padding: 12px;
 }
@@ -200,18 +241,18 @@ exports[`Carousel basic 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c13:focus >circle,
-.c13:focus >ellipse,
-.c13:focus >line,
-.c13:focus >path,
-.c13:focus >polygon,
-.c13:focus >polyline,
-.c13:focus >rect {
+.c13:focus > circle,
+.c13:focus > ellipse,
+.c13:focus > line,
+.c13:focus > path,
+.c13:focus > polygon,
+.c13:focus > polyline,
+.c13:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c13:focus ::-moz-focus-inner {
+.c13:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -220,18 +261,18 @@ exports[`Carousel basic 1`] = `
   box-shadow: none;
 }
 
-.c13:focus:not(:focus-visible) >circle,
-.c13:focus:not(:focus-visible) >ellipse,
-.c13:focus:not(:focus-visible) >line,
-.c13:focus:not(:focus-visible) >path,
-.c13:focus:not(:focus-visible) >polygon,
-.c13:focus:not(:focus-visible) >polyline,
-.c13:focus:not(:focus-visible) >rect {
+.c13:focus:not(:focus-visible) > circle,
+.c13:focus:not(:focus-visible) > ellipse,
+.c13:focus:not(:focus-visible) > line,
+.c13:focus:not(:focus-visible) > path,
+.c13:focus:not(:focus-visible) > polygon,
+.c13:focus:not(:focus-visible) > polyline,
+.c13:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c13:focus:not(:focus-visible) ::-moz-focus-inner {
+.c13:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -240,6 +281,7 @@ exports[`Carousel basic 1`] = `
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
+  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -250,12 +292,14 @@ exports[`Carousel basic 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
+  min-width: 24px;
+  min-height: 24px;
   height: 100%;
   line-height: 0;
 }
 
 .c16:hover {
-  background-color: rgba(221, 221, 221, 0.4);
+  background-color: rgba(221,221,221,0.4);
   color: #000000;
 }
 
@@ -264,18 +308,18 @@ exports[`Carousel basic 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c16:focus >circle,
-.c16:focus >ellipse,
-.c16:focus >line,
-.c16:focus >path,
-.c16:focus >polygon,
-.c16:focus >polyline,
-.c16:focus >rect {
+.c16:focus > circle,
+.c16:focus > ellipse,
+.c16:focus > line,
+.c16:focus > path,
+.c16:focus > polygon,
+.c16:focus > polyline,
+.c16:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c16:focus ::-moz-focus-inner {
+.c16:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -284,18 +328,18 @@ exports[`Carousel basic 1`] = `
   box-shadow: none;
 }
 
-.c16:focus:not(:focus-visible) >circle,
-.c16:focus:not(:focus-visible) >ellipse,
-.c16:focus:not(:focus-visible) >line,
-.c16:focus:not(:focus-visible) >path,
-.c16:focus:not(:focus-visible) >polygon,
-.c16:focus:not(:focus-visible) >polyline,
-.c16:focus:not(:focus-visible) >rect {
+.c16:focus:not(:focus-visible) > circle,
+.c16:focus:not(:focus-visible) > ellipse,
+.c16:focus:not(:focus-visible) > line,
+.c16:focus:not(:focus-visible) > path,
+.c16:focus:not(:focus-visible) > polygon,
+.c16:focus:not(:focus-visible) > polyline,
+.c16:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c16:focus:not(:focus-visible) ::-moz-focus-inner {
+.c16:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -310,6 +354,7 @@ exports[`Carousel basic 1`] = `
   width: 100%;
   height: 100%;
   overflow: hidden;
+  -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
 }
 
@@ -319,6 +364,7 @@ exports[`Carousel basic 1`] = `
   width: 100%;
   height: 100%;
   overflow: hidden;
+  -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
 }
 
@@ -326,7 +372,13 @@ exports[`Carousel basic 1`] = `
   position: absolute;
   z-index: 1;
   left: 0;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
 }
 
@@ -334,7 +386,13 @@ exports[`Carousel basic 1`] = `
   position: absolute;
   z-index: 1;
   bottom: 0;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
 }
 
@@ -342,7 +400,13 @@ exports[`Carousel basic 1`] = `
   position: absolute;
   z-index: 1;
   right: 0;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
 }
 
@@ -485,56 +549,89 @@ exports[`Carousel basic 1`] = `
 exports[`Carousel basic without grommet wrapper 1`] = `
 <DocumentFragment>
   .c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
 }
 
 .c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   height: 100%;
 }
 
 .c8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   width: 100%;
 }
 
 .c10 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
   justify-content: flex-end;
 }
 
 .c11 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
   flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
 }
 
 .c5 {
   display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
@@ -567,6 +664,8 @@ exports[`Carousel basic without grommet wrapper 1`] = `
 
 .c13 {
   display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
@@ -602,6 +701,7 @@ exports[`Carousel basic without grommet wrapper 1`] = `
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
+  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -612,6 +712,8 @@ exports[`Carousel basic without grommet wrapper 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
+  min-width: 24px;
+  min-height: 24px;
   opacity: 0.3;
   cursor: default;
   height: 100%;
@@ -623,18 +725,18 @@ exports[`Carousel basic without grommet wrapper 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c4:focus >circle,
-.c4:focus >ellipse,
-.c4:focus >line,
-.c4:focus >path,
-.c4:focus >polygon,
-.c4:focus >polyline,
-.c4:focus >rect {
+.c4:focus > circle,
+.c4:focus > ellipse,
+.c4:focus > line,
+.c4:focus > path,
+.c4:focus > polygon,
+.c4:focus > polyline,
+.c4:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c4:focus ::-moz-focus-inner {
+.c4:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -643,18 +745,18 @@ exports[`Carousel basic without grommet wrapper 1`] = `
   box-shadow: none;
 }
 
-.c4:focus:not(:focus-visible) >circle,
-.c4:focus:not(:focus-visible) >ellipse,
-.c4:focus:not(:focus-visible) >line,
-.c4:focus:not(:focus-visible) >path,
-.c4:focus:not(:focus-visible) >polygon,
-.c4:focus:not(:focus-visible) >polyline,
-.c4:focus:not(:focus-visible) >rect {
+.c4:focus:not(:focus-visible) > circle,
+.c4:focus:not(:focus-visible) > ellipse,
+.c4:focus:not(:focus-visible) > line,
+.c4:focus:not(:focus-visible) > path,
+.c4:focus:not(:focus-visible) > polygon,
+.c4:focus:not(:focus-visible) > polyline,
+.c4:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c4:focus:not(:focus-visible) ::-moz-focus-inner {
+.c4:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -663,6 +765,7 @@ exports[`Carousel basic without grommet wrapper 1`] = `
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
+  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -673,6 +776,8 @@ exports[`Carousel basic without grommet wrapper 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
+  min-width: 24px;
+  min-height: 24px;
   line-height: 0;
   padding: 12px;
 }
@@ -682,18 +787,18 @@ exports[`Carousel basic without grommet wrapper 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c12:focus >circle,
-.c12:focus >ellipse,
-.c12:focus >line,
-.c12:focus >path,
-.c12:focus >polygon,
-.c12:focus >polyline,
-.c12:focus >rect {
+.c12:focus > circle,
+.c12:focus > ellipse,
+.c12:focus > line,
+.c12:focus > path,
+.c12:focus > polygon,
+.c12:focus > polyline,
+.c12:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c12:focus ::-moz-focus-inner {
+.c12:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -702,18 +807,18 @@ exports[`Carousel basic without grommet wrapper 1`] = `
   box-shadow: none;
 }
 
-.c12:focus:not(:focus-visible) >circle,
-.c12:focus:not(:focus-visible) >ellipse,
-.c12:focus:not(:focus-visible) >line,
-.c12:focus:not(:focus-visible) >path,
-.c12:focus:not(:focus-visible) >polygon,
-.c12:focus:not(:focus-visible) >polyline,
-.c12:focus:not(:focus-visible) >rect {
+.c12:focus:not(:focus-visible) > circle,
+.c12:focus:not(:focus-visible) > ellipse,
+.c12:focus:not(:focus-visible) > line,
+.c12:focus:not(:focus-visible) > path,
+.c12:focus:not(:focus-visible) > polygon,
+.c12:focus:not(:focus-visible) > polyline,
+.c12:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c12:focus:not(:focus-visible) ::-moz-focus-inner {
+.c12:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -722,6 +827,7 @@ exports[`Carousel basic without grommet wrapper 1`] = `
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
+  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -732,12 +838,14 @@ exports[`Carousel basic without grommet wrapper 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
+  min-width: 24px;
+  min-height: 24px;
   height: 100%;
   line-height: 0;
 }
 
 .c15:hover {
-  background-color: rgba(221, 221, 221, 0.4);
+  background-color: rgba(221,221,221,0.4);
   color: #000000;
 }
 
@@ -746,18 +854,18 @@ exports[`Carousel basic without grommet wrapper 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c15:focus >circle,
-.c15:focus >ellipse,
-.c15:focus >line,
-.c15:focus >path,
-.c15:focus >polygon,
-.c15:focus >polyline,
-.c15:focus >rect {
+.c15:focus > circle,
+.c15:focus > ellipse,
+.c15:focus > line,
+.c15:focus > path,
+.c15:focus > polygon,
+.c15:focus > polyline,
+.c15:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c15:focus ::-moz-focus-inner {
+.c15:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -766,18 +874,18 @@ exports[`Carousel basic without grommet wrapper 1`] = `
   box-shadow: none;
 }
 
-.c15:focus:not(:focus-visible) >circle,
-.c15:focus:not(:focus-visible) >ellipse,
-.c15:focus:not(:focus-visible) >line,
-.c15:focus:not(:focus-visible) >path,
-.c15:focus:not(:focus-visible) >polygon,
-.c15:focus:not(:focus-visible) >polyline,
-.c15:focus:not(:focus-visible) >rect {
+.c15:focus:not(:focus-visible) > circle,
+.c15:focus:not(:focus-visible) > ellipse,
+.c15:focus:not(:focus-visible) > line,
+.c15:focus:not(:focus-visible) > path,
+.c15:focus:not(:focus-visible) > polygon,
+.c15:focus:not(:focus-visible) > polyline,
+.c15:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c15:focus:not(:focus-visible) ::-moz-focus-inner {
+.c15:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -792,6 +900,7 @@ exports[`Carousel basic without grommet wrapper 1`] = `
   width: 100%;
   height: 100%;
   overflow: hidden;
+  -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
 }
 
@@ -801,6 +910,7 @@ exports[`Carousel basic without grommet wrapper 1`] = `
   width: 100%;
   height: 100%;
   overflow: hidden;
+  -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
 }
 
@@ -808,7 +918,13 @@ exports[`Carousel basic without grommet wrapper 1`] = `
   position: absolute;
   z-index: 1;
   left: 0;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
 }
 
@@ -816,7 +932,13 @@ exports[`Carousel basic without grommet wrapper 1`] = `
   position: absolute;
   z-index: 1;
   bottom: 0;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
 }
 
@@ -824,7 +946,13 @@ exports[`Carousel basic without grommet wrapper 1`] = `
   position: absolute;
   z-index: 1;
   right: 0;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
 }
 
@@ -953,26 +1081,38 @@ exports[`Carousel basic without grommet wrapper 1`] = `
 exports[`Carousel controlled component 1`] = `
 <DocumentFragment>
   .c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
 }
 
 .c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   height: 100%;
 }
 
 .c6 {
   display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
@@ -1008,6 +1148,7 @@ exports[`Carousel controlled component 1`] = `
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
+  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -1018,12 +1159,14 @@ exports[`Carousel controlled component 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
+  min-width: 24px;
+  min-height: 24px;
   height: 100%;
   line-height: 0;
 }
 
 .c5:hover {
-  background-color: rgba(221, 221, 221, 0.4);
+  background-color: rgba(221,221,221,0.4);
   color: #000000;
 }
 
@@ -1032,18 +1175,18 @@ exports[`Carousel controlled component 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c5:focus >circle,
-.c5:focus >ellipse,
-.c5:focus >line,
-.c5:focus >path,
-.c5:focus >polygon,
-.c5:focus >polyline,
-.c5:focus >rect {
+.c5:focus > circle,
+.c5:focus > ellipse,
+.c5:focus > line,
+.c5:focus > path,
+.c5:focus > polygon,
+.c5:focus > polyline,
+.c5:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c5:focus ::-moz-focus-inner {
+.c5:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -1052,18 +1195,18 @@ exports[`Carousel controlled component 1`] = `
   box-shadow: none;
 }
 
-.c5:focus:not(:focus-visible) >circle,
-.c5:focus:not(:focus-visible) >ellipse,
-.c5:focus:not(:focus-visible) >line,
-.c5:focus:not(:focus-visible) >path,
-.c5:focus:not(:focus-visible) >polygon,
-.c5:focus:not(:focus-visible) >polyline,
-.c5:focus:not(:focus-visible) >rect {
+.c5:focus:not(:focus-visible) > circle,
+.c5:focus:not(:focus-visible) > ellipse,
+.c5:focus:not(:focus-visible) > line,
+.c5:focus:not(:focus-visible) > path,
+.c5:focus:not(:focus-visible) > polygon,
+.c5:focus:not(:focus-visible) > polyline,
+.c5:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c5:focus:not(:focus-visible) ::-moz-focus-inner {
+.c5:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -1072,6 +1215,7 @@ exports[`Carousel controlled component 1`] = `
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
+  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -1082,6 +1226,8 @@ exports[`Carousel controlled component 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
+  min-width: 24px;
+  min-height: 24px;
   opacity: 0.3;
   cursor: default;
   height: 100%;
@@ -1093,18 +1239,18 @@ exports[`Carousel controlled component 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c10:focus >circle,
-.c10:focus >ellipse,
-.c10:focus >line,
-.c10:focus >path,
-.c10:focus >polygon,
-.c10:focus >polyline,
-.c10:focus >rect {
+.c10:focus > circle,
+.c10:focus > ellipse,
+.c10:focus > line,
+.c10:focus > path,
+.c10:focus > polygon,
+.c10:focus > polyline,
+.c10:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c10:focus ::-moz-focus-inner {
+.c10:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -1113,18 +1259,18 @@ exports[`Carousel controlled component 1`] = `
   box-shadow: none;
 }
 
-.c10:focus:not(:focus-visible) >circle,
-.c10:focus:not(:focus-visible) >ellipse,
-.c10:focus:not(:focus-visible) >line,
-.c10:focus:not(:focus-visible) >path,
-.c10:focus:not(:focus-visible) >polygon,
-.c10:focus:not(:focus-visible) >polyline,
-.c10:focus:not(:focus-visible) >rect {
+.c10:focus:not(:focus-visible) > circle,
+.c10:focus:not(:focus-visible) > ellipse,
+.c10:focus:not(:focus-visible) > line,
+.c10:focus:not(:focus-visible) > path,
+.c10:focus:not(:focus-visible) > polygon,
+.c10:focus:not(:focus-visible) > polyline,
+.c10:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c10:focus:not(:focus-visible) ::-moz-focus-inner {
+.c10:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -1139,6 +1285,7 @@ exports[`Carousel controlled component 1`] = `
   width: 100%;
   height: 100%;
   overflow: hidden;
+  -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
 }
 
@@ -1148,6 +1295,7 @@ exports[`Carousel controlled component 1`] = `
   width: 100%;
   height: 100%;
   overflow: hidden;
+  -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
 }
 
@@ -1155,7 +1303,13 @@ exports[`Carousel controlled component 1`] = `
   position: absolute;
   z-index: 1;
   left: 0;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
 }
 
@@ -1163,7 +1317,13 @@ exports[`Carousel controlled component 1`] = `
   position: absolute;
   z-index: 1;
   right: 0;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
 }
 

@@ -1,27 +1,46 @@
-// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+// Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Tag basic 1`] = `
 .c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
-  border: solid 1px rgba(0, 0, 0, 0.33);
+  border: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
   flex-direction: row;
+  min-width: -webkit-min-content;
+  min-width: -moz-min-content;
   min-width: min-content;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   border-radius: 48px;
 }
 
 .c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
+  min-width: -webkit-min-content;
+  min-width: -moz-min-content;
   min-width: min-content;
   padding-left: 12px;
   padding-right: 12px;
@@ -50,26 +69,26 @@ exports[`Tag basic 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c1 {
-    border: solid 1px rgba(0, 0, 0, 0.33);
+    border: solid 1px rgba(0,0,0,0.33);
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c1 {
     border-radius: 24px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c2 {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c2 {
     padding-top: 3px;
     padding-bottom: 3px;
@@ -112,26 +131,45 @@ exports[`Tag basic 1`] = `
 
 exports[`Tag basic outside grommet wrapper 1`] = `
 .c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
-  border: solid 1px rgba(0, 0, 0, 0.33);
+  border: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
   flex-direction: row;
+  min-width: -webkit-min-content;
+  min-width: -moz-min-content;
   min-width: min-content;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   border-radius: 48px;
 }
 
 .c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
+  min-width: -webkit-min-content;
+  min-width: -moz-min-content;
   min-width: min-content;
   padding-left: 12px;
   padding-right: 12px;
@@ -150,26 +188,26 @@ exports[`Tag basic outside grommet wrapper 1`] = `
   font-weight: 600;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c0 {
-    border: solid 1px rgba(0, 0, 0, 0.33);
+    border: solid 1px rgba(0,0,0,0.33);
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c0 {
     border-radius: 24px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c1 {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c1 {
     padding-top: 3px;
     padding-bottom: 3px;
@@ -208,12 +246,19 @@ exports[`Tag basic outside grommet wrapper 1`] = `
 
 exports[`Tag onClick 1`] = `
 .c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
+  min-width: -webkit-min-content;
+  min-width: -moz-min-content;
   min-width: min-content;
   padding-left: 12px;
   padding-right: 12px;
@@ -237,6 +282,7 @@ exports[`Tag onClick 1`] = `
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
+  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -254,18 +300,18 @@ exports[`Tag onClick 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus >circle,
-.c1:focus >ellipse,
-.c1:focus >line,
-.c1:focus >path,
-.c1:focus >polygon,
-.c1:focus >polyline,
-.c1:focus >rect {
+.c1:focus > circle,
+.c1:focus > ellipse,
+.c1:focus > line,
+.c1:focus > path,
+.c1:focus > polygon,
+.c1:focus > polyline,
+.c1:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus ::-moz-focus-inner {
+.c1:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -274,18 +320,18 @@ exports[`Tag onClick 1`] = `
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible) >circle,
-.c1:focus:not(:focus-visible) >ellipse,
-.c1:focus:not(:focus-visible) >line,
-.c1:focus:not(:focus-visible) >path,
-.c1:focus:not(:focus-visible) >polygon,
-.c1:focus:not(:focus-visible) >polyline,
-.c1:focus:not(:focus-visible) >rect {
+.c1:focus:not(:focus-visible) > circle,
+.c1:focus:not(:focus-visible) > ellipse,
+.c1:focus:not(:focus-visible) > line,
+.c1:focus:not(:focus-visible) > path,
+.c1:focus:not(:focus-visible) > polygon,
+.c1:focus:not(:focus-visible) > polyline,
+.c1:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible) ::-moz-focus-inner {
+.c1:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -300,31 +346,31 @@ exports[`Tag onClick 1`] = `
 }
 
 .c2 {
-  border: solid 1px rgba(0, 0, 0, 0.33);
+  border: solid 1px rgba(0,0,0,0.33);
   border-radius: 48px;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c3 {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c3 {
     padding-top: 3px;
     padding-bottom: 3px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c2 {
-    border: solid 1px rgba(0, 0, 0, 0.33);
+    border: solid 1px rgba(0,0,0,0.33);
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c2 {
     border-radius: 24px;
   }
@@ -356,26 +402,45 @@ exports[`Tag onClick 1`] = `
 
 exports[`Tag onRemove 1`] = `
 .c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
-  border: solid 1px rgba(0, 0, 0, 0.33);
+  border: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
   flex-direction: row;
+  min-width: -webkit-min-content;
+  min-width: -moz-min-content;
   min-width: min-content;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   border-radius: 48px;
 }
 
 .c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
+  min-width: -webkit-min-content;
+  min-width: -moz-min-content;
   min-width: min-content;
   padding-left: 12px;
   padding-right: 12px;
@@ -385,6 +450,8 @@ exports[`Tag onRemove 1`] = `
 
 .c7 {
   display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
@@ -431,6 +498,7 @@ exports[`Tag onRemove 1`] = `
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
+  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -442,6 +510,8 @@ exports[`Tag onRemove 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
+  min-width: 24px;
+  min-height: 24px;
   line-height: 0;
 }
 
@@ -450,18 +520,18 @@ exports[`Tag onRemove 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c5:focus >circle,
-.c5:focus >ellipse,
-.c5:focus >line,
-.c5:focus >path,
-.c5:focus >polygon,
-.c5:focus >polyline,
-.c5:focus >rect {
+.c5:focus > circle,
+.c5:focus > ellipse,
+.c5:focus > line,
+.c5:focus > path,
+.c5:focus > polygon,
+.c5:focus > polyline,
+.c5:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c5:focus ::-moz-focus-inner {
+.c5:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -470,18 +540,18 @@ exports[`Tag onRemove 1`] = `
   box-shadow: none;
 }
 
-.c5:focus:not(:focus-visible) >circle,
-.c5:focus:not(:focus-visible) >ellipse,
-.c5:focus:not(:focus-visible) >line,
-.c5:focus:not(:focus-visible) >path,
-.c5:focus:not(:focus-visible) >polygon,
-.c5:focus:not(:focus-visible) >polyline,
-.c5:focus:not(:focus-visible) >rect {
+.c5:focus:not(:focus-visible) > circle,
+.c5:focus:not(:focus-visible) > ellipse,
+.c5:focus:not(:focus-visible) > line,
+.c5:focus:not(:focus-visible) > path,
+.c5:focus:not(:focus-visible) > polygon,
+.c5:focus:not(:focus-visible) > polyline,
+.c5:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c5:focus:not(:focus-visible) ::-moz-focus-inner {
+.c5:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -499,33 +569,33 @@ exports[`Tag onRemove 1`] = `
   border-radius: 48px;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c1 {
-    border: solid 1px rgba(0, 0, 0, 0.33);
+    border: solid 1px rgba(0,0,0,0.33);
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c1 {
     border-radius: 24px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c2 {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c2 {
     padding-top: 3px;
     padding-bottom: 3px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c6 {
     border-radius: 24px;
   }
@@ -575,26 +645,45 @@ exports[`Tag onRemove 1`] = `
 exports[`Tag renders custom remove button kind and size 1`] = `
 <DocumentFragment>
   .c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
-  border: solid 1px rgba(0, 0, 0, 0.33);
+  border: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
   flex-direction: row;
+  min-width: -webkit-min-content;
+  min-width: -moz-min-content;
   min-width: min-content;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   border-radius: 48px;
 }
 
 .c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
+  min-width: -webkit-min-content;
+  min-width: -moz-min-content;
   min-width: min-content;
   padding-left: 12px;
   padding-right: 12px;
@@ -603,12 +692,19 @@ exports[`Tag renders custom remove button kind and size 1`] = `
 }
 
 .c8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
+  min-width: -webkit-min-content;
+  min-width: -moz-min-content;
   min-width: min-content;
   padding-left: 16px;
   padding-right: 16px;
@@ -617,12 +713,19 @@ exports[`Tag renders custom remove button kind and size 1`] = `
 }
 
 .c13 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
+  min-width: -webkit-min-content;
+  min-width: -moz-min-content;
   min-width: min-content;
   padding-left: 18px;
   padding-right: 18px;
@@ -632,6 +735,8 @@ exports[`Tag renders custom remove button kind and size 1`] = `
 
 .c7 {
   display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
@@ -664,6 +769,8 @@ exports[`Tag renders custom remove button kind and size 1`] = `
 
 .c12 {
   display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   width: 30px;
   height: 30px;
@@ -696,6 +803,8 @@ exports[`Tag renders custom remove button kind and size 1`] = `
 
 .c17 {
   display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   width: 36px;
   height: 36px;
@@ -764,12 +873,15 @@ exports[`Tag renders custom remove button kind and size 1`] = `
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
+  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
   overflow: visible;
   text-transform: none;
   margin: 12px;
+  min-width: 24px;
+  min-height: 24px;
   border: none;
   border-radius: 18px;
   padding: 4px 20px;
@@ -777,13 +889,21 @@ exports[`Tag renders custom remove button kind and size 1`] = `
   line-height: 0;
   background: blue;
   text-align: center;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
   transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
 }
 
-.c5 >svg {
+.c5 > svg {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
   align-self: center;
   vertical-align: middle;
 }
@@ -793,18 +913,18 @@ exports[`Tag renders custom remove button kind and size 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c5:focus >circle,
-.c5:focus >ellipse,
-.c5:focus >line,
-.c5:focus >path,
-.c5:focus >polygon,
-.c5:focus >polyline,
-.c5:focus >rect {
+.c5:focus > circle,
+.c5:focus > ellipse,
+.c5:focus > line,
+.c5:focus > path,
+.c5:focus > polygon,
+.c5:focus > polyline,
+.c5:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c5:focus ::-moz-focus-inner {
+.c5:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -813,18 +933,18 @@ exports[`Tag renders custom remove button kind and size 1`] = `
   box-shadow: none;
 }
 
-.c5:focus:not(:focus-visible) >circle,
-.c5:focus:not(:focus-visible) >ellipse,
-.c5:focus:not(:focus-visible) >line,
-.c5:focus:not(:focus-visible) >path,
-.c5:focus:not(:focus-visible) >polygon,
-.c5:focus:not(:focus-visible) >polyline,
-.c5:focus:not(:focus-visible) >rect {
+.c5:focus:not(:focus-visible) > circle,
+.c5:focus:not(:focus-visible) > ellipse,
+.c5:focus:not(:focus-visible) > line,
+.c5:focus:not(:focus-visible) > path,
+.c5:focus:not(:focus-visible) > polygon,
+.c5:focus:not(:focus-visible) > polyline,
+.c5:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c5:focus:not(:focus-visible) ::-moz-focus-inner {
+.c5:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -833,6 +953,7 @@ exports[`Tag renders custom remove button kind and size 1`] = `
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
+  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -842,6 +963,8 @@ exports[`Tag renders custom remove button kind and size 1`] = `
   margin-right: 18px;
   margin-top: 12px;
   margin-bottom: 12px;
+  min-width: 24px;
+  min-height: 24px;
   border: none;
   border-radius: 18px;
   padding: 4px 22px;
@@ -849,13 +972,21 @@ exports[`Tag renders custom remove button kind and size 1`] = `
   line-height: 0;
   background: blue;
   text-align: center;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
   transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
 }
 
-.c11 >svg {
+.c11 > svg {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
   align-self: center;
   vertical-align: middle;
 }
@@ -865,18 +996,18 @@ exports[`Tag renders custom remove button kind and size 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c11:focus >circle,
-.c11:focus >ellipse,
-.c11:focus >line,
-.c11:focus >path,
-.c11:focus >polygon,
-.c11:focus >polyline,
-.c11:focus >rect {
+.c11:focus > circle,
+.c11:focus > ellipse,
+.c11:focus > line,
+.c11:focus > path,
+.c11:focus > polygon,
+.c11:focus > polyline,
+.c11:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c11:focus ::-moz-focus-inner {
+.c11:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -885,18 +1016,18 @@ exports[`Tag renders custom remove button kind and size 1`] = `
   box-shadow: none;
 }
 
-.c11:focus:not(:focus-visible) >circle,
-.c11:focus:not(:focus-visible) >ellipse,
-.c11:focus:not(:focus-visible) >line,
-.c11:focus:not(:focus-visible) >path,
-.c11:focus:not(:focus-visible) >polygon,
-.c11:focus:not(:focus-visible) >polyline,
-.c11:focus:not(:focus-visible) >rect {
+.c11:focus:not(:focus-visible) > circle,
+.c11:focus:not(:focus-visible) > ellipse,
+.c11:focus:not(:focus-visible) > line,
+.c11:focus:not(:focus-visible) > path,
+.c11:focus:not(:focus-visible) > polygon,
+.c11:focus:not(:focus-visible) > polyline,
+.c11:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c11:focus:not(:focus-visible) ::-moz-focus-inner {
+.c11:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -905,12 +1036,15 @@ exports[`Tag renders custom remove button kind and size 1`] = `
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
+  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
   overflow: visible;
   text-transform: none;
   margin: 10px;
+  min-width: 24px;
+  min-height: 24px;
   border: none;
   border-radius: 24px;
   padding: 8px 32px;
@@ -918,13 +1052,21 @@ exports[`Tag renders custom remove button kind and size 1`] = `
   line-height: 0;
   background: blue;
   text-align: center;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
   transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
 }
 
-.c16 >svg {
+.c16 > svg {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
   align-self: center;
   vertical-align: middle;
 }
@@ -934,18 +1076,18 @@ exports[`Tag renders custom remove button kind and size 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c16:focus >circle,
-.c16:focus >ellipse,
-.c16:focus >line,
-.c16:focus >path,
-.c16:focus >polygon,
-.c16:focus >polyline,
-.c16:focus >rect {
+.c16:focus > circle,
+.c16:focus > ellipse,
+.c16:focus > line,
+.c16:focus > path,
+.c16:focus > polygon,
+.c16:focus > polyline,
+.c16:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c16:focus ::-moz-focus-inner {
+.c16:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -954,18 +1096,18 @@ exports[`Tag renders custom remove button kind and size 1`] = `
   box-shadow: none;
 }
 
-.c16:focus:not(:focus-visible) >circle,
-.c16:focus:not(:focus-visible) >ellipse,
-.c16:focus:not(:focus-visible) >line,
-.c16:focus:not(:focus-visible) >path,
-.c16:focus:not(:focus-visible) >polygon,
-.c16:focus:not(:focus-visible) >polyline,
-.c16:focus:not(:focus-visible) >rect {
+.c16:focus:not(:focus-visible) > circle,
+.c16:focus:not(:focus-visible) > ellipse,
+.c16:focus:not(:focus-visible) > line,
+.c16:focus:not(:focus-visible) > path,
+.c16:focus:not(:focus-visible) > polygon,
+.c16:focus:not(:focus-visible) > polyline,
+.c16:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c16:focus:not(:focus-visible) ::-moz-focus-inner {
+.c16:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -983,61 +1125,61 @@ exports[`Tag renders custom remove button kind and size 1`] = `
   border-radius: 48px;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c1 {
-    border: solid 1px rgba(0, 0, 0, 0.33);
+    border: solid 1px rgba(0,0,0,0.33);
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c1 {
     border-radius: 24px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c2 {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c2 {
     padding-top: 3px;
     padding-bottom: 3px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c8 {
     padding-left: 16px;
     padding-right: 16px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c8 {
     padding-top: 3px;
     padding-bottom: 3px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c13 {
     padding-left: 18px;
     padding-right: 18px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c13 {
     padding-top: 3px;
     padding-bottom: 3px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c6 {
     border-radius: 24px;
   }
@@ -1192,26 +1334,45 @@ exports[`Tag renders custom remove button kind and size 1`] = `
 
 exports[`Tag renders custom remove icon 1`] = `
 .c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
-  border: solid 1px rgba(0, 0, 0, 0.33);
+  border: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
   flex-direction: row;
+  min-width: -webkit-min-content;
+  min-width: -moz-min-content;
   min-width: min-content;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   border-radius: 48px;
 }
 
 .c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
+  min-width: -webkit-min-content;
+  min-width: -moz-min-content;
   min-width: min-content;
   padding-left: 12px;
   padding-right: 12px;
@@ -1235,6 +1396,7 @@ exports[`Tag renders custom remove icon 1`] = `
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
+  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -1246,11 +1408,13 @@ exports[`Tag renders custom remove icon 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
+  min-width: 24px;
+  min-height: 24px;
   line-height: 0;
 }
 
 .c5:hover {
-  background-color: rgba(221, 221, 221, 0.4);
+  background-color: rgba(221,221,221,0.4);
   color: #000000;
 }
 
@@ -1259,18 +1423,18 @@ exports[`Tag renders custom remove icon 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c5:focus >circle,
-.c5:focus >ellipse,
-.c5:focus >line,
-.c5:focus >path,
-.c5:focus >polygon,
-.c5:focus >polyline,
-.c5:focus >rect {
+.c5:focus > circle,
+.c5:focus > ellipse,
+.c5:focus > line,
+.c5:focus > path,
+.c5:focus > polygon,
+.c5:focus > polyline,
+.c5:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c5:focus ::-moz-focus-inner {
+.c5:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -1279,18 +1443,18 @@ exports[`Tag renders custom remove icon 1`] = `
   box-shadow: none;
 }
 
-.c5:focus:not(:focus-visible) >circle,
-.c5:focus:not(:focus-visible) >ellipse,
-.c5:focus:not(:focus-visible) >line,
-.c5:focus:not(:focus-visible) >path,
-.c5:focus:not(:focus-visible) >polygon,
-.c5:focus:not(:focus-visible) >polyline,
-.c5:focus:not(:focus-visible) >rect {
+.c5:focus:not(:focus-visible) > circle,
+.c5:focus:not(:focus-visible) > ellipse,
+.c5:focus:not(:focus-visible) > line,
+.c5:focus:not(:focus-visible) > path,
+.c5:focus:not(:focus-visible) > polygon,
+.c5:focus:not(:focus-visible) > polyline,
+.c5:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c5:focus:not(:focus-visible) ::-moz-focus-inner {
+.c5:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -1308,33 +1472,33 @@ exports[`Tag renders custom remove icon 1`] = `
   border-radius: 48px;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c1 {
-    border: solid 1px rgba(0, 0, 0, 0.33);
+    border: solid 1px rgba(0,0,0,0.33);
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c1 {
     border-radius: 24px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c2 {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c2 {
     padding-top: 3px;
     padding-bottom: 3px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c6 {
     border-radius: 24px;
   }
@@ -1374,26 +1538,45 @@ exports[`Tag renders custom remove icon 1`] = `
 
 exports[`Tag renders default remove icon 1`] = `
 .c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
-  border: solid 1px rgba(0, 0, 0, 0.33);
+  border: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
   flex-direction: row;
+  min-width: -webkit-min-content;
+  min-width: -moz-min-content;
   min-width: min-content;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   border-radius: 48px;
 }
 
 .c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
+  min-width: -webkit-min-content;
+  min-width: -moz-min-content;
   min-width: min-content;
   padding-left: 12px;
   padding-right: 12px;
@@ -1403,6 +1586,8 @@ exports[`Tag renders default remove icon 1`] = `
 
 .c6 {
   display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
@@ -1449,6 +1634,7 @@ exports[`Tag renders default remove icon 1`] = `
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
+  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -1460,11 +1646,13 @@ exports[`Tag renders default remove icon 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
+  min-width: 24px;
+  min-height: 24px;
   line-height: 0;
 }
 
 .c4:hover {
-  background-color: rgba(221, 221, 221, 0.4);
+  background-color: rgba(221,221,221,0.4);
   color: #000000;
 }
 
@@ -1473,18 +1661,18 @@ exports[`Tag renders default remove icon 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c4:focus >circle,
-.c4:focus >ellipse,
-.c4:focus >line,
-.c4:focus >path,
-.c4:focus >polygon,
-.c4:focus >polyline,
-.c4:focus >rect {
+.c4:focus > circle,
+.c4:focus > ellipse,
+.c4:focus > line,
+.c4:focus > path,
+.c4:focus > polygon,
+.c4:focus > polyline,
+.c4:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c4:focus ::-moz-focus-inner {
+.c4:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -1493,18 +1681,18 @@ exports[`Tag renders default remove icon 1`] = `
   box-shadow: none;
 }
 
-.c4:focus:not(:focus-visible) >circle,
-.c4:focus:not(:focus-visible) >ellipse,
-.c4:focus:not(:focus-visible) >line,
-.c4:focus:not(:focus-visible) >path,
-.c4:focus:not(:focus-visible) >polygon,
-.c4:focus:not(:focus-visible) >polyline,
-.c4:focus:not(:focus-visible) >rect {
+.c4:focus:not(:focus-visible) > circle,
+.c4:focus:not(:focus-visible) > ellipse,
+.c4:focus:not(:focus-visible) > line,
+.c4:focus:not(:focus-visible) > path,
+.c4:focus:not(:focus-visible) > polygon,
+.c4:focus:not(:focus-visible) > polyline,
+.c4:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c4:focus:not(:focus-visible) ::-moz-focus-inner {
+.c4:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -1512,33 +1700,33 @@ exports[`Tag renders default remove icon 1`] = `
   border-radius: 48px;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c0 {
-    border: solid 1px rgba(0, 0, 0, 0.33);
+    border: solid 1px rgba(0,0,0,0.33);
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c0 {
     border-radius: 24px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c1 {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c1 {
     padding-top: 3px;
     padding-bottom: 3px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c5 {
     border-radius: 24px;
   }
@@ -1585,26 +1773,45 @@ exports[`Tag renders default remove icon 1`] = `
 
 exports[`Tag size 1`] = `
 .c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
-  border: solid 1px rgba(0, 0, 0, 0.33);
+  border: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
   flex-direction: row;
+  min-width: -webkit-min-content;
+  min-width: -moz-min-content;
   min-width: min-content;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   border-radius: 48px;
 }
 
 .c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
+  min-width: -webkit-min-content;
+  min-width: -moz-min-content;
   min-width: min-content;
   padding-left: 8px;
   padding-right: 8px;
@@ -1613,12 +1820,19 @@ exports[`Tag size 1`] = `
 }
 
 .c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
+  min-width: -webkit-min-content;
+  min-width: -moz-min-content;
   min-width: min-content;
   padding-left: 9.600000000000001px;
   padding-right: 9.600000000000001px;
@@ -1627,12 +1841,19 @@ exports[`Tag size 1`] = `
 }
 
 .c8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
+  min-width: -webkit-min-content;
+  min-width: -moz-min-content;
   min-width: min-content;
   padding-left: 12px;
   padding-right: 12px;
@@ -1641,12 +1862,19 @@ exports[`Tag size 1`] = `
 }
 
 .c11 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
+  min-width: -webkit-min-content;
+  min-width: -moz-min-content;
   min-width: min-content;
   padding-left: 16px;
   padding-right: 16px;
@@ -1655,12 +1883,19 @@ exports[`Tag size 1`] = `
 }
 
 .c14 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
+  min-width: -webkit-min-content;
+  min-width: -moz-min-content;
   min-width: min-content;
   padding-left: 18px;
   padding-right: 18px;
@@ -1733,82 +1968,82 @@ exports[`Tag size 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c1 {
-    border: solid 1px rgba(0, 0, 0, 0.33);
+    border: solid 1px rgba(0,0,0,0.33);
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c1 {
     border-radius: 24px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c2 {
     padding-left: 8px;
     padding-right: 8px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c2 {
     padding-top: 2px;
     padding-bottom: 2px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c5 {
     padding-left: 9.600000000000001px;
     padding-right: 9.600000000000001px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c5 {
     padding-top: 2px;
     padding-bottom: 2px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c8 {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c8 {
     padding-top: 3px;
     padding-bottom: 3px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c11 {
     padding-left: 16px;
     padding-right: 16px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c11 {
     padding-top: 3px;
     padding-bottom: 3px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c14 {
     padding-left: 18px;
     padding-right: 18px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c14 {
     padding-top: 3px;
     padding-bottom: 3px;
@@ -1963,12 +2198,19 @@ exports[`Tag size 1`] = `
 
 exports[`Tag theme border and hover background/border 1`] = `
 .c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
+  min-width: -webkit-min-content;
+  min-width: -moz-min-content;
   min-width: min-content;
   padding-left: 12px;
   padding-right: 12px;
@@ -1992,6 +2234,7 @@ exports[`Tag theme border and hover background/border 1`] = `
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
+  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -2005,7 +2248,7 @@ exports[`Tag theme border and hover background/border 1`] = `
 }
 
 .c1:hover {
-  background-color: rgba(221, 221, 221, 0.4);
+  background-color: rgba(221,221,221,0.4);
   color: #000000;
 }
 
@@ -2014,18 +2257,18 @@ exports[`Tag theme border and hover background/border 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus >circle,
-.c1:focus >ellipse,
-.c1:focus >line,
-.c1:focus >path,
-.c1:focus >polygon,
-.c1:focus >polyline,
-.c1:focus >rect {
+.c1:focus > circle,
+.c1:focus > ellipse,
+.c1:focus > line,
+.c1:focus > path,
+.c1:focus > polygon,
+.c1:focus > polyline,
+.c1:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus ::-moz-focus-inner {
+.c1:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -2034,23 +2277,23 @@ exports[`Tag theme border and hover background/border 1`] = `
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible) >circle,
-.c1:focus:not(:focus-visible) >ellipse,
-.c1:focus:not(:focus-visible) >line,
-.c1:focus:not(:focus-visible) >path,
-.c1:focus:not(:focus-visible) >polygon,
-.c1:focus:not(:focus-visible) >polyline,
-.c1:focus:not(:focus-visible) >rect {
+.c1:focus:not(:focus-visible) > circle,
+.c1:focus:not(:focus-visible) > ellipse,
+.c1:focus:not(:focus-visible) > line,
+.c1:focus:not(:focus-visible) > path,
+.c1:focus:not(:focus-visible) > polygon,
+.c1:focus:not(:focus-visible) > polyline,
+.c1:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible) ::-moz-focus-inner {
+.c1:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
 .c0 {
-  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Fira Sans","Droid Sans","Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial,sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-size: 18px;
   line-height: 24px;
   background-color: #ffffff;
@@ -2065,7 +2308,7 @@ exports[`Tag theme border and hover background/border 1`] = `
 .c2 {
   background-color: #ffffff;
   color: #444444;
-  border: solid 1px rgba(0, 0, 0, 0.33);
+  border: solid 1px rgba(0,0,0,0.33);
   border-radius: 48px;
 }
 
@@ -2074,33 +2317,33 @@ exports[`Tag theme border and hover background/border 1`] = `
   border: solid 1px green;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c3 {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c3 {
     padding-top: 3px;
     padding-bottom: 3px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c2 {
-    border: solid 1px rgba(0, 0, 0, 0.33);
+    border: solid 1px rgba(0,0,0,0.33);
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c2 {
     border-radius: 24px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c2:hover {
     border: solid 1px green;
   }

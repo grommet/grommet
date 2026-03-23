@@ -366,6 +366,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         color: 'white',
       },
       spacing: `${baseSpacing}px`,
+      minTargetSize: `${baseSpacing}px`,
       size: {
         xxsmall: `${baseSpacing * 2}px`, // 48
         xsmall: `${baseSpacing * 4}px`, // 96

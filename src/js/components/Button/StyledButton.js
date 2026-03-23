@@ -145,6 +145,19 @@ const plainStyle = (props) => css`
   text-align: inherit;
 `;
 
+const minTargetSizeStyle = (props) => {
+  if (props.hasIcon && !props.hasLabel) {
+    const minSize = props.theme.global.minTargetSize;
+    if (minSize) {
+      return css`
+        min-width: ${minSize};
+        min-height: ${minSize};
+      `;
+    }
+  }
+  return '';
+};
+
 const activeButtonStyle = (props) => css`
   ${activeStyle}
   ${props.primary &&
@@ -201,6 +214,7 @@ const StyledButton = styled.button.withConfig(styledComponentsConfig)`
 
   ${genericStyles}
   ${(props) => props.plain && plainStyle(props)}
+  ${(props) => minTargetSizeStyle(props)}
   ${(props) => !props.plain && basicStyle(props)}
   ${(props) => props.primary && primaryStyle(props)}
 
