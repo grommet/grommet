@@ -1792,7 +1792,7 @@ exports[`DateInput controlled format inline 2`] = `
     class="StyledBox-sc-13pk1d4-0 eLlRsv"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 llXSDF DateInput__StyledDateInputContainer-sc-1jfta23-0 kXbgTR"
+      class="StyledBox-sc-13pk1d4-0 llXSDF DateInput__StyledDateInputContainer-sc-1hj980k-0 hSIuwx"
     >
       <div
         class="StyledMaskedInput__StyledMaskedInputContainer-sc-99vkfa-1 dbLMzq"
@@ -16396,7 +16396,7 @@ exports[`DateInput select format 2`] = `
   class="StyledGrommet-sc-19lkkz7-0 iQmOCy"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 llXSDF DateInput__StyledDateInputContainer-sc-1jfta23-0 kXbgTR"
+    class="StyledBox-sc-13pk1d4-0 llXSDF DateInput__StyledDateInputContainer-sc-1hj980k-0 hSIuwx"
   >
     <div
       class="StyledMaskedInput__StyledMaskedInputContainer-sc-99vkfa-1 dbLMzq"
@@ -19337,7 +19337,7 @@ exports[`DateInput select format inline 2`] = `
     class="StyledBox-sc-13pk1d4-0 eLlRsv"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 llXSDF DateInput__StyledDateInputContainer-sc-1jfta23-0 kXbgTR"
+      class="StyledBox-sc-13pk1d4-0 llXSDF DateInput__StyledDateInputContainer-sc-1hj980k-0 hSIuwx"
     >
       <div
         class="StyledMaskedInput__StyledMaskedInputContainer-sc-99vkfa-1 dbLMzq"
@@ -24680,7 +24680,7 @@ exports[`DateInput select format inline range 2`] = `
     class="StyledBox-sc-13pk1d4-0 eLlRsv"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 llXSDF DateInput__StyledDateInputContainer-sc-1jfta23-0 kXbgTR"
+      class="StyledBox-sc-13pk1d4-0 llXSDF DateInput__StyledDateInputContainer-sc-1hj980k-0 hSIuwx"
     >
       <div
         class="StyledMaskedInput__StyledMaskedInputContainer-sc-99vkfa-1 dbLMzq"
@@ -34776,7 +34776,7 @@ exports[`DateInput type format inline 2`] = `
     class="StyledBox-sc-13pk1d4-0 eLlRsv"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 llXSDF DateInput__StyledDateInputContainer-sc-1jfta23-0 kXbgTR"
+      class="StyledBox-sc-13pk1d4-0 llXSDF DateInput__StyledDateInputContainer-sc-1hj980k-0 hSIuwx"
     >
       <div
         class="StyledMaskedInput__StyledMaskedInputContainer-sc-99vkfa-1 dbLMzq"
@@ -40117,7 +40117,7 @@ exports[`DateInput type format inline range 2`] = `
     class="StyledBox-sc-13pk1d4-0 eLlRsv"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 llXSDF DateInput__StyledDateInputContainer-sc-1jfta23-0 kXbgTR"
+      class="StyledBox-sc-13pk1d4-0 llXSDF DateInput__StyledDateInputContainer-sc-1hj980k-0 hSIuwx"
     >
       <div
         class="StyledMaskedInput__StyledMaskedInputContainer-sc-99vkfa-1 dbLMzq"
@@ -42542,7 +42542,7 @@ exports[`DateInput type format inline range partial 2`] = `
     class="StyledBox-sc-13pk1d4-0 eLlRsv"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 llXSDF DateInput__StyledDateInputContainer-sc-1jfta23-0 kXbgTR"
+      class="StyledBox-sc-13pk1d4-0 llXSDF DateInput__StyledDateInputContainer-sc-1hj980k-0 hSIuwx"
     >
       <div
         class="StyledMaskedInput__StyledMaskedInputContainer-sc-99vkfa-1 dbLMzq"
@@ -43490,7 +43490,7 @@ exports[`DateInput type format inline range partial 3`] = `
     class="StyledBox-sc-13pk1d4-0 eLlRsv"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 llXSDF DateInput__StyledDateInputContainer-sc-1jfta23-0 kXbgTR"
+      class="StyledBox-sc-13pk1d4-0 llXSDF DateInput__StyledDateInputContainer-sc-1hj980k-0 hSIuwx"
     >
       <div
         class="StyledMaskedInput__StyledMaskedInputContainer-sc-99vkfa-1 dbLMzq"
@@ -53258,7 +53258,7 @@ exports[`DateInput type format inline short 2`] = `
     class="StyledBox-sc-13pk1d4-0 eLlRsv"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 llXSDF DateInput__StyledDateInputContainer-sc-1jfta23-0 kXbgTR"
+      class="StyledBox-sc-13pk1d4-0 llXSDF DateInput__StyledDateInputContainer-sc-1hj980k-0 hSIuwx"
     >
       <div
         class="StyledMaskedInput__StyledMaskedInputContainer-sc-99vkfa-1 dbLMzq"

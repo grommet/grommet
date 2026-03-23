@@ -5,22 +5,8 @@ import { vanillaExtractPlugin } from '@vanilla-extract/vite-plugin';
 import { viteStaticCopy } from 'vite-plugin-static-copy';
 
 export default defineConfig({
-  esbuild: {
-    loader: 'jsx',
-    include: /src\/js\/.*\.js$/,
-    exclude: [],
-  },
-  optimizeDeps: {
-    esbuildOptions: {
-      loader: {
-        '.js': 'jsx',
-      },
-    },
-  },
   plugins: [
-    react({
-      include: /\.[jt]sx?$/,
-    }),
+    react(),
     vanillaExtractPlugin(),
     viteStaticCopy({
       targets: [

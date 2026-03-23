@@ -135,7 +135,7 @@ exports[`RangeSelector basic 1`] = `
         tabindex="-1"
       >
         <div
-          class="c7 EdgeControl__StyledBox-sc-1xo2yt9-1"
+          class="c7 EdgeControl__StyledBox-sc-1g1ndyr-1"
         />
       </div>
     </div>
@@ -166,7 +166,7 @@ exports[`RangeSelector basic 1`] = `
         tabindex="-1"
       >
         <div
-          class="c7 EdgeControl__StyledBox-sc-1xo2yt9-1"
+          class="c7 EdgeControl__StyledBox-sc-1g1ndyr-1"
         />
       </div>
     </div>
@@ -300,7 +300,7 @@ exports[`RangeSelector basic outside grommet wrapper 1`] = `
       tabindex="-1"
     >
       <div
-        class="c6 EdgeControl__StyledBox-sc-1xo2yt9-1"
+        class="c6 EdgeControl__StyledBox-sc-1g1ndyr-1"
       />
     </div>
   </div>
@@ -331,7 +331,7 @@ exports[`RangeSelector basic outside grommet wrapper 1`] = `
       tabindex="-1"
     >
       <div
-        class="c6 EdgeControl__StyledBox-sc-1xo2yt9-1"
+        class="c6 EdgeControl__StyledBox-sc-1g1ndyr-1"
       />
     </div>
   </div>
@@ -477,7 +477,7 @@ exports[`RangeSelector basic with theme edge size 1`] = `
         tabindex="-1"
       >
         <div
-          class="c7 EdgeControl__StyledBox-sc-1xo2yt9-1"
+          class="c7 EdgeControl__StyledBox-sc-1g1ndyr-1"
         />
       </div>
     </div>
@@ -508,7 +508,7 @@ exports[`RangeSelector basic with theme edge size 1`] = `
         tabindex="-1"
       >
         <div
-          class="c7 EdgeControl__StyledBox-sc-1xo2yt9-1"
+          class="c7 EdgeControl__StyledBox-sc-1g1ndyr-1"
         />
       </div>
     </div>
@@ -655,7 +655,7 @@ exports[`RangeSelector color 1`] = `
         tabindex="-1"
       >
         <div
-          class="c7 EdgeControl__StyledBox-sc-1xo2yt9-1"
+          class="c7 EdgeControl__StyledBox-sc-1g1ndyr-1"
         />
       </div>
     </div>
@@ -686,7 +686,7 @@ exports[`RangeSelector color 1`] = `
         tabindex="-1"
       >
         <div
-          class="c7 EdgeControl__StyledBox-sc-1xo2yt9-1"
+          class="c7 EdgeControl__StyledBox-sc-1g1ndyr-1"
         />
       </div>
     </div>
@@ -895,7 +895,7 @@ exports[`RangeSelector direction 1`] = `
         tabindex="-1"
       >
         <div
-          class="c7 EdgeControl__StyledBox-sc-1xo2yt9-1"
+          class="c7 EdgeControl__StyledBox-sc-1g1ndyr-1"
         />
       </div>
     </div>
@@ -926,7 +926,7 @@ exports[`RangeSelector direction 1`] = `
         tabindex="-1"
       >
         <div
-          class="c7 EdgeControl__StyledBox-sc-1xo2yt9-1"
+          class="c7 EdgeControl__StyledBox-sc-1g1ndyr-1"
         />
       </div>
     </div>
@@ -966,7 +966,7 @@ exports[`RangeSelector direction 1`] = `
         tabindex="-1"
       >
         <div
-          class="c7 EdgeControl__StyledBox-sc-1xo2yt9-1"
+          class="c7 EdgeControl__StyledBox-sc-1g1ndyr-1"
         />
       </div>
     </div>
@@ -997,7 +997,7 @@ exports[`RangeSelector direction 1`] = `
         tabindex="-1"
       >
         <div
-          class="c7 EdgeControl__StyledBox-sc-1xo2yt9-1"
+          class="c7 EdgeControl__StyledBox-sc-1g1ndyr-1"
         />
       </div>
     </div>
@@ -1144,7 +1144,7 @@ exports[`RangeSelector handle keyboard 1`] = `
         tabindex="-1"
       >
         <div
-          class="c7 EdgeControl__StyledBox-sc-1xo2yt9-1"
+          class="c7 EdgeControl__StyledBox-sc-1g1ndyr-1"
         />
       </div>
     </div>
@@ -1175,7 +1175,7 @@ exports[`RangeSelector handle keyboard 1`] = `
         tabindex="-1"
       >
         <div
-          class="c7 EdgeControl__StyledBox-sc-1xo2yt9-1"
+          class="c7 EdgeControl__StyledBox-sc-1g1ndyr-1"
         />
       </div>
     </div>
@@ -1322,7 +1322,7 @@ exports[`RangeSelector handle mouse 1`] = `
         tabindex="-1"
       >
         <div
-          class="c7 EdgeControl__StyledBox-sc-1xo2yt9-1"
+          class="c7 EdgeControl__StyledBox-sc-1g1ndyr-1"
         />
       </div>
     </div>
@@ -1353,7 +1353,7 @@ exports[`RangeSelector handle mouse 1`] = `
         tabindex="-1"
       >
         <div
-          class="c7 EdgeControl__StyledBox-sc-1xo2yt9-1"
+          class="c7 EdgeControl__StyledBox-sc-1g1ndyr-1"
         />
       </div>
     </div>
@@ -1500,7 +1500,7 @@ exports[`RangeSelector handle touch gestures 1`] = `
         tabindex="-1"
       >
         <div
-          class="c7 EdgeControl__StyledBox-sc-1xo2yt9-1"
+          class="c7 EdgeControl__StyledBox-sc-1g1ndyr-1"
         />
       </div>
     </div>
@@ -1531,7 +1531,7 @@ exports[`RangeSelector handle touch gestures 1`] = `
         tabindex="-1"
       >
         <div
-          class="c7 EdgeControl__StyledBox-sc-1xo2yt9-1"
+          class="c7 EdgeControl__StyledBox-sc-1g1ndyr-1"
         />
       </div>
     </div>
@@ -1691,7 +1691,7 @@ exports[`RangeSelector invert 1`] = `
         tabindex="-1"
       >
         <div
-          class="c7 EdgeControl__StyledBox-sc-1xo2yt9-1"
+          class="c7 EdgeControl__StyledBox-sc-1g1ndyr-1"
         />
       </div>
     </div>
@@ -1722,7 +1722,7 @@ exports[`RangeSelector invert 1`] = `
         tabindex="-1"
       >
         <div
-          class="c7 EdgeControl__StyledBox-sc-1xo2yt9-1"
+          class="c7 EdgeControl__StyledBox-sc-1g1ndyr-1"
         />
       </div>
     </div>
@@ -1762,7 +1762,7 @@ exports[`RangeSelector invert 1`] = `
         tabindex="-1"
       >
         <div
-          class="c7 EdgeControl__StyledBox-sc-1xo2yt9-1"
+          class="c7 EdgeControl__StyledBox-sc-1g1ndyr-1"
         />
       </div>
     </div>
@@ -1793,7 +1793,7 @@ exports[`RangeSelector invert 1`] = `
         tabindex="-1"
       >
         <div
-          class="c7 EdgeControl__StyledBox-sc-1xo2yt9-1"
+          class="c7 EdgeControl__StyledBox-sc-1g1ndyr-1"
         />
       </div>
     </div>
@@ -1976,7 +1976,7 @@ exports[`RangeSelector label 1`] = `
           tabindex="-1"
         >
           <div
-            class="c9 EdgeControl__StyledBox-sc-1xo2yt9-1"
+            class="c9 EdgeControl__StyledBox-sc-1g1ndyr-1"
           />
         </div>
       </div>
@@ -2007,7 +2007,7 @@ exports[`RangeSelector label 1`] = `
           tabindex="-1"
         >
           <div
-            class="c9 EdgeControl__StyledBox-sc-1xo2yt9-1"
+            class="c9 EdgeControl__StyledBox-sc-1g1ndyr-1"
           />
         </div>
       </div>
@@ -2063,7 +2063,7 @@ exports[`RangeSelector label 1`] = `
           tabindex="-1"
         >
           <div
-            class="c9 EdgeControl__StyledBox-sc-1xo2yt9-1"
+            class="c9 EdgeControl__StyledBox-sc-1g1ndyr-1"
           />
         </div>
       </div>
@@ -2094,7 +2094,7 @@ exports[`RangeSelector label 1`] = `
           tabindex="-1"
         >
           <div
-            class="c9 EdgeControl__StyledBox-sc-1xo2yt9-1"
+            class="c9 EdgeControl__StyledBox-sc-1g1ndyr-1"
           />
         </div>
       </div>
@@ -2248,7 +2248,7 @@ exports[`RangeSelector max 1`] = `
         tabindex="-1"
       >
         <div
-          class="c7 EdgeControl__StyledBox-sc-1xo2yt9-1"
+          class="c7 EdgeControl__StyledBox-sc-1g1ndyr-1"
         />
       </div>
     </div>
@@ -2279,7 +2279,7 @@ exports[`RangeSelector max 1`] = `
         tabindex="-1"
       >
         <div
-          class="c7 EdgeControl__StyledBox-sc-1xo2yt9-1"
+          class="c7 EdgeControl__StyledBox-sc-1g1ndyr-1"
         />
       </div>
     </div>
@@ -2426,7 +2426,7 @@ exports[`RangeSelector min 1`] = `
         tabindex="-1"
       >
         <div
-          class="c7 EdgeControl__StyledBox-sc-1xo2yt9-1"
+          class="c7 EdgeControl__StyledBox-sc-1g1ndyr-1"
         />
       </div>
     </div>
@@ -2457,7 +2457,7 @@ exports[`RangeSelector min 1`] = `
         tabindex="-1"
       >
         <div
-          class="c7 EdgeControl__StyledBox-sc-1xo2yt9-1"
+          class="c7 EdgeControl__StyledBox-sc-1g1ndyr-1"
         />
       </div>
     </div>
@@ -2629,7 +2629,7 @@ exports[`RangeSelector opacity 1`] = `
         tabindex="-1"
       >
         <div
-          class="c7 EdgeControl__StyledBox-sc-1xo2yt9-1"
+          class="c7 EdgeControl__StyledBox-sc-1g1ndyr-1"
         />
       </div>
     </div>
@@ -2660,7 +2660,7 @@ exports[`RangeSelector opacity 1`] = `
         tabindex="-1"
       >
         <div
-          class="c7 EdgeControl__StyledBox-sc-1xo2yt9-1"
+          class="c7 EdgeControl__StyledBox-sc-1g1ndyr-1"
         />
       </div>
     </div>
@@ -2700,7 +2700,7 @@ exports[`RangeSelector opacity 1`] = `
         tabindex="-1"
       >
         <div
-          class="c7 EdgeControl__StyledBox-sc-1xo2yt9-1"
+          class="c7 EdgeControl__StyledBox-sc-1g1ndyr-1"
         />
       </div>
     </div>
@@ -2731,7 +2731,7 @@ exports[`RangeSelector opacity 1`] = `
         tabindex="-1"
       >
         <div
-          class="c7 EdgeControl__StyledBox-sc-1xo2yt9-1"
+          class="c7 EdgeControl__StyledBox-sc-1g1ndyr-1"
         />
       </div>
     </div>
@@ -2771,7 +2771,7 @@ exports[`RangeSelector opacity 1`] = `
         tabindex="-1"
       >
         <div
-          class="c7 EdgeControl__StyledBox-sc-1xo2yt9-1"
+          class="c7 EdgeControl__StyledBox-sc-1g1ndyr-1"
         />
       </div>
     </div>
@@ -2802,7 +2802,7 @@ exports[`RangeSelector opacity 1`] = `
         tabindex="-1"
       >
         <div
-          class="c7 EdgeControl__StyledBox-sc-1xo2yt9-1"
+          class="c7 EdgeControl__StyledBox-sc-1g1ndyr-1"
         />
       </div>
     </div>
@@ -2949,7 +2949,7 @@ exports[`RangeSelector renders gracefully with invalid edge size 1`] = `
         tabindex="-1"
       >
         <div
-          class="c7 EdgeControl__StyledBox-sc-1xo2yt9-1"
+          class="c7 EdgeControl__StyledBox-sc-1g1ndyr-1"
         />
       </div>
     </div>
@@ -2980,7 +2980,7 @@ exports[`RangeSelector renders gracefully with invalid edge size 1`] = `
         tabindex="-1"
       >
         <div
-          class="c7 EdgeControl__StyledBox-sc-1xo2yt9-1"
+          class="c7 EdgeControl__StyledBox-sc-1g1ndyr-1"
         />
       </div>
     </div>
@@ -3127,7 +3127,7 @@ exports[`RangeSelector renders with default edge size when not specified 1`] = `
         tabindex="-1"
       >
         <div
-          class="c7 EdgeControl__StyledBox-sc-1xo2yt9-1"
+          class="c7 EdgeControl__StyledBox-sc-1g1ndyr-1"
         />
       </div>
     </div>
@@ -3158,7 +3158,7 @@ exports[`RangeSelector renders with default edge size when not specified 1`] = `
         tabindex="-1"
       >
         <div
-          class="c7 EdgeControl__StyledBox-sc-1xo2yt9-1"
+          class="c7 EdgeControl__StyledBox-sc-1g1ndyr-1"
         />
       </div>
     </div>
@@ -3305,7 +3305,7 @@ exports[`RangeSelector renders with edge size: large 1`] = `
         tabindex="-1"
       >
         <div
-          class="c7 EdgeControl__StyledBox-sc-1xo2yt9-1"
+          class="c7 EdgeControl__StyledBox-sc-1g1ndyr-1"
         />
       </div>
     </div>
@@ -3336,7 +3336,7 @@ exports[`RangeSelector renders with edge size: large 1`] = `
         tabindex="-1"
       >
         <div
-          class="c7 EdgeControl__StyledBox-sc-1xo2yt9-1"
+          class="c7 EdgeControl__StyledBox-sc-1g1ndyr-1"
         />
       </div>
     </div>
@@ -3483,7 +3483,7 @@ exports[`RangeSelector renders with edge size: medium 1`] = `
         tabindex="-1"
       >
         <div
-          class="c7 EdgeControl__StyledBox-sc-1xo2yt9-1"
+          class="c7 EdgeControl__StyledBox-sc-1g1ndyr-1"
         />
       </div>
     </div>
@@ -3514,7 +3514,7 @@ exports[`RangeSelector renders with edge size: medium 1`] = `
         tabindex="-1"
       >
         <div
-          class="c7 EdgeControl__StyledBox-sc-1xo2yt9-1"
+          class="c7 EdgeControl__StyledBox-sc-1g1ndyr-1"
         />
       </div>
     </div>
@@ -3661,7 +3661,7 @@ exports[`RangeSelector renders with edge size: small 1`] = `
         tabindex="-1"
       >
         <div
-          class="c7 EdgeControl__StyledBox-sc-1xo2yt9-1"
+          class="c7 EdgeControl__StyledBox-sc-1g1ndyr-1"
         />
       </div>
     </div>
@@ -3692,7 +3692,7 @@ exports[`RangeSelector renders with edge size: small 1`] = `
         tabindex="-1"
       >
         <div
-          class="c7 EdgeControl__StyledBox-sc-1xo2yt9-1"
+          class="c7 EdgeControl__StyledBox-sc-1g1ndyr-1"
         />
       </div>
     </div>
@@ -3839,7 +3839,7 @@ exports[`RangeSelector renders with edge size: xlarge 1`] = `
         tabindex="-1"
       >
         <div
-          class="c7 EdgeControl__StyledBox-sc-1xo2yt9-1"
+          class="c7 EdgeControl__StyledBox-sc-1g1ndyr-1"
         />
       </div>
     </div>
@@ -3870,7 +3870,7 @@ exports[`RangeSelector renders with edge size: xlarge 1`] = `
         tabindex="-1"
       >
         <div
-          class="c7 EdgeControl__StyledBox-sc-1xo2yt9-1"
+          class="c7 EdgeControl__StyledBox-sc-1g1ndyr-1"
         />
       </div>
     </div>
@@ -4171,7 +4171,7 @@ exports[`RangeSelector round 1`] = `
         tabindex="-1"
       >
         <div
-          class="c7 EdgeControl__StyledBox-sc-1xo2yt9-1"
+          class="c7 EdgeControl__StyledBox-sc-1g1ndyr-1"
         />
       </div>
     </div>
@@ -4202,7 +4202,7 @@ exports[`RangeSelector round 1`] = `
         tabindex="-1"
       >
         <div
-          class="c7 EdgeControl__StyledBox-sc-1xo2yt9-1"
+          class="c7 EdgeControl__StyledBox-sc-1g1ndyr-1"
         />
       </div>
     </div>
@@ -4242,7 +4242,7 @@ exports[`RangeSelector round 1`] = `
         tabindex="-1"
       >
         <div
-          class="c7 EdgeControl__StyledBox-sc-1xo2yt9-1"
+          class="c7 EdgeControl__StyledBox-sc-1g1ndyr-1"
         />
       </div>
     </div>
@@ -4273,7 +4273,7 @@ exports[`RangeSelector round 1`] = `
         tabindex="-1"
       >
         <div
-          class="c7 EdgeControl__StyledBox-sc-1xo2yt9-1"
+          class="c7 EdgeControl__StyledBox-sc-1g1ndyr-1"
         />
       </div>
     </div>
@@ -4313,7 +4313,7 @@ exports[`RangeSelector round 1`] = `
         tabindex="-1"
       >
         <div
-          class="c7 EdgeControl__StyledBox-sc-1xo2yt9-1"
+          class="c7 EdgeControl__StyledBox-sc-1g1ndyr-1"
         />
       </div>
     </div>
@@ -4344,7 +4344,7 @@ exports[`RangeSelector round 1`] = `
         tabindex="-1"
       >
         <div
-          class="c7 EdgeControl__StyledBox-sc-1xo2yt9-1"
+          class="c7 EdgeControl__StyledBox-sc-1g1ndyr-1"
         />
       </div>
     </div>
@@ -4384,7 +4384,7 @@ exports[`RangeSelector round 1`] = `
         tabindex="-1"
       >
         <div
-          class="c7 EdgeControl__StyledBox-sc-1xo2yt9-1"
+          class="c7 EdgeControl__StyledBox-sc-1g1ndyr-1"
         />
       </div>
     </div>
@@ -4415,7 +4415,7 @@ exports[`RangeSelector round 1`] = `
         tabindex="-1"
       >
         <div
-          class="c7 EdgeControl__StyledBox-sc-1xo2yt9-1"
+          class="c7 EdgeControl__StyledBox-sc-1g1ndyr-1"
         />
       </div>
     </div>
@@ -4455,7 +4455,7 @@ exports[`RangeSelector round 1`] = `
         tabindex="-1"
       >
         <div
-          class="c7 EdgeControl__StyledBox-sc-1xo2yt9-1"
+          class="c7 EdgeControl__StyledBox-sc-1g1ndyr-1"
         />
       </div>
     </div>
@@ -4486,7 +4486,7 @@ exports[`RangeSelector round 1`] = `
         tabindex="-1"
       >
         <div
-          class="c7 EdgeControl__StyledBox-sc-1xo2yt9-1"
+          class="c7 EdgeControl__StyledBox-sc-1g1ndyr-1"
         />
       </div>
     </div>
@@ -4633,7 +4633,7 @@ exports[`RangeSelector should not have accessibility violations 1`] = `
         tabindex="-1"
       >
         <div
-          class="c7 EdgeControl__StyledBox-sc-1xo2yt9-1"
+          class="c7 EdgeControl__StyledBox-sc-1g1ndyr-1"
         />
       </div>
     </div>
@@ -4664,7 +4664,7 @@ exports[`RangeSelector should not have accessibility violations 1`] = `
         tabindex="-1"
       >
         <div
-          class="c7 EdgeControl__StyledBox-sc-1xo2yt9-1"
+          class="c7 EdgeControl__StyledBox-sc-1g1ndyr-1"
         />
       </div>
     </div>
@@ -4955,7 +4955,7 @@ exports[`RangeSelector size 1`] = `
         tabindex="-1"
       >
         <div
-          class="c7 EdgeControl__StyledBox-sc-1xo2yt9-1"
+          class="c7 EdgeControl__StyledBox-sc-1g1ndyr-1"
         />
       </div>
     </div>
@@ -4986,7 +4986,7 @@ exports[`RangeSelector size 1`] = `
         tabindex="-1"
       >
         <div
-          class="c7 EdgeControl__StyledBox-sc-1xo2yt9-1"
+          class="c7 EdgeControl__StyledBox-sc-1g1ndyr-1"
         />
       </div>
     </div>
@@ -5026,7 +5026,7 @@ exports[`RangeSelector size 1`] = `
         tabindex="-1"
       >
         <div
-          class="c7 EdgeControl__StyledBox-sc-1xo2yt9-1"
+          class="c7 EdgeControl__StyledBox-sc-1g1ndyr-1"
         />
       </div>
     </div>
@@ -5057,7 +5057,7 @@ exports[`RangeSelector size 1`] = `
         tabindex="-1"
       >
         <div
-          class="c7 EdgeControl__StyledBox-sc-1xo2yt9-1"
+          class="c7 EdgeControl__StyledBox-sc-1g1ndyr-1"
         />
       </div>
     </div>
@@ -5097,7 +5097,7 @@ exports[`RangeSelector size 1`] = `
         tabindex="-1"
       >
         <div
-          class="c7 EdgeControl__StyledBox-sc-1xo2yt9-1"
+          class="c7 EdgeControl__StyledBox-sc-1g1ndyr-1"
         />
       </div>
     </div>
@@ -5128,7 +5128,7 @@ exports[`RangeSelector size 1`] = `
         tabindex="-1"
       >
         <div
-          class="c7 EdgeControl__StyledBox-sc-1xo2yt9-1"
+          class="c7 EdgeControl__StyledBox-sc-1g1ndyr-1"
         />
       </div>
     </div>
@@ -5168,7 +5168,7 @@ exports[`RangeSelector size 1`] = `
         tabindex="-1"
       >
         <div
-          class="c7 EdgeControl__StyledBox-sc-1xo2yt9-1"
+          class="c7 EdgeControl__StyledBox-sc-1g1ndyr-1"
         />
       </div>
     </div>
@@ -5199,7 +5199,7 @@ exports[`RangeSelector size 1`] = `
         tabindex="-1"
       >
         <div
-          class="c7 EdgeControl__StyledBox-sc-1xo2yt9-1"
+          class="c7 EdgeControl__StyledBox-sc-1g1ndyr-1"
         />
       </div>
     </div>
@@ -5239,7 +5239,7 @@ exports[`RangeSelector size 1`] = `
         tabindex="-1"
       >
         <div
-          class="c7 EdgeControl__StyledBox-sc-1xo2yt9-1"
+          class="c7 EdgeControl__StyledBox-sc-1g1ndyr-1"
         />
       </div>
     </div>
@@ -5270,7 +5270,7 @@ exports[`RangeSelector size 1`] = `
         tabindex="-1"
       >
         <div
-          class="c7 EdgeControl__StyledBox-sc-1xo2yt9-1"
+          class="c7 EdgeControl__StyledBox-sc-1g1ndyr-1"
         />
       </div>
     </div>
@@ -5310,7 +5310,7 @@ exports[`RangeSelector size 1`] = `
         tabindex="-1"
       >
         <div
-          class="c7 EdgeControl__StyledBox-sc-1xo2yt9-1"
+          class="c7 EdgeControl__StyledBox-sc-1g1ndyr-1"
         />
       </div>
     </div>
@@ -5341,7 +5341,7 @@ exports[`RangeSelector size 1`] = `
         tabindex="-1"
       >
         <div
-          class="c7 EdgeControl__StyledBox-sc-1xo2yt9-1"
+          class="c7 EdgeControl__StyledBox-sc-1g1ndyr-1"
         />
       </div>
     </div>
@@ -5381,7 +5381,7 @@ exports[`RangeSelector size 1`] = `
         tabindex="-1"
       >
         <div
-          class="c7 EdgeControl__StyledBox-sc-1xo2yt9-1"
+          class="c7 EdgeControl__StyledBox-sc-1g1ndyr-1"
         />
       </div>
     </div>
@@ -5412,7 +5412,7 @@ exports[`RangeSelector size 1`] = `
         tabindex="-1"
       >
         <div
-          class="c7 EdgeControl__StyledBox-sc-1xo2yt9-1"
+          class="c7 EdgeControl__StyledBox-sc-1g1ndyr-1"
         />
       </div>
     </div>
@@ -5559,7 +5559,7 @@ exports[`RangeSelector step renders correct values 1`] = `
         tabindex="-1"
       >
         <div
-          class="c7 EdgeControl__StyledBox-sc-1xo2yt9-1"
+          class="c7 EdgeControl__StyledBox-sc-1g1ndyr-1"
         />
       </div>
     </div>
@@ -5590,7 +5590,7 @@ exports[`RangeSelector step renders correct values 1`] = `
         tabindex="-1"
       >
         <div
-          class="c7 EdgeControl__StyledBox-sc-1xo2yt9-1"
+          class="c7 EdgeControl__StyledBox-sc-1g1ndyr-1"
         />
       </div>
     </div>
@@ -5773,7 +5773,7 @@ exports[`RangeSelector theme label margin 1`] = `
           tabindex="-1"
         >
           <div
-            class="c9 EdgeControl__StyledBox-sc-1xo2yt9-1"
+            class="c9 EdgeControl__StyledBox-sc-1g1ndyr-1"
           />
         </div>
       </div>
@@ -5804,7 +5804,7 @@ exports[`RangeSelector theme label margin 1`] = `
           tabindex="-1"
         >
           <div
-            class="c9 EdgeControl__StyledBox-sc-1xo2yt9-1"
+            class="c9 EdgeControl__StyledBox-sc-1g1ndyr-1"
           />
         </div>
       </div>

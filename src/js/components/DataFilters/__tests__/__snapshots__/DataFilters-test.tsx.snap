@@ -918,7 +918,7 @@ exports[`DataFilters drop badge 1`] = `
             style="top: 0px; right: 0px; transform: translate(50%, -50%); transform-origin: 100% 0%;"
           >
             <div
-              class="c8 Badge__StyledBadgeContainer-sc-1es4ws1-0"
+              class="c8 Badge__StyledBadgeContainer-sc-rebuvb-0"
               style="min-height: 24px; min-width: 24px;"
             >
               <span
@@ -4403,7 +4403,7 @@ exports[`DataFilters sub objects 1`] = `
                         tabindex="-1"
                       >
                         <div
-                          class="c25 EdgeControl__StyledBox-sc-1xo2yt9-1"
+                          class="c25 EdgeControl__StyledBox-sc-1g1ndyr-1"
                         />
                       </div>
                     </div>
@@ -4434,7 +4434,7 @@ exports[`DataFilters sub objects 1`] = `
                         tabindex="-1"
                       >
                         <div
-                          class="c25 EdgeControl__StyledBox-sc-1xo2yt9-1"
+                          class="c25 EdgeControl__StyledBox-sc-1g1ndyr-1"
                         />
                       </div>
                     </div>
@@ -4899,7 +4899,7 @@ exports[`DataFilters sub objects with rangeSelector 1`] = `
               style="top: 0px; right: 0px; transform: translate(50%, -50%); transform-origin: 100% 0%;"
             >
               <div
-                class="c8 Badge__StyledBadgeContainer-sc-1es4ws1-0"
+                class="c8 Badge__StyledBadgeContainer-sc-rebuvb-0"
                 style="min-height: 24px; min-width: 24px;"
               >
                 <span
