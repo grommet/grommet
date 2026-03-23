@@ -1,5 +1,5 @@
 import React, { forwardRef, useContext, useEffect, useMemo } from 'react';
-import { ThemeContext } from 'styled-components';
+import { ThemeContext } from '../../contexts/ThemeContext';
 import { ContainerTargetContext } from '../../contexts/ContainerTargetContext';
 import { FocusedContainer } from '../FocusedContainer';
 import {

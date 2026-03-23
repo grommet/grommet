@@ -1,24 +1,36 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { ThemeContext } from 'styled-components';
+import { ThemeProvider as StyledThemeProvider } from 'styled-components';
 
 import { deepMerge } from '../../utils';
 import { ThemeContextPropTypes } from './propTypes';
 
-ThemeContext.Extend = ({ children, value }) => (
-  <ThemeContext.Consumer>
+const GrommetThemeContext = React.createContext({});
+
+// Keep styled-components theme propagation while we migrate to Grommet context.
+const OriginalProvider = GrommetThemeContext.Provider;
+GrommetThemeContext.Provider = ({ value, children }) => (
+  <StyledThemeProvider theme={value}>
+    <OriginalProvider value={value}>{children}</OriginalProvider>
+  </StyledThemeProvider>
+);
+GrommetThemeContext.Provider.displayName = 'GrommetThemeContext.Provider';
+
+GrommetThemeContext.Extend = ({ children, value }) => (
+  <GrommetThemeContext.Consumer>
     {(theme) => (
-      <ThemeContext.Provider value={deepMerge(theme, value)}>
+      <GrommetThemeContext.Provider value={deepMerge(theme, value)}>
         {children}
-      </ThemeContext.Provider>
+      </GrommetThemeContext.Provider>
     )}
-  </ThemeContext.Consumer>
+  </GrommetThemeContext.Consumer>
 );
 
-ThemeContext.Extend.propTypes = {
+GrommetThemeContext.Extend.propTypes = {
   children: PropTypes.node.isRequired,
   value: PropTypes.shape({}).isRequired,
 };
-ThemeContext.propTypes = ThemeContextPropTypes;
+GrommetThemeContext.propTypes = ThemeContextPropTypes;
 
-export { ThemeContext };
+export { GrommetThemeContext as ThemeContext };
+export default GrommetThemeContext;
