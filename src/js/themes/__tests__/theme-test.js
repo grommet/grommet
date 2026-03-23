@@ -14,7 +14,7 @@ import {
   TextInput,
 } from '../../components';
 import { ThemeContext } from '../../contexts/ThemeContext';
-import { dark, grommet } from '..';
+import { dark, generate, grommet } from '..';
 
 // hpe theme has deprecated the accent and neutral colors
 const hpeColors = [
@@ -200,5 +200,19 @@ describe('Grommet', () => {
     );
 
     expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('generate warns when called with custom arguments', () => {
+    const warn = jest.spyOn(console, 'warn').mockImplementation(() => {});
+
+    generate(16, 4);
+
+    expect(warn).toHaveBeenCalledWith(
+      '[grommet] generate(baseSpacing, scale) with custom arguments no longer ' +
+        'affects CSS output. CSS tokens are pre-compiled from generate(24, 6). ' +
+        'Runtime JS overrides from the returned object still apply via ' +
+        'GrommetThemeContext for non-CSS values. ' +
+        'See the migration guide for alternatives.',
+    );
   });
 });
