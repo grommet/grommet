@@ -179,6 +179,24 @@ describe('resolveExtend', () => {
       );
     });
 
+    test('uses specific extend path when provided', () => {
+      const extend = 'color: red; font-weight: bold;';
+      resolveExtend(extend, {}, 'theme.text.extend');
+      expect(console.warn).toHaveBeenCalledWith(
+        expect.stringContaining('theme.text.extend is deprecated'),
+      );
+    });
+
+    test('uses specific extend path for dropped pseudo selectors', () => {
+      const extend = 'color: red; &:hover { color: blue; }';
+      resolveExtend(extend, {}, 'theme.anchor.extend');
+      expect(console.warn).toHaveBeenCalledWith(
+        expect.stringContaining(
+          'theme.anchor.extend contains pseudo-selectors',
+        ),
+      );
+    });
+
     test('does not warn in production', () => {
       process.env.NODE_ENV = 'production';
       const extend = 'color: red;';
