@@ -4,6 +4,10 @@ import { StyleSheetManager } from 'styled-components';
 import { hpe } from 'grommet-theme-hpe';
 import isChromatic from 'chromatic/isChromatic';
 import { Grommet, grommet, hacktoberfest2022, Box, Text } from '../src/js';
+// Explicit import to ensure ThemeContext.Extend side-effect is not tree-shaken.
+// ThemeContext.jsx mutates the styled-components ThemeContext object by attaching
+// .Extend; without this import the mutation is dropped in the storybook build.
+import '../src/js/contexts/ThemeContext/ThemeContext';
 
 const CUSTOM_THEMED = 'Custom Themed';
 const THEMES = {

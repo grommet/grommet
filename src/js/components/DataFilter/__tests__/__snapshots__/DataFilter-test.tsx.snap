@@ -449,7 +449,7 @@ exports[`DataFilter !inDataForm 1`] = `
                 tabindex="-1"
               >
                 <div
-                  class="c19 EdgeControl__StyledBox-sc-1xo2yt9-1"
+                  class="c19 EdgeControl__StyledBox-sc-1g1ndyr-1"
                 />
               </div>
             </div>
@@ -480,7 +480,7 @@ exports[`DataFilter !inDataForm 1`] = `
                 tabindex="-1"
               >
                 <div
-                  class="c19 EdgeControl__StyledBox-sc-1xo2yt9-1"
+                  class="c19 EdgeControl__StyledBox-sc-1g1ndyr-1"
                 />
               </div>
             </div>
@@ -1685,7 +1685,7 @@ exports[`DataFilter range Data 1`] = `
                         tabindex="-1"
                       >
                         <div
-                          class="c16 EdgeControl__StyledBox-sc-1xo2yt9-1"
+                          class="c16 EdgeControl__StyledBox-sc-1g1ndyr-1"
                         />
                       </div>
                     </div>
@@ -1716,7 +1716,7 @@ exports[`DataFilter range Data 1`] = `
                         tabindex="-1"
                       >
                         <div
-                          class="c16 EdgeControl__StyledBox-sc-1xo2yt9-1"
+                          class="c16 EdgeControl__StyledBox-sc-1g1ndyr-1"
                         />
                       </div>
                     </div>
@@ -2137,7 +2137,7 @@ exports[`DataFilter range prop 1`] = `
                         tabindex="-1"
                       >
                         <div
-                          class="c16 EdgeControl__StyledBox-sc-1xo2yt9-1"
+                          class="c16 EdgeControl__StyledBox-sc-1g1ndyr-1"
                         />
                       </div>
                     </div>
@@ -2168,7 +2168,7 @@ exports[`DataFilter range prop 1`] = `
                         tabindex="-1"
                       >
                         <div
-                          class="c16 EdgeControl__StyledBox-sc-1xo2yt9-1"
+                          class="c16 EdgeControl__StyledBox-sc-1g1ndyr-1"
                         />
                       </div>
                     </div>
@@ -2825,7 +2825,7 @@ exports[`DataFilter renders 1`] = `
                         tabindex="-1"
                       >
                         <div
-                          class="c23 EdgeControl__StyledBox-sc-1xo2yt9-1"
+                          class="c23 EdgeControl__StyledBox-sc-1g1ndyr-1"
                         />
                       </div>
                     </div>
@@ -2856,7 +2856,7 @@ exports[`DataFilter renders 1`] = `
                         tabindex="-1"
                       >
                         <div
-                          class="c23 EdgeControl__StyledBox-sc-1xo2yt9-1"
+                          class="c23 EdgeControl__StyledBox-sc-1g1ndyr-1"
                         />
                       </div>
                     </div>
@@ -3268,7 +3268,7 @@ exports[`DataFilter select multiple options 1`] = `
               style="top: 0px; right: 0px; transform: translate(50%, -50%); transform-origin: 100% 0%;"
             >
               <div
-                class="c8 Badge__StyledBadgeContainer-sc-1es4ws1-0"
+                class="c8 Badge__StyledBadgeContainer-sc-rebuvb-0"
                 style="min-height: 24px; min-width: 24px;"
               >
                 <span
@@ -3818,7 +3818,7 @@ exports[`DataFilter should allow filtering on multiple sub-properties from same 
               style="top: 0px; right: 0px; transform: translate(50%, -50%); transform-origin: 100% 0%;"
             >
               <div
-                class="c8 Badge__StyledBadgeContainer-sc-1es4ws1-0"
+                class="c8 Badge__StyledBadgeContainer-sc-rebuvb-0"
                 style="min-height: 24px; min-width: 24px;"
               >
                 <span
@@ -4423,7 +4423,7 @@ exports[`DataFilter theme rangeSelector size and round, selectMultiple dropHeigh
                           tabindex="-1"
                         >
                           <div
-                            class="c16 EdgeControl__StyledBox-sc-1xo2yt9-1"
+                            class="c16 EdgeControl__StyledBox-sc-1g1ndyr-1"
                           />
                         </div>
                       </div>
@@ -4454,7 +4454,7 @@ exports[`DataFilter theme rangeSelector size and round, selectMultiple dropHeigh
                           tabindex="-1"
                         >
                           <div
-                            class="c16 EdgeControl__StyledBox-sc-1xo2yt9-1"
+                            class="c16 EdgeControl__StyledBox-sc-1g1ndyr-1"
                           />
                         </div>
                       </div>

@@ -22,7 +22,8 @@ const Circle = forwardRef((props, ref) => {
       ? width / 2
       : Math.min(
           width / 2 - 8,
-          parseMetricToNum(theme.global.edgeSize[thickness] || thickness));
+          parseMetricToNum(theme.global.edgeSize[thickness] || thickness),
+        );
   const centerX = width / 2;
   const centerY = width / 2;
   const radius = width / 2 - strokeWidth / 2;

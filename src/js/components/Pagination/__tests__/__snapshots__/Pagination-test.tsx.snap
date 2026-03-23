@@ -336,7 +336,7 @@ exports[`Pagination should allow user to control page via state with page +\\n  
   class="c0"
 >
   <div
-    class="c1 Pagination__StyledPaginationContainer-sc-rnlw6m-0"
+    class="c1 Pagination__StyledPaginationContainer-sc-1fukbsb-0"
   >
     <nav
       aria-label="Pagination Navigation"
@@ -1155,7 +1155,7 @@ exports[`Pagination should apply a select component with default values for step
     class="c0"
   >
     <div
-      class="c1 Pagination__StyledPaginationContainer-sc-rnlw6m-0"
+      class="c1 Pagination__StyledPaginationContainer-sc-1fukbsb-0"
     >
       <div
         class="c2"
@@ -1839,7 +1839,7 @@ exports[`Pagination should apply a text component with summary 1`] = `
     class="c0"
   >
     <div
-      class="c1 Pagination__StyledPaginationContainer-sc-rnlw6m-0"
+      class="c1 Pagination__StyledPaginationContainer-sc-1fukbsb-0"
     >
       <div
         class="c2"
@@ -2435,7 +2435,7 @@ exports[`Pagination should apply a11yTitle and aria-label 1`] = `
   class="c0"
 >
   <div
-    class="c1 Pagination__StyledPaginationContainer-sc-rnlw6m-0"
+    class="c1 Pagination__StyledPaginationContainer-sc-1fukbsb-0"
   >
     <nav
       aria-label="pagination-test"
@@ -2570,7 +2570,7 @@ exports[`Pagination should apply a11yTitle and aria-label 1`] = `
     </nav>
   </div>
   <div
-    class="c1 Pagination__StyledPaginationContainer-sc-rnlw6m-0"
+    class="c1 Pagination__StyledPaginationContainer-sc-1fukbsb-0"
   >
     <nav
       aria-label="pagination-test-2"
@@ -3119,7 +3119,7 @@ exports[`Pagination should apply button kind style when referenced by a string 1
   class="c0"
 >
   <div
-    class="c1 Pagination__StyledPaginationContainer-sc-rnlw6m-0"
+    class="c1 Pagination__StyledPaginationContainer-sc-1fukbsb-0"
   >
     <nav
       aria-label="Pagination Navigation"
@@ -4921,7 +4921,7 @@ exports[`Pagination should apply size 1`] = `
   class="c0"
 >
   <div
-    class="c1 Pagination__StyledPaginationContainer-sc-rnlw6m-0"
+    class="c1 Pagination__StyledPaginationContainer-sc-1fukbsb-0"
   >
     <nav
       aria-label="Pagination Navigation"
@@ -5056,7 +5056,7 @@ exports[`Pagination should apply size 1`] = `
     </nav>
   </div>
   <div
-    class="c1 Pagination__StyledPaginationContainer-sc-rnlw6m-0"
+    class="c1 Pagination__StyledPaginationContainer-sc-1fukbsb-0"
   >
     <nav
       aria-label="Pagination Navigation"
@@ -5191,7 +5191,7 @@ exports[`Pagination should apply size 1`] = `
     </nav>
   </div>
   <div
-    class="c1 Pagination__StyledPaginationContainer-sc-rnlw6m-0"
+    class="c1 Pagination__StyledPaginationContainer-sc-1fukbsb-0"
   >
     <nav
       aria-label="Pagination Navigation"
@@ -5664,7 +5664,7 @@ exports[`Pagination should change the page on prop change 1`] = `
   class="c0"
 >
   <div
-    class="c1 Pagination__StyledPaginationContainer-sc-rnlw6m-0"
+    class="c1 Pagination__StyledPaginationContainer-sc-1fukbsb-0"
   >
     <nav
       aria-label="Pagination Navigation"
@@ -6240,7 +6240,7 @@ exports[`Pagination should disable next button if on last page 1`] = `
   class="c0"
 >
   <div
-    class="c1 Pagination__StyledPaginationContainer-sc-rnlw6m-0"
+    class="c1 Pagination__StyledPaginationContainer-sc-1fukbsb-0"
   >
     <nav
       aria-label="Pagination Navigation"
@@ -6629,7 +6629,7 @@ exports[`Pagination should disable previous and next controls when numberItems\\
   class="c0"
 >
   <div
-    class="c1 Pagination__StyledPaginationContainer-sc-rnlw6m-0"
+    class="c1 Pagination__StyledPaginationContainer-sc-1fukbsb-0"
   >
     <nav
       aria-label="Pagination Navigation"
@@ -6883,7 +6883,7 @@ exports[`Pagination should disable previous and next controls when numberItems\\
   class="c0"
 >
   <div
-    class="c1 Pagination__StyledPaginationContainer-sc-rnlw6m-0"
+    class="c1 Pagination__StyledPaginationContainer-sc-1fukbsb-0"
   >
     <nav
       aria-label="Pagination Navigation"
@@ -7197,7 +7197,7 @@ exports[`Pagination should disable previous and next controls when numberItems\\
   class="c0"
 >
   <div
-    class="c1 Pagination__StyledPaginationContainer-sc-rnlw6m-0"
+    class="c1 Pagination__StyledPaginationContainer-sc-1fukbsb-0"
   >
     <nav
       aria-label="Pagination Navigation"
@@ -7713,7 +7713,7 @@ exports[`Pagination should disable previous button if on first page 1`] = `
   class="c0"
 >
   <div
-    class="c1 Pagination__StyledPaginationContainer-sc-rnlw6m-0"
+    class="c1 Pagination__StyledPaginationContainer-sc-1fukbsb-0"
   >
     <nav
       aria-label="Pagination Navigation"
@@ -8186,7 +8186,7 @@ exports[`Pagination should display next page of results when "next" is\\n  selec
   class="c0"
 >
   <div
-    class="c1 Pagination__StyledPaginationContainer-sc-rnlw6m-0"
+    class="c1 Pagination__StyledPaginationContainer-sc-1fukbsb-0"
   >
     <nav
       aria-label="Pagination Navigation"
@@ -8326,7 +8326,7 @@ exports[`Pagination should display next page of results when "next" is\\n  selec
   class="StyledGrommet-sc-19lkkz7-0 iQmOCy"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 kBbldi Pagination__StyledPaginationContainer-sc-rnlw6m-0"
+    class="StyledBox-sc-13pk1d4-0 kBbldi Pagination__StyledPaginationContainer-sc-1fukbsb-0"
   >
     <nav
       aria-label="Pagination Navigation"
@@ -8797,7 +8797,7 @@ exports[`Pagination should display page 'n' of results when "page n" is\\n  sele
   class="c0"
 >
   <div
-    class="c1 Pagination__StyledPaginationContainer-sc-rnlw6m-0"
+    class="c1 Pagination__StyledPaginationContainer-sc-1fukbsb-0"
   >
     <nav
       aria-label="Pagination Navigation"
@@ -9268,7 +9268,7 @@ exports[`Pagination should display previous page of results when "previous" is\\
   class="c0"
 >
   <div
-    class="c1 Pagination__StyledPaginationContainer-sc-rnlw6m-0"
+    class="c1 Pagination__StyledPaginationContainer-sc-1fukbsb-0"
   >
     <nav
       aria-label="Pagination Navigation"
@@ -9408,7 +9408,7 @@ exports[`Pagination should display previous page of results when "previous" is\\
   class="StyledGrommet-sc-19lkkz7-0 iQmOCy"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 kBbldi Pagination__StyledPaginationContainer-sc-rnlw6m-0"
+    class="StyledBox-sc-13pk1d4-0 kBbldi Pagination__StyledPaginationContainer-sc-1fukbsb-0"
   >
     <nav
       aria-label="Pagination Navigation"
@@ -9984,7 +9984,7 @@ exports[`Pagination should display the correct last page based on items length\\
   class="c0"
 >
   <div
-    class="c1 Pagination__StyledPaginationContainer-sc-rnlw6m-0"
+    class="c1 Pagination__StyledPaginationContainer-sc-1fukbsb-0"
   >
     <nav
       aria-label="Pagination Navigation"
@@ -10362,7 +10362,7 @@ exports[`Pagination should have no items 1`] = `
     class="c0"
   >
     <div
-      class="c1 Pagination__StyledPaginationContainer-sc-rnlw6m-0"
+      class="c1 Pagination__StyledPaginationContainer-sc-1fukbsb-0"
     >
       <div
         class="c2"
@@ -10778,7 +10778,7 @@ exports[`Pagination should render correct numberEdgePages 1`] = `
   class="c0"
 >
   <div
-    class="c1 Pagination__StyledPaginationContainer-sc-rnlw6m-0"
+    class="c1 Pagination__StyledPaginationContainer-sc-1fukbsb-0"
   >
     <nav
       aria-label="Pagination Navigation"
@@ -11291,7 +11291,7 @@ exports[`Pagination should render correct numberMiddlePages when even 1`] = `
   class="c0"
 >
   <div
-    class="c1 Pagination__StyledPaginationContainer-sc-rnlw6m-0"
+    class="c1 Pagination__StyledPaginationContainer-sc-1fukbsb-0"
   >
     <nav
       aria-label="Pagination Navigation"
@@ -11771,7 +11771,7 @@ exports[`Pagination should render correct numberMiddlePages when odd 1`] = `
   class="c0"
 >
   <div
-    class="c1 Pagination__StyledPaginationContainer-sc-rnlw6m-0"
+    class="c1 Pagination__StyledPaginationContainer-sc-1fukbsb-0"
   >
     <nav
       aria-label="Pagination Navigation"
@@ -12249,7 +12249,7 @@ exports[`Pagination should render outside grommet wrapper 1`] = `
 }
 
 <div
-  class="c0 Pagination__StyledPaginationContainer-sc-rnlw6m-0"
+  class="c0 Pagination__StyledPaginationContainer-sc-1fukbsb-0"
 >
   <nav
     aria-label="Pagination Navigation"
@@ -12822,7 +12822,7 @@ exports[`Pagination should set numberMiddlePages = 1 if user provides value < 1 
   class="c0"
 >
   <div
-    class="c1 Pagination__StyledPaginationContainer-sc-rnlw6m-0"
+    class="c1 Pagination__StyledPaginationContainer-sc-1fukbsb-0"
   >
     <nav
       aria-label="Pagination Navigation"
@@ -13378,7 +13378,7 @@ exports[`Pagination should set page to last page if page prop > total possible\\
   class="c0"
 >
   <div
-    class="c1 Pagination__StyledPaginationContainer-sc-rnlw6m-0"
+    class="c1 Pagination__StyledPaginationContainer-sc-1fukbsb-0"
   >
     <nav
       aria-label="Pagination Navigation"
@@ -14181,7 +14181,7 @@ exports[`Pagination theme container gap and step container gap 1`] = `
     class="c0"
   >
     <div
-      class="c1 Pagination__StyledPaginationContainer-sc-rnlw6m-0"
+      class="c1 Pagination__StyledPaginationContainer-sc-1fukbsb-0"
     >
       <div
         class="c2"
