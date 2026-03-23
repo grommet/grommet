@@ -25,6 +25,25 @@ function parseCssStringToObject(cssString) {
     }, {});
 }
 
+const buildExtendWarning = (extendName, detected) => {
+  const target = extendName || 'theme.X.extend';
+
+  if (detected.length > 0) {
+    return (
+      `[grommet] ${target} contains ${detected.join(' and ')} ` +
+      'which cannot be applied via the style prop shim and have been dropped. ' +
+      'Migrate to the className prop instead. ' +
+      'See the migration guide.'
+    );
+  }
+
+  return (
+    `[grommet] ${target} is deprecated. ` +
+    'Use the className prop instead. ' +
+    'See the migration guide.'
+  );
+};
+
 /**
  * Backward-compat shim for theme.X.extend values.
  *
@@ -39,9 +58,10 @@ function parseCssStringToObject(cssString) {
  *
  * @param {string | function | Array | undefined} extend - The extend value from theme
  * @param {Object} props - Runtime props to pass to extend functions
+ * @param {string} [extendName='theme.X.extend'] - Theme path for warning ownership
  * @returns {Object | undefined} Plain JS style object compatible with React `style` prop
  */
-export function resolveExtend(extend, props) {
+export function resolveExtend(extend, props, extendName = 'theme.X.extend') {
   if (!extend) return undefined;
 
   const resolved =
@@ -61,20 +81,7 @@ export function resolveExtend(extend, props) {
       ...(hasAtRule ? ['@-rules'] : []),
     ];
 
-    if (detected.length > 0) {
-      console.warn(
-        `[grommet] theme.X.extend contains ${detected.join(' and ')} ` +
-          `which cannot be applied via the style prop shim and have been dropped. ` +
-          `Migrate to the className prop instead. ` +
-          `See the migration guide.`,
-      );
-    } else {
-      console.warn(
-        `[grommet] theme.X.extend is deprecated. ` +
-          `Use the className prop instead. ` +
-          `See the migration guide.`,
-      );
-    }
+    console.warn(buildExtendWarning(extendName, detected));
   }
 
   return parseCssStringToObject(resolved);
