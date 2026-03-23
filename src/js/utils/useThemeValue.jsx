@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { ThemeContext } from 'styled-components';
+import { ThemeContext } from '../contexts/ThemeContext';
 import { defaultProps } from '../default-props';
 
 /*
@@ -9,10 +9,11 @@ import { defaultProps } from '../default-props';
 */
 const useThemeValue = () => {
   const context = useContext(ThemeContext);
-  const theme = context || defaultProps.theme;
+  const hasTheme = context && Object.keys(context).length > 0;
+  const theme = hasTheme ? context : defaultProps.theme;
   return {
     theme,
-    passThemeFlag: { ...(context === undefined ? { theme } : {}) },
+    passThemeFlag: { ...(!hasTheme ? { theme } : {}) },
   };
 };
 

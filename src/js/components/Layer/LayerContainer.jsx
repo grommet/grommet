@@ -5,7 +5,8 @@ import React, {
   useMemo,
   useRef,
 } from 'react';
-import styled, { ThemeContext } from 'styled-components';
+import styled from 'styled-components';
+import { ThemeContext } from '../../contexts/ThemeContext';
 
 import { FocusedContainer } from '../FocusedContainer';
 import { Keyboard } from '../Keyboard';
