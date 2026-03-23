@@ -127,6 +127,20 @@ Object.keys(statusColors).forEach((color) => {
 });
 
 export const generate = (baseSpacing = 24, scale = 6) => {
+  if (
+    process.env.NODE_ENV !== 'production' &&
+    (baseSpacing !== 24 || scale !== 6)
+  ) {
+    console.warn(
+      '[grommet] generate(baseSpacing, scale) with custom arguments ' +
+        'no longer affects CSS output. CSS tokens are pre-compiled ' +
+        'from generate(24, 6). ' +
+        'Runtime JS overrides from the returned object still apply via ' +
+        'GrommetThemeContext for non-CSS values. ' +
+        'See the migration guide for alternatives.',
+    );
+  }
+
   // 24
   const baseFontSize = baseSpacing * 0.75; // 18
   const fontScale = baseSpacing / scale; // 4
