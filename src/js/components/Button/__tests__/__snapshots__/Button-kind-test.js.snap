@@ -1,17 +1,30 @@
-// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+// Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Button kind badge should align to button container if specified in theme 1`] = `
 .c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   background-color: #7D4CDB;
   color: #f8f8f8;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
   border-radius: 24px;
 }
@@ -43,6 +56,7 @@ exports[`Button kind badge should align to button container if specified in them
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
+  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -54,8 +68,11 @@ exports[`Button kind badge should align to button container if specified in them
   font-size: 18px;
   line-height: 24px;
   text-align: center;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
   transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
 }
 
@@ -64,18 +81,18 @@ exports[`Button kind badge should align to button container if specified in them
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus >circle,
-.c3:focus >ellipse,
-.c3:focus >line,
-.c3:focus >path,
-.c3:focus >polygon,
-.c3:focus >polyline,
-.c3:focus >rect {
+.c3:focus > circle,
+.c3:focus > ellipse,
+.c3:focus > line,
+.c3:focus > path,
+.c3:focus > polygon,
+.c3:focus > polyline,
+.c3:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus ::-moz-focus-inner {
+.c3:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -84,18 +101,18 @@ exports[`Button kind badge should align to button container if specified in them
   box-shadow: none;
 }
 
-.c3:focus:not(:focus-visible) >circle,
-.c3:focus:not(:focus-visible) >ellipse,
-.c3:focus:not(:focus-visible) >line,
-.c3:focus:not(:focus-visible) >path,
-.c3:focus:not(:focus-visible) >polygon,
-.c3:focus:not(:focus-visible) >polyline,
-.c3:focus:not(:focus-visible) >rect {
+.c3:focus:not(:focus-visible) > circle,
+.c3:focus:not(:focus-visible) > ellipse,
+.c3:focus:not(:focus-visible) > line,
+.c3:focus:not(:focus-visible) > path,
+.c3:focus:not(:focus-visible) > polygon,
+.c3:focus:not(:focus-visible) > polyline,
+.c3:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c3:focus:not(:focus-visible) ::-moz-focus-inner {
+.c3:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -109,7 +126,7 @@ exports[`Button kind badge should align to button container if specified in them
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c5 {
     border-radius: 12px;
   }
@@ -153,16 +170,29 @@ exports[`Button kind badge should align to button container if specified in them
 
 exports[`Button kind badge should apply background 1`] = `
 .c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   background-color: #009E67;
   color: #f8f8f8;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
   border-radius: 24px;
 }
@@ -194,6 +224,7 @@ exports[`Button kind badge should apply background 1`] = `
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
+  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -206,11 +237,14 @@ exports[`Button kind badge should apply background 1`] = `
   line-height: 24px;
   border-style: solid;
   border-width: 2px;
-  border-color: rgba(0, 0, 0, 0.33);
+  border-color: rgba(0,0,0,0.33);
   padding: 2px 20px;
   text-align: center;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
   transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
 }
 
@@ -219,18 +253,18 @@ exports[`Button kind badge should apply background 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus >circle,
-.c3:focus >ellipse,
-.c3:focus >line,
-.c3:focus >path,
-.c3:focus >polygon,
-.c3:focus >polyline,
-.c3:focus >rect {
+.c3:focus > circle,
+.c3:focus > ellipse,
+.c3:focus > line,
+.c3:focus > path,
+.c3:focus > polygon,
+.c3:focus > polyline,
+.c3:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus ::-moz-focus-inner {
+.c3:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -239,18 +273,18 @@ exports[`Button kind badge should apply background 1`] = `
   box-shadow: none;
 }
 
-.c3:focus:not(:focus-visible) >circle,
-.c3:focus:not(:focus-visible) >ellipse,
-.c3:focus:not(:focus-visible) >line,
-.c3:focus:not(:focus-visible) >path,
-.c3:focus:not(:focus-visible) >polygon,
-.c3:focus:not(:focus-visible) >polyline,
-.c3:focus:not(:focus-visible) >rect {
+.c3:focus:not(:focus-visible) > circle,
+.c3:focus:not(:focus-visible) > ellipse,
+.c3:focus:not(:focus-visible) > line,
+.c3:focus:not(:focus-visible) > path,
+.c3:focus:not(:focus-visible) > polygon,
+.c3:focus:not(:focus-visible) > polyline,
+.c3:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c3:focus:not(:focus-visible) ::-moz-focus-inner {
+.c3:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -264,7 +298,7 @@ exports[`Button kind badge should apply background 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c5 {
     border-radius: 12px;
   }
@@ -308,16 +342,29 @@ exports[`Button kind badge should apply background 1`] = `
 
 exports[`Button kind badge should be offset from top-right corner 1`] = `
 .c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   background-color: #7D4CDB;
   color: #f8f8f8;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
   border-radius: 24px;
 }
@@ -342,6 +389,7 @@ exports[`Button kind badge should be offset from top-right corner 1`] = `
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
+  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -354,11 +402,14 @@ exports[`Button kind badge should be offset from top-right corner 1`] = `
   line-height: 24px;
   border-style: solid;
   border-width: 2px;
-  border-color: rgba(0, 0, 0, 0.33);
+  border-color: rgba(0,0,0,0.33);
   padding: 2px 20px;
   text-align: center;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
   transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
 }
 
@@ -367,18 +418,18 @@ exports[`Button kind badge should be offset from top-right corner 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus >circle,
-.c3:focus >ellipse,
-.c3:focus >line,
-.c3:focus >path,
-.c3:focus >polygon,
-.c3:focus >polyline,
-.c3:focus >rect {
+.c3:focus > circle,
+.c3:focus > ellipse,
+.c3:focus > line,
+.c3:focus > path,
+.c3:focus > polygon,
+.c3:focus > polyline,
+.c3:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus ::-moz-focus-inner {
+.c3:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -387,18 +438,18 @@ exports[`Button kind badge should be offset from top-right corner 1`] = `
   box-shadow: none;
 }
 
-.c3:focus:not(:focus-visible) >circle,
-.c3:focus:not(:focus-visible) >ellipse,
-.c3:focus:not(:focus-visible) >line,
-.c3:focus:not(:focus-visible) >path,
-.c3:focus:not(:focus-visible) >polygon,
-.c3:focus:not(:focus-visible) >polyline,
-.c3:focus:not(:focus-visible) >rect {
+.c3:focus:not(:focus-visible) > circle,
+.c3:focus:not(:focus-visible) > ellipse,
+.c3:focus:not(:focus-visible) > line,
+.c3:focus:not(:focus-visible) > path,
+.c3:focus:not(:focus-visible) > polygon,
+.c3:focus:not(:focus-visible) > polyline,
+.c3:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c3:focus:not(:focus-visible) ::-moz-focus-inner {
+.c3:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -412,7 +463,7 @@ exports[`Button kind badge should be offset from top-right corner 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c5 {
     border-radius: 12px;
   }
@@ -450,16 +501,29 @@ exports[`Button kind badge should be offset from top-right corner 1`] = `
 
 exports[`Button kind badge should display "+" when number is greater than max 1`] = `
 .c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   background-color: #7D4CDB;
   color: #f8f8f8;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
   border-radius: 24px;
 }
@@ -491,6 +555,7 @@ exports[`Button kind badge should display "+" when number is greater than max 1`
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
+  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -503,11 +568,14 @@ exports[`Button kind badge should display "+" when number is greater than max 1`
   line-height: 24px;
   border-style: solid;
   border-width: 2px;
-  border-color: rgba(0, 0, 0, 0.33);
+  border-color: rgba(0,0,0,0.33);
   padding: 2px 20px;
   text-align: center;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
   transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
 }
 
@@ -516,18 +584,18 @@ exports[`Button kind badge should display "+" when number is greater than max 1`
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus >circle,
-.c3:focus >ellipse,
-.c3:focus >line,
-.c3:focus >path,
-.c3:focus >polygon,
-.c3:focus >polyline,
-.c3:focus >rect {
+.c3:focus > circle,
+.c3:focus > ellipse,
+.c3:focus > line,
+.c3:focus > path,
+.c3:focus > polygon,
+.c3:focus > polyline,
+.c3:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus ::-moz-focus-inner {
+.c3:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -536,18 +604,18 @@ exports[`Button kind badge should display "+" when number is greater than max 1`
   box-shadow: none;
 }
 
-.c3:focus:not(:focus-visible) >circle,
-.c3:focus:not(:focus-visible) >ellipse,
-.c3:focus:not(:focus-visible) >line,
-.c3:focus:not(:focus-visible) >path,
-.c3:focus:not(:focus-visible) >polygon,
-.c3:focus:not(:focus-visible) >polyline,
-.c3:focus:not(:focus-visible) >rect {
+.c3:focus:not(:focus-visible) > circle,
+.c3:focus:not(:focus-visible) > ellipse,
+.c3:focus:not(:focus-visible) > line,
+.c3:focus:not(:focus-visible) > path,
+.c3:focus:not(:focus-visible) > polygon,
+.c3:focus:not(:focus-visible) > polyline,
+.c3:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c3:focus:not(:focus-visible) ::-moz-focus-inner {
+.c3:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -561,7 +629,7 @@ exports[`Button kind badge should display "+" when number is greater than max 1`
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c5 {
     border-radius: 12px;
   }
@@ -605,16 +673,29 @@ exports[`Button kind badge should display "+" when number is greater than max 1`
 
 exports[`Button kind badge should display number content 1`] = `
 .c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   background-color: #7D4CDB;
   color: #f8f8f8;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
   border-radius: 24px;
 }
@@ -646,6 +727,7 @@ exports[`Button kind badge should display number content 1`] = `
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
+  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -658,11 +740,14 @@ exports[`Button kind badge should display number content 1`] = `
   line-height: 24px;
   border-style: solid;
   border-width: 2px;
-  border-color: rgba(0, 0, 0, 0.33);
+  border-color: rgba(0,0,0,0.33);
   padding: 2px 20px;
   text-align: center;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
   transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
 }
 
@@ -671,18 +756,18 @@ exports[`Button kind badge should display number content 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus >circle,
-.c3:focus >ellipse,
-.c3:focus >line,
-.c3:focus >path,
-.c3:focus >polygon,
-.c3:focus >polyline,
-.c3:focus >rect {
+.c3:focus > circle,
+.c3:focus > ellipse,
+.c3:focus > line,
+.c3:focus > path,
+.c3:focus > polygon,
+.c3:focus > polyline,
+.c3:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus ::-moz-focus-inner {
+.c3:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -691,18 +776,18 @@ exports[`Button kind badge should display number content 1`] = `
   box-shadow: none;
 }
 
-.c3:focus:not(:focus-visible) >circle,
-.c3:focus:not(:focus-visible) >ellipse,
-.c3:focus:not(:focus-visible) >line,
-.c3:focus:not(:focus-visible) >path,
-.c3:focus:not(:focus-visible) >polygon,
-.c3:focus:not(:focus-visible) >polyline,
-.c3:focus:not(:focus-visible) >rect {
+.c3:focus:not(:focus-visible) > circle,
+.c3:focus:not(:focus-visible) > ellipse,
+.c3:focus:not(:focus-visible) > line,
+.c3:focus:not(:focus-visible) > path,
+.c3:focus:not(:focus-visible) > polygon,
+.c3:focus:not(:focus-visible) > polyline,
+.c3:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c3:focus:not(:focus-visible) ::-moz-focus-inner {
+.c3:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -716,7 +801,7 @@ exports[`Button kind badge should display number content 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c5 {
     border-radius: 12px;
   }
@@ -761,6 +846,8 @@ exports[`Button kind badge should display number content 1`] = `
 exports[`Button kind badge should render custom element 1`] = `
 .c6 {
   display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
@@ -792,11 +879,16 @@ exports[`Button kind badge should render custom element 1`] = `
 }
 
 .c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
 }
 
@@ -820,6 +912,7 @@ exports[`Button kind badge should render custom element 1`] = `
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
+  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -832,11 +925,14 @@ exports[`Button kind badge should render custom element 1`] = `
   line-height: 24px;
   border-style: solid;
   border-width: 2px;
-  border-color: rgba(0, 0, 0, 0.33);
+  border-color: rgba(0,0,0,0.33);
   padding: 2px 20px;
   text-align: center;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
   transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
 }
 
@@ -845,18 +941,18 @@ exports[`Button kind badge should render custom element 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus >circle,
-.c3:focus >ellipse,
-.c3:focus >line,
-.c3:focus >path,
-.c3:focus >polygon,
-.c3:focus >polyline,
-.c3:focus >rect {
+.c3:focus > circle,
+.c3:focus > ellipse,
+.c3:focus > line,
+.c3:focus > path,
+.c3:focus > polygon,
+.c3:focus > polyline,
+.c3:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus ::-moz-focus-inner {
+.c3:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -865,18 +961,18 @@ exports[`Button kind badge should render custom element 1`] = `
   box-shadow: none;
 }
 
-.c3:focus:not(:focus-visible) >circle,
-.c3:focus:not(:focus-visible) >ellipse,
-.c3:focus:not(:focus-visible) >line,
-.c3:focus:not(:focus-visible) >path,
-.c3:focus:not(:focus-visible) >polygon,
-.c3:focus:not(:focus-visible) >polyline,
-.c3:focus:not(:focus-visible) >rect {
+.c3:focus:not(:focus-visible) > circle,
+.c3:focus:not(:focus-visible) > ellipse,
+.c3:focus:not(:focus-visible) > line,
+.c3:focus:not(:focus-visible) > path,
+.c3:focus:not(:focus-visible) > polygon,
+.c3:focus:not(:focus-visible) > polyline,
+.c3:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c3:focus:not(:focus-visible) ::-moz-focus-inner {
+.c3:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -932,9 +1028,12 @@ exports[`Button kind badge should render custom element 1`] = `
 </div>
 `;
 
-exports[`Button kind badge should render relative to contents when button has no\\n  border or background 1`] = `
+exports[`Button kind badge should render relative to contents when button has no
+  border or background 1`] = `
 .c4 {
   display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
@@ -966,16 +1065,29 @@ exports[`Button kind badge should render relative to contents when button has no
 }
 
 .c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   background-color: #7D4CDB;
   color: #f8f8f8;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
   border-radius: 24px;
 }
@@ -1000,24 +1112,35 @@ exports[`Button kind badge should render relative to contents when button has no
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
+  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
   overflow: visible;
   text-transform: none;
+  min-width: 24px;
+  min-height: 24px;
   border: none;
   border-radius: 18px;
   padding: 4px 22px;
   font-size: 18px;
   line-height: 0;
   text-align: center;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
   transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
 }
 
-.c1 >svg {
+.c1 > svg {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
   align-self: center;
   vertical-align: middle;
 }
@@ -1027,18 +1150,18 @@ exports[`Button kind badge should render relative to contents when button has no
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus >circle,
-.c1:focus >ellipse,
-.c1:focus >line,
-.c1:focus >path,
-.c1:focus >polygon,
-.c1:focus >polyline,
-.c1:focus >rect {
+.c1:focus > circle,
+.c1:focus > ellipse,
+.c1:focus > line,
+.c1:focus > path,
+.c1:focus > polygon,
+.c1:focus > polyline,
+.c1:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus ::-moz-focus-inner {
+.c1:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -1047,18 +1170,18 @@ exports[`Button kind badge should render relative to contents when button has no
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible) >circle,
-.c1:focus:not(:focus-visible) >ellipse,
-.c1:focus:not(:focus-visible) >line,
-.c1:focus:not(:focus-visible) >path,
-.c1:focus:not(:focus-visible) >polygon,
-.c1:focus:not(:focus-visible) >polyline,
-.c1:focus:not(:focus-visible) >rect {
+.c1:focus:not(:focus-visible) > circle,
+.c1:focus:not(:focus-visible) > ellipse,
+.c1:focus:not(:focus-visible) > line,
+.c1:focus:not(:focus-visible) > path,
+.c1:focus:not(:focus-visible) > polygon,
+.c1:focus:not(:focus-visible) > polyline,
+.c1:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible) ::-moz-focus-inner {
+.c1:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -1072,7 +1195,7 @@ exports[`Button kind badge should render relative to contents when button has no
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c6 {
     border-radius: 12px;
   }
@@ -1125,6 +1248,7 @@ exports[`Button kind border on default button 1`] = `
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
+  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -1140,8 +1264,11 @@ exports[`Button kind border on default button 1`] = `
   border-color: green;
   padding: 2px 20px;
   text-align: center;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
   transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
 }
 
@@ -1150,18 +1277,18 @@ exports[`Button kind border on default button 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus >circle,
-.c1:focus >ellipse,
-.c1:focus >line,
-.c1:focus >path,
-.c1:focus >polygon,
-.c1:focus >polyline,
-.c1:focus >rect {
+.c1:focus > circle,
+.c1:focus > ellipse,
+.c1:focus > line,
+.c1:focus > path,
+.c1:focus > polygon,
+.c1:focus > polyline,
+.c1:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus ::-moz-focus-inner {
+.c1:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -1170,18 +1297,18 @@ exports[`Button kind border on default button 1`] = `
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible) >circle,
-.c1:focus:not(:focus-visible) >ellipse,
-.c1:focus:not(:focus-visible) >line,
-.c1:focus:not(:focus-visible) >path,
-.c1:focus:not(:focus-visible) >polygon,
-.c1:focus:not(:focus-visible) >polyline,
-.c1:focus:not(:focus-visible) >rect {
+.c1:focus:not(:focus-visible) > circle,
+.c1:focus:not(:focus-visible) > ellipse,
+.c1:focus:not(:focus-visible) > line,
+.c1:focus:not(:focus-visible) > path,
+.c1:focus:not(:focus-visible) > polygon,
+.c1:focus:not(:focus-visible) > polyline,
+.c1:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible) ::-moz-focus-inner {
+.c1:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -1210,6 +1337,8 @@ exports[`Button kind border on default button 1`] = `
 exports[`Button kind button icon colors 1`] = `
 .c2 {
   display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
@@ -1245,11 +1374,14 @@ exports[`Button kind button icon colors 1`] = `
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
+  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
   overflow: visible;
   text-transform: none;
+  min-width: 24px;
+  min-height: 24px;
   border: none;
   border-radius: 18px;
   padding: 4px 22px;
@@ -1258,13 +1390,21 @@ exports[`Button kind button icon colors 1`] = `
   background-color: #000;
   border-color: #666666;
   text-align: center;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
   transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
 }
 
-.c1 >svg {
+.c1 > svg {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
   align-self: center;
   vertical-align: middle;
 }
@@ -1274,18 +1414,18 @@ exports[`Button kind button icon colors 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus >circle,
-.c1:focus >ellipse,
-.c1:focus >line,
-.c1:focus >path,
-.c1:focus >polygon,
-.c1:focus >polyline,
-.c1:focus >rect {
+.c1:focus > circle,
+.c1:focus > ellipse,
+.c1:focus > line,
+.c1:focus > path,
+.c1:focus > polygon,
+.c1:focus > polyline,
+.c1:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus ::-moz-focus-inner {
+.c1:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -1294,18 +1434,18 @@ exports[`Button kind button icon colors 1`] = `
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible) >circle,
-.c1:focus:not(:focus-visible) >ellipse,
-.c1:focus:not(:focus-visible) >line,
-.c1:focus:not(:focus-visible) >path,
-.c1:focus:not(:focus-visible) >polygon,
-.c1:focus:not(:focus-visible) >polyline,
-.c1:focus:not(:focus-visible) >rect {
+.c1:focus:not(:focus-visible) > circle,
+.c1:focus:not(:focus-visible) > ellipse,
+.c1:focus:not(:focus-visible) > line,
+.c1:focus:not(:focus-visible) > path,
+.c1:focus:not(:focus-visible) > polygon,
+.c1:focus:not(:focus-visible) > polyline,
+.c1:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible) ::-moz-focus-inner {
+.c1:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -1345,6 +1485,8 @@ exports[`Button kind button icon colors 1`] = `
 exports[`Button kind button with icon and align 1`] = `
 .c2 {
   display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
@@ -1380,24 +1522,35 @@ exports[`Button kind button with icon and align 1`] = `
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
+  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
   overflow: visible;
   text-transform: none;
+  min-width: 24px;
+  min-height: 24px;
   border: none;
   border-radius: 18px;
   padding: 4px 22px;
   font-size: 18px;
   line-height: 0;
   text-align: start;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
   transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
 }
 
-.c1 >svg {
+.c1 > svg {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
   align-self: center;
   vertical-align: middle;
 }
@@ -1407,18 +1560,18 @@ exports[`Button kind button with icon and align 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus >circle,
-.c1:focus >ellipse,
-.c1:focus >line,
-.c1:focus >path,
-.c1:focus >polygon,
-.c1:focus >polyline,
-.c1:focus >rect {
+.c1:focus > circle,
+.c1:focus > ellipse,
+.c1:focus > line,
+.c1:focus > path,
+.c1:focus > polygon,
+.c1:focus > polyline,
+.c1:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus ::-moz-focus-inner {
+.c1:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -1427,18 +1580,18 @@ exports[`Button kind button with icon and align 1`] = `
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible) >circle,
-.c1:focus:not(:focus-visible) >ellipse,
-.c1:focus:not(:focus-visible) >line,
-.c1:focus:not(:focus-visible) >path,
-.c1:focus:not(:focus-visible) >polygon,
-.c1:focus:not(:focus-visible) >polyline,
-.c1:focus:not(:focus-visible) >rect {
+.c1:focus:not(:focus-visible) > circle,
+.c1:focus:not(:focus-visible) > ellipse,
+.c1:focus:not(:focus-visible) > line,
+.c1:focus:not(:focus-visible) > path,
+.c1:focus:not(:focus-visible) > polygon,
+.c1:focus:not(:focus-visible) > polyline,
+.c1:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible) ::-moz-focus-inner {
+.c1:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -1478,31 +1631,51 @@ exports[`Button kind button with icon and align 1`] = `
 exports[`Button kind button with transparent background 1`] = `
 <DocumentFragment>
   .c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
   align-items: flex-start;
-  background-color: rgba(28, 28, 28, 1);
-  color: #ffffff;
+  background-color: rgba(28,28,28,1);
+  color: #FFFFFF;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
-  padding: 48px;
+  padding: 96px;
 }
 
 .c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
   align-items: flex-start;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
-  padding: 48px;
+  padding: 96px;
 }
 
 .c3 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
   align-self: stretch;
   height: 24px;
 }
@@ -1512,67 +1685,67 @@ exports[`Button kind button with transparent background 1`] = `
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
+  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
   overflow: visible;
   text-transform: none;
   border: none;
-  border-radius: 9999px;
-  padding: 5px 18px;
-  font-size: 1.125rem;
-  line-height: 1.5rem;
-  background-color: rgba(255, 255, 255, 0.12);
-  color: #ffffff;
+  border-radius: 2em;
+  padding: 6px 18px;
+  font-size: 18px;
+  line-height: 24px;
+  background-color: #FFFFFF0F;
+  color: #FFFFFF;
   text-align: center;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
   transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
+  font-size: 19px;
+  line-height: 24px;
 }
 
 .c2:focus {
-  outline-offset: 2px;
-  outline: 2px solid #004233;
-  box-shadow: 0 0 0px 2px #ffffff;
+  outline: none;
+  box-shadow: 0 0 2px 2px #00E8CF;
 }
 
-.c2:focus >circle,
-.c2:focus >ellipse,
-.c2:focus >line,
-.c2:focus >path,
-.c2:focus >polygon,
-.c2:focus >polyline,
-.c2:focus >rect {
-  outline-offset: 2px;
-  outline: 2px solid #004233;
-  box-shadow: 0 0 0px 2px #ffffff;
+.c2:focus > circle,
+.c2:focus > ellipse,
+.c2:focus > line,
+.c2:focus > path,
+.c2:focus > polygon,
+.c2:focus > polyline,
+.c2:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #00E8CF;
 }
 
-.c2:focus ::-moz-focus-inner {
+.c2:focus::-moz-focus-inner {
   border: 0;
 }
 
 .c2:focus:not(:focus-visible) {
-  outline-offset: 0px;
-  outline: none;
   outline: none;
   box-shadow: none;
 }
 
-.c2:focus:not(:focus-visible) >circle,
-.c2:focus:not(:focus-visible) >ellipse,
-.c2:focus:not(:focus-visible) >line,
-.c2:focus:not(:focus-visible) >path,
-.c2:focus:not(:focus-visible) >polygon,
-.c2:focus:not(:focus-visible) >polyline,
-.c2:focus:not(:focus-visible) >rect {
-  outline-offset: 0px;
-  outline: none;
+.c2:focus:not(:focus-visible) > circle,
+.c2:focus:not(:focus-visible) > ellipse,
+.c2:focus:not(:focus-visible) > line,
+.c2:focus:not(:focus-visible) > path,
+.c2:focus:not(:focus-visible) > polygon,
+.c2:focus:not(:focus-visible) > polyline,
+.c2:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c2:focus:not(:focus-visible) ::-moz-focus-inner {
+.c2:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -1581,72 +1754,72 @@ exports[`Button kind button with transparent background 1`] = `
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
+  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
   overflow: visible;
   text-transform: none;
-  background-color: rgba(255, 255, 255, 0.06);
-  color: #ffffff;
+  background-color: #FFFFFF0F;
+  color: #FFFFFF;
   border: none;
-  border-radius: 9999px;
-  padding: 5px 18px;
-  font-size: 1.125rem;
-  line-height: 1.5rem;
-  background-color: rgba(255, 255, 255, 0.12);
-  color: #ffffff;
-  background-color: rgba(255, 255, 255, 0.06);
-  color: #ffffff;
-  color: #ffffff;
+  border-radius: 2em;
+  padding: 6px 18px;
+  font-size: 18px;
+  line-height: 24px;
+  background-color: #FFFFFF0F;
+  color: #FFFFFF;
+  background-color: rgba(255,255,255,0.058823529411764705);
+  color: #FFFFFF;
+  color: #FFFFFF;
   text-align: center;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
   transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
+  font-size: 19px;
+  line-height: 24px;
 }
 
 .c4:focus {
-  outline-offset: 2px;
-  outline: 2px solid #004233;
-  box-shadow: 0 0 0px 2px #ffffff;
+  outline: none;
+  box-shadow: 0 0 2px 2px #00E8CF;
 }
 
-.c4:focus >circle,
-.c4:focus >ellipse,
-.c4:focus >line,
-.c4:focus >path,
-.c4:focus >polygon,
-.c4:focus >polyline,
-.c4:focus >rect {
-  outline-offset: 2px;
-  outline: 2px solid #004233;
-  box-shadow: 0 0 0px 2px #ffffff;
+.c4:focus > circle,
+.c4:focus > ellipse,
+.c4:focus > line,
+.c4:focus > path,
+.c4:focus > polygon,
+.c4:focus > polyline,
+.c4:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #00E8CF;
 }
 
-.c4:focus ::-moz-focus-inner {
+.c4:focus::-moz-focus-inner {
   border: 0;
 }
 
 .c4:focus:not(:focus-visible) {
-  outline-offset: 0px;
-  outline: none;
   outline: none;
   box-shadow: none;
 }
 
-.c4:focus:not(:focus-visible) >circle,
-.c4:focus:not(:focus-visible) >ellipse,
-.c4:focus:not(:focus-visible) >line,
-.c4:focus:not(:focus-visible) >path,
-.c4:focus:not(:focus-visible) >polygon,
-.c4:focus:not(:focus-visible) >polyline,
-.c4:focus:not(:focus-visible) >rect {
-  outline-offset: 0px;
-  outline: none;
+.c4:focus:not(:focus-visible) > circle,
+.c4:focus:not(:focus-visible) > ellipse,
+.c4:focus:not(:focus-visible) > line,
+.c4:focus:not(:focus-visible) > path,
+.c4:focus:not(:focus-visible) > polygon,
+.c4:focus:not(:focus-visible) > polyline,
+.c4:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c4:focus:not(:focus-visible) ::-moz-focus-inner {
+.c4:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -1655,67 +1828,67 @@ exports[`Button kind button with transparent background 1`] = `
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
+  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
   overflow: visible;
   text-transform: none;
   border: none;
-  border-radius: 9999px;
-  padding: 5px 18px;
-  font-size: 1.125rem;
-  line-height: 1.5rem;
-  background-color: rgba(0, 0, 0, 0.04);
-  color: #2e2e2e;
+  border-radius: 2em;
+  padding: 6px 18px;
+  font-size: 18px;
+  line-height: 24px;
+  background-color: #0000000A;
+  color: #333333;
   text-align: center;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
   transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
+  font-size: 19px;
+  line-height: 24px;
 }
 
 .c6:focus {
-  outline-offset: 2px;
-  outline: 2px solid #004233;
-  box-shadow: 0 0 0px 2px #ffffff;
+  outline: none;
+  box-shadow: 0 0 2px 2px #00E8CF;
 }
 
-.c6:focus >circle,
-.c6:focus >ellipse,
-.c6:focus >line,
-.c6:focus >path,
-.c6:focus >polygon,
-.c6:focus >polyline,
-.c6:focus >rect {
-  outline-offset: 2px;
-  outline: 2px solid #004233;
-  box-shadow: 0 0 0px 2px #ffffff;
+.c6:focus > circle,
+.c6:focus > ellipse,
+.c6:focus > line,
+.c6:focus > path,
+.c6:focus > polygon,
+.c6:focus > polyline,
+.c6:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #00E8CF;
 }
 
-.c6:focus ::-moz-focus-inner {
+.c6:focus::-moz-focus-inner {
   border: 0;
 }
 
 .c6:focus:not(:focus-visible) {
-  outline-offset: 0px;
-  outline: none;
   outline: none;
   box-shadow: none;
 }
 
-.c6:focus:not(:focus-visible) >circle,
-.c6:focus:not(:focus-visible) >ellipse,
-.c6:focus:not(:focus-visible) >line,
-.c6:focus:not(:focus-visible) >path,
-.c6:focus:not(:focus-visible) >polygon,
-.c6:focus:not(:focus-visible) >polyline,
-.c6:focus:not(:focus-visible) >rect {
-  outline-offset: 0px;
-  outline: none;
+.c6:focus:not(:focus-visible) > circle,
+.c6:focus:not(:focus-visible) > ellipse,
+.c6:focus:not(:focus-visible) > line,
+.c6:focus:not(:focus-visible) > path,
+.c6:focus:not(:focus-visible) > polygon,
+.c6:focus:not(:focus-visible) > polyline,
+.c6:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c6:focus:not(:focus-visible) ::-moz-focus-inner {
+.c6:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -1724,80 +1897,80 @@ exports[`Button kind button with transparent background 1`] = `
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
+  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
   overflow: visible;
   text-transform: none;
-  background-color: rgba(0, 0, 0, 0.04);
-  color: #2e2e2e;
+  background-color: #0000000A;
+  color: #555555;
   border: none;
-  border-radius: 9999px;
-  padding: 5px 18px;
-  font-size: 1.125rem;
-  line-height: 1.5rem;
-  background-color: rgba(0, 0, 0, 0.04);
-  color: #2e2e2e;
-  background-color: rgba(0, 0, 0, 0.04);
-  color: #2e2e2e;
-  color: #2e2e2e;
+  border-radius: 2em;
+  padding: 6px 18px;
+  font-size: 18px;
+  line-height: 24px;
+  background-color: #0000000A;
+  color: #333333;
+  background-color: rgba(0,0,0,0.0392156862745098);
+  color: #333333;
+  color: #333333;
   text-align: center;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
   transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
+  font-size: 19px;
+  line-height: 24px;
 }
 
 .c7:focus {
-  outline-offset: 2px;
-  outline: 2px solid #004233;
-  box-shadow: 0 0 0px 2px #ffffff;
+  outline: none;
+  box-shadow: 0 0 2px 2px #00E8CF;
 }
 
-.c7:focus >circle,
-.c7:focus >ellipse,
-.c7:focus >line,
-.c7:focus >path,
-.c7:focus >polygon,
-.c7:focus >polyline,
-.c7:focus >rect {
-  outline-offset: 2px;
-  outline: 2px solid #004233;
-  box-shadow: 0 0 0px 2px #ffffff;
+.c7:focus > circle,
+.c7:focus > ellipse,
+.c7:focus > line,
+.c7:focus > path,
+.c7:focus > polygon,
+.c7:focus > polyline,
+.c7:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #00E8CF;
 }
 
-.c7:focus ::-moz-focus-inner {
+.c7:focus::-moz-focus-inner {
   border: 0;
 }
 
 .c7:focus:not(:focus-visible) {
-  outline-offset: 0px;
-  outline: none;
   outline: none;
   box-shadow: none;
 }
 
-.c7:focus:not(:focus-visible) >circle,
-.c7:focus:not(:focus-visible) >ellipse,
-.c7:focus:not(:focus-visible) >line,
-.c7:focus:not(:focus-visible) >path,
-.c7:focus:not(:focus-visible) >polygon,
-.c7:focus:not(:focus-visible) >polyline,
-.c7:focus:not(:focus-visible) >rect {
-  outline-offset: 0px;
-  outline: none;
+.c7:focus:not(:focus-visible) > circle,
+.c7:focus:not(:focus-visible) > ellipse,
+.c7:focus:not(:focus-visible) > line,
+.c7:focus:not(:focus-visible) > path,
+.c7:focus:not(:focus-visible) > polygon,
+.c7:focus:not(:focus-visible) > polyline,
+.c7:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c7:focus:not(:focus-visible) ::-moz-focus-inner {
+.c7:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
 .c0 {
   font-family: 'Metric',Arial,sans-serif;
-  font-size: 1.125rem;
-  line-height: 1.5rem;
-  background-color: #ffffff;
+  font-size: 18px;
+  line-height: 24px;
+  background-color: #FFFFFF;
   color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
@@ -1806,19 +1979,19 @@ exports[`Button kind button with transparent background 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c1 {
-    padding: 24px;
+    padding: 48px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c5 {
-    padding: 24px;
+    padding: 48px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c3 {
     height: 12px;
   }
@@ -1875,6 +2048,7 @@ exports[`Button kind default button 1`] = `
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
+  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -1889,13 +2063,16 @@ exports[`Button kind default button 1`] = `
   color: #444444;
   font-weight: 700;
   text-align: center;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
   transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
 }
 
 .c1:hover {
-  background-color: rgba(51, 51, 51, 0.06274509803921569);
+  background-color: rgba(51,51,51,0.06274509803921569);
 }
 
 .c1:focus {
@@ -1903,18 +2080,18 @@ exports[`Button kind default button 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus >circle,
-.c1:focus >ellipse,
-.c1:focus >line,
-.c1:focus >path,
-.c1:focus >polygon,
-.c1:focus >polyline,
-.c1:focus >rect {
+.c1:focus > circle,
+.c1:focus > ellipse,
+.c1:focus > line,
+.c1:focus > path,
+.c1:focus > polygon,
+.c1:focus > polyline,
+.c1:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus ::-moz-focus-inner {
+.c1:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -1923,18 +2100,18 @@ exports[`Button kind default button 1`] = `
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible) >circle,
-.c1:focus:not(:focus-visible) >ellipse,
-.c1:focus:not(:focus-visible) >line,
-.c1:focus:not(:focus-visible) >path,
-.c1:focus:not(:focus-visible) >polygon,
-.c1:focus:not(:focus-visible) >polyline,
-.c1:focus:not(:focus-visible) >rect {
+.c1:focus:not(:focus-visible) > circle,
+.c1:focus:not(:focus-visible) > ellipse,
+.c1:focus:not(:focus-visible) > line,
+.c1:focus:not(:focus-visible) > path,
+.c1:focus:not(:focus-visible) > polygon,
+.c1:focus:not(:focus-visible) > polyline,
+.c1:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible) ::-moz-focus-inner {
+.c1:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -1964,6 +2141,7 @@ exports[`Button kind disabled with hoverIndicator should not hover 1`] = `
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
+  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -1978,8 +2156,11 @@ exports[`Button kind disabled with hoverIndicator should not hover 1`] = `
   text-align: center;
   opacity: 0.3;
   cursor: default;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
   transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
 }
 
@@ -1988,18 +2169,18 @@ exports[`Button kind disabled with hoverIndicator should not hover 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus >circle,
-.c1:focus >ellipse,
-.c1:focus >line,
-.c1:focus >path,
-.c1:focus >polygon,
-.c1:focus >polyline,
-.c1:focus >rect {
+.c1:focus > circle,
+.c1:focus > ellipse,
+.c1:focus > line,
+.c1:focus > path,
+.c1:focus > polygon,
+.c1:focus > polyline,
+.c1:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus ::-moz-focus-inner {
+.c1:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -2008,18 +2189,18 @@ exports[`Button kind disabled with hoverIndicator should not hover 1`] = `
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible) >circle,
-.c1:focus:not(:focus-visible) >ellipse,
-.c1:focus:not(:focus-visible) >line,
-.c1:focus:not(:focus-visible) >path,
-.c1:focus:not(:focus-visible) >polygon,
-.c1:focus:not(:focus-visible) >polyline,
-.c1:focus:not(:focus-visible) >rect {
+.c1:focus:not(:focus-visible) > circle,
+.c1:focus:not(:focus-visible) > ellipse,
+.c1:focus:not(:focus-visible) > line,
+.c1:focus:not(:focus-visible) > path,
+.c1:focus:not(:focus-visible) > polygon,
+.c1:focus:not(:focus-visible) > polyline,
+.c1:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible) ::-moz-focus-inner {
+.c1:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -2048,10 +2229,10 @@ exports[`Button kind disabled with hoverIndicator should not hover 1`] = `
 
 exports[`Button kind disabled with hoverIndicator should not hover 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 iQmOCy"
+  class="StyledGrommet-sc-19lkkz7-0 gIiCYk"
 >
   <button
-    class="StyledButtonKind-sc-1vhfpnt-0 cdBavB"
+    class="StyledButtonKind-sc-1vhfpnt-0 iKNJhy"
     disabled=""
     type="button"
   >
@@ -2066,6 +2247,7 @@ exports[`Button kind extend on default button 1`] = `
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
+  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -2078,8 +2260,11 @@ exports[`Button kind extend on default button 1`] = `
   line-height: 24px;
   color: green;
   text-align: center;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
   transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
 }
 
@@ -2088,18 +2273,18 @@ exports[`Button kind extend on default button 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus >circle,
-.c1:focus >ellipse,
-.c1:focus >line,
-.c1:focus >path,
-.c1:focus >polygon,
-.c1:focus >polyline,
-.c1:focus >rect {
+.c1:focus > circle,
+.c1:focus > ellipse,
+.c1:focus > line,
+.c1:focus > path,
+.c1:focus > polygon,
+.c1:focus > polyline,
+.c1:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus ::-moz-focus-inner {
+.c1:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -2108,18 +2293,18 @@ exports[`Button kind extend on default button 1`] = `
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible) >circle,
-.c1:focus:not(:focus-visible) >ellipse,
-.c1:focus:not(:focus-visible) >line,
-.c1:focus:not(:focus-visible) >path,
-.c1:focus:not(:focus-visible) >polygon,
-.c1:focus:not(:focus-visible) >polyline,
-.c1:focus:not(:focus-visible) >rect {
+.c1:focus:not(:focus-visible) > circle,
+.c1:focus:not(:focus-visible) > ellipse,
+.c1:focus:not(:focus-visible) > line,
+.c1:focus:not(:focus-visible) > path,
+.c1:focus:not(:focus-visible) > polygon,
+.c1:focus:not(:focus-visible) > polyline,
+.c1:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible) ::-moz-focus-inner {
+.c1:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -2151,6 +2336,7 @@ exports[`Button kind fill 1`] = `
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
+  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -2162,12 +2348,17 @@ exports[`Button kind fill 1`] = `
   font-size: 18px;
   line-height: 24px;
   text-align: center;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
   transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
   width: 100%;
   height: 100%;
   max-width: none;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
   flex: 1 0 auto;
 }
 
@@ -2176,18 +2367,18 @@ exports[`Button kind fill 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus >circle,
-.c1:focus >ellipse,
-.c1:focus >line,
-.c1:focus >path,
-.c1:focus >polygon,
-.c1:focus >polyline,
-.c1:focus >rect {
+.c1:focus > circle,
+.c1:focus > ellipse,
+.c1:focus > line,
+.c1:focus > path,
+.c1:focus > polygon,
+.c1:focus > polyline,
+.c1:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus ::-moz-focus-inner {
+.c1:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -2196,18 +2387,18 @@ exports[`Button kind fill 1`] = `
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible) >circle,
-.c1:focus:not(:focus-visible) >ellipse,
-.c1:focus:not(:focus-visible) >line,
-.c1:focus:not(:focus-visible) >path,
-.c1:focus:not(:focus-visible) >polygon,
-.c1:focus:not(:focus-visible) >polyline,
-.c1:focus:not(:focus-visible) >rect {
+.c1:focus:not(:focus-visible) > circle,
+.c1:focus:not(:focus-visible) > ellipse,
+.c1:focus:not(:focus-visible) > line,
+.c1:focus:not(:focus-visible) > path,
+.c1:focus:not(:focus-visible) > polygon,
+.c1:focus:not(:focus-visible) > polyline,
+.c1:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible) ::-moz-focus-inner {
+.c1:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -2216,6 +2407,7 @@ exports[`Button kind fill 1`] = `
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
+  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -2227,8 +2419,11 @@ exports[`Button kind fill 1`] = `
   font-size: 18px;
   line-height: 24px;
   text-align: center;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
   transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
   height: 100%;
 }
@@ -2238,18 +2433,18 @@ exports[`Button kind fill 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c2:focus >circle,
-.c2:focus >ellipse,
-.c2:focus >line,
-.c2:focus >path,
-.c2:focus >polygon,
-.c2:focus >polyline,
-.c2:focus >rect {
+.c2:focus > circle,
+.c2:focus > ellipse,
+.c2:focus > line,
+.c2:focus > path,
+.c2:focus > polygon,
+.c2:focus > polyline,
+.c2:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c2:focus ::-moz-focus-inner {
+.c2:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -2258,18 +2453,18 @@ exports[`Button kind fill 1`] = `
   box-shadow: none;
 }
 
-.c2:focus:not(:focus-visible) >circle,
-.c2:focus:not(:focus-visible) >ellipse,
-.c2:focus:not(:focus-visible) >line,
-.c2:focus:not(:focus-visible) >path,
-.c2:focus:not(:focus-visible) >polygon,
-.c2:focus:not(:focus-visible) >polyline,
-.c2:focus:not(:focus-visible) >rect {
+.c2:focus:not(:focus-visible) > circle,
+.c2:focus:not(:focus-visible) > ellipse,
+.c2:focus:not(:focus-visible) > line,
+.c2:focus:not(:focus-visible) > path,
+.c2:focus:not(:focus-visible) > polygon,
+.c2:focus:not(:focus-visible) > polyline,
+.c2:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c2:focus:not(:focus-visible) ::-moz-focus-inner {
+.c2:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -2278,6 +2473,7 @@ exports[`Button kind fill 1`] = `
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
+  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -2289,8 +2485,11 @@ exports[`Button kind fill 1`] = `
   font-size: 18px;
   line-height: 24px;
   text-align: center;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
   transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
   width: 100%;
 }
@@ -2300,18 +2499,18 @@ exports[`Button kind fill 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus >circle,
-.c3:focus >ellipse,
-.c3:focus >line,
-.c3:focus >path,
-.c3:focus >polygon,
-.c3:focus >polyline,
-.c3:focus >rect {
+.c3:focus > circle,
+.c3:focus > ellipse,
+.c3:focus > line,
+.c3:focus > path,
+.c3:focus > polygon,
+.c3:focus > polyline,
+.c3:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus ::-moz-focus-inner {
+.c3:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -2320,18 +2519,18 @@ exports[`Button kind fill 1`] = `
   box-shadow: none;
 }
 
-.c3:focus:not(:focus-visible) >circle,
-.c3:focus:not(:focus-visible) >ellipse,
-.c3:focus:not(:focus-visible) >line,
-.c3:focus:not(:focus-visible) >path,
-.c3:focus:not(:focus-visible) >polygon,
-.c3:focus:not(:focus-visible) >polyline,
-.c3:focus:not(:focus-visible) >rect {
+.c3:focus:not(:focus-visible) > circle,
+.c3:focus:not(:focus-visible) > ellipse,
+.c3:focus:not(:focus-visible) > line,
+.c3:focus:not(:focus-visible) > path,
+.c3:focus:not(:focus-visible) > polygon,
+.c3:focus:not(:focus-visible) > polyline,
+.c3:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c3:focus:not(:focus-visible) ::-moz-focus-inner {
+.c3:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -2375,6 +2574,7 @@ exports[`Button kind font on button default 1`] = `
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
+  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -2388,8 +2588,11 @@ exports[`Button kind font on button default 1`] = `
   line-height: 20px;
   font-weight: 700;
   text-align: center;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
   transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
 }
 
@@ -2398,18 +2601,18 @@ exports[`Button kind font on button default 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus >circle,
-.c1:focus >ellipse,
-.c1:focus >line,
-.c1:focus >path,
-.c1:focus >polygon,
-.c1:focus >polyline,
-.c1:focus >rect {
+.c1:focus > circle,
+.c1:focus > ellipse,
+.c1:focus > line,
+.c1:focus > path,
+.c1:focus > polygon,
+.c1:focus > polyline,
+.c1:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus ::-moz-focus-inner {
+.c1:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -2418,18 +2621,18 @@ exports[`Button kind font on button default 1`] = `
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible) >circle,
-.c1:focus:not(:focus-visible) >ellipse,
-.c1:focus:not(:focus-visible) >line,
-.c1:focus:not(:focus-visible) >path,
-.c1:focus:not(:focus-visible) >polygon,
-.c1:focus:not(:focus-visible) >polyline,
-.c1:focus:not(:focus-visible) >rect {
+.c1:focus:not(:focus-visible) > circle,
+.c1:focus:not(:focus-visible) > ellipse,
+.c1:focus:not(:focus-visible) > line,
+.c1:focus:not(:focus-visible) > path,
+.c1:focus:not(:focus-visible) > polygon,
+.c1:focus:not(:focus-visible) > polyline,
+.c1:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible) ::-moz-focus-inner {
+.c1:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -2461,6 +2664,7 @@ exports[`Button kind font undefined 1`] = `
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
+  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -2472,8 +2676,11 @@ exports[`Button kind font undefined 1`] = `
   font-size: 18px;
   line-height: 24px;
   text-align: center;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
   transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
 }
 
@@ -2482,18 +2689,18 @@ exports[`Button kind font undefined 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus >circle,
-.c1:focus >ellipse,
-.c1:focus >line,
-.c1:focus >path,
-.c1:focus >polygon,
-.c1:focus >polyline,
-.c1:focus >rect {
+.c1:focus > circle,
+.c1:focus > ellipse,
+.c1:focus > line,
+.c1:focus > path,
+.c1:focus > polygon,
+.c1:focus > polyline,
+.c1:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus ::-moz-focus-inner {
+.c1:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -2502,18 +2709,18 @@ exports[`Button kind font undefined 1`] = `
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible) >circle,
-.c1:focus:not(:focus-visible) >ellipse,
-.c1:focus:not(:focus-visible) >line,
-.c1:focus:not(:focus-visible) >path,
-.c1:focus:not(:focus-visible) >polygon,
-.c1:focus:not(:focus-visible) >polyline,
-.c1:focus:not(:focus-visible) >rect {
+.c1:focus:not(:focus-visible) > circle,
+.c1:focus:not(:focus-visible) > ellipse,
+.c1:focus:not(:focus-visible) > line,
+.c1:focus:not(:focus-visible) > path,
+.c1:focus:not(:focus-visible) > polygon,
+.c1:focus:not(:focus-visible) > polyline,
+.c1:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible) ::-moz-focus-inner {
+.c1:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -2545,6 +2752,7 @@ exports[`Button kind hover on default button 1`] = `
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
+  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -2558,7 +2766,7 @@ exports[`Button kind hover on default button 1`] = `
 }
 
 .c1:hover {
-  background-color: rgba(221, 221, 221, 0.4);
+  background-color: rgba(221,221,221,0.4);
   color: #444444;
 }
 
@@ -2567,18 +2775,18 @@ exports[`Button kind hover on default button 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus >circle,
-.c1:focus >ellipse,
-.c1:focus >line,
-.c1:focus >path,
-.c1:focus >polygon,
-.c1:focus >polyline,
-.c1:focus >rect {
+.c1:focus > circle,
+.c1:focus > ellipse,
+.c1:focus > line,
+.c1:focus > path,
+.c1:focus > polygon,
+.c1:focus > polyline,
+.c1:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus ::-moz-focus-inner {
+.c1:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -2587,18 +2795,18 @@ exports[`Button kind hover on default button 1`] = `
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible) >circle,
-.c1:focus:not(:focus-visible) >ellipse,
-.c1:focus:not(:focus-visible) >line,
-.c1:focus:not(:focus-visible) >path,
-.c1:focus:not(:focus-visible) >polygon,
-.c1:focus:not(:focus-visible) >polyline,
-.c1:focus:not(:focus-visible) >rect {
+.c1:focus:not(:focus-visible) > circle,
+.c1:focus:not(:focus-visible) > ellipse,
+.c1:focus:not(:focus-visible) > line,
+.c1:focus:not(:focus-visible) > path,
+.c1:focus:not(:focus-visible) > polygon,
+.c1:focus:not(:focus-visible) > polyline,
+.c1:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible) ::-moz-focus-inner {
+.c1:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -2630,6 +2838,7 @@ exports[`Button kind hover secondary with color and background 1`] = `
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
+  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -2643,8 +2852,11 @@ exports[`Button kind hover secondary with color and background 1`] = `
   background-color: skyblue;
   color: #FFFFFF;
   text-align: center;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
   transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
 }
 
@@ -2658,18 +2870,18 @@ exports[`Button kind hover secondary with color and background 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus >circle,
-.c1:focus >ellipse,
-.c1:focus >line,
-.c1:focus >path,
-.c1:focus >polygon,
-.c1:focus >polyline,
-.c1:focus >rect {
+.c1:focus > circle,
+.c1:focus > ellipse,
+.c1:focus > line,
+.c1:focus > path,
+.c1:focus > polygon,
+.c1:focus > polyline,
+.c1:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus ::-moz-focus-inner {
+.c1:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -2678,18 +2890,18 @@ exports[`Button kind hover secondary with color and background 1`] = `
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible) >circle,
-.c1:focus:not(:focus-visible) >ellipse,
-.c1:focus:not(:focus-visible) >line,
-.c1:focus:not(:focus-visible) >path,
-.c1:focus:not(:focus-visible) >polygon,
-.c1:focus:not(:focus-visible) >polyline,
-.c1:focus:not(:focus-visible) >rect {
+.c1:focus:not(:focus-visible) > circle,
+.c1:focus:not(:focus-visible) > ellipse,
+.c1:focus:not(:focus-visible) > line,
+.c1:focus:not(:focus-visible) > path,
+.c1:focus:not(:focus-visible) > polygon,
+.c1:focus:not(:focus-visible) > polyline,
+.c1:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible) ::-moz-focus-inner {
+.c1:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -2717,10 +2929,10 @@ exports[`Button kind hover secondary with color and background 1`] = `
 
 exports[`Button kind hover secondary with color and background 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 iQmOCy"
+  class="StyledGrommet-sc-19lkkz7-0 gIiCYk"
 >
   <button
-    class="StyledButtonKind-sc-1vhfpnt-0 czElJO"
+    class="StyledButtonKind-sc-1vhfpnt-0 jPCACp"
     type="button"
   >
     Button
@@ -2734,6 +2946,7 @@ exports[`Button kind hoverIndicator with color and background 1`] = `
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
+  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -2745,8 +2958,11 @@ exports[`Button kind hoverIndicator with color and background 1`] = `
   font-size: 18px;
   line-height: 24px;
   text-align: center;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
   transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
 }
 
@@ -2760,18 +2976,18 @@ exports[`Button kind hoverIndicator with color and background 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus >circle,
-.c1:focus >ellipse,
-.c1:focus >line,
-.c1:focus >path,
-.c1:focus >polygon,
-.c1:focus >polyline,
-.c1:focus >rect {
+.c1:focus > circle,
+.c1:focus > ellipse,
+.c1:focus > line,
+.c1:focus > path,
+.c1:focus > polygon,
+.c1:focus > polyline,
+.c1:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus ::-moz-focus-inner {
+.c1:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -2780,18 +2996,18 @@ exports[`Button kind hoverIndicator with color and background 1`] = `
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible) >circle,
-.c1:focus:not(:focus-visible) >ellipse,
-.c1:focus:not(:focus-visible) >line,
-.c1:focus:not(:focus-visible) >path,
-.c1:focus:not(:focus-visible) >polygon,
-.c1:focus:not(:focus-visible) >polyline,
-.c1:focus:not(:focus-visible) >rect {
+.c1:focus:not(:focus-visible) > circle,
+.c1:focus:not(:focus-visible) > ellipse,
+.c1:focus:not(:focus-visible) > line,
+.c1:focus:not(:focus-visible) > path,
+.c1:focus:not(:focus-visible) > polygon,
+.c1:focus:not(:focus-visible) > polyline,
+.c1:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible) ::-moz-focus-inner {
+.c1:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -2819,10 +3035,10 @@ exports[`Button kind hoverIndicator with color and background 1`] = `
 
 exports[`Button kind hoverIndicator with color and background 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 iQmOCy"
+  class="StyledGrommet-sc-19lkkz7-0 gIiCYk"
 >
   <button
-    class="StyledButtonKind-sc-1vhfpnt-0 gVhrlZ"
+    class="StyledButtonKind-sc-1vhfpnt-0 ivGdLa"
     type="button"
   >
     Button
@@ -2834,6 +3050,8 @@ exports[`Button kind icon only pad should apply when icon but no label 1`] = `
 <DocumentFragment>
   .c2 {
   display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
@@ -2869,24 +3087,35 @@ exports[`Button kind icon only pad should apply when icon but no label 1`] = `
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
+  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
   overflow: visible;
   text-transform: none;
+  min-width: 24px;
+  min-height: 24px;
   border: none;
   border-radius: 18px;
   padding: 5px 5px;
   font-size: 14px;
   line-height: 0;
   text-align: center;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
   transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
 }
 
-.c1 >svg {
+.c1 > svg {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
   align-self: center;
   vertical-align: middle;
 }
@@ -2896,18 +3125,18 @@ exports[`Button kind icon only pad should apply when icon but no label 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus >circle,
-.c1:focus >ellipse,
-.c1:focus >line,
-.c1:focus >path,
-.c1:focus >polygon,
-.c1:focus >polyline,
-.c1:focus >rect {
+.c1:focus > circle,
+.c1:focus > ellipse,
+.c1:focus > line,
+.c1:focus > path,
+.c1:focus > polygon,
+.c1:focus > polyline,
+.c1:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus ::-moz-focus-inner {
+.c1:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -2916,18 +3145,18 @@ exports[`Button kind icon only pad should apply when icon but no label 1`] = `
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible) >circle,
-.c1:focus:not(:focus-visible) >ellipse,
-.c1:focus:not(:focus-visible) >line,
-.c1:focus:not(:focus-visible) >path,
-.c1:focus:not(:focus-visible) >polygon,
-.c1:focus:not(:focus-visible) >polyline,
-.c1:focus:not(:focus-visible) >rect {
+.c1:focus:not(:focus-visible) > circle,
+.c1:focus:not(:focus-visible) > ellipse,
+.c1:focus:not(:focus-visible) > line,
+.c1:focus:not(:focus-visible) > path,
+.c1:focus:not(:focus-visible) > polygon,
+.c1:focus:not(:focus-visible) > polyline,
+.c1:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible) ::-moz-focus-inner {
+.c1:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -2936,6 +3165,7 @@ exports[`Button kind icon only pad should apply when icon but no label 1`] = `
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
+  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -2947,8 +3177,11 @@ exports[`Button kind icon only pad should apply when icon but no label 1`] = `
   font-size: 14px;
   line-height: 20px;
   text-align: center;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
   transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
 }
 
@@ -2957,18 +3190,18 @@ exports[`Button kind icon only pad should apply when icon but no label 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus >circle,
-.c3:focus >ellipse,
-.c3:focus >line,
-.c3:focus >path,
-.c3:focus >polygon,
-.c3:focus >polyline,
-.c3:focus >rect {
+.c3:focus > circle,
+.c3:focus > ellipse,
+.c3:focus > line,
+.c3:focus > path,
+.c3:focus > polygon,
+.c3:focus > polyline,
+.c3:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus ::-moz-focus-inner {
+.c3:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -2977,18 +3210,18 @@ exports[`Button kind icon only pad should apply when icon but no label 1`] = `
   box-shadow: none;
 }
 
-.c3:focus:not(:focus-visible) >circle,
-.c3:focus:not(:focus-visible) >ellipse,
-.c3:focus:not(:focus-visible) >line,
-.c3:focus:not(:focus-visible) >path,
-.c3:focus:not(:focus-visible) >polygon,
-.c3:focus:not(:focus-visible) >polyline,
-.c3:focus:not(:focus-visible) >rect {
+.c3:focus:not(:focus-visible) > circle,
+.c3:focus:not(:focus-visible) > ellipse,
+.c3:focus:not(:focus-visible) > line,
+.c3:focus:not(:focus-visible) > path,
+.c3:focus:not(:focus-visible) > polygon,
+.c3:focus:not(:focus-visible) > polyline,
+.c3:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c3:focus:not(:focus-visible) ::-moz-focus-inner {
+.c3:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -2997,24 +3230,35 @@ exports[`Button kind icon only pad should apply when icon but no label 1`] = `
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
+  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
   overflow: visible;
   text-transform: none;
+  min-width: 24px;
+  min-height: 24px;
   border: none;
   border-radius: 18px;
   padding: 8px 12px;
   font-size: 18px;
   line-height: 0;
   text-align: center;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
   transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
 }
 
-.c4 >svg {
+.c4 > svg {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
   align-self: center;
   vertical-align: middle;
 }
@@ -3024,18 +3268,18 @@ exports[`Button kind icon only pad should apply when icon but no label 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c4:focus >circle,
-.c4:focus >ellipse,
-.c4:focus >line,
-.c4:focus >path,
-.c4:focus >polygon,
-.c4:focus >polyline,
-.c4:focus >rect {
+.c4:focus > circle,
+.c4:focus > ellipse,
+.c4:focus > line,
+.c4:focus > path,
+.c4:focus > polygon,
+.c4:focus > polyline,
+.c4:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c4:focus ::-moz-focus-inner {
+.c4:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -3044,18 +3288,18 @@ exports[`Button kind icon only pad should apply when icon but no label 1`] = `
   box-shadow: none;
 }
 
-.c4:focus:not(:focus-visible) >circle,
-.c4:focus:not(:focus-visible) >ellipse,
-.c4:focus:not(:focus-visible) >line,
-.c4:focus:not(:focus-visible) >path,
-.c4:focus:not(:focus-visible) >polygon,
-.c4:focus:not(:focus-visible) >polyline,
-.c4:focus:not(:focus-visible) >rect {
+.c4:focus:not(:focus-visible) > circle,
+.c4:focus:not(:focus-visible) > ellipse,
+.c4:focus:not(:focus-visible) > line,
+.c4:focus:not(:focus-visible) > path,
+.c4:focus:not(:focus-visible) > polygon,
+.c4:focus:not(:focus-visible) > polyline,
+.c4:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c4:focus:not(:focus-visible) ::-moz-focus-inner {
+.c4:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -3064,6 +3308,7 @@ exports[`Button kind icon only pad should apply when icon but no label 1`] = `
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
+  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -3075,8 +3320,11 @@ exports[`Button kind icon only pad should apply when icon but no label 1`] = `
   font-size: 18px;
   line-height: 24px;
   text-align: center;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
   transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
 }
 
@@ -3085,18 +3333,18 @@ exports[`Button kind icon only pad should apply when icon but no label 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c5:focus >circle,
-.c5:focus >ellipse,
-.c5:focus >line,
-.c5:focus >path,
-.c5:focus >polygon,
-.c5:focus >polyline,
-.c5:focus >rect {
+.c5:focus > circle,
+.c5:focus > ellipse,
+.c5:focus > line,
+.c5:focus > path,
+.c5:focus > polygon,
+.c5:focus > polyline,
+.c5:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c5:focus ::-moz-focus-inner {
+.c5:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -3105,18 +3353,18 @@ exports[`Button kind icon only pad should apply when icon but no label 1`] = `
   box-shadow: none;
 }
 
-.c5:focus:not(:focus-visible) >circle,
-.c5:focus:not(:focus-visible) >ellipse,
-.c5:focus:not(:focus-visible) >line,
-.c5:focus:not(:focus-visible) >path,
-.c5:focus:not(:focus-visible) >polygon,
-.c5:focus:not(:focus-visible) >polyline,
-.c5:focus:not(:focus-visible) >rect {
+.c5:focus:not(:focus-visible) > circle,
+.c5:focus:not(:focus-visible) > ellipse,
+.c5:focus:not(:focus-visible) > line,
+.c5:focus:not(:focus-visible) > path,
+.c5:focus:not(:focus-visible) > polygon,
+.c5:focus:not(:focus-visible) > polyline,
+.c5:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c5:focus:not(:focus-visible) ::-moz-focus-inner {
+.c5:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -3125,24 +3373,35 @@ exports[`Button kind icon only pad should apply when icon but no label 1`] = `
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
+  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
   overflow: visible;
   text-transform: none;
+  min-width: 24px;
+  min-height: 24px;
   border: none;
   border-radius: 24px;
   padding: 18px 18px;
   font-size: 22px;
   line-height: 0;
   text-align: center;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
   transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
 }
 
-.c6 >svg {
+.c6 > svg {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
   align-self: center;
   vertical-align: middle;
 }
@@ -3152,18 +3411,18 @@ exports[`Button kind icon only pad should apply when icon but no label 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c6:focus >circle,
-.c6:focus >ellipse,
-.c6:focus >line,
-.c6:focus >path,
-.c6:focus >polygon,
-.c6:focus >polyline,
-.c6:focus >rect {
+.c6:focus > circle,
+.c6:focus > ellipse,
+.c6:focus > line,
+.c6:focus > path,
+.c6:focus > polygon,
+.c6:focus > polyline,
+.c6:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c6:focus ::-moz-focus-inner {
+.c6:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -3172,18 +3431,18 @@ exports[`Button kind icon only pad should apply when icon but no label 1`] = `
   box-shadow: none;
 }
 
-.c6:focus:not(:focus-visible) >circle,
-.c6:focus:not(:focus-visible) >ellipse,
-.c6:focus:not(:focus-visible) >line,
-.c6:focus:not(:focus-visible) >path,
-.c6:focus:not(:focus-visible) >polygon,
-.c6:focus:not(:focus-visible) >polyline,
-.c6:focus:not(:focus-visible) >rect {
+.c6:focus:not(:focus-visible) > circle,
+.c6:focus:not(:focus-visible) > ellipse,
+.c6:focus:not(:focus-visible) > line,
+.c6:focus:not(:focus-visible) > path,
+.c6:focus:not(:focus-visible) > polygon,
+.c6:focus:not(:focus-visible) > polyline,
+.c6:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c6:focus:not(:focus-visible) ::-moz-focus-inner {
+.c6:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -3192,6 +3451,7 @@ exports[`Button kind icon only pad should apply when icon but no label 1`] = `
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
+  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -3203,8 +3463,11 @@ exports[`Button kind icon only pad should apply when icon but no label 1`] = `
   font-size: 22px;
   line-height: 28px;
   text-align: center;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
   transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
 }
 
@@ -3213,18 +3476,18 @@ exports[`Button kind icon only pad should apply when icon but no label 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c7:focus >circle,
-.c7:focus >ellipse,
-.c7:focus >line,
-.c7:focus >path,
-.c7:focus >polygon,
-.c7:focus >polyline,
-.c7:focus >rect {
+.c7:focus > circle,
+.c7:focus > ellipse,
+.c7:focus > line,
+.c7:focus > path,
+.c7:focus > polygon,
+.c7:focus > polyline,
+.c7:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c7:focus ::-moz-focus-inner {
+.c7:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -3233,18 +3496,18 @@ exports[`Button kind icon only pad should apply when icon but no label 1`] = `
   box-shadow: none;
 }
 
-.c7:focus:not(:focus-visible) >circle,
-.c7:focus:not(:focus-visible) >ellipse,
-.c7:focus:not(:focus-visible) >line,
-.c7:focus:not(:focus-visible) >path,
-.c7:focus:not(:focus-visible) >polygon,
-.c7:focus:not(:focus-visible) >polyline,
-.c7:focus:not(:focus-visible) >rect {
+.c7:focus:not(:focus-visible) > circle,
+.c7:focus:not(:focus-visible) > ellipse,
+.c7:focus:not(:focus-visible) > line,
+.c7:focus:not(:focus-visible) > path,
+.c7:focus:not(:focus-visible) > polygon,
+.c7:focus:not(:focus-visible) > polyline,
+.c7:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c7:focus:not(:focus-visible) ::-moz-focus-inner {
+.c7:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -3338,9 +3601,11 @@ exports[`Button kind match icon size to size prop when theme.icon.matchSize is t
 <DocumentFragment>
   .c3 {
   display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  width: NaNxsmall;
-  height: NaNxsmall;
+  width: NaNpx;
+  height: NaNpx;
   fill: #666666;
   stroke: #666666;
 }
@@ -3370,6 +3635,8 @@ exports[`Button kind match icon size to size prop when theme.icon.matchSize is t
 
 .c6 {
   display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   width: 12px;
   height: 12px;
@@ -3402,6 +3669,8 @@ exports[`Button kind match icon size to size prop when theme.icon.matchSize is t
 
 .c8 {
   display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
@@ -3434,6 +3703,8 @@ exports[`Button kind match icon size to size prop when theme.icon.matchSize is t
 
 .c10 {
   display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   width: 48px;
   height: 48px;
@@ -3466,6 +3737,8 @@ exports[`Button kind match icon size to size prop when theme.icon.matchSize is t
 
 .c12 {
   display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   width: 96px;
   height: 96px;
@@ -3497,18 +3770,33 @@ exports[`Button kind match icon size to size prop when theme.icon.matchSize is t
 }
 
 .c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
   flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
 }
 
 .c4 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
   align-self: stretch;
   width: 12px;
 }
@@ -3518,6 +3806,7 @@ exports[`Button kind match icon size to size prop when theme.icon.matchSize is t
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
+  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -3529,13 +3818,21 @@ exports[`Button kind match icon size to size prop when theme.icon.matchSize is t
   font-size: 12px;
   line-height: 18px;
   text-align: center;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
   transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
 }
 
-.c1 >svg {
+.c1 > svg {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
   align-self: center;
   vertical-align: middle;
 }
@@ -3545,18 +3842,18 @@ exports[`Button kind match icon size to size prop when theme.icon.matchSize is t
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus >circle,
-.c1:focus >ellipse,
-.c1:focus >line,
-.c1:focus >path,
-.c1:focus >polygon,
-.c1:focus >polyline,
-.c1:focus >rect {
+.c1:focus > circle,
+.c1:focus > ellipse,
+.c1:focus > line,
+.c1:focus > path,
+.c1:focus > polygon,
+.c1:focus > polyline,
+.c1:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus ::-moz-focus-inner {
+.c1:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -3565,18 +3862,18 @@ exports[`Button kind match icon size to size prop when theme.icon.matchSize is t
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible) >circle,
-.c1:focus:not(:focus-visible) >ellipse,
-.c1:focus:not(:focus-visible) >line,
-.c1:focus:not(:focus-visible) >path,
-.c1:focus:not(:focus-visible) >polygon,
-.c1:focus:not(:focus-visible) >polyline,
-.c1:focus:not(:focus-visible) >rect {
+.c1:focus:not(:focus-visible) > circle,
+.c1:focus:not(:focus-visible) > ellipse,
+.c1:focus:not(:focus-visible) > line,
+.c1:focus:not(:focus-visible) > path,
+.c1:focus:not(:focus-visible) > polygon,
+.c1:focus:not(:focus-visible) > polyline,
+.c1:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible) ::-moz-focus-inner {
+.c1:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -3585,6 +3882,7 @@ exports[`Button kind match icon size to size prop when theme.icon.matchSize is t
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
+  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -3596,13 +3894,21 @@ exports[`Button kind match icon size to size prop when theme.icon.matchSize is t
   font-size: 14px;
   line-height: 20px;
   text-align: center;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
   transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
 }
 
-.c5 >svg {
+.c5 > svg {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
   align-self: center;
   vertical-align: middle;
 }
@@ -3612,18 +3918,18 @@ exports[`Button kind match icon size to size prop when theme.icon.matchSize is t
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c5:focus >circle,
-.c5:focus >ellipse,
-.c5:focus >line,
-.c5:focus >path,
-.c5:focus >polygon,
-.c5:focus >polyline,
-.c5:focus >rect {
+.c5:focus > circle,
+.c5:focus > ellipse,
+.c5:focus > line,
+.c5:focus > path,
+.c5:focus > polygon,
+.c5:focus > polyline,
+.c5:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c5:focus ::-moz-focus-inner {
+.c5:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -3632,18 +3938,18 @@ exports[`Button kind match icon size to size prop when theme.icon.matchSize is t
   box-shadow: none;
 }
 
-.c5:focus:not(:focus-visible) >circle,
-.c5:focus:not(:focus-visible) >ellipse,
-.c5:focus:not(:focus-visible) >line,
-.c5:focus:not(:focus-visible) >path,
-.c5:focus:not(:focus-visible) >polygon,
-.c5:focus:not(:focus-visible) >polyline,
-.c5:focus:not(:focus-visible) >rect {
+.c5:focus:not(:focus-visible) > circle,
+.c5:focus:not(:focus-visible) > ellipse,
+.c5:focus:not(:focus-visible) > line,
+.c5:focus:not(:focus-visible) > path,
+.c5:focus:not(:focus-visible) > polygon,
+.c5:focus:not(:focus-visible) > polyline,
+.c5:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c5:focus:not(:focus-visible) ::-moz-focus-inner {
+.c5:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -3652,6 +3958,7 @@ exports[`Button kind match icon size to size prop when theme.icon.matchSize is t
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
+  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -3663,13 +3970,21 @@ exports[`Button kind match icon size to size prop when theme.icon.matchSize is t
   font-size: 18px;
   line-height: 24px;
   text-align: center;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
   transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
 }
 
-.c7 >svg {
+.c7 > svg {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
   align-self: center;
   vertical-align: middle;
 }
@@ -3679,18 +3994,18 @@ exports[`Button kind match icon size to size prop when theme.icon.matchSize is t
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c7:focus >circle,
-.c7:focus >ellipse,
-.c7:focus >line,
-.c7:focus >path,
-.c7:focus >polygon,
-.c7:focus >polyline,
-.c7:focus >rect {
+.c7:focus > circle,
+.c7:focus > ellipse,
+.c7:focus > line,
+.c7:focus > path,
+.c7:focus > polygon,
+.c7:focus > polyline,
+.c7:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c7:focus ::-moz-focus-inner {
+.c7:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -3699,18 +4014,18 @@ exports[`Button kind match icon size to size prop when theme.icon.matchSize is t
   box-shadow: none;
 }
 
-.c7:focus:not(:focus-visible) >circle,
-.c7:focus:not(:focus-visible) >ellipse,
-.c7:focus:not(:focus-visible) >line,
-.c7:focus:not(:focus-visible) >path,
-.c7:focus:not(:focus-visible) >polygon,
-.c7:focus:not(:focus-visible) >polyline,
-.c7:focus:not(:focus-visible) >rect {
+.c7:focus:not(:focus-visible) > circle,
+.c7:focus:not(:focus-visible) > ellipse,
+.c7:focus:not(:focus-visible) > line,
+.c7:focus:not(:focus-visible) > path,
+.c7:focus:not(:focus-visible) > polygon,
+.c7:focus:not(:focus-visible) > polyline,
+.c7:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c7:focus:not(:focus-visible) ::-moz-focus-inner {
+.c7:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -3719,6 +4034,7 @@ exports[`Button kind match icon size to size prop when theme.icon.matchSize is t
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
+  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -3730,13 +4046,21 @@ exports[`Button kind match icon size to size prop when theme.icon.matchSize is t
   font-size: 22px;
   line-height: 28px;
   text-align: center;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
   transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
 }
 
-.c9 >svg {
+.c9 > svg {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
   align-self: center;
   vertical-align: middle;
 }
@@ -3746,18 +4070,18 @@ exports[`Button kind match icon size to size prop when theme.icon.matchSize is t
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c9:focus >circle,
-.c9:focus >ellipse,
-.c9:focus >line,
-.c9:focus >path,
-.c9:focus >polygon,
-.c9:focus >polyline,
-.c9:focus >rect {
+.c9:focus > circle,
+.c9:focus > ellipse,
+.c9:focus > line,
+.c9:focus > path,
+.c9:focus > polygon,
+.c9:focus > polyline,
+.c9:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c9:focus ::-moz-focus-inner {
+.c9:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -3766,18 +4090,18 @@ exports[`Button kind match icon size to size prop when theme.icon.matchSize is t
   box-shadow: none;
 }
 
-.c9:focus:not(:focus-visible) >circle,
-.c9:focus:not(:focus-visible) >ellipse,
-.c9:focus:not(:focus-visible) >line,
-.c9:focus:not(:focus-visible) >path,
-.c9:focus:not(:focus-visible) >polygon,
-.c9:focus:not(:focus-visible) >polyline,
-.c9:focus:not(:focus-visible) >rect {
+.c9:focus:not(:focus-visible) > circle,
+.c9:focus:not(:focus-visible) > ellipse,
+.c9:focus:not(:focus-visible) > line,
+.c9:focus:not(:focus-visible) > path,
+.c9:focus:not(:focus-visible) > polygon,
+.c9:focus:not(:focus-visible) > polyline,
+.c9:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c9:focus:not(:focus-visible) ::-moz-focus-inner {
+.c9:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -3786,6 +4110,7 @@ exports[`Button kind match icon size to size prop when theme.icon.matchSize is t
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
+  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -3797,13 +4122,21 @@ exports[`Button kind match icon size to size prop when theme.icon.matchSize is t
   font-size: 26px;
   line-height: 32px;
   text-align: center;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
   transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
 }
 
-.c11 >svg {
+.c11 > svg {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
   align-self: center;
   vertical-align: middle;
 }
@@ -3813,18 +4146,18 @@ exports[`Button kind match icon size to size prop when theme.icon.matchSize is t
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c11:focus >circle,
-.c11:focus >ellipse,
-.c11:focus >line,
-.c11:focus >path,
-.c11:focus >polygon,
-.c11:focus >polyline,
-.c11:focus >rect {
+.c11:focus > circle,
+.c11:focus > ellipse,
+.c11:focus > line,
+.c11:focus > path,
+.c11:focus > polygon,
+.c11:focus > polyline,
+.c11:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c11:focus ::-moz-focus-inner {
+.c11:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -3833,18 +4166,18 @@ exports[`Button kind match icon size to size prop when theme.icon.matchSize is t
   box-shadow: none;
 }
 
-.c11:focus:not(:focus-visible) >circle,
-.c11:focus:not(:focus-visible) >ellipse,
-.c11:focus:not(:focus-visible) >line,
-.c11:focus:not(:focus-visible) >path,
-.c11:focus:not(:focus-visible) >polygon,
-.c11:focus:not(:focus-visible) >polyline,
-.c11:focus:not(:focus-visible) >rect {
+.c11:focus:not(:focus-visible) > circle,
+.c11:focus:not(:focus-visible) > ellipse,
+.c11:focus:not(:focus-visible) > line,
+.c11:focus:not(:focus-visible) > path,
+.c11:focus:not(:focus-visible) > polygon,
+.c11:focus:not(:focus-visible) > polyline,
+.c11:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c11:focus:not(:focus-visible) ::-moz-focus-inner {
+.c11:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -3993,6 +4326,8 @@ exports[`Button kind match icon size to size prop when theme.icon.matchSize is t
 exports[`Button kind mouseOver and mouseOut events 1`] = `
 .c3 {
   display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
@@ -4024,18 +4359,33 @@ exports[`Button kind mouseOver and mouseOut events 1`] = `
 }
 
 .c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
   flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
 }
 
 .c4 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
   align-self: stretch;
   width: 12px;
 }
@@ -4045,6 +4395,7 @@ exports[`Button kind mouseOver and mouseOut events 1`] = `
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
+  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -4058,13 +4409,21 @@ exports[`Button kind mouseOver and mouseOut events 1`] = `
   background-color: #000;
   color: #f8f8f8;
   text-align: center;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
   transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
 }
 
-.c1 >svg {
+.c1 > svg {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
   align-self: center;
   vertical-align: middle;
 }
@@ -4074,18 +4433,18 @@ exports[`Button kind mouseOver and mouseOut events 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus >circle,
-.c1:focus >ellipse,
-.c1:focus >line,
-.c1:focus >path,
-.c1:focus >polygon,
-.c1:focus >polyline,
-.c1:focus >rect {
+.c1:focus > circle,
+.c1:focus > ellipse,
+.c1:focus > line,
+.c1:focus > path,
+.c1:focus > polygon,
+.c1:focus > polyline,
+.c1:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus ::-moz-focus-inner {
+.c1:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -4094,18 +4453,18 @@ exports[`Button kind mouseOver and mouseOut events 1`] = `
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible) >circle,
-.c1:focus:not(:focus-visible) >ellipse,
-.c1:focus:not(:focus-visible) >line,
-.c1:focus:not(:focus-visible) >path,
-.c1:focus:not(:focus-visible) >polygon,
-.c1:focus:not(:focus-visible) >polyline,
-.c1:focus:not(:focus-visible) >rect {
+.c1:focus:not(:focus-visible) > circle,
+.c1:focus:not(:focus-visible) > ellipse,
+.c1:focus:not(:focus-visible) > line,
+.c1:focus:not(:focus-visible) > path,
+.c1:focus:not(:focus-visible) > polygon,
+.c1:focus:not(:focus-visible) > polyline,
+.c1:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible) ::-moz-focus-inner {
+.c1:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -4152,18 +4511,18 @@ exports[`Button kind mouseOver and mouseOut events 1`] = `
 
 exports[`Button kind mouseOver and mouseOut events 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 iQmOCy"
+  class="StyledGrommet-sc-19lkkz7-0 gIiCYk"
 >
   <button
-    class="StyledButtonKind-sc-1vhfpnt-0 juKqni"
+    class="StyledButtonKind-sc-1vhfpnt-0 bSRElR"
     type="button"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 gdxOa-D"
+      class="StyledBox-sc-13pk1d4-0 fKaVor"
     >
       <svg
         aria-label="Add"
-        class="StyledIcon-sc-ofa7kd-0 hksawa"
+        class="StyledIcon-sc-ofa7kd-0 krqAqI"
         viewBox="0 0 24 24"
       >
         <path
@@ -4174,7 +4533,7 @@ exports[`Button kind mouseOver and mouseOut events 2`] = `
         />
       </svg>
       <div
-        class="StyledBox__StyledBoxGap-sc-13pk1d4-1 jeSzjR"
+        class="StyledBox__StyledBoxGap-sc-13pk1d4-1 hPClIF"
       />
       label
     </div>
@@ -4188,6 +4547,7 @@ exports[`Button kind no border on default button 1`] = `
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
+  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -4200,8 +4560,11 @@ exports[`Button kind no border on default button 1`] = `
   line-height: 24px;
   border: none;
   text-align: center;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
   transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
 }
 
@@ -4210,18 +4573,18 @@ exports[`Button kind no border on default button 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus >circle,
-.c1:focus >ellipse,
-.c1:focus >line,
-.c1:focus >path,
-.c1:focus >polygon,
-.c1:focus >polyline,
-.c1:focus >rect {
+.c1:focus > circle,
+.c1:focus > ellipse,
+.c1:focus > line,
+.c1:focus > path,
+.c1:focus > polygon,
+.c1:focus > polyline,
+.c1:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus ::-moz-focus-inner {
+.c1:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -4230,18 +4593,18 @@ exports[`Button kind no border on default button 1`] = `
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible) >circle,
-.c1:focus:not(:focus-visible) >ellipse,
-.c1:focus:not(:focus-visible) >line,
-.c1:focus:not(:focus-visible) >path,
-.c1:focus:not(:focus-visible) >polygon,
-.c1:focus:not(:focus-visible) >polyline,
-.c1:focus:not(:focus-visible) >rect {
+.c1:focus:not(:focus-visible) > circle,
+.c1:focus:not(:focus-visible) > ellipse,
+.c1:focus:not(:focus-visible) > line,
+.c1:focus:not(:focus-visible) > path,
+.c1:focus:not(:focus-visible) > polygon,
+.c1:focus:not(:focus-visible) > polyline,
+.c1:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible) ::-moz-focus-inner {
+.c1:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -4273,6 +4636,7 @@ exports[`Button kind no padding on default button 1`] = `
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
+  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -4286,8 +4650,11 @@ exports[`Button kind no padding on default button 1`] = `
   padding: 0px;
   color: #444444;
   text-align: center;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
   transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
 }
 
@@ -4296,18 +4663,18 @@ exports[`Button kind no padding on default button 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus >circle,
-.c1:focus >ellipse,
-.c1:focus >line,
-.c1:focus >path,
-.c1:focus >polygon,
-.c1:focus >polyline,
-.c1:focus >rect {
+.c1:focus > circle,
+.c1:focus > ellipse,
+.c1:focus > line,
+.c1:focus > path,
+.c1:focus > polygon,
+.c1:focus > polyline,
+.c1:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus ::-moz-focus-inner {
+.c1:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -4316,18 +4683,18 @@ exports[`Button kind no padding on default button 1`] = `
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible) >circle,
-.c1:focus:not(:focus-visible) >ellipse,
-.c1:focus:not(:focus-visible) >line,
-.c1:focus:not(:focus-visible) >path,
-.c1:focus:not(:focus-visible) >polygon,
-.c1:focus:not(:focus-visible) >polyline,
-.c1:focus:not(:focus-visible) >rect {
+.c1:focus:not(:focus-visible) > circle,
+.c1:focus:not(:focus-visible) > ellipse,
+.c1:focus:not(:focus-visible) > line,
+.c1:focus:not(:focus-visible) > path,
+.c1:focus:not(:focus-visible) > polygon,
+.c1:focus:not(:focus-visible) > polyline,
+.c1:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible) ::-moz-focus-inner {
+.c1:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -4359,6 +4726,7 @@ exports[`Button kind opacity on default button 1`] = `
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
+  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -4371,8 +4739,11 @@ exports[`Button kind opacity on default button 1`] = `
   line-height: 24px;
   opacity: 0.4;
   text-align: center;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
   transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
 }
 
@@ -4381,18 +4752,18 @@ exports[`Button kind opacity on default button 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus >circle,
-.c1:focus >ellipse,
-.c1:focus >line,
-.c1:focus >path,
-.c1:focus >polygon,
-.c1:focus >polyline,
-.c1:focus >rect {
+.c1:focus > circle,
+.c1:focus > ellipse,
+.c1:focus > line,
+.c1:focus > path,
+.c1:focus > polygon,
+.c1:focus > polyline,
+.c1:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus ::-moz-focus-inner {
+.c1:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -4401,18 +4772,18 @@ exports[`Button kind opacity on default button 1`] = `
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible) >circle,
-.c1:focus:not(:focus-visible) >ellipse,
-.c1:focus:not(:focus-visible) >line,
-.c1:focus:not(:focus-visible) >path,
-.c1:focus:not(:focus-visible) >polygon,
-.c1:focus:not(:focus-visible) >polyline,
-.c1:focus:not(:focus-visible) >rect {
+.c1:focus:not(:focus-visible) > circle,
+.c1:focus:not(:focus-visible) > ellipse,
+.c1:focus:not(:focus-visible) > line,
+.c1:focus:not(:focus-visible) > path,
+.c1:focus:not(:focus-visible) > polygon,
+.c1:focus:not(:focus-visible) > polyline,
+.c1:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible) ::-moz-focus-inner {
+.c1:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -4444,6 +4815,7 @@ exports[`Button kind padding is applied correctly when intelligentPad is false 1
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
+  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -4461,8 +4833,11 @@ exports[`Button kind padding is applied correctly when intelligentPad is false 1
   font-weight: 600;
   padding: 10px 10px;
   text-align: center;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
   transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
 }
 
@@ -4471,18 +4846,18 @@ exports[`Button kind padding is applied correctly when intelligentPad is false 1
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus >circle,
-.c1:focus >ellipse,
-.c1:focus >line,
-.c1:focus >path,
-.c1:focus >polygon,
-.c1:focus >polyline,
-.c1:focus >rect {
+.c1:focus > circle,
+.c1:focus > ellipse,
+.c1:focus > line,
+.c1:focus > path,
+.c1:focus > polygon,
+.c1:focus > polyline,
+.c1:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus ::-moz-focus-inner {
+.c1:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -4491,18 +4866,18 @@ exports[`Button kind padding is applied correctly when intelligentPad is false 1
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible) >circle,
-.c1:focus:not(:focus-visible) >ellipse,
-.c1:focus:not(:focus-visible) >line,
-.c1:focus:not(:focus-visible) >path,
-.c1:focus:not(:focus-visible) >polygon,
-.c1:focus:not(:focus-visible) >polyline,
-.c1:focus:not(:focus-visible) >rect {
+.c1:focus:not(:focus-visible) > circle,
+.c1:focus:not(:focus-visible) > ellipse,
+.c1:focus:not(:focus-visible) > line,
+.c1:focus:not(:focus-visible) > path,
+.c1:focus:not(:focus-visible) > polygon,
+.c1:focus:not(:focus-visible) > polyline,
+.c1:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible) ::-moz-focus-inner {
+.c1:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -4534,6 +4909,7 @@ exports[`Button kind padding is applied correctly when intelligentPad is true 1`
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
+  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -4551,8 +4927,11 @@ exports[`Button kind padding is applied correctly when intelligentPad is true 1`
   font-weight: 600;
   padding: 8px 8px;
   text-align: center;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
   transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
 }
 
@@ -4561,18 +4940,18 @@ exports[`Button kind padding is applied correctly when intelligentPad is true 1`
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus >circle,
-.c1:focus >ellipse,
-.c1:focus >line,
-.c1:focus >path,
-.c1:focus >polygon,
-.c1:focus >polyline,
-.c1:focus >rect {
+.c1:focus > circle,
+.c1:focus > ellipse,
+.c1:focus > line,
+.c1:focus > path,
+.c1:focus > polygon,
+.c1:focus > polyline,
+.c1:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus ::-moz-focus-inner {
+.c1:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -4581,18 +4960,18 @@ exports[`Button kind padding is applied correctly when intelligentPad is true 1`
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible) >circle,
-.c1:focus:not(:focus-visible) >ellipse,
-.c1:focus:not(:focus-visible) >line,
-.c1:focus:not(:focus-visible) >path,
-.c1:focus:not(:focus-visible) >polygon,
-.c1:focus:not(:focus-visible) >polyline,
-.c1:focus:not(:focus-visible) >rect {
+.c1:focus:not(:focus-visible) > circle,
+.c1:focus:not(:focus-visible) > ellipse,
+.c1:focus:not(:focus-visible) > line,
+.c1:focus:not(:focus-visible) > path,
+.c1:focus:not(:focus-visible) > polygon,
+.c1:focus:not(:focus-visible) > polyline,
+.c1:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible) ::-moz-focus-inner {
+.c1:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -4624,6 +5003,7 @@ exports[`Button kind padding on default button 1`] = `
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
+  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -4638,8 +5018,11 @@ exports[`Button kind padding on default button 1`] = `
   background-color: green;
   color: #444444;
   text-align: center;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
   transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
 }
 
@@ -4648,18 +5031,18 @@ exports[`Button kind padding on default button 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus >circle,
-.c1:focus >ellipse,
-.c1:focus >line,
-.c1:focus >path,
-.c1:focus >polygon,
-.c1:focus >polyline,
-.c1:focus >rect {
+.c1:focus > circle,
+.c1:focus > ellipse,
+.c1:focus > line,
+.c1:focus > path,
+.c1:focus > polygon,
+.c1:focus > polyline,
+.c1:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus ::-moz-focus-inner {
+.c1:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -4668,18 +5051,18 @@ exports[`Button kind padding on default button 1`] = `
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible) >circle,
-.c1:focus:not(:focus-visible) >ellipse,
-.c1:focus:not(:focus-visible) >line,
-.c1:focus:not(:focus-visible) >path,
-.c1:focus:not(:focus-visible) >polygon,
-.c1:focus:not(:focus-visible) >polyline,
-.c1:focus:not(:focus-visible) >rect {
+.c1:focus:not(:focus-visible) > circle,
+.c1:focus:not(:focus-visible) > ellipse,
+.c1:focus:not(:focus-visible) > line,
+.c1:focus:not(:focus-visible) > path,
+.c1:focus:not(:focus-visible) > polygon,
+.c1:focus:not(:focus-visible) > polyline,
+.c1:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible) ::-moz-focus-inner {
+.c1:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -4709,6 +5092,8 @@ exports[`Button kind plain with icon 1`] = `
 <DocumentFragment>
   .c2 {
   display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
@@ -4744,6 +5129,7 @@ exports[`Button kind plain with icon 1`] = `
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
+  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -4755,10 +5141,17 @@ exports[`Button kind plain with icon 1`] = `
   text-align: inherit;
   color: inherit;
   line-height: 0;
+  min-width: 24px;
+  min-height: 24px;
 }
 
-.c1 >svg {
+.c1 > svg {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
   align-self: center;
   vertical-align: middle;
 }
@@ -4768,18 +5161,18 @@ exports[`Button kind plain with icon 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus >circle,
-.c1:focus >ellipse,
-.c1:focus >line,
-.c1:focus >path,
-.c1:focus >polygon,
-.c1:focus >polyline,
-.c1:focus >rect {
+.c1:focus > circle,
+.c1:focus > ellipse,
+.c1:focus > line,
+.c1:focus > path,
+.c1:focus > polygon,
+.c1:focus > polyline,
+.c1:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus ::-moz-focus-inner {
+.c1:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -4788,18 +5181,18 @@ exports[`Button kind plain with icon 1`] = `
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible) >circle,
-.c1:focus:not(:focus-visible) >ellipse,
-.c1:focus:not(:focus-visible) >line,
-.c1:focus:not(:focus-visible) >path,
-.c1:focus:not(:focus-visible) >polygon,
-.c1:focus:not(:focus-visible) >polyline,
-.c1:focus:not(:focus-visible) >rect {
+.c1:focus:not(:focus-visible) > circle,
+.c1:focus:not(:focus-visible) > ellipse,
+.c1:focus:not(:focus-visible) > line,
+.c1:focus:not(:focus-visible) > path,
+.c1:focus:not(:focus-visible) > polygon,
+.c1:focus:not(:focus-visible) > polyline,
+.c1:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible) ::-moz-focus-inner {
+.c1:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -4840,6 +5233,8 @@ exports[`Button kind plain with icon 1`] = `
 exports[`Button kind primary button 1`] = `
 .c2 {
   display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
@@ -4872,6 +5267,8 @@ exports[`Button kind primary button 1`] = `
 
 .c4 {
   display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
@@ -4907,6 +5304,7 @@ exports[`Button kind primary button 1`] = `
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
+  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -4921,8 +5319,11 @@ exports[`Button kind primary button 1`] = `
   background-color: green;
   color: #000000;
   text-align: center;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
   transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
 }
 
@@ -4931,18 +5332,18 @@ exports[`Button kind primary button 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus >circle,
-.c1:focus >ellipse,
-.c1:focus >line,
-.c1:focus >path,
-.c1:focus >polygon,
-.c1:focus >polyline,
-.c1:focus >rect {
+.c1:focus > circle,
+.c1:focus > ellipse,
+.c1:focus > line,
+.c1:focus > path,
+.c1:focus > polygon,
+.c1:focus > polyline,
+.c1:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus ::-moz-focus-inner {
+.c1:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -4951,18 +5352,18 @@ exports[`Button kind primary button 1`] = `
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible) >circle,
-.c1:focus:not(:focus-visible) >ellipse,
-.c1:focus:not(:focus-visible) >line,
-.c1:focus:not(:focus-visible) >path,
-.c1:focus:not(:focus-visible) >polygon,
-.c1:focus:not(:focus-visible) >polyline,
-.c1:focus:not(:focus-visible) >rect {
+.c1:focus:not(:focus-visible) > circle,
+.c1:focus:not(:focus-visible) > ellipse,
+.c1:focus:not(:focus-visible) > line,
+.c1:focus:not(:focus-visible) > path,
+.c1:focus:not(:focus-visible) > polygon,
+.c1:focus:not(:focus-visible) > polyline,
+.c1:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible) ::-moz-focus-inner {
+.c1:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -4971,6 +5372,7 @@ exports[`Button kind primary button 1`] = `
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
+  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -4994,8 +5396,11 @@ exports[`Button kind primary button 1`] = `
   text-align: center;
   opacity: 1;
   cursor: default;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
   transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
 }
 
@@ -5004,18 +5409,18 @@ exports[`Button kind primary button 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus >circle,
-.c3:focus >ellipse,
-.c3:focus >line,
-.c3:focus >path,
-.c3:focus >polygon,
-.c3:focus >polyline,
-.c3:focus >rect {
+.c3:focus > circle,
+.c3:focus > ellipse,
+.c3:focus > line,
+.c3:focus > path,
+.c3:focus > polygon,
+.c3:focus > polyline,
+.c3:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus ::-moz-focus-inner {
+.c3:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -5024,18 +5429,18 @@ exports[`Button kind primary button 1`] = `
   box-shadow: none;
 }
 
-.c3:focus:not(:focus-visible) >circle,
-.c3:focus:not(:focus-visible) >ellipse,
-.c3:focus:not(:focus-visible) >line,
-.c3:focus:not(:focus-visible) >path,
-.c3:focus:not(:focus-visible) >polygon,
-.c3:focus:not(:focus-visible) >polyline,
-.c3:focus:not(:focus-visible) >rect {
+.c3:focus:not(:focus-visible) > circle,
+.c3:focus:not(:focus-visible) > ellipse,
+.c3:focus:not(:focus-visible) > line,
+.c3:focus:not(:focus-visible) > path,
+.c3:focus:not(:focus-visible) > polygon,
+.c3:focus:not(:focus-visible) > polyline,
+.c3:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c3:focus:not(:focus-visible) ::-moz-focus-inner {
+.c3:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -5096,6 +5501,7 @@ exports[`Button kind render of children 1`] = `
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
+  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -5113,18 +5519,18 @@ exports[`Button kind render of children 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus >circle,
-.c1:focus >ellipse,
-.c1:focus >line,
-.c1:focus >path,
-.c1:focus >polygon,
-.c1:focus >polyline,
-.c1:focus >rect {
+.c1:focus > circle,
+.c1:focus > ellipse,
+.c1:focus > line,
+.c1:focus > path,
+.c1:focus > polygon,
+.c1:focus > polyline,
+.c1:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus ::-moz-focus-inner {
+.c1:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -5133,18 +5539,18 @@ exports[`Button kind render of children 1`] = `
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible) >circle,
-.c1:focus:not(:focus-visible) >ellipse,
-.c1:focus:not(:focus-visible) >line,
-.c1:focus:not(:focus-visible) >path,
-.c1:focus:not(:focus-visible) >polygon,
-.c1:focus:not(:focus-visible) >polyline,
-.c1:focus:not(:focus-visible) >rect {
+.c1:focus:not(:focus-visible) > circle,
+.c1:focus:not(:focus-visible) > ellipse,
+.c1:focus:not(:focus-visible) > line,
+.c1:focus:not(:focus-visible) > path,
+.c1:focus:not(:focus-visible) > polygon,
+.c1:focus:not(:focus-visible) > polyline,
+.c1:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible) ::-moz-focus-inner {
+.c1:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -5176,6 +5582,7 @@ exports[`Button kind secondary button 1`] = `
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
+  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -5192,8 +5599,11 @@ exports[`Button kind secondary button 1`] = `
   border-width: 2px;
   border-color: green;
   text-align: center;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
   transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
 }
 
@@ -5208,18 +5618,18 @@ exports[`Button kind secondary button 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus >circle,
-.c1:focus >ellipse,
-.c1:focus >line,
-.c1:focus >path,
-.c1:focus >polygon,
-.c1:focus >polyline,
-.c1:focus >rect {
+.c1:focus > circle,
+.c1:focus > ellipse,
+.c1:focus > line,
+.c1:focus > path,
+.c1:focus > polygon,
+.c1:focus > polyline,
+.c1:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus ::-moz-focus-inner {
+.c1:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -5228,18 +5638,18 @@ exports[`Button kind secondary button 1`] = `
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible) >circle,
-.c1:focus:not(:focus-visible) >ellipse,
-.c1:focus:not(:focus-visible) >line,
-.c1:focus:not(:focus-visible) >path,
-.c1:focus:not(:focus-visible) >polygon,
-.c1:focus:not(:focus-visible) >polyline,
-.c1:focus:not(:focus-visible) >rect {
+.c1:focus:not(:focus-visible) > circle,
+.c1:focus:not(:focus-visible) > ellipse,
+.c1:focus:not(:focus-visible) > line,
+.c1:focus:not(:focus-visible) > path,
+.c1:focus:not(:focus-visible) > polygon,
+.c1:focus:not(:focus-visible) > polyline,
+.c1:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible) ::-moz-focus-inner {
+.c1:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -5266,18 +5676,33 @@ exports[`Button kind secondary button 1`] = `
 exports[`Button kind should apply kind direction 1`] = `
 <DocumentFragment>
   .c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
 }
 
 .c3 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
   align-self: stretch;
   height: 12px;
 }
@@ -5287,6 +5712,7 @@ exports[`Button kind should apply kind direction 1`] = `
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
+  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -5299,13 +5725,21 @@ exports[`Button kind should apply kind direction 1`] = `
   line-height: 24px;
   font-size: 12px;
   text-align: center;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
   transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
 }
 
-.c1 >svg {
+.c1 > svg {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
   align-self: center;
   vertical-align: middle;
 }
@@ -5315,18 +5749,18 @@ exports[`Button kind should apply kind direction 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus >circle,
-.c1:focus >ellipse,
-.c1:focus >line,
-.c1:focus >path,
-.c1:focus >polygon,
-.c1:focus >polyline,
-.c1:focus >rect {
+.c1:focus > circle,
+.c1:focus > ellipse,
+.c1:focus > line,
+.c1:focus > path,
+.c1:focus > polygon,
+.c1:focus > polyline,
+.c1:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus ::-moz-focus-inner {
+.c1:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -5335,18 +5769,18 @@ exports[`Button kind should apply kind direction 1`] = `
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible) >circle,
-.c1:focus:not(:focus-visible) >ellipse,
-.c1:focus:not(:focus-visible) >line,
-.c1:focus:not(:focus-visible) >path,
-.c1:focus:not(:focus-visible) >polygon,
-.c1:focus:not(:focus-visible) >polyline,
-.c1:focus:not(:focus-visible) >rect {
+.c1:focus:not(:focus-visible) > circle,
+.c1:focus:not(:focus-visible) > ellipse,
+.c1:focus:not(:focus-visible) > line,
+.c1:focus:not(:focus-visible) > path,
+.c1:focus:not(:focus-visible) > polygon,
+.c1:focus:not(:focus-visible) > polyline,
+.c1:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible) ::-moz-focus-inner {
+.c1:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -5387,6 +5821,7 @@ exports[`Button kind should apply styling according to theme size definitions 1`
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
+  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -5398,8 +5833,11 @@ exports[`Button kind should apply styling according to theme size definitions 1`
   font-size: 14px;
   line-height: 20px;
   text-align: center;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
   transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
 }
 
@@ -5408,18 +5846,18 @@ exports[`Button kind should apply styling according to theme size definitions 1`
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus >circle,
-.c1:focus >ellipse,
-.c1:focus >line,
-.c1:focus >path,
-.c1:focus >polygon,
-.c1:focus >polyline,
-.c1:focus >rect {
+.c1:focus > circle,
+.c1:focus > ellipse,
+.c1:focus > line,
+.c1:focus > path,
+.c1:focus > polygon,
+.c1:focus > polyline,
+.c1:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus ::-moz-focus-inner {
+.c1:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -5428,18 +5866,18 @@ exports[`Button kind should apply styling according to theme size definitions 1`
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible) >circle,
-.c1:focus:not(:focus-visible) >ellipse,
-.c1:focus:not(:focus-visible) >line,
-.c1:focus:not(:focus-visible) >path,
-.c1:focus:not(:focus-visible) >polygon,
-.c1:focus:not(:focus-visible) >polyline,
-.c1:focus:not(:focus-visible) >rect {
+.c1:focus:not(:focus-visible) > circle,
+.c1:focus:not(:focus-visible) > ellipse,
+.c1:focus:not(:focus-visible) > line,
+.c1:focus:not(:focus-visible) > path,
+.c1:focus:not(:focus-visible) > polygon,
+.c1:focus:not(:focus-visible) > polyline,
+.c1:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible) ::-moz-focus-inner {
+.c1:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -5448,6 +5886,7 @@ exports[`Button kind should apply styling according to theme size definitions 1`
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
+  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -5459,8 +5898,11 @@ exports[`Button kind should apply styling according to theme size definitions 1`
   font-size: 18px;
   line-height: 24px;
   text-align: center;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
   transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
 }
 
@@ -5469,18 +5911,18 @@ exports[`Button kind should apply styling according to theme size definitions 1`
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c2:focus >circle,
-.c2:focus >ellipse,
-.c2:focus >line,
-.c2:focus >path,
-.c2:focus >polygon,
-.c2:focus >polyline,
-.c2:focus >rect {
+.c2:focus > circle,
+.c2:focus > ellipse,
+.c2:focus > line,
+.c2:focus > path,
+.c2:focus > polygon,
+.c2:focus > polyline,
+.c2:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c2:focus ::-moz-focus-inner {
+.c2:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -5489,18 +5931,18 @@ exports[`Button kind should apply styling according to theme size definitions 1`
   box-shadow: none;
 }
 
-.c2:focus:not(:focus-visible) >circle,
-.c2:focus:not(:focus-visible) >ellipse,
-.c2:focus:not(:focus-visible) >line,
-.c2:focus:not(:focus-visible) >path,
-.c2:focus:not(:focus-visible) >polygon,
-.c2:focus:not(:focus-visible) >polyline,
-.c2:focus:not(:focus-visible) >rect {
+.c2:focus:not(:focus-visible) > circle,
+.c2:focus:not(:focus-visible) > ellipse,
+.c2:focus:not(:focus-visible) > line,
+.c2:focus:not(:focus-visible) > path,
+.c2:focus:not(:focus-visible) > polygon,
+.c2:focus:not(:focus-visible) > polyline,
+.c2:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c2:focus:not(:focus-visible) ::-moz-focus-inner {
+.c2:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -5509,6 +5951,7 @@ exports[`Button kind should apply styling according to theme size definitions 1`
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
+  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -5520,8 +5963,11 @@ exports[`Button kind should apply styling according to theme size definitions 1`
   font-size: 22px;
   line-height: 28px;
   text-align: center;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
   transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
 }
 
@@ -5530,18 +5976,18 @@ exports[`Button kind should apply styling according to theme size definitions 1`
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus >circle,
-.c3:focus >ellipse,
-.c3:focus >line,
-.c3:focus >path,
-.c3:focus >polygon,
-.c3:focus >polyline,
-.c3:focus >rect {
+.c3:focus > circle,
+.c3:focus > ellipse,
+.c3:focus > line,
+.c3:focus > path,
+.c3:focus > polygon,
+.c3:focus > polyline,
+.c3:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus ::-moz-focus-inner {
+.c3:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -5550,18 +5996,18 @@ exports[`Button kind should apply styling according to theme size definitions 1`
   box-shadow: none;
 }
 
-.c3:focus:not(:focus-visible) >circle,
-.c3:focus:not(:focus-visible) >ellipse,
-.c3:focus:not(:focus-visible) >line,
-.c3:focus:not(:focus-visible) >path,
-.c3:focus:not(:focus-visible) >polygon,
-.c3:focus:not(:focus-visible) >polyline,
-.c3:focus:not(:focus-visible) >rect {
+.c3:focus:not(:focus-visible) > circle,
+.c3:focus:not(:focus-visible) > ellipse,
+.c3:focus:not(:focus-visible) > line,
+.c3:focus:not(:focus-visible) > path,
+.c3:focus:not(:focus-visible) > polygon,
+.c3:focus:not(:focus-visible) > polyline,
+.c3:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c3:focus:not(:focus-visible) ::-moz-focus-inner {
+.c3:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -5612,6 +6058,7 @@ exports[`Button kind should render elevation 1`] = `
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
+  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -5624,13 +6071,16 @@ exports[`Button kind should render elevation 1`] = `
   line-height: 24px;
   box-shadow: inset 3px 0 red;
   text-align: center;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
   transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
 }
 
 .c1:hover {
-  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.20);
+  box-shadow: 0px 8px 16px rgba(0,0,0,0.20);
 }
 
 .c1:focus {
@@ -5638,18 +6088,18 @@ exports[`Button kind should render elevation 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus >circle,
-.c1:focus >ellipse,
-.c1:focus >line,
-.c1:focus >path,
-.c1:focus >polygon,
-.c1:focus >polyline,
-.c1:focus >rect {
+.c1:focus > circle,
+.c1:focus > ellipse,
+.c1:focus > line,
+.c1:focus > path,
+.c1:focus > polygon,
+.c1:focus > polyline,
+.c1:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus ::-moz-focus-inner {
+.c1:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -5658,18 +6108,18 @@ exports[`Button kind should render elevation 1`] = `
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible) >circle,
-.c1:focus:not(:focus-visible) >ellipse,
-.c1:focus:not(:focus-visible) >line,
-.c1:focus:not(:focus-visible) >path,
-.c1:focus:not(:focus-visible) >polygon,
-.c1:focus:not(:focus-visible) >polyline,
-.c1:focus:not(:focus-visible) >rect {
+.c1:focus:not(:focus-visible) > circle,
+.c1:focus:not(:focus-visible) > ellipse,
+.c1:focus:not(:focus-visible) > line,
+.c1:focus:not(:focus-visible) > path,
+.c1:focus:not(:focus-visible) > polygon,
+.c1:focus:not(:focus-visible) > polyline,
+.c1:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible) ::-moz-focus-inner {
+.c1:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -5678,6 +6128,7 @@ exports[`Button kind should render elevation 1`] = `
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
+  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -5690,17 +6141,20 @@ exports[`Button kind should render elevation 1`] = `
   line-height: 24px;
   box-shadow: inset 5px 0 blue;
   text-align: center;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
   transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
 }
 
 .c2:hover {
-  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.20);
+  box-shadow: 0px 8px 16px rgba(0,0,0,0.20);
 }
 
 .c2:hover {
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.20);
+  box-shadow: 0px 4px 8px rgba(0,0,0,0.20);
 }
 
 .c2:focus {
@@ -5708,18 +6162,18 @@ exports[`Button kind should render elevation 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c2:focus >circle,
-.c2:focus >ellipse,
-.c2:focus >line,
-.c2:focus >path,
-.c2:focus >polygon,
-.c2:focus >polyline,
-.c2:focus >rect {
+.c2:focus > circle,
+.c2:focus > ellipse,
+.c2:focus > line,
+.c2:focus > path,
+.c2:focus > polygon,
+.c2:focus > polyline,
+.c2:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c2:focus ::-moz-focus-inner {
+.c2:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -5728,18 +6182,18 @@ exports[`Button kind should render elevation 1`] = `
   box-shadow: none;
 }
 
-.c2:focus:not(:focus-visible) >circle,
-.c2:focus:not(:focus-visible) >ellipse,
-.c2:focus:not(:focus-visible) >line,
-.c2:focus:not(:focus-visible) >path,
-.c2:focus:not(:focus-visible) >polygon,
-.c2:focus:not(:focus-visible) >polyline,
-.c2:focus:not(:focus-visible) >rect {
+.c2:focus:not(:focus-visible) > circle,
+.c2:focus:not(:focus-visible) > ellipse,
+.c2:focus:not(:focus-visible) > line,
+.c2:focus:not(:focus-visible) > path,
+.c2:focus:not(:focus-visible) > polygon,
+.c2:focus:not(:focus-visible) > polyline,
+.c2:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c2:focus:not(:focus-visible) ::-moz-focus-inner {
+.c2:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -5748,6 +6202,7 @@ exports[`Button kind should render elevation 1`] = `
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
+  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -5765,18 +6220,18 @@ exports[`Button kind should render elevation 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus >circle,
-.c3:focus >ellipse,
-.c3:focus >line,
-.c3:focus >path,
-.c3:focus >polygon,
-.c3:focus >polyline,
-.c3:focus >rect {
+.c3:focus > circle,
+.c3:focus > ellipse,
+.c3:focus > line,
+.c3:focus > path,
+.c3:focus > polygon,
+.c3:focus > polyline,
+.c3:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus ::-moz-focus-inner {
+.c3:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -5785,18 +6240,18 @@ exports[`Button kind should render elevation 1`] = `
   box-shadow: none;
 }
 
-.c3:focus:not(:focus-visible) >circle,
-.c3:focus:not(:focus-visible) >ellipse,
-.c3:focus:not(:focus-visible) >line,
-.c3:focus:not(:focus-visible) >path,
-.c3:focus:not(:focus-visible) >polygon,
-.c3:focus:not(:focus-visible) >polyline,
-.c3:focus:not(:focus-visible) >rect {
+.c3:focus:not(:focus-visible) > circle,
+.c3:focus:not(:focus-visible) > ellipse,
+.c3:focus:not(:focus-visible) > line,
+.c3:focus:not(:focus-visible) > path,
+.c3:focus:not(:focus-visible) > polygon,
+.c3:focus:not(:focus-visible) > polyline,
+.c3:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c3:focus:not(:focus-visible) ::-moz-focus-inner {
+.c3:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -5839,6 +6294,8 @@ exports[`Button kind should render pad 1`] = `
 <DocumentFragment>
   .c3 {
   display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
@@ -5870,18 +6327,33 @@ exports[`Button kind should render pad 1`] = `
 }
 
 .c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
   flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
 }
 
 .c4 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
   align-self: stretch;
   width: 12px;
 }
@@ -5891,6 +6363,7 @@ exports[`Button kind should render pad 1`] = `
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
+  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -5903,13 +6376,21 @@ exports[`Button kind should render pad 1`] = `
   line-height: 24px;
   padding: 96px;
   text-align: center;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
   transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
 }
 
-.c1 >svg {
+.c1 > svg {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
   align-self: center;
   vertical-align: middle;
 }
@@ -5919,18 +6400,18 @@ exports[`Button kind should render pad 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus >circle,
-.c1:focus >ellipse,
-.c1:focus >line,
-.c1:focus >path,
-.c1:focus >polygon,
-.c1:focus >polyline,
-.c1:focus >rect {
+.c1:focus > circle,
+.c1:focus > ellipse,
+.c1:focus > line,
+.c1:focus > path,
+.c1:focus > polygon,
+.c1:focus > polyline,
+.c1:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus ::-moz-focus-inner {
+.c1:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -5939,18 +6420,18 @@ exports[`Button kind should render pad 1`] = `
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible) >circle,
-.c1:focus:not(:focus-visible) >ellipse,
-.c1:focus:not(:focus-visible) >line,
-.c1:focus:not(:focus-visible) >path,
-.c1:focus:not(:focus-visible) >polygon,
-.c1:focus:not(:focus-visible) >polyline,
-.c1:focus:not(:focus-visible) >rect {
+.c1:focus:not(:focus-visible) > circle,
+.c1:focus:not(:focus-visible) > ellipse,
+.c1:focus:not(:focus-visible) > line,
+.c1:focus:not(:focus-visible) > path,
+.c1:focus:not(:focus-visible) > polygon,
+.c1:focus:not(:focus-visible) > polyline,
+.c1:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible) ::-moz-focus-inner {
+.c1:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -5959,6 +6440,7 @@ exports[`Button kind should render pad 1`] = `
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
+  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -5974,13 +6456,21 @@ exports[`Button kind should render pad 1`] = `
   padding-top: 6px;
   padding-bottom: 6px;
   text-align: center;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
   transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
 }
 
-.c5 >svg {
+.c5 > svg {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
   align-self: center;
   vertical-align: middle;
 }
@@ -5990,18 +6480,18 @@ exports[`Button kind should render pad 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c5:focus >circle,
-.c5:focus >ellipse,
-.c5:focus >line,
-.c5:focus >path,
-.c5:focus >polygon,
-.c5:focus >polyline,
-.c5:focus >rect {
+.c5:focus > circle,
+.c5:focus > ellipse,
+.c5:focus > line,
+.c5:focus > path,
+.c5:focus > polygon,
+.c5:focus > polyline,
+.c5:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c5:focus ::-moz-focus-inner {
+.c5:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -6010,18 +6500,18 @@ exports[`Button kind should render pad 1`] = `
   box-shadow: none;
 }
 
-.c5:focus:not(:focus-visible) >circle,
-.c5:focus:not(:focus-visible) >ellipse,
-.c5:focus:not(:focus-visible) >line,
-.c5:focus:not(:focus-visible) >path,
-.c5:focus:not(:focus-visible) >polygon,
-.c5:focus:not(:focus-visible) >polyline,
-.c5:focus:not(:focus-visible) >rect {
+.c5:focus:not(:focus-visible) > circle,
+.c5:focus:not(:focus-visible) > ellipse,
+.c5:focus:not(:focus-visible) > line,
+.c5:focus:not(:focus-visible) > path,
+.c5:focus:not(:focus-visible) > polygon,
+.c5:focus:not(:focus-visible) > polyline,
+.c5:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c5:focus:not(:focus-visible) ::-moz-focus-inner {
+.c5:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -6030,6 +6520,7 @@ exports[`Button kind should render pad 1`] = `
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
+  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -6047,18 +6538,18 @@ exports[`Button kind should render pad 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c6:focus >circle,
-.c6:focus >ellipse,
-.c6:focus >line,
-.c6:focus >path,
-.c6:focus >polygon,
-.c6:focus >polyline,
-.c6:focus >rect {
+.c6:focus > circle,
+.c6:focus > ellipse,
+.c6:focus > line,
+.c6:focus > path,
+.c6:focus > polygon,
+.c6:focus > polyline,
+.c6:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c6:focus ::-moz-focus-inner {
+.c6:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -6067,18 +6558,18 @@ exports[`Button kind should render pad 1`] = `
   box-shadow: none;
 }
 
-.c6:focus:not(:focus-visible) >circle,
-.c6:focus:not(:focus-visible) >ellipse,
-.c6:focus:not(:focus-visible) >line,
-.c6:focus:not(:focus-visible) >path,
-.c6:focus:not(:focus-visible) >polygon,
-.c6:focus:not(:focus-visible) >polyline,
-.c6:focus:not(:focus-visible) >rect {
+.c6:focus:not(:focus-visible) > circle,
+.c6:focus:not(:focus-visible) > ellipse,
+.c6:focus:not(:focus-visible) > line,
+.c6:focus:not(:focus-visible) > path,
+.c6:focus:not(:focus-visible) > polygon,
+.c6:focus:not(:focus-visible) > polyline,
+.c6:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c6:focus:not(:focus-visible) ::-moz-focus-inner {
+.c6:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -6175,6 +6666,7 @@ exports[`Button kind size of default button 1`] = `
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
+  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -6186,8 +6678,11 @@ exports[`Button kind size of default button 1`] = `
   font-size: 14px;
   line-height: 20px;
   text-align: center;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
   transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
 }
 
@@ -6196,18 +6691,18 @@ exports[`Button kind size of default button 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus >circle,
-.c1:focus >ellipse,
-.c1:focus >line,
-.c1:focus >path,
-.c1:focus >polygon,
-.c1:focus >polyline,
-.c1:focus >rect {
+.c1:focus > circle,
+.c1:focus > ellipse,
+.c1:focus > line,
+.c1:focus > path,
+.c1:focus > polygon,
+.c1:focus > polyline,
+.c1:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus ::-moz-focus-inner {
+.c1:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -6216,18 +6711,18 @@ exports[`Button kind size of default button 1`] = `
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible) >circle,
-.c1:focus:not(:focus-visible) >ellipse,
-.c1:focus:not(:focus-visible) >line,
-.c1:focus:not(:focus-visible) >path,
-.c1:focus:not(:focus-visible) >polygon,
-.c1:focus:not(:focus-visible) >polyline,
-.c1:focus:not(:focus-visible) >rect {
+.c1:focus:not(:focus-visible) > circle,
+.c1:focus:not(:focus-visible) > ellipse,
+.c1:focus:not(:focus-visible) > line,
+.c1:focus:not(:focus-visible) > path,
+.c1:focus:not(:focus-visible) > polygon,
+.c1:focus:not(:focus-visible) > polyline,
+.c1:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible) ::-moz-focus-inner {
+.c1:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -6256,6 +6751,8 @@ exports[`Button kind size of default button 1`] = `
 exports[`Button kind theme busy gap 1`] = `
 .c12 {
   display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
@@ -6287,49 +6784,82 @@ exports[`Button kind theme busy gap 1`] = `
 }
 
 .c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
 }
 
 .c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  -webkit-align-content: center;
+  -ms-flex-line-pack: center;
   align-content: center;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   width: 100%;
   height: 100%;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
 }
 
 .c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
   align-self: center;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
   flex-direction: row;
 }
 
 .c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
 }
 
 .c8 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
   align-self: stretch;
   width: 48px;
 }
@@ -6339,6 +6869,7 @@ exports[`Button kind theme busy gap 1`] = `
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
+  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -6350,8 +6881,11 @@ exports[`Button kind theme busy gap 1`] = `
   font-size: 18px;
   line-height: 24px;
   text-align: center;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
   transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
   cursor: default;
 }
@@ -6361,18 +6895,18 @@ exports[`Button kind theme busy gap 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus >circle,
-.c1:focus >ellipse,
-.c1:focus >line,
-.c1:focus >path,
-.c1:focus >polygon,
-.c1:focus >polyline,
-.c1:focus >rect {
+.c1:focus > circle,
+.c1:focus > ellipse,
+.c1:focus > line,
+.c1:focus > path,
+.c1:focus > polygon,
+.c1:focus > polyline,
+.c1:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus ::-moz-focus-inner {
+.c1:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -6381,18 +6915,18 @@ exports[`Button kind theme busy gap 1`] = `
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible) >circle,
-.c1:focus:not(:focus-visible) >ellipse,
-.c1:focus:not(:focus-visible) >line,
-.c1:focus:not(:focus-visible) >path,
-.c1:focus:not(:focus-visible) >polygon,
-.c1:focus:not(:focus-visible) >polyline,
-.c1:focus:not(:focus-visible) >rect {
+.c1:focus:not(:focus-visible) > circle,
+.c1:focus:not(:focus-visible) > ellipse,
+.c1:focus:not(:focus-visible) > line,
+.c1:focus:not(:focus-visible) > path,
+.c1:focus:not(:focus-visible) > polygon,
+.c1:focus:not(:focus-visible) > polyline,
+.c1:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible) ::-moz-focus-inner {
+.c1:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -6402,7 +6936,9 @@ exports[`Button kind theme busy gap 1`] = `
   height: 8px;
   border-radius: 100%;
   display: inline-block;
+  -webkit-animation: jjaoCu 1.4s infinite ease-in-out both;
   animation: jjaoCu 1.4s infinite ease-in-out both;
+  -webkit-animation-delay: -0.32s;
   animation-delay: -0.32s;
 }
 
@@ -6412,7 +6948,9 @@ exports[`Button kind theme busy gap 1`] = `
   height: 8px;
   border-radius: 100%;
   display: inline-block;
+  -webkit-animation: jjaoCu 1.4s infinite ease-in-out both;
   animation: jjaoCu 1.4s infinite ease-in-out both;
+  -webkit-animation-delay: -0.16s;
   animation-delay: -0.16s;
 }
 
@@ -6422,12 +6960,16 @@ exports[`Button kind theme busy gap 1`] = `
   height: 8px;
   border-radius: 100%;
   display: inline-block;
+  -webkit-animation: jjaoCu 1.4s infinite ease-in-out both;
   animation: jjaoCu 1.4s infinite ease-in-out both;
 }
 
 .c13 {
   position: absolute;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
   align-self: center;
+  -webkit-animation: cqeQpI 0.9s ease-in-out;
   animation: cqeQpI 0.9s ease-in-out;
 }
 
@@ -6449,7 +6991,7 @@ exports[`Button kind theme busy gap 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c8 {
     width: 24px;
   }

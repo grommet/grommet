@@ -256,6 +256,19 @@ const plainStyle = (props) => css`
   ${props.hasIcon && !props.hasLabel && `line-height: 0;`}
 `;
 
+const minTargetSizeStyle = (props) => {
+  if (props.hasIcon && !props.hasLabel) {
+    const minSize = props.theme.global.minTargetSize;
+    if (minSize) {
+      return css`
+        min-width: ${minSize};
+        min-height: ${minSize};
+      `;
+    }
+  }
+  return '';
+};
+
 const StyledButtonKind = styled.button.withConfig({
   shouldForwardProp: (prop) => isPropValid(prop) && !['kind'].includes(prop),
 })`
@@ -271,6 +284,7 @@ const StyledButtonKind = styled.button.withConfig({
 
   ${genericStyles}
   ${(props) => props.plain && plainStyle(props)}
+  ${(props) => minTargetSizeStyle(props)}
   // set baseline activeStyle for all buttons including plain buttons
   // buttons with kind will have active styling overridden by kindStyle
   // if they have specific state styles
