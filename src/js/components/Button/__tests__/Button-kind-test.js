@@ -79,6 +79,37 @@ describe('Button kind', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
+  test('default button color prop sets text color, not background', () => {
+    const { container } = render(
+      <Grommet
+        theme={{
+          button: {
+            default: {
+              background: {
+                color: '#666666',
+              },
+              border: {
+                color: '#666666',
+              },
+            },
+          },
+        }}
+      >
+        <Button label="Test" color="#FF0000" />
+      </Grommet>,
+    );
+    const button = container.querySelector('button');
+    expect(button).toHaveStyleRule(
+      'color',
+      expect.stringContaining('#FF0000'),
+    );
+    expect(button).not.toHaveStyleRule(
+      'background-color',
+      expect.stringContaining('#FF0000'),
+    );
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
   test(`mouseOver and mouseOut events`, async () => {
     const { container, getByText } = render(
       <Grommet

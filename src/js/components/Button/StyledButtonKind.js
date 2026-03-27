@@ -8,6 +8,7 @@ import {
   unfocusStyle,
   genericStyles,
   kindPartStyles,
+  normalizeColor,
   parseMetricToNum,
 } from '../../utils';
 
@@ -150,7 +151,19 @@ const kindStyle = ({
   themePaths.base.forEach((themePath) => {
     const obj = getPath(themeObj, themePath);
     if (obj) {
-      styles.push(kindPartStyles(obj, theme, colorValue));
+      // For default kind buttons, color prop should change text color,
+      // not the background. Only pass colorValue to kindPartStyles for
+      // non-default kinds (e.g. primary, secondary) where it should
+      // replace the background.
+      const isDefaultKind =
+        themePath === 'default' ||
+        (themePath && themePath.endsWith('.default'));
+      styles.push(
+        kindPartStyles(obj, theme, isDefaultKind ? undefined : colorValue),
+      );
+      if (isDefaultKind && colorValue) {
+        styles.push(`color: ${normalizeColor(colorValue, theme)};`);
+      }
       if (obj.border && obj.border.width && pad && !obj.padding) {
         // Adjust padding from the button.size or just top button.padding
         // to deal with the kind's border width. But don't override any
