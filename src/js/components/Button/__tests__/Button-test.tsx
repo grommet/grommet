@@ -682,4 +682,29 @@ describe('Button', () => {
 
     expect(screen.getByLabelText('Add')).toBeInTheDocument();
   });
+
+  test('default button color prop sets text color, not background', () => {
+    const theme: ThemeType = {
+      button: {
+        default: {
+          background: { color: 'white' },
+          border: { color: 'border', width: '2px' },
+          color: 'text',
+        },
+      },
+    };
+
+    const { container } = render(
+      <Grommet theme={theme}>
+        <Button label="Default" color="red" />
+      </Grommet>,
+    );
+    const button = container.querySelector('button')!;
+    // color prop should set text color, not background
+    expect(button).toHaveStyleRule('color', expect.stringContaining('red'));
+    expect(button).not.toHaveStyleRule(
+      'background-color',
+      expect.stringContaining('red'),
+    );
+  });
 });

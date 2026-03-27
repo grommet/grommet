@@ -82,9 +82,19 @@ const getIconColor = (paths = [], theme, colorProp, kind) => {
     }
 
     if (obj) {
+      // For default kind buttons, color prop should be used as text color,
+      // not as background replacement.
+      const isDefaultKind =
+        paths[index] === 'default' ||
+        (paths[index] && paths[index].endsWith('.default'));
+
       // use passed in color for background if the theme has a background color
+      // but not for default kind buttons where color means text color
       const background =
-        colorProp && obj.background && obj.background.color
+        colorProp &&
+        obj.background &&
+        obj.background.color &&
+        !isDefaultKind
           ? colorProp
           : obj.background;
 
@@ -107,12 +117,13 @@ const getIconColor = (paths = [], theme, colorProp, kind) => {
         if (obj?.icon?.props?.color) color = obj.icon.props.color;
       }
       // use passed in color for text if the theme doesn't have
-      // background or border color
+      // background or border color, or if this is a default kind button
       if (!color)
         color =
           colorProp &&
-          (!obj.background || !obj.background.color) &&
-          (!obj.border || !obj.border.color)
+          (isDefaultKind ||
+            ((!obj.background || !obj.background.color) &&
+              (!obj.border || !obj.border.color)))
             ? colorProp
             : objColor;
 
