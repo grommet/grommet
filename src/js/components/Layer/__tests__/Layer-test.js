@@ -1,11 +1,11 @@
 import React from 'react';
 import 'jest-styled-components';
-import { cleanup, render, fireEvent } from '@testing-library/react';
+import { render, fireEvent, screen, act } from '@testing-library/react';
 import { getByTestId, queryByTestId } from '@testing-library/dom';
-
+import 'regenerator-runtime/runtime';
 import { createPortal, expectPortal } from '../../../utils/portal';
 
-import { Grommet, Box, Layer } from '../..';
+import { Grommet, Box, Layer, Select, Button } from '../..';
 import { LayerContainer } from '../LayerContainer';
 
 const SimpleLayer = () => {
@@ -20,7 +20,7 @@ const SimpleLayer = () => {
   return <Box>{layer}</Box>;
 };
 
-const FakeLayer = ({ children, dataTestid }) => {
+const FakeLayer = ({ children, dataTestid, ...rest }) => {
   const [showLayer, setShowLayer] = React.useState(false);
 
   React.useEffect(() => setShowLayer(true), []);
@@ -28,7 +28,7 @@ const FakeLayer = ({ children, dataTestid }) => {
   let layer;
   if (showLayer) {
     layer = (
-      <Layer onEsc={() => setShowLayer(false)}>
+      <Layer onEsc={() => setShowLayer(false)} {...rest}>
         <div data-testid={dataTestid}>
           This is a layer
           <input data-testid="test-input" />
@@ -44,7 +44,7 @@ const FakeLayer = ({ children, dataTestid }) => {
   );
 };
 
-const TargetLayer = props => {
+const TargetLayer = (props) => {
   const [target, setTarget] = React.useState();
   let layer;
   if (target) {
@@ -64,36 +64,58 @@ const TargetLayer = props => {
 
 describe('Layer', () => {
   beforeEach(createPortal);
-  afterEach(cleanup);
+  const positions = [
+    'top',
+    'bottom',
+    'left',
+    'right',
+    'start',
+    'end',
+    'center',
+    'top-left',
+    'top-right',
+    'bottom-left',
+    'bottom-right',
+  ];
 
-  ['top', 'bottom', 'left', 'right', 'start', 'end', 'center'].forEach(
-    position =>
-      test(`position ${position}`, () => {
+  const fullOptions = [true, false, 'horizontal', 'vertical'];
+
+  positions.forEach((position) =>
+    fullOptions.forEach((full) => {
+      test(`position: ${position} - full: ${full}`, () => {
         render(
           <Grommet>
-            <Layer id="position-test" position={position}>
+            <Layer id="position-full-test" position={position} full={full}>
               This is a layer
             </Layer>
           </Grommet>,
         );
-        expectPortal('position-test').toMatchSnapshot();
-      }),
-  );
+        expectPortal('position-full-test').toMatchSnapshot();
+      });
 
-  [true, false, 'horizontal', 'vertical'].forEach(full =>
-    test(`full ${full}`, () => {
-      render(
-        <Grommet>
-          <Layer id="full-test" full={full}>
-            This is a layer
-          </Layer>
-        </Grommet>,
-      );
-      expectPortal('full-test').toMatchSnapshot();
+      test(`should render correct border radius for position: ${position} -
+      full: ${full}`, () => {
+        const theme = {
+          layer: {
+            border: {
+              radius: 'large',
+              intelligentRounding: true,
+            },
+          },
+        };
+        render(
+          <Grommet theme={theme}>
+            <Layer id="border-radius-test" position={position} full={full}>
+              This is a layer
+            </Layer>
+          </Grommet>,
+        );
+        expectPortal('border-radius-test').toMatchSnapshot();
+      });
     }),
   );
 
-  ['none', 'xsmall', 'small', 'medium', 'large'].forEach(margin =>
+  ['none', 'xsmall', 'small', 'medium', 'large'].forEach((margin) =>
     test(`margin ${margin}`, () => {
       render(
         <Grommet>
@@ -105,6 +127,17 @@ describe('Layer', () => {
       expectPortal('margin-test').toMatchSnapshot();
     }),
   );
+
+  test(`should apply background`, () => {
+    render(
+      <Grommet>
+        <Layer id="margin-test" background="brand">
+          This is a layer
+        </Layer>
+      </Grommet>,
+    );
+    expectPortal('margin-test').toMatchSnapshot();
+  });
 
   test(`custom margin`, () => {
     render(
@@ -141,14 +174,28 @@ describe('Layer', () => {
   });
 
   test('plain', () => {
+    // elevation should not be applied when Layer is plain
+    const theme = {
+      layer: {
+        container: {
+          elevation: 'large',
+        },
+      },
+    };
+
     render(
-      <Grommet>
+      <Grommet theme={theme}>
         <Layer id="plain-test" plain>
           This is a plain layer
         </Layer>
       </Grommet>,
     );
     expectPortal('plain-test').toMatchSnapshot();
+  });
+
+  test('renders outside grommet wrapper', () => {
+    render(<Layer id="grommet-test">This is layer</Layer>);
+    expectPortal('grommet-test').toMatchSnapshot();
   });
 
   test('non-modal', () => {
@@ -175,7 +222,7 @@ describe('Layer', () => {
     expectPortal('non-modal-test').toMatchSnapshot();
   });
 
-  ['slide', 'fadeIn', false, true].forEach(animation =>
+  ['slide', 'fadeIn', false, true].forEach((animation) =>
     test(`animation ${animation}`, () => {
       render(
         <Grommet>
@@ -200,10 +247,10 @@ describe('Layer', () => {
 
     const inputNode = getByTestId(document, 'test-input');
     fireEvent.keyDown(inputNode, { key: 'Esc', keyCode: 27, which: 27 });
-    expect(onEsc).toBeCalled();
+    expect(onEsc).toHaveBeenCalled();
   });
 
-  test('is accessible', done => {
+  test('is accessible', (done) => {
     /* eslint-disable jsx-a11y/tabindex-no-positive */
     render(
       <Grommet>
@@ -243,11 +290,10 @@ describe('Layer', () => {
         <input autoFocus />
       </Grommet>,
     );
-    /* eslint-disable jsx-a11y/no-autofocus */
 
     const layerNode = getByTestId(document, 'focus-layer-test');
     expect(layerNode).toMatchSnapshot();
-    expect(document.activeElement.nodeName).toBe('A');
+    expect(document.activeElement.nodeName).toBe('SPAN');
   });
 
   test('not steal focus from an autofocus focusable element', () => {
@@ -260,7 +306,6 @@ describe('Layer', () => {
         </Layer>
       </Grommet>,
     );
-    /* eslint-disable jsx-a11y/no-autofocus */
     const layerNode = getByTestId(document, 'focus-layer-input-test');
     const inputNode = getByTestId(document, 'focus-input');
     expect(layerNode).toMatchSnapshot();
@@ -324,5 +369,261 @@ describe('Layer', () => {
     } finally {
       document.body.removeChild(target);
     }
+  });
+
+  test('invoke onClickOutside when modal={true}', () => {
+    const onClickOutside = jest.fn();
+    render(
+      <Grommet>
+        <FakeLayer
+          id="layer-node"
+          onClickOutside={onClickOutside}
+          animation={false}
+        >
+          <div data-testid="test-body-node" />
+        </FakeLayer>
+      </Grommet>,
+    );
+    expectPortal('layer-node').toMatchSnapshot();
+
+    fireEvent(
+      document,
+      new MouseEvent('mousedown', { bubbles: true, cancelable: true }),
+    );
+    expect(onClickOutside).toHaveBeenCalledTimes(1);
+  });
+
+  test('invoke onClickOutside when modal={false}', () => {
+    const onClickOutside = jest.fn();
+    render(
+      <Grommet>
+        <FakeLayer
+          id="layer-node"
+          onClickOutside={onClickOutside}
+          modal={false}
+          animation={false}
+        >
+          <div data-testid="test-body-node" />
+        </FakeLayer>
+      </Grommet>,
+    );
+    expectPortal('layer-node').toMatchSnapshot();
+
+    fireEvent(
+      document,
+      new MouseEvent('mousedown', { bubbles: true, cancelable: true }),
+    );
+    expect(onClickOutside).toHaveBeenCalledTimes(1);
+  });
+
+  test('invoke onClickOutside when modal={false} and layer has target', () => {
+    const onClickOutside = jest.fn();
+    render(
+      <TargetLayer
+        id="target-test"
+        onClickOutside={onClickOutside}
+        modal={false}
+        animation={false}
+      />,
+    );
+    expectPortal('target-test').toMatchSnapshot();
+
+    fireEvent(
+      document,
+      new MouseEvent('mousedown', { bubbles: true, cancelable: true }),
+    );
+    expect(onClickOutside).toHaveBeenCalledTimes(1);
+  });
+
+  test('invoke onClickOutside when modal={true} and layer has target', () => {
+    const onClickOutside = jest.fn();
+    render(
+      <TargetLayer
+        id="target-test"
+        onClickOutside={onClickOutside}
+        animation={false}
+      />,
+    );
+    expectPortal('target-test').toMatchSnapshot();
+
+    fireEvent(
+      document,
+      new MouseEvent('mousedown', { bubbles: true, cancelable: true }),
+    );
+    expect(onClickOutside).toHaveBeenCalledTimes(1);
+  });
+
+  test('custom theme', () => {
+    const theme = {
+      layer: {
+        container: {
+          elevation: 'large',
+        },
+        overlay: {
+          backdropFilter: `blur(12px)`,
+        },
+      },
+    };
+
+    render(
+      <Grommet theme={theme}>
+        <Layer id="custom-theme-test" animation={false}>
+          This is a layer
+        </Layer>
+      </Grommet>,
+    );
+    expectPortal('custom-theme-test').toMatchSnapshot();
+  });
+
+  test('invokes onEsc when modal={false}', () => {
+    jest.useFakeTimers();
+    window.scrollTo = jest.fn();
+    const onEsc = jest.fn();
+    const { getByText, queryByText } = render(
+      <Grommet>
+        <Layer id="esc-test" onEsc={onEsc} modal={false} animation={false}>
+          <Select options={['one', 'two', 'three']} data-testid="test-select" />
+        </Layer>
+      </Grommet>,
+    );
+
+    const selectNode = getByTestId(document, 'test-select');
+
+    fireEvent.click(selectNode);
+    // advance timers so the select opens
+    jest.advanceTimersByTime(100);
+    // verify that select is open
+    expect(getByText('one')).toBeTruthy();
+
+    fireEvent.keyDown(document, {
+      key: 'Esc',
+      keyCode: 27,
+      which: 27,
+    });
+
+    // advance timers so the select closes
+    jest.advanceTimersByTime(100);
+    expect(queryByText('one')).toBeFalsy();
+    // onEsc should not be called on the Layer yet
+    expect(onEsc).toHaveBeenCalledTimes(0);
+
+    fireEvent.keyDown(document, {
+      key: 'Esc',
+      keyCode: 27,
+      which: 27,
+    });
+    expect(onEsc).toHaveBeenCalledTimes(1);
+    expectPortal('esc-test').toMatchSnapshot();
+  });
+
+  test('should only place id on StyledLayer when singleId === true', () => {
+    render(
+      <Grommet options={{ layer: { singleId: true } }}>
+        <Layer id="singleId-test" animation={false}>
+          This is a layer
+        </Layer>
+      </Grommet>,
+    );
+    expectPortal('singleId-test').toMatchSnapshot();
+  });
+
+  const TriggerButtonTest = () => {
+    const [showLayer, setShowLayer] = React.useState(false);
+    return (
+      <Box>
+        <Button type="button" onClick={() => setShowLayer(true)}>
+          Open Layer
+        </Button>
+        {showLayer && (
+          <Layer onEsc={() => setShowLayer(false)} animation={false}>
+            <Box>
+              <Button label="Close Layer" onClick={() => setShowLayer(false)} />
+            </Box>
+          </Layer>
+        )}
+      </Box>
+    );
+  };
+
+  test('restore focus to trigger button after hitting escape', async () => {
+    jest.useFakeTimers();
+
+    render(
+      <Grommet>
+        <TriggerButtonTest />
+      </Grommet>,
+    );
+
+    const triggerButton = screen.getByRole('button', { name: 'Open Layer' });
+
+    await act(async () => {
+      triggerButton.focus();
+    });
+    expect(document.activeElement).toBe(triggerButton);
+
+    await act(async () => {
+      fireEvent.click(triggerButton);
+      jest.advanceTimersByTime(0);
+    });
+
+    const closeButton = screen.getByRole('button', { name: 'Close Layer' });
+    await act(async () => {
+      fireEvent.keyDown(closeButton, {
+        key: 'Escape',
+        code: 'Escape',
+        keyCode: 27,
+      });
+      jest.advanceTimersByTime(0);
+      jest.advanceTimersByTime(100);
+    });
+
+    await act(async () => {
+      jest.runOnlyPendingTimers();
+    });
+
+    expect(screen.queryByRole('button', { name: 'Close Layer' })).toBeNull();
+    expect(document.activeElement).toBe(triggerButton);
+
+    await act(async () => {
+      fireEvent.click(triggerButton);
+      jest.advanceTimersByTime(0);
+    });
+
+    const closeButton2 = screen.getByRole('button', { name: 'Close Layer' });
+
+    await act(async () => {
+      fireEvent.click(closeButton2);
+      jest.advanceTimersByTime(0);
+      jest.advanceTimersByTime(100);
+    });
+
+    await act(async () => {
+      jest.runOnlyPendingTimers();
+    });
+    expect(document.activeElement).toBe(triggerButton);
+    jest.useRealTimers();
+  });
+
+  test('theme container height', () => {
+    const customTheme = {
+      layer: {
+        container: {
+          height: '400px',
+        },
+      },
+    };
+
+    render(
+      <Grommet theme={customTheme}>
+        <Layer id="container-height-test" animation={false}>
+          This is a layer with custom height
+        </Layer>
+      </Grommet>,
+    );
+
+    const layerElement = document.getElementById('container-height-test');
+    expect(layerElement).toBeTruthy();
+
+    expectPortal('container-height-test').toMatchSnapshot();
   });
 });

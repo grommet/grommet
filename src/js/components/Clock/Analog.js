@@ -1,8 +1,6 @@
-import React, { forwardRef, useContext, useMemo } from 'react';
-import { ThemeContext } from 'styled-components';
+import React, { forwardRef, useMemo } from 'react';
 
 import { parseMetricToNum } from '../../utils';
-import { defaultProps } from '../../default-props';
 
 import {
   StyledAnalog,
@@ -10,13 +8,14 @@ import {
   StyledMinute,
   StyledSecond,
 } from './StyledClock';
+import { useThemeValue } from '../../utils/useThemeValue';
 
 // this will serve both minutes and hours (360 / 6)
 const ANGLE_UNIT = 6;
 // 360 / 12
 const HOUR_ANGLE_UNIT = 30;
 
-const getClockDimensions = theme => ({
+const getClockDimensions = (theme) => ({
   size: parseMetricToNum(theme.clock.analog.size.medium),
   secondSize: parseMetricToNum(theme.clock.analog.second.size),
   minuteSize: parseMetricToNum(theme.clock.analog.minute.size),
@@ -37,7 +36,7 @@ const getClockState = ({ hours, minutes, seconds }) => {
 };
 
 const Analog = forwardRef(({ elements, precision, ...rest }, ref) => {
-  const theme = useContext(ThemeContext) || defaultProps.theme;
+  const { theme, passThemeFlag } = useThemeValue();
   const { hourAngle, minuteAngle, secondAngle } = useMemo(
     () => getClockState(elements),
     [elements],
@@ -62,6 +61,7 @@ const Analog = forwardRef(({ elements, precision, ...rest }, ref) => {
           transform: `rotate(${secondAngle}deg)`,
           transformOrigin: `${halfSize}px ${halfSize}px`,
         }}
+        {...passThemeFlag}
       />
     );
   }
@@ -80,6 +80,7 @@ const Analog = forwardRef(({ elements, precision, ...rest }, ref) => {
           transform: `rotate(${minuteAngle}deg)`,
           transformOrigin: `${halfSize}px ${halfSize}px`,
         }}
+        {...passThemeFlag}
       />
     );
   }
@@ -92,6 +93,7 @@ const Analog = forwardRef(({ elements, precision, ...rest }, ref) => {
       height={size}
       preserveAspectRatio="xMidYMid meet"
       viewBox={`0 0 ${size} ${size}`}
+      {...passThemeFlag}
       {...rest}
     >
       {secondHand}
@@ -107,6 +109,7 @@ const Analog = forwardRef(({ elements, precision, ...rest }, ref) => {
           transform: `rotate(${hourAngle}deg)`,
           transformOrigin: `${halfSize}px ${halfSize}px`,
         }}
+        {...passThemeFlag}
       />
     </StyledAnalog>
   );

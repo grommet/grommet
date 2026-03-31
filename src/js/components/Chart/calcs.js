@@ -1,120 +1,199 @@
-import { normalizeValues } from './utils';
-
-const thicknessPad = {
-  xlarge: 'large',
-  large: 'medium',
-  medium: 'small',
-  small: 'xsmall',
-  xsmall: 'xxsmall',
-};
+import { calcMinMax, normalizeValues } from './utils';
 
 export const round = (value, decimals) =>
   Number(`${Math.round(`${value}e${decimals}`)}e-${decimals}`);
 
-export const calcs = (values, options = {}) => {
-  // coarseness influences the rounding of the bounds, the smaller the
-  // number, the more the bounds will be rounded. e.g. 111 -> 110 -> 100
-  const coarseness = options.coarseness || 5;
-  // the number of steps is one less than the number of labels
-  const steps = options.steps || [1, 1];
-  const calcValues = normalizeValues(values || []);
+// Normalize coarseness to an object.
+// Backwards compatible has no coarseness for x-axis.
+const normalizeCoarseness = (coarseness, direction) => {
+  let result;
+  if (Array.isArray(coarseness))
+    result = { x: coarseness[0], y: coarseness[1] };
+  else if (typeof coarseness === 'object') result = coarseness;
+  else if (coarseness) result = { x: undefined, y: coarseness };
+  else
+    result =
+      direction === 'horizontal'
+        ? { x: 5, y: undefined }
+        : { x: undefined, y: 5 };
+  return result;
+};
 
-  // min and max y values
-  let min;
-  let max;
-  if (calcValues.length) {
-    // Calculate the max and min y values.
-    calcValues
-      .filter(value => value !== undefined)
-      .forEach(value => {
-        const y = value.value[1];
-        if (y !== undefined) {
-          min = min === undefined ? y : Math.min(min, y);
-          max = max === undefined ? y : Math.max(max, y);
-        }
-        // handle ranges of values
-        const y2 = value.value[2];
-        if (y2 !== undefined) {
-          min = Math.min(min, y2);
-          max = Math.max(max, y2);
-        }
-      });
+const normalizeSteps = (steps) => {
+  let result;
+  if (Array.isArray(steps)) result = { x: steps[0], y: steps[1] };
+  else if (typeof steps === 'object') result = steps;
+  else result = { x: 1, y: 1 };
+  return result;
+};
 
-    // when max === min, offset them so we can show something
-    if (max === min) {
-      if (max > 0) min = max - 1;
-      else max = min + 1;
-    }
+const alignMax = (value, interval) => {
+  if (value > 0) return value - (value % interval) + interval;
+  if (value < 0) return value + (value % interval);
+  return value;
+};
 
-    // Calculate some reasonable y bounds based on the max and min y values.
-    // This is so values like 87342.12 don't end up being displayed as the
-    // graph axis edge label.
-    const delta = max - min;
-    const interval = Number.parseFloat((delta / coarseness).toPrecision(1));
-    max = max - (max % interval) + interval;
-    min -= min % interval;
+const alignMin = (value, interval) => {
+  if (value > 0) return value - (value % interval);
+  if (value < 0) return value - (value % interval) - interval;
+  return value;
+};
 
-    if (min < 0 && max > 0 && Math.abs(min) !== Math.abs(max)) {
-      // Adjust min and max when crossing 0 to ensure 0 will be shown on
-      // the Y axis based on the number of steps.
-
-      // const ratio = Math.abs(max) / Math.abs(min);
-      let stepInterval = (max - min) / steps[1];
+const adjustToShowZero = (minArg, maxArg, steps) => {
+  let min = minArg;
+  let max = maxArg;
+  if (min < 0 && max > 0 && Math.abs(min) !== Math.abs(max)) {
+    // Adjust min and max when crossing 0 to ensure 0 will be shown on
+    // the axis based on the number of steps.
+    if (steps === 1) {
+      const largest = Math.max(Math.abs(min), Math.abs(max));
+      min = -largest;
+      max = largest;
+    } else {
+      let stepInterval = (max - min) / steps;
       const minSteps = min / stepInterval;
       const maxSteps = max / stepInterval;
       if (Math.abs(minSteps) < Math.abs(maxSteps)) {
+        // more above than below
         stepInterval = max / Math.floor(maxSteps);
         max = stepInterval * Math.floor(maxSteps);
         min = stepInterval * Math.floor(minSteps);
       } else {
+        // more below than above
         stepInterval = Math.abs(min / Math.ceil(minSteps));
         min = stepInterval * Math.ceil(minSteps);
         max = stepInterval * Math.ceil(maxSteps);
       }
     }
   }
-  if (options.min !== undefined) ({ min } = options);
-  if (options.max !== undefined) ({ max } = options);
+  return [min, max];
+};
 
-  let bounds;
-  if (calcValues.length > 1)
-    bounds = [
-      [calcValues[0].value[0], calcValues[calcValues.length - 1].value[0]],
-      [min, max],
-    ];
-  else if (calcValues.length === 1)
-    // when we only have one value, at least git some x bounds
-    bounds = [
-      [calcValues[0].value[0], calcValues[0].value[0] + 1],
-      [min, max],
-    ];
-  else bounds = [[], []];
-  const dimensions = [
-    round(bounds[0][1] - bounds[0][0], 2),
-    round(bounds[1][1] - bounds[1][0], 2),
-  ];
+export const calcBounds = (valuesArg, options = {}) => {
+  // coarseness influences the rounding of the bounds, the smaller the
+  // number, the more the bounds will be rounded. e.g. 111 -> 110 -> 100.
+  const { x: coarseX, y: coarseY } = normalizeCoarseness(
+    options.coarseness,
+    options.direction,
+  );
+
+  // the number of steps is one less than the number of labels
+  const { x: stepsX, y: stepsY } = normalizeSteps(options.steps);
+
+  const values = normalizeValues(valuesArg || []);
+
+  let result;
+  if (values.length) {
+    // min and max values
+    let {
+      x: { min: minX, max: maxX },
+      y: { min: minY, max: maxY },
+    } = calcMinMax(values, options.direction);
+
+    // Calculate some reasonable bounds based on the max and min values.
+    // This is so values like 87342.12 don't end up being displayed as the
+    // graph axis labels.
+    if (coarseX) {
+      const deltaX = maxX - minX;
+      const intervalX = Number.parseFloat((deltaX / coarseX).toPrecision(1));
+      minX = alignMin(minX, intervalX);
+      maxX = alignMax(maxX, intervalX);
+    }
+    if (coarseY) {
+      const deltaY = maxY - minY;
+      const intervalY = Number.parseFloat((deltaY / coarseY).toPrecision(1));
+      minY = alignMin(minY, intervalY);
+      maxY = alignMax(maxY, intervalY);
+    }
+
+    if (options.direction === 'horizontal')
+      [minX, maxX] = adjustToShowZero(minX, maxX, stepsX);
+    else [minY, maxY] = adjustToShowZero(minY, maxY, stepsY);
+
+    // if options.direction is present, the results are delivered in { x, y }
+    // object structure. If options.direction is not present, the results are
+    // delivered in [x, y] array structure, for backwards compatibility
+    result = options.direction
+      ? { x: { min: minX, max: maxX }, y: { min: minY, max: maxY } }
+      : [
+          [minX, maxX],
+          [minY, maxY],
+        ];
+  } else {
+    result = options.direction ? { x: {}, y: {} } : [[], []];
+  }
+
+  return result;
+};
+
+// if options.direction is present, the results are delivered in { x, y }
+// object structure. If options.direction is not present, the results are
+// delivered in [x, y] array structure, for backwards compatibility
+export const calcs = (values = [], options = {}) => {
+  const theme = options.theme || {};
+  const horizontal = options.direction === 'horizontal';
+
+  // the number of steps is one less than the number of labels
+  const { x: stepsX, y: stepsY } = normalizeSteps(options.steps);
+
+  // bounds is { x: { min, max }, y: { min, max } } when options.direction is
+  // present and [[min, max], [min, max]] if not, for backwards compatibility
+  const bounds = options.bounds || calcBounds(values, options);
+
+  if (options.min !== undefined) {
+    if (options.direction) {
+      if (horizontal) bounds.x.min = options.min;
+      else bounds.y.min = options.min;
+    } else bounds[1][0] = options.min;
+  }
+  if (options.max !== undefined) {
+    if (options.direction) {
+      if (horizontal) bounds.y.max = options.max;
+      else bounds.x.max = options.max;
+    } else bounds[1][1] = options.max;
+  }
+
+  const {
+    x: { min: minX, max: maxX },
+    y: { min: minY, max: maxY },
+  } = options.direction
+    ? bounds
+    : {
+        x: { min: bounds[0][0], max: bounds[0][1] },
+        y: { min: bounds[1][0], max: bounds[1][1] },
+      };
+
+  const width = round(maxX - minX, 2);
+  const height = round(maxY - minY, 2);
+  const dimensions = options.direction ? { width, height } : [width, height];
 
   // Calculate x and y axis values across the specfied number of steps.
   const yAxis = [];
-  let y = bounds[1][1];
+  let y = maxY;
   // To deal with javascript math limitations, round the step with 4 decimal
   // places and then push the values with 2 decimal places
-  const yStepInterval = round(dimensions[1] / steps[1], 4);
-  while (round(y, 2) >= bounds[1][0]) {
+  const yStepInterval = round(height / stepsY, 4);
+  while (round(y, 2) >= minY) {
     yAxis.push(round(y, 2));
     y -= yStepInterval;
   }
+  if (horizontal) yAxis.reverse();
 
   const xAxis = [];
-  let x = bounds[0][0];
-  const xStepInterval = dimensions[0] / steps[0];
-  while (
-    (xStepInterval > 0 && x <= bounds[0][1]) ||
-    (xStepInterval < 0 && x >= bounds[0][1])
-  ) {
-    xAxis.push(x);
+  let x = minX;
+  const xStepInterval = round(width / stepsX, 4);
+  while (round(x, 2) <= maxX) {
+    xAxis.push(round(x, 2));
     x += xStepInterval;
   }
+
+  const thicknessPad = {
+    xlarge: theme.dataChart?.thicknessPad?.xlarge || 'large',
+    large: theme.dataChart?.thicknessPad?.large || 'medium',
+    medium: theme.dataChart?.thicknessPad?.medium || 'small',
+    small: theme.dataChart?.thicknessPad?.small || 'xsmall',
+    xsmall: theme.dataChart?.thicknessPad?.xsmall || 'xxsmall',
+  };
 
   let { thickness } = options;
   if (!thickness) {
@@ -122,22 +201,28 @@ export const calcs = (values, options = {}) => {
     // Someday, it would be better to include the actual rendered size.
     // These values were emirically determined, trying to balance visibility
     // and overlap across resolutions.
-    if (calcValues.length < 5) {
-      thickness = 'xlarge';
-    } else if (calcValues.length < 11) {
-      thickness = 'large';
-    } else if (calcValues.length < 21) {
-      thickness = 'medium';
-    } else if (calcValues.length < 61) {
-      thickness = 'small';
-    } else if (calcValues.length < 121) {
-      thickness = 'xsmall';
+    if (values.length < 5) {
+      thickness = theme.dataChart?.thickness?.sparse || 'xlarge';
+    } else if (values.length < 11) {
+      thickness = theme.dataChart?.thickness?.light || 'large';
+    } else if (values.length < 21) {
+      thickness = theme.dataChart?.thickness?.moderate || 'medium';
+    } else if (values.length < 61) {
+      thickness = theme.dataChart?.thickness?.heavy || 'small';
+    } else if (values.length < 121) {
+      thickness = theme.dataChart?.thickness?.dense || 'xsmall';
     } else {
-      thickness = 'hair';
+      thickness = theme.dataChart?.thickness?.veryDense || 'hair';
     }
   }
 
   const pad = thicknessPad[thickness];
 
-  return { axis: [xAxis, yAxis], bounds, dimensions, pad, thickness };
+  return {
+    axis: options.direction ? { x: xAxis, y: yAxis } : [xAxis, yAxis],
+    bounds,
+    dimensions,
+    pad,
+    thickness,
+  };
 };

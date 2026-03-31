@@ -1,16 +1,15 @@
-import * as React from "react";
+import * as React from 'react';
 
 export interface InfiniteScrollProps {
-  children?: ((...args: any[]) => any);
-  items?: any[];
-  onMore?: ((...args: any[]) => any);
-  renderMarker?: ((...args: any[]) => any);
+  children?: React.ReactNode | Function;
+  items?: (string | number | React.ReactElement<any> | Record<string, any>)[];
+  onMore?: () => void;
+  renderMarker?: (marker: React.ReactElement<any>) => React.ReactElement<any>;
   replace?: boolean;
-  scrollableAncestor?: React.ReactNode | "window";
   show?: number;
   step?: number;
 }
 
-declare const InfiniteScroll: React.ComponentClass<InfiniteScrollProps>;
+declare const InfiniteScroll: React.FC<InfiniteScrollProps>;
 
 export { InfiniteScroll };

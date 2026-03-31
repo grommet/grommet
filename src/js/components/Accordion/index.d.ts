@@ -1,15 +1,27 @@
-import * as React from "react";
-import { AnimateType } from "../../utils";
-import { BoxProps } from '../Box'; 
+import * as React from 'react';
+import { AnimateType } from '../../utils';
+import { BoxProps } from '../Box/index';
 
 export interface AccordionProps {
   activeIndex?: number | number[];
   animate?: AnimateType;
-  onActive?: ((activeIndexes: number[]) => void);
+  level?: number;
+  onActive?: (activeIndexes: number[]) => void;
   multiple?: boolean;
-  messages?: {tabContents?: string};
+  messages?: { tabContents?: string };
 }
 
-declare const Accordion: React.FC<BoxProps & AccordionProps & JSX.IntrinsicElements['div']>;
+export interface AccordionExtendedProps
+  extends AccordionProps,
+    BoxProps,
+    Omit<
+      React.DetailedHTMLProps<
+        React.HTMLAttributes<HTMLDivElement>,
+        HTMLDivElement
+      >,
+      'onClick'
+    > {}
+
+declare const Accordion: React.FC<AccordionExtendedProps>;
 
 export { Accordion };

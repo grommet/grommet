@@ -1,54 +1,103 @@
-import React, { forwardRef, useMemo } from 'react';
+import React, { forwardRef, useContext, useMemo } from 'react';
 
 import { Bar } from './Bar';
 import { Circle } from './Circle';
-
-const deriveMax = values => {
-  let max = 100;
-  if (values && values.length > 1) {
-    max = 0;
-    values.forEach(v => {
-      max += v.value;
-    });
-  }
-  return max;
-};
+import { MeterPropTypes } from './propTypes';
+import { useThemeValue } from '../../utils/useThemeValue';
+import { MessageContext } from '../../contexts/MessageContext';
 
 const Meter = forwardRef(
   (
     {
-      background = { color: 'light-2', opacity: 'medium' },
+      'aria-label': ariaLabel,
+      background: backgroundProp,
+      color,
+      direction = 'horizontal',
+      max: maxProp,
+      messages,
       size = 'medium',
       thickness = 'medium',
       type = 'bar',
-      values,
+      reverse: reverseProp,
+      value,
+      values: valuesProp,
       ...rest
     },
     ref,
   ) => {
-    const memoizedMax = useMemo(() => deriveMax(values), [values]);
+    const { theme } = useThemeValue();
+    const { format } = useContext(MessageContext);
+
+    const background = backgroundProp || theme.meter?.background;
+
+    // normalize values to an array of objects
+    const values = useMemo(() => {
+      if (valuesProp) return valuesProp;
+      if (value) return [{ color, value }];
+      return [];
+    }, [color, value, valuesProp]);
+
+    const reverse =
+      direction === 'horizontal' &&
+      (theme.dir === 'rtl' || reverseProp) &&
+      !(theme.dir === 'rtl' && reverseProp);
+
+    const max = useMemo(() => {
+      let maxValue = 100;
+      if (values?.length > 1) {
+        maxValue = values.reduce(
+          (total, currentValue) => total + currentValue.value,
+          0,
+        );
+      }
+      return maxProp || maxValue || 100;
+    }, [maxProp, values]);
+
+    const messageId = values?.length === 1 ? 'singular' : 'plural';
+
+    const meterType = type || 'bar';
+
+    const meterAriaLabel =
+      ariaLabel ||
+      format({
+        id: `meter.${meterType}.${messageId}`,
+        messages: messages?.meter?.[meterType],
+        values: {
+          meterValue:
+            value || values.map((item) => item.value ?? 0).join(', ') || 0,
+          type,
+          max,
+        },
+      });
+
     let content;
     if (type === 'bar') {
       content = (
         <Bar
           ref={ref}
-          max={memoizedMax}
+          aria-label={meterAriaLabel}
+          max={max}
           values={values}
           size={size}
           thickness={thickness}
           background={background}
+          direction={direction}
+          reverse={reverse}
           {...rest}
         />
       );
-    } else if (type === 'circle') {
+    } else if (type === 'circle' || type === 'pie' || type === 'semicircle') {
       content = (
         <Circle
+          aria-label={meterAriaLabel}
           ref={ref}
-          max={memoizedMax}
+          max={max}
           values={values}
           size={size}
           thickness={thickness}
+          type={type}
           background={background}
+          reverse={reverse}
           {...rest}
         />
       );
@@ -58,11 +107,6 @@ const Meter = forwardRef(
 );
 
 Meter.displayName = 'Meter';
+Meter.prototype = MeterPropTypes;
 
-let MeterDoc;
-if (process.env.NODE_ENV !== 'production') {
-  MeterDoc = require('./doc').doc(Meter); // eslint-disable-line global-require
-}
-const MeterWrapper = MeterDoc || Meter;
-
-export { MeterWrapper as Meter };
+export { Meter };

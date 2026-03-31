@@ -1,0 +1,149 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`Collapsible onClick open default 1`] = `
+.c1 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+}
+
+.c2 {
+  transition: max-height 200ms,opacity 200ms;
+  opacity: 1;
+  overflow: visible;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c3 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+<div
+  class="c0"
+>
+  <div
+    aria-hidden="false"
+    class="c1 c2"
+    open=""
+  >
+    <span
+      class="c3"
+    >
+      Example
+    </span>
+  </div>
+</div>
+`;
+
+exports[`Collapsible onClick open default 2`] = `
+<div
+  class="StyledGrommet-sc-19lkkz7-0 iQmOCy"
+>
+  <div
+    aria-hidden="true"
+    class="StyledBox-sc-13pk1d4-0 eLlRsv Collapsible__AnimatedBox-sc-15kniua-0 kZsvvr"
+    style="max-height: 0px;"
+  >
+    <span
+      class="StyledText-sc-1sadyjn-0 cejToA"
+    >
+      Example
+    </span>
+  </div>
+</div>
+`;
+
+exports[`Collapsible open 1`] = `
+.c1 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+}
+
+.c2 {
+  transition: max-height 200ms,opacity 200ms;
+  opacity: 1;
+  overflow: visible;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c3 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+<div
+  class="c0"
+>
+  <div
+    aria-hidden="false"
+    class="c1 c2"
+    open=""
+  >
+    <span
+      class="c3"
+    >
+      Example
+    </span>
+  </div>
+</div>
+`;
+
+exports[`Collapsible open outside grommet wrapper 1`] = `
+.c0 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+}
+
+.c1 {
+  transition: max-height 200ms,opacity 200ms;
+  opacity: 1;
+  overflow: visible;
+}
+
+.c2 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+<div
+  aria-hidden="false"
+  class="c0 c1"
+  open=""
+>
+  <span
+    class="c2"
+  >
+    Example
+  </span>
+</div>
+`;

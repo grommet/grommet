@@ -1,20 +1,23 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 
 import { StyledTable, StyledTableDataCaption } from './StyledTable';
+import { TablePropTypes } from './propTypes';
+import { useThemeValue } from '../../utils/useThemeValue';
 
-const Table = ({ caption, children, ...rest }) => (
-  <StyledTable {...rest}>
-    {caption ? (
-      <StyledTableDataCaption>{caption}</StyledTableDataCaption>
-    ) : null}
-    {children}
-  </StyledTable>
-);
+const Table = forwardRef(({ caption, children, ...rest }, ref) => {
+  const { passThemeFlag } = useThemeValue();
+  return (
+    <StyledTable ref={ref} {...passThemeFlag} {...rest}>
+      {caption ? (
+        <StyledTableDataCaption {...passThemeFlag}>
+          {caption}
+        </StyledTableDataCaption>
+      ) : null}
+      {children}
+    </StyledTable>
+  );
+});
 
-let TableDoc;
-if (process.env.NODE_ENV !== 'production') {
-  TableDoc = require('./doc').doc(Table); // eslint-disable-line global-require
-}
-const TableWrapper = TableDoc || Table;
+Table.propTypes = TablePropTypes;
 
-export { TableWrapper as Table };
+export { Table };

@@ -5,8 +5,6 @@ import { cleanup, render, fireEvent } from '@testing-library/react';
 import { FocusedContainer } from '../FocusedContainer';
 
 describe('FocusedContainer', () => {
-  afterEach(cleanup);
-
   test('basic', () => {
     jest.useFakeTimers();
     const { container: trapped } = render(

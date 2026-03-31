@@ -1,40 +1,51 @@
-import React from 'react';
+import React, { forwardRef, useContext } from 'react';
 
 import { StyledGrid } from './StyledGrid';
+import { GridPropTypes } from './propTypes';
+import { useThemeValue } from '../../utils/useThemeValue';
+import { ResponsiveContainerContext } from '../../contexts';
 
-const Grid = props => {
+const Grid = forwardRef((props, ref) => {
   const {
     a11yTitle,
+    'aria-label': ariaLabel,
+    border,
     fill, // munged to avoid styled-components putting it in the DOM
-    responsive = true,
+    height, // munged to avoid styled-components putting it in the DOM
+    responsive: responsiveProp = true,
     rows, // munged to avoid styled-components putting it in the DOM
     tag,
     as,
+    width, // munged to avoid styled-components putting it in the DOM
     ...rest
   } = props;
+  const { passThemeFlag } = useThemeValue();
+  const responsiveContainer = useContext(ResponsiveContainerContext);
+  const responsive =
+    responsiveContainer && responsiveProp ? 'container' : responsiveProp;
 
   return (
     <StyledGrid
-      a11yTitleProp={a11yTitle}
+      ref={ref}
+      aria-label={ariaLabel || a11yTitle}
       as={!as && tag ? tag : as}
+      border={border}
       fillContainer={fill}
+      heightProp={height}
       responsive={responsive}
       rowsProp={rows}
+      widthProp={width}
+      {...passThemeFlag}
       {...rest}
     />
   );
-};
+});
 
-let GridDoc;
-if (process.env.NODE_ENV !== 'production') {
-  GridDoc = require('./doc').doc(Grid); // eslint-disable-line global-require
-}
-const GridWrapper = GridDoc || Grid;
+Grid.displayName = 'Grid';
+Grid.propTypes = GridPropTypes;
 
-GridWrapper.available =
-  typeof window !== 'undefined' &&
-  window.CSS &&
-  window.CSS.supports &&
-  window.CSS.supports('display', 'grid');
+// Defualting to true to support existing code that relies on
+// grid.available to create a fallback option
+Grid.available = true;
 
-export { GridWrapper as Grid };
+export { Grid };

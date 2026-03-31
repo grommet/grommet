@@ -3,6 +3,7 @@ import React, { forwardRef, useCallback, useEffect, useState } from 'react';
 import { Button } from '../Button';
 import { Drop } from '../Drop';
 import { useForwardedRef } from '../../utils';
+import { DropButtonPropTypes } from './propTypes';
 
 const defaultDropAlign = { top: 'top', left: 'left' };
 
@@ -10,6 +11,7 @@ const DropButton = forwardRef(
   (
     {
       a11yTitle = 'Open Drop',
+      onAlign,
       disabled,
       dropAlign = defaultDropAlign,
       dropProps,
@@ -31,13 +33,17 @@ const DropButton = forwardRef(
         setShow(open);
       }
     }, [open, show]);
-
     const onDropClose = useCallback(
-      event => {
+      (event) => {
         // if the user has clicked on our Button, don't do anything here,
         // handle that in onClickInternal() below.
-        let node = event.target;
-        while (node !== document && node !== buttonRef.current) {
+        let node = (event.composed && event.composedPath()[0]) || event.target;
+        while (
+          node &&
+          node !== document &&
+          !(node instanceof ShadowRoot) &&
+          node !== buttonRef.current
+        ) {
           node = node.parentNode;
         }
         if (node !== buttonRef.current) {
@@ -50,7 +56,7 @@ const DropButton = forwardRef(
     );
 
     const onClickInternal = useCallback(
-      event => {
+      (event) => {
         if (!show) {
           setShow(true);
           if (onOpen) onOpen(event);
@@ -76,9 +82,10 @@ const DropButton = forwardRef(
         {show && buttonRef.current && (
           <Drop
             id={id ? `${id}__drop` : undefined}
+            onAlign={onAlign}
             restrictFocus
             align={dropAlign}
-            target={dropTarget || buttonRef.current}
+            target={dropTarget || buttonRef}
             onClickOutside={onDropClose}
             onEsc={onDropClose}
             {...dropProps}
@@ -92,12 +99,6 @@ const DropButton = forwardRef(
 );
 
 DropButton.displayName = 'DropButton';
+DropButton.propTypes = DropButtonPropTypes;
 
-let DropButtonDoc;
-if (process.env.NODE_ENV !== 'production') {
-  // eslint-disable-next-line global-require
-  DropButtonDoc = require('./doc').doc(DropButton);
-}
-const DropButtonWrapper = DropButtonDoc || DropButton;
-
-export { DropButtonWrapper as DropButton };
+export { DropButton };

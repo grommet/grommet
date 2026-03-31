@@ -1,12 +1,22 @@
-import React, { cloneElement, useRef, useState } from 'react';
+import React, {
+  Children,
+  cloneElement,
+  useContext,
+  useRef,
+  useState,
+} from 'react';
 
 import { Box } from '../Box';
-import { Heading } from '../Heading';
+import { Text } from '../Text';
 import { Layer } from '../Layer';
+import { MessageContext } from '../../contexts/MessageContext';
+import { SkipLinksPropTypes } from './propTypes';
+import { useThemeValue } from '../../utils/useThemeValue';
 
 const SkipLinks = ({ children, id, messages }) => {
+  const { theme } = useThemeValue();
   const [showLayer, setShowLayer] = useState(false);
-
+  const { format } = useContext(MessageContext);
   const layerRef = useRef(null);
 
   const onFocus = () => {
@@ -21,12 +31,8 @@ const SkipLinks = ({ children, id, messages }) => {
     // timeout needed so it gives enough time for activeElement to be updated
     setTimeout(() => {
       const layerNode = layerRef.current;
-      if (
-        layerNode &&
-        layerNode.layerContainer &&
-        layerNode.layerContainer.contains &&
-        !layerNode.layerContainer.contains(document.activeElement)
-      ) {
+      if (layerNode && !layerNode.contains(document.activeElement)) {
+        // close the layer when the activeElement isn't contained in the layer
         removeLayer();
       }
     }, 0);
@@ -35,19 +41,32 @@ const SkipLinks = ({ children, id, messages }) => {
   return (
     <Layer
       id={id}
-      position={showLayer ? 'top' : 'hidden'}
+      position={showLayer ? theme.skipLinks.position : 'hidden'}
       ref={layerRef}
       onFocus={onFocus}
       onBlur={onBlur}
+      modal={false}
+      // Prepend the Layer so any SkipLink will be the first element that
+      // pressing the Tab key reaches, targetChildPosition triggers prepend.
+      targetChildPosition="first"
+      // Non-modal Layer's will take the full screen at small breakpoints
+      // by default, which isn't what we want, hence setting responsive false
+      responsive={false}
     >
-      <Box pad={{ horizontal: 'medium' }}>
-        <Heading level={2}>{messages.skipTo}:</Heading>
-        <Box direction="row" align="center" pad={{ bottom: 'medium' }}>
-          {children.map((element, index) =>
-            cloneElement(element, {
-              key: `skip-link-${index}`,
-              onClick: removeLayer,
-            }),
+      <Box {...theme.skipLinks.container}>
+        <Text {...theme.skipLinks.label}>
+          {format({ id: 'skipLinks.skipTo', messages })}
+        </Text>
+        <Box align="center" gap="medium">
+          {Children.map(
+            children,
+            (child, index) =>
+              child &&
+              cloneElement(child, {
+                // eslint-disable-next-line react/no-array-index-key
+                key: `skip-link-${index}`,
+                onClick: removeLayer,
+              }),
           )}
         </Box>
       </Box>
@@ -55,17 +74,6 @@ const SkipLinks = ({ children, id, messages }) => {
   );
 };
 
-SkipLinks.defaultProps = {
-  messages: {
-    skipTo: 'Skip To',
-  },
-};
+SkipLinks.propTypes = SkipLinksPropTypes;
 
-let SkipLinksDoc;
-if (process.env.NODE_ENV !== 'production') {
-  // eslint-disable-next-line global-require
-  SkipLinksDoc = require('./doc').doc(SkipLinks);
-}
-const SkipLinksWrapper = SkipLinksDoc || SkipLinks;
-
-export { SkipLinksWrapper as SkipLinks };
+export { SkipLinks };

@@ -1,9 +1,16 @@
-import * as React from "react";
+import * as React from 'react';
 
-export interface TableFooterProps {
-  
-}
+export interface TableFooterProps {}
 
-declare const TableFooter: React.FC<TableFooterProps & JSX.IntrinsicElements['tfoot']>;
+type htmlTableFooterProps = React.DetailedHTMLProps<
+  React.HTMLAttributes<HTMLTableSectionElement>,
+  HTMLTableSectionElement
+>;
+
+export interface TableFooterExtendedProps
+  extends TableFooterProps,
+    htmlTableFooterProps {}
+
+declare const TableFooter: React.FC<TableFooterExtendedProps>;
 
 export { TableFooter };

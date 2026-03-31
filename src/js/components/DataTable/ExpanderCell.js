@@ -1,20 +1,35 @@
 import React, { useContext } from 'react';
-import { ThemeContext } from 'styled-components';
-
-import { defaultProps } from '../../default-props';
+import { Blank } from 'grommet-icons/icons/Blank';
 
 import { Box } from '../Box';
 import { Button } from '../Button';
 import { TableCell } from '../TableCell';
+import { MessageContext } from '../../contexts/MessageContext';
 import { normalizeColor } from '../../utils';
+import { useThemeValue } from '../../utils/useThemeValue';
 
-const ExpanderCell = ({ context, expanded, onToggle, ...rest }) => {
-  const theme = useContext(ThemeContext) || defaultProps.theme;
+// ExpanderControl is separated from ExpanderCell to give TableCell a chance
+// to set the ThemeContext dark context.
+const ExpanderControl = ({
+  context,
+  expanded,
+  onToggle,
+  messages,
+  pad,
+  expandLabel,
+  ...rest
+}) => {
+  const { theme } = useThemeValue();
+  const { format } = useContext(MessageContext);
+
   let content;
   if (onToggle) {
     const ExpandIcon = theme.dataTable.icons[expanded ? 'contract' : 'expand'];
     content = <ExpandIcon color={normalizeColor('border', theme)} />;
+  } else {
+    content = <Blank />;
   }
+
   const normalizedThemeProps = {
     ...theme.table[context],
     ...theme.dataTable[context],
@@ -22,18 +37,58 @@ const ExpanderCell = ({ context, expanded, onToggle, ...rest }) => {
   delete normalizedThemeProps.background;
   delete normalizedThemeProps.border;
   delete normalizedThemeProps.pad;
+
   content = (
-    <Box {...normalizedThemeProps} {...rest} align="center" pad="xsmall">
+    <Box {...normalizedThemeProps} {...rest} align="center" fill pad={pad}>
       {content}
     </Box>
   );
+
   if (onToggle) {
+    const expandText = format({
+      id: 'dataTable.expand',
+      messages,
+      values: { label: expandLabel || '' },
+    });
+
+    const collapseText = format({
+      id: 'dataTable.collapse',
+      messages,
+      values: { label: expandLabel || '' },
+    });
+
+    const expandAllText = format({
+      id: 'dataTable.expandAll',
+      messages,
+    });
+
+    const collapseAllText = format({
+      id: 'dataTable.collapseAll',
+      messages,
+    });
+
+    let a11yTitle;
+    if (expandLabel) {
+      a11yTitle = format({
+        id: expanded ? 'dataTable.collapse' : 'dataTable.expand',
+        messages,
+        values: { label: expandLabel },
+      });
+    } else if (context === 'header') {
+      a11yTitle = expanded ? collapseAllText : expandAllText;
+    } else {
+      a11yTitle = expanded ? collapseText : expandText;
+    }
+
     content = (
       <Button
         fill
-        a11yTitle={expanded ? 'collapse' : 'expand'}
+        aria-expanded={expanded ? 'true' : 'false'}
+        a11yTitle={a11yTitle}
         hoverIndicator
-        disabled={!onToggle}
+        // ensure focus is visible since overflow: hidden on TableCell sizeStyle
+        // would otherwise clip it
+        focusIndicator="inset"
         onClick={onToggle}
         plain
       >
@@ -41,21 +96,31 @@ const ExpanderCell = ({ context, expanded, onToggle, ...rest }) => {
       </Button>
     );
   }
+
+  return content;
+};
+
+const ExpanderCell = ({
+  background,
+  border,
+  context,
+  expandLabel,
+  ...rest
+}) => {
+  const { theme } = useThemeValue();
+
   return (
     <TableCell
-      size="xxsmall"
-      plain
+      background={background}
+      border={border}
+      size={theme.dataTable.expand?.size}
+      plain="noPad"
       verticalAlign={context === 'groupEnd' ? 'bottom' : 'top'}
-      pad="none"
     >
-      {content}
+      <ExpanderControl context={context} expandLabel={expandLabel} {...rest} />
     </TableCell>
   );
 };
-
 ExpanderCell.displayName = 'ExpanderCell';
-
-ExpanderCell.defaultProps = {};
-Object.setPrototypeOf(ExpanderCell.defaultProps, defaultProps);
 
 export { ExpanderCell };

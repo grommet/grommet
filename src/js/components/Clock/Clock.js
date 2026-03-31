@@ -2,16 +2,18 @@ import React, { forwardRef, useEffect, useState } from 'react';
 
 import { Analog } from './Analog';
 import { Digital } from './Digital';
+import { ClockPropTypes } from './propTypes';
 
 const TIME_REGEXP = /T([0-9]{2}):([0-9]{2})(?::([0-9.,]{2,}))?/;
-const DURATION_REGEXP = /^(-|\+)?P.*T(?:([-+]?[0-9,.]*)H)?(?:([-+]?[0-9,.]*)M)?(?:([-+]?[0-9,.]*)S)?$/;
+const DURATION_REGEXP =
+  /^(-|\+)?P.*T(?:([-+]?[0-9,.]*)H)?(?:([-+]?[0-9,.]*)M)?(?:([-+]?[0-9,.]*)S)?$/;
 
 const parseTime = (time, hourLimit) => {
   const result = {};
   if (time) {
     let match = DURATION_REGEXP.exec(time);
     if (match) {
-      result.hours = parseFloat(match[2]);
+      result.hours = parseFloat(match[2]) || 0;
       if (hourLimit === 12) {
         result.hours12 = result.hours > 12 ? result.hours - 12 : result.hours;
       }
@@ -173,11 +175,6 @@ const Clock = forwardRef(
 );
 
 Clock.displayName = 'Clock';
+Clock.propTypes = ClockPropTypes;
 
-let ClockDoc;
-if (process.env.NODE_ENV !== 'production') {
-  ClockDoc = require('./doc').doc(Clock); // eslint-disable-line global-require
-}
-const ClockWrapper = ClockDoc || Clock;
-
-export { ClockWrapper as Clock };
+export { Clock };

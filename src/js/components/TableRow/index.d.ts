@@ -1,9 +1,16 @@
-import * as React from "react";
+import * as React from 'react';
 
-export interface TableRowProps {
-  
-}
+export interface TableRowProps {}
 
-declare const TableRow: React.FC<TableRowProps & JSX.IntrinsicElements['tr']>;
+type htmlTableRowProps = React.DetailedHTMLProps<
+  React.HTMLAttributes<HTMLTableRowElement>,
+  HTMLTableRowElement
+>;
+
+export interface TableRowExtendedProps
+  extends TableRowProps,
+    htmlTableRowProps {}
+
+declare const TableRow: React.FC<TableRowExtendedProps>;
 
 export { TableRow };

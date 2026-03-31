@@ -1,11 +1,22 @@
-import React, { forwardRef, useContext, useState } from 'react';
-import styled, { ThemeContext } from 'styled-components';
-
-import { defaultProps } from '../../default-props';
+import React, { useContext, forwardRef, useState } from 'react';
+import styled from 'styled-components';
 
 import { Box } from '../Box';
 import { Keyboard } from '../Keyboard';
 import { focusStyle, normalizeColor, parseMetricToNum } from '../../utils';
+import { useThemeValue } from '../../utils/useThemeValue';
+import { MessageContext } from '../../contexts/MessageContext';
+
+// Add visually hidden input styles
+const VisuallyHiddenInput = styled.input`
+  position: absolute;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 1px;
+`;
 
 const DIRECTION_PROPS = {
   horizontal: {
@@ -19,18 +30,48 @@ const DIRECTION_PROPS = {
 };
 
 const StyledBox = styled(Box)`
-  ${props => props.focus && focusStyle()}
+  ${(props) => props.focus && focusStyle()}
 `;
 
 const EdgeControl = forwardRef(
   (
-    { color, direction, edge, onDecrease, onIncrease, thickness, ...rest },
+    {
+      color,
+      direction,
+      edge,
+      onDecrease,
+      onIncrease,
+      thickness,
+      max,
+      min,
+      messages,
+      value,
+      step,
+      ...rest
+    },
     ref,
   ) => {
-    const theme = useContext(ThemeContext);
+    const { theme } = useThemeValue();
     const [focus, setFocus] = useState(false);
     const { cursor, fill } = DIRECTION_PROPS[direction];
-    const size = parseMetricToNum(theme.global.spacing) / 2;
+    const { format } = useContext(MessageContext);
+    const themeEdgeSize = theme.rangeSelector?.edge?.size;
+    let size;
+    if (themeEdgeSize) {
+      // Try to look up the value in theme.global.edgeSize
+      // If not found, assume it's a raw CSS value like '10px'.
+      const themeEdge = theme.global.edgeSize?.[themeEdgeSize] || themeEdgeSize;
+      const parsedSize = parseMetricToNum(themeEdge);
+      const isValid =
+        typeof parsedSize === 'number' && !Number.isNaN(parsedSize);
+
+      // If parsedSize is a valid number, use it.
+      // Otherwise, fallback to half of the theme's global spacing.
+      size = isValid ? parsedSize : parseMetricToNum(theme.global.spacing) / 2;
+    } else {
+      // If no edge size was specified use default.
+      size = parseMetricToNum(theme.global.spacing) / 2;
+    }
     const keyboardProps =
       direction === 'vertical'
         ? { onUp: onDecrease, onDown: onIncrease }
@@ -78,6 +119,28 @@ const EdgeControl = forwardRef(
           justify="center"
           alignSelf="stretch"
         >
+          {/* Add visually hidden range input for Safari VoiceOver */}
+          <VisuallyHiddenInput
+            type="range"
+            min={min}
+            max={max}
+            step={step}
+            value={value}
+            onFocus={() => setFocus(true)}
+            onBlur={() => setFocus(false)}
+            aria-label={format({
+              id:
+                edge === 'lower'
+                  ? 'rangeSelector.lower'
+                  : 'rangeSelector.upper',
+              messages,
+            })}
+            aria-valuemin={min}
+            aria-valuemax={max}
+            aria-valuenow={value}
+            readOnly
+          />
+
           <Box
             ref={ref}
             direction={boxDirection}
@@ -90,11 +153,9 @@ const EdgeControl = forwardRef(
               outline: 'none',
               minWidth: size,
               minHeight: size,
-              zIndex: 10,
+              zIndex: 1,
             }}
-            tabIndex={0}
-            onFocus={() => setFocus(true)}
-            onBlur={() => setFocus(false)}
+            tabIndex={-1}
             {...rest}
           >
             {node}
@@ -106,8 +167,5 @@ const EdgeControl = forwardRef(
 );
 
 EdgeControl.displayName = 'EdgeControl';
-
-EdgeControl.defaultProps = {};
-Object.setPrototypeOf(EdgeControl.defaultProps, defaultProps);
 
 export { EdgeControl };

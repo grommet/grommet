@@ -3,13 +3,12 @@ import React, {
   useCallback,
   useContext,
   useEffect,
-  useLayoutEffect,
+  useMemo,
   useRef,
   useState,
 } from 'react';
-import { ThemeContext } from 'styled-components';
-
-import { defaultProps } from '../../default-props';
+import { useLayoutEffect } from '../../utils/use-isomorphic-layout-effect';
+import { AnnounceContext } from '../../contexts/AnnounceContext';
 
 import { Box } from '../Box';
 import { Button } from '../Button';
@@ -17,6 +16,7 @@ import { Menu } from '../Menu';
 import { Meter } from '../Meter';
 import { Stack } from '../Stack';
 import { Text } from '../Text';
+import { Keyboard } from '../Keyboard';
 import { containsFocus, useForwardedRef } from '../../utils';
 
 import {
@@ -25,12 +25,15 @@ import {
   StyledVideoControls,
   StyledVideoScrubber,
 } from './StyledVideo';
+import { MessageContext } from '../../contexts/MessageContext';
+import { VideoPropTypes } from './propTypes';
+import { useThemeValue } from '../../utils/useThemeValue';
 
 // Split the volume control into 6 segments. Empirically determined.
 const VOLUME_STEP = 0.166667;
 
-const formatTime = time => {
-  let minutes = Math.round(time / 60);
+const formatTime = (time) => {
+  let minutes = Math.trunc(time / 60);
   if (minutes < 10) {
     minutes = `0${minutes}`;
   }
@@ -47,10 +50,11 @@ const Video = forwardRef(
       alignSelf,
       autoPlay,
       children,
-      controls = 'over',
+      controls: controlsProp,
       gridArea,
       loop,
       margin,
+      messages,
       mute,
       onDurationChange,
       onEnded,
@@ -58,16 +62,21 @@ const Video = forwardRef(
       onPlay,
       onTimeUpdate,
       onVolumeChange,
+      skipInterval,
       ...rest
     },
     ref,
   ) => {
-    const theme = useContext(ThemeContext) || defaultProps.theme;
+    const { theme, passThemeFlag } = useThemeValue();
+    const { format } = useContext(MessageContext);
+    const announce = useContext(AnnounceContext);
     const [captions, setCaptions] = useState([]);
     const [currentTime, setCurrentTime] = useState();
     const [duration, setDuration] = useState();
     const [percentagePlayed, setPercentagePlayed] = useState();
     const [playing, setPlaying] = useState(false);
+    const [announceAudioDescription, setAnnounceAudioDescription] =
+      useState(false);
     const [scrubTime, setScrubTime] = useState();
     const [volume, setVolume] = useState();
     const [hasPlayed, setHasPlayed] = useState(false);
@@ -77,6 +86,24 @@ const Video = forwardRef(
     const containerRef = useRef();
     const scrubberRef = useRef();
     const videoRef = useForwardedRef(ref);
+    const controls = useMemo(() => {
+      let result;
+      if (
+        typeof controlsProp === 'string' ||
+        typeof controlsProp === 'boolean'
+      ) {
+        result = {
+          items: ['volume', 'fullScreen'],
+          position: controlsProp,
+        };
+      } else {
+        result = {
+          items: controlsProp?.items || ['volume', 'fullScreen'],
+          position: controlsProp?.position || 'over',
+        };
+      }
+      return result;
+    }, [controlsProp]);
 
     // mute if needed
     useEffect(() => {
@@ -110,6 +137,9 @@ const Video = forwardRef(
       return () => clearTimeout(timer);
     }, [interacting]);
 
+    // track which audio description track is active
+    const [activeTrack, setActiveTrack] = useState();
+
     useLayoutEffect(() => {
       const video = videoRef.current;
       if (video) {
@@ -135,22 +165,47 @@ const Video = forwardRef(
 
         // remember the state of the text tracks for subsequent rendering
         const { textTracks } = video;
-        if (textTracks.length > 0) {
-          if (textTracks.length === 1) {
-            const active = textTracks[0].mode === 'showing';
-            if (!captions || !captions[0] || captions[0].active !== active) {
-              setCaptions([{ active }]);
-            }
-          } else {
-            const nextCaptions = [];
-            let set = false;
-            for (let i = 0; i < textTracks.length; i += 1) {
-              const track = textTracks[i];
-              const active = track.mode === 'showing';
-              nextCaptions.push({ label: track.label, active });
-              if (!captions || !captions[i] || captions[i].active !== active) {
-                set = true;
+        const nextCaptions = [];
+        let set = false;
+        // iterate through all of the tracks provided
+        for (let i = 0; i < textTracks.length; i += 1) {
+          const track = textTracks[i];
+          const active = track.mode === 'showing';
+
+          const getActiveTrack = (currentVideoTime) => {
+            let nextActiveTrack;
+            for (let j = 0; j < track.cues.length; j += 1) {
+              if (
+                currentVideoTime > track?.cues[j]?.startTime &&
+                currentVideoTime < track?.cues[j]?.endTime
+              ) {
+                nextActiveTrack = track?.cues[j]?.text;
               }
+            }
+
+            return nextActiveTrack;
+          };
+
+          // track is an audio description
+          if (track.kind === 'descriptions') {
+            if (announceAudioDescription) {
+              video.ontimeupdate = () => {
+                const nextActiveTrack = getActiveTrack(video.currentTime);
+                if (activeTrack !== nextActiveTrack) {
+                  if (nextActiveTrack) {
+                    announce(nextActiveTrack, 'assertive');
+                  }
+                  setActiveTrack(nextActiveTrack);
+                }
+              };
+            }
+          }
+
+          // otherwise treat as captions
+          else {
+            nextCaptions.push({ label: track.label, active });
+            if (!captions || !captions[i] || captions[i].active !== active) {
+              set = true;
             }
             if (set) {
               setCaptions(nextCaptions);
@@ -158,14 +213,22 @@ const Video = forwardRef(
           }
         }
       }
-    }, [captions, height, videoRef, width]);
+    }, [
+      activeTrack,
+      announce,
+      announceAudioDescription,
+      captions,
+      height,
+      videoRef,
+      width,
+    ]);
 
     const play = useCallback(() => videoRef.current.play(), [videoRef]);
 
     const pause = useCallback(() => videoRef.current.pause(), [videoRef]);
 
     const scrub = useCallback(
-      event => {
+      (event) => {
         if (scrubberRef.current) {
           const scrubberRect = scrubberRef.current.getBoundingClientRect();
           const percent =
@@ -177,16 +240,28 @@ const Video = forwardRef(
     );
 
     const seek = useCallback(
-      event => {
+      (event) => {
         if (scrubberRef.current) {
           const scrubberRect = scrubberRef.current.getBoundingClientRect();
           const percent =
             (event.clientX - scrubberRect.left) / scrubberRect.width;
-          videoRef.current.currentTime = duration * percent;
+          if (duration) videoRef.current.currentTime = duration * percent;
         }
       },
       [duration, videoRef],
     );
+
+    const seekForward = useCallback(() => {
+      setInteracting(true);
+      videoRef.current.currentTime +=
+        skipInterval || theme.video.scrubber.interval;
+    }, [skipInterval, theme.video.scrubber.interval, videoRef]);
+
+    const seekBackward = useCallback(() => {
+      setInteracting(true);
+      videoRef.current.currentTime -=
+        skipInterval || theme.video.scrubber.interval;
+    }, [skipInterval, theme.video.scrubber.interval, videoRef]);
 
     const louder = useCallback(() => {
       videoRef.current.volume += VOLUME_STEP;
@@ -196,12 +271,14 @@ const Video = forwardRef(
       videoRef.current.volume -= VOLUME_STEP;
     }, [videoRef]);
 
-    const showCaptions = index => {
-      const { textTracks } = videoRef.current;
-      for (let i = 0; i < textTracks.length; i += 1) {
-        textTracks[i].mode = i === index ? 'showing' : 'hidden';
-      }
-    };
+    const showCaptions = useCallback(
+      (index) => {
+        const { textTracks } = videoRef.current;
+        for (let i = 0; i < textTracks.length; i += 1)
+          textTracks[i].mode = i === index ? 'showing' : 'hidden';
+      },
+      [videoRef],
+    );
 
     const fullscreen = useCallback(() => {
       const video = videoRef.current;
@@ -219,8 +296,8 @@ const Video = forwardRef(
     }, [videoRef]);
 
     let controlsElement;
-    if (controls) {
-      const over = controls === 'over';
+    if (controls?.position) {
+      const over = controls.position === 'over';
       const background = over
         ? (theme.video.controls && theme.video.controls.background) || {
             color: 'background-back',
@@ -240,23 +317,130 @@ const Video = forwardRef(
         Play: theme.video.icons.play,
         ReduceVolume: theme.video.icons.reduceVolume,
         Volume: theme.video.icons.volume,
+        Description: theme.video.icons.description,
       };
 
-      const captionControls = captions.map(caption => ({
-        icon: caption.label ? (
-          undefined
-        ) : (
+      const captionControls = captions.map((caption, index) => ({
+        icon: caption.label ? undefined : (
           <Icons.ClosedCaption color={iconColor} />
         ),
         label: caption.label,
         active: caption.active,
-        onClick: () => showCaptions(caption.active ? -1 : 0),
+        a11yTitle:
+          caption.label ||
+          format({
+            id: 'video.captions',
+            messages,
+          }),
+        onClick: () => {
+          showCaptions(caption.active ? -1 : index);
+          const updatedCaptions = [];
+          for (let i = 0; i < captions.length; i += 1) {
+            updatedCaptions.push(captions[i]);
+            // set other captions to active=false
+            if (i !== index && updatedCaptions[i].active)
+              updatedCaptions[i].active = false;
+            // set the currently selected captions to active
+            else if (i === index)
+              updatedCaptions[i].active = !captions[index].active;
+          }
+          setCaptions(updatedCaptions);
+        },
       }));
+
+      const descriptionControls = {
+        icon: <Icons.Description color={iconColor} />,
+        a11yTitle: format({
+          id: 'video.audioDescriptions',
+          messages,
+        }),
+        active: announceAudioDescription,
+        onClick: () => setAnnounceAudioDescription(!announceAudioDescription),
+      };
+
+      const volumeControls = ['volume', 'reduceVolume'].map((control) => ({
+        icon:
+          control === 'volume' ? (
+            <Icons.Volume color={iconColor} />
+          ) : (
+            <Icons.ReduceVolume color={iconColor} />
+          ),
+        a11yTitle: format({
+          id: control === 'volume' ? 'video.volumeUp' : 'video.volumeDown',
+          messages,
+        }),
+        onClick: () => {
+          if (volume <= 1 - VOLUME_STEP && control === 'volume') {
+            return louder();
+          }
+          if (volume >= VOLUME_STEP && control === 'reduceVolume') {
+            return quieter();
+          }
+          return undefined;
+        },
+        close: false,
+      }));
+
+      const buttonProps = {
+        captions: captionControls,
+        descriptions: descriptionControls,
+        volume: volumeControls,
+        fullScreen: {
+          icon: <Icons.FullScreen color={iconColor} />,
+          a11yTitle: format({
+            id: 'video.fullScreen',
+            messages,
+          }),
+          onClick: fullscreen,
+        },
+        pause: {
+          icon: <Icons.Pause color={iconColor} />,
+          a11yTitle: format({
+            id: 'video.pauseButton',
+            messages,
+          }),
+          disabled: !playing,
+          onClick: pause,
+        },
+        play: {
+          icon: <Icons.Play color={iconColor} />,
+          a11yTitle: format({
+            id: 'video.playButton',
+            messages,
+          }),
+          disabled: playing,
+          onClick: play,
+        },
+      };
+
+      const controlsMenuItems = [];
+
+      controls.items?.map((item) => {
+        if (item === 'volume') {
+          volumeControls.map((control) => controlsMenuItems.push(control));
+          return undefined;
+        }
+        if (item === 'captions' && typeof buttonProps[item] === 'object') {
+          for (let i = 0; i < buttonProps[item].length; i += 1)
+            controlsMenuItems.push(buttonProps[item][i]);
+          return undefined;
+        }
+        if (item === 'descriptions') {
+          controlsMenuItems.push(buttonProps[item]);
+          return undefined;
+        }
+        if (typeof item === 'string') {
+          return controlsMenuItems.push(buttonProps[item]);
+        }
+        return controlsMenuItems.push(item);
+      });
 
       controlsElement = (
         <StyledVideoControls
           over={over}
-          active={!hasPlayed || controls === 'below' || (over && interacting)}
+          active={
+            !hasPlayed || controls.position === 'below' || (over && interacting)
+          }
           onBlur={() => {
             if (!containsFocus(containerRef.current)) setInteracting(false);
           }}
@@ -270,19 +454,35 @@ const Video = forwardRef(
             <Button
               icon={
                 playing ? (
-                  <Icons.Pause color={iconColor} />
+                  <Icons.Pause
+                    color={iconColor}
+                    a11yTitle={format({
+                      id: 'video.pauseButton',
+                      messages,
+                    })}
+                  />
                 ) : (
-                  <Icons.Play color={iconColor} />
+                  <Icons.Play
+                    color={iconColor}
+                    a11yTitle={format({
+                      id: 'video.playButton',
+                      messages,
+                    })}
+                  />
                 )
               }
               hoverIndicator="background"
               onClick={playing ? pause : play}
+              onFocus={() => setInteracting(true)}
             />
             <Box direction="row" align="center" flex>
               <Box flex>
                 <Stack>
                   <Meter
-                    aria-label="Video progress"
+                    aria-label={format({
+                      id: 'video.progressMeter',
+                      messages,
+                    })}
                     background={
                       over
                         ? (theme.video.scrubber &&
@@ -292,10 +492,14 @@ const Video = forwardRef(
                         : undefined
                     }
                     size="full"
-                    thickness="small"
+                    thickness={theme.video?.scrubber?.thickness}
                     values={[{ value: percentagePlayed || 0 }]}
                   />
                   <StyledVideoScrubber
+                    aria-label={format({
+                      id: 'video.scrubber',
+                      messages,
+                    })}
                     ref={scrubberRef}
                     tabIndex={0}
                     role="button"
@@ -307,10 +511,12 @@ const Video = forwardRef(
                     onMouseMove={scrub}
                     onMouseLeave={() => setScrubTime(undefined)}
                     onClick={seek}
+                    onFocus={() => setInteracting(true)}
+                    {...passThemeFlag}
                   />
                 </Stack>
               </Box>
-              <Box pad={{ horizontal: 'small' }}>
+              <Box pad={theme?.video?.time?.container?.pad}>
                 <Text margin="none">{formattedTime}</Text>
               </Box>
             </Box>
@@ -318,23 +524,12 @@ const Video = forwardRef(
               icon={<Icons.Configure color={iconColor} />}
               dropAlign={{ bottom: 'top', right: 'right' }}
               dropBackground={background}
-              items={[
-                {
-                  icon: <Icons.Volume color={iconColor} />,
-                  onClick: volume <= 1 - VOLUME_STEP ? louder : undefined,
-                  close: false,
-                },
-                {
-                  icon: <Icons.ReduceVolume color={iconColor} />,
-                  onClick: volume >= VOLUME_STEP ? quieter : undefined,
-                  close: false,
-                },
-                ...captionControls,
-                {
-                  icon: <Icons.FullScreen color={iconColor} />,
-                  onClick: fullscreen,
-                },
-              ]}
+              messages={{
+                openMenu: format({ id: 'video.openMenu', messages }),
+                closeMenu: format({ id: 'video.closeMenu', messages }),
+              }}
+              items={[...controlsMenuItems]}
+              onFocus={() => setInteracting(true)}
             />
           </Box>
         </StyledVideoControls>
@@ -342,7 +537,7 @@ const Video = forwardRef(
     }
 
     let mouseEventListeners;
-    if (controls === 'over') {
+    if (controls?.position === 'over') {
       mouseEventListeners = {
         onMouseEnter: () => setInteracting(true),
         onMouseMove: () => setInteracting(true),
@@ -351,7 +546,7 @@ const Video = forwardRef(
     }
 
     let style;
-    if (rest.fit === 'contain' && controls === 'over') {
+    if (rest.fit === 'contain' && controls?.position === 'over') {
       // constrain the size to fit the aspect ratio so the controls
       // overlap correctly
       if (width) {
@@ -362,64 +557,63 @@ const Video = forwardRef(
     }
 
     return (
-      <StyledVideoContainer
-        ref={containerRef}
-        {...mouseEventListeners}
-        alignSelf={alignSelf}
-        gridArea={gridArea}
-        margin={margin}
-        style={style}
-      >
-        <StyledVideo
-          {...rest}
-          ref={videoRef}
-          onDurationChange={event => {
-            const video = videoRef.current;
-            setDuration(video.duration);
-            setPercentagePlayed((video.currentTime / video.duration) * 100);
-            if (onDurationChange) onDurationChange(event);
-          }}
-          onEnded={event => {
-            setPlaying(false);
-            if (onEnded) onEnded(event);
-          }}
-          onPause={event => {
-            setPlaying(false);
-            if (onPause) onPause(event);
-          }}
-          onPlay={event => {
-            setPlaying(true);
-            setHasPlayed(true);
-            if (onPlay) onPlay(event);
-          }}
-          onTimeUpdate={event => {
-            const video = videoRef.current;
-            setCurrentTime(video.currentTime);
-            setPercentagePlayed((video.currentTime / video.duration) * 100);
-            if (onTimeUpdate) onTimeUpdate(event);
-          }}
-          onVolumeChange={event => {
-            setVolume(videoRef.current.volume);
-            if (onVolumeChange) onVolumeChange(event);
-          }}
-          autoPlay={autoPlay || false}
-          loop={loop || false}
+      <Keyboard onLeft={seekBackward} onRight={seekForward}>
+        <StyledVideoContainer
+          ref={containerRef}
+          {...mouseEventListeners}
+          alignSelf={alignSelf}
+          gridArea={gridArea}
+          margin={margin}
+          style={style}
+          tabIndex="-1"
+          {...passThemeFlag}
         >
-          {children}
-        </StyledVideo>
-        {controlsElement}
-      </StyledVideoContainer>
+          <StyledVideo
+            {...passThemeFlag}
+            {...rest}
+            ref={videoRef}
+            onDurationChange={(event) => {
+              const video = videoRef.current;
+              setDuration(video.duration);
+              setPercentagePlayed((video.currentTime / video.duration) * 100);
+              if (onDurationChange) onDurationChange(event);
+            }}
+            onEnded={(event) => {
+              setPlaying(false);
+              if (onEnded) onEnded(event);
+            }}
+            onPause={(event) => {
+              setPlaying(false);
+              if (onPause) onPause(event);
+            }}
+            onPlay={(event) => {
+              setPlaying(true);
+              setHasPlayed(true);
+              if (onPlay) onPlay(event);
+            }}
+            onTimeUpdate={(event) => {
+              const video = videoRef.current;
+              setCurrentTime(video.currentTime);
+              setPercentagePlayed((video.currentTime / video.duration) * 100);
+              if (onTimeUpdate) onTimeUpdate(event);
+            }}
+            onVolumeChange={(event) => {
+              setVolume(videoRef.current.volume);
+              if (onVolumeChange) onVolumeChange(event);
+            }}
+            autoPlay={autoPlay || false}
+            loop={loop || false}
+          >
+            {children}
+          </StyledVideo>
+          {controlsElement}
+        </StyledVideoContainer>
+      </Keyboard>
     );
   },
 );
 
 Video.displayName = 'Video';
+Video.propTypes = VideoPropTypes;
 
-let VideoDoc;
-if (process.env.NODE_ENV !== 'production') {
-  // eslint-disable-next-line global-require
-  VideoDoc = require('./doc').doc(Video);
-}
-const VideoWrapper = VideoDoc || Video;
-
-export { VideoWrapper as Video };
+export { Video };

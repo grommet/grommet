@@ -1,8 +1,9 @@
-import * as React from "react";
+import * as React from 'react';
 import { KeyboardType } from '../../utils';
 
 export interface KeyboardProps {
-  target?: "component" | "document";
+  children?: React.ReactNode;
+  target?: 'component' | 'document';
   onBackspace?: KeyboardType;
   onComma?: KeyboardType;
   onDown?: KeyboardType;

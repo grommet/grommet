@@ -1,12 +1,10 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import { RouterContext } from './RouterContext';
 
 import { Button } from '../Button';
 
 class RoutedButton extends Component {
-  static contextTypes = {
-    router: PropTypes.shape({}).isRequired,
-  };
+  static contextType = RouterContext;
 
   static defaultProps = {
     method: 'push',
@@ -14,7 +12,7 @@ class RoutedButton extends Component {
 
   onClick = (event, ...args) => {
     const { method, onClick, path } = this.props;
-    const { router } = this.context;
+    const router = this.context;
     if (event) {
       const modifierKey = event.ctrlKey || event.metaKey;
 
@@ -37,7 +35,7 @@ class RoutedButton extends Component {
     if (process.env.NODE_ENV !== 'production') {
       console.warn(
         `This component will be deprecated in the upcoming releases.
-         Please refer to https://github.com/grommet/grommet/issues/2855 
+         Please refer to https://github.com/grommet/grommet/issues/2855
          for more information.`,
       );
     }
@@ -52,11 +50,4 @@ class RoutedButton extends Component {
   }
 }
 
-let RoutedButtonDoc;
-if (process.env.NODE_ENV !== 'production') {
-  // eslint-disable-next-line global-require
-  RoutedButtonDoc = require('./doc').doc(RoutedButton);
-}
-const RoutedButtonWrapper = RoutedButtonDoc || RoutedButton;
-
-export { RoutedButtonWrapper as RoutedButton };
+export { RoutedButton };

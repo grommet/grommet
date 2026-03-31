@@ -1,9 +1,13 @@
 import styled, { css } from 'styled-components';
 
-import { genericStyles, normalizeColor } from '../../utils';
-import { defaultProps } from '../../default-props';
+import {
+  genericStyles,
+  normalizeColor,
+  textAlignStyle,
+  styledComponentsConfig,
+} from '../../utils';
 
-const sizeStyle = props => {
+const sizeStyle = (props) => {
   const size = props.size || 'medium';
   const data = props.theme.text[size];
   if (data) {
@@ -18,47 +22,41 @@ const sizeStyle = props => {
   `;
 };
 
-const TEXT_ALIGN_MAP = {
-  center: 'center',
-  end: 'right',
-  start: 'left',
-};
-
-const textAlignStyle = css`
-  text-align: ${props => TEXT_ALIGN_MAP[props.textAlign]};
-`;
-
 const truncateStyle = `
   white-space: nowrap;
+  max-width: 100%;
   overflow: hidden;
   text-overflow: ellipsis;
 `;
 
 const colorStyle = css`
-  color: ${props => normalizeColor(props.colorProp, props.theme)};
+  color: ${(props) => normalizeColor(props.colorProp, props.theme)};
 `;
 
 const weightStyle = css`
-  font-weight: ${props => props.weight};
+  font-weight: ${(props) => props.weight};
 `;
 
 const wordBreakStyle = css`
-  word-break: ${props => props.wordBreak};
+  word-break: ${(props) => props.wordBreak};
 `;
 
-const StyledText = styled.span`
+const fontFamily = css`
+  font-family: ${(props) => props.theme.text.font.family};
+`;
+
+const StyledText = styled('span').withConfig(styledComponentsConfig)`
   ${genericStyles}
-  ${props => sizeStyle(props)}
-  ${props => props.textAlign && textAlignStyle}
-  ${props => props.truncate && truncateStyle}
-  ${props => props.colorProp && colorStyle}
-  ${props => props.weight && weightStyle}
-  ${props => props.wordBreak && wordBreakStyle}
+  ${(props) => sizeStyle(props)}
+  ${(props) => props.textAlign && textAlignStyle}
+  ${(props) => props.truncate && truncateStyle}
+  ${(props) => props.colorProp && colorStyle}
+  ${(props) => props.weight && weightStyle}
+  ${(props) => props.wordBreak && wordBreakStyle}
+  ${(props) =>
+    props.theme.text.font && props.theme.text.font.family && fontFamily}
 
-  ${props => props.theme.text && props.theme.text.extend}
+  ${(props) => props.theme.text && props.theme.text.extend}
 `;
-
-StyledText.defaultProps = {};
-Object.setPrototypeOf(StyledText.defaultProps, defaultProps);
 
 export { StyledText };

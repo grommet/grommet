@@ -4,11 +4,15 @@ import { FormContext } from '../Form/FormContext';
 import { Keyboard } from '../Keyboard';
 
 import { StyledTextArea } from './StyledTextArea';
+import { TextAreaPropTypes } from './propTypes';
+import { useThemeValue } from '../../utils/useThemeValue';
 
 const TextArea = forwardRef(
   (
     {
+      a11yTitle,
       fill,
+      focusIndicator = true,
       name,
       onBlur,
       onChange,
@@ -19,13 +23,17 @@ const TextArea = forwardRef(
     },
     ref,
   ) => {
+    const { passThemeFlag } = useThemeValue();
     const formContext = useContext(FormContext);
-    const [value, setValue] = formContext.useFormInput(name, valueProp);
+    const [value, setValue] = formContext.useFormInput({
+      name,
+      value: valueProp,
+    });
     const [focus, setFocus] = useState();
 
     return (
       <Keyboard
-        onEsc={event => {
+        onEsc={(event) => {
           // we have to stop both synthetic events and native events
           // drop and layer should not close by pressing esc on this input
           event.stopPropagation();
@@ -34,21 +42,24 @@ const TextArea = forwardRef(
         onKeyDown={onKeyDown}
       >
         <StyledTextArea
+          aria-label={a11yTitle}
           ref={ref}
           name={name}
           fillArg={fill}
           focus={focus}
           value={value}
+          focusIndicator={focusIndicator}
+          {...passThemeFlag}
           {...rest}
-          onFocus={event => {
+          onFocus={(event) => {
             setFocus(true);
             if (onFocus) onFocus(event);
           }}
-          onBlur={event => {
+          onBlur={(event) => {
             setFocus(false);
             if (onBlur) onBlur(event);
           }}
-          onChange={event => {
+          onChange={(event) => {
             setValue(event.target.value);
             if (onChange) onChange(event);
           }}
@@ -59,12 +70,6 @@ const TextArea = forwardRef(
 );
 
 TextArea.displayName = 'TextArea';
+TextArea.propTypes = TextAreaPropTypes;
 
-let TextAreaDoc;
-if (process.env.NODE_ENV !== 'production') {
-  // eslint-disable-next-line global-require
-  TextAreaDoc = require('./doc').doc(TextArea);
-}
-const TextAreaWrapper = TextAreaDoc || TextArea;
-
-export { TextAreaWrapper as TextArea };
+export { TextArea };

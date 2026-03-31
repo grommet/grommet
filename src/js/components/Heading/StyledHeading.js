@@ -1,39 +1,50 @@
 import styled, { css } from 'styled-components';
 
-import { breakpointStyle, genericStyles, normalizeColor } from '../../utils';
-import { defaultProps } from '../../default-props';
+import {
+  breakpointStyle,
+  genericStyles,
+  normalizeColor,
+  textAlignStyle,
+  styledComponentsConfig,
+} from '../../utils';
 
-const sizeStyle = props => {
+const sizeStyle = (props) => {
   // size is a combination of the level and size properties
   const size = props.size || 'medium';
   const headingTheme = props.theme.heading;
   const levelStyle = headingTheme.level[props.level];
   if (levelStyle) {
     const data = levelStyle[size];
-    const styles =  
-    [
+    const styles = [
       css`
         font-size: ${data ? data.size : size};
         line-height: ${data ? data.height : 'normal'};
-        max-width: ${data ? data.maxWidth : levelStyle.medium.maxWidth};
-        font-weight: ${levelStyle.font.weight || headingTheme.weight};
+        max-width: ${(props.fillProp && 'none') ||
+        (data && data.maxWidth) ||
+        levelStyle.medium.maxWidth};
+        font-weight: ${props.weight ||
+        levelStyle.font.weight ||
+        headingTheme.weight};
+        overflow-wrap: ${props.overflowWrap};
       `,
     ];
     if (props.responsive && headingTheme.responsiveBreakpoint) {
       const breakpoint =
         props.theme.global.breakpoints[headingTheme.responsiveBreakpoint];
       if (breakpoint) {
-        const responsiveData =
-          headingTheme.level[Math.min(props.level + 1, 4)][size];
-        if(responsiveData) {
+        const responsiveData = headingTheme.level[props.level + 1]
+          ? headingTheme.level[props.level + 1][size]
+          : headingTheme.level[props.level][size];
+        if (responsiveData) {
           styles.push(
             breakpointStyle(
               breakpoint,
               `
             font-size: ${responsiveData.size};
             line-height: ${responsiveData.height};
-            max-width: ${responsiveData.maxWidth};
+            max-width: ${(props.fillProp && 'none') || responsiveData.maxWidth};
           `,
+              props.responsive,
             ),
           );
         }
@@ -46,8 +57,8 @@ const sizeStyle = props => {
   return '';
 };
 
-const fontFamily = props => {
-  const { font } = props.theme.heading.level[props.level];
+const fontFamily = (props) => {
+  const { font } = props.theme.heading.level[props.level] || {};
   if (font && font.family) {
     return css`
       font-family: ${font.family};
@@ -60,16 +71,6 @@ const fontFamily = props => {
     : '';
 };
 
-const TEXT_ALIGN_MAP = {
-  center: 'center',
-  end: 'right',
-  start: 'left',
-};
-
-const textAlignStyle = css`
-  text-align: ${props => TEXT_ALIGN_MAP[props.textAlign]};
-`;
-
 const truncateStyle = `
   white-space: nowrap;
   overflow: hidden;
@@ -77,20 +78,18 @@ const truncateStyle = `
 `;
 
 const colorStyle = css`
-  color: ${props => normalizeColor(props.colorProp, props.theme)};
+  color: ${(props) =>
+    normalizeColor(props.colorProp || props.theme.heading.color, props.theme)};
 `;
 
-const StyledHeading = styled.h1`
+const StyledHeading = styled.h1.withConfig(styledComponentsConfig)`
   ${genericStyles}
-  ${props => fontFamily(props)}
-  ${props => sizeStyle(props)}
-  ${props => props.textAlign && textAlignStyle}
-  ${props => props.truncate && truncateStyle}
-  ${props => props.colorProp && colorStyle}
-  ${props => props.theme.heading && props.theme.heading.extend}
+  ${(props) => fontFamily(props)}
+  ${(props) => sizeStyle(props)}
+  ${(props) => props.textAlign && textAlignStyle}
+  ${(props) => props.truncate && truncateStyle}
+  ${(props) => (props.colorProp || props.theme.heading.color) && colorStyle}
+  ${(props) => props.theme.heading && props.theme.heading.extend}
 `;
-
-StyledHeading.defaultProps = {};
-Object.setPrototypeOf(StyledHeading.defaultProps, defaultProps);
 
 export { StyledHeading };

@@ -4,6 +4,7 @@ node_modules
 #IDEA
 .idea/**
 .vscode
+*.code-workspace
 
 # testing
 coverage
@@ -19,11 +20,20 @@ storybook-static
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+build-storybook.log
 report*
 
 #licenses 
 grommet-*-licenses.json
 grommet-*-src-with-dependecies.tgz
+
+#yarn
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
 
 # misc
 .cache

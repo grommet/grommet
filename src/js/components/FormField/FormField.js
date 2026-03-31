@@ -3,12 +3,22 @@ import React, {
   cloneElement,
   forwardRef,
   useContext,
+  useEffect,
+  useMemo,
   useState,
 } from 'react';
-import styled, { ThemeContext } from 'styled-components';
-import { defaultProps } from '../../default-props';
+import styled from 'styled-components';
 
-import { focusStyle, parseMetricToNum } from '../../utils';
+import {
+  containsFocus,
+  shouldKeepFocus,
+  withinDropPortal,
+  PortalContext,
+} from '../../utils';
+import { useDebounce } from '../../utils/use-debounce';
+import { focusStyle } from '../../utils/styles';
+import { parseMetricToNum } from '../../utils/mixins';
+import { useForwardedRef } from '../../utils/refs';
 import { Box } from '../Box';
 import { CheckBox } from '../CheckBox';
 import { CheckBoxGroup } from '../CheckBoxGroup';
@@ -16,40 +26,144 @@ import { RadioButtonGroup } from '../RadioButtonGroup';
 import { Text } from '../Text';
 import { TextInput } from '../TextInput';
 import { FormContext } from '../Form/FormContext';
+import { FormFieldPropTypes } from './propTypes';
+import { useThemeValue } from '../../utils/useThemeValue';
+import { AnnounceContext } from '../../contexts/AnnounceContext';
 
-const grommetInputNames = ['TextInput', 'Select', 'MaskedInput', 'TextArea'];
+const grommetInputFocusNames = [
+  'CheckBox',
+  'CheckBoxGroup',
+  'RadioButton',
+  'RadioButtonGroup',
+  'RangeInput',
+  'RangeSelector',
+  'StarRating',
+  'ThumbsRating',
+];
+
+const grommetInputNames = [
+  'CheckBox',
+  'CheckBoxGroup',
+  'TextInput',
+  'Select',
+  'MaskedInput',
+  'SelectMultiple',
+  'TextArea',
+  'DateInput',
+  'FileInput',
+  'RadioButton',
+  'RadioButtonGroup',
+  'RangeInput',
+  'RangeSelector',
+  'StarRating',
+  'ThumbsRating',
+];
 const grommetInputPadNames = [
   'CheckBox',
   'CheckBoxGroup',
+  'RadioButton',
   'RadioButtonGroup',
   'RangeInput',
+  'RangeSelector',
 ];
 
-const isGrommetInput = comp =>
+const isGrommetInput = (comp) =>
   comp &&
   (grommetInputNames.indexOf(comp.displayName) !== -1 ||
     grommetInputPadNames.indexOf(comp.displayName) !== -1);
 
+const getFocusStyle = (props) => {
+  if (
+    props.focus &&
+    props.containerFocus === false &&
+    props.theme.formField?.focus?.containerFocus === false
+  ) {
+    return null;
+  }
+  return props.focus ? focusStyle({ justBorder: true }) : undefined;
+};
+
 const FormFieldBox = styled(Box)`
-  ${props => props.focus && focusStyle({ justBorder: true })}
-  ${props => props.theme.formField && props.theme.formField.extend}
+  ${(props) => getFocusStyle(props)}
+  ${(props) => props.theme.formField?.extend}
 `;
 
 const FormFieldContentBox = styled(Box)`
-  ${props => props.focus && focusStyle({ justBorder: true })}
+  ${(props) => getFocusStyle(props)}
+  ${(props) =>
+    props.theme.formField &&
+    props.theme.formField[props?.componentName]?.container?.extend}
 `;
 
-const Message = ({ message, ...rest }) => {
+const StyledContentsBox = styled(Box)`
+  ${(props) =>
+    props.theme.formField &&
+    props.theme.formField[props?.componentName]?.container?.extend}
+`;
+
+const StyledMessageContainer = styled(Box)`
+  ${(props) =>
+    props.messageType &&
+    props.theme.formField[props.messageType].container &&
+    props.theme.formField[props.messageType].container.extend}
+`;
+
+const RequiredText = styled(Text)`
+  color: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+`;
+
+const ScreenReaderOnly = styled(Text)`
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+`;
+
+const Message = ({ error, info, message, type, ...rest }) => {
+  const { theme, passThemeFlag } = useThemeValue();
   if (message) {
-    if (typeof message === 'string') return <Text {...rest}>{message}</Text>;
-    return <Box {...rest}>{message}</Box>;
+    let icon;
+    let containerProps;
+
+    if (type) {
+      icon = theme.formField[type] && theme.formField[type].icon;
+      containerProps = theme.formField[type] && theme.formField[type].container;
+    }
+
+    let messageContent;
+    if (typeof message === 'string')
+      messageContent = <Text {...rest}>{message}</Text>;
+    else messageContent = <Box {...rest}>{message}</Box>;
+
+    return icon || containerProps ? (
+      <StyledMessageContainer
+        direction="row"
+        messageType={type}
+        {...containerProps}
+        {...passThemeFlag}
+      >
+        {icon && <Box flex={false}>{icon}</Box>}
+        {messageContent}
+      </StyledMessageContainer>
+    ) : (
+      messageContent
+    );
   }
   return null;
 };
 
 const Input = ({ component, disabled, invalid, name, onChange, ...rest }) => {
   const formContext = useContext(FormContext);
-  const [value, setValue] = formContext.useFormInput(name, rest.value);
+  const [value, setValue] = formContext.useFormInput({
+    name,
+    value: rest.value,
+  });
   const InputComponent = component || TextInput;
   // Grommet input components already check for FormContext
   // and, using their `name`, end up calling the useFormInput.setValue()
@@ -60,7 +174,7 @@ const Input = ({ component, disabled, invalid, name, onChange, ...rest }) => {
     ? { focusIndicator: false, onChange, plain: true }
     : {
         value,
-        onChange: event => {
+        onChange: (event) => {
           setValue(
             event.value !== undefined ? event.value : event.target.value,
           );
@@ -84,6 +198,7 @@ const FormField = forwardRef(
       children,
       className,
       component,
+      contentProps,
       disabled, // pass through in renderInput()
       error: errorProp,
       help,
@@ -93,33 +208,84 @@ const FormField = forwardRef(
       margin,
       name, // pass through in renderInput()
       onBlur,
+      onChange,
       onFocus,
       pad,
       required,
       style,
       validate,
+      validateOn,
       ...rest
     },
     ref,
   ) => {
-    const theme = useContext(ThemeContext) || defaultProps.theme;
+    const { theme, passThemeFlag } = useThemeValue();
     const formContext = useContext(FormContext);
+
     const {
       error,
       info,
       inForm,
       onBlur: contextOnBlur,
+      onChange: contextOnChange,
     } = formContext.useFormField({
+      disabled,
       error: errorProp,
       info: infoProp,
       name,
       required,
       validate,
+      validateOn,
     });
+    const formKind = formContext.kind;
     const [focus, setFocus] = useState();
+    const formFieldRef = useForwardedRef(ref);
 
     const { formField: formFieldTheme } = theme;
     const { border: themeBorder } = formFieldTheme;
+    const debounce = useDebounce();
+
+    const portalContext = useContext(PortalContext);
+    const announce = useContext(AnnounceContext);
+
+    useEffect(() => {
+      if (error && validate?.max) {
+        announce(error, 'polite', 5000);
+      }
+    }, [error, announce, validate?.max]);
+
+    const readOnlyField = useMemo(() => {
+      let readOnly = false;
+      if (children) {
+        Children.map(children, (child) => {
+          if (
+            (child?.props?.readOnly === true ||
+              child?.props?.readOnlyCopy === true) &&
+            child.type &&
+            ('TextInput'.indexOf(child.type.displayName) !== -1 ||
+              'DateInput'.indexOf(child.type.displayName) !== -1)
+          ) {
+            readOnly = true;
+          }
+        });
+      }
+      return readOnly;
+    }, [children]);
+
+    const containerFocus = useMemo(() => {
+      let focusIndicatorFlag = true;
+      Children.forEach(children, (child) => {
+        if (
+          child &&
+          child.type &&
+          grommetInputFocusNames.includes(child.type.displayName) &&
+          theme.formField?.focus?.containerFocus !== true
+        ) {
+          focusIndicatorFlag = false;
+        }
+      });
+      return focusIndicatorFlag;
+    }, [children, theme.formField?.focus?.containerFocus]);
 
     // This is here for backwards compatibility. In case the child is a grommet
     // input component, set plain and focusIndicator props, if they aren't
@@ -133,7 +299,7 @@ const FormField = forwardRef(
     let contents =
       (themeBorder &&
         children &&
-        Children.map(children, child => {
+        Children.map(children, (child) => {
           if (
             child &&
             child.type &&
@@ -141,16 +307,24 @@ const FormField = forwardRef(
           ) {
             wantContentPad = true;
           }
-          if (
+
+          const isInputComponent =
             child &&
             child.type &&
-            grommetInputNames.indexOf(child.type.displayName) !== -1 &&
+            grommetInputNames.indexOf(child.type.displayName) !== -1;
+
+          if (
+            isInputComponent &&
             child.props.plain === undefined &&
             child.props.focusIndicator === undefined
           ) {
             return cloneElement(child, {
               plain: true,
-              focusIndicator: false,
+              focusIndicator: !containerFocus,
+              pad:
+                'CheckBox'.indexOf(child.type.displayName) !== -1
+                  ? formFieldTheme?.checkBox?.pad
+                  : undefined,
             });
           }
           return child;
@@ -173,16 +347,68 @@ const FormField = forwardRef(
       );
     }
 
-    const contentProps =
-      pad || wantContentPad ? { ...formFieldTheme.content } : {};
-    if (themeBorder.position === 'inner') {
-      if (error && formFieldTheme.error) {
-        contentProps.background = formFieldTheme.error.background;
+    const themeContentProps = { ...formFieldTheme.content };
+
+    if (!pad && !wantContentPad) {
+      themeContentProps.pad = undefined;
+    }
+
+    if (themeBorder && themeBorder.position === 'inner') {
+      if (readOnlyField) {
+        themeContentProps.background = theme.global.input.readOnly?.background;
+      } else if (error && formFieldTheme.error) {
+        themeContentProps.background = formFieldTheme.error.background;
       } else if (disabled && formFieldTheme.disabled) {
-        contentProps.background = formFieldTheme.disabled.background;
+        themeContentProps.background = formFieldTheme.disabled.background;
       }
     }
-    contents = <Box {...contentProps}>{contents}</Box>;
+
+    // fileinput handle
+    // use fileinput plain use formfield to drive the border
+    let isFileInputComponent;
+    if (
+      children &&
+      Children.forEach(children, (child) => {
+        if (
+          child &&
+          child.type &&
+          'FileInput'.indexOf(child.type.displayName) !== -1
+        )
+          isFileInputComponent = true;
+      })
+    );
+
+    if (
+      component &&
+      component.displayName === 'FileInput' &&
+      !isFileInputComponent
+    ) {
+      isFileInputComponent = true;
+    }
+
+    let childName;
+    Children.forEach(children, (child) => {
+      if (child && child.type) {
+        childName = child.type.displayName;
+        // camelCase component name to match theme object key
+        if (childName?.length > 0)
+          childName = childName.charAt(0).toLowerCase() + childName.slice(1);
+      }
+    });
+
+    if (!themeBorder) {
+      contents = (
+        <StyledContentsBox
+          disabledProp={disabled}
+          error={error}
+          componentName={childName}
+          {...themeContentProps}
+          {...contentProps}
+        >
+          {contents}
+        </StyledContentsBox>
+      );
+    }
 
     let borderColor;
 
@@ -192,8 +418,24 @@ const FormField = forwardRef(
       formFieldTheme.disabled.border.color
     ) {
       borderColor = formFieldTheme.disabled.border.color;
-    } else if (error && themeBorder && themeBorder.error.color) {
-      borderColor = themeBorder.error.color || 'status-critical';
+    } else if (readOnlyField && theme.global.input?.readOnly?.border?.color) {
+      borderColor = theme.global.input?.readOnly?.border?.color;
+    } else if (
+      // backward compatibility check
+      (error && themeBorder && themeBorder.error.color) ||
+      (error && formFieldTheme.error && formFieldTheme.error.border)
+    ) {
+      if (
+        themeBorder.error.color &&
+        formFieldTheme.error.border === undefined
+      ) {
+        borderColor = themeBorder.error.color || 'status-critical';
+      } else if (
+        formFieldTheme.error.border &&
+        formFieldTheme.error.border.color
+      ) {
+        borderColor = formFieldTheme.error.border.color || 'status-critical';
+      }
     } else if (
       focus &&
       formFieldTheme.focus &&
@@ -205,7 +447,10 @@ const FormField = forwardRef(
       borderColor = (themeBorder && themeBorder.color) || 'border';
     }
 
-    const labelStyle = { ...formFieldTheme.label };
+    let labelStyle;
+    if (formKind) {
+      labelStyle = { ...formFieldTheme[formKind].label };
+    } else labelStyle = { ...formFieldTheme.label };
 
     if (disabled) {
       labelStyle.color =
@@ -214,9 +459,24 @@ const FormField = forwardRef(
           : labelStyle.color;
     }
 
+    const themeHelpProps = {
+      ...formFieldTheme.help,
+      ...(disabled && { color: formFieldTheme?.disabled?.help?.color }),
+    };
+
+    const themeInfoProps = {
+      ...formFieldTheme.info,
+      ...(disabled && { color: formFieldTheme?.disabled?.info?.color }),
+    };
+
     let abut;
     let abutMargin;
     let outerStyle = style;
+
+    // If fileinput is wrapped in a formfield we want to use
+    // the border style from the fileInput.theme. We also do not
+    // want the foocus around the formfield since the the focus
+    // is on the anchor/button inside fileinput
 
     if (themeBorder) {
       const innerProps =
@@ -224,15 +484,32 @@ const FormField = forwardRef(
           ? {
               border: {
                 ...themeBorder,
-                side: themeBorder.side || 'bottom',
+                size: isFileInputComponent
+                  ? theme.fileInput.border.size
+                  : undefined,
+                style: isFileInputComponent
+                  ? theme.fileInput.border.style
+                  : undefined,
+                side: isFileInputComponent
+                  ? theme.fileInput.border.side
+                  : themeBorder.side || 'bottom',
                 color: borderColor,
               },
               round: formFieldTheme.round,
-              focus,
+              focus: isFileInputComponent ? undefined : focus,
             }
           : {};
       contents = (
-        <FormFieldContentBox overflow="hidden" {...innerProps}>
+        <FormFieldContentBox
+          disabledProp={disabled}
+          error={error}
+          componentName={childName}
+          {...themeContentProps}
+          {...innerProps}
+          {...contentProps}
+          containerFocus={containerFocus} // internal prop
+          {...passThemeFlag}
+        >
           {contents}
         </FormFieldContentBox>
       );
@@ -273,7 +550,8 @@ const FormField = forwardRef(
     }
 
     let outerBackground;
-    if (themeBorder.position === 'outer') {
+
+    if (themeBorder && themeBorder.position === 'outer') {
       if (error && formFieldTheme.error && formFieldTheme.error.background) {
         outerBackground = formFieldTheme.error.background;
       } else if (
@@ -301,52 +579,122 @@ const FormField = forwardRef(
           }
         : {};
 
+    let { requiredIndicator } = theme.formField.label;
+    if (requiredIndicator === true)
+      // accessibility resource: https://www.deque.com/blog/anatomy-of-accessible-forms-required-form-fields/
+      // this approach allows the required indicator to be hidden visually,
+      // but present for assistive tech.
+      // using aria-hidden so screen does not read out "star" and
+      // just reads out "required"
+      requiredIndicator = (
+        <>
+          <RequiredText aria-hidden="true">*</RequiredText>
+          <ScreenReaderOnly>required</ScreenReaderOnly>
+        </>
+      );
+
+    let showRequiredIndicator = required && requiredIndicator;
+    if (typeof required === 'object' && required.indicator === false)
+      showRequiredIndicator = false;
+
+    // Check if child is Select or SelectMultiple and modify htmlFor if needed
+    let adjustedHtmlFor = htmlFor;
+    if (htmlFor) {
+      let isSelectComponent = false;
+
+      // Check if children contain Select or SelectMultiple
+      if (children) {
+        Children.forEach(children, (child) => {
+          if (
+            child &&
+            child.type &&
+            (child.type.displayName === 'Select' ||
+              child.type.displayName === 'SelectMultiple') &&
+            child.props.id === htmlFor
+          ) {
+            isSelectComponent = true;
+          }
+        });
+      }
+
+      // If it's a Select component and htmlFor doesn't end with __input, add it
+      if (isSelectComponent && !htmlFor.endsWith('__input')) {
+        adjustedHtmlFor = `${htmlFor}__input`;
+      }
+    }
+
     return (
       <FormFieldBox
-        ref={ref}
+        ref={formFieldRef}
         className={className}
         background={outerBackground}
         margin={abut ? abutMargin : margin || { ...formFieldTheme.margin }}
         {...outerProps}
         style={outerStyle}
-        onFocus={event => {
-          setFocus(true);
+        containerFocus={containerFocus} // internal prop
+        onFocus={(event) => {
+          const root = formFieldRef.current?.getRootNode();
+          if (root) {
+            setFocus(
+              containsFocus(formFieldRef.current) && shouldKeepFocus(root),
+            );
+          }
           if (onFocus) onFocus(event);
         }}
-        onBlur={event => {
+        onBlur={(event) => {
           setFocus(false);
-          if (contextOnBlur) contextOnBlur(event);
+
+          // if input has a drop and focus is within drop
+          // prevent onBlur validation from running until
+          // focus is no longer within the drop or input
+          if (
+            contextOnBlur &&
+            !formFieldRef.current.contains(event.relatedTarget) &&
+            !withinDropPortal(event.relatedTarget, portalContext)
+          ) {
+            contextOnBlur(event);
+          }
+
           if (onBlur) onBlur(event);
         }}
+        onChange={
+          contextOnChange || onChange
+            ? (event) => {
+                event.persist();
+                if (onChange) onChange(event);
+                if (contextOnChange)
+                  debounce(() => () => contextOnChange(event));
+              }
+            : undefined
+        }
         {...containerRest}
+        {...passThemeFlag}
       >
         {(label && component !== CheckBox) || help ? (
           <>
             {label && component !== CheckBox && (
-              <Text as="label" htmlFor={htmlFor} {...labelStyle}>
+              <Text
+                as="label"
+                id={htmlFor ? `grommet-${adjustedHtmlFor}__label` : undefined}
+                htmlFor={adjustedHtmlFor}
+                {...labelStyle}
+              >
                 {label}
+                {showRequiredIndicator ? requiredIndicator : undefined}
               </Text>
             )}
-            <Message message={help} {...formFieldTheme.help} />
+            <Message message={help} {...themeHelpProps} />
           </>
-        ) : (
-          undefined
-        )}
+        ) : undefined}
         {contents}
-        <Message message={error} {...formFieldTheme.error} />
-        <Message message={info} {...formFieldTheme.info} />
+        <Message type="error" message={error} {...formFieldTheme.error} />
+        <Message type="info" message={info} {...themeInfoProps} />
       </FormFieldBox>
     );
   },
 );
 
 FormField.displayName = 'FormField';
+FormField.propTypes = FormFieldPropTypes;
 
-let FormFieldDoc;
-if (process.env.NODE_ENV !== 'production') {
-  // eslint-disable-next-line global-require
-  FormFieldDoc = require('./doc').doc(FormField);
-}
-const FormFieldWrapper = FormFieldDoc || FormField;
-
-export { FormFieldWrapper as FormField };
+export { FormField };

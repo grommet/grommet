@@ -8,11 +8,4 @@ const TableRow = forwardRef((props, ref) => (
 
 TableRow.displayName = 'TableRow';
 
-let TableRowDoc;
-if (process.env.NODE_ENV !== 'production') {
-  // eslint-disable-next-line global-require
-  TableRowDoc = require('./doc').doc(TableRow);
-}
-const TableRowWrapper = TableRowDoc || TableRow;
-
-export { TableRowWrapper as TableRow };
+export { TableRow };

@@ -1,9 +1,16 @@
-import * as React from "react";
+import * as React from 'react';
 
-export interface TableHeaderProps {
-  
-}
+export interface TableHeaderProps {}
 
-declare const TableHeader: React.FC<TableHeaderProps & JSX.IntrinsicElements['thead']>;
+type htmlTableHeaderProps = React.DetailedHTMLProps<
+  React.HTMLAttributes<HTMLTableSectionElement>,
+  HTMLTableSectionElement
+>;
+
+export interface TableHeaderExtendedProps
+  extends TableHeaderProps,
+    htmlTableHeaderProps {}
+
+declare const TableHeader: React.FC<TableHeaderExtendedProps>;
 
 export { TableHeader };

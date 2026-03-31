@@ -6,43 +6,125 @@ import React, {
   useRef,
   useState,
 } from 'react';
-import styled, { ThemeContext } from 'styled-components';
+import styled from 'styled-components';
+import { useLayoutEffect } from '../../utils/use-isomorphic-layout-effect';
 
 import { Box } from '../Box';
 import { EdgeControl } from './EdgeControl';
+import { FormContext } from '../Form/FormContext';
+import { Text } from '../Text';
 import { parseMetricToNum } from '../../utils';
+import { RangeSelectorPropTypes } from './propTypes';
+import { DataFormContext } from '../../contexts/DataFormContext';
+import { useThemeValue } from '../../utils/useThemeValue';
 
 const Container = styled(Box)`
   user-select: none;
 `;
 
+export const getDecimalCount = (number) => {
+  if (Number.isInteger(number)) {
+    return 0;
+  }
+  // handle small numbers (0.00000001) which javascript
+  // will turn into `e-`
+  if (Math.abs(number) < 1) {
+    const parts = number.toExponential().split('e-');
+    const decimalPart = parts[0].split('.')[1] || '';
+    return decimalPart.length + parseInt(parts[1], 10);
+  }
+
+  const decimalPart = number.toString().split('.')[1] || '';
+  return decimalPart.length;
+};
+
+// avoid floating point issues like 0.15 + 0.3 = 0.44999999999999996
+// and turn into 0.15 + 0.3 = 0.45
+export const valueToStepPrecision = (value, step, min) => {
+  const nearestTrueStep = Math.round((value - min) / step) * step + min;
+  return Number(nearestTrueStep.toFixed(getDecimalCount(step)));
+};
+
+// ensure values are within min/max
+const clamp = (value, min, max) => Math.min(Math.max(min, value), max);
+
 const RangeSelector = forwardRef(
   (
     {
       color,
+      defaultValues = [],
       direction = 'horizontal',
       invert,
+      label,
       max = 100,
-      messages = { lower: 'Lower Bounds', upper: 'Upper Bounds' },
+      messages,
       min = 0,
+      name,
       onChange,
       opacity = 'medium',
       round,
       size = 'medium',
       step = 1,
-      values = [],
+      values: valuesProp,
       ...rest
     },
     ref,
   ) => {
-    const theme = useContext(ThemeContext) || defaultProps.theme;
+    const { theme } = useThemeValue();
+    const formContext = useContext(FormContext);
     const [changing, setChanging] = useState();
     const [lastChange, setLastChange] = useState();
     const [moveValue, setMoveValue] = useState();
     const containerRef = useRef();
+    const maxRef = useRef();
+    const minRef = useRef();
+    const labelWidthRef = useRef(0);
+
+    const [values, setValues] = formContext.useFormInput({
+      name,
+      value: valuesProp?.map((n) => clamp(n, min, max)),
+      initialValue: defaultValues,
+    });
+
+    // for DataFilters to know when RangeSelector is set to its min/max
+    const { pendingReset } = useContext(DataFormContext);
+    const updatePendingReset = useCallback(
+      (nextMin, nextMax) => {
+        if (nextMin === min && nextMax === max) {
+          pendingReset?.current.add(name);
+        } else if (pendingReset?.current?.has(name)) {
+          pendingReset?.current.delete(name);
+        }
+      },
+      [max, min, name, pendingReset],
+    );
+
+    const change = useCallback(
+      (nextValues) => {
+        let [nextMin, nextMax] = nextValues;
+        // only adjust value to step precision if it's not the min/max
+        if (nextMin !== min && nextMin !== max)
+          nextMin = valueToStepPrecision(nextValues[0], step, min);
+        if (nextMax !== min && nextMax !== max)
+          nextMax = valueToStepPrecision(nextValues[1], step, min);
+
+        // ensure values are within min/max
+        nextMin = clamp(nextMin, min, max);
+        nextMax = clamp(nextMax, min, max);
+
+        // make sure this is only called if both of the values
+        // are actually distinct from the previous values
+        if (nextMin !== values[0] || nextMax !== values[1]) {
+          updatePendingReset(nextMin, nextMax);
+          setValues([nextMin, nextMax]);
+          if (onChange) onChange([nextMin, nextMax]);
+        }
+      },
+      [onChange, setValues, step, max, min, values, updatePendingReset],
+    );
 
     const valueForMouseCoord = useCallback(
-      event => {
+      (event) => {
         const rect = containerRef.current.getBoundingClientRect();
         let value;
         if (direction === 'vertical') {
@@ -68,8 +150,8 @@ const RangeSelector = forwardRef(
       [direction, max, min, step],
     );
 
-    useEffect(() => {
-      const mouseMove = event => {
+    const onMouseMove = useCallback(
+      (event) => {
         const value = valueForMouseCoord(event);
         let nextValues;
         if (changing === 'lower' && value <= values[1] && value !== moveValue) {
@@ -81,50 +163,92 @@ const RangeSelector = forwardRef(
         ) {
           nextValues = [values[0], value];
         } else if (changing === 'selection' && value !== moveValue) {
-          const delta = value - moveValue;
-          if (values[0] + delta >= min && values[1] + delta <= max) {
-            nextValues = [values[0] + delta, values[1] + delta];
+          if (value === max) {
+            nextValues = [max - (values[1] - values[0]), max];
+          } else if (value === min) {
+            nextValues = [min, min + (values[1] - values[0])];
+          } else {
+            const delta = value - moveValue;
+            if (values[0] + delta >= min && values[1] + delta <= max) {
+              nextValues = [values[0] + delta, values[1] + delta];
+            }
           }
         }
         if (nextValues) {
           setMoveValue(value);
-          onChange(nextValues);
+          change(nextValues);
         }
-      };
+      },
+      [
+        values,
+        change,
+        changing,
+        moveValue,
+        max,
+        min,
+        setMoveValue,
+        valueForMouseCoord,
+      ],
+    );
 
-      const mouseUp = () => setChanging(undefined);
+    useEffect(() => {
+      const onMouseUp = () => setChanging(undefined);
 
       if (changing) {
-        window.addEventListener('mousemove', mouseMove);
-        window.addEventListener('mouseup', mouseUp);
+        window.addEventListener('mousemove', onMouseMove);
+        window.addEventListener('mouseup', onMouseUp);
 
         return () => {
-          window.removeEventListener('mousemove', mouseMove);
-          window.removeEventListener('mouseup', mouseUp);
+          window.removeEventListener('mousemove', onMouseMove);
+          window.removeEventListener('mouseup', onMouseUp);
         };
       }
       return undefined;
-    }, [changing, max, min, moveValue, onChange, valueForMouseCoord, values]);
+    }, [changing, onMouseMove]);
 
     const onClick = useCallback(
-      event => {
+      (event) => {
         const value = valueForMouseCoord(event);
         if (
           value <= values[0] ||
           (value < values[1] && lastChange === 'lower')
         ) {
           setLastChange('lower');
-          onChange([value, values[1]]);
+          change([value, values[1]]);
         } else if (
           value >= values[1] ||
           (value > values[0] && lastChange === 'upper')
         ) {
           setLastChange('upper');
-          onChange([values[0], value]);
+          change([values[0], value]);
         }
       },
-      [lastChange, onChange, valueForMouseCoord, values],
+      [change, lastChange, valueForMouseCoord, values],
     );
+
+    const onTouchMove = useCallback(
+      (event) => {
+        const touchEvent = event.changedTouches[0];
+        onMouseMove(touchEvent);
+      },
+      [onMouseMove],
+    );
+
+    // keep the text values size consistent
+    useLayoutEffect(() => {
+      if (maxRef.current && minRef.current) {
+        maxRef.current.style.width = '';
+        minRef.current.style.width = '';
+        const width = Math.max(
+          labelWidthRef.current,
+          maxRef.current.getBoundingClientRect().width,
+          minRef.current.getBoundingClientRect().width,
+        );
+        maxRef.current.style.width = `${width}px`;
+        minRef.current.style.width = `${width}px`;
+        labelWidthRef.current = width;
+      }
+    });
 
     const [lower, upper] = values;
     // It needs to be true when vertical, due to how browsers manage height
@@ -138,15 +262,16 @@ const RangeSelector = forwardRef(
     else layoutProps.height = thickness;
     if (size === 'full') layoutProps.alignSelf = 'stretch';
 
-    return (
+    let content = (
       <Container
         ref={containerRef}
         direction={direction === 'vertical' ? 'column' : 'row'}
         align="center"
         fill
-        {...rest}
+        {...(label ? {} : rest)}
         tabIndex="-1"
-        onClick={onChange ? onClick : undefined}
+        onClick={onClick}
+        onTouchMove={onTouchMove}
       >
         <Box
           style={{ flex: `${lower - min} 0 0` }}
@@ -164,23 +289,23 @@ const RangeSelector = forwardRef(
           {...layoutProps}
         />
         <EdgeControl
-          a11yTitle={messages.lower}
-          tabIndex={0}
           ref={ref}
           color={color}
           direction={direction}
           thickness={thickness}
           edge="lower"
-          onMouseDown={onChange ? () => setChanging('lower') : undefined}
-          onDecrease={
-            onChange && lower - step >= min
-              ? () => onChange([lower - step, upper])
-              : undefined
-          }
+          min={min}
+          max={max}
+          messages={messages}
+          value={lower}
+          step={step}
+          onMouseDown={() => setChanging('lower')}
+          onTouchStart={() => setChanging('lower')}
+          onDecrease={() => change([lower - step, upper])}
           onIncrease={
-            onChange && lower + step <= upper
-              ? () => onChange([lower + step, upper])
-              : undefined
+            lower + step <= upper
+              ? () => change([lower + step, upper])
+              : () => change([upper, upper])
           }
         />
         <Box
@@ -196,34 +321,29 @@ const RangeSelector = forwardRef(
                 { color: color || 'control', opacity, dark: theme.dark }
           }
           {...layoutProps}
-          onMouseDown={
-            onChange
-              ? event => {
-                  const nextMoveValue = valueForMouseCoord(event);
-                  setChanging('selection');
-                  setMoveValue(nextMoveValue);
-                }
-              : undefined
-          }
+          onMouseDown={(event) => {
+            const nextMoveValue = valueForMouseCoord(event);
+            setChanging('selection');
+            setMoveValue(nextMoveValue);
+          }}
         />
         <EdgeControl
-          a11yTitle={messages.upper}
-          tabIndex={0}
           color={color}
           direction={direction}
           thickness={thickness}
           edge="upper"
-          onMouseDown={onChange ? () => setChanging('upper') : undefined}
+          min={min}
+          max={max}
+          value={upper}
+          step={step}
+          onMouseDown={() => setChanging('upper')}
+          onTouchStart={() => setChanging('upper')}
           onDecrease={
-            onChange && upper - step >= lower
-              ? () => onChange([lower, upper - step])
-              : undefined
+            upper - step >= lower
+              ? () => change([lower, upper - step])
+              : () => change([lower, lower])
           }
-          onIncrease={
-            onChange && upper + step <= max
-              ? () => onChange([lower, upper + step])
-              : undefined
-          }
+          onIncrease={() => change([lower, upper + step])}
         />
         <Box
           style={{ flex: `${max - upper} 0 0` }}
@@ -243,16 +363,40 @@ const RangeSelector = forwardRef(
         />
       </Container>
     );
+
+    if (label) {
+      content = (
+        <Box
+          direction={direction === 'vertical' ? 'column' : 'row'}
+          align="center"
+          fill
+          {...rest}
+        >
+          <Text
+            ref={minRef}
+            textAlign="end"
+            size="small"
+            margin={theme.rangeSelector.label.margin}
+          >
+            {typeof label === 'function' ? label(lower) : lower}
+          </Text>
+          {content}
+          <Text
+            ref={maxRef}
+            size="small"
+            margin={theme.rangeSelector.label.margin}
+          >
+            {typeof label === 'function' ? label(upper) : upper}
+          </Text>
+        </Box>
+      );
+    }
+
+    return content;
   },
 );
 
 RangeSelector.displayName = 'RangeSelector';
+RangeSelector.propTypes = RangeSelectorPropTypes;
 
-let RangeSelectorDoc;
-if (process.env.NODE_ENV !== 'production') {
-  // eslint-disable-next-line global-require
-  RangeSelectorDoc = require('./doc').doc(RangeSelector);
-}
-const RangeSelectorWrapper = RangeSelectorDoc || RangeSelector;
-
-export { RangeSelectorWrapper as RangeSelector };
+export { RangeSelector };

@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 
 import { Box } from '../Box';
 import { Text } from '../Text';
+import { DistributionPropTypes } from './propTypes';
+import { useThemeValue } from '../../utils/useThemeValue';
 
 const Value = ({ basis, children }) => (
   <Box basis={basis} flex="shrink" overflow="hidden">
@@ -15,15 +17,24 @@ Value.propTypes = {
   children: PropTypes.node.isRequired,
 };
 
+const defaultChildrenPropValue = (value) => (
+  <Box fill border>
+    <Text>{value.value}</Text>
+  </Box>
+);
+
+const defaultValues = [];
+
 const Distribution = ({
   basis,
-  children,
-  direction,
+  children = defaultChildrenPropValue,
+  direction = 'row',
   fill,
   gap,
-  values,
+  values = defaultValues,
   ...rest
 }) => {
+  const { theme } = useThemeValue();
   if (values.length === 1) {
     const value = values[0];
     return (
@@ -33,15 +44,18 @@ const Distribution = ({
     );
   }
   if (values.length > 1) {
-    const reducer = (accumulator, { value }) => accumulator + value;
-    const total = values.reduce(reducer, 0);
+    const reducer = (accumulator, { value }) => accumulator + (value || 0);
+    const total = values
+      .filter((v) => Object.prototype.hasOwnProperty.call(v, 'value'))
+      .reduce(reducer, 0);
 
     // figure out how many of the values area needed to represent half of the
     // total
     let subTotal = 0;
     let subIndex;
     values.some((v, index) => {
-      subTotal += v.value;
+      subTotal +=
+        (Object.prototype.hasOwnProperty.call(v, 'value') && v.value) || 0;
       if (subTotal >= total * 0.4) {
         subIndex = index + 1;
         return true;
@@ -59,7 +73,11 @@ const Distribution = ({
     }
 
     let childBasis;
-    if (subTotal > total * 0.7) {
+    if (subTotal === 0) {
+      childBasis = ['0px', '0px'];
+    } else if (subTotal === total) {
+      childBasis = ['full', '0px'];
+    } else if (subTotal > total * 0.7) {
       childBasis = ['3/4', '1/4'];
     } else if (subTotal > total * 0.6) {
       childBasis = ['2/3', '1/3'];
@@ -73,7 +91,7 @@ const Distribution = ({
         basis={basis}
         flex={basis ? 'shrink' : true}
         overflow="hidden"
-        gap={gap}
+        gap={gap || theme.distribution?.gap}
         fill={fill}
         {...rest}
       >
@@ -81,7 +99,7 @@ const Distribution = ({
           values={values.slice(0, subIndex)}
           basis={childBasis[0]}
           direction={direction === 'row' ? 'column' : 'row'}
-          gap={gap}
+          gap={gap || theme.distribution?.gap}
         >
           {children}
         </Distribution>
@@ -89,7 +107,7 @@ const Distribution = ({
           values={values.slice(subIndex)}
           basis={childBasis[1]}
           direction={direction === 'row' ? 'column' : 'row'}
-          gap={gap}
+          gap={gap || theme.distribution?.gap}
         >
           {children}
         </Distribution>
@@ -99,23 +117,6 @@ const Distribution = ({
   return null;
 };
 
-Distribution.defaultProps = {
-  basis: undefined,
-  children: value => (
-    <Box fill border>
-      <Text>{value.value}</Text>
-    </Box>
-  ),
-  direction: 'row',
-  gap: 'xsmall',
-  values: [],
-};
+Distribution.propTypes = DistributionPropTypes;
 
-let DistributionDoc;
-if (process.env.NODE_ENV !== 'production') {
-  // eslint-disable-next-line global-require
-  DistributionDoc = require('./doc').doc(Distribution);
-}
-const DistributionWrapper = DistributionDoc || Distribution;
-
-export { DistributionWrapper as Distribution };
+export { Distribution };

@@ -5,8 +5,8 @@ import {
   borderStyle,
   edgeStyle,
   genericStyles,
+  styledComponentsConfig,
 } from '../../utils';
-import { defaultProps } from '../../default-props';
 
 const SIZE_MAP = {
   '1/2': '50%',
@@ -18,27 +18,41 @@ const SIZE_MAP = {
 };
 
 const sizeStyle = css`
-  width: ${props =>
-    SIZE_MAP[props.size] || props.theme.global.size[props.size] || props.size};
-  max-width: ${props =>
-    SIZE_MAP[props.size] || props.theme.global.size[props.size] || props.size};
+  width: ${(props) =>
+    props.size === 'auto'
+      ? // setting width to a small value will allow
+        // the cell to fit width of its content. this
+        // is a commonly implemented CSS pattern to
+        // allow an auto-width behavior on fixed table
+        // layouts (which is what DataTable applies)
+        // https://stackoverflow.com/questions/4757844/css-table-column-autowidth?noredirect=1&lq=1
+        '1px'
+      : SIZE_MAP[props.size] ||
+        props.theme.global.size[props.size] ||
+        props.size};
+  max-width: ${(props) =>
+    props.size !== 'auto'
+      ? SIZE_MAP[props.size] ||
+        props.theme.global.size[props.size] ||
+        props.size
+      : undefined};
   overflow: hidden;
 `;
 
-const StyledTableCell = styled.td`
+const StyledTableCell = styled.td.withConfig(styledComponentsConfig)`
   margin: 0;
   padding: 0;
   font-weight: inherit;
   text-align: inherit;
-  height: 100%;
 
-  ${props => props.size && sizeStyle}
-  ${props => props.verticalAlign && `vertical-align: ${props.verticalAlign};`}
-  ${props => props.align && `text-align: ${props.align};`}
-  ${props => props.background && backgroundStyle(props.background, props.theme)}
-  ${props =>
+  ${(props) => props.size && sizeStyle}
+  ${(props) => props.verticalAlign && `vertical-align: ${props.verticalAlign};`}
+  ${(props) => props.align && `text-align: ${props.align};`}
+  ${(props) =>
+    props.background && backgroundStyle(props.background, props.theme)}
+  ${(props) =>
     props.border && borderStyle(props.border, props.responsive, props.theme)}
-  ${props =>
+  ${(props) =>
     props.pad &&
     edgeStyle(
       'padding',
@@ -47,53 +61,36 @@ const StyledTableCell = styled.td`
       props.theme.box.responsiveBreakpoint,
       props.theme,
     )}
-  ${props => props.tableContextTheme && props.tableContextTheme.extend}
+  ${(props) => props.tableContextTheme && props.tableContextTheme.extend}
 `;
 
-StyledTableCell.defaultProps = {};
-Object.setPrototypeOf(StyledTableCell.defaultProps, defaultProps);
-
-const StyledTableDataCaption = styled.caption`
-  margin-bottom: ${props => props.theme.global.edgeSize.xxsmall};
+const StyledTableDataCaption = styled.caption.withConfig(
+  styledComponentsConfig,
+)`
+  ${(props) =>
+    edgeStyle(
+      'margin',
+      props.theme.table.caption.margin,
+      false,
+      props.theme.global.edgeSize.responsiveBreakpoint,
+      props.theme,
+    )}
 `;
 
-StyledTableDataCaption.defaultProps = {};
-Object.setPrototypeOf(StyledTableDataCaption.defaultProps, defaultProps);
+const StyledTableRow = styled.tr.withConfig(styledComponentsConfig)``;
 
-const StyledTableRow = styled.tr`
-  height: 100%;
-`;
+const StyledTableBody = styled.tbody.withConfig(styledComponentsConfig)``;
 
-StyledTableRow.defaultProps = {};
-Object.setPrototypeOf(StyledTableRow.defaultProps, defaultProps);
+const StyledTableHeader = styled.thead.withConfig(styledComponentsConfig)``;
 
-const StyledTableBody = styled.tbody``;
+const StyledTableFooter = styled.tfoot.withConfig(styledComponentsConfig)``;
 
-StyledTableBody.defaultProps = {};
-Object.setPrototypeOf(StyledTableBody.defaultProps, defaultProps);
-
-const StyledTableHeader = styled.thead``;
-
-StyledTableHeader.defaultProps = {};
-Object.setPrototypeOf(StyledTableHeader.defaultProps, defaultProps);
-
-const StyledTableFooter = styled.tfoot``;
-
-StyledTableFooter.defaultProps = {};
-Object.setPrototypeOf(StyledTableFooter.defaultProps, defaultProps);
-
-const StyledTable = styled.table`
+const StyledTable = styled.table.withConfig(styledComponentsConfig)`
   border-spacing: 0;
   border-collapse: collapse;
   width: inherit;
-  @media all and (min--moz-device-pixel-ratio: 0) {
-    table-layout: fixed;
-  }
-  ${genericStyles} ${props => props.theme.table && props.theme.table.extend};
+  ${genericStyles} ${(props) => props.theme.table && props.theme.table.extend};
 `;
-
-StyledTable.defaultProps = {};
-Object.setPrototypeOf(StyledTable.defaultProps, defaultProps);
 
 export {
   StyledTableCell,

@@ -1,316 +1,622 @@
-import React, {
-  forwardRef,
-  useContext,
-  useLayoutEffect,
-  useMemo,
-  useRef,
-} from 'react';
-import { ThemeContext } from 'styled-components';
+import React, { forwardRef, useMemo, useState } from 'react';
 import { Box } from '../Box';
-import { Chart, calcs, round } from '../Chart';
+import { Chart, calcs, calcBounds } from '../Chart';
 import { Grid } from '../Grid';
 import { Stack } from '../Stack';
+import { Text } from '../Text';
+import { parseMetricToNum } from '../../utils';
+import { Detail } from './Detail';
+import { Legend } from './Legend';
+import { XAxis } from './XAxis';
+import { YAxis } from './YAxis';
+import { XGuide } from './XGuide';
+import { YGuide } from './YGuide';
+import {
+  createDateFormat,
+  halfPad,
+  heightYGranularity,
+  largestSize,
+  maximum,
+  minimum,
+  points,
+} from './utils';
+import { DataChartPropTypes } from './propTypes';
+import { useThemeValue } from '../../utils/useThemeValue';
 
-const halfPad = {
-  xlarge: 'large',
-  large: 'medium',
-  medium: 'small',
-  small: 'xsmall',
-  xsmall: 'xxsmall',
+const stackedChartType = {
+  areas: 'area',
+  bars: 'bar',
+  lines: 'line',
 };
 
-const doublePad = {
-  large: 'xlarge',
-  medium: 'large',
-  small: 'medium',
-  xsmall: 'small',
-  xxsmall: 'xsmall',
-};
-
-const checkDateFormat = (firstValue, lastValue, full) => {
-  let dateFormat;
-  const startDate = new Date(firstValue);
-  const endDate = new Date(lastValue);
-  if (
-    // check for valid dates, this is the fastest way
-    !Number.isNaN(startDate.getTime()) &&
-    !Number.isNaN(endDate.getTime())
-  ) {
-    const delta = Math.abs(endDate - startDate);
-    let options;
-    if (delta < 60000)
-      // less than 1 minute
-      options = full
-        ? {
-            hour: '2-digit',
-            minute: '2-digit',
-            second: '2-digit',
-            day: undefined,
-          }
-        : { second: '2-digit', day: undefined };
-    else if (delta < 3600000)
-      // less than 1 hour
-      options = full
-        ? { hour: 'numeric', minute: '2-digit', day: undefined }
-        : { minute: '2-digit', day: undefined };
-    else if (delta < 86400000)
-      // less than 1 day
-      options = { hour: 'numeric' };
-    else if (delta < 2592000000)
-      // less than 30 days
-      options = {
-        month: full ? 'short' : 'numeric',
-        day: 'numeric',
-      };
-    else if (delta < 31557600000)
-      // less than 1 year
-      options = { month: full ? 'long' : 'short' };
-    // 1 year or more
-    else options = { year: 'numeric' };
-    if (options)
-      dateFormat = new Intl.DateTimeFormat(undefined, options).format;
-  }
-  return dateFormat;
-};
+// DataChart takes a generic data array of objects plus as few properties
+// as possible, and creates a Stack of Charts with x and y axes, a legend,
+// and interactive detail.
+// Much of the code here-in involves the "few properties" aspect where we
+// normalize and automatically handle whatever the caller didn't specify.
 
 const DataChart = forwardRef(
   (
     {
       a11yTitle,
-      chart,
-      data,
+      axis: axisProp = true,
+      bounds: boundsProp = 'align',
+      chart: chartProp,
+      data = [],
+      detail,
+      direction = 'vertical',
+      gap,
+      guide: guideProp,
+      legend,
+      offset,
+      placeholder,
       pad: padProp,
+      series: seriesProp,
       size,
-      thickness: thicknessProp,
-      xAxis,
-      yAxis,
       ...rest
     },
     ref,
   ) => {
-    console.warn(`The DataChart component is still experimental.
-      It is not guaranteed to be backwards compatible until it is explicitly
-      released. Keep an eye on the release notes and #announcements channel
-      in Slack.`);
-    const theme = useContext(ThemeContext);
-    // refs used for ie11 not having Grid
-    const xRef = useRef();
-    const spacerRef = useRef();
+    const { theme } = useThemeValue();
 
-    // normalize chart to an array
-    const charts = useMemo(() => (Array.isArray(chart) ? chart : [chart]), [
-      chart,
+    // legend interaction, if any
+    const [activeProperty, setActiveProperty] = useState();
+
+    const horizontal = useMemo(() => direction === 'horizontal', [direction]);
+
+    // normalize seriesProp to an array of objects, one per property
+    const series = useMemo(() => {
+      if (Array.isArray(seriesProp))
+        return seriesProp
+          .filter((s) => s.property || typeof s === 'string')
+          .map((s) => (typeof s === 'string' ? { property: s } : s));
+      if (typeof seriesProp === 'string') return [{ property: seriesProp }];
+      if (seriesProp) return [seriesProp];
+      return [];
+    }, [seriesProp]);
+
+    const getPropertySeries = (prop) =>
+      series.find(({ property }) => prop === property);
+
+    // Normalize chartProp to an array of objects.
+    // Each chart has one or more properties associated with it.
+    // A stacked bar or area chart has an array of properties.
+    // A point chart can have x, y, thickness, and color each driven
+    // by a separate property.
+    const charts = useMemo(() => {
+      if (!chartProp) {
+        if (series.length === 1)
+          return series
+            .filter((s) => s.property)
+            .map((s) => ({ property: s.property }));
+        // if we have more than one property, we'll use the first for
+        // the x-axis and we'll plot the rest
+        return series.slice(1).map((s) => ({ property: s.property }));
+      }
+      if (Array.isArray(chartProp))
+        return chartProp
+          .map((c) => (typeof c === 'string' ? { property: c } : c))
+          .filter(({ property }) => property);
+      if (typeof chartProp === 'string') return [{ property: chartProp }];
+      if (chartProp) return [chartProp];
+      return [];
+    }, [chartProp, series]);
+
+    // map the series property values into their own arrays
+    const seriesValues = useMemo(() => {
+      const result = {};
+      series.forEach(({ property }) => {
+        result[property] = data.map((d) => d[property]);
+      });
+      return result;
+    }, [data, series]);
+
+    // Setup the values property for each chart.
+    // The index into 'charts' can be used to index into 'chartValues'.
+    const chartValues = useMemo(
+      () =>
+        charts.map(({ opacity, property, type }) => {
+          if (property) {
+            if (Array.isArray(property)) {
+              // A range chart or a stacked bar or area chart has multiple
+              // properties.
+              // In this case, this returns an array of values,
+              // one per property.
+              if (stackedChartType[type]) {
+                // Further down, where we render, each property is rendered
+                // using a separate Chart component and the values are stacked
+                // such that they line up appropriately.
+                const totals = [];
+                return property.map((cp) => {
+                  // handle object or string
+                  const aProperty = cp.property || cp;
+                  const values = seriesValues[aProperty];
+                  if (!values) return undefined; // property name isn't valid
+                  return values.map((v, i) => {
+                    const base = totals[i] || 0;
+                    totals[i] = base + v;
+                    if (type === 'lines') return [i, base + v];
+                    return [i, base, base + v];
+                  });
+                });
+              }
+              return data.map((_, index) => [
+                index,
+                ...property.map((p) =>
+                  seriesValues[p] ? seriesValues[p][index] : data[index][p],
+                ),
+              ]);
+            }
+            if (typeof property === 'object') {
+              // When 'property' is an array, the keys of this array indicate
+              // which property drives which part of the rendered Chart.
+              const { color, thickness, x, y, y2 } = property;
+              return seriesValues[x].map((value, index) => {
+                const aValue = { value: [value] };
+                aValue.value.push(seriesValues[y][index]);
+                if (y2) aValue.value.push(seriesValues[y2][index]);
+                if (thickness) {
+                  const t =
+                    seriesValues[thickness.property || thickness][index];
+                  aValue.thickness = thickness.transform
+                    ? thickness.transform(t)
+                    : t;
+                }
+                if (color) {
+                  const c = seriesValues[color.property || color][index];
+                  aValue.color = color.transform ? color.transform(c) : c;
+                }
+                if (opacity) aValue.opacity = opacity;
+                return aValue;
+              });
+            }
+            return seriesValues[property];
+          }
+          return undefined;
+        }),
+      [charts, data, seriesValues],
+    );
+
+    // map granularities to work well with the number of data points we have
+    const granularities = useMemo(() => {
+      let medium;
+      // determine a good medium granularity that will align well with the
+      // length of the data
+      const steps = data.length - 1;
+      // special case property driven point charts
+      if (charts[0] && typeof charts[0].property === 'object') medium = 3;
+      else if (steps < 4) medium = data.length;
+      else if (steps === 4) medium = 3;
+      else if (steps % 4 === 0) medium = 5;
+      else if (steps % 3 === 0) medium = 4;
+      else if (steps % 2 === 0) medium = 3;
+      else medium = 2;
+      const granularity0 = {
+        coarse: Math.min(data.length, 2),
+        fine: data.length,
+        medium,
+      };
+      const yGranularity =
+        theme.dataChart?.granularity?.y || heightYGranularity;
+      const granularity1 = {
+        ...(yGranularity[
+          (size && size.height) || theme.dataChart.size?.height
+        ] || {
+          fine: 5,
+          medium: 3,
+        }),
+        coarse: 2,
+      };
+      return horizontal
+        ? { x: granularity1, y: granularity0 }
+        : { x: granularity0, y: granularity1 };
+    }, [charts, data.length, horizontal, size, theme]);
+    // normalize axis to objects, convert granularity to a number
+    const axis = useMemo(() => {
+      if (!axisProp) return undefined;
+      const result = {};
+      if (axisProp === true || axisProp.x === true) result.x = {};
+      if (axisProp === true || axisProp.y === true) result.y = {};
+
+      if (!result.x && axisProp.x)
+        result.x =
+          typeof axisProp.x === 'string'
+            ? { property: axisProp.x }
+            : { ...axisProp.x };
+      if (!result.y && axisProp.y)
+        result.y =
+          typeof axisProp.y === 'string'
+            ? { property: axisProp.y }
+            : { ...axisProp.y };
+
+      if (result.x) {
+        if (!result.x.property) {
+          // see if we have a point chart that has an x property
+          if (horizontal) {
+            if (charts[0])
+              result.x.property = charts[0].property.x || charts[0].property;
+          } else if (data && data[0]) {
+            if (data[0].date) result.x.property = 'date';
+            else if (data[0].time) result.x.property = 'time';
+          }
+        }
+        if (!result.x.granularity) result.x.granularity = 'coarse';
+      }
+
+      if (result.y) {
+        if (!result.y.property) {
+          // see if we have a point chart that has an y property
+          if (horizontal) {
+            if (data && data[0]) {
+              if (data[0].date) result.y.property = 'date';
+              else if (data[0].time) result.y.property = 'time';
+            }
+          } else if (charts[0])
+            result.y.property = charts[0].property.y || charts[0].property;
+        }
+        if (!result.y.granularity) result.y.granularity = 'coarse';
+      }
+
+      // calculate number of entries based on granularity
+      if (result.x) {
+        const { granularity = 'coarse' } = result.x;
+        result.x.count = granularities.x[granularity];
+      }
+      if (result.y) {
+        const { granularity = 'coarse' } = result.y;
+        result.y.count = granularities.y[granularity];
+      }
+
+      return result;
+    }, [axisProp, data, charts, granularities, horizontal]);
+
+    // calculate axis, bounds, and thickness for each chart
+    const chartProps = useMemo(() => {
+      const steps = {};
+      const coarseness = horizontal ? [5, undefined] : [undefined, 5];
+      if (axis && axis.x) {
+        const { granularity = 'coarse' } = axis.x;
+        steps.x = granularities.x[granularity] - 1;
+      } else steps.x = horizontal ? 1 : data.length - 1;
+
+      if (axis && axis.y) {
+        const { granularity = 'coarse' } = axis.y;
+        steps.y = granularities.y[granularity] - 1;
+      } else steps.y = horizontal ? data.length - 1 : 1;
+
+      let chartBounds = chartValues.map((_, index) => {
+        const { type } = charts[index];
+        if (stackedChartType[type]) {
+          // merge values for bars, areas, and lines cases
+          let mergedValues = chartValues[index]?.[0]?.slice(0) || [];
+          chartValues[index]
+            .slice(1) // skip first index as that is the x value
+            .filter((values) => values) // property name isn't valid
+            .forEach((values) => {
+              mergedValues = mergedValues.map((__, i) =>
+                type === 'lines'
+                  ? [
+                      i,
+                      Math.min(mergedValues[i][1], values[i][1]),
+                      Math.max(mergedValues[i][1], values[i][1]),
+                    ]
+                  : [
+                      i,
+                      Math.min(mergedValues[i][1], values[i][1]),
+                      Math.max(mergedValues[i][2], values[i][2]),
+                    ],
+              );
+            });
+          return calcBounds(mergedValues, { coarseness, direction, steps });
+        }
+        // if this is a data driven x chart, set coarseness for x
+        return calcBounds(chartValues[index], {
+          coarseness: charts[index].property.x ? { x: 5, y: 5 } : coarseness,
+          direction,
+          steps,
+        });
+      });
+
+      if (boundsProp === 'align' && chartBounds.length) {
+        const alignedBounds = { x: {}, y: {} };
+        chartBounds.forEach((bounds) => {
+          alignedBounds.x.min = minimum(alignedBounds.x.min, bounds.x.min);
+          alignedBounds.x.max = maximum(alignedBounds.x.max, bounds.x.max);
+          alignedBounds.y.min = minimum(alignedBounds.y.min, bounds.y.min);
+          alignedBounds.y.max = maximum(alignedBounds.y.max, bounds.y.max);
+        });
+        chartBounds = chartBounds.map(() => alignedBounds);
+      }
+
+      return chartValues.map((values, index) => {
+        const { thickness, type } = charts[index];
+        const calcValues = stackedChartType[type] ? values[0] : values;
+        return calcs(calcValues, {
+          bounds: chartBounds[index],
+          direction,
+          steps,
+          thickness,
+          theme,
+        });
+      });
+    }, [
+      axis,
+      boundsProp,
+      charts,
+      chartValues,
+      data,
+      direction,
+      granularities,
+      horizontal,
+      theme,
     ]);
 
-    // map the key values into their own arrays
-    const keyValues = useMemo(() => {
+    // normalize how we style data properties for use by Legend and Detail
+    const seriesStyles = useMemo(() => {
       const result = {};
-      charts.forEach(({ key, keys }) => {
-        if (key && !result[key]) {
-          result[key] = data.map(d => d[key]);
-        }
-        if (keys) {
-          keys.forEach(({ key: innerKey }) => {
-            if (innerKey && !result[innerKey]) {
-              result[innerKey] = data.map(d => d[innerKey]);
-            }
+      // start from what we were explicitly given
+      charts.forEach((chart, index) => {
+        const { thickness: calcThickness } = chartProps[index];
+
+        if (
+          typeof chart.property === 'object' &&
+          !Array.isArray(chart.property)
+        ) {
+          // data driven point chart
+          Object.keys(chart.property).forEach((aspect) => {
+            const prop = chart.property[aspect];
+            if (!result[prop.property || prop])
+              result[prop.property || prop] = { aspect };
           });
+        } else {
+          const setPropertyStyle = ({ property, ...styles }) => {
+            // keep what we've got, use what is new
+            result[property] = {
+              ...styles,
+              ...(result[property] || {}),
+            };
+            // unless the new style is has no opacity
+            if (!styles.opacity) delete result[property].opacity;
+            if (styles.type === 'point') result[property].point = false;
+            if (calcThickness && !result[property].thickness)
+              result[property].thickness = calcThickness;
+          };
+
+          if (Array.isArray(chart.property))
+            chart.property.forEach((prop) => {
+              if (typeof prop === 'string')
+                setPropertyStyle({ ...chart, property: prop });
+              else if (typeof prop === 'object')
+                setPropertyStyle({ ...chart, ...prop });
+            });
+          else if (typeof chart === 'object') setPropertyStyle(chart);
+          else if (typeof chart === 'string')
+            setPropertyStyle({ property: chart });
+        }
+      });
+
+      // set color for any non-aspect properties we don't have one for yet
+      let colorIndex = 0;
+      let pointIndex = 0;
+      Object.keys(result).forEach((key) => {
+        const seriesStyle = result[key];
+        if (!seriesStyle.aspect && !seriesStyle.color) {
+          if (theme.dataChart?.colors?.length > 0) {
+            seriesStyle.color =
+              theme.dataChart.colors[
+                colorIndex % theme.dataChart.colors.length
+              ];
+          } else {
+            seriesStyle.color = `graph-${colorIndex}`;
+          }
+          colorIndex += 1;
+        }
+        // set opacity if it isn't set and this isn't the active property
+        if (activeProperty !== undefined && activeProperty !== key) {
+          seriesStyle.opacity = 'medium';
+        }
+        if (seriesStyle.point === false) {
+          seriesStyle.point = points[pointIndex];
+          pointIndex += 1;
+        }
+      });
+
+      return result;
+    }, [activeProperty, charts, chartProps, theme.dataChart?.colors]);
+
+    // normalize guide
+    const guide = useMemo(() => {
+      if (!guideProp) return undefined;
+      let result;
+      if (guideProp === true) {
+        result = { x: {}, y: {} };
+      } else {
+        result = {};
+        if (guideProp.x) result.x = { ...guideProp.x };
+        if (guideProp.y) result.y = { ...guideProp.y };
+      }
+      // set counts
+      if (result.x) {
+        // if no granularity and axis, align count with axis
+        if (!result.x.granularity && axis && axis.x)
+          result.x.count = axis.x.count;
+        if (!result.x.count)
+          result.x.count = granularities.x[result.x.granularity || 'coarse'];
+      }
+      if (result.y) {
+        // if no granularity and axis, align count with axis
+        if (!result.y.granularity && axis && axis.y)
+          result.y.count = axis.y.count;
+        if (!result.y.count)
+          result.y.count = granularities.y[result.y.granularity || 'coarse'];
+      }
+      return result;
+    }, [axis, granularities, guideProp]);
+
+    // set the pad to half the thickness, based on the chart types
+    // except when using offset, then add even more horizontal pad
+    const pad = useMemo(() => {
+      if (padProp !== undefined) return padProp;
+      let pad0;
+      let pad1;
+      const halfPadValues = halfPad(theme);
+      charts.forEach(({ type }, index) => {
+        const { thickness } = chartProps[index];
+        pad0 = largestSize(theme, pad0, halfPadValues[thickness]);
+        if (type && type !== 'bar')
+          pad1 = largestSize(theme, pad1, halfPadValues[thickness]);
+      });
+      return horizontal
+        ? { horizontal: pad1, vertical: pad0 }
+        : { horizontal: pad0, vertical: pad1 };
+    }, [chartProps, charts, horizontal, padProp, theme]);
+
+    // calculate the thickness in pixels of each chart
+    const thicknesses = useMemo(
+      () =>
+        offset
+          ? charts.map((_, index) => {
+              const { thickness } = chartProps[index];
+              return parseMetricToNum(
+                theme.global.edgeSize[thickness] || thickness,
+              );
+            })
+          : undefined,
+      [charts, chartProps, offset, theme],
+    );
+
+    // normalize any offset gap
+    const offsetGap = useMemo(
+      () =>
+        (offset?.gap &&
+          parseMetricToNum(theme.global.edgeSize[offset.gap] || offset.gap)) ||
+        0,
+      [offset, theme],
+    );
+
+    // calculate the offset for each chart, which is a sum of the thicknesses
+    // any offset gaps that preceded it
+    const offsets = useMemo(() => {
+      if (offset) {
+        return thicknesses.map((t, i) =>
+          thicknesses.slice(0, i).reduce((a, b) => a + b + offsetGap, 0),
+        );
+      }
+      return undefined;
+    }, [offset, offsetGap, thicknesses]);
+
+    // Calculate the total pad we should add to the end of each chart.
+    // We do this to shrink the width of each chart so we can shift them
+    // via `translate` and have them take up the right amount of width.
+    const offsetPad = useMemo(
+      () =>
+        offsets
+          ? `${
+              offsets[offsets.length - 1] + thicknesses[thicknesses.length - 1]
+            }px`
+          : undefined,
+      [offsets, thicknesses],
+    );
+
+    // The thickness of the segments. We need to convert to numbers
+    // to be able to compare across charts where some might be using T-shirt
+    // labels and others might be pixel values.
+    const segmentThickness = useMemo(() => {
+      let result = 0;
+      charts.forEach((_, index) => {
+        const { thickness } = chartProps[index];
+        result = Math.max(
+          result,
+          parseMetricToNum(theme.global.edgeSize[thickness] || thickness),
+        );
+      });
+      return `${result}px`;
+    }, [charts, chartProps, theme]);
+
+    const dateFormats = useMemo(() => {
+      const result = {};
+      const full = axis && axis.x && axis.x.granularity === 'coarse';
+      series.forEach(({ property, render }) => {
+        if (
+          !render &&
+          data.length > 1 &&
+          typeof data[0][property] === 'string'
+        ) {
+          result[property] = createDateFormat(
+            data[0][property],
+            data[data.length - 1][property],
+            full,
+          );
         }
       });
       return result;
-    }, [charts, data]);
+    }, [axis, data, series]);
 
-    const numValues = useMemo(
-      () => keyValues[Object.keys(keyValues)[0]].length,
-      [keyValues],
-    );
-
-    // setup the values for each chart
-    const chartValues = useMemo(() => {
-      return charts.map(({ key, keys }) => {
-        if (key) return keyValues[key];
-        if (keys) {
-          const totals = [];
-          return keys.map(({ key: innerKey }) =>
-            keyValues[innerKey].map((v, i) => {
-              const base = totals[i] || 0;
-              totals[i] = base + v;
-              return [i, base, base + v];
-            }),
-          );
+    const renderValue = (serie = {}, axisValue, y) => {
+      const { prefix, property, render, suffix } = serie;
+      let value = axisValue;
+      if (value !== undefined) {
+        if (!property || (!horizontal && y) || (horizontal && !y)) {
+          if (render) return render(value);
+        } else {
+          const datum = data[axisValue];
+          value = datum[property];
+          if (render) return render(value, datum, property);
         }
-        return [];
-      });
-    }, [charts, keyValues]);
-
-    // calculate axis, bounds and thickness
-    const { axis, bounds, thickness } = useMemo(() => {
-      const steps = [];
-      if (xAxis && xAxis.labels >= 0) steps[0] = xAxis.labels - 1;
-      else steps[0] = numValues - 1; // all
-      if (yAxis && yAxis.labels >= 0) steps[1] = yAxis.labels - 1;
-      else steps[1] = 1; // ends
-      let tmpAxis = [[], []];
-      let tmpBounds;
-      let tmpThickness = thicknessProp;
-      charts.forEach(({ keys }, index) => {
-        (keys ? chartValues[index] : [chartValues[index]])
-          .filter(vals => vals && vals.length > 0)
-          .forEach(vals => {
-            const { axis: a, bounds: b, thickness: t } = calcs(vals, {
-              steps,
-              thickness: tmpThickness,
-            });
-            tmpAxis = a;
-            tmpBounds = b;
-            tmpThickness = t;
-          });
-      });
-      return { axis: tmpAxis, bounds: tmpBounds, thickness: tmpThickness };
-    }, [charts, chartValues, numValues, thicknessProp, xAxis, yAxis]);
-
-    // set the pad to have the thickness, if not defined
-    const pad = useMemo(() => {
-      if (padProp !== undefined) return padProp;
-      const padSize = halfPad[thickness];
-      const allSides =
-        charts.filter(({ type }) => type && type !== 'bar').length > 0;
-      if (allSides) return padSize;
-      if (yAxis) return { horizontal: padSize, vertical: halfPad.medium };
-      return { horizontal: padSize };
-    }, [charts, padProp, thickness, yAxis]);
-
-    const xGuide = useMemo(
-      () =>
-        axis[0].map((_, i) => {
-          if (xAxis && xAxis.guide) {
-            if (i === 0) return 'left';
-            if (i === axis[0].length - 1) return 'right';
-          }
-          return undefined;
-        }),
-      [axis, xAxis],
-    );
-
-    const yGuide = useMemo(
-      () =>
-        axis[1].map((_, i) => {
-          if (yAxis && yAxis.guide) {
-            if (i === 0) return 'top';
-            if (i === axis[1].length - 1) return 'bottom';
-          }
-          return undefined;
-        }),
-      [axis, yAxis],
-    );
-
-    // for ie11, align the spacer Box height to the x-axis height
-    useLayoutEffect(() => {
-      if (xRef.current && spacerRef.current) {
-        const rect = xRef.current.getBoundingClientRect();
-        spacerRef.current.style.height = `${rect.height}px`;
-      }
-    }, []);
-
-    /* eslint-disable react/no-array-index-key */
-    let xAxisElement;
-    if (xAxis) {
-      // Set basis to match thickness. This works well for bar charts,
-      // to align each bar's label.
-      let basis;
-      if (thickness && axis[0].length === numValues) {
-        basis = theme.global.edgeSize[thickness] || thickness;
-      }
-
-      // If there is no custom renderer, there is a key, and the key value
-      // looks like a Date, render it as a date, scaled based on the range
-      // of values
-      let dateFormat;
-      if (!xAxis.render && xAxis.key && axis[0].length > 1) {
-        dateFormat = checkDateFormat(
-          data[Math.floor(axis[0][0])][xAxis.key],
-          data[Math.floor(axis[0][axis[0].length - 1])][xAxis.key],
-          axis[0].length <= 2,
-        );
-      }
-
-      xAxisElement = (
-        <Box ref={xRef} gridArea="xAxis" direction="row" justify="between">
-          {axis[0].map((dataIndex, i) => {
-            let content = xAxis.key
-              ? data[Math.floor(dataIndex)][xAxis.key]
-              : dataIndex;
-            if (xAxis.render)
-              content = xAxis.render(content, data, Math.floor(dataIndex), i);
-            else if (dateFormat) content = dateFormat(new Date(content));
-            return (
-              <Box
-                key={i}
-                basis={basis}
-                flex="shrink"
-                align={basis ? 'center' : undefined}
-              >
-                {content}
-              </Box>
-            );
-          })}
-        </Box>
-      );
-    }
-
-    let yAxisElement;
-    if (yAxis) {
-      let divideBy;
-      let unit;
-      if (!yAxis.render && !yAxis.suffix) {
-        // figure out how many digits to show
-        const maxValue = Math.max(...axis[1].map(v => Math.abs(v)));
-        if (maxValue > 10000000) {
-          divideBy = 1000000;
-          unit = 'M';
-        } else if (maxValue > 10000) {
-          divideBy = 1000;
-          unit = 'K';
+        if (property) {
+          const dateFormat = dateFormats[property];
+          if (dateFormat) return dateFormat(new Date(value));
+          if (prefix) value = `${prefix}${value}`;
+          if (suffix) value = `${value}${suffix}`;
         }
       }
+      return value;
+    };
 
-      // Set basis to match double the vertical pad, so we can align the
-      // text with the guides
-      let basis;
-      if (axis[0].length === numValues) {
-        const edgeSize = doublePad[pad.vertical || pad];
-        basis = theme.global.edgeSize[edgeSize] || edgeSize;
-      }
+    // TODO: revisit how x/y axis are hooked up to charts and series
 
-      yAxisElement = (
-        <Box gridArea="yAxis" justify="between" flex>
-          {axis[1].map((axisValue, i) => {
-            let content;
-            if (yAxis.render) content = yAxis.render(axisValue, i);
-            else {
-              content = axisValue;
-              if (divideBy) {
-                content = round(content / divideBy, 0);
-              }
-              if (yAxis.prefix) content = `${yAxis.prefix}${content}`;
-              if (yAxis.suffix || unit)
-                content = `${content}${yAxis.suffix || unit}`;
-            }
-            return (
-              <Box
-                key={i}
-                align="end"
-                basis={basis}
-                flex="shrink"
-                justify={basis ? 'center' : undefined}
-              >
-                {content}
-              </Box>
-            );
-          })}
-        </Box>
-      );
-    }
+    const xAxisElement =
+      axis && axis.x && (chartProps.length || boundsProp?.x) ? (
+        <XAxis
+          axis={axis}
+          values={
+            boundsProp?.x?.slice(0) ||
+            (Array.isArray(chartProps[0]) ? chartProps[0][0] : chartProps[0])
+              .axis.x
+          }
+          pad={!horizontal && offsetPad ? { ...pad, end: offsetPad } : pad}
+          renderValue={renderValue}
+          serie={axis.x.property && getPropertySeries(axis.x.property)}
+          style={
+            offsetPad
+              ? {
+                  transform: `translate(${
+                    offsets[Math.floor(offsets.length / 2)]
+                  }px, 0px)`,
+                }
+              : {}
+          }
+          thickness={horizontal ? undefined : segmentThickness}
+          theme={theme}
+        />
+      ) : null;
+
+    const yAxisElement =
+      axis && axis.y && (chartProps.length || boundsProp?.y) ? (
+        <YAxis
+          axis={axis}
+          values={
+            boundsProp?.y?.slice(0).reverse() ||
+            (Array.isArray(chartProps[0]) ? chartProps[0][0] : chartProps[0])
+              .axis.y
+          }
+          pad={horizontal && offsetPad ? { ...pad, bottom: offsetPad } : pad}
+          renderValue={renderValue}
+          serie={axis.y.property && getPropertySeries(axis.y.property)}
+          thickness={horizontal ? segmentThickness : undefined}
+          theme={theme}
+        />
+      ) : null;
 
     const stackFill = useMemo(() => {
       if (
@@ -323,89 +629,117 @@ const DataChart = forwardRef(
       return undefined;
     }, [size]);
 
+    const guidingChild = useMemo(() => {
+      let result = 0;
+      if (guide && guide.x) result += 1;
+      if (guide && guide.y) result += 1;
+      return result;
+    }, [guide]);
+
     const stackElement = (
-      <Stack gridArea="charts" guidingChild="last" fill={stackFill}>
-        {xAxis && xAxis.guide && (
-          <Box
-            fill
-            direction="row"
-            justify="between"
-            pad={pad}
-            responsive={false}
-          >
-            {xGuide.map((_, i) => (
-              <Box key={i} border="left" />
-            ))}
-          </Box>
+      <Stack gridArea="charts" guidingChild={guidingChild} fill={stackFill}>
+        {guide && guide.x && (
+          <XGuide guide={guide} pad={pad} thickness={horizontal} />
         )}
-        {yAxis && yAxis.guide && (
-          <Box fill justify="between" pad={pad} responsive={false}>
-            {yGuide.map((_, i) => (
-              <Box key={i} border="top" />
-            ))}
-          </Box>
+        {guide && guide.y && (
+          <YGuide guide={guide} pad={pad} thickness={!horizontal} />
         )}
-        {charts.map(({ key, keys, ...chartRest }, i) => {
-          if (keys) {
+        {charts.map(({ property: prop, type, x, y, ...chartRest }, i) => {
+          // When we offset, we increase the padding on the end for all charts
+          // by the same amount and we shift each successive chart to the
+          // right by an offset for that chart. The last chart's right side
+          // will end up aligning with where the charts would have been
+          // had we not padded their ends.
+          const chartPad = offsetPad ? { ...pad, end: offsetPad } : pad;
+          const offsetProps = offsetPad
+            ? { style: { transform: `translate(${offsets[i]}px, 0px)` } }
+            : {};
+
+          if (stackedChartType[type]) {
             // reverse to ensure area Charts are stacked in the right order
-            return keys
-              .map((_, j) => (
-                <Chart
-                  key={j}
-                  values={chartValues[i][j]}
-                  color={keys[j].color}
-                  bounds={bounds}
-                  overflow
-                  pad={pad}
-                  size={size}
-                  thickness={thickness}
-                  {...chartRest}
-                />
-              ))
+            return prop
+              .map((cProp, j) => {
+                const pProp = cProp.property || cProp;
+                const { property, ...propRest } =
+                  typeof cProp === 'object' ? cProp : {};
+                return (
+                  <Chart
+                    // eslint-disable-next-line react/no-array-index-key
+                    key={j}
+                    // when property name isn't valid, send empty array
+                    values={chartValues[i][j] || []}
+                    overflow
+                    direction={direction}
+                    {...seriesStyles[pProp]}
+                    {...chartProps[i]}
+                    {...chartRest}
+                    {...propRest}
+                    {...offsetProps}
+                    type={stackedChartType[type] || type}
+                    size={size}
+                    pad={chartPad}
+                  />
+                );
+              })
               .reverse();
           }
+
           return (
             <Chart
+              // eslint-disable-next-line react/no-array-index-key
               key={i}
               values={chartValues[i]}
-              bounds={bounds}
               overflow
-              pad={pad}
-              size={size}
-              thickness={thickness}
+              direction={direction}
+              {...seriesStyles[prop]}
+              {...chartProps[i]}
               {...chartRest}
+              {...offsetProps}
+              type={type}
+              size={size}
+              pad={chartPad}
             />
           );
         })}
+        {placeholder &&
+          ((typeof placeholder === 'string' && (
+            <Box
+              fill="vertical"
+              align="center"
+              justify="center"
+              background={{ color: 'background-front', opacity: 'strong' }}
+              margin={pad}
+            >
+              <Text color="text-weak">{placeholder}</Text>
+            </Box>
+          )) ||
+            placeholder)}
+        {detail && (
+          <Detail
+            activeProperty={activeProperty}
+            axis={axis}
+            data={data}
+            horizontal={horizontal}
+            pad={pad}
+            series={series}
+            seriesStyles={seriesStyles}
+            renderValue={renderValue}
+            thickness={segmentThickness}
+          />
+        )}
       </Stack>
     );
 
-    // IE11
-    if (!Grid.available) {
-      let content = stackElement;
-      if (xAxisElement) {
-        content = (
-          <Box>
-            {content}
-            {xAxisElement}
-          </Box>
-        );
-      }
-      if (yAxisElement) {
-        content = (
-          <Box direction="row">
-            <Box>
-              {yAxisElement}
-              <Box ref={spacerRef} flex={false} />
-            </Box>
-            {content}
-          </Box>
-        );
-      }
-      return content;
-    }
+    const legendElement = legend ? (
+      <Legend
+        series={series}
+        seriesStyles={seriesStyles}
+        activeProperty={activeProperty}
+        setActiveProperty={setActiveProperty}
+      />
+    ) : null;
 
-    return (
+    let content = (
       <Grid
         ref={ref}
         aria-label={a11yTitle}
@@ -423,6 +757,7 @@ const DataChart = forwardRef(
           { name: 'xAxis', start: [1, 1], end: [1, 1] },
           { name: 'charts', start: [1, 0], end: [1, 0] },
         ]}
+        gap={gap || theme.dataChart?.gap}
         {...rest}
       >
         {xAxisElement}
@@ -430,16 +765,21 @@ const DataChart = forwardRef(
         {stackElement}
       </Grid>
     );
+
+    if (legendElement) {
+      content = (
+        <Box align="start">
+          {content}
+          {legendElement}
+        </Box>
+      );
+    }
+
+    return content;
   },
 );
 
 DataChart.displayName = 'DataChart';
+DataChart.propTypes = DataChartPropTypes;
 
-let DataChartDoc;
-if (process.env.NODE_ENV !== 'production') {
-  // eslint-disable-next-line global-require
-  DataChartDoc = require('./doc').doc(DataChart);
-}
-const DataChartWrapper = DataChartDoc || DataChart;
-
-export { DataChartWrapper as DataChart };
+export { DataChart };

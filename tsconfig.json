@@ -6,21 +6,20 @@
     "moduleResolution": "node",
     "outDir": "./dist/",
     "sourceMap": true,
-    "noImplicitAny": false,
     "module": "esnext",
     "target": "es6",
     "jsx": "react",
-    "strictPropertyInitialization": false,
     "declaration": true,
-    "strict": false,
     "baseUrl": "./",
     "paths": {
       "grommet": ["src/js"],
       "grommet/themes": ["src/js/themes"],
       "grommet/utils": ["src/js/utils"]
     },
+    "lib": ["dom", "es2017"],
+    "types": ["jest"],
     "typeRoots": ["./node_modules/@types/", "./src/@types/"]
   },
-  "exclude": ["node_modules"],
+  "exclude": ["node_modules", "**/__tests__"],
   "include": ["src/**/*"]
 }

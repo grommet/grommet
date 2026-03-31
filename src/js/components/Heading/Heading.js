@@ -1,35 +1,91 @@
-import React from 'react';
+import React, { forwardRef, useContext, useState } from 'react';
+import { useLayoutEffect } from '../../utils/use-isomorphic-layout-effect';
 
 import { StyledHeading } from './StyledHeading';
+import { HeadingPropTypes } from './propTypes';
+import { useForwardedRef } from '../../utils';
+import { useSkeleton } from '../Skeleton';
+import { HeadingSkeleton } from './HeadingSkeleton';
+import { useThemeValue } from '../../utils/useThemeValue';
+import { ResponsiveContainerContext } from '../../contexts';
 
-const Heading = props => {
-  const {
-    color, // munged to avoid styled-components putting it in the DOM
-    level,
-    ...rest
-  } = props;
+const Heading = forwardRef(
+  (
+    {
+      children,
+      color,
+      fill,
+      level = 1,
+      overflowWrap: overflowWrapProp,
+      responsive: responsiveProp = true,
+      weight,
+      ...rest
+    },
 
-  // enforce level to be a number
-  return (
-    <StyledHeading
-      as={`h${level}`}
-      colorProp={color}
-      level={+level}
-      {...rest}
-    />
-  );
-};
+    ref, // munged to avoid styled-components putting it in the DOM
+  ) => {
+    const { passThemeFlag } = useThemeValue();
+    const headingRef = useForwardedRef(ref);
+    const [overflowWrap, setOverflowWrap] = useState(
+      overflowWrapProp || 'break-word',
+    );
 
-Heading.defaultProps = {
-  level: 1,
-  responsive: true,
-};
+    const responsiveContainer = useContext(ResponsiveContainerContext);
+    const responsive =
+      responsiveContainer && responsiveProp ? 'container' : responsiveProp;
+    const skeleton = useSkeleton();
 
-let HeadingDoc;
-if (process.env.NODE_ENV !== 'production') {
-  // eslint-disable-next-line global-require
-  HeadingDoc = require('./doc').doc(Heading);
-}
-const HeadingWrapper = HeadingDoc || Heading;
+    // handle overflowWrap of heading
+    useLayoutEffect(() => {
+      const updateOverflowWrap = () => {
+        let wrap;
+        if (!overflowWrapProp && headingRef.current) {
+          wrap =
+            headingRef.current.scrollWidth > headingRef.current.offsetWidth
+              ? 'anywhere'
+              : 'break-word';
+          setOverflowWrap(wrap);
+        }
+      };
 
-export { HeadingWrapper as Heading };
+      window.addEventListener('resize', updateOverflowWrap);
+      updateOverflowWrap();
+      return () => window.removeEventListener('resize', updateOverflowWrap);
+    }, [headingRef, overflowWrapProp]);
+
+    let content = children;
+    if (skeleton) {
+      content = (
+        <HeadingSkeleton
+          level={level}
+          fill={fill}
+          responsive={responsive}
+          {...rest}
+        />
+      );
+    }
+
+    return (
+      // enforce level to be a number
+      <StyledHeading
+        as={`h${level}`}
+        colorProp={color}
+        fillProp={fill}
+        level={+level}
+        overflowWrap={overflowWrap}
+        responsive={responsive}
+        weight={weight}
+        {...passThemeFlag}
+        {...rest}
+        ref={headingRef}
+      >
+        {content}
+      </StyledHeading>
+    );
+  },
+);
+
+Heading.displayName = 'Heading';
+Heading.propTypes = HeadingPropTypes;
+
+export { Heading };

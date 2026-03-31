@@ -1,55 +1,83 @@
-import React, { forwardRef, useContext, useState } from 'react';
-import { ThemeContext } from 'styled-components';
+import React, { forwardRef, useContext, useEffect, useState } from 'react';
 
-import { defaultProps } from '../../default-props';
-
-import { Box } from '../Box';
 import { Button } from '../Button';
 import { Text } from '../Text';
-import { normalizeColor } from '../../utils';
+import { TabsContext } from '../Tabs/TabsContext';
+import { normalizeColor, useForwardedRef } from '../../utils';
 
 import { StyledTab } from './StyledTab';
+import { TabPropTypes } from './propTypes';
+import { useLayoutEffect } from '../../utils/use-isomorphic-layout-effect';
+import { useThemeValue } from '../../utils/useThemeValue';
 
 const Tab = forwardRef(
   (
     {
-      active,
+      active: activeProp, // don't pass with rest
+      disabled,
+      children,
       icon,
       plain,
       title,
-      onActivate,
+      onBlur,
+      onFocus,
       onMouseOver,
       onMouseOut,
       reverse,
+      onClick,
       ...rest
     },
     ref,
   ) => {
-    const theme = useContext(ThemeContext) || defaultProps.theme;
+    const {
+      active,
+      activeIndex,
+      index,
+      ref: tabsContextRef,
+      onActivate,
+      setActiveContent,
+      setActiveTitle,
+      setFocusIndex,
+    } = useContext(TabsContext);
+    const { theme, passThemeFlag } = useThemeValue();
     const [over, setOver] = useState(undefined);
-    const [focus, setFocus] = useState(undefined);
     let normalizedTitle = title;
     const tabStyles = {};
+    const tabRef = useForwardedRef(ref);
 
-    const onMouseOverTab = event => {
+    useLayoutEffect(() => {
+      if (tabRef.current && tabsContextRef) {
+        tabsContextRef.current = tabRef.current;
+      }
+    });
+
+    useEffect(() => {
+      if (active) {
+        setActiveContent(children);
+        const activeTitle = typeof title === 'string' ? title : activeIndex + 1;
+        setActiveTitle(activeTitle);
+      }
+    }, [
+      active,
+      activeIndex,
+      children,
+      setActiveContent,
+      setActiveTitle,
+      title,
+    ]);
+
+    const onMouseOverTab = (event) => {
       setOver(true);
       if (onMouseOver) {
         onMouseOver(event);
       }
     };
 
-    const onMouseOutTab = event => {
+    const onMouseOutTab = (event) => {
       setOver(undefined);
       if (onMouseOut) {
         onMouseOut(event);
       }
-    };
-
-    const onClickTab = event => {
-      if (event) {
-        event.preventDefault();
-      }
-      onActivate();
     };
 
     if (!plain) {
@@ -57,6 +85,41 @@ const Tab = forwardRef(
         normalizedTitle = title;
       } else if (active) {
         normalizedTitle = <Text {...theme.tab.active}>{title}</Text>;
+      } else if (disabled && theme.tab.disabled) {
+        normalizedTitle = <Text {...theme.tab.disabled}>{title}</Text>;
+      } else {
+        normalizedTitle = (
+          <Text color={over ? theme.tab.hover.color : theme.tab.color}>
+            {title}
+          </Text>
+        );
+      }
+    }
+
+    const onClickTab = (event) => {
+      if (event) {
+        event.preventDefault();
+      }
+      onActivate();
+      if (onClick) {
+        onClick(event);
+      }
+    };
+
+    if (active && disabled) {
+      console.warn(
+        // eslint-disable-next-line max-len
+        `Warning: Tab props 'active' and 'disabled' have both been set to TRUE on the same Tab resulting in an interesting Tab state. Is this your intent?`,
+      );
+    }
+
+    if (!plain) {
+      if (typeof title !== 'string') {
+        normalizedTitle = title;
+      } else if (active) {
+        normalizedTitle = <Text {...theme.tab.active}>{title}</Text>;
+      } else if (disabled && theme.tab.disabled) {
+        normalizedTitle = <Text {...theme.tab.disabled}>{title}</Text>;
       } else {
         normalizedTitle = (
           <Text color={over ? theme.tab.hover.color : theme.tab.color}>
@@ -70,6 +133,8 @@ const Tab = forwardRef(
           theme.tab.border.color || theme.global.control.border.color;
         if (active) {
           borderColor = theme.tab.border.active.color || borderColor;
+        } else if (disabled && theme.tab.border.disabled) {
+          borderColor = theme.tab.border.disabled.color || borderColor;
         } else if (over) {
           borderColor = theme.tab.border.hover.color || borderColor;
         }
@@ -90,11 +155,14 @@ const Tab = forwardRef(
     }
 
     // needed to apply hover/active styles to the icon
-    const renderIcon = iconProp => {
+    const renderIcon = (iconProp) => {
       if (active) {
         return React.cloneElement(iconProp, {
           ...theme.tab.active,
         });
+      }
+      if (disabled) {
+        return React.cloneElement(iconProp, { ...theme.tab.disabled });
       }
       return React.cloneElement(iconProp, {
         color: over ? theme.tab.hover.color : theme.tab.color,
@@ -115,34 +183,38 @@ const Tab = forwardRef(
         direction: 'row',
         align: 'center',
         justify: 'center',
-        gap: 'small',
+        gap: theme.tab?.gap,
       };
     }
 
     return (
       <Button
-        ref={ref}
+        ref={tabRef}
         plain
         role="tab"
         aria-selected={active}
         aria-expanded={active}
+        disabled={disabled}
         {...rest}
         onClick={onClickTab}
         onMouseOver={onMouseOverTab}
         onMouseOut={onMouseOutTab}
         onFocus={() => {
-          setFocus(true);
-          if (onMouseOver) onMouseOver();
+          if (onFocus) onFocus();
+          setFocusIndex(index);
         }}
         onBlur={() => {
-          setFocus(undefined);
-          if (onMouseOut) onMouseOut();
+          if (onBlur) onBlur();
+          setFocusIndex(-1);
         }}
-        // ensure focus outline is not covered by hover styling
-        // of adjacent tabs
-        style={focus && { zIndex: 1 }}
       >
-        <StyledTab as={Box} plain={plain} {...withIconStyles} {...tabStyles}>
+        <StyledTab
+          disabled={disabled}
+          plain={plain}
+          {...withIconStyles}
+          {...tabStyles}
+          {...passThemeFlag}
+        >
           {first}
           {second}
         </StyledTab>
@@ -152,13 +224,6 @@ const Tab = forwardRef(
 );
 
 Tab.displayName = 'Tab';
-Tab.defaultProps = {};
-Object.setPrototypeOf(Tab.defaultProps, defaultProps);
+Tab.propTypes = TabPropTypes;
 
-let TabDoc;
-if (process.env.NODE_ENV !== 'production') {
-  TabDoc = require('./doc').doc(Tab); // eslint-disable-line global-require
-}
-const TabWrapper = TabDoc || Tab;
-
-export { TabWrapper as Tab };
+export { Tab };

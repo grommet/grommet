@@ -1,69 +1,86 @@
-import React, { useContext } from 'react';
-import { ThemeContext } from 'styled-components';
+import React, { isValidElement, memo, useContext } from 'react';
 
-import { defaultProps } from '../../default-props';
-
-import { TableCell } from '../TableCell';
 import { Text } from '../Text';
+import { StyledDataTableCell } from './StyledDataTable';
 import { datumValue } from './buildState';
+import { TableContext } from '../Table/TableContext';
+import { useThemeValue } from '../../utils/useThemeValue';
 
-const normalizeProp = (name, rowProp, prop) => {
-  if (rowProp && rowProp[name]) return rowProp[name];
-  return prop;
-};
+const Cell = memo(
+  ({
+    background,
+    border,
+    column: {
+      align,
+      pin: columnPin,
+      plain,
+      footer,
+      property,
+      render,
+      verticalAlign: columnVerticalAlign, // deprecate in v3
+      size,
+    },
+    datum,
+    pad,
+    pin: cellPin,
+    pinnedOffset,
+    primaryProperty,
+    scope,
+    verticalAlign,
+    ...rest
+  }) => {
+    const { theme, passThemeFlag } = useThemeValue();
+    const value = datumValue(datum, property);
+    const context = useContext(TableContext);
+    const renderContexts =
+      context === 'body' ||
+      (context === 'footer' && footer && footer.aggregate);
 
-const Cell = ({
-  background,
-  border,
-  column: { align, property, render, verticalAlign, size },
-  context,
-  datum,
-  index,
-  pad,
-  primaryProperty,
-  rowProp,
-  scope,
-}) => {
-  const theme = useContext(ThemeContext) || defaultProps.theme;
-  const value = datumValue(datum, property);
-  let content;
-  if (render) {
-    content = render(datum);
-  } else if (value !== undefined) {
-    content = value;
-  }
+    let content;
+    if (render && renderContexts) {
+      content = render(datum);
+    } else if (value !== undefined) {
+      if (
+        typeof value === 'string' ||
+        typeof value === 'number' ||
+        isValidElement(value)
+      )
+        content = value;
+    }
 
-  if (typeof content === 'string' || typeof content === 'number') {
-    const textProps =
-      property === primaryProperty ? theme.dataTable.primary : {};
-    content = <Text {...textProps}>{content}</Text>;
-  }
+    if (typeof content === 'string' || typeof content === 'number') {
+      const textProps =
+        property === primaryProperty ? theme.dataTable.primary : {};
+      content = <Text {...textProps}>{content}</Text>;
+    }
 
-  return (
-    <TableCell
-      scope={scope}
-      {...theme.dataTable[context]}
-      align={align}
-      verticalAlign={verticalAlign}
-      size={size}
-      background={normalizeProp(
-        'background',
-        rowProp,
-        Array.isArray(background)
-          ? background[index % background.length]
-          : background,
-      )}
-      border={normalizeProp('border', rowProp, border)}
-      pad={normalizeProp('pad', rowProp, pad)}
-    >
-      {content}
-    </TableCell>
-  );
-};
+    const pin = [];
+    if (cellPin) pin.push(...cellPin);
+    if (columnPin) pin.push('left');
+
+    return (
+      <StyledDataTableCell
+        scope={scope}
+        {...theme.dataTable[context]}
+        align={align}
+        context={context}
+        verticalAlign={verticalAlign || columnVerticalAlign}
+        size={size}
+        background={background}
+        pinnedOffset={pinnedOffset}
+        border={border}
+        pad={pad}
+        pin={pin}
+        plain={plain ? 'noPad' : undefined}
+        {...passThemeFlag}
+        {...rest}
+      >
+        {content}
+      </StyledDataTableCell>
+    );
+  },
+);
 
 Cell.displayName = 'Cell';
-
-Cell.defaultProps = {};
-Object.setPrototypeOf(Cell.defaultProps, defaultProps);
 
 export { Cell };

@@ -1,6 +1,6 @@
 {
   "name": "grommet",
-  "version": "2.14.0",
+  "version": "2.53.0",
   "main": "index.js",
   "module": "es6/index.js",
   "jsnext:main": "es6/index.js",
@@ -23,120 +23,154 @@
     "type": "git",
     "url": "https://github.com/grommet/grommet.git"
   },
-  "engine-strict": true,
   "engines": {
-    "node": ">= 10"
+    "node": ">= 16"
   },
   "scripts": {
-    "generate-readme": "cross-env NODE_ENV=production babel-node ./tools/generate-readme",
-    "build": "webpack --mode production && babel ./src/js/ --out-dir ./dist --ignore '**/**/__tests__' --ignore 'src/**/portal.js' && copyfiles -u 2 \"src/js/**/**/*.*\" -e \"src/js/**/**/*.js\" -e \"src/js/**/**/*.js.snap\" \"./dist\" && cross-env BABEL_ENV=es6 babel ./src/js/ --out-dir ./dist/es6 --ignore '**/**/__tests__' --ignore 'src/**/portal.js' && copyfiles -u 2 \"src/js/**/**/*.*\" -e \"src/js/**/**/*.js\" -e \"src/js/**/**/*.js.snap\" \"./dist/es6\"",
+    "build": "webpack --mode production && babel ./src/js/ --out-dir ./dist --ignore '**/**/__tests__' --ignore './e2e' --ignore 'src/**/portal.js' && copyfiles -u 2 \"src/js/**/**/*.*\" -e \"src/js/**/**/*.js\" -e \"src/js/**/**/*.js.snap\" \"./dist\" && cross-env BABEL_ENV=es6 babel ./src/js/ --out-dir ./dist/es6 --ignore '**/**/__tests__' --ignore 'src/**/portal.js' && copyfiles -u 2 \"src/js/**/**/*.*\" -e \"src/js/**/**/*.js\" -e \"src/js/**/**/*.js.snap\" \"./dist/es6\" && copyfiles LICENSE COPYRIGHT.md ./dist",
     "release-stable": "babel-node ./tools/release-stable",
+    "release-styled-components-beta-stable": "babel-node ./tools/release-styled-components-beta-stable",
     "lint": "eslint src",
     "lint-fix": "eslint src --fix",
-    "test": "npm run generate-readme && jest --runInBand",
-    "test-update": "npm run generate-readme && jest --updateSnapshot",
+    "test": "jest --runInBand && yarn test-timezones",
+    "test-simple": "jest --runInBand",
+    "test-update": "jest --updateSnapshot && yarn test-timezones",
     "test-watch": "jest --watchAll",
     "test-bundlesize": "bundlesize",
+    "test-timezones": "cross-env TZ=Australia/Brisbane yarn test-calendar-dateinput --coverage=false && cross-env TZ=America/Los_Angeles yarn test-calendar-dateinput --coverage=false && cross-env TZ=Europe/Madrid yarn test-calendar-dateinput --coverage=false && cross-env TZ=Asia/Nagpur yarn test-calendar-dateinput --coverage=false",
+    "test-calendar-dateinput": "jest ./src/js/components/Calendar/__tests__/Calendar-test.tsx ./src/js/components/DateInput/__tests__/DateInput-test.tsx",
     "pack": "babel-node ./tools/pack",
-    "storybook": "cross-env NODE_ENV=development start-storybook -p 9001 -c storybook -s ./storybook/public",
-    "build-storybook": "build-storybook -c storybook -o storybook-static -s ./storybook/public",
+    "storybook": "cross-env NODE_ENV=development storybook dev -p 9001 -c storybook",
+    "start": "webpack serve --config ./e2e/webpack.config.js --mode development",
+    "test-e2e": "testcafe chrome:headless e2e/tests",
+    "test-e2e-ci": "testcafe chrome --headless=new e2e/tests -r xunit:/tmp/test-results/testcafe/results.xml",
+    "build-storybook": "storybook build -c storybook -o storybook-static",
     "prettier": "pretty-quick --staged",
-    "chromatic": "CHROMATIC_APP_CODE=9q99in2ygnh chromatic test"
+    "chromatic": "chromatic"
   },
   "peerDependencies": {
-    "react": ">= 16.6.1",
-    "react-dom": ">= 16.6.1",
-    "styled-components": ">= 5.X"
+    "react": "^16.6.1 || ^17.0.0 || ^18.0.0 || ^19.0.0",
+    "react-dom": "^16.6.1 || ^17.0.0 || ^18.0.0 || ^19.0.0",
+    "styled-components": "^5.1.0 || ^6.0.0"
   },
   "dependencies": {
-    "grommet-icons": "^4.2.0",
-    "hoist-non-react-statics": "^3.2.0",
-    "markdown-to-jsx": "^6.11.4",
-    "polished": "^3.4.1",
-    "prop-types": "^15.7.2",
-    "react-desc": "^4.1.2"
+    "@emotion/is-prop-valid": "^1.4.0",
+    "grommet-icons": "^4.14.0",
+    "markdown-to-jsx": "7.4.4",
+    "prop-types": "^15.8.1"
   },
   "devDependencies": {
-    "@babel/cli": "^7.1.2",
-    "@babel/core": "^7.3.4",
-    "@babel/node": "^7.8.3",
-    "@babel/plugin-proposal-class-properties": "^7.3.4",
-    "@babel/plugin-proposal-do-expressions": "^7.0.0",
-    "@babel/plugin-proposal-export-default-from": "^7.0.0",
-    "@babel/plugin-proposal-logical-assignment-operators": "^7.0.0",
-    "@babel/plugin-proposal-nullish-coalescing-operator": "^7.0.0",
-    "@babel/plugin-proposal-optional-chaining": "^7.0.0",
-    "@babel/plugin-proposal-pipeline-operator": "^7.3.2",
-    "@babel/preset-env": "^7.3.4",
-    "@babel/preset-react": "^7.0.0",
-    "@emotion/core": "^10.0.7",
-    "@storybook/addon-options": "~5.1.11",
-    "@storybook/addon-storysource": "~5.1.11",
-    "@storybook/addons": "~5.1.11",
-    "@storybook/react": "~5.1.11",
-    "@testing-library/dom": "^6.1.0",
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.1.3",
-    "@types/node": "^13.5.0",
-    "@types/react": "^16.9.11",
-    "@types/react-dom": "^16.9.3",
-    "@types/storybook__react": "^4.0.2",
-    "awesome-typescript-loader": "^5.2.1",
+    "@babel/cli": "^7.28.6",
+    "@babel/core": "^7.29.0",
+    "@babel/eslint-parser": "^7.28.6",
+    "@babel/node": "^7.29.0",
+    "@babel/plugin-proposal-class-properties": "^7.18.6",
+    "@babel/plugin-proposal-do-expressions": "^7.28.6",
+    "@babel/plugin-proposal-export-default-from": "^7.27.1",
+    "@babel/plugin-proposal-pipeline-operator": "^7.28.6",
+    "@babel/plugin-transform-class-properties": "^7.28.6",
+    "@babel/plugin-transform-logical-assignment-operators": "^7.28.6",
+    "@babel/plugin-transform-nullish-coalescing-operator": "^7.28.6",
+    "@babel/plugin-transform-optional-chaining": "^7.28.6",
+    "@babel/preset-env": "^7.29.0",
+    "@babel/preset-react": "^7.28.5",
+    "@chromatic-com/storybook": "^3.2.7",
+    "@eslint/compat": "^2.0.2",
+    "@eslint/eslintrc": "^3.3.4",
+    "@eslint/js": "^9.39.3",
+    "@storybook/addon-a11y": "^8.6.17",
+    "@storybook/addon-storysource": "^8.6.17",
+    "@storybook/addon-toolbars": "^8.6.17",
+    "@storybook/addon-webpack5-compiler-babel": "^3.0.6",
+    "@storybook/manager-api": "^8.6.17",
+    "@storybook/react": "^8.6.17",
+    "@storybook/react-webpack5": "^8.6.17",
+    "@storybook/source-loader": "^8.6.17",
+    "@testing-library/dom": "^10.4.1",
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^16.3.2",
+    "@testing-library/testcafe": "^5.0.1",
+    "@testing-library/user-event": "^14.6.1",
+    "@types/jest": "^30.0.0",
+    "@types/jest-axe": "^3.5.9",
+    "@types/node": "^25.3.0",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "@types/styled-components": "^5.1.36",
     "babel-core": "^7.0.0-bridge.0",
-    "babel-eslint": "^10.0.1",
-    "babel-jest": "^24.8.0",
-    "babel-loader": "^8.0.0-beta.6",
-    "babel-plugin-styled-components": "^1.6.4",
+    "babel-jest": "^30.2.0",
+    "babel-loader": "^10.0.0",
+    "babel-plugin-styled-components": "^2.1.4",
     "babel-plugin-transform-imports": "^2.0.0",
-    "bundlesize": "^0.18.0",
-    "clean-webpack-plugin": "^3.0.0",
-    "copy-webpack-plugin": "^5.0.4",
-    "copyfiles": "^2.3.0",
-    "core-js": "^3.6.4",
-    "cross-env": "^5.1.6",
-    "del": "^5.1.0",
-    "eslint": "^6.2.2",
-    "eslint-config-airbnb": "^18.0.1",
-    "eslint-config-prettier": "^6.1.0",
-    "eslint-plugin-babel": "^5.1.0",
-    "eslint-plugin-import": "^2.2.0",
-    "eslint-plugin-jsx-a11y": "^6.2.1",
-    "eslint-plugin-prettier": "^3.0.0",
-    "eslint-plugin-react": "^7.9.1",
-    "eslint-plugin-react-hooks": "^2.2.0",
-    "fs-extra": "^8.1.0",
-    "grommet-theme-aruba": "^0.1.1",
-    "grommet-theme-dxc": "^0.1.1",
-    "grommet-theme-hp": "^0.1.1",
-    "grommet-theme-hpe": "^1.0.0",
-    "grommet-theme-v1": "^0.1.1",
-    "jest": "^25.1.0",
-    "jest-axe": "^3.4.0",
-    "jest-cli": "^25.1.0",
-    "jest-styled-components": "^7.0.0",
-    "jsdom": "^15.1.1",
-    "postcss": "^7.0.31",
+    "bundlesize2": "^0.0.35",
+    "chromatic": "^13.3.5",
+    "clean-webpack-plugin": "^4.0.0",
+    "copy-webpack-plugin": "^13.0.1",
+    "copyfiles": "^2.4.1",
+    "core-js": "^3.48.0",
+    "cross-env": "^10.1.0",
+    "del": "^6.1.1",
+    "eslint": "^9.39.3",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-babel": "^5.3.1",
+    "eslint-plugin-import": "^2.32.0",
+    "eslint-plugin-jsx-a11y": "^6.10.2",
+    "eslint-plugin-prettier": "^5.5.5",
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-react-hooks": "^7.0.1",
+    "eslint-plugin-testing-library": "^7.16.0",
+    "fs-extra": "^11.3.3",
+    "globals": "^16.5.0",
+    "grommet-theme-hpe": "^7.0.2",
+    "jest": "^30.2.0",
+    "jest-axe": "^10.0.0",
+    "jest-cli": "^30.2.0",
+    "jest-environment-jsdom": "^30.2.0",
+    "jest-styled-components": "7.0.5",
+    "jsdom": "^27.4.0",
+    "postcss": "^8.5.6",
     "pre-commit": "^1.2.2",
-    "prettier": "^1.16.4",
-    "pretty-quick": "^1.8.0",
-    "react": "^16.12.0",
-    "react-dev-utils": "^9.0.3",
-    "react-dom": "^16.12.0",
-    "react-is": "16.12.0",
-    "react-test-renderer": "^16.12.0",
-    "regenerator-runtime": "^0.13.1",
-    "require-reload": "^0.2.2",
-    "simple-git": "^1.95.0",
-    "storybook-chromatic": "^2.2.2",
-    "styled-components": "^5.0.0",
+    "prettier": "^2.8.8",
+    "pretty-quick": "^4.2.2",
+    "react": "^19.2.4",
+    "react-dev-utils": "^12.0.1",
+    "react-dom": "^19.2.4",
+    "react-is": "^19.2.4",
+    "react-shadow": "^20.6.0",
+    "regenerator-runtime": "^0.14.1",
+    "simple-git": "^3.32.2",
+    "storybook": "^8.6.17",
+    "styled-components": "^6.3.11",
     "tarball-extract": "^0.0.6",
-    "typescript": "^3.6.4",
-    "webpack": "^4.39.3",
-    "webpack-cli": "^3.2.3"
+    "testcafe": "^3.7.4",
+    "testcafe-react-selectors": "^5.0.3",
+    "testcafe-reporter-xunit": "^2.2.3",
+    "ts-jest": "^29.4.6",
+    "ts-loader": "^9.5.4",
+    "typescript": "^5.9.3",
+    "webpack": "^5.105.2",
+    "webpack-cli": "^6.0.1",
+    "webpack-dev-server": "^5.2.3"
   },
   "jest": {
+    "transform": {
+      "^.+\\.tsx?$": [
+        "ts-jest",
+        {
+          "tsconfig": "tsconfig.tests.json"
+        }
+      ],
+      "^.+\\.jsx?$": "babel-jest"
+    },
     "collectCoverage": true,
-    "testURL": "http://localhost/",
+    "testEnvironment": "jsdom",
+    "testEnvironmentOptions": {
+      "url": "http://localhost/"
+    },
+    "setupFilesAfterEnv": [
+      "<rootDir>/src/setupTests.js"
+    ],
     "coverageReporters": [
       "lcov"
     ],
@@ -149,13 +183,26 @@
       "!src/js/**/**/stories/*.js",
       "!src/js/**/**/stories/**/**/*.js",
       "!src/js/utils/portal.js",
-      "!src/js/**/**/doc.js"
+      "!src/js/**/**/doc.js",
+      "!src/js/components/**/__tests__/**/*.js"
     ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 76.3,
+        "functions": 88,
+        "lines": 87.5,
+        "statements": 86.6
+      }
+    },
+    "moduleNameMapper": {
+      "^styled-components": "styled-components/dist/styled-components.browser.cjs.js"
+    },
     "modulePathIgnorePatterns": [
       "<rootDir>/dist/"
     ],
     "testPathIgnorePatterns": [
-      "<rootDir>[/\\\\](dist|node_modules)[/\\\\]"
+      "<rootDir>[/\\\\](dist|node_modules)[/\\\\]",
+      "components/(.*)/__tests__/(.*)/(.*).js"
     ]
   },
   "pre-commit": [
@@ -166,7 +213,7 @@
   "bundlesize": [
     {
       "path": "./dist/grommet.min.js",
-      "maxSize": "120 kB"
+      "maxSize": "192 kB"
     }
   ],
   "keywords": [
@@ -199,5 +246,6 @@
     "gui",
     "graphical user interface",
     "styled-components"
-  ]
+  ],
+  "packageManager": "yarn@4.3.1"
 }

@@ -25,6 +25,8 @@ export const findScrollParent = (element, horizontal) => {
   return result;
 };
 
+const documentTags = ['html', 'body'];
+
 export const findScrollParents = (element, horizontal) => {
   const result = [];
   if (element) {
@@ -41,20 +43,21 @@ export const findScrollParents = (element, horizontal) => {
       }
       parent = parent.parentNode;
     }
-    // last scrollable element will be the document
-    // if nothing else is scrollable in the page
-    if (result.length === 0) {
-      result.push(document);
-    } else if (result[0].tagName.toLowerCase() === 'body') {
+    if (
+      result.length &&
+      documentTags.includes(result[0].tagName.toLowerCase())
+    ) {
       result.length = 0;
-      result.push(document);
     }
+    // last scrollable element will be the document
+    result.push(document);
   }
   return result;
 };
 
-export const containsFocus = node => {
-  let element = document.activeElement;
+export const containsFocus = (node) => {
+  const root = node.getRootNode();
+  let element = root.activeElement;
   while (element) {
     if (element === node) break;
     element = element.parentElement;
@@ -62,37 +65,68 @@ export const containsFocus = node => {
   return !!element;
 };
 
-export const getFirstFocusableDescendant = element => {
+export const withinDropPortal = (node, portalContext) => {
+  const root = node?.getRootNode();
+  let element = node;
+  let portalId;
+  while (element && element !== root) {
+    if (element.hasAttribute('data-g-portal-id')) {
+      portalId = element.getAttribute('data-g-portal-id');
+      element = root;
+    } else {
+      element = element.parentElement;
+    }
+  }
+  // if portalContext doesn't contain the portalId then the
+  // portal is new and node is within a drop that just opened
+  if (
+    portalId === undefined ||
+    portalContext.indexOf(parseInt(portalId, 10)) !== -1
+  )
+    return false;
+  return true;
+};
+
+// Check if the element.tagName is an input, select or textarea
+export const isFocusable = (element) => {
+  const tagName = element.tagName.toLowerCase();
+  return tagName === 'input' || tagName === 'select' || tagName === 'textarea';
+};
+
+// Get the first element that can receive focus
+export const getFirstFocusableDescendant = (element) => {
   const children = element.getElementsByTagName('*');
   for (let i = 0; i < children.length; i += 1) {
     const child = children[i];
-    const tagName = child.tagName.toLowerCase();
-    if (tagName === 'input' || tagName === 'select') {
+    if (isFocusable(child)) {
       return child;
     }
   }
   return undefined;
 };
 
-export const getBodyChildElements = () => {
-  const excludeMatch = /^(script|link)$/i;
-  const children = [];
-  [].forEach.call(document.body.children, node => {
-    if (!excludeMatch.test(node.tagName)) {
-      children.push(node);
-    }
-  });
-  return children;
+export const shouldKeepFocus = (root) => {
+  const element = root.activeElement;
+  if (isFocusable(element)) return true;
+  return !!getFirstFocusableDescendant(element);
 };
 
-export const getNewContainer = (rootNode = document.body) => {
+export const getNewContainer = (
+  target = document.body,
+  targetChildPosition,
+) => {
   // setup DOM
   const container = document.createElement('div');
-  rootNode.appendChild(container);
+  if (targetChildPosition === 'first') {
+    // for SkipLinks
+    target.prepend(container);
+  } else {
+    target.appendChild(container);
+  }
   return container;
 };
 
-export const setFocusWithoutScroll = element => {
+export const setFocusWithoutScroll = (element) => {
   const x = window.scrollX;
   const y = window.scrollY;
   element.focus();
@@ -102,16 +136,16 @@ export const setFocusWithoutScroll = element => {
 const TABINDEX = 'tabindex';
 const TABINDEX_STATE = 'data-g-tabindex';
 
-export const makeNodeFocusable = node => {
+export const makeNodeFocusable = (node) => {
   // do not touch aria live containers so that announcements work
   if (!node.hasAttribute('aria-live')) {
-    node.setAttribute('aria-hidden', false);
+    node.removeAttribute('aria-hidden');
     // allow children to receive focus again
     const elements = node.getElementsByTagName('*');
     // only reset elements we've changed in makeNodeUnfocusable()
     Array.prototype.filter
-      .call(elements || [], element => element.hasAttribute(TABINDEX_STATE))
-      .forEach(element => {
+      .call(elements || [], (element) => element.hasAttribute(TABINDEX_STATE))
+      .forEach((element) => {
         const prior = element.getAttribute(TABINDEX_STATE);
         if (prior >= 0) {
           element.setAttribute(TABINDEX, element.getAttribute(TABINDEX_STATE));
@@ -123,25 +157,31 @@ export const makeNodeFocusable = node => {
   }
 };
 
-const autoFocusingTags = /(a|area|input|select|textarea|button|iframe)$/;
+// Using ^ and $ to match the whole tagName, and not e.g. <meta> and <data>.
+const autoFocusingTags = /^(a|area|input|select|textarea|button|iframe)$/;
 
-export const makeNodeUnfocusable = node => {
+export const makeNodeUnfocusable = (node) => {
   // do not touch aria live containers so that announcements work
   if (!node.hasAttribute('aria-live')) {
     node.setAttribute('aria-hidden', true);
     // prevent children to receive focus
     const elements = node.getElementsByTagName('*');
-    // first, save off the tabindex of any element with one
+    // first, save off the tabIndex of any element with one
     Array.prototype.filter
-      .call(elements || [], element => element.getAttribute(TABINDEX) !== null)
-      .forEach(element => {
-        element.setAttribute(TABINDEX_STATE, element.getAttribute(TABINDEX));
+      .call(
+        elements || [],
+        (element) => element.getAttribute(TABINDEX) !== null,
+      )
+      .forEach((element) => {
+        // if TABINDEX_STATE already exists, it's holding the original value
+        if (!element.getAttribute(TABINDEX_STATE))
+          element.setAttribute(TABINDEX_STATE, element.getAttribute(TABINDEX));
         element.setAttribute(TABINDEX, -1);
       });
     // then, if any element is inherently focusable and not handled above,
-    // give it a tabindex of -1 so it can't receive focus
+    // give it a tabIndex of -1 so it can't receive focus
     Array.prototype.filter
-      .call(elements || [], element => {
+      .call(elements || [], (element) => {
         const currentTag = element.tagName.toLowerCase();
         return (
           currentTag.match(autoFocusingTags) &&
@@ -149,15 +189,16 @@ export const makeNodeUnfocusable = node => {
           element.getAttribute(TABINDEX_STATE) === null
         );
       })
-      .forEach(element => {
+      .forEach((element) => {
         element.setAttribute(TABINDEX_STATE, 'none');
         element.setAttribute(TABINDEX, -1);
       });
   }
 };
 
-export const findVisibleParent = element => {
+export const findVisibleParent = (element) => {
   if (element) {
+    // Get the closest ancestor element that is positioned.
     return element.offsetParent
       ? element
       : findVisibleParent(element.parentElement) || element;
@@ -170,7 +211,7 @@ export const isNodeAfterScroll = (node, target) => {
   // target will be the document from findScrollParent()
   const { height, top } = target.getBoundingClientRect
     ? target.getBoundingClientRect()
-    : 0;
+    : { height: 0, top: 0 };
   return bottom >= top + height;
 };
 
@@ -179,6 +220,12 @@ export const isNodeBeforeScroll = (node, target) => {
   // target will be the document from findScrollParent()
   const { top: targetTop } = target.getBoundingClientRect
     ? target.getBoundingClientRect()
-    : 0;
+    : { top: 0 };
   return top <= targetTop;
+};
+
+export const findButtonParent = (element) => {
+  if (element && element.nodeName !== 'BUTTON' && element.nodeName !== 'A')
+    return findButtonParent(element.parentElement);
+  return element;
 };
