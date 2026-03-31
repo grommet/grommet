@@ -49,6 +49,9 @@ jobs:
       - attach_workspace:
           at: ~/grommet-ci
       - run:
+          name: Force git to use HTTPS instead of SSH
+          command: git config --global url."https://github.com/".insteadOf "git@github.com:"
+      - run:
           name: Running chromatic test
           command: yarn chromatic -t $CHROMATIC_TOKEN --exit-zero-on-changes
   chromatic-accept:
