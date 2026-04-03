@@ -275,7 +275,7 @@ var DateInput = exports.DateInput = /*#__PURE__*/(0, _react.forwardRef)(function
     }, buttonProps));
   }
   var onClickCopy = function onClickCopy() {
-    global.navigator.clipboard.writeText(textValue);
+    navigator.clipboard.writeText(textValue);
     announce(readOnlyCopyValidation, 'assertive');
     setTip(readOnlyCopyValidation);
   };

@@ -269,7 +269,7 @@ var DateInput = /*#__PURE__*/forwardRef(function (_ref, refArg) {
     }, buttonProps));
   }
   var onClickCopy = function onClickCopy() {
-    global.navigator.clipboard.writeText(textValue);
+    navigator.clipboard.writeText(textValue);
     announce(readOnlyCopyValidation, 'assertive');
     setTip(readOnlyCopyValidation);
   };

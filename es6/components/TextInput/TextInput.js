@@ -122,7 +122,7 @@ var TextInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
     tip = _useState4[0],
     setTip = _useState4[1];
   var onClickCopy = function onClickCopy() {
-    global.navigator.clipboard.writeText(value);
+    navigator.clipboard.writeText(value);
     announce(readOnlyCopyValidation, 'assertive');
     setTip(readOnlyCopyValidation);
   };
