@@ -146,7 +146,7 @@ const TextInput = forwardRef(
     const [tip, setTip] = useState(readOnlyCopyPrompt);
 
     const onClickCopy = () => {
-      global.navigator.clipboard.writeText(value);
+      navigator.clipboard.writeText(value);
       announce(readOnlyCopyValidation, 'assertive');
       setTip(readOnlyCopyValidation);
     };
