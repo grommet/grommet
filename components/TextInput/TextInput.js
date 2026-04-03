@@ -408,7 +408,7 @@ var TextInput = exports.TextInput = /*#__PURE__*/(0, _react.forwardRef)(function
     onMouseMove: function onMouseMove() {
       return setMouseMovedSinceLastKey(true);
     }
-  }, passThemeFlag), reverse && readOnlyCopy && ReadOnlyCopyButton, showStyledPlaceholder && /*#__PURE__*/_react["default"].createElement(_StyledTextInput.StyledPlaceholder, passThemeFlag, placeholder), textInputIcon && !readOnly && /*#__PURE__*/_react["default"].createElement(_StyledTextInput.StyledIcon, {
+  }, passThemeFlag), reverse && readOnlyCopy && ReadOnlyCopyButton, showStyledPlaceholder && /*#__PURE__*/_react["default"].createElement(_StyledTextInput.StyledPlaceholder, passThemeFlag, placeholder), textInputIcon && !readOnlyCopy && /*#__PURE__*/_react["default"].createElement(_StyledTextInput.StyledIcon, {
     reverse: reverse,
     theme: theme
   }, textInputIcon), /*#__PURE__*/_react["default"].createElement(_Keyboard.Keyboard, _extends({
@@ -422,7 +422,7 @@ var TextInput = exports.TextInput = /*#__PURE__*/(0, _react.forwardRef)(function
     disabled: disabled,
     plain: plain,
     placeholder: typeof placeholder === 'string' ? placeholder : undefined,
-    icon: !readOnly && icon,
+    icon: !readOnlyCopy && icon,
     reverse: reverse,
     focus: focus,
     focusIndicator: focusIndicator,

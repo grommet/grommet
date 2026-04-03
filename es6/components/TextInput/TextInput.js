@@ -402,7 +402,7 @@ var TextInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
     onMouseMove: function onMouseMove() {
       return setMouseMovedSinceLastKey(true);
     }
-  }, passThemeFlag), reverse && readOnlyCopy && ReadOnlyCopyButton, showStyledPlaceholder && /*#__PURE__*/React.createElement(StyledPlaceholder, passThemeFlag, placeholder), textInputIcon && !readOnly && /*#__PURE__*/React.createElement(StyledIcon, {
+  }, passThemeFlag), reverse && readOnlyCopy && ReadOnlyCopyButton, showStyledPlaceholder && /*#__PURE__*/React.createElement(StyledPlaceholder, passThemeFlag, placeholder), textInputIcon && !readOnlyCopy && /*#__PURE__*/React.createElement(StyledIcon, {
     reverse: reverse,
     theme: theme
   }, textInputIcon), /*#__PURE__*/React.createElement(Keyboard, _extends({
@@ -416,7 +416,7 @@ var TextInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
     disabled: disabled,
     plain: plain,
     placeholder: typeof placeholder === 'string' ? placeholder : undefined,
-    icon: !readOnly && icon,
+    icon: !readOnlyCopy && icon,
     reverse: reverse,
     focus: focus,
     focusIndicator: focusIndicator,
