@@ -252,11 +252,8 @@ const Tabs = forwardRef(
       return () => window.removeEventListener('resize', onResize);
     }, [
       tabRefs,
-      disableLeftArrow,
-      disableRightArrow,
       activeIndex,
       headerRef,
-      overflow,
       updateArrowState,
     ]);
 
