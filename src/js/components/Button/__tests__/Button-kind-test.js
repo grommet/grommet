@@ -99,10 +99,7 @@ describe('Button kind', () => {
       </Grommet>,
     );
     const button = container.querySelector('button');
-    expect(button).toHaveStyleRule(
-      'color',
-      expect.stringContaining('#FF0000'),
-    );
+    expect(button).toHaveStyleRule('color', expect.stringContaining('#FF0000'));
     expect(button).not.toHaveStyleRule(
       'background-color',
       expect.stringContaining('#FF0000'),
@@ -986,6 +983,20 @@ describe('Button kind', () => {
     );
 
     expect(asFragment()).toMatchSnapshot();
+  });
+
+  test('default button color prop sets text color, not background', () => {
+    const { container } = render(
+      <Grommet theme={buttonKindTheme}>
+        <Button label="Default" color="red" />
+      </Grommet>,
+    );
+    const button = container.querySelector('button');
+    expect(button).toHaveStyleRule('color', expect.stringContaining('red'));
+    expect(button).not.toHaveStyleRule(
+      'background-color',
+      expect.stringContaining('red'),
+    );
   });
 
   test('theme busy gap', () => {
