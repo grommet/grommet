@@ -22,7 +22,7 @@ export const TabsWithInputFocus = () => {
         <Heading level="3">Instructions</Heading>
         <Box as="p" margin="small">
           Try clicking in the middle of the text in any input field and typing.
-          With the fix for issue #6736, the cursor should stay in place as you
+          The cursor should stay in place as you
           type instead of jumping to the end of the text.
         </Box>
       </Box>
@@ -100,7 +100,7 @@ export const TabsWithInputFocus = () => {
   );
 };
 
-TabsWithInputFocus.storyName = 'Tabs with input focus (Issue #6736)';
+TabsWithInputFocus.storyName = 'Tabs with input focus';
 
 export default {
   title: 'Controls/Tabs/Tabs with input focus',
