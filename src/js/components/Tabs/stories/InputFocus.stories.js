@@ -4,7 +4,7 @@ import { Box, Tab, Tabs, TextInput, TextArea, Heading } from 'grommet';
 
 export const TabsWithInputFocus = () => {
   const [nameValue, setNameValue] = React.useState(
-    'This is default text in Tab 1',
+    'Default text in Tab 1',
   );
   const [emailValue, setEmailValue] = React.useState('email@example.com');
   const [messageValue, setMessageValue] = React.useState(
