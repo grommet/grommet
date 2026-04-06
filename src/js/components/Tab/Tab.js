@@ -51,13 +51,6 @@ const Tab = forwardRef(
       }
     });
 
-    // Use useLayoutEffect to update active content before paint phase.
-    // This fixes issue #6736 where typing in controlled inputs inside tabs
-    // causes the cursor to jump to the end. Previously, activeContent was
-    // updated in useEffect (after paint), creating a timing window where the
-    // rendered input value prop was stale, triggering React's controlled state
-    // restoration and resetting the cursor. By using useLayoutEffect, we
-    // ensure activeContent is updated before the browser paints, fixing this.
     useLayoutEffect(() => {
       if (active) {
         setActiveContent(children);
