@@ -289,25 +289,18 @@ const Tabs = forwardRef(
       [activeIndex, onActive, propsActiveIndex, sendAnalytics, tabRefs],
     );
 
-    // Memoize tabs to prevent recreating them on every render,
-    // which would cause inputs to lose focus (issue #6736)
-    console.log('Rendering Tabs with useMemo');
-    const tabs = useMemo(
-      () =>
-        React.Children.map(children, (child, index) => (
-          <TabsContext.Provider value={getTabsContext(index)}>
-            {/* possible to have undefined child. in that case, you can't
-            do cloneElement */}
-            {child
-              ? // cloneElement is needed for backward compatibility with
-                // custom styled components that rely on props.active.
-                React.cloneElement(child, { active: activeIndex === index })
-              : child}
-          </TabsContext.Provider>
-        )),
-      // Only recreate when dependencies change
-      [activeIndex, children, getTabsContext],
-    );
+    const tabs = React.Children.map(children, (child, index) => (
+      <TabsContext.Provider value={getTabsContext(index)}>
+        {/* possible to have undefined child. in that case, you can't
+        do cloneElement */}
+        {child
+          ? // cloneElement is needed for backward compatibility with custom
+            // styled components that rely on props.active. We should reassess
+            // if it is still necessary in our next major release.
+            React.cloneElement(child, { active: activeIndex === index })
+          : child}
+      </TabsContext.Provider>
+    ));
 
     const tabsHeaderStyles = {};
     if (theme.tabs.header && theme.tabs.header.border) {
