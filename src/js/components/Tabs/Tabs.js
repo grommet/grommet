@@ -291,6 +291,7 @@ const Tabs = forwardRef(
 
     // Memoize tabs to prevent recreating them on every render,
     // which would cause inputs to lose focus (issue #6736)
+    console.log('Rendering Tabs with useMemo');
     const tabs = useMemo(
       () =>
         React.Children.map(children, (child, index) => (
