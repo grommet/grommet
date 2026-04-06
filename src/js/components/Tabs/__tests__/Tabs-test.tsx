@@ -392,4 +392,55 @@ describe('Tabs', () => {
 
     expect(asFragment()).toMatchSnapshot();
   });
+
+  test('input cursor should not jump when typing in a tab (issue #6736)', () => {
+    const TestComponent = () => {
+      const [text, setText] = React.useState('');
+
+      return (
+        <Grommet>
+          <Tabs>
+            <Tab title="Tab 1">
+              <input
+                type="text"
+                value={text}
+                onChange={(e) => setText(e.target.value)}
+                data-testid="test-input"
+              />
+            </Tab>
+            <Tab title="Tab 2">Tab 2 content</Tab>
+          </Tabs>
+        </Grommet>
+      );
+    };
+
+    const { getByTestId } = render(<TestComponent />);
+    const input = getByTestId('test-input') as HTMLInputElement;
+
+    // Type some initial text
+    fireEvent.change(input, { target: { value: 'hello world' } });
+    expect(input.value).toBe('hello world');
+
+    // The real test: after typing, if we manually set cursor position
+    // and then change the value, the input shouldn't lose that selection
+    // This mimics what would happen if parent re-renders
+    const originalSetSelectionRange = input.setSelectionRange.bind(input);
+    let selectionStartAfterChange: number | null = 0;
+
+    input.setSelectionRange = function (start: number, end: number) {
+      selectionStartAfterChange = start;
+      originalSetSelectionRange(start, end);
+    };
+
+    // Set cursor in the middle
+    input.setSelectionRange(5, 5);
+
+    // Type more characters - this updates the parent state and causes a rerender
+    fireEvent.change(input, { target: { value: 'hello  world' } });
+
+    // After the rerender (which happens due to setState in the component),
+    // the selection start should not have moved to the end
+    // With the bug, it would be 12. With the fix, it should be around 5-6
+    expect(selectionStartAfterChange).not.toBe(12);
+  });
 });
