@@ -985,17 +985,69 @@ describe('Button kind', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  test('default button color prop sets text color, not background', () => {
+  test('default button color prop sets text color with buttonKindTheme', () => {
     const { container } = render(
       <Grommet theme={buttonKindTheme}>
-        <Button label="Default" color="red" />
+        <Button label="Default" color="#FF0000" />
       </Grommet>,
     );
     const button = container.querySelector('button');
-    expect(button).toHaveStyleRule('color', expect.stringContaining('red'));
+    expect(button).toHaveStyleRule('color', expect.stringContaining('#FF0000'));
     expect(button).not.toHaveStyleRule(
       'background-color',
-      expect.stringContaining('red'),
+      expect.stringContaining('#FF0000'),
+    );
+  });
+
+  test('default button color prop in active state sets text color', () => {
+    const { container } = render(
+      <Grommet
+        theme={{
+          button: {
+            default: {
+              background: { color: '#666666' },
+              border: { color: '#666666' },
+            },
+            active: {
+              background: { color: '#333333' },
+            },
+          },
+        }}
+      >
+        <Button label="Active" color="#FF0000" active />
+      </Grommet>,
+    );
+    const button = container.querySelector('button');
+    expect(button).toHaveStyleRule('color', expect.stringContaining('#FF0000'));
+    expect(button).not.toHaveStyleRule(
+      'background-color',
+      expect.stringContaining('#FF0000'),
+    );
+  });
+
+  test('default button color prop when disabled sets text color', () => {
+    const { container } = render(
+      <Grommet
+        theme={{
+          button: {
+            default: {
+              background: { color: '#666666' },
+              border: { color: '#666666' },
+            },
+            disabled: {
+              opacity: 0.5,
+            },
+          },
+        }}
+      >
+        <Button label="Disabled" color="#FF0000" disabled />
+      </Grommet>,
+    );
+    const button = container.querySelector('button');
+    expect(button).toHaveStyleRule('color', expect.stringContaining('#FF0000'));
+    expect(button).not.toHaveStyleRule(
+      'background-color',
+      expect.stringContaining('#FF0000'),
     );
   });
 
