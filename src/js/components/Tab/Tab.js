@@ -1,4 +1,4 @@
-import React, { forwardRef, useContext, useEffect, useState } from 'react';
+import React, { forwardRef, useContext, useState } from 'react';
 
 import { Button } from '../Button';
 import { Text } from '../Text';
@@ -51,7 +51,7 @@ const Tab = forwardRef(
       }
     });
 
-    useEffect(() => {
+    useLayoutEffect(() => {
       if (active) {
         setActiveContent(children);
         const activeTitle = typeof title === 'string' ? title : activeIndex + 1;
