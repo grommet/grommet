@@ -370,6 +370,28 @@ describe('Tabs', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
+  test('should not infinite loop when tabs overflow', () => {
+    // Regression: including overflow/arrow state in useLayoutEffect deps
+    // caused Maximum update depth exceeded when tabs overflowed.
+    const spy = jest.spyOn(console, 'error').mockImplementation();
+    const { container } = render(
+      <Grommet>
+        <Tabs>
+          {Array.from({ length: 20 }, (_, i) => (
+            <Tab key={i} title={`Tab ${i + 1}`}>
+              Content {i + 1}
+            </Tab>
+          ))}
+        </Tabs>
+      </Grommet>,
+    );
+    expect(container.firstChild).toBeTruthy();
+    expect(spy).not.toHaveBeenCalledWith(
+      expect.stringContaining('Maximum update depth exceeded'),
+    );
+    spy.mockRestore();
+  });
+
   test('theme tab gap', () => {
     const customTheme = {
       tab: {
