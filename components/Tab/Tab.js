@@ -52,7 +52,7 @@ var Tab = exports.Tab = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref)
       tabsContextRef.current = tabRef.current;
     }
   });
-  (0, _react.useEffect)(function () {
+  (0, _useIsomorphicLayoutEffect.useLayoutEffect)(function () {
     if (active) {
       setActiveContent(children);
       var activeTitle = typeof title === 'string' ? title : activeIndex + 1;
