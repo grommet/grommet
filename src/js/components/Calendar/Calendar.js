@@ -126,9 +126,12 @@ const normalizeRange = (value, activeDate) => {
   return range;
 };
 
-const getReference = (reference, value, activeDate) => {
+const getReference = (reference, onReference, value, activeDate) => {
   let nextReference;
-  if (value) {
+  if (reference && onReference) {
+    // controlled component, so use the reference provided
+    nextReference = reference;
+  } else if (value && !reference) {
     if (Array.isArray(value)) {
       if (value[0] instanceof Date) {
         // if we just selected an end date, active date will be 'start'
@@ -364,15 +367,22 @@ const Calendar = forwardRef(
     }, [dateProp, datesProp]);
 
     const [reference, setReference] = useState(
-      getReference(normalizeInput(referenceProp), value, activeDate),
+      getReference(
+        normalizeInput(referenceProp),
+        onReference,
+        value,
+        activeDate,
+      ),
     );
     useEffect(() => {
-      if (value) {
-        setReference(
-          getReference(normalizeInput(referenceProp), value, activeDate),
-        );
-      }
-    }, [referenceProp, value, activeDate]);
+      setReference(
+        getReference(
+          normalizeInput(referenceProp),
+          onReference,
+          value,
+          activeDate),
+      );
+    }, [referenceProp, onReference, value, activeDate]);
 
     const [outputFormat, setOutputFormat] = useState(
       getOutputFormat(dateProp || datesProp),
