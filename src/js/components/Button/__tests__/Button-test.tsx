@@ -696,15 +696,15 @@ describe('Button', () => {
 
     const { container } = render(
       <Grommet theme={theme}>
-        <Button label="Default" color="red" />
+        <Button label="Default" color="#FF0000" />
       </Grommet>,
     );
     const button = container.querySelector('button')!;
     // color prop should set text color, not background
-    expect(button).toHaveStyleRule('color', expect.stringContaining('red'));
+    expect(button).toHaveStyleRule('color', expect.stringContaining('#FF0000'));
     expect(button).not.toHaveStyleRule(
       'background-color',
-      expect.stringContaining('red'),
+      expect.stringContaining('#FF0000'),
     );
   });
 });
