@@ -371,8 +371,32 @@ describe('Tabs', () => {
   });
 
   test('should not infinite loop when tabs overflow', () => {
-    // Regression: including overflow/arrow state in useLayoutEffect deps
-    // caused Maximum update depth exceeded when tabs overflowed.
+    // Regression: including overflow/arrow state (disableLeftArrow,
+    // disableRightArrow, overflow) in useLayoutEffect deps caused
+    // "Maximum update depth exceeded" when the header was overflowing.
+    // To reproduce, we must mock scrollWidth > offsetWidth so the
+    // overflow branch inside the useLayoutEffect actually fires.
+    const scrollWidthDesc = Object.getOwnPropertyDescriptor(
+      HTMLElement.prototype,
+      'scrollWidth',
+    );
+    const offsetWidthDesc = Object.getOwnPropertyDescriptor(
+      HTMLElement.prototype,
+      'offsetWidth',
+    );
+    Object.defineProperty(HTMLElement.prototype, 'scrollWidth', {
+      configurable: true,
+      get() {
+        return 1000;
+      },
+    });
+    Object.defineProperty(HTMLElement.prototype, 'offsetWidth', {
+      configurable: true,
+      get() {
+        return 500;
+      },
+    });
+
     const spy = jest.spyOn(console, 'error').mockImplementation();
     const { container } = render(
       <Grommet>
@@ -389,7 +413,21 @@ describe('Tabs', () => {
     expect(spy).not.toHaveBeenCalledWith(
       expect.stringContaining('Maximum update depth exceeded'),
     );
+
     spy.mockRestore();
+    // Restore original property descriptors
+    if (scrollWidthDesc)
+      Object.defineProperty(
+        HTMLElement.prototype,
+        'scrollWidth',
+        scrollWidthDesc,
+      );
+    if (offsetWidthDesc)
+      Object.defineProperty(
+        HTMLElement.prototype,
+        'offsetWidth',
+        offsetWidthDesc,
+      );
   });
 
   test('theme tab gap', () => {
