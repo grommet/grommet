@@ -6,7 +6,6 @@ export interface TipProps {
   content?: React.ReactNode;
   defaultVisible?: boolean;
   dropProps?: DropType;
-  id?: string;
   plain?: boolean;
 }
 
