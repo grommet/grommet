@@ -4,7 +4,7 @@ orbs:
 defaults: &defaults
   working_directory: ~/grommet-ci
   docker:
-    - image: cimg/node:25.6.1-browsers
+    - image: cimg/node:20.19.0-browsers
 jobs:
   checkout:
     <<: *defaults
@@ -48,6 +48,9 @@ jobs:
     steps:
       - attach_workspace:
           at: ~/grommet-ci
+      - run:
+          name: Force git to use HTTPS instead of SSH
+          command: git config --global url."https://github.com/".insteadOf "git@github.com:"
       - run:
           name: Running chromatic test
           command: yarn chromatic -t $CHROMATIC_TOKEN --exit-zero-on-changes

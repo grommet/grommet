@@ -717,6 +717,16 @@ describe('TextInput', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
+  test('read only with icon', () => {
+    const { container } = render(
+      <Grommet>
+        <TextInput value="test" readOnly icon={<Search />} aria-readonly />
+      </Grommet>,
+    );
+    // Icon should be visible when readOnly is true (fixes #7668)
+    expect(container.querySelector('svg')).toBeInTheDocument();
+  });
+
   test('read only copy', async () => {
     const user = userEvent.setup();
 
