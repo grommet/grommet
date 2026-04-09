@@ -416,18 +416,24 @@ describe('Tabs', () => {
 
     spy.mockRestore();
     // Restore original property descriptors
-    if (scrollWidthDesc)
+    if (scrollWidthDesc) {
       Object.defineProperty(
         HTMLElement.prototype,
         'scrollWidth',
         scrollWidthDesc,
       );
-    if (offsetWidthDesc)
+    } else {
+      delete (HTMLElement.prototype as any).scrollWidth;
+    }
+    if (offsetWidthDesc) {
       Object.defineProperty(
         HTMLElement.prototype,
         'offsetWidth',
         offsetWidthDesc,
       );
+    } else {
+      delete (HTMLElement.prototype as any).offsetWidth;
+    }
   });
 
   test('theme tab gap', () => {
