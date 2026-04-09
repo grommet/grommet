@@ -63,19 +63,18 @@ const Avatar = ({
     );
   } else if (typeof src === 'string') {
     content = (
-      <Image role="presentation" fit="contain" src={src} {...imageProps} />
+      <Image
+        alt={a11yTitle || ariaLabel || ''}
+        fit="contain"
+        src={src}
+        {...imageProps}
+      />
     );
   }
 
   if (typeof children === 'string' || typeof src === 'string') {
     return (
-      <StyledAvatar
-        role={typeof src === 'string' ? 'figure' : undefined}
-        a11yTitle={a11yTitle || ariaLabel}
-        {...avatarProps}
-        {...passThemeFlag}
-        {...rest}
-      >
+      <StyledAvatar {...avatarProps} {...passThemeFlag} {...rest}>
         {content}
       </StyledAvatar>
     );

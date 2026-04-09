@@ -9,11 +9,11 @@ export const Sizes = () => {
     // <Grommet theme={grommet}>
     <Box>
       <Box direction="row" pad="large" gap="small">
-        <Avatar size="small" src={src} />
-        <Avatar size="medium" src={src} />
-        <Avatar size="large" src={src} />
-        <Avatar size="xlarge" src={src} />
-        <Avatar size="2xl" src={src} />
+        <Avatar size="small" src={src} a11yTitle="Shimi" />
+        <Avatar size="medium" src={src} a11yTitle="Shimi" />
+        <Avatar size="large" src={src} a11yTitle="Shimi" />
+        <Avatar size="xlarge" src={src} a11yTitle="Shimi" />
+        <Avatar size="2xl" src={src} a11yTitle="Shimi" />
       </Box>
       <Box direction="row" pad="large" align="center" gap="small">
         <Avatar background="dark-2" size="small">
@@ -48,9 +48,9 @@ export const Sizes = () => {
           </Avatar>
         </Box>
         <Box direction="row" pad="large" gap="small">
-          <Avatar size="3xl" src={src} />
-          <Avatar size="4xl" src={src} />
-          <Avatar size="5xl" src={src} />
+          <Avatar size="3xl" src={src} a11yTitle="Shimi" />
+          <Avatar size="4xl" src={src} a11yTitle="Shimi" />
+          <Avatar size="5xl" src={src} a11yTitle="Shimi" />
         </Box>
       </Box>
     </Box>
