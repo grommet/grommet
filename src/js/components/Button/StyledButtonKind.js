@@ -148,22 +148,17 @@ const kindStyle = ({
 
   const iconOnly = hasIcon && !hasLabel;
   const pad = padFromTheme(size, theme, themeObj, kind, iconOnly);
+  // For default kind buttons, color prop should change text color,
+  // not the background. Check the button's overall kind so that
+  // state paths like 'active' and 'disabled' also respect this.
+  const isDefaultKind =
+    kind === 'default' || (typeof kind === 'string' && kind.endsWith('.default'));
   themePaths.base.forEach((themePath) => {
     const obj = getPath(themeObj, themePath);
     if (obj) {
-      // For default kind buttons, color prop should change text color,
-      // not the background. Only pass colorValue to kindPartStyles for
-      // non-default kinds (e.g. primary, secondary) where it should
-      // replace the background.
-      const isDefaultKind =
-        themePath === 'default' ||
-        (themePath && themePath.endsWith('.default'));
       styles.push(
         kindPartStyles(obj, theme, isDefaultKind ? undefined : colorValue),
       );
-      if (isDefaultKind && colorValue) {
-        styles.push(`color: ${normalizeColor(colorValue, theme)};`);
-      }
       if (obj.border && obj.border.width && pad && !obj.padding) {
         // Adjust padding from the button.size or just top button.padding
         // to deal with the kind's border width. But don't override any
@@ -172,6 +167,11 @@ const kindStyle = ({
       }
     }
   });
+  // Apply explicit text color after all base paths so it wins the
+  // cascade over any auto-computed text colors from state paths.
+  if (isDefaultKind && colorValue) {
+    styles.push(`color: ${normalizeColor(colorValue, theme)};`);
+  }
 
   // do the styling from the root of the object if caller passes one
   if (!themePaths.base.length && typeof kind === 'object') {
