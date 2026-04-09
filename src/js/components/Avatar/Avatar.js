@@ -37,11 +37,15 @@ const Avatar = ({
 
   const AvatarChildren = useCallback(
     () => (
-      <StyledAvatar {...avatarProps} {...rest}>
+      <StyledAvatar
+        aria-label={a11yTitle || ariaLabel || undefined}
+        {...avatarProps}
+        {...rest}
+      >
         {children}
       </StyledAvatar>
     ),
-    [avatarProps, children, rest],
+    [a11yTitle, ariaLabel, avatarProps, children, rest],
   );
 
   if (height || width) {
@@ -74,7 +78,16 @@ const Avatar = ({
 
   if (typeof children === 'string' || typeof src === 'string') {
     return (
-      <StyledAvatar {...avatarProps} {...passThemeFlag} {...rest}>
+      <StyledAvatar
+        aria-label={
+          typeof src === 'string'
+            ? undefined
+            : a11yTitle || ariaLabel || undefined
+        }
+        {...avatarProps}
+        {...passThemeFlag}
+        {...rest}
+      >
         {content}
       </StyledAvatar>
     );
